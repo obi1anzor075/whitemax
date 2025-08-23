@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/frg_call__profile_info_container" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:paddingBottom="8.0dip" android:clipChildren="false" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ru.ok.messages.calls.views.AnimatedCirclesView android:id="@id/animated_circles_view" android:layout_width="62.0dip" android:layout_height="62.0dip" android:layout_marginTop="8.0dip" />
+    <androidx.appcompat.widget.AppCompatTextView android:id="@id/anonymous_name" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/CallDialog.Widget.Face.Text" />
+</LinearLayout>

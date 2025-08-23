@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.appcompat.widget.AppCompatTextView android:textSize="14.0sp" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/item_no_sticker_sets__tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="@string/sticker_settings_no_sets" android:layout_marginStart="@dimen/activity_horizontal_margin" android:layout_marginEnd="@dimen/activity_horizontal_margin" />
+    <androidx.appcompat.widget.AppCompatButton android:textSize="14.0sp" android:layout_gravity="center_horizontal" android:id="@id/item_no_sticker_sets__b_view" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:minHeight="0.0dip" android:text="@string/sticker_settings_view_sets" android:textAllCaps="true" />
+</LinearLayout>

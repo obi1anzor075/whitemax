@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ru.ok.messages.views.widgets.BoundedLinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" app:boundedWidth="@dimen/call_button_max_width"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.AppCompatButton android:id="@id/view_finished_call_controls__btn_quality_poll" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:text="@string/channel_settings_next" style="@style/RoundedButton24.Blue.DisabledDark" />
+    <androidx.appcompat.widget.AppCompatButton android:textColor="@color/auth_text_dark_blue" android:id="@id/view_finished_call_controls__btn_close" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="15.0dip" android:text="@string/call_finished_close" style="@style/RoundedButton24.Transparent" />
+</ru.ok.messages.views.widgets.BoundedLinearLayout>

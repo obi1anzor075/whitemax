@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_gravity="center" android:layout_width="55.0dip" android:layout_height="56.0dip" android:layout_marginEnd="9.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ru.ok.messages.views.widgets.TamAvatarView android:layout_gravity="center" android:id="@id/row_selected__iv_avatar" android:layout_width="40.0dip" android:layout_height="40.0dip" app:placeHolder="@drawable/ava_m_40" />
+    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="end|top" android:id="@id/row_selected__iv_remove" android:background="@drawable/circle_white" android:padding="4.0dip" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginTop="4.0dip" android:src="@drawable/ic_cross_16" android:scaleType="fitXY" android:tint="@color/gray_99" />
+</FrameLayout>

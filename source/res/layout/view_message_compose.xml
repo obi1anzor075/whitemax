@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/frg_chat__input_container" android:padding="6.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:minHeight="36.0dip" android:layout_weight="1.0" android:layout_marginEnd="6.0dip">
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="bottom" android:id="@id/frg_chat__iv_smiles" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/icon_smile_24" android:layout_alignParentStart="true" />
+        <ru.ok.messages.messages.widgets.MessageComposeEditText android:textColorHint="@color/gray_99" android:layout_gravity="start|center" android:id="@id/frg_chat__edt_message" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/message" android:layout_weight="1.0" android:layout_toStartOf="@id/frg_chat__fl_buttons" android:layout_toEndOf="@id/frg_chat__iv_smiles" android:layout_marginHorizontal="6.0dip" style="@style/ComposeMessage">
+            <requestFocus />
+        </ru.ok.messages.messages.widgets.MessageComposeEditText>
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="bottom" android:id="@id/frg_chat__iv_constructor_buttons" android:visibility="gone" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/ic_buttons_24" android:layout_marginEnd="8.0dip" />
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="bottom" android:id="@id/frg_chat__iv_bot_commands" android:visibility="gone" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/ic_suggest_commands_24" android:layout_marginEnd="8.0dip" />
+        <androidx.appcompat.widget.AppCompatTextView android:textSize="14.0sp" android:gravity="center" android:id="@id/frg_chat__tv_timer" android:visibility="gone" android:layout_width="24.0dip" android:layout_height="24.0dip" android:fontFamily="sans-serif-medium" android:layout_marginEnd="8.0dip" />
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="bottom" android:id="@id/frg_chat__iv_timer" android:visibility="gone" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/ic_timer_24" android:layout_marginEnd="8.0dip" />
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="bottom" android:id="@id/frg_chat__iv_broadcast_notif" android:visibility="gone" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/ic_notifications_24" android:layout_marginEnd="8.0dip" />
+        <FrameLayout android:layout_gravity="bottom" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/frg_chat__iv_attach" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/icon_attach_24" />
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/frg_chat__iv_show_menu_formatter" android:visibility="invisible" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/archive_filled_28" />
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/frg_chat__fl_buttons" android:clipChildren="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true">
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="bottom" android:id="@id/frg_chat__iv_icon" android:padding="6.0dip" android:layout_width="36.0dip" android:layout_height="36.0dip" android:src="@drawable/icon_microphone_24" />
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="bottom" android:id="@id/frg_chat__iv_send" android:visibility="gone" android:layout_width="36.0dip" android:layout_height="36.0dip" android:src="@drawable/ic_send_24" />
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="bottom" android:id="@id/frg_chat__iv_scheduled_send" android:padding="6.0dip" android:visibility="gone" android:layout_width="36.0dip" android:layout_height="36.0dip" android:src="@drawable/ic_pending_send_24" />
+        <ViewStub android:id="@id/frg_chat__vs_search_result" android:layout="@layout/cl_search_result_panel" android:inflatedId="@id/frg_chat__vs_search_result" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+</merge>

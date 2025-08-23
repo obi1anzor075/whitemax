@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?android:selectableItemBackground" android:layout_width="90.0dip" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ru.ok.messages.views.widgets.TamAvatarView android:layout_gravity="center_horizontal" android:id="@id/row_contact_promo__iv_avatar" android:layout_width="@dimen/avatar_large" android:layout_height="@dimen/avatar_large" android:layout_marginTop="8.0dip" />
+    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/font_normal_subtitle" android:ellipsize="end" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/row_contact_promo__tv_name" android:paddingLeft="2.0dip" android:paddingTop="6.0dip" android:paddingRight="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" android:fontFamily="sans-serif-medium" android:paddingStart="2.0dip" android:paddingEnd="2.0dip" />
+</LinearLayout>

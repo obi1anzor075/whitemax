@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@id/menu_tamtam_profile__rename" android:visible="false" android:title="@string/rename_contact" app:showAsAction="never" />
+    <item android:id="@id/menu_tamtam_profile__block" android:visible="false" android:title="@string/block_contact" app:showAsAction="never" />
+    <item android:id="@id/menu_tamtam_profile__unblock" android:visible="false" android:title="@string/unblock_contact" app:showAsAction="never" />
+    <item android:id="@id/menu_tamtam_profile__clear_dialog" android:visible="false" android:title="@string/menu_chat_clear" app:showAsAction="never" />
+    <item android:id="@id/menu_tamtam_profile__remove_dialog" android:visible="false" android:title="@string/menu_chat_remove" app:showAsAction="never" />
+    <item android:id="@id/menu_tamtam_profile__delete" android:visible="false" android:title="@string/delete_contact" app:showAsAction="never" />
+</menu>

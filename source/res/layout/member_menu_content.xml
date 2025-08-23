@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.appcompat.widget.AppCompatCheckBox android:textSize="@dimen/font_normal" android:textColor="@color/text_primary" android:id="@id/member_menu_content__cb_delete_messages" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/chat_member_delete_messages" />
+    <ViewStub android:id="@id/member_menu_content__vs_delete_type" android:layout="@layout/layout_member_menu_radio" android:inflatedId="@id/member_menu_content__vs_delete_type" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</merge>

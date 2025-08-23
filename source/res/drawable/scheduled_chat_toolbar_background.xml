@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/scheduled_chat_toolbar_bottom_shape">
+        <shape android:shape="rectangle">
+            <solid android:color="#ffbdbfcd" />
+        </shape>
+    </item>
+    <item android:id="@id/scheduled_chat_toolbar_top_shape">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/accent" />
+            <padding android:left="8.0dip" android:right="8.0dip" />
+            <corners android:topLeftRadius="16.0dip" android:topRightRadius="16.0dip" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@id/menu_chat_edit__change_name" android:title="@string/change_chat_name" app:showAsAction="never" />
+    <item android:id="@id/menu_chat_edit__change_photo" android:title="@string/change_chat_photo" app:showAsAction="never" />
+    <item android:id="@id/menu_chat_edit__settings" android:title="@string/menu_settings" app:showAsAction="never" />
+    <item android:id="@id/menu_chat_edit__description" android:title="@string/menu_description" app:showAsAction="never" />
+    <item android:id="@id/menu_chat_edit__clear" android:title="@string/menu_chat_clear" app:showAsAction="never" />
+    <item android:id="@id/menu_chat_edit__report" android:title="@string/menu_chat_report" app:showAsAction="never" />
+    <item android:id="@id/menu_chat_move_admin_ownership" android:visible="false" android:title="@string/admin_move_owner" app:showAsAction="never" />
+    <item android:id="@id/menu_chat_edit__leave" android:title="@string/menu_chat_leave" app:showAsAction="never" />
+    <item android:id="@id/menu_chat_edit__remove" android:title="@string/menu_chat_remove" app:showAsAction="never" />
+</menu>

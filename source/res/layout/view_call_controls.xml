@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.appcompat.widget.AppCompatImageButton android:id="@id/view_call_controls__btn_micro" android:layout_width="@dimen/call_button_size" android:layout_height="@dimen/call_button_size" android:src="@drawable/ic_microphone_24" android:layout_toLeftOf="@id/view_call_controls__btn_speaker" android:layout_toStartOf="@id/view_call_controls__btn_speaker" />
+    <androidx.appcompat.widget.AppCompatImageButton android:id="@id/view_call_controls__btn_speaker" android:layout_width="@dimen/call_button_size" android:layout_height="@dimen/call_button_size" android:layout_marginLeft="42.0dip" android:layout_marginRight="42.0dip" android:src="@drawable/ic_sound_on_24" android:layout_centerHorizontal="true" android:layout_marginStart="42.0dip" android:layout_marginEnd="42.0dip" />
+    <androidx.appcompat.widget.AppCompatImageButton android:id="@id/view_call_controls__btn_video" android:layout_width="@dimen/call_button_size" android:layout_height="@dimen/call_button_size" android:src="@drawable/ic_video_24" android:layout_toRightOf="@id/view_call_controls__btn_speaker" android:layout_toEndOf="@id/view_call_controls__btn_speaker" />
+    <androidx.appcompat.widget.AppCompatImageButton android:id="@id/view_call_controls__btn_hangup" android:layout_width="@dimen/call_button_size" android:layout_height="@dimen/call_button_size" android:layout_marginTop="@dimen/view_call_controls__hangup_top_margin" android:src="@drawable/ic_call_off_24" android:layout_below="@id/view_call_controls__btn_speaker" android:layout_centerHorizontal="true" />
+</merge>

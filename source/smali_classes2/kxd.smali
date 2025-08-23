@@ -1,0 +1,110 @@
+.class public final Lkxd;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lz24;
+
+
+# static fields
+.field public static final a:Lkxd;
+
+.field public static final b:Llxd;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lkxd;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lkxd;->a:Lkxd;
+
+    sget-object v0, Llxd;->b:Llxd;
+
+    sput-object v0, Lkxd;->b:Llxd;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()Lg34;
+    .locals 0
+
+    sget-object p0, Lkxd;->b:Llxd;
+
+    return-object p0
+.end method
+
+.method public final b(Ljava/lang/String;Lc34;Landroid/os/Bundle;)Lj34;
+    .locals 8
+
+    sget-object p0, Lkxd;->b:Llxd;
+
+    iget-object p0, p0, Lg34;->a:Ljava/util/LinkedHashSet;
+
+    invoke-interface {p0, p2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_0
+    sget-object p0, Llxd;->b:Llxd;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object p0, Llxd;->c:Lc34;
+
+    invoke-virtual {p2, p0}, Lc34;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1
+
+    new-instance p0, Lj34;
+
+    new-instance v6, Lq62;
+
+    const/16 v0, 0xa
+
+    invoke-direct {v6, p3, v0}, Lq62;-><init>(Landroid/os/Bundle;I)V
+
+    const/16 v7, 0x10
+
+    const/4 v5, 0x0
+
+    const/4 v4, 0x1
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    invoke-direct/range {v0 .. v7}, Lj34;-><init>(Ljava/lang/String;Lc34;Landroid/os/Bundle;ILh34;Li34;I)V
+
+    return-object p0
+
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "invalid route "
+
+    invoke-static {p1, p2}, Lhr1;->f(Ljava/lang/String;Lc34;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method

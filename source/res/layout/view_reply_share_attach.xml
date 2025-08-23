@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:fresco="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:paddingTop="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <com.facebook.drawee.view.SimpleDraweeView android:id="@id/view_share_attach__iv_small_image" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginRight="8.0dip" android:layout_alignParentLeft="true" android:layout_marginEnd="8.0dip" android:layout_alignParentStart="true" fresco:actualImageScaleType="centerCrop" />
+        <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/font_small" android:ellipsize="end" android:id="@id/view_share_attach__tv_host" android:paddingBottom="1.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:includeFontPadding="false" android:layout_toRightOf="@id/view_share_attach__iv_small_image" android:layout_toEndOf="@id/view_share_attach__iv_small_image" />
+        <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/font_subtitle" android:textStyle="bold" android:ellipsize="end" android:id="@id/view_share_attach__tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:includeFontPadding="false" android:layout_toRightOf="@id/view_share_attach__iv_small_image" android:layout_below="@id/view_share_attach__tv_host" android:layout_toEndOf="@id/view_share_attach__iv_small_image" />
+        <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/font_subtitle" android:ellipsize="end" android:id="@id/view_share_attach__tv_description" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:layout_toRightOf="@id/view_share_attach__iv_small_image" android:layout_below="@id/view_share_attach__tv_title" android:layout_toEndOf="@id/view_share_attach__iv_small_image" />
+    </RelativeLayout>
+</merge>

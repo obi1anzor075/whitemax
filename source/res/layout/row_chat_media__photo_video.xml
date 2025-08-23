@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ru.ok.messages.views.widgets.ChatMediaRowLayout android:layout_gravity="bottom" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:fresco="http://schemas.android.com/apk/res-auto">
+    <ru.ok.messages.media.attaches.DraweeViewWithSensitiveWarningIcon android:layout_gravity="bottom" android:id="@id/row_chat_media__drawee" android:layout_width="fill_parent" android:layout_height="fill_parent" android:adjustViewBounds="true" fresco:actualImageScaleType="centerCrop" />
+    <ru.ok.messages.video.widgets.LiveVideoPlaceHolderView android:id="@id/row_chat_media__live_placeholder" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ru.ok.messages.views.widgets.BlockedAttachView android:layout_gravity="bottom" android:id="@id/row_chat_media__deleted_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ru.ok.messages.views.widgets.VideoInfoTextView android:layout_gravity="start|bottom" android:id="@id/row_chat_media__tv_video_info" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="2.0dip" />
+</ru.ok.messages.views.widgets.ChatMediaRowLayout>

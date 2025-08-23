@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ru.ok.tamtam.android.widgets.quickcamera.CameraxCameraApiView android:id="@id/quick_camera_view__cv_camera" android:layout_width="fill_parent" android:layout_height="fill_parent" android:keepScreenOn="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

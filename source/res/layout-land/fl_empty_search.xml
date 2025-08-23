@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/fl_empty_search" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/font_normal" android:gravity="center_horizontal" android:id="@id/fl_empty_search__tv" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="@string/contacts_filter_empty" />
+    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/font_normal" android:gravity="center_horizontal" android:id="@id/fl_empty_search__tv_action" android:padding="15.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

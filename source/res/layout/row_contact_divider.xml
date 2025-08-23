@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/row_contact_divider__divider" android:paddingLeft="70.0dip" android:layout_width="fill_parent" android:layout_height="1.0dip" android:paddingStart="70.0dip" />
+    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/font_small" android:id="@id/row_contact_divider__tv_title" android:paddingLeft="10.0dip" android:paddingTop="7.0dip" android:paddingBottom="7.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="10.0dip" />
+</LinearLayout>

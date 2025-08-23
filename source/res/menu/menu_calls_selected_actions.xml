@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/ic_trash_24" android:id="@id/call_select_delete_action" android:title="@string/call_history_delete_action" app:showAsAction="always" />
+</menu>

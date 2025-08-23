@@ -1,0 +1,7 @@
+.class public abstract Luub;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# static fields
+.field public static oneme_stickers_showcase_toolbar_title:I = 0x7f1309b7

@@ -1,0 +1,58 @@
+[
+    {
+      "name": "space_light",
+      "gradient": {
+        "colors": [
+          "#99D5D7",
+          "#80BCFF"
+        ],
+        "angle": 225
+      },
+      "pattern": {
+        "width": 280,
+        "height": 280,
+        "opacity": 0.3,
+        "image": "space_pattern.svg",
+        "is_overlay": false,
+        "color": "#007AFF"
+      }
+    },
+    {
+      "name": "space_dark",
+      "gradient": {
+        "colors": [
+          "#0E0E11",
+          "#0E0E11"
+        ],
+        "angle": 225
+      },
+      "pattern": {
+        "width": 280,
+        "height": 280,
+        "opacity": 0.40,
+        "image": "space_pattern.svg",
+        "is_overlay": false,
+        "color": "#505BC7"
+      }
+    },
+      {
+      "name": "gradient_light",
+      "gradient": {
+        "colors": [
+          "#99D5D7",
+          "#80BCFF"
+        ],
+        "angle": 225
+      }
+    },
+    {
+      "name": "gradient_dark",
+      "gradient": {
+        "colors": [
+          "#0E0E11",
+          "#0E0E11"
+        ],
+        "angle": 225
+      }
+    }
+  ]

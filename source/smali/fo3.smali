@@ -1,0 +1,151 @@
+.class public final synthetic Lfo3;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Le8;
+
+
+# instance fields
+.field public final synthetic a:Lho3;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lho3;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfo3;->a:Lho3;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lsgc;)V
+    .locals 4
+
+    iget-object p0, p0, Lfo3;->a:Lho3;
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    invoke-static {p1}, Ljjd;->C(Lsgc;)Landroid/app/Activity;
+
+    move-result-object p1
+
+    new-instance v1, Lstf;
+
+    invoke-direct {v1, p1}, Lstf;-><init>(Landroid/content/Context;)V
+
+    iget-object v2, p0, Lho3;->b:Lt97;
+
+    invoke-interface {v2}, Lt97;->getValue()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lxzc;
+
+    check-cast v2, Lvqc;
+
+    const-string v3, "invite-header"
+
+    iget-object v2, v2, Lf3;->g:Lx97;
+
+    invoke-virtual {v2, v3, v0}, Lx97;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    sget v2, Lwhc;->v:I
+
+    invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    :goto_0
+    iput-object v2, v1, Lstf;->c:Ljava/lang/Object;
+
+    const-string v2, "text/plain"
+
+    iget-object v3, v1, Lstf;->b:Ljava/lang/Object;
+
+    check-cast v3, Landroid/content/Intent;
+
+    invoke-virtual {v3, v2}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
+
+    iget-object p0, p0, Lho3;->b:Lt97;
+
+    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lxzc;
+
+    check-cast p0, Lvqc;
+
+    const-string v2, "invite-long"
+
+    iget-object v3, p0, Lf3;->g:Lx97;
+
+    invoke-virtual {v3, v2, v0}, Lx97;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    sget v2, Lwhc;->C:I
+
+    invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    sget-object v2, Lru/ok/tamtam/android/prefs/PmsKey;->invite-link:Lru/ok/tamtam/android/prefs/PmsKey;
+
+    const-string v3, "https://max.ru"
+
+    invoke-virtual {p0, v2, v3}, Lvqc;->q(Ljava/lang/Enum;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    filled-new-array {p0}, [Ljava/lang/Object;
+
+    move-result-object p0
+
+    const/4 v2, 0x1
+
+    invoke-static {p0, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-static {p1, p0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    :goto_1
+    invoke-virtual {v1, v2}, Lstf;->L(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {v1}, Lstf;->M()V
+    :try_end_0
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_2
+
+    :catch_0
+    const-string p0, "ContactsDeepLinkFactory"
+
+    const-string p1, "shareInvite: failed, no activity found"
+
+    invoke-static {p0, p1, v0}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :goto_2
+    return-void
+.end method

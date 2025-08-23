@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/ic_block_24" android:id="@id/contacts_select_block_action" android:title="@string/menu_chat_block" app:showAsAction="always" />
+    <item android:icon="@drawable/ic_trash_24" android:id="@id/contacts_select_delete_action" android:title="@string/delete_contact" app:showAsAction="always" />
+</menu>

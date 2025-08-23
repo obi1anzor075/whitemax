@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:fresco="http://schemas.android.com/apk/res-auto">
+    <com.facebook.drawee.view.SimpleDraweeView android:id="@id/row_background_select__iv_bg" android:layout_width="74.0dip" android:layout_height="74.0dip" fresco:actualImageScaleType="centerCrop" />
+    <androidx.appcompat.widget.AppCompatImageView android:id="@id/frg_background_select__iv_overlay" android:background="@drawable/rectangle_black_50" android:layout_width="74.0dip" android:layout_height="74.0dip" android:src="@drawable/ic_check_24" android:scaleType="center" />
+</FrameLayout>
