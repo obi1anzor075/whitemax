@@ -1598,7 +1598,7 @@
     <string name="message_hint_spy">Тайное сообщение</string>
     <string name="message_invite_channel_ok_user">Привет! Устанавливай WhiteMax (https://t.me/whitemaxmod) и подписывайся на канал %s</string>
     <string name="message_invite_chat_ok_user">Привет! Устанавливай WhiteMax (https://t.me/whitemaxmod) и присоединяйся к чату %s</string>
-    <string name="message_invite_ok_user">Привет! Устанавливай WhiteMax (https://t.me/whitemaxmod), общайся в чатах и подписывайся на каналы %s</string>
+    <string name="message_invite_ok_user">Привет! Устанавливай WhiteMax WhiteMax (https://t.me/whitemaxmod), общайся в чатах и подписывайся на каналы %s</string>
     <string name="message_link_forwarded">Переслано</string>
     <string name="message_link_reply_audio">Аудиосообщение</string>
     <string name="message_link_reply_audio_call">Аудиозвонок</string>
@@ -1909,7 +1909,7 @@
     <string name="oneme_empty_view_no_one_here">Здесь никого нет</string>
     <string name="oneme_error_phone_empty">Введите номер</string>
     <string name="oneme_error_phone_too_long">Слишком длинный номер</string>
-    <string name="oneme_faq_link">https://t.me/whitemaxmod</string>
+    <string name="oneme_faq_link">https://help.max.ru</string>
     <string name="oneme_fodlers_delete_folder_bottom_sheet_title">Удалить папку «%1$s»?</string>
     <string name="oneme_folder_list_recommended_folders_section_title">Рекомендованные папки</string>
     <string name="oneme_folder_list_toolbar_title">Папки</string>
@@ -2060,7 +2060,7 @@
     <string name="oneme_pick_photo_bottom_dialog_gallery_button_text">Загрузить из галереи</string>
     <string name="oneme_pick_photo_bottom_dialog_title">Фото</string>
     <string name="oneme_pinned_message_title">Закреплённое сообщение</string>
-    <string name="oneme_privacy_policy_link">https://t.me/whitemaxmod</string>
+    <string name="oneme_privacy_policy_link">https://legal.max.ru/pp</string>
     <string name="oneme_profile_add_members_action_title">Добавить в чат</string>
     <string name="oneme_profile_add_members_action_title_channel">Добавить в канал</string>
     <string name="oneme_profile_add_members_search_hint">Найти по имени</string>
@@ -2392,7 +2392,7 @@
     <string name="oneme_too_many_requests_bottomsheet_positive_button">Ok</string>
     <string name="oneme_too_many_requests_bottomsheet_subtitle">Попробуйте позже</string>
     <string name="oneme_too_many_requests_bottomsheet_title">Превышено количество запросов</string>
-    <string name="oneme_user_agreement_link">https://t.me/whitemaxmod</string>
+    <string name="oneme_user_agreement_link">https://legal.max.ru/ps</string>
     <string name="oneme_wait_please">Пожалуйста, подождите</string>
     <string name="online_status">в сети</string>
     <string name="open_all_media">Открыть все медиа</string>
@@ -2563,8 +2563,8 @@
     <string name="presence_unknown_date">был(-а) давно</string>
     <string name="privacy">Приватность</string>
     <string name="privacy_policy_accept">Нажимая \"Войти\", вы соглашаетесь с %1$sУсловиями использования WhiteMax%2$s</string>
-    <string name="privacy_policy_link_en">https://t.me/whitemaxmod</string>
-    <string name="privacy_policy_link_ru">https://t.me/whitemaxmod</string>
+    <string name="privacy_policy_link_en">https://team.tamtam.chat/en/terms/</string>
+    <string name="privacy_policy_link_ru">https://team.tamtam.chat/ru/terms/</string>
     <string name="privacy_policy_version">"%1$s
 %2$sПолитика конфиденциальности WhiteMax%3$s"</string>
     <string name="privacy_restricted_error">Профиль закрыт — нам не удалось отправить сообщение</string>
@@ -3189,7 +3189,9 @@
     <string name="tt_dates_yesterday_last_update">Обновлено вчера в %s</string>
     <string name="tt_dates_yesterday_live_location_end">Завершено вчера в %s</string>
     <string name="tt_direct_reply_message_sent">Сообщение отправлено</string>
-    <string name="tt_email_invite_body">"Привет! Скачивай мод на WhiteMAX: https://t.me/whitemaxmod"</string>
+    <string name="tt_email_invite_body">"Привет!
+Я пользуюсь мессенджером WhiteMax.
+Присоединяйся! %s"</string>
     <string name="tt_email_invite_subject">Ставь WhiteMax!</string>
     <string name="tt_file">файл</string>
     <string name="tt_file_size_unit_b">Б</string>
@@ -3262,7 +3264,7 @@
     <string name="tt_scheduled_message_send_success">Сообщение отправлено: %s</string>
     <string name="tt_smile">смайлик</string>
     <string name="tt_smiles">смайлики</string>
-    <string name="tt_sms_invite_text">Скачивай мод на WhiteMAX: https://t.me/whitemaxmod%s</string>
+    <string name="tt_sms_invite_text">Я пользуюсь мессенджером WhiteMax. Присоединяйся! %s</string>
     <string name="tt_sticker">стикер</string>
     <string name="tt_stop_live_location">Остановить</string>
     <string name="tt_typing">печатает</string>
@@ -3303,7 +3305,7 @@
     <string name="upload_was_cancelled">Отправка была отменена</string>
     <string name="v7_preference_off">OFF</string>
     <string name="v7_preference_on">ON</string>
-    <string name="version_deprecated">разработчики WhiteMax сделали версию этого мода недействительной, поэтому сообщи об этом разработчику в телеграме или установи более новую версию, если такая была выпущена</string>
+    <string name="version_deprecated">Текущая версия приложения больше не поддерживается. Пожалуйста, обновите версию</string>
     <string name="video_auto_quality">Авто</string>
     <string name="video_common_error">Не удалось воспроизвести видео</string>
     <string name="video_download">Загрузить видео</string>
