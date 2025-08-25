@@ -8,9 +8,9 @@
 
 
 # static fields
-.field public static P1:Z = false
+.field public static P1:Z
 
-.field public static Q1:Z = false
+.field public static Q1:Z
 
 .field public static final R1:[I
 

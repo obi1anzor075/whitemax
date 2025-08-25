@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static y0:Z = false
+.field public static y0:Z
 
 
 # instance fields

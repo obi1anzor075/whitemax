@@ -4,9 +4,9 @@
 
 
 # static fields
-.field public static a:Lzwa; = null
+.field public static a:Lzwa;
 
-.field public static volatile b:Z = false
+.field public static volatile b:Z
 
 .field public static final c:[F
 
