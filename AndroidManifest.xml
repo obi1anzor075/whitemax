@@ -111,7 +111,8 @@
             <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
         </provider>
         <provider android:authorities="ru.oneme.app.firebaseinitprovider" android:directBootAware="true" android:enabled="false" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
-        <activity android:name="one.me.android.calls.CallNotifierFixActivity" android:showOnLockScreen="true" android:theme="@style/CallNotifierFixActivityTheme" android:turnScreenOn="true"/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDJbuC3fODS_aR7jcOkoP6qWIsQen9XARI"/>
+		<activity android:name="one.me.android.calls.CallNotifierFixActivity" android:showOnLockScreen="true" android:theme="@style/CallNotifierFixActivityTheme" android:turnScreenOn="true"/>
         <service android:name="ru.ok.tamtam.android.services.NotificationTamService"/>
         <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="ru.ok.messages.media.attaches.ActAttachesView" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent.WhiteMenuOverflow"/>
         <activity android:exported="false" android:name="ru.ok.messages.contacts.profile.ActContactAvatars" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent"/>
