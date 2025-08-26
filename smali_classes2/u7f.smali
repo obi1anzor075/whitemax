@@ -1,59 +1,53 @@
 .class public final Lu7f;
-.super Lw7f;
+.super Lbu3;
 .source "SourceFile"
 
 
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lu7f;",
-            ">;"
-        }
-    .end annotation
-.end field
+# instance fields
+.field public X:Lfm7;
 
-.field public static final a:Lu7f;
+.field public Y:Lru/ok/tamtam/upload/workers/UploadExternalGifWorker;
+
+.field public synthetic Z:Ljava/lang/Object;
+
+.field public o:Lru/ok/tamtam/upload/workers/UploadExternalGifWorker;
+
+.field public final synthetic o0:Lru/ok/tamtam/upload/workers/UploadExternalGifWorker;
+
+.field public p0:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lru/ok/tamtam/upload/workers/UploadExternalGifWorker;Lbu3;)V
+    .locals 0
 
-    new-instance v0, Lu7f;
+    iput-object p1, p0, Lu7f;->o0:Lru/ok/tamtam/upload/workers/UploadExternalGifWorker;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lu7f;->a:Lu7f;
-
-    new-instance v0, Lxkd;
-
-    const/16 v1, 0x19
-
-    invoke-direct {v0, v1}, Lxkd;-><init>(I)V
-
-    sput-object v0, Lu7f;->CREATOR:Landroid/os/Parcelable$Creator;
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
-    .locals 0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    const/4 p0, 0x0
+    iput-object p1, p0, Lu7f;->Z:Ljava/lang/Object;
 
-    return p0
-.end method
+    iget p1, p0, Lu7f;->p0:I
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
+    const/high16 v0, -0x80000000
 
-    const/4 p0, 0x1
+    or-int/2addr p1, v0
 
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+    iput p1, p0, Lu7f;->p0:I
 
-    return-void
+    iget-object p1, p0, Lu7f;->o0:Lru/ok/tamtam/upload/workers/UploadExternalGifWorker;
+
+    invoke-virtual {p1, p0}, Lru/ok/tamtam/upload/workers/UploadExternalGifWorker;->doForegroundWork(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

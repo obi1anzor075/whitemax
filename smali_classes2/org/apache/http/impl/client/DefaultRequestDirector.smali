@@ -776,68 +776,68 @@
 
     invoke-virtual {p1}, Lorg/apache/http/conn/routing/HttpRoute;->getProxyHost()Lorg/apache/http/HttpHost;
 
-    move-result-object v0
+    move-result-object v1
 
     invoke-virtual {p1}, Lorg/apache/http/conn/routing/HttpRoute;->getTargetHost()Lorg/apache/http/HttpHost;
 
-    move-result-object v1
-
-    const/4 v2, 0x0
+    move-result-object v2
 
     const/4 v3, 0x0
 
-    move-object v5, v2
+    const/4 v4, 0x0
 
-    move v4, v3
+    move-object v5, v3
+
+    move v0, v4
 
     :goto_0
-    if-nez v4, :cond_a
+    if-nez v0, :cond_b
 
-    iget-object v4, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
+    iget-object v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
 
-    invoke-interface {v4}, Lorg/apache/http/HttpConnection;->isOpen()Z
+    invoke-interface {v0}, Lorg/apache/http/HttpConnection;->isOpen()Z
 
-    move-result v4
+    move-result v0
 
-    if-nez v4, :cond_0
+    if-nez v0, :cond_0
 
-    iget-object v4, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
+    iget-object v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
 
     iget-object v5, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->params:Lorg/apache/http/params/HttpParams;
 
-    invoke-interface {v4, p1, p2, v5}, Lorg/apache/http/conn/ManagedClientConnection;->open(Lorg/apache/http/conn/routing/HttpRoute;Lorg/apache/http/protocol/HttpContext;Lorg/apache/http/params/HttpParams;)V
+    invoke-interface {v0, p1, p2, v5}, Lorg/apache/http/conn/ManagedClientConnection;->open(Lorg/apache/http/conn/routing/HttpRoute;Lorg/apache/http/protocol/HttpContext;Lorg/apache/http/params/HttpParams;)V
 
     :cond_0
     invoke-virtual {p0, p1, p2}, Lorg/apache/http/impl/client/DefaultRequestDirector;->createConnectRequest(Lorg/apache/http/conn/routing/HttpRoute;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpRequest;
 
-    move-result-object v4
-
-    iget-object v5, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->params:Lorg/apache/http/params/HttpParams;
-
-    invoke-static {v5}, Lorg/apache/http/params/HttpProtocolParams;->getUserAgent(Lorg/apache/http/params/HttpParams;)Ljava/lang/String;
-
     move-result-object v5
 
-    if-eqz v5, :cond_1
+    iget-object v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->params:Lorg/apache/http/params/HttpParams;
+
+    invoke-static {v0}, Lorg/apache/http/params/HttpProtocolParams;->getUserAgent(Lorg/apache/http/params/HttpParams;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
 
     const-string v6, "User-Agent"
 
-    invoke-interface {v4, v6, v5}, Lorg/apache/http/HttpMessage;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v5, v6, v0}, Lorg/apache/http/HttpMessage;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_1
-    const-string v5, "Host"
+    const-string v0, "Host"
 
-    invoke-virtual {v1}, Lorg/apache/http/HttpHost;->toHostString()Ljava/lang/String;
+    invoke-virtual {v2}, Lorg/apache/http/HttpHost;->toHostString()Ljava/lang/String;
 
     move-result-object v6
 
-    invoke-interface {v4, v5, v6}, Lorg/apache/http/HttpMessage;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v5, v0, v6}, Lorg/apache/http/HttpMessage;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v5, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthState:Lorg/apache/http/auth/AuthState;
+    iget-object v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthState:Lorg/apache/http/auth/AuthState;
 
-    invoke-virtual {v5}, Lorg/apache/http/auth/AuthState;->getAuthScheme()Lorg/apache/http/auth/AuthScheme;
+    invoke-virtual {v0}, Lorg/apache/http/auth/AuthState;->getAuthScheme()Lorg/apache/http/auth/AuthScheme;
 
-    move-result-object v5
+    move-result-object v0
 
     iget-object v6, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthState:Lorg/apache/http/auth/AuthState;
 
@@ -855,7 +855,7 @@
 
     if-nez v6, :cond_2
 
-    invoke-interface {v5}, Lorg/apache/http/auth/AuthScheme;->isConnectionBased()Z
+    invoke-interface {v0}, Lorg/apache/http/auth/AuthScheme;->isConnectionBased()Z
 
     move-result v6
 
@@ -863,18 +863,18 @@
 
     :cond_2
     :try_start_0
-    invoke-interface {v5, v7, v4}, Lorg/apache/http/auth/AuthScheme;->authenticate(Lorg/apache/http/auth/Credentials;Lorg/apache/http/HttpRequest;)Lorg/apache/http/Header;
+    invoke-interface {v0, v7, v5}, Lorg/apache/http/auth/AuthScheme;->authenticate(Lorg/apache/http/auth/Credentials;Lorg/apache/http/HttpRequest;)Lorg/apache/http/Header;
 
-    move-result-object v5
+    move-result-object v0
 
-    invoke-interface {v4, v5}, Lorg/apache/http/HttpMessage;->addHeader(Lorg/apache/http/Header;)V
+    invoke-interface {v5, v0}, Lorg/apache/http/HttpMessage;->addHeader(Lorg/apache/http/Header;)V
     :try_end_0
     .catch Lorg/apache/http/auth/AuthenticationException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_1
 
     :catch_0
-    move-exception v5
+    move-exception v0
 
     iget-object v6, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
@@ -892,77 +892,79 @@
 
     invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v5}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    invoke-interface {v6, v5}, Lorg/apache/commons/logging/Log;->error(Ljava/lang/Object;)V
+    invoke-interface {v6, v0}, Lorg/apache/commons/logging/Log;->error(Ljava/lang/Object;)V
 
     :cond_3
     :goto_1
-    iget-object v5, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->requestExec:Lorg/apache/http/protocol/HttpRequestExecutor;
+    iget-object v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->requestExec:Lorg/apache/http/protocol/HttpRequestExecutor;
 
     iget-object v6, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
 
-    invoke-virtual {v5, v4, v6, p2}, Lorg/apache/http/protocol/HttpRequestExecutor;->execute(Lorg/apache/http/HttpRequest;Lorg/apache/http/HttpClientConnection;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;
+    invoke-virtual {v0, v5, v6, p2}, Lorg/apache/http/protocol/HttpRequestExecutor;->execute(Lorg/apache/http/HttpRequest;Lorg/apache/http/HttpClientConnection;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;
 
-    move-result-object v5
+    move-result-object v11
 
-    invoke-interface {v5}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
+    invoke-interface {v11}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-interface {v4}, Lorg/apache/http/StatusLine;->getStatusCode()I
+    invoke-interface {v0}, Lorg/apache/http/StatusLine;->getStatusCode()I
 
-    move-result v4
+    move-result v0
 
-    const/16 v6, 0xc8
+    const/16 v5, 0xc8
 
-    if-lt v4, v6, :cond_9
+    if-lt v0, v5, :cond_a
 
-    const-string v4, "http.auth.credentials-provider"
+    const-string v0, "http.auth.credentials-provider"
 
-    invoke-interface {p2, v4}, Lorg/apache/http/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {p2, v0}, Lorg/apache/http/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v0
 
-    check-cast v4, Lorg/apache/http/client/CredentialsProvider;
+    move-object v5, v0
+
+    check-cast v5, Lorg/apache/http/client/CredentialsProvider;
 
     const/4 v6, 0x1
 
-    if-eqz v4, :cond_7
+    if-eqz v5, :cond_9
 
-    iget-object v7, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->params:Lorg/apache/http/params/HttpParams;
+    iget-object v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->params:Lorg/apache/http/params/HttpParams;
 
-    invoke-static {v7}, Lorg/apache/http/client/params/HttpClientParams;->isAuthenticating(Lorg/apache/http/params/HttpParams;)Z
+    invoke-static {v0}, Lorg/apache/http/client/params/HttpClientParams;->isAuthenticating(Lorg/apache/http/params/HttpParams;)Z
 
-    move-result v7
+    move-result v0
 
-    if-eqz v7, :cond_7
+    if-eqz v0, :cond_9
 
-    iget-object v7, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthHandler:Lorg/apache/http/client/AuthenticationHandler;
+    iget-object v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthHandler:Lorg/apache/http/client/AuthenticationHandler;
 
-    invoke-interface {v7, v5, p2}, Lorg/apache/http/client/AuthenticationHandler;->isAuthenticationRequested(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)Z
+    invoke-interface {v0, v11, p2}, Lorg/apache/http/client/AuthenticationHandler;->isAuthenticationRequested(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)Z
 
-    move-result v7
+    move-result v0
 
-    if-eqz v7, :cond_8
+    if-eqz v0, :cond_8
 
-    iget-object v7, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
+    iget-object v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
-    const-string v8, "Proxy requested authentication"
+    const-string v7, "Proxy requested authentication"
 
-    invoke-interface {v7, v8}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
+    invoke-interface {v0, v7}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
 
-    iget-object v7, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthHandler:Lorg/apache/http/client/AuthenticationHandler;
+    iget-object v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthHandler:Lorg/apache/http/client/AuthenticationHandler;
 
-    invoke-interface {v7, v5, p2}, Lorg/apache/http/client/AuthenticationHandler;->getChallenges(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)Ljava/util/Map;
+    invoke-interface {v0, v11, p2}, Lorg/apache/http/client/AuthenticationHandler;->getChallenges(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)Ljava/util/Map;
 
     move-result-object v8
 
@@ -970,31 +972,47 @@
     iget-object v9, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthState:Lorg/apache/http/auth/AuthState;
 
     iget-object v10, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthHandler:Lorg/apache/http/client/AuthenticationHandler;
+    :try_end_1
+    .catch Lorg/apache/http/auth/AuthenticationException; {:try_start_1 .. :try_end_1} :catch_2
 
     move-object v7, p0
 
-    move-object v11, v5
+    move-object v12, p2
+
+    :try_start_2
+    invoke-direct/range {v7 .. v12}, Lorg/apache/http/impl/client/DefaultRequestDirector;->processChallenges(Ljava/util/Map;Lorg/apache/http/auth/AuthState;Lorg/apache/http/client/AuthenticationHandler;Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)V
+    :try_end_2
+    .catch Lorg/apache/http/auth/AuthenticationException; {:try_start_2 .. :try_end_2} :catch_1
+
+    goto :goto_4
+
+    :catch_1
+    move-exception v0
+
+    :goto_2
+    move-object p0, v0
+
+    goto :goto_3
+
+    :catch_2
+    move-exception v0
+
+    move-object v7, p0
 
     move-object v12, p2
 
-    invoke-direct/range {v7 .. v12}, Lorg/apache/http/impl/client/DefaultRequestDirector;->processChallenges(Ljava/util/Map;Lorg/apache/http/auth/AuthState;Lorg/apache/http/client/AuthenticationHandler;Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)V
-    :try_end_1
-    .catch Lorg/apache/http/auth/AuthenticationException; {:try_start_1 .. :try_end_1} :catch_1
-
     goto :goto_2
 
-    :catch_1
-    move-exception v7
+    :goto_3
+    iget-object p2, v7, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
-    iget-object v8, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
+    invoke-interface {p2}, Lorg/apache/commons/logging/Log;->isWarnEnabled()Z
 
-    invoke-interface {v8}, Lorg/apache/commons/logging/Log;->isWarnEnabled()Z
+    move-result p2
 
-    move-result v8
+    if-eqz p2, :cond_4
 
-    if-eqz v8, :cond_4
-
-    iget-object p1, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
+    iget-object p1, v7, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
     new-instance p2, Ljava/lang/StringBuilder;
 
@@ -1002,81 +1020,103 @@
 
     invoke-direct {p2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v7}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object p0
 
-    invoke-interface {p1, p2}, Lorg/apache/commons/logging/Log;->warn(Ljava/lang/Object;)V
+    invoke-interface {p1, p0}, Lorg/apache/commons/logging/Log;->warn(Ljava/lang/Object;)V
+
+    move-object v5, v11
+
+    goto :goto_8
+
+    :cond_4
+    :goto_4
+    iget-object p0, v7, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthState:Lorg/apache/http/auth/AuthState;
+
+    invoke-direct {v7, p0, v1, v5}, Lorg/apache/http/impl/client/DefaultRequestDirector;->updateAuthState(Lorg/apache/http/auth/AuthState;Lorg/apache/http/HttpHost;Lorg/apache/http/client/CredentialsProvider;)V
+
+    iget-object p0, v7, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthState:Lorg/apache/http/auth/AuthState;
+
+    invoke-virtual {p0}, Lorg/apache/http/auth/AuthState;->getCredentials()Lorg/apache/http/auth/Credentials;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_7
+
+    iget-object p0, v7, Lorg/apache/http/impl/client/DefaultRequestDirector;->reuseStrategy:Lorg/apache/http/ConnectionReuseStrategy;
+
+    invoke-interface {p0, v11, v12}, Lorg/apache/http/ConnectionReuseStrategy;->keepAlive(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_5
+
+    iget-object p0, v7, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
+
+    const-string p2, "Connection kept alive"
+
+    invoke-interface {p0, p2}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
+
+    invoke-interface {v11}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_6
+
+    invoke-interface {p0}, Lorg/apache/http/HttpEntity;->consumeContent()V
 
     goto :goto_5
 
-    :cond_4
-    :goto_2
-    iget-object v7, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthState:Lorg/apache/http/auth/AuthState;
-
-    invoke-direct {p0, v7, v0, v4}, Lorg/apache/http/impl/client/DefaultRequestDirector;->updateAuthState(Lorg/apache/http/auth/AuthState;Lorg/apache/http/HttpHost;Lorg/apache/http/client/CredentialsProvider;)V
-
-    iget-object v4, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthState:Lorg/apache/http/auth/AuthState;
-
-    invoke-virtual {v4}, Lorg/apache/http/auth/AuthState;->getCredentials()Lorg/apache/http/auth/Credentials;
-
-    move-result-object v4
-
-    if-eqz v4, :cond_7
-
-    iget-object v4, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->reuseStrategy:Lorg/apache/http/ConnectionReuseStrategy;
-
-    invoke-interface {v4, v5, p2}, Lorg/apache/http/ConnectionReuseStrategy;->keepAlive(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_5
-
-    iget-object v4, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
-
-    const-string v6, "Connection kept alive"
-
-    invoke-interface {v4, v6}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
-
-    invoke-interface {v5}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
-
-    move-result-object v4
-
-    if-eqz v4, :cond_6
-
-    invoke-interface {v4}, Lorg/apache/http/HttpEntity;->consumeContent()V
-
-    goto :goto_3
-
     :cond_5
-    iget-object v4, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
+    iget-object p0, v7, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
 
-    invoke-interface {v4}, Lorg/apache/http/HttpConnection;->close()V
+    invoke-interface {p0}, Lorg/apache/http/HttpConnection;->close()V
 
     :cond_6
-    :goto_3
-    move v6, v3
+    :goto_5
+    move v6, v4
 
     :cond_7
-    :goto_4
-    move v4, v6
+    :goto_6
+    move v0, v6
+
+    goto :goto_7
+
+    :cond_8
+    move-object v7, p0
+
+    move-object v12, p2
+
+    iget-object p0, v7, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthState:Lorg/apache/http/auth/AuthState;
+
+    invoke-virtual {p0, v3}, Lorg/apache/http/auth/AuthState;->setAuthScope(Lorg/apache/http/auth/AuthScope;)V
+
+    goto :goto_6
+
+    :cond_9
+    move-object v7, p0
+
+    move-object v12, p2
+
+    goto :goto_6
+
+    :goto_7
+    move-object p0, v7
+
+    move-object v5, v11
+
+    move-object p2, v12
 
     goto/16 :goto_0
 
-    :cond_8
-    iget-object v4, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthState:Lorg/apache/http/auth/AuthState;
-
-    invoke-virtual {v4, v2}, Lorg/apache/http/auth/AuthState;->setAuthScope(Lorg/apache/http/auth/AuthScope;)V
-
-    goto :goto_4
-
-    :cond_9
+    :cond_a
     new-instance p0, Lorg/apache/http/HttpException;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -1085,7 +1125,7 @@
 
     invoke-direct {p1, p2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {v5}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
+    invoke-interface {v11}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
 
     move-result-object p2
 
@@ -1099,34 +1139,36 @@
 
     throw p0
 
-    :cond_a
-    :goto_5
+    :cond_b
+    move-object v7, p0
+
+    :goto_8
     invoke-interface {v5}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
 
-    move-result-object p1
+    move-result-object p0
 
-    invoke-interface {p1}, Lorg/apache/http/StatusLine;->getStatusCode()I
+    invoke-interface {p0}, Lorg/apache/http/StatusLine;->getStatusCode()I
 
-    move-result p1
+    move-result p0
 
-    const/16 p2, 0x12b
+    const/16 p1, 0x12b
 
-    if-le p1, p2, :cond_c
+    if-le p0, p1, :cond_d
 
     invoke-interface {v5}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
 
-    move-result-object p1
+    move-result-object p0
 
-    if-eqz p1, :cond_b
+    if-eqz p0, :cond_c
 
-    new-instance p2, Lorg/apache/http/entity/BufferedHttpEntity;
+    new-instance p1, Lorg/apache/http/entity/BufferedHttpEntity;
 
-    invoke-direct {p2, p1}, Lorg/apache/http/entity/BufferedHttpEntity;-><init>(Lorg/apache/http/HttpEntity;)V
+    invoke-direct {p1, p0}, Lorg/apache/http/entity/BufferedHttpEntity;-><init>(Lorg/apache/http/HttpEntity;)V
 
-    invoke-interface {v5, p2}, Lorg/apache/http/HttpResponse;->setEntity(Lorg/apache/http/HttpEntity;)V
+    invoke-interface {v5, p1}, Lorg/apache/http/HttpResponse;->setEntity(Lorg/apache/http/HttpEntity;)V
 
-    :cond_b
-    iget-object p0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
+    :cond_c
+    iget-object p0, v7, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
 
     invoke-interface {p0}, Lorg/apache/http/HttpConnection;->close()V
 
@@ -1152,12 +1194,12 @@
 
     throw p0
 
-    :cond_c
-    iget-object p0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
+    :cond_d
+    iget-object p0, v7, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
 
     invoke-interface {p0}, Lorg/apache/http/conn/ManagedClientConnection;->markReusable()V
 
-    return v3
+    return v4
 .end method
 
 .method public determineRoute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/conn/routing/HttpRoute;
@@ -1221,13 +1263,13 @@
     :goto_0
     new-instance p3, Ljava/lang/IllegalStateException;
 
-    const-string v0, "Target host must not be null, or set in parameters. scheme="
+    const-string v0, ", host="
 
-    const-string v1, ", host="
+    const-string v1, ", path="
 
-    const-string v2, ", path="
+    const-string v2, "Target host must not be null, or set in parameters. scheme="
 
-    invoke-static {v0, p1, v1, p2, v2}, Lc3d;->j(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2, p1, v0, p2, v1}, Lzge;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -1283,7 +1325,7 @@
 
     const-string p2, " from RouteDirector."
 
-    invoke-static {v2, p1, p2}, Lrf0;->f(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, p1, p2}, Lpg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1399,7 +1441,7 @@
 .end method
 
 .method public execute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;
-    .locals 18
+    .locals 16
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/apache/http/HttpException;,
@@ -1417,27 +1459,29 @@
 
     invoke-direct {v1, v2}, Lorg/apache/http/impl/client/DefaultRequestDirector;->wrapRequest(Lorg/apache/http/HttpRequest;)Lorg/apache/http/impl/client/RequestWrapper;
 
-    move-result-object v5
-
-    iget-object v6, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->params:Lorg/apache/http/params/HttpParams;
-
-    invoke-virtual {v5, v6}, Lorg/apache/http/message/AbstractHttpMessage;->setParams(Lorg/apache/http/params/HttpParams;)V
-
-    move-object/from16 v6, p1
-
-    invoke-virtual {v1, v6, v5, v3}, Lorg/apache/http/impl/client/DefaultRequestDirector;->determineRoute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/conn/routing/HttpRoute;
-
-    move-result-object v6
-
-    new-instance v7, Lorg/apache/http/impl/client/RoutedRequest;
-
-    invoke-direct {v7, v5, v6}, Lorg/apache/http/impl/client/RoutedRequest;-><init>(Lorg/apache/http/impl/client/RequestWrapper;Lorg/apache/http/conn/routing/HttpRoute;)V
+    move-result-object v0
 
     iget-object v5, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->params:Lorg/apache/http/params/HttpParams;
 
-    invoke-static {v5}, Lorg/apache/http/conn/params/ConnManagerParams;->getTimeout(Lorg/apache/http/params/HttpParams;)J
+    invoke-virtual {v0, v5}, Lorg/apache/http/message/AbstractHttpMessage;->setParams(Lorg/apache/http/params/HttpParams;)V
 
-    move-result-wide v5
+    move-object/from16 v5, p1
+
+    invoke-virtual {v1, v5, v0, v3}, Lorg/apache/http/impl/client/DefaultRequestDirector;->determineRoute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/conn/routing/HttpRoute;
+
+    move-result-object v5
+
+    new-instance v6, Lorg/apache/http/impl/client/RoutedRequest;
+
+    invoke-direct {v6, v0, v5}, Lorg/apache/http/impl/client/RoutedRequest;-><init>(Lorg/apache/http/impl/client/RequestWrapper;Lorg/apache/http/conn/routing/HttpRoute;)V
+
+    iget-object v0, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->params:Lorg/apache/http/params/HttpParams;
+
+    invoke-static {v0}, Lorg/apache/http/conn/params/ConnManagerParams;->getTimeout(Lorg/apache/http/params/HttpParams;)J
+
+    move-result-wide v7
+
+    const/4 v0, 0x0
 
     const/4 v9, 0x0
 
@@ -1445,33 +1489,31 @@
 
     const/4 v11, 0x0
 
-    const/4 v12, 0x0
-
     :goto_0
-    if-nez v10, :cond_16
+    if-nez v9, :cond_16
 
     :try_start_0
-    invoke-virtual {v7}, Lorg/apache/http/impl/client/RoutedRequest;->getRequest()Lorg/apache/http/impl/client/RequestWrapper;
+    invoke-virtual {v6}, Lorg/apache/http/impl/client/RoutedRequest;->getRequest()Lorg/apache/http/impl/client/RequestWrapper;
+
+    move-result-object v12
+
+    invoke-virtual {v6}, Lorg/apache/http/impl/client/RoutedRequest;->getRoute()Lorg/apache/http/conn/routing/HttpRoute;
 
     move-result-object v13
 
-    invoke-virtual {v7}, Lorg/apache/http/impl/client/RoutedRequest;->getRoute()Lorg/apache/http/conn/routing/HttpRoute;
+    invoke-interface {v3, v4}, Lorg/apache/http/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v14
 
-    invoke-interface {v3, v4}, Lorg/apache/http/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
+    iget-object v15, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
 
-    move-result-object v15
+    if-nez v15, :cond_1
 
-    iget-object v8, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
+    iget-object v15, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->connManager:Lorg/apache/http/conn/ClientConnectionManager;
 
-    if-nez v8, :cond_1
+    invoke-interface {v15, v13, v14}, Lorg/apache/http/conn/ClientConnectionManager;->requestConnection(Lorg/apache/http/conn/routing/HttpRoute;Ljava/lang/Object;)Lorg/apache/http/conn/ClientConnectionRequest;
 
-    iget-object v8, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->connManager:Lorg/apache/http/conn/ClientConnectionManager;
-
-    invoke-interface {v8, v14, v15}, Lorg/apache/http/conn/ClientConnectionManager;->requestConnection(Lorg/apache/http/conn/routing/HttpRoute;Ljava/lang/Object;)Lorg/apache/http/conn/ClientConnectionRequest;
-
-    move-result-object v8
+    move-result-object v14
 
     instance-of v15, v2, Lorg/apache/http/client/methods/AbortableHttpRequest;
 
@@ -1481,7 +1523,7 @@
 
     check-cast v15, Lorg/apache/http/client/methods/AbortableHttpRequest;
 
-    invoke-interface {v15, v8}, Lorg/apache/http/client/methods/AbortableHttpRequest;->setConnectionRequest(Lorg/apache/http/conn/ClientConnectionRequest;)V
+    invoke-interface {v15, v14}, Lorg/apache/http/client/methods/AbortableHttpRequest;->setConnectionRequest(Lorg/apache/http/conn/ClientConnectionRequest;)V
     :try_end_0
     .catch Lorg/apache/http/HttpException; {:try_start_0 .. :try_end_0} :catch_2
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
@@ -1492,34 +1534,28 @@
     :catch_0
     move-exception v0
 
-    move-object v2, v0
-
-    goto/16 :goto_e
+    goto/16 :goto_d
 
     :catch_1
     move-exception v0
 
-    move-object v2, v0
-
-    goto/16 :goto_f
+    goto/16 :goto_e
 
     :catch_2
     move-exception v0
 
-    move-object v2, v0
-
-    goto/16 :goto_10
+    goto/16 :goto_f
 
     :cond_0
     :goto_1
     :try_start_1
     sget-object v15, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-interface {v8, v5, v6, v15}, Lorg/apache/http/conn/ClientConnectionRequest;->getConnection(JLjava/util/concurrent/TimeUnit;)Lorg/apache/http/conn/ManagedClientConnection;
+    invoke-interface {v14, v7, v8, v15}, Lorg/apache/http/conn/ClientConnectionRequest;->getConnection(JLjava/util/concurrent/TimeUnit;)Lorg/apache/http/conn/ManagedClientConnection;
 
-    move-result-object v8
+    move-result-object v14
 
-    iput-object v8, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
+    iput-object v14, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
     :try_end_1
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_3
     .catch Lorg/apache/http/HttpException; {:try_start_1 .. :try_end_1} :catch_2
@@ -1527,42 +1563,42 @@
     .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
 
     :try_start_2
-    iget-object v8, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->params:Lorg/apache/http/params/HttpParams;
+    iget-object v14, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->params:Lorg/apache/http/params/HttpParams;
 
-    invoke-static {v8}, Lorg/apache/http/params/HttpConnectionParams;->isStaleCheckingEnabled(Lorg/apache/http/params/HttpParams;)Z
+    invoke-static {v14}, Lorg/apache/http/params/HttpConnectionParams;->isStaleCheckingEnabled(Lorg/apache/http/params/HttpParams;)Z
 
-    move-result v8
+    move-result v14
 
-    if-eqz v8, :cond_1
+    if-eqz v14, :cond_1
 
-    iget-object v8, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
+    iget-object v14, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
     const-string v15, "Stale connection check"
 
-    invoke-interface {v8, v15}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
+    invoke-interface {v14, v15}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
 
-    iget-object v8, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
+    iget-object v14, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
 
-    invoke-interface {v8}, Lorg/apache/http/HttpConnection;->isStale()Z
+    invoke-interface {v14}, Lorg/apache/http/HttpConnection;->isStale()Z
 
-    move-result v8
+    move-result v14
 
-    if-eqz v8, :cond_1
+    if-eqz v14, :cond_1
 
-    iget-object v8, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
+    iget-object v14, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
     const-string v15, "Stale connection detected"
 
-    invoke-interface {v8, v15}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
+    invoke-interface {v14, v15}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
     :try_end_2
     .catch Lorg/apache/http/HttpException; {:try_start_2 .. :try_end_2} :catch_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
     .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_2} :catch_0
 
     :try_start_3
-    iget-object v8, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
+    iget-object v14, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
 
-    invoke-interface {v8}, Lorg/apache/http/HttpConnection;->close()V
+    invoke-interface {v14}, Lorg/apache/http/HttpConnection;->close()V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_4
     .catch Lorg/apache/http/HttpException; {:try_start_3 .. :try_end_3} :catch_2
@@ -1573,51 +1609,49 @@
     :catch_3
     move-exception v0
 
-    move-object v2, v0
-
     :try_start_4
-    new-instance v3, Ljava/io/InterruptedIOException;
+    new-instance v2, Ljava/io/InterruptedIOException;
 
-    invoke-direct {v3}, Ljava/io/InterruptedIOException;-><init>()V
+    invoke-direct {v2}, Ljava/io/InterruptedIOException;-><init>()V
 
-    invoke-virtual {v3, v2}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    invoke-virtual {v2, v0}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
-    throw v3
+    throw v2
 
     :catch_4
     :cond_1
     :goto_2
-    instance-of v8, v2, Lorg/apache/http/client/methods/AbortableHttpRequest;
+    instance-of v14, v2, Lorg/apache/http/client/methods/AbortableHttpRequest;
 
-    if-eqz v8, :cond_2
+    if-eqz v14, :cond_2
 
-    move-object v8, v2
+    move-object v14, v2
 
-    check-cast v8, Lorg/apache/http/client/methods/AbortableHttpRequest;
+    check-cast v14, Lorg/apache/http/client/methods/AbortableHttpRequest;
 
     iget-object v15, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
 
-    invoke-interface {v8, v15}, Lorg/apache/http/client/methods/AbortableHttpRequest;->setReleaseTrigger(Lorg/apache/http/conn/ConnectionReleaseTrigger;)V
+    invoke-interface {v14, v15}, Lorg/apache/http/client/methods/AbortableHttpRequest;->setReleaseTrigger(Lorg/apache/http/conn/ConnectionReleaseTrigger;)V
 
     :cond_2
-    iget-object v8, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
+    iget-object v14, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
 
-    invoke-interface {v8}, Lorg/apache/http/HttpConnection;->isOpen()Z
+    invoke-interface {v14}, Lorg/apache/http/HttpConnection;->isOpen()Z
 
-    move-result v8
+    move-result v14
 
-    if-nez v8, :cond_3
+    if-nez v14, :cond_3
 
-    iget-object v8, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
+    iget-object v14, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
 
     iget-object v15, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->params:Lorg/apache/http/params/HttpParams;
 
-    invoke-interface {v8, v14, v3, v15}, Lorg/apache/http/conn/ManagedClientConnection;->open(Lorg/apache/http/conn/routing/HttpRoute;Lorg/apache/http/protocol/HttpContext;Lorg/apache/http/params/HttpParams;)V
+    invoke-interface {v14, v13, v3, v15}, Lorg/apache/http/conn/ManagedClientConnection;->open(Lorg/apache/http/conn/routing/HttpRoute;Lorg/apache/http/protocol/HttpContext;Lorg/apache/http/params/HttpParams;)V
 
     goto :goto_3
 
     :cond_3
-    iget-object v8, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
+    iget-object v14, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
 
     iget-object v15, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->params:Lorg/apache/http/params/HttpParams;
 
@@ -1625,7 +1659,7 @@
 
     move-result v15
 
-    invoke-interface {v8, v15}, Lorg/apache/http/HttpConnection;->setSocketTimeout(I)V
+    invoke-interface {v14, v15}, Lorg/apache/http/HttpConnection;->setSocketTimeout(I)V
     :try_end_4
     .catch Lorg/apache/http/HttpException; {:try_start_4 .. :try_end_4} :catch_2
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
@@ -1633,7 +1667,7 @@
 
     :goto_3
     :try_start_5
-    invoke-virtual {v1, v14, v3}, Lorg/apache/http/impl/client/DefaultRequestDirector;->establishRoute(Lorg/apache/http/conn/routing/HttpRoute;Lorg/apache/http/protocol/HttpContext;)V
+    invoke-virtual {v1, v13, v3}, Lorg/apache/http/impl/client/DefaultRequestDirector;->establishRoute(Lorg/apache/http/conn/routing/HttpRoute;Lorg/apache/http/protocol/HttpContext;)V
     :try_end_5
     .catch Lorg/apache/http/impl/client/TunnelRefusedException; {:try_start_5 .. :try_end_5} :catch_6
     .catch Lorg/apache/http/HttpException; {:try_start_5 .. :try_end_5} :catch_2
@@ -1641,102 +1675,108 @@
     .catch Ljava/lang/RuntimeException; {:try_start_5 .. :try_end_5} :catch_0
 
     :try_start_6
-    invoke-virtual {v13}, Lorg/apache/http/impl/client/RequestWrapper;->resetHeaders()V
+    invoke-virtual {v12}, Lorg/apache/http/impl/client/RequestWrapper;->resetHeaders()V
 
-    invoke-virtual {v1, v13, v14}, Lorg/apache/http/impl/client/DefaultRequestDirector;->rewriteRequestURI(Lorg/apache/http/impl/client/RequestWrapper;Lorg/apache/http/conn/routing/HttpRoute;)V
+    invoke-virtual {v1, v12, v13}, Lorg/apache/http/impl/client/DefaultRequestDirector;->rewriteRequestURI(Lorg/apache/http/impl/client/RequestWrapper;Lorg/apache/http/conn/routing/HttpRoute;)V
 
-    invoke-virtual {v13}, Lorg/apache/http/message/AbstractHttpMessage;->getParams()Lorg/apache/http/params/HttpParams;
+    invoke-virtual {v12}, Lorg/apache/http/message/AbstractHttpMessage;->getParams()Lorg/apache/http/params/HttpParams;
 
-    move-result-object v8
+    move-result-object v10
 
-    const-string v11, "http.virtual-host"
+    const-string v14, "http.virtual-host"
 
-    invoke-interface {v8, v11}, Lorg/apache/http/params/HttpParams;->getParameter(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v10, v14}, Lorg/apache/http/params/HttpParams;->getParameter(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v10
 
-    check-cast v8, Lorg/apache/http/HttpHost;
+    check-cast v10, Lorg/apache/http/HttpHost;
 
-    if-nez v8, :cond_4
+    if-nez v10, :cond_4
 
-    invoke-virtual {v14}, Lorg/apache/http/conn/routing/HttpRoute;->getTargetHost()Lorg/apache/http/HttpHost;
+    invoke-virtual {v13}, Lorg/apache/http/conn/routing/HttpRoute;->getTargetHost()Lorg/apache/http/HttpHost;
 
-    move-result-object v8
+    move-result-object v10
 
     :cond_4
-    invoke-virtual {v14}, Lorg/apache/http/conn/routing/HttpRoute;->getProxyHost()Lorg/apache/http/HttpHost;
+    invoke-virtual {v13}, Lorg/apache/http/conn/routing/HttpRoute;->getProxyHost()Lorg/apache/http/HttpHost;
 
-    move-result-object v11
+    move-result-object v14
 
     const-string v15, "http.target_host"
 
-    invoke-interface {v3, v15, v8}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v3, v15, v10}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
-    const-string v8, "http.proxy_host"
+    const-string v10, "http.proxy_host"
 
-    invoke-interface {v3, v8, v11}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v3, v10, v14}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
-    const-string v8, "http.connection"
+    const-string v10, "http.connection"
 
-    iget-object v11, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
+    iget-object v14, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
 
-    invoke-interface {v3, v8, v11}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v3, v10, v14}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
-    const-string v8, "http.auth.target-scope"
+    const-string v10, "http.auth.target-scope"
 
-    iget-object v11, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->targetAuthState:Lorg/apache/http/auth/AuthState;
+    iget-object v14, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->targetAuthState:Lorg/apache/http/auth/AuthState;
 
-    invoke-interface {v3, v8, v11}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v3, v10, v14}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
-    const-string v8, "http.auth.proxy-scope"
+    const-string v10, "http.auth.proxy-scope"
 
-    iget-object v11, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthState:Lorg/apache/http/auth/AuthState;
+    iget-object v14, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthState:Lorg/apache/http/auth/AuthState;
 
-    invoke-interface {v3, v8, v11}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v3, v10, v14}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
-    iget-object v8, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->requestExec:Lorg/apache/http/protocol/HttpRequestExecutor;
+    iget-object v10, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->requestExec:Lorg/apache/http/protocol/HttpRequestExecutor;
 
-    iget-object v11, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->httpProcessor:Lorg/apache/http/protocol/HttpProcessor;
+    iget-object v14, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->httpProcessor:Lorg/apache/http/protocol/HttpProcessor;
 
-    invoke-virtual {v8, v13, v11, v3}, Lorg/apache/http/protocol/HttpRequestExecutor;->preProcess(Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpProcessor;Lorg/apache/http/protocol/HttpContext;)V
+    invoke-virtual {v10, v12, v14, v3}, Lorg/apache/http/protocol/HttpRequestExecutor;->preProcess(Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpProcessor;Lorg/apache/http/protocol/HttpContext;)V
 
-    const-string v8, "http.request"
+    const-string v10, "http.request"
 
-    invoke-interface {v3, v8, v13}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v3, v10, v12}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
-    const/4 v8, 0x1
+    const/4 v10, 0x1
 
-    move v11, v8
+    move v14, v11
+
+    move-object v11, v0
+
+    move v0, v14
+
+    move v14, v10
 
     :goto_4
-    if-eqz v11, :cond_e
+    if-eqz v14, :cond_e
 
-    add-int/lit8 v12, v12, 0x1
+    add-int/lit8 v15, v0, 0x1
 
-    invoke-virtual {v13}, Lorg/apache/http/impl/client/RequestWrapper;->incrementExecCount()V
+    invoke-virtual {v12}, Lorg/apache/http/impl/client/RequestWrapper;->incrementExecCount()V
 
-    invoke-virtual {v13}, Lorg/apache/http/impl/client/RequestWrapper;->getExecCount()I
+    invoke-virtual {v12}, Lorg/apache/http/impl/client/RequestWrapper;->getExecCount()I
 
-    move-result v15
+    move-result v0
 
-    if-le v15, v8, :cond_6
+    if-le v0, v10, :cond_6
 
-    invoke-virtual {v13}, Lorg/apache/http/impl/client/RequestWrapper;->isRepeatable()Z
+    invoke-virtual {v12}, Lorg/apache/http/impl/client/RequestWrapper;->isRepeatable()Z
 
-    move-result v15
+    move-result v0
 
-    if-eqz v15, :cond_5
+    if-eqz v0, :cond_5
 
     goto :goto_5
 
     :cond_5
-    new-instance v2, Lorg/apache/http/client/NonRepeatableRequestException;
+    new-instance v0, Lorg/apache/http/client/NonRepeatableRequestException;
 
-    const-string v3, "Cannot retry request with a non-repeatable request entity"
+    const-string v2, "Cannot retry request with a non-repeatable request entity"
 
-    invoke-direct {v2, v3}, Lorg/apache/http/client/NonRepeatableRequestException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v2}, Lorg/apache/http/client/NonRepeatableRequestException;-><init>(Ljava/lang/String;)V
 
-    throw v2
+    throw v0
     :try_end_6
     .catch Lorg/apache/http/HttpException; {:try_start_6 .. :try_end_6} :catch_2
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_1
@@ -1745,301 +1785,290 @@
     :cond_6
     :goto_5
     :try_start_7
-    iget-object v15, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
+    iget-object v0, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
-    invoke-interface {v15}, Lorg/apache/commons/logging/Log;->isDebugEnabled()Z
+    invoke-interface {v0}, Lorg/apache/commons/logging/Log;->isDebugEnabled()Z
 
-    move-result v15
+    move-result v0
 
-    if-eqz v15, :cond_7
+    if-eqz v0, :cond_7
 
-    iget-object v15, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
+    iget-object v0, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "Attempt "
+    const-string v10, "Attempt "
 
-    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v2, " to execute request"
+    const-string v10, " to execute request"
 
-    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v5
 
-    invoke-interface {v15, v2}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
+    invoke-interface {v0, v5}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
 
     goto :goto_6
 
     :catch_5
     move-exception v0
 
-    move-object v2, v0
-
     goto :goto_8
 
     :cond_7
     :goto_6
-    invoke-virtual {v14}, Lorg/apache/http/conn/routing/HttpRoute;->isSecure()Z
+    invoke-virtual {v13}, Lorg/apache/http/conn/routing/HttpRoute;->isSecure()Z
 
-    move-result v2
+    move-result v0
 
-    if-nez v2, :cond_9
+    if-nez v0, :cond_9
 
-    invoke-virtual {v14}, Lorg/apache/http/conn/routing/HttpRoute;->getTargetHost()Lorg/apache/http/HttpHost;
+    invoke-virtual {v13}, Lorg/apache/http/conn/routing/HttpRoute;->getTargetHost()Lorg/apache/http/HttpHost;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Lorg/apache/http/HttpHost;->getHostName()Ljava/lang/String;
+    invoke-virtual {v0}, Lorg/apache/http/HttpHost;->getHostName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-static {v2}, Lorg/apache/http/impl/client/DefaultRequestDirector;->isCleartextTrafficPermitted(Ljava/lang/String;)Z
+    invoke-static {v0}, Lorg/apache/http/impl/client/DefaultRequestDirector;->isCleartextTrafficPermitted(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_8
+    if-eqz v0, :cond_8
 
     goto :goto_7
 
     :cond_8
-    new-instance v2, Ljava/io/IOException;
+    new-instance v0, Ljava/io/IOException;
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v15, "Cleartext traffic not permitted: "
+    const-string v10, "Cleartext traffic not permitted: "
 
-    invoke-virtual {v8, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v14}, Lorg/apache/http/conn/routing/HttpRoute;->getTargetHost()Lorg/apache/http/HttpHost;
+    invoke-virtual {v13}, Lorg/apache/http/conn/routing/HttpRoute;->getTargetHost()Lorg/apache/http/HttpHost;
 
-    move-result-object v15
+    move-result-object v10
 
-    invoke-virtual {v8, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v5
 
-    invoke-direct {v2, v8}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v5}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw v2
+    throw v0
 
     :cond_9
     :goto_7
-    iget-object v2, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->requestExec:Lorg/apache/http/protocol/HttpRequestExecutor;
+    iget-object v0, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->requestExec:Lorg/apache/http/protocol/HttpRequestExecutor;
 
-    iget-object v8, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
+    iget-object v5, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
 
-    invoke-virtual {v2, v13, v8, v3}, Lorg/apache/http/protocol/HttpRequestExecutor;->execute(Lorg/apache/http/HttpRequest;Lorg/apache/http/HttpClientConnection;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;
+    invoke-virtual {v0, v12, v5, v3}, Lorg/apache/http/protocol/HttpRequestExecutor;->execute(Lorg/apache/http/HttpRequest;Lorg/apache/http/HttpClientConnection;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;
 
-    move-result-object v9
+    move-result-object v11
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_5
     .catch Lorg/apache/http/HttpException; {:try_start_7 .. :try_end_7} :catch_2
     .catch Ljava/lang/RuntimeException; {:try_start_7 .. :try_end_7} :catch_0
 
-    move-object/from16 v2, p2
+    move v0, v15
 
-    const/4 v8, 0x1
+    const/4 v10, 0x1
 
-    const/4 v11, 0x0
+    const/4 v14, 0x0
 
     goto :goto_4
 
     :goto_8
     :try_start_8
-    iget-object v8, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
+    iget-object v5, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
-    const-string v15, "Closing the connection."
+    const-string v10, "Closing the connection."
 
-    invoke-interface {v8, v15}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
+    invoke-interface {v5, v10}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
 
-    iget-object v8, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
+    iget-object v5, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
 
-    invoke-interface {v8}, Lorg/apache/http/HttpConnection;->close()V
+    invoke-interface {v5}, Lorg/apache/http/HttpConnection;->close()V
 
-    iget-object v8, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->retryHandler:Lorg/apache/http/client/HttpRequestRetryHandler;
+    iget-object v5, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->retryHandler:Lorg/apache/http/client/HttpRequestRetryHandler;
 
-    invoke-interface {v8, v2, v12, v3}, Lorg/apache/http/client/HttpRequestRetryHandler;->retryRequest(Ljava/io/IOException;ILorg/apache/http/protocol/HttpContext;)Z
+    invoke-interface {v5, v0, v15, v3}, Lorg/apache/http/client/HttpRequestRetryHandler;->retryRequest(Ljava/io/IOException;ILorg/apache/http/protocol/HttpContext;)Z
 
-    move-result v8
+    move-result v5
 
-    if-eqz v8, :cond_d
+    if-eqz v5, :cond_d
 
-    iget-object v8, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
+    iget-object v5, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
-    invoke-interface {v8}, Lorg/apache/commons/logging/Log;->isInfoEnabled()Z
+    invoke-interface {v5}, Lorg/apache/commons/logging/Log;->isInfoEnabled()Z
 
-    move-result v8
+    move-result v5
 
-    if-eqz v8, :cond_a
+    if-eqz v5, :cond_a
 
-    iget-object v8, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
+    iget-object v5, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
-    new-instance v15, Ljava/lang/StringBuilder;
+    new-instance v10, Ljava/lang/StringBuilder;
 
-    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-wide/from16 v16, v5
+    const-string v2, "I/O exception ("
 
-    const-string v5, "I/O exception ("
+    invoke-virtual {v10, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v15, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object v2
 
-    move-result-object v5
+    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    invoke-virtual {v5}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v5
+    invoke-virtual {v10, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v15, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, ") caught when processing request: "
 
-    const-string v5, ") caught when processing request: "
+    invoke-virtual {v10, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v15, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
-    invoke-virtual {v2}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v5
+    invoke-virtual {v10, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v15, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v5
-
-    invoke-interface {v8, v5}, Lorg/apache/commons/logging/Log;->info(Ljava/lang/Object;)V
-
-    goto :goto_9
+    invoke-interface {v5, v2}, Lorg/apache/commons/logging/Log;->info(Ljava/lang/Object;)V
 
     :cond_a
-    move-wide/from16 v16, v5
+    iget-object v2, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
-    :goto_9
-    iget-object v5, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
+    invoke-interface {v2}, Lorg/apache/commons/logging/Log;->isDebugEnabled()Z
 
-    invoke-interface {v5}, Lorg/apache/commons/logging/Log;->isDebugEnabled()Z
+    move-result v2
 
-    move-result v5
-
-    if-eqz v5, :cond_b
-
-    iget-object v5, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
-
-    invoke-virtual {v2}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-interface {v5, v6, v2}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;Ljava/lang/Throwable;)V
-
-    :cond_b
-    iget-object v5, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
-
-    const-string v6, "Retrying request"
-
-    invoke-interface {v5, v6}, Lorg/apache/commons/logging/Log;->info(Ljava/lang/Object;)V
-
-    invoke-virtual {v14}, Lorg/apache/http/conn/routing/HttpRoute;->getHopCount()I
-
-    move-result v5
-
-    const/4 v6, 0x1
-
-    if-ne v5, v6, :cond_c
+    if-eqz v2, :cond_b
 
     iget-object v2, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
-    const-string v5, "Reopening the direct connection."
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
-    invoke-interface {v2, v5}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
+    move-result-object v5
 
-    iget-object v2, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
+    invoke-interface {v2, v5, v0}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;Ljava/lang/Throwable;)V
 
-    iget-object v5, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->params:Lorg/apache/http/params/HttpParams;
+    :cond_b
+    iget-object v2, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
-    invoke-interface {v2, v14, v3, v5}, Lorg/apache/http/conn/ManagedClientConnection;->open(Lorg/apache/http/conn/routing/HttpRoute;Lorg/apache/http/protocol/HttpContext;Lorg/apache/http/params/HttpParams;)V
+    const-string v5, "Retrying request"
+
+    invoke-interface {v2, v5}, Lorg/apache/commons/logging/Log;->info(Ljava/lang/Object;)V
+
+    invoke-virtual {v13}, Lorg/apache/http/conn/routing/HttpRoute;->getHopCount()I
+
+    move-result v2
+
+    const/4 v5, 0x1
+
+    if-ne v2, v5, :cond_c
+
+    iget-object v0, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
+
+    const-string v2, "Reopening the direct connection."
+
+    invoke-interface {v0, v2}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
+
+    iget-object v0, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
+
+    iget-object v2, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->params:Lorg/apache/http/params/HttpParams;
+
+    invoke-interface {v0, v13, v3, v2}, Lorg/apache/http/conn/ManagedClientConnection;->open(Lorg/apache/http/conn/routing/HttpRoute;Lorg/apache/http/protocol/HttpContext;Lorg/apache/http/params/HttpParams;)V
 
     move-object/from16 v2, p2
 
-    move v8, v6
+    move v10, v5
 
-    move-wide/from16 v5, v16
+    move v0, v15
 
     goto/16 :goto_4
 
     :cond_c
-    throw v2
+    throw v0
 
     :cond_d
-    throw v2
+    throw v0
 
     :cond_e
-    move-wide/from16 v16, v5
-
-    move v6, v8
+    move v5, v10
 
     iget-object v2, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->params:Lorg/apache/http/params/HttpParams;
 
-    invoke-interface {v9, v2}, Lorg/apache/http/HttpMessage;->setParams(Lorg/apache/http/params/HttpParams;)V
+    invoke-interface {v11, v2}, Lorg/apache/http/HttpMessage;->setParams(Lorg/apache/http/params/HttpParams;)V
 
     iget-object v2, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->requestExec:Lorg/apache/http/protocol/HttpRequestExecutor;
 
-    iget-object v5, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->httpProcessor:Lorg/apache/http/protocol/HttpProcessor;
+    iget-object v10, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->httpProcessor:Lorg/apache/http/protocol/HttpProcessor;
 
-    invoke-virtual {v2, v9, v5, v3}, Lorg/apache/http/protocol/HttpRequestExecutor;->postProcess(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpProcessor;Lorg/apache/http/protocol/HttpContext;)V
+    invoke-virtual {v2, v11, v10, v3}, Lorg/apache/http/protocol/HttpRequestExecutor;->postProcess(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpProcessor;Lorg/apache/http/protocol/HttpContext;)V
 
     iget-object v2, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->reuseStrategy:Lorg/apache/http/ConnectionReuseStrategy;
 
-    invoke-interface {v2, v9, v3}, Lorg/apache/http/ConnectionReuseStrategy;->keepAlive(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)Z
+    invoke-interface {v2, v11, v3}, Lorg/apache/http/ConnectionReuseStrategy;->keepAlive(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)Z
 
-    move-result v11
+    move-result v10
 
-    if-eqz v11, :cond_f
+    if-eqz v10, :cond_f
 
     iget-object v2, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->keepAliveStrategy:Lorg/apache/http/conn/ConnectionKeepAliveStrategy;
 
-    invoke-interface {v2, v9, v3}, Lorg/apache/http/conn/ConnectionKeepAliveStrategy;->getKeepAliveDuration(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)J
+    invoke-interface {v2, v11, v3}, Lorg/apache/http/conn/ConnectionKeepAliveStrategy;->getKeepAliveDuration(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)J
 
-    move-result-wide v13
+    move-result-wide v12
 
     iget-object v2, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
 
-    sget-object v5, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    sget-object v14, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-interface {v2, v13, v14, v5}, Lorg/apache/http/conn/ManagedClientConnection;->setIdleDuration(JLjava/util/concurrent/TimeUnit;)V
+    invoke-interface {v2, v12, v13, v14}, Lorg/apache/http/conn/ManagedClientConnection;->setIdleDuration(JLjava/util/concurrent/TimeUnit;)V
 
     :cond_f
-    invoke-virtual {v1, v7, v9, v3}, Lorg/apache/http/impl/client/DefaultRequestDirector;->handleResponse(Lorg/apache/http/impl/client/RoutedRequest;Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/impl/client/RoutedRequest;
+    invoke-virtual {v1, v6, v11, v3}, Lorg/apache/http/impl/client/DefaultRequestDirector;->handleResponse(Lorg/apache/http/impl/client/RoutedRequest;Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/impl/client/RoutedRequest;
 
     move-result-object v2
 
     if-nez v2, :cond_10
 
-    move v10, v6
+    move v9, v5
 
-    goto :goto_b
+    goto :goto_a
 
     :cond_10
-    if-eqz v11, :cond_12
+    if-eqz v10, :cond_12
 
     iget-object v5, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
-    const-string v6, "Connection kept alive"
+    const-string v12, "Connection kept alive"
 
-    invoke-interface {v5, v6}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
+    invoke-interface {v5, v12}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
 
-    invoke-interface {v9}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
+    invoke-interface {v11}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
 
     move-result-object v5
 
@@ -2052,19 +2081,19 @@
 
     invoke-interface {v5}, Lorg/apache/http/conn/ManagedClientConnection;->markReusable()V
 
-    goto :goto_a
+    goto :goto_9
 
     :cond_12
     iget-object v5, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
 
     invoke-interface {v5}, Lorg/apache/http/HttpConnection;->close()V
 
-    :goto_a
+    :goto_9
     invoke-virtual {v2}, Lorg/apache/http/impl/client/RoutedRequest;->getRoute()Lorg/apache/http/conn/routing/HttpRoute;
 
     move-result-object v5
 
-    invoke-virtual {v7}, Lorg/apache/http/impl/client/RoutedRequest;->getRoute()Lorg/apache/http/conn/routing/HttpRoute;
+    invoke-virtual {v6}, Lorg/apache/http/impl/client/RoutedRequest;->getRoute()Lorg/apache/http/conn/routing/HttpRoute;
 
     move-result-object v6
 
@@ -2074,12 +2103,12 @@
 
     if-nez v5, :cond_13
 
-    invoke-virtual/range {p0 .. p0}, Lorg/apache/http/impl/client/DefaultRequestDirector;->releaseConnection()V
+    invoke-virtual {v1}, Lorg/apache/http/impl/client/DefaultRequestDirector;->releaseConnection()V
 
     :cond_13
-    move-object v7, v2
+    move-object v6, v2
 
-    :goto_b
+    :goto_a
     iget-object v2, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->userTokenHandler:Lorg/apache/http/client/UserTokenHandler;
 
     invoke-interface {v2, v3}, Lorg/apache/http/client/UserTokenHandler;->getUserToken(Lorg/apache/http/protocol/HttpContext;)Ljava/lang/Object;
@@ -2095,48 +2124,50 @@
     invoke-interface {v5, v2}, Lorg/apache/http/conn/ManagedClientConnection;->setState(Ljava/lang/Object;)V
 
     :cond_14
-    move-object/from16 v2, p2
+    move-object v2, v11
 
-    move-wide/from16 v5, v16
+    move v11, v0
+
+    move-object v0, v2
+
+    move-object/from16 v2, p2
 
     goto/16 :goto_0
 
     :catch_6
     move-exception v0
 
-    move-object v2, v0
+    iget-object v2, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
-    iget-object v3, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
+    invoke-interface {v2}, Lorg/apache/commons/logging/Log;->isDebugEnabled()Z
 
-    invoke-interface {v3}, Lorg/apache/commons/logging/Log;->isDebugEnabled()Z
+    move-result v2
 
-    move-result v3
+    if-eqz v2, :cond_15
 
-    if-eqz v3, :cond_15
+    iget-object v2, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
-    iget-object v3, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
-    invoke-virtual {v2}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v4
-
-    invoke-interface {v3, v4}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
+    invoke-interface {v2, v3}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
 
     :cond_15
-    invoke-virtual {v2}, Lorg/apache/http/impl/client/TunnelRefusedException;->getResponse()Lorg/apache/http/HttpResponse;
+    invoke-virtual {v0}, Lorg/apache/http/impl/client/TunnelRefusedException;->getResponse()Lorg/apache/http/HttpResponse;
 
-    move-result-object v9
+    move-result-object v0
 
     :cond_16
-    if-eqz v9, :cond_18
+    if-eqz v0, :cond_18
 
-    invoke-interface {v9}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
+    invoke-interface {v0}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
 
     move-result-object v2
 
     if-eqz v2, :cond_18
 
-    invoke-interface {v9}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
+    invoke-interface {v0}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
 
     move-result-object v2
 
@@ -2146,10 +2177,10 @@
 
     if-nez v2, :cond_17
 
-    goto :goto_c
+    goto :goto_b
 
     :cond_17
-    invoke-interface {v9}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
+    invoke-interface {v0}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
 
     move-result-object v2
 
@@ -2157,48 +2188,48 @@
 
     iget-object v4, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
 
-    invoke-direct {v3, v2, v4, v11}, Lorg/apache/http/conn/BasicManagedEntity;-><init>(Lorg/apache/http/HttpEntity;Lorg/apache/http/conn/ManagedClientConnection;Z)V
+    invoke-direct {v3, v2, v4, v10}, Lorg/apache/http/conn/BasicManagedEntity;-><init>(Lorg/apache/http/HttpEntity;Lorg/apache/http/conn/ManagedClientConnection;Z)V
 
-    invoke-interface {v9, v3}, Lorg/apache/http/HttpResponse;->setEntity(Lorg/apache/http/HttpEntity;)V
+    invoke-interface {v0, v3}, Lorg/apache/http/HttpResponse;->setEntity(Lorg/apache/http/HttpEntity;)V
 
-    goto :goto_d
+    goto :goto_c
 
     :cond_18
-    :goto_c
-    if-eqz v11, :cond_19
+    :goto_b
+    if-eqz v10, :cond_19
 
     iget-object v2, v1, Lorg/apache/http/impl/client/DefaultRequestDirector;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
 
     invoke-interface {v2}, Lorg/apache/http/conn/ManagedClientConnection;->markReusable()V
 
     :cond_19
-    invoke-virtual/range {p0 .. p0}, Lorg/apache/http/impl/client/DefaultRequestDirector;->releaseConnection()V
+    invoke-virtual {v1}, Lorg/apache/http/impl/client/DefaultRequestDirector;->releaseConnection()V
     :try_end_8
     .catch Lorg/apache/http/HttpException; {:try_start_8 .. :try_end_8} :catch_2
     .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_1
     .catch Ljava/lang/RuntimeException; {:try_start_8 .. :try_end_8} :catch_0
 
+    :goto_c
+    return-object v0
+
     :goto_d
-    return-object v9
+    invoke-direct {v1}, Lorg/apache/http/impl/client/DefaultRequestDirector;->abortConnection()V
+
+    throw v0
 
     :goto_e
-    invoke-direct/range {p0 .. p0}, Lorg/apache/http/impl/client/DefaultRequestDirector;->abortConnection()V
+    invoke-direct {v1}, Lorg/apache/http/impl/client/DefaultRequestDirector;->abortConnection()V
 
-    throw v2
+    throw v0
 
     :goto_f
-    invoke-direct/range {p0 .. p0}, Lorg/apache/http/impl/client/DefaultRequestDirector;->abortConnection()V
+    invoke-direct {v1}, Lorg/apache/http/impl/client/DefaultRequestDirector;->abortConnection()V
 
-    throw v2
-
-    :goto_10
-    invoke-direct/range {p0 .. p0}, Lorg/apache/http/impl/client/DefaultRequestDirector;->abortConnection()V
-
-    throw v2
+    throw v0
 .end method
 
 .method public handleResponse(Lorg/apache/http/impl/client/RoutedRequest;Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/impl/client/RoutedRequest;
-    .locals 12
+    .locals 11
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/apache/http/HttpException;,
@@ -2212,7 +2243,7 @@
 
     invoke-virtual {v0}, Lorg/apache/http/conn/routing/HttpRoute;->getProxyHost()Lorg/apache/http/HttpHost;
 
-    move-result-object v1
+    move-result-object v7
 
     invoke-virtual {p1}, Lorg/apache/http/impl/client/RoutedRequest;->getRequest()Lorg/apache/http/impl/client/RequestWrapper;
 
@@ -2236,119 +2267,119 @@
 
     if-eqz v4, :cond_2
 
-    iget p1, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->redirectCount:I
+    iget v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->redirectCount:I
 
-    iget v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->maxRedirects:I
+    iget v4, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->maxRedirects:I
 
-    if-ge p1, v0, :cond_1
+    if-ge v0, v4, :cond_1
 
-    add-int/lit8 p1, p1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    iput p1, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->redirectCount:I
+    iput v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->redirectCount:I
 
-    iget-object p1, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->redirectHandler:Lorg/apache/http/client/RedirectHandler;
+    iget-object v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->redirectHandler:Lorg/apache/http/client/RedirectHandler;
 
-    invoke-interface {p1, p2, p3}, Lorg/apache/http/client/RedirectHandler;->getLocationURI(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)Ljava/net/URI;
-
-    move-result-object p1
-
-    new-instance p2, Lorg/apache/http/HttpHost;
-
-    invoke-virtual {p1}, Ljava/net/URI;->getHost()Ljava/lang/String;
+    invoke-interface {v0, p2, p3}, Lorg/apache/http/client/RedirectHandler;->getLocationURI(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)Ljava/net/URI;
 
     move-result-object v0
 
-    invoke-virtual {p1}, Ljava/net/URI;->getPort()I
+    new-instance v4, Lorg/apache/http/HttpHost;
 
-    move-result v1
+    invoke-virtual {v0}, Ljava/net/URI;->getHost()Ljava/lang/String;
 
-    invoke-virtual {p1}, Ljava/net/URI;->getScheme()Ljava/lang/String;
+    move-result-object v5
 
-    move-result-object v4
+    invoke-virtual {v0}, Ljava/net/URI;->getPort()I
 
-    invoke-direct {p2, v0, v1, v4}, Lorg/apache/http/HttpHost;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    move-result v7
 
-    new-instance v0, Lorg/apache/http/client/methods/HttpGet;
+    invoke-virtual {v0}, Ljava/net/URI;->getScheme()Ljava/lang/String;
 
-    invoke-direct {v0, p1}, Lorg/apache/http/client/methods/HttpGet;-><init>(Ljava/net/URI;)V
+    move-result-object v8
+
+    invoke-direct {v4, v5, v7, v8}, Lorg/apache/http/HttpHost;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    new-instance v5, Lorg/apache/http/client/methods/HttpGet;
+
+    invoke-direct {v5, v0}, Lorg/apache/http/client/methods/HttpGet;-><init>(Ljava/net/URI;)V
 
     invoke-virtual {v2}, Lorg/apache/http/impl/client/RequestWrapper;->getOriginal()Lorg/apache/http/HttpRequest;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-interface {v1}, Lorg/apache/http/HttpMessage;->getAllHeaders()[Lorg/apache/http/Header;
+    invoke-interface {v2}, Lorg/apache/http/HttpMessage;->getAllHeaders()[Lorg/apache/http/Header;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v0, v1}, Lorg/apache/http/message/AbstractHttpMessage;->setHeaders([Lorg/apache/http/Header;)V
+    invoke-virtual {v5, v2}, Lorg/apache/http/message/AbstractHttpMessage;->setHeaders([Lorg/apache/http/Header;)V
 
-    new-instance v1, Lorg/apache/http/impl/client/RequestWrapper;
+    new-instance v2, Lorg/apache/http/impl/client/RequestWrapper;
 
-    invoke-direct {v1, v0}, Lorg/apache/http/impl/client/RequestWrapper;-><init>(Lorg/apache/http/HttpRequest;)V
+    invoke-direct {v2, v5}, Lorg/apache/http/impl/client/RequestWrapper;-><init>(Lorg/apache/http/HttpRequest;)V
 
-    invoke-virtual {v1, v3}, Lorg/apache/http/message/AbstractHttpMessage;->setParams(Lorg/apache/http/params/HttpParams;)V
+    invoke-virtual {v2, v3}, Lorg/apache/http/message/AbstractHttpMessage;->setParams(Lorg/apache/http/params/HttpParams;)V
 
-    invoke-virtual {p0, p2, v1, p3}, Lorg/apache/http/impl/client/DefaultRequestDirector;->determineRoute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/conn/routing/HttpRoute;
+    invoke-virtual {p0, v4, v2, p3}, Lorg/apache/http/impl/client/DefaultRequestDirector;->determineRoute(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/conn/routing/HttpRoute;
 
-    move-result-object p2
+    move-result-object v3
 
-    new-instance p3, Lorg/apache/http/impl/client/RoutedRequest;
+    new-instance v4, Lorg/apache/http/impl/client/RoutedRequest;
 
-    invoke-direct {p3, v1, p2}, Lorg/apache/http/impl/client/RoutedRequest;-><init>(Lorg/apache/http/impl/client/RequestWrapper;Lorg/apache/http/conn/routing/HttpRoute;)V
+    invoke-direct {v4, v2, v3}, Lorg/apache/http/impl/client/RoutedRequest;-><init>(Lorg/apache/http/impl/client/RequestWrapper;Lorg/apache/http/conn/routing/HttpRoute;)V
 
-    iget-object v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
+    iget-object v2, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
-    invoke-interface {v0}, Lorg/apache/commons/logging/Log;->isDebugEnabled()Z
+    invoke-interface {v2}, Lorg/apache/commons/logging/Log;->isDebugEnabled()Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_0
+    if-eqz v2, :cond_0
 
-    iget-object p0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
+    iget-object v1, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v1, "Redirecting to \'"
+    const-string v5, "Redirecting to \'"
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string p1, "\' via "
+    const-string v0, "\' via "
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-interface {p0, p1}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
+    invoke-interface {v1, v0}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
 
     :cond_0
-    return-object p3
+    return-object v4
 
     :cond_1
-    new-instance p1, Lorg/apache/http/client/RedirectException;
+    new-instance v0, Lorg/apache/http/client/RedirectException;
 
-    new-instance p2, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string p3, "Maximum redirects ("
+    const-string v3, "Maximum redirects ("
 
-    invoke-direct {p2, p3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget p0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->maxRedirects:I
+    iget v1, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->maxRedirects:I
 
-    const-string p3, ") exceeded"
+    const-string v3, ") exceeded"
 
-    invoke-static {p2, p0, p3}, Lwn6;->j(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v1, v3}, Lm26;->i(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
-    move-result-object p0
+    move-result-object v1
 
-    invoke-direct {p1, p0}, Lorg/apache/http/client/RedirectException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lorg/apache/http/client/RedirectException;-><init>(Ljava/lang/String;)V
 
-    throw p1
+    throw v0
 
     :cond_2
     const-string v2, "http.auth.credentials-provider"
@@ -2357,126 +2388,130 @@
 
     move-result-object v2
 
-    check-cast v2, Lorg/apache/http/client/CredentialsProvider;
+    move-object v8, v2
 
-    const/4 v4, 0x0
+    check-cast v8, Lorg/apache/http/client/CredentialsProvider;
 
-    if-eqz v2, :cond_a
+    const/4 v9, 0x0
+
+    if-eqz v8, :cond_a
 
     invoke-static {v3}, Lorg/apache/http/client/params/HttpClientParams;->isAuthenticating(Lorg/apache/http/params/HttpParams;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_a
+    if-eqz v2, :cond_a
 
-    iget-object v3, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->targetAuthHandler:Lorg/apache/http/client/AuthenticationHandler;
+    iget-object v2, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->targetAuthHandler:Lorg/apache/http/client/AuthenticationHandler;
 
-    invoke-interface {v3, p2, p3}, Lorg/apache/http/client/AuthenticationHandler;->isAuthenticationRequested(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)Z
+    invoke-interface {v2, p2, p3}, Lorg/apache/http/client/AuthenticationHandler;->isAuthenticationRequested(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)Z
 
-    move-result v3
+    move-result v2
 
-    const-string v5, "Authentication error: "
+    const-string v10, "Authentication error: "
 
-    if-eqz v3, :cond_6
+    if-eqz v2, :cond_6
 
-    const-string v1, "http.target_host"
+    const-string v2, "http.target_host"
 
-    invoke-interface {p3, v1}, Lorg/apache/http/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {p3, v2}, Lorg/apache/http/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Lorg/apache/http/HttpHost;
+    check-cast v2, Lorg/apache/http/HttpHost;
 
-    if-nez v1, :cond_3
+    if-nez v2, :cond_3
 
     invoke-virtual {v0}, Lorg/apache/http/conn/routing/HttpRoute;->getTargetHost()Lorg/apache/http/HttpHost;
 
-    move-result-object v1
+    move-result-object v2
 
     :cond_3
+    move-object v7, v2
+
     iget-object v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
-    const-string v3, "Target requested authentication"
+    const-string v2, "Target requested authentication"
 
-    invoke-interface {v0, v3}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
+    invoke-interface {v0, v2}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
 
     iget-object v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->targetAuthHandler:Lorg/apache/http/client/AuthenticationHandler;
 
     invoke-interface {v0, p2, p3}, Lorg/apache/http/client/AuthenticationHandler;->getChallenges(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)Ljava/util/Map;
 
-    move-result-object v7
+    move-result-object v2
 
     :try_start_0
-    iget-object v8, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->targetAuthState:Lorg/apache/http/auth/AuthState;
+    iget-object v3, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->targetAuthState:Lorg/apache/http/auth/AuthState;
 
-    iget-object v9, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->targetAuthHandler:Lorg/apache/http/client/AuthenticationHandler;
+    iget-object v4, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->targetAuthHandler:Lorg/apache/http/client/AuthenticationHandler;
 
-    move-object v6, p0
+    move-object v1, p0
 
-    move-object v10, p2
+    move-object v5, p2
 
-    move-object v11, p3
+    move-object v6, p3
 
-    invoke-direct/range {v6 .. v11}, Lorg/apache/http/impl/client/DefaultRequestDirector;->processChallenges(Ljava/util/Map;Lorg/apache/http/auth/AuthState;Lorg/apache/http/client/AuthenticationHandler;Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)V
+    invoke-direct/range {v1 .. v6}, Lorg/apache/http/impl/client/DefaultRequestDirector;->processChallenges(Ljava/util/Map;Lorg/apache/http/auth/AuthState;Lorg/apache/http/client/AuthenticationHandler;Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)V
     :try_end_0
     .catch Lorg/apache/http/auth/AuthenticationException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
     :catch_0
-    move-exception p2
+    move-exception v0
 
-    iget-object p3, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
+    iget-object v2, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
-    invoke-interface {p3}, Lorg/apache/commons/logging/Log;->isWarnEnabled()Z
+    invoke-interface {v2}, Lorg/apache/commons/logging/Log;->isWarnEnabled()Z
 
-    move-result p3
+    move-result v2
 
-    if-eqz p3, :cond_4
+    if-eqz v2, :cond_4
 
-    iget-object p0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
+    iget-object v1, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
-    new-instance p1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {p1, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p2}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v0
 
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-interface {p0, p1}, Lorg/apache/commons/logging/Log;->warn(Ljava/lang/Object;)V
+    invoke-interface {v1, v0}, Lorg/apache/commons/logging/Log;->warn(Ljava/lang/Object;)V
 
-    return-object v4
+    return-object v9
 
     :cond_4
     :goto_0
-    iget-object p2, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->targetAuthState:Lorg/apache/http/auth/AuthState;
+    iget-object v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->targetAuthState:Lorg/apache/http/auth/AuthState;
 
-    invoke-direct {p0, p2, v1, v2}, Lorg/apache/http/impl/client/DefaultRequestDirector;->updateAuthState(Lorg/apache/http/auth/AuthState;Lorg/apache/http/HttpHost;Lorg/apache/http/client/CredentialsProvider;)V
+    invoke-direct {p0, v0, v7, v8}, Lorg/apache/http/impl/client/DefaultRequestDirector;->updateAuthState(Lorg/apache/http/auth/AuthState;Lorg/apache/http/HttpHost;Lorg/apache/http/client/CredentialsProvider;)V
 
-    iget-object p0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->targetAuthState:Lorg/apache/http/auth/AuthState;
+    iget-object v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->targetAuthState:Lorg/apache/http/auth/AuthState;
 
-    invoke-virtual {p0}, Lorg/apache/http/auth/AuthState;->getCredentials()Lorg/apache/http/auth/Credentials;
+    invoke-virtual {v0}, Lorg/apache/http/auth/AuthState;->getCredentials()Lorg/apache/http/auth/Credentials;
 
-    move-result-object p0
+    move-result-object v0
 
-    if-eqz p0, :cond_5
+    if-eqz v0, :cond_5
 
-    return-object p1
+    goto :goto_2
 
     :cond_5
-    return-object v4
+    return-object v9
 
     :cond_6
     iget-object v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->targetAuthState:Lorg/apache/http/auth/AuthState;
 
-    invoke-virtual {v0, v4}, Lorg/apache/http/auth/AuthState;->setAuthScope(Lorg/apache/http/auth/AuthScope;)V
+    invoke-virtual {v0, v9}, Lorg/apache/http/auth/AuthState;->setAuthScope(Lorg/apache/http/auth/AuthScope;)V
 
     iget-object v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthHandler:Lorg/apache/http/client/AuthenticationHandler;
 
@@ -2488,90 +2523,91 @@
 
     iget-object v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
-    const-string v3, "Proxy requested authentication"
+    const-string v2, "Proxy requested authentication"
 
-    invoke-interface {v0, v3}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
+    invoke-interface {v0, v2}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;)V
 
     iget-object v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthHandler:Lorg/apache/http/client/AuthenticationHandler;
 
     invoke-interface {v0, p2, p3}, Lorg/apache/http/client/AuthenticationHandler;->getChallenges(Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)Ljava/util/Map;
 
-    move-result-object v7
+    move-result-object v2
 
     :try_start_1
-    iget-object v8, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthState:Lorg/apache/http/auth/AuthState;
+    iget-object v3, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthState:Lorg/apache/http/auth/AuthState;
 
-    iget-object v9, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthHandler:Lorg/apache/http/client/AuthenticationHandler;
+    iget-object v4, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthHandler:Lorg/apache/http/client/AuthenticationHandler;
 
-    move-object v6, p0
+    move-object v1, p0
 
-    move-object v10, p2
+    move-object v5, p2
 
-    move-object v11, p3
+    move-object v6, p3
 
-    invoke-direct/range {v6 .. v11}, Lorg/apache/http/impl/client/DefaultRequestDirector;->processChallenges(Ljava/util/Map;Lorg/apache/http/auth/AuthState;Lorg/apache/http/client/AuthenticationHandler;Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)V
+    invoke-direct/range {v1 .. v6}, Lorg/apache/http/impl/client/DefaultRequestDirector;->processChallenges(Ljava/util/Map;Lorg/apache/http/auth/AuthState;Lorg/apache/http/client/AuthenticationHandler;Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)V
     :try_end_1
     .catch Lorg/apache/http/auth/AuthenticationException; {:try_start_1 .. :try_end_1} :catch_1
 
     goto :goto_1
 
     :catch_1
-    move-exception p2
+    move-exception v0
 
-    iget-object p3, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
+    iget-object v2, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
-    invoke-interface {p3}, Lorg/apache/commons/logging/Log;->isWarnEnabled()Z
+    invoke-interface {v2}, Lorg/apache/commons/logging/Log;->isWarnEnabled()Z
 
-    move-result p3
+    move-result v2
 
-    if-eqz p3, :cond_7
+    if-eqz v2, :cond_7
 
-    iget-object p0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
+    iget-object v1, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->log:Lorg/apache/commons/logging/Log;
 
-    new-instance p1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {p1, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p2}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v0
 
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-interface {p0, p1}, Lorg/apache/commons/logging/Log;->warn(Ljava/lang/Object;)V
+    invoke-interface {v1, v0}, Lorg/apache/commons/logging/Log;->warn(Ljava/lang/Object;)V
 
-    return-object v4
+    return-object v9
 
     :cond_7
     :goto_1
-    iget-object p2, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthState:Lorg/apache/http/auth/AuthState;
+    iget-object v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthState:Lorg/apache/http/auth/AuthState;
 
-    invoke-direct {p0, p2, v1, v2}, Lorg/apache/http/impl/client/DefaultRequestDirector;->updateAuthState(Lorg/apache/http/auth/AuthState;Lorg/apache/http/HttpHost;Lorg/apache/http/client/CredentialsProvider;)V
+    invoke-direct {p0, v0, v7, v8}, Lorg/apache/http/impl/client/DefaultRequestDirector;->updateAuthState(Lorg/apache/http/auth/AuthState;Lorg/apache/http/HttpHost;Lorg/apache/http/client/CredentialsProvider;)V
 
-    iget-object p0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthState:Lorg/apache/http/auth/AuthState;
+    iget-object v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthState:Lorg/apache/http/auth/AuthState;
 
-    invoke-virtual {p0}, Lorg/apache/http/auth/AuthState;->getCredentials()Lorg/apache/http/auth/Credentials;
+    invoke-virtual {v0}, Lorg/apache/http/auth/AuthState;->getCredentials()Lorg/apache/http/auth/Credentials;
 
-    move-result-object p0
+    move-result-object v0
 
-    if-eqz p0, :cond_8
+    if-eqz v0, :cond_8
 
+    :goto_2
     return-object p1
 
     :cond_8
-    return-object v4
+    return-object v9
 
     :cond_9
-    iget-object p0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthState:Lorg/apache/http/auth/AuthState;
+    iget-object v0, p0, Lorg/apache/http/impl/client/DefaultRequestDirector;->proxyAuthState:Lorg/apache/http/auth/AuthState;
 
-    invoke-virtual {p0, v4}, Lorg/apache/http/auth/AuthState;->setAuthScope(Lorg/apache/http/auth/AuthScope;)V
+    invoke-virtual {v0, v9}, Lorg/apache/http/auth/AuthState;->setAuthScope(Lorg/apache/http/auth/AuthScope;)V
 
     :cond_a
-    return-object v4
+    return-object v9
 .end method
 
 .method public releaseConnection()V
@@ -2644,12 +2680,12 @@
 
     invoke-virtual {p1, p0}, Lorg/apache/http/impl/client/RequestWrapper;->setURI(Ljava/net/URI;)V
 
-    goto :goto_0
+    return-void
 
     :catch_0
     move-exception p0
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_0
     invoke-virtual {p0}, Ljava/net/URI;->isAbsolute()Z
@@ -2669,10 +2705,9 @@
     .catch Ljava/net/URISyntaxException; {:try_start_0 .. :try_end_0} :catch_0
 
     :cond_1
-    :goto_0
     return-void
 
-    :goto_1
+    :goto_0
     new-instance p2, Lorg/apache/http/ProtocolException;
 
     new-instance v0, Ljava/lang/StringBuilder;

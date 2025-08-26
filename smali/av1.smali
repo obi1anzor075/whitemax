@@ -1,3 +1,3 @@
-.class public interface abstract Lav1;
+.class public final synthetic Lav1;
 .super Ljava/lang/Object;
 .source "SourceFile"

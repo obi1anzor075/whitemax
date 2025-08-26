@@ -1,68 +1,23 @@
-.class public final Lgxa;
+.class public interface abstract Lgxa;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lqz3;
-
-
-# static fields
-.field public static final a:Lgxa;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lgxa;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lgxa;->a:Lgxa;
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final G(Lyz3;)J
-    .locals 0
-
-    new-instance p0, Ljava/io/IOException;
-
-    const-string p1, "PlaceholderDataSource cannot be opened"
-
-    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+.method public abstract a()V
 .end method
 
-.method public final H(Lcqe;)V
+.method public abstract b(Lwwa;)V
+.end method
+
+.method public c()V
     .locals 0
 
     return-void
 .end method
 
-.method public final close()V
-    .locals 0
-
-    return-void
+.method public abstract d(J)V
 .end method
 
-.method public final getUri()Landroid/net/Uri;
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public final read([BII)I
-    .locals 0
-
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw p0
+.method public abstract e(Lkotlinx/coroutines/internal/ContextScope;)V
 .end method

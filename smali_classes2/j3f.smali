@@ -1,126 +1,85 @@
 .class public final Lj3f;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Lu98;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final b:Ll3f;
-
-.field public final c:Lbf5;
-
-.field public final d:Lbd;
-
-.field public final e:Lxmc;
-
-.field public final f:Lqmc;
-
-.field public final g:Lvmc;
-
-.field public final h:Lzef;
-
-.field public final i:Ljava/util/HashMap;
+.field public final synthetic Y:Lone/me/settings/twofa/creation/onboarding/TwoFAOnboardingScreen;
 
 
 # direct methods
-.method public constructor <init>(Lu98;Ll3f;Lbf5;Lbd;Lxmc;Lqmc;Lvmc;)V
-    .locals 1
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/settings/twofa/creation/onboarding/TwoFAOnboardingScreen;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lj3f;->Y:Lone/me/settings/twofa/creation/onboarding/TwoFAOnboardingScreen;
 
-    new-instance v0, Lzef;
+    const/4 p2, 0x2
 
-    invoke-direct {v0}, Lzef;-><init>()V
-
-    iput-object v0, p0, Lj3f;->h:Lzef;
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lj3f;->i:Ljava/util/HashMap;
-
-    iput-object p1, p0, Lj3f;->a:Lu98;
-
-    iput-object p2, p0, Lj3f;->b:Ll3f;
-
-    iput-object p3, p0, Lj3f;->c:Lbf5;
-
-    iput-object p4, p0, Lj3f;->d:Lbd;
-
-    iput-object p5, p0, Lj3f;->e:Lxmc;
-
-    iput-object p6, p0, Lj3f;->f:Lqmc;
-
-    iput-object p7, p0, Lj3f;->g:Lvmc;
+    invoke-direct {p0, p2, p1}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a(La3f;)V
-    .locals 5
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    monitor-enter p0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    :try_start_0
-    iget-object v0, p0, Lj3f;->i:Ljava/util/HashMap;
+    invoke-virtual {p0, p1, p2}, Lj3f;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object p0
 
-    iget-object v0, p0, Lj3f;->b:Ll3f;
+    check-cast p0, Lj3f;
 
-    invoke-virtual {v0}, Ll3f;->a()Lphd;
+    sget-object p1, Le5f;->a:Le5f;
 
-    move-result-object v0
+    invoke-virtual {p0, p1}, Lj3f;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v1, Lg3f;
+    return-object p1
+.end method
 
-    const/4 v2, 0x2
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    invoke-direct {v1, p1, v2}, Lg3f;-><init>(La3f;I)V
+    new-instance v0, Lj3f;
 
-    new-instance v2, Lw63;
+    iget-object p0, p0, Lj3f;->Y:Lone/me/settings/twofa/creation/onboarding/TwoFAOnboardingScreen;
 
-    const/4 v3, 0x2
+    invoke-direct {v0, p2, p0}, Lj3f;-><init>(Lkotlin/coroutines/Continuation;Lone/me/settings/twofa/creation/onboarding/TwoFAOnboardingScreen;)V
 
-    invoke-direct {v2, v0, v3, v1}, Lw63;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    iput-object p1, v0, Lj3f;->X:Ljava/lang/Object;
 
-    invoke-virtual {v2}, Lv63;->l()Lms9;
+    return-object v0
+.end method
 
-    move-result-object v0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    sget-object v1, Lz3d;->j:Lgf6;
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    new-instance v2, Lg3f;
+    iget-object p0, p0, Lj3f;->X:Ljava/lang/Object;
 
-    const/4 v3, 0x0
+    check-cast p0, Lkl9;
 
-    invoke-direct {v2, p1, v3}, Lg3f;-><init>(La3f;I)V
+    instance-of p1, p0, Lp64;
 
-    new-instance v3, Lf5;
+    if-eqz p1, :cond_0
 
-    const/16 v4, 0x15
+    sget-object p1, Ljhd;->c:Ljhd;
 
-    invoke-direct {v3, v4, p1}, Lf5;-><init>(ILjava/lang/Object;)V
+    check-cast p0, Lp64;
 
-    invoke-static {v0, v1, v2, v3}, Liu7;->a0(Lms9;Lof3;Lof3;Lj6;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {p1, p0}, Lu2;->F0(Lp64;)V
 
-    monitor-exit p0
+    :cond_0
+    sget-object p0, Le5f;->a:Le5f;
 
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
+    return-object p0
 .end method

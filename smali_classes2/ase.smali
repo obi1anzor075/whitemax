@@ -3,62 +3,51 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ldyc;
+.implements Lzre;
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field public a:Ljava/lang/Long;
 
-.field public final b:Lu16;
-
-.field public final c:I
-
-.field public final d:Lu16;
-
-.field public final e:Lu16;
-
-.field public final f:Li26;
-
-.field public final g:I
-
-
-# direct methods
-.method public constructor <init>(Ljava/lang/Object;Lu16;Lu16;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lase;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lase;->b:Lu16;
-
-    const/4 p1, 0x1
-
-    iput p1, p0, Lase;->c:I
-
-    iput-object p3, p0, Lase;->d:Lu16;
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lase;->e:Lu16;
-
-    iput-object p1, p0, Lase;->f:Li26;
-
-    const p1, 0x7fffffff
-
-    iput p1, p0, Lase;->g:I
-
-    return-void
-.end method
+.field public b:Ljava/lang/Long;
 
 
 # virtual methods
-.method public final iterator()Ljava/util/Iterator;
-    .locals 1
+.method public a()Ljava/lang/Long;
+    .locals 6
 
-    new-instance v0, Llf5;
+    iget-object v0, p0, Lase;->b:Ljava/lang/Long;
 
-    invoke-direct {v0, p0}, Llf5;-><init>(Lase;)V
+    const/4 v1, 0x0
 
-    return-object v0
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide v2
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v4
+
+    sub-long/2addr v4, v2
+
+    iget-object p0, p0, Lase;->a:Ljava/lang/Long;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide v0
+
+    add-long/2addr v0, v4
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    return-object v1
 .end method

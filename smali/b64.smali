@@ -1,61 +1,226 @@
-.class public final Lb64;
-.super Lvh0;
+.class public Lb64;
+.super Ldy;
 .source "SourceFile"
 
 
 # instance fields
-.field public final X:La64;
+.field public X:Z
+
+.field public Y:J
+
+.field public Z:Ljava/nio/ByteBuffer;
+
+.field public final c:Lj04;
+
+.field public o:Ljava/nio/ByteBuffer;
+
+.field public final o0:I
 
 
 # direct methods
-.method public constructor <init>(La64;JJ)V
-    .locals 6
+.method static constructor <clinit>()V
+    .locals 1
 
-    const/4 v5, 0x0
+    const-string v0, "goog.exo.decoder"
 
-    move-object v0, p0
+    invoke-static {v0}, Lu75;->a(Ljava/lang/String;)V
 
-    move-wide v1, p2
+    return-void
+.end method
 
-    move-wide v3, p4
+.method public constructor <init>(I)V
+    .locals 2
 
-    invoke-direct/range {v0 .. v5}, Lvh0;-><init>(JJI)V
+    const/4 v0, 0x2
 
-    iput-object p1, p0, Lb64;->X:La64;
+    invoke-direct {p0, v0}, Ldy;-><init>(I)V
+
+    new-instance v0, Lj04;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lj04;-><init>(I)V
+
+    iput-object v0, p0, Lb64;->c:Lj04;
+
+    iput p1, p0, Lb64;->o0:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
+.method public o()V
     .locals 2
 
-    invoke-virtual {p0}, Lvh0;->c()V
+    const/4 v0, 0x0
 
-    iget-wide v0, p0, Lvh0;->o:J
+    iput v0, p0, Ldy;->b:I
 
-    iget-object p0, p0, Lb64;->X:La64;
+    iget-object v1, p0, Lb64;->o:Ljava/nio/ByteBuffer;
 
-    invoke-virtual {p0, v0, v1}, La64;->g(J)J
+    if-eqz v1, :cond_0
 
-    move-result-wide v0
+    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
 
-    return-wide v0
+    :cond_0
+    iget-object v1, p0, Lb64;->Z:Ljava/nio/ByteBuffer;
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
+
+    :cond_1
+    iput-boolean v0, p0, Lb64;->X:Z
+
+    return-void
 .end method
 
-.method public final b()J
-    .locals 2
+.method public final p(I)Ljava/nio/ByteBuffer;
+    .locals 3
 
-    invoke-virtual {p0}, Lvh0;->c()V
+    const/4 v0, 0x1
 
-    iget-wide v0, p0, Lvh0;->o:J
+    iget v1, p0, Lb64;->o0:I
 
-    iget-object p0, p0, Lb64;->X:La64;
+    if-ne v1, v0, :cond_0
 
-    invoke-virtual {p0, v0, v1}, La64;->f(J)J
+    invoke-static {p1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
-    move-result-wide v0
+    move-result-object p0
 
-    return-wide v0
+    return-object p0
+
+    :cond_0
+    const/4 v0, 0x2
+
+    if-ne v1, v0, :cond_1
+
+    invoke-static {p1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_1
+    iget-object p0, p0, Lb64;->o:Ljava/nio/ByteBuffer;
+
+    if-nez p0, :cond_2
+
+    const/4 p0, 0x0
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {p0}, Ljava/nio/Buffer;->capacity()I
+
+    move-result p0
+
+    :goto_0
+    new-instance v0, Lcom/google/android/exoplayer2/decoder/DecoderInputBuffer$InsufficientCapacityException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const/16 v2, 0x2c
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Buffer too small ("
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p0, " < "
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public final q(I)V
+    .locals 3
+
+    iget-object v0, p0, Lb64;->o:Ljava/nio/ByteBuffer;
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0, p1}, Lb64;->p(I)Ljava/nio/ByteBuffer;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lb64;->o:Ljava/nio/ByteBuffer;
+
+    return-void
+
+    :cond_0
+    invoke-virtual {v0}, Ljava/nio/Buffer;->capacity()I
+
+    move-result v1
+
+    invoke-virtual {v0}, Ljava/nio/Buffer;->position()I
+
+    move-result v2
+
+    add-int/2addr p1, v2
+
+    if-lt v1, p1, :cond_1
+
+    iput-object v0, p0, Lb64;->o:Ljava/nio/ByteBuffer;
+
+    return-void
+
+    :cond_1
+    invoke-virtual {p0, p1}, Lb64;->p(I)Ljava/nio/ByteBuffer;
+
+    move-result-object p1
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->order()Ljava/nio/ByteOrder;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+
+    if-lez v2, :cond_2
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
+
+    invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
+
+    :cond_2
+    iput-object p1, p0, Lb64;->o:Ljava/nio/ByteBuffer;
+
+    return-void
+.end method
+
+.method public final s()V
+    .locals 1
+
+    iget-object v0, p0, Lb64;->o:Ljava/nio/ByteBuffer;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
+
+    :cond_0
+    iget-object p0, p0, Lb64;->Z:Ljava/nio/ByteBuffer;
+
+    if-eqz p0, :cond_1
+
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
+
+    :cond_1
+    return-void
 .end method

@@ -1,111 +1,139 @@
 .class public final Ls2e;
-.super Landroid/text/style/ClickableSpan;
+.super Landroid/graphics/drawable/DrawableWrapper;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/text/style/UpdateAppearance;
-.implements Lmhe;
-
-
-# static fields
-.field public static final synthetic X:I
+.implements Landroid/graphics/drawable/Animatable;
+.implements Lppe;
 
 
 # instance fields
-.field public final a:Lx2e;
-
-.field public final b:Li26;
-
-.field public c:I
-
-.field public o:I
+.field public final synthetic a:Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;
 
 
 # direct methods
-.method public constructor <init>(Ls16;Lx2e;Li26;)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 2
 
-    invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
+    new-instance v0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;
 
-    iput-object p2, p0, Ls2e;->a:Lx2e;
+    sget v1, Lgsb;->sticker_typing:I
 
-    iput-object p3, p0, Ls2e;->b:Li26;
+    invoke-direct {v0, p1, v1}, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;-><init>(Landroid/content/Context;I)V
 
-    invoke-interface {p1}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-direct {p0, v0}, Landroid/graphics/drawable/DrawableWrapper;-><init>(Landroid/graphics/drawable/Drawable;)V
 
-    move-result-object p2
+    iput-object v0, p0, Ls2e;->a:Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;
 
-    check-cast p2, Lpda;
-
-    invoke-interface {p2}, Lpda;->e()Ly3;
-
-    const p2, -0xff8501
-
-    iput p2, p0, Ls2e;->c:I
-
-    invoke-interface {p1}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableWrapper;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
-    check-cast p1, Lpda;
+    check-cast p1, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;
 
-    invoke-interface {p1}, Lpda;->e()Ly3;
+    new-instance v0, Lvi5;
 
-    iput p2, p0, Ls2e;->o:I
+    const/4 v1, 0x2
+
+    invoke-direct {v0, p0, v1}, Lvi5;-><init>(Landroid/graphics/drawable/Drawable$Callback;I)V
+
+    invoke-virtual {p1, v0}, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->registerAnimationCallback(Lde;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 1
-
-    iget-object v0, p0, Ls2e;->b:Li26;
-
-    iget-object p0, p0, Ls2e;->a:Lx2e;
-
-    invoke-interface {v0, p1, p0}, Li26;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public final onThemeChanged(Lpda;)V
+.method public final isRunning()Z
     .locals 0
 
-    invoke-interface {p1}, Lpda;->e()Ly3;
+    iget-object p0, p0, Ls2e;->a:Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;
 
-    const p1, -0xff8501
-
-    iput p1, p0, Ls2e;->c:I
-
-    iput p1, p0, Ls2e;->o:I
-
-    return-void
-.end method
-
-.method public final updateDrawState(Landroid/text/TextPaint;)V
-    .locals 1
-
-    invoke-super {p0, p1}, Landroid/text/style/ClickableSpan;->updateDrawState(Landroid/text/TextPaint;)V
-
-    iget v0, p0, Ls2e;->c:I
-
-    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
-
-    iget p0, p0, Ls2e;->o:I
-
-    const/16 v0, 0x50
-
-    invoke-static {p0, v0}, Lj33;->h(II)I
+    invoke-virtual {p0}, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->isRunning()Z
 
     move-result p0
 
-    iput p0, p1, Landroid/text/TextPaint;->bgColor:I
+    return p0
+.end method
 
-    const/4 p0, 0x0
+.method public final onThemeChanged(Lyha;)V
+    .locals 1
 
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setUnderlineText(Z)V
+    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableWrapper;->getDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    check-cast p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;
+
+    invoke-interface {p1}, Lyha;->getIcon()Lds6;
+
+    move-result-object p1
+
+    iget p1, p1, Lds6;->j:I
+
+    const-string v0, "_R_G_L_4_G_D_0_P_0"
+
+    invoke-static {p0, v0, p1}, Lcu0;->B0(Lwbf;Ljava/lang/String;I)V
+
+    const-string v0, "_R_G_L_4_G_D_1_P_0"
+
+    invoke-static {p0, v0, p1}, Lcu0;->B0(Lwbf;Ljava/lang/String;I)V
+
+    const-string v0, "_R_G_L_4_G_D_2_P_0"
+
+    invoke-static {p0, v0, p1}, Lcu0;->B0(Lwbf;Ljava/lang/String;I)V
+
+    const-string v0, "_R_G_L_3_G_D_0_P_0"
+
+    invoke-static {p0, v0, p1}, Lcu0;->B0(Lwbf;Ljava/lang/String;I)V
+
+    const-string v0, "_R_G_L_2_G_D_0_P_0"
+
+    invoke-static {p0, v0, p1}, Lcu0;->B0(Lwbf;Ljava/lang/String;I)V
+
+    const-string v0, "_R_G_L_2_G_D_1_P_0"
+
+    invoke-static {p0, v0, p1}, Lcu0;->B0(Lwbf;Ljava/lang/String;I)V
+
+    const-string v0, "_R_G_L_2_G_D_2_P_0"
+
+    invoke-static {p0, v0, p1}, Lcu0;->B0(Lwbf;Ljava/lang/String;I)V
+
+    const-string v0, "_R_G_L_1_G_D_0_P_0"
+
+    invoke-static {p0, v0, p1}, Lcu0;->B0(Lwbf;Ljava/lang/String;I)V
+
+    const-string v0, "_R_G_L_0_G_D_0_P_0"
+
+    invoke-static {p0, v0, p1}, Lcu0;->B0(Lwbf;Ljava/lang/String;I)V
+
+    const-string v0, "_R_G_L_0_G_D_1_P_0"
+
+    invoke-static {p0, v0, p1}, Lcu0;->B0(Lwbf;Ljava/lang/String;I)V
+
+    const-string v0, "_R_G_L_0_G_D_2_P_0"
+
+    invoke-static {p0, v0, p1}, Lcu0;->B0(Lwbf;Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public final start()V
+    .locals 0
+
+    iget-object p0, p0, Ls2e;->a:Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;
+
+    invoke-virtual {p0}, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->start()V
+
+    return-void
+.end method
+
+.method public final stop()V
+    .locals 0
+
+    iget-object p0, p0, Ls2e;->a:Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;
+
+    invoke-virtual {p0}, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->stop()V
 
     return-void
 .end method

@@ -150,7 +150,15 @@
     sget-object v0, Lorg/apache/http/conn/routing/RouteInfo$LayerType;->LAYERED:Lorg/apache/http/conn/routing/RouteInfo$LayerType;
 
     :goto_2
+    move-object v2, p1
+
+    move-object v1, p2
+
+    move v4, p4
+
     move-object v6, v0
+
+    move-object v0, p0
 
     goto :goto_3
 
@@ -160,14 +168,6 @@
     goto :goto_2
 
     :goto_3
-    move-object v0, p0
-
-    move-object v1, p2
-
-    move-object v2, p1
-
-    move v4, p4
-
     invoke-direct/range {v0 .. v6}, Lorg/apache/http/conn/routing/HttpRoute;-><init>(Ljava/net/InetAddress;Lorg/apache/http/HttpHost;[Lorg/apache/http/HttpHost;ZLorg/apache/http/conn/routing/RouteInfo$TunnelType;Lorg/apache/http/conn/routing/RouteInfo$LayerType;)V
 
     if-eqz p3, :cond_2
@@ -186,26 +186,20 @@
 .end method
 
 .method public constructor <init>(Lorg/apache/http/HttpHost;Ljava/net/InetAddress;Lorg/apache/http/HttpHost;ZLorg/apache/http/conn/routing/RouteInfo$TunnelType;Lorg/apache/http/conn/routing/RouteInfo$LayerType;)V
-    .locals 7
+    .locals 1
 
     .line 14
     invoke-static {p3}, Lorg/apache/http/conn/routing/HttpRoute;->toChain(Lorg/apache/http/HttpHost;)[Lorg/apache/http/HttpHost;
 
-    move-result-object v3
+    move-result-object p3
 
-    move-object v0, p0
+    move-object v0, p2
 
-    move-object v1, p2
+    move-object p2, p1
 
-    move-object v2, p1
+    move-object p1, v0
 
-    move v4, p4
-
-    move-object v5, p5
-
-    move-object v6, p6
-
-    invoke-direct/range {v0 .. v6}, Lorg/apache/http/conn/routing/HttpRoute;-><init>(Ljava/net/InetAddress;Lorg/apache/http/HttpHost;[Lorg/apache/http/HttpHost;ZLorg/apache/http/conn/routing/RouteInfo$TunnelType;Lorg/apache/http/conn/routing/RouteInfo$LayerType;)V
+    invoke-direct/range {p0 .. p6}, Lorg/apache/http/conn/routing/HttpRoute;-><init>(Ljava/net/InetAddress;Lorg/apache/http/HttpHost;[Lorg/apache/http/HttpHost;ZLorg/apache/http/conn/routing/RouteInfo$TunnelType;Lorg/apache/http/conn/routing/RouteInfo$LayerType;)V
 
     return-void
 .end method
@@ -222,9 +216,9 @@
 
     move-object v0, p0
 
-    move-object v1, p2
-
     move-object v2, p1
+
+    move-object v1, p2
 
     move v4, p3
 
@@ -234,26 +228,20 @@
 .end method
 
 .method public constructor <init>(Lorg/apache/http/HttpHost;Ljava/net/InetAddress;[Lorg/apache/http/HttpHost;ZLorg/apache/http/conn/routing/RouteInfo$TunnelType;Lorg/apache/http/conn/routing/RouteInfo$LayerType;)V
-    .locals 7
+    .locals 1
 
     .line 13
     invoke-static {p3}, Lorg/apache/http/conn/routing/HttpRoute;->toChain([Lorg/apache/http/HttpHost;)[Lorg/apache/http/HttpHost;
 
-    move-result-object v3
+    move-result-object p3
 
-    move-object v0, p0
+    move-object v0, p2
 
-    move-object v1, p2
+    move-object p2, p1
 
-    move-object v2, p1
+    move-object p1, v0
 
-    move v4, p4
-
-    move-object v5, p5
-
-    move-object v6, p6
-
-    invoke-direct/range {v0 .. v6}, Lorg/apache/http/conn/routing/HttpRoute;-><init>(Ljava/net/InetAddress;Lorg/apache/http/HttpHost;[Lorg/apache/http/HttpHost;ZLorg/apache/http/conn/routing/RouteInfo$TunnelType;Lorg/apache/http/conn/routing/RouteInfo$LayerType;)V
+    invoke-direct/range {p0 .. p6}, Lorg/apache/http/conn/routing/HttpRoute;-><init>(Ljava/net/InetAddress;Lorg/apache/http/HttpHost;[Lorg/apache/http/HttpHost;ZLorg/apache/http/conn/routing/RouteInfo$TunnelType;Lorg/apache/http/conn/routing/RouteInfo$LayerType;)V
 
     return-void
 .end method
@@ -509,15 +497,14 @@
 
     if-nez p0, :cond_0
 
-    goto :goto_0
+    return v0
 
     :cond_0
     array-length p0, p0
 
-    add-int/2addr v0, p0
+    add-int/2addr p0, v0
 
-    :goto_0
-    return v0
+    return p0
 .end method
 
 .method public final getHopTarget(I)Lorg/apache/http/HttpHost;
@@ -539,12 +526,11 @@
 
     aget-object p0, p0, p1
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     iget-object p0, p0, Lorg/apache/http/conn/routing/HttpRoute;->targetHost:Lorg/apache/http/HttpHost;
 
-    :goto_0
     return-object p0
 
     :cond_1
@@ -554,7 +540,7 @@
 
     const-string v2, " exceeds route length "
 
-    invoke-static {v1, p1, v0, v2}, Lme4;->g(Ljava/lang/String;IILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p1, v0, v2}, Lv04;->h(Ljava/lang/String;IILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -567,7 +553,7 @@
 
     const-string v0, "Hop index must not be negative: "
 
-    invoke-static {p1, v0}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -601,14 +587,13 @@
 
     const/4 p0, 0x0
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     const/4 v0, 0x0
 
     aget-object p0, p0, v0
 
-    :goto_0
     return-object p0
 .end method
 
@@ -715,12 +700,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -743,12 +727,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 

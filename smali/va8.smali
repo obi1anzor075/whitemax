@@ -2,221 +2,326 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ldb8;
+
 
 # instance fields
-.field public final a:Landroid/os/Bundle;
+.field public final X:Z
 
-.field public b:Lqb8;
+.field public final Y:Ljava/lang/String;
+
+.field public final Z:J
+
+.field public final a:J
+
+.field public final b:J
+
+.field public final c:Ld00;
+
+.field public final o:Lau6;
+
+.field public final o0:I
 
 
 # direct methods
-.method public constructor <init>(Lqb8;Z)V
+.method public constructor <init>(JJLd00;Lau6;Ljava/lang/String;I)V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-boolean v0, p6, Lau6;->e:Z
 
-    if-eqz p1, :cond_0
+    and-int/lit8 p8, p8, 0x20
 
-    new-instance v0, Landroid/os/Bundle;
+    if-eqz p8, :cond_0
 
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+    iget-object p7, p6, Lau6;->k:Ljava/lang/String;
 
-    iput-object v0, p0, Lva8;->a:Landroid/os/Bundle;
+    if-nez p7, :cond_0
 
-    iput-object p1, p0, Lva8;->b:Lqb8;
-
-    const-string p0, "selector"
-
-    iget-object p1, p1, Lqb8;->a:Landroid/os/Bundle;
-
-    invoke-virtual {v0, p0, p1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
-
-    const-string p0, "activeScan"
-
-    invoke-virtual {v0, p0, p2}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
-
-    return-void
+    const-string p7, ""
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string p1, "selector must not be null"
+    iput-wide p1, p0, Lva8;->a:J
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    iput-wide p3, p0, Lva8;->b:J
 
-    throw p0
+    iput-object p5, p0, Lva8;->c:Ld00;
+
+    iput-object p6, p0, Lva8;->o:Lau6;
+
+    iput-boolean v0, p0, Lva8;->X:Z
+
+    iput-object p7, p0, Lva8;->Y:Ljava/lang/String;
+
+    iget-object p1, p6, Lau6;->k:Ljava/lang/String;
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
+
+    move-result p1
+
+    int-to-long p1, p1
+
+    goto :goto_0
+
+    :cond_1
+    const-wide/16 p1, 0x0
+
+    :goto_0
+    iput-wide p1, p0, Lva8;->Z:J
+
+    sget p1, Lb6a;->g:I
+
+    iput p1, p0, Lva8;->o0:I
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 7
 
-    iget-object v0, p0, Lva8;->b:Lqb8;
+    const/4 v0, 0x1
 
-    if-nez v0, :cond_1
+    if-ne p0, p1, :cond_0
 
-    iget-object v0, p0, Lva8;->a:Landroid/os/Bundle;
-
-    const-string v1, "selector"
-
-    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    new-instance v2, Lqb8;
-
-    invoke-direct {v2, v1, v0}, Lqb8;-><init>(Ljava/util/List;Landroid/os/Bundle;)V
-
-    move-object v1, v2
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    sget-object v0, Lqb8;->c:Lqb8;
+    instance-of v1, p1, Lva8;
 
-    :goto_0
-    iput-object v1, p0, Lva8;->b:Lqb8;
+    const/4 v2, 0x0
 
     if-nez v1, :cond_1
 
-    sget-object v0, Lqb8;->c:Lqb8;
-
-    iput-object v0, p0, Lva8;->b:Lqb8;
+    return v2
 
     :cond_1
-    return-void
-.end method
+    check-cast p1, Lva8;
 
-.method public final b()Z
-    .locals 1
+    iget-wide v3, p0, Lva8;->a:J
 
-    iget-object p0, p0, Lva8;->a:Landroid/os/Bundle;
+    iget-wide v5, p1, Lva8;->a:J
 
-    const-string v0, "activeScan"
+    cmp-long v1, v3, v5
 
-    invoke-virtual {p0, v0}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;)Z
+    if-eqz v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-wide v3, p0, Lva8;->b:J
+
+    iget-wide v5, p1, Lva8;->b:J
+
+    cmp-long v1, v3, v5
+
+    if-eqz v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object v1, p0, Lva8;->c:Ld00;
+
+    iget-object v3, p1, Lva8;->c:Ld00;
+
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_4
+
+    return v2
+
+    :cond_4
+    iget-object v1, p0, Lva8;->o:Lau6;
+
+    iget-object v3, p1, Lva8;->o:Lau6;
+
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_5
+
+    return v2
+
+    :cond_5
+    iget-boolean v1, p0, Lva8;->X:Z
+
+    iget-boolean v3, p1, Lva8;->X:Z
+
+    if-eq v1, v3, :cond_6
+
+    return v2
+
+    :cond_6
+    iget-object p0, p0, Lva8;->Y:Ljava/lang/String;
+
+    iget-object p1, p1, Lva8;->Y:Ljava/lang/String;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
+
+    if-nez p0, :cond_7
+
+    return v2
+
+    :cond_7
+    return v0
+.end method
+
+.method public final getItemId()J
+    .locals 2
+
+    iget-wide v0, p0, Lva8;->Z:J
+
+    return-wide v0
+.end method
+
+.method public final hashCode()I
+    .locals 4
+
+    iget-wide v0, p0, Lva8;->a:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget-wide v2, p0, Lva8;->b:J
+
+    invoke-static {v0, v1, v2, v3}, Lzge;->m(IIJ)I
+
+    move-result v0
+
+    iget-object v2, p0, Lva8;->c:Ld00;
+
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v2
+
+    add-int/2addr v2, v0
+
+    mul-int/2addr v2, v1
+
+    iget-object v0, p0, Lva8;->o:Lau6;
+
+    invoke-virtual {v0}, Lau6;->hashCode()I
+
+    move-result v0
+
+    add-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget-boolean v2, p0, Lva8;->X:Z
+
+    invoke-static {v0, v1, v2}, Luz1;->f(IIZ)I
+
+    move-result v0
+
+    iget-object p0, p0, Lva8;->Y:Ljava/lang/String;
+
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
 
     return p0
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+.method public final i()J
+    .locals 2
 
-    instance-of v0, p1, Lva8;
+    iget-wide v0, p0, Lva8;->b:J
 
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lva8;
-
-    invoke-virtual {p0}, Lva8;->a()V
-
-    iget-object v0, p0, Lva8;->b:Lqb8;
-
-    invoke-virtual {p1}, Lva8;->a()V
-
-    iget-object v2, p1, Lva8;->b:Lqb8;
-
-    invoke-virtual {v0, v2}, Lqb8;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lva8;->b()Z
-
-    move-result p0
-
-    invoke-virtual {p1}, Lva8;->b()Z
-
-    move-result p1
-
-    if-ne p0, p1, :cond_0
-
-    const/4 v1, 0x1
-
-    :cond_0
-    return v1
+    return-wide v0
 .end method
 
-.method public final hashCode()I
-    .locals 1
+.method public final j()J
+    .locals 2
 
-    invoke-virtual {p0}, Lva8;->a()V
+    iget-wide v0, p0, Lva8;->a:J
 
-    iget-object v0, p0, Lva8;->b:Lqb8;
+    return-wide v0
+.end method
 
-    invoke-virtual {v0}, Lqb8;->hashCode()I
+.method public final m()I
+    .locals 0
 
-    move-result v0
-
-    invoke-virtual {p0}, Lva8;->b()Z
-
-    move-result p0
-
-    xor-int/2addr p0, v0
+    iget p0, p0, Lva8;->o0:I
 
     return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 2
+    .locals 4
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const-string v0, "Photo(messageId="
 
-    const-string v1, "DiscoveryRequest{ selector="
+    const-string v1, ", attachId="
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-wide v2, p0, Lva8;->a:J
 
-    invoke-virtual {p0}, Lva8;->a()V
+    invoke-static {v2, v3, v0, v1}, Lzt1;->k(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lva8;->b:Lqb8;
+    move-result-object v0
+
+    iget-wide v1, p0, Lva8;->b:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", attachModel="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lva8;->c:Ld00;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", activeScan="
+    const-string v1, ", imageAttachConfig="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0}, Lva8;->b()Z
+    iget-object v1, p0, Lva8;->o:Lau6;
 
-    move-result v1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", isGif="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lva8;->X:Z
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v1, ", isValid="
+    const-string v1, ", localId="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, ")"
 
-    invoke-virtual {p0}, Lva8;->a()V
+    iget-object p0, p0, Lva8;->Y:Ljava/lang/String;
 
-    iget-object p0, p0, Lva8;->b:Lqb8;
-
-    invoke-virtual {p0}, Lqb8;->a()V
-
-    iget-object p0, p0, Lqb8;->b:Ljava/util/List;
-
-    const/4 v1, 0x0
-
-    invoke-interface {p0, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    xor-int/lit8 p0, p0, 0x1
-
-    const-string v1, " }"
-
-    invoke-static {v0, p0, v1}, Lhr1;->j(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1, p0, v2}, Lrqc;->j(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final x()Ljava/lang/String;
+    .locals 0
+
+    iget-object p0, p0, Lva8;->Y:Ljava/lang/String;
 
     return-object p0
 .end method

@@ -1,138 +1,99 @@
-.class public final Lq9b;
-.super Ll5e;
+.class public final synthetic Lq9b;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lk26;
+.implements Lv56;
 
 
 # instance fields
-.field public final synthetic X:I
+.field public final synthetic a:I
 
-.field public synthetic Y:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
-
-.field public synthetic Z:Lpda;
+.field public final synthetic b:Ld4g;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILkotlin/coroutines/Continuation;I)V
+.method public synthetic constructor <init>(Ld4g;I)V
     .locals 0
 
-    iput p3, p0, Lq9b;->X:I
+    iput p2, p0, Lq9b;->a:I
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lq9b;->b:Ld4g;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
 
-    iget p0, p0, Lq9b;->X:I
+    iget v0, p0, Lq9b;->a:I
 
-    check-cast p1, Landroidx/coordinatorlayout/widget/CoordinatorLayout;
-
-    check-cast p2, Lpda;
-
-    check-cast p3, Lkotlin/coroutines/Continuation;
-
-    packed-switch p0, :pswitch_data_0
-
-    new-instance p0, Lq9b;
-
-    const/4 v0, 0x3
-
-    const/4 v1, 0x1
-
-    invoke-direct {p0, v0, p3, v1}, Lq9b;-><init>(ILkotlin/coroutines/Continuation;I)V
-
-    iput-object p1, p0, Lq9b;->Y:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
-
-    iput-object p2, p0, Lq9b;->Z:Lpda;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lq9b;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-
-    :pswitch_0
-    new-instance p0, Lq9b;
-
-    const/4 v0, 0x3
-
-    const/4 v1, 0x0
-
-    invoke-direct {p0, v0, p3, v1}, Lq9b;-><init>(ILkotlin/coroutines/Continuation;I)V
-
-    iput-object p1, p0, Lq9b;->Y:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
-
-    iput-object p2, p0, Lq9b;->Z:Lpda;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lq9b;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    iget v0, p0, Lq9b;->X:I
+    iget-object p0, p0, Lq9b;->b:Ld4g;
 
     packed-switch v0, :pswitch_data_0
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    iget-object p0, p0, Ld4g;->Y:Ljava/lang/Object;
 
-    iget-object p1, p0, Lq9b;->Y:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
+    check-cast p0, Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;
 
-    iget-object p0, p0, Lq9b;->Z:Lpda;
-
-    invoke-interface {p0}, Lpda;->b()Lnd0;
+    invoke-virtual {p0}, Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;->s0()Li22;
 
     move-result-object p0
 
-    iget p0, p0, Lnd0;->h:I
+    iget-object p0, p0, Li22;->b:Lw12;
 
-    invoke-virtual {p1, p0}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-virtual {p0}, Lw12;->e()V
 
-    sget-object p0, Ljue;->a:Ljue;
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 
     :pswitch_0
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    iget-object p0, p0, Ld4g;->Y:Ljava/lang/Object;
 
-    iget-object p1, p0, Lq9b;->Y:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
+    check-cast p0, Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;
 
-    iget-object p0, p0, Lq9b;->Z:Lpda;
-
-    invoke-interface {p0}, Lpda;->b()Lnd0;
+    invoke-virtual {p0}, Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;->s0()Li22;
 
     move-result-object p0
 
-    iget p0, p0, Lnd0;->h:I
+    iget-object v0, p0, Ljof;->a:Lkotlinx/coroutines/internal/ContextScope;
 
-    invoke-virtual {p1, p0}, Landroid/view/View;->setBackgroundColor(I)V
+    new-instance v1, Lg22;
 
-    sget-object p0, Ljue;->a:Ljue;
+    const/4 v2, 0x0
 
-    return-object p0
+    invoke-direct {v1, p0, v2}, Lg22;-><init>(Li22;Lkotlin/coroutines/Continuation;)V
 
-    nop
+    const/4 p0, 0x3
+
+    invoke-static {v0, v2, v2, v1, p0}, Lzo3;->E(Lox3;Lhx3;Lrx3;Ll66;I)Ldwd;
+
+    goto :goto_0
+
+    :pswitch_1
+    iget-object p0, p0, Ld4g;->Y:Ljava/lang/Object;
+
+    check-cast p0, Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;
+
+    invoke-virtual {p0}, Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;->s0()Li22;
+
+    move-result-object p0
+
+    iget-object p0, p0, Li22;->b:Lw12;
+
+    invoke-virtual {p0}, Lw12;->a()V
+
+    goto :goto_0
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

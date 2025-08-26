@@ -22,4 +22,5 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation

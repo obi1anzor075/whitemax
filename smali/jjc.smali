@@ -1,98 +1,119 @@
-.class public abstract Ljjc;
-.super Lr37;
+.class public final Ljjc;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public dequeueWork()Lm37;
-    .locals 3
+# instance fields
+.field public final a:Ljava/util/LinkedHashMap;
 
-    const/4 v0, 0x0
 
-    :try_start_0
-    iget-object v1, p0, Lr37;->mJobImpl:Lk37;
+# direct methods
+.method public constructor <init>(I)V
+    .locals 0
 
-    if-eqz v1, :cond_0
+    packed-switch p1, :pswitch_data_0
 
-    invoke-interface {v1}, Lk37;->b()Lm37;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    new-instance p1, Ljava/util/LinkedHashMap;
 
-    goto :goto_0
+    invoke-direct {p1}, Ljava/util/LinkedHashMap;-><init>()V
 
-    :cond_0
-    iget-object v1, p0, Lr37;->mCompatQueue:Ljava/util/ArrayList;
+    iput-object p1, p0, Ljjc;->a:Ljava/util/LinkedHashMap;
 
-    monitor-enter v1
-    :try_end_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+    return-void
 
-    :try_start_1
-    iget-object v2, p0, Lr37;->mCompatQueue:Ljava/util/ArrayList;
+    :pswitch_0
+    new-instance p1, Ljava/util/LinkedHashMap;
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+    invoke-direct {p1}, Ljava/util/LinkedHashMap;-><init>()V
 
-    move-result v2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-lez v2, :cond_1
+    iput-object p1, p0, Ljjc;->a:Ljava/util/LinkedHashMap;
 
-    iget-object p0, p0, Lr37;->mCompatQueue:Ljava/util/ArrayList;
+    return-void
 
-    const/4 v2, 0x0
+    nop
 
-    invoke-virtual {p0, v2}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lm37;
-
-    monitor-exit v1
-
-    move-object v0, p0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_1
-
-    :cond_1
-    monitor-exit v1
-
-    :goto_0
-    return-object v0
-
-    :goto_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :try_start_2
-    throw p0
-    :try_end_2
-    .catch Ljava/lang/SecurityException; {:try_start_2 .. :try_end_2} :catch_0
-
-    :catch_0
-    move-exception p0
-
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
-
-    return-object v0
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public onCreate()V
-    .locals 2
 
-    invoke-super {p0}, Lr37;->onCreate()V
+# virtual methods
+.method public varargs a([Lv89;)V
+    .locals 7
 
-    new-instance v0, Lo37;
+    array-length v0, p1
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lo37;-><init>(Lr37;I)V
+    :goto_0
+    if-ge v1, v0, :cond_2
 
-    iput-object v0, p0, Lr37;->mJobImpl:Lk37;
+    aget-object v2, p1, v1
 
+    iget v3, v2, Lv89;->a:I
+
+    iget v4, v2, Lv89;->b:I
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    iget-object v5, p0, Ljjc;->a:Ljava/util/LinkedHashMap;
+
+    invoke-virtual {v5, v3}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v6
+
+    if-nez v6, :cond_0
+
+    new-instance v6, Ljava/util/TreeMap;
+
+    invoke-direct {v6}, Ljava/util/TreeMap;-><init>()V
+
+    invoke-interface {v5, v3, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_0
+    check-cast v6, Ljava/util/TreeMap;
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-interface {v6, v3}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v6, v3}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-static {v3}, Ljava/util/Objects;->toString(Ljava/lang/Object;)Ljava/lang/String;
+
+    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    :cond_1
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-interface {v6, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_2
     return-void
 .end method

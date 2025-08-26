@@ -1,192 +1,25 @@
-.class public final synthetic Lqq1;
+.class public final Lqq1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lew0;
-
-.field public final synthetic c:Lsn1;
-
-
-# direct methods
-.method public synthetic constructor <init>(Lew0;Lsn1;I)V
-    .locals 0
-
-    iput p3, p0, Lqq1;->a:I
-
-    iput-object p1, p0, Lqq1;->b:Lew0;
-
-    iput-object p2, p0, Lqq1;->c:Lsn1;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.implements Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$DisabledAudioDeviceUsagePolicy;
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final isAvailableForAutoSelect(Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;)Z
+    .locals 0
 
-    iget v0, p0, Lqq1;->a:I
+    sget-object p0, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;->BLUETOOTH:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
 
-    packed-switch v0, :pswitch_data_0
+    if-ne p1, p0, :cond_0
 
-    const/4 v0, 0x1
+    const/4 p0, 0x1
 
-    iget-object v1, p0, Lqq1;->b:Lew0;
-
-    iput-boolean v0, v1, Lew0;->Y:Z
-
-    new-instance v0, Landroidx/camera/core/CameraControl$OperationCanceledException;
-
-    const-string v2, "Camera2CameraControl was updated with new options."
-
-    invoke-direct {v0, v2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
-
-    iget-object v2, v1, Lew0;->w0:Ljava/lang/Object;
-
-    check-cast v2, Lsn1;
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v2, v0}, Lsn1;->d(Ljava/lang/Throwable;)Z
-
-    const/4 v0, 0x0
-
-    iput-object v0, v1, Lew0;->w0:Ljava/lang/Object;
+    return p0
 
     :cond_0
-    iget-object p0, p0, Lqq1;->c:Lsn1;
-
-    iput-object p0, v1, Lew0;->w0:Ljava/lang/Object;
-
-    iget-boolean p0, v1, Lew0;->b:Z
-
-    if-eqz p0, :cond_1
-
-    iget-object p0, v1, Lew0;->c:Ljava/lang/Object;
-
-    check-cast p0, Lzq1;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v0, Lrgc;
-
-    const/16 v2, 0x16
-
-    invoke-direct {v0, v2, p0}, Lrgc;-><init>(ILjava/lang/Object;)V
-
-    invoke-static {v0}, Lhwf;->f(Ltn1;)Lvn1;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lct0;->A(Lch7;)Lch7;
-
-    move-result-object p0
-
-    new-instance v0, Lb;
-
-    const/16 v2, 0x19
-
-    invoke-direct {v0, v2, v1}, Lb;-><init>(ILjava/lang/Object;)V
-
-    iget-object v2, v1, Lew0;->o:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/concurrent/Executor;
-
-    invoke-interface {p0, v0, v2}, Lch7;->c(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-
     const/4 p0, 0x0
 
-    iput-boolean p0, v1, Lew0;->Y:Z
-
-    :cond_1
-    return-void
-
-    :pswitch_0
-    const/4 v0, 0x1
-
-    iget-object v1, p0, Lqq1;->b:Lew0;
-
-    iput-boolean v0, v1, Lew0;->Y:Z
-
-    new-instance v0, Landroidx/camera/core/CameraControl$OperationCanceledException;
-
-    const-string v2, "Camera2CameraControl was updated with new options."
-
-    invoke-direct {v0, v2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
-
-    iget-object v2, v1, Lew0;->w0:Ljava/lang/Object;
-
-    check-cast v2, Lsn1;
-
-    if-eqz v2, :cond_2
-
-    invoke-virtual {v2, v0}, Lsn1;->d(Ljava/lang/Throwable;)Z
-
-    const/4 v0, 0x0
-
-    iput-object v0, v1, Lew0;->w0:Ljava/lang/Object;
-
-    :cond_2
-    iget-object p0, p0, Lqq1;->c:Lsn1;
-
-    iput-object p0, v1, Lew0;->w0:Ljava/lang/Object;
-
-    iget-boolean p0, v1, Lew0;->b:Z
-
-    if-eqz p0, :cond_3
-
-    iget-object p0, v1, Lew0;->c:Ljava/lang/Object;
-
-    check-cast p0, Lzq1;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v0, Lrgc;
-
-    const/16 v2, 0x16
-
-    invoke-direct {v0, v2, p0}, Lrgc;-><init>(ILjava/lang/Object;)V
-
-    invoke-static {v0}, Lhwf;->f(Ltn1;)Lvn1;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lct0;->A(Lch7;)Lch7;
-
-    move-result-object p0
-
-    new-instance v0, Lb;
-
-    const/16 v2, 0x19
-
-    invoke-direct {v0, v2, v1}, Lb;-><init>(ILjava/lang/Object;)V
-
-    iget-object v2, v1, Lew0;->o:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/concurrent/Executor;
-
-    invoke-interface {p0, v0, v2}, Lch7;->c(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-
-    const/4 p0, 0x0
-
-    iput-boolean p0, v1, Lew0;->Y:Z
-
-    :cond_3
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method

@@ -12,11 +12,11 @@
 
 
 # instance fields
-.field private final movieId:Lw69;
+.field private final movieId:Lsb9;
 
 .field private final participantId:Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
-.field private final type:Lw8f;
+.field private final type:Lgmf;
 
 
 # direct methods
@@ -34,18 +34,18 @@
     iput-object v0, p0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->participantId:Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
     .line 4
-    invoke-static {p1}, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey$Builder;->c(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey$Builder;)Lw8f;
+    invoke-static {p1}, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey$Builder;->c(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey$Builder;)Lgmf;
 
     move-result-object v0
 
-    iput-object v0, p0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->type:Lw8f;
+    iput-object v0, p0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->type:Lgmf;
 
     .line 5
-    invoke-static {p1}, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey$Builder;->a(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey$Builder;)Lw69;
+    invoke-static {p1}, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey$Builder;->a(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey$Builder;)Lsb9;
 
     move-result-object p1
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->movieId:Lw69;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->movieId:Lsb9;
 
     return-void
 .end method
@@ -73,7 +73,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -85,7 +85,7 @@
 
     if-eq v2, v3, :cond_1
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_1
     check-cast p1, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;
@@ -100,15 +100,15 @@
 
     if-eqz v2, :cond_2
 
-    iget-object v2, p0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->type:Lw8f;
+    iget-object v2, p0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->type:Lgmf;
 
-    iget-object v3, p1, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->type:Lw8f;
+    iget-object v3, p1, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->type:Lgmf;
 
     if-ne v2, v3, :cond_2
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->movieId:Lw69;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->movieId:Lsb9;
 
-    iget-object p1, p1, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->movieId:Lw69;
+    iget-object p1, p1, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->movieId:Lsb9;
 
     invoke-static {p0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -116,23 +116,17 @@
 
     if-eqz p0, :cond_2
 
-    goto :goto_0
-
-    :cond_2
-    move v0, v1
-
-    :goto_0
     return v0
 
-    :cond_3
-    :goto_1
+    :cond_2
+    :goto_0
     return v1
 .end method
 
-.method public getMovieId()Lw69;
+.method public getMovieId()Lsb9;
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->movieId:Lw69;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->movieId:Lsb9;
 
     return-object p0
 .end method
@@ -145,10 +139,10 @@
     return-object p0
 .end method
 
-.method public getType()Lw8f;
+.method public getType()Lgmf;
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->type:Lw8f;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->type:Lgmf;
 
     return-object p0
 .end method
@@ -158,9 +152,9 @@
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->participantId:Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
-    iget-object v1, p0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->type:Lw8f;
+    iget-object v1, p0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->type:Lgmf;
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->movieId:Lw69;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->movieId:Lsb9;
 
     filled-new-array {v0, v1, p0}, [Ljava/lang/Object;
 
@@ -190,7 +184,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->type:Lw8f;
+    iget-object v1, p0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->type:Lgmf;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -198,7 +192,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->movieId:Lw69;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->movieId:Lsb9;
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

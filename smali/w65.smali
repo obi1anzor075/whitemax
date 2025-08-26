@@ -3,46 +3,54 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;
+.implements Lkm7;
 
 
 # instance fields
-.field public final synthetic a:Ly65;
+.field public final synthetic a:I
 
-.field public final synthetic b:Lew0;
+.field public final synthetic b:Ls20;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ly65;Lew0;)V
+.method public synthetic constructor <init>(Ls20;I)V
     .locals 0
 
+    iput p2, p0, Lw65;->a:I
+
+    iput-object p1, p0, Lw65;->b:Ls20;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lw65;->a:Ly65;
-
-    iput-object p2, p0, Lw65;->b:Lew0;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onFrameAvailable(Landroid/graphics/SurfaceTexture;)V
-    .locals 2
+.method public final invoke(Ljava/lang/Object;)V
+    .locals 1
 
-    iget-object p1, p0, Lw65;->a:Ly65;
+    iget v0, p0, Lw65;->a:I
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p0, p0, Lw65;->b:Ls20;
 
-    new-instance v0, Lv65;
+    check-cast p1, Lz0b;
 
-    const/4 v1, 0x4
+    packed-switch v0, :pswitch_data_0
 
-    invoke-direct {v0, p1, v1}, Lv65;-><init>(Ly65;I)V
-
-    iget-object p0, p0, Lw65;->b:Lew0;
-
-    invoke-virtual {p0, v0}, Lew0;->v(Li4f;)V
+    invoke-interface {p1, p0}, Lz0b;->u(Ls20;)V
 
     return-void
+
+    :pswitch_0
+    invoke-interface {p1, p0}, Lz0b;->u(Ls20;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

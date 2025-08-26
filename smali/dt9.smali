@@ -1,83 +1,67 @@
-.class public final Ldt9;
-.super Lw2;
+.class public abstract Ldt9;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic b:I
-
-.field public final c:Ljava/util/concurrent/TimeUnit;
-
-.field public final o:Lqmc;
-
-
 # direct methods
-.method public synthetic constructor <init>(Lajb;Ljava/util/concurrent/TimeUnit;Lqmc;I)V
+.method public static a(Landroid/app/Notification$Builder;Ljava/lang/String;)Landroid/app/Notification$Builder;
     .locals 0
 
-    iput p4, p0, Ldt9;->b:I
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->addPerson(Ljava/lang/String;)Landroid/app/Notification$Builder;
 
-    invoke-direct {p0, p1}, Lw2;-><init>(Lnv9;)V
+    move-result-object p0
 
-    iput-object p2, p0, Ldt9;->c:Ljava/util/concurrent/TimeUnit;
-
-    iput-object p3, p0, Ldt9;->o:Lqmc;
-
-    return-void
+    return-object p0
 .end method
 
+.method public static b(Landroid/app/Notification$Builder;Ljava/lang/String;)Landroid/app/Notification$Builder;
+    .locals 0
 
-# virtual methods
-.method public final q(Lbw9;)V
-    .locals 3
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setCategory(Ljava/lang/String;)Landroid/app/Notification$Builder;
 
-    iget v0, p0, Ldt9;->b:I
+    move-result-object p0
 
-    packed-switch v0, :pswitch_data_0
+    return-object p0
+.end method
 
-    new-instance v0, Ltv9;
+.method public static c(Landroid/app/Notification$Builder;I)Landroid/app/Notification$Builder;
+    .locals 0
 
-    iget-object v1, p0, Ldt9;->o:Lqmc;
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setColor(I)Landroid/app/Notification$Builder;
 
-    invoke-virtual {v1}, Lqmc;->a()Lomc;
+    move-result-object p0
 
-    move-result-object v1
+    return-object p0
+.end method
 
-    iget-object v2, p0, Ldt9;->c:Ljava/util/concurrent/TimeUnit;
+.method public static d(Landroid/app/Notification$Builder;Landroid/app/Notification;)Landroid/app/Notification$Builder;
+    .locals 0
 
-    invoke-direct {v0, p1, v2, v1}, Ltv9;-><init>(Lbw9;Ljava/util/concurrent/TimeUnit;Lomc;)V
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setPublicVersion(Landroid/app/Notification;)Landroid/app/Notification$Builder;
 
-    iget-object p0, p0, Lw2;->a:Lnv9;
+    move-result-object p0
 
-    invoke-interface {p0, v0}, Lnv9;->a(Lbw9;)V
+    return-object p0
+.end method
 
-    return-void
+.method public static e(Landroid/app/Notification$Builder;Landroid/net/Uri;Ljava/lang/Object;)Landroid/app/Notification$Builder;
+    .locals 0
 
-    :pswitch_0
-    new-instance v0, Lct9;
+    check-cast p2, Landroid/media/AudioAttributes;
 
-    new-instance v1, Lzyc;
+    invoke-virtual {p0, p1, p2}, Landroid/app/Notification$Builder;->setSound(Landroid/net/Uri;Landroid/media/AudioAttributes;)Landroid/app/Notification$Builder;
 
-    invoke-direct {v1, p1}, Lzyc;-><init>(Lbw9;)V
+    move-result-object p0
 
-    iget-object p1, p0, Ldt9;->o:Lqmc;
+    return-object p0
+.end method
 
-    invoke-virtual {p1}, Lqmc;->a()Lomc;
+.method public static f(Landroid/app/Notification$Builder;I)Landroid/app/Notification$Builder;
+    .locals 0
 
-    move-result-object p1
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setVisibility(I)Landroid/app/Notification$Builder;
 
-    iget-object v2, p0, Ldt9;->c:Ljava/util/concurrent/TimeUnit;
+    move-result-object p0
 
-    invoke-direct {v0, v1, v2, p1}, Lct9;-><init>(Lzyc;Ljava/util/concurrent/TimeUnit;Lomc;)V
-
-    iget-object p0, p0, Lw2;->a:Lnv9;
-
-    invoke-interface {p0, v0}, Lnv9;->a(Lbw9;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

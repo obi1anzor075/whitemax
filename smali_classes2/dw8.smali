@@ -1,120 +1,91 @@
-.class public final Ldw8;
-.super Ll5e;
+.class public final enum Ldw8;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Li26;
+
+# static fields
+.field public static final enum b:Ldw8;
+
+.field public static final synthetic c:[Ldw8;
+
+.field public static final synthetic o:Ln25;
 
 
 # instance fields
-.field public X:I
-
-.field public final synthetic Y:Lew8;
-
-.field public final synthetic Z:Lqp8;
+.field public final a:I
 
 
 # direct methods
-.method public constructor <init>(Lew8;Lqp8;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
-    iput-object p1, p0, Ldw8;->Y:Lew8;
+    new-instance v0, Ldw8;
 
-    iput-object p2, p0, Ldw8;->Z:Lqp8;
+    const-string v1, "EMOJI"
 
-    const/4 p1, 0x2
+    const/4 v2, 0x0
 
-    invoke-direct {p0, p1, p3}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, v1, v2, v2}, Ldw8;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Ldw8;->b:Ldw8;
+
+    new-instance v1, Ldw8;
+
+    const-string v2, "STICKER"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3, v3}, Ldw8;-><init>(Ljava/lang/String;II)V
+
+    filled-new-array {v0, v1}, [Ldw8;
+
+    move-result-object v0
+
+    sput-object v0, Ldw8;->c:[Ldw8;
+
+    new-instance v1, Ln25;
+
+    invoke-direct {v1, v0}, Ln25;-><init>([Ljava/lang/Enum;)V
+
+    sput-object v1, Ldw8;->o:Ln25;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public constructor <init>(Ljava/lang/String;II)V
     .locals 0
 
-    check-cast p1, Lou3;
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iput p3, p0, Ldw8;->a:I
 
-    invoke-virtual {p0, p1, p2}, Ldw8;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Ldw8;
+    .locals 1
+
+    const-class v0, Ldw8;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
     check-cast p0, Ldw8;
 
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Ldw8;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
     return-object p0
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public static values()[Ldw8;
     .locals 1
 
-    new-instance p1, Ldw8;
+    sget-object v0, Ldw8;->c:[Ldw8;
 
-    iget-object v0, p0, Ldw8;->Y:Lew8;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    iget-object p0, p0, Ldw8;->Z:Lqp8;
+    move-result-object v0
 
-    invoke-direct {p1, v0, p0, p2}, Ldw8;-><init>(Lew8;Lqp8;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    sget-object v0, Lpu3;->a:Lpu3;
-
-    iget v1, p0, Ldw8;->X:I
-
-    const/4 v2, 0x1
-
-    if-eqz v1, :cond_1
-
-    if-ne v1, v2, :cond_0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Ldw8;->Y:Lew8;
-
-    iget-object p1, p1, Lew8;->c:Lhcd;
-
-    iput v2, p0, Ldw8;->X:I
-
-    iget-object v1, p0, Ldw8;->Z:Lqp8;
-
-    invoke-virtual {p1, v1, p0}, Lhcd;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-ne p0, v0, :cond_2
+    check-cast v0, [Ldw8;
 
     return-object v0
-
-    :cond_2
-    :goto_0
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
 .end method

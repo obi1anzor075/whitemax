@@ -208,9 +208,7 @@
     .line 18
     :cond_7
     :goto_4
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object p1
+    sget-object p1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     iput-object p1, p0, Lorg/json/JSONPointer;->refTokens:Ljava/util/List;
 
@@ -395,7 +393,7 @@
 
     const-string v0, " is not an array index"
 
-    invoke-static {p2, v0}, Lhr1;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, v0}, Lzt1;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -621,11 +619,6 @@
 
     goto :goto_0
 
-    :catch_0
-    move-exception p0
-
-    goto :goto_1
-
     :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -635,7 +628,9 @@
 
     return-object p0
 
-    :goto_1
+    :catch_0
+    move-exception p0
+
     new-instance v0, Ljava/lang/RuntimeException;
 
     invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V

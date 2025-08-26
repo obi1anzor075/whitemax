@@ -1,9 +1,9 @@
 .class final Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$syncAudioDeviceList$3;
-.super Lb97;
+.super Lsd7;
 .source "SourceFile"
 
 # interfaces
-.implements Lu16;
+.implements Lx56;
 
 
 # annotations
@@ -18,8 +18,8 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lb97;",
-        "Lu16;"
+        "Lsd7;",
+        "Lx56;"
     }
 .end annotation
 
@@ -66,7 +66,7 @@
 
     const/4 v0, 0x1
 
-    invoke-direct {p0, v0}, Lb97;-><init>(I)V
+    invoke-direct {p0, v0}, Lsd7;-><init>(I)V
 
     return-void
 .end method

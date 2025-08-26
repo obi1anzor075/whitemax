@@ -1,97 +1,42 @@
-.class public final enum Lred;
-.super Ljava/lang/Enum;
+.class public final synthetic Lred;
+.super Lq8;
 .source "SourceFile"
+
+# interfaces
+.implements Lv56;
 
 
 # static fields
-.field public static final synthetic X:[Lred;
-
-.field public static final enum a:Lred;
-
-.field public static final enum b:Lred;
-
-.field public static final enum c:Lred;
-
-.field public static final enum o:Lred;
+.field public static final o0:Lred;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 4
 
     new-instance v0, Lred;
 
-    const-string v1, "LOADING"
+    const-class v1, Lgbd;
 
-    const/4 v2, 0x0
+    const-string v2, "<init>(Lru/ok/tamtam/android/SelfId;Lkotlin/Lazy;Lkotlin/Lazy;Lone/me/sdk/vendor/Builds;Lone/me/settings/usecase/GetCurrentUserProfileDataUseCase;Lone/me/sdk/uikit/qr/GetQrCodeUseCase;Lone/me/settings/ProfileEvents;Lkotlin/Lazy;Lkotlin/Lazy;Landroid/app/Application;Lkotlin/Lazy;Lkotlin/Lazy;Lru/ok/tamtam/android/profile/ProfileRepository;Lkotlin/Lazy;Lkotlin/Lazy;)V"
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    const/4 v3, 0x0
 
-    sput-object v0, Lred;->a:Lred;
+    invoke-direct {v0, v3, v1, v2, v3}, Lq8;-><init>(ILjava/lang/Class;Ljava/lang/String;I)V
 
-    new-instance v1, Lred;
-
-    const-string v2, "CONTENT"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lred;->b:Lred;
-
-    new-instance v2, Lred;
-
-    const-string v3, "CONTENT_SEARCH"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lred;->c:Lred;
-
-    new-instance v3, Lred;
-
-    const-string v4, "EMPTY_SEARCH"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Lred;->o:Lred;
-
-    filled-new-array {v0, v1, v2, v3}, [Lred;
-
-    move-result-object v0
-
-    sput-object v0, Lred;->X:[Lred;
+    sput-object v0, Lred;->o0:Lred;
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lred;
-    .locals 1
 
-    const-class v0, Lred;
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 0
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    new-instance p0, Lgbd;
 
-    move-result-object p0
-
-    check-cast p0, Lred;
+    invoke-direct {p0}, Lgbd;-><init>()V
 
     return-object p0
-.end method
-
-.method public static values()[Lred;
-    .locals 1
-
-    sget-object v0, Lred;->X:[Lred;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lred;
-
-    return-object v0
 .end method

@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Li1f;
+.implements Lncf;
 
 
 # static fields
@@ -99,11 +99,11 @@
     return p0
 
     :cond_1
-    const/4 p0, 0x3
-
     packed-switch p1, :pswitch_data_0
 
     :pswitch_0
+    const/4 p0, 0x3
+
     return p0
 
     :pswitch_1
@@ -135,13 +135,10 @@
     :pswitch_7
     const/4 p0, 0x0
 
-    :pswitch_8
     return p0
 
     :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_8
-        :pswitch_8
+    .packed-switch 0x2
         :pswitch_7
         :pswitch_6
         :pswitch_5
@@ -152,11 +149,8 @@
         :pswitch_4
         :pswitch_4
         :pswitch_2
-        :pswitch_8
-        :pswitch_1
-        :pswitch_8
         :pswitch_0
-        :pswitch_8
+        :pswitch_1
     .end packed-switch
 .end method
 
@@ -184,7 +178,9 @@
 
     if-nez p0, :cond_1
 
-    const/4 v1, 0x1
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_1
     return v1

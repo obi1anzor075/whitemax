@@ -12,19 +12,19 @@
         "Lone/me/rlottie/RLottieDrawable;",
         "",
         "networkFetchEnabled",
-        "Ljue;",
+        "Le5f;",
         "restartDownloadFromUrl",
         "(Lone/me/rlottie/RLottieDrawable;Z)V",
         "",
         "getFrameRate",
         "(Lone/me/rlottie/RLottieDrawable;)I",
         "frame",
-        "Ltwb;",
+        "Lo1c;",
         "getLottieFrameAt",
-        "(Lone/me/rlottie/RLottieDrawable;I)Ltwb;",
+        "(Lone/me/rlottie/RLottieDrawable;I)Lo1c;",
         "width",
         "height",
-        "(Lone/me/rlottie/RLottieDrawable;III)Ltwb;",
+        "(Lone/me/rlottie/RLottieDrawable;III)Lo1c;",
         "rlottie_release"
     }
     k = 0x2
@@ -33,6 +33,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -49,7 +50,7 @@
     return p0
 .end method
 
-.method public static final getLottieFrameAt(Lone/me/rlottie/RLottieDrawable;I)Ltwb;
+.method public static final getLottieFrameAt(Lone/me/rlottie/RLottieDrawable;I)Lo1c;
     .locals 2
 
     .line 1
@@ -57,18 +58,18 @@
 
     iget v1, p0, Lone/me/rlottie/RLottieDrawable;->b:I
 
-    invoke-static {p0, p1, v0, v1}, Lone/me/rlottie/RLottieDrawableUtils;->getLottieFrameAt(Lone/me/rlottie/RLottieDrawable;III)Ltwb;
+    invoke-static {p0, p1, v0, v1}, Lone/me/rlottie/RLottieDrawableUtils;->getLottieFrameAt(Lone/me/rlottie/RLottieDrawable;III)Lo1c;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static final getLottieFrameAt(Lone/me/rlottie/RLottieDrawable;III)Ltwb;
+.method public static final getLottieFrameAt(Lone/me/rlottie/RLottieDrawable;III)Lo1c;
     .locals 10
 
     .line 2
-    new-instance v0, Ltwb;
+    new-instance v0, Lo1c;
 
     .line 3
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
@@ -97,7 +98,7 @@
     if-eqz v5, :cond_0
 
     .line 5
-    iget-wide v2, p0, Lone/me/rlottie/RLottieDrawable;->h1:J
+    iget-wide v2, p0, Lone/me/rlottie/RLottieDrawable;->Z0:J
 
     invoke-virtual {v5}, Landroid/graphics/Bitmap;->getRowBytes()I
 
@@ -120,7 +121,7 @@
 .method public static final restartDownloadFromUrl(Lone/me/rlottie/RLottieDrawable;Z)V
     .locals 2
 
-    iget-object v0, p0, Lone/me/rlottie/RLottieDrawable;->E1:Ljava/lang/String;
+    iget-object v0, p0, Lone/me/rlottie/RLottieDrawable;->w1:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
@@ -129,11 +130,11 @@
     :cond_0
     const/4 v1, 0x1
 
-    invoke-static {v0, v1, p1}, Lkg9;->a(Ljava/lang/String;IZ)Lig9;
+    invoke-static {v0, v1, p1}, Lcl9;->a(Ljava/lang/String;IZ)Lal9;
 
     move-result-object p1
 
-    invoke-virtual {p1, p0}, Lig9;->e(Ljg9;)V
+    invoke-virtual {p1, p0}, Lal9;->e(Lbl9;)V
 
     return-void
 .end method

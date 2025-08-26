@@ -3,95 +3,105 @@
 .source "SourceFile"
 
 
+# static fields
+.field public static final synthetic e:[Lbc7;
+
+.field public static final f:Ljava/lang/String;
+
+
 # instance fields
-.field public final a:Lt97;
+.field public final a:Ltm4;
 
-.field public final b:Lt97;
+.field public final b:Ltm4;
 
-.field public final c:Lkotlinx/coroutines/internal/ContextScope;
+.field public final c:Ltm4;
 
-.field public final d:Lgrd;
-
-.field public final e:Lt0c;
-
-.field public final f:Ljava/util/concurrent/atomic/AtomicReference;
-
-.field public g:Lqod;
+.field public final d:Ltm4;
 
 
 # direct methods
-.method public constructor <init>(Lt97;Lt97;Lzsd;Lpae;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 8
+
+    new-instance v0, Lnlb;
+
+    const-class v1, Llwd;
+
+    const-string v2, "messageController"
+
+    const-string v3, "getMessageController()Lru/ok/tamtam/messages/MessageController;"
+
+    const/4 v4, 0x0
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lnlb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    sget-object v2, Llcc;->a:Lmcc;
+
+    const-string v3, "workerService"
+
+    const-string v5, "getWorkerService()Lru/ok/tamtam/services/WorkerService;"
+
+    invoke-static {v2, v1, v3, v5, v4}, Lm26;->g(Lmcc;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lnlb;
+
+    move-result-object v2
+
+    new-instance v3, Lnlb;
+
+    const-string v5, "fileAttachUploader"
+
+    const-string v6, "getFileAttachUploader()Lru/ok/tamtam/FileAttachUploader;"
+
+    invoke-direct {v3, v1, v5, v6, v4}, Lnlb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    new-instance v5, Lnlb;
+
+    const-string v6, "clientPrefs"
+
+    const-string v7, "getClientPrefs()Lru/ok/tamtam/prefs/ClientPrefs;"
+
+    invoke-direct {v5, v1, v6, v7, v4}, Lnlb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    const/4 v6, 0x4
+
+    new-array v6, v6, [Lbc7;
+
+    aput-object v0, v6, v4
+
+    const/4 v0, 0x1
+
+    aput-object v2, v6, v0
+
+    const/4 v0, 0x2
+
+    aput-object v3, v6, v0
+
+    const/4 v0, 0x3
+
+    aput-object v5, v6, v0
+
+    sput-object v6, Llwd;->e:[Lbc7;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Llwd;->f:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ltm4;Ltm4;Ltm4;Ltm4;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Llwd;->a:Lt97;
+    iput-object p1, p0, Llwd;->a:Ltm4;
 
-    iput-object p2, p0, Llwd;->b:Lt97;
+    iput-object p2, p0, Llwd;->b:Ltm4;
 
-    check-cast p4, Ln3a;
+    iput-object p3, p0, Llwd;->c:Ltm4;
 
-    invoke-virtual {p4}, Ln3a;->b()Lju3;
-
-    move-result-object p1
-
-    invoke-static {p1}, Ln1g;->a(Lhu3;)Lkotlinx/coroutines/internal/ContextScope;
-
-    move-result-object p1
-
-    iput-object p1, p0, Llwd;->c:Lkotlinx/coroutines/internal/ContextScope;
-
-    sget-object p2, Lhw4;->a:Lhw4;
-
-    invoke-static {p2}, Lhrd;->a(Ljava/lang/Object;)Lgrd;
-
-    move-result-object p2
-
-    iput-object p2, p0, Llwd;->d:Lgrd;
-
-    new-instance p4, Lt0c;
-
-    invoke-direct {p4, p2}, Lt0c;-><init>(Lzqd;)V
-
-    iput-object p4, p0, Llwd;->e:Lt0c;
-
-    new-instance p2, Ljava/util/concurrent/atomic/AtomicReference;
-
-    const-wide/16 v0, 0x0
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p4
-
-    invoke-direct {p2, p4}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object p2, p0, Llwd;->f:Ljava/util/concurrent/atomic/AtomicReference;
-
-    iget-object p2, p3, Lzsd;->l:Ljk0;
-
-    invoke-static {p2}, Lam7;->c(Lnv9;)Lrn1;
-
-    move-result-object p2
-
-    new-instance p3, Lw09;
-
-    const/16 p4, 0xa
-
-    invoke-direct {p3, p2, p0, p4}, Lw09;-><init>(Lpj5;Ljava/lang/Object;I)V
-
-    new-instance p2, Lhwd;
-
-    const/4 p4, 0x0
-
-    invoke-direct {p2, p0, p4}, Lhwd;-><init>(Llwd;Lkotlin/coroutines/Continuation;)V
-
-    new-instance p0, Lck5;
-
-    const/4 p4, 0x5
-
-    invoke-direct {p0, p3, p2, p4}, Lck5;-><init>(Lpj5;Li26;I)V
-
-    invoke-static {p0, p1}, Lez3;->N(Lpj5;Lou3;)Lqod;
+    iput-object p4, p0, Llwd;->d:Ltm4;
 
     return-void
 .end method

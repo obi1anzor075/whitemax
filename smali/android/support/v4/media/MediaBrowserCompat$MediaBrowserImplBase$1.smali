@@ -43,7 +43,7 @@
 
     if-nez v1, :cond_0
 
-    return-void
+    goto :goto_2
 
     :cond_0
     const/4 v1, 0x2
@@ -162,6 +162,7 @@
     invoke-virtual {p0}, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase;->dump()V
 
     :cond_4
+    :goto_2
     return-void
 
     :cond_5

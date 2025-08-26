@@ -19,14 +19,14 @@
         "()V",
         "Lru/ok/android/externcalls/sdk/media/mute/listener/MediaMuteManagerListener;",
         "listener",
-        "Ljue;",
+        "Le5f;",
         "addListener",
         "(Lru/ok/android/externcalls/sdk/media/mute/listener/MediaMuteManagerListener;)V",
         "removeListener",
-        "Loc9;",
+        "Ljh9;",
         "muteEvent",
         "onMuteStateInitialized",
-        "(Loc9;)V",
+        "(Ljh9;)V",
         "onMuteChanged",
         "Ljava/util/concurrent/CopyOnWriteArraySet;",
         "listeners",
@@ -39,6 +39,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -81,7 +82,7 @@
     return-void
 .end method
 
-.method public onMuteChanged(Loc9;)V
+.method public onMuteChanged(Ljh9;)V
     .locals 1
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/media/mute/internal/listener/MediaMuteListenerManagerImpl;->listeners:Ljava/util/concurrent/CopyOnWriteArraySet;
@@ -103,7 +104,7 @@
 
     check-cast v0, Lru/ok/android/externcalls/sdk/media/mute/listener/MediaMuteManagerListener;
 
-    invoke-interface {v0, p1}, Lru/ok/android/externcalls/sdk/media/mute/listener/MediaMuteManagerListener;->onMuteChanged(Loc9;)V
+    invoke-interface {v0, p1}, Lru/ok/android/externcalls/sdk/media/mute/listener/MediaMuteManagerListener;->onMuteChanged(Ljh9;)V
 
     goto :goto_0
 
@@ -111,7 +112,7 @@
     return-void
 .end method
 
-.method public onMuteStateInitialized(Loc9;)V
+.method public onMuteStateInitialized(Ljh9;)V
     .locals 1
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/media/mute/internal/listener/MediaMuteListenerManagerImpl;->listeners:Ljava/util/concurrent/CopyOnWriteArraySet;
@@ -133,7 +134,7 @@
 
     check-cast v0, Lru/ok/android/externcalls/sdk/media/mute/listener/MediaMuteManagerListener;
 
-    invoke-interface {v0, p1}, Lru/ok/android/externcalls/sdk/media/mute/listener/MediaMuteManagerListener;->onMuteStateInitialized(Loc9;)V
+    invoke-interface {v0, p1}, Lru/ok/android/externcalls/sdk/media/mute/listener/MediaMuteManagerListener;->onMuteStateInitialized(Ljh9;)V
 
     goto :goto_0
 

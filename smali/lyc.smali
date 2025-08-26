@@ -1,35 +1,36 @@
 .class public final Llyc;
-.super Lk1;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/widget/TextView$OnEditorActionListener;
 
 
 # instance fields
-.field public final w0:I
-
-.field public final x0:Ljava/lang/Object;
+.field public final synthetic a:Ltyc;
 
 
 # direct methods
-.method public constructor <init>(ILp2d;)V
+.method public constructor <init>(Ltyc;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Llyc;->w0:I
-
-    iput-object p2, p0, Llyc;->x0:Ljava/lang/Object;
+    iput-object p1, p0, Llyc;->a:Ltyc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final n()V
-    .locals 1
+.method public final onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
+    .locals 0
 
-    iget-object v0, p0, Llyc;->x0:Ljava/lang/Object;
+    iget-object p0, p0, Llyc;->a:Ltyc;
 
-    invoke-super {p0, v0}, Lk1;->l(Ljava/lang/Object;)Z
+    invoke-virtual {p0}, Ltyc;->onSubmitQuery()V
 
-    return-void
+    const/4 p0, 0x1
+
+    return p0
 .end method

@@ -1,5 +1,5 @@
 .class public final Lru/ok/tamtam/nano/Protos$Attaches$Attach;
-.super Lgr8;
+.super Lnv8;
 .source "SourceFile"
 
 
@@ -28,6 +28,7 @@
         Lru/ok/tamtam/nano/Protos$Attaches$Attach$Present;,
         Lru/ok/tamtam/nano/Protos$Attaches$Attach$InlineKeyboard;,
         Lru/ok/tamtam/nano/Protos$Attaches$Attach$Location;,
+        Lru/ok/tamtam/nano/Protos$Attaches$Attach$Widget;,
         Lru/ok/tamtam/nano/Protos$Attaches$Attach$SendAction;,
         Lru/ok/tamtam/nano/Protos$Attaches$Attach$ReplyButton;,
         Lru/ok/tamtam/nano/Protos$Attaches$Attach$ReplyButtons;,
@@ -87,6 +88,8 @@
 .field public static final UNKNOWN:I = 0x0
 
 .field public static final VIDEO:I = 0x3
+
+.field public static final WIDGET:I = 0x10
 
 .field private static volatile _emptyArray:[Lru/ok/tamtam/nano/Protos$Attaches$Attach;
 
@@ -148,12 +151,14 @@
 
 .field public video:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Video;
 
+.field public widget:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Widget;
+
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lgr8;-><init>()V
+    invoke-direct {p0}, Lnv8;-><init>()V
 
     invoke-virtual {p0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->clear()Lru/ok/tamtam/nano/Protos$Attaches$Attach;
 
@@ -167,7 +172,7 @@
 
     if-nez v0, :cond_1
 
-    sget-object v0, Ltz6;->b:Ljava/lang/Object;
+    sget-object v0, Lr37;->b:Ljava/lang/Object;
 
     monitor-enter v0
 
@@ -209,7 +214,7 @@
     return-object v0
 .end method
 
-.method public static parseFrom(Ln13;)Lru/ok/tamtam/nano/Protos$Attaches$Attach;
+.method public static parseFrom(Lp33;)Lru/ok/tamtam/nano/Protos$Attaches$Attach;
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -222,7 +227,7 @@
 
     invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach;-><init>()V
 
-    invoke-virtual {v0, p0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->mergeFrom(Ln13;)Lru/ok/tamtam/nano/Protos$Attaches$Attach;
+    invoke-virtual {v0, p0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->mergeFrom(Lp33;)Lru/ok/tamtam/nano/Protos$Attaches$Attach;
 
     move-result-object p0
 
@@ -242,7 +247,7 @@
 
     invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach;-><init>()V
 
-    invoke-static {v0, p0}, Lgr8;->mergeFrom(Lgr8;[B)Lgr8;
+    invoke-static {v0, p0}, Lnv8;->mergeFrom(Lnv8;[B)Lnv8;
 
     move-result-object p0
 
@@ -312,9 +317,9 @@
 
     iput-object v1, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->location:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Location;
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    iput v1, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->progressFloat:F
+    iput v2, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->progressFloat:F
 
     iput v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->processingOnServerStatus:I
 
@@ -322,9 +327,11 @@
 
     iput-boolean v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->sensitive:Z
 
+    iput-object v1, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->widget:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Widget;
+
     const/4 v0, -0x1
 
-    iput v0, p0, Lgr8;->cachedSize:I
+    iput v0, p0, Lnv8;->cachedSize:I
 
     return-object p0
 .end method
@@ -338,7 +345,7 @@
 
     const/4 v1, 0x1
 
-    invoke-static {v1, v0}, Lo13;->f(II)I
+    invoke-static {v1, v0}, Lq33;->f(II)I
 
     move-result v0
 
@@ -354,7 +361,7 @@
 
     const/4 v2, 0x2
 
-    invoke-static {v2, v1}, Lo13;->i(ILgr8;)I
+    invoke-static {v2, v1}, Lq33;->i(ILnv8;)I
 
     move-result v1
 
@@ -367,7 +374,7 @@
 
     const/4 v2, 0x3
 
-    invoke-static {v2, v1}, Lo13;->i(ILgr8;)I
+    invoke-static {v2, v1}, Lq33;->i(ILnv8;)I
 
     move-result v1
 
@@ -380,7 +387,7 @@
 
     const/4 v2, 0x4
 
-    invoke-static {v2, v1}, Lo13;->i(ILgr8;)I
+    invoke-static {v2, v1}, Lq33;->i(ILnv8;)I
 
     move-result v1
 
@@ -393,7 +400,7 @@
 
     const/4 v2, 0x5
 
-    invoke-static {v2, v1}, Lo13;->i(ILgr8;)I
+    invoke-static {v2, v1}, Lq33;->i(ILnv8;)I
 
     move-result v1
 
@@ -406,7 +413,7 @@
 
     const/4 v2, 0x6
 
-    invoke-static {v2, v1}, Lo13;->i(ILgr8;)I
+    invoke-static {v2, v1}, Lq33;->i(ILnv8;)I
 
     move-result v1
 
@@ -419,7 +426,7 @@
 
     const/4 v2, 0x7
 
-    invoke-static {v2, v1}, Lo13;->i(ILgr8;)I
+    invoke-static {v2, v1}, Lq33;->i(ILnv8;)I
 
     move-result v1
 
@@ -432,7 +439,7 @@
 
     const/16 v2, 0x8
 
-    invoke-static {v2, v1}, Lo13;->i(ILgr8;)I
+    invoke-static {v2, v1}, Lq33;->i(ILnv8;)I
 
     move-result v1
 
@@ -445,7 +452,7 @@
 
     const/16 v2, 0x9
 
-    invoke-static {v2, v1}, Lo13;->i(ILgr8;)I
+    invoke-static {v2, v1}, Lq33;->i(ILnv8;)I
 
     move-result v1
 
@@ -458,7 +465,7 @@
 
     const/16 v2, 0xa
 
-    invoke-static {v2, v1}, Lo13;->f(II)I
+    invoke-static {v2, v1}, Lq33;->f(II)I
 
     move-result v1
 
@@ -475,7 +482,7 @@
 
     const/16 v5, 0xb
 
-    invoke-static {v5, v1, v2}, Lo13;->h(IJ)I
+    invoke-static {v5, v1, v2}, Lq33;->h(IJ)I
 
     move-result v1
 
@@ -488,7 +495,7 @@
 
     const/16 v2, 0xc
 
-    invoke-static {v2, v1}, Lo13;->f(II)I
+    invoke-static {v2, v1}, Lq33;->f(II)I
 
     move-result v1
 
@@ -509,7 +516,7 @@
 
     iget-object v5, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->localId:Ljava/lang/String;
 
-    invoke-static {v1, v5}, Lo13;->l(ILjava/lang/String;)I
+    invoke-static {v1, v5}, Lq33;->l(ILjava/lang/String;)I
 
     move-result v1
 
@@ -528,7 +535,7 @@
 
     iget-object v2, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->localPath:Ljava/lang/String;
 
-    invoke-static {v1, v2}, Lo13;->l(ILjava/lang/String;)I
+    invoke-static {v1, v2}, Lq33;->l(ILjava/lang/String;)I
 
     move-result v1
 
@@ -541,7 +548,7 @@
 
     const/16 v1, 0xf
 
-    invoke-static {v1}, Lo13;->a(I)I
+    invoke-static {v1}, Lq33;->a(I)I
 
     move-result v1
 
@@ -554,7 +561,7 @@
 
     const/16 v1, 0x10
 
-    invoke-static {v1}, Lo13;->a(I)I
+    invoke-static {v1}, Lq33;->a(I)I
 
     move-result v1
 
@@ -569,7 +576,7 @@
 
     const/16 v5, 0x11
 
-    invoke-static {v5, v1, v2}, Lo13;->h(IJ)I
+    invoke-static {v5, v1, v2}, Lq33;->h(IJ)I
 
     move-result v1
 
@@ -584,7 +591,7 @@
 
     const/16 v5, 0x12
 
-    invoke-static {v5, v1, v2}, Lo13;->h(IJ)I
+    invoke-static {v5, v1, v2}, Lq33;->h(IJ)I
 
     move-result v1
 
@@ -597,7 +604,7 @@
 
     const/16 v2, 0x14
 
-    invoke-static {v2, v1}, Lo13;->i(ILgr8;)I
+    invoke-static {v2, v1}, Lq33;->i(ILnv8;)I
 
     move-result v1
 
@@ -610,7 +617,7 @@
 
     const/16 v2, 0x15
 
-    invoke-static {v2, v1}, Lo13;->i(ILgr8;)I
+    invoke-static {v2, v1}, Lq33;->i(ILnv8;)I
 
     move-result v1
 
@@ -625,7 +632,7 @@
 
     const/16 v3, 0x16
 
-    invoke-static {v3, v1, v2}, Lo13;->h(IJ)I
+    invoke-static {v3, v1, v2}, Lq33;->h(IJ)I
 
     move-result v1
 
@@ -638,7 +645,7 @@
 
     const/16 v2, 0x17
 
-    invoke-static {v2, v1}, Lo13;->i(ILgr8;)I
+    invoke-static {v2, v1}, Lq33;->i(ILnv8;)I
 
     move-result v1
 
@@ -651,7 +658,7 @@
 
     const/16 v2, 0x18
 
-    invoke-static {v2, v1}, Lo13;->i(ILgr8;)I
+    invoke-static {v2, v1}, Lq33;->i(ILnv8;)I
 
     move-result v1
 
@@ -664,7 +671,7 @@
 
     const/16 v2, 0x19
 
-    invoke-static {v2, v1}, Lo13;->i(ILgr8;)I
+    invoke-static {v2, v1}, Lq33;->i(ILnv8;)I
 
     move-result v1
 
@@ -687,7 +694,7 @@
 
     const/16 v1, 0x1a
 
-    invoke-static {v1}, Lo13;->e(I)I
+    invoke-static {v1}, Lq33;->e(I)I
 
     move-result v1
 
@@ -700,7 +707,7 @@
 
     const/16 v2, 0x1b
 
-    invoke-static {v2, v1}, Lo13;->f(II)I
+    invoke-static {v2, v1}, Lq33;->f(II)I
 
     move-result v1
 
@@ -713,30 +720,45 @@
 
     const/16 v1, 0x1c
 
-    invoke-static {v1}, Lo13;->a(I)I
+    invoke-static {v1}, Lq33;->a(I)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
     :cond_1a
-    iget-boolean p0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->sensitive:Z
+    iget-boolean v1, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->sensitive:Z
 
-    if-eqz p0, :cond_1b
+    if-eqz v1, :cond_1b
 
-    const/16 p0, 0x1d
+    const/16 v1, 0x1d
 
-    invoke-static {p0}, Lo13;->a(I)I
+    invoke-static {v1}, Lq33;->a(I)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    :cond_1b
+    iget-object p0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->widget:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Widget;
+
+    if-eqz p0, :cond_1c
+
+    const/16 v1, 0x1f
+
+    invoke-static {v1, p0}, Lq33;->i(ILnv8;)I
 
     move-result p0
 
-    add-int/2addr v0, p0
+    add-int/2addr p0, v0
 
-    :cond_1b
+    return p0
+
+    :cond_1c
     return v0
 .end method
 
-.method public bridge synthetic mergeFrom(Ln13;)Lgr8;
+.method public bridge synthetic mergeFrom(Lp33;)Lnv8;
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -745,14 +767,14 @@
     .end annotation
 
     .line 1
-    invoke-virtual {p0, p1}, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->mergeFrom(Ln13;)Lru/ok/tamtam/nano/Protos$Attaches$Attach;
+    invoke-virtual {p0, p1}, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->mergeFrom(Lp33;)Lru/ok/tamtam/nano/Protos$Attaches$Attach;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public mergeFrom(Ln13;)Lru/ok/tamtam/nano/Protos$Attaches$Attach;
+.method public mergeFrom(Lp33;)Lru/ok/tamtam/nano/Protos$Attaches$Attach;
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -763,7 +785,7 @@
     .line 2
     :cond_0
     :goto_0
-    invoke-virtual {p1}, Ln13;->s()I
+    invoke-virtual {p1}, Lp33;->s()I
 
     move-result v0
 
@@ -774,17 +796,38 @@
     sparse-switch v0, :sswitch_data_0
 
     .line 3
-    invoke-virtual {p1, v0}, Ln13;->u(I)Z
+    invoke-virtual {p1, v0}, Lp33;->u(I)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    return-object p0
+    goto/16 :goto_1
 
     .line 4
     :sswitch_0
-    invoke-virtual {p1}, Ln13;->f()Z
+    iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->widget:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Widget;
+
+    if-nez v0, :cond_1
+
+    .line 5
+    new-instance v0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Widget;
+
+    invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Widget;-><init>()V
+
+    iput-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->widget:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Widget;
+
+    .line 6
+    :cond_1
+    iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->widget:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Widget;
+
+    invoke-virtual {p1, v0}, Lp33;->j(Lnv8;)V
+
+    goto :goto_0
+
+    .line 7
+    :sswitch_1
+    invoke-virtual {p1}, Lp33;->f()Z
 
     move-result v0
 
@@ -792,9 +835,9 @@
 
     goto :goto_0
 
-    .line 5
-    :sswitch_1
-    invoke-virtual {p1}, Ln13;->f()Z
+    .line 8
+    :sswitch_2
+    invoke-virtual {p1}, Lp33;->f()Z
 
     move-result v0
 
@@ -802,29 +845,29 @@
 
     goto :goto_0
 
-    .line 6
-    :sswitch_2
-    invoke-virtual {p1}, Ln13;->p()I
+    .line 9
+    :sswitch_3
+    invoke-virtual {p1}, Lp33;->p()I
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
-    if-eq v0, v2, :cond_1
+    if-eq v0, v2, :cond_2
 
-    if-eq v0, v1, :cond_1
+    if-eq v0, v1, :cond_2
 
     goto :goto_0
 
-    .line 7
-    :cond_1
+    .line 10
+    :cond_2
     iput v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->processingOnServerStatus:I
 
     goto :goto_0
 
-    .line 8
-    :sswitch_3
-    invoke-virtual {p1}, Ln13;->i()F
+    .line 11
+    :sswitch_4
+    invoke-virtual {p1}, Lp33;->i()F
 
     move-result v0
 
@@ -832,147 +875,147 @@
 
     goto :goto_0
 
-    .line 9
-    :sswitch_4
+    .line 12
+    :sswitch_5
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->location:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Location;
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_3
 
-    .line 10
+    .line 13
     new-instance v0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Location;
 
     invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Location;-><init>()V
 
     iput-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->location:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Location;
 
-    .line 11
-    :cond_2
+    .line 14
+    :cond_3
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->location:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Location;
 
-    invoke-virtual {p1, v0}, Ln13;->j(Lgr8;)V
+    invoke-virtual {p1, v0}, Lp33;->j(Lnv8;)V
 
     goto :goto_0
 
-    .line 12
-    :sswitch_5
+    .line 15
+    :sswitch_6
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->inlineKeyboard:Lru/ok/tamtam/nano/Protos$Attaches$Attach$InlineKeyboard;
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_4
 
-    .line 13
+    .line 16
     new-instance v0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$InlineKeyboard;
 
     invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach$InlineKeyboard;-><init>()V
 
     iput-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->inlineKeyboard:Lru/ok/tamtam/nano/Protos$Attaches$Attach$InlineKeyboard;
 
-    .line 14
-    :cond_3
+    .line 17
+    :cond_4
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->inlineKeyboard:Lru/ok/tamtam/nano/Protos$Attaches$Attach$InlineKeyboard;
 
-    invoke-virtual {p1, v0}, Ln13;->j(Lgr8;)V
+    invoke-virtual {p1, v0}, Lp33;->j(Lnv8;)V
 
     goto :goto_0
 
-    .line 15
-    :sswitch_6
+    .line 18
+    :sswitch_7
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->present:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Present;
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_5
 
-    .line 16
+    .line 19
     new-instance v0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Present;
 
     invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Present;-><init>()V
 
     iput-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->present:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Present;
 
-    .line 17
-    :cond_4
+    .line 20
+    :cond_5
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->present:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Present;
 
-    invoke-virtual {p1, v0}, Ln13;->j(Lgr8;)V
+    invoke-virtual {p1, v0}, Lp33;->j(Lnv8;)V
 
     goto :goto_0
 
-    .line 18
-    :sswitch_7
-    invoke-virtual {p1}, Ln13;->q()J
+    .line 21
+    :sswitch_8
+    invoke-virtual {p1}, Lp33;->q()J
 
     move-result-wide v0
 
-    .line 19
+    .line 22
     iput-wide v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->lastModified:J
 
     goto :goto_0
 
-    .line 20
-    :sswitch_8
+    .line 23
+    :sswitch_9
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->contact:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Contact;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_6
 
-    .line 21
+    .line 24
     new-instance v0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Contact;
 
     invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Contact;-><init>()V
 
     iput-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->contact:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Contact;
 
-    .line 22
-    :cond_5
+    .line 25
+    :cond_6
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->contact:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Contact;
 
-    invoke-virtual {p1, v0}, Ln13;->j(Lgr8;)V
+    invoke-virtual {p1, v0}, Lp33;->j(Lnv8;)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    .line 23
-    :sswitch_9
+    .line 26
+    :sswitch_a
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->file:Lru/ok/tamtam/nano/Protos$Attaches$Attach$File;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_7
 
-    .line 24
+    .line 27
     new-instance v0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$File;
 
     invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach$File;-><init>()V
 
     iput-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->file:Lru/ok/tamtam/nano/Protos$Attaches$Attach$File;
 
-    .line 25
-    :cond_6
+    .line 28
+    :cond_7
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->file:Lru/ok/tamtam/nano/Protos$Attaches$Attach$File;
 
-    invoke-virtual {p1, v0}, Ln13;->j(Lgr8;)V
+    invoke-virtual {p1, v0}, Lp33;->j(Lnv8;)V
 
     goto/16 :goto_0
 
-    .line 26
-    :sswitch_a
-    invoke-virtual {p1}, Ln13;->q()J
+    .line 29
+    :sswitch_b
+    invoke-virtual {p1}, Lp33;->q()J
 
     move-result-wide v0
 
-    .line 27
+    .line 30
     iput-wide v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->bytesDownloaded:J
 
     goto/16 :goto_0
 
-    .line 28
-    :sswitch_b
-    invoke-virtual {p1}, Ln13;->q()J
+    .line 31
+    :sswitch_c
+    invoke-virtual {p1}, Lp33;->q()J
 
     move-result-wide v0
 
-    .line 29
+    .line 32
     iput-wide v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->totalBytes:J
 
     goto/16 :goto_0
 
-    .line 30
-    :sswitch_c
-    invoke-virtual {p1}, Ln13;->f()Z
+    .line 33
+    :sswitch_d
+    invoke-virtual {p1}, Lp33;->f()Z
 
     move-result v0
 
@@ -980,9 +1023,9 @@
 
     goto/16 :goto_0
 
-    .line 31
-    :sswitch_d
-    invoke-virtual {p1}, Ln13;->f()Z
+    .line 34
+    :sswitch_e
+    invoke-virtual {p1}, Lp33;->f()Z
 
     move-result v0
 
@@ -990,9 +1033,9 @@
 
     goto/16 :goto_0
 
-    .line 32
-    :sswitch_e
-    invoke-virtual {p1}, Ln13;->r()Ljava/lang/String;
+    .line 35
+    :sswitch_f
+    invoke-virtual {p1}, Lp33;->r()Ljava/lang/String;
 
     move-result-object v0
 
@@ -1000,9 +1043,9 @@
 
     goto/16 :goto_0
 
-    .line 33
-    :sswitch_f
-    invoke-virtual {p1}, Ln13;->r()Ljava/lang/String;
+    .line 36
+    :sswitch_10
+    invoke-virtual {p1}, Lp33;->r()Ljava/lang/String;
 
     move-result-object v0
 
@@ -1010,227 +1053,227 @@
 
     goto/16 :goto_0
 
-    .line 34
-    :sswitch_10
-    invoke-virtual {p1}, Ln13;->p()I
+    .line 37
+    :sswitch_11
+    invoke-virtual {p1}, Lp33;->p()I
 
     move-result v0
 
-    .line 35
+    .line 38
     iput v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->progress:I
 
     goto/16 :goto_0
 
-    .line 36
-    :sswitch_11
-    invoke-virtual {p1}, Ln13;->q()J
+    .line 39
+    :sswitch_12
+    invoke-virtual {p1}, Lp33;->q()J
 
     move-result-wide v0
 
-    .line 37
+    .line 40
     iput-wide v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->lastErrorTime:J
 
     goto/16 :goto_0
 
-    .line 38
-    :sswitch_12
-    invoke-virtual {p1}, Ln13;->p()I
+    .line 41
+    :sswitch_13
+    invoke-virtual {p1}, Lp33;->p()I
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_8
 
-    if-eq v0, v2, :cond_7
+    if-eq v0, v2, :cond_8
 
-    if-eq v0, v1, :cond_7
+    if-eq v0, v1, :cond_8
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_7
+    if-eq v0, v1, :cond_8
 
     const/4 v1, 0x4
 
-    if-eq v0, v1, :cond_7
+    if-eq v0, v1, :cond_8
 
     goto/16 :goto_0
 
-    .line 39
-    :cond_7
+    .line 42
+    :cond_8
     iput v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->status:I
 
     goto/16 :goto_0
 
-    .line 40
-    :sswitch_13
+    .line 43
+    :sswitch_14
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->call:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Call;
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_9
 
-    .line 41
+    .line 44
     new-instance v0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Call;
 
     invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Call;-><init>()V
 
     iput-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->call:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Call;
 
-    .line 42
-    :cond_8
+    .line 45
+    :cond_9
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->call:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Call;
 
-    invoke-virtual {p1, v0}, Ln13;->j(Lgr8;)V
+    invoke-virtual {p1, v0}, Lp33;->j(Lnv8;)V
 
     goto/16 :goto_0
 
-    .line 43
-    :sswitch_14
+    .line 46
+    :sswitch_15
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->app:Lru/ok/tamtam/nano/Protos$Attaches$Attach$App;
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_a
 
-    .line 44
+    .line 47
     new-instance v0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$App;
 
     invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach$App;-><init>()V
 
     iput-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->app:Lru/ok/tamtam/nano/Protos$Attaches$Attach$App;
 
-    .line 45
-    :cond_9
+    .line 48
+    :cond_a
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->app:Lru/ok/tamtam/nano/Protos$Attaches$Attach$App;
 
-    invoke-virtual {p1, v0}, Ln13;->j(Lgr8;)V
+    invoke-virtual {p1, v0}, Lp33;->j(Lnv8;)V
 
     goto/16 :goto_0
 
-    .line 46
-    :sswitch_15
+    .line 49
+    :sswitch_16
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->share:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Share;
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_b
 
-    .line 47
+    .line 50
     new-instance v0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Share;
 
     invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Share;-><init>()V
 
     iput-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->share:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Share;
 
-    .line 48
-    :cond_a
+    .line 51
+    :cond_b
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->share:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Share;
 
-    invoke-virtual {p1, v0}, Ln13;->j(Lgr8;)V
+    invoke-virtual {p1, v0}, Lp33;->j(Lnv8;)V
 
     goto/16 :goto_0
 
-    .line 49
-    :sswitch_16
+    .line 52
+    :sswitch_17
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->sticker:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_c
 
-    .line 50
+    .line 53
     new-instance v0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker;
 
     invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker;-><init>()V
 
     iput-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->sticker:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker;
 
-    .line 51
-    :cond_b
+    .line 54
+    :cond_c
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->sticker:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker;
 
-    invoke-virtual {p1, v0}, Ln13;->j(Lgr8;)V
+    invoke-virtual {p1, v0}, Lp33;->j(Lnv8;)V
 
     goto/16 :goto_0
 
-    .line 52
-    :sswitch_17
+    .line 55
+    :sswitch_18
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->audio:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Audio;
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_d
 
-    .line 53
+    .line 56
     new-instance v0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Audio;
 
     invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Audio;-><init>()V
 
     iput-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->audio:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Audio;
 
-    .line 54
-    :cond_c
+    .line 57
+    :cond_d
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->audio:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Audio;
 
-    invoke-virtual {p1, v0}, Ln13;->j(Lgr8;)V
+    invoke-virtual {p1, v0}, Lp33;->j(Lnv8;)V
 
     goto/16 :goto_0
 
-    .line 55
-    :sswitch_18
+    .line 58
+    :sswitch_19
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->video:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Video;
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_e
 
-    .line 56
+    .line 59
     new-instance v0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Video;
 
     invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Video;-><init>()V
 
     iput-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->video:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Video;
 
-    .line 57
-    :cond_d
+    .line 60
+    :cond_e
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->video:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Video;
 
-    invoke-virtual {p1, v0}, Ln13;->j(Lgr8;)V
+    invoke-virtual {p1, v0}, Lp33;->j(Lnv8;)V
 
     goto/16 :goto_0
 
-    .line 58
-    :sswitch_19
+    .line 61
+    :sswitch_1a
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->control:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Control;
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_f
 
-    .line 59
+    .line 62
     new-instance v0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Control;
 
     invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Control;-><init>()V
 
     iput-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->control:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Control;
 
-    .line 60
-    :cond_e
+    .line 63
+    :cond_f
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->control:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Control;
 
-    invoke-virtual {p1, v0}, Ln13;->j(Lgr8;)V
+    invoke-virtual {p1, v0}, Lp33;->j(Lnv8;)V
 
     goto/16 :goto_0
 
-    .line 61
-    :sswitch_1a
+    .line 64
+    :sswitch_1b
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->photo:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Photo;
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_10
 
-    .line 62
+    .line 65
     new-instance v0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Photo;
 
     invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Photo;-><init>()V
 
     iput-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->photo:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Photo;
 
-    .line 63
-    :cond_f
+    .line 66
+    :cond_10
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->photo:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Photo;
 
-    invoke-virtual {p1, v0}, Ln13;->j(Lgr8;)V
+    invoke-virtual {p1, v0}, Lp33;->j(Lnv8;)V
 
     goto/16 :goto_0
 
-    .line 64
-    :sswitch_1b
-    invoke-virtual {p1}, Ln13;->p()I
+    .line 67
+    :sswitch_1c
+    invoke-virtual {p1}, Lp33;->p()I
 
     move-result v0
 
@@ -1238,46 +1281,50 @@
 
     goto/16 :goto_0
 
-    .line 65
+    .line 68
     :pswitch_0
     iput v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->type:I
 
     goto/16 :goto_0
 
-    :sswitch_1c
+    :goto_1
+    :sswitch_1d
     return-object p0
+
+    nop
 
     :sswitch_data_0
     .sparse-switch
-        0x0 -> :sswitch_1c
-        0x8 -> :sswitch_1b
-        0x12 -> :sswitch_1a
-        0x1a -> :sswitch_19
-        0x22 -> :sswitch_18
-        0x2a -> :sswitch_17
-        0x32 -> :sswitch_16
-        0x3a -> :sswitch_15
-        0x42 -> :sswitch_14
-        0x4a -> :sswitch_13
-        0x50 -> :sswitch_12
-        0x58 -> :sswitch_11
-        0x60 -> :sswitch_10
-        0x6a -> :sswitch_f
-        0x72 -> :sswitch_e
-        0x78 -> :sswitch_d
-        0x80 -> :sswitch_c
-        0x88 -> :sswitch_b
-        0x90 -> :sswitch_a
-        0xa2 -> :sswitch_9
-        0xaa -> :sswitch_8
-        0xb0 -> :sswitch_7
-        0xba -> :sswitch_6
-        0xc2 -> :sswitch_5
-        0xca -> :sswitch_4
-        0xd5 -> :sswitch_3
-        0xd8 -> :sswitch_2
-        0xe0 -> :sswitch_1
-        0xe8 -> :sswitch_0
+        0x0 -> :sswitch_1d
+        0x8 -> :sswitch_1c
+        0x12 -> :sswitch_1b
+        0x1a -> :sswitch_1a
+        0x22 -> :sswitch_19
+        0x2a -> :sswitch_18
+        0x32 -> :sswitch_17
+        0x3a -> :sswitch_16
+        0x42 -> :sswitch_15
+        0x4a -> :sswitch_14
+        0x50 -> :sswitch_13
+        0x58 -> :sswitch_12
+        0x60 -> :sswitch_11
+        0x6a -> :sswitch_10
+        0x72 -> :sswitch_f
+        0x78 -> :sswitch_e
+        0x80 -> :sswitch_d
+        0x88 -> :sswitch_c
+        0x90 -> :sswitch_b
+        0xa2 -> :sswitch_a
+        0xaa -> :sswitch_9
+        0xb0 -> :sswitch_8
+        0xba -> :sswitch_7
+        0xc2 -> :sswitch_6
+        0xca -> :sswitch_5
+        0xd5 -> :sswitch_4
+        0xd8 -> :sswitch_3
+        0xe0 -> :sswitch_2
+        0xe8 -> :sswitch_1
+        0xfa -> :sswitch_0
     .end sparse-switch
 
     :pswitch_data_0
@@ -1298,10 +1345,11 @@
         :pswitch_0
         :pswitch_0
         :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method
 
-.method public writeTo(Lo13;)V
+.method public writeTo(Lq33;)V
     .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -1315,7 +1363,7 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {p1, v1, v0}, Lo13;->w(II)V
+    invoke-virtual {p1, v1, v0}, Lq33;->w(II)V
 
     :cond_0
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->photo:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Photo;
@@ -1324,7 +1372,7 @@
 
     const/4 v1, 0x2
 
-    invoke-virtual {p1, v1, v0}, Lo13;->y(ILgr8;)V
+    invoke-virtual {p1, v1, v0}, Lq33;->y(ILnv8;)V
 
     :cond_1
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->control:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Control;
@@ -1333,7 +1381,7 @@
 
     const/4 v1, 0x3
 
-    invoke-virtual {p1, v1, v0}, Lo13;->y(ILgr8;)V
+    invoke-virtual {p1, v1, v0}, Lq33;->y(ILnv8;)V
 
     :cond_2
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->video:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Video;
@@ -1342,7 +1390,7 @@
 
     const/4 v1, 0x4
 
-    invoke-virtual {p1, v1, v0}, Lo13;->y(ILgr8;)V
+    invoke-virtual {p1, v1, v0}, Lq33;->y(ILnv8;)V
 
     :cond_3
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->audio:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Audio;
@@ -1351,7 +1399,7 @@
 
     const/4 v1, 0x5
 
-    invoke-virtual {p1, v1, v0}, Lo13;->y(ILgr8;)V
+    invoke-virtual {p1, v1, v0}, Lq33;->y(ILnv8;)V
 
     :cond_4
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->sticker:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker;
@@ -1360,7 +1408,7 @@
 
     const/4 v1, 0x6
 
-    invoke-virtual {p1, v1, v0}, Lo13;->y(ILgr8;)V
+    invoke-virtual {p1, v1, v0}, Lq33;->y(ILnv8;)V
 
     :cond_5
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->share:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Share;
@@ -1369,7 +1417,7 @@
 
     const/4 v1, 0x7
 
-    invoke-virtual {p1, v1, v0}, Lo13;->y(ILgr8;)V
+    invoke-virtual {p1, v1, v0}, Lq33;->y(ILnv8;)V
 
     :cond_6
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->app:Lru/ok/tamtam/nano/Protos$Attaches$Attach$App;
@@ -1378,7 +1426,7 @@
 
     const/16 v1, 0x8
 
-    invoke-virtual {p1, v1, v0}, Lo13;->y(ILgr8;)V
+    invoke-virtual {p1, v1, v0}, Lq33;->y(ILnv8;)V
 
     :cond_7
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->call:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Call;
@@ -1387,7 +1435,7 @@
 
     const/16 v1, 0x9
 
-    invoke-virtual {p1, v1, v0}, Lo13;->y(ILgr8;)V
+    invoke-virtual {p1, v1, v0}, Lq33;->y(ILnv8;)V
 
     :cond_8
     iget v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->status:I
@@ -1396,7 +1444,7 @@
 
     const/16 v1, 0xa
 
-    invoke-virtual {p1, v1, v0}, Lo13;->w(II)V
+    invoke-virtual {p1, v1, v0}, Lq33;->w(II)V
 
     :cond_9
     iget-wide v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->lastErrorTime:J
@@ -1409,7 +1457,7 @@
 
     const/16 v4, 0xb
 
-    invoke-virtual {p1, v4, v0, v1}, Lo13;->x(IJ)V
+    invoke-virtual {p1, v4, v0, v1}, Lq33;->x(IJ)V
 
     :cond_a
     iget v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->progress:I
@@ -1418,7 +1466,7 @@
 
     const/16 v1, 0xc
 
-    invoke-virtual {p1, v1, v0}, Lo13;->w(II)V
+    invoke-virtual {p1, v1, v0}, Lq33;->w(II)V
 
     :cond_b
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->localId:Ljava/lang/String;
@@ -1435,7 +1483,7 @@
 
     iget-object v4, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->localId:Ljava/lang/String;
 
-    invoke-virtual {p1, v0, v4}, Lo13;->E(ILjava/lang/String;)V
+    invoke-virtual {p1, v0, v4}, Lq33;->E(ILjava/lang/String;)V
 
     :cond_c
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->localPath:Ljava/lang/String;
@@ -1450,7 +1498,7 @@
 
     iget-object v1, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->localPath:Ljava/lang/String;
 
-    invoke-virtual {p1, v0, v1}, Lo13;->E(ILjava/lang/String;)V
+    invoke-virtual {p1, v0, v1}, Lq33;->E(ILjava/lang/String;)V
 
     :cond_d
     iget-boolean v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->isProcessingOnServer:Z
@@ -1459,7 +1507,7 @@
 
     const/16 v1, 0xf
 
-    invoke-virtual {p1, v1, v0}, Lo13;->r(IZ)V
+    invoke-virtual {p1, v1, v0}, Lq33;->r(IZ)V
 
     :cond_e
     iget-boolean v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->isDeleted:Z
@@ -1468,7 +1516,7 @@
 
     const/16 v1, 0x10
 
-    invoke-virtual {p1, v1, v0}, Lo13;->r(IZ)V
+    invoke-virtual {p1, v1, v0}, Lq33;->r(IZ)V
 
     :cond_f
     iget-wide v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->totalBytes:J
@@ -1479,7 +1527,7 @@
 
     const/16 v4, 0x11
 
-    invoke-virtual {p1, v4, v0, v1}, Lo13;->x(IJ)V
+    invoke-virtual {p1, v4, v0, v1}, Lq33;->x(IJ)V
 
     :cond_10
     iget-wide v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->bytesDownloaded:J
@@ -1490,7 +1538,7 @@
 
     const/16 v4, 0x12
 
-    invoke-virtual {p1, v4, v0, v1}, Lo13;->x(IJ)V
+    invoke-virtual {p1, v4, v0, v1}, Lq33;->x(IJ)V
 
     :cond_11
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->file:Lru/ok/tamtam/nano/Protos$Attaches$Attach$File;
@@ -1499,7 +1547,7 @@
 
     const/16 v1, 0x14
 
-    invoke-virtual {p1, v1, v0}, Lo13;->y(ILgr8;)V
+    invoke-virtual {p1, v1, v0}, Lq33;->y(ILnv8;)V
 
     :cond_12
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->contact:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Contact;
@@ -1508,7 +1556,7 @@
 
     const/16 v1, 0x15
 
-    invoke-virtual {p1, v1, v0}, Lo13;->y(ILgr8;)V
+    invoke-virtual {p1, v1, v0}, Lq33;->y(ILnv8;)V
 
     :cond_13
     iget-wide v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->lastModified:J
@@ -1519,7 +1567,7 @@
 
     const/16 v2, 0x16
 
-    invoke-virtual {p1, v2, v0, v1}, Lo13;->x(IJ)V
+    invoke-virtual {p1, v2, v0, v1}, Lq33;->x(IJ)V
 
     :cond_14
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->present:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Present;
@@ -1528,7 +1576,7 @@
 
     const/16 v1, 0x17
 
-    invoke-virtual {p1, v1, v0}, Lo13;->y(ILgr8;)V
+    invoke-virtual {p1, v1, v0}, Lq33;->y(ILnv8;)V
 
     :cond_15
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->inlineKeyboard:Lru/ok/tamtam/nano/Protos$Attaches$Attach$InlineKeyboard;
@@ -1537,7 +1585,7 @@
 
     const/16 v1, 0x18
 
-    invoke-virtual {p1, v1, v0}, Lo13;->y(ILgr8;)V
+    invoke-virtual {p1, v1, v0}, Lq33;->y(ILnv8;)V
 
     :cond_16
     iget-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->location:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Location;
@@ -1546,7 +1594,7 @@
 
     const/16 v1, 0x19
 
-    invoke-virtual {p1, v1, v0}, Lo13;->y(ILgr8;)V
+    invoke-virtual {p1, v1, v0}, Lq33;->y(ILnv8;)V
 
     :cond_17
     iget v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->progressFloat:F
@@ -1567,7 +1615,7 @@
 
     iget v1, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->progressFloat:F
 
-    invoke-virtual {p1, v0, v1}, Lo13;->v(IF)V
+    invoke-virtual {p1, v0, v1}, Lq33;->v(IF)V
 
     :cond_18
     iget v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->processingOnServerStatus:I
@@ -1576,7 +1624,7 @@
 
     const/16 v1, 0x1b
 
-    invoke-virtual {p1, v1, v0}, Lo13;->w(II)V
+    invoke-virtual {p1, v1, v0}, Lq33;->w(II)V
 
     :cond_19
     iget-boolean v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->sensitiveContentUnlocked:Z
@@ -1585,17 +1633,26 @@
 
     const/16 v1, 0x1c
 
-    invoke-virtual {p1, v1, v0}, Lo13;->r(IZ)V
+    invoke-virtual {p1, v1, v0}, Lq33;->r(IZ)V
 
     :cond_1a
-    iget-boolean p0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->sensitive:Z
+    iget-boolean v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->sensitive:Z
 
-    if-eqz p0, :cond_1b
+    if-eqz v0, :cond_1b
 
-    const/16 v0, 0x1d
+    const/16 v1, 0x1d
 
-    invoke-virtual {p1, v0, p0}, Lo13;->r(IZ)V
+    invoke-virtual {p1, v1, v0}, Lq33;->r(IZ)V
 
     :cond_1b
+    iget-object p0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach;->widget:Lru/ok/tamtam/nano/Protos$Attaches$Attach$Widget;
+
+    if-eqz p0, :cond_1c
+
+    const/16 v0, 0x1f
+
+    invoke-virtual {p1, v0, p0}, Lq33;->y(ILnv8;)V
+
+    :cond_1c
     return-void
 .end method

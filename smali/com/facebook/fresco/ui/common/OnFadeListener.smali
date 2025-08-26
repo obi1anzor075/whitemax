@@ -11,7 +11,7 @@
     d2 = {
         "Lcom/facebook/fresco/ui/common/OnFadeListener;",
         "",
-        "Ljue;",
+        "Le5f;",
         "onFadeStarted",
         "()V",
         "onFadeFinished",
@@ -24,6 +24,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

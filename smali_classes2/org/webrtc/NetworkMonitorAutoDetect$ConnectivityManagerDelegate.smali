@@ -186,7 +186,7 @@
 .end method
 
 .method private getNetworkState(Landroid/net/NetworkInfo;)Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;
-    .locals 12
+    .locals 7
 
     if-eqz p1, :cond_1
 
@@ -201,7 +201,7 @@
 
     .line 27
     :cond_0
-    new-instance p0, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;
+    new-instance v0, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;
 
     invoke-virtual {p1}, Landroid/net/NetworkInfo;->getType()I
 
@@ -217,32 +217,28 @@
 
     const/4 v1, 0x1
 
-    move-object v0, p0
-
     invoke-direct/range {v0 .. v5}, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;-><init>(ZIIII)V
 
-    return-object p0
+    return-object v0
 
     .line 28
     :cond_1
     :goto_0
-    new-instance p0, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;
+    new-instance v1, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;
 
-    const/4 v10, -0x1
+    const/4 v5, -0x1
 
-    const/4 v11, -0x1
+    const/4 v6, -0x1
 
-    const/4 v7, 0x0
+    const/4 v2, 0x0
 
-    const/4 v8, -0x1
+    const/4 v3, -0x1
 
-    const/4 v9, -0x1
+    const/4 v4, -0x1
 
-    move-object v6, p0
+    invoke-direct/range {v1 .. v6}, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;-><init>(ZIIII)V
 
-    invoke-direct/range {v6 .. v11}, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;-><init>(ZIIII)V
-
-    return-object p0
+    return-object v1
 .end method
 
 .method private networkToInfo(Landroid/net/Network;)Lorg/webrtc/NetworkChangeDetector$NetworkInformation;
@@ -413,7 +409,7 @@
 
     move-result-object v7
 
-    new-instance v0, Lorg/webrtc/NetworkChangeDetector$NetworkInformation;
+    new-instance v4, Lorg/webrtc/NetworkChangeDetector$NetworkInformation;
 
     invoke-virtual {v1}, Landroid/net/LinkProperties;->getInterfaceName()Ljava/lang/String;
 
@@ -427,9 +423,9 @@
 
     move-result-object v10
 
-    move-object v4, v0
-
     invoke-direct/range {v4 .. v10}, Lorg/webrtc/NetworkChangeDetector$NetworkInformation;-><init>(Ljava/lang/String;Lorg/webrtc/NetworkChangeDetector$ConnectionType;Lorg/webrtc/NetworkChangeDetector$ConnectionType;J[Lorg/webrtc/NetworkChangeDetector$IPAddress;)V
+
+    return-object v4
 
     :cond_6
     :goto_0
@@ -475,7 +471,7 @@
 
     if-eqz p0, :cond_1
 
-    invoke-static {v0}, Lc88;->w(Landroid/net/NetworkRequest$Builder;)V
+    invoke-static {v0}, Luc8;->v(Landroid/net/NetworkRequest$Builder;)V
 
     :cond_1
     invoke-virtual {v0}, Landroid/net/NetworkRequest$Builder;->build()Landroid/net/NetworkRequest;
@@ -781,7 +777,7 @@
     if-nez v0, :cond_0
 
     .line 2
-    new-instance p0, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;
+    new-instance v1, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;
 
     const/4 v5, -0x1
 
@@ -793,11 +789,9 @@
 
     const/4 v4, -0x1
 
-    move-object v1, p0
-
     invoke-direct/range {v1 .. v6}, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;-><init>(ZIIII)V
 
-    return-object p0
+    return-object v1
 
     .line 3
     :cond_0
@@ -813,119 +807,184 @@
 .end method
 
 .method public getNetworkState(Landroid/net/Network;)Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;
-    .locals 17
+    .locals 10
     .annotation build Landroid/annotation/SuppressLint;
         value = {
             "NewApi"
         }
     .end annotation
 
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    if-eqz v1, :cond_7
+    if-eqz p1, :cond_7
 
     .line 4
-    iget-object v2, v0, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;->connectivityManager:Landroid/net/ConnectivityManager;
+    iget-object v0, p0, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;->connectivityManager:Landroid/net/ConnectivityManager;
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     goto/16 :goto_1
 
     .line 5
     :cond_0
-    invoke-virtual {v2, v1}, Landroid/net/ConnectivityManager;->getNetworkInfo(Landroid/net/Network;)Landroid/net/NetworkInfo;
+    invoke-virtual {v0, p1}, Landroid/net/ConnectivityManager;->getNetworkInfo(Landroid/net/Network;)Landroid/net/NetworkInfo;
 
-    move-result-object v2
+    move-result-object v0
 
-    if-nez v2, :cond_1
+    if-nez v0, :cond_1
 
     .line 6
-    invoke-virtual/range {p1 .. p1}, Landroid/net/Network;->toString()Ljava/lang/String;
+    invoke-virtual {p1}, Landroid/net/Network;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    const-string v2, "Couldn\'t retrieve information from network "
+    const-string v0, "Couldn\'t retrieve information from network "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "NetworkMonitorAutoDetect"
+    const-string p1, "NetworkMonitorAutoDetect"
 
-    invoke-static {v1, v0}, Lorg/webrtc/Logging;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, p0}, Lorg/webrtc/Logging;->w(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 7
     new-instance v0, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;
-
-    const/4 v6, -0x1
-
-    const/4 v7, -0x1
-
-    const/4 v3, 0x0
 
     const/4 v4, -0x1
 
     const/4 v5, -0x1
 
-    move-object v2, v0
+    const/4 v1, 0x0
 
-    invoke-direct/range {v2 .. v7}, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;-><init>(ZIIII)V
+    const/4 v2, -0x1
+
+    const/4 v3, -0x1
+
+    invoke-direct/range {v0 .. v5}, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;-><init>(ZIIII)V
 
     return-object v0
 
     .line 8
     :cond_1
-    invoke-virtual {v2}, Landroid/net/NetworkInfo;->getType()I
-
-    move-result v3
-
-    const/16 v4, 0x11
-
-    if-eq v3, v4, :cond_4
-
-    .line 9
-    iget-object v3, v0, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;->connectivityManager:Landroid/net/ConnectivityManager;
-
-    .line 10
-    invoke-virtual {v3, v1}, Landroid/net/ConnectivityManager;->getNetworkCapabilities(Landroid/net/Network;)Landroid/net/NetworkCapabilities;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_3
-
-    const/4 v3, 0x4
-
-    .line 11
-    invoke-virtual {v1, v3}, Landroid/net/NetworkCapabilities;->hasTransport(I)Z
+    invoke-virtual {v0}, Landroid/net/NetworkInfo;->getType()I
 
     move-result v1
 
-    if-nez v1, :cond_2
+    const/16 v2, 0x11
+
+    if-eq v1, v2, :cond_4
+
+    .line 9
+    iget-object v1, p0, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;->connectivityManager:Landroid/net/ConnectivityManager;
+
+    .line 10
+    invoke-virtual {v1, p1}, Landroid/net/ConnectivityManager;->getNetworkCapabilities(Landroid/net/Network;)Landroid/net/NetworkCapabilities;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_3
+
+    const/4 v1, 0x4
+
+    .line 11
+    invoke-virtual {p1, v1}, Landroid/net/NetworkCapabilities;->hasTransport(I)Z
+
+    move-result p1
+
+    if-nez p1, :cond_2
 
     goto :goto_0
 
     .line 12
     :cond_2
-    new-instance v0, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;
+    new-instance v1, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;
 
-    invoke-virtual {v2}, Landroid/net/NetworkInfo;->isConnected()Z
+    invoke-virtual {v0}, Landroid/net/NetworkInfo;->isConnected()Z
+
+    move-result v2
+
+    .line 13
+    invoke-virtual {v0}, Landroid/net/NetworkInfo;->getType()I
+
+    move-result v5
+
+    invoke-virtual {v0}, Landroid/net/NetworkInfo;->getSubtype()I
+
+    move-result v6
+
+    const/16 v3, 0x11
+
+    const/4 v4, -0x1
+
+    invoke-direct/range {v1 .. v6}, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;-><init>(ZIIII)V
+
+    return-object v1
+
+    .line 14
+    :cond_3
+    :goto_0
+    invoke-direct {p0, v0}, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;->getNetworkState(Landroid/net/NetworkInfo;)Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 15
+    :cond_4
+    invoke-virtual {v0}, Landroid/net/NetworkInfo;->getType()I
+
+    move-result v1
+
+    if-ne v1, v2, :cond_6
+
+    .line 16
+    iget-object v1, p0, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;->connectivityManager:Landroid/net/ConnectivityManager;
+
+    .line 17
+    invoke-virtual {v1}, Landroid/net/ConnectivityManager;->getActiveNetwork()Landroid/net/Network;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v1}, Landroid/net/Network;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_5
+
+    .line 18
+    iget-object p0, p0, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;->connectivityManager:Landroid/net/ConnectivityManager;
+
+    invoke-virtual {p0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_5
+
+    .line 19
+    invoke-virtual {p0}, Landroid/net/NetworkInfo;->getType()I
+
+    move-result p1
+
+    if-eq p1, v2, :cond_5
+
+    .line 20
+    new-instance v3, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;
+
+    invoke-virtual {v0}, Landroid/net/NetworkInfo;->isConnected()Z
 
     move-result v4
 
-    .line 13
-    invoke-virtual {v2}, Landroid/net/NetworkInfo;->getType()I
+    .line 21
+    invoke-virtual {p0}, Landroid/net/NetworkInfo;->getType()I
 
     move-result v7
 
-    invoke-virtual {v2}, Landroid/net/NetworkInfo;->getSubtype()I
+    invoke-virtual {p0}, Landroid/net/NetworkInfo;->getSubtype()I
 
     move-result v8
 
@@ -933,134 +992,55 @@
 
     const/4 v6, -0x1
 
-    move-object v3, v0
-
     invoke-direct/range {v3 .. v8}, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;-><init>(ZIIII)V
 
-    return-object v0
-
-    .line 14
-    :cond_3
-    :goto_0
-    invoke-direct {v0, v2}, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;->getNetworkState(Landroid/net/NetworkInfo;)Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;
-
-    move-result-object v0
-
-    return-object v0
-
-    .line 15
-    :cond_4
-    invoke-virtual {v2}, Landroid/net/NetworkInfo;->getType()I
-
-    move-result v3
-
-    if-ne v3, v4, :cond_6
-
-    .line 16
-    iget-object v3, v0, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;->connectivityManager:Landroid/net/ConnectivityManager;
-
-    .line 17
-    invoke-virtual {v3}, Landroid/net/ConnectivityManager;->getActiveNetwork()Landroid/net/Network;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Landroid/net/Network;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_5
-
-    .line 18
-    iget-object v0, v0, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;->connectivityManager:Landroid/net/ConnectivityManager;
-
-    invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_5
-
-    .line 19
-    invoke-virtual {v0}, Landroid/net/NetworkInfo;->getType()I
-
-    move-result v1
-
-    if-eq v1, v4, :cond_5
-
-    .line 20
-    new-instance v1, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;
-
-    invoke-virtual {v2}, Landroid/net/NetworkInfo;->isConnected()Z
-
-    move-result v6
-
-    .line 21
-    invoke-virtual {v0}, Landroid/net/NetworkInfo;->getType()I
-
-    move-result v9
-
-    invoke-virtual {v0}, Landroid/net/NetworkInfo;->getSubtype()I
-
-    move-result v10
-
-    const/16 v7, 0x11
-
-    const/4 v8, -0x1
-
-    move-object v5, v1
-
-    invoke-direct/range {v5 .. v10}, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;-><init>(ZIIII)V
-
-    return-object v1
+    return-object v3
 
     .line 22
     :cond_5
-    new-instance v0, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;
+    new-instance v4, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;
 
     .line 23
-    invoke-virtual {v2}, Landroid/net/NetworkInfo;->isConnected()Z
+    invoke-virtual {v0}, Landroid/net/NetworkInfo;->isConnected()Z
 
-    move-result v12
+    move-result v5
 
-    const/4 v15, -0x1
+    const/4 v8, -0x1
 
-    const/16 v16, -0x1
+    const/4 v9, -0x1
 
-    const/16 v13, 0x11
+    const/16 v6, 0x11
 
-    const/4 v14, -0x1
+    const/4 v7, -0x1
 
-    move-object v11, v0
+    invoke-direct/range {v4 .. v9}, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;-><init>(ZIIII)V
 
-    invoke-direct/range {v11 .. v16}, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;-><init>(ZIIII)V
-
-    return-object v0
+    return-object v4
 
     .line 24
     :cond_6
-    invoke-direct {v0, v2}, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;->getNetworkState(Landroid/net/NetworkInfo;)Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;
+    invoke-direct {p0, v0}, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;->getNetworkState(Landroid/net/NetworkInfo;)Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 
     .line 25
     :cond_7
     :goto_1
     new-instance v0, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;
 
+    const/4 v4, -0x1
+
     const/4 v5, -0x1
 
-    const/4 v6, -0x1
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/4 v2, -0x1
 
     const/4 v3, -0x1
 
-    const/4 v4, -0x1
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v6}, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;-><init>(ZIIII)V
+    invoke-direct/range {v0 .. v5}, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;-><init>(ZIIII)V
 
     return-object v0
 .end method
@@ -1096,7 +1076,9 @@
 
     if-eqz p0, :cond_1
 
-    const/4 v0, 0x1
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_1
     return v0
@@ -1191,11 +1173,10 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method

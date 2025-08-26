@@ -1,68 +1,94 @@
-.class public final synthetic Lawd;
+.class public final Lawd;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/function/UnaryOperator;
+.implements Lrmc;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Ljava/lang/String;
-
-
-# direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;I)V
-    .locals 0
-
-    iput p2, p0, Lawd;->a:I
-
-    iput-object p1, p0, Lawd;->b:Ljava/lang/String;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.field public a:Ljava/util/ArrayList;
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
-    iget v0, p0, Lawd;->a:I
+    if-ne p0, p1, :cond_0
 
-    packed-switch v0, :pswitch_data_0
+    const/4 p0, 0x1
 
-    check-cast p1, Lmwd;
+    return p0
 
-    new-instance p1, Lmwd;
+    :cond_0
+    if-eqz p1, :cond_2
 
-    const/4 v0, 0x1
+    const-class v0, Lawd;
 
-    iget-object p0, p0, Lawd;->b:Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {p1, p0, v0}, Lmwd;-><init>(Ljava/lang/String;I)V
+    move-result-object v1
 
-    return-object p1
+    if-eq v0, v1, :cond_1
 
-    :pswitch_0
-    check-cast p1, Lxvd;
+    goto :goto_0
 
-    new-instance p1, Lxvd;
+    :cond_1
+    check-cast p1, Lawd;
 
-    const/4 v0, 0x2
+    iget-object p0, p0, Lawd;->a:Ljava/util/ArrayList;
 
-    iget-object p0, p0, Lawd;->b:Ljava/lang/String;
+    iget-object p1, p1, Lawd;->a:Ljava/util/ArrayList;
 
-    invoke-direct {p1, p0, v0}, Lxvd;-><init>(Ljava/lang/String;I)V
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->equals(Ljava/lang/Object;)Z
 
-    return-object p1
+    move-result p0
 
-    nop
+    return p0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    :cond_2
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    iget-object p0, p0, Lawd;->a:Ljava/util/ArrayList;
+
+    filled-new-array {p0}, [Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "StalledParticipantsNotification{participantIds="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lawd;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const/16 p0, 0x7d
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

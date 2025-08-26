@@ -1,151 +1,57 @@
-.class public final synthetic Ln36;
+.class public abstract Ln36;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ltn1;
-.implements Lau;
+.implements Lh04;
 
 
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lch7;
+# static fields
+.field public static final a:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lch7;I)V
-    .locals 0
-
-    iput p2, p0, Ln36;->a:I
-
-    iput-object p1, p0, Ln36;->b:Lch7;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public apply(Ljava/lang/Object;)Lch7;
-    .locals 1
-
-    iget v0, p0, Ln36;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    check-cast p1, Ljava/lang/Void;
-
-    iget-object p0, p0, Ln36;->b:Lch7;
-
-    invoke-interface {p0}, Ljava/util/concurrent/Future;->get()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lvs1;
-
-    invoke-interface {p0}, Lvs1;->b()Lch7;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    check-cast p1, Lvs1;
-
-    iget-object p0, p0, Ln36;->b:Lch7;
-
-    invoke-interface {p0}, Ljava/util/concurrent/Future;->get()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lvs1;
-
-    invoke-interface {p0}, Lvs1;->a()Lch7;
-
-    move-result-object p0
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public z(Lsn1;)Ljava/lang/String;
+.method static constructor <clinit>()V
     .locals 2
 
-    iget v0, p0, Ln36;->a:I
+    const-string v0, "Amazon"
 
-    packed-switch v0, :pswitch_data_0
+    sget-object v1, Lnaf;->c:Ljava/lang/String;
 
-    invoke-static {}, Lpa2;->j()Lmh4;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v0
+    move-result v0
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_1
 
-    iget-object p0, p0, Ln36;->b:Lch7;
+    sget-object v0, Lnaf;->d:Ljava/lang/String;
 
-    invoke-static {v1, p0, p1, v0}, Lct0;->D(ZLch7;Lsn1;Lmh4;)V
+    const-string v1, "AFTM"
 
-    new-instance p1, Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const-string v0, "nonCancellationPropagating["
+    move-result v1
 
-    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    if-nez v1, :cond_0
 
-    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v1, "AFTB"
 
-    const-string p0, "]"
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v0
 
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-eqz v0, :cond_1
 
-    move-result-object p0
+    :cond_0
+    const/4 v0, 0x1
 
-    return-object p0
+    goto :goto_0
 
-    :pswitch_0
-    new-instance v0, Lya4;
+    :cond_1
+    const/4 v0, 0x0
 
-    const/4 v1, 0x1
+    :goto_0
+    sput-boolean v0, Ln36;->a:Z
 
-    invoke-direct {v0, p1, v1}, Lya4;-><init>(Lsn1;I)V
-
-    invoke-static {}, Lpa2;->j()Lmh4;
-
-    move-result-object p1
-
-    iget-object p0, p0, Ln36;->b:Lch7;
-
-    invoke-interface {p0, v0, p1}, Lch7;->c(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    const-string v0, "transformVoidFuture ["
-
-    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, "]"
-
-    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

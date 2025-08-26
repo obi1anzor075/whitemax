@@ -1,139 +1,206 @@
 .class public final Lr58;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public a:J
+.field public synthetic X:Ljava/lang/Object;
 
-.field public b:J
-
-.field public c:Z
-
-.field public d:Z
-
-.field public e:Z
+.field public final synthetic Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
 
 
 # direct methods
-.method public synthetic constructor <init>()V
-    .locals 2
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/MediaBarWidget;)V
+    .locals 0
 
-    const-wide/high16 v0, -0x8000000000000000L
+    iput-object p2, p0, Lr58;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
 
-    iput-wide v0, p0, Lr58;->b:J
+    const/4 p2, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2, p1}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Lt58;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Lc96;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lr58;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lr58;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lr58;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .locals 1
 
-    new-instance v0, Lt58;
+    new-instance v0, Lr58;
 
-    invoke-direct {v0, p0}, Lt58;-><init>(Lr58;)V
+    iget-object p0, p0, Lr58;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
+
+    invoke-direct {v0, p2, p0}, Lr58;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/MediaBarWidget;)V
+
+    iput-object p1, v0, Lr58;->X:Ljava/lang/Object;
 
     return-object v0
 .end method
 
-.method public b()Lu58;
-    .locals 1
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
-    new-instance v0, Lu58;
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    invoke-direct {v0, p0}, Ls58;-><init>(Lr58;)V
+    iget-object p1, p0, Lr58;->X:Ljava/lang/Object;
 
-    return-object v0
-.end method
+    check-cast p1, Lc96;
 
-.method public c()Lv58;
-    .locals 1
+    instance-of v0, p1, Lw86;
 
-    new-instance v0, Lv58;
+    if-nez v0, :cond_6
 
-    invoke-direct {v0, p0}, Lt58;-><init>(Lr58;)V
+    instance-of v0, p1, Lx86;
 
-    return-object v0
-.end method
+    iget-object p0, p0, Lr58;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
 
-.method public d(J)V
-    .locals 2
+    if-eqz v0, :cond_0
 
-    const-wide/high16 v0, -0x8000000000000000L
+    sget-object v0, Lone/me/chatscreen/mediabar/MediaBarWidget;->Z0:[Lbc7;
 
-    cmp-long v0, p1, v0
+    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/MediaBarWidget;->E0()Lh58;
+
+    move-result-object p0
+
+    check-cast p1, Lx86;
+
+    iget-object p1, p1, Lx86;->a:Ljava/lang/Object;
+
+    iget-object p0, p0, Lh58;->t0:Lazd;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0, p1}, Lazd;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_0
+    instance-of v0, p1, Ly86;
 
     if-eqz v0, :cond_1
 
-    const-wide/16 v0, 0x0
+    check-cast p1, Ly86;
 
-    cmp-long v0, p1, v0
+    iget-object v0, p1, Ly86;->c:Lwp7;
 
-    if-ltz v0, :cond_0
+    invoke-static {v0}, Lxqd;->A(Lwp7;)Lrp7;
+
+    move-result-object v0
+
+    iget v1, p1, Ly86;->a:I
+
+    iget-object p1, p1, Ly86;->b:Ljava/lang/String;
+
+    sget-object v2, Lone/me/chatscreen/mediabar/MediaBarWidget;->Z0:[Lbc7;
+
+    invoke-virtual {p0, v0, v1, p1}, Lone/me/chatscreen/mediabar/MediaBarWidget;->F0(Lrp7;ILjava/lang/String;)V
 
     goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_1
 
     :cond_1
-    :goto_0
-    const/4 v0, 0x1
+    instance-of v0, p1, La96;
 
-    :goto_1
-    invoke-static {v0}, Loyb;->d(Z)V
+    if-eqz v0, :cond_3
 
-    iput-wide p1, p0, Lr58;->b:J
+    sget-object v0, Lone/me/chatscreen/mediabar/MediaBarWidget;->Z0:[Lbc7;
 
-    return-void
-.end method
+    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/MediaBarWidget;->v0()Lew1;
 
-.method public e(J)V
-    .locals 0
+    move-result-object p0
 
-    invoke-static {p1, p2}, Loze;->S(J)J
+    check-cast p1, La96;
 
-    move-result-wide p1
+    iget p1, p1, La96;->a:I
 
-    invoke-virtual {p0, p1, p2}, Lr58;->f(J)V
+    iput p1, p0, Lew1;->o0:I
 
-    return-void
-.end method
+    iput p1, p0, Lew1;->p0:I
 
-.method public f(J)V
-    .locals 2
+    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    const-wide/16 v0, 0x0
+    move-result-object v0
 
-    cmp-long v0, p1, v0
+    if-eqz v0, :cond_2
 
-    if-ltz v0, :cond_0
+    iput p1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    const/4 v0, 0x1
+    iput p1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_0
 
-    :cond_0
-    const/4 v0, 0x0
+    :cond_2
+    new-instance p0, Ljava/lang/NullPointerException;
 
+    const-string p1, "null cannot be cast to non-null type android.view.ViewGroup.LayoutParams"
+
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_3
+    instance-of v0, p1, Lb96;
+
+    if-eqz v0, :cond_4
+
+    check-cast p1, Lb96;
+
+    iget p1, p1, Lb96;->a:F
+
+    iput p1, p0, Lone/me/chatscreen/mediabar/MediaBarWidget;->A0:F
+
+    invoke-static {p0}, Lone/me/chatscreen/mediabar/MediaBarWidget;->r0(Lone/me/chatscreen/mediabar/MediaBarWidget;)V
+
+    goto :goto_0
+
+    :cond_4
+    instance-of v0, p1, Lz86;
+
+    if-eqz v0, :cond_5
+
+    check-cast p1, Lz86;
+
+    iget p1, p1, Lz86;->a:I
+
+    invoke-static {p0, p1}, Lone/me/chatscreen/mediabar/MediaBarWidget;->q0(Lone/me/chatscreen/mediabar/MediaBarWidget;I)V
+
+    goto :goto_0
+
+    :cond_5
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p0
+
+    :cond_6
     :goto_0
-    invoke-static {v0}, Loyb;->d(Z)V
+    sget-object p0, Le5f;->a:Le5f;
 
-    iput-wide p1, p0, Lr58;->a:J
-
-    return-void
-.end method
-
-.method public g(Z)V
-    .locals 0
-
-    iput-boolean p1, p0, Lr58;->e:Z
-
-    return-void
+    return-object p0
 .end method

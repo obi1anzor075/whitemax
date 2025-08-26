@@ -1,351 +1,70 @@
 .class public final Lhnd;
-.super Landroid/graphics/drawable/Drawable;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final d:Landroid/graphics/Paint;
+# interfaces
+.implements Lgnd;
 
 
 # instance fields
-.field public final a:Lind;
-
-.field public final b:Landroid/graphics/Rect;
-
-.field public final c:Landroid/graphics/Paint;
+.field public final a:Ljq0;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ljq0;)V
+    .locals 0
 
-    new-instance v0, Landroid/graphics/Paint;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
-
-    sput-object v0, Lhnd;->d:Landroid/graphics/Paint;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lind;)V
-    .locals 2
-
-    .line 1
-    invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
-
-    .line 2
-    iput-object p1, p0, Lhnd;->a:Lind;
-
-    .line 3
-    new-instance v0, Landroid/graphics/Rect;
-
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object v0, p0, Lhnd;->b:Landroid/graphics/Rect;
-
-    .line 4
-    new-instance v0, Landroid/graphics/Paint;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
-
-    iput-object v0, p0, Lhnd;->c:Landroid/graphics/Paint;
-
-    .line 5
-    iget p1, p1, Lind;->b:I
-
-    const/4 v0, 0x0
-
-    .line 6
-    invoke-virtual {p0, v0, v0, p1, p1}, Lhnd;->setBounds(IIII)V
-
-    .line 7
-    invoke-virtual {p0}, Lhnd;->a()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lnv4;ILit4;)V
-    .locals 4
-
-    .line 8
-    new-instance v0, Lind;
-
-    .line 9
-    new-instance v1, Lhu4;
-
-    iget v2, p1, Lnv4;->c:I
-
-    iget v3, p1, Lnv4;->d:I
-
-    iget p1, p1, Lnv4;->b:I
-
-    invoke-direct {v1, p1, v2, v3}, Lhu4;-><init>(III)V
-
-    .line 10
-    invoke-direct {v0, v1, p2, p3}, Lind;-><init>(Lhu4;ILit4;)V
-
-    .line 11
-    invoke-direct {p0, v0}, Lhnd;-><init>(Lind;)V
+    iput-object p1, p0, Lhnd;->a:Ljq0;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 5
+.method public final a()Lorg/json/JSONObject;
+    .locals 4
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+    new-instance v0, Lorg/json/JSONObject;
 
-    move-result-object v0
+    invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
 
-    invoke-virtual {v0}, Landroid/graphics/Rect;->centerX()I
+    const-string v1, "command"
 
-    move-result v0
+    const-string v2, "update-media-modifiers"
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/graphics/Rect;->centerY()I
-
-    move-result v1
-
-    iget-object v2, p0, Lhnd;->a:Lind;
-
-    iget v2, v2, Lind;->b:I
-
-    div-int/lit8 v2, v2, 0x2
-
-    sub-int v3, v0, v2
-
-    sub-int v4, v1, v2
-
-    add-int/2addr v0, v2
-
-    add-int/2addr v1, v2
-
-    iget-object p0, p0, Lhnd;->b:Landroid/graphics/Rect;
-
-    invoke-virtual {p0, v3, v4, v0, v1}, Landroid/graphics/Rect;->set(IIII)V
-
-    return-void
-.end method
-
-.method public final draw(Landroid/graphics/Canvas;)V
-    .locals 3
-
-    iget-object v0, p0, Lhnd;->a:Lind;
-
-    iget-object v1, v0, Lind;->e:Lit4;
-
-    iget-object v0, v0, Lind;->a:Lhu4;
-
-    invoke-virtual {v1, v0}, Lit4;->v(Lhu4;)Landroid/graphics/Bitmap;
+    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     move-result-object v0
 
-    iget-object v1, p0, Lhnd;->b:Landroid/graphics/Rect;
+    iget-object p0, p0, Lhnd;->a:Ljq0;
 
-    if-nez v0, :cond_0
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    sget-object p0, Lhnd;->d:Landroid/graphics/Paint;
+    new-instance v1, Lorg/json/JSONObject;
 
-    invoke-virtual {p1, v1, p0}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+    invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
 
-    goto :goto_0
+    :try_start_0
+    const-string v2, "denoise"
 
-    :cond_0
-    sget-object v2, Lcv4;->c:Landroid/graphics/Rect;
+    iget-boolean v3, p0, Ljq0;->a:Z
 
-    sget-object v2, Lcv4;->c:Landroid/graphics/Rect;
+    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
 
-    iget-object p0, p0, Lhnd;->c:Landroid/graphics/Paint;
+    const-string v2, "denoiseAnn"
 
-    invoke-virtual {p1, v0, v2, v1, p0}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+    iget-boolean p0, p0, Ljq0;->b:Z
 
-    :goto_0
-    return-void
-.end method
+    invoke-virtual {v1, v2, p0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+    :catch_0
+    const-string p0, "mediaModifiers"
 
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lhnd;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lhnd;
-
-    iget-object p0, p0, Lhnd;->a:Lind;
-
-    iget-object p1, p1, Lhnd;->a:Lind;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
-    .locals 0
-
-    iget-object p0, p0, Lhnd;->a:Lind;
-
-    return-object p0
-.end method
-
-.method public final getIntrinsicHeight()I
-    .locals 0
-
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/graphics/Rect;->height()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final getIntrinsicWidth()I
-    .locals 0
-
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/graphics/Rect;->width()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final getMinimumHeight()I
-    .locals 0
-
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/graphics/Rect;->height()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final getMinimumWidth()I
-    .locals 0
-
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/graphics/Rect;->width()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final getOpacity()I
-    .locals 0
-
-    const/4 p0, -0x2
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    iget-object p0, p0, Lhnd;->a:Lind;
-
-    invoke-virtual {p0}, Lind;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final setAlpha(I)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final setBounds(IIII)V
-    .locals 0
-
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    iget-object p1, p0, Lhnd;->a:Lind;
-
-    iput p4, p1, Lind;->b:I
-
-    invoke-virtual {p0}, Lhnd;->a()V
-
-    return-void
-.end method
-
-.method public final setColorFilter(Landroid/graphics/ColorFilter;)V
-    .locals 1
-
-    iget-object v0, p0, Lhnd;->c:Landroid/graphics/Paint;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
-
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
-
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "SpriteEmojiDrawable(state="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lhnd;->a:Lind;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, p0, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     move-result-object p0
 

@@ -1,148 +1,35 @@
-.class public final Lvo1;
-.super Ll5e;
+.class public interface abstract Lvo1;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Li26;
 
-
-# instance fields
-.field public X:Lep1;
-
-.field public Y:I
-
-.field public final synthetic Z:Lep1;
-
-
-# direct methods
-.method public constructor <init>(Lep1;Lkotlin/coroutines/Continuation;)V
+# virtual methods
+.method public B()V
     .locals 0
-
-    iput-object p1, p0, Lvo1;->Z:Lep1;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public D(Lwf1;)V
     .locals 0
 
-    check-cast p1, Lou3;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lvo1;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lvo1;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lvo1;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public k(Lwf1;Landroid/graphics/Point;)V
     .locals 0
 
-    new-instance p1, Lvo1;
-
-    iget-object p0, p0, Lvo1;->Z:Lep1;
-
-    invoke-direct {p1, p0, p2}, Lvo1;-><init>(Lep1;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
+    return-void
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+.method public p(Lwf1;)V
+    .locals 0
 
-    sget-object v0, Lpu3;->a:Lpu3;
+    return-void
+.end method
 
-    iget v1, p0, Lvo1;->Y:I
+.method public x(Lwf1;)V
+    .locals 0
 
-    const/4 v2, 0x1
-
-    if-eqz v1, :cond_1
-
-    if-ne v1, v2, :cond_0
-
-    iget-object p0, p0, Lvo1;->X:Lep1;
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    sget-object p1, Lep1;->K:[Lk77;
-
-    iget-object p1, p0, Lvo1;->Z:Lep1;
-
-    invoke-virtual {p1}, Lep1;->t()Laka;
-
-    move-result-object v1
-
-    check-cast v1, Loka;
-
-    iget-object v1, v1, Loka;->A0:Lt0c;
-
-    new-instance v3, Lzi1;
-
-    const/4 v4, 0x2
-
-    invoke-direct {v3, v1, v4}, Lzi1;-><init>(Lpj5;I)V
-
-    iput-object p1, p0, Lvo1;->X:Lep1;
-
-    iput v2, p0, Lvo1;->Y:I
-
-    invoke-static {v3, p0}, Lez3;->F(Lpj5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-ne p0, v0, :cond_2
-
-    return-object v0
-
-    :cond_2
-    move-object v5, p1
-
-    move-object p1, p0
-
-    move-object p0, v5
-
-    :goto_0
-    if-eqz p1, :cond_3
-
-    goto :goto_1
-
-    :cond_3
-    const/4 v2, 0x0
-
-    :goto_1
-    iput-boolean v2, p0, Lep1;->F:Z
-
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
+    return-void
 .end method

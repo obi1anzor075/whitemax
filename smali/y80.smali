@@ -1,182 +1,98 @@
 .class public final Ly80;
-.super Ld03;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lqw9;
 
-# instance fields
-.field public final a:Lc03;
 
-.field public final b:Lld;
+# static fields
+.field public static final a:Ly80;
+
+.field public static final b:Lte5;
+
+.field public static final c:Lte5;
 
 
 # direct methods
-.method public constructor <init>(Lj80;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 4
 
-    sget-object v0, Lc03;->a:Lc03;
+    new-instance v0, Ly80;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Ly80;->a:Lc03;
+    sput-object v0, Ly80;->a:Ly80;
 
-    iput-object p1, p0, Ly80;->b:Lld;
+    new-instance v0, Lxx;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lxx;-><init>(I)V
+
+    const-class v1, Lvlb;
+
+    invoke-static {v1, v0}, Lzt1;->n(Ljava/lang/Class;Lxx;)Ljava/util/HashMap;
+
+    move-result-object v0
+
+    new-instance v2, Lte5;
+
+    invoke-static {v0}, Lzt1;->o(Ljava/util/HashMap;)Ljava/util/Map;
+
+    move-result-object v0
+
+    const-string v3, "startMs"
+
+    invoke-direct {v2, v3, v0}, Lte5;-><init>(Ljava/lang/String;Ljava/util/Map;)V
+
+    sput-object v2, Ly80;->b:Lte5;
+
+    new-instance v0, Lxx;
+
+    const/4 v2, 0x2
+
+    invoke-direct {v0, v2}, Lxx;-><init>(I)V
+
+    invoke-static {v1, v0}, Lzt1;->n(Ljava/lang/Class;Lxx;)Ljava/util/HashMap;
+
+    move-result-object v0
+
+    new-instance v1, Lte5;
+
+    invoke-static {v0}, Lzt1;->o(Ljava/util/HashMap;)Ljava/util/Map;
+
+    move-result-object v0
+
+    const-string v2, "endMs"
+
+    invoke-direct {v1, v2, v0}, Lte5;-><init>(Ljava/lang/String;Ljava/util/Map;)V
+
+    sput-object v1, Ly80;->c:Lte5;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v0, 0x1
-
-    if-ne p1, p0, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Ld03;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_4
-
-    check-cast p1, Ld03;
-
-    iget-object v1, p0, Ly80;->a:Lc03;
-
-    if-nez v1, :cond_1
-
-    move-object v1, p1
-
-    check-cast v1, Ly80;
-
-    iget-object v1, v1, Ly80;->a:Lc03;
-
-    if-nez v1, :cond_3
-
-    goto :goto_0
-
-    :cond_1
-    move-object v3, p1
-
-    check-cast v3, Ly80;
-
-    iget-object v3, v3, Ly80;->a:Lc03;
-
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    :goto_0
-    iget-object p0, p0, Ly80;->b:Lld;
-
-    if-nez p0, :cond_2
-
-    check-cast p1, Ly80;
-
-    iget-object p0, p1, Ly80;->b:Lld;
-
-    if-nez p0, :cond_3
-
-    goto :goto_1
-
-    :cond_2
-    check-cast p1, Ly80;
-
-    iget-object p1, p1, Ly80;->b:Lld;
-
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_3
-
-    goto :goto_1
-
-    :cond_3
-    move v0, v2
-
-    :goto_1
-    return v0
-
-    :cond_4
-    return v2
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    const/4 v0, 0x0
-
-    iget-object v1, p0, Ly80;->a:Lc03;
-
-    if-nez v1, :cond_0
-
-    move v1, v0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
-
-    move-result v1
-
-    :goto_0
-    const v2, 0xf4243
-
-    xor-int/2addr v1, v2
-
-    mul-int/2addr v1, v2
-
-    iget-object p0, p0, Ly80;->b:Lld;
-
-    if-nez p0, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    :goto_1
-    xor-int p0, v1, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final a(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    check-cast p1, Lese;
 
-    const-string v1, "ClientInfo{clientType="
+    check-cast p2, Lrw9;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    sget-object p0, Ly80;->b:Lte5;
 
-    iget-object v1, p0, Ly80;->a:Lc03;
+    iget-wide v0, p1, Lese;->a:J
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-interface {p2, p0, v0, v1}, Lrw9;->e(Lte5;J)Lrw9;
 
-    const-string v1, ", androidClientInfo="
+    sget-object p0, Ly80;->c:Lte5;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-wide v0, p1, Lese;->b:J
 
-    iget-object p0, p0, Ly80;->b:Lld;
+    invoke-interface {p2, p0, v0, v1}, Lrw9;->e(Lte5;J)Lrw9;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, "}"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

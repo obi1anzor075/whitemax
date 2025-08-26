@@ -13,7 +13,7 @@
         "",
         "Lru/ok/android/externcalls/sdk/urlsharing/external/UrlSharingInfo;",
         "urlSharingInfo",
-        "Ljue;",
+        "Le5f;",
         "onUrlSharingStarted",
         "(Lru/ok/android/externcalls/sdk/urlsharing/external/UrlSharingInfo;)V",
         "onUrlSharingStopped",
@@ -26,6 +26,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

@@ -1,118 +1,84 @@
 .class public final Ly8e;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
 
 
 # instance fields
-.field public X:I
-
-.field public final synthetic Y:Lb9e;
-
-.field public final synthetic Z:Lone/me/sdk/vendor/SystemServicesManager$PushTokenGeneratedListener;
+.field public final a:I
 
 
 # direct methods
-.method public constructor <init>(Lb9e;Lone/me/sdk/vendor/SystemServicesManager$PushTokenGeneratedListener;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(I)V
     .locals 0
 
-    iput-object p1, p0, Ly8e;->Y:Lb9e;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Ly8e;->Z:Lone/me/sdk/vendor/SystemServicesManager$PushTokenGeneratedListener;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p3}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput p1, p0, Ly8e;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Lou3;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Ly8e;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Ly8e;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Ly8e;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
-    new-instance p1, Ly8e;
+    if-ne p0, p1, :cond_0
 
-    iget-object v0, p0, Ly8e;->Y:Lb9e;
+    goto :goto_1
 
-    iget-object p0, p0, Ly8e;->Z:Lone/me/sdk/vendor/SystemServicesManager$PushTokenGeneratedListener;
+    :cond_0
+    instance-of v0, p1, Ly8e;
 
-    invoke-direct {p1, v0, p0, p2}, Ly8e;-><init>(Lb9e;Lone/me/sdk/vendor/SystemServicesManager$PushTokenGeneratedListener;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    sget-object v0, Lpu3;->a:Lpu3;
-
-    iget v1, p0, Ly8e;->X:I
-
-    const/4 v2, 0x1
-
-    if-eqz v1, :cond_1
-
-    if-ne v1, v2, :cond_0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    if-nez v0, :cond_1
 
     goto :goto_0
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
     :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    check-cast p1, Ly8e;
 
-    iput v2, p0, Ly8e;->X:I
+    iget p0, p0, Ly8e;->a:I
 
-    iget-object p1, p0, Ly8e;->Y:Lb9e;
+    iget p1, p1, Ly8e;->a:I
 
-    iget-object v1, p0, Ly8e;->Z:Lone/me/sdk/vendor/SystemServicesManager$PushTokenGeneratedListener;
+    if-eq p0, p1, :cond_2
 
-    invoke-virtual {p1, v1, p0}, Lb9e;->e(Lone/me/sdk/vendor/SystemServicesManager$PushTokenGeneratedListener;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    :goto_0
+    const/4 p0, 0x0
 
-    move-result-object p0
-
-    if-ne p0, v0, :cond_2
-
-    return-object v0
+    return p0
 
     :cond_2
-    :goto_0
-    sget-object p0, Ljue;->a:Ljue;
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    iget p0, p0, Ly8e;->a:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    const-string v0, "StrokeLocalTopBarColors(primary="
+
+    const-string v1, ")"
+
+    iget p0, p0, Ly8e;->a:I
+
+    invoke-static {p0, v0, v1}, Lpg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

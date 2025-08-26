@@ -4,26 +4,10 @@
 
 
 # static fields
-.field public static final synthetic I0:I
+.field public static final synthetic A0:I
 
 
 # instance fields
-.field public A0:I
-
-.field public B0:F
-
-.field public C0:F
-
-.field public D0:Landroid/animation/AnimatorSet;
-
-.field public E0:Lnj5;
-
-.field public final F0:Landroid/view/WindowManager$LayoutParams;
-
-.field public final G0:Ltg;
-
-.field public H0:Landroid/view/VelocityTracker;
-
 .field public final a:I
 
 .field public final b:I
@@ -32,13 +16,29 @@
 
 .field public o:I
 
-.field public w0:I
+.field public o0:I
 
-.field public final x0:I
+.field public final p0:I
 
-.field public final y0:Landroid/view/WindowManager;
+.field public final q0:Landroid/view/WindowManager;
 
-.field public z0:I
+.field public r0:I
+
+.field public s0:I
+
+.field public t0:F
+
+.field public u0:F
+
+.field public v0:Landroid/animation/AnimatorSet;
+
+.field public w0:Lxm5;
+
+.field public final x0:Landroid/view/WindowManager$LayoutParams;
+
+.field public final y0:Lmg;
+
+.field public z0:Landroid/view/VelocityTracker;
 
 
 # direct methods
@@ -59,53 +59,53 @@
 
     move-result p1
 
-    iput p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:I
+    iput p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->p0:I
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
-    invoke-static {p1}, Lek8;->F(Landroid/content/Context;)Landroid/view/WindowManager;
+    invoke-static {p1}, Lwqd;->t(Landroid/content/Context;)Landroid/view/WindowManager;
 
     move-result-object p1
 
-    iput-object p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->y0:Landroid/view/WindowManager;
+    iput-object p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->q0:Landroid/view/WindowManager;
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    invoke-static {}, Lzg4;->b()Lzg4;
+    invoke-static {}, Lck4;->b()Lck4;
 
     move-result-object p1
 
-    invoke-static {}, Lvl;->b()Lk93;
+    invoke-static {}, Lol;->b()Lsb3;
 
     move-result-object v0
 
-    check-cast v0, Lo2a;
+    check-cast v0, Lq6a;
 
-    invoke-virtual {v0}, Lo2a;->c()Ltg;
+    invoke-virtual {v0}, Lq6a;->c()Lmg;
 
     move-result-object v0
 
-    iput-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->G0:Ltg;
+    iput-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->y0:Lmg;
 
     const/high16 v0, 0x430c0000    # 140.0f
 
     float-to-int v0, v0
 
-    invoke-static {v0}, Ldh4;->b(I)I
+    invoke-static {v0}, Lgk4;->b(I)I
 
     move-result v0
 
     iput v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->a:I
 
-    iget p1, p1, Lzg4;->h:I
+    iget p1, p1, Lck4;->h:I
 
     iput p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->b:I
 
     iput p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->c:I
 
-    new-instance p1, Landroid/view/WindowManager$LayoutParams;
+    new-instance v0, Landroid/view/WindowManager$LayoutParams;
 
     const v6, 0x1000708
 
@@ -121,17 +121,15 @@
 
     const/16 v5, 0x7f6
 
-    move-object v0, p1
-
     invoke-direct/range {v0 .. v7}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIIIII)V
 
-    iput-object p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->F0:Landroid/view/WindowManager$LayoutParams;
+    iput-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:Landroid/view/WindowManager$LayoutParams;
 
-    const/16 v0, 0x33
+    const/16 p1, 0x33
 
-    iput v0, p1, Landroid/view/WindowManager$LayoutParams;->gravity:I
+    iput p1, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 .end method
@@ -141,7 +139,7 @@
 .method public final a()V
     .locals 4
 
-    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->D0:Landroid/animation/AnimatorSet;
+    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->v0:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_0
 
@@ -155,31 +153,31 @@
 
     const-string v0, "Frontier animation is already started"
 
-    invoke-static {p0, v0}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 
     :cond_0
-    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->D0:Landroid/animation/AnimatorSet;
+    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->v0:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->D0:Landroid/animation/AnimatorSet;
+    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->v0:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->removeAllListeners()V
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->D0:Landroid/animation/AnimatorSet;
+    iput-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->v0:Landroid/animation/AnimatorSet;
 
     :cond_1
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iget-object v1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->F0:Landroid/view/WindowManager$LayoutParams;
+    iget-object v1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:Landroid/view/WindowManager$LayoutParams;
 
     iget v2, v1, Landroid/view/WindowManager$LayoutParams;->x:I
 
@@ -208,14 +206,14 @@
 
     sub-int/2addr v2, v1
 
-    iget-object v1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->F0:Landroid/view/WindowManager$LayoutParams;
+    iget-object v1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:Landroid/view/WindowManager$LayoutParams;
 
     iget v1, v1, Landroid/view/WindowManager$LayoutParams;->width:I
 
     sub-int v1, v2, v1
 
     :goto_0
-    iget-object v2, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->F0:Landroid/view/WindowManager$LayoutParams;
+    iget-object v2, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:Landroid/view/WindowManager$LayoutParams;
 
     iget v2, v2, Landroid/view/WindowManager$LayoutParams;->x:I
 
@@ -241,54 +239,54 @@
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
 
-    iput-object v1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->D0:Landroid/animation/AnimatorSet;
+    iput-object v1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->v0:Landroid/animation/AnimatorSet;
 
-    iget-object v2, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->G0:Ltg;
+    iget-object v2, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->y0:Lmg;
 
-    iget-object v2, v2, Ltg;->a:Llg;
+    iget-object v2, v2, Lmg;->a:Lig4;
 
-    invoke-interface {v2}, Llg;->n()Landroid/view/animation/Interpolator;
+    invoke-virtual {v2}, Lig4;->f()Landroid/view/animation/Interpolator;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    iget-object v1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->D0:Landroid/animation/AnimatorSet;
+    iget-object v1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->v0:Landroid/animation/AnimatorSet;
 
     const-wide/16 v2, 0x78
 
     invoke-virtual {v1, v2, v3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    iget-object v1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->D0:Landroid/animation/AnimatorSet;
+    iget-object v1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->v0:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1, v0}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->D0:Landroid/animation/AnimatorSet;
+    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->v0:Landroid/animation/AnimatorSet;
 
-    new-instance v1, Lmf;
+    new-instance v1, Lff;
 
-    const/4 v2, 0x3
+    const/4 v2, 0x4
 
-    invoke-direct {v1, v2, p0}, Lmf;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v1, v2, p0}, Lff;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    iget-object p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->D0:Landroid/animation/AnimatorSet;
+    iget-object p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->v0:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p0}, Landroid/animation/AnimatorSet;->start()V
 
-    goto :goto_1
+    return-void
 
     :cond_3
-    sget-object v0, Lvl;->o:Lvl;
+    sget-object v0, Lol;->o:Lol;
 
-    invoke-virtual {v0}, Lvl;->a()Lj2b;
+    invoke-virtual {v0}, Lol;->a()La5b;
 
     move-result-object v0
 
-    iget-object v0, v0, Lj2b;->a:Li03;
+    iget-object v0, v0, La5b;->a:Lj23;
 
-    iget-object p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->F0:Landroid/view/WindowManager$LayoutParams;
+    iget-object p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:Landroid/view/WindowManager$LayoutParams;
 
     iget v1, p0, Landroid/view/WindowManager$LayoutParams;->x:I
 
@@ -296,13 +294,12 @@
 
     const-string v2, "app.video.pip.pos.x"
 
-    invoke-virtual {v0, v1, v2}, Lf3;->j(ILjava/lang/String;)V
+    invoke-virtual {v0, v1, v2}, Le3;->h(ILjava/lang/String;)V
 
     const-string v1, "app.video.pip.pos.y"
 
-    invoke-virtual {v0, p0, v1}, Lf3;->j(ILjava/lang/String;)V
+    invoke-virtual {v0, p0, v1}, Le3;->h(ILjava/lang/String;)V
 
-    :goto_1
     return-void
 .end method
 
@@ -317,7 +314,7 @@
 
     move-result v1
 
-    iget-object v2, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->F0:Landroid/view/WindowManager$LayoutParams;
+    iget-object v2, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:Landroid/view/WindowManager$LayoutParams;
 
     iget v3, v2, Landroid/view/WindowManager$LayoutParams;->x:I
 
@@ -348,7 +345,7 @@
 
     move-result v0
 
-    iget-object v1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->F0:Landroid/view/WindowManager$LayoutParams;
+    iget-object v1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:Landroid/view/WindowManager$LayoutParams;
 
     iget v2, v1, Landroid/view/WindowManager$LayoutParams;->y:I
 
@@ -365,7 +362,7 @@
 
     add-int/2addr p1, v2
 
-    iget p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->w0:I
+    iget p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->o0:I
 
     sub-int/2addr p0, v0
 
@@ -384,7 +381,7 @@
 
     iget v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->o:I
 
-    iget v1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->w0:I
+    iget v1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->o0:I
 
     invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
@@ -437,17 +434,17 @@
     move v0, p1
 
     :cond_3
-    iget-object p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->F0:Landroid/view/WindowManager$LayoutParams;
+    iget-object p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:Landroid/view/WindowManager$LayoutParams;
 
     iput v0, p1, Landroid/view/WindowManager$LayoutParams;->width:I
 
     iput p2, p1, Landroid/view/WindowManager$LayoutParams;->height:I
 
-    new-instance p1, Loc4;
+    new-instance p1, Lka4;
 
-    const/16 p2, 0x14
+    const/16 p2, 0x19
 
-    invoke-direct {p1, p2, p0}, Loc4;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p1, p2, p0}, Lka4;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {p0, p1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
@@ -473,21 +470,21 @@
 .method public getTopMargin()I
     .locals 1
 
-    iget p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->c:I
-
-    invoke-static {}, Lvl;->b()Lk93;
+    invoke-static {}, Lol;->b()Lsb3;
 
     move-result-object v0
 
-    check-cast v0, Lo2a;
+    check-cast v0, Lq6a;
 
-    invoke-virtual {v0}, Lo2a;->f()Ltf4;
+    invoke-virtual {v0}, Lq6a;->f()Lwi4;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ltf4;->j()I
+    invoke-virtual {v0}, Lwi4;->j()I
 
     move-result v0
+
+    iget p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->c:I
 
     add-int/2addr v0, p0
 
@@ -497,7 +494,7 @@
 .method public getWindowHeight()I
     .locals 0
 
-    iget-object p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->F0:Landroid/view/WindowManager$LayoutParams;
+    iget-object p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:Landroid/view/WindowManager$LayoutParams;
 
     iget p0, p0, Landroid/view/WindowManager$LayoutParams;->height:I
 
@@ -507,7 +504,7 @@
 .method public getWindowManagerLayoutParams()Landroid/view/WindowManager$LayoutParams;
     .locals 0
 
-    iget-object p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->F0:Landroid/view/WindowManager$LayoutParams;
+    iget-object p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:Landroid/view/WindowManager$LayoutParams;
 
     return-object p0
 .end method
@@ -515,7 +512,7 @@
 .method public getWindowWidth()I
     .locals 0
 
-    iget-object p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->F0:Landroid/view/WindowManager$LayoutParams;
+    iget-object p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:Landroid/view/WindowManager$LayoutParams;
 
     iget p0, p0, Landroid/view/WindowManager$LayoutParams;->width:I
 
@@ -525,7 +522,7 @@
 .method public getXPos()I
     .locals 0
 
-    iget-object p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->F0:Landroid/view/WindowManager$LayoutParams;
+    iget-object p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:Landroid/view/WindowManager$LayoutParams;
 
     iget p0, p0, Landroid/view/WindowManager$LayoutParams;->x:I
 
@@ -535,7 +532,7 @@
 .method public getYPos()I
     .locals 0
 
-    iget-object p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->F0:Landroid/view/WindowManager$LayoutParams;
+    iget-object p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:Landroid/view/WindowManager$LayoutParams;
 
     iget p0, p0, Landroid/view/WindowManager$LayoutParams;->y:I
 
@@ -547,19 +544,19 @@
 
     invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
 
-    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->D0:Landroid/animation/AnimatorSet;
+    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->v0:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->D0:Landroid/animation/AnimatorSet;
+    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->v0:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->removeAllListeners()V
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->D0:Landroid/animation/AnimatorSet;
+    iput-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->v0:Landroid/animation/AnimatorSet;
 
     :cond_0
     return-void
@@ -586,7 +583,7 @@
 
     const-string v1, "ru.ok.messages.video.widgets.FloatingVideoView"
 
-    invoke-static {v1, v0}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -619,27 +616,27 @@
     :cond_0
     const/high16 p1, -0x40800000    # -1.0f
 
-    iput p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->B0:F
+    iput p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->t0:F
 
-    iput p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->C0:F
+    iput p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->u0:F
 
-    goto/16 :goto_6
+    return v2
 
     :cond_1
     :goto_0
-    iget v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->z0:I
+    iget v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->r0:I
 
-    if-lez v0, :cond_9
+    if-lez v0, :cond_b
 
-    iget v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->C0:F
+    iget v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->u0:F
 
     const/4 v1, 0x0
 
     cmpl-float v1, v0, v1
 
-    if-lez v1, :cond_9
+    if-lez v1, :cond_b
 
-    iget v1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->B0:F
+    iget v1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->t0:F
 
     float-to-double v3, v1
 
@@ -679,236 +676,288 @@
 
     double-to-int p1, v0
 
-    iget v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:I
+    iget v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->p0:I
 
     if-le p1, v0, :cond_a
 
-    iget-object p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->E0:Lnj5;
+    iget-object p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->w0:Lxm5;
 
     const/4 v0, 0x1
 
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_9
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object p0
 
-    check-cast p1, Ljwa;
+    check-cast p1, Leza;
 
-    iget-object v1, p1, Ljwa;->I0:Ljd9;
+    iget-object v1, p1, Leza;->c:Lwi4;
 
-    if-eqz v1, :cond_2
+    iget-object v3, p1, Leza;->A0:Lei9;
+
+    if-eqz v3, :cond_2
 
     goto/16 :goto_5
 
     :cond_2
-    invoke-static {p0}, Lek8;->F(Landroid/content/Context;)Landroid/view/WindowManager;
-
-    move-result-object v1
-
-    invoke-virtual {p1, p0}, Ljwa;->a(Landroid/content/Context;)[I
+    invoke-static {p0}, Lwqd;->t(Landroid/content/Context;)Landroid/view/WindowManager;
 
     move-result-object v3
 
-    invoke-interface {v1}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+    invoke-virtual {p1, p0}, Leza;->a(Landroid/content/Context;)[I
 
     move-result-object v4
 
-    invoke-virtual {v4}, Landroid/view/Display;->getRotation()I
+    invoke-interface {v3}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
-    move-result v4
+    move-result-object v5
 
-    if-eq v4, v0, :cond_4
+    invoke-virtual {v5}, Landroid/view/Display;->getRotation()I
 
-    const/4 v5, 0x3
+    move-result v5
 
-    if-ne v4, v5, :cond_3
+    if-eq v5, v0, :cond_4
+
+    const/4 v6, 0x3
+
+    if-ne v5, v6, :cond_3
 
     goto :goto_1
 
     :cond_3
-    move v4, v2
+    move v5, v2
 
     goto :goto_2
 
     :cond_4
     :goto_1
-    move v4, v0
+    move v5, v0
 
     :goto_2
-    new-instance v13, Landroid/view/WindowManager$LayoutParams;
+    new-instance v6, Landroid/view/WindowManager$LayoutParams;
 
-    aget v5, v3, v2
+    aget v7, v4, v2
 
-    iget-object v6, p1, Ljwa;->c:Ltf4;
+    if-eqz v5, :cond_5
 
-    if-eqz v4, :cond_5
+    invoke-virtual {v1}, Lwi4;->j()I
 
-    invoke-virtual {v6}, Ltf4;->j()I
-
-    move-result v7
+    move-result v8
 
     goto :goto_3
 
     :cond_5
-    move v7, v2
+    move v8, v2
 
     :goto_3
-    add-int/2addr v5, v7
+    add-int/2addr v7, v8
 
-    add-int/lit8 v7, v5, 0x1
+    add-int/2addr v7, v0
 
-    aget v3, v3, v0
+    aget v4, v4, v0
 
-    invoke-virtual {v6}, Ltf4;->j()I
+    invoke-virtual {v1}, Lwi4;->j()I
 
-    move-result v5
+    move-result v8
 
-    add-int/2addr v5, v3
+    add-int/2addr v8, v4
 
-    if-nez v4, :cond_6
+    if-nez v5, :cond_6
 
-    new-instance v3, Landroid/util/DisplayMetrics;
+    new-instance v4, Landroid/util/DisplayMetrics;
 
-    invoke-direct {v3}, Landroid/util/DisplayMetrics;-><init>()V
+    invoke-direct {v4}, Landroid/util/DisplayMetrics;-><init>()V
 
-    invoke-interface {v1}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v3}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
-
-    iget v8, v3, Landroid/util/DisplayMetrics;->heightPixels:I
-
-    invoke-interface {v1}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+    invoke-interface {v3}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object v9
 
-    invoke-virtual {v9, v3}, Landroid/view/Display;->getRealMetrics(Landroid/util/DisplayMetrics;)V
+    invoke-virtual {v9, v4}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
 
-    iget v3, v3, Landroid/util/DisplayMetrics;->heightPixels:I
+    iget v9, v4, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    if-le v3, v8, :cond_6
+    invoke-interface {v3}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
-    sub-int/2addr v3, v8
+    move-result-object v10
+
+    invoke-virtual {v10, v4}, Landroid/view/Display;->getRealMetrics(Landroid/util/DisplayMetrics;)V
+
+    iget v4, v4, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    if-le v4, v9, :cond_6
+
+    sub-int/2addr v4, v9
 
     goto :goto_4
 
     :cond_6
-    move v3, v2
+    move v4, v2
 
     :goto_4
-    add-int/2addr v3, v5
+    add-int/2addr v8, v4
 
-    if-nez v4, :cond_7
+    if-nez v5, :cond_7
 
-    invoke-virtual {v6}, Ltf4;->j()I
+    invoke-virtual {v1}, Lwi4;->j()I
 
     move-result v2
 
     :cond_7
-    move v9, v2
+    move v10, v2
 
-    const v11, 0x10738
+    const v12, 0x10738
 
-    const/4 v12, -0x3
+    const/4 v13, -0x3
 
-    const/4 v8, 0x0
+    const/4 v9, 0x0
 
-    const/16 v10, 0x7f6
+    const/16 v11, 0x7f6
 
-    move-object v5, v13
+    invoke-direct/range {v6 .. v13}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIIIII)V
 
-    move v6, v7
+    new-instance v1, Lij9;
 
-    move v7, v3
+    iget-object v2, p1, Leza;->X:Lmg;
 
-    invoke-direct/range {v5 .. v12}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIIIII)V
+    invoke-direct {v1, p0, v2}, Lij9;-><init>(Landroid/content/Context;Lmg;)V
 
-    new-instance v2, Lqe9;
+    new-instance p0, Lei9;
 
-    iget-object v3, p1, Ljwa;->X:Ltg;
+    new-instance v2, Lj00;
 
-    invoke-direct {v2, p0, v3}, Lqe9;-><init>(Landroid/content/Context;Ltg;)V
+    const/16 v4, 0x12
 
-    new-instance p0, Ljd9;
-
-    new-instance v3, Lxz;
-
-    const/16 v4, 0x16
-
-    invoke-direct {v3, p1, v1, v2, v4}, Lxz;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+    invoke-direct {v2, p1, v3, v1, v4}, Lj00;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
 
     const/4 v4, 0x0
 
-    invoke-direct {p0, v4, v2}, Lu2;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p0, v4, v1}, Lu2;-><init>(ILjava/lang/Object;)V
 
-    iput-object v3, p0, Ljd9;->c:Lxz;
+    iput-object v2, p0, Lei9;->c:Lj00;
 
-    invoke-virtual {v2, p0}, Lv2;->t(Ljava/lang/Object;)V
+    invoke-virtual {v1, p0}, Lv2;->t(Ljava/lang/Object;)V
 
-    iput-object p0, p1, Ljwa;->I0:Ljd9;
+    iput-object p0, p1, Leza;->A0:Lei9;
 
-    iget-object p0, v2, Lv2;->c:Ljava/lang/Object;
+    iget-object p0, v1, Lv2;->c:Ljava/lang/Object;
 
     check-cast p0, Landroid/view/View;
 
-    invoke-interface {v1, p0, v13}, Landroid/view/ViewManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-interface {v3, p0, v6}, Landroid/view/ViewManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    iget-object p0, p1, Ljwa;->I0:Ljd9;
+    iget-object p0, p1, Leza;->A0:Lei9;
 
     iget-object p0, p0, Lu2;->b:Ljava/lang/Object;
 
-    check-cast p0, Lge9;
+    check-cast p0, Lyi9;
 
-    check-cast p0, Lqe9;
+    check-cast p0, Lij9;
 
-    iget-object p1, p0, Lqe9;->X:Landroid/widget/TextView;
+    iget-object p1, p0, Lij9;->o:Lmg;
 
-    iget-object v1, p0, Lqe9;->o:Ltg;
+    iget-object v1, p0, Lij9;->X:Landroid/widget/TextView;
 
-    invoke-virtual {v1, p1}, Ltg;->j(Landroid/view/View;)Lqe4;
+    invoke-virtual {p1, v1}, Lmg;->d(Landroid/view/View;)Lvh4;
 
-    iget-object p0, p0, Lqe9;->Y:Landroid/view/View;
+    iget-object p0, p0, Lij9;->Y:Landroid/view/View;
 
-    invoke-virtual {v1, p0}, Ltg;->l(Landroid/view/View;)Lqe4;
+    invoke-virtual {p1}, Lmg;->a()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_8
+
+    iget-object p1, p1, Lmg;->a:Lig4;
+
+    new-instance v1, Landroid/view/animation/TranslateAnimation;
+
+    const/4 v8, 0x1
+
+    const/4 v9, 0x0
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x1
+
+    const/high16 v7, 0x3f800000    # 1.0f
+
+    invoke-direct/range {v1 .. v9}, Landroid/view/animation/TranslateAnimation;-><init>(IFIFIFIF)V
+
+    invoke-virtual {p1}, Lig4;->c()Landroid/view/animation/Interpolator;
+
+    move-result-object p1
+
+    invoke-virtual {v1, p1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+
+    const-wide/16 v2, 0xc8
+
+    invoke-virtual {v1, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
+
+    new-instance p1, Lfg;
+
+    const/4 v2, 0x0
+
+    invoke-direct {p1, v2, p0}, Lfg;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {v1, p1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
+
+    invoke-virtual {p0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
+
+    new-instance p0, Lvh4;
+
+    invoke-direct {p0, v1}, Lvh4;-><init>(Landroid/view/animation/TranslateAnimation;)V
+
+    goto :goto_5
 
     :cond_8
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
+
+    :cond_9
     :goto_5
     return v0
 
-    :cond_9
-    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->F0:Landroid/view/WindowManager$LayoutParams;
+    :cond_a
+    return v2
+
+    :cond_b
+    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:Landroid/view/WindowManager$LayoutParams;
 
     iget v1, v0, Landroid/view/WindowManager$LayoutParams;->x:I
 
-    iput v1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->z0:I
+    iput v1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->r0:I
 
     iget v0, v0, Landroid/view/WindowManager$LayoutParams;->y:I
 
-    iput v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->A0:I
+    iput v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->s0:I
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v0
 
-    iput v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->B0:F
+    iput v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->t0:F
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result p1
 
-    iput p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->C0:F
+    iput p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->u0:F
 
-    :cond_a
-    :goto_6
     return v2
 .end method
 
 .method public final onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 10
+    .locals 12
 
-    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->H0:Landroid/view/VelocityTracker;
+    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->z0:Landroid/view/VelocityTracker;
 
     if-nez v0, :cond_0
 
@@ -916,20 +965,20 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->H0:Landroid/view/VelocityTracker;
+    iput-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->z0:Landroid/view/VelocityTracker;
 
     :cond_0
-    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->H0:Landroid/view/VelocityTracker;
+    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->z0:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->H0:Landroid/view/VelocityTracker;
+    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->z0:Landroid/view/VelocityTracker;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/view/VelocityTracker;->computeCurrentVelocity(I)V
 
-    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->H0:Landroid/view/VelocityTracker;
+    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->z0:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0}, Landroid/view/VelocityTracker;->getYVelocity()F
 
@@ -971,16 +1020,16 @@
 
     if-ne v2, v3, :cond_1
 
-    goto/16 :goto_1
+    goto/16 :goto_2
 
     :cond_1
     const/high16 p1, -0x40800000    # -1.0f
 
-    iput p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->B0:F
+    iput p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->t0:F
 
-    iput p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->C0:F
+    iput p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->u0:F
 
-    iget-object p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->H0:Landroid/view/VelocityTracker;
+    iget-object p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->z0:Landroid/view/VelocityTracker;
 
     const/4 v2, 0x0
 
@@ -988,14 +1037,14 @@
 
     invoke-virtual {p1}, Landroid/view/VelocityTracker;->recycle()V
 
-    iput-object v2, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->H0:Landroid/view/VelocityTracker;
+    iput-object v2, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->z0:Landroid/view/VelocityTracker;
 
     :cond_2
     cmpg-float p1, v0, v4
 
-    if-gtz p1, :cond_7
+    if-gtz p1, :cond_6
 
-    iget-object p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->F0:Landroid/view/WindowManager$LayoutParams;
+    iget-object p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:Landroid/view/WindowManager$LayoutParams;
 
     iget v0, p1, Landroid/view/WindowManager$LayoutParams;->y:I
 
@@ -1003,192 +1052,247 @@
 
     add-int/2addr v0, p1
 
-    iget p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->w0:I
+    iget p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->o0:I
 
-    if-le v0, p1, :cond_7
+    if-le v0, p1, :cond_6
 
-    iget-object p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->E0:Lnj5;
+    iget-object p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->w0:Lxm5;
 
-    if-eqz p0, :cond_6
+    if-eqz p0, :cond_b
 
-    check-cast p0, Ljwa;
+    check-cast p0, Leza;
 
-    iget-object p1, p0, Ljwa;->b:Loa7;
+    iget-object p1, p0, Leza;->b:Ldf7;
 
-    invoke-virtual {p1}, Loa7;->get()Ljava/lang/Object;
+    invoke-virtual {p1}, Ldf7;->get()Ljava/lang/Object;
 
     move-result-object v0
 
     if-eqz v0, :cond_3
 
-    invoke-virtual {p1}, Loa7;->get()Ljava/lang/Object;
+    invoke-virtual {p1}, Ldf7;->get()Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lbd;
+    check-cast p1, Luc;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v3
 
-    iget-wide v5, p0, Ljwa;->N0:J
+    iget-wide v5, p0, Leza;->F0:J
 
     sub-long/2addr v3, v5
 
     const-string v0, "ACTION_PIP_DURATION"
 
-    invoke-virtual {p1, v3, v4, v0, v2}, Lbd;->e(JLjava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p1, v3, v4, v0, v2}, Luc;->e(JLjava/lang/String;Ljava/lang/String;)V
 
     :cond_3
-    iget-object p1, p0, Ljwa;->F0:Lfd9;
+    iget-object p1, p0, Leza;->x0:Lai9;
 
     if-eqz p1, :cond_5
 
-    iget-object v0, p0, Ljwa;->K0:Lxm8;
+    iget-object v0, p0, Leza;->C0:Ler8;
 
     if-eqz v0, :cond_5
 
-    iget-object v2, p0, Ljwa;->J0:Lo10;
+    iget-object v2, p0, Leza;->B0:Lw10;
 
     if-nez v2, :cond_4
 
     goto :goto_0
 
     :cond_4
-    invoke-virtual {p1}, Lfd9;->k()J
+    iget-object v3, p0, Leza;->Y:Lxs8;
 
-    move-result-wide v4
+    iget-object v0, v0, Ler8;->a:Lzs8;
 
-    iget-object p1, p0, Ljwa;->F0:Lfd9;
+    invoke-virtual {p1}, Lai9;->e()J
 
-    invoke-virtual {p1}, Lfd9;->c()J
+    move-result-wide v5
 
-    move-result-wide v6
+    iget-object p1, p0, Leza;->x0:Lai9;
 
-    iget-object p1, p0, Ljwa;->F0:Lfd9;
+    invoke-virtual {p1}, Lai9;->getDuration()J
 
-    invoke-virtual {p1}, Lfd9;->c0()Z
+    move-result-wide v7
 
-    move-result v8
+    iget-object p1, p0, Leza;->x0:Lai9;
 
-    iget-object p1, p0, Ljwa;->Y:Lto8;
+    invoke-virtual {p1}, Lai9;->w()Z
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result v9
 
-    new-instance v9, Lso8;
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-object v3, v9
+    iget-object p1, v2, Lw10;->r:Ljava/lang/String;
 
-    invoke-direct/range {v3 .. v8}, Lso8;-><init>(JJZ)V
+    new-instance v4, Lws8;
 
-    iget-object v0, v0, Lxm8;->a:Lvo8;
+    invoke-direct/range {v4 .. v9}, Lws8;-><init>(JJZ)V
 
-    iget-object v2, v2, Lo10;->q:Ljava/lang/String;
-
-    invoke-virtual {p1, v0, v2, v9}, Lto8;->t(Lvo8;Ljava/lang/String;Lof3;)Lvo8;
+    invoke-virtual {v3, v0, p1, v4}, Lxs8;->t(Lzs8;Ljava/lang/String;Ljj3;)Lzs8;
 
     :cond_5
     :goto_0
-    invoke-virtual {p0, v1}, Ljwa;->e(Z)V
+    invoke-virtual {p0, v1}, Leza;->i(Z)V
 
-    :cond_6
     return v1
 
-    :cond_7
-    iget-object p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->E0:Lnj5;
+    :cond_6
+    iget-object p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->w0:Lxm5;
 
     if-eqz p1, :cond_8
 
-    check-cast p1, Ljwa;
+    check-cast p1, Leza;
 
-    iget-object p1, p1, Ljwa;->I0:Ljd9;
+    iget-object p1, p1, Leza;->A0:Lei9;
 
     if-eqz p1, :cond_8
 
     iget-object p1, p1, Lu2;->b:Ljava/lang/Object;
 
-    check-cast p1, Lge9;
+    check-cast p1, Lyi9;
 
-    check-cast p1, Lqe9;
+    check-cast p1, Lij9;
 
-    iget-object v0, p1, Lqe9;->X:Landroid/widget/TextView;
+    iget-object v0, p1, Lij9;->o:Lmg;
 
-    iget-object v2, p1, Lqe9;->o:Ltg;
+    iget-object v2, p1, Lij9;->X:Landroid/widget/TextView;
 
-    invoke-virtual {v2, v0}, Ltg;->g(Landroid/view/View;)Lqe4;
+    invoke-virtual {v0, v2}, Lmg;->e(Landroid/view/View;)Lvh4;
 
-    iget-object v0, p1, Lqe9;->Y:Landroid/view/View;
+    iget-object v2, p1, Lij9;->Y:Landroid/view/View;
 
-    invoke-virtual {v2, v0}, Ltg;->o(Landroid/view/View;)Lqe4;
+    invoke-virtual {v0}, Lmg;->a()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_7
+
+    iget-object v0, v0, Lmg;->a:Lig4;
+
+    new-instance v3, Landroid/view/animation/TranslateAnimation;
+
+    const/4 v10, 0x1
+
+    const/high16 v11, 0x3f800000    # 1.0f
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x1
+
+    const/4 v9, 0x0
+
+    invoke-direct/range {v3 .. v11}, Landroid/view/animation/TranslateAnimation;-><init>(IFIFIFIF)V
+
+    invoke-virtual {v0}, Lig4;->f()Landroid/view/animation/Interpolator;
 
     move-result-object v0
 
-    new-instance v2, Lpe9;
+    invoke-virtual {v3, v0}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+
+    const-wide/16 v4, 0xc8
+
+    invoke-virtual {v3, v4, v5}, Landroid/view/animation/Animation;->setDuration(J)V
+
+    new-instance v0, Lfg;
+
+    const/4 v4, 0x1
+
+    invoke-direct {v0, v4, v2}, Lfg;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {v3, v0}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
+
+    invoke-virtual {v2, v3}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
+
+    new-instance v0, Lvh4;
+
+    invoke-direct {v0, v3}, Lvh4;-><init>(Landroid/view/animation/TranslateAnimation;)V
+
+    goto :goto_1
+
+    :cond_7
+    const/16 v0, 0x8
+
+    invoke-virtual {v2, v0}, Landroid/view/View;->setVisibility(I)V
+
+    sget-object v0, Lvh4;->c:Lvh4;
+
+    :goto_1
+    new-instance v2, Lhj9;
 
     const/4 v3, 0x0
 
-    invoke-direct {v2, v3, p1}, Lpe9;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v2, v3, p1}, Lhj9;-><init>(ILjava/lang/Object;)V
 
-    invoke-virtual {v0, v2}, Lqe4;->F(Lgt0;)V
+    invoke-virtual {v0, v2}, Lvh4;->H(Lp6g;)V
 
     :cond_8
     invoke-virtual {p0}, Lru/ok/messages/video/widgets/FloatingVideoView;->a()V
 
-    goto :goto_2
+    return v1
 
     :cond_9
-    :goto_1
-    iget-object v2, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->F0:Landroid/view/WindowManager$LayoutParams;
-
-    iget v3, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->z0:I
+    :goto_2
+    iget v2, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->r0:I
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
-    move-result v5
+    move-result v3
 
-    iget v6, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->B0:F
+    iget v5, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->t0:F
 
-    sub-float/2addr v5, v6
+    sub-float/2addr v3, v5
 
-    float-to-int v5, v5
+    float-to-int v3, v3
 
-    add-int/2addr v3, v5
+    add-int/2addr v2, v3
 
-    iput v3, v2, Landroid/view/WindowManager$LayoutParams;->x:I
+    iget-object v3, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:Landroid/view/WindowManager$LayoutParams;
 
-    iget-object v2, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->F0:Landroid/view/WindowManager$LayoutParams;
+    iput v2, v3, Landroid/view/WindowManager$LayoutParams;->x:I
 
-    iget v3, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->A0:I
+    iget v2, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->s0:I
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result p1
 
-    iget v5, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->C0:F
+    iget v3, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->u0:F
 
-    sub-float/2addr p1, v5
+    sub-float/2addr p1, v3
 
     float-to-int p1, p1
 
-    add-int/2addr v3, p1
+    add-int/2addr v2, p1
 
-    iput v3, v2, Landroid/view/WindowManager$LayoutParams;->y:I
+    iget-object p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:Landroid/view/WindowManager$LayoutParams;
+
+    iput v2, p1, Landroid/view/WindowManager$LayoutParams;->y:I
 
     const/4 p1, 0x0
 
     invoke-virtual {p0, p1}, Lru/ok/messages/video/widgets/FloatingVideoView;->b(Z)V
 
-    iget-object v2, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->F0:Landroid/view/WindowManager$LayoutParams;
+    iget-object v2, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->q0:Landroid/view/WindowManager;
 
-    iget-object v3, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->y0:Landroid/view/WindowManager;
+    iget-object v3, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:Landroid/view/WindowManager$LayoutParams;
 
-    invoke-interface {v3, p0, v2}, Landroid/view/ViewManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-interface {v2, p0, v3}, Landroid/view/ViewManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     cmpg-float v0, v0, v4
 
     if-gtz v0, :cond_a
 
-    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->F0:Landroid/view/WindowManager$LayoutParams;
+    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:Landroid/view/WindowManager$LayoutParams;
 
     iget v2, v0, Landroid/view/WindowManager$LayoutParams;->y:I
 
@@ -1196,38 +1300,37 @@
 
     add-int/2addr v2, v0
 
-    iget v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->w0:I
+    iget v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->o0:I
 
     if-le v2, v0, :cond_a
 
-    iget-object p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->E0:Lnj5;
+    iget-object p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->w0:Lxm5;
 
     if-eqz p0, :cond_b
 
-    check-cast p0, Ljwa;
+    check-cast p0, Leza;
 
-    invoke-virtual {p0, v1}, Ljwa;->c(Z)V
+    invoke-virtual {p0, v1}, Leza;->e(Z)V
 
-    goto :goto_2
+    return v1
 
     :cond_a
-    iget-object p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->E0:Lnj5;
+    iget-object p0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->w0:Lxm5;
 
     if-eqz p0, :cond_b
 
-    check-cast p0, Ljwa;
+    check-cast p0, Leza;
 
-    invoke-virtual {p0, p1}, Ljwa;->c(Z)V
+    invoke-virtual {p0, p1}, Leza;->e(Z)V
 
     :cond_b
-    :goto_2
     return v1
 .end method
 
-.method public setListener(Lnj5;)V
+.method public setListener(Lxm5;)V
     .locals 0
 
-    iput-object p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->E0:Lnj5;
+    iput-object p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->w0:Lxm5;
 
     return-void
 .end method
@@ -1237,11 +1340,11 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->F0:Landroid/view/WindowManager$LayoutParams;
+    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:Landroid/view/WindowManager$LayoutParams;
 
     iput p1, v0, Landroid/view/WindowManager$LayoutParams;->x:I
 
-    iget-object p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->y0:Landroid/view/WindowManager;
+    iget-object p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->q0:Landroid/view/WindowManager;
 
     invoke-interface {p1, p0, v0}, Landroid/view/ViewManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
@@ -1253,11 +1356,11 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->F0:Landroid/view/WindowManager$LayoutParams;
+    iget-object v0, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->x0:Landroid/view/WindowManager$LayoutParams;
 
     iput p1, v0, Landroid/view/WindowManager$LayoutParams;->y:I
 
-    iget-object p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->y0:Landroid/view/WindowManager;
+    iget-object p1, p0, Lru/ok/messages/video/widgets/FloatingVideoView;->q0:Landroid/view/WindowManager;
 
     invoke-interface {p1, p0, v0}, Landroid/view/ViewManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 

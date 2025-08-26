@@ -1,82 +1,32 @@
-.class public final Ljd8;
+.class public interface abstract Ljd8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lhc8;
-
-
-# instance fields
-.field public final a:Lpd8;
-
-
-# direct methods
-.method public constructor <init>(Lpd8;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ljd8;->a:Lpd8;
-
-    return-void
-.end method
+.implements Lp4d;
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
-
-    if-ne p0, p1, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    if-eqz p1, :cond_2
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    const-class v1, Ljd8;
-
-    if-eq v0, v1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Ljd8;
-
-    iget-object p0, p0, Ljd8;->a:Lpd8;
-
-    iget-object p1, p1, Ljd8;->a:Lpd8;
-
-    invoke-static {p0, p1}, Loze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-
-    :cond_2
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
+.method public abstract f()V
 .end method
 
-.method public final hashCode()I
-    .locals 0
+.method public abstract g(J)J
+.end method
 
-    iget-object p0, p0, Ljd8;->a:Lpd8;
+.method public abstract j([La85;[Z[Lhpc;[ZJ)J
+.end method
 
-    filled-new-array {p0}, [Ljava/lang/Object;
+.method public abstract k(JLd0d;)J
+.end method
 
-    move-result-object p0
+.method public abstract m(Lhd8;J)V
+.end method
 
-    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
+.method public abstract n()J
+.end method
 
-    move-result p0
+.method public abstract o()Lwxe;
+.end method
 
-    return p0
+.method public abstract s(JZ)V
 .end method

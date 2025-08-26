@@ -11,11 +11,11 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/media/mute/listener/MediaMuteManagerListener;",
         "",
-        "Loc9;",
+        "Ljh9;",
         "muteEvent",
-        "Ljue;",
+        "Le5f;",
         "onMuteStateInitialized",
-        "(Loc9;)V",
+        "(Ljh9;)V",
         "onMuteChanged",
         "calls-sdk_release"
     }
@@ -25,12 +25,13 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # virtual methods
-.method public abstract onMuteChanged(Loc9;)V
+.method public abstract onMuteChanged(Ljh9;)V
 .end method
 
-.method public abstract onMuteStateInitialized(Loc9;)V
+.method public abstract onMuteStateInitialized(Ljh9;)V
 .end method

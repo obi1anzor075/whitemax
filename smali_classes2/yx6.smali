@@ -1,112 +1,100 @@
-.class public final Lyx6;
-.super Ll5e;
+.class public final synthetic Lyx6;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lx56;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic a:J
 
-.field public final synthetic Y:Lone/me/login/inputphone/InputPhoneScreen;
+.field public final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/login/inputphone/InputPhoneScreen;)V
+.method public synthetic constructor <init>(JI)V
     .locals 0
 
-    iput-object p2, p0, Lyx6;->Y:Lone/me/login/inputphone/InputPhoneScreen;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p2, 0x2
+    iput-wide p1, p0, Lyx6;->a:J
 
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput p3, p0, Lyx6;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    check-cast p1, Ljava/lang/Throwable;
 
-    invoke-virtual {p0, p1, p2}, Lyx6;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    sget-object v0, Lxy6;->A0:Ljava/lang/String;
 
-    move-result-object p0
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    check-cast p0, Lyx6;
+    move-result-wide v1
 
-    sget-object p1, Ljue;->a:Ljue;
+    iget-wide v3, p0, Lyx6;->a:J
 
-    invoke-virtual {p0, p1}, Lyx6;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    sub-long/2addr v1, v3
 
-    return-object p1
-.end method
+    iget p0, p0, Lyx6;->b:I
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
+    const-string v3, "ms"
 
-    new-instance v0, Lyx6;
+    const-string v4, "prefetch "
 
-    iget-object p0, p0, Lyx6;->Y:Lone/me/login/inputphone/InputPhoneScreen;
+    if-nez p1, :cond_0
 
-    invoke-direct {v0, p2, p0}, Lyx6;-><init>(Lkotlin/coroutines/Continuation;Lone/me/login/inputphone/InputPhoneScreen;)V
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    iput-object p1, v0, Lyx6;->X:Ljava/lang/Object;
+    invoke-direct {p1, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    return-object v0
-.end method
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    const-string p0, " completed, all time = "
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p1, p0, Lyx6;->X:Ljava/lang/Object;
+    invoke-virtual {p1, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    check-cast p1, Ljue;
+    invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object p1, Lone/me/login/inputphone/InputPhoneScreen;->I0:[Lk77;
-
-    iget-object p0, p0, Lyx6;->Y:Lone/me/login/inputphone/InputPhoneScreen;
-
-    invoke-virtual {p0}, Lone/me/login/inputphone/InputPhoneScreen;->o0()Ly7a;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Landroid/view/View;->hasWindowFocus()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p0, Ly7a;->A0:Landroid/widget/EditText;
-
-    invoke-virtual {p1}, Landroid/view/View;->requestFocus()Z
-
-    new-instance v0, Lhg9;
-
-    const/4 v1, 0x4
-
-    invoke-direct {v0, p0, v1, p1}, Lhg9;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+    invoke-static {v0, p0}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_0
-    new-instance p1, Lty0;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    const/4 v0, 0x5
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {p1, v0, p0}, Lty0;-><init>(ILjava/lang/Object;)V
+    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0, p1}, Ly7a;->setOnWindowFocusChanged(Lu16;)V
+    const-string p0, " completion error, all time = "
+
+    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {v0, p0, p1}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :goto_0
-    sget-object p0, Ljue;->a:Ljue;
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 .end method

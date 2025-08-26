@@ -13,10 +13,10 @@
         "Ljava/util/concurrent/atomic/AtomicReference;",
         "Lkotlinx/coroutines/internal/WorkaroundAtomicReference;",
         "Lkotlin/Function2;",
-        "Ljue;",
+        "Le5f;",
         "action",
         "loop",
-        "(Ljava/util/concurrent/atomic/AtomicReference;Li26;)V",
+        "(Ljava/util/concurrent/atomic/AtomicReference;Ll66;)V",
         "value",
         "getValue",
         "(Ljava/util/concurrent/atomic/AtomicReference;)Ljava/lang/Object;",
@@ -32,6 +32,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -61,7 +62,7 @@
     return-void
 .end method
 
-.method public static final loop(Ljava/util/concurrent/atomic/AtomicReference;Li26;)V
+.method public static final loop(Ljava/util/concurrent/atomic/AtomicReference;Ll66;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -70,7 +71,7 @@
             ">(",
             "Ljava/util/concurrent/atomic/AtomicReference<",
             "TT;>;",
-            "Li26;",
+            "Ll66;",
             ")V"
         }
     .end annotation
@@ -80,7 +81,7 @@
 
     move-result-object v0
 
-    invoke-interface {p1, p0, v0}, Li26;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, p0, v0}, Ll66;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 .end method

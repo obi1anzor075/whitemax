@@ -1,36 +1,54 @@
-.class public interface abstract Lzqe;
+.class public abstract Lzqe;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a(Lcre;)V
-.end method
+# static fields
+.field public static final a:Ljava/lang/ThreadLocal;
 
-.method public abstract b()V
-.end method
 
-.method public abstract c(Lcre;)V
-.end method
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
 
-.method public d(Lcre;)V
-    .locals 0
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
-    invoke-interface {p0, p1}, Lzqe;->a(Lcre;)V
+    const-string v1, "ThreadLocalEventLoop"
 
-    return-void
-.end method
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
 
-.method public e(Lcre;)V
-    .locals 0
+    invoke-static {v0}, Lkotlinx/coroutines/internal/ThreadLocalKt;->commonThreadLocal(Lkotlinx/coroutines/internal/Symbol;)Ljava/lang/ThreadLocal;
 
-    invoke-interface {p0, p1}, Lzqe;->c(Lcre;)V
+    move-result-object v0
+
+    sput-object v0, Lzqe;->a:Ljava/lang/ThreadLocal;
 
     return-void
 .end method
 
-.method public abstract f()V
-.end method
+.method public static a()Lr35;
+    .locals 3
 
-.method public abstract g(Lcre;)V
+    sget-object v0, Lzqe;->a:Ljava/lang/ThreadLocal;
+
+    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lr35;
+
+    if-nez v1, :cond_0
+
+    new-instance v1, Lfp0;
+
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Lfp0;-><init>(Ljava/lang/Thread;)V
+
+    invoke-virtual {v0, v1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+
+    :cond_0
+    return-object v1
 .end method

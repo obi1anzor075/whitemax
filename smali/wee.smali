@@ -1,76 +1,138 @@
-.class public final synthetic Lwee;
+.class public final Lwee;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li4f;
+.implements Lfff;
 
 
 # instance fields
-.field public final synthetic a:Lxee;
-
-.field public final synthetic b:I
-
-.field public final synthetic c:Lbz5;
-
-.field public final synthetic d:J
+.field public final a:Lfff;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lxee;ILbz5;J)V
-    .locals 0
+.method public constructor <init>(Lfff;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lwee;->a:Lxee;
+    invoke-interface {p1}, Lfff;->a0()Z
 
-    iput p2, p0, Lwee;->b:I
+    move-result v0
 
-    iput-object p3, p0, Lwee;->c:Lbz5;
+    invoke-static {v0}, Lfq0;->l(Z)V
 
-    iput-wide p4, p0, Lwee;->d:J
+    iput-object p1, p0, Lwee;->a:Lfff;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 7
+.method public final T()I
+    .locals 0
 
-    iget-object v0, p0, Lwee;->a:Lxee;
+    iget-object p0, p0, Lwee;->a:Lfff;
 
-    iget v1, p0, Lwee;->b:I
+    invoke-interface {p0}, Lfff;->n0()I
 
-    iget-object v2, p0, Lwee;->c:Lbz5;
+    move-result p0
 
-    iget-wide v3, p0, Lwee;->d:J
+    return p0
+.end method
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+.method public final U()Landroid/util/Range;
+    .locals 0
 
-    new-instance p0, Lp96;
+    iget-object p0, p0, Lwee;->a:Lfff;
 
-    iget v5, v2, Lbz5;->b:I
+    invoke-interface {p0}, Lfff;->U()Landroid/util/Range;
 
-    iget v2, v2, Lbz5;->c:I
+    move-result-object p0
 
-    const/4 v6, -0x1
+    return-object p0
+.end method
 
-    invoke-direct {p0, v1, v6, v5, v2}, Lp96;-><init>(IIII)V
+.method public final a0()Z
+    .locals 0
 
-    iget-object v0, v0, Lxee;->o:Lope;
+    iget-object p0, p0, Lwee;->a:Lfff;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-interface {p0}, Lfff;->a0()Z
 
-    invoke-virtual {v0, p0, v3, v4}, Lope;->Q(Lp96;J)V
+    move-result p0
 
-    sget-object p0, Lb24;->a:Ljava/util/LinkedHashMap;
+    return p0
+.end method
 
-    const-class p0, Lb24;
+.method public final i0(I)Landroid/util/Range;
+    .locals 0
 
-    monitor-enter p0
+    iget-object p0, p0, Lwee;->a:Lfff;
 
-    monitor-exit p0
+    invoke-interface {p0, p1}, Lfff;->m0(I)Landroid/util/Range;
 
-    return-void
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m0(I)Landroid/util/Range;
+    .locals 0
+
+    iget-object p0, p0, Lwee;->a:Lfff;
+
+    invoke-interface {p0, p1}, Lfff;->i0(I)Landroid/util/Range;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final n0()I
+    .locals 0
+
+    iget-object p0, p0, Lwee;->a:Lfff;
+
+    invoke-interface {p0}, Lfff;->T()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final o0()Landroid/util/Range;
+    .locals 0
+
+    iget-object p0, p0, Lwee;->a:Lfff;
+
+    invoke-interface {p0}, Lfff;->s0()Landroid/util/Range;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final p0(II)Z
+    .locals 0
+
+    iget-object p0, p0, Lwee;->a:Lfff;
+
+    invoke-interface {p0, p2, p1}, Lfff;->p0(II)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final s0()Landroid/util/Range;
+    .locals 0
+
+    iget-object p0, p0, Lwee;->a:Lfff;
+
+    invoke-interface {p0}, Lfff;->o0()Landroid/util/Range;
+
+    move-result-object p0
+
+    return-object p0
 .end method

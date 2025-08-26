@@ -1,115 +1,48 @@
 .class public final Lhac;
-.super Ljac;
-.source "SourceFile"
+.super Lbu3;
 
 
 # instance fields
-.field public final Y:Ljava/lang/String;
+.field public X:I
 
-.field public final Z:Lmxb;
+.field public final synthetic Y:Lfka;
 
-.field public final w0:Lea6;
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(JLvu5;Ljava/util/List;Ltuc;Ljava/util/ArrayList;)V
-    .locals 6
+.method public constructor <init>(Lfka;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    invoke-direct {p0, p3, p4, p5, p6}, Ljac;-><init>(Lvu5;Ljava/util/List;Lvuc;Ljava/util/ArrayList;)V
+    iput-object p1, p0, Lhac;->Y:Lfka;
 
-    const/4 p1, 0x0
-
-    invoke-interface {p4, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lgj0;
-
-    iget-object p1, p1, Lgj0;->a:Ljava/lang/String;
-
-    invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    const-wide/16 p1, 0x0
-
-    iget-wide v4, p5, Ltuc;->e:J
-
-    cmp-long p1, v4, p1
-
-    const/4 p2, 0x0
-
-    if-gtz p1, :cond_0
-
-    move-object p1, p2
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p1, Lmxb;
-
-    const/4 v3, 0x0
-
-    iget-wide v1, p5, Ltuc;->d:J
-
-    move-object v0, p1
-
-    invoke-direct/range {v0 .. v5}, Lmxb;-><init>(JLjava/lang/String;J)V
-
-    :goto_0
-    iput-object p1, p0, Lhac;->Z:Lmxb;
-
-    iput-object p2, p0, Lhac;->Y:Ljava/lang/String;
-
-    if-eqz p1, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    new-instance p2, Lea6;
-
-    new-instance p1, Lmxb;
-
-    const/4 v3, 0x0
-
-    const-wide/16 v1, 0x0
-
-    const-wide/16 v4, -0x1
-
-    move-object v0, p1
-
-    invoke-direct/range {v0 .. v5}, Lmxb;-><init>(JLjava/lang/String;J)V
-
-    const/16 p3, 0x1b
-
-    invoke-direct {p2, p3, p1}, Lea6;-><init>(ILjava/lang/Object;)V
-
-    :goto_1
-    iput-object p2, p0, Lhac;->w0:Lea6;
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
-    .locals 0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    iget-object p0, p0, Lhac;->Y:Ljava/lang/String;
+    iput-object p1, p0, Lhac;->o:Ljava/lang/Object;
 
-    return-object p0
-.end method
+    iget p1, p0, Lhac;->X:I
 
-.method public final c()Lvy3;
-    .locals 0
+    const/high16 v0, -0x80000000
 
-    iget-object p0, p0, Lhac;->w0:Lea6;
+    or-int/2addr p1, v0
 
-    return-object p0
-.end method
+    iput p1, p0, Lhac;->X:I
 
-.method public final d()Lmxb;
-    .locals 0
+    iget-object p1, p0, Lhac;->Y:Lfka;
 
-    iget-object p0, p0, Lhac;->Z:Lmxb;
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lfka;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
 
     return-object p0
 .end method

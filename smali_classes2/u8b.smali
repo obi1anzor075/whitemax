@@ -1,123 +1,47 @@
 .class public final Lu8b;
-.super Lt81;
+.super Lbu3;
 .source "SourceFile"
 
 
 # instance fields
-.field public final b:J
+.field public final synthetic X:Lw8b;
 
-.field public final c:Ld8b;
+.field public Y:I
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(JLd8b;)V
-    .locals 1
+.method public constructor <init>(Lw8b;Lbu3;)V
+    .locals 0
 
-    const/16 v0, 0x9
+    iput-object p1, p0, Lu8b;->X:Lw8b;
 
-    invoke-direct {p0, v0}, Lt81;-><init>(I)V
-
-    iput-wide p1, p0, Lu8b;->b:J
-
-    iput-object p3, p0, Lu8b;->c:Ld8b;
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 7
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Lu8b;->o:Ljava/lang/Object;
 
-    if-ne p0, p1, :cond_0
+    iget p1, p0, Lu8b;->Y:I
 
-    return v0
+    const/high16 v0, -0x80000000
 
-    :cond_0
-    instance-of v1, p1, Lu8b;
+    or-int/2addr p1, v0
 
-    const/4 v2, 0x0
+    iput p1, p0, Lu8b;->Y:I
 
-    if-nez v1, :cond_1
+    iget-object p1, p0, Lu8b;->X:Lw8b;
 
-    return v2
+    const/4 v0, 0x0
 
-    :cond_1
-    check-cast p1, Lu8b;
-
-    iget-wide v3, p1, Lu8b;->b:J
-
-    iget-wide v5, p0, Lu8b;->b:J
-
-    cmp-long v1, v5, v3
-
-    if-eqz v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object p0, p0, Lu8b;->c:Ld8b;
-
-    iget-object p1, p1, Lu8b;->c:Ld8b;
-
-    if-eq p0, p1, :cond_3
-
-    return v2
-
-    :cond_3
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    iget-wide v0, p0, Lu8b;->b:J
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Lu8b;->c:Ld8b;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ChangeLink(id="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-wide v1, p0, Lu8b;->b:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", type="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lu8b;->c:Ld8b;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1, v0, p0}, Lw8b;->e(ILbu3;)Ljava/io/Serializable;
 
     move-result-object p0
 

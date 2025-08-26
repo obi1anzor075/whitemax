@@ -1,125 +1,59 @@
-.class public final Lcs5;
-.super Lg34;
+.class public abstract Lcs5;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final b:Lcs5;
-
-.field public static final c:Lc34;
-
-.field public static final d:Lc34;
-
-.field public static final e:Lc34;
-
-.field public static final f:Lc34;
-
-.field public static final g:Lc34;
-
-.field public static final h:Lc34;
+# interfaces
+.implements Ljava/lang/Iterable;
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 9
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    new-instance v6, Lcs5;
+    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    invoke-direct {v6}, Lg34;-><init>()V
+    move-result-object p0
 
-    sput-object v6, Lcs5;->b:Lcs5;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const/4 v7, 0x0
+    const-string v1, "["
 
-    new-array v2, v7, [Ljava/lang/String;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const/4 v3, 0x0
+    const/4 v1, 0x1
 
-    const/4 v4, 0x0
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    const-string v1, ":settings/folder-list"
+    move-result v2
 
-    const/16 v5, 0xe
+    if-eqz v2, :cond_1
 
-    move-object v0, v6
+    if-nez v1, :cond_0
 
-    invoke-static/range {v0 .. v5}, Lg34;->a(Lg34;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lc34;
+    const-string v1, ", "
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sput-object v0, Lcs5;->c:Lc34;
+    :cond_0
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    const-string v8, "id"
+    move-result-object v1
 
-    filled-new-array {v8}, [Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    const/4 v1, 0x0
 
-    const-string v1, ":settings/folder"
+    goto :goto_0
 
-    move-object v0, v6
+    :cond_1
+    const/16 p0, 0x5d
 
-    invoke-static/range {v0 .. v5}, Lg34;->a(Lg34;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lc34;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    sput-object v0, Lcs5;->d:Lc34;
+    move-result-object p0
 
-    new-array v2, v7, [Ljava/lang/String;
-
-    const-string v1, ":settings/folder/edit"
-
-    move-object v0, v6
-
-    invoke-static/range {v0 .. v5}, Lg34;->a(Lg34;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lc34;
-
-    move-result-object v0
-
-    sput-object v0, Lcs5;->e:Lc34;
-
-    new-array v2, v7, [Ljava/lang/String;
-
-    const-string v1, ":settings/folder/create"
-
-    move-object v0, v6
-
-    invoke-static/range {v0 .. v5}, Lg34;->a(Lg34;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lc34;
-
-    move-result-object v0
-
-    sput-object v0, Lcs5;->f:Lc34;
-
-    filled-new-array {v8}, [Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v1, ":settings/folder/by-chat"
-
-    move-object v0, v6
-
-    invoke-static/range {v0 .. v5}, Lg34;->a(Lg34;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lc34;
-
-    move-result-object v0
-
-    sput-object v0, Lcs5;->g:Lc34;
-
-    new-array v2, v7, [Ljava/lang/String;
-
-    const-string v1, ":settings/folder/settings"
-
-    move-object v0, v6
-
-    invoke-static/range {v0 .. v5}, Lg34;->a(Lg34;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lc34;
-
-    new-array v2, v7, [Ljava/lang/String;
-
-    const-string v1, ":settings/folder/members-picker"
-
-    invoke-static/range {v0 .. v5}, Lg34;->a(Lg34;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lc34;
-
-    move-result-object v0
-
-    sput-object v0, Lcs5;->h:Lc34;
-
-    return-void
+    return-object p0
 .end method

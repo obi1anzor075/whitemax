@@ -1,321 +1,48 @@
 .class public final Lbw2;
-.super Ljava/lang/Object;
-.source "SourceFile"
+.super Lbu3;
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field public X:I
 
-.field public final b:Lo2b;
+.field public final synthetic Y:Lov2;
 
-.field public final c:Lq2b;
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lo2b;Lq2b;)V
+.method public constructor <init>(Lov2;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lbw2;->Y:Lov2;
 
-    iput-object p1, p0, Lbw2;->a:Landroid/content/Context;
-
-    iput-object p2, p0, Lbw2;->b:Lo2b;
-
-    iput-object p3, p0, Lbw2;->c:Lq2b;
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ltf3;)Llk3;
-    .locals 23
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    move-object/from16 v0, p0
+    iput-object p1, p0, Lbw2;->o:Ljava/lang/Object;
 
-    move-object/from16 v1, p1
+    iget p1, p0, Lbw2;->X:I
 
-    invoke-virtual/range {p1 .. p1}, Ltf3;->n()J
+    const/high16 v0, -0x80000000
 
-    move-result-wide v2
+    or-int/2addr p1, v0
 
-    iget-object v4, v0, Lbw2;->b:Lo2b;
+    iput p1, p0, Lbw2;->X:I
 
-    invoke-virtual {v4, v2, v3}, Lo2b;->b(J)Ll2b;
+    iget-object p1, p0, Lbw2;->Y:Lov2;
 
-    move-result-object v2
+    const/4 v0, 0x0
 
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
-
-    const/16 v5, 0xa
-
-    iget v2, v2, Ll2b;->a:I
-
-    if-eq v2, v5, :cond_0
-
-    const/16 v5, 0x14
-
-    if-eq v2, v5, :cond_0
-
-    const/16 v5, 0x28
-
-    if-eq v2, v5, :cond_0
-
-    move v15, v3
-
-    goto :goto_0
-
-    :cond_0
-    move v15, v4
-
-    :goto_0
-    sget-object v2, Lfj0;->b:Lfj0;
-
-    invoke-virtual {v1, v2}, Ltf3;->p(Lfj0;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual/range {p1 .. p1}, Ltf3;->k()I
-
-    move-result v5
-
-    if-nez v5, :cond_1
-
-    invoke-virtual/range {p1 .. p1}, Ltf3;->w()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_2
-
-    :cond_1
-    move v3, v4
-
-    :cond_2
-    const/4 v4, 0x0
-
-    if-eqz v3, :cond_3
-
-    move-object v12, v4
-
-    goto :goto_2
-
-    :cond_3
-    iget-boolean v3, v1, Ltf3;->Y:Z
-
-    iget-object v5, v0, Lbw2;->a:Landroid/content/Context;
-
-    if-eqz v3, :cond_4
-
-    sget v0, Lwhc;->F:I
-
-    invoke-virtual {v5, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_1
-    move-object v12, v0
-
-    goto :goto_2
-
-    :cond_4
-    invoke-virtual/range {p1 .. p1}, Ltf3;->t()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_5
-
-    invoke-virtual/range {p1 .. p1}, Ltf3;->v()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_5
-
-    sget v0, Lcic;->K2:I
-
-    invoke-virtual {v5, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_1
-
-    :cond_5
-    invoke-virtual/range {p1 .. p1}, Ltf3;->t()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_6
-
-    sget v0, Lcic;->p:I
-
-    invoke-virtual {v5, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_1
-
-    :cond_6
-    iget-object v0, v0, Lbw2;->c:Lq2b;
-
-    invoke-virtual {v0, v1}, Lq2b;->b(Ltf3;)Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    goto :goto_1
-
-    :goto_2
-    invoke-virtual/range {p1 .. p1}, Ltf3;->n()J
-
-    move-result-wide v7
-
-    invoke-virtual/range {p1 .. p1}, Ltf3;->d()Ljava/lang/String;
-
-    move-result-object v0
-
-    if-nez v0, :cond_7
-
-    const-string v0, ""
-
-    :cond_7
-    move-object v9, v0
-
-    invoke-virtual/range {p1 .. p1}, Ltf3;->g()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lehe;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-virtual/range {p1 .. p1}, Ltf3;->o()J
-
-    move-result-wide v5
-
-    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v11
-
-    if-eqz v2, :cond_8
-
-    invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    move-object v14, v0
-
-    goto :goto_3
-
-    :cond_8
-    move-object v14, v4
-
-    :goto_3
-    invoke-virtual/range {p1 .. p1}, Ltf3;->u()Z
-
-    move-result v16
-
-    invoke-virtual/range {p1 .. p1}, Ltf3;->m()Ljava/lang/CharSequence;
-
-    move-result-object v17
-
-    invoke-virtual/range {p1 .. p1}, Ltf3;->t()Z
-
-    move-result v21
-
-    new-instance v0, Llk3;
-
-    move-object v6, v0
-
-    const/16 v19, 0x0
-
-    const/16 v20, 0x0
-
-    const/4 v13, 0x0
-
-    const/16 v18, 0x0
-
-    const/16 v22, 0x6c00
-
-    invoke-direct/range {v6 .. v22}, Llk3;-><init>(JLjava/lang/CharSequence;Ljava/lang/String;Ljava/util/List;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/net/Uri;ZZLjava/lang/CharSequence;ZLboa;IZI)V
-
-    return-object v0
-.end method
-
-.method public final b(Ltf3;)Lt1c;
-    .locals 10
-
-    invoke-virtual {p1}, Ltf3;->n()J
-
-    move-result-wide v0
-
-    iget-object p0, p0, Lbw2;->b:Lo2b;
-
-    invoke-virtual {p0, v0, v1}, Lo2b;->b(J)Ll2b;
+    invoke-virtual {p1, v0, p0}, Lov2;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
-
-    const/16 v0, 0xa
-
-    iget p0, p0, Ll2b;->a:I
-
-    if-eq p0, v0, :cond_0
-
-    const/16 v0, 0x14
-
-    if-eq p0, v0, :cond_0
-
-    const/16 v0, 0x28
-
-    if-eq p0, v0, :cond_0
-
-    const/4 p0, 0x0
-
-    :goto_0
-    move v6, p0
-
-    goto :goto_1
-
-    :cond_0
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :goto_1
-    sget-object p0, Lfj0;->c:Lfj0;
-
-    invoke-virtual {p1, p0}, Ltf3;->p(Lfj0;)Ljava/lang/String;
-
-    move-result-object v4
-
-    new-instance p0, Lt1c;
-
-    invoke-virtual {p1}, Ltf3;->n()J
-
-    move-result-wide v1
-
-    invoke-virtual {p1}, Ltf3;->e()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {p1}, Ltf3;->m()Ljava/lang/CharSequence;
-
-    move-result-object v5
-
-    invoke-virtual {p1}, Ltf3;->u()Z
-
-    move-result v7
-
-    const/16 v9, 0xc0
-
-    const/4 v8, 0x0
-
-    move-object v0, p0
-
-    invoke-direct/range {v0 .. v9}, Lt1c;-><init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/CharSequence;ZZZI)V
 
     return-object p0
 .end method

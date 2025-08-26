@@ -1,7 +1,6 @@
 .class public abstract Lsub;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # static fields
-.field public static oneme_stickers_search_hint:I = 0x7f130991
+.field public static retained_adapter_state:I = 0x7f0a09e5

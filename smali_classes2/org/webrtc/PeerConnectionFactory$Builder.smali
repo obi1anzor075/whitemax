@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public createPeerConnectionFactory()Lorg/webrtc/PeerConnectionFactory;
-    .locals 22
+    .locals 24
 
     move-object/from16 v0, p0
 
@@ -189,26 +189,29 @@
 
     if-nez v0, :cond_5
 
-    move-wide v0, v12
-
-    goto :goto_4
-
-    :cond_5
-    invoke-interface {v0}, Lorg/webrtc/NetEqFactoryFactory;->createNativeNetEqFactory()J
-
-    move-result-wide v0
-
     :goto_4
+    move-wide/from16 v22, v20
+
+    move-wide/from16 v20, v12
+
     move-wide v12, v14
 
     move-wide/from16 v14, v16
 
     move-wide/from16 v16, v18
 
-    move-wide/from16 v18, v20
+    move-wide/from16 v18, v22
 
-    move-wide/from16 v20, v0
+    goto :goto_5
 
+    :cond_5
+    invoke-interface {v0}, Lorg/webrtc/NetEqFactoryFactory;->createNativeNetEqFactory()J
+
+    move-result-wide v12
+
+    goto :goto_4
+
+    :goto_5
     invoke-static/range {v2 .. v21}, Lorg/webrtc/PeerConnectionFactory;->b(Landroid/content/Context;Lorg/webrtc/PeerConnectionFactory$Options;JJJLorg/webrtc/VideoEncoderFactory;Lorg/webrtc/VideoDecoderFactory;JJJJJ)Lorg/webrtc/PeerConnectionFactory;
 
     move-result-object v0

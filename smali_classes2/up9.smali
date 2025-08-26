@@ -1,47 +1,86 @@
 .class public final Lup9;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic X:Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;
+.field public final a:Ltm4;
 
-.field public Y:I
+.field public final b:Ltm4;
 
-.field public synthetic o:Ljava/lang/Object;
+.field public final c:Ltm4;
+
+.field public final d:Ltm4;
+
+.field public final e:Ltm4;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Ltm4;Ltm4;Ltm4;Ltm4;Ltm4;)V
     .locals 0
 
-    iput-object p1, p0, Lup9;->X:Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lup9;->a:Ltm4;
+
+    iput-object p2, p0, Lup9;->b:Ltm4;
+
+    iput-object p3, p0, Lup9;->c:Ltm4;
+
+    iput-object p4, p0, Lup9;->d:Ltm4;
+
+    iput-object p5, p0, Lup9;->e:Ltm4;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a(Lvp9;)V
+    .locals 4
 
-    iput-object p1, p0, Lup9;->o:Ljava/lang/Object;
+    iget-wide v0, p1, Lvp9;->p0:J
 
-    iget p1, p0, Lup9;->Y:I
+    const-wide/16 v2, 0x0
 
-    const/high16 v0, -0x80000000
+    cmp-long v2, v0, v2
 
-    or-int/2addr p1, v0
+    if-eqz v2, :cond_0
 
-    iput p1, p0, Lup9;->Y:I
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    iget-object p1, p0, Lup9;->X:Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;
+    move-result-object v0
 
-    invoke-virtual {p1, p0}, Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;->doWork(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    filled-new-array {v0}, [Ljava/lang/Object;
+
+    move-result-object v0
+
+    const-string v1, "up9"
+
+    const-string v2, "setFavoritesSync: %d"
+
+    invoke-static {v1, v2, v0}, Lg47;->o(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lup9;->c:Ltm4;
+
+    invoke-virtual {p0}, Ltm4;->get()Ljava/lang/Object;
 
     move-result-object p0
 
-    return-object p0
+    check-cast p0, Lh23;
+
+    iget-wide v0, p1, Lvp9;->p0:J
+
+    check-cast p0, Lmwc;
+
+    const-string p1, "user.favoritesLastSync"
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p1, v0}, Le3;->i(Ljava/lang/String;Ljava/lang/Long;)V
+
+    :cond_0
+    return-void
 .end method

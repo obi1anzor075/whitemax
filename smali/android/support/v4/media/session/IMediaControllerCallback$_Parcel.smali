@@ -99,7 +99,7 @@
 
     invoke-virtual {p0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    goto :goto_1
+    return-void
 
     :cond_0
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -126,7 +126,6 @@
     goto :goto_0
 
     :cond_1
-    :goto_1
     return-void
 .end method
 
@@ -150,13 +149,12 @@
 
     invoke-interface {p1, p0, p2}, Landroid/os/Parcelable;->writeToParcel(Landroid/os/Parcel;I)V
 
-    goto :goto_0
+    return-void
 
     :cond_0
     const/4 p1, 0x0
 
     invoke-virtual {p0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    :goto_0
     return-void
 .end method

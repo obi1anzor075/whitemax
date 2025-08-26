@@ -128,7 +128,7 @@
 
     invoke-virtual {p1, p0, v2, v0}, Lorg/apache/http/util/CharArrayBuffer;->append(Lorg/apache/http/util/ByteArrayBuffer;II)V
 
-    goto :goto_0
+    return v0
 
     :cond_2
     new-instance v1, Ljava/lang/String;
@@ -145,7 +145,6 @@
 
     invoke-virtual {p1, v1}, Lorg/apache/http/util/CharArrayBuffer;->append(Ljava/lang/String;)V
 
-    :goto_0
     return v0
 .end method
 
@@ -188,7 +187,7 @@
 
     invoke-virtual {p1, p0, v0, p2}, Lorg/apache/http/util/CharArrayBuffer;->append([BII)V
 
-    goto :goto_0
+    return p2
 
     :cond_1
     new-instance v1, Ljava/lang/String;
@@ -201,7 +200,6 @@
 
     invoke-virtual {p1, v1}, Lorg/apache/http/util/CharArrayBuffer;->append(Ljava/lang/String;)V
 
-    :goto_0
     return p2
 .end method
 
@@ -321,12 +319,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 

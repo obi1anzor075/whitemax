@@ -4,9 +4,9 @@
 
 
 # static fields
-.field static final LOG:Lxwb;
+.field static final LOG:Ls1c;
 
-.field static final LOG_CONFIGURATION:Lywb;
+.field static final LOG_CONFIGURATION:Lt1c;
 
 
 # direct methods
@@ -17,13 +17,13 @@
 
     invoke-direct {v0}, Lru/ok/android/externcalls/sdk/CallUtil$1;-><init>()V
 
-    sput-object v0, Lru/ok/android/externcalls/sdk/CallUtil;->LOG:Lxwb;
+    sput-object v0, Lru/ok/android/externcalls/sdk/CallUtil;->LOG:Ls1c;
 
     new-instance v0, Lru/ok/android/externcalls/sdk/CallUtil$2;
 
     invoke-direct {v0}, Lru/ok/android/externcalls/sdk/CallUtil$2;-><init>()V
 
-    sput-object v0, Lru/ok/android/externcalls/sdk/CallUtil;->LOG_CONFIGURATION:Lywb;
+    sput-object v0, Lru/ok/android/externcalls/sdk/CallUtil;->LOG_CONFIGURATION:Lt1c;
 
     return-void
 .end method
@@ -102,13 +102,13 @@
     return-object v0
 .end method
 
-.method public static collectOpponentInternalIds(Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;Lge1;)Ljava/util/List;
+.method public static collectOpponentInternalIds(Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;Lrf1;)Ljava/util/List;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;",
-            "Lge1;",
+            "Lrf1;",
             ")",
             "Ljava/util/List<",
             "Ljava/lang/Long;",
@@ -138,27 +138,27 @@
 
     check-cast v1, Lru/ok/android/externcalls/sdk/ConversationParticipant;
 
-    invoke-virtual {v1}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->getInternalId()Lge1;
+    invoke-virtual {v1}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->getInternalId()Lrf1;
 
     move-result-object v2
 
     if-eqz v2, :cond_0
 
-    invoke-virtual {v1}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->getInternalId()Lge1;
+    invoke-virtual {v1}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->getInternalId()Lrf1;
 
     move-result-object v2
 
-    invoke-virtual {v2, p1}, Lge1;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, p1}, Lrf1;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    invoke-virtual {v1}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->getInternalId()Lge1;
+    invoke-virtual {v1}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->getInternalId()Lrf1;
 
     move-result-object v1
 
-    iget-wide v1, v1, Lge1;->a:J
+    iget-wide v1, v1, Lrf1;->a:J
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -172,104 +172,72 @@
     return-object v0
 .end method
 
-.method public static createBitrates()Lce1;
-    .locals 2
+.method public static createBitrates()Lnf1;
+    .locals 1
 
-    new-instance v0, Lce1;
+    new-instance v0, Lnf1;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    const v1, 0x32000
-
-    iput v1, v0, Lce1;->a:I
-
-    const v1, 0x7d000
-
-    iput v1, v0, Lce1;->b:I
-
-    const v1, 0x1f4000
-
-    iput v1, v0, Lce1;->c:I
-
-    iput v1, v0, Lce1;->d:I
-
-    const/16 v1, 0x4000
-
-    iput v1, v0, Lce1;->e:I
-
-    const v1, 0x8000
-
-    iput v1, v0, Lce1;->f:I
-
-    const/high16 v1, 0x10000
-
-    iput v1, v0, Lce1;->g:I
-
-    iput v1, v0, Lce1;->h:I
 
     return-object v0
 .end method
 
-.method public static createCallParams(Lru/ok/android/externcalls/sdk/ConversationBuilder;)Lfe1;
-    .locals 32
+.method public static createCallParams(Lru/ok/android/externcalls/sdk/ConversationBuilder;)Lqf1;
+    .locals 30
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->bitrates:Lce1;
+    iget-object v1, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->bitrates:Lnf1;
 
     if-nez v1, :cond_0
 
-    invoke-static {}, Lru/ok/android/externcalls/sdk/CallUtil;->createBitrates()Lce1;
+    invoke-static {}, Lru/ok/android/externcalls/sdk/CallUtil;->createBitrates()Lnf1;
 
     move-result-object v1
 
     :cond_0
     move-object v3, v1
 
-    iget-object v1, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->experiments:Lde1;
+    iget-object v1, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->experiments:Lof1;
 
-    iget-object v2, v1, Lde1;->f:Lee1;
+    iget-object v2, v1, Lof1;->f:Lpf1;
 
     if-nez v2, :cond_1
 
-    new-instance v2, Lee1;
+    new-instance v2, Lpf1;
 
     iget-wide v4, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->mediaReceivingTimeoutMs:J
 
-    invoke-direct {v2, v4, v5}, Lee1;-><init>(J)V
+    invoke-direct {v2, v4, v5}, Lpf1;-><init>(J)V
 
     :cond_1
     move-object v4, v2
 
-    new-instance v2, Lmn;
+    new-instance v2, Lnz7;
 
-    move-object/from16 v22, v2
-
-    new-instance v5, Lxp0;
+    new-instance v5, Lvq0;
 
     iget-boolean v6, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->isMediaAdaptationFeatureEnabledForP2PCall:Z
 
-    iget-object v7, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->ptpCallMediaAdaptationConfig:Lmy7;
+    iget-object v7, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->ptpCallMediaAdaptationConfig:Lk38;
 
-    invoke-direct {v5, v6, v7}, Lxp0;-><init>(ZLmy7;)V
+    invoke-direct {v5, v6, v7}, Lvq0;-><init>(ZLk38;)V
 
-    new-instance v6, Lxp0;
+    new-instance v6, Lvq0;
 
     iget-boolean v7, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->isMediaAdaptationFeatureEnabledForGroupCall:Z
 
-    iget-object v8, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->groupCallMediaAdaptationConfig:Lmy7;
+    iget-object v8, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->groupCallMediaAdaptationConfig:Lk38;
 
-    invoke-direct {v6, v7, v8}, Lxp0;-><init>(ZLmy7;)V
+    invoke-direct {v6, v7, v8}, Lvq0;-><init>(ZLk38;)V
 
-    const/4 v7, 0x5
+    const/16 v7, 0x8
 
-    const/4 v8, 0x0
+    invoke-direct {v2, v5, v7, v6}, Lnz7;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    invoke-direct {v2, v5, v6, v8, v7}, Lmn;-><init>(Ljava/lang/Object;Ljava/lang/Object;ZI)V
+    move-object/from16 v22, v2
 
-    new-instance v15, Lfe1;
-
-    move-object v2, v15
+    new-instance v2, Lqf1;
 
     iget-boolean v5, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->dnsResolverEnabled:Z
 
@@ -291,73 +259,63 @@
 
     iget-boolean v14, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->sessionIdEnabled:Z
 
-    move-object/from16 v16, v15
-
     iget-boolean v15, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->isWaitingRoomActivated:Z
-
-    move-object/from16 v30, v16
-
-    move-object/from16 v31, v2
-
-    iget-boolean v2, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->isSignalingDefaultValuesFilteringEnabled:Z
-
-    move/from16 v16, v2
-
-    iget-boolean v2, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->isWebRTCCodecFilteringEnabled:Z
-
-    move/from16 v17, v2
-
-    iget-object v2, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->audioCodecs:[Ljava/lang/String;
-
-    move-object/from16 v18, v2
-
-    iget-object v2, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->videoCodecs:[Ljava/lang/String;
-
-    move-object/from16 v19, v2
-
-    iget-boolean v2, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->showLocalVideoInOriginalQuality:Z
-
-    move/from16 v20, v2
-
-    iget-boolean v2, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->isSessionRoomsFeatureEnabled:Z
-
-    move/from16 v21, v2
-
-    iget-boolean v2, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->isAsrOnlineEnabled:Z
-
-    move/from16 v23, v2
-
-    iget-boolean v2, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->isAudienceModeEnabled:Z
-
-    move/from16 v25, v2
-
-    iget-boolean v2, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->serverTopologySuspendBelowMinBitrate:Z
-
-    move/from16 v26, v2
-
-    iget-boolean v2, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->isFastScreenCaptureEnabled:Z
-
-    move/from16 v27, v2
-
-    iget-boolean v2, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->isDeviceAudioShareEnabled:Z
-
-    move/from16 v28, v2
-
-    iget-object v0, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->badNetworkIndicatorConfig:Lpe0;
-
-    move-object/from16 v29, v0
 
     move-object/from16 v24, v1
 
-    move-object/from16 v2, v31
+    iget-boolean v1, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->isSignalingDefaultValuesFilteringEnabled:Z
 
-    invoke-direct/range {v2 .. v29}, Lfe1;-><init>(Lce1;Lee1;ZZZZLjava/util/List;ZZIZZZZZ[Ljava/lang/String;[Ljava/lang/String;ZZLmn;ZLde1;ZZZZLpe0;)V
+    move/from16 v16, v1
+
+    iget-boolean v1, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->isWebRTCCodecFilteringEnabled:Z
+
+    move/from16 v17, v1
+
+    iget-object v1, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->audioCodecs:[Ljava/lang/String;
+
+    move-object/from16 v18, v1
+
+    iget-object v1, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->videoCodecs:[Ljava/lang/String;
+
+    move-object/from16 v19, v1
+
+    iget-boolean v1, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->showLocalVideoInOriginalQuality:Z
+
+    move/from16 v20, v1
+
+    iget-boolean v1, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->isSessionRoomsFeatureEnabled:Z
+
+    move/from16 v21, v1
+
+    iget-boolean v1, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->isAsrOnlineEnabled:Z
+
+    move/from16 v23, v1
+
+    iget-boolean v1, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->isAudienceModeEnabled:Z
+
+    move/from16 v25, v1
+
+    iget-boolean v1, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->serverTopologySuspendBelowMinBitrate:Z
+
+    move/from16 v26, v1
+
+    iget-boolean v1, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->isFastScreenCaptureEnabled:Z
+
+    move/from16 v27, v1
+
+    iget-boolean v1, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->isDeviceAudioShareEnabled:Z
+
+    iget-object v0, v0, Lru/ok/android/externcalls/sdk/ConversationBuilder;->badNetworkIndicatorConfig:Lmf0;
+
+    move-object/from16 v29, v0
+
+    move/from16 v28, v1
+
+    invoke-direct/range {v2 .. v29}, Lqf1;-><init>(Lnf1;Lpf1;ZZZZLjava/util/List;ZZIZZZZZ[Ljava/lang/String;[Ljava/lang/String;ZZLnz7;ZLof1;ZZZZLmf0;)V
 
     const/4 v0, 0x1
 
-    move-object/from16 v1, v30
+    iput-boolean v0, v2, Lqf1;->c:Z
 
-    iput-boolean v0, v1, Lfe1;->c:Z
-
-    return-object v1
+    return-object v2
 .end method

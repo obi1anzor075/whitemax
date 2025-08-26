@@ -1,81 +1,141 @@
-.class public final Le5g;
-.super Lz1g;
+.class public abstract Le5g;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic d:I
+# static fields
+.field public static a:Z = false
 
-.field public final synthetic e:Ln4g;
+.field public static final b:[B
+
+.field public static final c:[B
+
+.field public static final d:[B
+
+.field public static final e:[B
+
+.field public static final f:[B
 
 
 # direct methods
-.method public constructor <init>(Ln4g;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p2, p0, Le5g;->d:I
+    const-string v0, "RIFF"
 
-    iput-object p1, p0, Le5g;->e:Ln4g;
+    invoke-static {v0}, Le5g;->a(Ljava/lang/String;)[B
 
-    const-string p1, "com.google.android.gms.auth.api.signin.internal.ISignInCallbacks"
+    move-result-object v0
 
-    const/4 p2, 0x6
+    sput-object v0, Le5g;->b:[B
 
-    invoke-direct {p0, p1, p2}, Lbzf;-><init>(Ljava/lang/String;I)V
+    const-string v0, "WEBP"
+
+    invoke-static {v0}, Le5g;->a(Ljava/lang/String;)[B
+
+    move-result-object v0
+
+    sput-object v0, Le5g;->c:[B
+
+    const-string v0, "VP8 "
+
+    invoke-static {v0}, Le5g;->a(Ljava/lang/String;)[B
+
+    move-result-object v0
+
+    sput-object v0, Le5g;->d:[B
+
+    const-string v0, "VP8L"
+
+    invoke-static {v0}, Le5g;->a(Ljava/lang/String;)[B
+
+    move-result-object v0
+
+    sput-object v0, Le5g;->e:[B
+
+    const-string v0, "VP8X"
+
+    invoke-static {v0}, Le5g;->a(Ljava/lang/String;)[B
+
+    move-result-object v0
+
+    sput-object v0, Le5g;->f:[B
 
     return-void
 .end method
 
+.method public static a(Ljava/lang/String;)[B
+    .locals 2
 
-# virtual methods
-.method public g(Lcom/google/android/gms/common/api/Status;)V
-    .locals 1
+    :try_start_0
+    const-string v0, "ASCII"
 
-    iget v0, p0, Le5g;->d:I
+    invoke-virtual {p0, v0}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
 
-    packed-switch v0, :pswitch_data_0
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-super {p0, p1}, Lz1g;->g(Lcom/google/android/gms/common/api/Status;)V
+    return-object p0
 
-    return-void
+    :catch_0
+    move-exception p0
 
-    :pswitch_0
-    iget-object p0, p0, Le5g;->e:Ln4g;
+    new-instance v0, Ljava/lang/RuntimeException;
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->b0(Locc;)V
+    const-string v1, "ASCII not found!"
 
-    return-void
+    invoke-direct {v0, v1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    throw v0
 .end method
 
-.method public n(Lcom/google/android/gms/common/api/Status;)V
-    .locals 1
+.method public static b([B[BI)Z
+    .locals 4
 
-    iget v0, p0, Le5g;->d:I
+    const/4 v0, 0x0
 
-    packed-switch v0, :pswitch_data_0
+    if-eqz p1, :cond_3
 
-    invoke-super {p0, p1}, Lz1g;->n(Lcom/google/android/gms/common/api/Status;)V
+    array-length v1, p1
 
-    return-void
+    add-int/2addr v1, p2
 
-    :pswitch_0
-    iget-object p0, p0, Le5g;->e:Ln4g;
+    array-length v2, p0
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->b0(Locc;)V
+    if-le v1, v2, :cond_0
 
-    return-void
+    goto :goto_1
 
-    nop
+    :cond_0
+    move v1, v0
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
+    :goto_0
+    array-length v2, p1
+
+    if-ge v1, v2, :cond_2
+
+    add-int v2, v1, p2
+
+    aget-byte v2, p0, v2
+
+    aget-byte v3, p1, v1
+
+    if-eq v2, v3, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_3
+    :goto_1
+    return v0
 .end method

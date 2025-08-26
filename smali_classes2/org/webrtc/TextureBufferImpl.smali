@@ -101,15 +101,15 @@
 
     invoke-direct {v10, v0}, Lorg/webrtc/TextureBufferImpl$1;-><init>(Ljava/lang/Runnable;)V
 
+    move v3, p1
+
+    move v4, p2
+
     move-object v0, p0
 
     move v1, p1
 
     move v2, p2
-
-    move v3, p1
-
-    move v4, p2
 
     move-object v5, p3
 
@@ -129,15 +129,15 @@
 .method public constructor <init>(IILorg/webrtc/VideoFrame$TextureBuffer$Type;ILandroid/graphics/Matrix;Landroid/os/Handler;Lorg/webrtc/YuvConverter;Lorg/webrtc/TextureBufferImpl$RefCountMonitor;)V
     .locals 11
 
+    move v3, p1
+
+    move v4, p2
+
     move-object v0, p0
 
     move v1, p1
 
     move v2, p2
-
-    move v3, p1
-
-    move v4, p2
 
     move-object v5, p3
 
@@ -168,18 +168,14 @@
 .end method
 
 .method private applyTransformMatrix(Landroid/graphics/Matrix;IIII)Lorg/webrtc/TextureBufferImpl;
-    .locals 12
-
-    move-object v0, p0
+    .locals 11
 
     .line 3
     new-instance v7, Landroid/graphics/Matrix;
 
-    iget-object v1, v0, Lorg/webrtc/TextureBufferImpl;->transformMatrix:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lorg/webrtc/TextureBufferImpl;->transformMatrix:Landroid/graphics/Matrix;
 
-    invoke-direct {v7, v1}, Landroid/graphics/Matrix;-><init>(Landroid/graphics/Matrix;)V
-
-    move-object v1, p1
+    invoke-direct {v7, v0}, Landroid/graphics/Matrix;-><init>(Landroid/graphics/Matrix;)V
 
     .line 4
     invoke-virtual {v7, p1}, Landroid/graphics/Matrix;->preConcat(Landroid/graphics/Matrix;)Z
@@ -188,33 +184,31 @@
     invoke-virtual {p0}, Lorg/webrtc/TextureBufferImpl;->retain()V
 
     .line 6
-    new-instance v11, Lorg/webrtc/TextureBufferImpl;
+    new-instance v0, Lorg/webrtc/TextureBufferImpl;
 
-    iget-object v5, v0, Lorg/webrtc/TextureBufferImpl;->type:Lorg/webrtc/VideoFrame$TextureBuffer$Type;
+    iget-object v5, p0, Lorg/webrtc/TextureBufferImpl;->type:Lorg/webrtc/VideoFrame$TextureBuffer$Type;
 
-    iget v6, v0, Lorg/webrtc/TextureBufferImpl;->id:I
+    iget v6, p0, Lorg/webrtc/TextureBufferImpl;->id:I
 
-    iget-object v8, v0, Lorg/webrtc/TextureBufferImpl;->toI420Handler:Landroid/os/Handler;
+    iget-object v8, p0, Lorg/webrtc/TextureBufferImpl;->toI420Handler:Landroid/os/Handler;
 
-    iget-object v9, v0, Lorg/webrtc/TextureBufferImpl;->yuvConverter:Lorg/webrtc/YuvConverter;
+    iget-object v9, p0, Lorg/webrtc/TextureBufferImpl;->yuvConverter:Lorg/webrtc/YuvConverter;
 
     new-instance v10, Lorg/webrtc/TextureBufferImpl$2;
 
     invoke-direct {v10, p0}, Lorg/webrtc/TextureBufferImpl$2;-><init>(Lorg/webrtc/TextureBufferImpl;)V
 
-    move-object v0, v11
-
     move v1, p2
 
     move v2, p3
 
-    move/from16 v3, p4
+    move v3, p4
 
     move/from16 v4, p5
 
     invoke-direct/range {v0 .. v10}, Lorg/webrtc/TextureBufferImpl;-><init>(IIIILorg/webrtc/VideoFrame$TextureBuffer$Type;ILandroid/graphics/Matrix;Landroid/os/Handler;Lorg/webrtc/YuvConverter;Lorg/webrtc/TextureBufferImpl$RefCountMonitor;)V
 
-    return-object v11
+    return-object v0
 .end method
 
 .method public static synthetic b(Lorg/webrtc/TextureBufferImpl;Lorg/webrtc/TextureBufferImpl$RefCountMonitor;)V
@@ -263,6 +257,10 @@
 .method public applyTransformMatrix(Landroid/graphics/Matrix;II)Lorg/webrtc/TextureBufferImpl;
     .locals 6
 
+    move v4, p2
+
+    move v5, p3
+
     move-object v0, p0
 
     move-object v1, p1
@@ -270,10 +268,6 @@
     move v2, p2
 
     move v3, p3
-
-    move v4, p2
-
-    move v5, p3
 
     .line 2
     invoke-direct/range {v0 .. v5}, Lorg/webrtc/TextureBufferImpl;->applyTransformMatrix(Landroid/graphics/Matrix;IIII)Lorg/webrtc/TextureBufferImpl;
@@ -295,91 +289,91 @@
 .end method
 
 .method public cropAndScale(IIIIII)Lorg/webrtc/VideoFrame$Buffer;
-    .locals 6
+    .locals 3
 
-    new-instance v1, Landroid/graphics/Matrix;
+    move v0, p1
 
-    invoke-direct {v1}, Landroid/graphics/Matrix;-><init>()V
+    new-instance p1, Landroid/graphics/Matrix;
 
-    iget v0, p0, Lorg/webrtc/TextureBufferImpl;->height:I
+    invoke-direct {p1}, Landroid/graphics/Matrix;-><init>()V
+
+    iget v1, p0, Lorg/webrtc/TextureBufferImpl;->height:I
 
     add-int/2addr p2, p4
 
-    sub-int p2, v0, p2
+    sub-int p2, v1, p2
 
-    int-to-float p1, p1
+    int-to-float v0, v0
 
     iget v2, p0, Lorg/webrtc/TextureBufferImpl;->width:I
 
     int-to-float v2, v2
 
-    div-float/2addr p1, v2
+    div-float/2addr v0, v2
 
     int-to-float p2, p2
+
+    int-to-float v1, v1
+
+    div-float/2addr p2, v1
+
+    invoke-virtual {p1, v0, p2}, Landroid/graphics/Matrix;->preTranslate(FF)Z
+
+    int-to-float p2, p3
+
+    iget v0, p0, Lorg/webrtc/TextureBufferImpl;->width:I
 
     int-to-float v0, v0
 
     div-float/2addr p2, v0
 
-    invoke-virtual {v1, p1, p2}, Landroid/graphics/Matrix;->preTranslate(FF)Z
+    int-to-float v0, p4
 
-    int-to-float p1, p3
+    iget v1, p0, Lorg/webrtc/TextureBufferImpl;->height:I
 
-    iget p2, p0, Lorg/webrtc/TextureBufferImpl;->width:I
+    int-to-float v1, v1
 
-    int-to-float p2, p2
+    div-float/2addr v0, v1
 
-    div-float/2addr p1, p2
+    invoke-virtual {p1, p2, v0}, Landroid/graphics/Matrix;->preScale(FF)Z
 
-    int-to-float p2, p4
+    iget p2, p0, Lorg/webrtc/TextureBufferImpl;->unscaledWidth:I
 
-    iget v0, p0, Lorg/webrtc/TextureBufferImpl;->height:I
-
-    int-to-float v0, v0
-
-    div-float/2addr p2, v0
-
-    invoke-virtual {v1, p1, p2}, Landroid/graphics/Matrix;->preScale(FF)Z
-
-    iget p1, p0, Lorg/webrtc/TextureBufferImpl;->unscaledWidth:I
-
-    mul-int/2addr p1, p3
-
-    int-to-float p1, p1
-
-    iget p2, p0, Lorg/webrtc/TextureBufferImpl;->width:I
+    mul-int/2addr p2, p3
 
     int-to-float p2, p2
 
-    div-float/2addr p1, p2
+    iget p3, p0, Lorg/webrtc/TextureBufferImpl;->width:I
 
-    invoke-static {p1}, Ljava/lang/Math;->round(F)I
+    int-to-float p3, p3
 
-    move-result v2
+    div-float/2addr p2, p3
 
-    iget p1, p0, Lorg/webrtc/TextureBufferImpl;->unscaledHeight:I
+    invoke-static {p2}, Ljava/lang/Math;->round(F)I
 
-    mul-int/2addr p1, p4
+    move-result p2
 
-    int-to-float p1, p1
+    iget p3, p0, Lorg/webrtc/TextureBufferImpl;->unscaledHeight:I
 
-    iget p2, p0, Lorg/webrtc/TextureBufferImpl;->height:I
+    mul-int/2addr p3, p4
 
-    int-to-float p2, p2
+    int-to-float p3, p3
 
-    div-float/2addr p1, p2
+    iget p4, p0, Lorg/webrtc/TextureBufferImpl;->height:I
 
-    invoke-static {p1}, Ljava/lang/Math;->round(F)I
+    int-to-float p4, p4
 
-    move-result v3
+    div-float/2addr p3, p4
 
-    move-object v0, p0
+    invoke-static {p3}, Ljava/lang/Math;->round(F)I
 
-    move v4, p5
+    move-result p3
 
-    move v5, p6
+    move p4, p5
 
-    invoke-direct/range {v0 .. v5}, Lorg/webrtc/TextureBufferImpl;->applyTransformMatrix(Landroid/graphics/Matrix;IIII)Lorg/webrtc/TextureBufferImpl;
+    move p5, p6
+
+    invoke-direct/range {p0 .. p5}, Lorg/webrtc/TextureBufferImpl;->applyTransformMatrix(Landroid/graphics/Matrix;IIII)Lorg/webrtc/TextureBufferImpl;
 
     move-result-object p0
 
@@ -491,11 +485,11 @@
 
     iget-object v0, p0, Lorg/webrtc/TextureBufferImpl;->toI420Handler:Landroid/os/Handler;
 
-    new-instance v1, Lm5;
+    new-instance v1, Lk5;
 
     const/16 v2, 0x10
 
-    invoke-direct {v1, v2, p0}, Lm5;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v1, v2, p0}, Lk5;-><init>(ILjava/lang/Object;)V
 
     invoke-static {v0, v1}, Lorg/webrtc/ThreadUtils;->invokeAtFrontUninterruptibly(Landroid/os/Handler;Ljava/util/concurrent/Callable;)Ljava/lang/Object;
 

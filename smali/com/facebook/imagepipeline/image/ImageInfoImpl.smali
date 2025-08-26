@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Loq6;
+.implements Luu6;
 
 
 # instance fields
@@ -20,7 +20,7 @@
 
 .field private final height:I
 
-.field private final qualityInfo:Ltjb;
+.field private final qualityInfo:Lznb;
 
 .field private final sizeInBytes:I
 
@@ -28,12 +28,12 @@
 
 
 # direct methods
-.method public constructor <init>(IIILtjb;Ljava/util/Map;)V
+.method public constructor <init>(IIILznb;Ljava/util/Map;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(III",
-            "Ltjb;",
+            "Lznb;",
             "Ljava/util/Map<",
             "Ljava/lang/String;",
             "Ljava/lang/Object;",
@@ -49,7 +49,7 @@
 
     iput p3, p0, Lcom/facebook/imagepipeline/image/ImageInfoImpl;->sizeInBytes:I
 
-    iput-object p4, p0, Lcom/facebook/imagepipeline/image/ImageInfoImpl;->qualityInfo:Ltjb;
+    iput-object p4, p0, Lcom/facebook/imagepipeline/image/ImageInfoImpl;->qualityInfo:Lznb;
 
     iput-object p5, p0, Lcom/facebook/imagepipeline/image/ImageInfoImpl;->extras:Ljava/util/Map;
 
@@ -83,10 +83,10 @@
     return p0
 .end method
 
-.method public getQualityInfo()Ltjb;
+.method public getQualityInfo()Lznb;
     .locals 0
 
-    iget-object p0, p0, Lcom/facebook/imagepipeline/image/ImageInfoImpl;->qualityInfo:Ltjb;
+    iget-object p0, p0, Lcom/facebook/imagepipeline/image/ImageInfoImpl;->qualityInfo:Lznb;
 
     return-object p0
 .end method

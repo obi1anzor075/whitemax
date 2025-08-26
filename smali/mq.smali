@@ -1,93 +1,75 @@
-.class public final synthetic Lmq;
-.super Ljava/lang/Object;
+.class public final Lmq;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Lu26;
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic a:Ldr;
-
-
-# direct methods
-.method public constructor <init>(Ldr;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lmq;->a:Ldr;
-
-    return-void
-.end method
+.field public synthetic X:Ljava/lang/Object;
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
-
-    instance-of v0, p1, Lmq;
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    instance-of v0, p1, Lu26;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p0}, Lu26;->getFunctionDelegate()Ln26;
-
-    move-result-object p0
-
-    check-cast p1, Lu26;
-
-    invoke-interface {p1}, Lu26;->getFunctionDelegate()Ln26;
-
-    move-result-object p1
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    :cond_0
-    return v1
-.end method
-
-.method public final getFunctionDelegate()Ln26;
-    .locals 8
-
-    new-instance v7, Lx26;
-
-    const/4 v1, 0x1
-
-    iget-object v4, p0, Lmq;->a:Ldr;
-
-    const-class v3, Ldr;
-
-    const-string v5, "modeSelected"
-
-    const-string v6, "modeSelected(Lone/me/appearancesettings/model/AppearanceMode;)V"
-
-    const/4 v2, 0x0
-
-    move-object v0, v7
-
-    invoke-direct/range {v0 .. v6}, Lw26;-><init>(IILjava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object v7
-.end method
-
-.method public final hashCode()I
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    invoke-interface {p0}, Lu26;->getFunctionDelegate()Ln26;
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lmq;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    check-cast p0, Lmq;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lmq;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
+
+    new-instance p0, Lmq;
+
+    const/4 v0, 0x2
+
+    invoke-direct {p0, v0, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
+
+    iput-object p1, p0, Lmq;->X:Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lmq;->X:Ljava/lang/Object;
+
+    check-cast p0, Lkl9;
+
+    sget-object p1, Lx23;->b:Lx23;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
-    return p0
+    if-eqz p0, :cond_0
+
+    sget-object p0, Lar;->c:Lar;
+
+    invoke-virtual {p0}, Lu2;->D0()Ls64;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ls64;->d()Z
+
+    :cond_0
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

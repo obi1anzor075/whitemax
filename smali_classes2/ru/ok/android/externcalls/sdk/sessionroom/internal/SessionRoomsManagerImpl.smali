@@ -4,7 +4,7 @@
 
 # interfaces
 .implements Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager;
-.implements Lnj1;
+.implements Lol1;
 .implements Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManager;
 .implements Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutor;
 .implements Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomAdminCommandExecutor;
@@ -19,7 +19,7 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/sessionroom/internal/SessionRoomsManagerImpl;",
         "Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager;",
-        "Lnj1;",
+        "Lol1;",
         "Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManager;",
         "Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutor;",
         "Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomAdminCommandExecutor;",
@@ -32,26 +32,26 @@
         "participantDataProvider",
         "<init>",
         "(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutor;Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomAdminCommandExecutor;Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantsDataProviderImpl;)V",
-        "Ljj1;",
+        "Lkl1;",
         "params",
-        "Ljue;",
+        "Le5f;",
         "onCurrentParticipantActiveRoomChanged",
-        "(Ljj1;)V",
-        "Lkj1;",
+        "(Lkl1;)V",
+        "Lll1;",
         "onCurrentParticipantInvitedToRoom",
-        "(Lkj1;)V",
-        "Llj1;",
+        "(Lll1;)V",
+        "Lml1;",
         "onRoomRemoved",
-        "(Llj1;)V",
-        "Lmj1;",
+        "(Lml1;)V",
+        "Lnl1;",
         "onRoomUpdated",
-        "(Lmj1;)V",
+        "(Lnl1;)V",
         "Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$OwnRoomsListener;",
         "listener",
         "addListener",
         "(Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$OwnRoomsListener;)V",
         "removeListener",
-        "Lv2d;",
+        "Ld9d;",
         "roomId",
         "Lkotlin/Function0;",
         "onSuccess",
@@ -59,40 +59,40 @@
         "",
         "onError",
         "joinRoom",
-        "(Lv2d;Ls16;Lu16;)V",
+        "(Ld9d;Lv56;Lx56;)V",
         "leaveRoom",
-        "(Ls16;Lu16;)V",
+        "(Lv56;Lx56;)V",
         "requestAttention",
-        "Lr7;",
+        "Lj7;",
         "activateRooms",
-        "(Lr7;Ls16;Lu16;)V",
+        "(Lj7;Lv56;Lx56;)V",
         "Lru/ok/android/externcalls/sdk/sessionroom/admin/AssignParticipantsToRoomsParams;",
         "assignParticipantsToRooms",
-        "(Lru/ok/android/externcalls/sdk/sessionroom/admin/AssignParticipantsToRoomsParams;Ls16;Lu16;)V",
+        "(Lru/ok/android/externcalls/sdk/sessionroom/admin/AssignParticipantsToRoomsParams;Lv56;Lx56;)V",
         "Lru/ok/android/externcalls/sdk/sessionroom/admin/MoveParticipantParams;",
         "moveParticipant",
-        "(Lru/ok/android/externcalls/sdk/sessionroom/admin/MoveParticipantParams;Ls16;Lu16;)V",
-        "Lf9c;",
+        "(Lru/ok/android/externcalls/sdk/sessionroom/admin/MoveParticipantParams;Lv56;Lx56;)V",
+        "Leec;",
         "removeRooms",
-        "(Lf9c;Ls16;Lu16;)V",
-        "Lg7e;",
+        "(Leec;Lv56;Lx56;)V",
+        "Lkfe;",
         "switchRoom",
-        "(Lg7e;Ls16;Lu16;)V",
-        "Lrve;",
+        "(Lkfe;Lv56;Lx56;)V",
+        "Lr6f;",
         "updateRooms",
-        "(Lrve;Ls16;Lu16;)V",
+        "(Lr6f;Lv56;Lx56;)V",
         "",
         "Lru/ok/android/externcalls/sdk/sessionroom/participant/SessionRoomParticipants;",
         "getAllInRoomParticipants",
-        "(Lu16;Lu16;)V",
+        "(Lx56;Lx56;)V",
         "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
         "Lru/ok/android/externcalls/sdk/id/ExternalId;",
         "participantId",
-        "Lw2d;",
+        "Le9d;",
         "getParticipantRoomId",
-        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lu16;Lu16;)V",
+        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lx56;Lx56;)V",
         "getRoomParticipants",
-        "(Lw2d;Lu16;Lu16;)V",
+        "(Le9d;Lx56;Lx56;)V",
         "Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;",
         "getOwnActiveRoom",
         "()Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;",
@@ -109,6 +109,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -141,14 +142,14 @@
 
 
 # virtual methods
-.method public activateRooms(Lr7;Ls16;Lu16;)V
+.method public activateRooms(Lj7;Lv56;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lr7;",
-            "Ls16;",
-            "Lu16;",
+            "Lj7;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -168,39 +169,39 @@
     return-void
 .end method
 
-.method public assignParticipantsToRooms(Lru/ok/android/externcalls/sdk/sessionroom/admin/AssignParticipantsToRoomsParams;Ls16;Lu16;)V
+.method public assignParticipantsToRooms(Lru/ok/android/externcalls/sdk/sessionroom/admin/AssignParticipantsToRoomsParams;Lv56;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/sessionroom/admin/AssignParticipantsToRoomsParams;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/SessionRoomsManagerImpl;->adminCommandExecutor:Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomAdminCommandExecutor;
 
-    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomAdminCommandExecutor;->assignParticipantsToRooms(Lru/ok/android/externcalls/sdk/sessionroom/admin/AssignParticipantsToRoomsParams;Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomAdminCommandExecutor;->assignParticipantsToRooms(Lru/ok/android/externcalls/sdk/sessionroom/admin/AssignParticipantsToRoomsParams;Lv56;Lx56;)V
 
     return-void
 .end method
 
-.method public getAllInRoomParticipants(Lu16;Lu16;)V
+.method public getAllInRoomParticipants(Lx56;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lu16;",
-            "Lu16;",
+            "Lx56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/SessionRoomsManagerImpl;->participantDataProvider:Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantsDataProviderImpl;
 
-    invoke-virtual {p0, p1, p2}, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantsDataProviderImpl;->getAllInRoomParticipants(Lu16;Lu16;)V
+    invoke-virtual {p0, p1, p2}, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantsDataProviderImpl;->getAllInRoomParticipants(Lx56;Lx56;)V
 
     return-void
 .end method
@@ -229,136 +230,136 @@
     return-object p0
 .end method
 
-.method public getParticipantRoomId(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lu16;Lu16;)V
+.method public getParticipantRoomId(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lx56;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-            "Lu16;",
-            "Lu16;",
+            "Lx56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/SessionRoomsManagerImpl;->participantDataProvider:Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantsDataProviderImpl;
 
-    invoke-virtual {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantsDataProviderImpl;->getParticipantRoomId(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lu16;Lu16;)V
+    invoke-virtual {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantsDataProviderImpl;->getParticipantRoomId(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lx56;Lx56;)V
 
     return-void
 .end method
 
-.method public getRoomParticipants(Lw2d;Lu16;Lu16;)V
+.method public getRoomParticipants(Le9d;Lx56;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw2d;",
-            "Lu16;",
-            "Lu16;",
+            "Le9d;",
+            "Lx56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/SessionRoomsManagerImpl;->participantDataProvider:Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantsDataProviderImpl;
 
-    invoke-virtual {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantsDataProviderImpl;->getRoomParticipants(Lw2d;Lu16;Lu16;)V
+    invoke-virtual {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantsDataProviderImpl;->getRoomParticipants(Le9d;Lx56;Lx56;)V
 
     return-void
 .end method
 
-.method public joinRoom(Lv2d;Ls16;Lu16;)V
+.method public joinRoom(Ld9d;Lv56;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lv2d;",
-            "Ls16;",
-            "Lu16;",
+            "Ld9d;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/SessionRoomsManagerImpl;->commandExecutor:Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutor;
 
-    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutor;->joinRoom(Lv2d;Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutor;->joinRoom(Ld9d;Lv56;Lx56;)V
 
     return-void
 .end method
 
-.method public leaveRoom(Ls16;Lu16;)V
+.method public leaveRoom(Lv56;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/SessionRoomsManagerImpl;->commandExecutor:Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutor;
 
-    invoke-interface {p0, p1, p2}, Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutor;->leaveRoom(Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2}, Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutor;->leaveRoom(Lv56;Lx56;)V
 
     return-void
 .end method
 
-.method public moveParticipant(Lru/ok/android/externcalls/sdk/sessionroom/admin/MoveParticipantParams;Ls16;Lu16;)V
+.method public moveParticipant(Lru/ok/android/externcalls/sdk/sessionroom/admin/MoveParticipantParams;Lv56;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/sessionroom/admin/MoveParticipantParams;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/SessionRoomsManagerImpl;->adminCommandExecutor:Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomAdminCommandExecutor;
 
-    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomAdminCommandExecutor;->moveParticipant(Lru/ok/android/externcalls/sdk/sessionroom/admin/MoveParticipantParams;Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomAdminCommandExecutor;->moveParticipant(Lru/ok/android/externcalls/sdk/sessionroom/admin/MoveParticipantParams;Lv56;Lx56;)V
 
     return-void
 .end method
 
-.method public onCurrentParticipantActiveRoomChanged(Ljj1;)V
+.method public onCurrentParticipantActiveRoomChanged(Lkl1;)V
     .locals 0
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/SessionRoomsManagerImpl;->listenerManager:Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;
 
-    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->onCurrentParticipantActiveRoomChanged(Ljj1;)V
+    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->onCurrentParticipantActiveRoomChanged(Lkl1;)V
 
     return-void
 .end method
 
-.method public onCurrentParticipantInvitedToRoom(Lkj1;)V
+.method public onCurrentParticipantInvitedToRoom(Lll1;)V
     .locals 0
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/SessionRoomsManagerImpl;->listenerManager:Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;
 
-    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->onCurrentParticipantInvitedToRoom(Lkj1;)V
+    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->onCurrentParticipantInvitedToRoom(Lll1;)V
 
     return-void
 .end method
 
-.method public onRoomRemoved(Llj1;)V
+.method public onRoomRemoved(Lml1;)V
     .locals 0
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/SessionRoomsManagerImpl;->listenerManager:Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;
 
-    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->onRoomRemoved(Llj1;)V
+    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->onRoomRemoved(Lml1;)V
 
     return-void
 .end method
 
-.method public onRoomUpdated(Lmj1;)V
+.method public onRoomUpdated(Lnl1;)V
     .locals 0
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/SessionRoomsManagerImpl;->listenerManager:Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;
 
-    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->onRoomUpdated(Lmj1;)V
+    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->onRoomUpdated(Lnl1;)V
 
     return-void
 .end method
@@ -373,14 +374,14 @@
     return-void
 .end method
 
-.method public removeRooms(Lf9c;Ls16;Lu16;)V
+.method public removeRooms(Leec;Lv56;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lf9c;",
-            "Ls16;",
-            "Lu16;",
+            "Leec;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -390,58 +391,58 @@
     throw p0
 .end method
 
-.method public requestAttention(Ls16;Lu16;)V
+.method public requestAttention(Lv56;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/SessionRoomsManagerImpl;->commandExecutor:Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutor;
 
-    invoke-interface {p0, p1, p2}, Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutor;->requestAttention(Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2}, Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutor;->requestAttention(Lv56;Lx56;)V
 
     return-void
 .end method
 
-.method public switchRoom(Lg7e;Ls16;Lu16;)V
+.method public switchRoom(Lkfe;Lv56;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lg7e;",
-            "Ls16;",
-            "Lu16;",
+            "Lkfe;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/SessionRoomsManagerImpl;->adminCommandExecutor:Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomAdminCommandExecutor;
 
-    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomAdminCommandExecutor;->switchRoom(Lg7e;Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomAdminCommandExecutor;->switchRoom(Lkfe;Lv56;Lx56;)V
 
     return-void
 .end method
 
-.method public updateRooms(Lrve;Ls16;Lu16;)V
+.method public updateRooms(Lr6f;Lv56;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lrve;",
-            "Ls16;",
-            "Lu16;",
+            "Lr6f;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/SessionRoomsManagerImpl;->adminCommandExecutor:Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomAdminCommandExecutor;
 
-    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomAdminCommandExecutor;->updateRooms(Lrve;Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomAdminCommandExecutor;->updateRooms(Lr6f;Lv56;Lx56;)V
 
     return-void
 .end method

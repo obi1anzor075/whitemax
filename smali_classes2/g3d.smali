@@ -1,56 +1,23 @@
-.class public final Lg3d;
+.class public interface abstract Lg3d;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ldd3;
-
-
-# instance fields
-.field public final synthetic a:Lh3d;
-
-
-# direct methods
-.method public constructor <init>(Lh3d;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lg3d;->a:Lh3d;
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final a()V
-    .locals 2
-
-    const-string v0, "h3d"
-
-    const-string v1, "onBackgroundDataEnabledChange"
-
-    invoke-static {v0, v1}, Ludd;->n(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object p0, p0, Lg3d;->a:Lh3d;
-
-    invoke-virtual {p0}, Lh3d;->b()V
-
-    return-void
+.method public abstract a(Lo2d;)V
 .end method
 
-.method public final b()V
-    .locals 2
+.method public abstract b(Lq2d;)V
+.end method
 
-    const-string v0, "h3d"
+.method public abstract c()Lu5c;
+.end method
 
-    const-string v1, "onConnectionTypeChange"
+.method public abstract d(Lbn9;)V
+.end method
 
-    invoke-static {v0, v1}, Ludd;->n(Ljava/lang/String;Ljava/lang/String;)V
+.method public abstract f()Lt5c;
+.end method
 
-    iget-object p0, p0, Lg3d;->a:Lh3d;
-
-    invoke-virtual {p0}, Lh3d;->b()V
-
-    return-void
+.method public abstract g()Lipe;
 .end method

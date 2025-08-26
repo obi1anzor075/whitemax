@@ -1,62 +1,37 @@
-.class public Ldh0;
+.class public final Ldh0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lbs3;
 
+# instance fields
+.field public final a:Lje7;
 
-# static fields
-.field public static final a:Ldh0;
+.field public final b:Lje7;
+
+.field public final c:Lje7;
+
+.field public final d:Lje7;
+
+.field public e:Z
+
+.field public f:Z
+
+.field public g:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ldh0;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Ldh0;->a:Ldh0;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public a(Ljava/lang/String;Loq6;Landroid/graphics/drawable/Animatable;)V
+.method public constructor <init>(Lje7;Lje7;Lje7;Lje7;)V
     .locals 0
 
-    return-void
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public d(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 0
+    iput-object p1, p0, Ldh0;->a:Lje7;
 
-    return-void
-.end method
+    iput-object p2, p0, Ldh0;->b:Lje7;
 
-.method public e(Ljava/lang/Object;Ljava/lang/String;)V
-    .locals 0
+    iput-object p3, p0, Ldh0;->c:Lje7;
 
-    return-void
-.end method
-
-.method public g(Ljava/lang/String;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public h(Ljava/lang/String;Loq6;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final k(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 0
+    iput-object p4, p0, Ldh0;->d:Lje7;
 
     return-void
 .end method

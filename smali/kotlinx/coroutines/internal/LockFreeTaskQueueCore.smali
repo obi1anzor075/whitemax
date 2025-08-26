@@ -63,7 +63,7 @@
         "transform",
         "",
         "map",
-        "(Lu16;)Ljava/util/List;",
+        "(Lx56;)Ljava/util/List;",
         "isClosed",
         "I",
         "Z",
@@ -88,6 +88,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -153,7 +154,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore$Companion;-><init>(Lx54;)V
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore$Companion;-><init>(Ll94;)V
 
     sput-object v0, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->Companion:Lkotlinx/coroutines/internal/LockFreeTaskQueueCore$Companion;
 
@@ -222,22 +223,14 @@
     :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p0
 
     :cond_1
     new-instance p0, Ljava/lang/IllegalStateException;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p0
 .end method
@@ -483,14 +476,14 @@
     return-object v0
 .end method
 
-.method private final synthetic loop$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;Lu16;)V
+.method private final synthetic loop$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;Lx56;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Object;",
             "Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;",
-            "Lu16;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -505,19 +498,19 @@
 
     move-result-object p0
 
-    invoke-interface {p3, p0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, p0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 .end method
 
-.method private final synthetic loop$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Lu16;)V
+.method private final synthetic loop$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Object;",
             "Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;",
-            "Lu16;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -528,51 +521,52 @@
 
     move-result-object p0
 
-    invoke-interface {p3, p0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, p0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 .end method
 
 .method private final markFrozen()J
-    .locals 9
+    .locals 10
 
     invoke-static {}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->get_state$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-    move-result-object v6
+    move-result-object v0
 
-    :cond_0
-    invoke-virtual {v6, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
+    :goto_0
+    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
     move-result-wide v2
 
-    const-wide/high16 v0, 0x1000000000000000L
+    const-wide/high16 v4, 0x1000000000000000L
 
-    and-long v4, v2, v0
+    and-long v6, v2, v4
 
-    const-wide/16 v7, 0x0
+    const-wide/16 v8, 0x0
 
-    cmp-long v4, v4, v7
+    cmp-long v1, v6, v8
 
-    if-eqz v4, :cond_1
+    if-eqz v1, :cond_0
 
     return-wide v2
 
-    :cond_1
-    or-long v7, v2, v0
-
-    move-object v0, v6
+    :cond_0
+    or-long/2addr v4, v2
 
     move-object v1, p0
 
-    move-wide v4, v7
-
     invoke-virtual/range {v0 .. v5}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->compareAndSet(Ljava/lang/Object;JJ)Z
 
-    move-result v0
+    move-result p0
 
-    if-eqz v0, :cond_0
+    if-eqz p0, :cond_1
 
-    return-wide v7
+    return-wide v4
+
+    :cond_1
+    move-object p0, v1
+
+    goto :goto_0
 .end method
 
 .method private final removeSlowPath(II)Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;
@@ -589,7 +583,7 @@
 
     move-result-object p1
 
-    :cond_0
+    :goto_0
     invoke-virtual {p1, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
     move-result-wide v2
@@ -608,7 +602,7 @@
 
     cmp-long v0, v0, v4
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->next()Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;
 
@@ -616,7 +610,7 @@
 
     return-object p0
 
-    :cond_1
+    :cond_0
     invoke-static {}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->get_state$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object v0
@@ -631,23 +625,28 @@
 
     invoke-virtual/range {v0 .. v5}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->compareAndSet(Ljava/lang/Object;JJ)Z
 
-    move-result v0
+    move-result p0
 
-    if-eqz v0, :cond_0
+    if-eqz p0, :cond_1
 
-    invoke-direct {p0}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->getArray()Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    invoke-direct {v1}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->getArray()Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
-    move-result-object p1
+    move-result-object p0
 
-    iget p0, p0, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->mask:I
+    iget p1, v1, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->mask:I
 
-    and-int/2addr p0, v6
+    and-int/2addr p1, v6
 
     const/4 p2, 0x0
 
-    invoke-virtual {p1, p0, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
+    invoke-virtual {p0, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
 
     return-object p2
+
+    :cond_1
+    move-object p0, v1
+
+    goto :goto_0
 .end method
 
 .method private final synthetic set_next$volatile(Ljava/lang/Object;)V
@@ -666,19 +665,19 @@
     return-void
 .end method
 
-.method private final synthetic update$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;Lu16;)V
+.method private final synthetic update$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;Lx56;)V
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Object;",
             "Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;",
-            "Lu16;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
-    :cond_0
+    :goto_0
     invoke-virtual {p2, p1}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
     move-result-wide v2
@@ -687,7 +686,7 @@
 
     move-result-object p0
 
-    invoke-interface {p3, p0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, p0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -697,9 +696,9 @@
 
     move-result-wide v4
 
-    move-object v0, p2
-
     move-object v1, p1
+
+    move-object v0, p2
 
     invoke-virtual/range {v0 .. v5}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->compareAndSet(Ljava/lang/Object;JJ)Z
 
@@ -708,21 +707,28 @@
     if-eqz p0, :cond_0
 
     return-void
+
+    :cond_0
+    move-object p2, v0
+
+    move-object p1, v1
+
+    goto :goto_0
 .end method
 
-.method private final synthetic updateAndGet$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;Lu16;)J
+.method private final synthetic updateAndGet$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;Lx56;)J
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Object;",
             "Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;",
-            "Lu16;",
+            "Lx56;",
             ")J"
         }
     .end annotation
 
-    :cond_0
+    :goto_0
     invoke-virtual {p2, p1}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
     move-result-wide v2
@@ -731,7 +737,7 @@
 
     move-result-object p0
 
-    invoke-interface {p3, p0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, p0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -741,21 +747,28 @@
 
     move-result-wide v4
 
-    move-object v0, p2
-
     move-object v1, p1
+
+    move-object v0, p2
 
     invoke-virtual/range {v0 .. v5}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->compareAndSet(Ljava/lang/Object;JJ)Z
 
-    move-result v0
+    move-result p1
 
-    if-eqz v0, :cond_0
+    if-eqz p1, :cond_0
 
     invoke-virtual {p0}, Ljava/lang/Number;->longValue()J
 
     move-result-wide p0
 
     return-wide p0
+
+    :cond_0
+    move-object p2, v0
+
+    move-object p1, v1
+
+    goto :goto_0
 .end method
 
 
@@ -773,6 +786,7 @@
     move-result-object v0
 
     :cond_0
+    :goto_0
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
     move-result-wide v3
@@ -867,33 +881,35 @@
 
     and-int/2addr v1, v5
 
+    move v2, v1
+
     invoke-static {}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->get_state$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-    move-result-object v2
+    move-result-object v1
 
     sget-object v5, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->Companion:Lkotlinx/coroutines/internal/LockFreeTaskQueueCore$Companion;
 
-    invoke-virtual {v5, v3, v4, v1}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore$Companion;->updateTail(JI)J
+    invoke-virtual {v5, v3, v4, v2}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore$Companion;->updateTail(JI)J
 
     move-result-wide v5
-
-    move-object v1, v2
 
     move-object v2, p0
 
     invoke-virtual/range {v1 .. v6}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->compareAndSet(Ljava/lang/Object;JJ)Z
 
-    move-result v1
+    move-result p0
 
-    if-eqz v1, :cond_0
+    if-eqz p0, :cond_7
 
-    invoke-direct {p0}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->getArray()Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    invoke-direct {v2}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->getArray()Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
-    move-result-object v0
+    move-result-object p0
 
-    and-int v1, v9, v10
+    and-int v0, v9, v10
 
-    invoke-virtual {v0, v1, p1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
+    invoke-virtual {p0, v0, p1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
+
+    move-object p0, v2
 
     :cond_5
     invoke-static {}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->get_state$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
@@ -926,61 +942,69 @@
     const/4 p0, 0x0
 
     return p0
+
+    :cond_7
+    move-object p0, v2
+
+    goto/16 :goto_0
 .end method
 
 .method public final close()Z
-    .locals 10
+    .locals 12
 
     invoke-static {}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->get_state$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-    move-result-object v6
+    move-result-object v0
 
-    :cond_0
-    invoke-virtual {v6, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
+    :goto_0
+    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
     move-result-wide v2
 
-    const-wide/high16 v0, 0x2000000000000000L
+    const-wide/high16 v4, 0x2000000000000000L
 
-    and-long v4, v2, v0
+    and-long v6, v2, v4
 
-    const-wide/16 v7, 0x0
+    const-wide/16 v8, 0x0
 
-    cmp-long v4, v4, v7
+    cmp-long v1, v6, v8
 
-    const/4 v9, 0x1
+    const/4 v6, 0x1
 
-    if-eqz v4, :cond_1
+    if-eqz v1, :cond_0
 
-    return v9
+    return v6
 
-    :cond_1
-    const-wide/high16 v4, 0x1000000000000000L
+    :cond_0
+    const-wide/high16 v10, 0x1000000000000000L
 
-    and-long/2addr v4, v2
+    and-long/2addr v10, v2
 
-    cmp-long v4, v4, v7
+    cmp-long v1, v10, v8
 
-    if-eqz v4, :cond_2
+    if-eqz v1, :cond_1
 
     const/4 p0, 0x0
 
     return p0
 
-    :cond_2
-    or-long v4, v2, v0
-
-    move-object v0, v6
+    :cond_1
+    or-long/2addr v4, v2
 
     move-object v1, p0
 
     invoke-virtual/range {v0 .. v5}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->compareAndSet(Ljava/lang/Object;JJ)Z
 
-    move-result v0
+    move-result p0
 
-    if-eqz v0, :cond_0
+    if-eqz p0, :cond_2
 
-    return v9
+    return v6
+
+    :cond_2
+    move-object p0, v1
+
+    goto :goto_0
 .end method
 
 .method public final getSize()I
@@ -1042,12 +1066,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -1082,23 +1105,22 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
-.method public final map(Lu16;)Ljava/util/List;
+.method public final map(Lx56;)Ljava/util/List;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<R:",
             "Ljava/lang/Object;",
             ">(",
-            "Lu16;",
+            "Lx56;",
             ")",
             "Ljava/util/List<",
             "TR;>;"
@@ -1162,7 +1184,7 @@
 
     if-nez v4, :cond_0
 
-    invoke-interface {p1, v2}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v2}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -1206,6 +1228,7 @@
     move-result-object v0
 
     :cond_0
+    :goto_0
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
     move-result-wide v3
@@ -1302,26 +1325,28 @@
 
     invoke-virtual/range {v1 .. v6}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->compareAndSet(Ljava/lang/Object;JJ)Z
 
-    move-result v1
+    move-result p0
 
-    if-eqz v1, :cond_5
+    if-eqz p0, :cond_5
 
-    invoke-direct {p0}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->getArray()Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    invoke-direct {v2}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->getArray()Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
-    move-result-object v0
+    move-result-object p0
 
-    iget p0, p0, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->mask:I
+    iget v0, v2, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->mask:I
 
-    and-int/2addr p0, v7
+    and-int/2addr v0, v7
 
-    invoke-virtual {v0, p0, v8}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
+    invoke-virtual {p0, v0, v8}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
 
     return-object v9
 
     :cond_5
-    iget-boolean v1, p0, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->singleConsumer:Z
+    iget-boolean p0, v2, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->singleConsumer:Z
 
-    if-eqz v1, :cond_0
+    if-eqz p0, :cond_7
+
+    move-object p0, v2
 
     :cond_6
     invoke-direct {p0, v7, v10}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->removeSlowPath(II)Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;
@@ -1331,4 +1356,9 @@
     if-nez p0, :cond_6
 
     return-object v9
+
+    :cond_7
+    move-object p0, v2
+
+    goto :goto_0
 .end method

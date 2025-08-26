@@ -1,55 +1,237 @@
-.class public final Lcl9;
-.super Ljava/security/MessageDigest;
+.class public abstract Lcl9;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final a:Lcl9;
+.field public static final a:Ljava/util/concurrent/atomic/AtomicReference;
+
+.field public static final b:Lje7;
+
+.field public static final c:Lzvd;
+
+.field public static final d:Lwfe;
+
+.field public static final e:Lwfe;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 3
 
-    new-instance v0, Lcl9;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
-    const-string v1, "NOP"
+    new-instance v1, Ljava/util/HashMap;
 
-    invoke-direct {v0, v1}, Ljava/security/MessageDigest;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    sput-object v0, Lcl9;->a:Lcl9;
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
+
+    sput-object v0, Lcl9;->a:Ljava/util/concurrent/atomic/AtomicReference;
+
+    sget-object v0, Lsgg;->d:Lxk9;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    move-object v2, v0
+
+    goto :goto_0
+
+    :cond_0
+    move-object v2, v1
+
+    :goto_0
+    iget-object v2, v2, Lxk9;->a:Lwfe;
+
+    sput-object v2, Lcl9;->b:Lje7;
+
+    if-eqz v0, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    move-object v0, v1
+
+    :goto_1
+    iget-object v0, v0, Lxk9;->c:Lzvd;
+
+    sput-object v0, Lcl9;->c:Lzvd;
+
+    new-instance v0, Ljx7;
+
+    const/16 v1, 0x18
+
+    invoke-direct {v0, v1}, Ljx7;-><init>(I)V
+
+    new-instance v1, Lwfe;
+
+    invoke-direct {v1, v0}, Lwfe;-><init>(Lv56;)V
+
+    sput-object v1, Lcl9;->d:Lwfe;
+
+    new-instance v0, Ljx7;
+
+    const/16 v1, 0x19
+
+    invoke-direct {v0, v1}, Ljx7;-><init>(I)V
+
+    new-instance v1, Lwfe;
+
+    invoke-direct {v1, v0}, Lwfe;-><init>(Lv56;)V
+
+    sput-object v1, Lcl9;->e:Lwfe;
 
     return-void
 .end method
 
+.method public static final a(Ljava/lang/String;IZ)Lal9;
+    .locals 11
 
-# virtual methods
-.method public final engineDigest()[B
-    .locals 0
+    :goto_0
+    sget-object v0, Lcl9;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
-    const/4 p0, 0x0
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-    new-array p0, p0, [B
+    move-result-object v1
 
-    return-object p0
-.end method
+    check-cast v1, Ljava/util/HashMap;
 
-.method public final engineReset()V
-    .locals 0
+    new-instance v2, Ljava/util/HashMap;
 
-    return-void
-.end method
+    invoke-direct {v2, v1}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
 
-.method public final engineUpdate(B)V
-    .locals 0
+    invoke-virtual {v2, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1
-    return-void
-.end method
+    move-result-object v3
 
-.method public final engineUpdate([BII)V
-    .locals 0
+    check-cast v3, Lal9;
 
-    .line 2
-    return-void
+    const/4 v4, 0x1
+
+    if-nez v3, :cond_3
+
+    new-instance v5, Lal9;
+
+    sget-object v3, Lsgg;->d:Lxk9;
+
+    if-eqz v3, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    const/4 v3, 0x0
+
+    :goto_1
+    iget-object v6, v3, Lxk9;->b:Lrba;
+
+    invoke-static {p1}, Lzt1;->s(I)I
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    if-ne v3, v4, :cond_1
+
+    sget-object v3, Lcl9;->e:Lwfe;
+
+    invoke-virtual {v3}, Lwfe;->getValue()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lad4;
+
+    :goto_2
+    move-object v7, v3
+
+    goto :goto_3
+
+    :cond_1
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p0
+
+    :cond_2
+    sget-object v3, Lcl9;->d:Lwfe;
+
+    invoke-virtual {v3}, Lwfe;->getValue()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lad4;
+
+    goto :goto_2
+
+    :goto_3
+    sget-object v3, Lcl9;->b:Lje7;
+
+    invoke-interface {v3}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object v3
+
+    move-object v8, v3
+
+    check-cast v8, Ljava/util/concurrent/ExecutorService;
+
+    move-object v9, p0
+
+    move v10, p2
+
+    invoke-direct/range {v5 .. v10}, Lal9;-><init>(Lrba;Lad4;Ljava/util/concurrent/ExecutorService;Ljava/lang/String;Z)V
+
+    invoke-virtual {v2, v9, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v5}, Lal9;->d()V
+
+    invoke-virtual {v2, v9, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-object v3, v5
+
+    goto :goto_4
+
+    :cond_3
+    move-object v9, p0
+
+    move v10, p2
+
+    :cond_4
+    :goto_4
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_6
+
+    if-eqz v10, :cond_5
+
+    iget-boolean p0, v3, Lal9;->e:Z
+
+    iput-boolean v4, v3, Lal9;->e:Z
+
+    if-nez p0, :cond_5
+
+    iget-boolean p0, v3, Lal9;->e:Z
+
+    if-eqz p0, :cond_5
+
+    invoke-virtual {v3}, Lal9;->d()V
+
+    :cond_5
+    return-object v3
+
+    :cond_6
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-eq p0, v1, :cond_4
+
+    move-object p0, v9
+
+    move p2, v10
+
+    goto :goto_0
 .end method

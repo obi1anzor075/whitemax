@@ -1,100 +1,97 @@
-.class public final synthetic Lf9a;
+.class public final Lf9a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
-
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lpx5;
 
-.field public final synthetic b:Lg9a;
+.field public final b:Lrie;
+
+.field public final c:Lqt2;
+
+.field public final d:Lvu0;
+
+.field public final e:Lazd;
+
+.field public final f:Lu5c;
+
+.field public final g:Lkotlinx/coroutines/internal/ContextScope;
+
+.field public volatile h:Ldwd;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lg9a;I)V
+.method public constructor <init>(Lpx5;Lrie;Lqt2;Lvu0;)V
     .locals 0
-
-    iput p2, p0, Lf9a;->a:I
-
-    iput-object p1, p0, Lf9a;->b:Lg9a;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lf9a;->a:Lpx5;
+
+    iput-object p2, p0, Lf9a;->b:Lrie;
+
+    iput-object p3, p0, Lf9a;->c:Lqt2;
+
+    iput-object p4, p0, Lf9a;->d:Lvu0;
+
+    new-instance p3, Ldw5;
+
+    sget-object p4, Lhz4;->a:Lhz4;
+
+    invoke-direct {p3, p4}, Ldw5;-><init>(Ljava/util/Map;)V
+
+    invoke-static {p3}, Lbzd;->a(Ljava/lang/Object;)Lazd;
+
+    move-result-object p3
+
+    iput-object p3, p0, Lf9a;->e:Lazd;
+
+    new-instance p4, Lu5c;
+
+    invoke-direct {p4, p3}, Lu5c;-><init>(Lgh9;)V
+
+    iput-object p4, p0, Lf9a;->f:Lu5c;
+
+    check-cast p2, Lo7a;
+
+    invoke-virtual {p2}, Lo7a;->a()Ljx3;
+
+    move-result-object p2
+
+    invoke-static {p2}, Lvk9;->a(Lhx3;)Lkotlinx/coroutines/internal/ContextScope;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lf9a;->g:Lkotlinx/coroutines/internal/ContextScope;
+
+    invoke-interface {p1}, Lpx5;->y()Lzm5;
+
+    move-result-object p1
+
+    new-instance p3, Lat2;
+
+    const/16 p4, 0x17
+
+    invoke-direct {p3, p1, p4}, Lat2;-><init>(Lzm5;I)V
+
+    invoke-static {p3}, Lsgg;->p(Lzm5;)Lzm5;
+
+    move-result-object p1
+
+    new-instance p3, Lb9a;
+
+    const/4 p4, 0x0
+
+    invoke-direct {p3, p0, p4}, Lb9a;-><init>(Lf9a;Lkotlin/coroutines/Continuation;)V
+
+    new-instance p0, Lgp5;
+
+    const/4 p4, 0x1
+
+    invoke-direct {p0, p1, p3, p4}, Lgp5;-><init>(Lzm5;Ll66;I)V
+
+    invoke-static {p0, p2}, Lsgg;->L(Lzm5;Lox3;)Ldwd;
+
     return-void
-.end method
-
-
-# virtual methods
-.method public final run()V
-    .locals 3
-
-    iget v0, p0, Lf9a;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Lf9a;->b:Lg9a;
-
-    iget-object v0, p0, Lg9a;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lt50;
-
-    const/4 v1, 0x0
-
-    const/16 v2, 0xa
-
-    invoke-direct {v0, p0, v1, v2}, Lt50;-><init>(Ljava/lang/Object;ZI)V
-
-    iget-object p0, p0, Lg9a;->b:Ljava/util/concurrent/ExecutorService;
-
-    invoke-interface {p0, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    :goto_0
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lf9a;->b:Lg9a;
-
-    iget-object v0, p0, Lg9a;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    new-instance v0, Lt50;
-
-    const/4 v1, 0x1
-
-    const/16 v2, 0xa
-
-    invoke-direct {v0, p0, v1, v2}, Lt50;-><init>(Ljava/lang/Object;ZI)V
-
-    iget-object p0, p0, Lg9a;->b:Ljava/util/concurrent/ExecutorService;
-
-    invoke-interface {p0, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    :goto_1
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

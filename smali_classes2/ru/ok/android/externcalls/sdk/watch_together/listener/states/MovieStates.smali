@@ -12,7 +12,7 @@
         "Lru/ok/android/externcalls/sdk/watch_together/listener/states/MovieStates;",
         "",
         "",
-        "Lw69;",
+        "Lsb9;",
         "Lru/ok/android/externcalls/sdk/watch_together/listener/states/MovieState;",
         "states",
         "<init>",
@@ -41,6 +41,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -49,7 +50,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
-            "Lw69;",
+            "Lsb9;",
             "Lru/ok/android/externcalls/sdk/watch_together/listener/states/MovieState;",
             ">;"
         }
@@ -64,7 +65,7 @@
         value = {
             "(",
             "Ljava/util/Map<",
-            "Lw69;",
+            "Lsb9;",
             "Lru/ok/android/externcalls/sdk/watch_together/listener/states/MovieState;",
             ">;)V"
         }
@@ -102,7 +103,7 @@
         value = {
             "()",
             "Ljava/util/Map<",
-            "Lw69;",
+            "Lsb9;",
             "Lru/ok/android/externcalls/sdk/watch_together/listener/states/MovieState;",
             ">;"
         }
@@ -119,7 +120,7 @@
         value = {
             "(",
             "Ljava/util/Map<",
-            "Lw69;",
+            "Lsb9;",
             "Lru/ok/android/externcalls/sdk/watch_together/listener/states/MovieState;",
             ">;)",
             "Lru/ok/android/externcalls/sdk/watch_together/listener/states/MovieStates;"
@@ -158,7 +159,7 @@
 
     iget-object p1, p1, Lru/ok/android/externcalls/sdk/watch_together/listener/states/MovieStates;->states:Ljava/util/Map;
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -176,7 +177,7 @@
         value = {
             "()",
             "Ljava/util/Map<",
-            "Lw69;",
+            "Lsb9;",
             "Lru/ok/android/externcalls/sdk/watch_together/listener/states/MovieState;",
             ">;"
         }

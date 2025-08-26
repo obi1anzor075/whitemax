@@ -1,82 +1,20 @@
-.class public final synthetic Lpwb;
+.class public abstract Lpwb;
 .super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
-# instance fields
-.field public final synthetic a:I
+# static fields
+.field public static oneme_layout_quick_camera_api_view:I = 0x7f0d0103
 
-.field public final synthetic b:Lone/me/rlottie/RLottieDrawable;
+.field public static oneme_ll_chat_media_progress:I = 0x7f0d0104
 
+.field public static oneme_media_bar_header_view:I = 0x7f0d0106
 
-# direct methods
-.method public synthetic constructor <init>(Lone/me/rlottie/RLottieDrawable;I)V
-    .locals 0
+.field public static oneme_row_gallery_camera:I = 0x7f0d0107
 
-    iput p2, p0, Lpwb;->a:I
+.field public static oneme_row_gallery_media:I = 0x7f0d0108
 
-    iput-object p1, p0, Lpwb;->b:Lone/me/rlottie/RLottieDrawable;
+.field public static oneme_row_gallery_media_check_button_layout:I = 0x7f0d0109
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.field public static oneme_view_media_permissions:I = 0x7f0d010a
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public final run()V
-    .locals 2
-
-    iget-object v0, p0, Lpwb;->b:Lone/me/rlottie/RLottieDrawable;
-
-    iget p0, p0, Lpwb;->a:I
-
-    packed-switch p0, :pswitch_data_0
-
-    sget-object p0, Lone/me/rlottie/RLottieDrawable;->gson:Lcom/google/gson/Gson;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance p0, Ljava/util/ArrayList;
-
-    iget-object v1, v0, Lone/me/rlottie/RLottieDrawable;->I1:Ljava/util/Set;
-
-    invoke-direct {p0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lone/me/rlottie/RLottieDrawable$DrawableLoadListener;
-
-    invoke-interface {v1, v0}, Lone/me/rlottie/RLottieDrawable$DrawableLoadListener;->onLoaded(Lone/me/rlottie/RLottieDrawable;)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-
-    :pswitch_0
-    invoke-virtual {v0}, Lone/me/rlottie/RLottieDrawable;->invalidateInternal()V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
+.field public static row_media_bar_extra_actions:I = 0x7f0d0156

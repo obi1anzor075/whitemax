@@ -1,119 +1,148 @@
 .class public final Ltu;
-.super Luu;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/nio/channels/CompletionHandler;
+
+
+# static fields
+.field public static final b:Ltu;
+
+.field public static final c:Ltu;
 
 
 # instance fields
-.field public final a:J
-
-.field public final b:Z
+.field public final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>(JZ)V
+.method static synthetic constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Ltu;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ltu;-><init>(I)V
+
+    sput-object v0, Ltu;->b:Ltu;
+
+    new-instance v0, Ltu;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Ltu;-><init>(I)V
+
+    sput-object v0, Ltu;->c:Ltu;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(I)V
     .locals 0
 
+    iput p1, p0, Ltu;->a:I
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-wide p1, p0, Ltu;->a:J
-
-    iput-boolean p3, p0, Ltu;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 7
+.method public final completed(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
 
-    const/4 v0, 0x1
+    iget p0, p0, Ltu;->a:I
 
-    if-ne p0, p1, :cond_0
+    packed-switch p0, :pswitch_data_0
 
-    return v0
+    check-cast p1, Ljava/lang/Void;
 
-    :cond_0
-    instance-of v1, p1, Ltu;
+    check-cast p2, Lpy1;
 
-    const/4 v2, 0x0
+    sget-object p0, Le5f;->a:Le5f;
 
-    if-nez v1, :cond_1
+    invoke-interface {p2, p0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
-    return v2
+    return-void
 
-    :cond_1
-    check-cast p1, Ltu;
+    :pswitch_0
+    check-cast p2, Lpy1;
 
-    iget-wide v3, p1, Ltu;->a:J
+    invoke-interface {p2, p1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
-    iget-wide v5, p0, Ltu;->a:J
+    return-void
 
-    cmp-long v1, v5, v3
+    nop
 
-    if-eqz v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-boolean p0, p0, Ltu;->b:Z
-
-    iget-boolean p1, p1, Ltu;->b:Z
-
-    if-eq p0, p1, :cond_3
-
-    return v2
-
-    :cond_3
-    return v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final hashCode()I
-    .locals 2
+.method public final failed(Ljava/lang/Throwable;Ljava/lang/Object;)V
+    .locals 0
 
-    iget-wide v0, p0, Ltu;->a:J
+    iget p0, p0, Ltu;->a:I
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    packed-switch p0, :pswitch_data_0
 
-    move-result v0
+    check-cast p2, Lpy1;
 
-    mul-int/lit8 v0, v0, 0x1f
+    instance-of p0, p1, Ljava/nio/channels/AsynchronousCloseException;
 
-    iget-boolean p0, p0, Ltu;->b:Z
+    if-eqz p0, :cond_0
 
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+    invoke-interface {p2}, Lpy1;->isCancelled()Z
 
     move-result p0
 
-    add-int/2addr p0, v0
+    if-eqz p0, :cond_0
 
-    return p0
-.end method
+    goto :goto_0
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
+    :cond_0
+    new-instance p0, Ljhc;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-direct {p0, p1}, Ljhc;-><init>(Ljava/lang/Throwable;)V
 
-    const-string v1, "LoadingPrev(time="
+    invoke-interface {p2, p0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    :goto_0
+    return-void
 
-    iget-wide v1, p0, Ltu;->a:J
+    :pswitch_0
+    check-cast p2, Lpy1;
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    instance-of p0, p1, Ljava/nio/channels/AsynchronousCloseException;
 
-    const-string v1, ", isRemoteCaused="
+    if-eqz p0, :cond_1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {p2}, Lpy1;->isCancelled()Z
 
-    iget-boolean p0, p0, Ltu;->b:Z
+    move-result p0
 
-    const-string v1, ")"
+    if-eqz p0, :cond_1
 
-    invoke-static {v0, p0, v1}, Lhr1;->j(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+    goto :goto_1
 
-    move-result-object p0
+    :cond_1
+    new-instance p0, Ljhc;
 
-    return-object p0
+    invoke-direct {p0, p1}, Ljhc;-><init>(Ljava/lang/Throwable;)V
+
+    invoke-interface {p2, p0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
+
+    :goto_1
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

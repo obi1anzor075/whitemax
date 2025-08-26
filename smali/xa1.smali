@@ -1,22 +1,19 @@
 .class public final Lxa1;
-.super Ljava/lang/Object;
+.super Lya1;
 .source "SourceFile"
-
-# interfaces
-.implements Lya1;
 
 
 # instance fields
-.field public final a:Lmge;
+.field public final a:Liaf;
 
 
 # direct methods
-.method public constructor <init>(Llge;)V
+.method public constructor <init>(Liaf;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lxa1;->a:Lmge;
+    iput-object p1, p0, Lxa1;->a:Liaf;
 
     return-void
 .end method
@@ -44,11 +41,11 @@
     :cond_1
     check-cast p1, Lxa1;
 
-    iget-object p0, p0, Lxa1;->a:Lmge;
+    iget-object p0, p0, Lxa1;->a:Liaf;
 
-    iget-object p1, p1, Lxa1;->a:Lmge;
+    iget-object p1, p1, Lxa1;->a:Liaf;
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -60,20 +57,19 @@
     return v0
 .end method
 
-.method public final getText()Lmge;
-    .locals 0
-
-    iget-object p0, p0, Lxa1;->a:Lmge;
-
-    return-object p0
-.end method
-
 .method public final hashCode()I
     .locals 0
 
-    iget-object p0, p0, Lxa1;->a:Lmge;
+    iget-object p0, p0, Lxa1;->a:Liaf;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_0
+    invoke-virtual {p0}, Liaf;->hashCode()I
 
     move-result p0
 
@@ -85,15 +81,19 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "Success(text="
+    const-string v1, "VideoState(participant="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p0, Lxa1;->a:Lmge;
+    iget-object p0, p0, Lxa1;->a:Liaf;
 
-    const-string v1, ")"
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, p0, v1}, Lme4;->k(Ljava/lang/StringBuilder;Lmge;Ljava/lang/String;)Ljava/lang/String;
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

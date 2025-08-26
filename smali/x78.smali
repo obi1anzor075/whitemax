@@ -4,324 +4,125 @@
 
 
 # instance fields
-.field public A:Ljava/lang/CharSequence;
+.field public final a:Ljava/lang/String;
 
-.field public B:Ljava/lang/Integer;
+.field public final b:Z
 
-.field public C:Ljava/lang/Integer;
+.field public final c:Z
 
-.field public D:Ljava/lang/CharSequence;
 
-.field public E:Ljava/lang/CharSequence;
+# direct methods
+.method public constructor <init>(Ljava/lang/String;ZZ)V
+    .locals 0
 
-.field public F:Ljava/lang/CharSequence;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field public G:Ljava/lang/Integer;
+    iput-object p1, p0, Lx78;->a:Ljava/lang/String;
 
-.field public H:Landroid/os/Bundle;
+    iput-boolean p2, p0, Lx78;->b:Z
 
-.field public a:Ljava/lang/CharSequence;
+    iput-boolean p3, p0, Lx78;->c:Z
 
-.field public b:Ljava/lang/CharSequence;
-
-.field public c:Ljava/lang/CharSequence;
-
-.field public d:Ljava/lang/CharSequence;
-
-.field public e:Ljava/lang/CharSequence;
-
-.field public f:Ljava/lang/CharSequence;
-
-.field public g:Ljava/lang/CharSequence;
-
-.field public h:Ljava/lang/Long;
-
-.field public i:Layb;
-
-.field public j:Layb;
-
-.field public k:[B
-
-.field public l:Ljava/lang/Integer;
-
-.field public m:Landroid/net/Uri;
-
-.field public n:Ljava/lang/Integer;
-
-.field public o:Ljava/lang/Integer;
-
-.field public p:Ljava/lang/Integer;
-
-.field public q:Ljava/lang/Boolean;
-
-.field public r:Ljava/lang/Boolean;
-
-.field public s:Ljava/lang/Integer;
-
-.field public t:Ljava/lang/Integer;
-
-.field public u:Ljava/lang/Integer;
-
-.field public v:Ljava/lang/Integer;
-
-.field public w:Ljava/lang/Integer;
-
-.field public x:Ljava/lang/Integer;
-
-.field public y:Ljava/lang/CharSequence;
-
-.field public z:Ljava/lang/CharSequence;
+    return-void
+.end method
 
 
 # virtual methods
-.method public final a()Lz78;
-    .locals 1
-
-    new-instance v0, Lz78;
-
-    invoke-direct {v0, p0}, Lz78;-><init>(Lx78;)V
-
-    return-object v0
-.end method
-
-.method public final b(I[B)V
+.method public final equals(Ljava/lang/Object;)Z
     .locals 4
 
-    iget-object v0, p0, Lx78;->k:[B
+    const/4 v0, 0x1
 
-    if-eqz v0, :cond_0
+    if-ne p0, p1, :cond_0
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    return v0
 
-    move-result-object v0
+    :cond_0
+    const/4 v1, 0x0
 
-    const/4 v1, 0x3
+    if-eqz p1, :cond_2
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
 
-    sget v3, Loze;->a:I
+    const-class v3, Lx78;
 
-    invoke-virtual {v0, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    if-eq v2, v3, :cond_1
 
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lx78;->l:Ljava/lang/Integer;
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Loze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    invoke-virtual {p2}, [B->clone()Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, [B
-
-    iput-object p2, p0, Lx78;->k:[B
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lx78;->l:Ljava/lang/Integer;
+    goto :goto_0
 
     :cond_1
-    return-void
+    check-cast p1, Lx78;
+
+    iget-object v2, p0, Lx78;->a:Ljava/lang/String;
+
+    iget-object v3, p1, Lx78;->a:Ljava/lang/String;
+
+    invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-boolean v2, p0, Lx78;->b:Z
+
+    iget-boolean v3, p1, Lx78;->b:Z
+
+    if-ne v2, v3, :cond_2
+
+    iget-boolean p0, p0, Lx78;->c:Z
+
+    iget-boolean p1, p1, Lx78;->c:Z
+
+    if-ne p0, p1, :cond_2
+
+    return v0
+
+    :cond_2
+    :goto_0
+    return v1
 .end method
 
-.method public final c(Ljava/lang/CharSequence;)V
-    .locals 0
+.method public final hashCode()I
+    .locals 5
 
-    iput-object p1, p0, Lx78;->d:Ljava/lang/CharSequence;
+    iget-object v0, p0, Lx78;->a:Ljava/lang/String;
 
-    return-void
-.end method
+    const/16 v1, 0x1f
 
-.method public final d(Ljava/lang/CharSequence;)V
-    .locals 0
+    invoke-static {v1, v1, v0}, Lv04;->d(IILjava/lang/String;)I
 
-    iput-object p1, p0, Lx78;->c:Ljava/lang/CharSequence;
+    move-result v0
 
-    return-void
-.end method
+    iget-boolean v2, p0, Lx78;->b:Z
 
-.method public final e(Ljava/lang/CharSequence;)V
-    .locals 0
+    const/16 v3, 0x4d5
 
-    iput-object p1, p0, Lx78;->b:Ljava/lang/CharSequence;
+    const/16 v4, 0x4cf
 
-    return-void
-.end method
+    if-eqz v2, :cond_0
 
-.method public final f([BLjava/lang/Integer;)V
-    .locals 0
-
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
+    move v2, v4
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p1}, [B->clone()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, [B
+    move v2, v3
 
     :goto_0
-    iput-object p1, p0, Lx78;->k:[B
+    add-int/2addr v0, v2
 
-    iput-object p2, p0, Lx78;->l:Ljava/lang/Integer;
+    mul-int/2addr v0, v1
 
-    return-void
-.end method
+    iget-boolean p0, p0, Lx78;->c:Z
 
-.method public final g(Ljava/lang/CharSequence;)V
-    .locals 0
+    if-eqz p0, :cond_1
 
-    iput-object p1, p0, Lx78;->z:Ljava/lang/CharSequence;
-
-    return-void
-.end method
-
-.method public final h(Ljava/lang/CharSequence;)V
-    .locals 0
-
-    iput-object p1, p0, Lx78;->A:Ljava/lang/CharSequence;
-
-    return-void
-.end method
-
-.method public final i(Ljava/lang/Long;)V
-    .locals 4
-
-    if-eqz p1, :cond_1
-
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v0, v0, v2
-
-    if-ltz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_1
+    move v3, v4
 
     :cond_1
-    :goto_0
-    const/4 v0, 0x1
+    add-int/2addr v0, v3
 
-    :goto_1
-    invoke-static {v0}, Loyb;->d(Z)V
-
-    iput-object p1, p0, Lx78;->h:Ljava/lang/Long;
-
-    return-void
-.end method
-
-.method public final j(Ljava/lang/CharSequence;)V
-    .locals 0
-
-    iput-object p1, p0, Lx78;->D:Ljava/lang/CharSequence;
-
-    return-void
-.end method
-
-.method public final k(Ljava/lang/Integer;)V
-    .locals 0
-
-    iput-object p1, p0, Lx78;->u:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public final l(Ljava/lang/Integer;)V
-    .locals 0
-
-    iput-object p1, p0, Lx78;->t:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public final m(Ljava/lang/Integer;)V
-    .locals 0
-
-    iput-object p1, p0, Lx78;->s:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public final n(Ljava/lang/Integer;)V
-    .locals 0
-
-    iput-object p1, p0, Lx78;->x:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public final o(Ljava/lang/Integer;)V
-    .locals 0
-
-    iput-object p1, p0, Lx78;->w:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public final p(Ljava/lang/Integer;)V
-    .locals 0
-
-    iput-object p1, p0, Lx78;->v:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public final q(Ljava/lang/CharSequence;)V
-    .locals 0
-
-    iput-object p1, p0, Lx78;->a:Ljava/lang/CharSequence;
-
-    return-void
-.end method
-
-.method public final r(Ljava/lang/Integer;)V
-    .locals 0
-
-    iput-object p1, p0, Lx78;->o:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public final s(Ljava/lang/Integer;)V
-    .locals 0
-
-    iput-object p1, p0, Lx78;->n:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public final t(Ljava/lang/CharSequence;)V
-    .locals 0
-
-    iput-object p1, p0, Lx78;->y:Ljava/lang/CharSequence;
-
-    return-void
+    return v0
 .end method

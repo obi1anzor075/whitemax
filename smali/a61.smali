@@ -1,83 +1,48 @@
 .class public final La61;
-.super Ljava/lang/Object;
-.source "SourceFile"
+.super Lbu3;
 
 
 # instance fields
-.field public final a:Lt97;
+.field public X:I
 
-.field public final b:Lt97;
+.field public final synthetic Y:Ltb;
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lt97;Lt97;)V
+.method public constructor <init>(Ltb;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, La61;->Y:Ltb;
 
-    iput-object p1, p0, La61;->a:Lt97;
-
-    iput-object p2, p0, La61;->b:Lt97;
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    const-string v0, "HandleSilenceMode"
+    iput-object p1, p0, La61;->o:Ljava/lang/Object;
 
-    const-string v1, "try mute ringtones"
+    iget p1, p0, La61;->X:I
 
-    invoke-static {v0, v1}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    const/high16 v0, -0x80000000
 
-    iget-object p0, p0, La61;->b:Lt97;
+    or-int/2addr p1, v0
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    iput p1, p0, La61;->X:I
+
+    iget-object p1, p0, La61;->Y:Ltb;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Ltb;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lfdc;
-
-    invoke-virtual {p0}, Lfdc;->a()Lcg1;
-
-    move-result-object p0
-
-    iget-object v0, p0, Lcg1;->g:Landroid/media/MediaPlayer;
-
-    const-string v1, "RingtoneManagerTag"
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lcg1;->e:Lr7e;
-
-    invoke-virtual {v0}, Lr7e;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/os/Vibrator;
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const-string p0, " mute already set"
-
-    invoke-static {v1, p0}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const-string v0, " set mute"
-
-    invoke-static {v1, v0}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcg1;->c()V
-
-    :goto_1
-    return-void
+    return-object p0
 .end method

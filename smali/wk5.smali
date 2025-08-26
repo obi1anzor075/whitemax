@@ -1,110 +1,234 @@
-.class public final Lwk5;
-.super Ll5e;
+.class public final synthetic Lwk5;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lpj5;
+.field public final synthetic b:Lcom/google/firebase/messaging/FirebaseMessaging;
 
 
 # direct methods
-.method public constructor <init>(Lpj5;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(Lcom/google/firebase/messaging/FirebaseMessaging;I)V
     .locals 0
 
-    iput-object p1, p0, Lwk5;->Y:Lpj5;
+    iput p2, p0, Lwk5;->a:I
 
-    const/4 p1, 0x2
+    iput-object p1, p0, Lwk5;->b:Lcom/google/firebase/messaging/FirebaseMessaging;
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final run()V
+    .locals 8
 
-    check-cast p1, Lou3;
+    iget v0, p0, Lwk5;->a:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget-object p0, p0, Lwk5;->b:Lcom/google/firebase/messaging/FirebaseMessaging;
 
-    invoke-virtual {p0, p1, p2}, Lwk5;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object p0
+    iget-object v0, p0, Lcom/google/firebase/messaging/FirebaseMessaging;->b:Landroid/content/Context;
 
-    check-cast p0, Lwk5;
+    invoke-static {v0}, Lu27;->y(Landroid/content/Context;)V
 
-    sget-object p1, Ljue;->a:Ljue;
+    iget-object v1, p0, Lcom/google/firebase/messaging/FirebaseMessaging;->c:Ljv5;
 
-    invoke-virtual {p0, p1}, Lwk5;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0}, Lcom/google/firebase/messaging/FirebaseMessaging;->g()Z
 
-    move-result-object p0
+    move-result v2
 
-    return-object p0
-.end method
+    invoke-static {v0}, Lg47;->w(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 0
+    move-result-object v3
 
-    new-instance p1, Lwk5;
+    const-string v4, "proxy_retention"
 
-    iget-object p0, p0, Lwk5;->Y:Lpj5;
+    invoke-interface {v3, v4}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
-    invoke-direct {p1, p0, p2}, Lwk5;-><init>(Lpj5;Lkotlin/coroutines/Continuation;)V
+    move-result v5
 
-    return-object p1
-.end method
+    if-eqz v5, :cond_0
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    const/4 v5, 0x0
 
-    sget-object v0, Lpu3;->a:Lpu3;
+    invoke-interface {v3, v4, v5}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
-    iget v1, p0, Lwk5;->X:I
+    move-result v3
 
-    const/4 v2, 0x1
+    if-ne v3, v2, :cond_0
 
-    if-eqz v1, :cond_1
+    goto :goto_1
 
-    if-ne v1, v2, :cond_0
+    :cond_0
+    iget-object v1, v1, Ljv5;->c:Ljava/lang/Object;
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    check-cast v1, Ljmc;
+
+    iget-object v3, v1, Ljmc;->c:Lg0a;
+
+    invoke-virtual {v3}, Lg0a;->h()I
+
+    move-result v3
+
+    const v5, 0xe5ee4e0
+
+    if-lt v3, v5, :cond_1
+
+    new-instance v3, Landroid/os/Bundle;
+
+    invoke-direct {v3}, Landroid/os/Bundle;-><init>()V
+
+    invoke-virtual {v3, v4, v2}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
+
+    iget-object v1, v1, Ljmc;->b:Landroid/content/Context;
+
+    invoke-static {v1}, Lhlg;->h(Landroid/content/Context;)Lhlg;
+
+    move-result-object v1
+
+    new-instance v4, Lukg;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget v5, v1, Lhlg;->a:I
+
+    add-int/lit8 v6, v5, 0x1
+
+    iput v6, v1, Lhlg;->a:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v1
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x4
+
+    invoke-direct {v4, v5, v7, v3, v6}, Lukg;-><init>(IILandroid/os/Bundle;I)V
+
+    invoke-virtual {v1, v4}, Lhlg;->i(Lukg;)Lmlg;
+
+    move-result-object v1
 
     goto :goto_0
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    :catchall_0
+    move-exception p0
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p0
 
     :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    new-instance v1, Ljava/io/IOException;
 
-    iput v2, p0, Lwk5;->X:I
+    const-string v3, "SERVICE_NOT_AVAILABLE"
 
-    iget-object p1, p0, Lwk5;->Y:Lpj5;
+    invoke-direct {v1, v3}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    invoke-static {p1, p0}, Lez3;->p(Lpj5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v1}, Lzx7;->v(Ljava/lang/Exception;)Lmlg;
 
-    move-result-object p0
+    move-result-object v1
 
-    if-ne p0, v0, :cond_2
+    :goto_0
+    new-instance v3, Lsr;
 
-    return-object v0
+    const/4 v4, 0x2
+
+    invoke-direct {v3, v4}, Lsr;-><init>(I)V
+
+    new-instance v4, Lsmb;
+
+    const/4 v5, 0x0
+
+    invoke-direct {v4, v5, v0, v2}, Lsmb;-><init>(ILandroid/content/Context;Z)V
+
+    invoke-virtual {v1, v3, v4}, Lmlg;->d(Ljava/util/concurrent/Executor;Lo1a;)Lmlg;
+
+    :goto_1
+    invoke-virtual {p0}, Lcom/google/firebase/messaging/FirebaseMessaging;->g()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p0}, Lcom/google/firebase/messaging/FirebaseMessaging;->f()V
 
     :cond_2
-    :goto_0
-    sget-object p0, Ljue;->a:Ljue;
+    return-void
 
-    return-object p0
+    :pswitch_0
+    iget-object v0, p0, Lcom/google/firebase/messaging/FirebaseMessaging;->e:Lh46;
+
+    invoke-virtual {v0}, Lh46;->p()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    invoke-virtual {p0}, Lcom/google/firebase/messaging/FirebaseMessaging;->e()Lf7e;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/google/firebase/messaging/FirebaseMessaging;->i(Lf7e;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    monitor-enter p0
+
+    :try_start_2
+    iget-boolean v0, p0, Lcom/google/firebase/messaging/FirebaseMessaging;->i:Z
+
+    if-nez v0, :cond_3
+
+    const-wide/16 v0, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lcom/google/firebase/messaging/FirebaseMessaging;->h(J)V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    goto :goto_2
+
+    :catchall_1
+    move-exception v0
+
+    goto :goto_3
+
+    :cond_3
+    :goto_2
+    monitor-exit p0
+
+    goto :goto_4
+
+    :goto_3
+    :try_start_3
+    monitor-exit p0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    throw v0
+
+    :cond_4
+    :goto_4
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

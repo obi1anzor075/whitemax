@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:compat="http://schemas.android.com/apk/res-auto">
-    <item android:icon="@drawable/ic_check_24" android:id="@id/menu_channel_settings__confirm" android:title="@string/channel_settings_save" compat:showAsAction="always" />
-    <item android:id="@id/menu_channel_settings__progress" android:visible="false" android:title="@string/common_waiting" compat:actionLayout="@layout/toolbar_progress" compat:showAsAction="always" />
-</menu>

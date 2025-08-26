@@ -1,99 +1,118 @@
 .class public final Lip8;
-.super Landroid/text/style/ClickableSpan;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Lfp8;
+.field public X:I
 
-.field public b:I
+.field public final synthetic Y:Llp8;
 
-.field public c:Lqf7;
+.field public final synthetic Z:Ly42;
 
 
 # direct methods
-.method public constructor <init>(Lfp8;I)V
+.method public constructor <init>(Llp8;Ly42;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
+    iput-object p1, p0, Lip8;->Y:Llp8;
 
-    iput-object p1, p0, Lip8;->a:Lfp8;
+    iput-object p2, p0, Lip8;->Z:Ly42;
 
-    iput p2, p0, Lip8;->b:I
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 8
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object v0, p0, Lip8;->c:Lqf7;
+    check-cast p1, Lox3;
 
-    if-eqz v0, :cond_2
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object v0, v0, Lqf7;->a:Lrf7;
+    invoke-virtual {p0, p1, p2}, Lip8;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object p0
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    check-cast p0, Lip8;
 
-    move-result-wide v1
+    sget-object p1, Le5f;->a:Le5f;
 
-    iget-object v3, v0, Lrf7;->e:Lp7;
+    invoke-virtual {p0, p1}, Lip8;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-wide v4, v3, Lp7;->c:J
+    move-result-object p0
 
-    sub-long v4, v1, v4
+    return-object p0
+.end method
 
-    iget-wide v6, v3, Lp7;->b:J
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    cmp-long v4, v4, v6
+    new-instance p1, Lip8;
 
-    if-lez v4, :cond_2
+    iget-object v0, p0, Lip8;->Y:Llp8;
 
-    iput-wide v1, v3, Lp7;->c:J
+    iget-object p0, p0, Lip8;->Z:Ly42;
 
-    iget-object v0, v0, Lrf7;->a:Lof7;
+    invoke-direct {p1, v0, p0, p2}, Lip8;-><init>(Llp8;Ly42;Lkotlin/coroutines/Continuation;)V
 
-    if-nez v0, :cond_1
+    return-object p1
+.end method
 
-    instance-of v0, p1, Lof7;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    if-eqz v0, :cond_0
+    iget v0, p0, Lip8;->X:I
 
-    move-object v0, p1
+    const/4 v1, 0x1
 
-    check-cast v0, Lof7;
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 
     :cond_1
-    :goto_0
-    if-eqz v0, :cond_2
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    iget-object p0, p0, Lip8;->a:Lfp8;
+    iput v1, p0, Lip8;->X:I
 
-    invoke-interface {v0, p0}, Lof7;->a(Lfp8;)V
+    iget-object p1, p0, Lip8;->Y:Llp8;
+
+    iget-object v0, p0, Lip8;->Z:Ly42;
+
+    invoke-static {p1, v0, p0}, Llp8;->r(Llp8;Ly42;Lbu3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
 
     :cond_2
-    return-void
-.end method
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
 
-.method public final updateDrawState(Landroid/text/TextPaint;)V
-    .locals 0
-
-    iget p0, p0, Lip8;->b:I
-
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setColor(I)V
-
-    const/4 p0, 0x1
-
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setUnderlineText(Z)V
-
-    return-void
+    return-object p0
 .end method

@@ -1,45 +1,48 @@
-.class public final Lmab;
-.super Lkh0;
+.class public final synthetic Lmab;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lx64;
 
 
 # instance fields
-.field public final b:Luj3;
+.field public final synthetic a:J
+
+.field public final synthetic b:Lqab;
+
+.field public final synthetic c:Z
 
 
 # direct methods
-.method public constructor <init>(JLuj3;)V
+.method public synthetic constructor <init>(JLqab;Z)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lkh0;-><init>(J)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lmab;->b:Luj3;
+    iput-wide p1, p0, Lmab;->a:J
+
+    iput-object p3, p0, Lmab;->b:Lqab;
+
+    iput-boolean p4, p0, Lmab;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final a()Ljava/lang/Object;
+    .locals 4
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v0, Lone/me/profile/ProfileScreen;
 
-    const-string v1, "ProfileEvent{contactInfo="
+    iget-wide v1, p0, Lmab;->a:J
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object v3, p0, Lmab;->b:Lqab;
 
-    iget-object p0, p0, Lmab;->b:Luj3;
+    iget-boolean p0, p0, Lmab;->c:Z
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1, v2, v3, p0}, Lone/me/profile/ProfileScreen;-><init>(JLqab;Z)V
 
-    const/16 p0, 0x7d
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-object v0
 .end method

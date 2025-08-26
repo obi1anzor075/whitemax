@@ -26,7 +26,7 @@
         "(Lone/me/sdk/richvector/internal/element/ClipPathElement;)V",
         "Landroid/graphics/Matrix;",
         "matrix",
-        "Ljue;",
+        "Le5f;",
         "transform",
         "(Landroid/graphics/Matrix;)V",
         "Ljava/lang/String;",
@@ -34,7 +34,7 @@
         "()Ljava/lang/String;",
         "Landroid/graphics/Path;",
         "path$delegate",
-        "Lt97;",
+        "Lje7;",
         "getPath",
         "()Landroid/graphics/Path;",
         "path",
@@ -51,6 +51,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -61,7 +62,7 @@
 
 .field private final originalPath:Landroid/graphics/Path;
 
-.field private final path$delegate:Lt97;
+.field private final path$delegate:Lje7;
 
 
 # direct methods
@@ -75,24 +76,24 @@
     iput-object p1, p0, Lone/me/sdk/richvector/internal/element/ClipPathElement;->name:Ljava/lang/String;
 
     .line 3
-    new-instance p1, Lnl1;
+    new-instance p1, Lcd1;
 
-    const/16 v0, 0xf
+    const/16 v0, 0x13
 
-    invoke-direct {p1, v0, p0}, Lnl1;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p1, v0, p0}, Lcd1;-><init>(ILjava/lang/Object;)V
 
     .line 4
-    new-instance v0, Lr7e;
+    new-instance v0, Lwfe;
 
-    invoke-direct {v0, p1}, Lr7e;-><init>(Ls16;)V
+    invoke-direct {v0, p1}, Lwfe;-><init>(Lv56;)V
 
     .line 5
-    iput-object v0, p0, Lone/me/sdk/richvector/internal/element/ClipPathElement;->path$delegate:Lt97;
+    iput-object v0, p0, Lone/me/sdk/richvector/internal/element/ClipPathElement;->path$delegate:Lje7;
 
     if-eqz p2, :cond_0
 
     .line 6
-    invoke-static {p2}, Lh2g;->f(Ljava/lang/String;)Landroid/graphics/Path;
+    invoke-static {p2}, Lvk9;->g(Ljava/lang/String;)Landroid/graphics/Path;
 
     move-result-object p1
 
@@ -204,9 +205,9 @@
 .method public final getPath()Landroid/graphics/Path;
     .locals 0
 
-    iget-object p0, p0, Lone/me/sdk/richvector/internal/element/ClipPathElement;->path$delegate:Lt97;
+    iget-object p0, p0, Lone/me/sdk/richvector/internal/element/ClipPathElement;->path$delegate:Lje7;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 

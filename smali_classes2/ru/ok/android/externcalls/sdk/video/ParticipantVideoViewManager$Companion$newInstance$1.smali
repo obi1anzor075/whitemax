@@ -1,14 +1,14 @@
 .class final Lru/ok/android/externcalls/sdk/video/ParticipantVideoViewManager$Companion$newInstance$1;
-.super Lb97;
+.super Lsd7;
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Lv56;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lru/ok/android/externcalls/sdk/video/ParticipantVideoViewManager$Companion;->newInstance$default(Lru/ok/android/externcalls/sdk/video/ParticipantVideoViewManager$Companion;Ls16;Lu16;Ls16;ILjava/lang/Object;)Lru/ok/android/externcalls/sdk/video/ParticipantVideoViewManager;
+    value = Lru/ok/android/externcalls/sdk/video/ParticipantVideoViewManager$Companion;->newInstance$default(Lru/ok/android/externcalls/sdk/video/ParticipantVideoViewManager$Companion;Lv56;Lx56;Lv56;ILjava/lang/Object;)Lru/ok/android/externcalls/sdk/video/ParticipantVideoViewManager;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,8 +18,8 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lb97;",
-        "Ls16;"
+        "Lsd7;",
+        "Lv56;"
     }
 .end annotation
 
@@ -33,7 +33,7 @@
         "Lru/ok/android/externcalls/sdk/ui/RendererView;",
         "T",
         "R",
-        "Ljue;",
+        "Le5f;",
         "invoke",
         "()V",
         "<anonymous>"
@@ -69,7 +69,7 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lb97;-><init>(I)V
+    invoke-direct {p0, v0}, Lsd7;-><init>(I)V
 
     return-void
 .end method
@@ -82,7 +82,7 @@
     .line 2
     invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/video/ParticipantVideoViewManager$Companion$newInstance$1;->invoke()V
 
-    sget-object p0, Ljue;->a:Ljue;
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 .end method

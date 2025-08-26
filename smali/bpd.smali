@@ -1,22 +1,3 @@
-.class public final Lbpd;
+.class public interface abstract Lbpd;
 .super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lfpd;
-
-
-# instance fields
-.field public final a:Ltk1;
-
-
-# direct methods
-.method public constructor <init>(Ltk1;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lbpd;->a:Ltk1;
-
-    return-void
-.end method

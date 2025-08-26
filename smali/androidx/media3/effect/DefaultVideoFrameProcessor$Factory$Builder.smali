@@ -8,9 +8,9 @@
 
 .field public b:Ljava/util/concurrent/ExecutorService;
 
-.field public c:Lh96;
+.field public c:Lmd6;
 
-.field public d:Lq96;
+.field public d:Lud6;
 
 .field public e:I
 
@@ -36,49 +36,35 @@
 
 
 # virtual methods
-.method public build()Lqc4;
-    .locals 8
+.method public build()Lxf4;
+    .locals 7
 
-    new-instance v7, Lqc4;
+    new-instance v0, Lxf4;
 
     iget v1, p0, Landroidx/media3/effect/DefaultVideoFrameProcessor$Factory$Builder;->a:I
 
-    iget-boolean v0, p0, Landroidx/media3/effect/DefaultVideoFrameProcessor$Factory$Builder;->f:Z
+    iget-boolean v2, p0, Landroidx/media3/effect/DefaultVideoFrameProcessor$Factory$Builder;->f:Z
 
-    xor-int/lit8 v2, v0, 0x1
+    xor-int/lit8 v2, v2, 0x1
 
-    iget-object v0, p0, Landroidx/media3/effect/DefaultVideoFrameProcessor$Factory$Builder;->c:Lh96;
+    iget-object v3, p0, Landroidx/media3/effect/DefaultVideoFrameProcessor$Factory$Builder;->c:Lmd6;
 
-    if-nez v0, :cond_0
+    if-nez v3, :cond_0
 
-    new-instance v0, Lotf;
+    new-instance v3, Lnz7;
 
-    const/16 v3, 0xe
+    const/16 v4, 0x10
 
-    invoke-direct {v0, v3}, Lotf;-><init>(I)V
+    invoke-direct {v3, v4}, Lnz7;-><init>(I)V
 
     :cond_0
-    move-object v3, v0
+    iget-object v4, p0, Landroidx/media3/effect/DefaultVideoFrameProcessor$Factory$Builder;->b:Ljava/util/concurrent/ExecutorService;
 
-    iget-object v0, p0, Landroidx/media3/effect/DefaultVideoFrameProcessor$Factory$Builder;->b:Ljava/util/concurrent/ExecutorService;
-
-    iget-object v4, p0, Landroidx/media3/effect/DefaultVideoFrameProcessor$Factory$Builder;->d:Lq96;
+    iget-object v5, p0, Landroidx/media3/effect/DefaultVideoFrameProcessor$Factory$Builder;->d:Lud6;
 
     iget v6, p0, Landroidx/media3/effect/DefaultVideoFrameProcessor$Factory$Builder;->e:I
 
-    move-object p0, v0
+    invoke-direct/range {v0 .. v6}, Lxf4;-><init>(IZLmd6;Ljava/util/concurrent/ExecutorService;Lud6;I)V
 
-    check-cast p0, Ljava/util/concurrent/ScheduledExecutorService;
-
-    move-object v5, v4
-
-    check-cast v5, Lhc0;
-
-    move-object v0, v7
-
-    move-object v4, p0
-
-    invoke-direct/range {v0 .. v6}, Lqc4;-><init>(IZLh96;Ljava/util/concurrent/ScheduledExecutorService;Lhc0;I)V
-
-    return-object v7
+    return-object v0
 .end method

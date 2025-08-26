@@ -1,6 +1,17 @@
-.class public interface abstract Lob9;
-.super Ljava/lang/Object;
+.class public final Lob9;
+.super Lca1;
 .source "SourceFile"
 
-# interfaces
-.implements Lia3;
+
+# direct methods
+.method public constructor <init>(J)V
+    .locals 0
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lkl9;-><init>(Ljava/lang/Object;)V
+
+    return-void
+.end method

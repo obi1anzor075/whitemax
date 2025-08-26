@@ -13,7 +13,7 @@
         "",
         "Lru/ok/android/externcalls/sdk/asr/listener/AsrRecordListener;",
         "listener",
-        "Ljue;",
+        "Le5f;",
         "addAsrRecordListener",
         "(Lru/ok/android/externcalls/sdk/asr/listener/AsrRecordListener;)V",
         "removeAsrRecordListener",
@@ -25,6 +25,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

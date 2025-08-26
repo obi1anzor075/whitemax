@@ -1,30 +1,29 @@
 .class public final Low1;
-.super Lps1;
+.super Landroid/hardware/camera2/CameraDevice$StateCallback;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;
-
-
-# direct methods
-.method public constructor <init>(Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;)V
+# virtual methods
+.method public final onClosed(Landroid/hardware/camera2/CameraDevice;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    return-void
+.end method
 
-    if-eqz p1, :cond_0
-
-    iput-object p1, p0, Low1;->a:Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;
+.method public final onDisconnected(Landroid/hardware/camera2/CameraDevice;)V
+    .locals 0
 
     return-void
+.end method
 
-    :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
+.method public final onError(Landroid/hardware/camera2/CameraDevice;I)V
+    .locals 0
 
-    const-string p1, "captureCallback is null"
+    return-void
+.end method
 
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+.method public final onOpened(Landroid/hardware/camera2/CameraDevice;)V
+    .locals 0
 
-    throw p0
+    return-void
 .end method

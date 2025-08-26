@@ -1,57 +1,90 @@
 .class public final Lxke;
-.super Ler3;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public X:Lmu0;
-
-.field public Y:J
-
-.field public Z:I
-
-.field public o:Lcle;
-
-.field public synthetic w0:Ljava/lang/Object;
-
-.field public final synthetic x0:Lcle;
-
-.field public y0:I
+.field public final synthetic X:Landroid/view/View;
 
 
 # direct methods
-.method public constructor <init>(Lcle;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Landroid/view/View;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    iput-object p1, p0, Lxke;->x0:Lcle;
+    iput-object p1, p0, Lxke;->X:Landroid/view/View;
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iput-object p1, p0, Lxke;->w0:Ljava/lang/Object;
+    check-cast p1, Lbn5;
 
-    iget p1, p0, Lxke;->y0:I
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lxke;->y0:I
-
-    iget-object p1, p0, Lxke;->x0:Lcle;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lcle;->l(Lmu0;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Lxke;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
+
+    check-cast p0, Lxke;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lxke;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
+
+    new-instance p1, Lxke;
+
+    iget-object p0, p0, Lxke;->X:Landroid/view/View;
+
+    invoke-direct {p1, p0, p2}, Lxke;-><init>(Landroid/view/View;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lxke;->X:Landroid/view/View;
+
+    invoke-virtual {p0}, Landroid/view/View;->isInEditMode()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    sget-object p0, Lle4;->e0:Lle4;
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object p0
+
+    sget-object p1, Lvke;->a0:Lwfe;
+
+    invoke-static {p0}, Lp54;->M(Landroid/content/Context;)Lvke;
+
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 .end method

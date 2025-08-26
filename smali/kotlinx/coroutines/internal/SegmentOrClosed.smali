@@ -111,7 +111,7 @@
 
     move-result-object p1
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -128,7 +128,7 @@
 .method public static final equals-impl0(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 0
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -166,10 +166,6 @@
 
     const-string v0, "Does not contain segment"
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
     invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p0
@@ -182,14 +178,13 @@
 
     const/4 p0, 0x0
 
-    goto :goto_0
+    return p0
 
     :cond_0
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result p0
 
-    :goto_0
     return p0
 .end method
 
@@ -204,12 +199,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 

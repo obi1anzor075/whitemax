@@ -1,9 +1,9 @@
 .class final Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader$uploadFile$1;
-.super Lb97;
+.super Lsd7;
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Lv56;
 
 
 # annotations
@@ -18,8 +18,8 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lb97;",
-        "Ls16;"
+        "Lsd7;",
+        "Lv56;"
     }
 .end annotation
 
@@ -58,7 +58,7 @@
 
     const/4 p1, 0x0
 
-    invoke-direct {p0, p1}, Lb97;-><init>(I)V
+    invoke-direct {p0, p1}, Lsd7;-><init>(I)V
 
     return-void
 .end method
@@ -141,17 +141,17 @@
     :cond_1
     iget-object v0, p0, Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader$uploadFile$1;->this$0:Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader;
 
-    invoke-virtual {v1}, Lru/ok/android/externcalls/analytics/config/CallAnalyticsConfig;->getOkApi()Lmw9;
+    invoke-virtual {v1}, Lru/ok/android/externcalls/analytics/config/CallAnalyticsConfig;->getOkApi()Ll0a;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lmw9;->a()Luk;
+    invoke-virtual {v1}, Ll0a;->a()Lnk;
 
     move-result-object v1
 
     iget-object v2, p0, Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader$uploadFile$1;->$file:Ljava/io/File;
 
-    invoke-static {v0, v1, v2}, Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader;->access$uploadFileWithContent(Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader;Luk;Ljava/io/File;)Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader$UploadResult;
+    invoke-static {v0, v1, v2}, Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader;->access$uploadFileWithContent(Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader;Lnk;Ljava/io/File;)Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader$UploadResult;
 
     move-result-object v0
 
@@ -160,7 +160,7 @@
     .line 7
     invoke-static {v1}, Lru/ok/android/externcalls/analytics/internal/utils/Files;->delete(Ljava/io/File;)V
 
-    goto :goto_4
+    return-object v0
 
     :catch_0
     move-exception v0
@@ -267,7 +267,7 @@
     invoke-interface {v1, p0, v2, v0}, Lru/ok/android/externcalls/analytics/log/CallAnalyticsLogger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 13
-    sget-object v0, Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader$UploadResult;->RECOVERABLE_ERROR:Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader$UploadResult;
+    sget-object p0, Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader$UploadResult;->RECOVERABLE_ERROR:Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader$UploadResult;
 
     goto :goto_4
 
@@ -290,8 +290,8 @@
     invoke-interface {v1, p0, v2, v0}, Lru/ok/android/externcalls/analytics/log/CallAnalyticsLogger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 15
-    sget-object v0, Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader$UploadResult;->ERROR:Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader$UploadResult;
+    sget-object p0, Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader$UploadResult;->ERROR:Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader$UploadResult;
 
     :goto_4
-    return-object v0
+    return-object p0
 .end method

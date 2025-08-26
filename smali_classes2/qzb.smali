@@ -1,3 +1,6 @@
-.class public interface abstract Lqzb;
+.class public abstract Lqzb;
 .super Ljava/lang/Object;
-.source "SourceFile"
+
+
+# static fields
+.field public static oneme_stickers_showcase_toolbar_title:I = 0x7f130a23

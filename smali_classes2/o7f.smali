@@ -1,45 +1,48 @@
 .class public final Lo7f;
-.super Ljava/lang/Object;
-.source "SourceFile"
+.super Lbu3;
 
 
 # instance fields
-.field public a:Z
+.field public X:I
 
-.field public b:Z
+.field public final synthetic Y:Lfka;
 
-.field public c:Z
+.field public synthetic o:Ljava/lang/Object;
 
-.field public d:Z
 
-.field public e:Z
+# direct methods
+.method public constructor <init>(Lfka;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-.field public f:Z
+    iput-object p1, p0, Lo7f;->Y:Lfka;
 
-.field public g:Z
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
-.field public h:Z
+    return-void
+.end method
 
-.field public i:Z
 
-.field public j:J
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-.field public k:J
+    iput-object p1, p0, Lo7f;->o:Ljava/lang/Object;
 
-.field public l:J
+    iget p1, p0, Lo7f;->X:I
 
-.field public m:Lqjb;
+    const/high16 v0, -0x80000000
 
-.field public n:Lu2f;
+    or-int/2addr p1, v0
 
-.field public o:Ln10;
+    iput p1, p0, Lo7f;->X:I
 
-.field public p:Landroid/graphics/drawable/Drawable;
+    iget-object p1, p0, Lo7f;->Y:Lfka;
 
-.field public q:Landroid/net/Uri;
+    const/4 v0, 0x0
 
-.field public r:Z
+    invoke-virtual {p1, v0, p0}, Lfka;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-.field public s:Z
+    move-result-object p0
 
-.field public t:Z
+    return-object p0
+.end method

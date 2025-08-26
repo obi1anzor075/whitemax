@@ -1,67 +1,242 @@
-.class public final Lut0;
-.super Lkw1;
+.class public abstract Lut0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic o:I
+# static fields
+.field public static final a:Ld42;
+
+.field public static final b:I
+
+.field public static final c:I
+
+.field public static final d:Lkotlinx/coroutines/internal/Symbol;
+
+.field public static final e:Lkotlinx/coroutines/internal/Symbol;
+
+.field public static final f:Lkotlinx/coroutines/internal/Symbol;
+
+.field public static final g:Lkotlinx/coroutines/internal/Symbol;
+
+.field public static final h:Lkotlinx/coroutines/internal/Symbol;
+
+.field public static final i:Lkotlinx/coroutines/internal/Symbol;
+
+.field public static final j:Lkotlinx/coroutines/internal/Symbol;
+
+.field public static final k:Lkotlinx/coroutines/internal/Symbol;
+
+.field public static final l:Lkotlinx/coroutines/internal/Symbol;
+
+.field public static final m:Lkotlinx/coroutines/internal/Symbol;
+
+.field public static final n:Lkotlinx/coroutines/internal/Symbol;
+
+.field public static final o:Lkotlinx/coroutines/internal/Symbol;
+
+.field public static final p:Lkotlinx/coroutines/internal/Symbol;
+
+.field public static final q:Lkotlinx/coroutines/internal/Symbol;
+
+.field public static final r:Lkotlinx/coroutines/internal/Symbol;
+
+.field public static final s:Lkotlinx/coroutines/internal/Symbol;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 7
 
-    const/4 v0, 0x0
+    new-instance v0, Ld42;
 
-    iput v0, p0, Lut0;->o:I
+    const/4 v4, 0x0
 
-    const/4 v0, 0x0
+    const/4 v5, 0x0
 
-    const/4 v1, 0x0
+    const-wide/16 v1, -0x1
 
-    .line 2
-    invoke-direct {p0, v1, v0, v0}, Lkw1;-><init>(ILlhd;Ljava/lang/Float;)V
+    const/4 v3, 0x0
+
+    invoke-direct/range {v0 .. v5}, Ld42;-><init>(JLd42;Lst0;I)V
+
+    sput-object v0, Lut0;->a:Ld42;
+
+    const/16 v5, 0xc
+
+    const/4 v6, 0x0
+
+    const-string v1, "kotlinx.coroutines.bufferedChannel.segmentSize"
+
+    const/16 v2, 0x20
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    invoke-static/range {v1 .. v6}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
+
+    move-result v0
+
+    sput v0, Lut0;->b:I
+
+    const-string v1, "kotlinx.coroutines.bufferedChannel.expandBufferCompletionWaitIterations"
+
+    const/16 v2, 0x2710
+
+    invoke-static/range {v1 .. v6}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
+
+    move-result v0
+
+    sput v0, Lut0;->c:I
+
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+
+    const-string v1, "BUFFERED"
+
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lut0;->d:Lkotlinx/coroutines/internal/Symbol;
+
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+
+    const-string v1, "SHOULD_BUFFER"
+
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lut0;->e:Lkotlinx/coroutines/internal/Symbol;
+
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+
+    const-string v1, "S_RESUMING_BY_RCV"
+
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lut0;->f:Lkotlinx/coroutines/internal/Symbol;
+
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+
+    const-string v1, "RESUMING_BY_EB"
+
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lut0;->g:Lkotlinx/coroutines/internal/Symbol;
+
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+
+    const-string v1, "POISONED"
+
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lut0;->h:Lkotlinx/coroutines/internal/Symbol;
+
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+
+    const-string v1, "DONE_RCV"
+
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lut0;->i:Lkotlinx/coroutines/internal/Symbol;
+
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+
+    const-string v1, "INTERRUPTED_SEND"
+
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lut0;->j:Lkotlinx/coroutines/internal/Symbol;
+
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+
+    const-string v1, "INTERRUPTED_RCV"
+
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lut0;->k:Lkotlinx/coroutines/internal/Symbol;
+
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+
+    const-string v1, "CHANNEL_CLOSED"
+
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lut0;->l:Lkotlinx/coroutines/internal/Symbol;
+
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+
+    const-string v1, "SUSPEND"
+
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lut0;->m:Lkotlinx/coroutines/internal/Symbol;
+
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+
+    const-string v1, "SUSPEND_NO_WAITER"
+
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lut0;->n:Lkotlinx/coroutines/internal/Symbol;
+
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+
+    const-string v1, "FAILED"
+
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lut0;->o:Lkotlinx/coroutines/internal/Symbol;
+
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+
+    const-string v1, "NO_RECEIVE_RESULT"
+
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lut0;->p:Lkotlinx/coroutines/internal/Symbol;
+
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+
+    const-string v1, "CLOSE_HANDLER_CLOSED"
+
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lut0;->q:Lkotlinx/coroutines/internal/Symbol;
+
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+
+    const-string v1, "CLOSE_HANDLER_INVOKED"
+
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lut0;->r:Lkotlinx/coroutines/internal/Symbol;
+
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+
+    const-string v1, "NO_CLOSE_CAUSE"
+
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lut0;->s:Lkotlinx/coroutines/internal/Symbol;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(ILlhd;Ljava/lang/Float;I)V
+.method public static final a(Lpy1;Ljava/lang/Object;Ln66;)Z
     .locals 0
 
-    .line 1
-    iput p4, p0, Lut0;->o:I
+    invoke-interface {p0, p1, p2}, Lpy1;->k(Ljava/lang/Object;Ln66;)Lkotlinx/coroutines/internal/Symbol;
 
-    invoke-direct {p0, p1, p2, p3}, Lkw1;-><init>(ILlhd;Ljava/lang/Float;)V
+    move-result-object p1
 
-    return-void
-.end method
+    if-eqz p1, :cond_0
 
+    invoke-interface {p0, p1}, Lpy1;->n(Ljava/lang/Object;)V
 
-# virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 0
+    const/4 p0, 0x1
 
-    iget p0, p0, Lut0;->o:I
+    return p0
 
-    packed-switch p0, :pswitch_data_0
+    :cond_0
+    const/4 p0, 0x0
 
-    const-string p0, "[SquareCap]"
-
-    return-object p0
-
-    :pswitch_0
-    const-string p0, "[RoundCap]"
-
-    return-object p0
-
-    :pswitch_1
-    const-string p0, "[ButtCap]"
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method

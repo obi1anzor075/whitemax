@@ -1,27 +1,20 @@
-.class public interface abstract Lbpe;
+.class public abstract Lbpe;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/text/TextWatcher;
+
 
 # virtual methods
-.method public abstract a(JIIILzoe;)V
-.end method
-
-.method public abstract b(Lija;II)V
-.end method
-
-.method public abstract c(Ljz3;IZ)I
-.end method
-
-.method public d(Ljz3;IZ)I
+.method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
 
-    invoke-interface {p0, p1, p2, p3}, Lbpe;->c(Ljz3;IZ)I
-
-    move-result p0
-
-    return p0
+    return-void
 .end method
 
-.method public abstract e(Lxu5;)V
+.method public final onTextChanged(Ljava/lang/CharSequence;III)V
+    .locals 0
+
+    return-void
 .end method

@@ -59,7 +59,7 @@
 
     const-string p1, "Port is invalid: "
 
-    invoke-static {p3, p1}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p3, p1}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -146,7 +146,7 @@
 
     if-eqz p0, :cond_3
 
-    move v0, v1
+    return v1
 
     :cond_3
     return v0
@@ -219,17 +219,22 @@
 .method public final resolvePort(I)I
     .locals 1
 
-    if-lez p1, :cond_0
+    if-lez p1, :cond_1
 
     const v0, 0xffff
 
-    if-le p1, v0, :cond_1
+    if-le p1, v0, :cond_0
+
+    goto :goto_0
 
     :cond_0
-    iget p1, p0, Lorg/apache/http/conn/scheme/Scheme;->defaultPort:I
+    return p1
 
     :cond_1
-    return p1
+    :goto_0
+    iget p0, p0, Lorg/apache/http/conn/scheme/Scheme;->defaultPort:I
+
+    return p0
 .end method
 
 .method public final toString()Ljava/lang/String;

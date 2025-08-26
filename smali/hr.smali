@@ -1,187 +1,82 @@
 .class public final Lhr;
-.super Lurd;
+.super Lqde;
 .source "SourceFile"
 
-
-# static fields
-.field public static volatile k:Lhr;
-
-.field public static final l:Lgr;
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final j:Lcb4;
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Lone/me/appearancesettings/singletheme/AppearanceSettingsScreen;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lone/me/appearancesettings/singletheme/AppearanceSettingsScreen;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    new-instance v0, Lgr;
+    iput-object p1, p0, Lhr;->Y:Lone/me/appearancesettings/singletheme/AppearanceSettingsScreen;
 
-    const/4 v1, 0x0
+    const/4 p1, 0x2
 
-    invoke-direct {v0, v1}, Lgr;-><init>(I)V
-
-    sput-object v0, Lhr;->l:Lgr;
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Lcb4;
-
-    invoke-direct {v0}, Lcb4;-><init>()V
-
-    iput-object v0, p0, Lhr;->j:Lcb4;
-
-    return-void
-.end method
-
-.method public static U()Lhr;
-    .locals 2
-
-    sget-object v0, Lhr;->k:Lhr;
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lhr;->k:Lhr;
-
-    return-object v0
-
-    :cond_0
-    const-class v0, Lhr;
-
-    monitor-enter v0
-
-    :try_start_0
-    sget-object v1, Lhr;->k:Lhr;
-
-    if-nez v1, :cond_1
-
-    new-instance v1, Lhr;
-
-    invoke-direct {v1}, Lhr;-><init>()V
-
-    sput-object v1, Lhr;->k:Lhr;
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v1
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    sget-object v0, Lhr;->k:Lhr;
-
-    return-object v0
-
-    :goto_1
-    :try_start_1
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v1
 .end method
 
 
 # virtual methods
-.method public final V()Z
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object p0, p0, Lhr;->j:Lcb4;
+    check-cast p1, Ljava/util/List;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/os/Looper;->getThread()Ljava/lang/Thread;
+    invoke-virtual {p0, p1, p2}, Lhr;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+    check-cast p0, Lhr;
 
-    move-result-object v0
+    sget-object p1, Le5f;->a:Le5f;
 
-    if-ne p0, v0, :cond_0
+    invoke-virtual {p0, p1}, Lhr;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
+    return-object p1
 .end method
 
-.method public final W(Ljava/lang/Runnable;)V
-    .locals 2
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    iget-object p0, p0, Lhr;->j:Lcb4;
+    new-instance v0, Lhr;
 
-    iget-object v0, p0, Lcb4;->l:Landroid/os/Handler;
+    iget-object p0, p0, Lhr;->Y:Lone/me/appearancesettings/singletheme/AppearanceSettingsScreen;
 
-    if-nez v0, :cond_1
+    invoke-direct {v0, p0, p2}, Lhr;-><init>(Lone/me/appearancesettings/singletheme/AppearanceSettingsScreen;Lkotlin/coroutines/Continuation;)V
 
-    iget-object v0, p0, Lcb4;->j:Ljava/lang/Object;
+    iput-object p1, v0, Lhr;->X:Ljava/lang/Object;
 
-    monitor-enter v0
+    return-object v0
+.end method
 
-    :try_start_0
-    iget-object v1, p0, Lcb4;->l:Landroid/os/Handler;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    if-nez v1, :cond_0
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    iget-object p1, p0, Lhr;->X:Ljava/lang/Object;
 
-    move-result-object v1
+    check-cast p1, Ljava/util/List;
 
-    invoke-static {v1}, Landroid/os/Handler;->createAsync(Landroid/os/Looper;)Landroid/os/Handler;
+    iget-object p0, p0, Lhr;->Y:Lone/me/appearancesettings/singletheme/AppearanceSettingsScreen;
 
-    move-result-object v1
+    iget-object p0, p0, Lone/me/appearancesettings/singletheme/AppearanceSettingsScreen;->X:Lmv5;
 
-    iput-object v1, p0, Lcb4;->l:Landroid/os/Handler;
+    invoke-virtual {p0, p1}, Lhl7;->E(Ljava/util/List;)V
 
-    goto :goto_0
+    sget-object p0, Le5f;->a:Le5f;
 
-    :catchall_0
-    move-exception p0
-
-    goto :goto_1
-
-    :cond_0
-    :goto_0
-    monitor-exit v0
-
-    goto :goto_2
-
-    :goto_1
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p0
-
-    :cond_1
-    :goto_2
-    iget-object p0, p0, Lcb4;->l:Landroid/os/Handler;
-
-    invoke-virtual {p0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
+    return-object p0
 .end method

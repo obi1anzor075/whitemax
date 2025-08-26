@@ -1,63 +1,109 @@
-.class public final Lfc5;
-.super Ler3;
+.class public final synthetic Lfc5;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lhc5;
-
-.field public Z:I
-
-.field public o:Lhc5;
+.field public final synthetic b:Lpc5;
 
 
 # direct methods
-.method public constructor <init>(Lhc5;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(Lpc5;I)V
     .locals 0
 
-    iput-object p1, p0, Lfc5;->Y:Lhc5;
+    iput p2, p0, Lfc5;->a:I
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lfc5;->b:Lpc5;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 10
+.method public final call()Ljava/lang/Object;
+    .locals 4
 
-    iput-object p1, p0, Lfc5;->X:Ljava/lang/Object;
+    iget v0, p0, Lfc5;->a:I
 
-    iget p1, p0, Lfc5;->Z:I
+    iget-object p0, p0, Lfc5;->b:Lpc5;
 
-    const/high16 v0, -0x80000000
+    packed-switch v0, :pswitch_data_0
 
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lfc5;->Z:I
-
-    const/4 v6, 0x0
-
-    const/4 v8, 0x0
-
-    iget-object v0, p0, Lfc5;->Y:Lhc5;
-
-    const-wide/16 v1, 0x0
-
-    const-wide/16 v3, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v7, 0x0
-
-    move-object v9, p0
-
-    invoke-virtual/range {v0 .. v9}, Lhc5;->a(JJLjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0}, Lpc5;->c()Ljava/util/ArrayList;
 
     move-result-object p0
 
     return-object p0
+
+    :pswitch_0
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const/4 v0, 0x0
+
+    const-string v1, "SELECT COUNT(*) FROM favorite_sticker_sets"
+
+    invoke-static {v0, v1}, Lakc;->c(ILjava/lang/String;)Lakc;
+
+    move-result-object v1
+
+    iget-object p0, p0, Lpc5;->a:Lkjc;
+
+    invoke-virtual {p0}, Lkjc;->b()V
+
+    invoke-virtual {p0, v1}, Lkjc;->n(Llce;)Landroid/database/Cursor;
+
+    move-result-object p0
+
+    :try_start_0
+    invoke-interface {p0}, Landroid/database/Cursor;->moveToFirst()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {p0, v0}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_1
+
+    :cond_0
+    const-wide/16 v2, 0x0
+
+    :goto_0
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    invoke-virtual {v1}, Lakc;->o()V
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
+
+    return-object p0
+
+    :goto_1
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    invoke-virtual {v1}, Lakc;->o()V
+
+    throw v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -4,7 +4,7 @@
 
 
 # virtual methods
-.method public final g(Ln6c;)Z
+.method public final g(Lobc;)Z
     .locals 2
 
     const/4 v0, 0x0
@@ -37,16 +37,18 @@
 
     if-ne p1, p0, :cond_1
 
-    const/4 v0, 0x1
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_1
     return v0
 .end method
 
-.method public final s()Ln6c;
+.method public final s()Lobc;
     .locals 3
 
-    invoke-super {p0}, Landroidx/recyclerview/widget/LinearLayoutManager;->s()Ln6c;
+    invoke-super {p0}, Landroidx/recyclerview/widget/LinearLayoutManager;->s()Lobc;
 
     move-result-object v0
 
@@ -80,19 +82,18 @@
 
     iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
 
-    goto :goto_1
+    return-object v0
 
     :cond_1
     iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
 
-    :goto_1
     return-object v0
 .end method
 
-.method public final u(Landroid/view/ViewGroup$LayoutParams;)Ln6c;
+.method public final u(Landroid/view/ViewGroup$LayoutParams;)Lobc;
     .locals 2
 
-    invoke-super {p0, p1}, Landroidx/recyclerview/widget/a;->u(Landroid/view/ViewGroup$LayoutParams;)Ln6c;
+    invoke-super {p0, p1}, Landroidx/recyclerview/widget/a;->u(Landroid/view/ViewGroup$LayoutParams;)Lobc;
 
     move-result-object p1
 
@@ -126,11 +127,10 @@
 
     iput v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
 
-    goto :goto_1
+    return-object p1
 
     :cond_1
     iput v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
 
-    :goto_1
     return-object p1
 .end method

@@ -83,7 +83,9 @@
 
     invoke-interface {p0, p1}, Lorg/apache/http/params/HttpParams;->getParameter(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p0
+
+    return-object p0
 
     :cond_0
     return-object v0

@@ -1,325 +1,113 @@
-.class public final Ldxe;
+.class public abstract Ldxe;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lrj5;
-
-
-# instance fields
-.field public final synthetic a:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
-
-.field public final synthetic b:Lk7c;
-
 
 # direct methods
-.method public constructor <init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Lk7c;)V
-    .locals 0
+.method public static a()Z
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    :try_start_0
+    invoke-static {}, Lru/ok/tracer/minidump/Minidump;->getInstance()Lru/ok/tracer/minidump/Minidump;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iput-object p1, p0, Ldxe;->a:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    const/4 v0, 0x1
 
-    iput-object p2, p0, Ldxe;->b:Lk7c;
+    return v0
 
-    return-void
+    :catchall_0
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
+.method public static b(Landroid/content/Context;)Ljava/io/File;
+    .locals 4
 
-# virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 0
+    invoke-static {}, Liu0;->q()Ljava/lang/String;
 
-    check-cast p1, Lbt8;
+    move-result-object v0
 
-    invoke-virtual {p0, p2}, Ldxe;->c(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const-string v0, "tracer"
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "tracer-"
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const/16 v2, 0x3a
+
+    const/16 v3, 0x2d
+
+    invoke-virtual {v0, v2, v3}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/net/Uri;->encode(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_0
+    new-instance v1, Ljava/io/File;
+
+    invoke-virtual {p0}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
+
+    move-result-object p0
+
+    invoke-direct {v1, p0, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    const-string p0, "minidump"
+
+    invoke-static {v1, p0}, Lwj5;->I(Ljava/io/File;Ljava/lang/String;)Ljava/io/File;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public final c(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 13
-
-    instance-of v0, p1, Lcxe;
-
-    if-eqz v0, :cond_0
-
-    move-object v0, p1
-
-    check-cast v0, Lcxe;
-
-    iget v1, v0, Lcxe;->w0:I
-
-    const/high16 v2, -0x80000000
-
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_0
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Lcxe;->w0:I
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lcxe;
-
-    invoke-direct {v0, p0, p1}, Lcxe;-><init>(Ldxe;Lkotlin/coroutines/Continuation;)V
-
-    :goto_0
-    iget-object p1, v0, Lcxe;->Y:Ljava/lang/Object;
-
-    sget-object v1, Lpu3;->a:Lpu3;
-
-    iget v2, v0, Lcxe;->w0:I
-
-    sget-object v3, Ljue;->a:Ljue;
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x3
-
-    const/4 v6, 0x2
-
-    const/4 v7, 0x1
-
-    if-eqz v2, :cond_4
-
-    if-eq v2, v7, :cond_3
-
-    if-eq v2, v6, :cond_2
-
-    if-ne v2, v5, :cond_1
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto/16 :goto_4
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_2
-    iget-object p0, v0, Lcxe;->o:Ljava/lang/Object;
-
-    check-cast p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto/16 :goto_3
-
-    :cond_3
-    iget-object p0, v0, Lcxe;->X:Lk7c;
-
-    iget-object v2, v0, Lcxe;->o:Ljava/lang/Object;
-
-    check-cast v2, Ldxe;
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto :goto_2
-
-    :cond_4
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Ldxe;->a:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
-
-    sget-object v2, Ludd;->e:Lfn6;
-
-    if-nez v2, :cond_5
-
-    goto :goto_1
-
-    :cond_5
-    invoke-interface {v2}, Lfn6;->c()Z
-
-    move-result v8
-
-    if-eqz v8, :cond_6
-
-    sget-object v8, Ltn7;->X:Ltn7;
-
-    iget p1, p1, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->F0:F
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    const-string v10, "File upload: progress="
-
-    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v9, p1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v9, "UploadFileAttachWorker"
-
-    invoke-interface {v2, v8, v9, p1, v4}, Lfn6;->d(Ltn7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_6
-    :goto_1
-    iget-object p1, p0, Ldxe;->a:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
-
-    iget v2, p1, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->F0:F
-
-    invoke-virtual {p1, v2}, Lru/ok/tamtam/upload/workers/ForegroundWorker;->needToShowNotification(F)Z
-
-    move-result p1
-
-    if-nez p1, :cond_7
-
-    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x22
-
-    if-lt p1, v2, :cond_b
-
-    :cond_7
-    iget-object p1, p0, Ldxe;->b:Lk7c;
-
-    iget-wide v8, p1, Lk7c;->a:J
-
-    const-wide/16 v10, -0x1
-
-    cmp-long v2, v8, v10
-
-    if-nez v2, :cond_9
-
-    iget-object v2, p0, Ldxe;->a:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
-
-    iput-object p0, v0, Lcxe;->o:Ljava/lang/Object;
-
-    iput-object p1, v0, Lcxe;->X:Lk7c;
-
-    iput v7, v0, Lcxe;->w0:I
-
-    iget-object v7, v2, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->B0:Lr7e;
-
-    invoke-virtual {v7}, Lr7e;->getValue()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lpae;
-
-    check-cast v7, Ln3a;
-
-    invoke-virtual {v7}, Ln3a;->b()Lju3;
-
-    move-result-object v7
-
-    new-instance v8, Lywe;
-
-    invoke-direct {v8, v2, v4}, Lywe;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Lkotlin/coroutines/Continuation;)V
-
-    invoke-static {v7, v8, v0}, Lxs7;->U(Lhu3;Li26;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    if-ne v2, v1, :cond_8
-
-    return-object v1
-
-    :cond_8
-    move-object v12, v2
-
-    move-object v2, p0
-
-    move-object p0, p1
-
-    move-object p1, v12
-
-    :goto_2
-    check-cast p1, Ljava/lang/Number;
-
-    invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
-
-    move-result-wide v7
-
-    iput-wide v7, p0, Lk7c;->a:J
-
-    move-object p0, v2
-
-    :cond_9
-    iget-object p1, p0, Ldxe;->b:Lk7c;
-
-    iget-wide v7, p1, Lk7c;->a:J
-
-    iget-object p1, p0, Ldxe;->a:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
-
-    iget-object p1, p1, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->A0:Lr7e;
-
-    invoke-virtual {p1}, Lr7e;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lg2b;
-
-    check-cast p1, Lj2b;
-
-    iget-object p1, p1, Lj2b;->b:Lyzc;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object v2, Lru/ok/tamtam/android/prefs/PmsKey;->max-downloaded-size-for-notify-kb:Lru/ok/tamtam/android/prefs/PmsKey;
-
-    const/16 v9, 0x400
-
-    int-to-long v9, v9
-
-    invoke-virtual {p1, v2, v9, v10}, Lvqc;->o(Ljava/lang/Enum;J)J
-
-    move-result-wide v9
-
-    long-to-int p1, v9
-
-    int-to-long v9, p1
-
-    cmp-long p1, v7, v9
-
-    if-lez p1, :cond_b
-
-    iget-object p0, p0, Ldxe;->a:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
-
-    iput-object p0, v0, Lcxe;->o:Ljava/lang/Object;
-
-    iput-object v4, v0, Lcxe;->X:Lk7c;
-
-    iput v6, v0, Lcxe;->w0:I
-
-    invoke-virtual {p0, v0}, Lru/ok/tamtam/upload/workers/ForegroundWorker;->getForegroundInfo(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v1, :cond_a
-
-    return-object v1
-
-    :cond_a
-    :goto_3
-    check-cast p1, Lhu5;
-
-    iput-object v4, v0, Lcxe;->o:Ljava/lang/Object;
-
-    iput v5, v0, Lcxe;->w0:I
-
-    invoke-virtual {p0, p1, v0}, Lru/ok/tamtam/workmanager/SdkCoroutineWorker;->setForeground(Lhu5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+.method public static c(Landroid/content/Context;)V
+    .locals 1
+
+    :try_start_0
+    invoke-static {p0}, Ldxe;->b(Landroid/content/Context;)Ljava/io/File;
 
     move-result-object p0
 
-    if-ne p0, v1, :cond_b
+    invoke-static {p0}, Lvk9;->w(Ljava/io/File;)V
 
-    return-object v1
+    invoke-static {}, Lru/ok/tracer/minidump/Minidump;->getInstance()Lru/ok/tracer/minidump/Minidump;
 
-    :cond_b
-    :goto_4
-    return-object v3
+    move-result-object v0
+
+    invoke-virtual {p0}, Ljava/io/File;->getPath()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Lru/ok/tracer/minidump/Minidump;->installMinidumpWriter(Ljava/lang/String;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :catchall_0
+    return-void
 .end method

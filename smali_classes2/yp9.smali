@@ -1,53 +1,91 @@
 .class public final Lyp9;
-.super Ler3;
+.super Llje;
 .source "SourceFile"
 
 
 # instance fields
-.field public X:Lov0;
+.field public X:J
 
-.field public Y:Lou3;
-
-.field public synthetic Z:Ljava/lang/Object;
-
-.field public o:Lru/ok/messages/NotificationsImagesProvider;
-
-.field public final synthetic w0:Lru/ok/messages/NotificationsImagesProvider;
-
-.field public x0:I
+.field public o:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/messages/NotificationsImagesProvider;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Ldx8;)V
     .locals 0
 
-    iput-object p1, p0, Lyp9;->w0:Lru/ok/messages/NotificationsImagesProvider;
-
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1}, Llje;-><init>(Ldx8;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final c(Ldx8;Ljava/lang/String;)V
+    .locals 2
 
-    iput-object p1, p0, Lyp9;->Z:Ljava/lang/Object;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget p1, p0, Lyp9;->x0:I
+    const-string v0, "chatId"
 
-    const/high16 v0, -0x80000000
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    or-int/2addr p1, v0
+    move-result v0
 
-    iput p1, p0, Lyp9;->x0:I
+    if-nez v0, :cond_1
 
-    iget-object p1, p0, Lyp9;->w0:Lru/ok/messages/NotificationsImagesProvider;
+    const-string v0, "text"
 
-    const/4 v0, 0x0
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-static {p1, v0, v0, p0}, Lru/ok/messages/NotificationsImagesProvider;->a(Lru/ok/messages/NotificationsImagesProvider;Lov0;Lou3;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    move-result p2
+
+    if-nez p2, :cond_0
+
+    invoke-virtual {p1}, Ldx8;->B()V
+
+    return-void
+
+    :cond_0
+    invoke-static {p1}, Lxq7;->f0(Ldx8;)Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lyp9;->o:Ljava/lang/String;
+
+    return-void
+
+    :cond_1
+    const-wide/16 v0, 0x0
+
+    invoke-static {p1, v0, v1}, Lxq7;->c0(Ldx8;J)J
+
+    move-result-wide p1
+
+    iput-wide p1, p0, Lyp9;->X:J
+
+    return-void
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 4
+
+    iget-wide v0, p0, Lyp9;->X:J
+
+    iget-object p0, p0, Lyp9;->o:Ljava/lang/String;
+
+    const-string v2, "{chatId=\'"
+
+    const-string v3, ", text=\'"
+
+    invoke-static {v2, v0, v1, v3, p0}, Lp3a;->k(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    const-string v0, "\'}"
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

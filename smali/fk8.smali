@@ -1,118 +1,62 @@
-.class public final Lfk8;
-.super Ll5e;
+.class public abstract Lfk8;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
-
-
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Lpk8;
 
 
 # direct methods
-.method public constructor <init>(Lpk8;Lkotlin/coroutines/Continuation;)V
-    .locals 0
-
-    iput-object p1, p0, Lfk8;->Y:Lpk8;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Lwh8;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lfk8;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lfk8;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lfk8;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public static a()Landroid/app/Notification$MediaStyle;
     .locals 1
 
-    new-instance v0, Lfk8;
+    new-instance v0, Landroid/app/Notification$MediaStyle;
 
-    iget-object p0, p0, Lfk8;->Y:Lpk8;
-
-    invoke-direct {v0, p0, p2}, Lfk8;-><init>(Lpk8;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lfk8;->X:Ljava/lang/Object;
+    invoke-direct {v0}, Landroid/app/Notification$MediaStyle;-><init>()V
 
     return-object v0
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public static b(Landroid/app/Notification$MediaStyle;[ILyg8;)Landroid/app/Notification$MediaStyle;
+    .locals 0
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object p1, p0, Lfk8;->X:Ljava/lang/Object;
-
-    check-cast p1, Lwh8;
-
-    sget-object v0, Lwh8;->a:Lwh8;
-
-    invoke-static {p1, v0}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    iget-object p0, p0, Lfk8;->Y:Lpk8;
-
-    iget-object p1, p0, Lpk8;->g:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p1, v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
-
-    move-result p1
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     if-eqz p1, :cond_0
 
-    new-instance p1, Lok8;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p1, p0, v0}, Lok8;-><init>(Lpk8;Lkotlin/coroutines/Continuation;)V
-
-    const/4 v1, 0x3
-
-    iget-object p0, p0, Lpk8;->f:Lkotlinx/coroutines/internal/ContextScope;
-
-    invoke-static {p0, v0, v0, p1, v1}, Lxs7;->E(Lou3;Lhu3;Lru3;Li26;I)Lqod;
+    invoke-static {p0, p1}, Lfk8;->d(Landroid/app/Notification$MediaStyle;[I)V
 
     :cond_0
-    sget-object p0, Ljue;->a:Ljue;
+    iget-object p1, p2, Lyg8;->a:Lqh8;
+
+    iget-object p1, p1, Lqh8;->h:Lbi8;
+
+    iget-object p1, p1, Lbi8;->j:Ljh8;
+
+    iget-object p1, p1, Ljh8;->a:Leh8;
+
+    iget-object p1, p1, Ldh8;->c:Lih8;
+
+    iget-object p1, p1, Lih8;->b:Ljava/lang/Object;
+
+    check-cast p1, Landroid/media/session/MediaSession$Token;
+
+    invoke-virtual {p0, p1}, Landroid/app/Notification$MediaStyle;->setMediaSession(Landroid/media/session/MediaSession$Token;)Landroid/app/Notification$MediaStyle;
 
     return-object p0
+.end method
 
-    :cond_1
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+.method public static c(Landroid/app/Notification$Builder;Landroid/app/Notification$MediaStyle;)V
+    .locals 0
 
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setStyle(Landroid/app/Notification$Style;)Landroid/app/Notification$Builder;
 
-    throw p0
+    return-void
+.end method
+
+.method public static varargs d(Landroid/app/Notification$MediaStyle;[I)V
+    .locals 0
+
+    invoke-virtual {p0, p1}, Landroid/app/Notification$MediaStyle;->setShowActionsInCompactView([I)Landroid/app/Notification$MediaStyle;
+
+    return-void
 .end method

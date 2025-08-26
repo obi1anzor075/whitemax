@@ -1,109 +1,155 @@
-.class public final enum Lsr6;
-.super Ljava/lang/Enum;
+.class public interface abstract Lsr6;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final synthetic X:[Lsr6;
-
-.field public static final enum b:Lsr6;
-
-.field public static final enum c:Lsr6;
-
-.field public static final enum o:Lsr6;
+# interfaces
+.implements Landroid/os/IInterface;
 
 
-# instance fields
-.field public final a:I
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 7
-
-    new-instance v0, Lsr6;
-
-    const-string v1, "FULL_FETCH"
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    invoke-direct {v0, v1, v2, v3}, Lsr6;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lsr6;->b:Lsr6;
-
-    new-instance v1, Lsr6;
-
-    const-string v2, "DISK_CACHE"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v1, v2, v3, v4}, Lsr6;-><init>(Ljava/lang/String;II)V
-
-    sput-object v1, Lsr6;->c:Lsr6;
-
-    new-instance v2, Lsr6;
-
-    const-string v3, "ENCODED_MEMORY_CACHE"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v2, v3, v4, v5}, Lsr6;-><init>(Ljava/lang/String;II)V
-
-    new-instance v3, Lsr6;
-
-    const-string v4, "BITMAP_MEMORY_CACHE"
-
-    const/4 v6, 0x4
-
-    invoke-direct {v3, v4, v5, v6}, Lsr6;-><init>(Ljava/lang/String;II)V
-
-    sput-object v3, Lsr6;->o:Lsr6;
-
-    filled-new-array {v0, v1, v2, v3}, [Lsr6;
-
-    move-result-object v0
-
-    sput-object v0, Lsr6;->X:[Lsr6;
-
-    return-void
+# virtual methods
+.method public abstract B(Ljava/lang/String;Landroid/os/Bundle;Lhh8;)V
 .end method
 
-.method public constructor <init>(Ljava/lang/String;II)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    iput p3, p0, Lsr6;->a:I
-
-    return-void
+.method public abstract C(Lpr6;)V
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lsr6;
-    .locals 1
-
-    const-class v0, Lsr6;
-
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    move-result-object p0
-
-    check-cast p0, Lsr6;
-
-    return-object p0
+.method public abstract J(Lpr6;)V
 .end method
 
-.method public static values()[Lsr6;
-    .locals 1
+.method public abstract M(Lv98;)V
+.end method
 
-    sget-object v0, Lsr6;->X:[Lsr6;
+.method public abstract R(Lv98;I)V
+.end method
 
-    invoke-virtual {v0}, [Lsr6;->clone()Ljava/lang/Object;
+.method public abstract U(Lv98;)V
+.end method
 
-    move-result-object v0
+.method public abstract adjustVolume(II)V
+.end method
 
-    check-cast v0, [Lsr6;
+.method public abstract fastForward()V
+.end method
 
-    return-object v0
+.method public abstract getExtras()Landroid/os/Bundle;
+.end method
+
+.method public abstract getFlags()J
+.end method
+
+.method public abstract getLaunchPendingIntent()Landroid/app/PendingIntent;
+.end method
+
+.method public abstract getMetadata()Lsc8;
+.end method
+
+.method public abstract getPackageName()Ljava/lang/String;
+.end method
+
+.method public abstract getPlaybackState()Lu0b;
+.end method
+
+.method public abstract getQueue()Ljava/util/List;
+.end method
+
+.method public abstract getQueueTitle()Ljava/lang/CharSequence;
+.end method
+
+.method public abstract getRatingType()I
+.end method
+
+.method public abstract getRepeatMode()I
+.end method
+
+.method public abstract getSessionInfo()Landroid/os/Bundle;
+.end method
+
+.method public abstract getShuffleMode()I
+.end method
+
+.method public abstract getTag()Ljava/lang/String;
+.end method
+
+.method public abstract getVolumeAttributes()Lnna;
+.end method
+
+.method public abstract i(Lz2c;Landroid/os/Bundle;)V
+.end method
+
+.method public abstract isCaptioningEnabled()Z
+.end method
+
+.method public abstract isTransportControlEnabled()Z
+.end method
+
+.method public abstract l(Lz2c;)V
+.end method
+
+.method public abstract next()V
+.end method
+
+.method public abstract pause()V
+.end method
+
+.method public abstract play()V
+.end method
+
+.method public abstract playFromMediaId(Ljava/lang/String;Landroid/os/Bundle;)V
+.end method
+
+.method public abstract playFromSearch(Ljava/lang/String;Landroid/os/Bundle;)V
+.end method
+
+.method public abstract playFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
+.end method
+
+.method public abstract prepare()V
+.end method
+
+.method public abstract prepareFromMediaId(Ljava/lang/String;Landroid/os/Bundle;)V
+.end method
+
+.method public abstract prepareFromSearch(Ljava/lang/String;Landroid/os/Bundle;)V
+.end method
+
+.method public abstract prepareFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
+.end method
+
+.method public abstract previous()V
+.end method
+
+.method public abstract removeQueueItemAt(I)V
+.end method
+
+.method public abstract rewind()V
+.end method
+
+.method public abstract seekTo(J)V
+.end method
+
+.method public abstract sendCustomAction(Ljava/lang/String;Landroid/os/Bundle;)V
+.end method
+
+.method public abstract sendMediaButton(Landroid/view/KeyEvent;)Z
+.end method
+
+.method public abstract setCaptioningEnabled(Z)V
+.end method
+
+.method public abstract setPlaybackSpeed(F)V
+.end method
+
+.method public abstract setRepeatMode(I)V
+.end method
+
+.method public abstract setShuffleMode(I)V
+.end method
+
+.method public abstract setVolumeTo(II)V
+.end method
+
+.method public abstract skipToQueueItem(J)V
+.end method
+
+.method public abstract stop()V
 .end method

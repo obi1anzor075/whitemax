@@ -703,14 +703,13 @@
 
     invoke-interface {p0, v0, p1}, Lorg/webrtc/CameraSession$CreateSessionCallback;->onFailure(Lorg/webrtc/CameraSession$FailureType;Ljava/lang/String;)V
 
-    goto :goto_1
+    return-void
 
     :cond_1
     iget-object v0, p0, Lorg/webrtc/Camera2Session;->events:Lorg/webrtc/CameraSession$Events;
 
     invoke-interface {v0, p0, p1}, Lorg/webrtc/CameraSession$Events;->onCameraError(Lorg/webrtc/CameraSession;Ljava/lang/String;)V
 
-    :goto_1
     return-void
 .end method
 
@@ -809,7 +808,7 @@
 
     const-string v1, "getCameraCharacteristics(): "
 
-    invoke-static {v1, v0}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingTop="8.0dip" android:paddingRight="@dimen/activity_horizontal_margin" android:paddingBottom="8.0dip" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/activity_horizontal_margin" android:paddingEnd="@dimen/activity_horizontal_margin"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="horizontal" android:id="@id/row_chat_media__ll_sender_time" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/font_subtitle" android:ellipsize="end" android:gravity="start" android:id="@id/row_chat_media__tv_sender" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:layout_weight="1.0" android:textAlignment="viewStart" />
-        <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/font_subtitle" android:gravity="end" android:id="@id/row_chat_media__tv_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:layout_weight="1.0" android:textAlignment="viewEnd" />
-    </LinearLayout>
-    <FrameLayout android:id="@id/row_chat_media__attach_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" />
-</LinearLayout>

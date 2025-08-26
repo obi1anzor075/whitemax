@@ -197,12 +197,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -221,9 +220,7 @@
     .end annotation
 
     .line 1
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v0
+    sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     .line 2
     invoke-virtual {p0}, Ljava/net/URI;->getRawQuery()Ljava/lang/String;
@@ -275,9 +272,7 @@
     .end annotation
 
     .line 6
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v0
+    sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     .line 7
     invoke-static {p0}, Lorg/apache/http/client/utils/URLEncodedUtils;->isEncoded(Lorg/apache/http/HttpEntity;)Z

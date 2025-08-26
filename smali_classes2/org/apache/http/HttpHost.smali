@@ -185,7 +185,7 @@
 
     if-eqz p0, :cond_2
 
-    move v0, v1
+    return v1
 
     :cond_2
     return v0

@@ -1,27 +1,49 @@
-.class public final Libc;
+.class public abstract Libc;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lii5;
-
-.field public final b:Ljbc;
-
-.field public final c:I
-
-
-# direct methods
-.method public constructor <init>(Lii5;Ljbc;I)V
+# virtual methods
+.method public a()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    return-void
+.end method
 
-    iput-object p1, p0, Libc;->a:Lii5;
+.method public b(II)V
+    .locals 0
 
-    iput-object p2, p0, Libc;->b:Ljbc;
+    return-void
+.end method
 
-    iput p3, p0, Libc;->c:I
+.method public c(IILjava/lang/Object;)V
+    .locals 0
+
+    invoke-virtual {p0, p1, p2}, Libc;->b(II)V
+
+    return-void
+.end method
+
+.method public d(II)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public e(II)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public f(II)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public g()V
+    .locals 0
 
     return-void
 .end method

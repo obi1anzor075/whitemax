@@ -1,78 +1,241 @@
 .class public final Lf07;
-.super Lhcc;
+.super Lnv8;
 .source "SourceFile"
 
 
 # instance fields
-.field public b:I
-
-.field public final synthetic c:Li26;
-
-.field public final synthetic o:Ljava/lang/Object;
+.field public a:[Le07;
 
 
 # direct methods
-.method public constructor <init>(Li26;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
-    iput-object p1, p0, Lf07;->c:Li26;
+    invoke-direct {p0}, Lnv8;-><init>()V
 
-    iput-object p2, p0, Lf07;->o:Ljava/lang/Object;
+    sget-object v0, Le07;->u:[Le07;
 
-    invoke-direct {p0, p3}, Lhcc;-><init>(Lkotlin/coroutines/Continuation;)V
+    if-nez v0, :cond_1
+
+    sget-object v0, Lr37;->b:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    sget-object v1, Le07;->u:[Le07;
+
+    if-nez v1, :cond_0
+
+    const/4 v1, 0x0
+
+    new-array v1, v1, [Le07;
+
+    sput-object v1, Le07;->u:[Le07;
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_1
+
+    :cond_0
+    :goto_0
+    monitor-exit v0
+
+    goto :goto_2
+
+    :goto_1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
+
+    :cond_1
+    :goto_2
+    sget-object v0, Le07;->u:[Le07;
+
+    iput-object v0, p0, Lf07;->a:[Le07;
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Lnv8;->cachedSize:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final computeSerializedSize()I
+    .locals 4
 
-    iget v0, p0, Lf07;->b:I
+    iget-object v0, p0, Lf07;->a:[Le07;
 
-    const/4 v1, 0x2
+    const/4 v1, 0x0
 
-    const/4 v2, 0x1
+    if-eqz v0, :cond_2
 
-    if-eqz v0, :cond_1
+    array-length v0, v0
 
-    if-ne v0, v2, :cond_0
+    if-lez v0, :cond_2
 
-    iput v1, p0, Lf07;->b:I
+    move v0, v1
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    :goto_0
+    iget-object v2, p0, Lf07;->a:[Le07;
+
+    array-length v3, v2
+
+    if-ge v1, v3, :cond_1
+
+    aget-object v2, v2, v1
+
+    if-eqz v2, :cond_0
+
+    const/4 v3, 0x1
+
+    invoke-static {v3, v2}, Lq33;->i(ILnv8;)I
+
+    move-result v2
+
+    add-int/2addr v2, v0
+
+    move v0, v2
+
+    :cond_0
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
+    :cond_1
+    return v0
+
+    :cond_2
+    return v1
+.end method
+
+.method public final mergeFrom(Lp33;)Lnv8;
+    .locals 5
+
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    :goto_0
+    invoke-virtual {p1}, Lp33;->s()I
 
-    const-string p1, "This coroutine had already completed"
+    move-result v0
 
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    if-eqz v0, :cond_5
 
-    move-result-object p1
+    const/16 v1, 0xa
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    if-eq v0, v1, :cond_1
 
-    throw p0
+    invoke-virtual {p1, v0}, Lp33;->u(I)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_3
 
     :cond_1
-    iput v2, p0, Lf07;->b:I
+    invoke-static {p1, v1}, Lwqd;->s(Lp33;I)I
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    move-result v0
 
-    iget-object p1, p0, Lf07;->c:Li26;
+    iget-object v1, p0, Lf07;->a:[Le07;
 
-    invoke-static {v1, p1}, Lete;->g(ILjava/lang/Object;)V
+    const/4 v2, 0x0
 
-    iget-object v0, p0, Lf07;->o:Ljava/lang/Object;
+    if-nez v1, :cond_2
 
-    invoke-interface {p1, v0, p0}, Li26;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move v3, v2
 
-    move-result-object p1
+    goto :goto_1
+
+    :cond_2
+    array-length v3, v1
+
+    :goto_1
+    add-int/2addr v0, v3
+
+    new-array v4, v0, [Le07;
+
+    if-eqz v3, :cond_3
+
+    invoke-static {v1, v2, v4, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    :cond_3
+    :goto_2
+    add-int/lit8 v1, v0, -0x1
+
+    if-ge v3, v1, :cond_4
+
+    new-instance v1, Le07;
+
+    invoke-direct {v1}, Le07;-><init>()V
+
+    aput-object v1, v4, v3
+
+    invoke-virtual {p1, v1}, Lp33;->j(Lnv8;)V
+
+    invoke-virtual {p1}, Lp33;->s()I
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_2
+
+    :cond_4
+    new-instance v0, Le07;
+
+    invoke-direct {v0}, Le07;-><init>()V
+
+    aput-object v0, v4, v3
+
+    invoke-virtual {p1, v0}, Lp33;->j(Lnv8;)V
+
+    iput-object v4, p0, Lf07;->a:[Le07;
+
+    goto :goto_0
+
+    :cond_5
+    :goto_3
+    return-object p0
+.end method
+
+.method public final writeTo(Lq33;)V
+    .locals 3
+
+    iget-object v0, p0, Lf07;->a:[Le07;
+
+    if-eqz v0, :cond_1
+
+    array-length v0, v0
+
+    if-lez v0, :cond_1
+
+    const/4 v0, 0x0
 
     :goto_0
-    return-object p1
+    iget-object v1, p0, Lf07;->a:[Le07;
+
+    array-length v2, v1
+
+    if-ge v0, v2, :cond_1
+
+    aget-object v1, v1, v0
+
+    if-eqz v1, :cond_0
+
+    const/4 v2, 0x1
+
+    invoke-virtual {p1, v2, v1}, Lq33;->y(ILnv8;)V
+
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return-void
 .end method

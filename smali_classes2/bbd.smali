@@ -1,136 +1,102 @@
-.class public final synthetic Lbbd;
-.super Ljava/lang/Object;
+.class public final Lbbd;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lone/me/sharedata/ShareDataPickerScreen;
-
-
-# direct methods
-.method public synthetic constructor <init>(Lone/me/sharedata/ShareDataPickerScreen;I)V
-    .locals 0
-
-    iput p2, p0, Lbbd;->a:I
-
-    iput-object p1, p0, Lbbd;->b:Lone/me/sharedata/ShareDataPickerScreen;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.field public X:I
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 4
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    sget-object v0, Ljue;->a:Ljue;
+    check-cast p1, Lox3;
 
-    iget-object v1, p0, Lbbd;->b:Lone/me/sharedata/ShareDataPickerScreen;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget p0, p0, Lbbd;->a:I
-
-    packed-switch p0, :pswitch_data_0
-
-    sget-object p0, Lone/me/sharedata/ShareDataPickerScreen;->H0:[Lk77;
-
-    invoke-virtual {v1}, Lone/me/chats/picker/AbstractPickerScreen;->u0()Lwra;
+    invoke-virtual {p0, p1, p2}, Lbbd;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    iget-object p0, p0, Lwra;->c:Lmua;
+    check-cast p0, Lbbd;
 
-    check-cast p0, Lzad;
+    sget-object p1, Le5f;->a:Le5f;
 
-    iget-object p0, p0, Lzad;->k:Lqe4;
+    invoke-virtual {p0, p1}, Lbbd;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v1}, Lqe4;->K(I)V
-
-    return-object v0
-
-    :pswitch_0
-    iget-object p0, v1, Lone/me/sharedata/ShareDataPickerScreen;->F0:Lbw5;
+    move-result-object p0
 
     return-object p0
+.end method
 
-    :pswitch_1
-    iget-object p0, v1, Lone/me/sharedata/ShareDataPickerScreen;->F0:Lbw5;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
 
-    invoke-virtual {p0}, Lbw5;->m()V
+    new-instance p0, Lbbd;
 
-    return-object v0
+    const/4 p1, 0x2
 
-    :pswitch_2
-    sget-object p0, Lone/me/sharedata/ShareDataPickerScreen;->H0:[Lk77;
-
-    new-instance p0, Ljq8;
-
-    invoke-virtual {v1}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Ljq8;-><init>(Landroid/content/Context;)V
-
-    sget v0, Lbba;->a:I
-
-    invoke-virtual {p0, v0}, Landroid/view/View;->setId(I)V
-
-    sget v0, Lcba;->a:I
-
-    invoke-virtual {p0, v0}, Ljq8;->setInputHint(I)V
-
-    sget-object v0, Lcq8;->a:Lcq8;
-
-    invoke-virtual {p0, v0}, Ljq8;->setRightOuterIconActionState(Lfq8;)V
-
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    new-instance v2, Lnya;
-
-    const/16 v3, 0x12
-
-    invoke-direct {v2, v1, v3, p0}, Lnya;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-static {v0, v2}, Lxie;->a(Landroid/content/Context;Ls16;)Lcg3;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Ljq8;->setRightOuterIconTouchListener(Landroid/view/View$OnTouchListener;)V
-
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    new-instance v2, Lbbd;
-
-    const/4 v3, 0x3
-
-    invoke-direct {v2, v1, v3}, Lbbd;-><init>(Lone/me/sharedata/ShareDataPickerScreen;I)V
-
-    invoke-static {v0, v2}, Lxie;->a(Landroid/content/Context;Ls16;)Lcg3;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Ljq8;->setLeftInnerIconTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-object p0
+.end method
 
-    nop
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    iget v0, p0, Lbbd;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    sget p1, Lat4;->o:I
+
+    const/4 p1, 0x2
+
+    sget-object v0, Lft4;->o:Lft4;
+
+    invoke-static {p1, v0}, La4f;->F(ILft4;)J
+
+    move-result-wide v2
+
+    iput v1, p0, Lbbd;->X:I
+
+    invoke-static {v2, v3, p0}, Lq14;->t(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

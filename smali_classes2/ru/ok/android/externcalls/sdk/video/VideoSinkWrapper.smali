@@ -35,7 +35,7 @@
         "(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;Ljava/util/Map;)V",
         "Lorg/webrtc/VideoFrame;",
         "frame",
-        "Ljue;",
+        "Le5f;",
         "onFrame",
         "(Lorg/webrtc/VideoFrame;)V",
         "",
@@ -51,6 +51,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

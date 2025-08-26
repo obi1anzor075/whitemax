@@ -25,15 +25,15 @@
         "",
         "url",
         "Lkotlin/Function0;",
-        "Ljue;",
+        "Le5f;",
         "onSuccess",
         "Lkotlin/Function1;",
         "",
         "onError",
         "start",
-        "(Ljava/lang/String;Ls16;Lu16;)V",
+        "(Ljava/lang/String;Lv56;Lx56;)V",
         "stop",
-        "(Ls16;Lu16;)V",
+        "(Lv56;Lx56;)V",
         "Lru/ok/android/externcalls/sdk/urlsharing/external/UrlSharingListener;",
         "listener",
         "addListener",
@@ -49,6 +49,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -93,39 +94,39 @@
     return-void
 .end method
 
-.method public start(Ljava/lang/String;Ls16;Lu16;)V
+.method public start(Ljava/lang/String;Lv56;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/UrlSharingManagerImpl;->commandsExecutor:Lru/ok/android/externcalls/sdk/urlsharing/external/internal/commands/UrlSharingCommandsExecutor;
 
-    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/commands/UrlSharingCommandsExecutor;->start(Ljava/lang/String;Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/commands/UrlSharingCommandsExecutor;->start(Ljava/lang/String;Lv56;Lx56;)V
 
     return-void
 .end method
 
-.method public stop(Ls16;Lu16;)V
+.method public stop(Lv56;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/UrlSharingManagerImpl;->commandsExecutor:Lru/ok/android/externcalls/sdk/urlsharing/external/internal/commands/UrlSharingCommandsExecutor;
 
-    invoke-interface {p0, p1, p2}, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/commands/UrlSharingCommandsExecutor;->stop(Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2}, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/commands/UrlSharingCommandsExecutor;->stop(Lv56;Lx56;)V
 
     return-void
 .end method

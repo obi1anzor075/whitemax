@@ -1,23 +1,52 @@
-.class public final Lvl6;
-.super Ljava/lang/Object;
+.class public final synthetic Lvl6;
+.super La76;
 .source "SourceFile"
 
+# interfaces
+.implements Lx56;
 
-# instance fields
-.field public final a:Z
 
-.field public final b:F
+# static fields
+.field public static final a:Lvl6;
 
 
 # direct methods
-.method public constructor <init>(FZ)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 6
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lvl6;
 
-    iput-boolean p2, p0, Lvl6;->a:Z
+    const-string v4, "getTime()J"
 
-    iput p1, p0, Lvl6;->b:F
+    const/4 v5, 0x0
+
+    const/4 v1, 0x1
+
+    const-class v2, Lfl6;
+
+    const-string v3, "getTime"
+
+    invoke-direct/range {v0 .. v5}, La76;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    sput-object v0, Lvl6;->a:Lvl6;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Lfl6;
+
+    invoke-interface {p1}, Lfl6;->l()J
+
+    move-result-wide p0
+
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
+
+    return-object p0
 .end method

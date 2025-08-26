@@ -1,93 +1,91 @@
 .class public final Lsu;
-.super Luu;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:J
+.field public volatile a:J
 
-.field public final b:Z
+.field public volatile b:Lfq1;
 
 
 # direct methods
-.method public constructor <init>(JZ)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Lsu;->a:J
+    const-wide/16 v0, -0x1
 
-    iput-boolean p3, p0, Lsu;->b:Z
+    iput-wide v0, p0, Lsu;->a:J
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lsu;->b:Lfq1;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 7
+.method public final declared-synchronized a()V
+    .locals 1
 
-    const/4 v0, 0x1
+    monitor-enter p0
 
-    if-ne p0, p1, :cond_0
+    :try_start_0
+    invoke-virtual {p0}, Lsu;->b()V
 
-    return v0
+    iget-object v0, p0, Lsu;->b:Lfq1;
 
-    :cond_0
-    instance-of v1, p1, Lsu;
+    invoke-static {v0}, Ldoc;->b(Lam4;)V
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    if-nez v1, :cond_1
+    iput-object v0, p0, Lsu;->b:Lfq1;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return v2
+    monitor-exit p0
 
-    :cond_1
-    check-cast p1, Lsu;
+    return-void
 
-    iget-wide v3, p1, Lsu;->a:J
+    :catchall_0
+    move-exception v0
 
-    iget-wide v5, p0, Lsu;->a:J
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    cmp-long v1, v5, v3
-
-    if-eqz v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-boolean p0, p0, Lsu;->b:Z
-
-    iget-boolean p1, p1, Lsu;->b:Z
-
-    if-eq p0, p1, :cond_3
-
-    return v2
-
-    :cond_3
-    return v0
+    throw v0
 .end method
 
-.method public final hashCode()I
+.method public final declared-synchronized b()V
     .locals 2
 
-    iget-wide v0, p0, Lsu;->a:J
+    monitor-enter p0
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    const-wide/16 v0, -0x1
 
-    move-result v0
+    :try_start_0
+    iput-wide v0, p0, Lsu;->a:J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    mul-int/lit8 v0, v0, 0x1f
+    monitor-exit p0
 
-    iget-boolean p0, p0, Lsu;->b:Z
+    return-void
 
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+    :catchall_0
+    move-exception v0
 
-    move-result p0
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    add-int/2addr p0, v0
-
-    return p0
+    throw v0
 .end method
 
 .method public final toString()Ljava/lang/String;
@@ -95,7 +93,7 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "LoadingNext(time="
+    const-string v1, "LoadOperation{operationTime="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -103,15 +101,19 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    const-string v1, ", isRemoteCaused="
+    const-string v1, ", disposable="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-boolean p0, p0, Lsu;->b:Z
+    iget-object p0, p0, Lsu;->b:Lfq1;
 
-    const-string v1, ")"
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, p0, v1}, Lhr1;->j(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+    const-string p0, ", onComplete=null}"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

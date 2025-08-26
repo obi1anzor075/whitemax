@@ -1,11 +1,27 @@
-.class public abstract Ldn6;
-.super Landroid/os/Binder;
+.class public final Ldn6;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Len6;
-.implements Landroid/os/IInterface;
+
+# instance fields
+.field public final a:Landroid/net/Uri;
+
+.field public final b:Lfz5;
+
+.field public final c:Ljava/lang/String;
 
 
-# static fields
-.field public static final synthetic c:I
+# direct methods
+.method public constructor <init>(Landroid/net/Uri;Lfz5;Ljava/lang/String;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldn6;->a:Landroid/net/Uri;
+
+    iput-object p2, p0, Ldn6;->b:Lfz5;
+
+    iput-object p3, p0, Ldn6;->c:Ljava/lang/String;
+
+    return-void
+.end method

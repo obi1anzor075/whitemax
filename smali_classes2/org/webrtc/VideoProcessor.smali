@@ -47,7 +47,7 @@
 
     move-result-object v8
 
-    new-instance v0, Lorg/webrtc/VideoFrame;
+    new-instance v7, Lorg/webrtc/VideoFrame;
 
     invoke-virtual {p0}, Lorg/webrtc/VideoFrame;->getRotation()I
 
@@ -59,11 +59,9 @@
 
     move-result-object v12
 
-    move-object v7, v0
-
     invoke-direct/range {v7 .. v12}, Lorg/webrtc/VideoFrame;-><init>(Lorg/webrtc/VideoFrame$Buffer;IJLjava/lang/Long;)V
 
-    return-object v0
+    return-object v7
 .end method
 
 

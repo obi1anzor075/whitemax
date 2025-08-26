@@ -3,360 +3,453 @@
 .source "SourceFile"
 
 
-# instance fields
-.field private mAppContext:Landroid/content/Context;
+# static fields
+.field public static final a:Ljava/util/HashMap;
 
-.field private volatile mStopped:Z
-
-.field private mUsed:Z
-
-.field private mWorkerParams:Landroidx/work/WorkerParameters;
+.field public static final b:Ljava/util/HashMap;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroidx/work/WorkerParameters;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ljava/util/HashMap;
 
-    if-eqz p1, :cond_1
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    if-eqz p2, :cond_0
+    sput-object v0, Lhh7;->a:Ljava/util/HashMap;
 
-    iput-object p1, p0, Lhh7;->mAppContext:Landroid/content/Context;
+    new-instance v0, Ljava/util/HashMap;
 
-    iput-object p2, p0, Lhh7;->mWorkerParams:Landroidx/work/WorkerParameters;
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    sput-object v0, Lhh7;->b:Ljava/util/HashMap;
 
     return-void
+.end method
+
+.method public static a(Ljava/lang/reflect/Constructor;Lzg7;)V
+    .locals 0
+
+    :try_start_0
+    filled-new-array {p1}, [Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance p0, Ljava/lang/ClassCastException;
+
+    invoke-direct {p0}, Ljava/lang/ClassCastException;-><init>()V
+
+    throw p0
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    move-exception p0
+
+    new-instance p1, Ljava/lang/RuntimeException;
+
+    invoke-direct {p1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw p1
+
+    :catch_1
+    move-exception p0
+
+    new-instance p1, Ljava/lang/RuntimeException;
+
+    invoke-direct {p1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw p1
+
+    :catch_2
+    move-exception p0
+
+    new-instance p1, Ljava/lang/RuntimeException;
+
+    invoke-direct {p1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw p1
+.end method
+
+.method public static b(Ljava/lang/Class;)I
+    .locals 13
+
+    sget-object v0, Lhh7;->a:Ljava/util/HashMap;
+
+    invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p0
+
+    return p0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    invoke-virtual {p0}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
 
-    const-string p1, "WorkerParameters is null"
+    move-result-object v1
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    const/4 v2, 0x1
 
-    throw p0
+    if-nez v1, :cond_1
+
+    goto/16 :goto_b
 
     :cond_1
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    const/4 v1, 0x0
 
-    const-string p1, "Application Context is null"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-
-# virtual methods
-.method public final getApplicationContext()Landroid/content/Context;
-    .locals 0
-
-    iget-object p0, p0, Lhh7;->mAppContext:Landroid/content/Context;
-
-    return-object p0
-.end method
-
-.method public getBackgroundExecutor()Ljava/util/concurrent/Executor;
-    .locals 0
-
-    iget-object p0, p0, Lhh7;->mWorkerParams:Landroidx/work/WorkerParameters;
-
-    iget-object p0, p0, Landroidx/work/WorkerParameters;->f:Ljava/util/concurrent/Executor;
-
-    return-object p0
-.end method
-
-.method public getForegroundInfoAsync()Lch7;
-    .locals 2
-
-    new-instance p0, Lb4d;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Expedited WorkRequests require a ListenableWorker to provide an implementation for `getForegroundInfoAsync()`"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p0, v0}, Lb4d;->k(Ljava/lang/Throwable;)Z
-
-    return-object p0
-.end method
-
-.method public final getId()Ljava/util/UUID;
-    .locals 0
-
-    iget-object p0, p0, Lhh7;->mWorkerParams:Landroidx/work/WorkerParameters;
-
-    iget-object p0, p0, Landroidx/work/WorkerParameters;->a:Ljava/util/UUID;
-
-    return-object p0
-.end method
-
-.method public final getInputData()Lzy3;
-    .locals 0
-
-    iget-object p0, p0, Lhh7;->mWorkerParams:Landroidx/work/WorkerParameters;
-
-    iget-object p0, p0, Landroidx/work/WorkerParameters;->b:Lzy3;
-
-    return-object p0
-.end method
-
-.method public final getNetwork()Landroid/net/Network;
-    .locals 0
-
-    iget-object p0, p0, Lhh7;->mWorkerParams:Landroidx/work/WorkerParameters;
-
-    iget-object p0, p0, Landroidx/work/WorkerParameters;->d:Lw4g;
-
-    iget-object p0, p0, Lw4g;->o:Ljava/lang/Object;
-
-    check-cast p0, Landroid/net/Network;
-
-    return-object p0
-.end method
-
-.method public final getRunAttemptCount()I
-    .locals 0
-
-    iget-object p0, p0, Lhh7;->mWorkerParams:Landroidx/work/WorkerParameters;
-
-    iget p0, p0, Landroidx/work/WorkerParameters;->e:I
-
-    return p0
-.end method
-
-.method public final getTags()Ljava/util/Set;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Set<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-
-    iget-object p0, p0, Lhh7;->mWorkerParams:Landroidx/work/WorkerParameters;
-
-    iget-object p0, p0, Landroidx/work/WorkerParameters;->c:Ljava/util/HashSet;
-
-    return-object p0
-.end method
-
-.method public getTaskExecutor()Lbee;
-    .locals 0
-
-    iget-object p0, p0, Lhh7;->mWorkerParams:Landroidx/work/WorkerParameters;
-
-    iget-object p0, p0, Landroidx/work/WorkerParameters;->g:Lbee;
-
-    return-object p0
-.end method
-
-.method public final getTriggeredContentAuthorities()Ljava/util/List;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-
-    iget-object p0, p0, Lhh7;->mWorkerParams:Landroidx/work/WorkerParameters;
-
-    iget-object p0, p0, Landroidx/work/WorkerParameters;->d:Lw4g;
-
-    iget-object p0, p0, Lw4g;->b:Ljava/lang/Object;
-
-    check-cast p0, Ljava/util/List;
-
-    return-object p0
-.end method
-
-.method public final getTriggeredContentUris()Ljava/util/List;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/List<",
-            "Landroid/net/Uri;",
-            ">;"
-        }
-    .end annotation
-
-    iget-object p0, p0, Lhh7;->mWorkerParams:Landroidx/work/WorkerParameters;
-
-    iget-object p0, p0, Landroidx/work/WorkerParameters;->d:Lw4g;
-
-    iget-object p0, p0, Lw4g;->c:Ljava/lang/Object;
-
-    check-cast p0, Ljava/util/List;
-
-    return-object p0
-.end method
-
-.method public getWorkerFactory()Liuf;
-    .locals 0
-
-    iget-object p0, p0, Lhh7;->mWorkerParams:Landroidx/work/WorkerParameters;
-
-    iget-object p0, p0, Landroidx/work/WorkerParameters;->h:Liuf;
-
-    return-object p0
-.end method
-
-.method public final isStopped()Z
-    .locals 0
-
-    iget-boolean p0, p0, Lhh7;->mStopped:Z
-
-    return p0
-.end method
-
-.method public final isUsed()Z
-    .locals 0
-
-    iget-boolean p0, p0, Lhh7;->mUsed:Z
-
-    return p0
-.end method
-
-.method public onStopped()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final setForegroundAsync(Lhu5;)Lch7;
-    .locals 9
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lhu5;",
-            ")",
-            "Lch7;"
-        }
-    .end annotation
-
-    iget-object v0, p0, Lhh7;->mWorkerParams:Landroidx/work/WorkerParameters;
-
-    iget-object v0, v0, Landroidx/work/WorkerParameters;->j:Lku5;
-
-    invoke-virtual {p0}, Lhh7;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v6
-
-    invoke-virtual {p0}, Lhh7;->getId()Ljava/util/UUID;
-
-    move-result-object v4
-
-    check-cast v0, Latf;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance p0, Lb4d;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v8, Ls18;
-
-    const/4 v7, 0x2
-
-    move-object v1, v8
-
-    move-object v2, v0
-
-    move-object v3, p0
-
-    move-object v5, p1
-
-    invoke-direct/range {v1 .. v7}, Ls18;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
-
-    iget-object p1, v0, Latf;->a:Lbee;
-
-    invoke-interface {p1, v8}, Lbee;->c(Ljava/lang/Runnable;)V
-
-    return-object p0
-.end method
-
-.method public setProgressAsync(Lzy3;)Lch7;
-    .locals 8
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lzy3;",
-            ")",
-            "Lch7;"
-        }
-    .end annotation
-
-    iget-object v0, p0, Lhh7;->mWorkerParams:Landroidx/work/WorkerParameters;
-
-    iget-object v0, v0, Landroidx/work/WorkerParameters;->i:Lkgb;
-
-    invoke-virtual {p0}, Lhh7;->getApplicationContext()Landroid/content/Context;
-
-    invoke-virtual {p0}, Lhh7;->getId()Ljava/util/UUID;
+    :try_start_0
+    invoke-virtual {p0}, Ljava/lang/Class;->getPackage()Ljava/lang/Package;
 
     move-result-object v3
 
-    check-cast v0, Lttf;
+    invoke-virtual {p0}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object v4
 
-    new-instance p0, Lb4d;
+    if-eqz v3, :cond_2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {v3}, Ljava/lang/Package;->getName()Ljava/lang/String;
 
-    new-instance v7, Lkuf;
+    move-result-object v3
 
-    const/4 v6, 0x7
+    goto :goto_0
 
-    move-object v1, v7
+    :cond_2
+    const-string v3, ""
 
-    move-object v2, v0
+    :goto_0
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    move-object v4, p1
+    move-result v5
 
-    move-object v5, p0
+    if-nez v5, :cond_3
 
-    invoke-direct/range {v1 .. v6}, Lkuf;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+    goto :goto_1
 
-    iget-object p1, v0, Lttf;->b:Lbee;
+    :cond_3
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    invoke-interface {p1, v7}, Lbee;->c(Ljava/lang/Runnable;)V
+    move-result v5
 
-    return-object p0
-.end method
+    add-int/2addr v5, v2
 
-.method public final setUsed()V
-    .locals 1
+    invoke-virtual {v4, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    const/4 v0, 0x1
+    move-result-object v4
 
-    iput-boolean v0, p0, Lhh7;->mUsed:Z
+    :goto_1
+    const-string v5, "."
 
-    return-void
-.end method
+    const-string v6, "_"
 
-.method public abstract startWork()Lch7;
-.end method
+    invoke-static {v4, v5, v6}, Lr8e;->v0(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-.method public final stop()V
-    .locals 1
+    move-result-object v4
 
-    const/4 v0, 0x1
+    const-string v5, "_LifecycleAdapter"
 
-    iput-boolean v0, p0, Lhh7;->mStopped:Z
+    invoke-virtual {v4, v5}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {p0}, Lhh7;->onStopped()V
+    move-result-object v4
 
-    return-void
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    if-nez v5, :cond_4
+
+    goto :goto_2
+
+    :cond_4
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v3, 0x2e
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    :goto_2
+    invoke-static {v4}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v3
+
+    filled-new-array {p0}, [Ljava/lang/Class;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/reflect/AccessibleObject;->isAccessible()Z
+
+    move-result v4
+
+    if-nez v4, :cond_5
+
+    invoke-virtual {v3, v2}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_3
+
+    :catch_0
+    move-exception p0
+
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
+
+    :catch_1
+    move-object v3, v1
+
+    :cond_5
+    :goto_3
+    const/4 v4, 0x2
+
+    sget-object v5, Lhh7;->b:Ljava/util/HashMap;
+
+    if-eqz v3, :cond_6
+
+    invoke-static {v3}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-virtual {v5, p0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :goto_4
+    move v2, v4
+
+    goto/16 :goto_b
+
+    :cond_6
+    sget-object v3, Lc13;->c:Lc13;
+
+    iget-object v6, v3, Lc13;->b:Ljava/util/HashMap;
+
+    invoke-virtual {v6, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Ljava/lang/Boolean;
+
+    const/4 v8, 0x0
+
+    if-eqz v7, :cond_7
+
+    invoke-virtual {v7}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v3
+
+    goto :goto_6
+
+    :cond_7
+    :try_start_1
+    invoke-virtual {p0}, Ljava/lang/Class;->getDeclaredMethods()[Ljava/lang/reflect/Method;
+
+    move-result-object v7
+    :try_end_1
+    .catch Ljava/lang/NoClassDefFoundError; {:try_start_1 .. :try_end_1} :catch_2
+
+    array-length v9, v7
+
+    move v10, v8
+
+    :goto_5
+    if-ge v10, v9, :cond_9
+
+    aget-object v11, v7, v10
+
+    const-class v12, Li1a;
+
+    invoke-virtual {v11, v12}, Ljava/lang/reflect/Method;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+
+    move-result-object v11
+
+    check-cast v11, Li1a;
+
+    if-eqz v11, :cond_8
+
+    invoke-virtual {v3, p0, v7}, Lc13;->a(Ljava/lang/Class;[Ljava/lang/reflect/Method;)La13;
+
+    move v3, v2
+
+    goto :goto_6
+
+    :cond_8
+    add-int/lit8 v10, v10, 0x1
+
+    goto :goto_5
+
+    :cond_9
+    sget-object v3, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    invoke-virtual {v6, p0, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move v3, v8
+
+    :goto_6
+    if-eqz v3, :cond_a
+
+    goto/16 :goto_b
+
+    :cond_a
+    invoke-virtual {p0}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    const-class v6, Lzg7;
+
+    if-eqz v3, :cond_b
+
+    invoke-virtual {v6, v3}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_b
+
+    move v7, v2
+
+    goto :goto_7
+
+    :cond_b
+    move v7, v8
+
+    :goto_7
+    if-eqz v7, :cond_d
+
+    invoke-static {v3}, Lhh7;->b(Ljava/lang/Class;)I
+
+    move-result v1
+
+    if-ne v1, v2, :cond_c
+
+    goto :goto_b
+
+    :cond_c
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-virtual {v5, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/Collection;
+
+    invoke-direct {v1, v3}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    :cond_d
+    invoke-virtual {p0}, Ljava/lang/Class;->getInterfaces()[Ljava/lang/Class;
+
+    move-result-object v3
+
+    array-length v7, v3
+
+    move v9, v8
+
+    :goto_8
+    if-ge v9, v7, :cond_12
+
+    aget-object v10, v3, v9
+
+    if-eqz v10, :cond_e
+
+    invoke-virtual {v6, v10}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+
+    move-result v11
+
+    if-eqz v11, :cond_e
+
+    move v11, v2
+
+    goto :goto_9
+
+    :cond_e
+    move v11, v8
+
+    :goto_9
+    if-nez v11, :cond_f
+
+    goto :goto_a
+
+    :cond_f
+    invoke-static {v10}, Lhh7;->b(Ljava/lang/Class;)I
+
+    move-result v11
+
+    if-ne v11, v2, :cond_10
+
+    goto :goto_b
+
+    :cond_10
+    if-nez v1, :cond_11
+
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    :cond_11
+    invoke-virtual {v5, v10}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v10
+
+    check-cast v10, Ljava/util/Collection;
+
+    invoke-interface {v1, v10}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+    :goto_a
+    add-int/lit8 v9, v9, 0x1
+
+    goto :goto_8
+
+    :cond_12
+    if-eqz v1, :cond_13
+
+    invoke-virtual {v5, p0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto/16 :goto_4
+
+    :cond_13
+    :goto_b
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v0, p0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    return v2
+
+    :catch_2
+    move-exception p0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor."
+
+    invoke-direct {v0, v1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v0
 .end method

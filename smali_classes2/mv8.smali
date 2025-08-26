@@ -1,119 +1,84 @@
 .class public final Lmv8;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
 
 
 # instance fields
-.field public synthetic X:I
-
-.field public final synthetic Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
+.field public final a:J
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/MessageWriteWidget;)V
+.method public constructor <init>(J)V
     .locals 0
 
-    iput-object p2, p0, Lmv8;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p2, 0x2
-
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-wide p1, p0, Lmv8;->a:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 5
 
-    check-cast p1, Ljava/lang/Number;
+    const/4 v0, 0x1
 
-    invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
+    if-ne p0, p1, :cond_0
 
-    move-result p1
+    return v0
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    :cond_0
+    instance-of v1, p1, Lmv8;
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const/4 v2, 0x0
 
-    move-result-object p1
+    if-nez v1, :cond_1
 
-    invoke-virtual {p0, p1, p2}, Lmv8;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    return v2
 
-    move-result-object p0
+    :cond_1
+    check-cast p1, Lmv8;
 
-    check-cast p0, Lmv8;
+    iget-wide v3, p0, Lmv8;->a:J
 
-    sget-object p1, Ljue;->a:Ljue;
+    iget-wide p0, p1, Lmv8;->a:J
 
-    invoke-virtual {p0, p1}, Lmv8;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    cmp-long p0, v3, p0
 
-    return-object p1
+    if-eqz p0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
+.method public final hashCode()I
+    .locals 2
 
-    new-instance v0, Lmv8;
+    iget-wide v0, p0, Lmv8;->a:J
 
-    iget-object p0, p0, Lmv8;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
-
-    invoke-direct {v0, p2, p0}, Lmv8;-><init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/MessageWriteWidget;)V
-
-    check-cast p1, Ljava/lang/Number;
-
-    invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
 
     move-result p0
 
-    iput p0, v0, Lmv8;->X:I
-
-    return-object v0
+    return p0
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final toString()Ljava/lang/String;
+    .locals 4
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    const-string v0, "ControlInfo(pinnedMessageId="
 
-    iget p1, p0, Lmv8;->X:I
+    const-string v1, ")"
 
-    sget-object v0, Lone/me/sdk/messagewrite/MessageWriteWidget;->J0:[Lk77;
+    iget-wide v2, p0, Lmv8;->a:J
 
-    iget-object p0, p0, Lmv8;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
-
-    invoke-virtual {p0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->v0()Le3e;
+    invoke-static {v2, v3, v0, v1}, Lu88;->i(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
-
-    iget-object p0, p0, Le3e;->L0:Lgrd;
-
-    :cond_0
-    invoke-virtual {p0}, Lgrd;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    check-cast v1, Ljava/lang/Number;
-
-    invoke-virtual {v1}, Ljava/lang/Number;->intValue()I
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v0, v1}, Lgrd;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    sget-object p0, Ljue;->a:Ljue;
 
     return-object p0
 .end method

@@ -1,19 +1,19 @@
-.class public abstract Lc4a;
+.class public final Lc4a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:I
+# instance fields
+.field public final synthetic a:Lu4;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lu4;)V
+    .locals 0
 
-    sget v0, Lepb;->oneme_complaint_action_cancel:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput v0, Lc4a;->a:I
+    iput-object p1, p0, Lc4a;->a:Lu4;
 
     return-void
 .end method

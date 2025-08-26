@@ -1,152 +1,120 @@
 .class public final Lrz0;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Lqz0;
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Lbo1;
+.field public X:I
 
-.field public final b:Lt97;
+.field public final synthetic Y:Lsz0;
 
-.field public final c:Ljava/util/concurrent/atomic/AtomicReference;
+.field public final synthetic Z:Lms;
 
 
 # direct methods
-.method public constructor <init>(Lt97;Lbo1;)V
+.method public constructor <init>(Lsz0;Lms;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lrz0;->Y:Lsz0;
 
-    iput-object p2, p0, Lrz0;->a:Lbo1;
+    iput-object p2, p0, Lrz0;->Z:Lms;
 
-    iput-object p1, p0, Lrz0;->b:Lt97;
+    const/4 p1, 0x2
 
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-direct {p1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
-
-    iput-object p1, p0, Lrz0;->c:Ljava/util/concurrent/atomic/AtomicReference;
+    invoke-direct {p0, p1, p3}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$State;)V
-    .locals 6
-
-    iget-object p0, p0, Lrz0;->c:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object p0
-
-    move-object v0, p0
-
-    check-cast v0, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager;
-
-    if-eqz v0, :cond_0
-
-    const/4 v4, 0x6
-
-    const/4 v5, 0x0
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    move-object v1, p1
-
-    invoke-static/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager;->changeStateAsync$default(Lru/ok/android/externcalls/sdk/audio/CallsAudioManager;Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$State;Ls16;Lu16;ILjava/lang/Object;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final b()Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    iget-object p0, p0, Lrz0;->c:Ljava/util/concurrent/atomic/AtomicReference;
+    check-cast p1, Lox3;
 
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    move-result-object p0
-
-    check-cast p0, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager;
-
-    if-eqz p0, :cond_0
-
-    invoke-interface {p0}, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager;->getCurrentDevice()Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+    invoke-virtual {p0, p1, p2}, Lrz0;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    if-nez p0, :cond_1
+    check-cast p0, Lrz0;
 
-    :cond_0
-    sget-object p0, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;->Companion:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo$Companion;
+    sget-object p1, Le5f;->a:Le5f;
 
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo$Companion;->getNONE()Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+    invoke-virtual {p0, p1}, Lrz0;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    :cond_1
     return-object p0
 .end method
 
-.method public final c()Lru/ok/android/externcalls/sdk/audio/MicrophoneManager;
-    .locals 0
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    iget-object p0, p0, Lrz0;->b:Lt97;
+    new-instance p1, Lrz0;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    iget-object v0, p0, Lrz0;->Y:Lsz0;
 
-    move-result-object p0
+    iget-object p0, p0, Lrz0;->Z:Lms;
 
-    check-cast p0, Lbt3;
+    invoke-direct {p1, v0, p0, p2}, Lrz0;-><init>(Lsz0;Lms;Lkotlin/coroutines/Continuation;)V
 
-    invoke-virtual {p0}, Lbt3;->a()Lru/ok/android/externcalls/sdk/Conversation;
+    return-object p1
+.end method
 
-    move-result-object p0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    if-eqz p0, :cond_0
+    iget v0, p0, Lrz0;->X:I
 
-    invoke-interface {p0}, Lru/ok/android/externcalls/sdk/Conversation;->getMicrophoneManager()Lru/ok/android/externcalls/sdk/audio/MicrophoneManager;
+    const/4 v1, 0x1
 
-    move-result-object p0
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x0
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    :goto_0
-    return-object p0
-.end method
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-.method public final d()Z
-    .locals 2
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lrz0;->c()Lru/ok/android/externcalls/sdk/audio/MicrophoneManager;
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lrz0;->Y:Lsz0;
+
+    iget-object p1, p1, Lsz0;->b:Lqo1;
+
+    iput v1, p0, Lrz0;->X:I
+
+    iget-object v0, p0, Lrz0;->Z:Lms;
+
+    invoke-virtual {p1, v0, p0}, Lqo1;->d(Ljava/util/Set;Lqde;)Ljava/lang/Object;
 
     move-result-object p0
 
-    const/4 v0, 0x0
+    sget-object p1, Lpx3;->a:Lpx3;
 
-    if-eqz p0, :cond_0
+    if-ne p0, p1, :cond_2
 
-    invoke-interface {p0}, Lru/ok/android/externcalls/sdk/audio/MicrophoneManager;->isMicEnabled()Z
+    return-object p1
 
-    move-result p0
+    :cond_2
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
 
-    const/4 v1, 0x1
-
-    if-ne p0, v1, :cond_0
-
-    move v0, v1
-
-    :cond_0
-    return v0
+    return-object p0
 .end method

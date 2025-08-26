@@ -12,17 +12,17 @@
         "Lkotlinx/coroutines/internal/DiagnosticCoroutineContextException;",
         "Ljava/lang/RuntimeException;",
         "Lkotlin/RuntimeException;",
-        "Lhu3;",
+        "Lhx3;",
         "context",
         "<init>",
-        "(Lhu3;)V",
+        "(Lhx3;)V",
         "",
         "getLocalizedMessage",
         "()Ljava/lang/String;",
         "",
         "fillInStackTrace",
         "()Ljava/lang/Throwable;",
-        "Lhu3;",
+        "Lhx3;",
         "kotlinx-coroutines-core"
     }
     k = 0x1
@@ -31,20 +31,21 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
-.field private final transient context:Lhu3;
+.field private final transient context:Lhx3;
 
 
 # direct methods
-.method public constructor <init>(Lhu3;)V
+.method public constructor <init>(Lhx3;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/RuntimeException;-><init>()V
 
-    iput-object p1, p0, Lkotlinx/coroutines/internal/DiagnosticCoroutineContextException;->context:Lhu3;
+    iput-object p1, p0, Lkotlinx/coroutines/internal/DiagnosticCoroutineContextException;->context:Lhx3;
 
     return-void
 .end method
@@ -66,7 +67,7 @@
 .method public getLocalizedMessage()Ljava/lang/String;
     .locals 0
 
-    iget-object p0, p0, Lkotlinx/coroutines/internal/DiagnosticCoroutineContextException;->context:Lhu3;
+    iget-object p0, p0, Lkotlinx/coroutines/internal/DiagnosticCoroutineContextException;->context:Lhx3;
 
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 

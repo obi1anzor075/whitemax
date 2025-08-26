@@ -3,20 +3,8 @@
     <dimen name="abc_action_bar_default_height_material">48.0dip</dimen>
     <dimen name="abc_text_size_subtitle_material_toolbar">12.0dip</dimen>
     <dimen name="abc_text_size_title_material_toolbar">14.0dip</dimen>
-    <dimen name="call_finished_controls_buttons_height">40.0dip</dimen>
-    <dimen name="call_finished_controls_buttons_text_size">15.0sp</dimen>
-    <dimen name="call_finished_controls_margin_bottom">10.0dip</dimen>
-    <dimen name="call_pip_margin_bottom">25.0dip</dimen>
-    <dimen name="call_rate_details__rate_margin">5.0dip</dimen>
-    <dimen name="call_rate_details__title_margin">10.0dip</dimen>
-    <dimen name="call_rate_details__title_textsize">16.0sp</dimen>
-    <dimen name="call_rate_item__padding_top">5.0dip</dimen>
     <item type="dimen" name="date_picker_today_margin_top">@dimen/date_picker_land_today_margin_top</item>
     <dimen name="font_toolbar_title">16.0sp</dimen>
-    <dimen name="frg_call__center_layout_bottom_margin">50.0dip</dimen>
-    <dimen name="frg_call__incoming_buttons_bottom_margin">12.0dip</dimen>
-    <dimen name="frg_call__incoming_buttons_top_margin">8.0dip</dimen>
-    <dimen name="keyboard_height">170.0dip</dimen>
     <dimen name="material_time_picker_minimum_screen_height">450.0dip</dimen>
     <dimen name="material_time_picker_minimum_screen_width">600.0dip</dimen>
     <dimen name="mr_controller_volume_group_list_item_height">61.0dip</dimen>
@@ -38,9 +26,4 @@
     <dimen name="mtrl_calendar_title_baseline_to_top_fullscreen">32.0dip</dimen>
     <item type="dimen" name="picker_height">@dimen/date_picker_land_height</item>
     <dimen name="picker_width">460.0dip</dimen>
-    <dimen name="rounded_button_margin">72.0dip</dimen>
-    <dimen name="suggests_row_height">30.0dip</dimen>
-    <item type="dimen" name="switch_divider_visibility">0</item>
-    <item type="dimen" name="switch_width">@dimen/wrap_content</item>
-    <dimen name="toolbar_main_screen_subtitle_margin_top">13.0dip</dimen>
 </resources>

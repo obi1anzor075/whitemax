@@ -1,13 +1,13 @@
-.class public final Loo;
-.super Lno;
+.class public abstract Loo;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public static a()I
+    .locals 1
 
-    invoke-direct {p0}, Lno;-><init>()V
+    const/16 v0, 0x200
 
-    return-void
+    return v0
 .end method

@@ -7,53 +7,53 @@
 
 
 # instance fields
-.field private final __db:Laec;
+.field private final __db:Lkjc;
 
-.field private final __insertionAdapterOfWorkerQueueItem:Llz4;
+.field private final __insertionAdapterOfWorkerQueueItem:Lj25;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Llz4;"
+            "Lj25;"
         }
     .end annotation
 .end field
 
-.field private final __insertionAdapterOfWorkerQueueItem_1:Llz4;
+.field private final __insertionAdapterOfWorkerQueueItem_1:Lj25;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Llz4;"
+            "Lj25;"
         }
     .end annotation
 .end field
 
 
 # direct methods
-.method public constructor <init>(Laec;)V
+.method public constructor <init>(Lkjc;)V
     .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iput-object p1, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    new-instance v0, Lpuf;
+    new-instance v0, Lbag;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, p1, v1}, Lpuf;-><init>(Landroidx/work/impl/model/WorkersQueueDao_Impl;Laec;I)V
+    invoke-direct {v0, p0, p1, v1}, Lbag;-><init>(Landroidx/work/impl/model/WorkersQueueDao_Impl;Lkjc;I)V
 
-    iput-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__insertionAdapterOfWorkerQueueItem:Llz4;
+    iput-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__insertionAdapterOfWorkerQueueItem:Lj25;
 
-    new-instance v0, Lpuf;
+    new-instance v0, Lbag;
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p0, p1, v1}, Lpuf;-><init>(Landroidx/work/impl/model/WorkersQueueDao_Impl;Laec;I)V
+    invoke-direct {v0, p0, p1, v1}, Lbag;-><init>(Landroidx/work/impl/model/WorkersQueueDao_Impl;Lkjc;I)V
 
-    iput-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__insertionAdapterOfWorkerQueueItem_1:Llz4;
+    iput-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__insertionAdapterOfWorkerQueueItem_1:Lj25;
 
     return-void
 .end method
 
-.method private __ExistingWorkPolicy_enumToString(La35;)Ljava/lang/String;
+.method private __ExistingWorkPolicy_enumToString(Lx55;)Ljava/lang/String;
     .locals 2
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -113,85 +113,85 @@
     return-object p0
 .end method
 
-.method private __ExistingWorkPolicy_stringToEnum(Ljava/lang/String;)La35;
+.method private __ExistingWorkPolicy_stringToEnum(Ljava/lang/String;)Lx55;
     .locals 1
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const/4 p0, -0x1
-
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
-    move-result v0
+    move-result p0
 
-    sparse-switch v0, :sswitch_data_0
+    const/4 v0, -0x1
+
+    sparse-switch p0, :sswitch_data_0
 
     goto :goto_0
 
     :sswitch_0
-    const-string v0, "APPEND"
+    const-string p0, "APPEND"
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result p0
 
-    if-nez v0, :cond_0
+    if-nez p0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x3
+    const/4 v0, 0x3
 
     goto :goto_0
 
     :sswitch_1
-    const-string v0, "REPLACE"
+    const-string p0, "REPLACE"
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result p0
 
-    if-nez v0, :cond_1
+    if-nez p0, :cond_1
 
     goto :goto_0
 
     :cond_1
-    const/4 p0, 0x2
+    const/4 v0, 0x2
 
     goto :goto_0
 
     :sswitch_2
-    const-string v0, "KEEP"
+    const-string p0, "KEEP"
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result p0
 
-    if-nez v0, :cond_2
+    if-nez p0, :cond_2
 
     goto :goto_0
 
     :cond_2
-    const/4 p0, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 
     :sswitch_3
-    const-string v0, "APPEND_OR_REPLACE"
+    const-string p0, "APPEND_OR_REPLACE"
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result p0
 
-    if-nez v0, :cond_3
+    if-nez p0, :cond_3
 
     goto :goto_0
 
     :cond_3
-    const/4 p0, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    packed-switch p0, :pswitch_data_0
+    packed-switch v0, :pswitch_data_0
 
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -206,22 +206,22 @@
     throw p0
 
     :pswitch_0
-    sget-object p0, La35;->c:La35;
+    sget-object p0, Lx55;->c:Lx55;
 
     return-object p0
 
     :pswitch_1
-    sget-object p0, La35;->a:La35;
+    sget-object p0, Lx55;->a:Lx55;
 
     return-object p0
 
     :pswitch_2
-    sget-object p0, La35;->b:La35;
+    sget-object p0, Lx55;->b:Lx55;
 
     return-object p0
 
     :pswitch_3
-    sget-object p0, La35;->o:La35;
+    sget-object p0, Lx55;->o:Lx55;
 
     return-object p0
 
@@ -242,10 +242,10 @@
     .end packed-switch
 .end method
 
-.method public static bridge synthetic a(Landroidx/work/impl/model/WorkersQueueDao_Impl;La35;)Ljava/lang/String;
+.method public static bridge synthetic a(Landroidx/work/impl/model/WorkersQueueDao_Impl;Lx55;)Ljava/lang/String;
     .locals 0
 
-    invoke-direct {p0, p1}, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__ExistingWorkPolicy_enumToString(La35;)Ljava/lang/String;
+    invoke-direct {p0, p1}, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__ExistingWorkPolicy_enumToString(Lx55;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -263,9 +263,7 @@
         }
     .end annotation
 
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v0
+    sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     return-object v0
 .end method
@@ -283,33 +281,33 @@
         }
     .end annotation
 
-    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {v0}, Laec;->c()V
+    invoke-virtual {v0}, Lkjc;->c()V
 
     :try_start_0
     invoke-super {p0, p1}, Landroidx/work/impl/model/WorkersQueueDao;->contains(Ljava/util/List;)Z
 
     move-result p1
 
-    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {v0}, Laec;->r()V
+    invoke-virtual {v0}, Lkjc;->q()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {p0}, Laec;->l()V
+    invoke-virtual {p0}, Lkjc;->k()V
 
     return p1
 
     :catchall_0
     move-exception p1
 
-    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {p0}, Laec;->l()V
+    invoke-virtual {p0}, Lkjc;->k()V
 
     throw p1
 .end method
@@ -317,27 +315,25 @@
 .method public count(I)I
     .locals 4
 
-    const-string v0, "SELECT COUNT(*) FROM WorkerQueueItem WHERE state = ?"
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    const-string v1, "SELECT COUNT(*) FROM WorkerQueueItem WHERE state = ?"
 
-    invoke-static {v1, v0}, Lpec;->a(ILjava/lang/String;)Lpec;
+    invoke-static {v0, v1}, Lakc;->c(ILjava/lang/String;)Lakc;
 
-    move-result-object v0
+    move-result-object v1
 
     int-to-long v2, p1
 
-    invoke-virtual {v0, v1, v2, v3}, Lpec;->j(IJ)V
+    invoke-virtual {v1, v0, v2, v3}, Lakc;->k(IJ)V
 
-    iget-object p1, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p1, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {p1}, Laec;->b()V
+    invoke-virtual {p1}, Lkjc;->b()V
 
-    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    const/4 p1, 0x0
-
-    invoke-virtual {p0, v0, p1}, Laec;->o(Lf4e;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
+    invoke-virtual {p0, v1}, Lkjc;->n(Llce;)Landroid/database/Cursor;
 
     move-result-object p0
 
@@ -346,13 +342,13 @@
 
     move-result p1
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     if-eqz p1, :cond_0
 
-    invoke-interface {p0, v1}, Landroid/database/Cursor;->getInt(I)I
+    invoke-interface {p0, v0}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result v1
+    move-result v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -367,14 +363,14 @@
     :goto_0
     invoke-interface {p0}, Landroid/database/Cursor;->close()V
 
-    invoke-virtual {v0}, Lpec;->m()V
+    invoke-virtual {v1}, Lakc;->o()V
 
-    return v1
+    return v0
 
     :goto_1
     invoke-interface {p0}, Landroid/database/Cursor;->close()V
 
-    invoke-virtual {v0}, Lpec;->m()V
+    invoke-virtual {v1}, Lakc;->o()V
 
     throw p1
 .end method
@@ -390,9 +386,9 @@
         }
     .end annotation
 
-    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {v0}, Laec;->b()V
+    invoke-virtual {v0}, Lkjc;->b()V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -406,7 +402,7 @@
 
     move-result v1
 
-    invoke-static {v0, v1}, La06;->e(Ljava/lang/StringBuilder;I)V
+    invoke-static {v0, v1}, Lkhg;->c(Ljava/lang/StringBuilder;I)V
 
     const-string v1, ")"
 
@@ -416,9 +412,9 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object v1, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {v1, v0}, Laec;->d(Ljava/lang/String;)Lyz5;
+    invoke-virtual {v1, v0}, Lkjc;->d(Ljava/lang/String;)Lmce;
 
     move-result-object v0
 
@@ -443,12 +439,12 @@
 
     if-nez v2, :cond_0
 
-    invoke-interface {v0, v1}, Le4e;->W(I)V
+    invoke-interface {v0, v1}, Lkce;->Z(I)V
 
     goto :goto_1
 
     :cond_0
-    invoke-interface {v0, v1, v2}, Le4e;->f(ILjava/lang/String;)V
+    invoke-interface {v0, v1, v2}, Lkce;->f(ILjava/lang/String;)V
 
     :goto_1
     add-int/lit8 v1, v1, 0x1
@@ -456,31 +452,31 @@
     goto :goto_0
 
     :cond_1
-    iget-object p1, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p1, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {p1}, Laec;->c()V
+    invoke-virtual {p1}, Lkjc;->c()V
 
     :try_start_0
-    invoke-virtual {v0}, Lyz5;->n()I
+    invoke-interface {v0}, Lmce;->C()I
 
-    iget-object p1, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p1, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {p1}, Laec;->r()V
+    invoke-virtual {p1}, Lkjc;->q()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {p0}, Laec;->l()V
+    invoke-virtual {p0}, Lkjc;->k()V
 
     return-void
 
     :catchall_0
     move-exception p1
 
-    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {p0}, Laec;->l()V
+    invoke-virtual {p0}, Lkjc;->k()V
 
     throw p1
 .end method
@@ -491,146 +487,146 @@
         value = {
             "(I)",
             "Ljava/util/List<",
-            "Ljuf;",
+            "Lu9g;",
             ">;"
         }
     .end annotation
 
-    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {v0}, Laec;->c()V
+    invoke-virtual {v0}, Lkjc;->c()V
 
     :try_start_0
     invoke-super {p0, p1}, Landroidx/work/impl/model/WorkersQueueDao;->getItemsForRunning(I)Ljava/util/List;
 
     move-result-object p1
 
-    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {v0}, Laec;->r()V
+    invoke-virtual {v0}, Lkjc;->q()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {p0}, Laec;->l()V
+    invoke-virtual {p0}, Lkjc;->k()V
 
     return-object p1
 
     :catchall_0
     move-exception p1
 
-    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {p0}, Laec;->l()V
+    invoke-virtual {p0}, Lkjc;->k()V
 
     throw p1
 .end method
 
-.method public insert(Ljuf;)V
+.method public insert(Lu9g;)V
     .locals 1
 
-    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {v0}, Laec;->c()V
+    invoke-virtual {v0}, Lkjc;->c()V
 
     :try_start_0
-    invoke-super {p0, p1}, Landroidx/work/impl/model/WorkersQueueDao;->insert(Ljuf;)V
+    invoke-super {p0, p1}, Landroidx/work/impl/model/WorkersQueueDao;->insert(Lu9g;)V
 
-    iget-object p1, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p1, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {p1}, Laec;->r()V
+    invoke-virtual {p1}, Lkjc;->q()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {p0}, Laec;->l()V
+    invoke-virtual {p0}, Lkjc;->k()V
 
     return-void
 
     :catchall_0
     move-exception p1
 
-    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {p0}, Laec;->l()V
+    invoke-virtual {p0}, Lkjc;->k()V
 
     throw p1
 .end method
 
-.method public insertOrIgnore(Ljuf;)V
+.method public insertOrIgnore(Lu9g;)V
     .locals 1
 
-    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {v0}, Laec;->b()V
+    invoke-virtual {v0}, Lkjc;->b()V
 
-    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {v0}, Laec;->c()V
+    invoke-virtual {v0}, Lkjc;->c()V
 
     :try_start_0
-    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__insertionAdapterOfWorkerQueueItem:Llz4;
+    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__insertionAdapterOfWorkerQueueItem:Lj25;
 
-    invoke-virtual {v0, p1}, Llz4;->C(Ljava/lang/Object;)V
+    invoke-virtual {v0, p1}, Lj25;->C(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p1, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {p1}, Laec;->r()V
+    invoke-virtual {p1}, Lkjc;->q()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {p0}, Laec;->l()V
+    invoke-virtual {p0}, Lkjc;->k()V
 
     return-void
 
     :catchall_0
     move-exception p1
 
-    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {p0}, Laec;->l()V
+    invoke-virtual {p0}, Lkjc;->k()V
 
     throw p1
 .end method
 
-.method public insertOrReplace(Ljuf;)V
+.method public insertOrReplace(Lu9g;)V
     .locals 1
 
-    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {v0}, Laec;->b()V
+    invoke-virtual {v0}, Lkjc;->b()V
 
-    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {v0}, Laec;->c()V
+    invoke-virtual {v0}, Lkjc;->c()V
 
     :try_start_0
-    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__insertionAdapterOfWorkerQueueItem_1:Llz4;
+    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__insertionAdapterOfWorkerQueueItem_1:Lj25;
 
-    invoke-virtual {v0, p1}, Llz4;->C(Ljava/lang/Object;)V
+    invoke-virtual {v0, p1}, Lj25;->C(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p1, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {p1}, Laec;->r()V
+    invoke-virtual {p1}, Lkjc;->q()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {p0}, Laec;->l()V
+    invoke-virtual {p0}, Lkjc;->k()V
 
     return-void
 
     :catchall_0
     move-exception p1
 
-    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {p0}, Laec;->l()V
+    invoke-virtual {p0}, Lkjc;->k()V
 
     throw p1
 .end method
@@ -641,887 +637,880 @@
         value = {
             "(I)",
             "Ljava/util/List<",
-            "Ljuf;",
+            "Lu9g;",
             ">;"
         }
     .end annotation
 
     move-object/from16 v0, p0
 
+    const/4 v1, 0x1
+
     .line 1
-    const-string v1, "SELECT * FROM WorkerQueueItem ORDER BY time ASC LIMIT ?"
+    const-string v2, "SELECT * FROM WorkerQueueItem ORDER BY time ASC LIMIT ?"
 
-    const/4 v2, 0x1
+    invoke-static {v1, v2}, Lakc;->c(ILjava/lang/String;)Lakc;
 
-    invoke-static {v2, v1}, Lpec;->a(ILjava/lang/String;)Lpec;
-
-    move-result-object v1
+    move-result-object v2
 
     move/from16 v3, p1
 
     int-to-long v3, v3
 
     .line 2
-    invoke-virtual {v1, v2, v3, v4}, Lpec;->j(IJ)V
+    invoke-virtual {v2, v1, v3, v4}, Lakc;->k(IJ)V
 
     .line 3
-    iget-object v3, v0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object v3, v0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {v3}, Laec;->b()V
+    invoke-virtual {v3}, Lkjc;->b()V
 
     .line 4
-    iget-object v3, v0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
-
-    const/4 v4, 0x0
+    iget-object v3, v0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
     .line 5
-    invoke-virtual {v3, v1, v4}, Laec;->o(Lf4e;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
+    invoke-virtual {v3, v2}, Lkjc;->n(Llce;)Landroid/database/Cursor;
 
     move-result-object v3
 
     .line 6
     :try_start_0
-    const-string v5, "uuid"
+    const-string v4, "uuid"
 
-    invoke-static {v3, v5}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v4}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v4
+
+    .line 7
+    const-string v5, "uniqueWorkName"
+
+    invoke-static {v3, v5}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v5
 
-    .line 7
-    const-string v6, "uniqueWorkName"
+    .line 8
+    const-string v6, "existingWorkPolicy"
 
-    invoke-static {v3, v6}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v6}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v6
 
-    .line 8
-    const-string v7, "existingWorkPolicy"
+    .line 9
+    const-string v7, "tags"
 
-    invoke-static {v3, v7}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v7}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v7
 
-    .line 9
-    const-string v8, "tags"
+    .line 10
+    const-string v8, "time"
 
-    invoke-static {v3, v8}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v8}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v8
 
-    .line 10
-    const-string v9, "time"
+    .line 11
+    const-string v9, "state"
 
-    invoke-static {v3, v9}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v9}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v9
 
-    .line 11
-    const-string v10, "state"
+    .line 12
+    const-string v10, "work_spec_id"
 
-    invoke-static {v3, v10}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v10}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v10
 
-    .line 12
-    const-string v11, "work_spec_id"
+    .line 13
+    const-string v11, "work_spec_state"
 
-    invoke-static {v3, v11}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v11}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v11
 
-    .line 13
-    const-string v12, "work_spec_state"
+    .line 14
+    const-string v12, "work_spec_worker_class_name"
 
-    invoke-static {v3, v12}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v12}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v12
 
-    .line 14
-    const-string v13, "work_spec_worker_class_name"
+    .line 15
+    const-string v13, "work_spec_input_merger_class_name"
 
-    invoke-static {v3, v13}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v13}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v13
 
-    .line 15
-    const-string v14, "work_spec_input_merger_class_name"
+    .line 16
+    const-string v14, "work_spec_input"
 
-    invoke-static {v3, v14}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v14}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v14
 
-    .line 16
-    const-string v15, "work_spec_input"
+    .line 17
+    const-string v15, "work_spec_output"
 
-    invoke-static {v3, v15}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v15}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v15
 
-    .line 17
-    const-string v2, "work_spec_output"
-
-    invoke-static {v3, v2}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
-
-    move-result v2
-
     .line 18
-    const-string v4, "work_spec_initial_delay"
+    const-string v1, "work_spec_initial_delay"
 
-    invoke-static {v3, v4}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v1}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v4
+    move-result v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    move-object/from16 v16, v1
+    move-object/from16 v16, v2
 
     .line 19
     :try_start_1
-    const-string v1, "work_spec_interval_duration"
+    const-string v2, "work_spec_interval_duration"
 
-    invoke-static {v3, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v17, v1
+    move/from16 p1, v2
 
     .line 20
-    const-string v1, "work_spec_flex_duration"
+    const-string v2, "work_spec_flex_duration"
 
-    invoke-static {v3, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v18, v1
+    move/from16 v17, v2
 
     .line 21
-    const-string v1, "work_spec_run_attempt_count"
+    const-string v2, "work_spec_run_attempt_count"
 
-    invoke-static {v3, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v19, v1
+    move/from16 v18, v2
 
     .line 22
-    const-string v1, "work_spec_backoff_policy"
+    const-string v2, "work_spec_backoff_policy"
 
-    invoke-static {v3, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v20, v1
+    move/from16 v19, v2
 
     .line 23
-    const-string v1, "work_spec_backoff_delay_duration"
+    const-string v2, "work_spec_backoff_delay_duration"
 
-    invoke-static {v3, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v21, v1
+    move/from16 v20, v2
 
     .line 24
-    const-string v1, "work_spec_last_enqueue_time"
+    const-string v2, "work_spec_last_enqueue_time"
 
-    invoke-static {v3, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v22, v1
+    move/from16 v21, v2
 
     .line 25
-    const-string v1, "work_spec_minimum_retention_duration"
+    const-string v2, "work_spec_minimum_retention_duration"
 
-    invoke-static {v3, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v23, v1
+    move/from16 v22, v2
 
     .line 26
-    const-string v1, "work_spec_schedule_requested_at"
+    const-string v2, "work_spec_schedule_requested_at"
 
-    invoke-static {v3, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v24, v1
+    move/from16 v23, v2
 
     .line 27
-    const-string v1, "work_spec_run_in_foreground"
+    const-string v2, "work_spec_run_in_foreground"
 
-    invoke-static {v3, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v25, v1
+    move/from16 v24, v2
 
     .line 28
-    const-string v1, "work_spec_out_of_quota_policy"
+    const-string v2, "work_spec_out_of_quota_policy"
 
-    invoke-static {v3, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v26, v1
+    move/from16 v25, v2
 
     .line 29
-    const-string v1, "work_spec_period_count"
+    const-string v2, "work_spec_period_count"
 
-    invoke-static {v3, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v27, v1
+    move/from16 v26, v2
 
     .line 30
-    const-string v1, "work_spec_generation"
+    const-string v2, "work_spec_generation"
 
-    invoke-static {v3, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v28, v1
+    move/from16 v27, v2
 
     .line 31
-    const-string v1, "work_spec_required_network_type"
+    const-string v2, "work_spec_required_network_type"
 
-    invoke-static {v3, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v29, v1
+    move/from16 v28, v2
 
     .line 32
-    const-string v1, "work_spec_requires_charging"
+    const-string v2, "work_spec_requires_charging"
 
-    invoke-static {v3, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v30, v1
+    move/from16 v29, v2
 
     .line 33
-    const-string v1, "work_spec_requires_device_idle"
+    const-string v2, "work_spec_requires_device_idle"
 
-    invoke-static {v3, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v31, v1
+    move/from16 v30, v2
 
     .line 34
-    const-string v1, "work_spec_requires_battery_not_low"
+    const-string v2, "work_spec_requires_battery_not_low"
 
-    invoke-static {v3, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v32, v1
+    move/from16 v31, v2
 
     .line 35
-    const-string v1, "work_spec_requires_storage_not_low"
+    const-string v2, "work_spec_requires_storage_not_low"
 
-    invoke-static {v3, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v33, v1
+    move/from16 v32, v2
 
     .line 36
-    const-string v1, "work_spec_trigger_content_update_delay"
+    const-string v2, "work_spec_trigger_content_update_delay"
 
-    invoke-static {v3, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v34, v1
+    move/from16 v33, v2
 
     .line 37
-    const-string v1, "work_spec_trigger_max_content_delay"
+    const-string v2, "work_spec_trigger_max_content_delay"
 
-    invoke-static {v3, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v35, v1
+    move/from16 v34, v2
 
     .line 38
-    const-string v1, "work_spec_content_uri_triggers"
+    const-string v2, "work_spec_content_uri_triggers"
 
-    invoke-static {v3, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
+
+    move/from16 v35, v2
+
+    .line 39
+    new-instance v2, Ljava/util/ArrayList;
 
     move/from16 v36, v1
 
-    .line 39
-    new-instance v1, Ljava/util/ArrayList;
-
-    move/from16 v37, v4
-
     invoke-interface {v3}, Landroid/database/Cursor;->getCount()I
 
-    move-result v4
+    move-result v1
 
-    invoke-direct {v1, v4}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v2, v1}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 40
     :goto_0
     invoke-interface {v3}, Landroid/database/Cursor;->moveToNext()Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_e
+    if-eqz v1, :cond_e
 
     .line 41
-    invoke-interface {v3, v5}, Landroid/database/Cursor;->isNull(I)Z
+    invoke-interface {v3, v4}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_0
+    const/16 v37, 0x0
 
-    const/16 v39, 0x0
+    if-eqz v1, :cond_0
+
+    move-object/from16 v39, v37
 
     goto :goto_1
 
     .line 42
     :cond_0
-    invoke-interface {v3, v5}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {v3, v4}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    move-object/from16 v39, v4
+    move-object/from16 v39, v1
 
     .line 43
     :goto_1
-    invoke-interface {v3, v6}, Landroid/database/Cursor;->isNull(I)Z
+    invoke-interface {v3, v5}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_1
+    if-eqz v1, :cond_1
 
-    const/16 v40, 0x0
+    move-object/from16 v40, v37
 
     goto :goto_2
 
     .line 44
     :cond_1
-    invoke-interface {v3, v6}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {v3, v5}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    move-object/from16 v40, v4
+    move-object/from16 v40, v1
 
     .line 45
     :goto_2
-    invoke-interface {v3, v7}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {v3, v6}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-direct {v0, v4}, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__ExistingWorkPolicy_stringToEnum(Ljava/lang/String;)La35;
+    invoke-direct {v0, v1}, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__ExistingWorkPolicy_stringToEnum(Ljava/lang/String;)Lx55;
 
     move-result-object v41
 
     .line 46
-    invoke-interface {v3, v8}, Landroid/database/Cursor;->isNull(I)Z
+    invoke-interface {v3, v7}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_2
+    if-eqz v1, :cond_2
 
-    const/4 v4, 0x0
+    move-object/from16 v1, v37
 
     goto :goto_3
 
     .line 47
     :cond_2
-    invoke-interface {v3, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {v3, v7}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
     .line 48
     :goto_3
-    invoke-static {v4}, Lkjd;->w(Ljava/lang/String;)Ljava/util/HashSet;
+    invoke-static {v1}, Lwqd;->p(Ljava/lang/String;)Ljava/util/HashSet;
 
     move-result-object v43
 
     .line 49
-    invoke-interface {v3, v9}, Landroid/database/Cursor;->getLong(I)J
+    invoke-interface {v3, v8}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v44
 
     .line 50
-    invoke-interface {v3, v10}, Landroid/database/Cursor;->getInt(I)I
+    invoke-interface {v3, v9}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v46
 
     .line 51
-    invoke-interface {v3, v11}, Landroid/database/Cursor;->isNull(I)Z
+    invoke-interface {v3, v10}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_3
+    if-eqz v1, :cond_3
 
-    const/16 v48, 0x0
+    move-object/from16 v48, v37
 
     goto :goto_4
 
     .line 52
     :cond_3
-    invoke-interface {v3, v11}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {v3, v10}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    move-object/from16 v48, v4
+    move-object/from16 v48, v1
 
     .line 53
     :goto_4
-    invoke-interface {v3, v12}, Landroid/database/Cursor;->getInt(I)I
+    invoke-interface {v3, v11}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result v4
+    move-result v1
 
     .line 54
-    invoke-static {v4}, Lwx3;->t(I)Lctf;
+    invoke-static {v1}, Ll23;->H(I)Lq8g;
 
     move-result-object v49
 
     .line 55
-    invoke-interface {v3, v13}, Landroid/database/Cursor;->isNull(I)Z
+    invoke-interface {v3, v12}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_4
+    if-eqz v1, :cond_4
 
-    const/16 v50, 0x0
+    move-object/from16 v50, v37
 
     goto :goto_5
 
     .line 56
     :cond_4
-    invoke-interface {v3, v13}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {v3, v12}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    move-object/from16 v50, v4
+    move-object/from16 v50, v1
 
     .line 57
     :goto_5
-    invoke-interface {v3, v14}, Landroid/database/Cursor;->isNull(I)Z
+    invoke-interface {v3, v13}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_5
+    if-eqz v1, :cond_5
 
-    const/16 v51, 0x0
+    move-object/from16 v51, v37
 
     goto :goto_6
 
     .line 58
     :cond_5
-    invoke-interface {v3, v14}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {v3, v13}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    move-object/from16 v51, v4
+    move-object/from16 v51, v1
 
     .line 59
     :goto_6
-    invoke-interface {v3, v15}, Landroid/database/Cursor;->isNull(I)Z
+    invoke-interface {v3, v14}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_6
+    if-eqz v1, :cond_6
 
-    const/4 v4, 0x0
+    move-object/from16 v1, v37
 
     goto :goto_7
 
     .line 60
     :cond_6
-    invoke-interface {v3, v15}, Landroid/database/Cursor;->getBlob(I)[B
+    invoke-interface {v3, v14}, Landroid/database/Cursor;->getBlob(I)[B
 
-    move-result-object v4
+    move-result-object v1
 
     .line 61
     :goto_7
-    invoke-static {v4}, Lzy3;->a([B)Lzy3;
+    invoke-static {v1}, Lt24;->a([B)Lt24;
 
     move-result-object v52
 
     .line 62
-    invoke-interface {v3, v2}, Landroid/database/Cursor;->isNull(I)Z
+    invoke-interface {v3, v15}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_7
+    if-eqz v1, :cond_7
 
-    const/4 v4, 0x0
+    move-object/from16 v1, v37
 
     goto :goto_8
 
     .line 63
     :cond_7
-    invoke-interface {v3, v2}, Landroid/database/Cursor;->getBlob(I)[B
+    invoke-interface {v3, v15}, Landroid/database/Cursor;->getBlob(I)[B
 
-    move-result-object v4
+    move-result-object v1
 
     .line 64
     :goto_8
-    invoke-static {v4}, Lzy3;->a([B)Lzy3;
+    invoke-static {v1}, Lt24;->a([B)Lt24;
 
     move-result-object v53
 
-    move/from16 v4, v37
+    move/from16 v1, v36
 
     .line 65
-    invoke-interface {v3, v4}, Landroid/database/Cursor;->getLong(I)J
+    invoke-interface {v3, v1}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v54
 
-    move/from16 v0, v17
+    move/from16 v0, p1
 
     .line 66
     invoke-interface {v3, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v56
 
-    move/from16 v17, v0
+    move/from16 p1, v0
 
-    move/from16 v0, v18
+    move/from16 v0, v17
 
     .line 67
     invoke-interface {v3, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v58
 
-    move/from16 v18, v0
+    move/from16 v17, v0
 
-    move/from16 v0, v19
+    move/from16 v0, v18
 
     .line 68
     invoke-interface {v3, v0}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v61
 
-    move/from16 v19, v0
+    move/from16 v18, v0
 
-    move/from16 v0, v20
+    move/from16 v0, v19
 
     .line 69
     invoke-interface {v3, v0}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result v20
+    move-result v19
 
     .line 70
-    invoke-static/range {v20 .. v20}, Lwx3;->q(I)Lhe0;
+    invoke-static/range {v19 .. v19}, Ll23;->E(I)Lef0;
 
     move-result-object v62
 
-    move/from16 v20, v0
+    move/from16 v19, v0
 
-    move/from16 v0, v21
+    move/from16 v0, v20
 
     .line 71
     invoke-interface {v3, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v63
 
-    move/from16 v21, v0
+    move/from16 v20, v0
 
-    move/from16 v0, v22
+    move/from16 v0, v21
 
     .line 72
     invoke-interface {v3, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v65
 
-    move/from16 v22, v0
+    move/from16 v21, v0
 
-    move/from16 v0, v23
+    move/from16 v0, v22
 
     .line 73
     invoke-interface {v3, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v67
 
-    move/from16 v23, v0
+    move/from16 v22, v0
 
-    move/from16 v0, v24
+    move/from16 v0, v23
 
     .line 74
     invoke-interface {v3, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v69
 
-    move/from16 v24, v0
+    move/from16 v23, v0
 
-    move/from16 v0, v25
+    move/from16 v0, v24
 
     .line 75
     invoke-interface {v3, v0}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result v25
+    move-result v24
 
-    const/16 v37, 0x0
+    const/16 v36, 0x0
 
-    if-eqz v25, :cond_8
-
-    move/from16 v25, v0
-
-    move/from16 v0, v26
+    if-eqz v24, :cond_8
 
     const/16 v71, 0x1
 
-    goto :goto_9
+    :goto_9
+    move/from16 v24, v0
+
+    move/from16 v0, v25
+
+    goto :goto_a
 
     :cond_8
-    move/from16 v25, v0
+    move/from16 v71, v36
 
-    move/from16 v0, v26
-
-    move/from16 v71, v37
+    goto :goto_9
 
     .line 76
-    :goto_9
+    :goto_a
     invoke-interface {v3, v0}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result v26
+    move-result v25
 
     .line 77
-    invoke-static/range {v26 .. v26}, Lwx3;->s(I)Lvga;
+    invoke-static/range {v25 .. v25}, Ll23;->G(I)Lcla;
 
     move-result-object v72
 
-    move/from16 v26, v0
+    move/from16 v25, v0
 
-    move/from16 v0, v27
+    move/from16 v0, v26
 
     .line 78
     invoke-interface {v3, v0}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v73
 
-    move/from16 v27, v0
+    move/from16 v26, v0
 
-    move/from16 v0, v28
+    move/from16 v0, v27
 
     .line 79
     invoke-interface {v3, v0}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v74
 
-    move/from16 v28, v0
+    move/from16 v27, v0
 
-    move/from16 v0, v29
+    move/from16 v0, v28
 
     .line 80
     invoke-interface {v3, v0}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result v29
+    move-result v28
 
     .line 81
-    invoke-static/range {v29 .. v29}, Lwx3;->r(I)I
+    invoke-static/range {v28 .. v28}, Ll23;->F(I)I
 
     move-result v76
 
-    move/from16 v29, v0
+    move/from16 v28, v0
 
-    move/from16 v0, v30
+    move/from16 v0, v29
 
     .line 82
     invoke-interface {v3, v0}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result v30
+    move-result v29
 
-    if-eqz v30, :cond_9
-
-    move/from16 v30, v0
-
-    move/from16 v0, v31
+    if-eqz v29, :cond_9
 
     const/16 v77, 0x1
 
-    goto :goto_a
+    :goto_b
+    move/from16 v29, v0
+
+    move/from16 v0, v30
+
+    goto :goto_c
 
     :cond_9
+    move/from16 v77, v36
+
+    goto :goto_b
+
+    .line 83
+    :goto_c
+    invoke-interface {v3, v0}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v30
+
+    if-eqz v30, :cond_a
+
+    const/16 v78, 0x1
+
+    :goto_d
     move/from16 v30, v0
 
     move/from16 v0, v31
 
-    move/from16 v77, v37
+    goto :goto_e
 
-    .line 83
-    :goto_a
+    :cond_a
+    move/from16 v78, v36
+
+    goto :goto_d
+
+    .line 84
+    :goto_e
     invoke-interface {v3, v0}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v31
 
-    if-eqz v31, :cond_a
+    if-eqz v31, :cond_b
 
+    const/16 v79, 0x1
+
+    :goto_f
     move/from16 v31, v0
 
     move/from16 v0, v32
 
-    const/16 v78, 0x1
+    goto :goto_10
 
-    goto :goto_b
+    :cond_b
+    move/from16 v79, v36
 
-    :cond_a
-    move/from16 v31, v0
+    goto :goto_f
 
-    move/from16 v0, v32
-
-    move/from16 v78, v37
-
-    .line 84
-    :goto_b
+    .line 85
+    :goto_10
     invoke-interface {v3, v0}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v32
 
-    if-eqz v32, :cond_b
-
-    move/from16 v32, v0
-
-    move/from16 v0, v33
-
-    const/16 v79, 0x1
-
-    goto :goto_c
-
-    :cond_b
-    move/from16 v32, v0
-
-    move/from16 v0, v33
-
-    move/from16 v79, v37
-
-    .line 85
-    :goto_c
-    invoke-interface {v3, v0}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v33
-
-    if-eqz v33, :cond_c
-
-    move/from16 v33, v0
-
-    move/from16 v0, v34
+    if-eqz v32, :cond_c
 
     const/16 v80, 0x1
 
-    goto :goto_d
+    :goto_11
+    move/from16 v32, v0
+
+    move/from16 v0, v33
+
+    goto :goto_12
 
     :cond_c
-    move/from16 v33, v0
+    move/from16 v80, v36
 
-    move/from16 v0, v34
-
-    move/from16 v80, v37
+    goto :goto_11
 
     .line 86
-    :goto_d
+    :goto_12
     invoke-interface {v3, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v81
 
-    move/from16 v34, v0
+    move/from16 v33, v0
 
-    move/from16 v0, v35
+    move/from16 v0, v34
 
     .line 87
     invoke-interface {v3, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v83
 
-    move/from16 v35, v0
+    move/from16 v34, v0
 
-    move/from16 v0, v36
+    move/from16 v0, v35
 
     .line 88
     invoke-interface {v3, v0}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v36
+    move-result v35
 
-    if-eqz v36, :cond_d
+    if-eqz v35, :cond_d
 
-    const/16 v36, 0x0
-
-    goto :goto_e
+    goto :goto_13
 
     .line 89
     :cond_d
     invoke-interface {v3, v0}, Landroid/database/Cursor;->getBlob(I)[B
 
-    move-result-object v36
+    move-result-object v37
 
     .line 90
-    :goto_e
-    invoke-static/range {v36 .. v36}, Lwx3;->b([B)Ljava/util/LinkedHashSet;
+    :goto_13
+    invoke-static/range {v37 .. v37}, Ll23;->e([B)Ljava/util/LinkedHashSet;
 
     move-result-object v85
 
     .line 91
-    new-instance v60, Lif3;
+    new-instance v75, Lej3;
 
-    move-object/from16 v75, v60
-
-    invoke-direct/range {v75 .. v85}, Lif3;-><init>(IZZZZJJLjava/util/Set;)V
+    invoke-direct/range {v75 .. v85}, Lej3;-><init>(IZZZZJJLjava/util/Set;)V
 
     .line 92
-    new-instance v42, Lztf;
+    new-instance v47, Ll9g;
 
-    move-object/from16 v47, v42
+    move-object/from16 v60, v75
 
-    invoke-direct/range {v47 .. v74}, Lztf;-><init>(Ljava/lang/String;Lctf;Ljava/lang/String;Ljava/lang/String;Lzy3;Lzy3;JJJLif3;ILhe0;JJJJZLvga;II)V
-
-    move/from16 v36, v0
+    invoke-direct/range {v47 .. v74}, Ll9g;-><init>(Ljava/lang/String;Lq8g;Ljava/lang/String;Ljava/lang/String;Lt24;Lt24;JJJLej3;ILef0;JJJJZLcla;II)V
 
     .line 93
-    new-instance v0, Ljuf;
+    new-instance v38, Lu9g;
 
-    move-object/from16 v38, v0
+    move-object/from16 v42, v47
 
-    invoke-direct/range {v38 .. v46}, Ljuf;-><init>(Ljava/lang/String;Ljava/lang/String;La35;Lztf;Ljava/util/Set;JI)V
+    invoke-direct/range {v38 .. v46}, Lu9g;-><init>(Ljava/lang/String;Ljava/lang/String;Lx55;Ll9g;Ljava/util/Set;JI)V
+
+    move/from16 v35, v0
+
+    move-object/from16 v0, v38
 
     .line 94
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move-object/from16 v0, p0
 
-    move/from16 v37, v4
+    move/from16 v36, v1
 
     goto/16 :goto_0
 
     :catchall_0
     move-exception v0
 
-    goto :goto_f
+    goto :goto_14
 
     .line 95
     :cond_e
     invoke-interface {v3}, Landroid/database/Cursor;->close()V
 
     .line 96
-    invoke-virtual/range {v16 .. v16}, Lpec;->m()V
+    invoke-virtual/range {v16 .. v16}, Lakc;->o()V
 
-    return-object v1
+    return-object v2
 
     :catchall_1
     move-exception v0
 
-    move-object/from16 v16, v1
+    move-object/from16 v16, v2
 
     .line 97
-    :goto_f
+    :goto_14
     invoke-interface {v3}, Landroid/database/Cursor;->close()V
 
     .line 98
-    invoke-virtual/range {v16 .. v16}, Lpec;->m()V
+    invoke-virtual/range {v16 .. v16}, Lakc;->o()V
 
     .line 99
     throw v0
@@ -1533,21 +1522,21 @@
         value = {
             "(II)",
             "Ljava/util/List<",
-            "Ljuf;",
+            "Lu9g;",
             ">;"
         }
     .end annotation
 
     move-object/from16 v0, p0
 
+    const/4 v1, 0x2
+
     .line 100
-    const-string v1, "SELECT * FROM WorkerQueueItem WHERE state = ? ORDER BY time ASC LIMIT ?"
+    const-string v2, "SELECT * FROM WorkerQueueItem WHERE state = ? ORDER BY time ASC LIMIT ?"
 
-    const/4 v2, 0x2
+    invoke-static {v1, v2}, Lakc;->c(ILjava/lang/String;)Lakc;
 
-    invoke-static {v2, v1}, Lpec;->a(ILjava/lang/String;)Lpec;
-
-    move-result-object v1
+    move-result-object v2
 
     move/from16 v3, p2
 
@@ -1556,340 +1545,340 @@
     const/4 v5, 0x1
 
     .line 101
-    invoke-virtual {v1, v5, v3, v4}, Lpec;->j(IJ)V
+    invoke-virtual {v2, v5, v3, v4}, Lakc;->k(IJ)V
 
     move/from16 v3, p1
 
     int-to-long v3, v3
 
     .line 102
-    invoke-virtual {v1, v2, v3, v4}, Lpec;->j(IJ)V
+    invoke-virtual {v2, v1, v3, v4}, Lakc;->k(IJ)V
 
     .line 103
-    iget-object v2, v0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object v1, v0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {v2}, Laec;->b()V
+    invoke-virtual {v1}, Lkjc;->b()V
 
     .line 104
-    iget-object v2, v0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
-
-    const/4 v3, 0x0
+    iget-object v1, v0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
     .line 105
-    invoke-virtual {v2, v1, v3}, Laec;->o(Lf4e;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
+    invoke-virtual {v1, v2}, Lkjc;->n(Llce;)Landroid/database/Cursor;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 106
     :try_start_0
-    const-string v4, "uuid"
+    const-string v3, "uuid"
 
-    invoke-static {v2, v4}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v3}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v3
+
+    .line 107
+    const-string v4, "uniqueWorkName"
+
+    invoke-static {v1, v4}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v4
 
-    .line 107
-    const-string v6, "uniqueWorkName"
+    .line 108
+    const-string v6, "existingWorkPolicy"
 
-    invoke-static {v2, v6}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v6}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v6
 
-    .line 108
-    const-string v7, "existingWorkPolicy"
+    .line 109
+    const-string v7, "tags"
 
-    invoke-static {v2, v7}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v7}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v7
 
-    .line 109
-    const-string v8, "tags"
+    .line 110
+    const-string v8, "time"
 
-    invoke-static {v2, v8}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v8}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v8
 
-    .line 110
-    const-string v9, "time"
+    .line 111
+    const-string v9, "state"
 
-    invoke-static {v2, v9}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v9}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v9
 
-    .line 111
-    const-string v10, "state"
+    .line 112
+    const-string v10, "work_spec_id"
 
-    invoke-static {v2, v10}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v10}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v10
 
-    .line 112
-    const-string v11, "work_spec_id"
+    .line 113
+    const-string v11, "work_spec_state"
 
-    invoke-static {v2, v11}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v11}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v11
 
-    .line 113
-    const-string v12, "work_spec_state"
+    .line 114
+    const-string v12, "work_spec_worker_class_name"
 
-    invoke-static {v2, v12}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v12}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v12
 
-    .line 114
-    const-string v13, "work_spec_worker_class_name"
+    .line 115
+    const-string v13, "work_spec_input_merger_class_name"
 
-    invoke-static {v2, v13}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v13}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v13
 
-    .line 115
-    const-string v14, "work_spec_input_merger_class_name"
+    .line 116
+    const-string v14, "work_spec_input"
 
-    invoke-static {v2, v14}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v14}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v14
 
-    .line 116
-    const-string v15, "work_spec_input"
+    .line 117
+    const-string v15, "work_spec_output"
 
-    invoke-static {v2, v15}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v15}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v15
-
-    .line 117
-    const-string v3, "work_spec_output"
-
-    invoke-static {v2, v3}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
-
-    move-result v3
 
     .line 118
     const-string v5, "work_spec_initial_delay"
 
-    invoke-static {v2, v5}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v5}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
     move-result v5
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    move-object/from16 v16, v1
+    move-object/from16 v16, v2
 
     .line 119
     :try_start_1
-    const-string v1, "work_spec_interval_duration"
+    const-string v2, "work_spec_interval_duration"
 
-    invoke-static {v2, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v17, v1
+    move/from16 p1, v2
 
     .line 120
-    const-string v1, "work_spec_flex_duration"
+    const-string v2, "work_spec_flex_duration"
 
-    invoke-static {v2, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v18, v1
+    move/from16 v17, v2
 
     .line 121
-    const-string v1, "work_spec_run_attempt_count"
+    const-string v2, "work_spec_run_attempt_count"
 
-    invoke-static {v2, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v19, v1
+    move/from16 v18, v2
 
     .line 122
-    const-string v1, "work_spec_backoff_policy"
+    const-string v2, "work_spec_backoff_policy"
 
-    invoke-static {v2, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v20, v1
+    move/from16 v19, v2
 
     .line 123
-    const-string v1, "work_spec_backoff_delay_duration"
+    const-string v2, "work_spec_backoff_delay_duration"
 
-    invoke-static {v2, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v21, v1
+    move/from16 v20, v2
 
     .line 124
-    const-string v1, "work_spec_last_enqueue_time"
+    const-string v2, "work_spec_last_enqueue_time"
 
-    invoke-static {v2, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v22, v1
+    move/from16 v21, v2
 
     .line 125
-    const-string v1, "work_spec_minimum_retention_duration"
+    const-string v2, "work_spec_minimum_retention_duration"
 
-    invoke-static {v2, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v23, v1
+    move/from16 v22, v2
 
     .line 126
-    const-string v1, "work_spec_schedule_requested_at"
+    const-string v2, "work_spec_schedule_requested_at"
 
-    invoke-static {v2, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v24, v1
+    move/from16 v23, v2
 
     .line 127
-    const-string v1, "work_spec_run_in_foreground"
+    const-string v2, "work_spec_run_in_foreground"
 
-    invoke-static {v2, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v25, v1
+    move/from16 v24, v2
 
     .line 128
-    const-string v1, "work_spec_out_of_quota_policy"
+    const-string v2, "work_spec_out_of_quota_policy"
 
-    invoke-static {v2, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v26, v1
+    move/from16 v25, v2
 
     .line 129
-    const-string v1, "work_spec_period_count"
+    const-string v2, "work_spec_period_count"
 
-    invoke-static {v2, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v27, v1
+    move/from16 v26, v2
 
     .line 130
-    const-string v1, "work_spec_generation"
+    const-string v2, "work_spec_generation"
 
-    invoke-static {v2, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v28, v1
+    move/from16 v27, v2
 
     .line 131
-    const-string v1, "work_spec_required_network_type"
+    const-string v2, "work_spec_required_network_type"
 
-    invoke-static {v2, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v29, v1
+    move/from16 v28, v2
 
     .line 132
-    const-string v1, "work_spec_requires_charging"
+    const-string v2, "work_spec_requires_charging"
 
-    invoke-static {v2, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v30, v1
+    move/from16 v29, v2
 
     .line 133
-    const-string v1, "work_spec_requires_device_idle"
+    const-string v2, "work_spec_requires_device_idle"
 
-    invoke-static {v2, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v31, v1
+    move/from16 v30, v2
 
     .line 134
-    const-string v1, "work_spec_requires_battery_not_low"
+    const-string v2, "work_spec_requires_battery_not_low"
 
-    invoke-static {v2, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v32, v1
+    move/from16 v31, v2
 
     .line 135
-    const-string v1, "work_spec_requires_storage_not_low"
+    const-string v2, "work_spec_requires_storage_not_low"
 
-    invoke-static {v2, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v33, v1
+    move/from16 v32, v2
 
     .line 136
-    const-string v1, "work_spec_trigger_content_update_delay"
+    const-string v2, "work_spec_trigger_content_update_delay"
 
-    invoke-static {v2, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v34, v1
+    move/from16 v33, v2
 
     .line 137
-    const-string v1, "work_spec_trigger_max_content_delay"
+    const-string v2, "work_spec_trigger_max_content_delay"
 
-    invoke-static {v2, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v35, v1
+    move/from16 v34, v2
 
     .line 138
-    const-string v1, "work_spec_content_uri_triggers"
+    const-string v2, "work_spec_content_uri_triggers"
 
-    invoke-static {v2, v1}, Lgp0;->o(Landroid/database/Cursor;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lgad;->B(Landroid/database/Cursor;Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    move/from16 v36, v1
+    move/from16 v35, v2
 
     .line 139
-    new-instance v1, Ljava/util/ArrayList;
+    new-instance v2, Ljava/util/ArrayList;
 
-    move/from16 v37, v5
+    move/from16 v36, v5
 
-    invoke-interface {v2}, Landroid/database/Cursor;->getCount()I
+    invoke-interface {v1}, Landroid/database/Cursor;->getCount()I
 
     move-result v5
 
-    invoke-direct {v1, v5}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v2, v5}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 140
     :goto_0
-    invoke-interface {v2}, Landroid/database/Cursor;->moveToNext()Z
+    invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v5
 
     if-eqz v5, :cond_e
 
     .line 141
-    invoke-interface {v2, v4}, Landroid/database/Cursor;->isNull(I)Z
+    invoke-interface {v1, v3}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v5
 
+    const/16 v37, 0x0
+
     if-eqz v5, :cond_0
 
-    const/16 v39, 0x0
+    move-object/from16 v39, v37
 
     goto :goto_1
 
     .line 142
     :cond_0
-    invoke-interface {v2, v4}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {v1, v3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
@@ -1897,19 +1886,19 @@
 
     .line 143
     :goto_1
-    invoke-interface {v2, v6}, Landroid/database/Cursor;->isNull(I)Z
+    invoke-interface {v1, v4}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v5
 
     if-eqz v5, :cond_1
 
-    const/16 v40, 0x0
+    move-object/from16 v40, v37
 
     goto :goto_2
 
     .line 144
     :cond_1
-    invoke-interface {v2, v6}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {v1, v4}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
@@ -1917,61 +1906,61 @@
 
     .line 145
     :goto_2
-    invoke-interface {v2, v7}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {v1, v6}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-direct {v0, v5}, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__ExistingWorkPolicy_stringToEnum(Ljava/lang/String;)La35;
+    invoke-direct {v0, v5}, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__ExistingWorkPolicy_stringToEnum(Ljava/lang/String;)Lx55;
 
     move-result-object v41
 
     .line 146
-    invoke-interface {v2, v8}, Landroid/database/Cursor;->isNull(I)Z
+    invoke-interface {v1, v7}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v5
 
     if-eqz v5, :cond_2
 
-    const/4 v5, 0x0
+    move-object/from16 v5, v37
 
     goto :goto_3
 
     .line 147
     :cond_2
-    invoke-interface {v2, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {v1, v7}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
     .line 148
     :goto_3
-    invoke-static {v5}, Lkjd;->w(Ljava/lang/String;)Ljava/util/HashSet;
+    invoke-static {v5}, Lwqd;->p(Ljava/lang/String;)Ljava/util/HashSet;
 
     move-result-object v43
 
     .line 149
-    invoke-interface {v2, v9}, Landroid/database/Cursor;->getLong(I)J
+    invoke-interface {v1, v8}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v44
 
     .line 150
-    invoke-interface {v2, v10}, Landroid/database/Cursor;->getInt(I)I
+    invoke-interface {v1, v9}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v46
 
     .line 151
-    invoke-interface {v2, v11}, Landroid/database/Cursor;->isNull(I)Z
+    invoke-interface {v1, v10}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v5
 
     if-eqz v5, :cond_3
 
-    const/16 v48, 0x0
+    move-object/from16 v48, v37
 
     goto :goto_4
 
     .line 152
     :cond_3
-    invoke-interface {v2, v11}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {v1, v10}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
@@ -1979,29 +1968,29 @@
 
     .line 153
     :goto_4
-    invoke-interface {v2, v12}, Landroid/database/Cursor;->getInt(I)I
+    invoke-interface {v1, v11}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v5
 
     .line 154
-    invoke-static {v5}, Lwx3;->t(I)Lctf;
+    invoke-static {v5}, Ll23;->H(I)Lq8g;
 
     move-result-object v49
 
     .line 155
-    invoke-interface {v2, v13}, Landroid/database/Cursor;->isNull(I)Z
+    invoke-interface {v1, v12}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v5
 
     if-eqz v5, :cond_4
 
-    const/16 v50, 0x0
+    move-object/from16 v50, v37
 
     goto :goto_5
 
     .line 156
     :cond_4
-    invoke-interface {v2, v13}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {v1, v12}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
@@ -2009,19 +1998,19 @@
 
     .line 157
     :goto_5
-    invoke-interface {v2, v14}, Landroid/database/Cursor;->isNull(I)Z
+    invoke-interface {v1, v13}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v5
 
     if-eqz v5, :cond_5
 
-    const/16 v51, 0x0
+    move-object/from16 v51, v37
 
     goto :goto_6
 
     .line 158
     :cond_5
-    invoke-interface {v2, v14}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    invoke-interface {v1, v13}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
@@ -2029,407 +2018,400 @@
 
     .line 159
     :goto_6
-    invoke-interface {v2, v15}, Landroid/database/Cursor;->isNull(I)Z
+    invoke-interface {v1, v14}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v5
 
     if-eqz v5, :cond_6
 
-    const/4 v5, 0x0
+    move-object/from16 v5, v37
 
     goto :goto_7
 
     .line 160
     :cond_6
-    invoke-interface {v2, v15}, Landroid/database/Cursor;->getBlob(I)[B
+    invoke-interface {v1, v14}, Landroid/database/Cursor;->getBlob(I)[B
 
     move-result-object v5
 
     .line 161
     :goto_7
-    invoke-static {v5}, Lzy3;->a([B)Lzy3;
+    invoke-static {v5}, Lt24;->a([B)Lt24;
 
     move-result-object v52
 
     .line 162
-    invoke-interface {v2, v3}, Landroid/database/Cursor;->isNull(I)Z
+    invoke-interface {v1, v15}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v5
 
     if-eqz v5, :cond_7
 
-    const/4 v5, 0x0
+    move-object/from16 v5, v37
 
     goto :goto_8
 
     .line 163
     :cond_7
-    invoke-interface {v2, v3}, Landroid/database/Cursor;->getBlob(I)[B
+    invoke-interface {v1, v15}, Landroid/database/Cursor;->getBlob(I)[B
 
     move-result-object v5
 
     .line 164
     :goto_8
-    invoke-static {v5}, Lzy3;->a([B)Lzy3;
+    invoke-static {v5}, Lt24;->a([B)Lt24;
 
     move-result-object v53
 
-    move/from16 v5, v37
+    move/from16 v5, v36
 
     .line 165
-    invoke-interface {v2, v5}, Landroid/database/Cursor;->getLong(I)J
+    invoke-interface {v1, v5}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v54
 
-    move/from16 v0, v17
+    move/from16 v0, p1
 
     .line 166
-    invoke-interface {v2, v0}, Landroid/database/Cursor;->getLong(I)J
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v56
+
+    move/from16 p1, v0
+
+    move/from16 v0, v17
+
+    .line 167
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v58
 
     move/from16 v17, v0
 
     move/from16 v0, v18
 
-    .line 167
-    invoke-interface {v2, v0}, Landroid/database/Cursor;->getLong(I)J
+    .line 168
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result-wide v58
+    move-result v61
 
     move/from16 v18, v0
 
     move/from16 v0, v19
 
-    .line 168
-    invoke-interface {v2, v0}, Landroid/database/Cursor;->getInt(I)I
+    .line 169
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result v61
+    move-result v19
+
+    .line 170
+    invoke-static/range {v19 .. v19}, Ll23;->E(I)Lef0;
+
+    move-result-object v62
 
     move/from16 v19, v0
 
     move/from16 v0, v20
 
-    .line 169
-    invoke-interface {v2, v0}, Landroid/database/Cursor;->getInt(I)I
+    .line 171
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getLong(I)J
 
-    move-result v20
-
-    .line 170
-    invoke-static/range {v20 .. v20}, Lwx3;->q(I)Lhe0;
-
-    move-result-object v62
+    move-result-wide v63
 
     move/from16 v20, v0
 
     move/from16 v0, v21
 
-    .line 171
-    invoke-interface {v2, v0}, Landroid/database/Cursor;->getLong(I)J
+    .line 172
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getLong(I)J
 
-    move-result-wide v63
+    move-result-wide v65
 
     move/from16 v21, v0
 
     move/from16 v0, v22
 
-    .line 172
-    invoke-interface {v2, v0}, Landroid/database/Cursor;->getLong(I)J
+    .line 173
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getLong(I)J
 
-    move-result-wide v65
+    move-result-wide v67
 
     move/from16 v22, v0
 
     move/from16 v0, v23
 
-    .line 173
-    invoke-interface {v2, v0}, Landroid/database/Cursor;->getLong(I)J
+    .line 174
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getLong(I)J
 
-    move-result-wide v67
+    move-result-wide v69
 
     move/from16 v23, v0
 
     move/from16 v0, v24
 
-    .line 174
-    invoke-interface {v2, v0}, Landroid/database/Cursor;->getLong(I)J
+    .line 175
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result-wide v69
+    move-result v24
 
+    const/16 v36, 0x0
+
+    if-eqz v24, :cond_8
+
+    const/16 v71, 0x1
+
+    :goto_9
     move/from16 v24, v0
 
     move/from16 v0, v25
 
-    .line 175
-    invoke-interface {v2, v0}, Landroid/database/Cursor;->getInt(I)I
+    goto :goto_a
 
-    move-result v25
-
-    const/16 v37, 0x0
-
-    if-eqz v25, :cond_8
-
-    move/from16 v25, v0
-
-    move/from16 v0, v26
-
-    const/16 v71, 0x1
+    :cond_8
+    move/from16 v71, v36
 
     goto :goto_9
 
-    :cond_8
+    .line 176
+    :goto_a
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v25
+
+    .line 177
+    invoke-static/range {v25 .. v25}, Ll23;->G(I)Lcla;
+
+    move-result-object v72
+
     move/from16 v25, v0
 
     move/from16 v0, v26
 
-    move/from16 v71, v37
+    .line 178
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getInt(I)I
 
-    .line 176
-    :goto_9
-    invoke-interface {v2, v0}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v26
-
-    .line 177
-    invoke-static/range {v26 .. v26}, Lwx3;->s(I)Lvga;
-
-    move-result-object v72
+    move-result v73
 
     move/from16 v26, v0
 
     move/from16 v0, v27
 
-    .line 178
-    invoke-interface {v2, v0}, Landroid/database/Cursor;->getInt(I)I
+    .line 179
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result v73
+    move-result v74
 
     move/from16 v27, v0
 
     move/from16 v0, v28
 
-    .line 179
-    invoke-interface {v2, v0}, Landroid/database/Cursor;->getInt(I)I
+    .line 180
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result v74
+    move-result v28
+
+    .line 181
+    invoke-static/range {v28 .. v28}, Ll23;->F(I)I
+
+    move-result v76
 
     move/from16 v28, v0
 
     move/from16 v0, v29
 
-    .line 180
-    invoke-interface {v2, v0}, Landroid/database/Cursor;->getInt(I)I
+    .line 182
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v29
 
-    .line 181
-    invoke-static/range {v29 .. v29}, Lwx3;->r(I)I
+    if-eqz v29, :cond_9
 
-    move-result v76
+    const/16 v77, 0x1
 
+    :goto_b
     move/from16 v29, v0
 
     move/from16 v0, v30
 
-    .line 182
-    invoke-interface {v2, v0}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v30
-
-    if-eqz v30, :cond_9
-
-    move/from16 v30, v0
-
-    move/from16 v0, v31
-
-    const/16 v77, 0x1
-
-    goto :goto_a
+    goto :goto_c
 
     :cond_9
-    move/from16 v30, v0
-
-    move/from16 v0, v31
-
-    move/from16 v77, v37
-
-    .line 183
-    :goto_a
-    invoke-interface {v2, v0}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v31
-
-    if-eqz v31, :cond_a
-
-    move/from16 v31, v0
-
-    move/from16 v0, v32
-
-    const/16 v78, 0x1
+    move/from16 v77, v36
 
     goto :goto_b
 
+    .line 183
+    :goto_c
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v30
+
+    if-eqz v30, :cond_a
+
+    const/16 v78, 0x1
+
+    :goto_d
+    move/from16 v30, v0
+
+    move/from16 v0, v31
+
+    goto :goto_e
+
     :cond_a
+    move/from16 v78, v36
+
+    goto :goto_d
+
+    .line 184
+    :goto_e
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v31
+
+    if-eqz v31, :cond_b
+
+    const/16 v79, 0x1
+
+    :goto_f
     move/from16 v31, v0
 
     move/from16 v0, v32
 
-    move/from16 v78, v37
+    goto :goto_10
 
-    .line 184
-    :goto_b
-    invoke-interface {v2, v0}, Landroid/database/Cursor;->getInt(I)I
+    :cond_b
+    move/from16 v79, v36
+
+    goto :goto_f
+
+    .line 185
+    :goto_10
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v32
 
-    if-eqz v32, :cond_b
-
-    move/from16 v32, v0
-
-    move/from16 v0, v33
-
-    const/16 v79, 0x1
-
-    goto :goto_c
-
-    :cond_b
-    move/from16 v32, v0
-
-    move/from16 v0, v33
-
-    move/from16 v79, v37
-
-    .line 185
-    :goto_c
-    invoke-interface {v2, v0}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v33
-
-    if-eqz v33, :cond_c
-
-    move/from16 v33, v0
-
-    move/from16 v0, v34
+    if-eqz v32, :cond_c
 
     const/16 v80, 0x1
 
-    goto :goto_d
+    :goto_11
+    move/from16 v32, v0
+
+    move/from16 v0, v33
+
+    goto :goto_12
 
     :cond_c
+    move/from16 v80, v36
+
+    goto :goto_11
+
+    .line 186
+    :goto_12
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v81
+
     move/from16 v33, v0
 
     move/from16 v0, v34
 
-    move/from16 v80, v37
+    .line 187
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getLong(I)J
 
-    .line 186
-    :goto_d
-    invoke-interface {v2, v0}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v81
+    move-result-wide v83
 
     move/from16 v34, v0
 
     move/from16 v0, v35
 
-    .line 187
-    invoke-interface {v2, v0}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v83
-
-    move/from16 v35, v0
-
-    move/from16 v0, v36
-
     .line 188
-    invoke-interface {v2, v0}, Landroid/database/Cursor;->isNull(I)Z
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->isNull(I)Z
 
-    move-result v36
+    move-result v35
 
-    if-eqz v36, :cond_d
+    if-eqz v35, :cond_d
 
-    const/16 v36, 0x0
-
-    goto :goto_e
+    goto :goto_13
 
     .line 189
     :cond_d
-    invoke-interface {v2, v0}, Landroid/database/Cursor;->getBlob(I)[B
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getBlob(I)[B
 
-    move-result-object v36
+    move-result-object v37
 
     .line 190
-    :goto_e
-    invoke-static/range {v36 .. v36}, Lwx3;->b([B)Ljava/util/LinkedHashSet;
+    :goto_13
+    invoke-static/range {v37 .. v37}, Ll23;->e([B)Ljava/util/LinkedHashSet;
 
     move-result-object v85
 
     .line 191
-    new-instance v60, Lif3;
+    new-instance v75, Lej3;
 
-    move-object/from16 v75, v60
-
-    invoke-direct/range {v75 .. v85}, Lif3;-><init>(IZZZZJJLjava/util/Set;)V
+    invoke-direct/range {v75 .. v85}, Lej3;-><init>(IZZZZJJLjava/util/Set;)V
 
     .line 192
-    new-instance v42, Lztf;
+    new-instance v47, Ll9g;
 
-    move-object/from16 v47, v42
+    move-object/from16 v60, v75
 
-    invoke-direct/range {v47 .. v74}, Lztf;-><init>(Ljava/lang/String;Lctf;Ljava/lang/String;Ljava/lang/String;Lzy3;Lzy3;JJJLif3;ILhe0;JJJJZLvga;II)V
-
-    move/from16 v36, v0
+    invoke-direct/range {v47 .. v74}, Ll9g;-><init>(Ljava/lang/String;Lq8g;Ljava/lang/String;Ljava/lang/String;Lt24;Lt24;JJJLej3;ILef0;JJJJZLcla;II)V
 
     .line 193
-    new-instance v0, Ljuf;
+    new-instance v38, Lu9g;
 
-    move-object/from16 v38, v0
+    move-object/from16 v42, v47
 
-    invoke-direct/range {v38 .. v46}, Ljuf;-><init>(Ljava/lang/String;Ljava/lang/String;La35;Lztf;Ljava/util/Set;JI)V
+    invoke-direct/range {v38 .. v46}, Lu9g;-><init>(Ljava/lang/String;Ljava/lang/String;Lx55;Ll9g;Ljava/util/Set;JI)V
+
+    move/from16 v35, v0
+
+    move-object/from16 v0, v38
 
     .line 194
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move-object/from16 v0, p0
 
-    move/from16 v37, v5
+    move/from16 v36, v5
 
     goto/16 :goto_0
 
     :catchall_0
     move-exception v0
 
-    goto :goto_f
+    goto :goto_14
 
     .line 195
     :cond_e
-    invoke-interface {v2}, Landroid/database/Cursor;->close()V
+    invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
     .line 196
-    invoke-virtual/range {v16 .. v16}, Lpec;->m()V
+    invoke-virtual/range {v16 .. v16}, Lakc;->o()V
 
-    return-object v1
+    return-object v2
 
     :catchall_1
     move-exception v0
 
-    move-object/from16 v16, v1
+    move-object/from16 v16, v2
 
     .line 197
-    :goto_f
-    invoke-interface {v2}, Landroid/database/Cursor;->close()V
+    :goto_14
+    invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
     .line 198
-    invoke-virtual/range {v16 .. v16}, Lpec;->m()V
+    invoke-virtual/range {v16 .. v16}, Lakc;->o()V
 
     .line 199
     throw v0
 .end method
 
 .method public updateState(ILjava/util/List;)V
-    .locals 3
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -2439,9 +2421,9 @@
         }
     .end annotation
 
-    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object v0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {v0}, Laec;->b()V
+    invoke-virtual {v0}, Lkjc;->b()V
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -2455,7 +2437,7 @@
 
     move-result v1
 
-    invoke-static {v0, v1}, La06;->e(Ljava/lang/StringBuilder;I)V
+    invoke-static {v0, v1}, Lkhg;->c(Ljava/lang/StringBuilder;I)V
 
     const-string v1, ")"
 
@@ -2465,17 +2447,17 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object v1, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {v1, v0}, Laec;->d(Ljava/lang/String;)Lyz5;
+    invoke-virtual {v1, v0}, Lkjc;->d(Ljava/lang/String;)Lmce;
 
     move-result-object v0
 
-    int-to-long v1, p1
+    const/4 v1, 0x1
 
-    const/4 p1, 0x1
+    int-to-long v2, p1
 
-    invoke-interface {v0, p1, v1, v2}, Le4e;->j(IJ)V
+    invoke-interface {v0, v1, v2, v3}, Lkce;->k(IJ)V
 
     invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -2498,12 +2480,12 @@
 
     if-nez v1, :cond_0
 
-    invoke-interface {v0, p2}, Le4e;->W(I)V
+    invoke-interface {v0, p2}, Lkce;->Z(I)V
 
     goto :goto_1
 
     :cond_0
-    invoke-interface {v0, p2, v1}, Le4e;->f(ILjava/lang/String;)V
+    invoke-interface {v0, p2, v1}, Lkce;->f(ILjava/lang/String;)V
 
     :goto_1
     add-int/lit8 p2, p2, 0x1
@@ -2511,31 +2493,31 @@
     goto :goto_0
 
     :cond_1
-    iget-object p1, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p1, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {p1}, Laec;->c()V
+    invoke-virtual {p1}, Lkjc;->c()V
 
     :try_start_0
-    invoke-virtual {v0}, Lyz5;->n()I
+    invoke-interface {v0}, Lmce;->C()I
 
-    iget-object p1, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p1, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {p1}, Laec;->r()V
+    invoke-virtual {p1}, Lkjc;->q()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {p0}, Laec;->l()V
+    invoke-virtual {p0}, Lkjc;->k()V
 
     return-void
 
     :catchall_0
     move-exception p1
 
-    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Laec;
+    iget-object p0, p0, Landroidx/work/impl/model/WorkersQueueDao_Impl;->__db:Lkjc;
 
-    invoke-virtual {p0}, Laec;->l()V
+    invoke-virtual {p0}, Lkjc;->k()V
 
     throw p1
 .end method

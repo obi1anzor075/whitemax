@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ltv0;
+.implements Luw0;
 
 
 # instance fields
-.field public final I1:Lkp;
+.field public final A1:Lzo;
 
-.field public J1:Ljava/lang/String;
+.field public B1:Ljava/lang/String;
 
-.field public K1:[Ljava/lang/String;
+.field public C1:[Ljava/lang/String;
 
-.field public L1:Luv0;
+.field public D1:Lvw0;
 
 
 # direct methods
@@ -22,29 +22,106 @@
 
     invoke-direct {p0}, Lru/ok/messages/settings/FrgBaseSettings;-><init>()V
 
-    sget-object v0, Lvl;->o:Lvl;
+    sget-object v0, Lol;->o:Lol;
 
-    invoke-virtual {v0}, Lvl;->a()Lj2b;
+    invoke-virtual {v0}, Lol;->a()La5b;
 
     move-result-object v0
 
-    iget-object v0, v0, Lj2b;->c:Lkp;
+    iget-object v0, v0, La5b;->c:Lzo;
 
-    iput-object v0, p0, Lru/ok/messages/settings/caching/FrgCachingSettings;->I1:Lkp;
+    iput-object v0, p0, Lru/ok/messages/settings/caching/FrgCachingSettings;->A1:Lzo;
 
     const-string v0, ""
 
-    iput-object v0, p0, Lru/ok/messages/settings/caching/FrgCachingSettings;->J1:Ljava/lang/String;
+    iput-object v0, p0, Lru/ok/messages/settings/caching/FrgCachingSettings;->B1:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
+.method public final C()V
+    .locals 2
+
+    iget-object v0, p0, Landroidx/fragment/app/a;->B0:Landroidx/fragment/app/c;
+
+    const-string v1, "ru.ok.messages.views.dialogs.ProgressDialog"
+
+    invoke-virtual {v0, v1}, Landroidx/fragment/app/c;->E(Ljava/lang/String;)Landroidx/fragment/app/a;
+
+    move-result-object v0
+
+    instance-of v1, v0, Lru/ok/messages/views/dialogs/ProgressDialog;
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Lru/ok/messages/views/dialogs/ProgressDialog;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    return-void
+
+    :cond_1
+    sget v0, Lnnc;->g1:I
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lru/ok/messages/views/fragments/base/FrgBase;->d1(IZ)Lru/ok/messages/views/dialogs/ProgressDialog;
+
+    return-void
+.end method
+
+.method public final F()V
+    .locals 2
+
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->I0()Landroid/content/Context;
+
+    move-result-object v0
+
+    sget v1, Lnnc;->f1:I
+
+    invoke-virtual {p0, v1}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    const/4 v1, 0x0
+
+    invoke-static {v1, v0, p0}, Lus;->F(ILandroid/content/Context;Ljava/lang/String;)V
+
+    return-void
+.end method
+
 .method public final G()V
     .locals 2
 
-    iget-object v0, p0, Landroidx/fragment/app/a;->J0:Landroidx/fragment/app/c;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->I0()Landroid/content/Context;
+
+    move-result-object v0
+
+    sget v1, Lnnc;->G:I
+
+    invoke-virtual {p0, v1}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    const/4 v1, 0x0
+
+    invoke-static {v1, v0, p0}, Lus;->F(ILandroid/content/Context;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public final N()V
+    .locals 2
+
+    iget-object v0, p0, Landroidx/fragment/app/a;->B0:Landroidx/fragment/app/c;
 
     const-string v1, "ru.ok.messages.views.dialogs.ProgressDialog"
 
@@ -69,124 +146,25 @@
     return-void
 
     :cond_1
-    sget v0, Lcic;->d1:I
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v0, v1}, Lru/ok/messages/views/fragments/base/FrgBase;->q1(IZ)Lru/ok/messages/views/dialogs/ProgressDialog;
+    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->e1()Lru/ok/messages/views/dialogs/ProgressDialog;
 
     return-void
 .end method
 
-.method public final J()V
-    .locals 2
+.method public final T0()Ljava/lang/String;
+    .locals 0
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->V0()Landroid/content/Context;
+    const-string p0, "SETTINGS_MEDIA_CACHING"
 
-    move-result-object v0
-
-    sget v1, Lcic;->c1:I
-
-    invoke-virtual {p0, v1}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
-
-    move-result-object p0
-
-    const/4 v1, 0x0
-
-    invoke-static {v1, v0, p0}, La06;->H(ILandroid/content/Context;Ljava/lang/String;)V
-
-    return-void
+    return-object p0
 .end method
 
-.method public final L()V
-    .locals 2
-
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->V0()Landroid/content/Context;
-
-    move-result-object v0
-
-    sget v1, Lcic;->D:I
-
-    invoke-virtual {p0, v1}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
-
-    move-result-object p0
-
-    const/4 v1, 0x0
-
-    invoke-static {v1, v0, p0}, La06;->H(ILandroid/content/Context;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final L0()V
-    .locals 2
-
-    invoke-super {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->L0()V
-
-    iget-object v0, p0, Lru/ok/messages/settings/caching/FrgCachingSettings;->L1:Luv0;
-
-    invoke-virtual {v0}, Luv0;->b()V
-
-    iget-object p0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->t1:Lv2b;
-
-    iget-object p0, p0, Lv2b;->b:Ljava/lang/Object;
-
-    check-cast p0, Lk93;
-
-    check-cast p0, Lo2a;
-
-    invoke-virtual {p0}, Lo2a;->m()Lxg9;
-
-    move-result-object p0
-
-    sget-object v0, Lmnc;->x1:Lmnc;
-
-    sget-object v1, Leja;->e:Leja;
-
-    invoke-virtual {p0, v0, v1}, Lxg9;->f(Lmnc;Leja;)V
-
-    return-void
-.end method
-
-.method public final U()V
-    .locals 2
-
-    iget-object v0, p0, Landroidx/fragment/app/a;->J0:Landroidx/fragment/app/c;
-
-    const-string v1, "ru.ok.messages.views.dialogs.ProgressDialog"
-
-    invoke-virtual {v0, v1}, Landroidx/fragment/app/c;->E(Ljava/lang/String;)Landroidx/fragment/app/a;
-
-    move-result-object v0
-
-    instance-of v1, v0, Lru/ok/messages/views/dialogs/ProgressDialog;
-
-    if-eqz v1, :cond_0
-
-    check-cast v0, Lru/ok/messages/views/dialogs/ProgressDialog;
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    return-void
-
-    :cond_1
-    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->r1()Lru/ok/messages/views/dialogs/ProgressDialog;
-
-    return-void
-.end method
-
-.method public final e(Ljava/util/ArrayList;)V
+.method public final a(Ljava/util/ArrayList;)V
     .locals 5
 
     new-instance v0, Landroidx/recyclerview/widget/RecyclerView;
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->V0()Landroid/content/Context;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->I0()Landroid/content/Context;
 
     move-result-object v1
 
@@ -196,8 +174,6 @@
 
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->e0()Landroid/content/Context;
-
     const/4 v2, 0x1
 
     const/4 v3, 0x0
@@ -206,104 +182,81 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/a;)V
 
-    new-instance v1, Lhz2;
+    new-instance v1, Lj13;
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->e0()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2, p1}, Lhz2;-><init>(Landroid/content/Context;Ljava/util/ArrayList;)V
-
-    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Lf6c;)V
-
-    new-instance v1, Lov7;
-
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->V0()Landroid/content/Context;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->S()Landroid/content/Context;
 
     move-result-object v2
 
-    invoke-direct {v1, v2}, Lov7;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v2, p1}, Lj13;-><init>(Landroid/content/Context;Ljava/util/ArrayList;)V
 
-    sget v2, Lcic;->g1:I
+    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Lgbc;)V
 
-    iget-object v3, v1, Ltc;->a:Lpc;
+    new-instance v1, Ln08;
 
-    iget-object v4, v3, Lpc;->a:Landroid/content/Context;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->I0()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2, v3}, Ln08;-><init>(Landroid/content/Context;I)V
+
+    sget v2, Lnnc;->j1:I
+
+    iget-object v3, v1, Lmc;->a:Lic;
+
+    iget-object v4, v3, Lic;->a:Landroid/view/ContextThemeWrapper;
 
     invoke-virtual {v4, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v2
 
-    iput-object v2, v3, Lpc;->d:Ljava/lang/CharSequence;
+    iput-object v2, v3, Lic;->d:Ljava/lang/CharSequence;
 
-    invoke-virtual {v1, v0}, Lov7;->f(Landroid/view/View;)Lov7;
+    invoke-virtual {v1, v0}, Ln08;->e(Landroid/view/View;)Ln08;
 
     move-result-object v0
 
-    sget v1, Lcic;->f1:I
+    sget v1, Lnnc;->i1:I
 
-    new-instance v2, Lx06;
+    new-instance v2, Lb56;
 
     const/4 v3, 0x2
 
-    invoke-direct {v2, p0, p1, v3}, Lx06;-><init>(Landroidx/fragment/app/a;Ljava/lang/Object;I)V
+    invoke-direct {v2, p0, p1, v3}, Lb56;-><init>(Landroidx/fragment/app/a;Ljava/lang/Object;I)V
 
-    invoke-virtual {v0, v1, v2}, Lov7;->d(ILandroid/content/DialogInterface$OnClickListener;)Lov7;
+    invoke-virtual {v0, v1, v2}, Ln08;->c(ILandroid/content/DialogInterface$OnClickListener;)Ln08;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Ltc;->a()Luc;
+    invoke-virtual {p0}, Lmc;->a()Lnc;
 
     return-void
 .end method
 
-.method public final g1()Ljava/lang/String;
-    .locals 0
-
-    const-string p0, "SETTINGS_MEDIA_CACHING"
-
-    return-object p0
-.end method
-
-.method public final l(Ljava/lang/String;)V
-    .locals 0
-
-    iput-object p1, p0, Lru/ok/messages/settings/caching/FrgCachingSettings;->J1:Ljava/lang/String;
-
-    iget-boolean p1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->s1:Z
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0}, Lru/ok/messages/settings/FrgBaseSettings;->w1()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final s1()Ljava/util/ArrayList;
+.method public final f1()Ljava/util/ArrayList;
     .locals 13
 
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    sget v1, Lyqb;->setting_caching_time:I
+    sget v1, Lpvb;->setting_caching_time:I
 
-    sget v2, Lcic;->Q0:I
+    sget v2, Lnnc;->T0:I
 
-    invoke-virtual {p0, v2}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, v2}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object v2
 
-    iget-object v3, p0, Lru/ok/messages/settings/caching/FrgCachingSettings;->I1:Lkp;
+    iget-object v3, p0, Lru/ok/messages/settings/caching/FrgCachingSettings;->A1:Lzo;
 
-    iget-object v4, v3, Lf3;->g:Lx97;
+    iget-object v4, v3, Le3;->g:Lme7;
 
     const-string v5, "app.media.caching.time"
 
     const/4 v6, 0x0
 
-    invoke-virtual {v4, v5, v6}, Lx97;->getInt(Ljava/lang/String;I)I
+    invoke-virtual {v4, v5, v6}, Lme7;->getInt(Ljava/lang/String;I)I
 
     move-result v4
 
@@ -319,61 +272,61 @@
 
     if-eq v4, v7, :cond_0
 
-    sget v4, Lcic;->R0:I
+    sget v4, Lnnc;->U0:I
 
-    invoke-virtual {p0, v4}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, v4}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object v4
 
     goto :goto_0
 
     :cond_0
-    sget v4, Lcic;->U0:I
+    sget v4, Lnnc;->X0:I
 
-    invoke-virtual {p0, v4}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, v4}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object v4
 
     goto :goto_0
 
     :cond_1
-    sget v4, Lcic;->S0:I
+    sget v4, Lnnc;->V0:I
 
-    invoke-virtual {p0, v4}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, v4}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object v4
 
     goto :goto_0
 
     :cond_2
-    sget v4, Lcic;->T0:I
+    sget v4, Lnnc;->W0:I
 
-    invoke-virtual {p0, v4}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, v4}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object v4
 
     :goto_0
-    invoke-static {v1, v2, v4}, Le4d;->a(ILjava/lang/String;Ljava/lang/String;)Le4d;
+    invoke-static {v1, v2, v4}, Llad;->a(ILjava/lang/String;Ljava/lang/String;)Llad;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    sget v1, Lyqb;->setting_caching_limit:I
+    sget v1, Lpvb;->setting_caching_limit:I
 
-    sget v2, Lcic;->O0:I
+    sget v2, Lnnc;->R0:I
 
-    invoke-virtual {p0, v2}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, v2}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v4, "app.media.caching.limit"
-
     const-wide/16 v7, -0x1
 
-    iget-object v3, v3, Lf3;->g:Lx97;
+    iget-object v3, v3, Le3;->g:Lme7;
 
-    invoke-virtual {v3, v4, v7, v8}, Lx97;->getLong(Ljava/lang/String;J)J
+    const-string v4, "app.media.caching.limit"
+
+    invoke-virtual {v3, v4, v7, v8}, Lme7;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v3
 
@@ -383,9 +336,9 @@
 
     if-gtz v7, :cond_3
 
-    sget v3, Lcic;->P0:I
+    sget v3, Lnnc;->S0:I
 
-    invoke-virtual {p0, v3}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, v3}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -394,689 +347,625 @@
     :cond_3
     const/4 v7, 0x0
 
-    invoke-static {v3, v4, v6, v7}, Ldhe;->w(JZLandroid/content/Context;)Ljava/lang/String;
+    invoke-static {v3, v4, v6, v7}, Lfpe;->t(JZLandroid/content/Context;)Ljava/lang/String;
 
     move-result-object v3
 
     :goto_1
-    invoke-static {v1, v2, v3}, Le4d;->a(ILjava/lang/String;Ljava/lang/String;)Le4d;
+    invoke-static {v1, v2, v3}, Llad;->a(ILjava/lang/String;Ljava/lang/String;)Llad;
 
     move-result-object v1
 
-    iput-boolean v5, v1, Le4d;->Z:Z
+    iput-boolean v5, v1, Llad;->Z:Z
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    sget v7, Lyqb;->setting_caching_clear_cache:I
+    sget v7, Lpvb;->setting_caching_clear_cache:I
 
-    sget v1, Lcic;->g1:I
+    sget v1, Lnnc;->j1:I
 
-    invoke-virtual {p0, v1}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, v1}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object v8
 
-    sget v1, Lcic;->h1:I
+    sget v1, Lnnc;->k1:I
 
-    invoke-virtual {p0, v1}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, v1}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object v9
 
-    iget-object v10, p0, Lru/ok/messages/settings/caching/FrgCachingSettings;->J1:Ljava/lang/String;
+    iget-object v10, p0, Lru/ok/messages/settings/caching/FrgCachingSettings;->B1:Ljava/lang/String;
 
-    new-instance p0, Le4d;
+    new-instance v6, Llad;
 
     const/4 v11, 0x0
 
     const/4 v12, 0x1
 
-    move-object v6, p0
+    invoke-direct/range {v6 .. v12}, Llad;-><init>(ILjava/lang/CharSequence;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;I)V
 
-    invoke-direct/range {v6 .. v12}, Le4d;-><init>(ILjava/lang/CharSequence;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;I)V
-
-    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     return-object v0
 .end method
 
-.method public final t1()Ljava/lang/String;
+.method public final g(Ljava/lang/String;)V
+    .locals 0
+
+    iput-object p1, p0, Lru/ok/messages/settings/caching/FrgCachingSettings;->B1:Ljava/lang/String;
+
+    iget-boolean p1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->k1:Z
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p0}, Lru/ok/messages/settings/FrgBaseSettings;->j1()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final g1()Ljava/lang/String;
     .locals 1
 
-    sget v0, Lcic;->e1:I
+    sget v0, Lnnc;->h1:I
 
-    invoke-virtual {p0, v0}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public final u1(I)V
-    .locals 9
+.method public final h1(I)V
+    .locals 16
 
-    sget v0, Lyqb;->setting_caching_time:I
+    move-object/from16 v0, p0
 
-    if-ne p1, v0, :cond_0
+    move/from16 v1, p1
 
-    sget p1, Lcic;->R0:I
+    sget v2, Lpvb;->setting_caching_time:I
 
-    invoke-virtual {p0, p1}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    const/4 v3, 0x0
 
-    move-result-object p1
+    if-ne v1, v2, :cond_0
 
-    sget v0, Lcic;->T0:I
+    sget v1, Lnnc;->U0:I
 
-    invoke-virtual {p0, v0}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    sget v1, Lcic;->S0:I
-
-    invoke-virtual {p0, v1}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object v1
 
-    sget v2, Lcic;->U0:I
+    sget v2, Lnnc;->W0:I
 
-    invoke-virtual {p0, v2}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {v0, v2}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object v2
 
-    filled-new-array {p1, v0, v1, v2}, [Ljava/lang/String;
+    sget v4, Lnnc;->V0:I
 
-    move-result-object p1
+    invoke-virtual {v0, v4}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
-    new-instance v0, Lov7;
+    move-result-object v4
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->V0()Landroid/content/Context;
+    sget v5, Lnnc;->X0:I
 
-    move-result-object v1
+    invoke-virtual {v0, v5}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Lov7;-><init>(Landroid/content/Context;)V
+    move-result-object v5
 
-    sget v1, Lcic;->Q0:I
-
-    iget-object v2, v0, Ltc;->a:Lpc;
-
-    iget-object v3, v2, Lpc;->a:Landroid/content/Context;
-
-    invoke-virtual {v3, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
+    filled-new-array {v1, v2, v4, v5}, [Ljava/lang/String;
 
     move-result-object v1
 
-    iput-object v1, v2, Lpc;->d:Ljava/lang/CharSequence;
+    new-instance v2, Ln08;
 
-    new-instance v1, Lx06;
+    invoke-virtual {v0}, Landroidx/fragment/app/a;->I0()Landroid/content/Context;
 
-    const/4 v2, 0x1
+    move-result-object v4
 
-    invoke-direct {v1, p0, p1, v2}, Lx06;-><init>(Landroidx/fragment/app/a;Ljava/lang/Object;I)V
+    invoke-direct {v2, v4, v3}, Ln08;-><init>(Landroid/content/Context;I)V
 
-    iget-object p0, v0, Ltc;->a:Lpc;
+    sget v3, Lnnc;->T0:I
 
-    iput-object p1, p0, Lpc;->p:[Ljava/lang/CharSequence;
+    iget-object v4, v2, Lmc;->a:Lic;
 
-    iput-object v1, p0, Lpc;->r:Landroid/content/DialogInterface$OnClickListener;
+    iget-object v5, v4, Lic;->a:Landroid/view/ContextThemeWrapper;
 
-    invoke-virtual {v0}, Ltc;->a()Luc;
+    invoke-virtual {v5, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
-    goto/16 :goto_4
+    move-result-object v3
+
+    iput-object v3, v4, Lic;->d:Ljava/lang/CharSequence;
+
+    new-instance v3, Lb56;
+
+    const/4 v4, 0x1
+
+    invoke-direct {v3, v0, v1, v4}, Lb56;-><init>(Landroidx/fragment/app/a;Ljava/lang/Object;I)V
+
+    iget-object v0, v2, Lmc;->a:Lic;
+
+    iput-object v1, v0, Lic;->p:[Ljava/lang/CharSequence;
+
+    iput-object v3, v0, Lic;->r:Landroid/content/DialogInterface$OnClickListener;
+
+    invoke-virtual {v2}, Lmc;->a()Lnc;
+
+    return-void
 
     :cond_0
-    sget v0, Lyqb;->setting_caching_limit:I
+    sget v2, Lpvb;->setting_caching_limit:I
 
-    if-ne p1, v0, :cond_6
+    if-ne v1, v2, :cond_6
 
-    new-instance p1, Ljfd;
+    new-instance v1, Land;
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->e0()Landroid/content/Context;
+    invoke-virtual {v0}, Landroidx/fragment/app/a;->S()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-direct {p1, v0}, Ljfd;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v2}, Land;-><init>(Landroid/content/Context;)V
 
-    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->v1:Lwce;
+    iget-object v2, v0, Lru/ok/messages/views/fragments/base/FrgBase;->n1:Lvke;
 
-    iget v0, v0, Lwce;->k:I
+    iget v2, v2, Lvke;->k:I
 
-    invoke-virtual {p1}, Ljfd;->getConfigBuilder()Lcfd;
+    invoke-virtual {v1}, Land;->getConfigBuilder()Ltmd;
 
-    move-result-object v1
+    move-result-object v4
 
-    const/4 v2, 0x0
+    const/4 v5, 0x0
 
-    iput v2, v1, Lcfd;->b:F
+    iput v5, v4, Ltmd;->b:F
 
-    iput v2, v1, Lcfd;->d:F
+    iget-object v5, v0, Lru/ok/messages/settings/caching/FrgCachingSettings;->C1:[Ljava/lang/String;
 
-    iget-object v2, p0, Lru/ok/messages/settings/caching/FrgCachingSettings;->K1:[Ljava/lang/String;
+    array-length v5, v5
 
-    array-length v2, v2
+    const/4 v6, 0x1
 
-    const/4 v3, 0x1
+    sub-int/2addr v5, v6
 
-    sub-int/2addr v2, v3
+    int-to-float v5, v5
 
-    int-to-float v2, v2
+    iput v5, v4, Ltmd;->c:F
 
-    iput v2, v1, Lcfd;->c:F
+    iget-object v5, v0, Lru/ok/messages/settings/caching/FrgCachingSettings;->A1:Lzo;
 
-    iget-object v2, p0, Lru/ok/messages/settings/caching/FrgCachingSettings;->I1:Lkp;
+    const-string v7, "app.media.caching.limit"
 
-    iget-object v2, v2, Lf3;->g:Lx97;
+    const-wide/16 v8, -0x1
 
-    const-string v4, "app.media.caching.limit"
+    iget-object v5, v5, Le3;->g:Lme7;
 
-    const-wide/16 v5, -0x1
+    invoke-virtual {v5, v7, v8, v9}, Lme7;->getLong(Ljava/lang/String;J)J
 
-    invoke-virtual {v2, v4, v5, v6}, Lx97;->getLong(Ljava/lang/String;J)J
+    move-result-wide v7
 
-    move-result-wide v4
+    const-wide/32 v9, 0x20000000
 
-    const-wide/32 v6, 0x20000000
+    cmp-long v5, v7, v9
 
-    cmp-long v2, v4, v6
+    if-nez v5, :cond_1
 
-    const/4 v6, 0x0
-
-    if-nez v2, :cond_1
-
-    move v2, v6
+    move v5, v3
 
     goto :goto_0
 
     :cond_1
-    const-wide/32 v7, 0x40000000
+    const-wide/32 v9, 0x40000000
 
-    cmp-long v2, v4, v7
+    cmp-long v5, v7, v9
 
-    if-nez v2, :cond_2
+    if-nez v5, :cond_2
 
-    move v2, v3
+    move v5, v6
 
     goto :goto_0
 
     :cond_2
-    const-wide v7, 0x80000000L
+    const-wide v9, 0x80000000L
 
-    cmp-long v2, v4, v7
+    cmp-long v5, v7, v9
 
-    if-nez v2, :cond_3
+    if-nez v5, :cond_3
 
-    const/4 v2, 0x2
+    const/4 v5, 0x2
 
     goto :goto_0
 
     :cond_3
-    const-wide v7, 0x100000000L
+    const-wide v9, 0x100000000L
 
-    cmp-long v2, v4, v7
+    cmp-long v5, v7, v9
 
-    if-nez v2, :cond_4
+    if-nez v5, :cond_4
 
-    const/4 v2, 0x3
+    const/4 v5, 0x3
 
     goto :goto_0
 
     :cond_4
-    const/4 v2, 0x4
+    const/4 v5, 0x4
 
     :goto_0
-    int-to-float v2, v2
+    int-to-float v5, v5
 
-    iput v2, v1, Lcfd;->d:F
+    iget-object v7, v0, Lru/ok/messages/views/fragments/base/FrgBase;->n1:Lvke;
 
-    iget-object v2, p0, Lru/ok/messages/views/fragments/base/FrgBase;->v1:Lwce;
+    iget v7, v7, Lvke;->M:I
 
-    iget v2, v2, Lwce;->M:I
+    iget-object v8, v0, Lru/ok/messages/views/fragments/base/FrgBase;->i1:Lck4;
 
-    iput v2, v1, Lcfd;->j:I
+    iget v9, v8, Lck4;->b:I
 
-    iput v2, v1, Lcfd;->r:I
+    const/high16 v10, 0x3f800000    # 1.0f
 
-    iget-object v2, p0, Lru/ok/messages/views/fragments/base/FrgBase;->q1:Lzg4;
+    iput v10, v4, Ltmd;->q:F
 
-    iget v4, v2, Lzg4;->b:I
+    iget v10, v8, Lck4;->f:I
 
-    iput v4, v1, Lcfd;->f:I
+    iget v11, v8, Lck4;->h:I
 
-    iput v0, v1, Lcfd;->k:I
+    iget v12, v8, Lck4;->l:I
 
-    iput v0, v1, Lcfd;->w:I
+    iget-object v13, v0, Lru/ok/messages/settings/caching/FrgCachingSettings;->C1:[Ljava/lang/String;
 
-    iput v4, v1, Lcfd;->g:I
+    array-length v13, v13
 
-    iput v0, v1, Lcfd;->l:I
+    sub-int/2addr v13, v6
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    iget v8, v8, Lck4;->e:I
 
-    iput v4, v1, Lcfd;->G:F
+    iget-object v14, v4, Ltmd;->a:Land;
 
-    iget v4, v2, Lzg4;->f:I
+    iget v15, v4, Ltmd;->b:F
 
-    iput v4, v1, Lcfd;->h:I
+    iput v15, v14, Land;->b:F
 
-    iget v5, v2, Lzg4;->h:I
+    iget v15, v4, Ltmd;->c:F
 
-    iput v5, v1, Lcfd;->i:I
+    iput v15, v14, Land;->c:F
 
-    iput-boolean v3, v1, Lcfd;->E:Z
+    iput v5, v14, Land;->o:F
 
-    const/4 v5, -0x1
+    iget-boolean v5, v4, Ltmd;->d:Z
 
-    iput v5, v1, Lcfd;->D:I
+    iput-boolean v5, v14, Land;->o0:Z
 
-    iget v5, v2, Lzg4;->l:I
+    iput v9, v14, Land;->p0:I
 
-    iput v5, v1, Lcfd;->C:I
+    iput v9, v14, Land;->q0:I
 
-    iput v0, v1, Lcfd;->B:I
+    iput v10, v14, Land;->r0:I
 
-    iput-boolean v3, v1, Lcfd;->W:Z
+    iput v11, v14, Land;->s0:I
 
-    iput-boolean v3, v1, Lcfd;->A:Z
+    iput v7, v14, Land;->t0:I
 
-    iget-object v0, p0, Lru/ok/messages/settings/caching/FrgCachingSettings;->K1:[Ljava/lang/String;
+    iput v2, v14, Land;->u0:I
 
-    array-length v0, v0
+    iput v2, v14, Land;->v0:I
 
-    sub-int/2addr v0, v3
+    iput v13, v14, Land;->w0:I
 
-    iput v0, v1, Lcfd;->m:I
+    iget-boolean v5, v4, Ltmd;->e:Z
 
-    iget v0, v2, Lzg4;->e:I
+    iput-boolean v5, v14, Land;->x0:Z
 
-    iput v0, v1, Lcfd;->K:I
+    iget-boolean v5, v4, Ltmd;->f:Z
 
-    iput v4, v1, Lcfd;->L:I
+    iput-boolean v5, v14, Land;->y0:Z
 
-    iget-object v0, v1, Lcfd;->a:Ljfd;
+    iget-boolean v5, v4, Ltmd;->g:Z
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-boolean v5, v14, Land;->z0:Z
 
-    iget v2, v1, Lcfd;->b:F
+    iget v5, v4, Ltmd;->h:I
 
-    iput v2, v0, Ljfd;->b:F
+    iput v5, v14, Land;->A0:I
 
-    iget v2, v1, Lcfd;->c:F
+    iput v7, v14, Land;->B0:I
 
-    iput v2, v0, Ljfd;->c:F
+    iget v5, v4, Ltmd;->i:I
 
-    iget v2, v1, Lcfd;->d:F
+    iput v5, v14, Land;->C0:I
 
-    iput v2, v0, Ljfd;->o:F
+    iget v5, v4, Ltmd;->j:I
 
-    iget-boolean v2, v1, Lcfd;->e:Z
+    iput v5, v14, Land;->D0:I
 
-    iput-boolean v2, v0, Ljfd;->w0:Z
+    iget-boolean v5, v4, Ltmd;->k:Z
 
-    iget v2, v1, Lcfd;->f:I
+    iput-boolean v5, v14, Land;->E0:Z
 
-    iput v2, v0, Ljfd;->x0:I
+    iget v5, v4, Ltmd;->l:I
 
-    iget v2, v1, Lcfd;->g:I
+    iput v5, v14, Land;->F0:I
 
-    iput v2, v0, Ljfd;->y0:I
+    iput v2, v14, Land;->G0:I
 
-    iget v2, v1, Lcfd;->h:I
+    iget-boolean v5, v4, Ltmd;->m:Z
 
-    iput v2, v0, Ljfd;->z0:I
+    iput-boolean v5, v14, Land;->H0:Z
 
-    iget v2, v1, Lcfd;->i:I
+    iget-wide v6, v4, Ltmd;->n:J
 
-    iput v2, v0, Ljfd;->A0:I
+    iput-wide v6, v14, Land;->K0:J
 
-    iget v2, v1, Lcfd;->j:I
+    iget-boolean v5, v4, Ltmd;->o:Z
 
-    iput v2, v0, Ljfd;->B0:I
+    iput-boolean v5, v14, Land;->I0:Z
 
-    iget v2, v1, Lcfd;->k:I
+    const/4 v5, 0x1
 
-    iput v2, v0, Ljfd;->C0:I
+    iput-boolean v5, v14, Land;->J0:Z
 
-    iget v2, v1, Lcfd;->l:I
+    iget-object v5, v14, Land;->m1:Ltmd;
 
-    iput v2, v0, Ljfd;->D0:I
+    iget-object v6, v5, Ltmd;->p:[Ljava/lang/String;
 
-    iget v2, v1, Lcfd;->m:I
+    iput-object v6, v14, Land;->n1:[Ljava/lang/String;
 
-    iput v2, v0, Ljfd;->E0:I
+    if-eqz v6, :cond_5
 
-    iget-boolean v2, v1, Lcfd;->n:Z
+    array-length v6, v6
 
-    iput-boolean v2, v0, Ljfd;->F0:Z
+    if-lez v6, :cond_5
 
-    iget-boolean v2, v1, Lcfd;->o:Z
-
-    iput-boolean v2, v0, Ljfd;->G0:Z
-
-    iget-boolean v2, v1, Lcfd;->p:Z
-
-    iput-boolean v2, v0, Ljfd;->H0:Z
-
-    iget v2, v1, Lcfd;->q:I
-
-    iput v2, v0, Ljfd;->I0:I
-
-    iget v2, v1, Lcfd;->r:I
-
-    iput v2, v0, Ljfd;->J0:I
-
-    iget v2, v1, Lcfd;->s:I
-
-    iput v2, v0, Ljfd;->K0:I
-
-    iget v2, v1, Lcfd;->t:I
-
-    iput v2, v0, Ljfd;->L0:I
-
-    iget-boolean v2, v1, Lcfd;->u:Z
-
-    iput-boolean v2, v0, Ljfd;->M0:Z
-
-    iget v2, v1, Lcfd;->v:I
-
-    iput v2, v0, Ljfd;->N0:I
-
-    iget v2, v1, Lcfd;->w:I
-
-    iput v2, v0, Ljfd;->O0:I
-
-    iget-boolean v2, v1, Lcfd;->x:Z
-
-    iput-boolean v2, v0, Ljfd;->P0:Z
-
-    iget-wide v4, v1, Lcfd;->y:J
-
-    iput-wide v4, v0, Ljfd;->S0:J
-
-    iget-boolean v2, v1, Lcfd;->z:Z
-
-    iput-boolean v2, v0, Ljfd;->Q0:Z
-
-    iget-boolean v2, v1, Lcfd;->A:Z
-
-    iput-boolean v2, v0, Ljfd;->R0:Z
-
-    iget-object v2, v0, Ljfd;->v1:Lcfd;
-
-    iget-object v4, v2, Lcfd;->F:[Ljava/lang/String;
-
-    iput-object v4, v0, Ljfd;->w1:[Ljava/lang/String;
-
-    if-eqz v4, :cond_5
-
-    array-length v4, v4
-
-    if-lez v4, :cond_5
+    const/4 v6, 0x1
 
     goto :goto_1
 
     :cond_5
-    move v3, v6
+    move v6, v3
 
     :goto_1
-    iput-boolean v3, v0, Ljfd;->x1:Z
+    iput-boolean v6, v14, Land;->o1:Z
 
-    iget v3, v2, Lcfd;->G:F
+    iget v6, v5, Ltmd;->q:F
 
-    iput v3, v0, Ljfd;->y1:F
+    iput v6, v14, Land;->p1:F
 
-    iget v3, v2, Lcfd;->H:F
+    iget v6, v5, Ltmd;->r:F
 
-    iput v3, v0, Ljfd;->z1:F
+    iput v6, v14, Land;->q1:F
 
-    iget-boolean v3, v2, Lcfd;->I:Z
+    iget-boolean v6, v5, Ltmd;->s:Z
 
-    iput-boolean v3, v0, Ljfd;->A1:Z
+    iput-boolean v6, v14, Land;->r1:Z
 
-    iget-object v3, v2, Lcfd;->J:Ljava/lang/String;
+    iget-object v5, v5, Ltmd;->t:Ljava/lang/String;
 
-    iput-object v3, v0, Ljfd;->Q1:Ljava/lang/String;
+    iput-object v5, v14, Land;->H1:Ljava/lang/String;
 
-    iget-boolean v3, v2, Lcfd;->U:Z
+    iput v2, v14, Land;->R0:I
 
-    iput-boolean v3, v0, Ljfd;->R1:Z
+    iput v12, v14, Land;->S0:I
 
-    iget-object v2, v2, Lcfd;->T:Ljava/text/NumberFormat;
+    const/4 v2, -0x1
 
-    iput-object v2, v0, Ljfd;->T1:Ljava/text/NumberFormat;
+    iput v2, v14, Land;->T0:I
 
-    iget v2, v1, Lcfd;->B:I
+    const/4 v5, 0x1
 
-    iput v2, v0, Ljfd;->a1:I
+    iput-boolean v5, v14, Land;->s1:Z
 
-    iget v2, v1, Lcfd;->C:I
+    iput v10, v14, Land;->x1:I
 
-    iput v2, v0, Ljfd;->b1:I
+    iput v8, v14, Land;->w1:I
 
-    iget v2, v1, Lcfd;->D:I
+    iget v2, v4, Ltmd;->u:I
 
-    iput v2, v0, Ljfd;->c1:I
+    iput v2, v14, Land;->y1:I
 
-    iget-boolean v2, v1, Lcfd;->E:Z
+    iget v2, v4, Ltmd;->v:I
 
-    iput-boolean v2, v0, Ljfd;->B1:Z
+    iput v2, v14, Land;->V0:I
 
-    iget v2, v1, Lcfd;->L:I
+    iput v2, v14, Land;->U0:I
 
-    iput v2, v0, Ljfd;->G1:I
+    iget v2, v4, Ltmd;->w:I
 
-    iget v2, v1, Lcfd;->K:I
+    iput v2, v14, Land;->X0:I
 
-    iput v2, v0, Ljfd;->F1:I
+    iput v2, v14, Land;->W0:I
 
-    iget v2, v1, Lcfd;->M:I
+    iget-boolean v2, v4, Ltmd;->y:Z
 
-    iput v2, v0, Ljfd;->H1:I
+    iput-boolean v2, v14, Land;->O0:Z
 
-    iget v2, v1, Lcfd;->N:I
+    iget v2, v4, Ltmd;->x:I
 
-    iput v2, v0, Ljfd;->e1:I
+    iput v2, v14, Land;->N0:I
 
-    iput v2, v0, Ljfd;->d1:I
+    iget v2, v4, Ltmd;->A:I
 
-    iget v2, v1, Lcfd;->O:I
+    iput v2, v14, Land;->P0:I
 
-    iput v2, v0, Ljfd;->g1:I
+    iget-boolean v2, v4, Ltmd;->z:Z
 
-    iput v2, v0, Ljfd;->f1:I
+    iput-boolean v2, v14, Land;->t1:Z
 
-    iget-boolean v2, v1, Lcfd;->Q:Z
+    const/4 v5, 0x1
 
-    iput-boolean v2, v0, Ljfd;->X0:Z
+    iput-boolean v5, v14, Land;->L0:Z
 
-    iget v2, v1, Lcfd;->P:I
+    invoke-virtual {v14}, Land;->d()V
 
-    iput v2, v0, Ljfd;->W0:I
+    invoke-virtual {v14}, Land;->e()V
 
-    iget v2, v1, Lcfd;->S:I
+    invoke-virtual {v14}, Land;->c()V
 
-    iput v2, v0, Ljfd;->Y0:I
+    const/4 v2, 0x0
 
-    iget-boolean v2, v1, Lcfd;->R:Z
+    iput-object v2, v14, Land;->m1:Ltmd;
 
-    iput-boolean v2, v0, Ljfd;->C1:Z
+    invoke-virtual {v14}, Landroid/view/View;->requestLayout()V
 
-    iget-boolean v2, v1, Lcfd;->V:Z
+    new-instance v2, La56;
 
-    iput-boolean v2, v0, Ljfd;->T0:Z
+    invoke-direct {v2, v0}, La56;-><init>(Lru/ok/messages/settings/caching/FrgCachingSettings;)V
 
-    iget-boolean v1, v1, Lcfd;->W:Z
+    invoke-virtual {v1, v2}, Land;->setValueFormatListener(Lzmd;)V
 
-    iput-boolean v1, v0, Ljfd;->U0:Z
+    iget-object v2, v0, Lru/ok/messages/views/fragments/base/FrgBase;->i1:Lck4;
 
-    invoke-virtual {v0}, Ljfd;->d()V
+    iget v2, v2, Lck4;->r:I
 
-    invoke-virtual {v0}, Ljfd;->e()V
+    invoke-static {v1, v2}, Lq14;->n(Landroid/view/View;I)V
 
-    invoke-virtual {v0}, Ljfd;->c()V
+    iget-object v2, v0, Lru/ok/messages/views/fragments/base/FrgBase;->i1:Lck4;
 
-    const/4 v1, 0x0
+    iget v2, v2, Lck4;->r:I
 
-    iput-object v1, v0, Ljfd;->v1:Lcfd;
+    invoke-static {v1, v2}, Lq14;->m(Landroid/view/View;I)V
 
-    invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
+    new-instance v2, Ln08;
 
-    new-instance v0, Lw06;
+    invoke-virtual {v0}, Landroidx/fragment/app/a;->I0()Landroid/content/Context;
 
-    invoke-direct {v0, p0}, Lw06;-><init>(Lru/ok/messages/settings/caching/FrgCachingSettings;)V
+    move-result-object v4
 
-    invoke-virtual {p1, v0}, Ljfd;->setValueFormatListener(Lifd;)V
+    invoke-direct {v2, v4, v3}, Ln08;-><init>(Landroid/content/Context;I)V
 
-    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->q1:Lzg4;
+    sget v3, Lnnc;->R0:I
 
-    iget v0, v0, Lzg4;->r:I
+    iget-object v4, v2, Lmc;->a:Lic;
 
-    invoke-static {p1, v0}, Lat7;->g(Landroid/view/View;I)V
+    iget-object v5, v4, Lic;->a:Landroid/view/ContextThemeWrapper;
 
-    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->q1:Lzg4;
+    invoke-virtual {v5, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
-    iget v0, v0, Lzg4;->r:I
+    move-result-object v3
 
-    invoke-static {p1, v0}, Lat7;->f(Landroid/view/View;I)V
+    iput-object v3, v4, Lic;->d:Ljava/lang/CharSequence;
 
-    new-instance v0, Lov7;
+    invoke-virtual {v2, v1}, Ln08;->e(Landroid/view/View;)Ln08;
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->V0()Landroid/content/Context;
+    move-result-object v2
 
-    move-result-object v1
+    sget v3, Lnnc;->K:I
 
-    invoke-direct {v0, v1}, Lov7;-><init>(Landroid/content/Context;)V
+    new-instance v4, Lb56;
 
-    sget v1, Lcic;->O0:I
+    const/4 v5, 0x0
 
-    iget-object v2, v0, Ltc;->a:Lpc;
+    invoke-direct {v4, v0, v1, v5}, Lb56;-><init>(Landroidx/fragment/app/a;Ljava/lang/Object;I)V
 
-    iget-object v3, v2, Lpc;->a:Landroid/content/Context;
-
-    invoke-virtual {v3, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
-
-    move-result-object v1
-
-    iput-object v1, v2, Lpc;->d:Ljava/lang/CharSequence;
-
-    invoke-virtual {v0, p1}, Lov7;->f(Landroid/view/View;)Lov7;
+    invoke-virtual {v2, v3, v4}, Ln08;->c(ILandroid/content/DialogInterface$OnClickListener;)Ln08;
 
     move-result-object v0
 
-    sget v1, Lcic;->G:I
+    invoke-virtual {v0}, Lmc;->a()Lnc;
 
-    new-instance v2, Lx06;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v2, p0, p1, v3}, Lx06;-><init>(Landroidx/fragment/app/a;Ljava/lang/Object;I)V
-
-    invoke-virtual {v0, v1, v2}, Lov7;->d(ILandroid/content/DialogInterface$OnClickListener;)Lov7;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ltc;->a()Luc;
-
-    goto :goto_4
+    return-void
 
     :cond_6
-    sget v0, Lyqb;->setting_caching_clear_cache:I
+    sget v2, Lpvb;->setting_caching_clear_cache:I
 
-    if-ne p1, v0, :cond_8
+    if-ne v1, v2, :cond_8
 
-    iget-object p0, p0, Lru/ok/messages/settings/caching/FrgCachingSettings;->L1:Luv0;
+    iget-object v1, v0, Lru/ok/messages/settings/caching/FrgCachingSettings;->D1:Lvw0;
 
-    monitor-enter p0
+    monitor-enter v1
 
     :try_start_0
-    iget-object p1, p0, Luv0;->k:Lsv0;
+    iget-object v0, v1, Lvw0;->k:Ltw0;
 
-    if-nez p1, :cond_7
+    if-nez v0, :cond_7
 
-    iget-object p1, p0, Luv0;->h:Ltv0;
+    iget-object v0, v1, Lvw0;->h:Lru/ok/messages/settings/FrgBaseSettings;
 
-    invoke-interface {p1}, Ltv0;->U()V
+    invoke-interface {v0}, Luw0;->N()V
 
-    invoke-virtual {p0}, Luv0;->c()Lms9;
+    invoke-virtual {v1}, Lvw0;->c()Lvw9;
 
-    move-result-object p1
+    move-result-object v0
 
-    iget-object v0, p0, Luv0;->f:Lqmc;
+    iget-object v2, v1, Lvw0;->f:Lgsc;
 
-    invoke-virtual {p1, v0}, Lms9;->r(Lqmc;)Lov9;
+    invoke-virtual {v0, v2}, Lvw9;->q(Lgsc;)Llx9;
 
-    move-result-object p1
+    move-result-object v0
 
-    iget-object v0, p0, Luv0;->g:Lqmc;
+    iget-object v2, v1, Lvw0;->g:Lgsc;
 
-    invoke-virtual {p1, v0}, Lms9;->n(Lqmc;)Lnu9;
+    invoke-virtual {v0, v2}, Lvw9;->m(Lgsc;)Lry9;
 
-    move-result-object p1
+    move-result-object v0
 
-    new-instance v0, Lqv0;
+    new-instance v2, Lrw0;
 
-    const/4 v1, 0x4
+    const/4 v3, 0x4
 
-    invoke-direct {v0, p0, v1}, Lqv0;-><init>(Luv0;I)V
+    invoke-direct {v2, v1, v3}, Lrw0;-><init>(Lvw0;I)V
 
-    new-instance v1, Lqv0;
+    new-instance v3, Lrw0;
 
-    const/4 v2, 0x5
+    const/4 v4, 0x5
 
-    invoke-direct {v1, p0, v2}, Lqv0;-><init>(Luv0;I)V
+    invoke-direct {v3, v1, v4}, Lrw0;-><init>(Lvw0;I)V
 
-    sget-object v2, Lz3d;->i:Lz26;
+    sget-object v4, Lkhg;->c:Lc76;
 
-    new-instance v3, Lc97;
+    new-instance v5, Ltd7;
 
-    invoke-direct {v3, v0, v1, v2}, Lc97;-><init>(Lof3;Lof3;Lj6;)V
+    invoke-direct {v5, v2, v3, v4}, Ltd7;-><init>(Ljj3;Ljj3;Lc6;)V
 
-    invoke-virtual {p1, v3}, Lms9;->a(Lbw9;)V
+    invoke-virtual {v0, v5}, Lvw9;->a(La0a;)V
 
-    invoke-virtual {p0, v3}, Luv0;->a(Lc97;)V
+    invoke-virtual {v1, v5}, Lvw0;->a(Ltd7;)V
 
     goto :goto_2
 
     :catchall_0
-    move-exception p1
+    move-exception v0
 
     goto :goto_3
 
     :cond_7
-    iget-object p1, p0, Luv0;->h:Ltv0;
+    iget-object v0, v1, Lvw0;->h:Lru/ok/messages/settings/FrgBaseSettings;
 
-    iget-object v0, p0, Luv0;->k:Lsv0;
+    iget-object v2, v1, Lvw0;->k:Ltw0;
 
-    iget-object v0, v0, Lsv0;->c:Ljava/util/List;
+    iget-object v2, v2, Ltw0;->c:Ljava/util/ArrayList;
 
-    check-cast v0, Ljava/util/ArrayList;
-
-    invoke-interface {p1, v0}, Ltv0;->e(Ljava/util/ArrayList;)V
+    invoke-interface {v0, v2}, Luw0;->a(Ljava/util/ArrayList;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :goto_2
-    monitor-exit p0
+    monitor-exit v1
 
-    goto :goto_4
+    return-void
 
     :goto_3
     :try_start_1
-    monitor-exit p0
+    monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    throw p1
+    throw v0
 
     :cond_8
-    :goto_4
     return-void
 .end method
 
-.method public final v0(Landroid/content/Context;)V
+.method public final i1(ILjava/lang/Object;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final j0(Landroid/content/Context;)V
     .locals 4
 
-    invoke-super {p0, p1}, Landroidx/fragment/app/a;->v0(Landroid/content/Context;)V
+    invoke-super {p0, p1}, Landroidx/fragment/app/a;->j0(Landroid/content/Context;)V
 
-    sget p1, Lcic;->P0:I
+    sget p1, Lnnc;->S0:I
 
-    invoke-virtual {p0, p1}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1092,111 +981,131 @@
 
     move-result-object p1
 
-    iput-object p1, p0, Lru/ok/messages/settings/caching/FrgCachingSettings;->K1:[Ljava/lang/String;
+    iput-object p1, p0, Lru/ok/messages/settings/caching/FrgCachingSettings;->C1:[Ljava/lang/String;
 
     return-void
 .end method
 
-.method public final v1(ILjava/lang/Object;)V
-    .locals 0
+.method public final k0(Landroid/os/Bundle;)V
+    .locals 9
 
-    return-void
-.end method
+    invoke-super {p0, p1}, Lru/ok/messages/views/fragments/base/FrgBase;->k0(Landroid/os/Bundle;)V
 
-.method public final w0(Landroid/os/Bundle;)V
-    .locals 10
+    iget-object p1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->l1:Lt4b;
 
-    invoke-super {p0, p1}, Lru/ok/messages/views/fragments/base/FrgBase;->w0(Landroid/os/Bundle;)V
+    iget-object p1, p1, Lt4b;->b:Ljava/lang/Object;
 
-    iget-object p1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->t1:Lv2b;
+    check-cast p1, Lsb3;
 
-    iget-object p1, p1, Lv2b;->b:Ljava/lang/Object;
+    check-cast p1, Lq6a;
 
-    check-cast p1, Lk93;
-
-    check-cast p1, Lo2a;
-
-    invoke-virtual {p1}, Lo2a;->p()Loae;
+    invoke-virtual {p1}, Lq6a;->p()Lqie;
 
     move-result-object p1
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-static {}, Loae;->b()Lkae;
+    invoke-static {}, Lqie;->b()Lmie;
 
     move-result-object p1
 
-    new-instance v9, Luv0;
+    new-instance v0, Lvw0;
 
-    check-cast p1, Lnqc;
+    check-cast p1, Lowc;
 
-    invoke-virtual {p1}, Lscout/Component;->getAccessor()Lw4;
+    invoke-virtual {p1}, Lscout/Component;->getAccessor()Lu4;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-class v1, Led5;
+    const-class v2, Lwf5;
 
-    invoke-virtual {v0, v1}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Lu4;->c(Ljava/lang/Class;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    move-object v1, v0
+    check-cast v1, Lwf5;
 
-    check-cast v1, Led5;
+    iget-object v2, p0, Lru/ok/messages/views/fragments/base/FrgBase;->l1:Lt4b;
 
-    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->t1:Lv2b;
+    iget-object v2, v2, Lt4b;->b:Ljava/lang/Object;
 
-    iget-object v0, v0, Lv2b;->b:Ljava/lang/Object;
+    check-cast v2, Lsb3;
 
-    check-cast v0, Lk93;
+    check-cast v2, Lq6a;
 
-    check-cast v0, Lo2a;
+    invoke-virtual {v2}, Lscout/Component;->getAccessor()Lu4;
 
-    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lw4;
+    move-result-object v2
 
-    move-result-object v0
+    const-class v3, Lq30;
 
-    const-class v2, Lh30;
+    invoke-virtual {v2, v3}, Lu4;->c(Ljava/lang/Class;)Ljava/lang/Object;
 
-    invoke-virtual {v0, v2}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object v0
+    check-cast v2, Lq30;
 
-    move-object v2, v0
+    new-instance v3, Lcy1;
 
-    check-cast v2, Lh30;
-
-    new-instance v3, Lhvf;
-
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->e0()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-direct {v3, v0}, Lhvf;-><init>(Landroid/content/Context;)V
-
-    invoke-virtual {p1}, Lnqc;->u()Lluf;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->S()Landroid/content/Context;
 
     move-result-object v4
 
-    invoke-static {}, Lcnc;->a()Lqmc;
+    const/16 v5, 0x9
+
+    invoke-direct {v3, v5, v4}, Lcy1;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {p1}, Lowc;->u()Lw9g;
+
+    move-result-object v4
+
+    invoke-static {}, Ltsc;->a()Lgsc;
 
     move-result-object v5
 
-    invoke-static {}, Lde;->a()Lqmc;
+    invoke-static {}, Lud;->a()Lgsc;
 
     move-result-object v6
 
-    new-instance v7, Lw06;
+    new-instance v7, La56;
 
-    invoke-direct {v7, p0}, Lw06;-><init>(Lru/ok/messages/settings/caching/FrgCachingSettings;)V
-
-    move-object v0, v9
+    invoke-direct {v7, p0}, La56;-><init>(Lru/ok/messages/settings/caching/FrgCachingSettings;)V
 
     move-object v8, p0
 
-    invoke-direct/range {v0 .. v8}, Luv0;-><init>(Led5;Lh30;Lhvf;Lluf;Lqmc;Lqmc;Lof3;Ltv0;)V
+    invoke-direct/range {v0 .. v8}, Lvw0;-><init>(Lwf5;Lq30;Lcy1;Lw9g;Lgsc;Lgsc;Ljj3;Luw0;)V
 
-    iput-object v9, p0, Lru/ok/messages/settings/caching/FrgCachingSettings;->L1:Luv0;
+    iput-object v0, v8, Lru/ok/messages/settings/caching/FrgCachingSettings;->D1:Lvw0;
+
+    return-void
+.end method
+
+.method public final y0()V
+    .locals 2
+
+    invoke-super {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->y0()V
+
+    iget-object v0, p0, Lru/ok/messages/settings/caching/FrgCachingSettings;->D1:Lvw0;
+
+    invoke-virtual {v0}, Lvw0;->b()V
+
+    iget-object p0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->l1:Lt4b;
+
+    iget-object p0, p0, Lt4b;->b:Ljava/lang/Object;
+
+    check-cast p0, Lsb3;
+
+    check-cast p0, Lq6a;
+
+    invoke-virtual {p0}, Lq6a;->m()Lpl9;
+
+    move-result-object p0
+
+    sget-object v0, Ldtc;->p1:Ldtc;
+
+    sget-object v1, Llna;->f:Llna;
+
+    invoke-virtual {p0, v0, v1}, Lpl9;->f(Ldtc;Llna;)V
 
     return-void
 .end method

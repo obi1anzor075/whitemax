@@ -3,65 +3,27 @@
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:[B
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public static a(Ljava/lang/Object;)Landroid/os/LocaleList;
+    .locals 0
 
-    const/16 v0, 0x80
+    check-cast p0, Landroid/app/LocaleManager;
 
-    new-array v0, v0, [B
+    invoke-virtual {p0}, Landroid/app/LocaleManager;->getApplicationLocales()Landroid/os/LocaleList;
 
-    const/4 v1, -0x1
+    move-result-object p0
 
-    invoke-static {v0, v1}, Ljava/util/Arrays;->fill([BB)V
+    return-object p0
+.end method
 
-    const/4 v1, 0x0
+.method public static b(Ljava/lang/Object;)Landroid/os/LocaleList;
+    .locals 0
 
-    move v2, v1
+    check-cast p0, Landroid/app/LocaleManager;
 
-    :goto_0
-    const/16 v3, 0xa
+    invoke-virtual {p0}, Landroid/app/LocaleManager;->getSystemLocales()Landroid/os/LocaleList;
 
-    if-ge v2, v3, :cond_0
+    move-result-object p0
 
-    add-int/lit8 v3, v2, 0x30
-
-    int-to-byte v4, v2
-
-    aput-byte v4, v0, v3
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    :goto_1
-    const/16 v2, 0x1a
-
-    if-ge v1, v2, :cond_1
-
-    add-int/lit8 v2, v1, 0x41
-
-    add-int/lit8 v3, v1, 0xa
-
-    int-to-byte v3, v3
-
-    aput-byte v3, v0, v2
-
-    add-int/lit8 v2, v1, 0x61
-
-    aput-byte v3, v0, v2
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    sput-object v0, Lwq7;->a:[B
-
-    return-void
+    return-object p0
 .end method

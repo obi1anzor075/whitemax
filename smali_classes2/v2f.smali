@@ -1,43 +1,48 @@
-.class public interface abstract Lv2f;
-.super Ljava/lang/Object;
-.source "SourceFile"
+.class public final Lv2f;
+.super Lbu3;
+
+
+# instance fields
+.field public X:I
+
+.field public final synthetic Y:Lfka;
+
+.field public synthetic o:Ljava/lang/Object;
+
+
+# direct methods
+.method public constructor <init>(Lfka;Lkotlin/coroutines/Continuation;)V
+    .locals 0
+
+    iput-object p1, p0, Lv2f;->Y:Lfka;
+
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public a(J)Lv2f;
-    .locals 0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    iput-object p1, p0, Lv2f;->o:Ljava/lang/Object;
+
+    iget p1, p0, Lv2f;->X:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lv2f;->X:I
+
+    iget-object p1, p0, Lv2f;->Y:Lfka;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lfka;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
 
     return-object p0
-.end method
-
-.method public b()Lxx;
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public abstract c()J
-.end method
-
-.method public abstract c0()Z
-.end method
-
-.method public abstract d()J
-.end method
-
-.method public abstract e()J
-.end method
-
-.method public abstract getHeight()I
-.end method
-
-.method public abstract getWidth()I
-.end method
-
-.method public abstract k()J
-.end method
-
-.method public abstract l()Landroid/net/Uri;
 .end method

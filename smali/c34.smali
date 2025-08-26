@@ -1,243 +1,249 @@
 .class public final Lc34;
-.super Ljava/lang/Object;
+.super Lei0;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Landroid/net/Uri;
+.field public X:Lo34;
 
-.field public final b:I
+.field public Y:[B
 
-.field public final c:Ljava/util/Set;
+.field public Z:I
 
-.field public final d:Z
-
-.field public final e:Ljava/util/Set;
-
-
-# direct methods
-.method public constructor <init>(Landroid/net/Uri;ILjava/util/LinkedHashSet;ZLjava/util/Set;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lc34;->a:Landroid/net/Uri;
-
-    iput p2, p0, Lc34;->b:I
-
-    iput-object p3, p0, Lc34;->c:Ljava/util/Set;
-
-    iput-boolean p4, p0, Lc34;->d:Z
-
-    iput-object p5, p0, Lc34;->e:Ljava/util/Set;
-
-    return-void
-.end method
+.field public o0:I
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final O(Lo34;)J
+    .locals 9
 
-    const/4 v0, 0x1
+    invoke-virtual {p0}, Lei0;->c()V
 
-    if-ne p0, p1, :cond_0
+    iput-object p1, p0, Lc34;->X:Lo34;
 
-    return v0
+    iget-object v0, p1, Lo34;->a:Landroid/net/Uri;
+
+    iget-wide v1, p1, Lo34;->g:J
+
+    invoke-virtual {v0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "data"
+
+    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    const-string v6, "Unsupported scheme: "
+
+    if-eqz v5, :cond_0
+
+    invoke-virtual {v6, v3}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_0
 
     :cond_0
-    instance-of v1, p1, Lc34;
+    new-instance v3, Ljava/lang/String;
 
-    const/4 v2, 0x0
+    invoke-direct {v3, v6}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    if-nez v1, :cond_1
+    :goto_0
+    invoke-static {v3, v4}, Lq46;->c(Ljava/lang/String;Z)V
 
-    return v2
+    invoke-virtual {v0}, Landroid/net/Uri;->getSchemeSpecificPart()Ljava/lang/String;
+
+    move-result-object v3
+
+    sget v4, Lnaf;->a:I
+
+    const/4 v4, -0x1
+
+    const-string v5, ","
+
+    invoke-virtual {v3, v5, v4}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+
+    move-result-object v3
+
+    array-length v4, v3
+
+    const/4 v5, 0x2
+
+    const/4 v6, 0x1
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    if-ne v4, v5, :cond_6
+
+    aget-object v0, v3, v6
+
+    aget-object v3, v3, v7
+
+    const-string v4, ";base64"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    :try_start_0
+    invoke-static {v0, v7}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
+
+    move-result-object v3
+
+    iput-object v3, p0, Lc34;->Y:[B
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_2
+
+    :catch_0
+    move-exception p0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    const-string v1, "Error while parsing Base64 encoded string: "
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_1
 
     :cond_1
-    check-cast p1, Lc34;
+    new-instance p1, Ljava/lang/String;
 
-    iget-object v1, p1, Lc34;->a:Landroid/net/Uri;
+    invoke-direct {p1, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    iget-object v3, p0, Lc34;->a:Landroid/net/Uri;
+    :goto_1
+    new-instance v0, Lcom/google/android/exoplayer2/ParserException;
 
-    invoke-static {v3, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-direct {v0, p1, p0, v6, v7}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;ZI)V
 
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
+    throw v0
 
     :cond_2
-    iget v1, p0, Lc34;->b:I
+    sget-object v3, Lv42;->a:Ljava/nio/charset/Charset;
 
-    iget v3, p1, Lc34;->b:I
+    invoke-virtual {v3}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
 
-    if-eq v1, v3, :cond_3
+    move-result-object v3
 
-    return v2
+    invoke-static {v0, v3}, Ljava/net/URLDecoder;->decode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sget-object v3, Lv42;->c:Ljava/nio/charset/Charset;
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+
+    move-result-object v0
+
+    iput-object v0, p0, Lc34;->Y:[B
+
+    :goto_2
+    iget-wide v3, p1, Lo34;->f:J
+
+    iget-object v0, p0, Lc34;->Y:[B
+
+    array-length v5, v0
+
+    int-to-long v5, v5
+
+    cmp-long v5, v3, v5
+
+    if-gtz v5, :cond_5
+
+    long-to-int v3, v3
+
+    iput v3, p0, Lc34;->Z:I
+
+    array-length v0, v0
+
+    sub-int/2addr v0, v3
+
+    iput v0, p0, Lc34;->o0:I
+
+    const-wide/16 v3, -0x1
+
+    cmp-long v3, v1, v3
+
+    if-eqz v3, :cond_3
+
+    int-to-long v4, v0
+
+    invoke-static {v4, v5, v1, v2}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide v4
+
+    long-to-int v0, v4
+
+    iput v0, p0, Lc34;->o0:I
 
     :cond_3
-    iget-object v1, p0, Lc34;->c:Ljava/util/Set;
+    invoke-virtual {p0, p1}, Lei0;->d(Lo34;)V
 
-    iget-object v3, p1, Lc34;->c:Ljava/util/Set;
+    if-eqz v3, :cond_4
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_4
-
-    return v2
+    return-wide v1
 
     :cond_4
-    iget-boolean v1, p0, Lc34;->d:Z
+    iget p0, p0, Lc34;->o0:I
 
-    iget-boolean v3, p1, Lc34;->d:Z
+    int-to-long p0, p0
 
-    if-eq v1, v3, :cond_5
-
-    return v2
+    return-wide p0
 
     :cond_5
-    iget-object p0, p0, Lc34;->e:Ljava/util/Set;
+    iput-object v8, p0, Lc34;->Y:[B
 
-    iget-object p1, p1, Lc34;->e:Ljava/util/Set;
+    new-instance p0, Lcom/google/android/exoplayer2/upstream/DataSourceException;
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    const/16 p1, 0x7d8
 
-    move-result p0
+    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(I)V
 
-    if-nez p0, :cond_6
-
-    return v2
+    throw p0
 
     :cond_6
-    return v0
-.end method
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-.method public final hashCode()I
-    .locals 3
+    move-result-object p0
 
-    iget-object v0, p0, Lc34;->a:Landroid/net/Uri;
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v0}, Landroid/net/Uri;->hashCode()I
+    move-result p1
 
-    move-result v0
+    add-int/lit8 p1, p1, 0x17
 
-    const/16 v1, 0x1f
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    mul-int/2addr v0, v1
+    invoke-direct {v0, p1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iget v2, p0, Lc34;->b:I
+    const-string p1, "Unexpected URI format: "
 
-    invoke-static {v2, v0, v1}, Lus8;->h(III)I
-
-    move-result v0
-
-    iget-object v2, p0, Lc34;->c:Ljava/util/Set;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    add-int/2addr v2, v0
-
-    mul-int/2addr v2, v1
-
-    iget-boolean v0, p0, Lc34;->d:Z
-
-    invoke-static {v2, v1, v0}, Lth2;->f(IIZ)I
-
-    move-result v0
-
-    iget-object p0, p0, Lc34;->e:Ljava/util/Set;
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    :goto_0
-    add-int/2addr v0, p0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    iget-object v0, p0, Lc34;->a:Landroid/net/Uri;
-
-    invoke-virtual {v0}, Landroid/net/Uri;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "DeepLinkRoute(deepLinkUri="
-
-    const-string v2, ", constraint="
-
-    invoke-static {v1, v0, v2}, Lhr1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lc34;->b:I
-
-    const/4 v2, 0x1
-
-    if-eq v1, v2, :cond_1
-
-    const/4 v2, 0x2
-
-    if-eq v1, v2, :cond_0
-
-    const-string v1, "null"
-
-    goto :goto_0
-
-    :cond_0
-    const-string v1, "LOGGED_IN"
-
-    goto :goto_0
-
-    :cond_1
-    const-string v1, "NOT_LOGGED_IN"
-
-    :goto_0
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", requiredParams="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lc34;->c:Ljava/util/Set;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", supportRoot="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lc34;->d:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", bundleRequiredParams="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lc34;->e:Ljava/util/Set;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -245,5 +251,93 @@
 
     move-result-object p0
 
+    new-instance p1, Lcom/google/android/exoplayer2/ParserException;
+
+    invoke-direct {p1, p0, v8, v6, v7}, Lcom/google/android/exoplayer2/ParserException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;ZI)V
+
+    throw p1
+.end method
+
+.method public final close()V
+    .locals 2
+
+    iget-object v0, p0, Lc34;->Y:[B
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    iput-object v1, p0, Lc34;->Y:[B
+
+    invoke-virtual {p0}, Lei0;->b()V
+
+    :cond_0
+    iput-object v1, p0, Lc34;->X:Lo34;
+
+    return-void
+.end method
+
+.method public final getUri()Landroid/net/Uri;
+    .locals 0
+
+    iget-object p0, p0, Lc34;->X:Lo34;
+
+    if-eqz p0, :cond_0
+
+    iget-object p0, p0, Lo34;->a:Landroid/net/Uri;
+
     return-object p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public final read([BII)I
+    .locals 2
+
+    if-nez p3, :cond_0
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_0
+    iget v0, p0, Lc34;->o0:I
+
+    if-nez v0, :cond_1
+
+    const/4 p0, -0x1
+
+    return p0
+
+    :cond_1
+    invoke-static {p3, v0}, Ljava/lang/Math;->min(II)I
+
+    move-result p3
+
+    iget-object v0, p0, Lc34;->Y:[B
+
+    sget v1, Lnaf;->a:I
+
+    iget v1, p0, Lc34;->Z:I
+
+    invoke-static {v0, v1, p1, p2, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    iget p1, p0, Lc34;->Z:I
+
+    add-int/2addr p1, p3
+
+    iput p1, p0, Lc34;->Z:I
+
+    iget p1, p0, Lc34;->o0:I
+
+    sub-int/2addr p1, p3
+
+    iput p1, p0, Lc34;->o0:I
+
+    invoke-virtual {p0, p3}, Lei0;->a(I)V
+
+    return p3
 .end method

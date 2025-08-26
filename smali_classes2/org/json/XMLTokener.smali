@@ -832,7 +832,7 @@
 
     if-nez v4, :cond_0
 
-    return-void
+    goto :goto_3
 
     :cond_0
     aput-char v4, v1, v3
@@ -867,7 +867,7 @@
 
     if-nez v4, :cond_3
 
-    return-void
+    goto :goto_3
 
     :cond_3
     aput-char v4, v1, v3
@@ -893,5 +893,6 @@
     goto :goto_2
 
     :cond_6
+    :goto_3
     return-void
 .end method

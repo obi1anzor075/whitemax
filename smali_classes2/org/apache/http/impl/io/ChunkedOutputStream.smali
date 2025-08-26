@@ -282,12 +282,12 @@
         }
     .end annotation
 
+    const/4 v0, 0x0
+
     .line 6
-    array-length v0, p1
+    array-length v1, p1
 
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, p1, v1, v0}, Lorg/apache/http/impl/io/ChunkedOutputStream;->write([BII)V
+    invoke-virtual {p0, p1, v0, v1}, Lorg/apache/http/impl/io/ChunkedOutputStream;->write([BII)V
 
     return-void
 .end method
@@ -319,7 +319,7 @@
     .line 9
     invoke-virtual {p0, p1, p2, p3}, Lorg/apache/http/impl/io/ChunkedOutputStream;->flushCacheWithAppend([BII)V
 
-    goto :goto_0
+    return-void
 
     .line 10
     :cond_0
@@ -332,7 +332,6 @@
 
     iput p1, p0, Lorg/apache/http/impl/io/ChunkedOutputStream;->cachePosition:I
 
-    :goto_0
     return-void
 
     .line 12

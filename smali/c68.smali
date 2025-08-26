@@ -2,278 +2,477 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lv56;
+
 
 # instance fields
-.field public final a:Landroid/net/Uri;
+.field public final synthetic a:I
 
-.field public final b:Ljava/lang/String;
-
-.field public final c:Ljava/util/List;
-
-.field public final d:Ljava/lang/String;
-
-.field public final e:Lws6;
-
-.field public final f:Ljava/lang/Object;
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Landroid/net/Uri;Ljjd;Ljava/util/List;Le8c;)V
-    .locals 2
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
+    .locals 0
+
+    iput p1, p0, Lc68;->a:I
+
+    iput-object p2, p0, Lc68;->b:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lc68;->a:Landroid/net/Uri;
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lc68;->b:Ljava/lang/String;
-
-    iput-object p3, p0, Lc68;->c:Ljava/util/List;
-
-    iput-object p1, p0, Lc68;->d:Ljava/lang/String;
-
-    iput-object p4, p0, Lc68;->e:Lws6;
-
-    invoke-static {}, Lws6;->i()Lts6;
-
-    move-result-object p2
-
-    const/4 p3, 0x0
-
-    :goto_0
-    invoke-virtual {p4}, Le8c;->size()I
-
-    move-result v0
-
-    if-ge p3, v0, :cond_0
-
-    invoke-virtual {p4, p3}, Le8c;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Le68;
-
-    invoke-virtual {v0}, Le68;->a()Lg68;
-
-    move-result-object v0
-
-    new-instance v1, Le68;
-
-    invoke-direct {v1, v0}, Le68;-><init>(Lg68;)V
-
-    invoke-virtual {p2, v1}, Lts6;->d(Ljava/lang/Object;)V
-
-    add-int/lit8 p3, p3, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p2}, Lts6;->j()Le8c;
-
-    iput-object p1, p0, Lc68;->f:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final invoke()Ljava/lang/Object;
+    .locals 8
 
-    const/4 v0, 0x1
+    iget v0, p0, Lc68;->a:I
 
-    if-ne p0, p1, :cond_0
+    const/4 v1, 0x1
 
-    return v0
+    iget-object p0, p0, Lc68;->b:Ljava/lang/Object;
+
+    packed-switch v0, :pswitch_data_0
+
+    new-instance v0, Lno8;
+
+    check-cast p0, Laza;
+
+    const/16 v1, 0x15
+
+    invoke-direct {v0, v1, p0}, Lno8;-><init>(ILv56;)V
+
+    return-object v0
+
+    :pswitch_0
+    new-instance v0, Lno8;
+
+    check-cast p0, Lvf2;
+
+    const/16 v1, 0x14
+
+    invoke-direct {v0, v1, p0}, Lno8;-><init>(ILv56;)V
+
+    return-object v0
+
+    :pswitch_1
+    new-instance v0, Lno8;
+
+    check-cast p0, Lvf2;
+
+    const/16 v1, 0x13
+
+    invoke-direct {v0, v1, p0}, Lno8;-><init>(ILv56;)V
+
+    return-object v0
+
+    :pswitch_2
+    new-instance v0, Lno8;
+
+    check-cast p0, Laza;
+
+    const/16 v1, 0x12
+
+    invoke-direct {v0, v1, p0}, Lno8;-><init>(ILv56;)V
+
+    return-object v0
+
+    :pswitch_3
+    new-instance v0, Lno8;
+
+    check-cast p0, Lqbb;
+
+    const/16 v1, 0x11
+
+    invoke-direct {v0, v1, p0}, Lno8;-><init>(ILv56;)V
+
+    return-object v0
+
+    :pswitch_4
+    new-instance v0, Lno8;
+
+    check-cast p0, Laza;
+
+    const/16 v1, 0x10
+
+    invoke-direct {v0, v1, p0}, Lno8;-><init>(ILv56;)V
+
+    return-object v0
+
+    :pswitch_5
+    new-instance v0, Lno8;
+
+    check-cast p0, Lvf2;
+
+    const/16 v1, 0xf
+
+    invoke-direct {v0, v1, p0}, Lno8;-><init>(ILv56;)V
+
+    return-object v0
+
+    :pswitch_6
+    new-instance v0, Lno8;
+
+    check-cast p0, Lnxa;
+
+    const/16 v1, 0xe
+
+    invoke-direct {v0, v1, p0}, Lno8;-><init>(ILv56;)V
+
+    return-object v0
+
+    :pswitch_7
+    check-cast p0, Lone/me/pinbars/PinBarsWidget;
+
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+
+    move-result-object p0
+
+    sget-object v0, Lqp4;->q0:Lap9;
+
+    invoke-virtual {v0, p0}, Lap9;->i(Landroid/content/Context;)Lk9a;
+
+    move-result-object p0
+
+    iget-object p0, p0, Lk9a;->c:Lyha;
+
+    return-object p0
+
+    :pswitch_8
+    new-instance v0, Lno8;
+
+    check-cast p0, Lxwa;
+
+    const/16 v1, 0xd
+
+    invoke-direct {v0, v1, p0}, Lno8;-><init>(ILv56;)V
+
+    return-object v0
+
+    :pswitch_9
+    new-instance v0, Lno8;
+
+    check-cast p0, Ldwa;
+
+    const/16 v1, 0xc
+
+    invoke-direct {v0, v1, p0}, Lno8;-><init>(ILv56;)V
+
+    return-object v0
+
+    :pswitch_a
+    new-instance v0, Lno8;
+
+    check-cast p0, Llwa;
+
+    const/16 v1, 0xb
+
+    invoke-direct {v0, v1, p0}, Lno8;-><init>(ILv56;)V
+
+    return-object v0
+
+    :pswitch_b
+    new-instance v0, Lno8;
+
+    check-cast p0, Ldwa;
+
+    const/16 v1, 0xa
+
+    invoke-direct {v0, v1, p0}, Lno8;-><init>(ILv56;)V
+
+    return-object v0
+
+    :pswitch_c
+    new-instance v0, Lno8;
+
+    check-cast p0, Luva;
+
+    const/16 v1, 0x9
+
+    invoke-direct {v0, v1, p0}, Lno8;-><init>(ILv56;)V
+
+    return-object v0
+
+    :pswitch_d
+    new-instance v0, Lno8;
+
+    check-cast p0, Lh2a;
+
+    const/16 v1, 0x8
+
+    invoke-direct {v0, v1, p0}, Lno8;-><init>(ILv56;)V
+
+    return-object v0
+
+    :pswitch_e
+    new-instance v0, Lno8;
+
+    check-cast p0, Ljx7;
+
+    const/4 v1, 0x7
+
+    invoke-direct {v0, v1, p0}, Lno8;-><init>(ILv56;)V
+
+    return-object v0
+
+    :pswitch_f
+    new-instance v0, Lno8;
+
+    check-cast p0, Ljx7;
+
+    const/4 v1, 0x6
+
+    invoke-direct {v0, v1, p0}, Lno8;-><init>(ILv56;)V
+
+    return-object v0
+
+    :pswitch_10
+    new-instance v0, Lno8;
+
+    check-cast p0, Lkn9;
+
+    const/4 v1, 0x5
+
+    invoke-direct {v0, v1, p0}, Lno8;-><init>(ILv56;)V
+
+    return-object v0
+
+    :pswitch_11
+    new-instance v0, Lno8;
+
+    check-cast p0, Ljx7;
+
+    const/4 v1, 0x4
+
+    invoke-direct {v0, v1, p0}, Lno8;-><init>(ILv56;)V
+
+    return-object v0
+
+    :pswitch_12
+    new-instance v0, Lno8;
+
+    check-cast p0, Lk49;
+
+    const/4 v1, 0x3
+
+    invoke-direct {v0, v1, p0}, Lno8;-><init>(ILv56;)V
+
+    return-object v0
+
+    :pswitch_13
+    new-instance v0, Lno8;
+
+    check-cast p0, Lwl2;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1, p0}, Lno8;-><init>(ILv56;)V
+
+    return-object v0
+
+    :pswitch_14
+    check-cast p0, Lone/me/messages/list/ui/MessagesListWidget;
+
+    sget-object v0, Lone/me/messages/list/ui/MessagesListWidget;->V0:[Lbc7;
+
+    invoke-virtual {p0}, Lone/me/messages/list/ui/MessagesListWidget;->B0()Lh49;
+
+    move-result-object p0
+
+    iget-object v0, p0, Lh49;->A1:Lazd;
+
+    invoke-virtual {v0}, Lazd;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lg1e;
+
+    if-eqz v0, :cond_0
+
+    iget-wide v5, v0, Lg1e;->a:J
+
+    iget-object v0, p0, Lh49;->b:Ln59;
+
+    iget-wide v3, v0, Ln59;->a:J
+
+    new-instance v2, Lz6d;
+
+    const/4 v7, 0x1
+
+    invoke-direct/range {v2 .. v7}, Lz6d;-><init>(JJI)V
+
+    new-instance v0, La7d;
+
+    invoke-direct {v0, v2}, La7d;-><init>(Lz6d;)V
+
+    iget-object p0, p0, Lh49;->P0:Lje7;
+
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lw9g;
+
+    invoke-virtual {p0, v0}, Lw9g;->a(Li6d;)V
 
     :cond_0
-    instance-of v1, p1, Lc68;
+    sget-object p0, Ll09;->a:Ll09;
 
-    const/4 v2, 0x0
+    invoke-virtual {p0}, Ll09;->b()Lqx6;
 
-    if-nez v1, :cond_1
+    move-result-object p0
 
-    return v2
+    if-eqz p0, :cond_1
+
+    new-instance v0, Lpx6;
+
+    sget-object v2, Lnx6;->b:Lnx6;
+
+    invoke-direct {v0, v2, v1}, Lpx6;-><init>(Lnx6;I)V
+
+    new-instance v2, Lpx6;
+
+    sget-object v3, Lnx6;->Y:Lnx6;
+
+    invoke-direct {v2, v3, v1}, Lpx6;-><init>(Lnx6;I)V
+
+    filled-new-array {v0, v2}, [Lpx6;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lgad;->i0([Ljava/lang/Object;)Ljava/util/Set;
+
+    move-result-object v0
+
+    sget-object v1, Ldtc;->I0:Ldtc;
+
+    invoke-virtual {p0, v0, v1}, Lqx6;->f(Ljava/util/Set;Ldtc;)V
 
     :cond_1
-    check-cast p1, Lc68;
+    sget-object p0, Le5f;->a:Le5f;
 
-    iget-object v1, p1, Lc68;->a:Landroid/net/Uri;
+    return-object p0
 
-    iget-object v3, p0, Lc68;->a:Landroid/net/Uri;
+    :pswitch_15
+    new-instance v0, Lno8;
 
-    invoke-virtual {v3, v1}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+    check-cast p0, Lqs8;
 
-    move-result v1
+    invoke-direct {v0, v1, p0}, Lno8;-><init>(ILv56;)V
 
-    if-eqz v1, :cond_2
+    return-object v0
 
-    iget-object v1, p0, Lc68;->b:Ljava/lang/String;
+    :pswitch_16
+    new-instance v0, Lno8;
 
-    iget-object v3, p1, Lc68;->b:Ljava/lang/String;
-
-    invoke-static {v1, v3}, Lmze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
+    check-cast p0, Lgo8;
 
     const/4 v1, 0x0
 
-    const/4 v3, 0x0
+    invoke-direct {v0, v1, p0}, Lno8;-><init>(ILv56;)V
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return-object v0
 
-    invoke-static {v1, v3}, Lmze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    :pswitch_17
+    new-instance v0, Loj4;
 
-    move-result v1
+    check-cast p0, Lql8;
 
-    if-eqz v1, :cond_2
+    const/16 v1, 0x1d
 
-    const/4 v1, 0x0
+    invoke-direct {v0, v1, p0}, Loj4;-><init>(ILv56;)V
 
-    invoke-static {v1, v1}, Lmze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    return-object v0
 
-    move-result v1
+    :pswitch_18
+    new-instance v0, Loj4;
 
-    if-eqz v1, :cond_2
+    check-cast p0, Lvd8;
 
-    iget-object v1, p0, Lc68;->c:Ljava/util/List;
+    const/16 v1, 0x1c
 
-    iget-object v3, p1, Lc68;->c:Ljava/util/List;
+    invoke-direct {v0, v1, p0}, Loj4;-><init>(ILv56;)V
 
-    invoke-interface {v1, v3}, Ljava/util/List;->equals(Ljava/lang/Object;)Z
+    return-object v0
 
-    move-result v1
+    :pswitch_19
+    new-instance v0, Loj4;
 
-    if-eqz v1, :cond_2
+    check-cast p0, Lvd8;
 
-    iget-object v1, p0, Lc68;->d:Ljava/lang/String;
+    const/16 v1, 0x1b
 
-    iget-object v3, p1, Lc68;->d:Ljava/lang/String;
+    invoke-direct {v0, v1, p0}, Loj4;-><init>(ILv56;)V
 
-    invoke-static {v1, v3}, Lmze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    return-object v0
 
-    move-result v1
+    :pswitch_1a
+    new-instance v0, Loj4;
 
-    if-eqz v1, :cond_2
+    check-cast p0, Ljx7;
 
-    iget-object v1, p0, Lc68;->e:Lws6;
+    const/16 v1, 0x1a
 
-    iget-object v3, p1, Lc68;->e:Lws6;
+    invoke-direct {v0, v1, p0}, Loj4;-><init>(ILv56;)V
 
-    invoke-virtual {v1, v3}, Lws6;->equals(Ljava/lang/Object;)Z
+    return-object v0
 
-    move-result v1
+    :pswitch_1b
+    new-instance v0, Loj4;
 
-    if-eqz v1, :cond_2
+    check-cast p0, Ltf3;
 
-    iget-object p0, p0, Lc68;->f:Ljava/lang/Object;
+    const/16 v1, 0x19
 
-    iget-object p1, p1, Lc68;->f:Ljava/lang/Object;
+    invoke-direct {v0, v1, p0}, Loj4;-><init>(ILv56;)V
 
-    invoke-static {p0, p1}, Lmze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    return-object v0
 
-    move-result p0
+    :pswitch_1c
+    new-instance v0, Loj4;
 
-    if-eqz p0, :cond_2
+    check-cast p0, Ljx7;
 
-    goto :goto_0
+    const/16 v1, 0x18
 
-    :cond_2
-    move v0, v2
+    invoke-direct {v0, v1, p0}, Loj4;-><init>(ILv56;)V
 
-    :goto_0
-    return v0
-.end method
+    return-object v0
 
-.method public final hashCode()I
-    .locals 3
-
-    iget-object v0, p0, Lc68;->a:Landroid/net/Uri;
-
-    invoke-virtual {v0}, Landroid/net/Uri;->hashCode()I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    const/4 v1, 0x0
-
-    iget-object v2, p0, Lc68;->b:Ljava/lang/String;
-
-    if-nez v2, :cond_0
-
-    move v2, v1
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
-
-    move-result v2
-
-    :goto_0
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    add-int/2addr v0, v1
-
-    mul-int/lit16 v0, v0, 0x3c1
-
-    iget-object v2, p0, Lc68;->c:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->hashCode()I
-
-    move-result v2
-
-    add-int/2addr v2, v0
-
-    mul-int/lit8 v2, v2, 0x1f
-
-    iget-object v0, p0, Lc68;->d:Ljava/lang/String;
-
-    if-nez v0, :cond_1
-
-    move v0, v1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    :goto_1
-    add-int/2addr v2, v0
-
-    mul-int/lit8 v2, v2, 0x1f
-
-    iget-object v0, p0, Lc68;->e:Lws6;
-
-    invoke-virtual {v0}, Lws6;->hashCode()I
-
-    move-result v0
-
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Lc68;->f:Ljava/lang/Object;
-
-    if-nez p0, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v1
-
-    :goto_2
-    add-int/2addr v0, v1
-
-    return v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1c
+        :pswitch_1b
+        :pswitch_1a
+        :pswitch_19
+        :pswitch_18
+        :pswitch_17
+        :pswitch_16
+        :pswitch_15
+        :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

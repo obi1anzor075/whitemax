@@ -174,11 +174,10 @@
 
     move-result-object p0
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     const-string p0, "OFF"
 
-    :goto_0
     return-object p0
 .end method

@@ -1,381 +1,498 @@
-.class public abstract Lbob;
+.class public final Lbob;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static abc_ab_share_pack_mtrl_alpha:I = 0x7f08014b
+.field public static final b:Ljava/util/HashMap;
 
-.field public static abc_action_bar_item_background_material:I = 0x7f08014c
+.field public static final c:Ljava/util/HashMap;
 
-.field public static abc_btn_borderless_material:I = 0x7f08014d
 
-.field public static abc_btn_check_material:I = 0x7f08014e
+# instance fields
+.field public final a:Ljava/util/HashMap;
 
-.field public static abc_btn_check_material_anim:I = 0x7f08014f
 
-.field public static abc_btn_check_to_on_mtrl_000:I = 0x7f080150
+# direct methods
+.method static constructor <clinit>()V
+    .locals 4
 
-.field public static abc_btn_check_to_on_mtrl_015:I = 0x7f080151
+    new-instance v0, Ljava/util/HashMap;
 
-.field public static abc_btn_colored_material:I = 0x7f080152
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-.field public static abc_btn_default_mtrl_shape:I = 0x7f080153
+    sput-object v0, Lbob;->b:Ljava/util/HashMap;
 
-.field public static abc_btn_radio_material:I = 0x7f080154
+    sget-object v1, Leb0;->g:Leb0;
 
-.field public static abc_btn_radio_material_anim:I = 0x7f080155
+    const/16 v2, 0x870
 
-.field public static abc_btn_radio_to_on_mtrl_000:I = 0x7f080156
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.field public static abc_btn_radio_to_on_mtrl_015:I = 0x7f080157
+    move-result-object v2
 
-.field public static abc_btn_switch_to_on_mtrl_00001:I = 0x7f080158
+    const/16 v3, 0x10df
 
-.field public static abc_btn_switch_to_on_mtrl_00012:I = 0x7f080159
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.field public static abc_cab_background_internal_bg:I = 0x7f08015a
+    move-result-object v3
 
-.field public static abc_cab_background_top_material:I = 0x7f08015b
+    invoke-static {v2, v3}, Landroid/util/Range;->create(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
 
-.field public static abc_cab_background_top_mtrl_alpha:I = 0x7f08015c
+    move-result-object v2
 
-.field public static abc_control_background_material:I = 0x7f08015d
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-.field public static abc_dialog_material_background:I = 0x7f08015e
+    sget-object v1, Leb0;->f:Leb0;
 
-.field public static abc_edit_text_material:I = 0x7f08015f
+    const/16 v2, 0x438
 
-.field public static abc_ic_ab_back_material:I = 0x7f080160
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.field public static abc_ic_arrow_drop_right_black_24dp:I = 0x7f080161
+    move-result-object v2
 
-.field public static abc_ic_clear_material:I = 0x7f080162
+    const/16 v3, 0x59f
 
-.field public static abc_ic_commit_search_api_mtrl_alpha:I = 0x7f080163
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.field public static abc_ic_go_search_api_material:I = 0x7f080164
+    move-result-object v3
 
-.field public static abc_ic_menu_copy_mtrl_am_alpha:I = 0x7f080165
+    invoke-static {v2, v3}, Landroid/util/Range;->create(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
 
-.field public static abc_ic_menu_cut_mtrl_alpha:I = 0x7f080166
+    move-result-object v2
 
-.field public static abc_ic_menu_overflow_material:I = 0x7f080167
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-.field public static abc_ic_menu_paste_mtrl_am_alpha:I = 0x7f080168
+    sget-object v1, Leb0;->e:Leb0;
 
-.field public static abc_ic_menu_selectall_mtrl_alpha:I = 0x7f080169
+    const/16 v2, 0x2d0
 
-.field public static abc_ic_menu_share_mtrl_alpha:I = 0x7f08016a
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.field public static abc_ic_search_api_material:I = 0x7f08016b
+    move-result-object v2
 
-.field public static abc_ic_voice_search_api_material:I = 0x7f08016c
+    const/16 v3, 0x437
 
-.field public static abc_item_background_holo_dark:I = 0x7f08016d
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.field public static abc_item_background_holo_light:I = 0x7f08016e
+    move-result-object v3
 
-.field public static abc_list_divider_material:I = 0x7f08016f
+    invoke-static {v2, v3}, Landroid/util/Range;->create(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
 
-.field public static abc_list_divider_mtrl_alpha:I = 0x7f080170
+    move-result-object v2
 
-.field public static abc_list_focused_holo:I = 0x7f080171
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-.field public static abc_list_longpressed_holo:I = 0x7f080172
+    sget-object v1, Leb0;->d:Leb0;
 
-.field public static abc_list_pressed_holo_dark:I = 0x7f080173
+    const/16 v2, 0xf1
 
-.field public static abc_list_pressed_holo_light:I = 0x7f080174
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.field public static abc_list_selector_background_transition_holo_dark:I = 0x7f080175
+    move-result-object v2
 
-.field public static abc_list_selector_background_transition_holo_light:I = 0x7f080176
+    const/16 v3, 0x2cf
 
-.field public static abc_list_selector_disabled_holo_dark:I = 0x7f080177
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.field public static abc_list_selector_disabled_holo_light:I = 0x7f080178
+    move-result-object v3
 
-.field public static abc_list_selector_holo_dark:I = 0x7f080179
+    invoke-static {v2, v3}, Landroid/util/Range;->create(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
 
-.field public static abc_list_selector_holo_light:I = 0x7f08017a
+    move-result-object v2
 
-.field public static abc_menu_hardkey_panel_mtrl_mult:I = 0x7f08017b
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-.field public static abc_popup_background_mtrl_mult:I = 0x7f08017c
+    new-instance v0, Ljava/util/HashMap;
 
-.field public static abc_ratingbar_indicator_material:I = 0x7f08017d
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-.field public static abc_ratingbar_material:I = 0x7f08017e
+    sput-object v0, Lbob;->c:Ljava/util/HashMap;
 
-.field public static abc_ratingbar_small_material:I = 0x7f08017f
+    const/4 v1, 0x0
 
-.field public static abc_scrubber_control_off_mtrl_alpha:I = 0x7f080180
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.field public static abc_scrubber_control_to_pressed_mtrl_000:I = 0x7f080181
+    move-result-object v1
 
-.field public static abc_scrubber_control_to_pressed_mtrl_005:I = 0x7f080182
+    sget-object v2, Lzs;->a:Landroid/util/Rational;
 
-.field public static abc_scrubber_primary_mtrl_alpha:I = 0x7f080183
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-.field public static abc_scrubber_track_mtrl_alpha:I = 0x7f080184
+    const/4 v1, 0x1
 
-.field public static abc_seekbar_thumb_material:I = 0x7f080185
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.field public static abc_seekbar_tick_mark_material:I = 0x7f080186
+    move-result-object v1
 
-.field public static abc_seekbar_track_material:I = 0x7f080187
+    sget-object v2, Lzs;->c:Landroid/util/Rational;
 
-.field public static abc_spinner_mtrl_am_alpha:I = 0x7f080188
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-.field public static abc_spinner_textfield_background_material:I = 0x7f080189
+    return-void
+.end method
 
-.field public static abc_star_black_48dp:I = 0x7f08018a
+.method public constructor <init>(Ljava/util/List;Ljava/util/HashMap;)V
+    .locals 9
 
-.field public static abc_star_half_black_48dp:I = 0x7f08018b
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field public static abc_switch_thumb_material:I = 0x7f08018c
+    new-instance v0, Ljava/util/HashMap;
 
-.field public static abc_switch_track_mtrl_alpha:I = 0x7f08018d
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-.field public static abc_tab_indicator_material:I = 0x7f08018e
+    iput-object v0, p0, Lbob;->a:Ljava/util/HashMap;
 
-.field public static abc_tab_indicator_mtrl_alpha:I = 0x7f08018f
+    sget-object v0, Lbob;->b:Ljava/util/HashMap;
 
-.field public static abc_text_cursor_material:I = 0x7f080190
+    invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
 
-.field public static abc_text_select_handle_left_mtrl:I = 0x7f080191
+    move-result-object v1
 
-.field public static abc_text_select_handle_middle_mtrl:I = 0x7f080192
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-.field public static abc_text_select_handle_right_mtrl:I = 0x7f080193
+    move-result-object v1
 
-.field public static abc_textfield_activated_mtrl_alpha:I = 0x7f080194
+    :cond_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-.field public static abc_textfield_default_mtrl_alpha:I = 0x7f080195
+    move-result v2
 
-.field public static abc_textfield_search_activated_mtrl_alpha:I = 0x7f080196
+    sget-object v3, Lbob;->c:Ljava/util/HashMap;
 
-.field public static abc_textfield_search_default_mtrl_alpha:I = 0x7f080197
+    const/4 v4, -0x1
 
-.field public static abc_textfield_search_material:I = 0x7f080198
+    if-eqz v2, :cond_1
 
-.field public static abc_vector_test:I = 0x7f080199
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-.field public static avd_hide_password:I = 0x7f0801ad
+    move-result-object v2
 
-.field public static avd_show_password:I = 0x7f0801ae
+    check-cast v2, Leb0;
 
-.field public static btn_checkbox_checked_mtrl:I = 0x7f0801ba
+    iget-object v5, p0, Lbob;->a:Ljava/util/HashMap;
 
-.field public static btn_checkbox_checked_to_unchecked_mtrl_animation:I = 0x7f0801bb
+    new-instance v6, Ldb0;
 
-.field public static btn_checkbox_unchecked_mtrl:I = 0x7f0801bc
+    invoke-direct {v6, v2, v4}, Ldb0;-><init>(Leb0;I)V
 
-.field public static btn_checkbox_unchecked_to_checked_mtrl_animation:I = 0x7f0801bd
+    new-instance v4, Ljava/util/ArrayList;
 
-.field public static btn_radio_off_mtrl:I = 0x7f0801be
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-.field public static btn_radio_off_to_on_mtrl_animation:I = 0x7f0801bf
+    invoke-virtual {v5, v6, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-.field public static btn_radio_on_mtrl:I = 0x7f0801c0
+    invoke-virtual {v3}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
 
-.field public static btn_radio_on_to_off_mtrl_animation:I = 0x7f0801c1
+    move-result-object v3
 
-.field public static design_fab_background:I = 0x7f080214
+    invoke-interface {v3}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-.field public static design_ic_visibility:I = 0x7f080215
+    move-result-object v3
 
-.field public static design_ic_visibility_off:I = 0x7f080216
+    :goto_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-.field public static design_password_eye:I = 0x7f080217
+    move-result v4
 
-.field public static design_snackbar_background:I = 0x7f080218
+    if-eqz v4, :cond_0
 
-.field public static ic_arrow_back_black_24:I = 0x7f0803d5
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-.field public static ic_call_answer:I = 0x7f080405
+    move-result-object v4
 
-.field public static ic_call_answer_low:I = 0x7f080406
+    check-cast v4, Ljava/lang/Integer;
 
-.field public static ic_call_answer_video:I = 0x7f080407
+    iget-object v5, p0, Lbob;->a:Ljava/util/HashMap;
 
-.field public static ic_call_answer_video_low:I = 0x7f080408
+    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
 
-.field public static ic_call_decline:I = 0x7f08040a
+    move-result v4
 
-.field public static ic_call_decline_low:I = 0x7f08040b
+    new-instance v6, Ldb0;
 
-.field public static ic_clear_black_24:I = 0x7f080444
+    invoke-direct {v6, v2, v4}, Ldb0;-><init>(Leb0;I)V
 
-.field public static ic_clock_black_24dp:I = 0x7f08044a
+    new-instance v4, Ljava/util/ArrayList;
 
-.field public static ic_keyboard_black_24dp:I = 0x7f0804fd
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-.field public static ic_m3_chip_check:I = 0x7f080518
+    invoke-virtual {v5, v6, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-.field public static ic_m3_chip_checked_circle:I = 0x7f080519
+    goto :goto_0
 
-.field public static ic_m3_chip_close:I = 0x7f08051a
+    :cond_1
+    invoke-virtual {p2}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
-.field public static ic_mtrl_checked_circle:I = 0x7f0805cf
+    move-result-object v1
 
-.field public static ic_mtrl_chip_checked_black:I = 0x7f0805d0
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-.field public static ic_mtrl_chip_checked_circle:I = 0x7f0805d1
+    move-result-object v1
 
-.field public static ic_mtrl_chip_close_circle:I = 0x7f0805d2
+    :goto_1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-.field public static ic_search_black_24:I = 0x7f08062c
+    move-result v2
 
-.field public static indeterminate_static:I = 0x7f0806c0
+    if-eqz v2, :cond_2
 
-.field public static m3_avd_hide_password:I = 0x7f0806d4
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-.field public static m3_avd_show_password:I = 0x7f0806d5
+    move-result-object v2
 
-.field public static m3_bottom_sheet_drag_handle:I = 0x7f0806d6
+    check-cast v2, Ljava/util/Map$Entry;
 
-.field public static m3_password_eye:I = 0x7f0806d7
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-.field public static m3_popupmenu_background_overlay:I = 0x7f0806d8
+    move-result-object v5
 
-.field public static m3_radiobutton_ripple:I = 0x7f0806d9
+    check-cast v5, Leb0;
 
-.field public static m3_selection_control_ripple:I = 0x7f0806da
+    iget-object v6, p0, Lbob;->a:Ljava/util/HashMap;
 
-.field public static m3_tabs_background:I = 0x7f0806db
+    new-instance v7, Ldb0;
 
-.field public static m3_tabs_line_indicator:I = 0x7f0806dc
+    invoke-direct {v7, v5, v4}, Ldb0;-><init>(Leb0;I)V
 
-.field public static m3_tabs_rounded_line_indicator:I = 0x7f0806dd
+    invoke-virtual {v6, v7}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-.field public static m3_tabs_transparent_background:I = 0x7f0806de
+    move-result-object v5
 
-.field public static material_cursor_drawable:I = 0x7f0806e0
+    check-cast v5, Ljava/util/List;
 
-.field public static material_ic_calendar_black_24dp:I = 0x7f0806e1
+    invoke-static {v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-.field public static material_ic_clear_black_24dp:I = 0x7f0806e2
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-.field public static material_ic_edit_black_24dp:I = 0x7f0806e3
+    move-result-object v2
 
-.field public static material_ic_keyboard_arrow_left_black_24dp:I = 0x7f0806e4
+    check-cast v2, Landroid/util/Size;
 
-.field public static material_ic_keyboard_arrow_next_black_24dp:I = 0x7f0806e5
+    invoke-interface {v5, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-.field public static material_ic_keyboard_arrow_previous_black_24dp:I = 0x7f0806e6
+    goto :goto_1
 
-.field public static material_ic_keyboard_arrow_right_black_24dp:I = 0x7f0806e7
+    :cond_2
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-.field public static material_ic_menu_arrow_down_black_24dp:I = 0x7f0806e8
+    move-result-object p1
 
-.field public static material_ic_menu_arrow_up_black_24dp:I = 0x7f0806e9
+    :goto_2
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-.field public static mtrl_bottomsheet_drag_handle:I = 0x7f080765
+    move-result v1
 
-.field public static mtrl_checkbox_button:I = 0x7f080766
+    if-eqz v1, :cond_9
 
-.field public static mtrl_checkbox_button_checked_unchecked:I = 0x7f080767
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-.field public static mtrl_checkbox_button_icon:I = 0x7f080768
+    move-result-object v1
 
-.field public static mtrl_checkbox_button_icon_checked_indeterminate:I = 0x7f080769
+    check-cast v1, Landroid/util/Size;
 
-.field public static mtrl_checkbox_button_icon_checked_unchecked:I = 0x7f08076a
+    invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
-.field public static mtrl_checkbox_button_icon_indeterminate_checked:I = 0x7f08076b
+    move-result-object v2
 
-.field public static mtrl_checkbox_button_icon_indeterminate_unchecked:I = 0x7f08076c
+    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-.field public static mtrl_checkbox_button_icon_unchecked_checked:I = 0x7f08076d
+    move-result-object v2
 
-.field public static mtrl_checkbox_button_icon_unchecked_indeterminate:I = 0x7f08076e
+    :cond_3
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-.field public static mtrl_checkbox_button_unchecked_checked:I = 0x7f08076f
+    move-result v4
 
-.field public static mtrl_dialog_background:I = 0x7f080770
+    const/4 v5, 0x0
 
-.field public static mtrl_dropdown_arrow:I = 0x7f080771
+    if-eqz v4, :cond_4
 
-.field public static mtrl_ic_arrow_drop_down:I = 0x7f080772
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-.field public static mtrl_ic_arrow_drop_up:I = 0x7f080773
+    move-result-object v4
 
-.field public static mtrl_ic_cancel:I = 0x7f080774
+    check-cast v4, Ljava/util/Map$Entry;
 
-.field public static mtrl_ic_check_mark:I = 0x7f080775
+    invoke-interface {v4}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-.field public static mtrl_ic_checkbox_checked:I = 0x7f080776
+    move-result-object v6
 
-.field public static mtrl_ic_checkbox_unchecked:I = 0x7f080777
+    check-cast v6, Landroid/util/Range;
 
-.field public static mtrl_ic_error:I = 0x7f080778
+    invoke-virtual {v1}, Landroid/util/Size;->getHeight()I
 
-.field public static mtrl_ic_indeterminate:I = 0x7f080779
+    move-result v7
 
-.field public static mtrl_navigation_bar_item_background:I = 0x7f08077a
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.field public static mtrl_popupmenu_background:I = 0x7f08077b
+    move-result-object v7
 
-.field public static mtrl_popupmenu_background_overlay:I = 0x7f08077c
+    invoke-virtual {v6, v7}, Landroid/util/Range;->contains(Ljava/lang/Comparable;)Z
 
-.field public static mtrl_switch_thumb:I = 0x7f08077d
+    move-result v6
 
-.field public static mtrl_switch_thumb_checked:I = 0x7f08077e
+    if-eqz v6, :cond_3
 
-.field public static mtrl_switch_thumb_checked_pressed:I = 0x7f08077f
+    invoke-interface {v4}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-.field public static mtrl_switch_thumb_checked_unchecked:I = 0x7f080780
+    move-result-object v2
 
-.field public static mtrl_switch_thumb_pressed:I = 0x7f080781
+    check-cast v2, Leb0;
 
-.field public static mtrl_switch_thumb_pressed_checked:I = 0x7f080782
+    goto :goto_3
 
-.field public static mtrl_switch_thumb_pressed_unchecked:I = 0x7f080783
+    :cond_4
+    move-object v2, v5
 
-.field public static mtrl_switch_thumb_unchecked:I = 0x7f080784
+    :goto_3
+    if-nez v2, :cond_5
 
-.field public static mtrl_switch_thumb_unchecked_checked:I = 0x7f080785
+    goto :goto_2
 
-.field public static mtrl_switch_thumb_unchecked_pressed:I = 0x7f080786
+    :cond_5
+    invoke-virtual {v3}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
-.field public static mtrl_switch_track:I = 0x7f080787
+    move-result-object v4
 
-.field public static mtrl_switch_track_decoration:I = 0x7f080788
+    invoke-interface {v4}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-.field public static mtrl_tabs_default_indicator:I = 0x7f080789
+    move-result-object v4
 
-.field public static navigation_empty_icon:I = 0x7f080790
+    :cond_6
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
-.field public static notification_action_background:I = 0x7f080793
+    move-result v6
 
-.field public static notification_bg:I = 0x7f080794
+    if-eqz v6, :cond_7
 
-.field public static notification_bg_low:I = 0x7f080795
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-.field public static notification_bg_low_normal:I = 0x7f080796
+    move-result-object v6
 
-.field public static notification_bg_low_pressed:I = 0x7f080797
+    check-cast v6, Ljava/util/Map$Entry;
 
-.field public static notification_bg_normal:I = 0x7f080798
+    invoke-interface {v6}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-.field public static notification_bg_normal_pressed:I = 0x7f080799
+    move-result-object v7
 
-.field public static notification_icon_background:I = 0x7f08079a
+    check-cast v7, Landroid/util/Rational;
 
-.field public static notification_oversize_large_icon_bg:I = 0x7f08079d
+    sget-object v8, Luqd;->b:Landroid/util/Size;
 
-.field public static notification_template_icon_bg:I = 0x7f08079e
+    invoke-static {v1, v7, v8}, Lzs;->a(Landroid/util/Size;Landroid/util/Rational;Landroid/util/Size;)Z
 
-.field public static notification_template_icon_low_bg:I = 0x7f08079f
+    move-result v7
 
-.field public static notification_tile_bg:I = 0x7f0807a0
+    if-eqz v7, :cond_6
 
-.field public static notify_panel_notification_icon_bg:I = 0x7f0807a1
+    invoke-interface {v6}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-.field public static test_level_drawable:I = 0x7f080806
+    move-result-object v4
 
-.field public static tooltip_frame_dark:I = 0x7f080809
+    move-object v5, v4
 
-.field public static tooltip_frame_light:I = 0x7f08080a
+    check-cast v5, Ljava/lang/Integer;
+
+    :cond_7
+    if-nez v5, :cond_8
+
+    goto :goto_2
+
+    :cond_8
+    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+
+    move-result v4
+
+    iget-object v5, p0, Lbob;->a:Ljava/util/HashMap;
+
+    new-instance v6, Ldb0;
+
+    invoke-direct {v6, v2, v4}, Ldb0;-><init>(Leb0;I)V
+
+    invoke-virtual {v5, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/util/List;
+
+    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_2
+
+    :cond_9
+    iget-object p0, p0, Lbob;->a:Ljava/util/HashMap;
+
+    invoke-virtual {p0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_4
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_b
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/util/Map$Entry;
+
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ldb0;
+
+    iget-object v0, v0, Ldb0;->a:Leb0;
+
+    invoke-virtual {p2, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/util/Size;
+
+    if-nez v0, :cond_a
+
+    goto :goto_4
+
+    :cond_a
+    sget-object v1, Luqd;->a:Landroid/util/Size;
+
+    invoke-virtual {v0}, Landroid/util/Size;->getWidth()I
+
+    move-result v1
+
+    invoke-virtual {v0}, Landroid/util/Size;->getHeight()I
+
+    move-result v0
+
+    mul-int/2addr v0, v1
+
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/util/List;
+
+    new-instance v1, Lj30;
+
+    const/4 v2, 0x1
+
+    invoke-direct {v1, v0, v2}, Lj30;-><init>(II)V
+
+    invoke-static {p1, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
+
+    goto :goto_4
+
+    :cond_b
+    return-void
+.end method

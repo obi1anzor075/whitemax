@@ -1,8 +1,3 @@
-.class public interface abstract Lrhd;
+.class public final Lrhd;
 .super Ljava/lang/Object;
 .source "SourceFile"
-
-
-# virtual methods
-.method public abstract p(Lqhd;)V
-.end method

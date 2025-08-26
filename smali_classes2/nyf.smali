@@ -1,31 +1,35 @@
 .class public final Lnyf;
-.super Ljava/lang/Object;
+.super Lpyf;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:I
-
-.field public final b:Z
+.field public final a:J
 
 
 # direct methods
-.method public constructor <init>(IZ)V
+.method public constructor <init>(J)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lnyf;->a:I
-
-    iput-boolean p2, p0, Lnyf;->b:Z
+    iput-wide p1, p0, Lnyf;->a:J
 
     return-void
 .end method
 
 
 # virtual methods
+.method public final a()J
+    .locals 2
+
+    iget-wide v0, p0, Lnyf;->a:J
+
+    return-wide v0
+.end method
+
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 5
 
     const/4 v0, 0x1
 
@@ -45,75 +49,42 @@
     :cond_1
     check-cast p1, Lnyf;
 
-    iget v1, p1, Lnyf;->a:I
+    iget-wide v3, p0, Lnyf;->a:J
 
-    iget v3, p0, Lnyf;->a:I
+    iget-wide p0, p1, Lnyf;->a:J
 
-    if-eq v3, v1, :cond_2
+    cmp-long p0, v3, p0
+
+    if-eqz p0, :cond_2
 
     return v2
 
     :cond_2
-    iget-boolean p0, p0, Lnyf;->b:Z
-
-    iget-boolean p1, p1, Lnyf;->b:Z
-
-    if-eq p0, p1, :cond_3
-
-    return v2
-
-    :cond_3
     return v0
 .end method
 
 .method public final hashCode()I
-    .locals 1
+    .locals 2
 
-    iget v0, p0, Lnyf;->a:I
+    iget-wide v0, p0, Lnyf;->a:J
 
-    invoke-static {v0}, Lhr1;->t(I)I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-boolean p0, p0, Lnyf;->b:Z
-
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
 
     move-result p0
-
-    add-int/2addr p0, v0
 
     return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 2
+    .locals 4
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "NetworkParameters(condition="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v1, p0, Lnyf;->a:I
-
-    invoke-static {v1}, Lwn6;->s(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", preferHardwareVPX="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean p0, p0, Lnyf;->b:Z
+    const-string v0, "Completed(requestId="
 
     const-string v1, ")"
 
-    invoke-static {v0, p0, v1}, Lhr1;->j(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+    iget-wide v2, p0, Lnyf;->a:J
+
+    invoke-static {v2, v3, v0, v1}, Lu88;->i(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

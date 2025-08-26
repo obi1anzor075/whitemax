@@ -1,126 +1,150 @@
-.class public final Llq5;
-.super Ll5e;
+.class public abstract Llq5;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Ldnb;
 
 
-# instance fields
-.field public X:I
-
-.field public final synthetic Y:Lrq5;
+# static fields
+.field public static final a:I
 
 
 # direct methods
-.method public constructor <init>(Lrq5;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput-object p1, p0, Llq5;->Y:Lrq5;
+    const-string v0, "rx3.buffer-size"
 
-    const/4 p1, 0x2
+    const/16 v1, 0x80
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-static {v0, v1}, Ljava/lang/Integer;->getInteger(Ljava/lang/String;I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
+
+    move-result v0
+
+    sput v0, Llq5;->a:I
 
     return-void
 .end method
 
+.method public static varargs a([Ljava/lang/Object;)Llq5;
+    .locals 2
 
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+    array-length v0, p0
 
-    check-cast p1, Lou3;
+    if-nez v0, :cond_0
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Llq5;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Llq5;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Llq5;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
+    sget-object p0, Luq5;->b:Luq5;
 
     return-object p0
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 0
-
-    new-instance p1, Llq5;
-
-    iget-object p0, p0, Llq5;->Y:Lrq5;
-
-    invoke-direct {p1, p0, p2}, Llq5;-><init>(Lrq5;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
-
-    sget-object v0, Lpu3;->a:Lpu3;
-
-    iget v1, p0, Llq5;->X:I
-
-    iget-object v2, p0, Llq5;->Y:Lrq5;
-
-    const/4 v3, 0x1
-
-    if-eqz v1, :cond_1
-
-    if-ne v1, v3, :cond_0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto :goto_0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    array-length v0, p0
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    const/4 v1, 0x1
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, v2, Lrq5;->X:Lv72;
-
-    iput v3, p0, Llq5;->X:I
-
-    check-cast p1, Lb92;
-
-    iget-object v1, v2, Lrq5;->b:Ljava/lang/String;
-
-    invoke-virtual {p1, v1, p0}, Lb92;->c(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-ne p0, v0, :cond_2
-
-    return-object v0
-
-    :cond_2
-    :goto_0
-    iget-object p0, v2, Lrq5;->B0:Ll05;
-
-    new-instance p1, Lrp5;
+    if-ne v0, v1, :cond_1
 
     const/4 v0, 0x0
 
-    invoke-direct {p1, v0}, Lrp5;-><init>(Z)V
+    aget-object p0, p0, v0
 
-    invoke-static {p0, p1}, Ltaf;->o(Ll05;Ljava/lang/Object;)V
+    const-string v0, "item is null"
 
-    sget-object p0, Ljue;->a:Ljue;
+    invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    return-object p0
+    new-instance v0, Lgr5;
+
+    invoke-direct {v0, p0}, Lgr5;-><init>(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :cond_1
+    new-instance v0, Lvq5;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1, p0}, Lvq5;-><init>(ILjava/lang/Object;)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final c(Lvr5;)V
+    .locals 1
+
+    const-string v0, "subscriber is null"
+
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    :try_start_0
+    invoke-virtual {p0, p1}, Llq5;->f(Lvr5;)V
+    :try_end_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    return-void
+
+    :catchall_0
+    move-exception p0
+
+    invoke-static {p0}, Lfc2;->G(Ljava/lang/Throwable;)V
+
+    invoke-static {p0}, Lou0;->x(Ljava/lang/Throwable;)V
+
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string v0, "Actually not, but can\'t throw other exceptions due to RS"
+
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1, p0}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+
+    throw p1
+
+    :catch_0
+    move-exception p0
+
+    throw p0
+.end method
+
+.method public final e(Lj9e;)V
+    .locals 1
+
+    instance-of v0, p1, Lvr5;
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Lvr5;
+
+    invoke-virtual {p0, p1}, Llq5;->c(Lvr5;)V
+
+    return-void
+
+    :cond_0
+    const-string v0, "subscriber is null"
+
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    new-instance v0, Ly7e;
+
+    invoke-direct {v0, p1}, Ly7e;-><init>(Lj9e;)V
+
+    invoke-virtual {p0, v0}, Llq5;->c(Lvr5;)V
+
+    return-void
+.end method
+
+.method public abstract f(Lvr5;)V
 .end method

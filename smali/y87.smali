@@ -1,151 +1,116 @@
-.class public final Ly87;
+.class public abstract Ly87;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final c:Ljava/lang/String;
+.field public static final a:Lkotlinx/coroutines/internal/Symbol;
 
-.field public static final d:Ljava/lang/String;
+.field public static final b:Lkotlinx/coroutines/internal/Symbol;
 
+.field public static final c:Lkotlinx/coroutines/internal/Symbol;
 
-# instance fields
-.field public final a:Ljava/lang/String;
+.field public static final d:Lkotlinx/coroutines/internal/Symbol;
 
-.field public final b:Ljava/lang/String;
+.field public static final e:Lkotlinx/coroutines/internal/Symbol;
+
+.field public static final f:Lxy4;
+
+.field public static final g:Lxy4;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 2
 
-    sget v0, Loze;->a:I
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
-    const/4 v0, 0x0
+    const-string v1, "COMPLETING_ALREADY"
 
-    const/16 v1, 0x24
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+    sput-object v0, Ly87;->a:Lkotlinx/coroutines/internal/Symbol;
 
-    move-result-object v0
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
-    sput-object v0, Ly87;->c:Ljava/lang/String;
+    const-string v1, "COMPLETING_WAITING_CHILDREN"
 
-    const/4 v0, 0x1
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+    sput-object v0, Ly87;->b:Lkotlinx/coroutines/internal/Symbol;
 
-    move-result-object v0
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
-    sput-object v0, Ly87;->d:Ljava/lang/String;
+    const-string v1, "COMPLETING_RETRY"
 
-    return-void
-.end method
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
 
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
+    sput-object v0, Ly87;->c:Lkotlinx/coroutines/internal/Symbol;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
-    invoke-static {p1}, Loze;->T(Ljava/lang/String;)Ljava/lang/String;
+    const-string v1, "TOO_LATE_TO_CANCEL"
 
-    move-result-object p1
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
 
-    iput-object p1, p0, Ly87;->a:Ljava/lang/String;
+    sput-object v0, Ly87;->d:Lkotlinx/coroutines/internal/Symbol;
 
-    iput-object p2, p0, Ly87;->b:Ljava/lang/String;
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
-    return-void
-.end method
+    const-string v1, "SEALED"
 
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+    sput-object v0, Ly87;->e:Lkotlinx/coroutines/internal/Symbol;
 
-    const/4 v0, 0x1
+    new-instance v0, Lxy4;
 
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_3
+    invoke-direct {v0, v1}, Lxy4;-><init>(Z)V
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sput-object v0, Ly87;->f:Lxy4;
 
-    move-result-object v2
+    new-instance v0, Lxy4;
 
-    const-class v3, Ly87;
+    const/4 v1, 0x1
 
-    if-eq v3, v2, :cond_1
+    invoke-direct {v0, v1}, Lxy4;-><init>(Z)V
+
+    sput-object v0, Ly87;->g:Lxy4;
+
+    return-void
+.end method
+
+.method public static final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    instance-of v0, p0, Lgz6;
+
+    if-eqz v0, :cond_0
+
+    move-object v0, p0
+
+    check-cast v0, Lgz6;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_2
+
+    iget-object v0, v0, Lgz6;->a:Lfz6;
+
+    if-nez v0, :cond_1
 
     goto :goto_1
 
     :cond_1
-    check-cast p1, Ly87;
-
-    iget-object v2, p0, Ly87;->a:Ljava/lang/String;
-
-    iget-object v3, p1, Ly87;->a:Ljava/lang/String;
-
-    invoke-static {v2, v3}, Loze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    iget-object p0, p0, Ly87;->b:Ljava/lang/String;
-
-    iget-object p1, p1, Ly87;->b:Ljava/lang/String;
-
-    invoke-static {p0, p1}, Loze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_2
-
-    goto :goto_0
+    return-object v0
 
     :cond_2
-    move v0, v1
-
-    :goto_0
-    return v0
-
-    :cond_3
     :goto_1
-    return v1
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    iget-object v0, p0, Ly87;->b:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Ly87;->a:Ljava/lang/String;
-
-    if-eqz p0, :cond_0
-
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
-
-    move-result p0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    add-int/2addr v0, p0
-
-    return v0
+    return-object p0
 .end method

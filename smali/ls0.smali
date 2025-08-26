@@ -1,596 +1,134 @@
 .class public final Lls0;
-.super Ljava/lang/Object;
+.super Lhj0;
 .source "SourceFile"
 
 # interfaces
-.implements Le60;
-
-
-# instance fields
-.field public final a:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field public final b:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field public final c:Ljava/util/concurrent/ConcurrentLinkedQueue;
-
-.field public final d:Lryc;
-
-.field public final e:Ljava/lang/Object;
-
-.field public f:Lks0;
-
-.field public final g:Le60;
-
-.field public final h:I
-
-.field public final i:I
-
-.field public final j:I
-
-.field public final k:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field public l:I
+.implements Lao0;
 
 
 # direct methods
-.method public constructor <init>(Lg60;Lm80;)V
-    .locals 8
+.method public constructor <init>(Lzo9;Lz2b;Lap9;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2, p3}, Lhj0;-><init>(Ltp8;Lz2b;La3b;)V
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Lls0;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Lls0;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    new-instance v0, Ljava/util/concurrent/ConcurrentLinkedQueue;
-
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentLinkedQueue;-><init>()V
-
-    iput-object v0, p0, Lls0;->c:Ljava/util/concurrent/ConcurrentLinkedQueue;
-
-    sget-object v0, Lm30;->c:Lm30;
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lm30;->c:Lm30;
-
-    goto :goto_1
-
-    :cond_0
-    const-class v0, Lm30;
-
-    monitor-enter v0
-
-    :try_start_0
-    sget-object v2, Lm30;->c:Lm30;
-
-    if-nez v2, :cond_1
-
-    new-instance v2, Lm30;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v2, v3}, Lm30;-><init>(I)V
-
-    sput-object v2, Lm30;->c:Lm30;
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_3
-
-    :cond_1
-    :goto_0
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    sget-object v0, Lm30;->c:Lm30;
-
-    :goto_1
-    new-instance v2, Lryc;
-
-    invoke-direct {v2, v0}, Lryc;-><init>(Ljava/util/concurrent/Executor;)V
-
-    iput-object v2, p0, Lls0;->d:Lryc;
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lls0;->e:Ljava/lang/Object;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lls0;->f:Lks0;
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Lls0;->k:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    iput-object p1, p0, Lls0;->g:Le60;
-
-    invoke-virtual {p2}, Lm80;->a()I
-
-    move-result p1
-
-    iput p1, p0, Lls0;->h:I
-
-    iget p2, p2, Lm80;->b:I
-
-    iput p2, p0, Lls0;->i:I
-
-    int-to-long v2, p1
-
-    const-wide/16 v4, 0x0
-
-    cmp-long v0, v2, v4
-
-    const/4 v2, 0x1
-
-    if-lez v0, :cond_2
-
-    move v0, v2
-
-    goto :goto_2
-
-    :cond_2
-    move v0, v1
-
-    :goto_2
-    const-string v3, "mBytesPerFrame must be greater than 0."
-
-    invoke-static {v3, v0}, Le07;->j(Ljava/lang/String;Z)V
-
-    int-to-long v6, p2
-
-    cmp-long p2, v6, v4
-
-    if-lez p2, :cond_3
-
-    move v1, v2
-
-    :cond_3
-    const-string p2, "mSampleRate must be greater than 0."
-
-    invoke-static {p2, v1}, Le07;->j(Ljava/lang/String;Z)V
-
-    const/16 p2, 0x1f4
-
-    iput p2, p0, Lls0;->j:I
-
-    mul-int/lit16 p1, p1, 0x400
-
-    iput p1, p0, Lls0;->l:I
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     return-void
-
-    :goto_3
-    :try_start_1
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p0
 .end method
 
 
 # virtual methods
-.method public final a(Lnfc;Lryc;)V
+.method public final a(I)Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lls0;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    int-to-double p0, p1
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+    const-wide/high16 v0, 0x4000000000000000L    # 2.0
 
-    move-result v0
+    div-double/2addr p0, v0
 
-    xor-int/lit8 v0, v0, 0x1
+    invoke-static {p0, p1}, Ljava/lang/Math;->ceil(D)D
 
-    const-string v1, "AudioStream can not be started when setCallback."
+    move-result-wide p0
 
-    invoke-static {v1, v0}, Le07;->p(Ljava/lang/String;Z)V
+    double-to-int p0, p0
 
-    invoke-virtual {p0}, Lls0;->b()V
+    sget-object p1, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
-    new-instance v0, Lg5;
+    const/4 v0, 0x1
 
-    const/4 v1, 0x4
+    invoke-static {v0, p0, p1}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
-    invoke-direct {v0, p0, p1, p2, v1}, Lg5;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+    move-result-object p0
 
-    iget-object p0, p0, Lls0;->d:Lryc;
+    return-object p0
+.end method
 
-    invoke-virtual {p0, v0}, Lryc;->execute(Ljava/lang/Runnable;)V
+.method public final c(Ljava/lang/Object;)V
+    .locals 0
+
+    check-cast p1, Landroid/graphics/Bitmap;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
 
     return-void
 .end method
 
-.method public final b()V
-    .locals 1
+.method public final e(I)I
+    .locals 0
 
-    iget-object p0, p0, Lls0;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+    return p1
+.end method
 
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+.method public final g(Ljava/lang/Object;)I
+    .locals 0
+
+    check-cast p1, Landroid/graphics/Bitmap;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getAllocationByteCount()I
 
     move-result p0
 
-    xor-int/lit8 p0, p0, 0x1
-
-    const-string v0, "AudioStream has been released."
-
-    invoke-static {v0, p0}, Le07;->p(Ljava/lang/String;Z)V
-
-    return-void
+    return p0
 .end method
 
-.method public final c()V
-    .locals 5
+.method public final h(I)I
+    .locals 0
 
-    iget-object v0, p0, Lls0;->k:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget v0, p0, Lls0;->l:I
-
-    invoke-static {v0}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lls0;->g:Le60;
-
-    invoke-interface {v1, v0}, Le60;->read(Ljava/nio/ByteBuffer;)Lp80;
-
-    move-result-object v1
-
-    new-instance v2, Lks0;
-
-    iget v3, p0, Lls0;->h:I
-
-    iget v4, p0, Lls0;->i:I
-
-    invoke-direct {v2, v0, v1, v3, v4}, Lks0;-><init>(Ljava/nio/ByteBuffer;Lp80;II)V
-
-    iget v0, p0, Lls0;->j:I
-
-    iget-object v1, p0, Lls0;->e:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v3, p0, Lls0;->c:Ljava/util/concurrent/ConcurrentLinkedQueue;
-
-    invoke-virtual {v3, v2}, Ljava/util/concurrent/ConcurrentLinkedQueue;->offer(Ljava/lang/Object;)Z
-
-    :goto_0
-    iget-object v2, p0, Lls0;->c:Ljava/util/concurrent/ConcurrentLinkedQueue;
-
-    invoke-virtual {v2}, Ljava/util/concurrent/ConcurrentLinkedQueue;->size()I
-
-    move-result v2
-
-    if-le v2, v0, :cond_1
-
-    iget-object v2, p0, Lls0;->c:Ljava/util/concurrent/ConcurrentLinkedQueue;
-
-    invoke-virtual {v2}, Ljava/util/concurrent/ConcurrentLinkedQueue;->poll()Ljava/lang/Object;
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_1
-
-    :cond_1
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object v0, p0, Lls0;->k:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lls0;->d:Lryc;
-
-    new-instance v1, Ljs0;
-
-    const/4 v2, 0x2
-
-    invoke-direct {v1, p0, v2}, Ljs0;-><init>(Lls0;I)V
-
-    invoke-virtual {v0, v1}, Lryc;->execute(Ljava/lang/Runnable;)V
-
-    :cond_2
-    return-void
-
-    :goto_1
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p0
+    return p1
 .end method
 
-.method public final read(Ljava/nio/ByteBuffer;)Lp80;
-    .locals 6
+.method public final i(Ljs0;)Ljava/lang/Object;
+    .locals 0
 
-    invoke-virtual {p0}, Lls0;->b()V
+    invoke-super {p0, p1}, Lhj0;->i(Ljs0;)Ljava/lang/Object;
 
-    iget-object v0, p0, Lls0;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    move-result-object p0
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+    check-cast p0, Landroid/graphics/Bitmap;
 
-    move-result v0
+    if-eqz p0, :cond_0
 
-    const-string v1, "AudioStream has not been started."
+    const/4 p1, 0x0
 
-    invoke-static {v1, v0}, Le07;->p(Ljava/lang/String;Z)V
-
-    invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
-
-    move-result v0
-
-    iget-object v1, p0, Lls0;->d:Lryc;
-
-    new-instance v2, Ln30;
-
-    const/4 v3, 0x2
-
-    invoke-direct {v2, v0, v3, p0}, Ln30;-><init>(IILjava/lang/Object;)V
-
-    invoke-virtual {v1, v2}, Lryc;->execute(Ljava/lang/Runnable;)V
-
-    new-instance v0, Lp80;
-
-    const-wide/16 v1, 0x0
-
-    const/4 v3, 0x0
-
-    invoke-direct {v0, v3, v1, v2}, Lp80;-><init>(IJ)V
+    invoke-virtual {p0, p1}, Landroid/graphics/Bitmap;->eraseColor(I)V
 
     :cond_0
-    iget-object v1, p0, Lls0;->e:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    iget-object v2, p0, Lls0;->f:Lks0;
-
-    const/4 v4, 0x0
-
-    iput-object v4, p0, Lls0;->f:Lks0;
-
-    if-nez v2, :cond_1
-
-    iget-object v2, p0, Lls0;->c:Ljava/util/concurrent/ConcurrentLinkedQueue;
-
-    invoke-virtual {v2}, Ljava/util/concurrent/ConcurrentLinkedQueue;->poll()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lks0;
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_2
-
-    :cond_1
-    :goto_0
-    if-eqz v2, :cond_2
-
-    invoke-virtual {v2, p1}, Lks0;->a(Ljava/nio/ByteBuffer;)Lp80;
-
-    move-result-object v0
-
-    iget-object v4, v2, Lks0;->c:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v4}, Ljava/nio/Buffer;->remaining()I
-
-    move-result v4
-
-    if-lez v4, :cond_2
-
-    iput-object v2, p0, Lls0;->f:Lks0;
-
-    :cond_2
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget v1, v0, Lp80;->a:I
-
-    if-gtz v1, :cond_3
-
-    iget-object v1, p0, Lls0;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    iget-object v1, p0, Lls0;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    const/4 v1, 0x1
-
-    goto :goto_1
-
-    :cond_3
-    move v1, v3
-
-    :goto_1
-    if-eqz v1, :cond_4
-
-    const-wide/16 v4, 0x1
-
-    :try_start_1
-    invoke-static {v4, v5}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_1
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
-
-    :cond_4
-    if-nez v1, :cond_0
-
-    :catch_0
-    return-object v0
-
-    :goto_2
-    :try_start_2
-    monitor-exit v1
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    throw p0
+    return-object p0
 .end method
 
-.method public final release()V
-    .locals 2
+.method public final k(Ljava/lang/Object;)Z
+    .locals 0
 
-    iget-object v0, p0, Lls0;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+    check-cast p1, Landroid/graphics/Bitmap;
 
-    const/4 v1, 0x1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->isRecycled()Z
 
-    move-result v0
+    move-result p0
 
-    if-eqz v0, :cond_0
+    if-nez p0, :cond_0
 
-    return-void
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->isMutable()Z
 
-    :cond_0
-    new-instance v0, Ljs0;
+    move-result p0
 
-    const/4 v1, 0x3
+    if-eqz p0, :cond_0
 
-    invoke-direct {v0, p0, v1}, Ljs0;-><init>(Lls0;I)V
+    const/4 p0, 0x1
 
-    iget-object p0, p0, Lls0;->d:Lryc;
-
-    invoke-virtual {p0, v0}, Lryc;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final start()V
-    .locals 4
-
-    invoke-virtual {p0}, Lls0;->b()V
-
-    iget-object v0, p0, Lls0;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    return-void
+    return p0
 
     :cond_0
-    new-instance v1, Ljava/util/concurrent/FutureTask;
+    const/4 p0, 0x0
 
-    new-instance v2, Ljs0;
-
-    const/4 v3, 0x1
-
-    invoke-direct {v2, p0, v3}, Ljs0;-><init>(Lls0;I)V
-
-    const/4 v3, 0x0
-
-    invoke-direct {v1, v2, v3}, Ljava/util/concurrent/FutureTask;-><init>(Ljava/lang/Runnable;Ljava/lang/Object;)V
-
-    iget-object p0, p0, Lls0;->d:Lryc;
-
-    invoke-virtual {p0, v1}, Lryc;->execute(Ljava/lang/Runnable;)V
-
-    :try_start_0
-    invoke-virtual {v1}, Ljava/util/concurrent/FutureTask;->get()Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception p0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    new-instance v0, Landroidx/camera/video/internal/audio/AudioStream$AudioStreamException;
-
-    invoke-direct {v0, p0}, Ljava/lang/Exception;-><init>(Ljava/lang/Throwable;)V
-
-    throw v0
-.end method
-
-.method public final stop()V
-    .locals 2
-
-    invoke-virtual {p0}, Lls0;->b()V
-
-    iget-object v0, p0, Lls0;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    new-instance v0, Ljs0;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Ljs0;-><init>(Lls0;I)V
-
-    iget-object p0, p0, Lls0;->d:Lryc;
-
-    invoke-virtual {p0, v0}, Lryc;->execute(Ljava/lang/Runnable;)V
-
-    return-void
+    return p0
 .end method

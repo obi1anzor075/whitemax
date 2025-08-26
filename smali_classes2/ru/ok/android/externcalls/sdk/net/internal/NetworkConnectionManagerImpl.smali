@@ -14,29 +14,29 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/net/internal/NetworkConnectionManagerImpl;",
         "Lru/ok/android/externcalls/sdk/net/NetworkConnectionManager;",
-        "Lgx0;",
+        "Liy0;",
         "call",
         "<init>",
-        "(Lgx0;)V",
-        "Lle0;",
+        "(Liy0;)V",
+        "Lif0;",
         "callback",
-        "Ljue;",
+        "Le5f;",
         "registerBadConnectionCallback",
-        "(Lle0;)V",
+        "(Lif0;)V",
         "unregisterBadConnectionCallback",
-        "Lqh9;",
+        "Lgm9;",
         "listener",
         "addNetworkConnectivityListener",
-        "(Lqh9;)V",
+        "(Lgm9;)V",
         "removeNetworkConnectivityListener",
-        "Lbne;",
+        "Lawe;",
         "plusAssign",
-        "(Lbne;)V",
+        "(Lawe;)V",
         "minusAssign",
-        "Lgx0;",
-        "Lane;",
+        "Liy0;",
+        "Lzve;",
         "getTopology",
-        "()Lane;",
+        "()Lzve;",
         "topology",
         "calls-sdk_release"
     }
@@ -46,32 +46,33 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
-.field private final call:Lgx0;
+.field private final call:Liy0;
 
 
 # direct methods
-.method public constructor <init>(Lgx0;)V
+.method public constructor <init>(Liy0;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/net/internal/NetworkConnectionManagerImpl;->call:Lgx0;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/net/internal/NetworkConnectionManagerImpl;->call:Liy0;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public addNetworkConnectivityListener(Lqh9;)V
+.method public addNetworkConnectivityListener(Lgm9;)V
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/net/internal/NetworkConnectionManagerImpl;->call:Lgx0;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/net/internal/NetworkConnectionManagerImpl;->call:Liy0;
 
-    iget-object p0, p0, Lgx0;->u1:Ljava/util/concurrent/CopyOnWriteArraySet;
+    iget-object p0, p0, Liy0;->f0:Ljava/util/concurrent/CopyOnWriteArraySet;
 
     invoke-virtual {p0, p1}, Ljava/util/concurrent/CopyOnWriteArraySet;->add(Ljava/lang/Object;)Z
 
@@ -81,118 +82,116 @@
 
     invoke-static {}, Lorg/webrtc/NetworkMonitor;->isOnline()Z
 
-    invoke-interface {p1}, Lqh9;->a()V
+    invoke-interface {p1}, Lgm9;->a()V
 
     :cond_0
     return-void
 .end method
 
-.method public getTopology()Lane;
+.method public getTopology()Lzve;
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/net/internal/NetworkConnectionManagerImpl;->call:Lgx0;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/net/internal/NetworkConnectionManagerImpl;->call:Liy0;
 
-    iget-object p0, p0, Lgx0;->x1:Lsl1;
+    iget-object p0, p0, Liy0;->i0:Lwn1;
 
-    invoke-virtual {p0}, Lsl1;->y()Lane;
+    invoke-virtual {p0}, Lwn1;->y()Lzve;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public minusAssign(Lbne;)V
+.method public minusAssign(Lawe;)V
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/net/internal/NetworkConnectionManagerImpl;->call:Lgx0;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/net/internal/NetworkConnectionManagerImpl;->call:Liy0;
 
-    iget-object p0, p0, Lgx0;->v1:Ljava/util/concurrent/CopyOnWriteArraySet;
+    iget-object p0, p0, Liy0;->g0:Ljava/util/concurrent/CopyOnWriteArraySet;
 
     invoke-virtual {p0, p1}, Ljava/util/concurrent/CopyOnWriteArraySet;->remove(Ljava/lang/Object;)Z
 
     return-void
 .end method
 
-.method public plusAssign(Lbne;)V
+.method public plusAssign(Lawe;)V
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/net/internal/NetworkConnectionManagerImpl;->call:Lgx0;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/net/internal/NetworkConnectionManagerImpl;->call:Liy0;
 
-    iget-object p0, p0, Lgx0;->v1:Ljava/util/concurrent/CopyOnWriteArraySet;
+    iget-object p0, p0, Liy0;->g0:Ljava/util/concurrent/CopyOnWriteArraySet;
 
     invoke-virtual {p0, p1}, Ljava/util/concurrent/CopyOnWriteArraySet;->add(Ljava/lang/Object;)Z
 
     return-void
 .end method
 
-.method public registerBadConnectionCallback(Lle0;)V
+.method public registerBadConnectionCallback(Lif0;)V
     .locals 1
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/net/internal/NetworkConnectionManagerImpl;->call:Lgx0;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/net/internal/NetworkConnectionManagerImpl;->call:Liy0;
 
-    iget-boolean v0, p0, Lgx0;->b1:Z
+    iget-boolean v0, p0, Liy0;->M:Z
 
     if-eqz v0, :cond_0
 
-    iget-object p0, p0, Lgx0;->a1:Lme0;
+    iget-object p0, p0, Liy0;->L:Ljf0;
 
-    iget-object p0, p0, Lme0;->k:Ljava/util/concurrent/CopyOnWriteArraySet;
+    iget-object p0, p0, Ljf0;->k:Ljava/util/concurrent/CopyOnWriteArraySet;
 
     invoke-virtual {p0, p1}, Ljava/util/concurrent/CopyOnWriteArraySet;->add(Ljava/lang/Object;)Z
 
-    goto :goto_0
+    return-void
 
     :cond_0
-    iget-object p0, p0, Lgx0;->Z0:Lxwb;
+    iget-object p0, p0, Liy0;->K:Ls1c;
 
     const-string p1, "OKRTCCall"
 
     const-string v0, "Using registerBadConnectionCallback w/ enableLossRttBadConnectionHandling disabled, ignoring"
 
-    invoke-interface {p0, p1, v0}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p0, p1, v0}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_0
     return-void
 .end method
 
-.method public removeNetworkConnectivityListener(Lqh9;)V
+.method public removeNetworkConnectivityListener(Lgm9;)V
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/net/internal/NetworkConnectionManagerImpl;->call:Lgx0;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/net/internal/NetworkConnectionManagerImpl;->call:Liy0;
 
-    iget-object p0, p0, Lgx0;->u1:Ljava/util/concurrent/CopyOnWriteArraySet;
+    iget-object p0, p0, Liy0;->f0:Ljava/util/concurrent/CopyOnWriteArraySet;
 
     invoke-virtual {p0, p1}, Ljava/util/concurrent/CopyOnWriteArraySet;->remove(Ljava/lang/Object;)Z
 
     return-void
 .end method
 
-.method public unregisterBadConnectionCallback(Lle0;)V
+.method public unregisterBadConnectionCallback(Lif0;)V
     .locals 1
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/net/internal/NetworkConnectionManagerImpl;->call:Lgx0;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/net/internal/NetworkConnectionManagerImpl;->call:Liy0;
 
-    iget-boolean v0, p0, Lgx0;->b1:Z
+    iget-boolean v0, p0, Liy0;->M:Z
 
     if-eqz v0, :cond_0
 
-    iget-object p0, p0, Lgx0;->a1:Lme0;
+    iget-object p0, p0, Liy0;->L:Ljf0;
 
-    iget-object p0, p0, Lme0;->k:Ljava/util/concurrent/CopyOnWriteArraySet;
+    iget-object p0, p0, Ljf0;->k:Ljava/util/concurrent/CopyOnWriteArraySet;
 
     invoke-virtual {p0, p1}, Ljava/util/concurrent/CopyOnWriteArraySet;->remove(Ljava/lang/Object;)Z
 
-    goto :goto_0
+    return-void
 
     :cond_0
-    const-string p1, "Using unregisterBadConnectionCallback w/ enableLossRttBadConnectionHandling disabled, ignoring"
+    iget-object p0, p0, Liy0;->K:Ls1c;
 
-    iget-object p0, p0, Lgx0;->Z0:Lxwb;
+    const-string p1, "OKRTCCall"
 
-    const-string v0, "OKRTCCall"
+    const-string v0, "Using unregisterBadConnectionCallback w/ enableLossRttBadConnectionHandling disabled, ignoring"
 
-    invoke-interface {p0, v0, p1}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p0, p1, v0}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_0
     return-void
 .end method

@@ -20,16 +20,16 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;",
         "",
-        "Lge1;",
+        "Lrf1;",
         "Lru/ok/android/externcalls/sdk/id/InternalId;",
         "participantId",
         "",
         "feedbackId",
         "<init>",
-        "(Lge1;Ljava/lang/String;)V",
-        "Lge1;",
+        "(Lrf1;Ljava/lang/String;)V",
+        "Lrf1;",
         "getParticipantId",
-        "()Lge1;",
+        "()Lrf1;",
         "Ljava/lang/String;",
         "getFeedbackId",
         "()Ljava/lang/String;",
@@ -41,22 +41,23 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
 .field private final feedbackId:Ljava/lang/String;
 
-.field private final participantId:Lge1;
+.field private final participantId:Lrf1;
 
 
 # direct methods
-.method public constructor <init>(Lge1;Ljava/lang/String;)V
+.method public constructor <init>(Lrf1;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;->participantId:Lge1;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;->participantId:Lrf1;
 
     iput-object p2, p0, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;->feedbackId:Ljava/lang/String;
 
@@ -73,10 +74,10 @@
     return-object p0
 .end method
 
-.method public final getParticipantId()Lge1;
+.method public final getParticipantId()Lrf1;
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;->participantId:Lge1;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;->participantId:Lrf1;
 
     return-object p0
 .end method

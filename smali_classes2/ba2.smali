@@ -1,80 +1,51 @@
-.class public final synthetic Lba2;
-.super Ljava/lang/Object;
+.class public final Lba2;
+.super Lbu3;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/view/View$OnLongClickListener;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic b:Li26;
+.field public final synthetic Y:Lja2;
 
-.field public final synthetic c:Lph8;
+.field public Z:I
 
-.field public final synthetic o:Lca2;
+.field public o:Ljava/util/concurrent/atomic/AtomicLong;
 
 
 # direct methods
-.method public synthetic constructor <init>(Li26;Lph8;Lca2;I)V
+.method public constructor <init>(Lja2;Lbu3;)V
     .locals 0
 
-    iput p4, p0, Lba2;->a:I
+    iput-object p1, p0, Lba2;->Y:Lja2;
 
-    iput-object p1, p0, Lba2;->b:Li26;
-
-    iput-object p2, p0, Lba2;->c:Lph8;
-
-    iput-object p3, p0, Lba2;->o:Lca2;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onLongClick(Landroid/view/View;)Z
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget p1, p0, Lba2;->a:I
+    iput-object p1, p0, Lba2;->X:Ljava/lang/Object;
 
-    packed-switch p1, :pswitch_data_0
+    iget p1, p0, Lba2;->Z:I
 
-    iget-object p1, p0, Lba2;->o:Lca2;
+    const/high16 v0, -0x80000000
 
-    iget-object p1, p1, Lb7c;->a:Landroid/view/View;
+    or-int/2addr p1, v0
 
-    iget-object v0, p0, Lba2;->b:Li26;
+    iput p1, p0, Lba2;->Z:I
 
-    iget-object p0, p0, Lba2;->c:Lph8;
+    iget-object p1, p0, Lba2;->Y:Lja2;
 
-    invoke-interface {v0, p0, p1}, Li26;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    const/4 p0, 0x1
+    invoke-virtual {p1, v0, v0, p0}, Lja2;->h(Ljava/lang/String;Landroid/graphics/RectF;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    return p0
+    move-result-object p0
 
-    :pswitch_0
-    iget-object p1, p0, Lba2;->o:Lca2;
-
-    iget-object p1, p1, Lb7c;->a:Landroid/view/View;
-
-    iget-object v0, p0, Lba2;->b:Li26;
-
-    iget-object p0, p0, Lba2;->c:Lph8;
-
-    invoke-interface {v0, p0, p1}, Li26;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/4 p0, 0x1
-
-    return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

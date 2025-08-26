@@ -3,13 +3,13 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ld75;
+.implements Lw95;
 
 
 # instance fields
 .field public final a:Lt3;
 
-.field public final b:Lyze;
+.field public final b:Lpna;
 
 .field public c:Z
 
@@ -18,39 +18,113 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lpv0;
+    new-instance v0, Lqw0;
 
     return-void
 .end method
 
 .method public constructor <init>()V
-    .locals 3
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     new-instance v0, Lt3;
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lt3;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0}, Lt3;-><init>()V
 
     iput-object v0, p0, Lr3;->a:Lt3;
 
-    new-instance v0, Lyze;
+    new-instance v0, Lpna;
 
     const/16 v1, 0xae2
 
-    invoke-direct {v0, v1}, Lyze;-><init>(I)V
+    invoke-direct {v0, v1}, Lpna;-><init>(I)V
 
-    iput-object v0, p0, Lr3;->b:Lyze;
+    iput-object v0, p0, Lr3;->b:Lpna;
 
     return-void
 .end method
 
 
 # virtual methods
+.method public final W(Laa5;)V
+    .locals 5
+
+    new-instance v0, Lk1f;
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x1
+
+    invoke-direct {v0, v3, v4, v1, v2}, Lk1f;-><init>(IIIB)V
+
+    iget-object p0, p0, Lr3;->a:Lt3;
+
+    invoke-virtual {p0, p1, v0}, Lt3;->k(Laa5;Lk1f;)V
+
+    invoke-interface {p1}, Laa5;->v()V
+
+    new-instance p0, Lod0;
+
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
+
+    invoke-direct {p0, v0, v1}, Lod0;-><init>(J)V
+
+    invoke-interface {p1, p0}, Laa5;->M(Lb0d;)V
+
+    return-void
+.end method
+
+.method public final X(Ly95;Lh7;)I
+    .locals 5
+
+    iget-object p2, p0, Lr3;->b:Lpna;
+
+    iget-object v0, p2, Lpna;->a:[B
+
+    const/16 v1, 0xae2
+
+    const/4 v2, 0x0
+
+    invoke-interface {p1, v0, v2, v1}, Lb34;->read([BII)I
+
+    move-result p1
+
+    const/4 v0, -0x1
+
+    if-ne p1, v0, :cond_0
+
+    return v0
+
+    :cond_0
+    invoke-virtual {p2, v2}, Lpna;->G(I)V
+
+    invoke-virtual {p2, p1}, Lpna;->F(I)V
+
+    iget-boolean p1, p0, Lr3;->c:Z
+
+    iget-object v0, p0, Lr3;->a:Lt3;
+
+    if-nez p1, :cond_1
+
+    const-wide/16 v3, 0x0
+
+    iput-wide v3, v0, Lt3;->n:J
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lr3;->c:Z
+
+    :cond_1
+    invoke-virtual {v0, p2}, Lt3;->f(Lpna;)V
+
+    return v2
+.end method
+
 .method public final d(JJ)V
     .locals 0
 
@@ -65,129 +139,93 @@
     return-void
 .end method
 
-.method public final g(Lh75;)V
-    .locals 5
-
-    new-instance v0, Lpse;
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    invoke-direct {v0, v1, v2, v3, v4}, Lpse;-><init>(IIIB)V
-
-    iget-object p0, p0, Lr3;->a:Lt3;
-
-    invoke-virtual {p0, p1, v0}, Lt3;->l(Lh75;Lpse;)V
-
-    invoke-interface {p1}, Lh75;->w()V
-
-    new-instance p0, Lsi5;
-
-    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
-
-    invoke-direct {p0, v0, v1}, Lsi5;-><init>(J)V
-
-    invoke-interface {p1, p0}, Lh75;->K(Lutc;)V
-
-    return-void
-.end method
-
-.method public final h(Lf75;)Z
+.method public final n(Ly95;)Z
     .locals 12
 
-    new-instance p0, Lyze;
+    new-instance p0, Lpna;
 
     const/16 v0, 0xa
 
-    invoke-direct {p0, v0}, Lyze;-><init>(I)V
+    invoke-direct {p0, v0}, Lpna;-><init>(I)V
 
     const/4 v1, 0x0
 
     move v2, v1
 
     :goto_0
-    iget-object v3, p0, Lyze;->a:[B
+    iget-object v3, p0, Lpna;->a:[B
 
-    move-object v4, p1
+    invoke-interface {p1, v1, v3, v0}, Ly95;->i(I[BI)V
 
-    check-cast v4, Lq74;
+    invoke-virtual {p0, v1}, Lpna;->G(I)V
 
-    invoke-virtual {v4, v3, v1, v0, v1}, Lq74;->r([BIIZ)Z
-
-    invoke-virtual {p0, v1}, Lyze;->H(I)V
-
-    invoke-virtual {p0}, Lyze;->x()I
+    invoke-virtual {p0}, Lpna;->x()I
 
     move-result v3
 
-    const v5, 0x494433
+    const v4, 0x494433
 
-    const/4 v6, 0x3
+    const/4 v5, 0x3
 
-    if-eq v3, v5, :cond_6
+    if-eq v3, v4, :cond_6
 
-    iput v1, v4, Lq74;->Y:I
+    invoke-interface {p1}, Ly95;->x()V
 
-    invoke-virtual {v4, v2, v1}, Lq74;->b(IZ)Z
+    invoke-interface {p1, v2}, Ly95;->p(I)V
 
-    move p1, v1
+    move v3, v1
 
-    move v3, v2
+    move v4, v2
 
     :goto_1
-    iget-object v5, p0, Lyze;->a:[B
+    iget-object v6, p0, Lpna;->a:[B
 
     const/4 v7, 0x6
 
-    invoke-virtual {v4, v5, v1, v7, v1}, Lq74;->r([BIIZ)Z
+    invoke-interface {p1, v1, v6, v7}, Ly95;->i(I[BI)V
 
-    invoke-virtual {p0, v1}, Lyze;->H(I)V
+    invoke-virtual {p0, v1}, Lpna;->G(I)V
 
-    invoke-virtual {p0}, Lyze;->A()I
+    invoke-virtual {p0}, Lpna;->A()I
 
-    move-result v5
+    move-result v6
 
     const/16 v8, 0xb77
 
-    if-eq v5, v8, :cond_1
+    if-eq v6, v8, :cond_1
 
-    iput v1, v4, Lq74;->Y:I
+    invoke-interface {p1}, Ly95;->x()V
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v4, v4, 0x1
 
-    sub-int p1, v3, v2
+    sub-int v3, v4, v2
 
-    const/16 v5, 0x2000
+    const/16 v6, 0x2000
 
-    if-lt p1, v5, :cond_0
+    if-lt v3, v6, :cond_0
 
-    return v1
+    goto :goto_3
 
     :cond_0
-    invoke-virtual {v4, v3, v1}, Lq74;->b(IZ)Z
+    invoke-interface {p1, v4}, Ly95;->p(I)V
 
-    move p1, v1
+    move v3, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
-    add-int/2addr p1, v5
+    add-int/2addr v3, v6
 
     const/4 v8, 0x4
 
-    if-lt p1, v8, :cond_2
+    if-lt v3, v8, :cond_2
 
-    return v5
+    return v6
 
     :cond_2
-    iget-object v9, p0, Lyze;->a:[B
+    iget-object v9, p0, Lpna;->a:[B
 
     array-length v10, v9
 
@@ -206,7 +244,7 @@
 
     and-int/lit16 v10, v10, 0xf8
 
-    shr-int/2addr v10, v6
+    shr-int/2addr v10, v5
 
     if-le v10, v0, :cond_4
 
@@ -218,107 +256,58 @@
 
     shl-int/lit8 v8, v8, 0x8
 
-    aget-byte v9, v9, v6
+    aget-byte v9, v9, v5
 
     and-int/lit16 v9, v9, 0xff
 
     or-int/2addr v8, v9
 
-    add-int/2addr v8, v5
+    add-int/2addr v8, v6
 
     mul-int/2addr v8, v7
 
     goto :goto_2
 
     :cond_4
-    aget-byte v5, v9, v8
+    aget-byte v6, v9, v8
 
-    and-int/lit16 v8, v5, 0xc0
+    and-int/lit16 v8, v6, 0xc0
 
     shr-int/lit8 v7, v8, 0x6
 
-    and-int/lit8 v5, v5, 0x3f
+    and-int/lit8 v6, v6, 0x3f
 
-    invoke-static {v7, v5}, Lgp0;->m(II)I
+    invoke-static {v7, v6}, Lgr0;->l(II)I
 
     move-result v8
 
     :goto_2
     if-ne v8, v11, :cond_5
 
+    :goto_3
     return v1
 
     :cond_5
     add-int/lit8 v8, v8, -0x6
 
-    invoke-virtual {v4, v8, v1}, Lq74;->b(IZ)Z
+    invoke-interface {p1, v8}, Ly95;->p(I)V
 
     goto :goto_1
 
     :cond_6
-    invoke-virtual {p0, v6}, Lyze;->I(I)V
+    invoke-virtual {p0, v5}, Lpna;->H(I)V
 
-    invoke-virtual {p0}, Lyze;->u()I
+    invoke-virtual {p0}, Lpna;->t()I
 
     move-result v3
 
-    add-int/lit8 v5, v3, 0xa
+    add-int/lit8 v4, v3, 0xa
 
-    add-int/2addr v2, v5
+    add-int/2addr v2, v4
 
-    invoke-virtual {v4, v3, v1}, Lq74;->b(IZ)Z
+    invoke-interface {p1, v3}, Ly95;->p(I)V
 
     goto/16 :goto_0
-.end method
-
-.method public final i(Lf75;Lle4;)I
-    .locals 4
-
-    iget-object p2, p0, Lr3;->b:Lyze;
-
-    iget-object v0, p2, Lyze;->a:[B
-
-    check-cast p1, Lq74;
-
-    const/4 v1, 0x0
-
-    const/16 v2, 0xae2
-
-    invoke-virtual {p1, v0, v1, v2}, Lq74;->read([BII)I
-
-    move-result p1
-
-    const/4 v0, -0x1
-
-    if-ne p1, v0, :cond_0
-
-    return v0
-
-    :cond_0
-    invoke-virtual {p2, v1}, Lyze;->H(I)V
-
-    invoke-virtual {p2, p1}, Lyze;->G(I)V
-
-    iget-boolean p1, p0, Lr3;->c:Z
-
-    iget-object v0, p0, Lr3;->a:Lt3;
-
-    if-nez p1, :cond_1
-
-    const-wide/16 v2, 0x0
-
-    const/4 p1, 0x4
-
-    invoke-virtual {v0, p1, v2, v3}, Lt3;->h(IJ)V
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lr3;->c:Z
-
-    :cond_1
-    invoke-virtual {v0, p2}, Lt3;->g(Lyze;)V
-
-    return v1
 .end method
 
 .method public final release()V

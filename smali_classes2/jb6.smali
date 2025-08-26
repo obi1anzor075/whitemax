@@ -4,85 +4,66 @@
 
 
 # instance fields
-.field public final a:[I
+.field public final a:Lje7;
+
+.field public final b:Lje7;
+
+.field public final c:Lje7;
 
 
 # direct methods
-.method public constructor <init>([I)V
+.method public constructor <init>(Lje7;Lje7;Lje7;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ljb6;->a:[I
+    iput-object p1, p0, Ljb6;->a:Lje7;
+
+    iput-object p2, p0, Ljb6;->b:Lje7;
+
+    iput-object p3, p0, Ljb6;->c:Lje7;
 
     return-void
 .end method
 
+.method public static a(Ljb6;JLbu3;)Ljava/lang/Object;
+    .locals 9
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+    sget v0, Lat4;->o:I
 
-    const/4 v0, 0x1
+    const/4 v0, 0x3
 
-    if-ne p0, p1, :cond_0
+    sget-object v1, Lft4;->o:Lft4;
 
-    return v0
+    invoke-static {v0, v1}, La4f;->F(ILft4;)J
 
-    :cond_0
-    instance-of v1, p1, Ljb6;
+    move-result-wide v6
 
-    const/4 v2, 0x0
+    iget-object v0, p0, Ljb6;->c:Lje7;
 
-    if-nez v1, :cond_1
+    invoke-interface {v0}, Lje7;->getValue()Ljava/lang/Object;
 
-    return v2
+    move-result-object v0
 
-    :cond_1
-    check-cast p1, Ljb6;
+    check-cast v0, Lrie;
 
-    iget-object p0, p0, Ljb6;->a:[I
+    check-cast v0, Lo7a;
 
-    iget-object p1, p1, Ljb6;->a:[I
+    invoke-virtual {v0}, Lo7a;->b()Ljx3;
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result-object v0
 
-    move-result p0
+    new-instance v2, Lib6;
 
-    if-nez p0, :cond_2
+    const/4 v8, 0x0
 
-    return v2
+    move-object v3, p0
 
-    :cond_2
-    return v0
-.end method
+    move-wide v4, p1
 
-.method public final hashCode()I
-    .locals 0
+    invoke-direct/range {v2 .. v8}, Lib6;-><init>(Ljb6;JJLkotlin/coroutines/Continuation;)V
 
-    iget-object p0, p0, Ljb6;->a:[I
-
-    invoke-static {p0}, Ljava/util/Arrays;->hashCode([I)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    iget-object p0, p0, Ljb6;->a:[I
-
-    invoke-static {p0}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
-
-    move-result-object p0
-
-    const-string v0, "GradientsComplexColors(overlayFloatingGradient="
-
-    const-string v1, ")"
-
-    invoke-static {v0, p0, v1}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v2, p3}, Lzo3;->j0(Lhx3;Ll66;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 

@@ -1,47 +1,191 @@
 .class public final Lef2;
-.super Ler3;
+.super Lgf2;
 .source "SourceFile"
 
 
 # instance fields
-.field public X:I
+.field public final b:Lcm8;
 
-.field public final synthetic Y:Lac;
+.field public final c:Lmoe;
 
-.field public synthetic o:Ljava/lang/Object;
+.field public final d:Lmoe;
+
+.field public final e:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Lac;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lcm8;Lmoe;Lmoe;Ljava/util/List;)V
     .locals 0
 
-    iput-object p1, p0, Lef2;->Y:Lac;
+    invoke-direct {p0}, Lgf2;-><init>()V
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lef2;->b:Lcm8;
+
+    iput-object p2, p0, Lef2;->c:Lmoe;
+
+    iput-object p3, p0, Lef2;->d:Lmoe;
+
+    iput-object p4, p0, Lef2;->e:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iput-object p1, p0, Lef2;->o:Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    iget p1, p0, Lef2;->X:I
+    if-ne p0, p1, :cond_0
 
-    const/high16 v0, -0x80000000
+    return v0
 
-    or-int/2addr p1, v0
+    :cond_0
+    instance-of v1, p1, Lef2;
 
-    iput p1, p0, Lef2;->X:I
+    const/4 v2, 0x0
 
-    iget-object p1, p0, Lef2;->Y:Lac;
+    if-nez v1, :cond_1
 
-    const/4 v0, 0x0
+    return v2
 
-    invoke-virtual {p1, v0, p0}, Lac;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    :cond_1
+    check-cast p1, Lef2;
+
+    iget-object v1, p0, Lef2;->b:Lcm8;
+
+    iget-object v3, p1, Lef2;->b:Lcm8;
+
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object v1, p0, Lef2;->c:Lmoe;
+
+    iget-object v3, p1, Lef2;->c:Lmoe;
+
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object v1, p0, Lef2;->d:Lmoe;
+
+    iget-object v3, p1, Lef2;->d:Lmoe;
+
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_4
+
+    return v2
+
+    :cond_4
+    iget-object p0, p0, Lef2;->e:Ljava/util/List;
+
+    iget-object p1, p1, Lef2;->e:Ljava/util/List;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_5
+
+    return v2
+
+    :cond_5
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    iget-object v0, p0, Lef2;->b:Lcm8;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget-object v2, p0, Lef2;->c:Lmoe;
+
+    invoke-static {v0, v1, v2}, Lpg0;->c(IILmoe;)I
+
+    move-result v0
+
+    iget-object v2, p0, Lef2;->d:Lmoe;
+
+    invoke-static {v0, v1, v2}, Lpg0;->c(IILmoe;)I
+
+    move-result v0
+
+    iget-object p0, p0, Lef2;->e:Ljava/util/List;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "ShowConfirmationBottomSheet(model="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lef2;->b:Lcm8;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", title="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lef2;->c:Lmoe;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", description="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lef2;->d:Lmoe;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", actions="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lef2;->e:Ljava/util/List;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

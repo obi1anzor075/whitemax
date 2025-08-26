@@ -1,125 +1,338 @@
-.class public final Lwh;
+.class public final synthetic Lwh;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/util/function/Function;
+
 
 # instance fields
-.field public final a:Laec;
+.field public final synthetic a:I
 
-.field public final b:Lsh;
-
-.field public final c:Lth;
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;)V
-    .locals 2
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
+    .locals 0
+
+    iput p1, p0, Lwh;->a:I
+
+    iput-object p2, p0, Lwh;->b:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lwh;->a:Laec;
-
-    new-instance v0, Lsh;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p1, v1}, Lsh;-><init>(Laec;I)V
-
-    iput-object v0, p0, Lwh;->b:Lsh;
-
-    new-instance v0, Lth;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p1, v1}, Lth;-><init>(Laec;I)V
-
-    iput-object v0, p0, Lwh;->c:Lth;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 4
+.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    const-string v0, "SELECT * FROM animoji WHERE id IN ("
+    iget v0, p0, Lwh;->a:I
 
-    invoke-static {v0}, Lhr1;->l(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object p0, p0, Lwh;->b:Ljava/lang/Object;
 
-    move-result-object v0
+    packed-switch v0, :pswitch_data_0
 
-    invoke-interface {p1}, Ljava/util/Collection;->size()I
+    check-cast p0, Lv6c;
 
-    move-result v1
-
-    invoke-static {v0, v1}, La06;->e(Ljava/lang/StringBuilder;I)V
-
-    const-string v2, ")"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v1, v0}, Lpec;->a(ILjava/lang/String;)Lpec;
-
-    move-result-object v0
-
-    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    const/4 v1, 0x1
-
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Long;
-
-    if-nez v2, :cond_0
-
-    invoke-virtual {v0, v1}, Lpec;->W(I)V
-
-    goto :goto_1
-
-    :cond_0
-    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    invoke-virtual {v0, v1, v2, v3}, Lpec;->j(IJ)V
-
-    :goto_1
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    new-instance p1, Landroid/os/CancellationSignal;
-
-    invoke-direct {p1}, Landroid/os/CancellationSignal;-><init>()V
-
-    new-instance v1, Lvh;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v1, p0, v0, v2}, Lvh;-><init>(Lwh;Lpec;I)V
-
-    iget-object p0, p0, Lwh;->a:Laec;
-
-    invoke-static {p0, p1, v1, p2}, Lr1g;->g(Laec;Landroid/os/CancellationSignal;Ljava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lv6c;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
+    check-cast p0, Lji4;
+
     return-object p0
+
+    :pswitch_0
+    check-cast p0, Lywc;
+
+    invoke-virtual {p0, p1}, Lywc;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/content/SharedPreferences;
+
+    return-object p0
+
+    :pswitch_1
+    check-cast p0, Ldp2;
+
+    invoke-virtual {p0, p1}, Ldp2;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lgh9;
+
+    return-object p0
+
+    :pswitch_2
+    check-cast p0, Lj2a;
+
+    invoke-virtual {p0, p1}, Lj2a;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lgh9;
+
+    return-object p0
+
+    :pswitch_3
+    check-cast p0, Lir1;
+
+    invoke-virtual {p0, p1}, Lir1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lg4b;
+
+    return-object p0
+
+    :pswitch_4
+    check-cast p0, Lba;
+
+    invoke-virtual {p0, p1}, Lba;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lg4b;
+
+    return-object p0
+
+    :pswitch_5
+    check-cast p0, Lir1;
+
+    invoke-virtual {p0, p1}, Lir1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/util/concurrent/ThreadFactory;
+
+    return-object p0
+
+    :pswitch_6
+    check-cast p0, Lba;
+
+    invoke-virtual {p0, p1}, Lba;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :pswitch_7
+    check-cast p0, Lxaa;
+
+    invoke-virtual {p0, p1}, Lxaa;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lsj;
+
+    return-object p0
+
+    :pswitch_8
+    check-cast p0, Lba;
+
+    invoke-virtual {p0, p1}, Lba;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/util/concurrent/ExecutorService;
+
+    return-object p0
+
+    :pswitch_9
+    check-cast p0, Lj2a;
+
+    invoke-virtual {p0, p1}, Lj2a;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Llh9;
+
+    return-object p0
+
+    :pswitch_a
+    check-cast p0, Lh8;
+
+    invoke-virtual {p0, p1}, Lh8;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lv77;
+
+    return-object p0
+
+    :pswitch_b
+    check-cast p0, Lba;
+
+    invoke-virtual {p0, p1}, Lba;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lgh9;
+
+    return-object p0
+
+    :pswitch_c
+    check-cast p0, Ldp2;
+
+    invoke-virtual {p0, p1}, Ldp2;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lgh9;
+
+    return-object p0
+
+    :pswitch_d
+    check-cast p0, Lns2;
+
+    invoke-virtual {p0, p1}, Lns2;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lgh9;
+
+    return-object p0
+
+    :pswitch_e
+    check-cast p0, Lex2;
+
+    invoke-virtual {p0, p1}, Lex2;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lgh9;
+
+    return-object p0
+
+    :pswitch_f
+    check-cast p0, Lex2;
+
+    invoke-virtual {p0, p1}, Lex2;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lgh9;
+
+    return-object p0
+
+    :pswitch_10
+    check-cast p0, Lns2;
+
+    invoke-virtual {p0, p1}, Lns2;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lgh9;
+
+    return-object p0
+
+    :pswitch_11
+    check-cast p0, Lcx2;
+
+    invoke-virtual {p0, p1}, Lcx2;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lgh9;
+
+    return-object p0
+
+    :pswitch_12
+    check-cast p0, Lcx2;
+
+    invoke-virtual {p0, p1}, Lcx2;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lgh9;
+
+    return-object p0
+
+    :pswitch_13
+    check-cast p0, Lyh0;
+
+    check-cast p1, Ljava/lang/String;
+
+    :try_start_0
+    iget-object v0, p0, Lyh0;->a:Lhw4;
+
+    iget-object v0, v0, Lhw4;->a:Ljava/lang/Object;
+
+    check-cast v0, Lti4;
+
+    invoke-virtual {v0}, Lti4;->e()V
+
+    iget-object p0, p0, Lyh0;->c:Lhvd;
+
+    check-cast p0, Livd;
+
+    invoke-virtual {p0, p1}, Livd;->a(Ljava/lang/String;)Lysd;
+
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :catch_0
+    move-exception p0
+
+    new-instance p1, Lone/me/net/client/impl/internal/SocketFactoryCreateException;
+
+    invoke-direct {p1, p0}, Lone/me/net/client/impl/internal/SocketFactoryCreateException;-><init>(Ljava/io/IOException;)V
+
+    throw p1
+
+    :pswitch_14
+    check-cast p0, Lf8;
+
+    invoke-virtual {p0, p1}, Lf8;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lgh9;
+
+    return-object p0
+
+    :pswitch_15
+    check-cast p0, Lh8;
+
+    invoke-virtual {p0, p1}, Lh8;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lone/me/rlottie/RLottieDrawable;
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_15
+        :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

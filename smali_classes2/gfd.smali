@@ -1,145 +1,96 @@
 .class public final Lgfd;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Lca1;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Ljfd;
+.field public final b:Landroid/content/Intent;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljfd;I)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Intent;)V
+    .locals 1
 
-    iput p2, p0, Lgfd;->a:I
+    const/16 v0, 0xe
 
-    iput-object p1, p0, Lgfd;->b:Ljfd;
+    invoke-direct {p0, v0}, Lca1;-><init>(I)V
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p1, p0, Lgfd;->b:Landroid/content/Intent;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-    iget p1, p0, Lgfd;->a:I
+    const/4 v0, 0x1
 
-    packed-switch p1, :pswitch_data_0
+    if-ne p0, p1, :cond_0
 
-    iget-object p0, p0, Lgfd;->b:Ljfd;
+    return v0
 
-    iget p1, p0, Ljfd;->j1:F
+    :cond_0
+    instance-of v1, p1, Lgfd;
 
-    iget v0, p0, Ljfd;->p1:F
+    const/4 v2, 0x0
 
-    sub-float/2addr p1, v0
+    if-nez v1, :cond_1
 
-    iget v0, p0, Ljfd;->h1:F
+    return v2
 
-    mul-float/2addr p1, v0
+    :cond_1
+    check-cast p1, Lgfd;
 
-    iget v0, p0, Ljfd;->k1:F
+    iget-object p0, p0, Lgfd;->b:Landroid/content/Intent;
 
-    div-float/2addr p1, v0
+    iget-object p1, p1, Lgfd;->b:Landroid/content/Intent;
 
-    iget v0, p0, Ljfd;->b:F
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    add-float/2addr p1, v0
+    move-result p0
 
-    iput p1, p0, Ljfd;->o:F
+    if-nez p0, :cond_2
 
-    const/4 p1, 0x0
+    return v2
 
-    iput-boolean p1, p0, Ljfd;->m1:Z
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Ljfd;->t1:Z
-
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lgfd;->b:Ljfd;
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Ljfd;->m1:Z
-
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    :cond_2
+    return v0
 .end method
 
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+.method public final hashCode()I
+    .locals 0
 
-    iget p1, p0, Lgfd;->a:I
+    iget-object p0, p0, Lgfd;->b:Landroid/content/Intent;
 
-    packed-switch p1, :pswitch_data_0
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    iget-object p0, p0, Lgfd;->b:Ljfd;
+    move-result p0
 
-    iget p1, p0, Ljfd;->j1:F
+    return p0
+.end method
 
-    iget v0, p0, Ljfd;->p1:F
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    sub-float/2addr p1, v0
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget v0, p0, Ljfd;->h1:F
+    const-string v1, "SelectPhotoFromCamera(intent="
 
-    mul-float/2addr p1, v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget v0, p0, Ljfd;->k1:F
+    iget-object p0, p0, Lgfd;->b:Landroid/content/Intent;
 
-    div-float/2addr p1, v0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iget v0, p0, Ljfd;->b:F
+    const-string p0, ")"
 
-    add-float/2addr p1, v0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iput p1, p0, Ljfd;->o:F
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const/4 p1, 0x0
+    move-result-object p0
 
-    iput-boolean p1, p0, Ljfd;->m1:Z
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Ljfd;->t1:Z
-
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lgfd;->b:Ljfd;
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Ljfd;->m1:Z
-
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

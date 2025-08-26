@@ -15,16 +15,16 @@
         "context",
         "Landroidx/work/WorkerParameters;",
         "workerParams",
-        "Ljee;",
+        "Lhme;",
         "taskRepository",
-        "Lmbe;",
+        "Lmje;",
         "schedulers",
-        "Lluf;",
+        "Lw9g;",
         "workerService",
-        "Lf03;",
+        "Lh23;",
         "clientPrefs",
         "<init>",
-        "(Landroid/content/Context;Landroidx/work/WorkerParameters;Ljee;Lmbe;Lluf;Lf03;)V",
+        "(Landroid/content/Context;Landroidx/work/WorkerParameters;Lhme;Lmje;Lw9g;Lh23;)V",
         "tamtam-android-sdk_release"
     }
     k = 0x1
@@ -33,84 +33,83 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
-.field public final X:Lf03;
+.field public final X:Lh23;
 
-.field public final Y:Lho0;
+.field public final Y:Lgp0;
 
-.field public final b:Ljee;
+.field public final b:Lhme;
 
-.field public final c:Lmbe;
+.field public final c:Lmje;
 
-.field public final o:Lluf;
+.field public final o:Lw9g;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Ljee;Lmbe;Lluf;Lf03;)V
+.method public constructor <init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Lhme;Lmje;Lw9g;Lh23;)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Landroidx/work/Worker;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;)V
 
-    iput-object p3, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->b:Ljee;
+    iput-object p3, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->b:Lhme;
 
-    iput-object p4, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->c:Lmbe;
+    iput-object p4, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->c:Lmje;
 
-    iput-object p5, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->o:Lluf;
+    iput-object p5, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->o:Lw9g;
 
-    iput-object p6, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->X:Lf03;
+    iput-object p6, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->X:Lh23;
 
-    new-instance p1, Lho0;
+    new-instance p1, Lgp0;
 
     const/4 p2, 0x1
 
     invoke-direct {p1, p2}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
 
-    iput-object p1, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->Y:Lho0;
+    iput-object p1, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->Y:Lgp0;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()Lgh7;
+.method public final a()Lfm7;
     .locals 11
 
-    const/4 v0, 0x1
+    invoke-virtual {p0}, Lgm7;->getId()Ljava/util/UUID;
 
-    invoke-virtual {p0}, Lhh7;->getId()Ljava/util/UUID;
-
-    move-result-object v1
+    move-result-object v0
 
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
-    move-result v2
+    move-result v1
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    filled-new-array {v1, v2}, [Ljava/lang/Object;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
+    filled-new-array {v0, v1}, [Ljava/lang/Object;
+
+    move-result-object v0
+
+    const-string v1, "eme"
+
     const-string v2, "work %s started at %s"
 
-    const-string v3, "gee"
+    invoke-static {v1, v2, v0}, Lg47;->o(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-static {v3, v2, v1}, Ludd;->p(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p0}, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->b()Z
 
-    invoke-virtual {p0}, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->c()Z
-
-    move-result v1
+    move-result v0
 
     const-string v2, "work "
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Lhh7;->getId()Ljava/util/UUID;
+    invoke-virtual {p0}, Lgm7;->getId()Ljava/util/UUID;
 
     move-result-object p0
 
@@ -128,94 +127,94 @@
 
     move-result-object p0
 
-    invoke-static {v3, p0}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, p0}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {}, Lgh7;->b()Lfh7;
+    invoke-static {}, Lfm7;->b()Lem7;
 
     move-result-object p0
 
     return-object p0
 
     :cond_0
-    iget-object v1, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->X:Lf03;
+    iget-object v0, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->X:Lh23;
 
-    check-cast v1, Llqc;
+    check-cast v0, Lmwc;
 
-    invoke-virtual {v1, v0}, Llqc;->w(Z)V
+    const/4 v3, 0x1
 
-    iget-object v1, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->o:Lluf;
+    invoke-virtual {v0, v3}, Lmwc;->t(Z)V
 
-    invoke-static {v1}, Lo1d;->y(Lluf;)V
+    iget-object v0, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->o:Lw9g;
 
-    iget-object v1, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->b:Ljee;
+    invoke-static {v0}, Lw7d;->y(Lw9g;)V
 
-    iget-object v1, v1, Ljee;->c:Lajb;
+    iget-object v0, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->b:Lhme;
 
-    new-instance v4, Lfee;
+    iget-object v0, v0, Lhme;->c:Lcnb;
 
-    invoke-direct {v4, p0}, Lfee;-><init>(Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;)V
+    new-instance v4, Ldme;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {v4, p0}, Ldme;-><init>(Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;)V
 
-    new-instance v6, Lps9;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const/4 v5, 0x2
+    new-instance v6, Lsy9;
 
-    invoke-direct {v6, v1, v4, v5}, Lps9;-><init>(Lnv9;Lv1b;I)V
+    invoke-direct {v6, v0, v4, v3}, Lsy9;-><init>(Lqz9;Ljava/lang/Object;I)V
 
-    sget-object v9, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    iget-object v1, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->c:Lmbe;
+    iget-object v4, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->c:Lmje;
 
-    check-cast v1, Lnbe;
+    check-cast v4, Loje;
 
-    iget-object v1, v1, Lnbe;->c:Lr7e;
+    iget-object v4, v4, Loje;->c:Lwfe;
 
-    invoke-virtual {v1}, Lr7e;->getValue()Ljava/lang/Object;
+    invoke-virtual {v4}, Lwfe;->getValue()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v4
 
-    move-object v10, v1
+    move-object v9, v4
 
-    check-cast v10, Lqmc;
+    check-cast v9, Lgsc;
 
-    const-string v1, "unit is null"
+    const-string v4, "unit is null"
 
-    invoke-static {v9, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v0, v4}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v1, "scheduler is null"
+    const-string v0, "scheduler is null"
 
-    invoke-static {v10, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v9, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    new-instance v1, Lxv9;
+    new-instance v5, Ltz9;
+
+    const/4 v10, 0x1
 
     const-wide/16 v7, 0x3a98
 
-    move-object v5, v1
+    invoke-direct/range {v5 .. v10}, Ltz9;-><init>(Lvw9;JLgsc;I)V
 
-    invoke-direct/range {v5 .. v10}, Lxv9;-><init>(Lms9;JLjava/util/concurrent/TimeUnit;Lqmc;)V
+    new-instance v0, Ldme;
 
-    new-instance v4, Lfee;
+    invoke-direct {v0, p0}, Ldme;-><init>(Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;)V
 
-    invoke-direct {v4, p0}, Lfee;-><init>(Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;)V
+    const-string v4, "observer is null"
 
-    const-string v5, "observer is null"
+    iget-object v6, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->Y:Lgp0;
 
-    iget-object v6, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->Y:Lho0;
-
-    invoke-static {v6, v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {v6, v4}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     :try_start_0
-    new-instance v5, Lbu9;
+    new-instance v4, Lgy9;
 
-    invoke-direct {v5, v6, v4, v0}, Lbu9;-><init>(Lbw9;Lj26;I)V
+    invoke-direct {v4, v6, v0, v3}, Lgy9;-><init>(La0a;Lm66;I)V
 
-    invoke-interface {v1, v5}, Lnv9;->a(Lbw9;)V
+    invoke-interface {v5, v4}, Lqz9;->a(La0a;)V
     :try_end_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    const/4 v0, 0x0
+    const/4 v3, 0x0
 
     :try_start_1
     invoke-virtual {v6}, Ljava/util/concurrent/CountDownLatch;->getCount()J
@@ -226,9 +225,9 @@
 
     const-wide/16 v7, 0x0
 
-    cmp-long v1, v4, v7
+    cmp-long v0, v4, v7
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
     :try_start_2
     invoke-virtual {v6}, Ljava/util/concurrent/CountDownLatch;->await()V
@@ -239,45 +238,45 @@
     goto :goto_0
 
     :catch_0
-    move-exception v1
+    move-exception v0
 
     :try_start_3
-    invoke-virtual {v6}, Lho0;->f()V
+    invoke-virtual {v6}, Lgp0;->f()V
 
-    invoke-static {v1}, Li15;->f(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
+    invoke-static {v0}, Lg45;->f(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
 
-    move-result-object v1
+    move-result-object v0
 
-    throw v1
+    throw v0
 
     :cond_1
     :goto_0
-    iget-object v1, v6, Lho0;->b:Ljava/lang/Throwable;
+    iget-object v0, v6, Lgp0;->b:Ljava/lang/Throwable;
 
-    if-nez v1, :cond_2
+    if-nez v0, :cond_2
 
-    iget-object v1, v6, Lho0;->a:Ljava/lang/Object;
+    iget-object v0, v6, Lgp0;->a:Ljava/lang/Object;
 
-    check-cast v1, Ljava/lang/Boolean;
+    check-cast v0, Ljava/lang/Boolean;
 
     goto :goto_2
 
     :catchall_0
-    move-exception v1
+    move-exception v0
 
     goto :goto_1
 
     :cond_2
-    invoke-static {v1}, Li15;->f(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
+    invoke-static {v0}, Lg45;->f(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
 
-    move-result-object v1
+    move-result-object v0
 
-    throw v1
+    throw v0
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     :goto_1
-    invoke-virtual {p0}, Lhh7;->getId()Ljava/util/UUID;
+    invoke-virtual {p0}, Lgm7;->getId()Ljava/util/UUID;
 
     move-result-object v4
 
@@ -295,47 +294,47 @@
 
     move-result-object v4
 
-    invoke-static {v3, v4, v1}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v1, v4, v0}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    move-object v1, v0
+    move-object v0, v3
 
     :goto_2
-    if-nez v1, :cond_3
+    if-nez v0, :cond_3
 
-    invoke-virtual {p0}, Lhh7;->getId()Ljava/util/UUID;
+    invoke-virtual {p0}, Lgm7;->getId()Ljava/util/UUID;
 
     move-result-object p0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string p0, " result null. Set failure state"
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-static {v3, p0, v0}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v1, p0, v3}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-static {}, Lgh7;->a()Ldh7;
+    invoke-static {}, Lfm7;->a()Lcm7;
 
     move-result-object p0
 
     return-object p0
 
     :cond_3
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     if-nez v0, :cond_4
 
-    invoke-virtual {p0}, Lhh7;->getId()Ljava/util/UUID;
+    invoke-virtual {p0}, Lgm7;->getId()Ljava/util/UUID;
 
     move-result-object p0
 
@@ -353,16 +352,16 @@
 
     move-result-object p0
 
-    invoke-static {v3, p0}, Ludd;->U(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, p0}, Lg47;->Q(Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance p0, Leh7;
+    new-instance p0, Ldm7;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-object p0
 
     :cond_4
-    invoke-virtual {p0}, Lhh7;->getId()Ljava/util/UUID;
+    invoke-virtual {p0}, Lgm7;->getId()Ljava/util/UUID;
 
     move-result-object p0
 
@@ -380,20 +379,22 @@
 
     move-result-object p0
 
-    invoke-static {v3, p0}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, p0}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {}, Lgh7;->b()Lfh7;
+    invoke-static {}, Lfm7;->b()Lem7;
 
     move-result-object p0
 
     return-object p0
 
     :catchall_1
-    move-exception p0
+    move-exception v0
 
-    invoke-static {p0}, Lek8;->a0(Ljava/lang/Throwable;)V
+    move-object p0, v0
 
-    invoke-static {p0}, Lxs7;->F(Ljava/lang/Throwable;)V
+    invoke-static {p0}, Lfc2;->G(Ljava/lang/Throwable;)V
+
+    invoke-static {p0}, Lou0;->x(Ljava/lang/Throwable;)V
 
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -406,21 +407,23 @@
     throw v0
 
     :catch_1
-    move-exception p0
+    move-exception v0
+
+    move-object p0, v0
 
     throw p0
 .end method
 
-.method public final c()Z
+.method public final b()Z
     .locals 12
 
-    iget-object v0, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->b:Ljee;
+    iget-object v0, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->b:Lhme;
 
-    invoke-virtual {v0}, Ljee;->k()I
+    invoke-virtual {v0}, Lhme;->k()I
 
     move-result v1
 
-    invoke-virtual {p0}, Lhh7;->getId()Ljava/util/UUID;
+    invoke-virtual {p0}, Lgm7;->getId()Ljava/util/UUID;
 
     move-result-object v2
 
@@ -442,9 +445,9 @@
 
     move-result-object v2
 
-    const-string v3, "gee"
+    const-string v3, "eme"
 
-    invoke-static {v3, v2}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v2}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v2, 0x1
 
@@ -454,29 +457,29 @@
 
     if-ge v1, v5, :cond_0
 
-    invoke-virtual {v0}, Ljee;->m()Ljava/util/ArrayList;
+    invoke-virtual {v0}, Lhme;->m()Ljava/util/ArrayList;
 
     move-result-object v6
 
-    new-instance v10, Lu1c;
+    new-instance v10, Lv6c;
 
-    const/16 v0, 0x13
+    const/16 v0, 0x16
 
-    invoke-direct {v10, v0}, Lu1c;-><init>(I)V
+    invoke-direct {v10, v0}, Lv6c;-><init>(I)V
+
+    const/16 v11, 0x1e
+
+    const-string v7, "; "
 
     const/4 v8, 0x0
 
     const/4 v9, 0x0
 
-    const-string v7, "; "
-
-    const/16 v11, 0x1e
-
-    invoke-static/range {v6 .. v11}, Lo23;->c0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lu16;I)Ljava/lang/String;
+    invoke-static/range {v6 .. v11}, Lp43;->G0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lx56;I)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lhh7;->getId()Ljava/util/UUID;
+    invoke-virtual {p0}, Lgm7;->getId()Ljava/util/UUID;
 
     move-result-object p0
 
@@ -496,24 +499,23 @@
 
     move-result-object p0
 
-    invoke-static {v3, p0}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, p0}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     if-lez v1, :cond_1
 
-    goto :goto_0
+    return v2
 
     :cond_1
-    const/4 v2, 0x0
+    const/4 p0, 0x0
 
-    :goto_0
-    return v2
+    return p0
 .end method
 
 .method public final onStopped()V
     .locals 4
 
-    invoke-virtual {p0}, Lhh7;->getId()Ljava/util/UUID;
+    invoke-virtual {p0}, Lgm7;->getId()Ljava/util/UUID;
 
     move-result-object v0
 
@@ -539,17 +541,17 @@
 
     move-result-object v0
 
-    const-string v1, "gee"
+    const-string v1, "eme"
 
-    invoke-static {v1, v0}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->Y:Lho0;
+    iget-object v0, p0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;->Y:Lgp0;
 
-    invoke-virtual {v0}, Lho0;->f()V
+    invoke-virtual {v0}, Lgp0;->f()V
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    invoke-virtual {p0}, Lhh7;->getId()Ljava/util/UUID;
+    invoke-virtual {p0}, Lgm7;->getId()Ljava/util/UUID;
 
     move-result-object v0
 
@@ -573,7 +575,7 @@
 
     move-result-object p0
 
-    invoke-static {v1, p0}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, p0}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

@@ -9,11 +9,11 @@
         "\u0000\u001e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u0003\n\u0002\u0008\u0003\n\u0002\u0010\u001e\n\u0002\u0008\u0005\u001a\u0017\u0010\u0003\u001a\u00020\u00022\u0006\u0010\u0001\u001a\u00020\u0000H\u0000\u00a2\u0006\u0004\u0008\u0003\u0010\u0004\u001a\u0017\u0010\u0007\u001a\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u0005H\u0000\u00a2\u0006\u0004\u0008\u0007\u0010\u0008\" \u0010\n\u001a\u0008\u0012\u0004\u0012\u00020\u00000\t8\u0000X\u0080\u0004\u00a2\u0006\u000c\n\u0004\u0008\n\u0010\u000b\u001a\u0004\u0008\u000c\u0010\r\u00a8\u0006\u000e"
     }
     d2 = {
-        "Lku3;",
+        "Lkx3;",
         "callback",
-        "Ljue;",
+        "Le5f;",
         "ensurePlatformExceptionHandlerLoaded",
-        "(Lku3;)V",
+        "(Lkx3;)V",
         "",
         "exception",
         "propagateExceptionFinalResort",
@@ -31,6 +31,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -39,7 +40,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Collection<",
-            "Lku3;",
+            "Lkx3;",
             ">;"
         }
     .end annotation
@@ -55,13 +56,13 @@
 
     invoke-direct {v0}, Lkotlinx/coroutines/android/AndroidExceptionPreHandler;-><init>()V
 
-    new-instance v1, Lf15;
+    new-instance v1, Ld45;
 
-    invoke-direct {v1}, Lf15;-><init>()V
+    invoke-direct {v1}, Ld45;-><init>()V
 
     const/4 v2, 0x2
 
-    new-array v2, v2, [Lku3;
+    new-array v2, v2, [Lkx3;
 
     const/4 v3, 0x0
 
@@ -81,17 +82,17 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    new-instance v1, Les;
+    new-instance v1, Lps;
 
-    const/4 v2, 0x7
+    const/4 v2, 0x6
 
-    invoke-direct {v1, v2, v0}, Les;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v1, v2, v0}, Lps;-><init>(ILjava/lang/Object;)V
 
-    new-instance v0, Lle3;
+    new-instance v0, Lii3;
 
-    invoke-direct {v0, v1}, Lle3;-><init>(Ldyc;)V
+    invoke-direct {v0, v1}, Lii3;-><init>(Li4d;)V
 
-    invoke-static {v0}, Lmyc;->U(Ldyc;)Ljava/util/List;
+    invoke-static {v0}, Lr4d;->X(Li4d;)Ljava/util/List;
 
     move-result-object v0
 
@@ -113,7 +114,7 @@
     throw v1
 .end method
 
-.method public static final ensurePlatformExceptionHandlerLoaded(Lku3;)V
+.method public static final ensurePlatformExceptionHandlerLoaded(Lkx3;)V
     .locals 1
 
     sget-object v0, Lkotlinx/coroutines/internal/CoroutineExceptionHandlerImplKt;->platformExceptionHandlers:Ljava/util/Collection;
@@ -131,10 +132,6 @@
 
     const-string v0, "Exception handler was not found via a ServiceLoader"
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
     invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p0
@@ -146,7 +143,7 @@
         value = {
             "()",
             "Ljava/util/Collection<",
-            "Lku3;",
+            "Lkx3;",
             ">;"
         }
     .end annotation

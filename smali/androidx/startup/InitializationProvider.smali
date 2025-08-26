@@ -65,18 +65,18 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {p0}, Ljj7;->A(Landroid/content/Context;)Ljj7;
+    invoke-static {p0}, Ljo7;->A(Landroid/content/Context;)Ljo7;
 
     move-result-object p0
 
-    iget-object v0, p0, Ljj7;->c:Ljava/lang/Object;
+    iget-object v0, p0, Ljo7;->c:Ljava/lang/Object;
 
     check-cast v0, Landroid/content/Context;
 
     :try_start_0
     const-string v1, "Startup"
 
-    invoke-static {v1}, Lam7;->C(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, Lou0;->G(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -108,17 +108,12 @@
 
     iget-object v0, v0, Landroid/content/pm/ProviderInfo;->metaData:Landroid/os/Bundle;
 
-    invoke-virtual {p0, v0}, Ljj7;->r(Landroid/os/Bundle;)V
+    invoke-virtual {p0, v0}, Ljo7;->x(Landroid/os/Bundle;)V
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {}, Landroid/os/Trace;->endSection()V
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception p0
 
     goto :goto_0
 
@@ -134,13 +129,15 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :goto_0
+    :catchall_0
+    move-exception p0
+
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
     throw p0
 
     :cond_0
-    :goto_1
+    :goto_0
     const/4 p0, 0x1
 
     return p0

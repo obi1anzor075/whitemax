@@ -1,80 +1,60 @@
-.class public final Ldrc;
-.super Ll5e;
+.class public final synthetic Ldrc;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lone/me/chatscreen/search/SearchMessageBottomWidget;
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lone/me/chatscreen/search/SearchMessageBottomWidget;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
     .locals 0
 
-    iput-object p1, p0, Ldrc;->Y:Lone/me/chatscreen/search/SearchMessageBottomWidget;
+    iput p1, p0, Ldrc;->a:I
 
-    const/4 p1, 0x2
+    iput-object p2, p0, Ldrc;->b:Ljava/lang/Object;
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, La34;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Ldrc;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Ldrc;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Ldrc;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final onFrameAvailable(Landroid/graphics/SurfaceTexture;)V
     .locals 1
 
-    new-instance v0, Ldrc;
+    iget v0, p0, Ldrc;->a:I
 
-    iget-object p0, p0, Ldrc;->Y:Lone/me/chatscreen/search/SearchMessageBottomWidget;
+    iget-object p0, p0, Ldrc;->b:Ljava/lang/Object;
 
-    invoke-direct {v0, p0, p2}, Ldrc;-><init>(Lone/me/chatscreen/search/SearchMessageBottomWidget;Lkotlin/coroutines/Continuation;)V
+    packed-switch v0, :pswitch_data_0
 
-    iput-object p1, v0, Ldrc;->X:Ljava/lang/Object;
+    check-cast p0, Lorg/webrtc/SurfaceTextureHelper;
 
-    return-object v0
-.end method
+    invoke-static {p0, p1}, Lorg/webrtc/SurfaceTextureHelper;->d(Lorg/webrtc/SurfaceTextureHelper;Landroid/graphics/SurfaceTexture;)V
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+    return-void
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    :pswitch_0
+    check-cast p0, Lerc;
 
-    iget-object p0, p0, Ldrc;->X:Ljava/lang/Object;
+    iget-object p0, p0, Lerc;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    check-cast p0, La34;
+    const/4 p1, 0x1
 
-    sget-object p1, Lorc;->c:Lorc;
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    invoke-virtual {p1, p0}, Lu2;->R1(La34;)V
+    return-void
 
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

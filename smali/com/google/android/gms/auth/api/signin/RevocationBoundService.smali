@@ -17,13 +17,13 @@
 .method public final onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 2
 
+    const-string v0, "com.google.android.gms.auth.api.signin.RevocationBoundService.disconnect"
+
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v1, "com.google.android.gms.auth.api.signin.RevocationBoundService.disconnect"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -98,9 +98,9 @@
     invoke-virtual {v0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     :cond_3
-    new-instance p1, Lj6g;
+    new-instance p1, Lilg;
 
-    invoke-direct {p1, p0}, Lj6g;-><init>(Landroid/content/Context;)V
+    invoke-direct {p1, p0}, Lilg;-><init>(Lcom/google/android/gms/auth/api/signin/RevocationBoundService;)V
 
     return-object p1
 .end method

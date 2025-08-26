@@ -2,305 +2,253 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/os/Handler$Callback;
-
 
 # instance fields
-.field public X:Z
+.field public final a:Ljava/util/ArrayList;
 
-.field public Y:Z
-
-.field public final Z:Ljava/lang/Object;
-
-.field public final synthetic a:I
-
-.field public final b:Landroid/os/Handler;
-
-.field public final c:Ljava/util/TreeMap;
-
-.field public o:Z
-
-.field public final w0:Ljava/lang/Object;
-
-.field public final x0:Ljava/lang/Object;
-
-.field public y0:Ljava/lang/Object;
+.field public final b:Ljava/util/LinkedHashMap;
 
 
 # direct methods
-.method public constructor <init>(Ldy3;Lc9;Ll34;)V
+.method public constructor <init>()V
     .locals 1
 
-    const/4 v0, 0x0
-
-    iput v0, p0, Lxya;->a:I
-
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    iput-object p1, p0, Lxya;->y0:Ljava/lang/Object;
+    new-instance v0, Ljava/util/ArrayList;
 
-    .line 3
-    iput-object p2, p0, Lxya;->w0:Ljava/lang/Object;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 4
-    iput-object p3, p0, Lxya;->Z:Ljava/lang/Object;
+    iput-object v0, p0, Lxya;->a:Ljava/util/ArrayList;
 
-    .line 5
-    new-instance p1, Ljava/util/TreeMap;
+    new-instance v0, Ljava/util/LinkedHashMap;
 
-    invoke-direct {p1}, Ljava/util/TreeMap;-><init>()V
+    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
-    iput-object p1, p0, Lxya;->c:Ljava/util/TreeMap;
-
-    .line 6
-    invoke-static {p0}, Lmze;->m(Landroid/os/Handler$Callback;)Landroid/os/Handler;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lxya;->b:Landroid/os/Handler;
-
-    .line 7
-    new-instance p1, Lxo;
-
-    const/4 p2, 0x1
-
-    .line 8
-    invoke-direct {p1, p2}, Lxo;-><init>(I)V
-
-    .line 9
-    iput-object p1, p0, Lxya;->x0:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ley3;Lu5g;Ll34;)V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lxya;->a:I
-
-    .line 10
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 11
-    iput-object p1, p0, Lxya;->y0:Ljava/lang/Object;
-
-    .line 12
-    iput-object p2, p0, Lxya;->w0:Ljava/lang/Object;
-
-    .line 13
-    iput-object p3, p0, Lxya;->Z:Ljava/lang/Object;
-
-    .line 14
-    new-instance p1, Ljava/util/TreeMap;
-
-    invoke-direct {p1}, Ljava/util/TreeMap;-><init>()V
-
-    iput-object p1, p0, Lxya;->c:Ljava/util/TreeMap;
-
-    .line 15
-    invoke-static {p0}, Loze;->o(Landroid/os/Handler$Callback;)Landroid/os/Handler;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lxya;->b:Landroid/os/Handler;
-
-    .line 16
-    new-instance p1, Lyo;
-
-    const/4 p2, 0x1
-
-    .line 17
-    invoke-direct {p1, p2}, Lyo;-><init>(I)V
-
-    .line 18
-    iput-object p1, p0, Lxya;->x0:Ljava/lang/Object;
+    iput-object v0, p0, Lxya;->b:Ljava/util/LinkedHashMap;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Lwya;
+.method public final a(Landroid/view/ViewGroup;Lwya;)V
     .locals 2
 
-    new-instance v0, Lwya;
+    iget-object v0, p0, Lxya;->b:Ljava/util/LinkedHashMap;
 
-    iget-object v1, p0, Lxya;->Z:Ljava/lang/Object;
+    invoke-virtual {v0, p2}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    check-cast v1, Ll34;
+    move-result-object v1
 
-    invoke-direct {v0, p0, v1}, Lwya;-><init>(Lxya;Ll34;)V
+    if-nez v1, :cond_0
 
-    return-object v0
-.end method
+    new-instance v1, Ljava/util/ArrayList;
 
-.method public final handleMessage(Landroid/os/Message;)Z
-    .locals 8
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    iget v0, p0, Lxya;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-boolean v0, p0, Lxya;->Y:Z
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
+    invoke-interface {v0, p2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
-    iget v0, p1, Landroid/os/Message;->what:I
+    check-cast v1, Ljava/util/List;
 
-    if-eq v0, v1, :cond_1
+    invoke-interface {v1, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
-    const/4 v1, 0x0
+    move-result p2
+
+    if-nez p2, :cond_1
+
+    invoke-interface {v1, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result p2
+
+    if-eqz p2, :cond_1
+
+    invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p0}, Lxya;->c()V
+
+    :cond_1
+    return-void
+.end method
+
+.method public final b(Lwya;)Ljava/util/List;
+    .locals 3
+
+    iget-object p0, p0, Lxya;->b:Ljava/util/LinkedHashMap;
+
+    invoke-virtual {p0, p1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/util/List;
+
+    if-eqz p0, :cond_1
+
+    new-instance p1, Ljava/util/ArrayList;
+
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :cond_0
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    check-cast v1, Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getVisibility()I
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    invoke-virtual {v1}, Landroid/view/View;->getAlpha()F
+
+    move-result v1
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    cmpg-float v1, v1, v2
+
+    if-nez v1, :cond_0
+
+    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_1
-    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    const/4 p1, 0x0
 
-    check-cast p1, Luya;
+    :cond_2
+    if-nez p1, :cond_3
 
-    iget-wide v2, p1, Luya;->a:J
+    sget-object p0, Lgz4;->a:Lgz4;
 
-    iget-object p0, p0, Lxya;->c:Ljava/util/TreeMap;
+    return-object p0
 
-    iget-wide v4, p1, Luya;->b:J
+    :cond_3
+    return-object p1
+.end method
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+.method public final c()V
+    .locals 5
 
-    move-result-object p1
+    new-instance v0, Lyya;
 
-    invoke-virtual {p0, p1}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    sget-object v1, Lwya;->a:Lwya;
 
-    move-result-object p1
+    invoke-virtual {p0, v1}, Lxya;->b(Lwya;)Ljava/util/List;
 
-    check-cast p1, Ljava/lang/Long;
+    move-result-object v1
 
-    if-nez p1, :cond_2
+    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    move-result-object v1
 
-    move-result-object p1
+    const/4 v2, 0x0
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    move v3, v2
 
-    move-result-object v0
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-virtual {p0, p1, v0}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/view/View;
+
+    invoke-virtual {v4}, Landroid/view/View;->getHeight()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
 
     goto :goto_0
 
-    :cond_2
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    :cond_0
+    sget-object v1, Lwya;->b:Lwya;
 
-    move-result-wide v6
+    invoke-virtual {p0, v1}, Lxya;->b(Lwya;)Ljava/util/List;
 
-    cmp-long p1, v6, v2
+    move-result-object v1
 
-    if-lez p1, :cond_3
+    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    move-result-object v1
 
-    move-result-object p1
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    invoke-virtual {p0, p1, v0}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_3
-    :goto_0
-    return v1
-
-    :pswitch_0
-    iget-boolean v0, p0, Lxya;->Y:Z
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_4
-
-    goto :goto_1
-
-    :cond_4
-    iget v0, p1, Landroid/os/Message;->what:I
-
-    if-eq v0, v1, :cond_5
-
-    const/4 v1, 0x0
-
-    goto :goto_1
-
-    :cond_5
-    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast p1, Ltya;
-
-    iget-wide v2, p1, Ltya;->a:J
-
-    iget-object p0, p0, Lxya;->c:Ljava/util/TreeMap;
-
-    iget-wide v4, p1, Ltya;->b:J
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Long;
-
-    if-nez p1, :cond_6
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p1
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    invoke-virtual {p0, p1, v0}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_1
-
-    :cond_6
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v6
-
-    cmp-long p1, v6, v2
-
-    if-lez p1, :cond_7
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p1
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    invoke-virtual {p0, p1, v0}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_7
     :goto_1
-    return v1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    nop
+    move-result v4
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    if-eqz v4, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/view/View;
+
+    invoke-virtual {v4}, Landroid/view/View;->getHeight()I
+
+    move-result v4
+
+    add-int/2addr v2, v4
+
+    goto :goto_1
+
+    :cond_1
+    invoke-direct {v0, v3, v2}, Lyya;-><init>(II)V
+
+    iget-object p0, p0, Lxya;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_2
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lvya;
+
+    check-cast v1, Ljm1;
+
+    invoke-virtual {v1, v0}, Ljm1;->B(Lyya;)V
+
+    goto :goto_2
+
+    :cond_2
+    return-void
 .end method

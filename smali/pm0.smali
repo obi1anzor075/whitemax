@@ -1,35 +1,21 @@
-.class public final Lpm0;
-.super Lo24;
+.class public abstract Lpm0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public X:Landroid/graphics/Bitmap;
-
-.field public final synthetic Y:Lqm0;
-
-
 # direct methods
-.method public constructor <init>(Lqm0;)V
-    .locals 1
+.method public static a(Landroid/hardware/biometrics/BiometricPrompt$Builder;Z)V
+    .locals 0
 
-    const/4 v0, 0x3
-
-    invoke-direct {p0, v0}, Lrx;-><init>(I)V
-
-    iput-object p1, p0, Lpm0;->Y:Lqm0;
+    invoke-virtual {p0, p1}, Landroid/hardware/biometrics/BiometricPrompt$Builder;->setConfirmationRequired(Z)Landroid/hardware/biometrics/BiometricPrompt$Builder;
 
     return-void
 .end method
 
+.method public static b(Landroid/hardware/biometrics/BiometricPrompt$Builder;Z)V
+    .locals 0
 
-# virtual methods
-.method public final w()V
-    .locals 1
-
-    iget-object v0, p0, Lpm0;->Y:Lqm0;
-
-    invoke-virtual {v0, p0}, Lqm0;->m(Lo24;)V
+    invoke-virtual {p0, p1}, Landroid/hardware/biometrics/BiometricPrompt$Builder;->setDeviceCredentialAllowed(Z)Landroid/hardware/biometrics/BiometricPrompt$Builder;
 
     return-void
 .end method

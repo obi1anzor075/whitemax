@@ -1,218 +1,92 @@
 .class public final Le4c;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lk26;
+.implements Landroid/transition/Transition$TransitionListener;
 
 
 # instance fields
-.field public final synthetic X:I
+.field public final synthetic a:Landroid/view/View;
 
-.field public synthetic Y:Lpda;
+.field public final synthetic b:Lvt4;
 
-.field public final synthetic Z:Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
+.field public final synthetic c:F
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;Lkotlin/coroutines/Continuation;I)V
+.method public constructor <init>(Landroid/view/View;Lvt4;F)V
     .locals 0
 
-    iput p3, p0, Le4c;->X:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Le4c;->Z:Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
+    iput-object p1, p0, Le4c;->a:Landroid/view/View;
 
-    const/4 p1, 0x3
+    iput-object p2, p0, Le4c;->b:Lvt4;
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput p3, p0, Le4c;->c:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final onTransitionCancel(Landroid/transition/Transition;)V
+    .locals 0
 
-    iget v0, p0, Le4c;->X:I
+    return-void
+.end method
 
-    packed-switch v0, :pswitch_data_0
+.method public final onTransitionEnd(Landroid/transition/Transition;)V
+    .locals 0
 
-    check-cast p1, Landroid/widget/ImageView;
+    return-void
+.end method
 
-    check-cast p2, Lpda;
+.method public final onTransitionPause(Landroid/transition/Transition;)V
+    .locals 0
 
-    check-cast p3, Lkotlin/coroutines/Continuation;
+    return-void
+.end method
 
-    new-instance p1, Le4c;
+.method public final onTransitionResume(Landroid/transition/Transition;)V
+    .locals 0
 
-    iget-object p0, p0, Le4c;->Z:Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
+    return-void
+.end method
 
-    const/4 v0, 0x2
+.method public final onTransitionStart(Landroid/transition/Transition;)V
+    .locals 2
 
-    invoke-direct {p1, p0, p3, v0}, Le4c;-><init>(Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;Lkotlin/coroutines/Continuation;I)V
+    new-instance p1, Lsud;
 
-    iput-object p2, p1, Le4c;->Y:Lpda;
+    iget-object v0, p0, Le4c;->a:Landroid/view/View;
 
-    sget-object p0, Ljue;->a:Ljue;
+    iget-object v1, p0, Le4c;->b:Lvt4;
 
-    invoke-virtual {p1, p0}, Le4c;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    iget p0, p0, Le4c;->c:F
 
-    return-object p0
-
-    :pswitch_0
-    check-cast p1, Landroid/view/View;
-
-    check-cast p2, Lpda;
-
-    check-cast p3, Lkotlin/coroutines/Continuation;
-
-    new-instance p1, Le4c;
-
-    iget-object p0, p0, Le4c;->Z:Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
-
-    const/4 v0, 0x1
-
-    invoke-direct {p1, p0, p3, v0}, Le4c;-><init>(Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;Lkotlin/coroutines/Continuation;I)V
-
-    iput-object p2, p1, Le4c;->Y:Lpda;
-
-    sget-object p0, Ljue;->a:Ljue;
-
-    invoke-virtual {p1, p0}, Le4c;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p0
-
-    :pswitch_1
-    check-cast p1, Landroid/view/View;
-
-    check-cast p2, Lpda;
-
-    check-cast p3, Lkotlin/coroutines/Continuation;
-
-    new-instance p1, Le4c;
-
-    iget-object p0, p0, Le4c;->Z:Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
+    invoke-direct {p1, v0, v1, p0}, Lsud;-><init>(Ljava/lang/Object;Lp6g;F)V
 
     const/4 v0, 0x0
 
-    invoke-direct {p1, p0, p3, v0}, Le4c;-><init>(Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;Lkotlin/coroutines/Continuation;I)V
+    iput v0, p1, Lsud;->a:F
 
-    iput-object p2, p1, Le4c;->Y:Lpda;
+    new-instance v0, Ltud;
 
-    sget-object p0, Ljue;->a:Ljue;
+    invoke-direct {v0, p0}, Ltud;-><init>(F)V
 
-    invoke-virtual {p1, p0}, Le4c;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    const/high16 p0, 0x43c80000    # 400.0f
 
-    return-object p0
+    invoke-virtual {v0, p0}, Ltud;->b(F)V
 
-    nop
+    const p0, 0x3f2e147b    # 0.68f
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
+    invoke-virtual {v0, p0}, Ltud;->a(F)V
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    iput-object v0, p1, Lsud;->m:Ltud;
 
-    sget-object v0, Ljue;->a:Ljue;
+    invoke-virtual {p1}, Lsud;->g()V
 
-    iget-object v1, p0, Le4c;->Z:Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
-
-    iget v2, p0, Le4c;->X:I
-
-    packed-switch v2, :pswitch_data_0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p0, p0, Le4c;->Y:Lpda;
-
-    sget-object p1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->m1:[Lk77;
-
-    iget-object p1, v1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->P0:Lt97;
-
-    invoke-interface {p1}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/graphics/drawable/Drawable;
-
-    invoke-interface {p0}, Lpda;->getIcon()Lyn6;
-
-    const/4 p0, -0x1
-
-    invoke-static {p1, p0}, Ljs;->D(Landroid/graphics/drawable/Drawable;I)V
-
-    iget-object p1, v1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->O0:Lt97;
-
-    invoke-interface {p1}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/graphics/drawable/Drawable;
-
-    invoke-static {p1, p0}, Ljs;->D(Landroid/graphics/drawable/Drawable;I)V
-
-    return-object v0
-
-    :pswitch_0
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p0, p0, Le4c;->Y:Lpda;
-
-    sget-object p1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->m1:[Lk77;
-
-    iget-object p1, v1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->W0:Lt97;
-
-    invoke-interface {p1}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/graphics/drawable/GradientDrawable;
-
-    invoke-interface {p0}, Lpda;->getText()Lcfe;
-
-    move-result-object p0
-
-    iget p0, p0, Lcfe;->b:I
-
-    invoke-virtual {p1, p0}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
-
-    return-object v0
-
-    :pswitch_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p0, p0, Le4c;->Y:Lpda;
-
-    sget-object p1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->m1:[Lk77;
-
-    iget-object p1, v1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->W0:Lt97;
-
-    invoke-interface {p1}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/graphics/drawable/GradientDrawable;
-
-    invoke-interface {p0}, Lpda;->getText()Lcfe;
-
-    move-result-object p0
-
-    iget p0, p0, Lcfe;->b:I
-
-    invoke-virtual {p1, p0}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

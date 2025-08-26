@@ -1,104 +1,93 @@
 .class public final Lrmf;
-.super Ll5e;
+.super Lu2;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic c:I
 
-.field public final synthetic Y:Lone/me/webapp/settings/WebAppSettingsScreen;
+.field public final synthetic o:Lsmf;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/webapp/settings/WebAppSettingsScreen;)V
+.method public constructor <init>(Lsmf;I)V
     .locals 0
 
-    iput-object p2, p0, Lrmf;->Y:Lone/me/webapp/settings/WebAppSettingsScreen;
+    iput p2, p0, Lrmf;->c:I
 
-    const/4 p2, 0x2
+    iput-object p1, p0, Lrmf;->o:Lsmf;
 
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    const/16 p1, 0x9
+
+    packed-switch p2, :pswitch_data_0
+
+    const/4 p2, 0x0
+
+    invoke-direct {p0, p1, p2}, Lu2;-><init>(ILjava/lang/Object;)V
 
     return-void
+
+    :pswitch_0
+    sget-object p2, Lmmf;->a:Lmmf;
+
+    invoke-direct {p0, p1, p2}, Lu2;-><init>(ILjava/lang/Object;)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lrmf;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lrmf;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lrmf;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final x0(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 1
 
-    new-instance v0, Lrmf;
+    iget v0, p0, Lrmf;->c:I
 
-    iget-object p0, p0, Lrmf;->Y:Lone/me/webapp/settings/WebAppSettingsScreen;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-direct {v0, p2, p0}, Lrmf;-><init>(Lkotlin/coroutines/Continuation;Lone/me/webapp/settings/WebAppSettingsScreen;)V
+    invoke-static {p1, p2}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iput-object p1, v0, Lrmf;->X:Ljava/lang/Object;
+    move-result v0
 
-    return-object v0
-.end method
+    if-nez v0, :cond_0
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    check-cast p2, Lmmf;
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    check-cast p1, Lmmf;
 
-    iget-object p1, p0, Lrmf;->X:Ljava/lang/Object;
+    iget-object p0, p0, Lrmf;->o:Lsmf;
 
-    check-cast p1, Lumf;
-
-    sget-object v0, Lone/me/webapp/settings/WebAppSettingsScreen;->w0:[Lk77;
-
-    iget-object p0, p0, Lrmf;->Y:Lone/me/webapp/settings/WebAppSettingsScreen;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    instance-of v0, p1, Lumf;
-
-    if-eqz v0, :cond_1
-
-    iget-object p0, p0, Lone/me/webapp/settings/WebAppSettingsScreen;->Y:Lmif;
-
-    if-eqz p0, :cond_0
-
-    iget-object v0, p1, Lumf;->a:Ljava/lang/String;
-
-    const/4 v1, 0x0
-
-    iget-object p1, p1, Lumf;->b:Lstf;
-
-    invoke-virtual {p0, p1, v0, v1}, Lmif;->c(Lstf;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
     :cond_0
-    sget-object p0, Ljue;->a:Ljue;
+    return-void
 
-    return-object p0
+    :pswitch_0
+    invoke-static {p1, p2}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    check-cast p2, Lpmf;
+
+    check-cast p1, Lpmf;
+
+    iget-object p0, p0, Lrmf;->o:Lsmf;
+
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
     :cond_1
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+    return-void
 
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+    nop
 
-    throw p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

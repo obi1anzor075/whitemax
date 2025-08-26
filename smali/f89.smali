@@ -1,7 +1,20 @@
-.class public final Lf89;
-.super Ljava/util/concurrent/atomic/AtomicReference;
+.class public interface abstract Lf89;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public a:Ljava/lang/Object;
+# virtual methods
+.method public abstract c()I
+.end method
+
+.method public abstract getPosition()J
+.end method
+
+.method public abstract p()J
+.end method
+
+.method public abstract readUnsignedShort()I
+.end method
+
+.method public abstract u(I)V
+.end method

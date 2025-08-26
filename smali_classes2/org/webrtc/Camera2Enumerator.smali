@@ -188,9 +188,7 @@
 
     :cond_2
     :goto_1
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object p0
+    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     return-object p0
 .end method
@@ -260,13 +258,12 @@
 
     if-ge p0, v1, :cond_1
 
-    goto :goto_0
+    return v1
 
     :cond_1
-    const/4 v1, 0x1
+    const/4 p0, 0x1
 
-    :goto_0
-    return v1
+    return p0
 .end method
 
 .method public static getSupportedFormats(Landroid/content/Context;Ljava/lang/String;)Ljava/util/List;
@@ -863,13 +860,12 @@
 
     if-ne p0, p1, :cond_0
 
-    goto :goto_0
+    return p1
 
     :cond_0
-    const/4 p1, 0x0
+    const/4 p0, 0x0
 
-    :goto_0
-    return p1
+    return p0
 .end method
 
 .method public isFrontFacing(Ljava/lang/String;)Z
@@ -897,11 +893,10 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method

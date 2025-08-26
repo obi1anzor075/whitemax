@@ -1,25 +1,19 @@
-.class public abstract Lq1a;
+.class public final Lq1a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:I
-
-.field public static final b:I
+# instance fields
+.field public final a:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(J)V
+    .locals 0
 
-    sget v0, Lhsb;->call_users_in_wait_room_count:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput v0, Lq1a;->a:I
-
-    sget v0, Lhsb;->call_users_info_count:I
-
-    sput v0, Lq1a;->b:I
+    iput-wide p1, p0, Lq1a;->a:J
 
     return-void
 .end method

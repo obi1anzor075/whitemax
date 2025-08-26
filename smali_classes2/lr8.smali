@@ -1,89 +1,53 @@
-.class public abstract Llr8;
-.super Ljava/lang/Object;
+.class public final Llr8;
+.super Lbu3;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Ljava/nio/charset/Charset;
+# instance fields
+.field public X:J
 
-.field public static final b:Ljr8;
+.field public synthetic Y:Ljava/lang/Object;
 
-.field public static final c:Lkr8;
+.field public final synthetic Z:Lnr8;
+
+.field public o:Lnr8;
+
+.field public o0:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Lnr8;Lbu3;)V
+    .locals 0
 
-    const-string v0, "UTF-8"
+    iput-object p1, p0, Llr8;->Z:Lnr8;
 
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v0
-
-    sput-object v0, Llr8;->a:Ljava/nio/charset/Charset;
-
-    new-instance v0, Ljr8;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    const/16 v1, 0x200
-
-    iput v1, v0, Ljr8;->a:I
-
-    const/16 v1, 0x2000
-
-    iput v1, v0, Ljr8;->b:I
-
-    iput v1, v0, Ljr8;->c:I
-
-    const/4 v2, 0x1
-
-    iput-boolean v2, v0, Ljr8;->o:Z
-
-    sput-object v0, Llr8;->b:Ljr8;
-
-    new-instance v0, Lkr8;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-boolean v2, v0, Lkr8;->a:Z
-
-    iput-boolean v2, v0, Lkr8;->b:Z
-
-    sget-object v2, Ljava/nio/charset/CodingErrorAction;->REPLACE:Ljava/nio/charset/CodingErrorAction;
-
-    iput-object v2, v0, Lkr8;->c:Ljava/nio/charset/CodingErrorAction;
-
-    iput-object v2, v0, Lkr8;->o:Ljava/nio/charset/CodingErrorAction;
-
-    const v2, 0x7fffffff
-
-    iput v2, v0, Lkr8;->X:I
-
-    iput v1, v0, Lkr8;->Y:I
-
-    iput v1, v0, Lkr8;->Z:I
-
-    sput-object v0, Llr8;->c:Lkr8;
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public static a([B)Lws8;
+
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    sget-object v0, Llr8;->c:Lkr8;
+    iput-object p1, p0, Llr8;->Y:Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget p1, p0, Llr8;->o0:I
 
-    new-instance v1, Lorg/msgpack/core/buffer/ArrayBufferInput;
+    const/high16 v0, -0x80000000
 
-    invoke-direct {v1, p0}, Lorg/msgpack/core/buffer/ArrayBufferInput;-><init>([B)V
+    or-int/2addr p1, v0
 
-    new-instance p0, Lws8;
+    iput p1, p0, Llr8;->o0:I
 
-    invoke-direct {p0, v1, v0}, Lws8;-><init>(Lorg/msgpack/core/buffer/ArrayBufferInput;Lkr8;)V
+    iget-object p1, p0, Llr8;->Z:Lnr8;
+
+    const-wide/16 v0, 0x0
+
+    invoke-virtual {p1, v0, v1, p0}, Lnr8;->d(JLbu3;)Ljava/io/Serializable;
+
+    move-result-object p0
 
     return-object p0
 .end method

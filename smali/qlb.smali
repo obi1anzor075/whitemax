@@ -4,26 +4,60 @@
 
 
 # static fields
-.field public static cardBackgroundColor:I = 0x7f0400bc
+.field public static final a:Lod;
 
-.field public static cardCornerRadius:I = 0x7f0400bd
 
-.field public static cardElevation:I = 0x7f0400be
+# direct methods
+.method static constructor <clinit>()V
+    .locals 5
 
-.field public static cardMaxElevation:I = 0x7f0400c0
+    new-instance v0, Ljava/util/HashMap;
 
-.field public static cardPreventCornerOverlap:I = 0x7f0400c1
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-.field public static cardUseCompatPadding:I = 0x7f0400c2
+    new-instance v1, Ljava/util/HashMap;
 
-.field public static cardViewStyle:I = 0x7f0400c3
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-.field public static contentPadding:I = 0x7f0402fa
+    sget-object v2, Lsre;->b:Lla7;
 
-.field public static contentPaddingBottom:I = 0x7f0402fb
+    sget-object v3, Lv80;->a:Lv80;
 
-.field public static contentPaddingLeft:I = 0x7f0402fd
+    const-class v4, Lqlb;
 
-.field public static contentPaddingRight:I = 0x7f0402fe
+    invoke-virtual {v0, v4, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-.field public static contentPaddingTop:I = 0x7f040300
+    invoke-virtual {v1, v4}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v3, Lu80;->a:Lu80;
+
+    const-class v4, Ls79;
+
+    invoke-virtual {v0, v4, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v1, v4}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v3, Lt80;->a:Lt80;
+
+    const-class v4, Lr79;
+
+    invoke-virtual {v0, v4, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v1, v4}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v3, Lod;
+
+    new-instance v4, Ljava/util/HashMap;
+
+    invoke-direct {v4, v0}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
+
+    invoke-direct {v3, v4, v0, v2}, Lod;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    sput-object v3, Lqlb;->a:Lod;
+
+    return-void
+.end method

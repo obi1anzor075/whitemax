@@ -1,136 +1,101 @@
-.class public final Lgs7;
-.super Ll5e;
+.class public final synthetic Lgs7;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lv56;
 
 
 # instance fields
-.field public final synthetic X:Lone/me/main/MainScreen;
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lfs7;
-
-.field public final synthetic Z:Lkm4;
+.field public final synthetic b:Lks7;
 
 
 # direct methods
-.method public constructor <init>(Lone/me/main/MainScreen;Lfs7;Lkm4;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(Lks7;I)V
     .locals 0
 
-    iput-object p1, p0, Lgs7;->X:Lone/me/main/MainScreen;
+    iput p2, p0, Lgs7;->a:I
 
-    iput-object p2, p0, Lgs7;->Y:Lfs7;
+    iput-object p1, p0, Lgs7;->b:Lks7;
 
-    iput-object p3, p0, Lgs7;->Z:Lkm4;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p4}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
 
-    check-cast p1, Lpda;
+    iget v0, p0, Lgs7;->a:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget-object p0, p0, Lgs7;->b:Lks7;
 
-    invoke-virtual {p0, p1, p2}, Lgs7;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
+
+    sget-object v0, Lks7;->i:Ljava/lang/ThreadLocal;
+
+    iget-object v0, p0, Lks7;->d:Ljava/lang/String;
+
+    iget-object p0, p0, Lks7;->b:Ljava/lang/String;
+
+    invoke-static {v0, p0}, Lod7;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    check-cast p0, Lgs7;
+    return-object p0
 
-    sget-object p1, Ljue;->a:Ljue;
+    :pswitch_0
+    sget-object v0, Lks7;->i:Ljava/lang/ThreadLocal;
 
-    invoke-virtual {p0, p1}, Lgs7;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, p0, Lks7;->d:Ljava/lang/String;
 
-    return-object p1
-.end method
+    iget-object p0, p0, Lks7;->b:Ljava/lang/String;
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 2
+    if-nez p0, :cond_0
 
-    new-instance p1, Lgs7;
-
-    iget-object v0, p0, Lgs7;->Y:Lfs7;
-
-    iget-object v1, p0, Lgs7;->Z:Lkm4;
-
-    iget-object p0, p0, Lgs7;->X:Lone/me/main/MainScreen;
-
-    invoke-direct {p1, p0, v0, v1, p2}, Lgs7;-><init>(Lone/me/main/MainScreen;Lfs7;Lkm4;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lgs7;->X:Lone/me/main/MainScreen;
-
-    iget-object p1, p1, Lone/me/main/MainScreen;->c:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {p1}, Ljava/util/LinkedHashMap;->entrySet()Ljava/util/Set;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
+    const-string p0, ""
 
     :cond_0
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    const-string v1, "."
 
-    move-result v0
+    const/4 v2, 0x6
 
-    iget-object v1, p0, Lgs7;->Z:Lkm4;
+    invoke-static {v1, p0, v2}, Lj8e;->M0(Ljava/lang/String;Ljava/lang/CharSequence;I)I
 
-    if-eqz v0, :cond_1
+    move-result v1
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    const/4 v2, -0x1
 
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/ViewGroup;
-
-    invoke-virtual {v0}, Landroid/view/View;->isAttachedToWindow()Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    invoke-static {v1, v0}, Lkm4;->d(Lkm4;Landroid/view/ViewGroup;)V
+    if-ne v1, v2, :cond_1
 
     goto :goto_0
 
     :cond_1
-    iget-object p0, p0, Lgs7;->Y:Lfs7;
+    const/4 v2, 0x1
 
-    invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
+    add-int/2addr v2, v1
 
-    move-result p1
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    if-nez p1, :cond_2
+    move-result v1
 
-    invoke-static {v1, p0}, Lkm4;->d(Lkm4;Landroid/view/ViewGroup;)V
+    invoke-virtual {p0, v2, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    :cond_2
-    sget-object p0, Ljue;->a:Ljue;
+    move-result-object p0
+
+    :goto_0
+    invoke-static {v0, p0}, Lod7;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

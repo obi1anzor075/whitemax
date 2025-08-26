@@ -1,160 +1,70 @@
 .class public final Lcgc;
-.super Lu2;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lm7b;
 
 
 # instance fields
-.field public final synthetic c:I
+.field public final a:Ljava/util/concurrent/Executor;
 
-.field public final synthetic o:Ldgc;
+.field public final b:Lb9g;
+
+.field public final c:Lm7b;
+
+.field public final d:Z
+
+.field public final e:Lyv6;
 
 
 # direct methods
-.method public constructor <init>(Ldgc;I)V
+.method public constructor <init>(Ljava/util/concurrent/Executor;Lb9g;Lm7b;ZLyv6;)V
     .locals 0
 
-    iput p2, p0, Lcgc;->c:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    packed-switch p2, :pswitch_data_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    sget-object p2, Lyfc;->w0:Lyfc;
+    iput-object p1, p0, Lcgc;->a:Ljava/util/concurrent/Executor;
 
-    iput-object p1, p0, Lcgc;->o:Ldgc;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const/16 p1, 0x9
+    iput-object p2, p0, Lcgc;->b:Lb9g;
 
-    .line 2
-    invoke-direct {p0, p1, p2}, Lu2;-><init>(ILjava/lang/Object;)V
+    iput-object p3, p0, Lcgc;->c:Lm7b;
 
-    return-void
+    invoke-virtual {p5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 3
-    :pswitch_0
-    sget-object p2, Lxfc;->a:Lxfc;
+    iput-object p5, p0, Lcgc;->e:Lyv6;
 
-    iput-object p1, p0, Lcgc;->o:Ldgc;
-
-    const/16 p1, 0x9
-
-    .line 4
-    invoke-direct {p0, p1, p2}, Lu2;-><init>(ILjava/lang/Object;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public constructor <init>(Lzfc;Ldgc;)V
-    .locals 1
-
-    const/4 v0, 0x2
-
-    iput v0, p0, Lcgc;->c:I
-
-    iput-object p2, p0, Lcgc;->o:Ldgc;
-
-    const/16 p2, 0x9
-
-    .line 1
-    invoke-direct {p0, p2, p1}, Lu2;-><init>(ILjava/lang/Object;)V
+    iput-boolean p4, p0, Lcgc;->d:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final L1(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 1
+.method public final a(Lai0;Ln7b;)V
+    .locals 6
 
-    iget v0, p0, Lcgc;->c:I
+    new-instance v0, Lbgc;
 
-    packed-switch v0, :pswitch_data_0
+    iget-boolean v4, p0, Lcgc;->d:Z
 
-    check-cast p2, Lzfc;
+    iget-object v5, p0, Lcgc;->e:Lyv6;
 
-    check-cast p1, Lzfc;
+    move-object v1, p0
 
-    invoke-static {p1, p2}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-object v2, p1
 
-    move-result p1
+    move-object v3, p2
 
-    if-nez p1, :cond_1
+    invoke-direct/range {v0 .. v5}, Lbgc;-><init>(Lcgc;Lai0;Ln7b;ZLyv6;)V
 
-    iget-object p0, p0, Lcgc;->o:Ldgc;
+    iget-object p0, v1, Lcgc;->c:Lm7b;
 
-    invoke-static {p0}, Ldgc;->x(Ldgc;)Landroid/widget/ImageView;
+    invoke-interface {p0, v0, v3}, Lm7b;->a(Lai0;Ln7b;)V
 
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_0
-
-    check-cast p1, Lre3;
-
-    iget v0, p2, Lzfc;->b:I
-
-    iput v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
-
-    iget p2, p2, Lzfc;->a:I
-
-    iput p2, p1, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    const-string p1, "null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams"
-
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    :goto_0
     return-void
-
-    :pswitch_0
-    check-cast p2, Lxfc;
-
-    check-cast p1, Lxfc;
-
-    if-eq p1, p2, :cond_2
-
-    iget-object p0, p0, Lcgc;->o:Ldgc;
-
-    invoke-virtual {p0}, Ldgc;->C()V
-
-    :cond_2
-    return-void
-
-    :pswitch_1
-    check-cast p2, Lyfc;
-
-    check-cast p1, Lyfc;
-
-    if-eq p1, p2, :cond_3
-
-    iget-object p0, p0, Lcgc;->o:Ldgc;
-
-    invoke-virtual {p0}, Ldgc;->C()V
-
-    :cond_3
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

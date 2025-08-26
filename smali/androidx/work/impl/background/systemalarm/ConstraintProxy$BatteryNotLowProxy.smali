@@ -1,5 +1,5 @@
 .class public Landroidx/work/impl/background/systemalarm/ConstraintProxy$BatteryNotLowProxy;
-.super Lte3;
+.super Lqi3;
 .source "SourceFile"
 
 

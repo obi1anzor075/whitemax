@@ -1,184 +1,44 @@
-.class public final Ls6;
-.super Lw6;
+.class public abstract Ls6;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Li7;
 
-# instance fields
-.field public final a:Lmge;
 
-.field public final b:I
-
-.field public final c:I
+# static fields
+.field public static final a:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 3
-
-    sget v0, Lr1a;->J:I
-
-    new-instance v1, Lhge;
-
-    invoke-direct {v1, v0}, Lhge;-><init>(I)V
-
-    sget v0, Ln1a;->H0:I
-
-    sget v2, Lo1a;->q:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v1, p0, Ls6;->a:Lmge;
-
-    iput v0, p0, Ls6;->b:I
-
-    iput v2, p0, Ls6;->c:I
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method static constructor <clinit>()V
     .locals 4
+
+    new-instance v0, Lq6;
+
+    invoke-direct {v0}, Lq6;-><init>()V
+
+    new-instance v1, Lr6;
+
+    invoke-direct {v1}, Lr6;-><init>()V
+
+    const/4 v2, 0x2
+
+    new-array v2, v2, [Ls6;
+
+    const/4 v3, 0x0
+
+    aput-object v0, v2, v3
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_0
+    aput-object v1, v2, v0
 
-    return v0
+    invoke-static {v2}, Lq43;->e0([Ljava/lang/Object;)Ljava/util/List;
 
-    :cond_0
-    instance-of v1, p1, Ls6;
+    move-result-object v0
 
-    const/4 v2, 0x0
+    sput-object v0, Ls6;->a:Ljava/util/List;
 
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Ls6;
-
-    iget-object v1, p1, Ls6;->a:Lmge;
-
-    iget-object v3, p0, Ls6;->a:Lmge;
-
-    invoke-static {v3, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget v1, p0, Ls6;->b:I
-
-    iget v3, p1, Ls6;->b:I
-
-    if-eq v1, v3, :cond_3
-
-    return v2
-
-    :cond_3
-    iget p0, p0, Ls6;->c:I
-
-    iget p1, p1, Ls6;->c:I
-
-    if-eq p0, p1, :cond_4
-
-    return v2
-
-    :cond_4
-    return v0
-.end method
-
-.method public final getIcon()I
-    .locals 0
-
-    iget p0, p0, Ls6;->b:I
-
-    return p0
-.end method
-
-.method public final getId()I
-    .locals 0
-
-    iget p0, p0, Ls6;->c:I
-
-    return p0
-.end method
-
-.method public final getName()Lmge;
-    .locals 0
-
-    iget-object p0, p0, Ls6;->a:Lmge;
-
-    return-object p0
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    iget-object v0, p0, Ls6;->a:Lmge;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Ls6;->b:I
-
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
-
-    move-result v0
-
-    iget p0, p0, Ls6;->c:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "OpenProfile(name="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Ls6;->a:Lmge;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", icon="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Ls6;->b:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", id="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget p0, p0, Ls6;->c:I
-
-    const-string v1, ")"
-
-    invoke-static {v0, p0, v1}, Lwn6;->j(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

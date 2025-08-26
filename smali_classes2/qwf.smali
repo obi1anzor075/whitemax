@@ -1,120 +1,65 @@
 .class public final Lqwf;
-.super Lioc;
+.super Lap;
 .source "SourceFile"
 
 
 # instance fields
-.field public final b:I
-
-.field public final c:I
-
-.field public final d:I
-
-.field public final e:Ljava/nio/ByteBuffer;
+.field public final synthetic m:Lrwf;
 
 
 # direct methods
-.method public constructor <init>([B)V
-    .locals 9
+.method public constructor <init>(Lrwf;)V
+    .locals 0
 
-    invoke-direct {p0}, Lioc;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
+    iput-object p1, p0, Lqwf;->m:Lrwf;
 
-    move-result-object p1
+    return-void
+.end method
 
-    sget-object v0, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
 
-    invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+# virtual methods
+.method public final U()V
+    .locals 0
 
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->get()B
+    iget-object p0, p0, Lqwf;->m:Lrwf;
 
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->getShort()S
+    iget-object p0, p0, Lrwf;->d:Ljava/lang/Object;
 
-    move-result v0
+    check-cast p0, La76;
 
-    const v1, 0xffff
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
-    and-int/2addr v0, v1
+    return-void
+.end method
 
-    iput v0, p0, Lqwf;->b:I
+.method public final V()V
+    .locals 1
 
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->getInt()I
+    iget-object p0, p0, Lqwf;->m:Lrwf;
 
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->get()B
+    iget-object p0, p0, Lrwf;->a:Ljava/lang/Object;
 
-    move-result v0
+    check-cast p0, Ljava/lang/String;
 
-    const/4 v2, 0x2
+    const-string v0, "onAuthenticationFailed"
 
-    invoke-static {v2}, Lhr1;->w(I)[I
+    invoke-static {p0, v0}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v2
+    return-void
+.end method
 
-    array-length v3, v2
+.method public final W()V
+    .locals 0
 
-    const/4 v4, 0x0
+    iget-object p0, p0, Lqwf;->m:Lrwf;
 
-    move v5, v4
+    iget-object p0, p0, Lrwf;->c:Ljava/lang/Object;
 
-    :goto_0
-    if-ge v5, v3, :cond_3
+    check-cast p0, La76;
 
-    aget v6, v2, v5
-
-    const/4 v7, 0x1
-
-    if-eq v6, v7, :cond_1
-
-    const/4 v8, 0x2
-
-    if-ne v6, v8, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    const/4 p0, 0x0
-
-    throw p0
-
-    :cond_1
-    const/4 v7, 0x0
-
-    :goto_1
-    if-ne v7, v0, :cond_2
-
-    move v4, v6
-
-    goto :goto_2
-
-    :cond_2
-    add-int/lit8 v5, v5, 0x1
-
-    goto :goto_0
-
-    :cond_3
-    :goto_2
-    iput v4, p0, Lqwf;->c:I
-
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->getShort()S
-
-    move-result v0
-
-    and-int/2addr v0, v1
-
-    iput v0, p0, Lqwf;->d:I
-
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->get()B
-
-    move-result v0
-
-    iput-byte v0, p0, Lioc;->a:B
-
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lqwf;->e:Ljava/nio/ByteBuffer;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     return-void
 .end method

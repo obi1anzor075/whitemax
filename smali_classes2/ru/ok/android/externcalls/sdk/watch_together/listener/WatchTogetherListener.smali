@@ -13,7 +13,7 @@
         "",
         "Lru/ok/android/externcalls/sdk/watch_together/listener/states/MovieStartedData;",
         "startInfo",
-        "Ljue;",
+        "Le5f;",
         "onVideoStarted",
         "(Lru/ok/android/externcalls/sdk/watch_together/listener/states/MovieStartedData;)V",
         "Lru/ok/android/externcalls/sdk/watch_together/listener/states/MovieStates;",
@@ -32,6 +32,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

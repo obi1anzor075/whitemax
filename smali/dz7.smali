@@ -1,22 +1,11 @@
-.class public final Ldz7;
+.class public abstract Ldz7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lez7;
-
 
 # instance fields
-.field public final a:I
+.field public a:Ls75;
 
+.field public b:Lzf0;
 
-# direct methods
-.method public constructor <init>(I)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Ldz7;->a:I
-
-    return-void
-.end method
+.field public c:Lbz7;

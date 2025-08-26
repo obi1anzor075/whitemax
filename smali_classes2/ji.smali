@@ -1,23 +1,88 @@
-.class public final Lji;
+.class public final synthetic Lji;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lv56;
+
 
 # instance fields
-.field public final a:Lfi;
+.field public final synthetic a:I
 
-.field public final b:Landroid/content/Context;
+.field public final synthetic b:Lzi;
 
 
 # direct methods
-.method public constructor <init>(Lfi;Landroid/content/Context;)V
+.method public synthetic constructor <init>(Lzi;I)V
     .locals 0
+
+    iput p2, p0, Lji;->a:I
+
+    iput-object p1, p0, Lji;->b:Lzi;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lji;->a:Lfi;
-
-    iput-object p2, p0, Lji;->b:Landroid/content/Context;
-
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 1
+
+    iget v0, p0, Lji;->a:I
+
+    iget-object p0, p0, Lji;->b:Lzi;
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object p0, p0, Lzi;->b:Lljc;
+
+    invoke-virtual {p0}, Lljc;->m()Lkjc;
+
+    move-result-object p0
+
+    check-cast p0, Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;
+
+    invoke-virtual {p0}, Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;->K()Ly4c;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_0
+    iget-object p0, p0, Lzi;->b:Lljc;
+
+    invoke-virtual {p0}, Lljc;->m()Lkjc;
+
+    move-result-object p0
+
+    check-cast p0, Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;
+
+    invoke-virtual {p0}, Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;->t()Lhj;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_1
+    iget-object p0, p0, Lzi;->b:Lljc;
+
+    invoke-virtual {p0}, Lljc;->m()Lkjc;
+
+    move-result-object p0
+
+    check-cast p0, Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;
+
+    invoke-virtual {p0}, Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;->s()Lph;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

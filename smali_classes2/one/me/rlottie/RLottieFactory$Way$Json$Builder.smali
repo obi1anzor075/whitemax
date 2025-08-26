@@ -67,63 +67,44 @@
 
 # virtual methods
 .method public final build()Lone/me/rlottie/RLottieFactory$Way$Json;
-    .locals 7
+    .locals 6
 
-    new-instance v6, Lone/me/rlottie/RLottieFactory$Way$Json;
+    new-instance v0, Lone/me/rlottie/RLottieFactory$Way$Json;
 
-    iget-object v0, p0, Lone/me/rlottie/RLottieFactory$Way$Json$Builder;->jsonString:Ljava/lang/String;
+    iget-object v1, p0, Lone/me/rlottie/RLottieFactory$Way$Json$Builder;->jsonString:Ljava/lang/String;
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    if-nez v0, :cond_0
-
-    move-object v2, v1
-
-    goto :goto_0
-
-    :cond_0
-    move-object v2, v0
-
-    :goto_0
-    iget-object v0, p0, Lone/me/rlottie/RLottieFactory$Way$Json$Builder;->cacheName:Ljava/lang/String;
-
-    if-nez v0, :cond_1
-
-    move-object v3, v1
-
-    goto :goto_1
-
-    :cond_1
-    move-object v3, v0
-
-    :goto_1
-    invoke-virtual {p0}, Lone/me/rlottie/RLottieFactory$Way$Builder;->getWidth()I
-
-    move-result v4
-
-    invoke-virtual {p0}, Lone/me/rlottie/RLottieFactory$Way$Builder;->getHeight()I
-
-    move-result v5
-
-    invoke-virtual {p0}, Lone/me/rlottie/RLottieFactory$Way$Builder;->getLimitFps()Z
-
-    move-result p0
-
-    move-object v0, v6
+    if-nez v1, :cond_0
 
     move-object v1, v2
 
+    :cond_0
+    iget-object v3, p0, Lone/me/rlottie/RLottieFactory$Way$Json$Builder;->cacheName:Ljava/lang/String;
+
+    if-nez v3, :cond_1
+
+    goto :goto_0
+
+    :cond_1
     move-object v2, v3
 
-    move v3, v4
+    :goto_0
+    invoke-virtual {p0}, Lone/me/rlottie/RLottieFactory$Way$Builder;->getWidth()I
 
-    move v4, v5
+    move-result v3
 
-    move v5, p0
+    invoke-virtual {p0}, Lone/me/rlottie/RLottieFactory$Way$Builder;->getHeight()I
+
+    move-result v4
+
+    invoke-virtual {p0}, Lone/me/rlottie/RLottieFactory$Way$Builder;->getLimitFps()Z
+
+    move-result v5
 
     invoke-direct/range {v0 .. v5}, Lone/me/rlottie/RLottieFactory$Way$Json;-><init>(Ljava/lang/String;Ljava/lang/String;IIZ)V
 
-    return-object v6
+    return-object v0
 .end method
 
 .method public final setCacheName(Ljava/lang/String;)Lone/me/rlottie/RLottieFactory$Way$Json$Builder;

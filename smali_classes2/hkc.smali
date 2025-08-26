@@ -1,152 +1,146 @@
 .class public final Lhkc;
-.super Lsg0;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic a:Lg0;
+.field public X:I
 
-.field public final synthetic b:Lyv1;
+.field public final synthetic Y:Ljkc;
 
-.field public final synthetic c:Likc;
-
-.field public final synthetic d:Z
-
-.field public final synthetic e:Z
+.field public final synthetic Z:J
 
 
 # direct methods
-.method public constructor <init>(Lg0;Lzv1;Likc;ZZ)V
+.method public constructor <init>(Ljkc;JLkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lhkc;->Y:Ljkc;
 
-    iput-object p1, p0, Lhkc;->a:Lg0;
+    iput-wide p2, p0, Lhkc;->Z:J
 
-    iput-object p2, p0, Lhkc;->b:Lyv1;
+    const/4 p1, 0x2
 
-    iput-object p3, p0, Lhkc;->c:Likc;
-
-    iput-boolean p4, p0, Lhkc;->d:Z
-
-    iput-boolean p5, p0, Lhkc;->e:Z
+    invoke-direct {p0, p1, p4}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final d()V
-    .locals 2
-
-    iget-object p0, p0, Lhkc;->b:Lyv1;
-
-    invoke-interface {p0}, Lyv1;->isActive()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    new-instance v0, Ljava/lang/Throwable;
-
-    const-string v1, "Cancelled with fresco pipeline"
-
-    invoke-direct {v0, v1}, Ljava/lang/Throwable;-><init>(Ljava/lang/String;)V
-
-    invoke-interface {p0, v0}, Lyv1;->cancel(Ljava/lang/Throwable;)Z
-
-    :cond_0
-    return-void
-.end method
-
-.method public final e(Lg0;)V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    iget-object p0, p0, Lhkc;->b:Lyv1;
+    check-cast p1, Lox3;
 
-    const/4 p1, 0x0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-interface {p0, p1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
+    invoke-virtual {p0, p1, p2}, Lhkc;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    return-void
+    move-result-object p0
+
+    check-cast p0, Lhkc;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lhkc;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public final g(Landroid/graphics/Bitmap;)V
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 3
+
+    new-instance p1, Lhkc;
+
+    iget-object v0, p0, Lhkc;->Y:Ljkc;
+
+    iget-wide v1, p0, Lhkc;->Z:J
+
+    invoke-direct {p1, v0, v1, v2, p2}, Lhkc;-><init>(Ljkc;JLkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 6
 
-    iget-object v0, p0, Lhkc;->a:Lg0;
+    iget v0, p0, Lhkc;->X:I
 
-    invoke-virtual {v0}, Lg0;->h()Z
+    sget-object v1, Le5f;->a:Le5f;
 
-    move-result v0
+    const/4 v2, 0x1
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_1
 
-    iget-object v2, p0, Lhkc;->b:Lyv1;
+    if-ne v0, v2, :cond_0
 
-    if-nez v0, :cond_0
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    invoke-interface {v2, v1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
-
-    return-void
+    goto :goto_1
 
     :cond_0
-    if-nez p1, :cond_1
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    invoke-interface {v2, v1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    return-void
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 
     :cond_1
-    new-instance v0, Lkn0;
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    iget-object v1, p0, Lhkc;->c:Likc;
+    iget-wide v3, p0, Lhkc;->Z:J
 
-    iget-boolean v3, p0, Lhkc;->d:Z
+    invoke-static {v3, v4}, Luz1;->k(J)Ljava/util/List;
 
-    if-eqz v3, :cond_2
+    move-result-object p1
 
-    iget-object v4, v1, Likc;->c:Lcla;
+    iput v2, p0, Lhkc;->X:I
 
-    iget-object v4, v4, Lcla;->a:Landroid/content/Context;
+    iget-object v0, p0, Lhkc;->Y:Ljkc;
 
-    invoke-virtual {v4}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
+    iget-object v2, v0, Ljkc;->a:Lrie;
 
-    move-result-object v4
+    check-cast v2, Lo7a;
 
-    invoke-virtual {v4}, Ljava/io/File;->getPath()Ljava/lang/String;
+    invoke-virtual {v2}, Lo7a;->b()Ljx3;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-static {v4}, Lhr1;->l(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v3, Likc;
 
-    move-result-object v4
+    const/4 v4, 0x0
 
-    sget-object v5, Lcla;->b:Ljava/lang/String;
+    const/4 v5, 0x2
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v3, v0, p1, v5, v4}, Likc;-><init>(Ljkc;Ljava/util/List;ILkotlin/coroutines/Continuation;)V
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v2, v3, p0}, Lzo3;->j0(Lhx3;Ll66;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object p0
+
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_2
 
     goto :goto_0
 
     :cond_2
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object v4, Landroid/os/Environment;->DIRECTORY_PICTURES:Ljava/lang/String;
+    move-object p0, v1
 
     :goto_0
-    invoke-direct {v0, v4, p1}, Lkn0;-><init>(Ljava/lang/String;Landroid/graphics/Bitmap;)V
+    if-ne p0, p1, :cond_3
 
-    iget-boolean p0, p0, Lhkc;->e:Z
+    return-object p1
 
-    invoke-virtual {v1, v0, p0, v3}, Likc;->d(Llnc;ZZ)Landroid/net/Uri;
-
-    move-result-object p0
-
-    invoke-interface {v2, p0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
-
-    return-void
+    :cond_3
+    :goto_1
+    return-object v1
 .end method

@@ -1,45 +1,50 @@
-.class public final Lg65;
-.super Lg34;
+.class public interface abstract Lg65;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final b:Lg65;
+# virtual methods
+.method public abstract b([B)Ljava/util/Map;
+.end method
 
-.field public static final c:Lc34;
+.method public abstract c()Lf65;
+.end method
 
+.method public abstract d([B)Li04;
+.end method
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public abstract f()[B
+.end method
 
-    new-instance v0, Lg65;
+.method public abstract g([BLjava/lang/String;)Z
+.end method
 
-    invoke-direct {v0}, Lg34;-><init>()V
+.method public abstract h([B[B)V
+.end method
 
-    sput-object v0, Lg65;->b:Lg65;
+.method public abstract l(Ld3d;)V
+.end method
 
-    const/4 v1, 0x0
+.method public abstract m([B)V
+.end method
 
-    new-array v2, v1, [Ljava/lang/String;
+.method public abstract n([B[B)[B
+.end method
 
-    const-string v1, "params"
+.method public abstract o([B)V
+.end method
 
-    invoke-static {v1}, Ljava/util/Collections;->singleton(Ljava/lang/Object;)Ljava/util/Set;
+.method public abstract p([BLjava/util/List;ILjava/util/HashMap;)Le65;
+.end method
 
-    move-result-object v3
+.method public abstract q()I
+.end method
 
-    const-string v1, ":external_callback"
-
-    const/4 v4, 0x0
-
-    const/16 v5, 0xc
-
-    invoke-static/range {v0 .. v5}, Lg34;->a(Lg34;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lc34;
-
-    move-result-object v0
-
-    sput-object v0, Lg65;->c:Lc34;
+.method public r([BLw1b;)V
+    .locals 0
 
     return-void
+.end method
+
+.method public abstract release()V
 .end method

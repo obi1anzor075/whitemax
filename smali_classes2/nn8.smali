@@ -1,85 +1,64 @@
 .class public final Lnn8;
-.super Lu2;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lon8;
 
-# instance fields
-.field public final synthetic c:I
 
-.field public final synthetic o:Lon8;
+# static fields
+.field public static final a:Lnn8;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;Lon8;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p3, p0, Lnn8;->c:I
+    new-instance v0, Lnn8;
 
-    iput-object p2, p0, Lnn8;->o:Lon8;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    const/16 p2, 0x9
-
-    invoke-direct {p0, p2, p1}, Lu2;-><init>(ILjava/lang/Object;)V
+    sput-object v0, Lnn8;->a:Lnn8;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final L1(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
-    iget v0, p0, Lnn8;->c:I
+    const/4 v0, 0x1
 
-    packed-switch v0, :pswitch_data_0
+    if-ne p0, p1, :cond_0
 
-    invoke-static {p1, p2}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    check-cast p2, [I
-
-    check-cast p1, [I
-
-    iget-object p0, p0, Lnn8;->o:Lon8;
-
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p2, p1}, Lon8;->d([ILandroid/graphics/Rect;)V
+    return v0
 
     :cond_0
-    return-void
+    instance-of p0, p1, Lnn8;
 
-    :pswitch_0
-    invoke-static {p1, p2}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    if-nez p0, :cond_1
 
-    move-result v0
+    const/4 p0, 0x0
 
-    if-nez v0, :cond_1
-
-    check-cast p2, [I
-
-    check-cast p1, [I
-
-    iget-object p0, p0, Lnn8;->o:Lon8;
-
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p2, p1}, Lon8;->c([ILandroid/graphics/Rect;)V
+    return p0
 
     :cond_1
-    return-void
+    return v0
+.end method
 
-    nop
+.method public final hashCode()I
+    .locals 0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    const p0, -0x62c3c567
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "LocalRestoreMembers"
+
+    return-object p0
 .end method

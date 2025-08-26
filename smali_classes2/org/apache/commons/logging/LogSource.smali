@@ -332,7 +332,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    return-void
 
     :catchall_0
     const/4 p0, 0x0
@@ -340,6 +340,5 @@
     .line 4
     sput-object p0, Lorg/apache/commons/logging/LogSource;->logImplctor:Ljava/lang/reflect/Constructor;
 
-    :goto_0
     return-void
 .end method

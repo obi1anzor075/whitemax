@@ -1,183 +1,103 @@
 .class public final Loib;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Lwzc;
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Lt97;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final b:Lt97;
+.field public final synthetic Y:Lone/me/profile/ProfileScreen;
 
 
 # direct methods
-.method public constructor <init>(Lt97;Lt97;)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/profile/ProfileScreen;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Loib;->Y:Lone/me/profile/ProfileScreen;
 
-    iput-object p1, p0, Loib;->a:Lt97;
+    const/4 p2, 0x2
 
-    iput-object p2, p0, Loib;->b:Lt97;
+    invoke-direct {p0, p2, p1}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 2
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    const-string v1, "onProxyEnableChange: oldValue="
+    invoke-virtual {p0, p1, p2}, Loib;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object p0
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast p0, Loib;
 
-    const-string p1, ", newValue="
+    sget-object p1, Le5f;->a:Le5f;
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p1}, Loib;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-object p1
+.end method
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    move-result-object p1
+    new-instance v0, Loib;
 
-    const-string v0, "oib"
+    iget-object p0, p0, Loib;->Y:Lone/me/profile/ProfileScreen;
 
-    invoke-static {v0, p1}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p2, p0}, Loib;-><init>(Lkotlin/coroutines/Continuation;Lone/me/profile/ProfileScreen;)V
 
-    iget-object p1, p0, Loib;->a:Lt97;
+    iput-object p1, v0, Loib;->X:Ljava/lang/Object;
 
-    invoke-interface {p1}, Lt97;->getValue()Ljava/lang/Object;
+    return-object v0
+.end method
 
-    move-result-object p1
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    check-cast p1, Lyae;
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    invoke-virtual {p1, p2}, Lyae;->f(Ljava/lang/String;)V
+    iget-object p1, p0, Loib;->X:Ljava/lang/Object;
 
-    if-eqz p2, :cond_1
+    check-cast p1, Ljava/util/List;
 
-    invoke-virtual {p2}, Ljava/lang/String;->length()I
+    sget-object v0, Lone/me/profile/ProfileScreen;->z0:[Lbc7;
 
-    move-result p1
+    iget-object p0, p0, Loib;->Y:Lone/me/profile/ProfileScreen;
 
-    if-nez p1, :cond_0
+    invoke-virtual {p0}, Lone/me/profile/ProfileScreen;->t0()Lone/me/sdk/lists/widgets/EndlessRecyclerView2;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lgbc;
+
+    move-result-object p0
+
+    instance-of v0, p0, Lwib;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Lwib;
 
     goto :goto_0
 
     :cond_0
-    iget-object p0, p0, Loib;->b:Lt97;
+    const/4 p0, 0x0
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    :goto_0
+    if-eqz p0, :cond_1
 
-    move-result-object p0
-
-    check-cast p0, Lpv3;
-
-    const-string p1, "proxy"
-
-    invoke-virtual {p0, p1, p2}, Lpv3;->b(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Lhl7;->E(Ljava/util/List;)V
 
     :cond_1
-    :goto_0
-    return-void
-.end method
+    sget-object p0, Le5f;->a:Le5f;
 
-.method public final b(Ljava/util/List;Ljava/util/List;)V
-    .locals 6
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "onProxyDomainsChanged: oldValue="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p1, ", newValue="
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v0, "oib"
-
-    invoke-static {v0, p1}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object p1, p0, Loib;->a:Lt97;
-
-    invoke-interface {p1}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lyae;
-
-    monitor-enter p1
-
-    :try_start_0
-    iput-object p2, p1, Lyae;->g:Ljava/util/List;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p1
-
-    invoke-interface {p2}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result p1
-
-    xor-int/lit8 p1, p1, 0x1
-
-    if-eqz p1, :cond_0
-
-    iget-object p0, p0, Loib;->b:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lpv3;
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    const/16 v5, 0x3f
-
-    move-object v0, p2
-
-    invoke-static/range {v0 .. v5}, Lo23;->c0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lu16;I)Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string p2, "proxyDomains"
-
-    invoke-virtual {p0, p2, p1}, Lpv3;->b(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_0
-    return-void
-
-    :catchall_0
-    move-exception p0
-
-    :try_start_1
-    monitor-exit p1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p0
+    return-object p0
 .end method

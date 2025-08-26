@@ -1,30 +1,26 @@
 .class public final Lo11;
-.super Ll5e;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Ll66;
 
 
 # instance fields
-.field public X:I
+.field public synthetic X:J
 
-.field public final synthetic Y:Lx11;
-
-.field public final synthetic Z:Li22;
+.field public final synthetic Y:Lje7;
 
 
 # direct methods
-.method public constructor <init>(Lx11;Li22;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lje7;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    iput-object p1, p0, Lo11;->Y:Lx11;
-
-    iput-object p2, p0, Lo11;->Z:Li22;
+    iput-object p1, p0, Lo11;->Y:Lje7;
 
     const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p3}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -32,19 +28,27 @@
 
 # virtual methods
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+    .locals 2
 
-    check-cast p1, Lou3;
+    check-cast p1, Ljava/lang/Number;
+
+    invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide v0
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {p0, p1, p2}, Lo11;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1, p2}, Lo11;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
     check-cast p0, Lo11;
 
-    sget-object p1, Ljue;->a:Ljue;
+    sget-object p1, Le5f;->a:Le5f;
 
     invoke-virtual {p0, p1}, Lo11;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -53,74 +57,46 @@
     return-object p0
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .locals 1
 
-    new-instance p1, Lo11;
+    new-instance v0, Lo11;
 
-    iget-object v0, p0, Lo11;->Y:Lx11;
+    iget-object p0, p0, Lo11;->Y:Lje7;
 
-    iget-object p0, p0, Lo11;->Z:Li22;
+    invoke-direct {v0, p0, p2}, Lo11;-><init>(Lje7;Lkotlin/coroutines/Continuation;)V
 
-    invoke-direct {p1, v0, p0, p2}, Lo11;-><init>(Lx11;Li22;Lkotlin/coroutines/Continuation;)V
+    check-cast p1, Ljava/lang/Number;
 
-    return-object p1
+    invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide p0
+
+    iput-wide p0, v0, Lo11;->X:J
+
+    return-object v0
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 2
 
-    sget-object v0, Lpu3;->a:Lpu3;
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    iget v1, p0, Lo11;->X:I
+    iget-wide v0, p0, Lo11;->X:J
 
-    const/4 v2, 0x1
+    iget-object p0, p0, Lo11;->Y:Lje7;
 
-    if-eqz v1, :cond_1
-
-    if-ne v1, v2, :cond_0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lo11;->Y:Lx11;
-
-    iget-object p1, p1, Lx11;->i:Lt97;
-
-    invoke-interface {p1}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lr59;
-
-    iput v2, p0, Lo11;->X:I
-
-    iget-object v1, p0, Lo11;->Z:Li22;
-
-    invoke-virtual {p1, v1, p0}, Lr59;->o(Li22;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    if-ne p0, v0, :cond_2
+    check-cast p0, Lbx2;
 
-    return-object v0
+    check-cast p0, Lcy2;
 
-    :cond_2
-    :goto_0
-    sget-object p0, Ljue;->a:Ljue;
+    invoke-virtual {p0, v0, v1}, Lcy2;->P(J)Lu5c;
+
+    move-result-object p0
 
     return-object p0
 .end method

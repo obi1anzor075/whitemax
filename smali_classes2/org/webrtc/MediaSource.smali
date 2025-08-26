@@ -19,15 +19,17 @@
 
 # direct methods
 .method public constructor <init>(J)V
-    .locals 2
+    .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     new-instance v0, Lorg/webrtc/RefCountDelegate;
 
-    new-instance v1, Loe8;
+    new-instance v1, Lcj8;
 
-    invoke-direct {v1, p1, p2}, Loe8;-><init>(J)V
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p1, p2, v2}, Lcj8;-><init>(JI)V
 
     invoke-direct {v0, v1}, Lorg/webrtc/RefCountDelegate;-><init>(Ljava/lang/Runnable;)V
 
@@ -128,7 +130,7 @@
 
     invoke-virtual {p0}, Lorg/webrtc/RefCountDelegate;->release()V
 
-    goto :goto_0
+    return-void
 
     :catchall_0
     move-exception p1
@@ -140,7 +142,6 @@
     throw p1
 
     :cond_0
-    :goto_0
     return-void
 .end method
 

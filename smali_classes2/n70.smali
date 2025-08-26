@@ -1,242 +1,213 @@
 .class public final Ln70;
-.super Landroid/accounts/AbstractAccountAuthenticator;
+.super Llje;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field public final X:Lcu7;
 
-.field public final b:La5;
+.field public final Y:Ljava/lang/String;
 
-.field public final c:Lt97;
+.field public final Z:Lv7b;
 
-.field public final d:Lt97;
-
-.field public final e:Lt97;
+.field public final o:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;La5;Lt97;Lt97;Lt97;)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;Lcu7;Ljava/lang/String;Lv7b;)V
+    .locals 1
 
-    invoke-direct {p0, p1}, Landroid/accounts/AbstractAccountAuthenticator;-><init>(Landroid/content/Context;)V
+    const/4 v0, 0x0
 
-    iput-object p1, p0, Ln70;->a:Landroid/content/Context;
+    invoke-direct {p0, v0}, Lhi0;-><init>(Z)V
 
-    iput-object p2, p0, Ln70;->b:La5;
+    iput-object p1, p0, Ln70;->o:Ljava/lang/String;
 
-    iput-object p3, p0, Ln70;->c:Lt97;
+    iput-object p2, p0, Ln70;->X:Lcu7;
 
-    iput-object p4, p0, Ln70;->d:Lt97;
+    iput-object p3, p0, Ln70;->Y:Ljava/lang/String;
 
-    iput-object p5, p0, Ln70;->e:Lt97;
+    iput-object p4, p0, Ln70;->Z:Lv7b;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final addAccount(Landroid/accounts/AccountAuthenticatorResponse;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    new-instance p1, Landroid/os/Bundle;
+    const/4 v0, 0x1
 
-    invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
+    if-ne p0, p1, :cond_0
 
-    iget-object p2, p0, Ln70;->c:Lt97;
-
-    invoke-interface {p2}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Lc5;
-
-    invoke-virtual {p2}, Lc5;->a()Landroid/accounts/Account;
-
-    move-result-object p2
-
-    if-eqz p2, :cond_0
-
-    iget-object p2, p0, Ln70;->b:La5;
-
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const-string p2, "errorCode"
-
-    const/16 p3, 0x405
-
-    invoke-virtual {p1, p2, p3}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
-
-    iget-object p0, p0, Ln70;->a:Landroid/content/Context;
-
-    sget p2, Leub;->account_already_exists:I
-
-    invoke-virtual {p0, p2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object p0
-
-    const-string p2, "errorMessage"
-
-    invoke-virtual {p1, p2, p0}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    return v0
 
     :cond_0
-    return-object p1
-.end method
+    instance-of v1, p1, Ln70;
 
-.method public final confirmCredentials(Landroid/accounts/AccountAuthenticatorResponse;Landroid/accounts/Account;Landroid/os/Bundle;)Landroid/os/Bundle;
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public final editProperties(Landroid/accounts/AccountAuthenticatorResponse;Ljava/lang/String;)Landroid/os/Bundle;
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public final getAccountRemovalAllowed(Landroid/accounts/AccountAuthenticatorResponse;Landroid/accounts/Account;)Landroid/os/Bundle;
-    .locals 3
-
-    const-string v0, "n70"
-
-    const-string v1, "getAccountRemovalAllowed"
-
-    invoke-static {v0, v1}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-super {p0, p1, p2}, Landroid/accounts/AbstractAccountAuthenticator;->getAccountRemovalAllowed(Landroid/accounts/AccountAuthenticatorResponse;Landroid/accounts/Account;)Landroid/os/Bundle;
-
-    move-result-object p1
-
-    iget-object p2, p0, Ln70;->d:Lt97;
-
-    invoke-interface {p2}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lzy9;
-
-    invoke-virtual {v0}, Lzy9;->d()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return-object p1
-
-    :cond_0
-    if-eqz p1, :cond_1
-
-    const-string v0, "booleanResult"
-
-    invoke-virtual {p1, v0}, Landroid/os/BaseBundle;->containsKey(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    const-string v1, "intent"
-
-    invoke-virtual {p1, v1}, Landroid/os/BaseBundle;->containsKey(Ljava/lang/String;)Z
-
-    move-result v1
+    const/4 v2, 0x0
 
     if-nez v1, :cond_1
 
-    invoke-virtual {p1, v0}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;)Z
+    return v2
+
+    :cond_1
+    check-cast p1, Ln70;
+
+    iget-object v1, p0, Ln70;->o:Ljava/lang/String;
+
+    iget-object v3, p1, Ln70;->o:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object v1, p0, Ln70;->X:Lcu7;
+
+    iget-object v3, p1, Ln70;->X:Lcu7;
+
+    if-eq v1, v3, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object v1, p0, Ln70;->Y:Ljava/lang/String;
+
+    iget-object v3, p1, Ln70;->Y:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_4
+
+    return v2
+
+    :cond_4
+    iget-object p0, p0, Ln70;->Z:Lv7b;
+
+    iget-object p1, p1, Ln70;->Z:Lv7b;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_5
+
+    return v2
+
+    :cond_5
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    iget-object v0, p0, Ln70;->o:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    mul-int/lit8 v0, v0, 0x1f
 
-    invoke-interface {p2}, Lt97;->getValue()Ljava/lang/Object;
+    iget-object v1, p0, Ln70;->X:Lcu7;
 
-    move-result-object p2
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
-    check-cast p2, Lzy9;
+    move-result v1
 
-    invoke-virtual {p2}, Lzy9;->e()Z
+    add-int/2addr v1, v0
 
-    move-result p2
+    mul-int/lit8 v1, v1, 0x1f
 
-    sget v0, Ls0d;->o:I
+    iget-object v0, p0, Ln70;->Y:Ljava/lang/String;
 
-    iget-object p0, p0, Ln70;->e:Lt97;
+    if-nez v0, :cond_0
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    :goto_0
+    add-int/2addr v1, v0
+
+    mul-int/lit8 v1, v1, 0x1f
+
+    iget-object p0, p0, Ln70;->Z:Lv7b;
+
+    invoke-virtual {p0}, Lv7b;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v1
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 4
+
+    iget-object v0, p0, Ln70;->o:Ljava/lang/String;
+
+    invoke-static {v0}, Lxja;->z(Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Ln70;->Y:Ljava/lang/String;
+
+    invoke-static {v1}, Lxja;->z(Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "{token=\'"
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", tokenType="
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v0, p0, Ln70;->X:Lcu7;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", userToken=\'"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", profile="
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Ln70;->Z:Lv7b;
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, "}"
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
-
-    check-cast p0, Lluf;
-
-    sget v0, Lzp4;->o:I
-
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
-
-    move-result-wide v0
-
-    sget-object v2, Leq4;->b:Leq4;
-
-    invoke-static {v0, v1, v2}, Lmt0;->Q(JLeq4;)J
-
-    move-result-wide v0
-
-    sput-wide v0, Ls0d;->c:J
-
-    new-instance v0, Ls0d;
-
-    invoke-direct {v0, p2}, Ls0d;-><init>(Z)V
-
-    invoke-virtual {p0, v0}, Lluf;->a(Lc0d;)V
-
-    :cond_1
-    return-object p1
-.end method
-
-.method public final getAuthToken(Landroid/accounts/AccountAuthenticatorResponse;Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
-    .locals 0
-
-    iget-object p0, p0, Ln70;->c:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lc5;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance p0, Landroid/os/Bundle;
-
-    invoke-direct {p0}, Landroid/os/Bundle;-><init>()V
-
-    return-object p0
-.end method
-
-.method public final getAuthTokenLabel(Ljava/lang/String;)Ljava/lang/String;
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public final hasFeatures(Landroid/accounts/AccountAuthenticatorResponse;Landroid/accounts/Account;[Ljava/lang/String;)Landroid/os/Bundle;
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public final updateCredentials(Landroid/accounts/AccountAuthenticatorResponse;Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
-    .locals 0
-
-    const/4 p0, 0x0
 
     return-object p0
 .end method

@@ -175,9 +175,7 @@
     :goto_4
     if-le v8, v1, :cond_3
 
-    new-instance p0, Lru/ok/android/externcalls/analytics/internal/upload/MultiFileUploader;
-
-    move-object v2, p0
+    new-instance v2, Lru/ok/android/externcalls/analytics/internal/upload/MultiFileUploader;
 
     move-object v3, p1
 
@@ -191,13 +189,9 @@
 
     invoke-direct/range {v2 .. v9}, Lru/ok/android/externcalls/analytics/internal/upload/MultiFileUploader;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljava/util/concurrent/locks/Lock;Ljava/lang/String;ZILjava/lang/Long;)V
 
-    goto :goto_5
+    return-object v2
 
     :cond_3
-    new-instance p0, Lru/ok/android/externcalls/analytics/internal/upload/SingleFileUploader;
-
-    move-object v2, p0
-
     move-object v3, p2
 
     move-object v4, p3
@@ -206,8 +200,9 @@
 
     move v7, p5
 
+    new-instance v2, Lru/ok/android/externcalls/analytics/internal/upload/SingleFileUploader;
+
     invoke-direct/range {v2 .. v7}, Lru/ok/android/externcalls/analytics/internal/upload/SingleFileUploader;-><init>(Ljavax/inject/Provider;Ljava/util/concurrent/locks/Lock;Ljava/lang/String;ZZ)V
 
-    :goto_5
-    return-object p0
+    return-object v2
 .end method

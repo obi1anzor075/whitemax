@@ -1,49 +1,59 @@
 .class public final Lgy3;
-.super Ljava/lang/Object;
+.super Ljava/io/FilterOutputStream;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Lxu5;
-
-.field public final b:Lws6;
-
-.field public final c:Lvuc;
-
-.field public final d:Ljava/lang/String;
-
-.field public final e:Ljava/util/ArrayList;
-
-.field public final f:Ljava/util/ArrayList;
-
-.field public final g:J
+.field public a:J
 
 
-# direct methods
-.method public constructor <init>(Lxu5;Ljava/util/List;Lvuc;Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+# virtual methods
+.method public final close()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object p0, p0, Ljava/io/FilterOutputStream;->out:Ljava/io/OutputStream;
 
-    iput-object p1, p0, Lgy3;->a:Lxu5;
+    invoke-virtual {p0}, Ljava/io/OutputStream;->close()V
 
-    invoke-static {p2}, Lws6;->j(Ljava/util/Collection;)Lws6;
+    return-void
+.end method
 
-    move-result-object p1
+.method public final write(I)V
+    .locals 4
 
-    iput-object p1, p0, Lgy3;->b:Lws6;
+    .line 3
+    iget-object v0, p0, Ljava/io/FilterOutputStream;->out:Ljava/io/OutputStream;
 
-    iput-object p3, p0, Lgy3;->c:Lvuc;
+    invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write(I)V
 
-    iput-object p4, p0, Lgy3;->d:Ljava/lang/String;
+    .line 4
+    iget-wide v0, p0, Lgy3;->a:J
 
-    iput-object p5, p0, Lgy3;->e:Ljava/util/ArrayList;
+    const-wide/16 v2, 0x1
 
-    iput-object p6, p0, Lgy3;->f:Ljava/util/ArrayList;
+    add-long/2addr v0, v2
 
-    const-wide/16 p1, -0x1
+    iput-wide v0, p0, Lgy3;->a:J
 
-    iput-wide p1, p0, Lgy3;->g:J
+    return-void
+.end method
+
+.method public final write([BII)V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Ljava/io/FilterOutputStream;->out:Ljava/io/OutputStream;
+
+    invoke-virtual {v0, p1, p2, p3}, Ljava/io/OutputStream;->write([BII)V
+
+    .line 2
+    iget-wide p1, p0, Lgy3;->a:J
+
+    int-to-long v0, p3
+
+    add-long/2addr p1, v0
+
+    iput-wide p1, p0, Lgy3;->a:J
 
     return-void
 .end method

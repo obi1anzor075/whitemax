@@ -1,11 +1,27 @@
-.class public interface abstract Lo26;
+.class public final Lo26;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ln26;
+
+# instance fields
+.field public final a:J
+
+.field public final b:Z
+
+.field public final c:I
 
 
-# virtual methods
-.method public abstract m(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+# direct methods
+.method public constructor <init>(IJZ)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-wide p2, p0, Lo26;->a:J
+
+    iput-boolean p4, p0, Lo26;->b:Z
+
+    iput p1, p0, Lo26;->c:I
+
+    return-void
 .end method

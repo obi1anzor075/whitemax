@@ -21,6 +21,7 @@
         0x8,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -29,9 +30,9 @@
 
 .field public final b:Ljava/util/LinkedHashMap;
 
-.field public final c:Lp99;
+.field public final c:Lke9;
 
-.field public final o:Lo99;
+.field public final o:Lje9;
 
 
 # direct methods
@@ -46,17 +47,17 @@
 
     iput-object v0, p0, Landroidx/room/MultiInstanceInvalidationService;->b:Ljava/util/LinkedHashMap;
 
-    new-instance v0, Lp99;
+    new-instance v0, Lke9;
 
-    invoke-direct {v0, p0}, Lp99;-><init>(Landroidx/room/MultiInstanceInvalidationService;)V
+    invoke-direct {v0, p0}, Lke9;-><init>(Landroidx/room/MultiInstanceInvalidationService;)V
 
-    iput-object v0, p0, Landroidx/room/MultiInstanceInvalidationService;->c:Lp99;
+    iput-object v0, p0, Landroidx/room/MultiInstanceInvalidationService;->c:Lke9;
 
-    new-instance v0, Lo99;
+    new-instance v0, Lje9;
 
-    invoke-direct {v0, p0}, Lo99;-><init>(Landroidx/room/MultiInstanceInvalidationService;)V
+    invoke-direct {v0, p0}, Lje9;-><init>(Landroidx/room/MultiInstanceInvalidationService;)V
 
-    iput-object v0, p0, Landroidx/room/MultiInstanceInvalidationService;->o:Lo99;
+    iput-object v0, p0, Landroidx/room/MultiInstanceInvalidationService;->o:Lje9;
 
     return-void
 .end method
@@ -66,7 +67,7 @@
 .method public final onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 0
 
-    iget-object p0, p0, Landroidx/room/MultiInstanceInvalidationService;->o:Lo99;
+    iget-object p0, p0, Landroidx/room/MultiInstanceInvalidationService;->o:Lje9;
 
     return-object p0
 .end method

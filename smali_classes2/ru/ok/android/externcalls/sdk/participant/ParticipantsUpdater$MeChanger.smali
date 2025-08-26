@@ -23,7 +23,7 @@
         "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
         "Lru/ok/android/externcalls/sdk/id/ExternalId;",
         "participantExternalId",
-        "Ljue;",
+        "Le5f;",
         "updateMyExternalId",
         "(Lru/ok/android/externcalls/sdk/id/ParticipantId;)V",
         "calls-sdk_release"
@@ -34,6 +34,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

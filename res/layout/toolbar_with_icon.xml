@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.Toolbar android:theme="@style/ActionBarTheme" android:layout_width="fill_parent" android:layout_height="?actionBarSize"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-        <ru.ok.messages.views.widgets.TamAvatarView android:layout_gravity="center" android:id="@id/toolbar_avatar" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginEnd="8.0dip" />
-        <ru.ok.messages.views.widgets.ImageSpanEllipsizedTextView android:textSize="@dimen/font_toolbar_title" android:textColor="@color/text_primary" android:gravity="center" android:layout_gravity="center" android:id="@id/toolbar_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
-    </LinearLayout>
-</androidx.appcompat.widget.Toolbar>

@@ -1,61 +1,58 @@
 .class public final Lzb1;
-.super Lac1;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lbc1;
 
-# instance fields
-.field public final b:Ljava/util/List;
 
-.field public final c:Lws7;
+# static fields
+.field public static final X:Lrdd;
 
-.field public final o:Lbga;
+.field public static final a:Lzb1;
+
+.field public static final b:J
+
+.field public static final c:Lhoe;
+
+.field public static final o:Ljava/lang/Integer;
 
 
 # direct methods
-.method public constructor <init>(Lhmd;)V
-    .locals 3
+.method static constructor <clinit>()V
+    .locals 2
 
-    const/4 v0, 0x0
+    new-instance v0, Lzb1;
 
-    if-eqz p1, :cond_0
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v1, p1, Lhmd;->a:Ljava/util/List;
+    sput-object v0, Lzb1;->a:Lzb1;
 
-    goto :goto_0
+    sget v0, Li5a;->d:I
 
-    :cond_0
-    move-object v1, v0
+    int-to-long v0, v0
 
-    :goto_0
-    if-nez v1, :cond_1
+    sput-wide v0, Lzb1;->b:J
 
-    sget-object v1, Lhw4;->a:Lhw4;
+    sget v0, Lk5a;->h:I
 
-    :cond_1
-    if-eqz p1, :cond_2
+    new-instance v1, Lhoe;
 
-    iget-object v2, p1, Lhmd;->b:Lws7;
+    invoke-direct {v1, v0}, Lhoe;-><init>(I)V
 
-    goto :goto_1
+    sput-object v1, Lzb1;->c:Lhoe;
 
-    :cond_2
-    move-object v2, v0
+    sget v0, Lh5a;->i:I
 
-    :goto_1
-    if-eqz p1, :cond_3
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget-object v0, p1, Lhmd;->c:Lbga;
+    move-result-object v0
 
-    :cond_3
-    sget-object p1, Lraf;->a:Lraf;
+    sput-object v0, Lzb1;->o:Ljava/lang/Integer;
 
-    invoke-direct {p0, p1}, Lac1;-><init>(Lraf;)V
+    sget-object v0, Lrdd;->a:Lrdd;
 
-    iput-object v1, p0, Lzb1;->b:Ljava/util/List;
-
-    iput-object v2, p0, Lzb1;->c:Lws7;
-
-    iput-object v0, p0, Lzb1;->o:Lbga;
+    sput-object v0, Lzb1;->X:Lrdd;
 
     return-void
 .end method
@@ -63,7 +60,7 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -72,239 +69,86 @@
     return v0
 
     :cond_0
-    instance-of v1, p1, Lzb1;
+    instance-of p0, p1, Lzb1;
 
-    const/4 v2, 0x0
+    if-nez p0, :cond_1
 
-    if-nez v1, :cond_1
+    const/4 p0, 0x0
 
-    return v2
+    return p0
 
     :cond_1
-    check-cast p1, Lzb1;
-
-    iget-object v1, p1, Lzb1;->b:Ljava/util/List;
-
-    iget-object v3, p0, Lzb1;->b:Ljava/util/List;
-
-    invoke-static {v3, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object v1, p0, Lzb1;->c:Lws7;
-
-    iget-object v3, p1, Lzb1;->c:Lws7;
-
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-object p0, p0, Lzb1;->o:Lbga;
-
-    iget-object p1, p1, Lzb1;->o:Lbga;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_4
-
-    return v2
-
-    :cond_4
     return v0
+.end method
+
+.method public final f()Ljava/lang/Integer;
+    .locals 0
+
+    sget-object p0, Lzb1;->o:Ljava/lang/Integer;
+
+    return-object p0
 .end method
 
 .method public final getItemId()J
     .locals 2
 
-    const-wide/16 v0, 0x6f
+    sget-wide v0, Lzb1;->b:J
 
     return-wide v0
 .end method
 
-.method public final hashCode()I
-    .locals 3
-
-    iget-object v0, p0, Lzb1;->b:Ljava/util/List;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    const/4 v1, 0x0
-
-    iget-object v2, p0, Lzb1;->c:Lws7;
-
-    if-nez v2, :cond_0
-
-    move v2, v1
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v2}, Lws7;->hashCode()I
-
-    move-result v2
-
-    :goto_0
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Lzb1;->o:Lbga;
-
-    if-nez p0, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {p0}, Lbga;->hashCode()I
-
-    move-result v1
-
-    :goto_1
-    add-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public final l()I
+.method public final getTitle()Lmoe;
     .locals 0
 
-    const/16 p0, 0x6f
+    sget-object p0, Lzb1;->c:Lhoe;
+
+    return-object p0
+.end method
+
+.method public final getType()Lrdd;
+    .locals 0
+
+    sget-object p0, Lzb1;->X:Lrdd;
+
+    return-object p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    const p0, 0x1f0af277
 
     return p0
 .end method
 
-.method public final n(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+.method public final m()I
+    .locals 0
 
-    check-cast p1, Lpg7;
+    sget p0, Li5a;->m:I
 
-    instance-of v0, p1, Lzb1;
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lzb1;
-
-    goto :goto_0
-
-    :cond_0
-    move-object p1, v1
-
-    :goto_0
-    if-nez p1, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    new-instance v1, Lyb1;
-
-    const/4 v0, 0x7
-
-    invoke-direct {v1, v0}, Lu2;-><init>(I)V
-
-    iget-object v0, p0, Lzb1;->b:Ljava/util/List;
-
-    iget-object v2, p1, Lzb1;->b:Ljava/util/List;
-
-    invoke-static {v0, v2}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    const/4 v2, 0x1
-
-    xor-int/2addr v0, v2
-
-    iget-object v3, v1, Lu2;->b:Ljava/lang/Object;
-
-    check-cast v3, Ljava/util/BitSet;
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v3, v4, v0}, Ljava/util/BitSet;->set(IZ)V
-
-    iget-object v0, p0, Lzb1;->c:Lws7;
-
-    iget-object v5, p1, Lzb1;->c:Lws7;
-
-    invoke-static {v0, v5}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    iget-object p0, p0, Lzb1;->o:Lbga;
-
-    iget-object p1, p1, Lzb1;->o:Lbga;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_3
-
-    :cond_2
-    move v4, v2
-
-    :cond_3
-    invoke-virtual {v3, v2, v4}, Ljava/util/BitSet;->set(IZ)V
-
-    :goto_1
-    return-object v1
+    return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 2
+    .locals 0
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Speaker(opponentsPages="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lzb1;->b:Ljava/util/List;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mainOpponentState="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lzb1;->c:Lws7;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", opponentPipState="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lzb1;->o:Lbga;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
+    const-string p0, "SendToChat"
 
     return-object p0
+.end method
+
+.method public final u()I
+    .locals 0
+
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final v()I
+    .locals 0
+
+    const/4 p0, 0x2
+
+    return p0
 .end method

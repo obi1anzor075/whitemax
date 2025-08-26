@@ -1,134 +1,81 @@
-.class public interface abstract Lne1;
-.super Ljava/lang/Object;
+.class public final Lne1;
+.super Lsod;
 .source "SourceFile"
 
 
+# instance fields
+.field public final B0:Lvo1;
+
+.field public final C0:Lyo1;
+
+
+# direct methods
+.method public constructor <init>(Landroid/widget/FrameLayout;Lvo1;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lccc;-><init>(Landroid/view/View;)V
+
+    iput-object p2, p0, Lne1;->B0:Lvo1;
+
+    sget p2, Litb;->call_opponent:I
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p1
+
+    check-cast p1, Lyo1;
+
+    iput-object p1, p0, Lne1;->C0:Lyo1;
+
+    return-void
+.end method
+
+
 # virtual methods
-.method public a()Z
-    .locals 0
+.method public final x(Lol7;)V
+    .locals 3
 
-    invoke-interface {p0}, Lne1;->s()Lt8f;
+    check-cast p1, Lza1;
 
-    move-result-object p0
+    iget-object v0, p1, Lza1;->c:Ljava/lang/CharSequence;
 
-    iget-boolean p0, p0, Lt8f;->a:Z
+    iget-object v1, p1, Lza1;->o:Ljava/lang/String;
 
-    return p0
-.end method
+    iget-object v2, p0, Lne1;->C0:Lyo1;
 
-.method public abstract b()Z
-.end method
+    invoke-virtual {v2, v1, v0}, Lyo1;->I(Ljava/lang/String;Ljava/lang/CharSequence;)V
 
-.method public abstract e()Z
-.end method
+    iget-boolean v0, p1, Lza1;->o0:Z
 
-.method public abstract f()Z
-.end method
+    invoke-virtual {v2, v0}, Lyo1;->E(Z)V
 
-.method public abstract g()Z
-.end method
+    iget-boolean v0, p1, Lza1;->Y:Z
 
-.method public abstract getId()Lle1;
-.end method
+    invoke-virtual {v2, v0}, Lyo1;->F(Z)V
 
-.method public abstract h()Z
-.end method
+    iget-object v0, p1, Lza1;->X:Led0;
 
-.method public abstract i()Z
-.end method
+    invoke-virtual {v2, v0}, Lyo1;->setAvatar(Led0;)V
 
-.method public abstract isConnected()Z
-.end method
+    iget-boolean v0, p1, Lza1;->r0:Z
 
-.method public isScreenCaptureEnabled()Z
-    .locals 0
+    invoke-virtual {v2, v0}, Lyo1;->setRaiseHand(Z)V
 
-    invoke-interface {p0}, Lne1;->p()Lt8f;
+    iget-object v0, p1, Lza1;->v0:Liaf;
 
-    move-result-object p0
+    invoke-virtual {v2, v0}, Lyo1;->setOpponentVideo(Liaf;)V
 
-    iget-boolean p0, p0, Lt8f;->a:Z
+    iget-object v0, p1, Lza1;->w0:Ljaf;
 
-    return p0
-.end method
+    invoke-virtual {v2, v0}, Lyo1;->setButtonAction(Ljaf;)V
 
-.method public abstract k()Z
-.end method
+    iget-object p1, p1, Lza1;->a:Lwf1;
 
-.method public l()Z
-    .locals 1
+    iput-object p1, v2, Lyo1;->d1:Lwf1;
 
-    invoke-interface {p0}, Lne1;->a()Z
+    iget-object p0, p0, Lne1;->B0:Lvo1;
 
-    move-result v0
+    iput-object p0, v2, Lyo1;->X0:Lvo1;
 
-    if-nez v0, :cond_1
-
-    invoke-interface {p0}, Lne1;->isScreenCaptureEnabled()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
-
-    :goto_1
-    return p0
-.end method
-
-.method public m()Z
-    .locals 1
-
-    invoke-interface {p0}, Lne1;->i()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    invoke-interface {p0}, Lne1;->e()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
-
-    :goto_1
-    return p0
-.end method
-
-.method public abstract n()Z
-.end method
-
-.method public abstract o()Z
-.end method
-
-.method public abstract p()Lt8f;
-.end method
-
-.method public abstract r()I
-.end method
-
-.method public abstract s()Lt8f;
-.end method
-
-.method public abstract t()Z
+    return-void
 .end method

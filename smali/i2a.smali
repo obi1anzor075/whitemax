@@ -1,103 +1,53 @@
-.class public abstract Li2a;
+.class public final synthetic Li2a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:I
-
-.field public static final b:I
-
-.field public static final c:I
-
-.field public static final d:I
-
-.field public static final e:I
-
-.field public static final f:I
-
-.field public static final g:I
-
-.field public static final h:I
-
-.field public static final i:I
-
-.field public static final j:I
-
-.field public static final k:I
-
-.field public static final l:I
-
-.field public static final m:I
-
-.field public static final n:I
-
-.field public static final o:I
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public static a(Ljava/lang/Throwable;)V
+    .locals 3
 
-    sget v0, Lenb;->file_fill_24:I
+    sget v0, Lone/me/android/OneMeApplication;->o0:I
 
-    sput v0, Li2a;->a:I
+    const-string v0, "Payload"
 
-    sget v0, Lenb;->geolocation_fill_24:I
+    :try_start_0
+    const-string v1, "error while parse payload"
 
-    sput v0, Li2a;->b:I
+    invoke-static {v0, v1, p0}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    sget v0, Lenb;->ic_arrow_down_24:I
+    sget-object v1, Ldcf;->a:Ldcf;
 
-    sput v0, Li2a;->c:I
+    invoke-virtual {v1}, Lscout/Component;->getAccessor()Lu4;
 
-    sget v0, Lenb;->ic_arrow_up_24:I
+    move-result-object v1
 
-    sput v0, Li2a;->d:I
+    const-class v2, Lhhe;
 
-    sget v0, Lenb;->ic_camera_add_36:I
+    invoke-virtual {v1, v2}, Lu4;->c(Ljava/lang/Class;)Ljava/lang/Object;
 
-    sput v0, Li2a;->e:I
+    move-result-object v1
 
-    sget v0, Lenb;->ic_clear_24:I
+    check-cast v1, Lhhe;
 
-    sput v0, Li2a;->f:I
+    invoke-virtual {v1}, Lhhe;->x()Lpy3;
 
-    sget v0, Lenb;->ic_cross_12:I
+    move-result-object v1
 
-    sput v0, Li2a;->g:I
+    const/4 v2, 0x0
 
-    sget v0, Lenb;->ic_file_mode_24:I
+    invoke-virtual {v1, v2, p0}, Lpy3;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    sput v0, Li2a;->h:I
+    return-void
 
-    sget v0, Lenb;->ic_media_mode_24:I
+    :catchall_0
+    move-exception p0
 
-    sput v0, Li2a;->i:I
+    const-string v1, "failed to collect exception"
 
-    sget v0, Lenb;->ic_snack_file_24:I
-
-    sput v0, Li2a;->j:I
-
-    sget v0, Lenb;->ic_snack_media_24:I
-
-    sput v0, Li2a;->k:I
-
-    sget v0, Lenb;->ic_videocam_20:I
-
-    sput v0, Li2a;->l:I
-
-    sget v0, Lenb;->media_fill_24:I
-
-    sput v0, Li2a;->m:I
-
-    sget v0, Lenb;->profile_fill_24:I
-
-    sput v0, Li2a;->n:I
-
-    sget v0, Lenb;->wallet_fill_24:I
-
-    sput v0, Li2a;->o:I
+    invoke-static {v0, v1, p0}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method

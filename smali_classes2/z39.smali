@@ -1,349 +1,129 @@
 .class public final Lz39;
-.super Lx39;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final c:Lru/ok/tamtam/logout/a;
+.field public X:I
 
-.field public final d:Ldm4;
+.field public final synthetic Y:Lh49;
+
+.field public final synthetic Z:Ljava/lang/String;
+
+.field public final synthetic o0:Lw10;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/tamtam/logout/a;Ldm4;)V
-    .locals 2
+.method public constructor <init>(Lh49;Ljava/lang/String;Lw10;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Lz39;->Y:Lh49;
 
-    const/4 v1, 0x2
+    iput-object p2, p0, Lz39;->Z:Ljava/lang/String;
 
-    invoke-direct {p0, v0, v1}, Lx39;-><init>(II)V
+    iput-object p3, p0, Lz39;->o0:Lw10;
 
-    iput-object p1, p0, Lz39;->c:Lru/ok/tamtam/logout/a;
+    const/4 p1, 0x2
 
-    iput-object p2, p0, Lz39;->d:Ldm4;
+    invoke-direct {p0, p1, p4}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lsz5;)V
-    .locals 10
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    const-string v0, "Migration_1_2"
+    check-cast p1, Lox3;
 
-    const-string v1, "start"
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-static {v0, v1}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p0, p1, p2}, Lz39;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    new-instance v1, Llw2;
+    move-result-object p0
 
-    iget-object v2, p0, Lz39;->d:Ldm4;
+    check-cast p0, Lz39;
 
-    invoke-direct {v1, v2}, Llw2;-><init>(Ldm4;)V
+    sget-object p1, Le5f;->a:Le5f;
 
-    new-instance v2, Ljava/util/ArrayList;
+    invoke-virtual {p0, p1}, Lz39;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    move-result-object p0
 
-    invoke-virtual {p1}, Lsz5;->m()V
+    return-object p0
+.end method
 
-    :try_start_0
-    const-string v3, "SELECT * FROM chats"
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 2
 
-    invoke-virtual {p1, v3}, Lsz5;->q0(Ljava/lang/String;)Landroid/database/Cursor;
+    new-instance p1, Lz39;
 
-    move-result-object v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_2
+    iget-object v0, p0, Lz39;->Z:Ljava/lang/String;
 
-    :try_start_1
-    const-string v4, "id"
+    iget-object v1, p0, Lz39;->o0:Lw10;
 
-    invoke-interface {v3, v4}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+    iget-object p0, p0, Lz39;->Y:Lh49;
 
-    move-result v4
+    invoke-direct {p1, p0, v0, v1, p2}, Lz39;-><init>(Lh49;Ljava/lang/String;Lw10;Lkotlin/coroutines/Continuation;)V
 
-    const-string v5, "data"
+    return-object p1
+.end method
 
-    invoke-interface {v3, v5}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    move-result v5
+    iget v0, p0, Lz39;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    return-object p1
 
     :cond_0
-    :goto_0
-    invoke-interface {v3}, Landroid/database/Cursor;->moveToNext()Z
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    move-result v6
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    if-eqz v6, :cond_1
-
-    invoke-interface {v3, v5}, Landroid/database/Cursor;->isNull(I)Z
-
-    move-result v6
-
-    if-nez v6, :cond_0
-
-    invoke-interface {v3, v4}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v6
-
-    invoke-interface {v3, v5}, Landroid/database/Cursor;->getBlob(I)[B
-
-    move-result-object v8
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :try_start_2
-    invoke-virtual {v1, v8}, Llw2;->a([B)Lo62;
-
-    move-result-object v8
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    :try_start_3
-    iget-wide v8, v8, Lo62;->l:J
-
-    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v8
-
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v6
-
-    filled-new-array {v8, v6}, [Ljava/lang/Long;
-
-    move-result-object v6
-
-    invoke-virtual {v2, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v1
-
-    goto/16 :goto_3
-
-    :catchall_1
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "could not parse blob for chat #"
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v0, v6}, Ludd;->U(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v1, 0x0
-
-    :try_start_4
-    invoke-static {v3, v1}, Lurd;->l(Ljava/io/Closeable;Ljava/lang/Throwable;)V
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    invoke-virtual {p1}, Lsz5;->r0()V
-
-    const-string v1, "no data, finished!"
-
-    invoke-static {v0, v1}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_2
-
-    invoke-virtual {p1}, Lsz5;->S()V
-
-    return-void
-
-    :catchall_2
-    move-exception v1
-
-    goto/16 :goto_4
-
-    :cond_2
-    :try_start_5
-    const-string v3, "DROP INDEX IF EXISTS index_chats_server_id"
-
-    invoke-virtual {p1, v3}, Lsz5;->U(Ljava/lang/String;)V
-
-    const-string v3, "CREATE INDEX IF NOT EXISTS `index_chats_server_id` ON `chats` (`server_id`)"
-
-    invoke-virtual {p1, v3}, Lsz5;->U(Ljava/lang/String;)V
-
-    const-string v3, "ALTER TABLE chats ADD COLUMN cid INTEGER NOT NULL DEFAULT 0"
-
-    invoke-virtual {p1, v3}, Lsz5;->U(Ljava/lang/String;)V
-
-    const-string v3, "CREATE INDEX IF NOT EXISTS `index_chats_cid` ON `chats` (`cid`)"
-
-    invoke-virtual {p1, v3}, Lsz5;->U(Ljava/lang/String;)V
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :goto_1
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_3
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, [Ljava/lang/Long;
-
-    const-string v5, "UPDATE chats SET cid = ? WHERE id = ?"
-
-    invoke-virtual {p1, v5, v4}, Lsz5;->e0(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_3
-    const-string v3, "CREATE TABLE IF NOT EXISTS `temp_messages` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `server_id` INTEGER NOT NULL, `time` INTEGER NOT NULL, `update_time` INTEGER NOT NULL, `sender` INTEGER NOT NULL, `cid` INTEGER NOT NULL, `text` TEXT, `delivery_status` INTEGER NOT NULL, `status` INTEGER NOT NULL, `time_local` INTEGER NOT NULL, `error` TEXT, `localized_error` TEXT, `attaches` BLOB, `media_type` INTEGER NOT NULL, `detect_share` INTEGER NOT NULL, `msg_link_type` INTEGER NOT NULL, `msg_link_id` INTEGER NOT NULL, `inserted_from_msg_link` INTEGER NOT NULL, `msg_link_chat_id` INTEGER NOT NULL, `msg_link_chat_name` TEXT, `msg_link_chat_link` TEXT, `msg_link_out_chat_id` INTEGER NOT NULL, `msg_link_out_msg_id` INTEGER NOT NULL, `type` INTEGER NOT NULL, `chat_id` INTEGER NOT NULL, `ttl` INTEGER NOT NULL, `channel_views` INTEGER NOT NULL, `channel_forwards` INTEGER NOT NULL, `view_time` INTEGER NOT NULL, `zoom` INTEGER NOT NULL, `options` INTEGER NOT NULL, `live_until` INTEGER NOT NULL, `constructor_id` INTEGER NOT NULL, `elements` BLOB NOT NULL, `reactions` BLOB, `delayed_attrs_time_to_fire` INTEGER, `delayed_attrs_notify_sender` INTEGER, FOREIGN KEY(`chat_id`) REFERENCES `chats`(`id`) ON UPDATE NO ACTION ON DELETE NO ACTION )"
-
-    invoke-virtual {p1, v3}, Lsz5;->U(Ljava/lang/String;)V
-
-    const-string v3, "INSERT INTO temp_messages SELECT * FROM messages"
-
-    invoke-virtual {p1, v3}, Lsz5;->U(Ljava/lang/String;)V
-
-    const-string v3, "DROP TABLE messages"
-
-    invoke-virtual {p1, v3}, Lsz5;->U(Ljava/lang/String;)V
-
-    const-string v3, "ALTER TABLE temp_messages RENAME TO messages"
-
-    invoke-virtual {p1, v3}, Lsz5;->U(Ljava/lang/String;)V
-
-    const-string v3, "CREATE INDEX IF NOT EXISTS `index_messages_chat_id` ON `messages` (`chat_id`)"
-
-    invoke-virtual {p1, v3}, Lsz5;->U(Ljava/lang/String;)V
-
-    const-string v3, "CREATE INDEX IF NOT EXISTS `index_messages_cid` ON `messages` (`cid`)"
-
-    invoke-virtual {p1, v3}, Lsz5;->U(Ljava/lang/String;)V
-
-    const-string v3, "CREATE INDEX IF NOT EXISTS `index_messages_server_id` ON `messages` (`server_id`)"
-
-    invoke-virtual {p1, v3}, Lsz5;->U(Ljava/lang/String;)V
-
-    const-string v3, "CREATE INDEX IF NOT EXISTS `index_messages_chat_id_time` ON `messages` (`chat_id`, `time`)"
-
-    invoke-virtual {p1, v3}, Lsz5;->U(Ljava/lang/String;)V
-
-    const-string v3, "CREATE INDEX IF NOT EXISTS `index_messages_chat_id_media_type` ON `messages` (`chat_id`, `media_type`)"
-
-    invoke-virtual {p1, v3}, Lsz5;->U(Ljava/lang/String;)V
-
-    const-string v3, "CREATE INDEX IF NOT EXISTS `index_messages_delayed_attrs_time_to_fire_delayed_attrs_notify_sender` ON `messages` (`delayed_attrs_time_to_fire`, `delayed_attrs_notify_sender`)"
-
-    invoke-virtual {p1, v3}, Lsz5;->U(Ljava/lang/String;)V
-
-    invoke-virtual {p1}, Lsz5;->r0()V
-
-    sget-object v3, Ludd;->e:Lfn6;
-
-    if-nez v3, :cond_4
-
-    goto :goto_2
-
-    :cond_4
-    invoke-interface {v3}, Lfn6;->c()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_5
-
-    sget-object v4, Ltn7;->X:Ltn7;
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "finish! migrate "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v2, " chats"
-
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v3, v4, v0, v2, v1}, Lfn6;->d(Ltn7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_2
-
-    :cond_5
-    :goto_2
-    invoke-virtual {p1}, Lsz5;->S()V
-
-    goto :goto_5
-
-    :goto_3
-    :try_start_6
-    throw v1
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_3
-
-    :catchall_3
-    move-exception v2
-
-    :try_start_7
-    invoke-static {v3, v1}, Lurd;->l(Ljava/io/Closeable;Ljava/lang/Throwable;)V
-
-    throw v2
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_2
-
-    :goto_4
-    :try_start_8
-    const-string v2, "unexpected error!"
-
-    invoke-static {v0, v2, v1}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    iget-object p0, p0, Lz39;->c:Lru/ok/tamtam/logout/a;
-
-    invoke-interface {p0}, Lru/ok/tamtam/logout/a;->b()V
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_4
-
-    goto :goto_2
-
-    :goto_5
-    return-void
-
-    :catchall_4
-    move-exception p0
-
-    invoke-virtual {p1}, Lsz5;->S()V
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p0
+
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lz39;->Y:Lh49;
+
+    iget-object p1, p1, Lh49;->r0:Lrpc;
+
+    iget-object v0, p0, Lz39;->o0:Lw10;
+
+    iget-object v0, v0, Lw10;->b:Lk10;
+
+    iget-boolean v0, v0, Lk10;->X:Z
+
+    iput v1, p0, Lz39;->X:I
+
+    iget-object v1, p0, Lz39;->Z:Ljava/lang/String;
+
+    invoke-virtual {p1, v1, v0, p0}, Lrpc;->b(Ljava/lang/String;ZLbu3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    return-object p0
 .end method

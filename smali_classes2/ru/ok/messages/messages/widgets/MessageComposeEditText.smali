@@ -1,84 +1,84 @@
 .class public Lru/ok/messages/messages/widgets/MessageComposeEditText;
-.super Lut4;
+.super Lvw4;
 .source "SourceFile"
 
 
 # static fields
-.field public static final synthetic A0:I
+.field public static final synthetic s0:I
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
 
-    sget v0, Lylb;->editTextStyle:I
+    sget v0, Lkqb;->editTextStyle:I
 
-    invoke-direct {p0, p1, p2, v0}, Lhi;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p1, p2, v0}, Lai;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p1
 
-    check-cast p1, Ljae;
+    check-cast p1, Llie;
 
     check-cast p1, Lone/me/android/OneMeApplication;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    sget-object p1, Lnqc;->a:Lnqc;
+    sget-object p1, Lowc;->a:Lowc;
 
-    invoke-virtual {p1}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p1
-
-    const-class p2, Luu4;
-
-    invoke-virtual {p1, p2}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {p1}, Lscout/Component;->getAccessor()Lu4;
 
     move-result-object p1
 
-    check-cast p1, Luu4;
+    const-class p2, Lux4;
 
-    iget-boolean p2, p1, Luu4;->e:Z
+    invoke-virtual {p1, p2}, Lu4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lux4;
+
+    iget-boolean p2, p1, Lux4;->e:Z
 
     if-nez p2, :cond_0
 
-    new-instance p2, Ljv4;
+    new-instance p2, Liy4;
 
     const/4 v0, 0x0
 
-    invoke-direct {p2, v0, p1}, Ljv4;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p2, v0, p1}, Liy4;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {p0, p2}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
     :cond_0
-    invoke-static {}, Lvl;->b()Lk93;
+    invoke-static {}, Lol;->b()Lsb3;
 
     move-result-object p1
 
-    check-cast p1, Lo2a;
+    check-cast p1, Lq6a;
 
-    invoke-virtual {p1}, Lo2a;->b()Lbd;
+    invoke-virtual {p1}, Lq6a;->b()Luc;
 
-    sget-object p1, Lvl;->o:Lvl;
+    sget-object p1, Lol;->o:Lol;
 
-    invoke-virtual {p1}, Lvl;->a()Lj2b;
+    invoke-virtual {p1}, Lol;->a()La5b;
 
     move-result-object p1
 
-    iget-object p1, p1, Lj2b;->c:Lkp;
+    iget-object p1, p1, La5b;->c:Lzo;
 
-    iget-object p1, p1, Lf3;->g:Lx97;
+    const/4 p2, 0x0
 
-    const-string p2, "app.messages.replace.emoji"
+    iget-object p1, p1, Le3;->g:Lme7;
 
-    const/4 v0, 0x0
+    const-string v0, "app.messages.replace.emoji"
 
-    invoke-virtual {p1, p2, v0}, Lx97;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-virtual {p1, v0, p2}, Lme7;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result p1
 
-    invoke-virtual {p0, p1}, Lut4;->setReplaceTextSmiles(Z)V
+    invoke-virtual {p0, p1}, Lvw4;->setReplaceTextSmiles(Z)V
 
     return-void
 .end method
@@ -111,15 +111,13 @@
 
     iput-object v1, p1, Landroid/view/inputmethod/EditorInfo;->contentMimeTypes:[Ljava/lang/String;
 
-    new-instance p1, Lhy5;
+    new-instance p1, Lqi8;
 
-    const/16 v1, 0x1b
+    invoke-direct {p1, p0}, Lqi8;-><init>(Lru/ok/messages/messages/widgets/MessageComposeEditText;)V
 
-    invoke-direct {p1, v1, p0}, Lhy5;-><init>(ILjava/lang/Object;)V
+    new-instance p0, Lc17;
 
-    new-instance p0, Lgx6;
-
-    invoke-direct {p0, v0, p1}, Lgx6;-><init>(Landroid/view/inputmethod/InputConnection;Lhy5;)V
+    invoke-direct {p0, v0, p1}, Lc17;-><init>(Landroid/view/inputmethod/InputConnection;Ld17;)V
 
     return-object p0
 .end method
@@ -175,19 +173,19 @@
     return-void
 .end method
 
-.method public setListener(Leo8;)V
+.method public setListener(Lls8;)V
     .locals 0
 
     return-void
 .end method
 
-.method public setMIUITextSelectListener(Lfo8;)V
+.method public setMIUITextSelectListener(Lms8;)V
     .locals 0
 
     return-void
 .end method
 
-.method public setTextSelectListener(Lgo8;)V
+.method public setTextSelectListener(Lns8;)V
     .locals 0
 
     return-void

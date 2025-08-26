@@ -2,49 +2,42 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ln0b;
 
+# instance fields
+.field public final a:[I
 
-# static fields
-.field public static final a:Lrt0;
+.field public final b:I
+
+.field public final c:I
+
+.field public final d:I
+
+.field public final e:I
+
+.field public final f:I
+
+.field public final g:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(II[IIIII)V
+    .locals 0
 
-    new-instance v0, Lrt0;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x3
+    iput p1, p0, Ld24;->b:I
 
-    invoke-direct {v0, v1}, Lrt0;-><init>(I)V
+    iput-object p3, p0, Ld24;->a:[I
 
-    sput-object v0, Ld24;->a:Lrt0;
+    iput p2, p0, Ld24;->c:I
+
+    iput p4, p0, Ld24;->e:I
+
+    iput p5, p0, Ld24;->f:I
+
+    iput p6, p0, Ld24;->g:I
+
+    iput p7, p0, Ld24;->d:I
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final bridge synthetic g(Ljava/lang/Object;)Z
-    .locals 0
-
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final h()Ljava/lang/Object;
-    .locals 0
-
-    sget-object p0, Ld24;->a:Lrt0;
-
-    invoke-virtual {p0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/nio/ByteBuffer;
-
-    return-object p0
 .end method

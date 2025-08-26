@@ -1,369 +1,448 @@
 .class public final Lqm;
-.super Ljava/lang/Object;
+.super Lije;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/util/concurrent/Executor;
 
 
 # instance fields
-.field public final X:Ljava/lang/Object;
+.field public final synthetic X:Lum;
 
-.field public final synthetic a:I
+.field public final Y:Ljava/lang/Object;
 
-.field public final b:Ljava/util/ArrayDeque;
-
-.field public final c:Ljava/util/concurrent/Executor;
-
-.field public o:Ljava/lang/Runnable;
+.field public final synthetic o:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Executor;I)V
-    .locals 0
-
-    iput p2, p0, Lqm;->a:I
-
-    packed-switch p2, :pswitch_data_0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    iput-object p1, p0, Lqm;->c:Ljava/util/concurrent/Executor;
-
-    .line 3
-    new-instance p1, Ljava/util/ArrayDeque;
-
-    invoke-direct {p1}, Ljava/util/ArrayDeque;-><init>()V
-
-    iput-object p1, p0, Lqm;->b:Ljava/util/ArrayDeque;
-
-    .line 4
-    new-instance p1, Ljava/lang/Object;
-
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lqm;->X:Ljava/lang/Object;
-
-    return-void
-
-    .line 5
-    :pswitch_0
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lqm;->c:Ljava/util/concurrent/Executor;
-
-    .line 6
-    new-instance p1, Ljava/util/ArrayDeque;
-
-    invoke-direct {p1}, Ljava/util/ArrayDeque;-><init>()V
-
-    iput-object p1, p0, Lqm;->b:Ljava/util/ArrayDeque;
-
-    .line 7
-    new-instance p1, Ljava/lang/Object;
-
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lqm;->X:Ljava/lang/Object;
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public constructor <init>(Lmh4;)V
+.method public constructor <init>(Lum;Landroid/content/Context;)V
     .locals 1
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lqm;->a:I
+    iput v0, p0, Lqm;->o:I
 
-    .line 8
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 3
+    iput-object p1, p0, Lqm;->X:Lum;
 
-    .line 9
-    new-instance v0, Ljava/lang/Object;
+    invoke-direct {p0, p1}, Lije;-><init>(Lum;)V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    .line 4
+    invoke-virtual {p2}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    iput-object v0, p0, Lqm;->X:Ljava/lang/Object;
+    move-result-object p1
 
-    .line 10
-    new-instance v0, Ljava/util/ArrayDeque;
+    const-string p2, "power"
 
-    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
+    .line 5
+    invoke-virtual {p1, p2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    iput-object v0, p0, Lqm;->b:Ljava/util/ArrayDeque;
+    move-result-object p1
 
-    .line 11
-    iput-object p1, p0, Lqm;->c:Ljava/util/concurrent/Executor;
+    check-cast p1, Landroid/os/PowerManager;
+
+    iput-object p1, p0, Lqm;->Y:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lum;Lrq7;)V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Lqm;->o:I
+
+    .line 1
+    iput-object p1, p0, Lqm;->X:Lum;
+
+    invoke-direct {p0, p1}, Lije;-><init>(Lum;)V
+
+    .line 2
+    iput-object p2, p0, Lqm;->Y:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
+.method public final C()I
+    .locals 21
 
-    iget v0, p0, Lqm;->a:I
+    move-object/from16 v0, p0
 
-    packed-switch v0, :pswitch_data_0
+    iget v1, v0, Lqm;->o:I
 
-    iget-object v0, p0, Lqm;->X:Ljava/lang/Object;
+    packed-switch v1, :pswitch_data_0
 
-    monitor-enter v0
+    iget-object v0, v0, Lqm;->Y:Ljava/lang/Object;
+
+    check-cast v0, Lrq7;
+
+    iget-object v1, v0, Lrq7;->b:Ljava/lang/Object;
+
+    check-cast v1, Lz9e;
+
+    iget-object v2, v0, Lrq7;->a:Ljava/lang/Object;
+
+    check-cast v2, Landroid/location/LocationManager;
+
+    iget-wide v3, v1, Lz9e;->b:J
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v5
+
+    cmp-long v3, v3, v5
+
+    const/4 v4, 0x1
+
+    if-lez v3, :cond_0
+
+    iget-boolean v0, v1, Lz9e;->a:Z
+
+    goto/16 :goto_6
+
+    :cond_0
+    iget-object v0, v0, Lrq7;->c:Ljava/lang/Object;
+
+    check-cast v0, Landroid/content/Context;
+
+    const-string v3, "android.permission.ACCESS_COARSE_LOCATION"
+
+    invoke-static {v0, v3}, Lild;->d(Landroid/content/Context;Ljava/lang/String;)I
+
+    move-result v3
+
+    const/4 v5, 0x0
+
+    if-nez v3, :cond_1
+
+    const-string v3, "network"
 
     :try_start_0
-    iget-object v1, p0, Lqm;->b:Ljava/util/ArrayDeque;
+    invoke-virtual {v2, v3}, Landroid/location/LocationManager;->isProviderEnabled(Ljava/lang/String;)Z
 
-    invoke-virtual {v1}, Ljava/util/ArrayDeque;->poll()Ljava/lang/Object;
+    move-result v6
 
-    move-result-object v1
+    if-eqz v6, :cond_1
 
-    move-object v2, v1
+    invoke-virtual {v2, v3}, Landroid/location/LocationManager;->getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
 
-    check-cast v2, Ljava/lang/Runnable;
-
-    iput-object v2, p0, Lqm;->o:Ljava/lang/Runnable;
-
-    if-eqz v1, :cond_0
-
-    iget-object p0, p0, Lqm;->c:Ljava/util/concurrent/Executor;
-
-    invoke-interface {p0, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    move-result-object v3
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p0
-
-    goto :goto_1
-
-    :cond_0
-    :goto_0
-    monitor-exit v0
-
-    return-void
-
-    :goto_1
-    monitor-exit v0
-
-    throw p0
-
-    :pswitch_0
-    iget-object v0, p0, Lqm;->b:Ljava/util/ArrayDeque;
-
-    invoke-virtual {v0}, Ljava/util/ArrayDeque;->poll()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Runnable;
-
-    iput-object v0, p0, Lqm;->o:Ljava/lang/Runnable;
-
-    if-eqz v0, :cond_1
-
-    iget-object p0, p0, Lqm;->c:Ljava/util/concurrent/Executor;
-
-    invoke-interface {p0, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
+    :catch_0
     :cond_1
-    return-void
+    move-object v3, v5
 
-    :pswitch_1
-    iget-object v0, p0, Lqm;->X:Ljava/lang/Object;
+    :goto_0
+    const-string v6, "android.permission.ACCESS_FINE_LOCATION"
 
-    monitor-enter v0
+    invoke-static {v0, v6}, Lild;->d(Landroid/content/Context;Ljava/lang/String;)I
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    const-string v0, "gps"
 
     :try_start_1
-    iget-object v1, p0, Lqm;->b:Ljava/util/ArrayDeque;
+    invoke-virtual {v2, v0}, Landroid/location/LocationManager;->isProviderEnabled(Ljava/lang/String;)Z
 
-    invoke-virtual {v1}, Ljava/util/ArrayDeque;->poll()Ljava/lang/Object;
+    move-result v6
 
-    move-result-object v1
+    if-eqz v6, :cond_2
 
-    check-cast v1, Ljava/lang/Runnable;
+    invoke-virtual {v2, v0}, Landroid/location/LocationManager;->getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;
 
-    iput-object v1, p0, Lqm;->o:Ljava/lang/Runnable;
+    move-result-object v5
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    if-eqz v1, :cond_2
+    :catch_1
+    :cond_2
+    if-eqz v5, :cond_3
 
-    iget-object p0, p0, Lqm;->c:Ljava/util/concurrent/Executor;
+    if-eqz v3, :cond_3
 
-    invoke-interface {p0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    invoke-virtual {v5}, Landroid/location/Location;->getTime()J
+
+    move-result-wide v6
+
+    invoke-virtual {v3}, Landroid/location/Location;->getTime()J
+
+    move-result-wide v8
+
+    cmp-long v0, v6, v8
+
+    if-lez v0, :cond_4
+
+    :goto_1
+    move-object v3, v5
 
     goto :goto_2
 
-    :catchall_1
-    move-exception p0
+    :cond_3
+    if-eqz v5, :cond_4
+
+    goto :goto_1
+
+    :cond_4
+    :goto_2
+    const/4 v0, 0x0
+
+    if-eqz v3, :cond_b
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v10
+
+    sget-object v2, Lfm0;->f:Lfm0;
+
+    if-nez v2, :cond_5
+
+    new-instance v2, Lfm0;
+
+    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
+
+    sput-object v2, Lfm0;->f:Lfm0;
+
+    :cond_5
+    sget-object v12, Lfm0;->f:Lfm0;
+
+    const-wide/32 v19, 0x5265c00
+
+    sub-long v17, v10, v19
+
+    invoke-virtual {v3}, Landroid/location/Location;->getLatitude()D
+
+    move-result-wide v13
+
+    invoke-virtual {v3}, Landroid/location/Location;->getLongitude()D
+
+    move-result-wide v15
+
+    invoke-virtual/range {v12 .. v18}, Lfm0;->a(DDJ)V
+
+    invoke-virtual {v3}, Landroid/location/Location;->getLatitude()D
+
+    move-result-wide v6
+
+    invoke-virtual {v3}, Landroid/location/Location;->getLongitude()D
+
+    move-result-wide v8
+
+    move-object v5, v12
+
+    invoke-virtual/range {v5 .. v11}, Lfm0;->a(DDJ)V
+
+    iget v2, v12, Lfm0;->a:I
+
+    if-ne v2, v4, :cond_6
+
+    move v0, v4
+
+    :cond_6
+    iget-wide v5, v12, Lfm0;->c:J
+
+    iget-wide v7, v12, Lfm0;->b:J
+
+    add-long v17, v10, v19
+
+    invoke-virtual {v3}, Landroid/location/Location;->getLatitude()D
+
+    move-result-wide v13
+
+    invoke-virtual {v3}, Landroid/location/Location;->getLongitude()D
+
+    move-result-wide v15
+
+    invoke-virtual/range {v12 .. v18}, Lfm0;->a(DDJ)V
+
+    iget-wide v2, v12, Lfm0;->c:J
+
+    const-wide/16 v12, -0x1
+
+    cmp-long v9, v5, v12
+
+    if-eqz v9, :cond_a
+
+    cmp-long v9, v7, v12
+
+    if-nez v9, :cond_7
+
+    goto :goto_4
+
+    :cond_7
+    cmp-long v9, v10, v7
+
+    if-lez v9, :cond_8
+
+    move-wide v5, v2
 
     goto :goto_3
 
-    :cond_2
-    :goto_2
-    monitor-exit v0
+    :cond_8
+    cmp-long v2, v10, v5
 
-    return-void
+    if-lez v2, :cond_9
 
+    move-wide v5, v7
+
+    :cond_9
     :goto_3
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    const-wide/32 v2, 0xea60
 
-    throw p0
+    add-long/2addr v5, v2
+
+    goto :goto_5
+
+    :cond_a
+    :goto_4
+    const-wide/32 v2, 0x2932e00
+
+    add-long v5, v10, v2
+
+    :goto_5
+    iput-boolean v0, v1, Lz9e;->a:Z
+
+    iput-wide v5, v1, Lz9e;->b:J
+
+    goto :goto_6
+
+    :cond_b
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+
+    move-result-object v1
+
+    const/16 v2, 0xb
+
+    invoke-virtual {v1, v2}, Ljava/util/Calendar;->get(I)I
+
+    move-result v1
+
+    const/4 v2, 0x6
+
+    if-lt v1, v2, :cond_c
+
+    const/16 v2, 0x16
+
+    if-lt v1, v2, :cond_d
+
+    :cond_c
+    move v0, v4
+
+    :cond_d
+    :goto_6
+    if-eqz v0, :cond_e
+
+    const/4 v4, 0x2
+
+    :cond_e
+    return v4
+
+    :pswitch_0
+    iget-object v0, v0, Lqm;->Y:Ljava/lang/Object;
+
+    check-cast v0, Landroid/os/PowerManager;
+
+    invoke-static {v0}, Llm;->a(Landroid/os/PowerManager;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_f
+
+    const/4 v0, 0x2
+
+    goto :goto_7
+
+    :cond_f
+    const/4 v0, 0x1
+
+    :goto_7
+    return v0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method
 
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 4
+.method public final U()V
+    .locals 1
 
-    iget v0, p0, Lqm;->a:I
+    iget v0, p0, Lqm;->o:I
 
     packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p0, Lqm;->X:Ljava/lang/Object;
+    iget-object p0, p0, Lqm;->X:Lum;
 
-    monitor-enter v0
+    const/4 v0, 0x1
 
-    :try_start_0
-    iget-object v1, p0, Lqm;->b:Ljava/util/ArrayDeque;
-
-    new-instance v2, Lzbe;
-
-    const/4 v3, 0x3
-
-    invoke-direct {v2, p1, v3, p0}, Lzbe;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-virtual {v1, v2}, Ljava/util/ArrayDeque;->offer(Ljava/lang/Object;)Z
-
-    iget-object p1, p0, Lqm;->o:Ljava/lang/Runnable;
-
-    if-nez p1, :cond_0
-
-    invoke-virtual {p0}, Lqm;->a()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_1
-
-    :cond_0
-    :goto_0
-    monitor-exit v0
+    invoke-virtual {p0, v0, v0}, Lum;->l(ZZ)Z
 
     return-void
-
-    :goto_1
-    monitor-exit v0
-
-    throw p0
 
     :pswitch_0
-    iget-object v0, p0, Lqm;->X:Ljava/lang/Object;
+    iget-object p0, p0, Lqm;->X:Lum;
 
-    monitor-enter v0
+    const/4 v0, 0x1
 
-    :try_start_1
-    iget-object v1, p0, Lqm;->b:Ljava/util/ArrayDeque;
-
-    new-instance v2, Lq36;
-
-    const/16 v3, 0x12
-
-    invoke-direct {v2, p0, v3, p1}, Lq36;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-virtual {v1, v2}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
-
-    iget-object p1, p0, Lqm;->o:Ljava/lang/Runnable;
-
-    if-nez p1, :cond_1
-
-    invoke-virtual {p0}, Lqm;->a()V
-
-    goto :goto_2
-
-    :catchall_1
-    move-exception p0
-
-    goto :goto_3
-
-    :cond_1
-    :goto_2
-    monitor-exit v0
+    invoke-virtual {p0, v0, v0}, Lum;->l(ZZ)Z
 
     return-void
 
-    :goto_3
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    throw p0
-
-    :pswitch_1
-    iget-object v0, p0, Lqm;->X:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_2
-    iget-object v1, p0, Lqm;->b:Ljava/util/ArrayDeque;
-
-    new-instance v2, Lc;
-
-    const/4 v3, 0x3
-
-    invoke-direct {v2, p0, v3, p1}, Lc;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-virtual {v1, v2}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
-
-    iget-object p1, p0, Lqm;->o:Ljava/lang/Runnable;
-
-    if-nez p1, :cond_2
-
-    invoke-virtual {p0}, Lqm;->a()V
-
-    goto :goto_4
-
-    :catchall_2
-    move-exception p0
-
-    goto :goto_5
-
-    :cond_2
-    :goto_4
-    monitor-exit v0
-
-    return-void
-
-    :goto_5
-    monitor-exit v0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_2
-
-    throw p0
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final z()Landroid/content/IntentFilter;
+    .locals 1
+
+    iget p0, p0, Lqm;->o:I
+
+    packed-switch p0, :pswitch_data_0
+
+    new-instance p0, Landroid/content/IntentFilter;
+
+    invoke-direct {p0}, Landroid/content/IntentFilter;-><init>()V
+
+    const-string v0, "android.intent.action.TIME_SET"
+
+    invoke-virtual {p0, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    const-string v0, "android.intent.action.TIMEZONE_CHANGED"
+
+    invoke-virtual {p0, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    const-string v0, "android.intent.action.TIME_TICK"
+
+    invoke-virtual {p0, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    return-object p0
+
+    :pswitch_0
+    new-instance p0, Landroid/content/IntentFilter;
+
+    invoke-direct {p0}, Landroid/content/IntentFilter;-><init>()V
+
+    const-string v0, "android.os.action.POWER_SAVE_MODE_CHANGED"
+
+    invoke-virtual {p0, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
         :pswitch_0
     .end packed-switch
 .end method

@@ -3,115 +3,162 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lxs4;
+.implements Lyv4;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final b:Lwx1;
+.field public final b:Lp02;
 
-.field public final c:Lyze;
+.field public final c:Lpna;
 
 .field public final d:Ljava/lang/String;
 
-.field public e:Ljava/lang/String;
+.field public final e:I
 
-.field public f:Lape;
+.field public f:Ljava/lang/String;
 
-.field public g:I
+.field public g:Lbye;
 
 .field public h:I
 
-.field public i:Z
+.field public i:I
 
-.field public j:J
+.field public j:Z
 
-.field public k:Lvu5;
+.field public k:J
 
-.field public l:I
+.field public l:Lfz5;
 
-.field public m:J
+.field public m:I
+
+.field public n:J
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>()V
+    .locals 3
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lt3;->a:I
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    .line 1
+    invoke-direct {p0, v2, v0, v1}, Lt3;-><init>(Ljava/lang/String;II)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;II)V
     .locals 4
 
-    iput p2, p0, Lt3;->a:I
+    iput p3, p0, Lt3;->a:I
 
-    packed-switch p2, :pswitch_data_0
+    packed-switch p3, :pswitch_data_0
 
+    .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance p2, Lwx1;
+    .line 3
+    new-instance p3, Lp02;
 
     const/16 v0, 0x80
 
     new-array v1, v0, [B
 
-    const/4 v2, 0x1
+    const/4 v2, 0x2
 
     const/4 v3, 0x0
 
-    invoke-direct {p2, v1, v0, v2, v3}, Lwx1;-><init>([BIIB)V
+    .line 4
+    invoke-direct {p3, v1, v0, v2, v3}, Lp02;-><init>([BIIB)V
 
-    iput-object p2, p0, Lt3;->b:Lwx1;
+    .line 5
+    iput-object p3, p0, Lt3;->b:Lp02;
 
-    new-instance p2, Lyze;
+    .line 6
+    new-instance v0, Lpna;
 
-    invoke-direct {p2, v1}, Lyze;-><init>([B)V
+    iget-object p3, p3, Lp02;->b:[B
 
-    iput-object p2, p0, Lt3;->c:Lyze;
+    invoke-direct {v0, p3}, Lpna;-><init>([B)V
 
-    const/4 p2, 0x0
+    iput-object v0, p0, Lt3;->c:Lpna;
 
-    iput p2, p0, Lt3;->g:I
+    const/4 p3, 0x0
+
+    .line 7
+    iput p3, p0, Lt3;->h:I
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    iput-wide v0, p0, Lt3;->m:J
+    .line 8
+    iput-wide v0, p0, Lt3;->n:J
 
+    .line 9
     iput-object p1, p0, Lt3;->d:Ljava/lang/String;
+
+    .line 10
+    iput p2, p0, Lt3;->e:I
 
     return-void
 
+    .line 11
     :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance p2, Lwx1;
+    .line 12
+    new-instance p3, Lp02;
 
     const/16 v0, 0x10
 
     new-array v1, v0, [B
 
-    const/4 v2, 0x1
+    const/4 v2, 0x2
 
     const/4 v3, 0x0
 
-    invoke-direct {p2, v1, v0, v2, v3}, Lwx1;-><init>([BIIB)V
+    .line 13
+    invoke-direct {p3, v1, v0, v2, v3}, Lp02;-><init>([BIIB)V
 
-    iput-object p2, p0, Lt3;->b:Lwx1;
+    .line 14
+    iput-object p3, p0, Lt3;->b:Lp02;
 
-    new-instance p2, Lyze;
+    .line 15
+    new-instance v0, Lpna;
 
-    invoke-direct {p2, v1}, Lyze;-><init>([B)V
+    iget-object p3, p3, Lp02;->b:[B
 
-    iput-object p2, p0, Lt3;->c:Lyze;
+    invoke-direct {v0, p3}, Lpna;-><init>([B)V
 
-    const/4 p2, 0x0
+    iput-object v0, p0, Lt3;->c:Lpna;
 
-    iput p2, p0, Lt3;->g:I
+    const/4 p3, 0x0
 
-    iput p2, p0, Lt3;->h:I
+    .line 16
+    iput p3, p0, Lt3;->h:I
 
-    iput-boolean p2, p0, Lt3;->i:Z
+    .line 17
+    iput p3, p0, Lt3;->i:I
+
+    .line 18
+    iput-boolean p3, p0, Lt3;->j:Z
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    iput-wide v0, p0, Lt3;->m:J
+    .line 19
+    iput-wide v0, p0, Lt3;->n:J
 
+    .line 20
     iput-object p1, p0, Lt3;->d:Ljava/lang/String;
+
+    .line 21
+    iput p2, p0, Lt3;->e:I
 
     return-void
 
@@ -123,13 +170,13 @@
     .end packed-switch
 .end method
 
-.method private final b()V
+.method private final b(Z)V
     .locals 0
 
     return-void
 .end method
 
-.method private final c()V
+.method private final c(Z)V
     .locals 0
 
     return-void
@@ -146,30 +193,30 @@
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lt3;->g:I
-
     iput v0, p0, Lt3;->h:I
 
-    iput-boolean v0, p0, Lt3;->i:Z
+    iput v0, p0, Lt3;->i:I
+
+    iput-boolean v0, p0, Lt3;->j:Z
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    iput-wide v0, p0, Lt3;->m:J
+    iput-wide v0, p0, Lt3;->n:J
 
     return-void
 
     :pswitch_0
     const/4 v0, 0x0
 
-    iput v0, p0, Lt3;->g:I
-
     iput v0, p0, Lt3;->h:I
 
-    iput-boolean v0, p0, Lt3;->i:Z
+    iput v0, p0, Lt3;->i:I
+
+    iput-boolean v0, p0, Lt3;->j:Z
 
     const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    iput-wide v0, p0, Lt3;->m:J
+    iput-wide v0, p0, Lt3;->n:J
 
     return-void
 
@@ -181,8 +228,8 @@
     .end packed-switch
 .end method
 
-.method public final g(Lyze;)V
-    .locals 20
+.method public final f(Lpna;)V
+    .locals 22
 
     move-object/from16 v0, p0
 
@@ -192,21 +239,21 @@
 
     packed-switch v2, :pswitch_data_0
 
-    iget-object v2, v0, Lt3;->f:Lape;
+    iget-object v2, v0, Lt3;->g:Lbye;
 
-    invoke-static {v2}, Lswb;->i(Ljava/lang/Object;)V
+    invoke-static {v2}, Lu27;->k(Ljava/lang/Object;)V
 
     :cond_0
     :goto_0
-    invoke-virtual/range {p1 .. p1}, Lyze;->c()I
+    invoke-virtual {v1}, Lpna;->a()I
 
     move-result v2
 
     if-lez v2, :cond_d
 
-    iget v2, v0, Lt3;->g:I
+    iget v2, v0, Lt3;->h:I
 
-    iget-object v3, v0, Lt3;->c:Lyze;
+    iget-object v3, v0, Lt3;->c:Lpna;
 
     const/4 v4, 0x2
 
@@ -223,13 +270,13 @@
     goto :goto_0
 
     :cond_1
-    invoke-virtual/range {p1 .. p1}, Lyze;->c()I
+    invoke-virtual {v1}, Lpna;->a()I
 
     move-result v2
 
-    iget v3, v0, Lt3;->l:I
+    iget v3, v0, Lt3;->m:I
 
-    iget v4, v0, Lt3;->h:I
+    iget v4, v0, Lt3;->i:I
 
     sub-int/2addr v3, v4
 
@@ -237,59 +284,70 @@
 
     move-result v2
 
-    iget-object v3, v0, Lt3;->f:Lape;
+    iget-object v3, v0, Lt3;->g:Lbye;
 
-    invoke-interface {v3, v2, v1}, Lape;->c(ILyze;)V
+    invoke-interface {v3, v1, v2, v6}, Lbye;->b(Lpna;II)V
 
-    iget v3, v0, Lt3;->h:I
+    iget v3, v0, Lt3;->i:I
 
     add-int/2addr v3, v2
 
-    iput v3, v0, Lt3;->h:I
+    iput v3, v0, Lt3;->i:I
 
-    iget v11, v0, Lt3;->l:I
+    iget v2, v0, Lt3;->m:I
 
-    if-ne v3, v11, :cond_0
+    if-ne v3, v2, :cond_0
 
-    iget-wide v8, v0, Lt3;->m:J
+    iget-wide v2, v0, Lt3;->n:J
 
-    const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
+    const-wide v7, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v2, v8, v2
+    cmp-long v2, v2, v7
 
     if-eqz v2, :cond_2
 
-    iget-object v7, v0, Lt3;->f:Lape;
+    goto :goto_1
+
+    :cond_2
+    move v5, v6
+
+    :goto_1
+    invoke-static {v5}, Lu27;->j(Z)V
+
+    iget-object v7, v0, Lt3;->g:Lbye;
+
+    iget-wide v8, v0, Lt3;->n:J
+
+    iget v11, v0, Lt3;->m:I
+
+    const/4 v12, 0x0
 
     const/4 v13, 0x0
 
     const/4 v10, 0x1
 
-    const/4 v12, 0x0
+    invoke-interface/range {v7 .. v13}, Lbye;->a(JIIILzxe;)V
 
-    invoke-interface/range {v7 .. v13}, Lape;->b(JIIILyoe;)V
+    iget-wide v2, v0, Lt3;->n:J
 
-    iget-wide v2, v0, Lt3;->m:J
-
-    iget-wide v4, v0, Lt3;->j:J
+    iget-wide v4, v0, Lt3;->k:J
 
     add-long/2addr v2, v4
 
-    iput-wide v2, v0, Lt3;->m:J
+    iput-wide v2, v0, Lt3;->n:J
 
-    :cond_2
-    iput v6, v0, Lt3;->g:I
+    iput v6, v0, Lt3;->h:I
 
     goto :goto_0
 
     :cond_3
-    iget-object v2, v3, Lyze;->a:[B
+    iget-object v2, v3, Lpna;->a:[B
 
-    invoke-virtual/range {p1 .. p1}, Lyze;->c()I
+    invoke-virtual {v1}, Lpna;->a()I
 
     move-result v5
 
-    iget v7, v0, Lt3;->h:I
+    iget v7, v0, Lt3;->i:I
 
     const/16 v8, 0x10
 
@@ -299,85 +357,93 @@
 
     move-result v5
 
-    iget v7, v0, Lt3;->h:I
+    iget v7, v0, Lt3;->i:I
 
-    invoke-virtual {v1, v7, v2, v5}, Lyze;->g(I[BI)V
+    invoke-virtual {v1, v7, v2, v5}, Lpna;->e(I[BI)V
 
-    iget v2, v0, Lt3;->h:I
+    iget v2, v0, Lt3;->i:I
 
     add-int/2addr v2, v5
 
-    iput v2, v0, Lt3;->h:I
+    iput v2, v0, Lt3;->i:I
 
     if-ne v2, v8, :cond_0
 
-    iget-object v2, v0, Lt3;->b:Lwx1;
+    iget-object v2, v0, Lt3;->b:Lp02;
 
-    invoke-virtual {v2, v6}, Lwx1;->q(I)V
+    invoke-virtual {v2, v6}, Lp02;->q(I)V
 
-    invoke-static {v2}, Lct0;->B(Lwx1;)Lx3;
+    invoke-static {v2}, Liu0;->v(Lp02;)Lw3;
 
     move-result-object v2
 
-    iget-object v5, v0, Lt3;->k:Lvu5;
+    iget v5, v2, Lw3;->a:I
 
-    const-string v7, "audio/ac4"
+    iget-object v7, v0, Lt3;->l:Lfz5;
 
-    iget v9, v2, Lx3;->a:I
+    const-string v9, "audio/ac4"
 
-    if-eqz v5, :cond_4
+    if-eqz v7, :cond_4
 
-    iget v10, v5, Lvu5;->N0:I
+    iget v10, v7, Lfz5;->A:I
 
     if-ne v4, v10, :cond_4
 
-    iget v10, v5, Lvu5;->O0:I
+    iget v10, v7, Lfz5;->B:I
 
-    if-ne v9, v10, :cond_4
+    if-ne v5, v10, :cond_4
 
-    iget-object v5, v5, Lvu5;->A0:Ljava/lang/String;
+    iget-object v7, v7, Lfz5;->m:Ljava/lang/String;
 
-    invoke-virtual {v7, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v7
 
-    if-nez v5, :cond_5
+    if-nez v7, :cond_5
 
     :cond_4
-    new-instance v5, Ltu5;
+    new-instance v7, Lcz5;
 
-    invoke-direct {v5}, Ltu5;-><init>()V
+    invoke-direct {v7}, Lcz5;-><init>()V
 
-    iget-object v10, v0, Lt3;->e:Ljava/lang/String;
+    iget-object v10, v0, Lt3;->f:Ljava/lang/String;
 
-    iput-object v10, v5, Ltu5;->a:Ljava/lang/String;
+    iput-object v10, v7, Lcz5;->a:Ljava/lang/String;
 
-    iput-object v7, v5, Ltu5;->k:Ljava/lang/String;
+    invoke-static {v9}, La99;->l(Ljava/lang/String;)Ljava/lang/String;
 
-    iput v4, v5, Ltu5;->x:I
+    move-result-object v9
 
-    iput v9, v5, Ltu5;->y:I
+    iput-object v9, v7, Lcz5;->l:Ljava/lang/String;
 
-    iget-object v7, v0, Lt3;->d:Ljava/lang/String;
+    iput v4, v7, Lcz5;->z:I
 
-    iput-object v7, v5, Ltu5;->c:Ljava/lang/String;
+    iput v5, v7, Lcz5;->A:I
 
-    new-instance v7, Lvu5;
+    iget-object v5, v0, Lt3;->d:Ljava/lang/String;
 
-    invoke-direct {v7, v5}, Lvu5;-><init>(Ltu5;)V
+    iput-object v5, v7, Lcz5;->d:Ljava/lang/String;
 
-    iput-object v7, v0, Lt3;->k:Lvu5;
+    iget v5, v0, Lt3;->e:I
 
-    iget-object v5, v0, Lt3;->f:Lape;
+    iput v5, v7, Lcz5;->f:I
 
-    invoke-interface {v5, v7}, Lape;->d(Lvu5;)V
+    new-instance v5, Lfz5;
+
+    invoke-direct {v5, v7}, Lfz5;-><init>(Lcz5;)V
+
+    iput-object v5, v0, Lt3;->l:Lfz5;
+
+    iget-object v7, v0, Lt3;->g:Lbye;
+
+    invoke-interface {v7, v5}, Lbye;->d(Lfz5;)V
 
     :cond_5
-    iget v5, v2, Lx3;->b:I
+    iget v5, v2, Lw3;->b:I
 
-    iput v5, v0, Lt3;->l:I
+    iput v5, v0, Lt3;->m:I
 
-    iget v2, v2, Lx3;->c:I
+    iget v2, v2, Lw3;->c:I
 
     int-to-long v9, v2
 
@@ -385,41 +451,41 @@
 
     mul-long/2addr v9, v11
 
-    iget-object v2, v0, Lt3;->k:Lvu5;
+    iget-object v2, v0, Lt3;->l:Lfz5;
 
-    iget v2, v2, Lvu5;->O0:I
+    iget v2, v2, Lfz5;->B:I
 
     int-to-long v11, v2
 
     div-long/2addr v9, v11
 
-    iput-wide v9, v0, Lt3;->j:J
+    iput-wide v9, v0, Lt3;->k:J
 
-    invoke-virtual {v3, v6}, Lyze;->H(I)V
+    invoke-virtual {v3, v6}, Lpna;->G(I)V
 
-    iget-object v2, v0, Lt3;->f:Lape;
+    iget-object v2, v0, Lt3;->g:Lbye;
 
-    invoke-interface {v2, v8, v3}, Lape;->c(ILyze;)V
+    invoke-interface {v2, v3, v8, v6}, Lbye;->b(Lpna;II)V
 
-    iput v4, v0, Lt3;->g:I
+    iput v4, v0, Lt3;->h:I
 
     goto/16 :goto_0
 
     :cond_6
-    :goto_1
-    invoke-virtual/range {p1 .. p1}, Lyze;->c()I
+    :goto_2
+    invoke-virtual {v1}, Lpna;->a()I
 
     move-result v2
 
     if-lez v2, :cond_0
 
-    iget-boolean v2, v0, Lt3;->i:Z
+    iget-boolean v2, v0, Lt3;->j:Z
 
     const/16 v7, 0xac
 
     if-nez v2, :cond_8
 
-    invoke-virtual/range {p1 .. p1}, Lyze;->v()I
+    invoke-virtual {v1}, Lpna;->u()I
 
     move-result v2
 
@@ -427,18 +493,18 @@
 
     move v2, v5
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_7
     move v2, v6
 
-    :goto_2
-    iput-boolean v2, v0, Lt3;->i:Z
+    :goto_3
+    iput-boolean v2, v0, Lt3;->j:Z
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_8
-    invoke-virtual/range {p1 .. p1}, Lyze;->v()I
+    invoke-virtual {v1}, Lpna;->u()I
 
     move-result v2
 
@@ -446,36 +512,36 @@
 
     move v7, v5
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_9
     move v7, v6
 
-    :goto_3
-    iput-boolean v7, v0, Lt3;->i:Z
+    :goto_4
+    iput-boolean v7, v0, Lt3;->j:Z
 
-    const/16 v7, 0x41
+    const/16 v7, 0x40
 
-    const/16 v8, 0x40
+    const/16 v8, 0x41
 
-    if-eq v2, v8, :cond_a
+    if-eq v2, v7, :cond_a
 
-    if-ne v2, v7, :cond_6
+    if-ne v2, v8, :cond_6
 
     :cond_a
-    if-ne v2, v7, :cond_b
+    if-ne v2, v8, :cond_b
 
     move v2, v5
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_b
     move v2, v6
 
-    :goto_4
-    iput v5, v0, Lt3;->g:I
+    :goto_5
+    iput v5, v0, Lt3;->h:I
 
-    iget-object v3, v3, Lyze;->a:[B
+    iget-object v3, v3, Lpna;->a:[B
 
     const/16 v9, -0x54
 
@@ -483,17 +549,14 @@
 
     if-eqz v2, :cond_c
 
-    goto :goto_5
-
-    :cond_c
     move v7, v8
 
-    :goto_5
+    :cond_c
     int-to-byte v2, v7
 
     aput-byte v2, v3, v5
 
-    iput v4, v0, Lt3;->h:I
+    iput v4, v0, Lt3;->i:I
 
     goto/16 :goto_0
 
@@ -501,46 +564,46 @@
     return-void
 
     :pswitch_0
-    iget-object v2, v0, Lt3;->f:Lape;
+    iget-object v2, v0, Lt3;->g:Lbye;
 
-    invoke-static {v2}, Lswb;->i(Ljava/lang/Object;)V
+    invoke-static {v2}, Lu27;->k(Ljava/lang/Object;)V
 
     :cond_e
     :goto_6
-    invoke-virtual/range {p1 .. p1}, Lyze;->c()I
+    invoke-virtual {v1}, Lpna;->a()I
 
     move-result v2
 
-    if-lez v2, :cond_4b
+    if-lez v2, :cond_4c
 
-    iget v2, v0, Lt3;->g:I
+    iget v2, v0, Lt3;->h:I
 
-    const/4 v3, 0x1
+    const/16 v3, 0xb
 
-    const/16 v4, 0xb
+    iget-object v4, v0, Lt3;->c:Lpna;
 
-    iget-object v5, v0, Lt3;->c:Lyze;
+    const/4 v5, 0x2
 
-    const/4 v6, 0x2
+    const/4 v6, 0x1
 
     const/4 v7, 0x0
 
-    if-eqz v2, :cond_46
+    if-eqz v2, :cond_47
 
-    if-eq v2, v3, :cond_11
+    if-eq v2, v6, :cond_11
 
-    if-eq v2, v6, :cond_f
+    if-eq v2, v5, :cond_f
 
     goto :goto_6
 
     :cond_f
-    invoke-virtual/range {p1 .. p1}, Lyze;->c()I
+    invoke-virtual {v1}, Lpna;->a()I
 
     move-result v2
 
-    iget v3, v0, Lt3;->l:I
+    iget v3, v0, Lt3;->m:I
 
-    iget v4, v0, Lt3;->h:I
+    iget v4, v0, Lt3;->i:I
 
     sub-int/2addr v3, v4
 
@@ -548,59 +611,70 @@
 
     move-result v2
 
-    iget-object v3, v0, Lt3;->f:Lape;
+    iget-object v3, v0, Lt3;->g:Lbye;
 
-    invoke-interface {v3, v2, v1}, Lape;->c(ILyze;)V
+    invoke-interface {v3, v1, v2, v7}, Lbye;->b(Lpna;II)V
 
-    iget v3, v0, Lt3;->h:I
+    iget v3, v0, Lt3;->i:I
 
     add-int/2addr v3, v2
 
-    iput v3, v0, Lt3;->h:I
+    iput v3, v0, Lt3;->i:I
 
-    iget v12, v0, Lt3;->l:I
+    iget v2, v0, Lt3;->m:I
 
-    if-ne v3, v12, :cond_e
+    if-ne v3, v2, :cond_e
 
-    iget-wide v9, v0, Lt3;->m:J
+    iget-wide v2, v0, Lt3;->n:J
 
-    const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
+    const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
 
-    cmp-long v2, v9, v2
+    cmp-long v2, v2, v4
 
     if-eqz v2, :cond_10
 
-    iget-object v8, v0, Lt3;->f:Lape;
+    goto :goto_7
+
+    :cond_10
+    move v6, v7
+
+    :goto_7
+    invoke-static {v6}, Lu27;->j(Z)V
+
+    iget-object v8, v0, Lt3;->g:Lbye;
+
+    iget-wide v9, v0, Lt3;->n:J
+
+    iget v12, v0, Lt3;->m:I
+
+    const/4 v13, 0x0
 
     const/4 v14, 0x0
 
     const/4 v11, 0x1
 
-    const/4 v13, 0x0
+    invoke-interface/range {v8 .. v14}, Lbye;->a(JIIILzxe;)V
 
-    invoke-interface/range {v8 .. v14}, Lape;->b(JIIILyoe;)V
+    iget-wide v2, v0, Lt3;->n:J
 
-    iget-wide v2, v0, Lt3;->m:J
-
-    iget-wide v4, v0, Lt3;->j:J
+    iget-wide v4, v0, Lt3;->k:J
 
     add-long/2addr v2, v4
 
-    iput-wide v2, v0, Lt3;->m:J
+    iput-wide v2, v0, Lt3;->n:J
 
-    :cond_10
-    iput v7, v0, Lt3;->g:I
+    iput v7, v0, Lt3;->h:I
 
     goto :goto_6
 
     :cond_11
-    iget-object v2, v5, Lyze;->a:[B
+    iget-object v2, v4, Lpna;->a:[B
 
-    invoke-virtual/range {p1 .. p1}, Lyze;->c()I
+    invoke-virtual {v1}, Lpna;->a()I
 
     move-result v8
 
-    iget v9, v0, Lt3;->h:I
+    iget v9, v0, Lt3;->i:I
 
     const/16 v10, 0x80
 
@@ -610,921 +684,979 @@
 
     move-result v8
 
-    iget v9, v0, Lt3;->h:I
+    iget v9, v0, Lt3;->i:I
 
-    invoke-virtual {v1, v9, v2, v8}, Lyze;->g(I[BI)V
+    invoke-virtual {v1, v9, v2, v8}, Lpna;->e(I[BI)V
 
-    iget v2, v0, Lt3;->h:I
+    iget v2, v0, Lt3;->i:I
 
     add-int/2addr v2, v8
 
-    iput v2, v0, Lt3;->h:I
+    iput v2, v0, Lt3;->i:I
 
     if-ne v2, v10, :cond_e
 
-    iget-object v2, v0, Lt3;->b:Lwx1;
+    iget-object v2, v0, Lt3;->b:Lp02;
 
-    invoke-virtual {v2, v7}, Lwx1;->q(I)V
+    invoke-virtual {v2, v7}, Lp02;->q(I)V
 
-    invoke-virtual {v2}, Lwx1;->g()I
+    sget-object v8, Lgr0;->d:[I
 
-    move-result v8
+    sget-object v9, Lgr0;->b:[I
 
-    const/16 v9, 0x28
-
-    invoke-virtual {v2, v9}, Lwx1;->t(I)V
-
-    const/4 v9, 0x5
-
-    invoke-virtual {v2, v9}, Lwx1;->i(I)I
+    invoke-virtual {v2}, Lp02;->g()I
 
     move-result v11
 
-    const/16 v12, 0xa
+    const/16 v12, 0x28
 
-    if-le v11, v12, :cond_12
+    invoke-virtual {v2, v12}, Lp02;->t(I)V
 
-    move v11, v3
+    const/4 v12, 0x5
 
-    goto :goto_7
+    invoke-virtual {v2, v12}, Lp02;->i(I)I
+
+    move-result v13
+
+    const/16 v14, 0xa
+
+    if-le v13, v14, :cond_12
+
+    move v13, v6
+
+    goto :goto_8
 
     :cond_12
-    move v11, v7
+    move v13, v7
 
-    :goto_7
-    invoke-virtual {v2, v8}, Lwx1;->q(I)V
+    :goto_8
+    invoke-virtual {v2, v11}, Lp02;->q(I)V
 
-    sget-object v8, Lgp0;->d:[I
-
-    sget-object v13, Lgp0;->b:[I
+    const-string v11, "audio/ac3"
 
     const/16 v15, 0x8
 
-    const/4 v10, 0x3
+    const/4 v7, 0x3
 
-    if-eqz v11, :cond_3e
+    if-eqz v13, :cond_3e
 
-    const/16 v11, 0x10
+    const/16 v13, 0x10
 
-    invoke-virtual {v2, v11}, Lwx1;->t(I)V
+    invoke-virtual {v2, v13}, Lp02;->t(I)V
 
-    invoke-virtual {v2, v6}, Lwx1;->i(I)I
+    invoke-virtual {v2, v5}, Lp02;->i(I)I
 
-    move-result v7
+    move-result v10
 
-    if-eqz v7, :cond_15
+    if-eqz v10, :cond_15
 
-    if-eq v7, v3, :cond_14
+    if-eq v10, v6, :cond_14
 
-    if-eq v7, v6, :cond_13
+    if-eq v10, v5, :cond_13
 
-    const/4 v7, -0x1
-
-    goto :goto_8
-
-    :cond_13
-    move v7, v6
-
-    goto :goto_8
-
-    :cond_14
-    move v7, v3
-
-    goto :goto_8
-
-    :cond_15
-    const/4 v7, 0x0
-
-    :goto_8
-    invoke-virtual {v2, v10}, Lwx1;->t(I)V
-
-    invoke-virtual {v2, v4}, Lwx1;->i(I)I
-
-    move-result v4
-
-    add-int/2addr v4, v3
-
-    mul-int/2addr v4, v6
-
-    invoke-virtual {v2, v6}, Lwx1;->i(I)I
-
-    move-result v14
-
-    if-ne v14, v10, :cond_16
-
-    sget-object v13, Lgp0;->c:[I
-
-    invoke-virtual {v2, v6}, Lwx1;->i(I)I
-
-    move-result v16
-
-    aget v13, v13, v16
-
-    move/from16 v19, v10
-
-    const/4 v6, 0x6
+    const/4 v10, -0x1
 
     goto :goto_9
 
-    :cond_16
-    invoke-virtual {v2, v6}, Lwx1;->i(I)I
+    :cond_13
+    move v10, v5
 
-    move-result v16
+    goto :goto_9
 
-    sget-object v18, Lgp0;->a:[I
+    :cond_14
+    move v10, v6
 
-    aget v18, v18, v16
+    goto :goto_9
 
-    aget v13, v13, v14
-
-    move/from16 v19, v16
-
-    move/from16 v6, v18
+    :cond_15
+    const/4 v10, 0x0
 
     :goto_9
-    mul-int/lit16 v11, v6, 0x100
+    invoke-virtual {v2, v7}, Lp02;->t(I)V
 
-    invoke-virtual {v2, v10}, Lwx1;->i(I)I
+    invoke-virtual {v2, v3}, Lp02;->i(I)I
 
     move-result v3
 
-    invoke-virtual {v2}, Lwx1;->h()Z
+    add-int/2addr v3, v6
+
+    mul-int/2addr v3, v5
+
+    invoke-virtual {v2, v5}, Lp02;->i(I)I
+
+    move-result v13
+
+    if-ne v13, v7, :cond_16
+
+    sget-object v9, Lgr0;->c:[I
+
+    invoke-virtual {v2, v5}, Lp02;->i(I)I
 
     move-result v16
 
-    aget v8, v8, v3
+    aget v9, v9, v16
 
-    add-int v8, v8, v16
+    move/from16 v19, v7
 
-    invoke-virtual {v2, v12}, Lwx1;->t(I)V
-
-    invoke-virtual {v2}, Lwx1;->h()Z
-
-    move-result v12
-
-    if-eqz v12, :cond_17
-
-    invoke-virtual {v2, v15}, Lwx1;->t(I)V
-
-    :cond_17
-    if-nez v3, :cond_18
-
-    invoke-virtual {v2, v9}, Lwx1;->t(I)V
-
-    invoke-virtual {v2}, Lwx1;->h()Z
-
-    move-result v12
-
-    if-eqz v12, :cond_18
-
-    invoke-virtual {v2, v15}, Lwx1;->t(I)V
-
-    :cond_18
-    const/4 v12, 0x1
-
-    if-ne v7, v12, :cond_19
-
-    invoke-virtual {v2}, Lwx1;->h()Z
-
-    move-result v12
-
-    if-eqz v12, :cond_19
-
-    const/16 v12, 0x10
-
-    invoke-virtual {v2, v12}, Lwx1;->t(I)V
-
-    :cond_19
-    invoke-virtual {v2}, Lwx1;->h()Z
-
-    move-result v12
-
-    if-eqz v12, :cond_32
-
-    const/4 v12, 0x2
-
-    if-le v3, v12, :cond_1a
-
-    invoke-virtual {v2, v12}, Lwx1;->t(I)V
-
-    :cond_1a
-    and-int/lit8 v18, v3, 0x1
-
-    if-eqz v18, :cond_1b
-
-    if-le v3, v12, :cond_1b
-
-    const/4 v12, 0x6
-
-    invoke-virtual {v2, v12}, Lwx1;->t(I)V
+    const/4 v5, 0x6
 
     goto :goto_a
 
-    :cond_1b
-    const/4 v12, 0x6
+    :cond_16
+    invoke-virtual {v2, v5}, Lp02;->i(I)I
+
+    move-result v16
+
+    sget-object v18, Lgr0;->a:[I
+
+    aget v18, v18, v16
+
+    aget v9, v9, v13
+
+    move/from16 v19, v16
+
+    move/from16 v5, v18
 
     :goto_a
-    and-int/lit8 v17, v3, 0x4
+    mul-int/lit16 v6, v5, 0x100
 
-    if-eqz v17, :cond_1c
+    mul-int v16, v3, v9
 
-    invoke-virtual {v2, v12}, Lwx1;->t(I)V
+    mul-int/lit8 v20, v5, 0x20
 
-    :cond_1c
-    if-eqz v16, :cond_1d
+    div-int v16, v16, v20
 
-    invoke-virtual {v2}, Lwx1;->h()Z
-
-    move-result v12
-
-    if-eqz v12, :cond_1d
-
-    invoke-virtual {v2, v9}, Lwx1;->t(I)V
-
-    :cond_1d
-    if-nez v7, :cond_32
-
-    invoke-virtual {v2}, Lwx1;->h()Z
+    invoke-virtual {v2, v7}, Lp02;->i(I)I
 
     move-result v12
 
-    if-eqz v12, :cond_1e
+    invoke-virtual {v2}, Lp02;->h()Z
 
-    const/4 v12, 0x6
+    move-result v21
 
-    invoke-virtual {v2, v12}, Lwx1;->t(I)V
+    aget v8, v8, v12
+
+    add-int v8, v8, v21
+
+    invoke-virtual {v2, v14}, Lp02;->t(I)V
+
+    invoke-virtual {v2}, Lp02;->h()Z
+
+    move-result v14
+
+    if-eqz v14, :cond_17
+
+    invoke-virtual {v2, v15}, Lp02;->t(I)V
+
+    :cond_17
+    if-nez v12, :cond_18
+
+    const/4 v14, 0x5
+
+    invoke-virtual {v2, v14}, Lp02;->t(I)V
+
+    invoke-virtual {v2}, Lp02;->h()Z
+
+    move-result v14
+
+    if-eqz v14, :cond_18
+
+    invoke-virtual {v2, v15}, Lp02;->t(I)V
+
+    :cond_18
+    const/4 v14, 0x1
+
+    if-ne v10, v14, :cond_19
+
+    invoke-virtual {v2}, Lp02;->h()Z
+
+    move-result v14
+
+    if-eqz v14, :cond_19
+
+    const/16 v14, 0x10
+
+    invoke-virtual {v2, v14}, Lp02;->t(I)V
+
+    :cond_19
+    invoke-virtual {v2}, Lp02;->h()Z
+
+    move-result v14
+
+    if-eqz v14, :cond_32
+
+    const/4 v14, 0x2
+
+    if-le v12, v14, :cond_1a
+
+    invoke-virtual {v2, v14}, Lp02;->t(I)V
+
+    :cond_1a
+    and-int/lit8 v18, v12, 0x1
+
+    if-eqz v18, :cond_1b
+
+    if-le v12, v14, :cond_1b
+
+    const/4 v14, 0x6
+
+    invoke-virtual {v2, v14}, Lp02;->t(I)V
 
     goto :goto_b
 
-    :cond_1e
-    const/4 v12, 0x6
+    :cond_1b
+    const/4 v14, 0x6
 
     :goto_b
-    if-nez v3, :cond_1f
+    and-int/lit8 v17, v12, 0x4
 
-    invoke-virtual {v2}, Lwx1;->h()Z
+    if-eqz v17, :cond_1c
 
-    move-result v16
+    invoke-virtual {v2, v14}, Lp02;->t(I)V
 
-    if-eqz v16, :cond_1f
+    :cond_1c
+    if-eqz v21, :cond_1d
 
-    invoke-virtual {v2, v12}, Lwx1;->t(I)V
+    invoke-virtual {v2}, Lp02;->h()Z
+
+    move-result v14
+
+    if-eqz v14, :cond_1d
+
+    const/4 v14, 0x5
+
+    invoke-virtual {v2, v14}, Lp02;->t(I)V
+
+    :cond_1d
+    if-nez v10, :cond_32
+
+    invoke-virtual {v2}, Lp02;->h()Z
+
+    move-result v14
+
+    if-eqz v14, :cond_1e
+
+    const/4 v14, 0x6
+
+    invoke-virtual {v2, v14}, Lp02;->t(I)V
+
+    goto :goto_c
+
+    :cond_1e
+    const/4 v14, 0x6
+
+    :goto_c
+    if-nez v12, :cond_1f
+
+    invoke-virtual {v2}, Lp02;->h()Z
+
+    move-result v17
+
+    if-eqz v17, :cond_1f
+
+    invoke-virtual {v2, v14}, Lp02;->t(I)V
 
     :cond_1f
-    invoke-virtual {v2}, Lwx1;->h()Z
+    invoke-virtual {v2}, Lp02;->h()Z
 
-    move-result v16
+    move-result v17
 
-    if-eqz v16, :cond_20
+    if-eqz v17, :cond_20
 
-    invoke-virtual {v2, v12}, Lwx1;->t(I)V
+    invoke-virtual {v2, v14}, Lp02;->t(I)V
 
     :cond_20
-    const/4 v12, 0x2
+    const/4 v14, 0x2
 
-    invoke-virtual {v2, v12}, Lwx1;->i(I)I
+    invoke-virtual {v2, v14}, Lp02;->i(I)I
 
     move-result v15
 
-    const/4 v10, 0x1
+    const/4 v7, 0x1
 
-    if-ne v15, v10, :cond_21
+    if-ne v15, v7, :cond_21
 
-    invoke-virtual {v2, v9}, Lwx1;->t(I)V
+    const/4 v7, 0x5
 
-    move v15, v12
+    invoke-virtual {v2, v7}, Lp02;->t(I)V
 
-    goto/16 :goto_f
+    move v15, v14
+
+    goto/16 :goto_10
 
     :cond_21
-    if-ne v15, v12, :cond_23
+    const/4 v7, 0x5
 
-    const/16 v10, 0xc
+    if-ne v15, v14, :cond_23
 
-    invoke-virtual {v2, v10}, Lwx1;->t(I)V
+    const/16 v14, 0xc
+
+    invoke-virtual {v2, v14}, Lp02;->t(I)V
 
     :cond_22
     const/4 v15, 0x2
 
-    goto/16 :goto_f
+    goto/16 :goto_10
 
     :cond_23
-    const/4 v10, 0x3
+    const/4 v14, 0x3
 
-    if-ne v15, v10, :cond_22
+    if-ne v15, v14, :cond_22
 
-    invoke-virtual {v2, v9}, Lwx1;->i(I)I
+    invoke-virtual {v2, v7}, Lp02;->i(I)I
 
-    move-result v10
+    move-result v14
 
-    invoke-virtual {v2}, Lwx1;->h()Z
+    invoke-virtual {v2}, Lp02;->h()Z
 
-    move-result v12
+    move-result v15
 
-    if-eqz v12, :cond_2c
+    if-eqz v15, :cond_2c
 
-    invoke-virtual {v2, v9}, Lwx1;->t(I)V
+    invoke-virtual {v2, v7}, Lp02;->t(I)V
 
-    invoke-virtual {v2}, Lwx1;->h()Z
+    invoke-virtual {v2}, Lp02;->h()Z
 
-    move-result v12
+    move-result v7
 
-    if-eqz v12, :cond_24
+    if-eqz v7, :cond_24
 
-    const/4 v12, 0x4
+    const/4 v7, 0x4
 
-    invoke-virtual {v2, v12}, Lwx1;->t(I)V
+    invoke-virtual {v2, v7}, Lp02;->t(I)V
 
-    goto :goto_c
+    goto :goto_d
 
     :cond_24
-    const/4 v12, 0x4
+    const/4 v7, 0x4
 
-    :goto_c
-    invoke-virtual {v2}, Lwx1;->h()Z
+    :goto_d
+    invoke-virtual {v2}, Lp02;->h()Z
 
     move-result v15
 
     if-eqz v15, :cond_25
 
-    invoke-virtual {v2, v12}, Lwx1;->t(I)V
+    invoke-virtual {v2, v7}, Lp02;->t(I)V
 
     :cond_25
-    invoke-virtual {v2}, Lwx1;->h()Z
+    invoke-virtual {v2}, Lp02;->h()Z
 
     move-result v15
 
     if-eqz v15, :cond_26
 
-    invoke-virtual {v2, v12}, Lwx1;->t(I)V
+    invoke-virtual {v2, v7}, Lp02;->t(I)V
 
     :cond_26
-    invoke-virtual {v2}, Lwx1;->h()Z
+    invoke-virtual {v2}, Lp02;->h()Z
 
     move-result v15
 
     if-eqz v15, :cond_27
 
-    invoke-virtual {v2, v12}, Lwx1;->t(I)V
+    invoke-virtual {v2, v7}, Lp02;->t(I)V
 
     :cond_27
-    invoke-virtual {v2}, Lwx1;->h()Z
+    invoke-virtual {v2}, Lp02;->h()Z
 
     move-result v15
 
     if-eqz v15, :cond_28
 
-    invoke-virtual {v2, v12}, Lwx1;->t(I)V
+    invoke-virtual {v2, v7}, Lp02;->t(I)V
 
     :cond_28
-    invoke-virtual {v2}, Lwx1;->h()Z
+    invoke-virtual {v2}, Lp02;->h()Z
 
     move-result v15
 
     if-eqz v15, :cond_29
 
-    invoke-virtual {v2, v12}, Lwx1;->t(I)V
+    invoke-virtual {v2, v7}, Lp02;->t(I)V
 
     :cond_29
-    invoke-virtual {v2}, Lwx1;->h()Z
+    invoke-virtual {v2}, Lp02;->h()Z
 
     move-result v15
 
     if-eqz v15, :cond_2a
 
-    invoke-virtual {v2, v12}, Lwx1;->t(I)V
+    invoke-virtual {v2, v7}, Lp02;->t(I)V
 
     :cond_2a
-    invoke-virtual {v2}, Lwx1;->h()Z
+    invoke-virtual {v2}, Lp02;->h()Z
 
     move-result v15
 
     if-eqz v15, :cond_2c
 
-    invoke-virtual {v2}, Lwx1;->h()Z
+    invoke-virtual {v2}, Lp02;->h()Z
 
     move-result v15
 
     if-eqz v15, :cond_2b
 
-    invoke-virtual {v2, v12}, Lwx1;->t(I)V
+    invoke-virtual {v2, v7}, Lp02;->t(I)V
 
     :cond_2b
-    invoke-virtual {v2}, Lwx1;->h()Z
+    invoke-virtual {v2}, Lp02;->h()Z
 
     move-result v15
 
     if-eqz v15, :cond_2c
 
-    invoke-virtual {v2, v12}, Lwx1;->t(I)V
+    invoke-virtual {v2, v7}, Lp02;->t(I)V
 
     :cond_2c
-    invoke-virtual {v2}, Lwx1;->h()Z
+    invoke-virtual {v2}, Lp02;->h()Z
 
-    move-result v12
+    move-result v7
 
-    if-eqz v12, :cond_2d
+    if-eqz v7, :cond_2d
 
-    invoke-virtual {v2, v9}, Lwx1;->t(I)V
+    const/4 v7, 0x5
 
-    invoke-virtual {v2}, Lwx1;->h()Z
+    invoke-virtual {v2, v7}, Lp02;->t(I)V
 
-    move-result v12
+    invoke-virtual {v2}, Lp02;->h()Z
 
-    if-eqz v12, :cond_2d
+    move-result v7
 
-    const/4 v12, 0x7
+    if-eqz v7, :cond_2d
 
-    invoke-virtual {v2, v12}, Lwx1;->t(I)V
+    const/4 v7, 0x7
 
-    invoke-virtual {v2}, Lwx1;->h()Z
+    invoke-virtual {v2, v7}, Lp02;->t(I)V
 
-    move-result v12
+    invoke-virtual {v2}, Lp02;->h()Z
 
-    if-eqz v12, :cond_2d
+    move-result v7
 
-    const/16 v12, 0x8
+    if-eqz v7, :cond_2d
 
-    invoke-virtual {v2, v12}, Lwx1;->t(I)V
+    const/16 v7, 0x8
 
-    :goto_d
+    invoke-virtual {v2, v7}, Lp02;->t(I)V
+
+    :goto_e
     const/4 v15, 0x2
+
+    goto :goto_f
+
+    :cond_2d
+    const/16 v7, 0x8
 
     goto :goto_e
 
-    :cond_2d
-    const/16 v12, 0x8
-
-    goto :goto_d
-
-    :goto_e
-    add-int/2addr v10, v15
-
-    mul-int/2addr v10, v12
-
-    invoke-virtual {v2, v10}, Lwx1;->t(I)V
-
-    invoke-virtual {v2}, Lwx1;->c()V
-
     :goto_f
-    if-ge v3, v15, :cond_2f
+    add-int/2addr v14, v15
 
-    invoke-virtual {v2}, Lwx1;->h()Z
+    mul-int/2addr v14, v7
 
-    move-result v10
+    invoke-virtual {v2, v14}, Lp02;->t(I)V
 
-    const/16 v12, 0xe
-
-    if-eqz v10, :cond_2e
-
-    invoke-virtual {v2, v12}, Lwx1;->t(I)V
-
-    :cond_2e
-    if-nez v3, :cond_2f
-
-    invoke-virtual {v2}, Lwx1;->h()Z
-
-    move-result v10
-
-    if-eqz v10, :cond_2f
-
-    invoke-virtual {v2, v12}, Lwx1;->t(I)V
-
-    :cond_2f
-    invoke-virtual {v2}, Lwx1;->h()Z
-
-    move-result v10
-
-    if-eqz v10, :cond_32
-
-    move/from16 v10, v19
-
-    if-nez v10, :cond_30
-
-    invoke-virtual {v2, v9}, Lwx1;->t(I)V
-
-    goto :goto_11
-
-    :cond_30
-    const/4 v12, 0x0
+    invoke-virtual {v2}, Lp02;->c()V
 
     :goto_10
-    if-ge v12, v6, :cond_33
+    if-ge v12, v15, :cond_2f
 
-    invoke-virtual {v2}, Lwx1;->h()Z
+    invoke-virtual {v2}, Lp02;->h()Z
 
-    move-result v15
+    move-result v7
 
-    if-eqz v15, :cond_31
+    const/16 v14, 0xe
 
-    invoke-virtual {v2, v9}, Lwx1;->t(I)V
+    if-eqz v7, :cond_2e
 
-    :cond_31
-    add-int/lit8 v12, v12, 0x1
+    invoke-virtual {v2, v14}, Lp02;->t(I)V
 
-    goto :goto_10
+    :cond_2e
+    if-nez v12, :cond_2f
 
-    :cond_32
-    move/from16 v10, v19
+    invoke-virtual {v2}, Lp02;->h()Z
 
-    :cond_33
-    :goto_11
-    invoke-virtual {v2}, Lwx1;->h()Z
+    move-result v7
 
-    move-result v6
+    if-eqz v7, :cond_2f
 
-    if-eqz v6, :cond_38
+    invoke-virtual {v2, v14}, Lp02;->t(I)V
 
-    invoke-virtual {v2, v9}, Lwx1;->t(I)V
+    :cond_2f
+    invoke-virtual {v2}, Lp02;->h()Z
 
-    const/4 v6, 0x2
+    move-result v7
 
-    if-ne v3, v6, :cond_34
+    if-eqz v7, :cond_32
 
-    const/4 v9, 0x4
+    move/from16 v7, v19
 
-    invoke-virtual {v2, v9}, Lwx1;->t(I)V
+    if-nez v7, :cond_30
 
-    :cond_34
-    const/4 v9, 0x6
+    const/4 v14, 0x5
 
-    if-lt v3, v9, :cond_35
-
-    invoke-virtual {v2, v6}, Lwx1;->t(I)V
-
-    :cond_35
-    invoke-virtual {v2}, Lwx1;->h()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_36
-
-    const/16 v6, 0x8
-
-    invoke-virtual {v2, v6}, Lwx1;->t(I)V
+    invoke-virtual {v2, v14}, Lp02;->t(I)V
 
     goto :goto_12
 
-    :cond_36
-    const/16 v6, 0x8
+    :cond_30
+    const/4 v15, 0x0
 
+    :goto_11
+    const/4 v14, 0x5
+
+    if-ge v15, v5, :cond_33
+
+    invoke-virtual {v2}, Lp02;->h()Z
+
+    move-result v19
+
+    if-eqz v19, :cond_31
+
+    invoke-virtual {v2, v14}, Lp02;->t(I)V
+
+    :cond_31
+    add-int/lit8 v15, v15, 0x1
+
+    goto :goto_11
+
+    :cond_32
+    move/from16 v7, v19
+
+    :cond_33
     :goto_12
-    if-nez v3, :cond_37
+    invoke-virtual {v2}, Lp02;->h()Z
 
-    invoke-virtual {v2}, Lwx1;->h()Z
+    move-result v5
 
-    move-result v3
+    if-eqz v5, :cond_38
 
-    if-eqz v3, :cond_37
+    const/4 v14, 0x5
 
-    invoke-virtual {v2, v6}, Lwx1;->t(I)V
+    invoke-virtual {v2, v14}, Lp02;->t(I)V
 
-    :cond_37
-    const/4 v3, 0x3
+    const/4 v14, 0x2
 
-    if-ge v14, v3, :cond_39
+    if-ne v12, v14, :cond_34
 
-    invoke-virtual {v2}, Lwx1;->s()V
+    const/4 v5, 0x4
+
+    invoke-virtual {v2, v5}, Lp02;->t(I)V
+
+    :cond_34
+    const/4 v5, 0x6
+
+    if-lt v12, v5, :cond_35
+
+    invoke-virtual {v2, v14}, Lp02;->t(I)V
+
+    :cond_35
+    invoke-virtual {v2}, Lp02;->h()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_36
+
+    const/16 v5, 0x8
+
+    invoke-virtual {v2, v5}, Lp02;->t(I)V
 
     goto :goto_13
 
-    :cond_38
-    const/4 v3, 0x3
+    :cond_36
+    const/16 v5, 0x8
 
-    :cond_39
     :goto_13
-    if-nez v7, :cond_3a
+    if-nez v12, :cond_37
 
-    if-eq v10, v3, :cond_3a
+    invoke-virtual {v2}, Lp02;->h()Z
 
-    invoke-virtual {v2}, Lwx1;->s()V
+    move-result v12
 
-    :cond_3a
-    const/4 v6, 0x2
+    if-eqz v12, :cond_37
 
-    if-ne v7, v6, :cond_3c
+    invoke-virtual {v2, v5}, Lp02;->t(I)V
 
-    if-eq v10, v3, :cond_3b
+    :cond_37
+    const/4 v14, 0x3
 
-    invoke-virtual {v2}, Lwx1;->h()Z
+    if-ge v13, v14, :cond_39
 
-    move-result v3
-
-    if-eqz v3, :cond_3c
-
-    :cond_3b
-    const/4 v3, 0x6
+    invoke-virtual {v2}, Lp02;->s()V
 
     goto :goto_14
 
-    :cond_3c
-    const/4 v3, 0x6
+    :cond_38
+    const/4 v14, 0x3
+
+    :cond_39
+    :goto_14
+    if-nez v10, :cond_3a
+
+    if-eq v7, v14, :cond_3a
+
+    invoke-virtual {v2}, Lp02;->s()V
+
+    :cond_3a
+    const/4 v15, 0x2
+
+    if-ne v10, v15, :cond_3c
+
+    if-eq v7, v14, :cond_3b
+
+    invoke-virtual {v2}, Lp02;->h()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_3c
+
+    :cond_3b
+    const/4 v14, 0x6
 
     goto :goto_15
 
-    :goto_14
-    invoke-virtual {v2, v3}, Lwx1;->t(I)V
+    :cond_3c
+    const/4 v14, 0x6
+
+    goto :goto_16
 
     :goto_15
-    invoke-virtual {v2}, Lwx1;->h()Z
+    invoke-virtual {v2, v14}, Lp02;->t(I)V
 
-    move-result v6
+    :goto_16
+    invoke-virtual {v2}, Lp02;->h()Z
 
-    if-eqz v6, :cond_3d
+    move-result v5
 
-    invoke-virtual {v2, v3}, Lwx1;->i(I)I
+    if-eqz v5, :cond_3d
 
-    move-result v3
+    invoke-virtual {v2, v14}, Lp02;->i(I)I
 
-    const/4 v6, 0x1
+    move-result v5
 
-    if-ne v3, v6, :cond_3d
+    const/4 v14, 0x1
 
-    const/16 v3, 0x8
+    if-ne v5, v14, :cond_3d
 
-    invoke-virtual {v2, v3}, Lwx1;->i(I)I
+    const/16 v5, 0x8
+
+    invoke-virtual {v2, v5}, Lp02;->i(I)I
 
     move-result v2
 
-    if-ne v2, v6, :cond_3d
+    if-ne v2, v14, :cond_3d
 
     const-string v2, "audio/eac3-joc"
 
-    goto :goto_1a
+    goto :goto_17
 
     :cond_3d
     const-string v2, "audio/eac3"
 
-    goto :goto_1a
+    :goto_17
+    move/from16 v7, v16
+
+    goto :goto_1c
 
     :cond_3e
     const/16 v3, 0x20
 
-    invoke-virtual {v2, v3}, Lwx1;->t(I)V
+    invoke-virtual {v2, v3}, Lp02;->t(I)V
 
-    const/4 v3, 0x2
+    const/4 v14, 0x2
 
-    invoke-virtual {v2, v3}, Lwx1;->i(I)I
-
-    move-result v4
-
-    const/4 v3, 0x3
-
-    if-ne v4, v3, :cond_3f
-
-    const/4 v6, 0x0
-
-    :goto_16
-    const/4 v7, 0x6
-
-    goto :goto_17
-
-    :cond_3f
-    const-string v6, "audio/ac3"
-
-    goto :goto_16
-
-    :goto_17
-    invoke-virtual {v2, v7}, Lwx1;->i(I)I
-
-    move-result v7
-
-    invoke-static {v4, v7}, Lgp0;->m(II)I
-
-    move-result v7
-
-    const/16 v9, 0x8
-
-    invoke-virtual {v2, v9}, Lwx1;->t(I)V
-
-    invoke-virtual {v2, v3}, Lwx1;->i(I)I
-
-    move-result v9
-
-    and-int/lit8 v3, v9, 0x1
-
-    if-eqz v3, :cond_40
-
-    const/4 v3, 0x1
-
-    if-eq v9, v3, :cond_40
-
-    const/4 v3, 0x2
-
-    invoke-virtual {v2, v3}, Lwx1;->t(I)V
-
-    goto :goto_18
-
-    :cond_40
-    const/4 v3, 0x2
-
-    :goto_18
-    and-int/lit8 v10, v9, 0x4
-
-    if-eqz v10, :cond_41
-
-    invoke-virtual {v2, v3}, Lwx1;->t(I)V
-
-    :cond_41
-    if-ne v9, v3, :cond_42
-
-    invoke-virtual {v2, v3}, Lwx1;->t(I)V
-
-    :cond_42
-    const/4 v3, 0x3
-
-    if-ge v4, v3, :cond_43
-
-    aget v14, v13, v4
-
-    goto :goto_19
-
-    :cond_43
-    const/4 v14, -0x1
-
-    :goto_19
-    invoke-virtual {v2}, Lwx1;->h()Z
-
-    move-result v2
-
-    aget v3, v8, v9
-
-    add-int v8, v3, v2
-
-    const/16 v11, 0x600
-
-    move-object v2, v6
-
-    move v4, v7
-
-    move v13, v14
-
-    :goto_1a
-    iget-object v3, v0, Lt3;->k:Lvu5;
-
-    if-eqz v3, :cond_44
-
-    iget v6, v3, Lvu5;->N0:I
-
-    if-ne v8, v6, :cond_44
-
-    iget v6, v3, Lvu5;->O0:I
-
-    if-ne v13, v6, :cond_44
-
-    iget-object v3, v3, Lvu5;->A0:Ljava/lang/String;
-
-    invoke-static {v2, v3}, Lmze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v2, v14}, Lp02;->i(I)I
 
     move-result v3
 
-    if-nez v3, :cond_45
+    const/4 v14, 0x3
+
+    if-ne v3, v14, :cond_3f
+
+    const/4 v5, 0x0
+
+    :goto_18
+    const/4 v14, 0x6
+
+    goto :goto_19
+
+    :cond_3f
+    move-object v5, v11
+
+    goto :goto_18
+
+    :goto_19
+    invoke-virtual {v2, v14}, Lp02;->i(I)I
+
+    move-result v6
+
+    sget-object v7, Lgr0;->e:[I
+
+    div-int/lit8 v10, v6, 0x2
+
+    aget v7, v7, v10
+
+    mul-int/lit16 v7, v7, 0x3e8
+
+    invoke-static {v3, v6}, Lgr0;->l(II)I
+
+    move-result v6
+
+    const/16 v10, 0x8
+
+    invoke-virtual {v2, v10}, Lp02;->t(I)V
+
+    const/4 v14, 0x3
+
+    invoke-virtual {v2, v14}, Lp02;->i(I)I
+
+    move-result v10
+
+    and-int/lit8 v12, v10, 0x1
+
+    if-eqz v12, :cond_40
+
+    const/4 v14, 0x1
+
+    if-eq v10, v14, :cond_40
+
+    const/4 v14, 0x2
+
+    invoke-virtual {v2, v14}, Lp02;->t(I)V
+
+    goto :goto_1a
+
+    :cond_40
+    const/4 v14, 0x2
+
+    :goto_1a
+    and-int/lit8 v12, v10, 0x4
+
+    if-eqz v12, :cond_41
+
+    invoke-virtual {v2, v14}, Lp02;->t(I)V
+
+    :cond_41
+    if-ne v10, v14, :cond_42
+
+    invoke-virtual {v2, v14}, Lp02;->t(I)V
+
+    :cond_42
+    const/4 v14, 0x3
+
+    if-ge v3, v14, :cond_43
+
+    aget v15, v9, v3
+
+    goto :goto_1b
+
+    :cond_43
+    const/4 v15, -0x1
+
+    :goto_1b
+    invoke-virtual {v2}, Lp02;->h()Z
+
+    move-result v2
+
+    aget v3, v8, v10
+
+    add-int v8, v3, v2
+
+    const/16 v2, 0x600
+
+    move v3, v6
+
+    move v9, v15
+
+    move v6, v2
+
+    move-object v2, v5
+
+    :goto_1c
+    iget-object v5, v0, Lt3;->l:Lfz5;
+
+    if-eqz v5, :cond_44
+
+    iget v10, v5, Lfz5;->A:I
+
+    if-ne v8, v10, :cond_44
+
+    iget v10, v5, Lfz5;->B:I
+
+    if-ne v9, v10, :cond_44
+
+    iget-object v5, v5, Lfz5;->m:Ljava/lang/String;
+
+    invoke-static {v2, v5}, Lpaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_46
 
     :cond_44
-    new-instance v3, Ltu5;
+    new-instance v5, Lcz5;
 
-    invoke-direct {v3}, Ltu5;-><init>()V
+    invoke-direct {v5}, Lcz5;-><init>()V
 
-    iget-object v6, v0, Lt3;->e:Ljava/lang/String;
+    iget-object v10, v0, Lt3;->f:Ljava/lang/String;
 
-    iput-object v6, v3, Ltu5;->a:Ljava/lang/String;
+    iput-object v10, v5, Lcz5;->a:Ljava/lang/String;
 
-    iput-object v2, v3, Ltu5;->k:Ljava/lang/String;
+    invoke-static {v2}, La99;->l(Ljava/lang/String;)Ljava/lang/String;
 
-    iput v8, v3, Ltu5;->x:I
+    move-result-object v10
 
-    iput v13, v3, Ltu5;->y:I
+    iput-object v10, v5, Lcz5;->l:Ljava/lang/String;
 
-    iget-object v2, v0, Lt3;->d:Ljava/lang/String;
+    iput v8, v5, Lcz5;->z:I
 
-    iput-object v2, v3, Ltu5;->c:Ljava/lang/String;
+    iput v9, v5, Lcz5;->A:I
 
-    new-instance v2, Lvu5;
+    iget-object v8, v0, Lt3;->d:Ljava/lang/String;
 
-    invoke-direct {v2, v3}, Lvu5;-><init>(Ltu5;)V
+    iput-object v8, v5, Lcz5;->d:Ljava/lang/String;
 
-    iput-object v2, v0, Lt3;->k:Lvu5;
+    iget v8, v0, Lt3;->e:I
 
-    iget-object v3, v0, Lt3;->f:Lape;
+    iput v8, v5, Lcz5;->f:I
 
-    invoke-interface {v3, v2}, Lape;->d(Lvu5;)V
+    iput v7, v5, Lcz5;->h:I
+
+    invoke-virtual {v11, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_45
+
+    iput v7, v5, Lcz5;->g:I
 
     :cond_45
-    iput v4, v0, Lt3;->l:I
+    new-instance v2, Lfz5;
+
+    invoke-direct {v2, v5}, Lfz5;-><init>(Lcz5;)V
+
+    iput-object v2, v0, Lt3;->l:Lfz5;
+
+    iget-object v5, v0, Lt3;->g:Lbye;
+
+    invoke-interface {v5, v2}, Lbye;->d(Lfz5;)V
+
+    :cond_46
+    iput v3, v0, Lt3;->m:I
 
     const-wide/32 v2, 0xf4240
 
-    int-to-long v6, v11
+    int-to-long v5, v6
 
-    mul-long/2addr v6, v2
+    mul-long/2addr v5, v2
 
-    iget-object v2, v0, Lt3;->k:Lvu5;
+    iget-object v2, v0, Lt3;->l:Lfz5;
 
-    iget v2, v2, Lvu5;->O0:I
+    iget v2, v2, Lfz5;->B:I
 
     int-to-long v2, v2
 
-    div-long/2addr v6, v2
+    div-long/2addr v5, v2
 
-    iput-wide v6, v0, Lt3;->j:J
+    iput-wide v5, v0, Lt3;->k:J
 
     const/4 v2, 0x0
 
-    invoke-virtual {v5, v2}, Lyze;->H(I)V
+    invoke-virtual {v4, v2}, Lpna;->G(I)V
 
-    iget-object v2, v0, Lt3;->f:Lape;
+    iget-object v3, v0, Lt3;->g:Lbye;
 
-    const/16 v3, 0x80
+    const/16 v5, 0x80
 
-    invoke-interface {v2, v3, v5}, Lape;->c(ILyze;)V
+    invoke-interface {v3, v4, v5, v2}, Lbye;->b(Lpna;II)V
 
-    const/4 v2, 0x2
+    const/4 v14, 0x2
 
-    iput v2, v0, Lt3;->g:I
+    iput v14, v0, Lt3;->h:I
 
     goto/16 :goto_6
 
-    :cond_46
-    :goto_1b
-    invoke-virtual/range {p1 .. p1}, Lyze;->c()I
+    :cond_47
+    :goto_1d
+    invoke-virtual {v1}, Lpna;->a()I
 
     move-result v2
 
     if-lez v2, :cond_e
 
-    iget-boolean v2, v0, Lt3;->i:Z
+    iget-boolean v2, v0, Lt3;->j:Z
 
-    if-nez v2, :cond_48
+    if-nez v2, :cond_49
 
-    invoke-virtual/range {p1 .. p1}, Lyze;->v()I
+    invoke-virtual {v1}, Lpna;->u()I
 
     move-result v2
 
-    if-ne v2, v4, :cond_47
+    if-ne v2, v3, :cond_48
 
-    const/4 v12, 0x1
+    const/4 v14, 0x1
 
-    goto :goto_1c
-
-    :cond_47
-    const/4 v12, 0x0
-
-    :goto_1c
-    iput-boolean v12, v0, Lt3;->i:Z
-
-    goto :goto_1b
+    goto :goto_1e
 
     :cond_48
-    invoke-virtual/range {p1 .. p1}, Lyze;->v()I
+    const/4 v14, 0x0
 
-    move-result v2
-
-    const/16 v3, 0x77
-
-    if-ne v2, v3, :cond_49
-
-    const/4 v12, 0x0
-
-    iput-boolean v12, v0, Lt3;->i:Z
-
-    const/4 v6, 0x1
-
-    iput v6, v0, Lt3;->g:I
-
-    iget-object v2, v5, Lyze;->a:[B
-
-    aput-byte v4, v2, v12
-
-    aput-byte v3, v2, v6
-
-    const/4 v3, 0x2
-
-    iput v3, v0, Lt3;->h:I
-
-    goto/16 :goto_6
-
-    :cond_49
-    const/4 v3, 0x2
-
-    const/4 v6, 0x1
-
-    const/4 v12, 0x0
-
-    if-ne v2, v4, :cond_4a
-
-    move v2, v6
+    :goto_1e
+    iput-boolean v14, v0, Lt3;->j:Z
 
     goto :goto_1d
 
+    :cond_49
+    invoke-virtual {v1}, Lpna;->u()I
+
+    move-result v2
+
+    const/16 v5, 0x77
+
+    if-ne v2, v5, :cond_4a
+
+    const/4 v14, 0x0
+
+    iput-boolean v14, v0, Lt3;->j:Z
+
+    const/4 v7, 0x1
+
+    iput v7, v0, Lt3;->h:I
+
+    iget-object v2, v4, Lpna;->a:[B
+
+    aput-byte v3, v2, v14
+
+    aput-byte v5, v2, v7
+
+    const/4 v15, 0x2
+
+    iput v15, v0, Lt3;->i:I
+
+    goto/16 :goto_6
+
     :cond_4a
-    move v2, v12
+    const/4 v7, 0x1
 
-    :goto_1d
-    iput-boolean v2, v0, Lt3;->i:Z
+    const/4 v14, 0x0
 
-    goto :goto_1b
+    const/4 v15, 0x2
+
+    if-ne v2, v3, :cond_4b
+
+    move v2, v7
+
+    goto :goto_1f
 
     :cond_4b
+    move v2, v14
+
+    :goto_1f
+    iput-boolean v2, v0, Lt3;->j:Z
+
+    goto :goto_1d
+
+    :cond_4c
     return-void
 
     :pswitch_data_0
@@ -1533,34 +1665,28 @@
     .end packed-switch
 .end method
 
-.method public final h(IJ)V
-    .locals 2
+.method public final g(Z)V
+    .locals 0
+
+    iget p0, p0, Lt3;->a:I
+
+    return-void
+.end method
+
+.method public final i(IJ)V
+    .locals 0
 
     iget p1, p0, Lt3;->a:I
 
     packed-switch p1, :pswitch_data_0
 
-    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
+    iput-wide p2, p0, Lt3;->n:J
 
-    cmp-long p1, p2, v0
-
-    if-eqz p1, :cond_0
-
-    iput-wide p2, p0, Lt3;->m:J
-
-    :cond_0
     return-void
 
     :pswitch_0
-    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
+    iput-wide p2, p0, Lt3;->n:J
 
-    cmp-long p1, p2, v0
-
-    if-eqz p1, :cond_1
-
-    iput-wide p2, p0, Lt3;->m:J
-
-    :cond_1
     return-void
 
     nop
@@ -1571,63 +1697,55 @@
     .end packed-switch
 .end method
 
-.method public final i()V
-    .locals 0
-
-    iget p0, p0, Lt3;->a:I
-
-    return-void
-.end method
-
-.method public final l(Lh75;Lpse;)V
+.method public final k(Laa5;Lk1f;)V
     .locals 1
 
     iget v0, p0, Lt3;->a:I
 
     packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p2}, Lpse;->a()V
+    invoke-virtual {p2}, Lk1f;->a()V
 
-    invoke-virtual {p2}, Lpse;->b()V
+    invoke-virtual {p2}, Lk1f;->b()V
 
-    iget-object v0, p2, Lpse;->f:Ljava/lang/String;
+    iget-object v0, p2, Lk1f;->f:Ljava/lang/String;
 
-    iput-object v0, p0, Lt3;->e:Ljava/lang/String;
+    iput-object v0, p0, Lt3;->f:Ljava/lang/String;
 
-    invoke-virtual {p2}, Lpse;->b()V
+    invoke-virtual {p2}, Lk1f;->b()V
 
-    iget p2, p2, Lpse;->e:I
+    iget p2, p2, Lk1f;->e:I
 
     const/4 v0, 0x1
 
-    invoke-interface {p1, p2, v0}, Lh75;->B(II)Lape;
+    invoke-interface {p1, p2, v0}, Laa5;->A(II)Lbye;
 
     move-result-object p1
 
-    iput-object p1, p0, Lt3;->f:Lape;
+    iput-object p1, p0, Lt3;->g:Lbye;
 
     return-void
 
     :pswitch_0
-    invoke-virtual {p2}, Lpse;->a()V
+    invoke-virtual {p2}, Lk1f;->a()V
 
-    invoke-virtual {p2}, Lpse;->b()V
+    invoke-virtual {p2}, Lk1f;->b()V
 
-    iget-object v0, p2, Lpse;->f:Ljava/lang/String;
+    iget-object v0, p2, Lk1f;->f:Ljava/lang/String;
 
-    iput-object v0, p0, Lt3;->e:Ljava/lang/String;
+    iput-object v0, p0, Lt3;->f:Ljava/lang/String;
 
-    invoke-virtual {p2}, Lpse;->b()V
+    invoke-virtual {p2}, Lk1f;->b()V
 
-    iget p2, p2, Lpse;->e:I
+    iget p2, p2, Lk1f;->e:I
 
     const/4 v0, 0x1
 
-    invoke-interface {p1, p2, v0}, Lh75;->B(II)Lape;
+    invoke-interface {p1, p2, v0}, Laa5;->A(II)Lbye;
 
     move-result-object p1
 
-    iput-object p1, p0, Lt3;->f:Lape;
+    iput-object p1, p0, Lt3;->g:Lbye;
 
     return-void
 

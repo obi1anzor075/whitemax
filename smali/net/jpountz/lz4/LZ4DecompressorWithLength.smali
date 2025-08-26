@@ -213,7 +213,7 @@
 
     invoke-static {p1, v0}, Lnet/jpountz/lz4/LZ4DecompressorWithLength;->getDecompressedLength(Ljava/nio/ByteBuffer;I)I
 
-    move-result v0
+    move-result v6
 
     .line 8
     iget-object v1, p0, Lnet/jpountz/lz4/LZ4DecompressorWithLength;->decompressor:Lnet/jpountz/lz4/LZ4FastDecompressor;
@@ -232,31 +232,29 @@
 
     move-object v4, p2
 
-    move v6, v0
-
     invoke-virtual/range {v1 .. v6}, Lnet/jpountz/lz4/LZ4FastDecompressor;->decompress(Ljava/nio/ByteBuffer;ILjava/nio/ByteBuffer;II)I
 
     move-result p0
 
     .line 9
-    invoke-virtual {p1}, Ljava/nio/Buffer;->position()I
+    invoke-virtual {v2}, Ljava/nio/Buffer;->position()I
 
-    move-result v1
+    move-result p1
 
-    add-int/lit8 v1, v1, 0x4
+    add-int/lit8 p1, p1, 0x4
 
-    add-int/2addr v1, p0
+    add-int/2addr p1, p0
 
-    invoke-virtual {p1, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v2, p1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     .line 10
-    invoke-virtual {p2}, Ljava/nio/Buffer;->position()I
+    invoke-virtual {v4}, Ljava/nio/Buffer;->position()I
 
     move-result p0
 
-    add-int/2addr p0, v0
+    add-int/2addr p0, v6
 
-    invoke-virtual {p2, p0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v4, p0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     return-void
 .end method

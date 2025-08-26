@@ -1,53 +1,87 @@
 .class public final Lji7;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public X:Ljava/lang/String;
+.field public final a:Lwjd;
 
-.field public Y:Lru/ok/tamtam/location/live/LiveLocationWorker;
-
-.field public synthetic Z:Ljava/lang/Object;
-
-.field public o:Lru/ok/tamtam/location/live/LiveLocationWorker;
-
-.field public final synthetic w0:Lru/ok/tamtam/location/live/LiveLocationWorker;
-
-.field public x0:I
+.field public final b:Lkotlinx/coroutines/internal/ContextScope;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/tamtam/location/live/LiveLocationWorker;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method public constructor <init>(Lvu0;Lrie;)V
+    .locals 2
 
-    iput-object p1, p0, Lji7;->w0:Lru/ok/tamtam/location/live/LiveLocationWorker;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    const/4 v0, 0x0
+
+    const/4 v1, 0x7
+
+    invoke-static {v0, v0, v1}, Lxjd;->b(III)Lwjd;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lji7;->a:Lwjd;
+
+    check-cast p2, Lo7a;
+
+    invoke-virtual {p2}, Lo7a;->c()Lxw7;
+
+    move-result-object p2
+
+    invoke-static {p2}, Lvk9;->a(Lhx3;)Lkotlinx/coroutines/internal/ContextScope;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lji7;->b:Lkotlinx/coroutines/internal/ContextScope;
+
+    invoke-virtual {p1, p0}, Lvu0;->d(Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final onEvent(Lgi7;)V
+    .locals 2
+    .annotation runtime Li9e;
+    .end annotation
 
-    iput-object p1, p0, Lji7;->Z:Ljava/lang/Object;
+    .line 1
+    new-instance v0, Lhi7;
 
-    iget p1, p0, Lji7;->x0:I
+    const/4 v1, 0x0
 
-    const/high16 v0, -0x80000000
+    invoke-direct {v0, p0, p1, v1}, Lhi7;-><init>(Lji7;Lgi7;Lkotlin/coroutines/Continuation;)V
 
-    or-int/2addr p1, v0
+    const/4 p1, 0x3
 
-    iput p1, p0, Lji7;->x0:I
+    iget-object p0, p0, Lji7;->b:Lkotlinx/coroutines/internal/ContextScope;
 
-    iget-object p1, p0, Lji7;->w0:Lru/ok/tamtam/location/live/LiveLocationWorker;
+    invoke-static {p0, v1, v1, v0, p1}, Lzo3;->E(Lox3;Lhx3;Lrx3;Ll66;I)Ldwd;
 
-    invoke-virtual {p1, p0}, Lru/ok/tamtam/location/live/LiveLocationWorker;->doWork(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    return-void
+.end method
 
-    move-result-object p0
+.method public final onEvent(Lji0;)V
+    .locals 2
+    .annotation runtime Li9e;
+    .end annotation
 
-    return-object p0
+    .line 2
+    new-instance v0, Lii7;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, p1, v1}, Lii7;-><init>(Lji7;Lji0;Lkotlin/coroutines/Continuation;)V
+
+    const/4 p1, 0x3
+
+    iget-object p0, p0, Lji7;->b:Lkotlinx/coroutines/internal/ContextScope;
+
+    invoke-static {p0, v1, v1, v0, p1}, Lzo3;->E(Lox3;Lhx3;Lrx3;Ll66;I)Ldwd;
+
+    return-void
 .end method

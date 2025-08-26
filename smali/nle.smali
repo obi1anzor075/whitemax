@@ -1,6 +1,3 @@
-.class public abstract Lnle;
-.super Ljava/lang/Object;
+.class public final Lnle;
+.super Lule;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/io/Serializable;

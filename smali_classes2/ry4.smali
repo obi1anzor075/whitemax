@@ -1,56 +1,50 @@
 .class public final Lry4;
-.super Lr6c;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Lny4;
+.field public final a:I
 
-.field public b:I
+.field public final b:I
 
-.field public c:Lqy4;
-
-.field public final synthetic d:Lone/me/sdk/lists/widgets/EndlessRecyclerView2;
+.field public final c:I
 
 
 # direct methods
-.method public constructor <init>(Lone/me/sdk/lists/widgets/EndlessRecyclerView2;Lny4;)V
-    .locals 0
+.method public constructor <init>(IIII)V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    and-int/lit8 v0, p4, 0x1
 
-    iput-object p1, p0, Lry4;->d:Lone/me/sdk/lists/widgets/EndlessRecyclerView2;
+    if-eqz v0, :cond_0
 
-    iput-object p2, p0, Lry4;->a:Lny4;
-
-    const/4 p1, 0x1
-
-    iput p1, p0, Lry4;->b:I
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final b(Landroidx/recyclerview/widget/RecyclerView;II)V
-    .locals 1
-
-    iget-object p1, p0, Lry4;->c:Lqy4;
-
-    iget-object v0, p0, Lry4;->d:Lone/me/sdk/lists/widgets/EndlessRecyclerView2;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {v0, p1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
+    const/high16 p1, -0x80000000
 
     :cond_0
-    new-instance p1, Lqy4;
+    and-int/lit8 v0, p4, 0x2
 
-    invoke-direct {p1, p0, p2, p3}, Lqy4;-><init>(Lry4;II)V
+    const/4 v1, -0x1
 
-    iput-object p1, p0, Lry4;->c:Lqy4;
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v0, p1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+    move p2, v1
+
+    :cond_1
+    and-int/lit8 p4, p4, 0x4
+
+    if-eqz p4, :cond_2
+
+    move p3, v1
+
+    :cond_2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lry4;->a:I
+
+    iput p2, p0, Lry4;->b:I
+
+    iput p3, p0, Lry4;->c:I
 
     return-void
 .end method

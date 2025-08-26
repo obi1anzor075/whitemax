@@ -1,49 +1,54 @@
 .class public final Lfm8;
-.super Lxg7;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ltl8;
+.implements Lb0a;
 
 
 # instance fields
-.field public P0:Ltl8;
+.field public final a:Lxm7;
+
+.field public final b:Lb0a;
+
+.field public c:I
 
 
-# virtual methods
-.method public final e(Lpl8;Lul8;)V
-    .locals 0
+# direct methods
+.method public constructor <init>(Lxm7;Lb0a;)V
+    .locals 1
 
-    iget-object p0, p0, Lfm8;->P0:Ltl8;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p0, :cond_0
+    const/4 v0, -0x1
 
-    invoke-interface {p0, p1, p2}, Ltl8;->e(Lpl8;Lul8;)V
+    iput v0, p0, Lfm8;->c:I
 
-    :cond_0
+    iput-object p1, p0, Lfm8;->a:Lxm7;
+
+    iput-object p2, p0, Lfm8;->b:Lb0a;
+
     return-void
 .end method
 
-.method public final p(Landroid/content/Context;Z)Lyo4;
-    .locals 1
 
-    new-instance v0, Lem8;
+# virtual methods
+.method public final a(Ljava/lang/Object;)V
+    .locals 2
 
-    invoke-direct {v0, p1, p2}, Lem8;-><init>(Landroid/content/Context;Z)V
+    iget v0, p0, Lfm8;->c:I
 
-    invoke-virtual {v0, p0}, Lem8;->setHoverListener(Ltl8;)V
+    iget-object v1, p0, Lfm8;->a:Lxm7;
 
-    return-object v0
-.end method
+    iget v1, v1, Lxm7;->g:I
 
-.method public final x(Lpl8;Lul8;)V
-    .locals 0
+    if-eq v0, v1, :cond_0
 
-    iget-object p0, p0, Lfm8;->P0:Ltl8;
+    iput v1, p0, Lfm8;->c:I
 
-    if-eqz p0, :cond_0
+    iget-object p0, p0, Lfm8;->b:Lb0a;
 
-    invoke-interface {p0, p1, p2}, Ltl8;->x(Lpl8;Lul8;)V
+    invoke-interface {p0, p1}, Lb0a;->a(Ljava/lang/Object;)V
 
     :cond_0
     return-void

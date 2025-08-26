@@ -19,13 +19,11 @@
 .end method
 
 .method public static createFrameAdaptationParameters(IIIIIIJZ)Lorg/webrtc/VideoProcessor$FrameAdaptationParameters;
-    .locals 11
+    .locals 10
     .annotation build Lorg/webrtc/CalledByNative;
     .end annotation
 
-    new-instance v10, Lorg/webrtc/VideoProcessor$FrameAdaptationParameters;
-
-    move-object v0, v10
+    new-instance v0, Lorg/webrtc/VideoProcessor$FrameAdaptationParameters;
 
     move v1, p0
 
@@ -37,7 +35,7 @@
 
     move v5, p4
 
-    move/from16 v6, p5
+    move v6, p5
 
     move-wide/from16 v7, p6
 
@@ -45,7 +43,7 @@
 
     invoke-direct/range {v0 .. v9}, Lorg/webrtc/VideoProcessor$FrameAdaptationParameters;-><init>(IIIIIIJZ)V
 
-    return-object v10
+    return-object v0
 .end method
 
 .method private static native nativeAdaptFrame(JIIIJ)Lorg/webrtc/VideoProcessor$FrameAdaptationParameters;

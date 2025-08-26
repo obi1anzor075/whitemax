@@ -1,381 +1,458 @@
 .class public final Lixa;
-.super Landroid/view/Surface;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lv79;
 
 
 # static fields
-.field public static X:Z
-
-.field public static o:I
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lixa;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public final a:Z
+.field public final X:I
 
-.field public final b:Lvp4;
+.field public final Y:I
 
-.field public c:Z
+.field public final Z:I
+
+.field public final a:I
+
+.field public final b:Ljava/lang/String;
+
+.field public final c:Ljava/lang/String;
+
+.field public final o:I
+
+.field public final o0:[B
 
 
 # direct methods
-.method public constructor <init>(Lvp4;Landroid/graphics/SurfaceTexture;Z)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0, p2}, Landroid/view/Surface;-><init>(Landroid/graphics/SurfaceTexture;)V
+    new-instance v0, Lej9;
 
-    iput-object p1, p0, Lixa;->b:Lvp4;
+    const/16 v1, 0x1a
 
-    iput-boolean p3, p0, Lixa;->a:Z
+    invoke-direct {v0, v1}, Lej9;-><init>(I)V
+
+    sput-object v0, Lixa;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
-.method public static declared-synchronized a(Landroid/content/Context;)Z
-    .locals 7
+.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;IIII[B)V
+    .locals 0
 
-    const-class v0, Lixa;
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    monitor-enter v0
+    .line 2
+    iput p1, p0, Lixa;->a:I
 
-    :try_start_0
-    sget-boolean v1, Lixa;->X:Z
+    .line 3
+    iput-object p2, p0, Lixa;->b:Ljava/lang/String;
 
-    const/4 v2, 0x0
+    .line 4
+    iput-object p3, p0, Lixa;->c:Ljava/lang/String;
 
-    const/4 v3, 0x1
+    .line 5
+    iput p4, p0, Lixa;->o:I
 
-    if-nez v1, :cond_6
+    .line 6
+    iput p5, p0, Lixa;->X:I
 
-    sget v1, Loze;->a:I
+    .line 7
+    iput p6, p0, Lixa;->Y:I
 
-    const/16 v4, 0x18
+    .line 8
+    iput p7, p0, Lixa;->Z:I
 
-    if-ge v1, v4, :cond_1
+    .line 9
+    iput-object p8, p0, Lixa;->o0:[B
 
-    :cond_0
-    :goto_0
-    move p0, v2
-
-    goto :goto_1
-
-    :cond_1
-    const/16 v4, 0x1a
-
-    if-ge v1, v4, :cond_2
-
-    const-string v5, "samsung"
-
-    sget-object v6, Loze;->c:Ljava/lang/String;
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_0
-
-    const-string v5, "XT1650"
-
-    sget-object v6, Loze;->d:Ljava/lang/String;
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    if-ge v1, v4, :cond_3
-
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object p0
-
-    const-string v1, "android.hardware.vr.high_performance"
-
-    invoke-virtual {p0, v1}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    const-string p0, "EGL_EXT_protected_content"
-
-    invoke-static {p0}, Lgt0;->B(Ljava/lang/String;)Z
-
-    move-result p0
-
-    :goto_1
-    if-eqz p0, :cond_5
-
-    const-string p0, "EGL_KHR_surfaceless_context"
-
-    invoke-static {p0}, Lgt0;->B(Ljava/lang/String;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_4
-
-    move p0, v3
-
-    goto :goto_2
-
-    :cond_4
-    const/4 p0, 0x2
-
-    goto :goto_2
-
-    :cond_5
-    move p0, v2
-
-    :goto_2
-    sput p0, Lixa;->o:I
-
-    sput-boolean v3, Lixa;->X:Z
-
-    goto :goto_3
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_4
-
-    :cond_6
-    :goto_3
-    sget p0, Lixa;->o:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz p0, :cond_7
-
-    move v2, v3
-
-    :cond_7
-    monitor-exit v0
-
-    return v2
-
-    :goto_4
-    :try_start_1
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p0
+    return-void
 .end method
 
-.method public static b(Landroid/content/Context;Z)Lixa;
-    .locals 5
+.method public constructor <init>(Landroid/os/Parcel;)V
+    .locals 2
 
-    const/4 v0, 0x1
+    .line 10
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x0
+    .line 11
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    if-eqz p1, :cond_1
+    move-result v0
 
-    invoke-static {p0}, Lixa;->a(Landroid/content/Context;)Z
+    iput v0, p0, Lixa;->a:I
 
-    move-result p0
+    .line 12
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    if-eqz p0, :cond_0
+    move-result-object v0
 
-    goto :goto_0
+    sget v1, Lpaf;->a:I
 
-    :cond_0
-    move p0, v1
+    iput-object v0, p0, Lixa;->b:Ljava/lang/String;
 
-    goto :goto_1
+    .line 13
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    :cond_1
-    :goto_0
-    move p0, v0
+    move-result-object v0
 
-    :goto_1
-    invoke-static {p0}, Loyb;->k(Z)V
+    iput-object v0, p0, Lixa;->c:Ljava/lang/String;
 
-    new-instance p0, Lvp4;
+    .line 14
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    const-string v2, "ExoPlayer:PlaceholderSurface"
+    move-result v0
 
-    const/4 v3, 0x1
+    iput v0, p0, Lixa;->o:I
 
-    invoke-direct {p0, v2, v3}, Lvp4;-><init>(Ljava/lang/String;I)V
+    .line 15
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    if-eqz p1, :cond_2
+    move-result v0
 
-    sget p1, Lixa;->o:I
+    iput v0, p0, Lixa;->X:I
 
-    goto :goto_2
+    .line 16
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    :cond_2
-    move p1, v1
+    move-result v0
 
-    :goto_2
-    invoke-virtual {p0}, Ljava/lang/Thread;->start()V
+    iput v0, p0, Lixa;->Y:I
 
-    new-instance v2, Landroid/os/Handler;
+    .line 17
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    invoke-virtual {p0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+    move-result v0
+
+    iput v0, p0, Lixa;->Z:I
+
+    .line 18
+    invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
+
+    move-result-object p1
+
+    iput-object p1, p0, Lixa;->o0:[B
+
+    return-void
+.end method
+
+.method public static a(Lpna;)Lixa;
+    .locals 10
+
+    invoke-virtual {p0}, Lpna;->g()I
+
+    move-result v1
+
+    invoke-virtual {p0}, Lpna;->g()I
+
+    move-result v0
+
+    sget-object v2, Lv42;->a:Ljava/nio/charset/Charset;
+
+    invoke-virtual {p0, v0, v2}, Lpna;->s(ILjava/nio/charset/Charset;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, La99;->l(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0}, Lpna;->g()I
+
+    move-result v0
+
+    sget-object v3, Lv42;->c:Ljava/nio/charset/Charset;
+
+    invoke-virtual {p0, v0, v3}, Lpna;->s(ILjava/nio/charset/Charset;)Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-direct {v2, v3, p0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
+    invoke-virtual {p0}, Lpna;->g()I
 
-    iput-object v2, p0, Lvp4;->b:Landroid/os/Handler;
+    move-result v4
 
-    new-instance v3, Lhr4;
+    invoke-virtual {p0}, Lpna;->g()I
 
-    const/4 v4, 0x1
+    move-result v5
 
-    invoke-direct {v3, v2, v4}, Lhr4;-><init>(Landroid/os/Handler;I)V
+    invoke-virtual {p0}, Lpna;->g()I
 
-    iput-object v3, p0, Lvp4;->X:Ljava/lang/Object;
+    move-result v6
 
-    monitor-enter p0
+    invoke-virtual {p0}, Lpna;->g()I
 
-    :try_start_0
-    iget-object v2, p0, Lvp4;->b:Landroid/os/Handler;
+    move-result v7
 
-    invoke-virtual {v2, v0, p1, v1}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+    invoke-virtual {p0}, Lpna;->g()I
 
-    move-result-object p1
+    move-result v0
 
-    invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
+    new-array v8, v0, [B
 
-    :goto_3
-    iget-object p1, p0, Lvp4;->Y:Landroid/view/Surface;
+    const/4 v9, 0x0
 
-    check-cast p1, Lixa;
+    invoke-virtual {p0, v9, v8, v0}, Lpna;->e(I[BI)V
 
-    if-nez p1, :cond_3
+    new-instance v0, Lixa;
 
-    iget-object p1, p0, Lvp4;->o:Ljava/lang/RuntimeException;
+    invoke-direct/range {v0 .. v8}, Lixa;-><init>(ILjava/lang/String;Ljava/lang/String;IIII[B)V
 
-    if-nez p1, :cond_3
-
-    iget-object p1, p0, Lvp4;->c:Ljava/lang/Error;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-nez p1, :cond_3
-
-    :try_start_1
-    invoke-virtual {p0}, Ljava/lang/Object;->wait()V
-    :try_end_1
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_3
-
-    :catchall_0
-    move-exception p1
-
-    goto :goto_4
-
-    :catch_0
-    move v1, v0
-
-    goto :goto_3
-
-    :cond_3
-    :try_start_2
-    monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    if-eqz v1, :cond_4
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Thread;->interrupt()V
-
-    :cond_4
-    iget-object p1, p0, Lvp4;->o:Ljava/lang/RuntimeException;
-
-    if-nez p1, :cond_6
-
-    iget-object p1, p0, Lvp4;->c:Ljava/lang/Error;
-
-    if-nez p1, :cond_5
-
-    iget-object p0, p0, Lvp4;->Y:Landroid/view/Surface;
-
-    check-cast p0, Lixa;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object p0
-
-    :cond_5
-    throw p1
-
-    :cond_6
-    throw p1
-
-    :goto_4
-    :try_start_3
-    monitor-exit p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    throw p1
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final release()V
-    .locals 3
+.method public final describeContents()I
+    .locals 0
 
-    invoke-super {p0}, Landroid/view/Surface;->release()V
+    const/4 p0, 0x0
 
-    iget-object v0, p0, Lixa;->b:Lvp4;
+    return p0
+.end method
 
-    monitor-enter v0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    :try_start_0
-    iget-boolean v1, p0, Lixa;->c:Z
+    const/4 v0, 0x1
 
-    if-nez v1, :cond_0
+    if-ne p0, p1, :cond_0
 
-    iget-object v1, p0, Lixa;->b:Lvp4;
+    return v0
 
-    iget-object v2, v1, Lvp4;->b:Landroid/os/Handler;
+    :cond_0
+    const/4 v1, 0x0
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-eqz p1, :cond_2
 
-    iget-object v1, v1, Lvp4;->b:Landroid/os/Handler;
+    const-class v2, Lixa;
 
-    const/4 v2, 0x2
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+    move-result-object v3
 
-    const/4 v1, 0x1
-
-    iput-boolean v1, p0, Lixa;->c:Z
+    if-eq v2, v3, :cond_1
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p0
+    :cond_1
+    check-cast p1, Lixa;
 
-    goto :goto_1
+    iget v2, p0, Lixa;->a:I
 
-    :cond_0
+    iget v3, p1, Lixa;->a:I
+
+    if-ne v2, v3, :cond_2
+
+    iget-object v2, p0, Lixa;->b:Ljava/lang/String;
+
+    iget-object v3, p1, Lixa;->b:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lixa;->c:Ljava/lang/String;
+
+    iget-object v3, p1, Lixa;->c:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget v2, p0, Lixa;->o:I
+
+    iget v3, p1, Lixa;->o:I
+
+    if-ne v2, v3, :cond_2
+
+    iget v2, p0, Lixa;->X:I
+
+    iget v3, p1, Lixa;->X:I
+
+    if-ne v2, v3, :cond_2
+
+    iget v2, p0, Lixa;->Y:I
+
+    iget v3, p1, Lixa;->Y:I
+
+    if-ne v2, v3, :cond_2
+
+    iget v2, p0, Lixa;->Z:I
+
+    iget v3, p1, Lixa;->Z:I
+
+    if-ne v2, v3, :cond_2
+
+    iget-object p0, p0, Lixa;->o0:[B
+
+    iget-object p1, p1, Lixa;->o0:[B
+
+    invoke-static {p0, p1}, Ljava/util/Arrays;->equals([B[B)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    return v0
+
+    :cond_2
     :goto_0
-    monitor-exit v0
+    return v1
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    const/16 v0, 0x20f
+
+    iget v1, p0, Lixa;->a:I
+
+    add-int/2addr v0, v1
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget-object v2, p0, Lixa;->b:Ljava/lang/String;
+
+    invoke-static {v0, v1, v2}, Lv04;->d(IILjava/lang/String;)I
+
+    move-result v0
+
+    iget-object v2, p0, Lixa;->c:Ljava/lang/String;
+
+    invoke-static {v0, v1, v2}, Lv04;->d(IILjava/lang/String;)I
+
+    move-result v0
+
+    iget v2, p0, Lixa;->o:I
+
+    add-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget v2, p0, Lixa;->X:I
+
+    add-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget v2, p0, Lixa;->Y:I
+
+    add-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget v2, p0, Lixa;->Z:I
+
+    add-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget-object p0, p0, Lixa;->o0:[B
+
+    invoke-static {p0}, Ljava/util/Arrays;->hashCode([B)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Picture: mimeType="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lixa;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", description="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lixa;->c:Ljava/lang/String;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final w(Lpc8;)V
+    .locals 1
+
+    iget-object v0, p0, Lixa;->o0:[B
+
+    iget p0, p0, Lixa;->a:I
+
+    invoke-virtual {p1, p0, v0}, Lpc8;->a(I[B)V
 
     return-void
+.end method
 
-    :goto_1
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 0
 
-    throw p0
+    iget p2, p0, Lixa;->a:I
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget-object p2, p0, Lixa;->b:Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    iget-object p2, p0, Lixa;->c:Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    iget p2, p0, Lixa;->o:I
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget p2, p0, Lixa;->X:I
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget p2, p0, Lixa;->Y:I
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget p2, p0, Lixa;->Z:I
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget-object p0, p0, Lixa;->o0:[B
+
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeByteArray([B)V
+
+    return-void
 .end method

@@ -17,11 +17,11 @@
 
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    sget p0, Lwlb;->motionEasingEmphasizedInterpolator:I
+    sget p0, Liqb;->motionEasingEmphasizedInterpolator:I
 
-    sget-object p2, Log;->b:Lp85;
+    sget-object p2, Lgg;->b:Lhb5;
 
-    invoke-static {p1, p0, p2}, Lct0;->I(Landroid/content/Context;ILandroid/view/animation/Interpolator;)Landroid/animation/TimeInterpolator;
+    invoke-static {p1, p0, p2}, Lsre;->s(Landroid/content/Context;ILandroid/animation/TimeInterpolator;)Landroid/animation/TimeInterpolator;
 
     return-void
 .end method
@@ -68,15 +68,13 @@
     goto :goto_1
 
     :cond_1
-    move v1, p1
-
-    goto :goto_2
+    return p1
 
     :cond_2
     :goto_1
     iget-object p0, p0, Lcom/google/android/material/snackbar/SnackbarContentLayout;->a:Landroid/widget/TextView;
 
-    sget-object p1, Leaf;->a:Ljava/util/WeakHashMap;
+    sget-object p1, Ltnf;->a:Ljava/util/WeakHashMap;
 
     invoke-virtual {p0}, Landroid/view/View;->isPaddingRelative()Z
 
@@ -94,7 +92,7 @@
 
     invoke-virtual {p0, p1, p2, v0, p3}, Landroid/view/View;->setPaddingRelative(IIII)V
 
-    goto :goto_2
+    return v1
 
     :cond_3
     invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
@@ -107,7 +105,6 @@
 
     invoke-virtual {p0, p1, p2, v0, p3}, Landroid/view/View;->setPadding(IIII)V
 
-    :goto_2
     return v1
 .end method
 
@@ -132,7 +129,7 @@
 
     invoke-super {p0}, Landroid/view/View;->onFinishInflate()V
 
-    sget v0, Llob;->snackbar_text:I
+    sget v0, Lzsb;->snackbar_text:I
 
     invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -142,7 +139,7 @@
 
     iput-object v0, p0, Lcom/google/android/material/snackbar/SnackbarContentLayout;->a:Landroid/widget/TextView;
 
-    sget v0, Llob;->snackbar_action:I
+    sget v0, Lzsb;->snackbar_action:I
 
     invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -168,14 +165,14 @@
 
     if-ne v0, v1, :cond_0
 
-    return-void
+    goto :goto_3
 
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    sget v2, Lvmb;->design_snackbar_padding_vertical_2lines:I
+    sget v2, Lhrb;->design_snackbar_padding_vertical_2lines:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -185,7 +182,7 @@
 
     move-result-object v2
 
-    sget v3, Lvmb;->design_snackbar_padding_vertical:I
+    sget v3, Lhrb;->design_snackbar_padding_vertical:I
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -260,6 +257,7 @@
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
 
     :cond_4
+    :goto_3
     return-void
 .end method
 

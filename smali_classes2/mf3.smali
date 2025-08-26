@@ -1,171 +1,88 @@
-.class public final synthetic Lmf3;
-.super Ljava/lang/Object;
+.class public final Lmf3;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Lpf3;
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public final synthetic Y:Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;)V
     .locals 0
 
-    iput p1, p0, Lmf3;->a:I
+    iput-object p2, p0, Lmf3;->Y:Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;
 
-    iput-object p2, p0, Lmf3;->b:Ljava/lang/Object;
+    const/4 p2, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2, p1}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .locals 4
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget v0, p0, Lmf3;->a:I
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p0, p1, p2}, Lmf3;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    check-cast p1, Lge1;
+    move-result-object p0
 
-    iget-object p0, p0, Lmf3;->b:Ljava/lang/Object;
+    check-cast p0, Lmf3;
 
-    check-cast p0, Lnhd;
+    sget-object p1, Le5f;->a:Le5f;
 
-    check-cast p0, Lihd;
+    invoke-virtual {p0, p1}, Lmf3;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {p0, p1}, Lihd;->a(Ljava/lang/Object;)V
+    return-object p1
+.end method
 
-    return-void
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    :pswitch_0
-    iget-object p0, p0, Lmf3;->b:Ljava/lang/Object;
+    new-instance v0, Lmf3;
 
-    check-cast p0, Lu16;
+    iget-object p0, p0, Lmf3;->Y:Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;
 
-    check-cast p1, Lge1;
+    invoke-direct {v0, p2, p0}, Lmf3;-><init>(Lkotlin/coroutines/Continuation;Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;)V
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->f(Lu16;Lge1;)V
+    iput-object p1, v0, Lmf3;->X:Ljava/lang/Object;
 
-    return-void
+    return-object v0
+.end method
 
-    :pswitch_1
-    check-cast p1, Lorg/webrtc/PeerConnection;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    new-instance v0, Lss8;
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    iget-object p0, p0, Lmf3;->b:Ljava/lang/Object;
+    iget-object p1, p0, Lmf3;->X:Ljava/lang/Object;
 
-    check-cast p0, Lzrd;
+    check-cast p1, Ljava/lang/String;
 
-    const/16 v1, 0xd
+    new-instance v0, Lmfa;
 
-    invoke-direct {v0, v1, p0}, Lss8;-><init>(ILjava/lang/Object;)V
+    iget-object p0, p0, Lmf3;->Y:Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;
 
-    invoke-virtual {p1, v0}, Lorg/webrtc/PeerConnection;->getStats(Lorg/webrtc/RTCStatsCollectorCallback;)V
+    invoke-direct {v0, p0}, Lmfa;-><init>(Lone/me/sdk/arch/Widget;)V
 
-    return-void
+    invoke-static {p1}, Lr8e;->p0(Ljava/lang/String;)Ljava/lang/String;
 
-    :pswitch_2
-    check-cast p1, Lorg/webrtc/PeerConnection;
+    move-result-object p0
 
-    iget-object p0, p0, Lmf3;->b:Ljava/lang/Object;
+    invoke-virtual {v0, p0}, Lmfa;->h(Ljava/lang/CharSequence;)V
 
-    check-cast p0, [Lorg/webrtc/IceCandidate;
+    invoke-virtual {v0}, Lmfa;->i()Llfa;
 
-    invoke-virtual {p1, p0}, Lorg/webrtc/PeerConnection;->removeIceCandidates([Lorg/webrtc/IceCandidate;)Z
+    sget-object p0, Le5f;->a:Le5f;
 
-    return-void
-
-    :pswitch_3
-    iget-object p0, p0, Lmf3;->b:Ljava/lang/Object;
-
-    check-cast p0, Lda4;
-
-    check-cast p1, Lorg/webrtc/PeerConnection;
-
-    iget-object p1, p0, Lda4;->Y:Ljava/util/concurrent/ConcurrentHashMap;
-
-    monitor-enter p1
-
-    :try_start_0
-    iget-object v0, p0, Lda4;->w0:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->keySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
-
-    iget-object v2, p0, Lda4;->w0:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {v2, v1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lxm1;
-
-    const/4 v3, 0x0
-
-    invoke-virtual {p0, v1, v2, v3}, Lda4;->u(Ljava/lang/String;Lxm1;Ljava/util/List;)V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_1
-
-    :cond_0
-    monitor-exit p1
-
-    return-void
-
-    :goto_1
-    monitor-exit p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p0
-
-    :pswitch_4
-    iget-object p0, p0, Lmf3;->b:Ljava/lang/Object;
-
-    check-cast p0, Ljava/lang/Runnable;
-
-    invoke-interface {p0}, Ljava/lang/Runnable;->run()V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

@@ -1,287 +1,193 @@
 .class public final Lluf;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
 
-
-# static fields
-.field public static final synthetic h:I
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Lt97;
+.field public X:Lfvf;
 
-.field public final b:Lt97;
+.field public Y:I
 
-.field public final c:Lt97;
-
-.field public final d:Lt97;
-
-.field public final e:Lt97;
-
-.field public final f:Lt97;
-
-.field public final g:Lt97;
+.field public final synthetic Z:Levf;
 
 
 # direct methods
-.method public constructor <init>(Lt97;Lt97;Lt97;Lt97;Lt97;Lt97;Lt97;)V
+.method public constructor <init>(Levf;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lluf;->Z:Levf;
 
-    iput-object p1, p0, Lluf;->a:Lt97;
+    const/4 p1, 0x2
 
-    iput-object p2, p0, Lluf;->b:Lt97;
-
-    iput-object p3, p0, Lluf;->c:Lt97;
-
-    iput-object p4, p0, Lluf;->d:Lt97;
-
-    iput-object p5, p0, Lluf;->e:Lt97;
-
-    iput-object p6, p0, Lluf;->f:Lt97;
-
-    iput-object p7, p0, Lluf;->g:Lt97;
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lc0d;)V
-    .locals 6
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    filled-new-array {p1}, [Ljava/lang/Object;
+    check-cast p1, Lox3;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lluf;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lluf;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lluf;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
+
+    new-instance p1, Lluf;
+
+    iget-object p0, p0, Lluf;->Z:Levf;
+
+    invoke-direct {p1, p0, p2}, Lluf;-><init>(Levf;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 17
+
+    move-object/from16 v5, p0
+
+    iget-object v6, v5, Lluf;->Z:Levf;
+
+    iget-object v7, v6, Levf;->h:Lje7;
+
+    iget v0, v5, Lluf;->Y:I
+
+    const/4 v8, 0x2
+
+    const/4 v9, 0x1
+
+    sget-object v10, Lpx3;->a:Lpx3;
+
+    if-eqz v0, :cond_2
+
+    if-eq v0, v9, :cond_1
+
+    if-ne v0, v8, :cond_0
+
+    iget-object v0, v5, Lluf;->X:Lfvf;
+
+    invoke-static/range {p1 .. p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    invoke-static/range {p1 .. p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    move-object/from16 v0, p1
+
+    goto :goto_0
+
+    :cond_2
+    invoke-static/range {p1 .. p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    invoke-interface {v7}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string v1, "luf"
+    check-cast v0, Lcuf;
 
-    const-string v2, "execute task = %s"
+    iget-wide v1, v6, Levf;->a:J
 
-    invoke-static {v1, v2, v0}, Ludd;->p(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    iget-wide v3, v6, Levf;->b:J
 
-    new-instance v0, Lkuf;
+    iput v9, v5, Lluf;->Y:I
 
-    iget-object v2, p0, Lluf;->b:Lt97;
+    invoke-virtual/range {v0 .. v5}, Lcuf;->a(JJLqde;)Ljava/lang/Object;
 
-    invoke-interface {v2}, Lt97;->getValue()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v3
+    if-ne v0, v10, :cond_3
 
-    check-cast v3, Lg15;
+    goto :goto_2
 
-    iget-object v4, p0, Lluf;->a:Lt97;
+    :cond_3
+    :goto_0
+    check-cast v0, Lfvf;
 
-    iget-object v5, p0, Lluf;->f:Lt97;
+    if-eqz v0, :cond_4
 
-    invoke-direct {v0, p1, v4, v3, v5}, Lkuf;-><init>(Lc0d;Lt97;Lg15;Lt97;)V
+    const/4 v1, 0x0
 
-    instance-of v3, p1, Lo1d;
+    const/16 v2, 0xf
 
-    iget-object p0, p0, Lluf;->c:Lt97;
+    invoke-static {v0, v9, v1, v2}, Lfvf;->a(Lfvf;ZZI)Lfvf;
 
-    if-eqz v3, :cond_2
+    move-result-object v0
 
-    const-string p1, "execute ServiceTaskTransmitTamTasks"
+    goto :goto_1
 
-    invoke-static {v1, p1}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    :cond_4
+    new-instance v11, Lfvf;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    iget-wide v12, v6, Levf;->a:J
 
-    move-result-object p0
+    iget-wide v14, v6, Levf;->b:J
 
-    check-cast p0, Lx4a;
+    const/16 v16, 0x0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct/range {v11 .. v16}, Lfvf;-><init>(JJZ)V
 
-    sget-object p1, Lx4a;->p:[Lk77;
+    move-object v0, v11
 
-    const/4 v3, 0x5
+    :goto_1
+    invoke-interface {v7}, Lje7;->getValue()Ljava/lang/Object;
 
-    aget-object p1, p1, v3
+    move-result-object v1
 
-    iget-object p1, p0, Lx4a;->k:Lq15;
+    check-cast v1, Lcuf;
 
-    invoke-virtual {p0, p1}, Lx4a;->d(Lq15;)Ljava/util/concurrent/ExecutorService;
+    iput-object v0, v5, Lluf;->X:Lfvf;
 
-    move-result-object p0
+    iput v8, v5, Lluf;->Y:I
 
-    invoke-interface {p0}, Ljava/util/concurrent/ExecutorService;->isShutdown()Z
+    iget-object v2, v1, Lcuf;->a:Lkjc;
 
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    invoke-interface {p0}, Ljava/util/concurrent/ExecutorService;->isTerminated()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    :cond_0
-    invoke-interface {p0}, Ljava/util/concurrent/ExecutorService;->isShutdown()Z
-
-    move-result p1
-
-    invoke-interface {p0}, Ljava/util/concurrent/ExecutorService;->isTerminated()Z
-
-    move-result v3
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "WARNING! SingleTransmitExecutor has broken state. isShutdown: "
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string p1, ", isTerminated: "
-
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const/4 v3, 0x0
-
-    new-array v4, v3, [Ljava/lang/Object;
-
-    invoke-static {v4, v3}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    move-result-object v3
+    new-instance v3, Lbuf;
 
     const/4 v4, 0x0
 
-    invoke-static {v1, v4, p1, v3}, Ludd;->R(Ljava/lang/String;Ljava/io/IOException;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-direct {v3, v1, v0, v4}, Lbuf;-><init>(Lcuf;Lfvf;I)V
 
-    invoke-interface {v2}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lg15;
-
-    new-instance v2, Lru/ok/tamtam/ExceptionHandler$HandledException;
-
-    const-string v3, "ONEME-17687"
-
-    invoke-direct {v2, p1, v3, v4}, Lru/ok/tamtam/ExceptionHandler$HandledException;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    invoke-interface {v1, v2}, Lg15;->a(Ljava/lang/Throwable;)V
-
-    :cond_1
-    invoke-interface {p0, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-
-    :cond_2
-    invoke-virtual {p1}, Lc0d;->v()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    invoke-interface {v5}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-static {v2, v3, v5}, Lxja;->m(Lkjc;Ljava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Ld0d;
+    if-ne v1, v10, :cond_5
 
-    iget-object v1, v1, Ld0d;->D:Lt97;
+    :goto_2
+    return-object v10
 
-    invoke-interface {v1}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lx4a;
-
-    invoke-interface {v5}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ld0d;
-
-    iget-object v2, v2, Ld0d;->d:Lt97;
-
-    invoke-interface {v2}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lrf4;
-
-    invoke-virtual {v2}, Lrf4;->b()Lvf4;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v1, v2}, Lc0d;->k(Lx4a;Lvf4;)Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_3
-
-    invoke-interface {v1, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-
-    :cond_3
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "normal executor will run "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v1, "WorkerService"
-
-    invoke-static {v1, p1}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lx4a;
-
-    invoke-virtual {p0}, Lx4a;->b()Ljava/util/concurrent/ExecutorService;
-
-    move-result-object p0
-
-    invoke-interface {p0, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final b(Lc0d;)J
-    .locals 4
-
-    iget-object v0, p0, Lluf;->a:Lt97;
-
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljee;
-
-    check-cast p1, Ltna;
-
-    const-wide/16 v1, 0x0
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v0, p1, v1, v2, v3}, Ljee;->g(Ltna;JI)V
-
-    invoke-static {p0}, Lo1d;->y(Lluf;)V
-
-    invoke-interface {p1}, Ltna;->getId()J
-
-    move-result-wide p0
-
-    return-wide p0
+    :cond_5
+    return-object v0
 .end method

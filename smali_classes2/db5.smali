@@ -1,26 +1,28 @@
 .class public final Ldb5;
-.super Ll5e;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Ll66;
 
 
 # instance fields
-.field public X:I
+.field public X:Landroid/net/Uri$Builder;
 
-.field public final synthetic Y:Leb5;
+.field public Y:I
+
+.field public final synthetic Z:Lone/me/webview/FaqWebViewWidget;
 
 
 # direct methods
-.method public constructor <init>(Leb5;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lone/me/webview/FaqWebViewWidget;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    iput-object p1, p0, Ldb5;->Y:Leb5;
+    iput-object p1, p0, Ldb5;->Z:Lone/me/webview/FaqWebViewWidget;
 
     const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -30,17 +32,17 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    check-cast p1, Lou3;
+    check-cast p1, Lox3;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {p0, p1, p2}, Ldb5;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0, p1, p2}, Ldb5;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
     check-cast p0, Ldb5;
 
-    sget-object p1, Ljue;->a:Ljue;
+    sget-object p1, Le5f;->a:Le5f;
 
     invoke-virtual {p0, p1}, Ldb5;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -49,48 +51,36 @@
     return-object p0
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .locals 0
 
     new-instance p1, Ldb5;
 
-    iget-object p0, p0, Ldb5;->Y:Leb5;
+    iget-object p0, p0, Ldb5;->Z:Lone/me/webview/FaqWebViewWidget;
 
-    invoke-direct {p1, p0, p2}, Ldb5;-><init>(Leb5;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p1, p0, p2}, Ldb5;-><init>(Lone/me/webview/FaqWebViewWidget;Lkotlin/coroutines/Continuation;)V
 
     return-object p1
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 4
 
-    sget-object v0, Lpu3;->a:Lpu3;
+    iget v0, p0, Ldb5;->Y:I
 
-    iget v1, p0, Ldb5;->X:I
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    iget-object v2, p0, Ldb5;->Z:Lone/me/webview/FaqWebViewWidget;
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
-    if-ne v1, v2, :cond_0
+    if-ne v0, v1, :cond_0
 
-    :try_start_0
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-    :try_end_0
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object p0, p0, Ldb5;->X:Landroid/net/Uri$Builder;
 
-    goto :goto_1
-
-    :catchall_0
-    move-exception p0
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
     goto :goto_0
-
-    :catch_0
-    move-exception p0
-
-    goto :goto_2
 
     :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
@@ -102,47 +92,97 @@
     throw p0
 
     :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Ldb5;->Y:Leb5;
+    sget p1, Lnnc;->M1:I
 
-    :try_start_1
-    iput v2, p0, Ldb5;->X:I
+    invoke-virtual {v2}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object v0
 
-    new-instance v1, Lg74;
+    invoke-static {v0, p1}, Lu7;->x(Landroid/content/Context;I)Ljava/lang/String;
 
-    const/4 v2, 0x5
+    move-result-object p1
 
-    invoke-direct {v1, v2, p1}, Lg74;-><init>(ILjava/lang/Object;)V
+    invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-    iget-object p1, p1, Leb5;->a:Laec;
+    move-result-object p1
 
-    invoke-static {p1, v1, p0}, Lr1g;->h(Laec;Ljava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object p1
+
+    iget-object v0, v2, Lone/me/webview/FaqWebViewWidget;->Y:Lgg4;
+
+    iput-object p1, p0, Ldb5;->X:Landroid/net/Uri$Builder;
+
+    iput v1, p0, Ldb5;->Y:I
+
+    invoke-virtual {v0, p0}, Lx87;->awaitInternal(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
-    :try_end_1
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    sget-object v0, Lpx3;->a:Lpx3;
 
     if-ne p0, v0, :cond_2
 
     return-object v0
 
-    :goto_0
-    const-string p1, "FcmNotificationHistoryDao"
-
-    const-string v0, "onLogout: clear failed"
-
-    invoke-static {p1, v0, p0}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
     :cond_2
+    move-object v3, p1
+
+    move-object p1, p0
+
+    move-object p0, v3
+
+    :goto_0
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    const-string v0, "source"
+
+    if-eqz p1, :cond_3
+
+    const-string p1, "settings"
+
+    invoke-virtual {p0, v0, p1}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    goto :goto_1
+
+    :cond_3
+    const-string p1, "reg"
+
+    invoke-virtual {p0, v0, p1}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
     :goto_1
-    sget-object p0, Ljue;->a:Ljue;
+    invoke-virtual {p0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/net/Uri;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    iget-object p1, v2, Lone/me/webview/FaqWebViewWidget;->a:Lo5c;
+
+    sget-object v0, Lone/me/webview/FaqWebViewWidget;->Z:[Lbc7;
+
+    const/4 v1, 0x0
+
+    aget-object v0, v0, v1
+
+    invoke-interface {p1, v2, v0}, Lo5c;->M(Ljava/lang/Object;Lbc7;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Laja;
+
+    invoke-virtual {p1, p0}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
+
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
-
-    :goto_2
-    throw p0
 .end method

@@ -1,43 +1,51 @@
 .class public abstract Lgs6;
-.super Lzs6;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public final e()Lns6;
-    .locals 1
-
-    new-instance p0, Ljava/lang/AssertionError;
-
-    const-string v0, "should never be called"
-
-    invoke-direct {p0, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw p0
-.end method
-
-.method public final i()Lns6;
+# direct methods
+.method public static a(Ljava/lang/Object;)I
     .locals 0
 
-    check-cast p0, Ld8c;
+    check-cast p0, Landroid/graphics/drawable/Icon;
 
-    iget-object p0, p0, Ld8c;->x0:Ld8c;
+    invoke-virtual {p0}, Landroid/graphics/drawable/Icon;->getResId()I
 
-    invoke-virtual {p0}, Lzs6;->h()Lgt6;
+    move-result p0
+
+    return p0
+.end method
+
+.method public static b(Ljava/lang/Object;)Ljava/lang/String;
+    .locals 0
+
+    check-cast p0, Landroid/graphics/drawable/Icon;
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/Icon;->getResPackage()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public final values()Ljava/util/Collection;
+.method public static c(Ljava/lang/Object;)I
     .locals 0
 
-    check-cast p0, Ld8c;
+    check-cast p0, Landroid/graphics/drawable/Icon;
 
-    iget-object p0, p0, Ld8c;->x0:Ld8c;
+    invoke-virtual {p0}, Landroid/graphics/drawable/Icon;->getType()I
 
-    invoke-virtual {p0}, Lzs6;->h()Lgt6;
+    move-result p0
+
+    return p0
+.end method
+
+.method public static d(Ljava/lang/Object;)Landroid/net/Uri;
+    .locals 0
+
+    check-cast p0, Landroid/graphics/drawable/Icon;
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/Icon;->getUri()Landroid/net/Uri;
 
     move-result-object p0
 

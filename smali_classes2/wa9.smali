@@ -1,51 +1,46 @@
 .class public final Lwa9;
-.super Ler3;
+.super Landroid/text/style/TypefaceSpan;
 .source "SourceFile"
+
+# interfaces
+.implements Luz7;
 
 
 # instance fields
-.field public X:Lvo8;
-
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lxa9;
-
-.field public o:Lxa9;
-
-.field public w0:I
+.field public final a:I
 
 
 # direct methods
-.method public constructor <init>(Lxa9;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    iput-object p1, p0, Lwa9;->Z:Lxa9;
+    const-string v0, "monospace"
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, v0}, Landroid/text/style/TypefaceSpan;-><init>(Ljava/lang/String;)V
+
+    const/4 v0, 0x5
+
+    iput v0, p0, Lwa9;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final copy()Lqw3;
+    .locals 0
 
-    iput-object p1, p0, Lwa9;->Y:Ljava/lang/Object;
+    new-instance p0, Lwa9;
 
-    iget p1, p0, Lwa9;->w0:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lwa9;->w0:I
-
-    iget-object p1, p0, Lwa9;->Z:Lxa9;
-
-    invoke-virtual {p1, p0}, Lxa9;->a(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
+    invoke-direct {p0}, Lwa9;-><init>()V
 
     return-object p0
+.end method
+
+.method public final getType()I
+    .locals 0
+
+    iget p0, p0, Lwa9;->a:I
+
+    return p0
 .end method

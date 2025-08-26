@@ -3,97 +3,92 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lo3e;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Ljava/util/Set;
+.field public final synthetic a:I
 
-.field public b:Lo3e;
+.field public final synthetic b:Lrcc;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public synthetic constructor <init>(Lrcc;I)V
+    .locals 0
+
+    iput p2, p0, Lqcc;->a:I
+
+    iput-object p1, p0, Lqcc;->b:Lrcc;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/util/WeakHashMap;
-
-    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
-
-    invoke-static {v0}, Ljava/util/Collections;->newSetFromMap(Ljava/util/Map;)Ljava/util/Set;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lqcc;->a:Ljava/util/Set;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lqcc;->b:Lo3e;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lo3e;)V
-    .locals 2
+.method public final run()V
+    .locals 3
 
-    iput-object p1, p0, Lqcc;->b:Lo3e;
+    iget v0, p0, Lqcc;->a:I
 
-    iget-object p0, p0, Lqcc;->a:Ljava/util/Set;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    iget-object p0, p0, Lqcc;->b:Lrcc;
 
-    move-result-object p0
+    iget-object v0, p0, Lrcc;->i:Lwcc;
+
+    iget-object v1, v0, Lwcc;->u0:Lrcc;
+
+    if-ne v1, p0, :cond_1
+
+    sget-boolean p0, Lwcc;->x0:Z
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {v0}, Lwcc;->toString()Ljava/lang/String;
 
     :cond_0
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lpcc;
-
-    invoke-virtual {v0}, Lg0;->g()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    invoke-virtual {v0, p1}, Lpcc;->p(Lo3e;)V
-
-    goto :goto_0
+    invoke-virtual {v0}, Lwcc;->k()V
 
     :cond_1
     return-void
-.end method
 
-.method public final get()Ljava/lang/Object;
-    .locals 2
+    :pswitch_0
+    iget-object p0, p0, Lqcc;->b:Lrcc;
 
-    new-instance v0, Lpcc;
+    iget-object p0, p0, Lrcc;->h:Landroid/util/SparseArray;
 
-    invoke-direct {v0}, Lg0;-><init>()V
+    invoke-virtual {p0}, Landroid/util/SparseArray;->size()I
+
+    move-result v0
 
     const/4 v1, 0x0
 
-    iput-object v1, v0, Lpcc;->h:Lg0;
+    :goto_0
+    if-ge v1, v0, :cond_2
 
-    iget-object v1, p0, Lqcc;->b:Lo3e;
+    invoke-virtual {p0, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Lpcc;->p(Lo3e;)V
+    move-result-object v2
 
-    iget-object p0, p0, Lqcc;->a:Ljava/util/Set;
+    check-cast v2, Ltcc;
 
-    invoke-interface {p0, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return-object v0
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {p0}, Landroid/util/SparseArray;->clear()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

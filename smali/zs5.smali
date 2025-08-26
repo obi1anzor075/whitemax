@@ -1,100 +1,90 @@
-.class public final Lzs5;
-.super Ll5e;
+.class public final synthetic Lzs5;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lx64;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lone/me/folders/pickerfolders/FoldersPickerScreen;
+.field public final synthetic b:Ljava/lang/String;
+
+.field public final synthetic c:Ljava/lang/String;
+
+.field public final synthetic o:Ljava/io/Serializable;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/folders/pickerfolders/FoldersPickerScreen;)V
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/io/Serializable;I)V
     .locals 0
 
-    iput-object p2, p0, Lzs5;->Y:Lone/me/folders/pickerfolders/FoldersPickerScreen;
+    iput p4, p0, Lzs5;->a:I
 
-    const/4 p2, 0x2
+    iput-object p1, p0, Lzs5;->b:Ljava/lang/String;
 
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Lzs5;->c:Ljava/lang/String;
+
+    iput-object p3, p0, Lzs5;->o:Ljava/io/Serializable;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final a()Ljava/lang/Object;
+    .locals 9
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget v0, p0, Lzs5;->a:I
 
-    invoke-virtual {p0, p1, p2}, Lzs5;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object p0
+    iget-object v0, p0, Lzs5;->o:Ljava/io/Serializable;
 
-    check-cast p0, Lzs5;
+    move-object v6, v0
 
-    sget-object p1, Ljue;->a:Ljue;
+    check-cast v6, Ljava/lang/String;
 
-    invoke-virtual {p0, p1}, Lzs5;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v1, Lone/me/settings/twofa/password/TwoFACheckPassScreen;
 
-    return-object p1
-.end method
+    const/4 v7, 0x4
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
+    const/4 v8, 0x0
 
-    new-instance v0, Lzs5;
+    const-string v2, "SETTINGS"
 
-    iget-object p0, p0, Lzs5;->Y:Lone/me/folders/pickerfolders/FoldersPickerScreen;
+    iget-object v3, p0, Lzs5;->b:Ljava/lang/String;
 
-    invoke-direct {v0, p2, p0}, Lzs5;-><init>(Lkotlin/coroutines/Continuation;Lone/me/folders/pickerfolders/FoldersPickerScreen;)V
+    const/4 v4, 0x0
 
-    iput-object p1, v0, Lzs5;->X:Ljava/lang/Object;
+    iget-object v5, p0, Lzs5;->c:Ljava/lang/String;
 
-    return-object v0
-.end method
+    invoke-direct/range {v1 .. v8}, Lone/me/settings/twofa/password/TwoFACheckPassScreen;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILl94;)V
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    return-object v1
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    :pswitch_0
+    iget-object v0, p0, Lzs5;->o:Ljava/io/Serializable;
 
-    iget-object p1, p0, Lzs5;->X:Ljava/lang/Object;
+    check-cast v0, [J
 
-    check-cast p1, Ljava/lang/Boolean;
+    new-instance v1, Lone/me/folders/picker/FolderMemberPickerScreen;
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    iget-object v2, p0, Lzs5;->b:Ljava/lang/String;
 
-    move-result p1
+    iget-object p0, p0, Lzs5;->c:Ljava/lang/String;
 
-    sget-object v0, Lone/me/folders/pickerfolders/FoldersPickerScreen;->w0:[Lk77;
+    invoke-direct {v1, v2, p0, v0}, Lone/me/folders/picker/FolderMemberPickerScreen;-><init>(Ljava/lang/String;Ljava/lang/String;[J)V
 
-    iget-object p0, p0, Lzs5;->Y:Lone/me/folders/pickerfolders/FoldersPickerScreen;
+    return-object v1
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    nop
 
-    sget-object v0, Lone/me/folders/pickerfolders/FoldersPickerScreen;->w0:[Lk77;
-
-    const/4 v1, 0x3
-
-    aget-object v0, v0, v1
-
-    iget-object v1, p0, Lone/me/folders/pickerfolders/FoldersPickerScreen;->Y:Ln0c;
-
-    invoke-interface {v1, p0, v0}, Ln0c;->T0(Ljava/lang/Object;Lk77;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lone/me/sdk/uikit/common/button/OneMeButton;
-
-    invoke-virtual {p0, p1}, Lone/me/sdk/uikit/common/button/OneMeButton;->setEnabled(Z)V
-
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -19,24 +19,20 @@
 
 
 # virtual methods
-.method public create(Ldw3;)Lqre;
+.method public create(Ldz3;)Lm0f;
     .locals 2
 
-    new-instance p0, Llx1;
+    new-instance p0, Le02;
 
-    move-object v0, p1
+    check-cast p1, Lt90;
 
-    check-cast v0, La90;
+    iget-object v0, p1, Lt90;->a:Landroid/content/Context;
 
-    iget-object v0, v0, La90;->a:Landroid/content/Context;
+    iget-object v1, p1, Lt90;->b:Lv23;
 
-    check-cast p1, La90;
+    iget-object p1, p1, Lt90;->c:Lv23;
 
-    iget-object v1, p1, La90;->b:Leye;
-
-    iget-object p1, p1, La90;->c:Leye;
-
-    invoke-direct {p0, v0, v1, p1}, Llx1;-><init>(Landroid/content/Context;Leye;Leye;)V
+    invoke-direct {p0, v0, v1, p1}, Le02;-><init>(Landroid/content/Context;Lv23;Lv23;)V
 
     return-object p0
 .end method

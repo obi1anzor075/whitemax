@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants;->loadWaitingParticipantIdsPageSingle(Lgx0;Ldn1;)Ldhd;
+    value = Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants;->loadWaitingParticipantIdsPageSingle(Liy0;Ljp1;)Ltod;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -21,7 +21,7 @@
         "\u0000\u0008\n\u0002\u0018\u0002\n\u0002\u0008\u0004\u0010\u0004\u001a\u00020\u0000H\n\u00a2\u0006\u0004\u0008\u0001\u0010\u0002\u00a8\u0006\u0003"
     }
     d2 = {
-        "Ljue;",
+        "Le5f;",
         "run",
         "()V",
         "ru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$resolveInternalIds$2",
@@ -37,14 +37,14 @@
 
 
 # instance fields
-.field final synthetic $emitter$inlined:Lnhd;
+.field final synthetic $emitter$inlined:Lbpd;
 
 
 # direct methods
-.method public constructor <init>(Lnhd;)V
+.method public constructor <init>(Lbpd;)V
     .locals 0
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$loadWaitingParticipantIdsPageSingle$lambda$6$lambda$4$$inlined$resolveInternalIds$2;->$emitter$inlined:Lnhd;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$loadWaitingParticipantIdsPageSingle$lambda$6$lambda$4$$inlined$resolveInternalIds$2;->$emitter$inlined:Lbpd;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -62,7 +62,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$loadWaitingParticipantIdsPageSingle$lambda$6$lambda$4$$inlined$resolveInternalIds$2;->$emitter$inlined:Lnhd;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$loadWaitingParticipantIdsPageSingle$lambda$6$lambda$4$$inlined$resolveInternalIds$2;->$emitter$inlined:Lbpd;
 
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -72,15 +72,15 @@
 
     const-string v2, "Can\'t resolve internal ids: "
 
-    invoke-static {v2, v0}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v0}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    check-cast p0, Lihd;
+    check-cast p0, Lxod;
 
-    invoke-virtual {p0, v1}, Lihd;->c(Ljava/lang/Throwable;)Z
+    invoke-virtual {p0, v1}, Lxod;->d(Ljava/lang/Throwable;)Z
 
     return-void
 .end method

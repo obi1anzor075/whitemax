@@ -11,39 +11,39 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;",
         "",
-        "Lw69;",
+        "Lsb9;",
         "movieId",
-        "Lk79;",
+        "Lgc9;",
         "volume",
-        "La79;",
+        "Lwb9;",
         "meta",
         "",
         "moveToAdminOnHangup",
         "Lkotlin/Function0;",
-        "Ljue;",
+        "Le5f;",
         "onSuccess",
         "Lkotlin/Function1;",
         "",
         "onError",
         "play-yj_a6ag",
-        "(Lw69;FLa79;ZLs16;Lu16;)V",
+        "(Lsb9;FLwb9;ZLv56;Lx56;)V",
         "play",
         "stop",
-        "(Lw69;Ls16;Lu16;)V",
+        "(Lsb9;Lv56;Lx56;)V",
         "pause",
         "resume",
         "isMuted",
         "setVolume-F2PwOSs",
-        "(Lw69;FZLs16;Lu16;)V",
+        "(Lsb9;FZLv56;Lx56;)V",
         "setVolume",
         "setMuted",
-        "(Lw69;ZLs16;Lu16;)V",
+        "(Lsb9;ZLv56;Lx56;)V",
         "",
         "position",
         "Ljava/util/concurrent/TimeUnit;",
         "unit",
         "setPosition",
-        "(Lw69;JLjava/util/concurrent/TimeUnit;Ls16;Lu16;)V",
+        "(Lsb9;JLjava/util/concurrent/TimeUnit;Lv56;Lx56;)V",
         "Lru/ok/android/externcalls/sdk/watch_together/listener/WatchTogetherListener;",
         "listener",
         "addListener",
@@ -60,11 +60,12 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # direct methods
-.method public static synthetic pause$default(Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;Lw69;Ls16;Lu16;ILjava/lang/Object;)V
+.method public static synthetic pause$default(Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;Lsb9;Lv56;Lx56;ILjava/lang/Object;)V
     .locals 1
 
     if-nez p5, :cond_2
@@ -85,7 +86,7 @@
     move-object p3, v0
 
     :cond_1
-    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;->pause(Lw69;Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;->pause(Lsb9;Lv56;Lx56;)V
 
     return-void
 
@@ -99,7 +100,7 @@
     throw p0
 .end method
 
-.method public static play-yj_a6ag$default(Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;Lw69;FLa79;ZLs16;Lu16;ILjava/lang/Object;)V
+.method public static play-yj_a6ag$default(Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;Lsb9;FLwb9;ZLv56;Lx56;ILjava/lang/Object;)V
     .locals 7
 
     if-nez p8, :cond_5
@@ -108,9 +109,9 @@
 
     if-eqz p8, :cond_0
 
-    sget p2, Lk79;->a:F
+    sget p2, Lgc9;->a:F
 
-    sget p2, Lk79;->a:F
+    sget p2, Lgc9;->a:F
 
     :cond_0
     move v2, p2
@@ -156,17 +157,20 @@
 
     move-object v6, p8
 
-    goto :goto_2
-
-    :cond_4
-    move-object v6, p6
-
     :goto_2
     move-object v0, p0
 
     move-object v1, p1
 
-    invoke-interface/range {v0 .. v6}, Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;->play-yj_a6ag(Lw69;FLa79;ZLs16;Lu16;)V
+    goto :goto_3
+
+    :cond_4
+    move-object v6, p6
+
+    goto :goto_2
+
+    :goto_3
+    invoke-interface/range {v0 .. v6}, Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;->play-yj_a6ag(Lsb9;FLwb9;ZLv56;Lx56;)V
 
     return-void
 
@@ -180,7 +184,7 @@
     throw p0
 .end method
 
-.method public static synthetic resume$default(Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;Lw69;Ls16;Lu16;ILjava/lang/Object;)V
+.method public static synthetic resume$default(Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;Lsb9;Lv56;Lx56;ILjava/lang/Object;)V
     .locals 1
 
     if-nez p5, :cond_2
@@ -201,7 +205,7 @@
     move-object p3, v0
 
     :cond_1
-    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;->resume(Lw69;Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;->resume(Lsb9;Lv56;Lx56;)V
 
     return-void
 
@@ -215,7 +219,7 @@
     throw p0
 .end method
 
-.method public static synthetic setMuted$default(Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;Lw69;ZLs16;Lu16;ILjava/lang/Object;)V
+.method public static synthetic setMuted$default(Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;Lsb9;ZLv56;Lx56;ILjava/lang/Object;)V
     .locals 1
 
     if-nez p6, :cond_2
@@ -236,7 +240,7 @@
     move-object p4, v0
 
     :cond_1
-    invoke-interface {p0, p1, p2, p3, p4}, Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;->setMuted(Lw69;ZLs16;Lu16;)V
+    invoke-interface {p0, p1, p2, p3, p4}, Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;->setMuted(Lsb9;ZLv56;Lx56;)V
 
     return-void
 
@@ -250,61 +254,43 @@
     throw p0
 .end method
 
-.method public static synthetic setPosition$default(Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;Lw69;JLjava/util/concurrent/TimeUnit;Ls16;Lu16;ILjava/lang/Object;)V
-    .locals 9
+.method public static synthetic setPosition$default(Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;Lsb9;JLjava/util/concurrent/TimeUnit;Lv56;Lx56;ILjava/lang/Object;)V
+    .locals 1
 
     if-nez p8, :cond_2
 
-    and-int/lit8 v0, p7, 0x8
+    and-int/lit8 p8, p7, 0x8
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    if-eqz v0, :cond_0
+    if-eqz p8, :cond_0
 
-    move-object v7, v1
-
-    goto :goto_0
+    move-object p5, v0
 
     :cond_0
-    move-object v7, p5
+    and-int/lit8 p7, p7, 0x10
 
-    :goto_0
-    and-int/lit8 v0, p7, 0x10
+    if-eqz p7, :cond_1
 
-    if-eqz v0, :cond_1
-
-    move-object v8, v1
-
-    goto :goto_1
+    move-object p6, v0
 
     :cond_1
-    move-object v8, p6
-
-    :goto_1
-    move-object v2, p0
-
-    move-object v3, p1
-
-    move-wide v4, p2
-
-    move-object v6, p4
-
-    invoke-interface/range {v2 .. v8}, Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;->setPosition(Lw69;JLjava/util/concurrent/TimeUnit;Ls16;Lu16;)V
+    invoke-interface/range {p0 .. p6}, Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;->setPosition(Lsb9;JLjava/util/concurrent/TimeUnit;Lv56;Lx56;)V
 
     return-void
 
     :cond_2
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    const-string v1, "Super calls with default arguments not supported in this target, function: setPosition"
+    const-string p1, "Super calls with default arguments not supported in this target, function: setPosition"
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    throw v0
+    throw p0
 .end method
 
-.method public static synthetic setVolume-F2PwOSs$default(Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;Lw69;FZLs16;Lu16;ILjava/lang/Object;)V
-    .locals 7
+.method public static synthetic setVolume-F2PwOSs$default(Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;Lsb9;FZLv56;Lx56;ILjava/lang/Object;)V
+    .locals 1
 
     if-nez p7, :cond_2
 
@@ -314,35 +300,17 @@
 
     if-eqz p7, :cond_0
 
-    move-object v5, v0
-
-    goto :goto_0
+    move-object p4, v0
 
     :cond_0
-    move-object v5, p4
+    and-int/lit8 p6, p6, 0x10
 
-    :goto_0
-    and-int/lit8 p4, p6, 0x10
+    if-eqz p6, :cond_1
 
-    if-eqz p4, :cond_1
-
-    move-object v6, v0
-
-    goto :goto_1
+    move-object p5, v0
 
     :cond_1
-    move-object v6, p5
-
-    :goto_1
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move v3, p2
-
-    move v4, p3
-
-    invoke-interface/range {v1 .. v6}, Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;->setVolume-F2PwOSs(Lw69;FZLs16;Lu16;)V
+    invoke-interface/range {p0 .. p5}, Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;->setVolume-F2PwOSs(Lsb9;FZLv56;Lx56;)V
 
     return-void
 
@@ -356,7 +324,7 @@
     throw p0
 .end method
 
-.method public static synthetic stop$default(Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;Lw69;Ls16;Lu16;ILjava/lang/Object;)V
+.method public static synthetic stop$default(Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;Lsb9;Lv56;Lx56;ILjava/lang/Object;)V
     .locals 1
 
     if-nez p5, :cond_2
@@ -377,7 +345,7 @@
     move-object p3, v0
 
     :cond_1
-    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;->stop(Lw69;Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;->stop(Lsb9;Lv56;Lx56;)V
 
     return-void
 
@@ -399,28 +367,28 @@
 .method public abstract getMovieStates()Lru/ok/android/externcalls/sdk/watch_together/listener/states/MovieStates;
 .end method
 
-.method public abstract pause(Lw69;Ls16;Lu16;)V
+.method public abstract pause(Lsb9;Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw69;",
-            "Ls16;",
-            "Lu16;",
+            "Lsb9;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 .end method
 
-.method public abstract play-yj_a6ag(Lw69;FLa79;ZLs16;Lu16;)V
+.method public abstract play-yj_a6ag(Lsb9;FLwb9;ZLv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw69;",
+            "Lsb9;",
             "F",
-            "La79;",
+            "Lwb9;",
             "Z",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -429,65 +397,65 @@
 .method public abstract removeListener(Lru/ok/android/externcalls/sdk/watch_together/listener/WatchTogetherListener;)V
 .end method
 
-.method public abstract resume(Lw69;Ls16;Lu16;)V
+.method public abstract resume(Lsb9;Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw69;",
-            "Ls16;",
-            "Lu16;",
+            "Lsb9;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 .end method
 
-.method public abstract setMuted(Lw69;ZLs16;Lu16;)V
+.method public abstract setMuted(Lsb9;ZLv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw69;",
+            "Lsb9;",
             "Z",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 .end method
 
-.method public abstract setPosition(Lw69;JLjava/util/concurrent/TimeUnit;Ls16;Lu16;)V
+.method public abstract setPosition(Lsb9;JLjava/util/concurrent/TimeUnit;Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw69;",
+            "Lsb9;",
             "J",
             "Ljava/util/concurrent/TimeUnit;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 .end method
 
-.method public abstract setVolume-F2PwOSs(Lw69;FZLs16;Lu16;)V
+.method public abstract setVolume-F2PwOSs(Lsb9;FZLv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw69;",
+            "Lsb9;",
             "FZ",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 .end method
 
-.method public abstract stop(Lw69;Ls16;Lu16;)V
+.method public abstract stop(Lsb9;Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw69;",
-            "Ls16;",
-            "Lu16;",
+            "Lsb9;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation

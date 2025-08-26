@@ -1,148 +1,101 @@
 .class public final Lt6;
-.super Lw6;
+.super Ljava/util/concurrent/atomic/AtomicReference;
 .source "SourceFile"
+
+# interfaces
+.implements Lam4;
 
 
 # instance fields
-.field public final a:Lmge;
-
-.field public final b:I
-
-.field public final c:I
+.field public final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 3
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
+    .locals 0
 
-    sget v0, Lr1a;->O:I
+    iput p1, p0, Lt6;->a:I
 
-    new-instance v1, Lhge;
-
-    invoke-direct {v1, v0}, Lhge;-><init>(I)V
-
-    sget v0, Ln1a;->p0:I
-
-    sget v2, Lo1a;->w:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v1, p0, Lt6;->a:Lmge;
-
-    iput v0, p0, Lt6;->b:I
-
-    iput v2, p0, Lt6;->c:I
+    invoke-direct {p0, p2}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final f()V
+    .locals 1
 
-    const/4 v0, 0x1
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-    if-ne p0, p1, :cond_0
+    move-result-object v0
 
-    return v0
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget p0, p0, Lt6;->a:I
+
+    packed-switch p0, :pswitch_data_0
+
+    check-cast v0, Ljava/lang/Runnable;
+
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+
+    goto :goto_0
+
+    :pswitch_0
+    check-cast v0, Lc6;
+
+    :try_start_0
+    invoke-interface {v0}, Lc6;->run()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :goto_0
+    return-void
+
+    :catchall_0
+    move-exception p0
+
+    invoke-static {p0}, Lg45;->f(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
+
+    move-result-object p0
+
+    throw p0
 
     :cond_0
-    instance-of v1, p1, Lt6;
+    return-void
 
-    const/4 v2, 0x0
+    nop
 
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lt6;
-
-    iget-object v1, p1, Lt6;->a:Lmge;
-
-    iget-object v3, p0, Lt6;->a:Lmge;
-
-    invoke-static {v3, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget v1, p0, Lt6;->b:I
-
-    iget v3, p1, Lt6;->b:I
-
-    if-eq v1, v3, :cond_3
-
-    return v2
-
-    :cond_3
-    iget p0, p0, Lt6;->c:I
-
-    iget p1, p1, Lt6;->c:I
-
-    if-eq p0, p1, :cond_4
-
-    return v2
-
-    :cond_4
-    return v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final getIcon()I
+.method public final g()Z
     .locals 0
 
-    iget p0, p0, Lt6;->b:I
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x1
 
     return p0
-.end method
 
-.method public final getId()I
-    .locals 0
-
-    iget p0, p0, Lt6;->c:I
-
-    return p0
-.end method
-
-.method public final getName()Lmge;
-    .locals 0
-
-    iget-object p0, p0, Lt6;->a:Lmge;
-
-    return-object p0
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    iget-object v0, p0, Lt6;->a:Lmge;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Lt6;->b:I
-
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
-
-    move-result v0
-
-    iget p0, p0, Lt6;->c:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
+    :cond_0
+    const/4 p0, 0x0
 
     return p0
 .end method
@@ -150,35 +103,79 @@
 .method public final toString()Ljava/lang/String;
     .locals 2
 
+    iget v0, p0, Lt6;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "ShareScreen(name="
+    const-string v1, "RunnableDisposable(disposed="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lt6;->a:Lmge;
+    invoke-virtual {p0}, Lt6;->g()Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result v1
 
-    const-string v1, ", icon="
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lt6;->b:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", id="
+    const-string v1, ", "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget p0, p0, Lt6;->c:I
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-    const-string v1, ")"
+    move-result-object p0
 
-    invoke-static {v0, p0, v1}, Lwn6;->j(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
+
+    :pswitch_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "ActionDisposable(disposed="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lt6;->g()Z
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

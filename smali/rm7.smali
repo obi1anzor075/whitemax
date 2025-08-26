@@ -1,129 +1,148 @@
 .class public final Lrm7;
-.super Lo3;
+.super Lize;
 .source "SourceFile"
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lrm7;",
-            ">;"
-        }
-    .end annotation
-.end field
+# interfaces
+.implements Ljava/util/ListIterator;
 
 
 # instance fields
-.field public final X:Z
+.field public final synthetic b:I
 
-.field public final Y:Z
-
-.field public final a:Z
-
-.field public final b:Z
-
-.field public final c:Z
-
-.field public final o:Z
+.field public final synthetic c:Ljava/util/AbstractList;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ludf;
-
-    const/16 v1, 0x18
-
-    invoke-direct {v0, v1}, Ludf;-><init>(I)V
-
-    sput-object v0, Lrm7;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(ZZZZZZ)V
+.method public synthetic constructor <init>(Ljava/util/AbstractList;Ljava/util/ListIterator;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p3, p0, Lrm7;->b:I
 
-    iput-boolean p1, p0, Lrm7;->a:Z
+    iput-object p1, p0, Lrm7;->c:Ljava/util/AbstractList;
 
-    iput-boolean p2, p0, Lrm7;->b:Z
-
-    iput-boolean p3, p0, Lrm7;->c:Z
-
-    iput-boolean p4, p0, Lrm7;->o:Z
-
-    iput-boolean p5, p0, Lrm7;->X:Z
-
-    iput-boolean p6, p0, Lrm7;->Y:Z
+    invoke-direct {p0, p2}, Lize;-><init>(Ljava/util/Iterator;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 2
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    const/16 p2, 0x4f45
+    iget v0, p0, Lrm7;->b:I
 
-    invoke-static {p1, p2}, Lek8;->n0(Landroid/os/Parcel;I)I
+    packed-switch v0, :pswitch_data_0
 
-    move-result p2
+    iget-object p0, p0, Lrm7;->c:Ljava/util/AbstractList;
 
-    const/4 v0, 0x1
+    check-cast p0, Ltm7;
 
-    const/4 v1, 0x4
+    iget-object p0, p0, Ltm7;->b:Lh66;
 
-    invoke-static {p1, v0, v1}, Lek8;->p0(Landroid/os/Parcel;II)V
+    invoke-interface {p0, p1}, Lh66;->apply(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-boolean v0, p0, Lrm7;->a:Z
+    move-result-object p0
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    return-object p0
 
-    const/4 v0, 0x2
+    :pswitch_0
+    iget-object p0, p0, Lrm7;->c:Ljava/util/AbstractList;
 
-    invoke-static {p1, v0, v1}, Lek8;->p0(Landroid/os/Parcel;II)V
+    check-cast p0, Lsm7;
 
-    iget-boolean v0, p0, Lrm7;->b:Z
+    iget-object p0, p0, Lsm7;->b:Lh66;
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-interface {p0, p1}, Lh66;->apply(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v0, 0x3
+    move-result-object p0
 
-    invoke-static {p1, v0, v1}, Lek8;->p0(Landroid/os/Parcel;II)V
+    return-object p0
 
-    iget-boolean v0, p0, Lrm7;->c:Z
+    nop
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    invoke-static {p1, v1, v1}, Lek8;->p0(Landroid/os/Parcel;II)V
+.method public final add(Ljava/lang/Object;)V
+    .locals 0
 
-    iget-boolean v0, p0, Lrm7;->o:Z
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
-    const/4 v0, 0x5
+    throw p0
+.end method
 
-    invoke-static {p1, v0, v1}, Lek8;->p0(Landroid/os/Parcel;II)V
+.method public final hasPrevious()Z
+    .locals 0
 
-    iget-boolean v0, p0, Lrm7;->X:Z
+    iget-object p0, p0, Lize;->a:Ljava/util/Iterator;
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    check-cast p0, Ljava/util/ListIterator;
 
-    const/4 v0, 0x6
+    invoke-interface {p0}, Ljava/util/ListIterator;->hasPrevious()Z
 
-    invoke-static {p1, v0, v1}, Lek8;->p0(Landroid/os/Parcel;II)V
+    move-result p0
 
-    iget-boolean p0, p0, Lrm7;->Y:Z
+    return p0
+.end method
 
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+.method public final nextIndex()I
+    .locals 0
 
-    invoke-static {p1, p2}, Lek8;->o0(Landroid/os/Parcel;I)V
+    iget-object p0, p0, Lize;->a:Ljava/util/Iterator;
 
-    return-void
+    check-cast p0, Ljava/util/ListIterator;
+
+    invoke-interface {p0}, Ljava/util/ListIterator;->nextIndex()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final previous()Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Lize;->a:Ljava/util/Iterator;
+
+    check-cast v0, Ljava/util/ListIterator;
+
+    invoke-interface {v0}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lize;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final previousIndex()I
+    .locals 0
+
+    iget-object p0, p0, Lize;->a:Ljava/util/Iterator;
+
+    check-cast p0, Ljava/util/ListIterator;
+
+    invoke-interface {p0}, Ljava/util/ListIterator;->previousIndex()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final set(Ljava/lang/Object;)V
+    .locals 0
+
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p0
 .end method

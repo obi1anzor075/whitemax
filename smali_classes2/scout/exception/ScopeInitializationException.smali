@@ -19,13 +19,14 @@
         0x8,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
 .field public final a:Ljava/lang/String;
 
-.field public final b:Ljava/lang/Throwable;
+.field public final b:Ljava/lang/Exception;
 
 
 # direct methods
@@ -38,7 +39,7 @@
 
     iput-object p1, p0, Lscout/exception/ScopeInitializationException;->a:Ljava/lang/String;
 
-    iput-object p2, p0, Lscout/exception/ScopeInitializationException;->b:Ljava/lang/Throwable;
+    iput-object p2, p0, Lscout/exception/ScopeInitializationException;->b:Ljava/lang/Exception;
 
     return-void
 .end method
@@ -48,7 +49,7 @@
 .method public final getCause()Ljava/lang/Throwable;
     .locals 0
 
-    iget-object p0, p0, Lscout/exception/ScopeInitializationException;->b:Ljava/lang/Throwable;
+    iget-object p0, p0, Lscout/exception/ScopeInitializationException;->b:Ljava/lang/Exception;
 
     return-object p0
 .end method

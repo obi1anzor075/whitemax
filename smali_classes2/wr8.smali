@@ -1,101 +1,59 @@
-.class public final enum Lwr8;
-.super Ljava/lang/Enum;
+.class public abstract synthetic Lwr8;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final synthetic X:Lpz4;
-
-.field public static final b:Lhk9;
-
-.field public static final enum c:Lwr8;
-
-.field public static final synthetic o:[Lwr8;
-
-
-# instance fields
-.field public final a:I
+.field public static final synthetic $EnumSwitchMapping$0:[I
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 4
 
-    new-instance v0, Lwr8;
+    const/4 v0, 0x4
 
-    const-string v1, "EMOJI"
+    invoke-static {v0}, Lzt1;->v(I)[I
 
-    const/4 v2, 0x0
+    move-result-object v1
 
-    invoke-direct {v0, v1, v2, v2}, Lwr8;-><init>(Ljava/lang/String;II)V
+    array-length v1, v1
 
-    sput-object v0, Lwr8;->c:Lwr8;
+    new-array v1, v1, [I
 
-    new-instance v1, Lwr8;
+    const/4 v2, 0x1
 
-    const-string v2, "STICKER"
+    const/4 v3, 0x0
 
-    const/4 v3, 0x1
+    :try_start_0
+    aput v2, v1, v3
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-direct {v1, v2, v3, v3}, Lwr8;-><init>(Ljava/lang/String;II)V
+    :catch_0
+    const/4 v3, 0x2
 
-    filled-new-array {v0, v1}, [Lwr8;
+    :try_start_1
+    aput v3, v1, v2
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    move-result-object v0
+    :catch_1
+    const/4 v2, 0x3
 
-    sput-object v0, Lwr8;->o:[Lwr8;
+    :try_start_2
+    aput v2, v1, v3
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    new-instance v1, Lpz4;
+    :catch_2
+    :try_start_3
+    aput v0, v1, v2
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
-    invoke-direct {v1, v0}, Lpz4;-><init>([Ljava/lang/Enum;)V
-
-    sput-object v1, Lwr8;->X:Lpz4;
-
-    new-instance v0, Lhk9;
-
-    const/16 v1, 0xd
-
-    invoke-direct {v0, v1}, Lhk9;-><init>(I)V
-
-    sput-object v0, Lwr8;->b:Lhk9;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;II)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    iput p3, p0, Lwr8;->a:I
+    :catch_3
+    sput-object v1, Lwr8;->$EnumSwitchMapping$0:[I
 
     return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lwr8;
-    .locals 1
-
-    const-class v0, Lwr8;
-
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    move-result-object p0
-
-    check-cast p0, Lwr8;
-
-    return-object p0
-.end method
-
-.method public static values()[Lwr8;
-    .locals 1
-
-    sget-object v0, Lwr8;->o:[Lwr8;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lwr8;
-
-    return-object v0
 .end method

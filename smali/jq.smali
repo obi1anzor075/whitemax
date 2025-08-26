@@ -1,106 +1,80 @@
 .class public final Ljq;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Lz24;
+.implements Ll66;
 
 
-# static fields
-.field public static final a:Ljq;
+# instance fields
+.field public synthetic X:Ljava/lang/Object;
 
-.field public static final b:Lkq;
+.field public final synthetic Y:Lgl2;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lgl2;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    new-instance v0, Ljq;
+    iput-object p1, p0, Ljq;->Y:Lgl2;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x2
 
-    sput-object v0, Ljq;->a:Ljq;
-
-    sget-object v0, Lkq;->b:Lkq;
-
-    sput-object v0, Ljq;->b:Lkq;
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lg34;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    sget-object p0, Ljq;->b:Lkq;
+    check-cast p1, Lel2;
 
-    return-object p0
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Ljq;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Ljq;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Ljq;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
 .end method
 
-.method public final b(Ljava/lang/String;Lc34;Landroid/os/Bundle;)Lj34;
-    .locals 8
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    sget-object p0, Ljq;->b:Lkq;
+    new-instance v0, Ljq;
 
-    iget-object p0, p0, Lg34;->a:Ljava/util/LinkedHashSet;
+    iget-object p0, p0, Ljq;->Y:Lgl2;
 
-    invoke-interface {p0, p2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-direct {v0, p0, p2}, Ljq;-><init>(Lgl2;Lkotlin/coroutines/Continuation;)V
 
-    move-result p0
+    iput-object p1, v0, Ljq;->X:Ljava/lang/Object;
 
-    if-nez p0, :cond_0
+    return-object v0
+.end method
 
-    const/4 p0, 0x0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    return-object p0
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    :cond_0
-    sget-object p0, Lkq;->c:Lc34;
+    iget-object p1, p0, Ljq;->X:Ljava/lang/Object;
 
-    invoke-virtual {p2, p0}, Lc34;->equals(Ljava/lang/Object;)Z
+    check-cast p1, Lel2;
 
-    move-result p0
+    iget-object p0, p0, Ljq;->Y:Lgl2;
 
-    if-eqz p0, :cond_1
+    invoke-virtual {p0, p1}, Lgl2;->a(Lel2;)V
 
-    new-instance v6, Li;
-
-    const/4 p0, 0x2
-
-    invoke-direct {v6, p0}, Li;-><init>(I)V
-
-    new-instance p0, Lj34;
-
-    const/16 v7, 0x10
-
-    const/4 v5, 0x0
-
-    const/4 v4, 0x1
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v3, p3
-
-    invoke-direct/range {v0 .. v7}, Lj34;-><init>(Ljava/lang/String;Lc34;Landroid/os/Bundle;ILh34;Li34;I)V
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "Unknown route="
-
-    invoke-static {p1, p2}, Lhr1;->f(Ljava/lang/String;Lc34;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method

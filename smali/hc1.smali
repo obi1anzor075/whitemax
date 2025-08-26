@@ -1,118 +1,107 @@
 .class public final Lhc1;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lic1;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Lone/me/calls/ui/bottomsheet/more/CallMoreBottomSheet;
+.field public final a:Lloe;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/bottomsheet/more/CallMoreBottomSheet;)V
+.method public constructor <init>(Lloe;)V
     .locals 0
 
-    iput-object p2, p0, Lhc1;->Y:Lone/me/calls/ui/bottomsheet/more/CallMoreBottomSheet;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p2, 0x2
-
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lhc1;->a:Lloe;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lhc1;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lhc1;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lhc1;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
-    new-instance v0, Lhc1;
+    if-ne p0, p1, :cond_0
 
-    iget-object p0, p0, Lhc1;->Y:Lone/me/calls/ui/bottomsheet/more/CallMoreBottomSheet;
+    goto :goto_1
 
-    invoke-direct {v0, p2, p0}, Lhc1;-><init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/bottomsheet/more/CallMoreBottomSheet;)V
+    :cond_0
+    instance-of v0, p1, Lhc1;
 
-    iput-object p1, v0, Lhc1;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lhc1;->X:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/CharSequence;
-
-    sget-object v0, Lone/me/calls/ui/bottomsheet/more/CallMoreBottomSheet;->B0:[Lk77;
-
-    iget-object p0, p0, Lhc1;->Y:Lone/me/calls/ui/bottomsheet/more/CallMoreBottomSheet;
-
-    iget-object p0, p0, Lone/me/calls/ui/bottomsheet/more/CallMoreBottomSheet;->z0:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lw4c;
-
-    iput-object p1, p0, Lw4c;->b:Ljava/lang/CharSequence;
-
-    iget-object p0, p0, Lw4c;->a:Ljava/util/LinkedHashSet;
-
-    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lv4c;
-
-    check-cast v0, Lec1;
-
-    iget-object v0, v0, Lb7c;->a:Landroid/view/View;
-
-    check-cast v0, Ln7d;
-
-    invoke-virtual {v0, p1}, Ln7d;->setDescription(Ljava/lang/CharSequence;)V
+    if-nez v0, :cond_1
 
     goto :goto_0
 
-    :cond_0
-    sget-object p0, Ljue;->a:Ljue;
+    :cond_1
+    check-cast p1, Lhc1;
+
+    iget-object p0, p0, Lhc1;->a:Lloe;
+
+    iget-object p1, p1, Lhc1;->a:Lloe;
+
+    invoke-virtual {p0, p1}, Lloe;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_2
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final getText()Lmoe;
+    .locals 0
+
+    iget-object p0, p0, Lhc1;->a:Lloe;
+
+    return-object p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    iget-object p0, p0, Lhc1;->a:Lloe;
+
+    invoke-virtual {p0}, Lloe;->hashCode()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Success(text="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lhc1;->a:Lloe;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

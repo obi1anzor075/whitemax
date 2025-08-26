@@ -1,103 +1,90 @@
-.class public final Lxw1;
+.class public final synthetic Lxw1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lsw1;
+
 
 # instance fields
-.field public final a:Lpw1;
+.field public final synthetic b:Lyw1;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 14
+.method public synthetic constructor <init>(Lyw1;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/HashSet;
+    iput-object p1, p0, Lxw1;->b:Lyw1;
 
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+    return-void
+.end method
 
-    invoke-static {}, Lfc9;->c()Lfc9;
+
+# virtual methods
+.method public final a(Ljava/util/List;)Ljava/util/List;
+    .locals 2
+
+    iget-object p0, p0, Lxw1;->b:Lyw1;
+
+    invoke-interface {p0}, Lyw1;->d()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :cond_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lyw1;
+
+    instance-of v1, v0, Lyw1;
+
+    invoke-static {v1}, Lfq0;->l(Z)V
+
+    move-object v1, v0
+
+    check-cast v1, Lyw1;
+
+    invoke-interface {v1}, Lyw1;->d()Ljava/lang/String;
 
     move-result-object v1
 
-    new-instance v2, Ljava/util/ArrayList;
+    invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    move-result v1
 
-    invoke-static {}, Lnc9;->a()Lnc9;
+    if-eqz v1, :cond_0
 
-    move-result-object v3
+    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
-    new-instance v13, Lpw1;
+    move-result-object p0
 
-    new-instance v5, Ljava/util/ArrayList;
+    return-object p0
 
-    invoke-direct {v5, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalStateException;
 
-    invoke-static {v1}, Lhga;->a(Lia3;)Lhga;
+    const-string v0, "Unable to find camera with id "
 
-    move-result-object v6
+    const-string v1, " from list of available cameras."
 
-    new-instance v9, Ljava/util/ArrayList;
+    invoke-static {v0, p0, v1}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-direct {v9, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    move-result-object p0
 
-    sget-object v0, Ls9e;->b:Ls9e;
+    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    new-instance v0, Landroid/util/ArrayMap;
-
-    invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
-
-    iget-object v1, v3, Ls9e;->a:Ljava/util/Map;
-
-    invoke-interface {v1}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/String;
-
-    invoke-interface {v1, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v3, v4}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v11, Ls9e;
-
-    invoke-direct {v11, v0}, Ls9e;-><init>(Landroid/util/ArrayMap;)V
-
-    const/4 v10, 0x0
-
-    const/4 v12, 0x0
-
-    const/4 v7, -0x1
-
-    move-object v4, v13
-
-    move v8, v10
-
-    invoke-direct/range {v4 .. v12}, Lpw1;-><init>(Ljava/util/ArrayList;Lhga;IZLjava/util/ArrayList;ZLs9e;Lws1;)V
-
-    iput-object v13, p0, Lxw1;->a:Lpw1;
-
-    return-void
+    throw p1
 .end method

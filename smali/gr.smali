@@ -1,64 +1,50 @@
-.class public final synthetic Lgr;
-.super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Ljava/util/concurrent/Executor;
+.class public final Lgr;
+.super Lbu3;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:I
+
+.field public Y:Lbn5;
+
+.field public final synthetic Z:Ltb;
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
+.method public constructor <init>(Ltb;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    iput p1, p0, Lgr;->a:I
+    iput-object p1, p0, Lgr;->Z:Ltb;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method private final a(Ljava/lang/Runnable;)V
-    .locals 0
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    iget p0, p0, Lgr;->a:I
+    iput-object p1, p0, Lgr;->o:Ljava/lang/Object;
 
-    packed-switch p0, :pswitch_data_0
+    iget p1, p0, Lgr;->X:I
 
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+    const/high16 v0, -0x80000000
 
-    :pswitch_0
-    return-void
+    or-int/2addr p1, v0
 
-    :pswitch_1
-    invoke-static {}, Lhr;->U()Lhr;
+    iput p1, p0, Lgr;->X:I
+
+    iget-object p1, p0, Lgr;->Z:Ltb;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Ltb;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    iget-object p0, p0, Lhr;->j:Lcb4;
-
-    iget-object p0, p0, Lcb4;->k:Ljava/util/concurrent/ExecutorService;
-
-    invoke-interface {p0, p1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

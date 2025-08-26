@@ -1,87 +1,112 @@
 .class public final Lh22;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public A:J
+.field public X:I
 
-.field public B:Ljava/util/Map;
+.field public final synthetic Y:Li22;
 
-.field public C:Ly2f;
 
-.field public D:Z
+# direct methods
+.method public constructor <init>(Li22;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-.field public E:Z
+    iput-object p1, p0, Lh22;->Y:Li22;
 
-.field public F:J
+    const/4 p1, 0x2
 
-.field public G:Ljava/util/Map;
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
-.field public H:J
+    return-void
+.end method
 
-.field public I:Z
 
-.field public J:J
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-.field public K:Ljava/lang/String;
+    check-cast p1, Lox3;
 
-.field public L:J
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-.field public M:J
+    invoke-virtual {p0, p1, p2}, Lh22;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-.field public N:I
+    move-result-object p0
 
-.field public O:I
+    check-cast p0, Lh22;
 
-.field public a:J
+    sget-object p1, Le5f;->a:Le5f;
 
-.field public b:Ljava/lang/String;
+    invoke-virtual {p0, p1}, Lh22;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-.field public c:J
+    move-result-object p0
 
-.field public d:Ljava/util/Map;
+    return-object p0
+.end method
 
-.field public e:J
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
 
-.field public f:Ljava/lang/String;
+    new-instance p1, Lh22;
 
-.field public g:Ljava/lang/String;
+    iget-object p0, p0, Lh22;->Y:Li22;
 
-.field public h:Ljava/lang/String;
+    invoke-direct {p1, p0, p2}, Lh22;-><init>(Li22;Lkotlin/coroutines/Continuation;)V
 
-.field public i:Lym8;
+    return-object p1
+.end method
 
-.field public j:J
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-.field public k:J
+    iget v0, p0, Lh22;->X:I
 
-.field public l:I
+    const/4 v1, 0x1
 
-.field public m:J
+    if-eqz v0, :cond_1
 
-.field public n:Ljava/lang/String;
+    if-ne v0, v1, :cond_0
 
-.field public o:Lx3a;
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-.field public p:I
+    goto :goto_0
 
-.field public q:Lzc6;
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-.field public r:I
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-.field public s:Ljava/lang/String;
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-.field public t:Ljava/util/List;
+    throw p0
 
-.field public u:I
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-.field public v:Lnj2;
+    iget-object p1, p0, Lh22;->Y:Li22;
 
-.field public w:Lym8;
+    iget-object p1, p1, Li22;->b:Lw12;
 
-.field public x:Z
+    iput v1, p0, Lh22;->X:I
 
-.field public y:Z
+    invoke-virtual {p1, p0}, Lw12;->j(Lh22;)Ljava/lang/Object;
 
-.field public z:Z
+    move-result-object p0
+
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
+.end method

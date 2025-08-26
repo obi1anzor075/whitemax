@@ -110,11 +110,11 @@
     iput-object p1, p0, Lorg/webrtc/RenderSynchronizer;->mainThreadHandler:Landroid/os/Handler;
 
     .line 6
-    new-instance v0, Lg9c;
+    new-instance v0, Lfec;
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p0, v1}, Lg9c;-><init>(Lorg/webrtc/RenderSynchronizer;I)V
+    invoke-direct {v0, p0, v1}, Lfec;-><init>(Lorg/webrtc/RenderSynchronizer;I)V
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -205,11 +205,11 @@
 
     iget-object v0, p0, Lorg/webrtc/RenderSynchronizer;->choreographer:Landroid/view/Choreographer;
 
-    new-instance v1, Leg;
+    new-instance v1, Lyf;
 
     const/4 v2, 0x2
 
-    invoke-direct {v1, v2, p0}, Leg;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v1, v2, p0}, Lyf;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/view/Choreographer;->postFrameCallback(Landroid/view/Choreographer$FrameCallback;)V
 
@@ -249,7 +249,7 @@
     :catchall_0
     move-exception p0
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_0
     monitor-exit v0
@@ -258,11 +258,11 @@
 
     iget-object v0, p0, Lorg/webrtc/RenderSynchronizer;->choreographer:Landroid/view/Choreographer;
 
-    new-instance v1, Leg;
+    new-instance v1, Lyf;
 
     const/4 v2, 0x2
 
-    invoke-direct {v1, v2, p0}, Leg;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v1, v2, p0}, Lyf;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/view/Choreographer;->postFrameCallback(Landroid/view/Choreographer$FrameCallback;)V
 
@@ -302,7 +302,7 @@
 
     invoke-direct {p0}, Lorg/webrtc/RenderSynchronizer;->openRenderWindow()V
 
-    goto :goto_0
+    return-void
 
     :cond_1
     iget-boolean p1, p0, Lorg/webrtc/RenderSynchronizer;->renderWindowOpen:Z
@@ -312,10 +312,9 @@
     invoke-direct {p0}, Lorg/webrtc/RenderSynchronizer;->closeRenderWindow()V
 
     :cond_2
-    :goto_0
     return-void
 
-    :goto_1
+    :goto_0
     :try_start_1
     monitor-exit v0
     :try_end_1
@@ -412,11 +411,11 @@
 
     iget-object v0, p0, Lorg/webrtc/RenderSynchronizer;->mainThreadHandler:Landroid/os/Handler;
 
-    new-instance v1, Lg9c;
+    new-instance v1, Lfec;
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, p0, v2}, Lg9c;-><init>(Lorg/webrtc/RenderSynchronizer;I)V
+    invoke-direct {v1, p0, v2}, Lfec;-><init>(Lorg/webrtc/RenderSynchronizer;I)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 

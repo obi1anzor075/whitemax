@@ -90,7 +90,7 @@
 
     invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto :goto_1
+    return-void
 
     :cond_2
     instance-of v0, p1, Ljava/lang/String;
@@ -105,23 +105,20 @@
 
     invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto :goto_1
+    return-void
 
     :cond_3
     invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    :goto_1
     return-void
 .end method
 
 .method public static create(JLjava/lang/String;Ljava/lang/String;Ljava/util/Map;)Lorg/webrtc/RTCStats;
-    .locals 7
+    .locals 6
     .annotation build Lorg/webrtc/CalledByNative;
     .end annotation
 
-    new-instance v6, Lorg/webrtc/RTCStats;
-
-    move-object v0, v6
+    new-instance v0, Lorg/webrtc/RTCStats;
 
     move-wide v1, p0
 
@@ -133,7 +130,7 @@
 
     invoke-direct/range {v0 .. v5}, Lorg/webrtc/RTCStats;-><init>(JLjava/lang/String;Ljava/lang/String;Ljava/util/Map;)V
 
-    return-object v6
+    return-object v0
 .end method
 
 
@@ -186,7 +183,7 @@
 
     const-string v0, "{ timestampUs: "
 
-    invoke-static {v0}, Lhr1;->l(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lzt1;->l(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

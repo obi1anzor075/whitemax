@@ -4,148 +4,185 @@
 
 
 # instance fields
-.field public final a:Lrr3;
+.field public final a:Ljava/lang/CharSequence;
 
-.field public b:Ljava/lang/String;
+.field public final b:Ljava/lang/Long;
 
-.field public c:Lwr3;
-
-.field public d:Lwr3;
-
-.field public e:Z
-
-.field public f:I
+.field public final c:Ljava/lang/Long;
 
 
 # direct methods
-.method public constructor <init>(Lrr3;Ljava/lang/String;Lwr3;Lwr3;ZI)V
+.method public constructor <init>(Ljava/lang/CharSequence;Ljava/lang/Long;Ljava/lang/Long;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lvgc;->a:Lrr3;
+    iput-object p1, p0, Lvgc;->a:Ljava/lang/CharSequence;
 
-    iput-object p2, p0, Lvgc;->b:Ljava/lang/String;
+    iput-object p2, p0, Lvgc;->b:Ljava/lang/Long;
 
-    iput-object p3, p0, Lvgc;->c:Lwr3;
-
-    iput-object p4, p0, Lvgc;->d:Lwr3;
-
-    iput-boolean p5, p0, Lvgc;->e:Z
-
-    iput p6, p0, Lvgc;->f:I
+    iput-object p3, p0, Lvgc;->c:Ljava/lang/Long;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lwr3;)V
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget-boolean v0, p0, Lvgc;->e:Z
+    const/4 v0, 0x1
 
-    if-nez v0, :cond_0
+    if-ne p0, p1, :cond_0
 
-    iput-object p1, p0, Lvgc;->d:Lwr3;
-
-    return-void
+    return v0
 
     :cond_0
-    new-instance p0, Ljava/lang/RuntimeException;
+    instance-of v1, p1, Lvgc;
 
-    const-class p1, Lvgc;
+    const/4 v2, 0x0
 
-    invoke-virtual {p1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    if-nez v1, :cond_1
 
-    move-result-object p1
+    return v2
 
-    const-string v0, "s can not be modified after being added to a Router."
+    :cond_1
+    check-cast p1, Lvgc;
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    iget-object v1, p0, Lvgc;->a:Ljava/lang/CharSequence;
 
-    move-result-object p1
+    iget-object v3, p1, Lvgc;->a:Ljava/lang/CharSequence;
 
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    throw p0
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object v1, p0, Lvgc;->b:Ljava/lang/Long;
+
+    iget-object v3, p1, Lvgc;->b:Ljava/lang/Long;
+
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object p0, p0, Lvgc;->c:Ljava/lang/Long;
+
+    iget-object p1, p1, Lvgc;->c:Ljava/lang/Long;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_4
+
+    return v2
+
+    :cond_4
+    return v0
 .end method
 
-.method public final b()Lwr3;
-    .locals 1
+.method public final hashCode()I
+    .locals 3
 
-    iget-object v0, p0, Lvgc;->a:Lrr3;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Lrr3;->getOverriddenPushHandler()Lwr3;
+    iget-object v1, p0, Lvgc;->a:Ljava/lang/CharSequence;
 
-    move-result-object v0
+    if-nez v1, :cond_0
 
-    if-nez v0, :cond_0
+    move v1, v0
 
-    iget-object v0, p0, Lvgc;->c:Lwr3;
+    goto :goto_0
 
     :cond_0
-    return-object v0
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    :goto_0
+    mul-int/lit8 v1, v1, 0x1f
+
+    iget-object v2, p0, Lvgc;->b:Ljava/lang/Long;
+
+    if-nez v2, :cond_1
+
+    move v2, v0
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v2
+
+    :goto_1
+    add-int/2addr v1, v2
+
+    mul-int/lit8 v1, v1, 0x1f
+
+    iget-object p0, p0, Lvgc;->c:Ljava/lang/Long;
+
+    if-nez p0, :cond_2
+
+    goto :goto_2
+
+    :cond_2
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    :goto_2
+    add-int/2addr v1, v0
+
+    return v1
 .end method
 
-.method public final c(Lwr3;)V
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    iget-boolean v0, p0, Lvgc;->e:Z
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    if-nez v0, :cond_0
+    const-string v1, "Result(text="
 
-    iput-object p1, p0, Lvgc;->c:Lwr3;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    return-void
+    iget-object v1, p0, Lvgc;->a:Ljava/lang/CharSequence;
 
-    :cond_0
-    new-instance p0, Ljava/lang/RuntimeException;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-class p1, Lvgc;
+    const-string v1, ", editMsgId="
 
-    invoke-virtual {p1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object p1
+    iget-object v1, p0, Lvgc;->b:Ljava/lang/Long;
 
-    const-string v0, "s can not be modified after being added to a Router."
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    const-string v1, ", replyMsgId="
 
-    move-result-object p1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    iget-object p0, p0, Lvgc;->c:Ljava/lang/Long;
 
-    throw p0
-.end method
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-.method public final d(Ljava/lang/String;)V
-    .locals 1
+    const-string p0, ")"
 
-    iget-boolean v0, p0, Lvgc;->e:Z
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-nez v0, :cond_0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iput-object p1, p0, Lvgc;->b:Ljava/lang/String;
+    move-result-object p0
 
-    return-void
-
-    :cond_0
-    new-instance p0, Ljava/lang/RuntimeException;
-
-    const-class p1, Lvgc;
-
-    invoke-virtual {p1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v0, "s can not be modified after being added to a Router."
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+    return-object p0
 .end method

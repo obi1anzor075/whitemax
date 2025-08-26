@@ -1,468 +1,272 @@
 .class public final Lu54;
-.super Lzg0;
+.super Lw54;
 .source "SourceFile"
-
-# interfaces
-.implements Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;
-
-
-# static fields
-.field public static final synthetic x0:I
 
 
 # instance fields
-.field public volatile X:Landroid/graphics/Bitmap;
+.field public final j:Lqkb;
 
-.field public final Y:Ltjb;
-
-.field public final Z:I
-
-.field public o:Le13;
-
-.field public final w0:I
+.field public final k:Lzvd;
 
 
 # direct methods
-.method public constructor <init>(Landroid/graphics/Bitmap;Lnbc;Ltjb;II)V
-    .locals 1
-
-    .line 1
-    invoke-direct {p0}, Lzg0;-><init>()V
-
-    .line 2
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 3
-    iput-object p1, p0, Lu54;->X:Landroid/graphics/Bitmap;
-
-    .line 4
-    iget-object p1, p0, Lu54;->X:Landroid/graphics/Bitmap;
-
-    .line 5
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 6
-    sget-object v0, Le13;->Y:Lkk9;
-
-    invoke-static {p1, p2, v0}, Le13;->p0(Ljava/lang/Object;Lnbc;Ld13;)Lt54;
-
-    move-result-object p1
-
-    .line 7
-    iput-object p1, p0, Lu54;->o:Le13;
-
-    .line 8
-    iput-object p3, p0, Lu54;->Y:Ltjb;
-
-    .line 9
-    iput p4, p0, Lu54;->Z:I
-
-    .line 10
-    iput p5, p0, Lu54;->w0:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Le13;Ltjb;II)V
+.method public constructor <init>(Lx54;Lai0;Ln7b;Lqkb;Lzvd;I)V
     .locals 0
 
-    .line 11
-    invoke-direct {p0}, Lzg0;-><init>()V
+    invoke-direct {p0, p1, p2, p3, p6}, Lw54;-><init>(Lx54;Lai0;Ln7b;I)V
 
-    .line 12
-    invoke-virtual {p1}, Le13;->n()Le13;
+    iput-object p4, p0, Lu54;->j:Lqkb;
 
-    move-result-object p1
+    iput-object p5, p0, Lu54;->k:Lzvd;
 
-    .line 13
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 p1, 0x0
 
-    .line 14
-    iput-object p1, p0, Lu54;->o:Le13;
-
-    .line 15
-    invoke-virtual {p1}, Le13;->e0()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/graphics/Bitmap;
-
-    iput-object p1, p0, Lu54;->X:Landroid/graphics/Bitmap;
-
-    .line 16
-    iput-object p2, p0, Lu54;->Y:Ltjb;
-
-    .line 17
-    iput p3, p0, Lu54;->Z:I
-
-    .line 18
-    iput p4, p0, Lu54;->w0:I
+    iput p1, p0, Lw54;->h:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized cloneUnderlyingBitmapReference()Le13;
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lu54;->o:Le13;
-
-    invoke-static {v0}, Le13;->o(Le13;)Le13;
-
-    move-result-object v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
-.end method
-
-.method public final close()V
-    .locals 2
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lu54;->o:Le13;
-
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Lu54;->o:Le13;
-
-    iput-object v1, p0, Lu54;->X:Landroid/graphics/Bitmap;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Le13;->close()V
-
-    :cond_0
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized convertToBitmapReference()Le13;
-    .locals 2
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lu54;->o:Le13;
-
-    const-string v1, "Cannot convert a closed static bitmap"
-
-    invoke-static {v0, v1}, Lez3;->n(Ljava/lang/Object;Ljava/lang/String;)V
-
-    monitor-enter p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    :try_start_1
-    iget-object v0, p0, Lu54;->o:Le13;
-
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Lu54;->o:Le13;
-
-    iput-object v1, p0, Lu54;->X:Landroid/graphics/Bitmap;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :try_start_2
-    monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    monitor-exit p0
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_3
-    monitor-exit p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    :try_start_4
-    throw v0
-
-    :catchall_1
-    move-exception v0
-
-    monitor-exit p0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-
-    throw v0
-.end method
-
-.method public final finalize()V
-    .locals 3
-
-    invoke-virtual {p0}, Lu54;->isClosed()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    :cond_0
-    const-class v0, Lu54;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    filled-new-array {v0, v1}, [Ljava/lang/Object;
-
-    move-result-object v0
-
-    const-string v1, "DefaultCloseableStaticBitmap"
-
-    const-string v2, "finalize: %s %x still open."
-
-    invoke-static {v1, v2, v0}, Lm75;->m(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    :try_start_0
-    invoke-virtual {p0}, Lu54;->close()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-super {p0}, Ljava/lang/Object;->finalize()V
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    invoke-super {p0}, Ljava/lang/Object;->finalize()V
-
-    throw v0
-.end method
-
-.method public final getExifOrientation()I
+.method public final n(La05;)I
     .locals 0
 
-    iget p0, p0, Lu54;->w0:I
+    iget-object p0, p0, Lu54;->j:Lqkb;
+
+    iget p0, p0, Lqkb;->f:I
 
     return p0
 .end method
 
-.method public final getHeight()I
+.method public final o()Lfx6;
     .locals 3
 
-    iget v0, p0, Lu54;->Z:I
+    iget-object v0, p0, Lu54;->j:Lqkb;
 
-    rem-int/lit16 v0, v0, 0xb4
+    iget v0, v0, Lqkb;->e:I
 
-    const/4 v1, 0x0
+    iget-object p0, p0, Lu54;->k:Lzvd;
 
-    if-nez v0, :cond_2
+    iget-object p0, p0, Lzvd;->b:Ljava/lang/Object;
 
-    iget v0, p0, Lu54;->w0:I
+    const/4 p0, 0x0
 
-    const/4 v2, 0x5
+    if-ltz v0, :cond_0
 
-    if-eq v0, v2, :cond_2
-
-    const/4 v2, 0x7
-
-    if-ne v0, v2, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    iget-object p0, p0, Lu54;->X:Landroid/graphics/Bitmap;
-
-    if-nez p0, :cond_1
+    const/4 v1, 0x1
 
     goto :goto_0
 
-    :cond_1
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v1
+    :cond_0
+    move v1, p0
 
     :goto_0
-    return v1
+    new-instance v2, Lfx6;
 
-    :cond_2
-    :goto_1
-    iget-object p0, p0, Lu54;->X:Landroid/graphics/Bitmap;
+    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
 
-    if-nez p0, :cond_3
+    iput v0, v2, Lfx6;->a:I
 
-    goto :goto_2
+    iput-boolean v1, v2, Lfx6;->b:Z
 
-    :cond_3
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
+    iput-boolean p0, v2, Lfx6;->c:Z
 
-    move-result v1
-
-    :goto_2
-    return v1
+    return-object v2
 .end method
 
-.method public final getQualityInfo()Ltjb;
-    .locals 0
-
-    iget-object p0, p0, Lu54;->Y:Ltjb;
-
-    return-object p0
-.end method
-
-.method public final getRotationAngle()I
-    .locals 0
-
-    iget p0, p0, Lu54;->Z:I
-
-    return p0
-.end method
-
-.method public final getSizeInBytes()I
-    .locals 0
-
-    iget-object p0, p0, Lu54;->X:Landroid/graphics/Bitmap;
-
-    invoke-static {p0}, Lmn0;->d(Landroid/graphics/Bitmap;)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final getUnderlyingBitmap()Landroid/graphics/Bitmap;
-    .locals 0
-
-    iget-object p0, p0, Lu54;->X:Landroid/graphics/Bitmap;
-
-    return-object p0
-.end method
-
-.method public final getWidth()I
-    .locals 3
-
-    iget v0, p0, Lu54;->Z:I
-
-    rem-int/lit16 v0, v0, 0xb4
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_2
-
-    iget v0, p0, Lu54;->w0:I
-
-    const/4 v2, 0x5
-
-    if-eq v0, v2, :cond_2
-
-    const/4 v2, 0x7
-
-    if-ne v0, v2, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    iget-object p0, p0, Lu54;->X:Landroid/graphics/Bitmap;
-
-    if-nez p0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v1
-
-    :goto_0
-    return v1
-
-    :cond_2
-    :goto_1
-    iget-object p0, p0, Lu54;->X:Landroid/graphics/Bitmap;
-
-    if-nez p0, :cond_3
-
-    goto :goto_2
-
-    :cond_3
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v1
-
-    :goto_2
-    return v1
-.end method
-
-.method public final declared-synchronized isClosed()Z
-    .locals 1
+.method public final declared-synchronized s(La05;I)Z
+    .locals 5
 
     monitor-enter p0
 
-    :try_start_0
-    iget-object v0, p0, Lu54;->o:Le13;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
     const/4 v0, 0x0
 
-    :goto_0
+    if-nez p1, :cond_0
+
     monitor-exit p0
 
     return v0
 
-    :catchall_0
-    move-exception v0
+    :cond_0
+    :try_start_0
+    iget-object v1, p0, Lw54;->g:Ll87;
 
-    :try_start_1
+    invoke-virtual {v1, p1, p2}, Ll87;->e(La05;I)Z
+
+    move-result v1
+
+    invoke-static {p2}, Lai0;->b(I)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    const/16 v2, 0x8
+
+    invoke-static {p2, v2}, Lai0;->l(II)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_9
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p1
+
+    goto/16 :goto_4
+
+    :cond_1
+    :goto_0
+    const/4 v2, 0x4
+
+    invoke-static {p2, v2}, Lai0;->l(II)Z
+
+    move-result p2
+
+    if-nez p2, :cond_9
+
+    invoke-static {p1}, La05;->q0(La05;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_9
+
+    invoke-virtual {p1}, La05;->r0()V
+
+    iget-object p2, p1, La05;->b:Lru6;
+
+    sget-object v2, Lac4;->a:Lru6;
+
+    if-ne p2, v2, :cond_9
+
+    iget-object p2, p0, Lu54;->j:Lqkb;
+
+    invoke-virtual {p2, p1}, Lqkb;->b(La05;)Z
+
+    move-result p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-nez p1, :cond_2
+
     monitor-exit p0
+
+    return v0
+
+    :cond_2
+    :try_start_1
+    iget-object p1, p0, Lu54;->j:Lqkb;
+
+    iget p1, p1, Lqkb;->e:I
+
+    iget p2, p0, Lw54;->h:I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    throw v0
+    if-gt p1, p2, :cond_3
+
+    monitor-exit p0
+
+    return v0
+
+    :cond_3
+    :try_start_2
+    iget-object v2, p0, Lu54;->k:Lzvd;
+
+    iget-object v2, v2, Lzvd;->b:Ljava/lang/Object;
+
+    sget-object v2, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+
+    if-eqz v2, :cond_7
+
+    invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_4
+
+    goto :goto_2
+
+    :cond_4
+    move v3, v0
+
+    :goto_1
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    if-ge v3, v4, :cond_6
+
+    invoke-interface {v2, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/Integer;
+
+    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+
+    move-result v4
+
+    if-le v4, p2, :cond_5
+
+    invoke-interface {v2, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/lang/Integer;
+
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
+
+    move-result p2
+
+    goto :goto_3
+
+    :cond_5
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_1
+
+    :cond_6
+    const p2, 0x7fffffff
+
+    goto :goto_3
+
+    :cond_7
+    :goto_2
+    add-int/lit8 p2, p2, 0x1
+
+    :goto_3
+    if-ge p1, p2, :cond_8
+
+    iget-object p2, p0, Lu54;->j:Lqkb;
+
+    iget-boolean p2, p2, Lqkb;->g:Z
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    if-nez p2, :cond_8
+
+    monitor-exit p0
+
+    return v0
+
+    :cond_8
+    :try_start_3
+    iput p1, p0, Lw54;->h:I
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    :cond_9
+    monitor-exit p0
+
+    return v1
+
+    :goto_4
+    :try_start_4
+    monitor-exit p0
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+
+    throw p1
 .end method

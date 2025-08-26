@@ -1,135 +1,178 @@
-.class public final synthetic Lp56;
+.class public final Lp56;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lnwc;
-
 
 # instance fields
-.field public final synthetic a:Lm66;
+.field public final a:Ljava/lang/String;
+
+.field public final b:Ljava/lang/String;
+
+.field public final c:Lp56;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lm66;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lp56;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lp56;->a:Lm66;
+    iput-object p1, p0, Lp56;->a:Ljava/lang/String;
+
+    iput-object p2, p0, Lp56;->b:Ljava/lang/String;
+
+    iput-object p3, p0, Lp56;->c:Lp56;
 
     return-void
 .end method
 
+.method public static a(Lp56;Ljava/lang/String;)Lp56;
+    .locals 2
+
+    iget-object v0, p0, Lp56;->a:Ljava/lang/String;
+
+    iget-object v1, p0, Lp56;->c:Lp56;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance p0, Lp56;
+
+    invoke-direct {p0, v0, p1, v1}, Lp56;-><init>(Ljava/lang/String;Ljava/lang/String;Lp56;)V
+
+    return-object p0
+.end method
+
 
 # virtual methods
-.method public final B1(Ljava/util/Set;)V
-    .locals 6
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget-object p0, p0, Lp56;->a:Lm66;
+    const/4 v0, 0x1
 
-    iget-object v0, p0, Lm66;->z0:Lgrd;
+    if-ne p0, p1, :cond_0
 
-    invoke-interface {p1}, Ljava/util/Set;->size()I
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lp56;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lp56;
+
+    iget-object v1, p0, Lp56;->a:Ljava/lang/String;
+
+    iget-object v3, p1, Lp56;->a:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
-    const/16 v2, 0x64
+    if-nez v1, :cond_2
 
-    const/4 v3, 0x0
+    return v2
 
-    const/4 v4, 0x1
+    :cond_2
+    iget-object v1, p0, Lp56;->b:Ljava/lang/String;
 
-    if-lt v1, v2, :cond_0
+    iget-object v3, p1, Lp56;->b:Ljava/lang/String;
 
-    move v1, v4
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object p0, p0, Lp56;->c:Lp56;
+
+    iget-object p1, p1, Lp56;->c:Lp56;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_4
+
+    return v2
+
+    :cond_4
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    iget-object v0, p0, Lp56;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget-object v2, p0, Lp56;->b:Ljava/lang/String;
+
+    invoke-static {v0, v1, v2}, Lv04;->d(IILjava/lang/String;)I
+
+    move-result v0
+
+    iget-object p0, p0, Lp56;->c:Lp56;
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
 
     goto :goto_0
 
     :cond_0
-    move v1, v3
+    invoke-virtual {p0}, Lp56;->hashCode()I
+
+    move-result p0
 
     :goto_0
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    add-int/2addr v0, p0
 
-    move-result-object v1
+    return v0
+.end method
 
-    const/4 v2, 0x0
+.method public final toString()Ljava/lang/String;
+    .locals 5
 
-    invoke-virtual {v0, v2, v1}, Lgrd;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
+    const-string v0, ", original="
 
-    invoke-interface {p1}, Ljava/util/Set;->size()I
+    const-string v1, ", noEmoji="
 
-    move-result v0
+    const-string v2, "Result(normalized="
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    iget-object v3, p0, Lp56;->a:Ljava/lang/String;
 
-    const-string v5, "onSelectedMediasChangeListener(), selectedCount "
+    iget-object v4, p0, Lp56;->b:Ljava/lang/String;
 
-    invoke-direct {v1, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v2, v3, v0, v4, v1}, Lzge;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v1, "m66"
+    iget-object p0, p0, Lp56;->c:Lp56;
 
-    invoke-static {v1, v0}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
+    const-string p0, ")"
 
-    move-result v0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    xor-int/2addr v0, v4
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    if-eqz v0, :cond_2
+    move-result-object p0
 
-    iget-object v0, p0, Lm66;->P0:Lqod;
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v0, v2}, Li47;->cancel(Ljava/util/concurrent/CancellationException;)V
-
-    :cond_1
-    new-instance v0, Lg66;
-
-    invoke-direct {v0, p0, p1, v2}, Lg66;-><init>(Lm66;Ljava/util/Set;Lkotlin/coroutines/Continuation;)V
-
-    const/4 p1, 0x2
-
-    iget-object v1, p0, Lm66;->o:Lku3;
-
-    invoke-static {p0, v1, v2, v0, p1}, Ltaf;->n(Ltaf;Lhu3;Lru3;Li26;I)Lqod;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lm66;->P0:Lqod;
-
-    goto :goto_1
-
-    :cond_2
-    invoke-static {p0, v3, v4}, Lm66;->r(Lm66;ZI)V
-
-    :goto_1
-    iget-object p1, p0, Lm66;->J0:Lpwc;
-
-    invoke-static {p1}, Lpfa;->t(Lpwc;)Ljava/util/ArrayList;
-
-    move-result-object p1
-
-    iget-object p0, p0, Lm66;->Y:Lf56;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v0, Lz46;
-
-    invoke-direct {v0, p1}, Lz46;-><init>(Ljava/util/List;)V
-
-    iget-object p0, p0, Lf56;->c:Ll05;
-
-    invoke-static {p0, v0}, Ltaf;->o(Ll05;Ljava/lang/Object;)V
-
-    return-void
+    return-object p0
 .end method

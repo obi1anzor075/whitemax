@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ldu3;
+.implements Ldx3;
 
 
 # instance fields
@@ -60,13 +60,10 @@
 
     if-nez p0, :cond_2
 
-    goto :goto_0
+    return v0
 
     :cond_2
-    move v0, v2
-
-    :goto_0
-    return v0
+    return v2
 .end method
 
 .method public final hashCode()I

@@ -113,9 +113,7 @@
 
     :cond_4
     :goto_0
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object p0
+    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     return-object p0
 .end method
@@ -160,7 +158,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/support/v4/media/MediaBrowserCompat$SubscriptionCallback;->onChildrenLoaded(Ljava/lang/String;Ljava/util/List;)V
 
-    goto :goto_3
+    return-void
 
     :cond_1
     invoke-static {p2}, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->fromMediaItemList(Ljava/util/List;)Ljava/util/List;
@@ -213,7 +211,6 @@
     goto :goto_1
 
     :cond_3
-    :goto_3
     return-void
 .end method
 

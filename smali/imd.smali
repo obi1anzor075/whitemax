@@ -1,29 +1,17 @@
-.class public abstract Limd;
+.class public interface abstract Limd;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public a:Z
-
-.field public b:Z
-
-
 # virtual methods
-.method public abstract a(Landroid/view/ViewGroup;)V
+.method public abstract a()Z
 .end method
 
-.method public abstract b(Landroid/view/ViewGroup;)V
+.method public abstract dismiss()V
 .end method
 
-.method public c(Lgd0;)V
-    .locals 0
-
-    return-void
+.method public abstract g()V
 .end method
 
-.method public d(Landroid/view/ViewGroup;)V
-    .locals 0
-
-    return-void
+.method public abstract i()Lxr4;
 .end method

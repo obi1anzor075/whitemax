@@ -1,5 +1,5 @@
 .class public final Li0;
-.super Lgh0;
+.super Lgi0;
 .source "SourceFile"
 
 
@@ -57,19 +57,18 @@
 
     invoke-virtual {p1}, Lg0;->a()Z
 
-    goto :goto_0
+    return-void
 
     :cond_0
     if-nez v0, :cond_1
 
-    iget-object p0, p0, Lk0;->h:Ly66;
+    iget-object p0, p0, Lk0;->h:Lwa6;
 
     const/4 p1, 0x0
 
-    invoke-virtual {p0, v1, p1}, Ly66;->m(FZ)V
+    invoke-virtual {p0, v1, p1}, Lwa6;->m(FZ)V
 
     :cond_1
-    :goto_0
     return-void
 .end method
 
@@ -80,13 +79,13 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Li0;->c:Lk0;
+    const/4 v1, 0x1
+
+    iget-object v2, p0, Li0;->c:Lk0;
 
     iget-object p0, p0, Li0;->a:Ljava/lang/String;
 
-    const/4 v2, 0x1
-
-    invoke-virtual {v1, p0, p1, v0, v2}, Lk0;->l(Ljava/lang/String;Lg0;Ljava/lang/Throwable;Z)V
+    invoke-virtual {v2, p0, p1, v0, v1}, Lk0;->l(Ljava/lang/String;Lg0;Ljava/lang/Throwable;Z)V
 
     return-void
 .end method
@@ -98,7 +97,7 @@
 
     move-result v5
 
-    instance-of v7, p1, Lpcc;
+    instance-of v7, p1, Lshc;
 
     invoke-virtual {p1}, Lg0;->d()F
 
@@ -108,9 +107,9 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_0
-
     iget-object v0, p0, Li0;->c:Lk0;
+
+    if-eqz v3, :cond_0
 
     iget-object v1, p0, Li0;->a:Ljava/lang/String;
 
@@ -120,24 +119,23 @@
 
     invoke-virtual/range {v0 .. v7}, Lk0;->m(Ljava/lang/String;Lg0;Ljava/lang/Object;FZZZ)V
 
-    goto :goto_0
+    return-void
 
     :cond_0
+    move-object v2, p1
+
     if-eqz v5, :cond_1
 
-    new-instance v0, Ljava/lang/NullPointerException;
+    new-instance p1, Ljava/lang/NullPointerException;
 
-    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+    invoke-direct {p1}, Ljava/lang/NullPointerException;-><init>()V
 
-    iget-object v1, p0, Li0;->c:Lk0;
+    const/4 v1, 0x1
 
     iget-object p0, p0, Li0;->a:Ljava/lang/String;
 
-    const/4 v2, 0x1
-
-    invoke-virtual {v1, p0, p1, v0, v2}, Lk0;->l(Ljava/lang/String;Lg0;Ljava/lang/Throwable;Z)V
+    invoke-virtual {v0, p0, v2, p1, v1}, Lk0;->l(Ljava/lang/String;Lg0;Ljava/lang/Throwable;Z)V
 
     :cond_1
-    :goto_0
     return-void
 .end method

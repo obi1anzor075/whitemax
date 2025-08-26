@@ -1,251 +1,196 @@
-.class public abstract Los;
+.class public final Los;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Iterable;
+.implements Lqb7;
 
-# static fields
-.field public static final a:Landroid/util/Rational;
 
-.field public static final b:Landroid/util/Rational;
+# instance fields
+.field public final synthetic a:I
 
-.field public static final c:Landroid/util/Rational;
-
-.field public static final d:Landroid/util/Rational;
+.field public final b:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
+    .locals 0
 
-    new-instance v0, Landroid/util/Rational;
+    iput p1, p0, Los;->a:I
 
-    const/4 v1, 0x4
+    iput-object p2, p0, Los;->b:Ljava/lang/Object;
 
-    const/4 v2, 0x3
-
-    invoke-direct {v0, v1, v2}, Landroid/util/Rational;-><init>(II)V
-
-    sput-object v0, Los;->a:Landroid/util/Rational;
-
-    new-instance v0, Landroid/util/Rational;
-
-    invoke-direct {v0, v2, v1}, Landroid/util/Rational;-><init>(II)V
-
-    sput-object v0, Los;->b:Landroid/util/Rational;
-
-    new-instance v0, Landroid/util/Rational;
-
-    const/16 v1, 0x10
-
-    const/16 v2, 0x9
-
-    invoke-direct {v0, v1, v2}, Landroid/util/Rational;-><init>(II)V
-
-    sput-object v0, Los;->c:Landroid/util/Rational;
-
-    new-instance v0, Landroid/util/Rational;
-
-    invoke-direct {v0, v2, v1}, Landroid/util/Rational;-><init>(II)V
-
-    sput-object v0, Los;->d:Landroid/util/Rational;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Landroid/util/Size;Landroid/util/Rational;Landroid/util/Size;)Z
-    .locals 5
 
-    const/4 v0, 0x0
+# virtual methods
+.method public a(Ljava/lang/String;)Z
+    .locals 4
 
-    if-nez p1, :cond_0
+    iget-object p0, p0, Los;->b:Ljava/lang/Object;
 
-    goto :goto_1
+    check-cast p0, [Lnq6;
+
+    array-length v0, p0
+
+    const/4 v1, 0x0
+
+    move v2, v1
+
+    :goto_0
+    if-ge v2, v0, :cond_1
+
+    aget-object v3, p0, v2
+
+    iget-object v3, v3, Lnq6;->a:Ljava/lang/String;
+
+    invoke-virtual {v3, p1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_0
-    new-instance v1, Landroid/util/Rational;
-
-    invoke-virtual {p0}, Landroid/util/Size;->getWidth()I
-
-    move-result v2
-
-    invoke-virtual {p0}, Landroid/util/Size;->getHeight()I
-
-    move-result v3
-
-    invoke-direct {v1, v2, v3}, Landroid/util/Rational;-><init>(II)V
-
-    invoke-virtual {p1, v1}, Landroid/util/Rational;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    if-eqz v1, :cond_2
-
-    :cond_1
-    :goto_0
-    move v0, v2
-
-    goto :goto_1
-
-    :cond_2
-    sget-object v1, Lhjd;->a:Landroid/util/Size;
-
-    invoke-virtual {p0}, Landroid/util/Size;->getWidth()I
-
-    move-result v1
-
-    invoke-virtual {p0}, Landroid/util/Size;->getHeight()I
-
-    move-result v3
-
-    mul-int/2addr v3, v1
-
-    invoke-static {p2}, Lhjd;->a(Landroid/util/Size;)I
-
-    move-result p2
-
-    if-lt v3, p2, :cond_5
-
-    invoke-virtual {p0}, Landroid/util/Size;->getWidth()I
-
-    move-result p2
-
-    invoke-virtual {p0}, Landroid/util/Size;->getHeight()I
-
-    move-result p0
-
-    new-instance v1, Landroid/util/Rational;
-
-    invoke-virtual {p1}, Landroid/util/Rational;->getDenominator()I
-
-    move-result v3
-
-    invoke-virtual {p1}, Landroid/util/Rational;->getNumerator()I
-
-    move-result v4
-
-    invoke-direct {v1, v3, v4}, Landroid/util/Rational;-><init>(II)V
-
-    rem-int/lit8 v3, p2, 0x10
-
-    if-nez v3, :cond_3
-
-    rem-int/lit8 v4, p0, 0x10
-
-    if-nez v4, :cond_3
-
-    add-int/lit8 v3, p0, -0x10
-
-    invoke-static {v0, v3}, Ljava/lang/Math;->max(II)I
-
-    move-result v3
-
-    invoke-static {v3, p2, p1}, Los;->b(IILandroid/util/Rational;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_1
-
-    add-int/lit8 p2, p2, -0x10
-
-    invoke-static {v0, p2}, Ljava/lang/Math;->max(II)I
-
-    move-result p1
-
-    invoke-static {p1, p0, v1}, Los;->b(IILandroid/util/Rational;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_5
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    :cond_3
-    if-nez v3, :cond_4
-
-    invoke-static {p0, p2, p1}, Los;->b(IILandroid/util/Rational;)Z
-
-    move-result v0
-
-    goto :goto_1
-
-    :cond_4
-    rem-int/lit8 p1, p0, 0x10
-
-    if-nez p1, :cond_5
-
-    invoke-static {p2, p0, v1}, Los;->b(IILandroid/util/Rational;)Z
-
-    move-result v0
-
-    :cond_5
-    :goto_1
-    return v0
+    :cond_1
+    return v1
 .end method
 
-.method public static b(IILandroid/util/Rational;)Z
-    .locals 7
+.method public final iterator()Ljava/util/Iterator;
+    .locals 2
 
-    rem-int/lit8 v0, p1, 0x10
+    iget v0, p0, Los;->a:I
 
-    const/4 v1, 0x1
+    packed-switch v0, :pswitch_data_0
 
-    const/4 v2, 0x0
+    new-instance v0, Lv1;
 
-    if-nez v0, :cond_0
+    iget-object p0, p0, Los;->b:Ljava/lang/Object;
 
-    move v0, v1
+    check-cast p0, Ll25;
 
-    goto :goto_0
+    invoke-direct {v0, p0}, Lv1;-><init>(Ll25;)V
 
-    :cond_0
-    move v0, v2
+    return-object v0
 
-    :goto_0
-    invoke-static {v0}, Le07;->k(Z)V
+    :pswitch_0
+    iget-object p0, p0, Los;->b:Ljava/lang/Object;
 
-    invoke-virtual {p2}, Landroid/util/Rational;->getNumerator()I
+    check-cast p0, Li4d;
 
-    move-result v0
+    invoke-interface {p0}, Li4d;->iterator()Ljava/util/Iterator;
 
-    mul-int/2addr v0, p0
+    move-result-object p0
 
-    int-to-double v3, v0
+    return-object p0
 
-    invoke-virtual {p2}, Landroid/util/Rational;->getDenominator()I
+    :pswitch_1
+    new-instance v0, Lfs4;
 
-    move-result p0
+    iget-object p0, p0, Los;->b:Ljava/lang/Object;
 
-    int-to-double v5, p0
+    check-cast p0, Lae;
 
-    div-double/2addr v3, v5
+    invoke-virtual {p0}, Lae;->invoke()Ljava/lang/Object;
 
-    add-int/lit8 p0, p1, -0x10
+    move-result-object p0
 
-    invoke-static {v2, p0}, Ljava/lang/Math;->max(II)I
+    check-cast p0, Ljava/util/Iterator;
 
-    move-result p0
+    invoke-direct {v0, p0}, Lfs4;-><init>(Ljava/util/Iterator;)V
 
-    int-to-double v5, p0
+    return-object v0
 
-    cmpl-double p0, v3, v5
+    :pswitch_2
+    iget-object p0, p0, Los;->b:Ljava/lang/Object;
 
-    if-lez p0, :cond_1
+    check-cast p0, [Lnq6;
 
-    add-int/lit8 p1, p1, 0x10
+    new-instance v0, Lv1;
 
-    int-to-double p0, p1
+    const/4 v1, 0x2
 
-    cmpg-double p0, v3, p0
+    invoke-direct {v0, v1, p0}, Lv1;-><init>(ILjava/lang/Object;)V
 
-    if-gez p0, :cond_1
+    return-object v0
 
-    goto :goto_1
+    :pswitch_3
+    iget-object p0, p0, Los;->b:Ljava/lang/Object;
 
-    :cond_1
-    move v1, v2
+    check-cast p0, [Ljava/lang/Object;
 
-    :goto_1
-    return v1
+    new-instance v0, Lv1;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1, p0}, Lv1;-><init>(ILjava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    iget v0, p0, Los;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "["
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Los;->b:Ljava/lang/Object;
+
+    check-cast p0, [Lnq6;
+
+    const/16 v1, 0x3e
+
+    invoke-static {v1, p0}, Lns;->i0(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 p0, 0x5d
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,175 +1,153 @@
 .class public final Li31;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Ll31;
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+.field public X:I
 
-.field public final b:I
-
-.field public final c:I
-
-.field public final d:I
-
-.field public final e:Lhge;
-
-.field public final f:Lhge;
+.field public final synthetic Y:Lihb;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;)V
-    .locals 1
+.method public constructor <init>(Lihb;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Li31;->Y:Lihb;
 
-    iput-object p1, p0, Li31;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+    const/4 p1, 0x2
 
-    sget p1, Lo1a;->I:I
-
-    iput p1, p0, Li31;->b:I
-
-    sget p1, Ln1a;->s0:I
-
-    iput p1, p0, Li31;->c:I
-
-    sget p1, Ln1a;->F0:I
-
-    iput p1, p0, Li31;->d:I
-
-    sget p1, Lr1a;->b2:I
-
-    new-instance v0, Lhge;
-
-    invoke-direct {v0, p1}, Lhge;-><init>(I)V
-
-    iput-object v0, p0, Li31;->e:Lhge;
-
-    iput-object v0, p0, Li31;->f:Lhge;
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    iget p0, p0, Li31;->c:I
+    check-cast p1, Lox3;
 
-    return p0
-.end method
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-.method public final b()Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-    .locals 0
+    invoke-virtual {p0, p1, p2}, Li31;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    iget-object p0, p0, Li31;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+    move-result-object p0
+
+    check-cast p0, Li31;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Li31;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
 
     return-object p0
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
 
-    const/4 v0, 0x1
+    new-instance p1, Li31;
 
-    if-ne p0, p1, :cond_0
+    iget-object p0, p0, Li31;->Y:Lihb;
 
-    return v0
+    invoke-direct {p1, p0, p2}, Li31;-><init>(Lihb;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
+
+    iget v0, p0, Li31;->X:I
+
+    const/4 v1, 0x0
+
+    const-string v2, "user.callsToken"
+
+    const/4 v3, 0x1
+
+    iget-object v4, p0, Li31;->Y:Lihb;
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v3, :cond_0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    goto :goto_0
 
     :cond_0
-    instance-of v1, p1, Li31;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    const/4 v2, 0x0
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    if-nez v1, :cond_1
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    return v2
+    throw p0
 
     :cond_1
-    check-cast p1, Li31;
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    iget-object p0, p0, Li31;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+    invoke-virtual {v4}, Lihb;->a()Lh23;
 
-    iget-object p1, p1, Li31;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+    move-result-object p1
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    check-cast p1, Lmwc;
 
-    move-result p0
+    iget-object p1, p1, Le3;->g:Lme7;
 
-    if-nez p0, :cond_2
+    invoke-virtual {p1, v2, v1}, Lme7;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    return v2
+    move-result-object p1
+
+    if-eqz p1, :cond_2
+
+    invoke-static {p1}, Lj8e;->J0(Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_3
 
     :cond_2
-    return v0
-.end method
+    iget-object p1, v4, Lihb;->c:Lje7;
 
-.method public final getContentDescription()Lmge;
-    .locals 0
+    invoke-interface {p1}, Lje7;->getValue()Ljava/lang/Object;
 
-    iget-object p0, p0, Li31;->f:Lhge;
+    move-result-object p1
 
-    return-object p0
-.end method
+    check-cast p1, Lzs1;
 
-.method public final getIcon()I
-    .locals 0
+    iput v3, p0, Li31;->X:I
 
-    iget p0, p0, Li31;->d:I
+    check-cast p1, Lct1;
 
-    return p0
-.end method
+    invoke-virtual {p1, p0}, Lct1;->a(Lbu3;)Ljava/lang/Object;
 
-.method public final getId()I
-    .locals 0
+    move-result-object p0
 
-    iget p0, p0, Li31;->b:I
+    sget-object p1, Lpx3;->a:Lpx3;
 
-    return p0
-.end method
+    if-ne p0, p1, :cond_3
 
-.method public final getTitle()Lmge;
-    .locals 0
+    return-object p1
 
-    iget-object p0, p0, Li31;->e:Lhge;
+    :cond_3
+    :goto_0
+    invoke-virtual {v4}, Lihb;->a()Lh23;
 
-    return-object p0
-.end method
+    move-result-object p0
 
-.method public final hashCode()I
-    .locals 0
+    check-cast p0, Lmwc;
 
-    iget-object p0, p0, Li31;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+    iget-object p0, p0, Le3;->g:Lme7;
 
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Speakerphone(device="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Li31;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, v2, v1}, Lme7;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

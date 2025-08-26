@@ -1,62 +1,23 @@
-.class public final Lfs6;
-.super Ljn;
+.class public abstract Lfs6;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public final I(Ljava/lang/Object;Ljava/lang/Object;)Ljn;
-    .locals 0
+# direct methods
+.method public static a(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+    .locals 1
 
-    invoke-super {p0, p1, p2}, Ljn;->I(Ljava/lang/Object;Ljava/lang/Object;)Ljn;
+    new-instance v0, Landroid/graphics/drawable/AdaptiveIconDrawable;
 
-    return-object p0
-.end method
-
-.method public final J(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 0
-
-    invoke-super {p0, p1, p2}, Ljn;->I(Ljava/lang/Object;Ljava/lang/Object;)Ljn;
-
-    return-void
-.end method
-
-.method public final L(Ljava/lang/Iterable;)Ljn;
-    .locals 0
-
-    const/4 p0, 0x0
-
-    throw p0
-.end method
-
-.method public final Q()Ld8c;
-    .locals 2
-
-    iget v0, p0, Ljn;->b:I
-
-    if-nez v0, :cond_0
-
-    sget-object p0, Ld8c;->y0:Ld8c;
-
-    return-object p0
-
-    :cond_0
-    new-instance v0, Ld8c;
-
-    iget-object v1, p0, Ljn;->c:Ljava/lang/Object;
-
-    check-cast v1, [Ljava/lang/Object;
-
-    iget p0, p0, Ljn;->b:I
-
-    invoke-direct {v0, p0, v1}, Ld8c;-><init>(I[Ljava/lang/Object;)V
+    invoke-direct {v0, p0, p1}, Landroid/graphics/drawable/AdaptiveIconDrawable;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     return-object v0
 .end method
 
-.method public final bridge synthetic k()Lzs6;
+.method public static b(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/Icon;
     .locals 0
 
-    invoke-virtual {p0}, Lfs6;->Q()Ld8c;
+    invoke-static {p0}, Landroid/graphics/drawable/Icon;->createWithAdaptiveBitmap(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/Icon;
 
     move-result-object p0
 

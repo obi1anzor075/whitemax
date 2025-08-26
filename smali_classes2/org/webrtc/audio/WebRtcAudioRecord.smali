@@ -389,12 +389,11 @@
 
     const/16 p0, 0x10
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/16 p0, 0xc
 
-    :goto_0
     return p0
 .end method
 
@@ -426,12 +425,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -444,9 +442,7 @@
 
     invoke-static {v0, v1}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v0, Landroid/media/AudioRecord;
-
-    move-object v2, v0
+    new-instance v2, Landroid/media/AudioRecord;
 
     move v3, p0
 
@@ -460,7 +456,7 @@
 
     invoke-direct/range {v2 .. v7}, Landroid/media/AudioRecord;-><init>(IIIII)V
 
-    return-object v0
+    return-object v2
 .end method
 
 .method private static createAudioRecordOnMOrHigher(IIIII)Landroid/media/AudioRecord;
@@ -817,9 +813,9 @@
 
     if-nez v1, :cond_0
 
-    monitor-exit v0
-
     const/4 p0, 0x1
+
+    monitor-exit v0
 
     return p0
 
@@ -833,9 +829,9 @@
 
     iput-object v1, p0, Lorg/webrtc/audio/WebRtcAudioRecord;->recordState:Lorg/webrtc/audio/WebRtcAudioRecord$RecordState;
 
-    monitor-exit v0
-
     const/4 p0, 0x0
+
+    monitor-exit v0
 
     return p0
 
@@ -878,7 +874,7 @@
 
     const-string v2, "AudioRecord.startRecording failed - incorrect state: "
 
-    invoke-static {p1, v2}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v2}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -902,7 +898,7 @@
 
     const-string v2, "AudioRecord.startRecording failed: "
 
-    invoke-static {v2, p1}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, p1}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -942,7 +938,7 @@
 
     invoke-interface {p0}, Lorg/webrtc/audio/JavaAudioDeviceModule$AudioRecordStateCallback;->onWebRtcAudioRecordStart()V
 
-    goto :goto_0
+    return-void
 
     :cond_0
     const/4 v0, 0x1
@@ -951,7 +947,7 @@
 
     invoke-interface {p0}, Lorg/webrtc/audio/JavaAudioDeviceModule$AudioRecordStateCallback;->onWebRtcAudioRecordStop()V
 
-    goto :goto_0
+    return-void
 
     :cond_1
     const-string p0, "Invalid audio state"
@@ -959,7 +955,6 @@
     invoke-static {v1, p0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_2
-    :goto_0
     return-void
 .end method
 
@@ -1159,7 +1154,7 @@
 
     const-string v1, "Bad audio format "
 
-    invoke-static {p0, v1}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v1}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -1192,7 +1187,7 @@
 .end method
 
 .method private initRecording(II)I
-    .locals 11
+    .locals 10
     .annotation build Lorg/webrtc/CalledByNative;
     .end annotation
 
@@ -1200,13 +1195,13 @@
 
     iput p2, p0, Lorg/webrtc/audio/WebRtcAudioRecord;->initChannels:I
 
-    const-string v0, "initRecording(sampleRate="
+    const-string v0, ", channels="
 
-    const-string v1, ", channels="
+    const-string v1, ")"
 
-    const-string v2, ")"
+    const-string v2, "initRecording(sampleRate="
 
-    invoke-static {v0, p1, v1, p2, v2}, Lrf0;->g(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, p1, v0, p2, v1}, Lpg0;->f(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1235,9 +1230,9 @@
 
     mul-int/2addr v0, p2
 
-    div-int/lit8 v10, p1, 0x64
+    div-int/lit8 v7, p1, 0x64
 
-    mul-int/2addr v0, v10
+    mul-int/2addr v0, v7
 
     invoke-static {v0}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
@@ -1298,32 +1293,35 @@
 
     if-eqz v0, :cond_2
 
-    new-instance v0, Lorg/webrtc/audio/WebRtcSilenceProvider;
+    new-instance v3, Lorg/webrtc/audio/WebRtcSilenceProvider;
 
     iget v4, p0, Lorg/webrtc/audio/WebRtcAudioRecord;->audioFormat:I
 
-    iget-object v3, p0, Lorg/webrtc/audio/WebRtcAudioRecord;->byteBuffer:Ljava/nio/ByteBuffer;
+    iget-object v0, p0, Lorg/webrtc/audio/WebRtcAudioRecord;->byteBuffer:Ljava/nio/ByteBuffer;
 
-    invoke-virtual {v3}, Ljava/nio/Buffer;->capacity()I
+    invoke-virtual {v0}, Ljava/nio/Buffer;->capacity()I
 
     move-result v8
 
     iget-object v9, p0, Lorg/webrtc/audio/WebRtcAudioRecord;->emptyBytes:[B
 
-    move-object v3, v0
-
     move v5, p1
 
     move v6, p2
 
-    move v7, v10
-
     invoke-direct/range {v3 .. v9}, Lorg/webrtc/audio/WebRtcSilenceProvider;-><init>(IIIII[B)V
 
-    iput-object v0, p0, Lorg/webrtc/audio/WebRtcAudioRecord;->silenceProvider:Lorg/webrtc/audio/WebRtcSilenceProvider;
+    iput-object v3, p0, Lorg/webrtc/audio/WebRtcAudioRecord;->silenceProvider:Lorg/webrtc/audio/WebRtcSilenceProvider;
+
+    goto :goto_0
 
     :cond_2
-    invoke-direct {p0, p1, p2}, Lorg/webrtc/audio/WebRtcAudioRecord;->doAudioRecordInit(II)Z
+    move v5, p1
+
+    move v6, p2
+
+    :goto_0
+    invoke-direct {p0, v5, v6}, Lorg/webrtc/audio/WebRtcAudioRecord;->doAudioRecordInit(II)Z
 
     move-result p1
 
@@ -1378,7 +1376,7 @@
     invoke-virtual {p0, p1}, Lorg/webrtc/audio/WebRtcAudioRecord;->initDeviceAudioRecord(Landroid/media/projection/MediaProjection;)V
 
     :cond_5
-    return v10
+    return v7
 .end method
 
 .method public static bridge synthetic j(Lorg/webrtc/audio/WebRtcAudioRecord;)Ljava/lang/Object;
@@ -1705,13 +1703,13 @@
 
     move-result p1
 
-    const-string v1, "AudioRecord: session ID: "
+    const-string v1, ", channels: "
 
-    const-string v2, ", channels: "
+    const-string v2, ", sample rate: "
 
-    const-string v3, ", sample rate: "
+    const-string v3, "AudioRecord: session ID: "
 
-    invoke-static {v1, p0, v2, v0, v3}, Lrf0;->i(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3, p0, v1, v0, v2}, Lpg0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p0
 
@@ -2119,11 +2117,11 @@
 
     invoke-static {v0, v1}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v0, Lrz3;
+    new-instance v0, Lj34;
 
     const/16 v1, 0xa
 
-    invoke-direct {v0, p0, v1, p1}, Lrz3;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-direct {v0, p0, v1, p1}, Lj34;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
     iget-object p1, p0, Lorg/webrtc/audio/WebRtcAudioRecord;->future:Ljava/util/concurrent/ScheduledFuture;
 
@@ -2201,7 +2199,7 @@
 
     invoke-static {v3, v2}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_0
+    return-void
 
     :cond_1
     invoke-direct {p0}, Lorg/webrtc/audio/WebRtcAudioRecord;->doAudioRecordStart()Z
@@ -2212,14 +2210,14 @@
 
     invoke-static {v3, v1}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_0
+    return-void
 
     :cond_2
     const/4 p1, 0x0
 
     invoke-direct {p0, p1}, Lorg/webrtc/audio/WebRtcAudioRecord;->doAudioRecordStop(Z)V
 
-    goto :goto_0
+    return-void
 
     :cond_3
     iget p1, p0, Lorg/webrtc/audio/WebRtcAudioRecord;->initSampleRate:I
@@ -2234,7 +2232,7 @@
 
     invoke-static {v3, v2}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_0
+    return-void
 
     :cond_4
     iget p1, p0, Lorg/webrtc/audio/WebRtcAudioRecord;->initSampleRate:I
@@ -2249,7 +2247,7 @@
 
     invoke-static {v3, v2}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_0
+    return-void
 
     :cond_5
     invoke-direct {p0}, Lorg/webrtc/audio/WebRtcAudioRecord;->doAudioRecordStart()Z
@@ -2367,7 +2365,7 @@
 
     if-eq v0, v1, :cond_1
 
-    goto :goto_0
+    return-void
 
     :cond_0
     invoke-direct {p0, v1}, Lorg/webrtc/audio/WebRtcAudioRecord;->doAudioRecordStop(Z)V
@@ -2375,7 +2373,6 @@
     :cond_1
     invoke-direct {p0}, Lorg/webrtc/audio/WebRtcAudioRecord;->doAudioRecordRelease()V
 
-    :goto_0
     return-void
 .end method
 
@@ -2827,7 +2824,7 @@
 
     const-string v1, "device AudioRecord.startRecording failed - incorrect state :"
 
-    invoke-static {v0, v1}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -2847,7 +2844,7 @@
 
     const-string v1, "device AudioRecord.startRecording failed: "
 
-    invoke-static {v1, p1}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p1}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -2874,7 +2871,7 @@
 
     const-string v0, "device AudioRecord ctor error: "
 
-    invoke-static {v0, p1}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p1}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -2888,7 +2885,7 @@
     :goto_1
     const-string p1, "AudioRecord.getMinBufferSize failed: "
 
-    invoke-static {v1, p1}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p1}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -2922,12 +2919,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 

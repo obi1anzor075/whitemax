@@ -3,165 +3,165 @@
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lewe;
+# static fields
+.field public static final a:Lhxe;
 
-.field public final b:Lbtd;
-
-.field public final c:Lqmc;
-
-.field public final d:Lnj4;
+.field public static volatile b:Lgxe;
 
 
 # direct methods
-.method public constructor <init>(Lewe;Lbtd;Lqmc;Lnj4;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lhxe;
 
-    iput-object p1, p0, Lhxe;->a:Lewe;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p4, p0, Lhxe;->d:Lnj4;
+    sput-object v0, Lhxe;->a:Lhxe;
 
-    iput-object p2, p0, Lhxe;->b:Lbtd;
+    sget-object v0, Lm46;->t0:Lm46;
 
-    iput-object p3, p0, Lhxe;->c:Lqmc;
+    sput-object v0, Lhxe;->b:Lgxe;
 
     return-void
 .end method
 
-.method public static b(Lys8;)Lfwe;
-    .locals 3
+.method public static varargs a(Ljava/lang/String;J[Ldna;)V
+    .locals 9
 
-    new-instance v0, Laf8;
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    sget-object v1, Lo4f;->$EnumSwitchMapping$0:[I
 
-    iget-object v1, p0, Lys8;->f:Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
 
-    invoke-static {v1}, Lr1g;->p(Ljava/lang/CharSequence;)Z
+    move-result v0
 
-    move-result v1
+    aget v0, v1, v0
 
-    if-eqz v1, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v1, p0, Lys8;->a:Ldr8;
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
 
-    iget-object v1, v1, Ldr8;->c:Ljava/lang/String;
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p0
+
+    :pswitch_0
+    const-string v0, "d"
+
+    :goto_0
+    move-object v7, v0
+
+    goto :goto_1
+
+    :pswitch_1
+    const-string v0, "h"
 
     goto :goto_0
 
+    :pswitch_2
+    const-string v0, "min"
+
+    goto :goto_0
+
+    :pswitch_3
+    const-string v0, "s"
+
+    goto :goto_0
+
+    :pswitch_4
+    const-string v0, "ms"
+
+    goto :goto_0
+
+    :pswitch_5
+    const-string v0, "us"
+
+    goto :goto_0
+
+    :pswitch_6
+    const-string v0, "ns"
+
+    goto :goto_0
+
+    :goto_1
+    array-length v0, p3
+
+    invoke-static {p3, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object p3
+
+    check-cast p3, [Ldna;
+
+    invoke-static {p3}, Ljz7;->D([Ldna;)Ljava/util/Map;
+
+    move-result-object v8
+
+    sget-object p3, Lhxe;->b:Lgxe;
+
+    sget-object v0, Lm46;->t0:Lm46;
+
+    invoke-virtual {p3, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return-void
+
     :cond_0
-    iget-object v1, p0, Lys8;->f:Ljava/lang/String;
+    sget-object v0, Llpd;->q0:Llpd;
 
-    :goto_0
-    iput-object v1, v0, Laf8;->d:Ljava/io/Serializable;
+    invoke-virtual {p3, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    iget-object v1, p0, Lys8;->b:Ljava/lang/String;
+    move-result p3
 
-    iput-object v1, v0, Laf8;->c:Ljava/lang/Object;
+    if-eqz p3, :cond_1
 
-    iget v1, p0, Lys8;->d:I
+    return-void
 
-    iput v1, v0, Laf8;->b:I
+    :cond_1
+    new-instance v1, Lqqa;
 
-    iget-wide v1, p0, Lys8;->c:J
+    sget-wide v2, Lj4b;->a:J
 
-    iput-wide v1, v0, Laf8;->a:J
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 
-    new-instance p0, Lfwe;
+    move-result-wide v4
 
-    invoke-direct {p0, v0}, Lfwe;-><init>(Laf8;)V
+    add-long/2addr v4, v2
 
-    return-object p0
-.end method
+    sget-wide v2, Lj4b;->b:J
 
+    sub-long v2, v4, v2
 
-# virtual methods
-.method public final a(Lys8;)Lov9;
-    .locals 4
+    move-object v4, p0
 
-    invoke-static {p1}, Lms9;->m(Ljava/lang/Object;)Llu9;
+    move-wide v5, p1
 
-    move-result-object v0
+    invoke-direct/range {v1 .. v8}, Lqqa;-><init>(JLjava/lang/String;JLjava/lang/String;Ljava/util/Map;)V
 
-    new-instance v1, Lgxe;
+    new-instance p0, Lgje;
 
-    const/4 v2, 0x0
+    const/16 p1, 0x8
 
-    invoke-direct {v1, p0, v2}, Lgxe;-><init>(Lhxe;I)V
+    invoke-direct {p0, p1, v1}, Lgje;-><init>(ILjava/lang/Object;)V
 
-    invoke-virtual {v0, v1}, Lms9;->e(Lj26;)Lms9;
+    invoke-static {p0}, Lkxe;->a(Ljava/lang/Runnable;)V
 
-    move-result-object v0
+    return-void
 
-    new-instance v1, Lgxe;
+    nop
 
-    const/4 v2, 0x1
-
-    invoke-direct {v1, p0, v2}, Lgxe;-><init>(Lhxe;I)V
-
-    new-instance v2, Lau9;
-
-    const/4 v3, 0x3
-
-    invoke-direct {v2, v0, v1, v3}, Lau9;-><init>(Lnv9;Lj26;I)V
-
-    iget-object v0, p0, Lhxe;->a:Lewe;
-
-    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v1, Lyve;
-
-    const/16 v3, 0x9
-
-    invoke-direct {v1, v0, v3}, Lyve;-><init>(Lewe;I)V
-
-    invoke-virtual {v2, v1}, Lms9;->e(Lj26;)Lms9;
-
-    move-result-object v0
-
-    new-instance v1, Lgxe;
-
-    const/4 v2, 0x3
-
-    invoke-direct {v1, p0, v2}, Lgxe;-><init>(Lhxe;I)V
-
-    invoke-virtual {v0, v1}, Lms9;->e(Lj26;)Lms9;
-
-    move-result-object v0
-
-    new-instance v1, Ljoc;
-
-    const/16 v2, 0xc
-
-    invoke-direct {v1, p0, v2, p1}, Ljoc;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    sget-object p1, Lz3d;->j:Lgf6;
-
-    sget-object v2, Lz3d;->i:Lz26;
-
-    new-instance v3, Lkt9;
-
-    invoke-direct {v3, v0, p1, v1, v2}, Lkt9;-><init>(Lnv9;Lof3;Lof3;Lj6;)V
-
-    new-instance p1, Lgxe;
-
-    const/4 v0, 0x2
-
-    invoke-direct {p1, p0, v0}, Lgxe;-><init>(Lhxe;I)V
-
-    const-wide v0, 0x7fffffffffffffffL
-
-    invoke-virtual {v3, v0, v1, p1}, Lms9;->o(JLv1b;)Lfv9;
-
-    move-result-object p1
-
-    iget-object p0, p0, Lhxe;->c:Lqmc;
-
-    invoke-virtual {p1, p0}, Lms9;->r(Lqmc;)Lov9;
-
-    move-result-object p0
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

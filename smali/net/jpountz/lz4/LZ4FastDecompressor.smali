@@ -86,20 +86,20 @@
     move-result p0
 
     .line 7
-    invoke-virtual {p2}, Ljava/nio/Buffer;->limit()I
+    invoke-virtual {v3}, Ljava/nio/Buffer;->limit()I
 
-    move-result v0
+    move-result p1
 
-    invoke-virtual {p2, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v3, p1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     .line 8
-    invoke-virtual {p1}, Ljava/nio/Buffer;->position()I
+    invoke-virtual {v1}, Ljava/nio/Buffer;->position()I
 
-    move-result p2
+    move-result p1
 
-    add-int/2addr p2, p0
+    add-int/2addr p1, p0
 
-    invoke-virtual {p1, p2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v1, p1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     return-void
 .end method
@@ -118,10 +118,10 @@
 .end method
 
 .method public final decompress([BII)[B
-    .locals 7
+    .locals 6
 
     .line 3
-    new-array v6, p3, [B
+    new-array v3, p3, [B
 
     const/4 v4, 0x0
 
@@ -131,14 +131,12 @@
 
     move v2, p2
 
-    move-object v3, v6
-
     move v5, p3
 
     .line 4
     invoke-virtual/range {v0 .. v5}, Lnet/jpountz/lz4/LZ4FastDecompressor;->decompress([BI[BII)I
 
-    return-object v6
+    return-object v3
 .end method
 
 .method public toString()Ljava/lang/String;

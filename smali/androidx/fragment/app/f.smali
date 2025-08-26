@@ -68,7 +68,7 @@
 
     const/4 p0, 0x1
 
-    iput-boolean p0, p1, Landroidx/fragment/app/a;->A0:Z
+    iput-boolean p0, p1, Landroidx/fragment/app/a;->s0:Z
 
     return-void
 
@@ -166,7 +166,7 @@
     goto :goto_0
 
     :cond_1
-    iget-object v0, v0, Landroidx/fragment/app/a;->L0:Lvx5;
+    iget-object v0, v0, Landroidx/fragment/app/a;->D0:Lb26;
 
     iget-object v0, v0, Landroidx/fragment/app/c;->c:Landroidx/fragment/app/f;
 
@@ -286,9 +286,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object p0
+    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     return-object p0
 
@@ -340,11 +338,11 @@
 
     invoke-virtual {v2, v1, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-boolean p1, v0, Landroidx/fragment/app/a;->T0:Z
+    iget-boolean p1, v0, Landroidx/fragment/app/a;->L0:Z
 
     if-eqz p1, :cond_2
 
-    iget-boolean p1, v0, Landroidx/fragment/app/a;->S0:Z
+    iget-boolean p1, v0, Landroidx/fragment/app/a;->K0:Z
 
     if-eqz p1, :cond_1
 
@@ -362,14 +360,12 @@
     :goto_0
     const/4 p0, 0x0
 
-    iput-boolean p0, v0, Landroidx/fragment/app/a;->T0:Z
+    iput-boolean p0, v0, Landroidx/fragment/app/a;->L0:Z
 
     :cond_2
-    const-string p0, "FragmentManager"
+    const/4 p0, 0x2
 
-    const/4 p1, 0x2
-
-    invoke-static {p0, p1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {p0}, Landroidx/fragment/app/c;->L(I)Z
 
     move-result p0
 
@@ -386,7 +382,7 @@
 
     iget-object v0, p1, Landroidx/fragment/app/e;->c:Landroidx/fragment/app/a;
 
-    iget-boolean v1, v0, Landroidx/fragment/app/a;->S0:Z
+    iget-boolean v1, v0, Landroidx/fragment/app/a;->K0:Z
 
     if-eqz v1, :cond_0
 
@@ -395,9 +391,9 @@
     invoke-virtual {v1, v0}, Landroidx/fragment/app/FragmentManagerViewModel;->g(Landroidx/fragment/app/a;)V
 
     :cond_0
-    iget-object p0, p0, Landroidx/fragment/app/f;->b:Ljava/util/HashMap;
-
     iget-object v1, v0, Landroidx/fragment/app/a;->Y:Ljava/lang/String;
+
+    iget-object p0, p0, Landroidx/fragment/app/f;->b:Ljava/util/HashMap;
 
     invoke-virtual {p0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -405,7 +401,7 @@
 
     if-eq v1, p1, :cond_1
 
-    return-void
+    goto :goto_0
 
     :cond_1
     iget-object p1, v0, Landroidx/fragment/app/a;->Y:Ljava/lang/String;
@@ -420,14 +416,12 @@
 
     if-nez p0, :cond_2
 
-    return-void
+    goto :goto_0
 
     :cond_2
-    const-string p0, "FragmentManager"
+    const/4 p0, 0x2
 
-    const/4 p1, 0x2
-
-    invoke-static {p0, p1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {p0}, Landroidx/fragment/app/c;->L(I)Z
 
     move-result p0
 
@@ -436,6 +430,7 @@
     invoke-virtual {v0}, Landroidx/fragment/app/a;->toString()Ljava/lang/String;
 
     :cond_3
+    :goto_0
     return-void
 .end method
 

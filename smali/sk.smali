@@ -1,171 +1,111 @@
-.class public abstract Lsk;
+.class public final Lsk;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# instance fields
+.field public final a:I
+
+.field public final b:Lnz7;
+
+.field public final c:Lgk;
+
+.field public final d:Ljava/lang/String;
+
+
 # direct methods
-.method public static a(Landroid/media/EncoderProfiles;)Lf90;
-    .locals 17
-
-    invoke-virtual/range {p0 .. p0}, Landroid/media/EncoderProfiles;->getDefaultDurationSeconds()I
-
-    move-result v0
-
-    invoke-virtual/range {p0 .. p0}, Landroid/media/EncoderProfiles;->getRecommendedFileFormat()I
-
-    move-result v1
-
-    invoke-virtual/range {p0 .. p0}, Landroid/media/EncoderProfiles;->getAudioProfiles()Ljava/util/List;
-
-    move-result-object v2
-
-    new-instance v3, Ljava/util/ArrayList;
-
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/media/EncoderProfiles$AudioProfile;
-
-    invoke-virtual {v4}, Landroid/media/EncoderProfiles$AudioProfile;->getCodec()I
-
-    move-result v6
-
-    invoke-virtual {v4}, Landroid/media/EncoderProfiles$AudioProfile;->getMediaType()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v4}, Landroid/media/EncoderProfiles$AudioProfile;->getBitrate()I
-
-    move-result v8
-
-    invoke-virtual {v4}, Landroid/media/EncoderProfiles$AudioProfile;->getSampleRate()I
-
-    move-result v9
-
-    invoke-virtual {v4}, Landroid/media/EncoderProfiles$AudioProfile;->getChannels()I
-
-    move-result v10
-
-    invoke-virtual {v4}, Landroid/media/EncoderProfiles$AudioProfile;->getProfile()I
-
-    move-result v11
-
-    new-instance v4, Le90;
-
-    move-object v5, v4
-
-    invoke-direct/range {v5 .. v11}, Le90;-><init>(ILjava/lang/String;IIII)V
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual/range {p0 .. p0}, Landroid/media/EncoderProfiles;->getVideoProfiles()Ljava/util/List;
-
-    move-result-object v2
-
-    new-instance v4, Ljava/util/ArrayList;
-
-    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_1
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_1
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/media/EncoderProfiles$VideoProfile;
-
-    invoke-virtual {v5}, Landroid/media/EncoderProfiles$VideoProfile;->getCodec()I
-
-    move-result v7
-
-    invoke-virtual {v5}, Landroid/media/EncoderProfiles$VideoProfile;->getMediaType()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v5}, Landroid/media/EncoderProfiles$VideoProfile;->getBitrate()I
-
-    move-result v9
-
-    invoke-virtual {v5}, Landroid/media/EncoderProfiles$VideoProfile;->getFrameRate()I
-
-    move-result v10
-
-    invoke-virtual {v5}, Landroid/media/EncoderProfiles$VideoProfile;->getWidth()I
-
-    move-result v11
-
-    invoke-virtual {v5}, Landroid/media/EncoderProfiles$VideoProfile;->getHeight()I
-
-    move-result v12
-
-    invoke-virtual {v5}, Landroid/media/EncoderProfiles$VideoProfile;->getProfile()I
-
-    move-result v13
-
-    new-instance v5, Lg90;
-
-    const/16 v16, 0x0
-
-    const/16 v14, 0x8
-
-    const/4 v15, 0x0
-
-    move-object v6, v5
-
-    invoke-direct/range {v6 .. v16}, Lg90;-><init>(ILjava/lang/String;IIIIIIII)V
-
-    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    :cond_1
-    invoke-static {v0, v1, v3, v4}, Lf90;->e(IILjava/util/List;Ljava/util/List;)Lf90;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static b(ILjava/lang/String;)Landroid/media/EncoderProfiles;
+.method public constructor <init>(Lnz7;Lgk;Ljava/lang/String;)V
     .locals 0
 
-    invoke-static {p1, p0}, Landroid/media/CamcorderProfile;->getAll(Ljava/lang/String;I)Landroid/media/EncoderProfiles;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object p0
+    iput-object p1, p0, Lsk;->b:Lnz7;
 
-    return-object p0
-.end method
+    iput-object p2, p0, Lsk;->c:Lgk;
 
-.method public static c(Landroid/media/AudioRecord$Builder;Landroid/content/Context;)V
-    .locals 0
+    iput-object p3, p0, Lsk;->d:Ljava/lang/String;
 
-    invoke-virtual {p0, p1}, Landroid/media/AudioRecord$Builder;->setContext(Landroid/content/Context;)Landroid/media/AudioRecord$Builder;
+    filled-new-array {p1, p2, p3}, [Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+
+    move-result p1
+
+    iput p1, p0, Lsk;->a:I
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x0
+
+    if-nez p1, :cond_0
+
+    return v0
+
+    :cond_0
+    const/4 v1, 0x1
+
+    if-ne p1, p0, :cond_1
+
+    return v1
+
+    :cond_1
+    instance-of v2, p1, Lsk;
+
+    if-nez v2, :cond_2
+
+    return v0
+
+    :cond_2
+    check-cast p1, Lsk;
+
+    iget-object v2, p0, Lsk;->b:Lnz7;
+
+    iget-object v3, p1, Lsk;->b:Lnz7;
+
+    invoke-static {v2, v3}, Lgr0;->j(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    iget-object v2, p0, Lsk;->c:Lgk;
+
+    iget-object v3, p1, Lsk;->c:Lgk;
+
+    invoke-static {v2, v3}, Lgr0;->j(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    iget-object p0, p0, Lsk;->d:Ljava/lang/String;
+
+    iget-object p1, p1, Lsk;->d:Ljava/lang/String;
+
+    invoke-static {p0, p1}, Lgr0;->j(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_3
+
+    return v1
+
+    :cond_3
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    iget p0, p0, Lsk;->a:I
+
+    return p0
 .end method

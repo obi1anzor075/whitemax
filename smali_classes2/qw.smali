@@ -1,142 +1,82 @@
-.class public final Lqw;
-.super Ll5e;
+.class public final synthetic Lqw;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lx56;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic a:I
 
-.field public final synthetic Y:Ltw;
+.field public final synthetic b:Ljava/util/LinkedHashSet;
 
 
 # direct methods
-.method public constructor <init>(Ltw;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(Ljava/util/LinkedHashSet;)V
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x0
+
+    iput v0, p0, Lqw;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lqw;->b:Ljava/util/LinkedHashSet;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Ljava/util/LinkedHashSet;Ljv5;)V
     .locals 0
 
-    iput-object p1, p0, Lqw;->Y:Ltw;
+    .line 2
+    const/4 p2, 0x1
 
-    const/4 p1, 0x2
+    iput p2, p0, Lqw;->a:I
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lqw;->b:Ljava/util/LinkedHashSet;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    check-cast p1, Ljava/lang/Throwable;
+    iget v0, p0, Lqw;->a:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p0, p1, p2}, Lqw;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    check-cast p1, Lnj3;
 
-    move-result-object p0
+    invoke-virtual {p1}, Lnj3;->n()J
 
-    check-cast p0, Lqw;
+    move-result-wide v0
 
-    sget-object p1, Ljue;->a:Ljue;
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-virtual {p0, p1}, Lqw;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object p0
+    iget-object p0, p0, Lqw;->b:Ljava/util/LinkedHashSet;
 
-    return-object p0
-.end method
+    invoke-interface {p0, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
+    move-result p0
 
-    new-instance v0, Lqw;
+    if-eqz p0, :cond_0
 
-    iget-object p0, p0, Lqw;->Y:Ltw;
-
-    invoke-direct {v0, p0, p2}, Lqw;-><init>(Ltw;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lqw;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lqw;->X:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/Throwable;
-
-    instance-of v0, p1, Lru/ok/tamtam/errors/TamErrorException;
-
-    const/4 v1, 0x0
-
-    const-string v2, "request failed with "
-
-    iget-object p0, p0, Lqw;->Y:Ltw;
-
-    if-eqz v0, :cond_0
-
-    move-object v0, p1
-
-    check-cast v0, Lru/ok/tamtam/errors/TamErrorException;
-
-    iget-object v0, v0, Lru/ok/tamtam/errors/TamErrorException;->a:Luae;
-
-    iget-object v0, v0, Luae;->b:Ljava/lang/String;
-
-    invoke-static {v0}, Liu7;->F(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object p0, p0, Ltw;->i:Ljava/lang/String;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p1, ". Retrying"
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p0, p1, v1}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {p1}, Lnj3;->t()Z
 
     const/4 p0, 0x1
 
     goto :goto_0
 
     :cond_0
-    iget-object p0, p0, Ltw;->i:Ljava/lang/String;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p1, ". Couldn\'t recover"
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p0, p1, v1}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
     const/4 p0, 0x0
 
     :goto_0
@@ -145,4 +85,26 @@
     move-result-object p0
 
     return-object p0
+
+    :pswitch_0
+    check-cast p1, Lzs8;
+
+    iget-wide v0, p1, Lzs8;->c:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    iget-object p0, p0, Lqw;->b:Ljava/util/LinkedHashSet;
+
+    invoke-virtual {p0, p1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

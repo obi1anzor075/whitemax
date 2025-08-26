@@ -3,131 +3,91 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lv91;
+.implements Ls91;
+.implements Lsm1;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final a:Lje7;
+
+.field public final b:Landroid/graphics/PointF;
+
+.field public final c:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>(Lje7;Lje7;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lt91;->a:Ljava/lang/String;
+    iput-object p1, p0, Lt91;->a:Lje7;
+
+    new-instance v0, Lk30;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, p1, v1}, Lk30;-><init>(Lje7;I)V
+
+    const/4 v1, 0x3
+
+    invoke-static {v1, v0}, Lkhg;->o(ILv56;)Lje7;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lt91;->c:Ljava/lang/Object;
+
+    invoke-interface {p2}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lls1;
+
+    invoke-virtual {p2, p0}, Lls1;->d(Lsm1;)V
+
+    invoke-interface {p1}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/content/Context;
+
+    invoke-static {p1}, Lxqd;->s(Landroid/content/Context;)Landroid/graphics/PointF;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lt91;->b:Landroid/graphics/PointF;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+.method public final onDestroyed(Lru/ok/android/externcalls/sdk/events/destroy/ConversationDestroyedInfo;)V
+    .locals 1
 
-    const/4 v0, 0x1
+    invoke-super {p0, p1}, Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;->onDestroyed(Lru/ok/android/externcalls/sdk/events/destroy/ConversationDestroyedInfo;)V
 
-    if-ne p0, p1, :cond_0
+    iget-object p1, p0, Lt91;->a:Lje7;
 
-    return v0
+    invoke-interface {p1}, Lje7;->getValue()Ljava/lang/Object;
 
-    :cond_0
-    instance-of v1, p1, Lt91;
+    move-result-object p1
 
-    const/4 v2, 0x0
+    check-cast p1, Landroid/content/Context;
 
-    if-nez v1, :cond_1
+    invoke-static {p1}, Lxqd;->s(Landroid/content/Context;)Landroid/graphics/PointF;
 
-    return v2
+    move-result-object p1
 
-    :cond_1
-    check-cast p1, Lt91;
+    iget v0, p1, Landroid/graphics/PointF;->x:F
 
-    iget-object p0, p0, Lt91;->a:Ljava/lang/String;
+    iget-object p0, p0, Lt91;->b:Landroid/graphics/PointF;
 
-    iget-object p1, p1, Lt91;->a:Ljava/lang/String;
+    iput v0, p0, Landroid/graphics/PointF;->x:F
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget p1, p1, Landroid/graphics/PointF;->y:F
 
-    move-result p0
+    iput p1, p0, Landroid/graphics/PointF;->y:F
 
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final g(Lpg7;)Z
-    .locals 2
-
-    const-wide v0, 0x7ffffffffffffffdL
-
-    invoke-interface {p1}, Lpg7;->getItemId()J
-
-    move-result-wide p0
-
-    cmp-long p0, v0, p0
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
-.end method
-
-.method public final getItemId()J
-    .locals 2
-
-    const-wide v0, 0x7ffffffffffffffdL
-
-    return-wide v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    iget-object p0, p0, Lt91;->a:Ljava/lang/String;
-
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final l()I
-    .locals 0
-
-    const/4 p0, 0x3
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "CallShareLinkPreviewState(link="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lt91;->a:Ljava/lang/String;
-
-    const-string v1, ")"
-
-    invoke-static {v0, p0, v1}, Lwn6;->l(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

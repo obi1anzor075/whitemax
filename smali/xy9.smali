@@ -1,45 +1,84 @@
-.class public final synthetic Lxy9;
-.super Lkhb;
+.class public final Lxy9;
+.super Ljava/util/concurrent/atomic/AtomicReference;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+.implements Ljj3;
 
-# static fields
-.field public static final a:Lxy9;
+
+# instance fields
+.field public final a:Lzy9;
+
+.field public b:J
+
+.field public c:Z
+
+.field public o:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(Lzy9;)V
+    .locals 0
 
-    new-instance v0, Lxy9;
+    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
-    const-class v1, Lgy7;
-
-    const-string v2, "dependencyDuration"
-
-    const-string v3, "getDependencyDuration()J"
-
-    const/4 v4, 0x0
-
-    invoke-direct {v0, v1, v2, v3, v4}, Lkhb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    sput-object v0, Lxy9;->a:Lxy9;
+    iput-object p1, p0, Lxy9;->a:Lzy9;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final accept(Ljava/lang/Object;)V
+    .locals 1
 
-    check-cast p1, Lgy7;
+    check-cast p1, Lam4;
 
-    iget-wide p0, p1, Lgy7;->b:J
+    invoke-static {p0, p1}, Lem4;->c(Ljava/util/concurrent/atomic/AtomicReference;Lam4;)Z
 
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    iget-object p1, p0, Lxy9;->a:Lzy9;
 
-    move-result-object p0
+    monitor-enter p1
 
-    return-object p0
+    :try_start_0
+    iget-boolean v0, p0, Lxy9;->o:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object p0, p0, Lxy9;->a:Lzy9;
+
+    iget-object p0, p0, Lzy9;->a:Lsg3;
+
+    invoke-virtual {p0}, Lsg3;->x()V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_1
+
+    :cond_0
+    :goto_0
+    monitor-exit p1
+
+    return-void
+
+    :goto_1
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
+.end method
+
+.method public final run()V
+    .locals 1
+
+    iget-object v0, p0, Lxy9;->a:Lzy9;
+
+    invoke-virtual {v0, p0}, Lzy9;->x(Lxy9;)V
+
+    return-void
 .end method

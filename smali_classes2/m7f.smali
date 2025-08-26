@@ -1,101 +1,180 @@
-.class public final synthetic Lm7f;
-.super Ljava/lang/Object;
+.class public final Lm7f;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Lof3;
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:I
 
-.field public final synthetic b:Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;
+.field public final synthetic Y:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;I)V
+.method public constructor <init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    iput p2, p0, Lm7f;->a:I
+    iput-object p1, p0, Lm7f;->Y:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
 
-    iput-object p1, p0, Lm7f;->b:Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;
+    const/4 p1, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .locals 3
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object v0, p0, Lm7f;->b:Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;
+    check-cast p1, Lox3;
 
-    iget p0, p0, Lm7f;->a:I
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    packed-switch p0, :pswitch_data_0
+    invoke-virtual {p0, p1, p2}, Lm7f;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    check-cast p1, Landroid/graphics/Bitmap;
+    move-result-object p0
 
-    sget p0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->I0:I
+    check-cast p0, Lm7f;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sget-object p1, Le5f;->a:Le5f;
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    invoke-virtual {p0, p1}, Lm7f;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-wide v1
+    move-result-object p0
 
-    iput-wide v1, v0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->F0:J
+    return-object p0
+.end method
 
-    iget-object p0, v0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->y0:Lc97;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
 
-    invoke-static {p0}, Ltic;->b(Lxi4;)V
+    new-instance p1, Lm7f;
 
-    iget-object p0, v0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->c:Lru/ok/messages/video/widgets/VideoFramePreview;
+    iget-object p0, p0, Lm7f;->Y:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
 
-    iget-object v0, p0, Lru/ok/messages/video/widgets/VideoFramePreview;->w0:Landroidx/appcompat/widget/AppCompatImageView;
+    invoke-direct {p1, p0, p2}, Lm7f;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;Lkotlin/coroutines/Continuation;)V
 
-    invoke-virtual {v0, p1}, Landroidx/appcompat/widget/AppCompatImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+    return-object p1
+.end method
 
-    const/4 p1, 0x0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 7
 
-    invoke-virtual {p0, p1}, Lru/ok/messages/video/widgets/VideoFramePreview;->a(Z)V
+    const-string v0, "storeDraftUpload: finish store upload = "
 
-    return-void
+    iget v1, p0, Lm7f;->X:I
 
-    :pswitch_0
-    check-cast p1, Ljava/lang/Long;
+    const-string v2, "UploadDraftMediaWorker"
 
-    sget p0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->I0:I
+    const/4 v3, 0x1
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v4, p0, Lm7f;->Y:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    if-eqz v1, :cond_1
 
-    move-result-wide p0
+    if-ne v1, v3, :cond_0
 
-    iget-wide v1, v0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->F0:J
+    :try_start_0
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    sub-long/2addr p0, v1
+    goto :goto_0
 
-    const-wide/16 v1, 0x3e8
+    :catchall_0
+    move-exception p0
 
-    cmp-long p0, p0, v1
-
-    if-lez p0, :cond_0
-
-    iget-object p0, v0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->c:Lru/ok/messages/video/widgets/VideoFramePreview;
-
-    const/4 p1, 0x1
-
-    invoke-virtual {p0, p1}, Lru/ok/messages/video/widgets/VideoFramePreview;->a(Z)V
+    goto :goto_1
 
     :cond_0
-    return-void
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    :try_start_1
+    iget-object p1, v4, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->b:Lwfe;
+
+    invoke-virtual {p1}, Lwfe;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lup4;
+
+    invoke-virtual {v4}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Llp4;
+
+    move-result-object v1
+
+    invoke-virtual {p1}, Lup4;->a()Ldpd;
+
+    move-result-object p1
+
+    new-instance v5, Lwc1;
+
+    const/16 v6, 0x8
+
+    invoke-direct {v5, v6, v1}, Lwc1;-><init>(ILjava/lang/Object;)V
+
+    new-instance v1, Lf93;
+
+    const/4 v6, 0x3
+
+    invoke-direct {v1, p1, v6, v5}, Lf93;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    iput v3, p0, Lm7f;->X:I
+
+    invoke-static {v1, p0}, Lgr0;->b(Le93;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    :try_start_2
+    invoke-virtual {v4}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Llp4;
+
+    move-result-object p0
+
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {v2, p0}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    goto :goto_2
+
+    :goto_1
+    const-string p1, "storeDraftUpload: failed"
+
+    invoke-static {v2, p1, p0}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :goto_2
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

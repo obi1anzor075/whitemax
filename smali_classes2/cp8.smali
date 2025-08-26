@@ -1,79 +1,137 @@
 .class public final Lcp8;
-.super Ljava/io/OutputStream;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Ljava/io/OutputStream;
+.field public X:I
 
-.field public final b:Ljava/security/MessageDigest;
+.field public final synthetic Y:Llp8;
+
+.field public final synthetic Z:Ly42;
 
 
 # direct methods
-.method public constructor <init>(Lhye;Ljava/security/MessageDigest;)V
+.method public constructor <init>(Llp8;Ly42;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
+    iput-object p1, p0, Lcp8;->Y:Llp8;
 
-    iput-object p1, p0, Lcp8;->a:Ljava/io/OutputStream;
+    iput-object p2, p0, Lcp8;->Z:Ly42;
 
-    iput-object p2, p0, Lcp8;->b:Ljava/security/MessageDigest;
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    iget-object p0, p0, Lcp8;->a:Ljava/io/OutputStream;
+    check-cast p1, Lox3;
 
-    invoke-virtual {p0}, Ljava/io/OutputStream;->close()V
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    return-void
+    invoke-virtual {p0, p1, p2}, Lcp8;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lcp8;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lcp8;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public final flush()V
-    .locals 0
-
-    iget-object p0, p0, Lcp8;->a:Ljava/io/OutputStream;
-
-    invoke-virtual {p0}, Ljava/io/OutputStream;->flush()V
-
-    return-void
-.end method
-
-.method public final write(I)V
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .locals 1
 
-    .line 1
-    iget-object v0, p0, Lcp8;->a:Ljava/io/OutputStream;
+    new-instance p1, Lcp8;
 
-    invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write(I)V
+    iget-object v0, p0, Lcp8;->Y:Llp8;
 
-    .line 2
-    iget-object p0, p0, Lcp8;->b:Ljava/security/MessageDigest;
+    iget-object p0, p0, Lcp8;->Z:Ly42;
 
-    int-to-byte p1, p1
+    invoke-direct {p1, v0, p0, p2}, Lcp8;-><init>(Llp8;Ly42;Lkotlin/coroutines/Continuation;)V
 
-    invoke-virtual {p0, p1}, Ljava/security/MessageDigest;->update(B)V
-
-    return-void
+    return-object p1
 .end method
 
-.method public final write([BII)V
-    .locals 1
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 10
 
-    .line 3
-    iget-object v0, p0, Lcp8;->a:Ljava/io/OutputStream;
+    iget v0, p0, Lcp8;->X:I
 
-    invoke-virtual {v0, p1, p2, p3}, Ljava/io/OutputStream;->write([BII)V
+    const/4 v1, 0x1
 
-    .line 4
-    iget-object p0, p0, Lcp8;->b:Ljava/security/MessageDigest;
+    if-eqz v0, :cond_1
 
-    invoke-virtual {p0, p1, p2, p3}, Ljava/security/MessageDigest;->update([BII)V
+    if-ne v0, v1, :cond_0
 
-    return-void
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    return-object p1
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lcp8;->Y:Llp8;
+
+    iget-object p1, p1, Llp8;->s0:Lje7;
+
+    invoke-interface {p1}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    move-object v2, p1
+
+    check-cast v2, Lwc6;
+
+    iget-object p1, p0, Lcp8;->Z:Ly42;
+
+    iget-object p1, p1, Ly42;->b:Lj92;
+
+    iget-wide v3, p1, Lj92;->a:J
+
+    iput v1, p0, Lcp8;->X:I
+
+    sget-object v5, Lvi2;->b:Lvi2;
+
+    const-wide/16 v6, 0x0
+
+    const/4 v8, 0x0
+
+    move-object v9, p0
+
+    invoke-virtual/range {v2 .. v9}, Lwc6;->a(JLvi2;JLjava/lang/String;Lbu3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    return-object p0
 .end method

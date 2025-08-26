@@ -4,5 +4,11 @@
 
 
 # virtual methods
-.method public abstract onRateCall(Lorg/json/JSONObject;)V
+.method public abstract b(JZ)V
+.end method
+
+.method public s(J)V
+    .locals 0
+
+    return-void
 .end method

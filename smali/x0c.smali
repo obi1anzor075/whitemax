@@ -1,19 +1,28 @@
-.class public final Lx0c;
-.super Ljava/lang/ref/WeakReference;
-.source "SourceFile"
+.class public abstract Lx0c;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field public final a:Ljava/lang/Object;
+# static fields
+.field public static PreviewView:[I = null
+
+.field public static PreviewView_implementationMode:I = 0x0
+
+.field public static PreviewView_scaleType:I = 0x1
 
 
 # direct methods
-.method public constructor <init>(Ly0c;Ljava/lang/Object;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+    const v0, 0x7f040553
 
-    iput-object p2, p0, Lx0c;->a:Ljava/lang/Object;
+    const v1, 0x7f040736
+
+    filled-new-array {v0, v1}, [I
+
+    move-result-object v0
+
+    sput-object v0, Lx0c;->PreviewView:[I
 
     return-void
 .end method

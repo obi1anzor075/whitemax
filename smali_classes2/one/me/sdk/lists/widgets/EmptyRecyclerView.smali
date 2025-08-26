@@ -18,18 +18,18 @@
         "attrs",
         "<init>",
         "(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-        "Lf6c;",
+        "Lgbc;",
         "adapter",
-        "Ljue;",
+        "Le5f;",
         "setAdapter",
-        "(Lf6c;)V",
+        "(Lgbc;)V",
         "Landroid/view/View;",
         "emptyView",
         "setEmptyView",
         "(Landroid/view/View;)V",
         "<set-?>",
-        "Z1",
-        "Lp0c;",
+        "R1",
+        "Lq5c;",
         "getMEmptyView",
         "()Landroid/view/View;",
         "setMEmptyView",
@@ -42,48 +42,49 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # static fields
-.field public static final synthetic c2:[Lk77;
+.field public static final synthetic U1:[Lbc7;
 
 
 # instance fields
-.field public final Z1:Lu2;
+.field public final R1:Lu2;
 
-.field public a2:Lh6c;
+.field public S1:Liz4;
 
-.field public final b2:Ljava/util/LinkedHashSet;
+.field public final T1:Ljava/util/LinkedHashSet;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 4
 
-    new-instance v0, Lhc9;
+    new-instance v0, Lbh9;
 
-    const-class v1, Lone/me/sdk/lists/widgets/EmptyRecyclerView;
+    const-string v1, "mEmptyView"
 
-    const-string v2, "mEmptyView"
+    const-string v2, "getMEmptyView()Landroid/view/View;"
 
-    const-string v3, "getMEmptyView()Landroid/view/View;"
+    const-class v3, Lone/me/sdk/lists/widgets/EmptyRecyclerView;
 
-    invoke-direct {v0, v1, v2, v3}, Lhc9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v3, v1, v2}, Lbh9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
 
-    sget-object v1, Lm7c;->a:Ln7c;
+    sget-object v1, Llcc;->a:Lmcc;
 
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     const/4 v1, 0x1
 
-    new-array v1, v1, [Lk77;
+    new-array v1, v1, [Lbc7;
 
     const/4 v2, 0x0
 
     aput-object v0, v1, v2
 
-    sput-object v1, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->c2:[Lk77;
+    sput-object v1, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->U1:[Lbc7;
 
     return-void
 .end method
@@ -95,21 +96,21 @@
     invoke-direct {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 2
-    new-instance p1, Lkw4;
+    new-instance p1, Ljz4;
 
     const/4 p2, 0x0
 
-    invoke-direct {p1, p0, p2}, Lkw4;-><init>(Lone/me/sdk/lists/widgets/EmptyRecyclerView;I)V
+    invoke-direct {p1, p0, p2}, Ljz4;-><init>(Lone/me/sdk/lists/widgets/EmptyRecyclerView;I)V
 
     .line 3
-    iput-object p1, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->Z1:Lu2;
+    iput-object p1, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->R1:Lu2;
 
     .line 4
     new-instance p1, Ljava/util/LinkedHashSet;
 
     invoke-direct {p1}, Ljava/util/LinkedHashSet;-><init>()V
 
-    iput-object p1, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->b2:Ljava/util/LinkedHashSet;
+    iput-object p1, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->T1:Ljava/util/LinkedHashSet;
 
     return-void
 .end method
@@ -117,30 +118,32 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 0
 
+    const/4 p3, 0x0
+
     .line 5
     invoke-direct {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 6
-    new-instance p1, Lkw4;
+    new-instance p1, Ljz4;
 
     const/4 p2, 0x1
 
-    invoke-direct {p1, p0, p2}, Lkw4;-><init>(Lone/me/sdk/lists/widgets/EmptyRecyclerView;I)V
+    invoke-direct {p1, p0, p2}, Ljz4;-><init>(Lone/me/sdk/lists/widgets/EmptyRecyclerView;I)V
 
     .line 7
-    iput-object p1, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->Z1:Lu2;
+    iput-object p1, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->R1:Lu2;
 
     .line 8
     new-instance p1, Ljava/util/LinkedHashSet;
 
     invoke-direct {p1}, Ljava/util/LinkedHashSet;-><init>()V
 
-    iput-object p1, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->b2:Ljava/util/LinkedHashSet;
+    iput-object p1, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->T1:Ljava/util/LinkedHashSet;
 
     return-void
 .end method
 
-.method public static K0(Lf6c;Lh6c;)V
+.method public static H0(Lgbc;Libc;)V
     .locals 1
 
     if-nez p1, :cond_0
@@ -149,11 +152,11 @@
 
     :cond_0
     :try_start_0
-    invoke-virtual {p0, p1}, Lf6c;->z(Lh6c;)V
+    invoke-virtual {p0, p1}, Lgbc;->z(Libc;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-void
 
     :catch_0
     move-exception p1
@@ -168,13 +171,12 @@
 
     const-string v0, "fail to unregister data observer"
 
-    invoke-static {p0, v0, p1}, Ludd;->S(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {p0, v0, p1}, Lg47;->O(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_0
     return-void
 .end method
 
-.method public static L0(Lf6c;Lh6c;)V
+.method public static I0(Lgbc;Libc;)V
     .locals 1
 
     if-nez p1, :cond_0
@@ -183,11 +185,11 @@
 
     :cond_0
     :try_start_0
-    invoke-virtual {p0, p1}, Lf6c;->B(Lh6c;)V
+    invoke-virtual {p0, p1}, Lgbc;->B(Libc;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-void
 
     :catch_0
     move-exception p1
@@ -202,22 +204,21 @@
 
     const-string v0, "fail to unregister data observer"
 
-    invoke-static {p0, v0, p1}, Ludd;->S(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {p0, v0, p1}, Lg47;->O(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_0
     return-void
 .end method
 
 .method private final getMEmptyView()Landroid/view/View;
     .locals 2
 
-    sget-object v0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->c2:[Lk77;
+    sget-object v0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->U1:[Lbc7;
 
     const/4 v1, 0x0
 
     aget-object v0, v0, v1
 
-    iget-object p0, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->Z1:Lu2;
+    iget-object p0, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->R1:Lu2;
 
     iget-object p0, p0, Lu2;->b:Ljava/lang/Object;
 
@@ -229,22 +230,22 @@
 .method private final setMEmptyView(Landroid/view/View;)V
     .locals 2
 
-    sget-object v0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->c2:[Lk77;
+    sget-object v0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->U1:[Lbc7;
 
     const/4 v1, 0x0
 
     aget-object v0, v0, v1
 
-    iget-object v1, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->Z1:Lu2;
+    iget-object v1, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->R1:Lu2;
 
-    invoke-virtual {v1, p0, v0, p1}, Lu2;->o1(Ljava/lang/Object;Lk77;Ljava/lang/Object;)V
+    invoke-virtual {v1, p0, v0, p1}, Lu2;->g0(Ljava/lang/Object;Lbc7;Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final F0()V
+.method public final E0()V
     .locals 5
 
     invoke-direct {p0}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->getMEmptyView()Landroid/view/View;
@@ -253,13 +254,13 @@
 
     if-eqz v0, :cond_4
 
-    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lf6c;
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lgbc;
 
     move-result-object v0
 
     if-eqz v0, :cond_4
 
-    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lf6c;
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lgbc;
 
     move-result-object v0
 
@@ -267,7 +268,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Lf6c;->j()I
+    invoke-virtual {v0}, Lgbc;->j()I
 
     move-result v0
 
@@ -313,114 +314,114 @@
     return-void
 .end method
 
-.method public G0(Lf6c;)V
+.method public F0(Lgbc;)V
     .locals 0
 
     return-void
 .end method
 
-.method public H0(Lf6c;)V
+.method public G0()V
     .locals 0
 
     return-void
 .end method
 
-.method public I0()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public J0()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final M0(Lf6c;Z)V
+.method public final J0(Lgbc;Z)V
     .locals 2
 
-    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lf6c;
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lgbc;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->a2:Lh6c;
+    iget-object v1, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->S1:Liz4;
 
-    invoke-static {v0, v1}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->L0(Lf6c;Lh6c;)V
+    invoke-static {v0, v1}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->I0(Lgbc;Libc;)V
 
     :cond_0
-    invoke-virtual {p0}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->J0()V
+    move-object v0, p0
 
-    invoke-virtual {p0, p1}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->N0(Lf6c;)Lf6c;
+    check-cast v0, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;
 
-    move-result-object p1
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lgbc;
 
-    const/4 v0, 0x0
+    move-result-object v1
 
-    invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutFrozen(Z)V
+    iget-object v0, v0, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;->b2:Lr15;
 
-    const/4 v0, 0x1
+    if-eqz v1, :cond_1
 
-    invoke-virtual {p0, p1, v0, p2}, Landroidx/recyclerview/widget/RecyclerView;->y0(Lf6c;ZZ)V
+    invoke-static {v1, v0}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->I0(Lgbc;Libc;)V
 
-    invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/RecyclerView;->k0(Z)V
+    :cond_1
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutFrozen(Z)V
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p0, p1, v1, p2}, Landroidx/recyclerview/widget/RecyclerView;->x0(Lgbc;ZZ)V
+
+    invoke-virtual {p0, v1}, Landroidx/recyclerview/widget/RecyclerView;->j0(Z)V
 
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->requestLayout()V
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_2
 
-    iget-object p2, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->a2:Lh6c;
+    iget-object p0, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->S1:Liz4;
 
-    invoke-static {p1, p2}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->K0(Lf6c;Lh6c;)V
+    invoke-static {p1, p0}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->H0(Lgbc;Libc;)V
 
-    :cond_1
-    invoke-virtual {p0, p1}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->H0(Lf6c;)V
+    :cond_2
+    if-eqz p1, :cond_3
 
+    invoke-static {p1, v0}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->H0(Lgbc;Libc;)V
+
+    :cond_3
     return-void
 .end method
 
-.method public N0(Lf6c;)Lf6c;
+.method public K0(Lgbc;)Lgbc;
     .locals 0
 
     return-object p1
 .end method
 
-.method public final setAdapter(Lf6c;)V
+.method public final setAdapter(Lgbc;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lf6c;",
+            "Lgbc;",
             ")V"
         }
     .end annotation
 
-    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lf6c;
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lgbc;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->a2:Lh6c;
+    iget-object v1, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->S1:Liz4;
 
     if-eqz v1, :cond_0
 
-    invoke-static {v0, v1}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->L0(Lf6c;Lh6c;)V
+    invoke-static {v0, v1}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->I0(Lgbc;Libc;)V
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->a2:Lh6c;
+    iput-object v0, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->S1:Liz4;
 
     :cond_0
-    invoke-virtual {p0, p1}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->N0(Lf6c;)Lf6c;
+    invoke-virtual {p0, p1}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->K0(Lgbc;)Lgbc;
 
     move-result-object p1
 
-    invoke-virtual {p0}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->I0()V
+    invoke-virtual {p0}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->G0()V
 
-    invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Lf6c;)V
+    invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Lgbc;)V
 
     if-eqz p1, :cond_1
 
@@ -430,20 +431,20 @@
 
     if-eqz v0, :cond_1
 
-    new-instance v0, Ljw4;
+    new-instance v0, Liz4;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1, p0}, Ljw4;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v0, v1, p0}, Liz4;-><init>(ILjava/lang/Object;)V
 
-    iput-object v0, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->a2:Lh6c;
+    iput-object v0, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->S1:Liz4;
 
-    invoke-static {p1, v0}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->K0(Lf6c;Lh6c;)V
+    invoke-static {p1, v0}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->H0(Lgbc;Libc;)V
 
     :cond_1
-    invoke-virtual {p0, p1}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->G0(Lf6c;)V
+    invoke-virtual {p0, p1}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->F0(Lgbc;)V
 
-    invoke-virtual {p0}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->F0()V
+    invoke-virtual {p0}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->E0()V
 
     return-void
 .end method
@@ -455,7 +456,7 @@
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p1, v0}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -474,7 +475,7 @@
     :cond_0
     invoke-direct {p0, p1}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->setMEmptyView(Landroid/view/View;)V
 
-    invoke-virtual {p0}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->F0()V
+    invoke-virtual {p0}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->E0()V
 
     :cond_1
     return-void
@@ -485,7 +486,7 @@
 
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->setPadding(IIII)V
 
-    iget-object p0, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->b2:Ljava/util/LinkedHashSet;
+    iget-object p0, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->T1:Ljava/util/LinkedHashSet;
 
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -500,13 +501,9 @@
     return-void
 
     :cond_0
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {p0}, Lv04;->f(Ljava/util/Iterator;)Ljava/lang/ClassCastException;
 
     move-result-object p0
-
-    invoke-static {p0}, Lhr1;->r(Ljava/lang/Object;)V
-
-    const/4 p0, 0x0
 
     throw p0
 .end method

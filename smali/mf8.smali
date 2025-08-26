@@ -2,65 +2,46 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ldf8;
-
 
 # instance fields
-.field public final a:Llv7;
+.field public final a:Ljava/lang/Object;
 
-.field public final b:Ljava/lang/Object;
-
-.field public final c:Ljava/util/ArrayList;
-
-.field public d:I
-
-.field public e:Z
+.field public final b:I
 
 
 # direct methods
-.method public constructor <init>(Lyh0;Z)V
+.method public constructor <init>(Ljava/lang/Object;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Llv7;
+    iput-object p1, p0, Lmf8;->a:Ljava/lang/Object;
 
-    invoke-direct {v0, p1, p2}, Llv7;-><init>(Lyh0;Z)V
+    instance-of v0, p1, Ljava/lang/String;
 
-    iput-object v0, p0, Lmf8;->a:Llv7;
+    if-eqz v0, :cond_0
 
-    new-instance p1, Ljava/util/ArrayList;
+    const/4 p1, 0x1
 
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object p1, p0, Lmf8;->c:Ljava/util/ArrayList;
-
-    new-instance p1, Ljava/lang/Object;
-
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lmf8;->b:Ljava/lang/Object;
+    iput p1, p0, Lmf8;->b:I
 
     return-void
-.end method
 
+    :cond_0
+    instance-of p1, p1, Lmg8;
 
-# virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 0
+    if-eqz p1, :cond_1
 
-    iget-object p0, p0, Lmf8;->b:Ljava/lang/Object;
+    const/4 p1, 0x2
 
-    return-object p0
-.end method
+    iput p1, p0, Lmf8;->b:I
 
-.method public final b()Luje;
-    .locals 0
+    return-void
 
-    iget-object p0, p0, Lmf8;->a:Llv7;
+    :cond_1
+    const/4 p1, 0x0
 
-    iget-object p0, p0, Llv7;->o:Lhv7;
+    iput p1, p0, Lmf8;->b:I
 
-    return-object p0
+    return-void
 .end method

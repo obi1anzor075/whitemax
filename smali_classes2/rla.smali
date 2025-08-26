@@ -1,476 +1,362 @@
-.class public final synthetic Lrla;
+.class public final Lrla;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lpf3;
+.implements Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:Ljpe;
 
-.field public final synthetic b:Lzla;
+.field public a:Landroid/graphics/SurfaceTexture;
+
+.field public b:Landroid/view/Surface;
+
+.field public final c:Ljava/lang/Object;
+
+.field public o:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lzla;I)V
-    .locals 0
-
-    iput p2, p0, Lrla;->a:I
-
-    iput-object p1, p0, Lrla;->b:Lzla;
+.method public constructor <init>()V
+    .locals 7
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    new-instance v0, Ljava/lang/Object;
 
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-# virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .locals 19
+    iput-object v0, p0, Lrla;->c:Ljava/lang/Object;
 
-    move-object/from16 v0, p0
+    new-instance v0, Ljpe;
 
-    iget v1, v0, Lrla;->a:I
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    packed-switch v1, :pswitch_data_0
+    const/4 v2, 0x1
 
-    move-object/from16 v1, p1
+    invoke-direct {v0, v1, v2}, Ljpe;-><init>(FZ)V
 
-    check-cast v1, Lorg/webrtc/PeerConnection;
+    iput-object v0, p0, Lrla;->X:Ljpe;
 
-    iget-object v2, v0, Lrla;->b:Lzla;
+    const v1, 0x8b31
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-string v3, "uniform mat4 uMVPMatrix;\nuniform mat4 uSTMatrix;\nattribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n  gl_Position = uMVPMatrix * aPosition;\n  vTextureCoord = (uSTMatrix * aTextureCoord).xy;\n}\n"
 
-    const-string v3, " ex="
+    invoke-static {v1, v3}, Ljpe;->b(ILjava/lang/String;)I
 
-    invoke-virtual {v1}, Lorg/webrtc/PeerConnection;->getTransceivers()Ljava/util/List;
+    move-result v1
 
-    move-result-object v4
+    const/4 v3, 0x0
 
-    const/4 v5, 0x0
+    if-nez v1, :cond_0
 
-    iput-object v5, v2, Lzla;->g1:Lorg/webrtc/RtpSender;
+    :goto_0
+    move v5, v3
 
-    iput-object v5, v2, Lzla;->i1:Lorg/webrtc/RtpSender;
-
-    invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
+    goto :goto_1
 
     :cond_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    const v4, 0x8b30
 
-    move-result v6
+    const-string v5, "#extension GL_OES_EGL_image_external : require\nprecision mediump float;\nvarying vec2 vTextureCoord;\nuniform samplerExternalOES sTexture;\nvoid main() {\n  gl_FragColor = texture2D(sTexture, vTextureCoord);\n}\n"
 
-    const-string v7, "s"
+    invoke-static {v4, v5}, Ljpe;->b(ILjava/lang/String;)I
 
-    const-string v8, "PCRTCClient"
+    move-result v4
 
-    iget-object v9, v2, Lzla;->O0:Lxwb;
-
-    if-eqz v6, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lorg/webrtc/RtpTransceiver;
-
-    invoke-virtual {v6}, Lorg/webrtc/RtpTransceiver;->getMid()Ljava/lang/String;
-
-    move-result-object v10
-
-    if-eqz v10, :cond_0
-
-    invoke-virtual {v6}, Lorg/webrtc/RtpTransceiver;->getMid()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v7}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v10
-
-    if-eqz v10, :cond_0
-
-    invoke-virtual {v6}, Lorg/webrtc/RtpTransceiver;->getMediaType()Lorg/webrtc/MediaStreamTrack$MediaType;
-
-    move-result-object v10
-
-    sget-object v11, Lorg/webrtc/MediaStreamTrack$MediaType;->MEDIA_TYPE_AUDIO:Lorg/webrtc/MediaStreamTrack$MediaType;
-
-    if-ne v10, v11, :cond_0
-
-    const-string v0, "audioShareTransceiver found"
-
-    invoke-interface {v9, v8, v0}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    if-nez v4, :cond_1
 
     goto :goto_0
 
     :cond_1
-    move-object v6, v5
+    invoke-static {}, Landroid/opengl/GLES20;->glCreateProgram()I
 
-    :goto_0
-    iget-object v10, v2, Lzla;->I0:Ld;
+    move-result v5
 
-    const/4 v11, 0x0
+    const-string v6, "glCreateProgram"
 
-    if-nez v6, :cond_2
+    invoke-static {v6}, Ljpe;->a(Ljava/lang/String;)V
 
-    goto :goto_2
+    invoke-static {v5, v1}, Landroid/opengl/GLES20;->glAttachShader(II)V
+
+    const-string v1, "glAttachShader"
+
+    invoke-static {v1}, Ljpe;->a(Ljava/lang/String;)V
+
+    invoke-static {v5, v4}, Landroid/opengl/GLES20;->glAttachShader(II)V
+
+    invoke-static {v1}, Ljpe;->a(Ljava/lang/String;)V
+
+    invoke-static {v5}, Landroid/opengl/GLES20;->glLinkProgram(I)V
+
+    new-array v1, v2, [I
+
+    const v4, 0x8b82
+
+    invoke-static {v5, v4, v1, v3}, Landroid/opengl/GLES20;->glGetProgramiv(II[II)V
+
+    aget v1, v1, v3
+
+    if-eq v1, v2, :cond_2
+
+    invoke-static {v5}, Landroid/opengl/GLES20;->glGetProgramInfoLog(I)Ljava/lang/String;
+
+    invoke-static {v5}, Landroid/opengl/GLES20;->glDeleteProgram(I)V
+
+    goto :goto_0
 
     :cond_2
-    :try_start_0
-    sget-object v0, Lorg/webrtc/RtpTransceiver$RtpTransceiverDirection;->SEND_ONLY:Lorg/webrtc/RtpTransceiver$RtpTransceiverDirection;
-
-    invoke-virtual {v6, v0}, Lorg/webrtc/RtpTransceiver;->setDirection(Lorg/webrtc/RtpTransceiver$RtpTransceiverDirection;)Z
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_1
-
-    :catch_0
-    move-exception v0
-
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    const-string v13, "audioShareTransceiver setDirection failed with error: "
-
-    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {v9, v8, v0}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
-
     :goto_1
-    invoke-virtual {v10}, Ld;->a()Lxp0;
+    iput v5, v0, Ljpe;->d:I
 
-    move-result-object v0
+    if-eqz v5, :cond_7
 
-    iget-object v0, v0, Lxp0;->b:Ljava/lang/Object;
+    const-string v1, "aPosition"
 
-    check-cast v0, Ljl7;
+    invoke-static {v5, v1}, Landroid/opengl/GLES20;->glGetAttribLocation(ILjava/lang/String;)I
 
-    if-eqz v0, :cond_3
+    move-result v1
 
-    iget-object v0, v0, Ljl7;->j:Ll50;
+    iput v1, v0, Ljpe;->h:I
 
-    iget-object v0, v0, Lcf3;->X:Ljava/lang/Object;
+    const-string v1, "glGetAttribLocation aPosition"
 
-    check-cast v0, Lorg/webrtc/MediaStreamTrack;
+    invoke-static {v1}, Ljpe;->a(Ljava/lang/String;)V
 
-    check-cast v0, Lorg/webrtc/AudioTrack;
+    iget v1, v0, Ljpe;->h:I
 
-    if-eqz v0, :cond_3
+    const/4 v4, -0x1
 
-    invoke-virtual {v6}, Lorg/webrtc/RtpTransceiver;->getSender()Lorg/webrtc/RtpSender;
+    if-eq v1, v4, :cond_6
 
-    move-result-object v6
+    iget v1, v0, Ljpe;->d:I
 
-    iput-object v6, v2, Lzla;->g1:Lorg/webrtc/RtpSender;
+    const-string v5, "aTextureCoord"
 
-    const-string v12, "audio-share"
+    invoke-static {v1, v5}, Landroid/opengl/GLES20;->glGetAttribLocation(ILjava/lang/String;)I
 
-    iget-object v13, v2, Lzla;->F0:Lb79;
+    move-result v1
 
-    invoke-virtual {v13, v6, v12}, Lb79;->c(Lorg/webrtc/RtpSender;Ljava/lang/String;)V
+    iput v1, v0, Ljpe;->i:I
 
-    invoke-virtual {v6, v0, v11}, Lorg/webrtc/RtpSender;->setTrack(Lorg/webrtc/MediaStreamTrack;Z)Z
+    const-string v1, "glGetAttribLocation aTextureCoord"
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    invoke-static {v1}, Ljpe;->a(Ljava/lang/String;)V
 
-    const-string v12, "audioShareTransceiver setTrack, trackId = "
+    iget v1, v0, Ljpe;->i:I
 
-    invoke-direct {v6, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    if-eq v1, v4, :cond_5
 
-    invoke-virtual {v0}, Lorg/webrtc/MediaStreamTrack;->id()Ljava/lang/String;
+    iget v1, v0, Ljpe;->d:I
 
-    move-result-object v0
+    const-string v5, "uMVPMatrix"
 
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1, v5}, Landroid/opengl/GLES20;->glGetUniformLocation(ILjava/lang/String;)I
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result v1
 
-    move-result-object v0
+    iput v1, v0, Ljpe;->f:I
 
-    invoke-interface {v9, v8, v0}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    const-string v1, "glGetUniformLocation uMVPMatrix"
+
+    invoke-static {v1}, Ljpe;->a(Ljava/lang/String;)V
+
+    iget v1, v0, Ljpe;->f:I
+
+    if-eq v1, v4, :cond_4
+
+    iget v1, v0, Ljpe;->d:I
+
+    const-string v5, "uSTMatrix"
+
+    invoke-static {v1, v5}, Landroid/opengl/GLES20;->glGetUniformLocation(ILjava/lang/String;)I
+
+    move-result v1
+
+    iput v1, v0, Ljpe;->g:I
+
+    const-string v1, "glGetUniformLocation uSTMatrix"
+
+    invoke-static {v1}, Ljpe;->a(Ljava/lang/String;)V
+
+    iget v1, v0, Ljpe;->g:I
+
+    if-eq v1, v4, :cond_3
+
+    new-array v1, v2, [I
+
+    invoke-static {v2, v1, v3}, Landroid/opengl/GLES20;->glGenTextures(I[II)V
+
+    aget v1, v1, v3
+
+    iput v1, v0, Ljpe;->e:I
+
+    const v0, 0x8d65
+
+    invoke-static {v0, v1}, Landroid/opengl/GLES20;->glBindTexture(II)V
+
+    const-string v1, "glBindTexture mTextureID"
+
+    invoke-static {v1}, Ljpe;->a(Ljava/lang/String;)V
+
+    const/16 v1, 0x2801
+
+    const/high16 v2, 0x46180000    # 9728.0f
+
+    invoke-static {v0, v1, v2}, Landroid/opengl/GLES20;->glTexParameterf(IIF)V
+
+    const/16 v1, 0x2800
+
+    const v2, 0x46180400    # 9729.0f
+
+    invoke-static {v0, v1, v2}, Landroid/opengl/GLES20;->glTexParameterf(IIF)V
+
+    const/16 v1, 0x2802
+
+    const v2, 0x812f
+
+    invoke-static {v0, v1, v2}, Landroid/opengl/GLES20;->glTexParameteri(III)V
+
+    const/16 v1, 0x2803
+
+    invoke-static {v0, v1, v2}, Landroid/opengl/GLES20;->glTexParameteri(III)V
+
+    const-string v0, "glTexParameter"
+
+    invoke-static {v0}, Ljpe;->a(Ljava/lang/String;)V
+
+    new-instance v0, Landroid/graphics/SurfaceTexture;
+
+    iget-object v1, p0, Lrla;->X:Ljpe;
+
+    iget v1, v1, Ljpe;->e:I
+
+    invoke-direct {v0, v1}, Landroid/graphics/SurfaceTexture;-><init>(I)V
+
+    iput-object v0, p0, Lrla;->a:Landroid/graphics/SurfaceTexture;
+
+    invoke-virtual {v0, p0}, Landroid/graphics/SurfaceTexture;->setOnFrameAvailableListener(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V
+
+    new-instance v0, Landroid/view/Surface;
+
+    iget-object v1, p0, Lrla;->a:Landroid/graphics/SurfaceTexture;
+
+    invoke-direct {v0, v1}, Landroid/view/Surface;-><init>(Landroid/graphics/SurfaceTexture;)V
+
+    iput-object v0, p0, Lrla;->b:Landroid/view/Surface;
+
+    return-void
 
     :cond_3
-    :goto_2
-    invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    new-instance p0, Ljava/lang/RuntimeException;
 
-    move-result-object v0
+    const-string v0, "Could not get attrib location for uSTMatrix"
+
+    invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 
     :cond_4
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    new-instance p0, Ljava/lang/RuntimeException;
 
-    move-result v4
+    const-string v0, "Could not get attrib location for uMVPMatrix"
 
-    if-eqz v4, :cond_5
+    invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lorg/webrtc/RtpTransceiver;
-
-    invoke-virtual {v4}, Lorg/webrtc/RtpTransceiver;->getMid()Ljava/lang/String;
-
-    move-result-object v6
-
-    if-eqz v6, :cond_4
-
-    invoke-virtual {v4}, Lorg/webrtc/RtpTransceiver;->getMid()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v7}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_4
-
-    invoke-virtual {v4}, Lorg/webrtc/RtpTransceiver;->getMediaType()Lorg/webrtc/MediaStreamTrack$MediaType;
-
-    move-result-object v6
-
-    sget-object v12, Lorg/webrtc/MediaStreamTrack$MediaType;->MEDIA_TYPE_VIDEO:Lorg/webrtc/MediaStreamTrack$MediaType;
-
-    if-ne v6, v12, :cond_4
-
-    const-string v0, "shareScreenTransceiver found"
-
-    invoke-interface {v9, v8, v0}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
-
-    move-object v5, v4
+    throw p0
 
     :cond_5
-    if-nez v5, :cond_6
+    new-instance p0, Ljava/lang/RuntimeException;
 
-    goto/16 :goto_7
+    const-string v0, "Could not get attrib location for aTextureCoord"
+
+    invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 
     :cond_6
-    :try_start_1
-    sget-object v0, Lorg/webrtc/RtpTransceiver$RtpTransceiverDirection;->SEND_ONLY:Lorg/webrtc/RtpTransceiver$RtpTransceiverDirection;
+    new-instance p0, Ljava/lang/RuntimeException;
 
-    invoke-virtual {v5, v0}, Lorg/webrtc/RtpTransceiver;->setDirection(Lorg/webrtc/RtpTransceiver$RtpTransceiverDirection;)Z
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+    const-string v0, "Could not get attrib location for aPosition"
 
-    goto :goto_3
+    invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    :catch_1
-    move-exception v0
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v6, "shareScreenTransceiver setDirection failed with error: "
-
-    invoke-direct {v4, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {v9, v8, v0}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
-
-    :goto_3
-    invoke-virtual {v10}, Ld;->a()Lxp0;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lxp0;->b:Ljava/lang/Object;
-
-    check-cast v0, Ljl7;
-
-    if-eqz v0, :cond_9
-
-    iget-object v0, v0, Ljl7;->z:Lgoc;
-
-    iget-object v0, v0, Lcf3;->X:Ljava/lang/Object;
-
-    check-cast v0, Lorg/webrtc/MediaStreamTrack;
-
-    check-cast v0, Lorg/webrtc/VideoTrack;
-
-    if-eqz v0, :cond_9
-
-    invoke-virtual {v5}, Lorg/webrtc/RtpTransceiver;->getSender()Lorg/webrtc/RtpSender;
-
-    move-result-object v4
-
-    const/16 v15, 0x7530
-
-    const v16, 0x1f4000
-
-    iget-object v12, v2, Lzla;->F0:Lb79;
-
-    const-string v14, "screen-share"
-
-    const/16 v17, 0x0
-
-    const/16 v18, 0x0
-
-    move-object v13, v4
-
-    invoke-virtual/range {v12 .. v18}, Lb79;->d(Lorg/webrtc/RtpSender;Ljava/lang/String;IILjava/lang/Double;Z)V
-
-    iput-object v4, v2, Lzla;->i1:Lorg/webrtc/RtpSender;
-
-    invoke-virtual {v4, v0, v11}, Lorg/webrtc/RtpSender;->setTrack(Lorg/webrtc/MediaStreamTrack;Z)Z
-
-    iget-object v4, v2, Lzla;->i1:Lorg/webrtc/RtpSender;
-
-    iget-boolean v5, v2, Lzla;->v1:Z
-
-    if-nez v5, :cond_7
-
-    goto :goto_4
+    throw p0
 
     :cond_7
-    if-nez v4, :cond_8
+    new-instance p0, Ljava/lang/RuntimeException;
 
-    goto :goto_4
+    const-string v0, "failed creating program"
 
-    :cond_8
-    new-instance v5, Lxp0;
+    invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v5, v2, v11}, Lxp0;-><init>(Ljava/lang/Object;Z)V
+    throw p0
+.end method
 
-    invoke-virtual {v4, v5}, Lorg/webrtc/RtpSender;->setVideoEncoderObserver(Lorg/webrtc/VideoEncoderObserver;)V
 
-    :goto_4
-    new-instance v4, Ljava/lang/StringBuilder;
+# virtual methods
+.method public final a()V
+    .locals 1
 
-    const-string v5, "shareScreenTransceiver setTrack, trackId = "
+    iget-object v0, p0, Lrla;->b:Landroid/view/Surface;
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0}, Landroid/view/Surface;->release()V
 
-    invoke-virtual {v0}, Lorg/webrtc/MediaStreamTrack;->id()Ljava/lang/String;
+    const/4 v0, 0x0
 
-    move-result-object v0
+    iput-object v0, p0, Lrla;->X:Ljpe;
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput-object v0, p0, Lrla;->b:Landroid/view/Surface;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iput-object v0, p0, Lrla;->a:Landroid/graphics/SurfaceTexture;
 
-    move-result-object v0
+    return-void
+.end method
 
-    invoke-interface {v9, v8, v0}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+.method public final onFrameAvailable(Landroid/graphics/SurfaceTexture;)V
+    .locals 1
 
-    :try_start_2
-    iget-object v0, v2, Lzla;->i1:Lorg/webrtc/RtpSender;
+    iget-object p1, p0, Lrla;->c:Ljava/lang/Object;
 
-    const/4 v4, 0x1
+    monitor-enter p1
 
-    invoke-virtual {v2, v1, v11, v4, v0}, Lzla;->l(Lorg/webrtc/PeerConnection;ZZLorg/webrtc/RtpSender;)V
-    :try_end_2
-    .catch Ljava/lang/IllegalStateException; {:try_start_2 .. :try_end_2} :catch_3
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
+    :try_start_0
+    iget-boolean v0, p0, Lrla;->o:Z
 
-    goto :goto_7
+    if-nez v0, :cond_0
 
-    :catch_2
-    move-exception v0
+    const/4 v0, 0x1
 
-    goto :goto_5
+    iput-boolean v0, p0, Lrla;->o:Z
 
-    :catch_3
-    move-exception v0
+    iget-object p0, p0, Lrla;->c:Ljava/lang/Object;
 
-    goto :goto_6
+    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
-    :goto_5
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "Exception, "
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {v9, v8, v0}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_7
-
-    :goto_6
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "IllegalStateException, "
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {v9, v8, v0}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_9
-    :goto_7
-    invoke-virtual {v2, v1}, Lzla;->v(Lorg/webrtc/PeerConnection;)V
-
-    new-instance v0, Lwla;
-
-    const/4 v3, 0x1
-
-    invoke-direct {v0, v2, v3}, Lwla;-><init>(Lzla;I)V
-
-    iget-object v2, v2, Lzla;->c1:Lorg/webrtc/MediaConstraints;
-
-    invoke-virtual {v1, v0, v2}, Lorg/webrtc/PeerConnection;->createAnswer(Lorg/webrtc/SdpObserver;Lorg/webrtc/MediaConstraints;)V
+    monitor-exit p1
 
     return-void
 
-    :pswitch_0
-    move-object/from16 v1, p1
+    :catchall_0
+    move-exception p0
 
-    check-cast v1, Lorg/webrtc/PeerConnection;
+    goto :goto_0
 
-    iget-object v0, v0, Lrla;->b:Lzla;
+    :cond_0
+    new-instance p0, Ljava/lang/RuntimeException;
 
-    const/4 v2, 0x0
+    const-string v0, "mFrameAvailable already set, frame could be dropped"
 
-    invoke-virtual {v0, v1, v2}, Lzla;->u(Lorg/webrtc/PeerConnection;Z)V
+    invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1, v2}, Lzla;->k(Lorg/webrtc/PeerConnection;Z)V
+    throw p0
 
-    return-void
+    :goto_0
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    throw p0
 .end method

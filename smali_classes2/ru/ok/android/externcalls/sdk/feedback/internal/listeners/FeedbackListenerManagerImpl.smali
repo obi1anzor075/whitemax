@@ -4,7 +4,7 @@
 
 # interfaces
 .implements Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManager;
-.implements Ll51;
+.implements Lv61;
 
 
 # annotations
@@ -21,7 +21,7 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;",
         "Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManager;",
-        "Ll51;",
+        "Lv61;",
         "Lru/ok/android/externcalls/sdk/Conversation;",
         "conversation",
         "Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;",
@@ -35,7 +35,7 @@
         "",
         "Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedback;",
         "newFeedback",
-        "Ljue;",
+        "Le5f;",
         "updateActiveFeedback",
         "(Ljava/util/List;)V",
         "scheduleRemoving",
@@ -51,11 +51,11 @@
         "isEnabled",
         "notifyFeedbackEnabledChanged",
         "(Z)V",
-        "Lk51;",
+        "Lu61;",
         "feedback",
         "Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;",
         "unrollReceivedFeedback",
-        "(Lk51;)Ljava/util/List;",
+        "(Lu61;)Ljava/util/List;",
         "mappedFeedbacks",
         "",
         "resolvedMappings",
@@ -64,7 +64,7 @@
         "feedbacks",
         "notifyResolvedFeedbackItems",
         "onFeedback",
-        "(Lk51;)V",
+        "(Lu61;)V",
         "onFeedbackEnabledChanged",
         "",
         "key",
@@ -115,6 +115,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -414,13 +415,11 @@
 
     move-result-object v3
 
-    invoke-static {v4, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v4, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
 
-    xor-int/lit8 v3, v3, 0x1
-
-    if-eqz v3, :cond_1
+    if-nez v3, :cond_1
 
     invoke-interface {v0, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
@@ -433,9 +432,7 @@
 
     move-result p1
 
-    xor-int/lit8 p1, p1, 0x1
-
-    if-eqz p1, :cond_4
+    if-nez p1, :cond_4
 
     invoke-direct {p0, v0}, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;->notifyFeedbackAdded(Ljava/util/List;)V
 
@@ -464,7 +461,7 @@
 .end method
 
 .method private final processFeedbackForResolvedInternalIds(Ljava/util/List;Ljava/util/List;)Ljava/util/List;
-    .locals 13
+    .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -486,11 +483,11 @@
 
     iget-wide v2, p0, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;->timeout:J
 
-    add-long/2addr v0, v2
+    add-long v6, v0, v2
 
-    new-instance v2, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -499,64 +496,64 @@
     :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v1
 
-    if-eqz v3, :cond_4
+    if-eqz v1, :cond_4
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
+    move-result-object v1
+
+    check-cast v1, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;
+
+    iget-object v2, p0, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;->store:Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;
+
+    invoke-virtual {v1}, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;->getParticipantId()Lrf1;
+
     move-result-object v3
 
-    check-cast v3, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;
+    invoke-virtual {v2, v3}, Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;->getByInternal(Lrf1;)Lru/ok/android/externcalls/sdk/ConversationParticipant;
 
-    iget-object v4, p0, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;->store:Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;
+    move-result-object v2
 
-    invoke-virtual {v3}, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;->getParticipantId()Lge1;
+    if-eqz v2, :cond_1
 
-    move-result-object v5
+    invoke-virtual {v2}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->getExternalId()Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
-    invoke-virtual {v4, v5}, Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;->getByInternal(Lge1;)Lru/ok/android/externcalls/sdk/ConversationParticipant;
+    move-result-object v2
 
-    move-result-object v4
-
-    if-eqz v4, :cond_1
-
-    invoke-virtual {v4}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->getExternalId()Lru/ok/android/externcalls/sdk/id/ParticipantId;
-
-    move-result-object v4
-
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     goto :goto_2
 
     :cond_0
     :goto_1
-    move-object v8, v4
+    move-object v8, v2
 
     goto :goto_3
 
     :cond_1
     :goto_2
-    iget-object v4, p0, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;->idMappingWrapper:Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;
+    iget-object v2, p0, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;->idMappingWrapper:Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;
 
-    invoke-virtual {v3}, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;->getParticipantId()Lge1;
+    invoke-virtual {v1}, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;->getParticipantId()Lrf1;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-virtual {v4, v5}, Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;->getByInternal(Lge1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
+    invoke-virtual {v2, v3}, Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;->getByInternal(Lrf1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
-    move-result-object v4
+    move-result-object v2
 
     goto :goto_1
 
     :goto_3
     if-eqz v8, :cond_2
 
-    invoke-virtual {v3}, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;->getFeedbackId()Ljava/lang/String;
+    invoke-virtual {v1}, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;->getFeedbackId()Ljava/lang/String;
 
     move-result-object v5
 
-    new-instance v12, Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedback;
+    new-instance v4, Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedback;
 
     const/16 v10, 0x8
 
@@ -564,39 +561,35 @@
 
     const/4 v9, 0x0
 
-    move-object v4, v12
-
-    move-wide v6, v0
-
-    invoke-direct/range {v4 .. v11}, Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedback;-><init>(Ljava/lang/String;JLru/ok/android/externcalls/sdk/id/ParticipantId;Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedbackSource;ILx54;)V
+    invoke-direct/range {v4 .. v11}, Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedback;-><init>(Ljava/lang/String;JLru/ok/android/externcalls/sdk/id/ParticipantId;Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedbackSource;ILl94;)V
 
     goto :goto_4
 
     :cond_2
-    const/4 v12, 0x0
+    const/4 v4, 0x0
 
     :goto_4
-    if-eqz v12, :cond_3
+    if-eqz v4, :cond_3
 
-    invoke-interface {p2, v12}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {p2, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_3
-    invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_4
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;->generations:Ljava/util/LinkedList;
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
 
     invoke-virtual {p0, p1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    return-object v2
+    return-object v0
 .end method
 
 .method private final scheduleRemoving()V
@@ -638,11 +631,11 @@
 
     iget-object v4, p0, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;->mainHandler:Landroid/os/Handler;
 
-    new-instance v5, Lq50;
+    new-instance v5, Lj60;
 
-    const/4 v6, 0x4
+    const/4 v6, 0x2
 
-    invoke-direct {v5, p0, v0, v1, v6}, Lq50;-><init>(Ljava/lang/Object;JI)V
+    invoke-direct {v5, p0, v0, v1, v6}, Lj60;-><init>(Ljava/lang/Object;JI)V
 
     invoke-virtual {v4, v5, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
@@ -718,9 +711,7 @@
 
     move-result p1
 
-    xor-int/lit8 p1, p1, 0x1
-
-    if-eqz p1, :cond_2
+    if-nez p1, :cond_2
 
     invoke-direct {p0, v1}, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;->notifyFeedbackRemoved(Ljava/util/List;)V
 
@@ -730,12 +721,12 @@
     return-void
 .end method
 
-.method private final unrollReceivedFeedback(Lk51;)Ljava/util/List;
+.method private final unrollReceivedFeedback(Lu61;)Ljava/util/List;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lk51;",
+            "Lu61;",
             ")",
             "Ljava/util/List<",
             "Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;",
@@ -743,13 +734,13 @@
         }
     .end annotation
 
-    iget-object p0, p1, Lk51;->b:Ljava/util/List;
+    iget-object p0, p1, Lu61;->b:Ljava/util/ArrayList;
 
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
@@ -764,15 +755,15 @@
 
     move-result-object v0
 
-    check-cast v0, Lj51;
+    check-cast v0, Lt61;
 
-    iget-object v1, v0, Lj51;->b:Ljava/util/List;
+    iget-object v1, v0, Lt61;->b:Ljava/lang/Object;
 
     new-instance v2, Ljava/util/ArrayList;
 
     const/16 v3, 0xa
 
-    invoke-static {v1, v3}, Lq23;->H(Ljava/lang/Iterable;I)I
+    invoke-static {v1, v3}, Lr43;->k0(Ljava/lang/Iterable;I)I
 
     move-result v3
 
@@ -793,20 +784,20 @@
 
     move-result-object v3
 
-    check-cast v3, Lge1;
+    check-cast v3, Lrf1;
 
-    new-instance v4, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;
+    iget-object v4, v0, Lt61;->a:Ljava/lang/String;
 
-    iget-object v5, v0, Lj51;->a:Ljava/lang/String;
+    new-instance v5, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;
 
-    invoke-direct {v4, v3, v5}, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;-><init>(Lge1;Ljava/lang/String;)V
+    invoke-direct {v5, v3, v4}, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;-><init>(Lrf1;Ljava/lang/String;)V
 
-    invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
     :cond_0
-    invoke-static {v2, p1}, Lu23;->K(Ljava/lang/Iterable;Ljava/util/AbstractCollection;)V
+    invoke-static {v2, p1}, Lv43;->n0(Ljava/lang/Iterable;Ljava/util/AbstractCollection;)V
 
     goto :goto_0
 
@@ -897,7 +888,7 @@
 
     move-result-object p0
 
-    invoke-static {p0}, Lo23;->w0(Ljava/lang/Iterable;)Ljava/util/Set;
+    invoke-static {p0}, Lp43;->a1(Ljava/util/Collection;)Ljava/util/Set;
 
     move-result-object p0
 
@@ -928,27 +919,27 @@
     return-object p0
 .end method
 
-.method public onFeedback(Lk51;)V
-    .locals 5
+.method public onFeedback(Lu61;)V
+    .locals 7
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;->store:Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;
+    iget-object v0, p1, Lu61;->a:Le9d;
 
-    invoke-virtual {v0}, Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;->getActiveRoomId()Lw2d;
+    iget-object v1, p0, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;->store:Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;
 
-    move-result-object v0
+    invoke-virtual {v1}, Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;->getActiveRoomId()Le9d;
 
-    iget-object v1, p1, Lk51;->a:Lw2d;
+    move-result-object v1
 
-    invoke-static {v1, v0}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
-    invoke-direct {p0, p1}, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;->unrollReceivedFeedback(Lk51;)Ljava/util/List;
+    invoke-direct {p0, p1}, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;->unrollReceivedFeedback(Lu61;)Ljava/util/List;
 
     move-result-object p1
 
@@ -958,79 +949,84 @@
 
     if-eqz v0, :cond_1
 
+    :goto_0
     return-void
 
     :cond_1
-    new-instance v0, Ljava/util/ArrayList;
+    new-instance v5, Ljava/util/ArrayList;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-direct {p0, p1, v0}, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;->processFeedbackForResolvedInternalIds(Ljava/util/List;Ljava/util/List;)Ljava/util/List;
+    invoke-direct {p0, p1, v5}, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;->processFeedbackForResolvedInternalIds(Ljava/util/List;Ljava/util/List;)Ljava/util/List;
 
-    move-result-object p1
+    move-result-object v4
 
-    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
+    invoke-interface {v4}, Ljava/util/List;->isEmpty()Z
 
-    move-result v1
+    move-result p1
 
-    if-eqz v1, :cond_2
+    if-eqz p1, :cond_2
 
-    invoke-direct {p0, v0}, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;->notifyResolvedFeedbackItems(Ljava/util/List;)V
+    invoke-direct {p0, v5}, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;->notifyResolvedFeedbackItems(Ljava/util/List;)V
 
     return-void
 
     :cond_2
-    iget-object v1, p0, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;->idMappingResolver:Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;
+    iget-object p1, p0, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;->idMappingResolver:Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;
 
-    new-instance v2, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    const/16 v3, 0xa
+    const/16 v1, 0xa
 
-    invoke-static {p1, v3}, Lq23;->H(Ljava/lang/Iterable;I)I
+    invoke-static {v4, v1}, Lr43;->k0(Ljava/lang/Iterable;I)I
 
-    move-result v3
+    move-result v1
 
-    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v3
+    move-result-object v1
 
-    :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    :goto_1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v4
+    move-result v2
 
-    if-eqz v4, :cond_3
+    if-eqz v2, :cond_3
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v2
 
-    check-cast v4, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;
+    check-cast v2, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;
 
-    invoke-virtual {v4}, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;->getParticipantId()Lge1;
+    invoke-virtual {v2}, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl$CallParticipantFeedback;->getParticipantId()Lrf1;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_3
-    new-instance v3, Lpx4;
+    new-instance v1, Ln05;
 
-    const/4 v4, 0x3
+    const/4 v2, 0x4
 
-    invoke-direct {v3, p0, p1, v0, v4}, Lpx4;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+    const/4 v6, 0x0
 
-    new-instance p1, Lii4;
+    move-object v3, p0
 
-    const/16 v4, 0x18
+    invoke-direct/range {v1 .. v6}, Ln05;-><init>(ILjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Z)V
 
-    invoke-direct {p1, p0, v4, v0}, Lii4;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    new-instance p0, Los4;
 
-    invoke-interface {v1, v2, v3, p1}, Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;->resolveExternalsByInternalsIds(Ljava/util/List;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
+    const/16 v2, 0x12
+
+    invoke-direct {p0, v3, v2, v5}, Los4;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-interface {p1, v0, v1, p0}, Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;->resolveExternalsByInternalsIds(Ljava/util/List;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
     return-void
 .end method
@@ -1063,19 +1059,15 @@
 
     iget-wide v3, p0, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;->timeout:J
 
-    add-long/2addr v1, v3
+    add-long v7, v1, v3
 
     invoke-virtual {v0}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->getExternalId()Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
     move-result-object v9
 
-    new-instance v0, Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedback;
-
-    move-object v5, v0
+    new-instance v5, Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedback;
 
     move-object v6, p1
-
-    move-wide v7, v1
 
     move-object v10, p2
 
@@ -1083,19 +1075,19 @@
 
     iget-object p1, p0, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;->generations:Ljava/util/LinkedList;
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p2
 
     invoke-virtual {p1, p2}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v5}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
 
     invoke-direct {p0, p1}, Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManagerImpl;->updateActiveFeedback(Ljava/util/List;)V
 
-    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v5}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
 

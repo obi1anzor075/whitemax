@@ -1,86 +1,86 @@
-.class public final Lfr4;
+.class public final synthetic Lfr4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ldr4;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final a:Lmod;
+# instance fields
+.field public final synthetic a:I
 
-.field public static final b:Ljava/util/Set;
+.field public final synthetic b:Lir4;
+
+.field public final synthetic c:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(Lir4;Lkr4;I)V
+    .locals 0
 
-    new-instance v0, Lmod;
+    iput p3, p0, Lfr4;->a:I
 
-    new-instance v1, Lfr4;
+    iput-object p1, p0, Lfr4;->b:Lir4;
 
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lfr4;->c:Ljava/lang/Object;
 
-    const/16 v2, 0xe
-
-    invoke-direct {v0, v2, v1}, Lmod;-><init>(ILjava/lang/Object;)V
-
-    sput-object v0, Lfr4;->a:Lmod;
-
-    sget-object v0, Lzq4;->d:Lzq4;
-
-    invoke-static {v0}, Ljava/util/Collections;->singleton(Ljava/lang/Object;)Ljava/util/Set;
-
-    move-result-object v0
-
-    sput-object v0, Lfr4;->b:Ljava/util/Set;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/util/Set;
-    .locals 0
-
-    sget-object p0, Lfr4;->b:Ljava/util/Set;
-
-    return-object p0
-.end method
-
-.method public final b()Landroid/hardware/camera2/params/DynamicRangeProfiles;
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public final c(Lzq4;)Ljava/util/Set;
+.method public final run()V
     .locals 2
 
-    sget-object p0, Lzq4;->d:Lzq4;
+    iget v0, p0, Lfr4;->a:I
 
-    invoke-virtual {p0, p1}, Lzq4;->equals(Ljava/lang/Object;)Z
+    packed-switch v0, :pswitch_data_0
 
-    move-result p0
+    iget-object v0, p0, Lfr4;->b:Lir4;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget v1, v0, Lir4;->a:I
 
-    const-string v1, "DynamicRange is not supported: "
+    iget-object v0, v0, Lir4;->b:Lfj8;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object p0, p0, Lfr4;->c:Ljava/lang/Object;
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-interface {p0, v1, v0}, Lkr4;->C(ILfj8;)V
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    return-void
 
-    move-result-object p1
+    :pswitch_0
+    iget-object v0, p0, Lfr4;->b:Lir4;
 
-    invoke-static {p1, p0}, Le07;->j(Ljava/lang/String;Z)V
+    iget v1, v0, Lir4;->a:I
 
-    sget-object p0, Lfr4;->b:Ljava/util/Set;
+    iget-object v0, v0, Lir4;->b:Lfj8;
 
-    return-object p0
+    iget-object p0, p0, Lfr4;->c:Ljava/lang/Object;
+
+    invoke-interface {p0, v1, v0}, Lkr4;->A(ILfj8;)V
+
+    return-void
+
+    :pswitch_1
+    iget-object v0, p0, Lfr4;->b:Lir4;
+
+    iget v1, v0, Lir4;->a:I
+
+    iget-object v0, v0, Lir4;->b:Lfj8;
+
+    iget-object p0, p0, Lfr4;->c:Ljava/lang/Object;
+
+    invoke-interface {p0, v1, v0}, Lkr4;->D(ILfj8;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

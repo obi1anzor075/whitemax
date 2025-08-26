@@ -1,6 +1,5 @@
 .class public final Lru/ok/android/externcalls/R;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # annotations

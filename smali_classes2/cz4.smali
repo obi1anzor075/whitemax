@@ -1,86 +1,81 @@
-.class public final synthetic Lcz4;
-.super Ljava/lang/Object;
+.class public final Lcz4;
+.super Landroid/graphics/drawable/Drawable;
 .source "SourceFile"
-
-# interfaces
-.implements Ls16;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lone/me/settings/privacy/ui/pincode/EnterPinCodeScreen;
+.field public final a:Landroid/graphics/Rect;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/settings/privacy/ui/pincode/EnterPinCodeScreen;I)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    iput p2, p0, Lcz4;->a:I
+    invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    iput-object p1, p0, Lcz4;->b:Lone/me/settings/privacy/ui/pincode/EnterPinCodeScreen;
+    new-instance v0, Landroid/graphics/Rect;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object v0, p0, Lcz4;->a:Landroid/graphics/Rect;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 2
+.method public final draw(Landroid/graphics/Canvas;)V
+    .locals 0
 
-    sget-object v0, Ljue;->a:Ljue;
+    return-void
+.end method
 
-    iget-object v1, p0, Lcz4;->b:Lone/me/settings/privacy/ui/pincode/EnterPinCodeScreen;
+.method public final getIntrinsicWidth()I
+    .locals 0
 
-    iget p0, p0, Lcz4;->a:I
+    const/4 p0, 0x0
 
-    packed-switch p0, :pswitch_data_0
+    return p0
+.end method
 
-    sget-object p0, Lone/me/settings/privacy/ui/pincode/EnterPinCodeScreen;->X:[Lk77;
+.method public final getOpacity()I
+    .locals 0
 
-    iget-object p0, v1, Lone/me/settings/privacy/ui/pincode/EnterPinCodeScreen;->c:Lt97;
+    const/4 p0, -0x2
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    return p0
+.end method
 
-    move-result-object p0
+.method public final invalidateSelf()V
+    .locals 0
 
-    check-cast p0, Liz4;
+    return-void
+.end method
 
-    iget-boolean v1, p0, Liz4;->x0:Z
+.method public final setAlpha(I)V
+    .locals 0
 
-    if-nez v1, :cond_0
+    return-void
+.end method
 
-    iget-object p0, p0, Liz4;->Z:Ll05;
+.method public final setBounds(Landroid/graphics/Rect;)V
+    .locals 1
 
-    invoke-static {p0, v0}, Ltaf;->o(Ll05;Ljava/lang/Object;)V
+    iget-object v0, p0, Lcz4;->a:Landroid/graphics/Rect;
 
-    :cond_0
-    return-object v0
+    invoke-virtual {v0, p1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    :pswitch_0
-    sget-object p0, Lone/me/settings/privacy/ui/pincode/EnterPinCodeScreen;->X:[Lk77;
+    const/4 p1, 0x0
 
-    invoke-virtual {v1}, Lrr3;->getView()Landroid/view/View;
+    iput p1, v0, Landroid/graphics/Rect;->right:I
 
-    move-result-object p0
+    invoke-super {p0, v0}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    invoke-static {p0}, Lbm3;->r(Landroid/view/View;)V
+    return-void
+.end method
 
-    invoke-virtual {v1}, Lrr3;->getOnBackPressedDispatcher()Lex9;
+.method public final setColorFilter(Landroid/graphics/ColorFilter;)V
+    .locals 0
 
-    move-result-object p0
-
-    if-eqz p0, :cond_1
-
-    invoke-virtual {p0}, Lex9;->d()V
-
-    :cond_1
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

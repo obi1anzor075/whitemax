@@ -1,178 +1,193 @@
-.class public Lo0b;
+.class public final Lo0b;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ln0b;
+.implements Lnu0;
+
+
+# static fields
+.field public static final o:Lo0b;
 
 
 # instance fields
-.field public final a:[Ljava/lang/Object;
+.field public final a:F
 
-.field public b:I
+.field public final b:F
+
+.field public final c:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
-    .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lo0b;
 
-    const/16 v0, 0x100
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 5
-    new-array v0, v0, [Ljava/lang/Object;
+    invoke-direct {v0, v1, v1}, Lo0b;-><init>(FF)V
 
-    iput-object v0, p0, Lo0b;->a:[Ljava/lang/Object;
+    sput-object v0, Lo0b;->o:Lo0b;
 
     return-void
 .end method
 
-.method public constructor <init>(I)V
-    .locals 0
+.method public constructor <init>(FF)V
+    .locals 4
 
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-lez p1, :cond_0
+    const/4 v0, 0x0
 
-    .line 2
-    new-array p1, p1, [Ljava/lang/Object;
+    cmpl-float v1, p1, v0
 
-    iput-object p1, p0, Lo0b;->a:[Ljava/lang/Object;
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    if-lez v1, :cond_0
+
+    move v1, v3
+
+    goto :goto_0
+
+    :cond_0
+    move v1, v2
+
+    :goto_0
+    invoke-static {v1}, Lq46;->d(Z)V
+
+    cmpl-float v0, p2, v0
+
+    if-lez v0, :cond_1
+
+    move v2, v3
+
+    :cond_1
+    invoke-static {v2}, Lq46;->d(Z)V
+
+    iput p1, p0, Lo0b;->a:F
+
+    iput p2, p0, Lo0b;->b:F
+
+    const/high16 p2, 0x447a0000    # 1000.0f
+
+    mul-float/2addr p1, p2
+
+    invoke-static {p1}, Ljava/lang/Math;->round(F)I
+
+    move-result p1
+
+    iput p1, p0, Lo0b;->c:I
 
     return-void
-
-    .line 3
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "The max pool size must be > 0"
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/Object;)V
-    .locals 3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget v0, p0, Lo0b;->b:I
+    const/4 v0, 0x1
 
-    iget-object v1, p0, Lo0b;->a:[Ljava/lang/Object;
+    if-ne p0, p1, :cond_0
 
-    array-length v2, v1
-
-    if-ge v0, v2, :cond_0
-
-    aput-object p1, v1, v0
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lo0b;->b:I
+    return v0
 
     :cond_0
-    return-void
-.end method
-
-.method public g(Ljava/lang/Object;)Z
-    .locals 6
-
-    iget v0, p0, Lo0b;->b:I
-
     const/4 v1, 0x0
 
-    move v2, v1
+    if-eqz p1, :cond_2
 
-    :goto_0
-    iget-object v3, p0, Lo0b;->a:[Ljava/lang/Object;
+    const-class v2, Lo0b;
 
-    const/4 v4, 0x1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    if-ge v2, v0, :cond_1
+    move-result-object v3
 
-    aget-object v5, v3, v2
-
-    if-ne v5, p1, :cond_0
-
-    move v0, v4
-
-    goto :goto_1
-
-    :cond_0
-    add-int/lit8 v2, v2, 0x1
+    if-eq v2, v3, :cond_1
 
     goto :goto_0
 
     :cond_1
-    move v0, v1
+    check-cast p1, Lo0b;
 
-    :goto_1
-    xor-int/2addr v0, v4
+    iget v2, p0, Lo0b;->a:F
 
-    if-eqz v0, :cond_3
+    iget v3, p1, Lo0b;->a:F
 
-    iget v0, p0, Lo0b;->b:I
+    cmpl-float v2, v2, v3
 
-    array-length v2, v3
+    if-nez v2, :cond_2
 
-    if-ge v0, v2, :cond_2
+    iget p0, p0, Lo0b;->b:F
 
-    aput-object p1, v3, v0
+    iget p1, p1, Lo0b;->b:F
 
-    add-int/2addr v0, v4
+    cmpl-float p0, p0, p1
 
-    iput v0, p0, Lo0b;->b:I
+    if-nez p0, :cond_2
 
-    return v4
+    return v0
 
     :cond_2
+    :goto_0
     return v1
-
-    :cond_3
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "Already in the pool!"
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
-.method public h()Ljava/lang/Object;
-    .locals 5
+.method public final hashCode()I
+    .locals 1
 
-    iget v0, p0, Lo0b;->b:I
+    iget v0, p0, Lo0b;->a:F
 
-    const/4 v1, 0x0
+    invoke-static {v0}, Ljava/lang/Float;->floatToRawIntBits(F)I
 
-    if-lez v0, :cond_0
+    move-result v0
 
-    add-int/lit8 v2, v0, -0x1
+    add-int/lit16 v0, v0, 0x20f
 
-    iget-object v3, p0, Lo0b;->a:[Ljava/lang/Object;
+    mul-int/lit8 v0, v0, 0x1f
 
-    aget-object v4, v3, v2
+    iget p0, p0, Lo0b;->b:F
 
-    aput-object v1, v3, v2
+    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
 
-    add-int/lit8 v0, v0, -0x1
+    move-result p0
 
-    iput v0, p0, Lo0b;->b:I
+    add-int/2addr p0, v0
 
-    return-object v4
+    return p0
+.end method
 
-    :cond_0
-    return-object v1
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    iget v0, p0, Lo0b;->a:F
+
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v0
+
+    iget p0, p0, Lo0b;->b:F
+
+    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object p0
+
+    filled-new-array {v0, p0}, [Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget v0, Lnaf;->a:I
+
+    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
+
+    const-string v1, "PlaybackParameters(speed=%.2f, pitch=%.2f)"
+
+    invoke-static {v0, v1, p0}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

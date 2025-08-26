@@ -1,187 +1,387 @@
-.class public final Lh11;
-.super Landroid/widget/FrameLayout;
+.class public final synthetic Lh11;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljlc;
 
 
 # instance fields
-.field public final a:Landroid/graphics/drawable/Drawable;
+.field public final synthetic a:I
 
-.field public final b:Landroid/graphics/drawable/Drawable;
+.field public final synthetic b:Lj11;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 6
+.method public synthetic constructor <init>(Lj11;I)V
+    .locals 0
 
-    const/4 v0, 0x0
+    iput p2, p0, Lh11;->a:I
 
-    invoke-direct {p0, p1, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    iput-object p1, p0, Lh11;->b:Lj11;
 
-    new-instance v1, La01;
-
-    const/4 v2, 0x2
-
-    invoke-direct {v1, v2}, La01;-><init>(I)V
-
-    const/4 v2, 0x3
-
-    invoke-static {v2, v1}, Lez3;->O(ILs16;)Lt97;
-
-    move-result-object v1
-
-    sget v2, Lcnb;->ic_call_speaker_24:I
-
-    invoke-static {p1, v2}, Lgq3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-
-    new-instance v3, Landroid/graphics/PorterDuffColorFilter;
-
-    sget-object v4, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
-
-    const/4 v5, -0x1
-
-    invoke-direct {v3, v5, v4}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
-
-    invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
-
-    iput-object v2, p0, Lh11;->a:Landroid/graphics/drawable/Drawable;
-
-    sget v2, Lphc;->a0:I
-
-    invoke-static {p1, v2}, Lgq3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p1
-
-    new-instance v2, Landroid/graphics/PorterDuffColorFilter;
-
-    invoke-direct {v2, v5, v4}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
-
-    invoke-virtual {p1, v2}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
-
-    iput-object p1, p0, Lh11;->b:Landroid/graphics/drawable/Drawable;
-
-    new-instance p1, Landroid/graphics/drawable/ShapeDrawable;
-
-    new-instance v2, Landroid/graphics/drawable/shapes/RoundRectShape;
-
-    invoke-interface {v1}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, [F
-
-    invoke-direct {v2, v1, v0, v0}, Landroid/graphics/drawable/shapes/RoundRectShape;-><init>([FLandroid/graphics/RectF;[F)V
-
-    invoke-direct {p1, v2}, Landroid/graphics/drawable/ShapeDrawable;-><init>(Landroid/graphics/drawable/shapes/Shape;)V
-
-    invoke-virtual {p1}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
-
-    move-result-object v0
-
-    const v1, -0xe8e7e4
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onDraw(Landroid/graphics/Canvas;)V
-    .locals 7
+.method public final b()V
+    .locals 19
 
-    invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
+    move-object/from16 v0, p0
 
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
+    iget v1, v0, Lh11;->a:I
 
-    move-result v0
+    sget-object v2, Lf38;->a:Lf38;
 
-    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
+    sget-object v3, Lf38;->c:Lf38;
 
-    move-result v1
+    sget-object v4, Lf38;->o:Lf38;
 
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
+    sget-object v5, Lf38;->X:Lf38;
 
-    move-result v2
+    const/4 v6, 0x4
 
-    sub-int/2addr v1, v2
+    const/4 v7, 0x3
 
-    sub-int/2addr v1, v0
+    const/4 v8, 0x2
 
-    div-int/lit8 v1, v1, 0x2
+    const/4 v9, 0x1
 
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
+    sget-object v10, Lf38;->b:Lf38;
 
-    move-result v2
+    iget-object v0, v0, Lh11;->b:Lj11;
 
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
+    packed-switch v1, :pswitch_data_0
 
-    move-result v3
+    iget-object v0, v0, Lj11;->L0:Li11;
 
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+    if-eqz v0, :cond_0
 
-    move-result v4
+    check-cast v0, Lie6;
 
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingRight()I
+    invoke-virtual {v0}, Lie6;->s()V
 
-    move-result v5
+    :cond_0
+    return-void
 
-    sub-int/2addr v4, v5
+    :pswitch_0
+    iget-object v1, v0, Lj11;->N0:Lf38;
 
-    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
+    if-eqz v1, :cond_9
 
-    move-result v5
+    iget-object v0, v0, Lj11;->L0:Li11;
 
-    sub-int/2addr v5, v0
+    if-eqz v0, :cond_9
 
-    sub-int/2addr v5, v1
-
-    iget-object v6, p0, Lh11;->a:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v6, v2, v3, v4, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    invoke-virtual {v6, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
-
-    move-result v2
-
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
-
-    move-result v3
-
-    add-int/2addr v3, v1
-
-    add-int/2addr v3, v0
-
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
-
-    move-result v0
-
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingRight()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
-    sub-int/2addr v0, v1
+    if-eqz v1, :cond_4
 
-    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
+    if-eq v1, v9, :cond_5
+
+    if-eq v1, v8, :cond_3
+
+    if-eq v1, v7, :cond_2
+
+    if-ne v1, v6, :cond_1
+
+    move-object v2, v5
+
+    goto :goto_0
+
+    :cond_1
+    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw v0
+
+    :cond_2
+    move-object v2, v4
+
+    goto :goto_0
+
+    :cond_3
+    move-object v2, v3
+
+    goto :goto_0
+
+    :cond_4
+    move-object v2, v10
+
+    :cond_5
+    :goto_0
+    check-cast v0, Lie6;
+
+    iget-object v0, v0, Lie6;->a:Ljava/lang/Object;
+
+    check-cast v0, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;
+
+    sget-object v1, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;->o0:[Lbc7;
+
+    invoke-virtual {v0}, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;->q0()Lb21;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    if-ne v2, v10, :cond_6
+
+    goto :goto_1
+
+    :cond_6
+    const/4 v9, 0x0
+
+    :goto_1
+    iget-object v1, v0, Lb21;->Y:Lje7;
+
+    invoke-interface {v1}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v10, v1
+
+    check-cast v10, Lys1;
+
+    invoke-virtual {v10}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    if-eqz v9, :cond_7
+
+    const-wide/16 v1, 0x1
+
+    :goto_2
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    move-object v14, v1
+
+    goto :goto_3
+
+    :cond_7
+    const-wide/16 v1, 0x0
+
+    goto :goto_2
+
+    :goto_3
+    const/16 v17, 0x0
+
+    const/16 v18, 0x76
+
+    const-string v11, "HAND_RAISED"
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    const/4 v15, 0x0
+
+    const/16 v16, 0x0
+
+    invoke-static/range {v10 .. v18}, Lys1;->c(Lys1;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;ZI)V
+
+    invoke-virtual {v0}, Lb21;->r()Lfr1;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lfr1;->l:Lxy0;
+
+    check-cast v0, Lsz0;
+
+    invoke-virtual {v0}, Lsz0;->f()Lru/ok/android/externcalls/sdk/participant/state/ParticipantStatesManager;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_8
+
+    invoke-interface {v1, v9}, Lru/ok/android/externcalls/sdk/participant/state/ParticipantStatesManager;->setOwnHandRaised(Z)V
+
+    :cond_8
+    iget-object v0, v0, Lsz0;->t0:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v0, v9}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    :cond_9
+    return-void
+
+    :pswitch_1
+    iget-object v0, v0, Lj11;->L0:Li11;
+
+    if-eqz v0, :cond_a
+
+    check-cast v0, Lie6;
+
+    iget-object v0, v0, Lie6;->a:Ljava/lang/Object;
+
+    check-cast v0, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;
+
+    sget-object v1, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;->o0:[Lbc7;
+
+    invoke-virtual {v0}, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;->q0()Lb21;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lb21;->c:Lbl1;
+
+    iget-object v0, v0, Lbl1;->J0:Lj35;
+
+    sget-object v1, Lyi1;->D:Lyi1;
+
+    invoke-static {v0, v1}, Ljof;->o(Lj35;Ljava/lang/Object;)V
+
+    :cond_a
+    return-void
+
+    :pswitch_2
+    iget-object v1, v0, Lj11;->P0:Lf38;
+
+    if-eqz v1, :cond_10
+
+    iget-object v0, v0, Lj11;->L0:Li11;
+
+    if-eqz v0, :cond_10
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingBottom()I
+    if-eqz v1, :cond_e
 
-    move-result v4
+    if-eq v1, v9, :cond_f
 
-    sub-int/2addr v1, v4
+    if-eq v1, v8, :cond_d
 
-    iget-object p0, p0, Lh11;->b:Landroid/graphics/drawable/Drawable;
+    if-eq v1, v7, :cond_c
 
-    invoke-virtual {p0, v2, v3, v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    if-ne v1, v6, :cond_b
 
-    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+    move-object v2, v5
+
+    goto :goto_4
+
+    :cond_b
+    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw v0
+
+    :cond_c
+    move-object v2, v4
+
+    goto :goto_4
+
+    :cond_d
+    move-object v2, v3
+
+    goto :goto_4
+
+    :cond_e
+    move-object v2, v10
+
+    :cond_f
+    :goto_4
+    check-cast v0, Lie6;
+
+    iget-object v0, v0, Lie6;->a:Ljava/lang/Object;
+
+    check-cast v0, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;
+
+    sget-object v1, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;->o0:[Lbc7;
+
+    invoke-virtual {v0}, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;->q0()Lb21;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Lb21;->u(Lf38;)V
+
+    :cond_10
+    return-void
+
+    :pswitch_3
+    iget-object v1, v0, Lj11;->M0:Lf38;
+
+    if-eqz v1, :cond_16
+
+    iget-object v0, v0, Lj11;->L0:Li11;
+
+    if-eqz v0, :cond_16
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    if-eqz v1, :cond_14
+
+    if-eq v1, v9, :cond_15
+
+    if-eq v1, v8, :cond_13
+
+    if-eq v1, v7, :cond_12
+
+    if-ne v1, v6, :cond_11
+
+    move-object v2, v5
+
+    goto :goto_5
+
+    :cond_11
+    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw v0
+
+    :cond_12
+    move-object v2, v4
+
+    goto :goto_5
+
+    :cond_13
+    move-object v2, v3
+
+    goto :goto_5
+
+    :cond_14
+    move-object v2, v10
+
+    :cond_15
+    :goto_5
+    check-cast v0, Lie6;
+
+    iget-object v0, v0, Lie6;->a:Ljava/lang/Object;
+
+    check-cast v0, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;
+
+    sget-object v1, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;->o0:[Lbc7;
+
+    invoke-virtual {v0}, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;->q0()Lb21;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Lb21;->s(Lf38;)V
+
+    :cond_16
+    return-void
+
+    :pswitch_4
+    invoke-static {v0}, Lj11;->u(Lj11;)V
 
     return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

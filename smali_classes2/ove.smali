@@ -1,73 +1,19 @@
 .class public final Love;
-.super Lkh0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final X:Z
-
-.field public final b:J
-
-.field public final c:J
-
-.field public final o:Ljava/util/Set;
+.field public final a:Lpve;
 
 
 # direct methods
-.method public constructor <init>(JJ)V
-    .locals 6
-
-    .line 1
-    const/4 v5, 0x0
-
-    move-object v0, p0
-
-    move-wide v1, p1
-
-    move-wide v3, p3
-
-    invoke-direct/range {v0 .. v5}, Love;-><init>(JJI)V
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(JJI)V
-    .locals 7
-
-    .line 2
-    sget-object v5, Lqw4;->a:Lqw4;
-
-    const/4 v6, 0x0
-
-    move-object v0, p0
-
-    move-wide v1, p1
-
-    move-wide v3, p3
-
-    .line 3
-    invoke-direct/range {v0 .. v6}, Love;-><init>(JJLjava/util/Set;Z)V
-
-    return-void
-.end method
-
-.method public constructor <init>(JJLjava/util/Set;Z)V
+.method public constructor <init>(Lpve;)V
     .locals 0
 
-    .line 4
-    invoke-direct {p0}, Lkh0;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5
-    iput-wide p1, p0, Love;->b:J
-
-    .line 6
-    iput-wide p3, p0, Love;->c:J
-
-    .line 7
-    iput-object p5, p0, Love;->o:Ljava/util/Set;
-
-    .line 8
-    iput-boolean p6, p0, Love;->X:Z
+    iput-object p1, p0, Love;->a:Lpve;
 
     return-void
 .end method
@@ -75,7 +21,7 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 7
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -95,131 +41,52 @@
     :cond_1
     check-cast p1, Love;
 
-    iget-wide v3, p1, Love;->b:J
+    iget-object p0, p0, Love;->a:Lpve;
 
-    iget-wide v5, p0, Love;->b:J
+    iget-object p1, p1, Love;->a:Lpve;
 
-    cmp-long v1, v5, v3
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-eqz v1, :cond_2
+    move-result p0
+
+    if-nez p0, :cond_2
 
     return v2
 
     :cond_2
-    iget-wide v3, p0, Love;->c:J
-
-    iget-wide v5, p1, Love;->c:J
-
-    cmp-long v1, v3, v5
-
-    if-eqz v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-object v1, p0, Love;->o:Ljava/util/Set;
-
-    iget-object v3, p1, Love;->o:Ljava/util/Set;
-
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_4
-
-    return v2
-
-    :cond_4
-    iget-boolean p0, p0, Love;->X:Z
-
-    iget-boolean p1, p1, Love;->X:Z
-
-    if-eq p0, p1, :cond_5
-
-    return v2
-
-    :cond_5
     return v0
 .end method
 
 .method public final hashCode()I
-    .locals 4
+    .locals 0
 
-    iget-wide v0, p0, Love;->b:J
+    iget-object p0, p0, Love;->a:Lpve;
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget-wide v2, p0, Love;->c:J
-
-    invoke-static {v0, v1, v2, v3}, Lsxe;->m(IIJ)I
-
-    move-result v0
-
-    iget-object v2, p0, Love;->o:Ljava/util/Set;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    add-int/2addr v2, v0
-
-    mul-int/2addr v2, v1
-
-    iget-boolean p0, p0, Love;->X:Z
-
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+    invoke-virtual {p0}, Lpve;->hashCode()I
 
     move-result p0
-
-    add-int/2addr p0, v2
 
     return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "UpdateMessageEvent(chatId="
+    const-string v1, "TopbarStrokeSeparatorColors(default="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-wide v1, p0, Love;->b:J
+    iget-object p0, p0, Love;->a:Lpve;
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", messageId="
+    const-string p0, ")"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-wide v1, p0, Love;->c:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", reactionsToAnimate="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Love;->o:Ljava/util/Set;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", reactionsChanged="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean p0, p0, Love;->X:Z
-
-    const-string v1, ")"
-
-    invoke-static {v0, p0, v1}, Lhr1;->j(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

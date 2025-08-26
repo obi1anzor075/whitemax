@@ -4,70 +4,42 @@
 
 
 # instance fields
-.field public final a:Lvf4;
+.field public final a:Lije;
 
 .field public final b:Z
 
+.field public final c:Lkie;
+
+.field public volatile d:J
+
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 1
-
-    invoke-static {p1}, Lswb;->D(Landroid/content/Context;)Lvf4;
-
-    move-result-object p1
+.method public constructor <init>(Lije;ZLkie;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lsma;->a:Lvf4;
+    iput-object p1, p0, Lsma;->a:Lije;
 
-    sget-object v0, Lvf4;->o:Lvf4;
+    iput-boolean p2, p0, Lsma;->b:Z
 
-    invoke-virtual {p1, v0}, Ljava/lang/Enum;->compareTo(Ljava/lang/Enum;)I
+    iput-object p3, p0, Lsma;->c:Lkie;
 
-    move-result p1
+    sget p1, Ldc7;->a:I
 
-    if-ltz p1, :cond_0
+    sget p1, Lat4;->o:I
 
-    const/4 p1, 0x1
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    goto :goto_0
+    move-result-wide p1
 
-    :cond_0
-    const/4 p1, 0x0
+    sget-object p3, Lft4;->c:Lft4;
 
-    :goto_0
-    iput-boolean p1, p0, Lsma;->b:Z
+    invoke-static {p1, p2, p3}, La4f;->G(JLft4;)J
+
+    move-result-wide p1
+
+    iput-wide p1, p0, Lsma;->d:J
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "\n        PerformanceConfig(\n            perfClass="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lsma;->a:Lvf4;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ",\n        )\n    "
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {p0}, Li0e;->D(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

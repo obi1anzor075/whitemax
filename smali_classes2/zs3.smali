@@ -1,59 +1,64 @@
-.class public final synthetic Lzs3;
+.class public final Lzs3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lru/ok/android/externcalls/sdk/log/stat/StatisticsManager$TimeProvider;
-.implements Lru/ok/android/externcalls/sdk/log/ExtLogger$TimeProvider;
+.implements Lbt3;
 
 
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Ljava/time/Clock;
+# static fields
+.field public static final a:Lzs3;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/time/Clock;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p2, p0, Lzs3;->a:I
+    new-instance v0, Lzs3;
 
-    iput-object p1, p0, Lzs3;->b:Ljava/time/Clock;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lzs3;->a:Lzs3;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getCurrentTimeMillis()J
-    .locals 2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    iget v0, p0, Lzs3;->a:I
+    const/4 v0, 0x1
 
-    iget-object p0, p0, Lzs3;->b:Ljava/time/Clock;
+    if-ne p0, p1, :cond_0
 
-    packed-switch v0, :pswitch_data_0
+    return v0
 
-    invoke-virtual {p0}, Ljava/time/Clock;->millis()J
+    :cond_0
+    instance-of p0, p1, Lzs3;
 
-    move-result-wide v0
+    if-nez p0, :cond_1
 
-    return-wide v0
+    const/4 p0, 0x0
 
-    :pswitch_0
-    invoke-virtual {p0}, Ljava/time/Clock;->millis()J
+    return p0
 
-    move-result-wide v0
+    :cond_1
+    return v0
+.end method
 
-    return-wide v0
+.method public final hashCode()I
+    .locals 0
 
-    nop
+    const p0, -0x3db9b380
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "NoMediaContent"
+
+    return-object p0
 .end method

@@ -1,11 +1,24 @@
-.class public interface abstract Lp0c;
+.class public abstract Lp0c;
 .super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Ln0c;
 
 
-# virtual methods
-.method public abstract o1(Ljava/lang/Object;Lk77;Ljava/lang/Object;)V
+# static fields
+.field public static ViewPager2:[I
+
+.field public static ViewPager2_android_orientation:I
+
+
+# direct methods
+.method public static constructor <clinit>()V
+    .locals 1
+
+    const v0, 0x10100c4
+
+    filled-new-array {v0}, [I
+
+    move-result-object v0
+
+    sput-object v0, Lp0c;->ViewPager2:[I
+
+    return-void
 .end method

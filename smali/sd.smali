@@ -3,157 +3,310 @@
 .source "SourceFile"
 
 # interfaces
-.implements Llr6;
+.implements Lfbg;
 
 
 # instance fields
-.field public final a:Landroid/media/Image;
+.field public X:F
 
-.field public final b:[Lmv4;
+.field public final Y:Z
 
-.field public final c:Lq90;
+.field public final a:Lxv1;
+
+.field public final b:Landroid/util/Range;
+
+.field public c:F
+
+.field public o:Liq1;
 
 
 # direct methods
-.method public constructor <init>(Landroid/media/Image;)V
-    .locals 7
+.method public constructor <init>(Lxv1;)V
+    .locals 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lsd;->a:Landroid/media/Image;
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    invoke-virtual {p1}, Landroid/media/Image;->getPlanes()[Landroid/media/Image$Plane;
+    iput v0, p0, Lsd;->c:F
 
-    move-result-object v0
+    iput v0, p0, Lsd;->X:F
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    if-eqz v0, :cond_0
+    iput-boolean v0, p0, Lsd;->Y:Z
 
-    array-length v2, v0
+    iput-object p1, p0, Lsd;->a:Lxv1;
 
-    new-array v2, v2, [Lmv4;
+    invoke-static {}, Lc4;->g()Landroid/hardware/camera2/CameraCharacteristics$Key;
 
-    iput-object v2, p0, Lsd;->b:[Lmv4;
+    move-result-object v1
+
+    invoke-virtual {p1, v1}, Lxv1;->a(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/util/Range;
+
+    iput-object v1, p0, Lsd;->b:Landroid/util/Range;
+
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v2, 0x22
+
+    if-lt v1, v2, :cond_1
+
+    iget-object p1, p1, Lxv1;->b:Lhd7;
+
+    invoke-static {}, Ldo0;->e()Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    move-result-object v1
+
+    iget-object p1, p1, Lhd7;->b:Ljava/lang/Object;
+
+    check-cast p1, Landroid/hardware/camera2/CameraCharacteristics;
+
+    invoke-virtual {p1, v1}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, [I
+
+    if-eqz p1, :cond_1
+
+    array-length v1, p1
+
+    move v2, v0
 
     :goto_0
-    array-length v2, v0
+    if-ge v2, v1, :cond_1
 
-    if-ge v1, v2, :cond_1
+    aget v3, p1, v2
 
-    iget-object v2, p0, Lsd;->b:[Lmv4;
+    const/4 v4, 0x1
 
-    new-instance v3, Lmv4;
+    if-ne v3, v4, :cond_0
 
-    aget-object v4, v0, v1
+    move v0, v4
 
-    const/4 v5, 0x2
+    goto :goto_1
 
-    invoke-direct {v3, v5, v4}, Lmv4;-><init>(ILjava/lang/Object;)V
-
-    aput-object v3, v2, v1
-
-    add-int/lit8 v1, v1, 0x1
+    :cond_0
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    :cond_0
-    new-array v0, v1, [Lmv4;
-
-    iput-object v0, p0, Lsd;->b:[Lmv4;
-
     :cond_1
-    sget-object v2, Ls9e;->b:Ls9e;
-
-    invoke-virtual {p1}, Landroid/media/Image;->getTimestamp()J
-
-    move-result-wide v3
-
-    new-instance v6, Landroid/graphics/Matrix;
-
-    invoke-direct {v6}, Landroid/graphics/Matrix;-><init>()V
-
-    new-instance p1, Lq90;
-
-    const/4 v5, 0x0
-
-    move-object v1, p1
-
-    invoke-direct/range {v1 .. v6}, Lq90;-><init>(Ls9e;JILandroid/graphics/Matrix;)V
-
-    iput-object p1, p0, Lsd;->c:Lq90;
+    :goto_1
+    iput-boolean v0, p0, Lsd;->Y:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final Z()Landroid/media/Image;
+.method public final a(Landroid/hardware/camera2/TotalCaptureResult;)V
+    .locals 2
+
+    iget-object v0, p0, Lsd;->o:Liq1;
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p1}, Landroid/hardware/camera2/CaptureResult;->getRequest()Landroid/hardware/camera2/CaptureRequest;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    if-nez p1, :cond_0
+
+    move-object p1, v0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {}, Lc4;->h()Landroid/hardware/camera2/CaptureRequest$Key;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v1}, Landroid/hardware/camera2/CaptureRequest;->get(Landroid/hardware/camera2/CaptureRequest$Key;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Float;
+
+    :goto_0
+    if-nez p1, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+
+    move-result p1
+
+    iget v1, p0, Lsd;->X:F
+
+    cmpl-float p1, v1, p1
+
+    if-nez p1, :cond_2
+
+    iget-object p1, p0, Lsd;->o:Liq1;
+
+    invoke-virtual {p1, v0}, Liq1;->b(Ljava/lang/Object;)Z
+
+    iput-object v0, p0, Lsd;->o:Liq1;
+
+    :cond_2
+    :goto_1
+    return-void
+.end method
+
+.method public final b()F
     .locals 0
 
-    iget-object p0, p0, Lsd;->a:Landroid/media/Image;
+    iget-object p0, p0, Lsd;->b:Landroid/util/Range;
+
+    invoke-virtual {p0}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/Float;
+
+    invoke-virtual {p0}, Ljava/lang/Float;->floatValue()F
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final c()F
+    .locals 0
+
+    iget-object p0, p0, Lsd;->b:Landroid/util/Range;
+
+    invoke-virtual {p0}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/Float;
+
+    invoke-virtual {p0}, Ljava/lang/Float;->floatValue()F
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final e()Landroid/graphics/Rect;
+    .locals 1
+
+    iget-object p0, p0, Lsd;->a:Lxv1;
+
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_ACTIVE_ARRAY_SIZE:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-virtual {p0, v0}, Lxv1;->a(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/graphics/Rect;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     return-object p0
 .end method
 
-.method public final close()V
-    .locals 0
+.method public final f(Lbv1;)V
+    .locals 2
 
-    iget-object p0, p0, Lsd;->a:Landroid/media/Image;
+    invoke-static {}, Lc4;->h()Landroid/hardware/camera2/CaptureRequest$Key;
 
-    invoke-virtual {p0}, Landroid/media/Image;->close()V
+    move-result-object v0
+
+    iget v1, p0, Lsd;->c:F
+
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Lbv1;->e(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    iget-boolean p0, p0, Lsd;->Y:Z
+
+    if-eqz p0, :cond_0
+
+    sget p0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v0, 0x22
+
+    if-lt p0, v0, :cond_0
+
+    invoke-static {}, Ldo0;->f()Landroid/hardware/camera2/CaptureRequest$Key;
+
+    move-result-object p0
+
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {p1, p0, v0}, Lbv1;->e(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final h(FLiq1;)V
+    .locals 2
+
+    iput p1, p0, Lsd;->c:F
+
+    iget-object p1, p0, Lsd;->o:Liq1;
+
+    if-eqz p1, :cond_0
+
+    new-instance v0, Landroidx/camera/core/CameraControl$OperationCanceledException;
+
+    const-string v1, "There is a new zoomRatio being set"
+
+    invoke-direct {v0, v1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1, v0}, Liq1;->d(Ljava/lang/Throwable;)Z
+
+    :cond_0
+    iget p1, p0, Lsd;->c:F
+
+    iput p1, p0, Lsd;->X:F
+
+    iput-object p2, p0, Lsd;->o:Liq1;
 
     return-void
 .end method
 
-.method public final getHeight()I
-    .locals 0
+.method public final i()V
+    .locals 3
 
-    iget-object p0, p0, Lsd;->a:Landroid/media/Image;
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    invoke-virtual {p0}, Landroid/media/Image;->getHeight()I
+    iput v0, p0, Lsd;->c:F
 
-    move-result p0
+    iget-object v0, p0, Lsd;->o:Liq1;
 
-    return p0
-.end method
+    if-eqz v0, :cond_0
 
-.method public final getImageInfo()Lpq6;
-    .locals 0
+    new-instance v1, Landroidx/camera/core/CameraControl$OperationCanceledException;
 
-    iget-object p0, p0, Lsd;->c:Lq90;
+    const-string v2, "Camera is not active."
 
-    return-object p0
-.end method
+    invoke-direct {v1, v2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-.method public final getWidth()I
-    .locals 0
+    invoke-virtual {v0, v1}, Liq1;->d(Ljava/lang/Throwable;)Z
 
-    iget-object p0, p0, Lsd;->a:Landroid/media/Image;
+    const/4 v0, 0x0
 
-    invoke-virtual {p0}, Landroid/media/Image;->getWidth()I
+    iput-object v0, p0, Lsd;->o:Liq1;
 
-    move-result p0
-
-    return p0
-.end method
-
-.method public final k0()I
-    .locals 0
-
-    iget-object p0, p0, Lsd;->a:Landroid/media/Image;
-
-    invoke-virtual {p0}, Landroid/media/Image;->getFormat()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final v()[Lmv4;
-    .locals 0
-
-    iget-object p0, p0, Lsd;->b:[Lmv4;
-
-    return-object p0
+    :cond_0
+    return-void
 .end method

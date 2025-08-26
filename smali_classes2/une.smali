@@ -1,64 +1,40 @@
-.class public final synthetic Lune;
-.super Ljava/lang/Object;
+.class public final Lune;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/concurrent/ThreadFactory;
-
-
-# instance fields
-.field public final synthetic a:Ljava/util/concurrent/atomic/AtomicInteger;
-
-.field public final synthetic b:Ljava/lang/String;
-
-
-# direct methods
-.method public synthetic constructor <init>(Ljava/util/concurrent/atomic/AtomicInteger;Ljava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lune;->a:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    iput-object p2, p0, Lune;->b:Ljava/lang/String;
-
-    return-void
-.end method
+.implements Ln66;
 
 
 # virtual methods
-.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .locals 4
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object v0, p0, Lune;->a:Ljava/util/concurrent/atomic/AtomicInteger;
+    check-cast p1, Lyha;
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
+    check-cast p2, Lyt4;
 
-    move-result v0
+    check-cast p3, Lkotlin/coroutines/Continuation;
 
-    new-instance v1, Ljava/lang/Thread;
+    new-instance p0, Lune;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const/4 p1, 0x3
 
-    const-string v3, "tracer-io-"
+    invoke-direct {p0, p1, p3}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    sget-object p1, Le5f;->a:Le5f;
 
-    iget-object p0, p0, Lune;->b:Ljava/lang/String;
+    invoke-virtual {p0, p1}, Lune;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-object p1
+.end method
 
-    const/16 p0, 0x2d
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    sget-object p0, Le5f;->a:Le5f;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v1, p1, p0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
-
-    return-object v1
+    return-object p0
 .end method

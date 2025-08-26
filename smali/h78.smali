@@ -1,128 +1,58 @@
-.class public final Lh78;
+.class public interface abstract Lh78;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final e:Ljava/lang/String;
-
-.field public static final f:Ljava/lang/String;
-
-.field public static final g:Ljava/lang/String;
-
-.field public static final h:Ljava/lang/String;
-
-
-# instance fields
-.field public final a:Landroid/os/Bundle;
-
-.field public final b:Z
-
-.field public final c:Z
-
-.field public final d:Z
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    sget v0, Loze;->a:I
-
-    const/4 v0, 0x0
-
-    const/16 v1, 0x24
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lh78;->e:Ljava/lang/String;
-
-    const/4 v0, 0x1
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lh78;->f:Ljava/lang/String;
-
-    const/4 v0, 0x2
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lh78;->g:Ljava/lang/String;
-
-    const/4 v0, 0x3
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lh78;->h:Ljava/lang/String;
-
-    return-void
+# virtual methods
+.method public abstract a(JIII)V
 .end method
 
-.method public constructor <init>(Landroid/os/Bundle;ZZZ)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Landroid/os/Bundle;
-
-    invoke-direct {v0, p1}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
-
-    iput-object v0, p0, Lh78;->a:Landroid/os/Bundle;
-
-    iput-boolean p2, p0, Lh78;->b:Z
-
-    iput-boolean p3, p0, Lh78;->c:Z
-
-    iput-boolean p4, p0, Lh78;->d:Z
-
-    return-void
+.method public abstract c(IJ)V
 .end method
 
-.method public static a(Landroid/os/Bundle;)Lh78;
-    .locals 5
+.method public abstract e()I
+.end method
 
-    sget-object v0, Lh78;->e:Ljava/lang/String;
+.method public abstract f(Landroid/media/MediaCodec$BufferInfo;)I
+.end method
 
-    invoke-virtual {p0, v0}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+.method public abstract flush()V
+.end method
 
-    move-result-object v0
+.method public abstract getInputBuffer(I)Ljava/nio/ByteBuffer;
+.end method
 
-    sget-object v1, Lh78;->f:Ljava/lang/String;
+.method public abstract getOutputBuffer(I)Ljava/nio/ByteBuffer;
+.end method
 
-    const/4 v2, 0x0
+.method public abstract getOutputFormat()Landroid/media/MediaFormat;
+.end method
 
-    invoke-virtual {p0, v1, v2}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;Z)Z
+.method public abstract i(I)V
+.end method
 
-    move-result v1
+.method public abstract j(ILj04;JI)V
+.end method
 
-    sget-object v3, Lh78;->g:Ljava/lang/String;
+.method public abstract k(Landroid/view/Surface;)V
+.end method
 
-    invoke-virtual {p0, v3, v2}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;Z)Z
+.method public l(Ls78;)Z
+    .locals 0
 
-    move-result v3
+    const/4 p0, 0x0
 
-    sget-object v4, Lh78;->h:Ljava/lang/String;
+    return p0
+.end method
 
-    invoke-virtual {p0, v4, v2}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;Z)Z
+.method public abstract o(Lg88;Landroid/os/Handler;)V
+.end method
 
-    move-result p0
+.method public abstract release()V
+.end method
 
-    new-instance v2, Lh78;
+.method public abstract releaseOutputBuffer(IZ)V
+.end method
 
-    if-nez v0, :cond_0
-
-    sget-object v0, Landroid/os/Bundle;->EMPTY:Landroid/os/Bundle;
-
-    :cond_0
-    invoke-direct {v2, v0, v1, v3, p0}, Lh78;-><init>(Landroid/os/Bundle;ZZZ)V
-
-    return-object v2
+.method public abstract setParameters(Landroid/os/Bundle;)V
 .end method

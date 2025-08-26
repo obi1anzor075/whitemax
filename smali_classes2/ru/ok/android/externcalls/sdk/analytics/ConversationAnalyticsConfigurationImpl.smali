@@ -18,7 +18,7 @@
         "()V",
         "Lru/ok/android/externcalls/sdk/analytics/ApplicationNameProvider;",
         "provider",
-        "Ljue;",
+        "Le5f;",
         "setApplicationNameProvider",
         "(Lru/ok/android/externcalls/sdk/analytics/ApplicationNameProvider;)V",
         "Lru/ok/android/externcalls/sdk/analytics/UploadConfigProvider;",
@@ -41,6 +41,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

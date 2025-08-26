@@ -1,328 +1,885 @@
 .class public final Lks5;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Li26;
+
+# static fields
+.field public static final v:[Landroid/hardware/camera2/params/MeteringRectangle;
 
 
 # instance fields
-.field public X:Lxye;
+.field public final a:Lqt1;
 
-.field public Y:I
+.field public final b:Lw4d;
 
-.field public synthetic Z:Ljava/lang/Object;
+.field public final c:Lmi6;
 
-.field public final synthetic w0:Los5;
+.field public volatile d:Z
+
+.field public volatile e:Landroid/util/Rational;
+
+.field public final f:Ld3d;
+
+.field public g:Z
+
+.field public h:Ljava/lang/Integer;
+
+.field public i:Ljava/util/concurrent/ScheduledFuture;
+
+.field public j:Ljava/util/concurrent/ScheduledFuture;
+
+.field public k:J
+
+.field public l:Z
+
+.field public m:Z
+
+.field public n:I
+
+.field public o:Lhs5;
+
+.field public p:[Landroid/hardware/camera2/params/MeteringRectangle;
+
+.field public q:[Landroid/hardware/camera2/params/MeteringRectangle;
+
+.field public r:[Landroid/hardware/camera2/params/MeteringRectangle;
+
+.field public s:Liq1;
+
+.field public t:Z
+
+.field public u:Ljs5;
 
 
 # direct methods
-.method public constructor <init>(Los5;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lks5;->w0:Los5;
+    const/4 v0, 0x0
 
-    const/4 p1, 0x2
+    new-array v0, v0, [Landroid/hardware/camera2/params/MeteringRectangle;
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    sput-object v0, Lks5;->v:[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqt1;Lmi6;Lw4d;Lly4;)V
+    .locals 4
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lks5;->d:Z
+
+    const/4 v1, 0x0
+
+    iput-object v1, p0, Lks5;->e:Landroid/util/Rational;
+
+    iput-boolean v0, p0, Lks5;->g:Z
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lks5;->h:Ljava/lang/Integer;
+
+    const-wide/16 v2, 0x0
+
+    iput-wide v2, p0, Lks5;->k:J
+
+    iput-boolean v0, p0, Lks5;->l:Z
+
+    iput-boolean v0, p0, Lks5;->m:Z
+
+    const/4 v2, 0x1
+
+    iput v2, p0, Lks5;->n:I
+
+    iput-object v1, p0, Lks5;->o:Lhs5;
+
+    sget-object v2, Lks5;->v:[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    iput-object v2, p0, Lks5;->p:[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    iput-object v2, p0, Lks5;->q:[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    iput-object v2, p0, Lks5;->r:[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    iput-object v1, p0, Lks5;->s:Liq1;
+
+    iput-boolean v0, p0, Lks5;->t:Z
+
+    iput-object v1, p0, Lks5;->u:Ljs5;
+
+    iput-object p1, p0, Lks5;->a:Lqt1;
+
+    iput-object p3, p0, Lks5;->b:Lw4d;
+
+    iput-object p2, p0, Lks5;->c:Lmi6;
+
+    new-instance p1, Ld3d;
+
+    const/16 p2, 0x18
+
+    invoke-direct {p1, p2, p4}, Ld3d;-><init>(ILjava/lang/Object;)V
+
+    iput-object p1, p0, Lks5;->f:Ld3d;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final a(ZZ)V
+    .locals 3
 
-    check-cast p1, Ljava/util/List;
+    const/4 v0, 0x2
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {p0, p1, p2}, Lks5;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    move-result-object v0
 
-    move-result-object p0
+    iget-boolean v1, p0, Lks5;->d:Z
 
-    check-cast p0, Lks5;
+    if-nez v1, :cond_0
 
-    sget-object p1, Ljue;->a:Ljue;
+    return-void
 
-    invoke-virtual {p0, p1}, Lks5;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    :cond_0
+    new-instance v1, Lg40;
 
-    move-result-object p0
+    invoke-direct {v1}, Lg40;-><init>()V
 
-    return-object p0
+    const/4 v2, 0x1
+
+    iput-boolean v2, v1, Lg40;->b:Z
+
+    iget v2, p0, Lks5;->n:I
+
+    iput v2, v1, Lg40;->c:I
+
+    invoke-static {}, Lzg9;->b()Lzg9;
+
+    move-result-object v2
+
+    if-eqz p1, :cond_1
+
+    sget-object p1, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_TRIGGER:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {p1}, Lcv1;->W(Landroid/hardware/camera2/CaptureRequest$Key;)Ls90;
+
+    move-result-object p1
+
+    invoke-virtual {v2, p1, v0}, Lzg9;->h(Ls90;Ljava/lang/Object;)V
+
+    :cond_1
+    if-eqz p2, :cond_2
+
+    sget-object p1, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_PRECAPTURE_TRIGGER:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {p1}, Lcv1;->W(Landroid/hardware/camera2/CaptureRequest$Key;)Ls90;
+
+    move-result-object p1
+
+    invoke-virtual {v2, p1, v0}, Lzg9;->h(Ls90;Ljava/lang/Object;)V
+
+    :cond_2
+    new-instance p1, Lcv1;
+
+    invoke-static {v2}, Lqka;->a(Lrc3;)Lqka;
+
+    move-result-object p2
+
+    const/16 v0, 0x8
+
+    invoke-direct {p1, v0, p2}, Lef6;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {v1, p1}, Lg40;->c(Lrc3;)V
+
+    iget-object p0, p0, Lks5;->a:Lqt1;
+
+    invoke-virtual {v1}, Lg40;->d()Lgz1;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lqt1;->z(Ljava/util/List;)V
+
+    return-void
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
+.method public final b()V
+    .locals 5
 
-    new-instance v0, Lks5;
+    iget-object v0, p0, Lks5;->a:Lqt1;
 
-    iget-object p0, p0, Lks5;->w0:Los5;
+    iget-object v1, v0, Lqt1;->b:Lot1;
 
-    invoke-direct {v0, p0, p2}, Lks5;-><init>(Los5;Lkotlin/coroutines/Continuation;)V
+    iget-object v1, v1, Lot1;->b:Ljava/lang/Object;
 
-    iput-object p1, v0, Lks5;->Z:Ljava/lang/Object;
+    check-cast v1, Ljava/util/HashSet;
 
-    return-object v0
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lks5;->o:Lhs5;
+
+    iget-object v2, v0, Lqt1;->b:Lot1;
+
+    iget-object v2, v2, Lot1;->b:Ljava/lang/Object;
+
+    check-cast v2, Ljava/util/HashSet;
+
+    invoke-virtual {v2, v1}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lks5;->s:Liq1;
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_0
+
+    new-instance v3, Landroidx/camera/core/CameraControl$OperationCanceledException;
+
+    const-string v4, "Cancelled by cancelFocusAndMetering()"
+
+    invoke-direct {v3, v4}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v3}, Liq1;->d(Ljava/lang/Throwable;)Z
+
+    iput-object v2, p0, Lks5;->s:Liq1;
+
+    :cond_0
+    iget-object v1, p0, Lks5;->i:Ljava/util/concurrent/ScheduledFuture;
+
+    const/4 v3, 0x1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v1, v3}, Ljava/util/concurrent/Future;->cancel(Z)Z
+
+    iput-object v2, p0, Lks5;->i:Ljava/util/concurrent/ScheduledFuture;
+
+    :cond_1
+    iget-object v1, p0, Lks5;->j:Ljava/util/concurrent/ScheduledFuture;
+
+    if-eqz v1, :cond_2
+
+    invoke-interface {v1, v3}, Ljava/util/concurrent/Future;->cancel(Z)Z
+
+    iput-object v2, p0, Lks5;->j:Ljava/util/concurrent/ScheduledFuture;
+
+    :cond_2
+    iget-object v1, p0, Lks5;->p:[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    array-length v1, v1
+
+    const/4 v2, 0x0
+
+    if-lez v1, :cond_3
+
+    invoke-virtual {p0, v3, v2}, Lks5;->a(ZZ)V
+
+    :cond_3
+    sget-object v1, Lks5;->v:[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    iput-object v1, p0, Lks5;->p:[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    iput-object v1, p0, Lks5;->q:[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    iput-object v1, p0, Lks5;->r:[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    iput-boolean v2, p0, Lks5;->g:Z
+
+    invoke-virtual {v0}, Lqt1;->A()J
+
+    return-void
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 17
+.method public final c(Ljava/util/List;ILandroid/util/Rational;Landroid/graphics/Rect;I)Ljava/util/List;
+    .locals 19
 
-    move-object/from16 v0, p0
+    move/from16 v0, p2
 
-    sget-object v1, Lpu3;->a:Lpu3;
+    move-object/from16 v1, p4
 
-    iget v2, v0, Lks5;->Y:I
+    invoke-interface/range {p1 .. p1}, Ljava/util/List;->isEmpty()Z
 
-    sget-object v3, Ljue;->a:Ljue;
+    move-result v2
 
-    const/4 v4, 0x0
+    if-nez v2, :cond_b
 
-    const/4 v5, 0x2
-
-    const/4 v6, 0x1
-
-    iget-object v7, v0, Lks5;->w0:Los5;
-
-    if-eqz v2, :cond_2
-
-    if-eq v2, v6, :cond_1
-
-    if-ne v2, v5, :cond_0
-
-    invoke-static/range {p1 .. p1}, Lwx3;->H(Ljava/lang/Object;)V
+    if-nez v0, :cond_0
 
     goto/16 :goto_5
 
     :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
+    new-instance v2, Ljava/util/ArrayList;
 
-    const-string v1, "call to \'resume\' before \'invoke\' with coroutine"
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    new-instance v3, Landroid/util/Rational;
 
-    throw v0
+    invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
+
+    move-result v4
+
+    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
+
+    move-result v5
+
+    invoke-direct {v3, v4, v5}, Landroid/util/Rational;-><init>(II)V
+
+    invoke-interface/range {p1 .. p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
 
     :cond_1
-    iget-object v2, v0, Lks5;->X:Lxye;
+    :goto_0
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
-    iget-object v6, v0, Lks5;->Z:Ljava/lang/Object;
+    move-result v5
 
-    check-cast v6, Ljava/util/List;
+    if-eqz v5, :cond_a
 
-    invoke-static/range {p1 .. p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-object v8, v6
+    move-result-object v5
 
-    move-object/from16 v6, p1
+    check-cast v5, Lm89;
 
-    goto :goto_0
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v6
+
+    if-ne v6, v0, :cond_2
+
+    goto/16 :goto_4
 
     :cond_2
-    invoke-static/range {p1 .. p1}, Lwx3;->H(Ljava/lang/Object;)V
+    iget v6, v5, Lm89;->a:F
 
-    iget-object v2, v0, Lks5;->Z:Ljava/lang/Object;
+    iget v7, v5, Lm89;->c:F
 
-    check-cast v2, Ljava/util/List;
+    const/4 v8, 0x0
 
-    new-instance v8, Lxye;
+    cmpl-float v9, v6, v8
 
-    sget-object v9, Lwye;->c:Lwye;
+    if-ltz v9, :cond_9
 
-    sget v10, Lf5a;->m:I
+    const/high16 v9, 0x3f800000    # 1.0f
 
-    new-instance v11, Lhge;
+    cmpg-float v10, v6, v9
 
-    invoke-direct {v11, v10}, Lhge;-><init>(I)V
+    if-gtz v10, :cond_9
 
-    invoke-direct {v8, v4, v9, v11}, Lxye;-><init>(Lep5;Lwye;Lmge;)V
+    iget v10, v5, Lm89;->b:F
 
-    iget-object v9, v7, Los5;->b:Lv72;
+    cmpl-float v8, v10, v8
 
-    iput-object v2, v0, Lks5;->Z:Ljava/lang/Object;
+    if-ltz v8, :cond_9
 
-    iput-object v8, v0, Lks5;->X:Lxye;
+    cmpg-float v8, v10, v9
 
-    iput v6, v0, Lks5;->Y:I
+    if-gtz v8, :cond_9
 
-    check-cast v9, Lb92;
+    iget-object v5, v5, Lm89;->d:Landroid/util/Rational;
 
-    invoke-virtual {v9}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-eqz v5, :cond_3
 
-    new-instance v6, Li82;
-
-    invoke-direct {v6, v9, v4}, Li82;-><init>(Lb92;Lkotlin/coroutines/Continuation;)V
-
-    iget-object v9, v9, Lb92;->Y:Lhu3;
-
-    invoke-static {v9, v6, v0}, Lxs7;->U(Lhu3;Li26;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object v6
-
-    if-ne v6, v1, :cond_3
-
-    return-object v1
+    goto :goto_1
 
     :cond_3
-    move-object/from16 v16, v8
-
-    move-object v8, v2
-
-    move-object/from16 v2, v16
-
-    :goto_0
-    check-cast v6, Ljava/lang/Iterable;
-
-    new-instance v9, Ljava/util/ArrayList;
-
-    const/16 v10, 0xa
-
-    invoke-static {v6, v10}, Lq23;->H(Ljava/lang/Iterable;I)I
-
-    move-result v10
-
-    invoke-direct {v9, v10}, Ljava/util/ArrayList;-><init>(I)V
-
-    invoke-interface {v6}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v6
+    move-object/from16 v5, p3
 
     :goto_1
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
+    const/4 v8, 0x1
 
-    move-result v10
+    move/from16 v11, p5
 
-    if-eqz v10, :cond_6
+    if-ne v11, v8, :cond_4
 
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-object/from16 v8, p0
 
-    move-result-object v10
+    iget-object v12, v8, Lks5;->f:Ld3d;
 
-    check-cast v10, Lep5;
+    iget-object v12, v12, Ld3d;->b:Ljava/lang/Object;
 
-    new-instance v11, Lxye;
+    check-cast v12, Lly4;
 
-    sget-object v12, Lwye;->o:Lwye;
+    const-class v13, Landroidx/camera/camera2/internal/compat/quirk/AfRegionFlipHorizontallyQuirk;
 
-    if-eqz v10, :cond_4
+    invoke-virtual {v12, v13}, Lly4;->f(Ljava/lang/Class;)Z
 
-    iget-object v13, v10, Lep5;->b:Ljava/lang/CharSequence;
+    move-result v12
+
+    if-eqz v12, :cond_5
+
+    new-instance v12, Landroid/graphics/PointF;
+
+    sub-float v6, v9, v6
+
+    invoke-direct {v12, v6, v10}, Landroid/graphics/PointF;-><init>(FF)V
 
     goto :goto_2
 
     :cond_4
-    move-object v13, v4
-
-    :goto_2
-    if-nez v13, :cond_5
-
-    const-string v13, ""
+    move-object/from16 v8, p0
 
     :cond_5
-    new-instance v14, Llge;
+    new-instance v12, Landroid/graphics/PointF;
 
-    invoke-direct {v14, v13}, Llge;-><init>(Ljava/lang/CharSequence;)V
+    invoke-direct {v12, v6, v10}, Landroid/graphics/PointF;-><init>(FF)V
 
-    invoke-direct {v11, v10, v12, v14}, Lxye;-><init>(Lep5;Lwye;Lmge;)V
+    :goto_2
+    invoke-virtual {v5, v3}, Landroid/util/Rational;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v9, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    move-result v6
 
-    goto :goto_1
+    if-nez v6, :cond_7
 
-    :cond_6
-    new-instance v6, Ljava/util/ArrayList;
+    invoke-virtual {v5, v3}, Landroid/util/Rational;->compareTo(Landroid/util/Rational;)I
 
-    invoke-interface {v8}, Ljava/util/List;->size()I
+    move-result v6
 
-    move-result v10
+    const-wide/high16 v13, 0x4000000000000000L    # 2.0
 
-    invoke-direct {v6, v10}, Ljava/util/ArrayList;-><init>(I)V
+    const-wide/high16 v15, 0x3ff0000000000000L    # 1.0
 
-    invoke-interface {v8}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    if-lez v6, :cond_6
 
-    move-result-object v8
+    invoke-virtual {v5}, Landroid/util/Rational;->doubleValue()D
 
-    :goto_3
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
+    move-result-wide v5
 
-    move-result v10
+    invoke-virtual {v3}, Landroid/util/Rational;->doubleValue()D
 
-    if-eqz v10, :cond_8
+    move-result-wide v17
 
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    div-double v5, v5, v17
 
-    move-result-object v10
+    double-to-float v5, v5
 
-    check-cast v10, Lep5;
+    move/from16 p1, v9
 
-    new-instance v11, Lxye;
+    float-to-double v9, v5
 
-    iget-object v12, v10, Lep5;->a:Ljava/lang/String;
+    sub-double/2addr v9, v15
 
-    const-string v13, "all.chat.folder"
+    div-double/2addr v9, v13
 
-    invoke-static {v12, v13}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    double-to-float v6, v9
 
-    move-result v12
+    iget v9, v12, Landroid/graphics/PointF;->y:F
 
-    if-eqz v12, :cond_7
+    add-float/2addr v6, v9
 
-    sget-object v12, Lwye;->a:Lwye;
+    div-float v9, p1, v5
 
-    goto :goto_4
+    mul-float/2addr v9, v6
 
-    :cond_7
-    sget-object v12, Lwye;->b:Lwye;
-
-    :goto_4
-    iget-object v13, v7, Los5;->o:Lt97;
-
-    invoke-interface {v13}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v13
-
-    check-cast v13, Lv6a;
-
-    iget-object v14, v10, Lep5;->b:Ljava/lang/CharSequence;
-
-    iget-object v15, v10, Lep5;->C0:Ljava/util/List;
-
-    invoke-static {v13, v14, v15}, Lv6a;->b(Lv6a;Ljava/lang/CharSequence;Ljava/util/List;)Ljava/lang/CharSequence;
-
-    move-result-object v13
-
-    new-instance v14, Llge;
-
-    invoke-direct {v14, v13}, Llge;-><init>(Ljava/lang/CharSequence;)V
-
-    invoke-direct {v11, v10, v12, v14}, Lxye;-><init>(Lep5;Lwye;Lmge;)V
-
-    invoke-virtual {v6, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    iput v9, v12, Landroid/graphics/PointF;->y:F
 
     goto :goto_3
 
+    :cond_6
+    move/from16 p1, v9
+
+    invoke-virtual {v3}, Landroid/util/Rational;->doubleValue()D
+
+    move-result-wide v9
+
+    invoke-virtual {v5}, Landroid/util/Rational;->doubleValue()D
+
+    move-result-wide v5
+
+    div-double/2addr v9, v5
+
+    double-to-float v5, v9
+
+    float-to-double v9, v5
+
+    sub-double/2addr v9, v15
+
+    div-double/2addr v9, v13
+
+    double-to-float v6, v9
+
+    iget v9, v12, Landroid/graphics/PointF;->x:F
+
+    add-float/2addr v6, v9
+
+    div-float v9, p1, v5
+
+    mul-float/2addr v9, v6
+
+    iput v9, v12, Landroid/graphics/PointF;->x:F
+
+    :cond_7
+    :goto_3
+    iget v5, v1, Landroid/graphics/Rect;->left:I
+
+    int-to-float v5, v5
+
+    iget v6, v12, Landroid/graphics/PointF;->x:F
+
+    invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
+
+    move-result v9
+
+    int-to-float v9, v9
+
+    mul-float/2addr v6, v9
+
+    add-float/2addr v6, v5
+
+    float-to-int v5, v6
+
+    iget v6, v1, Landroid/graphics/Rect;->top:I
+
+    int-to-float v6, v6
+
+    iget v9, v12, Landroid/graphics/PointF;->y:F
+
+    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
+
+    move-result v10
+
+    int-to-float v10, v10
+
+    mul-float/2addr v9, v10
+
+    add-float/2addr v9, v6
+
+    float-to-int v6, v9
+
+    invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
+
+    move-result v9
+
+    int-to-float v9, v9
+
+    mul-float/2addr v9, v7
+
+    float-to-int v9, v9
+
+    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
+
+    move-result v10
+
+    int-to-float v10, v10
+
+    mul-float/2addr v7, v10
+
+    float-to-int v7, v7
+
+    new-instance v10, Landroid/graphics/Rect;
+
+    div-int/lit8 v9, v9, 0x2
+
+    sub-int v12, v5, v9
+
+    div-int/lit8 v7, v7, 0x2
+
+    sub-int v13, v6, v7
+
+    add-int/2addr v5, v9
+
+    add-int/2addr v6, v7
+
+    invoke-direct {v10, v12, v13, v5, v6}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    iget v5, v10, Landroid/graphics/Rect;->left:I
+
+    iget v6, v1, Landroid/graphics/Rect;->right:I
+
+    iget v7, v1, Landroid/graphics/Rect;->left:I
+
+    invoke-static {v5, v7}, Ljava/lang/Math;->max(II)I
+
+    move-result v5
+
+    invoke-static {v5, v6}, Ljava/lang/Math;->min(II)I
+
+    move-result v5
+
+    iput v5, v10, Landroid/graphics/Rect;->left:I
+
+    iget v5, v10, Landroid/graphics/Rect;->right:I
+
+    iget v6, v1, Landroid/graphics/Rect;->right:I
+
+    iget v7, v1, Landroid/graphics/Rect;->left:I
+
+    invoke-static {v5, v7}, Ljava/lang/Math;->max(II)I
+
+    move-result v5
+
+    invoke-static {v5, v6}, Ljava/lang/Math;->min(II)I
+
+    move-result v5
+
+    iput v5, v10, Landroid/graphics/Rect;->right:I
+
+    iget v5, v10, Landroid/graphics/Rect;->top:I
+
+    iget v6, v1, Landroid/graphics/Rect;->bottom:I
+
+    iget v7, v1, Landroid/graphics/Rect;->top:I
+
+    invoke-static {v5, v7}, Ljava/lang/Math;->max(II)I
+
+    move-result v5
+
+    invoke-static {v5, v6}, Ljava/lang/Math;->min(II)I
+
+    move-result v5
+
+    iput v5, v10, Landroid/graphics/Rect;->top:I
+
+    iget v5, v10, Landroid/graphics/Rect;->bottom:I
+
+    iget v6, v1, Landroid/graphics/Rect;->bottom:I
+
+    iget v7, v1, Landroid/graphics/Rect;->top:I
+
+    invoke-static {v5, v7}, Ljava/lang/Math;->max(II)I
+
+    move-result v5
+
+    invoke-static {v5, v6}, Ljava/lang/Math;->min(II)I
+
+    move-result v5
+
+    iput v5, v10, Landroid/graphics/Rect;->bottom:I
+
+    new-instance v5, Landroid/hardware/camera2/params/MeteringRectangle;
+
+    const/16 v6, 0x3e8
+
+    invoke-direct {v5, v10, v6}, Landroid/hardware/camera2/params/MeteringRectangle;-><init>(Landroid/graphics/Rect;I)V
+
+    invoke-virtual {v5}, Landroid/hardware/camera2/params/MeteringRectangle;->getWidth()I
+
+    move-result v6
+
+    if-eqz v6, :cond_1
+
+    invoke-virtual {v5}, Landroid/hardware/camera2/params/MeteringRectangle;->getHeight()I
+
+    move-result v6
+
+    if-nez v6, :cond_8
+
+    goto/16 :goto_0
+
     :cond_8
-    invoke-virtual {v6, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {v6, v9}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
-
-    iget-object v2, v7, Los5;->X:Lgrd;
-
-    iput-object v4, v0, Lks5;->Z:Ljava/lang/Object;
-
-    iput-object v4, v0, Lks5;->X:Lxye;
-
-    iput v5, v0, Lks5;->Y:I
-
-    invoke-virtual {v2, v4, v6}, Lgrd;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    if-ne v3, v1, :cond_9
-
-    return-object v1
+    goto/16 :goto_0
 
     :cond_9
+    move-object/from16 v8, p0
+
+    move/from16 v11, p5
+
+    goto/16 :goto_0
+
+    :cond_a
+    :goto_4
+    invoke-static {v2}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_b
     :goto_5
-    return-object v3
+    sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public final d(Liq1;)V
+    .locals 4
+
+    iget-boolean v0, p0, Lks5;->d:Z
+
+    if-nez v0, :cond_0
+
+    new-instance p0, Landroidx/camera/core/CameraControl$OperationCanceledException;
+
+    const-string v0, "Camera is not active."
+
+    invoke-direct {p0, v0}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1, p0}, Liq1;->d(Ljava/lang/Throwable;)Z
+
+    return-void
+
+    :cond_0
+    new-instance v0, Lg40;
+
+    invoke-direct {v0}, Lg40;-><init>()V
+
+    iget v1, p0, Lks5;->n:I
+
+    iput v1, v0, Lg40;->c:I
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lg40;->b:Z
+
+    invoke-static {}, Lzg9;->b()Lzg9;
+
+    move-result-object v2
+
+    sget-object v3, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_PRECAPTURE_TRIGGER:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v3}, Lcv1;->W(Landroid/hardware/camera2/CaptureRequest$Key;)Ls90;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3, v1}, Lzg9;->h(Ls90;Ljava/lang/Object;)V
+
+    new-instance v1, Lcv1;
+
+    invoke-static {v2}, Lqka;->a(Lrc3;)Lqka;
+
+    move-result-object v2
+
+    const/16 v3, 0x8
+
+    invoke-direct {v1, v3, v2}, Lef6;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {v0, v1}, Lg40;->c(Lrc3;)V
+
+    new-instance v1, Lpu1;
+
+    const/4 v2, 0x1
+
+    invoke-direct {v1, p1, v2}, Lpu1;-><init>(Liq1;I)V
+
+    invoke-virtual {v0, v1}, Lg40;->b(Liv1;)V
+
+    iget-object p0, p0, Lks5;->a:Lqt1;
+
+    invoke-virtual {v0}, Lg40;->d()Lgz1;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lqt1;->z(Ljava/util/List;)V
+
+    return-void
+.end method
+
+.method public final e(Z)V
+    .locals 5
+
+    iget-boolean v0, p0, Lks5;->d:Z
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    new-instance v0, Lg40;
+
+    invoke-direct {v0}, Lg40;-><init>()V
+
+    iget v1, p0, Lks5;->n:I
+
+    iput v1, v0, Lg40;->c:I
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lg40;->b:Z
+
+    invoke-static {}, Lzg9;->b()Lzg9;
+
+    move-result-object v2
+
+    sget-object v3, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_TRIGGER:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    invoke-static {v3}, Lcv1;->W(Landroid/hardware/camera2/CaptureRequest$Key;)Ls90;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3, v4}, Lzg9;->h(Ls90;Ljava/lang/Object;)V
+
+    if-eqz p1, :cond_1
+
+    sget-object p1, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    iget-object v3, p0, Lks5;->a:Lqt1;
+
+    iget-object v3, v3, Lqt1;->e:Lxv1;
+
+    invoke-static {v3, v1}, Lqt1;->t(Lxv1;I)I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    sget-object v3, Lqc3;->b:Lqc3;
+
+    invoke-static {p1}, Lcv1;->W(Landroid/hardware/camera2/CaptureRequest$Key;)Ls90;
+
+    move-result-object p1
+
+    invoke-virtual {v2, p1, v3, v1}, Lzg9;->e(Ls90;Lqc3;Ljava/lang/Object;)V
+
+    :cond_1
+    new-instance p1, Lcv1;
+
+    invoke-static {v2}, Lqka;->a(Lrc3;)Lqka;
+
+    move-result-object v1
+
+    const/16 v2, 0x8
+
+    invoke-direct {p1, v2, v1}, Lef6;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {v0, p1}, Lg40;->c(Lrc3;)V
+
+    new-instance p1, Llz1;
+
+    const/4 v1, 0x1
+
+    invoke-direct {p1, v1}, Llz1;-><init>(I)V
+
+    invoke-virtual {v0, p1}, Lg40;->b(Liv1;)V
+
+    iget-object p0, p0, Lks5;->a:Lqt1;
+
+    invoke-virtual {v0}, Lg40;->d()Lgz1;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lqt1;->z(Ljava/util/List;)V
+
+    return-void
 .end method

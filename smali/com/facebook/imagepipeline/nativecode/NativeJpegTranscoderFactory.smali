@@ -3,11 +3,11 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lwr6;
+.implements Lyv6;
 
 
 # annotations
-.annotation build Llj4;
+.annotation build Lqm4;
 .end annotation
 
 
@@ -22,7 +22,7 @@
 # direct methods
 .method public constructor <init>(IZZ)V
     .locals 0
-    .annotation build Llj4;
+    .annotation build Lqm4;
     .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +38,12 @@
 
 
 # virtual methods
-.method public createImageTranscoder(Llq6;Z)Lvr6;
+.method public createImageTranscoder(Lru6;Z)Lxv6;
     .locals 1
-    .annotation build Llj4;
+    .annotation build Lqm4;
     .end annotation
 
-    sget-object v0, Lo84;->a:Llq6;
+    sget-object v0, Lac4;->a:Lru6;
 
     if-eq p1, v0, :cond_0
 
@@ -70,7 +70,7 @@
 
     if-eqz p0, :cond_1
 
-    invoke-static {}, Ljjd;->l()V
+    invoke-static {}, Ltk9;->k()V
 
     :cond_1
     return-object p1

@@ -4,7 +4,7 @@
 
 # interfaces
 .implements Lru/ok/android/externcalls/sdk/contacts/ContactCallManager;
-.implements Lc21;
+.implements Lm31;
 
 
 # annotations
@@ -15,20 +15,20 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/contacts/internal/ContactCallManagerImpl;",
         "Lru/ok/android/externcalls/sdk/contacts/ContactCallManager;",
-        "Lc21;",
+        "Lm31;",
         "Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;",
         "participantsStore",
         "",
         "iAmAnonymous",
         "<init>",
         "(Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;Z)V",
-        "Ljue;",
+        "Le5f;",
         "notifyContactCallStateChanged",
         "()V",
-        "Lb21;",
+        "Ll31;",
         "info",
         "onDecorativeParticipantIdChanged",
-        "(Lb21;)V",
+        "(Ll31;)V",
         "Lru/ok/android/externcalls/sdk/contacts/listener/ContactCallListener;",
         "listener",
         "addContactCallListener",
@@ -52,6 +52,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -152,7 +153,7 @@
     return p0
 .end method
 
-.method public onDecorativeParticipantIdChanged(Lb21;)V
+.method public onDecorativeParticipantIdChanged(Ll31;)V
     .locals 2
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/contacts/internal/ContactCallManagerImpl;->participantsStore:Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;
@@ -163,7 +164,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->getCallParticipant()Lke1;
+    invoke-virtual {v0}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->getCallParticipant()Lvf1;
 
     move-result-object v0
 
@@ -175,7 +176,7 @@
     :goto_0
     if-nez v0, :cond_1
 
-    return-void
+    goto :goto_1
 
     :cond_1
     invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/contacts/internal/ContactCallManagerImpl;->getIAmAnonymous()Z
@@ -184,11 +185,11 @@
 
     if-eqz v1, :cond_2
 
-    iget-object v0, v0, Lke1;->a:Lge1;
+    iget-object p1, p1, Ll31;->a:Lrf1;
 
-    iget-object p1, p1, Lb21;->a:Lge1;
+    iget-object v0, v0, Lvf1;->a:Lrf1;
 
-    invoke-static {p1, v0}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p1, v0}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -201,6 +202,7 @@
     invoke-direct {p0}, Lru/ok/android/externcalls/sdk/contacts/internal/ContactCallManagerImpl;->notifyContactCallStateChanged()V
 
     :cond_2
+    :goto_1
     return-void
 .end method
 

@@ -1,116 +1,72 @@
-.class public final Lnj9;
-.super Ll5e;
+.class public final synthetic Lnj9;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lrj9;
+.field public final synthetic b:Z
+
+.field public final synthetic c:Landroid/view/View;
 
 
 # direct methods
-.method public constructor <init>(Lrj9;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(ILandroid/view/View;Z)V
     .locals 0
 
-    iput-object p1, p0, Lnj9;->Y:Lrj9;
+    iput p1, p0, Lnj9;->a:I
 
-    const/4 p1, 0x2
+    iput-boolean p3, p0, Lnj9;->b:Z
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Lnj9;->c:Landroid/view/View;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Ly2b;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lnj9;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lnj9;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lnj9;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final run()V
     .locals 1
 
-    new-instance v0, Lnj9;
+    iget v0, p0, Lnj9;->a:I
 
-    iget-object p0, p0, Lnj9;->Y:Lrj9;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-direct {v0, p0, p2}, Lnj9;-><init>(Lrj9;Lkotlin/coroutines/Continuation;)V
+    iget-boolean v0, p0, Lnj9;->b:Z
 
-    iput-object p1, v0, Lnj9;->X:Ljava/lang/Object;
+    if-nez v0, :cond_0
 
-    return-object v0
-.end method
+    const/16 v0, 0x8
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+    iget-object p0, p0, Lnj9;->c:Landroid/view/View;
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lnj9;->X:Ljava/lang/Object;
-
-    check-cast p1, Ly2b;
-
-    sget-object v0, Ljue;->a:Ljue;
-
-    if-nez p1, :cond_0
-
-    return-object v0
+    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
     :cond_0
-    iget-object v1, p1, Ly2b;->c:Lmi9;
+    return-void
 
-    iget-object v2, p0, Lnj9;->Y:Lrj9;
+    :pswitch_0
+    iget-boolean v0, p0, Lnj9;->b:Z
 
-    iget-object v2, v2, Lrj9;->C0:Lgrd;
+    if-eqz v0, :cond_1
 
-    iget-object v3, p1, Ly2b;->a:Ljava/util/Map;
+    const/4 v0, 0x0
 
-    invoke-virtual {v2, v3}, Lgrd;->setValue(Ljava/lang/Object;)V
+    iget-object p0, p0, Lnj9;->c:Landroid/view/View;
 
-    iget-object v2, p0, Lnj9;->Y:Lrj9;
-
-    iget-object v2, v2, Lrj9;->X:Lgrd;
-
-    iget-object p1, p1, Ly2b;->b:Ljava/util/List;
-
-    invoke-virtual {v2, p1}, Lgrd;->setValue(Ljava/lang/Object;)V
-
-    if-nez v1, :cond_1
-
-    return-object v0
+    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
     :cond_1
-    iget-object p1, p0, Lnj9;->Y:Lrj9;
+    return-void
 
-    iput-object v1, p1, Lrj9;->o:Lmi9;
-
-    iget-object p0, p0, Lnj9;->Y:Lrj9;
-
-    iget-object p0, p0, Lrj9;->c:Lzwc;
-
-    invoke-interface {p0, v1}, Lzwc;->d(Lmi9;)V
-
-    return-object v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,196 +1,134 @@
-.class public Lcd4;
-.super Lqj0;
+.class public final Lcd4;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lb0d;
 
 
 # instance fields
-.field public final a:Lbw9;
-
-.field public b:Ljava/lang/Object;
+.field public final synthetic a:Ldd4;
 
 
 # direct methods
-.method public constructor <init>(Lbw9;)V
+.method public constructor <init>(Ldd4;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcd4;->a:Lbw9;
+    iput-object p1, p0, Lcd4;->a:Ldd4;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/Object;)V
+.method public final c()Z
     .locals 0
-
-    invoke-virtual {p0, p1}, Lcd4;->e(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final clear()V
-    .locals 1
-
-    const/16 v0, 0x20
-
-    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcd4;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public final e(Ljava/lang/Object;)V
-    .locals 3
-
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
-
-    move-result v0
-
-    and-int/lit8 v1, v0, 0x36
-
-    if-eqz v1, :cond_0
-
-    return-void
-
-    :cond_0
-    const/16 v1, 0x8
-
-    iget-object v2, p0, Lcd4;->a:Lbw9;
-
-    if-ne v0, v1, :cond_1
-
-    iput-object p1, p0, Lcd4;->b:Ljava/lang/Object;
-
-    const/16 p1, 0x10
-
-    invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
-
-    const/4 p1, 0x0
-
-    invoke-interface {v2, p1}, Lbw9;->c(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x2
-
-    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
-
-    invoke-interface {v2, p1}, Lbw9;->c(Ljava/lang/Object;)V
-
-    :goto_0
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
-
-    move-result p0
-
-    const/4 p1, 0x4
-
-    if-eq p0, p1, :cond_2
-
-    invoke-interface {v2}, Lbw9;->b()V
-
-    :cond_2
-    return-void
-.end method
-
-.method public f()V
-    .locals 1
-
-    const/4 v0, 0x4
-
-    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcd4;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public final h()Z
-    .locals 1
-
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
-
-    move-result p0
-
-    const/4 v0, 0x4
-
-    if-ne p0, v0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
     return p0
 .end method
 
-.method public final isEmpty()Z
-    .locals 1
+.method public final e(J)Lzzc;
+    .locals 12
 
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+    iget-object p0, p0, Lcd4;->a:Ldd4;
 
-    move-result p0
+    iget-object v0, p0, Ldd4;->t0:Ljava/lang/Object;
 
-    const/16 v0, 0x10
+    check-cast v0, Ln7e;
 
-    if-eq p0, v0, :cond_0
+    iget v0, v0, Ln7e;->f:I
 
-    const/4 p0, 0x1
+    int-to-long v0, v0
 
-    goto :goto_0
+    mul-long/2addr v0, p1
 
-    :cond_0
-    const/4 p0, 0x0
+    const-wide/32 v2, 0xf4240
 
-    :goto_0
-    return p0
+    div-long/2addr v0, v2
+
+    iget-wide v2, p0, Ldd4;->b:J
+
+    invoke-static {v0, v1}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+
+    move-result-object v0
+
+    iget-wide v4, p0, Ldd4;->c:J
+
+    sub-long v6, v4, v2
+
+    invoke-static {v6, v7}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object v0
+
+    iget-wide v6, p0, Ldd4;->X:J
+
+    invoke-static {v6, v7}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/math/BigInteger;->divide(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/math/BigInteger;->longValue()J
+
+    move-result-wide v0
+
+    add-long/2addr v0, v2
+
+    const-wide/16 v2, 0x7530
+
+    sub-long v6, v0, v2
+
+    iget-wide v8, p0, Ldd4;->b:J
+
+    const-wide/16 v0, 0x1
+
+    sub-long v10, v4, v0
+
+    invoke-static/range {v6 .. v11}, Lpaf;->j(JJJ)J
+
+    move-result-wide v0
+
+    new-instance p0, Lzzc;
+
+    new-instance v2, Lf0d;
+
+    invoke-direct {v2, p1, p2, v0, v1}, Lf0d;-><init>(JJ)V
+
+    invoke-direct {p0, v2, v2}, Lzzc;-><init>(Lf0d;Lf0d;)V
+
+    return-object p0
 .end method
 
-.method public final poll()Ljava/lang/Object;
-    .locals 3
+.method public final f()J
+    .locals 5
 
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+    iget-object p0, p0, Lcd4;->a:Ldd4;
 
-    move-result v0
+    iget-object v0, p0, Ldd4;->t0:Ljava/lang/Object;
 
-    const/16 v1, 0x10
+    check-cast v0, Ln7e;
 
-    const/4 v2, 0x0
+    iget-wide v1, p0, Ldd4;->X:J
 
-    if-ne v0, v1, :cond_0
+    const-wide/32 v3, 0xf4240
 
-    iget-object v0, p0, Lcd4;->b:Ljava/lang/Object;
+    mul-long/2addr v1, v3
 
-    iput-object v2, p0, Lcd4;->b:Ljava/lang/Object;
+    iget p0, v0, Ln7e;->f:I
 
-    const/16 v1, 0x20
+    int-to-long v3, p0
 
-    invoke-virtual {p0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
+    div-long/2addr v1, v3
 
-    return-object v0
-
-    :cond_0
-    return-object v2
-.end method
-
-.method public final q(I)I
-    .locals 0
-
-    const/16 p1, 0x8
-
-    invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
-
-    const/4 p0, 0x2
-
-    return p0
+    return-wide v1
 .end method

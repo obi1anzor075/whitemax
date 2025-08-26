@@ -1,101 +1,64 @@
 .class public final Lbv3;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lgv3;
 
 
-# instance fields
-.field public final synthetic X:Ljava/util/concurrent/Callable;
-
-.field public final synthetic Y:Lyv1;
+# static fields
+.field public static final a:Lbv3;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Callable;Lzv1;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lbv3;->X:Ljava/util/concurrent/Callable;
+    new-instance v0, Lbv3;
 
-    iput-object p2, p0, Lbv3;->Y:Lyv1;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p3}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    sput-object v0, Lbv3;->a:Lbv3;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of p0, p1, Lbv3;
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
     .locals 0
 
-    check-cast p1, Lou3;
+    const p0, -0x5f6da2cd
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lbv3;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lbv3;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lbv3;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
+    return p0
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    new-instance p1, Lbv3;
-
-    iget-object v0, p0, Lbv3;->Y:Lyv1;
-
-    check-cast v0, Lzv1;
-
-    iget-object p0, p0, Lbv3;->X:Ljava/util/concurrent/Callable;
-
-    invoke-direct {p1, p0, v0, p2}, Lbv3;-><init>(Ljava/util/concurrent/Callable;Lzv1;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lbv3;->Y:Lyv1;
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    :try_start_0
-    iget-object p0, p0, Lbv3;->X:Ljava/util/concurrent/Callable;
-
-    invoke-interface {p0}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-interface {v0, p0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p0
-
-    new-instance p1, Lkcc;
-
-    invoke-direct {p1, p0}, Lkcc;-><init>(Ljava/lang/Throwable;)V
-
-    invoke-interface {v0, p1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
-
-    :goto_0
-    sget-object p0, Ljue;->a:Ljue;
+    const-string p0, "ClickForward"
 
     return-object p0
 .end method

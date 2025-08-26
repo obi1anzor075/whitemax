@@ -1,42 +1,23 @@
-.class public final synthetic Lc93;
-.super Ljava/lang/Object;
+.class public final Lc93;
+.super Lu2;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/util/concurrent/Executor;
 
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lzd6;
+# static fields
+.field public static final c:Lc93;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lzd6;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput p2, p0, Lc93;->a:I
+    new-instance v0, Lc93;
 
-    iput-object p1, p0, Lc93;->b:Lzd6;
+    const/16 v1, 0x8
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0, v1}, Lu2;-><init>(I)V
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 1
-
-    iget v0, p0, Lc93;->a:I
-
-    iget-object p0, p0, Lc93;->b:Lzd6;
-
-    check-cast p0, Lh8e;
-
-    invoke-virtual {p0, p1}, Lh8e;->d(Ljava/lang/Runnable;)Z
+    sput-object v0, Lc93;->c:Lc93;
 
     return-void
 .end method

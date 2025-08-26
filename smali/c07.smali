@@ -1,175 +1,116 @@
 .class public final Lc07;
-.super Ll5e;
+.super Lnv8;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Ls16;
+.field public a:[B
 
 
 # direct methods
-.method public constructor <init>(Ls16;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    iput-object p1, p0, Lc07;->Y:Ls16;
+    invoke-direct {p0}, Lnv8;-><init>()V
 
-    const/4 p1, 0x2
+    sget-object v0, Lwqd;->k:[B
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object v0, p0, Lc07;->a:[B
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Lnv8;->cachedSize:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final computeSerializedSize()I
+    .locals 2
 
-    check-cast p1, Lou3;
+    iget-object v0, p0, Lc07;->a:[B
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    sget-object v1, Lwqd;->k:[B
 
-    invoke-virtual {p0, p1, p2}, Lc07;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {v0, v1}, Ljava/util/Arrays;->equals([B[B)Z
 
-    move-result-object p0
+    move-result v0
 
-    check-cast p0, Lc07;
+    if-nez v0, :cond_0
 
-    sget-object p1, Ljue;->a:Ljue;
+    const/4 v0, 0x1
 
-    invoke-virtual {p0, p1}, Lc07;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object p0, p0, Lc07;->a:[B
 
-    move-result-object p0
+    invoke-static {v0, p0}, Lq33;->b(I[B)I
 
-    return-object p0
-.end method
+    move-result p0
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
-
-    new-instance v0, Lc07;
-
-    iget-object p0, p0, Lc07;->Y:Ls16;
-
-    invoke-direct {v0, p0, p2}, Lc07;-><init>(Ls16;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lc07;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lc07;->X:Ljava/lang/Object;
-
-    check-cast p1, Lou3;
-
-    invoke-interface {p1}, Lou3;->getCoroutineContext()Lhu3;
-
-    move-result-object p1
-
-    iget-object p0, p0, Lc07;->Y:Ls16;
-
-    :try_start_0
-    new-instance v0, Lfie;
-
-    invoke-direct {v0}, Lfie;-><init>()V
-
-    invoke-static {p1}, Llp;->q(Lhu3;)Lg37;
-
-    move-result-object p1
-
-    const/4 v1, 0x1
-
-    invoke-static {p1, v1, v0}, Llp;->t(Lg37;ZLt37;)Laj4;
-
-    move-result-object p1
-
-    iput-object p1, v0, Lfie;->c:Laj4;
+    return p0
 
     :cond_0
-    sget-object p1, Lfie;->o:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    invoke-virtual {p1, v0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->get(Ljava/lang/Object;)I
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    const/4 p1, 0x2
-
-    if-eq v1, p1, :cond_3
-
-    const/4 p1, 0x3
-
-    if-ne v1, p1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    invoke-static {v1}, Lfie;->f(I)V
-
     const/4 p0, 0x0
 
-    throw p0
+    return p0
+.end method
 
-    :cond_2
-    const/4 v2, 0x0
+.method public final mergeFrom(Lp33;)Lnv8;
+    .locals 2
 
-    invoke-virtual {p1, v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->compareAndSet(Ljava/lang/Object;II)Z
-
-    move-result p1
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
-
-    if-eqz p1, :cond_0
-
-    :cond_3
+    :cond_0
     :goto_0
-    :try_start_1
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-virtual {p1}, Lp33;->s()I
 
-    move-result-object p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    move-result v0
 
-    :try_start_2
-    invoke-virtual {v0}, Lfie;->e()V
+    if-eqz v0, :cond_2
 
-    return-object p0
+    const/16 v1, 0xa
 
-    :catch_0
-    move-exception p0
+    if-eq v0, v1, :cond_1
+
+    invoke-virtual {p1, v0}, Lp33;->u(I)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
 
     goto :goto_1
 
-    :catchall_0
-    move-exception p0
+    :cond_1
+    invoke-virtual {p1}, Lp33;->g()[B
 
-    invoke-virtual {v0}, Lfie;->e()V
+    move-result-object v0
 
-    throw p0
-    :try_end_2
-    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
+    iput-object v0, p0, Lc07;->a:[B
 
+    goto :goto_0
+
+    :cond_2
     :goto_1
-    new-instance p1, Ljava/util/concurrent/CancellationException;
+    return-object p0
+.end method
 
-    const-string v0, "Blocking call was interrupted due to parent cancellation"
+.method public final writeTo(Lq33;)V
+    .locals 2
 
-    invoke-direct {p1, v0}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
+    iget-object v0, p0, Lc07;->a:[B
 
-    invoke-virtual {p1, p0}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    sget-object v1, Lwqd;->k:[B
 
-    move-result-object p0
+    invoke-static {v0, v1}, Ljava/util/Arrays;->equals([B[B)Z
 
-    throw p0
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    iget-object p0, p0, Lc07;->a:[B
+
+    invoke-virtual {p1, v0, p0}, Lq33;->s(I[B)V
+
+    :cond_0
+    return-void
 .end method

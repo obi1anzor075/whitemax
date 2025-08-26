@@ -4,8 +4,8 @@
 
 # interfaces
 .implements Lru/ok/android/externcalls/sdk/connection/MediaConnectionManager;
-.implements Lsk1;
-.implements Lbne;
+.implements Lum1;
+.implements Lawe;
 
 
 # annotations
@@ -24,9 +24,9 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;",
         "Lru/ok/android/externcalls/sdk/connection/MediaConnectionManager;",
-        "Lsk1;",
-        "Lbne;",
-        "Lxwb;",
+        "Lum1;",
+        "Lawe;",
+        "Ls1c;",
         "log",
         "Lkotlin/Function0;",
         "",
@@ -34,8 +34,8 @@
         "Lru/ok/android/externcalls/sdk/connection/MediaConnectionSettings;",
         "settings",
         "<init>",
-        "(Lxwb;Ls16;Lru/ok/android/externcalls/sdk/connection/MediaConnectionSettings;)V",
-        "Ljue;",
+        "(Ls1c;Lv56;Lru/ok/android/externcalls/sdk/connection/MediaConnectionSettings;)V",
+        "Le5f;",
         "disconnectConfirmedCheck",
         "()V",
         "noDataCallbackTimeout",
@@ -58,11 +58,11 @@
         "()Z",
         "addListener",
         "removeListener",
-        "Lane;",
+        "Lzve;",
         "oldTopology",
         "newTopology",
         "onTopologyUpdated",
-        "(Lane;Lane;)V",
+        "(Lzve;Lzve;)V",
         "",
         "timeSinceBytesReceivedMs",
         "onMediaDataReceived",
@@ -70,8 +70,8 @@
         "onIceConnected",
         "onIceDisconnected",
         "release",
-        "Lxwb;",
-        "Ls16;",
+        "Ls1c;",
+        "Lv56;",
         "Lru/ok/android/externcalls/sdk/connection/MediaConnectionSettings;",
         "Ljava/util/concurrent/CopyOnWriteArrayList;",
         "listeners",
@@ -103,6 +103,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -117,10 +118,10 @@
 
 .field private final handler:Landroid/os/Handler;
 
-.field private final isConversationEnded:Ls16;
+.field private final isConversationEnded:Lv56;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 .end field
@@ -145,7 +146,7 @@
     .end annotation
 .end field
 
-.field private final log:Lxwb;
+.field private final log:Ls1c;
 
 .field private final noDataRunnable:Ljava/lang/Runnable;
 
@@ -162,20 +163,20 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl$Companion;-><init>(Lx54;)V
+    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl$Companion;-><init>(Ll94;)V
 
     sput-object v0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->Companion:Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl$Companion;
 
     return-void
 .end method
 
-.method public constructor <init>(Lxwb;Ls16;Lru/ok/android/externcalls/sdk/connection/MediaConnectionSettings;)V
+.method public constructor <init>(Ls1c;Lv56;Lru/ok/android/externcalls/sdk/connection/MediaConnectionSettings;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lxwb;",
-            "Ls16;",
+            "Ls1c;",
+            "Lv56;",
             "Lru/ok/android/externcalls/sdk/connection/MediaConnectionSettings;",
             ")V"
         }
@@ -183,9 +184,9 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->log:Lxwb;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->log:Ls1c;
 
-    iput-object p2, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->isConversationEnded:Ls16;
+    iput-object p2, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->isConversationEnded:Lv56;
 
     iput-object p3, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->settings:Lru/ok/android/externcalls/sdk/connection/MediaConnectionSettings;
 
@@ -213,19 +214,19 @@
 
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->reportedState:Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl$State;
 
-    new-instance p1, Lm38;
+    new-instance p1, Lk88;
 
     const/4 p2, 0x0
 
-    invoke-direct {p1, p0, p2}, Lm38;-><init>(Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;I)V
+    invoke-direct {p1, p0, p2}, Lk88;-><init>(Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;I)V
 
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->disconnectRunnable:Ljava/lang/Runnable;
 
-    new-instance p1, Lm38;
+    new-instance p1, Lk88;
 
     const/4 p2, 0x1
 
-    invoke-direct {p1, p0, p2}, Lm38;-><init>(Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;I)V
+    invoke-direct {p1, p0, p2}, Lk88;-><init>(Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;I)V
 
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->noDataRunnable:Ljava/lang/Runnable;
 
@@ -271,13 +272,13 @@
 .method private final disconnectConfirmedCheck()V
     .locals 3
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->log:Lxwb;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->log:Ls1c;
 
     const-string v1, "MediaConnectionManager"
 
     const-string v2, "onIceDisconnected after timeout"
 
-    invoke-interface {v0, v1, v2}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v0, v1, v2}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -299,13 +300,13 @@
 .method private final noDataCallbackTimeout()V
     .locals 3
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->log:Lxwb;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->log:Ls1c;
 
     const-string v1, "MediaConnectionManager"
 
     const-string v2, "noDataCallbackTimeout after timeout"
 
-    invoke-interface {v0, v1, v2}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v0, v1, v2}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -333,7 +334,7 @@
 
     if-nez v0, :cond_0
 
-    return-void
+    goto :goto_2
 
     :cond_0
     sget-object v0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -453,7 +454,7 @@
     :goto_1
     if-eq v0, v2, :cond_3
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->log:Lxwb;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->log:Ls1c;
 
     iget-boolean v3, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->isDataConnected:Z
 
@@ -483,7 +484,7 @@
 
     const-string v3, "MediaConnectionManager"
 
-    invoke-interface {v0, v3, v1}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v0, v3, v1}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-direct {p0, v2}, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->reportNewState(Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl$State;)V
 
@@ -506,7 +507,7 @@
 
     if-nez v0, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->reportedState:Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl$State;
@@ -534,33 +535,33 @@
 
     if-nez p0, :cond_2
 
-    return-void
+    goto :goto_0
 
     :cond_2
     invoke-interface {p1, p0}, Lru/ok/android/externcalls/sdk/connection/MediaConnectionListener;->onMediaDisconnected(Lru/ok/android/externcalls/sdk/connection/MediaConnectionListener$DisconnectedInfo;)V
 
-    goto :goto_0
+    return-void
 
     :cond_3
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->lastConnectedInfo:Lru/ok/android/externcalls/sdk/connection/MediaConnectionListener$ConnectedInfo;
 
     if-nez p0, :cond_4
 
+    :goto_0
     return-void
 
     :cond_4
     invoke-interface {p1, p0}, Lru/ok/android/externcalls/sdk/connection/MediaConnectionListener;->onMediaConnected(Lru/ok/android/externcalls/sdk/connection/MediaConnectionListener$ConnectedInfo;)V
 
-    :goto_0
     return-void
 .end method
 
 .method private final shouldReport()Z
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->isConversationEnded:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->isConversationEnded:Lv56;
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     move-result-object p0
 
@@ -592,13 +593,13 @@
 .method public final onIceConnected()V
     .locals 3
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->log:Lxwb;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->log:Ls1c;
 
     const-string v1, "MediaConnectionManager"
 
     const-string v2, "onIceConnected"
 
-    invoke-interface {v0, v1, v2}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v0, v1, v2}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v0, 0x1
 
@@ -618,13 +619,13 @@
 .method public final onIceDisconnected()V
     .locals 4
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->log:Lxwb;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->log:Ls1c;
 
     const-string v1, "MediaConnectionManager"
 
     const-string v2, "onIceDisconnected"
 
-    invoke-interface {v0, v1, v2}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v0, v1, v2}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->handler:Landroid/os/Handler;
 
@@ -668,7 +669,7 @@
 
     if-eq v0, v1, :cond_1
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->log:Lxwb;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->log:Ls1c;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -690,7 +691,7 @@
 
     const-string p2, "MediaConnectionManager"
 
-    invoke-interface {v0, p2, p1}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v0, p2, p1}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_1
     invoke-direct {p0}, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->reportNewStateIfNeeded()V
@@ -716,10 +717,10 @@
     return-void
 .end method
 
-.method public onTopologyUpdated(Lane;Lane;)V
+.method public onTopologyUpdated(Lzve;Lzve;)V
     .locals 2
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->log:Lxwb;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->log:Ls1c;
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -741,7 +742,7 @@
 
     const-string p2, "MediaConnectionManager"
 
-    invoke-interface {p0, p2, p1}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p0, p2, p1}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

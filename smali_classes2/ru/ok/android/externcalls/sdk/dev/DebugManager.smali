@@ -11,13 +11,13 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/dev/DebugManager;",
         "",
-        "Ltqd;",
+        "Loyd;",
         "operation",
         "",
         "param",
-        "Ljue;",
+        "Le5f;",
         "report",
-        "(Ltqd;Ljava/lang/String;)V",
+        "(Loyd;Ljava/lang/String;)V",
         "",
         "error",
         "reportError",
@@ -25,23 +25,23 @@
         "dumpPath",
         "enableFullAudioDump",
         "(Ljava/lang/String;)V",
-        "Lxrd;",
+        "Lwzd;",
         "listener",
         "",
         "period",
         "Ljava/util/concurrent/TimeUnit;",
         "unit",
         "registerStatListener",
-        "(Lxrd;ILjava/util/concurrent/TimeUnit;)V",
+        "(Lwzd;ILjava/util/concurrent/TimeUnit;)V",
         "removeStatListener",
-        "(Lxrd;)V",
+        "(Lwzd;)V",
         "Lru/ok/android/externcalls/sdk/dev/MediaDumpManager;",
         "getMediaDumpManager",
         "()Lru/ok/android/externcalls/sdk/dev/MediaDumpManager;",
         "mediaDumpManager",
-        "Lgx0;",
+        "Liy0;",
         "getUnderlyingCall",
-        "()Lgx0;",
+        "()Liy0;",
         "underlyingCall",
         "calls-sdk_release"
     }
@@ -51,6 +51,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -61,16 +62,16 @@
 .method public abstract getMediaDumpManager()Lru/ok/android/externcalls/sdk/dev/MediaDumpManager;
 .end method
 
-.method public abstract getUnderlyingCall()Lgx0;
+.method public abstract getUnderlyingCall()Liy0;
 .end method
 
-.method public abstract registerStatListener(Lxrd;ILjava/util/concurrent/TimeUnit;)V
+.method public abstract registerStatListener(Lwzd;ILjava/util/concurrent/TimeUnit;)V
 .end method
 
-.method public abstract removeStatListener(Lxrd;)V
+.method public abstract removeStatListener(Lwzd;)V
 .end method
 
-.method public abstract report(Ltqd;Ljava/lang/String;)V
+.method public abstract report(Loyd;Ljava/lang/String;)V
 .end method
 
 .method public abstract reportError(Ljava/lang/Throwable;)V

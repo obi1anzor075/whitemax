@@ -1,35 +1,25 @@
-.class public abstract synthetic Lo6e;
+.class public abstract Lo6e;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic $EnumSwitchMapping$0:[I
+# instance fields
+.field public final a:Landroid/view/View;
+
+.field public b:I
+
+.field public c:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Landroid/view/View;)V
+    .locals 0
 
-    const/4 v0, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lhr1;->w(I)[I
+    iput-object p1, p0, Lo6e;->a:Landroid/view/View;
 
-    move-result-object v1
-
-    array-length v1, v1
-
-    new-array v1, v1, [I
-
-    const/4 v2, 0x0
-
-    :try_start_0
-    aput v0, v1, v2
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    sput-object v1, Lo6e;->$EnumSwitchMapping$0:[I
+    invoke-static {p1}, Lfq0;->b(Landroid/view/View;)V
 
     return-void
 .end method

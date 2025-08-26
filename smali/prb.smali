@@ -1,19 +1,10 @@
 .class public abstract Lprb;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # static fields
-.field public static btn_checkbox_checked_mtrl_animation_interpolator_0:I = 0x7f0c0000
+.field public static fast_forward_24:I = 0x7f080354
 
-.field public static btn_checkbox_checked_mtrl_animation_interpolator_1:I = 0x7f0c0001
+.field public static fast_rewind_24:I = 0x7f080355
 
-.field public static btn_checkbox_unchecked_mtrl_animation_interpolator_0:I = 0x7f0c0002
-
-.field public static btn_checkbox_unchecked_mtrl_animation_interpolator_1:I = 0x7f0c0003
-
-.field public static btn_radio_to_off_mtrl_animation_interpolator_0:I = 0x7f0c0004
-
-.field public static btn_radio_to_on_mtrl_animation_interpolator_0:I = 0x7f0c0005
-
-.field public static fast_out_slow_in:I = 0x7f0c0006
+.field public static save_to_gallery_24:I = 0x7f0808b5

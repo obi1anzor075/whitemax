@@ -1,97 +1,31 @@
-.class public final Lzda;
+.class public abstract Lzda;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lbea;
 
+# static fields
+.field public static final a:I
 
-# instance fields
-.field public final a:Ljea;
+.field public static final b:I
+
+.field public static final c:I
 
 
 # direct methods
-.method public constructor <init>(Lgea;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Lazb;->chat_media_photo:I
 
-    iput-object p1, p0, Lzda;->a:Ljea;
+    sput v0, Lzda;->a:I
+
+    sget v0, Lazb;->chat_media_video:I
+
+    sput v0, Lzda;->b:I
+
+    sget v0, Lazb;->media_photo_video:I
+
+    sput v0, Lzda;->c:I
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lzda;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lzda;
-
-    iget-object p0, p0, Lzda;->a:Ljea;
-
-    iget-object p1, p1, Lzda;->a:Ljea;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    iget-object p0, p0, Lzda;->a:Ljea;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Icon(icon="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lzda;->a:Ljea;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

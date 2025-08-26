@@ -1,56 +1,85 @@
-.class public final synthetic Ldba;
+.class public abstract Ldba;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
 
+# static fields
+.field public static final a:I
 
-# instance fields
-.field public final synthetic a:I
+.field public static final b:I
 
-.field public final synthetic b:Leba;
+.field public static final c:I
+
+.field public static final d:I
+
+.field public static final e:I
+
+.field public static final f:I
+
+.field public static final g:I
+
+.field public static final h:I
+
+.field public static final i:I
+
+.field public static final j:I
+
+.field public static final k:I
+
+.field public static final l:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Leba;I)V
-    .locals 0
-
-    iput p2, p0, Ldba;->a:I
-
-    iput-object p1, p0, Ldba;->b:Leba;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final run()V
+.method static constructor <clinit>()V
     .locals 1
 
-    iget v0, p0, Ldba;->a:I
+    sget v0, Lvrb;->contact_icon_corner:I
 
-    packed-switch v0, :pswitch_data_0
+    sput v0, Ldba;->a:I
 
-    iget-object p0, p0, Ldba;->b:Leba;
+    sget v0, Lvrb;->geo_icon_corner:I
 
-    invoke-virtual {p0}, Leba;->b()V
+    sput v0, Ldba;->b:I
+
+    sget v0, Lvrb;->ic_call_incoming_audio_24:I
+
+    sput v0, Ldba;->c:I
+
+    sget v0, Lvrb;->ic_call_incoming_audio_missed_24:I
+
+    sput v0, Ldba;->d:I
+
+    sget v0, Lvrb;->ic_call_incoming_video_missed_24:I
+
+    sput v0, Ldba;->e:I
+
+    sget v0, Lvrb;->ic_call_incomnig_video_24:I
+
+    sput v0, Ldba;->f:I
+
+    sget v0, Lvrb;->ic_call_outgoing_audio_24:I
+
+    sput v0, Ldba;->g:I
+
+    sget v0, Lvrb;->ic_call_outgoing_video_24:I
+
+    sput v0, Ldba;->h:I
+
+    sget v0, Lvrb;->ic_chat_16:I
+
+    sput v0, Ldba;->i:I
+
+    sget v0, Lvrb;->ic_contact_16:I
+
+    sput v0, Ldba;->j:I
+
+    sget v0, Lvrb;->link_icon_corner:I
+
+    sput v0, Ldba;->k:I
+
+    sget v0, Lvrb;->miniapp_icon_corner:I
+
+    sput v0, Ldba;->l:I
 
     return-void
-
-    :pswitch_0
-    iget-object p0, p0, Ldba;->b:Leba;
-
-    invoke-virtual {p0}, Leba;->b()V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

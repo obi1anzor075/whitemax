@@ -29,7 +29,7 @@
         "isContentCompressed",
         "<init>",
         "(Ljavax/inject/Provider;Ljava/util/concurrent/locks/Lock;Ljava/lang/String;ZZ)V",
-        "Ljue;",
+        "Le5f;",
         "upload",
         "()V",
         "getSink",
@@ -44,6 +44,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -65,7 +66,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lru/ok/android/externcalls/analytics/internal/upload/SingleFileUploader$Companion;-><init>(Lx54;)V
+    invoke-direct {v0, v1}, Lru/ok/android/externcalls/analytics/internal/upload/SingleFileUploader$Companion;-><init>(Ll94;)V
 
     sput-object v0, Lru/ok/android/externcalls/analytics/internal/upload/SingleFileUploader;->Companion:Lru/ok/android/externcalls/analytics/internal/upload/SingleFileUploader$Companion;
 
@@ -102,12 +103,12 @@
     invoke-direct/range {v0 .. v5}, Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader;-><init>(Ljavax/inject/Provider;Ljava/util/concurrent/locks/Lock;Ljava/lang/String;ZLjava/lang/String;)V
 
     .line 3
-    iput-boolean p4, p0, Lru/ok/android/externcalls/analytics/internal/upload/SingleFileUploader;->disableUploadWhenCallIsActive:Z
+    iput-boolean p4, v0, Lru/ok/android/externcalls/analytics/internal/upload/SingleFileUploader;->disableUploadWhenCallIsActive:Z
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Ljavax/inject/Provider;Ljava/util/concurrent/locks/Lock;Ljava/lang/String;ZZILx54;)V
+.method public synthetic constructor <init>(Ljavax/inject/Provider;Ljava/util/concurrent/locks/Lock;Ljava/lang/String;ZZILl94;)V
     .locals 6
 
     and-int/lit8 p6, p6, 0x8
@@ -117,8 +118,6 @@
     const/4 p4, 0x0
 
     :cond_0
-    move v4, p4
-
     move-object v0, p0
 
     move-object v1, p1
@@ -126,6 +125,8 @@
     move-object v2, p2
 
     move-object v3, p3
+
+    move v4, p4
 
     move v5, p5
 
@@ -144,7 +145,7 @@
 
     invoke-direct {v0, p0}, Lru/ok/android/externcalls/analytics/internal/upload/SingleFileUploader$getSink$1;-><init>(Lru/ok/android/externcalls/analytics/internal/upload/SingleFileUploader;)V
 
-    invoke-virtual {p0, v0}, Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader;->withLock(Ls16;)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader;->withLock(Lv56;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -200,7 +201,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    return-void
 
     :catchall_0
     move-exception v0
@@ -221,6 +222,5 @@
 
     invoke-interface {v2, v1, p0, v3}, Lru/ok/android/externcalls/analytics/log/CallAnalyticsLogger;->report(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_0
     return-void
 .end method

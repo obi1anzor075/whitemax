@@ -3,106 +3,136 @@
 .source "SourceFile"
 
 # interfaces
-.implements Liw8;
+.implements Lj09;
 
 
 # instance fields
-.field public final synthetic a:Lone/me/messages/list/ui/MessagesListWidget;
+.field public final a:J
 
-.field public final synthetic b:Ljava/util/concurrent/atomic/AtomicInteger;
-
-.field public final synthetic c:I
-
-.field public final synthetic d:Ljpc;
-
-.field public final synthetic e:Ll7c;
+.field public final b:Lwgf;
 
 
 # direct methods
-.method public constructor <init>(Lone/me/messages/list/ui/MessagesListWidget;Ljava/util/concurrent/atomic/AtomicInteger;ILjpc;Ll7c;)V
+.method public constructor <init>(JLwgf;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lh09;->a:Lone/me/messages/list/ui/MessagesListWidget;
+    iput-wide p1, p0, Lh09;->a:J
 
-    iput-object p2, p0, Lh09;->b:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    iput p3, p0, Lh09;->c:I
-
-    iput-object p4, p0, Lh09;->d:Ljpc;
-
-    iput-object p5, p0, Lh09;->e:Ll7c;
+    iput-object p3, p0, Lh09;->b:Lwgf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .locals 4
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 7
 
-    sget-object v0, Lone/me/messages/list/ui/MessagesListWidget;->b1:[Lk77;
+    const/4 v0, 0x1
 
-    iget-object v0, p0, Lh09;->a:Lone/me/messages/list/ui/MessagesListWidget;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {v0}, Lone/me/messages/list/ui/MessagesListWidget;->n0()Lone/me/messages/list/ui/recycler/MessagesLayoutManager;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroidx/recyclerview/widget/a;->w()I
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget v1, p0, Lh09;->c:I
-
-    add-int/lit8 v2, v1, 0x1
-
-    iget-object v3, p0, Lh09;->b:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v3, v1, v2}, Ljava/util/concurrent/atomic/AtomicInteger;->compareAndSet(II)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lh09;->d:Ljpc;
-
-    invoke-static {v0, v1}, Lone/me/messages/list/ui/MessagesListWidget;->l0(Lone/me/messages/list/ui/MessagesListWidget;Ljpc;)V
-
-    iget-object v1, p0, Lh09;->e:Ll7c;
-
-    iget-object v1, v1, Ll7c;->a:Ljava/lang/Object;
-
-    check-cast v1, Lz63;
-
-    if-eqz v1, :cond_0
-
-    sget-object v2, Ljue;->a:Ljue;
-
-    check-cast v1, La73;
-
-    invoke-virtual {v1, v2}, Li47;->makeCompleting$kotlinx_coroutines_core(Ljava/lang/Object;)Z
+    return v0
 
     :cond_0
-    invoke-virtual {v0}, Lone/me/messages/list/ui/MessagesListWidget;->n0()Lone/me/messages/list/ui/recycler/MessagesLayoutManager;
+    instance-of v1, p1, Lh09;
 
-    move-result-object v0
+    const/4 v2, 0x0
 
-    iget-object v0, v0, Lone/me/messages/list/ui/recycler/MessagesLayoutManager;->I:Lkc9;
+    if-nez v1, :cond_1
 
-    invoke-virtual {v0, p0}, Lkc9;->f(Ljava/lang/Object;)V
+    return v2
 
     :cond_1
-    return-void
+    check-cast p1, Lh09;
+
+    iget-wide v3, p0, Lh09;->a:J
+
+    iget-wide v5, p1, Lh09;->a:J
+
+    cmp-long v1, v3, v5
+
+    if-eqz v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object p0, p0, Lh09;->b:Lwgf;
+
+    iget-object p1, p1, Lh09;->b:Lwgf;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
+
+    return v2
+
+    :cond_3
+    return v0
 .end method
 
-.method public final getTag()Ljava/lang/String;
-    .locals 0
+.method public final hashCode()I
+    .locals 2
 
-    const-string p0, "ScrollButton"
+    iget-wide v0, p0, Lh09;->a:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Lh09;->b:Lwgf;
+
+    invoke-virtual {p0}, Lwgf;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final j()J
+    .locals 2
+
+    iget-wide v0, p0, Lh09;->a:J
+
+    return-wide v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "OnSurfaceClick(messageId="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-wide v1, p0, Lh09;->a:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", model="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lh09;->b:Lwgf;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

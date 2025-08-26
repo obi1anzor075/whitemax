@@ -1,188 +1,212 @@
 .class public final Lqp6;
-.super Llp6;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lhtd;
 
 
 # instance fields
-.field public final C0:Ljava/util/concurrent/Executor;
+.field public X:I
 
-.field public final D0:Ljava/lang/Object;
+.field public final Y:Lyt0;
 
-.field public E0:Llr6;
+.field public a:I
 
-.field public F0:Lpp6;
+.field public b:I
+
+.field public c:I
+
+.field public o:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Executor;)V
-    .locals 1
+.method public constructor <init>(Lyt0;)V
+    .locals 0
 
-    invoke-direct {p0}, Llp6;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lqp6;->D0:Ljava/lang/Object;
-
-    iput-object p1, p0, Lqp6;->C0:Ljava/util/concurrent/Executor;
+    iput-object p1, p0, Lqp6;->Y:Lyt0;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lnr6;)Llr6;
+.method public final b(Lvs0;J)J
+    .locals 8
+
+    :goto_0
+    iget v0, p0, Lqp6;->o:I
+
+    const-wide/16 v1, -0x1
+
+    iget-object v3, p0, Lqp6;->Y:Lyt0;
+
+    if-nez v0, :cond_4
+
+    iget v0, p0, Lqp6;->X:I
+
+    int-to-long v4, v0
+
+    invoke-interface {v3, v4, v5}, Lyt0;->skip(J)V
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lqp6;->X:I
+
+    iget v0, p0, Lqp6;->b:I
+
+    and-int/lit8 v0, v0, 0x4
+
+    if-eqz v0, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    iget v0, p0, Lqp6;->c:I
+
+    invoke-static {v3}, Loaf;->s(Lyt0;)I
+
+    move-result v1
+
+    iput v1, p0, Lqp6;->o:I
+
+    iput v1, p0, Lqp6;->a:I
+
+    invoke-interface {v3}, Lyt0;->readByte()B
+
+    move-result v1
+
+    and-int/lit16 v1, v1, 0xff
+
+    invoke-interface {v3}, Lyt0;->readByte()B
+
+    move-result v2
+
+    and-int/lit16 v2, v2, 0xff
+
+    iput v2, p0, Lqp6;->b:I
+
+    sget-object v2, Lrp6;->o:Ljava/util/logging/Logger;
+
+    sget-object v4, Ljava/util/logging/Level;->FINE:Ljava/util/logging/Level;
+
+    invoke-virtual {v2, v4}, Ljava/util/logging/Logger;->isLoggable(Ljava/util/logging/Level;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    sget-object v4, Lfp6;->a:Luv0;
+
+    iget v4, p0, Lqp6;->c:I
+
+    iget v5, p0, Lqp6;->a:I
+
+    iget v6, p0, Lqp6;->b:I
+
+    const/4 v7, 0x1
+
+    invoke-static {v7, v4, v5, v1, v6}, Lfp6;->a(ZIIII)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Ljava/util/logging/Logger;->fine(Ljava/lang/String;)V
+
+    :cond_1
+    invoke-interface {v3}, Lyt0;->readInt()I
+
+    move-result v2
+
+    const v3, 0x7fffffff
+
+    and-int/2addr v2, v3
+
+    iput v2, p0, Lqp6;->c:I
+
+    const/16 v3, 0x9
+
+    if-ne v1, v3, :cond_3
+
+    if-ne v2, v0, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    new-instance p0, Ljava/io/IOException;
+
+    const-string p1, "TYPE_CONTINUATION streamId changed"
+
+    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_3
+    new-instance p0, Ljava/io/IOException;
+
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p2, " != TYPE_CONTINUATION"
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_4
+    int-to-long v4, v0
+
+    invoke-static {p2, p3, v4, v5}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide p2
+
+    invoke-interface {v3, p1, p2, p3}, Lhtd;->b(Lvs0;J)J
+
+    move-result-wide p1
+
+    cmp-long p3, p1, v1
+
+    if-nez p3, :cond_5
+
+    :goto_1
+    return-wide v1
+
+    :cond_5
+    iget p3, p0, Lqp6;->o:I
+
+    long-to-int v0, p1
+
+    sub-int/2addr p3, v0
+
+    iput p3, p0, Lqp6;->o:I
+
+    return-wide p1
+.end method
+
+.method public final close()V
     .locals 0
 
-    invoke-interface {p1}, Lnr6;->c()Llr6;
+    return-void
+.end method
+
+.method public final p()Lsse;
+    .locals 0
+
+    iget-object p0, p0, Lqp6;->Y:Lyt0;
+
+    invoke-interface {p0}, Lhtd;->p()Lsse;
 
     move-result-object p0
 
     return-object p0
-.end method
-
-.method public final c()V
-    .locals 2
-
-    iget-object v0, p0, Lqp6;->D0:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lqp6;->E0:Llr6;
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v1}, Ljava/lang/AutoCloseable;->close()V
-
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Lqp6;->E0:Llr6;
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_1
-
-    :cond_0
-    :goto_0
-    monitor-exit v0
-
-    return-void
-
-    :goto_1
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p0
-.end method
-
-.method public final e(Llr6;)V
-    .locals 5
-
-    iget-object v0, p0, Lqp6;->D0:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-boolean v1, p0, Llp6;->B0:Z
-
-    if-nez v1, :cond_0
-
-    invoke-interface {p1}, Ljava/lang/AutoCloseable;->close()V
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_1
-
-    :cond_0
-    iget-object v1, p0, Lqp6;->F0:Lpp6;
-
-    if-eqz v1, :cond_3
-
-    invoke-interface {p1}, Llr6;->getImageInfo()Lpq6;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Lpq6;->getTimestamp()J
-
-    move-result-wide v1
-
-    iget-object v3, p0, Lqp6;->F0:Lpp6;
-
-    iget-object v3, v3, Lqw5;->b:Llr6;
-
-    invoke-interface {v3}, Llr6;->getImageInfo()Lpq6;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Lpq6;->getTimestamp()J
-
-    move-result-wide v3
-
-    cmp-long v1, v1, v3
-
-    if-gtz v1, :cond_1
-
-    invoke-interface {p1}, Ljava/lang/AutoCloseable;->close()V
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v1, p0, Lqp6;->E0:Llr6;
-
-    if-eqz v1, :cond_2
-
-    invoke-interface {v1}, Ljava/lang/AutoCloseable;->close()V
-
-    :cond_2
-    iput-object p1, p0, Lqp6;->E0:Llr6;
-
-    :goto_0
-    monitor-exit v0
-
-    return-void
-
-    :cond_3
-    new-instance v1, Lpp6;
-
-    invoke-direct {v1, p1, p0}, Lpp6;-><init>(Llr6;Lqp6;)V
-
-    iput-object v1, p0, Lqp6;->F0:Lpp6;
-
-    invoke-virtual {p0, v1}, Llp6;->b(Llr6;)Lch7;
-
-    move-result-object p0
-
-    new-instance p1, Llhd;
-
-    const/16 v2, 0x11
-
-    invoke-direct {p1, v2, v1}, Llhd;-><init>(ILjava/lang/Object;)V
-
-    invoke-static {}, Lpa2;->j()Lmh4;
-
-    move-result-object v1
-
-    invoke-static {p0, p1, v1}, Lct0;->a(Lch7;Li36;Ljava/util/concurrent/Executor;)V
-
-    monitor-exit v0
-
-    return-void
-
-    :goto_1
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p0
 .end method

@@ -1,47 +1,14 @@
-.class public final Lru1;
+.class public interface abstract Lru1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public a:F
-
-.field public b:F
-
-.field public c:Ljava/lang/Object;
-
-
 # virtual methods
-.method public a()V
-    .locals 3
+.method public abstract a(Landroid/hardware/camera2/TotalCaptureResult;)Lbm7;
+.end method
 
-    iget-object v0, p0, Lru1;->c:Ljava/lang/Object;
+.method public abstract b()Z
+.end method
 
-    check-cast v0, Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    iget v2, p0, Lru1;->a:F
-
-    mul-float/2addr v2, v1
-
-    invoke-virtual {v0, v2}, Landroid/view/View;->setPivotX(F)V
-
-    invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    iget p0, p0, Lru1;->b:F
-
-    mul-float/2addr p0, v1
-
-    invoke-virtual {v0, p0}, Landroid/view/View;->setPivotY(F)V
-
-    return-void
+.method public abstract c()V
 .end method

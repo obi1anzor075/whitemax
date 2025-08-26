@@ -30,7 +30,7 @@
 
     const-string v0, "Invalid encoding: "
 
-    invoke-static {p0, v0}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v0}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -199,7 +199,7 @@
 
     const-string v1, ")"
 
-    invoke-static {p0, v0, v1}, Lrf0;->f(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v0, v1}, Lpg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -414,19 +414,13 @@
 
     move-result-wide v2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const-string v0, "@[name="
 
-    const-string v4, "@[name="
+    const-string v4, ", id="
 
-    invoke-direct {v0, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-static {v0, v2, v3, v1, v4}, Lzge;->q(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", id="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-result-object v0
 
     const-string v1, "]"
 
@@ -468,7 +462,7 @@
 
     if-nez v0, :cond_0
 
-    return-void
+    goto/16 :goto_2
 
     :cond_0
     const-string v0, "Audio Devices: "
@@ -614,6 +608,7 @@
     goto/16 :goto_0
 
     :cond_5
+    :goto_2
     return-void
 .end method
 
@@ -680,17 +675,11 @@
 
     invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
     const-string p1, ", music active: "
 
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v0, ", speakerphone: "
 
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string p1, ", speakerphone: "
-
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p1, v0, v4, v1, v2}, Lzt1;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;ZZ)V
 
     invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -712,42 +701,42 @@
 .method private static logAudioStateVolume(Ljava/lang/String;Landroid/media/AudioManager;)V
     .locals 8
 
-    const/4 v0, 0x0
+    const/4 v0, 0x6
 
-    const/4 v1, 0x6
+    new-array v1, v0, [I
 
-    new-array v2, v1, [I
+    fill-array-data v1, :array_0
 
-    fill-array-data v2, :array_0
+    const-string v2, "Audio State: "
 
-    const-string v3, "Audio State: "
-
-    invoke-static {p0, v3}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, v2}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {p1}, Landroid/media/AudioManager;->isVolumeFixed()Z
 
-    move-result v3
+    move-result v2
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v5, "  fixed volume="
+    const-string v4, "  fixed volume="
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-static {p0, v4}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, v3}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-nez v3, :cond_0
+    if-nez v2, :cond_0
+
+    const/4 v2, 0x0
 
     :goto_0
-    if-ge v0, v1, :cond_0
+    if-ge v2, v0, :cond_0
 
-    aget v3, v2, v0
+    aget v3, v1, v2
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -811,7 +800,7 @@
 
     invoke-static {p0, v3}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
@@ -870,41 +859,23 @@
 
     invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     const-string v0, ", Device: "
 
-    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, ", Id: "
 
-    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", Id: "
-
-    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v9, v2, v0, v3, v1}, Lm26;->p(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v0, ", Hardware: "
 
-    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, ", Manufacturer: "
 
-    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", Manufacturer: "
-
-    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v9, v4, v0, v5, v1}, Lm26;->p(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v0, ", Model: "
 
-    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, ", Product: "
 
-    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", Product: "
-
-    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v9, v6, v0, v7, v1}, Lm26;->p(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -985,13 +956,12 @@
     :cond_0
     const/4 v0, 0x0
 
-    goto :goto_1
+    return v0
 
     :cond_1
     :goto_0
     const/4 v0, 0x1
 
-    :goto_1
     return v0
 .end method
 

@@ -1,103 +1,47 @@
-.class public abstract Lu5a;
+.class public final Lu5a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:I
+# instance fields
+.field public final a:Lje7;
 
-.field public static final b:I
+.field public final b:Lwfe;
 
-.field public static final c:I
-
-.field public static final d:I
-
-.field public static final e:I
-
-.field public static final f:I
-
-.field public static final g:I
-
-.field public static final h:I
-
-.field public static final i:I
-
-.field public static final j:I
-
-.field public static final k:I
-
-.field public static final l:I
-
-.field public static final m:I
-
-.field public static final n:I
-
-.field public static final o:I
+.field public final c:Lwfe;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lje7;)V
     .locals 1
 
-    sget v0, Lhpb;->oneme_contact_not_found_bottom_sheet_negative_button:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput v0, Lu5a;->a:I
+    iput-object p1, p0, Lu5a;->a:Lje7;
 
-    sget v0, Lhpb;->oneme_contact_not_found_bottom_sheet_positive_button:I
+    new-instance p1, Lh2a;
 
-    sput v0, Lu5a;->b:I
+    const/16 v0, 0xe
 
-    sget v0, Lhpb;->oneme_invite_action_view_type:I
+    invoke-direct {p1, v0}, Lh2a;-><init>(I)V
 
-    sput v0, Lu5a;->c:I
+    new-instance v0, Lwfe;
 
-    sget v0, Lhpb;->oneme_invite_by_link_action_menu_item:I
+    invoke-direct {v0, p1}, Lwfe;-><init>(Lv56;)V
 
-    sput v0, Lu5a;->d:I
+    iput-object v0, p0, Lu5a;->b:Lwfe;
 
-    sget v0, Lhpb;->oneme_invite_by_phone_action_menu_item:I
+    new-instance p1, Lj57;
 
-    sput v0, Lu5a;->e:I
+    const/16 v0, 0x15
 
-    sget v0, Lhpb;->oneme_invite_by_phone_continue_button:I
+    invoke-direct {p1, v0, p0}, Lj57;-><init>(ILjava/lang/Object;)V
 
-    sput v0, Lu5a;->f:I
+    new-instance v0, Lwfe;
 
-    sget v0, Lhpb;->oneme_invite_by_phone_description:I
+    invoke-direct {v0, p1}, Lwfe;-><init>(Lv56;)V
 
-    sput v0, Lu5a;->g:I
-
-    sget v0, Lhpb;->oneme_invite_by_phone_input:I
-
-    sput v0, Lu5a;->h:I
-
-    sget v0, Lhpb;->oneme_invite_by_phone_title:I
-
-    sput v0, Lu5a;->i:I
-
-    sget v0, Lhpb;->oneme_invite_by_phone_toolbar:I
-
-    sput v0, Lu5a;->j:I
-
-    sget v0, Lhpb;->oneme_invite_by_qr_action_menu_item:I
-
-    sput v0, Lu5a;->k:I
-
-    sget v0, Lhpb;->oneme_invite_by_qr_bottom_sheet_name:I
-
-    sput v0, Lu5a;->l:I
-
-    sget v0, Lhpb;->oneme_invite_by_qr_bottom_sheet_qr_code:I
-
-    sput v0, Lu5a;->m:I
-
-    sget v0, Lhpb;->oneme_invite_by_qr_bottom_sheet_qr_code_share:I
-
-    sput v0, Lu5a;->n:I
-
-    sget v0, Lhpb;->oneme_invite_by_qr_bottom_sheet_short_name:I
-
-    sput v0, Lu5a;->o:I
+    iput-object v0, p0, Lu5a;->c:Lwfe;
 
     return-void
 .end method

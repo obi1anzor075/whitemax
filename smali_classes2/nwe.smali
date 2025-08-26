@@ -1,49 +1,100 @@
 .class public final Lnwe;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/app/Application$ActivityLifecycleCallbacks;
 
 
 # instance fields
-.field public X:I
+.field public final a:Lp9d;
 
-.field public final synthetic Y:Lj4d;
-
-.field public synthetic o:Ljava/lang/Object;
+.field public b:I
 
 
 # direct methods
-.method public constructor <init>(Lj4d;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lp9d;)V
     .locals 0
 
-    iput-object p1, p0, Lnwe;->Y:Lj4d;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lnwe;->a:Lp9d;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onActivityDestroyed(Landroid/app/Activity;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onActivityPaused(Landroid/app/Activity;)V
     .locals 1
 
-    iput-object p1, p0, Lnwe;->o:Ljava/lang/Object;
+    iget p1, p0, Lnwe;->b:I
 
-    iget p1, p0, Lnwe;->X:I
+    const/4 v0, 0x1
 
-    const/high16 v0, -0x80000000
+    sub-int/2addr p1, v0
 
-    or-int/2addr p1, v0
+    iput p1, p0, Lnwe;->b:I
 
-    iput p1, p0, Lnwe;->X:I
+    if-nez p1, :cond_0
 
-    iget-object p1, p0, Lnwe;->Y:Lj4d;
+    iget-object p0, p0, Lnwe;->a:Lp9d;
+
+    invoke-virtual {p0, v0}, Lp9d;->e(Z)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final onActivityResumed(Landroid/app/Activity;)V
+    .locals 1
+
+    iget p1, p0, Lnwe;->b:I
+
+    if-nez p1, :cond_0
+
+    iget-object p1, p0, Lnwe;->a:Lp9d;
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0, p0}, Lj4d;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Lp9d;->e(Z)V
 
-    move-result-object p0
+    :cond_0
+    iget p1, p0, Lnwe;->b:I
 
-    return-object p0
+    add-int/lit8 p1, p1, 0x1
+
+    iput p1, p0, Lnwe;->b:I
+
+    return-void
+.end method
+
+.method public final onActivitySaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onActivityStarted(Landroid/app/Activity;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onActivityStopped(Landroid/app/Activity;)V
+    .locals 0
+
+    return-void
 .end method

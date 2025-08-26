@@ -1,49 +1,78 @@
-.class public final Lqj9;
-.super Ler3;
+.class public final synthetic Lqj9;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lik8;
-
-.field public synthetic o:Ljava/lang/Object;
+.field public final synthetic b:Lrj9;
 
 
 # direct methods
-.method public constructor <init>(Lik8;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(Lrj9;I)V
     .locals 0
 
-    iput-object p1, p0, Lqj9;->Y:Lik8;
+    iput p2, p0, Lqj9;->a:I
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lqj9;->b:Lrj9;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final run()V
     .locals 1
 
-    iput-object p1, p0, Lqj9;->o:Ljava/lang/Object;
+    iget v0, p0, Lqj9;->a:I
 
-    iget p1, p0, Lqj9;->X:I
+    packed-switch v0, :pswitch_data_0
 
-    const/high16 v0, -0x80000000
+    iget-object p0, p0, Lqj9;->b:Lrj9;
 
-    or-int/2addr p1, v0
+    iget-object v0, p0, Lrj9;->o0:Landroidx/appcompat/widget/AppCompatTextView;
 
-    iput p1, p0, Lqj9;->X:I
+    invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
 
-    iget-object p1, p0, Lqj9;->Y:Lik8;
+    iget-object v0, p0, Lrj9;->p0:Landroid/widget/ProgressBar;
+
+    invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
+
+    iget-object v0, p0, Lrj9;->Z:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
+
+    iget-object v0, p0, Lrj9;->q0:Landroidx/appcompat/widget/AppCompatImageButton;
+
+    invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
+
+    iget-object p0, p0, Lrj9;->s0:Landroid/widget/ImageView;
+
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
+
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lqj9;->b:Lrj9;
+
+    iget-object p0, p0, Lv2;->c:Ljava/lang/Object;
+
+    check-cast p0, Landroid/view/View;
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0, p0}, Lik8;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
-    move-result-object p0
+    return-void
 
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

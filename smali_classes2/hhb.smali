@@ -1,58 +1,49 @@
 .class public final Lhhb;
-.super Landroid/util/FloatProperty;
+.super Lbu3;
 .source "SourceFile"
 
 
 # instance fields
-.field public a:F
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Lihb;
+
+.field public Z:I
+
+.field public o:Lihb;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    .line 1
-    invoke-direct {p0, p1, v0}, Lhhb;-><init>(Ljava/lang/String;F)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;F)V
+.method public constructor <init>(Lihb;Lbu3;)V
     .locals 0
 
-    .line 2
-    invoke-direct {p0, p1}, Landroid/util/FloatProperty;-><init>(Ljava/lang/String;)V
+    iput-object p1, p0, Lhhb;->Y:Lihb;
 
-    .line 3
-    iput p2, p0, Lhhb;->a:F
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    check-cast p1, Landroid/graphics/drawable/ShapeDrawable;
+    iput-object p1, p0, Lhhb;->X:Ljava/lang/Object;
 
-    iget p0, p0, Lhhb;->a:F
+    iget p1, p0, Lhhb;->Z:I
 
-    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lhhb;->Z:I
+
+    iget-object p1, p0, Lhhb;->Y:Lihb;
+
+    invoke-virtual {p1, p0}, Lihb;->b(Lbu3;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
-.end method
-
-.method public final setValue(Ljava/lang/Object;F)V
-    .locals 0
-
-    check-cast p1, Landroid/graphics/drawable/ShapeDrawable;
-
-    iput p2, p0, Lhhb;->a:F
-
-    return-void
 .end method

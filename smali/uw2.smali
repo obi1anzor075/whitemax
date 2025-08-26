@@ -1,160 +1,168 @@
 .class public final Luw2;
-.super Lt37;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lv56;
 
 
 # instance fields
-.field public final synthetic b:I
+.field public final synthetic a:I
 
-.field public final c:Lzv1;
+.field public final synthetic b:Lkl9;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lzv1;I)V
+.method public synthetic constructor <init>(Lkl9;I)V
     .locals 0
 
-    iput p2, p0, Luw2;->b:I
+    iput p2, p0, Luw2;->a:I
 
-    invoke-direct {p0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;-><init>()V
+    iput-object p1, p0, Luw2;->b:Lkl9;
 
-    iput-object p1, p0, Luw2;->c:Lzv1;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c()Z
-    .locals 0
+.method public final invoke()Ljava/lang/Object;
+    .locals 5
 
-    iget p0, p0, Luw2;->b:I
+    iget v0, p0, Luw2;->a:I
 
-    packed-switch p0, :pswitch_data_0
+    packed-switch v0, :pswitch_data_0
 
-    const/4 p0, 0x0
+    sget-object v0, Ljhb;->c:Ljhb;
 
-    return p0
+    iget-object p0, p0, Luw2;->b:Lkl9;
+
+    check-cast p0, Lthb;
+
+    iget-wide v1, p0, Lthb;->b:J
+
+    iget-boolean p0, p0, Lthb;->d:Z
+
+    invoke-virtual {v0}, Lu2;->D0()Ls64;
+
+    move-result-object v0
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, ":call-chat?chat_id="
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v3, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, "&video_enabled="
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, p0, v1}, Ls64;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 
     :pswitch_0
-    const/4 p0, 0x1
+    sget-object v0, Ljhb;->c:Ljhb;
 
-    return p0
+    iget-object p0, p0, Luw2;->b:Lkl9;
 
-    nop
+    check-cast p0, Lthb;
+
+    iget-object p0, p0, Lthb;->e:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lu2;->D0()Ls64;
+
+    move-result-object v0
+
+    const-string v1, ":call-join-link?link="
+
+    invoke-virtual {v1, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, p0, v1}, Ls64;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
+
+    :pswitch_1
+    sget-object v0, Ljhb;->c:Ljhb;
+
+    iget-object p0, p0, Luw2;->b:Lkl9;
+
+    check-cast p0, Lthb;
+
+    iget-wide v1, p0, Lthb;->b:J
+
+    iget-boolean p0, p0, Lthb;->d:Z
+
+    invoke-virtual {v0}, Lu2;->D0()Ls64;
+
+    move-result-object v0
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, ":call-user?opponent_id="
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v3, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, "&video_enabled="
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, p0, v1}, Ls64;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
+
+    :pswitch_2
+    sget-object v0, Lmr3;->c:Lmr3;
+
+    iget-object p0, p0, Luw2;->b:Lkl9;
+
+    check-cast p0, Lowd;
+
+    iget-wide v1, p0, Lowd;->b:J
+
+    iget-boolean p0, p0, Lowd;->c:Z
+
+    invoke-virtual {v0, v1, v2, p0}, Lmr3;->T0(JZ)V
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final d(Ljava/lang/Throwable;)V
-    .locals 1
-
-    iget p1, p0, Luw2;->b:I
-
-    packed-switch p1, :pswitch_data_0
-
-    iget-object p1, p0, Lt37;->a:Li47;
-
-    if-eqz p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    invoke-virtual {p1}, Li47;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
-
-    move-result-object p1
-
-    instance-of v0, p1, Lr73;
-
-    iget-object p0, p0, Luw2;->c:Lzv1;
-
-    if-eqz v0, :cond_1
-
-    check-cast p1, Lr73;
-
-    iget-object p1, p1, Lr73;->a:Ljava/lang/Throwable;
-
-    new-instance v0, Lkcc;
-
-    invoke-direct {v0, p1}, Lkcc;-><init>(Ljava/lang/Throwable;)V
-
-    invoke-interface {p0, v0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lj47;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-interface {p0, p1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
-
-    :goto_1
-    return-void
-
-    :pswitch_0
-    iget-object p1, p0, Lt37;->a:Li47;
-
-    if-eqz p1, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    const/4 p1, 0x0
-
-    :goto_2
-    iget-object p0, p0, Luw2;->c:Lzv1;
-
-    invoke-virtual {p0, p1}, Lzv1;->k(Li47;)Ljava/lang/Throwable;
-
-    move-result-object p1
-
-    invoke-virtual {p0}, Lzv1;->r()Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    const/4 v0, 0x0
-
-    goto :goto_3
-
-    :cond_3
-    iget-object v0, p0, Lzv1;->a:Lkotlin/coroutines/Continuation;
-
-    check-cast v0, Lkotlinx/coroutines/internal/DispatchedContinuation;
-
-    invoke-virtual {v0, p1}, Lkotlinx/coroutines/internal/DispatchedContinuation;->postponeCancellation$kotlinx_coroutines_core(Ljava/lang/Throwable;)Z
-
-    move-result v0
-
-    :goto_3
-    if-eqz v0, :cond_4
-
-    goto :goto_4
-
-    :cond_4
-    invoke-virtual {p0, p1}, Lzv1;->cancel(Ljava/lang/Throwable;)Z
-
-    invoke-virtual {p0}, Lzv1;->r()Z
-
-    move-result p1
-
-    if-nez p1, :cond_5
-
-    invoke-virtual {p0}, Lzv1;->h()V
-
-    :cond_5
-    :goto_4
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

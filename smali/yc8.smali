@@ -4,18 +4,20 @@
 
 
 # direct methods
-.method public static a(Landroid/content/Context;)Z
-    .locals 1
+.method public static a(Lki8;Z)V
+    .locals 0
 
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    if-eqz p1, :cond_0
 
-    move-result-object p0
+    const/4 p1, 0x1
 
-    const-string v0, "android.software.leanback"
+    goto :goto_0
 
-    invoke-virtual {p0, v0}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+    :cond_0
+    const/4 p1, 0x2
 
-    move-result p0
+    :goto_0
+    invoke-virtual {p0, p1}, Landroid/app/Service;->stopForeground(I)V
 
-    return p0
+    return-void
 .end method

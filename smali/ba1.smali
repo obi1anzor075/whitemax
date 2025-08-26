@@ -1,110 +1,88 @@
 .class public final Lba1;
-.super Ljava/lang/Object;
+.super Lca1;
 .source "SourceFile"
-
-# interfaces
-.implements Ls16;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:[Lpj5;
+.field public final b:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>([Lpj5;I)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 1
 
-    iput p2, p0, Lba1;->a:I
+    const/4 v0, 0x0
 
-    iput-object p1, p0, Lba1;->b:[Lpj5;
+    invoke-direct {p0, v0}, Lca1;-><init>(I)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lba1;->b:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-    iget v0, p0, Lba1;->a:I
+    const/4 v0, 0x1
 
-    packed-switch v0, :pswitch_data_0
+    if-ne p0, p1, :cond_0
 
-    iget-object p0, p0, Lba1;->b:[Lpj5;
+    return v0
 
-    array-length p0, p0
+    :cond_0
+    instance-of v1, p1, Lba1;
 
-    new-array p0, p0, [Lkta;
+    const/4 v2, 0x0
 
-    return-object p0
+    if-nez v1, :cond_1
 
-    :pswitch_0
-    iget-object p0, p0, Lba1;->b:[Lpj5;
+    return v2
 
-    array-length p0, p0
+    :cond_1
+    check-cast p1, Lba1;
 
-    new-array p0, p0, [Li22;
+    iget-object p0, p0, Lba1;->b:Ljava/lang/String;
 
-    return-object p0
+    iget-object p1, p1, Lba1;->b:Ljava/lang/String;
 
-    :pswitch_1
-    iget-object p0, p0, Lba1;->b:[Lpj5;
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    array-length p0, p0
+    move-result p0
 
-    new-array p0, p0, [Lz4a;
+    if-nez p0, :cond_2
 
-    return-object p0
+    return v2
 
-    :pswitch_2
-    iget-object p0, p0, Lba1;->b:[Lpj5;
+    :cond_2
+    return v0
+.end method
 
-    array-length p0, p0
+.method public final hashCode()I
+    .locals 0
 
-    new-array p0, p0, [Ltf3;
+    iget-object p0, p0, Lba1;->b:Ljava/lang/String;
 
-    return-object p0
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
-    :pswitch_3
-    iget-object p0, p0, Lba1;->b:[Lpj5;
+    move-result p0
 
-    array-length p0, p0
+    return p0
+.end method
 
-    new-array p0, p0, [Ljava/lang/Object;
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    return-object p0
+    const-string v0, "StartNewCall(link="
 
-    :pswitch_4
-    iget-object p0, p0, Lba1;->b:[Lpj5;
+    const-string v1, ")"
 
-    array-length p0, p0
+    iget-object p0, p0, Lba1;->b:Ljava/lang/String;
 
-    new-array p0, p0, [Ljava/util/List;
+    invoke-static {v0, p0, v1}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    return-object p0
-
-    :pswitch_5
-    iget-object p0, p0, Lba1;->b:[Lpj5;
-
-    array-length p0, p0
-
-    new-array p0, p0, [Ltf3;
+    move-result-object p0
 
     return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

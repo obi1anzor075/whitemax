@@ -1,180 +1,142 @@
 .class public final Lvs9;
-.super Ljava/util/concurrent/atomic/AtomicReference;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lbw9;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Ljava/lang/CharSequence;
 
-.field public final b:Lbw9;
+.field public final b:J
 
-.field public final c:Ljava/util/concurrent/atomic/AtomicInteger;
+.field public final c:Lasa;
+
+.field public final d:Landroid/os/Bundle;
+
+.field public e:Ljava/lang/String;
+
+.field public f:Landroid/net/Uri;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lbw9;Ljava/util/concurrent/atomic/AtomicInteger;I)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/CharSequence;JLasa;)V
+    .locals 1
 
-    iput p3, p0, Lvs9;->a:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+    new-instance v0, Landroid/os/Bundle;
 
-    iput-object p1, p0, Lvs9;->b:Lbw9;
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    iput-object p2, p0, Lvs9;->c:Ljava/util/concurrent/atomic/AtomicInteger;
+    iput-object v0, p0, Lvs9;->d:Landroid/os/Bundle;
+
+    iput-object p1, p0, Lvs9;->a:Ljava/lang/CharSequence;
+
+    iput-wide p2, p0, Lvs9;->b:J
+
+    iput-object p4, p0, Lvs9;->c:Lasa;
 
     return-void
 .end method
 
+.method public static a(Ljava/util/ArrayList;)[Landroid/os/Bundle;
+    .locals 9
 
-# virtual methods
-.method public final b()V
-    .locals 1
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
-    iget v0, p0, Lvs9;->a:I
+    move-result v0
 
-    packed-switch v0, :pswitch_data_0
+    new-array v0, v0, [Landroid/os/Bundle;
 
-    iget-object p0, p0, Lvs9;->c:Ljava/util/concurrent/atomic/AtomicInteger;
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
-    check-cast p0, Lxs9;
+    move-result v1
 
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
-    iput-boolean v0, p0, Lxs9;->Z:Z
+    :goto_0
+    if-ge v2, v1, :cond_5
 
-    invoke-virtual {p0}, Lxs9;->a()V
+    invoke-virtual {p0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    return-void
+    move-result-object v3
 
-    :pswitch_0
-    iget-object p0, p0, Lvs9;->c:Ljava/util/concurrent/atomic/AtomicInteger;
+    check-cast v3, Lvs9;
 
-    check-cast p0, Lws9;
+    iget-object v4, v3, Lvs9;->c:Lasa;
 
-    const/4 v0, 0x0
+    new-instance v5, Landroid/os/Bundle;
 
-    iput-boolean v0, p0, Lws9;->x0:Z
+    invoke-direct {v5}, Landroid/os/Bundle;-><init>()V
 
-    invoke-virtual {p0}, Lws9;->a()V
+    iget-object v6, v3, Lvs9;->a:Ljava/lang/CharSequence;
 
-    return-void
+    if-eqz v6, :cond_0
 
-    nop
+    const-string v7, "text"
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final c(Ljava/lang/Object;)V
-    .locals 1
-
-    iget v0, p0, Lvs9;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Lvs9;->b:Lbw9;
-
-    invoke-interface {p0, p1}, Lbw9;->c(Ljava/lang/Object;)V
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lvs9;->b:Lbw9;
-
-    invoke-interface {p0, p1}, Lbw9;->c(Ljava/lang/Object;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final d(Lxi4;)V
-    .locals 1
-
-    iget v0, p0, Lvs9;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-static {p0, p1}, Lbj4;->c(Ljava/util/concurrent/atomic/AtomicReference;Lxi4;)Z
-
-    return-void
-
-    :pswitch_0
-    invoke-static {p0, p1}, Lbj4;->c(Ljava/util/concurrent/atomic/AtomicReference;Lxi4;)Z
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final onError(Ljava/lang/Throwable;)V
-    .locals 1
-
-    iget v0, p0, Lvs9;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lvs9;->c:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    check-cast v0, Lxs9;
-
-    invoke-virtual {v0}, Lxs9;->f()V
-
-    iget-object p0, p0, Lvs9;->b:Lbw9;
-
-    invoke-interface {p0, p1}, Lbw9;->onError(Ljava/lang/Throwable;)V
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lvs9;->c:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    check-cast p0, Lws9;
-
-    iget-object v0, p0, Lws9;->o:Ley;
-
-    invoke-virtual {v0, p1}, Ley;->a(Ljava/lang/Throwable;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    iget-boolean p1, p0, Lws9;->Y:Z
-
-    if-nez p1, :cond_0
-
-    iget-object p1, p0, Lws9;->w0:Lxi4;
-
-    invoke-interface {p1}, Lxi4;->f()V
+    invoke-virtual {v5, v7, v6}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
 
     :cond_0
-    const/4 p1, 0x0
+    const-string v6, "time"
 
-    iput-boolean p1, p0, Lws9;->x0:Z
+    iget-wide v7, v3, Lvs9;->b:J
 
-    invoke-virtual {p0}, Lws9;->a()V
+    invoke-virtual {v5, v6, v7, v8}, Landroid/os/BaseBundle;->putLong(Ljava/lang/String;J)V
+
+    if-eqz v4, :cond_1
+
+    const-string v6, "sender"
+
+    iget-object v7, v4, Lasa;->a:Ljava/lang/CharSequence;
+
+    invoke-virtual {v5, v6, v7}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
+
+    invoke-static {v4}, Lzra;->b(Lasa;)Landroid/app/Person;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lus9;->a(Landroid/app/Person;)Landroid/os/Parcelable;
+
+    move-result-object v4
+
+    const-string v6, "sender_person"
+
+    invoke-virtual {v5, v6, v4}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     :cond_1
-    return-void
+    iget-object v4, v3, Lvs9;->e:Ljava/lang/String;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    if-eqz v4, :cond_2
+
+    const-string v6, "type"
+
+    invoke-virtual {v5, v6, v4}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_2
+    iget-object v4, v3, Lvs9;->f:Landroid/net/Uri;
+
+    if-eqz v4, :cond_3
+
+    const-string v6, "uri"
+
+    invoke-virtual {v5, v6, v4}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+
+    :cond_3
+    iget-object v3, v3, Lvs9;->d:Landroid/os/Bundle;
+
+    if-eqz v3, :cond_4
+
+    const-string v4, "extras"
+
+    invoke-virtual {v5, v4, v3}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
+
+    :cond_4
+    aput-object v5, v0, v2
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_5
+    return-object v0
 .end method

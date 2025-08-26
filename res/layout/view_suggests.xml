@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:id="@id/view_suggests__fl_root" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <one.me.sdk.lists.widgets.EmptyRecyclerView android:id="@id/view_suggests_rv_suggests" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:layout_marginBottom="8.0dip" />
-        <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/font_normal" android:ellipsize="end" android:gravity="center" android:layout_gravity="center" android:id="@id/view_suggests_tv_description" android:padding="11.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="3" />
-    </FrameLayout>
-</merge>

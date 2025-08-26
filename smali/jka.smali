@@ -1,74 +1,29 @@
-.class public final Ljka;
-.super Ll5e;
+.class public interface abstract Ljka;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Li26;
 
+# static fields
+.field public static final N:Lika;
 
-# instance fields
-.field public final synthetic X:Loka;
+.field public static final O:Lhka;
 
 
 # direct methods
-.method public constructor <init>(Loka;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Ljka;->X:Loka;
+    new-instance v0, Lika;
 
-    const/4 p1, 0x2
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    sput-object v0, Ljka;->N:Lika;
+
+    new-instance v0, Lhka;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Ljka;->O:Lhka;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Ljka;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Ljka;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Ljka;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 0
-
-    new-instance p1, Ljka;
-
-    iget-object p0, p0, Ljka;->X:Loka;
-
-    invoke-direct {p1, p0, p2}, Ljka;-><init>(Loka;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p0, p0, Ljka;->X:Loka;
-
-    invoke-virtual {p0}, Loka;->d()V
-
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
 .end method

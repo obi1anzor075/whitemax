@@ -1,41 +1,35 @@
-.class public final Lpr6;
+.class public interface abstract Lpr6;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final c:Lpr6;
-
-
-# instance fields
-.field public final a:J
-
-.field public final b:J
+# interfaces
+.implements Landroid/os/IInterface;
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    new-instance v0, Lpr6;
-
-    const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
-
-    invoke-direct {v0, v1, v2, v1, v2}, Lpr6;-><init>(JJ)V
-
-    sput-object v0, Lpr6;->c:Lpr6;
-
-    return-void
+# virtual methods
+.method public abstract T(Lsc8;)V
 .end method
 
-.method public constructor <init>(JJ)V
-    .locals 0
+.method public abstract e(Lu0b;)V
+.end method
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.method public abstract onExtrasChanged(Landroid/os/Bundle;)V
+.end method
 
-    iput-wide p1, p0, Lpr6;->a:J
+.method public abstract onQueueChanged(Ljava/util/List;)V
+.end method
 
-    iput-wide p3, p0, Lpr6;->b:J
+.method public abstract onQueueTitleChanged(Ljava/lang/CharSequence;)V
+.end method
 
-    return-void
+.method public abstract onRepeatModeChanged(I)V
+.end method
+
+.method public abstract onSessionDestroyed()V
+.end method
+
+.method public abstract onShuffleModeChanged(I)V
+.end method
+
+.method public abstract q(Lnna;)V
 .end method

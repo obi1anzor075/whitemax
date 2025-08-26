@@ -1,193 +1,131 @@
-.class public final Lsjf;
+.class public abstract Lsjf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final Companion:Lrjf;
+.field public static final a:Ljava/util/List;
 
-
-# instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:Ljava/lang/String;
-
-.field public final c:Ljava/lang/String;
+.field public static final b:Ljava/util/List;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 13
 
-    new-instance v0, Lrjf;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    sput-object v0, Lsjf;->Companion:Lrjf;
+    invoke-static {v0, v1}, Lpm5;->a(FF)J
+
+    move-result-wide v2
+
+    new-instance v4, Lpm5;
+
+    invoke-direct {v4, v2, v3}, Lpm5;-><init>(J)V
+
+    const/high16 v2, 0x44610000    # 900.0f
+
+    invoke-static {v2, v1}, Lpm5;->a(FF)J
+
+    move-result-wide v5
+
+    new-instance v3, Lpm5;
+
+    invoke-direct {v3, v5, v6}, Lpm5;-><init>(J)V
+
+    const v5, 0x44c1c000    # 1550.0f
+
+    invoke-static {v5, v0}, Lpm5;->a(FF)J
+
+    move-result-wide v6
+
+    new-instance v8, Lpm5;
+
+    invoke-direct {v8, v6, v7}, Lpm5;-><init>(J)V
+
+    const v6, 0x44dac000    # 1750.0f
+
+    invoke-static {v6, v1}, Lpm5;->a(FF)J
+
+    move-result-wide v9
+
+    new-instance v7, Lpm5;
+
+    invoke-direct {v7, v9, v10}, Lpm5;-><init>(J)V
+
+    const/high16 v9, 0x44fa0000    # 2000.0f
+
+    invoke-static {v9, v1}, Lpm5;->a(FF)J
+
+    move-result-wide v10
+
+    new-instance v12, Lpm5;
+
+    invoke-direct {v12, v10, v11}, Lpm5;-><init>(J)V
+
+    filled-new-array {v4, v3, v8, v7, v12}, [Lpm5;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lq43;->e0([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v3
+
+    sput-object v3, Lsjf;->a:Ljava/util/List;
+
+    new-instance v3, Lrr;
+
+    const v4, 0x3ba3d70a    # 0.005f
+
+    invoke-direct {v3, v0, v0, v4, v0}, Lrr;-><init>(FFFF)V
+
+    new-instance v4, Lrr;
+
+    const v7, 0x3f03d70a    # 0.515f
+
+    const/high16 v8, 0x43370000    # 183.0f
+
+    invoke-direct {v4, v2, v0, v7, v8}, Lrr;-><init>(FFFF)V
+
+    new-instance v0, Lrr;
+
+    const v2, 0x3f5be76d    # 0.859f
+
+    const/high16 v7, 0x43890000    # 274.0f
+
+    const v8, 0x3f05e354    # 0.523f
+
+    invoke-direct {v0, v5, v8, v2, v7}, Lrr;-><init>(FFFF)V
+
+    new-instance v2, Lrr;
+
+    const v5, 0x3f7020c5    # 0.938f
+
+    const v7, 0x43988000    # 305.0f
+
+    const v8, 0x3f445a1d    # 0.767f
+
+    invoke-direct {v2, v6, v8, v5, v7}, Lrr;-><init>(FFFF)V
+
+    new-instance v5, Lrr;
+
+    const v6, 0x3f7eb852    # 0.995f
+
+    const/high16 v7, 0x43b40000    # 360.0f
+
+    invoke-direct {v5, v9, v6, v1, v7}, Lrr;-><init>(FFFF)V
+
+    filled-new-array {v3, v4, v0, v2, v5}, [Lrr;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lq43;->e0([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    sput-object v0, Lsjf;->b:Ljava/util/List;
 
     return-void
-.end method
-
-.method public synthetic constructor <init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
-    .locals 2
-
-    and-int/lit8 v0, p2, 0x7
-
-    const/4 v1, 0x7
-
-    if-ne v1, v0, :cond_0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lsjf;->a:Ljava/lang/String;
-
-    iput-object p3, p0, Lsjf;->b:Ljava/lang/String;
-
-    iput-object p4, p0, Lsjf;->c:Ljava/lang/String;
-
-    return-void
-
-    :cond_0
-    sget-object p0, Lqjf;->a:Lqjf;
-
-    invoke-virtual {p0}, Lqjf;->d()Lsyc;
-
-    move-result-object p0
-
-    invoke-static {p2, v1, p0}, Lbm3;->I(IILsyc;)V
-
-    const/4 p0, 0x0
-
-    throw p0
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lsjf;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lsjf;
-
-    iget-object v1, p1, Lsjf;->a:Ljava/lang/String;
-
-    iget-object v3, p0, Lsjf;->a:Ljava/lang/String;
-
-    invoke-static {v3, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object v1, p0, Lsjf;->b:Ljava/lang/String;
-
-    iget-object v3, p1, Lsjf;->b:Ljava/lang/String;
-
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-object p0, p0, Lsjf;->c:Ljava/lang/String;
-
-    iget-object p1, p1, Lsjf;->c:Ljava/lang/String;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_4
-
-    return v2
-
-    :cond_4
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    iget-object v0, p0, Lsjf;->a:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget-object v2, p0, Lsjf;->b:Ljava/lang/String;
-
-    invoke-static {v0, v1, v2}, Lme4;->d(IILjava/lang/String;)I
-
-    move-result v0
-
-    iget-object p0, p0, Lsjf;->c:Ljava/lang/String;
-
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "WebAppDownloadFileRequest(requestId="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lsjf;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", url="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lsjf;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", fileName="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lsjf;->c:Ljava/lang/String;
-
-    const-string v1, ")"
-
-    invoke-static {v0, p0, v1}, Lwn6;->l(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

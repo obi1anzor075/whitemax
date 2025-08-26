@@ -1,108 +1,60 @@
-.class public final Ljzb;
+.class public abstract Ljzb;
 .super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Landroid/animation/Animator$AnimatorListener;
 
 
-# instance fields
-.field public final synthetic a:Z
+# static fields
+.field public static oneme_settings_storage_action_one_month:I = 0x7f13099e
 
-.field public final synthetic b:Llzb;
+.field public static oneme_settings_storage_action_one_week:I = 0x7f13099f
 
-.field public final synthetic c:Landroid/view/View;
+.field public static oneme_settings_storage_action_six_month:I = 0x7f1309a0
 
+.field public static oneme_settings_storage_action_unlimited:I = 0x7f1309a1
 
-# direct methods
-.method public constructor <init>(ZLlzb;Landroid/view/View;)V
-    .locals 0
+.field public static oneme_settings_storage_audio_messages:I = 0x7f1309a2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.field public static oneme_settings_storage_clear_cache:I = 0x7f1309a3
 
-    iput-boolean p1, p0, Ljzb;->a:Z
+.field public static oneme_settings_storage_clear_cache_dialog_action_cancel:I = 0x7f1309a4
 
-    iput-object p2, p0, Ljzb;->b:Llzb;
+.field public static oneme_settings_storage_clear_cache_dialog_action_clear:I = 0x7f1309a5
 
-    iput-object p3, p0, Ljzb;->c:Landroid/view/View;
+.field public static oneme_settings_storage_clear_cache_dialog_all_title:I = 0x7f1309a6
 
-    return-void
-.end method
+.field public static oneme_settings_storage_clear_cache_dialog_audio_title:I = 0x7f1309a7
 
+.field public static oneme_settings_storage_clear_cache_dialog_desc:I = 0x7f1309a8
 
-# virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 0
+.field public static oneme_settings_storage_clear_cache_dialog_files_title:I = 0x7f1309a9
 
-    return-void
-.end method
+.field public static oneme_settings_storage_clear_cache_dialog_gif_title:I = 0x7f1309aa
 
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+.field public static oneme_settings_storage_clear_cache_dialog_images_title:I = 0x7f1309ab
 
-    iget-boolean p1, p0, Ljzb;->a:Z
+.field public static oneme_settings_storage_clear_cache_dialog_music_title:I = 0x7f1309ac
 
-    if-eqz p1, :cond_2
+.field public static oneme_settings_storage_clear_cache_dialog_stickers_title:I = 0x7f1309ad
 
-    iget-object p1, p0, Ljzb;->b:Llzb;
+.field public static oneme_settings_storage_clear_cache_dialog_video_title:I = 0x7f1309ae
 
-    iget-object p1, p1, Llzb;->a:Ls16;
+.field public static oneme_settings_storage_clear_cache_success_snackbar:I = 0x7f1309af
 
-    invoke-interface {p1}, Ls16;->invoke()Ljava/lang/Object;
+.field public static oneme_settings_storage_files:I = 0x7f1309b0
 
-    move-result-object p1
+.field public static oneme_settings_storage_gif:I = 0x7f1309b1
 
-    check-cast p1, Ljava/lang/Boolean;
+.field public static oneme_settings_storage_images:I = 0x7f1309b2
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+.field public static oneme_settings_storage_music:I = 0x7f1309b3
 
-    move-result p1
+.field public static oneme_settings_storage_screen_data_section:I = 0x7f1309b4
 
-    iget-object p0, p0, Ljzb;->c:Landroid/view/View;
+.field public static oneme_settings_storage_screen_preserve_media_cache_desc:I = 0x7f1309b5
 
-    if-eqz p1, :cond_1
+.field public static oneme_settings_storage_screen_preserve_media_cache_title:I = 0x7f1309b6
 
-    instance-of p1, p0, Lvyb;
+.field public static oneme_settings_storage_screen_toolbar_title:I = 0x7f1309b7
 
-    if-eqz p1, :cond_0
+.field public static oneme_settings_storage_stickers:I = 0x7f1309b8
 
-    move-object p1, p0
-
-    check-cast p1, Lvyb;
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    if-eqz p1, :cond_2
-
-    invoke-virtual {p1}, Lvyb;->b()Z
-
-    move-result p1
-
-    const/4 v0, 0x1
-
-    if-ne p1, v0, :cond_2
-
-    :cond_1
-    sget-object p1, Lie6;->Y:Lie6;
-
-    invoke-static {p0, p1}, Llp;->K(Landroid/view/View;Lke6;)Z
-
-    :cond_2
-    return-void
-.end method
-
-.method public final onAnimationRepeat(Landroid/animation/Animator;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 0
-
-    return-void
-.end method
+.field public static oneme_settings_storage_video:I = 0x7f1309b9

@@ -192,7 +192,7 @@
 
     const-string p1, "Unsupported color format: "
 
-    invoke-static {p4, p1}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p4, p1}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -262,7 +262,7 @@
 
     const-string p1, "can not convert codec format to string: "
 
-    invoke-static {p1, p0}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p0}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -270,34 +270,32 @@
 .end method
 
 .method private copyI420Buffer(Ljava/nio/ByteBuffer;IIII)Lorg/webrtc/VideoFrame$Buffer;
-    .locals 18
+    .locals 17
 
     move-object/from16 v0, p1
-
-    move/from16 v3, p2
 
     move/from16 v6, p4
 
     move/from16 v7, p5
 
-    rem-int/lit8 v1, v3, 0x2
+    rem-int/lit8 v1, p2, 0x2
 
     if-nez v1, :cond_3
 
     add-int/lit8 v1, v6, 0x1
 
-    div-int/lit8 v9, v1, 0x2
+    div-int/lit8 v8, v1, 0x2
 
-    rem-int/lit8 v10, p3, 0x2
+    rem-int/lit8 v9, p3, 0x2
 
-    if-nez v10, :cond_0
+    if-nez v9, :cond_0
 
     add-int/lit8 v1, v7, 0x1
 
     div-int/lit8 v1, v1, 0x2
 
     :goto_0
-    move v11, v1
+    move v10, v1
 
     goto :goto_1
 
@@ -307,27 +305,27 @@
     goto :goto_0
 
     :goto_1
-    div-int/lit8 v12, v3, 0x2
+    div-int/lit8 v11, p2, 0x2
 
-    mul-int v1, v3, v7
+    mul-int v1, p2, v7
 
-    mul-int v13, v3, p3
+    mul-int v12, p2, p3
 
-    mul-int v2, v12, v11
+    mul-int v2, v11, v10
 
-    add-int v8, v13, v2
+    add-int v13, v12, v2
 
-    mul-int v4, v12, p3
+    mul-int v3, v11, p3
 
-    div-int/lit8 v4, v4, 0x2
+    div-int/lit8 v3, v3, 0x2
 
-    add-int v14, v4, v13
+    add-int v14, v3, v12
 
     add-int v15, v14, v2
 
-    move-object/from16 v5, p0
+    move-object/from16 v2, p0
 
-    invoke-virtual {v5, v6, v7}, Lorg/webrtc/AndroidVideoDecoder;->allocateI420Buffer(II)Lorg/webrtc/VideoFrame$I420Buffer;
+    invoke-virtual {v2, v6, v7}, Lorg/webrtc/AndroidVideoDecoder;->allocateI420Buffer(II)Lorg/webrtc/VideoFrame$I420Buffer;
 
     move-result-object v16
 
@@ -337,7 +335,7 @@
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/ByteBuffer;
 
-    invoke-virtual/range {p1 .. p1}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
 
     move-result-object v2
 
@@ -347,25 +345,19 @@
 
     invoke-interface/range {v16 .. v16}, Lorg/webrtc/VideoFrame$I420Buffer;->getStrideY()I
 
-    move-result v17
+    move-result v5
 
     move-object/from16 v1, p0
 
     move/from16 v3, p2
 
-    move/from16 v5, v17
-
-    move/from16 v6, p4
-
-    move/from16 v7, p5
-
     invoke-virtual/range {v1 .. v7}, Lorg/webrtc/AndroidVideoDecoder;->copyPlane(Ljava/nio/ByteBuffer;ILjava/nio/ByteBuffer;III)V
 
-    invoke-virtual {v0, v8}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v13}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/ByteBuffer;
 
-    invoke-virtual {v0, v13}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v12}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/ByteBuffer;
 
-    invoke-virtual/range {p1 .. p1}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
 
     move-result-object v3
 
@@ -379,25 +371,25 @@
 
     move-object/from16 v2, p0
 
-    move v4, v12
+    move v7, v8
 
-    move v7, v9
+    move v8, v10
 
-    move v8, v11
+    move v4, v11
 
     invoke-virtual/range {v2 .. v8}, Lorg/webrtc/AndroidVideoDecoder;->copyPlane(Ljava/nio/ByteBuffer;ILjava/nio/ByteBuffer;III)V
 
     const/4 v1, 0x1
 
-    if-ne v10, v1, :cond_1
+    if-ne v9, v1, :cond_1
 
-    add-int/lit8 v2, v11, -0x1
+    add-int/lit8 v10, v8, -0x1
 
-    mul-int/2addr v2, v12
+    mul-int/2addr v10, v4
 
-    add-int/2addr v2, v13
+    add-int/2addr v10, v12
 
-    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v10}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/ByteBuffer;
 
     invoke-interface/range {v16 .. v16}, Lorg/webrtc/VideoFrame$I420Buffer;->getDataU()Ljava/nio/ByteBuffer;
 
@@ -407,7 +399,7 @@
 
     move-result v3
 
-    mul-int/2addr v3, v11
+    mul-int/2addr v3, v8
 
     invoke-virtual {v2, v3}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/ByteBuffer;
 
@@ -418,7 +410,7 @@
 
     invoke-virtual {v0, v14}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/ByteBuffer;
 
-    invoke-virtual/range {p1 .. p1}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
 
     move-result-object v3
 
@@ -432,23 +424,17 @@
 
     move-object/from16 v2, p0
 
-    move v4, v12
-
-    move v7, v9
-
-    move v8, v11
-
     invoke-virtual/range {v2 .. v8}, Lorg/webrtc/AndroidVideoDecoder;->copyPlane(Ljava/nio/ByteBuffer;ILjava/nio/ByteBuffer;III)V
 
-    if-ne v10, v1, :cond_2
+    if-ne v9, v1, :cond_2
 
-    add-int/lit8 v1, v11, -0x1
+    add-int/lit8 v10, v8, -0x1
 
-    mul-int/2addr v1, v12
+    mul-int/2addr v10, v4
 
-    add-int/2addr v1, v14
+    add-int/2addr v10, v14
 
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v10}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/ByteBuffer;
 
     invoke-interface/range {v16 .. v16}, Lorg/webrtc/VideoFrame$I420Buffer;->getDataV()Ljava/nio/ByteBuffer;
 
@@ -458,7 +444,7 @@
 
     move-result v2
 
-    mul-int/2addr v2, v11
+    mul-int/2addr v2, v8
 
     invoke-virtual {v1, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/ByteBuffer;
 
@@ -468,11 +454,13 @@
     return-object v16
 
     :cond_3
+    move/from16 v3, p2
+
     new-instance v0, Ljava/lang/AssertionError;
 
     const-string v1, "Stride is not divisible by two: "
 
-    invoke-static {v3, v1}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v1}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -484,25 +472,23 @@
 .method private copyNV12ToI420Buffer(Ljava/nio/ByteBuffer;IIII)Lorg/webrtc/VideoFrame$Buffer;
     .locals 7
 
-    new-instance p0, Lorg/webrtc/NV12Buffer;
+    new-instance v0, Lorg/webrtc/NV12Buffer;
 
     const/4 v6, 0x0
 
-    move-object v0, p0
-
-    move v1, p4
-
-    move v2, p5
+    move-object v5, p1
 
     move v3, p2
 
     move v4, p3
 
-    move-object v5, p1
+    move v1, p4
+
+    move v2, p5
 
     invoke-direct/range {v0 .. v6}, Lorg/webrtc/NV12Buffer;-><init>(IIIILjava/nio/ByteBuffer;Ljava/lang/Runnable;)V
 
-    invoke-virtual {p0}, Lorg/webrtc/NV12Buffer;->toI420()Lorg/webrtc/VideoFrame$I420Buffer;
+    invoke-virtual {v0}, Lorg/webrtc/NV12Buffer;->toI420()Lorg/webrtc/VideoFrame$I420Buffer;
 
     move-result-object p0
 
@@ -522,34 +508,34 @@
 .end method
 
 .method private deliverByteFrame(ILandroid/media/MediaCodec$BufferInfo;ILjava/lang/Integer;)V
-    .locals 7
+    .locals 8
 
-    iget-object v0, p0, Lorg/webrtc/AndroidVideoDecoder;->dimensionLock:Ljava/lang/Object;
+    iget-object v1, p0, Lorg/webrtc/AndroidVideoDecoder;->dimensionLock:Ljava/lang/Object;
 
-    monitor-enter v0
+    monitor-enter v1
 
     :try_start_0
-    iget v5, p0, Lorg/webrtc/AndroidVideoDecoder;->width:I
+    iget v6, p0, Lorg/webrtc/AndroidVideoDecoder;->width:I
 
-    iget v6, p0, Lorg/webrtc/AndroidVideoDecoder;->height:I
+    iget v7, p0, Lorg/webrtc/AndroidVideoDecoder;->height:I
 
-    iget v1, p0, Lorg/webrtc/AndroidVideoDecoder;->stride:I
+    iget v0, p0, Lorg/webrtc/AndroidVideoDecoder;->stride:I
 
-    iget v4, p0, Lorg/webrtc/AndroidVideoDecoder;->sliceHeight:I
+    iget v5, p0, Lorg/webrtc/AndroidVideoDecoder;->sliceHeight:I
 
-    monitor-exit v0
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget v0, p2, Landroid/media/MediaCodec$BufferInfo;->size:I
+    iget v1, p2, Landroid/media/MediaCodec$BufferInfo;->size:I
 
-    mul-int v2, v5, v6
+    mul-int v2, v6, v7
 
     mul-int/lit8 v2, v2, 0x3
 
     div-int/lit8 v2, v2, 0x2
 
-    if-ge v0, v2, :cond_0
+    if-ge v1, v2, :cond_0
 
     const-string p0, "AndroidVideoDecoder"
 
@@ -559,7 +545,7 @@
 
     invoke-direct {p1, p2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -570,32 +556,27 @@
     return-void
 
     :cond_0
-    mul-int v2, v1, v6
+    mul-int v2, v0, v7
 
     mul-int/lit8 v2, v2, 0x3
 
     div-int/lit8 v2, v2, 0x2
 
-    if-ge v0, v2, :cond_1
+    if-ge v1, v2, :cond_1
 
-    if-ne v4, v6, :cond_1
+    if-ne v5, v7, :cond_1
 
-    if-le v1, v5, :cond_1
+    if-le v0, v6, :cond_1
 
-    mul-int/lit8 v0, v0, 0x2
+    mul-int/lit8 v1, v1, 0x2
 
-    mul-int/lit8 v1, v6, 0x3
+    mul-int/lit8 v0, v7, 0x3
 
-    div-int/2addr v0, v1
-
-    move v3, v0
-
-    goto :goto_0
+    div-int v0, v1, v0
 
     :cond_1
-    move v3, v1
+    move v4, v0
 
-    :goto_0
     iget-object v0, p0, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
 
     invoke-interface {v0, p1}, Lorg/webrtc/MediaCodecWrapper;->getOutputBuffer(I)Ljava/nio/ByteBuffer;
@@ -616,7 +597,7 @@
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
 
-    move-result-object v2
+    move-result-object v3
 
     iget v0, p0, Lorg/webrtc/AndroidVideoDecoder;->colorFormat:I
 
@@ -624,53 +605,55 @@
 
     if-ne v0, v1, :cond_2
 
-    move-object v1, p0
+    move-object v2, p0
 
-    invoke-direct/range {v1 .. v6}, Lorg/webrtc/AndroidVideoDecoder;->copyI420Buffer(Ljava/nio/ByteBuffer;IIII)Lorg/webrtc/VideoFrame$Buffer;
+    invoke-direct/range {v2 .. v7}, Lorg/webrtc/AndroidVideoDecoder;->copyI420Buffer(Ljava/nio/ByteBuffer;IIII)Lorg/webrtc/VideoFrame$Buffer;
 
-    move-result-object v0
+    move-result-object p0
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_2
-    move-object v1, p0
+    move-object v2, p0
 
-    invoke-direct/range {v1 .. v6}, Lorg/webrtc/AndroidVideoDecoder;->copyNV12ToI420Buffer(Ljava/nio/ByteBuffer;IIII)Lorg/webrtc/VideoFrame$Buffer;
+    invoke-direct/range {v2 .. v7}, Lorg/webrtc/AndroidVideoDecoder;->copyNV12ToI420Buffer(Ljava/nio/ByteBuffer;IIII)Lorg/webrtc/VideoFrame$Buffer;
 
-    move-result-object v0
+    move-result-object p0
 
-    :goto_1
-    iget-object v1, p0, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
+    :goto_0
+    iget-object v0, v2, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    invoke-interface {v1, p1, v2}, Lorg/webrtc/MediaCodecWrapper;->releaseOutputBuffer(IZ)V
+    invoke-interface {v0, p1, v1}, Lorg/webrtc/MediaCodecWrapper;->releaseOutputBuffer(IZ)V
 
     iget-wide p1, p2, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
-    const-wide/16 v1, 0x3e8
+    const-wide/16 v0, 0x3e8
 
-    mul-long/2addr p1, v1
+    mul-long/2addr p1, v0
 
-    new-instance v1, Lorg/webrtc/VideoFrame;
+    new-instance v0, Lorg/webrtc/VideoFrame;
 
-    invoke-direct {v1, v0, p3, p1, p2}, Lorg/webrtc/VideoFrame;-><init>(Lorg/webrtc/VideoFrame$Buffer;IJ)V
+    invoke-direct {v0, p0, p3, p1, p2}, Lorg/webrtc/VideoFrame;-><init>(Lorg/webrtc/VideoFrame$Buffer;IJ)V
 
-    iget-object p0, p0, Lorg/webrtc/AndroidVideoDecoder;->callback:Lorg/webrtc/VideoDecoder$Callback;
+    iget-object p0, v2, Lorg/webrtc/AndroidVideoDecoder;->callback:Lorg/webrtc/VideoDecoder$Callback;
 
     const/4 p1, 0x0
 
-    invoke-interface {p0, v1, p4, p1}, Lorg/webrtc/VideoDecoder$Callback;->onDecodedFrame(Lorg/webrtc/VideoFrame;Ljava/lang/Integer;Ljava/lang/Integer;)V
+    invoke-interface {p0, v0, p4, p1}, Lorg/webrtc/VideoDecoder$Callback;->onDecodedFrame(Lorg/webrtc/VideoFrame;Ljava/lang/Integer;Ljava/lang/Integer;)V
 
-    invoke-virtual {v1}, Lorg/webrtc/VideoFrame;->release()V
+    invoke-virtual {v0}, Lorg/webrtc/VideoFrame;->release()V
 
     return-void
 
     :catchall_0
-    move-exception p0
+    move-exception v0
+
+    move-object p0, v0
 
     :try_start_1
-    monitor-exit v0
+    monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -790,176 +773,174 @@
 .end method
 
 .method private initDecodeInternal(IIJ)Lorg/webrtc/VideoCodecStatus;
-    .locals 15
+    .locals 14
 
-    move-object v1, p0
+    move/from16 v2, p2
 
-    move/from16 v2, p1
+    const-string v3, "Cannot create media decoder "
 
-    move/from16 v3, p2
+    const-string v4, "hwdec.ise\n"
 
-    const-string v4, "Cannot create media decoder "
-
-    const-string v5, "hwdec.ise\n"
-
-    const-string v6, "hwdec.iae\n"
+    const-string v5, "hwdec.iae\n"
 
     const-string v0, "initDecodeInternal "
 
+    const-string v6, "initDecodeInternal "
+
     const-string v7, "initDecodeInternal "
 
-    const-string v8, "initDecodeInternal "
+    iget-object v8, p0, Lorg/webrtc/AndroidVideoDecoder;->decoderThreadChecker:Lorg/webrtc/ThreadUtils$ThreadChecker;
 
-    iget-object v9, v1, Lorg/webrtc/AndroidVideoDecoder;->decoderThreadChecker:Lorg/webrtc/ThreadUtils$ThreadChecker;
+    invoke-virtual {v8}, Lorg/webrtc/ThreadUtils$ThreadChecker;->checkIsOnValidThread()V
 
-    invoke-virtual {v9}, Lorg/webrtc/ThreadUtils$ThreadChecker;->checkIsOnValidThread()V
+    iget-object v8, p0, Lorg/webrtc/AndroidVideoDecoder;->initLock:Ljava/lang/Object;
 
-    iget-object v9, v1, Lorg/webrtc/AndroidVideoDecoder;->initLock:Ljava/lang/Object;
-
-    monitor-enter v9
+    monitor-enter v8
 
     :try_start_0
-    iget-object v10, v1, Lorg/webrtc/AndroidVideoDecoder;->sharedContext:Lorg/webrtc/EglBase$Context;
+    iget-object v9, p0, Lorg/webrtc/AndroidVideoDecoder;->sharedContext:Lorg/webrtc/EglBase$Context;
 
-    if-eqz v10, :cond_0
+    if-eqz v9, :cond_0
 
     invoke-virtual {p0}, Lorg/webrtc/AndroidVideoDecoder;->createSurfaceTextureHelper()Lorg/webrtc/SurfaceTextureHelper;
 
+    move-result-object v9
+
+    iput-object v9, p0, Lorg/webrtc/AndroidVideoDecoder;->surfaceTextureHelper:Lorg/webrtc/SurfaceTextureHelper;
+
+    new-instance v9, Landroid/view/Surface;
+
+    iget-object v10, p0, Lorg/webrtc/AndroidVideoDecoder;->surfaceTextureHelper:Lorg/webrtc/SurfaceTextureHelper;
+
+    invoke-virtual {v10}, Lorg/webrtc/SurfaceTextureHelper;->getSurfaceTexture()Landroid/graphics/SurfaceTexture;
+
     move-result-object v10
 
-    iput-object v10, v1, Lorg/webrtc/AndroidVideoDecoder;->surfaceTextureHelper:Lorg/webrtc/SurfaceTextureHelper;
+    invoke-direct {v9, v10}, Landroid/view/Surface;-><init>(Landroid/graphics/SurfaceTexture;)V
 
-    new-instance v10, Landroid/view/Surface;
+    iput-object v9, p0, Lorg/webrtc/AndroidVideoDecoder;->surface:Landroid/view/Surface;
 
-    iget-object v11, v1, Lorg/webrtc/AndroidVideoDecoder;->surfaceTextureHelper:Lorg/webrtc/SurfaceTextureHelper;
+    iget-object v9, p0, Lorg/webrtc/AndroidVideoDecoder;->surfaceTextureHelper:Lorg/webrtc/SurfaceTextureHelper;
 
-    invoke-virtual {v11}, Lorg/webrtc/SurfaceTextureHelper;->getSurfaceTexture()Landroid/graphics/SurfaceTexture;
-
-    move-result-object v11
-
-    invoke-direct {v10, v11}, Landroid/view/Surface;-><init>(Landroid/graphics/SurfaceTexture;)V
-
-    iput-object v10, v1, Lorg/webrtc/AndroidVideoDecoder;->surface:Landroid/view/Surface;
-
-    iget-object v10, v1, Lorg/webrtc/AndroidVideoDecoder;->surfaceTextureHelper:Lorg/webrtc/SurfaceTextureHelper;
-
-    invoke-virtual {v10, p0}, Lorg/webrtc/SurfaceTextureHelper;->startListening(Lorg/webrtc/VideoSink;)V
+    invoke-virtual {v9, p0}, Lorg/webrtc/SurfaceTextureHelper;->startListening(Lorg/webrtc/VideoSink;)V
 
     goto :goto_0
 
     :catchall_0
     move-exception v0
 
+    move-object p0, v0
+
     goto/16 :goto_5
 
     :cond_0
     :goto_0
-    const-string v10, "AndroidVideoDecoder"
+    const-string v9, "AndroidVideoDecoder"
 
-    iget-object v11, v1, Lorg/webrtc/AndroidVideoDecoder;->codecType:Lorg/webrtc/VideoCodecMimeType;
+    iget-object v10, p0, Lorg/webrtc/AndroidVideoDecoder;->codecType:Lorg/webrtc/VideoCodecMimeType;
 
-    invoke-virtual {v11}, Lorg/webrtc/VideoCodecMimeType;->mimeType()Ljava/lang/String;
+    invoke-virtual {v10}, Lorg/webrtc/VideoCodecMimeType;->mimeType()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v10
 
-    iget v12, v1, Lorg/webrtc/AndroidVideoDecoder;->colorFormat:I
+    iget v11, p0, Lorg/webrtc/AndroidVideoDecoder;->colorFormat:I
 
-    iget-object v13, v1, Lorg/webrtc/AndroidVideoDecoder;->surface:Landroid/view/Surface;
+    iget-object v12, p0, Lorg/webrtc/AndroidVideoDecoder;->surface:Landroid/view/Surface;
 
-    new-instance v14, Ljava/lang/StringBuilder;
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    invoke-direct {v14, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v13, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v14, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v8, " "
+    const-string v7, " "
 
-    invoke-virtual {v14, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v14, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v8, " x "
+    const-string v7, " x "
 
-    invoke-virtual {v14, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v14, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v8, " "
+    const-string v7, " "
 
-    invoke-virtual {v14, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v14, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v8, " "
+    const-string v7, " "
 
-    invoke-virtual {v14, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v14, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v10, v8}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v8, v1, Lorg/webrtc/AndroidVideoDecoder;->surface:Landroid/view/Surface;
-
-    const/4 v10, 0x1
-
-    if-eqz v8, :cond_1
-
-    const-string v8, "AndroidVideoDecoder"
-
-    iget-object v11, v1, Lorg/webrtc/AndroidVideoDecoder;->surface:Landroid/view/Surface;
-
-    invoke-virtual {v11}, Landroid/view/Surface;->isValid()Z
-
-    move-result v11
-
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    invoke-direct {v12, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v12, v11}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v7
 
-    invoke-static {v8, v7}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v9, v7}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v7, p0, Lorg/webrtc/AndroidVideoDecoder;->surface:Landroid/view/Surface;
+
+    const/4 v9, 0x1
+
+    if-eqz v7, :cond_1
+
+    const-string v7, "AndroidVideoDecoder"
+
+    iget-object v10, p0, Lorg/webrtc/AndroidVideoDecoder;->surface:Landroid/view/Surface;
+
+    invoke-virtual {v10}, Landroid/view/Surface;->isValid()Z
+
+    move-result v10
+
+    new-instance v11, Ljava/lang/StringBuilder;
+
+    invoke-direct {v11, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v11, v10}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v7, v6}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :try_start_1
-    const-class v7, Landroid/view/Surface;
+    const-class v6, Landroid/view/Surface;
 
-    const-string v8, "mNativeObject"
+    const-string v7, "mNativeObject"
 
-    invoke-virtual {v7, v8}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+    invoke-virtual {v6, v7}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {v7, v10}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
+    invoke-virtual {v6, v9}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
 
-    iget-object v8, v1, Lorg/webrtc/AndroidVideoDecoder;->surface:Landroid/view/Surface;
+    iget-object v7, p0, Lorg/webrtc/AndroidVideoDecoder;->surface:Landroid/view/Surface;
 
-    invoke-virtual {v7, v8}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v6, v7}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    const-string v8, "AndroidVideoDecoder"
+    const-string v7, "AndroidVideoDecoder"
 
-    new-instance v11, Ljava/lang/StringBuilder;
+    new-instance v10, Ljava/lang/StringBuilder;
 
-    invoke-direct {v11, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v10, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v11, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v8, v0}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v7, v0}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -970,99 +951,99 @@
     move-exception v0
 
     :try_start_2
-    const-string v7, "AndroidVideoDecoder"
+    const-string v6, "AndroidVideoDecoder"
 
-    const-string v8, "initDecodeInternal "
+    const-string v7, "initDecodeInternal "
 
-    invoke-static {v7, v8, v0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v6, v7, v0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_1
     :goto_1
-    iget-object v0, v1, Lorg/webrtc/AndroidVideoDecoder;->outputThread:Ljava/lang/Thread;
+    iget-object v0, p0, Lorg/webrtc/AndroidVideoDecoder;->outputThread:Ljava/lang/Thread;
 
     if-eqz v0, :cond_2
 
-    const-string v0, "AndroidVideoDecoder"
+    const-string p0, "AndroidVideoDecoder"
 
-    const-string v1, "initDecodeInternal called while the codec is already running"
+    const-string v0, "initDecodeInternal called while the codec is already running"
 
-    invoke-static {v0, v1}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    sget-object v0, Lorg/webrtc/VideoCodecStatus;->FALLBACK_SOFTWARE:Lorg/webrtc/VideoCodecStatus;
+    sget-object p0, Lorg/webrtc/VideoCodecStatus;->FALLBACK_SOFTWARE:Lorg/webrtc/VideoCodecStatus;
 
-    monitor-exit v9
+    monitor-exit v8
 
-    return-object v0
+    return-object p0
 
     :cond_2
-    iget-object v7, v1, Lorg/webrtc/AndroidVideoDecoder;->dimensionLock:Ljava/lang/Object;
+    iget-object v6, p0, Lorg/webrtc/AndroidVideoDecoder;->dimensionLock:Ljava/lang/Object;
 
-    monitor-enter v7
+    monitor-enter v6
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     :try_start_3
-    iput v2, v1, Lorg/webrtc/AndroidVideoDecoder;->width:I
+    iput p1, p0, Lorg/webrtc/AndroidVideoDecoder;->width:I
 
-    iput v3, v1, Lorg/webrtc/AndroidVideoDecoder;->height:I
+    iput v2, p0, Lorg/webrtc/AndroidVideoDecoder;->height:I
 
-    iput v2, v1, Lorg/webrtc/AndroidVideoDecoder;->stride:I
+    iput p1, p0, Lorg/webrtc/AndroidVideoDecoder;->stride:I
 
-    iput v3, v1, Lorg/webrtc/AndroidVideoDecoder;->sliceHeight:I
+    iput v2, p0, Lorg/webrtc/AndroidVideoDecoder;->sliceHeight:I
 
-    monitor-exit v7
+    monitor-exit v6
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     const/4 v0, 0x0
 
     :try_start_4
-    iput-boolean v0, v1, Lorg/webrtc/AndroidVideoDecoder;->hasDecodedFirstFrame:Z
+    iput-boolean v0, p0, Lorg/webrtc/AndroidVideoDecoder;->hasDecodedFirstFrame:Z
 
-    iput-boolean v10, v1, Lorg/webrtc/AndroidVideoDecoder;->keyFrameRequired:Z
+    iput-boolean v9, p0, Lorg/webrtc/AndroidVideoDecoder;->keyFrameRequired:Z
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     :try_start_5
-    iget-object v7, v1, Lorg/webrtc/AndroidVideoDecoder;->mediaCodecWrapperFactory:Lorg/webrtc/MediaCodecWrapperFactory;
+    iget-object v6, p0, Lorg/webrtc/AndroidVideoDecoder;->mediaCodecWrapperFactory:Lorg/webrtc/MediaCodecWrapperFactory;
 
-    iget-object v8, v1, Lorg/webrtc/AndroidVideoDecoder;->codecName:Ljava/lang/String;
+    iget-object v7, p0, Lorg/webrtc/AndroidVideoDecoder;->codecName:Ljava/lang/String;
 
-    invoke-interface {v7, v8}, Lorg/webrtc/MediaCodecWrapperFactory;->createByCodecName(Ljava/lang/String;)Lorg/webrtc/MediaCodecWrapper;
+    invoke-interface {v6, v7}, Lorg/webrtc/MediaCodecWrapperFactory;->createByCodecName(Ljava/lang/String;)Lorg/webrtc/MediaCodecWrapper;
 
-    move-result-object v7
+    move-result-object v6
 
-    iput-object v7, v1, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
+    iput-object v6, p0, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
     .catch Ljava/lang/IllegalArgumentException; {:try_start_5 .. :try_end_5} :catch_3
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     :try_start_6
-    const-string v4, ""
+    const-string v3, ""
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     :try_start_7
-    iget-object v7, v1, Lorg/webrtc/AndroidVideoDecoder;->codecType:Lorg/webrtc/VideoCodecMimeType;
+    iget-object v6, p0, Lorg/webrtc/AndroidVideoDecoder;->codecType:Lorg/webrtc/VideoCodecMimeType;
 
-    invoke-virtual {v7}, Lorg/webrtc/VideoCodecMimeType;->mimeType()Ljava/lang/String;
+    invoke-virtual {v6}, Lorg/webrtc/VideoCodecMimeType;->mimeType()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-static {v7, v2, v3}, Landroid/media/MediaFormat;->createVideoFormat(Ljava/lang/String;II)Landroid/media/MediaFormat;
+    invoke-static {v6, p1, v2}, Landroid/media/MediaFormat;->createVideoFormat(Ljava/lang/String;II)Landroid/media/MediaFormat;
 
-    move-result-object v2
+    move-result-object v1
 
-    iget-object v3, v1, Lorg/webrtc/AndroidVideoDecoder;->sharedContext:Lorg/webrtc/EglBase$Context;
+    iget-object v2, p0, Lorg/webrtc/AndroidVideoDecoder;->sharedContext:Lorg/webrtc/EglBase$Context;
 
-    if-nez v3, :cond_3
+    if-nez v2, :cond_3
 
-    const-string v3, "color-format"
+    const-string v2, "color-format"
 
-    iget v7, v1, Lorg/webrtc/AndroidVideoDecoder;->colorFormat:I
+    iget v6, p0, Lorg/webrtc/AndroidVideoDecoder;->colorFormat:I
 
-    invoke-virtual {v2, v3, v7}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
+    invoke-virtual {v1, v2, v6}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     goto :goto_2
 
@@ -1078,25 +1059,25 @@
 
     :cond_3
     :goto_2
-    iget-object v3, v1, Lorg/webrtc/AndroidVideoDecoder;->codecName:Ljava/lang/String;
+    iget-object v2, p0, Lorg/webrtc/AndroidVideoDecoder;->codecName:Ljava/lang/String;
 
-    invoke-static {v3, v2}, Lorg/webrtc/AndroidVideoDecoder;->codecConfigToString(Ljava/lang/String;Landroid/media/MediaFormat;)Ljava/lang/String;
+    invoke-static {v2, v1}, Lorg/webrtc/AndroidVideoDecoder;->codecConfigToString(Ljava/lang/String;Landroid/media/MediaFormat;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    const-string v3, "AndroidVideoDecoder"
+    const-string v2, "AndroidVideoDecoder"
 
-    invoke-static {v3, v4}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v3, v1, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
+    iget-object v2, p0, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
 
-    iget-object v7, v1, Lorg/webrtc/AndroidVideoDecoder;->surface:Landroid/view/Surface;
+    iget-object v6, p0, Lorg/webrtc/AndroidVideoDecoder;->surface:Landroid/view/Surface;
 
-    const/4 v8, 0x0
+    const/4 v7, 0x0
 
-    invoke-interface {v3, v2, v7, v8, v0}, Lorg/webrtc/MediaCodecWrapper;->configure(Landroid/media/MediaFormat;Landroid/view/Surface;Landroid/media/MediaCrypto;I)V
+    invoke-interface {v2, v1, v6, v7, v0}, Lorg/webrtc/MediaCodecWrapper;->configure(Landroid/media/MediaFormat;Landroid/view/Surface;Landroid/media/MediaCrypto;I)V
 
-    iget-object v0, v1, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
+    iget-object v0, p0, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
 
     invoke-interface {v0}, Lorg/webrtc/MediaCodecWrapper;->start()V
     :try_end_7
@@ -1105,144 +1086,146 @@
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
     :try_start_8
-    iget-object v0, v1, Lorg/webrtc/AndroidVideoDecoder;->control:Lorg/webrtc/DecoderSsrcControl;
+    iget-object v0, p0, Lorg/webrtc/AndroidVideoDecoder;->control:Lorg/webrtc/DecoderSsrcControl;
 
-    move-wide/from16 v2, p3
+    move-wide/from16 v1, p3
 
-    invoke-interface {v0, p0, v2, v3}, Lorg/webrtc/DecoderSsrcControl;->onDecoderInit(Lorg/webrtc/AndroidVideoDecoder;J)V
+    invoke-interface {v0, p0, v1, v2}, Lorg/webrtc/DecoderSsrcControl;->onDecoderInit(Lorg/webrtc/AndroidVideoDecoder;J)V
 
-    iget-object v0, v1, Lorg/webrtc/AndroidVideoDecoder;->frameInfos:Ljava/util/concurrent/BlockingDeque;
+    iget-object v0, p0, Lorg/webrtc/AndroidVideoDecoder;->frameInfos:Ljava/util/concurrent/BlockingDeque;
 
     invoke-interface {v0}, Ljava/util/Collection;->clear()V
 
-    iput-boolean v10, v1, Lorg/webrtc/AndroidVideoDecoder;->running:Z
+    iput-boolean v9, p0, Lorg/webrtc/AndroidVideoDecoder;->running:Z
 
     invoke-direct {p0}, Lorg/webrtc/AndroidVideoDecoder;->createOutputThread()Ljava/lang/Thread;
 
     move-result-object v0
 
-    iput-object v0, v1, Lorg/webrtc/AndroidVideoDecoder;->outputThread:Ljava/lang/Thread;
+    iput-object v0, p0, Lorg/webrtc/AndroidVideoDecoder;->outputThread:Ljava/lang/Thread;
 
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    const-string v0, "AndroidVideoDecoder"
+    const-string p0, "AndroidVideoDecoder"
 
-    const-string v1, "initDecodeInternal done"
+    const-string v0, "initDecodeInternal done"
 
-    invoke-static {v0, v1}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    sget-object v0, Lorg/webrtc/VideoCodecStatus;->OK:Lorg/webrtc/VideoCodecStatus;
+    sget-object p0, Lorg/webrtc/VideoCodecStatus;->OK:Lorg/webrtc/VideoCodecStatus;
 
-    monitor-exit v9
+    monitor-exit v8
 
-    return-object v0
+    return-object p0
 
     :goto_3
-    sget-object v2, Lorg/webrtc/AndroidVideoDecoder;->errorCallback:Lorg/webrtc/AndroidVideoDecoder$ErrorCallback;
+    sget-object v1, Lorg/webrtc/AndroidVideoDecoder;->errorCallback:Lorg/webrtc/AndroidVideoDecoder$ErrorCallback;
 
-    if-eqz v2, :cond_4
+    if-eqz v1, :cond_4
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-interface {v2, v0, v3}, Lorg/webrtc/AndroidVideoDecoder$ErrorCallback;->error(Ljava/lang/Exception;Ljava/lang/String;)V
+    invoke-interface {v1, v0, v2}, Lorg/webrtc/AndroidVideoDecoder$ErrorCallback;->error(Ljava/lang/Exception;Ljava/lang/String;)V
 
     :cond_4
-    const-string v2, "AndroidVideoDecoder"
+    const-string v1, "AndroidVideoDecoder"
 
-    const-string v3, "initDecode failed"
+    const-string v2, "initDecode failed"
 
-    invoke-static {v2, v3, v0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v1, v2, v0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     invoke-virtual {p0}, Lorg/webrtc/AndroidVideoDecoder;->release()Lorg/webrtc/VideoCodecStatus;
 
-    sget-object v0, Lorg/webrtc/VideoCodecStatus;->FALLBACK_SOFTWARE:Lorg/webrtc/VideoCodecStatus;
+    sget-object p0, Lorg/webrtc/VideoCodecStatus;->FALLBACK_SOFTWARE:Lorg/webrtc/VideoCodecStatus;
 
-    monitor-exit v9
+    monitor-exit v8
 
-    return-object v0
+    return-object p0
 
     :goto_4
-    const-string v2, "AndroidVideoDecoder"
+    const-string v1, "AndroidVideoDecoder"
 
-    const-string v3, "initDecode failed"
+    const-string v2, "initDecode failed"
 
-    invoke-static {v2, v3, v0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v1, v2, v0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    sget-object v2, Lorg/webrtc/AndroidVideoDecoder;->errorCallback:Lorg/webrtc/AndroidVideoDecoder$ErrorCallback;
+    sget-object v1, Lorg/webrtc/AndroidVideoDecoder;->errorCallback:Lorg/webrtc/AndroidVideoDecoder$ErrorCallback;
 
-    if-eqz v2, :cond_5
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-interface {v2, v0, v3}, Lorg/webrtc/AndroidVideoDecoder$ErrorCallback;->error(Ljava/lang/Exception;Ljava/lang/String;)V
-
-    :cond_5
-    invoke-virtual {p0}, Lorg/webrtc/AndroidVideoDecoder;->release()Lorg/webrtc/VideoCodecStatus;
-
-    sget-object v0, Lorg/webrtc/VideoCodecStatus;->FALLBACK_SOFTWARE:Lorg/webrtc/VideoCodecStatus;
-
-    monitor-exit v9
-
-    return-object v0
-
-    :catch_3
-    const-string v0, "AndroidVideoDecoder"
-
-    iget-object v1, v1, Lorg/webrtc/AndroidVideoDecoder;->codecName:Ljava/lang/String;
+    if-eqz v1, :cond_5
 
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v0, v1}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v1, v0, v2}, Lorg/webrtc/AndroidVideoDecoder$ErrorCallback;->error(Ljava/lang/Exception;Ljava/lang/String;)V
 
-    sget-object v0, Lorg/webrtc/VideoCodecStatus;->FALLBACK_SOFTWARE:Lorg/webrtc/VideoCodecStatus;
+    :cond_5
+    invoke-virtual {p0}, Lorg/webrtc/AndroidVideoDecoder;->release()Lorg/webrtc/VideoCodecStatus;
 
-    monitor-exit v9
+    sget-object p0, Lorg/webrtc/VideoCodecStatus;->FALLBACK_SOFTWARE:Lorg/webrtc/VideoCodecStatus;
+
+    monitor-exit v8
+
+    return-object p0
+
+    :catch_3
+    const-string v0, "AndroidVideoDecoder"
+
+    iget-object p0, p0, Lorg/webrtc/AndroidVideoDecoder;->codecName:Ljava/lang/String;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {v0, p0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;)V
+
+    sget-object p0, Lorg/webrtc/VideoCodecStatus;->FALLBACK_SOFTWARE:Lorg/webrtc/VideoCodecStatus;
+
+    monitor-exit v8
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
-    return-object v0
+    return-object p0
 
     :catchall_1
     move-exception v0
 
+    move-object p0, v0
+
     :try_start_9
-    monitor-exit v7
+    monitor-exit v6
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_1
 
     :try_start_a
-    throw v0
+    throw p0
 
     :goto_5
-    monitor-exit v9
+    monitor-exit v8
     :try_end_a
     .catchall {:try_start_a .. :try_end_a} :catchall_0
 
-    throw v0
+    throw p0
 .end method
 
 .method private isSupportedColorFormat(I)Z
@@ -1524,7 +1507,7 @@
 
     const-string v1, "Unsupported color format: "
 
-    invoke-static {v0, v1}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1820,127 +1803,121 @@
 .end method
 
 .method public decode(Lorg/webrtc/EncodedImage;Lorg/webrtc/VideoDecoder$DecodeInfo;J)Lorg/webrtc/VideoCodecStatus;
-    .locals 18
+    .locals 11
 
-    move-object/from16 v7, p0
-
-    move-object/from16 v0, p1
-
-    move-wide/from16 v8, p3
-
-    iget-object v1, v7, Lorg/webrtc/AndroidVideoDecoder;->decoderThreadChecker:Lorg/webrtc/ThreadUtils$ThreadChecker;
+    iget-object v1, p0, Lorg/webrtc/AndroidVideoDecoder;->decoderThreadChecker:Lorg/webrtc/ThreadUtils$ThreadChecker;
 
     invoke-virtual {v1}, Lorg/webrtc/ThreadUtils$ThreadChecker;->checkIsOnValidThread()V
 
-    iget-object v1, v7, Lorg/webrtc/AndroidVideoDecoder;->callback:Lorg/webrtc/VideoDecoder$Callback;
+    iget-object v1, p0, Lorg/webrtc/AndroidVideoDecoder;->callback:Lorg/webrtc/VideoDecoder$Callback;
 
     const/4 v2, 0x1
 
-    const/4 v10, 0x0
+    const/4 v7, 0x0
 
     if-nez v1, :cond_1
 
     const-string v0, "AndroidVideoDecoder"
 
-    iget-object v1, v7, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
+    iget-object v1, p0, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
 
     if-eqz v1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    move v2, v10
+    move v2, v7
 
     :goto_0
-    iget-object v1, v7, Lorg/webrtc/AndroidVideoDecoder;->callback:Lorg/webrtc/VideoDecoder$Callback;
+    iget-object p0, p0, Lorg/webrtc/AndroidVideoDecoder;->callback:Lorg/webrtc/VideoDecoder$Callback;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v4, "decode uninitalized, codec: "
+    const-string v3, "decode uninitalized, codec: "
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     const-string v2, ", callback: "
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-static {v0, v1}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, p0}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    sget-object v0, Lorg/webrtc/VideoCodecStatus;->UNINITIALIZED:Lorg/webrtc/VideoCodecStatus;
+    sget-object p0, Lorg/webrtc/VideoCodecStatus;->UNINITIALIZED:Lorg/webrtc/VideoCodecStatus;
 
-    return-object v0
+    return-object p0
 
     :cond_1
-    iget-object v1, v7, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
+    iget-object v1, p0, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
 
-    const-wide/16 v3, 0x0
+    const-wide/16 v5, 0x0
 
     if-nez v1, :cond_5
 
-    cmp-long v1, v8, v3
+    cmp-long v1, p3, v5
 
     if-nez v1, :cond_3
 
     const-string v0, "AndroidVideoDecoder"
 
-    iget-object v1, v7, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
+    iget-object v1, p0, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
 
     if-eqz v1, :cond_2
 
     goto :goto_1
 
     :cond_2
-    move v2, v10
+    move v2, v7
 
     :goto_1
-    iget-object v1, v7, Lorg/webrtc/AndroidVideoDecoder;->callback:Lorg/webrtc/VideoDecoder$Callback;
+    iget-object p0, p0, Lorg/webrtc/AndroidVideoDecoder;->callback:Lorg/webrtc/VideoDecoder$Callback;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v4, "decode uninitalized, codec: "
+    const-string v3, "decode uninitalized, codec: "
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     const-string v2, ", callback: "
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-static {v0, v1}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, p0}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    sget-object v0, Lorg/webrtc/VideoCodecStatus;->UNINITIALIZED:Lorg/webrtc/VideoCodecStatus;
+    sget-object p0, Lorg/webrtc/VideoCodecStatus;->UNINITIALIZED:Lorg/webrtc/VideoCodecStatus;
 
-    return-object v0
+    return-object p0
 
     :cond_3
-    iget-object v1, v7, Lorg/webrtc/AndroidVideoDecoder;->control:Lorg/webrtc/DecoderSsrcControl;
+    iget-object v1, p0, Lorg/webrtc/AndroidVideoDecoder;->control:Lorg/webrtc/DecoderSsrcControl;
 
-    invoke-interface {v1, v7, v8, v9}, Lorg/webrtc/DecoderSsrcControl;->ssrcAllowedCodecInit(Lorg/webrtc/AndroidVideoDecoder;J)Z
+    invoke-interface {v1, p0, p3, p4}, Lorg/webrtc/DecoderSsrcControl;->ssrcAllowedCodecInit(Lorg/webrtc/AndroidVideoDecoder;J)Z
 
     move-result v1
 
     if-eqz v1, :cond_4
 
-    iget v1, v0, Lorg/webrtc/EncodedImage;->encodedWidth:I
+    iget v1, p1, Lorg/webrtc/EncodedImage;->encodedWidth:I
 
-    iget v2, v0, Lorg/webrtc/EncodedImage;->encodedHeight:I
+    iget v2, p1, Lorg/webrtc/EncodedImage;->encodedHeight:I
 
-    invoke-direct {v7, v1, v2, v8, v9}, Lorg/webrtc/AndroidVideoDecoder;->initDecodeInternal(IIJ)Lorg/webrtc/VideoCodecStatus;
+    invoke-direct {p0, v1, v2, p3, p4}, Lorg/webrtc/AndroidVideoDecoder;->initDecodeInternal(IIJ)Lorg/webrtc/VideoCodecStatus;
 
     move-result-object v1
 
@@ -1951,110 +1928,112 @@
     return-object v1
 
     :cond_4
-    sget-object v0, Lorg/webrtc/VideoCodecStatus;->NO_OUTPUT:Lorg/webrtc/VideoCodecStatus;
+    sget-object p0, Lorg/webrtc/VideoCodecStatus;->NO_OUTPUT:Lorg/webrtc/VideoCodecStatus;
 
-    return-object v0
+    return-object p0
 
     :cond_5
-    cmp-long v1, v8, v3
+    cmp-long v1, p3, v5
 
     if-eqz v1, :cond_6
 
-    iget-object v1, v7, Lorg/webrtc/AndroidVideoDecoder;->control:Lorg/webrtc/DecoderSsrcControl;
+    iget-object v1, p0, Lorg/webrtc/AndroidVideoDecoder;->control:Lorg/webrtc/DecoderSsrcControl;
 
-    invoke-interface {v1, v7, v8, v9}, Lorg/webrtc/DecoderSsrcControl;->ssrcAllowedDecode(Lorg/webrtc/AndroidVideoDecoder;J)Z
+    invoke-interface {v1, p0, p3, p4}, Lorg/webrtc/DecoderSsrcControl;->ssrcAllowedDecode(Lorg/webrtc/AndroidVideoDecoder;J)Z
 
     move-result v1
 
     if-nez v1, :cond_6
 
-    sget-object v0, Lorg/webrtc/VideoCodecStatus;->NO_OUTPUT:Lorg/webrtc/VideoCodecStatus;
+    sget-object p0, Lorg/webrtc/VideoCodecStatus;->NO_OUTPUT:Lorg/webrtc/VideoCodecStatus;
 
-    return-object v0
+    return-object p0
 
     :cond_6
-    iget-object v1, v0, Lorg/webrtc/EncodedImage;->buffer:Ljava/nio/ByteBuffer;
+    iget-object v1, p1, Lorg/webrtc/EncodedImage;->buffer:Ljava/nio/ByteBuffer;
 
     if-nez v1, :cond_7
 
-    const-string v0, "AndroidVideoDecoder"
+    const-string p0, "AndroidVideoDecoder"
 
-    const-string v1, "decode() - no input data"
+    const-string v0, "decode() - no input data"
 
-    invoke-static {v0, v1}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    sget-object v0, Lorg/webrtc/VideoCodecStatus;->ERR_PARAMETER:Lorg/webrtc/VideoCodecStatus;
+    sget-object p0, Lorg/webrtc/VideoCodecStatus;->ERR_PARAMETER:Lorg/webrtc/VideoCodecStatus;
 
-    return-object v0
+    return-object p0
 
     :cond_7
     invoke-virtual {v1}, Ljava/nio/Buffer;->remaining()I
 
-    move-result v14
+    move-result v8
 
-    if-nez v14, :cond_8
+    if-nez v8, :cond_8
 
-    const-string v0, "AndroidVideoDecoder"
+    const-string p0, "AndroidVideoDecoder"
 
-    const-string v1, "decode() - input buffer empty"
+    const-string v0, "decode() - input buffer empty"
 
-    invoke-static {v0, v1}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    sget-object v0, Lorg/webrtc/VideoCodecStatus;->ERR_PARAMETER:Lorg/webrtc/VideoCodecStatus;
+    sget-object p0, Lorg/webrtc/VideoCodecStatus;->ERR_PARAMETER:Lorg/webrtc/VideoCodecStatus;
 
-    return-object v0
+    return-object p0
 
     :cond_8
-    iget-wide v5, v7, Lorg/webrtc/AndroidVideoDecoder;->ssrc:J
+    move-wide v1, v5
 
-    cmp-long v1, v5, v8
+    iget-wide v5, p0, Lorg/webrtc/AndroidVideoDecoder;->ssrc:J
+
+    cmp-long v9, v5, p3
+
+    if-eqz v9, :cond_9
+
+    iget-wide v9, p0, Lorg/webrtc/AndroidVideoDecoder;->ssrc:J
+
+    cmp-long v1, v9, v1
 
     if-eqz v1, :cond_9
 
-    iget-wide v1, v7, Lorg/webrtc/AndroidVideoDecoder;->ssrc:J
+    iget-object v1, p0, Lorg/webrtc/AndroidVideoDecoder;->control:Lorg/webrtc/DecoderSsrcControl;
 
-    cmp-long v1, v1, v3
+    move-object v2, p0
 
-    if-eqz v1, :cond_9
-
-    iget-object v1, v7, Lorg/webrtc/AndroidVideoDecoder;->control:Lorg/webrtc/DecoderSsrcControl;
-
-    move-object/from16 v2, p0
-
-    move-wide/from16 v3, p3
+    move-wide v3, p3
 
     invoke-interface/range {v1 .. v6}, Lorg/webrtc/DecoderSsrcControl;->onDecoderSsrcChanged(Lorg/webrtc/AndroidVideoDecoder;JJ)V
 
-    iput-wide v8, v7, Lorg/webrtc/AndroidVideoDecoder;->ssrc:J
+    iput-wide p3, p0, Lorg/webrtc/AndroidVideoDecoder;->ssrc:J
 
     :cond_9
-    iget-object v1, v7, Lorg/webrtc/AndroidVideoDecoder;->dimensionLock:Ljava/lang/Object;
+    iget-object v1, p0, Lorg/webrtc/AndroidVideoDecoder;->dimensionLock:Ljava/lang/Object;
 
     monitor-enter v1
 
     :try_start_0
-    iget v2, v7, Lorg/webrtc/AndroidVideoDecoder;->width:I
+    iget v2, p0, Lorg/webrtc/AndroidVideoDecoder;->width:I
 
-    iget v3, v7, Lorg/webrtc/AndroidVideoDecoder;->height:I
+    iget v5, p0, Lorg/webrtc/AndroidVideoDecoder;->height:I
 
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget v1, v0, Lorg/webrtc/EncodedImage;->encodedWidth:I
+    iget v1, p1, Lorg/webrtc/EncodedImage;->encodedWidth:I
 
-    iget v4, v0, Lorg/webrtc/EncodedImage;->encodedHeight:I
+    iget v6, p1, Lorg/webrtc/EncodedImage;->encodedHeight:I
 
-    mul-int v5, v1, v4
+    mul-int v10, v1, v6
 
-    if-lez v5, :cond_b
+    if-lez v10, :cond_b
 
     if-ne v1, v2, :cond_a
 
-    if-eq v4, v3, :cond_b
+    if-eq v6, v5, :cond_b
 
     :cond_a
-    invoke-direct {v7, v1, v4, v8, v9}, Lorg/webrtc/AndroidVideoDecoder;->reinitDecode(IIJ)Lorg/webrtc/VideoCodecStatus;
+    invoke-direct {p0, v1, v6, p3, p4}, Lorg/webrtc/AndroidVideoDecoder;->reinitDecode(IIJ)Lorg/webrtc/VideoCodecStatus;
 
     move-result-object v1
 
@@ -2065,146 +2044,150 @@
     return-object v1
 
     :cond_b
-    iget-boolean v1, v7, Lorg/webrtc/AndroidVideoDecoder;->keyFrameRequired:Z
+    iget-boolean v1, p0, Lorg/webrtc/AndroidVideoDecoder;->keyFrameRequired:Z
 
     if-eqz v1, :cond_c
 
-    iget-object v1, v0, Lorg/webrtc/EncodedImage;->frameType:Lorg/webrtc/EncodedImage$FrameType;
+    iget-object v1, p1, Lorg/webrtc/EncodedImage;->frameType:Lorg/webrtc/EncodedImage$FrameType;
 
     sget-object v2, Lorg/webrtc/EncodedImage$FrameType;->VideoFrameKey:Lorg/webrtc/EncodedImage$FrameType;
 
     if-eq v1, v2, :cond_c
 
-    const-string v0, "AndroidVideoDecoder"
+    const-string p0, "AndroidVideoDecoder"
 
-    const-string v1, "decode() - key frame required first"
+    const-string v0, "decode() - key frame required first"
 
-    invoke-static {v0, v1}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    sget-object v0, Lorg/webrtc/VideoCodecStatus;->NO_OUTPUT:Lorg/webrtc/VideoCodecStatus;
+    sget-object p0, Lorg/webrtc/VideoCodecStatus;->NO_OUTPUT:Lorg/webrtc/VideoCodecStatus;
 
-    return-object v0
+    return-object p0
 
     :cond_c
     :try_start_1
-    iget-object v1, v7, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
+    iget-object v1, p0, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
 
     const-wide/32 v2, 0x7a120
 
     invoke-interface {v1, v2, v3}, Lorg/webrtc/MediaCodecWrapper;->dequeueInputBuffer(J)I
 
-    move-result v12
+    move-result v1
     :try_end_1
     .catch Ljava/lang/IllegalStateException; {:try_start_1 .. :try_end_1} :catch_2
 
-    if-gez v12, :cond_d
+    if-gez v1, :cond_d
 
-    const-string v0, "AndroidVideoDecoder"
+    const-string p0, "AndroidVideoDecoder"
 
-    const-string v1, "decode() - no HW buffers available; decoder falling behind"
+    const-string v0, "decode() - no HW buffers available; decoder falling behind"
 
-    invoke-static {v0, v1}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    sget-object v0, Lorg/webrtc/VideoCodecStatus;->ERROR:Lorg/webrtc/VideoCodecStatus;
+    sget-object p0, Lorg/webrtc/VideoCodecStatus;->ERROR:Lorg/webrtc/VideoCodecStatus;
 
-    return-object v0
+    return-object p0
 
     :cond_d
     :try_start_2
-    iget-object v1, v7, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
+    iget-object v2, p0, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
 
-    invoke-interface {v1, v12}, Lorg/webrtc/MediaCodecWrapper;->getInputBuffer(I)Ljava/nio/ByteBuffer;
+    invoke-interface {v2, v1}, Lorg/webrtc/MediaCodecWrapper;->getInputBuffer(I)Ljava/nio/ByteBuffer;
 
-    move-result-object v1
+    move-result-object v2
     :try_end_2
     .catch Ljava/lang/IllegalStateException; {:try_start_2 .. :try_end_2} :catch_1
 
-    invoke-virtual {v1}, Ljava/nio/Buffer;->capacity()I
+    invoke-virtual {v2}, Ljava/nio/Buffer;->capacity()I
 
-    move-result v2
+    move-result v3
 
-    if-ge v2, v14, :cond_e
+    if-ge v3, v8, :cond_e
 
-    const-string v0, "AndroidVideoDecoder"
+    const-string p0, "AndroidVideoDecoder"
 
-    const-string v1, "decode() - HW buffer too small"
+    const-string v0, "decode() - HW buffer too small"
 
-    invoke-static {v0, v1}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    sget-object v0, Lorg/webrtc/VideoCodecStatus;->ERROR:Lorg/webrtc/VideoCodecStatus;
+    sget-object p0, Lorg/webrtc/VideoCodecStatus;->ERROR:Lorg/webrtc/VideoCodecStatus;
 
-    return-object v0
+    return-object p0
 
     :cond_e
-    iget-object v2, v0, Lorg/webrtc/EncodedImage;->buffer:Ljava/nio/ByteBuffer;
+    iget-object v3, p1, Lorg/webrtc/EncodedImage;->buffer:Ljava/nio/ByteBuffer;
 
-    invoke-virtual {v1, v2}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
+    invoke-virtual {v2, v3}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
 
-    const-string v1, "AndroidVideoDecoder"
+    const-string v2, "AndroidVideoDecoder"
 
-    iget-object v2, v7, Lorg/webrtc/AndroidVideoDecoder;->frameInfos:Ljava/util/concurrent/BlockingDeque;
+    iget-object v3, p0, Lorg/webrtc/AndroidVideoDecoder;->frameInfos:Ljava/util/concurrent/BlockingDeque;
 
-    invoke-interface {v2}, Ljava/util/concurrent/BlockingDeque;->size()I
+    invoke-interface {v3}, Ljava/util/concurrent/BlockingDeque;->size()I
 
-    move-result v2
+    move-result v3
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    const-string v4, "frameInfos: "
+    const-string v5, "frameInfos: "
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-static {v1, v2}, Lorg/webrtc/Logging;->v(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lorg/webrtc/Logging;->v(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v1, v7, Lorg/webrtc/AndroidVideoDecoder;->frameInfos:Ljava/util/concurrent/BlockingDeque;
+    iget-object v2, p0, Lorg/webrtc/AndroidVideoDecoder;->frameInfos:Ljava/util/concurrent/BlockingDeque;
 
-    new-instance v2, Lorg/webrtc/AndroidVideoDecoder$FrameInfo;
+    new-instance v3, Lorg/webrtc/AndroidVideoDecoder$FrameInfo;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iget v5, v0, Lorg/webrtc/EncodedImage;->rotation:I
+    iget v6, p1, Lorg/webrtc/EncodedImage;->rotation:I
 
-    invoke-direct {v2, v3, v4, v5}, Lorg/webrtc/AndroidVideoDecoder$FrameInfo;-><init>(JI)V
+    invoke-direct {v3, v4, v5, v6}, Lorg/webrtc/AndroidVideoDecoder$FrameInfo;-><init>(JI)V
 
-    invoke-interface {v1, v2}, Ljava/util/concurrent/BlockingDeque;->offer(Ljava/lang/Object;)Z
+    invoke-interface {v2, v3}, Ljava/util/concurrent/BlockingDeque;->offer(Ljava/lang/Object;)Z
 
     :try_start_3
-    iget-object v11, v7, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
+    iget-object v2, p0, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
 
-    sget-object v1, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
+    sget-object v3, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
 
-    iget-wide v2, v0, Lorg/webrtc/EncodedImage;->captureTimeNs:J
+    iget-wide v4, p1, Lorg/webrtc/EncodedImage;->captureTimeNs:J
 
-    invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/TimeUnit;->toMicros(J)J
+    invoke-virtual {v3, v4, v5}, Ljava/util/concurrent/TimeUnit;->toMicros(J)J
 
-    move-result-wide v15
+    move-result-wide v4
 
-    const/16 v17, 0x0
+    const/4 v6, 0x0
 
-    const/4 v13, 0x0
+    move-object v0, v2
 
-    invoke-interface/range {v11 .. v17}, Lorg/webrtc/MediaCodecWrapper;->queueInputBuffer(IIIJI)V
+    const/4 v2, 0x0
+
+    move v3, v8
+
+    invoke-interface/range {v0 .. v6}, Lorg/webrtc/MediaCodecWrapper;->queueInputBuffer(IIIJI)V
     :try_end_3
     .catch Ljava/lang/IllegalStateException; {:try_start_3 .. :try_end_3} :catch_0
 
-    iget-boolean v0, v7, Lorg/webrtc/AndroidVideoDecoder;->keyFrameRequired:Z
+    iget-boolean v0, p0, Lorg/webrtc/AndroidVideoDecoder;->keyFrameRequired:Z
 
     if-eqz v0, :cond_f
 
-    iput-boolean v10, v7, Lorg/webrtc/AndroidVideoDecoder;->keyFrameRequired:Z
+    iput-boolean v7, p0, Lorg/webrtc/AndroidVideoDecoder;->keyFrameRequired:Z
 
     :cond_f
-    sget-object v0, Lorg/webrtc/VideoCodecStatus;->OK:Lorg/webrtc/VideoCodecStatus;
+    sget-object p0, Lorg/webrtc/VideoCodecStatus;->OK:Lorg/webrtc/VideoCodecStatus;
 
-    return-object v0
+    return-object p0
 
     :catch_0
     move-exception v0
@@ -2215,18 +2198,20 @@
 
     invoke-static {v1, v2, v0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    iget-object v0, v7, Lorg/webrtc/AndroidVideoDecoder;->frameInfos:Ljava/util/concurrent/BlockingDeque;
+    iget-object p0, p0, Lorg/webrtc/AndroidVideoDecoder;->frameInfos:Ljava/util/concurrent/BlockingDeque;
 
-    invoke-interface {v0}, Ljava/util/Deque;->pollLast()Ljava/lang/Object;
+    invoke-interface {p0}, Ljava/util/Deque;->pollLast()Ljava/lang/Object;
 
-    sget-object v0, Lorg/webrtc/VideoCodecStatus;->ERROR:Lorg/webrtc/VideoCodecStatus;
+    sget-object p0, Lorg/webrtc/VideoCodecStatus;->ERROR:Lorg/webrtc/VideoCodecStatus;
 
-    return-object v0
+    return-object p0
 
     :catch_1
     move-exception v0
 
-    const-string v1, "AndroidVideoDecoder"
+    move-object p0, v0
+
+    const-string v0, "AndroidVideoDecoder"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -2234,44 +2219,48 @@
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v2, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v3, " failed"
+    const-string v1, " failed"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v1, v2, v0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v0, v1, p0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    sget-object v0, Lorg/webrtc/VideoCodecStatus;->ERROR:Lorg/webrtc/VideoCodecStatus;
+    sget-object p0, Lorg/webrtc/VideoCodecStatus;->ERROR:Lorg/webrtc/VideoCodecStatus;
 
-    return-object v0
+    return-object p0
 
     :catch_2
     move-exception v0
 
-    const-string v1, "AndroidVideoDecoder"
+    move-object p0, v0
 
-    const-string v2, "dequeueInputBuffer failed"
+    const-string v0, "AndroidVideoDecoder"
 
-    invoke-static {v1, v2, v0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    const-string v1, "dequeueInputBuffer failed"
 
-    sget-object v0, Lorg/webrtc/VideoCodecStatus;->ERROR:Lorg/webrtc/VideoCodecStatus;
+    invoke-static {v0, v1, p0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    return-object v0
+    sget-object p0, Lorg/webrtc/VideoCodecStatus;->ERROR:Lorg/webrtc/VideoCodecStatus;
+
+    return-object p0
 
     :catchall_0
     move-exception v0
+
+    move-object p0, v0
 
     :try_start_4
     monitor-exit v1
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    throw v0
+    throw p0
 .end method
 
 .method public deliverDecodedFrame()V
@@ -2379,21 +2368,20 @@
 
     invoke-direct {p0, v3, v2, v1, v4}, Lorg/webrtc/AndroidVideoDecoder;->deliverTextureFrame(ILandroid/media/MediaCodec$BufferInfo;ILjava/lang/Integer;)V
 
-    goto :goto_2
+    return-void
 
     :cond_3
     invoke-direct {p0, v3, v2, v1, v4}, Lorg/webrtc/AndroidVideoDecoder;->deliverByteFrame(ILandroid/media/MediaCodec$BufferInfo;ILjava/lang/Integer;)V
     :try_end_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_2
+    return-void
 
     :goto_1
     const-string v1, "deliverDecodedFrame failed"
 
     invoke-static {v0, v1, p0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_2
     return-void
 .end method
 
@@ -2574,7 +2562,7 @@
     :catchall_0
     move-exception p0
 
-    goto/16 :goto_a
+    goto/16 :goto_b
 
     :cond_0
     const/4 v1, 0x0
@@ -2629,7 +2617,7 @@
     :catchall_1
     move-exception v1
 
-    goto/16 :goto_7
+    goto/16 :goto_8
 
     :cond_1
     :goto_0
@@ -2670,7 +2658,7 @@
     :catchall_2
     move-exception v1
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_2
     :goto_1
@@ -2688,6 +2676,7 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_3
 
+    :goto_2
     :try_start_6
     monitor-exit v0
     :try_end_6
@@ -2706,7 +2695,7 @@
     :try_start_8
     throw p0
 
-    :goto_2
+    :goto_3
     iget-object v3, p0, Lorg/webrtc/AndroidVideoDecoder;->renderedTextureMetadataLock:Ljava/lang/Object;
 
     monitor-enter v3
@@ -2799,15 +2788,15 @@
     :try_end_f
     .catchall {:try_start_f .. :try_end_f} :catchall_5
 
-    goto :goto_3
+    goto :goto_4
 
     :catchall_5
     move-exception v1
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_5
-    :goto_3
+    :goto_4
     :try_start_10
     iget-object v3, p0, Lorg/webrtc/AndroidVideoDecoder;->renderedTextureMetadataLock:Ljava/lang/Object;
 
@@ -2819,65 +2808,57 @@
     iput-object v2, p0, Lorg/webrtc/AndroidVideoDecoder;->renderedTextureMetadata:Lorg/webrtc/AndroidVideoDecoder$DecodedTextureMetadata;
 
     monitor-exit v3
-    :try_end_11
-    .catchall {:try_start_11 .. :try_end_11} :catchall_6
 
-    :try_start_12
-    monitor-exit v0
-    :try_end_12
-    .catchall {:try_start_12 .. :try_end_12} :catchall_0
-
-    return-object v1
+    goto :goto_2
 
     :catchall_6
     move-exception p0
 
-    :try_start_13
     monitor-exit v3
-    :try_end_13
-    .catchall {:try_start_13 .. :try_end_13} :catchall_6
+    :try_end_11
+    .catchall {:try_start_11 .. :try_end_11} :catchall_6
 
-    :try_start_14
+    :try_start_12
     throw p0
 
-    :goto_4
+    :goto_5
     iget-object v3, p0, Lorg/webrtc/AndroidVideoDecoder;->renderedTextureMetadataLock:Ljava/lang/Object;
 
     monitor-enter v3
+    :try_end_12
+    .catchall {:try_start_12 .. :try_end_12} :catchall_0
+
+    :try_start_13
+    iput-object v2, p0, Lorg/webrtc/AndroidVideoDecoder;->renderedTextureMetadata:Lorg/webrtc/AndroidVideoDecoder$DecodedTextureMetadata;
+
+    monitor-exit v3
+    :try_end_13
+    .catchall {:try_start_13 .. :try_end_13} :catchall_7
+
+    :try_start_14
+    throw v1
     :try_end_14
     .catchall {:try_start_14 .. :try_end_14} :catchall_0
 
-    :try_start_15
-    iput-object v2, p0, Lorg/webrtc/AndroidVideoDecoder;->renderedTextureMetadata:Lorg/webrtc/AndroidVideoDecoder$DecodedTextureMetadata;
+    :catchall_7
+    move-exception p0
 
+    :try_start_15
     monitor-exit v3
     :try_end_15
     .catchall {:try_start_15 .. :try_end_15} :catchall_7
 
     :try_start_16
-    throw v1
-    :try_end_16
-    .catchall {:try_start_16 .. :try_end_16} :catchall_0
-
-    :catchall_7
-    move-exception p0
-
-    :try_start_17
-    monitor-exit v3
-    :try_end_17
-    .catchall {:try_start_17 .. :try_end_17} :catchall_7
-
-    :try_start_18
     throw p0
 
     :cond_6
     iput-object v2, p0, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
 
     iput-object v2, p0, Lorg/webrtc/AndroidVideoDecoder;->outputThread:Ljava/lang/Thread;
-    :try_end_18
-    .catchall {:try_start_18 .. :try_end_18} :catchall_0
+    :try_end_16
+    .catchall {:try_start_16 .. :try_end_16} :catchall_0
 
-    :try_start_19
+    :try_start_17
     iget-object v1, p0, Lorg/webrtc/AndroidVideoDecoder;->surface:Landroid/view/Surface;
 
     if-eqz v1, :cond_7
@@ -2895,33 +2876,33 @@
     invoke-virtual {v1}, Lorg/webrtc/SurfaceTextureHelper;->dispose()V
 
     iput-object v2, p0, Lorg/webrtc/AndroidVideoDecoder;->surfaceTextureHelper:Lorg/webrtc/SurfaceTextureHelper;
-    :try_end_19
-    .catchall {:try_start_19 .. :try_end_19} :catchall_8
+    :try_end_17
+    .catchall {:try_start_17 .. :try_end_17} :catchall_8
 
-    goto :goto_5
+    goto :goto_6
 
     :catchall_8
     move-exception v1
 
-    goto :goto_6
+    goto :goto_7
 
     :cond_7
-    :goto_5
-    :try_start_1a
+    :goto_6
+    :try_start_18
     iget-object v1, p0, Lorg/webrtc/AndroidVideoDecoder;->renderedTextureMetadataLock:Ljava/lang/Object;
 
     monitor-enter v1
-    :try_end_1a
-    .catchall {:try_start_1a .. :try_end_1a} :catchall_0
+    :try_end_18
+    .catchall {:try_start_18 .. :try_end_18} :catchall_0
 
-    :try_start_1b
+    :try_start_19
     iput-object v2, p0, Lorg/webrtc/AndroidVideoDecoder;->renderedTextureMetadata:Lorg/webrtc/AndroidVideoDecoder$DecodedTextureMetadata;
 
     monitor-exit v1
-    :try_end_1b
-    .catchall {:try_start_1b .. :try_end_1b} :catchall_9
+    :try_end_19
+    .catchall {:try_start_19 .. :try_end_19} :catchall_9
 
-    :try_start_1c
+    :try_start_1a
     iget-object v1, p0, Lorg/webrtc/AndroidVideoDecoder;->frameInfos:Ljava/util/concurrent/BlockingDeque;
 
     invoke-interface {v1}, Ljava/util/Collection;->clear()V
@@ -2933,8 +2914,8 @@
     invoke-interface {v1, p0, v2, v3}, Lorg/webrtc/DecoderSsrcControl;->onDecoderRelease(Lorg/webrtc/AndroidVideoDecoder;J)V
 
     monitor-exit v0
-    :try_end_1c
-    .catchall {:try_start_1c .. :try_end_1c} :catchall_0
+    :try_end_1a
+    .catchall {:try_start_1a .. :try_end_1a} :catchall_0
 
     sget-object p0, Lorg/webrtc/VideoCodecStatus;->OK:Lorg/webrtc/VideoCodecStatus;
 
@@ -2943,52 +2924,52 @@
     :catchall_9
     move-exception p0
 
-    :try_start_1d
+    :try_start_1b
     monitor-exit v1
-    :try_end_1d
-    .catchall {:try_start_1d .. :try_end_1d} :catchall_9
+    :try_end_1b
+    .catchall {:try_start_1b .. :try_end_1b} :catchall_9
 
-    :try_start_1e
+    :try_start_1c
     throw p0
 
-    :goto_6
+    :goto_7
     iget-object v3, p0, Lorg/webrtc/AndroidVideoDecoder;->renderedTextureMetadataLock:Ljava/lang/Object;
 
     monitor-enter v3
+    :try_end_1c
+    .catchall {:try_start_1c .. :try_end_1c} :catchall_0
+
+    :try_start_1d
+    iput-object v2, p0, Lorg/webrtc/AndroidVideoDecoder;->renderedTextureMetadata:Lorg/webrtc/AndroidVideoDecoder$DecodedTextureMetadata;
+
+    monitor-exit v3
+    :try_end_1d
+    .catchall {:try_start_1d .. :try_end_1d} :catchall_a
+
+    :try_start_1e
+    throw v1
     :try_end_1e
     .catchall {:try_start_1e .. :try_end_1e} :catchall_0
 
-    :try_start_1f
-    iput-object v2, p0, Lorg/webrtc/AndroidVideoDecoder;->renderedTextureMetadata:Lorg/webrtc/AndroidVideoDecoder$DecodedTextureMetadata;
+    :catchall_a
+    move-exception p0
 
+    :try_start_1f
     monitor-exit v3
     :try_end_1f
     .catchall {:try_start_1f .. :try_end_1f} :catchall_a
 
     :try_start_20
-    throw v1
-    :try_end_20
-    .catchall {:try_start_20 .. :try_end_20} :catchall_0
-
-    :catchall_a
-    move-exception p0
-
-    :try_start_21
-    monitor-exit v3
-    :try_end_21
-    .catchall {:try_start_21 .. :try_end_21} :catchall_a
-
-    :try_start_22
     throw p0
 
-    :goto_7
+    :goto_8
     iput-object v2, p0, Lorg/webrtc/AndroidVideoDecoder;->codec:Lorg/webrtc/MediaCodecWrapper;
 
     iput-object v2, p0, Lorg/webrtc/AndroidVideoDecoder;->outputThread:Ljava/lang/Thread;
-    :try_end_22
-    .catchall {:try_start_22 .. :try_end_22} :catchall_0
+    :try_end_20
+    .catchall {:try_start_20 .. :try_end_20} :catchall_0
 
-    :try_start_23
+    :try_start_21
     iget-object v3, p0, Lorg/webrtc/AndroidVideoDecoder;->surface:Landroid/view/Surface;
 
     if-eqz v3, :cond_8
@@ -3006,82 +2987,82 @@
     invoke-virtual {v3}, Lorg/webrtc/SurfaceTextureHelper;->dispose()V
 
     iput-object v2, p0, Lorg/webrtc/AndroidVideoDecoder;->surfaceTextureHelper:Lorg/webrtc/SurfaceTextureHelper;
-    :try_end_23
-    .catchall {:try_start_23 .. :try_end_23} :catchall_b
+    :try_end_21
+    .catchall {:try_start_21 .. :try_end_21} :catchall_b
 
-    goto :goto_8
+    goto :goto_9
 
     :catchall_b
     move-exception v1
 
-    goto :goto_9
+    goto :goto_a
 
     :cond_8
-    :goto_8
-    :try_start_24
+    :goto_9
+    :try_start_22
     iget-object v3, p0, Lorg/webrtc/AndroidVideoDecoder;->renderedTextureMetadataLock:Ljava/lang/Object;
 
     monitor-enter v3
+    :try_end_22
+    .catchall {:try_start_22 .. :try_end_22} :catchall_0
+
+    :try_start_23
+    iput-object v2, p0, Lorg/webrtc/AndroidVideoDecoder;->renderedTextureMetadata:Lorg/webrtc/AndroidVideoDecoder$DecodedTextureMetadata;
+
+    monitor-exit v3
+    :try_end_23
+    .catchall {:try_start_23 .. :try_end_23} :catchall_c
+
+    :try_start_24
+    throw v1
     :try_end_24
     .catchall {:try_start_24 .. :try_end_24} :catchall_0
 
-    :try_start_25
-    iput-object v2, p0, Lorg/webrtc/AndroidVideoDecoder;->renderedTextureMetadata:Lorg/webrtc/AndroidVideoDecoder$DecodedTextureMetadata;
+    :catchall_c
+    move-exception p0
 
+    :try_start_25
     monitor-exit v3
     :try_end_25
     .catchall {:try_start_25 .. :try_end_25} :catchall_c
 
     :try_start_26
-    throw v1
-    :try_end_26
-    .catchall {:try_start_26 .. :try_end_26} :catchall_0
-
-    :catchall_c
-    move-exception p0
-
-    :try_start_27
-    monitor-exit v3
-    :try_end_27
-    .catchall {:try_start_27 .. :try_end_27} :catchall_c
-
-    :try_start_28
     throw p0
 
-    :goto_9
+    :goto_a
     iget-object v3, p0, Lorg/webrtc/AndroidVideoDecoder;->renderedTextureMetadataLock:Ljava/lang/Object;
 
     monitor-enter v3
+    :try_end_26
+    .catchall {:try_start_26 .. :try_end_26} :catchall_0
+
+    :try_start_27
+    iput-object v2, p0, Lorg/webrtc/AndroidVideoDecoder;->renderedTextureMetadata:Lorg/webrtc/AndroidVideoDecoder$DecodedTextureMetadata;
+
+    monitor-exit v3
+    :try_end_27
+    .catchall {:try_start_27 .. :try_end_27} :catchall_d
+
+    :try_start_28
+    throw v1
     :try_end_28
     .catchall {:try_start_28 .. :try_end_28} :catchall_0
 
-    :try_start_29
-    iput-object v2, p0, Lorg/webrtc/AndroidVideoDecoder;->renderedTextureMetadata:Lorg/webrtc/AndroidVideoDecoder$DecodedTextureMetadata;
+    :catchall_d
+    move-exception p0
 
+    :try_start_29
     monitor-exit v3
     :try_end_29
     .catchall {:try_start_29 .. :try_end_29} :catchall_d
 
     :try_start_2a
-    throw v1
-    :try_end_2a
-    .catchall {:try_start_2a .. :try_end_2a} :catchall_0
-
-    :catchall_d
-    move-exception p0
-
-    :try_start_2b
-    monitor-exit v3
-    :try_end_2b
-    .catchall {:try_start_2b .. :try_end_2b} :catchall_d
-
-    :try_start_2c
     throw p0
 
-    :goto_a
+    :goto_b
     monitor-exit v0
-    :try_end_2c
-    .catchall {:try_start_2c .. :try_end_2c} :catchall_0
+    :try_end_2a
+    .catchall {:try_start_2a .. :try_end_2a} :catchall_0
 
     throw p0
 .end method

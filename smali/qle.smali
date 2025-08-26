@@ -2,54 +2,39 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public submissionTime:J
+
+.field public taskContext:Lvle;
+
 
 # direct methods
-.method public static a(Landroid/view/View;)Landroid/window/OnBackInvokedDispatcher;
+.method public constructor <init>(JLvle;)V
     .locals 0
 
-    invoke-virtual {p0}, Landroid/view/View;->findOnBackInvokedDispatcher()Landroid/window/OnBackInvokedDispatcher;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object p0
+    iput-wide p1, p0, Lqle;->submissionTime:J
 
-    return-object p0
-.end method
-
-.method public static b(Ljava/lang/Runnable;)Landroid/window/OnBackInvokedCallback;
-    .locals 2
-
-    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v0, Lwm;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1, p0}, Lwm;-><init>(ILjava/lang/Object;)V
-
-    return-object v0
-.end method
-
-.method public static c(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 1
-
-    check-cast p0, Landroid/window/OnBackInvokedDispatcher;
-
-    const v0, 0xf4240
-
-    check-cast p1, Landroid/window/OnBackInvokedCallback;
-
-    invoke-interface {p0, v0, p1}, Landroid/window/OnBackInvokedDispatcher;->registerOnBackInvokedCallback(ILandroid/window/OnBackInvokedCallback;)V
+    iput-object p3, p0, Lqle;->taskContext:Lvle;
 
     return-void
 .end method
 
-.method public static d(Ljava/lang/Object;Ljava/lang/Object;)V
+
+# virtual methods
+.method public final getMode$kotlinx_coroutines_core()I
     .locals 0
 
-    check-cast p0, Landroid/window/OnBackInvokedDispatcher;
+    iget-object p0, p0, Lqle;->taskContext:Lvle;
 
-    check-cast p1, Landroid/window/OnBackInvokedCallback;
+    check-cast p0, Lql5;
 
-    invoke-interface {p0, p1}, Landroid/window/OnBackInvokedDispatcher;->unregisterOnBackInvokedCallback(Landroid/window/OnBackInvokedCallback;)V
+    iget p0, p0, Lql5;->b:I
 
-    return-void
+    return p0
 .end method

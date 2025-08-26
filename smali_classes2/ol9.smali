@@ -1,59 +1,49 @@
 .class public final Lol9;
-.super Llbe;
+.super Lbu3;
 .source "SourceFile"
 
 
 # instance fields
-.field public c:Lra3;
+.field public X:Loh9;
+
+.field public synthetic Y:Ljava/lang/Object;
+
+.field public final synthetic Z:Lpl9;
+
+.field public o:Lpl9;
+
+.field public o0:I
 
 
-# virtual methods
-.method public final b(Lws8;Ljava/lang/String;)V
-    .locals 1
+# direct methods
+.method public constructor <init>(Lpl9;Lbu3;)V
+    .locals 0
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-object p1, p0, Lol9;->Z:Lpl9;
 
-    const-string v0, "config"
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_0
-
-    invoke-virtual {p1}, Lws8;->z()V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {p1}, Lwx3;->y(Lws8;)Lra3;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lol9;->c:Lra3;
-
-    :goto_0
     return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
 
-    iget-object p0, p0, Lol9;->c:Lra3;
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iput-object p1, p0, Lol9;->Y:Ljava/lang/Object;
 
-    const-string v1, "{config="
+    iget p1, p0, Lol9;->o0:I
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const/high16 v0, -0x80000000
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    or-int/2addr p1, v0
 
-    const-string p0, "}"
+    iput p1, p0, Lol9;->o0:I
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object p1, p0, Lol9;->Z:Lpl9;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p1, p0}, Lpl9;->a(Lpl9;Lbu3;)Ljava/lang/Object;
 
     move-result-object p0
 

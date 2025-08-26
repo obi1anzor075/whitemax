@@ -1,58 +1,169 @@
-.class public final Lni8;
+.class public final synthetic Lni8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Llta;
+.implements Lyi8;
+.implements Lzi8;
 
 
 # instance fields
-.field public final a:Lt97;
+.field public final synthetic a:I
+
+.field public final synthetic b:Lbj8;
+
+.field public final synthetic c:I
 
 
 # direct methods
-.method public constructor <init>(Lt97;)V
+.method public synthetic constructor <init>(Lbj8;II)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p3, p0, Lni8;->a:I
 
-    iput-object p1, p0, Lni8;->a:Lt97;
+    iput-object p1, p0, Lni8;->b:Lbj8;
+
+    iput p2, p0, Lni8;->c:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final d(J)Lpj5;
-    .locals 2
+.method public b(Lk2b;Lwg8;Ljava/util/List;)V
+    .locals 3
 
-    iget-object p0, p0, Lni8;->a:Lt97;
+    iget v0, p0, Lni8;->a:I
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object p0
+    iget-object v0, p0, Lni8;->b:Lbj8;
 
-    check-cast p0, Lap3;
+    iget p0, p0, Lni8;->c:I
 
-    invoke-virtual {p0, p1, p2}, Lap3;->c(J)Lt0c;
+    invoke-virtual {v0, p2, p1, p0}, Lbj8;->Y(Lwg8;Lk2b;I)I
 
-    move-result-object p0
+    move-result p0
 
-    new-instance v0, Lik5;
+    invoke-virtual {p1, p0, p3}, Lk2b;->b(ILjava/util/List;)V
 
-    const/4 v1, 0x2
+    return-void
 
-    invoke-direct {v0, p0, v1}, Lik5;-><init>(Lpj5;I)V
+    :pswitch_0
+    iget-object v0, p0, Lni8;->b:Lbj8;
 
-    new-instance p0, Lmi8;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const/4 v1, 0x0
+    invoke-interface {p3}, Ljava/util/List;->size()I
 
-    invoke-direct {p0, p1, p2, v1}, Lmi8;-><init>(JLkotlin/coroutines/Continuation;)V
+    move-result v1
 
-    invoke-static {v0, p0}, Lez3;->P(Lpj5;Li26;)Lb12;
+    iget p0, p0, Lni8;->c:I
 
-    move-result-object p0
+    const/4 v2, 0x1
 
-    return-object p0
+    if-ne v1, v2, :cond_0
+
+    invoke-virtual {v0, p2, p1, p0}, Lbj8;->Y(Lwg8;Lk2b;I)I
+
+    move-result p0
+
+    const/4 p2, 0x0
+
+    invoke-interface {p3, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Leb8;
+
+    invoke-virtual {p1}, Lk2b;->o0()V
+
+    iget-object p1, p1, Lk2b;->a:Lh75;
+
+    add-int/lit8 p3, p0, 0x1
+
+    invoke-static {p2}, Lxw6;->m(Ljava/lang/Object;)Lddc;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2, p0, p3}, Lh75;->p1(Ljava/util/List;II)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v0, p2, p1, p0}, Lbj8;->Y(Lwg8;Lk2b;I)I
+
+    move-result v1
+
+    add-int/2addr p0, v2
+
+    invoke-virtual {v0, p2, p1, p0}, Lbj8;->Y(Lwg8;Lk2b;I)I
+
+    move-result p0
+
+    invoke-virtual {p1, p3, v1, p0}, Lk2b;->W(Ljava/util/List;II)V
+
+    :goto_0
+    return-void
+
+    :pswitch_1
+    iget-object v0, p0, Lni8;->b:Lbj8;
+
+    iget p0, p0, Lni8;->c:I
+
+    invoke-virtual {v0, p2, p1, p0}, Lbj8;->Y(Lwg8;Lk2b;I)I
+
+    move-result p0
+
+    invoke-virtual {p1, p0, p3}, Lk2b;->b(ILjava/util/List;)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public e(Lk2b;Lwg8;)V
+    .locals 1
+
+    iget v0, p0, Lni8;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Lni8;->b:Lbj8;
+
+    iget p0, p0, Lni8;->c:I
+
+    invoke-virtual {v0, p2, p1, p0}, Lbj8;->Y(Lwg8;Lk2b;I)I
+
+    move-result p0
+
+    invoke-virtual {p1, p0}, Lk2b;->V(I)V
+
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Lni8;->b:Lbj8;
+
+    iget p0, p0, Lni8;->c:I
+
+    invoke-virtual {v0, p2, p1, p0}, Lbj8;->Y(Lwg8;Lk2b;I)I
+
+    move-result p0
+
+    invoke-virtual {p1, p0}, Lk2b;->a0(I)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

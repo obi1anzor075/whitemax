@@ -1,213 +1,218 @@
 .class public final Lo08;
-.super Ll5e;
+.super Landroid/widget/ArrayAdapter;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
 
 
 # instance fields
-.field public synthetic X:Z
+.field public a:Landroid/content/res/ColorStateList;
 
-.field public final synthetic Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
+.field public b:Landroid/content/res/ColorStateList;
 
-.field public final synthetic Z:Lz0b;
+.field public final synthetic c:Lp08;
 
 
 # direct methods
-.method public constructor <init>(Lone/me/chatscreen/mediabar/MediaBarWidget;Lz0b;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lp08;Landroid/content/Context;I[Ljava/lang/String;)V
     .locals 0
 
-    iput-object p1, p0, Lo08;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
+    iput-object p1, p0, Lo08;->c:Lp08;
 
-    iput-object p2, p0, Lo08;->Z:Lz0b;
+    invoke-direct {p0, p2, p3, p4}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p3}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-virtual {p0}, Lo08;->a()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final a()V
+    .locals 7
 
-    check-cast p1, Ljava/lang/Boolean;
+    iget-object v0, p0, Lo08;->c:Lp08;
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    iget-object v1, v0, Lp08;->v0:Landroid/content/res/ColorStateList;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    const/4 v2, 0x0
 
-    invoke-virtual {p0, p1, p2}, Lo08;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    const/4 v3, 0x0
 
-    move-result-object p0
+    if-eqz v1, :cond_0
 
-    check-cast p0, Lo08;
+    const v4, 0x10100a7
 
-    sget-object p1, Ljue;->a:Ljue;
+    filled-new-array {v4}, [I
 
-    invoke-virtual {p0, p1}, Lo08;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v4
 
-    move-result-object p0
+    invoke-virtual {v1, v4, v3}, Landroid/content/res/ColorStateList;->getColorForState([II)I
 
-    return-object p0
-.end method
+    move-result v1
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 2
-
-    new-instance v0, Lo08;
-
-    iget-object v1, p0, Lo08;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
-
-    iget-object p0, p0, Lo08;->Z:Lz0b;
-
-    invoke-direct {v0, v1, p0, p2}, Lo08;-><init>(Lone/me/chatscreen/mediabar/MediaBarWidget;Lz0b;Lkotlin/coroutines/Continuation;)V
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
-
-    iput-boolean p0, v0, Lo08;->X:Z
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-boolean p1, p0, Lo08;->X:Z
-
-    sget-object v0, Lone/me/chatscreen/mediabar/MediaBarWidget;->h1:[Lk77;
-
-    iget-object v0, p0, Lo08;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
-
-    invoke-virtual {v0}, Lone/me/chatscreen/mediabar/MediaBarWidget;->A0()Li08;
+    filled-new-array {v1, v3}, [I
 
     move-result-object v1
 
-    iget-object v1, v1, Li08;->E0:Lt0c;
+    new-array v5, v3, [I
 
-    iget-object v1, v1, Lt0c;->a:Lzqd;
+    filled-new-array {v4, v5}, [[I
 
-    invoke-interface {v1}, Lzqd;->getValue()Ljava/lang/Object;
+    move-result-object v4
 
-    move-result-object v1
+    new-instance v5, Landroid/content/res/ColorStateList;
 
-    sget-object v2, Lp3b;->b:Lp3b;
-
-    sget-object v3, Ljue;->a:Ljue;
-
-    if-ne v1, v2, :cond_0
-
-    return-object v3
-
-    :cond_0
-    iget-object p0, p0, Lo08;->Z:Lz0b;
-
-    invoke-virtual {p0}, Lz0b;->getScrollState()Lx0b;
-
-    move-result-object p0
-
-    sget-object v1, Lx0b;->b:Lx0b;
-
-    if-ne p0, v1, :cond_2
-
-    invoke-virtual {v0}, Lone/me/chatscreen/mediabar/MediaBarWidget;->w0()Lz0b;
-
-    move-result-object p0
-
-    iget-object p0, p0, Lz0b;->w0:Landroid/animation/ValueAnimator;
-
-    if-eqz p0, :cond_1
+    invoke-direct {v5, v4, v1}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
 
     goto :goto_0
 
+    :cond_0
+    move-object v5, v2
+
+    :goto_0
+    iput-object v5, p0, Lo08;->b:Landroid/content/res/ColorStateList;
+
+    iget v1, v0, Lp08;->u0:I
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, v0, Lp08;->v0:Landroid/content/res/ColorStateList;
+
+    if-eqz v1, :cond_1
+
+    const v1, 0x1010367
+
+    const v2, -0x10100a7
+
+    filled-new-array {v1, v2}, [I
+
+    move-result-object v1
+
+    const v4, 0x10100a1
+
+    filled-new-array {v4, v2}, [I
+
+    move-result-object v2
+
+    iget-object v4, v0, Lp08;->v0:Landroid/content/res/ColorStateList;
+
+    invoke-virtual {v4, v2, v3}, Landroid/content/res/ColorStateList;->getColorForState([II)I
+
+    move-result v4
+
+    iget-object v5, v0, Lp08;->v0:Landroid/content/res/ColorStateList;
+
+    invoke-virtual {v5, v1, v3}, Landroid/content/res/ColorStateList;->getColorForState([II)I
+
+    move-result v5
+
+    iget v6, v0, Lp08;->u0:I
+
+    invoke-static {v4, v6}, Lk53;->g(II)I
+
+    move-result v4
+
+    iget v6, v0, Lp08;->u0:I
+
+    invoke-static {v5, v6}, Lk53;->g(II)I
+
+    move-result v5
+
+    iget v0, v0, Lp08;->u0:I
+
+    filled-new-array {v4, v5, v0}, [I
+
+    move-result-object v0
+
+    new-array v3, v3, [I
+
+    filled-new-array {v2, v1, v3}, [[I
+
+    move-result-object v1
+
+    new-instance v2, Landroid/content/res/ColorStateList;
+
+    invoke-direct {v2, v1, v0}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
+
     :cond_1
-    invoke-virtual {v0}, Lone/me/chatscreen/mediabar/MediaBarWidget;->w0()Lz0b;
+    iput-object v2, p0, Lo08;->a:Landroid/content/res/ColorStateList;
 
-    move-result-object p0
+    return-void
+.end method
 
-    invoke-virtual {p0}, Lz0b;->k()V
+.method public final getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    .locals 2
+
+    invoke-super {p0, p1, p2, p3}, Landroid/widget/ArrayAdapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object p1
+
+    instance-of p2, p1, Landroid/widget/TextView;
+
+    if-eqz p2, :cond_2
+
+    move-object p2, p1
+
+    check-cast p2, Landroid/widget/TextView;
+
+    iget-object p3, p0, Lo08;->c:Lp08;
+
+    invoke-virtual {p3}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p2}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contentEquals(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_1
+
+    iget v0, p3, Lp08;->u0:I
+
+    if-eqz v0, :cond_1
+
+    new-instance v0, Landroid/graphics/drawable/ColorDrawable;
+
+    iget p3, p3, Lp08;->u0:I
+
+    invoke-direct {v0, p3}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
+
+    iget-object p3, p0, Lo08;->b:Landroid/content/res/ColorStateList;
+
+    if-eqz p3, :cond_0
+
+    iget-object p3, p0, Lo08;->a:Landroid/content/res/ColorStateList;
+
+    invoke-static {v0, p3}, Laq4;->h(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
+
+    new-instance p3, Landroid/graphics/drawable/RippleDrawable;
+
+    iget-object p0, p0, Lo08;->b:Landroid/content/res/ColorStateList;
+
+    invoke-direct {p3, p0, v0, v1}, Landroid/graphics/drawable/RippleDrawable;-><init>(Landroid/content/res/ColorStateList;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+
+    move-object v1, p3
+
+    goto :goto_0
+
+    :cond_0
+    move-object v1, v0
+
+    :cond_1
+    :goto_0
+    sget-object p0, Ltnf;->a:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p2, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     :cond_2
-    :goto_0
-    iget-object p0, v0, Lone/me/chatscreen/mediabar/MediaBarWidget;->R0:Landroid/animation/ValueAnimator;
-
-    if-eqz p0, :cond_3
-
-    invoke-virtual {p0}, Landroid/animation/ValueAnimator;->cancel()V
-
-    :cond_3
-    iget-object p0, v0, Lone/me/chatscreen/mediabar/MediaBarWidget;->Q0:Landroid/graphics/drawable/ColorDrawable;
-
-    invoke-virtual {p0}, Landroid/graphics/drawable/ColorDrawable;->getAlpha()I
-
-    move-result p0
-
-    if-eqz p1, :cond_4
-
-    sget-object p1, Lkm4;->y0:Ls59;
-
-    invoke-virtual {v0}, Lone/me/chatscreen/mediabar/MediaBarWidget;->s0()Landroid/widget/LinearLayout;
-
-    move-result-object v1
-
-    invoke-virtual {p1, v1}, Ls59;->r(Landroid/view/View;)Lpda;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Lpda;->b()Lnd0;
-
-    move-result-object p1
-
-    iget p1, p1, Lnd0;->d:I
-
-    shr-int/lit8 p1, p1, 0x18
-
-    and-int/lit16 p1, p1, 0xff
-
-    goto :goto_1
-
-    :cond_4
-    const/4 p1, 0x0
-
-    :goto_1
-    const/4 v1, 0x2
-
-    new-array v1, v1, [F
-
-    fill-array-data v1, :array_0
-
-    invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
-
-    move-result-object v1
-
-    new-instance v2, Lk08;
-
-    invoke-direct {v2, v0, p0, p1}, Lk08;-><init>(Lone/me/chatscreen/mediabar/MediaBarWidget;II)V
-
-    invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
-
-    const-wide/16 p0, 0x64
-
-    invoke-virtual {v1, p0, p1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
-
-    iput-object v1, v0, Lone/me/chatscreen/mediabar/MediaBarWidget;->R0:Landroid/animation/ValueAnimator;
-
-    return-object v3
-
-    :array_0
-    .array-data 4
-        0x0
-        0x3f800000    # 1.0f
-    .end array-data
+    return-object p1
 .end method

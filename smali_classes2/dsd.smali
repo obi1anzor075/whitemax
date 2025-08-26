@@ -1,39 +1,94 @@
-.class public final Ldsd;
+.class public final synthetic Ldsd;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+
 
 # instance fields
-.field public final a:Laec;
+.field public final synthetic a:I
 
-.field public final b:Lsh;
-
-.field public final c:Ltdc;
+.field public final synthetic b:Le17;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;)V
-    .locals 2
+.method public synthetic constructor <init>(Le17;I)V
+    .locals 0
+
+    iput p2, p0, Ldsd;->a:I
+
+    iput-object p1, p0, Ldsd;->b:Le17;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldsd;->a:Laec;
+    return-void
+.end method
 
-    new-instance v0, Lsh;
 
-    const/16 v1, 0x16
+# virtual methods
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 1
 
-    invoke-direct {v0, p1, v1}, Lsh;-><init>(Laec;I)V
+    iget v0, p0, Ldsd;->a:I
 
-    iput-object v0, p0, Ldsd;->b:Lsh;
+    packed-switch v0, :pswitch_data_0
 
-    new-instance v0, Ltdc;
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-    const/4 v1, 0x7
+    move-result-object p1
 
-    invoke-direct {v0, p1, v1}, Ltdc;-><init>(Laec;I)V
+    check-cast p1, Ljava/lang/Integer;
 
-    iput-object v0, p0, Ldsd;->c:Ltdc;
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    iget-object p0, p0, Ldsd;->b:Le17;
+
+    check-cast p0, Lxrd;
+
+    iget-object p0, p0, Lxrd;->D0:Lyf3;
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
     return-void
+
+    :pswitch_0
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Float;
+
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+
+    move-result p1
+
+    iget-object p0, p0, Ldsd;->b:Le17;
+
+    check-cast p0, Lxrd;
+
+    iget-object v0, p0, Lxrd;->D0:Lyf3;
+
+    invoke-virtual {v0}, Landroid/widget/TextView;->getCurrentTextColor()I
+
+    move-result v0
+
+    invoke-static {v0, p1}, Ln1c;->D(IF)I
+
+    move-result p1
+
+    iget-object p0, p0, Lxrd;->D0:Lyf3;
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public onAudioInfoChanged(Landroid/media/session/MediaController$PlaybackInfo;)V
-    .locals 7
+    .locals 6
 
     iget-object p0, p0, Landroid/support/v4/media/session/MediaControllerCompat$Callback$MediaControllerCallbackApi21;->mCallback:Ljava/lang/ref/WeakReference;
 
@@ -56,7 +56,7 @@
 
     if-eqz p0, :cond_0
 
-    new-instance v6, Landroid/support/v4/media/session/MediaControllerCompat$PlaybackInfo;
+    new-instance v0, Landroid/support/v4/media/session/MediaControllerCompat$PlaybackInfo;
 
     invoke-virtual {p1}, Landroid/media/session/MediaController$PlaybackInfo;->getPlaybackType()I
 
@@ -64,15 +64,19 @@
 
     invoke-virtual {p1}, Landroid/media/session/MediaController$PlaybackInfo;->getAudioAttributes()Landroid/media/AudioAttributes;
 
-    move-result-object v0
+    move-result-object v2
+
+    move-object v3, v2
 
     new-instance v2, Landroidx/media/AudioAttributesCompat;
 
-    new-instance v3, Landroidx/media/AudioAttributesImplApi26;
+    new-instance v4, Landroidx/media/AudioAttributesImplApi26;
 
-    invoke-direct {v3, v0}, Landroidx/media/AudioAttributesImplApi21;-><init>(Landroid/media/AudioAttributes;)V
+    const/4 v5, 0x0
 
-    invoke-direct {v2, v3}, Landroidx/media/AudioAttributesCompat;-><init>(Landroidx/media/AudioAttributesImplApi26;)V
+    invoke-direct {v4, v3, v5}, Landroidx/media/AudioAttributesImplApi21;-><init>(Landroid/media/AudioAttributes;I)V
+
+    invoke-direct {v2, v4}, Landroidx/media/AudioAttributesCompat;-><init>(Landroidx/media/AudioAttributesImplApi26;)V
 
     invoke-virtual {p1}, Landroid/media/session/MediaController$PlaybackInfo;->getVolumeControl()I
 
@@ -86,11 +90,9 @@
 
     move-result v5
 
-    move-object v0, v6
-
     invoke-direct/range {v0 .. v5}, Landroid/support/v4/media/session/MediaControllerCompat$PlaybackInfo;-><init>(ILandroidx/media/AudioAttributesCompat;III)V
 
-    invoke-virtual {p0, v6}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->onAudioInfoChanged(Landroid/support/v4/media/session/MediaControllerCompat$PlaybackInfo;)V
+    invoke-virtual {p0, v0}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->onAudioInfoChanged(Landroid/support/v4/media/session/MediaControllerCompat$PlaybackInfo;)V
 
     :cond_0
     return-void

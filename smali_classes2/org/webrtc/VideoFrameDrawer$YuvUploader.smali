@@ -24,7 +24,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,7 +33,7 @@
 .method public synthetic constructor <init>(I)V
     .locals 0
 
-    .line 2
+    .line 1
     invoke-direct {p0}, Lorg/webrtc/VideoFrameDrawer$YuvUploader;-><init>()V
 
     return-void
@@ -239,9 +239,9 @@
 
     aget v8, p3, v3
 
-    aget v11, v1, v3
+    aget v10, v1, v3
 
-    if-ne v8, v11, :cond_5
+    if-ne v8, v10, :cond_5
 
     aget-object v4, p4, v3
 
@@ -257,7 +257,7 @@
 
     aget v12, v2, v3
 
-    move v10, v11
+    move v11, v10
 
     invoke-static/range {v7 .. v12}, Lorg/webrtc/YuvHelper;->copyPlane(Ljava/nio/ByteBuffer;ILjava/nio/ByteBuffer;III)V
 

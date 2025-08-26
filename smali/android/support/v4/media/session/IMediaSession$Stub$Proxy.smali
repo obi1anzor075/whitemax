@@ -2322,13 +2322,13 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    const/4 v2, 0x0
-
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
     iget-object p0, p0, Landroid/support/v4/media/session/IMediaSession$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 p1, 0x2e
+
+    const/4 v2, 0x0
 
     invoke-interface {p0, p1, v0, v1, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
@@ -2526,13 +2526,13 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    const/4 v2, 0x0
-
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
     iget-object p0, p0, Landroid/support/v4/media/session/IMediaSession$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 p1, 0x28
+
+    const/4 v2, 0x0
 
     invoke-interface {p0, p1, v0, v1, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 

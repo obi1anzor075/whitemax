@@ -4,16 +4,32 @@
 
 
 # instance fields
-.field public a:Z
+.field public final a:Lje7;
 
-.field public b:Z
+.field public final b:Ljava/lang/Object;
 
-.field public c:Ljava/lang/String;
 
-.field public d:Ljava/lang/String;
+# direct methods
+.method public constructor <init>(Lje7;)V
+    .locals 1
 
-.field public e:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field public f:I
+    iput-object p1, p0, Lpk7;->a:Lje7;
 
-.field public g:I
+    new-instance p1, Lr17;
+
+    const/16 v0, 0x14
+
+    invoke-direct {p1, v0}, Lr17;-><init>(I)V
+
+    const/4 v0, 0x3
+
+    invoke-static {v0, p1}, Lkhg;->o(ILv56;)Lje7;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lpk7;->b:Ljava/lang/Object;
+
+    return-void
+.end method

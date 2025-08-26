@@ -556,6 +556,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    :goto_0
     iget-object p0, p0, Lorg/apache/http/impl/conn/tsccm/AbstractConnPool;->poolLock:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {p0}, Ljava/util/concurrent/locks/Lock;->unlock()V
@@ -565,7 +566,7 @@
     :catchall_0
     move-exception p1
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_1
     :try_start_1
@@ -599,7 +600,7 @@
 
     invoke-virtual {p2, p1, p3, p4, p5}, Lorg/apache/http/impl/conn/IdleConnectionHandler;->add(Lorg/apache/http/HttpConnection;JLjava/util/concurrent/TimeUnit;)V
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_2
     invoke-virtual {v0}, Lorg/apache/http/impl/conn/tsccm/RouteSpecificPool;->dropEntry()V
@@ -610,18 +611,14 @@
 
     iput p1, p0, Lorg/apache/http/impl/conn/tsccm/AbstractConnPool;->numConnections:I
 
-    :goto_0
+    :goto_1
     invoke-virtual {p0, v0}, Lorg/apache/http/impl/conn/tsccm/ConnPoolByRoute;->notifyWaitingThread(Lorg/apache/http/impl/conn/tsccm/RouteSpecificPool;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    iget-object p0, p0, Lorg/apache/http/impl/conn/tsccm/AbstractConnPool;->poolLock:Ljava/util/concurrent/locks/Lock;
+    goto :goto_0
 
-    invoke-interface {p0}, Ljava/util/concurrent/locks/Lock;->unlock()V
-
-    return-void
-
-    :goto_1
+    :goto_2
     iget-object p0, p0, Lorg/apache/http/impl/conn/tsccm/AbstractConnPool;->poolLock:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {p0}, Ljava/util/concurrent/locks/Lock;->unlock()V

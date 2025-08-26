@@ -1,167 +1,69 @@
-.class public final synthetic Lwme;
-.super Ljava/lang/Object;
+.class public final Lwme;
+.super Lsbg;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field public final synthetic X:Lmif;
+.field public final synthetic i:Lqo8;
 
-.field public final synthetic a:Landroid/content/Context;
-
-.field public final synthetic b:Ljava/util/concurrent/ScheduledExecutorService;
-
-.field public final synthetic c:Lcom/google/firebase/messaging/FirebaseMessaging;
-
-.field public final synthetic o:Lz29;
+.field public final synthetic j:Lyme;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/content/Context;Ljava/util/concurrent/ScheduledThreadPoolExecutor;Lcom/google/firebase/messaging/FirebaseMessaging;Lz29;Lmif;)V
+.method public constructor <init>(Lyme;Lqo8;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lwme;->a:Landroid/content/Context;
+    iput-object p1, p0, Lwme;->j:Lyme;
 
-    iput-object p2, p0, Lwme;->b:Ljava/util/concurrent/ScheduledExecutorService;
-
-    iput-object p3, p0, Lwme;->c:Lcom/google/firebase/messaging/FirebaseMessaging;
-
-    iput-object p4, p0, Lwme;->o:Lz29;
-
-    iput-object p5, p0, Lwme;->X:Lmif;
+    iput-object p2, p0, Lwme;->i:Lqo8;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final call()Ljava/lang/Object;
-    .locals 8
+.method public final E(I)V
+    .locals 2
 
-    iget-object v5, p0, Lwme;->a:Landroid/content/Context;
+    iget-object v0, p0, Lwme;->j:Lyme;
 
-    iget-object v0, p0, Lwme;->b:Ljava/util/concurrent/ScheduledExecutorService;
+    const/4 v1, 0x1
 
-    iget-object v1, p0, Lwme;->c:Lcom/google/firebase/messaging/FirebaseMessaging;
+    iput-boolean v1, v0, Lyme;->m:Z
 
-    iget-object v2, p0, Lwme;->o:Lz29;
+    iget-object p0, p0, Lwme;->i:Lqo8;
 
-    iget-object v4, p0, Lwme;->X:Lmif;
+    invoke-virtual {p0, p1}, Lqo8;->x(I)V
 
-    const-class p0, Lvme;
+    return-void
+.end method
 
-    monitor-enter p0
+.method public final F(Landroid/graphics/Typeface;)V
+    .locals 2
 
-    :try_start_0
-    sget-object v3, Lvme;->c:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Lwme;->j:Lyme;
 
-    if-eqz v3, :cond_0
+    iget v1, v0, Lyme;->c:I
 
-    invoke-virtual {v3}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+    invoke-static {p1, v1}, Landroid/graphics/Typeface;->create(Landroid/graphics/Typeface;I)Landroid/graphics/Typeface;
 
-    move-result-object v3
+    move-result-object p1
 
-    check-cast v3, Lvme;
+    iput-object p1, v0, Lyme;->n:Landroid/graphics/Typeface;
 
-    goto :goto_0
+    const/4 p1, 0x1
 
-    :catchall_0
-    move-exception v0
+    iput-boolean p1, v0, Lyme;->m:Z
 
-    goto :goto_2
+    iget-object p1, v0, Lyme;->n:Landroid/graphics/Typeface;
 
-    :cond_0
-    const/4 v3, 0x0
+    const/4 v0, 0x0
 
-    :goto_0
-    if-nez v3, :cond_1
+    iget-object p0, p0, Lwme;->i:Lqo8;
 
-    const-string v3, "com.google.android.gms.appid"
+    invoke-virtual {p0, p1, v0}, Lqo8;->y(Landroid/graphics/Typeface;Z)V
 
-    const/4 v6, 0x0
-
-    invoke-virtual {v5, v3, v6}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v3
-
-    new-instance v6, Lvme;
-
-    move-object v7, v0
-
-    check-cast v7, Ljava/util/concurrent/ScheduledThreadPoolExecutor;
-
-    invoke-direct {v6, v3, v7}, Lvme;-><init>(Landroid/content/SharedPreferences;Ljava/util/concurrent/ScheduledThreadPoolExecutor;)V
-
-    monitor-enter v6
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :try_start_1
-    move-object v7, v0
-
-    check-cast v7, Ljava/util/concurrent/ScheduledThreadPoolExecutor;
-
-    invoke-static {v3, v7}, Lbd4;->c(Landroid/content/SharedPreferences;Ljava/util/concurrent/ScheduledThreadPoolExecutor;)Lbd4;
-
-    move-result-object v3
-
-    iput-object v3, v6, Lvme;->a:Lbd4;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    :try_start_2
-    monitor-exit v6
-
-    new-instance v3, Ljava/lang/ref/WeakReference;
-
-    invoke-direct {v3, v6}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    sput-object v3, Lvme;->c:Ljava/lang/ref/WeakReference;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    move-object v3, v6
-
-    goto :goto_1
-
-    :catchall_1
-    move-exception v0
-
-    :try_start_3
-    monitor-exit v6
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    :try_start_4
-    throw v0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-
-    :cond_1
-    :goto_1
-    monitor-exit p0
-
-    new-instance p0, Lxme;
-
-    move-object v6, v0
-
-    check-cast v6, Ljava/util/concurrent/ScheduledThreadPoolExecutor;
-
-    move-object v0, p0
-
-    invoke-direct/range {v0 .. v6}, Lxme;-><init>(Lcom/google/firebase/messaging/FirebaseMessaging;Lz29;Lvme;Lmif;Landroid/content/Context;Ljava/util/concurrent/ScheduledThreadPoolExecutor;)V
-
-    return-object p0
-
-    :goto_2
-    :try_start_5
-    monitor-exit p0
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
-
-    throw v0
+    return-void
 .end method

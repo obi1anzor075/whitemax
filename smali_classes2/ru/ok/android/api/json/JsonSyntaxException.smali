@@ -17,7 +17,7 @@
 
     const-string v1, " after `"
 
-    invoke-static {v0, p0, p1, v1, p2}, Lm4b;->j(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, p0, p1, v1, p2}, Lp3a;->k(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p0
 
@@ -113,7 +113,7 @@
 
     const-string v2, " after `"
 
-    invoke-static {v1, p0, p1, v2, p2}, Lm4b;->j(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1, p0, p1, v2, p2}, Lp3a;->k(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p0
 
@@ -128,7 +128,7 @@
     return-object p3
 
     :cond_0
-    invoke-static {p3}, Lct0;->M(I)Ljava/lang/String;
+    invoke-static {p3}, Lsre;->w(I)Ljava/lang/String;
 
     move-result-object p3
 
@@ -136,29 +136,17 @@
 
     sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, "Unexpected "
 
-    const-string v3, "Unexpected "
+    const-string v3, " at pos "
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-static {v2, p0, p1, p3, v3}, Lzge;->q(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object p0
 
-    const-string p3, " at pos "
+    const-string p1, " near `"
 
-    invoke-virtual {v2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string p0, " near `"
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p0, p1, p2, v0}, Lrqc;->j(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

@@ -48,7 +48,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
     const-string v0, "."
 
@@ -56,19 +56,24 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     invoke-virtual {p0, p1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_2
+    if-eqz p0, :cond_1
+
+    goto :goto_0
 
     :cond_1
-    const/4 p2, 0x1
+    return p2
 
     :cond_2
-    return p2
+    :goto_0
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_3
     new-instance p0, Ljava/lang/IllegalArgumentException;
@@ -250,7 +255,7 @@
 
     const-string p2, "\" violates RFC 2109: host minus domain may not contain any dots"
 
-    invoke-static {v3, p1, p2}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, p1, p2}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -265,7 +270,7 @@
 
     const-string v2, "\". Domain of origin: \""
 
-    invoke-static {v0, p1, v2, p0, v1}, Lc3d;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p1, v2, p0, v1}, Lrqc;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -278,7 +283,7 @@
 
     const-string p2, "\" violates RFC 2109: domain must contain an embedded dot"
 
-    invoke-static {v3, p1, p2}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, p1, p2}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -291,7 +296,7 @@
 
     const-string p2, "\" violates RFC 2109: domain must start with a dot"
 
-    invoke-static {v3, p1, p2}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, p1, p2}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -304,7 +309,7 @@
 
     const-string v0, "\" does not match the host \""
 
-    invoke-static {v3, p1, v0, p0, v1}, Lc3d;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, p1, v0, p0, v1}, Lrqc;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

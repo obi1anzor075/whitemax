@@ -3,193 +3,271 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/io/Serializable;
-
-
-# static fields
-.field public static final synthetic c:I
+.implements Lg34;
 
 
 # instance fields
-.field public final a:[I
+.field public X:I
+
+.field public final a:Lg34;
 
 .field public final b:I
 
+.field public final c:Lukb;
+
+.field public final o:[B
+
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lg34;ILukb;)V
     .locals 2
-
-    new-instance v0, Lrs6;
-
-    const/4 v1, 0x0
-
-    new-array v1, v1, [I
-
-    invoke-direct {v0, v1}, Lrs6;-><init>([I)V
-
-    return-void
-.end method
-
-.method public constructor <init>([I)V
-    .locals 1
-
-    array-length v0, p1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lrs6;->a:[I
+    const/4 v0, 0x1
 
-    iput v0, p0, Lrs6;->b:I
+    if-lez p2, :cond_0
+
+    move v1, v0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
+    invoke-static {v1}, Lq46;->d(Z)V
+
+    iput-object p1, p0, Lrs6;->a:Lg34;
+
+    iput p2, p0, Lrs6;->b:I
+
+    iput-object p3, p0, Lrs6;->c:Lukb;
+
+    new-array p1, v0, [B
+
+    iput-object p1, p0, Lrs6;->o:[B
+
+    iput p2, p0, Lrs6;->X:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 6
+.method public final O(Lo34;)J
+    .locals 0
 
-    const/4 v0, 0x1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    if-ne p1, p0, :cond_0
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
-    return v0
+    throw p0
+.end method
+
+.method public final P(Laze;)V
+    .locals 0
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object p0, p0, Lrs6;->a:Lg34;
+
+    invoke-interface {p0, p1}, Lg34;->P(Laze;)V
+
+    return-void
+.end method
+
+.method public final close()V
+    .locals 0
+
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p0
+.end method
+
+.method public final getUri()Landroid/net/Uri;
+    .locals 0
+
+    iget-object p0, p0, Lrs6;->a:Lg34;
+
+    invoke-interface {p0}, Lg34;->getUri()Landroid/net/Uri;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final read([BII)I
+    .locals 14
+
+    iget v0, p0, Lrs6;->X:I
+
+    iget-object v1, p0, Lrs6;->a:Lg34;
+
+    const/4 v2, -0x1
+
+    if-nez v0, :cond_7
+
+    iget-object v0, p0, Lrs6;->o:[B
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x1
+
+    invoke-interface {v1, v0, v3, v4}, La34;->read([BII)I
+
+    move-result v5
+
+    if-ne v5, v2, :cond_0
+
+    goto :goto_1
 
     :cond_0
-    instance-of v1, p1, Lrs6;
+    aget-byte v0, v0, v3
 
-    const/4 v2, 0x0
+    and-int/lit16 v0, v0, 0xff
 
-    if-nez v1, :cond_1
+    shl-int/lit8 v0, v0, 0x4
 
-    return v2
+    if-nez v0, :cond_1
+
+    goto :goto_5
 
     :cond_1
-    check-cast p1, Lrs6;
+    new-array v5, v0, [B
 
-    iget v1, p1, Lrs6;->b:I
+    move v6, v0
 
-    iget v3, p0, Lrs6;->b:I
+    :goto_0
+    if-lez v6, :cond_3
 
-    if-eq v3, v1, :cond_2
+    invoke-interface {v1, v5, v3, v6}, La34;->read([BII)I
 
+    move-result v7
+
+    if-ne v7, v2, :cond_2
+
+    :goto_1
     return v2
 
     :cond_2
-    move v1, v2
+    add-int/2addr v3, v7
 
-    :goto_0
-    if-ge v1, v3, :cond_4
+    sub-int/2addr v6, v7
 
-    invoke-static {v1, v3}, La06;->k(II)V
-
-    iget-object v4, p0, Lrs6;->a:[I
-
-    aget v4, v4, v1
-
-    iget v5, p1, Lrs6;->b:I
-
-    invoke-static {v1, v5}, La06;->k(II)V
-
-    iget-object v5, p1, Lrs6;->a:[I
-
-    aget v5, v5, v1
-
-    if-eq v4, v5, :cond_3
-
-    return v2
+    goto :goto_0
 
     :cond_3
-    add-int/lit8 v1, v1, 0x1
+    :goto_2
+    if-lez v0, :cond_4
 
-    goto :goto_0
+    add-int/lit8 v3, v0, -0x1
+
+    aget-byte v3, v5, v3
+
+    if-nez v3, :cond_4
+
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_2
 
     :cond_4
-    return v0
-.end method
+    if-lez v0, :cond_6
 
-.method public final hashCode()I
-    .locals 3
+    new-instance v3, Labf;
 
-    const/4 v0, 0x1
+    invoke-direct {v3, v0, v5}, Labf;-><init>(I[B)V
 
-    const/4 v1, 0x0
+    iget-object v0, p0, Lrs6;->c:Lukb;
 
-    :goto_0
-    iget v2, p0, Lrs6;->b:I
+    iget-boolean v5, v0, Lukb;->u0:Z
 
-    if-ge v1, v2, :cond_0
+    if-nez v5, :cond_5
 
-    mul-int/lit8 v0, v0, 0x1f
+    iget-wide v5, v0, Lukb;->q0:J
 
-    iget-object v2, p0, Lrs6;->a:[I
+    :goto_3
+    move-wide v8, v5
 
-    aget v2, v2, v1
+    goto :goto_4
 
-    add-int/2addr v0, v2
+    :cond_5
+    iget-object v5, v0, Lukb;->v0:Lalb;
 
-    add-int/lit8 v1, v1, 0x1
+    invoke-virtual {v5}, Lalb;->h()J
 
-    goto :goto_0
+    move-result-wide v5
 
-    :cond_0
-    return v0
-.end method
+    iget-wide v7, v0, Lukb;->q0:J
 
-.method public final toString()Ljava/lang/String;
-    .locals 4
+    invoke-static {v5, v6, v7, v8}, Ljava/lang/Math;->max(JJ)J
 
+    move-result-wide v5
+
+    goto :goto_3
+
+    :goto_4
+    invoke-virtual {v3}, Labf;->c()I
+
+    move-result v11
+
+    iget-object v7, v0, Lukb;->t0:Lepc;
+
+    invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v7, v11, v3}, Lepc;->c(ILabf;)V
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    const/4 v10, 0x1
+
+    invoke-interface/range {v7 .. v13}, Laye;->b(JIIILyxe;)V
+
+    iput-boolean v4, v0, Lukb;->u0:Z
+
+    :cond_6
+    :goto_5
     iget v0, p0, Lrs6;->b:I
 
-    if-nez v0, :cond_0
+    iput v0, p0, Lrs6;->X:I
 
-    const-string p0, "[]"
+    :cond_7
+    iget v0, p0, Lrs6;->X:I
 
-    return-object p0
+    move/from16 v3, p3
 
-    :cond_0
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-static {v0, v3}, Ljava/lang/Math;->min(II)I
 
-    mul-int/lit8 v2, v0, 0x5
+    move-result v0
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+    move/from16 v3, p2
 
-    const/16 v2, 0x5b
+    invoke-interface {v1, p1, v3, v0}, La34;->read([BII)I
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    move-result p1
 
-    iget-object p0, p0, Lrs6;->a:[I
+    if-eq p1, v2, :cond_8
 
-    const/4 v2, 0x0
+    iget v0, p0, Lrs6;->X:I
 
-    aget v2, p0, v2
+    sub-int/2addr v0, p1
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iput v0, p0, Lrs6;->X:I
 
-    const/4 v2, 0x1
+    :cond_8
+    return p1
+.end method
 
-    :goto_0
-    if-ge v2, v0, :cond_1
+.method public final w()Ljava/util/Map;
+    .locals 0
 
-    const-string v3, ", "
+    iget-object p0, p0, Lrs6;->a:Lg34;
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    aget v3, p0, v2
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/16 p0, 0x5d
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {p0}, Lg34;->w()Ljava/util/Map;
 
     move-result-object p0
 

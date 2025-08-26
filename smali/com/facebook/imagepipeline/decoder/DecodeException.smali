@@ -20,20 +20,21 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
-.field public final a:Lax4;
+.field public final a:La05;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lax4;)V
+.method public constructor <init>(Ljava/lang/String;La05;)V
     .locals 0
 
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    iput-object p2, p0, Lcom/facebook/imagepipeline/decoder/DecodeException;->a:Lax4;
+    iput-object p2, p0, Lcom/facebook/imagepipeline/decoder/DecodeException;->a:La05;
 
     return-void
 .end method

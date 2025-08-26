@@ -2,30 +2,71 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/media/AudioManager$OnAudioFocusChangeListener;
+
 
 # instance fields
-.field public final a:Lgs4;
+.field public final synthetic a:I
 
-.field public final b:J
+.field public final b:Landroid/os/Handler;
 
-.field public final c:Lxu5;
-
-.field public final d:Z
+.field public final synthetic c:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lgs4;JLxu5;Z)V
+.method public synthetic constructor <init>(ILandroid/os/Handler;Ljava/lang/Object;)V
     .locals 0
+
+    iput p1, p0, Lx30;->a:I
+
+    iput-object p3, p0, Lx30;->c:Ljava/lang/Object;
+
+    iput-object p2, p0, Lx30;->b:Landroid/os/Handler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lx30;->a:Lgs4;
+    return-void
+.end method
 
-    iput-wide p2, p0, Lx30;->b:J
 
-    iput-object p4, p0, Lx30;->c:Lxu5;
+# virtual methods
+.method public final onAudioFocusChange(I)V
+    .locals 2
 
-    iput-boolean p5, p0, Lx30;->d:Z
+    iget v0, p0, Lx30;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    new-instance v0, Lw30;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, p1, v1, p0}, Lw30;-><init>(IILjava/lang/Object;)V
+
+    iget-object p0, p0, Lx30;->b:Landroid/os/Handler;
+
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     return-void
+
+    :pswitch_0
+    new-instance v0, Lw30;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p1, v1, p0}, Lw30;-><init>(IILjava/lang/Object;)V
+
+    iget-object p0, p0, Lx30;->b:Landroid/os/Handler;
+
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

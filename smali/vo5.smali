@@ -1,183 +1,35 @@
-.class public final synthetic Lvo5;
-.super Ljava/lang/Object;
+.class public final Lvo5;
+.super Lbu3;
 .source "SourceFile"
-
-# interfaces
-.implements Lyq1;
 
 
 # instance fields
-.field public final synthetic a:Lbp5;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic b:Z
+.field public Y:I
 
-.field public final synthetic c:J
-
-
-# direct methods
-.method public synthetic constructor <init>(Lbp5;ZJ)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lvo5;->a:Lbp5;
-
-    iput-boolean p2, p0, Lvo5;->b:Z
-
-    iput-wide p3, p0, Lvo5;->c:J
-
-    return-void
-.end method
+.field public o:Ljava/lang/Object;
 
 
 # virtual methods
-.method public final a(Landroid/hardware/camera2/TotalCaptureResult;)Z
-    .locals 7
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Lvo5;->a:Lbp5;
+    iput-object p1, p0, Lvo5;->X:Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget p1, p0, Lvo5;->Y:I
 
-    sget-object v1, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_STATE:Landroid/hardware/camera2/CaptureResult$Key;
+    const/high16 v0, -0x80000000
 
-    invoke-virtual {p1, v1}, Landroid/hardware/camera2/CaptureResult;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    or-int/2addr p1, v0
 
-    move-result-object v1
+    iput p1, p0, Lvo5;->Y:I
 
-    check-cast v1, Ljava/lang/Integer;
+    const/4 p1, 0x0
 
-    iget-object v2, v0, Lbp5;->q:[Landroid/hardware/camera2/params/MeteringRectangle;
+    invoke-static {p1, p1, p1, p0}, Lu7;->c(Lbn5;Ljava/lang/Object;Ljava/lang/Object;Lbu3;)V
 
-    array-length v2, v2
+    sget-object p0, Lpx3;->a:Lpx3;
 
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
-
-    if-lez v2, :cond_0
-
-    move v2, v4
-
-    goto :goto_0
-
-    :cond_0
-    move v2, v3
-
-    :goto_0
-    if-eqz v2, :cond_4
-
-    iget-boolean v2, p0, Lvo5;->b:Z
-
-    if-eqz v2, :cond_3
-
-    if-nez v1, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    iget-object v2, v0, Lbp5;->h:Ljava/lang/Integer;
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    const/4 v5, 0x3
-
-    if-ne v2, v5, :cond_4
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    const/4 v5, 0x4
-
-    if-ne v2, v5, :cond_2
-
-    iput-boolean v4, v0, Lbp5;->m:Z
-
-    iput-boolean v4, v0, Lbp5;->l:Z
-
-    goto :goto_2
-
-    :cond_2
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    const/4 v5, 0x5
-
-    if-ne v2, v5, :cond_4
-
-    iput-boolean v3, v0, Lbp5;->m:Z
-
-    iput-boolean v4, v0, Lbp5;->l:Z
-
-    goto :goto_2
-
-    :cond_3
-    :goto_1
-    iput-boolean v4, v0, Lbp5;->m:Z
-
-    iput-boolean v4, v0, Lbp5;->l:Z
-
-    :cond_4
-    :goto_2
-    iget-boolean v2, v0, Lbp5;->l:Z
-
-    if-eqz v2, :cond_7
-
-    iget-wide v5, p0, Lvo5;->c:J
-
-    invoke-static {p1, v5, v6}, Lzq1;->x(Landroid/hardware/camera2/TotalCaptureResult;J)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_7
-
-    iget-boolean p0, v0, Lbp5;->m:Z
-
-    iget-object p1, v0, Lbp5;->j:Ljava/util/concurrent/ScheduledFuture;
-
-    const/4 v1, 0x0
-
-    if-eqz p1, :cond_5
-
-    invoke-interface {p1, v4}, Ljava/util/concurrent/Future;->cancel(Z)Z
-
-    iput-object v1, v0, Lbp5;->j:Ljava/util/concurrent/ScheduledFuture;
-
-    :cond_5
-    iget-object p1, v0, Lbp5;->t:Lsn1;
-
-    if-eqz p1, :cond_6
-
-    new-instance v2, Lcp5;
-
-    invoke-direct {v2, p0}, Lcp5;-><init>(Z)V
-
-    invoke-virtual {p1, v2}, Lsn1;->b(Ljava/lang/Object;)Z
-
-    iput-object v1, v0, Lbp5;->t:Lsn1;
-
-    :cond_6
-    move v3, v4
-
-    goto :goto_3
-
-    :cond_7
-    iget-object p0, v0, Lbp5;->h:Ljava/lang/Integer;
-
-    invoke-virtual {p0, v1}, Ljava/lang/Integer;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_8
-
-    if-eqz v1, :cond_8
-
-    iput-object v1, v0, Lbp5;->h:Ljava/lang/Integer;
-
-    :cond_8
-    :goto_3
-    return v3
+    return-object p0
 .end method

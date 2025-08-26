@@ -1,61 +1,49 @@
 .class public final Lq8a;
-.super Lt8a;
+.super Lbu3;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lq8a;
+# instance fields
+.field public final synthetic X:Lr8a;
+
+.field public Y:I
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lr8a;Lbu3;)V
+    .locals 0
 
-    new-instance v0, Lq8a;
+    iput-object p1, p0, Lq8a;->X:Lr8a;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lq8a;->a:Lq8a;
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Lq8a;->o:Ljava/lang/Object;
 
-    if-ne p0, p1, :cond_0
+    iget p1, p0, Lq8a;->Y:I
 
-    return v0
+    const/high16 v0, -0x80000000
 
-    :cond_0
-    instance-of p0, p1, Lq8a;
+    or-int/2addr p1, v0
 
-    if-nez p0, :cond_1
+    iput p1, p0, Lq8a;->Y:I
 
-    const/4 p0, 0x0
+    iget-object p1, p0, Lq8a;->X:Lr8a;
 
-    return p0
+    const/4 v0, 0x0
 
-    :cond_1
-    return v0
-.end method
+    invoke-virtual {p1, v0, p0}, Lr8a;->a(Landroid/content/Context;Lbu3;)V
 
-.method public final hashCode()I
-    .locals 0
-
-    const p0, 0x715c406f
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    const-string p0, "PrimaryStatic"
+    sget-object p0, Lpx3;->a:Lpx3;
 
     return-object p0
 .end method

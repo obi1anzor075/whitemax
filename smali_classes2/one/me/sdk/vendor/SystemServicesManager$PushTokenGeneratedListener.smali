@@ -16,7 +16,7 @@
         "",
         "",
         "token",
-        "Ljue;",
+        "Le5f;",
         "onPushTokenGenerated",
         "(Ljava/lang/String;)V",
         "vendor_release"
@@ -27,6 +27,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

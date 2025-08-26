@@ -1,111 +1,81 @@
-.class public final Lik;
+.class public interface abstract Lik;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final b:Lp7c;
-
-
-# instance fields
-.field public final a:Landroid/content/Context;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public static synthetic b(Lik;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ln10;Ljava/lang/String;Ljava/lang/String;)J
+    .locals 10
 
-    new-instance v0, Lp7c;
+    const/4 v1, 0x2
 
-    const-string v1, "main-([0-9]+)\\.txt"
+    move-object v0, p0
 
-    invoke-direct {v0, v1}, Lp7c;-><init>(Ljava/lang/String;)V
+    check-cast v0, La2a;
 
-    sput-object v0, Lik;->b:Lp7c;
+    const-wide/16 v2, 0x0
 
-    return-void
-.end method
+    move-object v5, p1
 
-.method public constructor <init>(Landroid/content/Context;I)V
-    .locals 0
+    move-object v6, p2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object v7, p3
 
-    iput-object p1, p0, Lik;->a:Landroid/content/Context;
+    move-object v4, p4
 
-    const/4 p0, 0x1
+    move-object v8, p5
 
-    const/16 p1, 0x64
+    move-object/from16 v9, p6
 
-    invoke-static {p2, p0, p1}, Lgwf;->j(III)I
+    invoke-virtual/range {v0 .. v9}, La2a;->G(IJLn10;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J
 
-    return-void
+    move-result-wide p0
+
+    return-wide p0
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/io/File;
-    .locals 4
+.method public a(Lhaf;)J
+    .locals 1
 
-    invoke-static {}, Lxs7;->B()Ljava/lang/String;
+    const/4 v0, 0x0
 
-    move-result-object v0
+    check-cast p0, La2a;
 
-    iget-object p0, p0, Lik;->a:Landroid/content/Context;
+    invoke-virtual {p0, p1, v0}, La2a;->s(Lhaf;Z)J
 
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    move-result-wide p0
+
+    return-wide p0
+.end method
+
+.method public c(ILjava/util/List;)V
+    .locals 3
+
+    invoke-static {p2}, Lp43;->X0(Ljava/util/Collection;)[J
+
+    move-result-object p2
+
+    check-cast p0, La2a;
+
+    new-instance v0, Ltt;
+
+    invoke-virtual {p0}, La2a;->x()Lx4b;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    check-cast v1, La5b;
 
-    move-result v1
+    iget-object v1, v1, La5b;->a:Lj23;
 
-    if-eqz v1, :cond_0
+    invoke-virtual {v1}, Lmwc;->l()J
 
-    const-string v0, "tracer"
+    move-result-wide v1
 
-    goto :goto_0
+    invoke-direct {v0, p1, v1, v2, p2}, Ltt;-><init>(IJ[J)V
 
-    :cond_0
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-static {p0, v0}, La2a;->u(La2a;Lhl;)J
 
-    const-string v2, "tracer-"
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const/16 v2, 0x3a
-
-    const/16 v3, 0x2d
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/net/Uri;->encode(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_0
-    new-instance v1, Ljava/io/File;
-
-    invoke-virtual {p0}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
-
-    move-result-object p0
-
-    invoke-direct {v1, p0, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    const-string p0, "main_snapshots"
-
-    invoke-static {v1, p0}, Lng5;->N(Ljava/io/File;Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

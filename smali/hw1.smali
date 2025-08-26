@@ -1,64 +1,88 @@
-.class public final Lhw1;
-.super Lr73;
+.class public interface abstract Lhw1;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final synthetic c:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-
-# instance fields
-.field private volatile synthetic _resumed$volatile:I
+.field public static final a:Lgw1;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    const-class v0, Lhw1;
+    new-instance v0, Lgw1;
 
-    const-string v1, "_resumed$volatile"
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0, v1}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    move-result-object v0
-
-    sput-object v0, Lhw1;->c:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+    sput-object v0, Lhw1;->a:Lgw1;
 
     return-void
 .end method
 
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Ljava/lang/Throwable;Z)V
-    .locals 2
 
-    if-nez p2, :cond_0
+# virtual methods
+.method public a()V
+    .locals 0
 
-    new-instance p2, Ljava/util/concurrent/CancellationException;
+    return-void
+.end method
 
-    new-instance v0, Ljava/lang/StringBuilder;
+.method public abstract b(F)Lbm7;
+.end method
 
-    const-string v1, "Continuation "
+.method public abstract c(Lrc3;)V
+.end method
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+.method public abstract d(F)Lbm7;
+.end method
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+.method public abstract e()Landroid/graphics/Rect;
+.end method
 
-    const-string p1, " was cancelled normally"
+.method public abstract f(I)V
+.end method
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method public g(Lgu6;)V
+    .locals 0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    return-void
+.end method
 
-    move-result-object p1
+.method public abstract h(Ljava/util/ArrayList;II)Lbm7;
+.end method
 
-    invoke-direct {p2, p1}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
+.method public abstract i(Lg8d;)V
+.end method
 
-    :cond_0
-    invoke-direct {p0, p2, p3}, Lr73;-><init>(Ljava/lang/Throwable;Z)V
+.method public abstract j(Z)Lbm7;
+.end method
 
-    const/4 p1, 0x0
+.method public k(II)Lbm7;
+    .locals 0
 
-    iput p1, p0, Lhw1;->_resumed$volatile:I
+    new-instance p0, Lfw1;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-static {p0}, Lu7;->z(Ljava/lang/Object;)Lcw6;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public abstract l()Lrc3;
+.end method
+
+.method public abstract m()V
+.end method
+
+.method public abstract n(Lgs5;)Lbm7;
+.end method
+
+.method public o()V
+    .locals 0
 
     return-void
 .end method

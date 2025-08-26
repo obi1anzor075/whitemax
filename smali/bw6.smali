@@ -1,64 +1,26 @@
-.class public final synthetic Lbw6;
-.super Ljava/lang/Object;
+.class public final Lbw6;
+.super Lcw6;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
-
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lcw6;
-
-
-# direct methods
-.method public synthetic constructor <init>(Lcw6;I)V
-    .locals 0
-
-    iput p2, p0, Lbw6;->a:I
-
-    iput-object p1, p0, Lbw6;->b:Lcw6;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.implements Ljava/util/concurrent/ScheduledFuture;
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public final bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 0
 
-    iget p1, p0, Lbw6;->a:I
+    check-cast p1, Ljava/util/concurrent/Delayed;
 
-    packed-switch p1, :pswitch_data_0
+    const/4 p0, -0x1
 
-    iget-object p0, p0, Lbw6;->b:Lcw6;
+    return p0
+.end method
 
-    iget-object p0, p0, Lcw6;->F0:Lhcd;
+.method public final getDelay(Ljava/util/concurrent/TimeUnit;)J
+    .locals 0
 
-    sget-object p1, Lfs3;->a:Lfs3;
+    const-wide/16 p0, 0x0
 
-    invoke-virtual {p0, p1}, Lhcd;->g(Ljava/lang/Object;)Z
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lbw6;->b:Lcw6;
-
-    iget-object p0, p0, Lcw6;->F0:Lhcd;
-
-    sget-object p1, Les3;->a:Les3;
-
-    invoke-virtual {p0, p1}, Lhcd;->g(Ljava/lang/Object;)Z
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-wide p0
 .end method

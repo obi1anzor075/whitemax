@@ -1,72 +1,306 @@
 .class public final La23;
-.super Ljava/lang/Object;
+.super Landroid/text/method/LinkMovementMethod;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
+
+# static fields
+.field public static final m:Ljava/lang/String;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lz13;
 
-.field public final synthetic b:Lb23;
+.field public final b:Landroid/graphics/RectF;
 
-.field public final synthetic c:Landroid/graphics/drawable/Drawable;
+.field public c:Ljava/lang/String;
 
-.field public final synthetic o:Ljava/lang/Runnable;
+.field public d:Lt4b;
+
+.field public e:Landroid/text/Spannable;
+
+.field public f:Landroid/text/style/ClickableSpan;
+
+.field public g:Z
+
+.field public h:Ly45;
+
+.field public i:Z
+
+.field public j:Ljava/lang/Runnable;
+
+.field public final k:Lf00;
+
+.field public final l:Landroid/view/GestureDetector;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lb23;Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p4, p0, La23;->a:I
+    const-class v0, La23;
 
-    iput-object p1, p0, La23;->b:Lb23;
+    invoke-static {v0}, Llcc;->a(Ljava/lang/Class;)Lz03;
 
-    iput-object p2, p0, La23;->c:Landroid/graphics/drawable/Drawable;
+    move-result-object v0
 
-    iput-object p3, p0, La23;->o:Ljava/lang/Runnable;
+    invoke-virtual {v0}, Lz03;->b()Ljava/lang/String;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object v0
+
+    sput-object v0, La23;->m:Ljava/lang/String;
 
     return-void
 .end method
 
+.method public constructor <init>(Landroid/content/Context;Lz13;)V
+    .locals 1
+
+    invoke-direct {p0}, Landroid/text/method/LinkMovementMethod;-><init>()V
+
+    iput-object p2, p0, La23;->a:Lz13;
+
+    new-instance p2, Landroid/graphics/RectF;
+
+    invoke-direct {p2}, Landroid/graphics/RectF;-><init>()V
+
+    iput-object p2, p0, La23;->b:Landroid/graphics/RectF;
+
+    new-instance p2, Lf00;
+
+    const/4 v0, 0x5
+
+    invoke-direct {p2, v0, p0}, Lf00;-><init>(ILjava/lang/Object;)V
+
+    iput-object p2, p0, La23;->k:Lf00;
+
+    new-instance v0, Landroid/view/GestureDetector;
+
+    invoke-direct {v0, p1, p2}, Landroid/view/GestureDetector;-><init>(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;)V
+
+    iput-object v0, p0, La23;->l:Landroid/view/GestureDetector;
+
+    return-void
+.end method
+
+.method public static final a(La23;Lt4b;Landroid/text/Spannable;Landroid/view/MotionEvent;)Landroid/text/style/ClickableSpan;
+    .locals 6
+
+    iget-object p0, p0, La23;->b:Landroid/graphics/RectF;
+
+    const/4 v0, 0x0
+
+    if-eqz p1, :cond_5
+
+    iget-object v1, p1, Lt4b;->b:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v1}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/view/View;
+
+    if-nez v1, :cond_0
+
+    goto/16 :goto_3
+
+    :cond_0
+    iget-object p1, p1, Lt4b;->c:Ljava/lang/Object;
+
+    check-cast p1, Landroid/text/Layout;
+
+    if-nez p1, :cond_1
+
+    goto/16 :goto_3
+
+    :cond_1
+    invoke-virtual {p3}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v2
+
+    float-to-int v2, v2
+
+    invoke-virtual {p3}, Landroid/view/MotionEvent;->getY()F
+
+    move-result p3
+
+    float-to-int p3, p3
+
+    invoke-virtual {v1}, Landroid/view/View;->getPaddingLeft()I
+
+    move-result v3
+
+    sub-int/2addr v2, v3
+
+    invoke-virtual {v1}, Landroid/view/View;->getPaddingTop()I
+
+    move-result v3
+
+    sub-int/2addr p3, v3
+
+    invoke-virtual {v1}, Landroid/view/View;->getScrollX()I
+
+    move-result v3
+
+    add-int/2addr v3, v2
+
+    invoke-virtual {v1}, Landroid/view/View;->getScrollY()I
+
+    move-result v1
+
+    add-int/2addr v1, p3
+
+    invoke-virtual {p1, v1}, Landroid/text/Layout;->getLineForVertical(I)I
+
+    move-result p3
+
+    int-to-float v2, v3
+
+    :try_start_0
+    invoke-virtual {p1, p3, v2}, Landroid/text/Layout;->getOffsetForHorizontal(IF)I
+
+    move-result v3
+
+    invoke-virtual {p1, p3}, Landroid/text/Layout;->getLineLeft(I)F
+
+    move-result v4
+
+    iput v4, p0, Landroid/graphics/RectF;->left:F
+
+    invoke-virtual {p1, p3}, Landroid/text/Layout;->getLineTop(I)I
+
+    move-result v4
+
+    int-to-float v4, v4
+
+    iput v4, p0, Landroid/graphics/RectF;->top:F
+
+    invoke-virtual {p1, p3}, Landroid/text/Layout;->getLineMax(I)F
+
+    move-result v4
+
+    iget v5, p0, Landroid/graphics/RectF;->left:F
+
+    add-float/2addr v4, v5
+
+    iput v4, p0, Landroid/graphics/RectF;->right:F
+
+    invoke-virtual {p1, p3}, Landroid/text/Layout;->getLineBottom(I)I
+
+    move-result p1
+
+    int-to-float p1, p1
+
+    iput p1, p0, Landroid/graphics/RectF;->bottom:F
+
+    int-to-float p1, v1
+
+    invoke-virtual {p0, v2, p1}, Landroid/graphics/RectF;->contains(FF)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    const-class p0, Landroid/text/style/ClickableSpan;
+
+    invoke-interface {p2, v3, v3, p0}, Landroid/text/Spanned;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lns;->f0([Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/text/style/ClickableSpan;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_0
+
+    :cond_2
+    move-object p0, v0
+
+    goto :goto_1
+
+    :goto_0
+    new-instance p1, Ljhc;
+
+    invoke-direct {p1, p0}, Ljhc;-><init>(Ljava/lang/Throwable;)V
+
+    move-object p0, p1
+
+    :goto_1
+    invoke-static {p0}, Llhc;->a(Ljava/lang/Object;)Ljava/lang/Throwable;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_3
+
+    sget-object p2, La23;->m:Ljava/lang/String;
+
+    const-string p3, "findClickableSpanUnderTouch failed:"
+
+    invoke-static {p2, p3, p1}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_3
+    instance-of p1, p0, Ljhc;
+
+    if-eqz p1, :cond_4
+
+    goto :goto_2
+
+    :cond_4
+    move-object v0, p0
+
+    :goto_2
+    check-cast v0, Landroid/text/style/ClickableSpan;
+
+    :cond_5
+    :goto_3
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final onTouchEvent(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/MotionEvent;)Z
+    .locals 3
 
-    iget v0, p0, La23;->a:I
+    invoke-virtual {p3}, Landroid/view/MotionEvent;->getAction()I
 
-    packed-switch v0, :pswitch_data_0
+    move-result v0
 
-    iget-object v0, p0, La23;->c:Landroid/graphics/drawable/Drawable;
+    if-nez v0, :cond_0
 
-    iget-object v1, p0, La23;->o:Ljava/lang/Runnable;
+    new-instance v0, Lt4b;
 
-    iget-object p0, p0, La23;->b:Lb23;
+    new-instance v1, Ljava/lang/ref/WeakReference;
 
-    invoke-static {p0, v0, v1}, Lb23;->y(Lb23;Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V
+    invoke-direct {v1, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    return-void
+    invoke-virtual {p1}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
 
-    :pswitch_0
-    iget-object v0, p0, La23;->c:Landroid/graphics/drawable/Drawable;
+    move-result-object p1
 
-    iget-object v1, p0, La23;->o:Ljava/lang/Runnable;
+    const/16 v2, 0xc
 
-    iget-object p0, p0, La23;->b:Lb23;
+    invoke-direct {v0, v1, v2, p1}, Lt4b;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    invoke-static {p0, v0, v1}, Lb23;->y(Lb23;Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V
+    iput-object v0, p0, La23;->d:Lt4b;
 
-    return-void
+    iput-object p2, p0, La23;->e:Landroid/text/Spannable;
 
-    nop
+    :cond_0
+    iget-object p0, p0, La23;->l:Landroid/view/GestureDetector;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    invoke-virtual {p0, p3}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result p0
+
+    return p0
 .end method

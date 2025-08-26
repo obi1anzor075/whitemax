@@ -1,181 +1,173 @@
-.class public final enum Lep8;
-.super Ljava/lang/Enum;
+.class public final Lep8;
+.super Lqde;
 .source "SourceFile"
 
+# interfaces
+.implements Ll66;
 
-# static fields
-.field public static final synthetic A0:[Lep8;
 
-.field public static final enum X:Lep8;
+# instance fields
+.field public X:Ly42;
 
-.field public static final enum Y:Lep8;
+.field public Y:I
 
-.field public static final enum Z:Lep8;
+.field public final synthetic Z:Llp8;
 
-.field public static final enum a:Lep8;
-
-.field public static final enum b:Lep8;
-
-.field public static final enum c:Lep8;
-
-.field public static final enum o:Lep8;
-
-.field public static final enum w0:Lep8;
-
-.field public static final enum x0:Lep8;
-
-.field public static final enum y0:Lep8;
-
-.field public static final enum z0:Lep8;
+.field public final synthetic o0:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 13
+.method public constructor <init>(Llp8;ZLkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    new-instance v0, Lep8;
+    iput-object p1, p0, Lep8;->Z:Llp8;
 
-    const-string v1, "USER_MENTION"
+    iput-boolean p2, p0, Lep8;->o0:Z
 
-    const/4 v2, 0x0
+    const/4 p1, 0x2
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lep8;->a:Lep8;
-
-    new-instance v1, Lep8;
-
-    const-string v2, "GROUP_MENTION"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lep8;->b:Lep8;
-
-    new-instance v2, Lep8;
-
-    const-string v3, "MONOSPACED"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lep8;->c:Lep8;
-
-    new-instance v3, Lep8;
-
-    const-string v4, "STRONG"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Lep8;->o:Lep8;
-
-    new-instance v4, Lep8;
-
-    const-string v5, "EMPHASIZED"
-
-    const/4 v6, 0x4
-
-    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v4, Lep8;->X:Lep8;
-
-    new-instance v5, Lep8;
-
-    const-string v6, "LINK"
-
-    const/4 v7, 0x5
-
-    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v5, Lep8;->Y:Lep8;
-
-    new-instance v6, Lep8;
-
-    const-string v7, "STRIKETHROUGH"
-
-    const/4 v8, 0x6
-
-    invoke-direct {v6, v7, v8}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v6, Lep8;->Z:Lep8;
-
-    new-instance v7, Lep8;
-
-    const-string v8, "CODE"
-
-    const/4 v9, 0x7
-
-    invoke-direct {v7, v8, v9}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v7, Lep8;->w0:Lep8;
-
-    new-instance v8, Lep8;
-
-    const-string v9, "UNDERLINE"
-
-    const/16 v10, 0x8
-
-    invoke-direct {v8, v9, v10}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v8, Lep8;->x0:Lep8;
-
-    new-instance v9, Lep8;
-
-    const-string v10, "HEADING"
-
-    const/16 v11, 0x9
-
-    invoke-direct {v9, v10, v11}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v9, Lep8;->y0:Lep8;
-
-    new-instance v10, Lep8;
-
-    const-string v11, "ANIMOJI"
-
-    const/16 v12, 0xa
-
-    invoke-direct {v10, v11, v12}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v10, Lep8;->z0:Lep8;
-
-    filled-new-array/range {v0 .. v10}, [Lep8;
-
-    move-result-object v0
-
-    sput-object v0, Lep8;->A0:[Lep8;
+    invoke-direct {p0, p1, p3}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lep8;
-    .locals 1
 
-    const-class v0, Lep8;
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    check-cast p1, Lox3;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lep8;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
     check-cast p0, Lep8;
 
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lep8;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
     return-object p0
 .end method
 
-.method public static values()[Lep8;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .locals 1
 
-    sget-object v0, Lep8;->A0:[Lep8;
+    new-instance p1, Lep8;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    iget-object v0, p0, Lep8;->Z:Llp8;
+
+    iget-boolean p0, p0, Lep8;->o0:Z
+
+    invoke-direct {p1, v0, p0, p2}, Lep8;-><init>(Llp8;ZLkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
+
+    iget v0, p0, Lep8;->Y:I
+
+    const/4 v1, 0x2
+
+    const/4 v2, 0x1
+
+    sget-object v3, Le5f;->a:Le5f;
+
+    iget-object v4, p0, Lep8;->Z:Llp8;
+
+    sget-object v5, Lpx3;->a:Lpx3;
+
+    if-eqz v0, :cond_2
+
+    if-eq v0, v2, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    goto :goto_3
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    iget-object v0, p0, Lep8;->X:Ly42;
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_2
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, v4, Llp8;->F0:Ljava/lang/String;
+
+    const-string v0, "load members with read status"
+
+    invoke-static {p1, v0}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v4}, Llp8;->t()Ly42;
 
     move-result-object v0
 
-    check-cast v0, [Lep8;
+    if-nez v0, :cond_3
 
-    return-object v0
+    goto :goto_1
+
+    :cond_3
+    iput-object v0, p0, Lep8;->X:Ly42;
+
+    iput v2, p0, Lep8;->Y:I
+
+    invoke-static {v4, v0, p0}, Llp8;->r(Llp8;Ly42;Lbu3;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, v5, :cond_4
+
+    goto :goto_2
+
+    :cond_4
+    :goto_0
+    iget-boolean p1, p0, Lep8;->o0:Z
+
+    if-nez p1, :cond_5
+
+    :goto_1
+    return-object v3
+
+    :cond_5
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Lep8;->X:Ly42;
+
+    iput v1, p0, Lep8;->Y:I
+
+    invoke-static {v4, v0, p0}, Llp8;->s(Llp8;Ly42;Lbu3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-ne p0, v5, :cond_6
+
+    :goto_2
+    return-object v5
+
+    :cond_6
+    :goto_3
+    invoke-static {v4}, Llp8;->q(Llp8;)V
+
+    return-object v3
 .end method

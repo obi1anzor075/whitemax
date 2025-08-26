@@ -107,7 +107,9 @@
 
     if-le p0, p1, :cond_0
 
-    const/4 p1, 0x2
+    const/4 p0, 0x2
+
+    return p0
 
     :cond_0
     return p1
@@ -141,14 +143,14 @@
 
     move-result p0
 
-    goto :goto_1
+    return p0
 
     :cond_1
     invoke-virtual {p0, p1, p2}, Lorg/apache/http/conn/routing/BasicRouteDirector;->directStep(Lorg/apache/http/conn/routing/RouteInfo;Lorg/apache/http/conn/routing/RouteInfo;)I
 
     move-result p0
 
-    goto :goto_1
+    return p0
 
     :cond_2
     :goto_0
@@ -156,7 +158,6 @@
 
     move-result p0
 
-    :goto_1
     return p0
 
     :cond_3

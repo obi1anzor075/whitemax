@@ -4,98 +4,115 @@
 
 
 # instance fields
-.field public final a:Lxc4;
-
-.field public final b:Ljava/util/List;
-
-.field public final c:Ljava/lang/String;
-
-.field public final d:I
-
-.field public final e:I
-
-.field public final f:Lzq4;
+.field public final a:J
 
 
 # direct methods
-.method public constructor <init>(Lxc4;Ljava/util/List;Ljava/lang/String;IILzq4;)V
+.method public constructor <init>(J)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lra0;->a:Lxc4;
-
-    iput-object p2, p0, Lra0;->b:Ljava/util/List;
-
-    iput-object p3, p0, Lra0;->c:Ljava/lang/String;
-
-    iput p4, p0, Lra0;->d:I
-
-    iput p5, p0, Lra0;->e:I
-
-    iput-object p6, p0, Lra0;->f:Lzq4;
+    iput-wide p1, p0, Lra0;->a:J
 
     return-void
 .end method
 
-.method public static a(Lxc4;)Lpb5;
-    .locals 2
+.method public static a(Ljava/io/BufferedReader;)Lra0;
+    .locals 3
 
-    new-instance v0, Lpb5;
+    new-instance v0, Landroid/util/JsonReader;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0, p0}, Landroid/util/JsonReader;-><init>(Ljava/io/Reader;)V
+
+    :try_start_0
+    invoke-virtual {v0}, Landroid/util/JsonReader;->beginObject()V
+
+    :goto_0
+    invoke-virtual {v0}, Landroid/util/JsonReader;->hasNext()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    invoke-virtual {v0}, Landroid/util/JsonReader;->nextName()Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v1, "nextRequestWaitMillis"
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
 
     if-eqz p0, :cond_1
 
-    iput-object p0, v0, Lpb5;->a:Ljava/lang/Object;
-
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+    invoke-virtual {v0}, Landroid/util/JsonReader;->peek()Landroid/util/JsonToken;
 
     move-result-object p0
 
-    if-eqz p0, :cond_0
+    sget-object v1, Landroid/util/JsonToken;->STRING:Landroid/util/JsonToken;
 
-    iput-object p0, v0, Lpb5;->b:Ljava/lang/Object;
+    if-ne p0, v1, :cond_0
 
-    const/4 p0, 0x0
-
-    iput-object p0, v0, Lpb5;->c:Ljava/lang/Object;
-
-    const/4 p0, -0x1
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lpb5;->o:Ljava/lang/Object;
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v0}, Landroid/util/JsonReader;->nextString()Ljava/lang/String;
 
     move-result-object p0
 
-    iput-object p0, v0, Lpb5;->X:Ljava/lang/Object;
+    invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
-    sget-object p0, Lzq4;->d:Lzq4;
+    move-result-wide v1
 
-    iput-object p0, v0, Lpb5;->Y:Ljava/lang/Object;
+    new-instance p0, Lra0;
 
-    return-object v0
+    invoke-direct {p0, v1, v2}, Lra0;-><init>(J)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {v0}, Landroid/util/JsonReader;->close()V
+
+    return-object p0
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_1
 
     :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
+    :try_start_1
+    invoke-virtual {v0}, Landroid/util/JsonReader;->nextLong()J
 
-    const-string v0, "Null sharedSurfaces"
+    move-result-wide v1
 
-    invoke-direct {p0, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    new-instance p0, Lra0;
 
-    throw p0
+    invoke-direct {p0, v1, v2}, Lra0;-><init>(J)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    invoke-virtual {v0}, Landroid/util/JsonReader;->close()V
+
+    return-object p0
 
     :cond_1
-    new-instance p0, Ljava/lang/NullPointerException;
+    :try_start_2
+    invoke-virtual {v0}, Landroid/util/JsonReader;->skipValue()V
 
-    const-string v0, "Null surface"
+    goto :goto_0
 
-    invoke-direct {p0, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    :cond_2
+    new-instance p0, Ljava/io/IOException;
+
+    const-string v1, "Response is missing nextRequestWaitMillis field."
+
+    invoke-direct {p0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    :goto_1
+    invoke-virtual {v0}, Landroid/util/JsonReader;->close()V
 
     throw p0
 .end method
@@ -103,7 +120,7 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 5
 
     const/4 v0, 0x1
 
@@ -116,142 +133,38 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_1
 
     check-cast p1, Lra0;
 
-    iget-object v1, p1, Lra0;->a:Lxc4;
+    iget-wide v3, p0, Lra0;->a:J
 
-    iget-object v3, p0, Lra0;->a:Lxc4;
+    iget-wide p0, p1, Lra0;->a:J
 
-    invoke-virtual {v3, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    cmp-long p0, v3, p0
 
-    move-result v1
+    if-nez p0, :cond_1
 
-    if-eqz v1, :cond_2
-
-    iget-object v1, p0, Lra0;->b:Ljava/util/List;
-
-    iget-object v3, p1, Lra0;->b:Ljava/util/List;
-
-    invoke-interface {v1, v3}, Ljava/util/List;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    iget-object v1, p1, Lra0;->c:Ljava/lang/String;
-
-    iget-object v3, p0, Lra0;->c:Ljava/lang/String;
-
-    if-nez v3, :cond_1
-
-    if-nez v1, :cond_2
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    :goto_0
-    iget v1, p0, Lra0;->d:I
-
-    iget v3, p1, Lra0;->d:I
-
-    if-ne v1, v3, :cond_2
-
-    iget v1, p0, Lra0;->e:I
-
-    iget v3, p1, Lra0;->e:I
-
-    if-ne v1, v3, :cond_2
-
-    iget-object p0, p0, Lra0;->f:Lzq4;
-
-    iget-object p1, p1, Lra0;->f:Lzq4;
-
-    invoke-virtual {p0, p1}, Lzq4;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_2
-
-    goto :goto_1
-
-    :cond_2
-    move v0, v2
-
-    :goto_1
     return v0
 
-    :cond_3
+    :cond_1
     return v2
 .end method
 
 .method public final hashCode()I
-    .locals 3
+    .locals 5
 
-    iget-object v0, p0, Lra0;->a:Lxc4;
+    const/16 v0, 0x20
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    iget-wide v1, p0, Lra0;->a:J
 
-    move-result v0
+    ushr-long v3, v1, v0
 
-    const v1, 0xf4243
+    xor-long v0, v3, v1
 
-    xor-int/2addr v0, v1
+    long-to-int p0, v0
 
-    mul-int/2addr v0, v1
-
-    iget-object v2, p0, Lra0;->b:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->hashCode()I
-
-    move-result v2
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget-object v2, p0, Lra0;->c:Ljava/lang/String;
-
-    if-nez v2, :cond_0
-
-    const/4 v2, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
-
-    move-result v2
-
-    :goto_0
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Lra0;->d:I
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Lra0;->e:I
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget-object p0, p0, Lra0;->f:Lzq4;
-
-    invoke-virtual {p0}, Lzq4;->hashCode()I
-
-    move-result p0
+    const v0, 0xf4243
 
     xor-int/2addr p0, v0
 
@@ -259,63 +172,19 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "OutputConfig{surface="
+    const-string v1, "LogResponse{nextRequestWaitMillis="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lra0;->a:Lxc4;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", sharedSurfaces="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lra0;->b:Ljava/util/List;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", physicalCameraId="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lra0;->c:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mirrorMode="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lra0;->d:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", surfaceGroupId="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lra0;->e:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", dynamicRange="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lra0;->f:Lzq4;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iget-wide v1, p0, Lra0;->a:J
 
     const-string p0, "}"
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, v1, v2, p0}, Lu88;->m(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

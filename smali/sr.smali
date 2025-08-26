@@ -1,87 +1,64 @@
-.class public final enum Lsr;
-.super Ljava/lang/Enum;
+.class public final synthetic Lsr;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lq3e;
-.implements Lj26;
+.implements Ljava/util/concurrent/Executor;
 
 
-# static fields
-.field public static final enum a:Lsr;
-
-.field public static final synthetic b:[Lsr;
+# instance fields
+.field public final synthetic a:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(I)V
+    .locals 0
 
-    new-instance v0, Lsr;
+    iput p1, p0, Lsr;->a:I
 
-    const-string v1, "INSTANCE"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lsr;->a:Lsr;
-
-    filled-new-array {v0}, [Lsr;
-
-    move-result-object v0
-
-    sput-object v0, Lsr;->b:[Lsr;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lsr;
-    .locals 1
+.method private final a(Ljava/lang/Runnable;)V
+    .locals 0
 
-    const-class v0, Lsr;
-
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    move-result-object p0
-
-    check-cast p0, Lsr;
-
-    return-object p0
-.end method
-
-.method public static values()[Lsr;
-    .locals 1
-
-    sget-object v0, Lsr;->b:[Lsr;
-
-    invoke-virtual {v0}, [Lsr;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lsr;
-
-    return-object v0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final execute(Ljava/lang/Runnable;)V
     .locals 0
 
-    new-instance p0, Ljava/util/ArrayList;
+    iget p0, p0, Lsr;->a:I
 
-    invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
+    packed-switch p0, :pswitch_data_0
 
-    return-object p0
-.end method
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-.method public final get()Ljava/lang/Object;
-    .locals 0
+    :pswitch_0
+    return-void
 
-    new-instance p0, Ljava/util/ArrayList;
+    :pswitch_1
+    invoke-static {}, Ltr;->I()Ltr;
 
-    invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
+    move-result-object p0
 
-    return-object p0
+    iget-object p0, p0, Ltr;->j:Lke4;
+
+    iget-object p0, p0, Lke4;->k:Ljava/util/concurrent/ExecutorService;
+
+    invoke-interface {p0, p1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

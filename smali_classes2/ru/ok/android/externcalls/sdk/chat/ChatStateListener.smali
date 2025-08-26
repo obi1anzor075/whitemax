@@ -19,7 +19,7 @@
         "",
         "",
         "chatId",
-        "Ljue;",
+        "Le5f;",
         "onChatCreated",
         "(J)V",
         "onChatUpdated",
@@ -32,6 +32,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

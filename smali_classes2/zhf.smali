@@ -1,152 +1,110 @@
 .class public final Lzhf;
-.super Ll5e;
+.super Landroid/graphics/drawable/LayerDrawable;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
-
-
-# instance fields
-.field public X:I
-
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lgif;
-
-.field public final synthetic w0:Lphf;
-
-.field public final synthetic x0:Ljif;
 
 
 # direct methods
-.method public constructor <init>(Lphf;Lgif;Ljif;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    iput-object p2, p0, Lzhf;->Z:Lgif;
+    const/4 v0, 0x0
 
-    iput-object p1, p0, Lzhf;->w0:Lphf;
+    new-array v0, v0, [Landroid/graphics/drawable/Drawable;
 
-    iput-object p3, p0, Lzhf;->x0:Ljif;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p4}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, v0}, Landroid/graphics/drawable/LayerDrawable;-><init>([Landroid/graphics/drawable/Drawable;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final a()V
+    .locals 2
 
-    check-cast p1, Ljava/lang/Throwable;
+    const/4 v0, 0x0
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0, v0}, Landroid/graphics/drawable/LayerDrawable;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {p0, p1, p2}, Lzhf;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    move-result-object v0
 
-    move-result-object p0
+    instance-of v1, v0, Landroid/graphics/drawable/ShapeDrawable;
 
-    check-cast p0, Lzhf;
+    if-eqz v1, :cond_0
 
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lzhf;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 3
-
-    new-instance v0, Lzhf;
-
-    iget-object v1, p0, Lzhf;->w0:Lphf;
-
-    iget-object v2, p0, Lzhf;->x0:Ljif;
-
-    iget-object p0, p0, Lzhf;->Z:Lgif;
-
-    invoke-direct {v0, v1, p0, v2, p2}, Lzhf;-><init>(Lphf;Lgif;Ljif;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lzhf;->Y:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 9
-
-    sget-object v0, Lpu3;->a:Lpu3;
-
-    iget v1, p0, Lzhf;->X:I
-
-    const/4 v2, 0x1
-
-    if-eqz v1, :cond_1
-
-    if-ne v1, v2, :cond_0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    check-cast v0, Landroid/graphics/drawable/ShapeDrawable;
 
     goto :goto_0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    const/4 v0, 0x0
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    :goto_0
+    if-eqz v0, :cond_1
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
 
-    throw p0
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    const/high16 v1, 0x5c000000
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
     :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    const/4 v0, 0x1
 
-    iget-object p1, p0, Lzhf;->Y:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/Throwable;
-
-    sget-object v1, Lgif;->i:Ljava/util/List;
-
-    iget-object v1, p0, Lzhf;->Z:Lgif;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-static {p1}, Lgif;->f(Ljava/lang/Throwable;)Lo57;
-
-    move-result-object v5
-
-    invoke-virtual {v1}, Lgif;->g()Lm53;
-
-    move-result-object v3
-
-    iget-object p1, p0, Lzhf;->x0:Ljif;
-
-    iget-object v7, p1, Ljif;->b:Ljava/lang/String;
-
-    iput v2, p0, Lzhf;->X:I
-
-    iget-object v6, p0, Lzhf;->w0:Lphf;
-
-    iget-object v4, v1, Lgif;->g:Lus0;
-
-    move-object v8, p0
-
-    invoke-virtual/range {v3 .. v8}, Lm53;->a(Li02;Lo57;Lkkf;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Landroid/graphics/drawable/LayerDrawable;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p0
 
-    if-ne p0, v0, :cond_2
+    if-eqz p0, :cond_2
 
-    return-object v0
+    const/4 v0, -0x1
+
+    invoke-virtual {p0, v0}, Landroid/graphics/drawable/Drawable;->setTint(I)V
 
     :cond_2
-    :goto_0
-    sget-object p0, Ljue;->a:Ljue;
+    return-void
+.end method
 
-    return-object p0
+.method public final b(ILjava/lang/Integer;)V
+    .locals 2
+
+    new-instance v0, Landroid/graphics/drawable/ShapeDrawable;
+
+    new-instance v1, Landroid/graphics/drawable/shapes/OvalShape;
+
+    invoke-direct {v1}, Landroid/graphics/drawable/shapes/OvalShape;-><init>()V
+
+    invoke-direct {v0, v1}, Landroid/graphics/drawable/ShapeDrawable;-><init>(Landroid/graphics/drawable/shapes/Shape;)V
+
+    invoke-virtual {p0, v0}, Landroid/graphics/drawable/LayerDrawable;->addLayer(Landroid/graphics/drawable/Drawable;)I
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
+
+    :cond_0
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
+
+    move-result p2
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0, p1, p2}, Landroid/graphics/drawable/LayerDrawable;->setLayerSize(III)V
+
+    const/16 p1, 0x11
+
+    invoke-virtual {p0, v0, p1}, Landroid/graphics/drawable/LayerDrawable;->setLayerGravity(II)V
+
+    return-void
 .end method

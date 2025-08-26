@@ -2,93 +2,142 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lhhc;
-
 
 # instance fields
 .field public a:Ljava/util/List;
 
+.field public b:Lr07;
+
+.field public c:Lrec;
+
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
+.method public final a(Lw10;)V
+    .locals 1
 
-    if-ne p0, p1, :cond_0
+    iget-object v0, p0, Lx10;->a:Ljava/util/List;
 
-    const/4 p0, 0x1
+    if-nez v0, :cond_0
 
-    return p0
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lx10;->a:Ljava/util/List;
 
     :cond_0
-    if-eqz p1, :cond_2
+    iget-object p0, p0, Lx10;->a:Ljava/util/List;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-interface {p0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    move-result-object v0
+    return-void
+.end method
 
-    const-class v1, Lx10;
-
-    if-eq v1, v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lx10;
+.method public final b()I
+    .locals 0
 
     iget-object p0, p0, Lx10;->a:Ljava/util/List;
 
-    iget-object p1, p1, Lx10;->a:Ljava/util/List;
+    if-eqz p0, :cond_0
 
-    invoke-interface {p0, p1}, Ljava/util/List;->equals(Ljava/lang/Object;)Z
+    invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result p0
 
     return p0
 
-    :cond_2
-    :goto_0
+    :cond_0
     const/4 p0, 0x0
 
     return p0
 .end method
 
-.method public final hashCode()I
-    .locals 0
+.method public final c()Lo9g;
+    .locals 1
 
-    iget-object p0, p0, Lx10;->a:Ljava/util/List;
+    iget-object v0, p0, Lx10;->a:Ljava/util/List;
 
-    filled-new-array {p0}, [Ljava/lang/Object;
+    if-nez v0, :cond_0
 
-    move-result-object p0
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    move-result p0
+    iput-object v0, p0, Lx10;->a:Ljava/util/List;
 
-    return p0
+    :cond_0
+    new-instance v0, Lo9g;
+
+    invoke-direct {v0, p0}, Lo9g;-><init>(Lx10;)V
+
+    return-object v0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final d(I)Lw10;
+    .locals 1
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    if-ltz p1, :cond_0
 
-    const-string v1, "AudioActivityNotification{participantIds="
+    invoke-virtual {p0}, Lx10;->b()I
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result v0
+
+    if-ge p1, v0, :cond_0
 
     iget-object p0, p0, Lx10;->a:Ljava/util/List;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 p0, 0x7d
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {p0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
 
+    check-cast p0, Lw10;
+
     return-object p0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "index < 0 or index >= attaches.size()"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final e(ILw10;)V
+    .locals 1
+
+    iget-object v0, p0, Lx10;->a:Ljava/util/List;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lx10;->a:Ljava/util/List;
+
+    :cond_0
+    if-ltz p1, :cond_1
+
+    invoke-virtual {p0}, Lx10;->b()I
+
+    move-result v0
+
+    if-ge p1, v0, :cond_1
+
+    iget-object p0, p0, Lx10;->a:Ljava/util/List;
+
+    invoke-interface {p0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "index < 0 or index >= attaches.size()"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

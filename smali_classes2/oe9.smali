@@ -1,133 +1,55 @@
 .class public final Loe9;
-.super Lv2;
+.super Lbu3;
 .source "SourceFile"
-
-# interfaces
-.implements Lwj4;
 
 
 # instance fields
-.field public X:Lrj4;
+.field public X:Lkl7;
 
-.field public Y:Lrj4;
+.field public Y:Lkl7;
 
-.field public final o:Ltg;
+.field public synthetic Z:Ljava/lang/Object;
+
+.field public o:Lse9;
+
+.field public final synthetic o0:Lse9;
+
+.field public p0:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lru/ok/messages/video/widgets/doubleTap/DoubleTapVideoViewWrapper;Ltg;)V
+.method public constructor <init>(Lse9;Lbu3;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lv2;-><init>(Landroid/content/Context;)V
+    iput-object p1, p0, Loe9;->o0:Lse9;
 
-    iput-object p3, p0, Loe9;->o:Ltg;
-
-    iput-object p2, p0, Lv2;->c:Ljava/lang/Object;
-
-    invoke-virtual {p0}, Loe9;->n()V
-
-    invoke-virtual {p2, p0}, Lru/ok/messages/video/widgets/doubleTap/DoubleTapVideoViewWrapper;->setTouchEventListener(Lwj4;)V
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final A(Lne9;)V
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget-boolean v0, p1, Lne9;->c:Z
+    iput-object p1, p0, Loe9;->Z:Ljava/lang/Object;
 
-    if-nez v0, :cond_0
+    iget p1, p0, Loe9;->p0:I
 
-    iget-object p1, p0, Loe9;->X:Lrj4;
+    const/high16 v0, -0x80000000
 
-    invoke-virtual {p1}, Lrj4;->a()V
+    or-int/2addr p1, v0
 
-    iget-object p0, p0, Loe9;->Y:Lrj4;
+    iput p1, p0, Loe9;->p0:I
 
-    invoke-virtual {p0}, Lrj4;->a()V
+    iget-object p1, p0, Loe9;->o0:Lse9;
 
-    return-void
+    const/4 v0, 0x0
 
-    :cond_0
-    iget-boolean v0, p1, Lne9;->b:Z
+    invoke-virtual {p1, v0, p0}, Lse9;->c(Lone/me/messages/list/loader/MessageModel;Lbu3;)Ljava/io/Serializable;
 
-    iget p1, p1, Lne9;->a:I
+    move-result-object p0
 
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Loe9;->X:Lrj4;
-
-    invoke-virtual {v0}, Lrj4;->a()V
-
-    iget-object v0, p0, Loe9;->Y:Lrj4;
-
-    invoke-virtual {v0}, Lrj4;->b()V
-
-    iget-object p0, p0, Loe9;->Y:Lrj4;
-
-    invoke-virtual {p0, p1}, Lrj4;->c(I)V
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v0, p0, Loe9;->X:Lrj4;
-
-    invoke-virtual {v0}, Lrj4;->b()V
-
-    iget-object v0, p0, Loe9;->X:Lrj4;
-
-    invoke-virtual {v0, p1}, Lrj4;->c(I)V
-
-    iget-object p0, p0, Loe9;->Y:Lrj4;
-
-    invoke-virtual {p0}, Lrj4;->a()V
-
-    :goto_0
-    return-void
-.end method
-
-.method public final n()V
-    .locals 2
-
-    iget-object v0, p0, Lv2;->c:Ljava/lang/Object;
-
-    check-cast v0, Landroid/view/View;
-
-    sget v1, Lyqb;->double_tap_video_view_wrapper__arrows_view_left:I
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lrj4;
-
-    iput-object v0, p0, Loe9;->X:Lrj4;
-
-    iget-object v0, p0, Lv2;->c:Ljava/lang/Object;
-
-    check-cast v0, Landroid/view/View;
-
-    sget v1, Lyqb;->double_tap_video_view_wrapper__arrows_view_right:I
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lrj4;
-
-    iput-object v0, p0, Loe9;->Y:Lrj4;
-
-    iget-object v0, p0, Loe9;->X:Lrj4;
-
-    iget-object v1, p0, Loe9;->o:Ltg;
-
-    invoke-virtual {v0, v1}, Lrj4;->setAnimations(Ltg;)V
-
-    iget-object p0, p0, Loe9;->Y:Lrj4;
-
-    invoke-virtual {p0, v1}, Lrj4;->setAnimations(Ltg;)V
-
-    return-void
+    return-object p0
 .end method

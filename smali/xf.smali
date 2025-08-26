@@ -1,38 +1,38 @@
-.class public final Lxf;
+.class public final synthetic Lxf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/io/Closeable;
+.implements Landroid/animation/ValueAnimator$DurationScaleChangeListener;
 
 
 # instance fields
-.field public final a:I
-
-.field public final b:Le13;
+.field public final synthetic a:Lb9g;
 
 
 # direct methods
-.method public constructor <init>(ILt54;)V
+.method public synthetic constructor <init>(Lb9g;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lxf;->a:I
-
-    iput-object p2, p0, Lxf;->b:Le13;
+    iput-object p1, p0, Lxf;->a:Lb9g;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
+.method public final onChanged(F)V
     .locals 0
 
-    iget-object p0, p0, Lxf;->b:Le13;
+    iget-object p0, p0, Lxf;->a:Lb9g;
 
-    invoke-virtual {p0}, Le13;->close()V
+    iget-object p0, p0, Lb9g;->c:Ljava/lang/Object;
+
+    check-cast p0, Lzf;
+
+    iput p1, p0, Lzf;->g:F
 
     return-void
 .end method

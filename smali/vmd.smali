@@ -1,461 +1,119 @@
 .class public final Lvmd;
-.super Lpmd;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lgk;
 
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lvmd;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
-# instance fields
-.field public final A0:I
-
-.field public final B0:I
-
-.field public final X:Z
-
-.field public final Y:J
-
-.field public final Z:J
-
-.field public final a:J
-
-.field public final b:Z
-
-.field public final c:Z
-
-.field public final o:Z
-
-.field public final w0:Ljava/util/List;
-
-.field public final x0:Z
-
-.field public final y0:J
-
-.field public final z0:I
+.field public static final a:Lvmd;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Lxkd;
+    new-instance v0, Lvmd;
 
-    const/4 v1, 0x3
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, v1}, Lxkd;-><init>(I)V
-
-    sput-object v0, Lvmd;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(JZZZZJJLjava/util/List;ZJIII)V
-    .locals 3
-
-    move-object v0, p0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    move-wide v1, p1
-
-    .line 2
-    iput-wide v1, v0, Lvmd;->a:J
-
-    move v1, p3
-
-    .line 3
-    iput-boolean v1, v0, Lvmd;->b:Z
-
-    move v1, p4
-
-    .line 4
-    iput-boolean v1, v0, Lvmd;->c:Z
-
-    move v1, p5
-
-    .line 5
-    iput-boolean v1, v0, Lvmd;->o:Z
-
-    move v1, p6
-
-    .line 6
-    iput-boolean v1, v0, Lvmd;->X:Z
-
-    move-wide v1, p7
-
-    .line 7
-    iput-wide v1, v0, Lvmd;->Y:J
-
-    move-wide v1, p9
-
-    .line 8
-    iput-wide v1, v0, Lvmd;->Z:J
-
-    .line 9
-    invoke-static {p11}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lvmd;->w0:Ljava/util/List;
-
-    move v1, p12
-
-    .line 10
-    iput-boolean v1, v0, Lvmd;->x0:Z
-
-    move-wide/from16 v1, p13
-
-    .line 11
-    iput-wide v1, v0, Lvmd;->y0:J
-
-    move/from16 v1, p15
-
-    .line 12
-    iput v1, v0, Lvmd;->z0:I
-
-    move/from16 v1, p16
-
-    .line 13
-    iput v1, v0, Lvmd;->A0:I
-
-    move/from16 v1, p17
-
-    .line 14
-    iput v1, v0, Lvmd;->B0:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Parcel;)V
-    .locals 12
-
-    .line 15
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 16
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lvmd;->a:J
-
-    .line 17
-    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    if-ne v0, v1, :cond_0
-
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_0
-    move v0, v2
-
-    :goto_0
-    iput-boolean v0, p0, Lvmd;->b:Z
-
-    .line 18
-    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
-
-    move-result v0
-
-    if-ne v0, v1, :cond_1
-
-    move v0, v1
-
-    goto :goto_1
-
-    :cond_1
-    move v0, v2
-
-    :goto_1
-    iput-boolean v0, p0, Lvmd;->c:Z
-
-    .line 19
-    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
-
-    move-result v0
-
-    if-ne v0, v1, :cond_2
-
-    move v0, v1
-
-    goto :goto_2
-
-    :cond_2
-    move v0, v2
-
-    :goto_2
-    iput-boolean v0, p0, Lvmd;->o:Z
-
-    .line 20
-    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
-
-    move-result v0
-
-    if-ne v0, v1, :cond_3
-
-    move v0, v1
-
-    goto :goto_3
-
-    :cond_3
-    move v0, v2
-
-    :goto_3
-    iput-boolean v0, p0, Lvmd;->X:Z
-
-    .line 21
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v3
-
-    iput-wide v3, p0, Lvmd;->Y:J
-
-    .line 22
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v3
-
-    iput-wide v3, p0, Lvmd;->Z:J
-
-    .line 23
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    .line 24
-    new-instance v3, Ljava/util/ArrayList;
-
-    invoke-direct {v3, v0}, Ljava/util/ArrayList;-><init>(I)V
-
-    move v4, v2
-
-    :goto_4
-    if-ge v4, v0, :cond_4
-
-    .line 25
-    new-instance v11, Ltmd;
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v6
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v7
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v9
-
-    move-object v5, v11
-
-    invoke-direct/range {v5 .. v10}, Ltmd;-><init>(IJJ)V
-
-    .line 26
-    invoke-virtual {v3, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_4
-
-    .line 27
-    :cond_4
-    invoke-static {v3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lvmd;->w0:Ljava/util/List;
-
-    .line 28
-    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
-
-    move-result v0
-
-    if-ne v0, v1, :cond_5
-
-    goto :goto_5
-
-    :cond_5
-    move v1, v2
-
-    :goto_5
-    iput-boolean v1, p0, Lvmd;->x0:Z
-
-    .line 29
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lvmd;->y0:J
-
-    .line 30
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Lvmd;->z0:I
-
-    .line 31
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Lvmd;->A0:I
-
-    .line 32
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result p1
-
-    iput p1, p0, Lvmd;->B0:I
+    sput-object v0, Lvmd;->a:Lvmd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const/4 v0, 0x1
 
-    const-string v1, "SCTE-35 SpliceInsertCommand { programSplicePts="
+    if-ne p1, p0, :cond_0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    return v0
 
-    iget-wide v1, p0, Lvmd;->Y:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", programSplicePlaybackPositionUs= "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Lvmd;->Z:J
-
-    const-string p0, " }"
-
-    invoke-static {v0, v1, v2, p0}, Lwn6;->k(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 5
-
-    iget-wide v0, p0, Lvmd;->a:J
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
-
-    iget-boolean p2, p0, Lvmd;->b:Z
-
-    int-to-byte p2, p2
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByte(B)V
-
-    iget-boolean p2, p0, Lvmd;->c:Z
-
-    int-to-byte p2, p2
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByte(B)V
-
-    iget-boolean p2, p0, Lvmd;->o:Z
-
-    int-to-byte p2, p2
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByte(B)V
-
-    iget-boolean p2, p0, Lvmd;->X:Z
-
-    int-to-byte p2, p2
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByte(B)V
-
-    iget-wide v0, p0, Lvmd;->Y:J
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
-
-    iget-wide v0, p0, Lvmd;->Z:J
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
-
-    iget-object p2, p0, Lvmd;->w0:Ljava/util/List;
-
-    invoke-interface {p2}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    :cond_0
+    instance-of p0, p1, Lvmd;
 
     const/4 v1, 0x0
 
-    :goto_0
-    if-ge v1, v0, :cond_0
+    if-nez p0, :cond_1
 
-    invoke-interface {p2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    return v1
 
-    move-result-object v2
+    :cond_1
+    check-cast p1, Lvmd;
 
-    check-cast v2, Ltmd;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget v3, v2, Ltmd;->a:I
+    const/4 p0, 0x0
 
-    invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-static {p0, p0}, Lgr0;->j(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-wide v3, v2, Ltmd;->b:J
+    move-result p1
 
-    invoke-virtual {p1, v3, v4}, Landroid/os/Parcel;->writeLong(J)V
+    if-eqz p1, :cond_2
 
-    iget-wide v2, v2, Ltmd;->c:J
+    invoke-static {p0, p0}, Lgr0;->j(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {p1, v2, v3}, Landroid/os/Parcel;->writeLong(J)V
+    move-result p1
 
-    add-int/lit8 v1, v1, 0x1
+    if-eqz p1, :cond_2
 
-    goto :goto_0
+    invoke-static {p0, p0}, Lgr0;->j(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    :cond_0
-    iget-boolean p2, p0, Lvmd;->x0:Z
+    move-result p1
 
-    int-to-byte p2, p2
+    if-eqz p1, :cond_2
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByte(B)V
+    invoke-static {p0, p0}, Lgr0;->j(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-wide v0, p0, Lvmd;->y0:J
+    move-result p1
 
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
+    if-eqz p1, :cond_2
 
-    iget p2, p0, Lvmd;->z0:I
+    invoke-static {p0, p0}, Lgr0;->j(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    move-result p0
 
-    iget p2, p0, Lvmd;->A0:I
+    if-eqz p0, :cond_2
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    return v0
 
-    iget p0, p0, Lvmd;->B0:I
+    :cond_2
+    return v1
+.end method
 
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+.method public final hashCode()I
+    .locals 9
 
-    return-void
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/4 v2, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    move-object v1, v0
+
+    move-object v3, v0
+
+    move-object v4, v0
+
+    filled-new-array/range {v0 .. v8}, [Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+
+    move-result p0
+
+    return p0
 .end method

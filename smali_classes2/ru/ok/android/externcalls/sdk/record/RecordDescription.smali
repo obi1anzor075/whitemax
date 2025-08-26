@@ -14,7 +14,7 @@
         "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
         "Lru/ok/android/externcalls/sdk/id/ExternalId;",
         "initiator",
-        "Lm5c;",
+        "Loac;",
         "type",
         "",
         "start",
@@ -23,13 +23,13 @@
         "externalMovieId",
         "externalOwnerId",
         "<init>",
-        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lm5c;JJLjava/lang/String;Ljava/lang/String;)V",
+        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;Loac;JJLjava/lang/String;Ljava/lang/String;)V",
         "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
         "getInitiator",
         "()Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-        "Lm5c;",
+        "Loac;",
         "getType",
-        "()Lm5c;",
+        "()Loac;",
         "J",
         "getStart",
         "()J",
@@ -46,6 +46,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -60,18 +61,18 @@
 
 .field private final start:J
 
-.field private final type:Lm5c;
+.field private final type:Loac;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lm5c;JJLjava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(Lru/ok/android/externcalls/sdk/id/ParticipantId;Loac;JJLjava/lang/String;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/record/RecordDescription;->initiator:Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
-    iput-object p2, p0, Lru/ok/android/externcalls/sdk/record/RecordDescription;->type:Lm5c;
+    iput-object p2, p0, Lru/ok/android/externcalls/sdk/record/RecordDescription;->type:Loac;
 
     iput-wide p3, p0, Lru/ok/android/externcalls/sdk/record/RecordDescription;->start:J
 
@@ -126,10 +127,10 @@
     return-wide v0
 .end method
 
-.method public final getType()Lm5c;
+.method public final getType()Loac;
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/record/RecordDescription;->type:Lm5c;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/record/RecordDescription;->type:Loac;
 
     return-object p0
 .end method

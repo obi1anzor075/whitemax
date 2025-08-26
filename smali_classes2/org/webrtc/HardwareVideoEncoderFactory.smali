@@ -381,7 +381,7 @@
     if-eqz p0, :cond_4
 
     :goto_1
-    move v0, v2
+    return v2
 
     :cond_4
     return v0
@@ -430,13 +430,12 @@
     :cond_1
     const/4 p0, 0x0
 
-    goto :goto_1
+    return p0
 
     :cond_2
     :goto_0
     const/4 p0, 0x1
 
-    :goto_1
     return p0
 .end method
 
@@ -468,13 +467,12 @@
     :cond_0
     const/4 p0, 0x0
 
-    goto :goto_1
+    return p0
 
     :cond_1
     :goto_0
     const/4 p0, 0x1
 
-    :goto_1
     return p0
 .end method
 
@@ -542,7 +540,9 @@
 
     if-eqz p0, :cond_2
 
-    const/4 v1, 0x1
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_2
     return v1
@@ -646,7 +646,7 @@
     return-object v1
 
     :cond_2
-    new-instance v0, Lorg/webrtc/HardwareVideoEncoder;
+    new-instance v1, Lorg/webrtc/HardwareVideoEncoder;
 
     new-instance v2, Lorg/webrtc/MediaCodecWrapperFactoryImpl;
 
@@ -666,11 +666,9 @@
 
     const/16 v8, 0xe10
 
-    move-object v1, v0
-
     invoke-direct/range {v1 .. v11}, Lorg/webrtc/HardwareVideoEncoder;-><init>(Lorg/webrtc/MediaCodecWrapperFactory;Ljava/lang/String;Lorg/webrtc/VideoCodecMimeType;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/util/Map;IILorg/webrtc/BitrateAdjuster;Lorg/webrtc/EglBase14$Context;)V
 
-    return-object v0
+    return-object v1
 .end method
 
 .method public getSupportedCodecs()[Lorg/webrtc/VideoCodecInfo;

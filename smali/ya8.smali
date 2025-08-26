@@ -1,65 +1,41 @@
 .class public final Lya8;
-.super Lb7c;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final J0:Landroid/view/View;
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 0
 
-.field public final K0:Landroid/widget/ImageView;
+    if-ne p0, p1, :cond_0
 
-.field public final L0:Landroid/widget/ProgressBar;
+    const/4 p0, 0x1
 
-.field public final M0:Landroid/widget/TextView;
+    return p0
 
-.field public final synthetic N0:Lza8;
+    :cond_0
+    instance-of p0, p1, Lya8;
 
+    if-nez p0, :cond_1
 
-# direct methods
-.method public constructor <init>(Lza8;Landroid/view/View;)V
-    .locals 2
+    const/4 p0, 0x0
 
-    iput-object p1, p0, Lya8;->N0:Lza8;
+    return p0
 
-    invoke-direct {p0, p2}, Lb7c;-><init>(Landroid/view/View;)V
+    :cond_1
+    check-cast p1, Lya8;
 
-    iput-object p2, p0, Lya8;->J0:Landroid/view/View;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    sget v0, Lgob;->mr_picker_route_icon:I
+    const/4 p0, 0x0
 
-    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    throw p0
+.end method
 
-    move-result-object v0
+.method public final hashCode()I
+    .locals 0
 
-    check-cast v0, Landroid/widget/ImageView;
+    const/4 p0, 0x0
 
-    iput-object v0, p0, Lya8;->K0:Landroid/widget/ImageView;
-
-    sget v0, Lgob;->mr_picker_route_progress_bar:I
-
-    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/ProgressBar;
-
-    iput-object v0, p0, Lya8;->L0:Landroid/widget/ProgressBar;
-
-    sget v1, Lgob;->mr_picker_route_name:I
-
-    invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p2
-
-    check-cast p2, Landroid/widget/TextView;
-
-    iput-object p2, p0, Lya8;->M0:Landroid/widget/TextView;
-
-    iget-object p0, p1, Lza8;->y0:Lab8;
-
-    iget-object p0, p0, Lab8;->w0:Landroid/content/Context;
-
-    invoke-static {p0, v0}, Lfc8;->j(Landroid/content/Context;Landroid/widget/ProgressBar;)V
-
-    return-void
+    throw p0
 .end method

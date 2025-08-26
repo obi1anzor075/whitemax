@@ -1,59 +1,65 @@
-.class public final Lq5;
-.super Ljava/lang/Object;
+.class public abstract Lq5;
+.super Lp5;
 .source "SourceFile"
 
+# interfaces
+.implements Lbrd;
 
-# instance fields
-.field public final synthetic a:Lr5;
 
-
-# direct methods
-.method public constructor <init>(Lr5;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lq5;->a:Lr5;
-
-    return-void
-.end method
+# static fields
+.field public static final synthetic Q0:I
 
 
 # virtual methods
-.method public onEvent(Lkzc;)V
-    .locals 0
-    .annotation runtime La1e;
-    .end annotation
+.method public Z(I)Llx2;
+    .locals 2
 
-    .line 1
-    return-void
-.end method
+    invoke-virtual {p0, p1}, Lp5;->setContentView(I)V
 
-.method public onEvent(Lmp7;)V
-    .locals 1
-    .annotation runtime La1e;
-    .end annotation
+    new-instance p1, Lb9g;
 
-    .line 2
-    iget-object p0, p0, Lq5;->a:Lr5;
+    invoke-direct {p1, p0}, Lb9g;-><init>(Lp5;)V
 
-    iget-boolean v0, p0, Lr5;->T0:Z
+    sget v0, Lpvb;->toolbar:I
 
-    if-eqz v0, :cond_0
+    invoke-virtual {p0, v0}, Lam;->findViewById(I)Landroid/view/View;
 
-    .line 3
-    invoke-virtual {p0}, Lr5;->d0()V
+    move-result-object v0
 
-    goto :goto_0
+    check-cast v0, Landroidx/appcompat/widget/Toolbar;
 
-    .line 4
+    new-instance v1, Lrm9;
+
+    invoke-direct {v1, p1, v0}, Lrm9;-><init>(Lb9g;Landroidx/appcompat/widget/Toolbar;)V
+
+    invoke-virtual {p0}, Lp5;->p()Lvke;
+
+    move-result-object p0
+
+    iput-object p0, v1, Lrm9;->b:Ljava/lang/Object;
+
+    new-instance p0, Llx2;
+
+    invoke-direct {p0, v1}, Llx2;-><init>(Lrm9;)V
+
+    iget-object p1, p0, Llx2;->c:Ljava/lang/Object;
+
+    check-cast p1, Landroidx/appcompat/widget/Toolbar;
+
+    if-nez p1, :cond_0
+
+    return-object p0
+
     :cond_0
-    iget-object p0, p0, Lr5;->U0:Ljava/util/HashSet;
+    new-instance v0, Lkpe;
 
-    const/4 v0, 0x1
+    const/4 v1, 0x2
 
-    invoke-static {p0, p1, v0}, Lwx3;->C(Ljava/util/Set;Lkh0;Z)V
+    invoke-direct {v0, v1, p0}, Lkpe;-><init>(ILjava/lang/Object;)V
 
-    :goto_0
-    return-void
+    sget-object v1, Ltnf;->a:Ljava/util/WeakHashMap;
+
+    invoke-static {p1, v0}, Linf;->u(Landroid/view/View;Lt0a;)V
+
+    return-object p0
 .end method

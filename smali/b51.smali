@@ -1,22 +1,68 @@
 .class public final Lb51;
-.super Ljava/lang/Object;
+.super Lfrf;
 .source "SourceFile"
 
 # interfaces
-.implements Lonc;
+.implements Lc51;
 
 
-# instance fields
-.field public final a:Lt97;
+# static fields
+.field public static final c:Lb51;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lt97;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
-    iput-object p1, p0, Lb51;->a:Lt97;
+    new-instance v0, Lb51;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v1, Lyxb;->call_screen_connection_restoring:I
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Lfrf;-><init>(ILjava/lang/Long;)V
+
+    sput-object v0, Lb51;->c:Lb51;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of p0, p1, Lb51;
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    const p0, 0x9c8d45e
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "Restoring"
+
+    return-object p0
 .end method

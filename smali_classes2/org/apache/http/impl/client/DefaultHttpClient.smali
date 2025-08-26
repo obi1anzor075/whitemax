@@ -142,19 +142,11 @@
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_2
+    goto :goto_0
 
     :catch_0
     move-exception p0
 
-    goto :goto_0
-
-    :catch_1
-    move-exception p0
-
-    goto :goto_1
-
-    :goto_0
     new-instance v0, Ljava/lang/InstantiationError;
 
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
@@ -165,7 +157,9 @@
 
     throw v0
 
-    :goto_1
+    :catch_1
+    move-exception p0
+
     new-instance v0, Ljava/lang/IllegalAccessError;
 
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
@@ -190,14 +184,14 @@
     throw p0
 
     :cond_0
-    :goto_2
+    :goto_0
     if-eqz v2, :cond_1
 
     invoke-interface {v2, v1, v0}, Lorg/apache/http/conn/ClientConnectionManagerFactory;->newInstance(Lorg/apache/http/params/HttpParams;Lorg/apache/http/conn/scheme/SchemeRegistry;)Lorg/apache/http/conn/ClientConnectionManager;
 
     move-result-object p0
 
-    goto :goto_3
+    return-object p0
 
     :cond_1
     new-instance v1, Lorg/apache/http/impl/conn/SingleClientConnManager;
@@ -208,10 +202,7 @@
 
     invoke-direct {v1, p0, v0}, Lorg/apache/http/impl/conn/SingleClientConnManager;-><init>(Lorg/apache/http/params/HttpParams;Lorg/apache/http/conn/scheme/SchemeRegistry;)V
 
-    move-object p0, v1
-
-    :goto_3
-    return-object p0
+    return-object v1
 .end method
 
 .method public createConnectionKeepAliveStrategy()Lorg/apache/http/conn/ConnectionKeepAliveStrategy;

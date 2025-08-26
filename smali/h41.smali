@@ -1,238 +1,176 @@
 .class public final Lh41;
-.super Lchd;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lx64;
 
 
 # instance fields
-.field public final synthetic J0:I
+.field public final synthetic a:I
 
-.field public final K0:Ljava/lang/Object;
+.field public final synthetic b:J
+
+.field public final synthetic c:Z
+
+.field public final synthetic o:Z
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lgu2;)V
-    .locals 2
+.method public synthetic constructor <init>(JZZI)V
+    .locals 0
 
-    const/4 v0, 0x1
+    iput p5, p0, Lh41;->a:I
 
-    iput v0, p0, Lh41;->J0:I
+    iput-wide p1, p0, Lh41;->b:J
 
-    .line 6
-    new-instance v0, Lnr5;
+    iput-boolean p3, p0, Lh41;->c:Z
 
-    const/4 v1, 0x0
+    iput-boolean p4, p0, Lh41;->o:Z
 
-    .line 7
-    invoke-direct {v0, p1, v1}, Lp4a;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-
-    .line 8
-    new-instance p1, Landroid/view/ViewGroup$LayoutParams;
-
-    const/4 v1, -0x1
-
-    invoke-direct {p1, v1, v1}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
-
-    invoke-virtual {v0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 9
-    invoke-direct {p0, v0}, Lb7c;-><init>(Landroid/view/View;)V
-
-    .line 10
-    iput-object p2, p0, Lh41;->K0:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Ljava/util/concurrent/ExecutorService;Lzx1;)V
-    .locals 1
-
-    const/4 v0, 0x2
-
-    iput v0, p0, Lh41;->J0:I
-
-    .line 3
-    new-instance v0, Lxr5;
-
-    invoke-direct {v0, p1, p2}, Lxr5;-><init>(Landroid/content/Context;Ljava/util/concurrent/ExecutorService;)V
-
-    .line 4
-    invoke-direct {p0, v0}, Lb7c;-><init>(Landroid/view/View;)V
-
-    .line 5
-    iput-object p3, p0, Lh41;->K0:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lf41;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lh41;->J0:I
-
-    .line 1
-    invoke-direct {p0, p1}, Lb7c;-><init>(Landroid/view/View;)V
-
-    .line 2
-    iput-object p1, p0, Lh41;->K0:Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final A(Lpg7;)V
-    .locals 3
+.method public final a()Ljava/lang/Object;
+    .locals 6
 
-    iget v0, p0, Lh41;->J0:I
+    iget v0, p0, Lh41;->a:I
 
     packed-switch v0, :pswitch_data_0
 
-    check-cast p1, Ltr5;
+    sget-object v0, Lone/me/calls/ui/ui/call/CallScreen;->I0:Lz84;
 
-    iget-object v0, p0, Lb7c;->a:Landroid/view/View;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    instance-of v1, v0, Lxr5;
+    new-instance v0, Lone/me/calls/ui/ui/call/CallScreen;
 
-    const/4 v2, 0x0
+    new-instance v1, Ldna;
 
-    if-eqz v1, :cond_0
+    const-string v2, "type"
 
-    check-cast v0, Lxr5;
+    const-string v3, "CHAT"
 
-    goto :goto_0
+    invoke-direct {v1, v2, v3}, Ldna;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    :cond_0
-    move-object v0, v2
+    iget-wide v2, p0, Lh41;->b:J
 
-    :goto_0
-    if-nez v0, :cond_1
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    goto :goto_2
+    move-result-object v2
 
-    :cond_1
-    instance-of v1, p1, Lzr5;
+    new-instance v3, Ldna;
 
-    if-eqz v1, :cond_2
+    const-string v4, "chat_id"
 
-    move-object v2, p1
+    invoke-direct {v3, v4, v2}, Ldna;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    check-cast v2, Lzr5;
+    iget-boolean v2, p0, Lh41;->c:Z
 
-    :cond_2
-    if-eqz v2, :cond_5
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iget-object p1, v2, Lzr5;->a:Ljava/util/List;
+    move-result-object v2
 
-    if-nez p1, :cond_3
+    new-instance v4, Ldna;
 
-    goto :goto_2
+    const-string v5, "video_enabled"
 
-    :cond_3
-    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
+    invoke-direct {v4, v5, v2}, Ldna;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    move-result v1
+    iget-boolean p0, p0, Lh41;->o:Z
 
-    xor-int/lit8 v1, v1, 0x1
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    if-eqz v1, :cond_4
+    move-result-object p0
 
-    const/4 v1, 0x0
+    new-instance v2, Ldna;
 
-    goto :goto_1
+    const-string v5, "microphone_enabled"
 
-    :cond_4
-    const/16 v1, 0x8
+    invoke-direct {v2, v5, p0}, Ldna;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    :goto_1
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    filled-new-array {v1, v3, v4, v2}, [Ldna;
 
-    iget-object v1, v0, Lxr5;->Z1:Lmr5;
+    move-result-object p0
 
-    invoke-virtual {v1, p1}, Lig7;->E(Ljava/util/List;)V
+    invoke-static {p0}, Lp54;->d([Ldna;)Landroid/os/Bundle;
 
-    iget-object p0, p0, Lh41;->K0:Ljava/lang/Object;
+    move-result-object p0
 
-    check-cast p0, Lvr5;
+    invoke-direct {v0, p0}, Lone/me/calls/ui/ui/call/CallScreen;-><init>(Landroid/os/Bundle;)V
 
-    invoke-virtual {v0, p0}, Lxr5;->setListener(Lvr5;)V
-
-    :cond_5
-    :goto_2
-    return-void
+    return-object v0
 
     :pswitch_0
-    check-cast p1, Ltr5;
+    sget-object v0, Lone/me/calls/ui/ui/call/CallScreen;->I0:Lz84;
 
-    iget-object p1, p0, Lb7c;->a:Landroid/view/View;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    instance-of v0, p1, Lnr5;
+    new-instance v0, Lone/me/calls/ui/ui/call/CallScreen;
 
-    if-eqz v0, :cond_6
+    new-instance v1, Ldna;
 
-    check-cast p1, Lnr5;
+    const-string v2, "type"
 
-    goto :goto_3
+    const-string v3, "ONE_TO_ONE"
 
-    :cond_6
-    const/4 p1, 0x0
+    invoke-direct {v1, v2, v3}, Ldna;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    :goto_3
-    if-nez p1, :cond_7
+    iget-wide v2, p0, Lh41;->b:J
 
-    goto :goto_4
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    :cond_7
-    sget v0, Lphc;->A0:I
+    move-result-object v2
 
-    invoke-virtual {p1, v0}, Lp4a;->setIcon(I)V
+    new-instance v3, Ldna;
 
-    sget v0, Ljtb;->chats_list_empty_state_title:I
+    const-string v4, "opponent_id"
 
-    new-instance v1, Lhge;
+    invoke-direct {v3, v4, v2}, Ldna;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    invoke-direct {v1, v0}, Lhge;-><init>(I)V
+    iget-boolean v2, p0, Lh41;->c:Z
 
-    invoke-virtual {p1, v1}, Lp4a;->setTitle(Lmge;)V
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    move-result-object v2
 
-    move-result-object v0
+    new-instance v4, Ldna;
 
-    sget v1, Ljtb;->chats_list_empty_state_action:I
+    const-string v5, "video_enabled"
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-direct {v4, v5, v2}, Ldna;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    move-result-object v0
+    iget-boolean p0, p0, Lh41;->o:Z
 
-    new-instance v1, Ld5;
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    const/16 v2, 0x1d
+    move-result-object p0
 
-    invoke-direct {v1, v2, p0}, Ld5;-><init>(ILjava/lang/Object;)V
+    new-instance v2, Ldna;
 
-    invoke-virtual {p1, v0, v1}, Lp4a;->x(Ljava/lang/String;Landroid/view/View$OnClickListener;)V
+    const-string v5, "microphone_enabled"
 
-    :goto_4
-    return-void
+    invoke-direct {v2, v5, p0}, Ldna;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    :pswitch_1
-    check-cast p1, Le41;
+    filled-new-array {v1, v3, v4, v2}, [Ldna;
 
-    iget-object p0, p0, Lh41;->K0:Ljava/lang/Object;
+    move-result-object p0
 
-    check-cast p0, Lf41;
+    invoke-static {p0}, Lp54;->d([Ldna;)Landroid/os/Bundle;
 
-    iget-object p1, p1, Le41;->b:Ljava/lang/CharSequence;
+    move-result-object p0
 
-    invoke-virtual {p0, p1}, Lf41;->setLabel(Ljava/lang/CharSequence;)V
+    invoke-direct {v0, p0}, Lone/me/calls/ui/ui/call/CallScreen;-><init>(Landroid/os/Bundle;)V
 
-    return-void
+    return-object v0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

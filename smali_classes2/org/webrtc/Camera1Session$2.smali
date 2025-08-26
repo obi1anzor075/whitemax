@@ -48,7 +48,7 @@
     :cond_0
     const-string p2, "Camera error: "
 
-    invoke-static {p1, p2}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p2}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -61,7 +61,7 @@
 
     const-string v1, "error: "
 
-    invoke-static {v1, p2}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p2}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -81,7 +81,7 @@
 
     invoke-interface {p1, p0}, Lorg/webrtc/CameraSession$Events;->onCameraDisconnected(Lorg/webrtc/CameraSession;)V
 
-    goto :goto_1
+    return-void
 
     :cond_1
     iget-object p1, p0, Lorg/webrtc/Camera1Session$2;->this$0:Lorg/webrtc/Camera1Session;
@@ -94,6 +94,5 @@
 
     invoke-interface {p1, p0, p2}, Lorg/webrtc/CameraSession$Events;->onCameraError(Lorg/webrtc/CameraSession;Ljava/lang/String;)V
 
-    :goto_1
     return-void
 .end method

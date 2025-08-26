@@ -1,87 +1,77 @@
-.class public final enum Lh3b;
-.super Ljava/lang/Enum;
+.class public final Lh3b;
+.super Lg3b;
 .source "SourceFile"
 
 
-# static fields
-.field public static final enum b:Lh3b;
-
-.field public static final enum c:Lh3b;
-
-.field public static final synthetic o:[Lh3b;
-
-
 # instance fields
-.field public final a:I
+.field public final c:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
-
-    new-instance v0, Lh3b;
-
-    const-string v1, "PERFORMANCE"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2, v2}, Lh3b;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lh3b;->b:Lh3b;
-
-    new-instance v1, Lh3b;
-
-    const-string v2, "COMPATIBLE"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3, v3}, Lh3b;-><init>(Ljava/lang/String;II)V
-
-    sput-object v1, Lh3b;->c:Lh3b;
-
-    filled-new-array {v0, v1}, [Lh3b;
-
-    move-result-object v0
-
-    sput-object v0, Lh3b;->o:[Lh3b;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;II)V
+.method public constructor <init>(I)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0, p1}, Lg3b;-><init>(I)V
 
-    iput p3, p0, Lh3b;->a:I
+    new-instance p1, Ljava/lang/Object;
+
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lh3b;->c:Ljava/lang/Object;
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lh3b;
+
+# virtual methods
+.method public final f(Ljava/lang/Object;)Z
     .locals 1
 
-    const-class v0, Lh3b;
+    iget-object v0, p0, Lh3b;->c:Ljava/lang/Object;
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    monitor-enter v0
 
-    move-result-object p0
+    :try_start_0
+    invoke-super {p0, p1}, Lg3b;->f(Ljava/lang/Object;)Z
 
-    check-cast p0, Lh3b;
+    move-result p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-object p0
+    monitor-exit v0
+
+    return p0
+
+    :catchall_0
+    move-exception p0
+
+    monitor-exit v0
+
+    throw p0
 .end method
 
-.method public static values()[Lh3b;
+.method public final g()Ljava/lang/Object;
     .locals 1
 
-    sget-object v0, Lh3b;->o:[Lh3b;
+    iget-object v0, p0, Lh3b;->c:Ljava/lang/Object;
 
-    invoke-virtual {v0}, [Lh3b;->clone()Ljava/lang/Object;
+    monitor-enter v0
 
-    move-result-object v0
+    :try_start_0
+    invoke-super {p0}, Lg3b;->g()Ljava/lang/Object;
 
-    check-cast v0, [Lh3b;
+    move-result-object p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-object v0
+    monitor-exit v0
+
+    return-object p0
+
+    :catchall_0
+    move-exception p0
+
+    monitor-exit v0
+
+    throw p0
 .end method

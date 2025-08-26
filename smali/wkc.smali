@@ -1,175 +1,130 @@
 .class public final Lwkc;
-.super Ljava/lang/Object;
+.super Lv06;
 .source "SourceFile"
-
-# interfaces
-.implements Lykc;
 
 
 # instance fields
-.field public final a:Lmm;
+.field public X:Landroid/graphics/drawable/Drawable;
 
-.field public b:Z
-
-.field public c:Landroid/os/Bundle;
-
-.field public final d:Lr7e;
-
-
-# direct methods
-.method public constructor <init>(Lmm;Lcbf;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lwkc;->a:Lmm;
-
-    new-instance p1, Lke;
-
-    const/4 v0, 0x4
-
-    invoke-direct {p1, v0, p2}, Lke;-><init>(ILjava/lang/Object;)V
-
-    new-instance p2, Lr7e;
-
-    invoke-direct {p2, p1}, Lr7e;-><init>(Ls16;)V
-
-    iput-object p2, p0, Lwkc;->d:Lr7e;
-
-    return-void
-.end method
+.field public Y:Lsq4;
 
 
 # virtual methods
-.method public final a()Landroid/os/Bundle;
-    .locals 5
+.method public final draw(Landroid/graphics/Canvas;)V
+    .locals 4
 
-    new-instance v0, Landroid/os/Bundle;
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->isVisible()Z
 
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+    move-result v0
 
-    iget-object v1, p0, Lwkc;->c:Landroid/os/Bundle;
+    if-nez v0, :cond_0
 
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v0, v1}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
+    goto :goto_1
 
     :cond_0
-    iget-object v1, p0, Lwkc;->d:Lr7e;
+    iget-object v0, p0, Lwkc;->Y:Lsq4;
 
-    invoke-virtual {v1}, Lr7e;->getValue()Ljava/lang/Object;
+    if-eqz v0, :cond_2
 
-    move-result-object v1
+    iget-boolean v1, v0, Lsq4;->a:Z
 
-    check-cast v1, Landroidx/lifecycle/SavedStateHandlesVM;
-
-    iget-object v1, v1, Landroidx/lifecycle/SavedStateHandlesVM;->b:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v1}, Ljava/util/LinkedHashMap;->entrySet()Ljava/util/Set;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :cond_1
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/util/Map$Entry;
-
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/String;
-
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ltkc;
-
-    iget-object v2, v2, Ltkc;->e:Lykc;
-
-    invoke-interface {v2}, Lykc;->a()Landroid/os/Bundle;
-
-    move-result-object v2
-
-    sget-object v4, Landroid/os/Bundle;->EMPTY:Landroid/os/Bundle;
-
-    invoke-static {v2, v4}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_1
-
-    invoke-virtual {v0, v3, v2}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
+    if-eqz v1, :cond_1
 
     goto :goto_0
 
+    :cond_1
+    invoke-static {v0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    iget-object v2, v0, Lsq4;->e:Lmq4;
+
+    invoke-static {v2}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
+
+    move-result v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0}, Lsq4;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    filled-new-array {v1, v2, v3}, [Ljava/lang/Object;
+
+    move-result-object v1
+
+    const-class v2, Lqq4;
+
+    const-string v3, "%x: Draw requested for a non-attached controller %x. %s"
+
+    invoke-static {v2, v3, v1}, Lda5;->j(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lsq4;->b:Z
+
+    iput-boolean v1, v0, Lsq4;->c:Z
+
+    invoke-virtual {v0}, Lsq4;->b()V
+
     :cond_2
-    const/4 v1, 0x0
+    :goto_0
+    invoke-super {p0, p1}, Lv06;->draw(Landroid/graphics/Canvas;)V
 
-    iput-boolean v1, p0, Lwkc;->b:Z
+    iget-object v0, p0, Lwkc;->X:Landroid/graphics/drawable/Drawable;
 
-    return-object v0
+    if-eqz v0, :cond_3
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
+
+    iget-object p0, p0, Lwkc;->X:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
+    :cond_3
+    :goto_1
+    return-void
 .end method
 
-.method public final b()V
-    .locals 3
+.method public final getIntrinsicHeight()I
+    .locals 0
 
-    iget-boolean v0, p0, Lwkc;->b:Z
+    const/4 p0, -0x1
 
-    if-nez v0, :cond_2
+    return p0
+.end method
 
-    iget-object v0, p0, Lwkc;->a:Lmm;
+.method public final getIntrinsicWidth()I
+    .locals 0
 
-    const-string v1, "androidx.lifecycle.internal.SavedStateHandlesProvider"
+    const/4 p0, -0x1
 
-    invoke-virtual {v0, v1}, Lmm;->c(Ljava/lang/String;)Landroid/os/Bundle;
+    return p0
+.end method
 
-    move-result-object v0
+.method public final setVisible(ZZ)Z
+    .locals 1
 
-    new-instance v1, Landroid/os/Bundle;
+    iget-object v0, p0, Lwkc;->Y:Lsq4;
 
-    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
+    if-eqz v0, :cond_0
 
-    iget-object v2, p0, Lwkc;->c:Landroid/os/Bundle;
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v1, v2}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
+    invoke-virtual {v0, p1}, Lsq4;->h(Z)V
 
     :cond_0
-    if-eqz v0, :cond_1
+    invoke-super {p0, p1, p2}, Lv06;->setVisible(ZZ)Z
 
-    invoke-virtual {v1, v0}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
+    move-result p0
 
-    :cond_1
-    iput-object v1, p0, Lwkc;->c:Landroid/os/Bundle;
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lwkc;->b:Z
-
-    iget-object p0, p0, Lwkc;->d:Lr7e;
-
-    invoke-virtual {p0}, Lr7e;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroidx/lifecycle/SavedStateHandlesVM;
-
-    :cond_2
-    return-void
+    return p0
 .end method

@@ -1,225 +1,79 @@
 .class public final Lqi5;
-.super Llzd;
+.super Lni5;
 .source "SourceFile"
 
 
 # instance fields
-.field public o:Lti5;
+.field public b:Z
 
-.field public p:Ltx;
+.field public c:[Ljava/io/File;
+
+.field public d:I
 
 
 # virtual methods
-.method public final c(Lyze;)J
-    .locals 3
+.method public final a()Ljava/io/File;
+    .locals 5
 
-    iget-object p0, p1, Lyze;->a:[B
+    iget-boolean v0, p0, Lqi5;->b:Z
 
-    const/4 v0, 0x0
+    iget-object v1, p0, Lsi5;->a:Ljava/io/File;
 
-    aget-byte v1, p0, v0
+    if-nez v0, :cond_0
 
-    const/4 v2, -0x1
+    const/4 v0, 0x1
 
-    if-ne v1, v2, :cond_2
+    iput-boolean v0, p0, Lqi5;->b:Z
 
-    const/4 v1, 0x2
-
-    aget-byte p0, p0, v1
-
-    and-int/lit16 p0, p0, 0xff
-
-    const/4 v1, 0x4
-
-    shr-int/2addr p0, v1
-
-    const/4 v2, 0x6
-
-    if-eq p0, v2, :cond_0
-
-    const/4 v2, 0x7
-
-    if-ne p0, v2, :cond_1
+    return-object v1
 
     :cond_0
-    invoke-virtual {p1, v1}, Lyze;->I(I)V
+    iget-object v0, p0, Lqi5;->c:[Ljava/io/File;
 
-    invoke-virtual {p1}, Lyze;->D()J
-
-    :cond_1
-    invoke-static {p0, p1}, Lz3d;->K(ILyze;)I
-
-    move-result p0
-
-    invoke-virtual {p1, v0}, Lyze;->H(I)V
-
-    int-to-long p0, p0
-
-    return-wide p0
-
-    :cond_2
-    const-wide/16 p0, -0x1
-
-    return-wide p0
-.end method
-
-.method public final e(Lyze;JLv2b;)Z
-    .locals 21
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object/from16 v2, p4
-
-    iget-object v3, v1, Lyze;->a:[B
-
-    iget-object v4, v0, Lqi5;->o:Lti5;
-
-    const/4 v5, 0x1
-
-    if-nez v4, :cond_0
-
-    new-instance v4, Lti5;
-
-    const/16 v6, 0x11
-
-    const/4 v7, 0x0
-
-    invoke-direct {v4, v3, v6, v7}, Lti5;-><init>([BII)V
-
-    iput-object v4, v0, Lqi5;->o:Lti5;
-
-    iget v0, v1, Lyze;->c:I
-
-    const/16 v1, 0x9
-
-    invoke-static {v3, v1, v0}, Ljava/util/Arrays;->copyOfRange([BII)[B
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v4, v0, v1}, Lti5;->d([BLy29;)Lvu5;
-
-    move-result-object v0
-
-    iput-object v0, v2, Lv2b;->b:Ljava/lang/Object;
-
-    return v5
-
-    :cond_0
-    const/4 v6, 0x0
-
-    aget-byte v3, v3, v6
-
-    and-int/lit8 v7, v3, 0x7f
-
-    const/4 v8, 0x3
-
-    if-ne v7, v8, :cond_1
-
-    invoke-static/range {p1 .. p1}, Lgt0;->G(Lyze;)Lb2b;
-
-    move-result-object v1
-
-    new-instance v2, Lti5;
-
-    iget-wide v6, v4, Lti5;->k:J
-
-    iget-object v3, v4, Lti5;->m:Landroid/os/Parcelable;
-
-    move-object/from16 v20, v3
-
-    check-cast v20, Ly29;
-
-    iget v10, v4, Lti5;->b:I
-
-    iget v11, v4, Lti5;->c:I
-
-    iget v12, v4, Lti5;->d:I
-
-    iget v13, v4, Lti5;->e:I
-
-    iget v14, v4, Lti5;->f:I
-
-    iget v15, v4, Lti5;->h:I
-
-    iget v3, v4, Lti5;->i:I
-
-    move-object v9, v2
-
-    move/from16 v16, v3
-
-    move-wide/from16 v17, v6
-
-    move-object/from16 v19, v1
-
-    invoke-direct/range {v9 .. v20}, Lti5;-><init>(IIIIIIIJLb2b;Ly29;)V
-
-    iput-object v2, v0, Lqi5;->o:Lti5;
-
-    new-instance v3, Ltx;
-
-    const/4 v4, 0x2
-
-    invoke-direct {v3, v4}, Ltx;-><init>(I)V
-
-    iput-object v2, v3, Ltx;->o:Ljava/lang/Object;
-
-    iput-object v1, v3, Ltx;->X:Ljava/lang/Object;
-
-    const-wide/16 v1, -0x1
-
-    iput-wide v1, v3, Ltx;->b:J
-
-    iput-wide v1, v3, Ltx;->c:J
-
-    iput-object v3, v0, Lqi5;->p:Ltx;
-
-    return v5
-
-    :cond_1
-    const/4 v1, -0x1
-
-    if-ne v3, v1, :cond_3
-
-    iget-object v0, v0, Lqi5;->p:Ltx;
+    const/4 v2, 0x0
 
     if-eqz v0, :cond_2
 
-    move-wide/from16 v3, p2
+    iget v3, p0, Lqi5;->d:I
 
-    iput-wide v3, v0, Ltx;->b:J
+    array-length v4, v0
 
-    iput-object v0, v2, Lv2b;->c:Ljava/lang/Object;
+    if-ge v3, v4, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    return-object v2
 
     :cond_2
-    iget-object v0, v2, Lv2b;->b:Ljava/lang/Object;
+    :goto_0
+    if-nez v0, :cond_4
 
-    check-cast v0, Lvu5;
+    invoke-virtual {v1}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object v0
 
-    return v6
+    iput-object v0, p0, Lqi5;->c:[Ljava/io/File;
+
+    if-eqz v0, :cond_3
+
+    array-length v0, v0
+
+    if-nez v0, :cond_4
 
     :cond_3
-    return v5
-.end method
+    return-object v2
 
-.method public final f(Z)V
-    .locals 0
+    :cond_4
+    iget-object v0, p0, Lqi5;->c:[Ljava/io/File;
 
-    invoke-super {p0, p1}, Llzd;->f(Z)V
+    iget v1, p0, Lqi5;->d:I
 
-    if-eqz p1, :cond_0
+    add-int/lit8 v2, v1, 0x1
 
-    const/4 p1, 0x0
+    iput v2, p0, Lqi5;->d:I
 
-    iput-object p1, p0, Lqi5;->o:Lti5;
+    aget-object p0, v0, v1
 
-    iput-object p1, p0, Lqi5;->p:Ltx;
-
-    :cond_0
-    return-void
+    return-object p0
 .end method

@@ -1,159 +1,85 @@
-.class public abstract Lyg;
-.super Libe;
+.class public final Lyg;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "SourceFile"
 
 
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Landroid/animation/AnimatorSet;
+
+.field public final synthetic c:Lv56;
+
+
+# direct methods
+.method public synthetic constructor <init>(Landroid/animation/AnimatorSet;Lv56;I)V
+    .locals 0
+
+    iput p3, p0, Lyg;->a:I
+
+    iput-object p1, p0, Lyg;->b:Landroid/animation/AnimatorSet;
+
+    iput-object p2, p0, Lyg;->c:Lv56;
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+
+    return-void
+.end method
+
+
 # virtual methods
-.method public final z(Landroid/content/Context;Landroid/content/res/XmlResourceParser;I)Ljava/lang/Object;
-    .locals 3
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
 
-    sget-object v0, Lwg;->B0:Lwg;
+    iget v0, p0, Lyg;->a:I
 
-    invoke-virtual {v0, p1, p2}, Libe;->C(Landroid/content/Context;Landroid/content/res/XmlResourceParser;)Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object v0
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    check-cast v0, Lmh;
+    return-void
 
-    instance-of v1, v0, Lhh;
+    :pswitch_0
+    iget-object p1, p0, Lyg;->b:Landroid/animation/AnimatorSet;
 
-    if-nez v1, :cond_0
+    invoke-virtual {p1, p0}, Landroid/animation/Animator;->removeListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    invoke-interface {p2, p3}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(I)Ljava/lang/String;
+    iget-object p0, p0, Lyg;->c:Lv56;
 
-    move-result-object v1
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
-    const/16 v2, 0x23
+    return-void
 
-    invoke-static {v1, v2}, Lh0e;->s0(Ljava/lang/CharSequence;C)Z
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    move-result v1
+.method public onAnimationStart(Landroid/animation/Animator;)V
+    .locals 1
 
-    if-eqz v1, :cond_0
+    iget v0, p0, Lyg;->a:I
 
-    new-instance v0, Lhh;
+    packed-switch v0, :pswitch_data_0
 
-    const/4 v1, 0x0
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
 
-    invoke-direct {v0, v1}, Lhh;-><init>(I)V
+    return-void
 
-    :cond_0
-    instance-of v1, v0, Lhh;
+    :pswitch_0
+    iget-object p1, p0, Lyg;->b:Landroid/animation/AnimatorSet;
 
-    if-eqz v1, :cond_1
+    invoke-virtual {p1, p0}, Landroid/animation/Animator;->removeListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    new-instance p0, Lhh;
+    iget-object p0, p0, Lyg;->c:Lv56;
 
-    invoke-interface {p2, p3}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(I)Ljava/lang/String;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
-    move-result-object p1
+    return-void
 
-    invoke-static {p1}, Lat7;->F(Ljava/lang/String;)I
-
-    move-result p1
-
-    invoke-direct {p0, p1}, Lhh;-><init>(I)V
-
-    goto :goto_1
-
-    :cond_1
-    instance-of v1, v0, Lih;
-
-    if-eqz v1, :cond_2
-
-    new-instance p0, Lih;
-
-    invoke-interface {p2, p3}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(I)Ljava/lang/String;
-
-    move-result-object p2
-
-    :try_start_0
-    invoke-static {p1, p2}, Lbh4;->a(Landroid/content/Context;Ljava/lang/String;)F
-
-    move-result p1
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    invoke-static {p2}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
-
-    move-result p1
-
-    :goto_0
-    invoke-direct {p0, p1}, Lih;-><init>(F)V
-
-    goto :goto_1
-
-    :cond_2
-    instance-of p1, v0, Ljh;
-
-    if-eqz p1, :cond_3
-
-    new-instance p0, Ljh;
-
-    invoke-interface {p2, p3}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result p1
-
-    invoke-direct {p0, p1}, Ljh;-><init>(I)V
-
-    goto :goto_1
-
-    :cond_3
-    instance-of p1, v0, Lkh;
-
-    if-eqz p1, :cond_4
-
-    new-instance p0, Lkh;
-
-    invoke-interface {p2, p3}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Lkh;-><init>(Ljava/lang/String;)V
-
-    :goto_1
-    return-object p0
-
-    :cond_4
-    sget-object p1, Llh;->a:Llh;
-
-    invoke-static {v0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_5
-
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    iget-object p0, p0, Libe;->b:Ljava/lang/Object;
-
-    check-cast p0, Lvg;
-
-    iget-object p0, p0, Lvg;->a:Ljava/lang/String;
-
-    const-string p2, "Undefined "
-
-    const-string p3, " type"
-
-    invoke-static {p2, p0, p3}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_5
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw p0
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method

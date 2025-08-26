@@ -1,467 +1,232 @@
-.class public abstract Lt7e;
+.class public final Lt7e;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# instance fields
+.field public final a:Landroid/os/Handler;
+
+.field public final b:La75;
+
+.field public final c:Landroid/media/AudioManager;
+
+.field public d:I
+
+.field public e:I
+
+.field public f:Z
+
+
 # direct methods
-.method public static a(Ljava/io/File;)V
-    .locals 3
+.method public constructor <init>(Landroid/content/Context;Landroid/os/Handler;La75;)V
+    .locals 2
 
-    invoke-virtual {p0}, Ljava/io/File;->getParentFile()Ljava/io/File;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    if-eqz v0, :cond_0
+    move-result-object p1
 
-    invoke-virtual {v0}, Ljava/io/File;->canWrite()Z
+    iput-object p2, p0, Lt7e;->a:Landroid/os/Handler;
 
-    move-result v1
+    iput-object p3, p0, Lt7e;->b:La75;
 
-    if-nez v1, :cond_0
+    const-string p2, "audio"
 
-    const/4 v1, 0x1
+    invoke-virtual {p1, p2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/io/File;->setWritable(Z)Z
+    move-result-object p2
 
-    move-result v1
+    check-cast p2, Landroid/media/AudioManager;
 
-    if-nez v1, :cond_0
+    invoke-static {p2}, Lq46;->g(Ljava/lang/Object;)V
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    iput-object p2, p0, Lt7e;->c:Landroid/media/AudioManager;
+
+    const/4 p3, 0x3
+
+    iput p3, p0, Lt7e;->d:I
+
+    invoke-static {p2, p3}, Lt7e;->a(Landroid/media/AudioManager;I)I
+
+    move-result p3
+
+    iput p3, p0, Lt7e;->e:I
+
+    iget p3, p0, Lt7e;->d:I
+
+    sget v0, Lnaf;->a:I
+
+    const/16 v1, 0x17
+
+    if-lt v0, v1, :cond_0
+
+    invoke-virtual {p2, p3}, Landroid/media/AudioManager;->isStreamMute(I)Z
+
+    move-result p2
+
+    goto :goto_0
 
     :cond_0
-    invoke-virtual {p0}, Ljava/io/File;->delete()Z
+    invoke-static {p2, p3}, Lt7e;->a(Landroid/media/AudioManager;I)I
 
-    move-result v0
+    move-result p2
 
-    if-nez v0, :cond_2
+    if-nez p2, :cond_1
 
-    invoke-virtual {p0}, Ljava/io/File;->exists()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
+    const/4 p2, 0x1
 
     goto :goto_0
 
     :cond_1
-    new-instance v0, Ljava/io/IOException;
+    const/4 p2, 0x0
+
+    :goto_0
+    iput-boolean p2, p0, Lt7e;->f:Z
+
+    new-instance p2, Lrm;
+
+    const/16 p3, 0xc
+
+    invoke-direct {p2, p3, p0}, Lrm;-><init>(ILjava/lang/Object;)V
+
+    new-instance p0, Landroid/content/IntentFilter;
+
+    const-string p3, "android.media.VOLUME_CHANGED_ACTION"
+
+    invoke-direct {p0, p3}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+
+    :try_start_0
+    invoke-virtual {p1, p2, p0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p0
+
+    const-string p1, "Error registering stream volume receiver"
+
+    invoke-static {p1, p0}, Lu27;->d(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public static a(Landroid/media/AudioManager;I)I
+    .locals 3
+
+    :try_start_0
+    invoke-virtual {p0, p1}, Landroid/media/AudioManager;->getStreamVolume(I)I
+
+    move-result p0
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return p0
+
+    :catch_0
+    move-exception v0
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "Could not delete file "
+    const/16 v2, 0x3c
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v2, "Could not retrieve stream volume for stream type "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2
-    :goto_0
-    return-void
-.end method
-
-.method public static b(Ljava/io/File;)V
-    .locals 5
-
-    new-instance v0, Ljava/util/Stack;
-
-    invoke-direct {v0}, Ljava/util/Stack;-><init>()V
-
-    invoke-virtual {v0, p0}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance p0, Ljava/util/ArrayList;
-
-    invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
-
-    :cond_0
-    :goto_0
-    invoke-virtual {v0}, Ljava/util/AbstractCollection;->isEmpty()Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    invoke-virtual {v0}, Ljava/util/Stack;->pop()Ljava/lang/Object;
-
     move-result-object v1
 
-    check-cast v1, Ljava/io/File;
+    invoke-static {v1, v0}, Lu27;->d(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-virtual {v1}, Ljava/io/File;->isDirectory()Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    invoke-static {v1}, Lt7e;->a(Ljava/io/File;)V
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {v1}, Ljava/io/File;->listFiles()[Ljava/io/File;
-
-    move-result-object v1
-
-    if-nez v1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    array-length v2, v1
-
-    const/4 v3, 0x0
-
-    :goto_1
-    if-ge v3, v2, :cond_0
-
-    aget-object v4, v1, v3
-
-    invoke-virtual {v0, v4}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
-
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_1
-
-    :cond_3
-    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    :goto_2
-    if-ltz v0, :cond_4
-
-    invoke-virtual {p0, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/io/File;
-
-    invoke-static {v1}, Lt7e;->a(Ljava/io/File;)V
-
-    add-int/lit8 v0, v0, -0x1
-
-    goto :goto_2
-
-    :cond_4
-    return-void
-.end method
-
-.method public static c(Ljava/io/File;)V
-    .locals 4
-
-    new-instance v0, Ljava/util/Stack;
-
-    invoke-direct {v0}, Ljava/util/Stack;-><init>()V
-
-    invoke-virtual {v0, p0}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_0
-    :goto_0
-    invoke-virtual {v0}, Ljava/util/AbstractCollection;->isEmpty()Z
+    invoke-virtual {p0, p1}, Landroid/media/AudioManager;->getStreamMaxVolume(I)I
 
     move-result p0
 
-    if-nez p0, :cond_3
-
-    invoke-virtual {v0}, Ljava/util/Stack;->pop()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/io/File;
-
-    invoke-virtual {p0}, Ljava/io/File;->isDirectory()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    invoke-virtual {p0}, Ljava/io/File;->listFiles()[Ljava/io/File;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_1
-
-    array-length p0, v1
-
-    const/4 v2, 0x0
-
-    :goto_1
-    if-ge v2, p0, :cond_0
-
-    aget-object v3, v1, v2
-
-    invoke-virtual {v0, v3}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    new-instance v0, Ljava/io/IOException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "cannot list directory "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2
-    invoke-virtual {p0}, Ljava/io/File;->getPath()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "_lock"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    :try_start_0
-    new-instance v1, Ljava/io/RandomAccessFile;
-
-    const-string v2, "r"
-
-    invoke-direct {v1, p0, v2}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :try_start_1
-    invoke-virtual {v1}, Ljava/io/RandomAccessFile;->getFD()Ljava/io/FileDescriptor;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/io/FileDescriptor;->sync()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :try_start_2
-    invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
-    :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v1
-
-    goto :goto_3
-
-    :catchall_0
-    move-exception v2
-
-    :try_start_3
-    invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    goto :goto_2
-
-    :catchall_1
-    move-exception v1
-
-    :try_start_4
-    invoke-virtual {v2, v1}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
-
-    :goto_2
-    throw v2
-    :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
-
-    :goto_3
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    invoke-virtual {v1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    goto :goto_0
-
-    :cond_3
-    return-void
+    return p0
 .end method
 
-.method public static d(Ljava/io/File;Ljava/io/File;)Lbe5;
-    .locals 4
 
-    const/4 v0, 0x0
+# virtual methods
+.method public final b()V
+    .locals 5
 
-    :try_start_0
-    new-instance v1, Lbe5;
+    iget v0, p0, Lt7e;->d:I
 
-    invoke-direct {v1, p1}, Lbe5;-><init>(Ljava/io/File;)V
-    :try_end_0
-    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v1, p0, Lt7e;->c:Landroid/media/AudioManager;
 
-    return-object v1
-
-    :catchall_0
-    move-exception p1
-
-    move v2, v0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v1
-
-    const/4 v2, 0x1
-
-    :try_start_1
-    invoke-virtual {p0, v2}, Ljava/io/File;->setWritable(Z)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    new-instance v1, Lbe5;
-
-    invoke-direct {v1, p1}, Lbe5;-><init>(Ljava/io/File;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    invoke-virtual {p0, v0}, Ljava/io/File;->setWritable(Z)Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    invoke-virtual {p0}, Ljava/io/File;->getCanonicalPath()Ljava/lang/String;
-
-    :cond_0
-    return-object v1
-
-    :cond_1
-    :try_start_2
-    throw v1
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    :catchall_1
-    move-exception p1
-
-    :goto_0
-    if-eqz v2, :cond_2
-
-    invoke-virtual {p0, v0}, Ljava/io/File;->setWritable(Z)Z
+    invoke-static {v1, v0}, Lt7e;->a(Landroid/media/AudioManager;I)I
 
     move-result v0
 
-    if-nez v0, :cond_2
+    iget v2, p0, Lt7e;->d:I
 
-    invoke-virtual {p0}, Ljava/io/File;->getCanonicalPath()Ljava/lang/String;
+    sget v3, Lnaf;->a:I
 
-    :cond_2
-    throw p1
-.end method
+    const/16 v4, 0x17
 
-.method public static getClassLoaderLdLoadLibrary()Ljava/lang/String;
-    .locals 4
-    .annotation build Lkj4;
-    .end annotation
+    if-lt v3, v4, :cond_0
 
-    const-class v0, Lcom/facebook/soloader/SoLoader;
+    invoke-virtual {v1, v2}, Landroid/media/AudioManager;->isStreamMute(I)Z
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    instance-of v1, v0, Ldalvik/system/BaseDexClassLoader;
-
-    if-eqz v1, :cond_0
+    move-result v1
 
     goto :goto_0
 
     :cond_0
-    new-instance v1, Ljava/lang/IllegalStateException;
+    invoke-static {v1, v2}, Lt7e;->a(Landroid/media/AudioManager;I)I
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    move-result v1
 
-    const-string v3, "ClassLoader "
+    if-nez v1, :cond_1
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const/4 v1, 0x1
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, " should be of type BaseDexClassLoader"
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
+    goto :goto_0
 
     :cond_1
-    :goto_0
     const/4 v1, 0x0
 
-    :try_start_0
-    check-cast v0, Ldalvik/system/BaseDexClassLoader;
+    :goto_0
+    iget v2, p0, Lt7e;->e:I
 
-    const-class v2, Ldalvik/system/BaseDexClassLoader;
+    if-ne v2, v0, :cond_3
 
-    const-string v3, "getLdLibraryPath"
+    iget-boolean v2, p0, Lt7e;->f:Z
 
-    invoke-virtual {v2, v3, v1}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    if-eq v2, v1, :cond_2
 
-    move-result-object v2
+    goto :goto_1
 
-    invoke-virtual {v2, v0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :cond_2
+    return-void
 
-    move-result-object v0
+    :cond_3
+    :goto_1
+    iput v0, p0, Lt7e;->e:I
 
-    check-cast v0, Ljava/lang/String;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    iput-boolean v1, p0, Lt7e;->f:Z
 
-    return-object v0
+    iget-object p0, p0, Lt7e;->b:La75;
 
-    :catch_0
-    return-object v1
-.end method
+    iget-object p0, p0, La75;->a:Lg75;
 
-.method public static getNativeLoadRuntimeMethod()Ljava/lang/reflect/Method;
-    .locals 1
-    .annotation build Lkj4;
-    .end annotation
+    iget-object p0, p0, Lg75;->t0:Lc40;
 
-    const/4 v0, 0x0
+    new-instance v2, Lz65;
 
-    return-object v0
+    invoke-direct {v2, v0, v1}, Lz65;-><init>(IZ)V
+
+    const/16 v0, 0x1e
+
+    invoke-virtual {p0, v0, v2}, Lc40;->m(ILjm7;)V
+
+    return-void
 .end method

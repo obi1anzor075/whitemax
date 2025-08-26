@@ -1,64 +1,23 @@
-.class public final synthetic Lx65;
+.class public abstract Lx65;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Li4f;
-
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Ly65;
-
-.field public final synthetic c:Ljava/util/concurrent/CountDownLatch;
-
 
 # direct methods
-.method public synthetic constructor <init>(Ly65;Ljava/util/concurrent/CountDownLatch;I)V
-    .locals 0
+.method public static a()Lv1b;
+    .locals 3
 
-    iput p3, p0, Lx65;->a:I
+    new-instance v0, Lv1b;
 
-    iput-object p1, p0, Lx65;->b:Ly65;
+    invoke-static {}, Lps3;->f()Landroid/media/metrics/LogSessionId;
 
-    iput-object p2, p0, Lx65;->c:Ljava/util/concurrent/CountDownLatch;
+    move-result-object v1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v2, Lt1b;
 
-    return-void
-.end method
+    invoke-direct {v2, v1}, Lt1b;-><init>(Landroid/media/metrics/LogSessionId;)V
 
+    invoke-direct {v0, v2}, Lv1b;-><init>(Lt1b;)V
 
-# virtual methods
-.method public final run()V
-    .locals 1
-
-    iget v0, p0, Lx65;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lx65;->b:Ly65;
-
-    iget-object p0, p0, Lx65;->c:Ljava/util/concurrent/CountDownLatch;
-
-    invoke-virtual {v0, p0}, Ly65;->C(Ljava/util/concurrent/CountDownLatch;)V
-
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Lx65;->b:Ly65;
-
-    iget-object p0, p0, Lx65;->c:Ljava/util/concurrent/CountDownLatch;
-
-    invoke-virtual {v0, p0}, Ly65;->C(Ljava/util/concurrent/CountDownLatch;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

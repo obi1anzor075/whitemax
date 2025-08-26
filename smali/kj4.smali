@@ -1,21 +1,39 @@
-.class public interface abstract annotation Lkj4;
+.class public final Lkj4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/annotation/Annotation;
+.implements Landroid/content/DialogInterface$OnDismissListener;
 
 
-# annotations
-.annotation runtime Ljava/lang/annotation/Retention;
-    value = .enum Ljava/lang/annotation/RetentionPolicy;->CLASS:Ljava/lang/annotation/RetentionPolicy;
-.end annotation
+# instance fields
+.field public final synthetic a:Landroidx/fragment/app/DialogFragment;
 
-.annotation runtime Ljava/lang/annotation/Target;
-    value = {
-        .enum Ljava/lang/annotation/ElementType;->TYPE:Ljava/lang/annotation/ElementType;,
-        .enum Ljava/lang/annotation/ElementType;->FIELD:Ljava/lang/annotation/ElementType;,
-        .enum Ljava/lang/annotation/ElementType;->METHOD:Ljava/lang/annotation/ElementType;,
-        .enum Ljava/lang/annotation/ElementType;->CONSTRUCTOR:Ljava/lang/annotation/ElementType;
-    }
-.end annotation
+
+# direct methods
+.method public constructor <init>(Landroidx/fragment/app/DialogFragment;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lkj4;->a:Landroidx/fragment/app/DialogFragment;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onDismiss(Landroid/content/DialogInterface;)V
+    .locals 0
+
+    iget-object p0, p0, Lkj4;->a:Landroidx/fragment/app/DialogFragment;
+
+    iget-object p1, p0, Landroidx/fragment/app/DialogFragment;->s1:Landroid/app/Dialog;
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p0, p1}, Landroidx/fragment/app/DialogFragment;->onDismiss(Landroid/content/DialogInterface;)V
+
+    :cond_0
+    return-void
+.end method

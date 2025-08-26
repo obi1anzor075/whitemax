@@ -1,102 +1,206 @@
 .class public final Lz01;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lri4;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;
+.field public final b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;)V
+.method public constructor <init>(I)V
+    .locals 8
+
+    iput p1, p0, Lz01;->a:I
+
+    packed-switch p1, :pswitch_data_0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Lo54;
+
+    sget-object p1, Lji4;->b:Ljava/util/concurrent/atomic/AtomicLong;
+
+    invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicLong;->incrementAndGet()J
+
+    move-result-wide v1
+
+    new-instance v3, Lloe;
+
+    const-string p1, "125.1.0.48.3"
+
+    invoke-direct {v3, p1}, Lloe;-><init>(Ljava/lang/CharSequence;)V
+
+    sget v4, Ljsb;->ic_statusbar_call_24:I
+
+    new-instance v5, Lloe;
+
+    const-string p1, "\u0412\u0435\u0440\u0441\u0438\u044f SDK \u0417\u0432\u043e\u043d\u043a\u043e\u0432"
+
+    invoke-direct {v5, p1}, Lloe;-><init>(Ljava/lang/CharSequence;)V
+
+    const/4 v6, 0x0
+
+    const/16 v7, 0x10
+
+    invoke-direct/range {v0 .. v7}, Lo54;-><init>(JLmoe;ILmoe;Lus;I)V
+
+    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lbzd;->a(Ljava/lang/Object;)Lazd;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lz01;->b:Ljava/lang/Object;
+
+    return-void
+
+    :pswitch_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    sget-object p1, Lgz4;->a:Lgz4;
+
+    invoke-static {p1}, Lbzd;->a(Ljava/lang/Object;)Lazd;
+
+    move-result-object p1
+
+    new-instance v0, Lu5c;
+
+    invoke-direct {v0, p1}, Lu5c;-><init>(Lgh9;)V
+
+    iput-object v0, p0, Lz01;->b:Ljava/lang/Object;
+
+    return-void
+
+    :pswitch_1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    sget-object p1, Lji4;->b:Ljava/util/concurrent/atomic/AtomicLong;
+
+    invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicLong;->incrementAndGet()J
+
+    move-result-wide v1
+
+    new-instance v3, Lloe;
+
+    const-string p1, "Test crash"
+
+    invoke-direct {v3, p1}, Lloe;-><init>(Ljava/lang/CharSequence;)V
+
+    new-instance v5, Lloe;
+
+    const-string p1, "\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u043a\u0440\u0435\u0448 \u0434\u043b\u044f \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0438 \u0432 tracer"
+
+    invoke-direct {v5, p1}, Lloe;-><init>(Ljava/lang/CharSequence;)V
+
+    sget v4, Lknc;->l:I
+
+    new-instance v0, Lo54;
+
+    const/4 v6, 0x0
+
+    const/16 v7, 0x10
+
+    invoke-direct/range {v0 .. v7}, Lo54;-><init>(JLmoe;ILmoe;Lus;I)V
+
+    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lbzd;->a(Ljava/lang/Object;)Lazd;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lz01;->b:Ljava/lang/Object;
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method private final e(Lo54;)V
     .locals 0
 
-    iput-object p2, p0, Lz01;->Y:Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;
+    return-void
+.end method
 
-    const/4 p2, 0x2
-
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+.method private final f(Lo54;)V
+    .locals 0
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lz01;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lz01;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lz01;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final c()Ltyd;
     .locals 1
 
-    new-instance v0, Lz01;
+    iget v0, p0, Lz01;->a:I
 
-    iget-object p0, p0, Lz01;->Y:Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-direct {v0, p2, p0}, Lz01;-><init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;)V
+    iget-object p0, p0, Lz01;->b:Ljava/lang/Object;
 
-    iput-object p1, v0, Lz01;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lz01;->X:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    sget-object p1, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;->w0:[Lk77;
-
-    iget-object p0, p0, Lz01;->Y:Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;
-
-    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;->l0()Lh01;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lh01;->a()V
-
-    iget-object p1, p0, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;->Y:Lnq3;
-
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1}, Lnq3;->dismiss()V
-
-    :cond_0
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;->Y:Lnq3;
-
-    :cond_1
-    sget-object p0, Ljue;->a:Ljue;
+    check-cast p0, Lu5c;
 
     return-object p0
+
+    :pswitch_0
+    iget-object p0, p0, Lz01;->b:Ljava/lang/Object;
+
+    check-cast p0, Lazd;
+
+    return-object p0
+
+    :pswitch_1
+    iget-object p0, p0, Lz01;->b:Ljava/lang/Object;
+
+    check-cast p0, Lazd;
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final d(Lo54;)V
+    .locals 0
+
+    iget p0, p0, Lz01;->a:I
+
+    packed-switch p0, :pswitch_data_0
+
+    return-void
+
+    :pswitch_0
+    new-instance p0, Lone/me/devmenu/TestCrash;
+
+    invoke-direct {p0}, Lone/me/devmenu/TestCrash;-><init>()V
+
+    throw p0
+
+    :pswitch_1
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,133 +1,109 @@
-.class public final Luv6;
-.super Ljava/lang/Object;
+.class public final enum Luv6;
+.super Ljava/lang/Enum;
 .source "SourceFile"
+
+
+# static fields
+.field public static final synthetic X:[Luv6;
+
+.field public static final enum b:Luv6;
+
+.field public static final enum c:Luv6;
+
+.field public static final enum o:Luv6;
 
 
 # instance fields
 .field public final a:I
 
-.field public final b:Ljava/lang/Object;
-
 
 # direct methods
-.method public constructor <init>(ILjava/lang/Object;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 7
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Luv6;
 
-    iput p1, p0, Luv6;->a:I
+    const-string v1, "FULL_FETCH"
 
-    iput-object p2, p0, Luv6;->b:Ljava/lang/Object;
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    invoke-direct {v0, v1, v2, v3}, Luv6;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Luv6;->b:Luv6;
+
+    new-instance v1, Luv6;
+
+    const-string v2, "DISK_CACHE"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v1, v2, v3, v4}, Luv6;-><init>(Ljava/lang/String;II)V
+
+    sput-object v1, Luv6;->c:Luv6;
+
+    new-instance v2, Luv6;
+
+    const-string v3, "ENCODED_MEMORY_CACHE"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v2, v3, v4, v5}, Luv6;-><init>(Ljava/lang/String;II)V
+
+    new-instance v3, Luv6;
+
+    const-string v4, "BITMAP_MEMORY_CACHE"
+
+    const/4 v6, 0x4
+
+    invoke-direct {v3, v4, v5, v6}, Luv6;-><init>(Ljava/lang/String;II)V
+
+    sput-object v3, Luv6;->o:Luv6;
+
+    filled-new-array {v0, v1, v2, v3}, [Luv6;
+
+    move-result-object v0
+
+    sput-object v0, Luv6;->X:[Luv6;
 
     return-void
 .end method
 
+.method public constructor <init>(Ljava/lang/String;II)V
+    .locals 0
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x1
+    iput p3, p0, Luv6;->a:I
 
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Luv6;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Luv6;
-
-    iget v1, p1, Luv6;->a:I
-
-    iget v3, p0, Luv6;->a:I
-
-    if-eq v3, v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object p0, p0, Luv6;->b:Ljava/lang/Object;
-
-    iget-object p1, p1, Luv6;->b:Ljava/lang/Object;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_3
-
-    return v2
-
-    :cond_3
-    return v0
+    return-void
 .end method
 
-.method public final hashCode()I
+.method public static valueOf(Ljava/lang/String;)Luv6;
     .locals 1
 
-    iget v0, p0, Luv6;->a:I
+    const-class v0, Luv6;
 
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Luv6;->b:Ljava/lang/Object;
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    :goto_0
-    add-int/2addr v0, p0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "IndexedValue(index="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v1, p0, Luv6;->a:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", value="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Luv6;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 p0, 0x29
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
+    check-cast p0, Luv6;
+
     return-object p0
+.end method
+
+.method public static values()[Luv6;
+    .locals 1
+
+    sget-object v0, Luv6;->X:[Luv6;
+
+    invoke-virtual {v0}, [Luv6;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Luv6;
+
+    return-object v0
 .end method

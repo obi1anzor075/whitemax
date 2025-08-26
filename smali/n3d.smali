@@ -1,496 +1,79 @@
 .class public final Ln3d;
-.super Ljava/lang/Object;
+.super Lkotlinx/coroutines/internal/Segment;
 .source "SourceFile"
-
-# interfaces
-.implements Ll3d;
-
-
-# static fields
-.field public static final j:Ljava/lang/String;
-
-.field public static final k:Ljava/lang/String;
-
-.field public static final l:Ljava/lang/String;
-
-.field public static final m:Ljava/lang/String;
-
-.field public static final n:Ljava/lang/String;
-
-.field public static final o:Ljava/lang/String;
-
-.field public static final p:Ljava/lang/String;
-
-.field public static final q:Ljava/lang/String;
-
-.field public static final r:Ljava/lang/String;
 
 
 # instance fields
-.field public final a:I
-
-.field public final b:I
-
-.field public final c:I
-
-.field public final d:I
-
-.field public final e:Ljava/lang/String;
-
-.field public final f:Ljava/lang/String;
-
-.field public final g:Landroid/content/ComponentName;
-
-.field public final h:Landroid/os/IBinder;
-
-.field public final i:Landroid/os/Bundle;
+.field public final synthetic a:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    sget v0, Loze;->a:I
-
-    const/4 v0, 0x0
-
-    const/16 v1, 0x24
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Ln3d;->j:Ljava/lang/String;
-
-    const/4 v0, 0x1
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Ln3d;->k:Ljava/lang/String;
-
-    const/4 v0, 0x2
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Ln3d;->l:Ljava/lang/String;
-
-    const/4 v0, 0x3
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Ln3d;->m:Ljava/lang/String;
-
-    const/4 v0, 0x4
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Ln3d;->n:Ljava/lang/String;
-
-    const/4 v0, 0x5
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Ln3d;->o:Ljava/lang/String;
-
-    const/4 v0, 0x6
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Ln3d;->p:Ljava/lang/String;
-
-    const/4 v0, 0x7
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Ln3d;->q:Ljava/lang/String;
-
-    const/16 v0, 0x8
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Ln3d;->r:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(IIIILjava/lang/String;Ljava/lang/String;Landroid/content/ComponentName;Landroid/os/IBinder;Landroid/os/Bundle;)V
+.method public constructor <init>(JLn3d;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2, p3, p4}, Lkotlinx/coroutines/internal/Segment;-><init>(JLkotlinx/coroutines/internal/Segment;I)V
 
-    iput p1, p0, Ln3d;->a:I
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
-    iput p2, p0, Ln3d;->b:I
+    sget p2, Lm3d;->f:I
 
-    iput p3, p0, Ln3d;->c:I
+    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;-><init>(I)V
 
-    iput p4, p0, Ln3d;->d:I
-
-    iput-object p5, p0, Ln3d;->e:Ljava/lang/String;
-
-    iput-object p6, p0, Ln3d;->f:Ljava/lang/String;
-
-    iput-object p7, p0, Ln3d;->g:Landroid/content/ComponentName;
-
-    iput-object p8, p0, Ln3d;->h:Landroid/os/IBinder;
-
-    iput-object p9, p0, Ln3d;->i:Landroid/os/Bundle;
+    iput-object p1, p0, Ln3d;->a:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
+.method public final getNumberOfSlots()I
     .locals 0
 
-    iget p0, p0, Ln3d;->a:I
+    sget p0, Lm3d;->f:I
 
     return p0
 .end method
 
-.method public final b()Landroid/content/ComponentName;
+.method public final onCancellation(ILjava/lang/Throwable;Lhx3;)V
     .locals 0
 
-    iget-object p0, p0, Ln3d;->g:Landroid/content/ComponentName;
+    sget-object p2, Lm3d;->e:Lkotlinx/coroutines/internal/Symbol;
 
-    return-object p0
-.end method
+    iget-object p3, p0, Ln3d;->a:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
-.method public final c()Ljava/lang/Object;
-    .locals 0
+    invoke-virtual {p3, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
 
-    iget-object p0, p0, Ln3d;->h:Landroid/os/IBinder;
+    invoke-virtual {p0}, Lkotlinx/coroutines/internal/Segment;->onSlotCleaned()V
 
-    return-object p0
-.end method
-
-.method public final d()Ljava/lang/String;
-    .locals 0
-
-    iget-object p0, p0, Ln3d;->f:Ljava/lang/String;
-
-    return-object p0
-.end method
-
-.method public final e()Z
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    instance-of v0, p1, Ln3d;
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_0
-
-    return v1
-
-    :cond_0
-    check-cast p1, Ln3d;
-
-    iget v0, p1, Ln3d;->a:I
-
-    iget v2, p0, Ln3d;->a:I
-
-    if-ne v2, v0, :cond_1
-
-    iget v0, p0, Ln3d;->b:I
-
-    iget v2, p1, Ln3d;->b:I
-
-    if-ne v0, v2, :cond_1
-
-    iget v0, p0, Ln3d;->c:I
-
-    iget v2, p1, Ln3d;->c:I
-
-    if-ne v0, v2, :cond_1
-
-    iget v0, p0, Ln3d;->d:I
-
-    iget v2, p1, Ln3d;->d:I
-
-    if-ne v0, v2, :cond_1
-
-    iget-object v0, p0, Ln3d;->e:Ljava/lang/String;
-
-    iget-object v2, p1, Ln3d;->e:Ljava/lang/String;
-
-    invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Ln3d;->f:Ljava/lang/String;
-
-    iget-object v2, p1, Ln3d;->f:Ljava/lang/String;
-
-    invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Ln3d;->g:Landroid/content/ComponentName;
-
-    iget-object v2, p1, Ln3d;->g:Landroid/content/ComponentName;
-
-    invoke-static {v0, v2}, Loze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object p0, p0, Ln3d;->h:Landroid/os/IBinder;
-
-    iget-object p1, p1, Ln3d;->h:Landroid/os/IBinder;
-
-    invoke-static {p0, p1}, Loze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    const/4 v1, 0x1
-
-    :cond_1
-    return v1
-.end method
-
-.method public final f()I
-    .locals 0
-
-    iget p0, p0, Ln3d;->d:I
-
-    return p0
-.end method
-
-.method public final g()Landroid/os/Bundle;
-    .locals 3
-
-    new-instance v0, Landroid/os/Bundle;
-
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
-
-    sget-object v1, Ln3d;->j:Ljava/lang/String;
-
-    iget v2, p0, Ln3d;->a:I
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
-
-    sget-object v1, Ln3d;->k:Ljava/lang/String;
-
-    iget v2, p0, Ln3d;->b:I
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
-
-    sget-object v1, Ln3d;->l:Ljava/lang/String;
-
-    iget v2, p0, Ln3d;->c:I
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
-
-    sget-object v1, Ln3d;->m:Ljava/lang/String;
-
-    iget-object v2, p0, Ln3d;->e:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    sget-object v1, Ln3d;->n:Ljava/lang/String;
-
-    iget-object v2, p0, Ln3d;->f:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    sget-object v1, Ln3d;->p:Ljava/lang/String;
-
-    iget-object v2, p0, Ln3d;->h:Landroid/os/IBinder;
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBinder(Ljava/lang/String;Landroid/os/IBinder;)V
-
-    sget-object v1, Ln3d;->o:Ljava/lang/String;
-
-    iget-object v2, p0, Ln3d;->g:Landroid/content/ComponentName;
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
-
-    sget-object v1, Ln3d;->q:Ljava/lang/String;
-
-    iget-object v2, p0, Ln3d;->i:Landroid/os/Bundle;
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
-
-    sget-object v1, Ln3d;->r:Ljava/lang/String;
-
-    iget p0, p0, Ln3d;->d:I
-
-    invoke-virtual {v0, v1, p0}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
-
-    return-object v0
-.end method
-
-.method public final getExtras()Landroid/os/Bundle;
-    .locals 1
-
-    new-instance v0, Landroid/os/Bundle;
-
-    iget-object p0, p0, Ln3d;->i:Landroid/os/Bundle;
-
-    invoke-direct {v0, p0}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
-
-    return-object v0
-.end method
-
-.method public final getPackageName()Ljava/lang/String;
-    .locals 0
-
-    iget-object p0, p0, Ln3d;->e:Ljava/lang/String;
-
-    return-object p0
-.end method
-
-.method public final getType()I
-    .locals 0
-
-    iget p0, p0, Ln3d;->b:I
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .locals 9
-
-    iget v0, p0, Ln3d;->a:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    iget v0, p0, Ln3d;->b:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    iget v0, p0, Ln3d;->c:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    iget v0, p0, Ln3d;->d:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    iget-object v7, p0, Ln3d;->g:Landroid/content/ComponentName;
-
-    iget-object v8, p0, Ln3d;->h:Landroid/os/IBinder;
-
-    iget-object v5, p0, Ln3d;->e:Ljava/lang/String;
-
-    iget-object v6, p0, Ln3d;->f:Ljava/lang/String;
-
-    filled-new-array/range {v1 .. v8}, [Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-static {p0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
-
-    move-result p0
-
-    return p0
+    return-void
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "SessionToken {pkg="
+    const-string v1, "SemaphoreSegment[id="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Ln3d;->e:Ljava/lang/String;
+    iget-wide v1, p0, Lkotlinx/coroutines/internal/Segment;->id:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", hashCode="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, " type="
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result p0
 
-    iget v1, p0, Ln3d;->b:I
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const/16 p0, 0x5d
 
-    const-string v1, " libraryVersion="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Ln3d;->c:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, " interfaceVersion="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Ln3d;->d:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, " service="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Ln3d;->f:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, " IMediaSession="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Ln3d;->h:Landroid/os/IBinder;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, " extras="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Ln3d;->i:Landroid/os/Bundle;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, "}"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

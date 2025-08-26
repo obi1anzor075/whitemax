@@ -1,61 +1,28 @@
 .class public abstract Larb;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # static fields
-.field public static back:I = 0x7f0a00fd
+.field public static date_picker_item_height:I = 0x7f070089
 
-.field public static copy:I = 0x7f0a02bc
+.field public static date_picker_land_height:I = 0x7f07008a
 
-.field public static cut:I = 0x7f0a02c7
+.field public static date_picker_land_today_margin_top:I = 0x7f07008b
 
-.field public static edit_menu_item:I = 0x7f0a0304
+.field public static date_picker_portrait_height:I = 0x7f07008c
 
-.field public static extendedMenu:I = 0x7f0a034b
+.field public static date_picker_portrait_today_margin_top:I = 0x7f07008d
 
-.field public static markdown_badge_count_view:I = 0x7f0a0467
+.field public static date_picker_selection_rect_offset:I = 0x7f07008e
 
-.field public static markdown_bold:I = 0x7f0a0468
+.field public static date_picker_today_margin_top:I = 0x7f07008f
 
-.field public static markdown_code:I = 0x7f0a0469
+.field public static picker_height:I = 0x7f0703d9
 
-.field public static markdown_group:I = 0x7f0a046a
+.field public static picker_max_width:I = 0x7f0703da
 
-.field public static markdown_heading:I = 0x7f0a046b
+.field public static picker_min_scale_factor:I = 0x7f0703db
 
-.field public static markdown_italic:I = 0x7f0a046c
+.field public static picker_scale_factor:I = 0x7f0703dc
 
-.field public static markdown_link:I = 0x7f0a046d
-
-.field public static markdown_menu_container:I = 0x7f0a046e
-
-.field public static markdown_message_bubble_view:I = 0x7f0a046f
-
-.field public static markdown_mono:I = 0x7f0a0470
-
-.field public static markdown_original:I = 0x7f0a0471
-
-.field public static markdown_preview_send_as_scheduled_button:I = 0x7f0a0472
-
-.field public static markdown_preview_send_button:I = 0x7f0a0473
-
-.field public static markdown_preview_send_button_guideline:I = 0x7f0a0474
-
-.field public static markdown_regular:I = 0x7f0a0475
-
-.field public static markdown_strikethrough:I = 0x7f0a0476
-
-.field public static markdown_underline:I = 0x7f0a0477
-
-.field public static menu:I = 0x7f0a04cb
-
-.field public static menu_list:I = 0x7f0a04ff
-
-.field public static paste:I = 0x7f0a0856
-
-.field public static rect:I = 0x7f0a096e
-
-.field public static root:I = 0x7f0a097f
-
-.field public static select_all:I = 0x7f0a0aae
+.field public static picker_width:I = 0x7f0703dd

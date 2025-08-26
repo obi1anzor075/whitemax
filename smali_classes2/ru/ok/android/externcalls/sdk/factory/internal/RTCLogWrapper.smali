@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lxwb;
+.implements Ls1c;
 
 
 # annotations
@@ -13,15 +13,15 @@
     }
     d2 = {
         "Lru/ok/android/externcalls/sdk/factory/internal/RTCLogWrapper;",
-        "Lxwb;",
+        "Ls1c;",
         "Lkotlin/Function0;",
         "logger",
         "<init>",
-        "(Ls16;)V",
+        "(Lv56;)V",
         "",
         "tag",
         "msg",
-        "Ljue;",
+        "Le5f;",
         "log",
         "(Ljava/lang/String;Ljava/lang/String;)V",
         "",
@@ -29,7 +29,7 @@
         "logException",
         "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
         "reportException",
-        "Ls16;",
+        "Lv56;",
         "calls-sdk_release"
     }
     k = 0x1
@@ -38,33 +38,34 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
-.field private final logger:Ls16;
+.field private final logger:Lv56;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 .end field
 
 
 # direct methods
-.method public constructor <init>(Ls16;)V
+.method public constructor <init>(Lv56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ls16;",
+            "Lv56;",
             ")V"
         }
     .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/factory/internal/RTCLogWrapper;->logger:Ls16;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/factory/internal/RTCLogWrapper;->logger:Lv56;
 
     return-void
 .end method
@@ -74,17 +75,17 @@
 .method public log(Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/factory/internal/RTCLogWrapper;->logger:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/factory/internal/RTCLogWrapper;->logger:Lv56;
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lxwb;
+    check-cast p0, Ls1c;
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p0, p1, p2}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p0, p1, p2}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     return-void
@@ -93,17 +94,17 @@
 .method public logException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/factory/internal/RTCLogWrapper;->logger:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/factory/internal/RTCLogWrapper;->logger:Lv56;
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lxwb;
+    check-cast p0, Ls1c;
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p0, p1, p2, p3}, Lxwb;->logException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-interface {p0, p1, p2, p3}, Ls1c;->logException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_0
     return-void
@@ -112,17 +113,17 @@
 .method public reportException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/factory/internal/RTCLogWrapper;->logger:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/factory/internal/RTCLogWrapper;->logger:Lv56;
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lxwb;
+    check-cast p0, Ls1c;
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p0, p1, p2, p3}, Lxwb;->reportException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-interface {p0, p1, p2, p3}, Ls1c;->reportException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_0
     return-void

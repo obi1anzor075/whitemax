@@ -13,7 +13,7 @@
         "",
         "",
         "millis",
-        "Ljue;",
+        "Le5f;",
         "setTimeout",
         "(J)V",
         "",
@@ -38,6 +38,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

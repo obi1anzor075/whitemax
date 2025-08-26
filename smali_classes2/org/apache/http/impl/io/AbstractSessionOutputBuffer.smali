@@ -335,7 +335,7 @@
 
     invoke-virtual {p0, p1, p2, p3}, Lorg/apache/http/util/ByteArrayBuffer;->append([BII)V
 
-    goto :goto_1
+    return-void
 
     .line 5
     :cond_3
@@ -354,7 +354,6 @@
 
     invoke-virtual {p0, p1, p2}, Lorg/apache/http/impl/io/HttpTransportMetricsImpl;->incrementBytesTransferred(J)V
 
-    :goto_1
     return-void
 .end method
 

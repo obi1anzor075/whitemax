@@ -25,37 +25,38 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
-.field public A0:Lc97;
+.field public final X:Lwfe;
 
-.field public volatile B0:F
+.field public final Y:Lwfe;
 
-.field public volatile C0:Lgh7;
+.field public final Z:Lwfe;
 
-.field public final X:Lr7e;
+.field public final a:Lwfe;
 
-.field public final Y:Lr7e;
+.field public final b:Lwfe;
 
-.field public final Z:Lr7e;
+.field public final c:Lwfe;
 
-.field public final a:Lr7e;
+.field public final o:Lwfe;
 
-.field public final b:Lr7e;
+.field public final o0:Lwfe;
 
-.field public final c:Lr7e;
+.field public final p0:Lwfe;
 
-.field public final o:Lr7e;
+.field public final q0:Lwfe;
 
-.field public final w0:Lr7e;
+.field public final r0:Lwfe;
 
-.field public final x0:Lr7e;
+.field public s0:Ltd7;
 
-.field public final y0:Lr7e;
+.field public volatile t0:F
 
-.field public final z0:Lr7e;
+.field public volatile u0:Lfm7;
 
 
 # direct methods
@@ -64,157 +65,171 @@
 
     invoke-direct {p0, p1, p2}, Lru/ok/tamtam/upload/workers/ForegroundWorker;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;)V
 
-    new-instance p1, Lhwe;
+    new-instance p1, Li7f;
 
     const/4 p2, 0x0
 
-    invoke-direct {p1, p0, p2}, Lhwe;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;I)V
+    invoke-direct {p1, p0, p2}, Li7f;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;I)V
 
-    new-instance p2, Lr7e;
+    new-instance p2, Lwfe;
 
-    invoke-direct {p2, p1}, Lr7e;-><init>(Ls16;)V
+    invoke-direct {p2, p1}, Lwfe;-><init>(Lv56;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->a:Lr7e;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->a:Lwfe;
 
-    new-instance p1, Lhwe;
+    new-instance p1, Li7f;
 
     const/4 p2, 0x4
 
-    invoke-direct {p1, p0, p2}, Lhwe;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;I)V
+    invoke-direct {p1, p0, p2}, Li7f;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;I)V
 
-    new-instance p2, Lr7e;
+    new-instance p2, Lwfe;
 
-    invoke-direct {p2, p1}, Lr7e;-><init>(Ls16;)V
+    invoke-direct {p2, p1}, Lwfe;-><init>(Lv56;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->b:Lr7e;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->b:Lwfe;
 
-    new-instance p1, Lhwe;
+    new-instance p1, Li7f;
 
     const/4 p2, 0x5
 
-    invoke-direct {p1, p0, p2}, Lhwe;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;I)V
+    invoke-direct {p1, p0, p2}, Li7f;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;I)V
 
-    new-instance p2, Lr7e;
+    new-instance p2, Lwfe;
 
-    invoke-direct {p2, p1}, Lr7e;-><init>(Ls16;)V
+    invoke-direct {p2, p1}, Lwfe;-><init>(Lv56;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c:Lr7e;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c:Lwfe;
 
-    new-instance p1, Lhwe;
+    new-instance p1, Li7f;
 
     const/4 p2, 0x6
 
-    invoke-direct {p1, p0, p2}, Lhwe;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;I)V
+    invoke-direct {p1, p0, p2}, Li7f;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;I)V
 
-    new-instance p2, Lr7e;
+    new-instance p2, Lwfe;
 
-    invoke-direct {p2, p1}, Lr7e;-><init>(Ls16;)V
+    invoke-direct {p2, p1}, Lwfe;-><init>(Lv56;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->o:Lr7e;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->o:Lwfe;
 
-    new-instance p1, Lhwe;
+    new-instance p1, Li7f;
 
     const/4 p2, 0x7
 
-    invoke-direct {p1, p0, p2}, Lhwe;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;I)V
+    invoke-direct {p1, p0, p2}, Li7f;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;I)V
 
-    new-instance p2, Lr7e;
+    new-instance p2, Lwfe;
 
-    invoke-direct {p2, p1}, Lr7e;-><init>(Ls16;)V
+    invoke-direct {p2, p1}, Lwfe;-><init>(Lv56;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->X:Lr7e;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->X:Lwfe;
 
-    new-instance p1, Lhwe;
+    new-instance p1, Li7f;
 
     const/16 p2, 0x8
 
-    invoke-direct {p1, p0, p2}, Lhwe;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;I)V
+    invoke-direct {p1, p0, p2}, Li7f;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;I)V
 
-    new-instance p2, Lr7e;
+    new-instance p2, Lwfe;
 
-    invoke-direct {p2, p1}, Lr7e;-><init>(Ls16;)V
+    invoke-direct {p2, p1}, Lwfe;-><init>(Lv56;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->Y:Lr7e;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->Y:Lwfe;
 
-    new-instance p1, Lhwe;
+    new-instance p1, Li7f;
 
     const/16 p2, 0x9
 
-    invoke-direct {p1, p0, p2}, Lhwe;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;I)V
+    invoke-direct {p1, p0, p2}, Li7f;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;I)V
 
-    new-instance p2, Lr7e;
+    new-instance p2, Lwfe;
 
-    invoke-direct {p2, p1}, Lr7e;-><init>(Ls16;)V
+    invoke-direct {p2, p1}, Lwfe;-><init>(Lv56;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->Z:Lr7e;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->Z:Lwfe;
 
-    new-instance p1, Lhwe;
+    new-instance p1, Li7f;
 
     const/16 p2, 0xa
 
-    invoke-direct {p1, p0, p2}, Lhwe;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;I)V
+    invoke-direct {p1, p0, p2}, Li7f;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;I)V
 
-    new-instance p2, Lr7e;
+    new-instance p2, Lwfe;
 
-    invoke-direct {p2, p1}, Lr7e;-><init>(Ls16;)V
+    invoke-direct {p2, p1}, Lwfe;-><init>(Lv56;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->w0:Lr7e;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->o0:Lwfe;
 
-    new-instance p1, Lhwe;
+    new-instance p1, Li7f;
 
     const/4 p2, 0x1
 
-    invoke-direct {p1, p0, p2}, Lhwe;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;I)V
+    invoke-direct {p1, p0, p2}, Li7f;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;I)V
 
-    new-instance p2, Lr7e;
+    new-instance p2, Lwfe;
 
-    invoke-direct {p2, p1}, Lr7e;-><init>(Ls16;)V
+    invoke-direct {p2, p1}, Lwfe;-><init>(Lv56;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->x0:Lr7e;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->p0:Lwfe;
 
-    new-instance p1, Lhwe;
+    new-instance p1, Li7f;
 
     const/4 p2, 0x2
 
-    invoke-direct {p1, p0, p2}, Lhwe;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;I)V
+    invoke-direct {p1, p0, p2}, Li7f;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;I)V
 
-    new-instance p2, Lr7e;
+    new-instance p2, Lwfe;
 
-    invoke-direct {p2, p1}, Lr7e;-><init>(Ls16;)V
+    invoke-direct {p2, p1}, Lwfe;-><init>(Lv56;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->y0:Lr7e;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->q0:Lwfe;
 
-    new-instance p1, Lhwe;
+    new-instance p1, Li7f;
 
     const/4 p2, 0x3
 
-    invoke-direct {p1, p0, p2}, Lhwe;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;I)V
+    invoke-direct {p1, p0, p2}, Li7f;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;I)V
 
-    new-instance p2, Lr7e;
+    new-instance p2, Lwfe;
 
-    invoke-direct {p2, p1}, Lr7e;-><init>(Ls16;)V
+    invoke-direct {p2, p1}, Lwfe;-><init>(Lv56;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->z0:Lr7e;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->r0:Lwfe;
 
     const/high16 p1, -0x40800000    # -1.0f
 
-    iput p1, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->B0:F
+    iput p1, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->t0:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c()Lt52;
+.method public final b()Ln82;
     .locals 0
 
-    iget-object p0, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->o:Lr7e;
+    iget-object p0, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->o:Lwfe;
 
-    invoke-virtual {p0}, Lr7e;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Lwfe;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lt52;
+    check-cast p0, Ln82;
+
+    return-object p0
+.end method
+
+.method public final c()Llp4;
+    .locals 0
+
+    iget-object p0, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->a:Lwfe;
+
+    invoke-virtual {p0}, Lwfe;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Llp4;
 
     return-object p0
 .end method
@@ -222,35 +237,35 @@
 .method public final createForegroundInfo(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 11
 
-    invoke-virtual {p0}, Lhh7;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lgm7;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p1
 
-    invoke-static {p1}, Litf;->d(Landroid/content/Context;)Litf;
+    invoke-static {p1}, Lw8g;->d(Landroid/content/Context;)Lw8g;
 
     move-result-object p1
 
-    invoke-virtual {p0}, Lhh7;->getId()Ljava/util/UUID;
+    invoke-virtual {p0}, Lgm7;->getId()Ljava/util/UUID;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Litf;->c(Ljava/util/UUID;)Landroid/app/PendingIntent;
+    invoke-virtual {p1, v0}, Lw8g;->c(Ljava/util/UUID;)Landroid/app/PendingIntent;
 
     move-result-object v10
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Lt52;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->b()Ln82;
 
     move-result-object p1
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->d()Lfm4;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Llp4;
 
     move-result-object v0
 
-    iget-object v0, v0, Lfm4;->a:Lyl4;
+    iget-object v0, v0, Llp4;->a:Lep4;
 
-    iget-wide v0, v0, Lyl4;->a:J
+    iget-wide v0, v0, Lep4;->a:J
 
-    invoke-virtual {p1, v0, v1}, Lt52;->B(J)Li22;
+    invoke-virtual {p1, v0, v1}, Ln82;->C(J)Ly42;
 
     move-result-object p1
 
@@ -259,27 +274,27 @@
     invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->i()V
 
     :cond_0
-    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->x0:Lr7e;
+    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->p0:Lwfe;
 
-    invoke-virtual {v0}, Lr7e;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Lwfe;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
     move-object v1, v0
 
-    check-cast v1, Lae5;
+    check-cast v1, Lyg5;
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->d()Lfm4;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Llp4;
 
     move-result-object v0
 
-    iget-object v0, v0, Lfm4;->a:Lyl4;
+    iget-object v0, v0, Llp4;->a:Lep4;
 
-    iget-wide v2, v0, Lyl4;->a:J
+    iget-wide v2, v0, Lep4;->a:J
 
     if-eqz p1, :cond_2
 
-    invoke-virtual {p1}, Li22;->p()Ljava/lang/String;
+    invoke-virtual {p1}, Ly42;->q()Ljava/lang/String;
 
     move-result-object v0
 
@@ -295,19 +310,19 @@
 
     :cond_2
     :goto_1
-    invoke-virtual {p0}, Lhh7;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lgm7;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    iget-object v4, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->x0:Lr7e;
+    iget-object v4, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->p0:Lwfe;
 
-    invoke-virtual {v4}, Lr7e;->getValue()Ljava/lang/Object;
+    invoke-virtual {v4}, Lwfe;->getValue()Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v4, Lae5;
+    check-cast v4, Lyg5;
 
-    iget v4, v4, Lae5;->f:I
+    iget v4, v4, Lyg5;->f:I
 
     invoke-virtual {v0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -326,19 +341,19 @@
     goto :goto_4
 
     :cond_3
-    invoke-virtual {p0}, Lhh7;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lgm7;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p1
 
-    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->x0:Lr7e;
+    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->p0:Lwfe;
 
-    invoke-virtual {v0}, Lr7e;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Lwfe;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lae5;
+    check-cast v0, Lyg5;
 
-    iget v0, v0, Lae5;->f:I
+    iget v0, v0, Lyg5;->f:I
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -347,65 +362,51 @@
     goto :goto_3
 
     :goto_4
-    iget p1, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->B0:F
+    iget p1, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->t0:F
 
     float-to-int v8, p1
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
     const/4 v9, 0x1
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    invoke-virtual/range {v1 .. v10}, Lae5;->b(JLjava/lang/Long;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;IZLandroid/app/PendingIntent;)Landroid/app/Notification;
+    invoke-virtual/range {v1 .. v10}, Lyg5;->b(JLjava/lang/Long;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;IZLandroid/app/PendingIntent;)Landroid/app/Notification;
 
     move-result-object p1
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->d()Lfm4;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Llp4;
 
     move-result-object p0
 
-    iget-object p0, p0, Lfm4;->a:Lyl4;
+    iget-object p0, p0, Llp4;->a:Lep4;
 
-    invoke-virtual {p0}, Lyl4;->hashCode()I
+    invoke-virtual {p0}, Lep4;->hashCode()I
 
     move-result p0
 
-    new-instance v0, Lhu5;
+    new-instance v0, Lqy5;
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p0, p1, v1}, Lhu5;-><init>(ILandroid/app/Notification;I)V
+    invoke-direct {v0, p0, p1, v1}, Lqy5;-><init>(ILandroid/app/Notification;I)V
 
     return-object v0
-.end method
-
-.method public final d()Lfm4;
-    .locals 0
-
-    iget-object p0, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->a:Lr7e;
-
-    invoke-virtual {p0}, Lr7e;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lfm4;
-
-    return-object p0
 .end method
 
 .method public final doForegroundWork(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 11
 
-    instance-of v0, p1, Lkwe;
+    instance-of v0, p1, Ll7f;
 
     if-eqz v0, :cond_0
 
     move-object v0, p1
 
-    check-cast v0, Lkwe;
+    check-cast v0, Ll7f;
 
-    iget v1, v0, Lkwe;->w0:I
+    iget v1, v0, Ll7f;->o0:I
 
     const/high16 v2, -0x80000000
 
@@ -415,21 +416,23 @@
 
     sub-int/2addr v1, v2
 
-    iput v1, v0, Lkwe;->w0:I
+    iput v1, v0, Ll7f;->o0:I
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Lkwe;
+    new-instance v0, Ll7f;
 
-    invoke-direct {v0, p0, p1}, Lkwe;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;Lkotlin/coroutines/Continuation;)V
+    check-cast p1, Lbu3;
+
+    invoke-direct {v0, p0, p1}, Ll7f;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;Lbu3;)V
 
     :goto_0
-    iget-object p1, v0, Lkwe;->Y:Ljava/lang/Object;
+    iget-object p1, v0, Ll7f;->Y:Ljava/lang/Object;
 
-    sget-object v1, Lpu3;->a:Lpu3;
+    sget-object v1, Lpx3;->a:Lpx3;
 
-    iget v2, v0, Lkwe;->w0:I
+    iget v2, v0, Ll7f;->o0:I
 
     const/4 v3, 0x3
 
@@ -453,10 +456,10 @@
 
     if-ne v2, v7, :cond_1
 
-    iget-object p0, v0, Lkwe;->o:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
+    iget-object p0, v0, Ll7f;->o:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
 
     :try_start_0
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -465,7 +468,7 @@
     :catchall_0
     move-exception p1
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     :cond_1
     new-instance p0, Ljava/lang/IllegalStateException;
@@ -477,22 +480,22 @@
     throw p0
 
     :cond_2
-    iget-object p0, v0, Lkwe;->o:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
+    iget-object p0, v0, Ll7f;->o:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
 
     :try_start_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto/16 :goto_5
 
     :cond_3
-    iget-object p0, v0, Lkwe;->X:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
+    iget-object p0, v0, Ll7f;->X:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
 
-    iget-object v2, v0, Lkwe;->o:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
+    iget-object v2, v0, Ll7f;->o:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
 
     :try_start_2
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
@@ -503,49 +506,49 @@
 
     move-object p0, v2
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     :cond_4
-    iget-object p0, v0, Lkwe;->o:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
+    iget-object p0, v0, Ll7f;->o:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
 
     :try_start_3
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     goto :goto_2
 
     :cond_5
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
     :try_start_4
     const-string p1, "doWork"
 
-    invoke-static {v6, p1}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v6, p1}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
 
-    iput-object p0, v0, Lkwe;->o:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
+    iput-object p0, v0, Ll7f;->o:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
 
-    iput v5, v0, Lkwe;->w0:I
+    iput v5, v0, Ll7f;->o0:I
 
-    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->z0:Lr7e;
+    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->r0:Lwfe;
 
-    invoke-virtual {p1}, Lr7e;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lpae;
-
-    check-cast p1, Ln3a;
-
-    invoke-virtual {p1}, Ln3a;->b()Lju3;
+    invoke-virtual {p1}, Lwfe;->getValue()Ljava/lang/Object;
 
     move-result-object p1
 
-    new-instance v2, Llwe;
+    check-cast p1, Lrie;
 
-    invoke-direct {v2, p0, v8}, Llwe;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;Lkotlin/coroutines/Continuation;)V
+    check-cast p1, Lo7a;
 
-    invoke-static {p1, v2, v0}, Lxs7;->U(Lhu3;Li26;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p1}, Lo7a;->b()Ljx3;
+
+    move-result-object p1
+
+    new-instance v2, Lm7f;
+
+    invoke-direct {v2, p0, v8}, Lm7f;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;Lkotlin/coroutines/Continuation;)V
+
+    invoke-static {p1, v2, v0}, Lzo3;->j0(Lhx3;Ll66;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -554,12 +557,12 @@
     goto :goto_1
 
     :cond_6
-    sget-object p1, Ljue;->a:Ljue;
+    sget-object p1, Le5f;->a:Le5f;
 
     :goto_1
     if-ne p1, v1, :cond_7
 
-    return-object v1
+    goto :goto_6
 
     :cond_7
     :goto_2
@@ -567,13 +570,13 @@
 
     :cond_8
     :goto_3
-    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->C0:Lgh7;
+    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->u0:Lfm7;
 
     if-nez p1, :cond_c
 
     const-string p1, "update %f"
 
-    iget v2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->B0:F
+    iget v2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->t0:F
 
     new-instance v5, Ljava/lang/Float;
 
@@ -583,9 +586,9 @@
 
     move-result-object v2
 
-    invoke-static {v6, p1, v2}, Ludd;->p(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v6, p1, v2}, Lg47;->o(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    iget p1, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->B0:F
+    iget p1, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->t0:F
 
     invoke-virtual {p0, p1}, Lru/ok/tamtam/upload/workers/ForegroundWorker;->needToShowNotification(F)Z
 
@@ -593,11 +596,11 @@
 
     if-eqz p1, :cond_b
 
-    iput-object p0, v0, Lkwe;->o:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
+    iput-object p0, v0, Ll7f;->o:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
 
-    iput-object p0, v0, Lkwe;->X:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
+    iput-object p0, v0, Ll7f;->X:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
 
-    iput v4, v0, Lkwe;->w0:I
+    iput v4, v0, Ll7f;->o0:I
 
     invoke-virtual {p0, v0}, Lru/ok/tamtam/upload/workers/ForegroundWorker;->getForegroundInfo(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
@@ -607,22 +610,22 @@
 
     if-ne p1, v1, :cond_9
 
-    return-object v1
+    goto :goto_6
 
     :cond_9
     move-object v2, p0
 
     :goto_4
     :try_start_5
-    check-cast p1, Lhu5;
+    check-cast p1, Lqy5;
 
-    iput-object v2, v0, Lkwe;->o:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
+    iput-object v2, v0, Ll7f;->o:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
 
-    iput-object v8, v0, Lkwe;->X:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
+    iput-object v8, v0, Ll7f;->X:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
 
-    iput v3, v0, Lkwe;->w0:I
+    iput v3, v0, Ll7f;->o0:I
 
-    invoke-virtual {p0, p1, v0}, Lru/ok/tamtam/workmanager/SdkCoroutineWorker;->setForeground(Lhu5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0, p1, v0}, Lru/ok/tamtam/workmanager/SdkCoroutineWorker;->setForeground(Lqy5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
     :try_end_5
@@ -630,7 +633,7 @@
 
     if-ne p0, v1, :cond_a
 
-    return-object v1
+    goto :goto_6
 
     :cond_a
     move-object p0, v2
@@ -642,55 +645,57 @@
 
     move-result-wide v9
 
-    iput-object p0, v0, Lkwe;->o:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
+    iput-object p0, v0, Ll7f;->o:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
 
-    iput v7, v0, Lkwe;->w0:I
+    iput v7, v0, Ll7f;->o0:I
 
-    invoke-static {v9, v10, v0}, Lek8;->q(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v9, v10, v0}, Lq14;->s(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
     if-ne p1, v1, :cond_8
 
+    :goto_6
     return-object v1
 
     :cond_c
-    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->C0:Lgh7;
+    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->u0:Lfm7;
 
     if-nez p1, :cond_d
 
-    invoke-static {}, Lgh7;->a()Ldh7;
+    invoke-static {}, Lfm7;->a()Lcm7;
 
-    move-result-object p1
+    move-result-object p0
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
-    goto :goto_7
+    return-object p0
 
-    :goto_6
+    :cond_d
+    return-object p1
+
+    :goto_7
     const-string v0, "cancelled!"
 
-    invoke-static {v6, v0, p1}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v6, v0, p1}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->i()V
 
-    invoke-static {}, Lgh7;->a()Ldh7;
+    invoke-static {}, Lfm7;->a()Lcm7;
 
-    move-result-object p1
+    move-result-object p0
 
-    :cond_d
-    :goto_7
-    return-object p1
+    return-object p0
 .end method
 
 .method public final e(Ljava/lang/Throwable;)V
     .locals 9
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->d()Lfm4;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Llp4;
 
     move-result-object v0
 
-    iget-object v0, v0, Lfm4;->a:Lyl4;
+    iget-object v0, v0, Llp4;->a:Lep4;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -706,13 +711,13 @@
 
     const-string v1, "UploadDraftMediaWorker"
 
-    invoke-static {v1, v0, p1}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v1, v0, p1}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->d()Lfm4;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Llp4;
 
     move-result-object p1
 
-    iget-object p1, p1, Lfm4;->a:Lyl4;
+    iget-object p1, p1, Llp4;->a:Lep4;
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -728,21 +733,21 @@
 
     const/4 v0, 0x0
 
-    invoke-static {v1, p1, v0}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v1, p1, v0}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Lt52;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->b()Ln82;
 
     move-result-object p1
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->d()Lfm4;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Llp4;
 
     move-result-object v2
 
-    iget-object v2, v2, Lfm4;->a:Lyl4;
+    iget-object v2, v2, Llp4;->a:Lep4;
 
-    iget-wide v2, v2, Lyl4;->a:J
+    iget-wide v2, v2, Lep4;->a:J
 
-    invoke-virtual {p1, v2, v3}, Lt52;->B(J)Li22;
+    invoke-virtual {p1, v2, v3}, Ln82;->C(J)Ly42;
 
     move-result-object p1
 
@@ -750,45 +755,47 @@
 
     const-string p1, "failDraftUpload: chat is null"
 
-    invoke-static {v1, p1, v0}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v1, p1, v0}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_2
 
     :cond_0
-    iget-object v2, p1, Li22;->b:Lo62;
+    iget-object v2, p1, Ly42;->b:Lj92;
 
-    iget-object v8, v2, Lo62;->f0:Lj4a;
+    iget-object v8, v2, Lj92;->f0:Lm8a;
 
     if-nez v8, :cond_1
 
     const-string p1, "failDraftUpload: draft is null"
 
-    invoke-static {v1, p1, v0}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v1, p1, v0}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_2
 
     :cond_1
-    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->X:Lr7e;
+    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->X:Lwfe;
 
-    invoke-virtual {v0}, Lr7e;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Lwfe;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ldm4;
+    check-cast v0, Ljp4;
 
-    invoke-interface {v0, v8}, Ldm4;->c(Lj4a;)Lj4a;
+    invoke-interface {v0, v8}, Ljp4;->c(Lm8a;)Lm8a;
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Lt52;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->b()Ln82;
 
     move-result-object v3
 
-    invoke-virtual {v8}, Lj4a;->b()Ljava/lang/Long;
+    iget-wide v4, p1, Ly42;->a:J
 
-    move-result-object v0
+    invoke-virtual {v8}, Lm8a;->b()Ljava/lang/Long;
 
-    if-eqz v0, :cond_2
+    move-result-object p1
 
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+    if-eqz p1, :cond_2
+
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v0
 
@@ -803,46 +810,44 @@
     goto :goto_0
 
     :goto_1
-    iget-wide v4, p1, Li22;->a:J
+    invoke-virtual/range {v3 .. v8}, Ln82;->k(JJLm8a;)V
 
-    invoke-virtual/range {v3 .. v8}, Lt52;->k(JJLj4a;)V
+    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c:Lwfe;
 
-    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c:Lr7e;
-
-    invoke-virtual {p1}, Lr7e;->getValue()Ljava/lang/Object;
+    invoke-virtual {p1}, Lwfe;->getValue()Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lluf;
+    check-cast p1, Lw9g;
 
-    invoke-static {p1}, Lo1d;->y(Lluf;)V
+    invoke-static {p1}, Lw7d;->y(Lw9g;)V
 
     :goto_2
     invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->g()V
 
-    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->y0:Lr7e;
+    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->q0:Lwfe;
 
-    invoke-virtual {p1}, Lr7e;->getValue()Ljava/lang/Object;
+    invoke-virtual {p1}, Lwfe;->getValue()Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Luc5;
+    check-cast p1, Lmf5;
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->d()Lfm4;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Llp4;
 
     move-result-object v0
 
-    iget-object v0, v0, Lfm4;->a:Lyl4;
+    iget-object v0, v0, Llp4;->a:Lep4;
 
-    iget-wide v0, v0, Lyl4;->a:J
+    iget-wide v0, v0, Lep4;->a:J
 
-    invoke-virtual {p1, v0, v1}, Luc5;->b(J)V
+    invoke-virtual {p1, v0, v1}, Lmf5;->b(J)V
 
-    invoke-static {}, Lgh7;->a()Ldh7;
+    invoke-static {}, Lfm7;->a()Lcm7;
 
     move-result-object p1
 
-    iput-object p1, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->C0:Lgh7;
+    iput-object p1, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->u0:Lfm7;
 
     return-void
 .end method
@@ -855,43 +860,43 @@
     const-string v1, "removeUploadFromStorage: success for key = "
 
     :try_start_0
-    iget-object v2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->b:Lr7e;
+    iget-object v2, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->b:Lwfe;
 
-    invoke-virtual {v2}, Lr7e;->getValue()Ljava/lang/Object;
+    invoke-virtual {v2}, Lwfe;->getValue()Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lom4;
+    check-cast v2, Lup4;
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->d()Lfm4;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Llp4;
 
     move-result-object v3
 
-    iget-object v3, v3, Lfm4;->a:Lyl4;
+    iget-object v3, v3, Llp4;->a:Lep4;
 
-    invoke-virtual {v2}, Lom4;->a()Lphd;
-
-    move-result-object v2
-
-    new-instance v4, Lmb1;
-
-    const/16 v5, 0xa
-
-    invoke-direct {v4, v5, v3}, Lmb1;-><init>(ILjava/lang/Object;)V
-
-    new-instance v3, Lw63;
-
-    const/4 v5, 0x2
-
-    invoke-direct {v3, v2, v5, v4}, Lw63;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-virtual {v3}, Lv63;->a()V
-
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->d()Lfm4;
+    invoke-virtual {v2}, Lup4;->a()Ldpd;
 
     move-result-object v2
 
-    iget-object v2, v2, Lfm4;->a:Lyl4;
+    new-instance v4, Lwc1;
+
+    const/16 v5, 0x9
+
+    invoke-direct {v4, v5, v3}, Lwc1;-><init>(ILjava/lang/Object;)V
+
+    new-instance v3, Lf93;
+
+    const/4 v5, 0x3
+
+    invoke-direct {v3, v2, v5, v4}, Lf93;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-virtual {v3}, Le93;->a()V
+
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Llp4;
+
+    move-result-object v2
+
+    iget-object v2, v2, Llp4;->a:Lep4;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -903,20 +908,20 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    return-void
 
     :catchall_0
     move-exception v1
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->d()Lfm4;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Llp4;
 
     move-result-object p0
 
-    iget-object p0, p0, Lfm4;->a:Lyl4;
+    iget-object p0, p0, Llp4;->a:Lep4;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -930,22 +935,21 @@
 
     move-result-object p0
 
-    invoke-static {v0, p0, v1}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v0, p0, v1}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_0
     return-void
 .end method
 
 .method public final getName()Ljava/lang/String;
     .locals 1
 
-    invoke-virtual {p0}, Lhh7;->getInputData()Lzy3;
+    invoke-virtual {p0}, Lgm7;->getInputData()Lt24;
 
     move-result-object p0
 
     const-string v0, "workName"
 
-    invoke-virtual {p0, v0}, Lzy3;->e(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lt24;->e(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -960,7 +964,7 @@
 .method public final h()V
     .locals 5
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->d()Lfm4;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Llp4;
 
     move-result-object v0
 
@@ -978,19 +982,19 @@
 
     const-string v1, "UploadDraftMediaWorker"
 
-    invoke-static {v1, v0}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->d()Lfm4;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Llp4;
 
     move-result-object v0
 
-    iget v0, v0, Lfm4;->d:I
+    iget v0, v0, Llp4;->d:I
 
     if-eqz v0, :cond_1
 
-    sget-object v1, Ltxe;->$EnumSwitchMapping$0:[I
+    sget-object v1, Lt8f;->$EnumSwitchMapping$0:[I
 
-    invoke-static {v0}, Lhr1;->t(I)I
+    invoke-static {v0}, Lzt1;->s(I)I
 
     move-result v0
 
@@ -998,40 +1002,40 @@
 
     packed-switch v0, :pswitch_data_0
 
-    sget-object v0, Le00;->b:Le00;
+    sget-object v0, Lq00;->b:Lq00;
 
     goto :goto_0
 
     :pswitch_0
-    sget-object v0, Le00;->Z:Le00;
+    sget-object v0, Lq00;->Z:Lq00;
 
     goto :goto_0
 
     :pswitch_1
-    sget-object v0, Le00;->Y:Le00;
+    sget-object v0, Lq00;->Y:Lq00;
 
     goto :goto_0
 
     :pswitch_2
-    sget-object v0, Le00;->z0:Le00;
+    sget-object v0, Lq00;->r0:Lq00;
 
     goto :goto_0
 
     :pswitch_3
-    sget-object v0, Le00;->o:Le00;
+    sget-object v0, Lq00;->o:Lq00;
 
     goto :goto_0
 
     :pswitch_4
-    sget-object v0, Le00;->X:Le00;
+    sget-object v0, Lq00;->X:Lq00;
 
     goto :goto_0
 
     :pswitch_5
-    sget-object v0, Le00;->b:Le00;
+    sget-object v0, Lq00;->b:Lq00;
 
     :goto_0
-    sget-object v1, Le00;->b:Le00;
+    sget-object v1, Lq00;->b:Lq00;
 
     if-ne v0, v1, :cond_0
 
@@ -1046,99 +1050,99 @@
     return-void
 
     :cond_0
-    new-instance v0, Lxs8;
+    new-instance v0, Lex8;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->d()Lfm4;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Llp4;
 
     move-result-object v1
 
-    iget-object v1, v1, Lfm4;->e:Lf3f;
+    iget-object v1, v1, Llp4;->e:Lsef;
 
-    iput-object v1, v0, Lxs8;->e:Lf3f;
+    iput-object v1, v0, Lex8;->e:Lsef;
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->d()Lfm4;
-
-    move-result-object v1
-
-    iget-object v1, v1, Lfm4;->b:Ljava/lang/String;
-
-    iput-object v1, v0, Lxs8;->b:Ljava/lang/String;
-
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->d()Lfm4;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Llp4;
 
     move-result-object v1
 
-    iget v1, v1, Lfm4;->d:I
+    iget-object v1, v1, Llp4;->b:Ljava/lang/String;
 
-    iput v1, v0, Lxs8;->d:I
+    iput-object v1, v0, Lex8;->b:Ljava/lang/String;
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->d()Lfm4;
-
-    move-result-object v1
-
-    iget-wide v1, v1, Lfm4;->c:J
-
-    iput-wide v1, v0, Lxs8;->c:J
-
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->d()Lfm4;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Llp4;
 
     move-result-object v1
 
-    iget-object v1, v1, Lfm4;->a:Lyl4;
+    iget v1, v1, Llp4;->d:I
 
-    iget-object v1, v1, Lyl4;->b:Ljava/lang/String;
+    iput v1, v0, Lex8;->d:I
 
-    iput-object v1, v0, Lxs8;->f:Ljava/lang/String;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Llp4;
 
-    new-instance v1, Lys8;
+    move-result-object v1
 
-    invoke-direct {v1, v0}, Lys8;-><init>(Lxs8;)V
+    iget-wide v1, v1, Llp4;->c:J
 
-    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->Z:Lr7e;
+    iput-wide v1, v0, Lex8;->c:J
 
-    invoke-virtual {v0}, Lr7e;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Llp4;
+
+    move-result-object v1
+
+    iget-object v1, v1, Llp4;->a:Lep4;
+
+    iget-object v1, v1, Lep4;->b:Ljava/lang/String;
+
+    iput-object v1, v0, Lex8;->f:Ljava/lang/String;
+
+    new-instance v1, Lfx8;
+
+    invoke-direct {v1, v0}, Lfx8;-><init>(Lex8;)V
+
+    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->Z:Lwfe;
+
+    invoke-virtual {v0}, Lwfe;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lhxe;
+    check-cast v0, Li8f;
 
-    invoke-virtual {v0, v1}, Lhxe;->a(Lys8;)Lov9;
+    invoke-virtual {v0, v1}, Li8f;->a(Lfx8;)Llx9;
 
     move-result-object v0
 
-    iget-object v1, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->w0:Lr7e;
+    iget-object v1, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->o0:Lwfe;
 
-    invoke-virtual {v1}, Lr7e;->getValue()Ljava/lang/Object;
+    invoke-virtual {v1}, Lwfe;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lqmc;
+    check-cast v1, Lgsc;
 
-    invoke-virtual {v0, v1}, Lms9;->n(Lqmc;)Lnu9;
+    invoke-virtual {v0, v1}, Lvw9;->m(Lgsc;)Lry9;
 
     move-result-object v0
 
-    new-instance v1, Lygd;
+    new-instance v1, Lh4e;
 
-    invoke-direct {v1, p0}, Lygd;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lh4e;-><init>(Ljava/lang/Object;)V
 
-    new-instance v2, Lmv4;
+    new-instance v2, Ll5e;
 
-    const/16 v3, 0x1b
+    const/4 v3, 0x3
 
-    invoke-direct {v2, v3, p0}, Lmv4;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v2, v3, p0}, Ll5e;-><init>(ILjava/lang/Object;)V
 
-    sget-object v3, Lz3d;->i:Lz26;
+    sget-object v3, Lkhg;->c:Lc76;
 
-    new-instance v4, Lc97;
+    new-instance v4, Ltd7;
 
-    invoke-direct {v4, v1, v2, v3}, Lc97;-><init>(Lof3;Lof3;Lj6;)V
+    invoke-direct {v4, v1, v2, v3}, Ltd7;-><init>(Ljj3;Ljj3;Lc6;)V
 
-    invoke-virtual {v0, v4}, Lms9;->a(Lbw9;)V
+    invoke-virtual {v0, v4}, Lvw9;->a(La0a;)V
 
-    iput-object v4, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->A0:Lc97;
+    iput-object v4, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->s0:Ltd7;
 
     return-void
 
@@ -1146,6 +1150,8 @@
     const/4 p0, 0x0
 
     throw p0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -1163,11 +1169,11 @@
 .method public final i()V
     .locals 4
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->d()Lfm4;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Llp4;
 
     move-result-object v0
 
-    iget-object v0, v0, Lfm4;->a:Lyl4;
+    iget-object v0, v0, Llp4;->a:Lep4;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1183,21 +1189,21 @@
 
     const-string v1, "UploadDraftMediaWorker"
 
-    invoke-static {v1, v0}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->A0:Lc97;
+    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->s0:Ltd7;
 
-    invoke-static {v0}, Ltic;->b(Lxi4;)V
+    invoke-static {v0}, Ldoc;->b(Lam4;)V
 
     invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->g()V
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->d()Lfm4;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->c()Llp4;
 
     move-result-object v0
 
-    iget-object v0, v0, Lfm4;->a:Lyl4;
+    iget-object v0, v0, Llp4;->a:Lep4;
 
-    iget-object v0, v0, Lyl4;->b:Ljava/lang/String;
+    iget-object v0, v0, Lep4;->b:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1211,13 +1217,13 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {}, Lgh7;->a()Ldh7;
+    invoke-static {}, Lfm7;->a()Lcm7;
 
     move-result-object v0
 
-    iput-object v0, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->C0:Lgh7;
+    iput-object v0, p0, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->u0:Lfm7;
 
     return-void
 .end method

@@ -32,13 +32,14 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
-.field public final y0:Ldk;
+.field public final q0:Lwj;
 
-.field public z0:Lwia;
+.field public r0:Ldna;
 
 
 # direct methods
@@ -56,40 +57,43 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 1
 
+    const/4 p3, 0x0
+
     .line 2
     invoke-direct {p0, p1, p2, p3}, Landroidx/appcompat/widget/AppCompatTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 3
-    new-instance p1, Ldk;
+    new-instance p1, Lwj;
 
-    new-instance p2, Lbk;
+    new-instance p2, Luj;
 
-    const/4 p3, 0x0
-
-    invoke-direct {p2, p3, p0}, Lbk;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p2, p3, p0}, Luj;-><init>(ILjava/lang/Object;)V
 
     new-instance p3, Ll;
 
-    const/16 v0, 0x8
+    const/16 v0, 0x9
 
     invoke-direct {p3, v0, p0}, Ll;-><init>(ILjava/lang/Object;)V
 
-    invoke-direct {p1, p0, p2, p3}, Ldk;-><init>(Landroid/view/View;Lbk;Ll;)V
+    invoke-direct {p1, p0, p2, p3}, Lwj;-><init>(Lru/ok/tamtam/animoji/views/AnimojiTextView;Luj;Ll;)V
 
-    iput-object p1, p0, Lru/ok/tamtam/animoji/views/AnimojiTextView;->y0:Ldk;
+    iput-object p1, p0, Lru/ok/tamtam/animoji/views/AnimojiTextView;->q0:Lwj;
 
     .line 4
-    iget-object p1, p0, Lru/ok/tamtam/animoji/views/AnimojiTextView;->z0:Lwia;
+    iget-object p1, p0, Lru/ok/tamtam/animoji/views/AnimojiTextView;->r0:Ldna;
 
     if-eqz p1, :cond_0
 
     .line 5
-    iget-object p2, p1, Lwia;->a:Ljava/lang/Object;
+    iget-object p2, p1, Ldna;->a:Ljava/lang/Object;
 
+    .line 6
     check-cast p2, Ljava/lang/CharSequence;
 
-    iget-object p1, p1, Lwia;->b:Ljava/lang/Object;
+    .line 7
+    iget-object p1, p1, Ldna;->b:Ljava/lang/Object;
 
+    .line 8
     check-cast p1, Landroid/widget/TextView$BufferType;
 
     invoke-virtual {p0, p2, p1}, Lru/ok/tamtam/animoji/views/AnimojiTextView;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
@@ -97,13 +101,13 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 6
-    iput-object p1, p0, Lru/ok/tamtam/animoji/views/AnimojiTextView;->z0:Lwia;
+    .line 9
+    iput-object p1, p0, Lru/ok/tamtam/animoji/views/AnimojiTextView;->r0:Ldna;
 
     return-void
 .end method
 
-.method public static j(Lru/ok/tamtam/animoji/views/AnimojiTextView;Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
+.method public static i(Lru/ok/tamtam/animoji/views/AnimojiTextView;Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
     .locals 0
 
     invoke-super {p0, p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
@@ -111,7 +115,7 @@
     return-void
 .end method
 
-.method public static k(Lru/ok/tamtam/animoji/views/AnimojiTextView;Landroid/graphics/Canvas;)V
+.method public static j(Lru/ok/tamtam/animoji/views/AnimojiTextView;Landroid/graphics/Canvas;)V
     .locals 0
 
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
@@ -124,46 +128,45 @@
 .method public final getAnimojiEnabled()Z
     .locals 0
 
-    iget-object p0, p0, Lru/ok/tamtam/animoji/views/AnimojiTextView;->y0:Ldk;
+    iget-object p0, p0, Lru/ok/tamtam/animoji/views/AnimojiTextView;->q0:Lwj;
 
     if-eqz p0, :cond_0
 
-    iget-boolean p0, p0, Ldk;->b:Z
+    iget-boolean p0, p0, Lwj;->b:Z
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
 .method public onDraw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    iget-object p0, p0, Lru/ok/tamtam/animoji/views/AnimojiTextView;->y0:Ldk;
+    iget-object p0, p0, Lru/ok/tamtam/animoji/views/AnimojiTextView;->q0:Lwj;
 
     if-eqz p0, :cond_1
 
-    sget-boolean v0, Lqh;->b:Z
+    sget-boolean v0, Ljh;->b:Z
 
     if-eqz v0, :cond_0
 
-    sget-object v1, Lqh;->a:Ly76;
+    sget-object v1, Ljh;->a:Lmv9;
 
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     :cond_0
-    iget-object p0, p0, Ldk;->Y:Ljava/lang/Object;
+    iget-object p0, p0, Lwj;->Y:Ljava/lang/Object;
 
-    check-cast p0, Lu16;
+    check-cast p0, Ll;
 
-    invoke-interface {p0, p1}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Ll;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     if-eqz v0, :cond_1
 
-    sget-object p0, Lqh;->a:Ly76;
+    sget-object p0, Ljh;->a:Lmv9;
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -174,161 +177,160 @@
 .method public final setAnimojiEnabled(Z)V
     .locals 0
 
-    iget-object p0, p0, Lru/ok/tamtam/animoji/views/AnimojiTextView;->y0:Ldk;
+    iget-object p0, p0, Lru/ok/tamtam/animoji/views/AnimojiTextView;->q0:Lwj;
 
     if-eqz p0, :cond_0
 
-    iput-boolean p1, p0, Ldk;->b:Z
+    iput-boolean p1, p0, Lwj;->b:Z
 
     :cond_0
     return-void
 .end method
 
 .method public setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
-    .locals 7
+    .locals 8
 
-    iget-object v0, p0, Lru/ok/tamtam/animoji/views/AnimojiTextView;->y0:Ldk;
+    iget-object v0, p0, Lru/ok/tamtam/animoji/views/AnimojiTextView;->q0:Lwj;
 
     if-nez v0, :cond_0
 
     invoke-super {p0, p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
 
-    new-instance v0, Lwia;
+    new-instance v0, Ldna;
 
-    invoke-direct {v0, p1, p2}, Lwia;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v0, p1, p2}, Ldna;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    iput-object v0, p0, Lru/ok/tamtam/animoji/views/AnimojiTextView;->z0:Lwia;
+    iput-object v0, p0, Lru/ok/tamtam/animoji/views/AnimojiTextView;->r0:Ldna;
 
-    goto/16 :goto_8
+    return-void
 
     :cond_0
-    iget-object p0, v0, Ldk;->X:Ljava/lang/Object;
+    iget-object p0, v0, Lwj;->o:Ljava/lang/Object;
 
-    check-cast p0, Li26;
+    check-cast p0, Lru/ok/tamtam/animoji/views/AnimojiTextView;
+
+    iget-object v1, v0, Lwj;->X:Ljava/lang/Object;
+
+    check-cast v1, Luj;
 
     if-eqz p1, :cond_d
 
-    invoke-static {p1}, Lh0e;->c0(Ljava/lang/CharSequence;)Z
+    invoke-static {p1}, Lj8e;->J0(Ljava/lang/CharSequence;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
     goto/16 :goto_7
 
     :cond_1
-    iget-boolean v1, v0, Ldk;->b:Z
+    iget-boolean v2, v0, Lwj;->b:Z
 
-    if-nez v1, :cond_2
+    if-nez v2, :cond_2
 
     goto/16 :goto_7
 
     :cond_2
-    sget-object v1, Lqh;->c:Lfj;
+    sget-object v2, Ljh;->c:Lyi;
 
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
-    move-result v2
-
-    const/4 v3, 0x0
+    move-result v3
 
     const/4 v4, 0x0
 
+    const/4 v5, 0x0
+
     :try_start_0
-    instance-of v5, p1, Landroid/text/Spanned;
+    instance-of v6, p1, Landroid/text/Spanned;
 
-    if-eqz v5, :cond_3
+    if-eqz v6, :cond_3
 
-    move-object v5, p1
+    move-object v6, p1
 
-    check-cast v5, Landroid/text/Spanned;
+    check-cast v6, Landroid/text/Spanned;
 
     goto :goto_0
 
     :cond_3
-    move-object v5, v4
+    move-object v6, v5
 
     :goto_0
-    if-eqz v5, :cond_4
+    if-eqz v6, :cond_4
 
-    const-class v6, Lite;
+    const-class v7, Ld4f;
 
-    invoke-interface {v5, v3, v2, v6}, Landroid/text/Spanned;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
+    invoke-interface {v6, v4, v3, v7}, Landroid/text/Spanned;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v5
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_1
-
     :catchall_0
     :cond_4
-    move-object v2, v4
+    if-eqz v5, :cond_6
 
-    :goto_1
-    if-eqz v2, :cond_6
+    array-length v3, v5
 
-    array-length v2, v2
-
-    if-nez v2, :cond_5
-
-    goto :goto_3
-
-    :cond_5
-    :goto_2
-    move-object v2, p1
-
-    goto :goto_5
-
-    :cond_6
-    :goto_3
-    :try_start_1
-    invoke-static {}, Lpt4;->a()Lpt4;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Lpt4;->h(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-
-    move-result-object v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    goto :goto_4
-
-    :catchall_1
-    move-exception v2
-
-    new-instance v5, Lkcc;
-
-    invoke-direct {v5, v2}, Lkcc;-><init>(Ljava/lang/Throwable;)V
-
-    move-object v2, v5
-
-    :goto_4
-    instance-of v5, v2, Lkcc;
-
-    if-eqz v5, :cond_7
+    if-nez v3, :cond_5
 
     goto :goto_2
 
+    :cond_5
+    :goto_1
+    move-object v3, p1
+
+    goto :goto_4
+
+    :cond_6
+    :goto_2
+    :try_start_1
+    invoke-static {}, Lqw4;->a()Lqw4;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p1}, Lqw4;->g(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+
+    move-result-object v3
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    goto :goto_3
+
+    :catchall_1
+    move-exception v3
+
+    new-instance v5, Ljhc;
+
+    invoke-direct {v5, v3}, Ljhc;-><init>(Ljava/lang/Throwable;)V
+
+    move-object v3, v5
+
+    :goto_3
+    instance-of v5, v3, Ljhc;
+
+    if-eqz v5, :cond_7
+
+    goto :goto_1
+
     :cond_7
-    :goto_5
-    check-cast v2, Ljava/lang/CharSequence;
+    :goto_4
+    check-cast v3, Ljava/lang/CharSequence;
 
-    if-nez v2, :cond_8
+    if-nez v3, :cond_8
 
-    invoke-interface {p0, p1, p2}, Li26;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, p1, p2}, Luj;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_8
+    goto :goto_6
 
     :cond_8
-    invoke-virtual {v1, v2}, Lfj;->a(Ljava/lang/CharSequence;)Ljava/util/List;
+    invoke-virtual {v2, v3}, Lyi;->a(Ljava/lang/CharSequence;)Ljava/util/List;
 
     move-result-object p1
 
-    new-instance v1, Ljava/util/ArrayList;
+    new-instance v2, Ljava/util/ArrayList;
 
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -340,93 +342,77 @@
 
     if-nez v5, :cond_c
 
-    instance-of p1, v2, Landroid/text/Spannable;
+    instance-of p1, v3, Landroid/text/Spannable;
 
     if-nez p1, :cond_9
 
-    goto :goto_6
+    goto :goto_5
 
     :cond_9
-    iget-object p1, v0, Ldk;->o:Ljava/lang/Object;
+    invoke-interface {p0}, Lrw4;->a()Z
 
-    check-cast p1, Landroid/view/View;
+    move-result p1
 
-    instance-of v4, p1, Lqt4;
+    if-eqz p1, :cond_a
 
-    if-eqz v4, :cond_a
-
-    move-object v4, p1
-
-    check-cast v4, Lqt4;
-
-    invoke-interface {v4}, Lqt4;->a()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_a
-
-    invoke-interface {v4, v3}, Lqt4;->setEmojiCompatEnabled(Z)V
+    invoke-interface {p0, v4}, Lrw4;->setEmojiCompatEnabled(Z)V
 
     :cond_a
-    invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
-    move-result v3
+    move-result p1
 
-    xor-int/lit8 v3, v3, 0x1
+    xor-int/lit8 p1, p1, 0x1
 
-    iput-boolean v3, v0, Ldk;->c:Z
+    iput-boolean p1, v0, Lwj;->c:Z
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
-    move-result v3
+    move-result p1
 
-    xor-int/lit8 v3, v3, 0x1
+    if-nez p1, :cond_b
 
-    if-eqz v3, :cond_b
+    iget-object p1, v0, Lwj;->Z:Ljava/lang/Object;
 
-    iget-object v3, v0, Ldk;->Z:Ljava/lang/Object;
+    check-cast p1, Laj;
 
-    check-cast v3, Lhj;
+    if-nez p1, :cond_b
 
-    if-nez v3, :cond_b
+    new-instance p1, Laj;
 
-    new-instance v3, Lhj;
+    invoke-direct {p1, p0}, Laj;-><init>(Lru/ok/tamtam/animoji/views/AnimojiTextView;)V
 
-    invoke-direct {v3, p1}, Lhj;-><init>(Landroid/view/View;)V
+    iput-object p1, v0, Lwj;->Z:Ljava/lang/Object;
 
-    iput-object v3, v0, Ldk;->Z:Ljava/lang/Object;
-
-    invoke-virtual {v3}, Lhj;->a()V
+    invoke-virtual {p1}, Laj;->a()V
 
     :cond_b
-    move-object p1, v2
+    move-object p0, v3
 
-    check-cast p1, Landroid/text/Spannable;
+    check-cast p0, Landroid/text/Spannable;
 
-    sget-object v0, Lqh;->c:Lfj;
+    sget-object p1, Ljh;->c:Lyi;
 
-    invoke-static {p1, v1, v0}, La06;->f(Landroid/text/Spannable;Ljava/util/ArrayList;Lfj;)V
+    invoke-static {p0, v2, p1}, Lap;->d(Landroid/text/Spannable;Ljava/util/ArrayList;Lyi;)V
 
-    invoke-static {v2}, La06;->D(Ljava/lang/CharSequence;)V
+    invoke-static {v3}, Lap;->b0(Ljava/lang/CharSequence;)V
+
+    :goto_5
+    invoke-virtual {v1, v3, p2}, Luj;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :goto_6
-    invoke-interface {p0, v2, p2}, Li26;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_8
+    return-void
 
     :cond_c
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {p1}, Lv04;->f(Ljava/util/Iterator;)Ljava/lang/ClassCastException;
 
     move-result-object p0
 
-    invoke-static {p0}, Lhr1;->r(Ljava/lang/Object;)V
-
-    throw v4
+    throw p0
 
     :cond_d
     :goto_7
-    invoke-interface {p0, p1, p2}, Li26;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, p1, p2}, Luj;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :goto_8
     return-void
 .end method

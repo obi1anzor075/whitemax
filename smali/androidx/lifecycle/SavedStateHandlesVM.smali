@@ -1,5 +1,5 @@
 .class public final Landroidx/lifecycle/SavedStateHandlesVM;
-.super Luaf;
+.super Lkof;
 .source "SourceFile"
 
 
@@ -10,7 +10,7 @@
     }
     d2 = {
         "Landroidx/lifecycle/SavedStateHandlesVM;",
-        "Luaf;",
+        "Lkof;",
         "<init>",
         "()V",
         "lifecycle-viewmodel-savedstate_release"
@@ -21,6 +21,7 @@
         0x8,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -32,7 +33,7 @@
 .method public constructor <init>()V
     .locals 1
 
-    invoke-direct {p0}, Luaf;-><init>()V
+    invoke-direct {p0}, Lkof;-><init>()V
 
     new-instance v0, Ljava/util/LinkedHashMap;
 

@@ -133,32 +133,26 @@
     .catch Ljava/net/SocketTimeoutException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_3
+    goto :goto_1
 
     :catch_0
     move-exception p1
 
     move-object p4, p1
 
-    goto :goto_1
-
-    :catch_1
-    move-exception p0
-
-    goto :goto_2
-
-    :goto_1
     new-instance p1, Ljava/net/Socket;
 
     invoke-direct {p1}, Ljava/net/Socket;-><init>()V
 
     goto :goto_0
 
-    :goto_2
+    :catch_1
+    move-exception p0
+
     throw p0
 
     :cond_4
-    :goto_3
+    :goto_1
     if-nez p4, :cond_5
 
     return-object p1
@@ -202,12 +196,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 

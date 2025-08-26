@@ -1,5 +1,5 @@
 .class public abstract Ld3;
-.super Lkxb;
+.super Lg2c;
 .source "SourceFile"
 
 
@@ -7,7 +7,7 @@
 .method public final a(I)I
     .locals 1
 
-    invoke-virtual {p0}, Ld3;->k()Ljava/util/Random;
+    invoke-virtual {p0}, Ld3;->g()Ljava/util/Random;
 
     move-result-object p0
 
@@ -28,64 +28,10 @@
     return p0
 .end method
 
-.method public final b()Z
+.method public final b()I
     .locals 0
 
-    invoke-virtual {p0}, Ld3;->k()Ljava/util/Random;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/util/Random;->nextBoolean()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final c([B)[B
-    .locals 0
-
-    invoke-virtual {p0}, Ld3;->k()Ljava/util/Random;
-
-    move-result-object p0
-
-    invoke-virtual {p0, p1}, Ljava/util/Random;->nextBytes([B)V
-
-    return-object p1
-.end method
-
-.method public final d()D
-    .locals 2
-
-    invoke-virtual {p0}, Ld3;->k()Ljava/util/Random;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/util/Random;->nextDouble()D
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final e()F
-    .locals 0
-
-    invoke-virtual {p0}, Ld3;->k()Ljava/util/Random;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/util/Random;->nextFloat()F
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final f()I
-    .locals 0
-
-    invoke-virtual {p0}, Ld3;->k()Ljava/util/Random;
+    invoke-virtual {p0}, Ld3;->g()Ljava/util/Random;
 
     move-result-object p0
 
@@ -96,10 +42,10 @@
     return p0
 .end method
 
-.method public final g(I)I
+.method public final c(I)I
     .locals 0
 
-    invoke-virtual {p0}, Ld3;->k()Ljava/util/Random;
+    invoke-virtual {p0}, Ld3;->g()Ljava/util/Random;
 
     move-result-object p0
 
@@ -110,10 +56,10 @@
     return p0
 .end method
 
-.method public final h()J
+.method public final d()J
     .locals 2
 
-    invoke-virtual {p0}, Ld3;->k()Ljava/util/Random;
+    invoke-virtual {p0}, Ld3;->g()Ljava/util/Random;
 
     move-result-object p0
 
@@ -124,5 +70,33 @@
     return-wide v0
 .end method
 
-.method public abstract k()Ljava/util/Random;
+.method public abstract g()Ljava/util/Random;
+.end method
+
+.method public final h()Z
+    .locals 0
+
+    invoke-virtual {p0}, Ld3;->g()Ljava/util/Random;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/util/Random;->nextBoolean()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final i()F
+    .locals 0
+
+    invoke-virtual {p0}, Ld3;->g()Ljava/util/Random;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/util/Random;->nextFloat()F
+
+    move-result p0
+
+    return p0
 .end method

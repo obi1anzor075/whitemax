@@ -2,147 +2,42 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/nio/channels/CompletionHandler;
-
-
-# static fields
-.field public static final b:Lju;
-
-.field public static final c:Lju;
-
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lv0e;
+
+.field public final b:Lx4b;
+
+.field public final c:Lik;
+
+.field public final d:Ldc5;
+
+.field public final e:Lwc5;
+
+.field public final f:Lawc;
+
+.field public final g:Lzi;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lju;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lju;-><init>(I)V
-
-    sput-object v0, Lju;->b:Lju;
-
-    new-instance v0, Lju;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Lju;-><init>(I)V
-
-    sput-object v0, Lju;->c:Lju;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(I)V
+.method public constructor <init>(Lv0e;Lx4b;Ln82;Lik;Ldc5;Lwc5;Lawc;Lzi;)V
     .locals 0
-
-    iput p1, p0, Lju;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p1, p0, Lju;->a:Lv0e;
 
+    iput-object p2, p0, Lju;->b:Lx4b;
 
-# virtual methods
-.method public final completed(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 0
+    iput-object p4, p0, Lju;->c:Lik;
 
-    iget p0, p0, Lju;->a:I
+    iput-object p5, p0, Lju;->d:Ldc5;
 
-    packed-switch p0, :pswitch_data_0
+    iput-object p6, p0, Lju;->e:Lwc5;
 
-    check-cast p1, Ljava/lang/Void;
+    iput-object p7, p0, Lju;->f:Lawc;
 
-    check-cast p2, Lyv1;
-
-    sget-object p0, Ljue;->a:Ljue;
-
-    invoke-interface {p2, p0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
+    iput-object p8, p0, Lju;->g:Lzi;
 
     return-void
-
-    :pswitch_0
-    check-cast p2, Lyv1;
-
-    invoke-interface {p2, p1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final failed(Ljava/lang/Throwable;Ljava/lang/Object;)V
-    .locals 0
-
-    iget p0, p0, Lju;->a:I
-
-    packed-switch p0, :pswitch_data_0
-
-    check-cast p2, Lyv1;
-
-    instance-of p0, p1, Ljava/nio/channels/AsynchronousCloseException;
-
-    if-eqz p0, :cond_0
-
-    invoke-interface {p2}, Lyv1;->isCancelled()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Lkcc;
-
-    invoke-direct {p0, p1}, Lkcc;-><init>(Ljava/lang/Throwable;)V
-
-    invoke-interface {p2, p0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
-
-    :goto_0
-    return-void
-
-    :pswitch_0
-    check-cast p2, Lyv1;
-
-    instance-of p0, p1, Ljava/nio/channels/AsynchronousCloseException;
-
-    if-eqz p0, :cond_1
-
-    invoke-interface {p2}, Lyv1;->isCancelled()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    new-instance p0, Lkcc;
-
-    invoke-direct {p0, p1}, Lkcc;-><init>(Ljava/lang/Throwable;)V
-
-    invoke-interface {p2, p0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
-
-    :goto_1
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

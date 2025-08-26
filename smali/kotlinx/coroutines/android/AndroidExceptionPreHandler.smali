@@ -3,27 +3,20 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lku3;
+.implements Lkx3;
 
 
 # annotations
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000,\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0003\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0003\u0008\u0000\u0018\u00002\u00020\u00012\u00020\u0002B\u0007\u00a2\u0006\u0004\u0008\u0003\u0010\u0004J\u001f\u0010\n\u001a\u00020\t2\u0006\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0008\u001a\u00020\u0007H\u0016\u00a2\u0006\u0004\u0008\n\u0010\u000bR\u0018\u0010\r\u001a\u0004\u0018\u00010\u000c8\u0002@\u0002X\u0082\u000e\u00a2\u0006\u0006\n\u0004\u0008\r\u0010\u000e\u00a8\u0006\u000f"
+        "\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0003\u0008\u0000\u0018\u00002\u00020\u00012\u00020\u0002B\u0007\u00a2\u0006\u0004\u0008\u0003\u0010\u0004R\u0018\u0010\u0006\u001a\u0004\u0018\u00010\u00058\u0002@\u0002X\u0082\u000e\u00a2\u0006\u0006\n\u0004\u0008\u0006\u0010\u0007\u00a8\u0006\u0008"
     }
     d2 = {
         "Lkotlinx/coroutines/android/AndroidExceptionPreHandler;",
         "Le0;",
-        "Lku3;",
+        "Lkx3;",
         "<init>",
         "()V",
-        "Lhu3;",
-        "context",
-        "",
-        "exception",
-        "Ljue;",
-        "g",
-        "(Lhu3;Ljava/lang/Throwable;)V",
         "",
         "_preHandler",
         "Ljava/lang/Object;",
@@ -35,6 +28,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -46,9 +40,9 @@
 .method public constructor <init>()V
     .locals 1
 
-    sget-object v0, Lzl3;->b:Lzl3;
+    sget-object v0, Loa9;->b:Loa9;
 
-    invoke-direct {p0, v0}, Le0;-><init>(Lgu3;)V
+    invoke-direct {p0, v0}, Le0;-><init>(Lgx3;)V
 
     iput-object p0, p0, Lkotlinx/coroutines/android/AndroidExceptionPreHandler;->_preHandler:Ljava/lang/Object;
 
@@ -57,7 +51,7 @@
 
 
 # virtual methods
-.method public g(Lhu3;Ljava/lang/Throwable;)V
+.method public final i(Lhx3;Ljava/lang/Throwable;)V
     .locals 0
 
     return-void

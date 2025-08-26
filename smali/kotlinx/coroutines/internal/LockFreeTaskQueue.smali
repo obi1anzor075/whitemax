@@ -25,7 +25,7 @@
         "singleConsumer",
         "<init>",
         "(Z)V",
-        "Ljue;",
+        "Le5f;",
         "close",
         "()V",
         "element",
@@ -38,7 +38,7 @@
         "transform",
         "",
         "map",
-        "(Lu16;)Ljava/util/List;",
+        "(Lx56;)Ljava/util/List;",
         "isClosed",
         "()Z",
         "isEmpty",
@@ -57,6 +57,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -119,14 +120,14 @@
     return-object v0
 .end method
 
-.method private final synthetic loop$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Lu16;)V
+.method private final synthetic loop$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Object;",
             "Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;",
-            "Lu16;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -136,7 +137,7 @@
 
     move-result-object p0
 
-    invoke-interface {p3, p0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, p0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 .end method
@@ -332,14 +333,14 @@
     return p0
 .end method
 
-.method public final map(Lu16;)Ljava/util/List;
+.method public final map(Lx56;)Ljava/util/List;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<R:",
             "Ljava/lang/Object;",
             ">(",
-            "Lu16;",
+            "Lx56;",
             ")",
             "Ljava/util/List<",
             "TR;>;"
@@ -356,7 +357,7 @@
 
     check-cast p0, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;
 
-    invoke-virtual {p0, p1}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->map(Lu16;)Ljava/util/List;
+    invoke-virtual {p0, p1}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->map(Lx56;)Ljava/util/List;
 
     move-result-object p0
 

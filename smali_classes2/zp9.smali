@@ -1,215 +1,65 @@
 .class public final Lzp9;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Li26;
+
+# static fields
+.field public static final synthetic c:[Lbc7;
+
+.field public static final d:Ljava/lang/String;
 
 
 # instance fields
-.field public X:I
+.field public final a:Lvu0;
 
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lru/ok/messages/NotificationsImagesProvider;
-
-.field public final synthetic w0:Landroid/net/Uri;
-
-.field public final synthetic x0:Lov0;
+.field public final b:Ltm4;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/messages/NotificationsImagesProvider;Landroid/net/Uri;Lov0;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
-    iput-object p1, p0, Lzp9;->Z:Lru/ok/messages/NotificationsImagesProvider;
+    new-instance v0, Lnlb;
 
-    iput-object p2, p0, Lzp9;->w0:Landroid/net/Uri;
+    const-class v1, Lzp9;
 
-    iput-object p3, p0, Lzp9;->x0:Lov0;
+    const-string v2, "chats"
 
-    const/4 p1, 0x2
+    const-string v3, "getChats()Lru/ok/tamtam/chats/ChatController;"
 
-    invoke-direct {p0, p1, p4}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    const/4 v4, 0x0
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lnlb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    sget-object v2, Llcc;->a:Lmcc;
+
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Lbc7;
+
+    aput-object v0, v2, v4
+
+    sput-object v2, Lzp9;->c:[Lbc7;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lzp9;->d:Ljava/lang/String;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public constructor <init>(Lvu0;Ltm4;)V
     .locals 0
 
-    check-cast p1, Lou3;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iput-object p1, p0, Lzp9;->a:Lvu0;
 
-    invoke-virtual {p0, p1, p2}, Lzp9;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    iput-object p2, p0, Lzp9;->b:Ltm4;
 
-    move-result-object p0
-
-    check-cast p0, Lzp9;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lzp9;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 3
-
-    new-instance v0, Lzp9;
-
-    iget-object v1, p0, Lzp9;->w0:Landroid/net/Uri;
-
-    iget-object v2, p0, Lzp9;->x0:Lov0;
-
-    iget-object p0, p0, Lzp9;->Z:Lru/ok/messages/NotificationsImagesProvider;
-
-    invoke-direct {v0, p0, v1, v2, p2}, Lzp9;-><init>(Lru/ok/messages/NotificationsImagesProvider;Landroid/net/Uri;Lov0;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lzp9;->Y:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 7
-
-    const/4 v0, 0x1
-
-    sget-object v1, Lpu3;->a:Lpu3;
-
-    iget v2, p0, Lzp9;->X:I
-
-    iget-object v3, p0, Lzp9;->Z:Lru/ok/messages/NotificationsImagesProvider;
-
-    const/4 v4, 0x2
-
-    if-eqz v2, :cond_2
-
-    if-eq v2, v0, :cond_1
-
-    if-ne v2, v4, :cond_0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto :goto_2
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    iget-object v0, p0, Lzp9;->Y:Ljava/lang/Object;
-
-    check-cast v0, Lou3;
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_2
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lzp9;->Y:Ljava/lang/Object;
-
-    check-cast p1, Lou3;
-
-    iput-object p1, p0, Lzp9;->Y:Ljava/lang/Object;
-
-    iput v0, p0, Lzp9;->X:I
-
-    sget-object v2, Lru/ok/messages/NotificationsImagesProvider;->a:Landroid/content/UriMatcher;
-
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v2, Lzv1;
-
-    invoke-static {p0}, Lurd;->y(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object v5
-
-    invoke-direct {v2, v0, v5}, Lzv1;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    invoke-virtual {v2}, Lzv1;->n()V
-
-    invoke-static {}, La06;->u()Lfr6;
-
-    move-result-object v5
-
-    iget-object v6, p0, Lzp9;->w0:Landroid/net/Uri;
-
-    invoke-static {v6}, Ltr6;->a(Landroid/net/Uri;)Ltr6;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Lfr6;->g(Ltr6;)Lg0;
-
-    move-result-object v5
-
-    new-instance v6, Lsb5;
-
-    invoke-direct {v6, v5, v0}, Lsb5;-><init>(Lg0;I)V
-
-    invoke-virtual {v2, v6}, Lzv1;->d(Lu16;)V
-
-    new-instance v0, Lbq9;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v0, v2, v6}, Lbq9;-><init>(Lzv1;I)V
-
-    sget-object v6, Lxn1;->a:Lxn1;
-
-    invoke-virtual {v5, v0, v6}, Lg0;->m(Lzz3;Ljava/util/concurrent/Executor;)V
-
-    invoke-virtual {v2}, Lzv1;->m()Ljava/lang/Object;
-
-    move-result-object v0
-
-    if-ne v0, v1, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    sget-object v0, Ljue;->a:Ljue;
-
-    :goto_0
-    if-ne v0, v1, :cond_4
-
-    return-object v1
-
-    :cond_4
-    move-object v0, p1
-
-    :goto_1
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lzp9;->Y:Ljava/lang/Object;
-
-    iput v4, p0, Lzp9;->X:I
-
-    iget-object p1, p0, Lzp9;->x0:Lov0;
-
-    invoke-static {v3, p1, v0, p0}, Lru/ok/messages/NotificationsImagesProvider;->a(Lru/ok/messages/NotificationsImagesProvider;Lov0;Lou3;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v1, :cond_5
-
-    return-object v1
-
-    :cond_5
-    :goto_2
-    return-object p1
+    return-void
 .end method

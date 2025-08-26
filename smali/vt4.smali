@@ -1,154 +1,189 @@
 .class public final Lvt4;
-.super Ljava/lang/Object;
+.super Lp6g;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Lafc;
-
-.field public b:I
-
-.field public c:I
+.field public final synthetic Z:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/widget/EditText;Z)V
-    .locals 5
+.method public synthetic constructor <init>(I)V
+    .locals 0
+
+    iput p1, p0, Lvt4;->Z:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const v0, 0x7fffffff
-
-    iput v0, p0, Lvt4;->b:I
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lvt4;->c:I
-
-    const-string v1, "editText cannot be null"
-
-    invoke-static {p1, v1}, Le07;->o(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance v1, Lafc;
-
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, v1, Lafc;->a:Ljava/lang/Object;
-
-    new-instance v2, Lkv4;
-
-    invoke-direct {v2, p1, p2}, Lkv4;-><init>(Landroid/widget/EditText;Z)V
-
-    iput-object v2, v1, Lafc;->b:Ljava/lang/Object;
-
-    invoke-virtual {p1, v2}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
-
-    sget-object p2, Lwt4;->b:Lwt4;
-
-    if-nez p2, :cond_1
-
-    sget-object p2, Lwt4;->a:Ljava/lang/Object;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object v2, Lwt4;->b:Lwt4;
-
-    if-nez v2, :cond_0
-
-    new-instance v2, Lwt4;
-
-    invoke-direct {v2}, Landroid/text/Editable$Factory;-><init>()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    :try_start_1
-    const-string v3, "android.text.DynamicLayout$ChangeWatcher"
-
-    const-class v4, Lwt4;
-
-    invoke-virtual {v4}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
-
-    move-result-object v4
-
-    invoke-static {v3, v0, v4}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
-
-    move-result-object v0
-
-    sput-object v0, Lwt4;->c:Ljava/lang/Class;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :catchall_0
-    :try_start_2
-    sput-object v2, Lwt4;->b:Lwt4;
-
-    goto :goto_0
-
-    :catchall_1
-    move-exception p0
-
-    goto :goto_1
-
-    :cond_0
-    :goto_0
-    monitor-exit p2
-
-    goto :goto_2
-
-    :goto_1
-    monitor-exit p2
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    throw p0
-
-    :cond_1
-    :goto_2
-    sget-object p2, Lwt4;->b:Lwt4;
-
-    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setEditableFactory(Landroid/text/Editable$Factory;)V
-
-    iput-object v1, p0, Lvt4;->a:Lafc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;)Lcu4;
-    .locals 1
+.method public final B(Ljava/lang/Object;F)V
+    .locals 0
 
-    if-nez p1, :cond_0
+    iget p0, p0, Lvt4;->Z:I
 
-    const/4 p0, 0x0
+    packed-switch p0, :pswitch_data_0
 
-    return-object p0
+    check-cast p1, Landroid/view/View;
 
-    :cond_0
-    iget-object p0, p0, Lvt4;->a:Lafc;
+    invoke-virtual {p1, p2}, Landroid/view/View;->setRotationY(F)V
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return-void
 
-    instance-of v0, p1, Lcu4;
+    :pswitch_0
+    check-cast p1, Landroid/view/View;
 
-    if-eqz v0, :cond_1
+    invoke-virtual {p1, p2}, Landroid/view/View;->setRotationX(F)V
 
-    goto :goto_0
+    return-void
 
-    :cond_1
-    new-instance v0, Lcu4;
+    :pswitch_1
+    check-cast p1, Landroid/view/View;
 
-    iget-object p0, p0, Lafc;->a:Ljava/lang/Object;
+    invoke-virtual {p1, p2}, Landroid/view/View;->setRotation(F)V
 
-    check-cast p0, Landroid/widget/EditText;
+    return-void
 
-    invoke-direct {v0, p0, p1, p2}, Lcu4;-><init>(Landroid/widget/TextView;Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;)V
+    :pswitch_2
+    check-cast p1, Landroid/view/View;
 
-    move-object p1, v0
+    invoke-virtual {p1, p2}, Landroid/view/View;->setScaleY(F)V
 
-    :goto_0
-    check-cast p1, Lcu4;
+    return-void
 
-    return-object p1
+    :pswitch_3
+    check-cast p1, Landroid/view/View;
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->setScaleX(F)V
+
+    return-void
+
+    :pswitch_4
+    check-cast p1, Landroid/view/View;
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->setTranslationY(F)V
+
+    return-void
+
+    :pswitch_5
+    check-cast p1, Landroid/view/View;
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->setTranslationX(F)V
+
+    return-void
+
+    :pswitch_6
+    check-cast p1, Landroid/view/View;
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->setAlpha(F)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final j(Ljava/lang/Object;)F
+    .locals 0
+
+    iget p0, p0, Lvt4;->Z:I
+
+    packed-switch p0, :pswitch_data_0
+
+    check-cast p1, Landroid/view/View;
+
+    invoke-virtual {p1}, Landroid/view/View;->getRotationY()F
+
+    move-result p0
+
+    return p0
+
+    :pswitch_0
+    check-cast p1, Landroid/view/View;
+
+    invoke-virtual {p1}, Landroid/view/View;->getRotationX()F
+
+    move-result p0
+
+    return p0
+
+    :pswitch_1
+    check-cast p1, Landroid/view/View;
+
+    invoke-virtual {p1}, Landroid/view/View;->getRotation()F
+
+    move-result p0
+
+    return p0
+
+    :pswitch_2
+    check-cast p1, Landroid/view/View;
+
+    invoke-virtual {p1}, Landroid/view/View;->getScaleY()F
+
+    move-result p0
+
+    return p0
+
+    :pswitch_3
+    check-cast p1, Landroid/view/View;
+
+    invoke-virtual {p1}, Landroid/view/View;->getScaleX()F
+
+    move-result p0
+
+    return p0
+
+    :pswitch_4
+    check-cast p1, Landroid/view/View;
+
+    invoke-virtual {p1}, Landroid/view/View;->getTranslationY()F
+
+    move-result p0
+
+    return p0
+
+    :pswitch_5
+    check-cast p1, Landroid/view/View;
+
+    invoke-virtual {p1}, Landroid/view/View;->getTranslationX()F
+
+    move-result p0
+
+    return p0
+
+    :pswitch_6
+    check-cast p1, Landroid/view/View;
+
+    invoke-virtual {p1}, Landroid/view/View;->getAlpha()F
+
+    move-result p0
+
+    return p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

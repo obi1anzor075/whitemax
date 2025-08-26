@@ -1,73 +1,45 @@
-.class public final Lhqf;
+.class public abstract Lhqf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public a:Ljava/lang/String;
-
-.field public b:Ljava/lang/String;
-
-.field public c:Ljava/util/Set;
-
-.field public d:Ljava/lang/String;
-
-.field public e:Ljava/lang/String;
-
-.field public f:I
-
-.field public g:Z
-
-.field public h:I
-
-.field public i:Z
-
-.field public j:I
-
-.field public k:I
-
-.field public l:I
-
-.field public m:I
-
-.field public n:I
-
-.field public o:F
-
-.field public p:I
-
-.field public q:Z
-
-
 # direct methods
-.method public static a(Ljava/lang/String;IILjava/lang/String;)I
-    .locals 1
+.method public static a(Landroid/view/View;Landroid/graphics/Rect;Landroid/graphics/Rect;)V
+    .locals 2
 
-    invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
+    new-instance v0, Landroid/view/WindowInsets$Builder;
 
-    move-result v0
+    invoke-direct {v0}, Landroid/view/WindowInsets$Builder;-><init>()V
 
-    if-nez v0, :cond_2
+    invoke-static {p1}, Landroid/graphics/Insets;->of(Landroid/graphics/Rect;)Landroid/graphics/Insets;
 
-    const/4 v0, -0x1
+    move-result-object v1
 
-    if-ne p1, v0, :cond_0
+    invoke-virtual {v0, v1}, Landroid/view/WindowInsets$Builder;->setSystemWindowInsets(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;
 
-    goto :goto_0
+    move-result-object v0
 
-    :cond_0
-    invoke-virtual {p0, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Landroid/view/WindowInsets$Builder;->build()Landroid/view/WindowInsets;
 
-    move-result p0
+    move-result-object v0
 
-    if-eqz p0, :cond_1
+    invoke-virtual {p0, v0, p2}, Landroid/view/View;->computeSystemWindowInsets(Landroid/view/WindowInsets;Landroid/graphics/Rect;)Landroid/view/WindowInsets;
 
-    add-int v0, p1, p2
+    move-result-object p0
 
-    :cond_1
-    return v0
+    invoke-virtual {p0}, Landroid/view/WindowInsets;->getSystemWindowInsets()Landroid/graphics/Insets;
 
-    :cond_2
-    :goto_0
-    return p1
+    move-result-object p0
+
+    iget p2, p0, Landroid/graphics/Insets;->left:I
+
+    iget v0, p0, Landroid/graphics/Insets;->top:I
+
+    iget v1, p0, Landroid/graphics/Insets;->right:I
+
+    iget p0, p0, Landroid/graphics/Insets;->bottom:I
+
+    invoke-virtual {p1, p2, v0, v1, p0}, Landroid/graphics/Rect;->set(IIII)V
+
+    return-void
 .end method

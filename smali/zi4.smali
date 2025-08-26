@@ -1,60 +1,37 @@
-.class public final Lzi4;
+.class public abstract Lzi4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Laj4;
 
-
-# instance fields
-.field public final a:Ljava/util/concurrent/Future;
+# static fields
+.field public static volatile a:Lly4;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/ScheduledFuture;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Lnpb;->c:Lnpb;
 
-    iput-object p1, p0, Lzi4;->a:Ljava/util/concurrent/Future;
+    invoke-static {}, Lsgg;->n()Lpk4;
+
+    move-result-object v1
+
+    new-instance v2, Laj0;
+
+    const/16 v3, 0xb
+
+    invoke-direct {v2, v3}, Laj0;-><init>(I)V
+
+    iget-object v0, v0, Lnpb;->a:Lhh9;
+
+    new-instance v3, Lmpb;
+
+    const/4 v4, 0x0
+
+    invoke-direct {v3, v4, v2}, Lmpb;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {v0, v1, v3}, Lhh9;->g(Ljava/util/concurrent/Executor;Luw9;)V
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final dispose()V
-    .locals 1
-
-    iget-object p0, p0, Lzi4;->a:Ljava/util/concurrent/Future;
-
-    const/4 v0, 0x0
-
-    invoke-interface {p0, v0}, Ljava/util/concurrent/Future;->cancel(Z)Z
-
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "DisposableFutureHandle["
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lzi4;->a:Ljava/util/concurrent/Future;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 p0, 0x5d
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

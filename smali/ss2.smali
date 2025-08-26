@@ -1,63 +1,50 @@
 .class public final Lss2;
-.super Ler3;
+.super Lqde;
 .source "SourceFile"
 
-
-# instance fields
-.field public A0:Ljava/util/Iterator;
-
-.field public B0:Ljava/util/Collection;
-
-.field public X:I
-
-.field public Y:Lqs2;
-
-.field public final synthetic Z:Lqs2;
-
-.field public synthetic o:Ljava/lang/Object;
-
-.field public w0:Lrj5;
-
-.field public x0:Ljava/util/List;
-
-.field public y0:Ljava/util/List;
-
-.field public z0:Ljava/util/Collection;
-
-
-# direct methods
-.method public constructor <init>(Lqs2;Lkotlin/coroutines/Continuation;)V
-    .locals 0
-
-    iput-object p1, p0, Lss2;->Z:Lqs2;
-
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
+# interfaces
+.implements Ll66;
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iput-object p1, p0, Lss2;->o:Ljava/lang/Object;
+    check-cast p1, Lox3;
 
-    iget p1, p0, Lss2;->X:I
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lss2;->X:I
-
-    iget-object p1, p0, Lss2;->Z:Lqs2;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lqs2;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Lss2;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
+
+    check-cast p0, Lss2;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lss2;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
+
+    new-instance p0, Lss2;
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
+
+    return-object p0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 .end method

@@ -2,9 +2,6 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lpe8;
-
 
 # direct methods
 .method public constructor <init>()V

@@ -14,24 +14,24 @@
 
 
 # virtual methods
-.method public final i1()Landroid/app/Dialog;
+.method public final V0()Landroid/app/Dialog;
     .locals 8
 
-    const/4 v0, 0x3
+    new-instance v0, Ln08;
 
-    new-instance v1, Lov7;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->I0()Landroid/content/Context;
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->V0()Landroid/content/Context;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x0
 
-    invoke-direct {v1, v2}, Lov7;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v1, v2}, Ln08;-><init>(Landroid/content/Context;I)V
 
-    iget-object v2, v1, Ltc;->a:Lpc;
+    iget-object v1, v0, Lmc;->a:Lic;
 
-    iput-object p0, v2, Lpc;->n:Landroid/content/DialogInterface$OnDismissListener;
+    iput-object p0, v1, Lic;->n:Lru/ok/messages/views/dialogs/LoadMediaDialog;
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->U0()Landroid/os/Bundle;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->H0()Landroid/os/Bundle;
 
     move-result-object v3
 
@@ -41,150 +41,150 @@
 
     move-result v3
 
-    sget v4, Lyqb;->setting_media_photo:I
+    sget v4, Lpvb;->setting_media_photo:I
 
     if-ne v3, v4, :cond_0
 
-    sget v4, Lcic;->o1:I
+    sget v4, Lnnc;->r1:I
 
-    invoke-virtual {p0, v4}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, v4}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v1, v4}, Lov7;->e(Ljava/lang/CharSequence;)Lov7;
+    invoke-virtual {v0, v4}, Ln08;->d(Ljava/lang/CharSequence;)Ln08;
 
     goto :goto_0
 
     :cond_0
-    sget v4, Lyqb;->setting_media_video:I
+    sget v4, Lpvb;->setting_media_video:I
 
     if-ne v3, v4, :cond_1
 
-    sget v4, Lcic;->v1:I
+    sget v4, Lnnc;->y1:I
 
-    invoke-virtual {p0, v4}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, v4}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v1, v4}, Lov7;->e(Ljava/lang/CharSequence;)Lov7;
+    invoke-virtual {v0, v4}, Ln08;->d(Ljava/lang/CharSequence;)Ln08;
 
     goto :goto_0
 
     :cond_1
-    sget v4, Lyqb;->setting_media_gif:I
+    sget v4, Lpvb;->setting_media_gif:I
 
     if-ne v3, v4, :cond_2
 
-    sget v4, Lcic;->m1:I
+    sget v4, Lnnc;->p1:I
 
-    invoke-virtual {p0, v4}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, v4}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v1, v4}, Lov7;->e(Ljava/lang/CharSequence;)Lov7;
+    invoke-virtual {v0, v4}, Ln08;->d(Ljava/lang/CharSequence;)Ln08;
 
     goto :goto_0
 
     :cond_2
-    sget v4, Lyqb;->setting_media_audio:I
+    sget v4, Lpvb;->setting_media_audio:I
 
     if-ne v3, v4, :cond_3
 
-    sget v4, Lcic;->W0:I
+    sget v4, Lnnc;->Z0:I
 
-    invoke-virtual {p0, v4}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, v4}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v1, v4}, Lov7;->e(Ljava/lang/CharSequence;)Lov7;
+    invoke-virtual {v0, v4}, Ln08;->d(Ljava/lang/CharSequence;)Ln08;
 
     goto :goto_0
 
     :cond_3
-    sget v4, Lyqb;->setting_media_stickers:I
+    sget v4, Lpvb;->setting_media_stickers:I
 
     if-ne v3, v4, :cond_4
 
-    sget v4, Lcic;->u1:I
+    sget v4, Lnnc;->x1:I
 
-    invoke-virtual {p0, v4}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, v4}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v1, v4}, Lov7;->e(Ljava/lang/CharSequence;)Lov7;
+    invoke-virtual {v0, v4}, Ln08;->d(Ljava/lang/CharSequence;)Ln08;
 
     goto :goto_0
 
     :cond_4
-    sget v4, Lyqb;->setting_media_auto_play_video:I
+    sget v4, Lpvb;->setting_media_auto_play_video:I
 
     if-ne v3, v4, :cond_5
 
-    sget v4, Lcic;->b1:I
+    sget v4, Lnnc;->e1:I
 
-    invoke-virtual {p0, v4}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, v4}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v1, v4}, Lov7;->e(Ljava/lang/CharSequence;)Lov7;
+    invoke-virtual {v0, v4}, Ln08;->d(Ljava/lang/CharSequence;)Ln08;
 
     :cond_5
     :goto_0
-    sget v4, Lcic;->V0:I
+    sget v4, Lnnc;->Y0:I
 
-    invoke-virtual {p0, v4}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, v4}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object v4
 
-    sget v5, Lcic;->n1:I
+    sget v5, Lnnc;->q1:I
 
-    invoke-virtual {p0, v5}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, v5}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object v5
 
-    sget v6, Lyqb;->setting_media_auto_play_video:I
+    sget v6, Lpvb;->setting_media_auto_play_video:I
 
     if-ne v3, v6, :cond_6
 
-    sget v3, Lcic;->a1:I
+    sget v3, Lnnc;->d1:I
 
-    invoke-virtual {p0, v3}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, v3}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object v3
 
     goto :goto_1
 
     :cond_6
-    sget v3, Lcic;->k1:I
+    sget v3, Lnnc;->n1:I
 
-    invoke-virtual {p0, v3}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, v3}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object v3
 
     :goto_1
-    new-array v6, v0, [Ljava/lang/CharSequence;
+    const/4 v6, 0x3
 
-    const/4 v7, 0x0
+    new-array v7, v6, [Ljava/lang/CharSequence;
 
-    aput-object v4, v6, v7
+    aput-object v4, v7, v2
 
-    const/4 v4, 0x1
+    const/4 v2, 0x1
 
-    aput-object v5, v6, v4
+    aput-object v5, v7, v2
 
-    const/4 v4, 0x2
+    const/4 v2, 0x2
 
-    aput-object v3, v6, v4
+    aput-object v3, v7, v2
 
-    new-instance v3, Lg00;
+    new-instance v2, Ls00;
 
-    invoke-direct {v3, v0, p0}, Lg00;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v2, v6, p0}, Ls00;-><init>(ILjava/lang/Object;)V
 
-    iput-object v6, v2, Lpc;->p:[Ljava/lang/CharSequence;
+    iput-object v7, v1, Lic;->p:[Ljava/lang/CharSequence;
 
-    iput-object v3, v2, Lpc;->r:Landroid/content/DialogInterface$OnClickListener;
+    iput-object v2, v1, Lic;->r:Landroid/content/DialogInterface$OnClickListener;
 
-    invoke-virtual {v1}, Ltc;->a()Luc;
+    invoke-virtual {v0}, Lmc;->a()Lnc;
 
     move-result-object p0
 

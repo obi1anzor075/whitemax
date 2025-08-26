@@ -1,131 +1,73 @@
 .class public final Leid;
-.super Ljava/lang/Object;
+.super Lqy;
 .source "SourceFile"
-
-# interfaces
-.implements Lyya;
 
 
 # instance fields
-.field public final a:Landroid/app/Application;
+.field public final X:Ljava/lang/String;
 
-.field public final b:Lg15;
+.field public final Y:Ljava/lang/String;
 
-.field public final c:Lg35;
+.field public final Z:Ljava/lang/String;
 
-.field public final d:Lt97;
+.field public final o:J
 
-.field public final e:Lgza;
+.field public final o0:Ljava/lang/String;
 
-.field public final f:Ljava/lang/String;
+.field public final p0:Ljta;
 
-.field public final g:Ldbc;
+.field public final q0:Lqy;
 
 
 # direct methods
-.method public constructor <init>(Landroid/app/Application;Lg15;Lg35;Lt97;Lgza;)V
-    .locals 0
+.method public constructor <init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljta;Lqy;ZZ)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Lq00;->o0:Lq00;
 
-    iput-object p1, p0, Leid;->a:Landroid/app/Application;
+    invoke-direct {p0, v0, p9, p10}, Lqy;-><init>(Lq00;ZZ)V
 
-    iput-object p2, p0, Leid;->b:Lg15;
+    iput-wide p1, p0, Leid;->o:J
 
-    iput-object p3, p0, Leid;->c:Lg35;
+    iput-object p3, p0, Leid;->X:Ljava/lang/String;
 
-    iput-object p4, p0, Leid;->d:Lt97;
+    iput-object p4, p0, Leid;->Y:Ljava/lang/String;
 
-    iput-object p5, p0, Leid;->e:Lgza;
+    iput-object p5, p0, Leid;->Z:Ljava/lang/String;
 
-    const-class p1, Leid;
+    iput-object p6, p0, Leid;->o0:Ljava/lang/String;
 
-    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    iput-object p7, p0, Leid;->p0:Ljta;
 
-    move-result-object p1
-
-    iput-object p1, p0, Leid;->f:Ljava/lang/String;
-
-    new-instance p1, Lu5b;
-
-    const/16 p2, 0x16
-
-    invoke-direct {p1, p2, p0}, Lu5b;-><init>(ILjava/lang/Object;)V
-
-    new-instance p2, Ldbc;
-
-    invoke-direct {p2, p1}, Ldbc;-><init>(Ls16;)V
-
-    iput-object p2, p0, Leid;->g:Ldbc;
+    iput-object p8, p0, Leid;->q0:Lqy;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lk7f;)V
-    .locals 1
+.method public final a()Ljava/util/HashMap;
+    .locals 3
 
-    iget-object p0, p0, Leid;->f:Ljava/lang/String;
+    invoke-super {p0}, Lqy;->a()Ljava/util/HashMap;
 
-    const-string v0, "Single player handler. Free player"
+    move-result-object v0
 
-    invoke-static {p0, v0}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    iget-wide v1, p0, Leid;->o:J
 
-    invoke-virtual {p1}, Lk7f;->M0()V
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    const/4 p0, 0x0
+    move-result-object v1
 
-    invoke-virtual {p1, p0}, Lk7f;->L0(Landroid/view/Surface;)V
+    const-string v2, "shareId"
 
-    return-void
-.end method
+    invoke-virtual {v0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-.method public final get()Lk7f;
-    .locals 5
+    const-string v1, "url"
 
-    iget-object v0, p0, Leid;->f:Ljava/lang/String;
+    iget-object p0, p0, Leid;->X:Ljava/lang/String;
 
-    sget-object v1, Ludd;->e:Lfn6;
+    invoke-virtual {v0, v1, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-nez v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-interface {v1}, Lfn6;->c()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    sget-object v2, Ltn7;->X:Ltn7;
-
-    iget-object v3, p0, Leid;->g:Ldbc;
-
-    invoke-virtual {v3}, Ldbc;->a()Z
-
-    move-result v3
-
-    const-string v4, "Single player handler. Player exist: "
-
-    invoke-static {v4, v3}, Lus8;->k(Ljava/lang/String;Z)Ljava/lang/String;
-
-    move-result-object v3
-
-    const/4 v4, 0x0
-
-    invoke-interface {v1, v2, v0, v3, v4}, Lfn6;->d(Ltn7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_1
-    :goto_0
-    iget-object p0, p0, Leid;->g:Ldbc;
-
-    invoke-virtual {p0}, Ldbc;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lk7f;
-
-    return-object p0
+    return-object v0
 .end method

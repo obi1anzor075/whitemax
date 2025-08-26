@@ -1,68 +1,21 @@
-.class public final Ly27;
-.super Lrue;
+.class public abstract Ly27;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final c:Ljava/lang/Object;
-
-
-# instance fields
-.field public b:Ljava/lang/Object;
+.field public static final synthetic a:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Ly27;->c:Ljava/lang/Object;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final hasNext()Z
-    .locals 1
-
-    iget-object p0, p0, Ly27;->b:Ljava/lang/Object;
-
-    sget-object v0, Ly27;->c:Ljava/lang/Object;
-
-    if-eq p0, v0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
-.end method
-
-.method public final next()Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Ly27;->b:Ljava/lang/Object;
+    new-instance v0, Ljg9;
 
-    sget-object v1, Ly27;->c:Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    if-eq v0, v1, :cond_0
+    invoke-direct {v0, v1}, Ljg9;-><init>(I)V
 
-    iput-object v1, p0, Ly27;->b:Ljava/lang/Object;
-
-    return-object v0
-
-    :cond_0
-    new-instance p0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw p0
+    return-void
 .end method

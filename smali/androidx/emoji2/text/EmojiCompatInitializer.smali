@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ltw6;
+.implements Lp07;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Ltw6;"
+        "Lp07;"
     }
 .end annotation
 
@@ -38,34 +38,24 @@
     return-object p0
 .end method
 
-.method public final bridge synthetic b(Landroid/content/Context;)Ljava/lang/Object;
-    .locals 0
-
-    invoke-virtual {p0, p1}, Landroidx/emoji2/text/EmojiCompatInitializer;->c(Landroid/content/Context;)V
-
-    sget-object p0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    return-object p0
-.end method
-
-.method public final c(Landroid/content/Context;)V
+.method public final b(Landroid/content/Context;)Ljava/lang/Object;
     .locals 3
 
-    new-instance v0, Ltt5;
+    new-instance v0, Ldy5;
 
-    new-instance v1, Lgvf;
+    new-instance v1, Lqy3;
 
-    invoke-direct {v1, p1}, Lgvf;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, p1}, Lqy3;-><init>(Landroid/content/Context;)V
 
-    invoke-direct {v0, v1}, Ltt5;-><init>(Lot4;)V
+    invoke-direct {v0, v1}, Ldy5;-><init>(Lpw4;)V
 
     const/4 v1, 0x1
 
-    iput v1, v0, Ltt5;->g:I
+    iput v1, v0, Ldy5;->e:I
 
-    invoke-static {v0}, Lpt4;->c(Ltt5;)V
+    invoke-static {v0}, Lqw4;->c(Ldy5;)V
 
-    invoke-static {p1}, Ljj7;->A(Landroid/content/Context;)Ljj7;
+    invoke-static {p1}, Ljo7;->A(Landroid/content/Context;)Ljo7;
 
     move-result-object p1
 
@@ -73,12 +63,12 @@
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    sget-object v1, Ljj7;->w0:Ljava/lang/Object;
+    sget-object v1, Ljo7;->o0:Ljava/lang/Object;
 
     monitor-enter v1
 
     :try_start_0
-    iget-object v2, p1, Ljj7;->a:Ljava/lang/Object;
+    iget-object v2, p1, Ljo7;->a:Ljava/lang/Object;
 
     check-cast v2, Ljava/util/HashMap;
 
@@ -92,7 +82,7 @@
 
     invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
 
-    invoke-virtual {p1, v0, v2}, Ljj7;->s(Ljava/lang/Class;Ljava/util/HashSet;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v2}, Ljo7;->y(Ljava/lang/Class;Ljava/util/HashSet;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -109,19 +99,21 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    check-cast v2, Lnc7;
+    check-cast v2, Ldh7;
 
-    invoke-interface {v2}, Lnc7;->R()Lpc7;
+    invoke-interface {v2}, Ldh7;->L()Lfh7;
 
     move-result-object p1
 
-    new-instance v0, Lrt4;
+    new-instance v0, Lsw4;
 
-    invoke-direct {v0, p0, p1}, Lrt4;-><init>(Landroidx/emoji2/text/EmojiCompatInitializer;Lpc7;)V
+    invoke-direct {v0, p0, p1}, Lsw4;-><init>(Landroidx/emoji2/text/EmojiCompatInitializer;Lfh7;)V
 
-    invoke-virtual {p1, v0}, Lpc7;->a(Ljc7;)V
+    invoke-virtual {p1, v0}, Lfh7;->a(Lzg7;)V
 
-    return-void
+    sget-object p0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    return-object p0
 
     :goto_1
     :try_start_1

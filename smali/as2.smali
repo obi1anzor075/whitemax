@@ -1,49 +1,24 @@
 .class public final Las2;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field public X:I
-
-.field public final synthetic Y:Lwi1;
-
-.field public synthetic o:Ljava/lang/Object;
-
-
-# direct methods
-.method public constructor <init>(Lwi1;Lkotlin/coroutines/Continuation;)V
-    .locals 0
-
-    iput-object p1, p0, Las2;->Y:Lwi1;
-
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
+# interfaces
+.implements Lb03;
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a()J
+    .locals 2
 
-    iput-object p1, p0, Las2;->o:Ljava/lang/Object;
+    const-wide/16 v0, 0x1
 
-    iget p1, p0, Las2;->X:I
+    return-wide v0
+.end method
 
-    const/high16 v0, -0x80000000
+.method public final b()J
+    .locals 2
 
-    or-int/2addr p1, v0
+    const-wide v0, 0x7fffffffffffffffL
 
-    iput p1, p0, Las2;->X:I
-
-    iget-object p1, p0, Las2;->Y:Lwi1;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lwi1;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
+    return-wide v0
 .end method

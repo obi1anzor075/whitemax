@@ -3,11 +3,11 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lzkb;
+.implements Lkpb;
 
 
 # virtual methods
-.method public c()Z
+.method public d()Z
     .locals 0
 
     const/4 p0, 0x1

@@ -1,80 +1,52 @@
 .class public final Lpp5;
-.super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Lpg7;
+.super Lbu3;
 
 
-# static fields
-.field public static final a:Lpp5;
+# instance fields
+.field public synthetic X:Ljava/lang/Object;
+
+.field public Y:I
+
+.field public final synthetic Z:Lmp5;
+
+.field public o:Lmp5;
+
+.field public o0:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lmp5;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    new-instance v0, Lpp5;
+    iput-object p1, p0, Lpp5;->Z:Lmp5;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lpp5;->a:Lpp5;
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Lpp5;->X:Ljava/lang/Object;
 
-    if-ne p0, p1, :cond_0
+    iget p1, p0, Lpp5;->Y:I
 
-    return v0
+    const/high16 v0, -0x80000000
 
-    :cond_0
-    instance-of p0, p1, Lpp5;
+    or-int/2addr p1, v0
 
-    if-nez p0, :cond_1
+    iput p1, p0, Lpp5;->Y:I
 
-    const/4 p0, 0x0
+    iget-object p1, p0, Lpp5;->Z:Lmp5;
 
-    return p0
+    const/4 v0, 0x0
 
-    :cond_1
-    return v0
-.end method
+    invoke-virtual {p1, v0, p0}, Lmp5;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-.method public final getItemId()J
-    .locals 2
-
-    const-wide v0, 0x7ffffffffffffffdL
-
-    return-wide v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    const p0, 0xb62c3a2
-
-    return p0
-.end method
-
-.method public final l()I
-    .locals 0
-
-    const/16 p0, 0x8
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    const-string p0, "FolderEditDeleteItem"
+    move-result-object p0
 
     return-object p0
 .end method

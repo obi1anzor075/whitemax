@@ -1,8 +1,10 @@
-.class public interface abstract Lv4;
-.super Ljava/lang/Object;
+.class public abstract Lv4;
+.super Lleg;
 .source "SourceFile"
 
+# interfaces
+.implements Lgr6;
 
-# virtual methods
-.method public abstract d(Landroid/view/View;)Z
-.end method
+
+# static fields
+.field public static final synthetic d:I

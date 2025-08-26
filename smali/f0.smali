@@ -9,7 +9,7 @@
 # instance fields
 .field public final synthetic a:Z
 
-.field public final synthetic b:Lzz3;
+.field public final synthetic b:Lq34;
 
 .field public final synthetic c:Z
 
@@ -17,7 +17,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lg0;ZLzz3;Z)V
+.method public constructor <init>(Lg0;ZLq34;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 
     iput-boolean p2, p0, Lf0;->a:Z
 
-    iput-object p3, p0, Lf0;->b:Lzz3;
+    iput-object p3, p0, Lf0;->b:Lq34;
 
     iput-boolean p4, p0, Lf0;->c:Z
 
@@ -42,26 +42,25 @@
 
     iget-object v1, p0, Lf0;->o:Lg0;
 
-    iget-object v2, p0, Lf0;->b:Lzz3;
+    iget-object v2, p0, Lf0;->b:Lq34;
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v2, v1}, Lzz3;->c(Lg0;)V
+    invoke-interface {v2, v1}, Lq34;->c(Lg0;)V
 
-    goto :goto_0
+    return-void
 
     :cond_0
     iget-boolean p0, p0, Lf0;->c:Z
 
     if-eqz p0, :cond_1
 
-    invoke-interface {v2}, Lzz3;->d()V
+    invoke-interface {v2}, Lq34;->d()V
 
-    goto :goto_0
+    return-void
 
     :cond_1
-    invoke-interface {v2, v1}, Lzz3;->a(Lg0;)V
+    invoke-interface {v2, v1}, Lq34;->a(Lg0;)V
 
-    :goto_0
     return-void
 .end method

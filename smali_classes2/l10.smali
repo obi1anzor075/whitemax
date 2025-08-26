@@ -4,66 +4,48 @@
 
 
 # instance fields
-.field public a:Lqjb;
+.field public a:J
 
-.field public b:F
+.field public b:J
 
-.field public c:F
+.field public c:J
 
-.field public d:Z
+.field public d:J
+
+.field public e:I
+
+.field public f:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 0
-
-    packed-switch p1, :pswitch_data_0
+.method public constructor <init>(Ll10;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object p1, Lqjb;->Y:Lqjb;
+    iget-wide v0, p1, Ll10;->a:J
 
-    iput-object p1, p0, Ll10;->a:Lqjb;
+    iput-wide v0, p0, Ll10;->a:J
+
+    iget-wide v0, p1, Ll10;->b:J
+
+    iput-wide v0, p0, Ll10;->b:J
+
+    iget-wide v0, p1, Ll10;->c:J
+
+    iput-wide v0, p0, Ll10;->c:J
+
+    iget-wide v0, p1, Ll10;->d:J
+
+    iput-wide v0, p0, Ll10;->d:J
+
+    iget v0, p1, Ll10;->e:I
+
+    iput v0, p0, Ll10;->e:I
+
+    iget-object p1, p1, Ll10;->f:Ljava/lang/String;
+
+    iput-object p1, p0, Ll10;->f:Ljava/lang/String;
 
     return-void
-
-    :pswitch_0
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    sget-object p1, Lqjb;->Y:Lqjb;
-
-    iput-object p1, p0, Ll10;->a:Lqjb;
-
-    const/4 p1, 0x0
-
-    iput p1, p0, Ll10;->b:F
-
-    const/high16 p1, 0x3f800000    # 1.0f
-
-    iput p1, p0, Ll10;->c:F
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Ll10;->d:Z
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-
-# virtual methods
-.method public a()Lf3f;
-    .locals 1
-
-    new-instance v0, Lf3f;
-
-    invoke-direct {v0, p0}, Lf3f;-><init>(Ll10;)V
-
-    return-object v0
 .end method

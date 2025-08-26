@@ -1,5 +1,5 @@
 .class public final Lcom/google/android/gms/maps/model/LatLngBounds;
-.super Lo3;
+.super Ln3;
 .source "SourceFile"
 
 # interfaces
@@ -28,11 +28,11 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Lo1g;
+    new-instance v0, Ltgg;
 
-    const/16 v1, 0xd
+    const/16 v1, 0xf
 
-    invoke-direct {v0, v1}, Lo1g;-><init>(I)V
+    invoke-direct {v0, v1}, Ltgg;-><init>(I)V
 
     sput-object v0, Lcom/google/android/gms/maps/model/LatLngBounds;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -46,29 +46,29 @@
 
     const-string v0, "southwest must not be null."
 
-    invoke-static {p1, v0}, La24;->p(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lkhg;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "northeast must not be null."
 
-    invoke-static {p2, v0}, La24;->p(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkhg;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-wide v0, p1, Lcom/google/android/gms/maps/model/LatLng;->a:D
+    iget-wide v0, p2, Lcom/google/android/gms/maps/model/LatLng;->a:D
+
+    iget-wide v2, p1, Lcom/google/android/gms/maps/model/LatLng;->a:D
+
+    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v4
 
     invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v2
-
-    iget-wide v3, p2, Lcom/google/android/gms/maps/model/LatLng;->a:D
-
-    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
     move-result-object v5
 
-    filled-new-array {v2, v5}, [Ljava/lang/Object;
+    filled-new-array {v4, v5}, [Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v4
 
-    cmpl-double v0, v3, v0
+    cmpl-double v0, v0, v2
 
     if-ltz v0, :cond_0
 
@@ -82,7 +82,7 @@
     :goto_0
     const-string v1, "southern latitude exceeds northern latitude (%s > %s)"
 
-    invoke-static {v0, v1, v2}, La24;->i(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v1, v4}, Lkhg;->e(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     iput-object p1, p0, Lcom/google/android/gms/maps/model/LatLngBounds;->a:Lcom/google/android/gms/maps/model/LatLng;
 
@@ -114,11 +114,11 @@
     :cond_1
     check-cast p1, Lcom/google/android/gms/maps/model/LatLngBounds;
 
-    iget-object v1, p1, Lcom/google/android/gms/maps/model/LatLngBounds;->a:Lcom/google/android/gms/maps/model/LatLng;
+    iget-object v1, p0, Lcom/google/android/gms/maps/model/LatLngBounds;->a:Lcom/google/android/gms/maps/model/LatLng;
 
-    iget-object v3, p0, Lcom/google/android/gms/maps/model/LatLngBounds;->a:Lcom/google/android/gms/maps/model/LatLng;
+    iget-object v3, p1, Lcom/google/android/gms/maps/model/LatLngBounds;->a:Lcom/google/android/gms/maps/model/LatLng;
 
-    invoke-virtual {v3, v1}, Lcom/google/android/gms/maps/model/LatLng;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Lcom/google/android/gms/maps/model/LatLng;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -161,23 +161,23 @@
 .method public final toString()Ljava/lang/String;
     .locals 3
 
-    new-instance v0, Lmn;
+    new-instance v0, Lnz7;
 
-    invoke-direct {v0, p0}, Lmn;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, p0}, Lnz7;-><init>(Ljava/lang/Object;)V
 
     const-string v1, "southwest"
 
     iget-object v2, p0, Lcom/google/android/gms/maps/model/LatLngBounds;->a:Lcom/google/android/gms/maps/model/LatLng;
 
-    invoke-virtual {v0, v2, v1}, Lmn;->r(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {v0, v2, v1}, Lnz7;->z(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v1, "northeast"
 
     iget-object p0, p0, Lcom/google/android/gms/maps/model/LatLngBounds;->b:Lcom/google/android/gms/maps/model/LatLng;
 
-    invoke-virtual {v0, p0, v1}, Lmn;->r(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {v0, p0, v1}, Lnz7;->z(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Lmn;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lnz7;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -189,7 +189,7 @@
 
     const/16 v0, 0x4f45
 
-    invoke-static {p1, v0}, Lek8;->n0(Landroid/os/Parcel;I)I
+    invoke-static {p1, v0}, Lq14;->B0(Landroid/os/Parcel;I)I
 
     move-result v0
 
@@ -197,15 +197,15 @@
 
     iget-object v2, p0, Lcom/google/android/gms/maps/model/LatLngBounds;->a:Lcom/google/android/gms/maps/model/LatLng;
 
-    invoke-static {p1, v1, v2, p2}, Lek8;->j0(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    invoke-static {p1, v1, v2, p2}, Lq14;->x0(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
     const/4 v1, 0x3
 
     iget-object p0, p0, Lcom/google/android/gms/maps/model/LatLngBounds;->b:Lcom/google/android/gms/maps/model/LatLng;
 
-    invoke-static {p1, v1, p0, p2}, Lek8;->j0(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    invoke-static {p1, v1, p0, p2}, Lq14;->x0(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
-    invoke-static {p1, v0}, Lek8;->o0(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lq14;->C0(Landroid/os/Parcel;I)V
 
     return-void
 .end method

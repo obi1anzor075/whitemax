@@ -1,214 +1,205 @@
-.class public final Lq2c;
-.super Landroid/widget/FrameLayout;
+.class public final enum Lq2c;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Lmhe;
+
+# static fields
+.field public static final enum X:Lq2c;
+
+.field public static final enum Y:Lq2c;
+
+.field public static final enum Z:Lq2c;
+
+.field public static final enum b:Lq2c;
+
+.field public static final enum c:Lq2c;
+
+.field public static final enum o:Lq2c;
+
+.field public static final enum o0:Lq2c;
+
+.field public static final enum p0:Lq2c;
+
+.field public static final enum q0:Lq2c;
+
+.field public static final enum r0:Lq2c;
+
+.field public static final enum s0:Lq2c;
+
+.field public static final synthetic t0:[Lq2c;
+
+.field public static final synthetic u0:Ln25;
 
 
 # instance fields
-.field public final a:Landroid/widget/TextView;
-
-.field public final b:Landroid/widget/TextView;
+.field public final a:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Le78;Landroid/content/Context;)V
-    .locals 6
+.method static constructor <clinit>()V
+    .locals 14
 
-    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+    new-instance v0, Lq2c;
 
-    new-instance v0, Landroid/widget/TextView;
+    const-string v1, "AUDIO_FREEZES"
 
-    invoke-direct {v0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    const/4 v2, 0x0
 
-    new-instance v1, Landroid/widget/FrameLayout$LayoutParams;
+    invoke-direct {v0, v1, v2, v1}, Lq2c;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    const/4 v2, -0x2
+    sput-object v0, Lq2c;->b:Lq2c;
 
-    invoke-direct {v1, v2, v2}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
+    new-instance v1, Lq2c;
 
-    const v3, 0x800013
+    const-string v2, "AUDIO_CALL_INTERRUPTION"
 
-    iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+    const/4 v3, 0x1
 
-    const/16 v3, 0xc
+    invoke-direct {v1, v2, v3, v2}, Lq2c;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    int-to-float v3, v3
+    sput-object v1, Lq2c;->c:Lq2c;
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    new-instance v2, Lq2c;
 
-    move-result-object v4
+    const-string v3, "VOICE_COMMUNICATION_PROBLEM"
 
-    invoke-virtual {v4}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    const/4 v4, 0x2
 
-    move-result-object v4
+    invoke-direct {v2, v3, v4, v3}, Lq2c;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    iget v4, v4, Landroid/util/DisplayMetrics;->density:F
+    sput-object v2, Lq2c;->o:Lq2c;
 
-    mul-float/2addr v4, v3
+    new-instance v3, Lq2c;
 
-    invoke-static {v4}, La24;->X(F)I
+    const-string v4, "AUDIO_QUALITY"
 
-    move-result v4
+    const/4 v5, 0x3
 
-    invoke-virtual {v1, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginStart(I)V
+    invoke-direct {v3, v4, v5, v4}, Lq2c;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    sput-object v3, Lq2c;->X:Lq2c;
 
-    sget v1, Ljtb;->chats_list_search_recent_header:I
+    new-instance v4, Lq2c;
 
-    invoke-virtual {p2, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    const-string v5, "AUDIO_ECHO"
 
-    move-result-object v1
+    const/4 v6, 0x4
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-direct {v4, v5, v6, v5}, Lq2c;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    sget-object v1, Lnte;->q:Lnge;
+    sput-object v4, Lq2c;->Y:Lq2c;
 
-    invoke-static {v1, v0}, Lnge;->d(Lnge;Landroid/widget/TextView;)V
+    new-instance v5, Lq2c;
 
-    sget-object v1, Lkm4;->y0:Ls59;
+    const-string v6, "VIDEO_FREEZES"
 
-    invoke-virtual {v1, v0}, Ls59;->r(Landroid/view/View;)Lpda;
+    const/4 v7, 0x5
 
-    move-result-object v4
+    invoke-direct {v5, v6, v7, v6}, Lq2c;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    invoke-interface {v4}, Lpda;->getText()Lcfe;
+    sput-object v5, Lq2c;->Z:Lq2c;
 
-    move-result-object v4
+    new-instance v6, Lq2c;
 
-    iget v4, v4, Lcfe;->h:I
+    const-string v7, "VIDEO_QUALITY"
 
-    invoke-virtual {v0, v4}, Landroid/widget/TextView;->setTextColor(I)V
+    const/4 v8, 0x6
 
-    iput-object v0, p0, Lq2c;->a:Landroid/widget/TextView;
+    invoke-direct {v6, v7, v8, v7}, Lq2c;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    new-instance v4, Landroid/widget/TextView;
+    sput-object v6, Lq2c;->o0:Lq2c;
 
-    invoke-direct {v4, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    new-instance v7, Lq2c;
 
-    new-instance v5, Landroid/widget/FrameLayout$LayoutParams;
+    const-string v8, "VIDEO_SYNC"
 
-    invoke-direct {v5, v2, v2}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
+    const/4 v9, 0x7
 
-    const v2, 0x800015
+    invoke-direct {v7, v8, v9, v8}, Lq2c;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    iput v2, v5, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+    sput-object v7, Lq2c;->p0:Lq2c;
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    new-instance v8, Lq2c;
 
-    move-result-object v2
+    const-string v9, "VIDEO_CALL_INTERRUPTION"
 
-    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    const/16 v10, 0x8
 
-    move-result-object v2
+    invoke-direct {v8, v9, v10, v9}, Lq2c;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    iget v2, v2, Landroid/util/DisplayMetrics;->density:F
+    sput-object v8, Lq2c;->q0:Lq2c;
 
-    mul-float/2addr v3, v2
+    new-instance v9, Lq2c;
 
-    invoke-static {v3}, La24;->X(F)I
+    const-string v10, "USERS_FREEZES"
 
-    move-result v2
+    const/16 v11, 0x9
 
-    invoke-virtual {v5, v2}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginEnd(I)V
+    invoke-direct {v9, v10, v11, v10}, Lq2c;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    invoke-virtual {v4, v5}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    sput-object v9, Lq2c;->r0:Lq2c;
 
-    sget v2, Ljtb;->chats_list_search_recent_header_clear:I
+    new-instance v10, Lq2c;
 
-    invoke-virtual {p2, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    const/16 v11, 0xa
 
-    move-result-object p2
+    const/4 v12, 0x0
 
-    invoke-virtual {v4, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    const-string v13, "OTHER"
 
-    sget-object p2, Lnte;->m:Lnge;
+    invoke-direct {v10, v13, v11, v12}, Lq2c;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    invoke-static {p2, v4}, Lnge;->d(Lnge;Landroid/widget/TextView;)V
+    sput-object v10, Lq2c;->s0:Lq2c;
 
-    invoke-virtual {v1, v4}, Ls59;->r(Landroid/view/View;)Lpda;
+    filled-new-array/range {v0 .. v10}, [Lq2c;
 
-    move-result-object p2
+    move-result-object v0
 
-    invoke-interface {p2}, Lpda;->getText()Lcfe;
+    sput-object v0, Lq2c;->t0:[Lq2c;
 
-    move-result-object p2
+    new-instance v1, Ln25;
 
-    iget p2, p2, Lcfe;->h:I
+    invoke-direct {v1, v0}, Ln25;-><init>([Ljava/lang/Enum;)V
 
-    invoke-virtual {v4, p2}, Landroid/widget/TextView;->setTextColor(I)V
-
-    new-instance p2, Lq6;
-
-    const/16 v1, 0x14
-
-    invoke-direct {p2, v1, p1}, Lq6;-><init>(ILs16;)V
-
-    invoke-static {v4, p2}, La24;->a0(Landroid/view/View;Landroid/view/View$OnClickListener;)V
-
-    iput-object v4, p0, Lq2c;->b:Landroid/widget/TextView;
-
-    new-instance p1, Landroid/view/ViewGroup$LayoutParams;
-
-    const/16 p2, 0x28
-
-    int-to-float p2, p2
-
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v1
-
-    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr p2, v1
-
-    invoke-static {p2}, La24;->X(F)I
-
-    move-result p2
-
-    const/4 v1, -0x1
-
-    invoke-direct {p1, v1, p2}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-    invoke-virtual {p0, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    sput-object v1, Lq2c;->u0:Ln25;
 
     return-void
 .end method
 
+.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
+    .locals 0
 
-# virtual methods
-.method public final onThemeChanged(Lpda;)V
-    .locals 2
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iget-object v0, p0, Lq2c;->a:Landroid/widget/TextView;
-
-    invoke-interface {p1}, Lpda;->getText()Lcfe;
-
-    move-result-object v1
-
-    iget v1, v1, Lcfe;->h:I
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
-
-    iget-object p0, p0, Lq2c;->b:Landroid/widget/TextView;
-
-    invoke-interface {p1}, Lpda;->getText()Lcfe;
-
-    move-result-object p1
-
-    iget p1, p1, Lcfe;->h:I
-
-    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
+    iput-object p3, p0, Lq2c;->a:Ljava/lang/String;
 
     return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lq2c;
+    .locals 1
+
+    const-class v0, Lq2c;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    move-result-object p0
+
+    check-cast p0, Lq2c;
+
+    return-object p0
+.end method
+
+.method public static values()[Lq2c;
+    .locals 1
+
+    sget-object v0, Lq2c;->t0:[Lq2c;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lq2c;
+
+    return-object v0
 .end method

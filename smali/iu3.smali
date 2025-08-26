@@ -1,35 +1,84 @@
-.class public final Liu3;
+.class public final synthetic Liu3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lgu3;
+.implements Ldmc;
 
 
 # instance fields
-.field public final a:Lu16;
+.field public final synthetic a:I
 
-.field public final b:Lgu3;
+.field public final synthetic b:Lou3;
+
+.field public final synthetic c:I
+
+.field public final synthetic d:Ljava/lang/Cloneable;
 
 
 # direct methods
-.method public constructor <init>(Lgu3;Lu16;)V
+.method public synthetic constructor <init>(Lou3;Ljava/lang/Cloneable;II)V
     .locals 0
+
+    iput p4, p0, Liu3;->a:I
+
+    iput-object p1, p0, Liu3;->b:Lou3;
+
+    iput-object p2, p0, Liu3;->d:Ljava/lang/Cloneable;
+
+    iput p3, p0, Liu3;->c:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Liu3;->a:Lu16;
+    return-void
+.end method
 
-    instance-of p2, p1, Liu3;
 
-    if-eqz p2, :cond_0
+# virtual methods
+.method public final a()V
+    .locals 3
 
-    check-cast p1, Liu3;
+    iget v0, p0, Liu3;->a:I
 
-    iget-object p1, p1, Liu3;->b:Lgu3;
+    packed-switch v0, :pswitch_data_0
 
-    :cond_0
-    iput-object p1, p0, Liu3;->b:Lgu3;
+    iget-object v0, p0, Liu3;->d:Ljava/lang/Cloneable;
+
+    check-cast v0, [Ljava/lang/String;
+
+    iget-object v1, p0, Liu3;->b:Lou3;
+
+    iget-object v2, v1, Lou3;->router:Lcmc;
+
+    iget-object v1, v1, Lou3;->instanceId:Ljava/lang/String;
+
+    iget p0, p0, Liu3;->c:I
+
+    invoke-virtual {v2, v1, v0, p0}, Lcmc;->N(Ljava/lang/String;[Ljava/lang/String;I)V
 
     return-void
+
+    :pswitch_0
+    iget-object v0, p0, Liu3;->d:Ljava/lang/Cloneable;
+
+    check-cast v0, Landroid/content/Intent;
+
+    iget-object v1, p0, Liu3;->b:Lou3;
+
+    iget-object v2, v1, Lou3;->router:Lcmc;
+
+    iget-object v1, v1, Lou3;->instanceId:Ljava/lang/String;
+
+    iget p0, p0, Liu3;->c:I
+
+    invoke-virtual {v2, v1, v0, p0}, Lcmc;->V(Ljava/lang/String;Landroid/content/Intent;I)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

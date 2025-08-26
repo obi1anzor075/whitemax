@@ -1,105 +1,125 @@
-.class public final enum Llma;
-.super Ljava/lang/Enum;
+.class public final Llma;
+.super Lmma;
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic X:[Llma;
-
-.field public static final enum b:Llma;
-
-.field public static final enum c:Llma;
-
-.field public static final enum o:Llma;
-
-
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final d:Ljava/nio/ByteBuffer;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public constructor <init>([BII)V
+    .locals 1
 
-    new-instance v0, Llma;
+    shr-int/lit8 v0, p3, 0x2
 
-    const/4 v1, 0x0
+    invoke-direct {p0, p1, v0, p2}, Lmma;-><init>([BII)V
 
-    const-string v2, "app_init"
+    invoke-static {p1, p2, p3}, Ljava/nio/ByteBuffer;->wrap([BII)Ljava/nio/ByteBuffer;
 
-    const-string v3, "APP_INIT"
+    move-result-object p1
 
-    invoke-direct {v0, v3, v1, v2}, Llma;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    sget-object p2, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
 
-    sput-object v0, Llma;->b:Llma;
+    invoke-virtual {p1, p2}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    new-instance v1, Llma;
+    move-result-object p1
+
+    iput-object p1, p0, Llma;->d:Ljava/nio/ByteBuffer;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(I)S
+    .locals 2
+
+    shl-int/lit8 p1, p1, 0x2
+
+    iget-object p0, p0, Llma;->d:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {p0, p1}, Ljava/nio/ByteBuffer;->getFloat(I)F
+
+    move-result p0
+
+    float-to-double p0, p0
+
+    const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
+
+    add-double/2addr p0, v0
+
+    const-wide v0, 0x40dfffe000000000L    # 32767.5
+
+    mul-double/2addr p0, v0
+
+    double-to-int p0, p0
+
+    add-int/lit16 p0, p0, -0x8000
+
+    int-to-short p0, p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 4
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "PCM float ("
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget v1, p0, Lmma;->a:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, ") {"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-lez v1, :cond_0
+
+    const/4 v2, 0x0
+
+    iget-object p0, p0, Llma;->d:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {p0, v2}, Ljava/nio/ByteBuffer;->getFloat(I)F
+
+    move-result v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
     const/4 v2, 0x1
 
-    const-string v3, "open_chats_to_render"
+    :goto_0
+    if-ge v2, v1, :cond_0
 
-    const-string v4, "EVENT_OPEN_CHATS"
+    const-string v3, ", "
 
-    invoke-direct {v1, v4, v2, v3}, Llma;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sput-object v1, Llma;->c:Llma;
+    shl-int/lit8 v3, v2, 0x2
 
-    new-instance v2, Llma;
+    invoke-virtual {p0, v3}, Ljava/nio/ByteBuffer;->getFloat(I)F
 
-    const/4 v3, 0x2
+    move-result v3
 
-    const-string v4, "open_chat_to_render"
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    const-string v5, "EVENT_OPEN_CHAT"
+    add-int/lit8 v2, v2, 0x1
 
-    invoke-direct {v2, v5, v3, v4}, Llma;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    goto :goto_0
 
-    sput-object v2, Llma;->o:Llma;
+    :cond_0
+    const/16 p0, 0x7d
 
-    filled-new-array {v0, v1, v2}, [Llma;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    move-result-object v0
-
-    sput-object v0, Llma;->X:[Llma;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    iput-object p3, p0, Llma;->a:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Llma;
-    .locals 1
-
-    const-class v0, Llma;
-
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    check-cast p0, Llma;
-
     return-object p0
-.end method
-
-.method public static values()[Llma;
-    .locals 1
-
-    sget-object v0, Llma;->X:[Llma;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Llma;
-
-    return-object v0
 .end method

@@ -1,391 +1,106 @@
-.class public final Ldyb;
+.class public abstract Ldyb;
 .super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Landroid/os/Parcelable;
 
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Ldyb;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public static audio_record_click_to_cancel:I = 0x7f130088
 
+.field public static audio_record_swipe_to_cancel:I = 0x7f13009a
 
-# instance fields
-.field public final a:I
+.field public static chat_screen__cancel:I = 0x7f130341
 
-.field public final b:F
+.field public static chat_screen__leave_chat_action:I = 0x7f130342
 
-.field public c:Ljava/lang/Object;
+.field public static chat_screen__leave_chat_title:I = 0x7f130343
 
+.field public static chat_screen__remove_chat_action:I = 0x7f130344
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.field public static chat_screen__remove_chat_title:I = 0x7f130345
 
-    new-instance v0, Lx3b;
+.field public static chat_screen__search_result_down_button_accessibility:I = 0x7f130346
 
-    const/16 v1, 0xa
+.field public static chat_screen__search_result_not_found:I = 0x7f130347
 
-    invoke-direct {v0, v1}, Lx3b;-><init>(I)V
+.field public static chat_screen__search_result_success:I = 0x7f130348
 
-    sput-object v0, Ldyb;->CREATOR:Landroid/os/Parcelable$Creator;
+.field public static chat_screen__search_result_up_button_accessibility:I = 0x7f130349
 
-    return-void
-.end method
+.field public static chat_screen__start_chat_with_bot:I = 0x7f13034a
 
-.method public constructor <init>(IF)V
-    .locals 0
+.field public static chat_screen_channel_search_hint:I = 0x7f13035f
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.field public static chat_screen_file_too_big_caption:I = 0x7f130373
 
-    iput p1, p0, Ldyb;->a:I
+.field public static chat_screen_file_too_big_title:I = 0x7f130374
 
-    iput p2, p0, Ldyb;->b:F
+.field public static chat_screen_join_channel:I = 0x7f13037b
 
-    return-void
-.end method
+.field public static chat_screen_join_chat:I = 0x7f13037c
 
-.method public static a(Ljava/lang/Object;)Ldyb;
-    .locals 5
+.field public static chat_screen_leave_chat:I = 0x7f13037d
 
-    const/4 v0, 0x0
+.field public static chat_screen_remove_chat:I = 0x7f130398
 
-    if-eqz p0, :cond_5
+.field public static chat_screen_search_hint:I = 0x7f13039f
 
-    move-object v1, p0
+.field public static chat_screen_status_mute_chat:I = 0x7f1303a2
 
-    check-cast v1, Landroid/media/Rating;
+.field public static chat_screen_status_subscribe_chat:I = 0x7f1303a3
 
-    invoke-virtual {v1}, Landroid/media/Rating;->getRatingStyle()I
+.field public static chat_screen_status_unmute_chat:I = 0x7f1303a4
 
-    move-result v2
+.field public static chat_screen_unblock_contact:I = 0x7f1303a6
 
-    invoke-virtual {v1}, Landroid/media/Rating;->isRated()Z
+.field public static media_bar_recent:I = 0x7f130616
 
-    move-result v3
+.field public static media_bar_restricted_media_action:I = 0x7f130617
 
-    if-eqz v3, :cond_3
+.field public static media_bar_restricted_media_subtitle:I = 0x7f130618
 
-    const/high16 v3, 0x3f800000    # 1.0f
+.field public static media_bar_restricted_media_title:I = 0x7f130619
 
-    const/4 v4, 0x0
+.field public static media_type_picker__close_dialog__accept:I = 0x7f13065d
 
-    packed-switch v2, :pswitch_data_0
+.field public static media_type_picker__close_dialog__decline:I = 0x7f13065e
 
-    return-object v0
+.field public static media_type_picker__close_dialog__title:I = 0x7f13065f
 
-    :pswitch_0
-    invoke-virtual {v1}, Landroid/media/Rating;->getPercentRating()F
+.field public static media_type_picker__contact:I = 0x7f130660
 
-    move-result v1
+.field public static media_type_picker__file:I = 0x7f130661
 
-    cmpg-float v2, v1, v4
+.field public static media_type_picker__file_dialog__decline:I = 0x7f130662
 
-    if-ltz v2, :cond_4
+.field public static media_type_picker__file_dialog__from_file_manager:I = 0x7f130663
 
-    const/high16 v2, 0x42c80000    # 100.0f
+.field public static media_type_picker__file_dialog__from_gallery:I = 0x7f130664
 
-    cmpl-float v2, v1, v2
+.field public static media_type_picker__file_dialog__title:I = 0x7f130665
 
-    if-lez v2, :cond_0
+.field public static media_type_picker__gallery:I = 0x7f130666
 
-    goto :goto_3
+.field public static media_type_picker__input_hint:I = 0x7f130667
 
-    :cond_0
-    new-instance v0, Ldyb;
+.field public static media_type_picker__money:I = 0x7f130668
 
-    const/4 v2, 0x6
+.field public static media_type_picker__permissions_dialog__button:I = 0x7f130669
 
-    invoke-direct {v0, v2, v1}, Ldyb;-><init>(IF)V
+.field public static media_type_picker__permissions_dialog__camera_permission:I = 0x7f13066a
 
-    goto :goto_3
+.field public static media_type_picker__permissions_dialog__gallery_camera_subtitle:I = 0x7f13066b
 
-    :pswitch_1
-    invoke-virtual {v1}, Landroid/media/Rating;->getStarRating()F
+.field public static media_type_picker__permissions_dialog__gallery_camera_title:I = 0x7f13066c
 
-    move-result v0
+.field public static media_type_picker__permissions_dialog__gallery_subtitle:I = 0x7f13066d
 
-    invoke-static {v2, v0}, Ldyb;->d(IF)Ldyb;
+.field public static media_type_picker__permissions_dialog__gallery_title:I = 0x7f13066e
 
-    move-result-object v0
+.field public static media_type_picker__permissions_dialog__subtitle:I = 0x7f13066f
 
-    goto :goto_3
+.field public static media_type_picker__permissions_dialog__title:I = 0x7f130670
 
-    :pswitch_2
-    invoke-virtual {v1}, Landroid/media/Rating;->isThumbUp()Z
+.field public static media_type_picker__place:I = 0x7f130671
 
-    move-result v0
+.field public static media_type_picker__snack_file:I = 0x7f130672
 
-    new-instance v1, Ldyb;
-
-    if-eqz v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    move v3, v4
-
-    :goto_0
-    const/4 v0, 0x2
-
-    invoke-direct {v1, v0, v3}, Ldyb;-><init>(IF)V
-
-    :goto_1
-    move-object v0, v1
-
-    goto :goto_3
-
-    :pswitch_3
-    invoke-virtual {v1}, Landroid/media/Rating;->hasHeart()Z
-
-    move-result v0
-
-    new-instance v1, Ldyb;
-
-    if-eqz v0, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    move v3, v4
-
-    :goto_2
-    const/4 v0, 0x1
-
-    invoke-direct {v1, v0, v3}, Ldyb;-><init>(IF)V
-
-    goto :goto_1
-
-    :cond_3
-    packed-switch v2, :pswitch_data_1
-
-    goto :goto_3
-
-    :pswitch_4
-    new-instance v0, Ldyb;
-
-    const/high16 v1, -0x40800000    # -1.0f
-
-    invoke-direct {v0, v2, v1}, Ldyb;-><init>(IF)V
-
-    :cond_4
-    :goto_3
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object p0, v0, Ldyb;->c:Ljava/lang/Object;
-
-    :cond_5
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-
-    :pswitch_data_1
-    .packed-switch 0x1
-        :pswitch_4
-        :pswitch_4
-        :pswitch_4
-        :pswitch_4
-        :pswitch_4
-        :pswitch_4
-    .end packed-switch
-.end method
-
-.method public static d(IF)Ldyb;
-    .locals 3
-
-    const/4 v0, 0x3
-
-    const/4 v1, 0x0
-
-    if-eq p0, v0, :cond_2
-
-    const/4 v0, 0x4
-
-    if-eq p0, v0, :cond_1
-
-    const/4 v0, 0x5
-
-    if-eq p0, v0, :cond_0
-
-    return-object v1
-
-    :cond_0
-    const/high16 v0, 0x40a00000    # 5.0f
-
-    goto :goto_0
-
-    :cond_1
-    const/high16 v0, 0x40800000    # 4.0f
-
-    goto :goto_0
-
-    :cond_2
-    const/high16 v0, 0x40400000    # 3.0f
-
-    :goto_0
-    const/4 v2, 0x0
-
-    cmpg-float v2, p1, v2
-
-    if-ltz v2, :cond_4
-
-    cmpl-float v0, p1, v0
-
-    if-lez v0, :cond_3
-
-    goto :goto_1
-
-    :cond_3
-    new-instance v0, Ldyb;
-
-    invoke-direct {v0, p0, p1}, Ldyb;-><init>(IF)V
-
-    return-object v0
-
-    :cond_4
-    :goto_1
-    return-object v1
-.end method
-
-
-# virtual methods
-.method public final b()F
-    .locals 2
-
-    const/4 v0, 0x3
-
-    iget v1, p0, Ldyb;->a:I
-
-    if-eq v1, v0, :cond_0
-
-    const/4 v0, 0x4
-
-    if-eq v1, v0, :cond_0
-
-    const/4 v0, 0x5
-
-    if-eq v1, v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0}, Ldyb;->c()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget p0, p0, Ldyb;->b:F
-
-    return p0
-
-    :cond_1
-    :goto_0
-    const/high16 p0, -0x40800000    # -1.0f
-
-    return p0
-.end method
-
-.method public final c()Z
-    .locals 1
-
-    iget p0, p0, Ldyb;->b:F
-
-    const/4 v0, 0x0
-
-    cmpl-float p0, p0, v0
-
-    if-ltz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
-.end method
-
-.method public final describeContents()I
-    .locals 0
-
-    iget p0, p0, Ldyb;->a:I
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Rating:style="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v1, p0, Ldyb;->a:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, " rating="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/4 v1, 0x0
-
-    iget p0, p0, Ldyb;->b:F
-
-    cmpg-float v1, p0, v1
-
-    if-gez v1, :cond_0
-
-    const-string p0, "unrated"
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {p0}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
-
-    move-result-object p0
-
-    :goto_0
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
-
-    iget p2, p0, Ldyb;->a:I
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    iget p0, p0, Ldyb;->b:F
-
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeFloat(F)V
-
-    return-void
-.end method
+.field public static media_type_picker__snack_media:I = 0x7f130673

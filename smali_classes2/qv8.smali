@@ -3,42 +3,45 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lwv8;
-
-
-# instance fields
-.field public final a:J
-
-.field public final b:Lm40;
-
-
-# direct methods
-.method public constructor <init>(JLm40;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-wide p1, p0, Lqv8;->a:J
-
-    iput-object p3, p0, Lqv8;->b:Lm40;
-
-    return-void
-.end method
+.implements Ljava/lang/Cloneable;
 
 
 # virtual methods
-.method public final a()Z
+.method public final clone()Ljava/lang/Object;
     .locals 0
+
+    new-instance p0, Lqv8;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-object p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 0
+
+    instance-of p0, p1, Lqv8;
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_0
+    check-cast p1, Lqv8;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     const/4 p0, 0x1
 
     return p0
 .end method
 
-.method public final j()J
-    .locals 2
+.method public final hashCode()I
+    .locals 0
 
-    iget-wide v0, p0, Lqv8;->a:J
+    const p0, 0x164be01
 
-    return-wide v0
+    return p0
 .end method

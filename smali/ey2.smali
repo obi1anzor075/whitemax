@@ -3,218 +3,116 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lxjc;
+.implements Lo64;
 
 
-# instance fields
-.field public final synthetic X:Liy2;
+# static fields
+.field public static final a:Ley2;
 
-.field public final a:Liy2;
-
-.field public final b:Lvjc;
-
-.field public final c:I
-
-.field public o:Z
+.field public static final b:Lfy2;
 
 
 # direct methods
-.method public constructor <init>(Liy2;Liy2;Lvjc;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ley2;
 
-    iput-object p1, p0, Ley2;->X:Liy2;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Ley2;->a:Liy2;
+    sput-object v0, Ley2;->a:Ley2;
 
-    iput-object p3, p0, Ley2;->b:Lvjc;
+    sget-object v0, Lfy2;->b:Lfy2;
 
-    iput p4, p0, Ley2;->c:I
+    sput-object v0, Ley2;->b:Lfy2;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 8
-
-    iget-boolean v0, p0, Ley2;->o:Z
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Ley2;->X:Liy2;
-
-    iget-object v1, v0, Liy2;->Z:Laf8;
-
-    iget-object v2, v0, Liy2;->b:[I
-
-    iget v3, p0, Ley2;->c:I
-
-    aget v2, v2, v3
-
-    iget-object v4, v0, Liy2;->c:[Lvu5;
-
-    aget-object v3, v4, v3
-
-    iget-wide v6, v0, Liy2;->I0:J
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    invoke-virtual/range {v1 .. v7}, Laf8;->b(ILvu5;ILjava/lang/Object;J)V
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ley2;->o:Z
-
-    :cond_0
-    return-void
-.end method
-
-.method public final c()V
+.method public final a()Lv64;
     .locals 0
 
-    return-void
+    sget-object p0, Ley2;->b:Lfy2;
+
+    return-object p0
 .end method
 
-.method public final d()Z
-    .locals 2
+.method public final b(Ljava/lang/String;Lr64;Landroid/os/Bundle;)Ly64;
+    .locals 7
 
-    iget-object v0, p0, Ley2;->X:Liy2;
+    sget-object p0, Ley2;->b:Lfy2;
 
-    invoke-virtual {v0}, Liy2;->n()Z
+    iget-object p0, p0, Lv64;->a:Ljava/util/LinkedHashSet;
 
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    iget-object p0, p0, Ley2;->b:Lvjc;
-
-    iget-boolean v0, v0, Liy2;->L0:Z
-
-    invoke-virtual {p0, v0}, Lvjc;->t(Z)Z
+    invoke-interface {p0, p2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
-.end method
-
-.method public final e(J)I
-    .locals 3
-
-    iget-object v0, p0, Ley2;->X:Liy2;
-
-    invoke-virtual {v0}, Liy2;->n()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
+    if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
-    return p0
+    return-object p0
 
     :cond_0
-    iget-boolean v1, v0, Liy2;->L0:Z
+    new-instance v5, Lw64;
 
-    iget-object v2, p0, Ley2;->b:Lvjc;
+    new-instance p0, Lhl2;
 
-    invoke-virtual {v2, p1, p2, v1}, Lvjc;->q(JZ)I
+    const/16 v0, 0x13
 
-    move-result p1
+    invoke-direct {p0, v0}, Lhl2;-><init>(I)V
 
-    iget-object p2, v0, Liy2;->K0:Lth0;
+    new-instance v0, Lhl2;
 
-    if-eqz p2, :cond_1
+    const/16 v1, 0x14
 
-    iget v0, p0, Ley2;->c:I
+    invoke-direct {v0, v1}, Lhl2;-><init>(I)V
 
-    add-int/lit8 v0, v0, 0x1
+    invoke-direct {v5, p0, v0}, Lw64;-><init>(Lv56;Lv56;)V
 
-    invoke-virtual {p2, v0}, Lth0;->d(I)I
+    sget-object p0, Lfy2;->c:Lr64;
 
-    move-result p2
-
-    invoke-virtual {v2}, Lvjc;->o()I
-
-    move-result v0
-
-    sub-int/2addr p2, v0
-
-    invoke-static {p1, p2}, Ljava/lang/Math;->min(II)I
-
-    move-result p1
-
-    :cond_1
-    invoke-virtual {v2, p1}, Lvjc;->B(I)V
-
-    if-lez p1, :cond_2
-
-    invoke-virtual {p0}, Ley2;->a()V
-
-    :cond_2
-    return p1
-.end method
-
-.method public final h(Lotf;Lm24;I)I
-    .locals 5
-
-    iget-object v0, p0, Ley2;->X:Liy2;
-
-    invoke-virtual {v0}, Liy2;->n()Z
-
-    move-result v1
-
-    const/4 v2, -0x3
-
-    if-eqz v1, :cond_0
-
-    return v2
-
-    :cond_0
-    iget-object v1, v0, Liy2;->K0:Lth0;
-
-    iget-object v3, p0, Ley2;->b:Lvjc;
-
-    if-eqz v1, :cond_1
-
-    iget v4, p0, Ley2;->c:I
-
-    add-int/lit8 v4, v4, 0x1
-
-    invoke-virtual {v1, v4}, Lth0;->d(I)I
-
-    move-result v1
-
-    invoke-virtual {v3}, Lvjc;->o()I
-
-    move-result v4
-
-    if-gt v1, v4, :cond_1
-
-    return v2
-
-    :cond_1
-    invoke-virtual {p0}, Ley2;->a()V
-
-    iget-boolean p0, v0, Liy2;->L0:Z
-
-    invoke-virtual {v3, p1, p2, p3, p0}, Lvjc;->y(Lotf;Lm24;IZ)I
+    invoke-virtual {p2, p0}, Lr64;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    return p0
+    if-eqz p0, :cond_1
+
+    new-instance v0, Ly64;
+
+    new-instance v6, Li;
+
+    const/4 p0, 0x7
+
+    invoke-direct {v6, p0}, Li;-><init>(I)V
+
+    const/4 v4, 0x1
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    invoke-direct/range {v0 .. v6}, Ly64;-><init>(Ljava/lang/String;Lr64;Landroid/os/Bundle;ILw64;Lx64;)V
+
+    return-object v0
+
+    :cond_1
+    move-object v2, p2
+
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "invalid route "
+
+    invoke-static {p1, v2}, Lzt1;->f(Ljava/lang/String;Lr64;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

@@ -30,7 +30,7 @@
         "()V",
         "",
         "i",
-        "Ljue;",
+        "Le5f;",
         "siftUpFrom",
         "(I)V",
         "siftDownFrom",
@@ -44,7 +44,7 @@
         "",
         "predicate",
         "find",
-        "(Lu16;)Lkotlinx/coroutines/internal/ThreadSafeHeapNode;",
+        "(Lx56;)Lkotlinx/coroutines/internal/ThreadSafeHeapNode;",
         "peek",
         "()Lkotlinx/coroutines/internal/ThreadSafeHeapNode;",
         "removeFirstOrNull",
@@ -54,7 +54,7 @@
         "(Lkotlinx/coroutines/internal/ThreadSafeHeapNode;)V",
         "cond",
         "addLastIf",
-        "(Lkotlinx/coroutines/internal/ThreadSafeHeapNode;Lu16;)Z",
+        "(Lkotlinx/coroutines/internal/ThreadSafeHeapNode;Lx56;)Z",
         "remove",
         "(Lkotlinx/coroutines/internal/ThreadSafeHeapNode;)Z",
         "firstImpl",
@@ -81,6 +81,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -159,7 +160,7 @@
 
     iput-object v0, p0, Lkotlinx/coroutines/internal/ThreadSafeHeap;->a:[Lkotlinx/coroutines/internal/ThreadSafeHeapNode;
 
-    goto :goto_0
+    return-object v0
 
     :cond_0
     invoke-virtual {p0}, Lkotlinx/coroutines/internal/ThreadSafeHeap;->getSize()I
@@ -185,7 +186,6 @@
     iput-object v0, p0, Lkotlinx/coroutines/internal/ThreadSafeHeap;->a:[Lkotlinx/coroutines/internal/ThreadSafeHeapNode;
 
     :cond_1
-    :goto_0
     return-object v0
 .end method
 
@@ -223,7 +223,7 @@
 
     if-lt v1, v2, :cond_0
 
-    return-void
+    goto :goto_2
 
     :cond_0
     iget-object v2, p0, Lkotlinx/coroutines/internal/ThreadSafeHeap;->a:[Lkotlinx/coroutines/internal/ThreadSafeHeapNode;
@@ -266,6 +266,7 @@
 
     if-gtz v1, :cond_2
 
+    :goto_2
     return-void
 
     :cond_2
@@ -282,7 +283,7 @@
     :goto_0
     if-gtz p1, :cond_0
 
-    return-void
+    goto :goto_1
 
     :cond_0
     iget-object v0, p0, Lkotlinx/coroutines/internal/ThreadSafeHeap;->a:[Lkotlinx/coroutines/internal/ThreadSafeHeapNode;
@@ -303,6 +304,7 @@
 
     if-gtz v0, :cond_1
 
+    :goto_1
     return-void
 
     :cond_1
@@ -393,12 +395,12 @@
     throw p1
 .end method
 
-.method public final addLastIf(Lkotlinx/coroutines/internal/ThreadSafeHeapNode;Lu16;)Z
+.method public final addLastIf(Lkotlinx/coroutines/internal/ThreadSafeHeapNode;Lx56;)Z
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
-            "Lu16;",
+            "Lx56;",
             ")Z"
         }
     .end annotation
@@ -410,7 +412,7 @@
 
     move-result-object v0
 
-    invoke-interface {p2, v0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p2
 
@@ -449,12 +451,12 @@
     throw p1
 .end method
 
-.method public final find(Lu16;)Lkotlinx/coroutines/internal/ThreadSafeHeapNode;
+.method public final find(Lx56;)Lkotlinx/coroutines/internal/ThreadSafeHeapNode;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lu16;",
+            "Lx56;",
             ")TT;"
         }
     .end annotation
@@ -488,7 +490,7 @@
 
     :cond_0
     :goto_1
-    invoke-interface {p1, v2}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v2}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -537,12 +539,11 @@
 
     aget-object p0, p0, v0
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return-object p0
 .end method
 
@@ -571,12 +572,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -736,12 +736,12 @@
     return-object p1
 .end method
 
-.method public final removeFirstIf(Lu16;)Lkotlinx/coroutines/internal/ThreadSafeHeapNode;
+.method public final removeFirstIf(Lx56;)Lkotlinx/coroutines/internal/ThreadSafeHeapNode;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lu16;",
+            "Lx56;",
             ")TT;"
         }
     .end annotation
@@ -765,7 +765,7 @@
 
     :cond_0
     :try_start_1
-    invoke-interface {p1, v0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 

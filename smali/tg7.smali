@@ -1,15 +1,25 @@
-.class public abstract Ltg7;
-.super Ljava/lang/Object;
+.class public final Ltg7;
+.super Lzy4;
 .source "SourceFile"
 
 
 # direct methods
-.method public static a(Landroid/widget/PopupWindow;Landroid/view/View;IZ)I
+.method public constructor <init>()V
     .locals 0
 
-    invoke-virtual {p0, p1, p2, p3}, Landroid/widget/PopupWindow;->getMaxAvailableHeight(Landroid/view/View;IZ)I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result p0
+    return-void
+.end method
 
-    return p0
+
+# virtual methods
+.method public onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
+    .locals 0
+
+    sget p0, Lwec;->a:I
+
+    invoke-static {p1}, Luec;->b(Landroid/app/Activity;)V
+
+    return-void
 .end method

@@ -1,53 +1,43 @@
-.class public final Lew9;
-.super Lqr4;
+.class public abstract Lew9;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final Y:Lqr4;
+# static fields
+.field public static final a:Lkotlinx/coroutines/internal/Symbol;
 
-.field public final Z:F
+.field public static final b:Lkotlinx/coroutines/internal/Symbol;
+
+.field public static final c:Lkotlinx/coroutines/internal/Symbol;
 
 
 # direct methods
-.method public constructor <init>(Lbv7;F)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
-    const/4 v0, 0x0
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
-    invoke-direct {p0, v0}, Lqr4;-><init>(I)V
+    const-string v1, "NULL"
 
-    iput-object p1, p0, Lew9;->Y:Lqr4;
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
 
-    iput p2, p0, Lew9;->Z:F
+    sput-object v0, Lew9;->a:Lkotlinx/coroutines/internal/Symbol;
 
-    return-void
-.end method
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
+    const-string v1, "UNINITIALIZED"
 
-# virtual methods
-.method public final o()Z
-    .locals 0
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p0, Lew9;->Y:Lqr4;
+    sput-object v0, Lew9;->b:Lkotlinx/coroutines/internal/Symbol;
 
-    invoke-virtual {p0}, Lqr4;->o()Z
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
-    move-result p0
+    const-string v1, "DONE"
 
-    return p0
-.end method
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
 
-.method public final q(FFFLnad;)V
-    .locals 1
-
-    iget v0, p0, Lew9;->Z:F
-
-    sub-float/2addr p2, v0
-
-    iget-object p0, p0, Lew9;->Y:Lqr4;
-
-    invoke-virtual {p0, p1, p2, p3, p4}, Lqr4;->q(FFFLnad;)V
+    sput-object v0, Lew9;->c:Lkotlinx/coroutines/internal/Symbol;
 
     return-void
 .end method

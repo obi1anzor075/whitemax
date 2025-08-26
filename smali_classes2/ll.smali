@@ -1,85 +1,100 @@
-.class public final enum Lll;
-.super Ljava/lang/Enum;
+.class public abstract Lll;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final enum a:Lll;
-
-.field public static final synthetic b:[Lll;
+.field public static final a:Landroid/net/Uri;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 1
 
-    new-instance v0, Lll;
+    const-string v0, "https://api.ok.ru"
 
-    const-string v1, "SAME"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lll;->a:Lll;
-
-    new-instance v1, Lll;
-
-    const-string v2, "NO_SESSION"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    new-instance v2, Lll;
-
-    const-string v3, "ANONYMOUS_SESSION"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    new-instance v3, Lll;
-
-    const-string v4, "SESSION"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    filled-new-array {v0, v1, v2, v3}, [Lll;
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    sput-object v0, Lll;->b:[Lll;
+    sput-object v0, Lll;->a:Landroid/net/Uri;
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lll;
-    .locals 1
+.method public static final a(Ljava/lang/String;)Landroid/net/Uri;
+    .locals 2
 
-    const-class v0, Lll;
+    const/16 v0, 0x2e
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    const/16 v1, 0x2f
+
+    invoke-virtual {p0, v0, v1}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object p0
 
-    check-cast p0, Lll;
+    const-string v0, "ok://api/api/"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object p0
 
     return-object p0
 .end method
 
-.method public static values()[Lll;
-    .locals 1
+.method public static final b(Landroid/net/Uri;)Ljava/lang/String;
+    .locals 3
 
-    sget-object v0, Lll;->b:[Lll;
-
-    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
+    invoke-virtual {p0}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, [Lll;
+    const-string v1, "ok://api/api/"
 
-    return-object v0
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Lr8e;->w0(Ljava/lang/String;Ljava/lang/String;Z)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/16 p0, 0xd
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    const/16 v0, 0x2f
+
+    const/16 v1, 0x2e
+
+    invoke-virtual {p0, v0, v1}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Unknown uri "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method

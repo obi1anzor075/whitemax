@@ -27,9 +27,9 @@
         "R",
         "",
         "params",
-        "Ldhd;",
+        "Ltod;",
         "execute",
-        "(Lru/ok/android/externcalls/sdk/conversation/internal/actions/ActionParams;)Ldhd;",
+        "(Lru/ok/android/externcalls/sdk/conversation/internal/actions/ActionParams;)Ltod;",
         "calls-sdk_release"
     }
     k = 0x1
@@ -38,15 +38,16 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # virtual methods
-.method public abstract execute(Lru/ok/android/externcalls/sdk/conversation/internal/actions/ActionParams;)Ldhd;
+.method public abstract execute(Lru/ok/android/externcalls/sdk/conversation/internal/actions/ActionParams;)Ltod;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TP;)",
-            "Ldhd;"
+            "Ltod;"
         }
     .end annotation
 .end method

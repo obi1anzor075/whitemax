@@ -1,158 +1,56 @@
 .class public final Lhw6;
-.super Lgr8;
+.super Lr36;
 .source "SourceFile"
 
 
-# instance fields
-.field public a:I
-
-.field public b:[B
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Lgr8;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lhw6;->a:I
-
-    sget-object v0, Liu7;->o:[B
-
-    iput-object v0, p0, Lhw6;->b:[B
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lgr8;->cachedSize:I
-
-    return-void
-.end method
-
-
 # virtual methods
-.method public final computeSerializedSize()I
-    .locals 3
+.method public final T(Ljava/lang/Object;Ljava/lang/Object;)Lr36;
+    .locals 0
 
-    iget v0, p0, Lhw6;->a:I
+    invoke-super {p0, p1, p2}, Lr36;->T(Ljava/lang/Object;Ljava/lang/Object;)Lr36;
 
-    if-eqz v0, :cond_0
-
-    const/4 v1, 0x1
-
-    invoke-static {v1, v0}, Lo13;->n(II)I
-
-    move-result v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    iget-object v1, p0, Lhw6;->b:[B
-
-    sget-object v2, Liu7;->o:[B
-
-    invoke-static {v1, v2}, Ljava/util/Arrays;->equals([B[B)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    const/4 v1, 0x2
-
-    iget-object p0, p0, Lhw6;->b:[B
-
-    invoke-static {v1, p0}, Lo13;->b(I[B)I
-
-    move-result p0
-
-    add-int/2addr v0, p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final mergeFrom(Ln13;)Lgr8;
-    .locals 2
-
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Ln13;->s()I
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    const/16 v1, 0x8
-
-    if-eq v0, v1, :cond_2
-
-    const/16 v1, 0x12
-
-    if-eq v0, v1, :cond_1
-
-    invoke-virtual {p1, v0}, Ln13;->u(I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {p1}, Ln13;->g()[B
-
-    move-result-object v0
-
-    iput-object v0, p0, Lhw6;->b:[B
-
-    goto :goto_0
-
-    :cond_2
-    invoke-virtual {p1}, Ln13;->p()I
-
-    move-result v0
-
-    iput v0, p0, Lhw6;->a:I
-
-    goto :goto_0
-
-    :cond_3
-    :goto_1
     return-object p0
 .end method
 
-.method public final writeTo(Lo13;)V
+.method public final a0()Lcdc;
     .locals 2
 
-    iget v0, p0, Lhw6;->a:I
+    iget v0, p0, Lr36;->b:I
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    const/4 v1, 0x1
+    sget-object p0, Lcdc;->p0:Lcdc;
 
-    invoke-virtual {p1, v1, v0}, Lo13;->G(II)V
+    return-object p0
 
     :cond_0
-    iget-object v0, p0, Lhw6;->b:[B
+    new-instance v0, Lcdc;
 
-    sget-object v1, Liu7;->o:[B
+    iget-object v1, p0, Lr36;->c:Ljava/lang/Object;
 
-    invoke-static {v0, v1}, Ljava/util/Arrays;->equals([B[B)Z
+    check-cast v1, [Ljava/lang/Object;
 
-    move-result v0
+    iget p0, p0, Lr36;->b:I
 
-    if-nez v0, :cond_1
+    invoke-direct {v0, p0, v1}, Lcdc;-><init>(I[Ljava/lang/Object;)V
 
-    const/4 v0, 0x2
+    return-object v0
+.end method
 
-    iget-object p0, p0, Lhw6;->b:[B
+.method public final b0(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
 
-    invoke-virtual {p1, v0, p0}, Lo13;->s(I[B)V
+    invoke-super {p0, p1, p2}, Lr36;->T(Ljava/lang/Object;Ljava/lang/Object;)Lr36;
 
-    :cond_1
     return-void
+.end method
+
+.method public final bridge synthetic x()Lax6;
+    .locals 0
+
+    invoke-virtual {p0}, Lhw6;->a0()Lcdc;
+
+    move-result-object p0
+
+    return-object p0
 .end method

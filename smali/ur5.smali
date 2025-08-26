@@ -1,275 +1,51 @@
 .class public final Lur5;
-.super Ljgd;
+.super Lp0;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic X:I
+.field public final c:Lgsc;
 
-.field public final Y:Ljava/lang/Object;
-
-.field public final Z:Ljava/lang/Object;
-
-.field public final w0:Ln26;
+.field public final o:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/ExecutorService;Lsmc;Lh87;Lio8;)V
-    .locals 1
+.method public constructor <init>(Lnq5;Lgsc;)V
+    .locals 0
 
-    const/4 v0, 0x1
+    invoke-direct {p0, p1}, Lp0;-><init>(Llq5;)V
 
-    iput v0, p0, Lur5;->X:I
+    iput-object p2, p0, Lur5;->c:Lgsc;
 
-    .line 5
-    invoke-direct {p0, p1}, Ljgd;-><init>(Ljava/util/concurrent/Executor;)V
+    const/4 p1, 0x1
 
-    .line 6
-    iput-object p2, p0, Lur5;->Y:Ljava/lang/Object;
-
-    .line 7
-    iput-object p3, p0, Lur5;->Z:Ljava/lang/Object;
-
-    .line 8
-    iput-object p4, p0, Lur5;->w0:Ln26;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/util/concurrent/ExecutorService;Lzx1;Lgu2;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lur5;->X:I
-
-    .line 1
-    invoke-direct {p0, p1}, Ljgd;-><init>(Ljava/util/concurrent/Executor;)V
-
-    .line 2
-    iput-object p1, p0, Lur5;->Y:Ljava/lang/Object;
-
-    .line 3
-    iput-object p2, p0, Lur5;->Z:Ljava/lang/Object;
-
-    .line 4
-    iput-object p3, p0, Lur5;->w0:Ln26;
+    iput-boolean p1, p0, Lur5;->o:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public s(Lb7c;ILjava/util/List;)V
-    .locals 2
+.method public final f(Lvr5;)V
+    .locals 3
 
-    iget v0, p0, Lur5;->X:I
+    iget-object v0, p0, Lur5;->c:Lgsc;
 
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0, p1, p2, p3}, Lf6c;->s(Lb7c;ILjava/util/List;)V
-
-    return-void
-
-    :pswitch_0
-    check-cast p1, Lchd;
-
-    invoke-interface {p3}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-interface {p3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Lgsc;->a()Lesc;
 
     move-result-object v0
 
-    :cond_1
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    new-instance v1, Ltr5;
 
-    move-result v1
+    iget-object v2, p0, Lp0;->b:Llq5;
 
-    if-eqz v1, :cond_2
+    iget-boolean p0, p0, Lur5;->o:Z
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-direct {v1, p1, v0, v2, p0}, Ltr5;-><init>(Lj9e;Lesc;Ldnb;Z)V
 
-    move-result-object v1
+    invoke-interface {p1, v1}, Lj9e;->d(Ll9e;)V
 
-    instance-of v1, v1, Lci8;
+    invoke-virtual {v0, v1}, Lesc;->b(Ljava/lang/Runnable;)Lam4;
 
-    if-eqz v1, :cond_1
-
-    iget-object p0, p0, Lig7;->o:Lmu;
-
-    iget-object p0, p0, Lmu;->f:Ljava/util/List;
-
-    invoke-interface {p0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lpg7;
-
-    invoke-static {p3}, Lo23;->e0(Ljava/util/List;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p0, p2}, Lchd;->B(Lpg7;Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_2
-    :goto_0
-    invoke-virtual {p0, p1, p2}, Ljgd;->H(Lchd;I)V
-
-    :goto_1
     return-void
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final t(Landroid/view/ViewGroup;I)Lb7c;
-    .locals 2
-
-    iget v0, p0, Lur5;->X:I
-
-    packed-switch v0, :pswitch_data_0
-
-    sget v0, La7a;->D:I
-
-    if-ne p2, v0, :cond_0
-
-    new-instance p2, Lrq3;
-
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lur5;->w0:Ln26;
-
-    check-cast v0, Lu16;
-
-    check-cast v0, Lio8;
-
-    iget-object p0, p0, Lur5;->Y:Ljava/lang/Object;
-
-    check-cast p0, Lsmc;
-
-    invoke-direct {p2, p1, p0, v0}, Lrq3;-><init>(Landroid/content/Context;Lsmc;Lio8;)V
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p2, Lrq3;
-
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    iget-object p0, p0, Lur5;->Z:Ljava/lang/Object;
-
-    check-cast p0, Lu16;
-
-    check-cast p0, Lh87;
-
-    invoke-direct {p2, p1, p0}, Lrq3;-><init>(Landroid/content/Context;Lh87;)V
-
-    :goto_0
-    return-object p2
-
-    :pswitch_0
-    sget v0, Lxob;->oneme_folder_widget_section_view_type:I
-
-    if-ne p2, v0, :cond_1
-
-    new-instance p2, Lh41;
-
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lur5;->Y:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/concurrent/Executor;
-
-    check-cast v0, Ljava/util/concurrent/ExecutorService;
-
-    iget-object p0, p0, Lur5;->Z:Ljava/lang/Object;
-
-    check-cast p0, Lvr5;
-
-    check-cast p0, Lzx1;
-
-    invoke-direct {p2, p1, v0, p0}, Lh41;-><init>(Landroid/content/Context;Ljava/util/concurrent/ExecutorService;Lzx1;)V
-
-    goto :goto_1
-
-    :cond_1
-    sget v0, Lxob;->oneme_folder_widget_section_empty_view_type:I
-
-    if-ne p2, v0, :cond_2
-
-    new-instance p2, Lh41;
-
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    iget-object p0, p0, Lur5;->w0:Ln26;
-
-    check-cast p0, Ls16;
-
-    check-cast p0, Lgu2;
-
-    invoke-direct {p2, p1, p0}, Lh41;-><init>(Landroid/content/Context;Lgu2;)V
-
-    :goto_1
-    return-object p2
-
-    :cond_2
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-class p1, Lur5;
-
-    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object p1
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Not supported viewType "
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p2, " for "
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

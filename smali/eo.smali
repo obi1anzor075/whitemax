@@ -1,113 +1,177 @@
 .class public final Leo;
-.super Lvx3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic g:I
+.field public a:I
 
-.field public final synthetic h:I
+.field public b:F
 
-.field public final synthetic i:Ljava/lang/ref/WeakReference;
+.field public c:F
 
-.field public final synthetic j:Ljo;
+.field public d:F
+
+.field public e:[I
+
+.field public f:Z
+
+.field public final g:Landroid/widget/TextView;
+
+.field public final h:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Ljo;IILjava/lang/ref/WeakReference;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Landroid/graphics/RectF;
+
+    invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
+
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/widget/TextView;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Leo;->j:Ljo;
+    const/4 v0, 0x0
 
-    iput p2, p0, Leo;->g:I
+    iput v0, p0, Leo;->a:I
 
-    iput p3, p0, Leo;->h:I
+    const/high16 v1, -0x40800000    # -1.0f
 
-    iput-object p4, p0, Leo;->i:Ljava/lang/ref/WeakReference;
+    iput v1, p0, Leo;->b:F
+
+    iput v1, p0, Leo;->c:F
+
+    iput v1, p0, Leo;->d:F
+
+    new-array v1, v0, [I
+
+    iput-object v1, p0, Leo;->e:[I
+
+    iput-boolean v0, p0, Leo;->f:Z
+
+    iput-object p1, p0, Leo;->g:Landroid/widget/TextView;
+
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    iput-object p1, p0, Leo;->h:Landroid/content/Context;
+
+    new-instance p0, Lbo;
+
+    invoke-direct {p0}, Lbo;-><init>()V
 
     return-void
+.end method
+
+.method public static a([I)[I
+    .locals 6
+
+    array-length v0, p0
+
+    if-nez v0, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    invoke-static {p0}, Ljava/util/Arrays;->sort([I)V
+
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    const/4 v2, 0x0
+
+    move v3, v2
+
+    :goto_0
+    if-ge v3, v0, :cond_2
+
+    aget v4, p0, v3
+
+    if-lez v4, :cond_1
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    invoke-static {v1, v5}, Ljava/util/Collections;->binarySearch(Ljava/util/List;Ljava/lang/Object;)I
+
+    move-result v5
+
+    if-gez v5, :cond_1
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_1
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    if-ne v0, v3, :cond_3
+
+    :goto_1
+    return-object p0
+
+    :cond_3
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+
+    move-result p0
+
+    new-array v0, p0, [I
+
+    :goto_2
+    if-ge v2, p0, :cond_4
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Integer;
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    aput v3, v0, v2
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_2
+
+    :cond_4
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final D(I)V
+.method public final b()Z
     .locals 0
 
-    return-void
-.end method
+    iget-object p0, p0, Leo;->g:Landroid/widget/TextView;
 
-.method public final E(Landroid/graphics/Typeface;)V
-    .locals 3
+    instance-of p0, p0, Landroidx/appcompat/widget/AppCompatEditText;
 
-    const/4 v0, -0x1
+    xor-int/lit8 p0, p0, 0x1
 
-    iget v1, p0, Leo;->g:I
-
-    if-eq v1, v0, :cond_1
-
-    iget v0, p0, Leo;->h:I
-
-    and-int/lit8 v0, v0, 0x2
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-static {p1, v1, v0}, Lio;->a(Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;
-
-    move-result-object p1
-
-    :cond_1
-    iget-object v0, p0, Leo;->j:Ljo;
-
-    iget-boolean v1, v0, Ljo;->m:Z
-
-    if-eqz v1, :cond_3
-
-    iput-object p1, v0, Ljo;->l:Landroid/graphics/Typeface;
-
-    iget-object p0, p0, Leo;->i:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/widget/TextView;
-
-    if-eqz p0, :cond_3
-
-    invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    iget v0, v0, Ljo;->j:I
-
-    new-instance v1, Lfo;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, p0, p1, v0, v2}, Lfo;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V
-
-    invoke-virtual {p0, v1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
-
-    goto :goto_1
-
-    :cond_2
-    iget v0, v0, Ljo;->j:I
-
-    invoke-virtual {p0, p1, v0}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;I)V
-
-    :cond_3
-    :goto_1
-    return-void
+    return p0
 .end method

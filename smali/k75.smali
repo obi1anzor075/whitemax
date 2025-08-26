@@ -1,30 +1,31 @@
-.class public interface abstract Lk75;
+.class public final Lk75;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a()[Le75;
-.end method
+# instance fields
+.field public final a:Ljava/util/ArrayList;
 
-.method public b(Landroid/net/Uri;Ljava/util/Map;)[Le75;
+.field public final b:Lqmd;
+
+.field public final c:I
+
+.field public final d:J
+
+
+# direct methods
+.method public constructor <init>(Ljava/util/ArrayList;Lqmd;IJ)V
     .locals 0
 
-    invoke-interface {p0}, Lk75;->a()[Le75;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object p0
+    iput-object p1, p0, Lk75;->a:Ljava/util/ArrayList;
 
-    return-object p0
-.end method
+    iput-object p2, p0, Lk75;->b:Lqmd;
 
-.method public d(Lsmc;)V
-    .locals 0
+    iput p3, p0, Lk75;->c:I
 
-    return-void
-.end method
-
-.method public k(Z)V
-    .locals 0
+    iput-wide p4, p0, Lk75;->d:J
 
     return-void
 .end method

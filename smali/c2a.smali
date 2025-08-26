@@ -10,40 +10,22 @@
 
 .field public static final c:I
 
-.field public static final d:I
-
-.field public static final e:I
-
-.field public static final f:I
-
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    sget v0, Lwob;->oneme_picker_input_view:I
+    sget v0, Lsxb;->force_update_subtitle:I
 
     sput v0, Lc2a;->a:I
 
-    sget v0, Lwob;->oneme_picker_media_keyboard_container:I
+    sget v0, Lsxb;->force_update_title:I
 
     sput v0, Lc2a;->b:I
 
-    sget v0, Lwob;->oneme_picker_quote_view:I
+    sget v0, Lsxb;->update_button:I
 
     sput v0, Lc2a;->c:I
-
-    sget v0, Lwob;->oneme_picker_toolbar:I
-
-    sput v0, Lc2a;->d:I
-
-    sget v0, Lwob;->oneme_picker_toolbar_action_cancel_selection:I
-
-    sput v0, Lc2a;->e:I
-
-    sget v0, Lwob;->oneme_picker_toolbar_action_select:I
-
-    sput v0, Lc2a;->f:I
 
     return-void
 .end method

@@ -1,22 +1,19 @@
 .class public final Lwa1;
-.super Ljava/lang/Object;
+.super Lya1;
 .source "SourceFile"
-
-# interfaces
-.implements Lya1;
 
 
 # instance fields
-.field public final a:Lmge;
+.field public final a:Z
 
 
 # direct methods
-.method public constructor <init>(Llge;)V
+.method public constructor <init>(Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lwa1;->a:Lmge;
+    iput-boolean p1, p0, Lwa1;->a:Z
 
     return-void
 .end method
@@ -44,15 +41,11 @@
     :cond_1
     check-cast p1, Lwa1;
 
-    iget-object p0, p0, Lwa1;->a:Lmge;
+    iget-boolean p0, p0, Lwa1;->a:Z
 
-    iget-object p1, p1, Lwa1;->a:Lmge;
+    iget-boolean p1, p1, Lwa1;->a:Z
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
+    if-eq p0, p1, :cond_2
 
     return v2
 
@@ -60,20 +53,12 @@
     return v0
 .end method
 
-.method public final getText()Lmge;
-    .locals 0
-
-    iget-object p0, p0, Lwa1;->a:Lmge;
-
-    return-object p0
-.end method
-
 .method public final hashCode()I
     .locals 0
 
-    iget-object p0, p0, Lwa1;->a:Lmge;
+    iget-boolean p0, p0, Lwa1;->a:Z
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
 
     move-result p0
 
@@ -83,17 +68,13 @@
 .method public final toString()Ljava/lang/String;
     .locals 2
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Loading(text="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lwa1;->a:Lmge;
+    const-string v0, "TalkingState(isEnabled="
 
     const-string v1, ")"
 
-    invoke-static {v0, p0, v1}, Lme4;->k(Ljava/lang/StringBuilder;Lmge;Ljava/lang/String;)Ljava/lang/String;
+    iget-boolean p0, p0, Lwa1;->a:Z
+
+    invoke-static {v0, v1, p0}, Lzge;->p(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
 
     move-result-object p0
 

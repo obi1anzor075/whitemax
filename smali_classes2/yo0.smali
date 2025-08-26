@@ -1,64 +1,126 @@
 .class public final Lyo0;
-.super Landroid/text/style/ClickableSpan;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public X:I
 
-.field public final b:I
+.field public final synthetic Y:Lzo0;
 
-.field public c:Lmf7;
+.field public final synthetic Z:Lji0;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>(Lzo0;Lji0;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
+    iput-object p1, p0, Lyo0;->Y:Lzo0;
 
-    iput-object p1, p0, Lyo0;->a:Ljava/lang/String;
+    iput-object p2, p0, Lyo0;->Z:Lji0;
 
-    iput p2, p0, Lyo0;->b:I
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 3
-
-    iget-object v0, p0, Lyo0;->c:Lmf7;
-
-    if-eqz v0, :cond_0
-
-    sget-object v1, Lsf7;->c:Lsf7;
-
-    iget-object v2, v0, Lmf7;->b:Ljava/lang/Object;
-
-    check-cast v2, Landroid/text/style/ClickableSpan;
-
-    iget-object v0, v0, Lmf7;->a:Lrf7;
-
-    iget-object p0, p0, Lyo0;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, p1, p0, v1, v2}, Lrf7;->b(Landroid/view/View;Ljava/lang/String;Lsf7;Landroid/text/style/ClickableSpan;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final updateDrawState(Landroid/text/TextPaint;)V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    iget p0, p0, Lyo0;->b:I
+    check-cast p1, Lox3;
 
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setColor(I)V
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    const/4 p0, 0x1
+    invoke-virtual {p0, p1, p2}, Lyo0;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setUnderlineText(Z)V
+    move-result-object p0
 
-    return-void
+    check-cast p0, Lyo0;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lyo0;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
+
+    new-instance p1, Lyo0;
+
+    iget-object v0, p0, Lyo0;->Y:Lzo0;
+
+    iget-object p0, p0, Lyo0;->Z:Lji0;
+
+    invoke-direct {p1, v0, p0, p2}, Lyo0;-><init>(Lzo0;Lji0;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
+
+    iget v0, p0, Lyo0;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lyo0;->Y:Lzo0;
+
+    iget-object p1, p1, Lzo0;->b:Lwjd;
+
+    new-instance v0, Luo0;
+
+    iget-object v2, p0, Lyo0;->Z:Lji0;
+
+    iget-wide v2, v2, Lki0;->a:J
+
+    invoke-direct {v0, v2, v3}, Luo0;-><init>(J)V
+
+    iput v1, p0, Lyo0;->X:I
+
+    invoke-virtual {p1, v0, p0}, Lwjd;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

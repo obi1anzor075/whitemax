@@ -1,88 +1,56 @@
 .class public final Lww2;
-.super Lt37;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lvw2;
+.implements Lol7;
 
 
-# instance fields
-.field public final b:Lyw2;
+# static fields
+.field public static final a:Lww2;
+
+.field public static final b:I
+
+.field public static final c:J
 
 
 # direct methods
-.method public constructor <init>(Lyw2;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;-><init>()V
+    new-instance v0, Lww2;
 
-    iput-object p1, p0, Lww2;->b:Lyw2;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lww2;->a:Lww2;
+
+    sget v0, Lltb;->oneme_chat_list_loading_view_type:I
+
+    sput v0, Lww2;->b:I
+
+    sget v0, Lltb;->oneme_chat_list_loading_id:I
+
+    int-to-long v0, v0
+
+    sput-wide v0, Lww2;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Throwable;)Z
+.method public final getItemId()J
+    .locals 2
+
+    sget-wide v0, Lww2;->c:J
+
+    return-wide v0
+.end method
+
+.method public final m()I
     .locals 0
 
-    iget-object p0, p0, Lt37;->a:Li47;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    invoke-virtual {p0, p1}, Li47;->childCancelled(Ljava/lang/Throwable;)Z
-
-    move-result p0
+    sget p0, Lww2;->b:I
 
     return p0
-.end method
-
-.method public final c()Z
-    .locals 0
-
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final d(Ljava/lang/Throwable;)V
-    .locals 0
-
-    iget-object p1, p0, Lt37;->a:Li47;
-
-    if-eqz p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    iget-object p0, p0, Lww2;->b:Lyw2;
-
-    invoke-interface {p0, p1}, Lyw2;->parentCancelled(Lhja;)V
-
-    return-void
-.end method
-
-.method public final getParent()Lg37;
-    .locals 0
-
-    iget-object p0, p0, Lt37;->a:Li47;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return-object p0
 .end method

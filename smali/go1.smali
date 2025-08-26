@@ -3,22 +3,22 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Lv56;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Lpo1;
+.field public final synthetic b:Llo1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lpo1;I)V
+.method public synthetic constructor <init>(Llo1;I)V
     .locals 0
 
     iput p2, p0, Lgo1;->a:I
 
-    iput-object p1, p0, Lgo1;->b:Lpo1;
+    iput-object p1, p0, Lgo1;->b:Llo1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -28,111 +28,133 @@
 
 # virtual methods
 .method public final invoke()Ljava/lang/Object;
-    .locals 4
+    .locals 3
 
     iget v0, p0, Lgo1;->a:I
 
     packed-switch v0, :pswitch_data_0
 
-    new-instance v0, Lko1;
+    new-instance v0, Landroid/graphics/drawable/GradientDrawable;
 
-    iget-object p0, p0, Lgo1;->b:Lpo1;
+    sget-object v1, Landroid/graphics/drawable/GradientDrawable$Orientation;->TOP_BOTTOM:Landroid/graphics/drawable/GradientDrawable$Orientation;
 
-    invoke-direct {v0, p0}, Lko1;-><init>(Lpo1;)V
+    sget-object v2, Lqp4;->q0:Lap9;
+
+    iget-object p0, p0, Lgo1;->b:Llo1;
+
+    invoke-virtual {v2, p0}, Lap9;->j(Landroid/view/View;)Lk9a;
+
+    move-result-object p0
+
+    iget-object p0, p0, Lk9a;->c:Lyha;
+
+    invoke-interface {p0}, Lyha;->b()Lfe0;
+
+    move-result-object p0
+
+    iget p0, p0, Lfe0;->f:I
+
+    const/4 v2, 0x0
+
+    filled-new-array {p0, v2, v2}, [I
+
+    move-result-object p0
+
+    invoke-direct {v0, v1, p0}, Landroid/graphics/drawable/GradientDrawable;-><init>(Landroid/graphics/drawable/GradientDrawable$Orientation;[I)V
 
     return-object v0
 
     :pswitch_0
-    new-instance v0, Lru/ok/android/externcalls/sdk/AudioLevelListener;
+    new-instance v0, Landroid/graphics/drawable/ShapeDrawable;
 
-    new-instance v1, Landroid/os/Handler;
+    new-instance v1, Landroid/graphics/drawable/shapes/OvalShape;
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    invoke-direct {v1}, Landroid/graphics/drawable/shapes/OvalShape;-><init>()V
 
-    move-result-object v2
+    invoke-direct {v0, v1}, Landroid/graphics/drawable/ShapeDrawable;-><init>(Landroid/graphics/drawable/shapes/Shape;)V
 
-    invoke-direct {v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    invoke-virtual {v0}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
 
-    new-instance v2, Lb;
+    move-result-object v1
 
-    iget-object p0, p0, Lgo1;->b:Lpo1;
+    sget-object v2, Lqp4;->q0:Lap9;
 
-    const/16 v3, 0x18
+    iget-object p0, p0, Lgo1;->b:Llo1;
 
-    invoke-direct {v2, v3, p0}, Lb;-><init>(ILjava/lang/Object;)V
+    invoke-virtual {v2, p0}, Lap9;->j(Landroid/view/View;)Lk9a;
 
-    const/16 p0, 0x1f4
+    move-result-object p0
 
-    invoke-direct {v0, p0, v1, v2}, Lru/ok/android/externcalls/sdk/AudioLevelListener;-><init>(SLandroid/os/Handler;Ljava/lang/Runnable;)V
+    iget-object p0, p0, Lk9a;->c:Lyha;
+
+    invoke-interface {p0}, Lyha;->b()Lfe0;
+
+    move-result-object p0
+
+    iget p0, p0, Lfe0;->f:I
+
+    invoke-virtual {v1, p0}, Landroid/graphics/Paint;->setColor(I)V
 
     return-object v0
 
     :pswitch_1
-    iget-object p0, p0, Lgo1;->b:Lpo1;
+    new-instance v0, Landroid/graphics/drawable/ShapeDrawable;
 
-    iget-object p0, p0, Lpo1;->r:Lr7e;
+    new-instance v1, Landroid/graphics/drawable/shapes/OvalShape;
 
-    invoke-virtual {p0}, Lr7e;->getValue()Ljava/lang/Object;
+    invoke-direct {v1}, Landroid/graphics/drawable/shapes/OvalShape;-><init>()V
+
+    invoke-direct {v0, v1}, Landroid/graphics/drawable/ShapeDrawable;-><init>(Landroid/graphics/drawable/shapes/Shape;)V
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
+
+    move-result-object v1
+
+    sget-object v2, Lqp4;->q0:Lap9;
+
+    iget-object p0, p0, Lgo1;->b:Llo1;
+
+    invoke-virtual {v2, p0}, Lap9;->j(Landroid/view/View;)Lk9a;
 
     move-result-object p0
 
-    check-cast p0, Llc9;
+    iget-object p0, p0, Lk9a;->c:Lyha;
 
-    return-object p0
+    invoke-interface {p0}, Lyha;->b()Lfe0;
+
+    move-result-object p0
+
+    iget p0, p0, Lfe0;->l:I
+
+    invoke-virtual {v1, p0}, Landroid/graphics/Paint;->setColor(I)V
+
+    return-object v0
 
     :pswitch_2
-    iget-object p0, p0, Lgo1;->b:Lpo1;
+    iget-object p0, p0, Lgo1;->b:Llo1;
 
-    iget-object p0, p0, Lpo1;->r:Lr7e;
+    iget-object p0, p0, Llo1;->c1:Lv56;
 
-    invoke-virtual {p0}, Lr7e;->getValue()Ljava/lang/Object;
+    if-eqz p0, :cond_0
+
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Llc9;
+    check-cast p0, Lugf;
 
-    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    goto :goto_0
 
-    invoke-interface {p0, v0}, Llc9;->g(Ljava/lang/Object;)Z
+    :cond_0
+    const/4 p0, 0x0
 
-    sget-object p0, Ljue;->a:Ljue;
-
+    :goto_0
     return-object p0
 
-    :pswitch_3
-    iget-object p0, p0, Lgo1;->b:Lpo1;
-
-    iget-object p0, p0, Lpo1;->p:Lr7e;
-
-    invoke-virtual {p0}, Lr7e;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lmc9;
-
-    return-object p0
-
-    :pswitch_4
-    iget-object p0, p0, Lgo1;->b:Lpo1;
-
-    iget-object p0, p0, Lpo1;->b:Lqz0;
-
-    check-cast p0, Lrz0;
-
-    invoke-virtual {p0}, Lrz0;->b()Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lhrd;->a(Ljava/lang/Object;)Lgrd;
-
-    move-result-object p0
-
-    return-object p0
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_4
-        :pswitch_3
         :pswitch_2
         :pswitch_1
         :pswitch_0

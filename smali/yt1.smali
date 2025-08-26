@@ -1,202 +1,144 @@
-.class public final Lyt1;
+.class public final synthetic Lyt1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/concurrent/Executor;
-
-
-# static fields
-.field public static final c:Ll30;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field public final synthetic a:I
 
-.field public b:Ljava/util/concurrent/ThreadPoolExecutor;
+.field public final synthetic b:Lo9g;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Lo9g;I)V
+    .locals 0
 
-    new-instance v0, Ll30;
+    iput p2, p0, Lyt1;->a:I
 
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Ll30;-><init>(I)V
-
-    sput-object v0, Lyt1;->c:Ll30;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 9
+    iput-object p1, p0, Lyt1;->b:Lo9g;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lyt1;->a:Ljava/lang/Object;
-
-    new-instance v0, Ljava/util/concurrent/ThreadPoolExecutor;
-
-    sget-object v6, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    new-instance v7, Ljava/util/concurrent/LinkedBlockingQueue;
-
-    invoke-direct {v7}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
-
-    const/4 v2, 0x1
-
-    sget-object v8, Lyt1;->c:Ll30;
-
-    const/4 v3, 0x1
-
-    const-wide/16 v4, 0x0
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v8}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
-
-    new-instance v1, Lxt1;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v2}, Lxt1;-><init>(I)V
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/ThreadPoolExecutor;->setRejectedExecutionHandler(Ljava/util/concurrent/RejectedExecutionHandler;)V
-
-    iput-object v0, p0, Lyt1;->b:Ljava/util/concurrent/ThreadPoolExecutor;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lzd2;)V
-    .locals 10
+.method public final run()V
+    .locals 3
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget v0, p0, Lyt1;->a:I
 
-    iget-object v0, p0, Lyt1;->a:Ljava/lang/Object;
+    iget-object p0, p0, Lyt1;->b:Lo9g;
 
-    monitor-enter v0
+    packed-switch v0, :pswitch_data_0
 
-    :try_start_0
-    iget-object v1, p0, Lyt1;->b:Ljava/util/concurrent/ThreadPoolExecutor;
+    iget-object v0, p0, Lo9g;->c:Ljava/lang/Object;
 
-    invoke-virtual {v1}, Ljava/util/concurrent/ThreadPoolExecutor;->isShutdown()Z
+    check-cast v0, Lnz7;
 
-    move-result v1
+    iget-object v0, v0, Lnz7;->c:Ljava/lang/Object;
 
-    if-eqz v1, :cond_0
+    check-cast v0, Ldu1;
 
-    new-instance v1, Ljava/util/concurrent/ThreadPoolExecutor;
+    iget v0, v0, Ldu1;->O0:I
 
-    sget-object v7, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    const/16 v1, 0x8
 
-    new-instance v8, Ljava/util/concurrent/LinkedBlockingQueue;
+    if-eq v0, v1, :cond_0
 
-    invoke-direct {v8}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
+    iget-object p0, p0, Lo9g;->c:Ljava/lang/Object;
 
-    sget-object v9, Lyt1;->c:Ll30;
+    check-cast p0, Lnz7;
 
-    const/4 v4, 0x1
+    iget-object p0, p0, Lnz7;->c:Ljava/lang/Object;
 
-    const-wide/16 v5, 0x0
+    check-cast p0, Ldu1;
 
-    const/4 v3, 0x1
-
-    move-object v2, v1
-
-    invoke-direct/range {v2 .. v9}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
-
-    new-instance v2, Lxt1;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v2, v3}, Lxt1;-><init>(I)V
-
-    invoke-virtual {v1, v2}, Ljava/util/concurrent/ThreadPoolExecutor;->setRejectedExecutionHandler(Ljava/util/concurrent/RejectedExecutionHandler;)V
-
-    iput-object v1, p0, Lyt1;->b:Ljava/util/concurrent/ThreadPoolExecutor;
+    invoke-virtual {p0}, Ldu1;->toString()Ljava/lang/String;
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p0
+    :cond_0
+    iget-object v0, p0, Lo9g;->c:Ljava/lang/Object;
+
+    check-cast v0, Lnz7;
+
+    iget-object v0, v0, Lnz7;->c:Ljava/lang/Object;
+
+    check-cast v0, Ldu1;
+
+    invoke-virtual {v0}, Ldu1;->toString()Ljava/lang/String;
+
+    iget-object v0, p0, Lo9g;->c:Ljava/lang/Object;
+
+    check-cast v0, Lnz7;
+
+    iget-object v0, v0, Lnz7;->c:Ljava/lang/Object;
+
+    check-cast v0, Ldu1;
+
+    const/4 v1, 0x7
+
+    invoke-virtual {v0, v1}, Ldu1;->E(I)V
+
+    iget-object p0, p0, Lo9g;->c:Ljava/lang/Object;
+
+    check-cast p0, Lnz7;
+
+    iget-object p0, p0, Lnz7;->c:Ljava/lang/Object;
+
+    check-cast p0, Ldu1;
+
+    iget-object p0, p0, Ldu1;->o0:Lcu1;
+
+    invoke-virtual {p0}, Lcu1;->b()V
+
+    :goto_0
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Lo9g;->b:Ljava/lang/Object;
+
+    check-cast v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
 
     goto :goto_1
 
-    :cond_0
-    :goto_0
-    iget-object p0, p0, Lyt1;->b:Ljava/util/concurrent/ThreadPoolExecutor;
+    :cond_1
+    iget-object v0, p0, Lo9g;->c:Ljava/lang/Object;
 
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    check-cast v0, Lnz7;
 
-    new-instance v0, Ljava/util/LinkedHashSet;
+    iget-object v0, v0, Lnz7;->c:Ljava/lang/Object;
 
-    iget-object p1, p1, Lzd2;->g:Ljava/lang/Object;
+    check-cast v0, Ldu1;
 
-    check-cast p1, Ljava/util/ArrayList;
+    iget-object v0, v0, Ldu1;->c:Lw4d;
 
-    invoke-direct {v0, p1}, Ljava/util/LinkedHashSet;-><init>(Ljava/util/Collection;)V
+    new-instance v1, Lyt1;
 
-    invoke-interface {v0}, Ljava/util/Set;->size()I
+    const/4 v2, 0x1
 
-    move-result p1
+    invoke-direct {v1, p0, v2}, Lyt1;-><init>(Lo9g;I)V
 
-    const/4 v0, 0x1
-
-    invoke-static {v0, p1}, Ljava/lang/Math;->max(II)I
-
-    move-result p1
-
-    invoke-virtual {p0, p1}, Ljava/util/concurrent/ThreadPoolExecutor;->setMaximumPoolSize(I)V
-
-    invoke-virtual {p0, p1}, Ljava/util/concurrent/ThreadPoolExecutor;->setCorePoolSize(I)V
-
-    return-void
+    invoke-virtual {v0, v1}, Lw4d;->execute(Ljava/lang/Runnable;)V
 
     :goto_1
-    :try_start_1
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p0
-.end method
-
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v0, p0, Lyt1;->a:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object p0, p0, Lyt1;->b:Ljava/util/concurrent/ThreadPoolExecutor;
-
-    invoke-virtual {p0, p1}, Ljava/util/concurrent/ThreadPoolExecutor;->execute(Ljava/lang/Runnable;)V
-
-    monitor-exit v0
-
     return-void
 
-    :catchall_0
-    move-exception p0
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

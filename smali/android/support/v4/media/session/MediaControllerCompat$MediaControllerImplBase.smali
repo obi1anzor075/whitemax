@@ -74,7 +74,7 @@
 
     invoke-interface {p0, p1}, Landroid/support/v4/media/session/IMediaSession;->addQueueItem(Landroid/support/v4/media/MediaDescriptionCompat;)V
 
-    goto :goto_0
+    return-void
 
     .line 3
     :cond_0
@@ -89,7 +89,6 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
-    :goto_0
     return-void
 .end method
 
@@ -119,7 +118,7 @@
 
     invoke-interface {p0, p1, p2}, Landroid/support/v4/media/session/IMediaSession;->addQueueItemAt(Landroid/support/v4/media/MediaDescriptionCompat;I)V
 
-    goto :goto_0
+    return-void
 
     .line 6
     :cond_0
@@ -134,7 +133,6 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
-    :goto_0
     return-void
 .end method
 
@@ -270,7 +268,7 @@
 .end method
 
 .method public getPlaybackInfo()Landroid/support/v4/media/session/MediaControllerCompat$PlaybackInfo;
-    .locals 7
+    .locals 6
 
     :try_start_0
     iget-object p0, p0, Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplBase;->mBinder:Landroid/support/v4/media/session/IMediaSession;
@@ -279,7 +277,7 @@
 
     move-result-object p0
 
-    new-instance v6, Landroid/support/v4/media/session/MediaControllerCompat$PlaybackInfo;
+    new-instance v0, Landroid/support/v4/media/session/MediaControllerCompat$PlaybackInfo;
 
     iget v1, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->volumeType:I
 
@@ -291,13 +289,11 @@
 
     iget v5, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->currentVolume:I
 
-    move-object v0, v6
-
     invoke-direct/range {v0 .. v5}, Landroid/support/v4/media/session/MediaControllerCompat$PlaybackInfo;-><init>(IIIII)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-object v6
+    return-object v0
 
     :catch_0
     const/4 p0, 0x0
@@ -574,14 +570,13 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-void
 
     :catch_0
     const/16 p0, 0x8
 
     invoke-virtual {p1, p0, p2, p2}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;->postToHandler(ILjava/lang/Object;Landroid/os/Bundle;)V
 
-    :goto_0
     return-void
 
     :cond_0
@@ -618,7 +613,7 @@
 
     invoke-interface {p0, p1}, Landroid/support/v4/media/session/IMediaSession;->removeQueueItem(Landroid/support/v4/media/MediaDescriptionCompat;)V
 
-    goto :goto_0
+    return-void
 
     :cond_0
     new-instance p0, Ljava/lang/UnsupportedOperationException;
@@ -632,7 +627,6 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
-    :goto_0
     return-void
 .end method
 

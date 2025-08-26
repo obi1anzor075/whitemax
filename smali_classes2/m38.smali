@@ -1,54 +1,51 @@
-.class public final synthetic Lm38;
+.class public abstract synthetic Lm38;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
 
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;
+# static fields
+.field public static final synthetic $EnumSwitchMapping$0:[I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
-    iput p2, p0, Lm38;->a:I
+    const/4 v0, 0x3
 
-    iput-object p1, p0, Lm38;->b:Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;
+    invoke-static {v0}, Lzt1;->v(I)[I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object v1
+
+    array-length v1, v1
+
+    new-array v1, v1, [I
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x2
+
+    :try_start_0
+    aput v2, v1, v3
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    :try_start_1
+    aput v3, v1, v2
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    :catch_1
+    const/4 v2, 0x0
+
+    :try_start_2
+    aput v0, v1, v2
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
+    :catch_2
+    sput-object v1, Lm38;->$EnumSwitchMapping$0:[I
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final run()V
-    .locals 1
-
-    iget v0, p0, Lm38;->a:I
-
-    iget-object p0, p0, Lm38;->b:Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->a(Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;)V
-
-    return-void
-
-    :pswitch_0
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;->b(Lru/ok/android/externcalls/sdk/connection/internal/MediaConnectionManagerImpl;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

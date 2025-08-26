@@ -1,612 +1,372 @@
 .class public final Lrka;
-.super Ljava/lang/Object;
+.super Ln7e;
 .source "SourceFile"
 
-# interfaces
-.implements Lqka;
 
+# static fields
+.field public static final o:[B
 
-# instance fields
-.field public final X:Ljava/util/concurrent/ConcurrentHashMap$KeySetView;
-
-.field public final a:Lt97;
-
-.field public final b:Lt97;
-
-.field public final c:Lt97;
-
-.field public final o:Lru/ok/android/externcalls/sdk/video/VideoRender;
+.field public static final p:[B
 
 
 # direct methods
-.method public constructor <init>(Lt97;Lt97;Lt97;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/16 v0, 0x8
 
-    iput-object p3, p0, Lrka;->a:Lt97;
+    new-array v1, v0, [B
 
-    iput-object p1, p0, Lrka;->b:Lt97;
+    fill-array-data v1, :array_0
 
-    iput-object p2, p0, Lrka;->c:Lt97;
+    sput-object v1, Lrka;->o:[B
 
-    new-instance p1, Lru/ok/android/externcalls/sdk/video/VideoRender;
+    new-array v0, v0, [B
 
-    invoke-direct {p1}, Lru/ok/android/externcalls/sdk/video/VideoRender;-><init>()V
+    fill-array-data v0, :array_1
 
-    iput-object p1, p0, Lrka;->o:Lru/ok/android/externcalls/sdk/video/VideoRender;
-
-    invoke-static {}, Ljava/util/concurrent/ConcurrentHashMap;->newKeySet()Ljava/util/concurrent/ConcurrentHashMap$KeySetView;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lrka;->X:Ljava/util/concurrent/ConcurrentHashMap$KeySetView;
+    sput-object v0, Lrka;->p:[B
 
     return-void
+
+    nop
+
+    :array_0
+    .array-data 1
+        0x4ft
+        0x70t
+        0x75t
+        0x73t
+        0x48t
+        0x65t
+        0x61t
+        0x64t
+    .end array-data
+
+    :array_1
+    .array-data 1
+        0x4ft
+        0x70t
+        0x75t
+        0x73t
+        0x54t
+        0x61t
+        0x67t
+        0x73t
+    .end array-data
+.end method
+
+.method public static g(Labf;[B)Z
+    .locals 4
+
+    invoke-virtual {p0}, Labf;->c()I
+
+    move-result v0
+
+    array-length v1, p1
+
+    const/4 v2, 0x0
+
+    if-ge v0, v1, :cond_0
+
+    return v2
+
+    :cond_0
+    iget v0, p0, Labf;->b:I
+
+    array-length v1, p1
+
+    new-array v1, v1, [B
+
+    array-length v3, p1
+
+    invoke-virtual {p0, v2, v1, v3}, Labf;->e(I[BI)V
+
+    invoke-virtual {p0, v0}, Labf;->E(I)V
+
+    invoke-static {v1, p1}, Ljava/util/Arrays;->equals([B[B)Z
+
+    move-result p0
+
+    return p0
 .end method
 
 
 # virtual methods
-.method public final c()Lru/ok/android/externcalls/sdk/Conversation;
-    .locals 0
-
-    iget-object p0, p0, Lrka;->b:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lbt3;
-
-    invoke-virtual {p0}, Lbt3;->a()Lru/ok/android/externcalls/sdk/Conversation;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final clear()V
-    .locals 4
-
-    iget-object v0, p0, Lrka;->X:Ljava/util/concurrent/ConcurrentHashMap$KeySetView;
-
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lpka;
-
-    check-cast v2, Lan1;
-
-    invoke-virtual {v2}, Lan1;->c()V
-
-    const/4 v3, 0x0
-
-    iput-object v3, v2, Lan1;->x0:Lhze;
-
-    const/4 v3, 0x0
-
-    iput-boolean v3, v2, Lan1;->y0:Z
-
-    goto :goto_0
-
-    :cond_0
-    iget-object p0, p0, Lrka;->o:Lru/ok/android/externcalls/sdk/video/VideoRender;
-
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/video/VideoRender;->clear()V
-
-    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap$KeySetView;->clear()V
-
-    return-void
-.end method
-
-.method public final createVideoViewInstance(Landroid/content/Context;)Lru/ok/android/externcalls/sdk/ui/RendererView;
+.method public final c(Labf;)J
     .locals 6
 
-    new-instance p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;
+    iget-object p1, p1, Labf;->a:[B
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    const/4 v3, 0x0
+    aget-byte v0, p1, v0
 
-    const/4 v4, 0x6
+    and-int/lit16 v1, v0, 0xff
 
-    const/4 v5, 0x0
+    const/4 v2, 0x3
 
-    move-object v0, p0
+    and-int/2addr v0, v2
 
-    move-object v1, p1
+    const/4 v3, 0x1
 
-    invoke-direct/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;IILx54;)V
+    if-eqz v0, :cond_0
 
-    invoke-static {}, Landroid/view/View;->generateViewId()I
+    const/4 v4, 0x2
 
-    move-result p1
+    if-eq v0, v3, :cond_1
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->setId(I)V
+    if-eq v0, v4, :cond_1
 
-    sget-object p1, Lorg/webrtc/RendererCommon$ScalingType;->SCALE_ASPECT_FILL:Lorg/webrtc/RendererCommon$ScalingType;
+    aget-byte p1, p1, v3
 
-    sget-object v0, Lorg/webrtc/RendererCommon$ScalingType;->SCALE_ASPECT_FIT:Lorg/webrtc/RendererCommon$ScalingType;
-
-    invoke-virtual {p0, p1, v0}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->setScalingType(Lorg/webrtc/RendererCommon$ScalingType;Lorg/webrtc/RendererCommon$ScalingType;)V
-
-    return-object p0
-.end method
-
-.method public final d(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;)V
-    .locals 2
-
-    invoke-virtual {p0}, Lrka;->c()Lru/ok/android/externcalls/sdk/Conversation;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    iget-object p0, p0, Lrka;->o:Lru/ok/android/externcalls/sdk/video/VideoRender;
-
-    invoke-virtual {p0, p1, p2}, Lru/ok/android/externcalls/sdk/video/VideoRender;->contains(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;Lorg/webrtc/VideoSink;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
+    and-int/lit8 v4, p1, 0x3f
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0, p1, p2}, Lru/ok/android/externcalls/sdk/video/VideoRender;->removeDelegate(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;Lorg/webrtc/VideoSink;)V
-
-    invoke-virtual {p2}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->clearImage()V
-
-    invoke-interface {v0}, Lru/ok/android/externcalls/sdk/Conversation;->getParticipants()Lru/ok/android/externcalls/sdk/participant/collection/ParticipantCollection;
-
-    move-result-object p2
-
-    invoke-virtual {p1}, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->getParticipantId()Lru/ok/android/externcalls/sdk/id/ParticipantId;
-
-    move-result-object v1
-
-    invoke-interface {p2, v1}, Lru/ok/android/externcalls/sdk/participant/collection/ParticipantCollection;->get(Lru/ok/android/externcalls/sdk/id/ParticipantId;)Lru/ok/android/externcalls/sdk/ConversationParticipant;
-
-    move-result-object p2
-
-    if-eqz p2, :cond_1
-
-    invoke-virtual {p2}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->isUseable()Z
-
-    move-result p2
-
-    if-eqz p2, :cond_1
-
-    invoke-interface {v0}, Lru/ok/android/externcalls/sdk/Conversation;->getVideoRenderManager()Lru/ok/android/externcalls/sdk/video/VideoRenderManager;
-
-    move-result-object p2
-
-    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/video/VideoRender;->asOkVideoSink(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;)Ljava/util/List;
-
-    move-result-object p0
-
-    invoke-interface {p2, p1, p0}, Lru/ok/android/externcalls/sdk/video/VideoRenderManager;->setRenderers(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;Ljava/util/List;)V
+    move v4, v3
 
     :cond_1
     :goto_0
-    return-void
-.end method
+    shr-int/lit8 p1, v1, 0x3
 
-.method public final getOwnVideoTrack()Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;
-    .locals 1
+    and-int/lit8 v0, p1, 0x3
 
-    invoke-virtual {p0}, Lrka;->c()Lru/ok/android/externcalls/sdk/Conversation;
+    const/16 v1, 0x10
 
-    move-result-object p0
+    if-lt p1, v1, :cond_2
 
-    if-eqz p0, :cond_0
+    const/16 p1, 0x9c4
 
-    new-instance v0, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey$Builder;
+    shl-int/2addr p1, v0
 
-    invoke-direct {v0}, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey$Builder;-><init>()V
-
-    invoke-interface {p0}, Lru/ok/android/externcalls/sdk/Conversation;->getMe()Lru/ok/android/externcalls/sdk/ConversationParticipant;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->getExternalId()Lru/ok/android/externcalls/sdk/id/ParticipantId;
-
-    move-result-object p0
-
-    invoke-virtual {v0, p0}, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey$Builder;->setParticipantId(Lru/ok/android/externcalls/sdk/id/ParticipantId;)Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey$Builder;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey$Builder;->build()Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;
-
-    move-result-object p0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return-object p0
-.end method
-
-.method public final onCameraChanged()V
-    .locals 5
-
-    iget-object v0, p0, Lrka;->X:Ljava/util/concurrent/ConcurrentHashMap$KeySetView;
-
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :cond_0
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lpka;
-
-    iget-object v2, p0, Lrka;->a:Lt97;
-
-    invoke-interface {v2}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ld11;
-
-    invoke-virtual {v2}, Ld11;->b()Z
-
-    move-result v2
-
-    check-cast v1, Lan1;
-
-    iget-object v3, v1, Lan1;->z0:Lt8f;
-
-    if-eqz v3, :cond_0
-
-    const/4 v4, 0x1
-
-    iget-boolean v3, v3, Lt8f;->c:Z
-
-    if-ne v3, v4, :cond_0
-
-    iget-object v1, v1, Lan1;->c:Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v1, v2}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->setMirror(Z)V
-
-    goto :goto_0
-
-    :cond_1
-    return-void
-.end method
-
-.method public final rebindParticipantViews()V
-    .locals 6
-
-    invoke-virtual {p0}, Lrka;->c()Lru/ok/android/externcalls/sdk/Conversation;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    invoke-interface {v0}, Lru/ok/android/externcalls/sdk/Conversation;->getParticipants()Lru/ok/android/externcalls/sdk/participant/collection/ParticipantCollection;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :cond_1
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lru/ok/android/externcalls/sdk/ConversationParticipant;
-
-    invoke-interface {v0}, Lru/ok/android/externcalls/sdk/Conversation;->getVideoRenderManager()Lru/ok/android/externcalls/sdk/video/VideoRenderManager;
-
-    move-result-object v3
-
-    invoke-virtual {v2}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->isUseable()Z
-
-    move-result v4
-
-    if-nez v4, :cond_2
-
-    goto :goto_0
+    goto :goto_1
 
     :cond_2
-    invoke-virtual {v2}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->getExternalId()Lru/ok/android/externcalls/sdk/id/ParticipantId;
+    const/16 v1, 0xc
 
-    move-result-object v2
+    const/16 v5, 0x2710
 
-    invoke-interface {v3, v2}, Lru/ok/android/externcalls/sdk/video/VideoRenderManager;->getRenderers(Lru/ok/android/externcalls/sdk/id/ParticipantId;)Ljava/util/Map;
+    if-lt p1, v1, :cond_3
 
-    move-result-object v2
+    and-int/2addr p1, v3
 
-    invoke-interface {v2}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_1
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;
-
-    iget-object v5, p0, Lrka;->o:Lru/ok/android/externcalls/sdk/video/VideoRender;
-
-    invoke-virtual {v5, v4}, Lru/ok/android/externcalls/sdk/video/VideoRender;->asOkVideoSink(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;)Ljava/util/List;
-
-    move-result-object v5
-
-    invoke-interface {v3, v4, v5}, Lru/ok/android/externcalls/sdk/video/VideoRenderManager;->setRenderers(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;Ljava/util/List;)V
+    shl-int p1, v5, p1
 
     goto :goto_1
 
     :cond_3
-    return-void
-.end method
+    if-ne v0, v2, :cond_4
 
-.method public final releaseParticipantView(Lru/ok/android/externcalls/sdk/ui/RendererView;)V
-    .locals 0
-
-    check-cast p1, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;
-
-    invoke-virtual {p1}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->release()V
-
-    return-void
-.end method
-
-.method public final removeOwnVideoParticipantView(Lru/ok/android/externcalls/sdk/ui/RendererView;)V
-    .locals 1
-
-    check-cast p1, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;
-
-    iget-object v0, p0, Lrka;->c:Lt97;
-
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Laka;
-
-    check-cast v0, Loka;
-
-    invoke-virtual {v0}, Loka;->c()Lqja;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lqja;->a:Lne1;
-
-    invoke-interface {v0}, Lne1;->s()Lt8f;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lt8f;->b:Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;
-
-    invoke-virtual {p0, v0, p1}, Lrka;->d(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;)V
-
-    return-void
-.end method
-
-.method public final bridge synthetic removeParticipantView(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;Lru/ok/android/externcalls/sdk/ui/RendererView;)V
-    .locals 0
-
-    check-cast p2, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;
-
-    invoke-virtual {p0, p1, p2}, Lrka;->d(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;)V
-
-    return-void
-.end method
-
-.method public final setOwnVideoParticipantView(Lru/ok/android/externcalls/sdk/ui/RendererView;Lru/ok/android/externcalls/sdk/ui/FrameDecorator;)V
-    .locals 0
-
-    check-cast p1, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;
-
-    iget-object p2, p0, Lrka;->c:Lt97;
-
-    invoke-interface {p2}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Laka;
-
-    check-cast p2, Loka;
-
-    invoke-virtual {p2}, Loka;->c()Lqja;
-
-    move-result-object p2
-
-    iget-object p2, p2, Lqja;->a:Lne1;
-
-    invoke-interface {p2}, Lne1;->s()Lt8f;
-
-    move-result-object p2
-
-    iget-object p2, p2, Lt8f;->b:Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;
-
-    invoke-interface {p0, p2, p1}, Lru/ok/android/externcalls/sdk/video/ParticipantVideoViewManager;->setParticipantView(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;Lru/ok/android/externcalls/sdk/ui/RendererView;)V
-
-    return-void
-.end method
-
-.method public final setParticipantView(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;Lru/ok/android/externcalls/sdk/ui/RendererView;Lru/ok/android/externcalls/sdk/ui/FrameDecorator;)V
-    .locals 6
-
-    move-object v0, p2
-
-    check-cast v0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;
-
-    invoke-virtual {p0}, Lrka;->c()Lru/ok/android/externcalls/sdk/Conversation;
-
-    move-result-object p2
-
-    if-eqz p2, :cond_2
-
-    if-eqz p1, :cond_2
-
-    iget-object p3, p0, Lrka;->o:Lru/ok/android/externcalls/sdk/video/VideoRender;
-
-    invoke-virtual {p3, p1, v0}, Lru/ok/android/externcalls/sdk/video/VideoRender;->contains(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;Lorg/webrtc/VideoSink;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
+    const p1, 0xea60
 
     goto :goto_1
 
-    :cond_0
-    invoke-virtual {p3, p1, v0}, Lru/ok/android/externcalls/sdk/video/VideoRender;->addDelegate(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;Lorg/webrtc/VideoSink;)V
+    :cond_4
+    shl-int p1, v5, v0
 
-    invoke-interface {p2}, Lru/ok/android/externcalls/sdk/Conversation;->getMe()Lru/ok/android/externcalls/sdk/ConversationParticipant;
+    :goto_1
+    int-to-long v0, v4
 
-    move-result-object v1
+    int-to-long v2, p1
 
-    invoke-virtual {v1}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->getExternalId()Lru/ok/android/externcalls/sdk/id/ParticipantId;
+    mul-long/2addr v0, v2
 
-    move-result-object v1
+    iget p0, p0, Ln7e;->f:I
 
-    invoke-virtual {p1}, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->getParticipantId()Lru/ok/android/externcalls/sdk/id/ParticipantId;
+    int-to-long p0, p0
 
-    move-result-object v2
+    mul-long/2addr p0, v0
 
-    invoke-static {v1, v2}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    const-wide/32 v0, 0xf4240
 
-    move-result v1
+    div-long/2addr p0, v0
 
-    if-eqz v1, :cond_1
+    return-wide p0
+.end method
 
-    invoke-virtual {p1}, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->getType()Lw8f;
+.method public final e(Labf;JLohc;)Z
+    .locals 4
 
-    move-result-object v1
+    sget-object p0, Lrka;->o:[B
 
-    sget-object v2, Lw8f;->a:Lw8f;
-
-    if-ne v1, v2, :cond_1
-
-    iget-object p0, p0, Lrka;->a:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ld11;
-
-    invoke-virtual {p0}, Ld11;->b()Z
+    invoke-static {p1, p0}, Lrka;->g(Labf;[B)Z
 
     move-result p0
 
+    const/4 p2, 0x0
+
+    const/4 p3, 0x1
+
     if-eqz p0, :cond_1
 
-    const/4 p0, 0x1
+    iget-object p0, p1, Labf;->a:[B
 
-    goto :goto_0
+    iget p1, p1, Labf;->c:I
 
-    :cond_1
-    const/4 p0, 0x0
-
-    :goto_0
-    invoke-virtual {v0, p0}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->setMirror(Z)V
-
-    invoke-interface {p2}, Lru/ok/android/externcalls/sdk/Conversation;->getVideoRenderManager()Lru/ok/android/externcalls/sdk/video/VideoRenderManager;
+    invoke-static {p0, p1}, Ljava/util/Arrays;->copyOf([BI)[B
 
     move-result-object p0
 
-    invoke-virtual {p3, p1}, Lru/ok/android/externcalls/sdk/video/VideoRender;->asOkVideoSink(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;)Ljava/util/List;
+    const/16 p1, 0x9
 
-    move-result-object p2
+    aget-byte p1, p0, p1
 
-    invoke-interface {p0, p1, p2}, Lru/ok/android/externcalls/sdk/video/VideoRenderManager;->setRenderers(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;Ljava/util/List;)V
+    and-int/lit16 p1, p1, 0xff
 
-    invoke-interface {p0}, Lru/ok/android/externcalls/sdk/video/VideoRenderManager;->getCallRenderer()Ltc1;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_2
-
-    const/4 v4, 0x4
-
-    const/4 v5, 0x0
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    invoke-static/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/ui/RendererView;->init$default(Lru/ok/android/externcalls/sdk/ui/RendererView;Ltc1;Lorg/webrtc/RendererCommon$RendererEvents;Lru/ok/android/externcalls/sdk/ui/FrameDecorator;ILjava/lang/Object;)Z
-
-    :cond_2
-    :goto_1
-    return-void
-.end method
-
-.method public final updateDisplayLayout(Ljava/util/Collection;)V
-    .locals 0
-
-    invoke-virtual {p0}, Lrka;->c()Lru/ok/android/externcalls/sdk/Conversation;
+    invoke-static {p0}, Lxq7;->f([B)Ljava/util/ArrayList;
 
     move-result-object p0
 
-    if-eqz p0, :cond_0
+    iget-object v0, p4, Lohc;->b:Ljava/lang/Object;
 
-    invoke-interface {p0}, Lru/ok/android/externcalls/sdk/Conversation;->getDisplayLayoutSender()Lru/ok/android/externcalls/sdk/video/DisplayLayoutSender;
+    check-cast v0, Ldz5;
 
-    move-result-object p0
+    if-nez v0, :cond_0
 
-    goto :goto_0
+    move p2, p3
 
     :cond_0
-    const/4 p0, 0x0
+    invoke-static {p2}, Lq46;->f(Z)V
 
-    :goto_0
-    if-eqz p0, :cond_1
+    new-instance p2, Lbz5;
 
-    invoke-interface {p0, p1}, Lru/ok/android/externcalls/sdk/video/DisplayLayoutSender;->sendDisplayLayouts(Ljava/util/Collection;)V
+    invoke-direct {p2}, Lbz5;-><init>()V
+
+    const-string v0, "audio/opus"
+
+    iput-object v0, p2, Lbz5;->k:Ljava/lang/String;
+
+    iput p1, p2, Lbz5;->x:I
+
+    const p1, 0xbb80
+
+    iput p1, p2, Lbz5;->y:I
+
+    iput-object p0, p2, Lbz5;->m:Ljava/util/List;
+
+    new-instance p0, Ldz5;
+
+    invoke-direct {p0, p2}, Ldz5;-><init>(Lbz5;)V
+
+    iput-object p0, p4, Lohc;->b:Ljava/lang/Object;
+
+    return p3
 
     :cond_1
-    return-void
+    sget-object p0, Lrka;->p:[B
+
+    invoke-static {p1, p0}, Lrka;->g(Labf;[B)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_5
+
+    iget-object p0, p4, Lohc;->b:Ljava/lang/Object;
+
+    check-cast p0, Ldz5;
+
+    invoke-static {p0}, Lq46;->g(Ljava/lang/Object;)V
+
+    const/16 p0, 0x8
+
+    invoke-virtual {p1, p0}, Labf;->F(I)V
+
+    invoke-static {p1, p2, p2}, Lvk9;->E(Labf;ZZ)Ll5e;
+
+    move-result-object p0
+
+    iget-object p0, p0, Ll5e;->b:Ljava/lang/Object;
+
+    check-cast p0, [Ljava/lang/String;
+
+    invoke-static {p0}, Lxw6;->k([Ljava/lang/Object;)Lddc;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lvk9;->B(Ljava/util/List;)Lw79;
+
+    move-result-object p0
+
+    if-nez p0, :cond_2
+
+    return p3
+
+    :cond_2
+    iget-object p1, p4, Lohc;->b:Ljava/lang/Object;
+
+    check-cast p1, Ldz5;
+
+    invoke-virtual {p1}, Ldz5;->a()Lbz5;
+
+    move-result-object p1
+
+    iget-object v0, p4, Lohc;->b:Ljava/lang/Object;
+
+    check-cast v0, Ldz5;
+
+    iget-object v0, v0, Ldz5;->q0:Lw79;
+
+    if-nez v0, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    iget-object v0, v0, Lw79;->a:[Lu79;
+
+    array-length v1, v0
+
+    if-nez v1, :cond_4
+
+    goto :goto_0
+
+    :cond_4
+    new-instance v1, Lw79;
+
+    iget-object p0, p0, Lw79;->a:[Lu79;
+
+    sget v2, Lnaf;->a:I
+
+    array-length v2, p0
+
+    array-length v3, v0
+
+    add-int/2addr v2, v3
+
+    invoke-static {p0, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v2
+
+    array-length p0, p0
+
+    array-length v3, v0
+
+    invoke-static {v0, p2, v2, p0, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    check-cast v2, [Lu79;
+
+    invoke-direct {v1, v2}, Lw79;-><init>([Lu79;)V
+
+    move-object p0, v1
+
+    :goto_0
+    iput-object p0, p1, Lbz5;->i:Lw79;
+
+    new-instance p0, Ldz5;
+
+    invoke-direct {p0, p1}, Ldz5;-><init>(Lbz5;)V
+
+    iput-object p0, p4, Lohc;->b:Ljava/lang/Object;
+
+    return p3
+
+    :cond_5
+    iget-object p0, p4, Lohc;->b:Ljava/lang/Object;
+
+    check-cast p0, Ldz5;
+
+    invoke-static {p0}, Lq46;->g(Ljava/lang/Object;)V
+
+    return p2
 .end method

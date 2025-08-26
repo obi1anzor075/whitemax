@@ -1,164 +1,265 @@
-.class public final synthetic Lwv5;
-.super Ljava/lang/Object;
+.class public final Lwv5;
+.super Laod;
 .source "SourceFile"
-
-# interfaces
-.implements Ls16;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final synthetic X:I
 
-.field public final synthetic b:Lone/me/chats/forward/ForwardPickerScreen;
+.field public final Y:Ljava/lang/Object;
+
+.field public final Z:Ljava/lang/Object;
+
+.field public final o0:Lq66;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/chats/forward/ForwardPickerScreen;I)V
-    .locals 0
+.method public constructor <init>(Ljava/util/concurrent/ExecutorService;Lcwc;Ltl8;Lps8;)V
+    .locals 1
 
-    iput p2, p0, Lwv5;->a:I
+    const/4 v0, 0x1
 
-    iput-object p1, p0, Lwv5;->b:Lone/me/chats/forward/ForwardPickerScreen;
+    iput v0, p0, Lwv5;->X:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 5
+    invoke-direct {p0, p1}, Laod;-><init>(Ljava/util/concurrent/Executor;)V
+
+    .line 6
+    iput-object p2, p0, Lwv5;->Y:Ljava/lang/Object;
+
+    .line 7
+    iput-object p3, p0, Lwv5;->Z:Ljava/lang/Object;
+
+    .line 8
+    iput-object p4, p0, Lwv5;->o0:Lq66;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/util/concurrent/ExecutorService;Liz1;Lhw2;)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lwv5;->X:I
+
+    .line 1
+    invoke-direct {p0, p1}, Laod;-><init>(Ljava/util/concurrent/Executor;)V
+
+    .line 2
+    iput-object p1, p0, Lwv5;->Y:Ljava/lang/Object;
+
+    .line 3
+    iput-object p2, p0, Lwv5;->Z:Ljava/lang/Object;
+
+    .line 4
+    iput-object p3, p0, Lwv5;->o0:Lq66;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 4
+.method public s(Lccc;ILjava/util/List;)V
+    .locals 2
 
-    sget-object v0, Ljue;->a:Ljue;
+    iget v0, p0, Lwv5;->X:I
 
-    iget-object v1, p0, Lwv5;->b:Lone/me/chats/forward/ForwardPickerScreen;
+    packed-switch v0, :pswitch_data_0
 
-    iget p0, p0, Lwv5;->a:I
+    invoke-super {p0, p1, p2, p3}, Lgbc;->s(Lccc;ILjava/util/List;)V
 
-    packed-switch p0, :pswitch_data_0
-
-    sget-object p0, Lone/me/chats/forward/ForwardPickerScreen;->M0:[Lk77;
-
-    invoke-virtual {v1}, Lone/me/chats/forward/ForwardPickerScreen;->y0()Lflb;
-
-    move-result-object p0
-
-    sget v2, Lrhc;->h0:I
-
-    new-instance v3, Lhge;
-
-    invoke-direct {v3, v2}, Lhge;-><init>(I)V
-
-    const/4 v2, 0x1
-
-    invoke-static {v1, p0, v3, v2}, Lone/me/chats/forward/ForwardPickerScreen;->w0(Lone/me/chats/forward/ForwardPickerScreen;Landroid/view/View;Lhge;Z)V
-
-    new-instance p0, Lfs5;
-
-    const/4 v2, 0x6
-
-    invoke-direct {p0, v2}, Lfs5;-><init>(I)V
-
-    iput-object p0, v1, Lone/me/chats/forward/ForwardPickerScreen;->C0:Ls16;
-
-    return-object v0
+    return-void
 
     :pswitch_0
-    sget-object p0, Lone/me/chats/forward/ForwardPickerScreen;->M0:[Lk77;
+    check-cast p1, Lsod;
 
-    invoke-virtual {v1}, Lone/me/chats/picker/AbstractPickerScreen;->u0()Lwra;
+    invoke-interface {p3}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {p3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    instance-of v1, v1, Lnm8;
+
+    if-eqz v1, :cond_1
+
+    iget-object p0, p0, Lhl7;->o:Lwu;
+
+    iget-object p0, p0, Lwu;->f:Ljava/util/List;
+
+    invoke-interface {p0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
 
-    iget-object p0, p0, Lwra;->c:Lmua;
+    check-cast p0, Lol7;
 
-    check-cast p0, Lpv5;
+    invoke-static {p3}, Lp43;->I0(Ljava/util/List;)Ljava/lang/Object;
 
-    iget-object p0, p0, Lpv5;->r:Lqe4;
+    move-result-object p2
 
-    const/4 v1, 0x0
+    invoke-virtual {p1, p0, p2}, Lsod;->B(Lol7;Ljava/lang/Object;)V
 
-    invoke-virtual {p0, v1}, Lqe4;->K(I)V
+    goto :goto_1
 
-    return-object v0
+    :cond_2
+    :goto_0
+    invoke-virtual {p0, p1, p2}, Laod;->H(Lsod;I)V
 
-    :pswitch_1
-    iget-object p0, v1, Lone/me/chats/forward/ForwardPickerScreen;->J0:Lbw5;
+    :goto_1
+    return-void
 
-    invoke-virtual {p0}, Lbw5;->m()V
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    return-object v0
+.method public final t(Landroid/view/ViewGroup;I)Lccc;
+    .locals 2
 
-    :pswitch_2
-    sget-object p0, Lone/me/chats/forward/ForwardPickerScreen;->M0:[Lk77;
+    iget v0, p0, Lwv5;->X:I
 
-    new-instance p0, Ljq8;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {v1}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+    sget v0, Leba;->D:I
 
-    move-result-object v0
+    if-ne p2, v0, :cond_0
 
-    invoke-direct {p0, v0}, Ljq8;-><init>(Landroid/content/Context;)V
+    new-instance p2, Lpt3;
 
-    sget v0, Lc2a;->a:I
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setId(I)V
+    move-result-object p1
 
-    sget v0, Le2a;->a:I
+    iget-object v0, p0, Lwv5;->Y:Ljava/lang/Object;
 
-    invoke-virtual {p0, v0}, Ljq8;->setInputHint(I)V
+    check-cast v0, Lcwc;
 
-    sget-object v0, Lcq8;->a:Lcq8;
+    iget-object p0, p0, Lwv5;->o0:Lq66;
 
-    invoke-virtual {p0, v0}, Ljq8;->setRightOuterIconActionState(Lfq8;)V
+    check-cast p0, Lps8;
 
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-direct {p2, p1, v0, p0}, Lpt3;-><init>(Landroid/content/Context;Lcwc;Lps8;)V
 
-    move-result-object v0
+    goto :goto_0
 
-    new-instance v2, Lzu4;
+    :cond_0
+    new-instance p2, Lpt3;
 
-    const/16 v3, 0xb
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    invoke-direct {v2, v1, v3, p0}, Lzu4;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    move-result-object p1
 
-    invoke-static {v0, v2}, Lxie;->a(Landroid/content/Context;Ls16;)Lcg3;
+    iget-object p0, p0, Lwv5;->Z:Ljava/lang/Object;
 
-    move-result-object v0
+    check-cast p0, Ltl8;
 
-    invoke-virtual {p0, v0}, Ljq8;->setRightOuterIconTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-direct {p2, p1, p0}, Lpt3;-><init>(Landroid/content/Context;Ltl8;)V
 
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    :goto_0
+    return-object p2
 
-    move-result-object v0
+    :pswitch_0
+    sget v0, Lltb;->oneme_folder_widget_section_view_type:I
 
-    new-instance v2, Lwv5;
+    if-ne p2, v0, :cond_1
 
-    const/4 v3, 0x3
+    new-instance p2, Lwl0;
 
-    invoke-direct {v2, v1, v3}, Lwv5;-><init>(Lone/me/chats/forward/ForwardPickerScreen;I)V
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    invoke-static {v0, v2}, Lxie;->a(Landroid/content/Context;Ls16;)Lcg3;
+    move-result-object p1
 
-    move-result-object v0
+    iget-object v0, p0, Lwv5;->Y:Ljava/lang/Object;
 
-    invoke-virtual {p0, v0}, Ljq8;->setLeftInnerIconTouchListener(Landroid/view/View$OnTouchListener;)V
+    check-cast v0, Ljava/util/concurrent/ExecutorService;
 
-    return-object p0
+    iget-object p0, p0, Lwv5;->Z:Ljava/lang/Object;
 
-    :pswitch_3
-    iget-object p0, v1, Lone/me/chats/forward/ForwardPickerScreen;->J0:Lbw5;
+    check-cast p0, Liz1;
 
-    return-object p0
+    invoke-direct {p2, p1, v0, p0}, Lwl0;-><init>(Landroid/content/Context;Ljava/util/concurrent/ExecutorService;Liz1;)V
+
+    goto :goto_1
+
+    :cond_1
+    sget v0, Lltb;->oneme_folder_widget_section_empty_view_type:I
+
+    if-ne p2, v0, :cond_2
+
+    new-instance p2, Lwl0;
+
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    iget-object p0, p0, Lwv5;->o0:Lq66;
+
+    check-cast p0, Lhw2;
+
+    invoke-direct {p2, p1, p0}, Lwl0;-><init>(Landroid/content/Context;Lhw2;)V
+
+    :goto_1
+    return-object p2
+
+    :cond_2
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-class p1, Lwv5;
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object p1
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Not supported viewType "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p2, " for "
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 
     nop
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

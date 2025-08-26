@@ -22,7 +22,7 @@
         "",
         "Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceInfoChangedEvent;",
         "event",
-        "Ljue;",
+        "Le5f;",
         "onAudioDeviceChanged",
         "(Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceInfoChangedEvent;)V",
         "calls-audiomanager_release"
@@ -33,6 +33,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

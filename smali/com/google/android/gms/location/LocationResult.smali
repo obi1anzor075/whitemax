@@ -1,5 +1,5 @@
 .class public final Lcom/google/android/gms/location/LocationResult;
-.super Lo3;
+.super Ln3;
 .source "SourceFile"
 
 # interfaces
@@ -28,17 +28,15 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v0
+    sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     sput-object v0, Lcom/google/android/gms/location/LocationResult;->b:Ljava/util/List;
 
-    new-instance v0, Ludf;
+    new-instance v0, Lmrf;
 
-    const/16 v1, 0x15
+    const/16 v1, 0x17
 
-    invoke-direct {v0, v1}, Ludf;-><init>(I)V
+    invoke-direct {v0, v1}, Lmrf;-><init>(I)V
 
     sput-object v0, Lcom/google/android/gms/location/LocationResult;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -201,7 +199,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v2}, Lx87;->F(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v2}, Lgr0;->j(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -243,7 +241,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    sget-object v1, Lg1g;->a:Ljava/text/DecimalFormat;
+    sget-object v1, Llgg;->a:Ljava/text/DecimalFormat;
 
     iget-object p0, p0, Lcom/google/android/gms/location/LocationResult;->a:Ljava/util/List;
 
@@ -280,136 +278,136 @@
 
     check-cast v1, Landroid/location/Location;
 
+    sget-object v3, Llgg;->b:Ljava/text/DecimalFormat;
+
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->ensureCapacity(I)V
 
-    const-string v3, ", "
+    const-string v4, ", "
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
     if-nez v1, :cond_0
 
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto/16 :goto_3
 
     :cond_0
-    const-string v5, "{"
+    const-string v6, "{"
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Landroid/location/Location;->getProvider()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Landroid/location/Location;->isFromMockProvider()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_1
-
-    const-string v5, "mock, "
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_1
-    sget-object v5, Lg1g;->a:Ljava/text/DecimalFormat;
-
-    invoke-virtual {v1}, Landroid/location/Location;->getLatitude()D
-
-    move-result-wide v6
-
-    invoke-virtual {v5, v6, v7}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
 
     move-result-object v6
 
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v6, ","
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Landroid/location/Location;->isFromMockProvider()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_1
+
+    const-string v6, "mock, "
 
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    :cond_1
+    sget-object v6, Llgg;->a:Ljava/text/DecimalFormat;
+
+    invoke-virtual {v1}, Landroid/location/Location;->getLatitude()D
+
+    move-result-wide v7
+
+    invoke-virtual {v6, v7, v8}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v7, ","
+
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     invoke-virtual {v1}, Landroid/location/Location;->getLongitude()D
 
-    move-result-wide v6
+    move-result-wide v7
 
-    invoke-virtual {v5, v6, v7}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
+    invoke-virtual {v6, v7, v8}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Landroid/location/Location;->hasAccuracy()Z
 
-    move-result v5
-
-    sget-object v6, Lg1g;->b:Ljava/text/DecimalFormat;
+    move-result v6
 
     const-string v7, "m"
 
     const-string v8, "\u00b1"
 
-    if-eqz v5, :cond_2
+    if-eqz v6, :cond_2
 
     invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Landroid/location/Location;->getAccuracy()F
 
-    move-result v5
+    move-result v6
 
-    float-to-double v9, v5
+    float-to-double v9, v6
 
-    invoke-virtual {v6, v9, v10}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
+    invoke-virtual {v3, v9, v10}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_2
     invoke-virtual {v1}, Landroid/location/Location;->hasAltitude()Z
 
-    move-result v5
+    move-result v6
 
-    if-eqz v5, :cond_4
+    if-eqz v6, :cond_4
 
-    const-string v5, ", alt="
+    const-string v6, ", alt="
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Landroid/location/Location;->getAltitude()D
 
     move-result-wide v9
 
-    invoke-virtual {v6, v9, v10}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
+    invoke-virtual {v3, v9, v10}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1}, Lcm7;->f(Landroid/location/Location;)Z
+    invoke-static {v1}, Lzq7;->f(Landroid/location/Location;)Z
 
-    move-result v5
+    move-result v6
 
-    if-eqz v5, :cond_3
+    if-eqz v6, :cond_3
 
     invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1}, Lcm7;->c(Landroid/location/Location;)F
+    invoke-static {v1}, Lzq7;->c(Landroid/location/Location;)F
 
-    move-result v5
+    move-result v6
 
-    float-to-double v9, v5
+    float-to-double v9, v6
 
-    invoke-virtual {v6, v9, v10}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
+    invoke-virtual {v3, v9, v10}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_3
     invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -417,197 +415,197 @@
     :cond_4
     invoke-virtual {v1}, Landroid/location/Location;->hasSpeed()Z
 
-    move-result v5
+    move-result v6
 
-    if-eqz v5, :cond_6
+    if-eqz v6, :cond_6
 
-    const-string v5, ", spd="
+    const-string v6, ", spd="
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Landroid/location/Location;->getSpeed()F
 
-    move-result v5
+    move-result v6
 
-    float-to-double v9, v5
+    float-to-double v6, v6
 
-    invoke-virtual {v6, v9, v10}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
+    invoke-virtual {v3, v6, v7}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1}, Lcm7;->e(Landroid/location/Location;)Z
+    invoke-static {v1}, Lzq7;->e(Landroid/location/Location;)Z
 
-    move-result v5
+    move-result v6
 
-    if-eqz v5, :cond_5
+    if-eqz v6, :cond_5
 
     invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1}, Lcm7;->b(Landroid/location/Location;)F
+    invoke-static {v1}, Lzq7;->b(Landroid/location/Location;)F
 
-    move-result v5
+    move-result v6
 
-    float-to-double v9, v5
+    float-to-double v6, v6
 
-    invoke-virtual {v6, v9, v10}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
+    invoke-virtual {v3, v6, v7}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_5
-    const-string v5, "m/s"
+    const-string v6, "m/s"
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_6
     invoke-virtual {v1}, Landroid/location/Location;->hasBearing()Z
 
-    move-result v5
+    move-result v6
 
-    if-eqz v5, :cond_8
+    if-eqz v6, :cond_8
 
-    const-string v5, ", brg="
+    const-string v6, ", brg="
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Landroid/location/Location;->getBearing()F
 
-    move-result v5
+    move-result v6
 
-    float-to-double v9, v5
+    float-to-double v6, v6
 
-    invoke-virtual {v6, v9, v10}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
+    invoke-virtual {v3, v6, v7}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1}, Lcm7;->d(Landroid/location/Location;)Z
+    invoke-static {v1}, Lzq7;->d(Landroid/location/Location;)Z
 
-    move-result v5
+    move-result v6
 
-    if-eqz v5, :cond_7
+    if-eqz v6, :cond_7
 
     invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1}, Lcm7;->a(Landroid/location/Location;)F
+    invoke-static {v1}, Lzq7;->a(Landroid/location/Location;)F
 
-    move-result v5
+    move-result v6
 
-    float-to-double v7, v5
+    float-to-double v6, v6
 
-    invoke-virtual {v6, v7, v8}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
+    invoke-virtual {v3, v6, v7}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_7
-    const-string v5, "\u00b0"
+    const-string v3, "\u00b0"
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_8
     invoke-virtual {v1}, Landroid/location/Location;->getExtras()Landroid/os/Bundle;
 
-    move-result-object v5
+    move-result-object v3
 
-    if-eqz v5, :cond_9
+    if-eqz v3, :cond_9
 
     const-string v6, "floorLabel"
 
-    invoke-virtual {v5, v6}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v3, v6}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v3
 
     goto :goto_1
 
     :cond_9
-    move-object v5, v4
+    move-object v3, v5
 
     :goto_1
-    if-eqz v5, :cond_a
+    if-eqz v3, :cond_a
 
     const-string v6, ", fl="
 
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_a
     invoke-virtual {v1}, Landroid/location/Location;->getExtras()Landroid/os/Bundle;
 
+    move-result-object v3
+
+    if-eqz v3, :cond_b
+
+    const-string v5, "levelId"
+
+    invoke-virtual {v3, v5}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
     move-result-object v5
 
-    if-eqz v5, :cond_b
-
-    const-string v4, "levelId"
-
-    invoke-virtual {v5, v4}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
     :cond_b
-    if-eqz v4, :cond_c
+    if-eqz v5, :cond_c
 
-    const-string v5, ", lv="
+    const-string v3, ", lv="
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_c
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v4
+    move-result-wide v5
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v6
+    move-result-wide v7
 
-    sub-long/2addr v4, v6
+    sub-long/2addr v5, v7
 
-    const-string v6, ", ert="
+    const-string v3, ", ert="
 
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v6, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
+    sget-object v3, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
 
     invoke-virtual {v1}, Landroid/location/Location;->getElapsedRealtimeNanos()J
 
     move-result-wide v7
 
-    invoke-virtual {v6, v7, v8}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
+    invoke-virtual {v3, v7, v8}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
 
-    move-result-wide v6
+    move-result-wide v7
 
-    add-long/2addr v6, v4
+    add-long/2addr v7, v5
 
-    const-wide/16 v4, 0x0
+    const-wide/16 v5, 0x0
 
-    cmp-long v1, v6, v4
+    cmp-long v1, v7, v5
 
     if-ltz v1, :cond_d
 
-    sget-object v1, Lg3g;->a:Ljava/text/SimpleDateFormat;
+    sget-object v1, Ljig;->a:Ljava/text/SimpleDateFormat;
 
-    new-instance v4, Ljava/util/Date;
+    new-instance v3, Ljava/util/Date;
 
-    invoke-direct {v4, v6, v7}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v3, v7, v8}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v1, v4}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v1, v3}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v1
 
     goto :goto_2
 
     :cond_d
-    sget-object v1, Lg3g;->a:Ljava/text/SimpleDateFormat;
+    sget-object v1, Ljig;->a:Ljava/text/SimpleDateFormat;
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+    invoke-static {v7, v8}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
     move-result-object v1
 
@@ -619,7 +617,7 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     :goto_3
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const/4 v1, 0x1
 
@@ -653,7 +651,7 @@
 
     const/16 p2, 0x4f45
 
-    invoke-static {p1, p2}, Lek8;->n0(Landroid/os/Parcel;I)I
+    invoke-static {p1, p2}, Lq14;->B0(Landroid/os/Parcel;I)I
 
     move-result p2
 
@@ -661,9 +659,9 @@
 
     iget-object p0, p0, Lcom/google/android/gms/location/LocationResult;->a:Ljava/util/List;
 
-    invoke-static {p1, p0, v0}, Lek8;->m0(Landroid/os/Parcel;Ljava/util/List;I)V
+    invoke-static {p1, p0, v0}, Lq14;->A0(Landroid/os/Parcel;Ljava/util/List;I)V
 
-    invoke-static {p1, p2}, Lek8;->o0(Landroid/os/Parcel;I)V
+    invoke-static {p1, p2}, Lq14;->C0(Landroid/os/Parcel;I)V
 
     return-void
 .end method

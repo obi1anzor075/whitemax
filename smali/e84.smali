@@ -2,1488 +2,361 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ldj7;
-
 
 # instance fields
-.field public final synthetic A0:Lf84;
+.field public final a:Ldz5;
 
-.field public X:J
+.field public final b:I
 
-.field public Y:J
+.field public final c:I
 
-.field public Z:J
+.field public final d:I
 
-.field public final a:Landroid/net/Uri;
+.field public final e:I
 
-.field public final b:Lul7;
+.field public final f:I
 
-.field public final c:Lqz3;
+.field public final g:I
 
-.field public o:Lni6;
+.field public final h:I
 
-.field public w0:J
-
-.field public x0:Z
-
-.field public y0:Ljava/io/IOException;
-
-.field public z0:Z
+.field public final i:[Lw50;
 
 
 # direct methods
-.method public constructor <init>(Lf84;Landroid/net/Uri;)V
-    .locals 2
+.method public constructor <init>(Ldz5;IIIIIII[Lw50;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Le84;->A0:Lf84;
+    iput-object p1, p0, Le84;->a:Ldz5;
 
-    iput-object p2, p0, Le84;->a:Landroid/net/Uri;
+    iput p2, p0, Le84;->b:I
 
-    new-instance p2, Lul7;
+    iput p3, p0, Le84;->c:I
 
-    const-string v0, "DefaultHlsPlaylistTracker:MediaPlaylist"
+    iput p4, p0, Le84;->d:I
 
-    const/4 v1, 0x1
+    iput p5, p0, Le84;->e:I
 
-    invoke-direct {p2, v0, v1}, Lul7;-><init>(Ljava/lang/String;I)V
+    iput p6, p0, Le84;->f:I
 
-    iput-object p2, p0, Le84;->b:Lul7;
+    iput p7, p0, Le84;->g:I
 
-    iget-object p1, p1, Lf84;->w0:Ljava/lang/Object;
+    iput p8, p0, Le84;->h:I
 
-    check-cast p1, Lx3a;
-
-    iget-object p1, p1, Lx3a;->b:Ljava/lang/Object;
-
-    check-cast p1, Lnz3;
-
-    invoke-interface {p1}, Lnz3;->a()Lqz3;
-
-    move-result-object p1
-
-    iput-object p1, p0, Le84;->c:Lqz3;
+    iput-object p9, p0, Le84;->i:[Lw50;
 
     return-void
-.end method
-
-.method public static a(Le84;J)Z
-    .locals 7
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v0
-
-    add-long/2addr v0, p1
-
-    iput-wide v0, p0, Le84;->w0:J
-
-    iget-object p1, p0, Le84;->A0:Lf84;
-
-    iget-object p2, p1, Lf84;->X:Landroid/net/Uri;
-
-    iget-object p0, p0, Le84;->a:Landroid/net/Uri;
-
-    invoke-virtual {p0, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    const/4 p2, 0x0
-
-    if-eqz p0, :cond_2
-
-    iget-object p0, p1, Lf84;->C0:Ljava/lang/Object;
-
-    check-cast p0, Lvi6;
-
-    iget-object p0, p0, Lvi6;->e:Ljava/util/List;
-
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v1
-
-    move v3, p2
-
-    :goto_0
-    if-ge v3, v0, :cond_1
-
-    iget-object v4, p1, Lf84;->b:Ljava/util/HashMap;
-
-    invoke-interface {p0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lti6;
-
-    iget-object v5, v5, Lti6;->a:Landroid/net/Uri;
-
-    invoke-virtual {v4, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Le84;
-
-    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-wide v5, v4, Le84;->w0:J
-
-    cmp-long v5, v1, v5
-
-    if-lez v5, :cond_0
-
-    iget-object p0, v4, Le84;->a:Landroid/net/Uri;
-
-    iput-object p0, p1, Lf84;->X:Landroid/net/Uri;
-
-    invoke-virtual {p1, p0}, Lf84;->c(Landroid/net/Uri;)Landroid/net/Uri;
-
-    move-result-object p0
-
-    invoke-virtual {v4, p0}, Le84;->e(Landroid/net/Uri;)V
-
-    goto :goto_1
-
-    :cond_0
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 p2, 0x1
-
-    :cond_2
-    :goto_1
-    return p2
 .end method
 
 
 # virtual methods
-.method public final E(Lgj7;JJ)V
-    .locals 14
+.method public final a(ZLr20;I)Landroid/media/AudioTrack;
+    .locals 12
 
-    move-object v0, p0
-
-    move-object v1, p1
-
-    check-cast v1, Lnja;
-
-    iget-object v2, v1, Lnja;->Y:Ljava/lang/Object;
-
-    check-cast v2, Lxi6;
-
-    new-instance v4, Lyi7;
-
-    iget-object v1, v1, Lnja;->o:Lfsd;
-
-    iget-object v1, v1, Lfsd;->c:Landroid/net/Uri;
-
-    move-wide/from16 v5, p4
-
-    invoke-direct {v4, v5, v6}, Lyi7;-><init>(J)V
-
-    instance-of v1, v2, Lni6;
-
-    const/4 v5, 0x4
-
-    if-eqz v1, :cond_0
-
-    check-cast v2, Lni6;
-
-    invoke-virtual {p0, v2, v4}, Le84;->f(Lni6;Lyi7;)V
-
-    iget-object v1, v0, Le84;->A0:Lf84;
-
-    iget-object v1, v1, Lf84;->z0:Ljava/lang/Object;
-
-    move-object v3, v1
-
-    check-cast v3, Ljn;
-
-    const-wide v10, -0x7fffffffffffffffL    # -4.9E-324
-
-    const-wide v12, -0x7fffffffffffffffL    # -4.9E-324
-
-    const/4 v6, -0x1
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    invoke-virtual/range {v3 .. v13}, Ljn;->z(Lyi7;IILxu5;ILjava/lang/Object;JJ)V
-
-    goto :goto_0
-
-    :cond_0
-    const-string v1, "Loaded playlist has unexpected type."
+    iget v1, p0, Le84;->c:I
 
     const/4 v2, 0x0
 
-    invoke-static {v2, v1}, Landroidx/media3/common/ParserException;->b(Ljava/lang/Exception;Ljava/lang/String;)Landroidx/media3/common/ParserException;
-
-    move-result-object v1
-
-    iput-object v1, v0, Le84;->y0:Ljava/io/IOException;
-
-    iget-object v2, v0, Le84;->A0:Lf84;
-
-    iget-object v2, v2, Lf84;->z0:Ljava/lang/Object;
-
-    check-cast v2, Ljn;
-
     const/4 v3, 0x1
 
-    invoke-virtual {v2, v4, v5, v1, v3}, Ljn;->C(Lyi7;ILjava/io/IOException;Z)V
+    :try_start_0
+    invoke-virtual {p0, p1, p2, p3}, Le84;->b(ZLr20;I)Landroid/media/AudioTrack;
 
-    :goto_0
-    iget-object v0, v0, Le84;->A0:Lf84;
+    move-result-object p1
+    :try_end_0
+    .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
 
-    iget-object v0, v0, Lf84;->y0:Ljava/lang/Object;
+    invoke-virtual {p1}, Landroid/media/AudioTrack;->getState()I
 
-    check-cast v0, Lmk9;
+    move-result v5
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-ne v5, v3, :cond_0
 
-    return-void
-.end method
+    return-object p1
 
-.method public final U(Lgj7;JJLjava/io/IOException;I)Lsz0;
-    .locals 7
+    :cond_0
+    :try_start_1
+    invoke-virtual {p1}, Landroid/media/AudioTrack;->release()V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    check-cast p1, Lnja;
+    :catch_0
+    new-instance v4, Lcom/google/android/exoplayer2/audio/AudioSink$InitializationException;
 
-    new-instance p2, Lyi7;
+    if-ne v1, v3, :cond_1
 
-    iget-wide v0, p1, Lnja;->a:J
-
-    iget-object p3, p1, Lnja;->o:Lfsd;
-
-    iget-object p3, p3, Lfsd;->c:Landroid/net/Uri;
-
-    invoke-direct {p2, p4, p5}, Lyi7;-><init>(J)V
-
-    const-string p4, "_HLS_msn"
-
-    invoke-virtual {p3, p4}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p3
-
-    const/4 v3, 0x0
-
-    const/4 p4, 0x1
-
-    if-eqz p3, :cond_0
-
-    move p3, p4
+    move v10, v3
 
     goto :goto_0
 
-    :cond_0
-    move p3, v3
+    :cond_1
+    move v10, v2
 
     :goto_0
-    instance-of p5, p6, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistParser$DeltaUpdateException;
+    const/4 v11, 0x0
 
-    sget-object v0, Lul7;->X:Lsz0;
+    iget v6, p0, Le84;->e:I
 
-    iget-object v6, p0, Le84;->A0:Lf84;
+    iget v7, p0, Le84;->f:I
 
-    iget p1, p1, Lnja;->c:I
+    iget v8, p0, Le84;->h:I
 
-    if-nez p3, :cond_1
+    iget-object v9, p0, Le84;->a:Ldz5;
 
-    if-eqz p5, :cond_3
+    invoke-direct/range {v4 .. v11}, Lcom/google/android/exoplayer2/audio/AudioSink$InitializationException;-><init>(IIIILdz5;ZLjava/lang/RuntimeException;)V
 
-    :cond_1
-    instance-of p3, p6, Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException;
+    throw v4
 
-    if-eqz p3, :cond_2
+    :catch_1
+    move-exception v0
 
-    move-object p3, p6
+    move-object p1, v0
 
-    check-cast p3, Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException;
+    move-object v11, p1
 
-    iget p3, p3, Landroidx/media3/datasource/HttpDataSource$InvalidResponseCodeException;->o:I
+    new-instance v4, Lcom/google/android/exoplayer2/audio/AudioSink$InitializationException;
+
+    if-ne v1, v3, :cond_2
+
+    move v10, v3
 
     goto :goto_1
 
     :cond_2
-    const p3, 0x7fffffff
+    move v10, v2
 
     :goto_1
-    if-nez p5, :cond_7
-
-    const/16 p5, 0x190
-
-    if-eq p3, p5, :cond_7
-
-    const/16 p5, 0x1f7
-
-    if-ne p3, p5, :cond_3
-
-    goto :goto_5
-
-    :cond_3
-    new-instance p3, Lwi7;
-
-    invoke-direct {p3, p7, p6}, Lwi7;-><init>(ILjava/io/IOException;)V
-
-    iget-object p5, v6, Lf84;->c:Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    invoke-virtual {p5}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object p5
-
-    move p7, v3
-
-    :goto_2
-    invoke-interface {p5}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    invoke-interface {p5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ldj6;
-
-    iget-object v2, p0, Le84;->a:Landroid/net/Uri;
-
-    invoke-interface {v1, v2, p3, v3}, Ldj6;->c(Landroid/net/Uri;Lwi7;Z)Z
-
-    move-result v1
-
-    xor-int/2addr v1, p4
-
-    or-int/2addr p7, v1
-
-    goto :goto_2
-
-    :cond_4
-    iget-object p0, v6, Lf84;->y0:Ljava/lang/Object;
-
-    check-cast p0, Lmk9;
-
-    if-eqz p7, :cond_6
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-static {p3}, Lmk9;->m(Lwi7;)J
-
-    move-result-wide v1
-
-    const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
-
-    cmp-long p3, v1, v4
-
-    if-eqz p3, :cond_5
-
-    new-instance p3, Lsz0;
-
-    const/4 v4, 0x5
-
     const/4 v5, 0x0
 
-    move-object v0, p3
+    iget v6, p0, Le84;->e:I
 
-    invoke-direct/range {v0 .. v5}, Lsz0;-><init>(JIIZ)V
+    iget v7, p0, Le84;->f:I
 
-    :goto_3
-    move-object v0, p3
+    iget v8, p0, Le84;->h:I
 
-    goto :goto_4
+    iget-object v9, p0, Le84;->a:Ldz5;
 
-    :cond_5
-    sget-object p3, Lul7;->Y:Lsz0;
+    invoke-direct/range {v4 .. v11}, Lcom/google/android/exoplayer2/audio/AudioSink$InitializationException;-><init>(IIIILdz5;ZLjava/lang/RuntimeException;)V
 
-    goto :goto_3
-
-    :cond_6
-    :goto_4
-    invoke-virtual {v0}, Lsz0;->a()Z
-
-    move-result p3
-
-    xor-int/2addr p3, p4
-
-    iget-object p4, v6, Lf84;->z0:Ljava/lang/Object;
-
-    check-cast p4, Ljn;
-
-    invoke-virtual {p4, p2, p1, p6, p3}, Ljn;->C(Lyi7;ILjava/io/IOException;Z)V
-
-    if-eqz p3, :cond_8
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    goto :goto_6
-
-    :cond_7
-    :goto_5
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v1
-
-    iput-wide v1, p0, Le84;->Z:J
-
-    invoke-virtual {p0, v3}, Le84;->c(Z)V
-
-    iget-object p0, v6, Lf84;->z0:Ljava/lang/Object;
-
-    check-cast p0, Ljn;
-
-    sget p3, Loze;->a:I
-
-    invoke-virtual {p0, p2, p1, p6, p4}, Ljn;->C(Lyi7;ILjava/io/IOException;Z)V
-
-    :cond_8
-    :goto_6
-    return-object v0
+    throw v4
 .end method
 
-.method public final b()Landroid/net/Uri;
-    .locals 8
+.method public final b(ZLr20;I)Landroid/media/AudioTrack;
+    .locals 10
 
-    iget-object v0, p0, Le84;->o:Lni6;
+    sget v1, Lnaf;->a:I
 
-    iget-object v1, p0, Le84;->a:Landroid/net/Uri;
+    const/16 v2, 0x1d
 
-    if-eqz v0, :cond_5
+    const/16 v3, 0x10
 
-    iget-object v0, v0, Lni6;->v:Lli6;
+    const/4 v4, 0x3
 
-    iget-wide v2, v0, Lli6;->a:J
+    const/4 v6, 0x1
 
-    const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
+    iget v7, p0, Le84;->g:I
 
-    cmp-long v2, v2, v4
+    iget v8, p0, Le84;->f:I
 
-    if-nez v2, :cond_0
+    iget v9, p0, Le84;->e:I
 
-    iget-boolean v0, v0, Lli6;->e:Z
+    if-lt v1, v2, :cond_2
 
-    if-nez v0, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    invoke-virtual {v1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Le84;->o:Lni6;
-
-    iget-object v2, v1, Lni6;->v:Lli6;
-
-    iget-boolean v2, v2, Lli6;->e:Z
-
-    if-eqz v2, :cond_2
-
-    iget-object v2, v1, Lni6;->r:Lws6;
-
-    invoke-interface {v2}, Ljava/util/List;->size()I
-
-    move-result v2
-
-    int-to-long v2, v2
-
-    iget-wide v6, v1, Lni6;->k:J
-
-    add-long/2addr v6, v2
-
-    const-string v1, "_HLS_msn"
-
-    invoke-static {v6, v7}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    iget-object v1, p0, Le84;->o:Lni6;
-
-    iget-wide v2, v1, Lni6;->n:J
-
-    cmp-long v2, v2, v4
-
-    if-eqz v2, :cond_2
-
-    iget-object v1, v1, Lni6;->s:Lws6;
-
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v2
-
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
-
-    move-result v3
-
-    if-nez v3, :cond_1
-
-    invoke-static {v1}, Lgwf;->t(Ljava/lang/Iterable;)Ljava/lang/Object;
+    invoke-static {v9, v8, v7}, Lo84;->e(III)Landroid/media/AudioFormat;
 
     move-result-object v1
-
-    check-cast v1, Lei6;
-
-    iget-boolean v1, v1, Lei6;->B0:Z
-
-    if-eqz v1, :cond_1
-
-    add-int/lit8 v2, v2, -0x1
-
-    :cond_1
-    const-string v1, "_HLS_part"
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    :cond_2
-    iget-object p0, p0, Le84;->o:Lni6;
-
-    iget-object p0, p0, Lni6;->v:Lli6;
-
-    iget-wide v1, p0, Lli6;->a:J
-
-    cmp-long v1, v1, v4
-
-    if-eqz v1, :cond_4
-
-    iget-boolean p0, p0, Lli6;->b:Z
-
-    if-eqz p0, :cond_3
-
-    const-string p0, "v2"
-
-    goto :goto_0
-
-    :cond_3
-    const-string p0, "YES"
-
-    :goto_0
-    const-string v1, "_HLS_skip"
-
-    invoke-virtual {v0, v1, p0}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    :cond_4
-    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_5
-    :goto_1
-    return-object v1
-.end method
-
-.method public final c(Z)V
-    .locals 0
 
     if-eqz p1, :cond_0
 
-    invoke-virtual {p0}, Le84;->b()Landroid/net/Uri;
+    new-instance v2, Landroid/media/AudioAttributes$Builder;
 
-    move-result-object p1
+    invoke-direct {v2}, Landroid/media/AudioAttributes$Builder;-><init>()V
+
+    invoke-virtual {v2, v4}, Landroid/media/AudioAttributes$Builder;->setContentType(I)Landroid/media/AudioAttributes$Builder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v3}, Landroid/media/AudioAttributes$Builder;->setFlags(I)Landroid/media/AudioAttributes$Builder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v6}, Landroid/media/AudioAttributes$Builder;->setUsage(I)Landroid/media/AudioAttributes$Builder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/media/AudioAttributes$Builder;->build()Landroid/media/AudioAttributes;
+
+    move-result-object v2
 
     goto :goto_0
 
     :cond_0
-    iget-object p1, p0, Le84;->a:Landroid/net/Uri;
+    invoke-virtual {p2}, Lr20;->a()Landroid/media/AudioAttributes;
+
+    move-result-object v2
 
     :goto_0
-    invoke-virtual {p0, p1}, Le84;->e(Landroid/net/Uri;)V
+    new-instance v3, Landroid/media/AudioTrack$Builder;
 
-    return-void
-.end method
+    invoke-direct {v3}, Landroid/media/AudioTrack$Builder;-><init>()V
 
-.method public final d(Landroid/net/Uri;)V
-    .locals 14
+    invoke-virtual {v3, v2}, Landroid/media/AudioTrack$Builder;->setAudioAttributes(Landroid/media/AudioAttributes;)Landroid/media/AudioTrack$Builder;
 
-    iget-object v0, p0, Le84;->A0:Lf84;
+    move-result-object v2
 
-    iget-object v1, v0, Lf84;->x0:Ljava/lang/Object;
-
-    check-cast v1, Lbj6;
-
-    iget-object v2, v0, Lf84;->C0:Ljava/lang/Object;
-
-    check-cast v2, Lvi6;
-
-    iget-object v3, p0, Le84;->o:Lni6;
-
-    invoke-interface {v1, v2, v3}, Lbj6;->i(Lvi6;Lni6;)Llja;
+    invoke-virtual {v2, v1}, Landroid/media/AudioTrack$Builder;->setAudioFormat(Landroid/media/AudioFormat;)Landroid/media/AudioTrack$Builder;
 
     move-result-object v1
 
-    new-instance v2, Lnja;
+    invoke-virtual {v1, v6}, Landroid/media/AudioTrack$Builder;->setTransferMode(I)Landroid/media/AudioTrack$Builder;
 
-    iget-object v3, p0, Le84;->c:Lqz3;
+    move-result-object v1
 
-    const/4 v4, 0x4
+    iget v2, p0, Le84;->h:I
 
-    invoke-direct {v2, v3, p1, v4, v1}, Lnja;-><init>(Lqz3;Landroid/net/Uri;ILlja;)V
+    invoke-virtual {v1, v2}, Landroid/media/AudioTrack$Builder;->setBufferSizeInBytes(I)Landroid/media/AudioTrack$Builder;
 
-    iget-object p1, v0, Lf84;->y0:Ljava/lang/Object;
+    move-result-object v1
 
-    check-cast p1, Lmk9;
+    invoke-virtual {v1, p3}, Landroid/media/AudioTrack$Builder;->setSessionId(I)Landroid/media/AudioTrack$Builder;
 
-    iget v5, v2, Lnja;->c:I
+    move-result-object v1
 
-    invoke-virtual {p1, v5}, Lmk9;->k(I)I
+    iget v0, p0, Le84;->c:I
 
-    move-result p1
-
-    iget-object v1, p0, Le84;->b:Lul7;
-
-    invoke-virtual {v1, v2, p0, p1}, Lul7;->F(Lgj7;Ldj7;I)J
-
-    move-result-wide v10
-
-    iget-object p0, v0, Lf84;->z0:Ljava/lang/Object;
-
-    move-object v3, p0
-
-    check-cast v3, Ljn;
-
-    new-instance v4, Lyi7;
-
-    iget-wide v7, v2, Lnja;->a:J
-
-    iget-object v9, v2, Lnja;->b:Lyz3;
-
-    move-object v6, v4
-
-    invoke-direct/range {v6 .. v11}, Lyi7;-><init>(JLyz3;J)V
-
-    const-wide v10, -0x7fffffffffffffffL    # -4.9E-324
-
-    const-wide v12, -0x7fffffffffffffffL    # -4.9E-324
-
-    const/4 v6, -0x1
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    invoke-virtual/range {v3 .. v13}, Ljn;->F(Lyi7;IILxu5;ILjava/lang/Object;JJ)V
-
-    return-void
-.end method
-
-.method public final e(Landroid/net/Uri;)V
-    .locals 7
-
-    const-wide/16 v0, 0x0
-
-    iput-wide v0, p0, Le84;->w0:J
-
-    iget-boolean v0, p0, Le84;->x0:Z
-
-    if-nez v0, :cond_2
-
-    iget-object v0, p0, Le84;->b:Lul7;
-
-    invoke-virtual {v0}, Lul7;->A()Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    invoke-virtual {v0}, Lul7;->w()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v0
-
-    iget-wide v2, p0, Le84;->Z:J
-
-    cmp-long v4, v0, v2
-
-    if-gez v4, :cond_1
-
-    const/4 v4, 0x1
-
-    iput-boolean v4, p0, Le84;->x0:Z
-
-    iget-object v4, p0, Le84;->A0:Lf84;
-
-    iget-object v4, v4, Lf84;->o:Landroid/os/Handler;
-
-    new-instance v5, Ldr1;
-
-    const/16 v6, 0x16
-
-    invoke-direct {v5, p0, v6, p1}, Ldr1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    sub-long/2addr v2, v0
-
-    invoke-virtual {v4, v5, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p0, p1}, Le84;->d(Landroid/net/Uri;)V
-
-    :cond_2
-    :goto_0
-    return-void
-.end method
-
-.method public final f(Lni6;Lyi7;)V
-    .locals 64
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    iget-object v2, v0, Le84;->o:Lni6;
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v3
-
-    iput-wide v3, v0, Le84;->X:J
-
-    iget-object v5, v0, Le84;->A0:Lf84;
-
-    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    if-eqz v2, :cond_6
-
-    iget-wide v10, v1, Lni6;->k:J
-
-    iget-wide v12, v2, Lni6;->k:J
-
-    cmp-long v10, v10, v12
-
-    if-lez v10, :cond_0
-
-    goto/16 :goto_3
-
-    :cond_0
-    iget-boolean v11, v2, Lni6;->o:Z
-
-    iget-object v15, v2, Lni6;->s:Lws6;
-
-    iget-object v14, v2, Lni6;->r:Lws6;
-
-    iget-boolean v12, v1, Lni6;->o:Z
-
-    if-gez v10, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v10, v1, Lni6;->r:Lws6;
-
-    invoke-interface {v10}, Ljava/util/List;->size()I
-
-    move-result v10
-
-    invoke-interface {v14}, Ljava/util/List;->size()I
-
-    move-result v13
-
-    sub-int/2addr v10, v13
-
-    if-eqz v10, :cond_2
-
-    if-lez v10, :cond_3
-
-    goto/16 :goto_3
-
-    :cond_2
-    iget-object v10, v1, Lni6;->s:Lws6;
-
-    invoke-interface {v10}, Ljava/util/List;->size()I
-
-    move-result v10
-
-    invoke-interface {v15}, Ljava/util/List;->size()I
-
-    move-result v13
-
-    if-gt v10, v13, :cond_7
-
-    if-ne v10, v13, :cond_3
-
-    if-eqz v12, :cond_3
-
-    if-nez v11, :cond_3
-
-    goto :goto_3
-
-    :cond_3
-    :goto_0
-    if-eqz v12, :cond_5
-
-    if-eqz v11, :cond_4
-
-    goto :goto_2
-
-    :cond_4
-    new-instance v10, Lni6;
-
-    move-object v12, v10
-
-    const/16 v31, 0x1
-
-    iget-boolean v11, v2, Lni6;->p:Z
-
-    move/from16 v32, v11
-
-    iget v13, v2, Lni6;->d:I
-
-    iget-object v11, v2, Lxi6;->a:Ljava/lang/String;
-
-    move-object/from16 v34, v14
-
-    move-object v14, v11
-
-    iget-object v11, v2, Lxi6;->b:Ljava/util/List;
-
-    move-object/from16 v35, v15
-
-    move-object v15, v11
-
-    iget-wide v8, v2, Lni6;->e:J
-
-    move-wide/from16 v16, v8
-
-    iget-boolean v8, v2, Lni6;->g:Z
-
-    move/from16 v18, v8
-
-    iget-wide v8, v2, Lni6;->h:J
-
-    move-wide/from16 v19, v8
-
-    iget-boolean v8, v2, Lni6;->i:Z
-
-    move/from16 v21, v8
-
-    iget v8, v2, Lni6;->j:I
-
-    move/from16 v22, v8
-
-    iget-wide v8, v2, Lni6;->k:J
-
-    move-wide/from16 v23, v8
-
-    iget v8, v2, Lni6;->l:I
-
-    move/from16 v25, v8
-
-    iget-wide v8, v2, Lni6;->m:J
-
-    move-wide/from16 v26, v8
-
-    iget-wide v8, v2, Lni6;->n:J
-
-    move-wide/from16 v28, v8
-
-    iget-boolean v8, v2, Lxi6;->c:Z
-
-    move/from16 v30, v8
-
-    iget-object v8, v2, Lni6;->q:Lxn4;
-
-    move-object/from16 v33, v8
-
-    iget-object v8, v2, Lni6;->v:Lli6;
-
-    move-object/from16 v36, v8
-
-    iget-object v8, v2, Lni6;->t:Lzs6;
-
-    move-object/from16 v37, v8
-
-    invoke-direct/range {v12 .. v37}, Lni6;-><init>(ILjava/lang/String;Ljava/util/List;JZJZIJIJJZZZLxn4;Ljava/util/List;Ljava/util/List;Lli6;Ljava/util/Map;)V
-
-    :goto_1
-    const/4 v8, 0x0
-
-    goto/16 :goto_e
-
-    :cond_5
-    :goto_2
-    move-object v10, v2
+    if-ne v0, v6, :cond_1
 
     goto :goto_1
 
-    :cond_6
-    invoke-virtual/range {p1 .. p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    :cond_7
-    :goto_3
-    iget-boolean v8, v1, Lni6;->p:Z
-
-    iget-wide v9, v1, Lni6;->k:J
-
-    if-eqz v8, :cond_8
-
-    iget-wide v11, v1, Lni6;->h:J
-
-    :goto_4
-    move-wide/from16 v45, v11
-
-    goto :goto_8
-
-    :cond_8
-    iget-object v8, v5, Lf84;->D0:Ljava/lang/Object;
-
-    check-cast v8, Lni6;
-
-    if-eqz v8, :cond_9
-
-    iget-wide v11, v8, Lni6;->h:J
-
-    goto :goto_5
-
-    :cond_9
-    const-wide/16 v11, 0x0
-
-    :goto_5
-    if-nez v2, :cond_a
-
-    goto :goto_4
-
-    :cond_a
-    iget-object v8, v2, Lni6;->r:Lws6;
-
-    invoke-interface {v8}, Ljava/util/List;->size()I
-
-    move-result v13
-
-    iget-wide v14, v2, Lni6;->k:J
-
-    sub-long v6, v9, v14
-
-    long-to-int v6, v6
-
-    invoke-interface {v8}, Ljava/util/List;->size()I
-
-    move-result v7
-
-    if-ge v6, v7, :cond_b
-
-    invoke-interface {v8, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lii6;
-
-    goto :goto_6
-
-    :cond_b
+    :cond_1
     const/4 v6, 0x0
 
-    :goto_6
-    iget-wide v7, v2, Lni6;->h:J
+    :goto_1
+    invoke-virtual {v1, v6}, Landroid/media/AudioTrack$Builder;->setOffloadedPlayback(Z)Landroid/media/AudioTrack$Builder;
 
-    if-eqz v6, :cond_c
+    move-result-object v0
 
-    iget-wide v11, v6, Lki6;->X:J
+    invoke-virtual {v0}, Landroid/media/AudioTrack$Builder;->build()Landroid/media/AudioTrack;
 
-    :goto_7
-    add-long/2addr v11, v7
+    move-result-object v0
 
-    goto :goto_4
+    return-object v0
 
-    :cond_c
-    move-wide/from16 v18, v11
+    :cond_2
+    const/16 v2, 0x15
 
-    int-to-long v11, v13
+    if-lt v1, v2, :cond_4
 
-    sub-long v13, v9, v14
+    new-instance v1, Landroid/media/AudioTrack;
 
-    cmp-long v6, v11, v13
+    if-eqz p1, :cond_3
 
-    if-nez v6, :cond_d
+    new-instance v2, Landroid/media/AudioAttributes$Builder;
 
-    iget-wide v11, v2, Lni6;->u:J
+    invoke-direct {v2}, Landroid/media/AudioAttributes$Builder;-><init>()V
 
-    goto :goto_7
+    invoke-virtual {v2, v4}, Landroid/media/AudioAttributes$Builder;->setContentType(I)Landroid/media/AudioAttributes$Builder;
 
-    :cond_d
-    move-wide/from16 v45, v18
+    move-result-object v2
 
-    :goto_8
-    iget-boolean v6, v1, Lni6;->i:Z
+    invoke-virtual {v2, v3}, Landroid/media/AudioAttributes$Builder;->setFlags(I)Landroid/media/AudioAttributes$Builder;
 
-    iget-object v7, v1, Lni6;->r:Lws6;
+    move-result-object v2
 
-    if-eqz v6, :cond_e
+    invoke-virtual {v2, v6}, Landroid/media/AudioAttributes$Builder;->setUsage(I)Landroid/media/AudioAttributes$Builder;
 
-    iget v6, v1, Lni6;->j:I
+    move-result-object v2
 
-    :goto_9
-    move/from16 v48, v6
+    invoke-virtual {v2}, Landroid/media/AudioAttributes$Builder;->build()Landroid/media/AudioAttributes;
 
-    const/4 v8, 0x0
+    move-result-object v2
 
-    goto :goto_d
+    goto :goto_2
 
-    :cond_e
-    iget-object v6, v5, Lf84;->D0:Ljava/lang/Object;
+    :cond_3
+    invoke-virtual {p2}, Lr20;->a()Landroid/media/AudioAttributes;
 
-    check-cast v6, Lni6;
+    move-result-object v2
 
-    if-eqz v6, :cond_f
+    :goto_2
+    invoke-static {v9, v8, v7}, Lo84;->e(III)Landroid/media/AudioFormat;
 
-    iget v6, v6, Lni6;->j:I
+    move-result-object v3
 
-    goto :goto_a
+    move-object v4, v1
 
-    :cond_f
-    const/4 v6, 0x0
+    move-object v1, v2
 
-    :goto_a
-    if-nez v2, :cond_10
+    move-object v2, v3
 
-    goto :goto_9
+    iget v3, p0, Le84;->h:I
 
-    :cond_10
-    iget-wide v11, v2, Lni6;->k:J
+    move-object v0, v4
 
-    sub-long/2addr v9, v11
+    const/4 v4, 0x1
 
-    long-to-int v8, v9
+    move v5, p3
 
-    iget-object v9, v2, Lni6;->r:Lws6;
+    invoke-direct/range {v0 .. v5}, Landroid/media/AudioTrack;-><init>(Landroid/media/AudioAttributes;Landroid/media/AudioFormat;III)V
 
-    invoke-interface {v9}, Ljava/util/List;->size()I
+    return-object v0
 
-    move-result v10
+    :cond_4
+    iget v1, p2, Lr20;->c:I
 
-    if-ge v8, v10, :cond_11
-
-    invoke-interface {v9, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Lii6;
-
-    goto :goto_b
-
-    :cond_11
-    const/4 v8, 0x0
-
-    :goto_b
-    if-eqz v8, :cond_12
-
-    iget v6, v2, Lni6;->j:I
-
-    iget v8, v8, Lki6;->o:I
-
-    add-int/2addr v6, v8
-
-    const/4 v8, 0x0
-
-    invoke-interface {v7, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Lii6;
-
-    iget v9, v9, Lki6;->o:I
-
-    sub-int/2addr v6, v9
-
-    :goto_c
-    move/from16 v48, v6
-
-    goto :goto_d
-
-    :cond_12
-    const/4 v8, 0x0
-
-    goto :goto_c
-
-    :goto_d
-    new-instance v10, Lni6;
-
-    move-object/from16 v38, v10
-
-    iget-boolean v6, v1, Lni6;->o:Z
-
-    move/from16 v57, v6
-
-    iget-boolean v6, v1, Lni6;->p:Z
-
-    move/from16 v58, v6
-
-    iget v6, v1, Lni6;->d:I
-
-    move/from16 v39, v6
-
-    iget-object v6, v1, Lxi6;->a:Ljava/lang/String;
-
-    move-object/from16 v40, v6
-
-    iget-object v6, v1, Lxi6;->b:Ljava/util/List;
-
-    move-object/from16 v41, v6
-
-    iget-wide v11, v1, Lni6;->e:J
-
-    move-wide/from16 v42, v11
-
-    iget-boolean v6, v1, Lni6;->g:Z
-
-    move/from16 v44, v6
-
-    const/16 v47, 0x1
-
-    iget-wide v11, v1, Lni6;->k:J
-
-    move-wide/from16 v49, v11
-
-    iget v6, v1, Lni6;->l:I
-
-    move/from16 v51, v6
-
-    iget-wide v11, v1, Lni6;->m:J
-
-    move-wide/from16 v52, v11
-
-    iget-wide v11, v1, Lni6;->n:J
-
-    move-wide/from16 v54, v11
-
-    iget-boolean v6, v1, Lxi6;->c:Z
-
-    move/from16 v56, v6
-
-    iget-object v6, v1, Lni6;->q:Lxn4;
-
-    move-object/from16 v59, v6
-
-    iget-object v6, v1, Lni6;->s:Lws6;
-
-    move-object/from16 v61, v6
-
-    iget-object v6, v1, Lni6;->v:Lli6;
-
-    move-object/from16 v62, v6
-
-    iget-object v6, v1, Lni6;->t:Lzs6;
-
-    move-object/from16 v63, v6
-
-    move-object/from16 v60, v7
-
-    invoke-direct/range {v38 .. v63}, Lni6;-><init>(ILjava/lang/String;Ljava/util/List;JZJZIJIJJZZZLxn4;Ljava/util/List;Ljava/util/List;Lli6;Ljava/util/Map;)V
-
-    :goto_e
-    iput-object v10, v0, Le84;->o:Lni6;
-
-    iget-object v6, v5, Lf84;->c:Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    const/4 v7, 0x1
-
-    iget-object v9, v0, Le84;->a:Landroid/net/Uri;
-
-    iget-boolean v11, v10, Lni6;->o:Z
-
-    if-eq v10, v2, :cond_15
-
-    const/4 v12, 0x0
-
-    iput-object v12, v0, Le84;->y0:Ljava/io/IOException;
-
-    iput-wide v3, v0, Le84;->Y:J
-
-    iget-object v1, v5, Lf84;->X:Landroid/net/Uri;
-
-    invoke-virtual {v9, v1}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+    invoke-static {v1}, Lnaf;->w(I)I
 
     move-result v1
 
-    if-eqz v1, :cond_14
+    if-nez p3, :cond_5
 
-    iget-object v1, v5, Lf84;->D0:Ljava/lang/Object;
+    new-instance v2, Landroid/media/AudioTrack;
 
-    check-cast v1, Lni6;
+    iget v7, p0, Le84;->h:I
 
-    if-nez v1, :cond_13
+    const/4 v8, 0x1
 
-    xor-int/lit8 v1, v11, 0x1
+    iget v4, p0, Le84;->e:I
 
-    iput-boolean v1, v5, Lf84;->Y:Z
+    iget v5, p0, Le84;->f:I
 
-    iget-wide v7, v10, Lni6;->h:J
+    iget v6, p0, Le84;->g:I
 
-    iput-wide v7, v5, Lf84;->Z:J
+    move v3, v1
 
-    :cond_13
-    iput-object v10, v5, Lf84;->D0:Ljava/lang/Object;
+    invoke-direct/range {v2 .. v8}, Landroid/media/AudioTrack;-><init>(IIIIII)V
 
-    iget-object v1, v5, Lf84;->B0:Ljava/lang/Object;
+    return-object v2
 
-    check-cast v1, Lfj6;
+    :cond_5
+    new-instance v2, Landroid/media/AudioTrack;
 
-    check-cast v1, Lpi6;
+    iget v5, p0, Le84;->h:I
 
-    invoke-virtual {v1, v10}, Lpi6;->v(Lni6;)V
+    const/4 v6, 0x1
 
-    :cond_14
-    invoke-virtual {v6}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+    move-object v3, v2
 
-    move-result-object v1
+    iget v2, p0, Le84;->e:I
 
-    :goto_f
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    move-object v4, v3
 
-    move-result v6
+    iget v3, p0, Le84;->f:I
 
-    if-eqz v6, :cond_18
+    iget v0, p0, Le84;->g:I
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-object v7, v4
 
-    move-result-object v6
+    move v4, v0
 
-    check-cast v6, Ldj6;
+    move-object v0, v7
 
-    invoke-interface {v6}, Ldj6;->a()V
+    move v7, p3
 
-    goto :goto_f
+    invoke-direct/range {v0 .. v7}, Landroid/media/AudioTrack;-><init>(IIIIIII)V
 
-    :cond_15
-    const/4 v12, 0x0
-
-    if-nez v11, :cond_18
-
-    iget-object v10, v1, Lni6;->r:Lws6;
-
-    invoke-interface {v10}, Ljava/util/List;->size()I
-
-    move-result v10
-
-    int-to-long v10, v10
-
-    iget-wide v13, v1, Lni6;->k:J
-
-    add-long/2addr v13, v10
-
-    iget-object v1, v0, Le84;->o:Lni6;
-
-    iget-wide v10, v1, Lni6;->k:J
-
-    cmp-long v10, v13, v10
-
-    if-gez v10, :cond_16
-
-    new-instance v1, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistTracker$PlaylistResetException;
-
-    invoke-direct {v1}, Ljava/io/IOException;-><init>()V
-
-    move v8, v7
-
-    goto :goto_10
-
-    :cond_16
-    iget-wide v10, v0, Le84;->Y:J
-
-    sub-long v10, v3, v10
-
-    long-to-double v10, v10
-
-    iget-wide v13, v1, Lni6;->m:J
-
-    invoke-static {v13, v14}, Loze;->h0(J)J
-
-    move-result-wide v13
-
-    long-to-double v13, v13
-
-    const-wide/high16 v15, 0x400c000000000000L    # 3.5
-
-    mul-double/2addr v13, v15
-
-    cmpl-double v1, v10, v13
-
-    if-lez v1, :cond_17
-
-    new-instance v1, Landroidx/media3/exoplayer/hls/playlist/HlsPlaylistTracker$PlaylistStuckException;
-
-    invoke-direct {v1}, Ljava/io/IOException;-><init>()V
-
-    goto :goto_10
-
-    :cond_17
-    move-object v1, v12
-
-    :goto_10
-    if-eqz v1, :cond_18
-
-    iput-object v1, v0, Le84;->y0:Ljava/io/IOException;
-
-    new-instance v10, Lwi7;
-
-    invoke-direct {v10, v7, v1}, Lwi7;-><init>(ILjava/io/IOException;)V
-
-    invoke-virtual {v6}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_11
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_18
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Ldj6;
-
-    invoke-interface {v6, v9, v10, v8}, Ldj6;->c(Landroid/net/Uri;Lwi7;Z)Z
-
-    goto :goto_11
-
-    :cond_18
-    iget-object v1, v0, Le84;->o:Lni6;
-
-    iget-object v6, v1, Lni6;->v:Lli6;
-
-    iget-boolean v6, v6, Lli6;->e:Z
-
-    if-nez v6, :cond_1a
-
-    iget-wide v6, v1, Lni6;->m:J
-
-    if-eq v1, v2, :cond_19
-
-    goto :goto_12
-
-    :cond_19
-    const-wide/16 v1, 0x2
-
-    div-long/2addr v6, v1
-
-    goto :goto_12
-
-    :cond_1a
-    const-wide/16 v6, 0x0
-
-    :goto_12
-    invoke-static {v6, v7}, Loze;->h0(J)J
-
-    move-result-wide v1
-
-    add-long/2addr v1, v3
-
-    move-object/from16 v3, p2
-
-    iget-wide v3, v3, Lyi7;->a:J
-
-    sub-long/2addr v1, v3
-
-    iput-wide v1, v0, Le84;->Z:J
-
-    iget-object v1, v0, Le84;->o:Lni6;
-
-    iget-boolean v1, v1, Lni6;->o:Z
-
-    if-nez v1, :cond_1c
-
-    iget-object v1, v5, Lf84;->X:Landroid/net/Uri;
-
-    invoke-virtual {v9, v1}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1b
-
-    iget-boolean v1, v0, Le84;->z0:Z
-
-    if-eqz v1, :cond_1c
-
-    :cond_1b
-    invoke-virtual/range {p0 .. p0}, Le84;->b()Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Le84;->e(Landroid/net/Uri;)V
-
-    :cond_1c
-    return-void
-.end method
-
-.method public final x(Lgj7;JJZ)V
-    .locals 12
-
-    move-object v0, p1
-
-    check-cast v0, Lnja;
-
-    new-instance v2, Lyi7;
-
-    iget-wide v3, v0, Lnja;->a:J
-
-    iget-object v0, v0, Lnja;->o:Lfsd;
-
-    iget-object v0, v0, Lfsd;->c:Landroid/net/Uri;
-
-    move-wide/from16 v0, p4
-
-    invoke-direct {v2, v0, v1}, Lyi7;-><init>(J)V
-
-    move-object v0, p0
-
-    iget-object v0, v0, Le84;->A0:Lf84;
-
-    iget-object v1, v0, Lf84;->y0:Ljava/lang/Object;
-
-    check-cast v1, Lmk9;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v0, v0, Lf84;->z0:Ljava/lang/Object;
-
-    move-object v1, v0
-
-    check-cast v1, Ljn;
-
-    const-wide v8, -0x7fffffffffffffffL    # -4.9E-324
-
-    const-wide v10, -0x7fffffffffffffffL    # -4.9E-324
-
-    const/4 v3, 0x4
-
-    const/4 v4, -0x1
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    invoke-virtual/range {v1 .. v11}, Ljn;->x(Lyi7;IILxu5;ILjava/lang/Object;JJ)V
-
-    return-void
+    return-object v0
 .end method

@@ -18,10 +18,10 @@
     return-void
 .end method
 
-.method public static a(Lyic;[B)Llr6;
+.method public static a(Lj68;[B)Lnv6;
     .locals 2
 
-    invoke-virtual {p0}, Lyic;->f()I
+    invoke-virtual {p0}, Lj68;->f()I
 
     move-result v0
 
@@ -37,11 +37,11 @@
     const/4 v0, 0x0
 
     :goto_0
-    invoke-static {v0}, Le07;->k(Z)V
+    invoke-static {v0}, Lfq0;->l(Z)V
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {p0}, Lyic;->getSurface()Landroid/view/Surface;
+    invoke-virtual {p0}, Lj68;->getSurface()Landroid/view/Surface;
 
     move-result-object v0
 
@@ -58,17 +58,17 @@
     return-object p0
 
     :cond_1
-    invoke-virtual {p0}, Lyic;->c()Llr6;
+    invoke-virtual {p0}, Lj68;->d()Lnv6;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static b(Llr6;)Landroid/graphics/Bitmap;
+.method public static b(Lnv6;)Landroid/graphics/Bitmap;
     .locals 14
 
-    invoke-interface {p0}, Llr6;->k0()I
+    invoke-interface {p0}, Lnv6;->getFormat()I
 
     move-result v0
 
@@ -76,15 +76,15 @@
 
     if-ne v0, v1, :cond_1
 
-    invoke-interface {p0}, Llr6;->getWidth()I
+    invoke-interface {p0}, Lnv6;->getWidth()I
 
     move-result v12
 
-    invoke-interface {p0}, Llr6;->getHeight()I
+    invoke-interface {p0}, Lnv6;->getHeight()I
 
     move-result v13
 
-    invoke-interface {p0}, Llr6;->v()[Lmv4;
+    invoke-interface {p0}, Lnv6;->w()[Lly4;
 
     move-result-object v0
 
@@ -92,11 +92,11 @@
 
     aget-object v0, v0, v1
 
-    invoke-virtual {v0}, Lmv4;->H()I
+    invoke-virtual {v0}, Lly4;->l()I
 
     move-result v3
 
-    invoke-interface {p0}, Llr6;->v()[Lmv4;
+    invoke-interface {p0}, Lnv6;->w()[Lly4;
 
     move-result-object v0
 
@@ -104,11 +104,11 @@
 
     aget-object v0, v0, v2
 
-    invoke-virtual {v0}, Lmv4;->H()I
+    invoke-virtual {v0}, Lly4;->l()I
 
     move-result v5
 
-    invoke-interface {p0}, Llr6;->v()[Lmv4;
+    invoke-interface {p0}, Lnv6;->w()[Lly4;
 
     move-result-object v0
 
@@ -116,35 +116,35 @@
 
     aget-object v0, v0, v4
 
-    invoke-virtual {v0}, Lmv4;->H()I
+    invoke-virtual {v0}, Lly4;->l()I
 
     move-result v7
 
-    invoke-interface {p0}, Llr6;->v()[Lmv4;
+    invoke-interface {p0}, Lnv6;->w()[Lly4;
 
     move-result-object v0
 
     aget-object v0, v0, v1
 
-    invoke-virtual {v0}, Lmv4;->F()I
+    invoke-virtual {v0}, Lly4;->k()I
 
     move-result v8
 
-    invoke-interface {p0}, Llr6;->v()[Lmv4;
+    invoke-interface {p0}, Lnv6;->w()[Lly4;
 
     move-result-object v0
 
     aget-object v0, v0, v2
 
-    invoke-virtual {v0}, Lmv4;->F()I
+    invoke-virtual {v0}, Lly4;->k()I
 
     move-result v9
 
-    invoke-interface {p0}, Llr6;->getWidth()I
+    invoke-interface {p0}, Lnv6;->getWidth()I
 
     move-result v0
 
-    invoke-interface {p0}, Llr6;->getHeight()I
+    invoke-interface {p0}, Lnv6;->getHeight()I
 
     move-result v6
 
@@ -152,49 +152,45 @@
 
     invoke-static {v0, v6, v10}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
-    move-result-object v0
+    move-result-object v10
 
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getRowBytes()I
+    invoke-virtual {v10}, Landroid/graphics/Bitmap;->getRowBytes()I
 
     move-result v11
 
-    invoke-interface {p0}, Llr6;->v()[Lmv4;
+    invoke-interface {p0}, Lnv6;->w()[Lly4;
 
-    move-result-object v6
+    move-result-object v0
 
-    aget-object v1, v6, v1
+    aget-object v0, v0, v1
 
-    invoke-virtual {v1}, Lmv4;->E()Ljava/nio/ByteBuffer;
+    invoke-virtual {v0}, Lly4;->j()Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    invoke-interface {p0}, Lnv6;->w()[Lly4;
 
     move-result-object v1
 
-    invoke-interface {p0}, Llr6;->v()[Lmv4;
+    aget-object v1, v1, v2
 
-    move-result-object v6
+    invoke-virtual {v1}, Lly4;->j()Ljava/nio/ByteBuffer;
 
-    aget-object v2, v6, v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Lmv4;->E()Ljava/nio/ByteBuffer;
-
-    move-result-object v6
-
-    invoke-interface {p0}, Llr6;->v()[Lmv4;
+    invoke-interface {p0}, Lnv6;->w()[Lly4;
 
     move-result-object p0
 
     aget-object p0, p0, v4
 
-    invoke-virtual {p0}, Lmv4;->E()Ljava/nio/ByteBuffer;
+    invoke-virtual {p0}, Lly4;->j()Ljava/nio/ByteBuffer;
 
-    move-result-object p0
+    move-result-object v6
 
-    move-object v2, v1
+    move-object v2, v0
 
-    move-object v4, v6
-
-    move-object v6, p0
-
-    move-object v10, v0
+    move-object v4, v1
 
     invoke-static/range {v2 .. v13}, Landroidx/camera/core/ImageProcessingUtil;->nativeConvertAndroid420ToBitmap(Ljava/nio/ByteBuffer;ILjava/nio/ByteBuffer;ILjava/nio/ByteBuffer;IIILandroid/graphics/Bitmap;III)I
 
@@ -202,7 +198,7 @@
 
     if-nez p0, :cond_0
 
-    return-object v0
+    return-object v10
 
     :cond_0
     new-instance p0, Ljava/lang/UnsupportedOperationException;
@@ -223,210 +219,212 @@
     throw p0
 .end method
 
-.method public static c(Llr6;Lnr6;Ljava/nio/ByteBuffer;IZ)Lpp6;
-    .locals 18
+.method public static c(Lnv6;Lpv6;Ljava/nio/ByteBuffer;IZ)Lwt6;
+    .locals 19
 
-    move/from16 v15, p3
+    move/from16 v0, p3
 
-    invoke-interface/range {p0 .. p0}, Llr6;->k0()I
+    invoke-interface/range {p0 .. p0}, Lnv6;->getFormat()I
 
-    move-result v0
+    move-result v1
 
-    const/16 v1, 0x23
+    const/16 v2, 0x23
 
-    if-ne v0, v1, :cond_0
+    if-ne v1, v2, :cond_0
 
-    invoke-interface/range {p0 .. p0}, Llr6;->v()[Lmv4;
+    invoke-interface/range {p0 .. p0}, Lnv6;->w()[Lly4;
 
-    move-result-object v0
+    move-result-object v1
 
-    array-length v0, v0
+    array-length v1, v1
 
-    const/4 v1, 0x3
+    const/4 v2, 0x3
 
-    if-ne v0, v1, :cond_0
+    if-ne v1, v2, :cond_0
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     :goto_0
-    const/16 v16, 0x0
+    const/16 v17, 0x0
 
-    if-nez v0, :cond_1
+    if-nez v1, :cond_1
 
-    return-object v16
+    goto/16 :goto_5
 
     :cond_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    if-eqz v15, :cond_3
+    if-eqz v0, :cond_3
 
-    const/16 v0, 0x5a
+    const/16 v1, 0x5a
 
-    if-eq v15, v0, :cond_3
+    if-eq v0, v1, :cond_3
 
-    const/16 v0, 0xb4
+    const/16 v1, 0xb4
 
-    if-eq v15, v0, :cond_3
+    if-eq v0, v1, :cond_3
 
-    const/16 v0, 0x10e
+    const/16 v1, 0x10e
 
-    if-ne v15, v0, :cond_2
+    if-ne v0, v1, :cond_2
 
     goto :goto_1
 
     :cond_2
-    return-object v16
+    return-object v17
 
     :cond_3
     :goto_1
-    invoke-interface/range {p1 .. p1}, Lnr6;->getSurface()Landroid/view/Surface;
+    invoke-interface/range {p1 .. p1}, Lpv6;->getSurface()Landroid/view/Surface;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-interface/range {p0 .. p0}, Llr6;->getWidth()I
-
-    move-result v10
-
-    invoke-interface/range {p0 .. p0}, Llr6;->getHeight()I
+    invoke-interface/range {p0 .. p0}, Lnv6;->getWidth()I
 
     move-result v11
 
-    invoke-interface/range {p0 .. p0}, Llr6;->v()[Lmv4;
+    invoke-interface/range {p0 .. p0}, Lnv6;->getHeight()I
 
-    move-result-object v0
+    move-result v12
 
-    const/4 v1, 0x0
+    invoke-interface/range {p0 .. p0}, Lnv6;->w()[Lly4;
 
-    aget-object v0, v0, v1
+    move-result-object v1
 
-    invoke-virtual {v0}, Lmv4;->H()I
+    const/4 v2, 0x0
 
-    move-result v2
+    aget-object v1, v1, v2
 
-    invoke-interface/range {p0 .. p0}, Llr6;->v()[Lmv4;
+    invoke-virtual {v1}, Lly4;->l()I
 
-    move-result-object v0
+    move-result v1
 
-    const/16 v17, 0x1
+    invoke-interface/range {p0 .. p0}, Lnv6;->w()[Lly4;
 
-    aget-object v0, v0, v17
+    move-result-object v3
 
-    invoke-virtual {v0}, Lmv4;->H()I
+    const/16 v18, 0x1
 
-    move-result v3
+    aget-object v3, v3, v18
 
-    invoke-interface/range {p0 .. p0}, Llr6;->v()[Lmv4;
+    invoke-virtual {v3}, Lly4;->l()I
 
-    move-result-object v0
+    move-result v4
 
-    const/4 v4, 0x2
+    invoke-interface/range {p0 .. p0}, Lnv6;->w()[Lly4;
 
-    aget-object v0, v0, v4
+    move-result-object v3
 
-    invoke-virtual {v0}, Lmv4;->H()I
+    const/4 v5, 0x2
 
-    move-result v5
+    aget-object v3, v3, v5
 
-    invoke-interface/range {p0 .. p0}, Llr6;->v()[Lmv4;
-
-    move-result-object v0
-
-    aget-object v0, v0, v1
-
-    invoke-virtual {v0}, Lmv4;->F()I
+    invoke-virtual {v3}, Lly4;->l()I
 
     move-result v6
 
-    invoke-interface/range {p0 .. p0}, Llr6;->v()[Lmv4;
+    invoke-interface/range {p0 .. p0}, Lnv6;->w()[Lly4;
 
-    move-result-object v0
+    move-result-object v3
 
-    aget-object v0, v0, v17
+    aget-object v3, v3, v2
 
-    invoke-virtual {v0}, Lmv4;->F()I
+    invoke-virtual {v3}, Lly4;->k()I
 
     move-result v7
 
+    invoke-interface/range {p0 .. p0}, Lnv6;->w()[Lly4;
+
+    move-result-object v3
+
+    aget-object v3, v3, v18
+
+    invoke-virtual {v3}, Lly4;->k()I
+
+    move-result v8
+
     if-eqz p4, :cond_4
 
-    move v12, v6
+    move v13, v7
 
     goto :goto_2
 
     :cond_4
-    move v12, v1
+    move v13, v2
 
     :goto_2
     if-eqz p4, :cond_5
 
-    move v13, v7
+    move v14, v8
 
     goto :goto_3
 
     :cond_5
-    move v13, v1
+    move v14, v2
 
     :goto_3
     if-eqz p4, :cond_6
 
-    move v14, v7
+    move v15, v8
 
     goto :goto_4
 
     :cond_6
-    move v14, v1
+    move v15, v2
 
     :goto_4
-    invoke-interface/range {p0 .. p0}, Llr6;->v()[Lmv4;
+    invoke-interface/range {p0 .. p0}, Lnv6;->w()[Lly4;
 
-    move-result-object v0
+    move-result-object v3
 
-    aget-object v0, v0, v1
+    aget-object v2, v3, v2
 
-    invoke-virtual {v0}, Lmv4;->E()Ljava/nio/ByteBuffer;
+    invoke-virtual {v2}, Lly4;->j()Ljava/nio/ByteBuffer;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-interface/range {p0 .. p0}, Llr6;->v()[Lmv4;
+    invoke-interface/range {p0 .. p0}, Lnv6;->w()[Lly4;
 
-    move-result-object v1
+    move-result-object v3
 
-    aget-object v1, v1, v17
+    aget-object v3, v3, v18
 
-    invoke-virtual {v1}, Lmv4;->E()Ljava/nio/ByteBuffer;
+    invoke-virtual {v3}, Lly4;->j()Ljava/nio/ByteBuffer;
 
-    move-result-object v9
+    move-result-object v3
 
-    invoke-interface/range {p0 .. p0}, Llr6;->v()[Lmv4;
+    invoke-interface/range {p0 .. p0}, Lnv6;->w()[Lly4;
 
-    move-result-object v1
+    move-result-object v10
 
-    aget-object v1, v1, v4
+    aget-object v5, v10, v5
 
-    invoke-virtual {v1}, Lmv4;->E()Ljava/nio/ByteBuffer;
+    invoke-virtual {v5}, Lly4;->j()Ljava/nio/ByteBuffer;
 
-    move-result-object v4
+    move-result-object v5
 
-    move v1, v2
+    move-object v10, v2
 
-    move-object v2, v9
+    move v2, v1
 
-    move-object/from16 v9, p2
+    move-object v1, v10
 
-    move/from16 v15, p3
+    move-object/from16 v10, p2
 
-    invoke-static/range {v0 .. v15}, Landroidx/camera/core/ImageProcessingUtil;->nativeConvertAndroid420ToABGR(Ljava/nio/ByteBuffer;ILjava/nio/ByteBuffer;ILjava/nio/ByteBuffer;IIILandroid/view/Surface;Ljava/nio/ByteBuffer;IIIIII)I
+    move/from16 v16, v0
+
+    invoke-static/range {v1 .. v16}, Landroidx/camera/core/ImageProcessingUtil;->nativeConvertAndroid420ToABGR(Ljava/nio/ByteBuffer;ILjava/nio/ByteBuffer;ILjava/nio/ByteBuffer;IIILandroid/view/Surface;Ljava/nio/ByteBuffer;IIIIII)I
 
     move-result v0
 
     if-eqz v0, :cond_7
 
-    return-object v16
+    goto :goto_5
 
     :cond_7
     const-string v0, "MH"
@@ -450,26 +448,27 @@
     sput v0, Landroidx/camera/core/ImageProcessingUtil;->a:I
 
     :cond_8
-    invoke-interface/range {p1 .. p1}, Lnr6;->c()Llr6;
+    invoke-interface/range {p1 .. p1}, Lpv6;->d()Lnv6;
 
     move-result-object v0
 
     if-nez v0, :cond_9
 
-    return-object v16
+    :goto_5
+    return-object v17
 
     :cond_9
-    new-instance v1, Lpp6;
+    new-instance v1, Lwt6;
 
-    invoke-direct {v1, v0}, Lpp6;-><init>(Llr6;)V
+    invoke-direct {v1, v0}, Lwt6;-><init>(Lnv6;)V
 
-    new-instance v2, Lkr6;
+    new-instance v2, Lvt6;
 
     move-object/from16 v3, p0
 
-    invoke-direct {v2, v0, v3}, Lkr6;-><init>(Llr6;Llr6;)V
+    invoke-direct {v2, v0, v3}, Lvt6;-><init>(Lnv6;Lnv6;)V
 
-    invoke-virtual {v1, v2}, Lqw5;->a(Lpw5;)V
+    invoke-virtual {v1, v2}, Lx06;->c(Lw06;)V
 
     return-object v1
 .end method

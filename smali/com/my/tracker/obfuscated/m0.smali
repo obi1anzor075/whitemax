@@ -4,7 +4,7 @@
 
 
 # static fields
-.field static final d:Llg8;
+.field static final d:Lwk8;
 
 
 # instance fields
@@ -17,14 +17,14 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
-
-    sget-object v0, Llg8;->d:Ljava/util/regex/Pattern;
+    .locals 2
 
     const-string v0, "application/octet-stream"
 
+    sget-object v1, Lwk8;->d:Ljava/util/regex/Pattern;
+
     :try_start_0
-    invoke-static {v0}, Loyb;->A(Ljava/lang/String;)Llg8;
+    invoke-static {v0}, Lq46;->q(Ljava/lang/String;)Lwk8;
 
     move-result-object v0
     :try_end_0
@@ -36,7 +36,7 @@
     const/4 v0, 0x0
 
     :goto_0
-    sput-object v0, Lcom/my/tracker/obfuscated/m0;->d:Llg8;
+    sput-object v0, Lcom/my/tracker/obfuscated/m0;->d:Lwk8;
 
     return-void
 .end method
@@ -156,39 +156,41 @@
 
     :goto_0
     :try_start_5
-    new-instance v7, Ls86;
+    new-instance v7, Lig4;
 
-    invoke-direct {v7}, Ls86;-><init>()V
+    const/4 v8, 0x5
 
-    invoke-virtual {v7, p1}, Ls86;->q(Ljava/lang/String;)V
+    invoke-direct {v7, v8}, Lig4;-><init>(I)V
+
+    invoke-virtual {v7, p1}, Lig4;->s(Ljava/lang/String;)V
 
     const-string p1, "Content-Encoding"
 
     const-string v8, "gzip"
 
-    iget-object v9, v7, Ls86;->c:Ljava/lang/Object;
+    iget-object v9, v7, Lig4;->o:Ljava/lang/Object;
 
-    check-cast v9, Lxe6;
+    check-cast v9, Ld3d;
 
-    invoke-virtual {v9, p1, v8}, Lxe6;->n(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v9, p1, v8}, Ld3d;->y(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v2}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object p1
 
-    sget-object v8, Lcom/my/tracker/obfuscated/m0;->d:Llg8;
+    sget-object v8, Lcom/my/tracker/obfuscated/m0;->d:Lwk8;
 
     const/4 v9, 0x6
 
-    invoke-static {p1, v8, v9}, Loa2;->A([BLlg8;I)Lnac;
+    invoke-static {p1, v8, v9}, Lec2;->c([BLwk8;I)Ljfc;
 
     move-result-object p1
 
     const-string v8, "POST"
 
-    invoke-virtual {v7, v8, p1}, Ls86;->m(Ljava/lang/String;Ld8;)V
+    invoke-virtual {v7, v8, p1}, Lig4;->l(Ljava/lang/String;La4f;)V
 
-    invoke-virtual {v7}, Ls86;->j()Llac;
+    invoke-virtual {v7}, Lig4;->a()Lhfc;
 
     move-result-object p1
     :try_end_5
@@ -212,22 +214,22 @@
 
     iget-object p0, p0, Lcom/my/tracker/obfuscated/m0;->b:Lcom/my/tracker/MyTrackerConfig$OkHttpClientProvider;
 
-    invoke-interface {p0}, Lcom/my/tracker/MyTrackerConfig$OkHttpClientProvider;->getOkHttpClient()Lqw9;
+    invoke-interface {p0}, Lcom/my/tracker/MyTrackerConfig$OkHttpClientProvider;->getOkHttpClient()Lp0a;
 
     move-result-object p0
 
-    invoke-virtual {p0, p1}, Lqw9;->b(Llac;)Ly0c;
+    invoke-virtual {p0, p1}, Lp0a;->b(Lhfc;)Lz5c;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Ly0c;->f()Lxbc;
+    invoke-virtual {p0}, Lz5c;->f()Lsgc;
 
     move-result-object p0
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
     :try_start_7
-    iget p1, p0, Lxbc;->o:I
+    iget p1, p0, Lsgc;->o:I
 
     const/16 v2, 0xc8
 
@@ -282,11 +284,11 @@
 
     invoke-static {p1}, Lcom/my/tracker/obfuscated/y0;->a(Ljava/lang/String;)V
 
-    iget-object p1, p0, Lxbc;->Z:Lf1c;
+    iget-object p1, p0, Lsgc;->Z:Lugc;
 
     if-eqz p1, :cond_4
 
-    invoke-virtual {p1}, Lf1c;->U()Ljava/lang/String;
+    invoke-virtual {p1}, Lugc;->X()Ljava/lang/String;
 
     move-result-object v5
 
@@ -310,7 +312,7 @@
 
     :cond_6
     :goto_4
-    invoke-virtual {p0}, Lxbc;->close()V
+    invoke-virtual {p0}, Lsgc;->close()V
 
     return-object v3
 
@@ -349,7 +351,7 @@
 
     if-eqz v5, :cond_9
 
-    invoke-virtual {v5}, Lxbc;->close()V
+    invoke-virtual {v5}, Lsgc;->close()V
 
     :cond_9
     return-object v3
@@ -359,7 +361,7 @@
 
     if-eqz v5, :cond_a
 
-    invoke-virtual {v5}, Lxbc;->close()V
+    invoke-virtual {v5}, Lsgc;->close()V
 
     :cond_a
     throw p0

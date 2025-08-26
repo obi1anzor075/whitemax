@@ -1,294 +1,242 @@
-.class public abstract Lvhe;
+.class public final Lvhe;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Ljava/lang/ThreadLocal;
+# instance fields
+.field public final a:Ljava/lang/String;
 
-.field public static final b:[I
+.field public final b:Z
 
-.field public static final c:[I
+.field public final c:Ljava/util/List;
 
-.field public static final d:[I
-
-.field public static final e:[I
-
-.field public static final f:[I
-
-.field public static final g:[I
+.field public final d:Ljava/util/List;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;ZLjava/util/List;Ljava/util/List;)V
+    .locals 0
 
-    new-instance v0, Ljava/lang/ThreadLocal;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
+    iput-object p1, p0, Lvhe;->a:Ljava/lang/String;
 
-    sput-object v0, Lvhe;->a:Ljava/lang/ThreadLocal;
+    iput-boolean p2, p0, Lvhe;->b:Z
 
-    const v0, -0x101009e
+    iput-object p3, p0, Lvhe;->c:Ljava/util/List;
 
-    filled-new-array {v0}, [I
+    iput-object p4, p0, Lvhe;->d:Ljava/util/List;
 
-    move-result-object v0
+    invoke-interface {p4}, Ljava/util/Collection;->isEmpty()Z
 
-    sput-object v0, Lvhe;->b:[I
+    move-result p1
 
-    const v0, 0x101009c
+    if-eqz p1, :cond_0
 
-    filled-new-array {v0}, [I
+    invoke-interface {p3}, Ljava/util/List;->size()I
 
-    move-result-object v0
+    move-result p1
 
-    sput-object v0, Lvhe;->c:[I
+    new-instance p4, Ljava/util/ArrayList;
 
-    const v0, 0x10100a7
+    invoke-direct {p4, p1}, Ljava/util/ArrayList;-><init>(I)V
 
-    filled-new-array {v0}, [I
+    const/4 p2, 0x0
 
-    move-result-object v0
+    :goto_0
+    if-ge p2, p1, :cond_0
 
-    sput-object v0, Lvhe;->d:[I
+    const-string p3, "ASC"
 
-    const v0, 0x10100a0
+    invoke-virtual {p4, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    filled-new-array {v0}, [I
-
-    move-result-object v0
-
-    sput-object v0, Lvhe;->e:[I
-
-    const/4 v0, 0x0
-
-    new-array v0, v0, [I
-
-    sput-object v0, Lvhe;->f:[I
-
-    const/4 v0, 0x1
-
-    new-array v0, v0, [I
-
-    sput-object v0, Lvhe;->g:[I
-
-    return-void
-.end method
-
-.method public static a(Landroid/content/Context;Landroid/view/View;)V
-    .locals 1
-
-    sget-object v0, Lnwb;->AppCompatTheme:[I
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->obtainStyledAttributes([I)Landroid/content/res/TypedArray;
-
-    move-result-object p0
-
-    :try_start_0
-    sget v0, Lnwb;->AppCompatTheme_windowActionBar:I
-
-    invoke-virtual {p0, v0}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    add-int/lit8 p2, p2, 0x1
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
-
-    goto :goto_1
-
     :cond_0
-    :goto_0
-    invoke-virtual {p0}, Landroid/content/res/TypedArray;->recycle()V
+    iput-object p4, p0, Lvhe;->d:Ljava/util/List;
 
     return-void
-
-    :goto_1
-    invoke-virtual {p0}, Landroid/content/res/TypedArray;->recycle()V
-
-    throw p1
 .end method
 
-.method public static b(Landroid/content/Context;I)I
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
     .locals 4
 
-    invoke-static {p0, p1}, Lvhe;->d(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
+    if-ne p0, p1, :cond_0
 
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Landroid/content/res/ColorStateList;->isStateful()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    sget-object p0, Lvhe;->b:[I
-
-    invoke-virtual {v0}, Landroid/content/res/ColorStateList;->getDefaultColor()I
-
-    move-result p1
-
-    invoke-virtual {v0, p0, p1}, Landroid/content/res/ColorStateList;->getColorForState([II)I
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 
     :cond_0
-    sget-object v0, Lvhe;->a:Ljava/lang/ThreadLocal;
+    instance-of v0, p1, Lvhe;
 
-    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    move-result-object v1
+    if-nez v0, :cond_1
 
-    check-cast v1, Landroid/util/TypedValue;
-
-    if-nez v1, :cond_1
-
-    new-instance v1, Landroid/util/TypedValue;
-
-    invoke-direct {v1}, Landroid/util/TypedValue;-><init>()V
-
-    invoke-virtual {v0, v1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+    goto :goto_0
 
     :cond_1
-    invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+    check-cast p1, Lvhe;
 
-    move-result-object v0
+    iget-boolean v0, p1, Lvhe;->b:Z
 
-    const v2, 0x1010033
+    iget-object v2, p1, Lvhe;->a:Ljava/lang/String;
 
-    const/4 v3, 0x1
+    iget-boolean v3, p0, Lvhe;->b:Z
 
-    invoke-virtual {v0, v2, v1, v3}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
+    if-eq v3, v0, :cond_2
 
-    invoke-virtual {v1}, Landroid/util/TypedValue;->getFloat()F
+    goto :goto_0
+
+    :cond_2
+    iget-object v0, p0, Lvhe;->c:Ljava/util/List;
+
+    iget-object v3, p1, Lvhe;->c:Ljava/util/List;
+
+    invoke-static {v0, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    invoke-static {p0, p1}, Lvhe;->c(Landroid/content/Context;I)I
+    if-nez v0, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    iget-object v0, p0, Lvhe;->d:Ljava/util/List;
+
+    iget-object p1, p1, Lvhe;->d:Ljava/util/List;
+
+    invoke-static {v0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_4
+
+    :goto_0
+    return v1
+
+    :cond_4
+    iget-object p0, p0, Lvhe;->a:Ljava/lang/String;
+
+    const-string p1, "index_"
+
+    invoke-static {p0, p1, v1}, Lr8e;->w0(Ljava/lang/String;Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    invoke-static {v2, p1, v1}, Lr8e;->w0(Ljava/lang/String;Ljava/lang/String;Z)Z
 
     move-result p0
 
-    invoke-static {p0}, Landroid/graphics/Color;->alpha(I)I
+    return p0
 
-    move-result p1
-
-    int-to-float p1, p1
-
-    mul-float/2addr p1, v0
-
-    invoke-static {p1}, Ljava/lang/Math;->round(F)I
-
-    move-result p1
-
-    invoke-static {p0, p1}, Lj33;->h(II)I
+    :cond_5
+    invoke-virtual {p0, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
     return p0
 .end method
 
-.method public static c(Landroid/content/Context;I)I
-    .locals 2
+.method public final hashCode()I
+    .locals 3
 
-    sget-object v0, Lvhe;->g:[I
-
-    const/4 v1, 0x0
-
-    aput p1, v0, v1
-
-    const/4 p1, 0x0
-
-    invoke-virtual {p0, p1, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
-
-    move-result-object p0
-
-    :try_start_0
-    invoke-virtual {p0, v1, v1}, Landroid/content/res/TypedArray;->getColor(II)I
-
-    move-result p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-virtual {p0}, Landroid/content/res/TypedArray;->recycle()V
-
-    return p1
-
-    :catchall_0
-    move-exception p1
-
-    invoke-virtual {p0}, Landroid/content/res/TypedArray;->recycle()V
-
-    throw p1
-.end method
-
-.method public static d(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
-    .locals 2
-
-    sget-object v0, Lvhe;->g:[I
+    const-string v0, "index_"
 
     const/4 v1, 0x0
 
-    aput p1, v0, v1
+    iget-object v2, p0, Lvhe;->a:Ljava/lang/String;
 
-    const/4 p1, 0x0
-
-    invoke-virtual {p0, p1, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
-
-    move-result-object p1
-
-    :try_start_0
-    invoke-virtual {p1, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-static {v2, v0, v1}, Lr8e;->w0(Ljava/lang/String;Ljava/lang/String;Z)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p1, v1, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-static {p0, v0}, Ld8;->r(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_0
+    const v0, -0x46960e33
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p1, v1}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
 
-    move-result-object p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result v0
 
     :goto_0
-    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget-boolean v2, p0, Lvhe;->b:Z
+
+    add-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget-object v2, p0, Lvhe;->c:Ljava/util/List;
+
+    invoke-static {v2, v0, v1}, Lzge;->n(Ljava/util/List;II)I
+
+    move-result v0
+
+    iget-object p0, p0, Lvhe;->d:Ljava/util/List;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Index{name=\'"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lvhe;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "\', unique="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lvhe;->b:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", columns="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lvhe;->c:Ljava/util/List;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", orders="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lvhe;->d:Ljava/util/List;
+
+    const-string v1, "\'}"
+
+    invoke-static {v0, p0, v1}, Lzt1;->i(Ljava/lang/StringBuilder;Ljava/util/List;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
-
-    :catchall_0
-    move-exception p0
-
-    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
-
-    throw p0
 .end method

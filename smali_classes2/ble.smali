@@ -1,49 +1,8 @@
-.class public final Lble;
-.super Ler3;
+.class public interface abstract Lble;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Lcle;
-
-.field public Z:I
-
-.field public o:Lcle;
-
-
-# direct methods
-.method public constructor <init>(Lcle;Lkotlin/coroutines/Continuation;)V
-    .locals 0
-
-    iput-object p1, p0, Lble;->Y:Lcle;
-
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
-
-
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    iput-object p1, p0, Lble;->X:Ljava/lang/Object;
-
-    iget p1, p0, Lble;->Z:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lble;->Z:I
-
-    iget-object p1, p0, Lble;->Y:Lcle;
-
-    invoke-virtual {p1, p0}, Lcle;->p(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
+.method public abstract a(Ljava/lang/String;)Ljava/util/concurrent/ThreadFactory;
 .end method

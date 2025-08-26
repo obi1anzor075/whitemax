@@ -41,12 +41,11 @@
 
     const/4 v0, 0x1
 
-    goto :goto_0
+    return v0
 
     :cond_0
     const/4 v0, 0x0
 
-    :goto_0
     return v0
 .end method
 
@@ -75,12 +74,11 @@
 
     const/4 v0, 0x1
 
-    goto :goto_0
+    return v0
 
     :cond_0
     const/4 v0, 0x0
 
-    :goto_0
     return v0
 .end method
 
@@ -135,12 +133,11 @@
 
     const/4 v0, 0x1
 
-    goto :goto_0
+    return v0
 
     :cond_0
     const/4 v0, 0x0
 
-    :goto_0
     return v0
 .end method
 
@@ -169,19 +166,18 @@
 
     const/4 v0, 0x1
 
-    goto :goto_0
+    return v0
 
     :cond_0
     const/4 v0, 0x0
 
-    :goto_0
     return v0
 .end method
 
 
 # virtual methods
-.method public final a(Lfu1;Lma0;)Z
-    .locals 3
+.method public final a(Lyw1;Leb0;)Z
+    .locals 2
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ReportedVideoQualityNotSupportedQuirk;->e()Z
 
@@ -189,9 +185,7 @@
 
     const/4 v0, 0x1
 
-    const/4 v1, 0x0
-
-    if-nez p0, :cond_9
+    if-nez p0, :cond_3
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ReportedVideoQualityNotSupportedQuirk;->f()Z
 
@@ -199,120 +193,98 @@
 
     if-eqz p0, :cond_0
 
-    goto :goto_3
+    goto :goto_0
 
     :cond_0
     const-string p0, "Vivo"
 
-    sget-object v2, Landroid/os/Build;->BRAND:Ljava/lang/String;
+    sget-object v1, Landroid/os/Build;->BRAND:Ljava/lang/String;
 
-    invoke-virtual {p0, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {p0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_1
 
     const-string p0, "vivo 1820"
 
-    sget-object v2, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    invoke-virtual {p0, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {p0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_3
+    if-eqz p0, :cond_1
 
-    sget-object p0, Lma0;->e:Lma0;
+    sget-object p0, Leb0;->e:Leb0;
 
-    if-eq p2, p0, :cond_2
+    if-eq p2, p0, :cond_4
 
-    sget-object p0, Lma0;->f:Lma0;
+    sget-object p0, Leb0;->f:Leb0;
 
-    if-ne p2, p0, :cond_1
+    if-ne p2, p0, :cond_5
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_1
-    move v0, v1
-
-    :cond_2
-    :goto_0
-    return v0
-
-    :cond_3
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ReportedVideoQualityNotSupportedQuirk;->g()Z
 
     move-result p0
 
-    if-eqz p0, :cond_6
+    if-eqz p0, :cond_2
 
-    invoke-interface {p1}, Lfu1;->g()I
+    invoke-interface {p1}, Lyw1;->h()I
 
     move-result p0
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_5
 
-    sget-object p0, Lma0;->f:Lma0;
+    sget-object p0, Leb0;->f:Leb0;
 
-    if-eq p2, p0, :cond_5
+    if-eq p2, p0, :cond_4
 
-    sget-object p0, Lma0;->e:Lma0;
+    sget-object p0, Leb0;->e:Leb0;
 
-    if-ne p2, p0, :cond_4
+    if-ne p2, p0, :cond_5
 
     goto :goto_1
 
-    :cond_4
-    move v0, v1
-
-    :cond_5
-    :goto_1
-    return v0
-
-    :cond_6
+    :cond_2
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ReportedVideoQualityNotSupportedQuirk;->h()Z
 
     move-result p0
 
-    if-eqz p0, :cond_8
+    if-eqz p0, :cond_5
 
-    invoke-interface {p1}, Lfu1;->g()I
+    invoke-interface {p1}, Lyw1;->h()I
 
     move-result p0
 
-    if-ne p0, v0, :cond_7
+    if-ne p0, v0, :cond_5
 
-    sget-object p0, Lma0;->g:Lma0;
+    sget-object p0, Leb0;->g:Leb0;
 
-    if-ne p2, p0, :cond_7
+    if-ne p2, p0, :cond_5
 
-    goto :goto_2
+    goto :goto_1
 
-    :cond_7
-    move v0, v1
+    :cond_3
+    :goto_0
+    sget-object p0, Leb0;->g:Leb0;
 
-    :goto_2
+    if-ne p2, p0, :cond_5
+
+    :cond_4
+    :goto_1
     return v0
 
-    :cond_8
-    return v1
+    :cond_5
+    const/4 p0, 0x0
 
-    :cond_9
-    :goto_3
-    sget-object p0, Lma0;->g:Lma0;
-
-    if-ne p2, p0, :cond_a
-
-    goto :goto_4
-
-    :cond_a
-    move v0, v1
-
-    :goto_4
-    return v0
+    return p0
 .end method
 
-.method public final b()Z
+.method public final c()Z
     .locals 0
 
     invoke-static {}, Landroidx/camera/video/internal/compat/quirk/ReportedVideoQualityNotSupportedQuirk;->e()Z
@@ -344,12 +316,11 @@
     :cond_0
     const/4 p0, 0x0
 
-    goto :goto_1
+    return p0
 
     :cond_1
     :goto_0
     const/4 p0, 0x1
 
-    :goto_1
     return p0
 .end method

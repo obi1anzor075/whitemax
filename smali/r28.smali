@@ -1,15 +1,20 @@
-.class public abstract Lr28;
+.class public interface abstract Lr28;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lood;
 
-# direct methods
-.method public static a(Lj28;Lu28;)Z
-    .locals 0
 
-    invoke-interface {p0, p1}, Lj28;->k(Lu28;)Z
+# virtual methods
+.method public abstract e()I
+.end method
 
-    move-result p0
+.method public abstract j()I
+.end method
 
-    return p0
+.method public abstract m()V
+.end method
+
+.method public abstract peek()Ljava/lang/Object;
 .end method

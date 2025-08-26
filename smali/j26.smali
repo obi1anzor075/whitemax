@@ -1,8 +1,7 @@
-.class public interface abstract Lj26;
-.super Ljava/lang/Object;
+.class public final Lj26;
+.super Lccc;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract apply(Ljava/lang/Object;)Ljava/lang/Object;
-.end method
+# static fields
+.field public static final synthetic B0:I

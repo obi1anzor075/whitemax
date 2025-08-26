@@ -1,132 +1,145 @@
 .class public final Lrab;
-.super Ll5e;
+.super Lv64;
 .source "SourceFile"
 
-# interfaces
-.implements Li26;
 
+# static fields
+.field public static final b:Lrab;
 
-# instance fields
-.field public X:I
+.field public static final c:Lr64;
 
-.field public final synthetic Y:Lsab;
+.field public static final d:Lr64;
 
-.field public final synthetic Z:Liab;
+.field public static final e:Lr64;
+
+.field public static final f:Lr64;
+
+.field public static final g:Lr64;
+
+.field public static final h:Lr64;
+
+.field public static final i:Lr64;
+
+.field public static final j:Lr64;
 
 
 # direct methods
-.method public constructor <init>(Lsab;Liab;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 7
 
-    iput-object p1, p0, Lrab;->Y:Lsab;
+    new-instance v0, Lrab;
 
-    iput-object p2, p0, Lrab;->Z:Liab;
+    invoke-direct {v0}, Lv64;-><init>()V
 
-    const/4 p1, 0x2
+    sput-object v0, Lrab;->b:Lrab;
 
-    invoke-direct {p0, p1, p3}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    const-string v1, "id"
+
+    const-string v2, "type"
+
+    filled-new-array {v1, v2}, [Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, ":profile/avatars"
+
+    const/4 v5, 0x0
+
+    const/16 v6, 0xe
+
+    invoke-static {v0, v4, v3, v5, v6}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v3
+
+    sput-object v3, Lrab;->c:Lr64;
+
+    const-string v3, ":profile"
+
+    filled-new-array {v1, v2}, [Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v0, v3, v4, v5, v6}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v3
+
+    sput-object v3, Lrab;->d:Lr64;
+
+    const-string v3, ":profile/attaches"
+
+    filled-new-array {v1}, [Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v0, v3, v4, v5, v6}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v3
+
+    sput-object v3, Lrab;->e:Lr64;
+
+    const-string v3, ":profile/members"
+
+    filled-new-array {v1, v2}, [Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v3, v2, v5, v6}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v2
+
+    sput-object v2, Lrab;->f:Lr64;
+
+    const-string v2, ":profile/invite"
+
+    filled-new-array {v1}, [Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v2, v1, v5, v6}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v1
+
+    sput-object v1, Lrab;->g:Lr64;
+
+    const-string v1, "chat_id"
+
+    filled-new-array {v1}, [Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, ":profile/add-admins"
+
+    invoke-static {v0, v3, v2, v5, v6}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v2
+
+    sput-object v2, Lrab;->h:Lr64;
+
+    const-string v2, "is_chat"
+
+    filled-new-array {v1, v2}, [Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, ":profile/add-members"
+
+    invoke-static {v0, v3, v2, v5, v6}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v2
+
+    sput-object v2, Lrab;->i:Lr64;
+
+    const-string v2, ":profile/change-owner"
+
+    filled-new-array {v1}, [Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v2, v1, v5, v6}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v0
+
+    sput-object v0, Lrab;->j:Lr64;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Lou3;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lrab;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lrab;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lrab;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
-
-    new-instance p1, Lrab;
-
-    iget-object v0, p0, Lrab;->Y:Lsab;
-
-    iget-object p0, p0, Lrab;->Z:Liab;
-
-    invoke-direct {p1, v0, p0, p2}, Lrab;-><init>(Lsab;Liab;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
-
-    sget-object v0, Lpu3;->a:Lpu3;
-
-    iget v1, p0, Lrab;->X:I
-
-    const/4 v2, 0x1
-
-    if-eqz v1, :cond_1
-
-    if-ne v1, v2, :cond_0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lrab;->Y:Lsab;
-
-    iget-object v1, p1, Lsab;->a:Lhcd;
-
-    new-instance v3, Ljab;
-
-    iget-object v4, p0, Lrab;->Z:Liab;
-
-    iget-object v4, v4, Ljh0;->b:Luae;
-
-    invoke-static {p1, v4}, Lsab;->a(Lsab;Luae;)Lmge;
-
-    move-result-object p1
-
-    const/4 v4, 0x0
-
-    invoke-direct {v3, v4, p1}, Ljab;-><init>(Ljava/lang/Long;Lmge;)V
-
-    iput v2, p0, Lrab;->X:I
-
-    invoke-virtual {v1, v3, p0}, Lhcd;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-ne p0, v0, :cond_2
-
-    return-object v0
-
-    :cond_2
-    :goto_0
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
 .end method

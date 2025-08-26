@@ -1,11 +1,19 @@
 .class public final Ljke;
-.super Ljava/lang/Exception;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public final fillInStackTrace()Ljava/lang/Throwable;
+# instance fields
+.field public final a:Lje7;
+
+
+# direct methods
+.method public constructor <init>(Lje7;)V
     .locals 0
 
-    return-object p0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljke;->a:Lje7;
+
+    return-void
 .end method

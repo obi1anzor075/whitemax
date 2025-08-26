@@ -20,7 +20,7 @@
         "",
         "Lru/ok/android/externcalls/sdk/connection/MediaConnectionListener$ConnectedInfo;",
         "info",
-        "Ljue;",
+        "Le5f;",
         "onMediaConnected",
         "(Lru/ok/android/externcalls/sdk/connection/MediaConnectionListener$ConnectedInfo;)V",
         "Lru/ok/android/externcalls/sdk/connection/MediaConnectionListener$DisconnectedInfo;",
@@ -36,6 +36,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

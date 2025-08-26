@@ -11,7 +11,7 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/contacts/listener/ContactCallListener;",
         "",
-        "Ljue;",
+        "Le5f;",
         "onContactCallMyAnonChanged",
         "()V",
         "calls-sdk_release"
@@ -22,6 +22,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

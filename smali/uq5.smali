@@ -1,19 +1,42 @@
 .class public final Luq5;
-.super Ljava/lang/Object;
+.super Llq5;
 .source "SourceFile"
 
+# interfaces
+.implements Loqc;
 
-# instance fields
-.field public final a:Ljava/util/Set;
+
+# static fields
+.field public static final b:Luq5;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Set;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Luq5;
 
-    iput-object p1, p0, Luq5;->a:Ljava/util/Set;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Luq5;->b:Luq5;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final f(Lvr5;)V
+    .locals 0
+
+    invoke-static {p1}, Lvz4;->a(Lj9e;)V
+
+    return-void
+.end method
+
+.method public final get()Ljava/lang/Object;
+    .locals 0
+
+    const/4 p0, 0x0
+
+    return-object p0
 .end method

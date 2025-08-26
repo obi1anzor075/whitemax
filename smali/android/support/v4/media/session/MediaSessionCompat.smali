@@ -208,12 +208,12 @@
     move-object v5, p5
 
     .line 3
-    invoke-direct/range {v0 .. v6}, Landroid/support/v4/media/session/MediaSessionCompat;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/content/ComponentName;Landroid/app/PendingIntent;Landroid/os/Bundle;Li1f;)V
+    invoke-direct/range {v0 .. v6}, Landroid/support/v4/media/session/MediaSessionCompat;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/content/ComponentName;Landroid/app/PendingIntent;Landroid/os/Bundle;Lncf;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Landroid/content/ComponentName;Landroid/app/PendingIntent;Landroid/os/Bundle;Li1f;)V
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Landroid/content/ComponentName;Landroid/app/PendingIntent;Landroid/os/Bundle;Lncf;)V
     .locals 5
 
     .line 4
@@ -245,7 +245,7 @@
     if-nez p3, :cond_1
 
     .line 8
-    sget p3, Lw18;->a:I
+    sget p3, Lt68;->a:I
 
     .line 9
     new-instance p3, Landroid/content/Intent;
@@ -342,7 +342,7 @@
     :cond_3
     new-instance p3, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi29;
 
-    invoke-direct {p3, p1, p2, p6, p5}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi29;-><init>(Landroid/content/Context;Ljava/lang/String;Li1f;Landroid/os/Bundle;)V
+    invoke-direct {p3, p1, p2, p6, p5}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi29;-><init>(Landroid/content/Context;Ljava/lang/String;Lncf;Landroid/os/Bundle;)V
 
     iput-object p3, p0, Landroid/support/v4/media/session/MediaSessionCompat;->mImpl:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;
 
@@ -690,12 +690,12 @@
     return-object p0
 .end method
 
-.method public final getCurrentControllerInfo()Lqd8;
+.method public final getCurrentControllerInfo()Lfi8;
     .locals 0
 
     iget-object p0, p0, Landroid/support/v4/media/session/MediaSessionCompat;->mImpl:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;
 
-    invoke-interface {p0}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;->getCurrentControllerInfo()Lqd8;
+    invoke-interface {p0}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;->getCurrentControllerInfo()Lfi8;
 
     move-result-object p0
 
@@ -863,7 +863,7 @@
 
     invoke-interface {p0, p1, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;->setCallback(Landroid/support/v4/media/session/MediaSessionCompat$Callback;Landroid/os/Handler;)V
 
-    goto :goto_1
+    return-void
 
     .line 3
     :cond_0
@@ -881,7 +881,6 @@
     :goto_0
     invoke-interface {p0, p1, p2}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;->setCallback(Landroid/support/v4/media/session/MediaSessionCompat$Callback;Landroid/os/Handler;)V
 
-    :goto_1
     return-void
 .end method
 
@@ -955,7 +954,7 @@
     return-void
 .end method
 
-.method public setPlaybackToRemote(Ltdf;)V
+.method public setPlaybackToRemote(Llrf;)V
     .locals 0
 
     new-instance p0, Ljava/lang/IllegalArgumentException;

@@ -1,53 +1,122 @@
 .class public final Lz02;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# static fields
+.field public static final c:Lz02;
+
+
 # instance fields
-.field public X:Ljava/lang/Object;
+.field public final a:Ljava/util/Set;
 
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lt02;
-
-.field public o:Lt02;
-
-.field public w0:I
+.field public final b:Lgr0;
 
 
 # direct methods
-.method public constructor <init>(Lt02;Lkotlin/coroutines/Continuation;)V
+.method static constructor <clinit>()V
+    .locals 3
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    new-instance v1, Lz02;
+
+    invoke-static {v0}, Lp43;->a1(Ljava/util/Collection;)Ljava/util/Set;
+
+    move-result-object v0
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, v0, v2}, Lz02;-><init>(Ljava/util/Set;Lgr0;)V
+
+    sput-object v1, Lz02;->c:Lz02;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/util/Set;Lgr0;)V
     .locals 0
 
-    iput-object p1, p0, Lz02;->Z:Lt02;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lz02;->a:Ljava/util/Set;
+
+    iput-object p2, p0, Lz02;->b:Lgr0;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
-    iput-object p1, p0, Lz02;->Y:Ljava/lang/Object;
+    instance-of v0, p1, Lz02;
 
-    iget p1, p0, Lz02;->w0:I
+    if-eqz v0, :cond_0
 
-    const/high16 v0, -0x80000000
+    check-cast p1, Lz02;
 
-    or-int/2addr p1, v0
+    iget-object v0, p1, Lz02;->a:Ljava/util/Set;
 
-    iput p1, p0, Lz02;->w0:I
+    iget-object v1, p0, Lz02;->a:Ljava/util/Set;
 
-    iget-object p1, p0, Lz02;->Z:Lt02;
+    invoke-static {v0, v1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    const/4 v0, 0x0
+    move-result v0
 
-    invoke-virtual {p1, v0, p0}, Lt02;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    move-result-object p0
+    iget-object p1, p1, Lz02;->b:Lgr0;
 
-    return-object p0
+    iget-object p0, p0, Lz02;->b:Lgr0;
+
+    invoke-static {p1, p0}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    iget-object v0, p0, Lz02;->a:Ljava/util/Set;
+
+    const/16 v1, 0x29
+
+    const/16 v2, 0x5ed
+
+    invoke-static {v0, v2, v1}, Lm26;->e(Ljava/util/Set;II)I
+
+    move-result v0
+
+    iget-object p0, p0, Lz02;->b:Lgr0;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    add-int/2addr v0, p0
+
+    return v0
 .end method

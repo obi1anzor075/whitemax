@@ -1,127 +1,156 @@
-.class public abstract Lq2a;
-.super Ljava/lang/Object;
+.class public final Lq2a;
+.super Lqde;
 .source "SourceFile"
 
+# interfaces
+.implements Ll66;
 
-# static fields
-.field public static final a:I
 
-.field public static final b:I
+# instance fields
+.field public synthetic X:Ljava/lang/Object;
 
-.field public static final c:I
-
-.field public static final d:I
-
-.field public static final e:I
-
-.field public static final f:I
-
-.field public static final g:I
-
-.field public static final h:I
-
-.field public static final i:I
-
-.field public static final j:I
-
-.field public static final k:I
-
-.field public static final l:I
-
-.field public static final m:I
-
-.field public static final n:I
-
-.field public static final o:I
-
-.field public static final p:I
-
-.field public static final q:I
-
-.field public static final r:I
-
-.field public static final s:I
+.field public final synthetic Y:Lone/me/android/OneMeApplication;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lone/me/android/OneMeApplication;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    sget v0, Lltb;->contact_list_confirm_cancel:I
+    iput-object p1, p0, Lq2a;->Y:Lone/me/android/OneMeApplication;
 
-    sput v0, Lq2a;->a:I
+    const/4 p1, 0x2
 
-    sget v0, Lltb;->contact_list_confirm_contact_block_action:I
-
-    sput v0, Lq2a;->b:I
-
-    sget v0, Lltb;->contact_list_confirm_contact_block_description:I
-
-    sput v0, Lq2a;->c:I
-
-    sget v0, Lltb;->contact_list_confirm_contact_block_title:I
-
-    sput v0, Lq2a;->d:I
-
-    sget v0, Lltb;->contact_list_confirm_contact_delete_action:I
-
-    sput v0, Lq2a;->e:I
-
-    sget v0, Lltb;->contact_list_confirm_contact_delete_title:I
-
-    sput v0, Lq2a;->f:I
-
-    sget v0, Lltb;->contact_list_contact_block_snackbar_title:I
-
-    sput v0, Lq2a;->g:I
-
-    sget v0, Lltb;->contact_list_contact_delete_snackbar_title:I
-
-    sput v0, Lq2a;->h:I
-
-    sget v0, Lltb;->contact_list_menu_item_add_contact:I
-
-    sput v0, Lq2a;->i:I
-
-    sget v0, Lltb;->contact_list_search_hint:I
-
-    sput v0, Lq2a;->j:I
-
-    sget v0, Lltb;->contact_list_search_hint_with_nick:I
-
-    sput v0, Lq2a;->k:I
-
-    sget v0, Lltb;->contact_list_suspend_bot_snackbar_title:I
-
-    sput v0, Lq2a;->l:I
-
-    sget v0, Lltb;->empty_contact_list_description:I
-
-    sput v0, Lq2a;->m:I
-
-    sget v0, Lltb;->empty_contact_list_title:I
-
-    sput v0, Lq2a;->n:I
-
-    sget v0, Lltb;->empty_search_contact_btn_title:I
-
-    sput v0, Lq2a;->o:I
-
-    sget v0, Lltb;->empty_search_contact_disabled_description:I
-
-    sput v0, Lq2a;->p:I
-
-    sget v0, Lltb;->empty_search_contact_enabled_description:I
-
-    sput v0, Lq2a;->q:I
-
-    sget v0, Lltb;->empty_search_contact_title:I
-
-    sput v0, Lq2a;->r:I
-
-    sget v0, Lltb;->snackbar_self_title:I
-
-    sput v0, Lq2a;->s:I
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Lyt4;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lq2a;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lq2a;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lq2a;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
+
+    new-instance v0, Lq2a;
+
+    iget-object p0, p0, Lq2a;->Y:Lone/me/android/OneMeApplication;
+
+    invoke-direct {v0, p0, p2}, Lq2a;-><init>(Lone/me/android/OneMeApplication;Lkotlin/coroutines/Continuation;)V
+
+    iput-object p1, v0, Lq2a;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lq2a;->X:Ljava/lang/Object;
+
+    check-cast p1, Lyt4;
+
+    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result p1
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "change dynamic font to "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v0, "OneMeDynamicFont"
+
+    invoke-static {v0, p1}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
+
+    new-instance p1, Landroid/content/res/Configuration;
+
+    iget-object p0, p0, Lq2a;->Y:Lone/me/android/OneMeApplication;
+
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Landroid/content/res/Configuration;-><init>(Landroid/content/res/Configuration;)V
+
+    iget v0, p1, Landroid/content/res/Configuration;->fontScale:F
+
+    invoke-static {v0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    move-result v0
+
+    sget-object v1, Lg2c;->b:Ld3;
+
+    invoke-virtual {v1}, Ld3;->h()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/4 v1, -0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x1
+
+    :goto_0
+    add-int/2addr v0, v1
+
+    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    move-result v0
+
+    iput v0, p1, Landroid/content/res/Configuration;->fontScale:F
+
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v1
+
+    invoke-virtual {v0, p1, v1}, Landroid/content/res/Resources;->updateConfiguration(Landroid/content/res/Configuration;Landroid/util/DisplayMetrics;)V
+
+    invoke-virtual {p0, p1}, Lone/me/android/OneMeApplication;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

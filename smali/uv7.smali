@@ -1,97 +1,67 @@
-.class public final Luv7;
+.class public abstract Luv7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/window/OnBackAnimationCallback;
 
-
-# instance fields
-.field public final synthetic a:Lsv7;
-
-.field public final synthetic b:Lvv7;
+# static fields
+.field public static final a:[B
 
 
 # direct methods
-.method public constructor <init>(Lvv7;Lsv7;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/16 v0, 0x80
 
-    iput-object p1, p0, Luv7;->b:Lvv7;
+    new-array v0, v0, [B
 
-    iput-object p2, p0, Luv7;->a:Lsv7;
+    const/4 v1, -0x1
 
-    return-void
-.end method
+    invoke-static {v0, v1}, Ljava/util/Arrays;->fill([BB)V
 
+    const/4 v1, 0x0
 
-# virtual methods
-.method public final onBackCancelled()V
-    .locals 1
+    move v2, v1
 
-    iget-object v0, p0, Luv7;->b:Lvv7;
+    :goto_0
+    const/16 v3, 0xa
 
-    iget-object v0, v0, Ltv7;->a:Landroid/window/OnBackInvokedCallback;
+    if-ge v2, v3, :cond_0
 
-    if-eqz v0, :cond_0
+    add-int/lit8 v3, v2, 0x30
 
-    iget-object p0, p0, Luv7;->a:Lsv7;
+    int-to-byte v4, v2
 
-    invoke-interface {p0}, Lsv7;->d()V
+    aput-byte v4, v0, v3
 
-    :cond_0
-    return-void
-.end method
+    add-int/lit8 v2, v2, 0x1
 
-.method public final onBackInvoked()V
-    .locals 0
-
-    iget-object p0, p0, Luv7;->a:Lsv7;
-
-    invoke-interface {p0}, Lsv7;->a()V
-
-    return-void
-.end method
-
-.method public final onBackProgressed(Landroid/window/BackEvent;)V
-    .locals 1
-
-    iget-object v0, p0, Luv7;->b:Lvv7;
-
-    iget-object v0, v0, Ltv7;->a:Landroid/window/OnBackInvokedCallback;
-
-    if-eqz v0, :cond_0
-
-    iget-object p0, p0, Luv7;->a:Lsv7;
-
-    new-instance v0, Lgd0;
-
-    invoke-direct {v0, p1}, Lgd0;-><init>(Landroid/window/BackEvent;)V
-
-    invoke-interface {p0, v0}, Lsv7;->b(Lgd0;)V
+    goto :goto_0
 
     :cond_0
-    return-void
-.end method
+    :goto_1
+    const/16 v2, 0x1a
 
-.method public final onBackStarted(Landroid/window/BackEvent;)V
-    .locals 1
+    if-ge v1, v2, :cond_1
 
-    iget-object v0, p0, Luv7;->b:Lvv7;
+    add-int/lit8 v2, v1, 0x41
 
-    iget-object v0, v0, Ltv7;->a:Landroid/window/OnBackInvokedCallback;
+    add-int/lit8 v3, v1, 0xa
 
-    if-eqz v0, :cond_0
+    int-to-byte v3, v3
 
-    iget-object p0, p0, Luv7;->a:Lsv7;
+    aput-byte v3, v0, v2
 
-    new-instance v0, Lgd0;
+    add-int/lit8 v2, v1, 0x61
 
-    invoke-direct {v0, p1}, Lgd0;-><init>(Landroid/window/BackEvent;)V
+    aput-byte v3, v0, v2
 
-    invoke-interface {p0, v0}, Lsv7;->c(Lgd0;)V
+    add-int/lit8 v1, v1, 0x1
 
-    :cond_0
+    goto :goto_1
+
+    :cond_1
+    sput-object v0, Luv7;->a:[B
+
     return-void
 .end method

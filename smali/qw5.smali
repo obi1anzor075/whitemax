@@ -1,195 +1,127 @@
-.class public abstract Lqw5;
-.super Ljava/lang/Object;
+.class public final Lqw5;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Llr6;
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field public X:I
 
-.field public final b:Llr6;
-
-.field public final c:Ljava/util/HashSet;
+.field public final synthetic Y:Ltw5;
 
 
 # direct methods
-.method public constructor <init>(Llr6;)V
-    .locals 1
+.method public constructor <init>(Ltw5;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lqw5;->Y:Ltw5;
 
-    new-instance v0, Ljava/lang/Object;
+    const/4 p1, 0x2
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lqw5;->a:Ljava/lang/Object;
-
-    new-instance v0, Ljava/util/HashSet;
-
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
-
-    iput-object v0, p0, Lqw5;->c:Ljava/util/HashSet;
-
-    iput-object p1, p0, Lqw5;->b:Llr6;
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final Z()Landroid/media/Image;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    iget-object p0, p0, Lqw5;->b:Llr6;
+    check-cast p1, Lox3;
 
-    invoke-interface {p0}, Llr6;->Z()Landroid/media/Image;
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lqw5;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lqw5;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lqw5;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public final a(Lpw5;)V
-    .locals 1
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
 
-    iget-object v0, p0, Lqw5;->a:Ljava/lang/Object;
+    new-instance p1, Lqw5;
 
-    monitor-enter v0
+    iget-object p0, p0, Lqw5;->Y:Ltw5;
 
-    :try_start_0
-    iget-object p0, p0, Lqw5;->c:Ljava/util/HashSet;
+    invoke-direct {p1, p0, p2}, Lqw5;-><init>(Ltw5;Lkotlin/coroutines/Continuation;)V
 
-    invoke-virtual {p0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception p0
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p0
+    return-object p1
 .end method
 
-.method public close()V
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 3
 
-    iget-object v0, p0, Lqw5;->b:Llr6;
+    iget v0, p0, Lqw5;->X:I
 
-    invoke-interface {v0}, Ljava/lang/AutoCloseable;->close()V
+    sget-object v1, Le5f;->a:Le5f;
 
-    iget-object v0, p0, Lqw5;->a:Ljava/lang/Object;
+    const/4 v2, 0x1
 
-    monitor-enter v0
+    if-eqz v0, :cond_1
 
-    :try_start_0
-    new-instance v1, Ljava/util/HashSet;
+    if-ne v0, v2, :cond_0
 
-    iget-object v2, p0, Lqw5;->c:Ljava/util/HashSet;
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    invoke-direct {v1, v2}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+    return-object v1
 
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    invoke-virtual {v1}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    move-result-object v0
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    throw p0
 
-    move-result v1
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    if-eqz v1, :cond_0
+    iget-object p1, p0, Lqw5;->Y:Ltw5;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object v0, p1, Ltw5;->r0:Lx9f;
 
-    move-result-object v1
+    if-eqz v0, :cond_3
 
-    check-cast v1, Lpw5;
+    iget-object v0, v0, Lx9f;->a:Lns5;
 
-    invoke-interface {v1, p0}, Lpw5;->a(Llr6;)V
+    if-eqz v0, :cond_3
+
+    iget-object v0, v0, Lns5;->a:Ljava/lang/String;
+
+    if-nez v0, :cond_2
 
     goto :goto_0
 
-    :cond_0
-    return-void
+    :cond_2
+    iget-object p1, p1, Ltw5;->b:Lpx5;
 
-    :catchall_0
-    move-exception p0
+    iput v2, p0, Lqw5;->X:I
 
-    :try_start_1
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p0
-.end method
-
-.method public getHeight()I
-    .locals 0
-
-    iget-object p0, p0, Lqw5;->b:Llr6;
-
-    invoke-interface {p0}, Llr6;->getHeight()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public getImageInfo()Lpq6;
-    .locals 0
-
-    iget-object p0, p0, Lqw5;->b:Llr6;
-
-    invoke-interface {p0}, Llr6;->getImageInfo()Lpq6;
+    invoke-interface {p1, v0, p0}, Lpx5;->q(Ljava/lang/String;Lqde;)Ljava/lang/Object;
 
     move-result-object p0
 
-    return-object p0
-.end method
+    sget-object p1, Lpx3;->a:Lpx3;
 
-.method public getWidth()I
-    .locals 0
+    if-ne p0, p1, :cond_3
 
-    iget-object p0, p0, Lqw5;->b:Llr6;
+    return-object p1
 
-    invoke-interface {p0}, Llr6;->getWidth()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final k0()I
-    .locals 0
-
-    iget-object p0, p0, Lqw5;->b:Llr6;
-
-    invoke-interface {p0}, Llr6;->k0()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final v()[Lmv4;
-    .locals 0
-
-    iget-object p0, p0, Lqw5;->b:Llr6;
-
-    invoke-interface {p0}, Llr6;->v()[Lmv4;
-
-    move-result-object p0
-
-    return-object p0
+    :cond_3
+    :goto_0
+    return-object v1
 .end method

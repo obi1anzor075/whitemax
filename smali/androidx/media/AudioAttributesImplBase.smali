@@ -123,7 +123,9 @@
 
     if-ne p0, p1, :cond_3
 
-    const/4 v1, 0x1
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_3
     return v1
@@ -208,7 +210,7 @@
     :pswitch_0
     const-string v2, "unknown usage "
 
-    invoke-static {v1, v2}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v2}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 

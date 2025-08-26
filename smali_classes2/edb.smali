@@ -3,98 +3,104 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lpj5;
+.implements Lgdb;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lpj5;
-
-.field public final synthetic c:Ljdb;
+.field public final a:Ls53;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lpj5;Ljdb;I)V
+.method public constructor <init>(Ls53;)V
     .locals 0
 
-    iput p3, p0, Ledb;->a:I
-
-    iput-object p1, p0, Ledb;->b:Lpj5;
-
-    iput-object p2, p0, Ledb;->c:Ljdb;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ledb;->a:Ls53;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Lrj5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 3
 
-    iget v0, p0, Ledb;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    new-instance v0, Lddb;
-
-    iget-object v1, p0, Ledb;->c:Ljdb;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v0, p1, v1, v2}, Lddb;-><init>(Lrj5;Ljdb;I)V
-
-    iget-object p0, p0, Ledb;->b:Lpj5;
-
-    invoke-interface {p0, v0, p2}, Lpj5;->c(Lrj5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Lpu3;->a:Lpu3;
+    const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
-    goto :goto_0
+    return v0
 
     :cond_0
-    sget-object p0, Ljue;->a:Ljue;
-
-    :goto_0
-    return-object p0
-
-    :pswitch_0
-    new-instance v0, Lddb;
-
-    iget-object v1, p0, Ledb;->c:Ljdb;
+    instance-of v1, p1, Ledb;
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, p1, v1, v2}, Lddb;-><init>(Lrj5;Ljdb;I)V
+    if-nez v1, :cond_1
 
-    iget-object p0, p0, Ledb;->b:Lpj5;
+    return v2
 
-    invoke-interface {p0, v0, p2}, Lpj5;->c(Lrj5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    :cond_1
+    check-cast p1, Ledb;
+
+    iget-object p0, p0, Ledb;->a:Ls53;
+
+    iget-object p1, p1, Ledb;->a:Ls53;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    iget-object p0, p0, Ledb;->a:Ls53;
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_0
+    iget-object p0, p0, Ls53;->a:Ljava/util/List;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "LastNamePayload(errorText="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Ledb;->a:Ls53;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    sget-object p1, Lpu3;->a:Lpu3;
-
-    if-ne p0, p1, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    sget-object p0, Ljue;->a:Ljue;
-
-    :goto_1
     return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

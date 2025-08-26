@@ -35,7 +35,7 @@
         "(Lone/me/sdk/richvector/internal/element/Shape;)V",
         "Lone/me/sdk/richvector/internal/element/GroupElement;",
         "element",
-        "Ljue;",
+        "Le5f;",
         "addGroup",
         "(Lone/me/sdk/richvector/internal/element/GroupElement;)V",
         "Lone/me/sdk/richvector/internal/element/PathElement;",
@@ -90,7 +90,7 @@
         "groupElements",
         "pathElements",
         "Companion",
-        "dad",
+        "rhd",
         "rich-vector_release"
     }
     k = 0x1
@@ -99,11 +99,12 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # static fields
-.field public static final Companion:Ldad;
+.field public static final Companion:Lrhd;
 
 .field private static final EMPTY:Lone/me/sdk/richvector/internal/element/Shape;
 
@@ -132,13 +133,13 @@
 .method static constructor <clinit>()V
     .locals 11
 
-    new-instance v0, Ldad;
+    new-instance v0, Lrhd;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lone/me/sdk/richvector/internal/element/Shape;->Companion:Ldad;
+    sput-object v0, Lone/me/sdk/richvector/internal/element/Shape;->Companion:Lrhd;
 
-    new-instance v0, Lone/me/sdk/richvector/internal/element/Shape;
+    new-instance v1, Lone/me/sdk/richvector/internal/element/Shape;
 
     const/16 v9, 0x40
 
@@ -158,11 +159,9 @@
 
     const/4 v8, 0x0
 
-    move-object v1, v0
+    invoke-direct/range {v1 .. v10}, Lone/me/sdk/richvector/internal/element/Shape;-><init>(Ljava/lang/String;FFIFFLone/me/sdk/richvector/internal/element/ElementHolder;ILl94;)V
 
-    invoke-direct/range {v1 .. v10}, Lone/me/sdk/richvector/internal/element/Shape;-><init>(Ljava/lang/String;FFIFFLone/me/sdk/richvector/internal/element/ElementHolder;ILx54;)V
-
-    sput-object v0, Lone/me/sdk/richvector/internal/element/Shape;->EMPTY:Lone/me/sdk/richvector/internal/element/Shape;
+    sput-object v1, Lone/me/sdk/richvector/internal/element/Shape;->EMPTY:Lone/me/sdk/richvector/internal/element/Shape;
 
     return-void
 .end method
@@ -211,7 +210,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Ljava/lang/String;FFIFFLone/me/sdk/richvector/internal/element/ElementHolder;ILx54;)V
+.method public synthetic constructor <init>(Ljava/lang/String;FFIFFLone/me/sdk/richvector/internal/element/ElementHolder;ILl94;)V
     .locals 9
 
     and-int/lit8 v0, p8, 0x40
@@ -224,11 +223,6 @@
     invoke-direct {v0}, Lone/me/sdk/richvector/internal/element/ElementHolderImpl;-><init>()V
 
     move-object v8, v0
-
-    goto :goto_0
-
-    :cond_0
-    move-object/from16 v8, p7
 
     :goto_0
     move-object v1, p0
@@ -245,7 +239,15 @@
 
     move v7, p6
 
+    goto :goto_1
+
+    :cond_0
+    move-object/from16 v8, p7
+
+    goto :goto_0
+
     .line 12
+    :goto_1
     invoke-direct/range {v1 .. v8}, Lone/me/sdk/richvector/internal/element/Shape;-><init>(Ljava/lang/String;FFIFFLone/me/sdk/richvector/internal/element/ElementHolder;)V
 
     return-void
@@ -283,14 +285,14 @@
     invoke-direct/range {v0 .. v7}, Lone/me/sdk/richvector/internal/element/Shape;-><init>(Ljava/lang/String;FFIFFLone/me/sdk/richvector/internal/element/ElementHolder;)V
 
     .line 21
-    iget-object v0, p0, Lone/me/sdk/richvector/internal/element/Shape;->fullPath:Landroid/graphics/Path;
+    iget-object p0, v0, Lone/me/sdk/richvector/internal/element/Shape;->fullPath:Landroid/graphics/Path;
 
     iget-object v1, p1, Lone/me/sdk/richvector/internal/element/Shape;->fullPath:Landroid/graphics/Path;
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Path;->set(Landroid/graphics/Path;)V
+    invoke-virtual {p0, v1}, Landroid/graphics/Path;->set(Landroid/graphics/Path;)V
 
     .line 22
-    iget-object p0, p0, Lone/me/sdk/richvector/internal/element/Shape;->scaleMatrix:Landroid/graphics/Matrix;
+    iget-object p0, v0, Lone/me/sdk/richvector/internal/element/Shape;->scaleMatrix:Landroid/graphics/Matrix;
 
     iget-object p1, p1, Lone/me/sdk/richvector/internal/element/Shape;->scaleMatrix:Landroid/graphics/Matrix;
 
@@ -740,7 +742,7 @@
 
     const-string v0, ")"
 
-    invoke-static {v10, p0, v0}, Lhr1;->i(Ljava/lang/StringBuilder;Ljava/util/List;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v10, p0, v0}, Lzt1;->i(Ljava/lang/StringBuilder;Ljava/util/List;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

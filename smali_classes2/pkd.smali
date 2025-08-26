@@ -1,94 +1,113 @@
-.class public final synthetic Lpkd;
+.class public final Lpkd;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+.implements Lol7;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:I
 
-.field public final synthetic b:Lhx6;
+.field public final b:I
+
+.field public final c:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Lhx6;I)V
-    .locals 0
-
-    iput p2, p0, Lpkd;->a:I
-
-    iput-object p1, p0, Lpkd;->b:Lhx6;
+.method public constructor <init>(I)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lpkd;->a:I
+
+    sget v0, Lwaa;->d:I
+
+    iput v0, p0, Lpkd;->b:I
+
+    int-to-long v0, p1
+
+    iput-wide v0, p0, Lpkd;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-    iget v0, p0, Lpkd;->a:I
+    const/4 v0, 0x1
 
-    packed-switch v0, :pswitch_data_0
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    return v0
 
-    move-result-object p1
+    :cond_0
+    instance-of v1, p1, Lpkd;
 
-    check-cast p1, Ljava/lang/Integer;
+    const/4 v2, 0x0
 
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+    if-nez v1, :cond_1
 
-    move-result p1
+    return v2
 
-    iget-object p0, p0, Lpkd;->b:Lhx6;
+    :cond_1
+    check-cast p1, Lpkd;
 
-    check-cast p0, Ljkd;
+    iget p0, p0, Lpkd;->a:I
 
-    iget-object p0, p0, Ljkd;->L0:Lbc3;
+    iget p1, p1, Lpkd;->a:I
 
-    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
+    if-eq p0, p1, :cond_2
 
-    return-void
+    return v2
 
-    :pswitch_0
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    :cond_2
+    return v0
+.end method
 
-    move-result-object p1
+.method public final getItemId()J
+    .locals 2
 
-    check-cast p1, Ljava/lang/Float;
+    iget-wide v0, p0, Lpkd;->c:J
 
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+    return-wide v0
+.end method
 
-    move-result p1
+.method public final hashCode()I
+    .locals 0
 
-    iget-object p0, p0, Lpkd;->b:Lhx6;
+    iget p0, p0, Lpkd;->a:I
 
-    check-cast p0, Ljkd;
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
-    iget-object v0, p0, Ljkd;->L0:Lbc3;
+    move-result p0
 
-    invoke-virtual {v0}, Landroid/widget/TextView;->getCurrentTextColor()I
+    return p0
+.end method
 
-    move-result v0
+.method public final m()I
+    .locals 0
 
-    invoke-static {v0, p1}, Lr1g;->G(IF)I
+    iget p0, p0, Lpkd;->b:I
 
-    move-result p1
+    return p0
+.end method
 
-    iget-object p0, p0, Ljkd;->L0:Lbc3;
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
+    const-string v0, "ShimmerMemberListItem(pos="
 
-    return-void
+    const-string v1, ")"
 
-    nop
+    iget p0, p0, Lpkd;->a:I
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    invoke-static {p0, v0, v1}, Lpg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

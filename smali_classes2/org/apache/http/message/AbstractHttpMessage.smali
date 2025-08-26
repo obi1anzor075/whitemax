@@ -208,7 +208,7 @@
 
     if-nez p1, :cond_0
 
-    return-void
+    goto :goto_1
 
     :cond_0
     iget-object p0, p0, Lorg/apache/http/message/AbstractHttpMessage;->headergroup:Lorg/apache/http/message/HeaderGroup;
@@ -246,6 +246,7 @@
     goto :goto_0
 
     :cond_2
+    :goto_1
     return-void
 .end method
 

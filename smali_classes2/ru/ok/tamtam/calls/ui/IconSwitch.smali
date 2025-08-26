@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lade;
+.implements Lzke;
 .implements Landroid/widget/Checkable;
 
 
@@ -15,7 +15,7 @@
     d2 = {
         "Lru/ok/tamtam/calls/ui/IconSwitch;",
         "Landroid/widget/LinearLayout;",
-        "Lade;",
+        "Lzke;",
         "Landroid/widget/Checkable;",
         "Landroid/content/Context;",
         "context",
@@ -25,7 +25,7 @@
         "(Landroid/content/Context;Landroid/util/AttributeSet;)V",
         "",
         "text",
-        "Ljue;",
+        "Le5f;",
         "setText",
         "(I)V",
         "",
@@ -34,10 +34,10 @@
         "setIconDrawable",
         "orientation",
         "setOrientation",
-        "Ljo6;",
+        "Lqs6;",
         "listener",
         "setListener",
-        "(Ljo6;)V",
+        "(Lqs6;)V",
         "",
         "checked",
         "setChecked",
@@ -62,6 +62,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -103,7 +104,7 @@
 
     int-to-float v3, v3
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
 
     move-result-object v4
 
@@ -115,7 +116,7 @@
 
     mul-float/2addr v3, v4
 
-    invoke-static {v3}, La24;->X(F)I
+    invoke-static {v3}, Lkhg;->x(F)I
 
     move-result v3
 
@@ -151,7 +152,7 @@
 
     int-to-float v3, v3
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
 
     move-result-object v4
 
@@ -163,7 +164,7 @@
 
     mul-float/2addr v3, v4
 
-    invoke-static {v3}, La24;->X(F)I
+    invoke-static {v3}, Lkhg;->x(F)I
 
     move-result v3
 
@@ -180,7 +181,7 @@
 
     invoke-virtual {p0, v1, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    new-instance v2, Lio6;
+    new-instance v2, Lps6;
 
     invoke-direct {v2}, Ljava/lang/Object;-><init>()V
 
@@ -188,13 +189,13 @@
 
     if-eqz p2, :cond_1
 
-    sget-object v1, Lawb;->IconSwitch:[I
+    sget-object v1, Lw0c;->IconSwitch:[I
 
     invoke-virtual {p1, p2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object p1
 
-    sget p2, Lawb;->IconSwitch_icon_switch_start_drawable:I
+    sget p2, Lw0c;->IconSwitch_icon_switch_start_drawable:I
 
     invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -211,7 +212,7 @@
 
     if-eqz p1, :cond_2
 
-    sget-object p1, Ldb4;->e0:Ldb4;
+    sget-object p1, Lle4;->e0:Lle4;
 
     goto :goto_0
 
@@ -220,14 +221,14 @@
 
     move-result-object p1
 
-    sget-object p2, Lwce;->a0:Lr7e;
+    sget-object p2, Lvke;->a0:Lwfe;
 
-    invoke-static {p1}, Lfja;->E(Landroid/content/Context;)Lwce;
+    invoke-static {p1}, Lp54;->M(Landroid/content/Context;)Lvke;
 
     move-result-object p1
 
     :goto_0
-    invoke-virtual {p0, p1}, Lru/ok/tamtam/calls/ui/IconSwitch;->z(Lwce;)V
+    invoke-virtual {p0, p1}, Lru/ok/tamtam/calls/ui/IconSwitch;->z(Lvke;)V
 
     return-void
 .end method
@@ -275,22 +276,22 @@
 .method public final setIconDrawable(I)V
     .locals 1
 
-    iget-object v0, p0, Lru/ok/tamtam/calls/ui/IconSwitch;->a:Landroidx/appcompat/widget/AppCompatImageView;
-
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object p0
+    move-result-object v0
 
-    invoke-static {p0, p1}, Lgq3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, p1}, Let3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object p0
+    move-result-object p1
 
-    invoke-virtual {v0, p0}, Landroidx/appcompat/widget/AppCompatImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    iget-object p0, p0, Lru/ok/tamtam/calls/ui/IconSwitch;->a:Landroidx/appcompat/widget/AppCompatImageView;
+
+    invoke-virtual {p0, p1}, Landroidx/appcompat/widget/AppCompatImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     return-void
 .end method
 
-.method public final setListener(Ljo6;)V
+.method public final setListener(Lqs6;)V
     .locals 0
 
     return-void
@@ -338,18 +339,18 @@
     return-void
 .end method
 
-.method public final z(Lwce;)V
+.method public final z(Lvke;)V
     .locals 6
 
-    iget-object v0, p0, Lru/ok/tamtam/calls/ui/IconSwitch;->a:Landroidx/appcompat/widget/AppCompatImageView;
+    iget v0, p1, Lvke;->w:I
 
-    iget v1, p1, Lwce;->w:I
+    iget-object v1, p0, Lru/ok/tamtam/calls/ui/IconSwitch;->a:Landroidx/appcompat/widget/AppCompatImageView;
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setColorFilter(I)V
+    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setColorFilter(I)V
 
     iget-object p0, p0, Lru/ok/tamtam/calls/ui/IconSwitch;->b:Landroidx/appcompat/widget/SwitchCompat;
 
-    invoke-virtual {p0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {p0, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
     new-instance v0, Landroid/content/res/ColorStateList;
 
@@ -367,15 +368,15 @@
 
     move-result-object v2
 
-    iget v4, p1, Lwce;->l:I
+    iget v4, p1, Lvke;->k:I
 
-    iget v5, p1, Lwce;->k:I
+    iget v5, p1, Lvke;->l:I
 
-    filled-new-array {v5, v4}, [I
+    filled-new-array {v4, v5}, [I
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-direct {v0, v2, v4}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
+    invoke-direct {v0, v2, v5}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
 
     invoke-virtual {p0, v0}, Landroidx/appcompat/widget/SwitchCompat;->setThumbTintList(Landroid/content/res/ColorStateList;)V
 
@@ -393,13 +394,13 @@
 
     const v2, 0x3e99999a    # 0.3f
 
-    invoke-static {v5, v2}, Ln1g;->c0(IF)I
+    invoke-static {v4, v2}, Lmna;->M(IF)I
 
     move-result v3
 
-    iget p1, p1, Lwce;->M:I
+    iget p1, p1, Lvke;->M:I
 
-    invoke-static {p1, v2}, Ln1g;->c0(IF)I
+    invoke-static {p1, v2}, Lmna;->M(IF)I
 
     move-result p1
 

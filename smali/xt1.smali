@@ -1,67 +1,89 @@
-.class public final synthetic Lxt1;
-.super Ljava/lang/Object;
+.class public final Lxt1;
+.super Landroid/hardware/camera2/CameraManager$AvailabilityCallback;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/util/concurrent/RejectedExecutionHandler;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Ljava/lang/String;
+
+.field public b:Z
+
+.field public final synthetic c:Ldu1;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
+.method public constructor <init>(Ldu1;Ljava/lang/String;)V
     .locals 0
 
-    iput p1, p0, Lxt1;->a:I
+    iput-object p1, p0, Lxt1;->c:Ldu1;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/hardware/camera2/CameraManager$AvailabilityCallback;-><init>()V
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lxt1;->b:Z
+
+    iput-object p2, p0, Lxt1;->a:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final rejectedExecution(Ljava/lang/Runnable;Ljava/util/concurrent/ThreadPoolExecutor;)V
-    .locals 0
+.method public final onCameraAvailable(Ljava/lang/String;)V
+    .locals 1
 
-    iget p0, p0, Lxt1;->a:I
+    iget-object v0, p0, Lxt1;->a:Ljava/lang/String;
 
-    packed-switch p0, :pswitch_data_0
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    :try_start_0
-    invoke-virtual {p2}, Ljava/util/concurrent/ThreadPoolExecutor;->getQueue()Ljava/util/concurrent/BlockingQueue;
+    move-result p1
 
-    move-result-object p0
-
-    invoke-interface {p0, p1}, Ljava/util/concurrent/BlockingQueue;->put(Ljava/lang/Object;)V
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+    if-nez p1, :cond_0
 
     goto :goto_0
 
-    :catch_0
-    move-exception p0
+    :cond_0
+    const/4 p1, 0x1
 
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+    iput-boolean p1, p0, Lxt1;->b:Z
 
-    move-result-object p1
+    iget-object p1, p0, Lxt1;->c:Ldu1;
 
-    invoke-virtual {p1}, Ljava/lang/Thread;->interrupt()V
+    iget p1, p1, Ldu1;->O0:I
 
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
+    const/4 v0, 0x4
 
+    if-ne p1, v0, :cond_1
+
+    iget-object p0, p0, Lxt1;->c:Ldu1;
+
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, p1}, Ldu1;->I(Z)V
+
+    :cond_1
     :goto_0
     return-void
+.end method
 
-    :pswitch_0
-    sget-object p0, Lyt1;->c:Ll30;
+.method public final onCameraUnavailable(Ljava/lang/String;)V
+    .locals 1
+
+    iget-object v0, p0, Lxt1;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
 
     return-void
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    :cond_0
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Lxt1;->b:Z
+
+    return-void
 .end method

@@ -4,7 +4,7 @@
 
 # interfaces
 .implements Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManager;
-.implements Lnj1;
+.implements Lol1;
 
 
 # annotations
@@ -15,33 +15,33 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;",
         "Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManager;",
-        "Lnj1;",
+        "Lol1;",
         "Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;",
         "store",
         "<init>",
         "(Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;)V",
         "Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$OwnRoomsListener;",
         "listener",
-        "Ljue;",
+        "Le5f;",
         "sendActualState",
         "(Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$OwnRoomsListener;)V",
         "Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;",
         "getOwnActiveRoom",
         "()Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;",
         "getOwnProposedRoom",
-        "Llj1;",
+        "Lml1;",
         "params",
         "onRoomRemoved",
-        "(Llj1;)V",
-        "Lmj1;",
+        "(Lml1;)V",
+        "Lnl1;",
         "onRoomUpdated",
-        "(Lmj1;)V",
-        "Lkj1;",
+        "(Lnl1;)V",
+        "Lll1;",
         "onCurrentParticipantInvitedToRoom",
-        "(Lkj1;)V",
-        "Ljj1;",
+        "(Lll1;)V",
+        "Lkl1;",
         "onCurrentParticipantActiveRoomChanged",
-        "(Ljj1;)V",
+        "(Lkl1;)V",
         "addListener",
         "removeListener",
         "Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;",
@@ -59,6 +59,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -105,26 +106,26 @@
     return-void
 .end method
 
-.method public static synthetic a(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Ljj1;)V
+.method public static synthetic a(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Lkl1;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->onCurrentParticipantActiveRoomChanged$lambda$9(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Ljj1;)V
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->onCurrentParticipantActiveRoomChanged$lambda$9(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Lkl1;)V
 
     return-void
 .end method
 
-.method public static synthetic b(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Lmj1;)V
+.method public static synthetic b(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Lnl1;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->onRoomUpdated$lambda$5(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Lmj1;)V
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->onRoomUpdated$lambda$5(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Lnl1;)V
 
     return-void
 .end method
 
-.method public static synthetic c(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Lkj1;)V
+.method public static synthetic c(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Lll1;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->onCurrentParticipantInvitedToRoom$lambda$7(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Lkj1;)V
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->onCurrentParticipantInvitedToRoom$lambda$7(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Lll1;)V
 
     return-void
 .end method
@@ -137,15 +138,15 @@
     return-void
 .end method
 
-.method public static synthetic e(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Llj1;)V
+.method public static synthetic e(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Lml1;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->onRoomRemoved$lambda$3(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Llj1;)V
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->onRoomRemoved$lambda$3(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Lml1;)V
 
     return-void
 .end method
 
-.method private static final onCurrentParticipantActiveRoomChanged$lambda$9(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Ljj1;)V
+.method private static final onCurrentParticipantActiveRoomChanged$lambda$9(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Lkl1;)V
     .locals 4
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->listeners:Ljava/util/concurrent/CopyOnWriteArraySet;
@@ -169,11 +170,11 @@
 
     new-instance v1, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;
 
-    iget-object v2, p1, Ljj1;->a:Lw2d;
+    iget-object v2, p1, Lkl1;->a:Le9d;
 
-    iget-object v3, p1, Ljj1;->b:Lq2d;
+    iget-object v3, p1, Lkl1;->b:Ly8d;
 
-    invoke-direct {v1, v2, v3}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;-><init>(Lw2d;Lq2d;)V
+    invoke-direct {v1, v2, v3}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;-><init>(Le9d;Ly8d;)V
 
     invoke-interface {v0, v1}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$OwnRoomsListener;->onActiveRoomChanged(Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;)V
 
@@ -183,7 +184,7 @@
     return-void
 .end method
 
-.method private static final onCurrentParticipantInvitedToRoom$lambda$7(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Lkj1;)V
+.method private static final onCurrentParticipantInvitedToRoom$lambda$7(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Lll1;)V
     .locals 4
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->listeners:Ljava/util/concurrent/CopyOnWriteArraySet;
@@ -207,11 +208,11 @@
 
     new-instance v1, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;
 
-    iget-object v2, p1, Lkj1;->b:Lw2d;
+    iget-object v2, p1, Lll1;->b:Le9d;
 
-    iget-object v3, p1, Lkj1;->c:Lq2d;
+    iget-object v3, p1, Lll1;->c:Ly8d;
 
-    invoke-direct {v1, v2, v3}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;-><init>(Lw2d;Lq2d;)V
+    invoke-direct {v1, v2, v3}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;-><init>(Le9d;Ly8d;)V
 
     invoke-interface {v0, v1}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$OwnRoomsListener;->onProposedRoomChanged(Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;)V
 
@@ -221,7 +222,7 @@
     return-void
 .end method
 
-.method private static final onRoomRemoved$lambda$3(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Llj1;)V
+.method private static final onRoomRemoved$lambda$3(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Lml1;)V
     .locals 4
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->listeners:Ljava/util/concurrent/CopyOnWriteArraySet;
@@ -245,11 +246,11 @@
 
     new-instance v1, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;
 
-    const/4 v2, 0x0
+    iget-object v2, p1, Lml1;->a:Le9d;
 
-    iget-object v3, p1, Llj1;->a:Lw2d;
+    const/4 v3, 0x0
 
-    invoke-direct {v1, v3, v2}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;-><init>(Lw2d;Lq2d;)V
+    invoke-direct {v1, v2, v3}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;-><init>(Le9d;Ly8d;)V
 
     invoke-interface {v0, v1}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$OwnRoomsListener;->onRoomRemoved(Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;)V
 
@@ -259,7 +260,7 @@
     return-void
 .end method
 
-.method private static final onRoomUpdated$lambda$5(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Lmj1;)V
+.method private static final onRoomUpdated$lambda$5(Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;Lnl1;)V
     .locals 4
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->listeners:Ljava/util/concurrent/CopyOnWriteArraySet;
@@ -283,11 +284,11 @@
 
     new-instance v1, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;
 
-    iget-object v2, p1, Lmj1;->a:Lw2d;
+    iget-object v2, p1, Lnl1;->a:Le9d;
 
-    iget-object v3, p1, Lmj1;->b:Lq2d;
+    iget-object v3, p1, Lnl1;->b:Ly8d;
 
-    invoke-direct {v1, v2, v3}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;-><init>(Lw2d;Lq2d;)V
+    invoke-direct {v1, v2, v3}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;-><init>(Le9d;Ly8d;)V
 
     invoke-interface {v0, v1}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$OwnRoomsListener;->onRoomUpdated(Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;)V
 
@@ -302,11 +303,11 @@
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->mainHandler:Landroid/os/Handler;
 
-    new-instance v1, Lsbc;
+    new-instance v1, Ltmc;
 
-    const/16 v2, 0xb
+    const/4 v2, 0x4
 
-    invoke-direct {v1, p0, v2, p1}, Lsbc;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-direct {v1, p0, v2, p1}, Ltmc;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -324,12 +325,12 @@
 
     if-nez v0, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->store:Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;
 
-    invoke-virtual {v0}, Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;->getProposedRoom()Lq2d;
+    invoke-virtual {v0}, Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;->getProposedRoom()Ly8d;
 
     move-result-object v0
 
@@ -337,16 +338,16 @@
 
     new-instance v1, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;
 
-    iget-object v2, v0, Lq2d;->a:Lv2d;
+    iget-object v2, v0, Ly8d;->a:Ld9d;
 
-    invoke-direct {v1, v2, v0}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;-><init>(Lw2d;Lq2d;)V
+    invoke-direct {v1, v2, v0}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;-><init>(Le9d;Ly8d;)V
 
     invoke-interface {p1, v1}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$OwnRoomsListener;->onProposedRoomChanged(Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;)V
 
     :cond_1
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->store:Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;
 
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;->getActiveRoom()Lq2d;
+    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;->getActiveRoom()Ly8d;
 
     move-result-object p0
 
@@ -354,13 +355,14 @@
 
     new-instance v0, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;
 
-    iget-object v1, p0, Lq2d;->a:Lv2d;
+    iget-object v1, p0, Ly8d;->a:Ld9d;
 
-    invoke-direct {v0, v1, p0}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;-><init>(Lw2d;Lq2d;)V
+    invoke-direct {v0, v1, p0}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;-><init>(Le9d;Ly8d;)V
 
     invoke-interface {p1, v0}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$OwnRoomsListener;->onActiveRoomChanged(Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;)V
 
     :cond_2
+    :goto_0
     return-void
 .end method
 
@@ -383,7 +385,7 @@
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->store:Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;
 
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;->getActiveRoom()Lq2d;
+    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;->getActiveRoom()Ly8d;
 
     move-result-object p0
 
@@ -391,23 +393,22 @@
 
     new-instance v0, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;
 
-    iget-object v1, p0, Lq2d;->a:Lv2d;
+    iget-object v1, p0, Ly8d;->a:Ld9d;
 
-    invoke-direct {v0, v1, p0}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;-><init>(Lw2d;Lq2d;)V
+    invoke-direct {v0, v1, p0}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;-><init>(Le9d;Ly8d;)V
 
-    goto :goto_0
+    return-object v0
 
     :cond_0
-    new-instance v0, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;
+    new-instance p0, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;
 
-    sget-object p0, Lu2d;->a:Lu2d;
+    sget-object v0, Lc9d;->a:Lc9d;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;-><init>(Lw2d;Lq2d;)V
+    invoke-direct {p0, v0, v1}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;-><init>(Le9d;Ly8d;)V
 
-    :goto_0
-    return-object v0
+    return-object p0
 .end method
 
 .method public final getOwnProposedRoom()Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;
@@ -415,7 +416,7 @@
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->store:Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;
 
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;->getProposedRoom()Lq2d;
+    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;->getProposedRoom()Ly8d;
 
     move-result-object p0
 
@@ -423,83 +424,82 @@
 
     new-instance v0, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;
 
-    iget-object v1, p0, Lq2d;->a:Lv2d;
+    iget-object v1, p0, Ly8d;->a:Ld9d;
 
-    invoke-direct {v0, v1, p0}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;-><init>(Lw2d;Lq2d;)V
+    invoke-direct {v0, v1, p0}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;-><init>(Le9d;Ly8d;)V
 
-    goto :goto_0
+    return-object v0
 
     :cond_0
-    new-instance v0, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;
+    new-instance p0, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;
 
-    sget-object p0, Lu2d;->a:Lu2d;
+    sget-object v0, Lc9d;->a:Lc9d;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;-><init>(Lw2d;Lq2d;)V
+    invoke-direct {p0, v0, v1}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;-><init>(Le9d;Ly8d;)V
 
-    :goto_0
-    return-object v0
+    return-object p0
 .end method
 
-.method public onCurrentParticipantActiveRoomChanged(Ljj1;)V
+.method public onCurrentParticipantActiveRoomChanged(Lkl1;)V
     .locals 3
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->mainHandler:Landroid/os/Handler;
 
-    new-instance v1, Lsbc;
+    new-instance v1, Ltmc;
 
-    const/16 v2, 0xd
+    const/4 v2, 0x6
 
-    invoke-direct {v1, p0, v2, p1}, Lsbc;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-direct {v1, p0, v2, p1}, Ltmc;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     return-void
 .end method
 
-.method public onCurrentParticipantInvitedToRoom(Lkj1;)V
+.method public onCurrentParticipantInvitedToRoom(Lll1;)V
     .locals 3
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->mainHandler:Landroid/os/Handler;
 
-    new-instance v1, Lsbc;
+    new-instance v1, Ltmc;
 
-    const/16 v2, 0xf
+    const/16 v2, 0x8
 
-    invoke-direct {v1, p0, v2, p1}, Lsbc;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-direct {v1, p0, v2, p1}, Ltmc;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     return-void
 .end method
 
-.method public onRoomRemoved(Llj1;)V
+.method public onRoomRemoved(Lml1;)V
     .locals 3
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->mainHandler:Landroid/os/Handler;
 
-    new-instance v1, Lsbc;
+    new-instance v1, Ltmc;
 
-    const/16 v2, 0xe
+    const/4 v2, 0x7
 
-    invoke-direct {v1, p0, v2, p1}, Lsbc;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-direct {v1, p0, v2, p1}, Ltmc;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     return-void
 .end method
 
-.method public onRoomUpdated(Lmj1;)V
+.method public onRoomUpdated(Lnl1;)V
     .locals 3
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/listener/SessionRoomListenerManagerImpl;->mainHandler:Landroid/os/Handler;
 
-    new-instance v1, Lsbc;
+    new-instance v1, Ltmc;
 
-    const/16 v2, 0xc
+    const/4 v2, 0x5
 
-    invoke-direct {v1, p0, v2, p1}, Lsbc;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-direct {v1, p0, v2, p1}, Ltmc;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 

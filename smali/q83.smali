@@ -1,42 +1,61 @@
-.class public final synthetic Lq83;
+.class public abstract Lq83;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lte8;
 
+# static fields
+.field public static final a:Lo83;
 
-# instance fields
-.field public final synthetic a:Lu83;
+.field public static final b:Lp83;
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public static final c:Lp83;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lu83;Ljava/lang/Integer;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lo83;
 
-    iput-object p1, p0, Lq83;->a:Lu83;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lq83;->b:Ljava/lang/Object;
+    sput-object v0, Lq83;->a:Lo83;
+
+    new-instance v0, Lp83;
+
+    const/4 v1, -0x1
+
+    invoke-direct {v0, v1}, Lp83;-><init>(I)V
+
+    sput-object v0, Lq83;->b:Lp83;
+
+    new-instance v0, Lp83;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lp83;-><init>(I)V
+
+    sput-object v0, Lq83;->c:Lp83;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lyh0;Luje;)V
-    .locals 1
+.method public abstract a(II)Lq83;
+.end method
 
-    iget-object v0, p0, Lq83;->b:Ljava/lang/Object;
+.method public abstract b(JJ)Lq83;
+.end method
 
-    check-cast v0, Ljava/lang/Integer;
+.method public abstract c(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Lq83;
+.end method
 
-    iget-object p0, p0, Lq83;->a:Lu83;
+.method public abstract d(ZZ)Lq83;
+.end method
 
-    invoke-virtual {p0, v0, p1, p2}, Lu83;->q(Ljava/lang/Integer;Lyh0;Luje;)V
+.method public abstract e(ZZ)Lq83;
+.end method
 
-    return-void
+.method public abstract f()I
 .end method

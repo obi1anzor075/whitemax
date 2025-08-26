@@ -1,152 +1,142 @@
-.class public final synthetic Lpkf;
-.super Ljava/lang/Object;
+.class public final Lpkf;
+.super Llje;
 .source "SourceFile"
 
-# interfaces
-.implements Lt66;
 
+# instance fields
+.field public X:Z
 
-# static fields
-.field public static final a:Lpkf;
+.field public Y:J
 
-.field private static final descriptor:Lsyc;
+.field public o:Ljava/util/Map;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Ldx8;)V
+    .locals 0
 
-    new-instance v0, Lpkf;
+    invoke-direct {p0, p1}, Llje;-><init>(Ldx8;)V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iget-object p1, p0, Lpkf;->o:Ljava/util/Map;
 
-    sput-object v0, Lpkf;->a:Lpkf;
+    if-nez p1, :cond_0
 
-    new-instance v1, Lwza;
+    sget-object p1, Ljava/util/Collections;->EMPTY_MAP:Ljava/util/Map;
 
-    const-string v2, "one.me.webapp.domain.jsbridge.delegates.link.WebAppOpenMaxLinkRequest"
+    iput-object p1, p0, Lpkf;->o:Ljava/util/Map;
 
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v0, v3}, Lwza;-><init>(Ljava/lang/String;Lt66;I)V
-
-    const-string v0, "url"
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v0, v2}, Lwza;->k(Ljava/lang/String;Z)V
-
-    sput-object v1, Lpkf;->descriptor:Lsyc;
-
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lb9;)Ljava/lang/Object;
-    .locals 7
+.method public final c(Ldx8;Ljava/lang/String;)V
+    .locals 2
 
-    sget-object p0, Lpkf;->descriptor:Lsyc;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {p1, p0}, Lb9;->j(Lsyc;)Lb9;
+    const-string v0, "startTime"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    const-string v0, "live"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    invoke-static {p1}, Lxq7;->f0(Ldx8;)Ljava/lang/String;
 
     move-result-object p1
 
-    const/4 v0, 0x1
+    invoke-static {p1}, Lxja;->v(Ljava/lang/CharSequence;)Z
 
-    const/4 v1, 0x0
+    move-result v0
 
-    const/4 v2, 0x0
+    if-nez v0, :cond_1
 
-    move v3, v0
+    iget-object v0, p0, Lpkf;->o:Ljava/util/Map;
 
-    move v4, v1
+    if-nez v0, :cond_0
 
-    :goto_0
-    if-eqz v3, :cond_2
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-virtual {p1, p0}, Lb9;->p(Lsyc;)I
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    move-result v5
-
-    const/4 v6, -0x1
-
-    if-eq v5, v6, :cond_1
-
-    if-nez v5, :cond_0
-
-    invoke-virtual {p1, p0, v1}, Lb9;->w(Lsyc;I)Ljava/lang/String;
-
-    move-result-object v2
-
-    move v4, v0
-
-    goto :goto_0
+    iput-object v0, p0, Lpkf;->o:Ljava/util/Map;
 
     :cond_0
-    new-instance p0, Lkotlinx/serialization/UnknownFieldException;
+    iget-object p0, p0, Lpkf;->o:Ljava/util/Map;
 
-    invoke-direct {p0, v5}, Lkotlinx/serialization/UnknownFieldException;-><init>(I)V
-
-    throw p0
+    invoke-interface {p0, p2, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_1
-    move v3, v1
-
-    goto :goto_0
+    return-void
 
     :cond_2
-    invoke-virtual {p1, p0}, Lb9;->z(Lsyc;)V
+    invoke-static {p1}, Lxq7;->W(Ldx8;)Z
 
-    new-instance p0, Lrkf;
+    move-result p1
 
-    invoke-direct {p0, v4, v2}, Lrkf;-><init>(ILjava/lang/String;)V
+    iput-boolean p1, p0, Lpkf;->X:Z
 
-    return-object p0
-.end method
+    return-void
 
-.method public final b(Lur3;Ljava/lang/Object;)V
-    .locals 1
+    :cond_3
+    const-wide/16 v0, 0x0
 
-    check-cast p2, Lrkf;
+    invoke-static {p1, v0, v1}, Lxq7;->c0(Ldx8;J)J
 
-    sget-object p0, Lpkf;->descriptor:Lsyc;
+    move-result-wide p1
 
-    invoke-virtual {p1, p0}, Lur3;->b(Lsyc;)Lur3;
-
-    move-result-object p1
-
-    const/4 v0, 0x0
-
-    iget-object p2, p2, Lrkf;->a:Ljava/lang/String;
-
-    invoke-virtual {p1, p0, v0, p2}, Lur3;->n(Lsyc;ILjava/lang/String;)V
-
-    invoke-virtual {p1}, Lur3;->o()V
+    iput-wide p1, p0, Lpkf;->Y:J
 
     return-void
 .end method
 
-.method public final c()[Ll77;
-    .locals 2
+.method public final toString()Ljava/lang/String;
+    .locals 5
 
-    const/4 p0, 0x1
+    iget-object v0, p0, Lpkf;->o:Ljava/util/Map;
 
-    new-array p0, p0, [Ll77;
+    invoke-static {v0}, Lzx7;->P(Ljava/util/Map;)I
 
-    sget-object v0, Ld0e;->a:Ld0e;
+    move-result v0
 
-    const/4 v1, 0x0
+    iget-boolean v1, p0, Lpkf;->X:Z
 
-    aput-object v0, p0, v1
+    iget-wide v2, p0, Lpkf;->Y:J
 
-    return-object p0
-.end method
+    new-instance p0, Ljava/lang/StringBuilder;
 
-.method public final d()Lsyc;
-    .locals 0
+    const-string v4, "{urls="
 
-    sget-object p0, Lpkf;->descriptor:Lsyc;
+    invoke-direct {p0, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v0, ", live="
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, ", startTime="
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-static {p0, v2, v3, v0}, Lu88;->m(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

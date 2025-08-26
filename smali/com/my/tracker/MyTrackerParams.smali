@@ -515,76 +515,76 @@
 .method public setAge(I)Lcom/my/tracker/MyTrackerParams;
     .locals 12
 
-    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->b:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->b:Ljava/lang/Object;
 
-    monitor-enter v0
+    monitor-enter v1
 
     :try_start_0
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget v1, v1, Lcom/my/tracker/obfuscated/b1;->a:I
+    iget v0, v0, Lcom/my/tracker/obfuscated/b1;->a:I
 
-    if-eq v1, p1, :cond_0
+    if-eq v0, p1, :cond_0
 
-    new-instance v1, Lcom/my/tracker/obfuscated/b1;
+    new-instance v2, Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget v4, v2, Lcom/my/tracker/obfuscated/b1;->b:I
+    iget v4, v0, Lcom/my/tracker/obfuscated/b1;->b:I
 
-    iget-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v5, v2, Lcom/my/tracker/obfuscated/b1;->c:[Ljava/lang/String;
+    iget-object v5, v0, Lcom/my/tracker/obfuscated/b1;->c:[Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v6, v2, Lcom/my/tracker/obfuscated/b1;->d:[Ljava/lang/String;
+    iget-object v6, v0, Lcom/my/tracker/obfuscated/b1;->d:[Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v7, v2, Lcom/my/tracker/obfuscated/b1;->e:[Ljava/lang/String;
+    iget-object v7, v0, Lcom/my/tracker/obfuscated/b1;->e:[Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v8, v2, Lcom/my/tracker/obfuscated/b1;->f:[Ljava/lang/String;
+    iget-object v8, v0, Lcom/my/tracker/obfuscated/b1;->f:[Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v9, v2, Lcom/my/tracker/obfuscated/b1;->g:[Ljava/lang/String;
+    iget-object v9, v0, Lcom/my/tracker/obfuscated/b1;->g:[Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v10, v2, Lcom/my/tracker/obfuscated/b1;->h:[Ljava/lang/String;
+    iget-object v10, v0, Lcom/my/tracker/obfuscated/b1;->h:[Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v11, v2, Lcom/my/tracker/obfuscated/b1;->i:[Ljava/lang/String;
-
-    move-object v2, v1
+    iget-object v11, v0, Lcom/my/tracker/obfuscated/b1;->i:[Ljava/lang/String;
 
     move v3, p1
 
     invoke-direct/range {v2 .. v11}, Lcom/my/tracker/obfuscated/b1;-><init>(II[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
 
-    invoke-direct {p0, v1}, Lcom/my/tracker/MyTrackerParams;->a(Lcom/my/tracker/obfuscated/b1;)V
+    invoke-direct {p0, v2}, Lcom/my/tracker/MyTrackerParams;->a(Lcom/my/tracker/obfuscated/b1;)V
 
-    iput-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iput-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
     goto :goto_0
 
     :catchall_0
-    move-exception p0
+    move-exception v0
+
+    move-object p0, v0
 
     goto :goto_1
 
     :cond_0
     :goto_0
-    monitor-exit v0
+    monitor-exit v1
 
     return-object p0
 
     :goto_1
-    monitor-exit v0
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -631,84 +631,84 @@
 .end method
 
 .method public setCustomUserIds([Ljava/lang/String;)Lcom/my/tracker/MyTrackerParams;
-    .locals 11
+    .locals 12
 
-    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->b:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->b:Ljava/lang/Object;
 
-    monitor-enter v0
+    monitor-enter v1
 
     :try_start_0
     invoke-static {p1}, Lcom/my/tracker/MyTrackerParams;->a([Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v9
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v1, v1, Lcom/my/tracker/obfuscated/b1;->g:[Ljava/lang/String;
+    iget-object v0, v0, Lcom/my/tracker/obfuscated/b1;->g:[Ljava/lang/String;
 
-    invoke-static {v1, p1}, Lcom/my/tracker/obfuscated/g;->a([Ljava/lang/Comparable;[Ljava/lang/Comparable;)I
+    invoke-static {v0, p1}, Lcom/my/tracker/obfuscated/g;->a([Ljava/lang/Comparable;[Ljava/lang/Comparable;)I
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    new-instance p1, Lcom/my/tracker/obfuscated/b1;
+    new-instance v2, Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget v2, v1, Lcom/my/tracker/obfuscated/b1;->a:I
+    iget v3, p1, Lcom/my/tracker/obfuscated/b1;->a:I
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget v3, v1, Lcom/my/tracker/obfuscated/b1;->b:I
+    iget v4, p1, Lcom/my/tracker/obfuscated/b1;->b:I
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v4, v1, Lcom/my/tracker/obfuscated/b1;->c:[Ljava/lang/String;
+    iget-object v5, p1, Lcom/my/tracker/obfuscated/b1;->c:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v5, v1, Lcom/my/tracker/obfuscated/b1;->d:[Ljava/lang/String;
+    iget-object v6, p1, Lcom/my/tracker/obfuscated/b1;->d:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v6, v1, Lcom/my/tracker/obfuscated/b1;->e:[Ljava/lang/String;
+    iget-object v7, p1, Lcom/my/tracker/obfuscated/b1;->e:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v7, v1, Lcom/my/tracker/obfuscated/b1;->f:[Ljava/lang/String;
+    iget-object v8, p1, Lcom/my/tracker/obfuscated/b1;->f:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v9, v1, Lcom/my/tracker/obfuscated/b1;->h:[Ljava/lang/String;
+    iget-object v10, p1, Lcom/my/tracker/obfuscated/b1;->h:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v10, v1, Lcom/my/tracker/obfuscated/b1;->i:[Ljava/lang/String;
+    iget-object v11, p1, Lcom/my/tracker/obfuscated/b1;->i:[Ljava/lang/String;
 
-    move-object v1, p1
+    invoke-direct/range {v2 .. v11}, Lcom/my/tracker/obfuscated/b1;-><init>(II[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
 
-    invoke-direct/range {v1 .. v10}, Lcom/my/tracker/obfuscated/b1;-><init>(II[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
+    invoke-direct {p0, v2}, Lcom/my/tracker/MyTrackerParams;->a(Lcom/my/tracker/obfuscated/b1;)V
 
-    invoke-direct {p0, p1}, Lcom/my/tracker/MyTrackerParams;->a(Lcom/my/tracker/obfuscated/b1;)V
-
-    iput-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iput-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
     goto :goto_0
 
     :catchall_0
-    move-exception p0
+    move-exception v0
+
+    move-object p0, v0
 
     goto :goto_1
 
     :cond_0
     :goto_0
-    monitor-exit v0
+    monitor-exit v1
 
     return-object p0
 
     :goto_1
-    monitor-exit v0
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -730,84 +730,84 @@
 .end method
 
 .method public setEmails([Ljava/lang/String;)Lcom/my/tracker/MyTrackerParams;
-    .locals 11
+    .locals 12
 
-    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->b:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->b:Ljava/lang/Object;
 
-    monitor-enter v0
+    monitor-enter v1
 
     :try_start_0
     invoke-static {p1}, Lcom/my/tracker/MyTrackerParams;->a([Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v1, v1, Lcom/my/tracker/obfuscated/b1;->e:[Ljava/lang/String;
+    iget-object v0, v0, Lcom/my/tracker/obfuscated/b1;->e:[Ljava/lang/String;
 
-    invoke-static {v1, p1}, Lcom/my/tracker/obfuscated/g;->a([Ljava/lang/Comparable;[Ljava/lang/Comparable;)I
+    invoke-static {v0, p1}, Lcom/my/tracker/obfuscated/g;->a([Ljava/lang/Comparable;[Ljava/lang/Comparable;)I
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    new-instance p1, Lcom/my/tracker/obfuscated/b1;
+    new-instance v2, Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget v2, v1, Lcom/my/tracker/obfuscated/b1;->a:I
+    iget v3, p1, Lcom/my/tracker/obfuscated/b1;->a:I
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget v3, v1, Lcom/my/tracker/obfuscated/b1;->b:I
+    iget v4, p1, Lcom/my/tracker/obfuscated/b1;->b:I
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v4, v1, Lcom/my/tracker/obfuscated/b1;->c:[Ljava/lang/String;
+    iget-object v5, p1, Lcom/my/tracker/obfuscated/b1;->c:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v5, v1, Lcom/my/tracker/obfuscated/b1;->d:[Ljava/lang/String;
+    iget-object v6, p1, Lcom/my/tracker/obfuscated/b1;->d:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v7, v1, Lcom/my/tracker/obfuscated/b1;->f:[Ljava/lang/String;
+    iget-object v8, p1, Lcom/my/tracker/obfuscated/b1;->f:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v8, v1, Lcom/my/tracker/obfuscated/b1;->g:[Ljava/lang/String;
+    iget-object v9, p1, Lcom/my/tracker/obfuscated/b1;->g:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v9, v1, Lcom/my/tracker/obfuscated/b1;->h:[Ljava/lang/String;
+    iget-object v10, p1, Lcom/my/tracker/obfuscated/b1;->h:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v10, v1, Lcom/my/tracker/obfuscated/b1;->i:[Ljava/lang/String;
+    iget-object v11, p1, Lcom/my/tracker/obfuscated/b1;->i:[Ljava/lang/String;
 
-    move-object v1, p1
+    invoke-direct/range {v2 .. v11}, Lcom/my/tracker/obfuscated/b1;-><init>(II[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
 
-    invoke-direct/range {v1 .. v10}, Lcom/my/tracker/obfuscated/b1;-><init>(II[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
+    invoke-direct {p0, v2}, Lcom/my/tracker/MyTrackerParams;->a(Lcom/my/tracker/obfuscated/b1;)V
 
-    invoke-direct {p0, p1}, Lcom/my/tracker/MyTrackerParams;->a(Lcom/my/tracker/obfuscated/b1;)V
-
-    iput-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iput-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
     goto :goto_0
 
     :catchall_0
-    move-exception p0
+    move-exception v0
+
+    move-object p0, v0
 
     goto :goto_1
 
     :cond_0
     :goto_0
-    monitor-exit v0
+    monitor-exit v1
 
     return-object p0
 
     :goto_1
-    monitor-exit v0
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -817,76 +817,76 @@
 .method public setGender(I)Lcom/my/tracker/MyTrackerParams;
     .locals 12
 
-    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->b:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->b:Ljava/lang/Object;
 
-    monitor-enter v0
+    monitor-enter v1
 
     :try_start_0
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget v1, v1, Lcom/my/tracker/obfuscated/b1;->b:I
+    iget v0, v0, Lcom/my/tracker/obfuscated/b1;->b:I
 
-    if-eq v1, p1, :cond_0
+    if-eq v0, p1, :cond_0
 
-    new-instance v1, Lcom/my/tracker/obfuscated/b1;
+    new-instance v2, Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget v3, v2, Lcom/my/tracker/obfuscated/b1;->a:I
+    iget v3, v0, Lcom/my/tracker/obfuscated/b1;->a:I
 
-    iget-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v5, v2, Lcom/my/tracker/obfuscated/b1;->c:[Ljava/lang/String;
+    iget-object v5, v0, Lcom/my/tracker/obfuscated/b1;->c:[Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v6, v2, Lcom/my/tracker/obfuscated/b1;->d:[Ljava/lang/String;
+    iget-object v6, v0, Lcom/my/tracker/obfuscated/b1;->d:[Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v7, v2, Lcom/my/tracker/obfuscated/b1;->e:[Ljava/lang/String;
+    iget-object v7, v0, Lcom/my/tracker/obfuscated/b1;->e:[Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v8, v2, Lcom/my/tracker/obfuscated/b1;->f:[Ljava/lang/String;
+    iget-object v8, v0, Lcom/my/tracker/obfuscated/b1;->f:[Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v9, v2, Lcom/my/tracker/obfuscated/b1;->g:[Ljava/lang/String;
+    iget-object v9, v0, Lcom/my/tracker/obfuscated/b1;->g:[Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v10, v2, Lcom/my/tracker/obfuscated/b1;->h:[Ljava/lang/String;
+    iget-object v10, v0, Lcom/my/tracker/obfuscated/b1;->h:[Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v11, v2, Lcom/my/tracker/obfuscated/b1;->i:[Ljava/lang/String;
-
-    move-object v2, v1
+    iget-object v11, v0, Lcom/my/tracker/obfuscated/b1;->i:[Ljava/lang/String;
 
     move v4, p1
 
     invoke-direct/range {v2 .. v11}, Lcom/my/tracker/obfuscated/b1;-><init>(II[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
 
-    invoke-direct {p0, v1}, Lcom/my/tracker/MyTrackerParams;->a(Lcom/my/tracker/obfuscated/b1;)V
+    invoke-direct {p0, v2}, Lcom/my/tracker/MyTrackerParams;->a(Lcom/my/tracker/obfuscated/b1;)V
 
-    iput-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iput-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
     goto :goto_0
 
     :catchall_0
-    move-exception p0
+    move-exception v0
+
+    move-object p0, v0
 
     goto :goto_1
 
     :cond_0
     :goto_0
-    monitor-exit v0
+    monitor-exit v1
 
     return-object p0
 
     :goto_1
-    monitor-exit v0
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -908,84 +908,84 @@
 .end method
 
 .method public setIcqIds([Ljava/lang/String;)Lcom/my/tracker/MyTrackerParams;
-    .locals 11
+    .locals 12
 
-    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->b:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->b:Ljava/lang/Object;
 
-    monitor-enter v0
+    monitor-enter v1
 
     :try_start_0
     invoke-static {p1}, Lcom/my/tracker/MyTrackerParams;->a([Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v8
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v1, v1, Lcom/my/tracker/obfuscated/b1;->f:[Ljava/lang/String;
+    iget-object v0, v0, Lcom/my/tracker/obfuscated/b1;->f:[Ljava/lang/String;
 
-    invoke-static {v1, p1}, Lcom/my/tracker/obfuscated/g;->a([Ljava/lang/Comparable;[Ljava/lang/Comparable;)I
+    invoke-static {v0, p1}, Lcom/my/tracker/obfuscated/g;->a([Ljava/lang/Comparable;[Ljava/lang/Comparable;)I
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    new-instance p1, Lcom/my/tracker/obfuscated/b1;
+    new-instance v2, Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget v2, v1, Lcom/my/tracker/obfuscated/b1;->a:I
+    iget v3, p1, Lcom/my/tracker/obfuscated/b1;->a:I
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget v3, v1, Lcom/my/tracker/obfuscated/b1;->b:I
+    iget v4, p1, Lcom/my/tracker/obfuscated/b1;->b:I
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v4, v1, Lcom/my/tracker/obfuscated/b1;->c:[Ljava/lang/String;
+    iget-object v5, p1, Lcom/my/tracker/obfuscated/b1;->c:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v5, v1, Lcom/my/tracker/obfuscated/b1;->d:[Ljava/lang/String;
+    iget-object v6, p1, Lcom/my/tracker/obfuscated/b1;->d:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v6, v1, Lcom/my/tracker/obfuscated/b1;->e:[Ljava/lang/String;
+    iget-object v7, p1, Lcom/my/tracker/obfuscated/b1;->e:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v8, v1, Lcom/my/tracker/obfuscated/b1;->g:[Ljava/lang/String;
+    iget-object v9, p1, Lcom/my/tracker/obfuscated/b1;->g:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v9, v1, Lcom/my/tracker/obfuscated/b1;->h:[Ljava/lang/String;
+    iget-object v10, p1, Lcom/my/tracker/obfuscated/b1;->h:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v10, v1, Lcom/my/tracker/obfuscated/b1;->i:[Ljava/lang/String;
+    iget-object v11, p1, Lcom/my/tracker/obfuscated/b1;->i:[Ljava/lang/String;
 
-    move-object v1, p1
+    invoke-direct/range {v2 .. v11}, Lcom/my/tracker/obfuscated/b1;-><init>(II[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
 
-    invoke-direct/range {v1 .. v10}, Lcom/my/tracker/obfuscated/b1;-><init>(II[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
+    invoke-direct {p0, v2}, Lcom/my/tracker/MyTrackerParams;->a(Lcom/my/tracker/obfuscated/b1;)V
 
-    invoke-direct {p0, p1}, Lcom/my/tracker/MyTrackerParams;->a(Lcom/my/tracker/obfuscated/b1;)V
-
-    iput-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iput-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
     goto :goto_0
 
     :catchall_0
-    move-exception p0
+    move-exception v0
+
+    move-object p0, v0
 
     goto :goto_1
 
     :cond_0
     :goto_0
-    monitor-exit v0
+    monitor-exit v1
 
     return-object p0
 
     :goto_1
-    monitor-exit v0
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -1015,84 +1015,84 @@
 .end method
 
 .method public setOkIds([Ljava/lang/String;)Lcom/my/tracker/MyTrackerParams;
-    .locals 11
+    .locals 12
 
-    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->b:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->b:Ljava/lang/Object;
 
-    monitor-enter v0
+    monitor-enter v1
 
     :try_start_0
     invoke-static {p1}, Lcom/my/tracker/MyTrackerParams;->a([Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v1, v1, Lcom/my/tracker/obfuscated/b1;->c:[Ljava/lang/String;
+    iget-object v0, v0, Lcom/my/tracker/obfuscated/b1;->c:[Ljava/lang/String;
 
-    invoke-static {v1, p1}, Lcom/my/tracker/obfuscated/g;->a([Ljava/lang/Comparable;[Ljava/lang/Comparable;)I
+    invoke-static {v0, p1}, Lcom/my/tracker/obfuscated/g;->a([Ljava/lang/Comparable;[Ljava/lang/Comparable;)I
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    new-instance p1, Lcom/my/tracker/obfuscated/b1;
+    new-instance v2, Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget v2, v1, Lcom/my/tracker/obfuscated/b1;->a:I
+    iget v3, p1, Lcom/my/tracker/obfuscated/b1;->a:I
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget v3, v1, Lcom/my/tracker/obfuscated/b1;->b:I
+    iget v4, p1, Lcom/my/tracker/obfuscated/b1;->b:I
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v5, v1, Lcom/my/tracker/obfuscated/b1;->d:[Ljava/lang/String;
+    iget-object v6, p1, Lcom/my/tracker/obfuscated/b1;->d:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v6, v1, Lcom/my/tracker/obfuscated/b1;->e:[Ljava/lang/String;
+    iget-object v7, p1, Lcom/my/tracker/obfuscated/b1;->e:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v7, v1, Lcom/my/tracker/obfuscated/b1;->f:[Ljava/lang/String;
+    iget-object v8, p1, Lcom/my/tracker/obfuscated/b1;->f:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v8, v1, Lcom/my/tracker/obfuscated/b1;->g:[Ljava/lang/String;
+    iget-object v9, p1, Lcom/my/tracker/obfuscated/b1;->g:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v9, v1, Lcom/my/tracker/obfuscated/b1;->h:[Ljava/lang/String;
+    iget-object v10, p1, Lcom/my/tracker/obfuscated/b1;->h:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v10, v1, Lcom/my/tracker/obfuscated/b1;->i:[Ljava/lang/String;
+    iget-object v11, p1, Lcom/my/tracker/obfuscated/b1;->i:[Ljava/lang/String;
 
-    move-object v1, p1
+    invoke-direct/range {v2 .. v11}, Lcom/my/tracker/obfuscated/b1;-><init>(II[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
 
-    invoke-direct/range {v1 .. v10}, Lcom/my/tracker/obfuscated/b1;-><init>(II[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
+    invoke-direct {p0, v2}, Lcom/my/tracker/MyTrackerParams;->a(Lcom/my/tracker/obfuscated/b1;)V
 
-    invoke-direct {p0, p1}, Lcom/my/tracker/MyTrackerParams;->a(Lcom/my/tracker/obfuscated/b1;)V
-
-    iput-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iput-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
     goto :goto_0
 
     :catchall_0
-    move-exception p0
+    move-exception v0
+
+    move-object p0, v0
 
     goto :goto_1
 
     :cond_0
     :goto_0
-    monitor-exit v0
+    monitor-exit v1
 
     return-object p0
 
     :goto_1
-    monitor-exit v0
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -1114,84 +1114,84 @@
 .end method
 
 .method public setPhones([Ljava/lang/String;)Lcom/my/tracker/MyTrackerParams;
-    .locals 11
+    .locals 12
 
-    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->b:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->b:Ljava/lang/Object;
 
-    monitor-enter v0
+    monitor-enter v1
 
     :try_start_0
     invoke-static {p1}, Lcom/my/tracker/MyTrackerParams;->a([Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v10
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v1, v1, Lcom/my/tracker/obfuscated/b1;->h:[Ljava/lang/String;
+    iget-object v0, v0, Lcom/my/tracker/obfuscated/b1;->h:[Ljava/lang/String;
 
-    invoke-static {v1, p1}, Lcom/my/tracker/obfuscated/g;->a([Ljava/lang/Comparable;[Ljava/lang/Comparable;)I
+    invoke-static {v0, p1}, Lcom/my/tracker/obfuscated/g;->a([Ljava/lang/Comparable;[Ljava/lang/Comparable;)I
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    new-instance p1, Lcom/my/tracker/obfuscated/b1;
+    new-instance v2, Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget v2, v1, Lcom/my/tracker/obfuscated/b1;->a:I
+    iget v3, p1, Lcom/my/tracker/obfuscated/b1;->a:I
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget v3, v1, Lcom/my/tracker/obfuscated/b1;->b:I
+    iget v4, p1, Lcom/my/tracker/obfuscated/b1;->b:I
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v4, v1, Lcom/my/tracker/obfuscated/b1;->c:[Ljava/lang/String;
+    iget-object v5, p1, Lcom/my/tracker/obfuscated/b1;->c:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v5, v1, Lcom/my/tracker/obfuscated/b1;->d:[Ljava/lang/String;
+    iget-object v6, p1, Lcom/my/tracker/obfuscated/b1;->d:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v6, v1, Lcom/my/tracker/obfuscated/b1;->e:[Ljava/lang/String;
+    iget-object v7, p1, Lcom/my/tracker/obfuscated/b1;->e:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v7, v1, Lcom/my/tracker/obfuscated/b1;->f:[Ljava/lang/String;
+    iget-object v8, p1, Lcom/my/tracker/obfuscated/b1;->f:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v8, v1, Lcom/my/tracker/obfuscated/b1;->g:[Ljava/lang/String;
+    iget-object v9, p1, Lcom/my/tracker/obfuscated/b1;->g:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v10, v1, Lcom/my/tracker/obfuscated/b1;->i:[Ljava/lang/String;
+    iget-object v11, p1, Lcom/my/tracker/obfuscated/b1;->i:[Ljava/lang/String;
 
-    move-object v1, p1
+    invoke-direct/range {v2 .. v11}, Lcom/my/tracker/obfuscated/b1;-><init>(II[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
 
-    invoke-direct/range {v1 .. v10}, Lcom/my/tracker/obfuscated/b1;-><init>(II[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
+    invoke-direct {p0, v2}, Lcom/my/tracker/MyTrackerParams;->a(Lcom/my/tracker/obfuscated/b1;)V
 
-    invoke-direct {p0, p1}, Lcom/my/tracker/MyTrackerParams;->a(Lcom/my/tracker/obfuscated/b1;)V
-
-    iput-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iput-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
     goto :goto_0
 
     :catchall_0
-    move-exception p0
+    move-exception v0
+
+    move-object p0, v0
 
     goto :goto_1
 
     :cond_0
     :goto_0
-    monitor-exit v0
+    monitor-exit v1
 
     return-object p0
 
     :goto_1
-    monitor-exit v0
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -1213,84 +1213,84 @@
 .end method
 
 .method public setVkConnectIds([Ljava/lang/String;)Lcom/my/tracker/MyTrackerParams;
-    .locals 11
+    .locals 12
 
-    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->b:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->b:Ljava/lang/Object;
 
-    monitor-enter v0
+    monitor-enter v1
 
     :try_start_0
     invoke-static {p1}, Lcom/my/tracker/MyTrackerParams;->a([Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v11
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v1, v1, Lcom/my/tracker/obfuscated/b1;->i:[Ljava/lang/String;
+    iget-object v0, v0, Lcom/my/tracker/obfuscated/b1;->i:[Ljava/lang/String;
 
-    invoke-static {v1, p1}, Lcom/my/tracker/obfuscated/g;->a([Ljava/lang/Comparable;[Ljava/lang/Comparable;)I
+    invoke-static {v0, p1}, Lcom/my/tracker/obfuscated/g;->a([Ljava/lang/Comparable;[Ljava/lang/Comparable;)I
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    new-instance p1, Lcom/my/tracker/obfuscated/b1;
+    new-instance v2, Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget v2, v1, Lcom/my/tracker/obfuscated/b1;->a:I
+    iget v3, p1, Lcom/my/tracker/obfuscated/b1;->a:I
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget v3, v1, Lcom/my/tracker/obfuscated/b1;->b:I
+    iget v4, p1, Lcom/my/tracker/obfuscated/b1;->b:I
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v4, v1, Lcom/my/tracker/obfuscated/b1;->c:[Ljava/lang/String;
+    iget-object v5, p1, Lcom/my/tracker/obfuscated/b1;->c:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v5, v1, Lcom/my/tracker/obfuscated/b1;->d:[Ljava/lang/String;
+    iget-object v6, p1, Lcom/my/tracker/obfuscated/b1;->d:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v6, v1, Lcom/my/tracker/obfuscated/b1;->e:[Ljava/lang/String;
+    iget-object v7, p1, Lcom/my/tracker/obfuscated/b1;->e:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v7, v1, Lcom/my/tracker/obfuscated/b1;->f:[Ljava/lang/String;
+    iget-object v8, p1, Lcom/my/tracker/obfuscated/b1;->f:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v8, v1, Lcom/my/tracker/obfuscated/b1;->g:[Ljava/lang/String;
+    iget-object v9, p1, Lcom/my/tracker/obfuscated/b1;->g:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v9, v1, Lcom/my/tracker/obfuscated/b1;->h:[Ljava/lang/String;
+    iget-object v10, p1, Lcom/my/tracker/obfuscated/b1;->h:[Ljava/lang/String;
 
-    move-object v1, p1
+    invoke-direct/range {v2 .. v11}, Lcom/my/tracker/obfuscated/b1;-><init>(II[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
 
-    invoke-direct/range {v1 .. v10}, Lcom/my/tracker/obfuscated/b1;-><init>(II[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
+    invoke-direct {p0, v2}, Lcom/my/tracker/MyTrackerParams;->a(Lcom/my/tracker/obfuscated/b1;)V
 
-    invoke-direct {p0, p1}, Lcom/my/tracker/MyTrackerParams;->a(Lcom/my/tracker/obfuscated/b1;)V
-
-    iput-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iput-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
     goto :goto_0
 
     :catchall_0
-    move-exception p0
+    move-exception v0
+
+    move-object p0, v0
 
     goto :goto_1
 
     :cond_0
     :goto_0
-    monitor-exit v0
+    monitor-exit v1
 
     return-object p0
 
     :goto_1
-    monitor-exit v0
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -1312,84 +1312,84 @@
 .end method
 
 .method public setVkIds([Ljava/lang/String;)Lcom/my/tracker/MyTrackerParams;
-    .locals 11
+    .locals 12
 
-    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->b:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->b:Ljava/lang/Object;
 
-    monitor-enter v0
+    monitor-enter v1
 
     :try_start_0
     invoke-static {p1}, Lcom/my/tracker/MyTrackerParams;->a([Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v6
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object v0, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v1, v1, Lcom/my/tracker/obfuscated/b1;->d:[Ljava/lang/String;
+    iget-object v0, v0, Lcom/my/tracker/obfuscated/b1;->d:[Ljava/lang/String;
 
-    invoke-static {v1, p1}, Lcom/my/tracker/obfuscated/g;->a([Ljava/lang/Comparable;[Ljava/lang/Comparable;)I
+    invoke-static {v0, p1}, Lcom/my/tracker/obfuscated/g;->a([Ljava/lang/Comparable;[Ljava/lang/Comparable;)I
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    new-instance p1, Lcom/my/tracker/obfuscated/b1;
+    new-instance v2, Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget v2, v1, Lcom/my/tracker/obfuscated/b1;->a:I
+    iget v3, p1, Lcom/my/tracker/obfuscated/b1;->a:I
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget v3, v1, Lcom/my/tracker/obfuscated/b1;->b:I
+    iget v4, p1, Lcom/my/tracker/obfuscated/b1;->b:I
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v4, v1, Lcom/my/tracker/obfuscated/b1;->c:[Ljava/lang/String;
+    iget-object v5, p1, Lcom/my/tracker/obfuscated/b1;->c:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v6, v1, Lcom/my/tracker/obfuscated/b1;->e:[Ljava/lang/String;
+    iget-object v7, p1, Lcom/my/tracker/obfuscated/b1;->e:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v7, v1, Lcom/my/tracker/obfuscated/b1;->f:[Ljava/lang/String;
+    iget-object v8, p1, Lcom/my/tracker/obfuscated/b1;->f:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v8, v1, Lcom/my/tracker/obfuscated/b1;->g:[Ljava/lang/String;
+    iget-object v9, p1, Lcom/my/tracker/obfuscated/b1;->g:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v9, v1, Lcom/my/tracker/obfuscated/b1;->h:[Ljava/lang/String;
+    iget-object v10, p1, Lcom/my/tracker/obfuscated/b1;->h:[Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iget-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
-    iget-object v10, v1, Lcom/my/tracker/obfuscated/b1;->i:[Ljava/lang/String;
+    iget-object v11, p1, Lcom/my/tracker/obfuscated/b1;->i:[Ljava/lang/String;
 
-    move-object v1, p1
+    invoke-direct/range {v2 .. v11}, Lcom/my/tracker/obfuscated/b1;-><init>(II[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
 
-    invoke-direct/range {v1 .. v10}, Lcom/my/tracker/obfuscated/b1;-><init>(II[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
+    invoke-direct {p0, v2}, Lcom/my/tracker/MyTrackerParams;->a(Lcom/my/tracker/obfuscated/b1;)V
 
-    invoke-direct {p0, p1}, Lcom/my/tracker/MyTrackerParams;->a(Lcom/my/tracker/obfuscated/b1;)V
-
-    iput-object p1, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
+    iput-object v2, p0, Lcom/my/tracker/MyTrackerParams;->c:Lcom/my/tracker/obfuscated/b1;
 
     goto :goto_0
 
     :catchall_0
-    move-exception p0
+    move-exception v0
+
+    move-object p0, v0
 
     goto :goto_1
 
     :cond_0
     :goto_0
-    monitor-exit v0
+    monitor-exit v1
 
     return-object p0
 
     :goto_1
-    monitor-exit v0
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

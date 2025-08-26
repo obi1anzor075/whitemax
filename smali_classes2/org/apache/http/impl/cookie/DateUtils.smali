@@ -30,7 +30,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 9
+    .locals 8
 
     const-string v0, "EEE, dd MMM yyyy HH:mm:ss zzz"
 
@@ -54,9 +54,9 @@
 
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
-    move-result-object v8
+    move-result-object v1
 
-    invoke-virtual {v8, v0}, Ljava/util/Calendar;->setTimeZone(Ljava/util/TimeZone;)V
+    invoke-virtual {v1, v0}, Ljava/util/Calendar;->setTimeZone(Ljava/util/TimeZone;)V
 
     const/4 v6, 0x0
 
@@ -70,17 +70,15 @@
 
     const/4 v5, 0x0
 
-    move-object v1, v8
-
     invoke-virtual/range {v1 .. v7}, Ljava/util/Calendar;->set(IIIIII)V
 
     const/16 v0, 0xe
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {v8, v0, v1}, Ljava/util/Calendar;->set(II)V
+    invoke-virtual {v1, v0, v2}, Ljava/util/Calendar;->set(II)V
 
-    invoke-virtual {v8}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+    invoke-virtual {v1}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
 
     move-result-object v0
 
@@ -285,7 +283,7 @@
     const-string p2, "Unable to parse the date "
 
     .line 14
-    invoke-static {p2, p0}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, p0}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

@@ -1,233 +1,233 @@
-.class public abstract Lvhd;
-.super Ljava/lang/Object;
+.class public final Lvhd;
+.super Laid;
 .source "SourceFile"
-
-# interfaces
-.implements La5f;
 
 
 # instance fields
-.field public A0:Z
-
-.field public B0:Z
-
-.field public volatile C0:Z
-
-.field public D0:I
-
-.field public final X:Lpv0;
-
-.field public final Y:Ljava/util/concurrent/Executor;
-
-.field public final Z:Z
-
-.field public final a:Landroid/content/Context;
-
-.field public final b:Lk4f;
-
-.field public final c:Lz23;
-
-.field public final o:Lz4f;
-
-.field public final w0:J
-
-.field public final x0:Lu2b;
-
-.field public y0:Lm4f;
-
-.field public z0:Lp4e;
+.field public final c:Lxhd;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lk4f;Lz23;Lz4f;Lpv0;Ljava/util/concurrent/Executor;Llk9;ZLu2b;J)V
-    .locals 1
+.method public constructor <init>(Lxhd;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Laid;-><init>()V
 
-    sget-object v0, Llk9;->Z:Llk9;
-
-    invoke-virtual {v0, p7}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p7
-
-    const-string v0, "SingleInputVideoGraph does not use VideoCompositor, and therefore cannot apply VideoCompositorSettings"
-
-    invoke-static {v0, p7}, Loyb;->j(Ljava/lang/Object;Z)V
-
-    iput-object p1, p0, Lvhd;->a:Landroid/content/Context;
-
-    iput-object p2, p0, Lvhd;->b:Lk4f;
-
-    iput-object p3, p0, Lvhd;->c:Lz23;
-
-    iput-object p4, p0, Lvhd;->o:Lz4f;
-
-    iput-object p5, p0, Lvhd;->X:Lpv0;
-
-    iput-object p6, p0, Lvhd;->Y:Ljava/util/concurrent/Executor;
-
-    iput-boolean p8, p0, Lvhd;->Z:Z
-
-    iput-object p9, p0, Lvhd;->x0:Lu2b;
-
-    iput-wide p10, p0, Lvhd;->w0:J
-
-    const/4 p1, -0x1
-
-    iput p1, p0, Lvhd;->D0:I
+    iput-object p1, p0, Lvhd;->c:Lxhd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 0
+.method public final a(Landroid/graphics/Matrix;Lqhd;ILandroid/graphics/Canvas;)V
+    .locals 21
 
-    return-void
-.end method
+    move-object/from16 v0, p2
 
-.method public final b(I)Lm4f;
-    .locals 2
+    move/from16 v1, p3
 
-    iget v0, p0, Lvhd;->D0:I
+    move-object/from16 v2, p0
 
-    const/4 v1, -0x1
+    move-object/from16 v3, p4
 
-    if-eq v0, v1, :cond_0
+    iget-object v2, v2, Lvhd;->c:Lxhd;
 
-    if-ne v0, p1, :cond_0
+    iget v4, v2, Lxhd;->f:F
 
-    const/4 p1, 0x1
+    iget v5, v2, Lxhd;->g:F
+
+    new-instance v6, Landroid/graphics/RectF;
+
+    iget v7, v2, Lxhd;->b:F
+
+    iget v8, v2, Lxhd;->c:F
+
+    iget v9, v2, Lxhd;->d:F
+
+    iget v2, v2, Lxhd;->e:F
+
+    invoke-direct {v6, v7, v8, v9, v2}, Landroid/graphics/RectF;-><init>(FFFF)V
+
+    iget-object v2, v0, Lqhd;->b:Landroid/graphics/Paint;
+
+    const/4 v7, 0x0
+
+    cmpg-float v8, v5, v7
+
+    const/4 v9, 0x1
+
+    const/4 v10, 0x0
+
+    if-gez v8, :cond_0
+
+    move v8, v9
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move v8, v10
 
     :goto_0
-    invoke-static {p1}, Loyb;->d(Z)V
+    iget-object v11, v0, Lqhd;->g:Landroid/graphics/Path;
 
-    iget-object p0, p0, Lvhd;->y0:Lm4f;
+    const/4 v12, 0x3
 
-    invoke-static {p0}, Loyb;->l(Ljava/lang/Object;)V
+    const/4 v13, 0x2
 
-    return-object p0
-.end method
+    sget-object v18, Lqhd;->k:[I
 
-.method public final c(I)V
-    .locals 7
+    if-eqz v8, :cond_1
 
-    iget-object v0, p0, Lvhd;->y0:Lm4f;
+    aput v10, v18, v10
 
-    if-nez v0, :cond_0
+    iget v10, v0, Lqhd;->f:I
 
-    iget-boolean v0, p0, Lvhd;->B0:Z
+    aput v10, v18, v9
 
-    :cond_0
-    iget v0, p0, Lvhd;->D0:I
+    iget v10, v0, Lqhd;->e:I
 
-    const/4 v1, -0x1
+    aput v10, v18, v13
 
-    if-ne v0, v1, :cond_1
+    iget v10, v0, Lqhd;->d:I
 
-    const/4 v0, 0x1
+    aput v10, v18, v12
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    invoke-virtual {v11}, Landroid/graphics/Path;->rewind()V
 
-    :goto_0
-    invoke-static {v0}, Loyb;->k(Z)V
+    invoke-virtual {v6}, Landroid/graphics/RectF;->centerX()F
 
-    iput p1, p0, Lvhd;->D0:I
+    move-result v14
 
-    new-instance v6, Lxw2;
+    invoke-virtual {v6}, Landroid/graphics/RectF;->centerY()F
 
-    const/16 p1, 0xa
+    move-result v15
 
-    invoke-direct {v6, p1, p0}, Lxw2;-><init>(ILjava/lang/Object;)V
+    invoke-virtual {v11, v14, v15}, Landroid/graphics/Path;->moveTo(FF)V
 
-    iget-object v4, p0, Lvhd;->c:Lz23;
+    invoke-virtual {v11, v6, v4, v5}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FF)V
 
-    iget-boolean v5, p0, Lvhd;->Z:Z
+    invoke-virtual {v11}, Landroid/graphics/Path;->close()V
 
-    iget-object v1, p0, Lvhd;->b:Lk4f;
+    neg-int v14, v1
 
-    iget-object v2, p0, Lvhd;->a:Landroid/content/Context;
+    int-to-float v14, v14
 
-    iget-object v3, p0, Lvhd;->X:Lpv0;
+    invoke-virtual {v6, v14, v14}, Landroid/graphics/RectF;->inset(FF)V
 
-    invoke-interface/range {v1 .. v6}, Lk4f;->a(Landroid/content/Context;Lpv0;Lz23;ZLxw2;)Lm4f;
+    aput v10, v18, v10
 
-    move-result-object p1
+    iget v10, v0, Lqhd;->d:I
 
-    iput-object p1, p0, Lvhd;->y0:Lm4f;
+    aput v10, v18, v9
 
-    iget-object p0, p0, Lvhd;->z0:Lp4e;
+    iget v10, v0, Lqhd;->e:I
 
-    if-eqz p0, :cond_2
+    aput v10, v18, v13
 
-    check-cast p1, Lrc4;
+    iget v10, v0, Lqhd;->f:I
 
-    invoke-virtual {p1, p0}, Lrc4;->e(Lp4e;)V
+    aput v10, v18, v12
+
+    :goto_1
+    invoke-virtual {v6}, Landroid/graphics/RectF;->width()F
+
+    move-result v10
+
+    const/high16 v12, 0x40000000    # 2.0f
+
+    div-float v17, v10, v12
+
+    cmpg-float v7, v17, v7
+
+    if-gtz v7, :cond_2
+
+    return-void
 
     :cond_2
-    return-void
-.end method
+    int-to-float v1, v1
 
-.method public final k()Z
-    .locals 0
+    div-float v1, v1, v17
 
-    iget-boolean p0, p0, Lvhd;->C0:Z
+    const/high16 v7, 0x3f800000    # 1.0f
 
-    return p0
-.end method
+    sub-float v1, v7, v1
 
-.method public final l(Lp4e;)V
-    .locals 0
+    sub-float v10, v7, v1
 
-    iput-object p1, p0, Lvhd;->z0:Lp4e;
+    div-float/2addr v10, v12
 
-    iget-object p0, p0, Lvhd;->y0:Lm4f;
+    add-float/2addr v10, v1
 
-    if-eqz p0, :cond_0
+    sget-object v19, Lqhd;->l:[F
 
-    check-cast p0, Lrc4;
+    aput v1, v19, v9
 
-    invoke-virtual {p0, p1}, Lrc4;->e(Lp4e;)V
+    aput v10, v19, v13
 
-    :cond_0
-    return-void
-.end method
+    new-instance v14, Landroid/graphics/RadialGradient;
 
-.method public final release()V
-    .locals 1
+    invoke-virtual {v6}, Landroid/graphics/RectF;->centerX()F
 
-    iget-boolean v0, p0, Lvhd;->B0:Z
+    move-result v15
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v6}, Landroid/graphics/RectF;->centerY()F
 
-    return-void
+    move-result v16
 
-    :cond_0
-    iget-object v0, p0, Lvhd;->y0:Lm4f;
+    sget-object v20, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
-    if-eqz v0, :cond_1
+    invoke-direct/range {v14 .. v20}, Landroid/graphics/RadialGradient;-><init>(FFF[I[FLandroid/graphics/Shader$TileMode;)V
 
-    check-cast v0, Lrc4;
+    invoke-virtual {v2, v14}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    invoke-virtual {v0}, Lrc4;->d()V
+    invoke-virtual {v3}, Landroid/graphics/Canvas;->save()I
 
-    const/4 v0, 0x0
+    move-object/from16 v1, p1
 
-    iput-object v0, p0, Lvhd;->y0:Lm4f;
+    invoke-virtual {v3, v1}, Landroid/graphics/Canvas;->concat(Landroid/graphics/Matrix;)V
 
-    :cond_1
-    const/4 v0, 0x1
+    invoke-virtual {v6}, Landroid/graphics/RectF;->height()F
 
-    iput-boolean v0, p0, Lvhd;->B0:Z
+    move-result v1
+
+    invoke-virtual {v6}, Landroid/graphics/RectF;->width()F
+
+    move-result v9
+
+    div-float/2addr v1, v9
+
+    invoke-virtual {v3, v7, v1}, Landroid/graphics/Canvas;->scale(FF)V
+
+    if-nez v8, :cond_3
+
+    sget-object v1, Landroid/graphics/Region$Op;->DIFFERENCE:Landroid/graphics/Region$Op;
+
+    invoke-virtual {v3, v11, v1}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;Landroid/graphics/Region$Op;)Z
+
+    iget-object v0, v0, Lqhd;->h:Landroid/graphics/Paint;
+
+    invoke-virtual {v3, v11, v0}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+
+    :cond_3
+    move v3, v5
+
+    move-object v5, v2
+
+    move v2, v4
+
+    const/4 v4, 0x1
+
+    move-object/from16 v0, p4
+
+    move-object v1, v6
+
+    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
+
+    invoke-virtual/range {p4 .. p4}, Landroid/graphics/Canvas;->restore()V
 
     return-void
 .end method

@@ -15,11 +15,11 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Li1f;Landroid/os/Bundle;)V
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Lncf;Landroid/os/Bundle;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1, p2, p3, p4}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi22;-><init>(Landroid/content/Context;Ljava/lang/String;Li1f;Landroid/os/Bundle;)V
+    invoke-direct {p0, p1, p2, p3, p4}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi22;-><init>(Landroid/content/Context;Ljava/lang/String;Lncf;Landroid/os/Bundle;)V
 
     return-void
 .end method
@@ -35,7 +35,7 @@
 
 
 # virtual methods
-.method public final getCurrentControllerInfo()Lqd8;
+.method public final getCurrentControllerInfo()Lfi8;
     .locals 4
 
     iget-object p0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi21;->mSessionFwk:Landroid/media/session/MediaSession;
@@ -44,7 +44,7 @@
 
     move-result-object p0
 
-    new-instance v0, Lqd8;
+    new-instance v0, Lfi8;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
@@ -60,7 +60,7 @@
 
     if-nez v1, :cond_0
 
-    new-instance v1, Lsd8;
+    new-instance v1, Lhi8;
 
     invoke-virtual {p0}, Landroid/media/session/MediaSessionManager$RemoteUserInfo;->getPackageName()Ljava/lang/String;
 
@@ -74,9 +74,9 @@
 
     move-result p0
 
-    invoke-direct {v1, v2, v3, p0}, Lsd8;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v1, v2, v3, p0}, Lhi8;-><init>(Ljava/lang/String;II)V
 
-    iput-object v1, v0, Lqd8;->a:Lsd8;
+    iput-object v1, v0, Lfi8;->a:Lhi8;
 
     return-object v0
 
@@ -99,7 +99,7 @@
     throw p0
 .end method
 
-.method public setCurrentControllerInfo(Lqd8;)V
+.method public setCurrentControllerInfo(Lfi8;)V
     .locals 0
 
     return-void

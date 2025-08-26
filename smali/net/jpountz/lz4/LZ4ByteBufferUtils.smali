@@ -414,12 +414,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -533,7 +532,7 @@
 
     const-string p2, "Malformed input at offset "
 
-    invoke-static {p1, p2}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p2}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -546,123 +545,123 @@
 .end method
 
 .method public static wildIncrementalCopy(Ljava/nio/ByteBuffer;III)V
-    .locals 7
+    .locals 8
 
     sub-int v0, p2, p1
 
-    const/4 v1, 0x4
+    const/16 v1, 0x8
 
-    if-ge v0, v1, :cond_7
+    const/4 v2, 0x4
+
+    if-ge v0, v2, :cond_7
 
     const/4 v0, 0x0
 
-    move v2, v0
+    move v3, v0
 
     :goto_0
-    if-ge v2, v1, :cond_0
+    if-ge v3, v2, :cond_0
 
-    add-int v3, p2, v2
+    add-int v4, p2, v3
 
-    add-int v4, p1, v2
+    add-int v5, p1, v3
 
-    invoke-virtual {p0, v4}, Ljava/nio/ByteBuffer;->get(I)B
+    invoke-virtual {p0, v5}, Ljava/nio/ByteBuffer;->get(I)B
 
-    move-result v4
+    move-result v5
 
-    int-to-byte v4, v4
+    int-to-byte v5, v5
 
-    invoke-virtual {p0, v3, v4}, Ljava/nio/ByteBuffer;->put(IB)Ljava/nio/ByteBuffer;
+    invoke-virtual {p0, v4, v5}, Ljava/nio/ByteBuffer;->put(IB)Ljava/nio/ByteBuffer;
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
     :cond_0
-    add-int/lit8 v1, p2, 0x4
+    add-int/lit8 v2, p2, 0x4
 
-    add-int/lit8 v2, p1, 0x4
+    add-int/lit8 v3, p1, 0x4
 
-    sub-int v3, v1, v2
+    sub-int v4, v2, v3
 
-    const/4 v4, 0x1
+    const/4 v5, 0x1
 
-    if-eq v3, v4, :cond_6
+    if-eq v4, v5, :cond_6
 
-    const/4 v5, 0x2
+    const/4 v6, 0x2
 
-    if-eq v3, v5, :cond_5
+    if-eq v4, v6, :cond_5
 
-    const/4 v6, 0x3
+    const/4 v7, 0x3
 
-    if-eq v3, v6, :cond_4
+    if-eq v4, v7, :cond_4
 
     const/4 p1, 0x5
 
-    if-eq v3, p1, :cond_3
+    if-eq v4, p1, :cond_3
 
     const/4 p1, 0x6
 
-    if-eq v3, p1, :cond_2
+    if-eq v4, p1, :cond_2
 
     const/4 p1, 0x7
 
-    if-eq v3, p1, :cond_1
+    if-eq v4, p1, :cond_1
 
     goto :goto_1
 
     :cond_1
-    move v0, v6
+    move v0, v7
 
     goto :goto_1
 
     :cond_2
-    move v0, v5
+    move v0, v6
 
     goto :goto_1
 
     :cond_3
-    move v0, v4
+    move v0, v5
 
     goto :goto_1
 
     :cond_4
-    add-int/lit8 v2, p1, 0x1
+    add-int/lit8 v3, p1, 0x1
 
     const/4 v0, -0x1
 
     goto :goto_1
 
     :cond_5
-    add-int/lit8 v2, p1, 0x2
+    add-int/lit8 v3, p1, 0x2
 
     goto :goto_1
 
     :cond_6
-    add-int/lit8 v2, p1, 0x1
+    add-int/lit8 v3, p1, 0x1
 
     :goto_1
-    invoke-virtual {p0, v2}, Ljava/nio/ByteBuffer;->getInt(I)I
+    invoke-virtual {p0, v3}, Ljava/nio/ByteBuffer;->getInt(I)I
 
     move-result p1
 
-    invoke-virtual {p0, v1, p1}, Ljava/nio/ByteBuffer;->putInt(II)Ljava/nio/ByteBuffer;
+    invoke-virtual {p0, v2, p1}, Ljava/nio/ByteBuffer;->putInt(II)Ljava/nio/ByteBuffer;
 
     add-int/lit8 p2, p2, 0x8
 
-    sub-int p1, v2, v0
+    sub-int p1, v3, v0
 
     goto :goto_2
 
     :cond_7
-    const/16 v1, 0x8
-
     if-ge v0, v1, :cond_8
 
     invoke-virtual {p0, p1}, Ljava/nio/ByteBuffer;->getLong(I)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-virtual {p0, p2, v1, v2}, Ljava/nio/ByteBuffer;->putLong(IJ)Ljava/nio/ByteBuffer;
+    invoke-virtual {p0, p2, v2, v3}, Ljava/nio/ByteBuffer;->putLong(IJ)Ljava/nio/ByteBuffer;
 
     add-int/2addr p2, v0
 
@@ -672,13 +671,13 @@
 
     invoke-virtual {p0, p1}, Ljava/nio/ByteBuffer;->getLong(I)J
 
-    move-result-wide v0
+    move-result-wide v2
 
-    invoke-virtual {p0, p2, v0, v1}, Ljava/nio/ByteBuffer;->putLong(IJ)Ljava/nio/ByteBuffer;
+    invoke-virtual {p0, p2, v2, v3}, Ljava/nio/ByteBuffer;->putLong(IJ)Ljava/nio/ByteBuffer;
 
     add-int/lit8 p2, p2, 0x8
 
-    add-int/lit8 p1, p1, 0x8
+    add-int/2addr p1, v1
 
     goto :goto_2
 

@@ -24,7 +24,7 @@
         "context",
         "Landroid/content/Intent;",
         "intent",
-        "Ljue;",
+        "Le5f;",
         "onReceive",
         "(Landroid/content/Context;Landroid/content/Intent;)V",
         "calls-audiomanager_release"
@@ -35,6 +35,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

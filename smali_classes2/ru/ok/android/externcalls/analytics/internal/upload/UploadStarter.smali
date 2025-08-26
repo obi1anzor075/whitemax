@@ -15,7 +15,7 @@
         "()V",
         "",
         "apiMethod",
-        "Ljue;",
+        "Le5f;",
         "upload",
         "(Ljava/lang/String;)V",
         "startUpload",
@@ -29,6 +29,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -77,7 +78,7 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-void
 
     :catch_0
     move-exception p0
@@ -94,7 +95,6 @@
 
     invoke-interface {v0, v1, v2, p0}, Lru/ok/android/externcalls/analytics/log/CallAnalyticsLogger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_0
     return-void
 .end method
 
@@ -117,18 +117,17 @@
 
     invoke-static {p1}, Lru/ok/android/externcalls/analytics/internal/upload/UploadService;->startUpload(Ljava/lang/String;)V
 
-    goto :goto_0
+    return-void
 
     :cond_0
-    new-instance v0, Lpfe;
+    new-instance v0, Lgje;
 
-    const/4 v1, 0x6
+    const/16 v1, 0xa
 
-    invoke-direct {v0, v1, p1}, Lpfe;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v0, v1, p1}, Lgje;-><init>(ILjava/lang/Object;)V
 
     invoke-interface {p0, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    :goto_0
     return-void
 .end method
 

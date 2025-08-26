@@ -17,8 +17,8 @@
 
 
 # virtual methods
-.method public final a(Lfu1;Lma0;)Z
-    .locals 3
+.method public final a(Lyw1;Leb0;)Z
+    .locals 2
 
     const-string p0, "positivo"
 
@@ -30,42 +30,32 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x1
-
     if-eqz p0, :cond_0
 
     const-string p0, "twist 2 pro"
 
-    sget-object v2, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    invoke-virtual {p0, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {p0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result p0
 
     if-eqz p0, :cond_0
 
-    move p0, v1
-
-    goto :goto_0
-
-    :cond_0
-    move p0, v0
-
-    :goto_0
-    if-eqz p0, :cond_1
-
-    invoke-interface {p1}, Lfu1;->g()I
+    invoke-interface {p1}, Lyw1;->h()I
 
     move-result p0
 
-    if-nez p0, :cond_1
+    if-nez p0, :cond_0
 
-    sget-object p0, Lma0;->d:Lma0;
+    sget-object p0, Leb0;->d:Leb0;
 
-    if-ne p2, p0, :cond_1
+    if-ne p2, p0, :cond_0
 
-    move v0, v1
+    const/4 p0, 0x1
 
-    :cond_1
+    return p0
+
+    :cond_0
     return v0
 .end method

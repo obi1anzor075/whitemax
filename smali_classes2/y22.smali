@@ -1,212 +1,294 @@
 .class public final Ly22;
-.super Ltaf;
+.super Li6d;
 .source "SourceFile"
+
+# interfaces
+.implements Lxra;
 
 
 # instance fields
-.field public final A0:Ll05;
+.field public final X:Ln10;
 
-.field public final X:Lt97;
+.field public final Y:J
 
-.field public final Y:Lt97;
-
-.field public final Z:Lt97;
+.field public final Z:Ljava/lang/String;
 
 .field public final b:J
 
-.field public final c:Lt97;
+.field public final c:Ljava/lang/String;
 
-.field public final o:Lt97;
+.field public final o:J
 
-.field public final w0:Lt97;
-
-.field public final x0:Lstf;
-
-.field public y0:Lqod;
-
-.field public final z0:Ljava/util/ArrayList;
+.field public o0:Ltd7;
 
 
 # direct methods
-.method public constructor <init>(J)V
-    .locals 6
+.method public synthetic constructor <init>(JLjava/lang/String;JLn10;)V
+    .locals 9
 
-    sget-object v0, Li6b;->a:Li6b;
+    .line 1
+    invoke-static {p3}, Lmna;->u(Ljava/lang/String;)J
 
-    invoke-virtual {v0}, Li6b;->c()Lt97;
+    move-result-wide v7
 
-    move-result-object v1
+    move-object v0, p0
 
-    invoke-virtual {v0}, Li6b;->e()Lt97;
+    move-wide v1, p1
 
-    move-result-object v2
+    move-object v3, p3
 
-    invoke-virtual {v0}, Li6b;->f()Lt97;
+    move-wide v4, p4
 
-    move-result-object v3
+    move-object v6, p6
 
-    new-instance v4, Lp22;
+    .line 2
+    invoke-direct/range {v0 .. v8}, Ly22;-><init>(JLjava/lang/String;JLn10;J)V
 
-    const/4 v5, 0x3
+    return-void
+.end method
 
-    invoke-direct {v4, v5}, Lp22;-><init>(I)V
+.method public constructor <init>(JLjava/lang/String;JLn10;J)V
+    .locals 0
 
-    const/4 v5, 0x3
+    .line 3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v5, v4}, Lez3;->O(ILs16;)Lt97;
-
-    move-result-object v4
-
-    invoke-virtual {v0}, Li6b;->g()Lt97;
-
-    move-result-object v5
-
-    invoke-virtual {v0}, Li6b;->d()Lt97;
-
-    move-result-object v0
-
-    invoke-direct {p0}, Ltaf;-><init>()V
-
+    .line 4
     iput-wide p1, p0, Ly22;->b:J
 
-    iput-object v1, p0, Ly22;->c:Lt97;
+    .line 5
+    iput-object p3, p0, Ly22;->c:Ljava/lang/String;
 
-    iput-object v2, p0, Ly22;->o:Lt97;
+    .line 6
+    iput-wide p4, p0, Ly22;->o:J
 
-    iput-object v3, p0, Ly22;->X:Lt97;
+    .line 7
+    iput-object p6, p0, Ly22;->X:Ln10;
 
-    iput-object v4, p0, Ly22;->Y:Lt97;
+    .line 8
+    iput-wide p7, p0, Ly22;->Y:J
 
-    iput-object v5, p0, Ly22;->Z:Lt97;
+    .line 9
+    const-class p1, Ly22;
 
-    iput-object v0, p0, Ly22;->w0:Lt97;
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    new-instance p1, Lstf;
+    move-result-object p1
 
-    const/4 p2, 0x5
-
-    invoke-direct {p1, p2}, Lstf;-><init>(I)V
-
-    iput-object p1, p0, Ly22;->x0:Lstf;
-
-    new-instance p1, Ljava/util/ArrayList;
-
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object p1, p0, Ly22;->z0:Ljava/util/ArrayList;
-
-    new-instance p1, Ll05;
-
-    const/4 p2, 0x0
-
-    invoke-direct {p1, p2}, Ll05;-><init>(I)V
-
-    iput-object p1, p0, Ly22;->A0:Ll05;
+    .line 10
+    iput-object p1, p0, Ly22;->Z:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final q()Li22;
-    .locals 3
+.method public final c()I
+    .locals 0
 
-    iget-object v0, p0, Ly22;->c:Lt97;
+    const/4 p0, 0x1
 
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
+    return p0
+.end method
 
-    move-result-object v0
+.method public final d()V
+    .locals 0
 
-    check-cast v0, Lbv2;
+    return-void
+.end method
+
+.method public final g()[B
+    .locals 4
+
+    new-instance v0, Lru/ok/tamtam/nano/Tasks$ChangeProfileOrChatPhoto;
+
+    invoke-direct {v0}, Lru/ok/tamtam/nano/Tasks$ChangeProfileOrChatPhoto;-><init>()V
 
     iget-wide v1, p0, Ly22;->b:J
 
-    check-cast v0, Law2;
+    iput-wide v1, v0, Lru/ok/tamtam/nano/Tasks$ChangeProfileOrChatPhoto;->requestId:J
 
-    invoke-virtual {v0, v1, v2}, Law2;->m(J)Lt0c;
+    iget-object v1, p0, Ly22;->c:Ljava/lang/String;
+
+    if-nez v1, :cond_0
+
+    const-string v1, ""
+
+    :cond_0
+    iput-object v1, v0, Lru/ok/tamtam/nano/Tasks$ChangeProfileOrChatPhoto;->file:Ljava/lang/String;
+
+    iget-wide v1, p0, Ly22;->o:J
+
+    iput-wide v1, v0, Lru/ok/tamtam/nano/Tasks$ChangeProfileOrChatPhoto;->chatId:J
+
+    iget-object v1, p0, Ly22;->X:Ln10;
+
+    if-eqz v1, :cond_1
+
+    new-instance v2, Lru/ok/tamtam/nano/Tasks$Rect;
+
+    invoke-direct {v2}, Lru/ok/tamtam/nano/Tasks$Rect;-><init>()V
+
+    iget v3, v1, Ln10;->b:F
+
+    iput v3, v2, Lru/ok/tamtam/nano/Tasks$Rect;->left:F
+
+    iget v3, v1, Ln10;->c:F
+
+    iput v3, v2, Lru/ok/tamtam/nano/Tasks$Rect;->top:F
+
+    iget v3, v1, Ln10;->d:F
+
+    iput v3, v2, Lru/ok/tamtam/nano/Tasks$Rect;->right:F
+
+    iget v1, v1, Ln10;->e:F
+
+    iput v1, v2, Lru/ok/tamtam/nano/Tasks$Rect;->bottom:F
+
+    iput-object v2, v0, Lru/ok/tamtam/nano/Tasks$ChangeProfileOrChatPhoto;->crop:Lru/ok/tamtam/nano/Tasks$Rect;
+
+    :cond_1
+    iget-wide v1, p0, Ly22;->Y:J
+
+    iput-wide v1, v0, Lru/ok/tamtam/nano/Tasks$ChangeProfileOrChatPhoto;->lastModified:J
+
+    invoke-static {v0}, Lnv8;->toByteArray(Lnv8;)[B
 
     move-result-object p0
-
-    iget-object p0, p0, Lt0c;->a:Lzqd;
-
-    invoke-interface {p0}, Lzqd;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Li22;
 
     return-object p0
 .end method
 
-.method public final r()V
-    .locals 4
+.method public final getId()J
+    .locals 2
 
-    iget-object v0, p0, Ly22;->z0:Ljava/util/ArrayList;
+    iget-wide v0, p0, Ly22;->b:J
 
-    invoke-static {v0}, Lo23;->s0(Ljava/lang/Iterable;)Ljava/util/List;
+    return-wide v0
+.end method
 
-    move-result-object v1
+.method public final getType()Lyra;
+    .locals 0
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+    sget-object p0, Lyra;->K0:Lyra;
 
-    iget-object v0, p0, Ly22;->y0:Lqod;
+    return-object p0
+.end method
+
+.method public final h()I
+    .locals 0
+
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final w()V
+    .locals 1
+
+    iget-object v0, p0, Ly22;->o0:Ltd7;
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Ld0;->isActive()Z
-
-    move-result v0
-
-    const/4 v2, 0x1
-
-    if-ne v0, v2, :cond_0
-
-    goto :goto_0
+    invoke-static {v0}, Lem4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
 
     :cond_0
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
+    const/4 v0, 0x0
 
-    move-result v0
+    iput-object v0, p0, Ly22;->o0:Ltd7;
+
+    return-void
+.end method
+
+.method public final x()V
+    .locals 5
+
+    new-instance v0, Lnj8;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iget-object v1, p0, Ly22;->c:Ljava/lang/String;
+
+    iput-object v1, v0, Lnj8;->c:Ljava/lang/Object;
+
+    iget-wide v1, p0, Ly22;->Y:J
+
+    iput-wide v1, v0, Lnj8;->a:J
+
+    const/4 v1, 0x4
+
+    iput v1, v0, Lnj8;->b:I
+
+    new-instance v1, Lg7f;
+
+    invoke-direct {v1, v0}, Lg7f;-><init>(Lnj8;)V
+
+    iget-object v0, p0, Ly22;->o0:Ltd7;
+
+    if-eqz v0, :cond_0
+
+    invoke-static {v0}, Lem4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
+
+    :cond_0
+    iget-object v0, p0, Li6d;->a:Lj6d;
 
     if-eqz v0, :cond_1
 
-    :goto_0
-    return-void
+    goto :goto_0
 
     :cond_1
-    iget-object v0, p0, Ly22;->X:Lt97;
+    const/4 v0, 0x0
 
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
+    :goto_0
+    iget-object v0, v0, Lj6d;->u:Lje7;
 
-    move-result-object v0
-
-    check-cast v0, Lpae;
-
-    check-cast v0, Ln3a;
-
-    invoke-virtual {v0}, Ln3a;->b()Lju3;
+    invoke-interface {v0}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    sget-object v2, Lsk9;->a:Lsk9;
+    check-cast v0, Lf7f;
 
-    invoke-virtual {v0, v2}, Le0;->plus(Lhu3;)Lhu3;
-
-    move-result-object v0
-
-    new-instance v2, Lx22;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v2, p0, v1, v3}, Lx22;-><init>(Ly22;Ljava/util/List;Lkotlin/coroutines/Continuation;)V
-
-    const/4 v1, 0x2
-
-    invoke-static {p0, v0, v3, v2, v1}, Ltaf;->n(Ltaf;Lhu3;Lru3;Li26;I)Lqod;
+    invoke-virtual {v0, v1}, Lf7f;->e(Lg7f;)Lvw9;
 
     move-result-object v0
 
-    iput-object v0, p0, Ly22;->y0:Lqod;
+    invoke-virtual {p0}, Li6d;->q()Lmje;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    check-cast v1, Loje;
+
+    invoke-virtual {v1}, Loje;->a()Lgsc;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lvw9;->m(Lgsc;)Lry9;
+
+    move-result-object v0
+
+    new-instance v1, Lykc;
+
+    const/16 v2, 0x9
+
+    invoke-direct {v1, v2, p0}, Lykc;-><init>(ILjava/lang/Object;)V
+
+    new-instance v2, Lcy1;
+
+    const/16 v3, 0x8
+
+    invoke-direct {v2, v3, p0}, Lcy1;-><init>(ILjava/lang/Object;)V
+
+    sget-object v3, Lkhg;->c:Lc76;
+
+    new-instance v4, Ltd7;
+
+    invoke-direct {v4, v1, v2, v3}, Ltd7;-><init>(Ljj3;Ljj3;Lc6;)V
+
+    invoke-virtual {v0, v4}, Lvw9;->a(La0a;)V
+
+    iput-object v4, p0, Ly22;->o0:Ltd7;
 
     return-void
 .end method

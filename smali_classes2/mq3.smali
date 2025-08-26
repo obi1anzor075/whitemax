@@ -1,53 +1,60 @@
-.class public interface abstract Lmq3;
-.super Ljava/lang/Object;
+.class public final Lmq3;
+.super Llje;
 .source "SourceFile"
 
 
+# instance fields
+.field public o:Lpm3;
+
+
 # virtual methods
-.method public abstract a()Lmq3;
+.method public final c(Ldx8;Ljava/lang/String;)V
+    .locals 1
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const-string v0, "contact"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-nez p2, :cond_0
+
+    invoke-virtual {p1}, Ldx8;->B()V
+
+    return-void
+
+    :cond_0
+    invoke-static {p1}, Lpm3;->e(Ldx8;)Lpm3;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lmq3;->o:Lpm3;
+
+    return-void
 .end method
 
-.method public abstract b()Lmq3;
-.end method
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-.method public abstract build()Lnq3;
-.end method
+    iget-object p0, p0, Lmq3;->o:Lpm3;
 
-.method public abstract c(Landroid/graphics/Rect;F)Lmq3;
-.end method
+    new-instance v0, Ljava/lang/StringBuilder;
 
-.method public d()Lmq3;
-    .locals 0
+    const-string v1, "{contact="
 
-    return-object p0
-.end method
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-.method public abstract e(Ljava/util/Collection;)Lmq3;
-.end method
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-.method public f(FF)Lmq3;
-    .locals 0
+    const-string p0, "}"
 
-    return-object p0
-.end method
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public abstract g(F)Lmq3;
-.end method
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-.method public abstract h(Landroid/os/Bundle;)Lmq3;
-.end method
-
-.method public i(Llge;)Lmq3;
-    .locals 0
-
-    return-object p0
-.end method
-
-.method public abstract j(Landroid/view/View;)Lmq3;
-.end method
-
-.method public k()Lmq3;
-    .locals 0
+    move-result-object p0
 
     return-object p0
 .end method

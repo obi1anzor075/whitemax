@@ -17,7 +17,7 @@
         "workerParameters",
         "<init>",
         "(Landroid/content/Context;Landroidx/work/WorkerParameters;)V",
-        "ei4",
+        "hl4",
         "tracer-disk-usage_release"
     }
     k = 0x1
@@ -26,11 +26,12 @@
         0x7,
         0x1
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
-.field public final b:Lr7e;
+.field public final b:Lwfe;
 
 
 # direct methods
@@ -39,18 +40,18 @@
 
     invoke-direct {p0, p1, p2}, Landroidx/work/Worker;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;)V
 
-    sget-object p1, Ll8;->c:Ll8;
+    sget-object p1, Ld8;->c:Ld8;
 
-    new-instance p2, Lr7e;
+    new-instance p2, Lwfe;
 
-    invoke-direct {p2, p1}, Lr7e;-><init>(Ls16;)V
+    invoke-direct {p2, p1}, Lwfe;-><init>(Lv56;)V
 
-    iput-object p2, p0, Lru/ok/tracer/disk/usage/DiskUsageWorker;->b:Lr7e;
+    iput-object p2, p0, Lru/ok/tracer/disk/usage/DiskUsageWorker;->b:Lwfe;
 
     return-void
 .end method
 
-.method public static c(JLjava/util/LinkedHashMap;)Ljava/lang/String;
+.method public static b(JLjava/util/LinkedHashMap;)Ljava/lang/String;
     .locals 4
 
     new-instance v0, Lorg/json/JSONObject;
@@ -86,17 +87,17 @@
 
     move-result-object v3
 
-    check-cast v3, Lda6;
+    check-cast v3, Lhe6;
 
-    iget-object v3, v3, Lda6;->a:Ljava/lang/String;
+    iget-object v3, v3, Lhe6;->a:Ljava/lang/String;
 
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lei4;
+    check-cast v2, Lhl4;
 
-    invoke-static {v2}, Lru/ok/tracer/disk/usage/DiskUsageWorker;->d(Lei4;)Lorg/json/JSONObject;
+    invoke-static {v2}, Lru/ok/tracer/disk/usage/DiskUsageWorker;->c(Lhl4;)Lorg/json/JSONObject;
 
     move-result-object v2
 
@@ -120,26 +121,28 @@
     return-object p0
 .end method
 
-.method public static d(Lei4;)Lorg/json/JSONObject;
-    .locals 4
+.method public static c(Lhl4;)Lorg/json/JSONObject;
+    .locals 5
 
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
 
-    iget-wide v1, p0, Lei4;->a:J
+    iget-wide v1, p0, Lhl4;->a:J
 
-    const-string v3, "size"
+    iget-object v3, p0, Lhl4;->d:Ljava/util/List;
 
-    invoke-virtual {v0, v3, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
+    const-string v4, "size"
+
+    invoke-virtual {v0, v4, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
 
     const-string v1, "name"
 
-    iget-object v2, p0, Lei4;->b:Ljava/lang/String;
+    iget-object v2, p0, Lhl4;->b:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    iget-boolean v1, p0, Lei4;->c:Z
+    iget-boolean v1, p0, Lhl4;->c:Z
 
     const/4 v2, 0x1
 
@@ -150,7 +153,7 @@
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
 
     :cond_0
-    iget-boolean v1, p0, Lei4;->e:Z
+    iget-boolean v1, p0, Lhl4;->e:Z
 
     if-eqz v1, :cond_1
 
@@ -159,79 +162,75 @@
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
 
     :cond_1
-    iget-boolean v1, p0, Lei4;->f:Z
+    iget-boolean p0, p0, Lhl4;->f:Z
 
-    if-eqz v1, :cond_2
+    if-eqz p0, :cond_2
 
-    const-string v1, "is_excluded"
+    const-string p0, "is_excluded"
 
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
+    invoke-virtual {v0, p0, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
 
     :cond_2
-    iget-object p0, p0, Lei4;->d:Ljava/util/List;
+    invoke-interface {v3}, Ljava/util/Collection;->isEmpty()Z
 
-    invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
+    move-result p0
 
-    move-result v1
+    if-nez p0, :cond_4
 
-    xor-int/2addr v1, v2
+    new-instance p0, Lorg/json/JSONArray;
 
-    if-eqz v1, :cond_4
+    invoke-direct {p0}, Lorg/json/JSONArray;-><init>()V
 
-    new-instance v1, Lorg/json/JSONArray;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v1}, Lorg/json/JSONArray;-><init>()V
+    const/16 v2, 0xa
 
-    new-instance v2, Ljava/util/ArrayList;
+    invoke-static {v3, v2}, Lr43;->k0(Ljava/lang/Iterable;I)I
 
-    const/16 v3, 0xa
+    move-result v2
 
-    invoke-static {p0, v3}, Lq23;->H(Ljava/lang/Iterable;I)I
+    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    move-result v3
+    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
-
-    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
+    move-result-object v2
 
     :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
     if-eqz v3, :cond_3
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
 
-    check-cast v3, Lei4;
+    check-cast v3, Lhl4;
 
-    invoke-static {v3}, Lru/ok/tracer/disk/usage/DiskUsageWorker;->d(Lei4;)Lorg/json/JSONObject;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+    invoke-static {v3}, Lru/ok/tracer/disk/usage/DiskUsageWorker;->c(Lhl4;)Lorg/json/JSONObject;
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v3}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_3
-    const-string p0, "children"
+    const-string v1, "children"
 
-    invoke-virtual {v0, p0, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    invoke-virtual {v0, v1, p0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     :cond_4
     return-object v0
 .end method
 
-.method public static g(Ljava/io/File;ILjava/util/ArrayList;)Lei4;
-    .locals 21
+.method public static g(Ljava/io/File;ILjava/util/ArrayList;)Lhl4;
+    .locals 19
 
     move/from16 v0, p1
 
@@ -245,72 +244,60 @@
 
     if-eqz v3, :cond_0
 
-    invoke-static/range {p0 .. p0}, Ljava/util/Objects;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1}, Ljava/util/Objects;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    new-instance v0, Lei4;
+    new-instance v4, Lhl4;
 
-    invoke-virtual/range {p0 .. p0}, Ljava/io/File;->getName()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v7
 
-    const/4 v10, 0x0
+    const/4 v9, 0x0
 
-    const/4 v11, 0x1
+    const/16 v10, 0x1c
 
     const-wide/16 v5, 0x0
 
     const/4 v8, 0x0
 
-    const/4 v9, 0x0
+    invoke-direct/range {v4 .. v10}, Lhl4;-><init>(JLjava/lang/String;Ljava/util/List;ZI)V
 
-    const/16 v12, 0x1c
-
-    move-object v4, v0
-
-    invoke-direct/range {v4 .. v12}, Lei4;-><init>(JLjava/lang/String;ZLjava/util/List;ZZI)V
-
-    return-object v0
+    return-object v4
 
     :cond_0
-    invoke-virtual/range {p0 .. p0}, Ljava/io/File;->isDirectory()Z
+    invoke-virtual {v1}, Ljava/io/File;->isDirectory()Z
 
     move-result v3
 
     if-nez v3, :cond_1
 
-    new-instance v0, Lei4;
+    new-instance v4, Lhl4;
 
-    invoke-virtual/range {p0 .. p0}, Ljava/io/File;->length()J
+    invoke-virtual {v1}, Ljava/io/File;->length()J
 
     move-result-wide v5
 
-    invoke-virtual/range {p0 .. p0}, Ljava/io/File;->getName()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v7
 
-    const/4 v10, 0x0
+    const/4 v9, 0x0
 
-    const/4 v11, 0x0
+    const/16 v10, 0x3c
 
     const/4 v8, 0x0
 
-    const/4 v9, 0x0
+    invoke-direct/range {v4 .. v10}, Lhl4;-><init>(JLjava/lang/String;Ljava/util/List;ZI)V
 
-    const/16 v12, 0x3c
-
-    move-object v4, v0
-
-    invoke-direct/range {v4 .. v12}, Lei4;-><init>(JLjava/lang/String;ZLjava/util/List;ZZI)V
-
-    return-object v0
+    return-object v4
 
     :cond_1
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
     :try_start_0
-    invoke-virtual/range {p0 .. p0}, Ljava/io/File;->getParentFile()Ljava/io/File;
+    invoke-virtual {v1}, Ljava/io/File;->getParentFile()Ljava/io/File;
 
     move-result-object v5
 
@@ -327,7 +314,7 @@
 
     new-instance v6, Ljava/io/File;
 
-    invoke-virtual/range {p0 .. p0}, Ljava/io/File;->getName()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v7
 
@@ -342,52 +329,46 @@
 
     move-result-object v6
 
-    invoke-static {v5, v6}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v5, v6}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v5
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    xor-int/2addr v5, v3
+    xor-int/2addr v5, v4
 
     goto :goto_1
 
     :catch_0
-    move v5, v4
+    move v5, v3
 
     :goto_1
     if-eqz v5, :cond_3
 
-    new-instance v0, Lei4;
+    new-instance v6, Lhl4;
 
-    invoke-virtual/range {p0 .. p0}, Ljava/io/File;->getName()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v9
 
-    const/4 v12, 0x0
+    const/4 v11, 0x0
 
-    const/4 v13, 0x0
+    const/16 v12, 0x38
 
     const-wide/16 v7, 0x0
 
-    const/4 v10, 0x1
+    const/4 v10, 0x0
 
-    const/4 v11, 0x0
+    invoke-direct/range {v6 .. v12}, Lhl4;-><init>(JLjava/lang/String;Ljava/util/List;ZI)V
 
-    const/16 v14, 0x38
-
-    move-object v6, v0
-
-    invoke-direct/range {v6 .. v14}, Lei4;-><init>(JLjava/lang/String;ZLjava/util/List;ZZI)V
-
-    return-object v0
+    return-object v6
 
     :cond_3
-    invoke-virtual/range {p0 .. p0}, Ljava/io/File;->listFiles()[Ljava/io/File;
+    invoke-virtual {v1}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
     move-result-object v5
 
-    sget-object v6, Lhw4;->a:Lhw4;
+    sget-object v6, Lgz4;->a:Lgz4;
 
     if-eqz v5, :cond_4
 
@@ -399,7 +380,7 @@
 
     array-length v8, v5
 
-    move v9, v4
+    move v9, v3
 
     :goto_2
     if-ge v9, v8, :cond_5
@@ -408,7 +389,7 @@
 
     add-int/lit8 v11, v0, 0x1
 
-    invoke-static {v10, v11, v2}, Lru/ok/tracer/disk/usage/DiskUsageWorker;->g(Ljava/io/File;ILjava/util/ArrayList;)Lei4;
+    invoke-static {v10, v11, v2}, Lru/ok/tracer/disk/usage/DiskUsageWorker;->g(Ljava/io/File;ILjava/util/ArrayList;)Lhl4;
 
     move-result-object v10
 
@@ -443,9 +424,9 @@
 
     move-result-object v5
 
-    check-cast v5, Lei4;
+    check-cast v5, Lhl4;
 
-    iget-wide v12, v5, Lei4;->a:J
+    iget-wide v12, v5, Lhl4;->a:J
 
     add-long/2addr v10, v12
 
@@ -458,25 +439,25 @@
 
     if-le v0, v2, :cond_7
 
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move v0, v3
+    move v0, v4
 
     goto :goto_4
 
     :cond_7
-    move v0, v4
+    move v0, v3
 
     move-object v6, v7
 
     :goto_4
-    new-instance v2, Lzo4;
+    new-instance v2, Lyr4;
 
-    const/16 v5, 0x19
+    const/16 v5, 0x1a
 
-    invoke-direct {v2, v5}, Lzo4;-><init>(I)V
+    invoke-direct {v2, v5}, Lyr4;-><init>(I)V
 
-    invoke-static {v6, v2}, Lo23;->m0(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
+    invoke-static {v6, v2}, Lp43;->Q0(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
 
     move-result-object v2
 
@@ -488,64 +469,59 @@
 
     if-le v5, v6, :cond_8
 
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    invoke-interface {v2, v4, v6}, Ljava/util/List;->subList(II)Ljava/util/List;
+    invoke-interface {v2, v3, v6}, Ljava/util/List;->subList(II)Ljava/util/List;
 
-    move-result-object v0
+    move-result-object v2
 
-    move-object/from16 v17, v0
+    move/from16 v17, v4
 
-    move/from16 v18, v3
+    :goto_5
+    move-object/from16 v16, v2
+
+    goto :goto_6
+
+    :cond_8
+    move/from16 v17, v0
 
     goto :goto_5
 
-    :cond_8
-    move/from16 v18, v0
+    :goto_6
+    new-instance v12, Lhl4;
 
-    move-object/from16 v17, v2
-
-    :goto_5
-    new-instance v0, Lei4;
-
-    invoke-virtual/range {p0 .. p0}, Ljava/io/File;->getName()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v15
 
-    const/16 v16, 0x1
+    const/16 v18, 0x20
 
-    const/16 v19, 0x0
+    invoke-direct/range {v12 .. v18}, Lhl4;-><init>(JLjava/lang/String;Ljava/util/List;ZI)V
 
-    const/16 v20, 0x20
-
-    move-object v12, v0
-
-    invoke-direct/range {v12 .. v20}, Lei4;-><init>(JLjava/lang/String;ZLjava/util/List;ZZI)V
-
-    return-object v0
+    return-object v12
 .end method
 
 
 # virtual methods
-.method public final b()Lgh7;
+.method public final a()Lfm7;
     .locals 8
 
-    sget-object v1, Lhwf;->a:Lx3a;
+    sget-object v1, Lsre;->a:Lrsd;
 
-    invoke-static {v1}, Lxhd;->h(Lx3a;)Z
+    invoke-static {v1}, Lz84;->m(Lrsd;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-static {}, Lgh7;->b()Lfh7;
+    invoke-static {}, Lfm7;->b()Lem7;
 
     move-result-object p0
 
     return-object p0
 
     :cond_0
-    invoke-virtual {p0}, Lhh7;->getInputData()Lzy3;
+    invoke-virtual {p0}, Lgm7;->getInputData()Lt24;
 
     move-result-object v0
 
@@ -553,7 +529,7 @@
 
     const-wide/16 v3, 0x0
 
-    invoke-virtual {v0, v2, v3, v4}, Lzy3;->d(Ljava/lang/String;J)J
+    invoke-virtual {v0, v2, v3, v4}, Lt24;->d(Ljava/lang/String;J)J
 
     move-result-wide v5
 
@@ -569,13 +545,9 @@
     goto :goto_0
 
     :cond_2
-    sget-object v0, Lkxb;->a:Ljxb;
+    sget-object v0, Lg2c;->b:Ld3;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object v0, Lkxb;->b:Ld3;
-
-    invoke-virtual {v0, v5, v6}, Lkxb;->i(J)J
+    invoke-virtual {v0, v5, v6}, Lg2c;->e(J)J
 
     move-result-wide v5
 
@@ -584,7 +556,7 @@
     if-nez v0, :cond_7
 
     :goto_0
-    invoke-virtual {p0}, Lhh7;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lgm7;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -599,9 +571,9 @@
     :try_start_0
     iget-object v6, v2, Landroid/content/pm/ApplicationInfo;->dataDir:Ljava/lang/String;
 
-    sget-object v7, Lda6;->b:Lda6;
+    sget-object v7, Lhe6;->b:Lhe6;
 
-    invoke-virtual {p0, v6, v7, v5}, Lru/ok/tracer/disk/usage/DiskUsageWorker;->e(Ljava/lang/String;Lda6;Ljava/util/LinkedHashMap;)V
+    invoke-virtual {p0, v6, v7, v5}, Lru/ok/tracer/disk/usage/DiskUsageWorker;->e(Ljava/lang/String;Lhe6;Ljava/util/LinkedHashMap;)V
 
     const/4 v6, 0x0
 
@@ -627,9 +599,9 @@
     move-object v0, v6
 
     :goto_1
-    sget-object v7, Lda6;->c:Lda6;
+    sget-object v7, Lhe6;->c:Lhe6;
 
-    invoke-virtual {p0, v0, v7, v5}, Lru/ok/tracer/disk/usage/DiskUsageWorker;->e(Ljava/lang/String;Lda6;Ljava/util/LinkedHashMap;)V
+    invoke-virtual {p0, v0, v7, v5}, Lru/ok/tracer/disk/usage/DiskUsageWorker;->e(Ljava/lang/String;Lhe6;Ljava/util/LinkedHashMap;)V
 
     new-instance v0, Ljava/io/File;
 
@@ -648,9 +620,9 @@
     move-result-object v6
 
     :cond_4
-    sget-object v0, Lda6;->o:Lda6;
+    sget-object v0, Lhe6;->o:Lhe6;
 
-    invoke-virtual {p0, v6, v0, v5}, Lru/ok/tracer/disk/usage/DiskUsageWorker;->e(Ljava/lang/String;Lda6;Ljava/util/LinkedHashMap;)V
+    invoke-virtual {p0, v6, v0, v5}, Lru/ok/tracer/disk/usage/DiskUsageWorker;->e(Ljava/lang/String;Lhe6;Ljava/util/LinkedHashMap;)V
 
     invoke-virtual {v5}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
 
@@ -671,22 +643,22 @@
 
     move-result-object v2
 
-    check-cast v2, Lei4;
+    check-cast v2, Lhl4;
 
-    iget-wide v6, v2, Lei4;->a:J
+    iget-wide v6, v2, Lhl4;->a:J
 
     add-long/2addr v3, v6
 
     goto :goto_2
 
     :cond_5
-    iget-object v0, p0, Lru/ok/tracer/disk/usage/DiskUsageWorker;->b:Lr7e;
+    iget-object v0, p0, Lru/ok/tracer/disk/usage/DiskUsageWorker;->b:Lwfe;
 
-    invoke-virtual {v0}, Lr7e;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Lwfe;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ldi4;
+    check-cast v0, Lgl4;
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -696,21 +668,21 @@
 
     if-lez v0, :cond_6
 
-    invoke-virtual {p0}, Lhh7;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lgm7;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-static {v0, v1}, Lgf6;->j(Landroid/content/Context;Lx3a;)Ljava/io/File;
+    invoke-static {v0, v1}, Losc;->v(Landroid/content/Context;Lrsd;)Ljava/io/File;
 
     move-result-object v2
 
-    invoke-static {v3, v4, v5}, Lru/ok/tracer/disk/usage/DiskUsageWorker;->c(JLjava/util/LinkedHashMap;)Ljava/lang/String;
+    invoke-static {v3, v4, v5}, Lru/ok/tracer/disk/usage/DiskUsageWorker;->b(JLjava/util/LinkedHashMap;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v2, v0}, Lng5;->O(Ljava/io/File;Ljava/lang/String;)V
+    invoke-static {v2, v0}, Lwj5;->J(Ljava/io/File;Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lhh7;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lgm7;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -732,19 +704,19 @@
 
     const/4 v3, 0x0
 
-    invoke-static/range {v0 .. v6}, Lxhd;->l(Landroid/content/Context;Lx3a;Ljava/io/File;Ljava/lang/String;Ljava/lang/Long;Ljava/util/Map;I)V
+    invoke-static/range {v0 .. v6}, Lmx7;->u(Landroid/content/Context;Lrsd;Ljava/io/File;Ljava/lang/String;Ljava/lang/Long;Ljava/util/Map;I)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     :cond_6
-    invoke-static {}, Lgh7;->b()Lfh7;
+    invoke-static {}, Lfm7;->b()Lem7;
 
     move-result-object p0
 
     return-object p0
 
     :catch_0
-    invoke-static {}, Lgh7;->a()Ldh7;
+    invoke-static {}, Lfm7;->a()Lcm7;
 
     move-result-object p0
 
@@ -752,32 +724,34 @@
 
     :cond_7
     :goto_3
-    invoke-static {}, Lgh7;->b()Lfh7;
+    invoke-static {}, Lfm7;->b()Lem7;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public final e(Ljava/lang/String;Lda6;Ljava/util/LinkedHashMap;)V
-    .locals 3
+.method public final e(Ljava/lang/String;Lhe6;Ljava/util/LinkedHashMap;)V
+    .locals 4
 
     if-nez p1, :cond_0
 
     return-void
 
     :cond_0
-    new-instance v0, Ljava/io/File;
+    iget-object v0, p2, Lhe6;->a:Ljava/lang/String;
 
-    invoke-direct {v0, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    new-instance v1, Ljava/io/File;
 
-    iget-object p0, p0, Lru/ok/tracer/disk/usage/DiskUsageWorker;->b:Lr7e;
+    invoke-direct {v1, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lr7e;->getValue()Ljava/lang/Object;
+    iget-object p0, p0, Lru/ok/tracer/disk/usage/DiskUsageWorker;->b:Lwfe;
+
+    invoke-virtual {p0}, Lwfe;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Ldi4;
+    check-cast p0, Lgl4;
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -787,13 +761,13 @@
 
     new-instance p1, Ljava/util/ArrayList;
 
-    const/16 v1, 0xa
+    const/16 v2, 0xa
 
-    invoke-static {p0, v1}, Lq23;->H(Ljava/lang/Iterable;I)I
+    invoke-static {p0, v2}, Lr43;->k0(Ljava/lang/Iterable;I)I
 
-    move-result v1
+    move-result v2
 
-    invoke-direct {p1, v1}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {p1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
     invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -802,40 +776,38 @@
     :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Ljava/lang/String;
+    check-cast v2, Ljava/lang/String;
 
-    iget-object v2, p2, Lda6;->a:Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    move-result v3
 
-    move-result v2
+    add-int/lit8 v3, v3, 0x1
 
-    add-int/lit8 v2, v2, 0x1
+    invoke-virtual {v2, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v1
+    invoke-static {v1, v2}, Lwj5;->I(Ljava/io/File;Ljava/lang/String;)Ljava/io/File;
 
-    invoke-static {v0, v1}, Lng5;->N(Ljava/io/File;Ljava/lang/String;)Ljava/io/File;
+    move-result-object v2
 
-    move-result-object v1
-
-    invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_1
     const/4 p0, 0x0
 
-    invoke-static {v0, p0, p1}, Lru/ok/tracer/disk/usage/DiskUsageWorker;->g(Ljava/io/File;ILjava/util/ArrayList;)Lei4;
+    invoke-static {v1, p0, p1}, Lru/ok/tracer/disk/usage/DiskUsageWorker;->g(Ljava/io/File;ILjava/util/ArrayList;)Lhl4;
 
     move-result-object p0
 

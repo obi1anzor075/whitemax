@@ -1,313 +1,160 @@
 .class public final Lou1;
-.super Lpi0;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lru1;
 
 
 # instance fields
-.field public final B0:Lm24;
-
-.field public final C0:Lyze;
-
-.field public D0:J
-
-.field public E0:Lnu1;
-
-.field public F0:J
+.field public final synthetic a:Lqu1;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 3
+.method public constructor <init>(Lqu1;)V
+    .locals 0
 
-    const/4 v0, 0x6
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, v0}, Lpi0;-><init>(I)V
-
-    new-instance v0, Lm24;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Lm24;-><init>(I)V
-
-    iput-object v0, p0, Lou1;->B0:Lm24;
-
-    new-instance v0, Lyze;
-
-    const/4 v1, 0x3
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lyze;-><init>(IZ)V
-
-    iput-object v0, p0, Lou1;->C0:Lyze;
+    iput-object p1, p0, Lou1;->a:Lqu1;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final A(Lvu5;)I
-    .locals 0
+.method public final a(Landroid/hardware/camera2/TotalCaptureResult;)Lbm7;
+    .locals 3
 
-    const-string p0, "application/x-camera-motion"
+    new-instance v0, Ljava/util/ArrayList;
 
-    iget-object p1, p1, Lvu5;->A0:Ljava/lang/String;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    iget-object p0, p0, Lou1;->a:Lqu1;
 
-    move-result p0
+    iget-object p0, p0, Lqu1;->h:Ljava/util/ArrayList;
 
-    const/4 p1, 0x0
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    if-eqz p0, :cond_0
+    move-result-object p0
 
-    const/4 p0, 0x4
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-static {p0, p1, p1}, Lpi0;->b(III)I
+    move-result v1
 
-    move-result p0
+    if-eqz v1, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lru1;
+
+    invoke-interface {v1, p1}, Lru1;->a(Landroid/hardware/camera2/TotalCaptureResult;)Lbm7;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_0
-    invoke-static {p1, p1, p1}, Lpi0;->b(III)I
+    invoke-static {v0}, Lu7;->f(Ljava/util/List;)Lnl7;
 
-    move-result p0
+    move-result-object p0
 
-    :goto_0
-    return p0
-.end method
+    new-instance p1, Lku1;
 
-.method public final a(ILjava/lang/Object;)V
-    .locals 1
+    const/4 v0, 0x2
 
-    const/16 v0, 0x8
+    invoke-direct {p1, v0}, Lku1;-><init>(I)V
 
-    if-ne p1, v0, :cond_0
+    invoke-static {}, Lsgg;->n()Lpk4;
 
-    check-cast p2, Lnu1;
+    move-result-object v0
 
-    iput-object p2, p0, Lou1;->E0:Lnu1;
+    new-instance v1, Lykc;
 
-    :cond_0
-    return-void
-.end method
+    const/16 v2, 0x12
 
-.method public final k()Ljava/lang/String;
-    .locals 0
+    invoke-direct {v1, v2, p1}, Lykc;-><init>(ILjava/lang/Object;)V
 
-    const-string p0, "CameraMotionRenderer"
+    invoke-static {p0, v1, v0}, Lu7;->X(Lbm7;Lmu;Ljava/util/concurrent/Executor;)Lg12;
+
+    move-result-object p0
 
     return-object p0
 .end method
 
-.method public final m()Z
-    .locals 0
+.method public final b()Z
+    .locals 1
 
-    invoke-virtual {p0}, Lpi0;->l()Z
+    iget-object p0, p0, Lou1;->a:Lqu1;
 
-    move-result p0
+    iget-object p0, p0, Lqu1;->h:Ljava/util/ArrayList;
 
-    return p0
-.end method
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-.method public final n()Z
-    .locals 0
+    move-result-object p0
+
+    :cond_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lru1;
+
+    invoke-interface {v0}, Lru1;->b()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
 
     const/4 p0, 0x1
 
     return p0
-.end method
-
-.method public final o()V
-    .locals 0
-
-    iget-object p0, p0, Lou1;->E0:Lnu1;
-
-    if-eqz p0, :cond_0
-
-    invoke-interface {p0}, Lnu1;->c()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final q(JZ)V
-    .locals 0
-
-    const-wide/high16 p1, -0x8000000000000000L
-
-    iput-wide p1, p0, Lou1;->F0:J
-
-    iget-object p0, p0, Lou1;->E0:Lnu1;
-
-    if-eqz p0, :cond_0
-
-    invoke-interface {p0}, Lnu1;->c()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final u([Lvu5;JJ)V
-    .locals 0
-
-    iput-wide p4, p0, Lou1;->D0:J
-
-    return-void
-.end method
-
-.method public final w(JJ)V
-    .locals 4
-
-    :cond_0
-    :goto_0
-    invoke-virtual {p0}, Lpi0;->l()Z
-
-    move-result p3
-
-    if-nez p3, :cond_6
-
-    iget-wide p3, p0, Lou1;->F0:J
-
-    const-wide/32 v0, 0x186a0
-
-    add-long/2addr v0, p1
-
-    cmp-long p3, p3, v0
-
-    if-gez p3, :cond_6
-
-    iget-object p3, p0, Lou1;->B0:Lm24;
-
-    invoke-virtual {p3}, Lm24;->v()V
-
-    iget-object p4, p0, Lpi0;->b:Lotf;
-
-    invoke-virtual {p4}, Lotf;->w()V
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p4, p3, v0}, Lpi0;->v(Lotf;Lm24;I)I
-
-    move-result p4
-
-    const/4 v1, -0x4
-
-    if-ne p4, v1, :cond_6
-
-    const/4 p4, 0x4
-
-    invoke-virtual {p3, p4}, Lrx;->f(I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    goto :goto_3
 
     :cond_1
-    iget-wide v1, p3, Lm24;->Y:J
+    const/4 p0, 0x0
 
-    iput-wide v1, p0, Lou1;->F0:J
+    return p0
+.end method
 
-    iget-object v1, p0, Lou1;->E0:Lnu1;
+.method public final c()V
+    .locals 1
 
-    if-eqz v1, :cond_0
+    iget-object p0, p0, Lou1;->a:Lqu1;
 
-    const/high16 v1, -0x80000000
+    iget-object p0, p0, Lqu1;->h:Ljava/util/ArrayList;
 
-    invoke-virtual {p3, v1}, Lrx;->f(I)Z
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    move-result v1
+    move-result-object p0
 
-    if-eqz v1, :cond_2
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    goto :goto_0
+    move-result v0
 
-    :cond_2
-    invoke-virtual {p3}, Lm24;->y()V
+    if-eqz v0, :cond_0
 
-    iget-object p3, p3, Lm24;->o:Ljava/nio/ByteBuffer;
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    sget v1, Lmze;->a:I
+    move-result-object v0
 
-    invoke-virtual {p3}, Ljava/nio/Buffer;->remaining()I
+    check-cast v0, Lru1;
 
-    move-result v1
-
-    const/16 v2, 0x10
-
-    if-eq v1, v2, :cond_3
-
-    const/4 p3, 0x0
-
-    goto :goto_2
-
-    :cond_3
-    invoke-virtual {p3}, Ljava/nio/ByteBuffer;->array()[B
-
-    move-result-object v1
-
-    invoke-virtual {p3}, Ljava/nio/Buffer;->limit()I
-
-    move-result v2
-
-    iget-object v3, p0, Lou1;->C0:Lyze;
-
-    invoke-virtual {v3, v2, v1}, Lyze;->F(I[B)V
-
-    invoke-virtual {p3}, Ljava/nio/ByteBuffer;->arrayOffset()I
-
-    move-result p3
-
-    add-int/2addr p3, p4
-
-    invoke-virtual {v3, p3}, Lyze;->H(I)V
-
-    const/4 p3, 0x3
-
-    new-array p4, p3, [F
-
-    :goto_1
-    if-ge v0, p3, :cond_4
-
-    invoke-virtual {v3}, Lyze;->j()I
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Float;->intBitsToFloat(I)F
-
-    move-result v1
-
-    aput v1, p4, v0
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1
-
-    :cond_4
-    move-object p3, p4
-
-    :goto_2
-    if-nez p3, :cond_5
+    invoke-interface {v0}, Lru1;->c()V
 
     goto :goto_0
 
-    :cond_5
-    iget-object p4, p0, Lou1;->E0:Lnu1;
-
-    iget-wide v0, p0, Lou1;->F0:J
-
-    iget-wide v2, p0, Lou1;->D0:J
-
-    sub-long/2addr v0, v2
-
-    invoke-interface {p4, v0, v1, p3}, Lnu1;->b(J[F)V
-
-    goto/16 :goto_0
-
-    :cond_6
-    :goto_3
+    :cond_0
     return-void
 .end method

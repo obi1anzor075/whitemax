@@ -1,366 +1,737 @@
-.class public Ltc;
+.class public final Ltc;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lw95;
+
+
+# static fields
+.field public static final A0:I
+
+.field public static final w0:[I
+
+.field public static final x0:[I
+
+.field public static final y0:[B
+
+.field public static final z0:[B
+
 
 # instance fields
-.field public final a:Lpc;
+.field public X:I
+
+.field public Y:I
+
+.field public Z:Z
+
+.field public final a:[B
 
 .field public final b:I
 
+.field public c:Z
+
+.field public o:J
+
+.field public o0:J
+
+.field public p0:I
+
+.field public q0:I
+
+.field public r0:J
+
+.field public s0:Laa5;
+
+.field public t0:Lbye;
+
+.field public u0:Lb0d;
+
+.field public v0:Z
+
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    .line 1
-    invoke-static {p1, v0}, Luc;->g(Landroid/content/Context;I)I
-
-    move-result v0
-
-    invoke-direct {p0, p1, v0}, Ltc;-><init>(Landroid/content/Context;I)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;I)V
+.method static constructor <clinit>()V
     .locals 3
 
-    .line 2
+    const/16 v0, 0x10
+
+    new-array v1, v0, [I
+
+    fill-array-data v1, :array_0
+
+    sput-object v1, Ltc;->w0:[I
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_1
+
+    sput-object v0, Ltc;->x0:[I
+
+    sget v1, Lpaf;->a:I
+
+    sget-object v1, Lv42;->c:Ljava/nio/charset/Charset;
+
+    const-string v2, "#!AMR\n"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+
+    move-result-object v2
+
+    sput-object v2, Ltc;->y0:[B
+
+    const-string v2, "#!AMR-WB\n"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+
+    move-result-object v1
+
+    sput-object v1, Ltc;->z0:[B
+
+    const/16 v1, 0x8
+
+    aget v0, v0, v1
+
+    sput v0, Ltc;->A0:I
+
+    return-void
+
+    nop
+
+    :array_0
+    .array-data 4
+        0xd
+        0xe
+        0x10
+        0x12
+        0x14
+        0x15
+        0x1b
+        0x20
+        0x6
+        0x7
+        0x6
+        0x6
+        0x1
+        0x1
+        0x1
+        0x1
+    .end array-data
+
+    :array_1
+    .array-data 4
+        0x12
+        0x18
+        0x21
+        0x25
+        0x29
+        0x2f
+        0x33
+        0x3b
+        0x3d
+        0x6
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+    .end array-data
+.end method
+
+.method public constructor <init>(I)V
+    .locals 0
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3
-    new-instance v0, Lpc;
+    iput p1, p0, Ltc;->b:I
 
-    new-instance v1, Landroid/view/ContextThemeWrapper;
+    const/4 p1, 0x1
 
-    .line 4
-    invoke-static {p1, p2}, Luc;->g(Landroid/content/Context;I)I
+    new-array p1, p1, [B
 
-    move-result v2
+    iput-object p1, p0, Ltc;->a:[B
 
-    invoke-direct {v1, p1, v2}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
+    const/4 p1, -0x1
 
-    invoke-direct {v0, v1}, Lpc;-><init>(Landroid/view/ContextThemeWrapper;)V
-
-    iput-object v0, p0, Ltc;->a:Lpc;
-
-    .line 5
-    iput p2, p0, Ltc;->b:I
+    iput p1, p0, Ltc;->p0:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Luc;
-    .locals 0
+.method public final W(Laa5;)V
+    .locals 2
 
-    invoke-virtual {p0}, Ltc;->create()Luc;
+    iput-object p1, p0, Ltc;->s0:Laa5;
 
-    move-result-object p0
+    const/4 v0, 0x0
 
-    invoke-virtual {p0}, Landroid/app/Dialog;->show()V
+    const/4 v1, 0x1
 
-    return-object p0
+    invoke-interface {p1, v0, v1}, Laa5;->A(II)Lbye;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ltc;->t0:Lbye;
+
+    invoke-interface {p1}, Laa5;->v()V
+
+    return-void
 .end method
 
-.method public create()Luc;
-    .locals 11
+.method public final X(Ly95;Lh7;)I
+    .locals 12
 
-    new-instance v0, Luc;
+    iget-object p2, p0, Ltc;->t0:Lbye;
 
-    iget-object v1, p0, Ltc;->a:Lpc;
+    invoke-static {p2}, Lu27;->k(Ljava/lang/Object;)V
 
-    iget-object v2, v1, Lpc;->a:Landroid/content/Context;
+    sget p2, Lpaf;->a:I
 
-    iget p0, p0, Ltc;->b:I
+    invoke-interface {p1}, Ly95;->getPosition()J
 
-    invoke-direct {v0, v2, p0}, Luc;-><init>(Landroid/content/Context;I)V
+    move-result-wide v0
 
-    iget-object p0, v1, Lpc;->e:Landroid/view/View;
+    const-wide/16 v2, 0x0
 
-    iget-object v2, v0, Luc;->Y:Lsc;
+    cmp-long p2, v0, v2
 
-    const/4 v3, 0x0
+    if-nez p2, :cond_1
 
-    if-eqz p0, :cond_0
+    invoke-virtual {p0, p1}, Ltc;->b(Ly95;)Z
 
-    iput-object p0, v2, Lsc;->C:Landroid/view/View;
+    move-result p2
+
+    if-eqz p2, :cond_0
 
     goto :goto_0
 
     :cond_0
-    iget-object p0, v1, Lpc;->d:Ljava/lang/CharSequence;
+    const-string p0, "Could not find AMR header."
 
-    if-eqz p0, :cond_1
+    const/4 p1, 0x0
 
-    iput-object p0, v2, Lsc;->e:Ljava/lang/CharSequence;
+    invoke-static {p1, p0}, Landroidx/media3/common/ParserException;->a(Ljava/lang/RuntimeException;Ljava/lang/String;)Landroidx/media3/common/ParserException;
 
-    iget-object v4, v2, Lsc;->A:Landroid/widget/TextView;
+    move-result-object p0
 
-    if-eqz v4, :cond_1
-
-    invoke-virtual {v4, p0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    throw p0
 
     :cond_1
-    iget-object p0, v1, Lpc;->c:Landroid/graphics/drawable/Drawable;
+    :goto_0
+    iget-boolean p2, p0, Ltc;->v0:Z
 
-    if-eqz p0, :cond_2
+    const/4 v0, 0x1
 
-    iput-object p0, v2, Lsc;->y:Landroid/graphics/drawable/Drawable;
+    if-nez p2, :cond_4
 
-    iput v3, v2, Lsc;->x:I
+    iput-boolean v0, p0, Ltc;->v0:Z
 
-    iget-object v4, v2, Lsc;->z:Landroid/widget/ImageView;
+    iget-boolean p2, p0, Ltc;->c:Z
 
-    if-eqz v4, :cond_2
+    if-eqz p2, :cond_2
 
-    invoke-virtual {v4, v3}, Landroid/widget/ImageView;->setVisibility(I)V
+    const-string v1, "audio/amr-wb"
 
-    iget-object v4, v2, Lsc;->z:Landroid/widget/ImageView;
-
-    invoke-virtual {v4, p0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    goto :goto_1
 
     :cond_2
-    :goto_0
-    iget-object p0, v1, Lpc;->f:Ljava/lang/CharSequence;
+    const-string v1, "audio/3gpp"
 
-    if-eqz p0, :cond_3
+    :goto_1
+    if-eqz p2, :cond_3
 
-    iput-object p0, v2, Lsc;->f:Ljava/lang/CharSequence;
+    const/16 p2, 0x3e80
 
-    iget-object v4, v2, Lsc;->B:Landroid/widget/TextView;
-
-    if-eqz v4, :cond_3
-
-    invoke-virtual {v4, p0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    goto :goto_2
 
     :cond_3
-    iget-object p0, v1, Lpc;->g:Ljava/lang/CharSequence;
+    const/16 p2, 0x1f40
 
-    if-nez p0, :cond_4
+    :goto_2
+    iget-object v2, p0, Ltc;->t0:Lbye;
+
+    new-instance v3, Lcz5;
+
+    invoke-direct {v3}, Lcz5;-><init>()V
+
+    invoke-static {v1}, La99;->l(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, v3, Lcz5;->l:Ljava/lang/String;
+
+    sget v1, Ltc;->A0:I
+
+    iput v1, v3, Lcz5;->m:I
+
+    iput v0, v3, Lcz5;->z:I
+
+    iput p2, v3, Lcz5;->A:I
+
+    invoke-static {v3, v2}, Lzge;->w(Lcz5;Lbye;)V
+
+    :cond_4
+    iget p2, p0, Ltc;->Y:I
+
+    const-wide/16 v1, 0x4e20
+
+    const/4 v3, -0x1
+
+    if-nez p2, :cond_6
+
+    :try_start_0
+    invoke-virtual {p0, p1}, Ltc;->a(Ly95;)I
+
+    move-result p2
+
+    iput p2, p0, Ltc;->X:I
+    :try_end_0
+    .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0
+
+    iput p2, p0, Ltc;->Y:I
+
+    iget p2, p0, Ltc;->p0:I
+
+    if-ne p2, v3, :cond_5
+
+    invoke-interface {p1}, Ly95;->getPosition()J
+
+    move-result-wide v4
+
+    iput-wide v4, p0, Ltc;->o0:J
+
+    iget p2, p0, Ltc;->X:I
+
+    iput p2, p0, Ltc;->p0:I
+
+    :cond_5
+    iget p2, p0, Ltc;->p0:I
+
+    iget v4, p0, Ltc;->X:I
+
+    if-ne p2, v4, :cond_6
+
+    iget p2, p0, Ltc;->q0:I
+
+    add-int/2addr p2, v0
+
+    iput p2, p0, Ltc;->q0:I
+
+    goto :goto_4
+
+    :catch_0
+    :goto_3
+    move p2, v3
+
+    goto :goto_5
+
+    :cond_6
+    :goto_4
+    iget-object p2, p0, Ltc;->t0:Lbye;
+
+    iget v4, p0, Ltc;->Y:I
+
+    invoke-interface {p2, p1, v4, v0}, Lbye;->c(Lb34;IZ)I
+
+    move-result p2
+
+    if-ne p2, v3, :cond_7
+
+    goto :goto_3
+
+    :cond_7
+    iget v4, p0, Ltc;->Y:I
+
+    sub-int/2addr v4, p2
+
+    iput v4, p0, Ltc;->Y:I
+
+    const/4 p2, 0x0
+
+    if-lez v4, :cond_8
+
+    goto :goto_5
+
+    :cond_8
+    iget-object v5, p0, Ltc;->t0:Lbye;
+
+    iget-wide v6, p0, Ltc;->r0:J
+
+    iget-wide v8, p0, Ltc;->o:J
+
+    add-long/2addr v6, v8
+
+    iget v9, p0, Ltc;->X:I
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x0
+
+    const/4 v8, 0x1
+
+    invoke-interface/range {v5 .. v11}, Lbye;->a(JIIILzxe;)V
+
+    iget-wide v4, p0, Ltc;->o:J
+
+    add-long/2addr v4, v1
+
+    iput-wide v4, p0, Ltc;->o:J
+
+    :goto_5
+    invoke-interface {p1}, Ly95;->getLength()J
+
+    move-result-wide v5
+
+    iget-boolean p1, p0, Ltc;->Z:Z
+
+    if-eqz p1, :cond_9
+
+    goto :goto_7
+
+    :cond_9
+    iget p1, p0, Ltc;->b:I
+
+    and-int/2addr p1, v0
+
+    if-eqz p1, :cond_c
+
+    const-wide/16 v7, -0x1
+
+    cmp-long p1, v5, v7
+
+    if-eqz p1, :cond_c
+
+    iget v10, p0, Ltc;->p0:I
+
+    if-eq v10, v3, :cond_a
+
+    iget p1, p0, Ltc;->X:I
+
+    if-eq v10, p1, :cond_a
+
+    goto :goto_6
+
+    :cond_a
+    iget p1, p0, Ltc;->q0:I
+
+    const/16 v4, 0x14
+
+    if-ge p1, v4, :cond_b
+
+    if-ne p2, v3, :cond_d
+
+    :cond_b
+    int-to-long v3, v10
+
+    const-wide/32 v7, 0x7a1200
+
+    mul-long/2addr v3, v7
+
+    div-long/2addr v3, v1
+
+    long-to-int v9, v3
+
+    new-instance v4, Lci3;
+
+    iget-wide v7, p0, Ltc;->o0:J
+
+    const/4 v11, 0x0
+
+    invoke-direct/range {v4 .. v11}, Lci3;-><init>(JJIIZ)V
+
+    iput-object v4, p0, Ltc;->u0:Lb0d;
+
+    iget-object p1, p0, Ltc;->s0:Laa5;
+
+    invoke-interface {p1, v4}, Laa5;->M(Lb0d;)V
+
+    iput-boolean v0, p0, Ltc;->Z:Z
+
+    goto :goto_7
+
+    :cond_c
+    :goto_6
+    new-instance p1, Lod0;
+
+    const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
+
+    invoke-direct {p1, v1, v2}, Lod0;-><init>(J)V
+
+    iput-object p1, p0, Ltc;->u0:Lb0d;
+
+    iget-object v1, p0, Ltc;->s0:Laa5;
+
+    invoke-interface {v1, p1}, Laa5;->M(Lb0d;)V
+
+    iput-boolean v0, p0, Ltc;->Z:Z
+
+    :cond_d
+    :goto_7
+    return p2
+.end method
+
+.method public final a(Ly95;)I
+    .locals 3
+
+    invoke-interface {p1}, Ly95;->x()V
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Ltc;->a:[B
+
+    invoke-interface {p1, v1, v2, v0}, Ly95;->i(I[BI)V
+
+    aget-byte p1, v2, v1
+
+    and-int/lit16 v0, p1, 0x83
+
+    const/4 v1, 0x0
+
+    if-gtz v0, :cond_5
+
+    shr-int/lit8 p1, p1, 0x3
+
+    const/16 v0, 0xf
+
+    and-int/2addr p1, v0
+
+    if-ltz p1, :cond_3
+
+    if-gt p1, v0, :cond_3
+
+    iget-boolean v0, p0, Ltc;->c:Z
+
+    if-eqz v0, :cond_0
+
+    const/16 v2, 0xa
+
+    if-lt p1, v2, :cond_1
+
+    const/16 v2, 0xd
+
+    if-le p1, v2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    if-nez v0, :cond_3
+
+    const/16 v2, 0xc
+
+    if-lt p1, v2, :cond_1
+
+    const/16 v2, 0xe
+
+    if-le p1, v2, :cond_3
+
+    :cond_1
+    :goto_0
+    if-eqz v0, :cond_2
+
+    sget-object p0, Ltc;->x0:[I
+
+    aget p0, p0, p1
+
+    return p0
+
+    :cond_2
+    sget-object p0, Ltc;->w0:[I
+
+    aget p0, p0, p1
+
+    return p0
+
+    :cond_3
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v2, "Illegal AMR "
+
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-boolean p0, p0, Ltc;->c:Z
+
+    if-eqz p0, :cond_4
+
+    const-string p0, "WB"
 
     goto :goto_1
 
     :cond_4
-    iget-object v4, v1, Lpc;->h:Landroid/content/DialogInterface$OnClickListener;
-
-    const/4 v5, -0x1
-
-    invoke-virtual {v2, v5, p0, v4}, Lsc;->c(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
+    const-string p0, "NB"
 
     :goto_1
-    iget-object p0, v1, Lpc;->i:Ljava/lang/CharSequence;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-nez p0, :cond_5
+    const-string p0, " frame type "
 
-    goto :goto_2
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_5
-    iget-object v4, v1, Lpc;->j:Landroid/content/DialogInterface$OnClickListener;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const/4 v5, -0x2
-
-    invoke-virtual {v2, v5, p0, v4}, Lsc;->c(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
-
-    :goto_2
-    iget-object p0, v1, Lpc;->k:Ljava/lang/CharSequence;
-
-    if-nez p0, :cond_6
-
-    goto :goto_3
-
-    :cond_6
-    iget-object v4, v1, Lpc;->l:Landroid/content/DialogInterface$OnClickListener;
-
-    const/4 v5, -0x3
-
-    invoke-virtual {v2, v5, p0, v4}, Lsc;->c(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
-
-    :goto_3
-    iget-object p0, v1, Lpc;->p:[Ljava/lang/CharSequence;
-
-    const/4 v4, 0x1
-
-    const/4 v5, 0x0
-
-    if-nez p0, :cond_7
-
-    iget-object p0, v1, Lpc;->q:Landroid/widget/ListAdapter;
-
-    if-eqz p0, :cond_c
-
-    :cond_7
-    iget p0, v2, Lsc;->G:I
-
-    iget-object v6, v1, Lpc;->b:Landroid/view/LayoutInflater;
-
-    invoke-virtual {v6, p0, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    check-cast p0, Landroidx/appcompat/app/AlertController$RecycleListView;
+    invoke-static {v1, p0}, Landroidx/media3/common/ParserException;->a(Ljava/lang/RuntimeException;Ljava/lang/String;)Landroidx/media3/common/ParserException;
 
-    iget-boolean v6, v1, Lpc;->t:Z
+    move-result-object p0
 
-    if-eqz v6, :cond_8
+    throw p0
 
-    iget v6, v2, Lsc;->H:I
+    :cond_5
+    new-instance p0, Ljava/lang/StringBuilder;
 
-    goto :goto_4
+    const-string v0, "Invalid padding bits for frame header "
 
-    :cond_8
-    iget v6, v2, Lsc;->I:I
+    invoke-direct {p0, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    :goto_4
-    iget-object v7, v1, Lpc;->q:Landroid/widget/ListAdapter;
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    if-eqz v7, :cond_9
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    goto :goto_5
+    move-result-object p0
 
-    :cond_9
-    new-instance v7, Lrc;
+    invoke-static {v1, p0}, Landroidx/media3/common/ParserException;->a(Ljava/lang/RuntimeException;Ljava/lang/String;)Landroidx/media3/common/ParserException;
 
-    iget-object v8, v1, Lpc;->p:[Ljava/lang/CharSequence;
+    move-result-object p0
 
-    iget-object v9, v1, Lpc;->a:Landroid/content/Context;
-
-    const v10, 0x1020014
-
-    invoke-direct {v7, v9, v6, v10, v8}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;II[Ljava/lang/Object;)V
-
-    :goto_5
-    iput-object v7, v2, Lsc;->D:Landroid/widget/ListAdapter;
-
-    iget v6, v1, Lpc;->u:I
-
-    iput v6, v2, Lsc;->E:I
-
-    iget-object v6, v1, Lpc;->r:Landroid/content/DialogInterface$OnClickListener;
-
-    if-eqz v6, :cond_a
-
-    new-instance v6, Loc;
-
-    invoke-direct {v6, v1, v2}, Loc;-><init>(Lpc;Lsc;)V
-
-    invoke-virtual {p0, v6}, Landroid/widget/AdapterView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
-
-    :cond_a
-    iget-boolean v6, v1, Lpc;->t:Z
-
-    if-eqz v6, :cond_b
-
-    invoke-virtual {p0, v4}, Landroid/widget/AbsListView;->setChoiceMode(I)V
-
-    :cond_b
-    iput-object p0, v2, Lsc;->g:Landroidx/appcompat/app/AlertController$RecycleListView;
-
-    :cond_c
-    iget-object p0, v1, Lpc;->s:Landroid/view/View;
-
-    if-eqz p0, :cond_d
-
-    iput-object p0, v2, Lsc;->h:Landroid/view/View;
-
-    iput v3, v2, Lsc;->i:I
-
-    iput-boolean v3, v2, Lsc;->j:Z
-
-    :cond_d
-    iget-boolean p0, v1, Lpc;->m:Z
-
-    invoke-virtual {v0, p0}, Landroid/app/Dialog;->setCancelable(Z)V
-
-    iget-boolean p0, v1, Lpc;->m:Z
-
-    if-eqz p0, :cond_e
-
-    invoke-virtual {v0, v4}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
-
-    :cond_e
-    invoke-virtual {v0, v5}, Landroid/app/Dialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
-
-    iget-object p0, v1, Lpc;->n:Landroid/content/DialogInterface$OnDismissListener;
-
-    invoke-virtual {v0, p0}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
-
-    iget-object p0, v1, Lpc;->o:Landroid/content/DialogInterface$OnKeyListener;
-
-    if-eqz p0, :cond_f
-
-    invoke-virtual {v0, p0}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
-
-    :cond_f
-    return-object v0
+    throw p0
 .end method
 
-.method public getContext()Landroid/content/Context;
+.method public final b(Ly95;)Z
+    .locals 5
+
+    invoke-interface {p1}, Ly95;->x()V
+
+    sget-object v0, Ltc;->y0:[B
+
+    array-length v1, v0
+
+    new-array v1, v1, [B
+
+    array-length v2, v0
+
+    const/4 v3, 0x0
+
+    invoke-interface {p1, v3, v1, v2}, Ly95;->i(I[BI)V
+
+    invoke-static {v1, v0}, Ljava/util/Arrays;->equals([B[B)Z
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    if-eqz v1, :cond_0
+
+    iput-boolean v3, p0, Ltc;->c:Z
+
+    array-length p0, v0
+
+    invoke-interface {p1, p0}, Ly95;->y(I)V
+
+    return v2
+
+    :cond_0
+    invoke-interface {p1}, Ly95;->x()V
+
+    sget-object v0, Ltc;->z0:[B
+
+    array-length v1, v0
+
+    new-array v1, v1, [B
+
+    array-length v4, v0
+
+    invoke-interface {p1, v3, v1, v4}, Ly95;->i(I[BI)V
+
+    invoke-static {v1, v0}, Ljava/util/Arrays;->equals([B[B)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iput-boolean v2, p0, Ltc;->c:Z
+
+    array-length p0, v0
+
+    invoke-interface {p1, p0}, Ly95;->y(I)V
+
+    return v2
+
+    :cond_1
+    return v3
+.end method
+
+.method public final d(JJ)V
+    .locals 3
+
+    const-wide/16 p3, 0x0
+
+    iput-wide p3, p0, Ltc;->o:J
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Ltc;->X:I
+
+    iput v0, p0, Ltc;->Y:I
+
+    cmp-long v0, p1, p3
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Ltc;->u0:Lb0d;
+
+    instance-of v1, v0, Lci3;
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Lci3;
+
+    iget-wide v1, v0, Lci3;->b:J
+
+    iget v0, v0, Lci3;->X:I
+
+    sub-long/2addr p1, v1
+
+    invoke-static {p3, p4, p1, p2}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide p1
+
+    const-wide/32 p3, 0x7a1200
+
+    mul-long/2addr p1, p3
+
+    int-to-long p3, v0
+
+    div-long/2addr p1, p3
+
+    iput-wide p1, p0, Ltc;->r0:J
+
+    return-void
+
+    :cond_0
+    iput-wide p3, p0, Ltc;->r0:J
+
+    return-void
+.end method
+
+.method public final n(Ly95;)Z
     .locals 0
 
-    iget-object p0, p0, Ltc;->a:Lpc;
+    invoke-virtual {p0, p1}, Ltc;->b(Ly95;)Z
 
-    iget-object p0, p0, Lpc;->a:Landroid/content/Context;
+    move-result p0
 
-    return-object p0
+    return p0
 .end method
 
-.method public setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Ltc;
-    .locals 2
+.method public final release()V
+    .locals 0
 
-    iget-object v0, p0, Ltc;->a:Lpc;
-
-    iget-object v1, v0, Lpc;->a:Landroid/content/Context;
-
-    invoke-virtual {v1, p1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
-
-    move-result-object p1
-
-    iput-object p1, v0, Lpc;->i:Ljava/lang/CharSequence;
-
-    iput-object p2, v0, Lpc;->j:Landroid/content/DialogInterface$OnClickListener;
-
-    return-object p0
-.end method
-
-.method public setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Ltc;
-    .locals 2
-
-    iget-object v0, p0, Ltc;->a:Lpc;
-
-    iget-object v1, v0, Lpc;->a:Landroid/content/Context;
-
-    invoke-virtual {v1, p1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
-
-    move-result-object p1
-
-    iput-object p1, v0, Lpc;->g:Ljava/lang/CharSequence;
-
-    iput-object p2, v0, Lpc;->h:Landroid/content/DialogInterface$OnClickListener;
-
-    return-object p0
-.end method
-
-.method public setTitle(Ljava/lang/CharSequence;)Ltc;
-    .locals 1
-
-    iget-object v0, p0, Ltc;->a:Lpc;
-
-    iput-object p1, v0, Lpc;->d:Ljava/lang/CharSequence;
-
-    return-object p0
-.end method
-
-.method public setView(Landroid/view/View;)Ltc;
-    .locals 1
-
-    iget-object v0, p0, Ltc;->a:Lpc;
-
-    iput-object p1, v0, Lpc;->s:Landroid/view/View;
-
-    return-object p0
+    return-void
 .end method

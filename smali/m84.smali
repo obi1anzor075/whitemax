@@ -1,168 +1,277 @@
 .class public final Lm84;
-.super Ljava/lang/Object;
+.super Landroid/media/AudioTrack$StreamEventCallback;
 .source "SourceFile"
-
-# interfaces
-.implements Liq6;
 
 
 # instance fields
-.field public final a:Liq6;
+.field public final synthetic a:I
 
-.field public final b:Liq6;
-
-.field public final c:Lnxa;
-
-.field public final d:Lye;
-
-.field public final e:Ljava/util/Map;
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lye;Lwe;Lnxa;Ljava/util/Map;)V
-    .locals 2
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p1, p0, Lm84;->a:I
 
-    new-instance v0, Lye;
+    iput-object p2, p0, Lm84;->b:Ljava/lang/Object;
 
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1, p0}, Lye;-><init>(ILjava/lang/Object;)V
-
-    iput-object v0, p0, Lm84;->d:Lye;
-
-    iput-object p1, p0, Lm84;->a:Liq6;
-
-    iput-object p2, p0, Lm84;->b:Liq6;
-
-    iput-object p3, p0, Lm84;->c:Lnxa;
-
-    iput-object p4, p0, Lm84;->e:Ljava/util/Map;
+    invoke-direct {p0}, Landroid/media/AudioTrack$StreamEventCallback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lax4;ILtjb;Lgq6;)Lb13;
-    .locals 2
+.method public final onDataRequest(Landroid/media/AudioTrack;I)V
+    .locals 0
 
-    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget p2, p0, Lm84;->a:I
 
-    invoke-virtual {p1}, Lax4;->n0()V
+    packed-switch p2, :pswitch_data_0
 
-    iget-object v0, p1, Lax4;->c:Llq6;
+    iget-object p0, p0, Lm84;->b:Ljava/lang/Object;
 
-    if-eqz v0, :cond_0
+    check-cast p0, Ln84;
 
-    sget-object v1, Llq6;->c:Llq6;
+    iget-object p0, p0, Ln84;->c:Lp84;
 
-    if-ne v0, v1, :cond_1
+    iget-object p2, p0, Lp84;->w:Landroid/media/AudioTrack;
 
-    :cond_0
-    invoke-virtual {p1}, Lax4;->n()Ljava/io/InputStream;
+    invoke-virtual {p1, p2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v1
+    move-result p1
 
-    if-eqz v1, :cond_1
-
-    sget-object v0, Lmq6;->d:Lt97;
-
-    :try_start_0
-    invoke-static {v1}, Lxy6;->r(Ljava/io/InputStream;)Llq6;
-
-    move-result-object v0
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    iput-object v0, p1, Lax4;->c:Llq6;
+    if-nez p1, :cond_0
 
     goto :goto_0
 
-    :catch_0
-    move-exception p0
+    :cond_0
+    iget-object p1, p0, Lp84;->s:Lsag;
 
-    invoke-static {p0}, Lbm3;->z(Ljava/lang/Throwable;)V
+    if-eqz p1, :cond_1
 
-    const/4 p0, 0x0
+    iget-boolean p0, p0, Lp84;->Y:Z
 
-    throw p0
+    if-eqz p0, :cond_1
+
+    iget-object p0, p1, Lsag;->b:Ljava/lang/Object;
+
+    check-cast p0, Lk78;
+
+    iget-object p0, p0, Lv78;->M0:Lj75;
+
+    if-eqz p0, :cond_1
+
+    invoke-virtual {p0}, Lj75;->a()V
 
     :cond_1
     :goto_0
-    iget-object v1, p0, Lm84;->e:Ljava/util/Map;
+    return-void
 
-    if-eqz v1, :cond_2
+    :pswitch_0
+    iget-object p0, p0, Lm84;->b:Ljava/lang/Object;
 
-    invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast p0, Ljab;
 
-    move-result-object v0
+    iget-object p0, p0, Ljab;->c:Ljava/lang/Object;
 
-    check-cast v0, Liq6;
+    check-cast p0, Lo84;
 
-    if-eqz v0, :cond_2
+    iget-object p2, p0, Lo84;->u:Landroid/media/AudioTrack;
 
-    invoke-interface {v0, p1, p2, p3, p4}, Liq6;->a(Lax4;ILtjb;Lgq6;)Lb13;
+    if-ne p1, p2, :cond_2
 
-    move-result-object p0
+    const/4 p1, 0x1
 
-    return-object p0
+    goto :goto_1
 
     :cond_2
-    iget-object p0, p0, Lm84;->d:Lye;
+    const/4 p1, 0x0
 
-    invoke-virtual {p0, p1, p2, p3, p4}, Lye;->a(Lax4;ILtjb;Lgq6;)Lb13;
+    :goto_1
+    invoke-static {p1}, Lq46;->f(Z)V
 
-    move-result-object p0
+    iget-object p1, p0, Lo84;->r:Lrag;
 
-    return-object p0
+    if-eqz p1, :cond_3
+
+    iget-boolean p0, p0, Lo84;->U:Z
+
+    if-eqz p0, :cond_3
+
+    iget-object p0, p1, Lrag;->b:Ljava/lang/Object;
+
+    check-cast p0, Lj78;
+
+    iget-object p0, p0, Lj78;->V1:Li75;
+
+    if-eqz p0, :cond_3
+
+    iget-object p0, p0, Li75;->a:Ls75;
+
+    iget-object p0, p0, Ls75;->o0:Ljge;
+
+    const/4 p1, 0x2
+
+    invoke-virtual {p0, p1}, Ljge;->c(I)Z
+
+    :cond_3
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final b(Lax4;Lgq6;)Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;
+.method public onPresentationEnded(Landroid/media/AudioTrack;)V
     .locals 1
 
-    iget-object p2, p2, Lgq6;->a:Landroid/graphics/Bitmap$Config;
+    iget v0, p0, Lm84;->a:I
 
-    iget-object p0, p0, Lm84;->c:Lnxa;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-interface {p0, p1, p2}, Lnxa;->a(Lax4;Landroid/graphics/Bitmap$Config;)Le13;
+    invoke-super {p0, p1}, Landroid/media/AudioTrack$StreamEventCallback;->onPresentationEnded(Landroid/media/AudioTrack;)V
 
-    move-result-object p0
+    return-void
 
-    :try_start_0
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :pswitch_0
+    iget-object p0, p0, Lm84;->b:Ljava/lang/Object;
 
-    sget-object p2, Let6;->d:Let6;
+    check-cast p0, Ln84;
 
-    invoke-virtual {p1}, Lax4;->n0()V
+    iget-object v0, p0, Ln84;->c:Lp84;
 
-    iget v0, p1, Lax4;->o:I
+    iget-object v0, v0, Lp84;->w:Landroid/media/AudioTrack;
 
-    invoke-virtual {p1}, Lax4;->n0()V
+    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    iget p1, p1, Lax4;->X:I
+    move-result p1
 
-    invoke-static {p0, p2, v0, p1}, Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;->of(Le13;Ltjb;II)Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;
+    if-nez p1, :cond_0
 
-    move-result-object p1
+    goto :goto_0
 
-    const-string p2, "is_rounded"
+    :cond_0
+    iget-object p0, p0, Ln84;->c:Lp84;
 
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    const/4 p1, 0x1
 
-    invoke-interface {p1, p2, v0}, Lcom/facebook/fresco/middleware/HasExtraData;->putExtra(Ljava/lang/String;Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iput-boolean p1, p0, Lp84;->X:Z
 
-    invoke-static {p0}, Le13;->S(Le13;)V
+    :goto_0
+    return-void
 
-    return-object p1
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    :catchall_0
-    move-exception p1
+.method public final onTearDown(Landroid/media/AudioTrack;)V
+    .locals 1
 
-    invoke-static {p0}, Le13;->S(Le13;)V
+    iget v0, p0, Lm84;->a:I
 
-    throw p1
+    packed-switch v0, :pswitch_data_0
+
+    iget-object p0, p0, Lm84;->b:Ljava/lang/Object;
+
+    check-cast p0, Ln84;
+
+    iget-object p0, p0, Ln84;->c:Lp84;
+
+    iget-object v0, p0, Lp84;->w:Landroid/media/AudioTrack;
+
+    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    iget-object p1, p0, Lp84;->s:Lsag;
+
+    if-eqz p1, :cond_1
+
+    iget-boolean p0, p0, Lp84;->Y:Z
+
+    if-eqz p0, :cond_1
+
+    iget-object p0, p1, Lsag;->b:Ljava/lang/Object;
+
+    check-cast p0, Lk78;
+
+    iget-object p0, p0, Lv78;->M0:Lj75;
+
+    if-eqz p0, :cond_1
+
+    invoke-virtual {p0}, Lj75;->a()V
+
+    :cond_1
+    :goto_0
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lm84;->b:Ljava/lang/Object;
+
+    check-cast p0, Ljab;
+
+    iget-object p0, p0, Ljab;->c:Ljava/lang/Object;
+
+    check-cast p0, Lo84;
+
+    iget-object v0, p0, Lo84;->u:Landroid/media/AudioTrack;
+
+    if-ne p1, v0, :cond_2
+
+    const/4 p1, 0x1
+
+    goto :goto_1
+
+    :cond_2
+    const/4 p1, 0x0
+
+    :goto_1
+    invoke-static {p1}, Lq46;->f(Z)V
+
+    iget-object p1, p0, Lo84;->r:Lrag;
+
+    if-eqz p1, :cond_3
+
+    iget-boolean p0, p0, Lo84;->U:Z
+
+    if-eqz p0, :cond_3
+
+    iget-object p0, p1, Lrag;->b:Ljava/lang/Object;
+
+    check-cast p0, Lj78;
+
+    iget-object p0, p0, Lj78;->V1:Li75;
+
+    if-eqz p0, :cond_3
+
+    iget-object p0, p0, Li75;->a:Ls75;
+
+    iget-object p0, p0, Ls75;->o0:Ljge;
+
+    const/4 p1, 0x2
+
+    invoke-virtual {p0, p1}, Ljge;->c(I)Z
+
+    :cond_3
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

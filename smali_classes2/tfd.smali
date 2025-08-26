@@ -1,64 +1,84 @@
 .class public final Ltfd;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Lvfd;
+.implements Ll66;
 
 
-# static fields
-.field public static final a:Ltfd;
+# instance fields
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Lone/me/settings/privacy/ui/SettingsPrivacyScreen;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/settings/privacy/ui/SettingsPrivacyScreen;)V
+    .locals 0
 
-    new-instance v0, Ltfd;
+    iput-object p2, p0, Ltfd;->Y:Lone/me/settings/privacy/ui/SettingsPrivacyScreen;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const/4 p2, 0x2
 
-    sput-object v0, Ltfd;->a:Ltfd;
+    invoke-direct {p0, p2, p1}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Ltfd;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Ltfd;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Ltfd;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .locals 1
 
-    const/4 v0, 0x1
+    new-instance v0, Ltfd;
 
-    if-ne p0, p1, :cond_0
+    iget-object p0, p0, Ltfd;->Y:Lone/me/settings/privacy/ui/SettingsPrivacyScreen;
 
-    return v0
+    invoke-direct {v0, p2, p0}, Ltfd;-><init>(Lkotlin/coroutines/Continuation;Lone/me/settings/privacy/ui/SettingsPrivacyScreen;)V
 
-    :cond_0
-    instance-of p0, p1, Ltfd;
+    iput-object p1, v0, Ltfd;->X:Ljava/lang/Object;
 
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
+    return-object v0
 .end method
 
-.method public final hashCode()I
-    .locals 0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    const p0, 0x79e8661
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    return p0
-.end method
+    iget-object p1, p0, Ltfd;->X:Ljava/lang/Object;
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
+    check-cast p1, Ljava/lang/String;
 
-    const-string p0, "Reject"
+    new-instance v0, Lmfa;
+
+    iget-object p0, p0, Ltfd;->Y:Lone/me/settings/privacy/ui/SettingsPrivacyScreen;
+
+    invoke-direct {v0, p0}, Lmfa;-><init>(Lone/me/sdk/arch/Widget;)V
+
+    invoke-virtual {v0, p1}, Lmfa;->h(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {v0}, Lmfa;->i()Llfa;
+
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 .end method

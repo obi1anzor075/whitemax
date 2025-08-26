@@ -1,67 +1,61 @@
-.class public abstract synthetic Lai5;
-.super Ljava/lang/Object;
+.class public final Lai5;
+.super Lbi5;
 .source "SourceFile"
 
 
 # static fields
-.field public static final synthetic $EnumSwitchMapping$0:[I
+.field public static final a:Lai5;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 1
 
-    invoke-static {}, Lvh5;->values()[Lvh5;
+    new-instance v0, Lai5;
 
-    move-result-object v0
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    const/4 v1, 0x1
-
-    :try_start_0
-    sget-object v2, Lvh5;->a:Lvh5;
-
-    const/4 v2, 0x0
-
-    aput v1, v0, v2
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    const/4 v2, 0x2
-
-    :try_start_1
-    sget-object v3, Lvh5;->a:Lvh5;
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    const/4 v1, 0x3
-
-    :try_start_2
-    sget-object v3, Lvh5;->a:Lvh5;
-
-    aput v1, v0, v2
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    :try_start_3
-    sget-object v2, Lvh5;->a:Lvh5;
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
-    sput-object v0, Lai5;->$EnumSwitchMapping$0:[I
+    sput-object v0, Lai5;->a:Lai5;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of p0, p1, Lai5;
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    const p0, 0x14abf4b9
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "Success"
+
+    return-object p0
 .end method

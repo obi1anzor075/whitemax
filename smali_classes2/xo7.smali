@@ -1,63 +1,63 @@
-.class public abstract synthetic Lxo7;
-.super Ljava/lang/Object;
+.class public final Lxo7;
+.super Lbu3;
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic $EnumSwitchMapping$0:[I
+# instance fields
+.field public X:Ljava/util/ArrayList;
 
-.field public static final synthetic $EnumSwitchMapping$1:[I
+.field public Y:Ljava/util/LinkedHashMap;
+
+.field public Z:J
+
+.field public o:Lyo7;
+
+.field public o0:I
+
+.field public p0:I
+
+.field public q0:I
+
+.field public synthetic r0:Ljava/lang/Object;
+
+.field public final synthetic s0:Lyo7;
+
+.field public t0:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Lyo7;Lbu3;)V
+    .locals 0
 
-    invoke-static {}, Lln3;->values()[Lln3;
+    iput-object p1, p0, Lxo7;->s0:Lyo7;
 
-    move-result-object v0
-
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    const/4 v1, 0x1
-
-    :try_start_0
-    aput v1, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    sput-object v0, Lxo7;->$EnumSwitchMapping$0:[I
-
-    invoke-static {}, Lms8;->values()[Lms8;
-
-    move-result-object v0
-
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    :try_start_1
-    sget-object v2, Lms8;->a:Ljava/util/HashMap;
-
-    aput v1, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    :try_start_2
-    sget-object v1, Lms8;->a:Ljava/util/HashMap;
-
-    const/4 v1, 0x2
-
-    aput v1, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    sput-object v0, Lxo7;->$EnumSwitchMapping$1:[I
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    iput-object p1, p0, Lxo7;->r0:Ljava/lang/Object;
+
+    iget p1, p0, Lxo7;->t0:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lxo7;->t0:I
+
+    iget-object p1, p0, Lxo7;->s0:Lyo7;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lyo7;->W0(Ljava/util/ArrayList;Lbu3;)Ljava/io/Serializable;
+
+    move-result-object p0
+
+    return-object p0
 .end method

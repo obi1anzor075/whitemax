@@ -1,19 +1,27 @@
-.class public final Lo45;
-.super Ljava/lang/Object;
+.class public abstract Lo45;
+.super Ljx3;
 .source "SourceFile"
 
-
-# instance fields
-.field public final synthetic a:Ly45;
+# interfaces
+.implements Ljava/io/Closeable;
+.implements Ljava/lang/AutoCloseable;
 
 
 # direct methods
-.method public constructor <init>(Ly45;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Ljx3;->Key:Lix3;
 
-    iput-object p1, p0, Lo45;->a:Ly45;
+    if-eqz v0, :cond_0
 
+    iget-object v0, v0, Lix3;->b:Lgx3;
+
+    :cond_0
     return-void
+.end method
+
+
+# virtual methods
+.method public abstract n()Ljava/util/concurrent/Executor;
 .end method

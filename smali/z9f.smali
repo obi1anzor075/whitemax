@@ -1,80 +1,51 @@
-.class public abstract Lz9f;
-.super Ljava/lang/Object;
+.class public final Lz9f;
+.super Lsod;
 .source "SourceFile"
 
+# interfaces
+.implements Le77;
 
-# direct methods
-.method public static a(Landroid/view/View;)Landroid/view/View$AccessibilityDelegate;
-    .locals 0
 
-    invoke-virtual {p0}, Landroid/view/View;->getAccessibilityDelegate()Landroid/view/View$AccessibilityDelegate;
+# instance fields
+.field public B0:Lykc;
 
-    move-result-object p0
 
-    return-object p0
-.end method
+# virtual methods
+.method public final C()V
+    .locals 1
 
-.method public static b(Landroid/view/View;)Landroid/view/contentcapture/ContentCaptureSession;
-    .locals 0
+    const/4 v0, 0x0
 
-    invoke-virtual {p0}, Landroid/view/View;->getContentCaptureSession()Landroid/view/contentcapture/ContentCaptureSession;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static c(Landroid/view/View;)Ljava/util/List;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/view/View;",
-            ")",
-            "Ljava/util/List<",
-            "Landroid/graphics/Rect;",
-            ">;"
-        }
-    .end annotation
-
-    invoke-virtual {p0}, Landroid/view/View;->getSystemGestureExclusionRects()Ljava/util/List;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static d(Landroid/view/View;Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
-    .locals 0
-
-    invoke-virtual/range {p0 .. p6}, Landroid/view/View;->saveAttributeDataForStyleable(Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
+    iput-object v0, p0, Lz9f;->B0:Lykc;
 
     return-void
 .end method
 
-.method public static e(Landroid/view/View;Lop3;)V
-    .locals 0
+.method public final x(Lol7;)V
+    .locals 2
 
-    const/4 p1, 0x0
+    check-cast p1, Lx9f;
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->setContentCaptureSession(Landroid/view/contentcapture/ContentCaptureSession;)V
+    iget-object v0, p0, Lccc;->a:Landroid/view/View;
 
-    return-void
-.end method
+    check-cast v0, Ly9f;
 
-.method public static f(Landroid/view/View;Ljava/util/List;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/view/View;",
-            "Ljava/util/List<",
-            "Landroid/graphics/Rect;",
-            ">;)V"
-        }
-    .end annotation
+    iget-object v1, p1, Lx9f;->b:Lw9f;
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->setSystemGestureExclusionRects(Ljava/util/List;)V
+    invoke-virtual {v0, v1}, Ly9f;->setType(Lw9f;)V
+
+    iget-object p1, p1, Lx9f;->c:Lmoe;
+
+    invoke-virtual {p1, p0}, Lmoe;->a(Lsod;)Ljava/lang/CharSequence;
+
+    move-result-object p0
+
+    if-nez p0, :cond_0
+
+    const-string p0, ""
+
+    :cond_0
+    invoke-virtual {v0, p0}, Ly9f;->setTitle(Ljava/lang/CharSequence;)V
 
     return-void
 .end method

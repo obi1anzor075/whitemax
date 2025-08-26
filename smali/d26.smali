@@ -2,5 +2,7 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ln26;
+
+# virtual methods
+.method public abstract a(Landroidx/fragment/app/a;)V
+.end method

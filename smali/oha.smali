@@ -1,74 +1,27 @@
-.class public final Loha;
+.class public abstract Loha;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Landroid/graphics/drawable/BitmapDrawable;
-
-.field public b:F
-
-.field public final c:Landroid/graphics/Rect;
-
-.field public d:Landroid/view/animation/Interpolator;
-
-.field public e:J
-
-.field public final f:Landroid/graphics/Rect;
-
-.field public g:I
-
-.field public h:F
-
-.field public i:F
-
-.field public j:J
-
-.field public k:Z
-
-.field public l:Z
-
-.field public m:Lafc;
+# static fields
+.field public static final a:Lwfe;
 
 
 # direct methods
-.method public constructor <init>(Landroid/graphics/drawable/BitmapDrawable;Landroid/graphics/Rect;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lh2a;
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    const/16 v1, 0x13
 
-    iput v0, p0, Loha;->b:F
+    invoke-direct {v0, v1}, Lh2a;-><init>(I)V
 
-    iput v0, p0, Loha;->h:F
+    new-instance v1, Lwfe;
 
-    iput v0, p0, Loha;->i:F
+    invoke-direct {v1, v0}, Lwfe;-><init>(Lv56;)V
 
-    iput-object p1, p0, Loha;->a:Landroid/graphics/drawable/BitmapDrawable;
+    sput-object v1, Loha;->a:Lwfe;
 
-    iput-object p2, p0, Loha;->f:Landroid/graphics/Rect;
-
-    new-instance v0, Landroid/graphics/Rect;
-
-    invoke-direct {v0, p2}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
-
-    iput-object v0, p0, Loha;->c:Landroid/graphics/Rect;
-
-    if-eqz p1, :cond_0
-
-    iget p0, p0, Loha;->b:F
-
-    const/high16 p2, 0x437f0000    # 255.0f
-
-    mul-float/2addr p0, p2
-
-    float-to-int p0, p0
-
-    invoke-virtual {p1, p0}, Landroid/graphics/drawable/BitmapDrawable;->setAlpha(I)V
-
-    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
-
-    :cond_0
     return-void
 .end method

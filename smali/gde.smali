@@ -1,42 +1,34 @@
-.class public interface abstract Lgde;
+.class public final synthetic Lgde;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lq0c;
+.implements Landroid/view/PixelCopy$OnPixelCopyFinishedListener;
 
 
-# static fields
-.field public static final c0:Lz80;
-
-.field public static final d0:Lz80;
+# instance fields
+.field public final synthetic a:Ljava/util/concurrent/Semaphore;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public synthetic constructor <init>(Ljava/util/concurrent/Semaphore;)V
+    .locals 0
 
-    new-instance v0, Lz80;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "camerax.core.target.name"
+    iput-object p1, p0, Lgde;->a:Ljava/util/concurrent/Semaphore;
 
-    const-class v2, Ljava/lang/String;
+    return-void
+.end method
 
-    const/4 v3, 0x0
 
-    invoke-direct {v0, v2, v3, v1}, Lz80;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
+# virtual methods
+.method public final onPixelCopyFinished(I)V
+    .locals 0
 
-    sput-object v0, Lgde;->c0:Lz80;
+    iget-object p0, p0, Lgde;->a:Ljava/util/concurrent/Semaphore;
 
-    new-instance v0, Lz80;
-
-    const-string v1, "camerax.core.target.class"
-
-    const-class v2, Ljava/lang/Class;
-
-    invoke-direct {v0, v2, v3, v1}, Lz80;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
-
-    sput-object v0, Lgde;->d0:Lz80;
+    invoke-virtual {p0}, Ljava/util/concurrent/Semaphore;->release()V
 
     return-void
 .end method

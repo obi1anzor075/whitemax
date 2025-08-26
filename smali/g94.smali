@@ -1,30 +1,60 @@
 .class public abstract Lg94;
-.super Ljava/lang/Object;
+.super Lzh0;
 .source "SourceFile"
 
 
-# direct methods
-.method public static a(Landroid/app/NotificationManager;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 2
+# virtual methods
+.method public final finalize()V
+    .locals 3
 
-    new-instance v0, Landroid/app/NotificationChannel;
+    invoke-interface {p0}, Lc33;->isClosed()Z
 
-    const/4 v1, 0x2
+    move-result v0
 
-    invoke-direct {v0, p1, p2, v1}, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
-
-    sget p1, Loze;->a:I
-
-    const/16 p2, 0x1b
-
-    if-gt p1, p2, :cond_0
-
-    const/4 p1, 0x0
-
-    invoke-virtual {v0, p1}, Landroid/app/NotificationChannel;->setShowBadge(Z)V
-
-    :cond_0
-    invoke-virtual {p0, v0}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
+    if-eqz v0, :cond_0
 
     return-void
+
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    filled-new-array {v0, v1}, [Ljava/lang/Object;
+
+    move-result-object v0
+
+    const-string v1, "CloseableImage"
+
+    const-string v2, "finalize: %s %x still open."
+
+    invoke-static {v1, v2, v0}, Lda5;->m(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    :try_start_0
+    invoke-interface {p0}, Lc33;->close()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-super {p0}, Ljava/lang/Object;->finalize()V
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    invoke-super {p0}, Ljava/lang/Object;->finalize()V
+
+    throw v0
 .end method

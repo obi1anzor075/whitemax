@@ -3,17 +3,29 @@
 .source "SourceFile"
 
 
-# virtual methods
-.method public final serializer()Ll77;
+# instance fields
+.field public final a:Ljava/lang/String;
+
+.field public final b:I
+
+.field public final c:I
+
+.field public final d:J
+
+
+# direct methods
+.method public constructor <init>(JLjava/lang/String;II)V
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ll77;"
-        }
-    .end annotation
 
-    sget-object p0, Lmkf;->a:Lmkf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-object p0
+    iput-object p3, p0, Lnkf;->a:Ljava/lang/String;
+
+    iput p4, p0, Lnkf;->b:I
+
+    iput p5, p0, Lnkf;->c:I
+
+    iput-wide p1, p0, Lnkf;->d:J
+
+    return-void
 .end method

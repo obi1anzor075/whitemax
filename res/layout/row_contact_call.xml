@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/RowPadding"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <ru.ok.messages.views.widgets.TamAvatarView android:id="@id/row_contact_base__av_view" android:layout_width="@dimen/avatar_large" android:layout_height="@dimen/avatar_large" android:layout_centerVertical="true" android:layout_alignParentStart="true" app:placeHolder="@drawable/ava_m_40" />
-    <include android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="12.0dip" android:layout_toStartOf="@id/row_contact_call__btn_call_audio" android:layout_toEndOf="@id/row_contact_base__av_view" layout="@layout/ll_contact" />
-    <androidx.appcompat.widget.AppCompatImageView android:gravity="center" android:id="@id/row_contact_call__btn_call_video" android:padding="6.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_video_24" android:layout_centerVertical="true" android:layout_marginEnd="-2.0dip" android:layout_alignParentEnd="true" />
-    <androidx.appcompat.widget.AppCompatImageView android:id="@id/row_contact_call__btn_call_audio" android:padding="7.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_call_24" android:layout_centerVertical="true" android:layout_marginStart="7.0dip" android:layout_marginEnd="6.0dip" android:layout_toStartOf="@id/row_contact_call__btn_call_video" />
-</RelativeLayout>

@@ -1,158 +1,796 @@
 .class public final Lxw9;
-.super Lb97;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lu16;
+.implements La0a;
+.implements Lam4;
 
 
 # instance fields
+.field public final X:Ljava/lang/Object;
+
 .field public final synthetic a:I
 
-.field public final synthetic b:Lex9;
+.field public b:Ljava/lang/Object;
+
+.field public c:Lam4;
+
+.field public o:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lex9;I)V
+.method public synthetic constructor <init>(Ljava/lang/Object;Ln4b;I)V
     .locals 0
 
-    iput p2, p0, Lxw9;->a:I
+    .line 1
+    iput p3, p0, Lxw9;->a:I
 
-    iput-object p1, p0, Lxw9;->b:Lex9;
+    iput-object p1, p0, Lxw9;->X:Ljava/lang/Object;
 
-    const/4 p1, 0x1
+    iput-object p2, p0, Lxw9;->b:Ljava/lang/Object;
 
-    invoke-direct {p0, p1}, Lb97;-><init>(I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lnpd;)V
+    .locals 1
+
+    const/4 v0, 0x2
+
+    iput v0, p0, Lxw9;->a:I
+
+    .line 2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 3
+    iput-object p1, p0, Lxw9;->X:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final b()V
+    .locals 3
+
+    iget v0, p0, Lxw9;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-boolean v0, p0, Lxw9;->o:Z
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lxw9;->o:Z
+
+    iget-object p0, p0, Lxw9;->X:Ljava/lang/Object;
+
+    check-cast p0, La0a;
+
+    invoke-interface {p0}, La0a;->b()V
+
+    :cond_0
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lxw9;->X:Ljava/lang/Object;
+
+    check-cast p0, La0a;
+
+    invoke-interface {p0}, La0a;->b()V
+
+    return-void
+
+    :pswitch_1
+    iget-object v0, p0, Lxw9;->X:Ljava/lang/Object;
+
+    check-cast v0, Lnpd;
+
+    iget-boolean v1, p0, Lxw9;->o:Z
+
+    if-eqz v1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Lxw9;->o:Z
+
+    iget-object v1, p0, Lxw9;->b:Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    iput-object v2, p0, Lxw9;->b:Ljava/lang/Object;
+
+    if-nez v1, :cond_2
+
+    move-object v1, v2
+
+    :cond_2
+    if-eqz v1, :cond_3
+
+    invoke-interface {v0, v1}, Lnpd;->a(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_3
+    new-instance p0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    invoke-interface {v0, p0}, Lnpd;->onError(Ljava/lang/Throwable;)V
+
+    :goto_0
+    return-void
+
+    :pswitch_2
+    iget-boolean v0, p0, Lxw9;->o:Z
+
+    if-nez v0, :cond_4
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lxw9;->o:Z
+
+    iget-object p0, p0, Lxw9;->X:Ljava/lang/Object;
+
+    check-cast p0, Lnpd;
+
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    invoke-interface {p0, v0}, Lnpd;->a(Ljava/lang/Object;)V
+
+    :cond_4
+    return-void
+
+    :pswitch_3
+    iget-object v0, p0, Lxw9;->X:Ljava/lang/Object;
+
+    check-cast v0, La0a;
+
+    iget-boolean v1, p0, Lxw9;->o:Z
+
+    if-nez v1, :cond_5
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Lxw9;->o:Z
+
+    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    invoke-interface {v0, p0}, La0a;->h(Ljava/lang/Object;)V
+
+    invoke-interface {v0}, La0a;->b()V
+
+    :cond_5
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final c(Lam4;)V
+    .locals 1
+
+    iget v0, p0, Lxw9;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Lxw9;->c:Lam4;
+
+    invoke-static {v0, p1}, Lem4;->h(Lam4;Lam4;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iput-object p1, p0, Lxw9;->c:Lam4;
+
+    iget-object p1, p0, Lxw9;->X:Ljava/lang/Object;
+
+    check-cast p1, La0a;
+
+    invoke-interface {p1, p0}, La0a;->c(Lam4;)V
+
+    :cond_0
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Lxw9;->c:Lam4;
+
+    invoke-static {v0, p1}, Lem4;->h(Lam4;Lam4;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iput-object p1, p0, Lxw9;->c:Lam4;
+
+    iget-object p1, p0, Lxw9;->X:Ljava/lang/Object;
+
+    check-cast p1, La0a;
+
+    invoke-interface {p1, p0}, La0a;->c(Lam4;)V
+
+    :cond_1
+    return-void
+
+    :pswitch_1
+    iget-object v0, p0, Lxw9;->c:Lam4;
+
+    invoke-static {v0, p1}, Lem4;->h(Lam4;Lam4;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iput-object p1, p0, Lxw9;->c:Lam4;
+
+    iget-object p1, p0, Lxw9;->X:Ljava/lang/Object;
+
+    check-cast p1, Lnpd;
+
+    invoke-interface {p1, p0}, Lnpd;->c(Lam4;)V
+
+    :cond_2
+    return-void
+
+    :pswitch_2
+    iget-object v0, p0, Lxw9;->c:Lam4;
+
+    invoke-static {v0, p1}, Lem4;->h(Lam4;Lam4;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    iput-object p1, p0, Lxw9;->c:Lam4;
+
+    iget-object p1, p0, Lxw9;->X:Ljava/lang/Object;
+
+    check-cast p1, Lnpd;
+
+    invoke-interface {p1, p0}, Lnpd;->c(Lam4;)V
+
+    :cond_3
+    return-void
+
+    :pswitch_3
+    iget-object v0, p0, Lxw9;->c:Lam4;
+
+    invoke-static {v0, p1}, Lem4;->h(Lam4;Lam4;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    iput-object p1, p0, Lxw9;->c:Lam4;
+
+    iget-object p1, p0, Lxw9;->X:Ljava/lang/Object;
+
+    check-cast p1, La0a;
+
+    invoke-interface {p1, p0}, La0a;->c(Lam4;)V
+
+    :cond_4
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final f()V
+    .locals 1
+
+    iget v0, p0, Lxw9;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object p0, p0, Lxw9;->c:Lam4;
+
+    invoke-interface {p0}, Lam4;->f()V
+
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lxw9;->c:Lam4;
+
+    invoke-interface {p0}, Lam4;->f()V
+
+    return-void
+
+    :pswitch_1
+    iget-object p0, p0, Lxw9;->c:Lam4;
+
+    invoke-interface {p0}, Lam4;->f()V
+
+    return-void
+
+    :pswitch_2
+    iget-object p0, p0, Lxw9;->c:Lam4;
+
+    invoke-interface {p0}, Lam4;->f()V
+
+    return-void
+
+    :pswitch_3
+    iget-object p0, p0, Lxw9;->c:Lam4;
+
+    invoke-interface {p0}, Lam4;->f()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final g()Z
+    .locals 1
+
+    iget v0, p0, Lxw9;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object p0, p0, Lxw9;->c:Lam4;
+
+    invoke-interface {p0}, Lam4;->g()Z
+
+    move-result p0
+
+    return p0
+
+    :pswitch_0
+    iget-object p0, p0, Lxw9;->c:Lam4;
+
+    invoke-interface {p0}, Lam4;->g()Z
+
+    move-result p0
+
+    return p0
+
+    :pswitch_1
+    iget-object p0, p0, Lxw9;->c:Lam4;
+
+    invoke-interface {p0}, Lam4;->g()Z
+
+    move-result p0
+
+    return p0
+
+    :pswitch_2
+    iget-object p0, p0, Lxw9;->c:Lam4;
+
+    invoke-interface {p0}, Lam4;->g()Z
+
+    move-result p0
+
+    return p0
+
+    :pswitch_3
+    iget-object p0, p0, Lxw9;->c:Lam4;
+
+    invoke-interface {p0}, Lam4;->g()Z
+
+    move-result p0
+
+    return p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final h(Ljava/lang/Object;)V
     .locals 2
 
     iget v0, p0, Lxw9;->a:I
 
     packed-switch v0, :pswitch_data_0
 
-    check-cast p1, Lgd0;
+    iget-object v0, p0, Lxw9;->X:Ljava/lang/Object;
 
-    iget-object p0, p0, Lxw9;->b:Lex9;
+    check-cast v0, La0a;
 
-    iget-object v0, p0, Lex9;->c:Lww9;
+    iget-boolean v1, p0, Lxw9;->o:Z
 
-    if-nez v0, :cond_2
+    if-nez v1, :cond_0
 
-    iget-object p0, p0, Lex9;->b:Llr;
+    invoke-interface {v0, p1}, La0a;->h(Ljava/lang/Object;)V
 
-    invoke-virtual {p0}, Lr2;->size()I
+    :try_start_0
+    iget-object v1, p0, Lxw9;->b:Ljava/lang/Object;
 
-    move-result v0
+    check-cast v1, Lgme;
 
-    invoke-virtual {p0, v0}, Ljava/util/AbstractList;->listIterator(I)Ljava/util/ListIterator;
+    invoke-virtual {v1, p1}, Lgme;->test(Ljava/lang/Object;)Z
 
-    move-result-object p0
+    move-result p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :cond_0
-    invoke-interface {p0}, Ljava/util/ListIterator;->hasPrevious()Z
+    if-eqz p1, :cond_0
 
-    move-result v0
+    const/4 p1, 0x1
 
-    if-eqz v0, :cond_1
+    iput-boolean p1, p0, Lxw9;->o:Z
 
-    invoke-interface {p0}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
+    iget-object p0, p0, Lxw9;->c:Lam4;
 
-    move-result-object v0
+    invoke-interface {p0}, Lam4;->f()V
 
-    move-object v1, v0
-
-    check-cast v1, Lww9;
-
-    iget-boolean v1, v1, Lww9;->a:Z
-
-    if-eqz v1, :cond_0
+    invoke-interface {v0}, La0a;->b()V
 
     goto :goto_0
 
-    :cond_1
-    const/4 v0, 0x0
+    :catchall_0
+    move-exception p1
 
+    invoke-static {p1}, Lfc2;->G(Ljava/lang/Throwable;)V
+
+    iget-object v0, p0, Lxw9;->c:Lam4;
+
+    invoke-interface {v0}, Lam4;->f()V
+
+    invoke-virtual {p0, p1}, Lxw9;->onError(Ljava/lang/Throwable;)V
+
+    :cond_0
     :goto_0
-    check-cast v0, Lww9;
-
-    :cond_2
-    if-eqz v0, :cond_3
-
-    invoke-virtual {v0, p1}, Lww9;->c(Lgd0;)V
-
-    :cond_3
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
+    return-void
 
     :pswitch_0
-    check-cast p1, Lgd0;
+    iget-object v0, p0, Lxw9;->X:Ljava/lang/Object;
 
-    iget-object p0, p0, Lxw9;->b:Lex9;
+    check-cast v0, La0a;
 
-    iget-object p1, p0, Lex9;->b:Llr;
+    iget-boolean v1, p0, Lxw9;->o:Z
 
-    invoke-virtual {p1}, Llr;->getSize()I
+    if-eqz v1, :cond_1
 
-    move-result v0
-
-    invoke-virtual {p1, v0}, Ljava/util/AbstractList;->listIterator(I)Ljava/util/ListIterator;
-
-    move-result-object p1
-
-    :cond_4
-    invoke-interface {p1}, Ljava/util/ListIterator;->hasPrevious()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    invoke-interface {p1}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    check-cast v1, Lww9;
-
-    iget-boolean v1, v1, Lww9;->a:Z
-
-    if-eqz v1, :cond_4
+    invoke-interface {v0, p1}, La0a;->h(Ljava/lang/Object;)V
 
     goto :goto_1
 
-    :cond_5
-    const/4 v0, 0x0
+    :cond_1
+    :try_start_1
+    iget-object v1, p0, Lxw9;->b:Ljava/lang/Object;
 
+    check-cast v1, Ldme;
+
+    invoke-virtual {v1, p1}, Ldme;->test(Ljava/lang/Object;)Z
+
+    move-result v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    if-nez v1, :cond_2
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Lxw9;->o:Z
+
+    invoke-interface {v0, p1}, La0a;->h(Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    :catchall_1
+    move-exception p1
+
+    invoke-static {p1}, Lfc2;->G(Ljava/lang/Throwable;)V
+
+    iget-object p0, p0, Lxw9;->c:Lam4;
+
+    invoke-interface {p0}, Lam4;->f()V
+
+    invoke-interface {v0, p1}, La0a;->onError(Ljava/lang/Throwable;)V
+
+    :cond_2
     :goto_1
-    check-cast v0, Lww9;
+    return-void
 
-    iget-object p1, p0, Lex9;->c:Lww9;
+    :pswitch_1
+    iget-boolean v0, p0, Lxw9;->o:Z
+
+    if-eqz v0, :cond_3
+
+    goto :goto_2
+
+    :cond_3
+    iget-object v0, p0, Lxw9;->b:Ljava/lang/Object;
+
+    if-eqz v0, :cond_4
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lxw9;->o:Z
+
+    iget-object p1, p0, Lxw9;->c:Lam4;
+
+    invoke-interface {p1}, Lam4;->f()V
+
+    iget-object p0, p0, Lxw9;->X:Ljava/lang/Object;
+
+    check-cast p0, Lnpd;
+
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "Sequence contains more than one element!"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    invoke-interface {p0, p1}, Lnpd;->onError(Ljava/lang/Throwable;)V
+
+    goto :goto_2
+
+    :cond_4
+    iput-object p1, p0, Lxw9;->b:Ljava/lang/Object;
+
+    :goto_2
+    return-void
+
+    :pswitch_2
+    iget-boolean v0, p0, Lxw9;->o:Z
+
+    if-eqz v0, :cond_5
+
+    goto :goto_3
+
+    :cond_5
+    :try_start_2
+    iget-object v0, p0, Lxw9;->b:Ljava/lang/Object;
+
+    check-cast v0, Ln4b;
+
+    invoke-interface {v0, p1}, Ln4b;->test(Ljava/lang/Object;)Z
+
+    move-result p1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     if-eqz p1, :cond_6
 
-    invoke-virtual {p0}, Lex9;->c()V
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lxw9;->o:Z
+
+    iget-object p1, p0, Lxw9;->c:Lam4;
+
+    invoke-interface {p1}, Lam4;->f()V
+
+    iget-object p0, p0, Lxw9;->X:Ljava/lang/Object;
+
+    check-cast p0, Lnpd;
+
+    sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-interface {p0, p1}, Lnpd;->a(Ljava/lang/Object;)V
+
+    goto :goto_3
+
+    :catchall_2
+    move-exception p1
+
+    invoke-static {p1}, Lfc2;->G(Ljava/lang/Throwable;)V
+
+    iget-object v0, p0, Lxw9;->c:Lam4;
+
+    invoke-interface {v0}, Lam4;->f()V
+
+    invoke-virtual {p0, p1}, Lxw9;->onError(Ljava/lang/Throwable;)V
 
     :cond_6
-    iput-object v0, p0, Lex9;->c:Lww9;
+    :goto_3
+    return-void
 
-    if-eqz v0, :cond_7
+    :pswitch_3
+    iget-object v0, p0, Lxw9;->X:Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lww9;->d()V
+    check-cast v0, La0a;
+
+    iget-boolean v1, p0, Lxw9;->o:Z
+
+    if-eqz v1, :cond_7
+
+    goto :goto_4
 
     :cond_7
-    sget-object p0, Ljue;->a:Ljue;
+    :try_start_3
+    iget-object v1, p0, Lxw9;->b:Ljava/lang/Object;
 
-    return-object p0
+    check-cast v1, Ln4b;
+
+    invoke-interface {v1, p1}, Ln4b;->test(Ljava/lang/Object;)Z
+
+    move-result p1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_3
+
+    if-eqz p1, :cond_8
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lxw9;->o:Z
+
+    iget-object p0, p0, Lxw9;->c:Lam4;
+
+    invoke-interface {p0}, Lam4;->f()V
+
+    sget-object p0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-interface {v0, p0}, La0a;->h(Ljava/lang/Object;)V
+
+    invoke-interface {v0}, La0a;->b()V
+
+    goto :goto_4
+
+    :catchall_3
+    move-exception p1
+
+    invoke-static {p1}, Lfc2;->G(Ljava/lang/Throwable;)V
+
+    iget-object v0, p0, Lxw9;->c:Lam4;
+
+    invoke-interface {v0}, Lam4;->f()V
+
+    invoke-virtual {p0, p1}, Lxw9;->onError(Ljava/lang/Throwable;)V
+
+    :cond_8
+    :goto_4
+    return-void
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final onError(Ljava/lang/Throwable;)V
+    .locals 1
+
+    iget v0, p0, Lxw9;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-boolean v0, p0, Lxw9;->o:Z
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lxw9;->o:Z
+
+    iget-object p0, p0, Lxw9;->X:Ljava/lang/Object;
+
+    check-cast p0, La0a;
+
+    invoke-interface {p0, p1}, La0a;->onError(Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {p1}, Lou0;->x(Ljava/lang/Throwable;)V
+
+    :goto_0
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lxw9;->X:Ljava/lang/Object;
+
+    check-cast p0, La0a;
+
+    invoke-interface {p0, p1}, La0a;->onError(Ljava/lang/Throwable;)V
+
+    return-void
+
+    :pswitch_1
+    iget-boolean v0, p0, Lxw9;->o:Z
+
+    if-eqz v0, :cond_1
+
+    invoke-static {p1}, Lou0;->x(Ljava/lang/Throwable;)V
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lxw9;->o:Z
+
+    iget-object p0, p0, Lxw9;->X:Ljava/lang/Object;
+
+    check-cast p0, Lnpd;
+
+    invoke-interface {p0, p1}, Lnpd;->onError(Ljava/lang/Throwable;)V
+
+    :goto_1
+    return-void
+
+    :pswitch_2
+    iget-boolean v0, p0, Lxw9;->o:Z
+
+    if-eqz v0, :cond_2
+
+    invoke-static {p1}, Lou0;->x(Ljava/lang/Throwable;)V
+
+    goto :goto_2
+
+    :cond_2
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lxw9;->o:Z
+
+    iget-object p0, p0, Lxw9;->X:Ljava/lang/Object;
+
+    check-cast p0, Lnpd;
+
+    invoke-interface {p0, p1}, Lnpd;->onError(Ljava/lang/Throwable;)V
+
+    :goto_2
+    return-void
+
+    :pswitch_3
+    iget-boolean v0, p0, Lxw9;->o:Z
+
+    if-eqz v0, :cond_3
+
+    invoke-static {p1}, Lou0;->x(Ljava/lang/Throwable;)V
+
+    goto :goto_3
+
+    :cond_3
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lxw9;->o:Z
+
+    iget-object p0, p0, Lxw9;->X:Ljava/lang/Object;
+
+    check-cast p0, La0a;
+
+    invoke-interface {p0, p1}, La0a;->onError(Ljava/lang/Throwable;)V
+
+    :goto_3
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

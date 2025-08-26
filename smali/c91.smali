@@ -1,64 +1,74 @@
 .class public final Lc91;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Lf91;
+.implements Ll66;
 
 
-# static fields
-.field public static final a:Lc91;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lc91;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lc91;->a:Lc91;
-
-    return-void
-.end method
+# instance fields
+.field public synthetic X:Ljava/lang/Object;
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Lox3;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lc91;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lc91;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lc91;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .locals 1
 
-    const/4 v0, 0x1
+    new-instance p0, Lc91;
 
-    if-ne p0, p1, :cond_0
+    const/4 v0, 0x2
 
-    return v0
+    invoke-direct {p0, v0, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
-    :cond_0
-    instance-of p0, p1, Lc91;
+    iput-object p1, p0, Lc91;->X:Ljava/lang/Object;
 
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
+    return-object p0
 .end method
 
-.method public final hashCode()I
-    .locals 0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    const p0, -0x2fe4f2f9
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    return p0
-.end method
+    iget-object p0, p0, Lc91;->X:Ljava/lang/Object;
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
+    check-cast p0, Lox3;
 
-    const-string p0, "OpenCallIncoming"
+    new-instance p1, Lb91;
+
+    const/4 v0, 0x2
+
+    const/4 v1, 0x0
+
+    invoke-direct {p1, v0, v1}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
+
+    const/4 v0, 0x3
+
+    invoke-static {p0, v1, v1, p1, v0}, Lzo3;->E(Lox3;Lhx3;Lrx3;Ll66;I)Ldwd;
+
+    move-result-object p0
 
     return-object p0
 .end method

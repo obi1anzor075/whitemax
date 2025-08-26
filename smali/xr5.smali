@@ -1,105 +1,79 @@
 .class public final Lxr5;
-.super Landroidx/recyclerview/widget/RecyclerView;
+.super Llq5;
 .source "SourceFile"
 
 
 # instance fields
-.field public final Z1:Lmr5;
+.field public final b:Lgsc;
+
+.field public final c:J
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/util/concurrent/ExecutorService;)V
-    .locals 2
+.method public constructor <init>(JLgsc;)V
+    .locals 1
 
-    const/4 v0, 0x0
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-direct {p0, p1, v0}, Landroidx/recyclerview/widget/RecyclerView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance p1, Lmr5;
+    iput-wide p1, p0, Lxr5;->c:J
 
-    invoke-direct {p1, p2}, Lmr5;-><init>(Ljava/util/concurrent/Executor;)V
-
-    iput-object p1, p0, Lxr5;->Z1:Lmr5;
-
-    new-instance p2, Lwr5;
-
-    invoke-direct {p2}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/RecyclerView;->setHasFixedSize(Z)V
-
-    new-instance v0, Lone/me/chats/list/folderwidget/section/FolderWidgetsSectionView$1;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1, v1}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(IZ)V
-
-    invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/a;)V
-
-    invoke-virtual {p0, p2}, Landroidx/recyclerview/widget/RecyclerView;->l(Lq6c;)V
-
-    invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Lf6c;)V
-
-    new-instance p1, Lvi2;
-
-    const/16 p2, 0xc
-
-    int-to-float p2, p2
-
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v0
-
-    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr p2, v0
-
-    invoke-static {p2}, La24;->X(F)I
-
-    move-result p2
-
-    const/16 v0, 0x8
-
-    int-to-float v0, v0
-
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v1
-
-    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr v0, v1
-
-    invoke-static {v0}, La24;->X(F)I
-
-    move-result v0
-
-    const/4 v1, 0x2
-
-    invoke-direct {p1, p2, v0, v1}, Lvi2;-><init>(III)V
-
-    invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/RecyclerView;->j(Ll6c;)V
+    iput-object p3, p0, Lxr5;->b:Lgsc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final setListener(Lvr5;)V
-    .locals 0
+.method public final f(Lvr5;)V
+    .locals 3
 
-    iget-object p0, p0, Lxr5;->Z1:Lmr5;
+    new-instance v0, Lwr5;
 
-    iput-object p1, p0, Lmr5;->Y:Ljava/lang/Object;
+    invoke-direct {v0, p1}, Lwr5;-><init>(Lj9e;)V
 
+    invoke-interface {p1, v0}, Lj9e;->d(Ll9e;)V
+
+    iget-wide v1, p0, Lxr5;->c:J
+
+    sget-object p1, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+
+    iget-object p0, p0, Lxr5;->b:Lgsc;
+
+    invoke-virtual {p0, v0, v1, v2, p1}, Lgsc;->c(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Lam4;
+
+    move-result-object p0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    invoke-virtual {v0, p1, p0}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object p1
+
+    sget-object v0, Lem4;->a:Lem4;
+
+    if-ne p1, v0, :cond_2
+
+    invoke-interface {p0}, Lam4;->f()V
+
+    :cond_2
+    :goto_0
     return-void
 .end method

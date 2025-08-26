@@ -36,17 +36,17 @@
     :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
+
+    const-class v2, Lru/ok/android/externcalls/sdk/waiting_room/ConversationWaitingParticipantId;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object v3
 
-    const-class v3, Lru/ok/android/externcalls/sdk/waiting_room/ConversationWaitingParticipantId;
+    if-eq v2, v3, :cond_1
 
-    if-eq v3, v2, :cond_1
-
-    goto :goto_1
+    goto :goto_0
 
     :cond_1
     check-cast p1, Lru/ok/android/externcalls/sdk/waiting_room/ConversationWaitingParticipantId;
@@ -69,16 +69,10 @@
 
     if-eqz p0, :cond_2
 
-    goto :goto_0
-
-    :cond_2
-    move v0, v1
-
-    :goto_0
     return v0
 
-    :cond_3
-    :goto_1
+    :cond_2
+    :goto_0
     return v1
 .end method
 
@@ -141,7 +135,7 @@
 
     const/16 p0, 0x7d
 
-    invoke-static {v0, v1, v2, p0}, Lm4b;->i(Ljava/lang/StringBuilder;JC)Ljava/lang/String;
+    invoke-static {v0, v1, v2, p0}, Lp3a;->j(Ljava/lang/StringBuilder;JC)Ljava/lang/String;
 
     move-result-object p0
 

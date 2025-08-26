@@ -72,7 +72,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_4
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
@@ -82,13 +82,16 @@
 
     move-result p0
 
-    if-eqz p0, :cond_4
+    if-eqz p0, :cond_3
+
+    goto :goto_0
 
     :cond_3
-    move p2, v1
+    return p2
 
     :cond_4
-    return p2
+    :goto_0
+    return v1
 
     :cond_5
     new-instance p0, Ljava/lang/IllegalArgumentException;
@@ -233,7 +236,7 @@
     :cond_1
     new-instance p2, Lorg/apache/http/cookie/MalformedCookieException;
 
-    invoke-static {v3, p1, v2, p0, v1}, Lc3d;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, p1, v2, p0, v1}, Lrqc;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -255,7 +258,7 @@
     :cond_4
     new-instance p2, Lorg/apache/http/cookie/MalformedCookieException;
 
-    invoke-static {v3, p1, v2, p0, v1}, Lc3d;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, p1, v2, p0, v1}, Lrqc;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

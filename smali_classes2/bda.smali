@@ -1,95 +1,61 @@
 .class public final Lbda;
-.super Ler3;
+.super Lcda;
 .source "SourceFile"
 
 
-# instance fields
-.field public A0:Ljava/io/File;
-
-.field public B0:Ljava/io/Closeable;
-
-.field public C0:Ljava/io/InputStream;
-
-.field public D0:Ljava/io/Closeable;
-
-.field public E0:Ljava/io/OutputStream;
-
-.field public F0:[B
-
-.field public G0:Ljava/util/Iterator;
-
-.field public H0:Z
-
-.field public I0:J
-
-.field public J0:I
-
-.field public synthetic K0:Ljava/lang/Object;
-
-.field public final synthetic L0:Ldda;
-
-.field public M0:I
-
-.field public X:Lxbc;
-
-.field public Y:Lvca;
-
-.field public Z:Ljava/io/File;
-
-.field public o:Ldda;
-
-.field public w0:Ljava/io/Serializable;
-
-.field public x0:Ljava/lang/Object;
-
-.field public y0:Lk7c;
-
-.field public z0:Lk7c;
+# static fields
+.field public static final a:Lbda;
 
 
 # direct methods
-.method public constructor <init>(Ldda;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lbda;->L0:Ldda;
+    new-instance v0, Lbda;
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lbda;->a:Lbda;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 7
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    iput-object p1, p0, Lbda;->K0:Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    iget p1, p0, Lbda;->M0:I
+    if-ne p0, p1, :cond_0
 
-    const/high16 v0, -0x80000000
+    return v0
 
-    or-int/2addr p1, v0
+    :cond_0
+    instance-of p0, p1, Lbda;
 
-    iput p1, p0, Lbda;->M0:I
+    if-nez p0, :cond_1
 
-    iget-object v0, p0, Lbda;->L0:Ldda;
+    const/4 p0, 0x0
 
-    const/4 v1, 0x0
+    return p0
 
-    const/4 v2, 0x0
+    :cond_1
+    return v0
+.end method
 
-    const/4 v3, 0x0
+.method public final hashCode()I
+    .locals 0
 
-    const/4 v4, 0x0
+    const p0, -0x7e6ebce
 
-    const/4 v5, 0x0
+    return p0
+.end method
 
-    move-object v6, p0
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    invoke-virtual/range {v0 .. v6}, Ldda;->i(Lxbc;Lvca;Ljava/io/File;Ljava/io/File;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
+    const-string p0, "Stub"
 
     return-object p0
 .end method

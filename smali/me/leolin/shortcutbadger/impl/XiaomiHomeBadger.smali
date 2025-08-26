@@ -158,7 +158,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-void
 
     :catch_0
     move-exception p0
@@ -172,7 +172,6 @@
     throw p1
 
     :cond_1
-    :goto_0
     return-void
 .end method
 

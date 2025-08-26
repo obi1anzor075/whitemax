@@ -1,252 +1,139 @@
-.class public final synthetic Ljxd;
+.class public final Ljxd;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Lrea;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lone/me/stickersshowcase/StickersShowcaseScreen;
+.field public final synthetic a:Lone/me/startconversation/StartConversationScreen;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/stickersshowcase/StickersShowcaseScreen;I)V
+.method public constructor <init>(Lone/me/startconversation/StartConversationScreen;)V
     .locals 0
 
-    iput p2, p0, Ljxd;->a:I
-
-    iput-object p1, p0, Ljxd;->b:Lone/me/stickersshowcase/StickersShowcaseScreen;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljxd;->a:Lone/me/startconversation/StartConversationScreen;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 10
+.method public final I(Ljava/lang/CharSequence;)V
+    .locals 3
 
-    iget-object v0, p0, Ljxd;->b:Lone/me/stickersshowcase/StickersShowcaseScreen;
+    sget-object v0, Lone/me/startconversation/StartConversationScreen;->E0:[Lbc7;
 
-    iget p0, p0, Ljxd;->a:I
+    iget-object p0, p0, Ljxd;->a:Lone/me/startconversation/StartConversationScreen;
 
-    packed-switch p0, :pswitch_data_0
+    iget-object v0, p0, Lone/me/startconversation/StartConversationScreen;->c:Lvr;
 
-    sget-object p0, Lone/me/stickersshowcase/StickersShowcaseScreen;->z0:[Lk77;
-
-    new-instance p0, Lp4a;
-
-    invoke-virtual {v0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-direct {p0, v0, v1}, Lp4a;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-
-    sget v0, Lphc;->O0:I
-
-    invoke-virtual {p0, v0}, Lp4a;->setIcon(I)V
-
-    sget v0, Lrhc;->d:I
-
-    new-instance v1, Lhge;
-
-    invoke-direct {v1, v0}, Lhge;-><init>(I)V
-
-    invoke-virtual {p0, v1}, Lp4a;->setTitle(Lmge;)V
-
-    sget v0, Lrhc;->c:I
-
-    new-instance v1, Lhge;
-
-    invoke-direct {v1, v0}, Lhge;-><init>(I)V
-
-    invoke-virtual {p0, v1}, Lp4a;->setSubtitle(Lmge;)V
-
-    return-object p0
-
-    :pswitch_0
-    sget-object p0, Lone/me/stickersshowcase/StickersShowcaseScreen;->z0:[Lk77;
-
-    new-instance p0, La9a;
-
-    invoke-virtual {v0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, La9a;-><init>(Landroid/content/Context;)V
-
-    new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
-
-    const/4 v1, -0x2
-
-    invoke-direct {v0, v1, v1}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
-
-    const/16 v1, 0x11
-
-    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
-
-    invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    sget-object v0, Ls8a;->a:Ls8a;
-
-    invoke-virtual {p0, v0}, La9a;->setAppearance(Lt8a;)V
-
-    sget-object v0, Lv8a;->a:Lv8a;
-
-    invoke-virtual {p0, v0}, La9a;->setSize(Ly8a;)V
-
-    return-object p0
-
-    :pswitch_1
-    sget-object p0, Lone/me/stickersshowcase/StickersShowcaseScreen;->z0:[Lk77;
-
-    new-instance p0, Lsxd;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object v1, Lone/me/stickersshowcase/StickersShowcaseScreen;->z0:[Lk77;
+    sget-object v1, Lone/me/startconversation/StartConversationScreen;->E0:[Lbc7;
 
     const/4 v2, 0x0
 
+    aget-object v2, v1, v2
+
+    sget-object v2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-virtual {v0, p0, v2}, Lvr;->b(Lone/me/sdk/arch/Widget;Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lone/me/startconversation/StartConversationScreen;->o:Lvr;
+
+    const/4 v2, 0x1
+
     aget-object v1, v1, v2
 
-    iget-object v1, v0, Lone/me/stickersshowcase/StickersShowcaseScreen;->a:Ljr;
+    invoke-virtual {v0, p0, p1}, Lvr;->b(Lone/me/sdk/arch/Widget;Ljava/lang/Object;)V
 
-    invoke-virtual {v1, v0}, Ljr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
+    invoke-virtual {p0}, Lone/me/startconversation/StartConversationScreen;->q0()Luxd;
 
-    move-result-object v0
+    move-result-object p0
 
-    check-cast v0, Ljava/lang/Number;
+    if-eqz p1, :cond_0
 
-    invoke-virtual {v0}, Ljava/lang/Number;->longValue()J
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-wide v2
+    move-result-object p1
 
-    sget-object v0, Lhxd;->a:Lhxd;
+    goto :goto_0
 
-    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lw4;
+    :cond_0
+    const/4 p1, 0x0
 
-    move-result-object v1
+    :goto_0
+    if-nez p1, :cond_1
 
-    const-class v4, Llwd;
+    const-string p1, ""
 
-    invoke-virtual {v1, v4}, Lw4;->d(Ljava/lang/Class;)Lr7e;
+    :cond_1
+    iget-object p0, p0, Luxd;->s0:Lcs3;
 
-    move-result-object v1
+    iget-object p0, p0, Lcs3;->g:Lwfe;
 
-    invoke-virtual {v1}, Lr7e;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Lwfe;->getValue()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object p0
 
-    move-object v4, v1
+    check-cast p0, Lgh9;
 
-    check-cast v4, Llwd;
+    invoke-interface {p0, p1}, Lgh9;->setValue(Ljava/lang/Object;)V
 
-    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lw4;
+    return-void
+.end method
 
-    move-result-object v1
+.method public final X()V
+    .locals 3
 
-    const-class v5, Lpae;
+    iget-object p0, p0, Ljxd;->a:Lone/me/startconversation/StartConversationScreen;
 
-    invoke-virtual {v1, v5}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    iget-object v0, p0, Lone/me/startconversation/StartConversationScreen;->X:Lvr;
 
-    move-result-object v1
+    sget-object v1, Lone/me/startconversation/StartConversationScreen;->E0:[Lbc7;
 
-    move-object v6, v1
+    const/4 v2, 0x2
 
-    check-cast v6, Lpae;
+    aget-object v1, v1, v2
 
-    new-instance v7, Lqwd;
+    sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lw4;
+    invoke-virtual {v0, p0, v1}, Lvr;->b(Lone/me/sdk/arch/Widget;Ljava/lang/Object;)V
 
-    move-result-object v1
+    iget-object p0, p0, Lone/me/startconversation/StartConversationScreen;->D0:Llu3;
 
-    const-class v8, Llud;
+    const/4 v0, 0x0
 
-    invoke-virtual {v1, v8}, Lw4;->d(Ljava/lang/Class;)Lr7e;
+    invoke-virtual {p0, v0}, Lv0a;->f(Z)V
 
-    move-result-object v1
+    return-void
+.end method
 
-    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lw4;
+.method public final n()V
+    .locals 3
 
-    move-result-object v8
+    iget-object p0, p0, Ljxd;->a:Lone/me/startconversation/StartConversationScreen;
 
-    const-class v9, Lkvd;
+    iget-object v0, p0, Lone/me/startconversation/StartConversationScreen;->X:Lvr;
 
-    invoke-virtual {v8, v9}, Lw4;->d(Ljava/lang/Class;)Lr7e;
+    sget-object v1, Lone/me/startconversation/StartConversationScreen;->E0:[Lbc7;
 
-    move-result-object v8
+    const/4 v2, 0x2
 
-    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lw4;
+    aget-object v1, v1, v2
 
-    move-result-object v9
+    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    invoke-virtual {v9, v5}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v0, p0, v1}, Lvr;->b(Lone/me/sdk/arch/Widget;Ljava/lang/Object;)V
 
-    move-result-object v5
+    iget-object p0, p0, Lone/me/startconversation/StartConversationScreen;->D0:Llu3;
 
-    check-cast v5, Lpae;
+    const/4 v0, 0x1
 
-    invoke-direct {v7, v1, v8, v5}, Lqwd;-><init>(Lt97;Lt97;Lpae;)V
+    invoke-virtual {p0, v0}, Lv0a;->f(Z)V
 
-    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object v1
-
-    const-class v5, Ll95;
-
-    invoke-virtual {v1, v5}, Lw4;->d(Ljava/lang/Class;)Lr7e;
-
-    move-result-object v8
-
-    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object v1
-
-    const-class v5, Lluf;
-
-    invoke-virtual {v1, v5}, Lw4;->d(Ljava/lang/Class;)Lr7e;
-
-    move-result-object v9
-
-    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object v0
-
-    const-class v1, Ljb5;
-
-    invoke-virtual {v0, v1}, Lw4;->d(Ljava/lang/Class;)Lr7e;
-
-    move-result-object v0
-
-    move-object v1, p0
-
-    move-object v5, v6
-
-    move-object v6, v7
-
-    move-object v7, v8
-
-    move-object v8, v9
-
-    move-object v9, v0
-
-    invoke-direct/range {v1 .. v9}, Lsxd;-><init>(JLlwd;Lpae;Lqwd;Lt97;Lt97;Lt97;)V
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

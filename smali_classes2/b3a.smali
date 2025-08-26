@@ -1,63 +1,61 @@
 .class public final Lb3a;
-.super Ler3;
+.super Ld3a;
 .source "SourceFile"
 
 
-# instance fields
-.field public X:Lxt7;
-
-.field public Y:I
-
-.field public synthetic Z:Ljava/lang/Object;
-
-.field public o:Ld3a;
-
-.field public final synthetic w0:Ld3a;
-
-.field public x0:I
+# static fields
+.field public static final a:Lb3a;
 
 
 # direct methods
-.method public constructor <init>(Ld3a;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lb3a;->w0:Ld3a;
+    new-instance v0, Lb3a;
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lb3a;->a:Lb3a;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    iput-object p1, p0, Lb3a;->Z:Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    iget p1, p0, Lb3a;->x0:I
+    if-ne p0, p1, :cond_0
 
-    const/high16 v0, -0x80000000
+    return v0
 
-    or-int/2addr p1, v0
+    :cond_0
+    instance-of p0, p1, Lb3a;
 
-    iput p1, p0, Lb3a;->x0:I
+    if-nez p0, :cond_1
 
-    const/4 v3, 0x0
+    const/4 p0, 0x0
 
-    const/4 v4, 0x0
+    return p0
 
-    iget-object v0, p0, Lb3a;->w0:Ld3a;
+    :cond_1
+    return v0
+.end method
 
-    const/4 v1, 0x0
+.method public final hashCode()I
+    .locals 0
 
-    const/4 v2, 0x0
+    const p0, -0x601c8f50
 
-    move-object v5, p0
+    return p0
+.end method
 
-    invoke-virtual/range {v0 .. v5}, Ld3a;->b(Lwt7;IIILkotlin/coroutines/Continuation;)Ljava/lang/Object;
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    move-result-object p0
+    const-string p0, "None"
 
     return-object p0
 .end method

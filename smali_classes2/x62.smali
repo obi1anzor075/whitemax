@@ -1,60 +1,48 @@
 .class public final Lx62;
-.super Lchd;
-.source "SourceFile"
+.super Lbu3;
 
 
-# virtual methods
-.method public final bridge synthetic A(Lpg7;)V
+# instance fields
+.field public X:I
+
+.field public final synthetic Y:Ltb;
+
+.field public synthetic o:Ljava/lang/Object;
+
+
+# direct methods
+.method public constructor <init>(Ltb;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    check-cast p1, Ly62;
+    iput-object p1, p0, Lx62;->Y:Ltb;
 
-    invoke-virtual {p0, p1}, Lx62;->F(Ly62;)V
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public final F(Ly62;)V
-    .locals 5
 
-    iget-object p0, p0, Lb7c;->a:Landroid/view/View;
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    check-cast p0, Lw62;
+    iput-object p1, p0, Lx62;->o:Ljava/lang/Object;
 
-    iget-object v0, p1, Ly62;->a:Lmge;
+    iget p1, p0, Lx62;->X:I
 
-    invoke-virtual {p0, v0}, Lw62;->setTitle(Lmge;)V
+    const/high16 v0, -0x80000000
 
-    iget-object v0, p1, Ly62;->b:Lmge;
+    or-int/2addr p1, v0
 
-    invoke-virtual {p0, v0}, Lw62;->setSubtitle(Lmge;)V
+    iput p1, p0, Lx62;->X:I
 
-    iget-object v0, p0, Lw62;->a:Lmz9;
+    iget-object p1, p0, Lx62;->Y:Ltb;
 
-    iget-object v1, p1, Ly62;->c:Ljava/lang/String;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, v1}, Lmz9;->setAvatarUrl(Ljava/lang/String;)V
+    invoke-virtual {p1, v0, p0}, Ltb;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    new-instance v1, Lub0;
+    move-result-object p0
 
-    iget-object v2, p1, Ly62;->o:Ljava/lang/CharSequence;
-
-    if-nez v2, :cond_0
-
-    const-string v2, ""
-
-    :cond_0
-    iget-wide v3, p1, Ly62;->X:J
-
-    invoke-direct {v1, v2, v3, v4}, Lub0;-><init>(Ljava/lang/CharSequence;J)V
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Lmz9;->g(Lub0;Z)V
-
-    iget-object p1, p1, Ly62;->Y:Ljava/util/List;
-
-    invoke-virtual {p0, p1}, Lw62;->setDescriptions(Ljava/util/List;)V
-
-    return-void
+    return-object p0
 .end method

@@ -15,7 +15,7 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000<\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0002\n\u0002\u0010\t\n\u0002\u0008\u0003\n\u0002\u0010\u000b\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0010\r\n\u0002\u0008\u0007\n\u0002\u0010\u000e\n\u0002\u0008\u0005\n\u0002\u0018\u0002\n\u0002\u0008\t\u0018\u00002\u00020\u0001B\u0007\u00a2\u0006\u0004\u0008\u0002\u0010\u0003J\u0017\u0010\u0006\u001a\u00020\u00002\u0008\u0010\u0005\u001a\u0004\u0018\u00010\u0004\u00a2\u0006\u0004\u0008\u0006\u0010\u0007J\u0015\u0010\t\u001a\u00020\u00002\u0006\u0010\t\u001a\u00020\u0008\u00a2\u0006\u0004\u0008\t\u0010\nJ\u0015\u0010\r\u001a\u00020\u00002\u0006\u0010\u000c\u001a\u00020\u000b\u00a2\u0006\u0004\u0008\r\u0010\u000eJ\u0015\u0010\u0011\u001a\u00020\u00002\u0006\u0010\u0010\u001a\u00020\u000f\u00a2\u0006\u0004\u0008\u0011\u0010\u0012J\u0015\u0010\u0014\u001a\u00020\u00002\u0006\u0010\u0013\u001a\u00020\u000f\u00a2\u0006\u0004\u0008\u0014\u0010\u0012J\u0017\u0010\u0016\u001a\u00020\u00002\u0008\u0010\u0015\u001a\u0004\u0018\u00010\u0004\u00a2\u0006\u0004\u0008\u0016\u0010\u0007J\u0015\u0010\u0019\u001a\u00020\u00002\u0006\u0010\u0018\u001a\u00020\u0017\u00a2\u0006\u0004\u0008\u0019\u0010\u001aJ\u0015\u0010\u001c\u001a\u00020\u00002\u0006\u0010\u001b\u001a\u00020\u0017\u00a2\u0006\u0004\u0008\u001c\u0010\u001aJ\r\u0010\u001e\u001a\u00020\u001d\u00a2\u0006\u0004\u0008\u001e\u0010\u001fR\u0016\u0010\t\u001a\u00020\u00088\u0002@\u0002X\u0082\u000e\u00a2\u0006\u0006\n\u0004\u0008\t\u0010 R\u0018\u0010\u0005\u001a\u0004\u0018\u00010\u00048\u0002@\u0002X\u0082\u000e\u00a2\u0006\u0006\n\u0004\u0008\u0005\u0010!R\u0018\u0010\u000c\u001a\u0004\u0018\u00010\u000b8\u0002@\u0002X\u0082\u000e\u00a2\u0006\u0006\n\u0004\u0008\u000c\u0010\"R\u0018\u0010\u0010\u001a\u0004\u0018\u00010\u000f8\u0002@\u0002X\u0082\u000e\u00a2\u0006\u0006\n\u0004\u0008\u0010\u0010#R\u0016\u0010\u0013\u001a\u00020\u000f8\u0002@\u0002X\u0082\u000e\u00a2\u0006\u0006\n\u0004\u0008\u0013\u0010#R\u0018\u0010\u0015\u001a\u0004\u0018\u00010\u00048\u0002@\u0002X\u0082\u000e\u00a2\u0006\u0006\n\u0004\u0008\u0015\u0010!R\u0018\u0010\u001b\u001a\u0004\u0018\u00010\u00178\u0002@\u0002X\u0082\u000e\u00a2\u0006\u0006\n\u0004\u0008\u001b\u0010$R\u001c\u0010\u0018\u001a\u00020\u00178\u0002@\u0002X\u0082\u000e\u00a2\u0006\u000c\n\u0004\u0008\u0018\u0010$\u0012\u0004\u0008%\u0010\u0003\u00a8\u0006&"
+        "\u0000T\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0002\n\u0002\u0010\t\n\u0002\u0008\u0003\n\u0002\u0010\u000b\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0010\r\n\u0002\u0008\u0007\n\u0002\u0010\u000e\n\u0002\u0008\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0010\u0003\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\n\u0018\u00002\u00020\u0001B\u0007\u00a2\u0006\u0004\u0008\u0002\u0010\u0003J\u0017\u0010\u0006\u001a\u00020\u00002\u0008\u0010\u0005\u001a\u0004\u0018\u00010\u0004\u00a2\u0006\u0004\u0008\u0006\u0010\u0007J\u0015\u0010\t\u001a\u00020\u00002\u0006\u0010\t\u001a\u00020\u0008\u00a2\u0006\u0004\u0008\t\u0010\nJ\u0015\u0010\r\u001a\u00020\u00002\u0006\u0010\u000c\u001a\u00020\u000b\u00a2\u0006\u0004\u0008\r\u0010\u000eJ\u0015\u0010\u0011\u001a\u00020\u00002\u0006\u0010\u0010\u001a\u00020\u000f\u00a2\u0006\u0004\u0008\u0011\u0010\u0012J\u0015\u0010\u0014\u001a\u00020\u00002\u0006\u0010\u0013\u001a\u00020\u000f\u00a2\u0006\u0004\u0008\u0014\u0010\u0012J\u0017\u0010\u0016\u001a\u00020\u00002\u0008\u0010\u0015\u001a\u0004\u0018\u00010\u0004\u00a2\u0006\u0004\u0008\u0016\u0010\u0007J\u0015\u0010\u0019\u001a\u00020\u00002\u0006\u0010\u0018\u001a\u00020\u0017\u00a2\u0006\u0004\u0008\u0019\u0010\u001aJ\u0015\u0010\u001c\u001a\u00020\u00002\u0006\u0010\u001b\u001a\u00020\u0017\u00a2\u0006\u0004\u0008\u001c\u0010\u001aJ!\u0010!\u001a\u00020\u00002\u0012\u0010 \u001a\u000e\u0012\u0004\u0012\u00020\u001e\u0012\u0004\u0012\u00020\u001f0\u001d\u00a2\u0006\u0004\u0008!\u0010\"J!\u0010%\u001a\u00020\u00002\u0012\u0010$\u001a\u000e\u0012\u0004\u0012\u00020#\u0012\u0004\u0012\u00020\u001f0\u001d\u00a2\u0006\u0004\u0008%\u0010\"J\r\u0010\'\u001a\u00020&\u00a2\u0006\u0004\u0008\'\u0010(R\u0016\u0010\t\u001a\u00020\u00088\u0002@\u0002X\u0082\u000e\u00a2\u0006\u0006\n\u0004\u0008\t\u0010)R\u0018\u0010\u0005\u001a\u0004\u0018\u00010\u00048\u0002@\u0002X\u0082\u000e\u00a2\u0006\u0006\n\u0004\u0008\u0005\u0010*R\u0018\u0010\u000c\u001a\u0004\u0018\u00010\u000b8\u0002@\u0002X\u0082\u000e\u00a2\u0006\u0006\n\u0004\u0008\u000c\u0010+R\u0018\u0010\u0010\u001a\u0004\u0018\u00010\u000f8\u0002@\u0002X\u0082\u000e\u00a2\u0006\u0006\n\u0004\u0008\u0010\u0010,R\u0016\u0010\u0013\u001a\u00020\u000f8\u0002@\u0002X\u0082\u000e\u00a2\u0006\u0006\n\u0004\u0008\u0013\u0010,R\u0018\u0010\u0015\u001a\u0004\u0018\u00010\u00048\u0002@\u0002X\u0082\u000e\u00a2\u0006\u0006\n\u0004\u0008\u0015\u0010*R\u0018\u0010\u001b\u001a\u0004\u0018\u00010\u00178\u0002@\u0002X\u0082\u000e\u00a2\u0006\u0006\n\u0004\u0008\u001b\u0010-R$\u0010 \u001a\u0010\u0012\u0004\u0012\u00020\u001e\u0012\u0004\u0012\u00020\u001f\u0018\u00010\u001d8\u0002@\u0002X\u0082\u000e\u00a2\u0006\u0006\n\u0004\u0008 \u0010.R$\u0010$\u001a\u0010\u0012\u0004\u0012\u00020#\u0012\u0004\u0012\u00020\u001f\u0018\u00010\u001d8\u0002@\u0002X\u0082\u000e\u00a2\u0006\u0006\n\u0004\u0008$\u0010.R\u001c\u0010\u0018\u001a\u00020\u00178\u0002@\u0002X\u0082\u000e\u00a2\u0006\u000c\n\u0004\u0008\u0018\u0010-\u0012\u0004\u0008/\u0010\u0003\u00a8\u00060"
     }
     d2 = {
         "Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;",
@@ -29,10 +29,10 @@
         "",
         "isStream",
         "(Z)Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;",
-        "Lw2d;",
+        "Le9d;",
         "sessionRoomId",
         "withSessionRoomId",
-        "(Lw2d;)Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;",
+        "(Le9d;)Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;",
         "",
         "name",
         "withName",
@@ -47,14 +47,24 @@
         "(Ljava/lang/String;)Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;",
         "albumId",
         "withAlbumId",
+        "Lkotlin/Function1;",
+        "Lru/ok/android/externcalls/sdk/record/RecordManager$StartRecordInfo;",
+        "Le5f;",
+        "onSuccess",
+        "withCallOnSuccess",
+        "(Lx56;)Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;",
+        "",
+        "onError",
+        "withCallOnError",
         "Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams;",
         "build",
         "()Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams;",
         "Z",
         "Ljava/lang/Long;",
-        "Lw2d;",
+        "Le9d;",
         "Ljava/lang/CharSequence;",
         "Ljava/lang/String;",
+        "Lx56;",
         "getPrivacy$annotations",
         "calls-sdk_release"
     }
@@ -64,6 +74,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -80,9 +91,25 @@
 
 .field private name:Ljava/lang/CharSequence;
 
+.field private onError:Lx56;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lx56;"
+        }
+    .end annotation
+.end field
+
+.field private onSuccess:Lx56;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lx56;"
+        }
+    .end annotation
+.end field
+
 .field private privacy:Ljava/lang/String;
 
-.field private sessionRoomId:Lw2d;
+.field private sessionRoomId:Le9d;
 
 
 # direct methods
@@ -111,13 +138,13 @@
 
 # virtual methods
 .method public final build()Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams;
-    .locals 10
+    .locals 12
 
     iget-boolean v1, p0, Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;->isStream:Z
 
     iget-object v2, p0, Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;->movieId:Ljava/lang/Long;
 
-    iget-object v4, p0, Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;->sessionRoomId:Lw2d;
+    iget-object v4, p0, Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;->sessionRoomId:Le9d;
 
     iget-object v5, p0, Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;->name:Ljava/lang/CharSequence;
 
@@ -129,15 +156,17 @@
 
     iget-object v3, p0, Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;->albumId:Ljava/lang/String;
 
-    new-instance p0, Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams;
+    iget-object v9, p0, Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;->onSuccess:Lx56;
 
-    const/4 v9, 0x0
+    iget-object v10, p0, Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;->onError:Lx56;
 
-    move-object v0, p0
+    new-instance v0, Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams;
 
-    invoke-direct/range {v0 .. v9}, Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams;-><init>(ZLjava/lang/Long;Ljava/lang/String;Lw2d;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/Long;Ljava/lang/String;Lx54;)V
+    const/4 v11, 0x0
 
-    return-object p0
+    invoke-direct/range {v0 .. v11}, Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams;-><init>(ZLjava/lang/Long;Ljava/lang/String;Le9d;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/Long;Ljava/lang/String;Lx56;Lx56;Ll94;)V
+
+    return-object v0
 .end method
 
 .method public final isStream(Z)Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;
@@ -152,6 +181,38 @@
     .locals 0
 
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;->albumId:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method public final withCallOnError(Lx56;)Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lx56;",
+            ")",
+            "Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;"
+        }
+    .end annotation
+
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;->onError:Lx56;
+
+    return-object p0
+.end method
+
+.method public final withCallOnSuccess(Lx56;)Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lx56;",
+            ")",
+            "Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;"
+        }
+    .end annotation
+
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;->onSuccess:Lx56;
 
     return-object p0
 .end method
@@ -196,10 +257,10 @@
     return-object p0
 .end method
 
-.method public final withSessionRoomId(Lw2d;)Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;
+.method public final withSessionRoomId(Le9d;)Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;
     .locals 0
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;->sessionRoomId:Lw2d;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams$Builder;->sessionRoomId:Le9d;
 
     return-object p0
 .end method

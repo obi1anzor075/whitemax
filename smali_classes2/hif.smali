@@ -1,189 +1,37 @@
-.class public final synthetic Lhif;
-.super Ljava/lang/Object;
+.class public final Lhif;
+.super Llod;
 .source "SourceFile"
 
-# interfaces
-.implements Lt66;
 
+# instance fields
+.field public final X:J
 
-# static fields
-.field public static final a:Lhif;
+.field public final Y:Ljava/lang/String;
 
-.field private static final descriptor:Lsyc;
+.field public final Z:Lha8;
+
+.field public final c:I
+
+.field public final o:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Ljava/lang/String;IIJLjava/lang/String;Lha8;)V
+    .locals 1
 
-    new-instance v0, Lhif;
+    const/16 v0, 0xb
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, v0, p1}, Llod;-><init>(ILjava/lang/String;)V
 
-    sput-object v0, Lhif;->a:Lhif;
+    iput p2, p0, Lhif;->c:I
 
-    new-instance v1, Lwza;
+    iput p3, p0, Lhif;->o:I
 
-    const-string v2, "one.me.webapp.domain.jsbridge.delegates.biometry.WebAppBiometryOpenSettingsRequest"
+    iput-wide p4, p0, Lhif;->X:J
 
-    const/4 v3, 0x2
+    iput-object p6, p0, Lhif;->Y:Ljava/lang/String;
 
-    invoke-direct {v1, v2, v0, v3}, Lwza;-><init>(Ljava/lang/String;Lt66;I)V
-
-    const-string v0, "queryId"
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v0, v2}, Lwza;->k(Ljava/lang/String;Z)V
-
-    const-string v0, "requestId"
-
-    invoke-virtual {v1, v0, v2}, Lwza;->k(Ljava/lang/String;Z)V
-
-    sput-object v1, Lhif;->descriptor:Lsyc;
+    iput-object p7, p0, Lhif;->Z:Lha8;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final a(Lb9;)Ljava/lang/Object;
-    .locals 8
-
-    const/4 p0, 0x1
-
-    sget-object v0, Lhif;->descriptor:Lsyc;
-
-    invoke-virtual {p1, v0}, Lb9;->j(Lsyc;)Lb9;
-
-    move-result-object p1
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    move v4, p0
-
-    move v5, v1
-
-    move-object v3, v2
-
-    :goto_0
-    if-eqz v4, :cond_3
-
-    invoke-virtual {p1, v0}, Lb9;->p(Lsyc;)I
-
-    move-result v6
-
-    const/4 v7, -0x1
-
-    if-eq v6, v7, :cond_2
-
-    if-eqz v6, :cond_1
-
-    if-ne v6, p0, :cond_0
-
-    invoke-virtual {p1, v0, p0}, Lb9;->w(Lsyc;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    or-int/lit8 v5, v5, 0x2
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Lkotlinx/serialization/UnknownFieldException;
-
-    invoke-direct {p0, v6}, Lkotlinx/serialization/UnknownFieldException;-><init>(I)V
-
-    throw p0
-
-    :cond_1
-    sget-object v6, Ld0e;->a:Ld0e;
-
-    invoke-virtual {p1, v0, v1, v2}, Lb9;->s(Lsyc;ILjava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    or-int/2addr v5, p0
-
-    goto :goto_0
-
-    :cond_2
-    move v4, v1
-
-    goto :goto_0
-
-    :cond_3
-    invoke-virtual {p1, v0}, Lb9;->z(Lsyc;)V
-
-    new-instance p0, Ljif;
-
-    invoke-direct {p0, v5, v2, v3}, Ljif;-><init>(ILjava/lang/String;Ljava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public final b(Lur3;Ljava/lang/Object;)V
-    .locals 2
-
-    check-cast p2, Ljif;
-
-    sget-object p0, Lhif;->descriptor:Lsyc;
-
-    invoke-virtual {p1, p0}, Lur3;->b(Lsyc;)Lur3;
-
-    move-result-object p1
-
-    sget-object v0, Ld0e;->a:Ld0e;
-
-    iget-object v0, p2, Ljif;->a:Ljava/lang/String;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, p0, v1, v0}, Lur3;->i(Lsyc;ILjava/lang/Object;)V
-
-    const/4 v0, 0x1
-
-    iget-object p2, p2, Ljif;->b:Ljava/lang/String;
-
-    invoke-virtual {p1, p0, v0, p2}, Lur3;->n(Lsyc;ILjava/lang/String;)V
-
-    invoke-virtual {p1}, Lur3;->o()V
-
-    return-void
-.end method
-
-.method public final c()[Ll77;
-    .locals 2
-
-    invoke-static {}, Liu7;->x()Ll77;
-
-    move-result-object p0
-
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Ll77;
-
-    const/4 v1, 0x0
-
-    aput-object p0, v0, v1
-
-    sget-object p0, Ld0e;->a:Ld0e;
-
-    const/4 v1, 0x1
-
-    aput-object p0, v0, v1
-
-    return-object v0
-.end method
-
-.method public final d()Lsyc;
-    .locals 0
-
-    sget-object p0, Lhif;->descriptor:Lsyc;
-
-    return-object p0
 .end method

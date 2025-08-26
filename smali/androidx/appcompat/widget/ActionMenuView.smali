@@ -1,22 +1,14 @@
 .class public Landroidx/appcompat/widget/ActionMenuView;
-.super Lbd7;
+.super Lrh7;
 .source "SourceFile"
 
 # interfaces
-.implements Lol8;
-.implements Ljm8;
+.implements Lwp8;
+.implements Lqq8;
 
 
 # instance fields
-.field public A0:I
-
-.field public final B0:I
-
-.field public final C0:I
-
-.field public D0:Ll7;
-
-.field public a:Lpl8;
+.field public a:Lxp8;
 
 .field public b:Landroid/content/Context;
 
@@ -24,13 +16,21 @@
 
 .field public o:Z
 
-.field public w0:Li7;
+.field public o0:Lb7;
 
-.field public x0:Lgm8;
+.field public p0:Lvq0;
 
-.field public y0:Lnl8;
+.field public q0:Lvp8;
 
-.field public z0:Z
+.field public r0:Z
+
+.field public s0:I
+
+.field public final t0:I
+
+.field public final u0:I
+
+.field public v0:Le7;
 
 
 # direct methods
@@ -39,9 +39,9 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, p2, v0}, Lbd7;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p1, p2, v0}, Lrh7;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    invoke-virtual {p0, v0}, Lbd7;->setBaselineAligned(Z)V
+    invoke-virtual {p0, v0}, Lrh7;->setBaselineAligned(Z)V
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -59,7 +59,7 @@
 
     float-to-int v1, v1
 
-    iput v1, p0, Landroidx/appcompat/widget/ActionMenuView;->B0:I
+    iput v1, p0, Landroidx/appcompat/widget/ActionMenuView;->t0:I
 
     const/high16 v1, 0x40800000    # 4.0f
 
@@ -67,7 +67,7 @@
 
     float-to-int p2, p2
 
-    iput p2, p0, Landroidx/appcompat/widget/ActionMenuView;->C0:I
+    iput p2, p0, Landroidx/appcompat/widget/ActionMenuView;->u0:I
 
     iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuView;->b:Landroid/content/Context;
 
@@ -76,10 +76,10 @@
     return-void
 .end method
 
-.method public static c()Lk7;
+.method public static d()Ld7;
     .locals 2
 
-    new-instance v0, Lk7;
+    new-instance v0, Ld7;
 
     const/4 v1, -0x2
 
@@ -87,7 +87,7 @@
 
     const/4 v1, 0x0
 
-    iput-boolean v1, v0, Lk7;->a:Z
+    iput-boolean v1, v0, Ld7;->a:Z
 
     const/16 v1, 0x10
 
@@ -96,29 +96,29 @@
     return-object v0
 .end method
 
-.method public static e(Landroid/view/ViewGroup$LayoutParams;)Lk7;
+.method public static e(Landroid/view/ViewGroup$LayoutParams;)Ld7;
     .locals 1
 
     if-eqz p0, :cond_2
 
-    instance-of v0, p0, Lk7;
+    instance-of v0, p0, Ld7;
 
     if-eqz v0, :cond_0
 
-    new-instance v0, Lk7;
+    new-instance v0, Ld7;
 
-    check-cast p0, Lk7;
+    check-cast p0, Ld7;
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    iget-boolean p0, p0, Lk7;->a:Z
+    iget-boolean p0, p0, Ld7;->a:Z
 
-    iput-boolean p0, v0, Lk7;->a:Z
+    iput-boolean p0, v0, Ld7;->a:Z
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Lk7;
+    new-instance v0, Ld7;
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
@@ -135,7 +135,7 @@
     return-object v0
 
     :cond_2
-    invoke-static {}, Landroidx/appcompat/widget/ActionMenuView;->c()Lk7;
+    invoke-static {}, Landroidx/appcompat/widget/ActionMenuView;->d()Ld7;
 
     move-result-object p0
 
@@ -144,26 +144,26 @@
 
 
 # virtual methods
-.method public final a(Lul8;)Z
+.method public final a(Lbq8;)Z
     .locals 2
 
-    iget-object p0, p0, Landroidx/appcompat/widget/ActionMenuView;->a:Lpl8;
+    iget-object p0, p0, Landroidx/appcompat/widget/ActionMenuView;->a:Lxp8;
 
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
-    invoke-virtual {p0, p1, v0, v1}, Lpl8;->q(Landroid/view/MenuItem;Lhm8;I)Z
+    invoke-virtual {p0, p1, v1, v0}, Lxp8;->q(Landroid/view/MenuItem;Loq8;I)Z
 
     move-result p0
 
     return p0
 .end method
 
-.method public final b(Lpl8;)V
+.method public final b(Lxp8;)V
     .locals 0
 
-    iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuView;->a:Lpl8;
+    iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuView;->a:Lxp8;
 
     return-void
 .end method
@@ -171,7 +171,7 @@
 .method public final checkLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Z
     .locals 0
 
-    instance-of p0, p1, Lk7;
+    instance-of p0, p1, Ld7;
 
     return p0
 .end method
@@ -210,78 +210,53 @@
 
     if-ge p1, p0, :cond_1
 
-    instance-of p0, v1, Lj7;
+    instance-of p0, v1, Lc7;
 
     if-eqz p0, :cond_1
 
-    check-cast v1, Lj7;
+    check-cast v1, Lc7;
 
-    invoke-interface {v1}, Lj7;->b()Z
+    invoke-interface {v1}, Lc7;->b()Z
 
     move-result v0
 
     :cond_1
     if-lez p1, :cond_2
 
-    instance-of p0, v2, Lj7;
+    instance-of p0, v2, Lc7;
 
     if-eqz p0, :cond_2
 
-    check-cast v2, Lj7;
+    check-cast v2, Lc7;
 
-    invoke-interface {v2}, Lj7;->e()Z
+    invoke-interface {v2}, Lc7;->d()Z
 
     move-result p0
 
-    or-int/2addr v0, p0
+    or-int/2addr p0, v0
+
+    return p0
 
     :cond_2
     return v0
-.end method
-
-.method public final bridge synthetic generateDefaultLayoutParams()Lad7;
-    .locals 0
-
-    .line 1
-    invoke-static {}, Landroidx/appcompat/widget/ActionMenuView;->c()Lk7;
-
-    move-result-object p0
-
-    return-object p0
 .end method
 
 .method public final bridge synthetic generateDefaultLayoutParams()Landroid/view/ViewGroup$LayoutParams;
     .locals 0
 
     .line 2
-    invoke-static {}, Landroidx/appcompat/widget/ActionMenuView;->c()Lk7;
+    invoke-static {}, Landroidx/appcompat/widget/ActionMenuView;->d()Ld7;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public final generateLayoutParams(Landroid/util/AttributeSet;)Lad7;
-    .locals 1
-
-    .line 3
-    new-instance v0, Lk7;
-
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p0
-
-    .line 4
-    invoke-direct {v0, p0, p1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Lad7;
+.method public final bridge synthetic generateDefaultLayoutParams()Lqh7;
     .locals 0
 
     .line 1
-    invoke-static {p1}, Landroidx/appcompat/widget/ActionMenuView;->e(Landroid/view/ViewGroup$LayoutParams;)Lk7;
+    invoke-static {}, Landroidx/appcompat/widget/ActionMenuView;->d()Ld7;
 
     move-result-object p0
 
@@ -292,7 +267,7 @@
     .locals 1
 
     .line 5
-    new-instance v0, Lk7;
+    new-instance v0, Ld7;
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -308,7 +283,34 @@
     .locals 0
 
     .line 2
-    invoke-static {p1}, Landroidx/appcompat/widget/ActionMenuView;->e(Landroid/view/ViewGroup$LayoutParams;)Lk7;
+    invoke-static {p1}, Landroidx/appcompat/widget/ActionMenuView;->e(Landroid/view/ViewGroup$LayoutParams;)Ld7;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final generateLayoutParams(Landroid/util/AttributeSet;)Lqh7;
+    .locals 1
+
+    .line 3
+    new-instance v0, Ld7;
+
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object p0
+
+    .line 4
+    invoke-direct {v0, p0, p1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Lqh7;
+    .locals 0
+
+    .line 1
+    invoke-static {p1}, Landroidx/appcompat/widget/ActionMenuView;->e(Landroid/view/ViewGroup$LayoutParams;)Ld7;
 
     move-result-object p0
 
@@ -318,7 +320,7 @@
 .method public getMenu()Landroid/view/Menu;
     .locals 4
 
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->a:Lpl8;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->a:Lxp8;
 
     if-nez v0, :cond_1
 
@@ -326,62 +328,62 @@
 
     move-result-object v0
 
-    new-instance v1, Lpl8;
+    new-instance v1, Lxp8;
 
-    invoke-direct {v1, v0}, Lpl8;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v0}, Lxp8;-><init>(Landroid/content/Context;)V
 
-    iput-object v1, p0, Landroidx/appcompat/widget/ActionMenuView;->a:Lpl8;
+    iput-object v1, p0, Landroidx/appcompat/widget/ActionMenuView;->a:Lxp8;
 
-    new-instance v2, Lmod;
+    new-instance v2, Lzvd;
 
     const/4 v3, 0x1
 
-    invoke-direct {v2, v3, p0}, Lmod;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v2, v3, p0}, Lzvd;-><init>(ILjava/lang/Object;)V
 
-    iput-object v2, v1, Lpl8;->X:Lnl8;
+    iput-object v2, v1, Lxp8;->X:Lvp8;
 
-    new-instance v1, Li7;
+    new-instance v1, Lb7;
 
-    invoke-direct {v1, v0}, Li7;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v0}, Lb7;-><init>(Landroid/content/Context;)V
 
-    iput-object v1, p0, Landroidx/appcompat/widget/ActionMenuView;->w0:Li7;
+    iput-object v1, p0, Landroidx/appcompat/widget/ActionMenuView;->o0:Lb7;
 
     const/4 v0, 0x1
 
-    iput-boolean v0, v1, Li7;->A0:Z
+    iput-boolean v0, v1, Lb7;->s0:Z
 
-    iput-boolean v0, v1, Li7;->B0:Z
+    iput-boolean v0, v1, Lb7;->t0:Z
 
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->x0:Lgm8;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->p0:Lvq0;
 
     if-eqz v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Loa2;
+    new-instance v0, Lvo9;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     :goto_0
-    iput-object v0, v1, Li7;->X:Lgm8;
+    iput-object v0, v1, Lb7;->X:Lnq8;
 
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->a:Lpl8;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->a:Lxp8;
 
     iget-object v2, p0, Landroidx/appcompat/widget/ActionMenuView;->b:Landroid/content/Context;
 
-    invoke-virtual {v0, v1, v2}, Lpl8;->b(Lhm8;Landroid/content/Context;)V
+    invoke-virtual {v0, v1, v2}, Lxp8;->b(Loq8;Landroid/content/Context;)V
 
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->w0:Li7;
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->o0:Lb7;
 
-    iput-object p0, v0, Li7;->w0:Ljm8;
+    iput-object p0, v0, Lb7;->o0:Lqq8;
 
-    iget-object v0, v0, Li7;->c:Lpl8;
+    iget-object v0, v0, Lb7;->c:Lxp8;
 
-    iput-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->a:Lpl8;
+    iput-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->a:Lxp8;
 
     :cond_1
-    iget-object p0, p0, Landroidx/appcompat/widget/ActionMenuView;->a:Lpl8;
+    iget-object p0, p0, Landroidx/appcompat/widget/ActionMenuView;->a:Lxp8;
 
     return-object p0
 .end method
@@ -391,9 +393,9 @@
 
     invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuView;->getMenu()Landroid/view/Menu;
 
-    iget-object p0, p0, Landroidx/appcompat/widget/ActionMenuView;->w0:Li7;
+    iget-object p0, p0, Landroidx/appcompat/widget/ActionMenuView;->o0:Lb7;
 
-    iget-object v0, p0, Li7;->x0:Lh7;
+    iget-object v0, p0, Lb7;->p0:La7;
 
     if-eqz v0, :cond_0
 
@@ -401,21 +403,20 @@
 
     move-result-object p0
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
-    iget-boolean v0, p0, Li7;->z0:Z
+    iget-boolean v0, p0, Lb7;->r0:Z
 
     if-eqz v0, :cond_1
 
-    iget-object p0, p0, Li7;->y0:Landroid/graphics/drawable/Drawable;
+    iget-object p0, p0, Lb7;->q0:Landroid/graphics/drawable/Drawable;
 
-    goto :goto_0
+    return-object p0
 
     :cond_1
     const/4 p0, 0x0
 
-    :goto_0
     return-object p0
 .end method
 
@@ -440,27 +441,27 @@
 
     invoke-super {p0, p1}, Landroid/view/View;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionMenuView;->w0:Li7;
+    iget-object p1, p0, Landroidx/appcompat/widget/ActionMenuView;->o0:Lb7;
 
     if-eqz p1, :cond_0
 
-    invoke-virtual {p1}, Li7;->i()V
+    invoke-virtual {p1}, Lb7;->h()V
 
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionMenuView;->w0:Li7;
+    iget-object p1, p0, Landroidx/appcompat/widget/ActionMenuView;->o0:Lb7;
 
-    invoke-virtual {p1}, Li7;->j()Z
+    invoke-virtual {p1}, Lb7;->i()Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    iget-object p1, p0, Landroidx/appcompat/widget/ActionMenuView;->w0:Li7;
+    iget-object p1, p0, Landroidx/appcompat/widget/ActionMenuView;->o0:Lb7;
 
-    invoke-virtual {p1}, Li7;->g()Z
+    invoke-virtual {p1}, Lb7;->g()Z
 
-    iget-object p0, p0, Landroidx/appcompat/widget/ActionMenuView;->w0:Li7;
+    iget-object p0, p0, Landroidx/appcompat/widget/ActionMenuView;->o0:Lb7;
 
-    invoke-virtual {p0}, Li7;->l()Z
+    invoke-virtual {p0}, Lb7;->k()Z
 
     :cond_0
     return-void
@@ -471,25 +472,25 @@
 
     invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
 
-    iget-object p0, p0, Landroidx/appcompat/widget/ActionMenuView;->w0:Li7;
+    iget-object p0, p0, Landroidx/appcompat/widget/ActionMenuView;->o0:Lb7;
 
     if-eqz p0, :cond_0
 
-    invoke-virtual {p0}, Li7;->g()Z
+    invoke-virtual {p0}, Lb7;->g()Z
 
-    iget-object p0, p0, Li7;->I0:Lf7;
+    iget-object p0, p0, Lb7;->A0:Ly6;
 
     if-eqz p0, :cond_0
 
-    invoke-virtual {p0}, Lbm8;->b()Z
+    invoke-virtual {p0}, Liq8;->b()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    iget-object p0, p0, Lbm8;->j:Lzl8;
+    iget-object p0, p0, Liq8;->i:Lgq8;
 
-    invoke-interface {p0}, Lped;->dismiss()V
+    invoke-interface {p0}, Limd;->dismiss()V
 
     :cond_0
     return-void
@@ -500,16 +501,16 @@
 
     move-object/from16 v0, p0
 
-    iget-boolean v1, v0, Landroidx/appcompat/widget/ActionMenuView;->z0:Z
+    iget-boolean v1, v0, Landroidx/appcompat/widget/ActionMenuView;->r0:Z
 
     if-nez v1, :cond_0
 
-    invoke-super/range {p0 .. p5}, Lbd7;->onLayout(ZIIII)V
+    invoke-super/range {p0 .. p5}, Lrh7;->onLayout(ZIIII)V
 
     return-void
 
     :cond_0
-    invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getChildCount()I
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v1
 
@@ -517,25 +518,25 @@
 
     div-int/lit8 v2, v2, 0x2
 
-    invoke-virtual/range {p0 .. p0}, Lbd7;->getDividerWidth()I
+    invoke-virtual {v0}, Lrh7;->getDividerWidth()I
 
     move-result v3
 
     sub-int v4, p4, p2
 
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingRight()I
+    invoke-virtual {v0}, Landroid/view/View;->getPaddingRight()I
 
     move-result v5
 
     sub-int v5, v4, v5
 
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingLeft()I
+    invoke-virtual {v0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v6
 
     sub-int/2addr v5, v6
 
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getLayoutDirection()I
+    invoke-virtual {v0}, Landroid/view/View;->getLayoutDirection()I
 
     move-result v6
 
@@ -579,9 +580,9 @@
 
     move-result-object v12
 
-    check-cast v12, Lk7;
+    check-cast v12, Ld7;
 
-    iget-boolean v14, v12, Lk7;->a:Z
+    iget-boolean v14, v12, Ld7;->a:Z
 
     if-eqz v14, :cond_5
 
@@ -604,7 +605,7 @@
 
     if-eqz v6, :cond_4
 
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingLeft()I
+    invoke-virtual {v0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v15
 
@@ -617,11 +618,11 @@
     goto :goto_2
 
     :cond_4
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
+    invoke-virtual {v0}, Landroid/view/View;->getWidth()I
 
     move-result v15
 
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingRight()I
+    invoke-virtual {v0}, Landroid/view/View;->getPaddingRight()I
 
     move-result v16
 
@@ -735,11 +736,11 @@
 
     if-eqz v6, :cond_b
 
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
+    invoke-virtual {v0}, Landroid/view/View;->getWidth()I
 
     move-result v5
 
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingRight()I
+    invoke-virtual {v0}, Landroid/view/View;->getPaddingRight()I
 
     move-result v6
 
@@ -758,7 +759,7 @@
 
     move-result-object v6
 
-    check-cast v6, Lk7;
+    check-cast v6, Ld7;
 
     invoke-virtual {v4}, Landroid/view/View;->getVisibility()I
 
@@ -766,7 +767,7 @@
 
     if-eq v7, v12, :cond_a
 
-    iget-boolean v7, v6, Lk7;->a:Z
+    iget-boolean v7, v6, Ld7;->a:Z
 
     if-eqz v7, :cond_9
 
@@ -810,7 +811,7 @@
     goto :goto_6
 
     :cond_b
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingLeft()I
+    invoke-virtual {v0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v5
 
@@ -827,7 +828,7 @@
 
     move-result-object v6
 
-    check-cast v6, Lk7;
+    check-cast v6, Ld7;
 
     invoke-virtual {v4}, Landroid/view/View;->getVisibility()I
 
@@ -835,7 +836,7 @@
 
     if-eq v7, v12, :cond_d
 
-    iget-boolean v7, v6, Lk7;->a:Z
+    iget-boolean v7, v6, Ld7;->a:Z
 
     if-eqz v7, :cond_c
 
@@ -885,65 +886,65 @@
 .end method
 
 .method public final onMeasure(II)V
-    .locals 32
+    .locals 30
 
     move-object/from16 v0, p0
 
-    iget-boolean v1, v0, Landroidx/appcompat/widget/ActionMenuView;->z0:Z
+    iget-boolean v1, v0, Landroidx/appcompat/widget/ActionMenuView;->r0:Z
 
     invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v2
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/4 v4, 0x0
 
     const/high16 v5, 0x40000000    # 2.0f
 
     if-ne v2, v5, :cond_0
 
-    move v2, v4
+    move v2, v3
 
     goto :goto_0
 
     :cond_0
-    move v2, v3
+    move v2, v4
 
     :goto_0
-    iput-boolean v2, v0, Landroidx/appcompat/widget/ActionMenuView;->z0:Z
+    iput-boolean v2, v0, Landroidx/appcompat/widget/ActionMenuView;->r0:Z
 
     if-eq v1, v2, :cond_1
 
-    iput v3, v0, Landroidx/appcompat/widget/ActionMenuView;->A0:I
+    iput v4, v0, Landroidx/appcompat/widget/ActionMenuView;->s0:I
 
     :cond_1
     invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v1
 
-    iget-boolean v2, v0, Landroidx/appcompat/widget/ActionMenuView;->z0:Z
+    iget-boolean v2, v0, Landroidx/appcompat/widget/ActionMenuView;->r0:Z
 
     if-eqz v2, :cond_2
 
-    iget-object v2, v0, Landroidx/appcompat/widget/ActionMenuView;->a:Lpl8;
+    iget-object v2, v0, Landroidx/appcompat/widget/ActionMenuView;->a:Lxp8;
 
     if-eqz v2, :cond_2
 
-    iget v6, v0, Landroidx/appcompat/widget/ActionMenuView;->A0:I
+    iget v6, v0, Landroidx/appcompat/widget/ActionMenuView;->s0:I
 
     if-eq v1, v6, :cond_2
 
-    iput v1, v0, Landroidx/appcompat/widget/ActionMenuView;->A0:I
+    iput v1, v0, Landroidx/appcompat/widget/ActionMenuView;->s0:I
 
-    invoke-virtual {v2, v4}, Lpl8;->p(Z)V
+    invoke-virtual {v2, v3}, Lxp8;->p(Z)V
 
     :cond_2
-    invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getChildCount()I
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v1
 
-    iget-boolean v2, v0, Landroidx/appcompat/widget/ActionMenuView;->z0:Z
+    iget-boolean v2, v0, Landroidx/appcompat/widget/ActionMenuView;->r0:Z
 
     if-eqz v2, :cond_2f
 
@@ -961,21 +962,21 @@
 
     move-result v6
 
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingLeft()I
+    invoke-virtual {v0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v7
 
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingRight()I
+    invoke-virtual {v0}, Landroid/view/View;->getPaddingRight()I
 
     move-result v8
 
     add-int/2addr v8, v7
 
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingTop()I
+    invoke-virtual {v0}, Landroid/view/View;->getPaddingTop()I
 
     move-result v7
 
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingBottom()I
+    invoke-virtual {v0}, Landroid/view/View;->getPaddingBottom()I
 
     move-result v9
 
@@ -991,7 +992,7 @@
 
     sub-int/2addr v2, v8
 
-    iget v8, v0, Landroidx/appcompat/widget/ActionMenuView;->B0:I
+    iget v8, v0, Landroidx/appcompat/widget/ActionMenuView;->t0:I
 
     div-int v10, v2, v8
 
@@ -999,18 +1000,20 @@
 
     if-nez v10, :cond_3
 
-    invoke-virtual {v0, v2, v3}, Landroid/view/View;->setMeasuredDimension(II)V
+    invoke-virtual {v0, v2, v4}, Landroid/view/View;->setMeasuredDimension(II)V
 
-    goto/16 :goto_1d
+    return-void
 
     :cond_3
     div-int/2addr v11, v10
 
     add-int/2addr v11, v8
 
-    invoke-virtual/range {p0 .. p0}, Landroid/view/ViewGroup;->getChildCount()I
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v8
+
+    move v3, v4
 
     move v12, v3
 
@@ -1020,14 +1023,14 @@
 
     move v15, v14
 
-    move/from16 v18, v15
+    move/from16 v16, v15
 
-    move/from16 v19, v18
+    const-wide/16 p1, 0x0
 
-    const-wide/16 v16, 0x0
+    const-wide/16 v18, 0x0
 
     :goto_1
-    iget v5, v0, Landroidx/appcompat/widget/ActionMenuView;->C0:I
+    iget v5, v0, Landroidx/appcompat/widget/ActionMenuView;->u0:I
 
     if-ge v14, v8, :cond_12
 
@@ -1035,278 +1038,266 @@
 
     move-result-object v4
 
-    invoke-virtual {v4}, Landroid/view/View;->getVisibility()I
-
-    move-result v3
-
     move/from16 v21, v6
 
-    const/16 v6, 0x8
+    invoke-virtual {v4}, Landroid/view/View;->getVisibility()I
 
-    if-ne v3, v6, :cond_4
-
-    move/from16 v24, v2
+    move-result v6
 
     move/from16 v22, v9
+
+    const/16 v9, 0x8
+
+    if-ne v6, v9, :cond_4
+
+    move/from16 v23, v11
 
     goto/16 :goto_8
 
     :cond_4
-    instance-of v3, v4, Landroidx/appcompat/view/menu/ActionMenuItemView;
+    instance-of v6, v4, Landroidx/appcompat/view/menu/ActionMenuItemView;
 
     add-int/lit8 v12, v12, 0x1
 
-    const/4 v6, 0x0
+    const/4 v9, 0x0
 
-    if-eqz v3, :cond_5
+    if-eqz v6, :cond_5
 
-    invoke-virtual {v4, v5, v6, v5, v6}, Landroid/view/View;->setPadding(IIII)V
+    invoke-virtual {v4, v5, v9, v5, v9}, Landroid/view/View;->setPadding(IIII)V
 
     :cond_5
     invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v5
 
-    check-cast v5, Lk7;
+    check-cast v5, Ld7;
 
-    iput-boolean v6, v5, Lk7;->f:Z
+    iput-boolean v9, v5, Ld7;->f:Z
 
-    iput v6, v5, Lk7;->c:I
+    iput v9, v5, Ld7;->c:I
 
-    iput v6, v5, Lk7;->b:I
+    iput v9, v5, Ld7;->b:I
 
-    iput-boolean v6, v5, Lk7;->d:Z
+    iput-boolean v9, v5, Ld7;->d:Z
 
-    iput v6, v5, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
+    iput v9, v5, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
-    iput v6, v5, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
-
-    if-eqz v3, :cond_6
-
-    move-object v6, v4
-
-    check-cast v6, Landroidx/appcompat/view/menu/ActionMenuItemView;
-
-    invoke-virtual {v6}, Landroidx/appcompat/widget/AppCompatTextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v6
-
-    invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v6
-
-    const/16 v20, 0x1
-
-    xor-int/lit8 v6, v6, 0x1
+    iput v9, v5, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
     if-eqz v6, :cond_6
 
-    const/4 v6, 0x1
+    move-object v9, v4
+
+    check-cast v9, Landroidx/appcompat/view/menu/ActionMenuItemView;
+
+    invoke-virtual {v9}, Landroidx/appcompat/widget/AppCompatTextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v9
+
+    invoke-static {v9}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v9
+
+    if-nez v9, :cond_6
+
+    const/4 v9, 0x1
 
     goto :goto_2
 
     :cond_6
-    const/4 v6, 0x0
+    const/4 v9, 0x0
 
     :goto_2
-    iput-boolean v6, v5, Lk7;->e:Z
+    iput-boolean v9, v5, Ld7;->e:Z
 
-    iget-boolean v6, v5, Lk7;->a:Z
+    iget-boolean v9, v5, Ld7;->a:Z
 
-    if-eqz v6, :cond_7
+    if-eqz v9, :cond_7
 
-    const/4 v6, 0x1
+    const/4 v9, 0x1
 
     goto :goto_3
 
     :cond_7
-    move v6, v10
+    move v9, v10
 
     :goto_3
     invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v22
+    move-result-object v23
 
-    move/from16 v23, v12
+    move/from16 v24, v6
 
-    move-object/from16 v12, v22
+    move-object/from16 v6, v23
 
-    check-cast v12, Lk7;
+    check-cast v6, Ld7;
 
     invoke-static {v7}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
-    move-result v22
+    move-result v23
 
-    move/from16 v24, v2
+    move/from16 v25, v10
 
-    sub-int v2, v22, v9
+    sub-int v10, v23, v22
 
-    move/from16 v22, v9
+    move/from16 v23, v11
 
     invoke-static {v7}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
-    move-result v9
+    move-result v11
 
-    invoke-static {v2, v9}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v10, v11}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    move-result v2
+    move-result v10
 
-    if-eqz v3, :cond_8
+    if-eqz v24, :cond_8
 
-    move-object v3, v4
+    move-object v11, v4
 
-    check-cast v3, Landroidx/appcompat/view/menu/ActionMenuItemView;
+    check-cast v11, Landroidx/appcompat/view/menu/ActionMenuItemView;
 
     goto :goto_4
 
     :cond_8
-    const/4 v3, 0x0
+    const/4 v11, 0x0
 
     :goto_4
-    if-eqz v3, :cond_9
+    if-eqz v11, :cond_9
 
-    invoke-virtual {v3}, Landroidx/appcompat/widget/AppCompatTextView;->getText()Ljava/lang/CharSequence;
+    invoke-virtual {v11}, Landroidx/appcompat/widget/AppCompatTextView;->getText()Ljava/lang/CharSequence;
 
-    move-result-object v3
+    move-result-object v11
 
-    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v11}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v3
+    move-result v11
 
-    const/4 v9, 0x1
+    if-nez v11, :cond_9
 
-    xor-int/2addr v3, v9
-
-    if-eqz v3, :cond_9
-
-    const/4 v3, 0x1
+    const/4 v11, 0x1
 
     goto :goto_5
 
     :cond_9
-    const/4 v3, 0x0
+    const/4 v11, 0x0
 
     :goto_5
-    if-lez v6, :cond_c
+    move/from16 v24, v11
 
-    if-eqz v3, :cond_a
+    if-lez v9, :cond_c
+
+    if-eqz v11, :cond_a
+
+    const/4 v11, 0x2
+
+    if-lt v9, v11, :cond_c
+
+    :cond_a
+    mul-int v11, v23, v9
+
+    const/high16 v9, -0x80000000
+
+    invoke-static {v11, v9}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v9
+
+    invoke-virtual {v4, v9, v10}, Landroid/view/View;->measure(II)V
+
+    invoke-virtual {v4}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v9
+
+    div-int v11, v9, v23
+
+    rem-int v9, v9, v23
+
+    if-eqz v9, :cond_b
+
+    add-int/lit8 v11, v11, 0x1
+
+    :cond_b
+    if-eqz v24, :cond_d
 
     const/4 v9, 0x2
 
-    if-lt v6, v9, :cond_c
+    if-ge v11, v9, :cond_d
 
-    :cond_a
-    mul-int/2addr v6, v11
+    const/4 v11, 0x2
 
-    const/high16 v9, -0x80000000
+    goto :goto_6
+
+    :cond_c
+    const/4 v11, 0x0
+
+    :cond_d
+    :goto_6
+    iget-boolean v9, v6, Ld7;->a:Z
+
+    if-nez v9, :cond_e
+
+    if-eqz v24, :cond_e
+
+    const/4 v9, 0x1
+
+    goto :goto_7
+
+    :cond_e
+    const/4 v9, 0x0
+
+    :goto_7
+    iput-boolean v9, v6, Ld7;->d:Z
+
+    iput v11, v6, Ld7;->b:I
+
+    mul-int v6, v11, v23
+
+    const/high16 v9, 0x40000000    # 2.0f
 
     invoke-static {v6, v9}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v6
 
-    invoke-virtual {v4, v6, v2}, Landroid/view/View;->measure(II)V
+    invoke-virtual {v4, v6, v10}, Landroid/view/View;->measure(II)V
 
-    invoke-virtual {v4}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v6
-
-    div-int v9, v6, v11
-
-    rem-int/2addr v6, v11
-
-    if-eqz v6, :cond_b
-
-    add-int/lit8 v9, v9, 0x1
-
-    :cond_b
-    if-eqz v3, :cond_d
-
-    const/4 v6, 0x2
-
-    if-ge v9, v6, :cond_d
-
-    const/4 v9, 0x2
-
-    goto :goto_6
-
-    :cond_c
-    const/4 v9, 0x0
-
-    :cond_d
-    :goto_6
-    iget-boolean v6, v12, Lk7;->a:Z
-
-    if-nez v6, :cond_e
-
-    if-eqz v3, :cond_e
-
-    const/4 v3, 0x1
-
-    goto :goto_7
-
-    :cond_e
-    const/4 v3, 0x0
-
-    :goto_7
-    iput-boolean v3, v12, Lk7;->d:Z
-
-    iput v9, v12, Lk7;->b:I
-
-    mul-int v3, v9, v11
-
-    const/high16 v6, 0x40000000    # 2.0f
-
-    invoke-static {v3, v6}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result v3
-
-    invoke-virtual {v4, v3, v2}, Landroid/view/View;->measure(II)V
-
-    invoke-static {v13, v9}, Ljava/lang/Math;->max(II)I
+    invoke-static {v13, v11}, Ljava/lang/Math;->max(II)I
 
     move-result v13
 
-    iget-boolean v2, v5, Lk7;->d:Z
+    iget-boolean v6, v5, Ld7;->d:Z
 
-    if-eqz v2, :cond_f
+    if-eqz v6, :cond_f
 
-    add-int/lit8 v18, v18, 0x1
+    add-int/lit8 v16, v16, 0x1
 
     :cond_f
-    iget-boolean v2, v5, Lk7;->a:Z
+    iget-boolean v5, v5, Ld7;->a:Z
 
-    if-eqz v2, :cond_10
+    if-eqz v5, :cond_10
 
     const/4 v15, 0x1
 
     :cond_10
-    sub-int/2addr v10, v9
+    sub-int v10, v25, v11
 
     invoke-virtual {v4}, Landroid/view/View;->getMeasuredHeight()I
 
-    move-result v2
+    move-result v4
 
-    move/from16 v3, v19
+    invoke-static {v3, v4}, Ljava/lang/Math;->max(II)I
 
-    invoke-static {v3, v2}, Ljava/lang/Math;->max(II)I
+    move-result v3
 
-    move-result v19
+    const/4 v4, 0x1
 
-    const/4 v2, 0x1
+    if-ne v11, v4, :cond_11
 
-    if-ne v9, v2, :cond_11
+    shl-int v5, v4, v14
 
-    shl-int v3, v2, v14
+    int-to-long v4, v5
 
-    int-to-long v2, v3
-
-    or-long v2, v16, v2
-
-    move-wide/from16 v16, v2
+    or-long v18, v18, v4
 
     :cond_11
-    move/from16 v12, v23
-
     :goto_8
     add-int/lit8 v14, v14, 0x1
 
@@ -1314,131 +1305,127 @@
 
     move/from16 v9, v22
 
-    move/from16 v2, v24
+    move/from16 v11, v23
 
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
+    const/4 v4, 0x0
 
     goto/16 :goto_1
 
     :cond_12
-    move/from16 v24, v2
-
     move/from16 v21, v6
 
-    move/from16 v3, v19
+    move/from16 v25, v10
+
+    move/from16 v23, v11
 
     if-eqz v15, :cond_13
 
-    const/4 v2, 0x2
+    const/4 v9, 0x2
 
-    if-ne v12, v2, :cond_13
+    if-ne v12, v9, :cond_13
 
-    const/4 v2, 0x1
+    const/4 v4, 0x1
 
     goto :goto_9
 
     :cond_13
-    const/4 v2, 0x0
-
-    :goto_9
     const/4 v4, 0x0
 
-    :goto_a
-    const-wide/16 v22, 0x1
+    :goto_9
+    move/from16 v10, v25
 
-    if-lez v18, :cond_1e
+    const/4 v6, 0x0
+
+    :goto_a
+    const-wide/16 v24, 0x1
+
+    if-lez v16, :cond_1e
 
     if-lez v10, :cond_1e
 
-    const v6, 0x7fffffff
+    const v9, 0x7fffffff
 
-    const/4 v9, 0x0
+    move-wide/from16 v26, p1
+
+    const/4 v11, 0x0
 
     const/4 v14, 0x0
-
-    const-wide/16 v25, 0x0
 
     :goto_b
     if-ge v14, v8, :cond_17
 
     invoke-virtual {v0, v14}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v19
+    move-result-object v22
 
-    invoke-virtual/range {v19 .. v19}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual/range {v22 .. v22}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v19
+    move-result-object v22
 
-    move/from16 v27, v3
+    move/from16 v28, v3
 
-    move-object/from16 v3, v19
+    move-object/from16 v3, v22
 
-    check-cast v3, Lk7;
+    check-cast v3, Ld7;
 
-    move/from16 v19, v4
+    move/from16 v22, v4
 
-    iget-boolean v4, v3, Lk7;->d:Z
+    iget-boolean v4, v3, Ld7;->d:Z
 
     if-nez v4, :cond_14
 
     goto :goto_c
 
     :cond_14
-    iget v3, v3, Lk7;->b:I
+    iget v3, v3, Ld7;->b:I
 
-    if-ge v3, v6, :cond_15
+    if-ge v3, v9, :cond_15
 
-    shl-long v25, v22, v14
+    shl-long v26, v24, v14
 
-    move v6, v3
+    move v9, v3
 
-    const/4 v9, 0x1
+    const/4 v11, 0x1
 
     goto :goto_c
 
     :cond_15
-    if-ne v3, v6, :cond_16
+    if-ne v3, v9, :cond_16
 
-    shl-long v3, v22, v14
+    shl-long v3, v24, v14
 
-    or-long v3, v25, v3
+    or-long v26, v26, v3
 
-    add-int/lit8 v9, v9, 0x1
+    add-int/lit8 v3, v11, 0x1
 
-    move-wide/from16 v25, v3
+    move v11, v3
 
     :cond_16
     :goto_c
     add-int/lit8 v14, v14, 0x1
 
-    move/from16 v4, v19
+    move/from16 v4, v22
 
-    move/from16 v3, v27
+    move/from16 v3, v28
 
     goto :goto_b
 
     :cond_17
-    move/from16 v27, v3
+    move/from16 v28, v3
 
-    move/from16 v19, v4
+    move/from16 v22, v4
 
-    or-long v16, v16, v25
+    or-long v18, v18, v26
 
-    if-le v9, v10, :cond_18
-
-    move/from16 v28, v1
+    if-le v11, v10, :cond_18
 
     :goto_d
-    move v14, v7
-
-    move/from16 v29, v8
+    move/from16 v29, v15
 
     goto :goto_11
 
     :cond_18
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v9, v9, 0x1
 
     const/4 v3, 0x0
 
@@ -1451,69 +1438,63 @@
 
     invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v9
+    move-result-object v6
 
-    check-cast v9, Lk7;
+    check-cast v6, Ld7;
 
-    move/from16 v28, v1
+    const/16 v17, 0x1
 
-    const/4 v14, 0x1
+    shl-int v11, v17, v3
 
-    shl-int v1, v14, v3
+    move/from16 v29, v15
 
-    move v14, v7
+    int-to-long v14, v11
 
-    move/from16 v29, v8
+    and-long v24, v26, v14
 
-    int-to-long v7, v1
+    cmp-long v11, v24, p1
 
-    and-long v22, v25, v7
+    if-nez v11, :cond_19
 
-    const-wide/16 v30, 0x0
+    iget v4, v6, Ld7;->b:I
 
-    cmp-long v1, v22, v30
+    if-ne v4, v9, :cond_1c
 
-    if-nez v1, :cond_19
-
-    iget v1, v9, Lk7;->b:I
-
-    if-ne v1, v6, :cond_1c
-
-    or-long v16, v16, v7
+    or-long v18, v18, v14
 
     goto :goto_10
 
     :cond_19
-    if-eqz v2, :cond_1a
+    if-eqz v22, :cond_1a
 
-    iget-boolean v1, v9, Lk7;->e:Z
+    iget-boolean v11, v6, Ld7;->e:Z
 
-    if-eqz v1, :cond_1a
+    if-eqz v11, :cond_1a
 
-    const/4 v1, 0x1
+    const/4 v11, 0x1
 
-    if-ne v10, v1, :cond_1b
+    if-ne v10, v11, :cond_1b
 
-    add-int v7, v5, v11
+    add-int v14, v5, v23
 
-    const/4 v8, 0x0
+    const/4 v15, 0x0
 
-    invoke-virtual {v4, v7, v8, v5, v8}, Landroid/view/View;->setPadding(IIII)V
+    invoke-virtual {v4, v14, v15, v5, v15}, Landroid/view/View;->setPadding(IIII)V
 
     goto :goto_f
 
     :cond_1a
-    const/4 v1, 0x1
+    const/4 v11, 0x1
 
     :cond_1b
     :goto_f
-    iget v4, v9, Lk7;->b:I
+    iget v4, v6, Ld7;->b:I
 
-    add-int/2addr v4, v1
+    add-int/2addr v4, v11
 
-    iput v4, v9, Lk7;->b:I
+    iput v4, v6, Ld7;->b:I
 
-    iput-boolean v1, v9, Lk7;->f:Z
+    iput-boolean v11, v6, Ld7;->f:Z
 
     add-int/lit8 v10, v10, -0x1
 
@@ -1521,370 +1502,336 @@
     :goto_10
     add-int/lit8 v3, v3, 0x1
 
-    move v7, v14
-
-    move/from16 v1, v28
-
-    move/from16 v8, v29
+    move/from16 v15, v29
 
     goto :goto_e
 
     :cond_1d
-    move/from16 v3, v27
+    move/from16 v4, v22
 
-    const/4 v4, 0x1
+    move/from16 v3, v28
+
+    const/4 v6, 0x1
 
     goto/16 :goto_a
 
     :cond_1e
-    move/from16 v28, v1
-
-    move/from16 v27, v3
-
-    move/from16 v19, v4
+    move/from16 v28, v3
 
     goto :goto_d
 
     :goto_11
-    const/4 v1, 0x1
+    const/4 v4, 0x1
 
-    if-nez v15, :cond_1f
+    if-nez v29, :cond_1f
 
-    if-ne v12, v1, :cond_1f
+    if-ne v12, v4, :cond_1f
 
-    move v2, v1
+    move v3, v4
 
     goto :goto_12
 
     :cond_1f
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     :goto_12
-    if-lez v10, :cond_20
+    if-lez v10, :cond_2b
 
-    const-wide/16 v3, 0x0
+    cmp-long v5, v18, p1
 
-    cmp-long v5, v16, v3
+    if-eqz v5, :cond_2b
 
-    if-eqz v5, :cond_20
+    sub-int/2addr v12, v4
 
-    sub-int/2addr v12, v1
+    if-lt v10, v12, :cond_20
 
-    if-lt v10, v12, :cond_21
+    if-nez v3, :cond_20
 
-    if-nez v2, :cond_21
-
-    if-le v13, v1, :cond_20
-
-    goto :goto_13
+    if-le v13, v4, :cond_2b
 
     :cond_20
-    move/from16 v2, v29
+    invoke-static/range {v18 .. v19}, Ljava/lang/Long;->bitCount(J)I
 
-    goto/16 :goto_18
+    move-result v4
 
-    :cond_21
-    :goto_13
-    invoke-static/range {v16 .. v17}, Ljava/lang/Long;->bitCount(J)I
+    int-to-float v4, v4
 
-    move-result v1
+    if-nez v3, :cond_22
 
-    int-to-float v1, v1
+    and-long v11, v18, v24
 
-    if-nez v2, :cond_23
+    cmp-long v3, v11, p1
 
-    and-long v2, v16, v22
+    const/high16 v5, 0x3f000000    # 0.5f
 
-    const-wide/16 v4, 0x0
+    if-eqz v3, :cond_21
 
-    cmp-long v2, v2, v4
+    const/4 v15, 0x0
 
-    const/high16 v3, 0x3f000000    # 0.5f
-
-    if-eqz v2, :cond_22
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v2
-
-    check-cast v2, Lk7;
-
-    iget-boolean v2, v2, Lk7;->e:Z
-
-    if-nez v2, :cond_22
-
-    sub-float/2addr v1, v3
-
-    :cond_22
-    add-int/lit8 v8, v29, -0x1
-
-    const/4 v2, 0x1
-
-    shl-int v4, v2, v8
-
-    int-to-long v4, v4
-
-    and-long v4, v16, v4
-
-    const-wide/16 v6, 0x0
-
-    cmp-long v2, v4, v6
-
-    if-eqz v2, :cond_23
-
-    invoke-virtual {v0, v8}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v2
-
-    check-cast v2, Lk7;
-
-    iget-boolean v2, v2, Lk7;->e:Z
-
-    if-nez v2, :cond_23
-
-    sub-float/2addr v1, v3
-
-    :cond_23
-    const/4 v2, 0x0
-
-    cmpl-float v2, v1, v2
-
-    if-lez v2, :cond_24
-
-    mul-int/2addr v10, v11
-
-    int-to-float v2, v10
-
-    div-float/2addr v2, v1
-
-    float-to-int v6, v2
-
-    goto :goto_14
-
-    :cond_24
-    const/4 v6, 0x0
-
-    :goto_14
-    move/from16 v2, v29
-
-    const/4 v1, 0x0
-
-    :goto_15
-    if-ge v1, v2, :cond_2b
-
-    const/4 v3, 0x1
-
-    shl-int v4, v3, v1
-
-    int-to-long v3, v4
-
-    and-long v3, v16, v3
-
-    const-wide/16 v7, 0x0
-
-    cmp-long v3, v3, v7
-
-    if-nez v3, :cond_25
-
-    const/4 v3, 0x1
-
-    const/4 v5, 0x2
-
-    goto :goto_17
-
-    :cond_25
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v15}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v4
+    move-result-object v3
 
-    check-cast v4, Lk7;
+    check-cast v3, Ld7;
 
-    instance-of v3, v3, Landroidx/appcompat/view/menu/ActionMenuItemView;
+    iget-boolean v3, v3, Ld7;->e:Z
 
-    if-eqz v3, :cond_27
+    if-nez v3, :cond_21
 
-    iput v6, v4, Lk7;->c:I
+    sub-float/2addr v4, v5
 
-    const/4 v3, 0x1
+    :cond_21
+    add-int/lit8 v3, v8, -0x1
 
-    iput-boolean v3, v4, Lk7;->f:Z
+    const/16 v17, 0x1
 
-    if-nez v1, :cond_26
+    shl-int v9, v17, v3
 
-    iget-boolean v3, v4, Lk7;->e:Z
+    int-to-long v11, v9
 
-    if-nez v3, :cond_26
+    and-long v11, v18, v11
 
-    neg-int v3, v6
+    cmp-long v9, v11, p1
 
-    const/4 v5, 0x2
+    if-eqz v9, :cond_22
 
-    div-int/2addr v3, v5
+    invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    iput v3, v4, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v3
+
+    check-cast v3, Ld7;
+
+    iget-boolean v3, v3, Ld7;->e:Z
+
+    if-nez v3, :cond_22
+
+    sub-float/2addr v4, v5
+
+    :cond_22
+    const/4 v3, 0x0
+
+    cmpl-float v3, v4, v3
+
+    if-lez v3, :cond_23
+
+    mul-int v10, v10, v23
+
+    int-to-float v3, v10
+
+    div-float/2addr v3, v4
+
+    float-to-int v9, v3
+
+    goto :goto_13
+
+    :cond_23
+    const/4 v9, 0x0
+
+    :goto_13
+    move v4, v6
+
+    const/4 v3, 0x0
+
+    :goto_14
+    if-ge v3, v8, :cond_2a
+
+    const/16 v17, 0x1
+
+    shl-int v5, v17, v3
+
+    int-to-long v5, v5
+
+    and-long v5, v18, v5
+
+    cmp-long v5, v5, p1
+
+    if-nez v5, :cond_24
+
+    const/4 v11, 0x1
+
+    const/16 v20, 0x2
+
+    goto :goto_16
+
+    :cond_24
+    invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v6
+
+    check-cast v6, Ld7;
+
+    instance-of v5, v5, Landroidx/appcompat/view/menu/ActionMenuItemView;
+
+    if-eqz v5, :cond_26
+
+    iput v9, v6, Ld7;->c:I
+
+    const/4 v4, 0x1
+
+    iput-boolean v4, v6, Ld7;->f:Z
+
+    if-nez v3, :cond_25
+
+    iget-boolean v4, v6, Ld7;->e:Z
+
+    if-nez v4, :cond_25
+
+    neg-int v4, v9
+
+    const/16 v20, 0x2
+
+    div-int/lit8 v4, v4, 0x2
+
+    iput v4, v6, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
+
+    goto :goto_15
+
+    :cond_25
+    const/16 v20, 0x2
+
+    :goto_15
+    const/4 v4, 0x1
+
+    const/4 v11, 0x1
 
     goto :goto_16
 
     :cond_26
-    const/4 v5, 0x2
+    const/16 v20, 0x2
 
-    :goto_16
-    const/4 v3, 0x1
+    iget-boolean v5, v6, Ld7;->a:Z
 
-    const/16 v19, 0x1
+    if-eqz v5, :cond_27
 
-    goto :goto_17
+    iput v9, v6, Ld7;->c:I
+
+    const/4 v11, 0x1
+
+    iput-boolean v11, v6, Ld7;->f:Z
+
+    neg-int v4, v9
+
+    div-int/lit8 v4, v4, 0x2
+
+    iput v4, v6, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
+
+    move v4, v11
+
+    goto :goto_16
 
     :cond_27
-    const/4 v5, 0x2
-
-    iget-boolean v3, v4, Lk7;->a:Z
+    const/4 v11, 0x1
 
     if-eqz v3, :cond_28
 
-    iput v6, v4, Lk7;->c:I
+    div-int/lit8 v5, v9, 0x2
 
-    const/4 v3, 0x1
-
-    iput-boolean v3, v4, Lk7;->f:Z
-
-    neg-int v9, v6
-
-    div-int/2addr v9, v5
-
-    iput v9, v4, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
-
-    move/from16 v19, v3
-
-    goto :goto_17
+    iput v5, v6, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
     :cond_28
-    const/4 v3, 0x1
+    add-int/lit8 v5, v8, -0x1
 
-    if-eqz v1, :cond_29
+    if-eq v3, v5, :cond_29
 
-    div-int/lit8 v9, v6, 0x2
+    div-int/lit8 v5, v9, 0x2
 
-    iput v9, v4, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
+    iput v5, v6, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
     :cond_29
-    add-int/lit8 v9, v2, -0x1
+    :goto_16
+    add-int/lit8 v3, v3, 0x1
 
-    if-eq v1, v9, :cond_2a
-
-    div-int/lit8 v9, v6, 0x2
-
-    iput v9, v4, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
+    goto :goto_14
 
     :cond_2a
-    :goto_17
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_15
+    move v6, v4
 
     :cond_2b
-    :goto_18
-    move/from16 v4, v19
+    if-eqz v6, :cond_2d
 
-    if-eqz v4, :cond_2d
+    const/4 v4, 0x0
 
-    const/4 v3, 0x0
+    :goto_17
+    if-ge v4, v8, :cond_2d
 
-    :goto_19
-    if-ge v3, v2, :cond_2d
+    invoke-virtual {v0, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    move-result-object v3
 
-    move-result-object v1
+    invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    move-result-object v5
 
-    move-result-object v4
+    check-cast v5, Ld7;
 
-    check-cast v4, Lk7;
+    iget-boolean v6, v5, Ld7;->f:Z
 
-    iget-boolean v5, v4, Lk7;->f:Z
+    if-nez v6, :cond_2c
 
-    if-nez v5, :cond_2c
+    const/high16 v9, 0x40000000    # 2.0f
 
-    move v6, v14
-
-    const/high16 v4, 0x40000000    # 2.0f
-
-    goto :goto_1a
+    goto :goto_18
 
     :cond_2c
-    iget v5, v4, Lk7;->b:I
+    iget v6, v5, Ld7;->b:I
 
-    mul-int/2addr v5, v11
+    mul-int v6, v6, v23
 
-    iget v4, v4, Lk7;->c:I
+    iget v5, v5, Ld7;->c:I
 
-    add-int/2addr v5, v4
+    add-int/2addr v6, v5
 
-    const/high16 v4, 0x40000000    # 2.0f
+    const/high16 v9, 0x40000000    # 2.0f
 
-    invoke-static {v5, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v6, v9}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v5
 
-    move v6, v14
+    invoke-virtual {v3, v5, v7}, Landroid/view/View;->measure(II)V
 
-    invoke-virtual {v1, v5, v6}, Landroid/view/View;->measure(II)V
+    :goto_18
+    add-int/lit8 v4, v4, 0x1
 
-    :goto_1a
-    add-int/lit8 v3, v3, 0x1
-
-    move v14, v6
-
-    goto :goto_19
+    goto :goto_17
 
     :cond_2d
-    const/high16 v4, 0x40000000    # 2.0f
+    const/high16 v9, 0x40000000    # 2.0f
 
-    move/from16 v1, v28
+    if-eq v1, v9, :cond_2e
 
-    if-eq v1, v4, :cond_2e
+    move/from16 v6, v28
 
-    move/from16 v2, v24
-
-    move/from16 v6, v27
-
-    goto :goto_1b
+    goto :goto_19
 
     :cond_2e
     move/from16 v6, v21
 
-    move/from16 v2, v24
-
-    :goto_1b
+    :goto_19
     invoke-virtual {v0, v2, v6}, Landroid/view/View;->setMeasuredDimension(II)V
 
-    goto :goto_1d
+    return-void
 
     :cond_2f
     move/from16 v10, p2
 
-    const/4 v6, 0x0
+    const/4 v9, 0x0
 
-    :goto_1c
-    if-ge v6, v1, :cond_30
+    :goto_1a
+    if-ge v9, v1, :cond_30
 
-    invoke-virtual {v0, v6}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v9}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
@@ -1892,39 +1839,38 @@
 
     move-result-object v2
 
-    check-cast v2, Lk7;
+    check-cast v2, Ld7;
 
-    const/4 v3, 0x0
+    const/4 v15, 0x0
 
-    iput v3, v2, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
+    iput v15, v2, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
-    iput v3, v2, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
+    iput v15, v2, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v9, v9, 0x1
 
-    goto :goto_1c
+    goto :goto_1a
 
     :cond_30
-    invoke-super/range {p0 .. p2}, Lbd7;->onMeasure(II)V
+    invoke-super/range {p0 .. p2}, Lrh7;->onMeasure(II)V
 
-    :goto_1d
     return-void
 .end method
 
 .method public setExpandedActionViewsExclusive(Z)V
     .locals 0
 
-    iget-object p0, p0, Landroidx/appcompat/widget/ActionMenuView;->w0:Li7;
+    iget-object p0, p0, Landroidx/appcompat/widget/ActionMenuView;->o0:Lb7;
 
-    iput-boolean p1, p0, Li7;->F0:Z
+    iput-boolean p1, p0, Lb7;->x0:Z
 
     return-void
 .end method
 
-.method public setOnMenuItemClickListener(Ll7;)V
+.method public setOnMenuItemClickListener(Le7;)V
     .locals 0
 
-    iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuView;->D0:Ll7;
+    iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuView;->v0:Le7;
 
     return-void
 .end method
@@ -1934,24 +1880,23 @@
 
     invoke-virtual {p0}, Landroidx/appcompat/widget/ActionMenuView;->getMenu()Landroid/view/Menu;
 
-    iget-object p0, p0, Landroidx/appcompat/widget/ActionMenuView;->w0:Li7;
+    iget-object p0, p0, Landroidx/appcompat/widget/ActionMenuView;->o0:Lb7;
 
-    iget-object v0, p0, Li7;->x0:Lh7;
+    iget-object v0, p0, Lb7;->p0:La7;
 
     if-eqz v0, :cond_0
 
     invoke-virtual {v0, p1}, Landroidx/appcompat/widget/AppCompatImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    goto :goto_0
+    return-void
 
     :cond_0
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Li7;->z0:Z
+    iput-boolean v0, p0, Lb7;->r0:Z
 
-    iput-object p1, p0, Li7;->y0:Landroid/graphics/drawable/Drawable;
+    iput-object p1, p0, Lb7;->q0:Landroid/graphics/drawable/Drawable;
 
-    :goto_0
     return-void
 .end method
 
@@ -1980,7 +1925,7 @@
 
     iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuView;->b:Landroid/content/Context;
 
-    goto :goto_0
+    return-void
 
     :cond_0
     new-instance v0, Landroid/view/ContextThemeWrapper;
@@ -1994,20 +1939,19 @@
     iput-object v0, p0, Landroidx/appcompat/widget/ActionMenuView;->b:Landroid/content/Context;
 
     :cond_1
-    :goto_0
     return-void
 .end method
 
-.method public setPresenter(Li7;)V
+.method public setPresenter(Lb7;)V
     .locals 0
 
-    iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuView;->w0:Li7;
+    iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuView;->o0:Lb7;
 
-    iput-object p0, p1, Li7;->w0:Ljm8;
+    iput-object p0, p1, Lb7;->o0:Lqq8;
 
-    iget-object p1, p1, Li7;->c:Lpl8;
+    iget-object p1, p1, Lb7;->c:Lxp8;
 
-    iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuView;->a:Lpl8;
+    iput-object p1, p0, Landroidx/appcompat/widget/ActionMenuView;->a:Lxp8;
 
     return-void
 .end method

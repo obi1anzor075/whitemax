@@ -4,124 +4,126 @@
 
 
 # instance fields
-.field public A:Ljava/lang/Integer;
+.field public final a:Ljava/lang/String;
 
-.field public B:Ljava/lang/Integer;
+.field public final b:Z
 
-.field public C:Ljava/lang/CharSequence;
+.field public final c:Z
 
-.field public D:Ljava/lang/CharSequence;
 
-.field public E:Ljava/lang/CharSequence;
+# direct methods
+.method public constructor <init>(Ljava/lang/String;ZZ)V
+    .locals 0
 
-.field public F:Landroid/os/Bundle;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field public a:Ljava/lang/CharSequence;
+    iput-object p1, p0, Lw78;->a:Ljava/lang/String;
 
-.field public b:Ljava/lang/CharSequence;
+    iput-boolean p2, p0, Lw78;->b:Z
 
-.field public c:Ljava/lang/CharSequence;
+    iput-boolean p3, p0, Lw78;->c:Z
 
-.field public d:Ljava/lang/CharSequence;
-
-.field public e:Ljava/lang/CharSequence;
-
-.field public f:Ljava/lang/CharSequence;
-
-.field public g:Ljava/lang/CharSequence;
-
-.field public h:Landroid/net/Uri;
-
-.field public i:Lzxb;
-
-.field public j:Lzxb;
-
-.field public k:[B
-
-.field public l:Ljava/lang/Integer;
-
-.field public m:Landroid/net/Uri;
-
-.field public n:Ljava/lang/Integer;
-
-.field public o:Ljava/lang/Integer;
-
-.field public p:Ljava/lang/Integer;
-
-.field public q:Ljava/lang/Boolean;
-
-.field public r:Ljava/lang/Integer;
-
-.field public s:Ljava/lang/Integer;
-
-.field public t:Ljava/lang/Integer;
-
-.field public u:Ljava/lang/Integer;
-
-.field public v:Ljava/lang/Integer;
-
-.field public w:Ljava/lang/Integer;
-
-.field public x:Ljava/lang/CharSequence;
-
-.field public y:Ljava/lang/CharSequence;
-
-.field public z:Ljava/lang/CharSequence;
+    return-void
+.end method
 
 
 # virtual methods
-.method public final a(I[B)V
-    .locals 4
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
-    iget-object v0, p0, Lw78;->k:[B
+    if-ne p0, p1, :cond_0
 
-    if-eqz v0, :cond_0
+    goto :goto_0
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    :cond_0
+    if-eqz p1, :cond_2
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
 
-    const/4 v1, 0x3
+    const-class v1, Lw78;
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    if-eq v0, v1, :cond_1
 
-    move-result-object v2
-
-    sget v3, Lmze;->a:I
-
-    invoke-virtual {v0, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lw78;->l:Ljava/lang/Integer;
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lmze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    invoke-virtual {p2}, [B->clone()Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, [B
-
-    iput-object p2, p0, Lw78;->k:[B
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lw78;->l:Ljava/lang/Integer;
+    goto :goto_1
 
     :cond_1
-    return-void
+    check-cast p1, Lw78;
+
+    iget-object v0, p0, Lw78;->a:Ljava/lang/String;
+
+    iget-object v1, p1, Lw78;->a:Ljava/lang/String;
+
+    invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iget-boolean v0, p0, Lw78;->b:Z
+
+    iget-boolean v1, p1, Lw78;->b:Z
+
+    if-ne v0, v1, :cond_2
+
+    iget-boolean p0, p0, Lw78;->c:Z
+
+    iget-boolean p1, p1, Lw78;->c:Z
+
+    if-ne p0, p1, :cond_2
+
+    :goto_0
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_2
+    :goto_1
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 5
+
+    iget-object v0, p0, Lw78;->a:Ljava/lang/String;
+
+    const/16 v1, 0x1f
+
+    invoke-static {v1, v1, v0}, Lv04;->d(IILjava/lang/String;)I
+
+    move-result v0
+
+    iget-boolean v2, p0, Lw78;->b:Z
+
+    const/16 v3, 0x4d5
+
+    const/16 v4, 0x4cf
+
+    if-eqz v2, :cond_0
+
+    move v2, v4
+
+    goto :goto_0
+
+    :cond_0
+    move v2, v3
+
+    :goto_0
+    add-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget-boolean p0, p0, Lw78;->c:Z
+
+    if-eqz p0, :cond_1
+
+    move v3, v4
+
+    :cond_1
+    add-int/2addr v0, v3
+
+    return v0
 .end method

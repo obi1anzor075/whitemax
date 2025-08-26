@@ -2,51 +2,162 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lko4;
+
+# static fields
+.field public static final c:Lw64;
 
 
 # instance fields
-.field public final a:Leo4;
+.field public final a:Lv56;
 
-.field public b:Lyn4;
-
-.field public c:Z
-
-.field public final synthetic o:Ly64;
+.field public final b:Lv56;
 
 
 # direct methods
-.method public constructor <init>(Ly64;Leo4;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lw64;
+
+    invoke-direct {v0}, Lw64;-><init>()V
+
+    sput-object v0, Lw64;->c:Lw64;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>()V
+    .locals 2
+
+    .line 4
+    sget-object v0, Lvu3;->X:Lvu3;
+
+    .line 5
+    sget-object v1, Lvu3;->Y:Lvu3;
+
+    .line 6
+    invoke-direct {p0, v0, v1}, Lw64;-><init>(Lv56;Lv56;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lv56;Lv56;)V
     .locals 0
 
+    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lw64;->o:Ly64;
+    .line 2
+    iput-object p1, p0, Lw64;->a:Lv56;
 
-    iput-object p2, p0, Lw64;->a:Leo4;
+    .line 3
+    iput-object p2, p0, Lw64;->b:Lv56;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final release()V
-    .locals 3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget-object v0, p0, Lw64;->o:Ly64;
+    const/4 v0, 0x1
 
-    iget-object v0, v0, Ly64;->u:Landroid/os/Handler;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return v0
 
-    new-instance v1, Lds1;
+    :cond_0
+    instance-of v1, p1, Lw64;
 
-    const/16 v2, 0x17
+    const/4 v2, 0x0
 
-    invoke-direct {v1, v2, p0}, Lds1;-><init>(ILjava/lang/Object;)V
+    if-nez v1, :cond_1
 
-    invoke-static {v0, v1}, Lmze;->H(Landroid/os/Handler;Ljava/lang/Runnable;)V
+    return v2
 
-    return-void
+    :cond_1
+    check-cast p1, Lw64;
+
+    iget-object v1, p0, Lw64;->a:Lv56;
+
+    iget-object v3, p1, Lw64;->a:Lv56;
+
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object p0, p0, Lw64;->b:Lv56;
+
+    iget-object p1, p1, Lw64;->b:Lv56;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
+
+    return v2
+
+    :cond_3
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    iget-object v0, p0, Lw64;->a:Lv56;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Lw64;->b:Lv56;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Animations(push="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lw64;->a:Lv56;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", pop="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lw64;->b:Lv56;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

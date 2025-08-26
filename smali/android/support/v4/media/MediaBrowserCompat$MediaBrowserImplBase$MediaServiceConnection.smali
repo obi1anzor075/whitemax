@@ -55,7 +55,7 @@
 
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    goto :goto_0
+    return-void
 
     :cond_0
     iget-object p0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase$MediaServiceConnection;->this$0:Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImplBase;
@@ -64,7 +64,6 @@
 
     invoke-virtual {p0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :goto_0
     return-void
 .end method
 

@@ -1,253 +1,135 @@
 .class public final Lloe;
-.super Ljava/lang/Object;
+.super Lmoe;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Thread$UncaughtExceptionHandler;
+
+# static fields
+.field public static final CREATOR:Lkoe;
+
+
+# instance fields
+.field public final b:Ljava/lang/CharSequence;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lkoe;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lloe;->CREATOR:Lkoe;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/CharSequence;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lloe;->b:Ljava/lang/CharSequence;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
-    .locals 9
+.method public final describeContents()I
+    .locals 0
 
-    sget-boolean p0, Lnne;->b:Z
+    const/4 p0, 0x0
 
-    if-eqz p0, :cond_0
+    return p0
+.end method
 
-    goto/16 :goto_3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
 
     :cond_0
-    :try_start_0
-    sget-object p0, Lsne;->b:Lkv2;
-    :try_end_0
-    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_1
+    instance-of v1, p1, Lloe;
 
-    if-eqz p0, :cond_8
+    const/4 v2, 0x0
 
-    sget-boolean p1, Lnne;->b:Z
+    if-nez v1, :cond_1
 
-    if-eqz p1, :cond_1
-
-    goto/16 :goto_3
+    return v2
 
     :cond_1
-    iget-object p1, p0, Lkv2;->b:Ljava/lang/Object;
+    check-cast p1, Lloe;
 
-    check-cast p1, Li3d;
+    iget-object p0, p0, Lloe;->b:Ljava/lang/CharSequence;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p1, p1, Lloe;->b:Ljava/lang/CharSequence;
 
-    const/4 v0, 0x0
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    const/4 v1, 0x6
+    move-result p0
 
-    const/4 v2, 0x2
+    if-nez p0, :cond_2
 
-    const/4 v3, 0x0
-
-    invoke-static {p1, v2, v3, v0, v1}, Li3d;->d(Li3d;IZLz9d;I)V
-
-    sget-object p1, Lxhd;->a:Lv2b;
-
-    if-eqz p1, :cond_7
-
-    const-string v0, "system.shutdown.until.ts"
-
-    invoke-static {p1, v0}, Lvx3;->c(Lv2b;Ljava/lang/String;)Z
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_2
-
-    :goto_0
-    move v3, v1
-
-    goto :goto_1
+    return v2
 
     :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    iget-object p0, p0, Lloe;->b:Ljava/lang/CharSequence;
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v2, "system."
+    const-string v1, "SimpleText(text="
 
-    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v2, "CRASH_REPORT"
+    iget-object p0, p0, Lloe;->b:Ljava/lang/CharSequence;
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v2, ".shutdown.until.ts"
+    const-string p0, ")"
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
-
-    invoke-static {p1, v0}, Lvx3;->c(Lv2b;Ljava/lang/String;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    :goto_1
-    if-eqz v3, :cond_4
-
-    goto/16 :goto_3
-
-    :cond_4
-    iget-object p1, p0, Lkv2;->a:Ljava/lang/Object;
-
-    move-object v2, p1
-
-    check-cast v2, Lmv4;
-
-    iget-object p1, p0, Lkv2;->b:Ljava/lang/Object;
-
-    check-cast p1, Li3d;
-
-    invoke-virtual {p1}, Li3d;->c()Lc9e;
-
-    move-result-object v5
-
-    iget-object p1, p0, Lkv2;->c:Ljava/lang/Object;
-
-    check-cast p1, Lu9e;
-
-    iget-object v0, p1, Lu9e;->e:Ljava/util/ArrayList;
-
-    monitor-enter v0
-
-    :try_start_1
-    iget-object p1, p1, Lu9e;->e:Ljava/util/ArrayList;
-
-    invoke-static {p1}, Lo23;->s0(Ljava/lang/Iterable;)Ljava/util/List;
-
-    move-result-object v6
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    monitor-exit v0
-
-    invoke-static {}, Ljava/lang/Thread;->getAllStackTraces()Ljava/util/Map;
-
-    move-result-object v7
-
-    iget-object p1, p0, Lkv2;->o:Ljava/lang/Object;
-
-    check-cast p1, Lyn7;
-
-    iget-object p1, p1, Lyn7;->h:Ljava/util/concurrent/ConcurrentLinkedQueue;
-
-    invoke-static {p1}, Lo23;->s0(Ljava/lang/Iterable;)Ljava/util/List;
-
-    move-result-object v8
-
-    const/4 v3, 0x1
-
-    move-object v4, p2
-
-    invoke-virtual/range {v2 .. v8}, Lmv4;->M(ILjava/lang/Throwable;Lc9e;Ljava/util/List;Ljava/util/Map;Ljava/util/List;)Lmv3;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_9
-
-    new-instance p2, Ljava/util/concurrent/CountDownLatch;
-
-    invoke-direct {p2, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
-
-    new-instance v0, Lg5;
-
-    const/16 v1, 0x11
-
-    invoke-direct {v0, p0, p1, p2, v1}, Lg5;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
-
-    invoke-static {v0}, Lkoe;->b(Ljava/lang/Runnable;)V
-
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
-
-    move-result-object p1
-
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    invoke-static {p1, v0}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_5
-
-    const-wide/16 v0, 0x1388
-
-    goto :goto_2
-
-    :cond_5
-    const-wide/32 v0, 0x5f5e100
-
-    :goto_2
-    iget-object p0, p0, Lkv2;->X:Ljava/lang/Object;
-
-    check-cast p0, Lj3d;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    :try_start_2
-    iget-object p0, p0, Lj3d;->a:Landroid/os/ConditionVariable;
-
-    if-eqz p0, :cond_6
-
-    invoke-virtual {p0, v0, v1}, Landroid/os/ConditionVariable;->block(J)Z
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
-
-    :catch_0
-    :cond_6
-    sget-object p0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {p2, v0, v1, p0}, Ljava/util/concurrent/CountDownLatch;->await(JLjava/util/concurrent/TimeUnit;)Z
-
-    goto :goto_3
-
-    :catchall_0
-    move-exception p0
-
-    monitor-exit v0
-
-    throw p0
-
-    :cond_7
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "Tracer settings are not initialized."
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_8
-    :try_start_3
-    const-string p0, "Required value was null."
-
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
     move-result-object p0
 
-    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    return-object p0
+.end method
 
-    throw p1
-    :try_end_3
-    .catch Ljava/lang/IllegalStateException; {:try_start_3 .. :try_end_3} :catch_1
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 0
 
-    :catch_1
-    :cond_9
-    :goto_3
+    iget-object p0, p0, Lloe;->b:Ljava/lang/CharSequence;
+
+    invoke-static {p0, p1, p2}, Landroid/text/TextUtils;->writeToParcel(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V
+
     return-void
 .end method

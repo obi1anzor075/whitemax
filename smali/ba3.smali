@@ -3,443 +3,191 @@
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic g:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-
 # instance fields
-.field public final a:I
+.field public a:Ljava/lang/String;
 
-.field public final b:I
+.field public b:I
 
-.field public final c:I
+.field public c:I
 
-.field public final synthetic d:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+.field public d:Ljava/lang/Object;
 
-.field public final synthetic e:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+.field public e:Ljava/io/Serializable;
 
-.field public final synthetic f:Lea3;
+.field public f:Ljava/io/Serializable;
 
-.field private volatile synthetic load$volatile:I
+.field public g:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    const-class v0, Lba3;
-
-    const-string v1, "load$volatile"
-
-    invoke-static {v0, v1}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    move-result-object v0
-
-    sput-object v0, Lba3;->g:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lea3;I)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/Class;[Ljava/lang/Class;)V
+    .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lba3;->f:Lea3;
+    const/4 v0, 0x0
 
-    iput p2, p0, Lba3;->a:I
+    iput-object v0, p0, Lba3;->a:Ljava/lang/String;
 
-    invoke-static {p2}, Ljava/lang/Integer;->numberOfLeadingZeros(I)I
+    new-instance v0, Ljava/util/HashSet;
 
-    move-result p1
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    add-int/lit8 p1, p1, 0x1
+    iput-object v0, p0, Lba3;->d:Ljava/lang/Object;
 
-    iput p1, p0, Lba3;->b:I
+    new-instance v1, Ljava/util/HashSet;
 
-    mul-int/lit8 p1, p2, 0x2
+    invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
-    div-int/lit8 p1, p1, 0x3
+    iput-object v1, p0, Lba3;->e:Ljava/io/Serializable;
 
-    iput p1, p0, Lba3;->c:I
+    const/4 v1, 0x0
 
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    iput v1, p0, Lba3;->b:I
 
-    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;-><init>(I)V
+    iput v1, p0, Lba3;->c:I
 
-    iput-object p1, p0, Lba3;->d:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    new-instance v2, Ljava/util/HashSet;
 
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
 
-    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;-><init>(I)V
+    iput-object v2, p0, Lba3;->f:Ljava/io/Serializable;
 
-    iput-object p1, p0, Lba3;->e:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    invoke-static {p1}, Lvnb;->a(Ljava/lang/Class;)Lvnb;
 
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    array-length p1, p2
+
+    :goto_0
+    if-ge v1, p1, :cond_0
+
+    aget-object v0, p2, v1
+
+    const-string v2, "Null interface"
+
+    invoke-static {v0, v2}, Lap;->o(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v2, p0, Lba3;->d:Ljava/lang/Object;
+
+    check-cast v2, Ljava/util/HashSet;
+
+    invoke-static {v0}, Lvnb;->a(Ljava/lang/Class;)Lvnb;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;Ljava/lang/Object;Lqe6;)Ljava/lang/Object;
-    .locals 8
+.method public a(Lth4;)V
+    .locals 2
 
-    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
+    iget-object v0, p1, Lth4;->a:Lvnb;
+
+    iget-object v1, p0, Lba3;->d:Ljava/lang/Object;
+
+    check-cast v1, Ljava/util/HashSet;
+
+    invoke-virtual {v1, v0}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 
-    const v1, -0x61c88647
+    if-nez v0, :cond_0
 
-    mul-int/2addr v0, v1
+    iget-object p0, p0, Lba3;->e:Ljava/io/Serializable;
 
-    iget v1, p0, Lba3;->b:I
+    check-cast p0, Ljava/util/HashSet;
 
-    ushr-int/2addr v0, v1
+    invoke-virtual {p0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    const/4 v1, 0x0
-
-    :goto_0
-    iget-object v2, p0, Lba3;->d:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    invoke-virtual {v2, v0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lqe6;
-
-    sget-object v4, Lba3;->g:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    if-nez v3, :cond_7
-
-    const/4 v5, 0x0
-
-    if-nez p2, :cond_0
-
-    return-object v5
+    return-void
 
     :cond_0
-    if-nez v1, :cond_3
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    :cond_1
-    invoke-virtual {v4, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->get(Ljava/lang/Object;)I
+    const-string p1, "Components are not allowed to depend on interfaces they themselves provide."
 
-    move-result v1
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    iget v3, p0, Lba3;->c:I
-
-    if-lt v1, v3, :cond_2
-
-    sget-object p0, Lfa3;->a:Lkotlinx/coroutines/internal/Symbol;
-
-    return-object p0
-
-    :cond_2
-    add-int/lit8 v3, v1, 0x1
-
-    invoke-virtual {v4, p0, v1, v3}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->compareAndSet(Ljava/lang/Object;II)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    const/4 v1, 0x1
-
-    :cond_3
-    move v6, v1
-
-    if-nez p3, :cond_4
-
-    new-instance p3, Lqe6;
-
-    iget-object v1, p0, Lba3;->f:Lea3;
-
-    iget-object v1, v1, Lea3;->a:Ljava/lang/ref/ReferenceQueue;
-
-    invoke-direct {p3, p1, v1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V
-
-    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
-
-    :cond_4
-    move-object v7, p3
-
-    :cond_5
-    invoke-virtual {v2, v0, v5, v7}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->compareAndSet(ILjava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_6
-
-    goto :goto_1
-
-    :cond_6
-    invoke-virtual {v2, v0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
-
-    move-result-object p3
-
-    if-eqz p3, :cond_5
-
-    move v1, v6
-
-    move-object p3, v7
-
-    goto :goto_0
-
-    :cond_7
-    invoke-virtual {v3}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_b
-
-    if-eqz v1, :cond_8
-
-    invoke-virtual {v4, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->decrementAndGet(Ljava/lang/Object;)I
-
-    :cond_8
-    :goto_1
-    iget-object v3, p0, Lba3;->e:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    invoke-virtual {v3, v0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    instance-of p1, v4, Lwu7;
-
-    if-eqz p1, :cond_9
-
-    sget-object p0, Lfa3;->a:Lkotlinx/coroutines/internal/Symbol;
-
-    return-object p0
-
-    :cond_9
-    invoke-virtual {v3, v0, v4, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->compareAndSet(ILjava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_a
-
-    return-object v4
-
-    :cond_a
-    invoke-virtual {v3, v0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-eq p1, v4, :cond_9
-
-    goto :goto_1
-
-    :cond_b
-    if-nez v2, :cond_c
-
-    invoke-virtual {p0, v0}, Lba3;->c(I)V
-
-    :cond_c
-    if-nez v0, :cond_d
-
-    iget v0, p0, Lba3;->a:I
-
-    :cond_d
-    add-int/lit8 v0, v0, -0x1
-
-    goto :goto_0
+    throw p0
 .end method
 
-.method public final b()Lba3;
-    .locals 8
+.method public b()Lca3;
+    .locals 9
+
+    iget-object v0, p0, Lba3;->g:Ljava/lang/Object;
+
+    check-cast v0, Lra3;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Lba3;->f:Lea3;
-
-    invoke-virtual {v0}, Ls2;->size()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    if-ge v1, v2, :cond_1
-
-    move v1, v2
-
-    :cond_1
-    invoke-static {v1}, Ljava/lang/Integer;->highestOneBit(I)I
-
-    move-result v1
-
-    mul-int/2addr v1, v2
-
-    new-instance v2, Lba3;
-
-    invoke-direct {v2, v0, v1}, Lba3;-><init>(Lea3;I)V
-
     const/4 v0, 0x0
 
     :goto_0
-    iget v1, p0, Lba3;->a:I
+    if-eqz v0, :cond_1
 
-    if-ge v0, v1, :cond_a
+    new-instance v1, Lca3;
 
-    iget-object v1, p0, Lba3;->d:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    iget-object v2, p0, Lba3;->a:Ljava/lang/String;
 
-    invoke-virtual {v1, v0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
+    new-instance v3, Ljava/util/HashSet;
 
-    move-result-object v1
+    iget-object v0, p0, Lba3;->d:Ljava/lang/Object;
 
-    check-cast v1, Lqe6;
+    check-cast v0, Ljava/util/HashSet;
 
-    if-eqz v1, :cond_2
+    invoke-direct {v3, v0}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    invoke-virtual {v1}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+    new-instance v4, Ljava/util/HashSet;
 
-    move-result-object v3
+    iget-object v0, p0, Lba3;->e:Ljava/io/Serializable;
 
-    goto :goto_1
+    check-cast v0, Ljava/util/HashSet;
 
-    :cond_2
-    const/4 v3, 0x0
+    invoke-direct {v4, v0}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    :goto_1
-    if-eqz v1, :cond_3
+    iget v5, p0, Lba3;->b:I
 
-    if-nez v3, :cond_3
+    iget v6, p0, Lba3;->c:I
 
-    invoke-virtual {p0, v0}, Lba3;->c(I)V
+    iget-object v0, p0, Lba3;->g:Ljava/lang/Object;
 
-    :cond_3
-    :goto_2
-    iget-object v4, p0, Lba3;->e:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    move-object v7, v0
 
-    invoke-virtual {v4, v0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
+    check-cast v7, Lra3;
 
-    move-result-object v5
+    iget-object p0, p0, Lba3;->f:Ljava/io/Serializable;
 
-    instance-of v6, v5, Lwu7;
+    move-object v8, p0
 
-    if-eqz v6, :cond_4
+    check-cast v8, Ljava/util/HashSet;
 
-    check-cast v5, Lwu7;
+    invoke-direct/range {v1 .. v8}, Lca3;-><init>(Ljava/lang/String;Ljava/util/Set;Ljava/util/Set;IILra3;Ljava/util/Set;)V
 
-    iget-object v5, v5, Lwu7;->a:Ljava/lang/Object;
-
-    goto :goto_4
-
-    :cond_4
-    if-nez v5, :cond_5
-
-    sget-object v6, Lfa3;->b:Lwu7;
-
-    goto :goto_3
-
-    :cond_5
-    sget-object v6, Lfa3;->a:Lkotlinx/coroutines/internal/Symbol;
-
-    sget-object v6, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-virtual {v5, v6}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_6
-
-    sget-object v6, Lfa3;->c:Lwu7;
-
-    goto :goto_3
-
-    :cond_6
-    new-instance v6, Lwu7;
-
-    invoke-direct {v6, v5}, Lwu7;-><init>(Ljava/lang/Object;)V
-
-    :cond_7
-    :goto_3
-    invoke-virtual {v4, v0, v5, v6}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->compareAndSet(ILjava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_9
-
-    :goto_4
-    if-eqz v3, :cond_8
-
-    if-eqz v5, :cond_8
-
-    invoke-virtual {v2, v3, v5, v1}, Lba3;->a(Ljava/lang/Object;Ljava/lang/Object;Lqe6;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    sget-object v3, Lfa3;->a:Lkotlinx/coroutines/internal/Symbol;
-
-    if-eq v1, v3, :cond_0
-
-    :cond_8
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_9
-    invoke-virtual {v4, v0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
-
-    move-result-object v7
-
-    if-eq v7, v5, :cond_7
-
-    goto :goto_2
-
-    :cond_a
-    return-object v2
-.end method
-
-.method public final c(I)V
-    .locals 3
-
-    :goto_0
-    iget-object v0, p0, Lba3;->e:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    if-nez v1, :cond_0
-
-    return-void
-
-    :cond_0
-    instance-of v2, v1, Lwu7;
-
-    if-eqz v2, :cond_1
-
-    return-void
+    return-object v1
 
     :cond_1
-    const/4 v2, 0x0
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    invoke-virtual {v0, p1, v1, v2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->compareAndSet(ILjava/lang/Object;Ljava/lang/Object;)Z
+    const-string v0, "Missing required property: factory."
 
-    move-result v2
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    if-eqz v2, :cond_2
-
-    sget-object p1, Lea3;->b:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    iget-object p0, p0, Lba3;->f:Lea3;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object p1, Lea3;->b:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    invoke-virtual {p1, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->decrementAndGet(Ljava/lang/Object;)I
-
-    return-void
-
-    :cond_2
-    invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    if-eq v2, v1, :cond_1
-
-    goto :goto_0
+    throw p0
 .end method

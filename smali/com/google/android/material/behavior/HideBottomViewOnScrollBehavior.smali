@@ -1,5 +1,5 @@
 .class public Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;
-.super Lkt3;
+.super Lkw3;
 .source "SourceFile"
 
 
@@ -9,7 +9,7 @@
         "<V:",
         "Landroid/view/View;",
         ">",
-        "Lkt3;"
+        "Lkw3;"
     }
 .end annotation
 
@@ -44,15 +44,15 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    sget v0, Lwlb;->motionDurationLong2:I
+    sget v0, Liqb;->motionDurationLong2:I
 
     sput v0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->i:I
 
-    sget v0, Lwlb;->motionDurationMedium4:I
+    sget v0, Liqb;->motionDurationMedium4:I
 
     sput v0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->j:I
 
-    sget v0, Lwlb;->motionEasingEmphasizedInterpolator:I
+    sget v0, Liqb;->motionEasingEmphasizedInterpolator:I
 
     sput v0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->k:I
 
@@ -140,7 +140,7 @@
 
     const/16 v0, 0xe1
 
-    invoke-static {p3, v0, p1}, Lct0;->H(IILandroid/content/Context;)I
+    invoke-static {p3, v0, p1}, Lsre;->r(IILandroid/content/Context;)I
 
     move-result p1
 
@@ -154,7 +154,7 @@
 
     const/16 v0, 0xaf
 
-    invoke-static {p3, v0, p1}, Lct0;->H(IILandroid/content/Context;)I
+    invoke-static {p3, v0, p1}, Lsre;->r(IILandroid/content/Context;)I
 
     move-result p1
 
@@ -164,11 +164,11 @@
 
     move-result-object p1
 
-    sget-object p3, Log;->d:Lo85;
+    sget-object p3, Lgg;->d:Lgb5;
 
     sget v0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->k:I
 
-    invoke-static {p1, v0, p3}, Lct0;->I(Landroid/content/Context;ILandroid/view/animation/Interpolator;)Landroid/animation/TimeInterpolator;
+    invoke-static {p1, v0, p3}, Lsre;->s(Landroid/content/Context;ILandroid/animation/TimeInterpolator;)Landroid/animation/TimeInterpolator;
 
     move-result-object p1
 
@@ -178,9 +178,9 @@
 
     move-result-object p1
 
-    sget-object p2, Log;->c:Lo85;
+    sget-object p2, Lgg;->c:Lgb5;
 
-    invoke-static {p1, v0, p2}, Lct0;->I(Landroid/content/Context;ILandroid/view/animation/Interpolator;)Landroid/animation/TimeInterpolator;
+    invoke-static {p1, v0, p2}, Lsre;->s(Landroid/content/Context;ILandroid/animation/TimeInterpolator;)Landroid/animation/TimeInterpolator;
 
     move-result-object p1
 
@@ -194,41 +194,39 @@
 .method public final p(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;IIIII[I)V
     .locals 0
 
-    const/4 p1, 0x0
-
-    iget-object p3, p0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->a:Ljava/util/LinkedHashSet;
+    iget-object p1, p0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->a:Ljava/util/LinkedHashSet;
 
     if-lez p5, :cond_3
 
-    iget p4, p0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->g:I
+    iget p3, p0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->g:I
 
-    const/4 p5, 0x1
+    const/4 p4, 0x1
 
-    if-ne p4, p5, :cond_0
+    if-ne p3, p4, :cond_0
 
     goto/16 :goto_0
 
     :cond_0
-    iget-object p4, p0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->h:Landroid/view/ViewPropertyAnimator;
+    iget-object p3, p0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->h:Landroid/view/ViewPropertyAnimator;
 
-    if-eqz p4, :cond_1
+    if-eqz p3, :cond_1
 
-    invoke-virtual {p4}, Landroid/view/ViewPropertyAnimator;->cancel()V
+    invoke-virtual {p3}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
     invoke-virtual {p2}, Landroid/view/View;->clearAnimation()V
 
     :cond_1
-    iput p5, p0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->g:I
+    iput p4, p0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->g:I
 
-    invoke-virtual {p3}, Ljava/util/AbstractCollection;->iterator()Ljava/util/Iterator;
+    invoke-virtual {p1}, Ljava/util/AbstractCollection;->iterator()Ljava/util/Iterator;
 
-    move-result-object p3
+    move-result-object p1
 
-    invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result p4
+    move-result p3
 
-    if-nez p4, :cond_2
+    if-nez p3, :cond_2
 
     iget p1, p0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->f:I
 
@@ -256,11 +254,11 @@
 
     move-result-object p1
 
-    new-instance p2, Ll6;
+    new-instance p2, Le6;
 
     const/4 p3, 0x6
 
-    invoke-direct {p2, p3, p0}, Ll6;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p2, p3, p0}, Le6;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {p1, p2}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
@@ -268,49 +266,47 @@
 
     iput-object p1, p0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->h:Landroid/view/ViewPropertyAnimator;
 
-    goto :goto_0
+    return-void
 
     :cond_2
-    invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {p1}, Lv04;->f(Ljava/util/Iterator;)Ljava/lang/ClassCastException;
 
     move-result-object p0
 
-    invoke-static {p0}, Lhr1;->r(Ljava/lang/Object;)V
-
-    throw p1
+    throw p0
 
     :cond_3
     if-gez p5, :cond_7
 
-    iget p4, p0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->g:I
+    iget p3, p0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->g:I
 
-    const/4 p5, 0x2
+    const/4 p4, 0x2
 
-    if-ne p4, p5, :cond_4
+    if-ne p3, p4, :cond_4
 
     goto :goto_0
 
     :cond_4
-    iget-object p4, p0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->h:Landroid/view/ViewPropertyAnimator;
+    iget-object p3, p0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->h:Landroid/view/ViewPropertyAnimator;
 
-    if-eqz p4, :cond_5
+    if-eqz p3, :cond_5
 
-    invoke-virtual {p4}, Landroid/view/ViewPropertyAnimator;->cancel()V
+    invoke-virtual {p3}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
     invoke-virtual {p2}, Landroid/view/View;->clearAnimation()V
 
     :cond_5
-    iput p5, p0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->g:I
+    iput p4, p0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->g:I
 
-    invoke-virtual {p3}, Ljava/util/AbstractCollection;->iterator()Ljava/util/Iterator;
+    invoke-virtual {p1}, Ljava/util/AbstractCollection;->iterator()Ljava/util/Iterator;
 
-    move-result-object p3
+    move-result-object p1
 
-    invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result p4
+    move-result p3
 
-    if-nez p4, :cond_6
+    if-nez p3, :cond_6
 
     iget p1, p0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->b:I
 
@@ -338,11 +334,11 @@
 
     move-result-object p1
 
-    new-instance p2, Ll6;
+    new-instance p2, Le6;
 
     const/4 p3, 0x6
 
-    invoke-direct {p2, p3, p0}, Ll6;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p2, p3, p0}, Le6;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {p1, p2}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
@@ -350,16 +346,14 @@
 
     iput-object p1, p0, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->h:Landroid/view/ViewPropertyAnimator;
 
-    goto :goto_0
+    return-void
 
     :cond_6
-    invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {p1}, Lv04;->f(Ljava/util/Iterator;)Ljava/lang/ClassCastException;
 
     move-result-object p0
 
-    invoke-static {p0}, Lhr1;->r(Ljava/lang/Object;)V
-
-    throw p1
+    throw p0
 
     :cond_7
     :goto_0
@@ -375,11 +369,10 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method

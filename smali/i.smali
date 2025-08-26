@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Li34;
+.implements Lx64;
 
 
 # instance fields
@@ -24,48 +24,17 @@
 
 # virtual methods
 .method public final a()Ljava/lang/Object;
-    .locals 9
+    .locals 8
 
     iget p0, p0, Li;->a:I
 
     packed-switch p0, :pswitch_data_0
 
-    new-instance p0, Lone/me/sdk/arch/activity/ActivityWrapperWidget;
+    new-instance p0, Lone/me/settings/media/ui/SettingMediaScreen;
 
-    const-class v0, Lru/ok/messages/settings/ActSettings;
-
-    invoke-static {v0}, Lm7c;->a(Ljava/lang/Class;)Lxy2;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lxy2;->b()Ljava/lang/String;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    new-instance v1, Lu1c;
-
-    const/4 v2, 0x7
-
-    invoke-direct {v1, v2}, Lu1c;-><init>(I)V
-
-    invoke-direct {p0, v0, v1}, Lone/me/sdk/arch/activity/ActivityWrapperWidget;-><init>(Ljava/lang/String;Lu16;)V
+    invoke-direct {p0}, Lone/me/settings/media/ui/SettingMediaScreen;-><init>()V
 
     return-object p0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "Required value was null."
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 
     :pswitch_0
     new-instance p0, Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;
@@ -105,9 +74,7 @@
     :pswitch_5
     new-instance p0, Lone/me/mediapicker/MediaPickerScreen;
 
-    new-instance v8, Lq46;
-
-    sget-object v5, Lhw4;->a:Lhw4;
+    new-instance v0, Lo86;
 
     const/4 v6, 0x0
 
@@ -121,11 +88,11 @@
 
     const/4 v4, 0x0
 
-    move-object v0, v8
+    sget-object v5, Lgz4;->a:Lgz4;
 
-    invoke-direct/range {v0 .. v7}, Lq46;-><init>(ZZZZLjava/util/List;ZZ)V
+    invoke-direct/range {v0 .. v7}, Lo86;-><init>(ZZZZLjava/util/List;ZZ)V
 
-    invoke-direct {p0, v8}, Lone/me/mediapicker/MediaPickerScreen;-><init>(Lq46;)V
+    invoke-direct {p0, v0}, Lone/me/mediapicker/MediaPickerScreen;-><init>(Lo86;)V
 
     return-object p0
 
@@ -144,9 +111,9 @@
     return-object p0
 
     :pswitch_8
-    new-instance p0, Lone/me/inviteactions/invitebyqr/InviteByQrBottomSheet;
+    new-instance p0, Lone/me/inviteactions/invitefriendsbottomsheet/InviteFriendsToMaxBottomSheet;
 
-    invoke-direct {p0}, Lone/me/inviteactions/invitebyqr/InviteByQrBottomSheet;-><init>()V
+    invoke-direct {p0}, Lone/me/inviteactions/invitefriendsbottomsheet/InviteFriendsToMaxBottomSheet;-><init>()V
 
     return-object p0
 
@@ -172,109 +139,109 @@
     return-object p0
 
     :pswitch_c
+    new-instance p0, Lone/me/devmenu/ThemeRoomBottomSheet;
+
+    invoke-direct {p0}, Lone/me/devmenu/ThemeRoomBottomSheet;-><init>()V
+
+    return-object p0
+
+    :pswitch_d
     new-instance p0, Lone/me/devmenu/threadsviewer/ThreadsStateViewerScreen;
 
     invoke-direct {p0}, Lone/me/devmenu/threadsviewer/ThreadsStateViewerScreen;-><init>()V
 
     return-object p0
 
-    :pswitch_d
+    :pswitch_e
     new-instance p0, Lone/me/showroom/ShowroomScreen;
 
     invoke-direct {p0}, Lone/me/showroom/ShowroomScreen;-><init>()V
 
     return-object p0
 
-    :pswitch_e
+    :pswitch_f
     new-instance p0, Lone/me/devmenu/server/ServerPortBottomSheet;
 
     invoke-direct {p0}, Lone/me/devmenu/server/ServerPortBottomSheet;-><init>()V
 
     return-object p0
 
-    :pswitch_f
+    :pswitch_10
     new-instance p0, Lone/me/devmenu/server/ServerHostBottomSheet;
 
     invoke-direct {p0}, Lone/me/devmenu/server/ServerHostBottomSheet;-><init>()V
 
     return-object p0
 
-    :pswitch_10
+    :pswitch_11
     new-instance p0, Lone/me/devmenu/logsviewer/LogsViewerScreen;
 
     invoke-direct {p0}, Lone/me/devmenu/logsviewer/LogsViewerScreen;-><init>()V
 
     return-object p0
 
-    :pswitch_11
+    :pswitch_12
     new-instance p0, Lone/me/devmenu/DevMenuScreen;
 
     invoke-direct {p0}, Lone/me/devmenu/DevMenuScreen;-><init>()V
 
     return-object p0
 
-    :pswitch_12
+    :pswitch_13
     new-instance p0, Lone/me/contactlist/ContactListWidget;
 
-    sget-object v0, Lql3;->a:Lql3;
+    sget-object v0, Loo3;->a:Loo3;
 
-    invoke-direct {p0, v0}, Lone/me/contactlist/ContactListWidget;-><init>(Lql3;)V
+    invoke-direct {p0, v0}, Lone/me/contactlist/ContactListWidget;-><init>(Loo3;)V
 
     return-object p0
 
-    :pswitch_13
-    new-instance p0, Lgo3;
+    :pswitch_14
+    new-instance p0, Ldr3;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-object p0
 
-    :pswitch_14
+    :pswitch_15
     new-instance p0, Lone/me/chats/search/ChatsListSearchScreen;
 
     invoke-direct {p0}, Lone/me/chats/search/ChatsListSearchScreen;-><init>()V
 
     return-object p0
 
-    :pswitch_15
+    :pswitch_16
     new-instance p0, Lone/me/calllist/ui/CallHistoryScreen;
 
     invoke-direct {p0}, Lone/me/calllist/ui/CallHistoryScreen;-><init>()V
 
     return-object p0
 
-    :pswitch_16
+    :pswitch_17
     new-instance p0, Lone/me/calls/ui/ui/waitingroom/AdminWaitingRoomScreen;
 
     invoke-direct {p0}, Lone/me/calls/ui/ui/waitingroom/AdminWaitingRoomScreen;-><init>()V
 
     return-object p0
 
-    :pswitch_17
+    :pswitch_18
     new-instance p0, Lone/me/calls/ui/ui/settings/CallAdminSettingsScreen;
 
     invoke-direct {p0}, Lone/me/calls/ui/ui/settings/CallAdminSettingsScreen;-><init>()V
 
     return-object p0
 
-    :pswitch_18
+    :pswitch_19
     new-instance p0, Lone/me/calls/ui/bottomsheet/opponents/CallOpponentsListWidget;
 
     invoke-direct {p0}, Lone/me/calls/ui/bottomsheet/opponents/CallOpponentsListWidget;-><init>()V
 
     return-object p0
 
-    :pswitch_19
+    :pswitch_1a
     new-instance p0, Lone/me/calls/ui/ui/pip/PipScreen;
 
     invoke-direct {p0}, Lone/me/calls/ui/ui/pip/PipScreen;-><init>()V
-
-    return-object p0
-
-    :pswitch_1a
-    new-instance p0, Lone/me/appearancesettings/AppearanceSettingsScreen;
-
-    invoke-direct {p0}, Lone/me/appearancesettings/AppearanceSettingsScreen;-><init>()V
 
     return-object p0
 
@@ -291,8 +258,6 @@
     invoke-direct {p0}, Lone/me/aboutappsettings/AboutAppSettingsScreen;-><init>()V
 
     return-object p0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

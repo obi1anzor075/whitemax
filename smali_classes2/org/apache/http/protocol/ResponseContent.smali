@@ -147,7 +147,7 @@
 
     invoke-interface {p1, p0}, Lorg/apache/http/HttpMessage;->addHeader(Lorg/apache/http/Header;)V
 
-    goto :goto_1
+    return-void
 
     :cond_3
     invoke-interface {p1}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
@@ -175,7 +175,6 @@
     invoke-interface {p1, p2, p0}, Lorg/apache/http/HttpMessage;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_4
-    :goto_1
     return-void
 
     :cond_5

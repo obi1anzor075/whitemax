@@ -1,116 +1,50 @@
-.class public final Lw87;
-.super Ljava/lang/Object;
+.class public final synthetic Lw87;
+.super La76;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Comparable;
+.implements Ln66;
 
 
 # static fields
-.field public static final b:Lw87;
-
-
-# instance fields
-.field public final a:I
+.field public static final a:Lw87;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 6
 
     new-instance v0, Lw87;
 
-    invoke-direct {v0}, Lw87;-><init>()V
+    const-string v4, "registerSelectForOnJoin(Lkotlinx/coroutines/selects/SelectInstance;Ljava/lang/Object;)V"
 
-    sput-object v0, Lw87;->b:Lw87;
+    const/4 v5, 0x0
 
-    return-void
-.end method
+    const/4 v1, 0x3
 
-.method public constructor <init>()V
-    .locals 1
+    const-class v2, Lx87;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v3, "registerSelectForOnJoin"
 
-    const v0, 0x20014
+    invoke-direct/range {v0 .. v5}, La76;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
-    iput v0, p0, Lw87;->a:I
+    sput-object v0, Lw87;->a:Lw87;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compareTo(Ljava/lang/Object;)I
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    check-cast p1, Lw87;
+    check-cast p1, Lx87;
 
-    iget p0, p0, Lw87;->a:I
+    check-cast p2, Lf2d;
 
-    iget p1, p1, Lw87;->a:I
+    invoke-static {p1, p2, p3}, Lx87;->access$registerSelectForOnJoin(Lx87;Lf2d;Ljava/lang/Object;)V
 
-    sub-int/2addr p0, p1
-
-    return p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lw87;
-
-    if-eqz v1, :cond_1
-
-    check-cast p1, Lw87;
-
-    goto :goto_0
-
-    :cond_1
-    const/4 p1, 0x0
-
-    :goto_0
-    const/4 v1, 0x0
-
-    if-nez p1, :cond_2
-
-    return v1
-
-    :cond_2
-    iget p0, p0, Lw87;->a:I
-
-    iget p1, p1, Lw87;->a:I
-
-    if-ne p0, p1, :cond_3
-
-    goto :goto_1
-
-    :cond_3
-    move v0, v1
-
-    :goto_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    iget p0, p0, Lw87;->a:I
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    const-string p0, "2.0.20"
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 .end method

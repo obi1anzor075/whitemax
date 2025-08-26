@@ -1,19 +1,37 @@
-.class public final synthetic La32;
+.class public final La32;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic a:Lc32;
+# static fields
+.field public static final synthetic a:La32;
+
+.field public static final b:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lc32;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, La32;
 
-    iput-object p1, p0, La32;->a:Lc32;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, La32;->a:La32;
+
+    const/4 v0, 0x1
+
+    const v1, 0x7ffffffe
+
+    const-string v2, "kotlinx.coroutines.channels.defaultBuffer"
+
+    const/16 v3, 0x40
+
+    invoke-static {v2, v3, v0, v1}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp(Ljava/lang/String;III)I
+
+    move-result v0
+
+    sput v0, La32;->b:I
 
     return-void
 .end method

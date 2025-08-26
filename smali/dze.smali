@@ -1,23 +1,11 @@
-.class public abstract Ldze;
+.class public interface abstract Ldze;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# direct methods
-.method public static a(Landroid/content/Context;)Z
-    .locals 1
+# virtual methods
+.method public abstract d(Landroid/graphics/Matrix;)V
+.end method
 
-    const-class v0, Landroid/os/UserManager;
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/os/UserManager;
-
-    invoke-virtual {p0}, Landroid/os/UserManager;->isUserUnlocked()Z
-
-    move-result p0
-
-    return p0
+.method public abstract h(Landroid/graphics/RectF;)V
 .end method

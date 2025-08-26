@@ -1,317 +1,171 @@
-.class public final Lzw1;
-.super Lhd7;
+.class public final enum Lzw1;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic p:I
+# static fields
+.field public static final enum X:Lzw1;
 
-.field public final synthetic q:Ljava/lang/Object;
+.field public static final enum Y:Lzw1;
+
+.field public static final enum Z:Lzw1;
+
+.field public static final enum b:Lzw1;
+
+.field public static final enum c:Lzw1;
+
+.field public static final enum o:Lzw1;
+
+.field public static final enum o0:Lzw1;
+
+.field public static final enum p0:Lzw1;
+
+.field public static final synthetic q0:[Lzw1;
+
+
+# instance fields
+.field public final a:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;Landroid/content/Context;I)V
+.method static constructor <clinit>()V
+    .locals 11
+
+    new-instance v0, Lzw1;
+
+    const-string v1, "RELEASED"
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2, v2}, Lzw1;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v0, Lzw1;->b:Lzw1;
+
+    new-instance v1, Lzw1;
+
+    const-string v3, "RELEASING"
+
+    const/4 v4, 0x1
+
+    invoke-direct {v1, v3, v4, v4}, Lzw1;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v1, Lzw1;->c:Lzw1;
+
+    move v3, v2
+
+    new-instance v2, Lzw1;
+
+    const-string v5, "CLOSED"
+
+    const/4 v6, 0x2
+
+    invoke-direct {v2, v5, v6, v3}, Lzw1;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v2, Lzw1;->o:Lzw1;
+
+    move v5, v3
+
+    new-instance v3, Lzw1;
+
+    const-string v6, "PENDING_OPEN"
+
+    const/4 v7, 0x3
+
+    invoke-direct {v3, v6, v7, v5}, Lzw1;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v3, Lzw1;->X:Lzw1;
+
+    move v5, v4
+
+    new-instance v4, Lzw1;
+
+    const-string v6, "CLOSING"
+
+    const/4 v7, 0x4
+
+    invoke-direct {v4, v6, v7, v5}, Lzw1;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v4, Lzw1;->Y:Lzw1;
+
+    move v6, v5
+
+    new-instance v5, Lzw1;
+
+    const-string v7, "OPENING"
+
+    const/4 v8, 0x5
+
+    invoke-direct {v5, v7, v8, v6}, Lzw1;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v5, Lzw1;->Z:Lzw1;
+
+    move v7, v6
+
+    new-instance v6, Lzw1;
+
+    const-string v8, "OPEN"
+
+    const/4 v9, 0x6
+
+    invoke-direct {v6, v8, v9, v7}, Lzw1;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v6, Lzw1;->o0:Lzw1;
+
+    move v8, v7
+
+    new-instance v7, Lzw1;
+
+    const-string v9, "CONFIGURED"
+
+    const/4 v10, 0x7
+
+    invoke-direct {v7, v9, v10, v8}, Lzw1;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v7, Lzw1;->p0:Lzw1;
+
+    filled-new-array/range {v0 .. v7}, [Lzw1;
+
+    move-result-object v0
+
+    sput-object v0, Lzw1;->q0:[Lzw1;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;IZ)V
     .locals 0
 
-    iput p3, p0, Lzw1;->p:I
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iput-object p1, p0, Lzw1;->q:Ljava/lang/Object;
-
-    invoke-direct {p0, p2}, Lhd7;-><init>(Landroid/content/Context;)V
+    iput-boolean p3, p0, Lzw1;->a:Z
 
     return-void
 .end method
 
-
-# virtual methods
-.method public b(Landroid/view/View;I)I
+.method public static valueOf(Ljava/lang/String;)Lzw1;
     .locals 1
 
-    iget v0, p0, Lzw1;->p:I
+    const-class v0, Lzw1;
 
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0, p1, p2}, Lhd7;->b(Landroid/view/View;I)I
-
-    move-result p0
-
-    return p0
-
-    :pswitch_0
-    iget-object p0, p0, Lzw1;->q:Ljava/lang/Object;
-
-    check-cast p0, Lcom/google/android/material/carousel/CarouselLayoutManager;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 p0, 0x0
-
-    return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public c(Landroid/view/View;I)I
-    .locals 1
-
-    iget v0, p0, Lzw1;->p:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0, p1, p2}, Lhd7;->c(Landroid/view/View;I)I
-
-    move-result p0
-
-    return p0
-
-    :pswitch_0
-    iget-object p0, p0, Lzw1;->q:Ljava/lang/Object;
-
-    check-cast p0, Lcom/google/android/material/carousel/CarouselLayoutManager;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 p0, 0x0
-
-    return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public d(Landroid/util/DisplayMetrics;)F
-    .locals 1
-
-    iget v0, p0, Lzw1;->p:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0, p1}, Lhd7;->d(Landroid/util/DisplayMetrics;)F
-
-    move-result p0
-
-    return p0
-
-    :pswitch_0
-    iget p0, p1, Landroid/util/DisplayMetrics;->densityDpi:I
-
-    int-to-float p0, p0
-
-    const/high16 p1, 0x42c80000    # 100.0f
-
-    div-float/2addr p1, p0
-
-    return p1
-
-    :pswitch_1
-    iget p0, p1, Landroid/util/DisplayMetrics;->densityDpi:I
-
-    int-to-float p0, p0
-
-    const/high16 p1, 0x42c80000    # 100.0f
-
-    div-float/2addr p1, p0
-
-    return p1
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public f(I)I
-    .locals 1
-
-    iget v0, p0, Lzw1;->p:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0, p1}, Lhd7;->f(I)I
-
-    move-result p0
-
-    return p0
-
-    :pswitch_0
-    const/16 v0, 0x64
-
-    invoke-super {p0, p1}, Lhd7;->f(I)I
-
-    move-result p0
-
-    invoke-static {v0, p0}, Ljava/lang/Math;->min(II)I
-
-    move-result p0
-
-    return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public g(I)Landroid/graphics/PointF;
-    .locals 1
-
-    iget v0, p0, Lzw1;->p:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0, p1}, Lhd7;->g(I)Landroid/graphics/PointF;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
-    return-object p0
-
-    :pswitch_0
-    iget-object p0, p0, Lzw1;->q:Ljava/lang/Object;
-
-    check-cast p0, Lcom/google/android/material/carousel/CarouselLayoutManager;
-
-    invoke-virtual {p0, p1}, Lcom/google/android/material/carousel/CarouselLayoutManager;->a(I)Landroid/graphics/PointF;
-
-    move-result-object p0
+    check-cast p0, Lzw1;
 
     return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method
 
-.method public j(Landroid/view/View;Ll34;)V
-    .locals 3
+.method public static values()[Lzw1;
+    .locals 1
 
-    iget v0, p0, Lzw1;->p:I
+    sget-object v0, Lzw1;->q0:[Lzw1;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {v0}, [Lzw1;->clone()Ljava/lang/Object;
 
-    invoke-super {p0, p1, p2}, Lhd7;->j(Landroid/view/View;Ll34;)V
+    move-result-object v0
 
-    return-void
+    check-cast v0, [Lzw1;
 
-    :pswitch_0
-    iget-object v0, p0, Lzw1;->q:Ljava/lang/Object;
-
-    check-cast v0, Le04;
-
-    iget-object v1, v0, Le04;->a:Landroidx/recyclerview/widget/RecyclerView;
-
-    if-nez v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v1}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/a;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1, p1}, Le04;->b(Landroidx/recyclerview/widget/a;Landroid/view/View;)[I
-
-    move-result-object p1
-
-    const/4 v0, 0x0
-
-    aget v0, p1, v0
-
-    const/4 v1, 0x1
-
-    aget p1, p1, v1
-
-    invoke-static {v0}, Ljava/lang/Math;->abs(I)I
-
-    move-result v1
-
-    invoke-static {p1}, Ljava/lang/Math;->abs(I)I
-
-    move-result v2
-
-    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lhd7;->e(I)I
-
-    move-result v1
-
-    if-lez v1, :cond_1
-
-    iget-object p0, p0, Lhd7;->i:Landroid/view/animation/DecelerateInterpolator;
-
-    invoke-virtual {p2, v0, p1, v1, p0}, Ll34;->e(IIILandroid/view/animation/Interpolator;)V
-
-    :cond_1
-    :goto_0
-    return-void
-
-    :pswitch_1
-    iget-object v0, p0, Lzw1;->q:Ljava/lang/Object;
-
-    check-cast v0, Le04;
-
-    iget-object v1, v0, Le04;->a:Landroidx/recyclerview/widget/RecyclerView;
-
-    invoke-virtual {v1}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/a;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1, p1}, Le04;->b(Landroidx/recyclerview/widget/a;Landroid/view/View;)[I
-
-    move-result-object p1
-
-    const/4 v0, 0x0
-
-    aget v0, p1, v0
-
-    const/4 v1, 0x1
-
-    aget p1, p1, v1
-
-    invoke-static {v0}, Ljava/lang/Math;->abs(I)I
-
-    move-result v1
-
-    invoke-static {p1}, Ljava/lang/Math;->abs(I)I
-
-    move-result v2
-
-    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lhd7;->e(I)I
-
-    move-result v1
-
-    if-lez v1, :cond_2
-
-    iget-object p0, p0, Lhd7;->i:Landroid/view/animation/DecelerateInterpolator;
-
-    invoke-virtual {p2, v0, p1, v1, p0}, Ll34;->e(IIILandroid/view/animation/Interpolator;)V
-
-    :cond_2
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

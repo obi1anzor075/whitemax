@@ -1,101 +1,472 @@
-.class public final Lxpa;
-.super Ll5e;
+.class public final synthetic Lxpa;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lkj3;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lone/me/startconversation/chat/PickChatMembers;
+.field public final synthetic b:Lfqa;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/startconversation/chat/PickChatMembers;)V
+.method public synthetic constructor <init>(Lfqa;I)V
     .locals 0
 
-    iput-object p2, p0, Lxpa;->Y:Lone/me/startconversation/chat/PickChatMembers;
+    iput p2, p0, Lxpa;->a:I
 
-    const/4 p2, 0x2
+    iput-object p1, p0, Lxpa;->b:Lfqa;
 
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final accept(Ljava/lang/Object;)V
+    .locals 19
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    move-object/from16 v0, p0
 
-    invoke-virtual {p0, p1, p2}, Lxpa;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    iget v1, v0, Lxpa;->a:I
 
-    move-result-object p0
+    packed-switch v1, :pswitch_data_0
 
-    check-cast p0, Lxpa;
+    move-object/from16 v1, p1
 
-    sget-object p1, Ljue;->a:Ljue;
+    check-cast v1, Lorg/webrtc/PeerConnection;
 
-    invoke-virtual {p0, p1}, Lxpa;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v2, " ex="
 
-    return-object p1
-.end method
+    iget-object v3, v0, Lxpa;->b:Lfqa;
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
+    iget-object v4, v3, Lfqa;->t:Ld;
 
-    new-instance v0, Lxpa;
+    iget-object v5, v3, Lfqa;->y:Ls1c;
 
-    iget-object p0, p0, Lxpa;->Y:Lone/me/startconversation/chat/PickChatMembers;
+    invoke-virtual {v1}, Lorg/webrtc/PeerConnection;->getTransceivers()Ljava/util/List;
 
-    invoke-direct {v0, p2, p0}, Lxpa;-><init>(Lkotlin/coroutines/Continuation;Lone/me/startconversation/chat/PickChatMembers;)V
+    move-result-object v6
 
-    iput-object p1, v0, Lxpa;->X:Ljava/lang/Object;
+    const/4 v7, 0x0
 
-    return-object v0
-.end method
+    iput-object v7, v3, Lfqa;->Q:Lorg/webrtc/RtpSender;
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    iput-object v7, v3, Lfqa;->S:Lorg/webrtc/RtpSender;
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-interface {v6}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    iget-object p1, p0, Lxpa;->X:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    sget-object p1, Lone/me/startconversation/chat/PickChatMembers;->B0:[Lk77;
-
-    iget-object p0, p0, Lxpa;->Y:Lone/me/startconversation/chat/PickChatMembers;
-
-    iget-object p1, p0, Lone/me/startconversation/chat/PickChatMembers;->y0:Lt97;
-
-    invoke-interface {p1}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lqna;
-
-    new-instance v0, Ljrf;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, p0, v1}, Ljrf;-><init>(Lone/me/sdk/arch/Widget;I)V
-
-    invoke-virtual {p1, v0}, Lqna;->e(Ljrf;)V
+    move-result-object v0
 
     :cond_0
-    sget-object p0, Ljue;->a:Ljue;
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    return-object p0
+    move-result v8
+
+    const-string v9, "s"
+
+    const-string v10, "PCRTCClient"
+
+    if-eqz v8, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lorg/webrtc/RtpTransceiver;
+
+    invoke-virtual {v8}, Lorg/webrtc/RtpTransceiver;->getMid()Ljava/lang/String;
+
+    move-result-object v11
+
+    if-eqz v11, :cond_0
+
+    invoke-virtual {v8}, Lorg/webrtc/RtpTransceiver;->getMid()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v11, v9}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v11
+
+    if-eqz v11, :cond_0
+
+    invoke-virtual {v8}, Lorg/webrtc/RtpTransceiver;->getMediaType()Lorg/webrtc/MediaStreamTrack$MediaType;
+
+    move-result-object v11
+
+    sget-object v12, Lorg/webrtc/MediaStreamTrack$MediaType;->MEDIA_TYPE_AUDIO:Lorg/webrtc/MediaStreamTrack$MediaType;
+
+    if-ne v11, v12, :cond_0
+
+    const-string v0, "audioShareTransceiver found"
+
+    invoke-interface {v5, v10, v0}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_1
+    move-object v8, v7
+
+    :goto_0
+    const/4 v11, 0x0
+
+    if-nez v8, :cond_2
+
+    goto :goto_2
+
+    :cond_2
+    :try_start_0
+    sget-object v0, Lorg/webrtc/RtpTransceiver$RtpTransceiverDirection;->SEND_ONLY:Lorg/webrtc/RtpTransceiver$RtpTransceiverDirection;
+
+    invoke-virtual {v8, v0}, Lorg/webrtc/RtpTransceiver;->setDirection(Lorg/webrtc/RtpTransceiver$RtpTransceiverDirection;)Z
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v0
+
+    new-instance v12, Ljava/lang/StringBuilder;
+
+    const-string v13, "audioShareTransceiver setDirection failed with error: "
+
+    invoke-direct {v12, v13}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v5, v10, v0}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
+
+    :goto_1
+    invoke-virtual {v4}, Ld;->a()Lvq0;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lvq0;->b:Ljava/lang/Object;
+
+    check-cast v0, Lhq7;
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, v0, Lhq7;->j:Lz50;
+
+    iget-object v0, v0, Lyi3;->e:Ljava/lang/Object;
+
+    check-cast v0, Lorg/webrtc/MediaStreamTrack;
+
+    check-cast v0, Lorg/webrtc/AudioTrack;
+
+    if-eqz v0, :cond_3
+
+    invoke-virtual {v8}, Lorg/webrtc/RtpTransceiver;->getSender()Lorg/webrtc/RtpSender;
+
+    move-result-object v8
+
+    iput-object v8, v3, Lfqa;->Q:Lorg/webrtc/RtpSender;
+
+    iget-object v12, v3, Lfqa;->q:Lgt;
+
+    const-string v13, "audio-share"
+
+    invoke-virtual {v12, v8, v13}, Lgt;->a(Lorg/webrtc/RtpSender;Ljava/lang/String;)V
+
+    invoke-virtual {v8, v0, v11}, Lorg/webrtc/RtpSender;->setTrack(Lorg/webrtc/MediaStreamTrack;Z)Z
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    const-string v12, "audioShareTransceiver setTrack, trackId = "
+
+    invoke-direct {v8, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Lorg/webrtc/MediaStreamTrack;->id()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v5, v10, v0}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_3
+    :goto_2
+    invoke-interface {v6}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_4
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_5
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lorg/webrtc/RtpTransceiver;
+
+    invoke-virtual {v6}, Lorg/webrtc/RtpTransceiver;->getMid()Ljava/lang/String;
+
+    move-result-object v8
+
+    if-eqz v8, :cond_4
+
+    invoke-virtual {v6}, Lorg/webrtc/RtpTransceiver;->getMid()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_4
+
+    invoke-virtual {v6}, Lorg/webrtc/RtpTransceiver;->getMediaType()Lorg/webrtc/MediaStreamTrack$MediaType;
+
+    move-result-object v8
+
+    sget-object v12, Lorg/webrtc/MediaStreamTrack$MediaType;->MEDIA_TYPE_VIDEO:Lorg/webrtc/MediaStreamTrack$MediaType;
+
+    if-ne v8, v12, :cond_4
+
+    const-string v0, "shareScreenTransceiver found"
+
+    invoke-interface {v5, v10, v0}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object v7, v6
+
+    :cond_5
+    if-nez v7, :cond_6
+
+    goto/16 :goto_7
+
+    :cond_6
+    :try_start_1
+    sget-object v0, Lorg/webrtc/RtpTransceiver$RtpTransceiverDirection;->SEND_ONLY:Lorg/webrtc/RtpTransceiver$RtpTransceiverDirection;
+
+    invoke-virtual {v7, v0}, Lorg/webrtc/RtpTransceiver;->setDirection(Lorg/webrtc/RtpTransceiver$RtpTransceiverDirection;)Z
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+
+    goto :goto_3
+
+    :catch_1
+    move-exception v0
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    const-string v8, "shareScreenTransceiver setDirection failed with error: "
+
+    invoke-direct {v6, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v5, v10, v0}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
+
+    :goto_3
+    invoke-virtual {v4}, Ld;->a()Lvq0;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lvq0;->b:Ljava/lang/Object;
+
+    check-cast v0, Lhq7;
+
+    if-eqz v0, :cond_9
+
+    iget-object v0, v0, Lhq7;->z:Leuc;
+
+    iget-object v0, v0, Lyi3;->e:Ljava/lang/Object;
+
+    check-cast v0, Lorg/webrtc/MediaStreamTrack;
+
+    check-cast v0, Lorg/webrtc/VideoTrack;
+
+    if-eqz v0, :cond_9
+
+    iget-object v12, v3, Lfqa;->q:Lgt;
+
+    invoke-virtual {v7}, Lorg/webrtc/RtpTransceiver;->getSender()Lorg/webrtc/RtpSender;
+
+    move-result-object v13
+
+    const/16 v17, 0x0
+
+    const/16 v18, 0x0
+
+    const-string v14, "screen-share"
+
+    const/16 v15, 0x7530
+
+    const v16, 0x1f4000
+
+    invoke-virtual/range {v12 .. v18}, Lgt;->b(Lorg/webrtc/RtpSender;Ljava/lang/String;IILjava/lang/Double;Z)V
+
+    iput-object v13, v3, Lfqa;->S:Lorg/webrtc/RtpSender;
+
+    invoke-virtual {v13, v0, v11}, Lorg/webrtc/RtpSender;->setTrack(Lorg/webrtc/MediaStreamTrack;Z)Z
+
+    iget-object v4, v3, Lfqa;->S:Lorg/webrtc/RtpSender;
+
+    iget-boolean v6, v3, Lfqa;->f0:Z
+
+    if-nez v6, :cond_7
+
+    goto :goto_4
+
+    :cond_7
+    if-nez v4, :cond_8
+
+    goto :goto_4
+
+    :cond_8
+    new-instance v6, Lvq0;
+
+    invoke-direct {v6, v3, v11}, Lvq0;-><init>(Ljava/lang/Object;Z)V
+
+    invoke-virtual {v4, v6}, Lorg/webrtc/RtpSender;->setVideoEncoderObserver(Lorg/webrtc/VideoEncoderObserver;)V
+
+    :goto_4
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    const-string v6, "shareScreenTransceiver setTrack, trackId = "
+
+    invoke-direct {v4, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Lorg/webrtc/MediaStreamTrack;->id()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v5, v10, v0}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
+
+    :try_start_2
+    iget-object v0, v3, Lfqa;->S:Lorg/webrtc/RtpSender;
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v3, v1, v11, v4, v0}, Lfqa;->l(Lorg/webrtc/PeerConnection;ZZLorg/webrtc/RtpSender;)V
+    :try_end_2
+    .catch Ljava/lang/IllegalStateException; {:try_start_2 .. :try_end_2} :catch_3
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
+
+    goto :goto_7
+
+    :catch_2
+    move-exception v0
+
+    goto :goto_5
+
+    :catch_3
+    move-exception v0
+
+    goto :goto_6
+
+    :goto_5
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    const-string v6, "Exception, "
+
+    invoke-direct {v4, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v5, v10, v0}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_7
+
+    :goto_6
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    const-string v6, "IllegalStateException, "
+
+    invoke-direct {v4, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v5, v10, v0}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_9
+    :goto_7
+    invoke-virtual {v3, v1}, Lfqa;->u(Lorg/webrtc/PeerConnection;)V
+
+    new-instance v0, Lcqa;
+
+    const/4 v2, 0x1
+
+    invoke-direct {v0, v3, v2}, Lcqa;-><init>(Lfqa;I)V
+
+    iget-object v2, v3, Lfqa;->M:Lorg/webrtc/MediaConstraints;
+
+    invoke-virtual {v1, v0, v2}, Lorg/webrtc/PeerConnection;->createAnswer(Lorg/webrtc/SdpObserver;Lorg/webrtc/MediaConstraints;)V
+
+    return-void
+
+    :pswitch_0
+    move-object/from16 v1, p1
+
+    check-cast v1, Lorg/webrtc/PeerConnection;
+
+    iget-object v0, v0, Lxpa;->b:Lfqa;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Lfqa;->t(Lorg/webrtc/PeerConnection;Z)V
+
+    invoke-virtual {v0, v1, v2}, Lfqa;->k(Lorg/webrtc/PeerConnection;Z)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,64 +1,60 @@
-.class public final Lx81;
+.class public final synthetic Lx81;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lf91;
+.implements Lv56;
 
 
-# static fields
-.field public static final a:Lx81;
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Ld91;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Ld91;I)V
+    .locals 0
 
-    new-instance v0, Lx81;
+    iput p2, p0, Lx81;->a:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lx81;->b:Ld91;
 
-    sput-object v0, Lx81;->a:Lx81;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final invoke()Ljava/lang/Object;
     .locals 1
 
-    const/4 v0, 0x1
+    iget v0, p0, Lx81;->a:I
 
-    if-ne p0, p1, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    return v0
+    new-instance v0, Lz81;
 
-    :cond_0
-    instance-of p0, p1, Lx81;
+    iget-object p0, p0, Lx81;->b:Ld91;
 
-    if-nez p0, :cond_1
+    invoke-direct {v0, p0}, Lz81;-><init>(Ld91;)V
 
-    const/4 p0, 0x0
+    return-object v0
 
-    return p0
+    :pswitch_0
+    new-instance v0, Ly81;
 
-    :cond_1
-    return v0
-.end method
+    iget-object p0, p0, Lx81;->b:Ld91;
 
-.method public final hashCode()I
-    .locals 0
+    invoke-direct {v0, p0}, Ly81;-><init>(Ld91;)V
 
-    const p0, -0x1d91a224
+    return-object v0
 
-    return p0
-.end method
+    nop
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    const-string p0, "ChangeMicrophoneStateCall"
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

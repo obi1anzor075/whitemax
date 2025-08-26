@@ -1,23 +1,32 @@
 .class public final Lted;
-.super Ljava/lang/Object;
+.super Lsod;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Ljava/util/List;
-
-.field public final b:Ljava/util/List;
-
-
-# direct methods
-.method public constructor <init>(Ljava/util/List;Ljava/util/List;)V
+# virtual methods
+.method public final C()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    return-void
+.end method
 
-    iput-object p1, p0, Lted;->a:Ljava/util/List;
+.method public final x(Lol7;)V
+    .locals 1
 
-    iput-object p2, p0, Lted;->b:Ljava/util/List;
+    instance-of v0, p1, Lhzc;
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object p0, p0, Lccc;->a:Landroid/view/View;
+
+    check-cast p0, Lded;
+
+    check-cast p1, Lsdd;
+
+    invoke-virtual {p0, p1}, Lded;->setModelItem(Lsdd;)V
 
     return-void
 .end method

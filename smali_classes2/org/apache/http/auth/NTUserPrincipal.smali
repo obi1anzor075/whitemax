@@ -77,12 +77,11 @@
 
     iput-object p1, p0, Lorg/apache/http/auth/NTUserPrincipal;->ntname:Ljava/lang/String;
 
-    goto :goto_1
+    return-void
 
     :cond_1
     iput-object p2, p0, Lorg/apache/http/auth/NTUserPrincipal;->ntname:Ljava/lang/String;
 
-    :goto_1
     return-void
 
     :cond_2

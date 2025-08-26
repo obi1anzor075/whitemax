@@ -1,223 +1,85 @@
 .class public final Ld25;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/concurrent/Callable;
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final b:Ljava/lang/Object;
-
-.field public final c:Ljava/lang/Object;
-
-.field public final o:Ljava/lang/Object;
+.field public final synthetic Y:Lone/me/settings/privacy/ui/pincode/EnterPinCodeScreen;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Callable;Lz15;La25;)V
-    .locals 1
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/settings/privacy/ui/pincode/EnterPinCodeScreen;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    iput-object p2, p0, Ld25;->Y:Lone/me/settings/privacy/ui/pincode/EnterPinCodeScreen;
 
-    iput v0, p0, Ld25;->a:I
+    const/4 p2, 0x2
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    iput-object p1, p0, Ld25;->b:Ljava/lang/Object;
-
-    .line 3
-    iput-object p2, p0, Ld25;->c:Ljava/lang/Object;
-
-    .line 4
-    iput-object p3, p0, Ld25;->o:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ludc;Ljava/util/List;Ljava/lang/String;)V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Ld25;->a:I
-
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ld25;->o:Ljava/lang/Object;
-
-    iput-object p2, p0, Ld25;->b:Ljava/lang/Object;
-
-    iput-object p3, p0, Ld25;->c:Ljava/lang/Object;
+    invoke-direct {p0, p2, p1}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final call()Ljava/lang/Object;
-    .locals 5
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget v0, p0, Ld25;->a:I
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p0, p1, p2}, Ld25;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    const-string v0, "DELETE FROM folder_and_chats WHERE folderId = ? AND chatId IN ("
+    move-result-object p0
 
-    invoke-static {v0}, Lhr1;->l(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast p0, Ld25;
 
-    move-result-object v0
+    sget-object p1, Le5f;->a:Le5f;
 
-    iget-object v1, p0, Ld25;->b:Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Ld25;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    check-cast v1, Ljava/util/List;
+    return-object p1
+.end method
 
-    invoke-interface {v1}, Ljava/util/List;->size()I
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    move-result v2
+    new-instance v0, Ld25;
 
-    invoke-static {v0, v2}, La06;->e(Ljava/lang/StringBuilder;I)V
+    iget-object p0, p0, Ld25;->Y:Lone/me/settings/privacy/ui/pincode/EnterPinCodeScreen;
 
-    const-string v2, ")"
+    invoke-direct {v0, p2, p0}, Ld25;-><init>(Lkotlin/coroutines/Continuation;Lone/me/settings/privacy/ui/pincode/EnterPinCodeScreen;)V
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput-object p1, v0, Ld25;->X:Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    return-object v0
+.end method
 
-    move-result-object v0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object v2, p0, Ld25;->o:Ljava/lang/Object;
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    check-cast v2, Ludc;
+    iget-object p1, p0, Ld25;->X:Ljava/lang/Object;
 
-    iget-object v3, v2, Ludc;->a:Laec;
+    check-cast p1, Le5f;
 
-    invoke-virtual {v3, v0}, Laec;->d(Ljava/lang/String;)Lyz5;
+    iget-object p0, p0, Ld25;->Y:Lone/me/settings/privacy/ui/pincode/EnterPinCodeScreen;
 
-    move-result-object v0
+    invoke-virtual {p0}, Lou3;->getOnBackPressedDispatcher()Ld1a;
 
-    const/4 v3, 0x1
+    move-result-object p0
 
-    iget-object p0, p0, Ld25;->c:Ljava/lang/Object;
+    if-eqz p0, :cond_0
 
-    check-cast p0, Ljava/lang/String;
-
-    if-nez p0, :cond_0
-
-    invoke-interface {v0, v3}, Le4e;->W(I)V
-
-    goto :goto_0
+    invoke-virtual {p0}, Ld1a;->d()V
 
     :cond_0
-    invoke-interface {v0, v3, p0}, Le4e;->f(ILjava/lang/String;)V
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    const/4 v1, 0x2
-
-    :goto_1
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/Long;
-
-    if-nez v3, :cond_1
-
-    invoke-interface {v0, v1}, Le4e;->W(I)V
-
-    goto :goto_2
-
-    :cond_1
-    invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v3
-
-    invoke-interface {v0, v1, v3, v4}, Le4e;->j(IJ)V
-
-    :goto_2
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_1
-
-    :cond_2
-    iget-object p0, v2, Ludc;->a:Laec;
-
-    invoke-virtual {p0}, Laec;->c()V
-
-    :try_start_0
-    invoke-virtual {v0}, Lyz5;->n()I
-
-    invoke-virtual {p0}, Laec;->r()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-virtual {p0}, Laec;->l()V
-
-    sget-object p0, Ljue;->a:Ljue;
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
-
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {p0}, Laec;->l()V
-
-    throw v0
-
-    :pswitch_0
-    iget-object v0, p0, Ld25;->o:Ljava/lang/Object;
-
-    check-cast v0, La25;
-
-    iget-object v1, p0, Ld25;->c:Ljava/lang/Object;
-
-    check-cast v1, Lz15;
-
-    invoke-virtual {v1}, Lz15;->a()J
-
-    move-result-wide v1
-
-    :try_start_1
-    iget-object p0, p0, Ld25;->b:Ljava/lang/Object;
-
-    check-cast p0, Ljava/util/concurrent/Callable;
-
-    invoke-interface {p0}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
-
-    move-result-object p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    invoke-virtual {v0, v1, v2}, La25;->a(J)V
-
-    return-object p0
-
-    :catchall_1
-    move-exception p0
-
-    invoke-virtual {v0, v1, v2}, La25;->a(J)V
-
-    throw p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

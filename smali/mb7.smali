@@ -1,123 +1,41 @@
-.class public abstract synthetic Lmb7;
+.class public interface abstract Lmb7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Llb7;
 
-# static fields
-.field public static final synthetic $EnumSwitchMapping$0:[I
 
+# virtual methods
+.method public varargs abstract call([Ljava/lang/Object;)Ljava/lang/Object;
+.end method
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public abstract callBy(Ljava/util/Map;)Ljava/lang/Object;
+.end method
 
-    invoke-static {}, Lnb7;->values()[Lnb7;
+.method public abstract getName()Ljava/lang/String;
+.end method
 
-    move-result-object v0
+.method public abstract getParameters()Ljava/util/List;
+.end method
 
-    array-length v0, v0
+.method public abstract getReturnType()Lec7;
+.end method
 
-    new-array v0, v0, [I
+.method public abstract getTypeParameters()Ljava/util/List;
+.end method
 
-    :try_start_0
-    sget-object v1, Lnb7;->ON_CREATE:Lnb7;
+.method public abstract getVisibility()Lfc7;
+.end method
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+.method public abstract isAbstract()Z
+.end method
 
-    move-result v1
+.method public abstract isFinal()Z
+.end method
 
-    const/4 v2, 0x1
+.method public abstract isOpen()Z
+.end method
 
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    :try_start_1
-    sget-object v1, Lnb7;->ON_STOP:Lnb7;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    :try_start_2
-    sget-object v1, Lnb7;->ON_START:Lnb7;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    :try_start_3
-    sget-object v1, Lnb7;->ON_PAUSE:Lnb7;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
-    :try_start_4
-    sget-object v1, Lnb7;->ON_RESUME:Lnb7;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
-
-    :catch_4
-    :try_start_5
-    sget-object v1, Lnb7;->ON_DESTROY:Lnb7;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x6
-
-    aput v2, v0, v1
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
-
-    :catch_5
-    :try_start_6
-    sget-object v1, Lnb7;->ON_ANY:Lnb7;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x7
-
-    aput v2, v0, v1
-    :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
-
-    :catch_6
-    sput-object v0, Lmb7;->$EnumSwitchMapping$0:[I
-
-    return-void
+.method public abstract isSuspend()Z
 .end method

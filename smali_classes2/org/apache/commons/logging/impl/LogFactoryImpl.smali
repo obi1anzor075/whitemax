@@ -189,7 +189,7 @@
 
     move-result-object v8
 
-    invoke-direct/range {p0 .. p0}, Lorg/apache/commons/logging/impl/LogFactoryImpl;->getBaseClassLoader()Ljava/lang/ClassLoader;
+    invoke-direct {v1}, Lorg/apache/commons/logging/impl/LogFactoryImpl;->getBaseClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v0
 
@@ -206,7 +206,7 @@
 
     const-string v13, "\' from classloader "
 
-    invoke-static {v0, v2, v13}, Lhr1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, v2, v13}, Lzt1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -272,11 +272,6 @@
 
     goto/16 :goto_9
 
-    :catch_2
-    move-exception v0
-
-    goto/16 :goto_a
-
     :cond_1
     new-instance v14, Ljava/lang/StringBuilder;
 
@@ -294,9 +289,9 @@
 
     move-result-object v14
     :try_end_0
-    .catch Ljava/lang/NoClassDefFoundError; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Ljava/lang/ExceptionInInitializerError; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Lorg/apache/commons/logging/LogConfigurationException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NoClassDefFoundError; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/ExceptionInInitializerError; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Lorg/apache/commons/logging/LogConfigurationException; {:try_start_0 .. :try_end_0} :catch_6
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :goto_1
@@ -354,9 +349,9 @@
 
     invoke-virtual {v1, v0}, Lorg/apache/commons/logging/impl/LogFactoryImpl;->logDiagnostic(Ljava/lang/String;)V
     :try_end_1
-    .catch Ljava/lang/NoClassDefFoundError; {:try_start_1 .. :try_end_1} :catch_2
-    .catch Ljava/lang/ExceptionInInitializerError; {:try_start_1 .. :try_end_1} :catch_1
-    .catch Lorg/apache/commons/logging/LogConfigurationException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/lang/NoClassDefFoundError; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/ExceptionInInitializerError; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Lorg/apache/commons/logging/LogConfigurationException; {:try_start_1 .. :try_end_1} :catch_6
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :cond_3
@@ -368,10 +363,10 @@
 
     move-result-object v0
     :try_end_2
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_2 .. :try_end_2} :catch_3
-    .catch Ljava/lang/NoClassDefFoundError; {:try_start_2 .. :try_end_2} :catch_2
-    .catch Ljava/lang/ExceptionInInitializerError; {:try_start_2 .. :try_end_2} :catch_1
-    .catch Lorg/apache/commons/logging/LogConfigurationException; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_2 .. :try_end_2} :catch_2
+    .catch Ljava/lang/NoClassDefFoundError; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/lang/ExceptionInInitializerError; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Lorg/apache/commons/logging/LogConfigurationException; {:try_start_2 .. :try_end_2} :catch_6
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     :goto_3
@@ -379,25 +374,23 @@
 
     goto :goto_4
 
-    :catch_3
+    :catch_2
     move-exception v0
 
-    move-object v14, v0
-
     :try_start_3
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v14}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v0
 
-    invoke-virtual {v0, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -433,20 +426,20 @@
 
     invoke-virtual {v1, v0}, Lorg/apache/commons/logging/impl/LogFactoryImpl;->logDiagnostic(Ljava/lang/String;)V
     :try_end_3
-    .catch Ljava/lang/NoClassDefFoundError; {:try_start_3 .. :try_end_3} :catch_2
-    .catch Ljava/lang/ExceptionInInitializerError; {:try_start_3 .. :try_end_3} :catch_1
-    .catch Lorg/apache/commons/logging/LogConfigurationException; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Ljava/lang/NoClassDefFoundError; {:try_start_3 .. :try_end_3} :catch_1
+    .catch Ljava/lang/ExceptionInInitializerError; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Lorg/apache/commons/logging/LogConfigurationException; {:try_start_3 .. :try_end_3} :catch_6
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     :try_start_4
-    invoke-static/range {p1 .. p1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    invoke-static {v2}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
     :try_end_4
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_4 .. :try_end_4} :catch_6
-    .catch Ljava/lang/NoClassDefFoundError; {:try_start_4 .. :try_end_4} :catch_2
-    .catch Ljava/lang/ExceptionInInitializerError; {:try_start_4 .. :try_end_4} :catch_1
-    .catch Lorg/apache/commons/logging/LogConfigurationException; {:try_start_4 .. :try_end_4} :catch_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_4 .. :try_end_4} :catch_5
+    .catch Ljava/lang/NoClassDefFoundError; {:try_start_4 .. :try_end_4} :catch_1
+    .catch Ljava/lang/ExceptionInInitializerError; {:try_start_4 .. :try_end_4} :catch_0
+    .catch Lorg/apache/commons/logging/LogConfigurationException; {:try_start_4 .. :try_end_4} :catch_6
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     goto :goto_3
@@ -465,9 +458,9 @@
 
     instance-of v15, v0, Lorg/apache/commons/logging/Log;
     :try_end_5
-    .catch Ljava/lang/NoClassDefFoundError; {:try_start_5 .. :try_end_5} :catch_2
-    .catch Ljava/lang/ExceptionInInitializerError; {:try_start_5 .. :try_end_5} :catch_1
-    .catch Lorg/apache/commons/logging/LogConfigurationException; {:try_start_5 .. :try_end_5} :catch_0
+    .catch Ljava/lang/NoClassDefFoundError; {:try_start_5 .. :try_end_5} :catch_1
+    .catch Ljava/lang/ExceptionInInitializerError; {:try_start_5 .. :try_end_5} :catch_0
+    .catch Lorg/apache/commons/logging/LogConfigurationException; {:try_start_5 .. :try_end_5} :catch_6
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     if-eqz v15, :cond_4
@@ -475,14 +468,14 @@
     :try_start_6
     check-cast v0, Lorg/apache/commons/logging/Log;
     :try_end_6
-    .catch Ljava/lang/NoClassDefFoundError; {:try_start_6 .. :try_end_6} :catch_5
-    .catch Ljava/lang/ExceptionInInitializerError; {:try_start_6 .. :try_end_6} :catch_4
-    .catch Lorg/apache/commons/logging/LogConfigurationException; {:try_start_6 .. :try_end_6} :catch_0
+    .catch Ljava/lang/NoClassDefFoundError; {:try_start_6 .. :try_end_6} :catch_4
+    .catch Ljava/lang/ExceptionInInitializerError; {:try_start_6 .. :try_end_6} :catch_3
+    .catch Lorg/apache/commons/logging/LogConfigurationException; {:try_start_6 .. :try_end_6} :catch_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
     move-object v12, v14
 
-    goto/16 :goto_b
+    goto/16 :goto_a
 
     :catchall_1
     move-exception v0
@@ -491,19 +484,19 @@
 
     goto :goto_6
 
+    :catch_3
+    move-exception v0
+
+    move-object v12, v14
+
+    goto :goto_8
+
     :catch_4
     move-exception v0
 
     move-object v12, v14
 
-    goto :goto_9
-
-    :catch_5
-    move-exception v0
-
-    move-object v12, v14
-
-    goto/16 :goto_a
+    goto/16 :goto_9
 
     :cond_4
     :try_start_7
@@ -511,24 +504,22 @@
 
     goto :goto_7
 
-    :catch_6
+    :catch_5
     move-exception v0
 
-    move-object v14, v0
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v14, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
-    invoke-virtual {v14}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v14
+    invoke-virtual {v14, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -556,15 +547,15 @@
 
     invoke-virtual {v1, v0}, Lorg/apache/commons/logging/impl/LogFactoryImpl;->logDiagnostic(Ljava/lang/String;)V
     :try_end_7
-    .catch Ljava/lang/NoClassDefFoundError; {:try_start_7 .. :try_end_7} :catch_2
-    .catch Ljava/lang/ExceptionInInitializerError; {:try_start_7 .. :try_end_7} :catch_1
-    .catch Lorg/apache/commons/logging/LogConfigurationException; {:try_start_7 .. :try_end_7} :catch_0
+    .catch Ljava/lang/NoClassDefFoundError; {:try_start_7 .. :try_end_7} :catch_1
+    .catch Ljava/lang/ExceptionInInitializerError; {:try_start_7 .. :try_end_7} :catch_0
+    .catch Lorg/apache/commons/logging/LogConfigurationException; {:try_start_7 .. :try_end_7} :catch_6
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
     :goto_5
     move-object v0, v9
 
-    goto :goto_b
+    goto :goto_a
 
     :goto_6
     invoke-direct {v1, v2, v10, v0}, Lorg/apache/commons/logging/impl/LogFactoryImpl;->handleFlawedDiscovery(Ljava/lang/String;Ljava/lang/ClassLoader;Ljava/lang/Throwable;)V
@@ -581,10 +572,12 @@
 
     goto/16 :goto_0
 
-    :goto_8
+    :catch_6
+    move-exception v0
+
     throw v0
 
-    :goto_9
+    :goto_8
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -601,7 +594,50 @@
 
     const-string v3, "\' is unable to initialize itself when loaded via classloader "
 
-    invoke-static {v5, v2, v3}, Lhr1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v5, v2, v3}, Lzt1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-static {v10}, Lorg/apache/commons/logging/LogFactory;->objectId(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Lorg/apache/commons/logging/impl/LogFactoryImpl;->logDiagnostic(Ljava/lang/String;)V
+
+    goto :goto_5
+
+    :goto_9
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v3, "\' is missing dependencies when loaded via classloader "
+
+    invoke-static {v5, v2, v3}, Lzt1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -628,49 +664,6 @@
     goto :goto_5
 
     :goto_a
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v3, "\' is missing dependencies when loaded via classloader "
-
-    invoke-static {v5, v2, v3}, Lhr1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-static {v10}, Lorg/apache/commons/logging/LogFactory;->objectId(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Lorg/apache/commons/logging/impl/LogFactoryImpl;->logDiagnostic(Ljava/lang/String;)V
-
-    goto :goto_5
-
-    :goto_b
     if-eqz v0, :cond_6
 
     if-eqz p3, :cond_6
@@ -710,14 +703,14 @@
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_2
 
-    goto :goto_c
+    goto :goto_b
 
     :catchall_2
     iput-object v9, v1, Lorg/apache/commons/logging/impl/LogFactoryImpl;->logMethod:Ljava/lang/reflect/Method;
 
     const-string v3, "[INFO] \'"
 
-    invoke-static {v3, v2, v13}, Lhr1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3, v2, v13}, Lzt1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -737,10 +730,10 @@
 
     invoke-virtual {v1, v3}, Lorg/apache/commons/logging/impl/LogFactoryImpl;->logDiagnostic(Ljava/lang/String;)V
 
-    :goto_c
+    :goto_b
     const-string v3, "Log adapter \'"
 
-    invoke-static {v3, v2, v13}, Lhr1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3, v2, v13}, Lzt1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -1149,7 +1142,7 @@
 
     invoke-virtual {p0, v1}, Lorg/apache/commons/logging/impl/LogFactoryImpl;->logDiagnostic(Ljava/lang/String;)V
 
-    goto :goto_0
+    return-object v0
 
     :cond_4
     new-instance p0, Lorg/apache/commons/logging/LogConfigurationException;
@@ -1159,7 +1152,6 @@
     throw p0
 
     :cond_5
-    :goto_0
     return-object v0
 .end method
 
@@ -1414,7 +1406,7 @@
     :cond_0
     if-nez p2, :cond_1
 
-    return-object p1
+    goto :goto_1
 
     :cond_1
     move-object p0, p1
@@ -1424,6 +1416,7 @@
 
     if-ne p0, p2, :cond_2
 
+    :goto_1
     return-object p1
 
     :cond_2
@@ -1436,7 +1429,7 @@
     :cond_3
     move-object p0, p2
 
-    :goto_1
+    :goto_2
     if-eqz p0, :cond_5
 
     if-ne p0, p1, :cond_4
@@ -1448,7 +1441,7 @@
 
     move-result-object p0
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_5
     const/4 p0, 0x0
@@ -1469,7 +1462,7 @@
 
     const-string v0, "\' -- "
 
-    invoke-static {p2, p1, v0}, Lhr1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p2, p1, v0}, Lzt1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -1789,7 +1782,7 @@
 
     if-eqz p0, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
     sget p0, Lorg/apache/commons/logging/impl/LogFactoryImpl;->PKG_LEN:I
@@ -1816,13 +1809,14 @@
 
     invoke-virtual {p1, p0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    invoke-virtual {p1, p3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {p1, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
     const-string p0, "\'?"
 
     invoke-virtual {p1, p0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
     :cond_1
+    :goto_0
     return-void
 .end method
 
@@ -2325,21 +2319,6 @@
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p0
-
-    goto :goto_1
-
-    :catch_0
-    move-exception p0
-
-    goto :goto_2
-
-    :catch_1
-    move-exception p0
-
-    goto :goto_3
-
     :cond_0
     filled-new-array {p1}, [Ljava/lang/Object;
 
@@ -2369,14 +2348,18 @@
     :cond_1
     return-object p1
 
-    :goto_1
+    :catchall_0
+    move-exception p0
+
     new-instance p1, Lorg/apache/commons/logging/LogConfigurationException;
 
     invoke-direct {p1, p0}, Lorg/apache/commons/logging/LogConfigurationException;-><init>(Ljava/lang/Throwable;)V
 
     throw p1
 
-    :goto_2
+    :catch_0
+    move-exception p0
+
     invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getTargetException()Ljava/lang/Throwable;
 
     move-result-object p1
@@ -2396,7 +2379,9 @@
 
     throw p1
 
-    :goto_3
+    :catch_1
+    move-exception p0
+
     throw p0
 .end method
 

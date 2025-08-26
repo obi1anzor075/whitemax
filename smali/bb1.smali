@@ -1,141 +1,65 @@
-.class public final synthetic Lbb1;
+.class public final Lbb1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lcb1;
 
 
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lone/me/calllist/ui/callinfo/CallLinkInfoScreen;
-
-.field public final synthetic c:Lza1;
+# static fields
+.field public static final a:Lbb1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/calllist/ui/callinfo/CallLinkInfoScreen;Lza1;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    .line 2
-    const/4 v0, 0x1
+    new-instance v0, Lbb1;
 
-    iput v0, p0, Lbb1;->a:I
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lbb1;->b:Lone/me/calllist/ui/callinfo/CallLinkInfoScreen;
-
-    iput-object p2, p0, Lbb1;->c:Lza1;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lza1;Lone/me/calllist/ui/callinfo/CallLinkInfoScreen;)V
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x0
-
-    iput v0, p0, Lbb1;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lbb1;->c:Lza1;
-
-    iput-object p2, p0, Lbb1;->b:Lone/me/calllist/ui/callinfo/CallLinkInfoScreen;
+    sput-object v0, Lbb1;->a:Lbb1;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 3
+.method public final getItemId()J
+    .locals 2
 
-    iget-object p1, p0, Lbb1;->c:Lza1;
+    const-wide v0, 0x7ffffffffffffffeL
 
-    const/4 v0, 0x0
+    return-wide v0
+.end method
 
-    sget-object v1, Lfq1;->a:Lfq1;
+.method public final h(Lol7;)Z
+    .locals 2
 
-    iget-object v2, p0, Lbb1;->b:Lone/me/calllist/ui/callinfo/CallLinkInfoScreen;
+    const-wide v0, 0x7ffffffffffffffeL
 
-    iget p0, p0, Lbb1;->a:I
+    invoke-interface {p1}, Lol7;->getItemId()J
 
-    packed-switch p0, :pswitch_data_0
+    move-result-wide p0
 
-    sget-object p0, Lone/me/calllist/ui/callinfo/CallLinkInfoScreen;->F0:[Lk77;
+    cmp-long p0, v0, p0
 
-    invoke-virtual {v2}, Lone/me/calllist/ui/callinfo/CallLinkInfoScreen;->l0()Liq1;
+    if-nez p0, :cond_0
 
-    move-result-object p0
+    const/4 p0, 0x1
 
-    invoke-virtual {p0, v1, v0}, Liq1;->e(Lhq1;Z)V
-
-    invoke-virtual {v2}, Lone/me/calllist/ui/callinfo/CallLinkInfoScreen;->m0()Ljb1;
-
-    move-result-object p0
-
-    iget-object p1, p1, Lza1;->h:Lua1;
-
-    invoke-interface {p1}, Lpg7;->getItemId()J
-
-    move-result-wide v0
-
-    invoke-virtual {p0, v0, v1}, Ljb1;->q(J)V
-
-    return-void
-
-    :pswitch_0
-    sget-object p0, Lone/me/calllist/ui/callinfo/CallLinkInfoScreen;->F0:[Lk77;
-
-    iget-object p0, p1, Lza1;->d:Lya1;
-
-    instance-of p1, p0, Lva1;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {v2}, Lone/me/calllist/ui/callinfo/CallLinkInfoScreen;->m0()Ljb1;
-
-    move-result-object p0
-
-    sget p1, Li1a;->b:I
-
-    int-to-long v0, p1
-
-    invoke-virtual {p0, v0, v1}, Ljb1;->q(J)V
-
-    goto :goto_0
+    return p0
 
     :cond_0
-    instance-of p0, p0, Lxa1;
+    const/4 p0, 0x0
 
-    if-eqz p0, :cond_1
+    return p0
+.end method
 
-    invoke-virtual {v2}, Lone/me/calllist/ui/callinfo/CallLinkInfoScreen;->l0()Liq1;
+.method public final m()I
+    .locals 0
 
-    move-result-object p0
+    const/4 p0, 0x4
 
-    invoke-virtual {p0, v1, v0}, Liq1;->e(Lhq1;Z)V
-
-    invoke-virtual {v2}, Lone/me/calllist/ui/callinfo/CallLinkInfoScreen;->m0()Ljb1;
-
-    move-result-object p0
-
-    sget p1, Li1a;->e:I
-
-    int-to-long v0, p1
-
-    invoke-virtual {p0, v0, v1}, Ljb1;->q(J)V
-
-    :cond_1
-    :goto_0
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method

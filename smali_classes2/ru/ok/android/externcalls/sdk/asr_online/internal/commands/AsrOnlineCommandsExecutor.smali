@@ -13,7 +13,7 @@
         "",
         "",
         "isEnabled",
-        "Ljue;",
+        "Le5f;",
         "enableAsrOnline",
         "(Z)V",
         "onMigratedToServerCallTopology",
@@ -26,6 +26,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

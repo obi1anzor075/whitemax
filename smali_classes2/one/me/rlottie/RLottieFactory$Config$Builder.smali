@@ -98,19 +98,17 @@
 
 # virtual methods
 .method public final build()Lone/me/rlottie/RLottieFactory$Config;
-    .locals 7
+    .locals 6
 
-    new-instance v6, Lone/me/rlottie/RLottieFactory$Config;
+    new-instance v0, Lone/me/rlottie/RLottieFactory$Config;
 
-    iget-object v0, p0, Lone/me/rlottie/RLottieFactory$Config$Builder;->way:Lone/me/rlottie/RLottieFactory$Way;
+    iget-object v1, p0, Lone/me/rlottie/RLottieFactory$Config$Builder;->way:Lone/me/rlottie/RLottieFactory$Way;
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     :cond_0
-    move-object v1, v0
-
     iget-boolean v2, p0, Lone/me/rlottie/RLottieFactory$Config$Builder;->preCache:Z
 
     iget-boolean v3, p0, Lone/me/rlottie/RLottieFactory$Config$Builder;->autoRepeat:Z
@@ -119,11 +117,9 @@
 
     iget-boolean v5, p0, Lone/me/rlottie/RLottieFactory$Config$Builder;->startDecodeFirstFrame:Z
 
-    move-object v0, v6
-
     invoke-direct/range {v0 .. v5}, Lone/me/rlottie/RLottieFactory$Config;-><init>(Lone/me/rlottie/RLottieFactory$Way;ZZZZ)V
 
-    return-object v6
+    return-object v0
 .end method
 
 .method public final setAutoRepeat(Z)Lone/me/rlottie/RLottieFactory$Config$Builder;

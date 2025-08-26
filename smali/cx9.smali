@@ -1,108 +1,92 @@
 .class public final Lcx9;
-.super Ljava/lang/Object;
+.super Ltod;
 .source "SourceFile"
 
 # interfaces
-.implements Ldc7;
-.implements Lxv1;
+.implements Li76;
 
 
 # instance fields
-.field public final a:Lpc7;
+.field public final a:Lk28;
 
-.field public final b:Lww9;
+.field public final b:Le76;
 
-.field public c:Ldx9;
-
-.field public final synthetic o:Lex9;
+.field public final c:Lhwd;
 
 
 # direct methods
-.method public constructor <init>(Lex9;Lpc7;Lww9;)V
+.method public constructor <init>(Lk28;Le76;Lhwd;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcx9;->o:Lex9;
+    iput-object p1, p0, Lcx9;->a:Lk28;
 
-    iput-object p2, p0, Lcx9;->a:Lpc7;
+    iput-object p2, p0, Lcx9;->b:Le76;
 
-    iput-object p3, p0, Lcx9;->b:Lww9;
-
-    invoke-virtual {p2, p0}, Lpc7;->a(Ljc7;)V
+    iput-object p3, p0, Lcx9;->c:Lhwd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final cancel()V
-    .locals 1
+.method public final d()Lvw9;
+    .locals 4
 
-    iget-object v0, p0, Lcx9;->a:Lpc7;
+    new-instance v0, Lbx9;
 
-    invoke-virtual {v0, p0}, Lpc7;->f(Ljc7;)V
+    iget-object v1, p0, Lcx9;->c:Lhwd;
 
-    iget-object v0, p0, Lcx9;->b:Lww9;
+    const/4 v2, 0x0
 
-    iget-object v0, v0, Lww9;->b:Ljava/util/concurrent/CopyOnWriteArrayList;
+    iget-object v3, p0, Lcx9;->a:Lk28;
 
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
+    iget-object p0, p0, Lcx9;->b:Le76;
 
-    iget-object v0, p0, Lcx9;->c:Ldx9;
+    invoke-direct {v0, v3, p0, v1, v2}, Lbx9;-><init>(Lvw9;Ljava/lang/Object;Ljava/lang/Object;I)V
 
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ldx9;->cancel()V
-
-    :cond_0
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcx9;->c:Ldx9;
-
-    return-void
+    return-object v0
 .end method
 
-.method public final m(Lnc7;Lnb7;)V
-    .locals 0
+.method public final l(Lnpd;)V
+    .locals 4
 
-    sget-object p1, Lnb7;->ON_START:Lnb7;
+    :try_start_0
+    iget-object v0, p0, Lcx9;->b:Le76;
 
-    if-ne p2, p1, :cond_0
+    iget-object v0, v0, Le76;->a:Ljava/lang/Object;
 
-    iget-object p1, p0, Lcx9;->o:Lex9;
+    const-string v1, "The initialSupplier returned a null value"
 
-    iget-object p2, p0, Lcx9;->b:Lww9;
+    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {p1, p2}, Lex9;->b(Lww9;)Ldx9;
+    new-instance v1, Lax9;
 
-    move-result-object p1
+    iget-object v2, p0, Lcx9;->c:Lhwd;
 
-    iput-object p1, p0, Lcx9;->c:Ldx9;
+    const/4 v3, 0x1
 
-    goto :goto_0
+    invoke-direct {v1, p1, v0, v2, v3}, Lax9;-><init>(Ljava/lang/Object;Ljava/lang/Object;Lhwd;I)V
 
-    :cond_0
-    sget-object p1, Lnb7;->ON_STOP:Lnb7;
+    iget-object p0, p0, Lcx9;->a:Lk28;
 
-    if-ne p2, p1, :cond_1
+    invoke-virtual {p0, v1}, Lvw9;->a(La0a;)V
 
-    iget-object p0, p0, Lcx9;->c:Ldx9;
+    return-void
 
-    if-eqz p0, :cond_2
+    :catchall_0
+    move-exception p0
 
-    invoke-virtual {p0}, Ldx9;->cancel()V
+    invoke-static {p0}, Lfc2;->G(Ljava/lang/Throwable;)V
 
-    goto :goto_0
+    sget-object v0, Lbz4;->a:Lbz4;
 
-    :cond_1
-    sget-object p1, Lnb7;->ON_DESTROY:Lnb7;
+    invoke-interface {p1, v0}, Lnpd;->c(Lam4;)V
 
-    if-ne p2, p1, :cond_2
+    invoke-interface {p1, p0}, Lnpd;->onError(Ljava/lang/Throwable;)V
 
-    invoke-virtual {p0}, Lcx9;->cancel()V
-
-    :cond_2
-    :goto_0
     return-void
 .end method

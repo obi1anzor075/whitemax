@@ -1,64 +1,138 @@
-.class public final Lxj9;
+.class public final synthetic Lxj9;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lbk9;
+.implements Lc6;
 
 
-# static fields
-.field public static final b:Lxj9;
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lyj9;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Lyj9;I)V
+    .locals 0
 
-    new-instance v0, Lxj9;
+    iput p2, p0, Lxj9;->a:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lxj9;->b:Lyj9;
 
-    sput-object v0, Lxj9;->b:Lxj9;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    const/4 v0, 0x1
+    iget v0, p0, Lxj9;->a:I
 
-    if-ne p0, p1, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    return v0
+    new-instance v0, Laj0;
 
-    :cond_0
-    instance-of p0, p1, Lxj9;
+    const/16 v1, 0x12
 
-    if-nez p0, :cond_1
+    invoke-direct {v0, v1}, Laj0;-><init>(I)V
 
-    const/4 p0, 0x0
+    iget-object p0, p0, Lxj9;->b:Lyj9;
 
-    return p0
+    invoke-virtual {p0, v0}, Lv2;->o(Lmj3;)V
 
-    :cond_1
-    return v0
-.end method
+    return-void
 
-.method public final hashCode()I
-    .locals 0
+    :pswitch_0
+    new-instance v0, Loj9;
 
-    const p0, -0x3fe4569e
+    const/4 v1, 0x5
 
-    return p0
-.end method
+    invoke-direct {v0, v1}, Loj9;-><init>(I)V
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
+    iget-object p0, p0, Lxj9;->b:Lyj9;
 
-    const-string p0, "Disabled"
+    invoke-virtual {p0, v0}, Lv2;->o(Lmj3;)V
 
-    return-object p0
+    return-void
+
+    :pswitch_1
+    new-instance v0, Loj9;
+
+    const/4 v1, 0x6
+
+    invoke-direct {v0, v1}, Loj9;-><init>(I)V
+
+    iget-object p0, p0, Lxj9;->b:Lyj9;
+
+    invoke-virtual {p0, v0}, Lv2;->o(Lmj3;)V
+
+    return-void
+
+    :pswitch_2
+    new-instance v0, Loj9;
+
+    const/4 v1, 0x7
+
+    invoke-direct {v0, v1}, Loj9;-><init>(I)V
+
+    iget-object p0, p0, Lxj9;->b:Lyj9;
+
+    invoke-virtual {p0, v0}, Lv2;->o(Lmj3;)V
+
+    return-void
+
+    :pswitch_3
+    new-instance v0, Laj0;
+
+    const/16 v1, 0x19
+
+    invoke-direct {v0, v1}, Laj0;-><init>(I)V
+
+    iget-object p0, p0, Lxj9;->b:Lyj9;
+
+    invoke-virtual {p0, v0}, Lv2;->o(Lmj3;)V
+
+    return-void
+
+    :pswitch_4
+    new-instance v0, Laj0;
+
+    const/16 v1, 0x1b
+
+    invoke-direct {v0, v1}, Laj0;-><init>(I)V
+
+    iget-object p0, p0, Lxj9;->b:Lyj9;
+
+    invoke-virtual {p0, v0}, Lv2;->o(Lmj3;)V
+
+    return-void
+
+    :pswitch_5
+    new-instance v0, Laj0;
+
+    const/16 v1, 0x12
+
+    invoke-direct {v0, v1}, Laj0;-><init>(I)V
+
+    iget-object p0, p0, Lxj9;->b:Lyj9;
+
+    invoke-virtual {p0, v0}, Lv2;->o(Lmj3;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,22 +1,23 @@
 .class public final Lied;
-.super Ljava/lang/Object;
+.super Lked;
 .source "SourceFile"
-
-# interfaces
-.implements Lzw8;
 
 
 # instance fields
-.field public final a:J
+.field public final a:Ljava/lang/String;
+
+.field public final b:Lhoe;
 
 
 # direct methods
-.method public constructor <init>(J)V
+.method public constructor <init>(Ljava/lang/String;Lhoe;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Lied;->a:J
+    iput-object p1, p0, Lied;->a:Ljava/lang/String;
+
+    iput-object p2, p0, Lied;->b:Lhoe;
 
     return-void
 .end method
@@ -24,66 +25,107 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 5
-
-    const/4 v0, 0x1
+    .locals 2
 
     if-ne p0, p1, :cond_0
 
-    return v0
+    goto :goto_1
 
     :cond_0
-    instance-of v1, p1, Lied;
+    instance-of v0, p1, Lied;
 
-    const/4 v2, 0x0
+    if-nez v0, :cond_1
 
-    if-nez v1, :cond_1
-
-    return v2
+    goto :goto_0
 
     :cond_1
     check-cast p1, Lied;
 
-    iget-wide v3, p0, Lied;->a:J
+    iget-object v0, p0, Lied;->a:Ljava/lang/String;
 
-    iget-wide p0, p1, Lied;->a:J
+    iget-object v1, p1, Lied;->a:Ljava/lang/String;
 
-    cmp-long p0, v3, p0
+    invoke-static {v0, v1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-eqz p0, :cond_2
+    move-result v0
 
-    return v2
+    if-nez v0, :cond_2
+
+    goto :goto_0
 
     :cond_2
-    return v0
+    iget-object p0, p0, Lied;->b:Lhoe;
+
+    iget-object p1, p1, Lied;->b:Lhoe;
+
+    invoke-virtual {p0, p1}, Lhoe;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_3
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
 .end method
 
 .method public final hashCode()I
-    .locals 2
+    .locals 1
 
-    iget-wide v0, p0, Lied;->a:J
+    iget-object v0, p0, Lied;->a:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Lied;->b:Lhoe;
+
+    iget p0, p0, Lhoe;->b:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
     move-result p0
+
+    add-int/2addr p0, v0
 
     return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "ShowReply(messageId="
+    const-string v1, "CopyToClipboard(textToCopy="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-wide v1, p0, Lied;->a:J
+    iget-object v1, p0, Lied;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", snackbarTitle="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lied;->b:Lhoe;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string p0, ")"
 
-    invoke-static {v0, v1, v2, p0}, Lwn6;->k(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

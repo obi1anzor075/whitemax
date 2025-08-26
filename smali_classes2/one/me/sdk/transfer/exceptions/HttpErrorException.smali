@@ -20,11 +20,12 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
-.field public final a:Lam6;
+.field public final a:Lhq6;
 
 .field public final b:Ljava/lang/String;
 
@@ -34,36 +35,36 @@
     .locals 2
 
     .line 1
-    const/4 v0, 0x7
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x7
 
-    invoke-direct {p0, v1, v1, v1, v0}, Lone/me/sdk/transfer/exceptions/HttpErrorException;-><init>(Ljava/lang/String;Lam6;Ljava/lang/String;I)V
+    invoke-direct {p0, v0, v0, v0, v1}, Lone/me/sdk/transfer/exceptions/HttpErrorException;-><init>(Ljava/lang/String;Lhq6;Ljava/lang/String;I)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Lam6;)V
+.method public constructor <init>(Ljava/lang/String;Lhq6;)V
     .locals 2
 
     .line 2
-    const/4 v0, 0x4
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x4
 
-    invoke-direct {p0, p1, p2, v1, v0}, Lone/me/sdk/transfer/exceptions/HttpErrorException;-><init>(Ljava/lang/String;Lam6;Ljava/lang/String;I)V
+    invoke-direct {p0, p1, p2, v0, v1}, Lone/me/sdk/transfer/exceptions/HttpErrorException;-><init>(Ljava/lang/String;Lhq6;Ljava/lang/String;I)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Lam6;Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;Lhq6;Ljava/lang/String;)V
     .locals 0
 
     .line 4
     invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
     .line 5
-    iput-object p2, p0, Lone/me/sdk/transfer/exceptions/HttpErrorException;->a:Lam6;
+    iput-object p2, p0, Lone/me/sdk/transfer/exceptions/HttpErrorException;->a:Lhq6;
 
     .line 6
     iput-object p3, p0, Lone/me/sdk/transfer/exceptions/HttpErrorException;->b:Ljava/lang/String;
@@ -71,7 +72,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Ljava/lang/String;Lam6;Ljava/lang/String;I)V
+.method public synthetic constructor <init>(Ljava/lang/String;Lhq6;Ljava/lang/String;I)V
     .locals 2
 
     and-int/lit8 v0, p4, 0x1
@@ -98,7 +99,7 @@
 
     .line 3
     :cond_2
-    invoke-direct {p0, p1, p2, p3}, Lone/me/sdk/transfer/exceptions/HttpErrorException;-><init>(Ljava/lang/String;Lam6;Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2, p3}, Lone/me/sdk/transfer/exceptions/HttpErrorException;-><init>(Ljava/lang/String;Lhq6;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -112,27 +113,31 @@
 
     move-result-object v0
 
-    const-string v1, "HttpErrorException(msg=\'"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\', error=\'"
+    const-string v2, "HttpErrorException(msg=\'"
 
-    invoke-static {v1, v0, v2}, Lhr1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result-object v0
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lone/me/sdk/transfer/exceptions/HttpErrorException;->a:Lam6;
+    const-string v0, "\', error=\'"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "\', response=\'"
+    iget-object v0, p0, Lone/me/sdk/transfer/exceptions/HttpErrorException;->a:Lhq6;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, "\', response=\'"
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "\')"
 
     iget-object p0, p0, Lone/me/sdk/transfer/exceptions/HttpErrorException;->b:Ljava/lang/String;
 
-    const-string v1, "\')"
-
-    invoke-static {v0, p0, v1}, Lwn6;->l(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, v0}, Lm26;->j(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

@@ -1,27 +1,37 @@
-.class public final Liqf;
+.class public abstract Liqf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Ltw3;
-
-.field public final b:J
-
-.field public final c:J
+# static fields
+.field public static final a:Lh12;
 
 
 # direct methods
-.method public constructor <init>(Ltw3;JJ)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lh12;
 
-    iput-object p1, p0, Liqf;->a:Ltw3;
+    const-string v1, "translationAlpha"
 
-    iput-wide p2, p0, Liqf;->b:J
+    const/16 v2, 0xb
 
-    iput-wide p4, p0, Liqf;->c:J
+    const-class v3, Ljava/lang/Float;
+
+    invoke-direct {v0, v3, v1, v2}, Lh12;-><init>(Ljava/lang/Class;Ljava/lang/String;I)V
+
+    sput-object v0, Liqf;->a:Lh12;
+
+    new-instance v0, Lh12;
+
+    const-string v1, "clipBounds"
+
+    const/16 v2, 0xc
+
+    const-class v3, Landroid/graphics/Rect;
+
+    invoke-direct {v0, v3, v1, v2}, Lh12;-><init>(Ljava/lang/Class;Ljava/lang/String;I)V
 
     return-void
 .end method

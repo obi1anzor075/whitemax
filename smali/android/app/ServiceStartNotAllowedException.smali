@@ -1,6 +1,5 @@
 .class public synthetic Landroid/app/ServiceStartNotAllowedException;
 .super Ljava/lang/IllegalStateException;
-.source "SourceFile"
 
 
 # direct methods

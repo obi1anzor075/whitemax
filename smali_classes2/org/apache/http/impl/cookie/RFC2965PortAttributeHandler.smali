@@ -81,15 +81,12 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catch_0
-    move-exception p0
-
-    goto :goto_1
-
     :cond_1
     return-object p0
 
-    :goto_1
+    :catch_0
+    move-exception p0
+
     new-instance v0, Lorg/apache/http/cookie/MalformedCookieException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -129,9 +126,9 @@
 
     if-ne p0, v3, :cond_0
 
-    const/4 v1, 0x1
+    const/4 p0, 0x1
 
-    goto :goto_1
+    return p0
 
     :cond_0
     add-int/lit8 v2, v2, 0x1
@@ -139,7 +136,6 @@
     goto :goto_0
 
     :cond_1
-    :goto_1
     return v1
 .end method
 

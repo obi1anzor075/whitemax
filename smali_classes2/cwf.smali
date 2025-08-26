@@ -1,80 +1,57 @@
-.class public final synthetic Lcwf;
-.super Ljava/lang/Object;
+.class public final Lcwf;
+.super Lbu3;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:Lowf;
 
-.field public final synthetic b:Lone/me/sdk/zoom/ZoomableDraweeView;
+.field public Y:Luvf;
+
+.field public Z:Ldn0;
+
+.field public o:Llwf;
+
+.field public synthetic o0:Ljava/lang/Object;
+
+.field public final synthetic p0:Llwf;
+
+.field public q0:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/sdk/zoom/ZoomableDraweeView;I)V
+.method public constructor <init>(Llwf;Lbu3;)V
     .locals 0
 
-    iput p2, p0, Lcwf;->a:I
+    iput-object p1, p0, Lcwf;->p0:Llwf;
 
-    iput-object p1, p0, Lcwf;->b:Lone/me/sdk/zoom/ZoomableDraweeView;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Lcwf;->b:Lone/me/sdk/zoom/ZoomableDraweeView;
+    iput-object p1, p0, Lcwf;->o0:Ljava/lang/Object;
 
-    iget p0, p0, Lcwf;->a:I
+    iget p1, p0, Lcwf;->q0:I
 
-    packed-switch p0, :pswitch_data_0
+    const/high16 v0, -0x80000000
 
-    sget p0, Lone/me/sdk/zoom/ZoomableDraweeView;->J0:I
+    or-int/2addr p1, v0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    iput p1, p0, Lcwf;->q0:I
 
-    move-result p0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p0
-
-    const-class v1, Lone/me/sdk/zoom/ZoomableDraweeView;
-
-    const-string v2, "onRelease: view %x"
-
-    invoke-static {v1, p0, v2}, Lm75;->d(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object p0, v0, Lone/me/sdk/zoom/ZoomableDraweeView;->I0:Lbwf;
-
-    check-cast p0, Luc4;
+    iget-object p1, p0, Lcwf;->p0:Llwf;
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Luc4;->c:Z
+    invoke-virtual {p1, v0, p0}, Llwf;->j(Ljava/lang/String;Lbu3;)Ljava/lang/Object;
 
-    invoke-virtual {p0}, Luc4;->reset()V
+    move-result-object p0
 
-    return-void
-
-    :pswitch_0
-    sget p0, Lone/me/sdk/zoom/ZoomableDraweeView;->J0:I
-
-    invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
-
-    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

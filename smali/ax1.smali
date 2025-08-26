@@ -1,282 +1,68 @@
-.class public final Lax1;
-.super Ll6c;
+.class public interface abstract Lax1;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field public final a:Landroid/graphics/Paint;
-
-.field public final b:Ljava/util/List;
+# interfaces
+.implements Lfv1;
+.implements Ll9f;
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 2
+# virtual methods
+.method public a()Lyw1;
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-interface {p0}, Lax1;->n()Lyw1;
 
-    new-instance v0, Landroid/graphics/Paint;
+    move-result-object p0
 
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+    return-object p0
+.end method
 
-    iput-object v0, p0, Lax1;->a:Landroid/graphics/Paint;
-
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-static {v1}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lax1;->b:Ljava/util/List;
-
-    const/high16 p0, 0x40a00000    # 5.0f
-
-    invoke-virtual {v0, p0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
-
-    const p0, -0xff01
-
-    invoke-virtual {v0, p0}, Landroid/graphics/Paint;->setColor(I)V
+.method public c(Law1;)V
+    .locals 0
 
     return-void
 .end method
 
+.method public abstract e()Lww9;
+.end method
 
-# virtual methods
-.method public final h(Landroid/graphics/Canvas;Landroidx/recyclerview/widget/RecyclerView;)V
-    .locals 10
+.method public abstract f()Lhw1;
+.end method
 
-    iget-object v6, p0, Lax1;->a:Landroid/graphics/Paint;
+.method public g()Lyv1;
+    .locals 0
 
-    invoke-virtual {p2}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    sget-object p0, Lbw1;->a:Law1;
 
-    move-result-object v0
+    return-object p0
+.end method
 
-    sget v1, Lvmb;->m3_carousel_debug_keyline_width:I
+.method public i(Z)V
+    .locals 0
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
-
-    move-result v0
-
-    invoke-virtual {v6, v0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
-
-    iget-object p0, p0, Lax1;->b:Ljava/util/List;
-
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lu87;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object v2, Lj33;->a:Ljava/lang/ThreadLocal;
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    sub-float/2addr v2, v1
-
-    const v3, -0xff01
-
-    invoke-static {v3}, Landroid/graphics/Color;->alpha(I)I
-
-    move-result v4
-
-    int-to-float v4, v4
-
-    mul-float/2addr v4, v2
-
-    const v5, -0xffff01
-
-    invoke-static {v5}, Landroid/graphics/Color;->alpha(I)I
-
-    move-result v7
-
-    int-to-float v7, v7
-
-    mul-float/2addr v7, v1
-
-    add-float/2addr v7, v4
-
-    invoke-static {v3}, Landroid/graphics/Color;->red(I)I
-
-    move-result v4
-
-    int-to-float v4, v4
-
-    mul-float/2addr v4, v2
-
-    invoke-static {v5}, Landroid/graphics/Color;->red(I)I
-
-    move-result v8
-
-    int-to-float v8, v8
-
-    mul-float/2addr v8, v1
-
-    add-float/2addr v8, v4
-
-    invoke-static {v3}, Landroid/graphics/Color;->green(I)I
-
-    move-result v4
-
-    int-to-float v4, v4
-
-    mul-float/2addr v4, v2
-
-    invoke-static {v5}, Landroid/graphics/Color;->green(I)I
-
-    move-result v9
-
-    int-to-float v9, v9
-
-    mul-float/2addr v9, v1
-
-    add-float/2addr v9, v4
-
-    invoke-static {v3}, Landroid/graphics/Color;->blue(I)I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    mul-float/2addr v3, v2
-
-    invoke-static {v5}, Landroid/graphics/Color;->blue(I)I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    mul-float/2addr v2, v1
-
-    add-float/2addr v2, v3
-
-    float-to-int v1, v7
-
-    float-to-int v3, v8
-
-    float-to-int v4, v9
-
-    float-to-int v2, v2
-
-    invoke-static {v1, v3, v4, v2}, Landroid/graphics/Color;->argb(IIII)I
-
-    move-result v1
-
-    invoke-virtual {v6, v1}, Landroid/graphics/Paint;->setColor(I)V
-
-    invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/a;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/material/carousel/CarouselLayoutManager;
-
-    invoke-virtual {v1}, Lcom/google/android/material/carousel/CarouselLayoutManager;->O0()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/a;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/material/carousel/CarouselLayoutManager;
-
-    iget-object v1, v1, Lcom/google/android/material/carousel/CarouselLayoutManager;->q:Lrx;
-
-    invoke-virtual {v1}, Lrx;->m()I
-
-    move-result v1
-
-    int-to-float v2, v1
-
-    invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/a;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/material/carousel/CarouselLayoutManager;
-
-    iget-object v1, v1, Lcom/google/android/material/carousel/CarouselLayoutManager;->q:Lrx;
-
-    invoke-virtual {v1}, Lrx;->g()I
-
-    move-result v1
-
-    int-to-float v4, v1
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-object v0, p1
-
-    move v1, v3
-
-    move-object v5, v6
-
-    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-
-    goto/16 :goto_0
-
-    :cond_0
-    invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/a;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/material/carousel/CarouselLayoutManager;
-
-    iget-object v1, v1, Lcom/google/android/material/carousel/CarouselLayoutManager;->q:Lrx;
-
-    invoke-virtual {v1}, Lrx;->i()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/a;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/google/android/material/carousel/CarouselLayoutManager;
-
-    iget-object v2, v2, Lcom/google/android/material/carousel/CarouselLayoutManager;->q:Lrx;
-
-    invoke-virtual {v2}, Lrx;->j()I
-
-    move-result v2
-
-    int-to-float v3, v2
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-object v0, p1
-
-    move v2, v4
-
-    move-object v5, v6
-
-    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
-
-    goto/16 :goto_0
-
-    :cond_1
     return-void
+.end method
+
+.method public abstract j(Ljava/util/ArrayList;)V
+.end method
+
+.method public abstract k(Ljava/util/ArrayList;)V
+.end method
+
+.method public l()Z
+    .locals 0
+
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public m(Z)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public abstract n()Lyw1;
 .end method

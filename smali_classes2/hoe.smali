@@ -1,168 +1,116 @@
 .class public final Lhoe;
-.super Ljava/lang/Object;
+.super Lmoe;
 .source "SourceFile"
 
 
 # static fields
-.field public static final a:Lhoe;
+.field public static final CREATOR:Lgoe;
 
-.field public static volatile b:Lgoe;
+
+# instance fields
+.field public final b:I
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lhoe;
+    new-instance v0, Lgoe;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lhoe;->a:Lhoe;
-
-    sget-object v0, Llu7;->o:Llu7;
-
-    sput-object v0, Lhoe;->b:Lgoe;
+    sput-object v0, Lhoe;->CREATOR:Lgoe;
 
     return-void
 .end method
 
-.method public static varargs a(Ljava/lang/String;JLjava/util/concurrent/TimeUnit;[Lwia;)V
-    .locals 8
+.method public constructor <init>(I)V
+    .locals 0
 
-    sget-object v0, Lute;->$EnumSwitchMapping$0:[I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p3}, Ljava/lang/Enum;->ordinal()I
+    iput p1, p0, Lhoe;->b:I
 
-    move-result p3
+    return-void
+.end method
 
-    aget p3, v0, p3
 
-    packed-switch p3, :pswitch_data_0
+# virtual methods
+.method public final describeContents()I
+    .locals 0
 
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+    const/4 p0, 0x0
 
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+    return p0
+.end method
 
-    throw p0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-    :pswitch_0
-    const-string p3, "d"
+    const/4 v0, 0x1
 
-    :goto_0
-    move-object v6, p3
+    if-ne p0, p1, :cond_0
 
-    goto :goto_1
-
-    :pswitch_1
-    const-string p3, "h"
-
-    goto :goto_0
-
-    :pswitch_2
-    const-string p3, "min"
-
-    goto :goto_0
-
-    :pswitch_3
-    const-string p3, "s"
-
-    goto :goto_0
-
-    :pswitch_4
-    const-string p3, "ms"
-
-    goto :goto_0
-
-    :pswitch_5
-    const-string p3, "us"
-
-    goto :goto_0
-
-    :pswitch_6
-    const-string p3, "ns"
-
-    goto :goto_0
-
-    :goto_1
-    array-length p3, p4
-
-    invoke-static {p4, p3}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    move-result-object p3
-
-    check-cast p3, [Lwia;
-
-    invoke-static {p3}, Lju7;->T([Lwia;)Ljava/util/Map;
-
-    move-result-object v7
-
-    sget-object p3, Lhoe;->b:Lgoe;
-
-    sget-object p4, Llu7;->o:Llu7;
-
-    invoke-static {p3, p4}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p4
-
-    if-eqz p4, :cond_0
-
-    goto :goto_2
+    return v0
 
     :cond_0
-    sget-object p4, Lns7;->Z:Lns7;
+    instance-of v1, p1, Lhoe;
 
-    invoke-static {p3, p4}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    const/4 v2, 0x0
 
-    move-result p3
+    if-nez v1, :cond_1
 
-    if-eqz p3, :cond_1
-
-    goto :goto_2
+    return v2
 
     :cond_1
-    new-instance p3, Lmma;
+    check-cast p1, Lhoe;
 
-    sget-wide v0, Lr1b;->a:J
+    iget p0, p0, Lhoe;->b:I
 
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
+    iget p1, p1, Lhoe;->b:I
 
-    move-result-wide v2
+    if-eq p0, p1, :cond_2
 
-    add-long/2addr v2, v0
+    return v2
 
-    sget-wide v0, Lr1b;->b:J
+    :cond_2
+    return v0
+.end method
 
-    sub-long v1, v2, v0
+.method public final hashCode()I
+    .locals 0
 
-    move-object v0, p3
+    iget p0, p0, Lhoe;->b:I
 
-    move-object v3, p0
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
-    move-wide v4, p1
+    move-result p0
 
-    invoke-direct/range {v0 .. v7}, Lmma;-><init>(JLjava/lang/String;JLjava/lang/String;Ljava/util/Map;)V
+    return p0
+.end method
 
-    new-instance p0, Lpfe;
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    const/4 p1, 0x4
+    const-string v0, "Resource(resId="
 
-    invoke-direct {p0, p1, p3}, Lpfe;-><init>(ILjava/lang/Object;)V
+    const-string v1, ")"
 
-    invoke-static {p0}, Lkoe;->a(Ljava/lang/Runnable;)V
+    iget p0, p0, Lhoe;->b:I
 
-    :goto_2
+    invoke-static {p0, v0, v1}, Lpg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 0
+
+    iget p0, p0, Lhoe;->b:I
+
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+
     return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

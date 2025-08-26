@@ -1,83 +1,58 @@
-.class public final Ltn6;
+.class public final synthetic Ltn6;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field public final synthetic a:I
 
-.field public b:I
-
-.field public final c:Z
-
-.field public final d:Lhs0;
-
-.field public e:[B
-
-.field public f:[C
-
-.field public g:[C
-
-.field public h:[C
+.field public final synthetic b:Lzn6;
 
 
 # direct methods
-.method public constructor <init>(Lhs0;Ljava/lang/Object;Z)V
+.method public synthetic constructor <init>(Lzn6;I)V
     .locals 0
 
+    iput p2, p0, Ltn6;->a:I
+
+    iput-object p1, p0, Ltn6;->b:Lzn6;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ltn6;->d:Lhs0;
-
-    iput-object p2, p0, Ltn6;->a:Ljava/lang/Object;
-
-    iput-boolean p3, p0, Ltn6;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a([B)V
-    .locals 2
+.method public final run()V
+    .locals 1
 
-    if-eqz p1, :cond_2
+    iget v0, p0, Ltn6;->a:I
 
-    iget-object v0, p0, Ltn6;->e:[B
+    packed-switch v0, :pswitch_data_0
 
-    if-eq p1, v0, :cond_1
+    const/4 v0, 0x1
 
-    array-length v1, p1
+    iget-object p0, p0, Ltn6;->b:Lzn6;
 
-    array-length v0, v0
+    iput-boolean v0, p0, Lzn6;->J0:Z
 
-    if-lt v1, v0, :cond_0
+    invoke-virtual {p0}, Lzn6;->C()V
 
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Trying to release buffer smaller than original"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    :goto_0
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Ltn6;->e:[B
-
-    iget-object p0, p0, Ltn6;->d:Lhs0;
-
-    iget-object p0, p0, Lhs0;->a:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0, p1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
-
-    :cond_2
     return-void
+
+    :pswitch_0
+    iget-object p0, p0, Ltn6;->b:Lzn6;
+
+    invoke-virtual {p0}, Lzn6;->C()V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

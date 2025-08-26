@@ -45,13 +45,13 @@
 
     invoke-virtual {p0, v0, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
+    const-string p3, "badge_count_package_name"
+
     invoke-virtual {p2}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
-    move-result-object p3
+    move-result-object v0
 
-    const-string v0, "badge_count_package_name"
-
-    invoke-virtual {p0, v0, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {p0, p3, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     const-string p3, "badge_count_class_name"
 
@@ -134,12 +134,11 @@
     :cond_0
     const/4 p0, 0x0
 
-    goto :goto_1
+    return p0
 
     :cond_1
     :goto_0
     const/4 p0, 0x1
 
-    :goto_1
     return p0
 .end method

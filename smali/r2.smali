@@ -4,7 +4,7 @@
 
 # interfaces
 .implements Ljava/util/List;
-.implements Lb77;
+.implements Lsb7;
 
 
 # direct methods

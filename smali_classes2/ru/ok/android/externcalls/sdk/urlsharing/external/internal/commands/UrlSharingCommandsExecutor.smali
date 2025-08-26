@@ -14,15 +14,15 @@
         "",
         "url",
         "Lkotlin/Function0;",
-        "Ljue;",
+        "Le5f;",
         "onSuccess",
         "Lkotlin/Function1;",
         "",
         "onError",
         "start",
-        "(Ljava/lang/String;Ls16;Lu16;)V",
+        "(Ljava/lang/String;Lv56;Lx56;)V",
         "stop",
-        "(Ls16;Lu16;)V",
+        "(Lv56;Lx56;)V",
         "calls-sdk_release"
     }
     k = 0x1
@@ -31,28 +31,29 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # virtual methods
-.method public abstract start(Ljava/lang/String;Ls16;Lu16;)V
+.method public abstract start(Ljava/lang/String;Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 .end method
 
-.method public abstract stop(Ls16;Lu16;)V
+.method public abstract stop(Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation

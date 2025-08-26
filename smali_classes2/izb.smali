@@ -1,92 +1,118 @@
-.class public final Lizb;
+.class public abstract Lizb;
 .super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Landroid/transition/Transition$TransitionListener;
 
 
-# instance fields
-.field public final synthetic a:Landroid/view/View;
+# static fields
+.field public static oneme_settings_privacy_black_list_dialog_cancel:I = 0x7f130964
 
-.field public final synthetic b:Lvq4;
+.field public static oneme_settings_privacy_black_list_dialog_title:I = 0x7f130965
 
-.field public final synthetic c:F
+.field public static oneme_settings_privacy_black_list_dialog_unblock:I = 0x7f130966
 
+.field public static oneme_settings_privacy_black_list_empty_state_desc:I = 0x7f130967
 
-# direct methods
-.method public constructor <init>(Landroid/view/View;Lvq4;F)V
-    .locals 0
+.field public static oneme_settings_privacy_black_list_toolbar_title:I = 0x7f130968
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.field public static oneme_settings_privacy_black_list_unblocked_success:I = 0x7f130969
 
-    iput-object p1, p0, Lizb;->a:Landroid/view/View;
+.field public static oneme_settings_privacy_change_disabled_description:I = 0x7f13096a
 
-    iput-object p2, p0, Lizb;->b:Lvq4;
+.field public static oneme_settings_privacy_change_disabled_title:I = 0x7f13096b
 
-    iput p3, p0, Lizb;->c:F
+.field public static oneme_settings_privacy_enter_pin_code_description:I = 0x7f13096c
 
-    return-void
-.end method
+.field public static oneme_settings_privacy_enter_pin_code_title:I = 0x7f13096d
 
+.field public static oneme_settings_privacy_forgot_pin_code:I = 0x7f13096e
 
-# virtual methods
-.method public final onTransitionCancel(Landroid/transition/Transition;)V
-    .locals 0
+.field public static oneme_settings_privacy_forgot_pin_code_write_support:I = 0x7f13096f
 
-    return-void
-.end method
+.field public static oneme_settings_privacy_info_header:I = 0x7f130970
 
-.method public final onTransitionEnd(Landroid/transition/Transition;)V
-    .locals 0
+.field public static oneme_settings_privacy_onboarding_come_up_pin_code:I = 0x7f130971
 
-    return-void
-.end method
+.field public static oneme_settings_privacy_onboarding_content_subtitle:I = 0x7f130972
 
-.method public final onTransitionPause(Landroid/transition/Transition;)V
-    .locals 0
+.field public static oneme_settings_privacy_onboarding_error_pin_code_equals:I = 0x7f130973
 
-    return-void
-.end method
+.field public static oneme_settings_privacy_onboarding_item_1_subtitle:I = 0x7f130974
 
-.method public final onTransitionResume(Landroid/transition/Transition;)V
-    .locals 0
+.field public static oneme_settings_privacy_onboarding_item_1_title:I = 0x7f130975
 
-    return-void
-.end method
+.field public static oneme_settings_privacy_onboarding_item_2_subtitle:I = 0x7f130976
 
-.method public final onTransitionStart(Landroid/transition/Transition;)V
-    .locals 2
+.field public static oneme_settings_privacy_onboarding_item_2_title:I = 0x7f130977
 
-    new-instance p1, Lfnd;
+.field public static oneme_settings_privacy_onboarding_item_3_subtitle:I = 0x7f130978
 
-    iget-object v0, p0, Lizb;->a:Landroid/view/View;
+.field public static oneme_settings_privacy_onboarding_item_3_title:I = 0x7f130979
 
-    iget-object v1, p0, Lizb;->b:Lvq4;
+.field public static oneme_settings_privacy_onboarding_re_enter_pin_code:I = 0x7f13097a
 
-    iget p0, p0, Lizb;->c:F
+.field public static oneme_settings_privacy_onboarding_set_pin_code:I = 0x7f13097b
 
-    invoke-direct {p1, v0, v1, p0}, Lfnd;-><init>(Ljava/lang/Object;Lbm3;F)V
+.field public static oneme_settings_privacy_safe_files:I = 0x7f13097c
 
-    const/4 v0, 0x0
+.field public static oneme_settings_privacy_screen_add_me_to_chat:I = 0x7f13097d
 
-    iput v0, p1, Lfnd;->a:F
+.field public static oneme_settings_privacy_screen_black_list:I = 0x7f13097e
 
-    new-instance v0, Lgnd;
+.field public static oneme_settings_privacy_screen_black_list_description:I = 0x7f13097f
 
-    invoke-direct {v0, p0}, Lgnd;-><init>(F)V
+.field public static oneme_settings_privacy_screen_call_me:I = 0x7f130980
 
-    const/high16 p0, 0x43c80000    # 400.0f
+.field public static oneme_settings_privacy_screen_current_session_online:I = 0x7f130981
 
-    invoke-virtual {v0, p0}, Lgnd;->b(F)V
+.field public static oneme_settings_privacy_screen_current_sessions:I = 0x7f130982
 
-    const p0, 0x3f2e147b    # 0.68f
+.field public static oneme_settings_privacy_screen_dialog_add_chat_title:I = 0x7f130983
 
-    invoke-virtual {v0, p0}, Lgnd;->a(F)V
+.field public static oneme_settings_privacy_screen_dialog_call_title:I = 0x7f130984
 
-    iput-object v0, p1, Lfnd;->m:Lgnd;
+.field public static oneme_settings_privacy_screen_dialog_finished_session_cancel_btn:I = 0x7f130985
 
-    invoke-virtual {p1}, Lfnd;->g()V
+.field public static oneme_settings_privacy_screen_dialog_finished_session_finish_btn:I = 0x7f130986
 
-    return-void
-.end method
+.field public static oneme_settings_privacy_screen_dialog_finished_session_title:I = 0x7f130987
+
+.field public static oneme_settings_privacy_screen_dialog_online_never_accept_btn:I = 0x7f130988
+
+.field public static oneme_settings_privacy_screen_dialog_online_never_cancel_btn:I = 0x7f130989
+
+.field public static oneme_settings_privacy_screen_dialog_online_never_title:I = 0x7f13098a
+
+.field public static oneme_settings_privacy_screen_dialog_online_title:I = 0x7f13098b
+
+.field public static oneme_settings_privacy_screen_dialog_safe_file_no_btn:I = 0x7f13098c
+
+.field public static oneme_settings_privacy_screen_dialog_safe_file_yes_btn:I = 0x7f13098d
+
+.field public static oneme_settings_privacy_screen_dialog_safe_files_title:I = 0x7f13098e
+
+.field public static oneme_settings_privacy_screen_dialog_seach_by_phone_title:I = 0x7f13098f
+
+.field public static oneme_settings_privacy_screen_failed_close_sessions:I = 0x7f130990
+
+.field public static oneme_settings_privacy_screen_finished_all:I = 0x7f130991
+
+.field public static oneme_settings_privacy_screen_how_can_section:I = 0x7f130992
+
+.field public static oneme_settings_privacy_screen_how_session:I = 0x7f130993
+
+.field public static oneme_settings_privacy_screen_pin_code_for_settings:I = 0x7f130994
+
+.field public static oneme_settings_privacy_screen_safe_mode:I = 0x7f130995
+
+.field public static oneme_settings_privacy_screen_search_by_phone:I = 0x7f130996
+
+.field public static oneme_settings_privacy_screen_see_online_state:I = 0x7f130997
+
+.field public static oneme_settings_privacy_screen_toolbar_title:I = 0x7f130998
+
+.field public static oneme_settings_privacy_screen_twofa_disabled:I = 0x7f130999
+
+.field public static oneme_settings_privacy_screen_twofa_enabled:I = 0x7f13099a
+
+.field public static oneme_settings_privacy_screen_twofa_title:I = 0x7f13099b
+
+.field public static oneme_settings_privacy_screen_web_apps:I = 0x7f13099c

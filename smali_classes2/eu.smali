@@ -1,102 +1,99 @@
-.class public final synthetic Leu;
-.super Ljava/lang/Object;
+.class public final Leu;
+.super Llje;
 .source "SourceFile"
-
-# interfaces
-.implements Lof3;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:J
 
-.field public final synthetic b:Lvc2;
+.field public o:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lvc2;I)V
+.method public constructor <init>(Ldx8;)V
     .locals 0
 
-    iput p2, p0, Leu;->a:I
-
-    iput-object p1, p0, Leu;->b:Lvc2;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Llje;-><init>(Ldx8;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
+.method public final c(Ldx8;Ljava/lang/String;)V
     .locals 2
 
-    iget v0, p0, Leu;->a:I
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    check-cast p1, Ljava/lang/Throwable;
+    const-string v0, "success"
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    iget-object p0, p0, Leu;->b:Lvc2;
+    move-result v0
 
-    iget-object v0, p0, Lvc2;->a:Ljava/lang/String;
+    if-nez v0, :cond_1
 
-    const-string v1, "load: exception"
+    const-string v0, "updateTime"
 
-    invoke-static {v0, v1, p1}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    new-instance v0, Lru/ok/tamtam/util/HandledException;
+    move-result p2
 
-    invoke-direct {v0, p1}, Lru/ok/tamtam/util/HandledException;-><init>(Ljava/lang/Throwable;)V
+    if-nez p2, :cond_0
 
-    iget-object p0, p0, Lvc2;->Y:Lg15;
-
-    invoke-interface {p0, v0}, Lg15;->a(Ljava/lang/Throwable;)V
+    invoke-virtual {p1}, Ldx8;->B()V
 
     return-void
 
-    :pswitch_0
-    iget-object p0, p0, Leu;->b:Lvc2;
+    :cond_0
+    const-wide/16 v0, 0x0
 
-    iget-object p0, p0, Lvc2;->w0:Liu;
+    invoke-static {p1, v0, v1}, Lxq7;->c0(Ldx8;J)J
 
-    invoke-virtual {p0}, Liu;->c()V
+    move-result-wide p1
 
-    return-void
-
-    :pswitch_1
-    iget-object p0, p0, Leu;->b:Lvc2;
-
-    iget-object v0, p0, Lvc2;->a:Ljava/lang/String;
-
-    const-string v1, "loadPrev: exception"
-
-    invoke-static {v0, v1, p1}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    new-instance v0, Lru/ok/tamtam/util/HandledException;
-
-    invoke-direct {v0, p1}, Lru/ok/tamtam/util/HandledException;-><init>(Ljava/lang/Throwable;)V
-
-    iget-object p0, p0, Lvc2;->Y:Lg15;
-
-    invoke-interface {p0, v0}, Lg15;->a(Ljava/lang/Throwable;)V
+    iput-wide p1, p0, Leu;->X:J
 
     return-void
 
-    :pswitch_2
-    iget-object p0, p0, Leu;->b:Lvc2;
+    :cond_1
+    invoke-static {p1}, Lxq7;->W(Ldx8;)Z
 
-    iget-object p0, p0, Lvc2;->x0:Liu;
+    move-result p1
 
-    invoke-virtual {p0}, Liu;->c()V
+    iput-boolean p1, p0, Leu;->o:Z
 
     return-void
+.end method
 
-    nop
+.method public final toString()Ljava/lang/String;
+    .locals 4
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    iget-boolean v0, p0, Leu;->o:Z
+
+    iget-wide v1, p0, Leu;->X:J
+
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    const-string v3, "Response{success="
+
+    invoke-direct {p0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, ", updateTime="
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

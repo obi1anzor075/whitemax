@@ -1,53 +1,69 @@
-.class public final synthetic Lz35;
+.class public final Lz35;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lmh7;
-.implements Lkh7;
-
 
 # instance fields
-.field public final synthetic a:Lm45;
+.field public final a:[Lt35;
+
+.field public final b:[J
+
+.field public final c:Ljava/lang/String;
+
+.field public final d:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lm45;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;[J[Lt35;)V
     .locals 0
 
-    iput-object p1, p0, Lz35;->a:Lm45;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lz35;->c:Ljava/lang/String;
+
+    iput-object p2, p0, Lz35;->d:Ljava/lang/String;
+
+    iput-object p3, p0, Lz35;->b:[J
+
+    iput-object p4, p0, Lz35;->a:[Lt35;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public e(Ljava/lang/Object;Lvi5;)V
-    .locals 0
+.method public final a()Ljava/lang/String;
+    .locals 3
 
-    check-cast p1, Lgya;
+    const/4 v0, 0x1
 
-    iget-object p0, p0, Lz35;->a:Lm45;
+    iget-object v1, p0, Lz35;->c:Ljava/lang/String;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {v0, v1}, Lv04;->e(ILjava/lang/String;)I
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result v0
 
-    return-void
-.end method
+    iget-object p0, p0, Lz35;->d:Ljava/lang/String;
 
-.method public invoke(Ljava/lang/Object;)V
-    .locals 0
+    invoke-static {v0, p0}, Lv04;->e(ILjava/lang/String;)I
 
-    check-cast p1, Lgya;
+    move-result v0
 
-    iget-object p0, p0, Lz35;->a:Lm45;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Lm45;->Y0:Ldya;
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-interface {p1, p0}, Lgya;->J(Ldya;)V
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-void
+    const-string v0, "/"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

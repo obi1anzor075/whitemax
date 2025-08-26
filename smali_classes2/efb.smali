@@ -1,92 +1,169 @@
-.class public final Lefb;
-.super Landroid/text/style/ClickableSpan;
+.class public final synthetic Lefb;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lv56;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final synthetic a:I
 
-.field public b:I
-
-.field public c:Z
-
-.field public o:Lpf7;
+.field public final synthetic b:Lffb;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;I)V
+.method public synthetic constructor <init>(Lffb;I)V
     .locals 0
 
-    invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
+    iput p2, p0, Lefb;->a:I
 
-    iput-object p1, p0, Lefb;->a:Ljava/lang/String;
+    iput-object p1, p0, Lefb;->b:Lffb;
 
-    iput p2, p0, Lefb;->b:I
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lefb;->c:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public final invoke()Ljava/lang/Object;
     .locals 7
 
-    iget-object p1, p0, Lefb;->o:Lpf7;
+    iget v0, p0, Lefb;->a:I
 
-    if-eqz p1, :cond_0
+    iget-object p0, p0, Lefb;->b:Lffb;
 
-    iget-object p1, p1, Lpf7;->a:Lrf7;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p0, p0, Lffb;->X:Lone/me/profile/screens/invite/ProfileInviteScreen;
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    invoke-virtual {p0}, Lone/me/profile/screens/invite/ProfileInviteScreen;->p0()Lrfb;
 
-    move-result-wide v0
+    move-result-object p0
 
-    iget-object v2, p1, Lrf7;->e:Lp7;
+    iget-object p0, p0, Lrfb;->A0:Lj35;
 
-    iget-wide v3, v2, Lp7;->c:J
+    new-instance v0, Lveb;
 
-    sub-long v3, v0, v3
+    new-instance v1, Lnt3;
 
-    iget-wide v5, v2, Lp7;->b:J
+    sget v2, Lnca;->L:I
 
-    cmp-long v3, v3, v5
+    sget v3, Lpca;->V0:I
 
-    if-lez v3, :cond_0
+    move v4, v3
 
-    iput-wide v0, v2, Lp7;->c:J
+    new-instance v3, Lhoe;
 
-    iget-object p1, p1, Lrf7;->a:Lof7;
+    invoke-direct {v3, v4}, Lhoe;-><init>(I)V
 
-    if-eqz p1, :cond_0
+    sget v4, Lmda;->U:I
 
-    sget-object v0, Lsf7;->X:Lsf7;
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const/4 v1, 0x0
+    move-result-object v4
 
-    iget-object p0, p0, Lefb;->a:Ljava/lang/String;
+    sget v5, Lanc;->O1:I
 
-    invoke-interface {p1, p0, v0, v1}, Lof7;->c(Ljava/lang/String;Lsf7;Landroid/text/style/ClickableSpan;)V
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    sget v6, Lmda;->P:I
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-direct/range {v1 .. v6}, Lnt3;-><init>(ILmoe;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;)V
+
+    invoke-static {v1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lveb;-><init>(Ljava/util/List;)V
+
+    invoke-static {p0, v0}, Ljof;->o(Lj35;Ljava/lang/Object;)V
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
+
+    :pswitch_0
+    iget-object p0, p0, Lffb;->X:Lone/me/profile/screens/invite/ProfileInviteScreen;
+
+    invoke-virtual {p0}, Lone/me/profile/screens/invite/ProfileInviteScreen;->p0()Lrfb;
+
+    move-result-object p0
+
+    iget-object v0, p0, Lrfb;->A0:Lj35;
+
+    invoke-virtual {p0}, Lrfb;->s()Ljava/lang/String;
+
+    move-result-object v1
+
+    if-nez v1, :cond_0
+
+    goto :goto_1
 
     :cond_0
-    return-void
-.end method
+    new-instance v2, Lteb;
 
-.method public final updateDrawState(Landroid/text/TextPaint;)V
-    .locals 1
+    invoke-direct {v2, v1}, Lteb;-><init>(Ljava/lang/String;)V
 
-    iget v0, p0, Lefb;->b:I
+    invoke-static {v0, v2}, Ljof;->o(Lj35;Ljava/lang/Object;)V
 
-    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-static {}, Lzx7;->z()Z
 
-    iget-boolean p0, p0, Lefb;->c:Z
+    move-result v1
 
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setUnderlineText(Z)V
+    if-eqz v1, :cond_2
 
-    return-void
+    new-instance v1, Lweb;
+
+    invoke-virtual {p0}, Lrfb;->r()Ly42;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_1
+
+    invoke-virtual {p0}, Ly42;->H()Z
+
+    move-result p0
+
+    const/4 v2, 0x1
+
+    if-ne p0, v2, :cond_1
+
+    sget p0, Lpca;->Q0:I
+
+    goto :goto_0
+
+    :cond_1
+    sget p0, Lpca;->S0:I
+
+    :goto_0
+    new-instance v2, Lhoe;
+
+    invoke-direct {v2, p0}, Lhoe;-><init>(I)V
+
+    sget p0, Lanc;->r:I
+
+    invoke-direct {v1, p0, v2}, Lweb;-><init>(ILhoe;)V
+
+    iget-object p0, v0, Lj35;->b:Lwjd;
+
+    invoke-virtual {p0, v1}, Lwjd;->h(Ljava/lang/Object;)Z
+
+    :cond_2
+    :goto_1
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

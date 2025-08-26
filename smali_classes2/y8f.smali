@@ -4,72 +4,66 @@
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final a:Lkjc;
 
-.field public final b:J
+.field public final b:Llh;
 
-.field public final c:Ljava/lang/String;
+.field public final c:Lbjc;
+
+.field public final d:Lbjc;
+
+.field public final e:Lbjc;
+
+.field public final f:Lbjc;
 
 
 # direct methods
-.method public constructor <init>(JLjava/lang/String;Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>(Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Ly8f;->a:Ljava/lang/String;
+    iput-object p1, p0, Ly8f;->a:Lkjc;
 
-    iput-wide p1, p0, Ly8f;->b:J
+    new-instance v0, Llh;
 
-    iput-object p4, p0, Ly8f;->c:Ljava/lang/String;
+    const/16 v1, 0x1c
+
+    invoke-direct {v0, p1, v1}, Llh;-><init>(Lkjc;I)V
+
+    iput-object v0, p0, Ly8f;->b:Llh;
+
+    new-instance v0, Lbjc;
+
+    const/16 v1, 0x13
+
+    invoke-direct {v0, p1, v1}, Lbjc;-><init>(Lkjc;I)V
+
+    iput-object v0, p0, Ly8f;->c:Lbjc;
+
+    new-instance v0, Lbjc;
+
+    const/16 v1, 0x14
+
+    invoke-direct {v0, p1, v1}, Lbjc;-><init>(Lkjc;I)V
+
+    iput-object v0, p0, Ly8f;->d:Lbjc;
+
+    new-instance v0, Lbjc;
+
+    const/16 v1, 0x15
+
+    invoke-direct {v0, p1, v1}, Lbjc;-><init>(Lkjc;I)V
+
+    iput-object v0, p0, Ly8f;->e:Lbjc;
+
+    new-instance v0, Lbjc;
+
+    const/16 v1, 0x16
+
+    invoke-direct {v0, p1, v1}, Lbjc;-><init>(Lkjc;I)V
+
+    iput-object v0, p0, Ly8f;->f:Lbjc;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    iget-object v0, p0, Ly8f;->c:Ljava/lang/String;
-
-    invoke-static {v0}, Lr1g;->p(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "VideoUploadInfo{url=\'"
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v2, p0, Ly8f;->a:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, "\', videoId="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v2, p0, Ly8f;->b:J
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string p0, ", token=\'"
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string p0, "\'}"
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

@@ -1,61 +1,72 @@
 .class public final La51;
-.super Ljava/lang/Object;
+.super Lfrf;
 .source "SourceFile"
 
 # interfaces
-.implements Lxwb;
+.implements Lc51;
 
 
-# virtual methods
-.method public final log(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 3
+# static fields
+.field public static final c:La51;
 
-    sget-object p0, Ludd;->e:Lfn6;
 
-    if-nez p0, :cond_0
+# direct methods
+.method static constructor <clinit>()V
+    .locals 4
 
-    goto :goto_0
+    new-instance v0, La51;
 
-    :cond_0
-    invoke-interface {p0}, Lfn6;->c()Z
+    sget v1, Lyxb;->call_screen_connection_restored:I
 
-    move-result v0
+    const-wide/16 v2, 0x3e8
 
-    if-eqz v0, :cond_1
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    sget-object v0, Ltn7;->X:Ltn7;
+    move-result-object v2
 
-    const-string v1, "["
+    invoke-direct {v0, v1, v2}, Lfrf;-><init>(ILjava/lang/Long;)V
 
-    const-string v2, "] "
+    sput-object v0, La51;->c:La51;
 
-    invoke-static {v1, p1, v2, p2}, Lme4;->j(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const/4 p2, 0x0
-
-    const-string v1, "CallsSdk"
-
-    invoke-interface {p0, v0, v1, p1, p2}, Lfn6;->d(Ltn7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_1
-    :goto_0
     return-void
 .end method
 
-.method public final logException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of p0, p1, La51;
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
     .locals 0
 
-    const-string p0, "[%s] %s"
+    const p0, 0x426150a3
 
-    filled-new-array {p1, p2}, [Ljava/lang/Object;
+    return p0
+.end method
 
-    move-result-object p1
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    const-string p2, "CallsSdk"
+    const-string p0, "Restored"
 
-    invoke-static {p2, p3, p0, p1}, Ludd;->u(Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    return-void
+    return-object p0
 .end method

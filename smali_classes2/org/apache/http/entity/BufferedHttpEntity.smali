@@ -46,7 +46,7 @@
 
     iput-object p1, p0, Lorg/apache/http/entity/BufferedHttpEntity;->buffer:[B
 
-    goto :goto_1
+    return-void
 
     :cond_1
     :goto_0
@@ -56,7 +56,6 @@
 
     iput-object p1, p0, Lorg/apache/http/entity/BufferedHttpEntity;->buffer:[B
 
-    :goto_1
     return-void
 .end method
 
@@ -132,12 +131,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -166,12 +164,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -191,14 +188,13 @@
 
     invoke-virtual {p1, v0}, Ljava/io/OutputStream;->write([B)V
 
-    goto :goto_0
+    return-void
 
     :cond_0
     iget-object p0, p0, Lorg/apache/http/entity/HttpEntityWrapper;->wrappedEntity:Lorg/apache/http/HttpEntity;
 
     invoke-interface {p0, p1}, Lorg/apache/http/HttpEntity;->writeTo(Ljava/io/OutputStream;)V
 
-    :goto_0
     return-void
 
     :cond_1

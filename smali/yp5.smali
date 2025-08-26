@@ -1,77 +1,51 @@
-.class public final synthetic Lyp5;
-.super Ljava/lang/Object;
+.class public final Lyp5;
+.super Lbu3;
 .source "SourceFile"
-
-# interfaces
-.implements Lu16;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic b:Lone/me/folders/edit/FolderEditScreen;
+.field public final synthetic Y:Lln5;
+
+.field public Z:I
+
+.field public o:Lln5;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/folders/edit/FolderEditScreen;I)V
+.method public constructor <init>(Lln5;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    iput p2, p0, Lyp5;->a:I
+    iput-object p1, p0, Lyp5;->Y:Lln5;
 
-    iput-object p1, p0, Lyp5;->b:Lone/me/folders/edit/FolderEditScreen;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    sget-object v0, Ljue;->a:Ljue;
+    iput-object p1, p0, Lyp5;->X:Ljava/lang/Object;
 
-    iget-object v1, p0, Lyp5;->b:Lone/me/folders/edit/FolderEditScreen;
+    iget p1, p0, Lyp5;->Z:I
 
-    iget p0, p0, Lyp5;->a:I
+    const/high16 v0, -0x80000000
 
-    check-cast p1, Landroid/view/View;
+    or-int/2addr p1, v0
 
-    packed-switch p0, :pswitch_data_0
+    iput p1, p0, Lyp5;->Z:I
 
-    sget-object p0, Lone/me/folders/edit/FolderEditScreen;->w0:[Lk77;
+    iget-object p1, p0, Lyp5;->Y:Lln5;
 
-    invoke-virtual {v1}, Lone/me/folders/edit/FolderEditScreen;->m0()Lrq5;
+    const/4 v0, 0x0
 
-    move-result-object p0
-
-    invoke-virtual {p0}, Lrq5;->u()V
-
-    invoke-virtual {v1}, Lone/me/folders/edit/FolderEditScreen;->n0()V
-
-    return-object v0
-
-    :pswitch_0
-    sget-object p0, Lone/me/folders/edit/FolderEditScreen;->w0:[Lk77;
-
-    invoke-virtual {v1}, Lone/me/folders/edit/FolderEditScreen;->n0()V
-
-    invoke-virtual {v1}, Lrr3;->getOnBackPressedDispatcher()Lex9;
+    invoke-virtual {p1, v0, p0}, Lln5;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    if-eqz p0, :cond_0
-
-    invoke-virtual {p0}, Lex9;->d()V
-
-    :cond_0
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

@@ -7,22 +7,20 @@
 
 
 # direct methods
-.method public static a(Lbe5;[BLjava/io/File;)V
+.method public static c(Lzg5;[BLjava/io/File;)V
     .locals 8
 
-    iget-object v0, p0, Lbe5;->c:Ljava/lang/Object;
+    iget-object v0, p0, Lzg5;->c:Ljava/lang/Object;
 
     check-cast v0, Ljava/io/InputStream;
 
-    iget-object p0, p0, Lbe5;->b:Ljava/lang/Object;
-
-    check-cast p0, Libe;
-
-    iget-object v1, p0, Libe;->b:Ljava/lang/Object;
-
     new-instance v1, Ljava/io/File;
 
-    iget-object p0, p0, Libe;->b:Ljava/lang/Object;
+    iget-object p0, p0, Lzg5;->b:Ljava/lang/Object;
+
+    check-cast p0, Lije;
+
+    iget-object p0, p0, Lije;->b:Ljava/lang/Object;
 
     check-cast p0, Ljava/lang/String;
 
@@ -197,7 +195,7 @@
 
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    invoke-static {v1}, Lt7e;->b(Ljava/io/File;)V
+    invoke-static {v1}, Lxfe;->b(Ljava/io/File;)V
 
     throw p1
     :try_end_6
@@ -234,7 +232,7 @@
     return-void
 .end method
 
-.method public abstract m()[Libe;
+.method public abstract m()[Lije;
 .end method
 
 .method public abstract n(Ljava/io/File;)V

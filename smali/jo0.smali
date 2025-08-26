@@ -1,98 +1,125 @@
-.class public final Ljo0;
+.class public abstract synthetic Ljo0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/content/ServiceConnection;
 
-
-# instance fields
-.field public a:Z
-
-.field public final b:Ljava/util/concurrent/LinkedBlockingQueue;
+# static fields
+.field public static final synthetic $EnumSwitchMapping$0:[I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {}, Landroid/graphics/Bitmap$Config;->values()[Landroid/graphics/Bitmap$Config;
 
-    const/4 v0, 0x0
+    move-result-object v0
 
-    iput-boolean v0, p0, Ljo0;->a:Z
+    array-length v0, v0
 
-    new-instance v0, Ljava/util/concurrent/LinkedBlockingQueue;
+    new-array v0, v0, [I
 
-    invoke-direct {v0}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
+    :try_start_0
+    sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    iput-object v0, p0, Ljo0;->b:Ljava/util/concurrent/LinkedBlockingQueue;
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    return-void
-.end method
+    move-result v1
 
+    const/4 v2, 0x1
 
-# virtual methods
-.method public final a(Ljava/util/concurrent/TimeUnit;)Landroid/os/IBinder;
-    .locals 2
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    const-string v0, "BlockingServiceConnection.getServiceWithTimeout() called on main thread"
+    :catch_0
+    :try_start_1
+    sget-object v1, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
 
-    invoke-static {v0}, La24;->n(Ljava/lang/String;)V
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    iget-boolean v0, p0, Ljo0;->a:Z
+    move-result v1
 
-    if-nez v0, :cond_1
+    const/4 v2, 0x2
 
-    const/4 v0, 0x1
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    iput-boolean v0, p0, Ljo0;->a:Z
+    :catch_1
+    :try_start_2
+    sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_4444:Landroid/graphics/Bitmap$Config;
 
-    iget-object p0, p0, Ljo0;->b:Ljava/util/concurrent/LinkedBlockingQueue;
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    const-wide/16 v0, 0x2710
+    move-result v1
 
-    invoke-virtual {p0, v0, v1, p1}, Ljava/util/concurrent/LinkedBlockingQueue;->poll(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+    const/4 v2, 0x3
 
-    move-result-object p0
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    check-cast p0, Landroid/os/IBinder;
+    :catch_2
+    :try_start_3
+    sget-object v1, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
-    if-eqz p0, :cond_0
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    return-object p0
+    move-result v1
 
-    :cond_0
-    new-instance p0, Ljava/util/concurrent/TimeoutException;
+    const/4 v2, 0x4
 
-    const-string p1, "Timed out waiting for the service connection"
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
-    invoke-direct {p0, p1}, Ljava/util/concurrent/TimeoutException;-><init>(Ljava/lang/String;)V
+    :catch_3
+    :try_start_4
+    sget-object v1, Landroid/graphics/Bitmap$Config;->RGBA_F16:Landroid/graphics/Bitmap$Config;
 
-    throw p0
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
+    move-result v1
 
-    const-string p1, "Cannot call get on this connection more than once"
+    const/4 v2, 0x5
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    aput v2, v0, v1
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
-    throw p0
-.end method
+    :catch_4
+    :try_start_5
+    invoke-static {}, Le4;->f()Landroid/graphics/Bitmap$Config;
 
-.method public final onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
-    .locals 0
+    move-result-object v1
 
-    iget-object p0, p0, Ljo0;->b:Ljava/util/concurrent/LinkedBlockingQueue;
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    invoke-interface {p0, p2}, Ljava/util/concurrent/BlockingQueue;->add(Ljava/lang/Object;)Z
+    move-result v1
 
-    return-void
-.end method
+    const/4 v2, 0x6
 
-.method public final onServiceDisconnected(Landroid/content/ComponentName;)V
-    .locals 0
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+
+    :catch_5
+    :try_start_6
+    sget-object v1, Landroid/graphics/Bitmap$Config;->HARDWARE:Landroid/graphics/Bitmap$Config;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x7
+
+    aput v2, v0, v1
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
+
+    :catch_6
+    sput-object v0, Ljo0;->$EnumSwitchMapping$0:[I
 
     return-void
 .end method

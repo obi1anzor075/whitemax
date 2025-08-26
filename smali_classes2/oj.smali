@@ -1,39 +1,51 @@
-.class public final Loj;
+.class public abstract synthetic Loj;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Laec;
-
-.field public final b:Lsh;
-
-.field public final c:Lth;
+# static fields
+.field public static final synthetic $EnumSwitchMapping$0:[I
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {}, Lnj;->values()[Lnj;
 
-    iput-object p1, p0, Loj;->a:Laec;
+    move-result-object v0
 
-    new-instance v0, Lsh;
+    array-length v0, v0
 
-    const/4 v1, 0x1
-
-    invoke-direct {v0, p1, v1}, Lsh;-><init>(Laec;I)V
-
-    iput-object v0, p0, Loj;->b:Lsh;
-
-    new-instance v0, Lth;
+    new-array v0, v0, [I
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p1, v1}, Lth;-><init>(Laec;I)V
+    const/4 v2, 0x0
 
-    iput-object v0, p0, Loj;->c:Lth;
+    :try_start_0
+    aput v1, v0, v2
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    const/4 v2, 0x2
+
+    :try_start_1
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    :catch_1
+    const/4 v1, 0x3
+
+    :try_start_2
+    aput v1, v0, v2
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
+    :catch_2
+    sput-object v0, Loj;->$EnumSwitchMapping$0:[I
 
     return-void
 .end method

@@ -2,72 +2,25 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field public a:Ljava/lang/String;
-
-.field public b:Ljava/lang/String;
-
-.field public c:Ljava/util/Set;
-
-.field public d:Ljava/lang/String;
-
-.field public e:Ljava/lang/String;
-
-.field public f:I
-
-.field public g:Z
-
-.field public h:I
-
-.field public i:Z
-
-.field public j:I
-
-.field public k:I
-
-.field public l:I
-
-.field public m:I
-
-.field public n:I
-
-.field public o:F
-
-.field public p:I
-
-.field public q:Z
+# interfaces
+.implements Landroid/view/View$OnAttachStateChangeListener;
 
 
-# direct methods
-.method public static a(Ljava/lang/String;IILjava/lang/String;)I
-    .locals 1
+# virtual methods
+.method public final onViewAttachedToWindow(Landroid/view/View;)V
+    .locals 0
 
-    invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
+    invoke-virtual {p1, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
-    move-result v0
+    sget-object p0, Ltnf;->a:Ljava/util/WeakHashMap;
 
-    if-nez v0, :cond_2
+    invoke-static {p1}, Lgnf;->c(Landroid/view/View;)V
 
-    const/4 v0, -0x1
+    return-void
+.end method
 
-    if-ne p1, v0, :cond_0
+.method public final onViewDetachedFromWindow(Landroid/view/View;)V
+    .locals 0
 
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    add-int v0, p1, p2
-
-    :cond_1
-    return v0
-
-    :cond_2
-    :goto_0
-    return p1
+    return-void
 .end method

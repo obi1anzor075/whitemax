@@ -4,14 +4,30 @@
 
 
 # instance fields
-.field public a:F
+.field public final a:Lbmc;
+
+.field public final b:Ljava/util/concurrent/Executor;
+
+.field public final c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
-.method public static a()Lflc;
-    .locals 1
+.method public constructor <init>(Lbmc;Lmi6;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    throw v0
+    iput-object p1, p0, Lelc;->a:Lbmc;
+
+    iput-object p2, p0, Lelc;->b:Ljava/util/concurrent/Executor;
+
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 p2, 0x1
+
+    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object p1, p0, Lelc;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    return-void
 .end method

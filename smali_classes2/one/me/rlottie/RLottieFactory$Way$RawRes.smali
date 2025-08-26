@@ -66,7 +66,7 @@
     const/4 v0, 0x0
 
     .line 5
-    invoke-direct {p0, p3, p4, p5, v0}, Lone/me/rlottie/RLottieFactory$Way;-><init>(IIZLx54;)V
+    invoke-direct {p0, p3, p4, p5, v0}, Lone/me/rlottie/RLottieFactory$Way;-><init>(IIZLl94;)V
 
     .line 6
     iput p1, p0, Lone/me/rlottie/RLottieFactory$Way$RawRes;->rawResId:I
@@ -77,7 +77,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(ILjava/lang/String;IIZILx54;)V
+.method public synthetic constructor <init>(ILjava/lang/String;IIZILl94;)V
     .locals 6
 
     and-int/lit8 p7, p6, 0x4
@@ -120,13 +120,13 @@
     move-result p5
 
     :cond_2
-    move v5, p5
-
     move-object v0, p0
 
     move v1, p1
 
     move-object v2, p2
+
+    move v5, p5
 
     .line 4
     invoke-direct/range {v0 .. v5}, Lone/me/rlottie/RLottieFactory$Way$RawRes;-><init>(ILjava/lang/String;IIZ)V

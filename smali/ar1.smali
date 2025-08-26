@@ -1,141 +1,242 @@
-.class public final synthetic Lar1;
+.class public final Lar1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ltn1;
+.implements Lnmb;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Llr1;
+.field public final synthetic a:Lfr1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Llr1;I)V
+.method public constructor <init>(Lfr1;)V
     .locals 0
 
-    iput p2, p0, Lar1;->a:I
-
-    iput-object p1, p0, Lar1;->b:Llr1;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lar1;->a:Lfr1;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public z(Lsn1;)Ljava/lang/String;
-    .locals 4
+.method public final a()V
+    .locals 9
 
-    iget v0, p0, Lar1;->a:I
+    iget-object p0, p0, Lar1;->a:Lfr1;
 
-    iget-object p0, p0, Lar1;->b:Llr1;
+    iget-object v0, p0, Lfr1;->j:Lomb;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v1, p0, Lfr1;->d:Lgoa;
 
-    packed-switch v0, :pswitch_data_0
+    move-object v2, v1
 
-    :try_start_0
-    iget-object v0, p0, Llr1;->a:Lx3a;
+    check-cast v2, Ltoa;
 
-    invoke-virtual {v0}, Lx3a;->s()Lb2d;
+    invoke-virtual {v2}, Ltoa;->c()Lxna;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {v0}, Lb2d;->b()Lc2d;
+    iget-object v3, p0, Lfr1;->b:Lt01;
 
-    move-result-object v0
+    check-cast v3, Lu01;
 
-    new-instance v1, Ljava/util/ArrayList;
+    invoke-virtual {v3}, Lu01;->b()Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
-    iget-object v0, v0, Lc2d;->c:Ljava/util/List;
+    move-result-object v3
 
-    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    invoke-virtual {v3}, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;->getDeviceType()Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
 
-    iget-object v0, p0, Llr1;->M0:Ls30;
+    move-result-object v3
 
-    iget-object v0, v0, Ls30;->Y:Ljava/lang/Object;
+    invoke-virtual {v3}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    check-cast v0, Lut1;
+    move-result-object v3
 
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    const-string v4, "speakerphone"
 
-    new-instance v0, Ler1;
+    invoke-static {v3, v4}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-direct {v0, p0, p1}, Ler1;-><init>(Llr1;Lsn1;)V
+    move-result v3
 
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    iget-object v4, p0, Lfr1;->h:Letc;
 
-    iget-object v0, p0, Llr1;->b:Lku1;
+    invoke-virtual {v4}, Letc;->c()Z
 
-    iget-object v2, p0, Llr1;->x0:Lor1;
+    move-result v4
 
-    iget-object v2, v2, Lor1;->a:Ljava/lang/String;
+    iget-object v5, p0, Lfr1;->a:Lhr1;
 
-    iget-object v3, p0, Llr1;->c:Lryc;
+    check-cast v5, Ltr1;
 
-    invoke-static {v1}, Llp;->j(Ljava/util/ArrayList;)Landroid/hardware/camera2/CameraDevice$StateCallback;
+    invoke-virtual {v5}, Ltr1;->k()Lw04;
+
+    move-result-object v5
+
+    iget-boolean v5, v5, Lw04;->h:Z
+
+    const/4 v6, 0x1
+
+    const/4 v7, 0x0
+
+    if-nez v5, :cond_1
+
+    check-cast v1, Ltoa;
+
+    iget-object v1, v1, Ltoa;->s0:Lu5c;
+
+    iget-object v1, v1, Lu5c;->a:Ltyd;
+
+    invoke-interface {v1}, Ltyd;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
-    iget-object v0, v0, Lku1;->a:Libe;
+    check-cast v1, Lhoa;
 
-    invoke-virtual {v0, v2, v3, v1}, Libe;->Z(Ljava/lang/String;Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraDevice$StateCallback;)V
-    :try_end_0
-    .catch Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+    iget-boolean v1, v1, Lhoa;->h:Z
+
+    if-eqz v1, :cond_0
 
     goto :goto_0
 
-    :catch_0
-    move-exception v0
-
-    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    invoke-virtual {p0}, Llr1;->toString()Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Lsn1;->d(Ljava/lang/Throwable;)Z
-
-    :goto_0
-    const-string p0, "configAndCloseTask"
-
-    return-object p0
-
-    :pswitch_0
-    :try_start_1
-    iget-object v0, p0, Llr1;->c:Lryc;
-
-    new-instance v1, Ldr1;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v1, p0, v2, p1}, Ldr1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-virtual {v0, v1}, Lryc;->execute(Ljava/lang/Runnable;)V
-    :try_end_1
-    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_1 .. :try_end_1} :catch_1
+    :cond_0
+    move v1, v7
 
     goto :goto_1
 
-    :catch_1
-    new-instance p0, Ljava/lang/RuntimeException;
-
-    const-string v0, "Unable to check if MeteringRepeating is attached. Camera executor shut down."
-
-    invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1, p0}, Lsn1;->d(Ljava/lang/Throwable;)Z
+    :cond_1
+    :goto_0
+    move v1, v6
 
     :goto_1
-    const-string p0, "isMeteringRepeatingAttached"
+    invoke-virtual {p0}, Lfr1;->f()Lazd;
 
-    return-object p0
+    move-result-object v5
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    invoke-virtual {v5}, Lazd;->getValue()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lcuc;
+
+    iget-object v5, v5, Lcuc;->a:Lduc;
+
+    sget-object v8, Lduc;->a:Lduc;
+
+    if-ne v5, v8, :cond_3
+
+    invoke-virtual {p0}, Lfr1;->f()Lazd;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lazd;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lcuc;
+
+    iget-object p0, p0, Lcuc;->b:Lrtc;
+
+    if-eqz p0, :cond_2
+
+    iget-object p0, p0, Lrtc;->c:Lwf1;
+
+    goto :goto_2
+
+    :cond_2
+    const/4 p0, 0x0
+
+    :goto_2
+    iget-object v5, v2, Lxna;->a:Lyf1;
+
+    invoke-interface {v5}, Lyf1;->getId()Lwf1;
+
+    move-result-object v5
+
+    invoke-static {p0, v5}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_4
+
+    iget-object p0, v2, Lxna;->a:Lyf1;
+
+    invoke-interface {p0}, Lyf1;->m()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_3
+
+    goto :goto_3
+
+    :cond_3
+    move v6, v7
+
+    :cond_4
+    :goto_3
+    if-nez v1, :cond_7
+
+    if-nez v3, :cond_7
+
+    if-nez v4, :cond_7
+
+    if-eqz v6, :cond_5
+
+    goto :goto_5
+
+    :cond_5
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    :try_start_0
+    iget-object p0, v0, Lomb;->f:Landroid/os/PowerManager$WakeLock;
+
+    if-eqz p0, :cond_6
+
+    invoke-virtual {p0}, Landroid/os/PowerManager$WakeLock;->acquire()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p0
+
+    goto :goto_4
+
+    :cond_6
+    return-void
+
+    :goto_4
+    invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+
+    move-result-object v0
+
+    new-array v1, v7, [Ljava/lang/Object;
+
+    const-string v2, "ProximityHelperTag"
+
+    invoke-static {v2, p0, v0, v1}, Lg47;->t(Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    return-void
+
+    :cond_7
+    :goto_5
+    invoke-virtual {v0}, Lomb;->c()V
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 0
+
+    iget-object p0, p0, Lar1;->a:Lfr1;
+
+    iget-object p0, p0, Lfr1;->j:Lomb;
+
+    invoke-virtual {p0}, Lomb;->c()V
+
+    return-void
 .end method

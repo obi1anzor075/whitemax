@@ -1,6 +1,5 @@
 .class public interface abstract synthetic Landroid/telephony/TelephonyCallback$DisplayInfoListener;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # direct methods

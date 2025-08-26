@@ -1,276 +1,159 @@
-.class public final Lrf;
-.super Landroid/graphics/drawable/Drawable$ConstantState;
+.class public abstract Lrf;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic a:I
+# static fields
+.field public static final a:Ljava/util/concurrent/atomic/AtomicInteger;
 
-.field public final b:Ljava/lang/Object;
+.field public static final b:Ljava/util/concurrent/atomic/AtomicInteger;
+
+.field public static final c:Ljava/util/concurrent/atomic/AtomicInteger;
+
+.field public static final d:Ljava/util/concurrent/ConcurrentHashMap;
+
+.field public static final e:Lwfe;
+
+.field public static final f:Lec;
+
+.field public static final g:Lec;
 
 
 # direct methods
-.method public constructor <init>(Landroid/graphics/drawable/Drawable$ConstantState;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 4
 
-    const/4 v0, 0x0
-
-    iput v0, p0, Lrf;->a:I
-
-    .line 2
-    invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
-
-    .line 3
-    iput-object p1, p0, Lrf;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lone/me/sdk/richvector/EnhancedVectorDrawable;)V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lrf;->a:I
-
-    iput-object p1, p0, Lrf;->b:Ljava/lang/Object;
-
-    .line 1
-    invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public canApplyTheme()Z
-    .locals 1
-
-    iget v0, p0, Lrf;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0}, Landroid/graphics/drawable/Drawable$ConstantState;->canApplyTheme()Z
-
-    move-result p0
-
-    return p0
-
-    :pswitch_0
-    iget-object p0, p0, Lrf;->b:Ljava/lang/Object;
-
-    check-cast p0, Landroid/graphics/drawable/Drawable$ConstantState;
-
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable$ConstantState;->canApplyTheme()Z
-
-    move-result p0
-
-    return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final getChangingConfigurations()I
-    .locals 1
-
-    iget v0, p0, Lrf;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :pswitch_0
-    iget-object p0, p0, Lrf;->b:Ljava/lang/Object;
-
-    check-cast p0, Landroid/graphics/drawable/Drawable$ConstantState;
-
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable$ConstantState;->getChangingConfigurations()I
-
-    move-result p0
-
-    return p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final newDrawable()Landroid/graphics/drawable/Drawable;
-    .locals 2
-
-    iget v0, p0, Lrf;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    .line 1
-    new-instance v0, Lone/me/sdk/richvector/EnhancedVectorDrawable;
-
-    iget-object p0, p0, Lrf;->b:Ljava/lang/Object;
-
-    check-cast p0, Lone/me/sdk/richvector/EnhancedVectorDrawable;
-
-    invoke-static {p0}, Lone/me/sdk/richvector/EnhancedVectorDrawable;->access$getResources$p(Lone/me/sdk/richvector/EnhancedVectorDrawable;)Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-static {p0}, Lone/me/sdk/richvector/EnhancedVectorDrawable;->access$getResId$p(Lone/me/sdk/richvector/EnhancedVectorDrawable;)I
-
-    move-result p0
-
-    invoke-direct {v0, v1, p0}, Lone/me/sdk/richvector/EnhancedVectorDrawable;-><init>(Landroid/content/res/Resources;I)V
-
-    return-object v0
-
-    .line 2
-    :pswitch_0
-    new-instance v0, Lsf;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/4 v1, 0x0
 
-    .line 3
-    invoke-direct {v0, v1}, Lsf;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
-    .line 4
-    iget-object p0, p0, Lrf;->b:Ljava/lang/Object;
+    sput-object v0, Lrf;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    check-cast p0, Landroid/graphics/drawable/Drawable$ConstantState;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable()Landroid/graphics/drawable/Drawable;
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
-    move-result-object p0
+    sput-object v0, Lrf;->b:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    iput-object p0, v0, Lf0f;->a:Landroid/graphics/drawable/Drawable;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 5
-    iget-object v1, v0, Lsf;->Y:Lpf;
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
-    invoke-virtual {p0, v1}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+    sput-object v0, Lrf;->c:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    return-object v0
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
-    nop
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
+    sput-object v0, Lrf;->d:Ljava/util/concurrent/ConcurrentHashMap;
 
-.method public final newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
-    .locals 2
+    new-instance v0, Lm;
 
-    iget v0, p0, Lrf;->a:I
+    const/4 v1, 0x4
 
-    packed-switch v0, :pswitch_data_0
+    invoke-direct {v0, v1}, Lm;-><init>(I)V
 
-    if-eqz p1, :cond_0
+    new-instance v1, Lwfe;
 
-    .line 6
-    new-instance v0, Lone/me/sdk/richvector/EnhancedVectorDrawable;
+    invoke-direct {v1, v0}, Lwfe;-><init>(Lv56;)V
 
-    iget-object p0, p0, Lrf;->b:Ljava/lang/Object;
+    sput-object v1, Lrf;->e:Lwfe;
 
-    check-cast p0, Lone/me/sdk/richvector/EnhancedVectorDrawable;
+    new-instance v0, Lec;
 
-    invoke-static {p0}, Lone/me/sdk/richvector/EnhancedVectorDrawable;->access$getResId$p(Lone/me/sdk/richvector/EnhancedVectorDrawable;)I
+    const/4 v2, 0x1
 
-    move-result p0
+    invoke-direct {v0, v2}, Lec;-><init>(I)V
 
-    invoke-direct {v0, p1, p0}, Lone/me/sdk/richvector/EnhancedVectorDrawable;-><init>(Landroid/content/res/Resources;I)V
+    sput-object v0, Lrf;->f:Lec;
 
-    goto :goto_0
+    new-instance v2, Lec;
 
-    :cond_0
-    invoke-virtual {p0}, Lrf;->newDrawable()Landroid/graphics/drawable/Drawable;
+    const/4 v3, 0x2
+
+    invoke-direct {v2, v3}, Lec;-><init>(I)V
+
+    sput-object v2, Lrf;->g:Lec;
+
+    invoke-virtual {v1}, Lwfe;->getValue()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/os/Handler;
+
+    invoke-virtual {v3, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    invoke-virtual {v1}, Lwfe;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    :goto_0
-    return-object v0
+    check-cast v0, Landroid/os/Handler;
 
-    .line 7
-    :pswitch_0
-    new-instance v0, Lsf;
+    invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    const/4 v1, 0x0
-
-    .line 8
-    invoke-direct {v0, v1}, Lsf;-><init>(Landroid/content/Context;)V
-
-    .line 9
-    iget-object p0, p0, Lrf;->b:Ljava/lang/Object;
-
-    check-cast p0, Landroid/graphics/drawable/Drawable$ConstantState;
-
-    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p0
-
-    iput-object p0, v0, Lf0f;->a:Landroid/graphics/drawable/Drawable;
-
-    .line 10
-    iget-object p1, v0, Lsf;->Y:Lpf;
-
-    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
-
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method
 
-.method public newDrawable(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-    .locals 2
+.method public static a(Li36;I)V
+    .locals 4
 
-    iget v0, p0, Lrf;->a:I
+    iget v0, p0, Li36;->a:I
 
-    packed-switch v0, :pswitch_data_0
+    iget-object p0, p0, Li36;->b:Lzme;
 
-    invoke-super {p0, p1, p2}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+    int-to-float v1, v0
 
-    move-result-object p0
+    const/high16 v2, 0x3f000000    # 0.5f
 
-    return-object p0
+    mul-float/2addr v1, v2
 
-    .line 11
-    :pswitch_0
-    new-instance v0, Lsf;
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    const/4 v1, 0x0
+    cmpg-float v3, v1, v2
 
-    .line 12
-    invoke-direct {v0, v1}, Lsf;-><init>(Landroid/content/Context;)V
+    if-gez v3, :cond_0
 
-    .line 13
-    iget-object p0, p0, Lrf;->b:Ljava/lang/Object;
+    move v1, v2
 
-    check-cast p0, Landroid/graphics/drawable/Drawable$ConstantState;
+    :cond_0
+    float-to-int v1, v1
 
-    invoke-virtual {p0, p1, p2}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+    iget v2, p0, Lzme;->Z:I
 
-    move-result-object p0
+    add-int/2addr v2, p1
 
-    iput-object p0, v0, Lf0f;->a:Landroid/graphics/drawable/Drawable;
+    invoke-static {v2, v1, v0}, Lqo8;->h(III)I
 
-    .line 14
-    iget-object p1, v0, Lsf;->Y:Lpf;
+    move-result p1
 
-    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+    iget v0, p0, Lzme;->Z:I
 
-    return-object v0
+    if-eq p1, v0, :cond_1
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    if-eq p1, v0, :cond_1
+
+    const/4 v0, 0x1
+
+    iget v1, p0, Lzme;->Y:I
+
+    invoke-static {p1, v0, v1}, Lqo8;->h(III)I
+
+    move-result p1
+
+    iput p1, p0, Lzme;->Z:I
+
+    invoke-virtual {p0}, Lzme;->q()Lct0;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_1
+
+    iget p0, p0, Lzme;->Z:I
+
+    invoke-virtual {p1, p0}, Lct0;->a(I)V
+
+    :cond_1
+    return-void
 .end method

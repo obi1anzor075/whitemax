@@ -25,7 +25,7 @@
 
 # virtual methods
 .method public final onDraw(Landroid/graphics/Canvas;)V
-    .locals 9
+    .locals 10
 
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
@@ -53,9 +53,9 @@
 
     move-result-object v1
 
-    check-cast v1, Loha;
+    check-cast v1, Lvla;
 
-    iget-object v2, v1, Loha;->a:Landroid/graphics/drawable/BitmapDrawable;
+    iget-object v2, v1, Lvla;->a:Landroid/graphics/drawable/BitmapDrawable;
 
     if-eqz v2, :cond_1
 
@@ -66,24 +66,28 @@
 
     move-result-wide v2
 
-    iget-boolean v4, v1, Loha;->l:Z
+    iget-object v4, v1, Lvla;->a:Landroid/graphics/drawable/BitmapDrawable;
 
-    if-eqz v4, :cond_2
+    iget-object v5, v1, Lvla;->c:Landroid/graphics/Rect;
+
+    iget-boolean v6, v1, Lvla;->k:Z
+
+    if-eqz v6, :cond_2
 
     const/4 v1, 0x0
 
-    goto/16 :goto_3
+    goto :goto_3
 
     :cond_2
-    iget-wide v4, v1, Loha;->j:J
+    iget-wide v6, v1, Lvla;->i:J
 
-    sub-long/2addr v2, v4
+    sub-long/2addr v2, v6
 
     long-to-float v2, v2
 
-    iget-wide v3, v1, Loha;->e:J
+    iget-wide v6, v1, Lvla;->e:J
 
-    long-to-float v3, v3
+    long-to-float v3, v6
 
     div-float/2addr v2, v3
 
@@ -93,121 +97,115 @@
 
     move-result v2
 
-    const/4 v4, 0x0
+    const/4 v6, 0x0
 
-    invoke-static {v4, v2}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v6, v2}, Ljava/lang/Math;->max(FF)F
 
     move-result v2
 
-    iget-boolean v5, v1, Loha;->k:Z
+    iget-boolean v7, v1, Lvla;->j:Z
 
-    if-nez v5, :cond_3
+    if-nez v7, :cond_3
 
     goto :goto_1
 
     :cond_3
-    move v4, v2
+    move v6, v2
 
     :goto_1
-    iget-object v2, v1, Loha;->d:Landroid/view/animation/Interpolator;
+    iget-object v2, v1, Lvla;->d:Landroid/view/animation/Interpolator;
 
     if-nez v2, :cond_4
 
-    move v2, v4
+    move v2, v6
 
     goto :goto_2
 
     :cond_4
-    invoke-interface {v2, v4}, Landroid/animation/TimeInterpolator;->getInterpolation(F)F
+    invoke-interface {v2, v6}, Landroid/animation/TimeInterpolator;->getInterpolation(F)F
 
     move-result v2
 
     :goto_2
-    iget v5, v1, Loha;->g:I
+    iget v7, v1, Lvla;->g:I
 
-    int-to-float v5, v5
+    int-to-float v7, v7
 
-    mul-float/2addr v5, v2
+    mul-float/2addr v7, v2
 
-    float-to-int v5, v5
+    float-to-int v7, v7
 
-    iget-object v6, v1, Loha;->f:Landroid/graphics/Rect;
+    iget-object v8, v1, Lvla;->f:Landroid/graphics/Rect;
 
-    iget v7, v6, Landroid/graphics/Rect;->top:I
+    iget v9, v8, Landroid/graphics/Rect;->top:I
 
-    add-int/2addr v7, v5
+    add-int/2addr v9, v7
 
-    iget-object v8, v1, Loha;->c:Landroid/graphics/Rect;
+    iput v9, v5, Landroid/graphics/Rect;->top:I
 
-    iput v7, v8, Landroid/graphics/Rect;->top:I
+    iget v8, v8, Landroid/graphics/Rect;->bottom:I
 
-    iget v6, v6, Landroid/graphics/Rect;->bottom:I
+    add-int/2addr v8, v7
 
-    add-int/2addr v6, v5
+    iput v8, v5, Landroid/graphics/Rect;->bottom:I
 
-    iput v6, v8, Landroid/graphics/Rect;->bottom:I
+    iget v7, v1, Lvla;->h:F
 
-    iget v5, v1, Loha;->h:F
-
-    iget v6, v1, Loha;->i:F
-
-    invoke-static {v6, v5, v2, v5}, Lus8;->g(FFFF)F
+    invoke-static {v7, v3, v2, v3}, Lp3a;->g(FFFF)F
 
     move-result v2
 
-    iput v2, v1, Loha;->b:F
+    iput v2, v1, Lvla;->b:F
 
-    iget-object v5, v1, Loha;->a:Landroid/graphics/drawable/BitmapDrawable;
+    if-eqz v4, :cond_5
 
-    if-eqz v5, :cond_5
+    const/high16 v7, 0x437f0000    # 255.0f
 
-    const/high16 v6, 0x437f0000    # 255.0f
-
-    mul-float/2addr v2, v6
+    mul-float/2addr v2, v7
 
     float-to-int v2, v2
 
-    invoke-virtual {v5, v2}, Landroid/graphics/drawable/BitmapDrawable;->setAlpha(I)V
+    invoke-virtual {v4, v2}, Landroid/graphics/drawable/BitmapDrawable;->setAlpha(I)V
 
-    invoke-virtual {v5, v8}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
+    invoke-virtual {v4, v5}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
     :cond_5
-    iget-boolean v2, v1, Loha;->k:Z
+    iget-boolean v2, v1, Lvla;->j:Z
 
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
     if-eqz v2, :cond_6
 
-    cmpl-float v2, v4, v3
+    cmpl-float v2, v6, v3
 
     if-ltz v2, :cond_6
 
-    iput-boolean v5, v1, Loha;->l:Z
+    iput-boolean v4, v1, Lvla;->k:Z
 
-    iget-object v2, v1, Loha;->m:Lafc;
+    iget-object v2, v1, Lvla;->l:Lt4b;
 
     if-eqz v2, :cond_6
 
-    iget-object v3, v2, Lafc;->b:Ljava/lang/Object;
+    iget-object v3, v2, Lt4b;->c:Ljava/lang/Object;
 
     check-cast v3, Landroidx/mediarouter/app/d;
 
-    iget-object v4, v3, Landroidx/mediarouter/app/d;->X0:Ljava/util/HashSet;
+    iget-object v5, v3, Landroidx/mediarouter/app/d;->P0:Ljava/util/HashSet;
 
-    iget-object v2, v2, Lafc;->a:Ljava/lang/Object;
+    iget-object v2, v2, Lt4b;->b:Ljava/lang/Object;
 
-    check-cast v2, Lxb8;
+    check-cast v2, Lmg8;
 
-    invoke-virtual {v4, v2}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v2}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
-    iget-object v2, v3, Landroidx/mediarouter/app/d;->T0:Landroidx/mediarouter/app/c;
+    iget-object v2, v3, Landroidx/mediarouter/app/d;->L0:Landroidx/mediarouter/app/c;
 
     invoke-virtual {v2}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
 
     :cond_6
-    iget-boolean v1, v1, Loha;->l:Z
+    iget-boolean v1, v1, Lvla;->k:Z
 
-    xor-int/2addr v1, v5
+    xor-int/2addr v1, v4
 
     :goto_3
     if-nez v1, :cond_0

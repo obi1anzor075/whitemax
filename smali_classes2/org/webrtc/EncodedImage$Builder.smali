@@ -36,7 +36,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
 .method public synthetic constructor <init>(I)V
     .locals 0
 
-    .line 2
+    .line 1
     invoke-direct {p0}, Lorg/webrtc/EncodedImage$Builder;-><init>()V
 
     return-void
@@ -54,9 +54,9 @@
 
 # virtual methods
 .method public createEncodedImage()Lorg/webrtc/EncodedImage;
-    .locals 12
+    .locals 11
 
-    new-instance v11, Lorg/webrtc/EncodedImage;
+    new-instance v0, Lorg/webrtc/EncodedImage;
 
     iget-object v1, p0, Lorg/webrtc/EncodedImage$Builder;->buffer:Ljava/nio/ByteBuffer;
 
@@ -76,11 +76,9 @@
 
     const/4 v10, 0x0
 
-    move-object v0, v11
-
     invoke-direct/range {v0 .. v10}, Lorg/webrtc/EncodedImage;-><init>(Ljava/nio/ByteBuffer;Ljava/lang/Runnable;IIJLorg/webrtc/EncodedImage$FrameType;ILjava/lang/Integer;I)V
 
-    return-object v11
+    return-object v0
 .end method
 
 .method public setBuffer(Ljava/nio/ByteBuffer;Ljava/lang/Runnable;)Lorg/webrtc/EncodedImage$Builder;

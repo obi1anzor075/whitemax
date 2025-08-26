@@ -1,15 +1,8 @@
-.class public final Lo66;
+.class public interface abstract Lo66;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public a:Z
-
-.field public b:I
-
-.field public c:I
-
-.field public d:Landroidx/recyclerview/widget/RecyclerView;
-
-.field public e:I
+# virtual methods
+.method public abstract apply(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.end method

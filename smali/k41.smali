@@ -1,169 +1,78 @@
 .class public final Lk41;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lx64;
 
 
 # instance fields
-.field public X:I
-
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lpo1;
-
-.field public final synthetic w0:Lr41;
+.field public final synthetic a:Landroid/os/Bundle;
 
 
 # direct methods
-.method public constructor <init>(Lpo1;Lr41;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Landroid/os/Bundle;)V
     .locals 0
 
-    iput-object p1, p0, Lk41;->Z:Lpo1;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lk41;->w0:Lr41;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p3}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lk41;->a:Landroid/os/Bundle;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final a()Ljava/lang/Object;
+    .locals 4
 
-    check-cast p1, Ld5b;
+    const-string v0, "call_id"
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget-object p0, p0, Lk41;->a:Landroid/os/Bundle;
 
-    invoke-virtual {p0, p1, p2}, Lk41;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {v0, p0}, Lcu0;->A0(Ljava/lang/String;Landroid/os/Bundle;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "is_video"
+
+    invoke-static {v1, p0}, Lcu0;->x0(Ljava/lang/String;Landroid/os/Bundle;)Z
+
+    move-result v1
+
+    const-string v2, "sdk_reasons"
+
+    invoke-virtual {p0, v2}, Landroid/os/BaseBundle;->containsKey(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-static {v2, p0}, Lcu0;->A0(Ljava/lang/String;Landroid/os/Bundle;)Ljava/lang/String;
 
     move-result-object p0
 
-    check-cast p0, Lk41;
+    const-string v2, ","
 
-    sget-object p1, Ljue;->a:Ljue;
+    filled-new-array {v2}, [Ljava/lang/String;
 
-    invoke-virtual {p0, p1}, Lk41;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v2
+
+    const/4 v3, 0x4
+
+    invoke-static {p0, v2, v3}, Lj8e;->W0(Ljava/lang/CharSequence;[Ljava/lang/String;I)Ljava/util/List;
 
     move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 2
-
-    new-instance v0, Lk41;
-
-    iget-object v1, p0, Lk41;->Z:Lpo1;
-
-    iget-object p0, p0, Lk41;->w0:Lr41;
-
-    invoke-direct {v0, v1, p0, p2}, Lk41;-><init>(Lpo1;Lr41;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lk41;->Y:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
-
-    sget-object v0, Lpu3;->a:Lpu3;
-
-    iget v1, p0, Lk41;->X:I
-
-    const/4 v2, 0x1
-
-    if-eqz v1, :cond_1
-
-    if-ne v1, v2, :cond_0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    const/4 p0, 0x0
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lk41;->Y:Ljava/lang/Object;
-
-    check-cast p1, Ld5b;
-
-    new-instance v1, Lj41;
-
-    invoke-direct {v1, p1}, Lj41;-><init>(Ld5b;)V
-
-    iget-object v3, p0, Lk41;->Z:Lpo1;
-
-    invoke-virtual {v3}, Lpo1;->b()Lgrd;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lgrd;->getValue()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lzw3;
-
-    iget-boolean v4, v3, Lzw3;->f:Z
-
-    if-eqz v4, :cond_2
-
-    iget-object v3, v3, Lzw3;->j:Lb65;
-
-    instance-of v3, v3, Ly55;
-
-    if-nez v3, :cond_2
-
-    sget-object v3, Lq31;->c:Lq31;
-
-    move-object v4, p1
-
-    check-cast v4, La5b;
-
-    invoke-virtual {v4, v3}, La5b;->n(Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_2
-    iget-object v3, p0, Lk41;->w0:Lr41;
-
-    iget-object v4, v3, Lr41;->b:Lvp1;
-
-    invoke-virtual {v4, v1}, Lvp1;->d(Lqk1;)V
-
-    new-instance v4, Lx2;
-
-    const/4 v5, 0x6
-
-    invoke-direct {v4, v3, v5, v1}, Lx2;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    iput v2, p0, Lk41;->X:I
-
-    invoke-static {p1, v4, p0}, Lat7;->d(Ld5b;Ls16;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-ne p0, v0, :cond_3
-
-    return-object v0
-
-    :cond_3
     :goto_0
-    sget-object p0, Ljue;->a:Ljue;
+    new-instance v2, Lone/me/calls/ui/bottomsheet/ratecall/CallRateBottomSheet;
 
-    return-object p0
+    invoke-direct {v2, v0, v1, p0}, Lone/me/calls/ui/bottomsheet/ratecall/CallRateBottomSheet;-><init>(Ljava/lang/String;ZLjava/util/List;)V
+
+    return-object v2
 .end method

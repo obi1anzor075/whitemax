@@ -1,744 +1,947 @@
 .class public final Lky0;
-.super Ljava/lang/Object;
+.super Lmbc;
 .source "SourceFile"
-
-# interfaces
-.implements Lru/ok/android/externcalls/sdk/media/mute/listener/MediaMuteManagerListener;
 
 
 # instance fields
-.field public final synthetic a:Lpy0;
+.field public final synthetic a:I
 
-.field public final synthetic b:Lt97;
+.field public final b:I
 
-.field public final synthetic c:Lt97;
-
-.field public final synthetic d:Lt97;
-
-.field public final synthetic e:Lt97;
+.field public final c:I
 
 
 # direct methods
-.method public constructor <init>(Lpy0;Lt97;Lt97;Lt97;Lt97;)V
-    .locals 0
+.method public constructor <init>(I)V
+    .locals 1
 
+    iput p1, p0, Lky0;->a:I
+
+    packed-switch p1, :pswitch_data_0
+
+    .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lky0;->a:Lpy0;
+    const/16 p1, 0x8
 
-    iput-object p2, p0, Lky0;->b:Lt97;
+    int-to-float p1, p1
 
-    iput-object p3, p0, Lky0;->c:Lt97;
+    .line 3
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
 
-    iput-object p4, p0, Lky0;->d:Lt97;
+    move-result-object v0
 
-    iput-object p5, p0, Lky0;->e:Lt97;
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v0, p1
+
+    invoke-static {v0}, Lkhg;->x(F)I
+
+    move-result v0
+
+    .line 4
+    iput v0, p0, Lky0;->b:I
+
+    .line 5
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr p1, v0
+
+    invoke-static {p1}, Lkhg;->x(F)I
+
+    const/16 p1, 0x10
+
+    int-to-float p1, p1
+
+    .line 6
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr p1, v0
+
+    invoke-static {p1}, Lkhg;->x(F)I
+
+    move-result p1
+
+    .line 7
+    iput p1, p0, Lky0;->c:I
+
+    return-void
+
+    .line 8
+    :pswitch_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/16 p1, 0x18
+
+    int-to-float p1, p1
+
+    .line 9
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr p1, v0
+
+    invoke-static {p1}, Lkhg;->x(F)I
+
+    move-result p1
+
+    .line 10
+    iput p1, p0, Lky0;->b:I
+
+    const/16 p1, 0x10
+
+    int-to-float p1, p1
+
+    .line 11
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr p1, v0
+
+    invoke-static {p1}, Lkhg;->x(F)I
+
+    move-result p1
+
+    .line 12
+    iput p1, p0, Lky0;->c:I
+
+    return-void
+
+    .line 13
+    :pswitch_1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/16 p1, 0x18
+
+    int-to-float p1, p1
+
+    .line 14
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr p1, v0
+
+    invoke-static {p1}, Lkhg;->x(F)I
+
+    move-result p1
+
+    .line 15
+    iput p1, p0, Lky0;->b:I
+
+    const/16 p1, 0x10
+
+    int-to-float p1, p1
+
+    .line 16
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr p1, v0
+
+    invoke-static {p1}, Lkhg;->x(F)I
+
+    move-result p1
+
+    .line 17
+    iput p1, p0, Lky0;->c:I
+
+    return-void
+
+    .line 18
+    :pswitch_2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/16 p1, 0x14
+
+    int-to-float p1, p1
+
+    .line 19
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr p1, v0
+
+    invoke-static {p1}, Lkhg;->x(F)I
+
+    move-result p1
+
+    .line 20
+    iput p1, p0, Lky0;->b:I
+
+    const/16 p1, 0xc
+
+    int-to-float p1, p1
+
+    .line 21
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr p1, v0
+
+    invoke-static {p1}, Lkhg;->x(F)I
+
+    move-result p1
+
+    .line 22
+    iput p1, p0, Lky0;->c:I
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public synthetic constructor <init>(III)V
+    .locals 0
+
+    .line 1
+    iput p3, p0, Lky0;->a:I
+
+    iput p1, p0, Lky0;->b:I
+
+    iput p2, p0, Lky0;->c:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onMuteChanged(Loc9;)V
-    .locals 20
+.method public final f(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Lybc;)V
+    .locals 6
 
-    move-object/from16 v0, p0
+    iget v0, p0, Lky0;->a:I
 
-    move-object/from16 v1, p1
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v2, v1, Loc9;->a:Ljava/util/Map;
+    invoke-static {p2}, Landroidx/recyclerview/widget/RecyclerView;->R(Landroid/view/View;)I
 
-    sget-object v3, Lj88;->b:Lj88;
+    move-result p3
 
-    invoke-interface {v2, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p4}, Lybc;->b()I
 
-    move-result-object v2
+    move-result p4
 
-    check-cast v2, Lk88;
+    add-int/lit8 p4, p4, -0x1
 
-    const/4 v3, 0x0
+    iget v0, p0, Lky0;->c:I
 
-    const-string v4, "CallAdminSettingsController"
+    iget p0, p0, Lky0;->b:I
 
-    sget-object v5, Lk88;->a:Lk88;
+    if-ne p3, p4, :cond_0
 
-    const/4 v6, 0x0
+    iput p0, p1, Landroid/graphics/Rect;->top:I
 
-    const/4 v7, 0x1
-
-    if-eqz v2, :cond_8
-
-    iget-object v8, v0, Lky0;->a:Lpy0;
-
-    iget-object v9, v0, Lky0;->b:Lt97;
-
-    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    if-ne v2, v5, :cond_0
-
-    move v10, v7
+    iput v0, p1, Landroid/graphics/Rect;->bottom:I
 
     goto :goto_0
 
     :cond_0
-    move v10, v6
+    invoke-static {p2}, Landroidx/recyclerview/widget/RecyclerView;->R(Landroid/view/View;)I
+
+    move-result p2
+
+    if-nez p2, :cond_1
+
+    iput v0, p1, Landroid/graphics/Rect;->top:I
+
+    iput p0, p1, Landroid/graphics/Rect;->bottom:I
+
+    goto :goto_0
+
+    :cond_1
+    iput p0, p1, Landroid/graphics/Rect;->top:I
+
+    iput p0, p1, Landroid/graphics/Rect;->bottom:I
 
     :goto_0
-    sget-object v11, Ludd;->e:Lfn6;
+    return-void
 
-    if-nez v11, :cond_1
+    :pswitch_0
+    invoke-static {p2}, Landroidx/recyclerview/widget/RecyclerView;->R(Landroid/view/View;)I
+
+    move-result p2
+
+    iget p3, p0, Lky0;->b:I
+
+    if-nez p2, :cond_2
+
+    div-int/lit8 p3, p3, 0x2
+
+    iput p3, p1, Landroid/graphics/Rect;->right:I
 
     goto :goto_1
 
-    :cond_1
-    invoke-interface {v11}, Lfn6;->c()Z
-
-    move-result v12
-
-    if-eqz v12, :cond_2
-
-    sget-object v12, Ltn7;->X:Ltn7;
-
-    new-instance v13, Ljava/lang/StringBuilder;
-
-    const-string v14, "Video was disabled by admin to "
-
-    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v13, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-interface {v11, v12, v4, v13, v3}, Lfn6;->d(Ltn7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
     :cond_2
+    invoke-virtual {p4}, Lybc;->b()I
+
+    move-result p4
+
+    add-int/lit8 p4, p4, -0x1
+
+    if-ne p2, p4, :cond_3
+
+    div-int/lit8 p3, p3, 0x2
+
+    iput p3, p1, Landroid/graphics/Rect;->left:I
+
+    goto :goto_1
+
+    :cond_3
+    div-int/lit8 p3, p3, 0x2
+
+    iput p3, p1, Landroid/graphics/Rect;->left:I
+
+    iput p3, p1, Landroid/graphics/Rect;->right:I
+
     :goto_1
-    if-nez v10, :cond_4
+    iget p0, p0, Lky0;->c:I
 
-    invoke-interface {v9}, Lt97;->getValue()Ljava/lang/Object;
+    iput p0, p1, Landroid/graphics/Rect;->top:I
 
-    move-result-object v10
+    iput p0, p1, Landroid/graphics/Rect;->bottom:I
 
-    check-cast v10, Ld11;
+    return-void
 
-    invoke-virtual {v10}, Ld11;->a()Lru/ok/android/externcalls/sdk/video/CameraManager;
+    :pswitch_1
+    iget p2, p0, Lky0;->c:I
 
-    move-result-object v10
+    iput p2, p1, Landroid/graphics/Rect;->left:I
 
-    if-eqz v10, :cond_3
+    iput p2, p1, Landroid/graphics/Rect;->right:I
 
-    invoke-interface {v10}, Lru/ok/android/externcalls/sdk/video/CameraManager;->isCameraEnabled()Z
+    iget p0, p0, Lky0;->b:I
 
-    move-result v10
+    iput p0, p1, Landroid/graphics/Rect;->top:I
 
-    if-ne v10, v7, :cond_3
+    return-void
 
-    move v10, v7
+    :pswitch_2
+    invoke-static {p2}, Landroidx/recyclerview/widget/RecyclerView;->R(Landroid/view/View;)I
+
+    move-result p2
+
+    iget p3, p0, Lky0;->b:I
+
+    int-to-double v0, p3
+
+    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
+
+    invoke-static {v2, v3, v0, v1}, Ljava/lang/Math;->max(DD)D
+
+    move-result-wide v0
+
+    double-to-int p4, v0
+
+    rem-int p4, p2, p4
+
+    int-to-double v0, p3
+
+    invoke-static {v2, v3, v0, v1}, Ljava/lang/Math;->max(DD)D
+
+    move-result-wide v0
+
+    double-to-int p3, v0
+
+    iget p0, p0, Lky0;->c:I
+
+    mul-int v0, p4, p0
+
+    div-int/2addr v0, p3
+
+    iput v0, p1, Landroid/graphics/Rect;->left:I
+
+    add-int/lit8 p4, p4, 0x1
+
+    mul-int/2addr p4, p0
+
+    div-int/2addr p4, p3
+
+    sub-int p4, p0, p4
+
+    iput p4, p1, Landroid/graphics/Rect;->right:I
+
+    if-lt p2, p3, :cond_4
+
+    iput p0, p1, Landroid/graphics/Rect;->top:I
+
+    :cond_4
+    return-void
+
+    :pswitch_3
+    iget p3, p0, Lky0;->b:I
+
+    iput p3, p1, Landroid/graphics/Rect;->top:I
+
+    iput p3, p1, Landroid/graphics/Rect;->bottom:I
+
+    invoke-virtual {p4}, Lybc;->b()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_5
+
+    iput p3, p1, Landroid/graphics/Rect;->left:I
+
+    iput p3, p1, Landroid/graphics/Rect;->right:I
 
     goto :goto_2
 
-    :cond_3
-    move v10, v6
+    :cond_5
+    invoke-static {p2}, Landroidx/recyclerview/widget/RecyclerView;->R(Landroid/view/View;)I
+
+    move-result v0
+
+    invoke-virtual {p4}, Lybc;->b()I
+
+    move-result p4
+
+    sub-int/2addr p4, v1
+
+    iget p0, p0, Lky0;->c:I
+
+    if-ne v0, p4, :cond_6
+
+    div-int/lit8 p0, p0, 0x2
+
+    iput p0, p1, Landroid/graphics/Rect;->left:I
+
+    iput p3, p1, Landroid/graphics/Rect;->right:I
+
+    goto :goto_2
+
+    :cond_6
+    invoke-static {p2}, Landroidx/recyclerview/widget/RecyclerView;->R(Landroid/view/View;)I
+
+    move-result p2
+
+    if-nez p2, :cond_7
+
+    iput p3, p1, Landroid/graphics/Rect;->left:I
+
+    div-int/lit8 p0, p0, 0x2
+
+    iput p0, p1, Landroid/graphics/Rect;->right:I
+
+    goto :goto_2
+
+    :cond_7
+    div-int/lit8 p0, p0, 0x2
+
+    iput p0, p1, Landroid/graphics/Rect;->left:I
+
+    iput p0, p1, Landroid/graphics/Rect;->right:I
 
     :goto_2
-    invoke-interface {v9}, Lt97;->getValue()Ljava/lang/Object;
+    return-void
 
-    move-result-object v9
+    :pswitch_4
+    invoke-static {p2}, Landroidx/recyclerview/widget/RecyclerView;->R(Landroid/view/View;)I
 
-    check-cast v9, Ld11;
+    move-result p2
 
-    invoke-virtual {v9}, Ld11;->a()Lru/ok/android/externcalls/sdk/video/CameraManager;
+    invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lgbc;
 
-    move-result-object v9
+    move-result-object p3
 
-    if-eqz v9, :cond_5
+    instance-of p4, p3, Ludd;
 
-    invoke-interface {v9, v6}, Lru/ok/android/externcalls/sdk/video/CameraManager;->setCameraEnabled(Z)V
+    if-eqz p4, :cond_8
+
+    check-cast p3, Ludd;
 
     goto :goto_3
 
-    :cond_4
-    move v10, v6
-
-    :cond_5
-    :goto_3
-    iget-object v9, v8, Lpy0;->E0:Lgrd;
-
-    :cond_6
-    invoke-virtual {v9}, Lgrd;->getValue()Ljava/lang/Object;
-
-    move-result-object v11
-
-    move-object v12, v11
-
-    check-cast v12, Lea;
-
-    invoke-static {v2}, Lpy0;->h(Lk88;)Z
-
-    move-result v14
-
-    const/16 v17, 0x0
-
-    const/16 v18, 0x0
-
-    const/4 v13, 0x0
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0x0
-
-    const/16 v19, 0x7d
-
-    invoke-static/range {v12 .. v19}, Lea;->a(Lea;ZZZZZZI)Lea;
-
-    move-result-object v12
-
-    invoke-virtual {v9, v11, v12}, Lgrd;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_6
-
-    invoke-static {v2}, Lpy0;->h(Lk88;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_7
-
-    iget-object v2, v8, Lpy0;->C0:Lhcd;
-
-    new-instance v8, Lya;
-
-    invoke-direct {v8, v7, v6}, Lya;-><init>(ZZ)V
-
-    invoke-virtual {v2, v8}, Lhcd;->g(Ljava/lang/Object;)Z
-
-    goto :goto_4
-
-    :cond_7
-    if-eqz v10, :cond_8
-
-    iget-object v2, v8, Lpy0;->C0:Lhcd;
-
-    sget-object v8, Lta;->a:Lta;
-
-    invoke-virtual {v2, v8}, Lhcd;->g(Ljava/lang/Object;)Z
-
     :cond_8
-    :goto_4
-    iget-object v2, v1, Loc9;->a:Ljava/util/Map;
+    const/4 p3, 0x0
 
-    sget-object v8, Lj88;->a:Lj88;
-
-    invoke-interface {v2, v8}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lk88;
-
-    if-eqz v2, :cond_10
-
-    iget-object v8, v0, Lky0;->a:Lpy0;
-
-    iget-object v9, v0, Lky0;->c:Lt97;
-
-    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    if-ne v2, v5, :cond_9
-
-    move v10, v7
+    :goto_3
+    if-nez p3, :cond_9
 
     goto :goto_5
 
     :cond_9
-    move v10, v6
+    if-ltz p2, :cond_b
 
+    invoke-virtual {p3}, Lhl7;->j()I
+
+    move-result p3
+
+    if-ge p2, p3, :cond_b
+
+    if-nez p2, :cond_a
+
+    iget p0, p0, Lky0;->b:I
+
+    goto :goto_4
+
+    :cond_a
+    iget p0, p0, Lky0;->c:I
+
+    :goto_4
+    iput p0, p1, Landroid/graphics/Rect;->top:I
+
+    :cond_b
     :goto_5
-    sget-object v11, Ludd;->e:Lfn6;
+    return-void
 
-    if-nez v11, :cond_a
+    :pswitch_5
+    invoke-static {p2}, Landroidx/recyclerview/widget/RecyclerView;->R(Landroid/view/View;)I
+
+    move-result p2
+
+    invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lgbc;
+
+    move-result-object p3
+
+    instance-of p4, p3, Ludd;
+
+    if-eqz p4, :cond_c
+
+    check-cast p3, Ludd;
 
     goto :goto_6
 
-    :cond_a
-    invoke-interface {v11}, Lfn6;->c()Z
-
-    move-result v12
-
-    if-eqz v12, :cond_b
-
-    sget-object v12, Ltn7;->X:Ltn7;
-
-    new-instance v13, Ljava/lang/StringBuilder;
-
-    const-string v14, "Microphone was changed by admin to "
-
-    invoke-direct {v13, v14}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v13, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-interface {v11, v12, v4, v13, v3}, Lfn6;->d(Ltn7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_b
-    :goto_6
-    if-nez v10, :cond_c
-
-    invoke-interface {v9}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v11
-
-    check-cast v11, Lqz0;
-
-    check-cast v11, Lrz0;
-
-    invoke-virtual {v11}, Lrz0;->d()Z
-
-    invoke-interface {v9}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Lqz0;
-
-    check-cast v9, Lrz0;
-
-    invoke-virtual {v9}, Lrz0;->c()Lru/ok/android/externcalls/sdk/audio/MicrophoneManager;
-
-    move-result-object v9
-
-    if-eqz v9, :cond_c
-
-    invoke-interface {v9, v6}, Lru/ok/android/externcalls/sdk/audio/MicrophoneManager;->setMicEnabled(Z)V
-
     :cond_c
-    iget-object v9, v8, Lpy0;->E0:Lgrd;
+    const/4 p3, 0x0
+
+    :goto_6
+    if-nez p3, :cond_d
+
+    goto :goto_9
 
     :cond_d
-    invoke-virtual {v9}, Lgrd;->getValue()Ljava/lang/Object;
+    if-ltz p2, :cond_10
 
-    move-result-object v11
+    invoke-virtual {p3}, Lhl7;->j()I
 
-    move-object v12, v11
+    move-result p4
 
-    check-cast v12, Lea;
+    if-ge p2, p4, :cond_10
 
-    invoke-static {v2}, Lpy0;->h(Lk88;)Z
+    invoke-virtual {p3, p2}, Lhl7;->C(I)Ljava/lang/Object;
 
-    move-result v15
+    move-result-object p4
 
-    const/16 v17, 0x0
+    check-cast p4, Lol7;
 
-    const/16 v18, 0x0
+    check-cast p4, Lsdd;
 
-    const/4 v13, 0x0
+    add-int/lit8 v0, p2, 0x1
 
-    const/4 v14, 0x0
+    invoke-virtual {p3, v0}, Laod;->G(I)Lol7;
 
-    const/16 v16, 0x0
+    move-result-object p3
 
-    const/16 v19, 0x7b
+    check-cast p3, Lsdd;
 
-    invoke-static/range {v12 .. v19}, Lea;->a(Lea;ZZZZZZI)Lea;
+    const/4 v0, 0x0
 
-    move-result-object v12
+    if-nez p2, :cond_e
 
-    invoke-virtual {v9, v11, v12}, Lgrd;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_d
-
-    invoke-virtual {v8}, Lpy0;->d()Lbt3;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Lbt3;->a()Lru/ok/android/externcalls/sdk/Conversation;
-
-    move-result-object v9
-
-    if-eqz v9, :cond_e
-
-    invoke-interface {v9}, Lru/ok/android/externcalls/sdk/Conversation;->isMeCreatorOrAdmin()Z
-
-    move-result v9
+    iget p2, p0, Lky0;->b:I
 
     goto :goto_7
 
     :cond_e
-    move v9, v6
+    move p2, v0
 
     :goto_7
-    if-nez v9, :cond_10
+    iput p2, p1, Landroid/graphics/Rect;->top:I
 
-    invoke-static {v2}, Lpy0;->h(Lk88;)Z
+    if-eqz p3, :cond_f
 
-    move-result v2
+    invoke-interface {p4}, Lsdd;->u()I
 
-    if-nez v2, :cond_f
+    move-result p2
 
-    iget-object v2, v8, Lpy0;->C0:Lhcd;
+    invoke-interface {p3}, Lsdd;->u()I
 
-    new-instance v8, Lab;
+    move-result p3
 
-    invoke-direct {v8, v7, v6}, Lab;-><init>(ZZ)V
-
-    invoke-virtual {v2, v8}, Lhcd;->g(Ljava/lang/Object;)Z
+    if-ne p2, p3, :cond_f
 
     goto :goto_8
 
     :cond_f
-    if-nez v10, :cond_10
+    iget v0, p0, Lky0;->c:I
 
-    iget-object v2, v8, Lpy0;->C0:Lhcd;
-
-    sget-object v8, Lua;->a:Lua;
-
-    invoke-virtual {v2, v8}, Lhcd;->g(Ljava/lang/Object;)Z
+    :goto_8
+    iput v0, p1, Landroid/graphics/Rect;->bottom:I
 
     :cond_10
-    :goto_8
-    iget-object v1, v1, Loc9;->a:Ljava/util/Map;
-
-    sget-object v2, Lj88;->c:Lj88;
-
-    invoke-interface {v1, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lk88;
-
-    if-eqz v1, :cond_17
-
-    iget-object v2, v0, Lky0;->a:Lpy0;
-
-    iget-object v0, v0, Lky0;->d:Lt97;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    if-ne v1, v5, :cond_11
-
-    move v5, v7
-
-    goto :goto_9
-
-    :cond_11
-    move v5, v6
-
     :goto_9
-    sget-object v8, Ludd;->e:Lfn6;
+    return-void
 
-    if-nez v8, :cond_12
+    :pswitch_6
+    invoke-static {p2}, Landroidx/recyclerview/widget/RecyclerView;->R(Landroid/view/View;)I
+
+    move-result p2
+
+    invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lgbc;
+
+    move-result-object p3
+
+    instance-of p4, p3, Lv91;
+
+    const/4 v0, 0x0
+
+    if-eqz p4, :cond_11
+
+    check-cast p3, Lv91;
 
     goto :goto_a
 
-    :cond_12
-    invoke-interface {v8}, Lfn6;->c()Z
+    :cond_11
+    move-object p3, v0
 
-    move-result v9
-
-    if-eqz v9, :cond_13
-
-    sget-object v9, Ltn7;->X:Ltn7;
-
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    const-string v11, "Screen sharing was disabled by admin to "
-
-    invoke-direct {v10, v11}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-interface {v8, v9, v4, v10, v3}, Lfn6;->d(Ltn7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_13
     :goto_a
-    if-nez v5, :cond_14
+    if-nez p3, :cond_12
 
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
+    goto :goto_e
 
-    move-result-object v3
+    :cond_12
+    if-ltz p2, :cond_18
 
-    check-cast v3, Lnnc;
+    invoke-virtual {p3}, Lhl7;->j()I
 
-    invoke-virtual {v3}, Lnnc;->c()Z
+    move-result p4
 
-    move-result v3
+    if-ge p2, p4, :cond_18
 
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-virtual {p3, p2}, Lhl7;->C(I)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p4
 
-    check-cast v0, Lnnc;
+    check-cast p4, Lol7;
 
-    invoke-virtual {v0, v6}, Lnnc;->b(Z)V
+    instance-of v1, p4, Lbc1;
+
+    if-eqz v1, :cond_13
+
+    check-cast p4, Lbc1;
 
     goto :goto_b
 
-    :cond_14
-    move v3, v6
+    :cond_13
+    move-object p4, v0
 
     :goto_b
-    iget-object v0, v2, Lpy0;->E0:Lgrd;
+    add-int/lit8 p2, p2, 0x1
 
-    :cond_15
-    invoke-virtual {v0}, Lgrd;->getValue()Ljava/lang/Object;
+    invoke-virtual {p3, p2}, Laod;->G(I)Lol7;
 
-    move-result-object v4
+    move-result-object p2
 
-    move-object v8, v4
+    instance-of p3, p2, Lbc1;
 
-    check-cast v8, Lea;
+    if-eqz p3, :cond_14
 
-    invoke-static {v1}, Lpy0;->h(Lk88;)Z
-
-    move-result v12
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x0
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    const/4 v11, 0x0
-
-    const/16 v15, 0x77
-
-    invoke-static/range {v8 .. v15}, Lea;->a(Lea;ZZZZZZI)Lea;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v4, v5}, Lgrd;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_15
-
-    invoke-static {v1}, Lpy0;->h(Lk88;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_16
-
-    if-eqz v3, :cond_16
-
-    iget-object v0, v2, Lpy0;->C0:Lhcd;
-
-    new-instance v1, Leb;
-
-    invoke-direct {v1, v7, v6}, Leb;-><init>(ZZ)V
-
-    invoke-virtual {v0, v1}, Lhcd;->g(Ljava/lang/Object;)Z
+    check-cast p2, Lbc1;
 
     goto :goto_c
 
+    :cond_14
+    move-object p2, v0
+
+    :goto_c
+    iget p3, p0, Lky0;->c:I
+
+    iput p3, p1, Landroid/graphics/Rect;->left:I
+
+    iput p3, p1, Landroid/graphics/Rect;->right:I
+
+    const/4 p3, 0x0
+
+    iput p3, p1, Landroid/graphics/Rect;->top:I
+
+    if-eqz p4, :cond_15
+
+    invoke-interface {p4}, Lsdd;->u()I
+
+    move-result p4
+
+    invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p4
+
+    goto :goto_d
+
+    :cond_15
+    move-object p4, v0
+
+    :goto_d
+    if-eqz p2, :cond_16
+
+    invoke-interface {p2}, Lsdd;->u()I
+
+    move-result p2
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
     :cond_16
-    if-eqz v3, :cond_17
+    invoke-static {p4, v0}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-object v0, v2, Lpy0;->C0:Lhcd;
+    move-result p2
 
-    sget-object v1, Lxa;->a:Lxa;
+    if-nez p2, :cond_17
 
-    invoke-virtual {v0, v1}, Lhcd;->g(Ljava/lang/Object;)Z
+    iget p3, p0, Lky0;->b:I
 
     :cond_17
-    :goto_c
+    iput p3, p1, Landroid/graphics/Rect;->bottom:I
+
+    :cond_18
+    :goto_e
     return-void
-.end method
 
-.method public final onMuteStateInitialized(Loc9;)V
-    .locals 17
+    :pswitch_7
+    const/4 p4, 0x0
 
-    move-object/from16 v0, p0
+    invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget-object v1, v0, Lky0;->a:Lpy0;
+    move-result-object v0
 
-    iget-object v2, v1, Lpy0;->E0:Lgrd;
+    invoke-static {p2}, Landroidx/recyclerview/widget/RecyclerView;->R(Landroid/view/View;)I
 
-    :cond_0
-    invoke-virtual {v2}, Lgrd;->getValue()Ljava/lang/Object;
+    move-result p2
+
+    invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lgbc;
+
+    move-result-object p3
+
+    instance-of v1, p3, Lqd1;
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_19
+
+    check-cast p3, Lqd1;
+
+    goto :goto_f
+
+    :cond_19
+    move-object p3, v2
+
+    :goto_f
+    if-nez p3, :cond_1a
+
+    goto/16 :goto_18
+
+    :cond_1a
+    if-ltz p2, :cond_24
+
+    invoke-virtual {p3}, Lhl7;->j()I
+
+    move-result v1
+
+    if-ge p2, v1, :cond_24
+
+    invoke-virtual {p3, p2}, Lhl7;->C(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lol7;
+
+    instance-of v3, v1, Lly0;
+
+    if-eqz v3, :cond_1b
+
+    check-cast v1, Lly0;
+
+    goto :goto_10
+
+    :cond_1b
+    move-object v1, v2
+
+    :goto_10
+    add-int/lit8 v3, p2, 0x1
+
+    invoke-virtual {p3, v3}, Laod;->G(I)Lol7;
 
     move-result-object v3
 
-    move-object v4, v3
+    instance-of v4, v3, Lly0;
 
-    check-cast v4, Lea;
+    if-eqz v4, :cond_1c
 
-    invoke-virtual {v1}, Lpy0;->e()Lru/ok/android/externcalls/sdk/media/mute/MediaMuteManager;
+    check-cast v3, Lly0;
 
-    move-result-object v5
+    goto :goto_11
 
-    const/4 v6, 0x0
+    :cond_1c
+    move-object v3, v2
 
-    const/4 v7, 0x1
+    :goto_11
+    const/4 v4, 0x1
 
-    const/4 v8, 0x0
+    if-nez p2, :cond_1d
 
-    if-eqz v5, :cond_1
+    move v5, v4
 
-    invoke-static {v5, v6, v7, v6}, Lru/ok/android/externcalls/sdk/media/mute/MediaMuteManager;->getMediaOptionsForCall$default(Lru/ok/android/externcalls/sdk/media/mute/MediaMuteManager;Lw2d;ILjava/lang/Object;)Ll88;
+    goto :goto_12
 
-    move-result-object v5
+    :cond_1d
+    move v5, p4
 
-    if-eqz v5, :cond_1
+    :goto_12
+    invoke-virtual {p3}, Lhl7;->j()I
 
-    iget-object v5, v5, Ll88;->b:Lk88;
+    move-result p3
 
-    if-eqz v5, :cond_1
+    sub-int/2addr p3, v4
 
-    invoke-static {v5}, Lpy0;->h(Lk88;)Z
+    if-ne p2, p3, :cond_1e
 
-    move-result v5
+    goto :goto_13
 
-    move v11, v5
+    :cond_1e
+    move v4, p4
 
-    goto :goto_0
+    :goto_13
+    iput p4, p1, Landroid/graphics/Rect;->left:I
 
-    :cond_1
-    move v11, v8
+    iput p4, p1, Landroid/graphics/Rect;->right:I
 
-    :goto_0
-    invoke-virtual {v1}, Lpy0;->e()Lru/ok/android/externcalls/sdk/media/mute/MediaMuteManager;
+    iget p2, p0, Lky0;->b:I
 
-    move-result-object v5
+    if-eqz v5, :cond_1f
 
-    if-eqz v5, :cond_2
+    move p3, p4
 
-    invoke-static {v5, v6, v7, v6}, Lru/ok/android/externcalls/sdk/media/mute/MediaMuteManager;->getMediaOptionsForCall$default(Lru/ok/android/externcalls/sdk/media/mute/MediaMuteManager;Lw2d;ILjava/lang/Object;)Ll88;
+    goto :goto_14
 
-    move-result-object v5
+    :cond_1f
+    move p3, p2
 
-    if-eqz v5, :cond_2
+    :goto_14
+    iput p3, p1, Landroid/graphics/Rect;->top:I
 
-    iget-object v5, v5, Ll88;->a:Lk88;
+    if-eqz v4, :cond_20
 
-    if-eqz v5, :cond_2
+    iget p4, p0, Lky0;->c:I
 
-    invoke-static {v5}, Lpy0;->h(Lk88;)Z
+    goto :goto_17
 
-    move-result v5
+    :cond_20
+    if-eqz v1, :cond_21
 
-    move v12, v5
+    move-object p0, v0
 
-    goto :goto_1
+    goto :goto_15
 
-    :cond_2
-    move v12, v8
+    :cond_21
+    move-object p0, v2
 
-    :goto_1
-    invoke-virtual {v1}, Lpy0;->e()Lru/ok/android/externcalls/sdk/media/mute/MediaMuteManager;
+    :goto_15
+    if-eqz v3, :cond_22
 
-    move-result-object v5
+    goto :goto_16
 
-    if-eqz v5, :cond_3
+    :cond_22
+    move-object v0, v2
 
-    invoke-static {v5, v6, v7, v6}, Lru/ok/android/externcalls/sdk/media/mute/MediaMuteManager;->getMediaOptionsForCall$default(Lru/ok/android/externcalls/sdk/media/mute/MediaMuteManager;Lw2d;ILjava/lang/Object;)Ll88;
+    :goto_16
+    invoke-static {p0, v0}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result-object v5
+    move-result p0
 
-    if-eqz v5, :cond_3
+    if-nez p0, :cond_23
 
-    iget-object v5, v5, Ll88;->c:Lk88;
+    move p4, p2
 
-    if-eqz v5, :cond_3
+    :cond_23
+    :goto_17
+    iput p4, p1, Landroid/graphics/Rect;->bottom:I
 
-    invoke-static {v5}, Lpy0;->h(Lk88;)Z
-
-    move-result v5
-
-    move v13, v5
-
-    goto :goto_2
-
-    :cond_3
-    move v13, v8
-
-    :goto_2
-    invoke-virtual {v1}, Lpy0;->g()Lru/ok/android/externcalls/sdk/feature/ConversationFeatureManager;
-
-    move-result-object v5
-
-    if-eqz v5, :cond_4
-
-    sget-object v6, Le51;->b:Le51;
-
-    invoke-interface {v5, v6}, Lru/ok/android/externcalls/sdk/feature/ConversationFeatureManager;->getFeatureRoles(Le51;)Lru/ok/android/externcalls/sdk/feature/roles/FeatureRoles;
-
-    move-result-object v6
-
-    :cond_4
-    instance-of v14, v6, Lru/ok/android/externcalls/sdk/feature/roles/FeatureRoles$EnabledForAll;
-
-    iget-object v5, v0, Lky0;->e:Lt97;
-
-    invoke-interface {v5}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lbt3;
-
-    invoke-virtual {v6}, Lbt3;->a()Lru/ok/android/externcalls/sdk/Conversation;
-
-    move-result-object v6
-
-    if-eqz v6, :cond_5
-
-    invoke-interface {v6}, Lru/ok/android/externcalls/sdk/Conversation;->isMeCreatorOrAdmin()Z
-
-    move-result v6
-
-    move v10, v6
-
-    goto :goto_3
-
-    :cond_5
-    move v10, v8
-
-    :goto_3
-    invoke-interface {v5}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lbt3;
-
-    invoke-virtual {v5}, Lbt3;->a()Lru/ok/android/externcalls/sdk/Conversation;
-
-    move-result-object v5
-
-    if-eqz v5, :cond_6
-
-    invoke-interface {v5}, Lru/ok/android/externcalls/sdk/Conversation;->isWaitingRoomEnabled()Z
-
-    move-result v8
-
-    :cond_6
-    move/from16 v16, v8
-
-    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v4, Lea;
-
-    const/4 v15, 0x0
-
-    move-object v9, v4
-
-    invoke-direct/range {v9 .. v16}, Lea;-><init>(ZZZZZZZ)V
-
-    invoke-virtual {v2, v3, v4}, Lgrd;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
+    :cond_24
+    :goto_18
     return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

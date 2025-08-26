@@ -1,74 +1,21 @@
 .class public final Leh8;
-.super Ljava/lang/Object;
+.super Ldh8;
 .source "SourceFile"
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of p0, p1, Leh8;
-
-    const/4 v1, 0x0
-
-    if-nez p0, :cond_1
-
-    return v1
-
-    :cond_1
-    check-cast p1, Leh8;
-
-    sget-object p0, Lah8;->a:Lah8;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p0, p0}, Lah8;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v1
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
+.method public final a(Lei8;)V
     .locals 0
 
-    const p0, 0x72d9d95f
-
-    return p0
+    return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
+.method public final b(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Landroid/media/session/MediaSession;
+    .locals 0
 
-    new-instance p0, Ljava/lang/StringBuilder;
+    new-instance p0, Landroid/media/session/MediaSession;
 
-    const-string v0, "MediaTypePickerViewState(selectedButton="
-
-    invoke-direct {p0, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    sget-object v0, Lah8;->a:Lah8;
-
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, ")"
-
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
+    invoke-direct {p0, p1, p2, p3}, Landroid/media/session/MediaSession;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)V
 
     return-object p0
 .end method

@@ -13,18 +13,18 @@
         "",
         "",
         "fileName",
-        "Lw2d;",
+        "Le9d;",
         "sessionRoomId",
         "Lkotlin/Function0;",
-        "Ljue;",
+        "Le5f;",
         "onSuccess",
         "Lkotlin/Function1;",
         "",
         "onError",
         "startRecord",
-        "(Ljava/lang/String;Lw2d;Ls16;Lu16;)V",
+        "(Ljava/lang/String;Le9d;Lv56;Lx56;)V",
         "stopRecord",
-        "(Lw2d;Ls16;Lu16;)V",
+        "(Le9d;Lv56;Lx56;)V",
         "calls-sdk_release"
     }
     k = 0x1
@@ -33,30 +33,31 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # virtual methods
-.method public abstract startRecord(Ljava/lang/String;Lw2d;Ls16;Lu16;)V
+.method public abstract startRecord(Ljava/lang/String;Le9d;Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "Lw2d;",
-            "Ls16;",
-            "Lu16;",
+            "Le9d;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 .end method
 
-.method public abstract stopRecord(Lw2d;Ls16;Lu16;)V
+.method public abstract stopRecord(Le9d;Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw2d;",
-            "Ls16;",
-            "Lu16;",
+            "Le9d;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation

@@ -1,59 +1,73 @@
-.class public final Lqea;
-.super Landroid/webkit/WebViewClient;
+.class public final enum Lqea;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic a:Lrea;
+# static fields
+.field public static final enum a:Lqea;
 
-.field public final synthetic b:Lsea;
+.field public static final enum b:Lqea;
+
+.field public static final synthetic c:[Lqea;
 
 
 # direct methods
-.method public constructor <init>(Lrea;Lsea;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
-    iput-object p1, p0, Lqea;->a:Lrea;
+    new-instance v0, Lqea;
 
-    iput-object p2, p0, Lqea;->b:Lsea;
+    const-string v1, "BUTTON"
 
-    invoke-direct {p0}, Landroid/webkit/WebViewClient;-><init>()V
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lqea;->a:Lqea;
+
+    new-instance v1, Lqea;
+
+    const-string v2, "ICON"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lqea;->b:Lqea;
+
+    filled-new-array {v0, v1}, [Lqea;
+
+    move-result-object v0
+
+    sput-object v0, Lqea;->c:[Lqea;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final shouldOverrideUrlLoading(Landroid/webkit/WebView;Landroid/webkit/WebResourceRequest;)Z
+.method public static valueOf(Ljava/lang/String;)Lqea;
     .locals 1
 
-    invoke-interface {p2}, Landroid/webkit/WebResourceRequest;->getUrl()Landroid/net/Uri;
+    const-class v0, Lqea;
 
-    move-result-object p1
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
+    move-result-object p0
 
-    move-result-object p1
+    check-cast p0, Lqea;
 
-    iget-object p2, p0, Lqea;->a:Lrea;
+    return-object p0
+.end method
 
-    iget-object p2, p2, Lrea;->a:Lkmf;
+.method public static values()[Lqea;
+    .locals 1
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sget-object v0, Lqea;->c:[Lqea;
 
-    new-instance v0, Lnlf;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    invoke-direct {v0, p1}, Lnlf;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
-    iget-object p1, p2, Lkmf;->O0:Ll05;
+    check-cast v0, [Lqea;
 
-    invoke-static {p1, v0}, Ltaf;->o(Ll05;Ljava/lang/Object;)V
-
-    iget-object p0, p0, Lqea;->b:Lsea;
-
-    invoke-virtual {p0}, Landroid/webkit/WebView;->destroy()V
-
-    const/4 p0, 0x1
-
-    return p0
+    return-object v0
 .end method

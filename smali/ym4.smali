@@ -1,15 +1,11 @@
-.class public abstract Lym4;
+.class public interface abstract Lym4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# direct methods
-.method public static a(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Insets;
-    .locals 0
+# virtual methods
+.method public abstract c()V
+.end method
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getOpticalInsets()Landroid/graphics/Insets;
-
-    move-result-object p0
-
-    return-object p0
+.method public abstract d(I)V
 .end method

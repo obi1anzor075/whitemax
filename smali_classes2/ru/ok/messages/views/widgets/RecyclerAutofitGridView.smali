@@ -1,21 +1,21 @@
 .class public Lru/ok/messages/views/widgets/RecyclerAutofitGridView;
-.super Lty4;
+.super Ls15;
 .source "SourceFile"
 
 
 # instance fields
-.field public n2:I
+.field public e2:I
 
-.field public o2:I
+.field public f2:I
 
-.field public p2:I
+.field public g2:I
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lty4;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, p2}, Ls15;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -37,25 +37,25 @@
 
     const/16 p1, 0x8
 
-    iput p1, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->p2:I
+    iput p1, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->g2:I
 
     goto :goto_0
 
     :cond_0
     const/4 p1, 0x4
 
-    iput p1, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->p2:I
+    iput p1, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->g2:I
 
     :goto_0
     new-instance p1, Landroidx/recyclerview/widget/GridLayoutManager;
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    iget p2, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->p2:I
+    iget p2, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->g2:I
 
     invoke-direct {p1, p2}, Landroidx/recyclerview/widget/GridLayoutManager;-><init>(I)V
 
-    invoke-virtual {p0, p1}, Lty4;->setLayoutManager(Landroidx/recyclerview/widget/a;)V
+    invoke-virtual {p0, p1}, Ls15;->setLayoutManager(Landroidx/recyclerview/widget/a;)V
 
     return-void
 .end method
@@ -77,7 +77,7 @@
 
     if-eqz p2, :cond_1
 
-    iget p2, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->n2:I
+    iget p2, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->e2:I
 
     if-lez p2, :cond_1
 
@@ -85,7 +85,7 @@
 
     move-result p2
 
-    iget v1, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->n2:I
+    iget v1, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->e2:I
 
     div-int/2addr p2, v1
 
@@ -93,7 +93,7 @@
 
     move-result p2
 
-    iget v1, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->p2:I
+    iget v1, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->g2:I
 
     if-le p2, v1, :cond_0
 
@@ -104,14 +104,14 @@
 
     check-cast v1, Landroidx/recyclerview/widget/GridLayoutManager;
 
-    invoke-virtual {v1, p2}, Landroidx/recyclerview/widget/GridLayoutManager;->A1(I)V
+    invoke-virtual {v1, p2}, Landroidx/recyclerview/widget/GridLayoutManager;->z1(I)V
 
     :cond_1
     instance-of p2, p1, Landroidx/recyclerview/widget/StaggeredGridLayoutManager;
 
     if-eqz p2, :cond_3
 
-    iget p2, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->o2:I
+    iget p2, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->f2:I
 
     if-lez p2, :cond_3
 
@@ -119,7 +119,7 @@
 
     move-result p2
 
-    iget v1, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->o2:I
+    iget v1, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->f2:I
 
     div-int/2addr p2, v1
 
@@ -127,7 +127,7 @@
 
     move-result p2
 
-    iget p0, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->p2:I
+    iget p0, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->g2:I
 
     if-le p2, p0, :cond_2
 
@@ -136,7 +136,7 @@
     :cond_2
     check-cast p1, Landroidx/recyclerview/widget/StaggeredGridLayoutManager;
 
-    invoke-virtual {p1, p2}, Landroidx/recyclerview/widget/StaggeredGridLayoutManager;->m1(I)V
+    invoke-virtual {p1, p2}, Landroidx/recyclerview/widget/StaggeredGridLayoutManager;->i1(I)V
 
     :cond_3
     return-void
@@ -145,7 +145,7 @@
 .method public setColumnWidth(I)V
     .locals 0
 
-    iput p1, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->n2:I
+    iput p1, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->e2:I
 
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->requestLayout()V
 
@@ -155,7 +155,7 @@
 .method public setMaxColumns(I)V
     .locals 0
 
-    iput p1, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->p2:I
+    iput p1, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->g2:I
 
     return-void
 .end method
@@ -163,7 +163,7 @@
 .method public setStaggeredColumnWidth(I)V
     .locals 0
 
-    iput p1, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->o2:I
+    iput p1, p0, Lru/ok/messages/views/widgets/RecyclerAutofitGridView;->f2:I
 
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->requestLayout()V
 

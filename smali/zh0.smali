@@ -2,401 +2,233 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lc33;
+
+
+# static fields
+.field public static final c:Ljava/util/HashSet;
+
 
 # instance fields
-.field public final a:Ljava/util/ArrayList;
+.field public final a:Ljava/util/HashMap;
 
-.field public final b:Ljava/util/HashSet;
-
-.field public final c:Ljn;
-
-.field public final d:Lfo4;
-
-.field public e:Landroid/os/Looper;
-
-.field public f:Lvje;
-
-.field public g:Lcza;
+.field public b:Lcom/facebook/imagepipeline/image/ImageInfoImpl;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 4
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
-
-    iput-object v0, p0, Lzh0;->a:Ljava/util/ArrayList;
+.method static constructor <clinit>()V
+    .locals 12
 
     new-instance v0, Ljava/util/HashSet;
 
-    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(I)V
+    const-string v10, "modified_url"
 
-    iput-object v0, p0, Lzh0;->b:Ljava/util/HashSet;
+    const-string v11, "image_color_space"
 
-    new-instance v0, Ljn;
+    const-string v1, "encoded_size"
 
-    new-instance v1, Ljava/util/concurrent/CopyOnWriteArrayList;
+    const-string v2, "encoded_width"
 
-    invoke-direct {v1}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
+    const-string v3, "encoded_height"
 
-    const/4 v2, 0x0
+    const-string v4, "uri_source"
 
-    const/4 v3, 0x0
+    const-string v5, "image_format"
 
-    invoke-direct {v0, v1, v2, v3}, Ljn;-><init>(Ljava/util/concurrent/CopyOnWriteArrayList;ILse8;)V
+    const-string v6, "bitmap_config"
 
-    iput-object v0, p0, Lzh0;->c:Ljn;
+    const-string v7, "is_rounded"
 
-    new-instance v0, Lfo4;
+    const-string v8, "non_fatal_decode_error"
 
-    new-instance v1, Ljava/util/concurrent/CopyOnWriteArrayList;
+    const-string v9, "original_url"
 
-    invoke-direct {v1}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
+    filled-new-array/range {v1 .. v11}, [Ljava/lang/String;
 
-    invoke-direct {v0, v1, v2, v3}, Lfo4;-><init>(Ljava/util/concurrent/CopyOnWriteArrayList;ILse8;)V
+    move-result-object v1
 
-    iput-object v0, p0, Lzh0;->d:Lfo4;
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+
+    sput-object v0, Lzh0;->c:Ljava/util/HashSet;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lzh0;->a:Ljava/util/HashMap;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ll68;)Z
-    .locals 0
+.method public final getExtra(Ljava/lang/String;)Ljava/lang/Object;
+    .locals 1
 
-    const/4 p0, 0x0
+    const/4 v0, 0x0
 
-    return p0
-.end method
+    .line 1
+    invoke-virtual {p0, p1, v0}, Lzh0;->getExtra(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
-.method public final b(Lse8;)Ljn;
-    .locals 2
-
-    new-instance v0, Ljn;
-
-    iget-object p0, p0, Lzh0;->c:Ljn;
-
-    iget-object p0, p0, Ljn;->o:Ljava/lang/Object;
-
-    check-cast p0, Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1, p1}, Ljn;-><init>(Ljava/util/concurrent/CopyOnWriteArrayList;ILse8;)V
-
-    return-object v0
-.end method
-
-.method public abstract c(Lse8;Ll34;J)Ls88;
-.end method
-
-.method public final d(Lue8;)V
-    .locals 2
-
-    iget-object v0, p0, Lzh0;->b:Ljava/util/HashSet;
-
-    invoke-virtual {v0}, Ljava/util/HashSet;->isEmpty()Z
-
-    move-result v1
-
-    xor-int/lit8 v1, v1, 0x1
-
-    invoke-virtual {v0, p1}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v0}, Ljava/util/HashSet;->isEmpty()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0}, Lzh0;->e()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public e()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final f(Lue8;)V
-    .locals 2
-
-    iget-object v0, p0, Lzh0;->e:Landroid/os/Looper;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v0, p0, Lzh0;->b:Ljava/util/HashSet;
-
-    invoke-virtual {v0}, Ljava/util/HashSet;->isEmpty()Z
-
-    move-result v1
-
-    invoke-virtual {v0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {p0}, Lzh0;->g()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public g()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public h()Lvje;
-    .locals 0
-
-    const/4 p0, 0x0
+    move-result-object p0
 
     return-object p0
 .end method
 
-.method public abstract i()Ll68;
-.end method
-
-.method public j()Z
+.method public final getExtra(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    const/4 p0, 0x1
+    .line 2
+    iget-object p0, p0, Lzh0;->a:Ljava/util/HashMap;
+
+    invoke-virtual {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-nez p0, :cond_0
+
+    return-object p2
+
+    :cond_0
+    return-object p0
+.end method
+
+.method public final getExtras()Ljava/util/Map;
+    .locals 0
+
+    iget-object p0, p0, Lzh0;->a:Ljava/util/HashMap;
+
+    return-object p0
+.end method
+
+.method public final getImageInfo()Luu6;
+    .locals 7
+
+    iget-object v0, p0, Lzh0;->b:Lcom/facebook/imagepipeline/image/ImageInfoImpl;
+
+    if-nez v0, :cond_0
+
+    new-instance v1, Lcom/facebook/imagepipeline/image/ImageInfoImpl;
+
+    invoke-interface {p0}, Lc33;->getWidth()I
+
+    move-result v2
+
+    invoke-interface {p0}, Lc33;->getHeight()I
+
+    move-result v3
+
+    invoke-interface {p0}, Lc33;->getSizeInBytes()I
+
+    move-result v4
+
+    invoke-virtual {p0}, Lzh0;->getQualityInfo()Lznb;
+
+    move-result-object v5
+
+    iget-object v6, p0, Lzh0;->a:Ljava/util/HashMap;
+
+    invoke-direct/range {v1 .. v6}, Lcom/facebook/imagepipeline/image/ImageInfoImpl;-><init>(IIILznb;Ljava/util/Map;)V
+
+    iput-object v1, p0, Lzh0;->b:Lcom/facebook/imagepipeline/image/ImageInfoImpl;
+
+    :cond_0
+    iget-object p0, p0, Lzh0;->b:Lcom/facebook/imagepipeline/image/ImageInfoImpl;
+
+    return-object p0
+.end method
+
+.method public getQualityInfo()Lznb;
+    .locals 0
+
+    sget-object p0, Lfx6;->d:Lfx6;
+
+    return-object p0
+.end method
+
+.method public isStateful()Z
+    .locals 0
+
+    const/4 p0, 0x0
 
     return p0
 .end method
 
-.method public abstract k()V
-.end method
-
-.method public final l(Lue8;Lcqe;Lcza;)V
-    .locals 2
-
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lzh0;->e:Landroid/os/Looper;
-
-    if-eqz v1, :cond_1
-
-    if-ne v1, v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 v1, 0x1
-
-    :goto_1
-    invoke-static {v1}, Loyb;->d(Z)V
-
-    iput-object p3, p0, Lzh0;->g:Lcza;
-
-    iget-object p3, p0, Lzh0;->f:Lvje;
-
-    iget-object v1, p0, Lzh0;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    iget-object v1, p0, Lzh0;->e:Landroid/os/Looper;
-
-    if-nez v1, :cond_2
-
-    iput-object v0, p0, Lzh0;->e:Landroid/os/Looper;
-
-    iget-object p3, p0, Lzh0;->b:Ljava/util/HashSet;
-
-    invoke-virtual {p3, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {p0, p2}, Lzh0;->m(Lcqe;)V
-
-    goto :goto_2
-
-    :cond_2
-    if-eqz p3, :cond_3
-
-    invoke-virtual {p0, p1}, Lzh0;->f(Lue8;)V
-
-    invoke-interface {p1, p0, p3}, Lue8;->a(Lzh0;Lvje;)V
-
-    :cond_3
-    :goto_2
-    return-void
-.end method
-
-.method public abstract m(Lcqe;)V
-.end method
-
-.method public final n(Lvje;)V
-    .locals 2
-
-    iput-object p1, p0, Lzh0;->f:Lvje;
-
-    iget-object v0, p0, Lzh0;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lue8;
-
-    invoke-interface {v1, p0, p1}, Lue8;->a(Lzh0;Lvje;)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public abstract o(Ls88;)V
-.end method
-
-.method public final p(Lue8;)V
+.method public final putExtra(Ljava/lang/String;Ljava/lang/Object;)V
     .locals 1
 
-    iget-object v0, p0, Lzh0;->a:Ljava/util/ArrayList;
+    sget-object v0, Lzh0;->c:Ljava/util/HashSet;
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    const/4 p1, 0x0
+    iget-object p0, p0, Lzh0;->a:Ljava/util/HashMap;
 
-    iput-object p1, p0, Lzh0;->e:Landroid/os/Looper;
-
-    iput-object p1, p0, Lzh0;->f:Lvje;
-
-    iput-object p1, p0, Lzh0;->g:Lcza;
-
-    iget-object p1, p0, Lzh0;->b:Ljava/util/HashSet;
-
-    invoke-virtual {p1}, Ljava/util/HashSet;->clear()V
-
-    invoke-virtual {p0}, Lzh0;->q()V
-
-    goto :goto_0
+    invoke-virtual {p0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
-    invoke-virtual {p0, p1}, Lzh0;->d(Lue8;)V
-
-    :goto_0
     return-void
 .end method
 
-.method public abstract q()V
-.end method
+.method public final putExtras(Ljava/util/Map;)V
+    .locals 4
 
-.method public final r(Lho4;)V
-    .locals 3
+    if-nez p1, :cond_0
 
-    iget-object p0, p0, Lzh0;->d:Lfo4;
+    goto :goto_1
 
-    iget-object p0, p0, Lfo4;->c:Ljava/util/concurrent/CopyOnWriteArrayList;
+    :cond_0
+    sget-object v0, Lzh0;->c:Ljava/util/HashSet;
 
-    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    :cond_0
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Ldo4;
+    check-cast v1, Ljava/lang/String;
 
-    iget-object v2, v1, Ldo4;->b:Lho4;
+    invoke-interface {p1, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-ne v2, p1, :cond_0
+    move-result-object v2
 
-    invoke-virtual {p0, v1}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_1
-    return-void
-.end method
-
-.method public final s(Lcf8;)V
-    .locals 3
-
-    iget-object p0, p0, Lzh0;->c:Ljn;
-
-    iget-object p0, p0, Ljn;->o:Ljava/lang/Object;
-
-    check-cast p0, Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :cond_0
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lze8;
-
-    iget-object v2, v1, Lze8;->b:Lcf8;
-
-    if-ne v2, p1, :cond_0
-
-    invoke-virtual {p0, v1}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
+    if-nez v2, :cond_1
 
     goto :goto_0
 
     :cond_1
-    return-void
-.end method
+    iget-object v3, p0, Lzh0;->a:Ljava/util/HashMap;
 
-.method public t(Ll68;)V
-    .locals 0
+    invoke-virtual {v3, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    goto :goto_0
+
+    :cond_2
+    :goto_1
     return-void
 .end method

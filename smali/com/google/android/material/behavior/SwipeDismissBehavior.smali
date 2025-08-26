@@ -1,5 +1,5 @@
 .class public Lcom/google/android/material/behavior/SwipeDismissBehavior;
-.super Lkt3;
+.super Lkw3;
 .source "SourceFile"
 
 
@@ -9,13 +9,13 @@
         "<V:",
         "Landroid/view/View;",
         ">",
-        "Lkt3;"
+        "Lkw3;"
     }
 .end annotation
 
 
 # instance fields
-.field public a:Liaf;
+.field public a:Lxnf;
 
 .field public b:Z
 
@@ -23,18 +23,16 @@
 
 .field public d:I
 
-.field public final e:F
+.field public e:F
 
 .field public f:F
 
-.field public g:F
-
-.field public final h:Lu6e;
+.field public final g:Lzee;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 2
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,21 +40,19 @@
 
     iput v0, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->d:I
 
-    const/high16 v0, 0x3f000000    # 0.5f
+    const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->e:F
 
-    const/4 v1, 0x0
+    const/high16 v0, 0x3f000000    # 0.5f
 
-    iput v1, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->f:F
+    iput v0, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->f:F
 
-    iput v0, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->g:F
+    new-instance v0, Lzee;
 
-    new-instance v0, Lu6e;
+    invoke-direct {v0, p0}, Lzee;-><init>(Lcom/google/android/material/behavior/SwipeDismissBehavior;)V
 
-    invoke-direct {v0, p0}, Lu6e;-><init>(Lcom/google/android/material/behavior/SwipeDismissBehavior;)V
-
-    iput-object v0, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->h:Lu6e;
+    iput-object v0, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->g:Lzee;
 
     return-void
 .end method
@@ -104,60 +100,54 @@
 
     float-to-int v1, v1
 
-    invoke-virtual {p1, p2, v0, v1}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->h(Landroid/view/View;II)Z
+    invoke-virtual {p1, p2, v0, v1}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->n(Landroid/view/View;II)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->b:Z
 
     :goto_0
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
-    iget-object p2, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->a:Liaf;
+    iget-object p2, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->a:Lxnf;
 
     if-nez p2, :cond_2
 
-    new-instance p2, Liaf;
+    new-instance p2, Lxnf;
 
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->h:Lu6e;
+    iget-object v1, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->g:Lzee;
 
-    invoke-direct {p2, v0, p1, v1}, Liaf;-><init>(Landroid/content/Context;Landroid/view/ViewGroup;Liu7;)V
+    invoke-direct {p2, v0, p1, v1}, Lxnf;-><init>(Landroid/content/Context;Landroid/view/ViewGroup;Lzo3;)V
 
-    iput-object p2, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->a:Liaf;
+    iput-object p2, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->a:Lxnf;
 
     :cond_2
     iget-boolean p1, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->c:Z
 
     if-nez p1, :cond_3
 
-    iget-object p0, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->a:Liaf;
+    iget-object p0, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->a:Lxnf;
 
-    invoke-virtual {p0, p3}, Liaf;->o(Landroid/view/MotionEvent;)Z
+    invoke-virtual {p0, p3}, Lxnf;->o(Landroid/view/MotionEvent;)Z
 
     move-result p0
 
     if-eqz p0, :cond_3
 
-    goto :goto_1
-
-    :cond_3
-    move v2, v3
-
-    :goto_1
     return v2
 
-    :cond_4
+    :cond_3
     return v3
 .end method
 
 .method public final l(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;I)Z
-    .locals 2
+    .locals 1
 
-    sget-object p1, Leaf;->a:Ljava/util/WeakHashMap;
+    sget-object p1, Ltnf;->a:Ljava/util/WeakHashMap;
 
     invoke-virtual {p2}, Landroid/view/View;->getImportantForAccessibility()I
 
@@ -173,9 +163,9 @@
 
     const/high16 p1, 0x100000
 
-    invoke-static {p2, p1}, Leaf;->h(Landroid/view/View;I)V
+    invoke-static {p2, p1}, Ltnf;->h(Landroid/view/View;I)V
 
-    invoke-static {p2, p3}, Leaf;->e(Landroid/view/View;I)V
+    invoke-static {p2, p3}, Ltnf;->e(Landroid/view/View;I)V
 
     invoke-virtual {p0, p2}, Lcom/google/android/material/behavior/SwipeDismissBehavior;->x(Landroid/view/View;)Z
 
@@ -183,15 +173,13 @@
 
     if-eqz p1, :cond_0
 
-    sget-object p1, Lg4;->j:Lg4;
+    sget-object p1, Lf4;->j:Lf4;
 
-    new-instance v0, Lu5g;
+    new-instance v0, Lnzc;
 
-    const/16 v1, 0x1d
+    invoke-direct {v0, p0}, Lnzc;-><init>(Ljava/lang/Object;)V
 
-    invoke-direct {v0, v1, p0}, Lu5g;-><init>(ILjava/lang/Object;)V
-
-    invoke-static {p2, p1, v0}, Leaf;->i(Landroid/view/View;Lg4;Lv4;)V
+    invoke-static {p2, p1, v0}, Ltnf;->i(Landroid/view/View;Lf4;Lt4;)V
 
     :cond_0
     return p3
@@ -200,7 +188,7 @@
 .method public final w(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
-    iget-object p1, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->a:Liaf;
+    iget-object p1, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->a:Lxnf;
 
     if-eqz p1, :cond_2
 
@@ -217,9 +205,9 @@
     if-eq p1, p2, :cond_1
 
     :cond_0
-    iget-object p0, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->a:Liaf;
+    iget-object p0, p0, Lcom/google/android/material/behavior/SwipeDismissBehavior;->a:Lxnf;
 
-    invoke-virtual {p0, p3}, Liaf;->i(Landroid/view/MotionEvent;)V
+    invoke-virtual {p0, p3}, Lxnf;->i(Landroid/view/MotionEvent;)V
 
     :cond_1
     const/4 p0, 0x1

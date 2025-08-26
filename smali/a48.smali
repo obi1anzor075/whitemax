@@ -1,224 +1,64 @@
-.class public final synthetic La48;
+.class public final La48;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lm48;
-.implements Llh7;
+.implements Lc48;
 
 
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lo48;
-
-.field public final synthetic c:I
+# static fields
+.field public static final a:La48;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lo48;II)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p3, p0, La48;->a:I
+    new-instance v0, La48;
 
-    iput-object p1, p0, La48;->b:Lo48;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput p2, p0, La48;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, La48;->a:La48;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public f(Lnn6;I)V
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
-    iget v0, p0, La48;->a:I
+    const/4 v0, 0x1
 
-    packed-switch v0, :pswitch_data_0
+    if-ne p0, p1, :cond_0
 
-    :pswitch_0
-    iget-object v0, p0, La48;->b:Lo48;
+    return v0
 
-    iget-object v0, v0, Lo48;->c:Lz48;
+    :cond_0
+    instance-of p0, p1, La48;
 
-    iget p0, p0, La48;->c:I
+    if-nez p0, :cond_1
 
-    invoke-interface {p1, v0, p2, p0}, Lnn6;->I(Lhn6;II)V
+    const/4 p0, 0x0
 
-    return-void
+    return p0
 
-    :pswitch_1
-    iget-object v0, p0, La48;->b:Lo48;
-
-    iget-object v0, v0, Lo48;->c:Lz48;
-
-    iget p0, p0, La48;->c:I
-
-    invoke-interface {p1, v0, p2, p0}, Lnn6;->n0(Lhn6;II)V
-
-    return-void
-
-    :pswitch_2
-    iget-object v0, p0, La48;->b:Lo48;
-
-    iget-object v0, v0, Lo48;->c:Lz48;
-
-    iget p0, p0, La48;->c:I
-
-    invoke-interface {p1, v0, p2, p0}, Lnn6;->z0(Lhn6;II)V
-
-    return-void
-
-    :pswitch_3
-    iget-object v0, p0, La48;->b:Lo48;
-
-    iget-object v0, v0, Lo48;->c:Lz48;
-
-    iget p0, p0, La48;->c:I
-
-    invoke-interface {p1, v0, p2, p0}, Lnn6;->F(Lhn6;II)V
-
-    return-void
-
-    :pswitch_4
-    iget-object v0, p0, La48;->b:Lo48;
-
-    iget-object v0, v0, Lo48;->c:Lz48;
-
-    iget p0, p0, La48;->c:I
-
-    invoke-interface {p1, v0, p2, p0}, Lnn6;->L(Lhn6;II)V
-
-    return-void
-
-    :pswitch_5
-    iget-object v0, p0, La48;->b:Lo48;
-
-    iget-object v0, v0, Lo48;->c:Lz48;
-
-    iget p0, p0, La48;->c:I
-
-    invoke-interface {p1, v0, p2, p0}, Lnn6;->Z(Lhn6;II)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_5
-        :pswitch_0
-        :pswitch_4
-        :pswitch_0
-        :pswitch_3
-        :pswitch_0
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    :cond_1
+    return v0
 .end method
 
-.method public invoke(Ljava/lang/Object;)V
-    .locals 1
+.method public final hashCode()I
+    .locals 0
 
-    iget v0, p0, La48;->a:I
+    const p0, 0x142af9ca
 
-    check-cast p1, Lhya;
+    return p0
+.end method
 
-    packed-switch v0, :pswitch_data_0
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    :pswitch_0
-    iget-object v0, p0, La48;->b:Lo48;
+    const-string p0, "ShowMediaModeSnack"
 
-    iget-object v0, v0, Lo48;->n:Lfza;
-
-    iget-boolean v0, v0, Lfza;->s:Z
-
-    iget p0, p0, La48;->c:I
-
-    invoke-interface {p1, p0, v0}, Lhya;->i(IZ)V
-
-    return-void
-
-    :pswitch_1
-    iget-object v0, p0, La48;->b:Lo48;
-
-    iget-object v0, v0, Lo48;->n:Lfza;
-
-    iget-boolean v0, v0, Lfza;->s:Z
-
-    iget p0, p0, La48;->c:I
-
-    invoke-interface {p1, p0, v0}, Lhya;->i(IZ)V
-
-    return-void
-
-    :pswitch_2
-    iget-object v0, p0, La48;->b:Lo48;
-
-    iget-object v0, v0, Lo48;->n:Lfza;
-
-    iget-boolean v0, v0, Lfza;->s:Z
-
-    iget p0, p0, La48;->c:I
-
-    invoke-interface {p1, p0, v0}, Lhya;->i(IZ)V
-
-    return-void
-
-    :pswitch_3
-    iget-object v0, p0, La48;->b:Lo48;
-
-    iget-object v0, v0, Lo48;->n:Lfza;
-
-    iget-boolean v0, v0, Lfza;->s:Z
-
-    iget p0, p0, La48;->c:I
-
-    invoke-interface {p1, p0, v0}, Lhya;->i(IZ)V
-
-    return-void
-
-    :pswitch_4
-    iget-object v0, p0, La48;->b:Lo48;
-
-    iget-object v0, v0, Lo48;->n:Lfza;
-
-    iget-boolean v0, v0, Lfza;->s:Z
-
-    iget p0, p0, La48;->c:I
-
-    invoke-interface {p1, p0, v0}, Lhya;->i(IZ)V
-
-    return-void
-
-    :pswitch_5
-    iget-object v0, p0, La48;->b:Lo48;
-
-    iget-object v0, v0, Lo48;->n:Lfza;
-
-    iget-boolean v0, v0, Lfza;->s:Z
-
-    iget p0, p0, La48;->c:I
-
-    invoke-interface {p1, p0, v0}, Lhya;->i(IZ)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_5
-        :pswitch_0
-        :pswitch_4
-        :pswitch_0
-        :pswitch_3
-        :pswitch_0
-        :pswitch_0
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-object p0
 .end method

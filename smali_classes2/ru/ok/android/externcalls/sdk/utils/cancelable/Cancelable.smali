@@ -11,7 +11,7 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/utils/cancelable/Cancelable;",
         "",
-        "Ljue;",
+        "Le5f;",
         "cancel",
         "()V",
         "calls-sdk_release"
@@ -22,6 +22,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

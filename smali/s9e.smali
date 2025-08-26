@@ -1,49 +1,21 @@
-.class public Ls9e;
+.class public interface abstract Ls9e;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final b:Ls9e;
-
-
-# instance fields
-.field public final a:Ljava/util/Map;
+.field public static final S:Lx1e;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Ls9e;
+    new-instance v0, Lx1e;
 
-    new-instance v1, Landroid/util/ArrayMap;
+    invoke-direct {v0}, Lx1e;-><init>()V
 
-    invoke-direct {v1}, Landroid/util/ArrayMap;-><init>()V
-
-    invoke-direct {v0, v1}, Ls9e;-><init>(Landroid/util/ArrayMap;)V
-
-    sput-object v0, Ls9e;->b:Ls9e;
+    sput-object v0, Ls9e;->S:Lx1e;
 
     return-void
-.end method
-
-.method public constructor <init>(Landroid/util/ArrayMap;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ls9e;->a:Ljava/util/Map;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    const-string p0, "android.hardware.camera2.CaptureRequest.setTag.CX"
-
-    return-object p0
 .end method

@@ -3,109 +3,135 @@
 .source "SourceFile"
 
 
+# static fields
+.field public static final j:Lh10;
+
+
 # instance fields
-.field public a:J
+.field public final a:Lar7;
 
-.field public b:I
+.field public final b:J
 
-.field public c:I
+.field public final c:J
 
-.field public d:Ljava/lang/String;
+.field public final d:J
 
-.field public e:J
+.field public final e:Ljava/util/List;
 
-.field public f:Ljava/lang/String;
+.field public final f:Ljava/lang/String;
 
-.field public g:Ljava/lang/String;
+.field public final g:F
 
-.field public h:Ljava/lang/String;
+.field public final h:Z
 
-.field public i:Ljava/util/List;
+.field public final i:Li10;
 
-.field public j:I
 
-.field public k:J
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
 
-.field public l:Ljava/lang/String;
+    new-instance v0, Lg10;
 
-.field public m:Z
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-.field public n:I
+    invoke-virtual {v0}, Lg10;->a()Lh10;
 
-.field public o:Ljava/lang/String;
+    move-result-object v0
+
+    sput-object v0, Lh10;->j:Lh10;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lg10;)V
+    .locals 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iget-object v0, p1, Lg10;->a:Lar7;
+
+    iput-object v0, p0, Lh10;->a:Lar7;
+
+    iget-wide v0, p1, Lg10;->b:J
+
+    iput-wide v0, p0, Lh10;->b:J
+
+    iget-wide v0, p1, Lg10;->c:J
+
+    iput-wide v0, p0, Lh10;->c:J
+
+    iget-wide v0, p1, Lg10;->d:J
+
+    iput-wide v0, p0, Lh10;->d:J
+
+    iget-object v0, p1, Lg10;->e:Ljava/util/List;
+
+    iput-object v0, p0, Lh10;->e:Ljava/util/List;
+
+    iget-object v0, p1, Lg10;->f:Ljava/lang/String;
+
+    iput-object v0, p0, Lh10;->f:Ljava/lang/String;
+
+    iget v0, p1, Lg10;->g:F
+
+    iput v0, p0, Lh10;->g:F
+
+    iget-boolean v0, p1, Lg10;->h:Z
+
+    iput-boolean v0, p0, Lh10;->h:Z
+
+    iget-object p1, p1, Lg10;->i:Li10;
+
+    iput-object p1, p0, Lh10;->i:Li10;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public a()Li10;
-    .locals 2
+.method public final a()Lg10;
+    .locals 3
 
-    iget-object v0, p0, Lh10;->i:Ljava/util/List;
+    new-instance v0, Lg10;
 
-    if-nez v0, :cond_0
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+    iget-object v1, p0, Lh10;->a:Lar7;
 
-    move-result-object v0
+    iput-object v1, v0, Lg10;->a:Lar7;
 
-    iput-object v0, p0, Lh10;->i:Ljava/util/List;
+    iget-wide v1, p0, Lh10;->b:J
 
-    :cond_0
-    iget v0, p0, Lh10;->j:I
+    iput-wide v1, v0, Lg10;->b:J
 
-    const/4 v1, 0x1
+    iget-wide v1, p0, Lh10;->c:J
 
-    if-nez v0, :cond_1
+    iput-wide v1, v0, Lg10;->c:J
 
-    iput v1, p0, Lh10;->j:I
+    iget-wide v1, p0, Lh10;->d:J
 
-    :cond_1
-    iget v0, p0, Lh10;->n:I
+    iput-wide v1, v0, Lg10;->d:J
 
-    if-nez v0, :cond_2
+    iget-object v1, p0, Lh10;->e:Ljava/util/List;
 
-    iput v1, p0, Lh10;->n:I
+    iput-object v1, v0, Lg10;->e:Ljava/util/List;
 
-    :cond_2
-    new-instance v0, Li10;
+    iget-object v1, p0, Lh10;->f:Ljava/lang/String;
 
-    invoke-direct {v0, p0}, Li10;-><init>(Lh10;)V
+    iput-object v1, v0, Lg10;->f:Ljava/lang/String;
 
-    return-object v0
-.end method
+    iget v1, p0, Lh10;->g:F
 
-.method public b()Losd;
-    .locals 2
+    iput v1, v0, Lg10;->g:F
 
-    iget-object v0, p0, Lh10;->i:Ljava/util/List;
+    iget-boolean v1, p0, Lh10;->h:Z
 
-    if-nez v0, :cond_0
+    iput-boolean v1, v0, Lg10;->h:Z
 
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+    iget-object p0, p0, Lh10;->i:Li10;
 
-    move-result-object v0
-
-    iput-object v0, p0, Lh10;->i:Ljava/util/List;
-
-    :cond_0
-    iget v0, p0, Lh10;->j:I
-
-    const/4 v1, 0x1
-
-    if-nez v0, :cond_1
-
-    iput v1, p0, Lh10;->j:I
-
-    :cond_1
-    iget v0, p0, Lh10;->n:I
-
-    if-nez v0, :cond_2
-
-    iput v1, p0, Lh10;->n:I
-
-    :cond_2
-    new-instance v0, Losd;
-
-    invoke-direct {v0, p0}, Losd;-><init>(Lh10;)V
+    iput-object p0, v0, Lg10;->i:Li10;
 
     return-object v0
 .end method

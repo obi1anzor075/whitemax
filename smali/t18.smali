@@ -1,186 +1,125 @@
-.class public final Lt18;
+.class public abstract Lt18;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
 
+# static fields
+.field public static final a:[I
 
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lu18;
-
-.field public final synthetic c:Landroid/support/v4/os/ResultReceiver;
-
-.field public final synthetic o:Lx3a;
+.field public static final b:[I
 
 
 # direct methods
-.method public constructor <init>(Lx3a;Lv18;Ljava/lang/String;Landroid/os/Bundle;Landroid/support/v4/os/ResultReceiver;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    const/4 p3, 0x1
+    const/high16 v0, 0x1010000
 
-    iput p3, p0, Lt18;->a:I
+    sget v1, Liqb;->theme:I
 
-    .line 2
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    filled-new-array {v0, v1}, [I
 
-    iput-object p1, p0, Lt18;->o:Lx3a;
+    move-result-object v0
 
-    iput-object p2, p0, Lt18;->b:Lu18;
+    sput-object v0, Lt18;->a:[I
 
-    iput-object p5, p0, Lt18;->c:Landroid/support/v4/os/ResultReceiver;
+    sget v0, Liqb;->materialThemeOverlay:I
+
+    filled-new-array {v0}, [I
+
+    move-result-object v0
+
+    sput-object v0, Lt18;->b:[I
 
     return-void
 .end method
 
-.method public constructor <init>(Lx3a;Lv18;Ljava/lang/String;Landroid/support/v4/os/ResultReceiver;)V
-    .locals 0
+.method public static a(Landroid/content/Context;Landroid/util/AttributeSet;II)Landroid/content/Context;
+    .locals 2
+
+    sget-object v0, Lt18;->b:[I
+
+    invoke-virtual {p0, p1, v0, p2, p3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+
+    move-result-object p2
 
     const/4 p3, 0x0
 
-    iput p3, p0, Lt18;->a:I
+    invoke-virtual {p2, p3, p3}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result v0
 
-    iput-object p1, p0, Lt18;->o:Lx3a;
+    invoke-virtual {p2}, Landroid/content/res/TypedArray;->recycle()V
 
-    iput-object p2, p0, Lt18;->b:Lu18;
+    instance-of p2, p0, Lxt3;
 
-    iput-object p4, p0, Lt18;->c:Landroid/support/v4/os/ResultReceiver;
+    const/4 v1, 0x1
 
-    return-void
-.end method
+    if-eqz p2, :cond_0
 
+    move-object p2, p0
 
-# virtual methods
-.method public final run()V
-    .locals 5
+    check-cast p2, Lxt3;
 
-    const/4 v0, 0x0
+    iget p2, p2, Lxt3;->a:I
 
-    iget-object v1, p0, Lt18;->c:Landroid/support/v4/os/ResultReceiver;
+    if-ne p2, v0, :cond_0
 
-    const/4 v2, -0x1
-
-    iget-object v3, p0, Lt18;->o:Lx3a;
-
-    iget-object v4, p0, Lt18;->b:Lu18;
-
-    iget p0, p0, Lt18;->a:I
-
-    packed-switch p0, :pswitch_data_0
-
-    check-cast v4, Lv18;
-
-    iget-object p0, v4, Lv18;->a:Landroid/os/Messenger;
-
-    invoke-virtual {p0}, Landroid/os/Messenger;->getBinder()Landroid/os/IBinder;
-
-    move-result-object p0
-
-    iget-object v4, v3, Lx3a;->b:Ljava/lang/Object;
-
-    check-cast v4, Lwd8;
-
-    iget-object v4, v4, Lwd8;->X:Lyr;
-
-    invoke-virtual {v4, p0}, Lkgd;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ll18;
-
-    if-nez p0, :cond_0
+    move p2, v1
 
     goto :goto_0
 
     :cond_0
-    iget-object v3, v3, Lx3a;->b:Ljava/lang/Object;
-
-    check-cast v3, Lwd8;
-
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object p0, v3, Lwd8;->Y:Ll18;
-
-    invoke-virtual {v1, v2, v0}, Landroid/support/v4/os/ResultReceiver;->send(ILandroid/os/Bundle;)V
-
-    iput-object v0, v3, Lwd8;->Y:Ll18;
+    move p2, p3
 
     :goto_0
-    return-void
+    if-eqz v0, :cond_4
 
-    :pswitch_0
-    check-cast v4, Lv18;
-
-    iget-object p0, v4, Lv18;->a:Landroid/os/Messenger;
-
-    invoke-virtual {p0}, Landroid/os/Messenger;->getBinder()Landroid/os/IBinder;
-
-    move-result-object p0
-
-    iget-object v4, v3, Lx3a;->b:Ljava/lang/Object;
-
-    check-cast v4, Lwd8;
-
-    iget-object v4, v4, Lwd8;->X:Lyr;
-
-    invoke-virtual {v4, p0}, Lkgd;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ll18;
-
-    if-nez p0, :cond_1
+    if-eqz p2, :cond_1
 
     goto :goto_2
 
     :cond_1
-    iget-object v3, v3, Lx3a;->b:Ljava/lang/Object;
+    new-instance p2, Lxt3;
 
-    check-cast v3, Lwd8;
+    invoke-direct {p2, p0, v0}, Lxt3;-><init>(Landroid/content/Context;I)V
 
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sget-object v0, Lt18;->a:[I
 
-    iput-object p0, v3, Lwd8;->Y:Ll18;
+    invoke-virtual {p0, p1, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
-    const/4 p0, 0x2
+    move-result-object p0
 
-    and-int/2addr p0, p0
+    invoke-virtual {p0, p3, p3}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    if-eqz p0, :cond_2
+    move-result p1
 
-    invoke-virtual {v1, v2, v0}, Landroid/support/v4/os/ResultReceiver;->send(ILandroid/os/Bundle;)V
+    invoke-virtual {p0, v1, p3}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result p3
+
+    invoke-virtual {p0}, Landroid/content/res/TypedArray;->recycle()V
+
+    if-eqz p1, :cond_2
 
     goto :goto_1
 
     :cond_2
-    new-instance p0, Landroid/os/Bundle;
-
-    invoke-direct {p0}, Landroid/os/Bundle;-><init>()V
-
-    sget v2, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->FLAG_BROWSABLE:I
-
-    const-string v2, "media_item"
-
-    invoke-virtual {p0, v2, v0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2, p0}, Landroid/support/v4/os/ResultReceiver;->send(ILandroid/os/Bundle;)V
+    move p1, p3
 
     :goto_1
-    iput-object v0, v3, Lwd8;->Y:Ll18;
+    if-eqz p1, :cond_3
 
+    invoke-virtual {p2}, Lxt3;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object p0
+
+    invoke-virtual {p0, p1, v1}, Landroid/content/res/Resources$Theme;->applyStyle(IZ)V
+
+    :cond_3
+    return-object p2
+
+    :cond_4
     :goto_2
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

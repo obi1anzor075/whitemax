@@ -1,95 +1,61 @@
 .class public final Lp94;
-.super Ljava/lang/Object;
+.super Lvi0;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Lk39;
-
-.field public final b:Lm99;
+.field public final X:Lo94;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lo94;JJ)V
+    .locals 6
 
-    new-instance v0, Lp94;
+    const/4 v5, 0x0
 
-    new-instance v1, Lwy2;
+    move-object v0, p0
 
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+    move-wide v1, p2
 
-    invoke-direct {v0, v1}, Lp94;-><init>(Lj39;)V
+    move-wide v3, p4
+
+    invoke-direct/range {v0 .. v5}, Lvi0;-><init>(JJI)V
+
+    iput-object p1, v0, Lp94;->X:Lo94;
 
     return-void
 .end method
 
-.method public constructor <init>(Lj39;)V
-    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final a()J
+    .locals 3
 
-    new-instance p1, Lk39;
+    invoke-virtual {p0}, Lvi0;->c()V
 
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+    iget-object v0, p0, Lp94;->X:Lo94;
 
-    iput-object p1, p0, Lp94;->a:Lk39;
+    iget-wide v1, p0, Lvi0;->o:J
 
-    new-instance p1, Lm99;
+    invoke-virtual {v0, v1, v2}, Lo94;->g(J)J
 
-    const-string v0, "/io/michaelrocks/libphonenumber/android/data/PhoneNumberMetadataProto"
+    move-result-wide v0
 
-    invoke-direct {p1, v0}, Lm99;-><init>(Ljava/lang/String;)V
+    return-wide v0
+.end method
 
-    iput-object p1, p0, Lp94;->b:Lm99;
+.method public final b()J
+    .locals 3
 
-    new-instance p0, Lm99;
+    invoke-virtual {p0}, Lvi0;->c()V
 
-    const-string p1, "/io/michaelrocks/libphonenumber/android/data/ShortNumberMetadataProto"
+    iget-object v0, p0, Lp94;->X:Lo94;
 
-    invoke-direct {p0, p1}, Lm99;-><init>(Ljava/lang/String;)V
+    iget-wide v1, p0, Lvi0;->o:J
 
-    new-instance p0, Lm99;
+    invoke-virtual {v0, v1, v2}, Lo94;->f(J)J
 
-    const-string p1, "/io/michaelrocks/libphonenumber/android/data/PhoneNumberAlternateFormatsProto"
+    move-result-wide v0
 
-    invoke-direct {p0, p1}, Lm99;-><init>(Ljava/lang/String;)V
-
-    new-instance p0, Lnu7;
-
-    new-instance p1, Lcqc;
-
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
-
-    invoke-direct {p0, p1}, Lnu7;-><init>(Ldt7;)V
-
-    new-instance p0, Lnu7;
-
-    new-instance p1, Lbqc;
-
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
-
-    invoke-direct {p0, p1}, Lnu7;-><init>(Ldt7;)V
-
-    new-instance p0, Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-direct {p0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
-
-    new-instance p0, Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-direct {p0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
-
-    new-instance p0, Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-direct {p0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
-
-    new-instance p0, Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-direct {p0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
-
-    new-instance p0, Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-direct {p0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
-
-    return-void
+    return-wide v0
 .end method

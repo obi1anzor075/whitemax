@@ -1,90 +1,220 @@
 .class public final Lu77;
-.super Ll5e;
+.super Lf0b;
 .source "SourceFile"
 
-# interfaces
-.implements Li26;
 
-
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Lone/me/keyboardmedia/emoji/KeyboardEmojiWidget;
+# static fields
+.field public static final c:Z
 
 
 # direct methods
-.method public constructor <init>(Lone/me/keyboardmedia/emoji/KeyboardEmojiWidget;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
-    iput-object p1, p0, Lu77;->Y:Lone/me/keyboardmedia/emoji/KeyboardEmojiWidget;
+    const-string v0, "java.specification.version"
 
-    const/4 p1, 0x2
+    invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {v0}, Lq8e;->n0(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    move-object v0, v1
+
+    :goto_0
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    const/16 v1, 0x9
+
+    if-lt v0, v1, :cond_2
+
+    :goto_1
+    move v2, v3
+
+    goto :goto_2
+
+    :cond_1
+    :try_start_0
+    const-class v0, Ljavax/net/ssl/SSLSocket;
+
+    const-string v4, "getApplicationProtocol"
+
+    invoke-virtual {v0, v4, v1}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    :catch_0
+    :cond_2
+    :goto_2
+    sput-boolean v2, Lu77;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final d(Ljavax/net/ssl/SSLSocket;Ljava/lang/String;Ljava/util/List;)V
+    .locals 3
 
-    check-cast p1, Lrv4;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lu77;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getSSLParameters()Ljavax/net/ssl/SSLParameters;
 
     move-result-object p0
 
-    check-cast p0, Lu77;
+    new-instance p2, Ljava/util/ArrayList;
 
-    sget-object p1, Ljue;->a:Ljue;
+    invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-virtual {p0, p1}, Lu77;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    return-object p1
+    move-result-object p3
+
+    :cond_0
+    :goto_0
+    invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    check-cast v1, Lylb;
+
+    sget-object v2, Lylb;->b:Lylb;
+
+    if-eq v1, v2, :cond_0
+
+    invoke-virtual {p2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_1
+    new-instance p3, Ljava/util/ArrayList;
+
+    const/16 v0, 0xa
+
+    invoke-static {p2, v0}, Lr43;->k0(Ljava/lang/Iterable;I)I
+
+    move-result v0
+
+    invoke-direct {p3, v0}, Ljava/util/ArrayList;-><init>(I)V
+
+    invoke-virtual {p2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object p2
+
+    :goto_1
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lylb;
+
+    iget-object v0, v0, Lylb;->a:Ljava/lang/String;
+
+    invoke-virtual {p3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    :cond_2
+    const/4 p2, 0x0
+
+    new-array p2, p2, [Ljava/lang/String;
+
+    invoke-virtual {p3, p2}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object p2
+
+    if-eqz p2, :cond_3
+
+    check-cast p2, [Ljava/lang/String;
+
+    invoke-virtual {p0, p2}, Ljavax/net/ssl/SSLParameters;->setApplicationProtocols([Ljava/lang/String;)V
+
+    invoke-virtual {p1, p0}, Ljavax/net/ssl/SSLSocket;->setSSLParameters(Ljavax/net/ssl/SSLParameters;)V
+
+    return-void
+
+    :cond_3
+    new-instance p0, Ljava/lang/NullPointerException;
+
+    const-string p1, "null cannot be cast to non-null type kotlin.Array<T>"
+
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
+.method public final f(Ljavax/net/ssl/SSLSocket;)Ljava/lang/String;
+    .locals 0
 
-    new-instance v0, Lu77;
+    :try_start_0
+    invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getApplicationProtocol()Ljava/lang/String;
 
-    iget-object p0, p0, Lu77;->Y:Lone/me/keyboardmedia/emoji/KeyboardEmojiWidget;
+    move-result-object p0
 
-    invoke-direct {v0, p0, p2}, Lu77;-><init>(Lone/me/keyboardmedia/emoji/KeyboardEmojiWidget;Lkotlin/coroutines/Continuation;)V
+    if-nez p0, :cond_0
 
-    iput-object p1, v0, Lu77;->X:Ljava/lang/Object;
+    goto :goto_1
 
-    return-object v0
-.end method
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    move-result p1
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    if-eqz p1, :cond_1
 
-    iget-object p1, p0, Lu77;->X:Ljava/lang/Object;
+    goto :goto_0
 
-    check-cast p1, Lrv4;
+    :cond_1
+    const-string p1, ""
 
-    iget-object p0, p0, Lu77;->Y:Lone/me/keyboardmedia/emoji/KeyboardEmojiWidget;
+    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    iget-object v0, p0, Lone/me/keyboardmedia/emoji/KeyboardEmojiWidget;->Y:Lfv4;
+    move-result p1
+    :try_end_0
+    .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_0
 
-    iget-object v1, p1, Lrv4;->a:Ljava/util/List;
+    if-eqz p1, :cond_2
 
-    invoke-virtual {v0, v1}, Lig7;->E(Ljava/util/List;)V
+    goto :goto_1
 
-    iget-object p0, p0, Lone/me/keyboardmedia/emoji/KeyboardEmojiWidget;->X:Lmr5;
+    :cond_2
+    :goto_0
+    return-object p0
 
-    iget-object p1, p1, Lrv4;->b:Ljava/util/List;
-
-    invoke-virtual {p0, p1}, Lig7;->E(Ljava/util/List;)V
-
-    sget-object p0, Ljue;->a:Ljue;
+    :catch_0
+    :goto_1
+    const/4 p0, 0x0
 
     return-object p0
 .end method

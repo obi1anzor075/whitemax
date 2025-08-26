@@ -3,79 +3,57 @@
 .source "SourceFile"
 
 
+# static fields
+.field public static final g:Lm46;
+
+.field public static final synthetic h:I
+
+
 # instance fields
-.field public a:I
+.field public final a:Lpw4;
 
-.field public b:Landroidx/fragment/app/a;
+.field public b:Z
 
-.field public c:Z
+.field public c:[I
 
-.field public d:I
+.field public d:Lms;
 
 .field public e:I
 
-.field public f:I
-
-.field public g:I
-
-.field public h:Lob7;
-
-.field public i:Lob7;
+.field public final f:Lib4;
 
 
 # direct methods
-.method public constructor <init>(ILandroidx/fragment/app/a;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lm46;
 
-    .line 2
-    iput p1, p0, Ldy5;->a:I
+    const/16 v1, 0xb
 
-    .line 3
-    iput-object p2, p0, Ldy5;->b:Landroidx/fragment/app/a;
+    invoke-direct {v0, v1}, Lm46;-><init>(I)V
 
-    const/4 p1, 0x0
-
-    .line 4
-    iput-boolean p1, p0, Ldy5;->c:Z
-
-    .line 5
-    sget-object p1, Lob7;->X:Lob7;
-
-    iput-object p1, p0, Ldy5;->h:Lob7;
-
-    .line 6
-    iput-object p1, p0, Ldy5;->i:Lob7;
+    sput-object v0, Ldy5;->g:Lm46;
 
     return-void
 .end method
 
-.method public constructor <init>(ILandroidx/fragment/app/a;I)V
-    .locals 0
+.method public constructor <init>(Lpw4;)V
+    .locals 1
 
-    .line 7
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 8
-    iput p1, p0, Ldy5;->a:I
+    const/4 v0, 0x0
 
-    .line 9
-    iput-object p2, p0, Ldy5;->b:Landroidx/fragment/app/a;
+    iput v0, p0, Ldy5;->e:I
 
-    const/4 p1, 0x1
+    new-instance v0, Lib4;
 
-    .line 10
-    iput-boolean p1, p0, Ldy5;->c:Z
+    invoke-direct {v0}, Lib4;-><init>()V
 
-    .line 11
-    sget-object p1, Lob7;->X:Lob7;
+    iput-object v0, p0, Ldy5;->f:Lib4;
 
-    iput-object p1, p0, Ldy5;->h:Lob7;
-
-    .line 12
-    iput-object p1, p0, Ldy5;->i:Lob7;
+    iput-object p1, p0, Ldy5;->a:Lpw4;
 
     return-void
 .end method

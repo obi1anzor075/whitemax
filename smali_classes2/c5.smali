@@ -1,139 +1,138 @@
-.class public final Lc5;
+.class public final synthetic Lc5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final synthetic c:I
+# interfaces
+.implements Ljj3;
+.implements Lt0a;
 
 
 # instance fields
-.field public final a:La5;
-
-.field public final b:Lr7e;
+.field public final synthetic a:Lru/ok/messages/media/attaches/ActAttachesView;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;La5;)V
-    .locals 1
+.method public synthetic constructor <init>(Lru/ok/messages/media/attaches/ActAttachesView;)V
+    .locals 0
+
+    iput-object p1, p0, Lc5;->a:Lru/ok/messages/media/attaches/ActAttachesView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p2, p0, Lc5;->a:La5;
-
-    new-instance p2, Lb5;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p2, p1, v0}, Lb5;-><init>(Landroid/content/Context;I)V
-
-    new-instance p1, Lr7e;
-
-    invoke-direct {p1, p2}, Lr7e;-><init>(Ls16;)V
-
-    iput-object p1, p0, Lc5;->b:Lr7e;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/accounts/Account;
-    .locals 1
+.method public G(Landroid/view/View;Lb8g;)Lb8g;
+    .locals 4
 
-    :try_start_0
-    iget-object v0, p0, Lc5;->b:Lr7e;
+    iget-object p0, p0, Lc5;->a:Lru/ok/messages/media/attaches/ActAttachesView;
 
-    invoke-virtual {v0}, Lr7e;->getValue()Ljava/lang/Object;
+    iget-object p1, p0, Lru/ok/messages/media/attaches/ActAttachesView;->U0:Landroid/view/View;
 
-    move-result-object v0
+    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    check-cast v0, Landroid/accounts/AccountManager;
+    move-result-object p1
 
-    iget-object p0, p0, Lc5;->a:La5;
+    check-cast p1, Landroid/widget/RelativeLayout$LayoutParams;
 
-    iget-object p0, p0, La5;->a:Ljava/lang/String;
+    invoke-virtual {p2}, Lb8g;->a()I
 
-    invoke-virtual {v0, p0}, Landroid/accounts/AccountManager;->getAccountsByType(Ljava/lang/String;)[Landroid/accounts/Account;
+    move-result v0
 
-    move-result-object p0
+    iput v0, p1, Landroid/widget/RelativeLayout$LayoutParams;->bottomMargin:I
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ActAttachesView;->U0:Landroid/view/View;
 
-    invoke-static {v0, p0}, Lcs;->Z(I[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    move-result-object p0
+    iget-object p1, p0, Lru/ok/messages/media/attaches/ActAttachesView;->U0:Landroid/view/View;
 
-    check-cast p0, Landroid/accounts/Account;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {p2}, Lb8g;->b()I
 
-    goto :goto_0
+    move-result v0
 
-    :catchall_0
-    move-exception p0
+    iget-object v1, p0, Lru/ok/messages/media/attaches/ActAttachesView;->U0:Landroid/view/View;
 
-    new-instance v0, Lkcc;
+    invoke-virtual {v1}, Landroid/view/View;->getPaddingTop()I
 
-    invoke-direct {v0, p0}, Lkcc;-><init>(Ljava/lang/Throwable;)V
+    move-result v1
 
-    move-object p0, v0
+    invoke-virtual {p2}, Lb8g;->c()I
 
-    :goto_0
-    instance-of v0, p0, Lkcc;
+    move-result v2
 
-    if-eqz v0, :cond_0
+    iget-object v3, p0, Lru/ok/messages/media/attaches/ActAttachesView;->U0:Landroid/view/View;
 
-    const/4 p0, 0x0
+    invoke-virtual {v3}, Landroid/view/View;->getPaddingBottom()I
+
+    move-result v3
+
+    invoke-virtual {p1, v0, v1, v2, v3}, Landroid/view/View;->setPadding(IIII)V
+
+    iget-object p1, p0, Lru/ok/messages/media/attaches/ActAttachesView;->k1:Landroid/widget/FrameLayout;
+
+    invoke-virtual {p2}, Lb8g;->d()I
+
+    move-result v0
+
+    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/view/ViewGroup$MarginLayoutParams;
+
+    iget v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+
+    if-eq v2, v0, :cond_0
+
+    iput v0, v1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+
+    invoke-virtual {p1, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     :cond_0
-    check-cast p0, Landroid/accounts/Account;
+    iget-object p0, p0, Lru/ok/messages/media/attaches/ActAttachesView;->k1:Landroid/widget/FrameLayout;
 
-    return-object p0
+    invoke-virtual {p2}, Lb8g;->c()I
+
+    move-result p1
+
+    invoke-static {p0, p1}, Lq14;->a0(Landroid/view/View;I)V
+
+    return-object p2
 .end method
 
-.method public final b()V
+.method public accept(Ljava/lang/Object;)V
     .locals 2
 
-    const-string v0, "removeAccount start"
+    check-cast p1, Ler8;
 
-    const-string v1, "c5"
+    iget-object p0, p0, Lc5;->a:Lru/ok/messages/media/attaches/ActAttachesView;
 
-    invoke-static {v1, v0}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ActAttachesView;->S0:Ld20;
 
-    invoke-virtual {p0}, Lc5;->a()Landroid/accounts/Account;
+    iget-object v1, v0, Ld20;->j:Ljava/util/List;
 
-    move-result-object v0
+    invoke-interface {v1}, Ljava/util/List;->clear()V
 
-    if-eqz v0, :cond_0
+    iget-object v0, v0, Ld20;->i:Ljava/util/ArrayList;
 
-    :try_start_0
-    iget-object p0, p0, Lc5;->b:Lr7e;
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    invoke-virtual {p0}, Lr7e;->getValue()Ljava/lang/Object;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ActAttachesView;->S0:Ld20;
 
-    move-result-object p0
+    invoke-static {p1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
-    check-cast p0, Landroid/accounts/AccountManager;
+    move-result-object p1
 
-    invoke-virtual {p0, v0}, Landroid/accounts/AccountManager;->removeAccountExplicitly(Landroid/accounts/Account;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const/4 v1, 0x1
 
-    goto :goto_0
+    invoke-virtual {v0, p1, v1}, Ld20;->j(Ljava/util/List;Z)V
 
-    :catchall_0
-    move-exception p0
+    const/4 p1, 0x0
 
-    const-string v0, "removeAccountExplicitly failed!"
-
-    invoke-static {v1, v0, p0}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_0
-    :goto_0
-    const-string p0, "removeAccount finished!"
-
-    invoke-static {v1, p0}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Lru/ok/messages/media/attaches/ActAttachesView;->h0(I)V
 
     return-void
 .end method

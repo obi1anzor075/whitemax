@@ -1,55 +1,100 @@
 .class public final Lvi7;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lfj7;
 
-# instance fields
-.field public X:Luu4;
 
-.field public Y:Ltae;
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lvi7;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public Z:Lru/ok/tamtam/android/emoji/font/LoadEmojiFontWorker;
-
-.field public o:Lru/ok/tamtam/android/emoji/font/LoadEmojiFontWorker;
-
-.field public synthetic w0:Ljava/lang/Object;
-
-.field public final synthetic x0:Lru/ok/tamtam/android/emoji/font/LoadEmojiFontWorker;
-
-.field public y0:I
+.field public static final a:Lvi7;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/tamtam/android/emoji/font/LoadEmojiFontWorker;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput-object p1, p0, Lvi7;->x0:Lru/ok/tamtam/android/emoji/font/LoadEmojiFontWorker;
+    new-instance v0, Lvi7;
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lvi7;->a:Lvi7;
+
+    new-instance v0, Lao6;
+
+    const/16 v1, 0x17
+
+    invoke-direct {v0, v1}, Lao6;-><init>(I)V
+
+    sput-object v0, Lvi7;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final describeContents()I
+    .locals 0
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
-    iput-object p1, p0, Lvi7;->w0:Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    iget p1, p0, Lvi7;->y0:I
+    if-ne p0, p1, :cond_0
 
-    const/high16 v0, -0x80000000
+    return v0
 
-    or-int/2addr p1, v0
+    :cond_0
+    instance-of p0, p1, Lvi7;
 
-    iput p1, p0, Lvi7;->y0:I
+    if-nez p0, :cond_1
 
-    iget-object p1, p0, Lvi7;->x0:Lru/ok/tamtam/android/emoji/font/LoadEmojiFontWorker;
+    const/4 p0, 0x0
 
-    invoke-virtual {p1, p0}, Lru/ok/tamtam/android/emoji/font/LoadEmojiFontWorker;->doForegroundWork(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    return p0
 
-    move-result-object p0
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    const p0, 0x4057c762
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "Progress"
 
     return-object p0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 0
+
+    const/4 p0, 0x1
+
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+
+    return-void
 .end method

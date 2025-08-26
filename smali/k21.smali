@@ -1,189 +1,141 @@
 .class public final Lk21;
-.super Ljava/lang/Object;
+.super Landroidx/constraintlayout/widget/ConstraintLayout;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Lru/ok/android/externcalls/sdk/Conversation;
+.field public final C0:Llo1;
 
-.field public final b:Lete;
-
-.field public final c:Z
-
-.field public final d:Z
+.field public D0:Lj21;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/android/externcalls/sdk/Conversation;Lete;ZZ)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
 
-    iput-object p1, p0, Lk21;->a:Lru/ok/android/externcalls/sdk/Conversation;
+    invoke-direct {p0, p1, v0}, Landroidx/constraintlayout/widget/ConstraintLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    iput-object p2, p0, Lk21;->b:Lete;
+    new-instance v0, Loi3;
 
-    iput-boolean p3, p0, Lk21;->c:Z
+    const/4 v1, -0x1
 
-    iput-boolean p4, p0, Lk21;->d:Z
+    invoke-direct {v0, v1, v1}, Loi3;-><init>(II)V
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    sget-object v0, Lqp4;->q0:Lap9;
+
+    invoke-virtual {v0, p0}, Lap9;->j(Landroid/view/View;)Lk9a;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lk9a;->c:Lyha;
+
+    invoke-interface {v0}, Lyha;->b()Lfe0;
+
+    move-result-object v0
+
+    iget v0, v0, Lfe0;->l:I
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->setBackgroundColor(I)V
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->setFocusable(Z)V
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->setClickable(Z)V
+
+    new-instance v0, Llo1;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, p1, v2}, Llo1;-><init>(Landroid/content/Context;I)V
+
+    sget v3, Litb;->call_user_full_avatar:I
+
+    invoke-virtual {v0, v3}, Landroidx/constraintlayout/widget/ConstraintLayout;->setId(I)V
+
+    sget-object v3, Lho1;->b:Lho1;
+
+    invoke-virtual {v0, v3}, Llo1;->setMode(Lho1;)V
+
+    iput-object v0, p0, Lk21;->C0:Llo1;
+
+    new-instance v3, Landroid/view/ViewStub;
+
+    invoke-direct {v3, p1}, Landroid/view/ViewStub;-><init>(Landroid/content/Context;)V
+
+    sget v4, Litb;->call_recall:I
+
+    invoke-virtual {v3, v4}, Landroid/view/View;->setId(I)V
+
+    new-instance v3, Landroid/view/ViewStub;
+
+    invoke-direct {v3, p1}, Landroid/view/ViewStub;-><init>(Landroid/content/Context;)V
+
+    sget p1, Litb;->call_cancel:I
+
+    invoke-virtual {v3, p1}, Landroid/view/View;->setId(I)V
+
+    invoke-virtual {p0, v0, v1, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;II)V
+
+    invoke-static {p0}, Lus;->k(Landroidx/constraintlayout/widget/ConstraintLayout;)Lxi3;
+
+    move-result-object p1
+
+    invoke-virtual {v0}, Landroid/view/View;->getId()I
+
+    move-result v0
+
+    const/4 v1, 0x7
+
+    invoke-virtual {p1, v0, v1, v2, v1}, Lxi3;->d(IIII)V
+
+    const/4 v1, 0x6
+
+    invoke-virtual {p1, v0, v1, v2, v1}, Lxi3;->d(IIII)V
+
+    const/4 v1, 0x3
+
+    invoke-virtual {p1, v0, v1, v2, v1}, Lxi3;->d(IIII)V
+
+    const/4 v1, 0x4
+
+    invoke-virtual {p1, v0, v1, v2, v1}, Lxi3;->d(IIII)V
+
+    invoke-virtual {p1, p0}, Lxi3;->a(Landroidx/constraintlayout/widget/ConstraintLayout;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final setClickListener(Lj21;)V
+    .locals 0
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Lk21;->D0:Lj21;
 
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lk21;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lk21;
-
-    iget-object v1, p1, Lk21;->a:Lru/ok/android/externcalls/sdk/Conversation;
-
-    iget-object v3, p0, Lk21;->a:Lru/ok/android/externcalls/sdk/Conversation;
-
-    invoke-static {v3, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object v1, p0, Lk21;->b:Lete;
-
-    iget-object v3, p1, Lk21;->b:Lete;
-
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-boolean v1, p0, Lk21;->c:Z
-
-    iget-boolean v3, p1, Lk21;->c:Z
-
-    if-eq v1, v3, :cond_4
-
-    return v2
-
-    :cond_4
-    iget-boolean p0, p0, Lk21;->d:Z
-
-    iget-boolean p1, p1, Lk21;->d:Z
-
-    if-eq p0, p1, :cond_5
-
-    return v2
-
-    :cond_5
-    return v0
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 3
+.method public final setName(Ljava/lang/CharSequence;)V
+    .locals 0
 
-    iget-object v0, p0, Lk21;->a:Lru/ok/android/externcalls/sdk/Conversation;
+    iget-object p0, p0, Lk21;->C0:Llo1;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {p0, p1}, Llo1;->setName(Ljava/lang/CharSequence;)V
 
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget-object v2, p0, Lk21;->b:Lete;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    add-int/2addr v2, v0
-
-    mul-int/2addr v2, v1
-
-    iget-boolean v0, p0, Lk21;->c:Z
-
-    invoke-static {v2, v1, v0}, Lth2;->f(IIZ)I
-
-    move-result v0
-
-    iget-boolean p0, p0, Lk21;->d:Z
-
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
+    return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final setStatus(Ljava/lang/CharSequence;)V
+    .locals 0
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object p0, p0, Lk21;->C0:Llo1;
 
-    const-string v1, "Result(conversation="
+    invoke-virtual {p0, p1}, Llo1;->setStatus(Ljava/lang/CharSequence;)V
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lk21;->a:Lru/ok/android/externcalls/sdk/Conversation;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", callTarget="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lk21;->b:Lete;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", isNewCall="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lk21;->c:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", isIncoming="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean p0, p0, Lk21;->d:Z
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

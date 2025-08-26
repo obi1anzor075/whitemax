@@ -11,31 +11,31 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomAdminCommandExecutor;",
         "",
-        "Lr7;",
+        "Lj7;",
         "params",
         "Lkotlin/Function0;",
-        "Ljue;",
+        "Le5f;",
         "onSuccess",
         "Lkotlin/Function1;",
         "",
         "onError",
         "activateRooms",
-        "(Lr7;Ls16;Lu16;)V",
-        "Lrve;",
+        "(Lj7;Lv56;Lx56;)V",
+        "Lr6f;",
         "updateRooms",
-        "(Lrve;Ls16;Lu16;)V",
-        "Lg7e;",
+        "(Lr6f;Lv56;Lx56;)V",
+        "Lkfe;",
         "switchRoom",
-        "(Lg7e;Ls16;Lu16;)V",
-        "Lf9c;",
+        "(Lkfe;Lv56;Lx56;)V",
+        "Leec;",
         "removeRooms",
-        "(Lf9c;Ls16;Lu16;)V",
+        "(Leec;Lv56;Lx56;)V",
         "Lru/ok/android/externcalls/sdk/sessionroom/admin/AssignParticipantsToRoomsParams;",
         "assignParticipantsToRooms",
-        "(Lru/ok/android/externcalls/sdk/sessionroom/admin/AssignParticipantsToRoomsParams;Ls16;Lu16;)V",
+        "(Lru/ok/android/externcalls/sdk/sessionroom/admin/AssignParticipantsToRoomsParams;Lv56;Lx56;)V",
         "Lru/ok/android/externcalls/sdk/sessionroom/admin/MoveParticipantParams;",
         "moveParticipant",
-        "(Lru/ok/android/externcalls/sdk/sessionroom/admin/MoveParticipantParams;Ls16;Lu16;)V",
+        "(Lru/ok/android/externcalls/sdk/sessionroom/admin/MoveParticipantParams;Lv56;Lx56;)V",
         "calls-sdk_release"
     }
     k = 0x1
@@ -44,77 +44,78 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # virtual methods
-.method public abstract activateRooms(Lr7;Ls16;Lu16;)V
+.method public abstract activateRooms(Lj7;Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lr7;",
-            "Ls16;",
-            "Lu16;",
+            "Lj7;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 .end method
 
-.method public abstract assignParticipantsToRooms(Lru/ok/android/externcalls/sdk/sessionroom/admin/AssignParticipantsToRoomsParams;Ls16;Lu16;)V
+.method public abstract assignParticipantsToRooms(Lru/ok/android/externcalls/sdk/sessionroom/admin/AssignParticipantsToRoomsParams;Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/sessionroom/admin/AssignParticipantsToRoomsParams;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 .end method
 
-.method public abstract moveParticipant(Lru/ok/android/externcalls/sdk/sessionroom/admin/MoveParticipantParams;Ls16;Lu16;)V
+.method public abstract moveParticipant(Lru/ok/android/externcalls/sdk/sessionroom/admin/MoveParticipantParams;Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/sessionroom/admin/MoveParticipantParams;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 .end method
 
-.method public abstract removeRooms(Lf9c;Ls16;Lu16;)V
+.method public abstract removeRooms(Leec;Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lf9c;",
-            "Ls16;",
-            "Lu16;",
+            "Leec;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 .end method
 
-.method public abstract switchRoom(Lg7e;Ls16;Lu16;)V
+.method public abstract switchRoom(Lkfe;Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lg7e;",
-            "Ls16;",
-            "Lu16;",
+            "Lkfe;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 .end method
 
-.method public abstract updateRooms(Lrve;Ls16;Lu16;)V
+.method public abstract updateRooms(Lr6f;Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lrve;",
-            "Ls16;",
-            "Lu16;",
+            "Lr6f;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation

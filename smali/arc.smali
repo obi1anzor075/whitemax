@@ -1,514 +1,283 @@
-.class public final synthetic Larc;
+.class public final Larc;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Ljava/util/Map;
+.implements Lqb7;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lone/me/chatscreen/search/SearchMessageBottomWidget;
+.field public final synthetic a:Ldh9;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/chatscreen/search/SearchMessageBottomWidget;I)V
+.method public constructor <init>(Ldh9;)V
     .locals 0
 
-    iput p2, p0, Larc;->a:I
-
-    iput-object p1, p0, Larc;->b:Lone/me/chatscreen/search/SearchMessageBottomWidget;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Larc;->a:Ldh9;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 10
+.method public final clear()V
+    .locals 1
 
-    const/4 v0, -0x1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    const/4 v1, 0x4
+    const-string v0, "Operation is not supported for read-only collection"
 
-    const/16 v2, 0x20
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    const/4 v3, 0x0
+    throw p0
+.end method
 
-    const/4 v4, 0x1
+.method public final compute(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
+    .locals 0
 
-    sget-object v5, Lkm4;->y0:Ls59;
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    iget-object v6, p0, Larc;->b:Lone/me/chatscreen/search/SearchMessageBottomWidget;
+    const-string p1, "Operation is not supported for read-only collection"
 
-    iget p0, p0, Larc;->a:I
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    packed-switch p0, :pswitch_data_0
+    throw p0
+.end method
 
-    sget-object p0, Lone/me/chatscreen/search/SearchMessageBottomWidget;->w0:[Lk77;
+.method public final computeIfAbsent(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;
+    .locals 0
 
-    new-instance p0, Landroid/view/View;
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    invoke-virtual {v6}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+    const-string p1, "Operation is not supported for read-only collection"
 
-    move-result-object v0
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {p0, v0}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+    throw p0
+.end method
 
-    sget v0, Lj2a;->f:I
+.method public final computeIfPresent(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
+    .locals 0
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setId(I)V
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    new-instance v0, Lre3;
+    const-string p1, "Operation is not supported for read-only collection"
 
-    int-to-float v1, v4
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    throw p0
+.end method
 
-    move-result-object v2
+.method public final containsKey(Ljava/lang/Object;)Z
+    .locals 0
 
-    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    iget-object p0, p0, Larc;->a:Ldh9;
 
-    move-result-object v2
+    invoke-virtual {p0, p1}, Ldh9;->b(Ljava/lang/Object;)Z
 
-    iget v2, v2, Landroid/util/DisplayMetrics;->density:F
+    move-result p0
 
-    mul-float/2addr v1, v2
+    return p0
+.end method
 
-    invoke-static {v1}, La24;->X(F)I
+.method public final containsValue(Ljava/lang/Object;)Z
+    .locals 0
 
-    move-result v1
+    iget-object p0, p0, Larc;->a:Ldh9;
 
-    const/16 v2, 0x12
+    invoke-virtual {p0, p1}, Ldh9;->c(Ljava/lang/Object;)Z
 
-    int-to-float v2, v2
+    move-result p0
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    return p0
+.end method
 
-    move-result-object v3
+.method public final entrySet()Ljava/util/Set;
+    .locals 2
 
-    invoke-virtual {v3}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    new-instance v0, Lxqc;
 
-    move-result-object v3
+    iget-object p0, p0, Larc;->a:Ldh9;
 
-    iget v3, v3, Landroid/util/DisplayMetrics;->density:F
+    const/4 v1, 0x0
 
-    mul-float/2addr v2, v3
+    invoke-direct {v0, p0, v1}, Lxqc;-><init>(Ldh9;I)V
 
-    invoke-static {v2}, La24;->X(F)I
+    return-object v0
+.end method
 
-    move-result v2
+.method public final get(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    invoke-direct {v0, v1, v2}, Lre3;-><init>(II)V
+    iget-object p0, p0, Larc;->a:Ldh9;
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p0, p1}, Ldh9;->f(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v5, p0}, Ls59;->r(Landroid/view/View;)Lpda;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lpda;->a()Ljo2;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljo2;->d()Lavf;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lavf;->b:Ldvf;
-
-    iget v0, v0, Ldvf;->b:I
-
-    invoke-virtual {p0, v0}, Landroid/view/View;->setBackgroundColor(I)V
+    move-result-object p0
 
     return-object p0
+.end method
 
-    :pswitch_0
-    sget-object p0, Lone/me/chatscreen/search/SearchMessageBottomWidget;->w0:[Lk77;
+.method public final isEmpty()Z
+    .locals 0
 
-    new-instance p0, Landroidx/appcompat/widget/AppCompatImageView;
+    iget-object p0, p0, Larc;->a:Ldh9;
 
-    invoke-virtual {v6}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Ldh9;->h()Z
 
-    move-result-object v4
+    move-result p0
 
-    invoke-direct {p0, v4, v3}, Landroidx/appcompat/widget/AppCompatImageView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    return p0
+.end method
 
-    sget v4, Lj2a;->e:I
+.method public final keySet()Ljava/util/Set;
+    .locals 2
 
-    invoke-virtual {p0, v4}, Landroid/view/View;->setId(I)V
+    new-instance v0, Lxqc;
 
-    new-instance v4, Lre3;
+    iget-object p0, p0, Larc;->a:Ldh9;
 
-    int-to-float v2, v2
+    const/4 v1, 0x1
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    invoke-direct {v0, p0, v1}, Lxqc;-><init>(Ldh9;I)V
 
-    move-result-object v7
+    return-object v0
+.end method
 
-    invoke-virtual {v7}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+.method public final merge(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
+    .locals 0
 
-    move-result-object v7
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    iget v7, v7, Landroid/util/DisplayMetrics;->density:F
+    const-string p1, "Operation is not supported for read-only collection"
 
-    mul-float/2addr v7, v2
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v7}, La24;->X(F)I
+    throw p0
+.end method
 
-    move-result v7
+.method public final put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    move-result-object v8
+    const-string p1, "Operation is not supported for read-only collection"
 
-    invoke-virtual {v8}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    move-result-object v8
+    throw p0
+.end method
 
-    iget v8, v8, Landroid/util/DisplayMetrics;->density:F
+.method public final putAll(Ljava/util/Map;)V
+    .locals 0
 
-    mul-float/2addr v2, v8
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    invoke-static {v2}, La24;->X(F)I
+    const-string p1, "Operation is not supported for read-only collection"
 
-    move-result v2
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v4, v7, v2}, Lre3;-><init>(II)V
+    throw p0
+.end method
 
-    invoke-virtual {p0, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+.method public final putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    sget v2, Li2a;->c:I
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    invoke-virtual {p0, v2}, Landroidx/appcompat/widget/AppCompatImageView;->setImageResource(I)V
+    const-string p1, "Operation is not supported for read-only collection"
 
-    invoke-virtual {v5, p0}, Ls59;->r(Landroid/view/View;)Lpda;
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    move-result-object v2
+    throw p0
+.end method
 
-    invoke-interface {v2}, Lpda;->a()Ljo2;
+.method public final remove(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    move-result-object v2
+    .line 1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    invoke-interface {v2}, Ljo2;->d()Lavf;
+    const-string p1, "Operation is not supported for read-only collection"
 
-    move-result-object v2
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    iget-object v2, v2, Lavf;->b:Ldvf;
+    throw p0
+.end method
 
-    iget v2, v2, Ldvf;->b:I
+.method public final remove(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .locals 0
 
-    invoke-static {v2}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+    .line 2
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    move-result-object v2
+    const-string p1, "Operation is not supported for read-only collection"
 
-    invoke-virtual {p0, v2}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    throw p0
+.end method
 
-    move-result-object v2
+.method public final replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    sget v4, Lk2a;->f:I
+    .line 1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    invoke-virtual {v2, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    const-string p1, "Operation is not supported for read-only collection"
 
-    move-result-object v2
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p0, v2}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
+    throw p0
+.end method
 
-    int-to-float v1, v1
+.method public final replace(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+    .locals 0
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    .line 2
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    move-result-object v2
+    const-string p1, "Operation is not supported for read-only collection"
 
-    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    move-result-object v2
+    throw p0
+.end method
 
-    iget v2, v2, Landroid/util/DisplayMetrics;->density:F
+.method public final replaceAll(Ljava/util/function/BiFunction;)V
+    .locals 0
 
-    mul-float/2addr v1, v2
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    invoke-static {v1}, La24;->X(F)I
+    const-string p1, "Operation is not supported for read-only collection"
 
-    move-result v1
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p0, v1, v1, v1, v1}, Landroid/view/View;->setPadding(IIII)V
+    throw p0
+.end method
 
-    new-instance v1, Lbrc;
+.method public final size()I
+    .locals 0
 
-    const/4 v2, 0x0
+    iget-object p0, p0, Larc;->a:Ldh9;
 
-    invoke-direct {v1, v6, v2}, Lbrc;-><init>(Lone/me/chatscreen/search/SearchMessageBottomWidget;I)V
+    iget p0, p0, Ldh9;->e:I
 
-    invoke-static {p0, v1}, La24;->a0(Landroid/view/View;Landroid/view/View$OnClickListener;)V
+    return p0
+.end method
 
-    invoke-virtual {v5, p0}, Ls59;->r(Landroid/view/View;)Lpda;
+.method public final values()Ljava/util/Collection;
+    .locals 1
 
-    move-result-object v1
+    new-instance v0, Lzy5;
 
-    invoke-interface {v1}, Lpda;->c()Lord;
+    iget-object p0, p0, Larc;->a:Ldh9;
 
-    move-result-object v1
+    invoke-direct {v0, p0}, Lzy5;-><init>(Ldh9;)V
 
-    iget-object v1, v1, Lord;->a:Lnrd;
-
-    iget v1, v1, Lnrd;->f:I
-
-    new-instance v2, Landroid/graphics/drawable/ShapeDrawable;
-
-    new-instance v4, Landroid/graphics/drawable/shapes/OvalShape;
-
-    invoke-direct {v4}, Landroid/graphics/drawable/shapes/OvalShape;-><init>()V
-
-    invoke-direct {v2, v4}, Landroid/graphics/drawable/ShapeDrawable;-><init>(Landroid/graphics/drawable/shapes/Shape;)V
-
-    invoke-virtual {v2}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v0}, Landroid/graphics/Paint;->setColor(I)V
-
-    new-instance v0, Landroid/graphics/drawable/RippleDrawable;
-
-    invoke-static {v1}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1, v3, v2}, Landroid/graphics/drawable/RippleDrawable;-><init>(Landroid/content/res/ColorStateList;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-
-    invoke-virtual {p0, v0}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    return-object p0
-
-    :pswitch_1
-    sget-object p0, Lone/me/chatscreen/search/SearchMessageBottomWidget;->w0:[Lk77;
-
-    new-instance p0, Landroidx/appcompat/widget/AppCompatImageView;
-
-    invoke-virtual {v6}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
-
-    move-result-object v7
-
-    invoke-direct {p0, v7, v3}, Landroidx/appcompat/widget/AppCompatImageView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-
-    sget v7, Lj2a;->g:I
-
-    invoke-virtual {p0, v7}, Landroid/view/View;->setId(I)V
-
-    new-instance v7, Lre3;
-
-    int-to-float v2, v2
-
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v8
-
-    iget v8, v8, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr v8, v2
-
-    invoke-static {v8}, La24;->X(F)I
-
-    move-result v8
-
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v9
-
-    iget v9, v9, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr v2, v9
-
-    invoke-static {v2}, La24;->X(F)I
-
-    move-result v2
-
-    invoke-direct {v7, v8, v2}, Lre3;-><init>(II)V
-
-    invoke-virtual {p0, v7}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    sget v2, Li2a;->d:I
-
-    invoke-virtual {p0, v2}, Landroidx/appcompat/widget/AppCompatImageView;->setImageResource(I)V
-
-    invoke-virtual {v5, p0}, Ls59;->r(Landroid/view/View;)Lpda;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Lpda;->a()Ljo2;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljo2;->d()Lavf;
-
-    move-result-object v2
-
-    iget-object v2, v2, Lavf;->b:Ldvf;
-
-    iget v2, v2, Ldvf;->b:I
-
-    invoke-static {v2}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v2
-
-    invoke-virtual {p0, v2}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
-
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    sget v7, Lk2a;->i:I
-
-    invoke-virtual {v2, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p0, v2}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
-
-    int-to-float v1, v1
-
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v2
-
-    iget v2, v2, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr v1, v2
-
-    invoke-static {v1}, La24;->X(F)I
-
-    move-result v1
-
-    invoke-virtual {p0, v1, v1, v1, v1}, Landroid/view/View;->setPadding(IIII)V
-
-    new-instance v1, Lbrc;
-
-    invoke-direct {v1, v6, v4}, Lbrc;-><init>(Lone/me/chatscreen/search/SearchMessageBottomWidget;I)V
-
-    invoke-static {p0, v1}, La24;->a0(Landroid/view/View;Landroid/view/View$OnClickListener;)V
-
-    invoke-virtual {v5, p0}, Ls59;->r(Landroid/view/View;)Lpda;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Lpda;->c()Lord;
-
-    move-result-object v1
-
-    iget-object v1, v1, Lord;->a:Lnrd;
-
-    iget v1, v1, Lnrd;->f:I
-
-    new-instance v2, Landroid/graphics/drawable/ShapeDrawable;
-
-    new-instance v4, Landroid/graphics/drawable/shapes/OvalShape;
-
-    invoke-direct {v4}, Landroid/graphics/drawable/shapes/OvalShape;-><init>()V
-
-    invoke-direct {v2, v4}, Landroid/graphics/drawable/ShapeDrawable;-><init>(Landroid/graphics/drawable/shapes/Shape;)V
-
-    invoke-virtual {v2}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v0}, Landroid/graphics/Paint;->setColor(I)V
-
-    new-instance v0, Landroid/graphics/drawable/RippleDrawable;
-
-    invoke-static {v1}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1, v3, v2}, Landroid/graphics/drawable/RippleDrawable;-><init>(Landroid/content/res/ColorStateList;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-
-    invoke-virtual {p0, v0}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    return-object p0
-
-    :pswitch_2
-    sget-object p0, Lone/me/chatscreen/search/SearchMessageBottomWidget;->w0:[Lk77;
-
-    new-instance p0, Landroidx/appcompat/widget/AppCompatTextView;
-
-    invoke-virtual {v6}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0, v3}, Landroidx/appcompat/widget/AppCompatTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-
-    sget v0, Lj2a;->d:I
-
-    invoke-virtual {p0, v0}, Landroid/view/View;->setId(I)V
-
-    invoke-virtual {p0, v4}, Landroid/widget/TextView;->setMaxLines(I)V
-
-    sget-object v0, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
-
-    invoke-virtual {p0, v0}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
-
-    sget-object v0, Lnte;->m:Lnge;
-
-    invoke-static {v0, p0}, Lnge;->d(Lnge;Landroid/widget/TextView;)V
-
-    invoke-virtual {v5, p0}, Ls59;->r(Landroid/view/View;)Lpda;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lpda;->a()Ljo2;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljo2;->d()Lavf;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lavf;->b:Ldvf;
-
-    iget v0, v0, Ldvf;->b:I
-
-    invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
-
-    sget v0, Lk2a;->g:I
-
-    invoke-virtual {p0, v0}, Landroid/widget/TextView;->setText(I)V
-
-    new-instance v0, Lre3;
-
-    const/4 v1, -0x2
-
-    invoke-direct {v0, v1, v1}, Lre3;-><init>(II)V
-
-    invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

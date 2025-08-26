@@ -1,154 +1,288 @@
-.class public final synthetic Lw35;
+.class public final Lw35;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Llh7;
+.implements Lgpc;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:Lz35;
 
-.field public final synthetic b:Luxa;
+.field public Y:Z
+
+.field public Z:I
+
+.field public final a:Ldz5;
+
+.field public final b:Lkkc;
+
+.field public c:[J
+
+.field public o:Z
+
+.field public o0:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Luxa;I)V
-    .locals 0
-
-    iput p2, p0, Lw35;->a:I
-
-    iput-object p1, p0, Lw35;->b:Luxa;
+.method public constructor <init>(Lz35;Ldz5;Z)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p2, p0, Lw35;->a:Ldz5;
+
+    iput-object p1, p0, Lw35;->X:Lz35;
+
+    new-instance p2, Lkkc;
+
+    const/16 v0, 0x10
+
+    const/4 v1, 0x0
+
+    invoke-direct {p2, v0, v1}, Lkkc;-><init>(IB)V
+
+    iput-object p2, p0, Lw35;->b:Lkkc;
+
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
+
+    iput-wide v0, p0, Lw35;->o0:J
+
+    iget-object p2, p1, Lz35;->b:[J
+
+    iput-object p2, p0, Lw35;->c:[J
+
+    invoke-virtual {p0, p1, p3}, Lw35;->a(Lz35;Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
-    .locals 1
+.method public final a(Lz35;Z)V
+    .locals 8
 
-    iget v0, p0, Lw35;->a:I
+    iget v0, p0, Lw35;->Z:I
 
-    check-cast p1, Lhya;
+    const/4 v1, 0x1
 
-    packed-switch v0, :pswitch_data_0
+    const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    iget-object p0, p0, Lw35;->b:Luxa;
+    if-nez v0, :cond_0
 
-    iget-object p0, p0, Luxa;->o:Lwxa;
+    move-wide v4, v2
 
-    invoke-interface {p1, p0}, Lhya;->p0(Lwxa;)V
+    goto :goto_0
 
-    return-void
+    :cond_0
+    iget-object v4, p0, Lw35;->c:[J
 
-    :pswitch_0
-    iget-object p0, p0, Lw35;->b:Luxa;
+    sub-int/2addr v0, v1
 
-    invoke-virtual {p0}, Luxa;->k()Z
+    aget-wide v4, v4, v0
 
-    move-result p0
+    :goto_0
+    iput-boolean p2, p0, Lw35;->o:Z
 
-    invoke-interface {p1, p0}, Lhya;->n(Z)V
+    iput-object p1, p0, Lw35;->X:Lz35;
 
-    return-void
+    iget-object p1, p1, Lz35;->b:[J
 
-    :pswitch_1
-    iget-object p0, p0, Lw35;->b:Luxa;
+    iput-object p1, p0, Lw35;->c:[J
 
-    iget p0, p0, Luxa;->n:I
+    iget-wide v6, p0, Lw35;->o0:J
 
-    invoke-interface {p1, p0}, Lhya;->b(I)V
+    cmp-long p2, v6, v2
 
-    return-void
+    if-eqz p2, :cond_2
 
-    :pswitch_2
-    iget-object p0, p0, Lw35;->b:Luxa;
+    invoke-static {p1, v6, v7, v1}, Lnaf;->b([JJZ)I
 
-    iget-boolean v0, p0, Luxa;->l:Z
+    move-result p1
 
-    iget p0, p0, Luxa;->m:I
+    iput p1, p0, Lw35;->Z:I
 
-    invoke-interface {p1, p0, v0}, Lhya;->d(IZ)V
+    iget-boolean p2, p0, Lw35;->o:Z
 
-    return-void
+    if-eqz p2, :cond_1
 
-    :pswitch_3
-    iget-object p0, p0, Lw35;->b:Luxa;
+    iget-object p2, p0, Lw35;->c:[J
 
-    iget p0, p0, Luxa;->e:I
+    array-length p2, p2
 
-    invoke-interface {p1, p0}, Lhya;->h(I)V
+    if-ne p1, p2, :cond_1
 
-    return-void
+    move-wide v2, v6
 
-    :pswitch_4
-    iget-object p0, p0, Lw35;->b:Luxa;
-
-    iget-boolean v0, p0, Luxa;->l:Z
-
-    iget p0, p0, Luxa;->e:I
-
-    invoke-interface {p1, p0, v0}, Lhya;->l(IZ)V
+    :cond_1
+    iput-wide v2, p0, Lw35;->o0:J
 
     return-void
 
-    :pswitch_5
-    iget-object p0, p0, Lw35;->b:Luxa;
+    :cond_2
+    cmp-long p2, v4, v2
 
-    iget-boolean v0, p0, Luxa;->g:Z
+    if-eqz p2, :cond_3
 
-    invoke-interface {p1, v0}, Lhya;->o(Z)V
+    const/4 p2, 0x0
 
-    iget-boolean p0, p0, Luxa;->g:Z
+    invoke-static {p1, v4, v5, p2}, Lnaf;->b([JJZ)I
 
-    invoke-interface {p1, p0}, Lhya;->c(Z)V
+    move-result p1
+
+    iput p1, p0, Lw35;->Z:I
+
+    :cond_3
+    return-void
+.end method
+
+.method public final b()V
+    .locals 0
 
     return-void
+.end method
 
-    :pswitch_6
-    iget-object p0, p0, Lw35;->b:Luxa;
+.method public final c()Z
+    .locals 0
 
-    iget-object p0, p0, Luxa;->i:Lope;
+    const/4 p0, 0x1
 
-    iget-object p0, p0, Lope;->Y:Ljava/lang/Object;
+    return p0
+.end method
 
-    check-cast p0, Lspe;
+.method public final e(J)I
+    .locals 3
 
-    invoke-interface {p1, p0}, Lhya;->X(Lspe;)V
+    iget v0, p0, Lw35;->Z:I
 
-    return-void
+    iget-object v1, p0, Lw35;->c:[J
 
-    :pswitch_7
-    iget-object p0, p0, Lw35;->b:Luxa;
+    const/4 v2, 0x1
 
-    iget-object p0, p0, Luxa;->f:Landroidx/media3/exoplayer/ExoPlaybackException;
+    invoke-static {v1, p1, p2, v2}, Lnaf;->b([JJZ)I
 
-    invoke-interface {p1, p0}, Lhya;->x0(Landroidx/media3/common/PlaybackException;)V
+    move-result p1
 
-    return-void
+    invoke-static {v0, p1}, Ljava/lang/Math;->max(II)I
 
-    :pswitch_8
-    iget-object p0, p0, Lw35;->b:Luxa;
+    move-result p1
 
-    iget-object p0, p0, Luxa;->f:Landroidx/media3/exoplayer/ExoPlaybackException;
+    iget p2, p0, Lw35;->Z:I
 
-    invoke-interface {p1, p0}, Lhya;->r0(Landroidx/media3/common/PlaybackException;)V
+    sub-int p2, p1, p2
 
-    return-void
+    iput p1, p0, Lw35;->Z:I
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return p2
+.end method
+
+.method public final h(Lnz7;Lb64;I)I
+    .locals 6
+
+    iget v0, p0, Lw35;->Z:I
+
+    iget-object v1, p0, Lw35;->c:[J
+
+    array-length v1, v1
+
+    const/4 v2, 0x1
+
+    if-ne v0, v1, :cond_0
+
+    move v1, v2
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
+    const/4 v3, -0x4
+
+    const/4 v4, 0x4
+
+    if-eqz v1, :cond_1
+
+    iget-boolean v5, p0, Lw35;->o:Z
+
+    if-nez v5, :cond_1
+
+    iput v4, p2, Ldy;->b:I
+
+    return v3
+
+    :cond_1
+    and-int/lit8 v5, p3, 0x2
+
+    if-nez v5, :cond_6
+
+    iget-boolean v5, p0, Lw35;->Y:Z
+
+    if-nez v5, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    if-eqz v1, :cond_3
+
+    const/4 p0, -0x3
+
+    return p0
+
+    :cond_3
+    and-int/lit8 p1, p3, 0x1
+
+    if-nez p1, :cond_4
+
+    add-int/lit8 p1, v0, 0x1
+
+    iput p1, p0, Lw35;->Z:I
+
+    :cond_4
+    and-int/lit8 p1, p3, 0x4
+
+    if-nez p1, :cond_5
+
+    iget-object p1, p0, Lw35;->X:Lz35;
+
+    iget-object p1, p1, Lz35;->a:[Lt35;
+
+    aget-object p1, p1, v0
+
+    iget-object p3, p0, Lw35;->b:Lkkc;
+
+    invoke-virtual {p3, p1}, Lkkc;->T(Lt35;)[B
+
+    move-result-object p1
+
+    array-length p3, p1
+
+    invoke-virtual {p2, p3}, Lb64;->q(I)V
+
+    iget-object p3, p2, Lb64;->o:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {p3, p1}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
+
+    :cond_5
+    iget-object p0, p0, Lw35;->c:[J
+
+    aget-wide p0, p0, v0
+
+    iput-wide p0, p2, Lb64;->Y:J
+
+    iput v2, p2, Ldy;->b:I
+
+    return v3
+
+    :cond_6
+    :goto_1
+    iget-object p2, p0, Lw35;->a:Ldz5;
+
+    iput-object p2, p1, Lnz7;->c:Ljava/lang/Object;
+
+    iput-boolean v2, p0, Lw35;->Y:Z
+
+    const/4 p0, -0x5
+
+    return p0
 .end method

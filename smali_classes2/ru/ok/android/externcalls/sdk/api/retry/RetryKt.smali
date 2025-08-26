@@ -11,25 +11,25 @@
     d2 = {
         "",
         "T",
-        "Ldhd;",
+        "Ltod;",
         "",
         "isEnabled",
-        "Lxwb;",
+        "Ls1c;",
         "logger",
         "retryApiCallForOutgoing",
-        "(Ldhd;ZLxwb;)Ldhd;",
+        "(Ltod;ZLs1c;)Ltod;",
         "retryApiCallForJoining",
         "retryApiCallForIncoming",
         "retryApiCallForBackgroundWork",
         "retryApiCallForFastWorkRequired",
         "retryWithFastBackoff",
         "retryWithSlowBackoff",
-        "Lge0;",
+        "Ldf0;",
         "backoff",
         "retryApiWithBackoff",
-        "(Ldhd;ZLxwb;Lge0;)Ldhd;",
+        "(Ltod;ZLs1c;Ldf0;)Ltod;",
         "createFastBackoff",
-        "()Lge0;",
+        "()Ldf0;",
         "createSlowBackoff",
         "",
         "throwable",
@@ -46,6 +46,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -64,154 +65,146 @@
     return p0
 .end method
 
-.method private static final createFastBackoff()Lge0;
-    .locals 6
+.method private static final createFastBackoff()Ldf0;
+    .locals 4
 
-    new-instance v0, Lge0;
+    new-instance v0, Ldf0;
 
-    new-instance v1, Ll55;
+    new-instance v1, Lf85;
 
-    const-wide/16 v2, 0x0
+    const/16 v2, 0xf
 
-    const/4 v4, 0x0
-
-    const/16 v5, 0xf
-
-    invoke-direct {v1, v5, v2, v3, v4}, Ll55;-><init>(IJF)V
+    invoke-direct {v1, v2}, Lf85;-><init>(I)V
 
     const-wide/16 v2, 0x1388
 
-    invoke-direct {v0, v1, v2, v3}, Lge0;-><init>(Ll55;J)V
+    invoke-direct {v0, v1, v2, v3}, Ldf0;-><init>(Lf85;J)V
 
     return-object v0
 .end method
 
-.method private static final createSlowBackoff()Lge0;
-    .locals 6
+.method private static final createSlowBackoff()Ldf0;
+    .locals 4
 
-    new-instance v0, Lge0;
+    new-instance v0, Ldf0;
 
-    new-instance v1, Ll55;
+    new-instance v1, Lf85;
 
-    const-wide/16 v2, 0x3e8
+    const/16 v2, 0xa
 
-    const/high16 v4, 0x40000000    # 2.0f
-
-    const/16 v5, 0xa
-
-    invoke-direct {v1, v5, v2, v3, v4}, Ll55;-><init>(IJF)V
+    invoke-direct {v1, v2}, Lf85;-><init>(I)V
 
     const-wide/16 v2, 0x2710
 
-    invoke-direct {v0, v1, v2, v3}, Lge0;-><init>(Ll55;J)V
+    invoke-direct {v0, v1, v2, v3}, Ldf0;-><init>(Lf85;J)V
 
     return-object v0
 .end method
 
-.method public static final retryApiCallForBackgroundWork(Ldhd;ZLxwb;)Ldhd;
+.method public static final retryApiCallForBackgroundWork(Ltod;ZLs1c;)Ltod;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Ldhd;",
+            "Ltod;",
             "Z",
-            "Lxwb;",
+            "Ls1c;",
             ")",
-            "Ldhd;"
+            "Ltod;"
         }
     .end annotation
 
-    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt;->retryWithSlowBackoff(Ldhd;ZLxwb;)Ldhd;
+    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt;->retryWithSlowBackoff(Ltod;ZLs1c;)Ltod;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static final retryApiCallForFastWorkRequired(Ldhd;ZLxwb;)Ldhd;
+.method public static final retryApiCallForFastWorkRequired(Ltod;ZLs1c;)Ltod;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Ldhd;",
+            "Ltod;",
             "Z",
-            "Lxwb;",
+            "Ls1c;",
             ")",
-            "Ldhd;"
+            "Ltod;"
         }
     .end annotation
 
-    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt;->retryWithFastBackoff(Ldhd;ZLxwb;)Ldhd;
+    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt;->retryWithFastBackoff(Ltod;ZLs1c;)Ltod;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static final retryApiCallForIncoming(Ldhd;ZLxwb;)Ldhd;
+.method public static final retryApiCallForIncoming(Ltod;ZLs1c;)Ltod;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Ldhd;",
+            "Ltod;",
             "Z",
-            "Lxwb;",
+            "Ls1c;",
             ")",
-            "Ldhd;"
+            "Ltod;"
         }
     .end annotation
 
-    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt;->retryWithSlowBackoff(Ldhd;ZLxwb;)Ldhd;
+    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt;->retryWithSlowBackoff(Ltod;ZLs1c;)Ltod;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static final retryApiCallForJoining(Ldhd;ZLxwb;)Ldhd;
+.method public static final retryApiCallForJoining(Ltod;ZLs1c;)Ltod;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Ldhd;",
+            "Ltod;",
             "Z",
-            "Lxwb;",
+            "Ls1c;",
             ")",
-            "Ldhd;"
+            "Ltod;"
         }
     .end annotation
 
-    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt;->retryWithFastBackoff(Ldhd;ZLxwb;)Ldhd;
+    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt;->retryWithFastBackoff(Ltod;ZLs1c;)Ltod;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static final retryApiCallForOutgoing(Ldhd;ZLxwb;)Ldhd;
+.method public static final retryApiCallForOutgoing(Ltod;ZLs1c;)Ltod;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Ldhd;",
+            "Ltod;",
             "Z",
-            "Lxwb;",
+            "Ls1c;",
             ")",
-            "Ldhd;"
+            "Ltod;"
         }
     .end annotation
 
-    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt;->retryWithFastBackoff(Ldhd;ZLxwb;)Ldhd;
+    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt;->retryWithFastBackoff(Ltod;ZLs1c;)Ltod;
 
     move-result-object p0
 
@@ -227,63 +220,63 @@
 
     if-eqz v0, :cond_0
 
-    goto :goto_0
+    return v1
 
     :cond_0
     instance-of v0, p0, Ljava/net/ConnectException;
 
     if-eqz v0, :cond_1
 
-    goto :goto_0
+    return v1
 
     :cond_1
     instance-of v0, p0, Ljava/net/NoRouteToHostException;
 
     if-eqz v0, :cond_2
 
-    goto :goto_0
+    return v1
 
     :cond_2
     instance-of v0, p0, Ljava/net/SocketException;
 
     if-eqz v0, :cond_3
 
-    goto :goto_0
+    return v1
 
     :cond_3
     instance-of v0, p0, Ljavax/net/ssl/SSLProtocolException;
 
     if-eqz v0, :cond_4
 
-    goto :goto_0
+    return v1
 
     :cond_4
     instance-of v0, p0, Ljavax/net/ssl/SSLPeerUnverifiedException;
 
     if-eqz v0, :cond_5
 
-    goto :goto_0
+    return v1
 
     :cond_5
     instance-of v0, p0, Ljavax/net/ssl/SSLHandshakeException;
 
     if-eqz v0, :cond_6
 
-    goto :goto_0
+    return v1
 
     :cond_6
     instance-of v0, p0, Ljavax/net/ssl/SSLException;
 
     if-eqz v0, :cond_7
 
-    goto :goto_0
+    return v1
 
     :cond_7
     instance-of v0, p0, Ljava/net/HttpRetryException;
 
     if-eqz v0, :cond_8
 
-    goto :goto_0
+    return v1
 
     :cond_8
     instance-of v0, p0, Lru/ok/android/api/http/HttpStatusApiException;
@@ -298,47 +291,48 @@
 
     const/16 v0, 0x1f6
 
-    if-eq p0, v0, :cond_c
+    if-eq p0, v0, :cond_9
 
     const/16 v0, 0x1f8
 
-    if-eq p0, v0, :cond_c
+    if-eq p0, v0, :cond_9
+
+    return v2
 
     :cond_9
-    move v1, v2
-
-    goto :goto_0
+    return v1
 
     :cond_a
     instance-of v0, p0, Ljava/net/ProtocolException;
 
     if-eqz v0, :cond_b
 
-    goto :goto_0
+    return v1
 
     :cond_b
     instance-of p0, p0, Ljava/io/IOException;
 
-    if-eqz p0, :cond_9
+    if-eqz p0, :cond_c
+
+    return v1
 
     :cond_c
-    :goto_0
-    return v1
+    return v2
 .end method
 
-.method private static final retryApiWithBackoff(Ldhd;ZLxwb;Lge0;)Ldhd;
+.method private static final retryApiWithBackoff(Ltod;ZLs1c;Ldf0;)Ltod;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Ldhd;",
+            "Ltod;",
             "Z",
-            "Lxwb;",
-            "Lge0;",
+            "Ls1c;",
+            "Ldf0;",
             ")",
-            "Ldhd;"
+            "Ltod;"
         }
     .end annotation
 
@@ -348,99 +342,96 @@
 
     new-instance v3, Lru/ok/android/externcalls/sdk/api/retry/RetryKt$retryApiWithBackoff$2;
 
-    invoke-direct {v3, p2}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt$retryApiWithBackoff$2;-><init>(Lxwb;)V
+    invoke-direct {v3, p2}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt$retryApiWithBackoff$2;-><init>(Ls1c;)V
 
     new-instance v5, Lru/ok/android/externcalls/sdk/api/retry/RetryKt$retryApiWithBackoff$3;
 
-    invoke-direct {v5, p2}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt$retryApiWithBackoff$3;-><init>(Lxwb;)V
+    invoke-direct {v5, p2}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt$retryApiWithBackoff$3;-><init>(Ls1c;)V
 
-    invoke-static {}, Lcnc;->a()Lqmc;
+    invoke-static {}, Ltsc;->a()Lgsc;
 
     move-result-object v4
 
-    invoke-virtual {p0}, Ldhd;->n()Lms9;
+    invoke-virtual {p0}, Ltod;->n()Lvw9;
 
     move-result-object p0
 
-    new-instance p1, Lscc;
-
-    move-object v0, p1
+    new-instance v0, Lvhc;
 
     move-object v2, p3
 
-    invoke-direct/range {v0 .. v5}, Lscc;-><init>(Lu16;Lge0;Li26;Lqmc;Lu16;)V
+    invoke-direct/range {v0 .. v5}, Lvhc;-><init>(Lx56;Ldf0;Ll66;Lgsc;Lx56;)V
 
-    new-instance p2, Lau9;
+    new-instance p1, Lox9;
 
-    const/4 p3, 0x6
+    const/4 p2, 0x7
 
-    invoke-direct {p2, p0, p1, p3}, Lau9;-><init>(Lnv9;Lj26;I)V
+    invoke-direct {p1, p0, v0, p2}, Lox9;-><init>(Lvw9;Lm66;I)V
 
-    new-instance p0, Lmv9;
+    new-instance p0, Lpz9;
 
-    const/4 p1, 0x0
+    const/4 p2, 0x0
 
-    invoke-direct {p0, p1, p2}, Lmv9;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p0, p2, p1}, Lpz9;-><init>(ILjava/lang/Object;)V
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     const-string p1, "CallsApiRetry"
 
     const-string p3, "retry disabled"
 
-    invoke-interface {p2, p1, p3}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p2, p1, p3}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_0
     return-object p0
 .end method
 
-.method private static final retryWithFastBackoff(Ldhd;ZLxwb;)Ldhd;
+.method private static final retryWithFastBackoff(Ltod;ZLs1c;)Ltod;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Ldhd;",
+            "Ltod;",
             "Z",
-            "Lxwb;",
+            "Ls1c;",
             ")",
-            "Ldhd;"
+            "Ltod;"
         }
     .end annotation
 
-    invoke-static {}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt;->createFastBackoff()Lge0;
+    invoke-static {}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt;->createFastBackoff()Ldf0;
 
     move-result-object v0
 
-    invoke-static {p0, p1, p2, v0}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt;->retryApiWithBackoff(Ldhd;ZLxwb;Lge0;)Ldhd;
+    invoke-static {p0, p1, p2, v0}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt;->retryApiWithBackoff(Ltod;ZLs1c;Ldf0;)Ltod;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method private static final retryWithSlowBackoff(Ldhd;ZLxwb;)Ldhd;
+.method private static final retryWithSlowBackoff(Ltod;ZLs1c;)Ltod;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Ldhd;",
+            "Ltod;",
             "Z",
-            "Lxwb;",
+            "Ls1c;",
             ")",
-            "Ldhd;"
+            "Ltod;"
         }
     .end annotation
 
-    invoke-static {}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt;->createSlowBackoff()Lge0;
+    invoke-static {}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt;->createSlowBackoff()Ldf0;
 
     move-result-object v0
 
-    invoke-static {p0, p1, p2, v0}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt;->retryApiWithBackoff(Ldhd;ZLxwb;Lge0;)Ldhd;
+    invoke-static {p0, p1, p2, v0}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt;->retryApiWithBackoff(Ltod;ZLs1c;Ldf0;)Ltod;
 
     move-result-object p0
 

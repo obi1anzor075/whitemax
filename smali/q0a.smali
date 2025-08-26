@@ -2,20 +2,53 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/io/Closeable;
+
 
 # static fields
-.field public static final a:Lq0a;
+.field public static final b:Ljava/util/regex/Pattern;
+
+
+# instance fields
+.field public final a:Lsgc;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
-    new-instance v0, Lq0a;
+    const-string v0, "attachment;\\s*filename\\s*=\\s*\"([^\"]*)\""
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const/4 v1, 0x2
 
-    sput-object v0, Lq0a;->a:Lq0a;
+    invoke-static {v0, v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lq0a;->b:Ljava/util/regex/Pattern;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lsgc;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lq0a;->a:Lsgc;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final close()V
+    .locals 0
+
+    iget-object p0, p0, Lq0a;->a:Lsgc;
+
+    invoke-virtual {p0}, Lsgc;->close()V
 
     return-void
 .end method

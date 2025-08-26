@@ -34,7 +34,7 @@
         "defStyleAttr",
         "<init>",
         "(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-        "Ltc1;",
+        "Lee1;",
         "renderer",
         "Lorg/webrtc/RendererCommon$RendererEvents;",
         "rendererEvents",
@@ -42,23 +42,23 @@
         "drawer",
         "",
         "init",
-        "(Ltc1;Lorg/webrtc/RendererCommon$RendererEvents;Lorg/webrtc/RendererCommon$GlDrawer;)Z",
+        "(Lee1;Lorg/webrtc/RendererCommon$RendererEvents;Lorg/webrtc/RendererCommon$GlDrawer;)Z",
         "Lru/ok/android/externcalls/sdk/ui/FrameDecorator;",
         "frameDecorator",
-        "(Ltc1;Lorg/webrtc/RendererCommon$RendererEvents;Lru/ok/android/externcalls/sdk/ui/FrameDecorator;)Z",
+        "(Lee1;Lorg/webrtc/RendererCommon$RendererEvents;Lru/ok/android/externcalls/sdk/ui/FrameDecorator;)Z",
         "decorator",
-        "Ljue;",
+        "Le5f;",
         "setFrameDecorator",
         "(Lru/ok/android/externcalls/sdk/ui/FrameDecorator;)V",
         "Lkotlin/Function2;",
         "listener",
         "setFrameSizeListener",
-        "(Li26;)V",
+        "(Ll66;)V",
         "Lkotlin/Function1;",
         "Lorg/webrtc/VideoFrame;",
         "frameSkipCondition",
         "setFrameSkipCondition",
-        "(Lu16;)V",
+        "(Lx56;)V",
         "release",
         "()V",
         "mirror",
@@ -168,7 +168,7 @@
         "deliverPostponedFrameRunnable",
         "Lru/ok/android/externcalls/sdk/ui/FrameDecorator;",
         "frameSkipPredicate",
-        "Lu16;",
+        "Lx56;",
         "needsClearImage",
         "useAlternateLayout",
         "getUseAlternateLayout",
@@ -196,6 +196,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -222,10 +223,10 @@
 
 .field private frameDecorator:Lru/ok/android/externcalls/sdk/ui/FrameDecorator;
 
-.field private volatile frameSkipPredicate:Lu16;
+.field private volatile frameSkipPredicate:Lx56;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lu16;"
+            "Lx56;"
         }
     .end annotation
 .end field
@@ -287,7 +288,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$Companion;-><init>(Lx54;)V
+    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$Companion;-><init>(Ll94;)V
 
     sput-object v0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->Companion:Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$Companion;
 
@@ -310,7 +311,7 @@
 
     move-object v1, p1
 
-    invoke-direct/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;IILx54;)V
+    invoke-direct/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;IILl94;)V
 
     return-void
 .end method
@@ -331,13 +332,13 @@
 
     move-object v2, p2
 
-    invoke-direct/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;IILx54;)V
+    invoke-direct/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;IILl94;)V
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .locals 12
+    .locals 7
 
     .line 3
     invoke-direct {p0, p1, p2, p3}, Landroid/view/TextureView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
@@ -375,7 +376,7 @@
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->isFirstFrameRendered:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 8
-    new-instance p1, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$FrameSize;
+    new-instance v0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$FrameSize;
 
     const/4 v4, 0x7
 
@@ -387,30 +388,22 @@
 
     const/4 v3, 0x0
 
-    move-object v0, p1
+    invoke-direct/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$FrameSize;-><init>(IIIILl94;)V
 
-    invoke-direct/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$FrameSize;-><init>(IIIILx54;)V
-
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->rotatedFrameSize:Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$FrameSize;
+    iput-object v0, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->rotatedFrameSize:Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$FrameSize;
 
     .line 9
-    new-instance p1, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$FrameSize;
+    new-instance v1, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$FrameSize;
 
-    const/4 v10, 0x7
+    const/4 v5, 0x7
 
-    const/4 v11, 0x0
+    const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    const/4 v4, 0x0
 
-    const/4 v8, 0x0
+    invoke-direct/range {v1 .. v6}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$FrameSize;-><init>(IIIILl94;)V
 
-    const/4 v9, 0x0
-
-    move-object v6, p1
-
-    invoke-direct/range {v6 .. v11}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$FrameSize;-><init>(IIIILx54;)V
-
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->measureFrameSize:Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$FrameSize;
+    iput-object v1, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->measureFrameSize:Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$FrameSize;
 
     const/4 p1, 0x1
 
@@ -434,20 +427,20 @@
     iput-object p2, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->postponedFrame:Ljava/util/concurrent/atomic/AtomicReference;
 
     .line 13
-    new-instance p2, Lkhe;
+    new-instance p2, Lnpe;
 
     const/4 p3, 0x1
 
-    invoke-direct {p2, p0, p3}, Lkhe;-><init>(Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;I)V
+    invoke-direct {p2, p0, p3}, Lnpe;-><init>(Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;I)V
 
     iput-object p2, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->postponedFrameSafeguard:Ljava/lang/Runnable;
 
     .line 14
-    new-instance p2, Lkhe;
+    new-instance p2, Lnpe;
 
     const/4 p3, 0x2
 
-    invoke-direct {p2, p0, p3}, Lkhe;-><init>(Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;I)V
+    invoke-direct {p2, p0, p3}, Lnpe;-><init>(Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;I)V
 
     iput-object p2, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->deliverPostponedFrameRunnable:Ljava/lang/Runnable;
 
@@ -487,7 +480,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;IILx54;)V
+.method public synthetic constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;IILl94;)V
     .locals 0
 
     and-int/lit8 p5, p4, 0x2
@@ -574,10 +567,10 @@
     return-void
 .end method
 
-.method public static synthetic c(Li26;II)V
+.method public static synthetic c(Ll66;II)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->setFrameSizeListener$lambda$2(Li26;II)V
+    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->setFrameSizeListener$lambda$2(Ll66;II)V
 
     return-void
 .end method
@@ -625,7 +618,7 @@
 
     invoke-virtual {v0}, Lorg/webrtc/VideoFrame;->release()V
 
-    goto :goto_0
+    return-void
 
     :catchall_0
     move-exception p0
@@ -635,7 +628,6 @@
     throw p0
 
     :cond_1
-    :goto_0
     return-void
 .end method
 
@@ -727,12 +719,11 @@
     :try_end_0
     .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-object p0
 
     :catch_0
     const-string p0, ""
 
-    :goto_0
     return-object p0
 .end method
 
@@ -769,114 +760,113 @@
 
     invoke-direct/range {v1 .. v7}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->updateFrameDimensionsAndReportEvents(IIIIIZ)Z
 
-    move-result v0
+    move-result p0
 
-    if-nez v0, :cond_0
+    if-nez p0, :cond_0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->postponedFrameStatistics:Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$PostponedFrameStatistics;
+    iget-object p0, v1, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->postponedFrameStatistics:Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$PostponedFrameStatistics;
 
     invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$PostponedFrameStatistics;->rejected()V
 
     return-void
 
     :cond_0
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->layoutReadyToRender:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object p0, v1, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->layoutReadyToRender:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-    move-result v0
+    move-result p0
 
-    if-eqz v0, :cond_3
+    if-eqz p0, :cond_3
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->isFirstFrameRendered:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object p0, v1, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->isFirstFrameRendered:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    const/4 v1, 0x1
+    const/4 p2, 0x1
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, v2, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+    invoke-virtual {p0, v0, p2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
-    move-result v0
+    move-result p0
 
-    if-eqz v0, :cond_1
+    if-eqz p0, :cond_1
 
-    const-string v0, "Reporting first rendered frame."
+    const-string p0, "Reporting first rendered frame."
 
-    invoke-direct {p0, v0}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->logD(Ljava/lang/String;)V
+    invoke-direct {v1, p0}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->logD(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->rendererEvents:Lorg/webrtc/RendererCommon$RendererEvents;
+    iget-object p0, v1, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->rendererEvents:Lorg/webrtc/RendererCommon$RendererEvents;
 
-    if-eqz v0, :cond_1
+    if-eqz p0, :cond_1
 
-    invoke-interface {v0}, Lorg/webrtc/RendererCommon$RendererEvents;->onFirstFrameRendered()V
+    invoke-interface {p0}, Lorg/webrtc/RendererCommon$RendererEvents;->onFirstFrameRendered()V
 
     :cond_1
-    iget-boolean v0, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->needsClearImage:Z
+    iget-boolean p0, v1, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->needsClearImage:Z
 
-    if-eqz v0, :cond_2
+    if-eqz p0, :cond_2
 
-    iput-boolean v2, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->needsClearImage:Z
+    iput-boolean v0, v1, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->needsClearImage:Z
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->videoRenderer:Lru/ok/android/externcalls/sdk/ui/internal/VideoRendererInterface;
+    iget-object p0, v1, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->videoRenderer:Lru/ok/android/externcalls/sdk/ui/internal/VideoRendererInterface;
 
-    invoke-interface {v0}, Lru/ok/android/externcalls/sdk/ui/internal/VideoRendererInterface;->clearImage()V
+    invoke-interface {p0}, Lru/ok/android/externcalls/sdk/ui/internal/VideoRendererInterface;->clearImage()V
 
     :cond_2
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->videoRenderer:Lru/ok/android/externcalls/sdk/ui/internal/VideoRendererInterface;
+    iget-object p0, v1, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->videoRenderer:Lru/ok/android/externcalls/sdk/ui/internal/VideoRendererInterface;
 
-    invoke-interface {v0, p1}, Lru/ok/android/externcalls/sdk/ui/internal/VideoRendererInterface;->onFrame(Lorg/webrtc/VideoFrame;)V
+    invoke-interface {p0, p1}, Lru/ok/android/externcalls/sdk/ui/internal/VideoRendererInterface;->onFrame(Lorg/webrtc/VideoFrame;)V
 
-    invoke-direct {p0}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->dropPostponedFrameIfExists()V
+    invoke-direct {v1}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->dropPostponedFrameIfExists()V
 
-    if-eqz p2, :cond_4
+    if-eqz v7, :cond_4
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->postponedFrameStatistics:Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$PostponedFrameStatistics;
+    iget-object p0, v1, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->postponedFrameStatistics:Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$PostponedFrameStatistics;
 
     invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$PostponedFrameStatistics;->delivered()V
 
-    goto :goto_0
+    return-void
 
     :cond_3
-    invoke-virtual {p0}, Landroid/view/View;->getId()I
+    invoke-virtual {v1}, Landroid/view/View;->getId()I
 
-    move-result v0
+    move-result p0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance p2, Ljava/lang/StringBuilder;
 
-    const-string v2, "skipping frame for "
+    const-string v0, "skipping frame for "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {p2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v2, " - "
+    const-string v0, " - "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-direct {p0, v0}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->logD(Ljava/lang/String;)V
+    invoke-direct {v1, p0}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->logD(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
+    invoke-virtual {v1}, Landroid/view/View;->isAttachedToWindow()Z
 
-    move-result v0
+    move-result p0
 
-    if-eqz v0, :cond_4
+    if-eqz p0, :cond_4
 
-    invoke-virtual {p0}, Landroid/view/View;->isShown()Z
+    invoke-virtual {v1}, Landroid/view/View;->isShown()Z
 
-    move-result v0
+    move-result p0
 
-    if-eqz v0, :cond_4
+    if-eqz p0, :cond_4
 
-    invoke-direct {p0, p1, p2}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->postponeFrame(Lorg/webrtc/VideoFrame;Z)V
+    invoke-direct {v1, p1, v7}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->postponeFrame(Lorg/webrtc/VideoFrame;Z)V
 
     :cond_4
-    :goto_0
     return-void
 .end method
 
@@ -926,11 +916,11 @@
 .method private final notifyTextureSizeChanged()V
     .locals 2
 
-    new-instance v0, Lkhe;
+    new-instance v0, Lnpe;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lkhe;-><init>(Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;I)V
+    invoke-direct {v0, p0, v1}, Lnpe;-><init>(Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;I)V
 
     invoke-virtual {p0, v0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
@@ -1015,7 +1005,7 @@
     return-void
 .end method
 
-.method private static final setFrameSizeListener$lambda$2(Li26;II)V
+.method private static final setFrameSizeListener$lambda$2(Ll66;II)V
     .locals 0
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1026,7 +1016,7 @@
 
     move-result-object p2
 
-    invoke-interface {p0, p1, p2}, Li26;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p0, p1, p2}, Ll66;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
@@ -1097,11 +1087,11 @@
     invoke-interface {p6, p1, p2, p5}, Lorg/webrtc/RendererCommon$RendererEvents;->onFrameResolutionChanged(III)V
 
     :cond_2
-    new-instance p1, Las0;
+    new-instance p1, Lat0;
 
-    const/16 p2, 0x8
+    const/4 p2, 0x7
 
-    invoke-direct {p1, p0, p3, p4, p2}, Las0;-><init>(Ljava/lang/Object;III)V
+    invoke-direct {p1, p0, p3, p4, p2}, Lat0;-><init>(Ljava/lang/Object;III)V
 
     invoke-virtual {p0, p1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
@@ -1202,7 +1192,7 @@
     return p0
 .end method
 
-.method public init(Ltc1;Lorg/webrtc/RendererCommon$RendererEvents;Lorg/webrtc/RendererCommon$GlDrawer;)Z
+.method public init(Lee1;Lorg/webrtc/RendererCommon$RendererEvents;Lorg/webrtc/RendererCommon$GlDrawer;)Z
     .locals 2
 
     .line 1
@@ -1229,7 +1219,7 @@
     .line 5
     iget-object p2, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->videoRenderer:Lru/ok/android/externcalls/sdk/ui/internal/VideoRendererInterface;
 
-    invoke-interface {p2, p1, p3}, Lru/ok/android/externcalls/sdk/ui/internal/VideoRendererInterface;->init(Ltc1;Lorg/webrtc/RendererCommon$GlDrawer;)V
+    invoke-interface {p2, p1, p3}, Lru/ok/android/externcalls/sdk/ui/internal/VideoRendererInterface;->init(Lee1;Lorg/webrtc/RendererCommon$GlDrawer;)V
 
     const/4 p1, 0x1
 
@@ -1239,7 +1229,7 @@
     return p1
 .end method
 
-.method public init(Ltc1;Lorg/webrtc/RendererCommon$RendererEvents;Lru/ok/android/externcalls/sdk/ui/FrameDecorator;)Z
+.method public init(Lee1;Lorg/webrtc/RendererCommon$RendererEvents;Lru/ok/android/externcalls/sdk/ui/FrameDecorator;)Z
     .locals 0
 
     .line 7
@@ -1250,7 +1240,7 @@
 
     invoke-direct {p3}, Lorg/webrtc/GlRectDrawer;-><init>()V
 
-    invoke-virtual {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->init(Ltc1;Lorg/webrtc/RendererCommon$RendererEvents;Lorg/webrtc/RendererCommon$GlDrawer;)Z
+    invoke-virtual {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->init(Lee1;Lorg/webrtc/RendererCommon$RendererEvents;Lorg/webrtc/RendererCommon$GlDrawer;)Z
 
     move-result p0
 
@@ -1280,7 +1270,7 @@
 
     if-nez v0, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->frameDecorator:Lru/ok/android/externcalls/sdk/ui/FrameDecorator;
@@ -1289,11 +1279,11 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->frameSkipPredicate:Lu16;
+    iget-object v1, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->frameSkipPredicate:Lx56;
 
     if-eqz v1, :cond_1
 
-    invoke-interface {v1, p1}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v1, p1}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -1307,6 +1297,7 @@
 
     if-ne p1, v1, :cond_1
 
+    :goto_0
     return-void
 
     :cond_1
@@ -1545,12 +1536,12 @@
     return-void
 .end method
 
-.method public setFrameSizeListener(Li26;)V
+.method public setFrameSizeListener(Ll66;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Li26;",
+            "Ll66;",
             ")V"
         }
     .end annotation
@@ -1559,9 +1550,9 @@
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->videoRenderer:Lru/ok/android/externcalls/sdk/ui/internal/VideoRendererInterface;
 
-    new-instance v1, Llhe;
+    new-instance v1, Lope;
 
-    invoke-direct {v1, p1}, Llhe;-><init>(Li26;)V
+    invoke-direct {v1, p1}, Lope;-><init>(Ll66;)V
 
     iput-object v1, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->lastSizeListener:Lru/ok/android/externcalls/sdk/ui/internal/VideoRendererInterface$FrameSizeListener;
 
@@ -1570,17 +1561,17 @@
     return-void
 .end method
 
-.method public final setFrameSkipCondition(Lu16;)V
+.method public final setFrameSkipCondition(Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lu16;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->frameSkipPredicate:Lu16;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer;->frameSkipPredicate:Lx56;
 
     return-void
 .end method

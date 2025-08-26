@@ -1,14 +1,14 @@
 .class final synthetic Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$releaseAsync$1;
-.super Lx26;
+.super La76;
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Lv56;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->releaseAsync(Ls16;Lu16;)V
+    value = Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->releaseAsync(Lv56;Lx56;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,8 +18,8 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lx26;",
-        "Ls16;"
+        "La76;",
+        "Lv56;"
     }
 .end annotation
 
@@ -38,21 +38,21 @@
 .method public constructor <init>(Ljava/lang/Object;)V
     .locals 7
 
-    const-class v3, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;
-
-    const/4 v1, 0x0
-
-    const-string v5, "release"
-
     const-string v6, "release()V"
 
     const/4 v2, 0x0
+
+    const/4 v1, 0x0
+
+    const-class v3, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;
+
+    const-string v5, "release"
 
     move-object v0, p0
 
     move-object v4, p1
 
-    invoke-direct/range {v0 .. v6}, Lw26;-><init>(IILjava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v0 .. v6}, Lz66;-><init>(IILjava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -65,7 +65,7 @@
     .line 1
     invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$releaseAsync$1;->invoke()V
 
-    sget-object p0, Ljue;->a:Ljue;
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 .end method
@@ -74,7 +74,7 @@
     .locals 0
 
     .line 2
-    iget-object p0, p0, Lmn1;->receiver:Ljava/lang/Object;
+    iget-object p0, p0, Lcq1;->receiver:Ljava/lang/Object;
 
     check-cast p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;
 

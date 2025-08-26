@@ -178,7 +178,7 @@
 
     const-string v0, "Token start position must not be negative: "
 
-    invoke-static {p1, v0}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -245,7 +245,7 @@
 
     const-string v2, "Tokens without separator (pos "
 
-    invoke-static {p1, v2, v1}, Lme4;->m(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p1, v2, v1}, Lm26;->l(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -266,7 +266,7 @@
 
     const-string v2, "Invalid character after token (pos "
 
-    invoke-static {p1, v2, v1}, Lme4;->m(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p1, v2, v1}, Lm26;->l(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -290,7 +290,7 @@
 
     const-string v0, "Search position must not be negative: "
 
-    invoke-static {p1, v0}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -369,7 +369,7 @@
 
     const-string v2, "): "
 
-    invoke-static {p1, v1, v2}, Lme4;->m(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p1, v1, v2}, Lm26;->l(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -428,20 +428,19 @@
     :cond_6
     if-eqz v1, :cond_7
 
-    goto :goto_3
+    return p1
 
     :cond_7
-    const/4 p1, -0x1
+    const/4 p0, -0x1
 
-    :goto_3
-    return p1
+    return p0
 
     :cond_8
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Search position must not be negative: "
 
-    invoke-static {p1, v0}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -459,12 +458,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -481,12 +479,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -536,12 +533,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -563,13 +559,12 @@
     :cond_0
     const/4 p0, 0x0
 
-    goto :goto_1
+    return p0
 
     :cond_1
     :goto_0
     const/4 p0, 0x1
 
-    :goto_1
     return p0
 .end method
 

@@ -13,18 +13,18 @@
         "",
         "",
         "fileName",
-        "Lw2d;",
+        "Le9d;",
         "sessionRoomId",
         "Lkotlin/Function0;",
-        "Ljue;",
+        "Le5f;",
         "onSuccess",
         "Lkotlin/Function1;",
         "",
         "onError",
         "startRecord",
-        "(Ljava/lang/String;Lw2d;Ls16;Lu16;)V",
+        "(Ljava/lang/String;Le9d;Lv56;Lx56;)V",
         "stopRecord",
-        "(Lw2d;Ls16;Lu16;)V",
+        "(Le9d;Lv56;Lx56;)V",
         "Lru/ok/android/externcalls/sdk/asr/listener/AsrRecordListener;",
         "listener",
         "addAsrRecordListener",
@@ -38,11 +38,12 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # direct methods
-.method public static synthetic startRecord$default(Lru/ok/android/externcalls/sdk/asr/AsrManager;Ljava/lang/String;Lw2d;Ls16;Lu16;ILjava/lang/Object;)V
+.method public static synthetic startRecord$default(Lru/ok/android/externcalls/sdk/asr/AsrManager;Ljava/lang/String;Le9d;Lv56;Lx56;ILjava/lang/Object;)V
     .locals 1
 
     if-nez p6, :cond_3
@@ -70,7 +71,7 @@
     move-object p4, v0
 
     :cond_2
-    invoke-interface {p0, p1, p2, p3, p4}, Lru/ok/android/externcalls/sdk/asr/AsrManager;->startRecord(Ljava/lang/String;Lw2d;Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2, p3, p4}, Lru/ok/android/externcalls/sdk/asr/AsrManager;->startRecord(Ljava/lang/String;Le9d;Lv56;Lx56;)V
 
     return-void
 
@@ -84,7 +85,7 @@
     throw p0
 .end method
 
-.method public static synthetic stopRecord$default(Lru/ok/android/externcalls/sdk/asr/AsrManager;Lw2d;Ls16;Lu16;ILjava/lang/Object;)V
+.method public static synthetic stopRecord$default(Lru/ok/android/externcalls/sdk/asr/AsrManager;Le9d;Lv56;Lx56;ILjava/lang/Object;)V
     .locals 1
 
     if-nez p5, :cond_3
@@ -112,7 +113,7 @@
     move-object p3, v0
 
     :cond_2
-    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/asr/AsrManager;->stopRecord(Lw2d;Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/asr/AsrManager;->stopRecord(Le9d;Lv56;Lx56;)V
 
     return-void
 
@@ -134,26 +135,26 @@
 .method public abstract removeAsrRecordListener(Lru/ok/android/externcalls/sdk/asr/listener/AsrRecordListener;)V
 .end method
 
-.method public abstract startRecord(Ljava/lang/String;Lw2d;Ls16;Lu16;)V
+.method public abstract startRecord(Ljava/lang/String;Le9d;Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "Lw2d;",
-            "Ls16;",
-            "Lu16;",
+            "Le9d;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 .end method
 
-.method public abstract stopRecord(Lw2d;Ls16;Lu16;)V
+.method public abstract stopRecord(Le9d;Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw2d;",
-            "Ls16;",
-            "Lu16;",
+            "Le9d;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation

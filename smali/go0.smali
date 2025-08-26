@@ -1,29 +1,27 @@
 .class public final Lgo0;
-.super Ls05;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final w0:Ljava/lang/Thread;
+.field public final a:Landroid/graphics/Bitmap;
+
+.field public final b:Lg36;
+
+.field public final c:Lgi3;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Thread;)V
+.method public constructor <init>(Landroid/graphics/Bitmap;Lg36;Lgi3;)V
     .locals 0
 
-    invoke-direct {p0}, Ls05;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgo0;->w0:Ljava/lang/Thread;
+    iput-object p1, p0, Lgo0;->a:Landroid/graphics/Bitmap;
+
+    iput-object p2, p0, Lgo0;->b:Lg36;
+
+    iput-object p3, p0, Lgo0;->c:Lgi3;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final o()Ljava/lang/Thread;
-    .locals 0
-
-    iget-object p0, p0, Lgo0;->w0:Ljava/lang/Thread;
-
-    return-object p0
 .end method

@@ -50,16 +50,16 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lx54;)V
+.method public synthetic constructor <init>(Ll94;)V
     .locals 0
 
-    .line 2
+    .line 1
     invoke-direct {p0}, Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader$Companion;-><init>()V
 
     return-void
@@ -91,7 +91,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-static {}, Lek8;->w()Landroid/app/Application;
+    invoke-static {}, Lq14;->C()Landroid/app/Application;
 
     move-result-object p0
 
@@ -138,7 +138,7 @@
     goto :goto_1
 
     :cond_2
-    invoke-static {}, Lek8;->w()Landroid/app/Application;
+    invoke-static {}, Lq14;->C()Landroid/app/Application;
 
     move-result-object v1
 
@@ -146,7 +146,7 @@
 
     move-result-object v1
 
-    invoke-static {}, Lek8;->w()Landroid/app/Application;
+    invoke-static {}, Lq14;->C()Landroid/app/Application;
 
     move-result-object v2
 
@@ -211,32 +211,37 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_0
+    if-eqz p0, :cond_1
 
     invoke-virtual {p0}, Lru/ok/android/externcalls/analytics/config/CallAnalyticsConfig;->getEventMetaParams()Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;
 
     move-result-object p0
 
-    if-eqz p0, :cond_0
+    if-eqz p0, :cond_1
 
-    invoke-virtual {p0}, Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;->getAppName()Ls16;
+    invoke-virtual {p0}, Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;->getAppName()Lv56;
 
     move-result-object p0
 
-    if-eqz p0, :cond_0
+    if-eqz p0, :cond_1
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     move-result-object p0
 
     check-cast p0, Ljava/lang/String;
 
-    if-nez p0, :cond_1
+    if-nez p0, :cond_0
+
+    goto :goto_0
 
     :cond_0
-    const-string p0, "debug"
+    return-object p0
 
     :cond_1
+    :goto_0
+    const-string p0, "debug"
+
     return-object p0
 .end method
 

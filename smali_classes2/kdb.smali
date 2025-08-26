@@ -1,240 +1,82 @@
 .class public final Lkdb;
-.super Lu2;
+.super Lqde;
 .source "SourceFile"
 
+# interfaces
+.implements Ll66;
 
-# static fields
-.field public static final c:Lkdb;
+
+# instance fields
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Lone/me/profileedit/ProfileEditScreen;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lone/me/profileedit/ProfileEditScreen;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    new-instance v0, Lkdb;
+    iput-object p1, p0, Lkdb;->Y:Lone/me/profileedit/ProfileEditScreen;
 
-    const/16 v1, 0x8
+    const/4 p1, 0x2
 
-    invoke-direct {v0, v1}, Lu2;-><init>(I)V
-
-    sput-object v0, Lkdb;->c:Lkdb;
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
-.end method
-
-.method public static b2(JJ)La34;
-    .locals 2
-
-    const-string v0, ":profile/edit/admin_permission?chat_id="
-
-    const-string v1, "&contact_id="
-
-    invoke-static {p0, p1, v0, v1}, Lhr1;->k(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object p0
-
-    const-string p1, "&permissions_type=change_admin"
-
-    invoke-static {p0, p2, p3, p1}, Lwn6;->k(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance p1, La34;
-
-    invoke-direct {p1, p0}, La34;-><init>(Ljava/lang/String;)V
-
-    return-object p1
 .end method
 
 
 # virtual methods
-.method public final Z1(J)V
-    .locals 2
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    invoke-virtual {p0}, Lu2;->P1()Ld34;
+    check-cast p1, Ljava/util/List;
 
-    move-result-object p0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, ":profile/add-members?chat_id="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const/4 p2, 0x0
-
-    invoke-virtual {p0, p1, p2}, Ld34;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
-
-    return-void
-.end method
-
-.method public final a2(J)V
-    .locals 2
-
-    invoke-virtual {p0}, Lu2;->P1()Ld34;
+    invoke-virtual {p0, p1, p2}, Lkdb;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    const-string v0, ":chats?id="
+    check-cast p0, Lkdb;
 
-    const-string v1, "&type=local"
+    sget-object p1, Le5f;->a:Le5f;
 
-    invoke-static {p1, p2, v0, v1}, Lus8;->j(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Lkdb;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object p1
-
-    const/4 p2, 0x0
-
-    invoke-virtual {p0, p1, p2}, Ld34;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
-
-    return-void
+    return-object p1
 .end method
 
-.method public final c2(J)V
-    .locals 2
-
-    invoke-virtual {p0}, Lu2;->P1()Ld34;
-
-    move-result-object p0
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, ":profile/invite?id="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const/4 p2, 0x0
-
-    invoke-virtual {p0, p1, p2}, Ld34;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
-
-    return-void
-.end method
-
-.method public final d2(JLjava/lang/String;)V
-    .locals 2
-
-    invoke-virtual {p0}, Lu2;->P1()Ld34;
-
-    move-result-object p0
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, ":profile/members?id="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string p1, "&type="
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const/4 p2, 0x0
-
-    invoke-virtual {p0, p1, p2}, Ld34;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
-
-    return-void
-.end method
-
-.method public final e2(J)V
-    .locals 2
-
-    invoke-virtual {p0}, Lu2;->P1()Ld34;
-
-    move-result-object p0
-
-    new-instance v0, Lmn;
-
-    const/16 v1, 0xc
-
-    invoke-direct {v0, v1}, Lmn;-><init>(I)V
-
-    const-string v1, ":profile"
-
-    iput-object v1, v0, Lmn;->b:Ljava/lang/Object;
-
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p1
-
-    const-string p2, "id"
-
-    invoke-virtual {v0, p1, p2}, Lmn;->T(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string p1, "type"
-
-    const-string p2, "contact"
-
-    invoke-virtual {v0, p2, p1}, Lmn;->T(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Lmn;->u()Landroid/net/Uri;
-
-    move-result-object p1
-
-    const/4 p2, 0x0
-
-    invoke-virtual {p0, p1, p2}, Ld34;->c(Landroid/net/Uri;Landroid/os/Bundle;)Z
-
-    return-void
-.end method
-
-.method public final f2()V
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .locals 1
 
-    invoke-virtual {p0}, Lu2;->P1()Ld34;
+    new-instance v0, Lkdb;
 
-    move-result-object v0
+    iget-object p0, p0, Lkdb;->Y:Lone/me/profileedit/ProfileEditScreen;
 
-    invoke-virtual {v0}, Ld34;->d()Z
+    invoke-direct {v0, p0, p2}, Lkdb;-><init>(Lone/me/profileedit/ProfileEditScreen;Lkotlin/coroutines/Continuation;)V
 
-    move-result v0
+    iput-object p1, v0, Lkdb;->X:Ljava/lang/Object;
 
-    if-nez v0, :cond_0
+    return-object v0
+.end method
 
-    invoke-virtual {p0}, Lu2;->P1()Ld34;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    move-result-object p0
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    invoke-virtual {p0}, Ld34;->a()Lv24;
+    iget-object p1, p0, Lkdb;->X:Ljava/lang/Object;
 
-    move-result-object p0
+    check-cast p1, Ljava/util/List;
 
-    check-cast p0, Ly3a;
+    iget-object p0, p0, Lkdb;->Y:Lone/me/profileedit/ProfileEditScreen;
 
-    invoke-virtual {p0}, Ly3a;->f()Lygc;
+    iget-object p0, p0, Lone/me/profileedit/ProfileEditScreen;->X:Ld4g;
 
-    move-result-object p0
+    invoke-virtual {p0, p1}, Lhl7;->E(Ljava/util/List;)V
 
-    invoke-interface {p0}, Lygc;->C()Lsgc;
+    sget-object p0, Le5f;->a:Le5f;
 
-    move-result-object p0
-
-    invoke-virtual {p0}, Lsgc;->d()Landroid/app/Activity;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_0
-
-    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
-
-    :cond_0
-    return-void
+    return-object p0
 .end method

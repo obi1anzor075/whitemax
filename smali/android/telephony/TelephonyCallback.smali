@@ -1,6 +1,5 @@
 .class public synthetic Landroid/telephony/TelephonyCallback;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # direct methods

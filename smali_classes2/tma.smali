@@ -2,53 +2,30 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lqne;
-
 
 # instance fields
-.field public final a:Z
+.field public final a:I
 
-.field public final b:I
+.field public final b:Lsma;
+
+.field public final c:J
+
+.field public final d:Lqma;
 
 
 # direct methods
-.method public constructor <init>(Log0;)V
-    .locals 1
+.method public constructor <init>(ILsma;JLqma;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p1, Log0;->c:Ljava/lang/Object;
+    iput p1, p0, Ltma;->a:I
 
-    check-cast v0, Ljava/lang/Boolean;
+    iput-object p2, p0, Ltma;->b:Lsma;
 
-    if-eqz v0, :cond_0
+    iput-wide p3, p0, Ltma;->c:J
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    iput-boolean v0, p0, Ltma;->a:Z
-
-    iget p1, p1, Log0;->b:I
-
-    iput p1, p0, Ltma;->b:I
+    iput-object p5, p0, Ltma;->d:Lqma;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final a()Lx3a;
-    .locals 0
-
-    sget-object p0, Lr1g;->c:Lx3a;
-
-    return-object p0
 .end method

@@ -17,57 +17,57 @@
         "Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;",
         "signalingProvider",
         "Lkotlin/Function0;",
-        "Lqb1;",
+        "Lad1;",
         "mediaOptionsDelegate",
         "<init>",
-        "(Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;Ls16;)V",
+        "(Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;Lv56;)V",
         "Lkotlin/Function1;",
         "",
-        "Ljue;",
+        "Le5f;",
         "onError",
-        "Lmfd;",
+        "Ldnd;",
         "getSignalingOrPassExceptionToOnError",
-        "(Lu16;)Lmfd;",
+        "(Lx56;)Ldnd;",
         "",
         "method",
         "Lorg/json/JSONObject;",
         "errorResponse",
         "parseErrorResponse",
-        "(Ljava/lang/String;Lorg/json/JSONObject;Lu16;)V",
+        "(Ljava/lang/String;Lorg/json/JSONObject;Lx56;)V",
         "value",
-        "Lc79;",
+        "Lyb9;",
         "parseMovieType",
-        "(Ljava/lang/String;)Lc79;",
-        "Lw69;",
+        "(Ljava/lang/String;)Lyb9;",
+        "Lsb9;",
         "movieId",
-        "Lk79;",
+        "Lgc9;",
         "volume",
-        "La79;",
+        "Lwb9;",
         "meta",
         "",
         "moveToAdminOnHangup",
         "onSuccess",
         "play-yj_a6ag",
-        "(Lw69;FLa79;ZLs16;Lu16;)V",
+        "(Lsb9;FLwb9;ZLv56;Lx56;)V",
         "play",
         "stop",
-        "(Lw69;Ls16;Lu16;)V",
+        "(Lsb9;Lv56;Lx56;)V",
         "pause",
         "resume",
         "isMuted",
         "setVolume-F2PwOSs",
-        "(Lw69;FZLs16;Lu16;)V",
+        "(Lsb9;FZLv56;Lx56;)V",
         "setVolume",
         "setMuted",
-        "(Lw69;ZLs16;Lu16;)V",
+        "(Lsb9;ZLv56;Lx56;)V",
         "",
         "position",
         "Ljava/util/concurrent/TimeUnit;",
         "unit",
         "setPosition",
-        "(Lw69;JLjava/util/concurrent/TimeUnit;Ls16;Lu16;)V",
+        "(Lsb9;JLjava/util/concurrent/TimeUnit;Lv56;Lx56;)V",
         "Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;",
-        "Ls16;",
+        "Lv56;",
         "calls-sdk_release"
     }
     k = 0x1
@@ -76,14 +76,15 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
-.field private final mediaOptionsDelegate:Ls16;
+.field private final mediaOptionsDelegate:Lv56;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 .end field
@@ -92,13 +93,13 @@
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;Ls16;)V
+.method public constructor <init>(Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;Lv56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;",
-            "Ls16;",
+            "Lv56;",
             ")V"
         }
     .end annotation
@@ -107,81 +108,81 @@
 
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->signalingProvider:Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;
 
-    iput-object p2, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->mediaOptionsDelegate:Ls16;
+    iput-object p2, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->mediaOptionsDelegate:Lv56;
 
     return-void
 .end method
 
-.method public static synthetic a(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;Lorg/json/JSONObject;)V
+.method public static synthetic a(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->pause$lambda$5(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->pause$lambda$5(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method public static synthetic b(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;Lorg/json/JSONObject;)V
+.method public static synthetic b(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->setPosition$lambda$13(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->setPosition$lambda$13(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method public static synthetic c(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;Lorg/json/JSONObject;)V
+.method public static synthetic c(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->setMuted$lambda$11(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->setMuted$lambda$11(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method public static synthetic d(Ls16;Lorg/json/JSONObject;)V
+.method public static synthetic d(Lv56;Lorg/json/JSONObject;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->play_yj_a6ag$lambda$0(Ls16;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->play_yj_a6ag$lambda$0(Lv56;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method public static synthetic e(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;Lorg/json/JSONObject;)V
+.method public static synthetic e(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->play_yj_a6ag$lambda$1(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->play_yj_a6ag$lambda$1(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method public static synthetic f(Ls16;Lorg/json/JSONObject;)V
+.method public static synthetic f(Lv56;Lorg/json/JSONObject;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->resume$lambda$6(Ls16;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->resume$lambda$6(Lv56;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method public static synthetic g(Ls16;Lorg/json/JSONObject;)V
+.method public static synthetic g(Lv56;Lorg/json/JSONObject;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->stop$lambda$2(Ls16;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->stop$lambda$2(Lv56;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method private final getSignalingOrPassExceptionToOnError(Lu16;)Lmfd;
+.method private final getSignalingOrPassExceptionToOnError(Lx56;)Ldnd;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lu16;",
+            "Lx56;",
             ")",
-            "Lmfd;"
+            "Ldnd;"
         }
     .end annotation
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->signalingProvider:Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;
 
-    invoke-interface {p0}, Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;->getSignaling()Lmfd;
+    invoke-interface {p0}, Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;->getSignaling()Ldnd;
 
     move-result-object p0
 
@@ -193,7 +194,7 @@
 
     invoke-direct {p0}, Lru/ok/android/externcalls/sdk/exceptions/ConversationNotPreparedException;-><init>()V
 
-    invoke-interface {p1, p0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, p0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
     const/4 p0, 0x0
@@ -202,70 +203,70 @@
     return-object p0
 .end method
 
-.method public static synthetic h(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;Lorg/json/JSONObject;)V
+.method public static synthetic h(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->stop$lambda$3(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->stop$lambda$3(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method public static synthetic i(Ls16;Lorg/json/JSONObject;)V
+.method public static synthetic i(Lv56;Lorg/json/JSONObject;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->setPosition$lambda$12(Ls16;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->setPosition$lambda$12(Lv56;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method public static synthetic j(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;Lorg/json/JSONObject;)V
+.method public static synthetic j(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->setVolume_F2PwOSs$lambda$9(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->setVolume_F2PwOSs$lambda$9(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method public static synthetic k(Ls16;Lorg/json/JSONObject;)V
+.method public static synthetic k(Lv56;Lorg/json/JSONObject;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->setVolume_F2PwOSs$lambda$8(Ls16;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->setVolume_F2PwOSs$lambda$8(Lv56;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method public static synthetic l(Ls16;Lorg/json/JSONObject;)V
+.method public static synthetic l(Lv56;Lorg/json/JSONObject;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->pause$lambda$4(Ls16;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->pause$lambda$4(Lv56;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method public static synthetic m(Ls16;Lorg/json/JSONObject;)V
+.method public static synthetic m(Lv56;Lorg/json/JSONObject;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->setMuted$lambda$10(Ls16;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->setMuted$lambda$10(Lv56;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method public static synthetic n(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;Lorg/json/JSONObject;)V
+.method public static synthetic n(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->resume$lambda$7(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->resume$lambda$7(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method private final parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lu16;)V
+.method private final parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lx56;)V
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
             "Lorg/json/JSONObject;",
-            "Lu16;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -278,7 +279,7 @@
 
     const-string v0, "movie-limit-exceeded"
 
-    invoke-static {p0, v0}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, v0}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -294,7 +295,7 @@
     :cond_0
     const-string v0, "movie-not-found"
 
-    invoke-static {p0, v0}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, v0}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -312,23 +313,23 @@
     :goto_1
     if-eqz p3, :cond_2
 
-    new-instance p0, Lru/ok/android/externcalls/sdk/watch_together/exceptions/WatchTogetherException;
+    new-instance v0, Lru/ok/android/externcalls/sdk/watch_together/exceptions/WatchTogetherException;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance p0, Ljava/lang/StringBuilder;
 
     const-string v2, "Error response for "
 
-    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string p1, " command "
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -338,213 +339,210 @@
 
     const/4 v3, 0x0
 
-    move-object v0, p0
+    invoke-direct/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/watch_together/exceptions/WatchTogetherException;-><init>(Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherError;Ljava/lang/String;Ljava/lang/Throwable;ILl94;)V
 
-    invoke-direct/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/watch_together/exceptions/WatchTogetherException;-><init>(Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherError;Ljava/lang/String;Ljava/lang/Throwable;ILx54;)V
-
-    invoke-interface {p3, p0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, v0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_2
     return-void
 .end method
 
-.method private final parseMovieType(Ljava/lang/String;)Lc79;
+.method private final parseMovieType(Ljava/lang/String;)Lyb9;
     .locals 0
 
     const-string p0, "MOVIE"
 
-    invoke-static {p1, p0}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p1, p0}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
     if-eqz p0, :cond_0
 
-    sget-object p0, Lc79;->a:Lc79;
+    sget-object p0, Lyb9;->a:Lyb9;
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     const-string p0, "STREAM"
 
-    invoke-static {p1, p0}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p1, p0}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
     if-eqz p0, :cond_1
 
-    sget-object p0, Lc79;->b:Lc79;
+    sget-object p0, Lyb9;->b:Lyb9;
 
-    goto :goto_0
+    return-object p0
 
     :cond_1
     const/4 p0, 0x0
 
-    :goto_0
     return-object p0
 .end method
 
-.method private static final pause$lambda$4(Ls16;Lorg/json/JSONObject;)V
+.method private static final pause$lambda$4(Lv56;Lorg/json/JSONObject;)V
     .locals 0
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     :cond_0
     return-void
 .end method
 
-.method private static final pause$lambda$5(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;Lorg/json/JSONObject;)V
+.method private static final pause$lambda$5(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
     .locals 1
 
     const-string v0, "pause"
 
-    invoke-direct {p0, v0, p2, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lu16;)V
+    invoke-direct {p0, v0, p2, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lx56;)V
 
     return-void
 .end method
 
-.method private static final play_yj_a6ag$lambda$0(Ls16;Lorg/json/JSONObject;)V
+.method private static final play_yj_a6ag$lambda$0(Lv56;Lorg/json/JSONObject;)V
     .locals 0
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     :cond_0
     return-void
 .end method
 
-.method private static final play_yj_a6ag$lambda$1(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;Lorg/json/JSONObject;)V
+.method private static final play_yj_a6ag$lambda$1(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
     .locals 1
 
     const-string v0, "play"
 
-    invoke-direct {p0, v0, p2, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lu16;)V
+    invoke-direct {p0, v0, p2, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lx56;)V
 
     return-void
 .end method
 
-.method private static final resume$lambda$6(Ls16;Lorg/json/JSONObject;)V
+.method private static final resume$lambda$6(Lv56;Lorg/json/JSONObject;)V
     .locals 0
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     :cond_0
     return-void
 .end method
 
-.method private static final resume$lambda$7(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;Lorg/json/JSONObject;)V
+.method private static final resume$lambda$7(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
     .locals 1
 
     const-string v0, "resume"
 
-    invoke-direct {p0, v0, p2, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lu16;)V
+    invoke-direct {p0, v0, p2, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lx56;)V
 
     return-void
 .end method
 
-.method private static final setMuted$lambda$10(Ls16;Lorg/json/JSONObject;)V
+.method private static final setMuted$lambda$10(Lv56;Lorg/json/JSONObject;)V
     .locals 0
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     :cond_0
     return-void
 .end method
 
-.method private static final setMuted$lambda$11(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;Lorg/json/JSONObject;)V
+.method private static final setMuted$lambda$11(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
     .locals 1
 
     const-string v0, "setMute"
 
-    invoke-direct {p0, v0, p2, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lu16;)V
+    invoke-direct {p0, v0, p2, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lx56;)V
 
     return-void
 .end method
 
-.method private static final setPosition$lambda$12(Ls16;Lorg/json/JSONObject;)V
+.method private static final setPosition$lambda$12(Lv56;Lorg/json/JSONObject;)V
     .locals 0
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     :cond_0
     return-void
 .end method
 
-.method private static final setPosition$lambda$13(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;Lorg/json/JSONObject;)V
+.method private static final setPosition$lambda$13(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
     .locals 1
 
     const-string v0, "setPosition"
 
-    invoke-direct {p0, v0, p2, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lu16;)V
+    invoke-direct {p0, v0, p2, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lx56;)V
 
     return-void
 .end method
 
-.method private static final setVolume_F2PwOSs$lambda$8(Ls16;Lorg/json/JSONObject;)V
+.method private static final setVolume_F2PwOSs$lambda$8(Lv56;Lorg/json/JSONObject;)V
     .locals 0
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     :cond_0
     return-void
 .end method
 
-.method private static final setVolume_F2PwOSs$lambda$9(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;Lorg/json/JSONObject;)V
+.method private static final setVolume_F2PwOSs$lambda$9(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
     .locals 1
 
     const-string v0, "setVolume"
 
-    invoke-direct {p0, v0, p2, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lu16;)V
+    invoke-direct {p0, v0, p2, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lx56;)V
 
     return-void
 .end method
 
-.method private static final stop$lambda$2(Ls16;Lorg/json/JSONObject;)V
+.method private static final stop$lambda$2(Lv56;Lorg/json/JSONObject;)V
     .locals 0
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     :cond_0
     return-void
 .end method
 
-.method private static final stop$lambda$3(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;Lorg/json/JSONObject;)V
+.method private static final stop$lambda$3(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
     .locals 1
 
     const-string v0, "stop"
 
-    invoke-direct {p0, v0, p2, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lu16;)V
+    invoke-direct {p0, v0, p2, p1}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lx56;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public pause(Lw69;Ls16;Lu16;)V
+.method public pause(Lsb9;Lv56;Lx56;)V
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw69;",
-            "Ls16;",
-            "Lu16;",
+            "Lsb9;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
-    invoke-direct {p0, p3}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->getSignalingOrPassExceptionToOnError(Lu16;)Lmfd;
+    invoke-direct {p0, p3}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->getSignalingOrPassExceptionToOnError(Lx56;)Ldnd;
 
     move-result-object v0
 
@@ -553,7 +551,7 @@
     return-void
 
     :cond_0
-    iget-wide v1, p1, Lw69;->a:J
+    iget-wide v1, p1, Lsb9;->a:J
 
     new-instance p1, Lorg/json/JSONObject;
 
@@ -575,73 +573,71 @@
 
     invoke-virtual {p1, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
 
-    new-instance v1, Lx66;
+    new-instance v1, Lva6;
 
-    invoke-direct {v1, p1}, Lx66;-><init>(Lorg/json/JSONObject;)V
+    invoke-direct {v1, p1}, Lva6;-><init>(Lorg/json/JSONObject;)V
 
-    new-instance p1, Lps;
+    new-instance p1, Lat;
 
-    const/16 v2, 0x16
+    const/16 v2, 0x14
 
-    invoke-direct {p1, v2, p2}, Lps;-><init>(ILs16;)V
+    invoke-direct {p1, v2, p2}, Lat;-><init>(ILv56;)V
 
-    new-instance p2, Lnef;
+    new-instance p2, Ljsf;
 
     const/4 v2, 0x1
 
-    invoke-direct {p2, p0, p3, v2}, Lnef;-><init>(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;I)V
+    invoke-direct {p2, p0, p3, v2}, Ljsf;-><init>(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;I)V
 
     const/4 p0, 0x0
 
-    invoke-virtual {v0, v1, p0, p1, p2}, Lmfd;->d(Lpfd;ZLlfd;Llfd;)V
+    invoke-virtual {v0, v1, p0, p1, p2}, Ldnd;->d(Lgnd;ZLcnd;Lcnd;)V
 
     return-void
 .end method
 
-.method public play-yj_a6ag(Lw69;FLa79;ZLs16;Lu16;)V
-    .locals 8
+.method public play-yj_a6ag(Lsb9;FLwb9;ZLv56;Lx56;)V
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw69;",
+            "Lsb9;",
             "F",
-            "La79;",
+            "Lwb9;",
             "Z",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
-    iget-object p3, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->mediaOptionsDelegate:Ls16;
+    iget-object p3, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->mediaOptionsDelegate:Lv56;
 
-    invoke-interface {p3}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p3}, Lv56;->invoke()Ljava/lang/Object;
 
     move-result-object p3
 
-    check-cast p3, Lqb1;
+    check-cast p3, Lad1;
 
     if-eqz p3, :cond_1
 
-    new-instance v7, Lzn1;
+    new-instance v0, Lpq1;
 
-    iget-object v4, p3, Lqb1;->i:Lac9;
-
-    const-class v3, Lac9;
-
-    const-string v5, "movieSharingState"
-
-    const-string v6, "getMovieSharingState()Lru/ok/android/webrtc/media_options/MediaOptionState;"
+    iget-object v4, p3, Lad1;->h:Lrg9;
 
     const/4 v1, 0x0
 
     const/16 v2, 0xc
 
-    move-object v0, v7
+    const-class v3, Lrg9;
 
-    invoke-direct/range {v0 .. v6}, Lzn1;-><init>(IILjava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
+    const-string v5, "movieSharingState"
 
-    invoke-static {v7}, Lqb1;->d(Lgc9;)Z
+    const-string v6, "getMovieSharingState()Lru/ok/android/webrtc/media_options/MediaOptionState;"
+
+    invoke-direct/range {v0 .. v6}, Lpq1;-><init>(IILjava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {v0}, Lad1;->d(Lah9;)Z
 
     move-result p3
 
@@ -649,67 +645,67 @@
 
     if-ne p3, v0, :cond_1
 
-    invoke-direct {p0, p6}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->getSignalingOrPassExceptionToOnError(Lu16;)Lmfd;
+    invoke-direct {p0, p6}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->getSignalingOrPassExceptionToOnError(Lx56;)Ldnd;
 
     move-result-object p3
 
     if-nez p3, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
-    new-instance v0, Lorg/json/JSONObject;
+    iget-wide v0, p1, Lsb9;->a:J
 
-    invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
+    new-instance p1, Lorg/json/JSONObject;
 
-    const-string v1, "command"
+    invoke-direct {p1}, Lorg/json/JSONObject;-><init>()V
 
-    const-string v2, "add-movie"
+    const-string v2, "command"
 
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    const-string v3, "add-movie"
 
-    const-string v1, "movieId"
+    invoke-virtual {p1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    iget-wide v2, p1, Lw69;->a:J
+    const-string v2, "movieId"
 
-    invoke-virtual {v0, v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
+    invoke-virtual {p1, v2, v0, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
 
-    float-to-double p1, p2
+    float-to-double v0, p2
 
-    const-string v1, "gain"
+    const-string p2, "gain"
 
-    invoke-virtual {v0, v1, p1, p2}, Lorg/json/JSONObject;->put(Ljava/lang/String;D)Lorg/json/JSONObject;
+    invoke-virtual {p1, p2, v0, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;D)Lorg/json/JSONObject;
 
-    const-string p1, "moveToAdminOnHangup"
+    const-string p2, "moveToAdminOnHangup"
 
-    invoke-virtual {v0, p1, p4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
+    invoke-virtual {p1, p2, p4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
 
-    new-instance p1, Lx66;
+    new-instance p2, Lva6;
 
-    invoke-direct {p1, v0}, Lx66;-><init>(Lorg/json/JSONObject;)V
+    invoke-direct {p2, p1}, Lva6;-><init>(Lorg/json/JSONObject;)V
 
-    new-instance p2, Lps;
+    new-instance p1, Lat;
 
-    const/16 p4, 0x18
+    const/16 p4, 0x16
 
-    invoke-direct {p2, p4, p5}, Lps;-><init>(ILs16;)V
+    invoke-direct {p1, p4, p5}, Lat;-><init>(ILv56;)V
 
-    new-instance p4, Lnef;
+    new-instance p4, Ljsf;
 
     const/4 p5, 0x4
 
-    invoke-direct {p4, p0, p6, p5}, Lnef;-><init>(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;I)V
+    invoke-direct {p4, p0, p6, p5}, Ljsf;-><init>(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;I)V
 
     const/4 p0, 0x0
 
-    invoke-virtual {p3, p1, p0, p2, p4}, Lmfd;->d(Lpfd;ZLlfd;Llfd;)V
+    invoke-virtual {p3, p2, p0, p1, p4}, Ldnd;->d(Lgnd;ZLcnd;Lcnd;)V
 
     return-void
 
     :cond_1
     if-eqz p6, :cond_2
 
-    new-instance p0, Lru/ok/android/externcalls/sdk/watch_together/exceptions/WatchTogetherException;
+    new-instance v0, Lru/ok/android/externcalls/sdk/watch_together/exceptions/WatchTogetherException;
 
     sget-object v1, Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherError;->PLAY_NOT_ALLOWED:Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherError;
 
@@ -721,29 +717,28 @@
 
     const/4 v3, 0x0
 
-    move-object v0, p0
+    invoke-direct/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/watch_together/exceptions/WatchTogetherException;-><init>(Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherError;Ljava/lang/String;Ljava/lang/Throwable;ILl94;)V
 
-    invoke-direct/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/watch_together/exceptions/WatchTogetherException;-><init>(Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherError;Ljava/lang/String;Ljava/lang/Throwable;ILx54;)V
-
-    invoke-interface {p6, p0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p6, v0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_2
+    :goto_0
     return-void
 .end method
 
-.method public resume(Lw69;Ls16;Lu16;)V
+.method public resume(Lsb9;Lv56;Lx56;)V
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw69;",
-            "Ls16;",
-            "Lu16;",
+            "Lsb9;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
-    invoke-direct {p0, p3}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->getSignalingOrPassExceptionToOnError(Lu16;)Lmfd;
+    invoke-direct {p0, p3}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->getSignalingOrPassExceptionToOnError(Lx56;)Ldnd;
 
     move-result-object v0
 
@@ -752,7 +747,7 @@
     return-void
 
     :cond_0
-    iget-wide v1, p1, Lw69;->a:J
+    iget-wide v1, p1, Lsb9;->a:J
 
     new-instance p1, Lorg/json/JSONObject;
 
@@ -774,41 +769,41 @@
 
     invoke-virtual {p1, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
 
-    new-instance v1, Lx66;
+    new-instance v1, Lva6;
 
-    invoke-direct {v1, p1}, Lx66;-><init>(Lorg/json/JSONObject;)V
+    invoke-direct {v1, p1}, Lva6;-><init>(Lorg/json/JSONObject;)V
 
-    new-instance p1, Lps;
+    new-instance p1, Lat;
 
-    const/16 v3, 0x14
+    const/16 v3, 0x12
 
-    invoke-direct {p1, v3, p2}, Lps;-><init>(ILs16;)V
+    invoke-direct {p1, v3, p2}, Lat;-><init>(ILv56;)V
 
-    new-instance p2, Lnef;
+    new-instance p2, Ljsf;
 
     const/4 v3, 0x2
 
-    invoke-direct {p2, p0, p3, v3}, Lnef;-><init>(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;I)V
+    invoke-direct {p2, p0, p3, v3}, Ljsf;-><init>(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;I)V
 
-    invoke-virtual {v0, v1, v2, p1, p2}, Lmfd;->d(Lpfd;ZLlfd;Llfd;)V
+    invoke-virtual {v0, v1, v2, p1, p2}, Ldnd;->d(Lgnd;ZLcnd;Lcnd;)V
 
     return-void
 .end method
 
-.method public setMuted(Lw69;ZLs16;Lu16;)V
+.method public setMuted(Lsb9;ZLv56;Lx56;)V
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw69;",
+            "Lsb9;",
             "Z",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
-    invoke-direct {p0, p4}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->getSignalingOrPassExceptionToOnError(Lu16;)Lmfd;
+    invoke-direct {p0, p4}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->getSignalingOrPassExceptionToOnError(Lx56;)Ldnd;
 
     move-result-object v0
 
@@ -817,64 +812,64 @@
     return-void
 
     :cond_0
-    new-instance v1, Lorg/json/JSONObject;
+    iget-wide v1, p1, Lsb9;->a:J
 
-    invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
+    new-instance p1, Lorg/json/JSONObject;
 
-    const-string v2, "command"
+    invoke-direct {p1}, Lorg/json/JSONObject;-><init>()V
 
-    const-string v3, "update-movie"
+    const-string v3, "command"
 
-    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    const-string v4, "update-movie"
 
-    const-string v2, "movieId"
+    invoke-virtual {p1, v3, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    iget-wide v3, p1, Lw69;->a:J
+    const-string v3, "movieId"
 
-    invoke-virtual {v1, v2, v3, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
+    invoke-virtual {p1, v3, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
 
-    const-string p1, "mute"
+    const-string v1, "mute"
 
-    invoke-virtual {v1, p1, p2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
+    invoke-virtual {p1, v1, p2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
 
-    new-instance p1, Lx66;
+    new-instance p2, Lva6;
 
-    invoke-direct {p1, v1}, Lx66;-><init>(Lorg/json/JSONObject;)V
+    invoke-direct {p2, p1}, Lva6;-><init>(Lorg/json/JSONObject;)V
 
-    new-instance p2, Lps;
+    new-instance p1, Lat;
 
-    const/16 v1, 0x19
+    const/16 v1, 0x17
 
-    invoke-direct {p2, v1, p3}, Lps;-><init>(ILs16;)V
+    invoke-direct {p1, v1, p3}, Lat;-><init>(ILv56;)V
 
-    new-instance p3, Lnef;
+    new-instance p3, Ljsf;
 
     const/4 v1, 0x5
 
-    invoke-direct {p3, p0, p4, v1}, Lnef;-><init>(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;I)V
+    invoke-direct {p3, p0, p4, v1}, Ljsf;-><init>(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;I)V
 
     const/4 p0, 0x0
 
-    invoke-virtual {v0, p1, p0, p2, p3}, Lmfd;->d(Lpfd;ZLlfd;Llfd;)V
+    invoke-virtual {v0, p2, p0, p1, p3}, Ldnd;->d(Lgnd;ZLcnd;Lcnd;)V
 
     return-void
 .end method
 
-.method public setPosition(Lw69;JLjava/util/concurrent/TimeUnit;Ls16;Lu16;)V
+.method public setPosition(Lsb9;JLjava/util/concurrent/TimeUnit;Lv56;Lx56;)V
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw69;",
+            "Lsb9;",
             "J",
             "Ljava/util/concurrent/TimeUnit;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
-    invoke-direct {p0, p6}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->getSignalingOrPassExceptionToOnError(Lu16;)Lmfd;
+    invoke-direct {p0, p6}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->getSignalingOrPassExceptionToOnError(Lx56;)Ldnd;
 
     move-result-object v0
 
@@ -883,137 +878,67 @@
     return-void
 
     :cond_0
-    new-instance v1, Lorg/json/JSONObject;
+    iget-wide v1, p1, Lsb9;->a:J
 
-    invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
+    new-instance p1, Lorg/json/JSONObject;
 
-    const-string v2, "command"
+    invoke-direct {p1}, Lorg/json/JSONObject;-><init>()V
 
-    const-string v3, "update-movie"
+    const-string v3, "command"
 
-    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    const-string v4, "update-movie"
 
-    const-string v2, "movieId"
+    invoke-virtual {p1, v3, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    iget-wide v3, p1, Lw69;->a:J
+    const-string v3, "movieId"
 
-    invoke-virtual {v1, v2, v3, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
+    invoke-virtual {p1, v3, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
 
     invoke-virtual {p4, p2, p3}, Ljava/util/concurrent/TimeUnit;->toSeconds(J)J
 
-    move-result-wide p1
+    move-result-wide p2
 
-    const-string p3, "offset"
+    const-string p4, "offset"
 
-    invoke-virtual {v1, p3, p1, p2}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
+    invoke-virtual {p1, p4, p2, p3}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
 
-    new-instance p1, Lx66;
+    new-instance p2, Lva6;
 
-    invoke-direct {p1, v1}, Lx66;-><init>(Lorg/json/JSONObject;)V
+    invoke-direct {p2, p1}, Lva6;-><init>(Lorg/json/JSONObject;)V
 
-    new-instance p2, Lps;
-
-    const/16 p3, 0x17
-
-    invoke-direct {p2, p3, p5}, Lps;-><init>(ILs16;)V
-
-    new-instance p3, Lnef;
-
-    const/4 p4, 0x3
-
-    invoke-direct {p3, p0, p6, p4}, Lnef;-><init>(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;I)V
-
-    const/4 p0, 0x0
-
-    invoke-virtual {v0, p1, p0, p2, p3}, Lmfd;->d(Lpfd;ZLlfd;Llfd;)V
-
-    return-void
-.end method
-
-.method public setVolume-F2PwOSs(Lw69;FZLs16;Lu16;)V
-    .locals 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lw69;",
-            "FZ",
-            "Ls16;",
-            "Lu16;",
-            ")V"
-        }
-    .end annotation
-
-    invoke-direct {p0, p5}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->getSignalingOrPassExceptionToOnError(Lu16;)Lmfd;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    new-instance v1, Lorg/json/JSONObject;
-
-    invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
-
-    const-string v2, "command"
-
-    const-string v3, "update-movie"
-
-    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    const-string v2, "movieId"
-
-    iget-wide v3, p1, Lw69;->a:J
-
-    invoke-virtual {v1, v2, v3, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
-
-    float-to-double p1, p2
-
-    const-string v2, "gain"
-
-    invoke-virtual {v1, v2, p1, p2}, Lorg/json/JSONObject;->put(Ljava/lang/String;D)Lorg/json/JSONObject;
-
-    const-string p1, "mute"
-
-    invoke-virtual {v1, p1, p3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
-
-    new-instance p1, Lx66;
-
-    invoke-direct {p1, v1}, Lx66;-><init>(Lorg/json/JSONObject;)V
-
-    new-instance p2, Lps;
+    new-instance p1, Lat;
 
     const/16 p3, 0x15
 
-    invoke-direct {p2, p3, p4}, Lps;-><init>(ILs16;)V
+    invoke-direct {p1, p3, p5}, Lat;-><init>(ILv56;)V
 
-    new-instance p3, Lnef;
+    new-instance p3, Ljsf;
 
-    const/4 p4, 0x0
+    const/4 p4, 0x3
 
-    invoke-direct {p3, p0, p5, p4}, Lnef;-><init>(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;I)V
+    invoke-direct {p3, p0, p6, p4}, Ljsf;-><init>(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;I)V
 
     const/4 p0, 0x0
 
-    invoke-virtual {v0, p1, p0, p2, p3}, Lmfd;->d(Lpfd;ZLlfd;Llfd;)V
+    invoke-virtual {v0, p2, p0, p1, p3}, Ldnd;->d(Lgnd;ZLcnd;Lcnd;)V
 
     return-void
 .end method
 
-.method public stop(Lw69;Ls16;Lu16;)V
+.method public setVolume-F2PwOSs(Lsb9;FZLv56;Lx56;)V
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw69;",
-            "Ls16;",
-            "Lu16;",
+            "Lsb9;",
+            "FZ",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
-    invoke-direct {p0, p3}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->getSignalingOrPassExceptionToOnError(Lu16;)Lmfd;
+    invoke-direct {p0, p5}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->getSignalingOrPassExceptionToOnError(Lx56;)Ldnd;
 
     move-result-object v0
 
@@ -1022,41 +947,111 @@
     return-void
 
     :cond_0
-    new-instance v1, Lorg/json/JSONObject;
+    iget-wide v1, p1, Lsb9;->a:J
 
-    invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
+    new-instance p1, Lorg/json/JSONObject;
 
-    const-string v2, "command"
+    invoke-direct {p1}, Lorg/json/JSONObject;-><init>()V
 
-    const-string v3, "remove-movie"
+    const-string v3, "command"
 
-    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    const-string v4, "update-movie"
 
-    const-string v2, "movieId"
+    invoke-virtual {p1, v3, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    iget-wide v3, p1, Lw69;->a:J
+    const-string v3, "movieId"
 
-    invoke-virtual {v1, v2, v3, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
+    invoke-virtual {p1, v3, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
 
-    new-instance p1, Lx66;
+    float-to-double v1, p2
 
-    invoke-direct {p1, v1}, Lx66;-><init>(Lorg/json/JSONObject;)V
+    const-string p2, "gain"
 
-    new-instance v1, Lps;
+    invoke-virtual {p1, p2, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;D)Lorg/json/JSONObject;
 
-    const/16 v2, 0x1a
+    const-string p2, "mute"
 
-    invoke-direct {v1, v2, p2}, Lps;-><init>(ILs16;)V
+    invoke-virtual {p1, p2, p3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
 
-    new-instance p2, Lnef;
+    new-instance p2, Lva6;
 
-    const/4 v2, 0x6
+    invoke-direct {p2, p1}, Lva6;-><init>(Lorg/json/JSONObject;)V
 
-    invoke-direct {p2, p0, p3, v2}, Lnef;-><init>(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lu16;I)V
+    new-instance p1, Lat;
+
+    const/16 p3, 0x13
+
+    invoke-direct {p1, p3, p4}, Lat;-><init>(ILv56;)V
+
+    new-instance p3, Ljsf;
+
+    const/4 p4, 0x0
+
+    invoke-direct {p3, p0, p5, p4}, Ljsf;-><init>(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;I)V
 
     const/4 p0, 0x0
 
-    invoke-virtual {v0, p1, p0, v1, p2}, Lmfd;->d(Lpfd;ZLlfd;Llfd;)V
+    invoke-virtual {v0, p2, p0, p1, p3}, Ldnd;->d(Lgnd;ZLcnd;Lcnd;)V
+
+    return-void
+.end method
+
+.method public stop(Lsb9;Lv56;Lx56;)V
+    .locals 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lsb9;",
+            "Lv56;",
+            "Lx56;",
+            ")V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p3}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;->getSignalingOrPassExceptionToOnError(Lx56;)Ldnd;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-wide v1, p1, Lsb9;->a:J
+
+    new-instance p1, Lorg/json/JSONObject;
+
+    invoke-direct {p1}, Lorg/json/JSONObject;-><init>()V
+
+    const-string v3, "command"
+
+    const-string v4, "remove-movie"
+
+    invoke-virtual {p1, v3, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    const-string v3, "movieId"
+
+    invoke-virtual {p1, v3, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
+
+    new-instance v1, Lva6;
+
+    invoke-direct {v1, p1}, Lva6;-><init>(Lorg/json/JSONObject;)V
+
+    new-instance p1, Lat;
+
+    const/16 v2, 0x18
+
+    invoke-direct {p1, v2, p2}, Lat;-><init>(ILv56;)V
+
+    new-instance p2, Ljsf;
+
+    const/4 v2, 0x6
+
+    invoke-direct {p2, p0, p3, v2}, Ljsf;-><init>(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandExecutorImpl;Lx56;I)V
+
+    const/4 p0, 0x0
+
+    invoke-virtual {v0, v1, p0, p1, p2}, Ldnd;->d(Lgnd;ZLcnd;Lcnd;)V
 
     return-void
 .end method

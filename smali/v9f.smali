@@ -1,55 +1,97 @@
-.class public abstract Lv9f;
-.super Ljava/lang/Object;
+.class public final enum Lv9f;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
+# static fields
+.field public static final synthetic X:[Lv9f;
+
+.field public static final enum a:Lv9f;
+
+.field public static final enum b:Lv9f;
+
+.field public static final enum c:Lv9f;
+
+.field public static final enum o:Lv9f;
+
+
 # direct methods
-.method public static a(Landroid/view/View;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 6
 
-    invoke-virtual {p0}, Landroid/view/View;->cancelDragAndDrop()V
+    new-instance v0, Lv9f;
+
+    const-string v1, "ENABLED"
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lv9f;->a:Lv9f;
+
+    new-instance v1, Lv9f;
+
+    const-string v2, "DISABLED"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lv9f;->b:Lv9f;
+
+    new-instance v2, Lv9f;
+
+    const-string v3, "USER_IGNORED"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lv9f;->c:Lv9f;
+
+    new-instance v3, Lv9f;
+
+    const-string v4, "UNKNOWN"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lv9f;->o:Lv9f;
+
+    filled-new-array {v0, v1, v2, v3}, [Lv9f;
+
+    move-result-object v0
+
+    sput-object v0, Lv9f;->X:[Lv9f;
 
     return-void
 .end method
 
-.method public static b(Landroid/view/View;)V
-    .locals 0
+.method public static valueOf(Ljava/lang/String;)Lv9f;
+    .locals 1
 
-    invoke-virtual {p0}, Landroid/view/View;->dispatchFinishTemporaryDetach()V
+    const-class v0, Lv9f;
 
-    return-void
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    move-result-object p0
+
+    check-cast p0, Lv9f;
+
+    return-object p0
 .end method
 
-.method public static c(Landroid/view/View;)V
-    .locals 0
+.method public static values()[Lv9f;
+    .locals 1
 
-    invoke-virtual {p0}, Landroid/view/View;->dispatchStartTemporaryDetach()V
+    sget-object v0, Lv9f;->X:[Lv9f;
 
-    return-void
-.end method
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-.method public static d(Landroid/view/View;Landroid/view/PointerIcon;)V
-    .locals 0
+    move-result-object v0
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->setPointerIcon(Landroid/view/PointerIcon;)V
+    check-cast v0, [Lv9f;
 
-    return-void
-.end method
-
-.method public static e(Landroid/view/View;Landroid/content/ClipData;Landroid/view/View$DragShadowBuilder;Ljava/lang/Object;I)Z
-    .locals 0
-
-    invoke-virtual {p0, p1, p2, p3, p4}, Landroid/view/View;->startDragAndDrop(Landroid/content/ClipData;Landroid/view/View$DragShadowBuilder;Ljava/lang/Object;I)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static f(Landroid/view/View;Landroid/view/View$DragShadowBuilder;)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->updateDragShadow(Landroid/view/View$DragShadowBuilder;)V
-
-    return-void
+    return-object v0
 .end method

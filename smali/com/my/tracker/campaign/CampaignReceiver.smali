@@ -26,7 +26,8 @@
 
     if-nez p1, :cond_1
 
-    goto :goto_0
+    :goto_0
+    return-void
 
     :cond_1
     const-string v0, "referrer"
@@ -96,7 +97,6 @@
 
     invoke-static {p0}, Lcom/my/tracker/obfuscated/y0;->b(Ljava/lang/String;)V
 
-    :goto_0
     return-void
 .end method
 

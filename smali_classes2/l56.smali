@@ -3,98 +3,111 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/ViewStub$OnInflateListener;
+.implements Ljj3;
+.implements Lobg;
 
 
 # instance fields
-.field public final synthetic a:Lm56;
+.field public final synthetic a:Lru/ok/messages/views/fragments/FrgProfilePhoto;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lm56;)V
+.method public synthetic constructor <init>(Lru/ok/messages/views/fragments/FrgProfilePhoto;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ll56;->a:Lru/ok/messages/views/fragments/FrgProfilePhoto;
 
-    iput-object p1, p0, Ll56;->a:Lm56;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onInflate(Landroid/view/ViewStub;Landroid/view/View;)V
-    .locals 8
+.method public accept(Ljava/lang/Object;)V
+    .locals 2
 
-    sget p1, Ls9a;->b:I
+    check-cast p1, Ler8;
 
-    invoke-virtual {p2, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    iget-object p0, p0, Ll56;->a:Lru/ok/messages/views/fragments/FrgProfilePhoto;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object p1, p1, Ler8;->a:Lzs8;
+
+    iput-object p1, p0, Lru/ok/messages/views/fragments/FrgProfilePhoto;->B1:Lzs8;
+
+    invoke-virtual {p1}, Lzs8;->g()Ld10;
 
     move-result-object p1
 
-    sget v0, Ls9a;->a:I
+    iget-object p1, p1, Ld10;->f:Ljava/lang/String;
 
-    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    iget-object v0, p0, Lru/ok/messages/views/fragments/FrgProfilePhoto;->B1:Lzs8;
 
-    move-result-object p2
+    invoke-virtual {v0}, Lzs8;->g()Ld10;
 
-    move-object v1, p2
+    move-result-object v0
 
-    check-cast v1, Lone/me/sdk/gallery/view/NumericCheckButton;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object p0, p0, Ll56;->a:Lm56;
+    new-instance v0, Lru/ok/messages/views/ActProfilePhoto$a;
 
-    iput-object v1, p0, Lm56;->K0:Lone/me/sdk/gallery/view/NumericCheckButton;
+    invoke-static {p1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
-    iget-object p0, p0, Lb7c;->a:Landroid/view/View;
+    move-result-object p1
 
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    iget-object v1, p0, Lru/ok/messages/views/fragments/FrgProfilePhoto;->A1:Lru/ok/messages/views/ActProfilePhoto$a;
+
+    iget-object v1, v1, Lru/ok/messages/views/ActProfilePhoto$a;->c:Ljava/lang/String;
+
+    invoke-direct {v0, p1, v1}, Lru/ok/messages/views/ActProfilePhoto$a;-><init>(Ljava/util/List;Ljava/lang/String;)V
+
+    iput-object v0, p0, Lru/ok/messages/views/fragments/FrgProfilePhoto;->A1:Lru/ok/messages/views/ActProfilePhoto$a;
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lru/ok/messages/views/fragments/FrgProfilePhoto;->D1:Z
+
+    invoke-virtual {p0}, Lru/ok/messages/views/fragments/FrgProfilePhoto;->g1()V
+
+    return-void
+.end method
+
+.method public e(Ljava/lang/Throwable;)V
+    .locals 1
+
+    iget-object p0, p0, Ll56;->a:Lru/ok/messages/views/fragments/FrgProfilePhoto;
+
+    iget-object p1, p0, Lru/ok/messages/views/fragments/FrgProfilePhoto;->y1:Landroid/widget/ImageView;
+
+    const/4 v0, 0x4
+
+    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    iget-object p1, p0, Lru/ok/messages/views/fragments/FrgProfilePhoto;->z1:Lone/me/sdk/zoom/ZoomableDraweeView;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+
+    iget-object p1, p0, Lru/ok/messages/views/fragments/FrgProfilePhoto;->z1:Lone/me/sdk/zoom/ZoomableDraweeView;
+
+    invoke-virtual {p1, v0}, Lone/me/sdk/zoom/ZoomableDraweeView;->setZoomEnabled(Z)V
+
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->Q()Landroidx/fragment/app/b;
+
+    move-result-object p1
+
+    sget v0, Lnnc;->I:I
+
+    invoke-virtual {p0, v0}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    const/4 v0, 0x1
 
-    move-result-object p0
+    invoke-static {v0, p1, p0}, Lus;->F(ILandroid/content/Context;Ljava/lang/String;)V
 
-    const/16 p2, 0xa
-
-    int-to-float p2, p2
-
-    invoke-virtual {p0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object p0
-
-    iget p0, p0, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr p2, p0
-
-    invoke-static {p2}, La24;->X(F)I
-
-    move-result v5
-
-    if-nez p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, La93;
-
-    const/4 v7, 0x1
-
-    move-object v0, p0
-
-    move v2, v5
-
-    move v3, v5
-
-    move v4, v5
-
-    move-object v6, p1
-
-    invoke-direct/range {v0 .. v7}, La93;-><init>(Landroid/view/View;IIIILandroid/view/View;I)V
-
-    invoke-virtual {p1, p0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
-
-    :goto_0
     return-void
 .end method

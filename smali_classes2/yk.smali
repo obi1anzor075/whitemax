@@ -2,26 +2,54 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lfl;
-
 
 # virtual methods
-.method public getFailParser()Lh67;
+.method public getPriority()I
     .locals 0
 
-    sget-object p0, Loa2;->a:Loa2;
+    const/16 p0, 0x10
 
-    return-object p0
+    return p0
 .end method
 
-.method public abstract getOkParser()Lh67;
+.method public abstract getScope()Ldl;
 .end method
 
-.method public getScopeAfter()Lll;
+.method public abstract getUri()Landroid/net/Uri;
+.end method
+
+.method public shouldGzip()Z
     .locals 0
 
-    sget-object p0, Lll;->a:Lll;
+    const/4 p0, 0x0
 
-    return-object p0
+    return p0
+.end method
+
+.method public abstract shouldPost()Z
+.end method
+
+.method public willWriteParams()Z
+    .locals 0
+
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public willWriteSupplyParams()Z
+    .locals 0
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public abstract writeParams(Lkb7;)V
+.end method
+
+.method public writeSupplyParams(Lkb7;)V
+    .locals 0
+
+    return-void
 .end method

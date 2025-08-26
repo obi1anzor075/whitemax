@@ -4,10 +4,10 @@
 
 
 # static fields
-.field public static final PARSER:Lh67;
+.field public static final PARSER:Lza7;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lh67;"
+            "Lza7;"
         }
     .end annotation
 .end field
@@ -25,13 +25,13 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Lyc5;
+    new-instance v0, Lpf5;
 
-    const/16 v1, 0x1a
+    const/16 v1, 0x1c
 
-    invoke-direct {v0, v1}, Lyc5;-><init>(I)V
+    invoke-direct {v0, v1}, Lpf5;-><init>(I)V
 
-    sput-object v0, Lru/ok/android/externcalls/sdk/api/InternalIdResponse;->PARSER:Lh67;
+    sput-object v0, Lru/ok/android/externcalls/sdk/api/InternalIdResponse;->PARSER:Lza7;
 
     return-void
 .end method
@@ -50,7 +50,7 @@
     return-void
 .end method
 
-.method public static parse(Lm67;)Lru/ok/android/externcalls/sdk/api/InternalIdResponse;
+.method public static parse(Ldb7;)Lru/ok/android/externcalls/sdk/api/InternalIdResponse;
     .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -59,7 +59,7 @@
         }
     .end annotation
 
-    invoke-interface {p0}, Lm67;->s()V
+    invoke-interface {p0}, Ldb7;->s()V
 
     const-wide/16 v0, 0x0
 
@@ -68,32 +68,32 @@
     move-object v3, v2
 
     :goto_0
-    invoke-interface {p0}, Lm67;->hasNext()Z
+    invoke-interface {p0}, Ldb7;->hasNext()Z
 
     move-result v4
 
     if-eqz v4, :cond_3
 
-    invoke-interface {p0}, Lm67;->T()Ljava/lang/String;
+    invoke-interface {p0}, Ldb7;->name()Ljava/lang/String;
 
     move-result-object v4
 
     invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const/4 v5, -0x1
-
     invoke-virtual {v4}, Ljava/lang/String;->hashCode()I
 
-    move-result v6
+    move-result v5
 
-    sparse-switch v6, :sswitch_data_0
+    const/4 v6, -0x1
+
+    sparse-switch v5, :sswitch_data_0
 
     goto :goto_1
 
     :sswitch_0
-    const-string v6, "ok_id"
+    const-string v5, "ok_id"
 
-    invoke-virtual {v4, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
@@ -102,14 +102,14 @@
     goto :goto_1
 
     :cond_0
-    const/4 v5, 0x2
+    const/4 v6, 0x2
 
     goto :goto_1
 
     :sswitch_1
-    const-string v6, "error"
+    const-string v5, "error"
 
-    invoke-virtual {v4, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
@@ -118,14 +118,14 @@
     goto :goto_1
 
     :cond_1
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
     goto :goto_1
 
     :sswitch_2
-    const-string v6, "name"
+    const-string v5, "name"
 
-    invoke-virtual {v4, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
@@ -134,38 +134,38 @@
     goto :goto_1
 
     :cond_2
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
     :goto_1
-    packed-switch v5, :pswitch_data_0
+    packed-switch v6, :pswitch_data_0
 
-    invoke-interface {p0}, Lm67;->z()V
+    invoke-interface {p0}, Ldb7;->B()V
 
     goto :goto_0
 
     :pswitch_0
-    invoke-interface {p0}, Lm67;->w()J
+    invoke-interface {p0}, Ldb7;->y()J
 
     move-result-wide v0
 
     goto :goto_0
 
     :pswitch_1
-    invoke-interface {p0}, Lm67;->H()Ljava/lang/String;
+    invoke-interface {p0}, Ldb7;->H()Ljava/lang/String;
 
     move-result-object v3
 
     goto :goto_0
 
     :pswitch_2
-    invoke-interface {p0}, Lm67;->H()Ljava/lang/String;
+    invoke-interface {p0}, Ldb7;->H()Ljava/lang/String;
 
     move-result-object v2
 
     goto :goto_0
 
     :cond_3
-    invoke-interface {p0}, Lm67;->q()V
+    invoke-interface {p0}, Ldb7;->q()V
 
     new-instance p0, Lru/ok/android/externcalls/sdk/api/InternalIdResponse;
 

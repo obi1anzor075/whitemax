@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Li1f;
+.implements Lncf;
 
 
 # instance fields

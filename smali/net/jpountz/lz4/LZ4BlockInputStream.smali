@@ -29,7 +29,7 @@
 .method public constructor <init>(Ljava/io/InputStream;)V
     .locals 1
 
-    .line 14
+    .line 12
     invoke-static {}, Lnet/jpountz/lz4/LZ4Factory;->fastestInstance()Lnet/jpountz/lz4/LZ4Factory;
 
     move-result-object v0
@@ -47,15 +47,10 @@
     .locals 0
 
     .line 10
-    invoke-static {}, Lgvf;->f()Lgvf;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {}, Lrag;->s()Lrag;
 
     const/4 p0, 0x0
 
-    .line 11
     throw p0
 .end method
 
@@ -113,22 +108,17 @@
 .method public constructor <init>(Ljava/io/InputStream;Z)V
     .locals 0
 
-    .line 12
+    .line 11
     invoke-static {}, Lnet/jpountz/lz4/LZ4Factory;->fastestInstance()Lnet/jpountz/lz4/LZ4Factory;
 
     move-result-object p0
 
     invoke-virtual {p0}, Lnet/jpountz/lz4/LZ4Factory;->fastDecompressor()Lnet/jpountz/lz4/LZ4FastDecompressor;
 
-    invoke-static {}, Lgvf;->f()Lgvf;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {}, Lrag;->s()Lrag;
 
     const/4 p0, 0x0
 
-    .line 13
     throw p0
 .end method
 
@@ -260,7 +250,7 @@
     :goto_1
     add-int/lit8 v9, v3, 0x1
 
-    invoke-static {v9, v2}, Lnjc;->d(I[B)I
+    invoke-static {v9, v2}, Lwoc;->d(I[B)I
 
     move-result v2
 
@@ -268,7 +258,7 @@
 
     add-int/lit8 v10, v3, 0x5
 
-    invoke-static {v10, v9}, Lnjc;->d(I[B)I
+    invoke-static {v10, v9}, Lwoc;->d(I[B)I
 
     move-result v9
 
@@ -278,7 +268,7 @@
 
     add-int/lit8 v3, v3, 0x9
 
-    invoke-static {v3, v9}, Lnjc;->d(I[B)I
+    invoke-static {v3, v9}, Lwoc;->d(I[B)I
 
     move-result v3
 
@@ -319,12 +309,11 @@
 
     invoke-direct {p0}, Lnet/jpountz/lz4/LZ4BlockInputStream;->refill()V
 
-    goto :goto_2
+    return-void
 
     :cond_9
     iput-boolean v1, p0, Lnet/jpountz/lz4/LZ4BlockInputStream;->finished:Z
 
-    :goto_2
     return-void
 
     :cond_a
@@ -404,7 +393,7 @@
 
     if-ne v2, v1, :cond_e
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_e
     new-instance p0, Ljava/io/IOException;
@@ -416,7 +405,9 @@
     .catch Lnet/jpountz/lz4/LZ4Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
-    move-exception p0
+    move-exception v0
+
+    move-object p0, v0
 
     new-instance v0, Ljava/io/IOException;
 
@@ -438,7 +429,7 @@
 
     invoke-direct {p0, v1, v2}, Lnet/jpountz/lz4/LZ4BlockInputStream;->readFully([BI)V
 
-    :goto_3
+    :goto_2
     iget-object v1, p0, Lnet/jpountz/lz4/LZ4BlockInputStream;->checksum:Ljava/util/zip/Checksum;
 
     invoke-interface {v1}, Ljava/util/zip/Checksum;->reset()V
@@ -612,12 +603,12 @@
         }
     .end annotation
 
+    const/4 v0, 0x0
+
     .line 14
-    array-length v0, p1
+    array-length v1, p1
 
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, p1, v1, v0}, Lnet/jpountz/lz4/LZ4BlockInputStream;->read([BII)I
+    invoke-virtual {p0, p1, v0, v1}, Lnet/jpountz/lz4/LZ4BlockInputStream;->read([BII)I
 
     move-result p0
 
@@ -633,7 +624,7 @@
     .end annotation
 
     .line 6
-    invoke-static {p2, p1, p3}, Lnjc;->b(I[BI)V
+    invoke-static {p2, p1, p3}, Lwoc;->b(I[BI)V
 
     .line 7
     iget-boolean v0, p0, Lnet/jpountz/lz4/LZ4BlockInputStream;->finished:Z

@@ -3,91 +3,236 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lmx8;
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final synthetic X:Ljava/lang/Object;
+
+.field public final synthetic a:I
+
+.field public final synthetic b:Ljava/lang/String;
+
+.field public final synthetic c:J
+
+.field public final synthetic o:J
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>(Lcuf;Ljava/lang/String;JJ)V
+    .locals 1
 
+    const/4 v0, 0x1
+
+    iput v0, p0, Ljx8;->a:I
+
+    .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ljx8;->a:Ljava/lang/String;
+    iput-object p1, p0, Ljx8;->X:Ljava/lang/Object;
+
+    iput-object p2, p0, Ljx8;->b:Ljava/lang/String;
+
+    iput-wide p3, p0, Ljx8;->c:J
+
+    iput-wide p5, p0, Ljx8;->o:J
+
+    return-void
+.end method
+
+.method public constructor <init>(Llx8;JJLjava/lang/String;)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Ljx8;->a:I
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljx8;->X:Ljava/lang/Object;
+
+    iput-wide p2, p0, Ljx8;->c:J
+
+    iput-wide p4, p0, Ljx8;->o:J
+
+    iput-object p6, p0, Ljx8;->b:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+.method public final call()Ljava/lang/Object;
+    .locals 6
 
-    const/4 v0, 0x1
+    iget v0, p0, Ljx8;->a:I
 
-    if-ne p0, p1, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    return v0
+    iget-object v0, p0, Ljx8;->X:Ljava/lang/Object;
 
-    :cond_0
-    instance-of v1, p1, Ljx8;
+    check-cast v0, Lcuf;
 
-    const/4 v2, 0x0
+    iget-object v1, v0, Lcuf;->d:Lbjc;
 
-    if-nez v1, :cond_1
+    iget-object v0, v0, Lcuf;->a:Lkjc;
 
-    return v2
+    invoke-virtual {v1}, Lv2;->f()Lmce;
 
-    :cond_1
-    check-cast p1, Ljx8;
+    move-result-object v2
 
-    iget-object p0, p0, Ljx8;->a:Ljava/lang/String;
+    const/4 v3, 0x1
 
-    iget-object p1, p1, Ljx8;->a:Ljava/lang/String;
+    iget-object v4, p0, Ljx8;->b:Ljava/lang/String;
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-interface {v2, v3, v4}, Lkce;->f(ILjava/lang/String;)V
+
+    const/4 v3, 0x2
+
+    iget-wide v4, p0, Ljx8;->c:J
+
+    invoke-interface {v2, v3, v4, v5}, Lkce;->k(IJ)V
+
+    const/4 v3, 0x3
+
+    iget-wide v4, p0, Ljx8;->o:J
+
+    invoke-interface {v2, v3, v4, v5}, Lkce;->k(IJ)V
+
+    :try_start_0
+    invoke-virtual {v0}, Lkjc;->c()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :try_start_1
+    invoke-interface {v2}, Lmce;->C()I
 
     move-result p0
 
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    iget-object p0, p0, Ljx8;->a:Ljava/lang/String;
-
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ProcessBotCommand(botCommand="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Ljx8;->a:Ljava/lang/String;
-
-    const-string v1, ")"
-
-    invoke-static {v0, p0, v1}, Lwn6;->l(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
 
+    invoke-virtual {v0}, Lkjc;->q()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    :try_start_2
+    invoke-virtual {v0}, Lkjc;->k()V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    invoke-virtual {v1, v2}, Lv2;->u(Lmce;)V
+
     return-object p0
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_0
+
+    :catchall_1
+    move-exception p0
+
+    :try_start_3
+    invoke-virtual {v0}, Lkjc;->k()V
+
+    throw p0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    :goto_0
+    invoke-virtual {v1, v2}, Lv2;->u(Lmce;)V
+
+    throw p0
+
+    :pswitch_0
+    iget-object v0, p0, Ljx8;->X:Ljava/lang/Object;
+
+    check-cast v0, Llx8;
+
+    iget-object v1, v0, Llx8;->c:Lmh;
+
+    iget-object v0, v0, Llx8;->a:Lkjc;
+
+    invoke-virtual {v1}, Lv2;->f()Lmce;
+
+    move-result-object v2
+
+    const/4 v3, 0x1
+
+    iget-wide v4, p0, Ljx8;->c:J
+
+    invoke-interface {v2, v3, v4, v5}, Lkce;->k(IJ)V
+
+    const/4 v3, 0x2
+
+    iget-wide v4, p0, Ljx8;->o:J
+
+    invoke-interface {v2, v3, v4, v5}, Lkce;->k(IJ)V
+
+    const/4 v3, 0x3
+
+    iget-object p0, p0, Ljx8;->b:Ljava/lang/String;
+
+    if-nez p0, :cond_0
+
+    invoke-interface {v2, v3}, Lkce;->Z(I)V
+
+    goto :goto_1
+
+    :cond_0
+    invoke-interface {v2, v3, p0}, Lkce;->f(ILjava/lang/String;)V
+
+    :goto_1
+    :try_start_4
+    invoke-virtual {v0}, Lkjc;->c()V
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
+
+    :try_start_5
+    invoke-interface {v2}, Lmce;->C()I
+
+    invoke-virtual {v0}, Lkjc;->q()V
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_3
+
+    :try_start_6
+    invoke-virtual {v0}, Lkjc;->k()V
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_2
+
+    invoke-virtual {v1, v2}, Lv2;->u(Lmce;)V
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :catchall_2
+    move-exception p0
+
+    goto :goto_2
+
+    :catchall_3
+    move-exception p0
+
+    :try_start_7
+    invoke-virtual {v0}, Lkjc;->k()V
+
+    throw p0
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_2
+
+    :goto_2
+    invoke-virtual {v1, v2}, Lv2;->u(Lmce;)V
+
+    throw p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

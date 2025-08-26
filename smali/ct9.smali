@@ -1,211 +1,105 @@
-.class public final Lct9;
+.class public abstract Lct9;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lbw9;
-.implements Lxi4;
-
-
-# instance fields
-.field public X:Lxi4;
-
-.field public Y:Lbt9;
-
-.field public volatile Z:J
-
-.field public final a:Lbw9;
-
-.field public final b:J
-
-.field public final c:Ljava/util/concurrent/TimeUnit;
-
-.field public final o:Lomc;
-
-.field public w0:Z
-
 
 # direct methods
-.method public constructor <init>(Lzyc;Ljava/util/concurrent/TimeUnit;Lomc;)V
-    .locals 2
+.method public static a(Landroid/app/Notification$Builder;Landroid/app/Notification$Action;)Landroid/app/Notification$Builder;
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lct9;->a:Lbw9;
-
-    const-wide/16 v0, 0x3e8
-
-    iput-wide v0, p0, Lct9;->b:J
-
-    iput-object p2, p0, Lct9;->c:Ljava/util/concurrent/TimeUnit;
-
-    iput-object p3, p0, Lct9;->o:Lomc;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final b()V
-    .locals 1
-
-    iget-boolean v0, p0, Lct9;->w0:Z
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lct9;->w0:Z
-
-    iget-object v0, p0, Lct9;->Y:Lbt9;
-
-    if-eqz v0, :cond_1
-
-    invoke-static {v0}, Lbj4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
-
-    :cond_1
-    if-eqz v0, :cond_2
-
-    invoke-virtual {v0}, Lbt9;->run()V
-
-    :cond_2
-    iget-object v0, p0, Lct9;->a:Lbw9;
-
-    invoke-interface {v0}, Lbw9;->b()V
-
-    iget-object p0, p0, Lct9;->o:Lomc;
-
-    invoke-interface {p0}, Lxi4;->f()V
-
-    return-void
-.end method
-
-.method public final c(Ljava/lang/Object;)V
-    .locals 4
-
-    iget-boolean v0, p0, Lct9;->w0:Z
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-wide v0, p0, Lct9;->Z:J
-
-    const-wide/16 v2, 0x1
-
-    add-long/2addr v0, v2
-
-    iput-wide v0, p0, Lct9;->Z:J
-
-    iget-object v2, p0, Lct9;->Y:Lbt9;
-
-    if-eqz v2, :cond_1
-
-    invoke-static {v2}, Lbj4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
-
-    :cond_1
-    new-instance v2, Lbt9;
-
-    invoke-direct {v2, p1, v0, v1, p0}, Lbt9;-><init>(Ljava/lang/Object;JLct9;)V
-
-    iput-object v2, p0, Lct9;->Y:Lbt9;
-
-    iget-object p1, p0, Lct9;->o:Lomc;
-
-    iget-wide v0, p0, Lct9;->b:J
-
-    iget-object p0, p0, Lct9;->c:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {p1, v2, v0, v1, p0}, Lomc;->c(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Lxi4;
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->addAction(Landroid/app/Notification$Action;)Landroid/app/Notification$Builder;
 
     move-result-object p0
 
-    invoke-static {v2, p0}, Lbj4;->c(Ljava/util/concurrent/atomic/AtomicReference;Lxi4;)Z
-
-    return-void
+    return-object p0
 .end method
 
-.method public final d(Lxi4;)V
-    .locals 1
-
-    iget-object v0, p0, Lct9;->X:Lxi4;
-
-    invoke-static {v0, p1}, Lbj4;->g(Lxi4;Lxi4;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iput-object p1, p0, Lct9;->X:Lxi4;
-
-    iget-object p1, p0, Lct9;->a:Lbw9;
-
-    invoke-interface {p1, p0}, Lbw9;->d(Lxi4;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final f()V
-    .locals 1
-
-    iget-object v0, p0, Lct9;->X:Lxi4;
-
-    invoke-interface {v0}, Lxi4;->f()V
-
-    iget-object p0, p0, Lct9;->o:Lomc;
-
-    invoke-interface {p0}, Lxi4;->f()V
-
-    return-void
-.end method
-
-.method public final h()Z
+.method public static b(Landroid/app/Notification$Action$Builder;Landroid/os/Bundle;)Landroid/app/Notification$Action$Builder;
     .locals 0
 
-    iget-object p0, p0, Lct9;->o:Lomc;
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Action$Builder;->addExtras(Landroid/os/Bundle;)Landroid/app/Notification$Action$Builder;
 
-    invoke-interface {p0}, Lxi4;->h()Z
+    move-result-object p0
 
-    move-result p0
-
-    return p0
+    return-object p0
 .end method
 
-.method public final onError(Ljava/lang/Throwable;)V
+.method public static c(Landroid/app/Notification$Action$Builder;Landroid/app/RemoteInput;)Landroid/app/Notification$Action$Builder;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Action$Builder;->addRemoteInput(Landroid/app/RemoteInput;)Landroid/app/Notification$Action$Builder;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static d(Landroid/app/Notification$Action$Builder;)Landroid/app/Notification$Action;
+    .locals 0
+
+    invoke-virtual {p0}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static e(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)Landroid/app/Notification$Action$Builder;
     .locals 1
 
-    iget-boolean v0, p0, Lct9;->w0:Z
+    new-instance v0, Landroid/app/Notification$Action$Builder;
 
-    if-eqz v0, :cond_0
+    invoke-direct {v0, p0, p1, p2}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
-    invoke-static {p1}, Lxs7;->F(Ljava/lang/Throwable;)V
+    return-object v0
+.end method
 
-    return-void
+.method public static f(Landroid/app/Notification;)Ljava/lang/String;
+    .locals 0
 
-    :cond_0
-    iget-object v0, p0, Lct9;->Y:Lbt9;
+    invoke-virtual {p0}, Landroid/app/Notification;->getGroup()Ljava/lang/String;
 
-    if-eqz v0, :cond_1
+    move-result-object p0
 
-    invoke-static {v0}, Lbj4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
+    return-object p0
+.end method
 
-    :cond_1
-    const/4 v0, 0x1
+.method public static g(Landroid/app/Notification$Builder;Ljava/lang/String;)Landroid/app/Notification$Builder;
+    .locals 0
 
-    iput-boolean v0, p0, Lct9;->w0:Z
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setGroup(Ljava/lang/String;)Landroid/app/Notification$Builder;
 
-    iget-object v0, p0, Lct9;->a:Lbw9;
+    move-result-object p0
 
-    invoke-interface {v0, p1}, Lbw9;->onError(Ljava/lang/Throwable;)V
+    return-object p0
+.end method
 
-    iget-object p0, p0, Lct9;->o:Lomc;
+.method public static h(Landroid/app/Notification$Builder;Z)Landroid/app/Notification$Builder;
+    .locals 0
 
-    invoke-interface {p0}, Lxi4;->f()V
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setGroupSummary(Z)Landroid/app/Notification$Builder;
 
-    return-void
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static i(Landroid/app/Notification$Builder;Z)Landroid/app/Notification$Builder;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setLocalOnly(Z)Landroid/app/Notification$Builder;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static j(Landroid/app/Notification$Builder;Ljava/lang/String;)Landroid/app/Notification$Builder;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setSortKey(Ljava/lang/String;)Landroid/app/Notification$Builder;
+
+    move-result-object p0
+
+    return-object p0
 .end method

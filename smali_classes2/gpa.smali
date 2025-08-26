@@ -1,27 +1,27 @@
-.class public abstract Lgpa;
-.super Ljava/lang/Object;
+.class public final Lgpa;
+.super Lije;
 .source "SourceFile"
 
 
 # static fields
-.field public static final a:J
+.field public static final o:Lgpa;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 4
 
-    sget v0, Lzp4;->o:I
+    new-instance v0, Lgpa;
 
-    const v0, 0xea60
+    sget-object v1, Landroid/graphics/Paint$Cap;->BUTT:Landroid/graphics/Paint$Cap;
 
-    sget-object v1, Leq4;->c:Leq4;
+    const/16 v2, 0xb
 
-    invoke-static {v0, v1}, Lmt0;->P(ILeq4;)J
+    const-string v3, "strokeLineCap"
 
-    move-result-wide v0
+    invoke-direct {v0, v3, v2, v1}, Lije;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    sput-wide v0, Lgpa;->a:J
+    sput-object v0, Lgpa;->o:Lgpa;
 
     return-void
 .end method

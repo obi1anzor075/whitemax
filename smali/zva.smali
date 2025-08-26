@@ -1,86 +1,78 @@
-.class public final synthetic Lzva;
-.super Ljava/lang/Object;
+.class public final Lzva;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic a:Landroid/graphics/PointF;
-
-.field public final synthetic b:F
-
-.field public final synthetic c:F
-
-.field public final synthetic o:Lawa;
+.field public final synthetic X:Lone/me/chats/picker/chats/PickerChatsListWidget;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/graphics/PointF;FFLawa;)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chats/picker/chats/PickerChatsListWidget;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lzva;->X:Lone/me/chats/picker/chats/PickerChatsListWidget;
 
-    iput-object p1, p0, Lzva;->a:Landroid/graphics/PointF;
+    const/4 p2, 0x2
 
-    iput p2, p0, Lzva;->b:F
-
-    iput p3, p0, Lzva;->c:F
-
-    iput-object p4, p0, Lzva;->o:Lawa;
+    invoke-direct {p0, p2, p1}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 3
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    check-cast p1, Ljava/util/Set;
 
-    move-result-object p1
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    check-cast p1, Ljava/lang/Float;
+    invoke-virtual {p0, p1, p2}, Lzva;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+    move-result-object p0
 
-    move-result p1
+    check-cast p0, Lzva;
 
-    iget-object v0, p0, Lzva;->a:Landroid/graphics/PointF;
+    sget-object p1, Le5f;->a:Le5f;
 
-    iget v1, v0, Landroid/graphics/PointF;->x:F
+    invoke-virtual {p0, p1}, Lzva;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget v2, p0, Lzva;->b:F
+    return-object p1
+.end method
 
-    invoke-static {v2, v1, p1, v1}, Lus8;->g(FFFF)F
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
 
-    move-result v1
+    new-instance p1, Lzva;
 
-    iget v0, v0, Landroid/graphics/PointF;->y:F
+    iget-object p0, p0, Lzva;->X:Lone/me/chats/picker/chats/PickerChatsListWidget;
 
-    iget v2, p0, Lzva;->c:F
+    invoke-direct {p1, p2, p0}, Lzva;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chats/picker/chats/PickerChatsListWidget;)V
 
-    invoke-static {v2, v0, p1, v0}, Lus8;->g(FFFF)F
+    return-object p1
+.end method
 
-    move-result p1
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object p0, p0, Lzva;->o:Lawa;
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    iget-object v0, p0, Lawa;->b:Laf1;
+    sget-object p1, Lone/me/chats/picker/chats/PickerChatsListWidget;->y0:[Lbc7;
 
-    invoke-interface {v0, v1, p1}, Laf1;->x(FF)V
+    iget-object p0, p0, Lzva;->X:Lone/me/chats/picker/chats/PickerChatsListWidget;
 
-    iget-object p0, p0, Lawa;->c:Ll81;
+    invoke-virtual {p0}, Lone/me/chats/picker/chats/PickerChatsListWidget;->t0()Lone/me/sdk/lists/widgets/EndlessRecyclerView2;
 
-    check-cast p0, Lm81;
+    move-result-object p0
 
-    iget-object p0, p0, Lm81;->b:Landroid/graphics/PointF;
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->X()V
 
-    iput v1, p0, Landroid/graphics/PointF;->x:F
+    sget-object p0, Le5f;->a:Le5f;
 
-    iput p1, p0, Landroid/graphics/PointF;->y:F
-
-    return-void
+    return-object p0
 .end method

@@ -210,15 +210,13 @@
     :cond_6
     move-object v9, v0
 
-    new-instance p1, Lorg/apache/http/util/VersionInfo;
-
-    move-object v4, p1
+    new-instance v4, Lorg/apache/http/util/VersionInfo;
 
     move-object v5, p0
 
     invoke-direct/range {v4 .. v9}, Lorg/apache/http/util/VersionInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    return-object p1
+    return-object v4
 
     :cond_7
     new-instance p0, Ljava/lang/IllegalArgumentException;

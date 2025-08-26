@@ -112,7 +112,7 @@
 
     iput v2, p0, Lorg/webrtc/audio/LowLatencyAudioBufferManager;->ticksUntilNextDecrease:I
 
-    goto :goto_0
+    return-void
 
     :cond_1
     iget-boolean v0, p0, Lorg/webrtc/audio/LowLatencyAudioBufferManager;->keepLoweringBufferSize:Z
@@ -169,6 +169,5 @@
     iput v2, p0, Lorg/webrtc/audio/LowLatencyAudioBufferManager;->ticksUntilNextDecrease:I
 
     :cond_3
-    :goto_0
     return-void
 .end method

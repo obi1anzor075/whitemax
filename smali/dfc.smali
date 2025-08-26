@@ -1,146 +1,107 @@
 .class public final Ldfc;
-.super Lyh7;
+.super Lffc;
 .source "SourceFile"
 
 
 # instance fields
-.field public final l:Laec;
+.field public final Y:Li2c;
 
-.field public final m:Lnu7;
-
-.field public final n:Z
-
-.field public final o:Ljava/util/concurrent/Callable;
-
-.field public final p:Lwu3;
-
-.field public final q:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field public final r:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field public final s:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field public final t:Lcfc;
-
-.field public final u:Lcfc;
+.field public final Z:Lsag;
 
 
 # direct methods
-.method public constructor <init>(Laec;Lnu7;Lauf;[Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>(Ldz5;Lxw6;Ly0d;Ljava/util/ArrayList;)V
+    .locals 6
 
-    invoke-direct {p0}, Lyh7;-><init>()V
+    invoke-direct {p0, p1, p2, p3, p4}, Lffc;-><init>(Ldz5;Ljava/util/List;La1d;Ljava/util/List;)V
 
-    iput-object p1, p0, Ldfc;->l:Laec;
+    const/4 p1, 0x0
 
-    iput-object p2, p0, Ldfc;->m:Lnu7;
+    invoke-interface {p2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    const/4 p1, 0x1
+    move-result-object p1
 
-    iput-boolean p1, p0, Ldfc;->n:Z
+    check-cast p1, Lfk0;
 
-    iput-object p3, p0, Ldfc;->o:Ljava/util/concurrent/Callable;
+    iget-object p1, p1, Lfk0;->a:Ljava/lang/String;
 
-    new-instance p2, Lwu3;
+    invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-    const/4 p3, 0x1
+    iget-wide v4, p3, Ly0d;->e:J
 
-    invoke-direct {p2, p4, p0, p3}, Lwu3;-><init>([Ljava/lang/String;Ljava/lang/Object;I)V
+    const-wide/16 p1, 0x0
 
-    iput-object p2, p0, Ldfc;->p:Lwu3;
-
-    new-instance p2, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-direct {p2, p1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object p2, p0, Ldfc;->q:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
+    cmp-long p1, v4, p1
 
     const/4 p2, 0x0
 
-    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+    if-gtz p1, :cond_0
 
-    iput-object p1, p0, Ldfc;->r:Ljava/util/concurrent/atomic/AtomicBoolean;
+    move-object v0, p2
 
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
+    goto :goto_0
 
-    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+    :cond_0
+    new-instance v0, Li2c;
 
-    iput-object p1, p0, Ldfc;->s:Ljava/util/concurrent/atomic/AtomicBoolean;
+    const/4 v3, 0x0
 
-    new-instance p1, Lcfc;
+    iget-wide v1, p3, Ly0d;->d:J
 
-    invoke-direct {p1, p0, p2}, Lcfc;-><init>(Ldfc;I)V
+    invoke-direct/range {v0 .. v5}, Li2c;-><init>(JLjava/lang/String;J)V
 
-    iput-object p1, p0, Ldfc;->t:Lcfc;
+    :goto_0
+    iput-object v0, p0, Ldfc;->Y:Li2c;
 
-    new-instance p1, Lcfc;
+    if-eqz v0, :cond_1
 
-    const/4 p2, 0x1
+    goto :goto_1
 
-    invoke-direct {p1, p0, p2}, Lcfc;-><init>(Ldfc;I)V
+    :cond_1
+    new-instance p2, Lsag;
 
-    iput-object p1, p0, Ldfc;->u:Lcfc;
+    new-instance v0, Li2c;
+
+    const/4 v3, 0x0
+
+    const-wide/16 v1, 0x0
+
+    const-wide/16 v4, -0x1
+
+    invoke-direct/range {v0 .. v5}, Li2c;-><init>(JLjava/lang/String;J)V
+
+    const/16 p1, 0x1c
+
+    invoke-direct {p2, p1, v0}, Lsag;-><init>(ILjava/lang/Object;)V
+
+    :goto_1
+    iput-object p2, p0, Ldfc;->Z:Lsag;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final g()V
-    .locals 3
+.method public final b()Ljava/lang/String;
+    .locals 0
 
-    iget-object v0, p0, Ldfc;->m:Lnu7;
+    const/4 p0, 0x0
 
-    iget-object v0, v0, Lnu7;->b:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/Set;
-
-    invoke-interface {v0, p0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    const/4 v0, 0x0
-
-    iget-boolean v1, p0, Ldfc;->n:Z
-
-    iget-object v2, p0, Ldfc;->l:Laec;
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, v2, Laec;->c:Lqm;
-
-    if-nez v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    move-object v0, v1
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v1, v2, Laec;->b:Ljava/util/concurrent/Executor;
-
-    if-nez v1, :cond_0
-
-    :goto_0
-    iget-object p0, p0, Ldfc;->t:Lcfc;
-
-    invoke-interface {v0, p0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
+    return-object p0
 .end method
 
-.method public final h()V
-    .locals 1
+.method public final c()Lp24;
+    .locals 0
 
-    iget-object v0, p0, Ldfc;->m:Lnu7;
+    iget-object p0, p0, Ldfc;->Z:Lsag;
 
-    iget-object v0, v0, Lnu7;->b:Ljava/lang/Object;
+    return-object p0
+.end method
 
-    check-cast v0, Ljava/util/Set;
+.method public final d()Li2c;
+    .locals 0
 
-    invoke-interface {v0, p0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    iget-object p0, p0, Ldfc;->Y:Li2c;
 
-    return-void
+    return-object p0
 .end method

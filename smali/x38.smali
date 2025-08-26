@@ -1,81 +1,64 @@
-.class public abstract Lx38;
-.super Lxs7;
+.class public final Lx38;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lc48;
 
-# instance fields
-.field public final E:Landroid/media/session/MediaController$TransportControls;
+
+# static fields
+.field public static final a:Lx38;
 
 
 # direct methods
-.method public constructor <init>(Landroid/media/session/MediaController$TransportControls;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lx38;
 
-    iput-object p1, p0, Lx38;->E:Landroid/media/session/MediaController$TransportControls;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lx38;->a:Lx38;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final V(Ljava/lang/String;Landroid/os/Bundle;)V
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
-    if-nez p1, :cond_0
+    const/4 v0, 0x1
 
-    goto :goto_0
+    if-ne p0, p1, :cond_0
+
+    return v0
 
     :cond_0
-    const-string v0, "android.support.v4.media.session.action.FOLLOW"
+    instance-of p0, p1, Lx38;
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-nez p0, :cond_1
 
-    move-result v0
+    const/4 p0, 0x0
 
-    if-nez v0, :cond_1
-
-    const-string v0, "android.support.v4.media.session.action.UNFOLLOW"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
+    return p0
 
     :cond_1
-    if-eqz p2, :cond_2
+    return v0
+.end method
 
-    const-string v0, "android.support.v4.media.session.ARGUMENT_MEDIA_ATTRIBUTE"
+.method public final hashCode()I
+    .locals 0
 
-    invoke-virtual {p2, v0}, Landroid/os/BaseBundle;->containsKey(Ljava/lang/String;)Z
+    const p0, 0x390d5872
 
-    move-result v0
+    return p0
+.end method
 
-    if-eqz v0, :cond_2
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    :goto_0
-    iget-object p0, p0, Lx38;->E:Landroid/media/session/MediaController$TransportControls;
+    const-string p0, "ShowCloseConfirmationDialog"
 
-    invoke-virtual {p0, p1, p2}, Landroid/media/session/MediaController$TransportControls;->sendCustomAction(Ljava/lang/String;Landroid/os/Bundle;)V
-
-    return-void
-
-    :cond_2
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "An extra field android.support.v4.media.session.ARGUMENT_MEDIA_ATTRIBUTE is required for this action "
-
-    const-string v0, "."
-
-    invoke-static {p2, p1, v0}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+    return-object p0
 .end method

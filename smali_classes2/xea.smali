@@ -8,78 +8,18 @@
 
 .field public static final b:I
 
-.field public static final c:I
-
-.field public static final d:I
-
-.field public static final e:I
-
-.field public static final f:I
-
-.field public static final g:I
-
-.field public static final h:I
-
-.field public static final i:I
-
-.field public static final j:I
-
-.field public static final k:I
-
-.field public static final l:I
-
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    sget v0, Lvub;->web_app_root_biometry_open_settings_dialog_accept:I
+    sget v0, Ldsb;->oneme_settings_privacy_ic_remove_16:I
 
     sput v0, Lxea;->a:I
 
-    sget v0, Lvub;->web_app_root_biometry_open_settings_dialog_title:I
+    sget v0, Ldsb;->oneme_settings_privacy_ic_success_28:I
 
     sput v0, Lxea;->b:I
-
-    sget v0, Lvub;->web_app_root_biometry_request_dialog_accept:I
-
-    sput v0, Lxea;->c:I
-
-    sget v0, Lvub;->web_app_root_biometry_request_dialog_decline:I
-
-    sput v0, Lxea;->d:I
-
-    sget v0, Lvub;->web_app_root_biometry_request_dialog_default_reason:I
-
-    sput v0, Lxea;->e:I
-
-    sget v0, Lvub;->web_app_root_biometry_request_dialog_title:I
-
-    sput v0, Lxea;->f:I
-
-    sget v0, Lvub;->web_app_root_biometry_setting:I
-
-    sput v0, Lxea;->g:I
-
-    sget v0, Lvub;->web_app_root_biometry_setting_description:I
-
-    sput v0, Lxea;->h:I
-
-    sget v0, Lvub;->web_app_root_setting_open_webapp:I
-
-    sput v0, Lxea;->i:I
-
-    sget v0, Lvub;->web_app_root_settings_header_subtitle:I
-
-    sput v0, Lxea;->j:I
-
-    sget v0, Lvub;->web_app_root_settings_header_title:I
-
-    sput v0, Lxea;->k:I
-
-    sget v0, Lvub;->web_app_root_settings_webapps:I
-
-    sput v0, Lxea;->l:I
 
     return-void
 .end method

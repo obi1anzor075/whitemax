@@ -1,454 +1,421 @@
-.class public final synthetic Lx5;
-.super Ljava/lang/Object;
+.class public final Lx5;
+.super Lhpf;
 .source "SourceFile"
-
-# interfaces
-.implements Lj6;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Lru/ok/messages/contacts/profile/ActContactAvatars;
-
-.field public final synthetic c:J
+.field public final synthetic b:Lru/ok/messages/media/mediabar/ActLocalMedias;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lru/ok/messages/contacts/profile/ActContactAvatars;JI)V
+.method public synthetic constructor <init>(Lru/ok/messages/media/mediabar/ActLocalMedias;I)V
     .locals 0
 
-    iput p4, p0, Lx5;->a:I
+    iput p2, p0, Lx5;->a:I
 
-    iput-object p1, p0, Lx5;->b:Lru/ok/messages/contacts/profile/ActContactAvatars;
-
-    iput-wide p2, p0, Lx5;->c:J
+    iput-object p1, p0, Lx5;->b:Lru/ok/messages/media/mediabar/ActLocalMedias;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method private final d(I)V
+    .locals 0
+
+    return-void
+.end method
+
+.method private final e(IFI)V
+    .locals 0
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public final run()V
-    .locals 18
+.method public a(I)V
+    .locals 0
 
-    move-object/from16 v0, p0
+    iget p0, p0, Lx5;->a:I
 
-    iget-wide v1, v0, Lx5;->c:J
+    return-void
+.end method
 
-    const-class v3, Lpk;
+.method public b(IFI)V
+    .locals 0
 
-    const-wide/16 v4, 0x0
+    iget p0, p0, Lx5;->a:I
 
-    const/4 v6, 0x0
+    return-void
+.end method
 
-    iget-object v7, v0, Lx5;->b:Lru/ok/messages/contacts/profile/ActContactAvatars;
+.method public final c(I)V
+    .locals 7
 
-    iget v8, v0, Lx5;->a:I
+    iget v0, p0, Lx5;->a:I
 
-    packed-switch v8, :pswitch_data_0
+    iget-object p0, p0, Lx5;->b:Lru/ok/messages/media/mediabar/ActLocalMedias;
 
-    sget v1, Lru/ok/messages/contacts/profile/ActContactAvatars;->l1:I
+    const/4 v1, 0x0
 
-    invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    packed-switch v0, :pswitch_data_0
 
-    sget v1, Lcic;->h2:I
+    sget v0, Lru/ok/messages/media/mediabar/ActLocalMedias;->o1:I
 
-    sget-object v2, La06;->h:Landroid/os/Handler;
+    invoke-virtual {p0}, Lru/ok/messages/media/mediabar/ActLocalMedias;->c0()Lup7;
 
-    invoke-virtual {v7, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    iget-object v0, v0, Lup7;->f:Lw2d;
 
-    invoke-static {v6, v7, v1}, La06;->H(ILandroid/content/Context;Ljava/lang/String;)V
+    invoke-virtual {v0}, Lw2d;->c()Ljava/util/List;
 
-    iget-wide v0, v0, Lx5;->c:J
+    move-result-object v0
 
-    cmp-long v2, v0, v4
+    iget-object v2, p0, Lru/ok/messages/media/mediabar/ActLocalMedias;->R0:Ljava/util/ArrayList;
 
-    if-eqz v2, :cond_1
-
-    iget-object v2, v7, Lru/ok/messages/contacts/profile/ActContactAvatars;->d1:Ljava/util/ArrayList;
-
-    if-nez v2, :cond_0
-
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v2, v7, Lru/ok/messages/contacts/profile/ActContactAvatars;->d1:Ljava/util/ArrayList;
-
-    :cond_0
-    iget-object v2, v7, Lru/ok/messages/contacts/profile/ActContactAvatars;->d1:Ljava/util/ArrayList;
-
-    iget-object v4, v7, Lr5;->O0:Lv2b;
-
-    iget-object v4, v4, Lv2b;->b:Ljava/lang/Object;
-
-    check-cast v4, Lk93;
-
-    check-cast v4, Lo2a;
-
-    invoke-virtual {v4}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v3}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lpk;
-
-    move-object v8, v3
-
-    check-cast v8, Lgy9;
-
-    const/4 v15, 0x0
-
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x0
-
-    const/16 v16, 0x0
-
-    const/16 v17, 0x0
-
-    const/4 v9, 0x2
-
-    move-wide v10, v0
-
-    invoke-virtual/range {v8 .. v17}, Lgy9;->I(IJLd10;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)J
-
-    move-result-wide v3
-
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :cond_1
-    :goto_0
-    iget-object v2, v7, Lru/ok/messages/contacts/profile/ActContactAvatars;->e1:Ljava/util/ArrayList;
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
-
-    move-result v3
-
-    if-ge v6, v3, :cond_3
-
-    invoke-virtual {v2, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Ljava/util/AbstractMap$SimpleEntry;
+    check-cast v2, Lrp7;
 
-    invoke-virtual {v2}, Ljava/util/AbstractMap$SimpleEntry;->getValue()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Long;
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {p0}, Lru/ok/messages/media/mediabar/ActLocalMedias;->c0()Lup7;
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Ljava/lang/Long;->equals(Ljava/lang/Object;)Z
+    iget-object v3, v3, Lup7;->f:Lw2d;
+
+    invoke-virtual {v3, v2}, Lw2d;->g(Lrp7;)I
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    const/4 v3, 0x1
 
-    iput v6, v7, Lru/ok/messages/contacts/profile/ActContactAvatars;->g1:I
+    sub-int/2addr v2, v3
 
-    iget-object v0, v7, Lru/ok/messages/contacts/profile/ActContactAvatars;->a1:Lrn3;
+    const/4 v4, -0x1
 
-    iput v6, v0, Lrn3;->k:I
+    if-ne v2, v4, :cond_1
 
-    iget-object v0, v7, Lru/ok/messages/contacts/profile/ActContactAvatars;->b1:Lru/ok/messages/contacts/profile/FrgContactAvatarsLoader;
+    move p1, v1
 
-    iget-object v1, v0, Lru/ok/messages/contacts/profile/FrgContactAvatarsLoader;->H1:Ljava/util/ArrayList;
+    :goto_0
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    iget v2, v0, Lru/ok/messages/contacts/profile/FrgContactAvatarsLoader;->J1:I
+    move-result v2
 
-    iget v0, v0, Lru/ok/messages/contacts/profile/FrgContactAvatarsLoader;->K1:I
+    if-ge p1, v2, :cond_0
 
-    add-int/2addr v2, v0
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {v7, v2, v1}, Lru/ok/messages/contacts/profile/ActContactAvatars;->j0(ILjava/util/List;)V
+    move-result-object v2
 
-    goto :goto_1
+    check-cast v2, Ly2d;
 
-    :cond_2
-    add-int/lit8 v6, v6, 0x1
+    iput-boolean v1, v2, Ly2d;->e:Z
+
+    add-int/lit8 p1, p1, 0x1
 
     goto :goto_0
 
-    :cond_3
-    :goto_1
-    return-void
-
-    :pswitch_0
-    sget v0, Lru/ok/messages/contacts/profile/ActContactAvatars;->l1:I
-
-    invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget v0, Lcic;->p2:I
-
-    sget-object v3, La06;->h:Landroid/os/Handler;
-
-    invoke-virtual {v7, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v6, v7, v0}, La06;->H(ILandroid/content/Context;Ljava/lang/String;)V
-
-    iget-object v0, v7, Lru/ok/messages/contacts/profile/ActContactAvatars;->Z0:Landroidx/viewpager/widget/ViewPager;
-
-    invoke-virtual {v0}, Landroidx/viewpager/widget/ViewPager;->getCurrentItem()I
-
-    move-result v0
-
-    iget-object v3, v7, Lru/ok/messages/contacts/profile/ActContactAvatars;->b1:Lru/ok/messages/contacts/profile/FrgContactAvatarsLoader;
-
-    iget-object v4, v3, Lru/ok/messages/contacts/profile/FrgContactAvatarsLoader;->H1:Ljava/util/ArrayList;
-
-    invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v4
-
-    move v5, v6
-
-    :goto_2
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v8
-
-    if-eqz v8, :cond_8
-
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Ljava/util/AbstractMap$SimpleEntry;
-
-    invoke-virtual {v8}, Ljava/util/AbstractMap$SimpleEntry;->getValue()Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Ljava/lang/Long;
-
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/Long;->equals(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_7
-
-    invoke-interface {v4}, Ljava/util/Iterator;->remove()V
-
-    iget v8, v3, Lru/ok/messages/contacts/profile/FrgContactAvatarsLoader;->K1:I
-
-    add-int/lit8 v8, v8, -0x1
-
-    if-ne v5, v8, :cond_5
-
-    iput v8, v3, Lru/ok/messages/contacts/profile/FrgContactAvatarsLoader;->K1:I
-
-    if-lez v8, :cond_4
+    :cond_0
+    invoke-virtual {p0}, Lru/ok/messages/media/mediabar/ActLocalMedias;->j0()V
 
     goto :goto_3
 
-    :cond_4
-    move v8, v6
+    :cond_1
+    move v4, v1
 
-    :goto_3
-    iput v8, v3, Lru/ok/messages/contacts/profile/FrgContactAvatarsLoader;->K1:I
+    :goto_1
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    goto :goto_5
+    move-result v5
 
-    :cond_5
-    iget v8, v3, Lru/ok/messages/contacts/profile/FrgContactAvatarsLoader;->J1:I
+    if-ge v4, v5, :cond_3
 
-    add-int/lit8 v8, v8, -0x1
+    invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    iput v8, v3, Lru/ok/messages/contacts/profile/FrgContactAvatarsLoader;->J1:I
+    move-result-object v5
 
-    if-lez v8, :cond_6
+    check-cast v5, Ly2d;
 
-    goto :goto_4
+    if-ne v2, v4, :cond_2
 
-    :cond_6
-    move v8, v6
-
-    :goto_4
-    iput v8, v3, Lru/ok/messages/contacts/profile/FrgContactAvatarsLoader;->J1:I
-
-    :cond_7
-    :goto_5
-    add-int/lit8 v5, v5, 0x1
+    move v6, v3
 
     goto :goto_2
 
+    :cond_2
+    move v6, v1
+
+    :goto_2
+    iput-boolean v6, v5, Ly2d;->e:Z
+
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_1
+
+    :cond_3
+    invoke-virtual {p0}, Lru/ok/messages/media/mediabar/ActLocalMedias;->j0()V
+
+    iget-object p0, p0, Lru/ok/messages/media/mediabar/ActLocalMedias;->b1:Lru/ok/messages/media/mediabar/MediaBarPreviewLayout;
+
+    invoke-virtual {p0, p1}, Lru/ok/messages/media/mediabar/MediaBarPreviewLayout;->w(I)V
+
+    :goto_3
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Lru/ok/messages/media/mediabar/ActLocalMedias;->V0:Lfd8;
+
+    if-eqz v0, :cond_6
+
+    iget-object v0, p0, Lru/ok/messages/media/mediabar/ActLocalMedias;->R0:Ljava/util/ArrayList;
+
+    iget v2, p0, Lru/ok/messages/media/mediabar/ActLocalMedias;->S0:I
+
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lrp7;
+
+    if-eqz v0, :cond_5
+
+    iget-object v2, p0, Lru/ok/messages/media/mediabar/ActLocalMedias;->V0:Lfd8;
+
+    iget-wide v3, v0, Lrp7;->b:J
+
+    invoke-virtual {v2, v3, v4}, Lfd8;->F(J)Lru/ok/messages/media/mediabar/FrgLocalMedia;
+
+    move-result-object v0
+
+    instance-of v2, v0, Lru/ok/messages/media/mediabar/FrgLocalVideo;
+
+    if-eqz v2, :cond_5
+
+    check-cast v0, Lru/ok/messages/media/mediabar/FrgLocalVideo;
+
+    iget-object v2, v0, Lru/ok/messages/media/mediabar/FrgLocalVideo;->F1:Lkj9;
+
+    iget-object v2, v2, Lv2;->c:Ljava/lang/Object;
+
+    check-cast v2, Landroid/view/View;
+
+    if-eqz v2, :cond_4
+
+    const/16 v3, 0x8
+
+    invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
+
+    :cond_4
+    invoke-virtual {v0}, Lru/ok/messages/media/mediabar/FrgLocalVideo;->k1()V
+
+    :cond_5
+    iget-object v0, p0, Lru/ok/messages/media/mediabar/ActLocalMedias;->R0:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lrp7;
+
+    if-eqz v0, :cond_6
+
+    iget-object v2, p0, Lru/ok/messages/media/mediabar/ActLocalMedias;->V0:Lfd8;
+
+    iget-wide v3, v0, Lrp7;->b:J
+
+    invoke-virtual {v2, v3, v4}, Lfd8;->F(J)Lru/ok/messages/media/mediabar/FrgLocalMedia;
+
+    move-result-object v0
+
+    instance-of v2, v0, Lru/ok/messages/media/mediabar/FrgLocalVideo;
+
+    if-eqz v2, :cond_6
+
+    check-cast v0, Lru/ok/messages/media/mediabar/FrgLocalVideo;
+
+    invoke-virtual {v0}, Lru/ok/messages/media/mediabar/FrgLocalVideo;->j1()V
+
+    :cond_6
+    iput p1, p0, Lru/ok/messages/media/mediabar/ActLocalMedias;->S0:I
+
+    invoke-virtual {p0, p1}, Lru/ok/messages/media/mediabar/ActLocalMedias;->k0(I)V
+
+    iget-object v0, p0, Lru/ok/messages/media/mediabar/ActLocalMedias;->R0:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    sub-int/2addr v0, p1
+
+    const/4 p1, 0x6
+
+    const/4 v2, 0x0
+
+    if-ge v0, p1, :cond_9
+
+    invoke-virtual {p0}, Lru/ok/messages/media/mediabar/ActLocalMedias;->c0()Lup7;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lru/ok/messages/media/mediabar/ActLocalMedias;->T0:Ljava/lang/String;
+
+    if-nez v0, :cond_7
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    goto :goto_4
+
+    :cond_7
+    iget-object v3, p1, Lup7;->g:Ljava/lang/Object;
+
+    invoke-interface {v3, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lm86;
+
+    if-nez v0, :cond_8
+
+    goto :goto_4
+
     :cond_8
-    iget-object v1, v7, Lru/ok/messages/contacts/profile/ActContactAvatars;->b1:Lru/ok/messages/contacts/profile/FrgContactAvatarsLoader;
+    iget-object p1, p1, Lup7;->c:Leq7;
 
-    iget-object v1, v1, Lru/ok/messages/contacts/profile/FrgContactAvatarsLoader;->H1:Ljava/util/ArrayList;
+    check-cast p1, Lxy6;
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {p1, v0}, Lxy6;->b(Lm86;)Z
 
     move-result v1
 
+    :goto_4
     if-eqz v1, :cond_9
 
-    invoke-virtual {v7}, Lr5;->finish()V
+    invoke-virtual {p0}, Lru/ok/messages/media/mediabar/ActLocalMedias;->c0()Lup7;
 
-    goto :goto_6
+    move-result-object p1
+
+    iget-object v0, p0, Lru/ok/messages/media/mediabar/ActLocalMedias;->T0:Ljava/lang/String;
+
+    iget-object v1, p1, Lup7;->e:Lkotlinx/coroutines/internal/ContextScope;
+
+    iget-object v3, p1, Lup7;->d:Lrie;
+
+    check-cast v3, Lo7a;
+
+    invoke-virtual {v3}, Lo7a;->a()Ljx3;
+
+    move-result-object v3
+
+    iget-object v4, p1, Lup7;->b:Lkx3;
+
+    invoke-virtual {v3, v4}, Le0;->plus(Lhx3;)Lhx3;
+
+    move-result-object v3
+
+    new-instance v4, Ltp7;
+
+    invoke-direct {v4, p1, v0, v2}, Ltp7;-><init>(Lup7;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
+
+    const/4 p1, 0x2
+
+    invoke-static {v1, v3, v2, v4, p1}, Lzo3;->E(Lox3;Lhx3;Lrx3;Ll66;I)Ldwd;
 
     :cond_9
-    add-int/lit8 v1, v0, -0x1
+    invoke-virtual {p0}, Lru/ok/messages/media/mediabar/ActLocalMedias;->a0()Lru/ok/messages/media/mediabar/FrgLocalMedia;
 
-    if-lez v0, :cond_a
+    move-result-object p1
 
-    iget v2, v7, Lru/ok/messages/contacts/profile/ActContactAvatars;->g1:I
+    if-eqz p1, :cond_d
 
-    if-ne v2, v0, :cond_a
+    instance-of v0, p1, Lru/ok/messages/media/mediabar/FrgLocalPhoto;
 
-    iput v1, v7, Lru/ok/messages/contacts/profile/ActContactAvatars;->g1:I
+    if-eqz v0, :cond_a
 
-    iget-object v2, v7, Lru/ok/messages/contacts/profile/ActContactAvatars;->a1:Lrn3;
+    const-string v2, "LOCAL_PHOTO"
 
-    iput v1, v2, Lrn3;->k:I
+    goto :goto_5
 
     :cond_a
-    iget-object v2, v7, Lru/ok/messages/contacts/profile/ActContactAvatars;->b1:Lru/ok/messages/contacts/profile/FrgContactAvatarsLoader;
+    instance-of v0, p1, Lru/ok/messages/media/mediabar/FrgLocalVideo;
 
-    iget-object v3, v2, Lru/ok/messages/contacts/profile/FrgContactAvatarsLoader;->H1:Ljava/util/ArrayList;
+    if-eqz v0, :cond_b
 
-    iget v4, v2, Lru/ok/messages/contacts/profile/FrgContactAvatarsLoader;->J1:I
+    const-string v2, "LOCAL_VIDEO"
 
-    iget v2, v2, Lru/ok/messages/contacts/profile/FrgContactAvatarsLoader;->K1:I
-
-    add-int/2addr v4, v2
-
-    invoke-virtual {v7, v4, v3}, Lru/ok/messages/contacts/profile/ActContactAvatars;->j0(ILjava/util/List;)V
-
-    if-lez v0, :cond_b
-
-    iget-object v0, v7, Lru/ok/messages/contacts/profile/ActContactAvatars;->Z0:Landroidx/viewpager/widget/ViewPager;
-
-    iput-boolean v6, v0, Landroidx/viewpager/widget/ViewPager;->N0:Z
-
-    invoke-virtual {v0, v1, v6, v6, v6}, Landroidx/viewpager/widget/ViewPager;->v(IIZZ)V
+    goto :goto_5
 
     :cond_b
-    :goto_6
-    return-void
+    instance-of p1, p1, Lru/ok/messages/media/mediabar/FrgLocalGif;
 
-    :pswitch_1
-    sget v0, Lru/ok/messages/contacts/profile/ActContactAvatars;->l1:I
+    if-eqz p1, :cond_c
 
-    iget-object v0, v7, Lr5;->O0:Lv2b;
-
-    iget-object v0, v0, Lv2b;->b:Ljava/lang/Object;
-
-    check-cast v0, Lk93;
-
-    check-cast v0, Lo2a;
-
-    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object v0
-
-    const-class v8, Ldi3;
-
-    invoke-virtual {v0, v8}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldi3;
-
-    const/4 v8, 0x0
-
-    invoke-virtual {v0, v4, v5, v8, v8}, Ldi3;->d(JLjava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, v7, Lr5;->O0:Lv2b;
-
-    iget-object v0, v0, Lv2b;->b:Ljava/lang/Object;
-
-    check-cast v0, Lk93;
-
-    check-cast v0, Lo2a;
-
-    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v3}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lpk;
-
-    check-cast v0, Lgy9;
-
-    new-instance v3, La9c;
-
-    invoke-virtual {v0}, Lgy9;->z()Lg2b;
-
-    move-result-object v4
-
-    check-cast v4, Lj2b;
-
-    iget-object v4, v4, Lj2b;->a:Li03;
-
-    invoke-virtual {v4}, Llqc;->n()J
-
-    move-result-wide v4
-
-    invoke-direct {v3, v4, v5, v1, v2}, La9c;-><init>(JJ)V
-
-    invoke-virtual {v0}, Lgy9;->A()Lsce;
-
-    move-result-object v0
-
-    const/16 v1, 0xc
-
-    invoke-static {v0, v3, v6, v6, v1}, Lsce;->d(Lsce;Lol;ZII)J
-
-    move-result-wide v0
-
-    iget-object v2, v7, Lru/ok/messages/contacts/profile/ActContactAvatars;->c1:Lzt3;
-
-    if-nez v2, :cond_c
-
-    new-instance v2, Lzt3;
-
-    invoke-direct {v2}, Lzt3;-><init>()V
-
-    iput-object v2, v7, Lru/ok/messages/contacts/profile/ActContactAvatars;->c1:Lzt3;
+    const-string v2, "LOCAL_GIF"
 
     :cond_c
-    iget-object v2, v7, Lru/ok/messages/contacts/profile/ActContactAvatars;->c1:Lzt3;
+    :goto_5
+    invoke-static {v2}, Lxja;->v(Ljava/lang/CharSequence;)Z
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    move-result p1
 
-    move-result-object v0
+    if-nez p1, :cond_d
 
-    invoke-virtual {v2, v0}, Lzt3;->add(Ljava/lang/Object;)Z
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    const-string v0, "sendFragmentStats: "
+
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v0, "ru.ok.messages.media.mediabar.ActLocalMedias"
+
+    invoke-static {v0, p1}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object p1, p0, Lp5;->G0:Lt4b;
+
+    iget-object p1, p1, Lt4b;->b:Ljava/lang/Object;
+
+    check-cast p1, Lsb3;
+
+    check-cast p1, Lq6a;
+
+    invoke-virtual {p1}, Lq6a;->b()Luc;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v2}, Luc;->f(Ljava/lang/String;)V
+
+    :cond_d
+    iget-object p1, p0, Lru/ok/messages/media/mediabar/ActLocalMedias;->R0:Ljava/util/ArrayList;
+
+    iget v0, p0, Lru/ok/messages/media/mediabar/ActLocalMedias;->S0:I
+
+    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lrp7;
+
+    iget-object p0, p0, Lru/ok/messages/media/mediabar/ActLocalMedias;->e1:Lni9;
+
+    invoke-virtual {p0, p1}, Lni9;->T0(Lrp7;)V
 
     return-void
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

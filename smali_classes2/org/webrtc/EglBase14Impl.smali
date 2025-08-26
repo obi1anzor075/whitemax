@@ -207,7 +207,7 @@
 
     const-string p3, "Failed to create EGL context: 0x"
 
-    invoke-static {p3, p2}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p3, p2}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
@@ -307,7 +307,7 @@
 
     const-string v1, "Failed to create window surface: 0x"
 
-    invoke-static {v1, v0}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -326,15 +326,15 @@
 .end method
 
 .method private static getEglConfig(Landroid/opengl/EGLDisplay;[I)Landroid/opengl/EGLConfig;
-    .locals 10
+    .locals 8
 
     const/4 v5, 0x1
 
-    new-array v8, v5, [Landroid/opengl/EGLConfig;
+    new-array v3, v5, [Landroid/opengl/EGLConfig;
 
     const/4 v0, 0x1
 
-    new-array v9, v0, [I
+    new-array v6, v0, [I
 
     const/4 v4, 0x0
 
@@ -346,10 +346,6 @@
 
     move-object v1, p1
 
-    move-object v3, v8
-
-    move-object v6, v9
-
     invoke-static/range {v0 .. v7}, Landroid/opengl/EGL14;->eglChooseConfig(Landroid/opengl/EGLDisplay;[II[Landroid/opengl/EGLConfig;II[II)Z
 
     move-result p0
@@ -358,11 +354,11 @@
 
     const/4 p0, 0x0
 
-    aget p1, v9, p0
+    aget p1, v6, p0
 
     if-lez p1, :cond_1
 
-    aget-object p0, v8, p0
+    aget-object p0, v3, p0
 
     if-eqz p0, :cond_0
 
@@ -403,7 +399,7 @@
 
     const-string v1, "eglChooseConfig failed: 0x"
 
-    invoke-static {v1, v0}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -456,7 +452,7 @@
 
     const-string v3, "Unable to initialize EGL14: 0x"
 
-    invoke-static {v3, v2}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v2}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -481,7 +477,7 @@
 
     const-string v3, "Unable to get EGL14 display: 0x"
 
-    invoke-static {v3, v2}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v2}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -564,13 +560,13 @@
 
     move-result-object v1
 
-    const-string v2, "Failed to create pixel buffer surface with size "
+    const-string v2, "x"
 
-    const-string v3, "x"
+    const-string v3, ": 0x"
 
-    const-string v4, ": 0x"
+    const-string v4, "Failed to create pixel buffer surface with size "
 
-    invoke-static {v2, p1, v3, p2, v4}, Lrf0;->i(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4, p1, v2, p2, v3}, Lpg0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -661,12 +657,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 

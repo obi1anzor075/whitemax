@@ -1,61 +1,74 @@
-.class public interface abstract Lk68;
+.class public final Lk68;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lpg7;
+.implements Landroid/os/IBinder$DeathRecipient;
+
+
+# instance fields
+.field public final a:Ljava/lang/String;
+
+.field public final b:I
+
+.field public final c:I
+
+.field public final d:Lei8;
+
+.field public final e:Lr68;
+
+.field public final f:Ljava/util/HashMap;
+
+.field public final synthetic g:Lli8;
+
+
+# direct methods
+.method public constructor <init>(Lli8;Ljava/lang/String;IILs68;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lk68;->g:Lli8;
+
+    new-instance p1, Ljava/util/HashMap;
+
+    invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
+
+    iput-object p1, p0, Lk68;->f:Ljava/util/HashMap;
+
+    iput-object p2, p0, Lk68;->a:Ljava/lang/String;
+
+    iput p3, p0, Lk68;->b:I
+
+    iput p4, p0, Lk68;->c:I
+
+    new-instance p1, Lei8;
+
+    invoke-direct {p1, p2, p3, p4}, Lei8;-><init>(Ljava/lang/String;II)V
+
+    iput-object p1, p0, Lk68;->d:Lei8;
+
+    iput-object p5, p0, Lk68;->e:Lr68;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public g(Lpg7;)Z
-    .locals 6
+.method public final binderDied()V
+    .locals 3
 
-    instance-of v0, p1, Lk68;
+    iget-object v0, p0, Lk68;->g:Lli8;
 
-    const/4 v1, 0x0
+    iget-object v0, v0, Lli8;->Z:Lqx;
 
-    if-nez v0, :cond_0
+    new-instance v1, Lfd7;
 
-    return v1
+    const/4 v2, 0x6
 
-    :cond_0
-    invoke-interface {p0}, Lk68;->j()J
+    invoke-direct {v1, v2, p0}, Lfd7;-><init>(ILjava/lang/Object;)V
 
-    move-result-wide v2
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    check-cast p1, Lk68;
-
-    invoke-interface {p1}, Lk68;->j()J
-
-    move-result-wide v4
-
-    cmp-long v0, v2, v4
-
-    if-nez v0, :cond_1
-
-    invoke-interface {p0}, Lk68;->h()J
-
-    move-result-wide v2
-
-    invoke-interface {p1}, Lk68;->h()J
-
-    move-result-wide p0
-
-    cmp-long p0, v2, p0
-
-    if-nez p0, :cond_1
-
-    const/4 v1, 0x1
-
-    :cond_1
-    return v1
-.end method
-
-.method public abstract h()J
-.end method
-
-.method public abstract j()J
-.end method
-
-.method public abstract x()Ljava/lang/String;
+    return-void
 .end method

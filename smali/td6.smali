@@ -1,83 +1,89 @@
-.class public abstract Ltd6;
+.class public final Ltd6;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field private static volatile choreographer:Landroid/view/Choreographer;
+.field public static final e:Ltd6;
+
+
+# instance fields
+.field public final a:I
+
+.field public final b:I
+
+.field public final c:I
+
+.field public final d:I
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 2
 
-    :try_start_0
-    new-instance v0, Lsd6;
+    new-instance v0, Ltd6;
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    const/4 v1, -0x1
 
-    move-result-object v1
+    invoke-direct {v0, v1, v1, v1, v1}, Ltd6;-><init>(IIII)V
 
-    invoke-static {v1}, Ltd6;->a(Landroid/os/Looper;)Landroid/os/Handler;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lsd6;-><init>(Landroid/os/Handler;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    new-instance v1, Lkcc;
-
-    invoke-direct {v1, v0}, Lkcc;-><init>(Ljava/lang/Throwable;)V
-
-    move-object v0, v1
-
-    :goto_0
-    instance-of v1, v0, Lkcc;
-
-    if-eqz v1, :cond_0
-
-    const/4 v0, 0x0
-
-    :cond_0
-    check-cast v0, Lsd6;
+    sput-object v0, Ltd6;->e:Ltd6;
 
     return-void
 .end method
 
-.method public static final a(Landroid/os/Looper;)Landroid/os/Handler;
-    .locals 3
+.method public constructor <init>(IIII)V
+    .locals 0
 
-    const-class v0, Landroid/os/Looper;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    filled-new-array {v0}, [Ljava/lang/Class;
+    iput p1, p0, Ltd6;->a:I
 
-    move-result-object v0
+    iput p2, p0, Ltd6;->b:I
 
-    const-class v1, Landroid/os/Handler;
+    iput p3, p0, Ltd6;->c:I
 
-    const-string v2, "createAsync"
+    iput p4, p0, Ltd6;->d:I
 
-    invoke-virtual {v1, v2, v0}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    return-void
+.end method
 
-    move-result-object v0
 
-    const/4 v1, 0x0
+# virtual methods
+.method public final a()V
+    .locals 4
 
-    filled-new-array {p0}, [Ljava/lang/Object;
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    iget v2, p0, Ltd6;->a:I
+
+    const/4 v3, -0x1
+
+    if-eq v2, v3, :cond_0
+
+    filled-new-array {v2}, [I
+
+    move-result-object v2
+
+    invoke-static {v1, v2, v0}, Landroid/opengl/GLES20;->glDeleteTextures(I[II)V
+
+    invoke-static {}, Lap;->m()V
+
+    :cond_0
+    iget p0, p0, Ltd6;->b:I
+
+    if-eq p0, v3, :cond_1
+
+    filled-new-array {p0}, [I
 
     move-result-object p0
 
-    invoke-virtual {v0, v1, p0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v1, p0, v0}, Landroid/opengl/GLES20;->glDeleteFramebuffers(I[II)V
 
-    move-result-object p0
+    invoke-static {}, Lap;->m()V
 
-    check-cast p0, Landroid/os/Handler;
-
-    return-object p0
+    :cond_1
+    return-void
 .end method

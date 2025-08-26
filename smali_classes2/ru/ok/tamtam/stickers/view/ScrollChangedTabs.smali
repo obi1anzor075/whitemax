@@ -22,7 +22,7 @@
     return-void
 .end method
 
-.method public setOnScrollListener(Lapc;)V
+.method public setOnScrollListener(Lyuc;)V
     .locals 0
 
     return-void

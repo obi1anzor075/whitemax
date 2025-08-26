@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:icon="@drawable/ic_message_new_24" android:id="@id/chat_select_mark_as_new_action" android:title="@string/menu_mark_as_unread" app:showAsAction="always" />
-    <item android:icon="@drawable/ic_notifications_24" android:id="@id/chat_select_notif_action" android:title="@string/menu_mark_as_unread" app:showAsAction="always" />
-    <item android:icon="@drawable/ic_trash_24" android:id="@id/chat_select_delete_action" android:title="@string/menu_chat_remove" app:showAsAction="always" />
-    <item android:icon="@drawable/ic_more_vertical_24" android:id="@id/chat_select_more_action" android:title="@string/menu_chats_all_read" app:showAsAction="always" />
-</menu>

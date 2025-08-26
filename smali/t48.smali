@@ -2,158 +2,158 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lv48;
+
 
 # instance fields
-.field public final a:Lw38;
+.field public final a:Lar7;
 
-.field public final b:Lcya;
+.field public final b:F
 
-.field public final c:La88;
-
-.field public final d:Ljava/util/List;
-
-.field public final e:Ljava/lang/CharSequence;
-
-.field public final f:I
-
-.field public final g:I
-
-.field public final h:Landroid/os/Bundle;
+.field public final c:J
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    .line 2
-    iput-object v0, p0, Lt48;->a:Lw38;
-
-    .line 3
-    iput-object v0, p0, Lt48;->b:Lcya;
-
-    .line 4
-    iput-object v0, p0, Lt48;->c:La88;
-
-    .line 5
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lt48;->d:Ljava/util/List;
-
-    .line 6
-    iput-object v0, p0, Lt48;->e:Ljava/lang/CharSequence;
-
-    const/4 v0, 0x0
-
-    .line 7
-    iput v0, p0, Lt48;->f:I
-
-    .line 8
-    iput v0, p0, Lt48;->g:I
-
-    .line 9
-    sget-object v0, Landroid/os/Bundle;->EMPTY:Landroid/os/Bundle;
-
-    iput-object v0, p0, Lt48;->h:Landroid/os/Bundle;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lt48;)V
-    .locals 1
-
-    .line 20
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 21
-    iget-object v0, p1, Lt48;->a:Lw38;
-
-    iput-object v0, p0, Lt48;->a:Lw38;
-
-    .line 22
-    iget-object v0, p1, Lt48;->b:Lcya;
-
-    iput-object v0, p0, Lt48;->b:Lcya;
-
-    .line 23
-    iget-object v0, p1, Lt48;->c:La88;
-
-    iput-object v0, p0, Lt48;->c:La88;
-
-    .line 24
-    iget-object v0, p1, Lt48;->d:Ljava/util/List;
-
-    iput-object v0, p0, Lt48;->d:Ljava/util/List;
-
-    .line 25
-    iget-object v0, p1, Lt48;->e:Ljava/lang/CharSequence;
-
-    iput-object v0, p0, Lt48;->e:Ljava/lang/CharSequence;
-
-    .line 26
-    iget v0, p1, Lt48;->f:I
-
-    iput v0, p0, Lt48;->f:I
-
-    .line 27
-    iget v0, p1, Lt48;->g:I
-
-    iput v0, p0, Lt48;->g:I
-
-    .line 28
-    iget-object p1, p1, Lt48;->h:Landroid/os/Bundle;
-
-    iput-object p1, p0, Lt48;->h:Landroid/os/Bundle;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lw38;Lcya;La88;Ljava/util/List;Ljava/lang/CharSequence;IILandroid/os/Bundle;)V
+.method public constructor <init>(Lar7;FJ)V
     .locals 0
 
-    .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 11
-    iput-object p1, p0, Lt48;->a:Lw38;
+    iput-object p1, p0, Lt48;->a:Lar7;
 
-    .line 12
-    iput-object p2, p0, Lt48;->b:Lcya;
+    iput p2, p0, Lt48;->b:F
 
-    .line 13
-    iput-object p3, p0, Lt48;->c:La88;
-
-    .line 14
-    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 15
-    iput-object p4, p0, Lt48;->d:Ljava/util/List;
-
-    .line 16
-    iput-object p5, p0, Lt48;->e:Ljava/lang/CharSequence;
-
-    .line 17
-    iput p6, p0, Lt48;->f:I
-
-    .line 18
-    iput p7, p0, Lt48;->g:I
-
-    if-eqz p8, :cond_0
-
-    goto :goto_0
-
-    .line 19
-    :cond_0
-    sget-object p8, Landroid/os/Bundle;->EMPTY:Landroid/os/Bundle;
-
-    :goto_0
-    iput-object p8, p0, Lt48;->h:Landroid/os/Bundle;
+    iput-wide p3, p0, Lt48;->c:J
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 5
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lt48;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lt48;
+
+    iget-object v1, p0, Lt48;->a:Lar7;
+
+    iget-object v3, p1, Lt48;->a:Lar7;
+
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget v1, p0, Lt48;->b:F
+
+    iget v3, p1, Lt48;->b:F
+
+    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-wide v3, p0, Lt48;->c:J
+
+    iget-wide p0, p1, Lt48;->c:J
+
+    cmp-long p0, v3, p0
+
+    if-eqz p0, :cond_4
+
+    return v2
+
+    :cond_4
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    iget-object v0, p0, Lt48;->a:Lar7;
+
+    invoke-virtual {v0}, Lar7;->hashCode()I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget v2, p0, Lt48;->b:F
+
+    invoke-static {v0, v2, v1}, Luz1;->e(IFI)I
+
+    move-result v0
+
+    iget-wide v1, p0, Lt48;->c:J
+
+    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 4
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "SendLocation(locationData="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lt48;->a:Lar7;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", zoom="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Lt48;->b:F
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v1, ", livePeriod="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ")"
+
+    iget-wide v2, p0, Lt48;->c:J
+
+    invoke-static {v0, v2, v3, v1}, Lu88;->m(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

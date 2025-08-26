@@ -111,11 +111,11 @@
 .method private synthetic lambda$setVideoProcessor$1(Lorg/webrtc/VideoFrame;)V
     .locals 2
 
-    new-instance v0, Lzbe;
+    new-instance v0, Ljff;
 
-    const/16 v1, 0x13
+    const/16 v1, 0x9
 
-    invoke-direct {v0, p0, v1, p1}, Lzbe;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-direct {v0, p0, v1, p1}, Ljff;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
     invoke-virtual {p0, v0}, Lorg/webrtc/MediaSource;->runWithReference(Ljava/lang/Runnable;)V
 
@@ -130,18 +130,18 @@
     .line 1
     invoke-static {p1, p2}, Ljava/lang/Math;->max(II)I
 
-    move-result v4
+    move-result v1
 
     .line 2
     invoke-static {p1, p2}, Ljava/lang/Math;->min(II)I
 
-    move-result v3
+    move-result v2
+
+    move v3, v2
+
+    move v4, v1
 
     move-object v0, p0
-
-    move v1, v4
-
-    move v2, v3
 
     move v5, p3
 
@@ -152,38 +152,38 @@
 .end method
 
 .method public adaptOutputFormat(IIIII)V
-    .locals 2
+    .locals 1
+
+    move v0, p1
 
     .line 4
-    new-instance v0, Lorg/webrtc/VideoSource$AspectRatio;
+    new-instance p1, Lorg/webrtc/VideoSource$AspectRatio;
 
-    invoke-direct {v0, p1, p2}, Lorg/webrtc/VideoSource$AspectRatio;-><init>(II)V
+    invoke-direct {p1, v0, p2}, Lorg/webrtc/VideoSource$AspectRatio;-><init>(II)V
 
-    mul-int/2addr p1, p2
+    mul-int/2addr p2, v0
 
     .line 5
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
 
-    new-instance v1, Lorg/webrtc/VideoSource$AspectRatio;
+    move v0, p3
 
-    invoke-direct {v1, p3, p4}, Lorg/webrtc/VideoSource$AspectRatio;-><init>(II)V
+    new-instance p3, Lorg/webrtc/VideoSource$AspectRatio;
 
-    mul-int/2addr p3, p4
+    invoke-direct {p3, v0, p4}, Lorg/webrtc/VideoSource$AspectRatio;-><init>(II)V
+
+    mul-int/2addr p4, v0
 
     .line 6
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p4
 
     invoke-static {p5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p5
-
-    move-object p1, v0
-
-    move-object p3, v1
 
     .line 7
     invoke-virtual/range {p0 .. p5}, Lorg/webrtc/VideoSource;->adaptOutputFormat(Lorg/webrtc/VideoSource$AspectRatio;Ljava/lang/Integer;Lorg/webrtc/VideoSource$AspectRatio;Ljava/lang/Integer;Ljava/lang/Integer;)V
@@ -192,22 +192,12 @@
 .end method
 
 .method public adaptOutputFormat(Lorg/webrtc/VideoSource$AspectRatio;Ljava/lang/Integer;Lorg/webrtc/VideoSource$AspectRatio;Ljava/lang/Integer;Ljava/lang/Integer;)V
-    .locals 6
+    .locals 0
 
     .line 8
-    iget-object v0, p0, Lorg/webrtc/VideoSource;->nativeAndroidVideoTrackSource:Lorg/webrtc/NativeAndroidVideoTrackSource;
+    iget-object p0, p0, Lorg/webrtc/VideoSource;->nativeAndroidVideoTrackSource:Lorg/webrtc/NativeAndroidVideoTrackSource;
 
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v3, p3
-
-    move-object v4, p4
-
-    move-object v5, p5
-
-    invoke-virtual/range {v0 .. v5}, Lorg/webrtc/NativeAndroidVideoTrackSource;->adaptOutputFormat(Lorg/webrtc/VideoSource$AspectRatio;Ljava/lang/Integer;Lorg/webrtc/VideoSource$AspectRatio;Ljava/lang/Integer;Ljava/lang/Integer;)V
+    invoke-virtual/range {p0 .. p5}, Lorg/webrtc/NativeAndroidVideoTrackSource;->adaptOutputFormat(Lorg/webrtc/VideoSource$AspectRatio;Ljava/lang/Integer;Lorg/webrtc/VideoSource$AspectRatio;Ljava/lang/Integer;Ljava/lang/Integer;)V
 
     return-void
 .end method
@@ -289,9 +279,9 @@
 
     if-eqz p1, :cond_1
 
-    new-instance v1, Ls8f;
+    new-instance v1, Lcmf;
 
-    invoke-direct {v1, p0}, Ls8f;-><init>(Lorg/webrtc/VideoSource;)V
+    invoke-direct {v1, p0}, Lcmf;-><init>(Lorg/webrtc/VideoSource;)V
 
     invoke-interface {p1, v1}, Lorg/webrtc/VideoProcessor;->setSink(Lorg/webrtc/VideoSink;)V
 

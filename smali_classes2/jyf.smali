@@ -2,27 +2,18 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lle0;
 
-
-# instance fields
-.field public a:Z
-
-.field public final synthetic b:Lgx0;
-
-
-# direct methods
-.method public constructor <init>(Lgx0;)V
+# virtual methods
+.method public final serializer()Lcc7;
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcc7;"
+        }
+    .end annotation
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object p0, Liyf;->a:Liyf;
 
-    iput-object p1, p0, Ljyf;->b:Lgx0;
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Ljyf;->a:Z
-
-    return-void
+    return-object p0
 .end method

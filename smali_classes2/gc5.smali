@@ -1,69 +1,144 @@
-.class public final Lgc5;
-.super Ler3;
+.class public final synthetic Lgc5;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lc6;
 
 
 # instance fields
-.field public X:Ljava/lang/String;
+.field public final synthetic a:I
 
-.field public Y:Ljava/lang/String;
+.field public final synthetic b:Lpc5;
 
-.field public Z:J
-
-.field public o:Lhc5;
-
-.field public w0:J
-
-.field public synthetic x0:Ljava/lang/Object;
-
-.field public final synthetic y0:Lhc5;
-
-.field public z0:I
+.field public final synthetic c:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Lhc5;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(Lpc5;Ljava/util/List;I)V
     .locals 0
 
-    iput-object p1, p0, Lgc5;->y0:Lhc5;
+    iput p3, p0, Lgc5;->a:I
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lgc5;->b:Lpc5;
+
+    iput-object p2, p0, Lgc5;->c:Ljava/util/List;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 10
+.method public final run()V
+    .locals 5
 
-    iput-object p1, p0, Lgc5;->x0:Ljava/lang/Object;
+    iget v0, p0, Lgc5;->a:I
 
-    iget p1, p0, Lgc5;->z0:I
+    packed-switch v0, :pswitch_data_0
 
-    const/high16 v0, -0x80000000
+    iget-object v0, p0, Lgc5;->c:Ljava/util/List;
 
-    or-int/2addr p1, v0
+    iget-object p0, p0, Lgc5;->b:Lpc5;
 
-    iput p1, p0, Lgc5;->z0:I
+    iget-object v1, p0, Lpc5;->a:Lkjc;
 
-    const/4 v7, 0x0
+    invoke-virtual {v1}, Lkjc;->c()V
 
-    const/4 v8, 0x0
+    :try_start_0
+    const-string v2, "SELECT MAX(`index`) FROM favorite_sticker_sets"
 
-    iget-object v0, p0, Lgc5;->y0:Lhc5;
+    const/4 v3, 0x0
 
-    const-wide/16 v1, 0x0
+    invoke-static {v3, v2}, Lakc;->c(ILjava/lang/String;)Lakc;
 
-    const-wide/16 v3, 0x0
+    move-result-object v2
 
-    const-wide/16 v5, 0x0
+    iget-object p0, p0, Lpc5;->a:Lkjc;
 
-    move-object v9, p0
+    invoke-virtual {p0}, Lkjc;->b()V
 
-    invoke-virtual/range {v0 .. v9}, Lhc5;->c(JJJLjava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0, v2}, Lkjc;->n(Llce;)Landroid/database/Cursor;
 
     move-result-object p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    return-object p0
+    :try_start_1
+    invoke-interface {p0}, Landroid/database/Cursor;->moveToFirst()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    invoke-interface {p0, v3}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v3
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_1
+
+    :cond_0
+    :goto_0
+    :try_start_2
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    invoke-virtual {v2}, Lakc;->o()V
+
+    add-int/lit8 v3, v3, 0x1
+
+    int-to-long v2, v3
+
+    invoke-static {v2, v3, v0}, Lpc5;->b(JLjava/util/List;)Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Lkjc;->q()V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    invoke-virtual {v1}, Lkjc;->k()V
+
+    return-void
+
+    :catchall_1
+    move-exception p0
+
+    goto :goto_2
+
+    :goto_1
+    :try_start_3
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    invoke-virtual {v2}, Lakc;->o()V
+
+    throw v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    :goto_2
+    invoke-virtual {v1}, Lkjc;->k()V
+
+    throw p0
+
+    :pswitch_0
+    iget-object v0, p0, Lgc5;->b:Lpc5;
+
+    iget-object p0, p0, Lgc5;->c:Ljava/util/List;
+
+    invoke-virtual {v0, p0}, Lpc5;->a(Ljava/util/List;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

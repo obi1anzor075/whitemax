@@ -1,6 +1,5 @@
 .class public synthetic Landroid/media/MediaRouter2$RouteCallback;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # direct methods

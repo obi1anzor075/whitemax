@@ -2,22 +2,49 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lc02;
+
 
 # instance fields
-.field public final a:Lmge;
+.field public final X:I
 
-.field public final b:Ljava/lang/Integer;
+.field public final Y:J
+
+.field public final a:J
+
+.field public final b:Le2e;
+
+.field public final c:Lmoe;
+
+.field public final o:Ljava/lang/Integer;
 
 
 # direct methods
-.method public constructor <init>(Lhge;Ljava/lang/Integer;)V
+.method public constructor <init>(JLe2e;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lb02;->a:Lmge;
+    iput-wide p1, p0, Lb02;->a:J
 
-    iput-object p2, p0, Lb02;->b:Ljava/lang/Integer;
+    iput-object p3, p0, Lb02;->b:Le2e;
+
+    iget-object p1, p3, Le2e;->b:Lmoe;
+
+    iput-object p1, p0, Lb02;->c:Lmoe;
+
+    iget-object p1, p3, Le2e;->o:Ljava/lang/Integer;
+
+    iput-object p1, p0, Lb02;->o:Ljava/lang/Integer;
+
+    iget p1, p3, Le2e;->p0:I
+
+    iput p1, p0, Lb02;->X:I
+
+    iget-wide p1, p3, Le2e;->q0:J
+
+    iput-wide p1, p0, Lb02;->Y:J
 
     return-void
 .end method
@@ -25,7 +52,7 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 7
 
     const/4 v0, 0x1
 
@@ -45,24 +72,22 @@
     :cond_1
     check-cast p1, Lb02;
 
-    iget-object v1, p1, Lb02;->a:Lmge;
+    iget-wide v3, p0, Lb02;->a:J
 
-    iget-object v3, p0, Lb02;->a:Lmge;
+    iget-wide v5, p1, Lb02;->a:J
 
-    invoke-static {v3, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    cmp-long v1, v3, v5
 
-    move-result v1
-
-    if-nez v1, :cond_2
+    if-eqz v1, :cond_2
 
     return v2
 
     :cond_2
-    iget-object p0, p0, Lb02;->b:Ljava/lang/Integer;
+    iget-object p0, p0, Lb02;->b:Le2e;
 
-    iget-object p1, p1, Lb02;->b:Ljava/lang/Integer;
+    iget-object p1, p1, Lb02;->b:Le2e;
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -74,54 +99,89 @@
     return v0
 .end method
 
+.method public final getItemId()J
+    .locals 2
+
+    iget-wide v0, p0, Lb02;->Y:J
+
+    return-wide v0
+.end method
+
+.method public final getName()Lmoe;
+    .locals 0
+
+    iget-object p0, p0, Lb02;->c:Lmoe;
+
+    return-object p0
+.end method
+
 .method public final hashCode()I
-    .locals 1
+    .locals 2
 
-    iget-object v0, p0, Lb02;->a:Lmge;
+    iget-wide v0, p0, Lb02;->a:J
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
 
     move-result v0
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object p0, p0, Lb02;->b:Ljava/lang/Integer;
+    iget-object p0, p0, Lb02;->b:Le2e;
 
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {p0}, Le2e;->hashCode()I
 
     move-result p0
 
-    :goto_0
-    add-int/2addr v0, p0
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final m()I
+    .locals 0
+
+    iget p0, p0, Lb02;->X:I
+
+    return p0
+.end method
+
+.method public final s()Z
+    .locals 1
+
+    iget-object p0, p0, Lb02;->b:Le2e;
+
+    iget p0, p0, Le2e;->Y:I
+
+    const/4 v0, 0x1
+
+    if-ne p0, v0, :cond_0
 
     return v0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "ShowSnackbar(title="
+    const-string v1, "StickerSet(setId="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lb02;->a:Lmge;
+    iget-wide v1, p0, Lb02;->a:J
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    const-string v1, ", iconRes="
+    const-string v1, ", model="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Lb02;->b:Ljava/lang/Integer;
+    iget-object p0, p0, Lb02;->b:Le2e;
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

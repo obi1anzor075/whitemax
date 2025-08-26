@@ -1,423 +1,160 @@
-.class public final Lyka;
+.class public final synthetic Lyka;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lorg/webrtc/VideoEncoderFactory$VideoEncoderSelector;
-.implements Liy7;
+.implements Lv56;
 
 
 # instance fields
-.field public volatile X:Lnyf;
+.field public final synthetic a:I
 
-.field public final a:Lwka;
-
-.field public final b:Lxwb;
-
-.field public c:Lorg/webrtc/VideoCodecInfo;
-
-.field public o:Lorg/webrtc/VideoCodecInfo;
+.field public final synthetic b:Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;
 
 
 # direct methods
-.method public constructor <init>(Lwka;Lxwb;)V
-    .locals 1
+.method public synthetic constructor <init>(Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;I)V
+    .locals 0
+
+    iput p2, p0, Lyka;->a:I
+
+    iput-object p1, p0, Lyka;->b:Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lyka;->a:Lwka;
-
-    iput-object p2, p0, Lyka;->b:Lxwb;
-
-    new-instance p1, Lnyf;
-
-    const/4 p2, 0x1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p1, p2, v0}, Lnyf;-><init>(IZ)V
-
-    iput-object p1, p0, Lyka;->X:Lnyf;
-
     return-void
-.end method
-
-.method public static b([Lorg/webrtc/VideoCodecInfo;Ljava/lang/String;)Lorg/webrtc/VideoCodecInfo;
-    .locals 4
-
-    if-eqz p0, :cond_1
-
-    array-length v0, p0
-
-    const/4 v1, 0x0
-
-    :goto_0
-    if-ge v1, v0, :cond_1
-
-    aget-object v2, p0, v1
-
-    iget-object v3, v2, Lorg/webrtc/VideoCodecInfo;->name:Ljava/lang/String;
-
-    invoke-static {v3, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v2, 0x0
-
-    :goto_1
-    return-object v2
 .end method
 
 
 # virtual methods
-.method public final a()Lorg/webrtc/VideoCodecInfo;
+.method public final invoke()Ljava/lang/Object;
     .locals 5
 
-    iget-object v0, p0, Lyka;->o:Lorg/webrtc/VideoCodecInfo;
+    iget v0, p0, Lyka;->a:I
 
-    const/4 v1, 0x0
+    const/4 v1, -0x1
 
-    if-nez v0, :cond_0
+    const/4 v2, 0x6
 
-    return-object v1
+    iget-object p0, p0, Lyka;->b:Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;
 
-    :cond_0
-    iget-object v0, p0, Lyka;->X:Lnyf;
+    packed-switch v0, :pswitch_data_0
 
-    iget v2, v0, Lnyf;->a:I
+    sget-object v0, Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;->Y:[Lbc7;
 
-    sget-object v3, Lxka;->$EnumSwitchMapping$0:[I
+    new-instance v0, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;
 
-    invoke-static {v2}, Lhr1;->t(I)I
-
-    move-result v2
-
-    aget v2, v3, v2
-
-    const/4 v3, 0x1
-
-    const-string v4, "PatchedVideoEncoderFactoryCodecSelector"
-
-    if-ne v2, v3, :cond_1
-
-    iget-object v0, p0, Lyka;->o:Lorg/webrtc/VideoCodecInfo;
-
-    goto :goto_0
-
-    :cond_1
-    iget-boolean v0, v0, Lnyf;->b:Z
-
-    const-string v2, "VP8"
-
-    if-eqz v0, :cond_3
-
-    iget-object v0, p0, Lyka;->a:Lwka;
-
-    iget-object v0, v0, Lwka;->a:Lorg/webrtc/HardwareVideoEncoderFactory;
-
-    invoke-virtual {v0}, Lorg/webrtc/HardwareVideoEncoderFactory;->getSupportedCodecs()[Lorg/webrtc/VideoCodecInfo;
-
-    move-result-object v0
-
-    const-string v3, "VP9"
-
-    invoke-static {v0, v3}, Lyka;->b([Lorg/webrtc/VideoCodecInfo;Ljava/lang/String;)Lorg/webrtc/VideoCodecInfo;
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
 
     move-result-object v3
 
-    if-nez v3, :cond_2
+    const/4 v4, 0x0
 
-    invoke-static {v0, v2}, Lyka;->b([Lorg/webrtc/VideoCodecInfo;Ljava/lang/String;)Lorg/webrtc/VideoCodecInfo;
+    invoke-direct {v0, v3, v4, v2}, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    move-result-object v0
+    sget v2, Luba;->r:I
 
-    if-nez v0, :cond_4
+    invoke-virtual {v0, v2}, Landroid/view/View;->setId(I)V
 
-    iget-object v0, p0, Lyka;->a:Lwka;
+    new-instance v2, Landroid/view/ViewGroup$LayoutParams;
 
-    iget-object v0, v0, Lwka;->b:Lorg/webrtc/SoftwareVideoEncoderFactory;
+    invoke-direct {v2, v1, v1}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    invoke-virtual {v0}, Lorg/webrtc/SoftwareVideoEncoderFactory;->getSupportedCodecs()[Lorg/webrtc/VideoCodecInfo;
+    invoke-virtual {v0, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    move-result-object v0
+    new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    invoke-static {v0, v2}, Lyka;->b([Lorg/webrtc/VideoCodecInfo;Ljava/lang/String;)Lorg/webrtc/VideoCodecInfo;
+    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v0
+    invoke-direct {v1}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>()V
 
-    goto :goto_0
+    invoke-virtual {v0, v1}, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;->setLayoutManager(Landroidx/recyclerview/widget/a;)V
 
-    :cond_2
-    move-object v0, v3
+    const/4 v1, 0x2
 
-    goto :goto_0
+    invoke-virtual {v0, v1}, Landroid/view/View;->setOverScrollMode(I)V
 
-    :cond_3
-    iget-object v0, p0, Lyka;->a:Lwka;
+    iget-object p0, p0, Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;->c:Ludd;
 
-    iget-object v0, v0, Lwka;->b:Lorg/webrtc/SoftwareVideoEncoderFactory;
+    invoke-virtual {v0, p0}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->setAdapter(Lgbc;)V
 
-    invoke-virtual {v0}, Lorg/webrtc/SoftwareVideoEncoderFactory;->getSupportedCodecs()[Lorg/webrtc/VideoCodecInfo;
+    new-instance p0, Lxh9;
 
-    move-result-object v0
+    const/16 v1, 0x1a
 
-    invoke-static {v0, v2}, Lyka;->b([Lorg/webrtc/VideoCodecInfo;Ljava/lang/String;)Lorg/webrtc/VideoCodecInfo;
+    invoke-direct {p0, v1}, Lxh9;-><init>(I)V
 
-    move-result-object v0
+    new-instance v1, Lwzc;
 
-    if-nez v0, :cond_4
+    sget-object v2, Lqp4;->q0:Lap9;
 
-    iget-object v2, p0, Lyka;->b:Lxwb;
-
-    const-string v3, "Software VP8 encoder not found"
-
-    invoke-interface {v2, v4, v3}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_4
-    :goto_0
-    iget-object v2, p0, Lyka;->c:Lorg/webrtc/VideoCodecInfo;
-
-    invoke-static {v0, v2}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_5
-
-    goto :goto_1
-
-    :cond_5
-    iget-object v1, p0, Lyka;->b:Lxwb;
-
-    iget-object p0, p0, Lyka;->c:Lorg/webrtc/VideoCodecInfo;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "Selected encoder "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v3, " differs from current one "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ". Let us suggest an update"
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-interface {v1, v4, p0}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
-
-    move-object v1, v0
-
-    :goto_1
-    return-object v1
-.end method
-
-.method public final onAvailableBitrate(I)Lorg/webrtc/VideoCodecInfo;
-    .locals 0
-
-    invoke-virtual {p0}, Lyka;->a()Lorg/webrtc/VideoCodecInfo;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final onCurrentEncoder(Lorg/webrtc/VideoCodecInfo;)V
-    .locals 4
-
-    iget-object v0, p0, Lyka;->o:Lorg/webrtc/VideoCodecInfo;
-
-    const-string v1, "PatchedVideoEncoderFactoryCodecSelector"
-
-    if-nez v0, :cond_0
-
-    if-eqz p1, :cond_0
-
-    iget-object v0, p0, Lyka;->b:Lxwb;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "Encoder  "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v3, " was selected as default"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2, v0}, Lap9;->h(Landroid/view/View;)Lyha;
 
     move-result-object v2
 
-    invoke-interface {v0, v1, v2}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    const/16 v3, 0xc
 
-    iput-object p1, p0, Lyka;->o:Lorg/webrtc/VideoCodecInfo;
+    invoke-direct {v1, v2, p0, v4, v3}, Lwzc;-><init>(Lyha;Luzc;Ll;I)V
 
-    :cond_0
-    iput-object p1, p0, Lyka;->c:Lorg/webrtc/VideoCodecInfo;
+    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->j(Lmbc;)V
 
-    iget-object v0, p0, Lyka;->b:Lxwb;
+    new-instance p0, Lky0;
 
-    iget-object p0, p0, Lyka;->X:Lnyf;
+    const/4 v1, 0x3
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {p0, v1}, Lky0;-><init>(I)V
 
-    const-string v3, "Codec selected: "
+    invoke-virtual {v0, p0}, Landroidx/recyclerview/widget/RecyclerView;->j(Lmbc;)V
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    return-object v0
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    :pswitch_0
+    sget-object v0, Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;->Y:[Lbc7;
 
-    const-string p1, " for condition "
+    new-instance v0, Lvia;
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
 
     move-result-object p0
 
-    invoke-interface {v0, v1, p0}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p0, v2}, Lvia;-><init>(Landroid/content/Context;I)V
 
-    return-void
-.end method
+    sget p0, Luba;->t:I
 
-.method public final onEncoderBroken()Lorg/webrtc/VideoCodecInfo;
-    .locals 7
+    invoke-virtual {v0, p0}, Landroid/view/View;->setId(I)V
 
-    iget-object v0, p0, Lyka;->c:Lorg/webrtc/VideoCodecInfo;
+    new-instance p0, Landroid/view/ViewGroup$LayoutParams;
 
-    iget-object v1, p0, Lyka;->o:Lorg/webrtc/VideoCodecInfo;
+    const/4 v2, -0x2
 
-    invoke-static {v0, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-direct {p0, v1, v2}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    move-result v0
+    invoke-virtual {v0, p0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    const/4 v1, 0x0
+    sget-object p0, Lnia;->a:Lnia;
 
-    const-string v2, "PatchedVideoEncoderFactoryCodecSelector"
+    invoke-virtual {v0, p0}, Lvia;->setForm(Lnia;)V
 
-    const-string v3, " was broken. reset"
+    sget p0, Lvba;->o:I
 
-    iget-object v4, p0, Lyka;->b:Lxwb;
+    invoke-virtual {v0, p0}, Lvia;->setTitle(I)V
 
-    if-eqz v0, :cond_1
+    new-instance p0, Ldia;
 
-    iget-object v0, p0, Lyka;->o:Lorg/webrtc/VideoCodecInfo;
+    new-instance v1, Lj2a;
 
-    if-eqz v0, :cond_0
+    const/16 v2, 0xe
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Lj2a;-><init>(I)V
 
-    const-string v6, "Default encoder "
+    invoke-direct {p0, v1}, Ldia;-><init>(Lx56;)V
 
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, p0}, Lvia;->setLeftActions(Ljia;)V
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    return-object v0
 
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {v4, v2, v0}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_0
-    iput-object v1, p0, Lyka;->o:Lorg/webrtc/VideoCodecInfo;
-
-    :cond_1
-    iget-object v0, p0, Lyka;->c:Lorg/webrtc/VideoCodecInfo;
-
-    if-eqz v0, :cond_2
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    const-string v6, "Current encoder "
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {v4, v2, v0}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_2
-    iput-object v1, p0, Lyka;->c:Lorg/webrtc/VideoCodecInfo;
-
-    invoke-virtual {p0}, Lyka;->a()Lorg/webrtc/VideoCodecInfo;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final onResolutionChange(II)Lorg/webrtc/VideoCodecInfo;
-    .locals 0
-
-    invoke-virtual {p0}, Lyka;->a()Lorg/webrtc/VideoCodecInfo;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final q(Ljy7;)V
-    .locals 3
-
-    iget-object v0, p0, Lyka;->b:Lxwb;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Network condition did change. New condition is "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "PatchedVideoEncoderFactoryCodecSelector"
-
-    invoke-interface {v0, v2, v1}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v0, Lnyf;
-
-    iget v1, p1, Ljy7;->a:I
-
-    iget-boolean p1, p1, Ljy7;->c:Z
-
-    invoke-direct {v0, v1, p1}, Lnyf;-><init>(IZ)V
-
-    iput-object v0, p0, Lyka;->X:Lnyf;
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

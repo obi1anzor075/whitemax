@@ -1,89 +1,101 @@
 .class public final Lbxd;
-.super Lg34;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final b:Lbxd;
-
-.field public static final c:Lc34;
-
-.field public static final d:Lc34;
-
-.field public static final e:Lc34;
-
-.field public static final f:Lc34;
+# instance fields
+.field public final a:Landroid/net/Uri;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
+.method public constructor <init>(Landroid/net/Uri;)V
+    .locals 0
 
-    new-instance v6, Lbxd;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v6}, Lg34;-><init>()V
-
-    sput-object v6, Lbxd;->b:Lbxd;
-
-    const/4 v7, 0x0
-
-    new-array v2, v7, [Ljava/lang/String;
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const-string v1, ":stickers/settings"
-
-    const/16 v5, 0xe
-
-    move-object v0, v6
-
-    invoke-static/range {v0 .. v5}, Lg34;->a(Lg34;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lc34;
-
-    move-result-object v0
-
-    sput-object v0, Lbxd;->c:Lc34;
-
-    new-array v2, v7, [Ljava/lang/String;
-
-    const-string v1, ":stickers/recent"
-
-    move-object v0, v6
-
-    invoke-static/range {v0 .. v5}, Lg34;->a(Lg34;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lc34;
-
-    move-result-object v0
-
-    sput-object v0, Lbxd;->d:Lc34;
-
-    new-array v2, v7, [Ljava/lang/String;
-
-    const-string v1, ":stickers/favorite"
-
-    move-object v0, v6
-
-    invoke-static/range {v0 .. v5}, Lg34;->a(Lg34;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lc34;
-
-    move-result-object v0
-
-    sput-object v0, Lbxd;->e:Lc34;
-
-    const-string v0, "set_id"
-
-    filled-new-array {v0}, [Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v1, ":stickers/set"
-
-    move-object v0, v6
-
-    invoke-static/range {v0 .. v5}, Lg34;->a(Lg34;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lc34;
-
-    move-result-object v0
-
-    sput-object v0, Lbxd;->f:Lc34;
+    iput-object p1, p0, Lbxd;->a:Landroid/net/Uri;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lbxd;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lbxd;
+
+    iget-object p0, p0, Lbxd;->a:Landroid/net/Uri;
+
+    iget-object p1, p1, Lbxd;->a:Landroid/net/Uri;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    iget-object p0, p0, Lbxd;->a:Landroid/net/Uri;
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_0
+    invoke-virtual {p0}, Landroid/net/Uri;->hashCode()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "ShowInviteDialog(qrCodeUri="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lbxd;->a:Landroid/net/Uri;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

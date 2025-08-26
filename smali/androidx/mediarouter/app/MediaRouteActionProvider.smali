@@ -1,37 +1,37 @@
 .class public Landroidx/mediarouter/app/MediaRouteActionProvider;
-.super Lo7;
+.super Lg7;
 .source "SourceFile"
 
 
 # instance fields
-.field public final b:Lyb8;
+.field public final b:Lng8;
 
-.field public final c:Lqb8;
+.field public final c:Lfg8;
 
-.field public final d:Lua8;
+.field public final d:Ljf8;
 
-.field public e:Lia8;
+.field public e:Lye8;
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
 
-    invoke-direct {p0, p1}, Lo7;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p1}, Lg7;-><init>(Landroid/content/Context;)V
 
-    sget-object v0, Lqb8;->c:Lqb8;
+    sget-object v0, Lfg8;->c:Lfg8;
 
-    iput-object v0, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->c:Lqb8;
+    iput-object v0, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->c:Lfg8;
 
-    sget-object v0, Lua8;->a:Lua8;
+    sget-object v0, Ljf8;->a:Ljf8;
 
-    iput-object v0, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->d:Lua8;
+    iput-object v0, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->d:Ljf8;
 
-    invoke-static {p1}, Lyb8;->d(Landroid/content/Context;)Lyb8;
+    invoke-static {p1}, Lng8;->d(Landroid/content/Context;)Lng8;
 
     move-result-object p1
 
-    iput-object p1, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->b:Lyb8;
+    iput-object p1, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->b:Lng8;
 
     new-instance p1, Ljava/lang/ref/WeakReference;
 
@@ -45,15 +45,24 @@
 .method public final b()Z
     .locals 1
 
-    iget-object v0, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->c:Lqb8;
+    iget-object v0, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->b:Lng8;
 
-    iget-object p0, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->b:Lyb8;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p0, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->c:Lfg8;
 
-    invoke-static {v0}, Lyb8;->e(Lqb8;)Z
+    invoke-static {p0}, Lng8;->e(Lfg8;)Z
 
     move-result p0
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
 
     return p0
 .end method
@@ -61,37 +70,37 @@
 .method public final c()Landroid/view/View;
     .locals 4
 
-    new-instance v0, Lia8;
+    new-instance v0, Lye8;
 
-    iget-object v1, p0, Lo7;->a:Landroid/content/Context;
+    iget-object v1, p0, Lg7;->a:Landroid/content/Context;
 
-    invoke-direct {v0, v1}, Lia8;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v1}, Lye8;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->e:Lia8;
+    iput-object v0, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->e:Lye8;
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Lia8;->setCheatSheetEnabled(Z)V
+    invoke-virtual {v0, v1}, Lye8;->setCheatSheetEnabled(Z)V
 
-    iget-object v0, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->e:Lia8;
+    iget-object v0, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->e:Lye8;
 
-    iget-object v1, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->c:Lqb8;
+    iget-object v1, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->c:Lfg8;
 
-    invoke-virtual {v0, v1}, Lia8;->setRouteSelector(Lqb8;)V
+    invoke-virtual {v0, v1}, Lye8;->setRouteSelector(Lfg8;)V
 
-    iget-object v0, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->e:Lia8;
+    iget-object v0, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->e:Lye8;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lia8;->setAlwaysVisible(Z)V
+    invoke-virtual {v0, v1}, Lye8;->setAlwaysVisible(Z)V
 
-    iget-object v0, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->e:Lia8;
+    iget-object v0, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->e:Lye8;
 
-    iget-object v1, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->d:Lua8;
+    iget-object v1, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->d:Ljf8;
 
-    invoke-virtual {v0, v1}, Lia8;->setDialogFactory(Lua8;)V
+    invoke-virtual {v0, v1}, Lye8;->setDialogFactory(Ljf8;)V
 
-    iget-object v0, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->e:Lia8;
+    iget-object v0, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->e:Lye8;
 
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
@@ -103,7 +112,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    iget-object p0, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->e:Lia8;
+    iget-object p0, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->e:Lye8;
 
     return-object p0
 .end method
@@ -111,11 +120,11 @@
 .method public final e()Z
     .locals 0
 
-    iget-object p0, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->e:Lia8;
+    iget-object p0, p0, Landroidx/mediarouter/app/MediaRouteActionProvider;->e:Lye8;
 
     if-eqz p0, :cond_0
 
-    invoke-virtual {p0}, Lia8;->d()Z
+    invoke-virtual {p0}, Lye8;->d()Z
 
     move-result p0
 

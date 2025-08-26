@@ -1,151 +1,727 @@
-.class public final synthetic Lrs7;
-.super Ljava/lang/Object;
+.class public final Lrs7;
+.super Lmu3;
 .source "SourceFile"
 
-# interfaces
-.implements Lr3e;
 
-
-# instance fields
-.field public final synthetic X:Z
-
-.field public final synthetic Y:Lxzc;
-
-.field public final synthetic a:Lt52;
-
-.field public final synthetic b:Ldi3;
-
-.field public final synthetic c:Lkn3;
-
-.field public final synthetic o:Lgsc;
+# static fields
+.field public static final a:Lrs7;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lt52;Ldi3;Lkn3;Lgsc;ZLxzc;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lrs7;
 
-    iput-object p1, p0, Lrs7;->a:Lt52;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lrs7;->b:Ldi3;
-
-    iput-object p3, p0, Lrs7;->c:Lkn3;
-
-    iput-object p4, p0, Lrs7;->o:Lgsc;
-
-    iput-boolean p5, p0, Lrs7;->X:Z
-
-    iput-object p6, p0, Lrs7;->Y:Lxzc;
+    sput-object v0, Lrs7;->a:Lrs7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final get()Ljava/lang/Object;
-    .locals 12
+.method public final a(Lou3;Ltu3;Luu3;)V
+    .locals 2
 
-    iget-object v0, p0, Lrs7;->Y:Lxzc;
+    invoke-static {p1}, Lwx7;->G(Lou3;)Ljava/lang/String;
 
-    check-cast v0, Lvqc;
+    move-result-object p0
 
-    invoke-virtual {v0}, Lvqc;->u()Z
+    sget-object p1, Lg47;->m:Llr6;
 
-    move-result v1
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_0
-
-    iget-object v0, v0, Lvqc;->l:Lr7e;
-
-    invoke-virtual {v0}, Lr7e;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Ljava/lang/String;
+    if-nez p1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    move-object v0, v2
+    invoke-interface {p1}, Llr6;->c()Z
 
-    :goto_0
-    new-instance v1, Lasc;
+    move-result p2
 
-    iget-object v9, p0, Lrs7;->a:Lt52;
+    if-eqz p2, :cond_1
 
-    iget-object v10, p0, Lrs7;->b:Ldi3;
+    sget-object p2, Lqs7;->c:Lqs7;
 
-    iget-object v6, p0, Lrs7;->c:Lkn3;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget-object v11, p0, Lrs7;->o:Lgsc;
+    const-string v1, "onChangeEnd, changeType="
 
-    iget-boolean p0, p0, Lrs7;->X:Z
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-object v3, v1
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-object v4, v9
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-object v5, v10
+    move-result-object p3
 
-    move-object v7, v11
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move v8, p0
+    const-string v1, "lifecycle: "
 
-    invoke-direct/range {v3 .. v8}, Lasc;-><init>(Lt52;Ldi3;Lkn3;Lgsc;Z)V
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    if-eqz v0, :cond_3
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    array-length v3, v0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const/4 v4, 0x1
+    move-result-object p3
 
-    if-nez v3, :cond_1
+    const/4 v0, 0x0
 
-    move v3, v4
-
-    goto :goto_1
+    invoke-interface {p1, p2, p0, p3, v0}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_1
-    const/4 v3, 0x0
+    :goto_0
+    return-void
+.end method
 
-    :goto_1
-    xor-int/2addr v3, v4
+.method public final b(Lou3;Ltu3;Luu3;)V
+    .locals 2
 
-    if-eqz v3, :cond_2
+    invoke-static {p1}, Lwx7;->G(Lou3;)Ljava/lang/String;
 
-    goto :goto_2
+    move-result-object p0
 
-    :cond_2
-    move-object v0, v2
+    sget-object p1, Lg47;->m:Llr6;
 
-    :goto_2
-    if-eqz v0, :cond_3
+    if-nez p1, :cond_0
 
-    new-instance v2, Lbsc;
+    goto :goto_0
 
-    invoke-direct {v2, v0, v9, v11}, Lbsc;-><init>([Ljava/lang/String;Lt52;Lgsc;)V
+    :cond_0
+    invoke-interface {p1}, Llr6;->c()Z
 
-    :cond_3
-    new-instance v0, Lzrc;
+    move-result p2
 
-    move-object v3, v0
+    if-eqz p2, :cond_1
 
-    move-object v4, v9
+    sget-object p2, Lqs7;->c:Lqs7;
 
-    move-object v5, v10
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move-object v6, v11
+    const-string v1, "onChangeStart, changeType="
 
-    move v7, p0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-object v8, v1
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-object v9, v2
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-direct/range {v3 .. v9}, Lzrc;-><init>(Lt52;Ldi3;Lgsc;ZLasc;Lbsc;)V
+    move-result-object p3
 
-    return-object v0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "lifecycle: "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p3
+
+    const/4 v0, 0x0
+
+    invoke-interface {p1, p2, p0, p3, v0}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final c(Lou3;Landroid/os/Bundle;)V
+    .locals 2
+
+    invoke-static {p1}, Lwx7;->G(Lou3;)Ljava/lang/String;
+
+    move-result-object p0
+
+    sget-object p1, Lg47;->m:Llr6;
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {p1}, Llr6;->c()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_1
+
+    sget-object p2, Lqs7;->c:Lqs7;
+
+    const-string v0, "lifecycle: onRestoreInstanceState"
+
+    const/4 v1, 0x0
+
+    invoke-interface {p1, p2, p0, v0, v1}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final d(Lou3;)V
+    .locals 3
+
+    invoke-static {p1}, Lwx7;->G(Lou3;)Ljava/lang/String;
+
+    move-result-object p0
+
+    sget-object p1, Lg47;->m:Llr6;
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {p1}, Llr6;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lqs7;->c:Lqs7;
+
+    const-string v1, "lifecycle: onRestoreViewState"
+
+    const/4 v2, 0x0
+
+    invoke-interface {p1, v0, p0, v1, v2}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final e(Lou3;Landroid/os/Bundle;)V
+    .locals 2
+
+    invoke-static {p1}, Lwx7;->G(Lou3;)Ljava/lang/String;
+
+    move-result-object p0
+
+    sget-object p1, Lg47;->m:Llr6;
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {p1}, Llr6;->c()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_1
+
+    sget-object p2, Lqs7;->c:Lqs7;
+
+    const-string v0, "lifecycle: onSaveInstanceState"
+
+    const/4 v1, 0x0
+
+    invoke-interface {p1, p2, p0, v0, v1}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final f(Lou3;)V
+    .locals 3
+
+    invoke-static {p1}, Lwx7;->G(Lou3;)Ljava/lang/String;
+
+    move-result-object p0
+
+    sget-object p1, Lg47;->m:Llr6;
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {p1}, Llr6;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lqs7;->c:Lqs7;
+
+    const-string v1, "lifecycle: onSaveViewState"
+
+    const/4 v2, 0x0
+
+    invoke-interface {p1, v0, p0, v1, v2}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final g(Lou3;)V
+    .locals 3
+
+    invoke-static {p1}, Lwx7;->G(Lou3;)Ljava/lang/String;
+
+    move-result-object p0
+
+    sget-object p1, Lg47;->m:Llr6;
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {p1}, Llr6;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lqs7;->c:Lqs7;
+
+    const-string v1, "lifecycle: postAttach"
+
+    const/4 v2, 0x0
+
+    invoke-interface {p1, v0, p0, v1, v2}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final h(Lou3;)V
+    .locals 3
+
+    invoke-static {p1}, Lwx7;->G(Lou3;)Ljava/lang/String;
+
+    move-result-object p0
+
+    sget-object p1, Lg47;->m:Llr6;
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {p1}, Llr6;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lqs7;->c:Lqs7;
+
+    const-string v1, "lifecycle: postContextAvailable"
+
+    const/4 v2, 0x0
+
+    invoke-interface {p1, v0, p0, v1, v2}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final i(Lou3;)V
+    .locals 3
+
+    invoke-static {p1}, Lwx7;->G(Lou3;)Ljava/lang/String;
+
+    move-result-object p0
+
+    sget-object p1, Lg47;->m:Llr6;
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {p1}, Llr6;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lqs7;->c:Lqs7;
+
+    const-string v1, "lifecycle: postContextUnavailable"
+
+    const/4 v2, 0x0
+
+    invoke-interface {p1, v0, p0, v1, v2}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final j(Lou3;Landroid/view/View;)V
+    .locals 2
+
+    invoke-static {p1}, Lwx7;->G(Lou3;)Ljava/lang/String;
+
+    move-result-object p0
+
+    sget-object p1, Lg47;->m:Llr6;
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {p1}, Llr6;->c()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_1
+
+    sget-object p2, Lqs7;->c:Lqs7;
+
+    const-string v0, "lifecycle: postCreateView"
+
+    const/4 v1, 0x0
+
+    invoke-interface {p1, p2, p0, v0, v1}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final k(Lou3;)V
+    .locals 3
+
+    invoke-static {p1}, Lwx7;->G(Lou3;)Ljava/lang/String;
+
+    move-result-object p0
+
+    sget-object p1, Lg47;->m:Llr6;
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {p1}, Llr6;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lqs7;->c:Lqs7;
+
+    const-string v1, "lifecycle: postDestroy"
+
+    const/4 v2, 0x0
+
+    invoke-interface {p1, v0, p0, v1, v2}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final l(Lou3;)V
+    .locals 3
+
+    invoke-static {p1}, Lwx7;->G(Lou3;)Ljava/lang/String;
+
+    move-result-object p0
+
+    sget-object p1, Lg47;->m:Llr6;
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {p1}, Llr6;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lqs7;->c:Lqs7;
+
+    const-string v1, "lifecycle: postDestroyView"
+
+    const/4 v2, 0x0
+
+    invoke-interface {p1, v0, p0, v1, v2}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final m(Lou3;)V
+    .locals 3
+
+    invoke-static {p1}, Lwx7;->G(Lou3;)Ljava/lang/String;
+
+    move-result-object p0
+
+    sget-object p1, Lg47;->m:Llr6;
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {p1}, Llr6;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lqs7;->c:Lqs7;
+
+    const-string v1, "lifecycle: postDetach"
+
+    const/4 v2, 0x0
+
+    invoke-interface {p1, v0, p0, v1, v2}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final n(Lou3;Landroid/view/View;)V
+    .locals 2
+
+    invoke-static {p1}, Lwx7;->G(Lou3;)Ljava/lang/String;
+
+    move-result-object p0
+
+    sget-object p1, Lg47;->m:Llr6;
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {p1}, Llr6;->c()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_1
+
+    sget-object p2, Lqs7;->c:Lqs7;
+
+    const-string v0, "lifecycle: preAttach"
+
+    const/4 v1, 0x0
+
+    invoke-interface {p1, p2, p0, v0, v1}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final o(Lou3;)V
+    .locals 3
+
+    invoke-static {p1}, Lwx7;->G(Lou3;)Ljava/lang/String;
+
+    move-result-object p0
+
+    sget-object p1, Lg47;->m:Llr6;
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {p1}, Llr6;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lqs7;->c:Lqs7;
+
+    const-string v1, "lifecycle: preContextAvailable"
+
+    const/4 v2, 0x0
+
+    invoke-interface {p1, v0, p0, v1, v2}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final p(Lou3;)V
+    .locals 3
+
+    invoke-static {p1}, Lwx7;->G(Lou3;)Ljava/lang/String;
+
+    move-result-object p0
+
+    sget-object p1, Lg47;->m:Llr6;
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {p1}, Llr6;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lqs7;->c:Lqs7;
+
+    const-string v1, "lifecycle: preContextUnavailable"
+
+    const/4 v2, 0x0
+
+    invoke-interface {p1, v0, p0, v1, v2}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final q(Lou3;)V
+    .locals 3
+
+    invoke-static {p1}, Lwx7;->G(Lou3;)Ljava/lang/String;
+
+    move-result-object p0
+
+    sget-object p1, Lg47;->m:Llr6;
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {p1}, Llr6;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lqs7;->c:Lqs7;
+
+    const-string v1, "lifecycle: preCreateView"
+
+    const/4 v2, 0x0
+
+    invoke-interface {p1, v0, p0, v1, v2}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final r(Lou3;)V
+    .locals 3
+
+    invoke-static {p1}, Lwx7;->G(Lou3;)Ljava/lang/String;
+
+    move-result-object p0
+
+    sget-object p1, Lg47;->m:Llr6;
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {p1}, Llr6;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lqs7;->c:Lqs7;
+
+    const-string v1, "lifecycle: preDestroy"
+
+    const/4 v2, 0x0
+
+    invoke-interface {p1, v0, p0, v1, v2}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final s(Lou3;Landroid/view/View;)V
+    .locals 2
+
+    invoke-static {p1}, Lwx7;->G(Lou3;)Ljava/lang/String;
+
+    move-result-object p0
+
+    sget-object p1, Lg47;->m:Llr6;
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {p1}, Llr6;->c()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_1
+
+    sget-object p2, Lqs7;->c:Lqs7;
+
+    const-string v0, "lifecycle: preDestroyView"
+
+    const/4 v1, 0x0
+
+    invoke-interface {p1, p2, p0, v0, v1}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final t(Lou3;)V
+    .locals 3
+
+    invoke-static {p1}, Lwx7;->G(Lou3;)Ljava/lang/String;
+
+    move-result-object p0
+
+    sget-object p1, Lg47;->m:Llr6;
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {p1}, Llr6;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lqs7;->c:Lqs7;
+
+    const-string v1, "lifecycle: preDetach"
+
+    const/4 v2, 0x0
+
+    invoke-interface {p1, v0, p0, v1, v2}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    return-void
 .end method

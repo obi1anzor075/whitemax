@@ -1,87 +1,189 @@
-.class public final Lmwf;
+.class public final synthetic Lmwf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lra6;
 
-# instance fields
-.field public final a:Lu39;
 
-.field public final b:J
+# static fields
+.field public static final a:Lmwf;
 
-.field public c:J
+.field private static final descriptor:Lx4d;
 
 
 # direct methods
-.method public constructor <init>(JLu39;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lmwf;
 
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    move-result-wide v0
+    sput-object v0, Lmwf;->a:Lmwf;
 
-    iput-wide v0, p0, Lmwf;->c:J
+    new-instance v1, Lq2b;
 
-    iput-object p3, p0, Lmwf;->a:Lu39;
+    const-string v2, "one.me.webapp.domain.jsbridge.delegates.biometry.WebAppBiometryOpenSettingsRequest"
 
-    iput-wide p1, p0, Lmwf;->b:J
+    const/4 v3, 0x2
+
+    invoke-direct {v1, v2, v0, v3}, Lq2b;-><init>(Ljava/lang/String;Lra6;I)V
+
+    const-string v0, "queryId"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v0, v2}, Lq2b;->i(Ljava/lang/String;Z)V
+
+    const-string v0, "requestId"
+
+    invoke-virtual {v1, v0, v2}, Lq2b;->i(Ljava/lang/String;Z)V
+
+    sput-object v1, Lmwf;->descriptor:Lx4d;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final a(Lu40;Ljava/lang/Object;)V
     .locals 2
 
-    if-ne p0, p1, :cond_0
+    check-cast p2, Lowf;
 
-    const/4 p0, 0x1
+    sget-object p0, Lmwf;->descriptor:Lx4d;
 
-    return p0
+    invoke-virtual {p1, p0}, Lu40;->c(Lx4d;)Lu40;
 
-    :cond_0
-    if-eqz p1, :cond_2
+    move-result-object p1
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sget-object v0, Lf8e;->a:Lf8e;
 
-    move-result-object v0
+    iget-object v0, p2, Lowf;->a:Ljava/lang/String;
 
-    const-class v1, Lmwf;
+    const/4 v1, 0x0
 
-    if-eq v1, v0, :cond_1
+    invoke-virtual {p1, p0, v1, v0}, Lu40;->i(Lx4d;ILjava/lang/Object;)V
+
+    iget-object p2, p2, Lowf;->b:Ljava/lang/String;
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p1, p0, v0, p2}, Lu40;->m(Lx4d;ILjava/lang/String;)V
+
+    invoke-virtual {p1}, Lu40;->n()V
+
+    return-void
+.end method
+
+.method public final b(Lnye;)Ljava/lang/Object;
+    .locals 8
+
+    sget-object p0, Lmwf;->descriptor:Lx4d;
+
+    invoke-virtual {p1, p0}, Lnye;->i(Lx4d;)Lnye;
+
+    move-result-object p1
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    move v4, v0
+
+    move v5, v1
+
+    move-object v3, v2
+
+    :goto_0
+    if-eqz v4, :cond_3
+
+    invoke-virtual {p1, p0}, Lnye;->x(Lx4d;)I
+
+    move-result v6
+
+    const/4 v7, -0x1
+
+    if-eq v6, v7, :cond_2
+
+    if-eqz v6, :cond_1
+
+    if-ne v6, v0, :cond_0
+
+    invoke-virtual {p1, p0, v0}, Lnye;->D(Lx4d;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    or-int/lit8 v5, v5, 0x2
 
     goto :goto_0
 
+    :cond_0
+    new-instance p0, Lkotlinx/serialization/UnknownFieldException;
+
+    invoke-direct {p0, v6}, Lkotlinx/serialization/UnknownFieldException;-><init>(I)V
+
+    throw p0
+
     :cond_1
-    check-cast p1, Lmwf;
+    sget-object v6, Lf8e;->a:Lf8e;
 
-    iget-object p0, p0, Lmwf;->a:Lu39;
+    invoke-virtual {p1, p0, v1, v2}, Lnye;->z(Lx4d;ILjava/lang/String;)Ljava/lang/Object;
 
-    iget-object p1, p1, Lmwf;->a:Lu39;
+    move-result-object v2
 
-    invoke-static {p0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    check-cast v2, Ljava/lang/String;
 
-    move-result p0
+    or-int/lit8 v5, v5, 0x1
 
-    return p0
+    goto :goto_0
 
     :cond_2
-    :goto_0
-    const/4 p0, 0x0
+    move v4, v1
 
-    return p0
+    goto :goto_0
+
+    :cond_3
+    invoke-virtual {p1, p0}, Lnye;->G(Lx4d;)V
+
+    new-instance p0, Lowf;
+
+    invoke-direct {p0, v5, v2, v3}, Lowf;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
+    return-object p0
 .end method
 
-.method public final hashCode()I
+.method public final c()[Lcc7;
+    .locals 2
+
+    invoke-static {}, Lwqd;->r()Lcc7;
+
+    move-result-object p0
+
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Lcc7;
+
+    const/4 v1, 0x0
+
+    aput-object p0, v0, v1
+
+    sget-object p0, Lf8e;->a:Lf8e;
+
+    const/4 v1, 0x1
+
+    aput-object p0, v0, v1
+
+    return-object v0
+.end method
+
+.method public final d()Lx4d;
     .locals 0
 
-    iget-object p0, p0, Lmwf;->a:Lu39;
+    sget-object p0, Lmwf;->descriptor:Lx4d;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    return p0
+    return-object p0
 .end method

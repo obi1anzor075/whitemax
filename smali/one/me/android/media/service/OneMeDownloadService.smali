@@ -1,5 +1,5 @@
 .class public final Lone/me/android/media/service/OneMeDownloadService;
-.super Lrl4;
+.super Lzo4;
 .source "SourceFile"
 
 
@@ -10,7 +10,7 @@
     }
     d2 = {
         "Lone/me/android/media/service/OneMeDownloadService;",
-        "Lrl4;",
+        "Lzo4;",
         "<init>",
         "()V",
         "media_release"
@@ -21,6 +21,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -28,7 +29,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lrl4;-><init>()V
+    invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
     return-void
 .end method

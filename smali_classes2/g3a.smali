@@ -1,77 +1,64 @@
 .class public final Lg3a;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public A0:J
+.field public final synthetic a:I
 
-.field public B0:J
+.field public final synthetic b:Lj3a;
 
-.field public C0:I
-
-.field public D0:I
-
-.field public E0:I
-
-.field public F0:Z
-
-.field public synthetic G0:Ljava/lang/Object;
-
-.field public final synthetic H0:Ll3a;
-
-.field public I0:I
-
-.field public X:Ljava/lang/Object;
-
-.field public Y:Ljava/lang/Object;
-
-.field public Z:Ljava/lang/Object;
-
-.field public o:Ljava/lang/Object;
-
-.field public w0:Ljava/lang/Object;
-
-.field public x0:Ljava/lang/Object;
-
-.field public y0:Ljava/lang/CharSequence;
-
-.field public z0:Lwn8;
+.field public final synthetic c:Landroid/graphics/drawable/Drawable;
 
 
 # direct methods
-.method public constructor <init>(Ll3a;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(Lj3a;Landroid/graphics/drawable/Drawable;I)V
     .locals 0
 
-    iput-object p1, p0, Lg3a;->H0:Ll3a;
+    iput p3, p0, Lg3a;->a:I
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lg3a;->b:Lj3a;
+
+    iput-object p2, p0, Lg3a;->c:Landroid/graphics/drawable/Drawable;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final run()V
     .locals 1
 
-    iput-object p1, p0, Lg3a;->G0:Ljava/lang/Object;
+    iget v0, p0, Lg3a;->a:I
 
-    iget p1, p0, Lg3a;->I0:I
+    packed-switch v0, :pswitch_data_0
 
-    const/high16 v0, -0x80000000
+    iget-object v0, p0, Lg3a;->b:Lj3a;
 
-    or-int/2addr p1, v0
+    iget-object p0, p0, Lg3a;->c:Landroid/graphics/drawable/Drawable;
 
-    iput p1, p0, Lg3a;->I0:I
+    invoke-static {v0, p0}, Lj3a;->d(Lj3a;Landroid/graphics/drawable/Drawable;)V
 
-    iget-object p1, p0, Lg3a;->H0:Ll3a;
+    return-void
 
-    const/4 v0, 0x0
+    :pswitch_0
+    iget-object v0, p0, Lg3a;->b:Lj3a;
 
-    invoke-static {p1, v0, v0, p0}, Ll3a;->a(Ll3a;Lwt7;Lwy;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iget-object p0, p0, Lg3a;->c:Landroid/graphics/drawable/Drawable;
 
-    move-result-object p0
+    invoke-static {v0, p0}, Lj3a;->b(Lj3a;Landroid/graphics/drawable/Drawable;)V
 
-    return-object p0
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

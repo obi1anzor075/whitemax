@@ -1,250 +1,149 @@
-.class public abstract Lk6c;
-.super Ljava/lang/Object;
+.class public final Lk6c;
+.super Lple;
 .source "SourceFile"
 
 
 # instance fields
-.field public a:Lza6;
+.field public final synthetic e:J
 
-.field public b:Ljava/util/ArrayList;
-
-.field public c:J
-
-.field public d:J
-
-.field public e:J
-
-.field public f:J
+.field public final synthetic f:Ll6c;
 
 
 # direct methods
-.method public static b(Lb7c;)V
-    .locals 2
+.method public constructor <init>(Ljava/lang/String;JLl6c;)V
+    .locals 0
 
-    iget v0, p0, Lb7c;->y0:I
+    iput-wide p2, p0, Lk6c;->e:J
 
-    invoke-virtual {p0}, Lb7c;->n()Z
+    iput-object p4, p0, Lk6c;->f:Ll6c;
 
-    move-result v1
+    const/4 p2, 0x1
 
-    if-eqz v1, :cond_0
+    invoke-direct {p0, p1, p2}, Lple;-><init>(Ljava/lang/String;Z)V
 
-    return-void
-
-    :cond_0
-    and-int/lit8 v0, v0, 0x4
-
-    if-nez v0, :cond_1
-
-    invoke-virtual {p0}, Lb7c;->g()I
-
-    :cond_1
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a(Lb7c;Lb7c;Lms;Lms;)Z
-.end method
-
-.method public final c(Lb7c;)V
+.method public final a()J
     .locals 8
 
-    iget-object p0, p0, Lk6c;->a:Lza6;
+    iget-object v0, p0, Lk6c;->f:Ll6c;
 
-    if-eqz p0, :cond_8
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p1, v0}, Lb7c;->v(Z)V
-
-    iget-object v1, p1, Lb7c;->w0:Lb7c;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p1, Lb7c;->x0:Lb7c;
-
-    if-nez v1, :cond_0
-
-    iput-object v2, p1, Lb7c;->w0:Lb7c;
-
-    :cond_0
-    iput-object v2, p1, Lb7c;->x0:Lb7c;
-
-    iget v1, p1, Lb7c;->y0:I
-
-    and-int/lit8 v1, v1, 0x10
-
-    if-eqz v1, :cond_1
-
-    goto/16 :goto_4
-
-    :cond_1
-    iget-object p0, p0, Lza6;->a:Ljava/lang/Object;
-
-    check-cast p0, Landroidx/recyclerview/widget/RecyclerView;
-
-    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->C0()V
-
-    iget-object v1, p0, Landroidx/recyclerview/widget/RecyclerView;->x0:Lope;
-
-    iget-object v2, v1, Lope;->X:Ljava/lang/Object;
-
-    check-cast v2, Lxw2;
-
-    iget-object v3, v1, Lope;->o:Ljava/lang/Object;
-
-    check-cast v3, Lu41;
-
-    iget v4, v1, Lope;->b:I
-
-    const/4 v5, 0x0
-
-    iget-object v6, p1, Lb7c;->a:Landroid/view/View;
-
-    if-ne v4, v0, :cond_3
-
-    iget-object v0, v1, Lope;->c:Ljava/lang/Object;
-
-    check-cast v0, Landroid/view/View;
-
-    if-ne v0, v6, :cond_2
-
-    :goto_0
-    move v0, v5
-
-    goto :goto_2
-
-    :cond_2
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "Cannot call removeViewIfHidden within removeView(At) for a different view"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_3
-    const/4 v7, 0x2
-
-    if-eq v4, v7, :cond_7
+    monitor-enter v0
 
     :try_start_0
-    iput v7, v1, Lope;->b:I
-
-    iget-object v4, v3, Lu41;->a:Landroidx/recyclerview/widget/RecyclerView;
-
-    invoke-virtual {v4, v6}, Landroid/view/ViewGroup;->indexOfChild(Landroid/view/View;)I
-
-    move-result v4
-
-    const/4 v7, -0x1
-
-    if-ne v4, v7, :cond_4
-
-    invoke-virtual {v1, v6}, Lope;->X(Landroid/view/View;)V
+    iget-boolean v1, v0, Ll6c;->o:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :goto_1
-    iput v5, v1, Lope;->b:I
+    if-eqz v1, :cond_0
 
-    goto :goto_2
+    monitor-exit v0
+
+    goto :goto_1
+
+    :cond_0
+    :try_start_1
+    iget-object v1, v0, Ll6c;->e:Lq4g;
+
+    if-eqz v1, :cond_3
+
+    iget-boolean v2, v0, Ll6c;->q:Z
+
+    const/4 v3, -0x1
+
+    if-eqz v2, :cond_1
+
+    iget v2, v0, Ll6c;->p:I
+
+    goto :goto_0
 
     :catchall_0
     move-exception p0
 
-    goto :goto_3
+    goto :goto_2
 
-    :cond_4
-    :try_start_1
-    invoke-virtual {v2, v4}, Lxw2;->S(I)Z
+    :cond_1
+    move v2, v3
 
-    move-result v7
+    :goto_0
+    iget v4, v0, Ll6c;->p:I
 
-    if-eqz v7, :cond_5
+    const/4 v5, 0x1
 
-    invoke-virtual {v2, v4}, Lxw2;->Z(I)Z
+    add-int/2addr v4, v5
 
-    invoke-virtual {v1, v6}, Lope;->X(Landroid/view/View;)V
+    iput v4, v0, Ll6c;->p:I
 
-    invoke-virtual {v3, v4}, Lu41;->a(I)V
+    iput-boolean v5, v0, Ll6c;->q:Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    monitor-exit v0
+
+    if-eq v2, v3, :cond_2
+
+    new-instance v1, Ljava/net/SocketTimeoutException;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, "sent ping but didn\'t receive pong within "
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-wide v6, v0, Ll6c;->u:J
+
+    invoke-virtual {v3, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v4, "ms (after "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sub-int/2addr v2, v5
+
+    const-string v4, " successful ping/pongs)"
+
+    invoke-static {v3, v2, v4}, Lm26;->i(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Ljava/net/SocketTimeoutException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Ll6c;->c(Ljava/lang/Exception;)V
+
     goto :goto_1
 
-    :cond_5
-    iput v5, v1, Lope;->b:I
+    :cond_2
+    :try_start_2
+    sget-object v2, Luv0;->o:Luv0;
 
-    goto :goto_0
+    const/16 v3, 0x9
+
+    invoke-virtual {v1, v3, v2}, Lq4g;->c(ILuv0;)V
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v1
+
+    invoke-virtual {v0, v1}, Ll6c;->c(Ljava/lang/Exception;)V
+
+    goto :goto_1
+
+    :cond_3
+    monitor-exit v0
+
+    :goto_1
+    iget-wide v0, p0, Lk6c;->e:J
+
+    return-wide v0
 
     :goto_2
-    if-eqz v0, :cond_6
-
-    invoke-static {v6}, Landroidx/recyclerview/widget/RecyclerView;->U(Landroid/view/View;)Lb7c;
-
-    move-result-object v1
-
-    iget-object v2, p0, Landroidx/recyclerview/widget/RecyclerView;->c:Lt6c;
-
-    invoke-virtual {v2, v1}, Lt6c;->k(Lb7c;)V
-
-    iget-object v2, p0, Landroidx/recyclerview/widget/RecyclerView;->c:Lt6c;
-
-    invoke-virtual {v2, v1}, Lt6c;->h(Lb7c;)V
-
-    sget-boolean v1, Landroidx/recyclerview/widget/RecyclerView;->Q1:Z
-
-    if-eqz v1, :cond_6
-
-    invoke-static {v6}, Ljava/util/Objects;->toString(Ljava/lang/Object;)Ljava/lang/String;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    :cond_6
-    xor-int/lit8 v1, v0, 0x1
-
-    invoke-virtual {p0, v1}, Landroidx/recyclerview/widget/RecyclerView;->D0(Z)V
-
-    if-nez v0, :cond_8
-
-    invoke-virtual {p1}, Lb7c;->r()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_8
-
-    invoke-virtual {p0, v6, v5}, Landroidx/recyclerview/widget/RecyclerView;->removeDetachedView(Landroid/view/View;Z)V
-
-    goto :goto_4
-
-    :goto_3
-    iput v5, v1, Lope;->b:I
+    monitor-exit v0
 
     throw p0
-
-    :cond_7
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "Cannot call removeViewIfHidden within removeViewIfHidden"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_8
-    :goto_4
-    return-void
-.end method
-
-.method public abstract d(Lb7c;)V
-.end method
-
-.method public abstract e()V
-.end method
-
-.method public abstract f()Z
 .end method

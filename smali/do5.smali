@@ -1,100 +1,110 @@
 .class public final Ldo5;
-.super Lan5;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final b:Ljava/lang/Object;
+.field public X:I
 
-.field public final c:Lj26;
+.field public final synthetic Y:Lzm5;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Lice;)V
+.method public constructor <init>(Lzm5;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldo5;->Y:Lzm5;
 
-    iput-object p1, p0, Ldo5;->b:Ljava/lang/Object;
+    const/4 p1, 0x2
 
-    iput-object p2, p0, Ldo5;->c:Lj26;
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final g(Lb1e;)V
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    :try_start_0
-    iget-object v0, p0, Ldo5;->c:Lj26;
+    check-cast p1, Lox3;
 
-    iget-object p0, p0, Ldo5;->b:Ljava/lang/Object;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-interface {v0, p0}, Lj26;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Ldo5;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    const-string v0, "The mapper returned a null Publisher"
+    check-cast p0, Ldo5;
 
-    invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    sget-object p1, Le5f;->a:Le5f;
 
-    check-cast p0, Lbjb;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    invoke-virtual {p0, p1}, Ldo5;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    instance-of v0, p0, Lq3e;
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
+
+    new-instance p1, Ldo5;
+
+    iget-object p0, p0, Ldo5;->Y:Lzm5;
+
+    invoke-direct {p1, p0, p2}, Ldo5;-><init>(Lzm5;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    iget v0, p0, Ldo5;->X:I
+
+    const/4 v1, 0x1
 
     if-eqz v0, :cond_1
 
-    :try_start_1
-    check-cast p0, Lq3e;
+    if-ne v0, v1, :cond_0
 
-    invoke-interface {p0}, Lq3e;->get()Ljava/lang/Object;
-
-    move-result-object p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    if-nez p0, :cond_0
-
-    invoke-static {p1}, Lvw4;->a(Lb1e;)V
-
-    return-void
-
-    :cond_0
-    new-instance v0, Lclc;
-
-    invoke-direct {v0, p1, p0}, Lclc;-><init>(Lb1e;Ljava/lang/Object;)V
-
-    invoke-interface {p1, v0}, Lb1e;->e(Ld1e;)V
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p0
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    invoke-static {p0}, Lek8;->a0(Ljava/lang/Throwable;)V
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    invoke-static {p0, p1}, Lvw4;->b(Ljava/lang/Throwable;Lb1e;)V
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    return-void
+    throw p0
 
     :cond_1
-    check-cast p0, Lan5;
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    invoke-virtual {p0, p1}, Lan5;->f(Lb1e;)V
+    iput v1, p0, Ldo5;->X:I
 
+    iget-object p1, p0, Ldo5;->Y:Lzm5;
+
+    invoke-static {p1, p0}, Lsgg;->i(Lzm5;Lqde;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
     :goto_0
-    return-void
+    sget-object p0, Le5f;->a:Le5f;
 
-    :catchall_1
-    move-exception p0
-
-    invoke-static {p0}, Lek8;->a0(Ljava/lang/Throwable;)V
-
-    invoke-static {p0, p1}, Lvw4;->b(Ljava/lang/Throwable;Lb1e;)V
-
-    return-void
+    return-object p0
 .end method

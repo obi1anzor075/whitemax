@@ -4,26 +4,38 @@
 
 
 # instance fields
-.field public a:I
+.field public final a:Ljava/util/Set;
 
-.field public b:Z
-
-.field public c:Z
+.field public final b:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public synthetic constructor <init>()V
+    .locals 2
 
+    .line 4
+    sget-object v0, Lpz4;->a:Lpz4;
+
+    .line 5
+    sget-object v1, Lgz4;->a:Lgz4;
+
+    .line 6
+    invoke-direct {p0, v1, v0}, Lme9;-><init>(Ljava/util/List;Ljava/util/Set;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/util/List;Ljava/util/Set;)V
+    .locals 0
+
+    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    .line 2
+    iput-object p2, p0, Lme9;->a:Ljava/util/Set;
 
-    iput v0, p0, Lme9;->a:I
-
-    iput-boolean v0, p0, Lme9;->b:Z
-
-    iput-boolean v0, p0, Lme9;->c:Z
+    .line 3
+    iput-object p1, p0, Lme9;->b:Ljava/util/List;
 
     return-void
 .end method

@@ -1,17 +1,72 @@
 .class public abstract Lllb;
-.super Ljava/lang/Object;
+.super Lolb;
 .source "SourceFile"
 
+# interfaces
+.implements Lzb7;
 
-# static fields
-.field public static fragment_close_enter:I = 0x7f020005
 
-.field public static fragment_close_exit:I = 0x7f020006
+# virtual methods
+.method public computeReflected()Lmb7;
+    .locals 1
 
-.field public static fragment_fade_enter:I = 0x7f020007
+    sget-object v0, Llcc;->a:Lmcc;
 
-.field public static fragment_fade_exit:I = 0x7f020008
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-.field public static fragment_open_enter:I = 0x7f020009
+    return-object p0
+.end method
 
-.field public static fragment_open_exit:I = 0x7f02000a
+.method public getDelegate()Ljava/lang/Object;
+    .locals 0
+
+    invoke-virtual {p0}, Lolb;->getReflected()Lbc7;
+
+    move-result-object p0
+
+    check-cast p0, Lzb7;
+
+    invoke-interface {p0}, Lzb7;->getDelegate()Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public bridge synthetic getGetter()Lxb7;
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Lllb;->getGetter()Lyb7;
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public getGetter()Lyb7;
+    .locals 0
+
+    .line 2
+    invoke-virtual {p0}, Lolb;->getReflected()Lbc7;
+
+    move-result-object p0
+
+    check-cast p0, Lzb7;
+
+    invoke-interface {p0}, Lzb7;->getGetter()Lyb7;
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public invoke()Ljava/lang/Object;
+    .locals 0
+
+    invoke-interface {p0}, Lzb7;->get()Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method

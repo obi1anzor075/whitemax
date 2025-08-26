@@ -39,16 +39,16 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lx54;)V
+.method public synthetic constructor <init>(Ll94;)V
     .locals 0
 
-    .line 2
+    .line 1
     invoke-direct {p0}, Lru/ok/android/externcalls/sdk/audio/internal/impl/CallsWiredHeadsetManager$Companion;-><init>()V
 
     return-void

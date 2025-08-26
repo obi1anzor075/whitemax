@@ -1,5 +1,5 @@
 .class public final Lh;
-.super Luo;
+.super Lio;
 .source "SourceFile"
 
 
@@ -13,7 +13,7 @@
 
     new-instance v0, Lh;
 
-    invoke-direct {v0}, Luo;-><init>()V
+    invoke-direct {v0}, Lio;-><init>()V
 
     sput-object v0, Lh;->a:Lh;
 

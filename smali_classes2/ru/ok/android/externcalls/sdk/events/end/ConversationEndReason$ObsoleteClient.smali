@@ -126,7 +126,7 @@
 
     iget-object p1, p1, Lru/ok/android/externcalls/sdk/events/end/ConversationEndReason$ObsoleteClient;->explanationHtml:Ljava/lang/String;
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -155,14 +155,13 @@
 
     const/4 p0, 0x0
 
-    goto :goto_0
+    return p0
 
     :cond_0
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     move-result p0
 
-    :goto_0
     return p0
 .end method
 
@@ -175,7 +174,7 @@
 
     const-string v1, ")"
 
-    invoke-static {v0, p0, v1}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

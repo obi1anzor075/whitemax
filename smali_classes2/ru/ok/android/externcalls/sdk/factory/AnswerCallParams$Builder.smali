@@ -44,14 +44,14 @@
         "answerAsContact",
         "setAnswerAsContact",
         "(Z)Lru/ok/android/externcalls/sdk/factory/AnswerCallParams$Builder;",
-        "Lmle;",
+        "Lgue;",
         "tokenProvider",
         "setTokenProvider",
-        "(Lmle;)Lru/ok/android/externcalls/sdk/factory/AnswerCallParams$Builder;",
-        "Lrl;",
+        "(Lgue;)Lru/ok/android/externcalls/sdk/factory/AnswerCallParams$Builder;",
+        "Lkl;",
         "tokenInfoProvider",
         "setTokenInfoProvider",
-        "(Lrl;)Lru/ok/android/externcalls/sdk/factory/AnswerCallParams$Builder;",
+        "(Lkl;)Lru/ok/android/externcalls/sdk/factory/AnswerCallParams$Builder;",
         "conversationParams",
         "setConversationParams",
         "build",
@@ -59,8 +59,8 @@
         "Ljava/lang/String;",
         "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
         "Z",
-        "Lmle;",
-        "Lrl;",
+        "Lgue;",
+        "Lkl;",
         "calls-sdk_release"
     }
     k = 0x1
@@ -69,6 +69,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -81,9 +82,9 @@
 
 .field private opponentId:Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
-.field private tokenInfoProvider:Lrl;
+.field private tokenInfoProvider:Lkl;
 
-.field private tokenProvider:Lmle;
+.field private tokenProvider:Lgue;
 
 
 # direct methods
@@ -129,14 +130,14 @@
     if-eqz v7, :cond_2
 
     .line 5
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->getOnPrepared()Lu16;
+    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->getOnPrepared()Lx56;
 
     move-result-object v11
 
     if-eqz v11, :cond_1
 
     .line 6
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->getOnError()Lu16;
+    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->getOnError()Lx56;
 
     move-result-object v12
 
@@ -156,16 +157,16 @@
     iget-boolean v3, p0, Lru/ok/android/externcalls/sdk/factory/AnswerCallParams$Builder;->answerAsContact:Z
 
     .line 10
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->getFrameInterceptor()Lyw1;
+    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->getFrameInterceptor()Lqz1;
 
     .line 11
-    iget-object v4, p0, Lru/ok/android/externcalls/sdk/factory/AnswerCallParams$Builder;->tokenProvider:Lmle;
+    iget-object v4, p0, Lru/ok/android/externcalls/sdk/factory/AnswerCallParams$Builder;->tokenProvider:Lgue;
 
     .line 12
-    iget-object v5, p0, Lru/ok/android/externcalls/sdk/factory/AnswerCallParams$Builder;->tokenInfoProvider:Lrl;
+    iget-object v5, p0, Lru/ok/android/externcalls/sdk/factory/AnswerCallParams$Builder;->tokenInfoProvider:Lkl;
 
     .line 13
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->getCameraCapturerFactory()Lcs9;
+    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->getCameraCapturerFactory()Lkw9;
 
     move-result-object v13
 
@@ -173,27 +174,21 @@
     iget-object v6, p0, Lru/ok/android/externcalls/sdk/factory/AnswerCallParams$Builder;->conversationParams:Ljava/lang/String;
 
     .line 15
-    new-instance p0, Lru/ok/android/externcalls/sdk/factory/AnswerCallParams;
+    new-instance v0, Lru/ok/android/externcalls/sdk/factory/AnswerCallParams;
 
     const/4 v14, 0x0
 
     const/4 v9, 0x0
 
-    move-object v0, p0
+    invoke-direct/range {v0 .. v14}, Lru/ok/android/externcalls/sdk/factory/AnswerCallParams;-><init>(Ljava/lang/String;Lru/ok/android/externcalls/sdk/id/ParticipantId;ZLgue;Lkl;Ljava/lang/String;Lru/ok/android/externcalls/sdk/id/ParticipantId;ZLqz1;Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;Lx56;Lx56;Lkw9;Ll94;)V
 
-    invoke-direct/range {v0 .. v14}, Lru/ok/android/externcalls/sdk/factory/AnswerCallParams;-><init>(Ljava/lang/String;Lru/ok/android/externcalls/sdk/id/ParticipantId;ZLmle;Lrl;Ljava/lang/String;Lru/ok/android/externcalls/sdk/id/ParticipantId;ZLyw1;Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;Lu16;Lu16;Lcs9;Lx54;)V
-
-    return-object p0
+    return-object v0
 
     .line 16
     :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "onError callback is required"
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
 
     invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -205,10 +200,6 @@
 
     const-string v0, "onPrepared callback is required"
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
     invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p0
@@ -218,10 +209,6 @@
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Caller id is required"
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
 
     invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -233,10 +220,6 @@
 
     const-string v0, "Opponent id is required"
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
     invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p0
@@ -246,10 +229,6 @@
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Conversation id is required"
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
 
     invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -288,18 +267,18 @@
     return-object p0
 .end method
 
-.method public final setTokenInfoProvider(Lrl;)Lru/ok/android/externcalls/sdk/factory/AnswerCallParams$Builder;
+.method public final setTokenInfoProvider(Lkl;)Lru/ok/android/externcalls/sdk/factory/AnswerCallParams$Builder;
     .locals 0
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/factory/AnswerCallParams$Builder;->tokenInfoProvider:Lrl;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/factory/AnswerCallParams$Builder;->tokenInfoProvider:Lkl;
 
     return-object p0
 .end method
 
-.method public final setTokenProvider(Lmle;)Lru/ok/android/externcalls/sdk/factory/AnswerCallParams$Builder;
+.method public final setTokenProvider(Lgue;)Lru/ok/android/externcalls/sdk/factory/AnswerCallParams$Builder;
     .locals 0
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/factory/AnswerCallParams$Builder;->tokenProvider:Lmle;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/factory/AnswerCallParams$Builder;->tokenProvider:Lgue;
 
     return-object p0
 .end method

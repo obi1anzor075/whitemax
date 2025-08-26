@@ -1,85 +1,134 @@
-.class public final Lag8;
-.super Ljava/lang/Object;
+.class public abstract Lag8;
+.super Lbg8;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final a:Ljava/lang/Object;
 
-.field public final b:Ljava/lang/String;
+.field public b:Ljava/util/concurrent/Executor;
 
-.field public final c:Lr7e;
+.field public c:Ld3d;
 
-.field public final d:Lr7e;
+.field public d:Lif8;
 
-.field public final e:Lr7e;
-
-.field public final f:Lr7e;
+.field public e:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
+.method public constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lag8;->a:Ljava/lang/String;
+    new-instance v0, Ljava/lang/Object;
 
-    const-class p1, Lag8;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lag8;->b:Ljava/lang/String;
-
-    new-instance p1, Lzf8;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p1, p0, v0}, Lzf8;-><init>(Lag8;I)V
-
-    new-instance v0, Lr7e;
-
-    invoke-direct {v0, p1}, Lr7e;-><init>(Ls16;)V
-
-    iput-object v0, p0, Lag8;->c:Lr7e;
-
-    new-instance p1, Lzf8;
-
-    const/4 v0, 0x1
-
-    invoke-direct {p1, p0, v0}, Lzf8;-><init>(Lag8;I)V
-
-    new-instance v0, Lr7e;
-
-    invoke-direct {v0, p1}, Lr7e;-><init>(Ls16;)V
-
-    iput-object v0, p0, Lag8;->d:Lr7e;
-
-    new-instance p1, Lzf8;
-
-    const/4 v0, 0x2
-
-    invoke-direct {p1, p0, v0}, Lzf8;-><init>(Lag8;I)V
-
-    new-instance v0, Lr7e;
-
-    invoke-direct {v0, p1}, Lr7e;-><init>(Ls16;)V
-
-    iput-object v0, p0, Lag8;->e:Lr7e;
-
-    new-instance p1, Lzf8;
-
-    const/4 v0, 0x3
-
-    invoke-direct {p1, p0, v0}, Lzf8;-><init>(Lag8;I)V
-
-    new-instance v0, Lr7e;
-
-    invoke-direct {v0, p1}, Lr7e;-><init>(Ls16;)V
-
-    iput-object v0, p0, Lag8;->f:Lr7e;
+    iput-object v0, p0, Lag8;->a:Ljava/lang/Object;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public j()Ljava/lang/String;
+    .locals 0
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public k()Ljava/lang/String;
+    .locals 0
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public final l(Lif8;Ljava/util/ArrayList;)V
+    .locals 8
+
+    if-eqz p1, :cond_1
+
+    iget-object v1, p0, Lag8;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Lag8;->b:Ljava/util/concurrent/Executor;
+
+    if-eqz v0, :cond_0
+
+    iget-object v4, p0, Lag8;->c:Ld3d;
+
+    new-instance v2, Lv9g;
+
+    const/4 v7, 0x6
+
+    move-object v3, p0
+
+    move-object v5, p1
+
+    move-object v6, p2
+
+    invoke-direct/range {v2 .. v7}, Lv9g;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+
+    invoke-interface {v0, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    move-object p0, v0
+
+    goto :goto_1
+
+    :cond_0
+    move-object v3, p0
+
+    move-object v5, p1
+
+    move-object v6, p2
+
+    iput-object v5, v3, Lag8;->d:Lif8;
+
+    new-instance p0, Ljava/util/ArrayList;
+
+    invoke-direct {p0, v6}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    iput-object p0, v3, Lag8;->e:Ljava/util/ArrayList;
+
+    :goto_0
+    monitor-exit v1
+
+    return-void
+
+    :goto_1
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
+
+    :cond_1
+    new-instance p0, Ljava/lang/NullPointerException;
+
+    const-string p1, "groupRoute must not be null"
+
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public abstract m(Ljava/lang/String;)V
+.end method
+
+.method public abstract n(Ljava/lang/String;)V
+.end method
+
+.method public abstract o(Ljava/util/List;)V
 .end method

@@ -1,77 +1,179 @@
 .class public final Lyq7;
-.super Ljava/lang/Object;
+.super Lqy;
 .source "SourceFile"
 
 
 # instance fields
-.field public a:J
+.field public final X:J
 
-.field public b:J
+.field public final Y:J
 
-.field public c:J
+.field public final Z:J
 
-.field public d:J
+.field public final o:Lar7;
+
+.field public final o0:Ljava/util/List;
+
+.field public final p0:Ljava/lang/String;
+
+.field public final q0:F
+
+.field public final r0:Z
+
+
+# direct methods
+.method public constructor <init>(Lar7;JJJLjava/util/List;Ljava/lang/String;FZZZ)V
+    .locals 1
+
+    sget-object v0, Lq00;->v0:Lq00;
+
+    invoke-direct {p0, v0, p12, p13}, Lqy;-><init>(Lq00;ZZ)V
+
+    iput-object p1, p0, Lyq7;->o:Lar7;
+
+    iput-wide p2, p0, Lyq7;->X:J
+
+    iput-wide p4, p0, Lyq7;->Y:J
+
+    iput-wide p6, p0, Lyq7;->Z:J
+
+    iput-object p8, p0, Lyq7;->o0:Ljava/util/List;
+
+    iput-object p9, p0, Lyq7;->p0:Ljava/lang/String;
+
+    iput-boolean p11, p0, Lyq7;->r0:Z
+
+    iput p10, p0, Lyq7;->q0:F
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final a(JJ)D
-    .locals 6
+.method public final a()Ljava/util/HashMap;
+    .locals 7
 
-    iget-wide v0, p0, Lyq7;->a:J
+    invoke-super {p0}, Lqy;->a()Ljava/util/HashMap;
 
-    sub-long v0, p1, v0
+    move-result-object v0
+
+    iget-object v1, p0, Lyq7;->o:Lar7;
+
+    iget-wide v2, v1, Lar7;->a:D
+
+    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v2
+
+    const-string v3, "latitude"
+
+    invoke-virtual {v0, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-wide v2, v1, Lar7;->b:D
+
+    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v2
+
+    const-string v3, "longitude"
+
+    invoke-virtual {v0, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-wide/16 v2, 0x0
 
-    invoke-static {v0, v1, v2, v3}, Lgwf;->h(JJ)J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lyq7;->c:J
-
-    iget-wide v0, p0, Lyq7;->b:J
-
-    sub-long v0, p3, v0
-
-    invoke-static {v0, v1, v2, v3}, Lgwf;->h(JJ)J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lyq7;->d:J
-
-    cmp-long v4, v0, v2
-
-    if-nez v4, :cond_1
-
-    iget-wide v4, p0, Lyq7;->c:J
+    iget-wide v4, p0, Lyq7;->X:J
 
     cmp-long v2, v4, v2
 
-    if-eqz v2, :cond_0
+    if-lez v2, :cond_0
 
-    goto :goto_0
+    const-string v2, "livePeriod"
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
-    const-wide/16 v0, 0x0
+    iget p0, p0, Lyq7;->q0:F
 
-    goto :goto_1
+    const/4 v2, 0x0
+
+    cmpl-float v3, p0, v2
+
+    if-lez v3, :cond_1
+
+    const-string v3, "zoom"
+
+    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object p0
+
+    invoke-virtual {v0, v3, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_1
-    :goto_0
-    iget-wide v2, p0, Lyq7;->c:J
+    iget-wide v3, v1, Lar7;->c:D
 
-    long-to-double v4, v2
+    const-wide/16 v5, 0x0
 
-    add-long/2addr v0, v2
+    cmpl-double p0, v3, v5
 
-    long-to-double v0, v0
+    if-eqz p0, :cond_2
 
-    div-double v0, v4, v0
+    const-string p0, "alt"
 
-    :goto_1
-    iput-wide p1, p0, Lyq7;->a:J
+    invoke-static {v3, v4}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    iput-wide p3, p0, Lyq7;->b:J
+    move-result-object v3
 
-    return-wide v0
+    invoke-virtual {v0, p0, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_2
+    iget p0, v1, Lar7;->o:F
+
+    cmpl-float v3, p0, v2
+
+    if-eqz v3, :cond_3
+
+    const-string v3, "epu"
+
+    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object p0
+
+    invoke-virtual {v0, v3, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_3
+    iget p0, v1, Lar7;->X:F
+
+    cmpl-float v3, p0, v2
+
+    if-eqz v3, :cond_4
+
+    const-string v3, "hdn"
+
+    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object p0
+
+    invoke-virtual {v0, v3, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_4
+    iget p0, v1, Lar7;->Y:F
+
+    cmpl-float v1, p0, v2
+
+    if-eqz v1, :cond_5
+
+    const-string v1, "spd"
+
+    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object p0
+
+    invoke-virtual {v0, v1, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_5
+    return-object v0
 .end method

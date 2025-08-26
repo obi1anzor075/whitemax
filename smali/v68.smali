@@ -1,73 +1,67 @@
-.class public final synthetic Lv68;
-.super Ljava/lang/Object;
+.class public abstract Lv68;
+.super La03;
 .source "SourceFile"
-
-# interfaces
-.implements Ls16;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lz68;
+.field public final q0:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Lz68;I)V
-    .locals 0
+.method public constructor <init>(Lg34;Lo34;Ldz5;ILjava/lang/Object;JJJ)V
+    .locals 11
 
-    iput p2, p0, Lv68;->a:I
+    const/4 v3, 0x1
 
-    iput-object p1, p0, Lv68;->b:Lz68;
+    move-object v0, p0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v4, p3
+
+    move v5, p4
+
+    move-object/from16 v6, p5
+
+    move-wide/from16 v7, p6
+
+    move-wide/from16 v9, p8
+
+    invoke-direct/range {v0 .. v10}, La03;-><init>(Lg34;Lo34;ILdz5;ILjava/lang/Object;JJ)V
+
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-wide/from16 p1, p10
+
+    iput-wide p1, p0, Lv68;->q0:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 1
+.method public a()J
+    .locals 4
 
-    iget v0, p0, Lv68;->a:I
+    iget-wide v0, p0, Lv68;->q0:J
 
-    packed-switch v0, :pswitch_data_0
+    const-wide/16 v2, -0x1
 
-    iget-object p0, p0, Lv68;->b:Lz68;
-
-    invoke-virtual {p0}, Lz68;->a()V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lz68;->l:Z
-
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
-
-    :pswitch_0
-    iget-object p0, p0, Lv68;->b:Lz68;
-
-    iget-object p0, p0, Lz68;->d:Ls16;
-
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ld87;
+    cmp-long p0, v0, v2
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p0}, Ld87;->m()V
+    const-wide/16 v2, 0x1
+
+    add-long/2addr v0, v2
+
+    return-wide v0
 
     :cond_0
-    sget-object p0, Ljue;->a:Ljue;
+    return-wide v2
+.end method
 
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+.method public abstract b()Z
 .end method

@@ -1,156 +1,145 @@
 .class public final Lh71;
-.super Ljava/lang/Object;
+.super Lsod;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:I
-
-.field public final b:I
-
-.field public final c:Lg71;
+.field public final B0:Lg71;
 
 
 # direct methods
-.method public constructor <init>(IILg71;)V
-    .locals 0
+.method public constructor <init>(Landroid/widget/FrameLayout;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lccc;-><init>(Landroid/view/View;)V
 
-    iput p1, p0, Lh71;->a:I
+    sget v0, Litb;->call_opponents:I
 
-    iput p2, p0, Lh71;->b:I
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    iput-object p3, p0, Lh71;->c:Lg71;
+    move-result-object p1
+
+    check-cast p1, Lg71;
+
+    iput-object p1, p0, Lh71;->B0:Lg71;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final bridge synthetic B(Lol7;Ljava/lang/Object;)V
+    .locals 0
 
-    const/4 v0, 0x1
+    check-cast p1, Lmka;
 
-    if-ne p0, p1, :cond_0
+    invoke-virtual {p0, p1, p2}, Lh71;->D(Lmka;Ljava/lang/Object;)V
 
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lh71;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lh71;
-
-    iget v1, p1, Lh71;->a:I
-
-    iget v3, p0, Lh71;->a:I
-
-    if-eq v3, v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget v1, p0, Lh71;->b:I
-
-    iget v3, p1, Lh71;->b:I
-
-    if-eq v1, v3, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-object p0, p0, Lh71;->c:Lg71;
-
-    iget-object p1, p1, Lh71;->c:Lg71;
-
-    if-eq p0, p1, :cond_4
-
-    return v2
-
-    :cond_4
-    return v0
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 3
-
-    iget v0, p0, Lh71;->a:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Lh71;->b:I
-
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
-
-    move-result v0
-
-    const/4 v2, 0x0
-
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
-
-    move-result v0
-
-    iget-object p0, p0, Lh71;->c:Lg71;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final D(Lmka;Ljava/lang/Object;)V
     .locals 2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    instance-of v0, p2, Ljava/util/List;
 
-    const-string v1, "CallHistoryTabState(id="
+    if-eqz v0, :cond_0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    check-cast p2, Ljava/util/List;
 
-    iget v1, p0, Lh71;->a:I
+    goto :goto_0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    :cond_0
+    const/4 p2, 0x0
 
-    const-string v1, ", nameRes="
+    :goto_0
+    iget-object p0, p0, Lh71;->B0:Lg71;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz p2, :cond_4
 
-    iget v1, p0, Lh71;->b:I
+    invoke-interface {p2}, Ljava/util/Collection;->isEmpty()Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result v0
 
-    const-string v1, ", count=0, type="
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    goto :goto_2
 
-    iget-object p0, p0, Lh71;->c:Lg71;
+    :cond_1
+    new-instance p1, Lps;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const/4 v0, 0x2
 
-    const-string p0, ")"
+    invoke-direct {p1, v0, p2}, Lps;-><init>(ILjava/lang/Object;)V
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance p2, Lf8;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const/16 v0, 0x14
 
-    move-result-object p0
+    invoke-direct {p2, v0}, Lf8;-><init>(I)V
 
-    return-object p0
+    new-instance v0, Lgm5;
+
+    sget-object v1, Lt4d;->a:Lt4d;
+
+    invoke-direct {v0, p1, p2, v1}, Lgm5;-><init>(Li4d;Lx56;Lx56;)V
+
+    sget-object p1, Lj31;->q0:Lj31;
+
+    invoke-static {v0, p1}, Lr4d;->O(Li4d;Lx56;)Lbk5;
+
+    move-result-object p1
+
+    new-instance p2, Lak5;
+
+    invoke-direct {p2, p1}, Lak5;-><init>(Lbk5;)V
+
+    :goto_1
+    invoke-virtual {p2}, Lak5;->hasNext()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_3
+
+    invoke-virtual {p2}, Lak5;->next()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Llka;
+
+    if-eqz p1, :cond_2
+
+    iget-object p1, p1, Llka;->a:Lmka;
+
+    invoke-virtual {p0, p1}, Lg71;->setOpponents(Lmka;)V
+
+    goto :goto_1
+
+    :cond_2
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p0
+
+    :cond_3
+    return-void
+
+    :cond_4
+    :goto_2
+    invoke-virtual {p0, p1}, Lg71;->setOpponents(Lmka;)V
+
+    return-void
+.end method
+
+.method public final x(Lol7;)V
+    .locals 0
+
+    check-cast p1, Lmka;
+
+    iget-object p0, p0, Lh71;->B0:Lg71;
+
+    invoke-virtual {p0, p1}, Lg71;->setOpponents(Lmka;)V
+
+    return-void
 .end method

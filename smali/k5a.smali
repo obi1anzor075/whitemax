@@ -26,54 +26,96 @@
 
 .field public static final k:I
 
+.field public static final l:I
+
+.field public static final m:I
+
+.field public static final n:I
+
+.field public static final o:I
+
+.field public static final p:I
+
+.field public static final q:I
+
+.field public static final r:I
+
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    sget v0, Lgpb;->fake_in_app_review_bottom_sheet_rate_view:I
+    sget v0, Lvxb;->call_history_call_create_banner_permission_denied_subtitle:I
 
     sput v0, Lk5a;->a:I
 
-    sget v0, Lgpb;->fake_in_app_review_bottom_sheet_rate_view_icon:I
+    sget v0, Lvxb;->call_history_call_create_banner_permission_denied_title:I
 
     sput v0, Lk5a;->b:I
 
-    sget v0, Lgpb;->fake_in_app_review_bottom_sheet_rate_view_not_now_btn:I
+    sget v0, Lvxb;->call_history_call_create_banner_subtitle:I
 
     sput v0, Lk5a;->c:I
 
-    sget v0, Lgpb;->fake_in_app_review_bottom_sheet_rate_view_rating_bar:I
+    sget v0, Lvxb;->call_history_call_create_banner_title:I
 
     sput v0, Lk5a;->d:I
 
-    sget v0, Lgpb;->fake_in_app_review_bottom_sheet_rate_view_send_btn:I
+    sget v0, Lvxb;->call_history_info_copy_link:I
 
     sput v0, Lk5a;->e:I
 
-    sget v0, Lgpb;->fake_in_app_review_bottom_sheet_rate_view_subtitle:I
+    sget v0, Lvxb;->call_history_info_open_call_chat_title:I
 
     sput v0, Lk5a;->f:I
 
-    sget v0, Lgpb;->fake_in_app_review_bottom_sheet_rate_view_title:I
+    sget v0, Lvxb;->call_history_info_recreate:I
 
     sput v0, Lk5a;->g:I
 
-    sget v0, Lgpb;->fake_in_app_review_bottom_sheet_thank_view:I
+    sget v0, Lvxb;->call_history_info_send_to_chat:I
 
     sput v0, Lk5a;->h:I
 
-    sget v0, Lgpb;->fake_in_app_review_bottom_sheet_thank_view_close_btn:I
+    sget v0, Lvxb;->call_history_info_share:I
 
     sput v0, Lk5a;->i:I
 
-    sget v0, Lgpb;->fake_in_app_review_bottom_sheet_thank_view_icon:I
+    sget v0, Lvxb;->call_history_info_start_call:I
 
     sput v0, Lk5a;->j:I
 
-    sget v0, Lgpb;->fake_in_app_review_bottom_sheet_thank_view_title:I
+    sget v0, Lvxb;->call_history_info_title:I
 
     sput v0, Lk5a;->k:I
+
+    sget v0, Lvxb;->call_history_info_try_load_link_again:I
+
+    sput v0, Lk5a;->l:I
+
+    sget v0, Lvxb;->call_history_item_call_count_no_users:I
+
+    sput v0, Lk5a;->m:I
+
+    sget v0, Lvxb;->call_history_item_call_link_call_description:I
+
+    sput v0, Lk5a;->n:I
+
+    sget v0, Lvxb;->call_history_link_action_error:I
+
+    sput v0, Lk5a;->o:I
+
+    sget v0, Lvxb;->call_history_link_coped:I
+
+    sput v0, Lk5a;->p:I
+
+    sget v0, Lvxb;->call_history_link_send_title:I
+
+    sput v0, Lk5a;->q:I
+
+    sget v0, Lvxb;->call_history_open_last_message_error:I
+
+    sput v0, Lk5a;->r:I
 
     return-void
 .end method

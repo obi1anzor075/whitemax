@@ -1,85 +1,121 @@
-.class public final Lyt4;
-.super Ljava/lang/Object;
+.class public final enum Lyt4;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+# static fields
+.field public static final enum X:Lyt4;
 
-    const/4 v0, 0x1
+.field public static final enum Y:Lyt4;
 
-    if-ne p0, p1, :cond_0
+.field public static final synthetic Z:[Lyt4;
 
-    return v0
+.field public static final enum a:Lyt4;
 
-    :cond_0
-    instance-of p0, p1, Lyt4;
+.field public static final enum b:Lyt4;
 
-    if-nez p0, :cond_1
+.field public static final enum c:Lyt4;
 
-    const/4 p0, 0x0
+.field public static final enum o:Lyt4;
 
-    return p0
 
-    :cond_1
-    check-cast p1, Lyt4;
+# direct methods
+.method static constructor <clinit>()V
+    .locals 8
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v0, Lyt4;
 
-    sget p0, Lcic;->a:I
+    const-string v1, "MEDIUM"
 
-    sget p0, Lcic;->a:I
+    const/4 v2, 0x0
 
-    return v0
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lyt4;->a:Lyt4;
+
+    new-instance v1, Lyt4;
+
+    const-string v2, "LARGE"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lyt4;->b:Lyt4;
+
+    new-instance v2, Lyt4;
+
+    const-string v3, "XLARGE"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lyt4;->c:Lyt4;
+
+    new-instance v3, Lyt4;
+
+    const-string v4, "XXLARGE"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lyt4;->o:Lyt4;
+
+    new-instance v4, Lyt4;
+
+    const-string v5, "XXXLARGE"
+
+    const/4 v6, 0x4
+
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v4, Lyt4;->X:Lyt4;
+
+    new-instance v5, Lyt4;
+
+    const-string v6, "XXXXLARGE"
+
+    const/4 v7, 0x5
+
+    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v5, Lyt4;->Y:Lyt4;
+
+    filled-new-array/range {v0 .. v5}, [Lyt4;
+
+    move-result-object v0
+
+    sput-object v0, Lyt4;->Z:[Lyt4;
+
+    return-void
 .end method
 
-.method public final hashCode()I
+.method public static valueOf(Ljava/lang/String;)Lyt4;
     .locals 1
 
-    sget p0, Lcic;->Y:I
+    const-class v0, Lyt4;
 
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result p0
-
-    mul-int/lit8 p0, p0, 0x1f
-
-    sget v0, Lcic;->r:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result v0
-
-    add-int/2addr v0, p0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance p0, Ljava/lang/StringBuilder;
-
-    const-string v0, "EmojiFontLoadingNotificationTexts(downloadingTitle="
-
-    invoke-direct {p0, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    sget v0, Lcic;->Y:I
-
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, ", cancelButtonText="
-
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget v0, Lcic;->r:I
-
-    const-string v1, ")"
-
-    invoke-static {p0, v0, v1}, Lwn6;->j(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
+    check-cast p0, Lyt4;
+
     return-object p0
+.end method
+
+.method public static values()[Lyt4;
+    .locals 1
+
+    sget-object v0, Lyt4;->Z:[Lyt4;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lyt4;
+
+    return-object v0
 .end method

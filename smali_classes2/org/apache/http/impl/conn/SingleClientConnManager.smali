@@ -193,7 +193,7 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-void
 
     :catch_0
     move-exception p1
@@ -205,7 +205,6 @@
     invoke-interface {p0, p2, p1}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;Ljava/lang/Throwable;)V
 
     :cond_0
-    :goto_0
     return-void
 
     :cond_1
@@ -436,7 +435,7 @@
 
     instance-of v0, p1, Lorg/apache/http/impl/conn/SingleClientConnManager$ConnAdapter;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_c
 
     iget-object v0, p0, Lorg/apache/http/impl/conn/SingleClientConnManager;->log:Lorg/apache/commons/logging/Log;
 
@@ -469,7 +468,7 @@
 
     if-nez v0, :cond_1
 
-    return-void
+    goto/16 :goto_3
 
     :cond_1
     invoke-virtual {p1}, Lorg/apache/http/impl/conn/AbstractClientConnAdapter;->getManager()Lorg/apache/http/conn/ClientConnectionManager;
@@ -517,12 +516,12 @@
     :catchall_0
     move-exception v5
 
-    goto :goto_5
+    goto :goto_4
 
     :catch_0
     move-exception v5
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_4
     :goto_1
@@ -578,7 +577,6 @@
 
     if-lez p1, :cond_8
 
-    :goto_2
     invoke-virtual {p4, p2, p3}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
 
     move-result-wide p1
@@ -589,14 +587,14 @@
 
     iput-wide p1, p0, Lorg/apache/http/impl/conn/SingleClientConnManager;->connectionExpiresTime:J
 
-    goto :goto_4
+    return-void
 
     :cond_8
     iput-wide v0, p0, Lorg/apache/http/impl/conn/SingleClientConnManager;->connectionExpiresTime:J
 
-    goto :goto_4
+    return-void
 
-    :goto_3
+    :goto_2
     :try_start_1
     iget-object v6, p0, Lorg/apache/http/impl/conn/SingleClientConnManager;->log:Lorg/apache/commons/logging/Log;
 
@@ -627,26 +625,6 @@
 
     cmp-long p1, p2, v2
 
-    if-lez p1, :cond_8
-
-    goto :goto_2
-
-    :goto_4
-    return-void
-
-    :goto_5
-    invoke-virtual {p1}, Lorg/apache/http/impl/conn/AbstractPooledConnAdapter;->detach()V
-
-    iput-object v4, p0, Lorg/apache/http/impl/conn/SingleClientConnManager;->managedConn:Lorg/apache/http/impl/conn/SingleClientConnManager$ConnAdapter;
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v6
-
-    iput-wide v6, p0, Lorg/apache/http/impl/conn/SingleClientConnManager;->lastReleaseTime:J
-
-    cmp-long p1, p2, v2
-
     if-lez p1, :cond_a
 
     invoke-virtual {p4, p2, p3}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
@@ -659,15 +637,48 @@
 
     iput-wide p1, p0, Lorg/apache/http/impl/conn/SingleClientConnManager;->connectionExpiresTime:J
 
-    goto :goto_6
+    goto :goto_3
 
     :cond_a
     iput-wide v0, p0, Lorg/apache/http/impl/conn/SingleClientConnManager;->connectionExpiresTime:J
 
-    :goto_6
-    throw v5
+    :goto_3
+    return-void
+
+    :goto_4
+    invoke-virtual {p1}, Lorg/apache/http/impl/conn/AbstractPooledConnAdapter;->detach()V
+
+    iput-object v4, p0, Lorg/apache/http/impl/conn/SingleClientConnManager;->managedConn:Lorg/apache/http/impl/conn/SingleClientConnManager$ConnAdapter;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v6
+
+    iput-wide v6, p0, Lorg/apache/http/impl/conn/SingleClientConnManager;->lastReleaseTime:J
+
+    cmp-long p1, p2, v2
+
+    if-lez p1, :cond_b
+
+    invoke-virtual {p4, p2, p3}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
+
+    move-result-wide p1
+
+    iget-wide p3, p0, Lorg/apache/http/impl/conn/SingleClientConnManager;->lastReleaseTime:J
+
+    add-long/2addr p1, p3
+
+    iput-wide p1, p0, Lorg/apache/http/impl/conn/SingleClientConnManager;->connectionExpiresTime:J
+
+    goto :goto_5
 
     :cond_b
+    iput-wide v0, p0, Lorg/apache/http/impl/conn/SingleClientConnManager;->connectionExpiresTime:J
+
+    :goto_5
+    throw v5
+
+    :cond_c
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "Connection class mismatch, connection not obtained from this manager."
@@ -714,7 +725,7 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-void
 
     :catch_0
     move-exception v0
@@ -725,7 +736,6 @@
 
     invoke-interface {p0, v1, v0}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;Ljava/lang/Throwable;)V
 
-    :goto_0
     return-void
 .end method
 
@@ -760,7 +770,7 @@
     :catchall_0
     move-exception v1
 
-    goto :goto_3
+    goto :goto_2
 
     :catch_0
     move-exception v1
@@ -771,7 +781,7 @@
     :goto_0
     iput-object v0, p0, Lorg/apache/http/impl/conn/SingleClientConnManager;->uniquePoolEntry:Lorg/apache/http/impl/conn/SingleClientConnManager$PoolEntry;
 
-    goto :goto_2
+    return-void
 
     :goto_1
     :try_start_1
@@ -783,12 +793,11 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_0
+    iput-object v0, p0, Lorg/apache/http/impl/conn/SingleClientConnManager;->uniquePoolEntry:Lorg/apache/http/impl/conn/SingleClientConnManager$PoolEntry;
 
-    :goto_2
     return-void
 
-    :goto_3
+    :goto_2
     iput-object v0, p0, Lorg/apache/http/impl/conn/SingleClientConnManager;->uniquePoolEntry:Lorg/apache/http/impl/conn/SingleClientConnManager$PoolEntry;
 
     throw v1

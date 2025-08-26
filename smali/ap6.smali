@@ -1,134 +1,138 @@
-.class public final synthetic Lap6;
+.class public abstract Lap6;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/concurrent/Callable;
+.implements Lhtd;
 
 
 # instance fields
-.field public final synthetic a:Le3;
+.field public final a:Lg16;
 
-.field public final synthetic b:I
+.field public b:Z
 
-.field public final synthetic c:I
+.field public final synthetic c:Ls8;
 
 
 # direct methods
-.method public synthetic constructor <init>(Le3;I)V
-    .locals 0
+.method public constructor <init>(Ls8;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lap6;->a:Le3;
+    iput-object p1, p0, Lap6;->c:Ls8;
 
-    const/4 p1, 0x0
+    new-instance v0, Lg16;
 
-    iput p1, p0, Lap6;->b:I
+    iget-object p1, p1, Ls8;->e:Ljava/lang/Object;
 
-    iput p2, p0, Lap6;->c:I
+    check-cast p1, Lyt0;
+
+    invoke-interface {p1}, Lhtd;->p()Lsse;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1}, Lg16;-><init>(Lsse;)V
+
+    iput-object v0, p0, Lap6;->a:Lg16;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final call()Ljava/lang/Object;
-    .locals 8
+.method public b(Lvs0;J)J
+    .locals 2
 
-    iget-object v0, p0, Lap6;->a:Le3;
+    iget-object v0, p0, Lap6;->c:Ls8;
 
-    iget-object v0, v0, Le3;->a:Ljava/lang/Object;
+    :try_start_0
+    iget-object v1, v0, Ls8;->e:Ljava/lang/Object;
 
-    check-cast v0, Landroidx/work/impl/WorkDatabase;
+    check-cast v1, Lyt0;
 
-    invoke-virtual {v0}, Landroidx/work/impl/WorkDatabase;->u()Lb2b;
+    invoke-interface {v1, p1, p2, p3}, Lhtd;->b(Lvs0;J)J
 
-    move-result-object v1
+    move-result-wide p0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const-string v2, "next_job_scheduler_id"
+    return-wide p0
 
-    invoke-virtual {v1, v2}, Lb2b;->z(Ljava/lang/String;)Ljava/lang/Long;
+    :catch_0
+    move-exception p1
 
-    move-result-object v1
+    iget-object p2, v0, Ls8;->d:Ljava/lang/Object;
 
-    const/4 v3, 0x0
+    check-cast p2, Ld6c;
 
-    if-eqz v1, :cond_0
+    invoke-virtual {p2}, Ld6c;->k()V
 
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+    invoke-virtual {p0}, Lap6;->m()V
 
-    move-result-wide v4
+    throw p1
+.end method
 
-    long-to-int v1, v4
+.method public final m()V
+    .locals 4
 
-    goto :goto_0
+    iget-object v0, p0, Lap6;->c:Ls8;
+
+    iget v1, v0, Ls8;->a:I
+
+    const/4 v2, 0x6
+
+    if-ne v1, v2, :cond_0
+
+    return-void
 
     :cond_0
-    move v1, v3
+    const/4 v3, 0x5
 
-    :goto_0
-    const v4, 0x7fffffff
+    if-ne v1, v3, :cond_1
 
-    if-ne v1, v4, :cond_1
+    iget-object p0, p0, Lap6;->a:Lg16;
 
-    goto :goto_1
+    iget-object v1, p0, Lg16;->e:Lsse;
+
+    sget-object v3, Lsse;->d:Lrse;
+
+    iput-object v3, p0, Lg16;->e:Lsse;
+
+    invoke-virtual {v1}, Lsse;->a()Lsse;
+
+    invoke-virtual {v1}, Lsse;->b()Lsse;
+
+    iput v2, v0, Ls8;->a:I
+
+    return-void
 
     :cond_1
-    add-int/lit8 v3, v1, 0x1
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    :goto_1
-    invoke-virtual {v0}, Landroidx/work/impl/WorkDatabase;->u()Lb2b;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    const-string v2, "state: "
 
-    new-instance v5, La2b;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    int-to-long v6, v3
+    iget v0, v0, Ls8;->a:I
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v3
-
-    invoke-direct {v5, v2, v3}, La2b;-><init>(Ljava/lang/String;Ljava/lang/Long;)V
-
-    invoke-virtual {v4, v5}, Lb2b;->B(La2b;)V
-
-    iget v3, p0, Lap6;->b:I
-
-    if-gt v3, v1, :cond_2
-
-    iget p0, p0, Lap6;->c:I
-
-    if-gt v1, p0, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    add-int/lit8 p0, v3, 0x1
-
-    invoke-virtual {v0}, Landroidx/work/impl/WorkDatabase;->u()Lb2b;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    new-instance v1, La2b;
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    int-to-long v4, p0
+    throw p0
+.end method
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+.method public final p()Lsse;
+    .locals 0
 
-    move-result-object p0
-
-    invoke-direct {v1, v2, p0}, La2b;-><init>(Ljava/lang/String;Ljava/lang/Long;)V
-
-    invoke-virtual {v0, v1}, Lb2b;->B(La2b;)V
-
-    move v1, v3
-
-    :goto_2
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p0
+    iget-object p0, p0, Lap6;->a:Lg16;
 
     return-object p0
 .end method

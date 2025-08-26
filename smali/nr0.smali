@@ -1,565 +1,116 @@
 .class public final Lnr0;
-.super Ljava/lang/Object;
+.super Lyg4;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/io/Closeable;
 
 
 # instance fields
-.field public X:[B
+.field public final c:Ln7b;
 
-.field public Y:I
-
-.field public Z:I
-
-.field public a:Lwr0;
-
-.field public b:Z
-
-.field public c:Lkuc;
-
-.field public o:J
+.field public final synthetic d:Lxqe;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Lxqe;Lai0;Ln7b;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lnr0;->d:Lxqe;
 
-    const-wide/16 v0, -0x1
+    invoke-direct {p0, p2}, Lyg4;-><init>(Lai0;)V
 
-    iput-wide v0, p0, Lnr0;->o:J
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lnr0;->Y:I
-
-    iput v0, p0, Lnr0;->Z:I
+    iput-object p3, p0, Lnr0;->c:Ln7b;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(J)V
-    .locals 15
+.method public final f(Ljava/lang/Throwable;)V
+    .locals 1
 
-    move-object v0, p0
+    iget-object p1, p0, Lnr0;->d:Lxqe;
 
-    move-wide/from16 v1, p1
+    iget-object p1, p1, Lxqe;->c:Ljava/lang/Object;
 
-    iget-object v3, v0, Lnr0;->a:Lwr0;
+    check-cast p1, Lmre;
 
-    if-eqz v3, :cond_7
+    iget-object v0, p0, Lyg4;->b:Lai0;
 
-    iget-boolean v4, v0, Lnr0;->b:Z
+    iget-object p0, p0, Lnr0;->c:Ln7b;
 
-    if-eqz v4, :cond_6
-
-    iget-wide v4, v3, Lwr0;->b:J
-
-    cmp-long v6, v1, v4
-
-    const-wide/16 v7, 0x0
-
-    if-gtz v6, :cond_3
-
-    cmp-long v6, v1, v7
-
-    if-ltz v6, :cond_2
-
-    sub-long/2addr v4, v1
-
-    :goto_0
-    cmp-long v6, v4, v7
-
-    if-lez v6, :cond_1
-
-    iget-object v6, v3, Lwr0;->a:Lkuc;
-
-    iget-object v6, v6, Lkuc;->g:Lkuc;
-
-    iget v9, v6, Lkuc;->c:I
-
-    iget v10, v6, Lkuc;->b:I
-
-    sub-int v10, v9, v10
-
-    int-to-long v10, v10
-
-    cmp-long v12, v10, v4
-
-    if-gtz v12, :cond_0
-
-    invoke-virtual {v6}, Lkuc;->a()Lkuc;
-
-    move-result-object v9
-
-    iput-object v9, v3, Lwr0;->a:Lkuc;
-
-    invoke-static {v6}, Lbvc;->a(Lkuc;)V
-
-    sub-long/2addr v4, v10
-
-    goto :goto_0
-
-    :cond_0
-    long-to-int v4, v4
-
-    sub-int/2addr v9, v4
-
-    iput v9, v6, Lkuc;->c:I
-
-    :cond_1
-    const/4 v4, 0x0
-
-    iput-object v4, v0, Lnr0;->c:Lkuc;
-
-    iput-wide v1, v0, Lnr0;->o:J
-
-    iput-object v4, v0, Lnr0;->X:[B
-
-    const/4 v4, -0x1
-
-    iput v4, v0, Lnr0;->Y:I
-
-    iput v4, v0, Lnr0;->Z:I
-
-    goto :goto_2
-
-    :cond_2
-    const-string v0, "newSize < 0: "
-
-    invoke-static {v1, v2, v0}, Lus8;->i(JLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    :cond_3
-    if-lez v6, :cond_5
-
-    sub-long v9, v1, v4
-
-    const/4 v6, 0x1
-
-    move v11, v6
-
-    :goto_1
-    cmp-long v12, v9, v7
-
-    if-lez v12, :cond_5
-
-    invoke-virtual {v3, v6}, Lwr0;->r0(I)Lkuc;
-
-    move-result-object v12
-
-    iget v13, v12, Lkuc;->c:I
-
-    rsub-int v13, v13, 0x2000
-
-    int-to-long v13, v13
-
-    invoke-static {v9, v10, v13, v14}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v13
-
-    long-to-int v13, v13
-
-    iget v14, v12, Lkuc;->c:I
-
-    add-int/2addr v14, v13
-
-    iput v14, v12, Lkuc;->c:I
-
-    int-to-long v6, v13
-
-    sub-long/2addr v9, v6
-
-    if-eqz v11, :cond_4
-
-    iput-object v12, v0, Lnr0;->c:Lkuc;
-
-    iput-wide v4, v0, Lnr0;->o:J
-
-    iget-object v6, v12, Lkuc;->a:[B
-
-    iput-object v6, v0, Lnr0;->X:[B
-
-    sub-int v6, v14, v13
-
-    iput v6, v0, Lnr0;->Y:I
-
-    iput v14, v0, Lnr0;->Z:I
-
-    const/4 v11, 0x0
-
-    :cond_4
-    const/4 v6, 0x1
-
-    const-wide/16 v7, 0x0
-
-    goto :goto_1
-
-    :cond_5
-    :goto_2
-    iput-wide v1, v3, Lwr0;->b:J
+    invoke-virtual {p1, v0, p0}, Lmre;->a(Lai0;Ln7b;)V
 
     return-void
-
-    :cond_6
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "resizeBuffer() only permitted for read/write buffers"
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_7
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "not attached to a buffer"
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
-.method public final close()V
-    .locals 3
+.method public final h(ILjava/lang/Object;)V
+    .locals 6
 
-    iget-object v0, p0, Lnr0;->a:Lwr0;
+    check-cast p2, La05;
 
-    if-eqz v0, :cond_0
+    iget-object v0, p0, Lnr0;->c:Ln7b;
 
-    const/4 v0, 0x1
+    move-object v1, v0
 
-    goto :goto_0
+    check-cast v1, Ljj0;
 
-    :cond_0
-    const/4 v0, 0x0
+    iget-object v1, v1, Ljj0;->a:Lvv6;
 
-    :goto_0
-    if-eqz v0, :cond_1
+    invoke-static {p1}, Lai0;->a(I)Z
 
-    const/4 v0, 0x0
+    move-result v2
 
-    iput-object v0, p0, Lnr0;->a:Lwr0;
+    iget-object v3, v1, Lvv6;->h:Ldgc;
 
-    iput-object v0, p0, Lnr0;->c:Lkuc;
+    invoke-static {p2, v3}, Ll23;->K(La05;Ldgc;)Z
 
-    const-wide/16 v1, -0x1
+    move-result v3
 
-    iput-wide v1, p0, Lnr0;->o:J
+    iget-object v4, p0, Lyg4;->b:Lai0;
 
-    iput-object v0, p0, Lnr0;->X:[B
+    if-eqz p2, :cond_2
 
-    const/4 v0, -0x1
+    if-nez v3, :cond_0
 
-    iput v0, p0, Lnr0;->Y:I
+    iget-boolean v5, v1, Lvv6;->e:Z
 
-    iput v0, p0, Lnr0;->Z:I
-
-    return-void
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string v0, "not attached to a buffer"
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method public final d(J)I
-    .locals 17
-
-    move-object/from16 v0, p0
-
-    move-wide/from16 v1, p1
-
-    iget-object v3, v0, Lnr0;->a:Lwr0;
-
-    if-eqz v3, :cond_a
-
-    const/4 v4, -0x1
-
-    int-to-long v5, v4
-
-    cmp-long v5, v1, v5
-
-    if-ltz v5, :cond_9
-
-    iget-wide v5, v3, Lwr0;->b:J
-
-    cmp-long v7, v1, v5
-
-    if-gtz v7, :cond_9
-
-    const-wide/16 v8, -0x1
-
-    cmp-long v8, v1, v8
-
-    if-eqz v8, :cond_8
-
-    if-nez v7, :cond_0
-
-    goto/16 :goto_3
+    if-eqz v5, :cond_2
 
     :cond_0
-    iget-object v4, v3, Lwr0;->a:Lkuc;
+    if-eqz v2, :cond_1
 
-    iget-object v7, v0, Lnr0;->c:Lkuc;
+    if-eqz v3, :cond_1
 
-    const-wide/16 v8, 0x0
-
-    if-eqz v7, :cond_2
-
-    iget-wide v10, v0, Lnr0;->o:J
-
-    iget v12, v0, Lnr0;->Y:I
-
-    iget v13, v7, Lkuc;->b:I
-
-    sub-int/2addr v12, v13
-
-    int-to-long v12, v12
-
-    sub-long/2addr v10, v12
-
-    cmp-long v12, v10, v1
-
-    if-lez v12, :cond_1
-
-    move-wide v5, v10
-
-    move-object/from16 v16, v7
-
-    move-object v7, v4
-
-    move-object/from16 v4, v16
+    invoke-virtual {v4, p1, p2}, Lai0;->g(ILjava/lang/Object;)V
 
     goto :goto_0
 
     :cond_1
-    move-wide v8, v10
+    and-int/lit8 p1, p1, -0x2
 
-    goto :goto_0
+    invoke-virtual {v4, p1, p2}, Lai0;->g(ILjava/lang/Object;)V
 
     :cond_2
-    move-object v7, v4
-
     :goto_0
-    sub-long v10, v5, v1
+    if-eqz v2, :cond_3
 
-    sub-long v12, v1, v8
+    if-nez v3, :cond_3
 
-    cmp-long v10, v10, v12
+    invoke-virtual {v1}, Lvv6;->c()Z
 
-    if-lez v10, :cond_3
+    move-result p1
 
-    :goto_1
-    iget v4, v7, Lkuc;->c:I
+    if-nez p1, :cond_3
 
-    iget v5, v7, Lkuc;->b:I
+    invoke-static {p2}, La05;->d(La05;)V
 
-    sub-int/2addr v4, v5
+    iget-object p0, p0, Lnr0;->d:Lxqe;
 
-    int-to-long v4, v4
+    iget-object p0, p0, Lxqe;->c:Ljava/lang/Object;
 
-    add-long/2addr v4, v8
+    check-cast p0, Lmre;
 
-    cmp-long v6, v1, v4
-
-    if-ltz v6, :cond_5
-
-    iget-object v7, v7, Lkuc;->f:Lkuc;
-
-    move-wide v8, v4
-
-    goto :goto_1
+    invoke-virtual {p0, v4, v0}, Lmre;->a(Lai0;Ln7b;)V
 
     :cond_3
-    :goto_2
-    cmp-long v7, v5, v1
-
-    if-lez v7, :cond_4
-
-    iget-object v4, v4, Lkuc;->g:Lkuc;
-
-    iget v7, v4, Lkuc;->c:I
-
-    iget v8, v4, Lkuc;->b:I
-
-    sub-int/2addr v7, v8
-
-    int-to-long v7, v7
-
-    sub-long/2addr v5, v7
-
-    goto :goto_2
-
-    :cond_4
-    move-object v7, v4
-
-    move-wide v8, v5
-
-    :cond_5
-    iget-boolean v4, v0, Lnr0;->b:Z
-
-    if-eqz v4, :cond_7
-
-    iget-boolean v4, v7, Lkuc;->d:Z
-
-    if-eqz v4, :cond_7
-
-    new-instance v4, Lkuc;
-
-    iget-object v5, v7, Lkuc;->a:[B
-
-    array-length v6, v5
-
-    invoke-static {v5, v6}, Ljava/util/Arrays;->copyOf([BI)[B
-
-    move-result-object v11
-
-    iget v12, v7, Lkuc;->b:I
-
-    iget v13, v7, Lkuc;->c:I
-
-    const/4 v14, 0x0
-
-    const/4 v15, 0x1
-
-    move-object v10, v4
-
-    invoke-direct/range {v10 .. v15}, Lkuc;-><init>([BIIZZ)V
-
-    iget-object v5, v3, Lwr0;->a:Lkuc;
-
-    if-ne v5, v7, :cond_6
-
-    iput-object v4, v3, Lwr0;->a:Lkuc;
-
-    :cond_6
-    invoke-virtual {v7, v4}, Lkuc;->b(Lkuc;)V
-
-    iget-object v3, v4, Lkuc;->g:Lkuc;
-
-    invoke-virtual {v3}, Lkuc;->a()Lkuc;
-
-    move-object v7, v4
-
-    :cond_7
-    iput-object v7, v0, Lnr0;->c:Lkuc;
-
-    iput-wide v1, v0, Lnr0;->o:J
-
-    iget-object v3, v7, Lkuc;->a:[B
-
-    iput-object v3, v0, Lnr0;->X:[B
-
-    iget v3, v7, Lkuc;->b:I
-
-    sub-long/2addr v1, v8
-
-    long-to-int v1, v1
-
-    add-int/2addr v3, v1
-
-    iput v3, v0, Lnr0;->Y:I
-
-    iget v1, v7, Lkuc;->c:I
-
-    iput v1, v0, Lnr0;->Z:I
-
-    sub-int/2addr v1, v3
-
-    return v1
-
-    :cond_8
-    :goto_3
-    const/4 v3, 0x0
-
-    iput-object v3, v0, Lnr0;->c:Lkuc;
-
-    iput-wide v1, v0, Lnr0;->o:J
-
-    iput-object v3, v0, Lnr0;->X:[B
-
-    iput v4, v0, Lnr0;->Y:I
-
-    iput v4, v0, Lnr0;->Z:I
-
-    return v4
-
-    :cond_9
-    new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
-
-    invoke-static/range {p1 .. p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    iget-wide v2, v3, Lwr0;->b:J
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    filled-new-array {v1, v2}, [Ljava/lang/Object;
-
-    move-result-object v1
-
-    const/4 v2, 0x2
-
-    invoke-static {v1, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    move-result-object v1
-
-    const-string v2, "offset=%s > size=%s"
-
-    invoke-static {v2, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_a
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "not attached to a buffer"
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    return-void
 .end method

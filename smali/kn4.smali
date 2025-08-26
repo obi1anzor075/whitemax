@@ -2,91 +2,82 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final b:Lkn4;
-
-.field public static final c:Z
+# interfaces
+.implements Lmn4;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/ArrayBlockingQueue;
+.field public final a:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lkn4;
-
-    invoke-direct {v0}, Lkn4;-><init>()V
-
-    sput-object v0, Lkn4;->b:Lkn4;
-
-    const/4 v0, 0x1
-
-    sput-boolean v0, Lkn4;->c:Z
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(I)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/ArrayBlockingQueue;
-
-    const/16 v1, 0x14
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/ArrayBlockingQueue;-><init>(I)V
-
-    iput-object v0, p0, Lkn4;->a:Ljava/util/concurrent/ArrayBlockingQueue;
+    iput p1, p0, Lkn4;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljn4;)V
+.method public final equals(Ljava/lang/Object;)Z
     .locals 3
 
-    sget-boolean v0, Lkn4;->c:Z
+    const/4 v0, 0x1
 
-    if-nez v0, :cond_0
+    if-ne p0, p1, :cond_0
 
-    return-void
+    return v0
 
     :cond_0
-    const/4 v0, 0x5
+    instance-of v1, p1, Lkn4;
 
-    :goto_0
-    iget-object v1, p0, Lkn4;->a:Ljava/util/concurrent/ArrayBlockingQueue;
+    const/4 v2, 0x0
 
-    invoke-virtual {v1, p1}, Ljava/util/concurrent/ArrayBlockingQueue;->offer(Ljava/lang/Object;)Z
+    if-nez v1, :cond_1
 
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    if-lez v0, :cond_1
-
-    invoke-virtual {v1}, Ljava/util/concurrent/ArrayBlockingQueue;->poll()Ljava/lang/Object;
-
-    add-int/lit8 v0, v0, -0x1
-
-    goto :goto_0
+    return v2
 
     :cond_1
-    return-void
+    check-cast p1, Lkn4;
+
+    iget p0, p0, Lkn4;->a:I
+
+    iget p1, p1, Lkn4;->a:I
+
+    if-eq p0, p1, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    iget p0, p0, Lkn4;->a:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result p0
+
+    return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 0
+    .locals 2
 
-    iget-object p0, p0, Lkn4;->a:Ljava/util/concurrent/ArrayBlockingQueue;
+    const-string v0, "DownloadFailed(textFailRes="
 
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    const-string v1, ")"
+
+    iget p0, p0, Lkn4;->a:I
+
+    invoke-static {p0, v0, v1}, Lpg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

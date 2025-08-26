@@ -1,59 +1,79 @@
 .class public final Lgq9;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# static fields
+.field public static final synthetic d:[Lbc7;
+
+.field public static final e:Ljava/lang/String;
+
+
 # instance fields
-.field public X:J
+.field public final a:Le45;
 
-.field public synthetic Y:Ljava/lang/Object;
+.field public final b:Ltm4;
 
-.field public final synthetic Z:Lkq9;
-
-.field public o:Li22;
-
-.field public w0:I
+.field public final c:Ltm4;
 
 
 # direct methods
-.method public constructor <init>(Lkq9;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 6
 
-    iput-object p1, p0, Lgq9;->Z:Lkq9;
+    new-instance v0, Lnlb;
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    const-class v1, Lgq9;
+
+    const-string v2, "db"
+
+    const-string v3, "getDb()Lru/ok/tamtam/Database;"
+
+    const/4 v4, 0x0
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lnlb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    sget-object v2, Llcc;->a:Lmcc;
+
+    const-string v3, "phonebook"
+
+    const-string v5, "getPhonebook()Lru/ok/tamtam/services/Phonebook;"
+
+    invoke-static {v2, v1, v3, v5, v4}, Lm26;->g(Lmcc;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lnlb;
+
+    move-result-object v2
+
+    const/4 v3, 0x2
+
+    new-array v3, v3, [Lbc7;
+
+    aput-object v0, v3, v4
+
+    const/4 v0, 0x1
+
+    aput-object v2, v3, v0
+
+    sput-object v3, Lgq9;->d:[Lbc7;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lgq9;->e:Ljava/lang/String;
 
     return-void
 .end method
 
+.method public constructor <init>(Le45;Ltm4;Ltm4;)V
+    .locals 0
 
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgq9;->Y:Ljava/lang/Object;
+    iput-object p1, p0, Lgq9;->a:Le45;
 
-    iget p1, p0, Lgq9;->w0:I
+    iput-object p2, p0, Lgq9;->b:Ltm4;
 
-    const/high16 v0, -0x80000000
+    iput-object p3, p0, Lgq9;->c:Ltm4;
 
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lgq9;->w0:I
-
-    iget-object v0, p0, Lgq9;->Z:Lkq9;
-
-    const/4 v1, 0x0
-
-    const-wide/16 v2, 0x0
-
-    const-wide/16 v4, 0x0
-
-    move-object v6, p0
-
-    invoke-virtual/range {v0 .. v6}, Lkq9;->d(Li22;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

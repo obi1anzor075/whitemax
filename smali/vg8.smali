@@ -1,25 +1,47 @@
-.class public final Lvg8;
-.super Ltaf;
+.class public interface abstract Lvg8;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final b:Ll05;
+# virtual methods
+.method public b(I)V
+    .locals 0
 
+    return-void
+.end method
 
-# direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public d(ILz1b;Lw0b;ZZI)V
+    .locals 0
 
-    invoke-direct {p0}, Ltaf;-><init>()V
+    return-void
+.end method
 
-    new-instance v0, Ll05;
+.method public f(ILxf7;)V
+    .locals 0
 
-    const/4 v1, 0x0
+    return-void
+.end method
 
-    invoke-direct {v0, v1}, Ll05;-><init>(I)V
+.method public h(ILw0b;)V
+    .locals 0
 
-    iput-object v0, p0, Lvg8;->b:Ll05;
+    return-void
+.end method
+
+.method public j(ILx8d;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public k(ILv8d;ZZI)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onDisconnected()V
+    .locals 0
 
     return-void
 .end method

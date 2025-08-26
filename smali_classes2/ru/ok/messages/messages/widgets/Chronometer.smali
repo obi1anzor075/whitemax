@@ -4,31 +4,31 @@
 
 
 # instance fields
-.field public A0:Z
+.field public final A0:Ljava/lang/StringBuilder;
 
 .field public B0:Z
 
-.field public C0:Z
+.field public final C0:Lje;
 
-.field public D0:Ljava/lang/String;
+.field public q0:J
 
-.field public E0:Ljava/util/Formatter;
+.field public r0:Z
 
-.field public F0:Ljava/util/Locale;
+.field public s0:Z
 
-.field public final G0:[Ljava/lang/Object;
+.field public t0:Z
 
-.field public H0:Ljava/lang/StringBuilder;
+.field public u0:Z
 
-.field public final I0:Ljava/lang/StringBuilder;
+.field public v0:Ljava/lang/String;
 
-.field public J0:Z
+.field public w0:Ljava/util/Formatter;
 
-.field public final K0:Lre;
+.field public x0:Ljava/util/Locale;
 
-.field public y0:J
+.field public final y0:[Ljava/lang/Object;
 
-.field public z0:Z
+.field public z0:Ljava/lang/StringBuilder;
 
 
 # direct methods
@@ -43,7 +43,7 @@
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    iput-object v1, p0, Lru/ok/messages/messages/widgets/Chronometer;->G0:[Ljava/lang/Object;
+    iput-object v1, p0, Lru/ok/messages/messages/widgets/Chronometer;->y0:[Ljava/lang/Object;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -51,23 +51,23 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iput-object v1, p0, Lru/ok/messages/messages/widgets/Chronometer;->I0:Ljava/lang/StringBuilder;
+    iput-object v1, p0, Lru/ok/messages/messages/widgets/Chronometer;->A0:Ljava/lang/StringBuilder;
 
-    new-instance v1, Lre;
+    new-instance v1, Lje;
 
-    const/16 v2, 0xb
+    const/16 v2, 0x9
 
-    invoke-direct {v1, v2, p0}, Lre;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v1, v2, p0}, Lje;-><init>(ILjava/lang/Object;)V
 
-    iput-object v1, p0, Lru/ok/messages/messages/widgets/Chronometer;->K0:Lre;
+    iput-object v1, p0, Lru/ok/messages/messages/widgets/Chronometer;->C0:Lje;
 
-    sget-object v1, Lzvb;->Chronometer:[I
+    sget-object v1, Lv0c;->Chronometer:[I
 
     invoke-virtual {p1, p2, v1, v0, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object p1
 
-    sget p2, Lzvb;->Chronometer_format:I
+    sget p2, Lv0c;->Chronometer_format:I
 
     invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -75,7 +75,7 @@
 
     invoke-virtual {p0, p2}, Lru/ok/messages/messages/widgets/Chronometer;->setFormat(Ljava/lang/String;)V
 
-    sget p2, Lzvb;->Chronometer_countDown:I
+    sget p2, Lv0c;->Chronometer_countDown:I
 
     invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
@@ -89,9 +89,9 @@
 
     move-result-wide p1
 
-    iput-wide p1, p0, Lru/ok/messages/messages/widgets/Chronometer;->y0:J
+    iput-wide p1, p0, Lru/ok/messages/messages/widgets/Chronometer;->q0:J
 
-    invoke-virtual {p0, p1, p2}, Lru/ok/messages/messages/widgets/Chronometer;->k(J)V
+    invoke-virtual {p0, p1, p2}, Lru/ok/messages/messages/widgets/Chronometer;->j(J)V
 
     return-void
 .end method
@@ -113,7 +113,7 @@
 .method public getBase()J
     .locals 2
 
-    iget-wide v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->y0:J
+    iget-wide v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->q0:J
 
     return-wide v0
 .end method
@@ -121,12 +121,12 @@
 .method public getFormat()Ljava/lang/String;
     .locals 0
 
-    iget-object p0, p0, Lru/ok/messages/messages/widgets/Chronometer;->D0:Ljava/lang/String;
+    iget-object p0, p0, Lru/ok/messages/messages/widgets/Chronometer;->v0:Ljava/lang/String;
 
     return-object p0
 .end method
 
-.method public getOnChronometerTickListener()Lwx2;
+.method public getOnChronometerTickListener()Lzz2;
     .locals 0
 
     const/4 p0, 0x0
@@ -134,14 +134,14 @@
     return-object p0
 .end method
 
-.method public final j()V
+.method public final i()V
     .locals 4
 
-    iget-boolean v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->z0:Z
+    iget-boolean v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->r0:Z
 
     if-eqz v0, :cond_0
 
-    iget-boolean v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->A0:Z
+    iget-boolean v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->s0:Z
 
     if-eqz v0, :cond_0
 
@@ -159,11 +159,11 @@
     const/4 v0, 0x0
 
     :goto_0
-    iget-boolean v1, p0, Lru/ok/messages/messages/widgets/Chronometer;->B0:Z
+    iget-boolean v1, p0, Lru/ok/messages/messages/widgets/Chronometer;->t0:Z
 
     if-eq v0, v1, :cond_2
 
-    iget-object v1, p0, Lru/ok/messages/messages/widgets/Chronometer;->K0:Lre;
+    iget-object v1, p0, Lru/ok/messages/messages/widgets/Chronometer;->C0:Lje;
 
     if-eqz v0, :cond_1
 
@@ -171,7 +171,7 @@
 
     move-result-wide v2
 
-    invoke-virtual {p0, v2, v3}, Lru/ok/messages/messages/widgets/Chronometer;->k(J)V
+    invoke-virtual {p0, v2, v3}, Lru/ok/messages/messages/widgets/Chronometer;->j(J)V
 
     const-wide/16 v2, 0x3e8
 
@@ -183,23 +183,23 @@
     invoke-virtual {p0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     :goto_1
-    iput-boolean v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->B0:Z
+    iput-boolean v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->t0:Z
 
     :cond_2
     return-void
 .end method
 
-.method public final declared-synchronized k(J)V
+.method public final declared-synchronized j(J)V
     .locals 2
 
     monitor-enter p0
 
     :try_start_0
-    iget-boolean v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->J0:Z
+    iget-boolean v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->B0:Z
 
     if-eqz v0, :cond_0
 
-    iget-wide v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->y0:J
+    iget-wide v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->q0:J
 
     sub-long/2addr v0, p1
 
@@ -211,7 +211,7 @@
     goto :goto_2
 
     :cond_0
-    iget-wide v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->y0:J
+    iget-wide v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->q0:J
 
     sub-long v0, p1, v0
 
@@ -229,13 +229,13 @@
     neg-long v0, v0
 
     :cond_1
-    iget-object p1, p0, Lru/ok/messages/messages/widgets/Chronometer;->I0:Ljava/lang/StringBuilder;
+    iget-object p1, p0, Lru/ok/messages/messages/widgets/Chronometer;->A0:Ljava/lang/StringBuilder;
 
     invoke-static {p1, v0, v1}, Landroid/text/format/DateUtils;->formatElapsedTime(Ljava/lang/StringBuilder;J)Ljava/lang/String;
 
     move-result-object p1
 
-    iget-object p2, p0, Lru/ok/messages/messages/widgets/Chronometer;->D0:Ljava/lang/String;
+    iget-object p2, p0, Lru/ok/messages/messages/widgets/Chronometer;->v0:Ljava/lang/String;
 
     if-eqz p2, :cond_4
 
@@ -245,11 +245,11 @@
 
     move-result-object p2
 
-    iget-object v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->E0:Ljava/util/Formatter;
+    iget-object v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->w0:Ljava/util/Formatter;
 
     if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->F0:Ljava/util/Locale;
+    iget-object v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->x0:Ljava/util/Locale;
 
     invoke-virtual {p2, v0}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
 
@@ -258,37 +258,37 @@
     if-nez v0, :cond_3
 
     :cond_2
-    iput-object p2, p0, Lru/ok/messages/messages/widgets/Chronometer;->F0:Ljava/util/Locale;
+    iput-object p2, p0, Lru/ok/messages/messages/widgets/Chronometer;->x0:Ljava/util/Locale;
 
     new-instance v0, Ljava/util/Formatter;
 
-    iget-object v1, p0, Lru/ok/messages/messages/widgets/Chronometer;->H0:Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lru/ok/messages/messages/widgets/Chronometer;->z0:Ljava/lang/StringBuilder;
 
     invoke-direct {v0, v1, p2}, Ljava/util/Formatter;-><init>(Ljava/lang/Appendable;Ljava/util/Locale;)V
 
-    iput-object v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->E0:Ljava/util/Formatter;
+    iput-object v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->w0:Ljava/util/Formatter;
 
     :cond_3
-    iget-object p2, p0, Lru/ok/messages/messages/widgets/Chronometer;->H0:Ljava/lang/StringBuilder;
+    iget-object p2, p0, Lru/ok/messages/messages/widgets/Chronometer;->z0:Ljava/lang/StringBuilder;
 
     const/4 v0, 0x0
 
     invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    iget-object p2, p0, Lru/ok/messages/messages/widgets/Chronometer;->G0:[Ljava/lang/Object;
+    iget-object p2, p0, Lru/ok/messages/messages/widgets/Chronometer;->y0:[Ljava/lang/Object;
 
     aput-object p1, p2, v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :try_start_1
-    iget-object v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->E0:Ljava/util/Formatter;
+    iget-object v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->w0:Ljava/util/Formatter;
 
-    iget-object v1, p0, Lru/ok/messages/messages/widgets/Chronometer;->D0:Ljava/lang/String;
+    iget-object v1, p0, Lru/ok/messages/messages/widgets/Chronometer;->v0:Ljava/lang/String;
 
     invoke-virtual {v0, v1, p2}, Ljava/util/Formatter;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Formatter;
 
-    iget-object p2, p0, Lru/ok/messages/messages/widgets/Chronometer;->H0:Ljava/lang/StringBuilder;
+    iget-object p2, p0, Lru/ok/messages/messages/widgets/Chronometer;->z0:Ljava/lang/StringBuilder;
 
     invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -301,13 +301,13 @@
 
     :catch_0
     :try_start_2
-    iget-boolean p2, p0, Lru/ok/messages/messages/widgets/Chronometer;->C0:Z
+    iget-boolean p2, p0, Lru/ok/messages/messages/widgets/Chronometer;->u0:Z
 
     if-nez p2, :cond_4
 
     const/4 p2, 0x1
 
-    iput-boolean p2, p0, Lru/ok/messages/messages/widgets/Chronometer;->C0:Z
+    iput-boolean p2, p0, Lru/ok/messages/messages/widgets/Chronometer;->u0:Z
 
     :cond_4
     :goto_1
@@ -335,9 +335,9 @@
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->z0:Z
+    iput-boolean v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->r0:Z
 
-    invoke-virtual {p0}, Lru/ok/messages/messages/widgets/Chronometer;->j()V
+    invoke-virtual {p0}, Lru/ok/messages/messages/widgets/Chronometer;->i()V
 
     return-void
 .end method
@@ -347,7 +347,7 @@
 
     invoke-super {p0, p1, p2}, Landroid/view/View;->onVisibilityChanged(Landroid/view/View;I)V
 
-    invoke-virtual {p0}, Lru/ok/messages/messages/widgets/Chronometer;->j()V
+    invoke-virtual {p0}, Lru/ok/messages/messages/widgets/Chronometer;->i()V
 
     return-void
 .end method
@@ -367,9 +367,9 @@
     const/4 p1, 0x0
 
     :goto_0
-    iput-boolean p1, p0, Lru/ok/messages/messages/widgets/Chronometer;->z0:Z
+    iput-boolean p1, p0, Lru/ok/messages/messages/widgets/Chronometer;->r0:Z
 
-    invoke-virtual {p0}, Lru/ok/messages/messages/widgets/Chronometer;->j()V
+    invoke-virtual {p0}, Lru/ok/messages/messages/widgets/Chronometer;->i()V
 
     return-void
 .end method
@@ -377,13 +377,13 @@
 .method public setBase(J)V
     .locals 0
 
-    iput-wide p1, p0, Lru/ok/messages/messages/widgets/Chronometer;->y0:J
+    iput-wide p1, p0, Lru/ok/messages/messages/widgets/Chronometer;->q0:J
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide p1
 
-    invoke-virtual {p0, p1, p2}, Lru/ok/messages/messages/widgets/Chronometer;->k(J)V
+    invoke-virtual {p0, p1, p2}, Lru/ok/messages/messages/widgets/Chronometer;->j(J)V
 
     return-void
 .end method
@@ -391,13 +391,13 @@
 .method public setCountDown(Z)V
     .locals 2
 
-    iput-boolean p1, p0, Lru/ok/messages/messages/widgets/Chronometer;->J0:Z
+    iput-boolean p1, p0, Lru/ok/messages/messages/widgets/Chronometer;->B0:Z
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
-    invoke-virtual {p0, v0, v1}, Lru/ok/messages/messages/widgets/Chronometer;->k(J)V
+    invoke-virtual {p0, v0, v1}, Lru/ok/messages/messages/widgets/Chronometer;->j(J)V
 
     return-void
 .end method
@@ -405,11 +405,11 @@
 .method public setFormat(Ljava/lang/String;)V
     .locals 1
 
-    iput-object p1, p0, Lru/ok/messages/messages/widgets/Chronometer;->D0:Ljava/lang/String;
+    iput-object p1, p0, Lru/ok/messages/messages/widgets/Chronometer;->v0:Ljava/lang/String;
 
     if-eqz p1, :cond_0
 
-    iget-object v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->H0:Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->z0:Ljava/lang/StringBuilder;
 
     if-nez v0, :cond_0
 
@@ -423,13 +423,13 @@
 
     invoke-direct {v0, p1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iput-object v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->H0:Ljava/lang/StringBuilder;
+    iput-object v0, p0, Lru/ok/messages/messages/widgets/Chronometer;->z0:Ljava/lang/StringBuilder;
 
     :cond_0
     return-void
 .end method
 
-.method public setOnChronometerTickListener(Lwx2;)V
+.method public setOnChronometerTickListener(Lzz2;)V
     .locals 0
 
     return-void
@@ -438,9 +438,9 @@
 .method public setStarted(Z)V
     .locals 0
 
-    iput-boolean p1, p0, Lru/ok/messages/messages/widgets/Chronometer;->A0:Z
+    iput-boolean p1, p0, Lru/ok/messages/messages/widgets/Chronometer;->s0:Z
 
-    invoke-virtual {p0}, Lru/ok/messages/messages/widgets/Chronometer;->j()V
+    invoke-virtual {p0}, Lru/ok/messages/messages/widgets/Chronometer;->i()V
 
     return-void
 .end method

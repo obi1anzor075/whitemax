@@ -4,14 +4,10 @@
 
 
 # static fields
-.field public static final synthetic C0:I
+.field public static final synthetic u0:I
 
 
 # instance fields
-.field public A0:J
-
-.field public B0:Z
-
 .field public a:Landroid/graphics/RectF;
 
 .field public final b:Landroid/graphics/Paint;
@@ -20,13 +16,17 @@
 
 .field public final o:Landroidx/appcompat/widget/AppCompatImageView;
 
-.field public w0:F
+.field public o0:F
 
-.field public x0:Landroid/animation/ValueAnimator;
+.field public p0:Landroid/animation/ValueAnimator;
 
-.field public y0:J
+.field public q0:J
 
-.field public z0:J
+.field public r0:J
+
+.field public s0:J
+
+.field public t0:Z
 
 
 # direct methods
@@ -39,25 +39,25 @@
 
     const/high16 v1, 0x43b40000    # 360.0f
 
-    iput v1, p0, Lru/ok/messages/secret/widgets/TimerView;->w0:F
+    iput v1, p0, Lru/ok/messages/secret/widgets/TimerView;->o0:F
 
     const-wide/16 v1, -0x1
 
-    iput-wide v1, p0, Lru/ok/messages/secret/widgets/TimerView;->y0:J
+    iput-wide v1, p0, Lru/ok/messages/secret/widgets/TimerView;->q0:J
 
-    iput-wide v1, p0, Lru/ok/messages/secret/widgets/TimerView;->z0:J
+    iput-wide v1, p0, Lru/ok/messages/secret/widgets/TimerView;->r0:J
 
-    iput-wide v1, p0, Lru/ok/messages/secret/widgets/TimerView;->A0:J
+    iput-wide v1, p0, Lru/ok/messages/secret/widgets/TimerView;->s0:J
 
     const/4 v1, 0x1
 
-    iput-boolean v1, p0, Lru/ok/messages/secret/widgets/TimerView;->B0:Z
+    iput-boolean v1, p0, Lru/ok/messages/secret/widgets/TimerView;->t0:Z
 
-    invoke-static {}, Lzg4;->b()Lzg4;
+    invoke-static {}, Lck4;->b()Lck4;
 
     move-result-object v2
 
-    iget v2, v2, Lzg4;->b:I
+    iget v2, v2, Lck4;->b:I
 
     const/16 v3, 0x4c
 
@@ -67,7 +67,7 @@
 
     if-eqz p2, :cond_0
 
-    sget-object v6, Lzvb;->TimerView:[I
+    sget-object v6, Lv0c;->TimerView:[I
 
     invoke-virtual {p1, p2, v6}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
@@ -75,27 +75,27 @@
 
     if-eqz p1, :cond_0
 
-    sget p2, Lzvb;->TimerView_circleColor:I
+    sget p2, Lv0c;->TimerView_circleColor:I
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v6
 
-    sget-object v7, Lwce;->a0:Lr7e;
+    sget-object v7, Lvke;->a0:Lwfe;
 
-    invoke-static {v6}, Lfja;->E(Landroid/content/Context;)Lwce;
+    invoke-static {v6}, Lp54;->M(Landroid/content/Context;)Lvke;
 
     move-result-object v6
 
-    iget v6, v6, Lwce;->k:I
+    iget v6, v6, Lvke;->k:I
 
     invoke-virtual {p1, p2, v6}, Landroid/content/res/TypedArray;->getColor(II)I
 
     move-result p2
 
-    sget v6, Lzvb;->TimerView_circleSecondaryColor:I
+    sget v6, Lv0c;->TimerView_circleSecondaryColor:I
 
-    invoke-static {p2, v3}, Lj33;->h(II)I
+    invoke-static {p2, v3}, Lk53;->i(II)I
 
     move-result v7
 
@@ -103,7 +103,7 @@
 
     move-result v6
 
-    sget v7, Lzvb;->TimerView_arrowResource:I
+    sget v7, Lv0c;->TimerView_arrowResource:I
 
     invoke-virtual {p1, v7}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -127,18 +127,18 @@
 
     move-result-object p1
 
-    sget-object p2, Lwce;->a0:Lr7e;
+    sget-object p2, Lvke;->a0:Lwfe;
 
-    invoke-static {p1}, Lfja;->E(Landroid/content/Context;)Lwce;
+    invoke-static {p1}, Lp54;->M(Landroid/content/Context;)Lvke;
 
     move-result-object p1
 
-    iget p2, p1, Lwce;->k:I
+    iget p2, p1, Lvke;->k:I
 
     :cond_1
     if-ne v6, v4, :cond_2
 
-    invoke-static {p2, v3}, Lj33;->h(II)I
+    invoke-static {p2, v3}, Lk53;->i(II)I
 
     move-result v6
 
@@ -212,11 +212,11 @@
 .method public final a(JJJ)V
     .locals 4
 
-    iput-wide p1, p0, Lru/ok/messages/secret/widgets/TimerView;->y0:J
+    iput-wide p1, p0, Lru/ok/messages/secret/widgets/TimerView;->q0:J
 
-    iput-wide p3, p0, Lru/ok/messages/secret/widgets/TimerView;->z0:J
+    iput-wide p3, p0, Lru/ok/messages/secret/widgets/TimerView;->r0:J
 
-    iput-wide p5, p0, Lru/ok/messages/secret/widgets/TimerView;->A0:J
+    iput-wide p5, p0, Lru/ok/messages/secret/widgets/TimerView;->s0:J
 
     cmp-long v0, p5, p3
 
@@ -265,21 +265,21 @@
 
     move-result-object p1
 
-    iput-object p1, p0, Lru/ok/messages/secret/widgets/TimerView;->x0:Landroid/animation/ValueAnimator;
+    iput-object p1, p0, Lru/ok/messages/secret/widgets/TimerView;->p0:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1, p3, p4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    iget-object p1, p0, Lru/ok/messages/secret/widgets/TimerView;->x0:Landroid/animation/ValueAnimator;
+    iget-object p1, p0, Lru/ok/messages/secret/widgets/TimerView;->p0:Landroid/animation/ValueAnimator;
 
-    new-instance p2, Lc00;
+    new-instance p2, Lo00;
 
-    const/16 p3, 0x14
+    const/16 p3, 0x16
 
-    invoke-direct {p2, p3, p0}, Lc00;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p2, p3, p0}, Lo00;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    iget-object p0, p0, Lru/ok/messages/secret/widgets/TimerView;->x0:Landroid/animation/ValueAnimator;
+    iget-object p0, p0, Lru/ok/messages/secret/widgets/TimerView;->p0:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ValueAnimator;->start()V
 
@@ -289,7 +289,7 @@
 .method public final b(F)V
     .locals 1
 
-    iget-object v0, p0, Lru/ok/messages/secret/widgets/TimerView;->x0:Landroid/animation/ValueAnimator;
+    iget-object v0, p0, Lru/ok/messages/secret/widgets/TimerView;->p0:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
@@ -299,7 +299,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lru/ok/messages/secret/widgets/TimerView;->x0:Landroid/animation/ValueAnimator;
+    iget-object v0, p0, Lru/ok/messages/secret/widgets/TimerView;->p0:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
@@ -314,7 +314,7 @@
 
     mul-float/2addr p1, v0
 
-    iput p1, p0, Lru/ok/messages/secret/widgets/TimerView;->w0:F
+    iput p1, p0, Lru/ok/messages/secret/widgets/TimerView;->o0:F
 
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
@@ -327,11 +327,11 @@
 
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
-    iget-boolean v0, p0, Lru/ok/messages/secret/widgets/TimerView;->B0:Z
+    iget-boolean v0, p0, Lru/ok/messages/secret/widgets/TimerView;->t0:Z
 
     if-eqz v0, :cond_0
 
-    iget-wide v2, p0, Lru/ok/messages/secret/widgets/TimerView;->y0:J
+    iget-wide v2, p0, Lru/ok/messages/secret/widgets/TimerView;->q0:J
 
     const-wide/16 v0, -0x1
 
@@ -339,13 +339,13 @@
 
     if-eqz v4, :cond_0
 
-    iget-wide v4, p0, Lru/ok/messages/secret/widgets/TimerView;->z0:J
+    iget-wide v4, p0, Lru/ok/messages/secret/widgets/TimerView;->r0:J
 
     cmp-long v6, v4, v0
 
     if-eqz v6, :cond_0
 
-    iget-wide v6, p0, Lru/ok/messages/secret/widgets/TimerView;->A0:J
+    iget-wide v6, p0, Lru/ok/messages/secret/widgets/TimerView;->s0:J
 
     cmp-long v0, v6, v0
 
@@ -366,7 +366,7 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lru/ok/messages/secret/widgets/TimerView;->B0:Z
+    iput-boolean v0, p0, Lru/ok/messages/secret/widgets/TimerView;->t0:Z
 
     const/high16 v0, -0x40800000    # -1.0f
 
@@ -384,7 +384,7 @@
 
     move-result v1
 
-    iget v2, p0, Lru/ok/messages/secret/widgets/TimerView;->w0:F
+    iget v2, p0, Lru/ok/messages/secret/widgets/TimerView;->o0:F
 
     cmpl-float v1, v1, v2
 
@@ -417,7 +417,7 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    iget v7, p0, Lru/ok/messages/secret/widgets/TimerView;->w0:F
+    iget v7, p0, Lru/ok/messages/secret/widgets/TimerView;->o0:F
 
     const/4 v0, 0x0
 
@@ -427,11 +427,11 @@
 
     iget-object v5, p0, Lru/ok/messages/secret/widgets/TimerView;->a:Landroid/graphics/RectF;
 
+    const/4 v8, 0x0
+
     iget-object v9, p0, Lru/ok/messages/secret/widgets/TimerView;->b:Landroid/graphics/Paint;
 
     const/high16 v6, 0x43870000    # 270.0f
-
-    const/4 v8, 0x0
 
     move-object v4, p1
 
@@ -586,9 +586,9 @@
 .method public setStrokeWidth(I)V
     .locals 1
 
-    iget-object v0, p0, Lru/ok/messages/secret/widgets/TimerView;->b:Landroid/graphics/Paint;
-
     int-to-float p1, p1
+
+    iget-object v0, p0, Lru/ok/messages/secret/widgets/TimerView;->b:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
@@ -606,7 +606,7 @@
 
     const/16 v0, 0x4c
 
-    invoke-static {p1, v0}, Lj33;->h(II)I
+    invoke-static {p1, v0}, Lk53;->i(II)I
 
     move-result p1
 

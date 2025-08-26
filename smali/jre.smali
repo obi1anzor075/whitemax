@@ -1,154 +1,92 @@
-.class public final Ljre;
-.super Lfre;
+.class public final synthetic Ljre;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lx56;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public b:Lkre;
+.field public final synthetic b:Lone/me/devmenu/threadsviewer/ThreadsStateViewerScreen;
 
 
 # direct methods
-.method public synthetic constructor <init>()V
-    .locals 1
+.method public synthetic constructor <init>(Lone/me/devmenu/threadsviewer/ThreadsStateViewerScreen;I)V
+    .locals 0
 
-    .line 1
-    const/4 v0, 0x1
+    iput p2, p0, Ljre;->a:I
 
-    iput v0, p0, Ljre;->a:I
+    iput-object p1, p0, Ljre;->b:Lone/me/devmenu/threadsviewer/ThreadsStateViewerScreen;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lkre;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Ljre;->a:I
-
-    .line 2
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 3
-    iput-object p1, p0, Ljre;->b:Lkre;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lcre;)V
-    .locals 0
-
-    iget p1, p0, Ljre;->a:I
-
-    packed-switch p1, :pswitch_data_0
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Ljre;->b:Lkre;
-
-    iget-boolean p1, p0, Lkre;->Y0:Z
-
-    if-nez p1, :cond_0
-
-    invoke-virtual {p0}, Lcre;->P()V
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lkre;->Y0:Z
-
-    :cond_0
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public c(Lcre;)V
-    .locals 2
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
 
     iget v0, p0, Ljre;->a:I
 
-    packed-switch v0, :pswitch_data_0
+    sget-object v1, Le5f;->a:Le5f;
 
-    return-void
+    iget-object p0, p0, Ljre;->b:Lone/me/devmenu/threadsviewer/ThreadsStateViewerScreen;
 
-    :pswitch_0
-    iget-object v0, p0, Ljre;->b:Lkre;
+    check-cast p1, Landroid/view/View;
 
-    iget v1, v0, Lkre;->X0:I
-
-    add-int/lit8 v1, v1, -0x1
-
-    iput v1, v0, Lkre;->X0:I
-
-    if-nez v1, :cond_0
-
-    const/4 v1, 0x0
-
-    iput-boolean v1, v0, Lkre;->Y0:Z
-
-    invoke-virtual {v0}, Lcre;->o()V
-
-    :cond_0
-    invoke-virtual {p1, p0}, Lcre;->E(Lzqe;)Lcre;
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public g(Lcre;)V
-    .locals 1
-
-    iget v0, p0, Ljre;->a:I
+    sget-object p1, Lone/me/devmenu/threadsviewer/ThreadsStateViewerScreen;->X:[Lbc7;
 
     packed-switch v0, :pswitch_data_0
 
-    return-void
+    iget-object p0, p0, Lone/me/devmenu/threadsviewer/ThreadsStateViewerScreen;->c:Lje7;
 
-    :pswitch_0
-    iget-object p0, p0, Ljre;->b:Lkre;
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
-    iget-object v0, p0, Lkre;->V0:Ljava/util/ArrayList;
+    move-result-object p0
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    check-cast p0, Lhre;
 
-    invoke-virtual {p0}, Lkre;->x()Z
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    sget-object p1, Lbre;->h0:Lkce;
+    new-instance p1, Lgre;
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, p0, p1, v0}, Lcre;->B(Lcre;Lbre;Z)V
+    invoke-direct {p1, p0, v0}, Lgre;-><init>(Lhre;Lkotlin/coroutines/Continuation;)V
 
-    const/4 p1, 0x1
+    const/4 v2, 0x1
 
-    iput-boolean p1, p0, Lcre;->I0:Z
+    invoke-static {p0, v0, p1, v2}, Ljof;->n(Ljof;Lhx3;Ll66;I)Ldwd;
 
-    sget-object p1, Lbre;->g0:Lkce;
+    move-result-object p1
 
-    invoke-virtual {p0, p0, p1, v0}, Lcre;->B(Lcre;Lbre;Z)V
+    iget-object v0, p0, Lhre;->c:Ltkg;
+
+    sget-object v2, Lhre;->X:[Lbc7;
+
+    const/4 v3, 0x0
+
+    aget-object v2, v2, v3
+
+    invoke-virtual {v0, p0, v2, p1}, Ltkg;->g0(Ljava/lang/Object;Lbc7;Ljava/lang/Object;)V
+
+    return-object v1
+
+    :pswitch_0
+    invoke-virtual {p0}, Lou3;->getOnBackPressedDispatcher()Ld1a;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Ld1a;->d()V
 
     :cond_0
-    return-void
+    return-object v1
 
     :pswitch_data_0
     .packed-switch 0x0

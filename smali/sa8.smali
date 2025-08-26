@@ -1,84 +1,212 @@
 .class public final Lsa8;
-.super Landroid/support/v4/media/session/MediaControllerCompat$Callback;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lnu0;
+
+
+# static fields
+.field public static final Y:Lsa8;
 
 
 # instance fields
-.field public final synthetic a:Landroidx/mediarouter/app/d;
+.field public final X:F
+
+.field public final a:J
+
+.field public final b:J
+
+.field public final c:J
+
+.field public final o:F
 
 
 # direct methods
-.method public constructor <init>(Landroidx/mediarouter/app/d;)V
+.method static constructor <clinit>()V
+    .locals 9
+
+    new-instance v0, Lsa8;
+
+    const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
+
+    const v7, -0x800001
+
+    move-wide v3, v1
+
+    move-wide v5, v1
+
+    move v8, v7
+
+    invoke-direct/range {v0 .. v8}, Lsa8;-><init>(JJJFF)V
+
+    sput-object v0, Lsa8;->Y:Lsa8;
+
+    return-void
+.end method
+
+.method public constructor <init>(JJJFF)V
     .locals 0
 
-    iput-object p1, p0, Lsa8;->a:Landroidx/mediarouter/app/d;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;-><init>()V
+    iput-wide p1, p0, Lsa8;->a:J
+
+    iput-wide p3, p0, Lsa8;->b:J
+
+    iput-wide p5, p0, Lsa8;->c:J
+
+    iput p7, p0, Lsa8;->o:F
+
+    iput p8, p0, Lsa8;->X:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onMetadataChanged(Landroid/support/v4/media/MediaMetadataCompat;)V
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 7
 
-    if-nez p1, :cond_0
+    const/4 v0, 0x1
 
-    const/4 p1, 0x0
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lsa8;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lsa8;
+
+    iget-wide v3, p0, Lsa8;->a:J
+
+    iget-wide v5, p1, Lsa8;->a:J
+
+    cmp-long v1, v3, v5
+
+    if-nez v1, :cond_2
+
+    iget-wide v3, p0, Lsa8;->b:J
+
+    iget-wide v5, p1, Lsa8;->b:J
+
+    cmp-long v1, v3, v5
+
+    if-nez v1, :cond_2
+
+    iget-wide v3, p0, Lsa8;->c:J
+
+    iget-wide v5, p1, Lsa8;->c:J
+
+    cmp-long v1, v3, v5
+
+    if-nez v1, :cond_2
+
+    iget v1, p0, Lsa8;->o:F
+
+    iget v3, p1, Lsa8;->o:F
+
+    cmpl-float v1, v1, v3
+
+    if-nez v1, :cond_2
+
+    iget p0, p0, Lsa8;->X:F
+
+    iget p1, p1, Lsa8;->X:F
+
+    cmpl-float p0, p0, p1
+
+    if-nez p0, :cond_2
+
+    return v0
+
+    :cond_2
+    return v2
+.end method
+
+.method public final hashCode()I
+    .locals 7
+
+    iget-wide v0, p0, Lsa8;->a:J
+
+    const/16 v2, 0x20
+
+    ushr-long v3, v0, v2
+
+    xor-long/2addr v0, v3
+
+    long-to-int v0, v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-wide v3, p0, Lsa8;->b:J
+
+    ushr-long v5, v3, v2
+
+    xor-long/2addr v3, v5
+
+    long-to-int v1, v3
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-wide v3, p0, Lsa8;->c:J
+
+    ushr-long v1, v3, v2
+
+    xor-long/2addr v1, v3
+
+    long-to-int v1, v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v1, p0, Lsa8;->o:F
+
+    const/4 v2, 0x0
+
+    cmpl-float v3, v1, v2
+
+    const/4 v4, 0x0
+
+    if-eqz v3, :cond_0
+
+    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p1}, Landroid/support/v4/media/MediaMetadataCompat;->getDescription()Landroid/support/v4/media/MediaDescriptionCompat;
-
-    move-result-object p1
+    move v1, v4
 
     :goto_0
-    iget-object p0, p0, Lsa8;->a:Landroidx/mediarouter/app/d;
+    add-int/2addr v0, v1
 
-    iput-object p1, p0, Landroidx/mediarouter/app/d;->j1:Landroid/support/v4/media/MediaDescriptionCompat;
+    mul-int/lit8 v0, v0, 0x1f
 
-    invoke-virtual {p0}, Landroidx/mediarouter/app/d;->r()V
+    iget p0, p0, Lsa8;->X:F
 
-    const/4 p1, 0x0
+    cmpl-float v1, p0, v2
 
-    invoke-virtual {p0, p1}, Landroidx/mediarouter/app/d;->q(Z)V
+    if-eqz v1, :cond_1
 
-    return-void
-.end method
+    invoke-static {p0}, Ljava/lang/Float;->floatToIntBits(F)I
 
-.method public final onPlaybackStateChanged(Landroid/support/v4/media/session/PlaybackStateCompat;)V
-    .locals 0
+    move-result v4
 
-    iget-object p0, p0, Lsa8;->a:Landroidx/mediarouter/app/d;
+    :cond_1
+    add-int/2addr v0, v4
 
-    iput-object p1, p0, Landroidx/mediarouter/app/d;->i1:Landroid/support/v4/media/session/PlaybackStateCompat;
-
-    const/4 p1, 0x0
-
-    invoke-virtual {p0, p1}, Landroidx/mediarouter/app/d;->q(Z)V
-
-    return-void
-.end method
-
-.method public final onSessionDestroyed()V
-    .locals 2
-
-    iget-object p0, p0, Lsa8;->a:Landroidx/mediarouter/app/d;
-
-    iget-object v0, p0, Landroidx/mediarouter/app/d;->g1:Landroid/support/v4/media/session/MediaControllerCompat;
-
-    if-eqz v0, :cond_0
-
-    iget-object v1, p0, Landroidx/mediarouter/app/d;->h1:Lsa8;
-
-    invoke-virtual {v0, v1}, Landroid/support/v4/media/session/MediaControllerCompat;->unregisterCallback(Landroid/support/v4/media/session/MediaControllerCompat$Callback;)V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Landroidx/mediarouter/app/d;->g1:Landroid/support/v4/media/session/MediaControllerCompat;
-
-    :cond_0
-    return-void
+    return v0
 .end method

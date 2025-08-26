@@ -1,66 +1,38 @@
-.class public abstract Low3;
+.class public final Low3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/view/ViewTreeObserver$OnPreDrawListener;
+
+
+# instance fields
+.field public final synthetic a:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
+
 
 # direct methods
-.method public static a(Landroid/security/keystore/KeyGenParameterSpec$Builder;)Landroid/security/keystore/KeyGenParameterSpec;
+.method public constructor <init>(Landroidx/coordinatorlayout/widget/CoordinatorLayout;)V
     .locals 0
 
-    invoke-virtual {p0}, Landroid/security/keystore/KeyGenParameterSpec$Builder;->build()Landroid/security/keystore/KeyGenParameterSpec;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static b(Ljava/lang/String;I)Landroid/security/keystore/KeyGenParameterSpec$Builder;
-    .locals 1
-
-    new-instance v0, Landroid/security/keystore/KeyGenParameterSpec$Builder;
-
-    invoke-direct {v0, p0, p1}, Landroid/security/keystore/KeyGenParameterSpec$Builder;-><init>(Ljava/lang/String;I)V
-
-    return-object v0
-.end method
-
-.method public static c(Ljavax/crypto/KeyGenerator;Landroid/security/keystore/KeyGenParameterSpec;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/security/InvalidAlgorithmParameterException;
-        }
-    .end annotation
-
-    invoke-virtual {p0, p1}, Ljavax/crypto/KeyGenerator;->init(Ljava/security/spec/AlgorithmParameterSpec;)V
+    iput-object p1, p0, Low3;->a:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
 
     return-void
 .end method
 
-.method public static d(Landroid/security/keystore/KeyGenParameterSpec$Builder;)V
+
+# virtual methods
+.method public final onPreDraw()Z
     .locals 1
 
-    const-string v0, "CBC"
+    iget-object p0, p0, Low3;->a:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
 
-    filled-new-array {v0}, [Ljava/lang/String;
+    const/4 v0, 0x0
 
-    move-result-object v0
+    invoke-virtual {p0, v0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->o(I)V
 
-    invoke-virtual {p0, v0}, Landroid/security/keystore/KeyGenParameterSpec$Builder;->setBlockModes([Ljava/lang/String;)Landroid/security/keystore/KeyGenParameterSpec$Builder;
+    const/4 p0, 0x1
 
-    return-void
-.end method
-
-.method public static e(Landroid/security/keystore/KeyGenParameterSpec$Builder;)V
-    .locals 1
-
-    const-string v0, "PKCS7Padding"
-
-    filled-new-array {v0}, [Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/security/keystore/KeyGenParameterSpec$Builder;->setEncryptionPaddings([Ljava/lang/String;)Landroid/security/keystore/KeyGenParameterSpec$Builder;
-
-    return-void
+    return p0
 .end method

@@ -51,7 +51,7 @@
     .line 4
     iput-object p3, p0, Lorg/apache/http/message/BasicHeaderElement;->parameters:[Lorg/apache/http/NameValuePair;
 
-    goto :goto_0
+    return-void
 
     :cond_0
     const/4 p1, 0x0
@@ -61,7 +61,6 @@
 
     iput-object p1, p0, Lorg/apache/http/message/BasicHeaderElement;->parameters:[Lorg/apache/http/NameValuePair;
 
-    :goto_0
     return-void
 
     .line 6
@@ -145,7 +144,7 @@
 
     if-eqz p0, :cond_2
 
-    move v0, v1
+    return v1
 
     :cond_2
     return v0
@@ -195,7 +194,7 @@
 
     if-eqz v2, :cond_0
 
-    goto :goto_1
+    return-object v1
 
     :cond_0
     add-int/lit8 v0, v0, 0x1
@@ -203,10 +202,9 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    const/4 p0, 0x0
 
-    :goto_1
-    return-object v1
+    return-object p0
 
     :cond_2
     new-instance p0, Ljava/lang/IllegalArgumentException;

@@ -1,68 +1,177 @@
 .class public final Lxxc;
-.super Landroid/view/View;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# static fields
+.field public static final c:Lxxc;
+
+
 # instance fields
-.field public a:Landroid/text/Layout;
+.field public final a:I
 
-.field public b:I
+.field public final b:Ljava/util/List;
 
 
-# virtual methods
-.method public final onDraw(Landroid/graphics/Canvas;)V
-    .locals 0
+# direct methods
+.method static constructor <clinit>()V
+    .locals 3
 
-    iget-object p0, p0, Lxxc;->a:Landroid/text/Layout;
+    new-instance v0, Lxxc;
 
-    if-eqz p0, :cond_0
+    const/4 v1, 0x1
 
-    invoke-virtual {p0, p1}, Landroid/text/Layout;->draw(Landroid/graphics/Canvas;)V
+    sget-object v2, Lgz4;->a:Lgz4;
 
-    :cond_0
+    invoke-direct {v0, v1, v2}, Lxxc;-><init>(ILjava/util/List;)V
+
+    sput-object v0, Lxxc;->c:Lxxc;
+
     return-void
 .end method
 
-.method public final onMeasure(II)V
+.method public constructor <init>(ILjava/util/List;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lxxc;->a:I
+
+    iput-object p2, p0, Lxxc;->b:Ljava/util/List;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    if-ne p0, p1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    instance-of v0, p1, Lxxc;
+
+    if-nez v0, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Lxxc;
+
+    iget v0, p0, Lxxc;->a:I
+
+    iget v1, p1, Lxxc;->a:I
+
+    if-eq v0, v1, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    iget-object p0, p0, Lxxc;->b:Ljava/util/List;
+
+    iget-object p1, p1, Lxxc;->b:Ljava/util/List;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_3
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final hashCode()I
     .locals 1
 
-    iget-object p1, p0, Lxxc;->a:Landroid/text/Layout;
+    iget v0, p0, Lxxc;->a:I
 
-    const/4 p2, 0x0
-
-    if-eqz p1, :cond_1
-
-    invoke-virtual {p1}, Landroid/text/Layout;->getLineCount()I
+    invoke-static {v0}, Lzt1;->s(I)I
 
     move-result v0
 
-    if-lez v0, :cond_0
+    mul-int/lit8 v0, v0, 0x1f
 
-    invoke-virtual {p1, p2}, Landroid/text/Layout;->getLineMax(I)F
+    iget-object p0, p0, Lxxc;->b:Ljava/util/List;
 
-    move-result p2
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    float-to-int p2, p2
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "SearchState(state="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const/4 v1, 0x1
+
+    iget v2, p0, Lxxc;->a:I
+
+    if-eq v2, v1, :cond_2
+
+    const/4 v1, 0x2
+
+    if-eq v2, v1, :cond_1
+
+    const/4 v1, 0x3
+
+    if-eq v2, v1, :cond_0
+
+    const-string v1, "null"
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p1}, Landroid/text/Layout;->getWidth()I
+    const-string v1, "EMPTY"
 
-    move-result p2
-
-    :goto_0
-    invoke-virtual {p1}, Landroid/text/Layout;->getHeight()I
-
-    move-result p1
-
-    goto :goto_1
+    goto :goto_0
 
     :cond_1
-    move p1, p2
+    const-string v1, "CONTENT"
 
-    :goto_1
-    invoke-virtual {p0, p2, p1}, Landroid/view/View;->setMeasuredDimension(II)V
+    goto :goto_0
 
-    return-void
+    :cond_2
+    const-string v1, "LOADING"
+
+    :goto_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", content="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lxxc;->b:Ljava/util/List;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

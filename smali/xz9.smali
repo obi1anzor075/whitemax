@@ -1,90 +1,83 @@
 .class public final Lxz9;
-.super Ljava/lang/Object;
+.super Ljava/util/concurrent/atomic/AtomicReference;
 .source "SourceFile"
+
+# interfaces
+.implements Lam4;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Lw4;
+.field public final a:La0a;
 
 
 # direct methods
-.method public constructor <init>(Lw4;)V
+.method public constructor <init>(La0a;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
-    iput-object p1, p0, Lxz9;->a:Lw4;
+    iput-object p1, p0, Lxz9;->a:La0a;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Z)I
-    .locals 2
+.method public final f()V
+    .locals 0
 
-    sget-object v0, Lkm4;->y0:Ls59;
+    invoke-static {p0}, Lem4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
 
-    const-class v1, Landroid/content/Context;
+    return-void
+.end method
 
-    iget-object p0, p0, Lxz9;->a:Lw4;
+.method public final g()Z
+    .locals 1
 
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0, v1}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/content/Context;
-
-    invoke-virtual {v0, p0}, Ls59;->n(Landroid/content/Context;)Lkm4;
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Lkm4;->g()Lpda;
+    sget-object v0, Lem4;->a:Lem4;
 
-    move-result-object p0
+    if-ne p0, v0, :cond_0
 
-    invoke-interface {p0}, Lpda;->a()Ljo2;
+    const/4 p0, 0x1
 
-    move-result-object p0
-
-    invoke-interface {p0}, Ljo2;->c()Ldr0;
-
-    move-result-object p0
-
-    :goto_0
-    iget-object p0, p0, Ldr0;->b:Lgr0;
-
-    iget p0, p0, Lgr0;->b:I
-
-    goto :goto_1
+    return p0
 
     :cond_0
-    invoke-virtual {p0, v1}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    const/4 p0, 0x0
 
-    move-result-object p0
-
-    check-cast p0, Landroid/content/Context;
-
-    invoke-virtual {v0, p0}, Ls59;->n(Landroid/content/Context;)Lkm4;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lkm4;->g()Lpda;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Lpda;->a()Ljo2;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Ljo2;->f()Ldr0;
-
-    move-result-object p0
-
-    goto :goto_0
-
-    :goto_1
     return p0
+.end method
+
+.method public final run()V
+    .locals 2
+
+    invoke-virtual {p0}, Lxz9;->g()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-wide/16 v0, 0x0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lxz9;->a:La0a;
+
+    invoke-interface {v1, v0}, La0a;->h(Ljava/lang/Object;)V
+
+    sget-object v0, Lbz4;->a:Lbz4;
+
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
+
+    invoke-interface {v1}, La0a;->b()V
+
+    :cond_0
+    return-void
 .end method

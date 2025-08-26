@@ -1,219 +1,184 @@
 .class public final Lc97;
-.super Ljava/util/concurrent/atomic/AtomicReference;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Lbw9;
-.implements Lxi4;
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Lof3;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final b:Lof3;
-
-.field public final c:Lj6;
-
-.field public final o:Lof3;
+.field public final synthetic Y:Lone/me/android/join/JoinChatWidget;
 
 
 # direct methods
-.method public constructor <init>(Lof3;Lof3;Lj6;)V
-    .locals 1
+.method public constructor <init>(Lone/me/android/join/JoinChatWidget;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    sget-object v0, Lz3d;->j:Lgf6;
+    iput-object p1, p0, Lc97;->Y:Lone/me/android/join/JoinChatWidget;
 
-    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+    const/4 p1, 0x2
 
-    iput-object p1, p0, Lc97;->a:Lof3;
-
-    iput-object p2, p0, Lc97;->b:Lof3;
-
-    iput-object p3, p0, Lc97;->c:Lj6;
-
-    iput-object v0, p0, Lc97;->o:Lof3;
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    invoke-virtual {p0}, Lc97;->h()Z
+    check-cast p1, Li97;
 
-    move-result v0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    if-nez v0, :cond_0
+    invoke-virtual {p0, p1, p2}, Lc97;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    sget-object v0, Lbj4;->a:Lbj4;
+    move-result-object p0
 
-    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
+    check-cast p0, Lc97;
 
-    :try_start_0
-    iget-object p0, p0, Lc97;->c:Lj6;
+    sget-object p1, Le5f;->a:Le5f;
 
-    invoke-interface {p0}, Lj6;->run()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {p0, p1}, Lc97;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_0
-
-    :catchall_0
-    move-exception p0
-
-    invoke-static {p0}, Lek8;->a0(Ljava/lang/Throwable;)V
-
-    invoke-static {p0}, Lxs7;->F(Ljava/lang/Throwable;)V
-
-    :cond_0
-    :goto_0
-    return-void
+    return-object p1
 .end method
 
-.method public final c(Ljava/lang/Object;)V
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .locals 1
 
-    invoke-virtual {p0}, Lc97;->h()Z
+    new-instance v0, Lc97;
 
-    move-result v0
+    iget-object p0, p0, Lc97;->Y:Lone/me/android/join/JoinChatWidget;
 
-    if-nez v0, :cond_0
+    invoke-direct {v0, p0, p2}, Lc97;-><init>(Lone/me/android/join/JoinChatWidget;Lkotlin/coroutines/Continuation;)V
 
-    :try_start_0
-    iget-object v0, p0, Lc97;->a:Lof3;
+    iput-object p1, v0, Lc97;->X:Ljava/lang/Object;
 
-    invoke-interface {v0, p1}, Lof3;->accept(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    return-object v0
+.end method
 
-    goto :goto_0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 11
 
-    :catchall_0
-    move-exception p1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    invoke-static {p1}, Lek8;->a0(Ljava/lang/Throwable;)V
+    iget-object p1, p0, Lc97;->X:Ljava/lang/Object;
 
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    check-cast p1, Li97;
+
+    sget-object v0, Lone/me/android/join/JoinChatWidget;->t0:[Lbc7;
+
+    iget-object p0, p0, Lc97;->Y:Lone/me/android/join/JoinChatWidget;
+
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->requireActivity()Lam;
 
     move-result-object v0
 
-    check-cast v0, Lxi4;
+    instance-of v0, v0, Lpkc;
 
-    invoke-interface {v0}, Lxi4;->f()V
-
-    invoke-virtual {p0, p1}, Lc97;->onError(Ljava/lang/Throwable;)V
-
-    :cond_0
-    :goto_0
-    return-void
-.end method
-
-.method public final d(Lxi4;)V
-    .locals 1
-
-    invoke-static {p0, p1}, Lbj4;->e(Ljava/util/concurrent/atomic/AtomicReference;Lxi4;)Z
-
-    move-result v0
+    const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    :try_start_0
-    iget-object v0, p0, Lc97;->o:Lof3;
+    invoke-virtual {p0}, Lou3;->getRouter()Lcmc;
 
-    invoke-interface {v0, p0}, Lof3;->accept(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-object v0
 
-    goto :goto_0
+    invoke-virtual {v0}, Lcmc;->C()Z
 
-    :catchall_0
-    move-exception v0
+    sget-object v0, Lh97;->c:Lh97;
 
-    invoke-static {v0}, Lek8;->a0(Ljava/lang/Throwable;)V
+    iget-object p1, p1, Lkl9;->a:Ljava/lang/Object;
 
-    invoke-interface {p1}, Lxi4;->f()V
+    check-cast p1, Ljava/lang/Number;
 
-    invoke-virtual {p0, v0}, Lc97;->onError(Ljava/lang/Throwable;)V
+    invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
 
-    :cond_0
-    :goto_0
-    return-void
-.end method
+    move-result-wide v2
 
-.method public final f()V
-    .locals 0
+    invoke-virtual {v0}, Lu2;->D0()Ls64;
 
-    invoke-static {p0}, Lbj4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
+    move-result-object p1
 
-    return-void
-.end method
+    new-instance v0, Lvh4;
 
-.method public final h()Z
-    .locals 1
+    const/16 v4, 0xf
 
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    invoke-direct {v0, v4}, Lvh4;-><init>(I)V
 
-    move-result-object p0
+    const-string v4, ":chats"
 
-    sget-object v0, Lbj4;->a:Lbj4;
+    iput-object v4, v0, Lvh4;->a:Ljava/lang/Object;
 
-    if-ne p0, v0, :cond_0
+    const-string v4, "id"
 
-    const/4 p0, 0x1
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    goto :goto_0
+    move-result-object v2
 
-    :cond_0
-    const/4 p0, 0x0
+    invoke-virtual {v0, v2, v4}, Lvh4;->D(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :goto_0
-    return p0
-.end method
+    const-string v2, "type"
 
-.method public final onError(Ljava/lang/Throwable;)V
-    .locals 1
+    const-string v3, "local"
 
-    invoke-virtual {p0}, Lc97;->h()Z
+    invoke-virtual {v0, v3, v2}, Lvh4;->D(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result v0
+    invoke-virtual {v0}, Lvh4;->m()Landroid/net/Uri;
 
-    if-nez v0, :cond_0
+    move-result-object v0
 
-    sget-object v0, Lbj4;->a:Lbj4;
-
-    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
-
-    :try_start_0
-    iget-object p0, p0, Lc97;->b:Lof3;
-
-    invoke-interface {p0, p1}, Lof3;->accept(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p0
-
-    invoke-static {p0}, Lek8;->a0(Ljava/lang/Throwable;)V
-
-    new-instance v0, Lio/reactivex/rxjava3/exceptions/CompositeException;
-
-    filled-new-array {p1, p0}, [Ljava/lang/Throwable;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Lio/reactivex/rxjava3/exceptions/CompositeException;-><init>([Ljava/lang/Throwable;)V
-
-    invoke-static {v0}, Lxs7;->F(Ljava/lang/Throwable;)V
+    invoke-virtual {p1, v0, v1}, Ls64;->c(Landroid/net/Uri;Landroid/os/Bundle;)Z
 
     goto :goto_0
 
     :cond_0
-    invoke-static {p1}, Lxs7;->F(Ljava/lang/Throwable;)V
+    sget v0, Lone/me/android/MainActivity;->X0:I
+
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->requireActivity()Lam;
+
+    move-result-object v0
+
+    sget-object v2, Lzw2;->c:Lzw2;
+
+    iget-object p1, p1, Lkl9;->a:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/Number;
+
+    invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide v3
+
+    const/4 v9, 0x0
+
+    const/16 v10, 0x1fc
+
+    const-string v5, "local"
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    invoke-static/range {v2 .. v10}, Lzw2;->T0(Lzw2;JLjava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Ljava/util/List;Ljava/lang/String;I)Landroid/net/Uri;
+
+    move-result-object p1
+
+    const/16 v2, 0xc
+
+    invoke-static {v0, p1, v1, v1, v2}, Loa9;->h(Lam;Landroid/net/Uri;Lkga;Lo12;I)V
 
     :goto_0
-    return-void
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, p1}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->v0(Z)V
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

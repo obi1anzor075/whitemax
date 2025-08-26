@@ -1,64 +1,64 @@
-.class public final Lkzb;
+.class public abstract Lkzb;
 .super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Landroid/transition/Transition$TransitionListener;
 
 
-# instance fields
-.field public final synthetic a:Landroid/view/View;
+# static fields
+.field public static oneme_settings_twofa_check_password_subtitle:I = 0x7f1309bd
 
-.field public final synthetic b:F
+.field public static oneme_settings_twofa_check_password_title:I = 0x7f1309be
 
+.field public static oneme_settings_twofa_creation_email_empty_confirmation_description:I = 0x7f1309bf
 
-# direct methods
-.method public constructor <init>(Landroid/view/View;F)V
-    .locals 0
+.field public static oneme_settings_twofa_creation_email_empty_confirmation_email_action:I = 0x7f1309c0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.field public static oneme_settings_twofa_creation_email_empty_confirmation_skip_action:I = 0x7f1309c1
 
-    iput-object p1, p0, Lkzb;->a:Landroid/view/View;
+.field public static oneme_settings_twofa_creation_email_empty_confirmation_title:I = 0x7f1309c2
 
-    iput p2, p0, Lkzb;->b:F
+.field public static oneme_settings_twofa_creation_email_hint:I = 0x7f1309c3
 
-    return-void
-.end method
+.field public static oneme_settings_twofa_creation_email_subtitle:I = 0x7f1309c4
 
+.field public static oneme_settings_twofa_creation_email_title:I = 0x7f1309c5
 
-# virtual methods
-.method public final onTransitionCancel(Landroid/transition/Transition;)V
-    .locals 0
+.field public static oneme_settings_twofa_creation_email_verify_resend_code:I = 0x7f1309c6
 
-    return-void
-.end method
+.field public static oneme_settings_twofa_creation_email_verify_resend_code_timer:I = 0x7f1309c7
 
-.method public final onTransitionEnd(Landroid/transition/Transition;)V
-    .locals 0
+.field public static oneme_settings_twofa_creation_email_verify_subtitle:I = 0x7f1309c8
 
-    return-void
-.end method
+.field public static oneme_settings_twofa_creation_email_verify_title:I = 0x7f1309c9
 
-.method public final onTransitionPause(Landroid/transition/Transition;)V
-    .locals 0
+.field public static oneme_settings_twofa_creation_hint_input_hint:I = 0x7f1309ca
 
-    return-void
-.end method
+.field public static oneme_settings_twofa_creation_hint_subtitle:I = 0x7f1309cb
 
-.method public final onTransitionResume(Landroid/transition/Transition;)V
-    .locals 0
+.field public static oneme_settings_twofa_creation_hint_title:I = 0x7f1309cc
 
-    return-void
-.end method
+.field public static oneme_settings_twofa_creation_other_action:I = 0x7f1309cd
 
-.method public final onTransitionStart(Landroid/transition/Transition;)V
-    .locals 0
+.field public static oneme_settings_twofa_creation_password_action:I = 0x7f1309ce
 
-    iget-object p1, p0, Lkzb;->a:Landroid/view/View;
+.field public static oneme_settings_twofa_creation_password_first_hint:I = 0x7f1309cf
 
-    iget p0, p0, Lkzb;->b:F
+.field public static oneme_settings_twofa_creation_password_second_hint:I = 0x7f1309d0
 
-    invoke-virtual {p1, p0}, Landroid/view/View;->setAlpha(F)V
+.field public static oneme_settings_twofa_creation_password_title:I = 0x7f1309d1
 
-    return-void
-.end method
+.field public static oneme_settings_twofa_creation_toolbar_steps:I = 0x7f1309d2
+
+.field public static oneme_settings_twofa_error_passwords_equals:I = 0x7f1309d3
+
+.field public static oneme_settings_twofa_forget_password_action:I = 0x7f1309d4
+
+.field public static oneme_settings_twofa_onboarding_description:I = 0x7f1309d5
+
+.field public static oneme_settings_twofa_onboarding_set_password:I = 0x7f1309d6
+
+.field public static oneme_settings_twofa_onboarding_success_description:I = 0x7f1309d7
+
+.field public static oneme_settings_twofa_onboarding_success_go_settings:I = 0x7f1309d8
+
+.field public static oneme_settings_twofa_onboarding_success_title:I = 0x7f1309d9
+
+.field public static oneme_settings_twofa_onboarding_title:I = 0x7f1309da

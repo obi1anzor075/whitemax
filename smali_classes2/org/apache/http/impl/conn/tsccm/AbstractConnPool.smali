@@ -96,7 +96,7 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-void
 
     :catch_0
     move-exception p1
@@ -108,7 +108,6 @@
     invoke-interface {p0, v0, p1}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;Ljava/lang/Throwable;)V
 
     :cond_0
-    :goto_0
     return-void
 .end method
 
@@ -409,6 +408,7 @@
 
     if-eqz v0, :cond_0
 
+    :goto_0
     iget-object p0, p0, Lorg/apache/http/impl/conn/tsccm/AbstractConnPool;->poolLock:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {p0}, Ljava/util/concurrent/locks/Lock;->unlock()V
@@ -423,15 +423,15 @@
 
     invoke-virtual {v0}, Lorg/apache/http/impl/conn/tsccm/RefQueueWorker;->shutdown()V
 
-    goto :goto_0
+    goto :goto_1
 
     :catchall_0
     move-exception v0
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_1
-    :goto_0
+    :goto_1
     iget-object v0, p0, Lorg/apache/http/impl/conn/tsccm/AbstractConnPool;->issuedConnections:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -439,7 +439,7 @@
     move-result-object v0
 
     :cond_2
-    :goto_1
+    :goto_2
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
@@ -468,7 +468,7 @@
 
     invoke-virtual {p0, v1}, Lorg/apache/http/impl/conn/tsccm/AbstractConnPool;->closeConnection(Lorg/apache/http/conn/OperatedClientConnection;)V
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_3
     iget-object v0, p0, Lorg/apache/http/impl/conn/tsccm/AbstractConnPool;->idleConnHandler:Lorg/apache/http/impl/conn/IdleConnectionHandler;
@@ -481,13 +481,9 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    iget-object p0, p0, Lorg/apache/http/impl/conn/tsccm/AbstractConnPool;->poolLock:Ljava/util/concurrent/locks/Lock;
+    goto :goto_0
 
-    invoke-interface {p0}, Ljava/util/concurrent/locks/Lock;->unlock()V
-
-    return-void
-
-    :goto_2
+    :goto_3
     iget-object p0, p0, Lorg/apache/http/impl/conn/tsccm/AbstractConnPool;->poolLock:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {p0}, Ljava/util/concurrent/locks/Lock;->unlock()V

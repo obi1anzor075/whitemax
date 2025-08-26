@@ -1,143 +1,76 @@
 .class public final Ltxc;
-.super Libe;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lvxc;
+.implements Landroid/os/Parcelable;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Ltxc;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# instance fields
+.field public final a:Landroid/text/style/ForegroundColorSpan;
+
+.field public final b:Landroid/text/style/BackgroundColorSpan;
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Lu1c;
+    new-instance v0, Lo5b;
 
-    const/4 v1, 0x5
+    const/16 v1, 0x13
 
-    invoke-direct {v0, v1}, Lu1c;-><init>(I)V
+    invoke-direct {v0, v1}, Lo5b;-><init>(I)V
 
-    invoke-direct {p0, v0}, Libe;-><init>(Lu16;)V
+    sput-object v0, Ltxc;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/text/style/ForegroundColorSpan;Landroid/text/style/BackgroundColorSpan;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ltxc;->a:Landroid/text/style/ForegroundColorSpan;
+
+    iput-object p2, p0, Ltxc;->b:Landroid/text/style/BackgroundColorSpan;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final h0()I
-    .locals 2
+.method public final describeContents()I
+    .locals 0
 
-    iget-object v0, p0, Libe;->c:Ljava/lang/Object;
-
-    check-cast v0, Lt97;
-
-    invoke-static {v0}, Lek8;->L(Lt97;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Libe;->L()I
-
-    move-result p0
-
-    const/4 v0, 0x4
-
-    int-to-float v0, v0
-
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v1
-
-    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
-
-    invoke-static {v0, v1, p0}, Lme4;->c(FFI)I
-
-    move-result p0
-
-    goto :goto_0
-
-    :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
-.method public final setAlias(Landroid/text/Layout;)V
+.method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
 
-    if-nez p1, :cond_1
+    iget-object v0, p0, Ltxc;->a:Landroid/text/style/ForegroundColorSpan;
 
-    iget-object p0, p0, Libe;->c:Ljava/lang/Object;
+    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    check-cast p0, Lt97;
+    iget-object p0, p0, Ltxc;->b:Landroid/text/style/BackgroundColorSpan;
 
-    invoke-interface {p0}, Lt97;->a()Z
+    invoke-virtual {p1, p0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Luxc;
-
-    const/16 p1, 0x8
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
-
-    :cond_0
-    return-void
-
-    :cond_1
-    invoke-virtual {p0}, Libe;->Q()Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Luxc;
-
-    invoke-virtual {v0, p1}, Luxc;->setLayout(Landroid/text/Layout;)V
-
-    invoke-virtual {p0}, Libe;->Q()Landroid/view/View;
-
-    move-result-object p1
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
-
-    invoke-virtual {p0}, Libe;->u()V
-
-    return-void
-.end method
-
-.method public final setAliasColor(I)V
-    .locals 1
-
-    iget-object p0, p0, Libe;->c:Ljava/lang/Object;
-
-    check-cast p0, Lt97;
-
-    invoke-interface {p0}, Lt97;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Luxc;
-
-    invoke-virtual {p0, p1}, Luxc;->setTextColor(I)V
-
-    :cond_0
     return-void
 .end method

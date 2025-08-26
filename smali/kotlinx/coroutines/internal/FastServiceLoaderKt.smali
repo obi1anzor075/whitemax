@@ -31,31 +31,16 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
     :try_start_0
     const-string v0, "android.os.Build"
 
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
-
     :catchall_0
-    move-exception v0
-
-    new-instance v1, Lkcc;
-
-    invoke-direct {v1, v0}, Lkcc;-><init>(Ljava/lang/Throwable;)V
-
-    move-object v0, v1
-
-    :goto_0
-    instance-of v0, v0, Lkcc;
-
     return-void
 .end method
 

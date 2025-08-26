@@ -4,21 +4,21 @@
 
 
 # instance fields
-.field public K0:Lzg4;
+.field public C0:Lck4;
 
-.field public L0:I
+.field public D0:I
 
-.field public M0:I
+.field public E0:I
 
-.field public N0:Landroidx/appcompat/widget/AppCompatTextView;
+.field public F0:Landroidx/appcompat/widget/AppCompatTextView;
 
-.field public O0:Landroidx/appcompat/widget/AppCompatTextView;
+.field public G0:Landroidx/appcompat/widget/AppCompatTextView;
 
-.field public P0:Landroidx/appcompat/widget/AppCompatTextView;
+.field public H0:Landroidx/appcompat/widget/AppCompatTextView;
 
-.field public Q0:Lcom/facebook/drawee/view/SimpleDraweeView;
+.field public I0:Lcom/facebook/drawee/view/SimpleDraweeView;
 
-.field public R0:Lwce;
+.field public J0:Lvke;
 
 
 # direct methods
@@ -29,7 +29,7 @@
     invoke-direct {p0, p1}, Landroidx/constraintlayout/widget/ConstraintLayout;-><init>(Landroid/content/Context;)V
 
     .line 2
-    invoke-virtual {p0}, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->w()V
+    invoke-virtual {p0}, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->u()V
 
     return-void
 .end method
@@ -41,7 +41,7 @@
     invoke-direct {p0, p1, p2}, Landroidx/constraintlayout/widget/ConstraintLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 4
-    invoke-virtual {p0}, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->w()V
+    invoke-virtual {p0}, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->u()V
 
     return-void
 .end method
@@ -51,7 +51,7 @@
 .method public final onMeasure(II)V
     .locals 5
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->Q0:Lcom/facebook/drawee/view/SimpleDraweeView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->I0:Lcom/facebook/drawee/view/SimpleDraweeView;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
@@ -75,9 +75,9 @@
 
     if-eqz v0, :cond_1
 
-    iget v3, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->L0:I
+    iget v3, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->D0:I
 
-    iget v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->M0:I
+    iget v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->E0:I
 
     mul-int/lit8 v4, v4, 0x2
 
@@ -101,23 +101,23 @@
 
     move-result v1
 
-    iget-object v3, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->P0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v3, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->H0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v3, v2, v1}, Landroid/view/View;->measure(II)V
 
-    iget-object v3, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->N0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v3, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->F0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v3, v2, v1}, Landroid/view/View;->measure(II)V
 
     if-eqz v0, :cond_3
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->P0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->H0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
 
-    iget-object v1, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->N0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v1, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->F0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v1}, Landroid/view/View;->getMeasuredHeight()I
 
@@ -125,11 +125,11 @@
 
     add-int/2addr v1, v0
 
-    iget v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->L0:I
+    iget v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->D0:I
 
     if-ge v1, v0, :cond_2
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->Q0:Lcom/facebook/drawee/view/SimpleDraweeView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->I0:Lcom/facebook/drawee/view/SimpleDraweeView;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -137,7 +137,7 @@
 
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->Q0:Lcom/facebook/drawee/view/SimpleDraweeView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->I0:Lcom/facebook/drawee/view/SimpleDraweeView;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -148,23 +148,23 @@
     goto :goto_2
 
     :cond_2
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->Q0:Lcom/facebook/drawee/view/SimpleDraweeView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->I0:Lcom/facebook/drawee/view/SimpleDraweeView;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    iget v1, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->L0:I
+    iget v1, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->D0:I
 
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->Q0:Lcom/facebook/drawee/view/SimpleDraweeView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->I0:Lcom/facebook/drawee/view/SimpleDraweeView;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    iget v1, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->L0:I
+    iget v1, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->D0:I
 
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
@@ -178,53 +178,53 @@
 .method public setImageVisibility(I)V
     .locals 0
 
-    iget-object p0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->Q0:Lcom/facebook/drawee/view/SimpleDraweeView;
+    iget-object p0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->I0:Lcom/facebook/drawee/view/SimpleDraweeView;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 .end method
 
-.method public final w()V
+.method public final u()V
     .locals 11
 
-    invoke-static {}, Lvl;->b()Lk93;
+    invoke-static {}, Lol;->b()Lsb3;
 
     move-result-object v0
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    invoke-static {}, Lzg4;->b()Lzg4;
+    invoke-static {}, Lck4;->b()Lck4;
 
     move-result-object v1
 
-    iput-object v1, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->K0:Lzg4;
+    iput-object v1, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->C0:Lck4;
 
-    check-cast v0, Lo2a;
+    check-cast v0, Lq6a;
 
-    invoke-virtual {v0}, Lo2a;->d()Lr10;
+    invoke-virtual {v0}, Lq6a;->d()Lz10;
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->K0:Lzg4;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->C0:Lck4;
 
-    iget v1, v0, Lzg4;->y:I
+    iget v1, v0, Lck4;->x:I
 
-    iput v1, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->L0:I
+    iput v1, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->D0:I
 
-    iget v0, v0, Lzg4;->h:I
+    iget v0, v0, Lck4;->h:I
 
-    iput v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->M0:I
+    iput v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->E0:I
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    sget-object v1, Lwce;->a0:Lr7e;
+    sget-object v1, Lvke;->a0:Lwfe;
 
-    invoke-static {v0}, Lfja;->E(Landroid/content/Context;)Lwce;
+    invoke-static {v0}, Lp54;->M(Landroid/content/Context;)Lvke;
 
     move-result-object v0
 
-    iput-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->R0:Lwce;
+    iput-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->J0:Lvke;
 
     new-instance v0, Lcom/facebook/drawee/view/SimpleDraweeView;
 
@@ -234,71 +234,71 @@
 
     invoke-direct {v0, v1}, Lcom/facebook/drawee/view/SimpleDraweeView;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->Q0:Lcom/facebook/drawee/view/SimpleDraweeView;
+    iput-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->I0:Lcom/facebook/drawee/view/SimpleDraweeView;
 
-    sget v1, Lyqb;->view_share_attach__iv_small_image:I
+    sget v1, Lpvb;->view_share_attach__iv_small_image:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setId(I)V
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->Q0:Lcom/facebook/drawee/view/SimpleDraweeView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->I0:Lcom/facebook/drawee/view/SimpleDraweeView;
 
-    invoke-virtual {v0}, Lon4;->getHierarchy()Lln4;
-
-    move-result-object v0
-
-    check-cast v0, Ly66;
-
-    sget-object v1, Ljlc;->g:Ljlc;
-
-    invoke-virtual {v0, v1}, Ly66;->h(Lilc;)V
-
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->Q0:Lcom/facebook/drawee/view/SimpleDraweeView;
-
-    invoke-virtual {v0}, Lon4;->getHierarchy()Lln4;
+    invoke-virtual {v0}, Luq4;->getHierarchy()Lrq4;
 
     move-result-object v0
 
-    check-cast v0, Ly66;
+    check-cast v0, Lwa6;
 
-    iget-object v1, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->K0:Lzg4;
+    sget-object v1, Lvqc;->j:Lvqc;
 
-    iget v1, v1, Lzg4;->d:I
+    invoke-virtual {v0, v1}, Lwa6;->h(Luqc;)V
+
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->I0:Lcom/facebook/drawee/view/SimpleDraweeView;
+
+    invoke-virtual {v0}, Luq4;->getHierarchy()Lrq4;
+
+    move-result-object v0
+
+    check-cast v0, Lwa6;
+
+    iget-object v1, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->C0:Lck4;
+
+    iget v1, v1, Lck4;->d:I
 
     int-to-float v1, v1
 
-    invoke-static {v1, v1, v1, v1}, Lpgc;->a(FFFF)Lpgc;
+    invoke-static {v1, v1, v1, v1}, Lylc;->b(FFFF)Lylc;
 
     move-result-object v1
 
     const/4 v2, 0x1
 
-    iput-boolean v2, v1, Lpgc;->h:Z
+    iput-boolean v2, v1, Lylc;->h:Z
 
-    invoke-virtual {v0, v1}, Ly66;->n(Lpgc;)V
+    invoke-virtual {v0, v1}, Lwa6;->n(Lylc;)V
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->Q0:Lcom/facebook/drawee/view/SimpleDraweeView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->I0:Lcom/facebook/drawee/view/SimpleDraweeView;
 
-    iget v1, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->M0:I
+    iget v1, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->E0:I
 
-    invoke-static {v0, v1}, Lat7;->g(Landroid/view/View;I)V
+    invoke-static {v0, v1}, Lq14;->n(Landroid/view/View;I)V
 
-    new-instance v0, Lre3;
+    new-instance v0, Loi3;
 
-    iget-object v1, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->K0:Lzg4;
+    iget-object v1, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->C0:Lck4;
 
-    iget v1, v1, Lzg4;->y:I
+    iget v1, v1, Lck4;->x:I
 
-    iget v3, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->M0:I
+    iget v3, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->E0:I
 
     add-int/2addr v3, v1
 
-    invoke-direct {v0, v3, v1}, Lre3;-><init>(II)V
+    invoke-direct {v0, v3, v1}, Loi3;-><init>(II)V
 
-    iput-boolean v2, v0, Lre3;->X:Z
+    iput-boolean v2, v0, Loi3;->X:Z
 
-    iput-boolean v2, v0, Lre3;->W:Z
+    iput-boolean v2, v0, Loi3;->W:Z
 
-    iget-object v1, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->Q0:Lcom/facebook/drawee/view/SimpleDraweeView;
+    iget-object v1, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->I0:Lcom/facebook/drawee/view/SimpleDraweeView;
 
     invoke-virtual {p0, v1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
@@ -312,71 +312,71 @@
 
     invoke-direct {v0, v1, v3}, Landroidx/appcompat/widget/AppCompatTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    iput-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->P0:Landroidx/appcompat/widget/AppCompatTextView;
+    iput-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->H0:Landroidx/appcompat/widget/AppCompatTextView;
 
-    sget v1, Lyqb;->view_share_attach__tv_host:I
+    sget v1, Lpvb;->view_share_attach__tv_host:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setId(I)V
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->P0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->H0:Landroidx/appcompat/widget/AppCompatTextView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setIncludeFontPadding(Z)V
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->P0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->H0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->P0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->H0:Landroidx/appcompat/widget/AppCompatTextView;
 
-    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->R0:Lwce;
+    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->J0:Lvke;
 
-    iget v4, v4, Lwce;->v:I
+    iget v4, v4, Lvke;->v:I
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->P0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->H0:Landroidx/appcompat/widget/AppCompatTextView;
 
-    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->K0:Lzg4;
+    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->C0:Lck4;
 
-    iget v4, v4, Lzg4;->H:F
+    iget v4, v4, Lck4;->G:F
 
     invoke-virtual {v0, v1, v4}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->P0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->H0:Landroidx/appcompat/widget/AppCompatTextView;
 
     sget-object v4, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->P0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->H0:Landroidx/appcompat/widget/AppCompatTextView;
 
     const v5, 0x800003
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setGravity(I)V
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->P0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->H0:Landroidx/appcompat/widget/AppCompatTextView;
 
     const/4 v6, 0x5
 
     invoke-virtual {v0, v6}, Landroid/view/View;->setTextAlignment(I)V
 
-    new-instance v0, Lre3;
+    new-instance v0, Loi3;
 
     const/4 v7, -0x2
 
-    invoke-direct {v0, v7, v7}, Lre3;-><init>(II)V
+    invoke-direct {v0, v7, v7}, Loi3;-><init>(II)V
 
-    iput-boolean v2, v0, Lre3;->W:Z
+    iput-boolean v2, v0, Loi3;->W:Z
 
-    iput-boolean v2, v0, Lre3;->X:Z
+    iput-boolean v2, v0, Loi3;->X:Z
 
     const/4 v8, 0x0
 
-    iput v8, v0, Lre3;->E:F
+    iput v8, v0, Loi3;->E:F
 
-    iget-object v9, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->P0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v9, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->H0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {p0, v9, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
@@ -388,59 +388,59 @@
 
     invoke-direct {v0, v9, v3}, Landroidx/appcompat/widget/AppCompatTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    iput-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->N0:Landroidx/appcompat/widget/AppCompatTextView;
+    iput-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->F0:Landroidx/appcompat/widget/AppCompatTextView;
 
-    sget v9, Lyqb;->view_share_attach__tv_title:I
+    sget v9, Lpvb;->view_share_attach__tv_title:I
 
     invoke-virtual {v0, v9}, Landroid/view/View;->setId(I)V
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->N0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->F0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setIncludeFontPadding(Z)V
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->N0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->F0:Landroidx/appcompat/widget/AppCompatTextView;
 
     const/4 v9, 0x2
 
     invoke-virtual {v0, v9}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->N0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->F0:Landroidx/appcompat/widget/AppCompatTextView;
 
-    iget-object v9, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->K0:Lzg4;
+    iget-object v9, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->C0:Lck4;
 
-    iget v9, v9, Lzg4;->I:F
+    iget v9, v9, Lck4;->H:F
 
     invoke-virtual {v0, v1, v9}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->N0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->F0:Landroidx/appcompat/widget/AppCompatTextView;
 
     sget-object v9, Landroid/graphics/Typeface;->DEFAULT_BOLD:Landroid/graphics/Typeface;
 
     invoke-virtual {v0, v9}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->N0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->F0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->N0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->F0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setGravity(I)V
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->N0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->F0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v0, v6}, Landroid/view/View;->setTextAlignment(I)V
 
-    new-instance v0, Lre3;
+    new-instance v0, Loi3;
 
-    invoke-direct {v0, v7, v7}, Lre3;-><init>(II)V
+    invoke-direct {v0, v7, v7}, Loi3;-><init>(II)V
 
-    iput-boolean v2, v0, Lre3;->W:Z
+    iput-boolean v2, v0, Loi3;->W:Z
 
-    iput-boolean v2, v0, Lre3;->X:Z
+    iput-boolean v2, v0, Loi3;->X:Z
 
-    iput v8, v0, Lre3;->E:F
+    iput v8, v0, Loi3;->E:F
 
-    iget-object v9, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->N0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v9, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->F0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {p0, v9, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
@@ -452,75 +452,75 @@
 
     invoke-direct {v0, v9, v3}, Landroidx/appcompat/widget/AppCompatTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    iput-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->O0:Landroidx/appcompat/widget/AppCompatTextView;
+    iput-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->G0:Landroidx/appcompat/widget/AppCompatTextView;
 
-    sget v3, Lyqb;->view_share_attach__tv_description:I
+    sget v3, Lpvb;->view_share_attach__tv_description:I
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setId(I)V
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->O0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->G0:Landroidx/appcompat/widget/AppCompatTextView;
 
     const/4 v3, 0x3
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->O0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->G0:Landroidx/appcompat/widget/AppCompatTextView;
 
-    iget-object v9, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->R0:Lwce;
+    iget-object v9, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->J0:Lvke;
 
-    iget v9, v9, Lwce;->v:I
+    iget v9, v9, Lvke;->v:I
 
     invoke-virtual {v0, v9}, Landroid/widget/TextView;->setTextColor(I)V
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->O0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->G0:Landroidx/appcompat/widget/AppCompatTextView;
 
-    iget-object v9, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->K0:Lzg4;
+    iget-object v9, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->C0:Lck4;
 
-    iget v9, v9, Lzg4;->I:F
+    iget v9, v9, Lck4;->H:F
 
     invoke-virtual {v0, v1, v9}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->O0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->G0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->O0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->G0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setGravity(I)V
 
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->O0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v0, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->G0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v0, v6}, Landroid/view/View;->setTextAlignment(I)V
 
-    new-instance v0, Lre3;
+    new-instance v0, Loi3;
 
-    invoke-direct {v0, v7, v7}, Lre3;-><init>(II)V
+    invoke-direct {v0, v7, v7}, Loi3;-><init>(II)V
 
-    iput-boolean v2, v0, Lre3;->W:Z
+    iput-boolean v2, v0, Loi3;->W:Z
 
-    iput-boolean v2, v0, Lre3;->X:Z
+    iput-boolean v2, v0, Loi3;->X:Z
 
-    iput v8, v0, Lre3;->E:F
+    iput v8, v0, Loi3;->E:F
 
-    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->O0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->G0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {p0, v4, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    new-instance v0, Lbf3;
+    new-instance v0, Lxi3;
 
-    invoke-direct {v0}, Lbf3;-><init>()V
+    invoke-direct {v0}, Lxi3;-><init>()V
 
-    invoke-virtual {v0, p0}, Lbf3;->c(Landroidx/constraintlayout/widget/ConstraintLayout;)V
+    invoke-virtual {v0, p0}, Lxi3;->c(Landroidx/constraintlayout/widget/ConstraintLayout;)V
 
-    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->Q0:Lcom/facebook/drawee/view/SimpleDraweeView;
+    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->I0:Lcom/facebook/drawee/view/SimpleDraweeView;
 
     invoke-virtual {v4}, Landroid/view/View;->getId()I
 
     move-result v4
 
-    invoke-virtual {v0, v4, v3, v1, v3}, Lbf3;->d(IIII)V
+    invoke-virtual {v0, v4, v3, v1, v3}, Lxi3;->d(IIII)V
 
-    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->Q0:Lcom/facebook/drawee/view/SimpleDraweeView;
+    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->I0:Lcom/facebook/drawee/view/SimpleDraweeView;
 
     invoke-virtual {v4}, Landroid/view/View;->getId()I
 
@@ -528,25 +528,25 @@
 
     const/4 v5, 0x7
 
-    invoke-virtual {v0, v4, v5, v1, v5}, Lbf3;->d(IIII)V
+    invoke-virtual {v0, v4, v5, v1, v5}, Lxi3;->d(IIII)V
 
-    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->Q0:Lcom/facebook/drawee/view/SimpleDraweeView;
+    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->I0:Lcom/facebook/drawee/view/SimpleDraweeView;
 
     invoke-virtual {v4}, Landroid/view/View;->getId()I
 
     move-result v4
 
-    invoke-virtual {v0, v4}, Lbf3;->g(I)Lwe3;
+    invoke-virtual {v0, v4}, Lxi3;->g(I)Lsi3;
 
     move-result-object v4
 
-    iget-object v4, v4, Lwe3;->d:Lxe3;
+    iget-object v4, v4, Lsi3;->d:Lti3;
 
     const-string v6, "1:1"
 
-    iput-object v6, v4, Lxe3;->y:Ljava/lang/String;
+    iput-object v6, v4, Lti3;->y:Ljava/lang/String;
 
-    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->P0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->H0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v4}, Landroid/view/View;->getId()I
 
@@ -554,45 +554,45 @@
 
     const/4 v6, 0x6
 
-    invoke-virtual {v0, v4, v6, v1, v6}, Lbf3;->d(IIII)V
+    invoke-virtual {v0, v4, v6, v1, v6}, Lxi3;->d(IIII)V
 
-    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->P0:Landroidx/appcompat/widget/AppCompatTextView;
-
-    invoke-virtual {v4}, Landroid/view/View;->getId()I
-
-    move-result v4
-
-    invoke-virtual {v0, v4, v3, v1, v3}, Lbf3;->d(IIII)V
-
-    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->P0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->H0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v4}, Landroid/view/View;->getId()I
 
     move-result v4
 
-    iget-object v7, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->Q0:Lcom/facebook/drawee/view/SimpleDraweeView;
+    invoke-virtual {v0, v4, v3, v1, v3}, Lxi3;->d(IIII)V
+
+    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->H0:Landroidx/appcompat/widget/AppCompatTextView;
+
+    invoke-virtual {v4}, Landroid/view/View;->getId()I
+
+    move-result v4
+
+    iget-object v7, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->I0:Lcom/facebook/drawee/view/SimpleDraweeView;
 
     invoke-virtual {v7}, Landroid/view/View;->getId()I
 
     move-result v7
 
-    invoke-virtual {v0, v4, v5, v7, v6}, Lbf3;->d(IIII)V
+    invoke-virtual {v0, v4, v5, v7, v6}, Lxi3;->d(IIII)V
 
-    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->N0:Landroidx/appcompat/widget/AppCompatTextView;
-
-    invoke-virtual {v4}, Landroid/view/View;->getId()I
-
-    move-result v4
-
-    invoke-virtual {v0, v4, v6, v1, v6}, Lbf3;->d(IIII)V
-
-    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->N0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->F0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v4}, Landroid/view/View;->getId()I
 
     move-result v4
 
-    iget-object v7, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->P0:Landroidx/appcompat/widget/AppCompatTextView;
+    invoke-virtual {v0, v4, v6, v1, v6}, Lxi3;->d(IIII)V
+
+    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->F0:Landroidx/appcompat/widget/AppCompatTextView;
+
+    invoke-virtual {v4}, Landroid/view/View;->getId()I
+
+    move-result v4
+
+    iget-object v7, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->H0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v7}, Landroid/view/View;->getId()I
 
@@ -600,37 +600,37 @@
 
     const/4 v8, 0x4
 
-    invoke-virtual {v0, v4, v3, v7, v8}, Lbf3;->d(IIII)V
+    invoke-virtual {v0, v4, v3, v7, v8}, Lxi3;->d(IIII)V
 
-    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->N0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v4, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->F0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v4}, Landroid/view/View;->getId()I
 
     move-result v4
 
-    iget-object v7, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->Q0:Lcom/facebook/drawee/view/SimpleDraweeView;
+    iget-object v7, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->I0:Lcom/facebook/drawee/view/SimpleDraweeView;
 
     invoke-virtual {v7}, Landroid/view/View;->getId()I
 
     move-result v7
 
-    invoke-virtual {v0, v4, v5, v7, v6}, Lbf3;->d(IIII)V
+    invoke-virtual {v0, v4, v5, v7, v6}, Lxi3;->d(IIII)V
 
-    sget v4, Lyqb;->view_share_attach_header__vertical_barrier:I
+    sget v4, Lpvb;->view_share_attach_header__vertical_barrier:I
 
-    iget-object v7, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->Q0:Lcom/facebook/drawee/view/SimpleDraweeView;
+    iget-object v7, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->I0:Lcom/facebook/drawee/view/SimpleDraweeView;
 
     invoke-virtual {v7}, Landroid/view/View;->getId()I
 
     move-result v7
 
-    iget-object v9, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->P0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v9, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->H0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v9}, Landroid/view/View;->getId()I
 
     move-result v9
 
-    iget-object v10, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->N0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v10, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->F0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v10}, Landroid/view/View;->getId()I
 
@@ -640,57 +640,57 @@
 
     move-result-object v7
 
-    invoke-virtual {v0, v4}, Lbf3;->g(I)Lwe3;
+    invoke-virtual {v0, v4}, Lxi3;->g(I)Lsi3;
 
     move-result-object v4
 
-    iget-object v4, v4, Lwe3;->d:Lxe3;
+    iget-object v4, v4, Lsi3;->d:Lti3;
 
-    iput v2, v4, Lxe3;->h0:I
+    iput v2, v4, Lti3;->h0:I
 
-    iput v3, v4, Lxe3;->f0:I
+    iput v3, v4, Lti3;->f0:I
 
-    iput v1, v4, Lxe3;->g0:I
+    iput v1, v4, Lti3;->g0:I
 
-    iput-boolean v1, v4, Lxe3;->a:Z
+    iput-boolean v1, v4, Lti3;->a:Z
 
-    iput-object v7, v4, Lxe3;->i0:[I
+    iput-object v7, v4, Lti3;->i0:[I
 
-    iget-object v2, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->O0:Landroidx/appcompat/widget/AppCompatTextView;
-
-    invoke-virtual {v2}, Landroid/view/View;->getId()I
-
-    move-result v2
-
-    invoke-virtual {v0, v2, v6, v1, v6}, Lbf3;->d(IIII)V
-
-    iget-object v2, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->O0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v2, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->G0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v2}, Landroid/view/View;->getId()I
 
     move-result v2
 
-    sget v4, Lyqb;->view_share_attach_header__vertical_barrier:I
+    invoke-virtual {v0, v2, v6, v1, v6}, Lxi3;->d(IIII)V
 
-    invoke-virtual {v0, v2, v3, v4, v3}, Lbf3;->d(IIII)V
-
-    iget-object v2, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->O0:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v2, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->G0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v2}, Landroid/view/View;->getId()I
 
     move-result v2
 
-    invoke-virtual {v0, v2, v5, v1, v5}, Lbf3;->d(IIII)V
+    sget v4, Lpvb;->view_share_attach_header__vertical_barrier:I
 
-    iget-object v2, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->O0:Landroidx/appcompat/widget/AppCompatTextView;
+    invoke-virtual {v0, v2, v3, v4, v3}, Lxi3;->d(IIII)V
+
+    iget-object v2, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->G0:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {v2}, Landroid/view/View;->getId()I
 
     move-result v2
 
-    invoke-virtual {v0, v2, v8, v1, v8}, Lbf3;->d(IIII)V
+    invoke-virtual {v0, v2, v5, v1, v5}, Lxi3;->d(IIII)V
 
-    invoke-virtual {v0, p0}, Lbf3;->a(Landroidx/constraintlayout/widget/ConstraintLayout;)V
+    iget-object v2, p0, Lru/ok/messages/media/attaches/ShareAttachHeaderView;->G0:Landroidx/appcompat/widget/AppCompatTextView;
+
+    invoke-virtual {v2}, Landroid/view/View;->getId()I
+
+    move-result v2
+
+    invoke-virtual {v0, v2, v8, v1, v8}, Lxi3;->d(IIII)V
+
+    invoke-virtual {v0, p0}, Lxi3;->a(Landroidx/constraintlayout/widget/ConstraintLayout;)V
 
     return-void
 .end method

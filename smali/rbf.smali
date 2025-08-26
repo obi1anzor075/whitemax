@@ -1,186 +1,112 @@
 .class public final Lrbf;
-.super Ljava/lang/Object;
+.super Landroid/graphics/drawable/Drawable$ConstantState;
 .source "SourceFile"
-
-# interfaces
-.implements Lv4;
-.implements Lof3;
-.implements Lc1g;
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field public final a:Landroid/graphics/drawable/Drawable$ConstantState;
 
 
 # direct methods
-.method public constructor <init>(Li6g;Lih7;)V
+.method public constructor <init>(Landroid/graphics/drawable/Drawable$ConstantState;)V
     .locals 0
 
-    .line 2
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
 
-    .line 3
-    iput-object p1, p0, Lrbf;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lrbf;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lrbf;->a:Landroid/graphics/drawable/Drawable$ConstantState;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public accept(Ljava/lang/Object;)V
-    .locals 9
+.method public final canApplyTheme()Z
+    .locals 0
 
-    check-cast p1, Lzwb;
+    iget-object p0, p0, Lrbf;->a:Landroid/graphics/drawable/Drawable$ConstantState;
 
-    iget-object p0, p0, Lrbf;->a:Ljava/lang/Object;
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable$ConstantState;->canApplyTheme()Z
 
-    check-cast p0, Lpf8;
+    move-result p0
 
-    iget-object v0, p0, Lpf8;->j:Ljava/lang/Object;
-
-    check-cast v0, Leje;
-
-    check-cast v0, Lfje;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v0
-
-    iget-object p0, p0, Lpf8;->d:Ljava/lang/Object;
-
-    check-cast p0, Ljava/util/HashMap;
-
-    invoke-virtual {p0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :cond_0
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/util/Map$Entry;
-
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lxrd;
-
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Luwf;
-
-    iget-wide v4, v2, Luwf;->c:J
-
-    iget-object v6, v2, Luwf;->b:Ljava/util/concurrent/TimeUnit;
-
-    iget-wide v7, v2, Luwf;->a:J
-
-    invoke-virtual {v6, v7, v8}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
-
-    move-result-wide v6
-
-    add-long/2addr v6, v4
-
-    const-wide/16 v4, 0xa
-
-    sub-long/2addr v6, v4
-
-    cmp-long v4, v6, v0
-
-    if-gez v4, :cond_0
-
-    iput-wide v0, v2, Luwf;->c:J
-
-    invoke-interface {v3, p1}, Lxrd;->a(Lzwb;)V
-
-    goto :goto_0
-
-    :cond_1
-    return-void
+    return p0
 .end method
 
-.method public d(Landroid/view/View;)Z
-    .locals 2
+.method public getChangingConfigurations()I
+    .locals 0
 
-    check-cast p1, Landroidx/viewpager2/widget/ViewPager2;
+    iget-object p0, p0, Lrbf;->a:Landroid/graphics/drawable/Drawable$ConstantState;
 
-    invoke-virtual {p1}, Landroidx/viewpager2/widget/ViewPager2;->getCurrentItem()I
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable$ConstantState;->getChangingConfigurations()I
 
-    move-result p1
+    move-result p0
 
-    const/4 v0, 0x1
-
-    add-int/2addr p1, v0
-
-    iget-object p0, p0, Lrbf;->a:Ljava/lang/Object;
-
-    check-cast p0, Lj8e;
-
-    iget-object p0, p0, Lj8e;->o:Ljava/lang/Object;
-
-    check-cast p0, Landroidx/viewpager2/widget/ViewPager2;
-
-    iget-boolean v1, p0, Landroidx/viewpager2/widget/ViewPager2;->J0:Z
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {p0, p1, v0}, Landroidx/viewpager2/widget/ViewPager2;->f(IZ)V
-
-    :cond_0
-    return v0
+    return p0
 .end method
 
-.method public n()Ljava/lang/Object;
+.method public final newDrawable()Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    iget-object p0, p0, Lrbf;->a:Ljava/lang/Object;
+    .line 1
+    new-instance v0, Lsbf;
 
-    check-cast p0, Lc1g;
+    invoke-direct {v0}, Lsbf;-><init>()V
 
-    invoke-interface {p0}, Lc1g;->n()Ljava/lang/Object;
+    .line 2
+    iget-object p0, p0, Lrbf;->a:Landroid/graphics/drawable/Drawable$ConstantState;
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object p0
 
-    check-cast p0, Ly3g;
+    check-cast p0, Landroid/graphics/drawable/VectorDrawable;
 
-    if-eqz p0, :cond_0
+    iput-object p0, v0, Ljbf;->a:Landroid/graphics/drawable/Drawable;
 
-    return-object p0
+    return-object v0
+.end method
 
-    :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
+.method public final newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
+    .locals 1
 
-    const-string v0, "Cannot return null from a non-@Nullable @Provides method"
+    .line 3
+    new-instance v0, Lsbf;
 
-    invoke-direct {p0, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0}, Lsbf;-><init>()V
 
-    throw p0
+    .line 4
+    iget-object p0, p0, Lrbf;->a:Landroid/graphics/drawable/Drawable$ConstantState;
+
+    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/graphics/drawable/VectorDrawable;
+
+    iput-object p0, v0, Ljbf;->a:Landroid/graphics/drawable/Drawable;
+
+    return-object v0
+.end method
+
+.method public final newDrawable(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+    .locals 1
+
+    .line 5
+    new-instance v0, Lsbf;
+
+    invoke-direct {v0}, Lsbf;-><init>()V
+
+    .line 6
+    iget-object p0, p0, Lrbf;->a:Landroid/graphics/drawable/Drawable$ConstantState;
+
+    .line 7
+    invoke-virtual {p0, p1, p2}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/graphics/drawable/VectorDrawable;
+
+    iput-object p0, v0, Ljbf;->a:Landroid/graphics/drawable/Drawable;
+
+    return-object v0
 .end method

@@ -57,7 +57,7 @@
 
     if-eqz v0, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
     const-string v0, "http.auth.target-scope"
@@ -70,7 +70,7 @@
 
     if-nez p2, :cond_1
 
-    return-void
+    goto :goto_0
 
     :cond_1
     invoke-virtual {p2}, Lorg/apache/http/auth/AuthState;->getAuthScheme()Lorg/apache/http/auth/AuthScheme;
@@ -79,7 +79,7 @@
 
     if-nez v0, :cond_2
 
-    return-void
+    goto :goto_0
 
     :cond_2
     invoke-virtual {p2}, Lorg/apache/http/auth/AuthState;->getCredentials()Lorg/apache/http/auth/Credentials;
@@ -119,7 +119,7 @@
     :try_end_0
     .catch Lorg/apache/http/auth/AuthenticationException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-void
 
     :catch_0
     move-exception p1

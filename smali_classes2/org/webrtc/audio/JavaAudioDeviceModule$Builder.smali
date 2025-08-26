@@ -142,173 +142,153 @@
 
 # virtual methods
 .method public createAudioDeviceModule()Lorg/webrtc/audio/JavaAudioDeviceModule;
-    .locals 23
+    .locals 14
 
-    move-object/from16 v0, p0
+    const-string v0, "createAudioDeviceModule"
 
-    const-string v1, "createAudioDeviceModule"
+    const-string v1, "JavaAudioDeviceModule"
 
-    const-string v2, "JavaAudioDeviceModule"
+    invoke-static {v1, v0}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v2, v1}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+    iget-boolean v0, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->useHardwareNoiseSuppressor:Z
 
-    iget-boolean v1, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->useHardwareNoiseSuppressor:Z
+    if-eqz v0, :cond_0
 
-    if-eqz v1, :cond_0
+    const-string v0, "HW NS will be used."
 
-    const-string v1, "HW NS will be used."
-
-    invoke-static {v2, v1}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_0
     invoke-static {}, Lorg/webrtc/audio/JavaAudioDeviceModule;->isBuiltInNoiseSuppressorSupported()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
-    const-string v1, "Overriding default behavior; now using WebRTC NS!"
+    const-string v0, "Overriding default behavior; now using WebRTC NS!"
 
-    invoke-static {v2, v1}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_1
-    const-string v1, "HW NS will not be used."
+    const-string v0, "HW NS will not be used."
 
-    invoke-static {v2, v1}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
-    iget-boolean v1, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->useHardwareAcousticEchoCanceler:Z
+    iget-boolean v0, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->useHardwareAcousticEchoCanceler:Z
 
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_2
 
-    const-string v1, "HW AEC will be used."
+    const-string v0, "HW AEC will be used."
 
-    invoke-static {v2, v1}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
 
     :cond_2
     invoke-static {}, Lorg/webrtc/audio/JavaAudioDeviceModule;->isBuiltInAcousticEchoCancelerSupported()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_3
+    if-eqz v0, :cond_3
 
-    const-string v1, "Overriding default behavior; now using WebRTC AEC!"
+    const-string v0, "Overriding default behavior; now using WebRTC AEC!"
 
-    invoke-static {v2, v1}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_3
-    const-string v1, "HW AEC will not be used."
+    const-string v0, "HW AEC will not be used."
 
-    invoke-static {v2, v1}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_1
-    iget-boolean v1, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->useLowLatency:Z
+    iget-boolean v0, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->useLowLatency:Z
 
-    if-eqz v1, :cond_4
+    if-eqz v0, :cond_4
 
-    const-string v1, "Low latency mode will be used."
+    const-string v0, "Low latency mode will be used."
 
-    invoke-static {v2, v1}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_4
-    iget-object v1, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->scheduler:Ljava/util/concurrent/ScheduledExecutorService;
+    iget-object v0, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->scheduler:Ljava/util/concurrent/ScheduledExecutorService;
 
-    if-nez v1, :cond_5
+    if-nez v0, :cond_5
 
     invoke-static {}, Lorg/webrtc/audio/WebRtcAudioRecord;->newDefaultScheduler()Ljava/util/concurrent/ScheduledExecutorService;
 
-    move-result-object v1
+    move-result-object v0
 
     :cond_5
-    move-object v4, v1
+    move-object v3, v0
 
     new-instance v1, Lorg/webrtc/audio/WebRtcAudioRecord;
 
-    iget-object v3, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->context:Landroid/content/Context;
+    iget-object v2, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->context:Landroid/content/Context;
 
-    iget-object v5, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->audioManager:Landroid/media/AudioManager;
+    iget-object v4, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->audioManager:Landroid/media/AudioManager;
 
-    iget v6, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->audioSource:I
+    iget v5, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->audioSource:I
 
-    iget v7, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->audioFormat:I
+    iget v6, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->audioFormat:I
 
-    iget-object v8, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->audioRecordErrorCallback:Lorg/webrtc/audio/JavaAudioDeviceModule$AudioRecordErrorCallback;
+    iget-object v7, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->audioRecordErrorCallback:Lorg/webrtc/audio/JavaAudioDeviceModule$AudioRecordErrorCallback;
 
-    iget-object v9, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->audioRecordStateCallback:Lorg/webrtc/audio/JavaAudioDeviceModule$AudioRecordStateCallback;
+    iget-object v8, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->audioRecordStateCallback:Lorg/webrtc/audio/JavaAudioDeviceModule$AudioRecordStateCallback;
 
-    iget-object v10, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->samplesReadyCallback:Lorg/webrtc/audio/JavaAudioDeviceModule$SamplesReadyCallback;
+    iget-object v9, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->samplesReadyCallback:Lorg/webrtc/audio/JavaAudioDeviceModule$SamplesReadyCallback;
 
-    iget-object v11, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->audioRecordSampleHook:Lorg/webrtc/audio/JavaAudioDeviceModule$AudioRecordSampleHook;
+    iget-object v10, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->audioRecordSampleHook:Lorg/webrtc/audio/JavaAudioDeviceModule$AudioRecordSampleHook;
 
-    iget-boolean v12, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->useHardwareAcousticEchoCanceler:Z
+    iget-boolean v11, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->useHardwareAcousticEchoCanceler:Z
 
-    iget-boolean v13, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->useHardwareNoiseSuppressor:Z
+    iget-boolean v12, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->useHardwareNoiseSuppressor:Z
 
-    iget-boolean v14, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->useSilenceProvider:Z
+    iget-boolean v13, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->useSilenceProvider:Z
 
-    move-object v2, v1
+    invoke-direct/range {v1 .. v13}, Lorg/webrtc/audio/WebRtcAudioRecord;-><init>(Landroid/content/Context;Ljava/util/concurrent/ScheduledExecutorService;Landroid/media/AudioManager;IILorg/webrtc/audio/JavaAudioDeviceModule$AudioRecordErrorCallback;Lorg/webrtc/audio/JavaAudioDeviceModule$AudioRecordStateCallback;Lorg/webrtc/audio/JavaAudioDeviceModule$SamplesReadyCallback;Lorg/webrtc/audio/JavaAudioDeviceModule$AudioRecordSampleHook;ZZZ)V
 
-    invoke-direct/range {v2 .. v14}, Lorg/webrtc/audio/WebRtcAudioRecord;-><init>(Landroid/content/Context;Ljava/util/concurrent/ScheduledExecutorService;Landroid/media/AudioManager;IILorg/webrtc/audio/JavaAudioDeviceModule$AudioRecordErrorCallback;Lorg/webrtc/audio/JavaAudioDeviceModule$AudioRecordStateCallback;Lorg/webrtc/audio/JavaAudioDeviceModule$SamplesReadyCallback;Lorg/webrtc/audio/JavaAudioDeviceModule$AudioRecordSampleHook;ZZZ)V
+    new-instance v2, Lorg/webrtc/audio/WebRtcAudioTrack;
 
-    new-instance v9, Lorg/webrtc/audio/WebRtcAudioTrack;
+    iget-object v3, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->context:Landroid/content/Context;
 
-    iget-object v2, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->context:Landroid/content/Context;
+    iget-object v4, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->audioManager:Landroid/media/AudioManager;
 
-    iget-object v3, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->audioManager:Landroid/media/AudioManager;
+    iget-object v5, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->audioAttributes:Landroid/media/AudioAttributes;
 
-    iget-object v4, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->audioAttributes:Landroid/media/AudioAttributes;
+    iget-object v6, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->audioTrackErrorCallback:Lorg/webrtc/audio/JavaAudioDeviceModule$AudioTrackErrorCallback;
 
-    iget-object v5, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->audioTrackErrorCallback:Lorg/webrtc/audio/JavaAudioDeviceModule$AudioTrackErrorCallback;
+    iget-object v7, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->audioTrackStateCallback:Lorg/webrtc/audio/JavaAudioDeviceModule$AudioTrackStateCallback;
 
-    iget-object v6, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->audioTrackStateCallback:Lorg/webrtc/audio/JavaAudioDeviceModule$AudioTrackStateCallback;
+    iget-boolean v8, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->useLowLatency:Z
 
-    iget-boolean v7, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->useLowLatency:Z
+    iget-boolean v9, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->enableVolumeLogger:Z
 
-    iget-boolean v8, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->enableVolumeLogger:Z
+    invoke-direct/range {v2 .. v9}, Lorg/webrtc/audio/WebRtcAudioTrack;-><init>(Landroid/content/Context;Landroid/media/AudioManager;Landroid/media/AudioAttributes;Lorg/webrtc/audio/JavaAudioDeviceModule$AudioTrackErrorCallback;Lorg/webrtc/audio/JavaAudioDeviceModule$AudioTrackStateCallback;ZZ)V
 
-    move-object v15, v9
+    new-instance v4, Lorg/webrtc/audio/JavaAudioDeviceModule;
 
-    move-object/from16 v16, v2
+    iget-object v5, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->context:Landroid/content/Context;
 
-    move-object/from16 v17, v3
+    iget-object v6, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->audioManager:Landroid/media/AudioManager;
 
-    move-object/from16 v18, v4
+    iget v9, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->inputSampleRate:I
 
-    move-object/from16 v19, v5
+    iget v10, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->outputSampleRate:I
 
-    move-object/from16 v20, v6
+    iget-boolean v11, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->useStereoInput:Z
 
-    move/from16 v21, v7
+    iget-boolean v12, p0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->useStereoOutput:Z
 
-    move/from16 v22, v8
+    move-object v7, v1
 
-    invoke-direct/range {v15 .. v22}, Lorg/webrtc/audio/WebRtcAudioTrack;-><init>(Landroid/content/Context;Landroid/media/AudioManager;Landroid/media/AudioAttributes;Lorg/webrtc/audio/JavaAudioDeviceModule$AudioTrackErrorCallback;Lorg/webrtc/audio/JavaAudioDeviceModule$AudioTrackStateCallback;ZZ)V
+    move-object v8, v2
 
-    new-instance v2, Lorg/webrtc/audio/JavaAudioDeviceModule;
+    invoke-direct/range {v4 .. v12}, Lorg/webrtc/audio/JavaAudioDeviceModule;-><init>(Landroid/content/Context;Landroid/media/AudioManager;Lorg/webrtc/audio/WebRtcAudioRecord;Lorg/webrtc/audio/WebRtcAudioTrack;IIZZ)V
 
-    iget-object v6, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->context:Landroid/content/Context;
-
-    iget-object v7, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->audioManager:Landroid/media/AudioManager;
-
-    iget v10, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->inputSampleRate:I
-
-    iget v11, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->outputSampleRate:I
-
-    iget-boolean v12, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->useStereoInput:Z
-
-    iget-boolean v13, v0, Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;->useStereoOutput:Z
-
-    move-object v5, v2
-
-    move-object v8, v1
-
-    invoke-direct/range {v5 .. v13}, Lorg/webrtc/audio/JavaAudioDeviceModule;-><init>(Landroid/content/Context;Landroid/media/AudioManager;Lorg/webrtc/audio/WebRtcAudioRecord;Lorg/webrtc/audio/WebRtcAudioTrack;IIZZ)V
-
-    return-object v2
+    return-object v4
 .end method
 
 .method public setAudioAttributes(Landroid/media/AudioAttributes;)Lorg/webrtc/audio/JavaAudioDeviceModule$Builder;

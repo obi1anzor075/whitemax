@@ -1,118 +1,444 @@
-.class public final synthetic Lmcd;
-.super Ljava/lang/Object;
+.class public final Lmcd;
+.super Landroid/widget/LinearLayout;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lppe;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Landroidx/appcompat/widget/AppCompatTextView;
 
-.field public final synthetic b:Locd;
+.field public final b:Landroidx/appcompat/widget/AppCompatTextView;
+
+.field public final c:Ljava/util/LinkedHashMap;
 
 
 # direct methods
-.method public synthetic constructor <init>(Locd;I)V
-    .locals 0
+.method public constructor <init>(Lone/me/settings/SettingsAvatarBottomSheet;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/util/ArrayList;Landroid/content/Context;)V
+    .locals 8
 
-    iput p2, p0, Lmcd;->a:I
+    invoke-direct {p0, p5}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    iput-object p1, p0, Lmcd;->b:Locd;
+    sget-object p5, Lone/me/settings/SettingsAvatarBottomSheet;->y0:[Lbc7;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance p5, Landroidx/appcompat/widget/AppCompatTextView;
+
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-direct {p5, v0, v1}, Landroidx/appcompat/widget/AppCompatTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+    sget-object v0, Lh4f;->c:Lnoe;
+
+    invoke-static {v0, p5}, Lnoe;->d(Lnoe;Landroid/widget/TextView;)V
+
+    invoke-virtual {p5, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    const/16 p2, 0x11
+
+    invoke-virtual {p5, p2}, Landroid/widget/TextView;->setGravity(I)V
+
+    new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
+
+    const/4 v2, -0x1
+
+    const/4 v3, -0x2
+
+    invoke-direct {v0, v2, v3}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+
+    iput p2, v0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
+
+    iget-object v4, p1, Lone/me/settings/SettingsAvatarBottomSheet;->v0:Lvr;
+
+    sget-object v5, Lone/me/settings/SettingsAvatarBottomSheet;->y0:[Lbc7;
+
+    const/4 v6, 0x1
+
+    aget-object v5, v5, v6
+
+    invoke-virtual {v4, p1}, Lvr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lmoe;
+
+    const/16 v5, 0x10
+
+    if-nez v4, :cond_0
+
+    int-to-float v4, v5
+
+    :goto_0
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v7
+
+    iget v7, v7, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v4, v7
+
+    invoke-static {v4}, Lkhg;->x(F)I
+
+    move-result v4
+
+    goto :goto_1
+
+    :cond_0
+    const/16 v4, 0xc
+
+    int-to-float v4, v4
+
+    goto :goto_0
+
+    :goto_1
+    iput v4, v0, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
+
+    invoke-virtual {p0, p5, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    iput-object p5, p0, Lmcd;->a:Landroidx/appcompat/widget/AppCompatTextView;
+
+    if-eqz p3, :cond_1
+
+    new-instance p5, Landroidx/appcompat/widget/AppCompatTextView;
+
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-direct {p5, v0, v1}, Landroidx/appcompat/widget/AppCompatTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+    sget-object v0, Lh4f;->n:Lnoe;
+
+    invoke-static {v0, p5}, Lnoe;->d(Lnoe;Landroid/widget/TextView;)V
+
+    invoke-virtual {p5, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {p5, p2}, Landroid/widget/TextView;->setGravity(I)V
+
+    new-instance p3, Landroid/widget/LinearLayout$LayoutParams;
+
+    invoke-direct {p3, v2, v3}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+
+    iput p2, p3, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
+
+    int-to-float v0, v5
+
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v4
+
+    iget v4, v4, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v0, v4
+
+    invoke-static {v0}, Lkhg;->x(F)I
+
+    move-result v0
+
+    iput v0, p3, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
+
+    invoke-virtual {p0, p5, p3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    goto :goto_2
+
+    :cond_1
+    move-object p5, v1
+
+    :goto_2
+    iput-object p5, p0, Lmcd;->b:Landroidx/appcompat/widget/AppCompatTextView;
+
+    const/16 p3, 0xa
+
+    invoke-static {p4, p3}, Lr43;->k0(Ljava/lang/Iterable;I)I
+
+    move-result p3
+
+    invoke-static {p3}, Ljz7;->C(I)I
+
+    move-result p3
+
+    if-ge p3, v5, :cond_2
+
+    goto :goto_3
+
+    :cond_2
+    move v5, p3
+
+    :goto_3
+    new-instance p3, Ljava/util/LinkedHashMap;
+
+    invoke-direct {p3, v5}, Ljava/util/LinkedHashMap;-><init>(I)V
+
+    invoke-interface {p4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p4
+
+    :goto_4
+    invoke-interface {p4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p5
+
+    if-eqz p5, :cond_3
+
+    invoke-interface {p4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p5
+
+    move-object v0, p5
+
+    check-cast v0, Llcd;
+
+    iget v4, v0, Llcd;->a:I
+
+    iget-object v0, v0, Llcd;->b:Lmoe;
+
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v5}, Lmoe;->b(Landroid/content/Context;)Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    new-instance v5, Landroidx/appcompat/widget/AppCompatTextView;
+
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v7
+
+    invoke-direct {v5, v7, v1}, Landroidx/appcompat/widget/AppCompatTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+    sget-object v7, Lh4f;->C:Lnoe;
+
+    invoke-static {v7, v5}, Lnoe;->d(Lnoe;Landroid/widget/TextView;)V
+
+    invoke-virtual {v5, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {v5, p2}, Landroid/widget/TextView;->setGravity(I)V
+
+    new-instance v0, Lrha;
+
+    invoke-direct {v0, p1, v4}, Lrha;-><init>(Lone/me/settings/SettingsAvatarBottomSheet;I)V
+
+    invoke-static {v5, v0}, Lu7;->Q(Landroid/view/View;Landroid/view/View$OnClickListener;)V
+
+    new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
+
+    invoke-direct {v0, v2, v3}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+
+    iput p2, v0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
+
+    const/16 v4, 0xf
+
+    int-to-float v4, v4
+
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v7
+
+    iget v7, v7, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v7, v4
+
+    invoke-static {v7}, Lkhg;->x(F)I
+
+    move-result v7
+
+    iput v7, v0, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
+
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v7
+
+    iget v7, v7, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v4, v7
+
+    invoke-static {v4}, Lkhg;->x(F)I
+
+    move-result v4
+
+    iput v4, v0, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
+
+    invoke-virtual {p0, v5, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    invoke-interface {p3, v5, p5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_4
+
+    :cond_3
+    iput-object p3, p0, Lmcd;->c:Ljava/util/LinkedHashMap;
+
+    invoke-virtual {p0, v6}, Landroid/widget/LinearLayout;->setOrientation(I)V
+
+    invoke-virtual {p0, p2}, Landroid/widget/LinearLayout;->setGravity(I)V
+
+    sget-object p1, Lqp4;->q0:Lap9;
+
+    invoke-virtual {p1, p0}, Lap9;->h(Landroid/view/View;)Lyha;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lmcd;->onThemeChanged(Lyha;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public final getButtonViews()Ljava/util/Map;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map<",
+            "Landroid/widget/TextView;",
+            "Llcd;",
+            ">;"
+        }
+    .end annotation
 
-    iget v0, p0, Lmcd;->a:I
+    iget-object p0, p0, Lmcd;->c:Ljava/util/LinkedHashMap;
 
-    packed-switch v0, :pswitch_data_0
+    return-object p0
+.end method
 
-    iget-object p0, p0, Lmcd;->b:Locd;
+.method public final getDescriptionView()Landroid/widget/TextView;
+    .locals 0
 
-    iget-object v0, p0, Locd;->b:Lxwb;
+    iget-object p0, p0, Lmcd;->b:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v1, "releaseInternal"
+    return-object p0
+.end method
 
-    const-string v2, "SharedPeerConnectionFac"
+.method public final getTitleView()Landroid/widget/TextView;
+    .locals 0
 
-    invoke-interface {v0, v2, v1}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object p0, p0, Lmcd;->a:Landroidx/appcompat/widget/AppCompatTextView;
 
-    iget-object v0, p0, Locd;->d:Lorg/webrtc/PeerConnectionFactory;
+    return-object p0
+.end method
 
-    const/4 v1, 0x0
+.method public final onThemeChanged(Lyha;)V
+    .locals 3
 
-    if-eqz v0, :cond_1
+    invoke-interface {p1}, Lyha;->getText()Lane;
 
-    iget-object v3, p0, Locd;->i:Lmh9;
+    move-result-object v0
 
-    if-eqz v3, :cond_0
+    iget v0, v0, Lane;->e:I
 
-    iget-object v4, p0, Locd;->j:Lwka;
+    iget-object v1, p0, Lmcd;->a:Landroidx/appcompat/widget/AppCompatTextView;
 
-    invoke-interface {v3, v4}, Lmh9;->a(Liy7;)V
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(I)V
+
+    iget-object v0, p0, Lmcd;->b:Landroidx/appcompat/widget/AppCompatTextView;
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p1}, Lyha;->getText()Lane;
+
+    move-result-object v1
+
+    iget v1, v1, Lane;->g:I
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
     :cond_0
-    invoke-virtual {v0}, Lorg/webrtc/PeerConnectionFactory;->dispose()V
+    iget-object p0, p0, Lmcd;->c:Ljava/util/LinkedHashMap;
 
-    iget-object v3, p0, Locd;->b:Lxwb;
+    invoke-virtual {p0}, Ljava/util/LinkedHashMap;->entrySet()Ljava/util/Set;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    move-result-object p0
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    invoke-static {v0}, Ld59;->c(Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v0, Ljava/util/Map$Entry;
 
-    const-string v0, " was disposed."
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    check-cast v1, Landroid/widget/TextView;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v3, v2, v0}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    check-cast v0, Llcd;
 
-    iput-object v1, p0, Locd;->d:Lorg/webrtc/PeerConnectionFactory;
+    iget v0, v0, Llcd;->c:I
 
-    :cond_1
-    iget-object v0, p0, Locd;->g:Lorg/webrtc/audio/JavaAudioDeviceModule;
+    invoke-static {v0}, Lzt1;->s(I)I
+
+    move-result v0
 
     if-eqz v0, :cond_2
 
-    invoke-interface {v0}, Lorg/webrtc/audio/AudioDeviceModule;->release()V
+    const/4 v2, 0x1
 
-    iput-object v1, p0, Locd;->g:Lorg/webrtc/audio/JavaAudioDeviceModule;
+    if-ne v0, v2, :cond_1
+
+    invoke-interface {p1}, Lyha;->getText()Lane;
+
+    move-result-object v0
+
+    iget v0, v0, Lane;->h:I
+
+    goto :goto_1
+
+    :cond_1
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p0
 
     :cond_2
-    return-void
+    invoke-interface {p1}, Lyha;->getText()Lane;
 
-    :pswitch_0
-    iget-object p0, p0, Lmcd;->b:Locd;
+    move-result-object v0
 
-    iget-object p0, p0, Locd;->g:Lorg/webrtc/audio/JavaAudioDeviceModule;
+    iget v0, v0, Lane;->j:I
 
-    if-eqz p0, :cond_3
+    :goto_1
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    invoke-interface {p0}, Lorg/webrtc/audio/AudioDeviceModule;->restartAudioRecording()V
+    goto :goto_0
 
     :cond_3
     return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

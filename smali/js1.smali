@@ -1,115 +1,116 @@
 .class public final Ljs1;
-.super Lmv4;
+.super Lqde;
 .source "SourceFile"
 
+# interfaces
+.implements Ll66;
 
-# static fields
-.field public static final X:Lz80;
 
-.field public static final Y:Lz80;
-
-.field public static final Z:Lz80;
-
-.field public static final w0:Lz80;
-
-.field public static final x0:Lz80;
-
-.field public static final y0:Lz80;
+# instance fields
+.field public final synthetic X:Lev5;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Lev5;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    sget-object v0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    iput-object p1, p0, Ljs1;->X:Lev5;
 
-    new-instance v1, Lz80;
+    const/4 p1, 0x2
 
-    const-string v2, "camera2.captureRequest.templateType"
-
-    const/4 v3, 0x0
-
-    invoke-direct {v1, v0, v3, v2}, Lz80;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
-
-    sput-object v1, Ljs1;->X:Lz80;
-
-    sget-object v0, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    new-instance v1, Lz80;
-
-    const-string v2, "camera2.cameraCaptureSession.streamUseCase"
-
-    invoke-direct {v1, v0, v3, v2}, Lz80;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
-
-    sput-object v1, Ljs1;->Y:Lz80;
-
-    new-instance v0, Lz80;
-
-    const-string v1, "camera2.cameraDevice.stateCallback"
-
-    const-class v2, Landroid/hardware/camera2/CameraDevice$StateCallback;
-
-    invoke-direct {v0, v2, v3, v1}, Lz80;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
-
-    sput-object v0, Ljs1;->Z:Lz80;
-
-    new-instance v0, Lz80;
-
-    const-string v1, "camera2.cameraCaptureSession.stateCallback"
-
-    const-class v2, Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
-
-    invoke-direct {v0, v2, v3, v1}, Lz80;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
-
-    sput-object v0, Ljs1;->w0:Lz80;
-
-    new-instance v0, Lz80;
-
-    const-string v1, "camera2.cameraCaptureSession.captureCallback"
-
-    const-class v2, Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;
-
-    invoke-direct {v0, v2, v3, v1}, Lz80;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
-
-    sput-object v0, Ljs1;->x0:Lz80;
-
-    new-instance v0, Lz80;
-
-    const-string v1, "camera2.cameraCaptureSession.physicalCameraId"
-
-    const-class v2, Ljava/lang/String;
-
-    invoke-direct {v0, v2, v3, v1}, Lz80;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
-
-    sput-object v0, Ljs1;->y0:Lz80;
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public static Q(Landroid/hardware/camera2/CaptureRequest$Key;)Lz80;
-    .locals 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    const-string v1, "camera2.captureRequest.option."
+    check-cast p1, Lox3;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {p0}, Landroid/hardware/camera2/CaptureRequest$Key;->getName()Ljava/lang/String;
+    invoke-virtual {p0, p1, p2}, Ljs1;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Ljs1;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Ljs1;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
+
+    new-instance p1, Ljs1;
+
+    iget-object p0, p0, Ljs1;->X:Lev5;
+
+    invoke-direct {p1, p0, p2}, Ljs1;-><init>(Lev5;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/util/UUID;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    iget-object p0, p0, Ljs1;->X:Lev5;
+
+    iget-object p0, p0, Lev5;->b:Ljava/lang/Object;
+
+    check-cast p0, Lje7;
+
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lik;
+
+    check-cast p0, La2a;
+
+    new-instance v0, Lmm1;
+
+    invoke-virtual {p0}, La2a;->x()Lx4b;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v1, La5b;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v1, v1, La5b;->a:Lj23;
 
-    move-result-object v0
+    invoke-virtual {v1}, Lmwc;->l()J
 
-    new-instance v1, Lz80;
+    move-result-wide v1
 
-    const-class v2, Ljava/lang/Object;
+    const/4 v3, 0x0
 
-    invoke-direct {v1, v2, p0, v0}, Lz80;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2, p1, v3}, Lmm1;-><init>(JLjava/lang/String;I)V
 
-    return-object v1
+    invoke-static {p0, v0}, La2a;->u(La2a;Lhl;)J
+
+    move-result-wide p0
+
+    new-instance v0, Ljava/lang/Long;
+
+    invoke-direct {v0, p0, p1}, Ljava/lang/Long;-><init>(J)V
+
+    return-object v0
 .end method

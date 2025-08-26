@@ -1,36 +1,44 @@
-.class public interface abstract Le75;
+.class public final Le75;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lqj8;
+
+
+# instance fields
+.field public final a:Ljava/lang/Object;
+
+.field public b:Lpse;
+
+
+# direct methods
+.method public constructor <init>(Ljava/lang/Object;Lpse;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Le75;->a:Ljava/lang/Object;
+
+    iput-object p2, p0, Le75;->b:Lpse;
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract S(Li75;)V
-.end method
-
-.method public abstract d(JJ)V
-.end method
-
-.method public abstract g(Lg75;Lle4;)I
-.end method
-
-.method public m()Le75;
+.method public final a()Ljava/lang/Object;
     .locals 0
+
+    iget-object p0, p0, Le75;->a:Ljava/lang/Object;
 
     return-object p0
 .end method
 
-.method public abstract n(Lg75;)Z
-.end method
-
-.method public o()Ljava/util/List;
+.method public final b()Lpse;
     .locals 0
 
-    sget-object p0, Lws6;->b:Lpo5;
-
-    sget-object p0, Le8c;->X:Le8c;
+    iget-object p0, p0, Le75;->b:Lpse;
 
     return-object p0
-.end method
-
-.method public abstract release()V
 .end method

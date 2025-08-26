@@ -2,34 +2,67 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lfj7;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Laj7;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 
 # instance fields
-.field public final a:Lt97;
-
-.field public final b:Lt97;
+.field public final a:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lt97;)V
+.method static constructor <clinit>()V
     .locals 2
+
+    new-instance v0, Lao6;
+
+    const/16 v1, 0x1c
+
+    invoke-direct {v0, v1}, Lao6;-><init>(I)V
+
+    sput-object v0, Laj7;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Laj7;->a:Lt97;
+    iput-object p1, p0, Laj7;->a:Ljava/lang/String;
 
-    new-instance v0, Lxq;
+    return-void
+.end method
 
-    const/16 v1, 0x11
 
-    invoke-direct {v0, v1, p1}, Lxq;-><init>(ILt97;)V
+# virtual methods
+.method public final describeContents()I
+    .locals 0
 
-    const/4 p1, 0x3
+    const/4 p0, 0x0
 
-    invoke-static {p1, v0}, Lez3;->O(ILs16;)Lt97;
+    return p0
+.end method
 
-    move-result-object p1
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 0
 
-    iput-object p1, p0, Laj7;->b:Lt97;
+    iget-object p0, p0, Laj7;->a:Ljava/lang/String;
+
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     return-void
 .end method

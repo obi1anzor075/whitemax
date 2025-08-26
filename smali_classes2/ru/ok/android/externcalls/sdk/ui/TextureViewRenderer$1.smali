@@ -28,7 +28,7 @@
         "",
         "width",
         "height",
-        "Ljue;",
+        "Le5f;",
         "onSurfaceTextureAvailable",
         "(Landroid/graphics/SurfaceTexture;II)V",
         "onSurfaceTextureSizeChanged",
@@ -45,6 +45,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -131,7 +132,7 @@
 
     invoke-direct {v2, p1}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$1$onSurfaceTextureDestroyed$1;-><init>(Ljava/util/concurrent/CountDownLatch;)V
 
-    invoke-interface {v1, v2}, Lru/ok/android/externcalls/sdk/ui/internal/VideoRendererInterface;->releaseEglSurface(Ls16;)V
+    invoke-interface {v1, v2}, Lru/ok/android/externcalls/sdk/ui/internal/VideoRendererInterface;->releaseEglSurface(Lv56;)V
 
     invoke-static {p1}, Lorg/webrtc/ThreadUtils;->awaitUninterruptibly(Ljava/util/concurrent/CountDownLatch;)V
 

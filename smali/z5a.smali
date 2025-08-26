@@ -2,80 +2,97 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lpa2;
+
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field public final a:Lje7;
 
-.field public final b:Lt97;
+.field public final b:Lwjd;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lt97;)V
-    .locals 0
+.method public constructor <init>(Lrie;Lje7;Lkx3;)V
+    .locals 9
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lz5a;->a:Landroid/content/Context;
+    iput-object p2, p0, Lz5a;->a:Lje7;
 
-    iput-object p2, p0, Lz5a;->b:Lt97;
+    check-cast p1, Lo7a;
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(J)V
-    .locals 2
-
-    const-string v0, ":chats?id="
-
-    const-string v1, "&type=local"
-
-    invoke-static {p1, p2, v0, v1}, Lus8;->j(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1}, Lo7a;->a()Ljx3;
 
     move-result-object p1
 
-    iget-object p2, p0, Lz5a;->b:Lt97;
+    const-string p2, "AnimojiVerifier"
 
-    invoke-interface {p2}, Lt97;->getValue()Ljava/lang/Object;
+    const/4 v0, 0x1
+
+    invoke-virtual {p1, v0, p2}, Ljx3;->limitedParallelism(ILjava/lang/String;)Ljx3;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p3}, Le0;->plus(Lhx3;)Lhx3;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lvk9;->a(Lhx3;)Lkotlinx/coroutines/internal/ContextScope;
+
+    move-result-object p1
+
+    const/16 p2, 0xa
+
+    const/4 p3, 0x5
+
+    const/4 v1, 0x0
+
+    invoke-static {v1, p2, p3}, Lxjd;->b(III)Lwjd;
 
     move-result-object p2
 
-    check-cast p2, Lal;
+    iput-object p2, p0, Lz5a;->b:Lwjd;
 
-    check-cast p2, Lgg7;
+    sget p3, Lat4;->o:I
 
-    iget-object p2, p2, Lgg7;->b:Ljava/lang/String;
+    sget-object p3, Lft4;->o:Lft4;
 
-    const/4 v0, 0x0
+    invoke-static {v0, p3}, La4f;->F(ILft4;)J
 
-    invoke-static {p1, p2, v0}, Lam7;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
+    move-result-wide v1
 
-    move-result-object p1
+    invoke-static {p2, v1, v2}, Lrbg;->F(Lzm5;J)Lj32;
 
-    sget p2, Lone/me/android/deeplink/NewWidgetActivity;->Z0:I
+    move-result-object p2
 
-    new-instance p2, Landroid/content/Intent;
+    invoke-static {p2}, Lsgg;->p(Lzm5;)Lzm5;
 
-    iget-object p0, p0, Lz5a;->a:Landroid/content/Context;
+    move-result-object p2
 
-    const-class v1, Lone/me/android/deeplink/NewWidgetActivity;
+    new-instance v1, Lll9;
 
-    invoke-direct {p2, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    const/4 v7, 0x0
 
-    const-string v1, "deep_link"
+    const/4 v8, 0x1
 
-    invoke-virtual {p2, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+    const/4 v2, 0x2
 
-    const-string p1, "snackbar"
+    const-class v4, Lz5a;
 
-    invoke-virtual {p2, p1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+    const-string v5, "internalVerify"
 
-    const/high16 p1, 0x10000000
+    const-string v6, "internalVerify(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;"
 
-    invoke-virtual {p2, p1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+    move-object v3, p0
 
-    invoke-virtual {p0, p2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    invoke-direct/range {v1 .. v8}, Lll9;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
+
+    new-instance p0, Lgp5;
+
+    invoke-direct {p0, p2, v1, v0}, Lgp5;-><init>(Lzm5;Ll66;I)V
+
+    invoke-static {p0, p1}, Lsgg;->L(Lzm5;Lox3;)Ldwd;
 
     return-void
 .end method

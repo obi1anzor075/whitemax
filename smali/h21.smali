@@ -1,192 +1,88 @@
-.class public final synthetic Lh21;
-.super Ljava/lang/Object;
+.class public final Lh21;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Lu16;
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic X:Lu16;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic Y:Lu16;
-
-.field public final synthetic Z:Ljava/lang/Object;
-
-.field public final synthetic a:I
-
-.field public final synthetic b:J
-
-.field public final synthetic c:Lgpd;
-
-.field public final synthetic o:Ll21;
+.field public final synthetic Y:Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;JLgpd;Ll21;Lto1;Lf;I)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;)V
     .locals 0
 
-    iput p8, p0, Lh21;->a:I
+    iput-object p2, p0, Lh21;->Y:Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;
 
-    iput-object p1, p0, Lh21;->Z:Ljava/lang/Object;
+    const/4 p2, 0x2
 
-    iput-wide p2, p0, Lh21;->b:J
-
-    iput-object p4, p0, Lh21;->c:Lgpd;
-
-    iput-object p5, p0, Lh21;->o:Ll21;
-
-    iput-object p6, p0, Lh21;->X:Lu16;
-
-    iput-object p7, p0, Lh21;->Y:Lu16;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2, p1}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget v0, p0, Lh21;->a:I
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    packed-switch v0, :pswitch_data_0
-
-    check-cast p1, Lru/ok/android/externcalls/sdk/factory/JoinByLinkParams$Builder;
-
-    iget-object v0, p0, Lh21;->Z:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Lru/ok/android/externcalls/sdk/factory/JoinByLinkParams$Builder;->setLink(Ljava/lang/String;)Lru/ok/android/externcalls/sdk/factory/JoinByLinkParams$Builder;
-
-    move-result-object p1
-
-    iget-wide v0, p0, Lh21;->b:J
-
-    invoke-static {v0, v1}, Lxja;->c(J)Lru/ok/android/externcalls/sdk/id/ParticipantId;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->setMyId(Lru/ok/android/externcalls/sdk/id/ParticipantId;)Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lh21;->c:Lgpd;
-
-    iget-boolean v0, v0, Lgpd;->b:Z
-
-    invoke-virtual {p1, v0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->setStartWithVideo(Z)Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lh21;->o:Ll21;
-
-    iget-object v0, v0, Ll21;->b:Lt97;
-
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lvp1;
-
-    invoke-virtual {p1, v0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->setEventListener(Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;)Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lh21;->X:Lu16;
-
-    invoke-virtual {p1, v0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->setOnPrepared(Lu16;)Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;
-
-    move-result-object p1
-
-    iget-object p0, p0, Lh21;->Y:Lu16;
-
-    invoke-virtual {p1, p0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->setOnError(Lu16;)Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;
+    invoke-virtual {p0, p1, p2}, Lh21;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->build()Ljava/lang/Object;
+    check-cast p0, Lh21;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lh21;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
+
+    new-instance v0, Lh21;
+
+    iget-object p0, p0, Lh21;->Y:Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;
+
+    invoke-direct {v0, p2, p0}, Lh21;-><init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;)V
+
+    iput-object p1, v0, Lh21;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lh21;->X:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/Number;
+
+    invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
+
+    move-result p1
+
+    sget-object v0, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;->o0:[Lbc7;
+
+    iget-object p0, p0, Lh21;->Y:Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;
+
+    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;->p0()Ll11;
 
     move-result-object p0
 
-    check-cast p0, Lru/ok/android/externcalls/sdk/factory/JoinByLinkParams;
+    invoke-virtual {p0, p1}, Ll11;->setChatUnreadMessageCount(I)V
+
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
-
-    :pswitch_0
-    check-cast p1, Lru/ok/android/externcalls/sdk/factory/CreateConfParams$Builder;
-
-    iget-object v0, p0, Lh21;->Z:Ljava/lang/Object;
-
-    check-cast v0, Lorg/json/JSONObject;
-
-    invoke-virtual {v0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Lru/ok/android/externcalls/sdk/factory/CreateConfParams$Builder;->setPayload(Ljava/lang/String;)Lru/ok/android/externcalls/sdk/factory/CreateConfParams$Builder;
-
-    move-result-object p1
-
-    iget-wide v0, p0, Lh21;->b:J
-
-    invoke-static {v0, v1}, Lxja;->c(J)Lru/ok/android/externcalls/sdk/id/ParticipantId;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->setMyId(Lru/ok/android/externcalls/sdk/id/ParticipantId;)Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lh21;->c:Lgpd;
-
-    iget-boolean v0, v0, Lgpd;->b:Z
-
-    invoke-virtual {p1, v0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->setStartWithVideo(Z)Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lh21;->o:Ll21;
-
-    iget-object v0, v0, Ll21;->b:Lt97;
-
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lvp1;
-
-    invoke-virtual {p1, v0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->setEventListener(Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;)Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lh21;->X:Lu16;
-
-    invoke-virtual {p1, v0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->setOnPrepared(Lu16;)Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;
-
-    move-result-object p1
-
-    iget-object p0, p0, Lh21;->Y:Lu16;
-
-    invoke-virtual {p1, p0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->setOnError(Lu16;)Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->build()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lru/ok/android/externcalls/sdk/factory/CreateConfParams;
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

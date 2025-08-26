@@ -1,97 +1,67 @@
-.class public final enum Lize;
-.super Ljava/lang/Enum;
+.class public abstract Lize;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/util/Iterator;
 
-# static fields
-.field public static final synthetic X:[Lize;
 
-.field public static final enum a:Lize;
-
-.field public static final enum b:Lize;
-
-.field public static final enum c:Lize;
-
-.field public static final enum o:Lize;
+# instance fields
+.field public final a:Ljava/util/Iterator;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public constructor <init>(Ljava/util/Iterator;)V
+    .locals 0
 
-    new-instance v0, Lize;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "MORE"
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lize;->a:Lize;
-
-    new-instance v1, Lize;
-
-    const-string v2, "ROTATION"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lize;->b:Lize;
-
-    new-instance v2, Lize;
-
-    const-string v3, "PIN"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lize;->c:Lize;
-
-    new-instance v3, Lize;
-
-    const-string v4, "NONE"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Lize;->o:Lize;
-
-    filled-new-array {v0, v1, v2, v3}, [Lize;
-
-    move-result-object v0
-
-    sput-object v0, Lize;->X:[Lize;
+    iput-object p1, p0, Lize;->a:Ljava/util/Iterator;
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lize;
+
+# virtual methods
+.method public abstract a(Ljava/lang/Object;)Ljava/lang/Object;
+.end method
+
+.method public final hasNext()Z
+    .locals 0
+
+    iget-object p0, p0, Lize;->a:Ljava/util/Iterator;
+
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final next()Ljava/lang/Object;
     .locals 1
 
-    const-class v0, Lize;
+    iget-object v0, p0, Lize;->a:Ljava/util/Iterator;
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lize;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
-
-    check-cast p0, Lize;
 
     return-object p0
 .end method
 
-.method public static values()[Lize;
-    .locals 1
+.method public final remove()V
+    .locals 0
 
-    sget-object v0, Lize;->X:[Lize;
+    iget-object p0, p0, Lize;->a:Ljava/util/Iterator;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    invoke-interface {p0}, Ljava/util/Iterator;->remove()V
 
-    move-result-object v0
-
-    check-cast v0, [Lize;
-
-    return-object v0
+    return-void
 .end method

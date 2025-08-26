@@ -156,7 +156,7 @@
 
     invoke-virtual {p0, p1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    goto :goto_0
+    return-void
 
     .line 6
     :cond_0
@@ -170,7 +170,6 @@
 
     invoke-virtual {p0, p1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    :goto_0
     return-void
 .end method
 
@@ -223,7 +222,7 @@
 
     invoke-virtual {p0, p1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    goto :goto_0
+    return-void
 
     .line 6
     :cond_0
@@ -237,7 +236,6 @@
 
     invoke-virtual {p0, p1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    :goto_0
     return-void
 .end method
 
@@ -290,11 +288,10 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method

@@ -1,249 +1,186 @@
 .class public final Ldp6;
-.super Ljava/lang/Object;
+.super Lap6;
 .source "SourceFile"
 
 
-# static fields
-.field public static final d:Ldp6;
-
-
 # instance fields
-.field public final a:Ljava/util/List;
+.field public final synthetic X:Ls8;
 
-.field public final b:Ljava/util/List;
-
-.field public final c:Ljava/util/List;
+.field public o:J
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Ls8;J)V
     .locals 2
 
-    new-instance v0, Ldp6;
+    iput-object p1, p0, Ldp6;->X:Ls8;
 
-    sget-object v1, Lhw4;->a:Lhw4;
+    invoke-direct {p0, p1}, Lap6;-><init>(Ls8;)V
 
-    invoke-direct {v0, v1, v1, v1}, Ldp6;-><init>(Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
+    iput-wide p2, p0, Ldp6;->o:J
 
-    sput-object v0, Ldp6;->d:Ldp6;
+    const-wide/16 v0, 0x0
 
-    return-void
-.end method
+    cmp-long p1, p2, v0
 
-.method public constructor <init>(Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
-    .locals 0
+    if-nez p1, :cond_0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p0}, Lap6;->m()V
 
-    iput-object p1, p0, Ldp6;->a:Ljava/util/List;
-
-    iput-object p2, p0, Ldp6;->b:Ljava/util/List;
-
-    iput-object p3, p0, Ldp6;->c:Ljava/util/List;
-
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final b(Lvs0;J)J
+    .locals 7
 
-    const/4 v0, 0x1
+    const-wide/16 v0, 0x0
 
-    if-ne p0, p1, :cond_0
+    cmp-long v2, p2, v0
 
-    return v0
+    if-ltz v2, :cond_4
+
+    iget-boolean v2, p0, Lap6;->b:Z
+
+    if-nez v2, :cond_3
+
+    iget-wide v2, p0, Ldp6;->o:J
+
+    cmp-long v4, v2, v0
+
+    const-wide/16 v5, -0x1
+
+    if-nez v4, :cond_0
+
+    return-wide v5
 
     :cond_0
-    instance-of v1, p1, Ldp6;
+    invoke-static {v2, v3, p2, p3}, Ljava/lang/Math;->min(JJ)J
 
-    const/4 v2, 0x0
+    move-result-wide p2
 
-    if-nez v1, :cond_1
+    invoke-super {p0, p1, p2, p3}, Lap6;->b(Lvs0;J)J
 
-    return v2
+    move-result-wide p1
+
+    cmp-long p3, p1, v5
+
+    if-eqz p3, :cond_2
+
+    iget-wide v2, p0, Ldp6;->o:J
+
+    sub-long/2addr v2, p1
+
+    iput-wide v2, p0, Ldp6;->o:J
+
+    cmp-long p3, v2, v0
+
+    if-nez p3, :cond_1
+
+    invoke-virtual {p0}, Lap6;->m()V
 
     :cond_1
-    check-cast p1, Ldp6;
-
-    iget-object v1, p1, Ldp6;->a:Ljava/util/List;
-
-    iget-object v3, p0, Ldp6;->a:Ljava/util/List;
-
-    invoke-static {v3, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
+    return-wide p1
 
     :cond_2
-    iget-object v1, p0, Ldp6;->b:Ljava/util/List;
+    iget-object p1, p0, Ldp6;->X:Ls8;
 
-    iget-object v3, p1, Ldp6;->b:Ljava/util/List;
+    iget-object p1, p1, Ls8;->d:Ljava/lang/Object;
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    check-cast p1, Ld6c;
 
-    move-result v1
+    invoke-virtual {p1}, Ld6c;->k()V
 
-    if-nez v1, :cond_3
+    new-instance p1, Ljava/net/ProtocolException;
 
-    return v2
+    const-string p2, "unexpected end of stream"
+
+    invoke-direct {p1, p2}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lap6;->m()V
+
+    throw p1
 
     :cond_3
-    iget-object p0, p0, Ldp6;->c:Ljava/util/List;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    iget-object p1, p1, Ldp6;->c:Ljava/util/List;
+    const-string p1, "closed"
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    move-result p0
-
-    if-nez p0, :cond_4
-
-    return v2
+    throw p0
 
     :cond_4
-    return v0
-.end method
+    const-string p0, "byteCount < 0: "
 
-.method public final hashCode()I
-    .locals 3
-
-    iget-object v0, p0, Ldp6;->a:Ljava/util/List;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget-object v2, p0, Ldp6;->b:Ljava/util/List;
-
-    invoke-static {v2, v0, v1}, Lc3d;->f(Ljava/util/List;II)I
-
-    move-result v0
-
-    iget-object p0, p0, Ldp6;->c:Ljava/util/List;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 8
-
-    sget-object v0, Ldp6;->d:Ldp6;
-
-    if-ne p0, v0, :cond_0
-
-    const-class p0, Ldp6;
-
-    invoke-virtual {p0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    invoke-static {p2, p3, p0}, Lu88;->h(JLjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    const-string v0, ".INITIAL"
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    return-object p0
+    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public final close()V
+    .locals 4
+
+    iget-boolean v0, p0, Lap6;->b:Z
+
+    if-eqz v0, :cond_0
+
+    return-void
 
     :cond_0
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-wide v0, p0, Ldp6;->o:J
 
-    const-string v1, "IdleSearchData(recentContacts="
+    const-wide/16 v2, 0x0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    cmp-long v0, v0, v2
 
-    new-instance v6, Lt13;
+    if-eqz v0, :cond_1
 
-    const/16 v1, 0x17
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-direct {v6, v1}, Lt13;-><init>(I)V
+    const/16 v0, 0x64
 
-    const-string v4, "["
+    :try_start_0
+    invoke-static {p0, v0}, Loaf;->t(Lhtd;I)Z
 
-    const-string v5, "]"
+    move-result v0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    iget-object v2, p0, Ldp6;->a:Ljava/util/List;
+    goto :goto_0
 
-    const-string v3, ","
+    :catch_0
+    const/4 v0, 0x0
 
-    const/16 v7, 0x18
+    :goto_0
+    if-nez v0, :cond_1
 
-    invoke-static/range {v2 .. v7}, Lo23;->c0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lu16;I)Ljava/lang/String;
+    iget-object v0, p0, Ldp6;->X:Ls8;
 
-    move-result-object v1
+    iget-object v0, v0, Ls8;->d:Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v0, Ld6c;
 
-    const-string v1, ", recentSearch="
+    invoke-virtual {v0}, Ld6c;->k()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0}, Lap6;->m()V
 
-    new-instance v6, Lt13;
+    :cond_1
+    const/4 v0, 0x1
 
-    const/16 v1, 0x18
+    iput-boolean v0, p0, Lap6;->b:Z
 
-    invoke-direct {v6, v1}, Lt13;-><init>(I)V
-
-    const-string v4, "["
-
-    const-string v5, "]"
-
-    iget-object v2, p0, Ldp6;->b:Ljava/util/List;
-
-    const-string v3, ","
-
-    const/16 v7, 0x18
-
-    invoke-static/range {v2 .. v7}, Lo23;->c0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lu16;I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", allContacts="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    new-instance v6, Lt13;
-
-    const/16 v1, 0x19
-
-    invoke-direct {v6, v1}, Lt13;-><init>(I)V
-
-    const-string v4, "["
-
-    const-string v5, "]"
-
-    iget-object v2, p0, Ldp6;->c:Ljava/util/List;
-
-    const-string v3, ","
-
-    const/16 v7, 0x18
-
-    invoke-static/range {v2 .. v7}, Lo23;->c0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lu16;I)Ljava/lang/String;
-
-    move-result-object p0
-
-    const-string v1, ")"
-
-    invoke-static {v0, p0, v1}, Lwn6;->l(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

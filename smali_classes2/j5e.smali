@@ -1,72 +1,23 @@
 .class public final Lj5e;
-.super Ljava/lang/Object;
+.super Lu2;
 .source "SourceFile"
 
-# interfaces
-.implements Lk5e;
 
-
-# instance fields
-.field public final a:Lk5e;
+# static fields
+.field public static final c:Lj5e;
 
 
 # direct methods
-.method public constructor <init>(Ldda;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lj5e;
 
-    iput-object p1, p0, Lj5e;->a:Lk5e;
+    const/16 v1, 0x8
+
+    invoke-direct {v0, v1}, Lu2;-><init>(I)V
+
+    sput-object v0, Lj5e;->c:Lj5e;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final a(Ljava/lang/String;Ljava/io/File;Li5e;Ljava/lang/String;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 7
-
-    iget-object v0, p0, Lj5e;->a:Lk5e;
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v3, p3
-
-    move-object v4, p4
-
-    move v5, p5
-
-    move-object v6, p6
-
-    invoke-interface/range {v0 .. v6}, Lk5e;->a(Ljava/lang/String;Ljava/io/File;Li5e;Ljava/lang/String;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final b(Ljava/io/File;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 0
-
-    iget-object p0, p0, Lj5e;->a:Lk5e;
-
-    invoke-interface {p0, p1, p2, p3}, Lk5e;->b(Ljava/io/File;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final c(Ljava/io/File;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 0
-
-    iget-object p0, p0, Lj5e;->a:Lk5e;
-
-    invoke-interface {p0, p1, p2, p3}, Lk5e;->c(Ljava/io/File;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
 .end method

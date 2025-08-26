@@ -1,45 +1,25 @@
-.class public final Ldv4;
+.class public abstract synthetic Ldv4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lnu4;
+
+# static fields
+.field public static final synthetic a:Ln25;
 
 
-# virtual methods
-.method public final a(ILjava/lang/CharSequence;)Z
-    .locals 0
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
 
-    const/4 p0, 0x0
+    invoke-static {}, Lgaf;->values()[Lgaf;
 
-    return p0
-.end method
+    move-result-object v0
 
-.method public final c(Ljava/lang/CharSequence;)Ljava/util/List;
-    .locals 0
+    new-instance v1, Ln25;
 
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+    invoke-direct {v1, v0}, Ln25;-><init>([Ljava/lang/Enum;)V
 
-    move-result-object p0
+    sput-object v1, Ldv4;->a:Ln25;
 
-    return-object p0
-.end method
-
-.method public final e(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-    .locals 0
-
-    if-nez p1, :cond_0
-
-    const-string p1, ""
-
-    :cond_0
-    return-object p1
-.end method
-
-.method public final g(Ljava/lang/CharSequence;)Z
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return p0
+    return-void
 .end method

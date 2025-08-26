@@ -4,32 +4,24 @@
 
 
 # instance fields
-.field public final a:J
-
-.field public final b:J
-
-.field public final c:J
-
-.field public final d:J
-
-.field public final e:J
+.field public final a:Landroid/content/SharedPreferences;
 
 
 # direct methods
-.method public constructor <init>(JJJJJ)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Lu4b;->a:J
+    const-string v0, "webrtc-android-sdk-pref"
 
-    iput-wide p3, p0, Lu4b;->b:J
+    const/4 v1, 0x0
 
-    iput-wide p5, p0, Lu4b;->c:J
+    invoke-virtual {p1, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
-    iput-wide p7, p0, Lu4b;->d:J
+    move-result-object p1
 
-    iput-wide p9, p0, Lu4b;->e:J
+    iput-object p1, p0, Lu4b;->a:Landroid/content/SharedPreferences;
 
     return-void
 .end method

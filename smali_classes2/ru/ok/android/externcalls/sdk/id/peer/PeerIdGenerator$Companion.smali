@@ -26,9 +26,9 @@
         "MAX_JS_SAFE_LONG",
         "J",
         "MIN_JS_SAFE_LONG",
-        "Lsq7;",
+        "Lrv7;",
         "PEER_ID_RANGE",
-        "Lsq7;",
+        "Lrv7;",
         "calls-sdk_release"
     }
     k = 0x1
@@ -37,6 +37,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -44,16 +45,16 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lx54;)V
+.method public synthetic constructor <init>(Ll94;)V
     .locals 0
 
-    .line 2
+    .line 1
     invoke-direct {p0}, Lru/ok/android/externcalls/sdk/id/peer/PeerIdGenerator$Companion;-><init>()V
 
     return-void

@@ -1,174 +1,135 @@
 .class public final Lqs1;
-.super Lps1;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Ljava/util/ArrayList;
+.field public X:I
+
+.field public final synthetic Y:Lss1;
+
+.field public final synthetic Z:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;)V
-    .locals 2
+.method public constructor <init>(Lss1;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lqs1;->Y:Lss1;
 
-    new-instance v0, Ljava/util/ArrayList;
+    iput-object p2, p0, Lqs1;->Z:Ljava/lang/String;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    const/4 p1, 0x2
 
-    iput-object v0, p0, Lqs1;->a:Ljava/util/ArrayList;
+    invoke-direct {p0, p1, p3}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :cond_0
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lps1;
-
-    instance-of v1, v0, Lrs1;
-
-    if-nez v1, :cond_0
-
-    iget-object v1, p0, Lqs1;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_1
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(I)V
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object p0, p0, Lqs1;->a:Ljava/util/ArrayList;
+    check-cast p1, Lox3;
 
-    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lqs1;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    check-cast p0, Lqs1;
 
-    move-result v0
+    sget-object p1, Le5f;->a:Le5f;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {p0, p1}, Lqs1;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object p0
 
-    move-result-object v0
-
-    check-cast v0, Lps1;
-
-    invoke-virtual {v0, p1}, Lps1;->a(I)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
+    return-object p0
 .end method
 
-.method public final b(ILws1;)V
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .locals 1
 
-    iget-object p0, p0, Lqs1;->a:Ljava/util/ArrayList;
+    new-instance p1, Lqs1;
 
-    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    iget-object v0, p0, Lqs1;->Y:Lss1;
 
-    move-result-object p0
+    iget-object p0, p0, Lqs1;->Z:Ljava/lang/String;
 
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-direct {p1, v0, p0, p2}, Lqs1;-><init>(Lss1;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lps1;
-
-    invoke-virtual {v0, p1, p2}, Lps1;->b(ILws1;)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
+    return-object p1
 .end method
 
-.method public final c(ILbqc;)V
-    .locals 1
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
-    iget-object p0, p0, Lqs1;->a:Ljava/util/ArrayList;
+    iget v0, p0, Lqs1;->X:I
 
-    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    return-object p1
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iput v1, p0, Lqs1;->X:I
+
+    iget-object p1, p0, Lqs1;->Y:Lss1;
+
+    iget-object p1, p1, Lss1;->a:Lje7;
+
+    invoke-interface {p1}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lrie;
+
+    check-cast p1, Lo7a;
+
+    invoke-virtual {p1}, Lo7a;->b()Ljx3;
+
+    move-result-object p1
+
+    new-instance v0, Lps1;
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lqs1;->Z:Ljava/lang/String;
+
+    invoke-direct {v0, v2, v1}, Lps1;-><init>(Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
+
+    invoke-static {p1, v0, p0}, Lzo3;->j0(Lhx3;Ll66;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    sget-object p1, Lpx3;->a:Lpx3;
 
-    move-result v0
+    if-ne p0, p1, :cond_2
 
-    if-eqz v0, :cond_0
+    return-object p1
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lps1;
-
-    invoke-virtual {v0, p1, p2}, Lps1;->c(ILbqc;)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public final d(I)V
-    .locals 1
-
-    iget-object p0, p0, Lqs1;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lps1;
-
-    invoke-virtual {v0, p1}, Lps1;->d(I)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
+    :cond_2
+    return-object p0
 .end method

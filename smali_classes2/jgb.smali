@@ -1,3 +1,3 @@
-.class public final Ljgb;
-.super Lg4d;
+.class public abstract Ljgb;
+.super Lkgb;
 .source "SourceFile"

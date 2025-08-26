@@ -57,7 +57,7 @@
 
     iput-object p1, p0, Lorg/apache/http/auth/UsernamePasswordCredentials;->password:Ljava/lang/String;
 
-    goto :goto_0
+    return-void
 
     .line 5
     :cond_0
@@ -72,7 +72,6 @@
     .line 6
     iput-object p1, p0, Lorg/apache/http/auth/UsernamePasswordCredentials;->password:Ljava/lang/String;
 
-    :goto_0
     return-void
 
     .line 7

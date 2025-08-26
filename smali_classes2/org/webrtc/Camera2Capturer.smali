@@ -77,11 +77,9 @@
 .method public createCameraSession(Lorg/webrtc/CameraSession$CreateSessionCallback;Lorg/webrtc/CameraSession$Events;Landroid/content/Context;Lorg/webrtc/SurfaceTextureHelper;Ljava/lang/String;III)V
     .locals 10
 
-    move-object v0, p0
+    iget-object v3, p0, Lorg/webrtc/Camera2Capturer;->cameraManager:Landroid/hardware/camera2/CameraManager;
 
-    iget-object v3, v0, Lorg/webrtc/Camera2Capturer;->cameraManager:Landroid/hardware/camera2/CameraManager;
-
-    iget-object v6, v0, Lorg/webrtc/CameraCapturer;->captureFormatHelper:Lorg/webrtc/CameraVideoCapturer$CaptureFormatHelper;
+    iget-object v6, p0, Lorg/webrtc/CameraCapturer;->captureFormatHelper:Lorg/webrtc/CameraVideoCapturer$CaptureFormatHelper;
 
     move-object v0, p1
 

@@ -36,7 +36,7 @@
         "Lkotlin/Function2;",
         "block",
         "withState",
-        "(JLi26;)Ljava/lang/Object;",
+        "(JLl66;)Ljava/lang/Object;",
         "addFailReason",
         "(J)I",
         "INITIAL_CAPACITY",
@@ -67,6 +67,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -74,16 +75,16 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lx54;)V
+.method public synthetic constructor <init>(Ll94;)V
     .locals 0
 
-    .line 2
+    .line 1
     invoke-direct {p0}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore$Companion;-><init>()V
 
     return-void
@@ -106,12 +107,11 @@
 
     const/4 p0, 0x2
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x1
 
-    :goto_0
     return p0
 .end method
 
@@ -151,14 +151,14 @@
     return-wide p0
 .end method
 
-.method public final withState(JLi26;)Ljava/lang/Object;
+.method public final withState(JLl66;)Ljava/lang/Object;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(J",
-            "Li26;",
+            "Ll66;",
             ")TT;"
         }
     .end annotation
@@ -187,7 +187,7 @@
 
     move-result-object p1
 
-    invoke-interface {p3, p0, p1}, Li26;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, p0, p1}, Ll66;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 

@@ -1,127 +1,88 @@
-.class public final Lhe;
+.class public final synthetic Lhe;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Leie;
+.implements Lv56;
 
 
-# static fields
-.field public static final a:Lhe;
+# instance fields
+.field public final synthetic a:I
 
-.field public static final b:Lrb9;
+.field public final synthetic b:Lie;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public synthetic constructor <init>(Lie;I)V
+    .locals 0
 
-    new-instance v0, Lhe;
+    iput p2, p0, Lhe;->a:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lhe;->b:Lie;
 
-    sput-object v0, Lhe;->a:Lhe;
-
-    new-instance v0, Lrb9;
-
-    const/16 v1, 0xa
-
-    invoke-direct {v0, v1}, Lrb9;-><init>(I)V
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v2, v1}, Lrb9;->e(II)V
-
-    const/4 v2, 0x2
-
-    const/16 v3, 0x10
-
-    invoke-virtual {v0, v2, v3}, Lrb9;->e(II)V
-
-    const/4 v2, 0x3
-
-    const/16 v4, 0xd
-
-    invoke-virtual {v0, v2, v4}, Lrb9;->e(II)V
-
-    const/4 v2, 0x4
-
-    invoke-virtual {v0, v2, v3}, Lrb9;->e(II)V
-
-    const/4 v2, 0x5
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v0, v2, v3}, Lrb9;->e(II)V
-
-    const/4 v2, 0x6
-
-    const/4 v3, -0x2
-
-    invoke-virtual {v0, v2, v3}, Lrb9;->e(II)V
-
-    const/4 v2, 0x7
-
-    const/4 v3, -0x4
-
-    invoke-virtual {v0, v2, v3}, Lrb9;->e(II)V
-
-    const/16 v2, 0x8
-
-    const/4 v3, -0x6
-
-    invoke-virtual {v0, v2, v3}, Lrb9;->e(II)V
-
-    const/16 v2, 0x9
-
-    const/4 v3, -0x5
-
-    invoke-virtual {v0, v2, v3}, Lrb9;->e(II)V
-
-    const/4 v2, -0x8
-
-    invoke-virtual {v0, v1, v2}, Lrb9;->e(II)V
-
-    sput-object v0, Lhe;->b:Lrb9;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(I)V
+.method public final invoke()Ljava/lang/Object;
     .locals 1
 
-    sget-object p0, Lhe;->b:Lrb9;
+    iget v0, p0, Lhe;->a:I
 
-    invoke-virtual {p0, p1}, Lrb9;->b(I)I
+    iget-object p0, p0, Lhe;->b:Lie;
 
-    move-result p1
+    packed-switch v0, :pswitch_data_0
 
-    const/4 v0, -0x1
+    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableWrapper;->getDrawable()Landroid/graphics/drawable/Drawable;
 
-    if-ltz p1, :cond_0
+    move-result-object p0
 
-    iget-object p0, p0, Lrb9;->c:[I
+    check-cast p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;
 
-    aget p0, p0, p1
+    const-string v0, "minutes"
 
-    goto :goto_0
+    invoke-virtual {p0, v0}, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->findPath(Ljava/lang/String;)Lone/me/sdk/richvector/VectorPath;
 
-    :cond_0
-    move p0, v0
+    move-result-object p0
 
-    :goto_0
-    if-ne p0, v0, :cond_1
+    return-object p0
 
-    return-void
+    :pswitch_0
+    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableWrapper;->getDrawable()Landroid/graphics/drawable/Drawable;
 
-    :cond_1
-    :try_start_0
-    invoke-static {p0}, Landroid/os/Process;->setThreadPriority(I)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-object p0
 
-    :catchall_0
-    return-void
+    check-cast p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;
+
+    const-string v0, "hours"
+
+    invoke-virtual {p0, v0}, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->findPath(Ljava/lang/String;)Lone/me/sdk/richvector/VectorPath;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_1
+    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableWrapper;->getDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    check-cast p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;
+
+    const-string v0, "circle"
+
+    invoke-virtual {p0, v0}, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->findPath(Ljava/lang/String;)Lone/me/sdk/richvector/VectorPath;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

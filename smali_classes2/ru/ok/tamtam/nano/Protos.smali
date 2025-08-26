@@ -7,6 +7,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lru/ok/tamtam/nano/Protos$LongList;,
+        Lru/ok/tamtam/nano/Protos$RestrictionsInfo;,
+        Lru/ok/tamtam/nano/Protos$SelfProfile;,
         Lru/ok/tamtam/nano/Protos$MessageReactions;,
         Lru/ok/tamtam/nano/Protos$MessageReactionWithCount;,
         Lru/ok/tamtam/nano/Protos$ReactionData;,

@@ -1,31 +1,142 @@
 .class public final Lq45;
-.super Ljava/lang/Object;
+.super Ljava/util/concurrent/atomic/AtomicReference;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+.implements Lam4;
 
 
 # instance fields
-.field public final a:Ljava/util/List;
+.field public final a:Lsy1;
 
-.field public final b:Lxed;
-
-.field public final c:I
-
-.field public final d:J
+.field public final b:Lsy1;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/ArrayList;Lxed;IJ)V
+.method public constructor <init>(Ljava/lang/Runnable;)V
+    .locals 1
+
+    invoke-direct {p0, p1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
+
+    new-instance p1, Lsy1;
+
+    const/4 v0, 0x2
+
+    invoke-direct {p1, v0}, Lsy1;-><init>(I)V
+
+    iput-object p1, p0, Lq45;->a:Lsy1;
+
+    new-instance p1, Lsy1;
+
+    invoke-direct {p1, v0}, Lsy1;-><init>(I)V
+
+    iput-object p1, p0, Lq45;->b:Lsy1;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final f()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lq45;->a:Lsy1;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {v0}, Lem4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
+
+    iget-object p0, p0, Lq45;->b:Lsy1;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {p0}, Lem4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
+
+    :cond_0
+    return-void
+.end method
+
+.method public final g()Z
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-    iput-object p1, p0, Lq45;->a:Ljava/util/List;
+    move-result-object p0
 
-    iput-object p2, p0, Lq45;->b:Lxed;
+    if-nez p0, :cond_0
 
-    iput p3, p0, Lq45;->c:I
+    const/4 p0, 0x1
 
-    iput-wide p4, p0, Lq45;->d:J
+    return p0
 
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final run()V
+    .locals 5
+
+    iget-object v0, p0, Lq45;->b:Lsy1;
+
+    iget-object v1, p0, Lq45;->a:Lsy1;
+
+    sget-object v2, Lem4;->a:Lem4;
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Runnable;
+
+    if-eqz v3, :cond_0
+
+    const/4 v4, 0x0
+
+    :try_start_0
+    invoke-interface {v3}, Ljava/lang/Runnable;->run()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :try_start_1
+    invoke-virtual {p0, v4}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
+
+    invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
+
+    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
+
+    return-void
+
+    :catchall_0
+    move-exception v3
+
+    invoke-virtual {p0, v4}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
+
+    invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
+
+    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
+
+    throw v3
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    :catchall_1
+    move-exception p0
+
+    invoke-static {p0}, Lou0;->x(Ljava/lang/Throwable;)V
+
+    throw p0
+
+    :cond_0
     return-void
 .end method

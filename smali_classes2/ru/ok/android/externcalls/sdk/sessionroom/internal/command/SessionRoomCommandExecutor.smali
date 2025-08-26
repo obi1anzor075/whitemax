@@ -12,17 +12,17 @@
         "Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutor;",
         "",
         "Lkotlin/Function0;",
-        "Ljue;",
+        "Le5f;",
         "onSuccess",
         "Lkotlin/Function1;",
         "",
         "onError",
         "requestAttention",
-        "(Ls16;Lu16;)V",
-        "Lv2d;",
+        "(Lv56;Lx56;)V",
+        "Ld9d;",
         "roomId",
         "joinRoom",
-        "(Lv2d;Ls16;Lu16;)V",
+        "(Ld9d;Lv56;Lx56;)V",
         "leaveRoom",
         "calls-sdk_release"
     }
@@ -32,39 +32,40 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # virtual methods
-.method public abstract joinRoom(Lv2d;Ls16;Lu16;)V
+.method public abstract joinRoom(Ld9d;Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lv2d;",
-            "Ls16;",
-            "Lu16;",
+            "Ld9d;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 .end method
 
-.method public abstract leaveRoom(Ls16;Lu16;)V
+.method public abstract leaveRoom(Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 .end method
 
-.method public abstract requestAttention(Ls16;Lu16;)V
+.method public abstract requestAttention(Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation

@@ -1,48 +1,156 @@
-.class public final synthetic Lbs2;
-.super Lz8;
+.class public final Lbs2;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lk26;
+.implements Lcl6;
+
+
+# static fields
+.field public static final f:Ljava/util/List;
+
+
+# instance fields
+.field public final b:Lwfe;
+
+.field public final c:Lwfe;
+
+.field public final d:Lk00;
+
+.field public final e:Lk00;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Las2;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    sput-object v0, Lbs2;->f:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lje7;Lwfe;)V
+    .locals 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Lzr2;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p2, p1, p0, v1}, Lzr2;-><init>(Lwfe;Lje7;Lbs2;I)V
+
+    new-instance v1, Lwfe;
+
+    invoke-direct {v1, v0}, Lwfe;-><init>(Lv56;)V
+
+    iput-object v1, p0, Lbs2;->b:Lwfe;
+
+    new-instance v0, Lzr2;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, p2, p1, p0, v1}, Lzr2;-><init>(Lwfe;Lje7;Lbs2;I)V
+
+    new-instance p1, Lwfe;
+
+    invoke-direct {p1, v0}, Lwfe;-><init>(Lv56;)V
+
+    iput-object p1, p0, Lbs2;->c:Lwfe;
+
+    new-instance p1, Lk00;
+
+    const/16 p2, 0xd
+
+    invoke-direct {p1, p2}, Lk00;-><init>(I)V
+
+    iput-object p1, p0, Lbs2;->d:Lk00;
+
+    new-instance p1, Lk00;
+
+    const/16 p2, 0xe
+
+    invoke-direct {p1, p2}, Lk00;-><init>(I)V
+
+    iput-object p1, p0, Lbs2;->e:Lk00;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a()Z
     .locals 0
 
-    check-cast p1, Ljava/util/List;
+    const/4 p0, 0x0
 
-    check-cast p2, Ljs2;
+    return p0
+.end method
 
-    check-cast p3, Lkotlin/coroutines/Continuation;
+.method public final c()Ljava/util/Comparator;
+    .locals 0
 
-    iget-object p0, p0, Lz8;->a:Ljava/lang/Object;
+    iget-object p0, p0, Lbs2;->d:Lk00;
 
-    check-cast p0, Lone/me/chats/search/ChatsListSearchScreen;
+    return-object p0
+.end method
 
-    sget-object p3, Lone/me/chats/search/ChatsListSearchScreen;->N0:[Lk77;
+.method public final e()Ljava/util/Comparator;
+    .locals 0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p0, p0, Lbs2;->e:Lk00;
 
-    iget-object p0, p2, Ljs2;->a:Lis2;
+    return-object p0
+.end method
 
-    sget-object p2, Lwr2;->$EnumSwitchMapping$1:[I
+.method public final g()J
+    .locals 2
 
-    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+    iget-object p0, p0, Lbs2;->b:Lwfe;
 
-    move-result p0
+    invoke-virtual {p0}, Lwfe;->getValue()Ljava/lang/Object;
 
-    aget p0, p2, p0
+    move-result-object p0
 
-    const/4 p2, 0x2
+    check-cast p0, Ljava/lang/Number;
 
-    if-ne p0, p2, :cond_0
+    invoke-virtual {p0}, Ljava/lang/Number;->longValue()J
 
-    goto :goto_0
+    move-result-wide v0
 
-    :cond_0
-    sget-object p1, Lhw4;->a:Lhw4;
+    return-wide v0
+.end method
 
-    :goto_0
-    return-object p1
+.method public final h()J
+    .locals 2
+
+    iget-object p0, p0, Lbs2;->c:Lwfe;
+
+    invoke-virtual {p0}, Lwfe;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/Number;
+
+    invoke-virtual {p0}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public final i()Ljava/util/List;
+    .locals 0
+
+    sget-object p0, Lbs2;->f:Ljava/util/List;
+
+    return-object p0
 .end method

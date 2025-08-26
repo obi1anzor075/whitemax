@@ -1,183 +1,431 @@
 .class public final Lvkd;
-.super Ljava/lang/Object;
+.super Lu2;
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic e:[Lk77;
-
-
 # instance fields
-.field public final a:Lou3;
+.field public final synthetic c:I
 
-.field public final b:Lt97;
-
-.field public final c:Le3;
-
-.field public final d:Le3;
+.field public final synthetic o:Lwkd;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public synthetic constructor <init>(Ljava/lang/Object;Lwkd;I)V
+    .locals 0
 
-    new-instance v0, Lhc9;
+    .line 1
+    iput p3, p0, Lvkd;->c:I
 
-    const-string v1, "infiniteAnimationJob"
+    iput-object p2, p0, Lvkd;->o:Lwkd;
 
-    const-string v2, "getInfiniteAnimationJob()Lkotlinx/coroutines/Job;"
+    const/16 p2, 0x9
 
-    const-class v3, Lvkd;
-
-    invoke-direct {v0, v3, v1, v2}, Lhc9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
-
-    sget-object v1, Lm7c;->a:Ln7c;
-
-    const-string v2, "stateAnimationJob"
-
-    const-string v4, "getStateAnimationJob()Lkotlinx/coroutines/Job;"
-
-    invoke-static {v1, v3, v2, v4}, Lc3d;->g(Ln7c;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)Lhc9;
-
-    move-result-object v1
-
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Lk77;
-
-    const/4 v3, 0x0
-
-    aput-object v0, v2, v3
-
-    const/4 v0, 0x1
-
-    aput-object v1, v2, v0
-
-    sput-object v2, Lvkd;->e:[Lk77;
+    invoke-direct {p0, p2, p1}, Lu2;-><init>(ILjava/lang/Object;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Lac7;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lvkd;->a:Lou3;
-
-    new-instance p1, Lvfc;
-
-    const/16 v0, 0x1a
-
-    invoke-direct {p1, v0}, Lvfc;-><init>(I)V
-
-    const/4 v0, 0x3
-
-    invoke-static {v0, p1}, Lez3;->O(ILs16;)Lt97;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lvkd;->b:Lt97;
-
-    invoke-static {}, Lhwf;->t()Le3;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lvkd;->c:Le3;
-
-    invoke-static {}, Lhwf;->t()Le3;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lvkd;->d:Le3;
-
-    return-void
-.end method
-
-.method public static a(Lhx6;I)V
+.method public constructor <init>(Lwkd;I)V
     .locals 2
 
-    if-nez p0, :cond_0
+    iput p2, p0, Lvkd;->c:I
+
+    packed-switch p2, :pswitch_data_0
+
+    :pswitch_0
+    iput-object p1, p0, Lvkd;->o:Lwkd;
+
+    const/16 p1, 0x9
+
+    .line 2
+    sget-object p2, Ltkd;->a:Ltkd;
+
+    invoke-direct {p0, p1, p2}, Lu2;-><init>(ILjava/lang/Object;)V
 
     return-void
 
-    :cond_0
-    move-object v0, p0
+    .line 3
+    :pswitch_1
+    sget-object p2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    check-cast v0, Ljkd;
+    iput-object p1, p0, Lvkd;->o:Lwkd;
 
-    iget-object v0, v0, Ljkd;->L0:Lbc3;
+    const/16 p1, 0x9
 
-    invoke-virtual {v0}, Landroid/widget/TextView;->getCurrentTextColor()I
-
-    move-result v0
-
-    new-instance v1, Landroid/animation/ArgbEvaluator;
-
-    invoke-direct {v1}, Landroid/animation/ArgbEvaluator;-><init>()V
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    filled-new-array {v0, p1}, [Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-static {v1, p1}, Landroid/animation/ValueAnimator;->ofObject(Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ValueAnimator;
-
-    move-result-object p1
-
-    const-wide/16 v0, 0xc8
-
-    invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
-
-    new-instance v0, Lpkd;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, p0, v1}, Lpkd;-><init>(Lhx6;I)V
-
-    invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
-
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
+    .line 4
+    invoke-direct {p0, p1, p2}, Lu2;-><init>(ILjava/lang/Object;)V
 
     return-void
+
+    .line 5
+    :pswitch_2
+    iput-object p1, p0, Lvkd;->o:Lwkd;
+
+    const/16 p1, 0x9
+
+    const/4 p2, 0x0
+
+    .line 6
+    invoke-direct {p0, p1, p2}, Lu2;-><init>(ILjava/lang/Object;)V
+
+    return-void
+
+    :pswitch_3
+    const-wide/16 v0, 0x1f40
+
+    .line 7
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p2
+
+    iput-object p1, p0, Lvkd;->o:Lwkd;
+
+    const/16 p1, 0x9
+
+    .line 8
+    invoke-direct {p0, p1, p2}, Lu2;-><init>(ILjava/lang/Object;)V
+
+    return-void
+
+    :pswitch_4
+    const-wide/16 v0, 0x1f40
+
+    .line 9
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p2
+
+    iput-object p1, p0, Lvkd;->o:Lwkd;
+
+    const/16 p1, 0x9
+
+    .line 10
+    invoke-direct {p0, p1, p2}, Lu2;-><init>(ILjava/lang/Object;)V
+
+    return-void
+
+    .line 11
+    :pswitch_5
+    iput-object p1, p0, Lvkd;->o:Lwkd;
+
+    const/16 p1, 0x9
+
+    .line 12
+    sget-object p2, Lukd;->a:Lukd;
+
+    invoke-direct {p0, p1, p2}, Lu2;-><init>(ILjava/lang/Object;)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_5
+        :pswitch_4
+        :pswitch_0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .locals 5
+.method public final x0(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 2
 
-    sget-object v0, Lvkd;->e:[Lk77;
+    iget v0, p0, Lvkd;->c:I
 
-    const/4 v1, 0x0
+    iget-object p0, p0, Lvkd;->o:Lwkd;
 
-    aget-object v2, v0, v1
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v3, p0, Lvkd;->c:Le3;
+    invoke-static {p1, p2}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {v3, p0, v2}, Le3;->T0(Ljava/lang/Object;Lk77;)Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v2
+    if-nez v0, :cond_2
 
-    check-cast v2, Lg37;
+    check-cast p2, Ljava/lang/Boolean;
 
-    const/4 v4, 0x0
+    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
 
-    if-eqz v2, :cond_0
+    move-result p2
 
-    invoke-interface {v2, v4}, Lg37;->cancel(Ljava/util/concurrent/CancellationException;)V
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    if-eqz p2, :cond_0
+
+    invoke-virtual {p0}, Lwkd;->e()V
+
+    goto :goto_0
 
     :cond_0
-    aget-object v0, v0, v1
+    iget-object p1, p0, Lwkd;->X:Landroid/animation/ObjectAnimator;
 
-    invoke-virtual {v3, p0, v0, v4}, Le3;->o1(Ljava/lang/Object;Lk77;Ljava/lang/Object;)V
+    invoke-virtual {p1}, Landroid/animation/Animator;->isRunning()Z
 
+    move-result p2
+
+    if-eqz p2, :cond_1
+
+    invoke-virtual {p1}, Landroid/animation/Animator;->cancel()V
+
+    :cond_1
+    :goto_0
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
+
+    :cond_2
     return-void
+
+    :pswitch_0
+    invoke-static {p1, p2}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    check-cast p2, Ljava/lang/Integer;
+
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
+
+    :cond_3
+    return-void
+
+    :pswitch_1
+    invoke-static {p1, p2}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    check-cast p2, Ljava/lang/Number;
+
+    invoke-virtual {p2}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide v0
+
+    check-cast p1, Ljava/lang/Number;
+
+    invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
+
+    iget-object p0, p0, Lwkd;->X:Landroid/animation/ObjectAnimator;
+
+    invoke-virtual {p0, v0, v1}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    :cond_4
+    return-void
+
+    :pswitch_2
+    invoke-static {p1, p2}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_5
+
+    check-cast p2, [F
+
+    check-cast p1, [F
+
+    iget-object p0, p0, Lwkd;->X:Landroid/animation/ObjectAnimator;
+
+    array-length p1, p2
+
+    invoke-static {p2, p1}, Ljava/util/Arrays;->copyOf([FI)[F
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/animation/ObjectAnimator;->setFloatValues([F)V
+
+    :cond_5
+    return-void
+
+    :pswitch_3
+    invoke-static {p1, p2}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_6
+
+    check-cast p2, Ljava/lang/Number;
+
+    invoke-virtual {p2}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide v0
+
+    check-cast p1, Ljava/lang/Number;
+
+    invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
+
+    iget-object p0, p0, Lwkd;->Y:Landroid/animation/ObjectAnimator;
+
+    invoke-virtual {p0, v0, v1}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    :cond_6
+    return-void
+
+    :pswitch_4
+    iget-object v0, p0, Lwkd;->o:Lklb;
+
+    iget-object p0, p0, Lwkd;->Y:Landroid/animation/ObjectAnimator;
+
+    invoke-static {p1, p2}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_9
+
+    check-cast p2, Lukd;
+
+    check-cast p1, Lukd;
+
+    invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
+
+    move-result p1
+
+    const/4 p2, 0x2
+
+    if-eqz p1, :cond_8
+
+    const/4 v1, 0x1
+
+    if-ne p1, v1, :cond_7
+
+    new-array p1, p2, [F
+
+    fill-array-data p1, :array_0
+
+    invoke-static {v0, p1}, Landroid/animation/PropertyValuesHolder;->ofFloat(Landroid/util/Property;[F)Landroid/animation/PropertyValuesHolder;
+
+    move-result-object p1
+
+    filled-new-array {p1}, [Landroid/animation/PropertyValuesHolder;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/animation/ValueAnimator;->setValues([Landroid/animation/PropertyValuesHolder;)V
+
+    goto :goto_1
+
+    :cond_7
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p0
+
+    :cond_8
+    new-array p1, p2, [F
+
+    fill-array-data p1, :array_1
+
+    invoke-static {v0, p1}, Landroid/animation/PropertyValuesHolder;->ofFloat(Landroid/util/Property;[F)Landroid/animation/PropertyValuesHolder;
+
+    move-result-object p1
+
+    filled-new-array {p1}, [Landroid/animation/PropertyValuesHolder;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/animation/ValueAnimator;->setValues([Landroid/animation/PropertyValuesHolder;)V
+
+    :cond_9
+    :goto_1
+    return-void
+
+    :pswitch_5
+    invoke-static {p1, p2}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_a
+
+    check-cast p2, [F
+
+    check-cast p1, [F
+
+    iget-object p0, p0, Lwkd;->Y:Landroid/animation/ObjectAnimator;
+
+    array-length p1, p2
+
+    invoke-static {p2, p1}, Ljava/util/Arrays;->copyOf([FI)[F
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/animation/ObjectAnimator;->setFloatValues([F)V
+
+    :cond_a
+    return-void
+
+    :pswitch_6
+    invoke-static {p1, p2}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_b
+
+    check-cast p2, Ltkd;
+
+    check-cast p1, Ltkd;
+
+    iget-object p1, p0, Lwkd;->b:Ljava/lang/Object;
+
+    invoke-interface {p1}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Leu0;
+
+    invoke-virtual {p0}, Lwkd;->a()Ltkd;
+
+    move-result-object p2
+
+    sget-object v0, Lqp4;->q0:Lap9;
+
+    iget-object v1, p0, Lwkd;->a:Landroid/content/Context;
+
+    invoke-virtual {v0, v1}, Lap9;->g(Landroid/content/Context;)Lqp4;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lqp4;->k()Lyha;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lwkd;->b()Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, p2, v1}, Leu0;->a(Lyha;Ltkd;Ljava/lang/Integer;)Landroid/graphics/drawable/BitmapDrawable;
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
+
+    :cond_b
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+
+    :array_0
+    .array-data 4
+        0x43b38000    # 359.0f
+        0x0
+    .end array-data
+
+    :array_1
+    .array-data 4
+        0x0
+        0x43b38000    # 359.0f
+    .end array-data
 .end method

@@ -85,13 +85,13 @@
 
     iput-object v0, p0, Lorg/webrtc/VideoFileRenderer;->videoOutFile:Ljava/io/FileOutputStream;
 
-    const-string p1, "YUV4MPEG2 C420 W"
+    const-string p1, " H"
 
-    const-string v1, " H"
+    const-string v1, " Ip F30:1 A1:1\n"
 
-    const-string v2, " Ip F30:1 A1:1\n"
+    const-string v2, "YUV4MPEG2 C420 W"
 
-    invoke-static {p1, p2, v1, p3, v2}, Lrf0;->g(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, p2, p1, p3, v1}, Lpg0;->f(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -414,7 +414,9 @@
     return-void
 
     :catch_0
-    move-exception p0
+    move-exception v0
+
+    move-object p0, v0
 
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -512,9 +514,7 @@
 
     mul-float/2addr v1, v4
 
-    float-to-int v1, v1
-
-    move v4, v1
+    float-to-int v4, v1
 
     goto :goto_4
 
@@ -525,9 +525,7 @@
 
     mul-float/2addr v2, v3
 
-    float-to-int v1, v2
-
-    move v3, v1
+    float-to-int v3, v2
 
     :goto_4
     invoke-interface {v0}, Lorg/webrtc/VideoFrame$Buffer;->getWidth()I
@@ -560,11 +558,11 @@
 
     iget-object v0, p0, Lorg/webrtc/VideoFileRenderer;->fileThreadHandler:Landroid/os/Handler;
 
-    new-instance v2, Lncd;
+    new-instance v2, Lojc;
 
-    const/16 v3, 0xc
+    const/16 v3, 0xf
 
-    invoke-direct {v2, p0, v1, p1, v3}, Lncd;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+    invoke-direct {v2, p0, v1, p1, v3}, Lojc;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -580,11 +578,11 @@
 
     iget-object v0, p0, Lorg/webrtc/VideoFileRenderer;->renderThreadHandler:Landroid/os/Handler;
 
-    new-instance v1, Lzbe;
+    new-instance v1, Ljff;
 
-    const/16 v2, 0x9
+    const/4 v2, 0x1
 
-    invoke-direct {v1, p0, v2, p1}, Lzbe;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-direct {v1, p0, v2, p1}, Ljff;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -602,11 +600,11 @@
 
     iget-object v1, p0, Lorg/webrtc/VideoFileRenderer;->renderThreadHandler:Landroid/os/Handler;
 
-    new-instance v2, Lzbe;
+    new-instance v2, Ljff;
 
-    const/16 v3, 0xa
+    const/4 v3, 0x2
 
-    invoke-direct {v2, p0, v3, v0}, Lzbe;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-direct {v2, p0, v3, v0}, Ljff;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -614,11 +612,11 @@
 
     iget-object v0, p0, Lorg/webrtc/VideoFileRenderer;->fileThreadHandler:Landroid/os/Handler;
 
-    new-instance v1, Lpfe;
+    new-instance v1, Lgje;
 
-    const/16 v2, 0xa
+    const/16 v2, 0xe
 
-    invoke-direct {v1, v2, p0}, Lpfe;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v1, v2, p0}, Lgje;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -629,7 +627,7 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-void
 
     :catch_0
     move-exception p0
@@ -646,6 +644,5 @@
 
     invoke-static {v0, v1, p0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_0
     return-void
 .end method

@@ -12,18 +12,18 @@
         "Lru/ok/android/externcalls/sdk/stat/ConversationStats;",
         "",
         "Lkotlin/Function0;",
-        "Lw41;",
+        "Lf61;",
         "getEventualStatSender",
         "Lru/ok/android/externcalls/sdk/log/ExtLogger;",
         "statReporter",
-        "Lct3;",
+        "Lbw3;",
         "cidProvider",
         "Lru/ok/android/externcalls/sdk/Conversation$CallType;",
         "callType",
-        "Leje;",
+        "Lzre;",
         "timeProvider",
         "<init>",
-        "(Ls16;Lru/ok/android/externcalls/sdk/log/ExtLogger;Lct3;Lru/ok/android/externcalls/sdk/Conversation$CallType;Leje;)V",
+        "(Lv56;Lru/ok/android/externcalls/sdk/log/ExtLogger;Lbw3;Lru/ok/android/externcalls/sdk/Conversation$CallType;Lzre;)V",
         "Lru/ok/android/externcalls/sdk/stat/connect/ConversationConnectedToSignalingStat;",
         "connectedToSignalingStat",
         "Lru/ok/android/externcalls/sdk/stat/connect/ConversationConnectedToSignalingStat;",
@@ -47,6 +47,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -63,16 +64,16 @@
 
 
 # direct methods
-.method public constructor <init>(Ls16;Lru/ok/android/externcalls/sdk/log/ExtLogger;Lct3;Lru/ok/android/externcalls/sdk/Conversation$CallType;Leje;)V
+.method public constructor <init>(Lv56;Lru/ok/android/externcalls/sdk/log/ExtLogger;Lbw3;Lru/ok/android/externcalls/sdk/Conversation$CallType;Lzre;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ls16;",
+            "Lv56;",
             "Lru/ok/android/externcalls/sdk/log/ExtLogger;",
-            "Lct3;",
+            "Lbw3;",
             "Lru/ok/android/externcalls/sdk/Conversation$CallType;",
-            "Leje;",
+            "Lzre;",
             ")V"
         }
     .end annotation
@@ -81,31 +82,31 @@
 
     new-instance v0, Lru/ok/android/externcalls/sdk/stat/connect/ConversationConnectedToSignalingStat;
 
-    invoke-direct {v0, p1, p5}, Lru/ok/android/externcalls/sdk/stat/connect/ConversationConnectedToSignalingStat;-><init>(Ls16;Leje;)V
+    invoke-direct {v0, p1, p5}, Lru/ok/android/externcalls/sdk/stat/connect/ConversationConnectedToSignalingStat;-><init>(Lv56;Lzre;)V
 
     iput-object v0, p0, Lru/ok/android/externcalls/sdk/stat/ConversationStats;->connectedToSignalingStat:Lru/ok/android/externcalls/sdk/stat/connect/ConversationConnectedToSignalingStat;
 
     new-instance v0, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;
 
-    invoke-direct {v0, p2, p3}, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;-><init>(Lru/ok/android/externcalls/sdk/log/ExtLogger;Lct3;)V
+    invoke-direct {v0, p2, p3}, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;-><init>(Lru/ok/android/externcalls/sdk/log/ExtLogger;Lbw3;)V
 
     iput-object v0, p0, Lru/ok/android/externcalls/sdk/stat/ConversationStats;->reconnectStat:Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;
 
     new-instance p2, Lru/ok/android/externcalls/sdk/stat/warmup/ConversationPreparedStat;
 
-    invoke-direct {p2, p1, p5}, Lru/ok/android/externcalls/sdk/stat/warmup/ConversationPreparedStat;-><init>(Ls16;Leje;)V
+    invoke-direct {p2, p1, p5}, Lru/ok/android/externcalls/sdk/stat/warmup/ConversationPreparedStat;-><init>(Lv56;Lzre;)V
 
     iput-object p2, p0, Lru/ok/android/externcalls/sdk/stat/ConversationStats;->preparedStat:Lru/ok/android/externcalls/sdk/stat/warmup/ConversationPreparedStat;
 
     new-instance p2, Lru/ok/android/externcalls/sdk/stat/start/ConversationStartedStat;
 
-    invoke-direct {p2, p1, p4, p5}, Lru/ok/android/externcalls/sdk/stat/start/ConversationStartedStat;-><init>(Ls16;Lru/ok/android/externcalls/sdk/Conversation$CallType;Leje;)V
+    invoke-direct {p2, p1, p4, p5}, Lru/ok/android/externcalls/sdk/stat/start/ConversationStartedStat;-><init>(Lv56;Lru/ok/android/externcalls/sdk/Conversation$CallType;Lzre;)V
 
     iput-object p2, p0, Lru/ok/android/externcalls/sdk/stat/ConversationStats;->startedStat:Lru/ok/android/externcalls/sdk/stat/start/ConversationStartedStat;
 
     new-instance p2, Lru/ok/android/externcalls/sdk/stat/signaling/SignalingStat;
 
-    invoke-direct {p2, p1, p5}, Lru/ok/android/externcalls/sdk/stat/signaling/SignalingStat;-><init>(Ls16;Leje;)V
+    invoke-direct {p2, p1, p5}, Lru/ok/android/externcalls/sdk/stat/signaling/SignalingStat;-><init>(Lv56;Lzre;)V
 
     iput-object p2, p0, Lru/ok/android/externcalls/sdk/stat/ConversationStats;->wsSignalingStat:Lru/ok/android/externcalls/sdk/stat/signaling/SignalingStat;
 

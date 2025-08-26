@@ -1,9 +1,9 @@
 .class public final Lcom/facebook/soloader/b;
-.super Lild;
+.super Lwsd;
 .source "SourceFile"
 
 # interfaces
-.implements Lb6c;
+.implements Lcbc;
 
 
 # instance fields
@@ -124,7 +124,7 @@
     :cond_1
     const-string v1, "!/lib/"
 
-    invoke-static {p0, v1}, Lme4;->n(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0, v1}, Lm26;->n(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p0
 
@@ -147,7 +147,7 @@
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;)Lild;
+.method public final a(Landroid/content/Context;)Lwsd;
     .locals 0
 
     new-instance p0, Lcom/facebook/soloader/b;
@@ -182,7 +182,7 @@
 .method public final c(Ljava/lang/String;ILandroid/os/StrictMode$ThreadPolicy;)I
     .locals 12
 
-    sget-object v0, Lcom/facebook/soloader/SoLoader;->b:Lnxc;
+    sget-object v0, Lcom/facebook/soloader/SoLoader;->b:Le9g;
 
     if-eqz v0, :cond_9
 
@@ -299,14 +299,14 @@
 
     if-eqz v7, :cond_2
 
-    new-instance v7, Lct4;
+    new-instance v7, Lcw4;
 
-    invoke-direct {v7, v4, v6}, Lct4;-><init>(Ljava/util/zip/ZipFile;Ljava/util/zip/ZipEntry;)V
+    invoke-direct {v7, v4, v6}, Lcw4;-><init>(Ljava/util/zip/ZipFile;Ljava/util/zip/ZipEntry;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
     :try_start_1
-    invoke-static {p1, v7}, Lcom/facebook/soloader/d;->a(Ljava/lang/String;Lat4;)[Ljava/lang/String;
+    invoke-static {p1, v7}, Lcom/facebook/soloader/d;->a(Ljava/lang/String;Law4;)[Ljava/lang/String;
 
     move-result-object v6
 
@@ -344,7 +344,7 @@
 
     :cond_4
     :try_start_2
-    invoke-virtual {v7}, Lct4;->close()V
+    invoke-virtual {v7}, Lcw4;->close()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
@@ -352,7 +352,7 @@
 
     :goto_4
     :try_start_3
-    invoke-virtual {v7}, Lct4;->close()V
+    invoke-virtual {v7}, Lcw4;->close()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
@@ -448,9 +448,9 @@
 
     or-int/lit8 p2, p2, 0x4
 
-    sget-object v2, Lcom/facebook/soloader/SoLoader;->b:Lnxc;
+    sget-object v2, Lcom/facebook/soloader/SoLoader;->b:Le9g;
 
-    invoke-virtual {v2, p2, v1}, Lnxc;->S(ILjava/lang/String;)V
+    invoke-virtual {v2, p2, v1}, Le9g;->d(ILjava/lang/String;)V
     :try_end_6
     .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_6 .. :try_end_6} :catch_0
 
@@ -705,11 +705,11 @@
     :cond_1
     new-instance v3, Ljava/util/zip/ZipFile;
 
+    const/4 v5, 0x0
+
     invoke-virtual {v2, v4}, Ljava/lang/String;->indexOf(I)I
 
     move-result v4
-
-    const/4 v5, 0x0
 
     invoke-virtual {v2, v5, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 

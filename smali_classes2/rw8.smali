@@ -1,93 +1,122 @@
 .class public final Lrw8;
-.super Lkr7;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public final synthetic g:Lt97;
+.field public final a:I
+
+.field public final b:I
 
 
 # direct methods
-.method public constructor <init>(ILt97;)V
+.method public constructor <init>(II)V
     .locals 0
 
-    iput-object p2, p0, Lrw8;->g:Lt97;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lkr7;-><init>(I)V
+    iput p1, p0, Lrw8;->a:I
+
+    iput p2, p0, Lrw8;->b:I
 
     return-void
 .end method
 
+.method public static a(Ldx8;)Lrw8;
+    .locals 6
 
-# virtual methods
-.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    check-cast p1, Lwia;
-
-    iget-object v0, p1, Lwia;->a:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/Number;
-
-    invoke-virtual {v0}, Ljava/lang/Number;->intValue()I
+    invoke-static {p0}, Lxq7;->d0(Ldx8;)I
 
     move-result v0
 
-    iget-object p1, p1, Lwia;->b:Ljava/lang/Object;
+    if-nez v0, :cond_0
 
-    check-cast p1, Ljava/lang/Number;
+    const/4 p0, 0x0
 
-    invoke-virtual {p1}, Ljava/lang/Number;->floatValue()F
+    return-object p0
 
-    move-result p1
+    :cond_0
+    const/4 v1, 0x0
 
-    new-instance v1, Landroid/text/TextPaint;
+    move v2, v1
 
-    const/4 v2, 0x1
+    move v3, v2
 
-    invoke-direct {v1, v2}, Landroid/text/TextPaint;-><init>(I)V
+    :goto_0
+    if-ge v1, v0, :cond_3
 
-    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+    invoke-virtual {p0}, Ldx8;->D0()Ljava/lang/String;
 
-    invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setColor(I)V
+    move-result-object v4
 
-    invoke-virtual {v1, p1}, Landroid/graphics/Paint;->setTextSize(F)V
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object p0, p0, Lrw8;->g:Lt97;
+    const-string v5, "views"
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_2
+
+    const-string v5, "forwards"
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_1
+
+    invoke-virtual {p0}, Ldx8;->B()V
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {p0}, Ldx8;->z0()I
+
+    move-result v3
+
+    goto :goto_1
+
+    :cond_2
+    invoke-virtual {p0}, Ldx8;->z0()I
+
+    move-result v2
+
+    :goto_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_3
+    new-instance p0, Lrw8;
+
+    invoke-direct {p0, v2, v3}, Lrw8;-><init>(II)V
+
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .locals 4
+
+    const-string v0, ", forwards="
+
+    const-string v1, "}"
+
+    const-string v2, "{views="
+
+    iget v3, p0, Lrw8;->a:I
+
+    iget p0, p0, Lrw8;->b:I
+
+    invoke-static {v2, v3, v0, p0, v1}, Lpg0;->f(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    check-cast p0, Ljr0;
-
-    check-cast p0, Lp0a;
-
-    sget-object p1, Lkm4;->y0:Ls59;
-
-    iget-object p0, p0, Lp0a;->a:Landroid/content/Context;
-
-    invoke-virtual {p1, p0}, Ls59;->n(Landroid/content/Context;)Lkm4;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lkm4;->g()Lpda;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Lpda;->a()Ljo2;
-
-    move-result-object p0
-
-    invoke-interface {p0, v2}, Ljo2;->a(Z)Ldr0;
-
-    move-result-object p0
-
-    iget-object p0, p0, Ldr0;->b:Lgr0;
-
-    iget p0, p0, Lgr0;->b:I
-
-    iput p0, v1, Landroid/text/TextPaint;->linkColor:I
-
-    return-object v1
+    return-object p0
 .end method

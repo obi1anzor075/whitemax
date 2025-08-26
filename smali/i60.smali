@@ -1,344 +1,206 @@
-.class public final Li60;
-.super Lu2;
+.class public final synthetic Li60;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final Y:[I
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic X:Ljava/lang/Object;
 
-.field public c:Z
+.field public final synthetic a:I
 
-.field public o:Z
+.field public final synthetic b:J
+
+.field public final synthetic c:J
+
+.field public final synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;JJI)V
+    .locals 0
 
-    const/16 v0, 0x5622
+    iput p7, p0, Li60;->a:I
 
-    const v1, 0xac44
+    iput-object p1, p0, Li60;->o:Ljava/lang/Object;
 
-    const/16 v2, 0x1588
+    iput-object p2, p0, Li60;->X:Ljava/lang/Object;
 
-    const/16 v3, 0x2b11
+    iput-wide p3, p0, Li60;->b:J
 
-    filled-new-array {v2, v3, v0, v1}, [I
+    iput-wide p5, p0, Li60;->c:J
 
-    move-result-object v0
-
-    sput-object v0, Li60;->Y:[I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final Z1(Lija;)Z
-    .locals 4
+.method public final run()V
+    .locals 12
 
-    iget-boolean v0, p0, Li60;->c:Z
+    iget v0, p0, Li60;->a:I
 
-    const/4 v1, 0x1
+    const/16 v1, 0x3f8
 
-    if-nez v0, :cond_5
+    iget-object v2, p0, Li60;->X:Ljava/lang/Object;
 
-    invoke-virtual {p1}, Lija;->u()I
+    iget-object v3, p0, Li60;->o:Ljava/lang/Object;
 
-    move-result p1
+    packed-switch v0, :pswitch_data_0
 
-    shr-int/lit8 v0, p1, 0x4
+    check-cast v3, Lkab;
 
-    and-int/lit8 v0, v0, 0xf
+    move-object v6, v2
 
-    iput v0, p0, Li60;->X:I
+    check-cast v6, Ljava/lang/String;
 
-    iget-object v2, p0, Lu2;->b:Ljava/lang/Object;
+    iget-object v0, v3, Lkab;->c:Ljava/lang/Object;
 
-    check-cast v2, Lbpe;
+    check-cast v0, La75;
 
-    const/4 v3, 0x2
+    sget v2, Lnaf;->a:I
 
-    if-ne v0, v3, :cond_0
+    iget-object v0, v0, La75;->a:Lg75;
 
-    shr-int/2addr p1, v3
+    iget-object v0, v0, Lg75;->y0:Lu74;
 
-    and-int/lit8 p1, p1, 0x3
+    invoke-virtual {v0}, Lu74;->J()Lyc;
 
-    sget-object v0, Li60;->Y:[I
+    move-result-object v5
 
-    aget p1, v0, p1
+    new-instance v4, Lk82;
 
-    new-instance v0, Luu5;
+    iget-wide v7, p0, Li60;->c:J
 
-    invoke-direct {v0}, Luu5;-><init>()V
+    iget-wide v9, p0, Li60;->b:J
 
-    const-string v3, "audio/mpeg"
+    invoke-direct/range {v4 .. v10}, Lk82;-><init>(Lyc;Ljava/lang/String;JJ)V
 
-    invoke-static {v3}, Lc49;->l(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v5, v1, v4}, Lu74;->K(Lyc;ILjm7;)V
 
-    move-result-object v3
+    return-void
 
-    iput-object v3, v0, Luu5;->m:Ljava/lang/String;
+    :pswitch_0
+    check-cast v3, Llgb;
 
-    iput v1, v0, Luu5;->A:I
+    move-object v6, v2
 
-    iput p1, v0, Luu5;->B:I
+    check-cast v6, Ljava/lang/String;
 
-    invoke-virtual {v0}, Luu5;->a()Lxu5;
+    iget-object v0, v3, Llgb;->c:Ljava/lang/Object;
 
-    move-result-object p1
+    check-cast v0, Lb75;
 
-    invoke-interface {v2, p1}, Lbpe;->e(Lxu5;)V
+    sget v2, Lpaf;->a:I
 
-    iput-boolean v1, p0, Li60;->o:Z
+    iget-object v0, v0, Lb75;->a:Lh75;
 
-    goto :goto_2
+    iget-object v0, v0, Lh75;->z0:Lv74;
 
-    :cond_0
-    const/4 p1, 0x7
+    invoke-virtual {v0}, Lv74;->H()Lzc;
 
-    if-eq v0, p1, :cond_3
+    move-result-object v5
 
-    const/16 v3, 0x8
+    new-instance v4, Le74;
 
-    if-ne v0, v3, :cond_1
+    const/4 v11, 0x2
 
-    goto :goto_0
+    iget-wide v7, p0, Li60;->c:J
 
-    :cond_1
-    const/16 p1, 0xa
+    iget-wide v9, p0, Li60;->b:J
 
-    if-ne v0, p1, :cond_2
+    invoke-direct/range {v4 .. v11}, Le74;-><init>(Lzc;Ljava/lang/String;JJI)V
 
-    goto :goto_2
+    invoke-virtual {v0, v5, v1, v4}, Lv74;->I(Lzc;ILkm7;)V
 
-    :cond_2
-    new-instance p1, Landroidx/media3/extractor/flv/TagPayloadReader$UnsupportedFormatException;
+    return-void
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    :pswitch_1
+    check-cast v3, Ljava/util/List;
 
-    const-string v1, "Audio format not supported: "
+    move-object v4, v2
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    check-cast v4, Lyjc;
 
-    iget p0, p0, Li60;->X:I
+    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Landroidx/media3/extractor/flv/TagPayloadReader$UnsupportedFormatException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_3
     :goto_0
-    if-ne v0, p1, :cond_4
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    const-string p1, "audio/g711-alaw"
+    move-result v1
 
-    goto :goto_1
+    if-eqz v1, :cond_0
 
-    :cond_4
-    const-string p1, "audio/g711-mlaw"
-
-    :goto_1
-    new-instance v0, Luu5;
-
-    invoke-direct {v0}, Luu5;-><init>()V
-
-    invoke-static {p1}, Lc49;->l(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    iput-object p1, v0, Luu5;->m:Ljava/lang/String;
-
-    iput v1, v0, Luu5;->A:I
-
-    const/16 p1, 0x1f40
-
-    iput p1, v0, Luu5;->B:I
-
-    invoke-virtual {v0}, Luu5;->a()Lxu5;
-
-    move-result-object p1
-
-    invoke-interface {v2, p1}, Lbpe;->e(Lxu5;)V
-
-    iput-boolean v1, p0, Li60;->o:Z
-
-    :goto_2
-    iput-boolean v1, p0, Li60;->c:Z
-
-    goto :goto_3
-
-    :cond_5
-    invoke-virtual {p1, v1}, Lija;->H(I)V
-
-    :goto_3
-    return v1
-.end method
-
-.method public final a2(JLija;)Z
-    .locals 15
-
-    move-object v0, p0
-
-    move-object/from16 v1, p3
-
-    iget v2, v0, Li60;->X:I
-
-    const/4 v3, 0x2
-
-    iget-object v4, v0, Lu2;->b:Ljava/lang/Object;
-
-    check-cast v4, Lbpe;
-
-    const/4 v5, 0x1
-
-    const/4 v6, 0x0
-
-    if-ne v2, v3, :cond_0
-
-    invoke-virtual/range {p3 .. p3}, Lija;->a()I
-
-    move-result v11
-
-    invoke-interface {v4, v1, v11, v6}, Lbpe;->b(Lija;II)V
-
-    iget-object v0, v0, Lu2;->b:Ljava/lang/Object;
-
-    move-object v7, v0
-
-    check-cast v7, Lbpe;
-
-    const/4 v10, 0x1
-
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
-    move-wide/from16 v8, p1
-
-    invoke-interface/range {v7 .. v13}, Lbpe;->a(JIIILzoe;)V
-
-    return v5
-
-    :cond_0
-    invoke-virtual/range {p3 .. p3}, Lija;->u()I
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    iget-boolean v3, v0, Li60;->o:Z
-
-    if-nez v3, :cond_1
-
-    invoke-virtual/range {p3 .. p3}, Lija;->a()I
-
-    move-result v2
-
-    new-array v3, v2, [B
-
-    invoke-virtual {v1, v6, v3, v2}, Lija;->e(I[BI)V
-
-    new-instance v1, Lwx1;
-
-    const/4 v7, 0x2
-
-    const/4 v8, 0x0
-
-    invoke-direct {v1, v3, v2, v7, v8}, Lwx1;-><init>([BIIB)V
-
-    invoke-static {v1, v6}, Llp;->D(Lwx1;Z)Le;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    new-instance v2, Luu5;
+    move-object v9, v1
 
-    invoke-direct {v2}, Luu5;-><init>()V
+    check-cast v9, Lfr8;
 
-    const-string v7, "audio/mp4a-latm"
+    const/4 v10, 0x0
 
-    invoke-static {v7}, Lc49;->l(Ljava/lang/String;)Ljava/lang/String;
+    iget-wide v5, p0, Li60;->b:J
 
-    move-result-object v7
+    iget-wide v7, p0, Li60;->c:J
 
-    iput-object v7, v2, Luu5;->m:Ljava/lang/String;
-
-    iget-object v7, v1, Le;->c:Ljava/lang/String;
-
-    iput-object v7, v2, Luu5;->i:Ljava/lang/String;
-
-    iget v7, v1, Le;->b:I
-
-    iput v7, v2, Luu5;->A:I
-
-    iget v1, v1, Le;->a:I
-
-    iput v1, v2, Luu5;->B:I
-
-    invoke-static {v3}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v1
-
-    iput-object v1, v2, Luu5;->p:Ljava/util/List;
-
-    new-instance v1, Lxu5;
-
-    invoke-direct {v1, v2}, Lxu5;-><init>(Luu5;)V
-
-    invoke-interface {v4, v1}, Lbpe;->e(Lxu5;)V
-
-    iput-boolean v5, v0, Li60;->o:Z
-
-    return v6
-
-    :cond_1
-    iget v3, v0, Li60;->X:I
-
-    const/16 v7, 0xa
-
-    if-ne v3, v7, :cond_3
-
-    if-ne v2, v5, :cond_2
+    invoke-virtual/range {v4 .. v10}, Lyjc;->f(JJLfr8;Z)J
 
     goto :goto_0
 
-    :cond_2
-    return v6
+    :cond_0
+    return-void
 
-    :cond_3
-    :goto_0
-    invoke-virtual/range {p3 .. p3}, Lija;->a()I
+    :pswitch_2
+    check-cast v3, Lt4b;
 
-    move-result v12
+    move-object v6, v2
 
-    invoke-interface {v4, v1, v12, v6}, Lbpe;->b(Lija;II)V
+    check-cast v6, Ljava/lang/String;
 
-    iget-object v0, v0, Lu2;->b:Ljava/lang/Object;
+    iget-object v0, v3, Lt4b;->c:Ljava/lang/Object;
 
-    move-object v8, v0
+    check-cast v0, Lb75;
 
-    check-cast v8, Lbpe;
+    sget v1, Lpaf;->a:I
 
-    const/4 v11, 0x1
+    iget-object v0, v0, Lb75;->a:Lh75;
 
-    const/4 v13, 0x0
+    iget-object v0, v0, Lh75;->z0:Lv74;
 
-    const/4 v14, 0x0
+    invoke-virtual {v0}, Lv74;->H()Lzc;
 
-    move-wide/from16 v9, p1
+    move-result-object v5
 
-    invoke-interface/range {v8 .. v14}, Lbpe;->a(JIIILzoe;)V
+    new-instance v4, Le74;
 
-    return v5
+    const/4 v11, 0x0
+
+    iget-wide v7, p0, Li60;->c:J
+
+    iget-wide v9, p0, Li60;->b:J
+
+    invoke-direct/range {v4 .. v11}, Le74;-><init>(Lzc;Ljava/lang/String;JJI)V
+
+    const/16 p0, 0x3f0
+
+    invoke-virtual {v0, v5, p0, v4}, Lv74;->I(Lzc;ILkm7;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

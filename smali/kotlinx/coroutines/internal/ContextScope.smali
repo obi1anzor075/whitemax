@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lou3;
+.implements Lox3;
 
 
 # annotations
@@ -13,18 +13,18 @@
     }
     d2 = {
         "Lkotlinx/coroutines/internal/ContextScope;",
-        "Lou3;",
-        "Lhu3;",
+        "Lox3;",
+        "Lhx3;",
         "context",
         "<init>",
-        "(Lhu3;)V",
+        "(Lhx3;)V",
         "",
         "toString",
         "()Ljava/lang/String;",
         "coroutineContext",
-        "Lhu3;",
+        "Lhx3;",
         "getCoroutineContext",
-        "()Lhu3;",
+        "()Lhx3;",
         "kotlinx-coroutines-core"
     }
     k = 0x1
@@ -33,30 +33,31 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
-.field private final coroutineContext:Lhu3;
+.field private final coroutineContext:Lhx3;
 
 
 # direct methods
-.method public constructor <init>(Lhu3;)V
+.method public constructor <init>(Lhx3;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lkotlinx/coroutines/internal/ContextScope;->coroutineContext:Lhu3;
+    iput-object p1, p0, Lkotlinx/coroutines/internal/ContextScope;->coroutineContext:Lhx3;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getCoroutineContext()Lhu3;
+.method public getCoroutineContext()Lhx3;
     .locals 0
 
-    iget-object p0, p0, Lkotlinx/coroutines/internal/ContextScope;->coroutineContext:Lhu3;
+    iget-object p0, p0, Lkotlinx/coroutines/internal/ContextScope;->coroutineContext:Lhx3;
 
     return-object p0
 .end method
@@ -70,7 +71,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lkotlinx/coroutines/internal/ContextScope;->getCoroutineContext()Lhu3;
+    invoke-virtual {p0}, Lkotlinx/coroutines/internal/ContextScope;->getCoroutineContext()Lhx3;
 
     move-result-object p0
 

@@ -1,97 +1,167 @@
-.class public final Lmg3;
+.class public final synthetic Lmg3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lng3;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field public final a:Luj3;
+.field public final synthetic a:I
+
+.field public final synthetic b:Lru/ok/messages/views/dialogs/ConfirmationDialog;
 
 
 # direct methods
-.method public constructor <init>(Luj3;)V
+.method public synthetic constructor <init>(Lru/ok/messages/views/dialogs/ConfirmationDialog;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Lmg3;->a:I
 
-    iput-object p1, p0, Lmg3;->a:Luj3;
+    iput-object p1, p0, Lmg3;->b:Lru/ok/messages/views/dialogs/ConfirmationDialog;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+.method public final onClick(Landroid/content/DialogInterface;I)V
+    .locals 4
+
+    iget p1, p0, Lmg3;->a:I
+
+    packed-switch p1, :pswitch_data_0
+
+    iget-object p0, p0, Lmg3;->b:Lru/ok/messages/views/dialogs/ConfirmationDialog;
+
+    invoke-virtual {p0}, Lru/ok/messages/views/dialogs/ConfirmationDialog;->Z0()V
+
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lmg3;->b:Lru/ok/messages/views/dialogs/ConfirmationDialog;
+
+    iget-object p1, p0, Landroidx/fragment/app/a;->Z:Landroid/os/Bundle;
+
+    const-string p2, "oneme:share:data"
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1, p2}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->U()Landroidx/fragment/app/c;
+
+    move-result-object v0
+
+    new-instance v1, Ldna;
+
+    const-string v2, "POSITIVE"
+
+    sget-object v3, Log3;->a:Log3;
+
+    invoke-direct {v1, v2, v3}, Ldna;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    filled-new-array {v1}, [Ldna;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lp54;->d([Ldna;)Landroid/os/Bundle;
+
+    move-result-object v1
+
+    const-string v2, "ConfirmationDialog:request_key"
+
+    invoke-virtual {v0, v2, v1}, Landroidx/fragment/app/c;->e0(Ljava/lang/String;Landroid/os/Bundle;)V
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_0
+    invoke-virtual {p0, v0}, Landroidx/fragment/app/a;->X(Z)Landroidx/fragment/app/a;
 
-    return v0
+    move-result-object v1
 
-    :cond_0
-    instance-of v1, p1, Lmg3;
+    const/4 v2, -0x1
 
-    const/4 v2, 0x0
+    if-eqz v1, :cond_2
 
-    if-nez v1, :cond_1
+    instance-of v3, v1, Lng3;
 
-    return v2
+    if-eqz v3, :cond_1
+
+    check-cast v1, Lng3;
+
+    invoke-interface {v1, p1}, Lng3;->M(Landroid/os/Bundle;)V
+
+    goto :goto_1
 
     :cond_1
-    check-cast p1, Lmg3;
+    new-instance v3, Landroid/content/Intent;
 
-    iget-object p0, p0, Lmg3;->a:Luj3;
+    invoke-direct {v3}, Landroid/content/Intent;-><init>()V
 
-    iget-object p1, p1, Lmg3;->a:Luj3;
+    invoke-virtual {v3, p2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->Y()I
 
-    move-result p0
+    move-result p1
 
-    if-nez p0, :cond_2
+    invoke-virtual {v1, p1, v2, v3}, Landroidx/fragment/app/a;->h0(IILandroid/content/Intent;)V
 
-    return v2
+    goto :goto_1
 
     :cond_2
-    return v0
-.end method
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->Q()Landroidx/fragment/app/b;
 
-.method public final hashCode()I
-    .locals 0
+    move-result-object v1
 
-    iget-object p0, p0, Lmg3;->a:Luj3;
+    instance-of v3, v1, Lng3;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    if-eqz v3, :cond_3
 
-    move-result p0
+    check-cast v1, Lng3;
 
-    return p0
-.end method
+    invoke-interface {v1, p1}, Lng3;->M(Landroid/os/Bundle;)V
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+    goto :goto_1
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    :cond_3
+    instance-of v3, v1, Lp5;
 
-    const-string v1, "Info(info="
+    if-eqz v3, :cond_4
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    new-instance v3, Landroid/content/Intent;
 
-    iget-object p0, p0, Lmg3;->a:Luj3;
+    invoke-direct {v3}, Landroid/content/Intent;-><init>()V
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
 
-    const-string p0, ")"
+    check-cast v1, Lp5;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->Y()I
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result p1
 
-    move-result-object p0
+    invoke-virtual {v1, p1, v2, v3}, Lp5;->onActivityResult(IILandroid/content/Intent;)V
 
-    return-object p0
+    :cond_4
+    :goto_1
+    iput-boolean v0, p0, Lru/ok/messages/views/dialogs/ConfirmationDialog;->x1:Z
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

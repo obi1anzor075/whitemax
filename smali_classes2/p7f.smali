@@ -4,224 +4,232 @@
 
 
 # instance fields
-.field public final a:Z
+.field public final a:J
 
-.field public final b:Z
+.field public final b:Ljava/lang/String;
 
-.field public final c:Z
+.field public final c:Ljava/lang/String;
 
-.field public final d:Z
+.field public final d:J
 
-.field public final e:Z
+.field public final e:J
 
-.field public final f:Z
-
-.field public final g:Z
-
-.field public final h:Z
-
-.field public final i:Z
-
-.field public final j:J
-
-.field public final k:J
-
-.field public final l:J
-
-.field public final m:Lqjb;
-
-.field public final n:Lu2f;
-
-.field public final o:Ln10;
-
-.field public final p:Landroid/graphics/drawable/Drawable;
-
-.field public final q:Landroid/net/Uri;
-
-.field public final r:Z
-
-.field public final s:Z
-
-.field public final t:Z
+.field public final f:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lo7f;)V
-    .locals 2
+.method public constructor <init>(JJLjava/lang/String;JLjava/lang/String;Ljava/lang/String;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-boolean v0, p1, Lo7f;->a:Z
+    iput-wide p1, p0, Lp7f;->a:J
 
-    iput-boolean v0, p0, Lp7f;->a:Z
+    iput-object p5, p0, Lp7f;->b:Ljava/lang/String;
 
-    iget-boolean v0, p1, Lo7f;->b:Z
+    iput-object p8, p0, Lp7f;->c:Ljava/lang/String;
 
-    iput-boolean v0, p0, Lp7f;->b:Z
+    iput-wide p3, p0, Lp7f;->d:J
 
-    iget-boolean v0, p1, Lo7f;->c:Z
+    iput-wide p6, p0, Lp7f;->e:J
 
-    iput-boolean v0, p0, Lp7f;->c:Z
-
-    iget-boolean v0, p1, Lo7f;->d:Z
-
-    iput-boolean v0, p0, Lp7f;->d:Z
-
-    iget-boolean v0, p1, Lo7f;->e:Z
-
-    iput-boolean v0, p0, Lp7f;->e:Z
-
-    iget-boolean v0, p1, Lo7f;->f:Z
-
-    iput-boolean v0, p0, Lp7f;->f:Z
-
-    iget-boolean v0, p1, Lo7f;->g:Z
-
-    iput-boolean v0, p0, Lp7f;->g:Z
-
-    iget-boolean v0, p1, Lo7f;->h:Z
-
-    iput-boolean v0, p0, Lp7f;->h:Z
-
-    iget-boolean v0, p1, Lo7f;->i:Z
-
-    iput-boolean v0, p0, Lp7f;->i:Z
-
-    iget-wide v0, p1, Lo7f;->j:J
-
-    iput-wide v0, p0, Lp7f;->j:J
-
-    iget-wide v0, p1, Lo7f;->k:J
-
-    iput-wide v0, p0, Lp7f;->k:J
-
-    iget-wide v0, p1, Lo7f;->l:J
-
-    iput-wide v0, p0, Lp7f;->l:J
-
-    iget-object v0, p1, Lo7f;->m:Lqjb;
-
-    iput-object v0, p0, Lp7f;->m:Lqjb;
-
-    iget-object v0, p1, Lo7f;->n:Lu2f;
-
-    iput-object v0, p0, Lp7f;->n:Lu2f;
-
-    iget-object v0, p1, Lo7f;->o:Ln10;
-
-    iput-object v0, p0, Lp7f;->o:Ln10;
-
-    iget-object v0, p1, Lo7f;->p:Landroid/graphics/drawable/Drawable;
-
-    iput-object v0, p0, Lp7f;->p:Landroid/graphics/drawable/Drawable;
-
-    iget-object v0, p1, Lo7f;->q:Landroid/net/Uri;
-
-    iput-object v0, p0, Lp7f;->q:Landroid/net/Uri;
-
-    iget-boolean v0, p1, Lo7f;->r:Z
-
-    iput-boolean v0, p0, Lp7f;->r:Z
-
-    iget-boolean v0, p1, Lo7f;->s:Z
-
-    iput-boolean v0, p0, Lp7f;->s:Z
-
-    iget-boolean p1, p1, Lo7f;->t:Z
-
-    iput-boolean p1, p0, Lp7f;->t:Z
+    iput-object p9, p0, Lp7f;->f:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lo7f;
-    .locals 3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 7
 
-    new-instance v0, Lo7f;
+    const/4 v0, 0x1
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    if-ne p0, p1, :cond_0
 
-    iget-boolean v1, p0, Lp7f;->a:Z
+    return v0
 
-    iput-boolean v1, v0, Lo7f;->a:Z
+    :cond_0
+    instance-of v1, p1, Lp7f;
 
-    iget-boolean v1, p0, Lp7f;->b:Z
+    const/4 v2, 0x0
 
-    iput-boolean v1, v0, Lo7f;->b:Z
+    if-nez v1, :cond_1
 
-    iget-boolean v1, p0, Lp7f;->c:Z
+    return v2
 
-    iput-boolean v1, v0, Lo7f;->c:Z
+    :cond_1
+    check-cast p1, Lp7f;
 
-    iget-boolean v1, p0, Lp7f;->d:Z
+    iget-wide v3, p0, Lp7f;->a:J
 
-    iput-boolean v1, v0, Lo7f;->d:Z
+    iget-wide v5, p1, Lp7f;->a:J
 
-    iget-boolean v1, p0, Lp7f;->e:Z
+    cmp-long v1, v3, v5
 
-    iput-boolean v1, v0, Lo7f;->e:Z
+    if-eqz v1, :cond_2
 
-    iget-boolean v1, p0, Lp7f;->f:Z
+    return v2
 
-    iput-boolean v1, v0, Lo7f;->f:Z
+    :cond_2
+    iget-object v1, p0, Lp7f;->b:Ljava/lang/String;
 
-    iget-boolean v1, p0, Lp7f;->g:Z
+    iget-object v3, p1, Lp7f;->b:Ljava/lang/String;
 
-    iput-boolean v1, v0, Lo7f;->g:Z
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-boolean v1, p0, Lp7f;->h:Z
+    move-result v1
 
-    iput-boolean v1, v0, Lo7f;->h:Z
+    if-nez v1, :cond_3
 
-    iget-boolean v1, p0, Lp7f;->i:Z
+    return v2
 
-    iput-boolean v1, v0, Lo7f;->i:Z
+    :cond_3
+    iget-object v1, p0, Lp7f;->c:Ljava/lang/String;
 
-    iget-wide v1, p0, Lp7f;->j:J
+    iget-object v3, p1, Lp7f;->c:Ljava/lang/String;
 
-    iput-wide v1, v0, Lo7f;->j:J
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-wide v1, p0, Lp7f;->k:J
+    move-result v1
 
-    iput-wide v1, v0, Lo7f;->k:J
+    if-nez v1, :cond_4
 
-    iget-wide v1, p0, Lp7f;->l:J
+    return v2
 
-    iput-wide v1, v0, Lo7f;->l:J
+    :cond_4
+    iget-wide v3, p0, Lp7f;->d:J
 
-    iget-object v1, p0, Lp7f;->m:Lqjb;
+    iget-wide v5, p1, Lp7f;->d:J
 
-    iput-object v1, v0, Lo7f;->m:Lqjb;
+    cmp-long v1, v3, v5
 
-    iget-object v1, p0, Lp7f;->n:Lu2f;
+    if-eqz v1, :cond_5
 
-    iput-object v1, v0, Lo7f;->n:Lu2f;
+    return v2
 
-    iget-object v1, p0, Lp7f;->o:Ln10;
+    :cond_5
+    iget-wide v3, p0, Lp7f;->e:J
 
-    iput-object v1, v0, Lo7f;->o:Ln10;
+    iget-wide v5, p1, Lp7f;->e:J
 
-    iget-object v1, p0, Lp7f;->p:Landroid/graphics/drawable/Drawable;
+    cmp-long v1, v3, v5
 
-    iput-object v1, v0, Lo7f;->p:Landroid/graphics/drawable/Drawable;
+    if-eqz v1, :cond_6
 
-    iget-object v1, p0, Lp7f;->q:Landroid/net/Uri;
+    return v2
 
-    iput-object v1, v0, Lo7f;->q:Landroid/net/Uri;
+    :cond_6
+    iget-object p0, p0, Lp7f;->f:Ljava/lang/String;
 
-    iget-boolean v1, p0, Lp7f;->r:Z
+    iget-object p1, p1, Lp7f;->f:Ljava/lang/String;
 
-    iput-boolean v1, v0, Lo7f;->r:Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-boolean v1, p0, Lp7f;->s:Z
+    move-result p0
 
-    iput-boolean v1, v0, Lo7f;->s:Z
+    if-nez p0, :cond_7
 
-    iget-boolean p0, p0, Lp7f;->t:Z
+    return v2
 
-    iput-boolean p0, v0, Lo7f;->t:Z
+    :cond_7
+    return v0
+.end method
 
-    return-object v0
+.method public final hashCode()I
+    .locals 4
+
+    iget-wide v0, p0, Lp7f;->a:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget-object v2, p0, Lp7f;->b:Ljava/lang/String;
+
+    invoke-static {v0, v1, v2}, Lv04;->d(IILjava/lang/String;)I
+
+    move-result v0
+
+    iget-object v2, p0, Lp7f;->c:Ljava/lang/String;
+
+    invoke-static {v0, v1, v2}, Lv04;->d(IILjava/lang/String;)I
+
+    move-result v0
+
+    iget-wide v2, p0, Lp7f;->d:J
+
+    invoke-static {v0, v1, v2, v3}, Lzge;->m(IIJ)I
+
+    move-result v0
+
+    iget-wide v2, p0, Lp7f;->e:J
+
+    invoke-static {v0, v1, v2, v3}, Lzge;->m(IIJ)I
+
+    move-result v0
+
+    iget-object p0, p0, Lp7f;->f:Ljava/lang/String;
+
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 5
+
+    const-string v0, "Input(requestId="
+
+    const-string v1, ", externalUrl="
+
+    iget-wide v2, p0, Lp7f;->a:J
+
+    iget-object v4, p0, Lp7f;->b:Ljava/lang/String;
+
+    invoke-static {v0, v2, v3, v1, v4}, Lp3a;->k(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", attachLocalId="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lp7f;->c:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", messageId="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lp7f;->d:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", chatId="
+
+    const-string v2, ", stickerId="
+
+    iget-wide v3, p0, Lp7f;->e:J
+
+    invoke-static {v3, v4, v1, v2, v0}, Lzt1;->q(JLjava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)V
+
+    const-string v1, ")"
+
+    iget-object p0, p0, Lp7f;->f:Ljava/lang/String;
+
+    invoke-static {v0, p0, v1}, Lm26;->j(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

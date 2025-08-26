@@ -1,99 +1,53 @@
 .class public final Lej4;
-.super Lt37;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic b:I
+.field public final a:Ljava/lang/String;
 
-.field public final c:Ljava/lang/Object;
+.field public final b:Ljava/lang/String;
+
+.field public final c:J
+
+.field public d:J
+
+.field public e:I
+
+.field public final f:I
+
+.field public final g:I
+
+.field public h:[I
+
+.field public final i:Ljava/util/TreeMap;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;JIII[ILjava/util/TreeMap;)V
     .locals 0
 
-    iput p1, p0, Lej4;->b:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;-><init>()V
+    iput-object p1, p0, Lej4;->a:Ljava/lang/String;
 
-    iput-object p2, p0, Lej4;->c:Ljava/lang/Object;
+    iput-object p2, p0, Lej4;->b:Ljava/lang/String;
 
-    return-void
-.end method
+    iput-wide p3, p0, Lej4;->c:J
 
+    const-wide/16 p1, 0x0
 
-# virtual methods
-.method public final c()Z
-    .locals 0
+    iput-wide p1, p0, Lej4;->d:J
 
-    iget p0, p0, Lej4;->b:I
+    iput p5, p0, Lej4;->e:I
 
-    packed-switch p0, :pswitch_data_0
+    iput p6, p0, Lej4;->f:I
 
-    const/4 p0, 0x0
+    iput p7, p0, Lej4;->g:I
 
-    return p0
+    iput-object p8, p0, Lej4;->h:[I
 
-    :pswitch_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :pswitch_1
-    const/4 p0, 0x0
-
-    return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final d(Ljava/lang/Throwable;)V
-    .locals 1
-
-    iget v0, p0, Lej4;->b:I
-
-    packed-switch v0, :pswitch_data_0
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    iget-object p0, p0, Lej4;->c:Ljava/lang/Object;
-
-    check-cast p0, Lkotlin/coroutines/Continuation;
-
-    invoke-interface {p0, p1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
+    iput-object p9, p0, Lej4;->i:Ljava/util/TreeMap;
 
     return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lej4;->c:Ljava/lang/Object;
-
-    check-cast p0, Lu16;
-
-    invoke-interface {p0, p1}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-void
-
-    :pswitch_1
-    iget-object p0, p0, Lej4;->c:Ljava/lang/Object;
-
-    check-cast p0, Laj4;
-
-    invoke-interface {p0}, Laj4;->dispose()V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

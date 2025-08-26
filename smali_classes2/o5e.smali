@@ -1,53 +1,50 @@
-.class public final Lo5e;
-.super Ler3;
+.class public final synthetic Lo5e;
+.super Lq8;
 .source "SourceFile"
 
+# interfaces
+.implements Ln66;
 
-# instance fields
-.field public X:Lfwe;
 
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lh6e;
-
-.field public o:Lh6e;
-
-.field public w0:I
+# static fields
+.field public static final o0:Lo5e;
 
 
 # direct methods
-.method public constructor <init>(Lh6e;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
-    iput-object p1, p0, Lo5e;->Z:Lh6e;
+    new-instance v0, Lo5e;
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    const-string v1, "<init>(Ljava/lang/Object;Ljava/lang/Object;)V"
+
+    const/4 v2, 0x4
+
+    const/4 v3, 0x3
+
+    const-class v4, Ldna;
+
+    invoke-direct {v0, v3, v4, v1, v2}, Lq8;-><init>(ILjava/lang/Class;Ljava/lang/String;I)V
+
+    sput-object v0, Lo5e;->o0:Lo5e;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iput-object p1, p0, Lo5e;->Y:Ljava/lang/Object;
+    check-cast p1, Ljava/util/List;
 
-    iget p1, p0, Lo5e;->w0:I
+    check-cast p2, Lo4e;
 
-    const/high16 v0, -0x80000000
+    check-cast p3, Lkotlin/coroutines/Continuation;
 
-    or-int/2addr p1, v0
+    new-instance p0, Ldna;
 
-    iput p1, p0, Lo5e;->w0:I
-
-    iget-object p1, p0, Lo5e;->Z:Lh6e;
-
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0, p0}, Lh6e;->a(Lh6e;Lfwe;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
+    invoke-direct {p0, p1, p2}, Ldna;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-object p0
 .end method

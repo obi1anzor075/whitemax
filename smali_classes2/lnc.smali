@@ -1,29 +1,31 @@
-.class public interface abstract Llnc;
+.class public abstract Llnc;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a()I
-.end method
+# static fields
+.field public static final a:I
 
-.method public abstract b(Landroid/content/ContentResolver;Landroid/net/Uri;)V
-.end method
+.field public static final b:I
 
-.method public abstract c()Landroid/net/Uri;
-.end method
+.field public static final c:I
 
-.method public abstract d()Ljava/lang/String;
-.end method
 
-.method public abstract e()Ljava/lang/Integer;
-.end method
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
 
-.method public abstract f(Ljava/io/File;)V
-.end method
+    sget v0, Luvb;->cancel:I
 
-.method public abstract getHeight()Ljava/lang/Integer;
-.end method
+    sput v0, Llnc;->a:I
 
-.method public abstract getWidth()Ljava/lang/Integer;
+    sget v0, Luvb;->presense_accent:I
+
+    sput v0, Llnc;->b:I
+
+    sget v0, Luvb;->presense_bg:I
+
+    sput v0, Llnc;->c:I
+
+    return-void
 .end method

@@ -39,7 +39,7 @@
         "()F",
         "()I",
         "size",
-        "Ljue;",
+        "Le5f;",
         "get",
         "(Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$FrameSize;)V",
         "I",
@@ -51,6 +51,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -79,7 +80,7 @@
 
     move-object v0, p0
 
-    invoke-direct/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$FrameSize;-><init>(IIIILx54;)V
+    invoke-direct/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$FrameSize;-><init>(IIIILl94;)V
 
     return-void
 .end method
@@ -102,7 +103,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(IIIILx54;)V
+.method public synthetic constructor <init>(IIIILl94;)V
     .locals 1
 
     and-int/lit8 p5, p4, 0x1
@@ -154,7 +155,7 @@
     :cond_0
     const/4 p0, 0x0
 
-    goto :goto_2
+    return p0
 
     :cond_1
     :goto_0
@@ -162,10 +163,7 @@
 
     if-eqz p4, :cond_2
 
-    :goto_1
-    move p0, v0
-
-    goto :goto_2
+    return v0
 
     :cond_2
     iput p1, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$FrameSize;->rotatedFrameWidth:I
@@ -174,10 +172,7 @@
 
     iput p3, p0, Lru/ok/android/externcalls/sdk/ui/TextureViewRenderer$FrameSize;->frameRotation:I
 
-    goto :goto_1
-
-    :goto_2
-    return p0
+    return v0
 .end method
 
 

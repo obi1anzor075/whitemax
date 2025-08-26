@@ -1,102 +1,213 @@
 .class public final Lh4c;
-.super Ll5e;
+.super Landroid/transition/Visibility;
 .source "SourceFile"
 
-# interfaces
-.implements Li26;
+
+# static fields
+.field public static final b:Landroid/view/animation/PathInterpolator;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
+.field public final a:Ls3c;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;)V
+.method static constructor <clinit>()V
+    .locals 5
+
+    new-instance v0, Landroid/view/animation/PathInterpolator;
+
+    const v1, 0x3f28f5c3    # 0.66f
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    const v3, 0x3f666666    # 0.9f
+
+    const/4 v4, 0x0
+
+    invoke-direct {v0, v3, v4, v1, v2}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
+
+    sput-object v0, Lh4c;->b:Landroid/view/animation/PathInterpolator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ls3c;)V
     .locals 0
 
-    iput-object p2, p0, Lh4c;->Y:Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
+    invoke-direct {p0}, Landroid/transition/Visibility;-><init>()V
 
-    const/4 p2, 0x2
-
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lh4c;->a:Ls3c;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final a(Landroid/view/View;Z)Landroid/animation/AnimatorSet;
+    .locals 11
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    new-instance v0, Landroid/animation/AnimatorSet;
 
-    invoke-virtual {p0, p1, p2}, Lh4c;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
 
-    move-result-object p0
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    check-cast p0, Lh4c;
+    const/4 v2, 0x0
 
-    sget-object p1, Ljue;->a:Ljue;
+    if-eqz p2, :cond_0
 
-    invoke-virtual {p0, p1}, Lh4c;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    move v3, v2
 
-    return-object p1
-.end method
+    goto :goto_0
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
+    :cond_0
+    move v3, v1
 
-    new-instance v0, Lh4c;
+    :goto_0
+    if-eqz p2, :cond_1
 
-    iget-object p0, p0, Lh4c;->Y:Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
+    goto :goto_1
 
-    invoke-direct {v0, p2, p0}, Lh4c;-><init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;)V
+    :cond_1
+    move v1, v2
 
-    iput-object p1, v0, Lh4c;->X:Ljava/lang/Object;
+    :goto_1
+    const/4 v2, 0x2
+
+    new-array v4, v2, [F
+
+    fill-array-data v4, :array_0
+
+    invoke-static {v4}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
+
+    move-result-object v4
+
+    const-wide/16 v5, 0x64
+
+    invoke-virtual {v4, v5, v6}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+
+    move-result-object v4
+
+    new-instance v7, Le4c;
+
+    sget-object v8, Lsud;->r:Lvt4;
+
+    invoke-direct {v7, p1, v8, v1}, Le4c;-><init>(Landroid/view/View;Lvt4;F)V
+
+    invoke-virtual {p0, v7}, Landroid/transition/Transition;->addListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
+
+    invoke-virtual {p1, v3}, Landroid/view/View;->setScaleX(F)V
+
+    new-array v7, v2, [F
+
+    fill-array-data v7, :array_1
+
+    invoke-static {v7}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v5, v6}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+
+    move-result-object v7
+
+    new-instance v8, Le4c;
+
+    sget-object v9, Lsud;->s:Lvt4;
+
+    invoke-direct {v8, p1, v9, v1}, Le4c;-><init>(Landroid/view/View;Lvt4;F)V
+
+    invoke-virtual {p0, v8}, Landroid/transition/Transition;->addListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
+
+    invoke-virtual {p1, v3}, Landroid/view/View;->setScaleY(F)V
+
+    new-array v8, v2, [F
+
+    const/4 v9, 0x0
+
+    aput v3, v8, v9
+
+    const/4 v10, 0x1
+
+    aput v1, v8, v10
+
+    invoke-static {v8}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v5, v6}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+
+    sget-object v5, Lh4c;->b:Landroid/view/animation/PathInterpolator;
+
+    invoke-virtual {v1, v5}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    new-instance v5, Lg4c;
+
+    invoke-direct {v5, p1, v3}, Lg4c;-><init>(Landroid/view/View;F)V
+
+    invoke-virtual {p0, v5}, Landroid/transition/Transition;->addListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
+
+    new-instance v3, Lsf;
+
+    const/4 v5, 0x5
+
+    invoke-direct {v3, p1, v5}, Lsf;-><init>(Landroid/view/View;I)V
+
+    invoke-virtual {v1, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+
+    const/4 v3, 0x3
+
+    new-array v3, v3, [Landroid/animation/Animator;
+
+    aput-object v4, v3, v9
+
+    aput-object v7, v3, v10
+
+    aput-object v1, v3, v2
+
+    invoke-virtual {v0, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
+
+    new-instance v1, Lf4c;
+
+    invoke-direct {v1, p2, p0, p1}, Lf4c;-><init>(ZLh4c;Landroid/view/View;)V
+
+    invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     return-object v0
+
+    :array_0
+    .array-data 4
+        0x0
+        0x3f800000    # 1.0f
+    .end array-data
+
+    :array_1
+    .array-data 4
+        0x0
+        0x3f800000    # 1.0f
+    .end array-data
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final onAppear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
+    .locals 0
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    const/4 p1, 0x1
 
-    iget-object p1, p0, Lh4c;->X:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/Number;
-
-    invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
-
-    move-result-wide v0
-
-    sget-object p1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->m1:[Lk77;
-
-    iget-object p0, p0, Lh4c;->Y:Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
-
-    invoke-virtual {p0}, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->A0()Landroid/widget/TextView;
-
-    move-result-object p1
-
-    invoke-static {v0, v1}, Ld8;->b(J)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    invoke-virtual {p0}, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->x0()Landroid/widget/TextView;
+    invoke-virtual {p0, p2, p1}, Lh4c;->a(Landroid/view/View;Z)Landroid/animation/AnimatorSet;
 
     move-result-object p0
 
-    invoke-static {v0, v1}, Ld8;->b(J)Ljava/lang/String;
+    return-object p0
+.end method
 
-    move-result-object p1
+.method public final onDisappear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
+    .locals 0
 
-    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    const/4 p1, 0x0
 
-    sget-object p0, Ljue;->a:Ljue;
+    invoke-virtual {p0, p2, p1}, Lh4c;->a(Landroid/view/View;Z)Landroid/animation/AnimatorSet;
+
+    move-result-object p0
 
     return-object p0
 .end method

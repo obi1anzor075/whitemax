@@ -1,67 +1,61 @@
 .class public final Lada;
-.super Ler3;
+.super Lcda;
 .source "SourceFile"
 
 
-# instance fields
-.field public X:Ljava/io/IOException;
-
-.field public Y:Lvca;
-
-.field public Z:Ljava/io/File;
-
-.field public o:Ldda;
-
-.field public w0:Ljava/util/Iterator;
-
-.field public synthetic x0:Ljava/lang/Object;
-
-.field public final synthetic y0:Ldda;
-
-.field public z0:I
+# static fields
+.field public static final a:Lada;
 
 
 # direct methods
-.method public constructor <init>(Ldda;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lada;->y0:Ldda;
+    new-instance v0, Lada;
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lada;->a:Lada;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    iput-object p1, p0, Lada;->x0:Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    iget p1, p0, Lada;->z0:I
+    if-ne p0, p1, :cond_0
 
-    const/high16 v0, -0x80000000
+    return v0
 
-    or-int/2addr p1, v0
+    :cond_0
+    instance-of p0, p1, Lada;
 
-    iput p1, p0, Lada;->z0:I
+    if-nez p0, :cond_1
 
-    iget-object v0, p0, Lada;->y0:Ldda;
+    const/4 p0, 0x0
 
-    const/4 v1, 0x0
+    return p0
 
-    const/4 v2, 0x0
+    :cond_1
+    return v0
+.end method
 
-    const/4 v3, 0x0
+.method public final hashCode()I
+    .locals 0
 
-    const/4 v4, 0x0
+    const p0, 0xb05fa03
 
-    move-object v5, p0
+    return p0
+.end method
 
-    invoke-virtual/range {v0 .. v5}, Ldda;->h(Ljava/io/IOException;Llac;Lvca;Ljava/io/File;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    move-result-object p0
+    const-string p0, "Small"
 
     return-object p0
 .end method

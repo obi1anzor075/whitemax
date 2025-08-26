@@ -1,85 +1,191 @@
-.class public final synthetic Lxo5;
+.class public final Lxo5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lyq1;
+.implements Lzm5;
 
 
 # instance fields
-.field public final synthetic a:Lbp5;
+.field public final synthetic a:I
 
-.field public final synthetic b:I
+.field public final synthetic b:Lzm5;
 
-.field public final synthetic c:J
+.field public final synthetic c:I
 
 
 # direct methods
-.method public synthetic constructor <init>(IJLbp5;)V
+.method public synthetic constructor <init>(Lzm5;II)V
     .locals 0
 
+    iput p3, p0, Lxo5;->a:I
+
+    iput-object p1, p0, Lxo5;->b:Lzm5;
+
+    iput p2, p0, Lxo5;->c:I
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p4, p0, Lxo5;->a:Lbp5;
-
-    iput p1, p0, Lxo5;->b:I
-
-    iput-wide p2, p0, Lxo5;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/hardware/camera2/TotalCaptureResult;)Z
-    .locals 3
+.method public final d(Lbn5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 5
 
-    iget-object v0, p0, Lxo5;->a:Lbp5;
+    iget v0, p0, Lxo5;->a:I
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    packed-switch v0, :pswitch_data_0
 
-    sget-object v1, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureResult$Key;
+    new-instance v0, Ln53;
 
-    invoke-virtual {p1, v1}, Landroid/hardware/camera2/CaptureResult;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    iget v1, p0, Lxo5;->c:I
 
-    move-result-object v1
+    const/4 v2, 0x1
 
-    check-cast v1, Ljava/lang/Integer;
+    invoke-direct {v0, v1, v2, p1}, Ln53;-><init>(IILjava/lang/Object;)V
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    iget-object p0, p0, Lxo5;->b:Lzm5;
 
-    move-result v1
+    invoke-interface {p0, v0, p2}, Lzm5;->d(Lbn5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    iget v2, p0, Lxo5;->b:I
+    move-result-object p0
 
-    if-ne v1, v2, :cond_1
+    sget-object p1, Lpx3;->a:Lpx3;
 
-    iget-wide v1, p0, Lxo5;->c:J
-
-    invoke-static {p1, v1, v2}, Lzq1;->x(Landroid/hardware/camera2/TotalCaptureResult;J)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    iget-object p0, v0, Lbp5;->u:Lsn1;
-
-    if-eqz p0, :cond_0
-
-    const/4 p1, 0x0
-
-    invoke-virtual {p0, p1}, Lsn1;->b(Ljava/lang/Object;)Z
-
-    iput-object p1, v0, Lbp5;->u:Lsn1;
-
-    :cond_0
-    const/4 p0, 0x1
+    if-ne p0, p1, :cond_0
 
     goto :goto_0
 
-    :cond_1
-    const/4 p0, 0x0
+    :cond_0
+    sget-object p0, Le5f;->a:Le5f;
 
     :goto_0
-    return p0
+    return-object p0
+
+    :pswitch_0
+    instance-of v0, p2, Lwo5;
+
+    if-eqz v0, :cond_1
+
+    move-object v0, p2
+
+    check-cast v0, Lwo5;
+
+    iget v1, v0, Lwo5;->X:I
+
+    const/high16 v2, -0x80000000
+
+    and-int v3, v1, v2
+
+    if-eqz v3, :cond_1
+
+    sub-int/2addr v1, v2
+
+    iput v1, v0, Lwo5;->X:I
+
+    goto :goto_1
+
+    :cond_1
+    new-instance v0, Lwo5;
+
+    invoke-direct {v0, p0, p2}, Lwo5;-><init>(Lxo5;Lkotlin/coroutines/Continuation;)V
+
+    :goto_1
+    iget-object p2, v0, Lwo5;->o:Ljava/lang/Object;
+
+    iget v1, v0, Lwo5;->X:I
+
+    const/4 v2, 0x1
+
+    if-eqz v1, :cond_3
+
+    if-ne v1, v2, :cond_2
+
+    iget-object p0, v0, Lwo5;->Z:Ljava/lang/Object;
+
+    :try_start_0
+    invoke-static {p2}, Lsgg;->Z(Ljava/lang/Object;)V
+    :try_end_0
+    .catch Lkotlinx/coroutines/flow/internal/AbortFlowException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_3
+
+    :catch_0
+    move-exception p1
+
+    goto :goto_2
+
+    :cond_2
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_3
+    invoke-static {p2}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    new-instance p2, Ljava/lang/Object;
+
+    invoke-direct {p2}, Ljava/lang/Object;-><init>()V
+
+    new-instance v1, Licc;
+
+    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+
+    :try_start_1
+    iget-object v3, p0, Lxo5;->b:Lzm5;
+
+    new-instance v4, Lpl2;
+
+    iget p0, p0, Lxo5;->c:I
+
+    invoke-direct {v4, v1, p0, p1, p2}, Lpl2;-><init>(Licc;ILbn5;Ljava/lang/Object;)V
+
+    iput-object p2, v0, Lwo5;->Z:Ljava/lang/Object;
+
+    iput v2, v0, Lwo5;->X:I
+
+    invoke-interface {v3, v4, v0}, Lzm5;->d(Lbn5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+    :try_end_1
+    .catch Lkotlinx/coroutines/flow/internal/AbortFlowException; {:try_start_1 .. :try_end_1} :catch_1
+
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_4
+
+    goto :goto_4
+
+    :catch_1
+    move-exception p1
+
+    move-object p0, p2
+
+    :goto_2
+    iget-object p2, p1, Lkotlinx/coroutines/flow/internal/AbortFlowException;->a:Ljava/lang/Object;
+
+    if-ne p2, p0, :cond_5
+
+    :cond_4
+    :goto_3
+    sget-object p1, Le5f;->a:Le5f;
+
+    :goto_4
+    return-object p1
+
+    :cond_5
+    throw p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

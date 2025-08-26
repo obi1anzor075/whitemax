@@ -1,172 +1,72 @@
 .class public final Lnm9;
-.super Llbe;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lae1;
 
 
 # instance fields
-.field public X:J
-
-.field public c:Lj22;
-
-.field public o:J
+.field public final a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
 
 # direct methods
-.method public constructor <init>(Lws8;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    invoke-direct {p0, p1}, Llbe;-><init>(Lws8;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
+
+    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
+
+    iput-object v0, p0, Lnm9;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Lws8;Ljava/lang/String;)V
-    .locals 4
+.method public final onCallParticipantNetworkStatusChanged(Ljava/util/List;)V
+    .locals 1
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-object v0, p1
 
-    const-wide/16 v0, 0x0
+    check-cast v0, Ljava/util/ArrayList;
 
-    const/4 v2, -0x1
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
-    invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
+    move-result v0
 
-    move-result v3
+    if-eqz v0, :cond_0
 
-    sparse-switch v3, :sswitch_data_0
-
-    goto :goto_0
-
-    :sswitch_0
-    const-string v3, "chat"
-
-    invoke-virtual {p2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_0
-
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
-    const/4 v2, 0x2
+    iget-object p0, p0, Lnm9;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
-    goto :goto_0
+    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
 
-    :sswitch_1
-    const-string v3, "endTime"
+    move-result-object p0
 
-    invoke-virtual {p2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result p2
+    move-result v0
 
-    if-nez p2, :cond_1
+    if-eqz v0, :cond_1
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lae1;
+
+    invoke-interface {v0, p1}, Lae1;->onCallParticipantNetworkStatusChanged(Ljava/util/List;)V
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x1
-
-    goto :goto_0
-
-    :sswitch_2
-    const-string v3, "startTime"
-
-    invoke-virtual {p2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    const/4 v2, 0x0
-
-    :goto_0
-    packed-switch v2, :pswitch_data_0
-
-    invoke-virtual {p1}, Lws8;->z()V
-
-    goto :goto_1
-
-    :pswitch_0
-    invoke-static {p1}, Lj22;->a(Lws8;)Lj22;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lnm9;->c:Lj22;
-
-    goto :goto_1
-
-    :pswitch_1
-    invoke-static {p1, v0, v1}, Ljjd;->J(Lws8;J)J
-
-    move-result-wide p1
-
-    iput-wide p1, p0, Lnm9;->X:J
-
-    goto :goto_1
-
-    :pswitch_2
-    invoke-static {p1, v0, v1}, Ljjd;->J(Lws8;J)J
-
-    move-result-wide p1
-
-    iput-wide p1, p0, Lnm9;->o:J
-
     :goto_1
     return-void
-
-    :sswitch_data_0
-    .sparse-switch
-        -0x7eea75b1 -> :sswitch_2
-        -0x5fcc95b8 -> :sswitch_1
-        0x2e9358 -> :sswitch_0
-    .end sparse-switch
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 6
-
-    iget-wide v0, p0, Lnm9;->o:J
-
-    iget-wide v2, p0, Lnm9;->X:J
-
-    iget-object p0, p0, Lnm9;->c:Lj22;
-
-    const-string v4, "{startTime="
-
-    const-string v5, ", endTime="
-
-    invoke-static {v0, v1, v4, v5}, Lhr1;->k(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", chat="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, "}"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

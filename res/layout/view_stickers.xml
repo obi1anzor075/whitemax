@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.appcompat.widget.AppCompatImageView android:id="@id/view_stickers__iv_bottom_shadow" android:background="@drawable/bottom_shadow" android:layout_width="fill_parent" android:layout_height="@dimen/stickers_puller_shadow_height_chat" />
-    <androidx.appcompat.widget.AppCompatImageView android:id="@id/view_stickers__iv_puller" android:layout_width="fill_parent" android:layout_height="@dimen/stickers_puller_height_chat" android:src="@drawable/ic_curtain_arrow_close_32" android:scaleType="center" />
-    <com.google.android.material.tabs.TabLayout android:layout_gravity="top" android:id="@id/view_stickers__tabs" android:layout_width="fill_parent" android:layout_height="48.0dip" app:tabMinWidth="20.0dip" app:tabMode="scrollable" app:tabPaddingEnd="20.0dip" app:tabPaddingStart="20.0dip" app:tabTextAppearance="@style/TabText" />
-    <androidx.appcompat.widget.AppCompatImageView android:id="@id/view_stickers__tabs_shadow" android:background="@drawable/bar_shadow" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <androidx.viewpager2.widget.ViewPager2 android:id="@id/view_stickers__pager" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-</merge>

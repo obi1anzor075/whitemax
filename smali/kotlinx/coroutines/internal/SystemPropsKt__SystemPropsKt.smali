@@ -68,11 +68,10 @@
     :try_end_0
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-object p0
 
     :catch_0
     const/4 p0, 0x0
 
-    :goto_0
     return-object p0
 .end method

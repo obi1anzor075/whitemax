@@ -1,72 +1,51 @@
-.class public final Lr27;
+.class public abstract synthetic Lr27;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Iterable;
 
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Ljava/lang/Iterable;
-
-.field public final synthetic c:Ljava/lang/Object;
+# static fields
+.field public static final synthetic $EnumSwitchMapping$0:[I
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Iterable;Ljava/lang/Object;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
-    iput p3, p0, Lr27;->a:I
+    const/4 v0, 0x3
 
-    iput-object p1, p0, Lr27;->b:Ljava/lang/Iterable;
-
-    iput-object p2, p0, Lr27;->c:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final iterator()Ljava/util/Iterator;
-    .locals 2
-
-    iget v0, p0, Lr27;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    new-instance v0, Ls27;
-
-    iget-object v1, p0, Lr27;->b:Ljava/lang/Iterable;
-
-    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-static {v0}, Lzt1;->v(I)[I
 
     move-result-object v1
 
-    invoke-direct {v0, p0, v1}, Ls27;-><init>(Lr27;Ljava/util/Iterator;)V
+    array-length v1, v1
 
-    return-object v0
+    new-array v1, v1, [I
 
-    :pswitch_0
-    iget-object v0, p0, Lr27;->b:Ljava/lang/Iterable;
+    const/4 v2, 0x1
 
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    const/4 v3, 0x0
 
-    move-result-object v0
+    :try_start_0
+    aput v2, v1, v3
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    new-instance v1, Lq27;
+    :catch_0
+    const/4 v3, 0x2
 
-    invoke-direct {v1, p0, v0}, Lq27;-><init>(Lr27;Ljava/util/Iterator;)V
+    :try_start_1
+    aput v3, v1, v3
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    return-object v1
+    :catch_1
+    :try_start_2
+    aput v0, v1, v2
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    nop
+    :catch_2
+    sput-object v1, Lr27;->$EnumSwitchMapping$0:[I
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

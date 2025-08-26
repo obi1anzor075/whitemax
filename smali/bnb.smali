@@ -1,55 +1,59 @@
-.class public abstract Lbnb;
-.super Ljava/lang/Object;
+.class public final Lbnb;
+.super Ljava/util/concurrent/atomic/AtomicBoolean;
 .source "SourceFile"
 
+# interfaces
+.implements Lam4;
 
-# static fields
-.field public static ic_call_16:I = 0x7f080400
 
-.field public static ic_call_22:I = 0x7f080401
+# instance fields
+.field public final a:La0a;
 
-.field public static ic_call_24:I = 0x7f080402
+.field public final b:Lcnb;
 
-.field public static ic_call_contact_20:I = 0x7f080409
 
-.field public static ic_call_link_preview_36:I = 0x7f080413
+# direct methods
+.method public constructor <init>(La0a;Lcnb;)V
+    .locals 0
 
-.field public static ic_checked_22:I = 0x7f08043d
+    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
 
-.field public static ic_copy_20:I = 0x7f08045d
+    iput-object p1, p0, Lbnb;->a:La0a;
 
-.field public static ic_copy_28:I = 0x7f080460
+    iput-object p2, p0, Lbnb;->b:Lcnb;
 
-.field public static ic_delete_22:I = 0x7f08046f
+    return-void
+.end method
 
-.field public static ic_edit_22:I = 0x7f080489
 
-.field public static ic_incoming_audio_call_13:I = 0x7f0804f1
+# virtual methods
+.method public final f()V
+    .locals 2
 
-.field public static ic_incoming_video_call_15:I = 0x7f0804f4
+    const/4 v0, 0x0
 
-.field public static ic_link_16:I = 0x7f080504
+    const/4 v1, 0x1
 
-.field public static ic_link_22:I = 0x7f080506
+    invoke-virtual {p0, v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
-.field public static ic_loading_16:I = 0x7f08050a
+    move-result v0
 
-.field public static ic_more_14:I = 0x7f080545
+    if-eqz v0, :cond_0
 
-.field public static ic_outgoing_audio_call_13:I = 0x7f0805e9
+    iget-object v0, p0, Lbnb;->b:Lcnb;
 
-.field public static ic_outgoing_video_call_15:I = 0x7f0805ea
+    invoke-virtual {v0, p0}, Lcnb;->y(Lbnb;)V
 
-.field public static ic_reject_audio_call_12:I = 0x7f080615
+    :cond_0
+    return-void
+.end method
 
-.field public static ic_reject_video_call_15:I = 0x7f080616
+.method public final g()Z
+    .locals 0
 
-.field public static ic_send_link_22:I = 0x7f080635
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-.field public static ic_share_link_20:I = 0x7f080644
+    move-result p0
 
-.field public static ic_uncheced_22:I = 0x7f080670
-
-.field public static illustration_empty_58:I = 0x7f0806bd
-
-.field public static illustration_placeholder_casper:I = 0x7f0806bf
+    return p0
+.end method

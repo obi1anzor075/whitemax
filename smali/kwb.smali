@@ -1,45 +1,34 @@
 .class public abstract Lkwb;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # static fields
-.field public static Fragment:[I = null
+.field public static mr_cast_dialog:I = 0x7f0d00c3
 
-.field public static FragmentContainerView:[I = null
+.field public static mr_cast_group_item:I = 0x7f0d00c4
 
-.field public static FragmentContainerView_android_name:I = 0x0
+.field public static mr_cast_group_volume_item:I = 0x7f0d00c5
 
-.field public static FragmentContainerView_android_tag:I = 0x1
+.field public static mr_cast_header_item:I = 0x7f0d00c6
 
-.field public static Fragment_android_id:I = 0x1
+.field public static mr_cast_media_metadata:I = 0x7f0d00c7
 
-.field public static Fragment_android_name:I = 0x0
+.field public static mr_cast_route_item:I = 0x7f0d00c8
 
-.field public static Fragment_android_tag:I = 0x2
+.field public static mr_chooser_dialog:I = 0x7f0d00c9
 
+.field public static mr_chooser_list_item:I = 0x7f0d00ca
 
-# direct methods
-.method public static constructor <clinit>()V
-    .locals 3
+.field public static mr_controller_material_dialog_b:I = 0x7f0d00cb
 
-    const v0, 0x1010003
+.field public static mr_controller_volume_item:I = 0x7f0d00cc
 
-    const v1, 0x10100d0
+.field public static mr_picker_dialog:I = 0x7f0d00cd
 
-    const v2, 0x10100d1
+.field public static mr_picker_header_item:I = 0x7f0d00ce
 
-    filled-new-array {v0, v1, v2}, [I
+.field public static mr_picker_route_item:I = 0x7f0d00cf
 
-    move-result-object v1
+.field public static mr_playback_control:I = 0x7f0d00d0
 
-    sput-object v1, Lkwb;->Fragment:[I
-
-    filled-new-array {v0, v2}, [I
-
-    move-result-object v0
-
-    sput-object v0, Lkwb;->FragmentContainerView:[I
-
-    return-void
-.end method
+.field public static mr_volume_control:I = 0x7f0d00d1

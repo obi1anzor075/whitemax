@@ -1,186 +1,75 @@
-.class public final Lgt9;
-.super Lpj0;
+.class public abstract Lgt9;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final Y:Ljava/util/Collection;
-
-.field public final Z:Lj26;
-
-
 # direct methods
-.method public constructor <init>(Lbw9;Lj26;Ljava/util/Collection;)V
+.method public static a(Landroid/content/Context;Ljava/lang/String;)Landroid/app/Notification$Builder;
+    .locals 1
+
+    new-instance v0, Landroid/app/Notification$Builder;
+
+    invoke-direct {v0, p0, p1}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public static b(Landroid/app/Notification$Builder;I)Landroid/app/Notification$Builder;
     .locals 0
 
-    invoke-direct {p0, p1}, Lpj0;-><init>(Lbw9;)V
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setBadgeIconType(I)Landroid/app/Notification$Builder;
 
-    iput-object p2, p0, Lgt9;->Z:Lj26;
+    move-result-object p0
 
-    iput-object p3, p0, Lgt9;->Y:Ljava/util/Collection;
-
-    return-void
+    return-object p0
 .end method
 
+.method public static c(Landroid/app/Notification$Builder;Z)Landroid/app/Notification$Builder;
+    .locals 0
 
-# virtual methods
-.method public final b()V
-    .locals 1
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setColorized(Z)Landroid/app/Notification$Builder;
 
-    iget-boolean v0, p0, Lpj0;->o:Z
+    move-result-object p0
 
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lpj0;->o:Z
-
-    iget-object v0, p0, Lgt9;->Y:Ljava/util/Collection;
-
-    invoke-interface {v0}, Ljava/util/Collection;->clear()V
-
-    iget-object p0, p0, Lpj0;->a:Lbw9;
-
-    invoke-interface {p0}, Lbw9;->b()V
-
-    :cond_0
-    return-void
+    return-object p0
 .end method
 
-.method public final c(Ljava/lang/Object;)V
-    .locals 3
+.method public static d(Landroid/app/Notification$Builder;I)Landroid/app/Notification$Builder;
+    .locals 0
 
-    iget-boolean v0, p0, Lpj0;->o:Z
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setGroupAlertBehavior(I)Landroid/app/Notification$Builder;
 
-    if-eqz v0, :cond_0
+    move-result-object p0
 
-    return-void
-
-    :cond_0
-    iget v0, p0, Lpj0;->X:I
-
-    iget-object v1, p0, Lpj0;->a:Lbw9;
-
-    if-nez v0, :cond_1
-
-    :try_start_0
-    iget-object v0, p0, Lgt9;->Z:Lj26;
-
-    invoke-interface {v0, p1}, Lj26;->apply(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    const-string v2, "The keySelector returned a null key"
-
-    invoke-static {v0, v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    iget-object v2, p0, Lgt9;->Y:Ljava/util/Collection;
-
-    invoke-interface {v2, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
-    move-result p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz p0, :cond_2
-
-    invoke-interface {v1, p1}, Lbw9;->c(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    invoke-static {p1}, Lek8;->a0(Ljava/lang/Throwable;)V
-
-    iget-object v0, p0, Lpj0;->b:Lxi4;
-
-    invoke-interface {v0}, Lxi4;->f()V
-
-    invoke-virtual {p0, p1}, Lgt9;->onError(Ljava/lang/Throwable;)V
-
-    return-void
-
-    :cond_1
-    const/4 p0, 0x0
-
-    invoke-interface {v1, p0}, Lbw9;->c(Ljava/lang/Object;)V
-
-    :cond_2
-    :goto_0
-    return-void
+    return-object p0
 .end method
 
-.method public final clear()V
-    .locals 1
+.method public static e(Landroid/app/Notification$Builder;Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
+    .locals 0
 
-    iget-object v0, p0, Lgt9;->Y:Ljava/util/Collection;
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setSettingsText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
-    invoke-interface {v0}, Ljava/util/Collection;->clear()V
+    move-result-object p0
 
-    invoke-super {p0}, Lpj0;->clear()V
-
-    return-void
+    return-object p0
 .end method
 
-.method public final onError(Ljava/lang/Throwable;)V
-    .locals 1
+.method public static f(Landroid/app/Notification$Builder;Ljava/lang/String;)Landroid/app/Notification$Builder;
+    .locals 0
 
-    iget-boolean v0, p0, Lpj0;->o:Z
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setShortcutId(Ljava/lang/String;)Landroid/app/Notification$Builder;
 
-    if-eqz v0, :cond_0
+    move-result-object p0
 
-    invoke-static {p1}, Lxs7;->F(Ljava/lang/Throwable;)V
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lpj0;->o:Z
-
-    iget-object v0, p0, Lgt9;->Y:Ljava/util/Collection;
-
-    invoke-interface {v0}, Ljava/util/Collection;->clear()V
-
-    iget-object p0, p0, Lpj0;->a:Lbw9;
-
-    invoke-interface {p0, p1}, Lbw9;->onError(Ljava/lang/Throwable;)V
-
-    :goto_0
-    return-void
+    return-object p0
 .end method
 
-.method public final poll()Ljava/lang/Object;
-    .locals 3
+.method public static g(Landroid/app/Notification$Builder;J)Landroid/app/Notification$Builder;
+    .locals 0
 
-    :cond_0
-    iget-object v0, p0, Lpj0;->c:Lxjb;
+    invoke-virtual {p0, p1, p2}, Landroid/app/Notification$Builder;->setTimeoutAfter(J)Landroid/app/Notification$Builder;
 
-    invoke-interface {v0}, Lxgd;->poll()Ljava/lang/Object;
+    move-result-object p0
 
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v1, p0, Lgt9;->Z:Lj26;
-
-    invoke-interface {v1, v0}, Lj26;->apply(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    const-string v2, "The keySelector returned a null key"
-
-    invoke-static {v1, v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    iget-object v2, p0, Lgt9;->Y:Ljava/util/Collection;
-
-    invoke-interface {v2, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    :cond_1
-    return-object v0
+    return-object p0
 .end method

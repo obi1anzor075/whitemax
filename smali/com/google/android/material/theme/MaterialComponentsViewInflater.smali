@@ -1,5 +1,5 @@
 .class public Lcom/google/android/material/theme/MaterialComponentsViewInflater;
-.super Lto;
+.super Lho;
 .source "SourceFile"
 
 
@@ -7,19 +7,19 @@
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lto;-><init>()V
+    invoke-direct {p0}, Lho;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;Landroid/util/AttributeSet;)Ljm;
+.method public final a(Landroid/content/Context;Landroid/util/AttributeSet;)Lbm;
     .locals 0
 
-    new-instance p0, Lqv7;
+    new-instance p0, Lp08;
 
-    invoke-direct {p0, p1, p2}, Lqv7;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, p2}, Lp08;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     return-object p0
 .end method
@@ -37,70 +37,68 @@
 .method public final c(Landroid/content/Context;Landroid/util/AttributeSet;)Landroidx/appcompat/widget/AppCompatCheckBox;
     .locals 0
 
-    new-instance p0, Lgw7;
+    new-instance p0, Lg18;
 
-    invoke-direct {p0, p1, p2}, Lgw7;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, p2}, Lg18;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     return-object p0
 .end method
 
-.method public final d(Landroid/content/Context;Landroid/util/AttributeSet;)Lnn;
-    .locals 7
+.method public final d(Landroid/content/Context;Landroid/util/AttributeSet;)Lcn;
+    .locals 6
 
-    new-instance p0, Ljw7;
+    new-instance p0, Lj18;
 
-    sget v3, Lwlb;->radioButtonStyle:I
+    sget v3, Liqb;->radioButtonStyle:I
 
-    sget v4, Ljw7;->y0:I
+    sget v4, Lj18;->q0:I
 
-    invoke-static {p1, p2, v3, v4}, Ltw7;->a(Landroid/content/Context;Landroid/util/AttributeSet;II)Landroid/content/Context;
+    invoke-static {p1, p2, v3, v4}, Lt18;->a(Landroid/content/Context;Landroid/util/AttributeSet;II)Landroid/content/Context;
 
     move-result-object p1
 
-    invoke-direct {p0, p1, p2, v3}, Lnn;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p1, p2, v3}, Lcn;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object p1
+    move-result-object v0
 
-    sget-object v2, Lxvb;->MaterialRadioButton:[I
+    sget-object v2, Lt0c;->MaterialRadioButton:[I
 
-    const/4 v6, 0x0
+    const/4 p1, 0x0
 
-    new-array v5, v6, [I
-
-    move-object v0, p1
+    new-array v5, p1, [I
 
     move-object v1, p2
 
-    invoke-static/range {v0 .. v5}, Lshe;->d(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)Landroid/content/res/TypedArray;
+    invoke-static/range {v0 .. v5}, Lype;->d(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)Landroid/content/res/TypedArray;
 
     move-result-object p2
 
-    sget v0, Lxvb;->MaterialRadioButton_buttonTint:I
+    sget v1, Lt0c;->MaterialRadioButton_buttonTint:I
 
-    invoke-virtual {p2, v0}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {p2, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    sget v0, Lxvb;->MaterialRadioButton_buttonTint:I
+    sget v1, Lt0c;->MaterialRadioButton_buttonTint:I
 
-    invoke-static {p1, p2, v0}, Lwx3;->i(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+    invoke-static {v0, p2, v1}, Lsgg;->B(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-static {p0, p1}, Ll93;->c(Landroid/widget/CompoundButton;Landroid/content/res/ColorStateList;)V
+    invoke-static {p0, v0}, Ltb3;->c(Landroid/widget/CompoundButton;Landroid/content/res/ColorStateList;)V
 
     :cond_0
-    sget p1, Lxvb;->MaterialRadioButton_useMaterialThemeColors:I
+    sget v0, Lt0c;->MaterialRadioButton_useMaterialThemeColors:I
 
-    invoke-virtual {p2, p1, v6}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {p2, v0, p1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result p1
 
-    iput-boolean p1, p0, Ljw7;->x0:Z
+    iput-boolean p1, p0, Lj18;->p0:Z
 
     invoke-virtual {p2}, Landroid/content/res/TypedArray;->recycle()V
 
@@ -110,13 +108,13 @@
 .method public final e(Landroid/content/Context;Landroid/util/AttributeSet;)Landroidx/appcompat/widget/AppCompatTextView;
     .locals 9
 
-    new-instance p0, Lsw7;
+    new-instance p0, Ls18;
 
     const v0, 0x1010084
 
     const/4 v1, 0x0
 
-    invoke-static {p1, p2, v0, v1}, Ltw7;->a(Landroid/content/Context;Landroid/util/AttributeSet;II)Landroid/content/Context;
+    invoke-static {p1, p2, v0, v1}, Lt18;->a(Landroid/content/Context;Landroid/util/AttributeSet;II)Landroid/content/Context;
 
     move-result-object p1
 
@@ -126,11 +124,11 @@
 
     move-result-object p1
 
-    sget v2, Lwlb;->textAppearanceLineHeightEnabled:I
+    sget v2, Liqb;->textAppearanceLineHeightEnabled:I
 
     const/4 v3, 0x1
 
-    invoke-static {v2, p1, v3}, Lbm3;->E(ILandroid/content/Context;Z)Z
+    invoke-static {v2, p1, v3}, Lrbg;->B(ILandroid/content/Context;Z)Z
 
     move-result v2
 
@@ -140,15 +138,15 @@
 
     move-result-object v2
 
-    sget-object v3, Lxvb;->MaterialTextView:[I
+    sget-object v3, Lt0c;->MaterialTextView:[I
 
     invoke-virtual {v2, p2, v3, v0, v1}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v3
 
-    sget v4, Lxvb;->MaterialTextView_android_lineHeight:I
+    sget v4, Lt0c;->MaterialTextView_android_lineHeight:I
 
-    sget v5, Lxvb;->MaterialTextView_lineHeight:I
+    sget v5, Lt0c;->MaterialTextView_lineHeight:I
 
     filled-new-array {v4, v5}, [I
 
@@ -169,7 +167,7 @@
 
     aget v7, v4, v6
 
-    invoke-static {p1, v3, v7, v5}, Lwx3;->j(Landroid/content/Context;Landroid/content/res/TypedArray;II)I
+    invoke-static {p1, v3, v7, v5}, Lsgg;->C(Landroid/content/Context;Landroid/content/res/TypedArray;II)I
 
     move-result v7
 
@@ -185,13 +183,13 @@
     goto :goto_2
 
     :cond_1
-    sget-object p1, Lxvb;->MaterialTextView:[I
+    sget-object p1, Lt0c;->MaterialTextView:[I
 
     invoke-virtual {v2, p2, p1, v0, v1}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object p1
 
-    sget p2, Lxvb;->MaterialTextView_android_textAppearance:I
+    sget p2, Lt0c;->MaterialTextView_android_textAppearance:I
 
     invoke-virtual {p1, p2, v5}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -201,7 +199,7 @@
 
     if-eq p2, v5, :cond_3
 
-    sget-object p1, Lxvb;->MaterialTextAppearance:[I
+    sget-object p1, Lt0c;->MaterialTextAppearance:[I
 
     invoke-virtual {v2, p2, p1}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
 
@@ -211,9 +209,9 @@
 
     move-result-object p2
 
-    sget v0, Lxvb;->MaterialTextAppearance_android_lineHeight:I
+    sget v0, Lt0c;->MaterialTextAppearance_android_lineHeight:I
 
-    sget v2, Lxvb;->MaterialTextAppearance_lineHeight:I
+    sget v2, Lt0c;->MaterialTextAppearance_lineHeight:I
 
     filled-new-array {v0, v2}, [I
 
@@ -228,7 +226,7 @@
 
     aget v2, v0, v1
 
-    invoke-static {p2, p1, v2, v5}, Lwx3;->j(Landroid/content/Context;Landroid/content/res/TypedArray;II)I
+    invoke-static {p2, p1, v2, v5}, Lsgg;->C(Landroid/content/Context;Landroid/content/res/TypedArray;II)I
 
     move-result v2
 

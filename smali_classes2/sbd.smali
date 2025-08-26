@@ -1,58 +1,134 @@
-.class public final synthetic Lsbd;
-.super Ljava/lang/Object;
+.class public final Lsbd;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:I
 
-.field public final synthetic b:Lubd;
+.field public final synthetic Y:Ltbd;
+
+.field public final synthetic Z:Laef;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lubd;I)V
+.method public constructor <init>(Ltbd;Laef;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    iput p2, p0, Lsbd;->a:I
+    iput-object p1, p0, Lsbd;->Y:Ltbd;
 
-    iput-object p1, p0, Lsbd;->b:Lubd;
+    iput-object p2, p0, Lsbd;->Z:Laef;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Lox3;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lsbd;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lsbd;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lsbd;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .locals 1
 
-    iget v0, p0, Lsbd;->a:I
+    new-instance p1, Lsbd;
 
-    iget-object p0, p0, Lsbd;->b:Lubd;
+    iget-object v0, p0, Lsbd;->Y:Ltbd;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object p0, p0, Lsbd;->Z:Laef;
 
-    invoke-static {p0}, Lubd;->i(Lubd;)Landroid/graphics/drawable/ShapeDrawable;
+    invoke-direct {p1, v0, p0, p2}, Lsbd;-><init>(Ltbd;Laef;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
+
+    iget v0, p0, Lsbd;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    sget-object p1, Ltbd;->w0:[Lbc7;
+
+    iget-object p1, p0, Lsbd;->Y:Ltbd;
+
+    invoke-virtual {p1}, Ltbd;->r()Lqvc;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const-string v2, "app.media.video.compress"
+
+    iget-object v3, p0, Lsbd;->Z:Laef;
+
+    invoke-virtual {v3}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v2, v3}, Le3;->j(Ljava/lang/String;Ljava/lang/String;)V
+
+    iput v1, p0, Lsbd;->X:I
+
+    invoke-static {p1, p0}, Ltbd;->q(Ltbd;Lqde;)Ljava/lang/Object;
 
     move-result-object p0
 
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
+
     return-object p0
-
-    :pswitch_0
-    invoke-static {p0}, Lubd;->b(Lubd;)Landroid/graphics/drawable/RippleDrawable;
-
-    move-result-object p0
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

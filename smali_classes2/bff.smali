@@ -1,211 +1,434 @@
-.class public final enum Lbff;
-.super Ljava/lang/Enum;
+.class public final Lbff;
+.super Lije;
 .source "SourceFile"
 
-
-# static fields
-.field public static final enum X:Lbff;
-
-.field public static final enum Y:Lbff;
-
-.field public static final enum Z:Lbff;
-
-.field public static final c:Lqr4;
-
-.field public static final enum o:Lbff;
-
-.field public static final enum w0:Lbff;
-
-.field public static final synthetic x0:[Lbff;
-
-.field public static final synthetic y0:Lpz4;
+# interfaces
+.implements Lumf;
+.implements Ltmf;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public X:Ll66;
 
-.field public final b:I
+.field public Y:Ld00;
+
+.field public Z:Ljava/lang/Long;
+
+.field public o:Ll66;
+
+.field public o0:Landroid/animation/ObjectAnimator;
+
+.field public final p0:Landroid/view/animation/AccelerateDecelerateInterpolator;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 14
+.method public constructor <init>()V
+    .locals 2
 
-    new-instance v0, Lbff;
+    new-instance v0, Laff;
 
-    const-string v1, "MONEY_BUTTON"
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    invoke-direct {v0, v1}, Laff;-><init>(I)V
 
-    const-string v3, "money_button"
+    invoke-direct {p0, v0}, Lije;-><init>(Lx56;)V
 
-    const/4 v4, 0x1
+    new-instance v0, Landroid/view/animation/AccelerateDecelerateInterpolator;
 
-    invoke-direct {v0, v1, v2, v4, v3}, Lbff;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    invoke-direct {v0}, Landroid/view/animation/AccelerateDecelerateInterpolator;-><init>()V
 
-    new-instance v1, Lbff;
-
-    const-string v2, "START_BUTTON"
-
-    const-string v3, "start_button"
-
-    const/4 v5, 0x2
-
-    invoke-direct {v1, v2, v4, v5, v3}, Lbff;-><init>(Ljava/lang/String;IILjava/lang/String;)V
-
-    new-instance v2, Lbff;
-
-    const-string v3, "URL"
-
-    const-string v4, "url"
-
-    const/4 v6, 0x3
-
-    invoke-direct {v2, v3, v5, v6, v4}, Lbff;-><init>(Ljava/lang/String;IILjava/lang/String;)V
-
-    sput-object v2, Lbff;->o:Lbff;
-
-    new-instance v3, Lbff;
-
-    const-string v4, "FOLDER"
-
-    const-string v5, "folder"
-
-    const/4 v7, 0x4
-
-    invoke-direct {v3, v4, v6, v7, v5}, Lbff;-><init>(Ljava/lang/String;IILjava/lang/String;)V
-
-    sput-object v3, Lbff;->X:Lbff;
-
-    new-instance v4, Lbff;
-
-    const-string v5, "INLINE_BUTTON"
-
-    const-string v6, "inline_button"
-
-    const/4 v8, 0x5
-
-    invoke-direct {v4, v5, v7, v8, v6}, Lbff;-><init>(Ljava/lang/String;IILjava/lang/String;)V
-
-    sput-object v4, Lbff;->Y:Lbff;
-
-    new-instance v5, Lbff;
-
-    const-string v6, "SETTINGS"
-
-    const-string v7, "settings"
-
-    const/4 v9, 0x6
-
-    invoke-direct {v5, v6, v8, v9, v7}, Lbff;-><init>(Ljava/lang/String;IILjava/lang/String;)V
-
-    new-instance v6, Lbff;
-
-    const-string v7, "SETTINGS_PRIVACY"
-
-    const-string v8, "settings_privacy"
-
-    const/16 v10, 0x9
-
-    invoke-direct {v6, v7, v9, v10, v8}, Lbff;-><init>(Ljava/lang/String;IILjava/lang/String;)V
-
-    new-instance v7, Lbff;
-
-    const-string v8, "SUPPORT_FROM_PRIVACY"
-
-    const/4 v9, 0x7
-
-    const-string v11, "support_from_privacy"
-
-    const/16 v12, 0x3e8
-
-    invoke-direct {v7, v8, v9, v12, v11}, Lbff;-><init>(Ljava/lang/String;IILjava/lang/String;)V
-
-    new-instance v8, Lbff;
-
-    const-string v9, "FROM_NOTIFICATION"
-
-    const/16 v11, 0x8
-
-    const-string v12, "from_notification"
-
-    const/16 v13, 0x3e9
-
-    invoke-direct {v8, v9, v11, v13, v12}, Lbff;-><init>(Ljava/lang/String;IILjava/lang/String;)V
-
-    sput-object v8, Lbff;->Z:Lbff;
-
-    new-instance v9, Lbff;
-
-    const/16 v11, 0x3eb
-
-    const-string v12, "FROM_SEARCH"
-
-    const-string v13, "from_search"
-
-    invoke-direct {v9, v12, v10, v11, v13}, Lbff;-><init>(Ljava/lang/String;IILjava/lang/String;)V
-
-    sput-object v9, Lbff;->w0:Lbff;
-
-    filled-new-array/range {v0 .. v9}, [Lbff;
-
-    move-result-object v0
-
-    sput-object v0, Lbff;->x0:[Lbff;
-
-    new-instance v1, Lpz4;
-
-    invoke-direct {v1, v0}, Lpz4;-><init>([Ljava/lang/Enum;)V
-
-    sput-object v1, Lbff;->y0:Lpz4;
-
-    new-instance v0, Lqr4;
-
-    const/16 v1, 0x13
-
-    invoke-direct {v0, v1}, Lqr4;-><init>(I)V
-
-    sput-object v0, Lbff;->c:Lqr4;
+    iput-object v0, p0, Lbff;->p0:Landroid/view/animation/AccelerateDecelerateInterpolator;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;IILjava/lang/String;)V
+
+# virtual methods
+.method public final m()Z
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iget-object p0, p0, Lije;->c:Ljava/lang/Object;
 
-    iput-object p4, p0, Lbff;->a:Ljava/lang/String;
+    invoke-static {p0}, Lq14;->X(Lje7;)Z
 
-    iput p3, p0, Lbff;->b:I
+    move-result p0
+
+    return p0
+.end method
+
+.method public final o(Llmf;Ld00;JZZ)V
+    .locals 1
+
+    invoke-static {p3, p4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p3
+
+    iput-object p3, p0, Lbff;->Z:Ljava/lang/Long;
+
+    iput-object p2, p0, Lbff;->Y:Ld00;
+
+    invoke-virtual {p0}, Lije;->O()Landroid/view/View;
+
+    move-result-object p3
+
+    check-cast p3, Lsmf;
+
+    invoke-virtual {p3, p1}, Lsmf;->a(Llmf;)V
+
+    invoke-virtual {p0}, Lije;->O()Landroid/view/View;
+
+    move-result-object p1
+
+    check-cast p1, Lsmf;
+
+    iget-object p3, p0, Lije;->b:Ljava/lang/Object;
+
+    check-cast p3, Landroid/view/ViewGroup;
+
+    const/4 p4, 0x0
+
+    if-eqz p3, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    move-object p3, p4
+
+    :goto_0
+    instance-of v0, p3, Ltmf;
+
+    if-eqz v0, :cond_1
+
+    move-object p4, p3
+
+    check-cast p4, Ltmf;
+
+    :cond_1
+    if-eqz p4, :cond_2
+
+    invoke-interface {p4, p5}, Ltmf;->r(Z)Lpmf;
+
+    move-result-object p3
+
+    goto :goto_1
+
+    :cond_2
+    invoke-virtual {p0, p5}, Lbff;->r(Z)Lpmf;
+
+    move-result-object p3
+
+    :goto_1
+    invoke-virtual {p1, p3}, Lsmf;->setVideoShape(Lpmf;)V
+
+    invoke-virtual {p0}, Lije;->O()Landroid/view/View;
+
+    move-result-object p1
+
+    check-cast p1, Lsmf;
+
+    instance-of p2, p2, Lwgf;
+
+    if-eqz p2, :cond_3
+
+    sget-object p2, Lmmf;->b:Lmmf;
+
+    goto :goto_2
+
+    :cond_3
+    sget-object p2, Lmmf;->a:Lmmf;
+
+    :goto_2
+    invoke-virtual {p1, p2}, Lsmf;->setVideoContentMode(Lmmf;)V
+
+    invoke-virtual {p0}, Lije;->O()Landroid/view/View;
+
+    move-result-object p1
+
+    new-instance p2, Lrha;
+
+    const/16 p3, 0x1c
+
+    invoke-direct {p2, p3, p0}, Lrha;-><init>(ILjava/lang/Object;)V
+
+    invoke-static {p1, p2}, Lu7;->Q(Landroid/view/View;Landroid/view/View$OnClickListener;)V
+
+    invoke-virtual {p0}, Lije;->O()Landroid/view/View;
+
+    move-result-object p1
+
+    check-cast p1, Lsmf;
+
+    new-instance p2, Ltl0;
+
+    const/16 p3, 0xb
+
+    invoke-direct {p2, p3, p0}, Ltl0;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
+
+    invoke-virtual {p0}, Lije;->t()V
+
+    if-eqz p6, :cond_5
+
+    invoke-virtual {p0}, Lije;->O()Landroid/view/View;
+
+    move-result-object p1
+
+    check-cast p1, Lsmf;
+
+    invoke-virtual {p1}, Landroid/view/View;->getAlpha()F
+
+    move-result p1
+
+    const/high16 p2, 0x3f800000    # 1.0f
+
+    cmpg-float p1, p1, p2
+
+    if-gez p1, :cond_5
+
+    iget-object p1, p0, Lbff;->o0:Landroid/animation/ObjectAnimator;
+
+    if-eqz p1, :cond_4
+
+    invoke-virtual {p1}, Landroid/animation/Animator;->isRunning()Z
+
+    move-result p1
+
+    if-nez p1, :cond_5
+
+    :cond_4
+    invoke-virtual {p0}, Lije;->O()Landroid/view/View;
+
+    move-result-object p1
+
+    sget-object p3, Landroid/view/View;->ALPHA:Landroid/util/Property;
+
+    invoke-virtual {p0}, Lije;->O()Landroid/view/View;
+
+    move-result-object p4
+
+    check-cast p4, Lsmf;
+
+    invoke-virtual {p4}, Landroid/view/View;->getAlpha()F
+
+    move-result p4
+
+    const/4 p5, 0x2
+
+    new-array p5, p5, [F
+
+    const/4 p6, 0x0
+
+    aput p4, p5, p6
+
+    const/4 p4, 0x1
+
+    aput p2, p5, p4
+
+    invoke-static {p1, p3, p5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object p1
+
+    const-wide/16 p2, 0x1f4
+
+    invoke-virtual {p1, p2, p3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    iget-object p2, p0, Lbff;->p0:Landroid/view/animation/AccelerateDecelerateInterpolator;
+
+    invoke-virtual {p1, p2}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    invoke-virtual {p1}, Landroid/animation/ObjectAnimator;->start()V
+
+    iput-object p1, p0, Lbff;->o0:Landroid/animation/ObjectAnimator;
+
+    :cond_5
+    invoke-virtual {p0}, Lije;->O()Landroid/view/View;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/view/View;->isAttachedToWindow()Z
+
+    move-result p2
+
+    if-nez p2, :cond_7
+
+    invoke-virtual {p0}, Lije;->O()Landroid/view/View;
+
+    move-result-object p1
+
+    check-cast p1, Lsmf;
+
+    iget-object p2, p1, Lsmf;->b:Lqmf;
+
+    if-eqz p2, :cond_6
+
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
+
+    move-result p1
+
+    if-lez p1, :cond_6
+
+    invoke-virtual {p0}, Lbff;->u()V
+
+    :cond_6
+    return-void
+
+    :cond_7
+    new-instance p2, La50;
+
+    const/16 p3, 0xe
+
+    invoke-direct {p2, p1, p3, p0}, La50;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lbff;
-    .locals 1
+.method public final r(Z)Lpmf;
+    .locals 2
 
-    const-class v0, Lbff;
+    new-instance v0, Lomf;
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    iget-object p0, p0, Lije;->b:Ljava/lang/Object;
+
+    check-cast p0, Landroid/view/ViewGroup;
+
+    if-eqz p0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    invoke-virtual {p0}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object p0
 
-    check-cast p0, Lbff;
+    check-cast p0, Lvr8;
 
-    return-object p0
+    iget-object p0, p0, Lvr8;->o:[F
+
+    array-length v1, p0
+
+    invoke-static {p0, v1}, Ljava/util/Arrays;->copyOf([FI)[F
+
+    move-result-object p0
+
+    if-eqz p1, :cond_1
+
+    const/4 p1, 0x0
+
+    const/4 v1, 0x0
+
+    aput v1, p0, p1
+
+    const/4 p1, 0x1
+
+    aput v1, p0, p1
+
+    const/4 p1, 0x2
+
+    aput v1, p0, p1
+
+    const/4 p1, 0x3
+
+    aput v1, p0, p1
+
+    :cond_1
+    invoke-direct {v0, p0}, Lomf;-><init>([F)V
+
+    return-object v0
 .end method
 
-.method public static values()[Lbff;
+.method public final s()Z
     .locals 1
 
-    sget-object v0, Lbff;->x0:[Lbff;
+    iget-object p0, p0, Lije;->c:Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    invoke-interface {p0}, Lje7;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lsmf;
+
+    iget-object v0, p0, Lsmf;->b:Lqmf;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
+
+    move-result p0
+
+    if-lez p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final setVideoClickListener(Ll66;)V
+    .locals 0
+
+    iput-object p1, p0, Lbff;->o:Ll66;
+
+    return-void
+.end method
+
+.method public final setVideoLongClickListener(Ll66;)V
+    .locals 0
+
+    iput-object p1, p0, Lbff;->X:Ll66;
+
+    return-void
+.end method
+
+.method public final u()V
+    .locals 2
+
+    iget-object v0, p0, Lije;->c:Ljava/lang/Object;
+
+    invoke-interface {v0}, Lje7;->a()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, [Lbff;
+    check-cast v0, Lsmf;
 
-    return-object v0
+    iget-object p0, p0, Lbff;->o0:Landroid/animation/ObjectAnimator;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Landroid/animation/Animator;->cancel()V
+
+    :cond_0
+    const/4 p0, 0x0
+
+    invoke-virtual {v0, p0}, Landroid/view/View;->setAlpha(F)V
+
+    const/16 p0, 0x8
+
+    invoke-virtual {v0, p0}, Landroid/view/View;->setVisibility(I)V
+
+    invoke-virtual {v0}, Lsmf;->b()V
+
+    :cond_1
+    return-void
 .end method

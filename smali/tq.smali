@@ -1,49 +1,172 @@
 .class public final Ltq;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public X:I
+.field public final a:Ljava/util/ArrayList;
 
-.field public Y:Lrj5;
+.field public final b:Ljava/util/ArrayList;
 
-.field public final synthetic Z:Lac;
-
-.field public synthetic o:Ljava/lang/Object;
+.field public final c:Landroid/graphics/drawable/Drawable;
 
 
 # direct methods
-.method public constructor <init>(Lac;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Ljava/util/ArrayList;Ljava/util/ArrayList;Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    iput-object p1, p0, Ltq;->Z:Lac;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Ltq;->a:Ljava/util/ArrayList;
+
+    iput-object p2, p0, Ltq;->b:Ljava/util/ArrayList;
+
+    iput-object p3, p0, Ltq;->c:Landroid/graphics/drawable/Drawable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
-    iput-object p1, p0, Ltq;->o:Ljava/lang/Object;
+    if-ne p0, p1, :cond_0
 
-    iget p1, p0, Ltq;->X:I
+    goto :goto_1
 
-    const/high16 v0, -0x80000000
+    :cond_0
+    instance-of v0, p1, Ltq;
 
-    or-int/2addr p1, v0
+    if-nez v0, :cond_1
 
-    iput p1, p0, Ltq;->X:I
+    goto :goto_0
 
-    iget-object p1, p0, Ltq;->Z:Lac;
+    :cond_1
+    check-cast p1, Ltq;
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Ltq;->a:Ljava/util/ArrayList;
 
-    invoke-virtual {p1, v0, p0}, Lac;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iget-object v1, p1, Ltq;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    iget-object v0, p0, Ltq;->b:Ljava/util/ArrayList;
+
+    iget-object v1, p1, Ltq;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    iget-object p0, p0, Ltq;->c:Landroid/graphics/drawable/Drawable;
+
+    iget-object p1, p1, Ltq;->c:Landroid/graphics/drawable/Drawable;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_4
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_4
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    iget-object v0, p0, Ltq;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Ltq;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v1, v0
+
+    mul-int/lit8 v1, v1, 0x1f
+
+    iget-object p0, p0, Ltq;->c:Landroid/graphics/drawable/Drawable;
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    :goto_0
+    add-int/2addr v1, p0
+
+    return v1
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "State(themes="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Ltq;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", modes="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Ltq;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", currentThemeDrawable="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Ltq;->c:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

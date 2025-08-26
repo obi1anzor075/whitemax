@@ -23,13 +23,13 @@
 
     iput v0, p0, Landroidx/appcompat/widget/ViewStubCompat;->a:I
 
-    sget-object v1, Lnwb;->ViewStubCompat:[I
+    sget-object v1, Lj1c;->ViewStubCompat:[I
 
     invoke-virtual {p1, p2, v1, v0, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object p1
 
-    sget p2, Lnwb;->ViewStubCompat_android_inflatedId:I
+    sget p2, Lj1c;->ViewStubCompat_android_inflatedId:I
 
     const/4 v1, -0x1
 
@@ -39,7 +39,7 @@
 
     iput p2, p0, Landroidx/appcompat/widget/ViewStubCompat;->b:I
 
-    sget p2, Lnwb;->ViewStubCompat_android_layout:I
+    sget p2, Lj1c;->ViewStubCompat_android_layout:I
 
     invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -47,7 +47,7 @@
 
     iput p2, p0, Landroidx/appcompat/widget/ViewStubCompat;->a:I
 
-    sget p2, Lnwb;->ViewStubCompat_android_id:I
+    sget p2, Lj1c;->ViewStubCompat_android_id:I
 
     invoke-virtual {p1, p2, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -237,7 +237,7 @@
     return-void
 .end method
 
-.method public setOnInflateListener(Lecf;)V
+.method public setOnInflateListener(Lupf;)V
     .locals 0
 
     return-void
@@ -260,7 +260,7 @@
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    goto :goto_0
+    return-void
 
     :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
@@ -274,16 +274,20 @@
     :cond_1
     invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_3
 
     const/4 v0, 0x4
 
-    if-ne p1, v0, :cond_3
+    if-ne p1, v0, :cond_2
+
+    goto :goto_0
 
     :cond_2
-    invoke-virtual {p0}, Landroidx/appcompat/widget/ViewStubCompat;->a()Landroid/view/View;
+    return-void
 
     :cond_3
     :goto_0
+    invoke-virtual {p0}, Landroidx/appcompat/widget/ViewStubCompat;->a()Landroid/view/View;
+
     return-void
 .end method

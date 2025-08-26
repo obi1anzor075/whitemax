@@ -1,322 +1,165 @@
 .class public final Lmib;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Lr7e;
-
-.field public final b:Lr7e;
-
-.field public final c:Lr7e;
-
-.field public final d:Lr7e;
-
-.field public e:Z
-
-.field public f:Landroid/os/PowerManager$WakeLock;
-
-.field public g:Lc9;
-
-.field public final h:Ljava/util/LinkedHashSet;
+.field public final synthetic X:Lone/me/profile/ProfileScreen;
 
 
 # direct methods
-.method public constructor <init>(Lt97;)V
-    .locals 2
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/profile/ProfileScreen;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lmib;->X:Lone/me/profile/ProfileScreen;
 
-    new-instance v0, Lxq;
+    const/4 p2, 0x2
 
-    const/16 v1, 0x18
-
-    invoke-direct {v0, v1, p1}, Lxq;-><init>(ILt97;)V
-
-    new-instance v1, Lr7e;
-
-    invoke-direct {v1, v0}, Lr7e;-><init>(Ls16;)V
-
-    iput-object v1, p0, Lmib;->a:Lr7e;
-
-    new-instance v0, Lkib;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Lkib;-><init>(Lmib;I)V
-
-    new-instance v1, Lr7e;
-
-    invoke-direct {v1, v0}, Lr7e;-><init>(Ls16;)V
-
-    iput-object v1, p0, Lmib;->b:Lr7e;
-
-    new-instance v0, Lxq;
-
-    const/16 v1, 0x19
-
-    invoke-direct {v0, v1, p1}, Lxq;-><init>(ILt97;)V
-
-    new-instance p1, Lr7e;
-
-    invoke-direct {p1, v0}, Lr7e;-><init>(Ls16;)V
-
-    iput-object p1, p0, Lmib;->c:Lr7e;
-
-    new-instance p1, Lkib;
-
-    const/4 v0, 0x1
-
-    invoke-direct {p1, p0, v0}, Lkib;-><init>(Lmib;I)V
-
-    new-instance v0, Lr7e;
-
-    invoke-direct {v0, p1}, Lr7e;-><init>(Ls16;)V
-
-    iput-object v0, p0, Lmib;->d:Lr7e;
-
-    new-instance p1, Ljava/util/LinkedHashSet;
-
-    invoke-direct {p1}, Ljava/util/LinkedHashSet;-><init>()V
-
-    iput-object p1, p0, Lmib;->h:Ljava/util/LinkedHashSet;
+    invoke-direct {p0, p2, p1}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 4
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object v0, p0, Lmib;->b:Lr7e;
+    check-cast p1, Lox3;
 
-    invoke-virtual {v0}, Lr7e;->getValue()Ljava/lang/Object;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    move-result-object v0
-
-    check-cast v0, Landroid/hardware/Sensor;
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    :try_start_0
-    iget-object v1, p0, Lmib;->c:Lr7e;
-
-    invoke-virtual {v1}, Lr7e;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/os/PowerManager;
-
-    const-string v2, "max:proximity_helper"
-
-    const/16 v3, 0x20
-
-    invoke-virtual {v1, v3, v2}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lmib;->f:Landroid/os/PowerManager$WakeLock;
-
-    iget-object v1, p0, Lmib;->a:Lr7e;
-
-    invoke-virtual {v1}, Lr7e;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/hardware/SensorManager;
-
-    iget-object p0, p0, Lmib;->d:Lr7e;
-
-    invoke-virtual {p0}, Lr7e;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Lmib;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    check-cast p0, Landroid/hardware/SensorEventListener;
+    check-cast p0, Lmib;
 
-    const/4 v2, 0x3
+    sget-object p1, Le5f;->a:Le5f;
 
-    invoke-virtual {v1, p0, v0, v2}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {p0, p1}, Lmib;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
+
+    new-instance p1, Lmib;
+
+    iget-object p0, p0, Lmib;->X:Lone/me/profile/ProfileScreen;
+
+    invoke-direct {p1, p2, p0}, Lmib;-><init>(Lkotlin/coroutines/Continuation;Lone/me/profile/ProfileScreen;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 10
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lmib;->X:Lone/me/profile/ProfileScreen;
+
+    invoke-virtual {p0}, Lou3;->getView()Landroid/view/View;
+
+    move-result-object p1
+
+    sget-object v0, Le5f;->a:Le5f;
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p0}, Lone/me/profile/ProfileScreen;->u0()Ljkb;
+
+    move-result-object p1
+
+    iget-object p1, p1, Ljkb;->M0:Lx7b;
+
+    invoke-virtual {p1}, Lx7b;->r()Z
+
+    move-result p1
+
+    if-nez p1, :cond_1
+
+    invoke-virtual {p0}, Lone/me/profile/ProfileScreen;->u0()Ljkb;
+
+    move-result-object p1
+
+    iget-object p1, p1, Ljkb;->M0:Lx7b;
+
+    invoke-virtual {p1}, Lx7b;->p()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
 
     goto :goto_0
 
-    :catch_0
-    move-exception p0
-
-    invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const-string v2, "ProximityHelperTag"
-
-    invoke-static {v2, p0, v0, v1}, Ludd;->u(Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    :goto_0
-    return-void
-.end method
-
-.method public final b()V
-    .locals 3
-
-    iget-object v0, p0, Lmib;->b:Lr7e;
-
-    invoke-virtual {v0}, Lr7e;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/hardware/Sensor;
-
-    if-nez v0, :cond_0
-
-    return-void
-
     :cond_0
-    iget-object v0, p0, Lmib;->f:Landroid/os/PowerManager$WakeLock;
+    iget-object p1, p0, Lone/me/profile/ProfileScreen;->v0:Lo5c;
 
-    :try_start_0
-    iget-object v1, p0, Lmib;->a:Lr7e;
+    sget-object v1, Lone/me/profile/ProfileScreen;->z0:[Lbc7;
 
-    invoke-virtual {v1}, Lr7e;->getValue()Ljava/lang/Object;
+    const/16 v2, 0xb
+
+    aget-object v1, v1, v2
+
+    invoke-interface {p1, p0, v1}, Lo5c;->M(Ljava/lang/Object;Lbc7;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ldz2;
+
+    invoke-virtual {p1}, Ldz2;->c()Ljava/lang/String;
 
     move-result-object v1
 
-    check-cast v1, Landroid/hardware/SensorManager;
+    const-string v2, "profile_members_list_widget"
 
-    iget-object p0, p0, Lmib;->d:Lr7e;
+    invoke-static {v1, v2}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {p0}, Lr7e;->getValue()Ljava/lang/Object;
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    iget-object p1, p1, Ldz2;->a:Lcmc;
+
+    new-instance v4, Lone/me/profile/screens/members/compact/ChatMembersCompactWidget;
+
+    invoke-virtual {p0}, Lou3;->getArgs()Landroid/os/Bundle;
 
     move-result-object p0
 
-    check-cast p0, Landroid/hardware/SensorEventListener;
+    const-string v1, "profile:id"
 
-    invoke-virtual {v1, p0}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;)V
+    invoke-virtual {p0, v1}, Landroid/os/BaseBundle;->getLong(Ljava/lang/String;)J
 
-    if-eqz v0, :cond_1
+    move-result-wide v5
 
-    invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
+    invoke-direct {v4, v5, v6}, Lone/me/profile/screens/members/compact/ChatMembersCompactWidget;-><init>(J)V
 
-    move-result p0
+    new-instance v3, Lfmc;
 
-    if-eqz p0, :cond_1
+    const/4 v8, 0x0
 
-    const/4 p0, 0x1
+    const/4 v9, -0x1
 
-    invoke-virtual {v0, p0}, Landroid/os/PowerManager$WakeLock;->release(I)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    const/4 v5, 0x0
 
-    goto :goto_0
+    const/4 v6, 0x0
 
-    :catch_0
-    move-exception p0
+    const/4 v7, 0x0
 
-    invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+    invoke-direct/range {v3 .. v9}, Lfmc;-><init>(Lou3;Ljava/lang/String;Ltu3;Ltu3;ZI)V
 
-    move-result-object v0
+    invoke-virtual {v3, v2}, Lfmc;->d(Ljava/lang/String;)V
 
-    const/4 v1, 0x0
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const-string v2, "ProximityHelperTag"
-
-    invoke-static {v2, p0, v0, v1}, Ludd;->u(Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p1, v3}, Lcmc;->S(Lfmc;)V
 
     :cond_1
     :goto_0
-    return-void
-.end method
-
-.method public final c()V
-    .locals 3
-
-    iget-object v0, p0, Lmib;->f:Landroid/os/PowerManager$WakeLock;
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    :try_start_0
-    invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Landroid/os/PowerManager$WakeLock;->release(I)V
-
-    iget-object p0, p0, Lmib;->g:Lc9;
-
-    if-eqz p0, :cond_2
-
-    iget-object p0, p0, Lc9;->b:Ljava/lang/Object;
-
-    check-cast p0, Lpo1;
-
-    iget-object v0, p0, Lpo1;->p:Lr7e;
-
-    invoke-virtual {v0}, Lr7e;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lmc9;
-
-    :cond_1
-    invoke-interface {v0}, Lmc9;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v2, v1
-
-    check-cast v2, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-
-    iget-object v2, p0, Lpo1;->b:Lqz0;
-
-    check-cast v2, Lrz0;
-
-    invoke-virtual {v2}, Lrz0;->b()Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-
-    move-result-object v2
-
-    invoke-interface {v0, v1, v2}, Lmc9;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    if-eqz v1, :cond_1
-
-    goto :goto_0
-
-    :catch_0
-    move-exception p0
-
-    invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const-string v2, "ProximityHelperTag"
-
-    invoke-static {v2, p0, v0, v1}, Ludd;->u(Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    :cond_2
-    :goto_0
-    return-void
+    return-object v0
 .end method

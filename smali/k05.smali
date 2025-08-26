@@ -1,105 +1,214 @@
-.class public final Lk05;
+.class public final synthetic Lk05;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lc1e;
-.implements Lcjb;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Ljava/util/HashMap;
+.field public final synthetic a:I
 
-.field public b:Ljava/util/ArrayDeque;
-
-.field public final c:Ljava/util/concurrent/Executor;
+.field public final synthetic b:Lw05;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public synthetic constructor <init>(Lw05;I)V
+    .locals 0
 
-    sget-object v0, Lxte;->a:Lxte;
+    iput p2, p0, Lk05;->a:I
+
+    iput-object p1, p0, Lk05;->b:Lw05;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v1, Ljava/util/HashMap;
-
-    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v1, p0, Lk05;->a:Ljava/util/HashMap;
-
-    new-instance v1, Ljava/util/ArrayDeque;
-
-    invoke-direct {v1}, Ljava/util/ArrayDeque;-><init>()V
-
-    iput-object v1, p0, Lk05;->b:Ljava/util/ArrayDeque;
-
-    iput-object v0, p0, Lk05;->c:Ljava/util/concurrent/Executor;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lhs1;)V
-    .locals 4
+.method public final run()V
+    .locals 3
 
-    const-class v0, Lez3;
+    iget v0, p0, Lk05;->a:I
 
-    iget-object v1, p0, Lk05;->c:Ljava/util/concurrent/Executor;
+    packed-switch v0, :pswitch_data_0
 
-    monitor-enter p0
+    const/4 v0, 0x1
 
-    :try_start_0
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p0, p0, Lk05;->b:Lw05;
 
-    iget-object v2, p0, Lk05;->a:Ljava/util/HashMap;
+    iput-boolean v0, p0, Lw05;->z:Z
 
-    invoke-virtual {v2, v0}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+    iget-boolean v0, p0, Lw05;->y:Z
 
-    move-result v2
+    if-eqz v0, :cond_0
 
-    if-nez v2, :cond_0
+    iget-object v0, p0, Lw05;->d:Landroid/media/MediaCodec;
 
-    iget-object v2, p0, Lk05;->a:Ljava/util/HashMap;
+    invoke-virtual {v0}, Landroid/media/MediaCodec;->stop()V
 
-    new-instance v3, Ljava/util/concurrent/ConcurrentHashMap;
+    invoke-virtual {p0}, Lw05;->h()V
 
-    invoke-direct {v3}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+    :cond_0
+    return-void
 
-    invoke-virtual {v2, v0, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :pswitch_0
+    iget-object p0, p0, Lk05;->b:Lw05;
+
+    iget v0, p0, Lw05;->C:I
+
+    invoke-static {v0}, Lzt1;->s(I)I
+
+    move-result v0
+
+    packed-switch v0, :pswitch_data_1
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    iget p0, p0, Lw05;->C:I
+
+    invoke-static {p0}, Lv04;->t(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v1, "Unknown state: "
+
+    invoke-virtual {v1, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :pswitch_1
+    const/4 v0, 0x7
+
+    invoke-virtual {p0, v0}, Lw05;->i(I)V
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :pswitch_2
+    invoke-virtual {p0}, Lw05;->f()V
+
+    :goto_0
+    :pswitch_3
+    return-void
+
+    :pswitch_4
+    iget-object p0, p0, Lk05;->b:Lw05;
+
+    iget v0, p0, Lw05;->C:I
+
+    invoke-static {v0}, Lzt1;->s(I)I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_2
+
+    const/4 p0, 0x6
+
+    if-eq v0, p0, :cond_1
+
+    const/16 p0, 0x8
+
+    if-eq v0, p0, :cond_1
 
     goto :goto_1
 
-    :cond_0
-    :goto_0
-    iget-object v2, p0, Lk05;->a:Ljava/util/HashMap;
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    invoke-virtual {v2, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v0, "Encoder is released"
 
-    move-result-object v0
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    check-cast v0, Ljava/util/concurrent/ConcurrentHashMap;
+    throw p0
 
-    invoke-virtual {v0, p1, v1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :cond_2
+    invoke-virtual {p0}, Lw05;->g()V
 
-    monitor-exit p0
+    :goto_1
+    return-void
+
+    :pswitch_5
+    iget-object p0, p0, Lk05;->b:Lw05;
+
+    iget-boolean v0, p0, Lw05;->u:Z
+
+    if-eqz v0, :cond_3
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lw05;->v:Ljava/lang/Long;
+
+    invoke-virtual {p0}, Lw05;->j()V
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lw05;->u:Z
+
+    :cond_3
+    return-void
+
+    :pswitch_6
+    iget-object p0, p0, Lk05;->b:Lw05;
+
+    iget-object v0, p0, Lw05;->g:Lw4d;
+
+    new-instance v1, Lk05;
+
+    const/4 v2, 0x2
+
+    invoke-direct {v1, p0, v2}, Lk05;-><init>(Lw05;I)V
+
+    invoke-virtual {v0, v1}, Lw4d;->execute(Ljava/lang/Runnable;)V
 
     return-void
 
-    :goto_1
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :pswitch_7
+    iget-object p0, p0, Lk05;->b:Lw05;
 
-    throw p1
+    invoke-virtual {p0}, Lw05;->a()Lbm7;
+
+    move-result-object v0
+
+    new-instance v1, Lzod;
+
+    const/16 v2, 0xd
+
+    invoke-direct {v1, v2, p0}, Lzod;-><init>(ILjava/lang/Object;)V
+
+    iget-object p0, p0, Lw05;->g:Lw4d;
+
+    invoke-static {v0, v1, p0}, Lu7;->e(Lbm7;Ll76;Ljava/util/concurrent/Executor;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_0
+    .end packed-switch
+
+    :pswitch_data_1
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_3
+        :pswitch_2
+        :pswitch_3
+    .end packed-switch
 .end method

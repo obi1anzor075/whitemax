@@ -1,48 +1,107 @@
-.class public final Ls0c;
+.class public abstract Ls0c;
 .super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Ldcd;
-.implements Lcw1;
-.implements Lg36;
 
 
-# instance fields
-.field public final synthetic a:Ldcd;
+# static fields
+.field public static MapAttrs:[I = null
+
+.field public static MapAttrs_ambientEnabled:I = 0x0
+
+.field public static MapAttrs_backgroundColor:I = 0x1
+
+.field public static MapAttrs_cameraBearing:I = 0x2
+
+.field public static MapAttrs_cameraMaxZoomPreference:I = 0x3
+
+.field public static MapAttrs_cameraMinZoomPreference:I = 0x4
+
+.field public static MapAttrs_cameraTargetLat:I = 0x5
+
+.field public static MapAttrs_cameraTargetLng:I = 0x6
+
+.field public static MapAttrs_cameraTilt:I = 0x7
+
+.field public static MapAttrs_cameraZoom:I = 0x8
+
+.field public static MapAttrs_latLngBoundsNorthEastLatitude:I = 0x9
+
+.field public static MapAttrs_latLngBoundsNorthEastLongitude:I = 0xa
+
+.field public static MapAttrs_latLngBoundsSouthWestLatitude:I = 0xb
+
+.field public static MapAttrs_latLngBoundsSouthWestLongitude:I = 0xc
+
+.field public static MapAttrs_liteMode:I = 0xd
+
+.field public static MapAttrs_mapColorScheme:I = 0xe
+
+.field public static MapAttrs_mapId:I = 0xf
+
+.field public static MapAttrs_mapType:I = 0x10
+
+.field public static MapAttrs_uiCompass:I = 0x11
+
+.field public static MapAttrs_uiMapToolbar:I = 0x12
+
+.field public static MapAttrs_uiRotateGestures:I = 0x13
+
+.field public static MapAttrs_uiScrollGestures:I = 0x14
+
+.field public static MapAttrs_uiScrollGesturesDuringRotateOrZoom:I = 0x15
+
+.field public static MapAttrs_uiTiltGestures:I = 0x16
+
+.field public static MapAttrs_uiZoomControls:I = 0x17
+
+.field public static MapAttrs_uiZoomGestures:I = 0x18
+
+.field public static MapAttrs_useViewLifecycle:I = 0x19
+
+.field public static MapAttrs_zOrderOnTop:I = 0x1a
 
 
 # direct methods
-.method public constructor <init>(Ldcd;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/16 v0, 0x1b
 
-    iput-object p1, p0, Ls0c;->a:Ldcd;
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_0
+
+    sput-object v0, Ls0c;->MapAttrs:[I
 
     return-void
-.end method
 
-
-# virtual methods
-.method public final c(Lrj5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 0
-
-    iget-object p0, p0, Ls0c;->a:Ldcd;
-
-    invoke-interface {p0, p1, p2}, Lpj5;->c(Lrj5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final d(Lhu3;II)Lpj5;
-    .locals 0
-
-    invoke-static {p0, p1, p2, p3}, Licd;->e(Ldcd;Lhu3;II)Lpj5;
-
-    move-result-object p0
-
-    return-object p0
+    :array_0
+    .array-data 4
+        0x7f040040
+        0x7f04005c
+        0x7f0400b5
+        0x7f0400b6
+        0x7f0400b7
+        0x7f0400b8
+        0x7f0400b9
+        0x7f0400ba
+        0x7f0400bb
+        0x7f040590
+        0x7f040591
+        0x7f040592
+        0x7f040593
+        0x7f040604
+        0x7f04060b
+        0x7f04060c
+        0x7f04060d
+        0x7f0408c2
+        0x7f0408c3
+        0x7f0408c4
+        0x7f0408c5
+        0x7f0408c6
+        0x7f0408c7
+        0x7f0408c8
+        0x7f0408c9
+        0x7f0408d2
+        0x7f0408fa
+    .end array-data
 .end method

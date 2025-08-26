@@ -65,7 +65,7 @@
 
     iput-object v1, p0, Lorg/apache/http/conn/BasicManagedEntity;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
 
-    goto :goto_0
+    return-void
 
     :catchall_0
     move-exception v0
@@ -75,7 +75,6 @@
     throw v0
 
     :cond_0
-    :goto_0
     return-void
 .end method
 
@@ -237,7 +236,7 @@
 
     iput-object v1, p0, Lorg/apache/http/conn/BasicManagedEntity;->managedConn:Lorg/apache/http/conn/ManagedClientConnection;
 
-    goto :goto_0
+    return-void
 
     :catchall_0
     move-exception v0
@@ -247,7 +246,6 @@
     throw v0
 
     :cond_0
-    :goto_0
     return-void
 .end method
 

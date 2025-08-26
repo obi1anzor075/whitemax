@@ -13,7 +13,7 @@
         "",
         "Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$OwnRoomsListener;",
         "listener",
-        "Ljue;",
+        "Le5f;",
         "addListener",
         "(Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$OwnRoomsListener;)V",
         "removeListener",
@@ -25,6 +25,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

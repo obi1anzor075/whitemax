@@ -21,14 +21,14 @@
     .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     :try_start_1
     invoke-virtual {p0}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
     move-result v0
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     const/16 v1, 0xc8
 
@@ -43,21 +43,6 @@
     return-void
 
     :catchall_0
-    move-exception p0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception p0
-
-    goto :goto_1
-
-    :catch_1
-    move-exception p0
-
-    goto :goto_2
-
-    :catchall_1
     move-exception v0
 
     invoke-virtual {p0}, Ljava/net/HttpURLConnection;->disconnect()V
@@ -67,18 +52,25 @@
     .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_2 .. :try_end_2} :catch_1
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
     .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_2} :catch_0
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    :goto_0
+    :catchall_1
+    move-exception p0
+
     throw p0
 
-    :goto_1
+    :catch_0
+    move-exception p0
+
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
-    return-void
+    goto :goto_0
 
-    :goto_2
+    :catch_1
+    move-exception p0
+
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
+    :goto_0
     return-void
 .end method

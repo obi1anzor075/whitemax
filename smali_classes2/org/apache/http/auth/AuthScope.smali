@@ -247,7 +247,7 @@
 
     if-eqz p0, :cond_3
 
-    move v0, v1
+    return v1
 
     :cond_3
     return v0
@@ -413,7 +413,7 @@
 
     add-int/lit8 v0, v0, 0x8
 
-    goto :goto_3
+    return v0
 
     :cond_6
     iget-object p0, p0, Lorg/apache/http/auth/AuthScope;->host:Ljava/lang/String;
@@ -429,7 +429,6 @@
     return v1
 
     :cond_7
-    :goto_3
     return v0
 .end method
 

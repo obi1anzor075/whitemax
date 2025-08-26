@@ -1,6 +1,5 @@
 .class public final synthetic Landroid/app/ForegroundServiceStartNotAllowedException;
 .super Landroid/app/ServiceStartNotAllowedException;
-.source "SourceFile"
 
 # interfaces
 .implements Landroid/os/Parcelable;

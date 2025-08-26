@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RadioGroup android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RadioButton android:textSize="@dimen/font_normal" android:textColor="@color/text_primary" android:id="@id/layout_member_menu_radio__delete_1_day" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="@string/chat_member_delete_messages_1_day" />
-    <RadioButton android:textSize="@dimen/font_normal" android:textColor="@color/text_primary" android:id="@id/layout_member_menu_radio__delete_all" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="@string/chat_member_delete_messages_all" />
-</RadioGroup>

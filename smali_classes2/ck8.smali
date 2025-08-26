@@ -1,20 +1,53 @@
-.class public interface abstract Lck8;
+.class public final Lck8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a(Ljava/lang/String;)V
-.end method
+# instance fields
+.field public final a:Lx50;
 
-.method public abstract b()Lpj5;
-.end method
+.field public b:J
 
-.method public abstract c()Z
-.end method
+.field public final c:Lmp2;
 
-.method public abstract d()Lt0c;
-.end method
+.field public final d:Lmp2;
 
-.method public abstract e()V
+.field public e:J
+
+.field public f:J
+
+.field public g:J
+
+.field public h:J
+
+.field public i:J
+
+.field public j:J
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Lx50;
+
+    invoke-direct {v0}, Lx50;-><init>()V
+
+    iput-object v0, p0, Lck8;->a:Lx50;
+
+    new-instance v0, Lmp2;
+
+    invoke-direct {v0}, Lmp2;-><init>()V
+
+    iput-object v0, p0, Lck8;->c:Lmp2;
+
+    new-instance v0, Lmp2;
+
+    invoke-direct {v0}, Lmp2;-><init>()V
+
+    iput-object v0, p0, Lck8;->d:Lmp2;
+
+    return-void
 .end method

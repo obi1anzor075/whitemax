@@ -21,11 +21,11 @@
     invoke-direct {p0}, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;-><init>()V
 
     .line 2
-    new-instance v0, Lmp0;
+    new-instance v0, Llq0;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1, p0}, Lmp0;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v0, v1, p0}, Llq0;-><init>(ILjava/lang/Object;)V
 
     .line 3
     new-instance p0, Landroid/graphics/Rect;
@@ -42,11 +42,11 @@
     invoke-direct {p0, p1, p2}, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 5
-    new-instance p1, Lmp0;
+    new-instance p1, Llq0;
 
     const/4 p2, 0x0
 
-    invoke-direct {p1, p2, p0}, Lmp0;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p1, p2, p0}, Llq0;-><init>(ILjava/lang/Object;)V
 
     .line 6
     new-instance p0, Landroid/graphics/Rect;
@@ -61,9 +61,9 @@
 .method public final l(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;I)Z
     .locals 0
 
-    invoke-static {p2}, Lwn6;->o(Ljava/lang/Object;)V
+    new-instance p0, Ljava/lang/ClassCastException;
 
-    const/4 p0, 0x0
+    invoke-direct {p0}, Ljava/lang/ClassCastException;-><init>()V
 
     throw p0
 .end method
@@ -71,9 +71,9 @@
 .method public final u(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;Landroid/view/View;II)Z
     .locals 0
 
-    invoke-static {p2}, Lwn6;->o(Ljava/lang/Object;)V
+    new-instance p0, Ljava/lang/ClassCastException;
 
-    const/4 p0, 0x0
+    invoke-direct {p0}, Ljava/lang/ClassCastException;-><init>()V
 
     throw p0
 .end method

@@ -1,80 +1,105 @@
-.class public final synthetic Lkn2;
-.super Ljava/lang/Object;
+.class public final Lkn2;
+.super Landroid/widget/FrameLayout;
 .source "SourceFile"
-
-# interfaces
-.implements Lu16;
-
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lnn2;
-
-
-# direct methods
-.method public synthetic constructor <init>(Lnn2;I)V
-    .locals 0
-
-    iput p2, p0, Lkn2;->a:I
-
-    iput-object p1, p0, Lkn2;->b:Lnn2;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+.method public final measureChildWithMargins(Landroid/view/View;IIII)V
+    .locals 6
 
-    sget-object v0, Ljue;->a:Ljue;
+    if-eqz p1, :cond_2
 
-    iget-object v1, p0, Lkn2;->b:Lnn2;
+    invoke-virtual {p1}, Landroid/view/View;->getId()I
 
-    iget p0, p0, Lkn2;->a:I
+    move-result v0
 
-    check-cast p1, Landroid/view/View;
+    sget v1, Lk6a;->b:I
 
-    packed-switch p0, :pswitch_data_0
+    if-ne v0, v1, :cond_2
 
-    sget-object p0, Lnn2;->g1:[Lk77;
+    const/high16 v0, -0x80000000
 
-    invoke-virtual {v1}, Lnn2;->u()Lpae;
+    invoke-static {p4, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    move-result-object p0
+    move-result p4
 
-    check-cast p0, Ln3a;
+    sget v0, Lk6a;->o:I
 
-    invoke-virtual {p0}, Ln3a;->b()Lju3;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object p0
+    move-result-object v0
 
-    new-instance v2, Lom2;
+    invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v0
+
+    sget v1, Lk6a;->l:I
+
+    invoke-virtual {p0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v1
+
+    invoke-static {p0}, Lq14;->G(Landroid/view/View;)Ljava/lang/Integer;
+
+    move-result-object v2
 
     const/4 v3, 0x0
 
-    invoke-direct {v2, v1, p1, v3}, Lom2;-><init>(Lnn2;Landroid/view/View;Lkotlin/coroutines/Continuation;)V
+    if-eqz v2, :cond_0
 
-    const/4 p1, 0x2
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    invoke-static {v1, p0, v3, v2, p1}, Ltaf;->n(Ltaf;Lhu3;Lru3;Li26;I)Lqod;
+    move-result v2
 
-    return-object v0
+    goto :goto_0
 
-    :pswitch_0
-    iget-object p0, v1, Lnn2;->c1:Ll05;
+    :cond_0
+    move v2, v3
 
-    sget-object p1, Lzl2;->a:Lzl2;
+    :goto_0
+    invoke-static {p0}, Lq14;->Q(Landroid/view/View;)Ljava/lang/Integer;
 
-    invoke-static {p0, p1}, Ltaf;->o(Ll05;Ljava/lang/Object;)V
+    move-result-object v4
 
-    return-object v0
+    if-eqz v4, :cond_1
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    :cond_1
+    add-int/2addr v2, v3
+
+    add-int/2addr v0, v1
+
+    add-int/2addr v0, v2
+
+    invoke-static {p5, v0}, Ljava/lang/Math;->max(II)I
+
+    move-result p5
+
+    invoke-super/range {p0 .. p5}, Landroid/view/ViewGroup;->measureChildWithMargins(Landroid/view/View;IIII)V
+
+    return-void
+
+    :cond_2
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move v2, p2
+
+    move v3, p3
+
+    move v4, p4
+
+    move v5, p5
+
+    invoke-super/range {v0 .. v5}, Landroid/view/ViewGroup;->measureChildWithMargins(Landroid/view/View;IIII)V
+
+    return-void
 .end method

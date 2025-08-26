@@ -1,49 +1,159 @@
 .class public final Lcn8;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ldn8;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final a:J
 
-.field public final synthetic Y:Lgn8;
+.field public final b:Lvi2;
 
-.field public Z:I
-
-.field public o:Lgn8;
+.field public final c:Ljava/util/Collection;
 
 
 # direct methods
-.method public constructor <init>(Lgn8;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(JLvi2;Ljava/util/Collection;)V
     .locals 0
 
-    iput-object p1, p0, Lcn8;->Y:Lgn8;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-wide p1, p0, Lcn8;->a:J
+
+    iput-object p3, p0, Lcn8;->b:Lvi2;
+
+    iput-object p4, p0, Lcn8;->c:Ljava/util/Collection;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 7
 
-    iput-object p1, p0, Lcn8;->X:Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    iget p1, p0, Lcn8;->Z:I
+    if-ne p0, p1, :cond_0
 
-    const/high16 v0, -0x80000000
+    return v0
 
-    or-int/2addr p1, v0
+    :cond_0
+    instance-of v1, p1, Lcn8;
 
-    iput p1, p0, Lcn8;->Z:I
+    const/4 v2, 0x0
 
-    iget-object p1, p0, Lcn8;->Y:Lgn8;
+    if-nez v1, :cond_1
 
-    const/4 v0, 0x0
+    return v2
 
-    invoke-virtual {p1, v0, p0}, Lgn8;->a(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    :cond_1
+    check-cast p1, Lcn8;
+
+    iget-wide v3, p0, Lcn8;->a:J
+
+    iget-wide v5, p1, Lcn8;->a:J
+
+    cmp-long v1, v3, v5
+
+    if-eqz v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object v1, p0, Lcn8;->b:Lvi2;
+
+    iget-object v3, p1, Lcn8;->b:Lvi2;
+
+    if-eq v1, v3, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object p0, p0, Lcn8;->c:Ljava/util/Collection;
+
+    iget-object p1, p1, Lcn8;->c:Ljava/util/Collection;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_4
+
+    return v2
+
+    :cond_4
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    iget-wide v0, p0, Lcn8;->a:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcn8;->b:Lvi2;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v1, v0
+
+    mul-int/lit8 v1, v1, 0x1f
+
+    iget-object p0, p0, Lcn8;->c:Ljava/util/Collection;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v1
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Remove(chatId="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-wide v1, p0, Lcn8;->a:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", chatMemberType="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcn8;->b:Lvi2;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", ids="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lcn8;->c:Ljava/util/Collection;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

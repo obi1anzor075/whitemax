@@ -1,14 +1,14 @@
 .class final Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands$addParticipants$1;
-.super Lb97;
+.super Lsd7;
 .source "SourceFile"
 
 # interfaces
-.implements Lu16;
+.implements Lx56;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;->addParticipants(Ljava/util/Collection;Ljava/lang/Boolean;ZLu16;Lu16;)V
+    value = Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;->addParticipants(Ljava/util/Collection;Ljava/lang/Boolean;ZLx56;Lx56;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,8 +24,8 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lb97;",
-        "Lu16;"
+        "Lsd7;",
+        "Lx56;"
     }
 .end annotation
 
@@ -34,11 +34,11 @@
         "\u0000\u000e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0010\u0005\u001a\u00020\u00022\u0006\u0010\u0001\u001a\u00020\u0000H\n\u00a2\u0006\u0004\u0008\u0003\u0010\u0004"
     }
     d2 = {
-        "Lmfd;",
+        "Ldnd;",
         "signaling",
-        "Ljue;",
+        "Le5f;",
         "invoke",
-        "(Lmfd;)V",
+        "(Ldnd;)V",
         "<anonymous>"
     }
     k = 0x3
@@ -55,18 +55,18 @@
 
 .field final synthetic $isUnban:Ljava/lang/Boolean;
 
-.field final synthetic $onError:Lu16;
+.field final synthetic $onError:Lx56;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lu16;"
+            "Lx56;"
         }
     .end annotation
 .end field
 
-.field final synthetic $onSuccess:Lu16;
+.field final synthetic $onSuccess:Lx56;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lu16;"
+            "Lx56;"
         }
     .end annotation
 .end field
@@ -75,7 +75,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Collection<",
-            "Lge1;",
+            "Lrf1;",
             ">;"
         }
     .end annotation
@@ -85,19 +85,19 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Collection;Ljava/lang/Boolean;ZLu16;Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;Lu16;)V
+.method public constructor <init>(Ljava/util/Collection;Ljava/lang/Boolean;ZLx56;Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/Collection<",
-            "Lge1;",
+            "Lrf1;",
             ">;",
             "Ljava/lang/Boolean;",
             "Z",
-            "Lu16;",
+            "Lx56;",
             "Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;",
-            "Lu16;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -108,36 +108,36 @@
 
     iput-boolean p3, p0, Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands$addParticipants$1;->$isShowChatHistory:Z
 
-    iput-object p4, p0, Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands$addParticipants$1;->$onError:Lu16;
+    iput-object p4, p0, Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands$addParticipants$1;->$onError:Lx56;
 
     iput-object p5, p0, Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands$addParticipants$1;->this$0:Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;
 
-    iput-object p6, p0, Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands$addParticipants$1;->$onSuccess:Lu16;
+    iput-object p6, p0, Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands$addParticipants$1;->$onSuccess:Lx56;
 
     const/4 p1, 0x1
 
-    invoke-direct {p0, p1}, Lb97;-><init>(I)V
+    invoke-direct {p0, p1}, Lsd7;-><init>(I)V
 
     return-void
 .end method
 
-.method public static synthetic a(Lu16;Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;Lorg/json/JSONObject;)V
+.method public static synthetic a(Lx56;Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;Lorg/json/JSONObject;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands$addParticipants$1;->invoke$lambda$5(Lu16;Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands$addParticipants$1;->invoke$lambda$5(Lx56;Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method public static synthetic b(Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;Lu16;Lu16;Lorg/json/JSONObject;)V
+.method public static synthetic c(Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;Lx56;Lx56;Lorg/json/JSONObject;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands$addParticipants$1;->invoke$lambda$4(Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;Lu16;Lu16;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands$addParticipants$1;->invoke$lambda$4(Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;Lx56;Lx56;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method private static final invoke$lambda$4(Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;Lu16;Lu16;Lorg/json/JSONObject;)V
+.method private static final invoke$lambda$4(Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;Lx56;Lx56;Lorg/json/JSONObject;)V
     .locals 8
 
     const-string v0, "participants"
@@ -179,19 +179,19 @@
     goto :goto_1
 
     :cond_0
-    invoke-static {v5}, Lx87;->K(Lorg/json/JSONObject;)Lge1;
+    invoke-static {v5}, Lcu0;->C(Lorg/json/JSONObject;)Lrf1;
 
     move-result-object v6
 
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;->access$getCall$p(Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;)Lgx0;
+    invoke-static {p0}, Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;->access$getCall$p(Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;)Liy0;
 
     move-result-object v7
 
-    invoke-virtual {v7, v6, v5}, Lgx0;->y(Lge1;Lorg/json/JSONObject;)I
+    invoke-virtual {v7, v6, v5}, Liy0;->y(Lrf1;Lorg/json/JSONObject;)I
 
     move-result v5
 
-    invoke-static {v5}, Lhr1;->t(I)I
+    invoke-static {v5}, Lzt1;->s(I)I
 
     move-result v5
 
@@ -226,13 +226,13 @@
 
     const-string v0, "rejectedParticipantIds"
 
-    invoke-static {p3, v0}, Lx87;->P(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/util/ArrayList;
+    invoke-static {p3, v0}, Lcu0;->I(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v0
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    sget-object v3, Lhw4;->a:Lhw4;
+    sget-object v3, Lgz4;->a:Lgz4;
 
     if-nez v0, :cond_4
 
@@ -242,7 +242,7 @@
     :try_start_1
     const-string v4, "bannedParticipantIds"
 
-    invoke-static {p3, v4}, Lx87;->P(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/util/ArrayList;
+    invoke-static {p3, v4}, Lcu0;->I(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object p3
 
@@ -278,9 +278,9 @@
 
     move-result-object v5
 
-    check-cast v5, Lge1;
+    check-cast v5, Lrf1;
 
-    invoke-virtual {p3, v5}, Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;->getByInternal(Lge1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
+    invoke-virtual {p3, v5}, Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;->getByInternal(Lrf1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
     move-result-object v5
 
@@ -315,9 +315,9 @@
 
     move-result-object v5
 
-    check-cast v5, Lge1;
+    check-cast v5, Lrf1;
 
-    invoke-virtual {p3, v5}, Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;->getByInternal(Lge1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
+    invoke-virtual {p3, v5}, Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;->getByInternal(Lrf1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
     move-result-object v5
 
@@ -352,9 +352,9 @@
 
     move-result-object v5
 
-    check-cast v5, Lge1;
+    check-cast v5, Lrf1;
 
-    invoke-virtual {p3, v5}, Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;->getByInternal(Lge1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
+    invoke-virtual {p3, v5}, Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;->getByInternal(Lrf1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
     move-result-object v5
 
@@ -389,9 +389,9 @@
 
     move-result-object v3
 
-    check-cast v3, Lge1;
+    check-cast v3, Lrf1;
 
-    invoke-virtual {p0, v3}, Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;->getByInternal(Lge1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
+    invoke-virtual {p0, v3}, Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;->getByInternal(Lrf1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
     move-result-object v3
 
@@ -406,11 +406,11 @@
 
     invoke-direct {p0, v4, v1, v2, p3}, Lru/ok/android/externcalls/sdk/participant/add/AddParticipantsResult;-><init>(Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Collection;Ljava/util/Collection;)V
 
-    invoke-interface {p1, p0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, p0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_1
     .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_8
+    return-void
 
     :goto_7
     if-eqz p2, :cond_e
@@ -421,14 +421,13 @@
 
     invoke-direct {p1, p3, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-interface {p2, p1}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, p1}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_e
-    :goto_8
     return-void
 .end method
 
-.method private static final invoke$lambda$5(Lu16;Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;Lorg/json/JSONObject;)V
+.method private static final invoke$lambda$5(Lx56;Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;Lorg/json/JSONObject;)V
     .locals 0
 
     if-eqz p0, :cond_0
@@ -437,7 +436,7 @@
 
     move-result-object p1
 
-    invoke-interface {p0, p1}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p0, p1}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
     return-void
@@ -449,16 +448,16 @@
     .locals 0
 
     .line 1
-    check-cast p1, Lmfd;
+    check-cast p1, Ldnd;
 
-    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands$addParticipants$1;->invoke(Lmfd;)V
+    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands$addParticipants$1;->invoke(Ldnd;)V
 
-    sget-object p0, Ljue;->a:Ljue;
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 .end method
 
-.method public final invoke(Lmfd;)V
+.method public final invoke(Ldnd;)V
     .locals 6
 
     .line 2
@@ -469,20 +468,20 @@
 
     iget-boolean v2, p0, Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands$addParticipants$1;->$isShowChatHistory:Z
 
-    invoke-static {v0, v1, v2}, Lx87;->i(Ljava/util/Collection;Ljava/lang/Boolean;Z)Lx66;
+    invoke-static {v0, v1, v2}, Lcu0;->e(Ljava/util/Collection;Ljava/lang/Boolean;Z)Lva6;
 
     move-result-object v0
 
     .line 3
     iget-object v1, p0, Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands$addParticipants$1;->this$0:Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;
 
-    iget-object v2, p0, Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands$addParticipants$1;->$onSuccess:Lu16;
+    iget-object v2, p0, Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands$addParticipants$1;->$onSuccess:Lx56;
 
-    iget-object v3, p0, Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands$addParticipants$1;->$onError:Lu16;
+    iget-object v3, p0, Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands$addParticipants$1;->$onError:Lx56;
 
     new-instance v4, Lru/ok/android/externcalls/sdk/participant/c;
 
-    invoke-direct {v4, v1, v2, v3}, Lru/ok/android/externcalls/sdk/participant/c;-><init>(Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;Lu16;Lu16;)V
+    invoke-direct {v4, v1, v2, v3}, Lru/ok/android/externcalls/sdk/participant/c;-><init>(Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands;Lx56;Lx56;)V
 
     new-instance v2, Lru/ok/android/externcalls/sdk/participant/b;
 
@@ -493,17 +492,17 @@
     const/4 v1, 0x0
 
     .line 4
-    invoke-virtual {p1, v0, v1, v4, v2}, Lmfd;->d(Lpfd;ZLlfd;Llfd;)V
+    invoke-virtual {p1, v0, v1, v4, v2}, Ldnd;->d(Lgnd;ZLcnd;Lcnd;)V
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-void
 
     :catch_0
     move-exception p1
 
     .line 5
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands$addParticipants$1;->$onError:Lu16;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/participant/AddParticipantsCommands$addParticipants$1;->$onError:Lx56;
 
     if-eqz p0, :cond_0
 
@@ -513,9 +512,8 @@
 
     invoke-direct {v0, v1, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-interface {p0, v0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p0, v0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
-    :goto_0
     return-void
 .end method

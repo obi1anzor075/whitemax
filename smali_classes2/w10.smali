@@ -4,321 +4,457 @@
 
 
 # static fields
-.field public static final synthetic d:I
+.field public static final synthetic A:I
 
 
 # instance fields
-.field public final a:Lnj4;
+.field public final a:Ls10;
 
-.field public final b:Ltt0;
+.field public final b:Lk10;
 
-.field public final c:Lnj4;
+.field public final c:Ld10;
+
+.field public final d:Lv10;
+
+.field public final e:Lw00;
+
+.field public final f:Lr10;
+
+.field public final g:Lo10;
+
+.field public final h:Lu00;
+
+.field public final i:Lz00;
+
+.field public final j:Lf10;
+
+.field public final k:La10;
+
+.field public final l:Ll10;
+
+.field public final m:Lh10;
+
+.field public final n:Lm6g;
+
+.field public final o:Lp10;
+
+.field public final p:J
+
+.field public final q:F
+
+.field public final r:Ljava/lang/String;
+
+.field public final s:Ljava/lang/String;
+
+.field public final t:Z
+
+.field public final u:J
+
+.field public final v:J
+
+.field public final w:J
+
+.field public final x:Lm10;
+
+.field public final y:Z
+
+.field public final z:Z
 
 
 # direct methods
-.method public constructor <init>(Lnj4;Ltt0;Lnj4;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lx00;
 
-    iput-object p1, p0, Lw10;->a:Lnj4;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lw10;->b:Ltt0;
-
-    iput-object p3, p0, Lw10;->c:Lnj4;
+    invoke-virtual {v0}, Lx00;->a()Lw10;
 
     return-void
 .end method
 
-.method public static a(Ljj7;)Z
-    .locals 8
+.method public constructor <init>(Lx00;)V
+    .locals 2
 
-    const/4 v0, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-nez p0, :cond_0
+    iget-object v0, p1, Lx00;->a:Ls10;
 
-    return v0
+    iput-object v0, p0, Lw10;->a:Ls10;
 
-    :cond_0
-    iget-object p0, p0, Ljj7;->a:Ljava/lang/Object;
+    iget-object v0, p1, Lx00;->b:Lk10;
 
-    check-cast p0, Ljava/util/List;
+    iput-object v0, p0, Lw10;->b:Lk10;
 
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    iget-object v0, p1, Lx00;->c:Ld10;
 
-    move-result-object p0
+    iput-object v0, p0, Lw10;->c:Ld10;
 
-    :cond_1
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v0, p1, Lx00;->d:Lv10;
 
-    move-result v1
+    iput-object v0, p0, Lw10;->d:Lv10;
 
-    if-eqz v1, :cond_7
+    iget-object v0, p1, Lx00;->e:Lw00;
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iput-object v0, p0, Lw10;->e:Lw00;
 
-    move-result-object v1
+    iget-object v0, p1, Lx00;->f:Lr10;
 
-    check-cast v1, Lo10;
+    iput-object v0, p0, Lw10;->f:Lr10;
 
-    iget-object v2, v1, Lo10;->a:Lj10;
+    iget-object v0, p1, Lx00;->g:Lo10;
 
-    sget-object v3, Lj10;->c:Lj10;
+    iput-object v0, p0, Lw10;->g:Lo10;
 
-    if-ne v2, v3, :cond_2
+    iget-object v0, p1, Lx00;->h:Lu00;
 
-    iget-object v2, v1, Lo10;->b:La10;
+    iput-object v0, p0, Lw10;->h:Lu00;
 
-    if-eqz v2, :cond_2
+    iget-object v0, p1, Lx00;->q:Lz00;
 
-    iget-object v2, v2, La10;->Z:Ljava/lang/String;
+    iput-object v0, p0, Lw10;->i:Lz00;
 
-    invoke-static {v2}, Lr1g;->p(Ljava/lang/CharSequence;)Z
+    iget-object v0, p1, Lx00;->r:Lf10;
 
-    move-result v2
+    iput-object v0, p0, Lw10;->j:Lf10;
 
-    if-eqz v2, :cond_2
+    iget-object v0, p1, Lx00;->s:La10;
 
-    goto :goto_0
+    iput-object v0, p0, Lw10;->k:La10;
 
-    :cond_2
-    sget-object v2, Lj10;->o:Lj10;
+    iget-object v0, p1, Lx00;->t:Ll10;
 
-    const-wide/16 v3, 0x0
+    iput-object v0, p0, Lw10;->l:Ll10;
 
-    iget-object v5, v1, Lo10;->a:Lj10;
+    iget-object v0, p1, Lx00;->i:Lp10;
 
-    if-ne v5, v2, :cond_3
+    iput-object v0, p0, Lw10;->o:Lp10;
 
-    iget-object v2, v1, Lo10;->d:Ln10;
+    iget-wide v0, p1, Lx00;->j:J
 
-    if-eqz v2, :cond_3
+    iput-wide v0, p0, Lw10;->p:J
 
-    iget-wide v6, v2, Ln10;->a:J
+    iget v0, p1, Lx00;->k:F
 
-    cmp-long v2, v6, v3
+    iput v0, p0, Lw10;->q:F
 
-    if-nez v2, :cond_3
+    iget-object v0, p1, Lx00;->l:Ljava/lang/String;
 
-    goto :goto_0
+    iput-object v0, p0, Lw10;->r:Ljava/lang/String;
 
-    :cond_3
-    sget-object v2, Lj10;->X:Lj10;
+    iget-object v0, p1, Lx00;->m:Ljava/lang/String;
 
-    if-ne v5, v2, :cond_4
+    iput-object v0, p0, Lw10;->s:Ljava/lang/String;
 
-    iget-object v2, v1, Lo10;->e:Ll00;
+    iget-boolean v0, p1, Lx00;->n:Z
 
-    if-eqz v2, :cond_4
+    iput-boolean v0, p0, Lw10;->t:Z
 
-    iget-wide v6, v2, Ll00;->a:J
+    iget-wide v0, p1, Lx00;->o:J
 
-    cmp-long v2, v6, v3
+    iput-wide v0, p0, Lw10;->u:J
 
-    if-nez v2, :cond_4
+    iget-wide v0, p1, Lx00;->p:J
 
-    goto :goto_0
+    iput-wide v0, p0, Lw10;->v:J
 
-    :cond_4
-    sget-object v2, Lj10;->y0:Lj10;
+    iget-wide v0, p1, Lx00;->u:J
 
-    if-ne v5, v2, :cond_5
+    iput-wide v0, p0, Lw10;->w:J
 
-    iget-object v2, v1, Lo10;->j:Lv00;
+    iget-object v0, p1, Lx00;->v:Lh10;
 
-    if-eqz v2, :cond_5
+    iput-object v0, p0, Lw10;->m:Lh10;
 
-    iget-wide v6, v2, Lv00;->a:J
+    iget-object v0, p1, Lx00;->w:Lm6g;
 
-    cmp-long v2, v6, v3
+    iput-object v0, p0, Lw10;->n:Lm6g;
 
-    if-nez v2, :cond_5
+    iget-object v0, p1, Lx00;->x:Lm10;
 
-    goto :goto_0
+    iput-object v0, p0, Lw10;->x:Lm10;
 
-    :cond_5
-    sget-object v2, Lj10;->Y:Lj10;
+    iget-boolean v0, p1, Lx00;->y:Z
 
-    if-ne v5, v2, :cond_6
+    iput-boolean v0, p0, Lw10;->y:Z
 
-    iget-object v2, v1, Lo10;->f:Li10;
+    iget-boolean p1, p1, Lx00;->z:Z
 
-    if-eqz v2, :cond_6
+    iput-boolean p1, p0, Lw10;->z:Z
 
-    iget-wide v5, v2, Li10;->a:J
-
-    cmp-long v2, v5, v3
-
-    if-nez v2, :cond_6
-
-    goto :goto_0
-
-    :cond_6
-    sget-object v2, Lc10;->b:Lc10;
-
-    iget-object v1, v1, Lo10;->w:Lc10;
-
-    if-ne v1, v2, :cond_1
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_7
-    return v0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final b(Lvo8;)V
-    .locals 5
+.method public final a()Z
+    .locals 0
 
-    invoke-virtual {p1}, Lvo8;->m()Z
+    iget-object p0, p0, Lw10;->e:Lw00;
 
-    move-result v0
+    if-eqz p0, :cond_0
 
-    if-nez v0, :cond_0
+    const/4 p0, 0x1
 
-    return-void
-
-    :cond_0
-    iget-object v0, p1, Lvo8;->D0:Ljj7;
-
-    iget-object v0, v0, Ljj7;->a:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lo10;
-
-    iget-object v1, v1, Lo10;->q:Ljava/lang/String;
-
-    sget-object v2, Lc10;->b:Lc10;
-
-    iget-wide v3, p1, Lhh0;->b:J
-
-    invoke-virtual {p0, v3, v4, v1, v2}, Lw10;->d(JLjava/lang/String;Lc10;)V
-
-    goto :goto_0
-
-    :cond_1
-    return-void
-.end method
-
-.method public final c()V
-    .locals 7
-
-    iget-object v0, p0, Lw10;->a:Lnj4;
-
-    invoke-virtual {v0}, Lnj4;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lto8;
-
-    sget-object v1, Lbp8;->b:Ls59;
-
-    invoke-virtual {v0}, Lto8;->s()Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
+    return p0
 
     :cond_0
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    const/4 p0, 0x0
 
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lvo8;
-
-    invoke-virtual {v1}, Lvo8;->m()Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v2, v1, Lvo8;->D0:Ljj7;
-
-    iget-object v2, v2, Ljj7;->a:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_1
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lo10;
-
-    iget-object v3, v3, Lo10;->q:Ljava/lang/String;
-
-    sget-object v4, Lc10;->a:Lc10;
-
-    iget-wide v5, v1, Lhh0;->b:J
-
-    invoke-virtual {p0, v5, v6, v3, v4}, Lw10;->d(JLjava/lang/String;Lc10;)V
-
-    goto :goto_1
-
-    :cond_2
-    return-void
+    return p0
 .end method
 
-.method public final d(JLjava/lang/String;Lc10;)V
-    .locals 2
+.method public final b()Z
+    .locals 0
 
-    iget-object p0, p0, Lw10;->a:Lnj4;
+    iget-object p0, p0, Lw10;->k:La10;
 
-    invoke-virtual {p0}, Lnj4;->get()Ljava/lang/Object;
+    if-eqz p0, :cond_0
 
-    move-result-object p0
+    const/4 p0, 0x1
 
-    check-cast p0, Lto8;
+    return p0
 
-    new-instance v0, Lrgc;
+    :cond_0
+    const/4 p0, 0x0
 
-    const/4 v1, 0x7
+    return p0
+.end method
 
-    invoke-direct {v0, v1, p4}, Lrgc;-><init>(ILjava/lang/Object;)V
+.method public final c()Z
+    .locals 0
 
-    invoke-virtual {p0, p1, p2, p3, v0}, Lto8;->v(JLjava/lang/String;Lof3;)V
+    iget-object p0, p0, Lw10;->j:Lf10;
 
-    return-void
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final d()Z
+    .locals 0
+
+    iget-object p0, p0, Lw10;->b:Lk10;
+
+    if-eqz p0, :cond_0
+
+    iget-boolean p0, p0, Lk10;->X:Z
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final e()Z
+    .locals 0
+
+    iget-object p0, p0, Lw10;->m:Lh10;
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final f()Z
+    .locals 0
+
+    iget-object p0, p0, Lw10;->b:Lk10;
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final g()Z
+    .locals 0
+
+    iget-object p0, p0, Lw10;->g:Lo10;
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final h()Z
+    .locals 0
+
+    iget-object p0, p0, Lw10;->f:Lr10;
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final i()Z
+    .locals 0
+
+    iget-object p0, p0, Lw10;->d:Lv10;
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final j()Lx00;
+    .locals 3
+
+    new-instance v0, Lx00;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iget-object v1, p0, Lw10;->a:Ls10;
+
+    iput-object v1, v0, Lx00;->a:Ls10;
+
+    iget-object v1, p0, Lw10;->b:Lk10;
+
+    iput-object v1, v0, Lx00;->b:Lk10;
+
+    iget-object v1, p0, Lw10;->c:Ld10;
+
+    iput-object v1, v0, Lx00;->c:Ld10;
+
+    iget-object v1, p0, Lw10;->d:Lv10;
+
+    iput-object v1, v0, Lx00;->d:Lv10;
+
+    iget-object v1, p0, Lw10;->e:Lw00;
+
+    iput-object v1, v0, Lx00;->e:Lw00;
+
+    iget-object v1, p0, Lw10;->f:Lr10;
+
+    iput-object v1, v0, Lx00;->f:Lr10;
+
+    iget-object v1, p0, Lw10;->g:Lo10;
+
+    iput-object v1, v0, Lx00;->g:Lo10;
+
+    iget-object v1, p0, Lw10;->h:Lu00;
+
+    iput-object v1, v0, Lx00;->h:Lu00;
+
+    iget-object v1, p0, Lw10;->i:Lz00;
+
+    iput-object v1, v0, Lx00;->q:Lz00;
+
+    iget-object v1, p0, Lw10;->j:Lf10;
+
+    iput-object v1, v0, Lx00;->r:Lf10;
+
+    iget-object v1, p0, Lw10;->k:La10;
+
+    iput-object v1, v0, Lx00;->s:La10;
+
+    iget-object v1, p0, Lw10;->l:Ll10;
+
+    iput-object v1, v0, Lx00;->t:Ll10;
+
+    iget-object v1, p0, Lw10;->o:Lp10;
+
+    iput-object v1, v0, Lx00;->i:Lp10;
+
+    iget-wide v1, p0, Lw10;->p:J
+
+    iput-wide v1, v0, Lx00;->j:J
+
+    iget v1, p0, Lw10;->q:F
+
+    iput v1, v0, Lx00;->k:F
+
+    iget-object v1, p0, Lw10;->r:Ljava/lang/String;
+
+    iput-object v1, v0, Lx00;->l:Ljava/lang/String;
+
+    iget-object v1, p0, Lw10;->s:Ljava/lang/String;
+
+    iput-object v1, v0, Lx00;->m:Ljava/lang/String;
+
+    iget-boolean v1, p0, Lw10;->t:Z
+
+    iput-boolean v1, v0, Lx00;->n:Z
+
+    iget-wide v1, p0, Lw10;->u:J
+
+    iput-wide v1, v0, Lx00;->o:J
+
+    iget-wide v1, p0, Lw10;->v:J
+
+    iput-wide v1, v0, Lx00;->p:J
+
+    iget-wide v1, p0, Lw10;->w:J
+
+    iput-wide v1, v0, Lx00;->u:J
+
+    iget-object v1, p0, Lw10;->m:Lh10;
+
+    iput-object v1, v0, Lx00;->v:Lh10;
+
+    iget-object v1, p0, Lw10;->x:Lm10;
+
+    iput-object v1, v0, Lx00;->x:Lm10;
+
+    iget-boolean v1, p0, Lw10;->y:Z
+
+    iput-boolean v1, v0, Lx00;->y:Z
+
+    iget-boolean v1, p0, Lw10;->z:Z
+
+    iput-boolean v1, v0, Lx00;->z:Z
+
+    iget-object p0, p0, Lw10;->n:Lm6g;
+
+    iput-object p0, v0, Lx00;->w:Lm6g;
+
+    return-object v0
 .end method

@@ -1,130 +1,196 @@
 .class public final Lav6;
-.super Ll5e;
+.super Lgi0;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
 
 
 # instance fields
-.field public final synthetic X:Lbv6;
+.field public final synthetic a:Lcv6;
 
-.field public final synthetic Y:Ln46;
+.field public final synthetic b:Lvv6;
 
-.field public final synthetic Z:I
+.field public final synthetic c:Ldv6;
 
 
 # direct methods
-.method public constructor <init>(Lbv6;Ln46;ILkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Ldv6;Lcv6;Lvv6;)V
     .locals 0
 
-    iput-object p1, p0, Lav6;->X:Lbv6;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lav6;->Y:Ln46;
+    iput-object p1, p0, Lav6;->c:Ldv6;
 
-    iput p3, p0, Lav6;->Z:I
+    iput-object p2, p0, Lav6;->a:Lcv6;
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p4}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p3, p0, Lav6;->b:Lvv6;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final e(Lg0;)V
     .locals 0
 
-    check-cast p1, Lou3;
+    iget-object p1, p0, Lav6;->c:Ldv6;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget-object p0, p0, Lav6;->a:Lcv6;
 
-    invoke-virtual {p0, p1, p2}, Lav6;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-virtual {p1, p0}, Ldv6;->b(Lcv6;)V
 
-    move-result-object p0
-
-    check-cast p0, Lav6;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lav6;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 2
+.method public final f(Lg0;)V
+    .locals 6
 
-    new-instance p1, Lav6;
+    invoke-virtual {p1}, Lg0;->h()Z
 
-    iget-object v0, p0, Lav6;->Y:Ln46;
-
-    iget v1, p0, Lav6;->Z:I
-
-    iget-object p0, p0, Lav6;->X:Lbv6;
-
-    invoke-direct {p1, p0, v0, v1, p2}, Lav6;-><init>(Lbv6;Ln46;ILkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lav6;->X:Lbv6;
-
-    iget-object v0, p1, Lbv6;->E0:Ljava/util/concurrent/ConcurrentHashMap;
-
-    iget-object v1, p0, Lav6;->Y:Ln46;
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/List;
-
-    sget-object v2, Ljue;->a:Ljue;
+    move-result v0
 
     if-nez v0, :cond_0
 
-    return-object v2
+    return-void
 
     :cond_0
-    instance-of v3, v1, Lm46;
+    invoke-virtual {p1}, Lg0;->e()Ljava/lang/Object;
 
-    if-eqz v3, :cond_1
+    move-result-object p1
 
-    const/16 p0, 0x28
+    check-cast p1, Lf33;
 
-    goto :goto_0
+    iget-object v0, p0, Lav6;->a:Lcv6;
+
+    iget-object v1, p0, Lav6;->c:Ldv6;
+
+    if-nez p1, :cond_1
+
+    invoke-virtual {v1, v0}, Ldv6;->b(Lcv6;)V
+
+    return-void
 
     :cond_1
-    iget p0, p0, Lav6;->Z:I
+    new-instance v2, Lc3b;
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    invoke-virtual {p1}, Lf33;->i0()Ljava/lang/Object;
 
-    move-result v3
+    move-result-object v3
 
-    if-gt v3, p0, :cond_2
+    check-cast v3, Lrp8;
 
-    return-object v2
+    invoke-direct {v2, v3}, Lc3b;-><init>(Lrp8;)V
 
-    :cond_2
-    iget-object p1, p1, Lbv6;->E0:Ljava/util/concurrent/ConcurrentHashMap;
+    :try_start_0
+    sget-object v3, Lsu6;->d:Ljava/lang/Object;
 
-    const/4 v3, 0x0
+    invoke-static {v2}, Lfq0;->B(Ljava/io/InputStream;)Lru6;
 
-    invoke-interface {v0, v3, p0}, Ljava/util/List;->subList(II)Ljava/util/List;
+    move-result-object v3
+
+    iget-object v3, v3, Lru6;->b:Ljava/lang/String;
+
+    const-string v4, "webp"
+
+    invoke-virtual {v4, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    iget-object v3, v1, Ldv6;->a:Lje7;
+
+    invoke-interface {v3}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lhi5;
+
+    iget-object p0, p0, Lav6;->b:Lvv6;
+
+    invoke-static {}, Ld46;->s()Liv6;
+
+    move-result-object v4
+
+    const/4 v5, 0x0
+
+    invoke-virtual {v4, p0, v5}, Liv6;->a(Lvv6;Ljava/lang/Object;)Lg0;
 
     move-result-object p0
 
-    invoke-interface {p1, v1, p0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v4, Lbv6;
 
-    return-object v2
+    invoke-direct {v4, v1, v0, v3}, Lbv6;-><init>(Ldv6;Lcv6;Lhi5;)V
+
+    sget-object v3, Lnq1;->a:Lnq1;
+
+    invoke-virtual {p0, v4, v3}, Lg0;->m(Lq34;Ljava/util/concurrent/Executor;)V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_2
+
+    :catch_0
+    move-exception p0
+
+    goto :goto_1
+
+    :cond_2
+    iget-object p0, v1, Ldv6;->a:Lje7;
+
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lhi5;
+
+    invoke-interface {p0, v3}, Lhi5;->a(Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object p0
+
+    invoke-static {v2, p0}, Lxq7;->E(Ljava/io/InputStream;Ljava/io/File;)V
+
+    invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object p0
+
+    new-instance v3, Los4;
+
+    const/16 v4, 0x1c
+
+    invoke-direct {v3, v0, v4, p0}, Los4;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-virtual {v1, v3}, Ldv6;->c(Ljava/lang/Runnable;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :goto_0
+    invoke-static {v2}, Lh33;->b(Ljava/io/InputStream;)V
+
+    invoke-virtual {p1}, Lf33;->close()V
+
+    return-void
+
+    :goto_1
+    :try_start_1
+    const-string v3, "dv6"
+
+    const-string v4, "onNewResultImpl: failed to save image"
+
+    invoke-static {v3, v4, p0}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    invoke-virtual {v1, v0}, Ldv6;->b(Lcv6;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :goto_2
+    invoke-static {v2}, Lh33;->b(Ljava/io/InputStream;)V
+
+    invoke-virtual {p1}, Lf33;->close()V
+
+    throw p0
 .end method

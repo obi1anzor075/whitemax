@@ -1,248 +1,245 @@
-.class public abstract Lmw5;
-.super Ljava/lang/Object;
+.class public final synthetic Lmw5;
+.super La76;
 .source "SourceFile"
 
 # interfaces
-.implements Lfu1;
+.implements Ln66;
 
 
 # instance fields
-.field public final a:Lfu1;
+.field public final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>(Lfu1;)V
-    .locals 0
+.method public synthetic constructor <init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p7, p0, Lmw5;->a:I
 
-    iput-object p1, p0, Lmw5;->a:Lfu1;
+    move-object v0, p4
+
+    move-object p4, p2
+
+    move p2, p6
+
+    move-object p6, p5
+
+    move-object p5, v0
+
+    invoke-direct/range {p0 .. p6}, Lz66;-><init>(IILjava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/util/Set;
-    .locals 0
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 8
 
-    iget-object p0, p0, Lmw5;->a:Lfu1;
+    iget v0, p0, Lmw5;->a:I
 
-    invoke-interface {p0}, Lfu1;->a()Ljava/util/Set;
+    sget-object v1, Le5f;->a:Le5f;
 
-    move-result-object p0
+    packed-switch v0, :pswitch_data_0
 
-    return-object p0
-.end method
+    check-cast p1, Ljava/lang/Number;
 
-.method public b()I
-    .locals 0
+    invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
 
-    iget-object p0, p0, Lmw5;->a:Lfu1;
+    move-result-wide v0
 
-    invoke-interface {p0}, Lfu1;->b()I
+    check-cast p2, Lvwa;
 
-    move-result p0
+    check-cast p3, Ljava/lang/Boolean;
 
-    return p0
-.end method
+    invoke-virtual {p3}, Ljava/lang/Boolean;->booleanValue()Z
 
-.method public final c()Z
-    .locals 0
+    move-result p1
 
-    iget-object p0, p0, Lmw5;->a:Lfu1;
+    iget-object p0, p0, Lcq1;->receiver:Ljava/lang/Object;
 
-    invoke-interface {p0}, Lfu1;->c()Z
+    check-cast p0, Lava;
+
+    invoke-interface {p0, v0, v1, p2, p1}, Lava;->M(JLvwa;Z)Z
 
     move-result p0
 
-    return p0
-.end method
-
-.method public d()Ljava/lang/String;
-    .locals 0
-
-    iget-object p0, p0, Lmw5;->a:Lfu1;
-
-    invoke-interface {p0}, Lfu1;->d()Ljava/lang/String;
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p0
 
     return-object p0
-.end method
 
-.method public e()Lyh7;
-    .locals 0
+    :pswitch_0
+    check-cast p1, Ljava/lang/Number;
 
-    iget-object p0, p0, Lmw5;->a:Lfu1;
+    invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
 
-    invoke-interface {p0}, Lfu1;->e()Lyh7;
+    move-result-wide v2
 
-    move-result-object p0
+    check-cast p2, Lvwa;
 
-    return-object p0
-.end method
+    check-cast p3, Ljava/lang/Boolean;
 
-.method public f()Lfu1;
-    .locals 0
+    invoke-virtual {p3}, Ljava/lang/Boolean;->booleanValue()Z
 
-    iget-object p0, p0, Lmw5;->a:Lfu1;
+    move-result p1
 
-    invoke-interface {p0}, Lfu1;->f()Lfu1;
+    iget-object p0, p0, Lcq1;->receiver:Ljava/lang/Object;
 
-    move-result-object p0
+    check-cast p0, Lava;
 
-    return-object p0
-.end method
+    invoke-interface {p0, v2, v3, p2, p1}, Lava;->Z(JLvwa;Z)V
 
-.method public final g()I
-    .locals 0
+    return-object v1
 
-    iget-object p0, p0, Lmw5;->a:Lfu1;
+    :pswitch_1
+    check-cast p1, Landroid/view/View;
 
-    invoke-interface {p0}, Lfu1;->g()I
+    check-cast p2, Lx9f;
 
-    move-result p0
+    check-cast p3, Ljava/lang/Number;
 
-    return p0
-.end method
+    invoke-virtual {p3}, Ljava/lang/Number;->intValue()I
 
-.method public final h()Lkje;
-    .locals 0
+    iget-object p0, p0, Lcq1;->receiver:Ljava/lang/Object;
 
-    iget-object p0, p0, Lmw5;->a:Lfu1;
+    check-cast p0, Lone/me/folders/list/FoldersListScreen;
 
-    invoke-interface {p0}, Lfu1;->h()Lkje;
+    sget-object p3, Lone/me/folders/list/FoldersListScreen;->Z:[Lbc7;
 
-    move-result-object p0
+    invoke-virtual {p0}, Lone/me/folders/list/FoldersListScreen;->p0()Ltw5;
 
-    return-object p0
-.end method
+    move-result-object p3
 
-.method public final i()Lwu1;
-    .locals 0
+    iput-object p2, p3, Ltw5;->r0:Lx9f;
 
-    iget-object p0, p0, Lmw5;->a:Lfu1;
+    const/4 p3, 0x1
 
-    invoke-interface {p0}, Lfu1;->i()Lwu1;
+    invoke-static {p3}, Ld46;->b(I)Lkt3;
 
-    move-result-object p0
+    move-result-object p3
 
-    return-object p0
-.end method
+    invoke-interface {p3, p1}, Lkt3;->v(Landroid/view/View;)Lkt3;
 
-.method public final j()Ljava/lang/String;
-    .locals 0
+    move-result-object p1
 
-    iget-object p0, p0, Lmw5;->a:Lfu1;
+    invoke-virtual {p0}, Lone/me/folders/list/FoldersListScreen;->p0()Ltw5;
 
-    invoke-interface {p0}, Lfu1;->j()Ljava/lang/String;
+    move-result-object p3
 
-    move-result-object p0
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return-object p0
-.end method
+    iget-object p2, p2, Lx9f;->a:Lns5;
 
-.method public final k(I)Ljava/util/List;
-    .locals 0
+    if-nez p2, :cond_0
 
-    iget-object p0, p0, Lmw5;->a:Lfu1;
+    sget-object p2, Lgz4;->a:Lgz4;
 
-    invoke-interface {p0, p1}, Lfu1;->k(I)Ljava/util/List;
+    goto :goto_0
 
-    move-result-object p0
+    :cond_0
+    invoke-static {}, Lxja;->i()Lkl7;
 
-    return-object p0
-.end method
+    move-result-object p3
 
-.method public l(I)I
-    .locals 0
+    new-instance v2, Lnt3;
 
-    iget-object p0, p0, Lmw5;->a:Lfu1;
+    sget v3, Lg9a;->j:I
 
-    invoke-interface {p0, p1}, Lfu1;->l(I)I
+    sget v0, Li9a;->n:I
 
-    move-result p0
+    new-instance v4, Lhoe;
 
-    return p0
-.end method
+    invoke-direct {v4, v0}, Lhoe;-><init>(I)V
 
-.method public m()Z
-    .locals 0
+    sget v0, Loda;->f:I
 
-    iget-object p0, p0, Lmw5;->a:Lfu1;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-interface {p0}, Lfu1;->m()Z
+    move-result-object v5
 
-    move-result p0
+    const/4 v6, 0x0
 
-    return p0
-.end method
+    const/16 v7, 0x14
 
-.method public final n(Lmh4;Lwq1;)V
-    .locals 0
+    invoke-direct/range {v2 .. v7}, Lnt3;-><init>(ILmoe;Ljava/lang/Integer;Ljava/lang/Integer;I)V
 
-    iget-object p0, p0, Lmw5;->a:Lfu1;
+    invoke-virtual {p3, v2}, Lkl7;->add(Ljava/lang/Object;)Z
 
-    invoke-interface {p0, p1, p2}, Lfu1;->n(Lmh4;Lwq1;)V
+    iget-object p2, p2, Lns5;->p0:Ljava/util/Set;
 
-    return-void
-.end method
+    sget-object v0, Lyu5;->c:Lyu5;
 
-.method public final o()Lyx4;
-    .locals 0
+    invoke-interface {p2, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    iget-object p0, p0, Lmw5;->a:Lfu1;
+    move-result p2
 
-    invoke-interface {p0}, Lfu1;->o()Lyx4;
+    if-nez p2, :cond_1
 
-    move-result-object p0
+    sget v3, Lg9a;->k:I
 
-    return-object p0
-.end method
+    sget p2, Li9a;->o:I
 
-.method public final p()Lxe6;
-    .locals 0
+    new-instance v4, Lhoe;
 
-    iget-object p0, p0, Lmw5;->a:Lfu1;
+    invoke-direct {v4, p2}, Lhoe;-><init>(I)V
 
-    invoke-interface {p0}, Lfu1;->p()Lxe6;
+    sget p2, Lanc;->w:I
 
-    move-result-object p0
+    sget v0, Lmda;->U:I
 
-    return-object p0
-.end method
+    sget v2, Lmda;->P:I
 
-.method public final q(I)Ljava/util/List;
-    .locals 0
+    move v5, v2
 
-    iget-object p0, p0, Lmw5;->a:Lfu1;
+    new-instance v2, Lnt3;
 
-    invoke-interface {p0, p1}, Lfu1;->q(I)Ljava/util/List;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p0
+    move-result-object v0
 
-    return-object p0
-.end method
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.method public r()Lyh7;
-    .locals 0
+    move-result-object v6
 
-    iget-object p0, p0, Lmw5;->a:Lfu1;
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-interface {p0}, Lfu1;->r()Lyh7;
+    move-result-object v7
 
-    move-result-object p0
+    move-object v5, v0
 
-    return-object p0
-.end method
+    invoke-direct/range {v2 .. v7}, Lnt3;-><init>(ILmoe;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;)V
 
-.method public final s(Lps1;)V
-    .locals 0
+    invoke-virtual {p3, v2}, Lkl7;->add(Ljava/lang/Object;)Z
 
-    iget-object p0, p0, Lmw5;->a:Lfu1;
+    :cond_1
+    invoke-static {p3}, Lxja;->b(Ljava/util/List;)Lkl7;
 
-    invoke-interface {p0, p1}, Lfu1;->s(Lps1;)V
+    move-result-object p2
 
-    return-void
+    :goto_0
+    invoke-interface {p1, p2}, Lkt3;->j(Ljava/util/Collection;)Lkt3;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Lkt3;->b()Lkt3;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Lkt3;->build()Llt3;
+
+    move-result-object p1
+
+    invoke-interface {p1, p0}, Llt3;->r(Lone/me/sdk/arch/Widget;)V
+
+    return-object v1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

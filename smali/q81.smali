@@ -1,96 +1,182 @@
-.class public final Lq81;
-.super Lt81;
+.class public final synthetic Lq81;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lv56;
 
 
 # instance fields
-.field public final b:Ljava/lang/CharSequence;
+.field public final synthetic a:I
+
+.field public final synthetic b:Lema;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/CharSequence;)V
-    .locals 1
+.method public synthetic constructor <init>(Lema;I)V
+    .locals 0
 
-    const/4 v0, 0x0
+    iput p2, p0, Lq81;->a:I
 
-    invoke-direct {p0, v0}, Lt81;-><init>(I)V
+    iput-object p1, p0, Lq81;->b:Lema;
 
-    iput-object p1, p0, Lq81;->b:Ljava/lang/CharSequence;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lq81;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lq81;
-
-    iget-object p0, p0, Lq81;->b:Ljava/lang/CharSequence;
-
-    iget-object p1, p1, Lq81;->b:Ljava/lang/CharSequence;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    iget-object p0, p0, Lq81;->b:Ljava/lang/CharSequence;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final invoke()Ljava/lang/Object;
     .locals 2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget v0, p0, Lq81;->a:I
 
-    const-string v1, "SendToChatLink(link="
+    iget-object p0, p0, Lq81;->b:Lema;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    packed-switch v0, :pswitch_data_0
 
-    iget-object p0, p0, Lq81;->b:Ljava/lang/CharSequence;
+    iget-object p0, p0, Lema;->a:Ljava/lang/Object;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    check-cast p0, Landroid/content/Context;
 
-    const-string p0, ")"
+    sget v0, Lnrb;->ic_link_16:I
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget v1, Lmda;->a:I
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p0, v0}, Let3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object p0
+    move-result-object v0
 
-    return-object p0
+    new-instance v1, Lqpe;
+
+    invoke-direct {v1, v0, p0}, Lqpe;-><init>(Landroid/graphics/drawable/Drawable;Landroid/content/Context;)V
+
+    return-object v1
+
+    :pswitch_0
+    iget-object p0, p0, Lema;->a:Ljava/lang/Object;
+
+    check-cast p0, Landroid/content/Context;
+
+    sget v0, Lnrb;->ic_outgoing_audio_call_13:I
+
+    sget v1, Lmda;->a:I
+
+    invoke-static {p0, v0}, Let3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    new-instance v1, Lqpe;
+
+    invoke-direct {v1, v0, p0}, Lqpe;-><init>(Landroid/graphics/drawable/Drawable;Landroid/content/Context;)V
+
+    return-object v1
+
+    :pswitch_1
+    iget-object p0, p0, Lema;->a:Ljava/lang/Object;
+
+    check-cast p0, Landroid/content/Context;
+
+    sget v0, Lnrb;->ic_outgoing_video_call_15:I
+
+    sget v1, Lmda;->a:I
+
+    invoke-static {p0, v0}, Let3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    new-instance v1, Lqpe;
+
+    invoke-direct {v1, v0, p0}, Lqpe;-><init>(Landroid/graphics/drawable/Drawable;Landroid/content/Context;)V
+
+    return-object v1
+
+    :pswitch_2
+    iget-object p0, p0, Lema;->a:Ljava/lang/Object;
+
+    check-cast p0, Landroid/content/Context;
+
+    sget v0, Lnrb;->ic_incoming_audio_call_13:I
+
+    sget v1, Lmda;->a:I
+
+    invoke-static {p0, v0}, Let3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    new-instance v1, Lqpe;
+
+    invoke-direct {v1, v0, p0}, Lqpe;-><init>(Landroid/graphics/drawable/Drawable;Landroid/content/Context;)V
+
+    return-object v1
+
+    :pswitch_3
+    iget-object p0, p0, Lema;->a:Ljava/lang/Object;
+
+    check-cast p0, Landroid/content/Context;
+
+    sget v0, Lnrb;->ic_incoming_video_call_15:I
+
+    sget v1, Lmda;->a:I
+
+    invoke-static {p0, v0}, Let3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    new-instance v1, Lqpe;
+
+    invoke-direct {v1, v0, p0}, Lqpe;-><init>(Landroid/graphics/drawable/Drawable;Landroid/content/Context;)V
+
+    return-object v1
+
+    :pswitch_4
+    iget-object p0, p0, Lema;->a:Ljava/lang/Object;
+
+    check-cast p0, Landroid/content/Context;
+
+    sget v0, Lnrb;->ic_reject_audio_call_12:I
+
+    sget v1, Lmda;->a:I
+
+    invoke-static {p0, v0}, Let3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    new-instance v1, Lqpe;
+
+    invoke-direct {v1, v0, p0}, Lqpe;-><init>(Landroid/graphics/drawable/Drawable;Landroid/content/Context;)V
+
+    return-object v1
+
+    :pswitch_5
+    iget-object p0, p0, Lema;->a:Ljava/lang/Object;
+
+    check-cast p0, Landroid/content/Context;
+
+    sget v0, Lnrb;->ic_reject_video_call_15:I
+
+    sget v1, Lmda;->a:I
+
+    invoke-static {p0, v0}, Let3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    new-instance v1, Lqpe;
+
+    invoke-direct {v1, v0, p0}, Lqpe;-><init>(Landroid/graphics/drawable/Drawable;Landroid/content/Context;)V
+
+    return-object v1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

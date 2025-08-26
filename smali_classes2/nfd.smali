@@ -1,137 +1,401 @@
-.class public abstract synthetic Lnfd;
+.class public final synthetic Lnfd;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lx64;
+.implements Lx66;
+
 
 # static fields
-.field public static final synthetic $EnumSwitchMapping$0:[I
+.field public static final X:Lnfd;
+
+.field public static final b:Lnfd;
+
+.field public static final c:Lnfd;
+
+.field public static final o:Lnfd;
+
+
+# instance fields
+.field public final synthetic a:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method static synthetic constructor <clinit>()V
+    .locals 2
 
-    invoke-static {}, Lwfd;->values()[Lwfd;
+    new-instance v0, Lnfd;
 
-    move-result-object v0
+    const/4 v1, 0x0
 
-    array-length v0, v0
+    invoke-direct {v0, v1}, Lnfd;-><init>(I)V
 
-    new-array v0, v0, [I
+    sput-object v0, Lnfd;->b:Lnfd;
+
+    new-instance v0, Lnfd;
 
     const/4 v1, 0x1
 
-    :try_start_0
-    sget-object v2, Lwfd;->b:Lmk9;
+    invoke-direct {v0, v1}, Lnfd;-><init>(I)V
+
+    sput-object v0, Lnfd;->c:Lnfd;
+
+    new-instance v0, Lnfd;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1}, Lnfd;-><init>(I)V
+
+    sput-object v0, Lnfd;->o:Lnfd;
+
+    new-instance v0, Lnfd;
+
+    const/4 v1, 0x3
+
+    invoke-direct {v0, v1}, Lnfd;-><init>(I)V
+
+    sput-object v0, Lnfd;->X:Lnfd;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(I)V
+    .locals 0
+
+    iput p1, p0, Lnfd;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()Ljava/lang/Object;
+    .locals 0
+
+    iget p0, p0, Lnfd;->a:I
+
+    packed-switch p0, :pswitch_data_0
+
+    new-instance p0, Lone/me/settings/privacy/ui/pincode/SetupPinCodeScreen;
+
+    invoke-direct {p0}, Lone/me/settings/privacy/ui/pincode/SetupPinCodeScreen;-><init>()V
+
+    return-object p0
+
+    :pswitch_0
+    new-instance p0, Lone/me/settings/privacy/ui/onboarding/SafeModeOnboardingScreen;
+
+    invoke-direct {p0}, Lone/me/settings/privacy/ui/onboarding/SafeModeOnboardingScreen;-><init>()V
+
+    return-object p0
+
+    :pswitch_1
+    new-instance p0, Lone/me/settings/privacy/ui/blacklist/SettingsBlacklistScreen;
+
+    invoke-direct {p0}, Lone/me/settings/privacy/ui/blacklist/SettingsBlacklistScreen;-><init>()V
+
+    return-object p0
+
+    :pswitch_2
+    new-instance p0, Lone/me/settings/privacy/ui/SettingsPrivacyScreen;
+
+    invoke-direct {p0}, Lone/me/settings/privacy/ui/SettingsPrivacyScreen;-><init>()V
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    iget v0, p0, Lnfd;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    instance-of v0, p1, Lx64;
+
+    if-eqz v0, :cond_0
+
+    instance-of v0, p1, Lx66;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lnfd;->getFunctionDelegate()Lq66;
+
+    move-result-object p0
+
+    check-cast p1, Lx66;
+
+    invoke-interface {p1}, Lx66;->getFunctionDelegate()Lq66;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    return p0
+
+    :pswitch_0
+    instance-of v0, p1, Lx64;
+
+    if-eqz v0, :cond_1
+
+    instance-of v0, p1, Lx66;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Lnfd;->getFunctionDelegate()Lq66;
+
+    move-result-object p0
+
+    check-cast p1, Lx66;
+
+    invoke-interface {p1}, Lx66;->getFunctionDelegate()Lq66;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    goto :goto_1
+
+    :cond_1
+    const/4 p0, 0x0
+
+    :goto_1
+    return p0
+
+    :pswitch_1
+    instance-of v0, p1, Lx64;
+
+    if-eqz v0, :cond_2
+
+    instance-of v0, p1, Lx66;
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p0}, Lnfd;->getFunctionDelegate()Lq66;
+
+    move-result-object p0
+
+    check-cast p1, Lx66;
+
+    invoke-interface {p1}, Lx66;->getFunctionDelegate()Lq66;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    goto :goto_2
+
+    :cond_2
+    const/4 p0, 0x0
+
+    :goto_2
+    return p0
+
+    :pswitch_2
+    instance-of v0, p1, Lx64;
+
+    if-eqz v0, :cond_3
+
+    instance-of v0, p1, Lx66;
+
+    if-eqz v0, :cond_3
+
+    invoke-virtual {p0}, Lnfd;->getFunctionDelegate()Lq66;
+
+    move-result-object p0
+
+    check-cast p1, Lx66;
+
+    invoke-interface {p1}, Lx66;->getFunctionDelegate()Lq66;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    goto :goto_3
+
+    :cond_3
+    const/4 p0, 0x0
+
+    :goto_3
+    return p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final getFunctionDelegate()Lq66;
+    .locals 9
+
+    iget p0, p0, Lnfd;->a:I
+
+    packed-switch p0, :pswitch_data_0
+
+    new-instance v0, La76;
+
+    const-string v4, "<init>()V"
+
+    const/4 v5, 0x0
+
+    const/4 v1, 0x0
+
+    const-class v2, Lone/me/settings/privacy/ui/pincode/SetupPinCodeScreen;
+
+    const-string v3, "<init>"
+
+    invoke-direct/range {v0 .. v5}, La76;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    return-object v0
+
+    :pswitch_0
+    new-instance v1, La76;
+
+    const-string v5, "<init>()V"
+
+    const/4 v6, 0x0
 
     const/4 v2, 0x0
 
-    aput v1, v0, v2
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    const-class v3, Lone/me/settings/privacy/ui/onboarding/SafeModeOnboardingScreen;
 
-    :catch_0
-    const/4 v2, 0x2
+    const-string v4, "<init>"
 
-    :try_start_1
-    sget-object v3, Lwfd;->b:Lmk9;
+    invoke-direct/range {v1 .. v6}, La76;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+    return-object v1
 
-    :catch_1
-    const/4 v1, 0x3
+    :pswitch_1
+    new-instance v2, La76;
 
-    :try_start_2
-    sget-object v3, Lwfd;->b:Lmk9;
+    const-string v6, "<init>()V"
 
-    aput v1, v0, v2
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+    const/4 v7, 0x0
 
-    :catch_2
-    const/4 v2, 0x4
+    const/4 v3, 0x0
 
-    :try_start_3
-    sget-object v3, Lwfd;->b:Lmk9;
+    const-class v4, Lone/me/settings/privacy/ui/blacklist/SettingsBlacklistScreen;
 
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+    const-string v5, "<init>"
 
-    :catch_3
-    const/4 v1, 0x5
+    invoke-direct/range {v2 .. v7}, La76;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
-    :try_start_4
-    sget-object v3, Lwfd;->b:Lmk9;
+    return-object v2
 
-    aput v1, v0, v2
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+    :pswitch_2
+    new-instance v3, La76;
 
-    :catch_4
-    const/4 v2, 0x6
+    const-string v7, "<init>()V"
 
-    :try_start_5
-    sget-object v3, Lwfd;->b:Lmk9;
+    const/4 v8, 0x0
 
-    aput v2, v0, v1
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+    const/4 v4, 0x0
 
-    :catch_5
-    const/4 v1, 0x7
+    const-class v5, Lone/me/settings/privacy/ui/SettingsPrivacyScreen;
 
-    :try_start_6
-    sget-object v3, Lwfd;->b:Lmk9;
+    const-string v6, "<init>"
 
-    aput v1, v0, v2
-    :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
+    invoke-direct/range {v3 .. v8}, La76;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
-    :catch_6
-    const/16 v2, 0x8
+    return-object v3
 
-    :try_start_7
-    sget-object v3, Lwfd;->b:Lmk9;
+    nop
 
-    aput v2, v0, v1
-    :try_end_7
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    :catch_7
-    const/16 v1, 0x9
+.method public final hashCode()I
+    .locals 1
 
-    :try_start_8
-    sget-object v3, Lwfd;->b:Lmk9;
+    iget v0, p0, Lnfd;->a:I
 
-    aput v1, v0, v2
-    :try_end_8
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_8
+    packed-switch v0, :pswitch_data_0
 
-    :catch_8
-    const/16 v2, 0xa
+    invoke-virtual {p0}, Lnfd;->getFunctionDelegate()Lq66;
 
-    :try_start_9
-    sget-object v3, Lwfd;->b:Lmk9;
+    move-result-object p0
 
-    aput v2, v0, v1
-    :try_end_9
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_9
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    :catch_9
-    :try_start_a
-    sget-object v1, Lwfd;->b:Lmk9;
+    move-result p0
 
-    const/16 v1, 0xb
+    return p0
 
-    aput v1, v0, v2
-    :try_end_a
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_a} :catch_a
+    :pswitch_0
+    invoke-virtual {p0}, Lnfd;->getFunctionDelegate()Lq66;
 
-    :catch_a
-    sput-object v0, Lnfd;->$EnumSwitchMapping$0:[I
+    move-result-object p0
 
-    return-void
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    return p0
+
+    :pswitch_1
+    invoke-virtual {p0}, Lnfd;->getFunctionDelegate()Lq66;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    return p0
+
+    :pswitch_2
+    invoke-virtual {p0}, Lnfd;->getFunctionDelegate()Lq66;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    return p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

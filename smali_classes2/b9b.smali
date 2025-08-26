@@ -1,96 +1,112 @@
 .class public final Lb9b;
-.super Lt81;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final b:Landroid/content/Intent;
+.field public X:I
+
+.field public final synthetic Y:Lk9b;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Intent;)V
-    .locals 1
+.method public constructor <init>(Lk9b;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    const/16 v0, 0x9
+    iput-object p1, p0, Lb9b;->Y:Lk9b;
 
-    invoke-direct {p0, v0}, Lt81;-><init>(I)V
+    const/4 p1, 0x2
 
-    iput-object p1, p0, Lb9b;->b:Landroid/content/Intent;
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lb9b;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lb9b;
-
-    iget-object p0, p0, Lb9b;->b:Landroid/content/Intent;
-
-    iget-object p1, p1, Lb9b;->b:Landroid/content/Intent;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    iget-object p0, p0, Lb9b;->b:Landroid/content/Intent;
+    check-cast p1, Lox3;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "SelectPhotoFromCamera(intent="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lb9b;->b:Landroid/content/Intent;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, p1, p2}, Lb9b;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
+
+    check-cast p0, Lb9b;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lb9b;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
+
+    new-instance p1, Lb9b;
+
+    iget-object p0, p0, Lb9b;->Y:Lk9b;
+
+    invoke-direct {p1, p0, p2}, Lb9b;-><init>(Lk9b;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    iget v0, p0, Lb9b;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lb9b;->Y:Lk9b;
+
+    iget-object p1, p1, Lk9b;->b:Ln8b;
+
+    iput v1, p0, Lb9b;->X:I
+
+    invoke-interface {p1, p0}, Ln8b;->a(Lbu3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 .end method

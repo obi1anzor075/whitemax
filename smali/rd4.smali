@@ -1,51 +1,60 @@
-.class public abstract Lrd4;
-.super Lah0;
+.class public final Lrd4;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lfsc;
+
+
+# static fields
+.field public static final f:Ljava/util/logging/Logger;
 
 
 # instance fields
-.field public final b:Lah0;
+.field public final a:Lx77;
+
+.field public final b:Ljava/util/concurrent/Executor;
+
+.field public final c:Ly79;
+
+.field public final d:Ly35;
+
+.field public final e:Lqfe;
 
 
 # direct methods
-.method public constructor <init>(Lah0;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Lah0;-><init>()V
+    const-class v0, Lp0f;
 
-    iput-object p1, p0, Lrd4;->b:Lah0;
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    return-void
-.end method
+    move-result-object v0
 
+    invoke-static {v0}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
 
-# virtual methods
-.method public d()V
-    .locals 0
+    move-result-object v0
 
-    iget-object p0, p0, Lrd4;->b:Lah0;
-
-    invoke-virtual {p0}, Lah0;->c()V
+    sput-object v0, Lrd4;->f:Ljava/util/logging/Logger;
 
     return-void
 .end method
 
-.method public f(Ljava/lang/Throwable;)V
+.method public constructor <init>(Ljava/util/concurrent/Executor;Ly79;Lx77;Ly35;Lqfe;)V
     .locals 0
 
-    iget-object p0, p0, Lrd4;->b:Lah0;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p0, p1}, Lah0;->e(Ljava/lang/Throwable;)V
+    iput-object p1, p0, Lrd4;->b:Ljava/util/concurrent/Executor;
 
-    return-void
-.end method
+    iput-object p2, p0, Lrd4;->c:Ly79;
 
-.method public j(F)V
-    .locals 0
+    iput-object p3, p0, Lrd4;->a:Lx77;
 
-    iget-object p0, p0, Lrd4;->b:Lah0;
+    iput-object p4, p0, Lrd4;->d:Ly35;
 
-    invoke-virtual {p0, p1}, Lah0;->i(F)V
+    iput-object p5, p0, Lrd4;->e:Lqfe;
 
     return-void
 .end method

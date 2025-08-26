@@ -1,258 +1,113 @@
-.class public abstract Lcm7;
-.super Ljava/lang/Object;
+.class public final Lcm7;
+.super Lfm7;
 .source "SourceFile"
 
 
+# instance fields
+.field public final a:Lt24;
+
+
 # direct methods
-.method public static a(Landroid/location/Location;)F
+.method public constructor <init>(Lt24;)V
     .locals 0
 
-    invoke-virtual {p0}, Landroid/location/Location;->getBearingAccuracyDegrees()F
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result p0
+    iput-object p1, p0, Lcm7;->a:Lt24;
 
-    return p0
+    return-void
 .end method
 
-.method public static b(Landroid/location/Location;)F
-    .locals 0
 
-    invoke-virtual {p0}, Landroid/location/Location;->getSpeedAccuracyMetersPerSecond()F
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static c(Landroid/location/Location;)F
-    .locals 0
-
-    invoke-virtual {p0}, Landroid/location/Location;->getVerticalAccuracyMeters()F
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static d(Landroid/location/Location;)Z
-    .locals 0
-
-    invoke-virtual {p0}, Landroid/location/Location;->hasBearingAccuracy()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static e(Landroid/location/Location;)Z
-    .locals 0
-
-    invoke-virtual {p0}, Landroid/location/Location;->hasSpeedAccuracy()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static f(Landroid/location/Location;)Z
-    .locals 0
-
-    invoke-virtual {p0}, Landroid/location/Location;->hasVerticalAccuracy()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static g(Landroid/location/Location;)V
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
     .locals 2
 
-    :try_start_0
-    invoke-static {}, Lswb;->v()Ljava/lang/reflect/Field;
+    if-ne p0, p1, :cond_0
 
-    move-result-object v0
+    const/4 p0, 0x1
 
-    invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->getByte(Ljava/lang/Object;)B
+    return p0
 
-    move-result v0
+    :cond_0
+    if-eqz p1, :cond_2
 
-    invoke-static {}, Lswb;->w()I
+    const-class v0, Lcm7;
 
-    move-result v1
-
-    not-int v1, v1
-
-    and-int/2addr v0, v1
-
-    int-to-byte v0, v0
-
-    invoke-static {}, Lswb;->v()Ljava/lang/reflect/Field;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
 
-    invoke-virtual {v1, p0, v0}, Ljava/lang/reflect/Field;->setByte(Ljava/lang/Object;B)V
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception p0
+    if-eq v0, v1, :cond_1
 
     goto :goto_0
 
-    :catch_1
-    move-exception p0
+    :cond_1
+    check-cast p1, Lcm7;
 
-    goto :goto_1
+    iget-object p0, p0, Lcm7;->a:Lt24;
 
+    iget-object p1, p1, Lcm7;->a:Lt24;
+
+    invoke-virtual {p0, p1}, Lt24;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+
+    :cond_2
     :goto_0
-    new-instance v0, Ljava/lang/IllegalAccessError;
+    const/4 p0, 0x0
 
-    invoke-direct {v0}, Ljava/lang/IllegalAccessError;-><init>()V
-
-    invoke-virtual {v0, p0}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
-
-    throw v0
-
-    :goto_1
-    new-instance v0, Ljava/lang/NoSuchFieldError;
-
-    invoke-direct {v0}, Ljava/lang/NoSuchFieldError;-><init>()V
-
-    invoke-virtual {v0, p0}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
-
-    throw v0
+    return p0
 .end method
 
-.method public static h(Landroid/location/Location;)V
-    .locals 2
+.method public final hashCode()I
+    .locals 1
 
-    :try_start_0
-    invoke-static {}, Lswb;->v()Ljava/lang/reflect/Field;
+    const-class v0, Lcm7;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->getByte(Ljava/lang/Object;)B
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    invoke-static {}, Lswb;->x()I
+    mul-int/lit8 v0, v0, 0x1f
 
-    move-result v1
+    iget-object p0, p0, Lcm7;->a:Lt24;
 
-    not-int v1, v1
+    invoke-virtual {p0}, Lt24;->hashCode()I
 
-    and-int/2addr v0, v1
+    move-result p0
 
-    int-to-byte v0, v0
+    add-int/2addr p0, v0
 
-    invoke-static {}, Lswb;->v()Ljava/lang/reflect/Field;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0, v0}, Ljava/lang/reflect/Field;->setByte(Ljava/lang/Object;B)V
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception p0
-
-    goto :goto_0
-
-    :catch_1
-    move-exception p0
-
-    goto :goto_1
-
-    :goto_0
-    new-instance v0, Ljava/lang/IllegalAccessError;
-
-    invoke-direct {v0}, Ljava/lang/IllegalAccessError;-><init>()V
-
-    invoke-virtual {v0, p0}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
-
-    throw v0
-
-    :goto_1
-    new-instance v0, Ljava/lang/NoSuchFieldError;
-
-    invoke-direct {v0}, Ljava/lang/NoSuchFieldError;-><init>()V
-
-    invoke-virtual {v0, p0}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
-
-    throw v0
+    return p0
 .end method
 
-.method public static i(Landroid/location/Location;)V
+.method public final toString()Ljava/lang/String;
     .locals 2
 
-    :try_start_0
-    invoke-static {}, Lswb;->v()Ljava/lang/reflect/Field;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, "Failure {mOutputData="
 
-    invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->getByte(Ljava/lang/Object;)B
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result v0
+    iget-object p0, p0, Lcm7;->a:Lt24;
 
-    invoke-static {}, Lswb;->y()I
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result v1
+    const/16 p0, 0x7d
 
-    not-int v1, v1
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    and-int/2addr v0, v1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    int-to-byte v0, v0
+    move-result-object p0
 
-    invoke-static {}, Lswb;->v()Ljava/lang/reflect/Field;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0, v0}, Ljava/lang/reflect/Field;->setByte(Ljava/lang/Object;B)V
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception p0
-
-    new-instance v0, Ljava/lang/IllegalAccessError;
-
-    invoke-direct {v0}, Ljava/lang/IllegalAccessError;-><init>()V
-
-    invoke-virtual {v0, p0}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
-
-    throw v0
-.end method
-
-.method public static j(Landroid/location/Location;F)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Landroid/location/Location;->setBearingAccuracyDegrees(F)V
-
-    return-void
-.end method
-
-.method public static k(Landroid/location/Location;F)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Landroid/location/Location;->setSpeedAccuracyMetersPerSecond(F)V
-
-    return-void
-.end method
-
-.method public static l(Landroid/location/Location;F)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Landroid/location/Location;->setVerticalAccuracyMeters(F)V
-
-    return-void
+    return-object p0
 .end method

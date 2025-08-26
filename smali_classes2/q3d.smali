@@ -1,65 +1,67 @@
 .class public final Lq3d;
-.super Llbe;
+.super Lbu3;
 .source "SourceFile"
 
 
 # instance fields
-.field public c:Ljava/lang/String;
+.field public X:Ljava/lang/String;
+
+.field public Y:Lfv0;
+
+.field public Z:Lav0;
+
+.field public o:Lr3d;
+
+.field public o0:Lzs8;
+
+.field public p0:J
+
+.field public synthetic q0:Ljava/lang/Object;
+
+.field public final synthetic r0:Lr3d;
+
+.field public s0:I
 
 
 # direct methods
-.method public constructor <init>(Lws8;)V
+.method public constructor <init>(Lr3d;Lbu3;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Llbe;-><init>(Lws8;)V
+    iput-object p1, p0, Lq3d;->r0:Lr3d;
+
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Lws8;Ljava/lang/String;)V
-    .locals 1
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 7
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-object p1, p0, Lq3d;->q0:Ljava/lang/Object;
 
-    const-string v0, "token"
+    iget p1, p0, Lq3d;->s0:I
 
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const/high16 v0, -0x80000000
 
-    move-result p2
+    or-int/2addr p1, v0
 
-    if-nez p2, :cond_0
+    iput p1, p0, Lq3d;->s0:I
 
-    invoke-virtual {p1}, Lws8;->z()V
+    const/4 v4, 0x0
 
-    goto :goto_0
+    const/4 v5, 0x0
 
-    :cond_0
-    invoke-virtual {p1}, Lws8;->z0()Ljava/lang/String;
+    iget-object v0, p0, Lq3d;->r0:Lr3d;
 
-    move-result-object p1
+    const-wide/16 v1, 0x0
 
-    iput-object p1, p0, Lq3d;->c:Ljava/lang/String;
+    const/4 v3, 0x0
 
-    :goto_0
-    return-void
-.end method
+    move-object v6, p0
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    iget-object p0, p0, Lq3d;->c:Ljava/lang/String;
-
-    invoke-static {p0}, Lr1g;->v(Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object p0
-
-    const-string v0, "{token=\'"
-
-    const-string v1, "\'}"
-
-    invoke-static {v0, p0, v1}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual/range {v0 .. v6}, Lr3d;->p(JLjava/lang/String;Lfv0;Lav0;Lbu3;)Ljava/lang/Object;
 
     move-result-object p0
 

@@ -1,23 +1,8 @@
-.class public interface abstract Lxwb;
+.class public abstract Lxwb;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
-# virtual methods
-.method public log(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
+# static fields
+.field public static oneme_settings_twofa_creation_password_error_symbols_count:I = 0x7f110027
 
-    return-void
-.end method
-
-.method public logException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public reportException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 0
-
-    return-void
-.end method
+.field public static oneme_settings_twofa_creation_password_symbols_count:I = 0x7f110028

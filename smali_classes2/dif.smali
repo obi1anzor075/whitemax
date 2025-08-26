@@ -1,59 +1,80 @@
 .class public final Ldif;
-.super Ler3;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public X:Lsif;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public Y:Lphf;
-
-.field public Z:Ljava/lang/String;
-
-.field public o:Lgif;
-
-.field public w0:Lhm0;
-
-.field public synthetic x0:Ljava/lang/Object;
-
-.field public final synthetic y0:Lgif;
-
-.field public z0:I
+.field public final synthetic Y:Lfif;
 
 
 # direct methods
-.method public constructor <init>(Lgif;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lfif;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    iput-object p1, p0, Ldif;->y0:Lgif;
+    iput-object p1, p0, Ldif;->Y:Lfif;
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iput-object p1, p0, Ldif;->x0:Ljava/lang/Object;
+    check-cast p1, Lpjf;
 
-    iget p1, p0, Ldif;->z0:I
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Ldif;->z0:I
-
-    iget-object p1, p0, Ldif;->y0:Lgif;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lgif;->l(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Ldif;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
+
+    check-cast p0, Ldif;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Ldif;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
+
+    new-instance v0, Ldif;
+
+    iget-object p0, p0, Ldif;->Y:Lfif;
+
+    invoke-direct {v0, p0, p2}, Ldif;-><init>(Lfif;Lkotlin/coroutines/Continuation;)V
+
+    iput-object p1, v0, Ldif;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Ldif;->X:Ljava/lang/Object;
+
+    check-cast p1, Lpjf;
+
+    iget-object p0, p0, Ldif;->Y:Lfif;
+
+    invoke-static {p0, p1}, Lfif;->i(Lfif;Lpjf;)V
+
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 .end method

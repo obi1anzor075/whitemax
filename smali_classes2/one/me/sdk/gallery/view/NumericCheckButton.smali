@@ -13,7 +13,7 @@
         "Landroidx/appcompat/widget/AppCompatButton;",
         "",
         "id",
-        "Ljue;",
+        "Le5f;",
         "setBackground",
         "(I)V",
         "number",
@@ -26,14 +26,14 @@
         "enabled",
         "setEnabled",
         "(Z)V",
-        "Ltg;",
+        "Lmg;",
         "o",
-        "Lt97;",
+        "Lje7;",
         "getAnimations",
-        "()Ltg;",
+        "()Lmg;",
         "animations",
         "checked",
-        "w0",
+        "o0",
         "Z",
         "isChecked",
         "()Z",
@@ -46,40 +46,41 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # static fields
-.field public static final A0:I
+.field public static final q0:I
 
-.field public static final y0:I
+.field public static final r0:I
 
-.field public static final z0:I
+.field public static final s0:I
 
 
 # instance fields
-.field public final o:Lt97;
+.field public final o:Lje7;
 
-.field public w0:Z
+.field public o0:Z
 
-.field public x0:Landroid/graphics/drawable/Drawable;
+.field public p0:Landroid/graphics/drawable/Drawable;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    sget v0, Lzhc;->q:I
+    sget v0, Lknc;->t:I
 
-    sput v0, Lone/me/sdk/gallery/view/NumericCheckButton;->y0:I
+    sput v0, Lone/me/sdk/gallery/view/NumericCheckButton;->q0:I
 
-    sget v0, Lzhc;->p:I
+    sget v0, Lknc;->s:I
 
-    sput v0, Lone/me/sdk/gallery/view/NumericCheckButton;->z0:I
+    sput v0, Lone/me/sdk/gallery/view/NumericCheckButton;->r0:I
 
-    sget v0, Lzhc;->o:I
+    sget v0, Lknc;->r:I
 
-    sput v0, Lone/me/sdk/gallery/view/NumericCheckButton;->A0:I
+    sput v0, Lone/me/sdk/gallery/view/NumericCheckButton;->s0:I
 
     return-void
 .end method
@@ -91,39 +92,39 @@
 
     invoke-direct {p0, p1, p2, v0}, Landroidx/appcompat/widget/AppCompatButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    sget-object p1, Lmqc;->a:Lt97;
+    sget-object p1, Lnwc;->a:Lje7;
 
-    sget-object p1, Lnqc;->a:Lnqc;
+    sget-object p1, Lowc;->a:Lowc;
 
-    invoke-virtual {p1}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p1
-
-    const-class p2, Ltg;
-
-    invoke-virtual {p1, p2}, Lw4;->d(Ljava/lang/Class;)Lr7e;
+    invoke-virtual {p1}, Lscout/Component;->getAccessor()Lu4;
 
     move-result-object p1
 
-    iput-object p1, p0, Lone/me/sdk/gallery/view/NumericCheckButton;->o:Lt97;
+    const-class p2, Lmg;
 
-    sget p1, Lone/me/sdk/gallery/view/NumericCheckButton;->y0:I
+    invoke-virtual {p1, p2}, Lu4;->d(Ljava/lang/Class;)Lwfe;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lone/me/sdk/gallery/view/NumericCheckButton;->o:Lje7;
+
+    sget p1, Lone/me/sdk/gallery/view/NumericCheckButton;->q0:I
 
     invoke-direct {p0, p1}, Lone/me/sdk/gallery/view/NumericCheckButton;->setBackground(I)V
 
     return-void
 .end method
 
-.method private final getAnimations()Ltg;
+.method private final getAnimations()Lmg;
     .locals 0
 
-    iget-object p0, p0, Lone/me/sdk/gallery/view/NumericCheckButton;->o:Lt97;
+    iget-object p0, p0, Lone/me/sdk/gallery/view/NumericCheckButton;->o:Lje7;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Ltg;
+    check-cast p0, Lmg;
 
     return-object p0
 .end method
@@ -135,7 +136,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lgq3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, p1}, Let3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
@@ -145,22 +146,22 @@
 .end method
 
 .method private final setChecked(Z)V
-    .locals 8
+    .locals 9
 
-    iget-boolean v0, p0, Lone/me/sdk/gallery/view/NumericCheckButton;->w0:Z
+    iget-boolean v0, p0, Lone/me/sdk/gallery/view/NumericCheckButton;->o0:Z
 
     if-ne p1, v0, :cond_0
 
     return-void
 
     :cond_0
-    iput-boolean p1, p0, Lone/me/sdk/gallery/view/NumericCheckButton;->w0:Z
+    iput-boolean p1, p0, Lone/me/sdk/gallery/view/NumericCheckButton;->o0:Z
 
     invoke-virtual {p0}, Landroid/view/View;->clearAnimation()V
 
     if-eqz p1, :cond_1
 
-    new-instance p1, Landroid/view/animation/ScaleAnimation;
+    new-instance v1, Landroid/view/animation/ScaleAnimation;
 
     const/high16 v6, 0x42480000    # 50.0f
 
@@ -174,69 +175,67 @@
 
     const/high16 v5, 0x3f800000    # 1.0f
 
-    move-object v1, p1
-
     invoke-direct/range {v1 .. v7}, Landroid/view/animation/ScaleAnimation;-><init>(FFFFFF)V
 
-    invoke-direct {p0}, Lone/me/sdk/gallery/view/NumericCheckButton;->getAnimations()Ltg;
+    invoke-direct {p0}, Lone/me/sdk/gallery/view/NumericCheckButton;->getAnimations()Lmg;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget-object v0, v0, Ltg;->a:Llg;
+    iget-object p1, p1, Lmg;->a:Lig4;
 
-    invoke-interface {v0}, Llg;->f()Landroid/view/animation/Interpolator;
+    invoke-virtual {p1}, Lig4;->j()Landroid/view/animation/Interpolator;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {p1, v0}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+    invoke-virtual {v1, p1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
     goto :goto_0
 
     :cond_1
-    new-instance p1, Landroid/view/animation/ScaleAnimation;
-
-    const/high16 v6, 0x42480000    # 50.0f
+    new-instance v2, Landroid/view/animation/ScaleAnimation;
 
     const/high16 v7, 0x42480000    # 50.0f
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    const/high16 v8, 0x42480000    # 50.0f
 
-    const v3, 0x3f666666    # 0.9f
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    const v4, 0x3f666666    # 0.9f
 
-    const v5, 0x3f666666    # 0.9f
+    const/high16 v5, 0x3f800000    # 1.0f
 
-    move-object v1, p1
+    const v6, 0x3f666666    # 0.9f
 
-    invoke-direct/range {v1 .. v7}, Landroid/view/animation/ScaleAnimation;-><init>(FFFFFF)V
+    invoke-direct/range {v2 .. v8}, Landroid/view/animation/ScaleAnimation;-><init>(FFFFFF)V
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
-    invoke-virtual {p1, v0}, Landroid/view/animation/Animation;->setRepeatCount(I)V
+    invoke-virtual {v2, p1}, Landroid/view/animation/Animation;->setRepeatCount(I)V
 
-    const/4 v0, 0x2
+    const/4 p1, 0x2
 
-    invoke-virtual {p1, v0}, Landroid/view/animation/Animation;->setRepeatMode(I)V
+    invoke-virtual {v2, p1}, Landroid/view/animation/Animation;->setRepeatMode(I)V
 
-    invoke-direct {p0}, Lone/me/sdk/gallery/view/NumericCheckButton;->getAnimations()Ltg;
+    invoke-direct {p0}, Lone/me/sdk/gallery/view/NumericCheckButton;->getAnimations()Lmg;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget-object v0, v0, Ltg;->a:Llg;
+    iget-object p1, p1, Lmg;->a:Lig4;
 
-    invoke-interface {v0}, Llg;->p()Landroid/view/animation/Interpolator;
+    invoke-virtual {p1}, Lig4;->i()Landroid/view/animation/Interpolator;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {p1, v0}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+    invoke-virtual {v2, p1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+
+    move-object v1, v2
 
     :goto_0
-    const-wide/16 v0, 0x64
+    const-wide/16 v2, 0x64
 
-    invoke-virtual {p1, v0, v1}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v1, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
+    invoke-virtual {p0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
     return-void
 .end method
@@ -254,12 +253,12 @@
 
     if-eqz p1, :cond_0
 
-    sget p1, Lone/me/sdk/gallery/view/NumericCheckButton;->y0:I
+    sget p1, Lone/me/sdk/gallery/view/NumericCheckButton;->q0:I
 
     goto :goto_0
 
     :cond_0
-    sget p1, Lone/me/sdk/gallery/view/NumericCheckButton;->z0:I
+    sget p1, Lone/me/sdk/gallery/view/NumericCheckButton;->r0:I
 
     :goto_0
     invoke-direct {p0, p1}, Lone/me/sdk/gallery/view/NumericCheckButton;->setBackground(I)V
@@ -272,7 +271,7 @@
 
     if-lez p1, :cond_4
 
-    sget v0, Lone/me/sdk/gallery/view/NumericCheckButton;->A0:I
+    sget v0, Lone/me/sdk/gallery/view/NumericCheckButton;->s0:I
 
     invoke-direct {p0, v0}, Lone/me/sdk/gallery/view/NumericCheckButton;->setBackground(I)V
 
@@ -326,14 +325,14 @@
 
     invoke-direct {p0, p1}, Lone/me/sdk/gallery/view/NumericCheckButton;->setChecked(Z)V
 
-    goto :goto_3
+    return-void
 
     :cond_4
-    iget-object p1, p0, Lone/me/sdk/gallery/view/NumericCheckButton;->x0:Landroid/graphics/drawable/Drawable;
+    iget-object p1, p0, Lone/me/sdk/gallery/view/NumericCheckButton;->p0:Landroid/graphics/drawable/Drawable;
 
     if-nez p1, :cond_5
 
-    sget p1, Lone/me/sdk/gallery/view/NumericCheckButton;->y0:I
+    sget p1, Lone/me/sdk/gallery/view/NumericCheckButton;->q0:I
 
     invoke-direct {p0, p1}, Lone/me/sdk/gallery/view/NumericCheckButton;->setBackground(I)V
 
@@ -351,14 +350,13 @@
 
     invoke-direct {p0, p1}, Lone/me/sdk/gallery/view/NumericCheckButton;->setChecked(Z)V
 
-    :goto_3
     return-void
 .end method
 
 .method public final setUncheckedBackground(Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    iput-object p1, p0, Lone/me/sdk/gallery/view/NumericCheckButton;->x0:Landroid/graphics/drawable/Drawable;
+    iput-object p1, p0, Lone/me/sdk/gallery/view/NumericCheckButton;->p0:Landroid/graphics/drawable/Drawable;
 
     return-void
 .end method

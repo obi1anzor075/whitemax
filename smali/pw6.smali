@@ -1,201 +1,237 @@
-.class public final Lpw6;
-.super Lxx2;
+.class public abstract Lpw6;
+.super Ljava/util/AbstractCollection;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/io/Serializable;
 
-# instance fields
-.field public A0:J
 
-.field public volatile B0:Z
-
-.field public final y0:Lpt0;
-
-.field public z0:Lafc;
+# static fields
+.field public static final a:[Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Loz3;Lxz3;Lvu5;ILjava/lang/Object;Lpt0;)V
-    .locals 11
+.method static constructor <clinit>()V
+    .locals 1
 
-    const-wide v9, -0x7fffffffffffffffL    # -4.9E-324
+    const/4 v0, 0x0
 
-    const/4 v3, 0x2
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const-wide v7, -0x7fffffffffffffffL    # -4.9E-324
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v4, p3
-
-    move v5, p4
-
-    move-object/from16 v6, p5
-
-    invoke-direct/range {v0 .. v10}, Lxx2;-><init>(Loz3;Lxz3;ILvu5;ILjava/lang/Object;JJ)V
-
-    move-object/from16 v1, p6
-
-    iput-object v1, v0, Lpw6;->y0:Lpt0;
+    sput-object v0, Lpw6;->a:[Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lpw6;->B0:Z
-
-    return-void
+.method public abstract a()Lxw6;
 .end method
 
-.method public final load()V
-    .locals 8
+.method public final add(Ljava/lang/Object;)Z
+    .locals 0
 
-    iget-wide v0, p0, Lpw6;->A0:J
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    const-wide/16 v2, 0x0
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
-    cmp-long v0, v0, v2
+    throw p0
+.end method
 
-    if-nez v0, :cond_0
+.method public final addAll(Ljava/util/Collection;)Z
+    .locals 0
 
-    iget-object v1, p0, Lpw6;->y0:Lpt0;
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    iget-object v2, p0, Lpw6;->z0:Lafc;
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
-    const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
+    throw p0
+.end method
 
-    const-wide v5, -0x7fffffffffffffffL    # -4.9E-324
+.method public abstract b(I[Ljava/lang/Object;)I
+.end method
 
-    invoke-virtual/range {v1 .. v6}, Lpt0;->b(Lafc;JJ)V
+.method public c()[Ljava/lang/Object;
+    .locals 0
 
-    :cond_0
-    :try_start_0
-    iget-object v0, p0, Lxx2;->b:Lxz3;
+    const/4 p0, 0x0
 
-    iget-wide v1, p0, Lpw6;->A0:J
+    return-object p0
+.end method
 
-    invoke-virtual {v0, v1, v2}, Lxz3;->b(J)Lxz3;
+.method public final clear()V
+    .locals 0
 
-    move-result-object v0
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    new-instance v7, Lq74;
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
-    iget-object v2, p0, Lxx2;->x0:Lesd;
+    throw p0
+.end method
 
-    iget-wide v3, v0, Lxz3;->f:J
+.method public abstract contains(Ljava/lang/Object;)Z
+.end method
 
-    invoke-virtual {v2, v0}, Lesd;->N(Lxz3;)J
+.method public d()I
+    .locals 0
 
-    move-result-wide v5
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    move-object v1, v7
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
-    invoke-direct/range {v1 .. v6}, Lq74;-><init>(Liz3;JJ)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    throw p0
+.end method
 
-    :goto_0
-    :try_start_1
-    iget-boolean v0, p0, Lpw6;->B0:Z
+.method public e()I
+    .locals 0
 
-    if-nez v0, :cond_3
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    iget-object v0, p0, Lpw6;->y0:Lpt0;
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
-    sget-object v1, Lpt0;->y0:Lle4;
+    throw p0
+.end method
 
-    iget-object v0, v0, Lpt0;->a:Ld75;
+.method public abstract f()Z
+.end method
 
-    invoke-interface {v0, v7, v1}, Ld75;->i(Lf75;Lle4;)I
+.method public abstract g()Lm5f;
+.end method
+
+.method public bridge synthetic iterator()Ljava/util/Iterator;
+    .locals 0
+
+    invoke-virtual {p0}, Lpw6;->g()Lm5f;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final remove(Ljava/lang/Object;)Z
+    .locals 0
+
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p0
+.end method
+
+.method public final removeAll(Ljava/util/Collection;)Z
+    .locals 0
+
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p0
+.end method
+
+.method public final retainAll(Ljava/util/Collection;)Z
+    .locals 0
+
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p0
+.end method
+
+.method public final toArray()[Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lpw6;->a:[Ljava/lang/Object;
+
+    invoke-virtual {p0, v0}, Lpw6;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    .locals 3
+
+    .line 2
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 3
+    invoke-virtual {p0}, Ljava/util/AbstractCollection;->size()I
 
     move-result v0
 
-    const/4 v1, 0x0
+    .line 4
+    array-length v1, p1
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    if-eq v0, v2, :cond_1
+    if-ge v1, v0, :cond_2
 
-    move v3, v2
+    .line 5
+    invoke-virtual {p0}, Lpw6;->c()[Ljava/lang/Object;
 
-    goto :goto_1
+    move-result-object v1
 
-    :cond_1
-    move v3, v1
+    if-eqz v1, :cond_0
 
-    :goto_1
-    invoke-static {v3}, Lswb;->h(Z)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .line 6
+    invoke-virtual {p0}, Lpw6;->e()I
 
-    if-nez v0, :cond_2
+    move-result v0
 
-    move v1, v2
+    invoke-virtual {p0}, Lpw6;->d()I
 
-    :cond_2
-    if-eqz v1, :cond_3
+    move-result p0
+
+    .line 7
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p1
+
+    invoke-static {v1, v0, p0, p1}, Ljava/util/Arrays;->copyOfRange([Ljava/lang/Object;IILjava/lang/Class;)[Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 8
+    :cond_0
+    array-length v1, p1
+
+    if-nez v1, :cond_1
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v0
+    :cond_1
+    invoke-static {p1, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
-    goto :goto_2
+    move-result-object p1
 
+    .line 9
+    :goto_0
+    invoke-static {p1, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object p1
+
+    goto :goto_1
+
+    .line 10
+    :cond_2
+    array-length v1, p1
+
+    if-le v1, v0, :cond_3
+
+    const/4 v1, 0x0
+
+    .line 11
+    aput-object v1, p1, v0
+
+    .line 12
     :cond_3
-    :try_start_2
-    iget-wide v0, v7, Lq74;->o:J
+    :goto_1
+    invoke-virtual {p0, v2, p1}, Lpw6;->b(I[Ljava/lang/Object;)I
 
-    iget-object v2, p0, Lxx2;->b:Lxz3;
-
-    iget-wide v2, v2, Lxz3;->f:J
-
-    sub-long/2addr v0, v2
-
-    iput-wide v0, p0, Lpw6;->A0:J
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    iget-object p0, p0, Lxx2;->x0:Lesd;
-
-    invoke-static {p0}, Lbm3;->f(Loz3;)V
-
-    return-void
-
-    :catchall_1
-    move-exception v0
-
-    goto :goto_3
-
-    :goto_2
-    :try_start_3
-    iget-wide v1, v7, Lq74;->o:J
-
-    iget-object v3, p0, Lxx2;->b:Lxz3;
-
-    iget-wide v3, v3, Lxz3;->f:J
-
-    sub-long/2addr v1, v3
-
-    iput-wide v1, p0, Lpw6;->A0:J
-
-    throw v0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    :goto_3
-    iget-object p0, p0, Lxx2;->x0:Lesd;
-
-    invoke-static {p0}, Lbm3;->f(Loz3;)V
-
-    throw v0
+    return-object p1
 .end method

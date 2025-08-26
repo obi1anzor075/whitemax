@@ -101,7 +101,7 @@
 .end method
 
 .method private convertInternal(Lorg/webrtc/VideoFrame$TextureBuffer;)Lorg/webrtc/VideoFrame$I420Buffer;
-    .locals 18
+    .locals 19
 
     move-object/from16 v0, p0
 
@@ -121,57 +121,59 @@
 
     move-result-object v1
 
-    check-cast v1, Lorg/webrtc/VideoFrame$TextureBuffer;
+    move-object v3, v1
 
-    invoke-interface {v1}, Lorg/webrtc/VideoFrame$Buffer;->getWidth()I
+    check-cast v3, Lorg/webrtc/VideoFrame$TextureBuffer;
 
-    move-result v11
+    invoke-interface {v3}, Lorg/webrtc/VideoFrame$Buffer;->getWidth()I
 
-    invoke-interface {v1}, Lorg/webrtc/VideoFrame$Buffer;->getHeight()I
+    move-result v5
 
-    move-result v12
+    invoke-interface {v3}, Lorg/webrtc/VideoFrame$Buffer;->getHeight()I
 
-    add-int/lit8 v2, v11, 0x7
+    move-result v6
 
-    div-int/lit8 v2, v2, 0x8
+    add-int/lit8 v1, v5, 0x7
 
-    mul-int/lit8 v13, v2, 0x8
+    div-int/lit8 v1, v1, 0x8
 
-    add-int/lit8 v2, v12, 0x1
+    mul-int/lit8 v1, v1, 0x8
 
-    div-int/lit8 v14, v2, 0x2
+    add-int/lit8 v2, v6, 0x1
 
-    add-int v2, v12, v14
+    div-int/lit8 v11, v2, 0x2
 
-    mul-int v3, v13, v2
+    add-int v2, v6, v11
 
-    invoke-static {v3}, Lorg/webrtc/JniCommon;->nativeAllocateByteBuffer(I)Ljava/nio/ByteBuffer;
+    mul-int v4, v1, v2
 
-    move-result-object v15
+    invoke-static {v4}, Lorg/webrtc/JniCommon;->nativeAllocateByteBuffer(I)Ljava/nio/ByteBuffer;
 
-    div-int/lit8 v10, v13, 0x4
+    move-result-object v18
 
-    new-instance v9, Landroid/graphics/Matrix;
+    div-int/lit8 v9, v1, 0x4
 
-    invoke-direct {v9}, Landroid/graphics/Matrix;-><init>()V
+    new-instance v4, Landroid/graphics/Matrix;
 
-    const/high16 v3, 0x3f000000    # 0.5f
+    invoke-direct {v4}, Landroid/graphics/Matrix;-><init>()V
 
-    invoke-virtual {v9, v3, v3}, Landroid/graphics/Matrix;->preTranslate(FF)Z
+    const/high16 v7, 0x3f000000    # 0.5f
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    invoke-virtual {v4, v7, v7}, Landroid/graphics/Matrix;->preTranslate(FF)Z
 
-    const/high16 v4, -0x40800000    # -1.0f
+    const/high16 v7, 0x3f800000    # 1.0f
 
-    invoke-virtual {v9, v3, v4}, Landroid/graphics/Matrix;->preScale(FF)Z
+    const/high16 v8, -0x40800000    # -1.0f
 
-    const/high16 v3, -0x41000000    # -0.5f
+    invoke-virtual {v4, v7, v8}, Landroid/graphics/Matrix;->preScale(FF)Z
 
-    invoke-virtual {v9, v3, v3}, Landroid/graphics/Matrix;->preTranslate(FF)Z
+    const/high16 v7, -0x41000000    # -0.5f
 
-    iget-object v3, v0, Lorg/webrtc/YuvConverter;->i420TextureFrameBuffer:Lorg/webrtc/GlTextureFrameBuffer;
+    invoke-virtual {v4, v7, v7}, Landroid/graphics/Matrix;->preTranslate(FF)Z
 
-    invoke-virtual {v3, v10, v2}, Lorg/webrtc/GlTextureFrameBuffer;->setSize(II)V
+    iget-object v7, v0, Lorg/webrtc/YuvConverter;->i420TextureFrameBuffer:Lorg/webrtc/GlTextureFrameBuffer;
+
+    invoke-virtual {v7, v9, v2}, Lorg/webrtc/GlTextureFrameBuffer;->setSize(II)V
 
     iget-object v2, v0, Lorg/webrtc/YuvConverter;->i420TextureFrameBuffer:Lorg/webrtc/GlTextureFrameBuffer;
 
@@ -179,9 +181,9 @@
 
     move-result v2
 
-    const v8, 0x8d40
+    const v12, 0x8d40
 
-    invoke-static {v8, v2}, Landroid/opengl/GLES20;->glBindFramebuffer(II)V
+    invoke-static {v12, v2}, Landroid/opengl/GLES20;->glBindFramebuffer(II)V
 
     const-string v2, "glBindFramebuffer"
 
@@ -195,25 +197,9 @@
 
     const/4 v7, 0x0
 
-    const/16 v16, 0x0
+    const/4 v8, 0x0
 
-    move-object v3, v1
-
-    move-object v4, v9
-
-    move v5, v11
-
-    move v6, v12
-
-    move/from16 v8, v16
-
-    move-object/from16 v16, v9
-
-    move v9, v10
-
-    move/from16 v17, v10
-
-    move v10, v12
+    move v10, v6
 
     invoke-static/range {v2 .. v10}, Lorg/webrtc/VideoFrameDrawer;->drawTexture(Lorg/webrtc/RendererCommon$GlDrawer;Lorg/webrtc/VideoFrame$TextureBuffer;Landroid/graphics/Matrix;IIIIII)V
 
@@ -223,15 +209,15 @@
 
     iget-object v2, v0, Lorg/webrtc/YuvConverter;->drawer:Lorg/webrtc/GlGenericDrawer;
 
-    div-int/lit8 v17, v17, 0x2
+    div-int/lit8 v7, v9, 0x2
 
-    move-object/from16 v4, v16
+    move v9, v7
 
-    move v8, v12
+    const/4 v7, 0x0
 
-    move/from16 v9, v17
+    move v8, v6
 
-    move v10, v14
+    move v10, v11
 
     invoke-static/range {v2 .. v10}, Lorg/webrtc/VideoFrameDrawer;->drawTexture(Lorg/webrtc/RendererCommon$GlDrawer;Lorg/webrtc/VideoFrame$TextureBuffer;Landroid/graphics/Matrix;IIIIII)V
 
@@ -241,7 +227,7 @@
 
     iget-object v2, v0, Lorg/webrtc/YuvConverter;->drawer:Lorg/webrtc/GlGenericDrawer;
 
-    move/from16 v7, v17
+    move v7, v9
 
     invoke-static/range {v2 .. v10}, Lorg/webrtc/VideoFrameDrawer;->drawTexture(Lorg/webrtc/RendererCommon$GlDrawer;Lorg/webrtc/VideoFrame$TextureBuffer;Landroid/graphics/Matrix;IIIIII)V
 
@@ -249,97 +235,97 @@
 
     invoke-virtual {v2}, Lorg/webrtc/GlTextureFrameBuffer;->getWidth()I
 
-    move-result v6
+    move-result v14
 
     iget-object v0, v0, Lorg/webrtc/YuvConverter;->i420TextureFrameBuffer:Lorg/webrtc/GlTextureFrameBuffer;
 
     invoke-virtual {v0}, Lorg/webrtc/GlTextureFrameBuffer;->getHeight()I
 
-    move-result v7
+    move-result v15
 
-    const/16 v8, 0x1908
+    const/16 v16, 0x1908
 
-    const/16 v9, 0x1401
+    const/16 v17, 0x1401
+
+    move v0, v12
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    invoke-static/range {v12 .. v18}, Landroid/opengl/GLES20;->glReadPixels(IIIIIILjava/nio/Buffer;)V
+
+    move-object/from16 v2, v18
+
+    const-string v4, "YuvConverter.convert"
+
+    invoke-static {v4}, Lorg/webrtc/GlUtil;->checkNoGLES2Error(Ljava/lang/String;)V
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    invoke-static {v0, v4}, Landroid/opengl/GLES20;->glBindFramebuffer(II)V
 
-    move-object v10, v15
+    mul-int v0, v1, v6
 
-    invoke-static/range {v4 .. v10}, Landroid/opengl/GLES20;->glReadPixels(IIIIIILjava/nio/Buffer;)V
+    div-int/lit8 v7, v1, 0x2
 
-    const-string v0, "YuvConverter.convert"
+    add-int v8, v0, v7
 
-    invoke-static {v0}, Lorg/webrtc/GlUtil;->checkNoGLES2Error(Ljava/lang/String;)V
+    invoke-virtual {v2, v4}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/ByteBuffer;
 
-    const/4 v0, 0x0
+    invoke-virtual {v2, v0}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/ByteBuffer;
 
-    const v2, 0x8d40
+    move v4, v5
 
-    invoke-static {v2, v0}, Landroid/opengl/GLES20;->glBindFramebuffer(II)V
+    move v5, v6
 
-    mul-int v2, v13, v12
-
-    div-int/lit8 v3, v13, 0x2
-
-    add-int v4, v2, v3
-
-    invoke-virtual {v15, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v15, v2}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v15}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
-
-    move-result-object v0
-
-    invoke-virtual {v15, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/ByteBuffer;
-
-    add-int/lit8 v14, v14, -0x1
-
-    mul-int/2addr v14, v13
-
-    add-int/2addr v14, v3
-
-    add-int/2addr v2, v14
-
-    invoke-virtual {v15, v2}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v15}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
+    invoke-virtual {v2}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
 
     move-result-object v6
 
-    invoke-virtual {v15, v4}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/ByteBuffer;
+    invoke-virtual {v2, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/ByteBuffer;
 
-    add-int/2addr v4, v14
+    add-int/lit8 v11, v10, -0x1
 
-    invoke-virtual {v15, v4}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/ByteBuffer;
+    mul-int/2addr v11, v1
 
-    invoke-virtual {v15}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
+    add-int/2addr v11, v7
 
-    move-result-object v8
+    add-int/2addr v0, v11
 
-    invoke-interface {v1}, Lorg/webrtc/VideoFrame$Buffer;->release()V
+    invoke-virtual {v2, v0}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/ByteBuffer;
 
-    new-instance v10, Lc37;
+    invoke-virtual {v2}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
 
-    const/4 v1, 0x1
+    move-result-object v0
 
-    invoke-direct {v10, v1, v15}, Lc37;-><init>(ILjava/nio/ByteBuffer;)V
+    invoke-virtual {v2, v8}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/ByteBuffer;
 
-    move v2, v11
+    add-int/2addr v8, v11
 
-    move v3, v12
+    invoke-virtual {v2, v8}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/ByteBuffer;
 
-    move-object v4, v0
+    invoke-virtual {v2}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
 
-    move v5, v13
+    move-result-object v10
 
-    move v7, v13
+    invoke-interface {v3}, Lorg/webrtc/VideoFrame$Buffer;->release()V
 
-    move v9, v13
+    new-instance v12, Lr77;
 
-    invoke-static/range {v2 .. v10}, Lorg/webrtc/JavaI420Buffer;->wrap(IILjava/nio/ByteBuffer;ILjava/nio/ByteBuffer;ILjava/nio/ByteBuffer;ILjava/lang/Runnable;)Lorg/webrtc/JavaI420Buffer;
+    const/4 v3, 0x1
+
+    invoke-direct {v12, v3, v2}, Lr77;-><init>(ILjava/nio/ByteBuffer;)V
+
+    move v9, v1
+
+    move v11, v1
+
+    move-object v8, v0
+
+    move v7, v1
+
+    invoke-static/range {v4 .. v12}, Lorg/webrtc/JavaI420Buffer;->wrap(IILjava/nio/ByteBuffer;ILjava/nio/ByteBuffer;ILjava/nio/ByteBuffer;ILjava/lang/Runnable;)Lorg/webrtc/JavaI420Buffer;
 
     move-result-object v0
 

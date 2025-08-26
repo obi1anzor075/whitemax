@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lz24;
+.implements Lo64;
 
 
 # static fields
@@ -31,7 +31,7 @@
 
 
 # virtual methods
-.method public final a()Lg34;
+.method public final a()Lv64;
     .locals 0
 
     sget-object p0, Lj;->b:Lk;
@@ -39,12 +39,12 @@
     return-object p0
 .end method
 
-.method public final b(Ljava/lang/String;Lc34;Landroid/os/Bundle;)Lj34;
+.method public final b(Ljava/lang/String;Lr64;Landroid/os/Bundle;)Ly64;
     .locals 8
 
     sget-object p0, Lj;->b:Lk;
 
-    iget-object p0, p0, Lg34;->a:Ljava/util/LinkedHashSet;
+    iget-object p0, p0, Lv64;->a:Ljava/util/LinkedHashSet;
 
     invoke-interface {p0, p2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
@@ -57,9 +57,9 @@
     return-object p0
 
     :cond_0
-    sget-object p0, Lk;->c:Lc34;
+    sget-object p0, Lk;->c:Lr64;
 
-    invoke-virtual {p2, p0}, Lc34;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p2, p0}, Lr64;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -71,15 +71,13 @@
 
     invoke-direct {v6, p0}, Li;-><init>(I)V
 
-    new-instance p0, Lj34;
-
-    const/16 v7, 0x10
+    new-instance v0, Ly64;
 
     const/4 v5, 0x0
 
-    const/4 v4, 0x1
+    const/16 v7, 0x10
 
-    move-object v0, p0
+    const/4 v4, 0x1
 
     move-object v1, p1
 
@@ -87,16 +85,18 @@
 
     move-object v3, p3
 
-    invoke-direct/range {v0 .. v7}, Lj34;-><init>(Ljava/lang/String;Lc34;Landroid/os/Bundle;ILh34;Li34;I)V
+    invoke-direct/range {v0 .. v7}, Ly64;-><init>(Ljava/lang/String;Lr64;Landroid/os/Bundle;ILw64;Lx64;I)V
 
-    return-object p0
+    return-object v0
 
     :cond_1
+    move-object v2, p2
+
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const-string p1, "Unknown route="
 
-    invoke-static {p1, p2}, Lhr1;->f(Ljava/lang/String;Lc34;)Ljava/lang/String;
+    invoke-static {p1, v2}, Lzt1;->f(Ljava/lang/String;Lr64;)Ljava/lang/String;
 
     move-result-object p1
 

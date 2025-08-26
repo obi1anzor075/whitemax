@@ -1,173 +1,210 @@
 .class public final Lq9d;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
 
 
 # instance fields
-.field public X:I
-
-.field public final synthetic Y:Lt9d;
-
-.field public final synthetic Z:I
-
-
-# direct methods
-.method public constructor <init>(Lt9d;ILkotlin/coroutines/Continuation;)V
-    .locals 0
-
-    iput-object p1, p0, Lq9d;->Y:Lt9d;
-
-    iput p2, p0, Lq9d;->Z:I
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p3}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
+.field public volatile a:Landroid/os/ConditionVariable;
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final a(Lihe;Ljava/util/List;Lp9d;)V
+    .locals 9
 
-    check-cast p1, Lou3;
+    sget-object v0, Lmwe;->a:Lmwe;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    invoke-static {}, Lmwe;->a()Ljava/lang/String;
 
-    invoke-virtual {p0, p1, p2}, Lq9d;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    move-result-object v0
 
-    move-result-object p0
+    if-nez v0, :cond_0
 
-    check-cast p0, Lq9d;
+    return-void
 
-    sget-object p1, Ljue;->a:Ljue;
+    :cond_0
+    invoke-static {}, Lmwe;->b()Lcs4;
 
-    invoke-virtual {p0, p1}, Lq9d;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v1
 
-    move-result-object p0
+    invoke-virtual {v1}, Lcs4;->d()Ljava/util/List;
 
-    return-object p0
-.end method
+    move-result-object v5
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
+    new-instance v1, Lorg/json/JSONObject;
 
-    new-instance p1, Lq9d;
+    invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
 
-    iget-object v0, p0, Lq9d;->Y:Lt9d;
+    const-string v2, "buildUuid"
 
-    iget p0, p0, Lq9d;->Z:I
+    iget-object v3, p1, Lihe;->e:Ljava/lang/String;
 
-    invoke-direct {p1, v0, p0, p2}, Lq9d;-><init>(Lt9d;ILkotlin/coroutines/Continuation;)V
+    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    return-object p1
-.end method
+    const-string v2, "deviceId"
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 7
+    iget-object p1, p1, Lihe;->h:Ljava/lang/String;
 
-    sget-object v0, Lpu3;->a:Lpu3;
+    invoke-virtual {v1, v2, p1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    iget v1, p0, Lq9d;->X:I
+    const-string p1, "sessions"
 
-    sget-object v2, Ljue;->a:Ljue;
+    invoke-static {p2}, Lk3c;->B(Ljava/util/List;)Lorg/json/JSONArray;
 
-    const/4 v3, 0x1
+    move-result-object p2
 
-    if-eqz v1, :cond_1
+    invoke-virtual {v1, p1, p2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    if-ne v1, v3, :cond_0
+    invoke-interface {v5}, Ljava/util/Collection;->isEmpty()Z
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    move-result p1
+
+    if-nez p1, :cond_2
+
+    new-instance p1, Lorg/json/JSONArray;
+
+    invoke-direct {p1}, Lorg/json/JSONArray;-><init>()V
+
+    invoke-interface {v5}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p2
+
+    :goto_0
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Les4;
+
+    new-instance v3, Lorg/json/JSONObject;
+
+    invoke-direct {v3}, Lorg/json/JSONObject;-><init>()V
+
+    const-string v4, "event"
+
+    iget-object v6, v2, Les4;->a:Ljava/lang/String;
+
+    invoke-virtual {v3, v4, v6}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    const-string v4, "reason"
+
+    iget-object v6, v2, Les4;->b:Ljava/lang/String;
+
+    invoke-virtual {v3, v4, v6}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    const-string v4, "count"
+
+    iget v2, v2, Les4;->c:I
+
+    invoke-virtual {v3, v4, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+
+    invoke-virtual {p1, v3}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
 
     goto :goto_0
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
     :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    const-string p2, "drops"
 
-    sget-object p1, Lt9d;->Q0:[Lk77;
-
-    iget-object p1, p0, Lq9d;->Y:Lt9d;
-
-    invoke-virtual {p1}, Lt9d;->s()Lqpc;
-
-    move-result-object v1
-
-    check-cast v1, Lkp;
-
-    iget-object v1, v1, Lf3;->g:Lx97;
-
-    const-string v4, "ALL"
-
-    const-string v5, "app.privacy.chats.invite"
-
-    invoke-virtual {v1, v5, v4}, Lx97;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lsxe;->d(Ljava/lang/String;)I
-
-    move-result v1
-
-    iget v4, p0, Lq9d;->Z:I
-
-    if-ne v1, v4, :cond_2
-
-    return-object v2
+    invoke-virtual {v1, p2, p1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     :cond_2
-    invoke-virtual {p1}, Lt9d;->s()Lqpc;
+    sget-object p1, Lmwe;->a:Lmwe;
 
-    move-result-object v1
+    invoke-static {}, Lmwe;->c()Ljava/util/Map;
 
-    invoke-static {v4}, Lsxe;->k(I)Ljava/lang/String;
+    move-result-object p1
 
-    move-result-object v6
+    sget-object p2, Lild;->c:Lrsd;
 
-    check-cast v1, Lkp;
+    invoke-interface {p1, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v1, v5, v6}, Lf3;->l(Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object p1
 
-    invoke-virtual {p1}, Lt9d;->r()Lpk;
+    instance-of p2, p1, Lcx3;
 
-    move-result-object v1
+    if-eqz p2, :cond_3
 
-    new-instance v5, Leze;
+    check-cast p1, Lcx3;
 
-    invoke-direct {v5}, Ljava/lang/Object;-><init>()V
-
-    iput v4, v5, Leze;->o:I
-
-    new-instance v4, Lgze;
-
-    invoke-direct {v4, v5}, Lgze;-><init>(Leze;)V
-
-    invoke-interface {v1, v4}, Lpk;->a(Lgze;)J
-
-    iput v3, p0, Lq9d;->X:I
-
-    invoke-static {p1, p0}, Lt9d;->q(Lt9d;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-ne p0, v0, :cond_3
-
-    return-object v0
+    goto :goto_1
 
     :cond_3
-    :goto_0
-    return-object v2
+    const/4 p1, 0x0
+
+    :goto_1
+    if-nez p1, :cond_4
+
+    new-instance p1, Lvh4;
+
+    const/16 p2, 0xe
+
+    invoke-direct {p1, p2}, Lvh4;-><init>(I)V
+
+    invoke-virtual {p1}, Lvh4;->l()Lcx3;
+
+    :cond_4
+    const-string p1, "https://sdk-api.apptracer.ru"
+
+    invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
+
+    move-result-object p1
+
+    const-string p2, "api/crash/trackSession"
+
+    invoke-virtual {p1, p2}, Landroid/net/Uri$Builder;->appendEncodedPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object p1
+
+    const-string p2, "crashToken"
+
+    invoke-virtual {p1, p2, v0}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/net/Uri$Builder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    new-instance v3, Lo9g;
+
+    const-string p2, "application/json; charset=utf-8"
+
+    invoke-virtual {v1}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p2, v0}, Llp3;->s(Ljava/lang/String;Ljava/lang/String;)Lzg5;
+
+    move-result-object p2
+
+    invoke-direct {v3, p1, p2}, Lo9g;-><init>(Ljava/lang/String;Ltq6;)V
+
+    new-instance v6, Landroid/os/ConditionVariable;
+
+    invoke-direct {v6}, Landroid/os/ConditionVariable;-><init>()V
+
+    iput-object v6, p0, Lq9d;->a:Landroid/os/ConditionVariable;
+
+    new-instance v2, Lvg3;
+
+    const/16 v8, 0xb
+
+    move-object v4, p0
+
+    move-object v7, p3
+
+    invoke-direct/range {v2 .. v8}, Lvg3;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+
+    invoke-static {v2}, Lkxe;->b(Ljava/lang/Runnable;)V
+
+    return-void
 .end method

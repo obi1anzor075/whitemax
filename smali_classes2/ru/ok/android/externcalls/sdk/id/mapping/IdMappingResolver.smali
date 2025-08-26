@@ -12,22 +12,22 @@
         "Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;",
         "",
         "",
-        "Lge1;",
+        "Lrf1;",
         "Lru/ok/android/externcalls/sdk/id/InternalId;",
         "internalIds",
         "Ljava/lang/Runnable;",
         "onSuccess",
         "onError",
-        "Ljue;",
+        "Le5f;",
         "resolveExternalsByInternalsIds",
         "(Ljava/util/List;Ljava/lang/Runnable;Ljava/lang/Runnable;)V",
         "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
         "Lru/ok/android/externcalls/sdk/id/ExternalId;",
         "participantExternalId",
-        "Lpf3;",
+        "Lkj3;",
         "onIdResolved",
         "withInternalId",
-        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lpf3;Ljava/lang/Runnable;)V",
+        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lkj3;Ljava/lang/Runnable;)V",
         "calls-sdk_release"
     }
     k = 0x1
@@ -36,6 +36,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -45,7 +46,7 @@
         value = {
             "(",
             "Ljava/util/List<",
-            "Lge1;",
+            "Lrf1;",
             ">;",
             "Ljava/lang/Runnable;",
             "Ljava/lang/Runnable;",
@@ -54,12 +55,12 @@
     .end annotation
 .end method
 
-.method public abstract withInternalId(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lpf3;Ljava/lang/Runnable;)V
+.method public abstract withInternalId(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lkj3;Ljava/lang/Runnable;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-            "Lpf3;",
+            "Lkj3;",
             "Ljava/lang/Runnable;",
             ")V"
         }

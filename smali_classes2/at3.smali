@@ -1,58 +1,64 @@
-.class public final synthetic Lat3;
+.class public final Lat3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lpf3;
+.implements Lbt3;
 
 
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lru/ok/android/externcalls/sdk/factory/CreateConfParams;
+# static fields
+.field public static final a:Lat3;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lru/ok/android/externcalls/sdk/factory/CreateConfParams;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p2, p0, Lat3;->a:I
+    new-instance v0, Lat3;
 
-    iput-object p1, p0, Lat3;->b:Lru/ok/android/externcalls/sdk/factory/CreateConfParams;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lat3;->a:Lat3;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
-    iget v0, p0, Lat3;->a:I
+    const/4 v0, 0x1
 
-    iget-object p0, p0, Lat3;->b:Lru/ok/android/externcalls/sdk/factory/CreateConfParams;
+    if-ne p0, p1, :cond_0
 
-    packed-switch v0, :pswitch_data_0
+    return v0
 
-    check-cast p1, Ljava/lang/Throwable;
+    :cond_0
+    instance-of p0, p1, Lat3;
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/ConversationFactory;->j(Lru/ok/android/externcalls/sdk/factory/CreateConfParams;Ljava/lang/Throwable;)V
+    if-nez p0, :cond_1
 
-    return-void
+    const/4 p0, 0x0
 
-    :pswitch_0
-    check-cast p1, Lru/ok/android/externcalls/sdk/Conversation;
+    return p0
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/ConversationFactory;->n(Lru/ok/android/externcalls/sdk/factory/CreateConfParams;Lru/ok/android/externcalls/sdk/Conversation;)V
+    :cond_1
+    return v0
+.end method
 
-    return-void
+.method public final hashCode()I
+    .locals 0
 
-    nop
+    const p0, 0xd8b2a9e
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "PermissionsAccess"
+
+    return-object p0
 .end method

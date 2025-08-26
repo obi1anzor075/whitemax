@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@id/row_setting__tv_title" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="@dimen/settings_start_padding" android:layout_marginStart="@dimen/settings_start_padding"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

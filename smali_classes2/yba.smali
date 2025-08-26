@@ -1,100 +1,95 @@
 .class public final Lyba;
-.super Ljava/lang/Object;
+.super Lu2;
 .source "SourceFile"
 
-# interfaces
-.implements Lzba;
 
+# instance fields
+.field public final synthetic c:I
 
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lyba;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static final a:Lyba;
+.field public final synthetic o:Lzba;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lzba;I)V
+    .locals 0
 
-    new-instance v0, Lyba;
+    iput p2, p0, Lyba;->c:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lyba;->o:Lzba;
 
-    sput-object v0, Lyba;->a:Lyba;
+    const/16 p1, 0x9
 
-    new-instance v0, Lch9;
+    packed-switch p2, :pswitch_data_0
 
-    const/16 v1, 0xe
+    sget-object p2, Lxba;->a:Lxba;
 
-    invoke-direct {v0, v1}, Lch9;-><init>(I)V
-
-    sput-object v0, Lyba;->CREATOR:Landroid/os/Parcelable$Creator;
+    invoke-direct {p0, p1, p2}, Lu2;-><init>(ILjava/lang/Object;)V
 
     return-void
+
+    :pswitch_0
+    sget-object p2, Lwba;->a:Lwba;
+
+    invoke-direct {p0, p1, p2}, Lu2;-><init>(ILjava/lang/Object;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
+.method public final x0(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 1
 
-    const/4 v0, 0x1
+    iget v0, p0, Lyba;->c:I
 
-    if-ne p0, p1, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    return v0
+    invoke-static {p1, p2}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    check-cast p2, Lwba;
+
+    check-cast p1, Lwba;
+
+    iget-object p0, p0, Lyba;->o:Lzba;
+
+    invoke-virtual {p0}, Lzba;->b()V
 
     :cond_0
-    instance-of p0, p1, Lyba;
+    return-void
 
-    if-nez p0, :cond_1
+    :pswitch_0
+    invoke-static {p1, p2}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    const/4 p0, 0x0
+    move-result v0
 
-    return p0
+    if-nez v0, :cond_1
+
+    check-cast p2, Lxba;
+
+    check-cast p1, Lxba;
+
+    iget-object p0, p0, Lyba;->o:Lzba;
+
+    invoke-virtual {p0}, Lzba;->c()V
 
     :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    const p0, -0x77b9f821
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    const-string p0, "Timer"
-
-    return-object p0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
-
-    const/4 p0, 0x1
-
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
-
     return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

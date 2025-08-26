@@ -4,7 +4,7 @@
 
 # interfaces
 .implements Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;
-.implements Ljn1;
+.implements Lzp1;
 .implements Lru/ok/android/externcalls/sdk/stereo/listener/StereoRoomListenerManager;
 
 
@@ -23,9 +23,9 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;",
         "Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;",
-        "Ljn1;",
+        "Lzp1;",
         "Lru/ok/android/externcalls/sdk/stereo/listener/StereoRoomListenerManager;",
-        "Lxwb;",
+        "Ls1c;",
         "logger",
         "Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;",
         "store",
@@ -39,13 +39,13 @@
         "idMappingWrapper",
         "Lru/ok/android/externcalls/sdk/stereo/internal/listener/StereoRoomListenerManagerImpl;",
         "listenersManager",
-        "Leje;",
+        "Lzre;",
         "timeProvider",
         "<init>",
-        "(Lxwb;Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$GrantRolesRequest;Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor;Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;Lru/ok/android/externcalls/sdk/stereo/internal/listener/StereoRoomListenerManagerImpl;Leje;)V",
+        "(Ls1c;Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$GrantRolesRequest;Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor;Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;Lru/ok/android/externcalls/sdk/stereo/internal/listener/StereoRoomListenerManagerImpl;Lzre;)V",
         "Lru/ok/android/externcalls/sdk/stereo/listener/StereoRoomManagerListener;",
         "listener",
-        "Ljue;",
+        "Le5f;",
         "removeListener",
         "(Lru/ok/android/externcalls/sdk/stereo/listener/StereoRoomManagerListener;)V",
         "Lkotlin/Function0;",
@@ -54,7 +54,7 @@
         "",
         "onError",
         "requestPromotion",
-        "(Ls16;Lu16;)V",
+        "(Lv56;Lx56;)V",
         "cancelPromotionRequest",
         "acceptPromotion",
         "rejectPromotion",
@@ -62,24 +62,24 @@
         "Lru/ok/android/externcalls/sdk/id/ExternalId;",
         "participantId",
         "promoteParticipant",
-        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V",
+        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V",
         "revokePromotion",
         "rejectPromotionRequest",
         "unpromoteParticipant",
         "addListener",
-        "Len1;",
+        "Lkp1;",
         "event",
         "onAttendee",
-        "(Len1;)V",
-        "Lgn1;",
+        "(Lkp1;)V",
+        "Lmp1;",
         "onHandUp",
-        "(Lgn1;)V",
-        "Lfn1;",
+        "(Lmp1;)V",
+        "Llp1;",
         "onFeedback",
-        "(Lfn1;)V",
-        "Lhn1;",
+        "(Llp1;)V",
+        "Lnp1;",
         "onPromotionUpdated",
-        "(Lhn1;)V",
+        "(Lnp1;)V",
         "",
         "isMeInWaitingRoom",
         "onMeInWaitingRoomChanged",
@@ -88,24 +88,24 @@
         "revokeAdmin",
         "revokeRoles",
         "externalId",
-        "Lge1;",
+        "Lrf1;",
         "Lru/ok/android/externcalls/sdk/id/InternalId;",
         "getInternalId",
-        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;)Lge1;",
+        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;)Lrf1;",
         "internalId",
         "getExternalId",
-        "(Lge1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;",
+        "(Lrf1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;",
         "",
         "ids",
         "block",
         "resolveIdsAndThen",
-        "(Ljava/util/List;Ls16;)V",
+        "(Ljava/util/List;Lv56;)V",
         "unpromoteParticipantImpl",
         "withInternalId",
-        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lu16;Lu16;)V",
+        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lx56;Lx56;)V",
         "idNotResolved",
-        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lu16;)V",
-        "Lxwb;",
+        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lx56;)V",
+        "Ls1c;",
         "Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;",
         "Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;",
         "Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$GrantRolesRequest;",
@@ -131,6 +131,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -158,7 +159,7 @@
 
 .field private final listenersManager:Lru/ok/android/externcalls/sdk/stereo/internal/listener/StereoRoomListenerManagerImpl;
 
-.field private final logger:Lxwb;
+.field private final logger:Ls1c;
 
 .field private final store:Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;
 
@@ -171,19 +172,19 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$Companion;-><init>(Lx54;)V
+    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$Companion;-><init>(Ll94;)V
 
     sput-object v0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->Companion:Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$Companion;
 
     return-void
 .end method
 
-.method public constructor <init>(Lxwb;Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$GrantRolesRequest;Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor;Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;Lru/ok/android/externcalls/sdk/stereo/internal/listener/StereoRoomListenerManagerImpl;Leje;)V
-    .locals 6
+.method public constructor <init>(Ls1c;Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$GrantRolesRequest;Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor;Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;Lru/ok/android/externcalls/sdk/stereo/internal/listener/StereoRoomListenerManagerImpl;Lzre;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->logger:Lxwb;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->logger:Ls1c;
 
     iput-object p2, p0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->store:Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;
 
@@ -199,33 +200,31 @@
 
     new-instance p1, Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl;
 
-    new-instance v2, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$handsQueue$1;
+    new-instance p3, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$handsQueue$1;
 
-    invoke-direct {v2, p0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$handsQueue$1;-><init>(Ljava/lang/Object;)V
+    invoke-direct {p3, p0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$handsQueue$1;-><init>(Ljava/lang/Object;)V
 
-    new-instance v3, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$handsQueue$2;
+    new-instance p4, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$handsQueue$2;
 
-    invoke-direct {v3, p0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$handsQueue$2;-><init>(Ljava/lang/Object;)V
+    invoke-direct {p4, p0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$handsQueue$2;-><init>(Ljava/lang/Object;)V
 
-    move-object v0, p1
+    move-object p2, p5
 
-    move-object v1, p5
+    move-object p5, p7
 
-    move-object v4, p7
+    move-object p6, p8
 
-    move-object v5, p8
-
-    invoke-direct/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl;-><init>(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor;Li26;Lu16;Lru/ok/android/externcalls/sdk/stereo/internal/listener/StereoRoomListenerManagerImpl;Leje;)V
+    invoke-direct/range {p1 .. p6}, Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl;-><init>(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor;Ll66;Lx56;Lru/ok/android/externcalls/sdk/stereo/internal/listener/StereoRoomListenerManagerImpl;Lzre;)V
 
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->handsQueue:Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl;
 
     return-void
 .end method
 
-.method public static synthetic a(Lu16;)V
+.method public static synthetic a(Lx56;)V
     .locals 0
 
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->revokeAdmin$lambda$5$lambda$4(Lu16;)V
+    invoke-static {p0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->revokeAdmin$lambda$5$lambda$4(Lx56;)V
 
     return-void
 .end method
@@ -238,10 +237,10 @@
     return-object p0
 .end method
 
-.method public static final synthetic access$getExternalId(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Lge1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
+.method public static final synthetic access$getExternalId(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Lrf1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
     .locals 0
 
-    invoke-direct {p0, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->getExternalId(Lge1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
+    invoke-direct {p0, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->getExternalId(Lrf1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
     move-result-object p0
 
@@ -256,99 +255,104 @@
     return-object p0
 .end method
 
-.method public static final synthetic access$resolveIdsAndThen(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Ljava/util/List;Ls16;)V
+.method public static final synthetic access$resolveIdsAndThen(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Ljava/util/List;Lv56;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->resolveIdsAndThen(Ljava/util/List;Ls16;)V
+    invoke-direct {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->resolveIdsAndThen(Ljava/util/List;Lv56;)V
 
     return-void
 .end method
 
-.method public static final synthetic access$unpromoteParticipantImpl(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+.method public static final synthetic access$unpromoteParticipantImpl(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->unpromoteParticipantImpl(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+    invoke-direct {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->unpromoteParticipantImpl(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
 
     return-void
 .end method
 
-.method public static synthetic b(Lu16;)V
+.method public static synthetic b(Lx56;)V
     .locals 0
 
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->grantAdmin$lambda$2$lambda$1(Lu16;)V
+    invoke-static {p0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->grantAdmin$lambda$2$lambda$1(Lx56;)V
 
     return-void
 .end method
 
-.method public static synthetic c(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Ljava/util/ArrayList;Ljava/util/List;Ls16;)V
+.method public static synthetic c(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Ljava/util/ArrayList;Ljava/util/List;Lv56;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->resolveIdsAndThen$lambda$10(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Ljava/util/List;Ljava/util/List;Ls16;)V
+    invoke-static {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->resolveIdsAndThen$lambda$10(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Ljava/util/List;Ljava/util/List;Lv56;)V
 
     return-void
 .end method
 
-.method public static synthetic d(Ls16;)V
+.method public static synthetic d(Lv56;)V
     .locals 0
 
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->resolveIdsAndThen$lambda$9(Ls16;)V
+    invoke-static {p0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->resolveIdsAndThen$lambda$9(Lv56;)V
 
     return-void
 .end method
 
-.method public static synthetic e(Ls16;)V
+.method public static synthetic e(Lv56;)V
     .locals 0
 
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->revokeRoles$lambda$6(Ls16;)V
+    invoke-static {p0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->revokeRoles$lambda$6(Lv56;)V
 
     return-void
 .end method
 
-.method public static synthetic f(Lu16;Lge1;)V
+.method public static synthetic f(Lx56;Lrf1;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->withInternalId$lambda$11(Lu16;Lge1;)V
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->withInternalId$lambda$11(Lx56;Lrf1;)V
 
     return-void
 .end method
 
-.method public static synthetic g(Ls16;)V
+.method public static synthetic g(Lv56;)V
     .locals 0
 
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->revokeAdmin$lambda$5$lambda$3(Ls16;)V
+    invoke-static {p0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->revokeAdmin$lambda$5$lambda$3(Lv56;)V
 
     return-void
 .end method
 
-.method private final getExternalId(Lge1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
+.method private final getExternalId(Lrf1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
     .locals 1
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->store:Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;
 
-    invoke-virtual {v0, p1}, Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;->getByInternal(Lge1;)Lru/ok/android/externcalls/sdk/ConversationParticipant;
+    invoke-virtual {v0, p1}, Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;->getByInternal(Lrf1;)Lru/ok/android/externcalls/sdk/ConversationParticipant;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->getExternalId()Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
     move-result-object v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
+
+    goto :goto_0
 
     :cond_0
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->idMappingWrapper:Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;
-
-    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;->getByInternal(Lge1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
-
-    move-result-object v0
+    return-object v0
 
     :cond_1
-    return-object v0
+    :goto_0
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->idMappingWrapper:Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;
+
+    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;->getByInternal(Lrf1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method private final getInternalId(Lru/ok/android/externcalls/sdk/id/ParticipantId;)Lge1;
+.method private final getInternalId(Lru/ok/android/externcalls/sdk/id/ParticipantId;)Lrf1;
     .locals 1
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->store:Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;
@@ -357,34 +361,39 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v0}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->getInternalId()Lge1;
+    invoke-virtual {v0}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->getInternalId()Lrf1;
 
     move-result-object v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
+
+    goto :goto_0
 
     :cond_0
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->idMappingWrapper:Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;
-
-    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;->getByExternal(Lru/ok/android/externcalls/sdk/id/ParticipantId;)Lge1;
-
-    move-result-object v0
+    return-object v0
 
     :cond_1
-    return-object v0
+    :goto_0
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->idMappingWrapper:Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;
+
+    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;->getByExternal(Lru/ok/android/externcalls/sdk/id/ParticipantId;)Lrf1;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method private static final grantAdmin$lambda$2$lambda$0(Ls16;)V
+.method private static final grantAdmin$lambda$2$lambda$0(Lv56;)V
     .locals 0
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     return-void
 .end method
 
-.method private static final grantAdmin$lambda$2$lambda$1(Lu16;)V
+.method private static final grantAdmin$lambda$2$lambda$1(Lx56;)V
     .locals 2
 
     if-eqz p0, :cond_0
@@ -395,35 +404,35 @@
 
     invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {p0, v0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p0, v0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
     return-void
 .end method
 
-.method public static synthetic h(Lu16;)V
+.method public static synthetic h(Lx56;)V
     .locals 0
 
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->revokeRoles$lambda$7(Lu16;)V
+    invoke-static {p0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->revokeRoles$lambda$7(Lx56;)V
 
     return-void
 .end method
 
-.method public static synthetic i(Ls16;)V
+.method public static synthetic i(Lv56;)V
     .locals 0
 
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->grantAdmin$lambda$2$lambda$0(Ls16;)V
+    invoke-static {p0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->grantAdmin$lambda$2$lambda$0(Lv56;)V
 
     return-void
 .end method
 
-.method private final idNotResolved(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lu16;)V
+.method private final idNotResolved(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lx56;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-            "Lu16;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -446,36 +455,36 @@
 
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {p2, p0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, p0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
     return-void
 .end method
 
-.method public static synthetic j(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Lru/ok/android/externcalls/sdk/id/ParticipantId;Lu16;)V
+.method public static synthetic j(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Lru/ok/android/externcalls/sdk/id/ParticipantId;Lx56;)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->withInternalId$lambda$12(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Lru/ok/android/externcalls/sdk/id/ParticipantId;Lu16;)V
+    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->withInternalId$lambda$12(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Lru/ok/android/externcalls/sdk/id/ParticipantId;Lx56;)V
 
     return-void
 .end method
 
-.method private final resolveIdsAndThen(Ljava/util/List;Ls16;)V
-    .locals 10
+.method private final resolveIdsAndThen(Ljava/util/List;Lv56;)V
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List<",
-            "Lge1;",
+            "Lrf1;",
             ">;",
-            "Ls16;",
+            "Lv56;",
             ")V"
         }
     .end annotation
 
-    new-instance v6, Ljava/util/ArrayList;
+    new-instance v2, Ljava/util/ArrayList;
 
-    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -493,70 +502,65 @@
 
     move-result-object v1
 
-    check-cast v1, Lge1;
+    check-cast v1, Lrf1;
 
-    invoke-direct {p0, v1}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->getExternalId(Lge1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
+    invoke-direct {p0, v1}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->getExternalId(Lrf1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
-    move-result-object v2
+    move-result-object v3
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_0
 
-    invoke-virtual {v6, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_1
-    invoke-virtual {v6}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    invoke-interface {p2}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p2}, Lv56;->invoke()Ljava/lang/Object;
 
-    goto :goto_1
+    return-void
 
     :cond_2
-    iget-object v7, p0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->idResolver:Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;
+    iget-object v6, p0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->idResolver:Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;
 
-    new-instance v8, Ltg0;
+    new-instance v7, Lth0;
 
-    const/16 v0, 0x9
+    const/4 v0, 0x6
 
-    invoke-direct {v8, v0, p2}, Ltg0;-><init>(ILs16;)V
+    invoke-direct {v7, v0, p2}, Lth0;-><init>(ILv56;)V
 
-    new-instance v9, Lwc3;
+    new-instance v0, Lvg3;
 
-    const/16 v5, 0xf
-
-    move-object v0, v9
+    const/16 v5, 0xc
 
     move-object v1, p0
-
-    move-object v2, v6
 
     move-object v3, p1
 
     move-object v4, p2
 
-    invoke-direct/range {v0 .. v5}, Lwc3;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+    invoke-direct/range {v0 .. v5}, Lvg3;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
 
-    invoke-interface {v7, v6, v8, v9}, Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;->resolveExternalsByInternalsIds(Ljava/util/List;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
+    invoke-interface {v6, v2, v7, v0}, Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;->resolveExternalsByInternalsIds(Ljava/util/List;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
-    :goto_1
     return-void
 .end method
 
-.method private static final resolveIdsAndThen$lambda$10(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Ljava/util/List;Ljava/util/List;Ls16;)V
+.method private static final resolveIdsAndThen$lambda$10(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Ljava/util/List;Ljava/util/List;Lv56;)V
     .locals 2
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->logger:Lxwb;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->logger:Ls1c;
 
     const-string v0, "StereoRoomManagerImpl"
 
     const-string v1, "Something went wrong during internal to external id list resolution"
 
-    invoke-interface {p0, v0, v1}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p0, v0, v1}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -568,29 +572,29 @@
 
     if-ge p0, p1, :cond_0
 
-    invoke-interface {p3}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p3}, Lv56;->invoke()Ljava/lang/Object;
 
     :cond_0
     return-void
 .end method
 
-.method private static final resolveIdsAndThen$lambda$9(Ls16;)V
+.method private static final resolveIdsAndThen$lambda$9(Lv56;)V
     .locals 0
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     return-void
 .end method
 
-.method private static final revokeAdmin$lambda$5$lambda$3(Ls16;)V
+.method private static final revokeAdmin$lambda$5$lambda$3(Lv56;)V
     .locals 0
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     return-void
 .end method
 
-.method private static final revokeAdmin$lambda$5$lambda$4(Lu16;)V
+.method private static final revokeAdmin$lambda$5$lambda$4(Lx56;)V
     .locals 2
 
     if-eqz p0, :cond_0
@@ -601,20 +605,20 @@
 
     invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {p0, v0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p0, v0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
     return-void
 .end method
 
-.method private final revokeRoles(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+.method private final revokeRoles(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -627,7 +631,7 @@
 
     if-eqz p1, :cond_0
 
-    invoke-virtual {p1}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->getCallParticipant()Lke1;
+    invoke-virtual {p1}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->getCallParticipant()Lvf1;
 
     move-result-object p1
 
@@ -639,18 +643,18 @@
     :goto_0
     if-nez p1, :cond_1
 
-    invoke-interface {p2}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p2}, Lv56;->invoke()Ljava/lang/Object;
 
     return-void
 
     :cond_1
-    iget-object v0, p1, Lke1;->e:Ljava/util/List;
+    iget-object v0, p1, Lvf1;->e:Ljava/util/List;
 
     new-instance v1, Ljava/util/LinkedHashSet;
 
     invoke-direct {v1}, Ljava/util/LinkedHashSet;-><init>()V
 
-    sget-object v2, Lje1;->b:Lje1;
+    sget-object v2, Luf1;->b:Luf1;
 
     invoke-interface {v0, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
@@ -661,7 +665,7 @@
     invoke-interface {v1, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     :cond_2
-    sget-object v2, Lje1;->c:Lje1;
+    sget-object v2, Luf1;->c:Luf1;
 
     invoke-interface {v0, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
@@ -678,14 +682,14 @@
 
     if-eqz v0, :cond_4
 
-    invoke-interface {p2}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p2}, Lv56;->invoke()Ljava/lang/Object;
 
     return-void
 
     :cond_4
     iget-object v2, p0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->grantRolesRequest:Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$GrantRolesRequest;
 
-    iget-object v3, p1, Lke1;->a:Lge1;
+    iget-object v3, p1, Lvf1;->a:Lrf1;
 
     if-nez v3, :cond_5
 
@@ -694,7 +698,7 @@
     :cond_5
     const/4 p0, 0x0
 
-    new-array p0, p0, [Lje1;
+    new-array p0, p0, [Luf1;
 
     invoke-interface {v1, p0}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
@@ -702,36 +706,36 @@
 
     move-object v5, p0
 
-    check-cast v5, [Lje1;
+    check-cast v5, [Luf1;
 
-    new-instance v6, Ltg0;
+    new-instance v6, Lth0;
 
-    const/16 p0, 0x8
+    const/4 p0, 0x5
 
-    invoke-direct {v6, p0, p2}, Ltg0;-><init>(ILs16;)V
+    invoke-direct {v6, p0, p2}, Lth0;-><init>(ILv56;)V
 
-    new-instance v7, Lx2d;
+    new-instance v7, Lf9d;
 
     const/4 p0, 0x1
 
-    invoke-direct {v7, p0, p3}, Lx2d;-><init>(ILu16;)V
+    invoke-direct {v7, p0, p3}, Lf9d;-><init>(ILx56;)V
 
     const/4 v4, 0x1
 
-    invoke-interface/range {v2 .. v7}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$GrantRolesRequest;->grantRoles(Lge1;Z[Lje1;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
+    invoke-interface/range {v2 .. v7}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$GrantRolesRequest;->grantRoles(Lrf1;Z[Luf1;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method private static final revokeRoles$lambda$6(Ls16;)V
+.method private static final revokeRoles$lambda$6(Lv56;)V
     .locals 0
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     return-void
 .end method
 
-.method private static final revokeRoles$lambda$7(Lu16;)V
+.method private static final revokeRoles$lambda$7(Lx56;)V
     .locals 2
 
     if-eqz p0, :cond_0
@@ -742,89 +746,89 @@
 
     invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {p0, v0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p0, v0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
     return-void
 .end method
 
-.method private final unpromoteParticipantImpl(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+.method private final unpromoteParticipantImpl(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     new-instance v0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$unpromoteParticipantImpl$1;
 
-    invoke-direct {v0, p0, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$unpromoteParticipantImpl$1;-><init>(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Ls16;Lu16;)V
+    invoke-direct {v0, p0, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$unpromoteParticipantImpl$1;-><init>(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Lv56;Lx56;)V
 
-    invoke-direct {p0, p1, p3, v0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->withInternalId(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lu16;Lu16;)V
+    invoke-direct {p0, p1, p3, v0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->withInternalId(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lx56;Lx56;)V
 
     return-void
 .end method
 
-.method private final withInternalId(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lu16;Lu16;)V
+.method private final withInternalId(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lx56;Lx56;)V
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-            "Lu16;",
-            "Lu16;",
+            "Lx56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->idResolver:Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;
 
-    new-instance v1, Lmf3;
+    new-instance v1, Lhj3;
 
     const/4 v2, 0x4
 
-    invoke-direct {v1, v2, p3}, Lmf3;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v1, v2, p3}, Lhj3;-><init>(ILjava/lang/Object;)V
 
-    new-instance p3, Lncd;
+    new-instance p3, Lojc;
 
-    const/4 v2, 0x3
+    const/4 v2, 0x5
 
-    invoke-direct {p3, p0, p1, p2, v2}, Lncd;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+    invoke-direct {p3, p0, p1, p2, v2}, Lojc;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
 
-    invoke-interface {v0, p1, v1, p3}, Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;->withInternalId(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lpf3;Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method private static final withInternalId$lambda$11(Lu16;Lge1;)V
-    .locals 0
-
-    invoke-interface {p0, p1}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p1, v1, p3}, Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;->withInternalId(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lkj3;Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method private static final withInternalId$lambda$12(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Lru/ok/android/externcalls/sdk/id/ParticipantId;Lu16;)V
+.method private static final withInternalId$lambda$11(Lx56;Lrf1;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->idNotResolved(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lu16;)V
+    invoke-interface {p0, p1}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private static final withInternalId$lambda$12(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Lru/ok/android/externcalls/sdk/id/ParticipantId;Lx56;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->idNotResolved(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lx56;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public acceptPromotion(Ls16;Lu16;)V
+.method public acceptPromotion(Lv56;Lx56;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -837,7 +841,7 @@
 
     invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$AcceptPromotionParams;-><init>(Z)V
 
-    invoke-interface {p0, v0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor;->acceptPromotion(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$AcceptPromotionParams;Ls16;Lu16;)V
+    invoke-interface {p0, v0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor;->acceptPromotion(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$AcceptPromotionParams;Lv56;Lx56;)V
 
     return-void
 .end method
@@ -858,13 +862,13 @@
     return-void
 .end method
 
-.method public cancelPromotionRequest(Ls16;Lu16;)V
+.method public cancelPromotionRequest(Lv56;Lx56;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -877,7 +881,7 @@
 
     invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$RequestPromotionParams;-><init>(Z)V
 
-    invoke-interface {p0, v0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor;->requestPromotion(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$RequestPromotionParams;Ls16;Lu16;)V
+    invoke-interface {p0, v0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor;->requestPromotion(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$RequestPromotionParams;Lv56;Lx56;)V
 
     return-void
 .end method
@@ -902,19 +906,19 @@
     return-object p0
 .end method
 
-.method public grantAdmin(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+.method public grantAdmin(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
-    invoke-direct {p0, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->getInternalId(Lru/ok/android/externcalls/sdk/id/ParticipantId;)Lge1;
+    invoke-direct {p0, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->getInternalId(Lru/ok/android/externcalls/sdk/id/ParticipantId;)Lrf1;
 
     move-result-object v1
 
@@ -922,27 +926,27 @@
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->grantRolesRequest:Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$GrantRolesRequest;
 
-    sget-object p0, Lje1;->b:Lje1;
+    sget-object p0, Luf1;->b:Luf1;
 
-    filled-new-array {p0}, [Lje1;
+    filled-new-array {p0}, [Luf1;
 
     move-result-object v3
 
-    new-instance v4, Ltg0;
+    new-instance v4, Lth0;
 
-    const/16 p0, 0xa
+    const/4 p0, 0x7
 
-    invoke-direct {v4, p0, p2}, Ltg0;-><init>(ILs16;)V
+    invoke-direct {v4, p0, p2}, Lth0;-><init>(ILv56;)V
 
-    new-instance v5, Lx2d;
+    new-instance v5, Lf9d;
 
     const/4 p0, 0x2
 
-    invoke-direct {v5, p0, p3}, Lx2d;-><init>(ILu16;)V
+    invoke-direct {v5, p0, p3}, Lf9d;-><init>(ILx56;)V
 
     const/4 v2, 0x0
 
-    invoke-interface/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$GrantRolesRequest;->grantRoles(Lge1;Z[Lje1;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
+    invoke-interface/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$GrantRolesRequest;->grantRoles(Lrf1;Z[Luf1;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
     :cond_0
     return-void
@@ -956,40 +960,40 @@
     return p0
 .end method
 
-.method public onAttendee(Len1;)V
+.method public onAttendee(Lkp1;)V
     .locals 2
 
-    iget-object v0, p1, Len1;->b:Ljava/util/List;
+    iget-object v0, p1, Lkp1;->b:Ljava/lang/Object;
 
-    iget-object v1, p1, Len1;->c:Ljava/util/List;
+    iget-object v1, p1, Lkp1;->c:Ljava/lang/Object;
 
-    invoke-static {v0, v1}, Lo23;->i0(Ljava/util/Collection;Ljava/lang/Iterable;)Ljava/util/ArrayList;
+    invoke-static {v0, v1}, Lp43;->M0(Ljava/util/Collection;Ljava/lang/Iterable;)Ljava/util/ArrayList;
 
     move-result-object v0
 
     new-instance v1, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$onAttendee$1;
 
-    invoke-direct {v1, p0, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$onAttendee$1;-><init>(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Len1;)V
+    invoke-direct {v1, p0, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$onAttendee$1;-><init>(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Lkp1;)V
 
-    invoke-direct {p0, v0, v1}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->resolveIdsAndThen(Ljava/util/List;Ls16;)V
+    invoke-direct {p0, v0, v1}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->resolveIdsAndThen(Ljava/util/List;Lv56;)V
 
     return-void
 .end method
 
-.method public onFeedback(Lfn1;)V
+.method public onFeedback(Llp1;)V
     .locals 0
 
     return-void
 .end method
 
-.method public onHandUp(Lgn1;)V
+.method public onHandUp(Lmp1;)V
     .locals 0
 
     invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->getHandsQueue()Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl;
 
     move-result-object p0
 
-    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl;->onHandUp(Lgn1;)V
+    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl;->onHandUp(Lmp1;)V
 
     return-void
 .end method
@@ -1012,14 +1016,14 @@
     return-void
 .end method
 
-.method public onPromotionUpdated(Lhn1;)V
+.method public onPromotionUpdated(Lnp1;)V
     .locals 1
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->listenersManager:Lru/ok/android/externcalls/sdk/stereo/internal/listener/StereoRoomListenerManagerImpl;
 
     new-instance v0, Lru/ok/android/externcalls/sdk/stereo/listener/StereoRoomManagerListener$PromotionRequestUpdated;
 
-    iget-boolean p1, p1, Lhn1;->a:Z
+    iget-boolean p1, p1, Lnp1;->a:Z
 
     invoke-direct {v0, p1}, Lru/ok/android/externcalls/sdk/stereo/listener/StereoRoomManagerListener$PromotionRequestUpdated;-><init>(Z)V
 
@@ -1028,34 +1032,34 @@
     return-void
 .end method
 
-.method public promoteParticipant(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+.method public promoteParticipant(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     new-instance v0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$promoteParticipant$1;
 
-    invoke-direct {v0, p0, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$promoteParticipant$1;-><init>(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Ls16;Lu16;)V
+    invoke-direct {v0, p0, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$promoteParticipant$1;-><init>(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Lv56;Lx56;)V
 
-    invoke-direct {p0, p1, p3, v0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->withInternalId(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lu16;Lu16;)V
+    invoke-direct {p0, p1, p3, v0}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->withInternalId(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lx56;Lx56;)V
 
     return-void
 .end method
 
-.method public rejectPromotion(Ls16;Lu16;)V
+.method public rejectPromotion(Lv56;Lx56;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -1068,24 +1072,24 @@
 
     invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$AcceptPromotionParams;-><init>(Z)V
 
-    invoke-interface {p0, v0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor;->acceptPromotion(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$AcceptPromotionParams;Ls16;Lu16;)V
+    invoke-interface {p0, v0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor;->acceptPromotion(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$AcceptPromotionParams;Lv56;Lx56;)V
 
     return-void
 .end method
 
-.method public rejectPromotionRequest(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+.method public rejectPromotionRequest(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
-    invoke-direct {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->unpromoteParticipantImpl(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+    invoke-direct {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->unpromoteParticipantImpl(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
 
     return-void
 .end method
@@ -1100,13 +1104,13 @@
     return-void
 .end method
 
-.method public requestPromotion(Ls16;Lu16;)V
+.method public requestPromotion(Lv56;Lx56;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -1119,24 +1123,24 @@
 
     invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$RequestPromotionParams;-><init>(Z)V
 
-    invoke-interface {p0, v0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor;->requestPromotion(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$RequestPromotionParams;Ls16;Lu16;)V
+    invoke-interface {p0, v0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor;->requestPromotion(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$RequestPromotionParams;Lv56;Lx56;)V
 
     return-void
 .end method
 
-.method public revokeAdmin(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+.method public revokeAdmin(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
-    invoke-direct {p0, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->getInternalId(Lru/ok/android/externcalls/sdk/id/ParticipantId;)Lge1;
+    invoke-direct {p0, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->getInternalId(Lru/ok/android/externcalls/sdk/id/ParticipantId;)Lrf1;
 
     move-result-object v1
 
@@ -1144,66 +1148,66 @@
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->grantRolesRequest:Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$GrantRolesRequest;
 
-    sget-object p0, Lje1;->b:Lje1;
+    sget-object p0, Luf1;->b:Luf1;
 
-    filled-new-array {p0}, [Lje1;
+    filled-new-array {p0}, [Luf1;
 
     move-result-object v3
 
-    new-instance v4, Ltg0;
+    new-instance v4, Lth0;
 
-    const/16 p0, 0xb
+    const/16 p0, 0x8
 
-    invoke-direct {v4, p0, p2}, Ltg0;-><init>(ILs16;)V
+    invoke-direct {v4, p0, p2}, Lth0;-><init>(ILv56;)V
 
-    new-instance v5, Lx2d;
+    new-instance v5, Lf9d;
 
     const/4 p0, 0x3
 
-    invoke-direct {v5, p0, p3}, Lx2d;-><init>(ILu16;)V
+    invoke-direct {v5, p0, p3}, Lf9d;-><init>(ILx56;)V
 
     const/4 v2, 0x1
 
-    invoke-interface/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$GrantRolesRequest;->grantRoles(Lge1;Z[Lje1;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
+    invoke-interface/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$GrantRolesRequest;->grantRoles(Lrf1;Z[Luf1;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
     :cond_0
     return-void
 .end method
 
-.method public revokePromotion(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+.method public revokePromotion(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
-    invoke-direct {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->unpromoteParticipantImpl(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+    invoke-direct {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->unpromoteParticipantImpl(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
 
     return-void
 .end method
 
-.method public unpromoteParticipant(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+.method public unpromoteParticipant(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     new-instance v0, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$unpromoteParticipant$1;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$unpromoteParticipant$1;-><init>(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$unpromoteParticipant$1;-><init>(Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
 
-    invoke-direct {p0, p1, v0, p3}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->revokeRoles(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+    invoke-direct {p0, p1, v0, p3}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->revokeRoles(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
 
     return-void
 .end method

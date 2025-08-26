@@ -89,7 +89,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;ZZLjava/lang/String;ZLjava/lang/Long;ILx54;)V
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;ZZLjava/lang/String;ZLjava/lang/Long;ILl94;)V
     .locals 9
 
     and-int/lit8 v0, p8, 0x40
@@ -99,11 +99,6 @@
     const/4 v0, 0x0
 
     move-object v8, v0
-
-    goto :goto_0
-
-    :cond_0
-    move-object/from16 v8, p7
 
     :goto_0
     move-object v1, p0
@@ -120,7 +115,15 @@
 
     move v7, p6
 
+    goto :goto_1
+
+    :cond_0
+    move-object/from16 v8, p7
+
+    goto :goto_0
+
     .line 9
+    :goto_1
     invoke-direct/range {v1 .. v8}, Lru/ok/android/externcalls/sdk/conversation/StartCallApiParams;-><init>(Ljava/lang/String;Ljava/lang/String;ZZLjava/lang/String;ZLjava/lang/Long;)V
 
     return-void

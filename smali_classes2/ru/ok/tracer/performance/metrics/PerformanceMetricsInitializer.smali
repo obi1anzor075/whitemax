@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lsw6;
+.implements Lo07;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lsw6;"
+        "Lo07;"
     }
 .end annotation
 
@@ -20,8 +20,8 @@
     }
     d2 = {
         "Lru/ok/tracer/performance/metrics/PerformanceMetricsInitializer;",
-        "Lsw6;",
-        "Lhoe;",
+        "Lo07;",
+        "Lhxe;",
         "<init>",
         "()V",
         "tracer-performance-metrics_release"
@@ -32,6 +32,7 @@
         0x7,
         0x1
     }
+    xi = 0x30
 .end annotation
 
 
@@ -61,25 +62,25 @@
 .method public final b(Landroid/content/Context;)Ljava/lang/Object;
     .locals 2
 
-    sget-object p0, Lhoe;->a:Lhoe;
+    sget-object p0, Lhxe;->a:Lhxe;
 
-    sget-object p0, Lnne;->a:Lnne;
+    sget-object p0, Lmwe;->a:Lmwe;
 
-    invoke-static {}, Lnne;->c()Ljava/util/Map;
+    invoke-static {}, Lmwe;->c()Ljava/util/Map;
 
     move-result-object p0
 
-    sget-object v0, Lr1g;->c:Lx3a;
+    sget-object v0, Lp6g;->a:Lrsd;
 
     invoke-interface {p0, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    instance-of v0, p0, Ltma;
+    instance-of v0, p0, Lxqa;
 
     if-eqz v0, :cond_0
 
-    check-cast p0, Ltma;
+    check-cast p0, Lxqa;
 
     goto :goto_0
 
@@ -89,44 +90,44 @@
     :goto_0
     if-nez p0, :cond_1
 
-    new-instance p0, Log0;
+    new-instance p0, Lnh0;
 
-    const/16 v0, 0xe
+    const/16 v0, 0xb
 
     const/4 v1, 0x0
 
-    invoke-direct {p0, v0, v1}, Log0;-><init>(IB)V
+    invoke-direct {p0, v0, v1}, Lnh0;-><init>(IB)V
 
-    new-instance v0, Ltma;
+    new-instance v0, Lxqa;
 
-    invoke-direct {v0, p0}, Ltma;-><init>(Log0;)V
+    invoke-direct {v0, p0}, Lxqa;-><init>(Lnh0;)V
 
     move-object p0, v0
 
     :cond_1
-    iget-boolean p0, p0, Ltma;->a:Z
+    iget-boolean p0, p0, Lxqa;->a:Z
 
     if-nez p0, :cond_2
 
     goto :goto_1
 
     :cond_2
-    new-instance p0, Leoe;
+    new-instance p0, Lexe;
 
-    invoke-direct {p0}, Leoe;-><init>()V
+    invoke-direct {p0}, Lexe;-><init>()V
 
-    sput-object p0, Lhoe;->b:Lgoe;
+    sput-object p0, Lhxe;->b:Lgxe;
 
-    new-instance p0, Lnm;
+    new-instance p0, Lfm;
 
-    const/4 v0, 0x6
+    const/4 v0, 0x7
 
-    invoke-direct {p0, p1, v0}, Lnm;-><init>(Landroid/content/Context;I)V
+    invoke-direct {p0, p1, v0}, Lfm;-><init>(Landroid/content/Context;I)V
 
-    invoke-static {p0}, Lkoe;->a(Ljava/lang/Runnable;)V
+    invoke-static {p0}, Lkxe;->a(Ljava/lang/Runnable;)V
 
     :goto_1
-    sget-object p0, Lhoe;->a:Lhoe;
+    sget-object p0, Lhxe;->a:Lhxe;
 
     return-object p0
 .end method

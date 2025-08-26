@@ -1,64 +1,52 @@
-.class public final Llc5;
+.class public final synthetic Llc5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Loc5;
+.implements Lwbe;
 
 
-# static fields
-.field public static final a:Llc5;
+# instance fields
+.field public final synthetic a:Loc5;
+
+.field public final synthetic b:J
+
+.field public final synthetic c:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Loc5;JJ)V
+    .locals 0
 
-    new-instance v0, Llc5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Llc5;->a:Loc5;
 
-    sput-object v0, Llc5;->a:Llc5;
+    iput-wide p2, p0, Llc5;->b:J
+
+    iput-wide p4, p0, Llc5;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+.method public final get()Ljava/lang/Object;
+    .locals 6
 
-    const/4 v0, 0x1
+    new-instance v0, Lnc5;
 
-    if-ne p0, p1, :cond_0
+    iget-object v1, p0, Llc5;->a:Loc5;
 
-    return v0
+    iget-wide v2, p0, Llc5;->b:J
 
-    :cond_0
-    instance-of p0, p1, Llc5;
+    iget-wide v4, p0, Llc5;->c:J
 
-    if-nez p0, :cond_1
+    invoke-direct/range {v0 .. v5}, Lnc5;-><init>(Loc5;JJ)V
 
-    const/4 p0, 0x0
+    invoke-virtual {v1, v0}, Loc5;->a(Ljava/util/concurrent/Callable;)Lgqd;
 
-    return p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    const p0, 0x5c90e18e
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    const-string p0, "Downloaded"
+    move-result-object p0
 
     return-object p0
 .end method

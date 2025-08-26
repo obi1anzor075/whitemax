@@ -20,20 +20,20 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl$GrantRolesRequest;",
         "",
-        "Lge1;",
+        "Lrf1;",
         "Lru/ok/android/externcalls/sdk/id/InternalId;",
         "participantId",
         "",
         "revoke",
         "",
-        "Lje1;",
+        "Luf1;",
         "roles",
         "Ljava/lang/Runnable;",
         "onSuccess",
         "onError",
-        "Ljue;",
+        "Le5f;",
         "grantRoles",
-        "(Lge1;Z[Lje1;Ljava/lang/Runnable;Ljava/lang/Runnable;)V",
+        "(Lrf1;Z[Luf1;Ljava/lang/Runnable;Ljava/lang/Runnable;)V",
         "calls-sdk_release"
     }
     k = 0x1
@@ -42,9 +42,10 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # virtual methods
-.method public abstract grantRoles(Lge1;Z[Lje1;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
+.method public abstract grantRoles(Lrf1;Z[Luf1;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 .end method

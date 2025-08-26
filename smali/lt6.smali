@@ -1,324 +1,259 @@
-.class public abstract Llt6;
-.super Lgt6;
+.class public final Llt6;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/util/NavigableSet;
-.implements Lsld;
+
+# static fields
+.field public static final c:[Ljava/lang/String;
 
 
 # instance fields
-.field public transient X:Llt6;
+.field public final a:Landroid/content/SharedPreferences;
 
-.field public final transient o:Ljava/util/Comparator;
+.field public final b:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Comparator;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
-    invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
+    const-string v0, "GCM"
 
-    iput-object p1, p0, Llt6;->o:Ljava/util/Comparator;
+    const-string v1, ""
+
+    const-string v2, "*"
+
+    const-string v3, "FCM"
+
+    filled-new-array {v2, v3, v0, v1}, [Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Llt6;->c:[Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static n(Ljava/util/Comparator;)Ll8c;
-    .locals 2
+.method public constructor <init>(Lqk5;)V
+    .locals 3
 
-    sget-object v0, Log9;->a:Log9;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {v0, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1}, Lqk5;->a()V
 
-    move-result v0
+    iget-object v0, p1, Lqk5;->a:Landroid/content/Context;
 
-    if-eqz v0, :cond_0
+    const-string v1, "com.google.android.gms.appid"
 
-    sget-object p0, Ll8c;->Z:Ll8c;
+    const/4 v2, 0x0
 
-    return-object p0
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    iput-object v0, p0, Llt6;->a:Landroid/content/SharedPreferences;
+
+    invoke-virtual {p1}, Lqk5;->a()V
+
+    iget-object v0, p1, Lqk5;->c:Lzk5;
+
+    iget-object v1, v0, Lzk5;->e:Ljava/lang/String;
+
+    if-eqz v1, :cond_0
+
+    goto :goto_1
 
     :cond_0
-    new-instance v0, Ll8c;
+    invoke-virtual {p1}, Lqk5;->a()V
 
-    sget-object v1, Le8c;->X:Le8c;
+    iget-object v1, v0, Lzk5;->b:Ljava/lang/String;
 
-    invoke-direct {v0, v1, p0}, Ll8c;-><init>(Lws6;Ljava/util/Comparator;)V
+    const-string p1, "1:"
 
-    return-object v0
+    invoke-virtual {v1, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_1
+
+    const-string p1, "2:"
+
+    invoke-virtual {v1, p1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    const-string p1, ":"
+
+    invoke-virtual {v1, p1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object p1
+
+    array-length v0, p1
+
+    const/4 v1, 0x4
+
+    const/4 v2, 0x0
+
+    if-eq v0, v1, :cond_2
+
+    :goto_0
+    move-object v1, v2
+
+    goto :goto_1
+
+    :cond_2
+    const/4 v0, 0x1
+
+    aget-object v1, p1, v0
+
+    invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    :goto_1
+    iput-object v1, p0, Llt6;->b:Ljava/lang/String;
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final comparator()Ljava/util/Comparator;
-    .locals 0
+.method public final a()Ljava/lang/String;
+    .locals 5
 
-    iget-object p0, p0, Llt6;->o:Ljava/util/Comparator;
+    iget-object v0, p0, Llt6;->a:Landroid/content/SharedPreferences;
 
-    return-object p0
-.end method
+    monitor-enter v0
 
-.method public final bridge synthetic descendingSet()Ljava/util/NavigableSet;
-    .locals 0
+    :try_start_0
+    iget-object p0, p0, Llt6;->a:Landroid/content/SharedPreferences;
 
-    invoke-virtual {p0}, Llt6;->m()Llt6;
+    const-string v1, "|S||P|"
 
-    move-result-object p0
+    const/4 v2, 0x0
 
-    return-object p0
-.end method
-
-.method public final headSet(Ljava/lang/Object;Z)Ljava/util/NavigableSet;
-    .locals 1
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    check-cast p0, Ll8c;
-
-    const/4 v0, 0x0
-
-    .line 3
-    invoke-virtual {p0, p1, p2}, Ll8c;->q(Ljava/lang/Object;Z)I
-
-    move-result p1
-
-    invoke-virtual {p0, v0, p1}, Ll8c;->p(II)Ll8c;
+    invoke-interface {p0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    return-object p0
-.end method
+    if-nez p0, :cond_0
 
-.method public final headSet(Ljava/lang/Object;)Ljava/util/SortedSet;
-    .locals 1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 4
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return-object v2
 
-    .line 5
-    check-cast p0, Ll8c;
+    :catchall_0
+    move-exception p0
 
-    const/4 v0, 0x0
+    goto :goto_1
 
-    .line 6
-    invoke-virtual {p0, p1, v0}, Ll8c;->q(Ljava/lang/Object;Z)I
+    :cond_0
+    const/16 v1, 0x8
 
-    move-result p1
-
-    invoke-virtual {p0, v0, p1}, Ll8c;->p(II)Ll8c;
+    :try_start_1
+    invoke-static {p0, v1}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
 
     move-result-object p0
 
-    return-object p0
-.end method
+    const-string v3, "RSA"
 
-.method public final m()Llt6;
-    .locals 3
+    invoke-static {v3}, Ljava/security/KeyFactory;->getInstance(Ljava/lang/String;)Ljava/security/KeyFactory;
 
-    iget-object v0, p0, Llt6;->X:Llt6;
+    move-result-object v3
 
-    if-nez v0, :cond_1
+    new-instance v4, Ljava/security/spec/X509EncodedKeySpec;
 
-    move-object v0, p0
+    invoke-direct {v4, p0}, Ljava/security/spec/X509EncodedKeySpec;-><init>([B)V
 
-    check-cast v0, Ll8c;
+    invoke-virtual {v3, v4}, Ljava/security/KeyFactory;->generatePublic(Ljava/security/spec/KeySpec;)Ljava/security/PublicKey;
 
-    iget-object v1, v0, Llt6;->o:Ljava/util/Comparator;
-
-    invoke-static {v1}, Ljava/util/Collections;->reverseOrder(Ljava/util/Comparator;)Ljava/util/Comparator;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Ljava/util/AbstractCollection;->isEmpty()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-static {v1}, Llt6;->n(Ljava/util/Comparator;)Ll8c;
-
-    move-result-object v0
+    move-result-object p0
+    :try_end_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/security/spec/InvalidKeySpecException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 
-    :cond_0
-    new-instance v2, Ll8c;
+    :catch_0
+    move-exception p0
 
-    iget-object v0, v0, Ll8c;->Y:Lws6;
+    :try_start_2
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    invoke-virtual {v0}, Lws6;->q()Lws6;
-
-    move-result-object v0
-
-    invoke-direct {v2, v0, v1}, Ll8c;-><init>(Lws6;Ljava/util/Comparator;)V
-
-    move-object v0, v2
+    move-object p0, v2
 
     :goto_0
-    iput-object v0, p0, Llt6;->X:Llt6;
+    if-nez p0, :cond_1
 
-    iput-object p0, v0, Llt6;->X:Llt6;
+    monitor-exit v0
+
+    return-object v2
 
     :cond_1
-    return-object v0
-.end method
+    invoke-interface {p0}, Ljava/security/Key;->getEncoded()[B
 
-.method public final o(Ljava/lang/Object;ZLjava/lang/Object;Z)Ll8c;
-    .locals 1
+    move-result-object p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :try_start_3
+    const-string v3, "SHA1"
 
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {v3}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
 
-    iget-object v0, p0, Llt6;->o:Ljava/util/Comparator;
+    move-result-object v3
 
-    invoke-interface {v0, p1, p3}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
-
-    move-result v0
-
-    if-gtz v0, :cond_0
-
-    check-cast p0, Ll8c;
-
-    invoke-virtual {p0, p1, p2}, Ll8c;->r(Ljava/lang/Object;Z)I
-
-    move-result p1
-
-    iget-object p2, p0, Ll8c;->Y:Lws6;
-
-    invoke-virtual {p2}, Ljava/util/AbstractCollection;->size()I
-
-    move-result p2
-
-    invoke-virtual {p0, p1, p2}, Ll8c;->p(II)Ll8c;
+    invoke-virtual {v3, p0}, Ljava/security/MessageDigest;->digest([B)[B
 
     move-result-object p0
 
-    invoke-virtual {p0, p3, p4}, Ll8c;->q(Ljava/lang/Object;Z)I
+    const/4 v3, 0x0
 
-    move-result p1
+    aget-byte v4, p0, v3
 
-    const/4 p2, 0x0
+    and-int/lit8 v4, v4, 0xf
 
-    invoke-virtual {p0, p2, p1}, Ll8c;->p(II)Ll8c;
+    add-int/lit8 v4, v4, 0x70
 
-    move-result-object p0
+    and-int/lit16 v4, v4, 0xff
 
-    return-object p0
+    int-to-byte v4, v4
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    aput-byte v4, p0, v3
 
-    invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
+    const/16 v4, 0xb
+
+    invoke-static {p0, v3, v1, v4}, Landroid/util/Base64;->encodeToString([BIII)Ljava/lang/String;
+
+    move-result-object v2
+    :try_end_3
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_3 .. :try_end_3} :catch_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    :catch_1
+    :try_start_4
+    monitor-exit v0
+
+    return-object v2
+
+    :goto_1
+    monitor-exit v0
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     throw p0
-.end method
-
-.method public final pollFirst()Ljava/lang/Object;
-    .locals 0
-
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw p0
-.end method
-
-.method public final pollLast()Ljava/lang/Object;
-    .locals 0
-
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw p0
-.end method
-
-.method public final bridge synthetic subSet(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljava/util/NavigableSet;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1, p2, p3, p4}, Llt6;->o(Ljava/lang/Object;ZLjava/lang/Object;Z)Ll8c;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final subSet(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedSet;
-    .locals 2
-
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    .line 2
-    invoke-virtual {p0, p1, v0, p2, v1}, Llt6;->o(Ljava/lang/Object;ZLjava/lang/Object;Z)Ll8c;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final tailSet(Ljava/lang/Object;Z)Ljava/util/NavigableSet;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    check-cast p0, Ll8c;
-
-    .line 3
-    invoke-virtual {p0, p1, p2}, Ll8c;->r(Ljava/lang/Object;Z)I
-
-    move-result p1
-
-    .line 4
-    iget-object p2, p0, Ll8c;->Y:Lws6;
-
-    invoke-virtual {p2}, Ljava/util/AbstractCollection;->size()I
-
-    move-result p2
-
-    .line 5
-    invoke-virtual {p0, p1, p2}, Ll8c;->p(II)Ll8c;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final tailSet(Ljava/lang/Object;)Ljava/util/SortedSet;
-    .locals 1
-
-    .line 6
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 7
-    check-cast p0, Ll8c;
-
-    const/4 v0, 0x1
-
-    .line 8
-    invoke-virtual {p0, p1, v0}, Ll8c;->r(Ljava/lang/Object;Z)I
-
-    move-result p1
-
-    .line 9
-    iget-object v0, p0, Ll8c;->Y:Lws6;
-
-    invoke-virtual {v0}, Ljava/util/AbstractCollection;->size()I
-
-    move-result v0
-
-    .line 10
-    invoke-virtual {p0, p1, v0}, Ll8c;->p(II)Ll8c;
-
-    move-result-object p0
-
-    return-object p0
 .end method

@@ -1,1107 +1,231 @@
 .class public final Len9;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field public X:I
 
-.field public final b:Lh7a;
+.field public synthetic Y:Ljava/lang/Object;
 
-.field public final c:Lo54;
-
-.field public final d:Lb4a;
-
-.field public final e:Lg2b;
-
-.field public f:Landroid/app/NotificationManager;
+.field public final synthetic Z:Lfn9;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lh7a;Lo54;Lb4a;Lg2b;)V
+.method public constructor <init>(Lfn9;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Len9;->Z:Lfn9;
 
-    iput-object p1, p0, Len9;->a:Landroid/content/Context;
+    const/4 p1, 0x2
 
-    iput-object p2, p0, Len9;->b:Lh7a;
-
-    iput-object p3, p0, Len9;->c:Lo54;
-
-    iput-object p4, p0, Len9;->d:Lb4a;
-
-    iput-object p5, p0, Len9;->e:Lg2b;
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ldn9;
-    .locals 12
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object v0, p0, Len9;->c:Lo54;
+    check-cast p1, Lbn5;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    sget v0, Lavb;->tt_notif_category_active_calls:I
-
-    iget-object p0, p0, Len9;->a:Landroid/content/Context;
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    new-instance p0, Ldn9;
-
-    const/4 v10, 0x2
-
-    const/4 v11, 0x0
-
-    const-string v2, "ru.oneme.app.new.activeCalls"
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    move-object v1, p0
-
-    invoke-direct/range {v1 .. v11}, Ldn9;-><init>(Ljava/lang/String;Ljava/lang/String;ZZLandroid/net/Uri;Z[JZIZ)V
-
-    return-object p0
-.end method
-
-.method public final b()Ldn9;
-    .locals 14
-
-    iget-object v0, p0, Len9;->e:Lg2b;
-
-    check-cast v0, Lj2b;
-
-    iget-object v1, v0, Lj2b;->c:Lkp;
-
-    const-string v2, "app.notification.chats.ringtone"
-
-    invoke-virtual {v1, v2}, Lkp;->v(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "_NONE_"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    xor-int/lit8 v6, v1, 0x1
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v1}, Len9;->h(Z)Landroid/net/Uri;
-
-    move-result-object v8
-
-    iget-object v1, p0, Len9;->c:Lo54;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget v1, Lavb;->tt_notif_category_chats:I
-
-    iget-object p0, p0, Len9;->a:Landroid/content/Context;
-
-    invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    iget-object p0, v0, Lj2b;->c:Lkp;
-
-    iget-object p0, p0, Lf3;->g:Lx97;
-
-    const-string v1, "app.notification.chats.vibrate"
-
-    invoke-virtual {p0, v1, v2}, Lx97;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v7
-
-    iget-object p0, v0, Lj2b;->c:Lkp;
-
-    iget-object p0, p0, Lf3;->g:Lx97;
-
-    const-string v0, "app.notification.important.priority"
-
-    invoke-virtual {p0, v0, v2}, Lx97;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v9
-
-    new-instance p0, Ldn9;
-
-    const/16 v12, -0x3e8
-
-    const/4 v13, 0x1
-
-    const-string v4, "ru.oneme.app.chats"
-
-    const/4 v10, 0x0
-
-    const/4 v11, 0x0
-
-    move-object v3, p0
-
-    invoke-direct/range {v3 .. v13}, Ldn9;-><init>(Ljava/lang/String;Ljava/lang/String;ZZLandroid/net/Uri;Z[JZIZ)V
-
-    return-object p0
-.end method
-
-.method public final c()Ldn9;
-    .locals 14
-
-    iget-object v0, p0, Len9;->e:Lg2b;
-
-    check-cast v0, Lj2b;
-
-    iget-object v1, v0, Lj2b;->c:Lkp;
-
-    const-string v2, "app.notification.ringtone"
-
-    invoke-virtual {v1, v2}, Lkp;->v(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "_NONE_"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    xor-int/lit8 v6, v1, 0x1
-
-    invoke-virtual {p0, v2}, Len9;->h(Z)Landroid/net/Uri;
-
-    move-result-object v8
-
-    iget-object v1, p0, Len9;->c:Lo54;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget v1, Lavb;->tt_notif_category_dialogs:I
-
-    iget-object p0, p0, Len9;->a:Landroid/content/Context;
-
-    invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    iget-object p0, v0, Lj2b;->c:Lkp;
-
-    const-string v1, "app.notification.vibrate"
-
-    invoke-virtual {p0, v1, v2}, Lf3;->c(Ljava/lang/String;Z)Z
-
-    move-result v7
-
-    iget-object p0, v0, Lj2b;->c:Lkp;
-
-    iget-object p0, p0, Lf3;->g:Lx97;
-
-    const-string v0, "app.notification.important.priority"
-
-    invoke-virtual {p0, v0, v2}, Lx97;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v9
-
-    new-instance p0, Ldn9;
-
-    const/16 v12, -0x3e8
-
-    const/4 v13, 0x1
-
-    const-string v4, "ru.oneme.app.dialogs"
-
-    const/4 v10, 0x0
-
-    const/4 v11, 0x0
-
-    move-object v3, p0
-
-    invoke-direct/range {v3 .. v13}, Ldn9;-><init>(Ljava/lang/String;Ljava/lang/String;ZZLandroid/net/Uri;Z[JZIZ)V
-
-    return-object p0
-.end method
-
-.method public final d()Ldn9;
-    .locals 13
-
-    iget-object v0, p0, Len9;->b:Lh7a;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v0, p0, Len9;->c:Lo54;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget v0, Lavb;->tt_notif_category_inapp:I
-
-    iget-object v1, p0, Len9;->a:Landroid/content/Context;
-
-    invoke-virtual {v1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    iget-object p0, p0, Len9;->e:Lg2b;
-
-    check-cast p0, Lj2b;
-
-    iget-object p0, p0, Lj2b;->c:Lkp;
-
-    iget-object p0, p0, Lf3;->g:Lx97;
-
-    const-string v0, "app.notification.in.app.vibrate"
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p0, v0, v1}, Lx97;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v6
-
-    const/4 p0, 0x2
-
-    new-array v9, p0, [J
-
-    fill-array-data v9, :array_0
-
-    new-instance p0, Ldn9;
-
-    const/16 v11, -0x3e8
-
-    const/4 v12, 0x1
-
-    const-string v3, "ru.oneme.app.inapp.2"
-
-    const/4 v5, 0x1
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
-
-    const/4 v10, 0x0
-
-    move-object v2, p0
-
-    invoke-direct/range {v2 .. v12}, Ldn9;-><init>(Ljava/lang/String;Ljava/lang/String;ZZLandroid/net/Uri;Z[JZIZ)V
-
-    return-object p0
-
-    nop
-
-    :array_0
-    .array-data 8
-        0x0
-        0x64
-    .end array-data
-.end method
-
-.method public final e(Ldn9;)V
-    .locals 7
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "createChannel: "
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p1, Ldn9;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v2, "en9"
-
-    invoke-static {v2, v0}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-boolean v0, p1, Ldn9;->c:Z
-
-    const/4 v2, 0x4
-
-    if-eqz v0, :cond_1
-
-    iget-boolean v0, p1, Ldn9;->f:Z
-
-    if-eqz v0, :cond_0
-
-    move v0, v2
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x3
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x2
-
-    :goto_0
-    iget-boolean v3, p1, Ldn9;->h:Z
-
-    const/4 v4, 0x5
-
-    if-eqz v3, :cond_2
-
-    move v0, v4
-
-    :cond_2
-    iget v3, p1, Ldn9;->i:I
-
-    const/16 v5, -0x3e8
-
-    if-eq v3, v5, :cond_3
-
-    move v0, v3
-
-    :cond_3
-    new-instance v3, Landroid/app/NotificationChannel;
-
-    iget-object v5, p1, Ldn9;->b:Ljava/lang/String;
-
-    invoke-direct {v3, v1, v5, v0}, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
-
-    iget-object v0, p1, Ldn9;->e:Landroid/net/Uri;
-
-    if-eqz v0, :cond_5
-
-    iget-object v5, p0, Len9;->c:Lo54;
-
-    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const-string v5, "ru.oneme.app.new.incomingCalls."
-
-    invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    new-instance v6, Landroid/media/AudioAttributes$Builder;
-
-    invoke-direct {v6}, Landroid/media/AudioAttributes$Builder;-><init>()V
-
-    invoke-virtual {v6, v2}, Landroid/media/AudioAttributes$Builder;->setContentType(I)Landroid/media/AudioAttributes$Builder;
-
-    move-result-object v2
-
-    if-eqz v5, :cond_4
-
-    const/4 v4, 0x6
-
-    :cond_4
-    invoke-virtual {v2, v4}, Landroid/media/AudioAttributes$Builder;->setUsage(I)Landroid/media/AudioAttributes$Builder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/media/AudioAttributes$Builder;->build()Landroid/media/AudioAttributes;
-
-    move-result-object v2
-
-    invoke-virtual {v3, v0, v2}, Landroid/app/NotificationChannel;->setSound(Landroid/net/Uri;Landroid/media/AudioAttributes;)V
-
-    goto :goto_1
-
-    :cond_5
-    const/4 v0, 0x0
-
-    invoke-virtual {v3, v0, v0}, Landroid/app/NotificationChannel;->setSound(Landroid/net/Uri;Landroid/media/AudioAttributes;)V
-
-    :goto_1
-    iget-boolean v0, p1, Ldn9;->d:Z
-
-    invoke-virtual {v3, v0}, Landroid/app/NotificationChannel;->enableVibration(Z)V
-
-    iget-object v0, p1, Ldn9;->g:[J
-
-    if-eqz v0, :cond_6
-
-    array-length v2, v0
-
-    if-lez v2, :cond_6
-
-    invoke-virtual {v3, v0}, Landroid/app/NotificationChannel;->setVibrationPattern([J)V
-
-    :cond_6
-    const/4 v0, 0x1
-
-    invoke-virtual {v3, v0}, Landroid/app/NotificationChannel;->enableLights(Z)V
-
-    iget-object v0, p0, Len9;->b:Lh7a;
-
-    invoke-virtual {v0}, Lh7a;->d()V
-
-    const v0, -0xff8501
-
-    invoke-virtual {v3, v0}, Landroid/app/NotificationChannel;->setLightColor(I)V
-
-    iget-object v0, p0, Len9;->d:Lb4a;
-
-    invoke-virtual {v0, v1}, Lb4a;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_7
-
-    invoke-virtual {v3, v0}, Landroid/app/NotificationChannel;->setGroup(Ljava/lang/String;)V
-
-    :cond_7
-    iget-boolean p1, p1, Ldn9;->j:Z
-
-    invoke-virtual {v3, p1}, Landroid/app/NotificationChannel;->setShowBadge(Z)V
-
-    invoke-virtual {p0}, Len9;->i()Landroid/app/NotificationManager;
+    invoke-virtual {p0, p1, p2}, Len9;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    invoke-virtual {p0, v3}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
+    check-cast p0, Len9;
 
-    return-void
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Len9;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public final f()V
-    .locals 20
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    move-object/from16 v0, p0
+    new-instance v0, Len9;
 
-    iget-object v1, v0, Len9;->d:Lb4a;
+    iget-object p0, p0, Len9;->Z:Lfn9;
 
-    iget-object v2, v1, Lb4a;->e:Lr7e;
+    invoke-direct {v0, p0, p2}, Len9;-><init>(Lfn9;Lkotlin/coroutines/Continuation;)V
 
-    invoke-virtual {v2}, Lr7e;->getValue()Ljava/lang/Object;
+    iput-object p1, v0, Len9;->Y:Ljava/lang/Object;
 
-    move-result-object v2
+    return-object v0
+.end method
 
-    check-cast v2, Landroid/app/NotificationManager;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
-    invoke-virtual {v2}, Landroid/app/NotificationManager;->getNotificationChannelGroups()Ljava/util/List;
+    iget v0, p0, Len9;->X:I
 
-    move-result-object v2
+    const/4 v1, 0x3
 
-    if-eqz v2, :cond_3
+    const/4 v2, 0x2
 
-    new-instance v3, Lbs;
+    const/4 v3, 0x1
 
-    const/4 v4, 0x0
+    sget-object v4, Lpx3;->a:Lpx3;
 
-    invoke-direct {v3, v4}, Lbs;-><init>(I)V
+    if-eqz v0, :cond_3
 
-    invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    if-eq v0, v3, :cond_2
 
-    move-result-object v2
+    if-eq v0, v2, :cond_1
 
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/app/NotificationChannelGroup;
-
-    invoke-virtual {v4}, Landroid/app/NotificationChannelGroup;->getId()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Lbs;->add(Ljava/lang/Object;)Z
+    if-ne v0, v1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const-string v2, "ru.oneme.app.notifications.group.chats"
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    invoke-virtual {v3, v2}, Lbs;->contains(Ljava/lang/Object;)Z
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    move-result v4
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    if-nez v4, :cond_1
-
-    sget v4, Lwhc;->z:I
-
-    invoke-virtual {v1, v4, v2}, Lb4a;->a(ILjava/lang/String;)V
+    throw p0
 
     :cond_1
-    const-string v2, "ru.oneme.app.notifications.group.other"
+    :goto_0
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    invoke-virtual {v3, v2}, Lbs;->contains(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_2
-
-    sget v4, Lwhc;->A:I
-
-    invoke-virtual {v1, v4, v2}, Lb4a;->a(ILjava/lang/String;)V
+    goto :goto_5
 
     :cond_2
-    const-string v2, "ru.oneme.app.notifications.group.calls"
+    iget-object v0, p0, Len9;->Y:Ljava/lang/Object;
 
-    invoke-virtual {v3, v2}, Lbs;->contains(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_3
-
-    sget v3, Lwhc;->y:I
-
-    invoke-virtual {v1, v3, v2}, Lb4a;->a(ILjava/lang/String;)V
-
-    :cond_3
-    invoke-virtual/range {p0 .. p0}, Len9;->i()Landroid/app/NotificationManager;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/app/NotificationManager;->getNotificationChannels()Ljava/util/List;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/util/HashSet;
-
-    invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
-
-    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_1
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_4
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/app/NotificationChannel;
-
-    invoke-virtual {v3}, Landroid/app/NotificationChannel;->getId()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    :cond_4
-    iget-object v1, v0, Len9;->c:Lo54;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const-string v1, "ru.oneme.app.chats"
-
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_5
-
-    invoke-virtual/range {p0 .. p0}, Len9;->b()Ldn9;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, Len9;->e(Ldn9;)V
-
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    :cond_5
-    const-string v1, "ru.oneme.app.dialogs"
-
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_6
-
-    invoke-virtual/range {p0 .. p0}, Len9;->c()Ldn9;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, Len9;->e(Ldn9;)V
-
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    :cond_6
-    const-string v1, "ru.oneme.app.misc"
-
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    const-string v4, "app.notification.vibrate"
-
-    const/4 v5, 0x1
-
-    iget-object v6, v0, Len9;->e:Lg2b;
-
-    iget-object v7, v0, Len9;->a:Landroid/content/Context;
-
-    if-nez v3, :cond_7
-
-    move-object v3, v6
-
-    check-cast v3, Lj2b;
-
-    iget-object v8, v3, Lj2b;->c:Lkp;
-
-    const-string v9, "app.notification.ringtone"
-
-    invoke-virtual {v8, v9}, Lkp;->v(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v8
-
-    const-string v9, "_NONE_"
-
-    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    xor-int/lit8 v12, v8, 0x1
-
-    invoke-virtual {v0, v5}, Len9;->h(Z)Landroid/net/Uri;
-
-    move-result-object v14
-
-    sget v8, Lavb;->tt_notif_category_misc:I
-
-    invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v11
-
-    iget-object v3, v3, Lj2b;->c:Lkp;
-
-    invoke-virtual {v3, v4, v5}, Lf3;->c(Ljava/lang/String;Z)Z
-
-    move-result v13
-
-    new-instance v3, Ldn9;
-
-    const/16 v18, -0x3e8
-
-    const/16 v19, 0x0
-
-    const-string v10, "ru.oneme.app.misc"
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0x0
-
-    const/16 v17, 0x0
-
-    move-object v9, v3
-
-    invoke-direct/range {v9 .. v19}, Ldn9;-><init>(Ljava/lang/String;Ljava/lang/String;ZZLandroid/net/Uri;Z[JZIZ)V
-
-    invoke-virtual {v0, v3}, Len9;->e(Ldn9;)V
-
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    :cond_7
-    const-string v1, "ru.oneme.app.inapp.2"
-
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_8
-
-    invoke-virtual/range {p0 .. p0}, Len9;->d()Ldn9;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, Len9;->e(Ldn9;)V
-
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    :cond_8
-    const-string v1, "ru.oneme.app.fileUpload"
-
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_9
-
-    sget v3, Lavb;->tt_notif_category_file_loading:I
-
-    invoke-virtual {v7, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v10
-
-    new-instance v3, Ldn9;
-
-    const/16 v17, -0x3e8
-
-    const/16 v18, 0x0
-
-    const-string v9, "ru.oneme.app.fileUpload"
-
-    const/4 v11, 0x0
-
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x0
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0x0
-
-    move-object v8, v3
-
-    invoke-direct/range {v8 .. v18}, Ldn9;-><init>(Ljava/lang/String;Ljava/lang/String;ZZLandroid/net/Uri;Z[JZIZ)V
-
-    invoke-virtual {v0, v3}, Len9;->e(Ldn9;)V
-
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    :cond_9
-    const-string v1, "ru.oneme.app.media"
-
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_a
-
-    sget v3, Lavb;->tt_notif_category_media:I
-
-    invoke-virtual {v7, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v10
-
-    new-instance v3, Ldn9;
-
-    const/16 v17, -0x3e8
-
-    const/16 v18, 0x0
-
-    const-string v9, "ru.oneme.app.media"
-
-    const/4 v11, 0x1
-
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x0
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0x0
-
-    move-object v8, v3
-
-    invoke-direct/range {v8 .. v18}, Ldn9;-><init>(Ljava/lang/String;Ljava/lang/String;ZZLandroid/net/Uri;Z[JZIZ)V
-
-    invoke-virtual {v0, v3}, Len9;->e(Ldn9;)V
-
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    :cond_a
-    const-string v1, "ru.oneme.app.incomingCalls"
-
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_b
+    check-cast v0, Lbn5;
 
     :try_start_0
-    invoke-virtual/range {p0 .. p0}, Len9;->i()Landroid/app/NotificationManager;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Landroid/app/NotificationManager;->deleteNotificationChannel(Ljava/lang/String;)V
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catchall_0
-    :cond_b
-    const-string v1, "ru.oneme.app.activeCalls"
-
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_c
-
-    :try_start_1
-    invoke-virtual/range {p0 .. p0}, Len9;->i()Landroid/app/NotificationManager;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Landroid/app/NotificationManager;->deleteNotificationChannel(Ljava/lang/String;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    :catchall_1
-    :cond_c
-    const-string v1, "ru.oneme.app.new.incomingCalls."
-
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_d
-
-    sget v3, Lavb;->tt_notif_category_incoming_calls:I
-
-    invoke-virtual {v7, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v10
-
-    check-cast v6, Lj2b;
-
-    iget-object v3, v6, Lj2b;->c:Lkp;
-
-    invoke-virtual {v3, v4, v5}, Lf3;->c(Ljava/lang/String;Z)Z
-
-    move-result v12
-
-    new-instance v3, Ldn9;
-
-    const/16 v17, -0x3e8
-
-    const/16 v18, 0x0
-
-    const-string v9, "ru.oneme.app.new.incomingCalls."
-
-    const/4 v11, 0x0
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x1
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0x1
-
-    move-object v8, v3
-
-    invoke-direct/range {v8 .. v18}, Ldn9;-><init>(Ljava/lang/String;Ljava/lang/String;ZZLandroid/net/Uri;Z[JZIZ)V
-
-    invoke-virtual {v0, v3}, Len9;->e(Ldn9;)V
-
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    :cond_d
-    const-string v1, "ru.oneme.app.new.activeCalls"
-
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_e
-
-    invoke-virtual/range {p0 .. p0}, Len9;->a()Ldn9;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, Len9;->e(Ldn9;)V
-
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    :cond_e
-    const-string v1, "ru.oneme.app.liveLocation"
-
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_f
-
-    sget v3, Lavb;->tt_notif_category_live_location:I
-
-    invoke-virtual {v7, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v10
-
-    new-instance v3, Ldn9;
-
-    const/16 v17, -0x3e8
-
-    const/16 v18, 0x0
-
-    const-string v9, "ru.oneme.app.liveLocation"
-
-    const/4 v11, 0x0
-
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x0
-
-    const/4 v15, 0x0
-
-    const/16 v16, 0x0
-
-    move-object v8, v3
-
-    invoke-direct/range {v8 .. v18}, Ldn9;-><init>(Ljava/lang/String;Ljava/lang/String;ZZLandroid/net/Uri;Z[JZIZ)V
-
-    invoke-virtual {v0, v3}, Len9;->e(Ldn9;)V
-
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    :cond_f
-    return-void
-.end method
-
-.method public final g(Ljava/lang/String;)Landroid/app/NotificationChannel;
-    .locals 3
-
-    invoke-static {p1}, Lr1g;->p(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    return-object v1
-
-    :cond_0
-    invoke-virtual {p0}, Len9;->i()Landroid/app/NotificationManager;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/app/NotificationManager;->getNotificationChannels()Ljava/util/List;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :cond_1
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/NotificationChannel;
-
-    invoke-virtual {v0}, Landroid/app/NotificationChannel;->getId()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    return-object v0
-
-    :cond_2
-    return-object v1
-.end method
-
-.method public final h(Z)Landroid/net/Uri;
-    .locals 1
-
-    iget-object v0, p0, Len9;->e:Lg2b;
-
-    check-cast v0, Lj2b;
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, v0, Lj2b;->c:Lkp;
-
-    const-string v0, "app.notification.ringtone"
-
-    invoke-virtual {p1, v0}, Lkp;->v(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_0
-    iget-object p1, v0, Lj2b;->c:Lkp;
-
-    const-string v0, "app.notification.chats.ringtone"
-
-    invoke-virtual {p1, v0}, Lkp;->v(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    :goto_0
-    const-string v0, "DEFAULT"
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object p0, p0, Len9;->b:Lh7a;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object p0, Landroid/provider/Settings$System;->DEFAULT_NOTIFICATION_URI:Landroid/net/Uri;
-
     goto :goto_1
 
-    :cond_1
-    invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    :catchall_0
+    move-exception p1
+
+    goto :goto_2
+
+    :cond_3
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Len9;->Y:Ljava/lang/Object;
+
+    move-object v0, p1
+
+    check-cast v0, Lbn5;
+
+    iget-object p1, p0, Len9;->Z:Lfn9;
+
+    iget-object v5, p1, Lfn9;->a:Lp5b;
+
+    if-nez v5, :cond_6
+
+    :try_start_1
+    iget-object p1, p1, Lfn9;->b:Lje7;
+
+    invoke-interface {p1}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lv2a;
+
+    iput-object v0, p0, Len9;->Y:Ljava/lang/Object;
+
+    iput v3, p0, Len9;->X:I
+
+    iget-object p1, p1, Lv2a;->a:Lje7;
+
+    invoke-interface {p1}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lrke;
+
+    sget-object v1, Lm5b;->o:Lm5b;
+
+    invoke-virtual {p1, v1, p0}, Lrke;->e(Lije;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, v4, :cond_4
+
+    goto :goto_4
+
+    :cond_4
+    :goto_1
+    check-cast p1, Ln5b;
+
+    iget-object p1, p1, Ln5b;->o:Ljava/lang/Object;
+
+    invoke-static {p1}, Lkhg;->q(Ljava/util/List;)Lp5b;
+
+    move-result-object p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_3
+
+    :goto_2
+    new-instance v1, Ljhc;
+
+    invoke-direct {v1, p1}, Ljhc;-><init>(Ljava/lang/Throwable;)V
+
+    move-object p1, v1
+
+    :goto_3
+    instance-of v1, p1, Ljhc;
+
+    const/4 v3, 0x0
+
+    if-eqz v1, :cond_5
+
+    move-object p1, v3
+
+    :cond_5
+    check-cast p1, Lp5b;
+
+    iput-object v3, p0, Len9;->Y:Ljava/lang/Object;
+
+    iput v2, p0, Len9;->X:I
+
+    invoke-interface {v0, p1, p0}, Lbn5;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    :goto_1
-    return-object p0
-.end method
+    if-ne p0, v4, :cond_7
 
-.method public final i()Landroid/app/NotificationManager;
-    .locals 2
+    goto :goto_4
 
-    iget-object v0, p0, Len9;->f:Landroid/app/NotificationManager;
+    :cond_6
+    iput v1, p0, Len9;->X:I
 
-    if-nez v0, :cond_0
+    invoke-interface {v0, v5, p0}, Lbn5;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    iget-object v0, p0, Len9;->a:Landroid/content/Context;
+    move-result-object p0
 
-    const-string v1, "notification"
+    if-ne p0, v4, :cond_7
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    :goto_4
+    return-object v4
 
-    move-result-object v0
-
-    check-cast v0, Landroid/app/NotificationManager;
-
-    iput-object v0, p0, Len9;->f:Landroid/app/NotificationManager;
-
-    :cond_0
-    iget-object p0, p0, Len9;->f:Landroid/app/NotificationManager;
+    :cond_7
+    :goto_5
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 .end method

@@ -26,19 +26,18 @@
 .method public final b()Z
     .locals 1
 
-    const/4 v0, 0x3
-
     iget p0, p0, Lo2;->a:I
+
+    const/4 v0, 0x3
 
     if-ne p0, v0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method

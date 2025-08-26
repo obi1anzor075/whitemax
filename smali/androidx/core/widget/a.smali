@@ -7,7 +7,7 @@
 .method public static a(Landroid/widget/TextView;I)V
     .locals 2
 
-    invoke-static {p1}, Le07;->m(I)V
+    invoke-static {p1}, Lfq0;->n(I)V
 
     invoke-virtual {p0}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
 

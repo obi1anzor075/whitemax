@@ -1,70 +1,84 @@
-.class public final synthetic Lkw8;
+.class public final Lkw8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lta3;
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:J
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public final b:Lfr8;
+
+.field public final c:Ljava/lang/String;
+
+.field public final o:Ljava/util/List;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/util/ArrayList;JLfr8;)V
     .locals 0
 
-    iput p1, p0, Lkw8;->a:I
-
-    iput-object p2, p0, Lkw8;->b:Ljava/lang/Object;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lkw8;->c:Ljava/lang/String;
+
+    iput-object p2, p0, Lkw8;->o:Ljava/util/List;
+
+    iput-wide p3, p0, Lkw8;->a:J
+
+    iput-object p5, p0, Lkw8;->b:Lfr8;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 5
 
-    iget v0, p0, Lkw8;->a:I
+    iget-object v0, p0, Lkw8;->c:Ljava/lang/String;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-static {v0}, Lxja;->z(Ljava/lang/CharSequence;)Ljava/lang/String;
 
-    iget-object p0, p0, Lkw8;->b:Ljava/lang/Object;
+    move-result-object v0
 
-    check-cast p0, Lp0a;
+    iget-object v1, p0, Lkw8;->o:Ljava/util/List;
 
-    iget-object p0, p0, Lp0a;->d:Ldbc;
+    invoke-static {v1}, Lzx7;->n(Ljava/util/Collection;)I
 
-    invoke-virtual {p0}, Ldbc;->b()V
+    move-result v1
 
-    return-void
+    const-string v2, "\', highlights="
 
-    :pswitch_0
-    iget-object p0, p0, Lkw8;->b:Ljava/lang/Object;
+    const-string v3, ", chatId=\'"
 
-    check-cast p0, Lsw8;
+    const-string v4, "{, feedback=\'"
 
-    iget-object p0, p0, Lsw8;->f:Lr7e;
+    invoke-static {v1, v4, v0, v2, v3}, Lm26;->m(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0}, Lr7e;->getValue()Ljava/lang/Object;
+    move-result-object v0
+
+    iget-wide v1, p0, Lkw8;->a:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, "\', message="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lkw8;->b:Lfr8;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, "}"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    check-cast p0, Lkr7;
-
-    const/4 v0, -0x1
-
-    invoke-virtual {p0, v0}, Lkr7;->i(I)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

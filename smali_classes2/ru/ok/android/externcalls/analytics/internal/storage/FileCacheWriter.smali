@@ -133,7 +133,7 @@
     :try_end_2
     .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_2} :catch_0
 
-    goto :goto_3
+    return-void
 
     :catchall_0
     move-exception p1
@@ -172,7 +172,6 @@
 
     invoke-interface {p0, p1, p3, p2}, Lru/ok/android/externcalls/analytics/log/CallAnalyticsLogger;->report(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_3
     return-void
 .end method
 
@@ -314,22 +313,22 @@
     invoke-virtual {p3, p0}, Ljava/io/OutputStream;->write([B)V
 
     :cond_0
-    new-instance p0, Ljxa;
+    new-instance p0, Le0b;
 
-    new-instance p1, Ljha;
+    new-instance p1, Lqla;
 
-    invoke-direct {p1, p3}, Ljha;-><init>(Ljava/io/OutputStream;)V
+    invoke-direct {p1, p3}, Lqla;-><init>(Ljava/io/OutputStream;)V
 
-    invoke-direct {p0, p1}, Ljxa;-><init>(Ljava/io/Writer;)V
+    invoke-direct {p0, p1}, Le0b;-><init>(Ljava/io/Writer;)V
 
     :try_start_0
     sget-object p1, Lru/ok/android/externcalls/analytics/internal/event/EventSerializer;->INSTANCE:Lru/ok/android/externcalls/analytics/internal/event/EventSerializer;
 
-    invoke-virtual {p1, p0, p2}, Lru/ok/android/externcalls/analytics/internal/event/EventSerializer;->serialize(Lt67;Lru/ok/android/externcalls/analytics/events/CallAnalyticsEvent;)V
+    invoke-virtual {p1, p0, p2}, Lru/ok/android/externcalls/analytics/internal/event/EventSerializer;->serialize(Lkb7;Lru/ok/android/externcalls/analytics/events/CallAnalyticsEvent;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {p0}, Ljxa;->close()V
+    invoke-virtual {p0}, Le0b;->close()V
 
     return-void
 
@@ -337,7 +336,7 @@
     move-exception p1
 
     :try_start_1
-    invoke-virtual {p0}, Ljxa;->close()V
+    invoke-virtual {p0}, Le0b;->close()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
@@ -406,6 +405,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    :goto_0
     invoke-static {v2}, Lru/ok/android/externcalls/analytics/internal/utils/Files;->length(Ljava/io/File;)J
 
     move-result-wide v0
@@ -421,7 +421,7 @@
     :catchall_0
     move-exception v0
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
     :try_start_2
@@ -443,19 +443,9 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    invoke-static {v2}, Lru/ok/android/externcalls/analytics/internal/utils/Files;->length(Ljava/io/File;)J
+    goto :goto_0
 
-    move-result-wide v0
-
-    iput-wide v0, p0, Lru/ok/android/externcalls/analytics/internal/storage/FileCacheWriter;->length:J
-
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/internal/storage/FileCacheWriter;->lock:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {p0}, Ljava/util/concurrent/locks/Lock;->unlock()V
-
-    return-void
-
-    :goto_0
+    :goto_1
     invoke-static {v2}, Lru/ok/android/externcalls/analytics/internal/utils/Files;->length(Ljava/io/File;)J
 
     move-result-wide v1
@@ -542,7 +532,7 @@
     :catchall_0
     move-exception p1
 
-    goto/16 :goto_1
+    goto :goto_1
 
     :cond_0
     :try_start_2
@@ -646,17 +636,7 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    invoke-static {v3}, Lru/ok/android/externcalls/analytics/internal/utils/Files;->length(Ljava/io/File;)J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lru/ok/android/externcalls/analytics/internal/storage/FileCacheWriter;->length:J
-
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/internal/storage/FileCacheWriter;->lock:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {p0}, Ljava/util/concurrent/locks/Lock;->unlock()V
-
-    return-void
+    goto :goto_0
 
     :goto_1
     invoke-static {v3}, Lru/ok/android/externcalls/analytics/internal/utils/Files;->length(Ljava/io/File;)J

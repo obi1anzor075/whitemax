@@ -1,183 +1,118 @@
-.class public abstract Lche;
-.super Ljava/lang/Object;
+.class public final Lche;
+.super Lqde;
 .source "SourceFile"
 
+# interfaces
+.implements Ll66;
 
-# static fields
-.field public static final synthetic a:I
+
+# instance fields
+.field public X:I
+
+.field public final synthetic Y:Lhhe;
+
+.field public final synthetic Z:Lone/me/sdk/vendor/SystemServicesManager$PushTokenGeneratedListener;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lhhe;Lone/me/sdk/vendor/SystemServicesManager$PushTokenGeneratedListener;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    const-string v0, "#(?i)([\\p{L}0-9_]+)"
+    iput-object p1, p0, Lche;->Y:Lhhe;
 
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    iput-object p2, p0, Lche;->Z:Lone/me/sdk/vendor/SystemServicesManager$PushTokenGeneratedListener;
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public static a(Lloa;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
 
-    const-string v0, "+"
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    invoke-static {p2}, Lr1g;->p(Ljava/lang/CharSequence;)Z
+    check-cast p1, Lox3;
 
-    move-result v1
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    if-eqz v1, :cond_0
+    invoke-virtual {p0, p1, p2}, Lche;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    move-object p2, p3
+    move-result-object p0
 
-    :cond_0
-    invoke-static {p2}, Lr1g;->p(Ljava/lang/CharSequence;)Z
+    check-cast p0, Lche;
 
-    move-result p3
+    sget-object p1, Le5f;->a:Le5f;
 
-    const-string v1, "RU"
-
-    if-eqz p3, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p2}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
-
-    move-result-object p2
-
-    iget-object p3, p0, Lloa;->f:Ljava/util/HashSet;
-
-    invoke-static {p3}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
-
-    move-result-object p3
-
-    invoke-interface {p3, p2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-nez p3, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    move-object v1, p2
-
-    :goto_0
-    :try_start_0
-    invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_3
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p2
-
-    goto :goto_1
-
-    :cond_3
-    move-object p2, p1
-
-    :goto_1
-    invoke-virtual {p0, v1, p2}, Lloa;->t(Ljava/lang/String;Ljava/lang/CharSequence;)Lcpa;
-
-    move-result-object p2
-    :try_end_0
-    .catch Lio/michaelrocks/libphonenumber/android/NumberParseException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_2
-
-    :catch_0
-    const/4 p2, 0x0
-
-    :goto_2
-    if-nez p2, :cond_4
-
-    return-object p1
-
-    :cond_4
-    const/4 p1, 0x2
-
-    invoke-virtual {p0, p2, p1}, Lloa;->d(Lcpa;I)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Lche;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static b(Landroid/content/Context;Ljava/lang/Throwable;)Ljava/lang/String;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .locals 1
 
-    instance-of v0, p1, Lru/ok/messages/video/fetcher/FetcherException;
+    new-instance p1, Lche;
 
-    if-eqz v0, :cond_0
+    iget-object v0, p0, Lche;->Y:Lhhe;
 
-    check-cast p1, Lru/ok/messages/video/fetcher/FetcherException;
+    iget-object p0, p0, Lche;->Z:Lone/me/sdk/vendor/SystemServicesManager$PushTokenGeneratedListener;
 
-    iget p1, p1, Lru/ok/messages/video/fetcher/FetcherException;->a:I
+    invoke-direct {p1, v0, p0, p2}, Lche;-><init>(Lhhe;Lone/me/sdk/vendor/SystemServicesManager$PushTokenGeneratedListener;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {p1}, Lhr1;->t(I)I
+    return-object p1
+.end method
 
-    move-result p1
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    packed-switch p1, :pswitch_data_0
+    iget v0, p0, Lche;->X:I
 
-    sget p1, Lcic;->F:I
+    const/4 v1, 0x1
 
-    goto :goto_0
+    if-eqz v0, :cond_1
 
-    :pswitch_0
-    sget p1, Lcic;->f3:I
+    if-ne v0, v1, :cond_0
 
-    goto :goto_0
-
-    :pswitch_1
-    sget p1, Lcic;->m3:I
-
-    goto :goto_0
-
-    :pswitch_2
-    sget p1, Lcic;->n3:I
-
-    goto :goto_0
-
-    :pswitch_3
-    sget p1, Lcic;->o3:I
-
-    goto :goto_0
-
-    :pswitch_4
-    sget p1, Lcic;->q3:I
-
-    goto :goto_0
-
-    :pswitch_5
-    sget p1, Lcic;->j3:I
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
-    sget p1, Lcic;->f3:I
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    :goto_0
-    invoke-virtual {p0, p1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iput v1, p0, Lche;->X:I
+
+    iget-object p1, p0, Lche;->Y:Lhhe;
+
+    iget-object v0, p0, Lche;->Z:Lone/me/sdk/vendor/SystemServicesManager$PushTokenGeneratedListener;
+
+    invoke-virtual {p1, v0, p0}, Lhhe;->H(Lone/me/sdk/vendor/SystemServicesManager$PushTokenGeneratedListener;Lbu3;)Ljava/lang/Object;
 
     move-result-object p0
 
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
+
     return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x5
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

@@ -203,184 +203,178 @@
 .end method
 
 .method private prepareShader(Lorg/webrtc/GlGenericDrawer$ShaderType;[FIIII)V
-    .locals 13
+    .locals 11
 
-    move-object v0, p0
+    iget-object v0, p0, Lorg/webrtc/GlGenericDrawer;->currentShaderType:Lorg/webrtc/GlGenericDrawer$ShaderType;
 
-    move-object v1, p1
+    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    iget-object v2, v0, Lorg/webrtc/GlGenericDrawer;->currentShaderType:Lorg/webrtc/GlGenericDrawer$ShaderType;
+    move-result v0
 
-    invoke-virtual {p1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    const/4 v1, 0x1
 
-    move-result v2
+    const/4 v2, 0x0
 
-    const/4 v3, 0x1
+    if-eqz v0, :cond_0
 
-    const/4 v4, 0x0
+    iget-object p1, p0, Lorg/webrtc/GlGenericDrawer;->currentShader:Lorg/webrtc/GlShader;
 
-    if-eqz v2, :cond_0
-
-    iget-object v1, v0, Lorg/webrtc/GlGenericDrawer;->currentShader:Lorg/webrtc/GlShader;
-
-    move-object v6, v1
+    move-object v4, p1
 
     goto :goto_1
 
     :cond_0
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    iput-object v2, v0, Lorg/webrtc/GlGenericDrawer;->currentShaderType:Lorg/webrtc/GlGenericDrawer$ShaderType;
+    iput-object v0, p0, Lorg/webrtc/GlGenericDrawer;->currentShaderType:Lorg/webrtc/GlGenericDrawer$ShaderType;
 
-    iget-object v5, v0, Lorg/webrtc/GlGenericDrawer;->currentShader:Lorg/webrtc/GlShader;
+    iget-object v3, p0, Lorg/webrtc/GlGenericDrawer;->currentShader:Lorg/webrtc/GlShader;
 
-    if-eqz v5, :cond_1
+    if-eqz v3, :cond_1
 
-    invoke-virtual {v5}, Lorg/webrtc/GlShader;->release()V
+    invoke-virtual {v3}, Lorg/webrtc/GlShader;->release()V
 
-    iput-object v2, v0, Lorg/webrtc/GlGenericDrawer;->currentShader:Lorg/webrtc/GlShader;
+    iput-object v0, p0, Lorg/webrtc/GlGenericDrawer;->currentShader:Lorg/webrtc/GlShader;
 
     :cond_1
-    invoke-virtual {p0, p1}, Lorg/webrtc/GlGenericDrawer;->createShader(Lorg/webrtc/GlGenericDrawer$ShaderType;)Lorg/webrtc/GlShader;
+    invoke-virtual/range {p0 .. p1}, Lorg/webrtc/GlGenericDrawer;->createShader(Lorg/webrtc/GlGenericDrawer$ShaderType;)Lorg/webrtc/GlShader;
 
-    move-result-object v2
+    move-result-object v0
 
-    iput-object v1, v0, Lorg/webrtc/GlGenericDrawer;->currentShaderType:Lorg/webrtc/GlGenericDrawer$ShaderType;
+    iput-object p1, p0, Lorg/webrtc/GlGenericDrawer;->currentShaderType:Lorg/webrtc/GlGenericDrawer$ShaderType;
 
-    iput-object v2, v0, Lorg/webrtc/GlGenericDrawer;->currentShader:Lorg/webrtc/GlShader;
+    iput-object v0, p0, Lorg/webrtc/GlGenericDrawer;->currentShader:Lorg/webrtc/GlShader;
 
-    invoke-virtual {v2}, Lorg/webrtc/GlShader;->useProgram()V
+    invoke-virtual {v0}, Lorg/webrtc/GlShader;->useProgram()V
 
-    sget-object v5, Lorg/webrtc/GlGenericDrawer$ShaderType;->YUV:Lorg/webrtc/GlGenericDrawer$ShaderType;
+    sget-object v3, Lorg/webrtc/GlGenericDrawer$ShaderType;->YUV:Lorg/webrtc/GlGenericDrawer$ShaderType;
 
-    if-ne v1, v5, :cond_2
+    if-ne p1, v3, :cond_2
 
-    const-string v1, "y_tex"
+    const-string p1, "y_tex"
 
-    invoke-virtual {v2, v1}, Lorg/webrtc/GlShader;->getUniformLocation(Ljava/lang/String;)I
+    invoke-virtual {v0, p1}, Lorg/webrtc/GlShader;->getUniformLocation(Ljava/lang/String;)I
 
-    move-result v1
+    move-result p1
 
-    invoke-static {v1, v4}, Landroid/opengl/GLES20;->glUniform1i(II)V
+    invoke-static {p1, v2}, Landroid/opengl/GLES20;->glUniform1i(II)V
 
-    const-string v1, "u_tex"
+    const-string p1, "u_tex"
 
-    invoke-virtual {v2, v1}, Lorg/webrtc/GlShader;->getUniformLocation(Ljava/lang/String;)I
+    invoke-virtual {v0, p1}, Lorg/webrtc/GlShader;->getUniformLocation(Ljava/lang/String;)I
 
-    move-result v1
+    move-result p1
 
-    invoke-static {v1, v3}, Landroid/opengl/GLES20;->glUniform1i(II)V
+    invoke-static {p1, v1}, Landroid/opengl/GLES20;->glUniform1i(II)V
 
-    const-string v1, "v_tex"
+    const-string p1, "v_tex"
 
-    invoke-virtual {v2, v1}, Lorg/webrtc/GlShader;->getUniformLocation(Ljava/lang/String;)I
+    invoke-virtual {v0, p1}, Lorg/webrtc/GlShader;->getUniformLocation(Ljava/lang/String;)I
 
-    move-result v1
+    move-result p1
 
-    const/4 v5, 0x2
+    const/4 v3, 0x2
 
-    invoke-static {v1, v5}, Landroid/opengl/GLES20;->glUniform1i(II)V
+    invoke-static {p1, v3}, Landroid/opengl/GLES20;->glUniform1i(II)V
 
     goto :goto_0
 
     :cond_2
-    const-string v1, "tex"
+    const-string p1, "tex"
 
-    invoke-virtual {v2, v1}, Lorg/webrtc/GlShader;->getUniformLocation(Ljava/lang/String;)I
+    invoke-virtual {v0, p1}, Lorg/webrtc/GlShader;->getUniformLocation(Ljava/lang/String;)I
 
-    move-result v1
+    move-result p1
 
-    invoke-static {v1, v4}, Landroid/opengl/GLES20;->glUniform1i(II)V
+    invoke-static {p1, v2}, Landroid/opengl/GLES20;->glUniform1i(II)V
 
     :goto_0
-    const-string v1, "Create shader"
+    const-string p1, "Create shader"
 
-    invoke-static {v1}, Lorg/webrtc/GlUtil;->checkNoGLES2Error(Ljava/lang/String;)V
+    invoke-static {p1}, Lorg/webrtc/GlUtil;->checkNoGLES2Error(Ljava/lang/String;)V
 
-    iget-object v1, v0, Lorg/webrtc/GlGenericDrawer;->shaderCallbacks:Lorg/webrtc/GlGenericDrawer$ShaderCallbacks;
+    iget-object p1, p0, Lorg/webrtc/GlGenericDrawer;->shaderCallbacks:Lorg/webrtc/GlGenericDrawer$ShaderCallbacks;
 
-    invoke-interface {v1, v2}, Lorg/webrtc/GlGenericDrawer$ShaderCallbacks;->onNewShader(Lorg/webrtc/GlShader;)V
+    invoke-interface {p1, v0}, Lorg/webrtc/GlGenericDrawer$ShaderCallbacks;->onNewShader(Lorg/webrtc/GlShader;)V
 
-    const-string v1, "tex_mat"
+    const-string p1, "tex_mat"
 
-    invoke-virtual {v2, v1}, Lorg/webrtc/GlShader;->getUniformLocation(Ljava/lang/String;)I
+    invoke-virtual {v0, p1}, Lorg/webrtc/GlShader;->getUniformLocation(Ljava/lang/String;)I
 
-    move-result v1
+    move-result p1
 
-    iput v1, v0, Lorg/webrtc/GlGenericDrawer;->texMatrixLocation:I
+    iput p1, p0, Lorg/webrtc/GlGenericDrawer;->texMatrixLocation:I
 
-    const-string v1, "in_pos"
+    const-string p1, "in_pos"
 
-    invoke-virtual {v2, v1}, Lorg/webrtc/GlShader;->getAttribLocation(Ljava/lang/String;)I
+    invoke-virtual {v0, p1}, Lorg/webrtc/GlShader;->getAttribLocation(Ljava/lang/String;)I
 
-    move-result v1
+    move-result p1
 
-    iput v1, v0, Lorg/webrtc/GlGenericDrawer;->inPosLocation:I
+    iput p1, p0, Lorg/webrtc/GlGenericDrawer;->inPosLocation:I
 
-    const-string v1, "in_tc"
+    const-string p1, "in_tc"
 
-    invoke-virtual {v2, v1}, Lorg/webrtc/GlShader;->getAttribLocation(Ljava/lang/String;)I
+    invoke-virtual {v0, p1}, Lorg/webrtc/GlShader;->getAttribLocation(Ljava/lang/String;)I
 
-    move-result v1
+    move-result p1
 
-    iput v1, v0, Lorg/webrtc/GlGenericDrawer;->inTcLocation:I
+    iput p1, p0, Lorg/webrtc/GlGenericDrawer;->inTcLocation:I
 
-    move-object v6, v2
+    move-object v4, v0
 
     :goto_1
-    invoke-virtual {v6}, Lorg/webrtc/GlShader;->useProgram()V
+    invoke-virtual {v4}, Lorg/webrtc/GlShader;->useProgram()V
 
-    iget v1, v0, Lorg/webrtc/GlGenericDrawer;->inPosLocation:I
+    iget p1, p0, Lorg/webrtc/GlGenericDrawer;->inPosLocation:I
 
-    invoke-static {v1}, Landroid/opengl/GLES20;->glEnableVertexAttribArray(I)V
+    invoke-static {p1}, Landroid/opengl/GLES20;->glEnableVertexAttribArray(I)V
 
-    iget v7, v0, Lorg/webrtc/GlGenericDrawer;->inPosLocation:I
+    iget v5, p0, Lorg/webrtc/GlGenericDrawer;->inPosLocation:I
 
-    const/4 v11, 0x0
+    const/4 v9, 0x0
 
-    sget-object v12, Lorg/webrtc/GlGenericDrawer;->FULL_RECTANGLE_BUFFER:Ljava/nio/FloatBuffer;
+    sget-object v10, Lorg/webrtc/GlGenericDrawer;->FULL_RECTANGLE_BUFFER:Ljava/nio/FloatBuffer;
 
-    const/4 v8, 0x2
+    const/4 v6, 0x2
 
-    const/16 v9, 0x1406
+    const/16 v7, 0x1406
 
-    const/4 v10, 0x0
+    const/4 v8, 0x0
 
-    invoke-static/range {v7 .. v12}, Landroid/opengl/GLES20;->glVertexAttribPointer(IIIZILjava/nio/Buffer;)V
+    invoke-static/range {v5 .. v10}, Landroid/opengl/GLES20;->glVertexAttribPointer(IIIZILjava/nio/Buffer;)V
 
-    iget v1, v0, Lorg/webrtc/GlGenericDrawer;->inTcLocation:I
+    iget p1, p0, Lorg/webrtc/GlGenericDrawer;->inTcLocation:I
 
-    invoke-static {v1}, Landroid/opengl/GLES20;->glEnableVertexAttribArray(I)V
+    invoke-static {p1}, Landroid/opengl/GLES20;->glEnableVertexAttribArray(I)V
 
-    iget v7, v0, Lorg/webrtc/GlGenericDrawer;->inTcLocation:I
+    iget v5, p0, Lorg/webrtc/GlGenericDrawer;->inTcLocation:I
 
-    sget-object v12, Lorg/webrtc/GlGenericDrawer;->FULL_RECTANGLE_TEXTURE_BUFFER:Ljava/nio/FloatBuffer;
+    sget-object v10, Lorg/webrtc/GlGenericDrawer;->FULL_RECTANGLE_TEXTURE_BUFFER:Ljava/nio/FloatBuffer;
 
-    invoke-static/range {v7 .. v12}, Landroid/opengl/GLES20;->glVertexAttribPointer(IIIZILjava/nio/Buffer;)V
+    invoke-static/range {v5 .. v10}, Landroid/opengl/GLES20;->glVertexAttribPointer(IIIZILjava/nio/Buffer;)V
 
-    iget v1, v0, Lorg/webrtc/GlGenericDrawer;->texMatrixLocation:I
+    iget p1, p0, Lorg/webrtc/GlGenericDrawer;->texMatrixLocation:I
 
-    move-object v2, p2
+    invoke-static {p1, v1, v2, p2, v2}, Landroid/opengl/GLES20;->glUniformMatrix4fv(IIZ[FI)V
 
-    invoke-static {v1, v3, v4, p2, v4}, Landroid/opengl/GLES20;->glUniformMatrix4fv(IIZ[FI)V
+    iget-object v3, p0, Lorg/webrtc/GlGenericDrawer;->shaderCallbacks:Lorg/webrtc/GlGenericDrawer$ShaderCallbacks;
 
-    iget-object v5, v0, Lorg/webrtc/GlGenericDrawer;->shaderCallbacks:Lorg/webrtc/GlGenericDrawer$ShaderCallbacks;
+    move-object v5, p2
 
-    move-object v7, p2
+    move v6, p3
 
-    move/from16 v8, p3
+    move v7, p4
 
-    move/from16 v9, p4
+    move/from16 v8, p5
 
-    move/from16 v10, p5
+    move/from16 v9, p6
 
-    move/from16 v11, p6
+    invoke-interface/range {v3 .. v9}, Lorg/webrtc/GlGenericDrawer$ShaderCallbacks;->onPrepareShader(Lorg/webrtc/GlShader;[FIIII)V
 
-    invoke-interface/range {v5 .. v11}, Lorg/webrtc/GlGenericDrawer$ShaderCallbacks;->onPrepareShader(Lorg/webrtc/GlShader;[FIIII)V
+    const-string p0, "Prepare shader"
 
-    const-string v0, "Prepare shader"
-
-    invoke-static {v0}, Lorg/webrtc/GlUtil;->checkNoGLES2Error(Ljava/lang/String;)V
+    invoke-static {p0}, Lorg/webrtc/GlUtil;->checkNoGLES2Error(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -432,7 +426,7 @@
 
     invoke-static {p0, p1}, Landroid/opengl/GLES20;->glBindTexture(II)V
 
-    invoke-static {p5, p6, p7, p8}, Landroid/opengl/GLES20;->glViewport(IIII)V
+    invoke-static {p5, p6, v5, v6}, Landroid/opengl/GLES20;->glViewport(IIII)V
 
     const/4 p1, 0x4
 
@@ -474,7 +468,7 @@
 
     invoke-static {p0, p1}, Landroid/opengl/GLES20;->glBindTexture(II)V
 
-    invoke-static {p5, p6, p7, p8}, Landroid/opengl/GLES20;->glViewport(IIII)V
+    invoke-static {p5, p6, v5, v6}, Landroid/opengl/GLES20;->glViewport(IIII)V
 
     const/4 p1, 0x4
 
@@ -517,9 +511,9 @@
 
     const p4, 0x84c0
 
-    const/4 v0, 0x3
+    const/4 p7, 0x3
 
-    if-ge p2, v0, :cond_0
+    if-ge p2, p7, :cond_0
 
     add-int/2addr p4, p2
 
@@ -534,7 +528,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-static {p5, p6, p7, p8}, Landroid/opengl/GLES20;->glViewport(IIII)V
+    invoke-static {p5, p6, v5, v6}, Landroid/opengl/GLES20;->glViewport(IIII)V
 
     const/4 p1, 0x5
 
@@ -545,7 +539,7 @@
     move p1, p0
 
     :goto_1
-    if-ge p1, v0, :cond_1
+    if-ge p1, p7, :cond_1
 
     add-int p2, p1, p4
 

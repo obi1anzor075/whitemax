@@ -72,80 +72,61 @@
 
 # virtual methods
 .method public final build()Lone/me/rlottie/RLottieFactory$Way$Asset;
-    .locals 8
+    .locals 7
 
-    new-instance v7, Lone/me/rlottie/RLottieFactory$Way$Asset;
+    new-instance v0, Lone/me/rlottie/RLottieFactory$Way$Asset;
 
-    iget-object v0, p0, Lone/me/rlottie/RLottieFactory$Way$Asset$Builder;->context:Landroid/content/Context;
+    iget-object v1, p0, Lone/me/rlottie/RLottieFactory$Way$Asset$Builder;->context:Landroid/content/Context;
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    if-nez v0, :cond_0
-
-    move-object v2, v1
-
-    goto :goto_0
-
-    :cond_0
-    move-object v2, v0
-
-    :goto_0
-    iget-object v0, p0, Lone/me/rlottie/RLottieFactory$Way$Asset$Builder;->assetsRes:Ljava/lang/String;
-
-    if-nez v0, :cond_1
-
-    move-object v3, v1
-
-    goto :goto_1
-
-    :cond_1
-    move-object v3, v0
-
-    :goto_1
-    iget-object v4, p0, Lone/me/rlottie/RLottieFactory$Way$Asset$Builder;->cacheName:Ljava/lang/String;
-
-    if-nez v4, :cond_3
-
-    if-nez v0, :cond_2
-
-    move-object v4, v1
-
-    goto :goto_2
-
-    :cond_2
-    move-object v4, v0
-
-    :cond_3
-    :goto_2
-    invoke-virtual {p0}, Lone/me/rlottie/RLottieFactory$Way$Builder;->getWidth()I
-
-    move-result v5
-
-    invoke-virtual {p0}, Lone/me/rlottie/RLottieFactory$Way$Builder;->getHeight()I
-
-    move-result v6
-
-    invoke-virtual {p0}, Lone/me/rlottie/RLottieFactory$Way$Builder;->getLimitFps()Z
-
-    move-result p0
-
-    move-object v0, v7
+    if-nez v1, :cond_0
 
     move-object v1, v2
 
+    :cond_0
+    iget-object v3, p0, Lone/me/rlottie/RLottieFactory$Way$Asset$Builder;->assetsRes:Ljava/lang/String;
+
+    move-object v4, v2
+
+    if-nez v3, :cond_1
+
+    goto :goto_0
+
+    :cond_1
     move-object v2, v3
+
+    :goto_0
+    iget-object v5, p0, Lone/me/rlottie/RLottieFactory$Way$Asset$Builder;->cacheName:Ljava/lang/String;
+
+    if-nez v5, :cond_2
+
+    if-nez v3, :cond_3
 
     move-object v3, v4
 
-    move v4, v5
+    goto :goto_1
 
-    move v5, v6
+    :cond_2
+    move-object v3, v5
 
-    move v6, p0
+    :cond_3
+    :goto_1
+    invoke-virtual {p0}, Lone/me/rlottie/RLottieFactory$Way$Builder;->getWidth()I
+
+    move-result v4
+
+    invoke-virtual {p0}, Lone/me/rlottie/RLottieFactory$Way$Builder;->getHeight()I
+
+    move-result v5
+
+    invoke-virtual {p0}, Lone/me/rlottie/RLottieFactory$Way$Builder;->getLimitFps()Z
+
+    move-result v6
 
     invoke-direct/range {v0 .. v6}, Lone/me/rlottie/RLottieFactory$Way$Asset;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIZ)V
 
-    return-object v7
+    return-object v0
 .end method
 
 .method public final setAssetsRes(Ljava/lang/String;)Lone/me/rlottie/RLottieFactory$Way$Asset$Builder;

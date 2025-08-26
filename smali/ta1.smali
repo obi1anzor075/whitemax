@@ -1,42 +1,19 @@
 .class public final Lta1;
-.super Ljava/lang/Object;
+.super Lya1;
 .source "SourceFile"
 
-# interfaces
-.implements Lua1;
 
-
-# static fields
-.field public static final a:Lta1;
-
-.field public static final b:J
-
-.field public static final c:Lhge;
+# instance fields
+.field public final a:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Z)V
+    .locals 0
 
-    new-instance v0, Lta1;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lta1;->a:Lta1;
-
-    sget v0, Li1a;->e:I
-
-    int-to-long v0, v0
-
-    sput-wide v0, Lta1;->b:J
-
-    sget v0, Lj1a;->j:I
-
-    new-instance v1, Lhge;
-
-    invoke-direct {v1, v0}, Lhge;-><init>(I)V
-
-    sput-object v1, Lta1;->c:Lhge;
+    iput-boolean p1, p0, Lta1;->a:Z
 
     return-void
 .end method
@@ -44,7 +21,7 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -53,62 +30,53 @@
     return v0
 
     :cond_0
-    instance-of p0, p1, Lta1;
+    instance-of v1, p1, Lta1;
 
-    if-nez p0, :cond_1
+    const/4 v2, 0x0
 
-    const/4 p0, 0x0
+    if-nez v1, :cond_1
 
-    return p0
+    return v2
 
     :cond_1
+    check-cast p1, Lta1;
+
+    iget-boolean p0, p0, Lta1;->a:Z
+
+    iget-boolean p1, p1, Lta1;->a:Z
+
+    if-eq p0, p1, :cond_2
+
+    return v2
+
+    :cond_2
     return v0
-.end method
-
-.method public final getItemId()J
-    .locals 2
-
-    sget-wide v0, Lta1;->b:J
-
-    return-wide v0
-.end method
-
-.method public final getTitle()Lmge;
-    .locals 0
-
-    sget-object p0, Lta1;->c:Lhge;
-
-    return-object p0
 .end method
 
 .method public final hashCode()I
     .locals 0
 
-    const p0, -0xb4ee5fc
+    iget-boolean p0, p0, Lta1;->a:Z
 
-    return p0
-.end method
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
 
-.method public final l()I
-    .locals 0
-
-    sget p0, Li1a;->l:I
+    move-result p0
 
     return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 0
+    .locals 2
 
-    const-string p0, "StartCall"
+    const-string v0, "LoadingState(isEnabled="
+
+    const-string v1, ")"
+
+    iget-boolean p0, p0, Lta1;->a:Z
+
+    invoke-static {v0, v1, p0}, Lzge;->p(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
-.end method
-
-.method public final u()I
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return p0
 .end method

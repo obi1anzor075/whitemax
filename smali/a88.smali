@@ -3,253 +3,281 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/os/Parcelable;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "La88;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static final c:Lyr;
-
-.field public static final o:[Ljava/lang/String;
+.implements Ly78;
+.implements Lz78;
 
 
 # instance fields
-.field public final a:Landroid/os/Bundle;
+.field public final synthetic a:I
 
-.field public b:Landroid/media/MediaMetadata;
+.field public final b:I
+
+.field public c:[Landroid/media/MediaCodecInfo;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 10
+.method public constructor <init>(IZZ)V
+    .locals 0
 
-    new-instance v0, Lyr;
+    iput p1, p0, La88;->a:I
 
-    invoke-direct {v0}, Lkgd;-><init>()V
+    packed-switch p1, :pswitch_data_0
 
-    sput-object v0, La88;->c:Lyr;
-
-    const/4 v1, 0x1
-
-    const-string v2, "android.media.metadata.TITLE"
-
-    const-string v3, "android.media.metadata.ARTIST"
-
-    invoke-static {v1, v0, v2, v1, v3}, Lwn6;->m(ILyr;Ljava/lang/String;ILjava/lang/String;)V
-
-    const/4 v2, 0x0
-
-    const-string v3, "android.media.metadata.DURATION"
-
-    const-string v4, "android.media.metadata.ALBUM"
-
-    invoke-static {v2, v0, v3, v1, v4}, Lwn6;->m(ILyr;Ljava/lang/String;ILjava/lang/String;)V
-
-    const-string v3, "android.media.metadata.AUTHOR"
-
-    const-string v4, "android.media.metadata.WRITER"
-
-    invoke-static {v1, v0, v3, v1, v4}, Lwn6;->m(ILyr;Ljava/lang/String;ILjava/lang/String;)V
-
-    const-string v3, "android.media.metadata.COMPOSER"
-
-    const-string v4, "android.media.metadata.COMPILATION"
-
-    invoke-static {v1, v0, v3, v1, v4}, Lwn6;->m(ILyr;Ljava/lang/String;ILjava/lang/String;)V
-
-    const-string v3, "android.media.metadata.DATE"
-
-    const-string v4, "android.media.metadata.YEAR"
-
-    invoke-static {v1, v0, v3, v2, v4}, Lwn6;->m(ILyr;Ljava/lang/String;ILjava/lang/String;)V
-
-    const-string v3, "android.media.metadata.GENRE"
-
-    const-string v4, "android.media.metadata.TRACK_NUMBER"
-
-    invoke-static {v1, v0, v3, v2, v4}, Lwn6;->m(ILyr;Ljava/lang/String;ILjava/lang/String;)V
-
-    const-string v3, "android.media.metadata.NUM_TRACKS"
-
-    const-string v4, "android.media.metadata.DISC_NUMBER"
-
-    invoke-static {v2, v0, v3, v2, v4}, Lwn6;->m(ILyr;Ljava/lang/String;ILjava/lang/String;)V
-
-    const-string v3, "android.media.metadata.ALBUM_ARTIST"
-
-    const/4 v4, 0x2
-
-    const-string v5, "android.media.metadata.ART"
-
-    invoke-static {v1, v0, v3, v4, v5}, Lwn6;->m(ILyr;Ljava/lang/String;ILjava/lang/String;)V
-
-    const-string v3, "android.media.metadata.ART_URI"
-
-    const-string v5, "android.media.metadata.ALBUM_ART"
-
-    invoke-static {v1, v0, v3, v4, v5}, Lwn6;->m(ILyr;Ljava/lang/String;ILjava/lang/String;)V
-
-    const-string v3, "android.media.metadata.ALBUM_ART_URI"
-
-    const/4 v5, 0x3
-
-    const-string v6, "android.media.metadata.USER_RATING"
-
-    invoke-static {v1, v0, v3, v5, v6}, Lwn6;->m(ILyr;Ljava/lang/String;ILjava/lang/String;)V
-
-    const-string v3, "android.media.metadata.RATING"
-
-    const-string v6, "android.media.metadata.DISPLAY_TITLE"
-
-    invoke-static {v5, v0, v3, v1, v6}, Lwn6;->m(ILyr;Ljava/lang/String;ILjava/lang/String;)V
-
-    const-string v3, "android.media.metadata.DISPLAY_SUBTITLE"
-
-    const-string v5, "android.media.metadata.DISPLAY_DESCRIPTION"
-
-    invoke-static {v1, v0, v3, v1, v5}, Lwn6;->m(ILyr;Ljava/lang/String;ILjava/lang/String;)V
-
-    const-string v3, "android.media.metadata.DISPLAY_ICON"
-
-    const-string v5, "android.media.metadata.DISPLAY_ICON_URI"
-
-    invoke-static {v4, v0, v3, v1, v5}, Lwn6;->m(ILyr;Ljava/lang/String;ILjava/lang/String;)V
-
-    const-string v3, "android.media.metadata.MEDIA_ID"
-
-    const-string v4, "android.media.metadata.BT_FOLDER_TYPE"
-
-    invoke-static {v1, v0, v3, v2, v4}, Lwn6;->m(ILyr;Ljava/lang/String;ILjava/lang/String;)V
-
-    const-string v3, "android.media.metadata.MEDIA_URI"
-
-    const-string v4, "android.media.metadata.ADVERTISEMENT"
-
-    invoke-static {v1, v0, v3, v2, v4}, Lwn6;->m(ILyr;Ljava/lang/String;ILjava/lang/String;)V
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    const-string v2, "android.media.metadata.DOWNLOAD_STATUS"
-
-    invoke-virtual {v0, v2, v1}, Lkgd;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v8, "android.media.metadata.AUTHOR"
-
-    const-string v9, "android.media.metadata.COMPOSER"
-
-    const-string v3, "android.media.metadata.TITLE"
-
-    const-string v4, "android.media.metadata.ARTIST"
-
-    const-string v5, "android.media.metadata.ALBUM"
-
-    const-string v6, "android.media.metadata.ALBUM_ARTIST"
-
-    const-string v7, "android.media.metadata.WRITER"
-
-    filled-new-array/range {v3 .. v9}, [Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, La88;->o:[Ljava/lang/String;
-
-    new-instance v0, Lvf7;
-
-    const/16 v1, 0xb
-
-    invoke-direct {v0, v1}, Lvf7;-><init>(I)V
-
-    sput-object v0, La88;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Bundle;)V
-    .locals 1
-
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    new-instance v0, Landroid/os/Bundle;
+    if-nez p2, :cond_1
 
-    invoke-direct {v0, p1}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
+    if-eqz p3, :cond_0
 
-    iput-object v0, p0, La88;->a:Landroid/os/Bundle;
+    goto :goto_0
 
-    .line 3
-    invoke-static {v0}, Lvc8;->a(Landroid/os/Bundle;)V
+    :cond_0
+    const/4 p1, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 p1, 0x1
+
+    :goto_1
+    iput p1, p0, La88;->b:I
 
     return-void
-.end method
 
-.method public constructor <init>(Landroid/os/Parcel;)V
-    .locals 1
-
-    .line 4
+    :pswitch_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5
-    const-class v0, Lvc8;
+    if-nez p2, :cond_3
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+    if-eqz p3, :cond_2
 
-    move-result-object v0
+    goto :goto_2
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->readBundle(Ljava/lang/ClassLoader;)Landroid/os/Bundle;
+    :cond_2
+    const/4 p1, 0x0
 
-    move-result-object p1
+    goto :goto_3
 
-    .line 6
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :cond_3
+    :goto_2
+    const/4 p1, 0x1
 
-    .line 7
-    iput-object p1, p0, La88;->a:Landroid/os/Bundle;
+    :goto_3
+    iput p1, p0, La88;->b:I
 
     return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)J
+.method public final a(I)Landroid/media/MediaCodecInfo;
     .locals 2
 
-    iget-object p0, p0, La88;->a:Landroid/os/Bundle;
+    iget v0, p0, La88;->a:I
 
-    const-wide/16 v0, 0x0
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p0, p1, v0, v1}, Landroid/os/BaseBundle;->getLong(Ljava/lang/String;J)J
+    iget-object v0, p0, La88;->c:[Landroid/media/MediaCodecInfo;
 
-    move-result-wide p0
+    if-nez v0, :cond_0
 
-    return-wide p0
+    new-instance v0, Landroid/media/MediaCodecList;
+
+    iget v1, p0, La88;->b:I
+
+    invoke-direct {v0, v1}, Landroid/media/MediaCodecList;-><init>(I)V
+
+    invoke-virtual {v0}, Landroid/media/MediaCodecList;->getCodecInfos()[Landroid/media/MediaCodecInfo;
+
+    move-result-object v0
+
+    iput-object v0, p0, La88;->c:[Landroid/media/MediaCodecInfo;
+
+    :cond_0
+    iget-object p0, p0, La88;->c:[Landroid/media/MediaCodecInfo;
+
+    aget-object p0, p0, p1
+
+    return-object p0
+
+    :pswitch_0
+    iget-object v0, p0, La88;->c:[Landroid/media/MediaCodecInfo;
+
+    if-nez v0, :cond_1
+
+    new-instance v0, Landroid/media/MediaCodecList;
+
+    iget v1, p0, La88;->b:I
+
+    invoke-direct {v0, v1}, Landroid/media/MediaCodecList;-><init>(I)V
+
+    invoke-virtual {v0}, Landroid/media/MediaCodecList;->getCodecInfos()[Landroid/media/MediaCodecInfo;
+
+    move-result-object v0
+
+    iput-object v0, p0, La88;->c:[Landroid/media/MediaCodecInfo;
+
+    :cond_1
+    iget-object p0, p0, La88;->c:[Landroid/media/MediaCodecInfo;
+
+    aget-object p0, p0, p1
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final describeContents()I
+.method public final b(Ljava/lang/String;Ljava/lang/String;Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
     .locals 0
 
-    const/4 p0, 0x0
+    iget p0, p0, La88;->a:I
+
+    packed-switch p0, :pswitch_data_0
+
+    invoke-virtual {p3, p1}, Landroid/media/MediaCodecInfo$CodecCapabilities;->isFeatureSupported(Ljava/lang/String;)Z
+
+    move-result p0
 
     return p0
+
+    :pswitch_0
+    invoke-virtual {p3, p1}, Landroid/media/MediaCodecInfo$CodecCapabilities;->isFeatureSupported(Ljava/lang/String;)Z
+
+    move-result p0
+
+    return p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
+.method public final c(Ljava/lang/String;Landroid/media/MediaCodecInfo$CodecCapabilities;)Z
     .locals 0
 
-    iget-object p0, p0, La88;->a:Landroid/os/Bundle;
+    iget p0, p0, La88;->a:I
 
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
+    packed-switch p0, :pswitch_data_0
 
-    return-void
+    invoke-virtual {p2, p1}, Landroid/media/MediaCodecInfo$CodecCapabilities;->isFeatureRequired(Ljava/lang/String;)Z
+
+    move-result p0
+
+    return p0
+
+    :pswitch_0
+    invoke-virtual {p2, p1}, Landroid/media/MediaCodecInfo$CodecCapabilities;->isFeatureRequired(Ljava/lang/String;)Z
+
+    move-result p0
+
+    return p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final d()I
+    .locals 2
+
+    iget v0, p0, La88;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, La88;->c:[Landroid/media/MediaCodecInfo;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Landroid/media/MediaCodecList;
+
+    iget v1, p0, La88;->b:I
+
+    invoke-direct {v0, v1}, Landroid/media/MediaCodecList;-><init>(I)V
+
+    invoke-virtual {v0}, Landroid/media/MediaCodecList;->getCodecInfos()[Landroid/media/MediaCodecInfo;
+
+    move-result-object v0
+
+    iput-object v0, p0, La88;->c:[Landroid/media/MediaCodecInfo;
+
+    :cond_0
+    iget-object p0, p0, La88;->c:[Landroid/media/MediaCodecInfo;
+
+    array-length p0, p0
+
+    return p0
+
+    :pswitch_0
+    iget-object v0, p0, La88;->c:[Landroid/media/MediaCodecInfo;
+
+    if-nez v0, :cond_1
+
+    new-instance v0, Landroid/media/MediaCodecList;
+
+    iget v1, p0, La88;->b:I
+
+    invoke-direct {v0, v1}, Landroid/media/MediaCodecList;-><init>(I)V
+
+    invoke-virtual {v0}, Landroid/media/MediaCodecList;->getCodecInfos()[Landroid/media/MediaCodecInfo;
+
+    move-result-object v0
+
+    iput-object v0, p0, La88;->c:[Landroid/media/MediaCodecInfo;
+
+    :cond_1
+    iget-object p0, p0, La88;->c:[Landroid/media/MediaCodecInfo;
+
+    array-length p0, p0
+
+    return p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final f()Z
+    .locals 0
+
+    iget p0, p0, La88;->a:I
+
+    packed-switch p0, :pswitch_data_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :pswitch_0
+    const/4 p0, 0x1
+
+    return p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

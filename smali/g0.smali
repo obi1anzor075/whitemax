@@ -64,11 +64,11 @@
 
     if-eqz v0, :cond_0
 
+    const/4 v0, 0x0
+
     monitor-exit p0
 
-    const/4 p0, 0x0
-
-    return p0
+    return v0
 
     :catchall_0
     move-exception v0
@@ -358,7 +358,7 @@
 
     iget-object v4, v3, Landroid/util/Pair;->first:Ljava/lang/Object;
 
-    check-cast v4, Lzz3;
+    check-cast v4, Lq34;
 
     iget-object v3, v3, Landroid/util/Pair;->second:Ljava/lang/Object;
 
@@ -366,7 +366,7 @@
 
     new-instance v5, Lf0;
 
-    invoke-direct {v5, p0, v0, v4, v1}, Lf0;-><init>(Lg0;ZLzz3;Z)V
+    invoke-direct {v5, p0, v0, v4, v1}, Lf0;-><init>(Lg0;ZLq34;Z)V
 
     invoke-interface {v3, v5}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
@@ -525,19 +525,19 @@
 
     iget-object v2, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
-    check-cast v2, Lzz3;
+    check-cast v2, Lq34;
 
     iget-object v0, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v0, Ljava/util/concurrent/Executor;
 
-    new-instance v3, Lp36;
+    new-instance v3, Ls76;
 
     const/4 v4, 0x1
 
     const/4 v5, 0x0
 
-    invoke-direct {v3, p0, v2, v5, v4}, Lp36;-><init>(Ljava/lang/Object;Ljava/lang/Object;ZI)V
+    invoke-direct {v3, p0, v2, v5, v4}, Ls76;-><init>(Ljava/lang/Object;Ljava/lang/Object;ZI)V
 
     invoke-interface {v0, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
@@ -578,7 +578,7 @@
 
     if-eq v0, v1, :cond_0
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_0
     if-eqz p2, :cond_1
@@ -596,7 +596,7 @@
     :catchall_0
     move-exception p1
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_1
     :goto_0
@@ -620,7 +620,7 @@
 
     move-object p3, p2
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_2
     move-object p1, p3
@@ -631,11 +631,12 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_4
 
+    :goto_2
     invoke-virtual {p0, p1}, Lg0;->b(Ljava/lang/Object;)V
 
-    goto :goto_3
+    goto :goto_4
 
     :catchall_2
     move-exception p2
@@ -644,32 +645,31 @@
 
     move-object p1, p2
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_3
-    :goto_2
+    :goto_3
     :try_start_4
     monitor-exit p0
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
-    if-eqz p1, :cond_4
-
-    invoke-virtual {p0, p1}, Lg0;->b(Ljava/lang/Object;)V
-
-    :cond_4
     const/4 v1, 0x0
 
-    :cond_5
-    :goto_3
-    if-eqz v1, :cond_6
+    if-eqz p1, :cond_4
+
+    goto :goto_2
+
+    :cond_4
+    :goto_4
+    if-eqz v1, :cond_5
 
     invoke-virtual {p0}, Lg0;->i()V
 
-    :cond_6
+    :cond_5
     return v1
 
-    :goto_4
+    :goto_5
     :try_start_5
     monitor-exit p0
     :try_end_5
@@ -683,15 +683,15 @@
     :catchall_3
     move-exception p1
 
-    if-eqz p3, :cond_7
+    if-eqz p3, :cond_6
 
     invoke-virtual {p0, p3}, Lg0;->b(Ljava/lang/Object;)V
 
-    :cond_7
+    :cond_6
     throw p1
 .end method
 
-.method public final m(Lzz3;Ljava/util/concurrent/Executor;)V
+.method public final m(Lq34;Ljava/util/concurrent/Executor;)V
     .locals 4
 
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -710,7 +710,7 @@
     :catchall_0
     move-exception p1
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_0
     iget v0, p0, Lg0;->b:I
@@ -791,11 +791,11 @@
 
     new-instance v2, Lf0;
 
-    invoke-direct {v2, p0, v1, p1, v0}, Lf0;-><init>(Lg0;ZLzz3;Z)V
+    invoke-direct {v2, p0, v1, p1, v0}, Lf0;-><init>(Lg0;ZLq34;Z)V
 
     invoke-interface {p2, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    goto :goto_3
+    return-void
 
     :catchall_1
     move-exception p1
@@ -808,10 +808,9 @@
     throw p1
 
     :cond_5
-    :goto_3
     return-void
 
-    :goto_4
+    :goto_3
     :try_start_3
     monitor-exit p0
     :try_end_3

@@ -1,73 +1,71 @@
-.class public final enum Lej0;
-.super Ljava/lang/Enum;
+.class public final Lej0;
+.super Lc0f;
 .source "SourceFile"
 
 
-# static fields
-.field public static final enum a:Lej0;
+# instance fields
+.field public final synthetic a:I
 
-.field public static final enum b:Lej0;
-
-.field public static final synthetic c:[Lej0;
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
+    .locals 0
 
-    new-instance v0, Lej0;
+    iput p1, p0, Lej0;->a:I
 
-    const-string v1, "SQUARE"
+    iput-object p2, p0, Lej0;->b:Ljava/lang/Object;
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lej0;->a:Lej0;
-
-    new-instance v1, Lej0;
-
-    const-string v2, "ORIGINAL"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lej0;->b:Lej0;
-
-    filled-new-array {v0, v1}, [Lej0;
-
-    move-result-object v0
-
-    sput-object v0, Lej0;->c:[Lej0;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lej0;
-    .locals 1
 
-    const-class v0, Lej0;
+# virtual methods
+.method public final c(Lzze;)V
+    .locals 2
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    iget v0, p0, Lej0;->a:I
 
-    move-result-object p0
+    packed-switch v0, :pswitch_data_0
 
-    check-cast p0, Lej0;
+    iget-object v0, p0, Lej0;->b:Ljava/lang/Object;
 
-    return-object p0
-.end method
+    check-cast v0, Lzze;
 
-.method public static values()[Lej0;
-    .locals 1
+    invoke-virtual {v0}, Lzze;->H()V
 
-    sget-object v0, Lej0;->c:[Lej0;
+    invoke-virtual {p1, p0}, Lzze;->E(Lyze;)Lzze;
 
-    invoke-virtual {v0}, [Lej0;->clone()Ljava/lang/Object;
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lej0;->b:Ljava/lang/Object;
+
+    check-cast p0, Lqi9;
+
+    iget-object p0, p0, Lqi9;->b:Lti9;
+
+    iget-object p1, p0, Lti9;->c:Ljava/util/concurrent/ConcurrentHashMap;
+
+    const-wide/16 v0, 0x0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
-    check-cast v0, [Lej0;
+    invoke-virtual {p1, v0}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-object v0
+    invoke-virtual {p0}, Lti9;->Y0()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

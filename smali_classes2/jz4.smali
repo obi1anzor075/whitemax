@@ -1,73 +1,159 @@
-.class public final enum Ljz4;
-.super Ljava/lang/Enum;
+.class public final Ljz4;
+.super Lu2;
 .source "SourceFile"
 
 
-# static fields
-.field public static final enum a:Ljz4;
+# instance fields
+.field public final synthetic c:I
 
-.field public static final enum b:Ljz4;
-
-.field public static final synthetic c:[Ljz4;
+.field public final synthetic o:Lone/me/sdk/lists/widgets/EmptyRecyclerView;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public synthetic constructor <init>(Lone/me/sdk/lists/widgets/EmptyRecyclerView;I)V
+    .locals 0
 
-    new-instance v0, Ljz4;
+    iput p2, p0, Ljz4;->c:I
 
-    const-string v1, "SUCCESS"
+    iput-object p1, p0, Ljz4;->o:Lone/me/sdk/lists/widgets/EmptyRecyclerView;
 
-    const/4 v2, 0x0
+    const/4 p1, 0x0
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    const/16 p2, 0x9
 
-    sput-object v0, Ljz4;->a:Ljz4;
-
-    new-instance v1, Ljz4;
-
-    const-string v2, "FAILURE"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Ljz4;->b:Ljz4;
-
-    filled-new-array {v0, v1}, [Ljz4;
-
-    move-result-object v0
-
-    sput-object v0, Ljz4;->c:[Ljz4;
+    invoke-direct {p0, p2, p1}, Lu2;-><init>(ILjava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Ljz4;
-    .locals 1
 
-    const-class v0, Ljz4;
+# virtual methods
+.method public final x0(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 3
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    iget v0, p0, Ljz4;->c:I
 
-    move-result-object p0
+    const/4 v1, 0x0
 
-    check-cast p0, Ljz4;
+    const/4 v2, 0x0
 
-    return-object p0
-.end method
+    iget-object p0, p0, Ljz4;->o:Lone/me/sdk/lists/widgets/EmptyRecyclerView;
 
-.method public static values()[Ljz4;
-    .locals 1
+    packed-switch v0, :pswitch_data_0
 
-    sget-object v0, Ljz4;->c:[Ljz4;
+    check-cast p2, Landroid/view/View;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    check-cast p1, Landroid/view/View;
 
-    move-result-object v0
+    if-eqz p2, :cond_0
 
-    check-cast v0, [Ljz4;
+    sget-object p1, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->U1:[Lbc7;
 
-    return-object v0
+    new-instance p1, Liz4;
+
+    invoke-direct {p1, v2, p0}, Liz4;-><init>(ILjava/lang/Object;)V
+
+    iput-object p1, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->S1:Liz4;
+
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lgbc;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_2
+
+    iget-object p0, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->S1:Liz4;
+
+    invoke-static {p1, p0}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->H0(Lgbc;Libc;)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lgbc;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_2
+
+    iget-object p1, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->S1:Liz4;
+
+    if-eqz p1, :cond_2
+
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lgbc;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_1
+
+    iget-object p2, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->S1:Liz4;
+
+    invoke-static {p1, p2}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->I0(Lgbc;Libc;)V
+
+    :cond_1
+    iput-object v1, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->S1:Liz4;
+
+    :cond_2
+    :goto_0
+    return-void
+
+    :pswitch_0
+    check-cast p2, Landroid/view/View;
+
+    check-cast p1, Landroid/view/View;
+
+    if-eqz p2, :cond_3
+
+    sget-object p1, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->U1:[Lbc7;
+
+    new-instance p1, Liz4;
+
+    invoke-direct {p1, v2, p0}, Liz4;-><init>(ILjava/lang/Object;)V
+
+    iput-object p1, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->S1:Liz4;
+
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lgbc;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_5
+
+    iget-object p0, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->S1:Liz4;
+
+    invoke-static {p1, p0}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->H0(Lgbc;Libc;)V
+
+    goto :goto_1
+
+    :cond_3
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lgbc;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_5
+
+    iget-object p1, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->S1:Liz4;
+
+    if-eqz p1, :cond_5
+
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lgbc;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_4
+
+    iget-object p2, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->S1:Liz4;
+
+    invoke-static {p1, p2}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->I0(Lgbc;Libc;)V
+
+    :cond_4
+    iput-object v1, p0, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->S1:Liz4;
+
+    :cond_5
+    :goto_1
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

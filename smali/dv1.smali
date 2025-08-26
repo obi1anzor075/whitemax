@@ -3,7 +3,19 @@
 .source "SourceFile"
 
 
-# instance fields
-.field public a:Lpye;
+# static fields
+.field public static final a:Ldv1;
 
-.field public b:Lpye;
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Ldv1;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Ldv1;->a:Ldv1;
+
+    return-void
+.end method

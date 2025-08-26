@@ -1,908 +1,447 @@
 .class public final Lan;
-.super Landroid/content/BroadcastReceiver;
+.super Landroid/widget/MultiAutoCompleteTextView;
 .source "SourceFile"
+
+# interfaces
+.implements Lrw4;
+
+
+# static fields
+.field public static final o:[I
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Ls8;
 
-.field public b:Ljava/lang/Object;
+.field public final b:Lxn;
+
+.field public final c:Lvh4;
 
 
 # direct methods
-.method public synthetic constructor <init>()V
+.method static constructor <clinit>()V
     .locals 1
 
-    .line 1
-    const/16 v0, 0xd
+    const v0, 0x1010176
 
-    iput v0, p0, Lan;->a:I
+    filled-new-array {v0}, [I
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    move-result-object v0
+
+    sput-object v0, Lan;->o:[I
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(ILjava/lang/Object;)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .locals 4
 
-    .line 2
-    iput p1, p0, Lan;->a:I
+    sget v0, Lkqb;->autoCompleteTextViewStyle:I
 
-    iput-object p2, p0, Lan;->b:Ljava/lang/Object;
+    invoke-static {p1}, Lyse;->a(Landroid/content/Context;)V
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0, p1, p2, v0}, Landroid/widget/MultiAutoCompleteTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    invoke-static {p0, p1}, Llqe;->a(Landroid/view/View;Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    sget-object v1, Lan;->o:[I
+
+    invoke-static {p1, p2, v1, v0}, Lod;->y(Landroid/content/Context;Landroid/util/AttributeSet;[II)Lod;
+
+    move-result-object p1
+
+    iget-object v1, p1, Lod;->b:Ljava/lang/Object;
+
+    check-cast v1, Landroid/content/res/TypedArray;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {p1, v2}, Lod;->m(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Landroid/widget/AutoCompleteTextView;->setDropDownBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    :cond_0
+    invoke-virtual {p1}, Lod;->z()V
+
+    new-instance p1, Ls8;
+
+    invoke-direct {p1, p0}, Ls8;-><init>(Landroid/view/View;)V
+
+    iput-object p1, p0, Lan;->a:Ls8;
+
+    invoke-virtual {p1, p2, v0}, Ls8;->t(Landroid/util/AttributeSet;I)V
+
+    new-instance p1, Lxn;
+
+    invoke-direct {p1, p0}, Lxn;-><init>(Landroid/widget/TextView;)V
+
+    iput-object p1, p0, Lan;->b:Lxn;
+
+    invoke-virtual {p1, p2, v0}, Lxn;->f(Landroid/util/AttributeSet;I)V
+
+    invoke-virtual {p1}, Lxn;->b()V
+
+    new-instance p1, Lvh4;
+
+    invoke-direct {p1, p0}, Lvh4;-><init>(Landroid/widget/EditText;)V
+
+    iput-object p1, p0, Lan;->c:Lvh4;
+
+    invoke-virtual {p1, p2, v0}, Lvh4;->A(Landroid/util/AttributeSet;I)V
+
+    invoke-virtual {p0}, Landroid/widget/TextView;->getKeyListener()Landroid/text/method/KeyListener;
+
+    move-result-object p2
+
+    instance-of v0, p2, Landroid/text/method/NumberKeyListener;
+
+    if-nez v0, :cond_2
+
+    invoke-virtual {p0}, Landroid/view/View;->isFocusable()Z
+
+    move-result v0
+
+    invoke-virtual {p0}, Landroid/view/View;->isClickable()Z
+
+    move-result v1
+
+    invoke-virtual {p0}, Landroid/view/View;->isLongClickable()Z
+
+    move-result v2
+
+    invoke-virtual {p0}, Landroid/widget/TextView;->getInputType()I
+
+    move-result v3
+
+    invoke-virtual {p1, p2}, Lvh4;->x(Landroid/text/method/KeyListener;)Landroid/text/method/KeyListener;
+
+    move-result-object p1
+
+    if-ne p1, p2, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    invoke-super {p0, p1}, Landroid/widget/TextView;->setKeyListener(Landroid/text/method/KeyListener;)V
+
+    invoke-virtual {p0, v3}, Landroid/widget/TextView;->setRawInputType(I)V
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->setFocusable(Z)V
+
+    invoke-virtual {p0, v1}, Landroid/view/View;->setClickable(Z)V
+
+    invoke-virtual {p0, v2}, Landroid/view/View;->setLongClickable(Z)V
+
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 16
+.method public final a()Z
+    .locals 0
 
-    move-object/from16 v0, p0
+    iget-object p0, p0, Lan;->c:Lvh4;
 
-    move-object/from16 v1, p1
+    iget-object p0, p0, Lvh4;->b:Ljava/lang/Object;
 
-    move-object/from16 v2, p2
+    check-cast p0, Lww4;
 
-    const-string v4, "android.media.AUDIO_BECOMING_NOISY"
+    iget-object p0, p0, Lww4;->a:Lvh4;
 
-    const-string v5, "phone"
+    iget-object p0, p0, Lvh4;->b:Ljava/lang/Object;
 
-    const/16 v6, 0x1f
+    check-cast p0, Ljy4;
 
-    const/16 v8, 0x1d
+    iget-boolean p0, p0, Ljy4;->Y:Z
 
-    const/4 v11, 0x4
+    return p0
+.end method
 
-    const/4 v12, 0x6
+.method public final drawableStateChanged()V
+    .locals 1
 
-    const/16 v13, 0x9
+    invoke-super {p0}, Landroid/view/View;->drawableStateChanged()V
 
-    const-string v14, "connectivity"
+    iget-object v0, p0, Lan;->a:Ls8;
 
-    const/4 v15, 0x0
+    if-eqz v0, :cond_0
 
-    const/4 v9, 0x1
-
-    const/4 v10, 0x0
-
-    const/4 v7, 0x5
-
-    iget v3, v0, Lan;->a:I
-
-    packed-switch v3, :pswitch_data_0
-
-    iget-object v1, v0, Lan;->b:Ljava/lang/Object;
-
-    check-cast v1, Lxqd;
-
-    if-nez v1, :cond_0
-
-    goto :goto_0
+    invoke-virtual {v0}, Ls8;->i()V
 
     :cond_0
-    invoke-virtual {v1}, Lxqd;->a()Z
+    iget-object p0, p0, Lan;->b:Lxn;
 
-    move-result v1
+    if-eqz p0, :cond_1
 
-    if-nez v1, :cond_1
-
-    goto :goto_0
+    invoke-virtual {p0}, Lxn;->b()V
 
     :cond_1
-    iget-object v1, v0, Lan;->b:Ljava/lang/Object;
-
-    check-cast v1, Lxqd;
-
-    iget-object v2, v1, Lxqd;->o:Ljava/lang/Object;
-
-    check-cast v2, Lcom/google/firebase/messaging/FirebaseMessaging;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const-wide/16 v2, 0x0
-
-    invoke-static {v1, v2, v3}, Lcom/google/firebase/messaging/FirebaseMessaging;->b(Ljava/lang/Runnable;J)V
-
-    iget-object v1, v0, Lan;->b:Ljava/lang/Object;
-
-    check-cast v1, Lxqd;
-
-    iget-object v1, v1, Lxqd;->o:Ljava/lang/Object;
-
-    check-cast v1, Lcom/google/firebase/messaging/FirebaseMessaging;
-
-    iget-object v1, v1, Lcom/google/firebase/messaging/FirebaseMessaging;->b:Landroid/content/Context;
-
-    invoke-virtual {v1, v0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-
-    iput-object v15, v0, Lan;->b:Ljava/lang/Object;
-
-    :goto_0
     return-void
+.end method
 
-    :pswitch_0
-    iget-object v0, v0, Lan;->b:Ljava/lang/Object;
+.method public getSupportBackgroundTintList()Landroid/content/res/ColorStateList;
+    .locals 0
 
-    check-cast v0, Lqzd;
+    iget-object p0, p0, Lan;->a:Ls8;
 
-    iget-object v1, v0, Lqzd;->a:Landroid/os/Handler;
+    if-eqz p0, :cond_0
 
-    new-instance v2, Lpzb;
+    invoke-virtual {p0}, Ls8;->p()Landroid/content/res/ColorStateList;
 
-    const/16 v3, 0x13
+    move-result-object p0
 
-    invoke-direct {v2, v3, v0}, Lpzb;-><init>(ILjava/lang/Object;)V
+    return-object p0
 
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    :cond_0
+    const/4 p0, 0x0
 
-    return-void
+    return-object p0
+.end method
 
-    :pswitch_1
-    invoke-virtual/range {p0 .. p0}, Landroid/content/BroadcastReceiver;->isInitialStickyBroadcast()Z
+.method public getSupportBackgroundTintMode()Landroid/graphics/PorterDuff$Mode;
+    .locals 0
 
-    move-result v1
+    iget-object p0, p0, Lan;->a:Ls8;
 
-    if-nez v1, :cond_2
+    if-eqz p0, :cond_0
 
-    iget-object v0, v0, Lan;->b:Ljava/lang/Object;
+    invoke-virtual {p0}, Ls8;->q()Landroid/graphics/PorterDuff$Mode;
 
-    check-cast v0, Lga0;
+    move-result-object p0
 
-    invoke-virtual {v0}, Lga0;->b()V
+    return-object p0
 
-    :cond_2
-    return-void
+    :cond_0
+    const/4 p0, 0x0
 
-    :pswitch_2
-    iget-object v0, v0, Lan;->b:Ljava/lang/Object;
+    return-object p0
+.end method
 
-    check-cast v0, Lur3;
+.method public getSupportCompoundDrawablesTintList()Landroid/content/res/ColorStateList;
+    .locals 0
 
-    invoke-virtual {v0}, Lur3;->u()V
+    iget-object p0, p0, Lan;->b:Lxn;
 
-    return-void
+    invoke-virtual {p0}, Lxn;->d()Landroid/content/res/ColorStateList;
 
-    :pswitch_3
-    invoke-virtual {v1, v14}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    move-result-object p0
 
-    move-result-object v2
+    return-object p0
+.end method
 
-    check-cast v2, Landroid/net/ConnectivityManager;
+.method public getSupportCompoundDrawablesTintMode()Landroid/graphics/PorterDuff$Mode;
+    .locals 0
 
-    if-nez v2, :cond_3
+    iget-object p0, p0, Lan;->b:Lxn;
 
-    :catch_0
-    move v9, v10
+    invoke-virtual {p0}, Lxn;->e()Landroid/graphics/PorterDuff$Mode;
 
-    goto :goto_2
+    move-result-object p0
 
-    :cond_3
-    :try_start_0
-    invoke-virtual {v2}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
+    return-object p0
+.end method
 
-    move-result-object v2
-    :try_end_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+.method public final onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
+    .locals 1
 
-    if-eqz v2, :cond_a
-
-    invoke-virtual {v2}, Landroid/net/NetworkInfo;->isConnected()Z
-
-    move-result v3
-
-    if-nez v3, :cond_4
-
-    goto :goto_2
-
-    :cond_4
-    invoke-virtual {v2}, Landroid/net/NetworkInfo;->getType()I
-
-    move-result v3
-
-    if-eqz v3, :cond_8
-
-    if-eq v3, v9, :cond_7
-
-    if-eq v3, v11, :cond_8
-
-    if-eq v3, v7, :cond_8
-
-    if-eq v3, v12, :cond_6
-
-    if-eq v3, v13, :cond_5
-
-    const/16 v9, 0x8
-
-    goto :goto_2
-
-    :cond_5
-    const/4 v9, 0x7
-
-    goto :goto_2
-
-    :cond_6
-    move v9, v7
-
-    goto :goto_2
-
-    :cond_7
-    const/4 v9, 0x2
-
-    goto :goto_2
-
-    :cond_8
-    invoke-virtual {v2}, Landroid/net/NetworkInfo;->getSubtype()I
-
-    move-result v2
-
-    packed-switch v2, :pswitch_data_1
-
-    :pswitch_4
-    move v13, v12
-
-    goto :goto_1
-
-    :pswitch_5
-    sget v2, Loze;->a:I
-
-    if-lt v2, v8, :cond_9
-
-    goto :goto_1
-
-    :cond_9
-    move v13, v10
-
-    goto :goto_1
-
-    :pswitch_6
-    const/4 v13, 0x2
-
-    goto :goto_1
-
-    :pswitch_7
-    move v13, v7
-
-    goto :goto_1
-
-    :pswitch_8
-    move v13, v11
-
-    goto :goto_1
-
-    :pswitch_9
-    const/4 v13, 0x3
-
-    :goto_1
-    move v9, v13
-
-    :cond_a
-    :goto_2
-    sget v2, Loze;->a:I
-
-    iget-object v0, v0, Lan;->b:Ljava/lang/Object;
-
-    check-cast v0, Ldi9;
-
-    if-lt v2, v6, :cond_b
-
-    if-ne v9, v7, :cond_b
-
-    :try_start_1
-    invoke-virtual {v1, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/telephony/TelephonyManager;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v3, Lai9;
-
-    invoke-direct {v3, v0}, Lai9;-><init>(Ldi9;)V
-
-    invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getMainExecutor()Ljava/util/concurrent/Executor;
-
-    move-result-object v1
-
-    invoke-static {v2, v1, v3}, Lc88;->y(Landroid/telephony/TelephonyManager;Ljava/util/concurrent/Executor;Lai9;)V
-
-    invoke-static {v2, v3}, Lc88;->x(Landroid/telephony/TelephonyManager;Lai9;)V
-    :try_end_1
-    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_1
-
-    goto :goto_3
-
-    :catch_1
-    invoke-static {v7, v0}, Ldi9;->g(ILdi9;)V
-
-    goto :goto_3
-
-    :cond_b
-    invoke-static {v9, v0}, Ldi9;->g(ILdi9;)V
-
-    :goto_3
-    return-void
-
-    :pswitch_a
-    invoke-virtual {v1, v14}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/net/ConnectivityManager;
-
-    if-nez v2, :cond_d
-
-    :catch_2
-    :cond_c
-    move v13, v10
-
-    goto :goto_5
-
-    :cond_d
-    :try_start_2
-    invoke-virtual {v2}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
-
-    move-result-object v2
-    :try_end_2
-    .catch Ljava/lang/SecurityException; {:try_start_2 .. :try_end_2} :catch_2
-
-    if-eqz v2, :cond_13
-
-    invoke-virtual {v2}, Landroid/net/NetworkInfo;->isConnected()Z
-
-    move-result v3
-
-    if-nez v3, :cond_e
-
-    goto :goto_4
-
-    :cond_e
-    invoke-virtual {v2}, Landroid/net/NetworkInfo;->getType()I
-
-    move-result v3
-
-    if-eqz v3, :cond_12
-
-    if-eq v3, v9, :cond_11
-
-    if-eq v3, v11, :cond_12
-
-    if-eq v3, v7, :cond_12
-
-    if-eq v3, v12, :cond_10
-
-    if-eq v3, v13, :cond_f
-
-    const/16 v13, 0x8
-
-    goto :goto_5
-
-    :cond_f
-    const/4 v13, 0x7
-
-    goto :goto_5
-
-    :cond_10
-    :pswitch_b
-    move v13, v7
-
-    goto :goto_5
-
-    :cond_11
-    :pswitch_c
-    const/4 v13, 0x2
-
-    goto :goto_5
-
-    :cond_12
-    invoke-virtual {v2}, Landroid/net/NetworkInfo;->getSubtype()I
-
-    move-result v2
-
-    packed-switch v2, :pswitch_data_2
-
-    :pswitch_d
-    move v13, v12
-
-    goto :goto_5
-
-    :pswitch_e
-    sget v2, Lmze;->a:I
-
-    if-lt v2, v8, :cond_c
-
-    goto :goto_5
-
-    :pswitch_f
-    move v13, v11
-
-    goto :goto_5
-
-    :pswitch_10
-    const/4 v13, 0x3
-
-    goto :goto_5
-
-    :cond_13
-    :goto_4
-    move v13, v9
-
-    :goto_5
-    sget v2, Lmze;->a:I
-
-    iget-object v0, v0, Lan;->b:Ljava/lang/Object;
-
-    check-cast v0, Lci9;
-
-    if-lt v2, v8, :cond_15
-
-    if-ne v13, v7, :cond_15
-
-    :try_start_3
-    invoke-virtual {v1, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/telephony/TelephonyManager;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v3, Lbi9;
-
-    invoke-direct {v3, v0}, Lbi9;-><init>(Lci9;)V
-
-    if-ge v2, v6, :cond_14
-
-    invoke-virtual {v1, v3, v9}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
-
-    goto :goto_6
-
-    :cond_14
-    const/high16 v2, 0x100000
-
-    invoke-virtual {v1, v3, v2}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
-
-    :goto_6
-    invoke-virtual {v1, v3, v10}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
-    :try_end_3
-    .catch Ljava/lang/RuntimeException; {:try_start_3 .. :try_end_3} :catch_3
-
-    goto :goto_7
-
-    :catch_3
-    :cond_15
-    invoke-static {v0, v13}, Lci9;->b(Lci9;I)V
-
-    :goto_7
-    return-void
-
-    :pswitch_11
-    invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v3, "android.intent.action.MEDIA_BUTTON"
-
-    invoke-static {v1, v3}, Loze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_16
-
-    goto :goto_8
-
-    :cond_16
-    invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getData()Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-static {v1, v1}, Loze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_17
-
-    goto :goto_8
-
-    :cond_17
-    const-string v1, "android.intent.extra.KEY_EVENT"
-
-    invoke-virtual {v2, v1}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/view/KeyEvent;
-
-    if-nez v1, :cond_18
-
-    goto :goto_8
-
-    :cond_18
-    iget-object v0, v0, Lan;->b:Ljava/lang/Object;
-
-    check-cast v0, Lmd8;
-
-    iget-object v0, v0, Lmd8;->j:Lvc8;
-
-    iget-object v0, v0, Lvc8;->b:Lmn;
-
-    iget-object v0, v0, Lmn;->b:Ljava/lang/Object;
-
-    check-cast v0, Lv38;
-
-    iget-object v0, v0, Lv38;->a:Landroid/media/session/MediaController;
-
-    invoke-virtual {v0, v1}, Landroid/media/session/MediaController;->dispatchMediaButtonEvent(Landroid/view/KeyEvent;)Z
-
-    :goto_8
-    return-void
-
-    :pswitch_12
-    invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v4, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_19
-
-    iget-object v0, v0, Lan;->b:Ljava/lang/Object;
-
-    check-cast v0, Ln35;
-
-    invoke-virtual {v0}, Ln35;->a()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_19
-
-    iget-object v1, v0, Ln35;->a:Ltgd;
-
-    invoke-virtual {v1}, Ltgd;->e()F
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    cmpl-float v1, v1, v2
-
-    if-lez v1, :cond_19
-
-    const-string v1, "n35"
-
-    const-string v2, "onReceive ACTION_AUDIO_BECOMING_NOISY. Pause player"
-
-    invoke-static {v1, v2}, Ludd;->n(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Ln35;->pause()V
-
-    :cond_19
-    return-void
-
-    :pswitch_13
-    iget-object v1, v0, Lan;->b:Ljava/lang/Object;
-
-    check-cast v1, Ljd3;
-
-    iget-object v1, v1, Ljd3;->l:Ljava/lang/String;
-
-    sget-object v2, Ludd;->e:Lfn6;
-
-    if-nez v2, :cond_1a
-
-    goto :goto_9
-
-    :cond_1a
-    invoke-interface {v2}, Lfn6;->c()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1b
-
-    sget-object v3, Ltn7;->X:Ltn7;
-
-    const-string v4, "onBackgroundDataEnabledChange"
-
-    invoke-interface {v2, v3, v1, v4, v15}, Lfn6;->d(Ltn7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_1b
-    :goto_9
-    iget-object v0, v0, Lan;->b:Ljava/lang/Object;
-
-    check-cast v0, Ljd3;
-
-    iget-object v0, v0, Ljd3;->i:Ljava/util/concurrent/CopyOnWriteArraySet;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
+    invoke-super {p0, p1}, Landroid/view/View;->onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
 
     move-result-object v0
 
-    :goto_a
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-static {p1, v0, p0}, Lcu0;->m0(Landroid/view/inputmethod/EditorInfo;Landroid/view/inputmethod/InputConnection;Landroid/widget/TextView;)V
 
-    move-result v1
+    iget-object p0, p0, Lan;->c:Lvh4;
 
-    if-eqz v1, :cond_1c
+    iget-object p0, p0, Lvh4;->b:Ljava/lang/Object;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    check-cast p0, Lww4;
 
-    move-result-object v1
+    invoke-virtual {p0, v0, p1}, Lww4;->a(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;)Lex4;
 
-    check-cast v1, Ldd3;
+    move-result-object p0
 
-    invoke-interface {v1}, Ldd3;->a()V
+    return-object p0
+.end method
 
-    goto :goto_a
+.method public setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    .locals 0
 
-    :cond_1c
+    invoke-super {p0, p1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    iget-object p0, p0, Lan;->a:Ls8;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Ls8;->w()V
+
+    :cond_0
     return-void
+.end method
 
-    :pswitch_14
-    iget-object v0, v0, Lan;->b:Ljava/lang/Object;
+.method public setBackgroundResource(I)V
+    .locals 0
 
-    check-cast v0, Lez2;
+    invoke-super {p0, p1}, Landroid/view/View;->setBackgroundResource(I)V
 
-    iget-object v1, v0, Lez2;->o:Ljava/lang/Object;
+    iget-object p0, p0, Lan;->a:Ls8;
 
-    check-cast v1, Lnfc;
+    if-eqz p0, :cond_0
 
-    if-eqz v1, :cond_23
+    invoke-virtual {p0, p1}, Ls8;->x(I)V
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const-string v3, "level"
-
-    invoke-virtual {v2, v3, v10}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v3
-
-    iget-object v0, v0, Lez2;->c:Ljava/lang/Object;
-
-    check-cast v0, Leje;
-
-    check-cast v0, Lfje;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v4
-
-    const-string v0, "status"
-
-    const/4 v6, -0x1
-
-    invoke-virtual {v2, v0, v6}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v0
-
-    const/4 v2, 0x2
-
-    if-eq v0, v2, :cond_1e
-
-    if-ne v0, v7, :cond_1d
-
-    goto :goto_b
-
-    :cond_1d
-    move v9, v10
-
-    :cond_1e
-    :goto_b
-    new-instance v0, Lsz0;
-
-    invoke-direct {v0, v3, v4, v5, v9}, Lsz0;-><init>(IJZ)V
-
-    iget-object v1, v1, Lnfc;->b:Ljava/lang/Object;
-
-    check-cast v1, Ltz0;
-
-    if-eqz v9, :cond_1f
-
-    iput-boolean v10, v1, Ltz0;->a:Z
-
-    :cond_1f
-    iget-object v2, v1, Ltz0;->e:Ljava/lang/Object;
-
-    check-cast v2, Lsz0;
-
-    if-nez v2, :cond_20
-
-    iput-object v0, v1, Ltz0;->e:Ljava/lang/Object;
-
-    goto :goto_c
-
-    :cond_20
-    iget-object v4, v1, Ltz0;->f:Ljava/lang/Object;
-
-    check-cast v4, Lsz0;
-
-    if-nez v4, :cond_22
-
-    iget v2, v2, Lsz0;->b:I
-
-    if-ne v2, v3, :cond_21
-
-    goto :goto_c
-
-    :cond_21
-    iput-object v0, v1, Ltz0;->f:Ljava/lang/Object;
-
-    goto :goto_c
-
-    :cond_22
-    iput-object v0, v1, Ltz0;->g:Ljava/lang/Object;
-
-    :cond_23
-    :goto_c
+    :cond_0
     return-void
+.end method
 
-    :pswitch_15
-    iget-object v0, v0, Lan;->b:Ljava/lang/Object;
+.method public final setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    .locals 0
 
-    check-cast v0, Lek0;
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    invoke-virtual {v0, v2}, Lek0;->v(Landroid/content/Intent;)V
+    iget-object p0, p0, Lan;->b:Lxn;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Lxn;->b()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    .locals 0
+
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+
+    iget-object p0, p0, Lan;->b:Lxn;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Lxn;->b()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public setDropDownBackgroundResource(I)V
+    .locals 1
+
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Liu0;->p(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/widget/AutoCompleteTextView;->setDropDownBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     return-void
+.end method
 
-    :pswitch_16
-    invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+.method public setEmojiCompatEnabled(Z)V
+    .locals 0
 
-    move-result-object v1
+    iget-object p0, p0, Lan;->c:Lvh4;
 
-    invoke-virtual {v4, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_24
-
-    iget-object v0, v0, Lan;->b:Ljava/lang/Object;
-
-    check-cast v0, Ls30;
-
-    iget-object v1, v0, Ls30;->b:Ljava/lang/Object;
-
-    check-cast v1, Lr30;
-
-    invoke-interface {v1}, Lr30;->a()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_24
-
-    iget-object v1, v0, Ls30;->b:Ljava/lang/Object;
-
-    check-cast v1, Lr30;
-
-    invoke-interface {v1}, Lr30;->e()F
-
-    move-result v2
-
-    const/4 v3, 0x0
-
-    cmpl-float v2, v2, v3
-
-    if-lez v2, :cond_24
-
-    const-string v2, "Player. Audio Focus. Receiver: ACTION_AUDIO_BECOMING_NOISY. Pause player"
-
-    iget-object v0, v0, Ls30;->c:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-static {v0, v2}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-interface {v1}, Lr30;->pause()V
-
-    :cond_24
-    return-void
-
-    :pswitch_17
-    invoke-virtual/range {p0 .. p0}, Landroid/content/BroadcastReceiver;->isInitialStickyBroadcast()Z
-
-    move-result v3
-
-    if-nez v3, :cond_25
-
-    iget-object v0, v0, Lan;->b:Ljava/lang/Object;
-
-    check-cast v0, La30;
-
-    iget-object v3, v0, La30;->y0:Ljava/lang/Object;
-
-    check-cast v3, Lk20;
-
-    iget-object v4, v0, La30;->x0:Ljava/lang/Object;
-
-    check-cast v4, Li30;
-
-    invoke-static {v1, v2, v3, v4}, Lw20;->c(Landroid/content/Context;Landroid/content/Intent;Lk20;Li30;)Lw20;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, La30;->g(Lw20;)V
-
-    :cond_25
-    return-void
-
-    :pswitch_18
-    iget-object v0, v0, Lan;->b:Ljava/lang/Object;
-
-    check-cast v0, Libe;
-
-    invoke-virtual {v0}, Libe;->X()V
+    invoke-virtual {p0, p1}, Lvh4;->G(Z)V
 
     return-void
+.end method
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_18
-        :pswitch_17
-        :pswitch_16
-        :pswitch_15
-        :pswitch_14
-        :pswitch_13
-        :pswitch_12
-        :pswitch_11
-        :pswitch_a
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+.method public setKeyListener(Landroid/text/method/KeyListener;)V
+    .locals 1
 
-    :pswitch_data_1
-    .packed-switch 0x1
-        :pswitch_9
-        :pswitch_9
-        :pswitch_8
-        :pswitch_8
-        :pswitch_8
-        :pswitch_8
-        :pswitch_8
-        :pswitch_8
-        :pswitch_8
-        :pswitch_8
-        :pswitch_8
-        :pswitch_8
-        :pswitch_7
-        :pswitch_8
-        :pswitch_8
-        :pswitch_4
-        :pswitch_8
-        :pswitch_6
-        :pswitch_4
-        :pswitch_5
-    .end packed-switch
+    iget-object v0, p0, Lan;->c:Lvh4;
 
-    :pswitch_data_2
-    .packed-switch 0x1
-        :pswitch_10
-        :pswitch_10
-        :pswitch_f
-        :pswitch_f
-        :pswitch_f
-        :pswitch_f
-        :pswitch_f
-        :pswitch_f
-        :pswitch_f
-        :pswitch_f
-        :pswitch_f
-        :pswitch_f
-        :pswitch_b
-        :pswitch_f
-        :pswitch_f
-        :pswitch_d
-        :pswitch_f
-        :pswitch_c
-        :pswitch_d
-        :pswitch_e
-    .end packed-switch
+    invoke-virtual {v0, p1}, Lvh4;->x(Landroid/text/method/KeyListener;)Landroid/text/method/KeyListener;
+
+    move-result-object p1
+
+    invoke-super {p0, p1}, Landroid/widget/TextView;->setKeyListener(Landroid/text/method/KeyListener;)V
+
+    return-void
+.end method
+
+.method public setSupportBackgroundTintList(Landroid/content/res/ColorStateList;)V
+    .locals 0
+
+    iget-object p0, p0, Lan;->a:Ls8;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0, p1}, Ls8;->C(Landroid/content/res/ColorStateList;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public setSupportBackgroundTintMode(Landroid/graphics/PorterDuff$Mode;)V
+    .locals 0
+
+    iget-object p0, p0, Lan;->a:Ls8;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0, p1}, Ls8;->D(Landroid/graphics/PorterDuff$Mode;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public setSupportCompoundDrawablesTintList(Landroid/content/res/ColorStateList;)V
+    .locals 0
+
+    iget-object p0, p0, Lan;->b:Lxn;
+
+    invoke-virtual {p0, p1}, Lxn;->i(Landroid/content/res/ColorStateList;)V
+
+    invoke-virtual {p0}, Lxn;->b()V
+
+    return-void
+.end method
+
+.method public setSupportCompoundDrawablesTintMode(Landroid/graphics/PorterDuff$Mode;)V
+    .locals 0
+
+    iget-object p0, p0, Lan;->b:Lxn;
+
+    invoke-virtual {p0, p1}, Lxn;->j(Landroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {p0}, Lxn;->b()V
+
+    return-void
+.end method
+
+.method public final setTextAppearance(Landroid/content/Context;I)V
+    .locals 0
+
+    invoke-super {p0, p1, p2}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
+
+    iget-object p0, p0, Lan;->b:Lxn;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0, p1, p2}, Lxn;->g(Landroid/content/Context;I)V
+
+    :cond_0
+    return-void
 .end method

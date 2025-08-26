@@ -4,24 +4,32 @@
 
 
 # instance fields
-.field public final a:Landroid/content/Intent;
+.field public final a:I
 
-.field public final b:Lvde;
+.field public final b:I
+
+.field public final c:I
+
+.field public final d:I
+
+.field public final e:[B
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Intent;)V
-    .locals 1
+.method public synthetic constructor <init>(IIIII[B)V
+    .locals 0
+
+    iput p2, p0, Lssf;->a:I
+
+    iput p3, p0, Lssf;->b:I
+
+    iput p4, p0, Lssf;->c:I
+
+    iput p5, p0, Lssf;->d:I
+
+    iput-object p6, p0, Lssf;->e:[B
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Lvde;
-
-    invoke-direct {v0}, Lvde;-><init>()V
-
-    iput-object v0, p0, Lssf;->b:Lvde;
-
-    iput-object p1, p0, Lssf;->a:Landroid/content/Intent;
 
     return-void
 .end method

@@ -1,131 +1,66 @@
-.class public final Lejd;
-.super Lgt6;
+.class public final synthetic Lejd;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lx64;
 
 
 # instance fields
-.field public final transient o:Ljava/lang/Object;
+.field public final synthetic X:Ljava/lang/Integer;
+
+.field public final synthetic Y:Ljava/lang/Boolean;
+
+.field public final synthetic a:J
+
+.field public final synthetic b:J
+
+.field public final synthetic c:Ljava/lang/String;
+
+.field public final synthetic o:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;)V
+.method public synthetic constructor <init>(JJLjava/lang/String;ILjava/lang/Integer;Ljava/lang/Boolean;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-wide p1, p0, Lejd;->a:J
 
-    iput-object p1, p0, Lejd;->o:Ljava/lang/Object;
+    iput-wide p3, p0, Lejd;->b:J
+
+    iput-object p5, p0, Lejd;->c:Ljava/lang/String;
+
+    iput p6, p0, Lejd;->o:I
+
+    iput-object p7, p0, Lejd;->X:Ljava/lang/Integer;
+
+    iput-object p8, p0, Lejd;->Y:Ljava/lang/Boolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lws6;
-    .locals 0
+.method public final a()Ljava/lang/Object;
+    .locals 9
 
-    iget-object p0, p0, Lejd;->o:Ljava/lang/Object;
+    new-instance v0, Lone/me/dialogs/share/media/ChatMediaDownloadBottomSheet;
 
-    invoke-static {p0}, Lws6;->n(Ljava/lang/Object;)Le8c;
+    iget-wide v1, p0, Lejd;->a:J
 
-    move-result-object p0
+    iget-wide v3, p0, Lejd;->b:J
 
-    return-object p0
-.end method
+    iget-object v5, p0, Lejd;->c:Ljava/lang/String;
 
-.method public final b(I[Ljava/lang/Object;)I
-    .locals 0
+    iget v6, p0, Lejd;->o:I
 
-    iget-object p0, p0, Lejd;->o:Ljava/lang/Object;
+    iget-object v7, p0, Lejd;->X:Ljava/lang/Integer;
 
-    aput-object p0, p2, p1
+    iget-object v8, p0, Lejd;->Y:Ljava/lang/Boolean;
 
-    add-int/lit8 p1, p1, 0x1
-
-    return p1
-.end method
-
-.method public final contains(Ljava/lang/Object;)Z
-    .locals 0
-
-    iget-object p0, p0, Lejd;->o:Ljava/lang/Object;
-
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final f()Z
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final g()Lrue;
-    .locals 2
-
-    new-instance v0, Ly27;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lrue;-><init>(I)V
-
-    iget-object p0, p0, Lejd;->o:Ljava/lang/Object;
-
-    iput-object p0, v0, Ly27;->b:Ljava/lang/Object;
+    invoke-direct/range {v0 .. v8}, Lone/me/dialogs/share/media/ChatMediaDownloadBottomSheet;-><init>(JJLjava/lang/String;ILjava/lang/Integer;Ljava/lang/Boolean;)V
 
     return-object v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    iget-object p0, p0, Lejd;->o:Ljava/lang/Object;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final size()I
-    .locals 0
-
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "["
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lejd;->o:Ljava/lang/Object;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/16 p0, 0x5d
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

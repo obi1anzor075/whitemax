@@ -1,64 +1,57 @@
-.class public final synthetic Lop4;
-.super Ljava/lang/Object;
+.class public final Lop4;
+.super Lbu3;
 .source "SourceFile"
-
-# interfaces
-.implements Lrf3;
 
 
 # instance fields
-.field public final synthetic a:Lpp4;
+.field public X:Lm8a;
 
-.field public final synthetic b:Landroid/graphics/SurfaceTexture;
+.field public Y:J
 
-.field public final synthetic c:Landroid/view/Surface;
+.field public synthetic Z:Ljava/lang/Object;
+
+.field public o:Lqp4;
+
+.field public final synthetic o0:Lqp4;
+
+.field public p0:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lpp4;Landroid/graphics/SurfaceTexture;Landroid/view/Surface;)V
+.method public constructor <init>(Lqp4;Lbu3;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lop4;->o0:Lqp4;
 
-    iput-object p1, p0, Lop4;->a:Lpp4;
-
-    iput-object p2, p0, Lop4;->b:Landroid/graphics/SurfaceTexture;
-
-    iput-object p3, p0, Lop4;->c:Landroid/view/Surface;
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .locals 2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
-    check-cast p1, Lbb0;
+    iput-object p1, p0, Lop4;->Z:Ljava/lang/Object;
 
-    iget-object p1, p0, Lop4;->a:Lpp4;
+    iget p1, p0, Lop4;->p0:I
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/high16 v0, -0x80000000
 
-    const/4 v0, 0x0
+    or-int/2addr p1, v0
 
-    iget-object v1, p0, Lop4;->b:Landroid/graphics/SurfaceTexture;
+    iput p1, p0, Lop4;->p0:I
 
-    invoke-virtual {v1, v0}, Landroid/graphics/SurfaceTexture;->setOnFrameAvailableListener(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V
+    const-wide/16 v0, 0x0
 
-    invoke-virtual {v1}, Landroid/graphics/SurfaceTexture;->release()V
+    const/4 p1, 0x0
 
-    iget-object p0, p0, Lop4;->c:Landroid/view/Surface;
+    iget-object v2, p0, Lop4;->o0:Lqp4;
 
-    invoke-virtual {p0}, Landroid/view/Surface;->release()V
+    invoke-static {v2, v0, v1, p1, p0}, Lqp4;->a(Lqp4;JLm8a;Lbu3;)Ljava/lang/Object;
 
-    iget p0, p1, Lpp4;->X:I
+    move-result-object p0
 
-    add-int/lit8 p0, p0, -0x1
-
-    iput p0, p1, Lpp4;->X:I
-
-    invoke-virtual {p1}, Lpp4;->d()V
-
-    return-void
+    return-object p0
 .end method

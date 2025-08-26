@@ -1,14 +1,11 @@
-.class public final synthetic Lo9f;
+.class public interface abstract Lo9f;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lsx9;
+.implements Lk85;
 
 
 # virtual methods
-.method public final b(Lxp3;)Lxp3;
-    .locals 0
-
-    return-object p1
+.method public abstract b()Lp9f;
 .end method

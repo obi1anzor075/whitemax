@@ -1,367 +1,295 @@
-.class public abstract Lt5a;
-.super Ljava/lang/Object;
+.class public final Lt5a;
+.super Landroid/widget/LinearLayout;
 .source "SourceFile"
 
+# interfaces
+.implements Lppe;
+.implements Liic;
 
-# static fields
-.field public static final a:Ljava/util/regex/Pattern;
+
+# instance fields
+.field public final a:Landroid/graphics/drawable/ShapeDrawable;
+
+.field public final b:Landroidx/appcompat/widget/AppCompatTextView;
+
+.field public final c:Landroidx/appcompat/widget/AppCompatTextView;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 7
 
-    const-string v0, "[^\\p{L}\\p{Nd} ]+"
+    const/4 v0, 0x0
 
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    invoke-direct {p0, p1, v0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+    new-instance v1, Landroid/graphics/drawable/ShapeDrawable;
+
+    invoke-direct {v1}, Landroid/graphics/drawable/ShapeDrawable;-><init>()V
+
+    iput-object v1, p0, Lt5a;->a:Landroid/graphics/drawable/ShapeDrawable;
+
+    new-instance v1, Landroidx/appcompat/widget/AppCompatTextView;
+
+    invoke-direct {v1, p1, v0}, Landroidx/appcompat/widget/AppCompatTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+    sget-object v2, Lh4f;->j:Lnoe;
+
+    invoke-static {v2, v1}, Lnoe;->d(Lnoe;Landroid/widget/TextView;)V
+
+    invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    iput-object v1, p0, Lt5a;->b:Landroidx/appcompat/widget/AppCompatTextView;
+
+    new-instance v1, Landroidx/appcompat/widget/AppCompatTextView;
+
+    invoke-direct {v1, p1, v0}, Landroidx/appcompat/widget/AppCompatTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+    sget-object p1, Lh4f;->n:Lnoe;
+
+    invoke-static {p1, v1}, Lnoe;->d(Lnoe;Landroid/widget/TextView;)V
+
+    new-instance p1, Landroid/widget/LinearLayout$LayoutParams;
+
+    const/4 v0, -0x1
+
+    const/4 v2, -0x2
+
+    invoke-direct {p1, v0, v2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+
+    const/4 v3, 0x2
+
+    int-to-float v3, v3
+
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v4
+
+    iget v4, v4, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v3, v4
+
+    invoke-static {v3}, Lkhg;->x(F)I
+
+    move-result v3
+
+    iget v4, p1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+
+    iget v5, p1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+
+    iget v6, p1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+
+    invoke-virtual {p1, v4, v3, v5, v6}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
+
+    invoke-virtual {v1, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object p1
+
+    invoke-virtual {p0, v1, p1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    iput-object v1, p0, Lt5a;->c:Landroidx/appcompat/widget/AppCompatTextView;
+
+    new-instance p1, Landroid/widget/LinearLayout$LayoutParams;
+
+    invoke-direct {p1, v0, v2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    const/16 p1, 0x40
+
+    int-to-float p1, p1
+
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    sput-object v0, Lt5a;->a:Ljava/util/regex/Pattern;
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr p1, v0
+
+    invoke-static {p1}, Lkhg;->x(F)I
+
+    move-result p1
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setMinimumHeight(I)V
+
+    const/4 p1, 0x1
+
+    invoke-virtual {p0, p1}, Landroid/widget/LinearLayout;->setOrientation(I)V
+
+    const/16 p1, 0x10
+
+    invoke-virtual {p0, p1}, Landroid/widget/LinearLayout;->setGravity(I)V
+
+    const/16 p1, 0xc
+
+    int-to-float p1, p1
+
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v0, p1
+
+    invoke-static {v0}, Lkhg;->x(F)I
+
+    move-result v0
+
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr p1, v1
+
+    invoke-static {p1}, Lkhg;->x(F)I
+
+    move-result p1
+
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
+
+    move-result v1
+
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingBottom()I
+
+    move-result v2
+
+    invoke-virtual {p0, v0, v1, p1, v2}, Landroid/view/View;->setPadding(IIII)V
+
+    sget-object p1, Lqp4;->q0:Lap9;
+
+    invoke-virtual {p1, p0}, Lap9;->h(Landroid/view/View;)Lyha;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lt5a;->onThemeChanged(Lyha;)V
 
     return-void
 .end method
 
-.method public static a(Ljava/lang/CharSequence;Lw6a;)Ljava/lang/CharSequence;
-    .locals 5
 
-    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
+# virtual methods
+.method public final getTextSubtitle()Ljava/lang/CharSequence;
+    .locals 0
 
-    move-result v0
+    iget-object p0, p0, Lt5a;->c:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v1, ""
-
-    if-nez v0, :cond_0
-
-    return-object v1
-
-    :cond_0
-    iget-object p1, p1, Lw6a;->j:Lnu4;
-
-    const/4 v0, 0x0
-
-    invoke-interface {p1, v0, p0}, Lnu4;->a(ILjava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {p1, p0}, Lnu4;->c(Ljava/lang/CharSequence;)Ljava/util/List;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v2
-
-    xor-int/lit8 v2, v2, 0x1
-
-    if-eqz v2, :cond_1
-
-    invoke-static {p1}, Lo23;->V(Ljava/util/List;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/lang/CharSequence;
-
-    return-object p0
-
-    :cond_1
-    sget-object p1, Lt5a;->a:Ljava/util/regex/Pattern;
-
-    invoke-virtual {p1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v1}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    if-nez v2, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    invoke-static {p1}, Lh0e;->c0(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_5
-
-    :goto_0
-    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
-
-    move-result p1
-
-    if-lez p1, :cond_4
-
-    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
-
-    move-result p1
-
-    if-eqz p1, :cond_3
-
-    invoke-interface {p0, v0}, Ljava/lang/CharSequence;->charAt(I)C
-
-    move-result p0
-
-    invoke-static {p0}, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
-
-    move-result-object v1
-
-    goto :goto_1
-
-    :cond_3
-    new-instance p0, Ljava/util/NoSuchElementException;
-
-    const-string p1, "Char sequence is empty."
-
-    invoke-direct {p0, p1}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_4
-    :goto_1
-    return-object v1
-
-    :cond_5
-    const-string p0, " "
-
-    filled-new-array {p0}, [Ljava/lang/String;
-
-    move-result-object p0
-
-    const/4 v1, 0x6
-
-    invoke-static {p1, p0, v0, v1}, Lh0e;->q0(Ljava/lang/CharSequence;[Ljava/lang/String;ZI)Ljava/util/List;
-
-    move-result-object p0
-
-    new-instance p1, Ljava/util/ArrayList;
-
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :cond_6
-    :goto_2
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_7
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v2, v1
-
-    check-cast v2, Ljava/lang/String;
-
-    invoke-static {v2}, Lh0e;->c0(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    xor-int/lit8 v2, v2, 0x1
-
-    if-eqz v2, :cond_6
-
-    invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_2
-
-    :cond_7
-    new-instance p0, Ljava/lang/StringBuilder;
-
-    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
-
-    move-result v1
-
-    move v2, v0
-
-    :goto_3
-    if-ge v2, v1, :cond_a
-
-    invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/String;
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    if-nez v4, :cond_8
-
-    goto :goto_4
-
-    :cond_8
-    invoke-static {v3}, Lh0e;->c0(Ljava/lang/CharSequence;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_9
-
-    goto :goto_4
-
-    :cond_9
-    invoke-virtual {v3, v0}, Ljava/lang/String;->charAt(I)C
-
-    move-result v3
-
-    invoke-static {v3}, Ljava/lang/Character;->toUpperCase(C)C
-
-    move-result v3
-
-    invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    :goto_4
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_3
-
-    :cond_a
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Landroidx/appcompat/widget/AppCompatTextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static b(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-    .locals 5
+.method public final getTextTitle()Ljava/lang/CharSequence;
+    .locals 0
 
-    if-nez p1, :cond_0
+    iget-object p0, p0, Lt5a;->b:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x2
-
-    :goto_0
-    sget-object v1, Lt5a;->a:Ljava/util/regex/Pattern;
-
-    invoke-virtual {v1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object p0
-
-    const-string v2, ""
-
-    invoke-virtual {p0, v2}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    if-nez p1, :cond_1
-
-    move-object p1, v2
-
-    :cond_1
-    invoke-virtual {v1, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v2}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    if-nez v2, :cond_2
-
-    move-object p0, v3
-
-    goto :goto_1
-
-    :cond_2
-    invoke-virtual {p0, v4}, Ljava/lang/String;->charAt(I)C
-
-    move-result p0
-
-    invoke-static {p0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
-
-    move-result-object p0
-
-    :goto_1
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    if-nez v2, :cond_3
-
-    goto :goto_2
-
-    :cond_3
-    invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C
-
-    move-result p1
-
-    invoke-static {p1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
-
-    move-result-object v3
-
-    :goto_2
-    filled-new-array {p0, v3}, [Ljava/lang/Character;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lp23;->B([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object p0
-
-    :goto_3
-    if-ge v4, v0, :cond_5
-
-    invoke-static {v4, p0}, Lo23;->Y(ILjava/util/List;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Character;
-
-    if-eqz p1, :cond_4
-
-    invoke-virtual {p1}, Ljava/lang/Character;->charValue()C
-
-    move-result p1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    :cond_4
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_3
-
-    :cond_5
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Landroidx/appcompat/widget/AppCompatTextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object p0
 
     return-object p0
+.end method
+
+.method public final onThemeChanged(Lyha;)V
+    .locals 3
+
+    invoke-interface {p1}, Lyha;->getText()Lane;
+
+    move-result-object v0
+
+    iget v0, v0, Lane;->e:I
+
+    iget-object v1, p0, Lt5a;->b:Landroidx/appcompat/widget/AppCompatTextView;
+
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(I)V
+
+    invoke-interface {p1}, Lyha;->getText()Lane;
+
+    move-result-object v0
+
+    iget v0, v0, Lane;->g:I
+
+    iget-object v1, p0, Lt5a;->c:Landroidx/appcompat/widget/AppCompatTextView;
+
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(I)V
+
+    invoke-interface {p1}, Lyha;->c()Lkzd;
+
+    move-result-object p1
+
+    iget-object p1, p1, Lkzd;->a:Lizd;
+
+    iget-object p1, p1, Lizd;->a:Lhzd;
+
+    iget p1, p1, Lhzd;->h:I
+
+    new-instance v0, Landroid/graphics/drawable/RippleDrawable;
+
+    invoke-static {p1}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object p1
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lt5a;->a:Landroid/graphics/drawable/ShapeDrawable;
+
+    invoke-direct {v0, p1, v1, v2}, Landroid/graphics/drawable/RippleDrawable;-><init>(Landroid/content/res/ColorStateList;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    return-void
+.end method
+
+.method public setRippleMask(Landroid/graphics/drawable/shapes/Shape;)V
+    .locals 0
+
+    iget-object p0, p0, Lt5a;->a:Landroid/graphics/drawable/ShapeDrawable;
+
+    invoke-virtual {p0, p1}, Landroid/graphics/drawable/ShapeDrawable;->setShape(Landroid/graphics/drawable/shapes/Shape;)V
+
+    return-void
+.end method
+
+.method public final setTextSubtitle(Ljava/lang/CharSequence;)V
+    .locals 0
+
+    iget-object p0, p0, Lt5a;->c:Landroidx/appcompat/widget/AppCompatTextView;
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    return-void
+.end method
+
+.method public final setTextTitle(Ljava/lang/CharSequence;)V
+    .locals 0
+
+    iget-object p0, p0, Lt5a;->b:Landroidx/appcompat/widget/AppCompatTextView;
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    return-void
 .end method

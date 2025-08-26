@@ -1,415 +1,238 @@
-.class public abstract Lmuc;
-.super Lvuc;
+.class public final Lmuc;
+.super Lu2;
 .source "SourceFile"
 
 
 # instance fields
-.field public final d:J
+.field public X:[J
 
-.field public final e:J
+.field public c:J
 
-.field public final f:Ljava/util/List;
-
-.field public final g:J
-
-.field public final h:J
-
-.field public final i:J
+.field public o:[J
 
 
 # direct methods
-.method public constructor <init>(Lnxb;JJJJLjava/util/List;JJJ)V
-    .locals 3
-
-    move-object v0, p0
-
-    invoke-direct/range {p0 .. p5}, Lvuc;-><init>(Ljava/lang/Object;JJ)V
-
-    move-wide v1, p6
-
-    iput-wide v1, v0, Lmuc;->d:J
-
-    move-wide v1, p8
-
-    iput-wide v1, v0, Lmuc;->e:J
-
-    move-object v1, p10
-
-    iput-object v1, v0, Lmuc;->f:Ljava/util/List;
-
-    move-wide v1, p11
-
-    iput-wide v1, v0, Lmuc;->i:J
-
-    move-wide/from16 v1, p13
-
-    iput-wide v1, v0, Lmuc;->g:J
-
-    move-wide/from16 v1, p15
-
-    iput-wide v1, v0, Lmuc;->h:J
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final c(JJ)J
+.method public static T0(ILabf;)Ljava/io/Serializable;
     .locals 4
 
-    invoke-virtual {p0, p1, p2}, Lmuc;->e(J)J
+    if-eqz p0, :cond_b
 
-    move-result-wide v0
+    const/4 v0, 0x0
 
-    const-wide/16 v2, -0x1
+    const/4 v1, 0x1
 
-    cmp-long v2, v0, v2
+    if-eq p0, v1, :cond_9
 
-    if-eqz v2, :cond_0
+    const/4 v1, 0x2
 
-    return-wide v0
+    if-eq p0, v1, :cond_8
+
+    const/4 v2, 0x3
+
+    if-eq p0, v2, :cond_5
+
+    const/16 v2, 0x8
+
+    if-eq p0, v2, :cond_4
+
+    const/16 v2, 0xa
+
+    if-eq p0, v2, :cond_1
+
+    const/16 v0, 0xb
+
+    if-eq p0, v0, :cond_0
+
+    const/4 p0, 0x0
+
+    return-object p0
 
     :cond_0
-    iget-wide v0, p0, Lmuc;->h:J
+    new-instance p0, Ljava/util/Date;
 
-    sub-long v0, p3, v0
+    invoke-virtual {p1}, Labf;->m()J
 
-    iget-wide v2, p0, Lmuc;->i:J
+    move-result-wide v2
 
-    add-long/2addr v0, v2
+    invoke-static {v2, v3}, Ljava/lang/Double;->longBitsToDouble(J)D
 
-    invoke-virtual {p0, v0, v1, p1, p2}, Lmuc;->g(JJ)J
+    move-result-wide v2
 
-    move-result-wide v0
+    double-to-long v2, v2
 
-    invoke-virtual {p0, p1, p2, p3, p4}, Lmuc;->d(JJ)J
+    invoke-direct {p0, v2, v3}, Ljava/util/Date;-><init>(J)V
 
-    move-result-wide p0
+    invoke-virtual {p1, v1}, Labf;->F(I)V
 
-    sub-long/2addr v0, p0
+    return-object p0
 
-    long-to-int p0, v0
+    :cond_1
+    invoke-virtual {p1}, Labf;->v()I
 
-    int-to-long p0, p0
+    move-result p0
 
-    return-wide p0
-.end method
+    new-instance v1, Ljava/util/ArrayList;
 
-.method public final d(JJ)J
-    .locals 7
+    invoke-direct {v1, p0}, Ljava/util/ArrayList;-><init>(I)V
 
-    invoke-virtual {p0, p1, p2}, Lmuc;->e(J)J
+    :goto_0
+    if-ge v0, p0, :cond_3
 
-    move-result-wide v0
+    invoke-virtual {p1}, Labf;->s()I
 
-    const-wide/16 v2, -0x1
+    move-result v2
 
-    cmp-long v0, v0, v2
+    invoke-static {v2, p1}, Lmuc;->T0(ILabf;)Ljava/io/Serializable;
 
-    iget-wide v1, p0, Lmuc;->d:J
+    move-result-object v2
 
-    if-nez v0, :cond_1
+    if-eqz v2, :cond_2
 
-    const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    iget-wide v5, p0, Lmuc;->g:J
-
-    cmp-long v0, v5, v3
-
-    if-nez v0, :cond_0
+    :cond_2
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    :cond_0
-    iget-wide v3, p0, Lmuc;->h:J
+    :cond_3
+    return-object v1
 
-    sub-long/2addr p3, v3
-
-    sub-long/2addr p3, v5
-
-    invoke-virtual {p0, p3, p4, p1, p2}, Lmuc;->g(JJ)J
-
-    move-result-wide p0
-
-    invoke-static {v1, v2, p0, p1}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide p0
-
-    return-wide p0
-
-    :cond_1
-    :goto_0
-    return-wide v1
-.end method
-
-.method public abstract e(J)J
-.end method
-
-.method public final f(JJ)J
-    .locals 10
-
-    iget-wide v0, p0, Lvuc;->a:J
-
-    const-wide/32 v2, 0xf4240
-
-    iget-wide v4, p0, Lmuc;->d:J
-
-    iget-object v6, p0, Lmuc;->f:Ljava/util/List;
-
-    if-eqz v6, :cond_0
-
-    sub-long/2addr p1, v4
-
-    long-to-int p0, p1
-
-    invoke-interface {v6, p0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    :cond_4
+    invoke-static {p1}, Lmuc;->U0(Labf;)Ljava/util/HashMap;
 
     move-result-object p0
 
-    check-cast p0, Lsuc;
-
-    iget-wide p0, p0, Lsuc;->b:J
-
-    mul-long/2addr p0, v2
-
-    div-long/2addr p0, v0
-
-    return-wide p0
-
-    :cond_0
-    invoke-virtual {p0, p3, p4}, Lmuc;->e(J)J
-
-    move-result-wide v6
-
-    const-wide/16 v8, -0x1
-
-    cmp-long v8, v6, v8
-
-    if-eqz v8, :cond_1
-
-    add-long/2addr v4, v6
-
-    const-wide/16 v6, 0x1
-
-    sub-long/2addr v4, v6
-
-    cmp-long v4, p1, v4
-
-    if-nez v4, :cond_1
-
-    invoke-virtual {p0, p1, p2}, Lmuc;->h(J)J
-
-    move-result-wide p0
-
-    sub-long/2addr p3, p0
-
-    goto :goto_0
-
-    :cond_1
-    iget-wide p0, p0, Lmuc;->e:J
-
-    mul-long/2addr p0, v2
-
-    div-long p3, p0, v0
-
-    :goto_0
-    return-wide p3
-.end method
-
-.method public final g(JJ)J
-    .locals 11
-
-    invoke-virtual {p0, p3, p4}, Lmuc;->e(J)J
-
-    move-result-wide p3
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, p3, v0
-
-    iget-wide v1, p0, Lmuc;->d:J
-
-    if-nez v0, :cond_0
-
-    return-wide v1
-
-    :cond_0
-    iget-object v0, p0, Lmuc;->f:Ljava/util/List;
-
-    const-wide/16 v3, 0x1
-
-    if-nez v0, :cond_3
-
-    iget-wide v5, p0, Lmuc;->e:J
-
-    const-wide/32 v7, 0xf4240
-
-    mul-long/2addr v5, v7
-
-    iget-wide v7, p0, Lvuc;->a:J
-
-    div-long/2addr v5, v7
-
-    div-long/2addr p1, v5
-
-    add-long/2addr p1, v1
-
-    cmp-long p0, p1, v1
-
-    if-gez p0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    const-wide/16 v5, -0x1
-
-    cmp-long p0, p3, v5
-
-    if-nez p0, :cond_2
-
-    move-wide v1, p1
-
-    goto :goto_0
-
-    :cond_2
-    add-long/2addr v1, p3
-
-    sub-long/2addr v1, v3
-
-    invoke-static {p1, p2, v1, v2}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v1
-
-    :goto_0
-    return-wide v1
-
-    :cond_3
-    add-long/2addr p3, v1
-
-    sub-long/2addr p3, v3
-
-    move-wide v5, v1
-
-    :goto_1
-    cmp-long v0, v5, p3
-
-    if-gtz v0, :cond_6
-
-    sub-long v7, p3, v5
-
-    const-wide/16 v9, 0x2
-
-    div-long/2addr v7, v9
-
-    add-long/2addr v7, v5
-
-    invoke-virtual {p0, v7, v8}, Lmuc;->h(J)J
-
-    move-result-wide v9
-
-    cmp-long v0, v9, p1
-
-    if-gez v0, :cond_4
-
-    add-long v5, v7, v3
-
-    goto :goto_1
-
-    :cond_4
-    if-lez v0, :cond_5
-
-    sub-long/2addr v7, v3
-
-    move-wide p3, v7
-
-    goto :goto_1
+    return-object p0
 
     :cond_5
-    return-wide v7
+    new-instance p0, Ljava/util/HashMap;
+
+    invoke-direct {p0}, Ljava/util/HashMap;-><init>()V
 
     :cond_6
-    cmp-long p0, v5, v1
+    :goto_1
+    invoke-static {p1}, Lmuc;->V0(Labf;)Ljava/lang/String;
 
-    if-nez p0, :cond_7
+    move-result-object v0
 
-    move-wide p3, v5
+    invoke-virtual {p1}, Labf;->s()I
+
+    move-result v1
+
+    const/16 v2, 0x9
+
+    if-ne v1, v2, :cond_7
+
+    return-object p0
 
     :cond_7
-    return-wide p3
-.end method
+    invoke-static {v1, p1}, Lmuc;->T0(ILabf;)Ljava/io/Serializable;
 
-.method public final h(J)J
-    .locals 7
+    move-result-object v1
 
-    iget-wide v0, p0, Lmuc;->d:J
+    if-eqz v1, :cond_6
 
-    iget-object v2, p0, Lmuc;->f:Ljava/util/List;
-
-    if-eqz v2, :cond_0
-
-    sub-long/2addr p1, v0
-
-    long-to-int p1, p1
-
-    invoke-interface {v2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lsuc;
-
-    iget-wide p1, p1, Lsuc;->a:J
-
-    iget-wide v0, p0, Lvuc;->b:J
-
-    sub-long/2addr p1, v0
-
-    :goto_0
-    move-wide v0, p1
+    invoke-virtual {p0, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_1
 
-    :cond_0
-    sub-long/2addr p1, v0
+    :cond_8
+    invoke-static {p1}, Lmuc;->V0(Labf;)Ljava/lang/String;
 
-    iget-wide v0, p0, Lmuc;->e:J
+    move-result-object p0
 
-    mul-long/2addr p1, v0
+    return-object p0
 
-    goto :goto_0
+    :cond_9
+    invoke-virtual {p1}, Labf;->s()I
 
-    :goto_1
-    sget p1, Loze;->a:I
+    move-result p0
 
-    sget-object v6, Ljava/math/RoundingMode;->FLOOR:Ljava/math/RoundingMode;
+    if-ne p0, v1, :cond_a
 
-    const-wide/32 v2, 0xf4240
+    move v0, v1
 
-    iget-wide v4, p0, Lvuc;->a:J
+    :cond_a
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-static/range {v0 .. v6}, Loze;->a0(JJJLjava/math/RoundingMode;)J
+    move-result-object p0
+
+    return-object p0
+
+    :cond_b
+    invoke-virtual {p1}, Labf;->m()J
 
     move-result-wide p0
 
-    return-wide p0
+    invoke-static {p0, p1}, Ljava/lang/Double;->longBitsToDouble(J)D
+
+    move-result-wide p0
+
+    invoke-static {p0, p1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public abstract i(JLkac;)Lnxb;
-.end method
+.method public static U0(Labf;)Ljava/util/HashMap;
+    .locals 5
 
-.method public j()Z
-    .locals 0
+    invoke-virtual {p0}, Labf;->v()I
 
-    iget-object p0, p0, Lmuc;->f:Ljava/util/List;
+    move-result v0
 
-    if-eqz p0, :cond_0
+    new-instance v1, Ljava/util/HashMap;
 
-    const/4 p0, 0x1
+    invoke-direct {v1, v0}, Ljava/util/HashMap;-><init>(I)V
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v0, :cond_1
+
+    invoke-static {p0}, Lmuc;->V0(Labf;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p0}, Labf;->s()I
+
+    move-result v4
+
+    invoke-static {v4, p0}, Lmuc;->T0(ILabf;)Ljava/io/Serializable;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_0
+
+    invoke-virtual {v1, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_0
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    :cond_0
-    const/4 p0, 0x0
+    :cond_1
+    return-object v1
+.end method
 
-    :goto_0
-    return p0
+.method public static V0(Labf;)Ljava/lang/String;
+    .locals 3
+
+    invoke-virtual {p0}, Labf;->x()I
+
+    move-result v0
+
+    iget v1, p0, Labf;->b:I
+
+    invoke-virtual {p0, v0}, Labf;->F(I)V
+
+    new-instance v2, Ljava/lang/String;
+
+    iget-object p0, p0, Labf;->a:[B
+
+    invoke-direct {v2, p0, v1, v0}, Ljava/lang/String;-><init>([BII)V
+
+    return-object v2
 .end method

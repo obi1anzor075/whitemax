@@ -1,146 +1,50 @@
-.class public final Ltyb;
+.class public abstract Ltyb;
 .super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Landroid/animation/Animator$AnimatorListener;
 
 
-# instance fields
-.field public final synthetic a:I
+# static fields
+.field public static oneme_notifications_settings_chat_enable_notifications_button:I = 0x7f130884
 
-.field public final synthetic b:F
+.field public static oneme_notifications_settings_chat_enabled_section_title:I = 0x7f130885
 
-.field public final synthetic c:Ljava/lang/Object;
+.field public static oneme_notifications_settings_chat_settings_button:I = 0x7f130886
 
+.field public static oneme_notifications_settings_chat_toolbar_title:I = 0x7f130887
 
-# direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;FI)V
-    .locals 0
+.field public static oneme_notifications_settings_chat_type_all_button:I = 0x7f130888
 
-    iput p3, p0, Ltyb;->a:I
+.field public static oneme_notifications_settings_chat_type_pin_reply_button:I = 0x7f130889
 
-    iput-object p1, p0, Ltyb;->c:Ljava/lang/Object;
+.field public static oneme_notifications_settings_dialog_enable_notifications_button:I = 0x7f13088a
 
-    iput p2, p0, Ltyb;->b:F
+.field public static oneme_notifications_settings_dialog_settings_button:I = 0x7f13088b
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.field public static oneme_notifications_settings_dialog_toolbar_title:I = 0x7f13088c
 
-    return-void
-.end method
+.field public static oneme_notifications_settings_enable_all_notifications:I = 0x7f13088d
 
-.method private final a(Landroid/animation/Animator;)V
-    .locals 0
+.field public static oneme_notifications_settings_open_settings_button_description:I = 0x7f13088e
 
-    return-void
-.end method
+.field public static oneme_notifications_settings_open_settings_button_title:I = 0x7f13088f
 
-.method private final b(Landroid/animation/Animator;)V
-    .locals 0
+.field public static oneme_notifications_settings_other_in_app_push_button_description:I = 0x7f130890
 
-    return-void
-.end method
+.field public static oneme_notifications_settings_other_in_app_push_button_title:I = 0x7f130891
 
-.method private final c(Landroid/animation/Animator;)V
-    .locals 0
+.field public static oneme_notifications_settings_other_new_user_button:I = 0x7f130892
 
-    return-void
-.end method
+.field public static oneme_notifications_settings_other_settings_button:I = 0x7f130893
 
-.method private final d(Landroid/animation/Animator;)V
-    .locals 0
+.field public static oneme_notifications_settings_other_toolbar_title:I = 0x7f130894
 
-    return-void
-.end method
+.field public static oneme_notifications_settings_reset_default_button:I = 0x7f130895
 
-.method private final e(Landroid/animation/Animator;)V
-    .locals 0
+.field public static oneme_notifications_settings_show_content_button:I = 0x7f130896
 
-    return-void
-.end method
+.field public static oneme_notifications_settings_toolbar_title:I = 0x7f130897
 
-.method private final f(Landroid/animation/Animator;)V
-    .locals 0
+.field public static oneme_notifications_settings_type_off:I = 0x7f130898
 
-    return-void
-.end method
+.field public static oneme_notifications_settings_type_on:I = 0x7f130899
 
-
-# virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 0
-
-    iget p0, p0, Ltyb;->a:I
-
-    return-void
-.end method
-
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 0
-
-    iget p1, p0, Ltyb;->a:I
-
-    packed-switch p1, :pswitch_data_0
-
-    sget-object p1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->m1:[Lk77;
-
-    iget-object p1, p0, Ltyb;->c:Ljava/lang/Object;
-
-    check-cast p1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
-
-    invoke-virtual {p1}, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->B0()Landroid/view/View;
-
-    move-result-object p1
-
-    iget p0, p0, Ltyb;->b:F
-
-    invoke-virtual {p1, p0}, Landroid/view/View;->setTranslationY(F)V
-
-    :pswitch_0
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final onAnimationRepeat(Landroid/animation/Animator;)V
-    .locals 0
-
-    iget p0, p0, Ltyb;->a:I
-
-    return-void
-.end method
-
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 1
-
-    iget p1, p0, Ltyb;->a:I
-
-    packed-switch p1, :pswitch_data_0
-
-    return-void
-
-    :pswitch_0
-    iget-object p1, p0, Ltyb;->c:Ljava/lang/Object;
-
-    check-cast p1, Lvyb;
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p1, Lvyb;->a:Z
-
-    iget p0, p0, Ltyb;->b:F
-
-    iput p0, p1, Lvyb;->o:F
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
+.field public static oneme_notifications_settings_type_reply:I = 0x7f13089a

@@ -1,284 +1,280 @@
-.class public final Loj0;
-.super Ln06;
+.class public abstract Loj0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final f:Lgse;
+.field public a:I
+
+.field public b:I
+
+.field public c:[I
+
+.field public d:I
+
+.field public e:I
+
+.field public f:I
+
+.field public g:I
 
 
 # direct methods
-.method public constructor <init>(Lgse;)V
-    .locals 0
+.method public constructor <init>(IILandroid/content/Context;)V
+    .locals 8
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Loj0;->f:Lgse;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
-
-    const/4 v0, 0x1
-
-    if-ne p1, p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    instance-of v1, p1, Loj0;
-
-    if-eqz v1, :cond_1
-
-    check-cast p1, Loj0;
-
-    iget-object p1, p1, Loj0;->f:Lgse;
-
-    iget-object p0, p0, Loj0;->f:Lgse;
-
-    invoke-static {p1, p0}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
     const/4 v0, 0x0
 
-    :goto_0
-    return v0
-.end method
+    new-array v1, v0, [I
 
-.method public final hashCode()I
-    .locals 0
+    iput-object v1, p0, Loj0;->c:[I
 
-    iget-object p0, p0, Loj0;->f:Lgse;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final k(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
-    .locals 9
-
-    new-instance p1, Ljava/util/ArrayDeque;
-
-    invoke-direct {p1, p2}, Ljava/util/ArrayDeque;-><init>(Ljava/util/Collection;)V
-
-    new-instance p2, Ljava/util/ArrayList;
-
-    invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-virtual {p1}, Ljava/util/ArrayDeque;->removeFirst()Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const/4 v0, 0x0
-
-    move v1, v0
-
-    :goto_0
-    const/16 v2, 0x9
-
-    if-ge v0, v2, :cond_9
-
-    const/4 v2, 0x1
-
-    invoke-static {p2, v2}, Lrf0;->e(Ljava/util/ArrayList;I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    const-string v4, "null cannot be cast to non-null type java.security.cert.X509Certificate"
-
-    if-eqz v3, :cond_8
-
-    check-cast v3, Ljava/security/cert/X509Certificate;
-
-    iget-object v5, p0, Loj0;->f:Lgse;
-
-    invoke-interface {v5, v3}, Lgse;->a(Ljava/security/cert/X509Certificate;)Ljava/security/cert/X509Certificate;
-
-    move-result-object v5
-
-    if-eqz v5, :cond_3
-
-    invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
-
-    move-result v1
-
-    if-gt v1, v2, :cond_0
-
-    invoke-virtual {v3, v5}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    xor-int/2addr v1, v2
-
-    if-eqz v1, :cond_1
-
-    :cond_0
-    invoke-virtual {p2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :cond_1
-    invoke-virtual {v5}, Ljava/security/cert/X509Certificate;->getIssuerDN()Ljava/security/Principal;
+    invoke-virtual {p3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    invoke-virtual {v5}, Ljava/security/cert/X509Certificate;->getSubjectDN()Ljava/security/Principal;
+    sget v2, Lhrb;->mtrl_progress_track_thickness:I
 
-    move-result-object v3
-
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v1
 
-    xor-int/2addr v1, v2
+    sget-object v4, Lt0c;->BaseProgressIndicator:[I
 
-    if-eqz v1, :cond_2
+    new-array v7, v0, [I
+
+    const/4 v3, 0x0
+
+    invoke-static {p3, v3, p1, p2}, Lype;->a(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+
+    move v5, p1
+
+    move v6, p2
+
+    move-object v2, p3
+
+    invoke-static/range {v2 .. v7}, Lype;->b(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)V
+
+    invoke-virtual {v2, v3, v4, v5, v6}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+
+    move-result-object p1
+
+    sget p2, Lt0c;->BaseProgressIndicator_trackThickness:I
+
+    invoke-static {v2, p1, p2, v1}, Lsgg;->C(Landroid/content/Context;Landroid/content/res/TypedArray;II)I
+
+    move-result p2
+
+    iput p2, p0, Loj0;->a:I
+
+    sget p2, Lt0c;->BaseProgressIndicator_trackCornerRadius:I
+
+    invoke-static {v2, p1, p2, v0}, Lsgg;->C(Landroid/content/Context;Landroid/content/res/TypedArray;II)I
+
+    move-result p2
+
+    iget p3, p0, Loj0;->a:I
+
+    div-int/lit8 p3, p3, 0x2
+
+    invoke-static {p2, p3}, Ljava/lang/Math;->min(II)I
+
+    move-result p2
+
+    iput p2, p0, Loj0;->b:I
+
+    sget p2, Lt0c;->BaseProgressIndicator_showAnimationBehavior:I
+
+    invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getInt(II)I
+
+    move-result p2
+
+    iput p2, p0, Loj0;->e:I
+
+    sget p2, Lt0c;->BaseProgressIndicator_hideAnimationBehavior:I
+
+    invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getInt(II)I
+
+    move-result p2
+
+    iput p2, p0, Loj0;->f:I
+
+    sget p2, Lt0c;->BaseProgressIndicator_indicatorTrackGapSize:I
+
+    invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+
+    move-result p2
+
+    iput p2, p0, Loj0;->g:I
+
+    sget p2, Lt0c;->BaseProgressIndicator_indicatorColor:I
+
+    invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result p2
+
+    const/4 p3, -0x1
+
+    if-nez p2, :cond_0
+
+    sget p2, Liqb;->colorPrimary:I
+
+    invoke-static {p2, p3, v2}, Lsbg;->o(IILandroid/content/Context;)I
+
+    move-result p2
+
+    filled-new-array {p2}, [I
+
+    move-result-object p2
+
+    iput-object p2, p0, Loj0;->c:[I
+
+    goto :goto_0
+
+    :cond_0
+    sget p2, Lt0c;->BaseProgressIndicator_indicatorColor:I
+
+    invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
+
+    move-result-object p2
+
+    iget p2, p2, Landroid/util/TypedValue;->type:I
+
+    const/4 v1, 0x1
+
+    if-eq p2, v1, :cond_1
+
+    sget p2, Lt0c;->BaseProgressIndicator_indicatorColor:I
+
+    invoke-virtual {p1, p2, p3}, Landroid/content/res/TypedArray;->getColor(II)I
+
+    move-result p2
+
+    filled-new-array {p2}, [I
+
+    move-result-object p2
+
+    iput-object p2, p0, Loj0;->c:[I
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p2
+
+    sget v1, Lt0c;->BaseProgressIndicator_indicatorColor:I
+
+    invoke-virtual {p1, v1, p3}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result v1
+
+    invoke-virtual {p2, v1}, Landroid/content/res/Resources;->getIntArray(I)[I
+
+    move-result-object p2
+
+    iput-object p2, p0, Loj0;->c:[I
+
+    array-length p2, p2
+
+    if-eqz p2, :cond_3
+
+    :goto_0
+    sget p2, Lt0c;->BaseProgressIndicator_trackColor:I
+
+    invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_2
+
+    sget p2, Lt0c;->BaseProgressIndicator_trackColor:I
+
+    invoke-virtual {p1, p2, p3}, Landroid/content/res/TypedArray;->getColor(II)I
+
+    move-result p2
+
+    iput p2, p0, Loj0;->d:I
 
     goto :goto_1
 
     :cond_2
-    :try_start_0
-    invoke-virtual {v5}, Ljava/security/cert/Certificate;->getPublicKey()Ljava/security/PublicKey;
+    iget-object p2, p0, Loj0;->c:[I
 
-    move-result-object v1
+    aget p2, p2, v0
 
-    invoke-virtual {v5, v1}, Ljava/security/cert/Certificate;->verify(Ljava/security/PublicKey;)V
-    :try_end_0
-    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
+    iput p2, p0, Loj0;->d:I
 
-    return-object p2
+    invoke-virtual {v2}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
-    :catch_0
+    move-result-object p2
+
+    const p3, 0x1010033
+
+    filled-new-array {p3}, [I
+
+    move-result-object p3
+
+    invoke-virtual {p2, p3}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes([I)Landroid/content/res/TypedArray;
+
+    move-result-object p2
+
+    const p3, 0x3e4ccccd    # 0.2f
+
+    invoke-virtual {p2, v0, p3}, Landroid/content/res/TypedArray;->getFloat(IF)F
+
+    move-result p3
+
+    invoke-virtual {p2}, Landroid/content/res/TypedArray;->recycle()V
+
+    const/high16 p2, 0x437f0000    # 255.0f
+
+    mul-float/2addr p3, p2
+
+    float-to-int p2, p3
+
+    iget p3, p0, Loj0;->d:I
+
+    invoke-static {p3, p2}, Lsbg;->g(II)I
+
+    move-result p2
+
+    iput p2, p0, Loj0;->d:I
+
     :goto_1
-    move v1, v2
+    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
-    goto :goto_3
+    return-void
 
     :cond_3
-    invoke-virtual {p1}, Ljava/util/ArrayDeque;->iterator()Ljava/util/Iterator;
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    move-result-object v5
+    const-string p1, "indicatorColors cannot be empty when indicatorColor is not used."
 
-    :catch_1
-    :goto_2
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_6
-
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v6
-
-    if-eqz v6, :cond_5
-
-    check-cast v6, Ljava/security/cert/X509Certificate;
-
-    invoke-virtual {v3}, Ljava/security/cert/X509Certificate;->getIssuerDN()Ljava/security/Principal;
-
-    move-result-object v7
-
-    invoke-virtual {v6}, Ljava/security/cert/X509Certificate;->getSubjectDN()Ljava/security/Principal;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v7
-
-    xor-int/2addr v7, v2
-
-    if-eqz v7, :cond_4
-
-    goto :goto_2
-
-    :cond_4
-    :try_start_1
-    invoke-virtual {v6}, Ljava/security/cert/Certificate;->getPublicKey()Ljava/security/PublicKey;
-
-    move-result-object v7
-
-    invoke-virtual {v3, v7}, Ljava/security/cert/Certificate;->verify(Ljava/security/PublicKey;)V
-    :try_end_1
-    .catch Ljava/security/GeneralSecurityException; {:try_start_1 .. :try_end_1} :catch_1
-
-    invoke-interface {v5}, Ljava/util/Iterator;->remove()V
-
-    invoke-virtual {p2, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :goto_3
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_5
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    invoke-direct {p0, v4}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p0
+.end method
 
-    :cond_6
-    if-eqz v1, :cond_7
 
-    return-object p2
+# virtual methods
+.method public a()V
+    .locals 1
 
-    :cond_7
-    new-instance p0, Ljavax/net/ssl/SSLPeerUnverifiedException;
+    iget p0, p0, Loj0;->g:I
 
-    new-instance p1, Ljava/lang/StringBuilder;
+    if-ltz p0, :cond_0
 
-    const-string p2, "Failed to find a trusted cert that signed "
+    return-void
 
-    invoke-direct {p1, p2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v0, "indicatorTrackGapSize must be >= 0."
 
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljavax/net/ssl/SSLPeerUnverifiedException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_8
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    invoke-direct {p0, v4}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_9
-    new-instance p0, Ljavax/net/ssl/SSLPeerUnverifiedException;
-
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    const-string v0, "Certificate chain too long: "
-
-    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljavax/net/ssl/SSLPeerUnverifiedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p0
 .end method

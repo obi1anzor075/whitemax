@@ -1,259 +1,175 @@
-.class public abstract Lo67;
+.class public final Lo67;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/util/concurrent/Executor;
+
+
+# static fields
+.field public static volatile c:Lo67;
+
 
 # instance fields
-.field public a:I
+.field public final synthetic a:I
 
-.field public b:I
+.field public final b:Ljava/lang/Object;
+
+
+# direct methods
+.method public constructor <init>(I)V
+    .locals 3
+
+    iput p1, p0, Lo67;->a:I
+
+    packed-switch p1, :pswitch_data_0
+
+    .line 3
+    :pswitch_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 4
+    new-instance p1, Lu30;
+
+    const/4 v0, 0x3
+
+    invoke-direct {p1, v0}, Lu30;-><init>(I)V
+
+    const/4 v0, 0x2
+
+    .line 5
+    invoke-static {v0, p1}, Ljava/util/concurrent/Executors;->newFixedThreadPool(ILjava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lo67;->b:Ljava/lang/Object;
+
+    return-void
+
+    .line 6
+    :pswitch_1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance p1, Lva9;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    const/4 v1, 0x3
+
+    const/4 v2, 0x0
+
+    .line 7
+    invoke-direct {p1, v0, v1, v2}, Lva9;-><init>(Landroid/os/Looper;IZ)V
+
+    .line 8
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    .line 9
+    iput-object p1, p0, Lo67;->b:Ljava/lang/Object;
+
+    return-void
+
+    .line 10
+    :pswitch_2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 11
+    new-instance p1, Landroid/os/Handler;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    iput-object p1, p0, Lo67;->b:Ljava/lang/Object;
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_2
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
+.end method
+
+.method public constructor <init>(Ljava/util/concurrent/ExecutorService;)V
+    .locals 1
+
+    const/4 v0, 0x2
+
+    iput v0, p0, Lo67;->a:I
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    iput-object p1, p0, Lo67;->b:Ljava/lang/Object;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()Ljava/lang/String;
-.end method
+.method public final execute(Ljava/lang/Runnable;)V
+    .locals 2
 
-.method public final b()Z
-    .locals 1
+    iget v0, p0, Lo67;->a:I
 
-    iget p0, p0, Lo67;->a:I
+    packed-switch v0, :pswitch_data_0
 
-    const/4 v0, 0x1
+    iget-object p0, p0, Lo67;->b:Ljava/lang/Object;
 
-    if-ne p0, v0, :cond_0
+    check-cast p0, Lva9;
 
-    goto :goto_0
+    invoke-virtual {p0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    :cond_0
-    const/4 v0, 0x0
+    return-void
 
-    :goto_0
-    return v0
-.end method
+    :pswitch_0
+    iget-object p0, p0, Lo67;->b:Ljava/lang/Object;
 
-.method public final c()Z
-    .locals 1
+    check-cast p0, Ljava/util/concurrent/Executor;
 
-    iget p0, p0, Lo67;->a:I
+    new-instance v0, Luoc;
 
-    const/4 v0, 0x2
+    const/4 v1, 0x0
 
-    if-ne p0, v0, :cond_0
+    invoke-direct {v0, p1, v1}, Luoc;-><init>(Ljava/lang/Runnable;I)V
 
-    const/4 p0, 0x1
+    invoke-interface {p0, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    goto :goto_0
+    return-void
 
-    :cond_0
-    const/4 p0, 0x0
+    :pswitch_1
+    iget-object p0, p0, Lo67;->b:Ljava/lang/Object;
 
-    :goto_0
-    return p0
-.end method
+    check-cast p0, Landroid/os/Handler;
 
-.method public final d()Z
-    .locals 0
+    invoke-virtual {p0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    iget p0, p0, Lo67;->a:I
+    return-void
 
-    if-nez p0, :cond_0
+    :pswitch_2
+    iget-object p0, p0, Lo67;->b:Ljava/lang/Object;
 
-    const/4 p0, 0x1
+    check-cast p0, Ljava/util/concurrent/ExecutorService;
 
-    goto :goto_0
+    invoke-interface {p0, p1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    :cond_0
-    const/4 p0, 0x0
+    return-void
 
-    :goto_0
-    return p0
-.end method
+    nop
 
-.method public final e()Ljava/lang/String;
-    .locals 1
-
-    iget p0, p0, Lo67;->a:I
-
-    if-eqz p0, :cond_2
-
-    const/4 v0, 0x1
-
-    if-eq p0, v0, :cond_1
-
-    const/4 v0, 0x2
-
-    if-eq p0, v0, :cond_0
-
-    const-string p0, "?"
-
-    return-object p0
-
-    :cond_0
-    const-string p0, "Object"
-
-    return-object p0
-
-    :cond_1
-    const-string p0, "Array"
-
-    return-object p0
-
-    :cond_2
-    const-string p0, "root"
-
-    return-object p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 9
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x40
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    iget v1, p0, Lo67;->a:I
-
-    if-eqz v1, :cond_7
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    if-eq v1, v2, :cond_5
-
-    const/16 v1, 0x7b
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0}, Lo67;->a()Ljava/lang/String;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_4
-
-    const/16 v1, 0x22
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    sget-object v2, La22;->h:[I
-
-    array-length v4, v2
-
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    :goto_0
-    if-ge v3, v5, :cond_3
-
-    invoke-virtual {p0, v3}, Ljava/lang/String;->charAt(I)C
-
-    move-result v6
-
-    if-ge v6, v4, :cond_2
-
-    aget v7, v2, v6
-
-    if-nez v7, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    const/16 v7, 0x5c
-
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    aget v7, v2, v6
-
-    if-gez v7, :cond_1
-
-    const-string v7, "u00"
-
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    shr-int/lit8 v7, v6, 0x4
-
-    sget-object v8, La22;->a:[C
-
-    aget-char v7, v8, v7
-
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    and-int/lit8 v6, v6, 0xf
-
-    aget-char v6, v8, v6
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    goto :goto_2
-
-    :cond_1
-    int-to-char v6, v7
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    goto :goto_2
-
-    :cond_2
-    :goto_1
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    :goto_2
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    :cond_3
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    goto :goto_3
-
-    :cond_4
-    const/16 p0, 0x3f
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    :goto_3
-    const/16 p0, 0x7d
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    goto :goto_5
-
-    :cond_5
-    const/16 v1, 0x5b
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    iget p0, p0, Lo67;->b:I
-
-    if-gez p0, :cond_6
-
-    goto :goto_4
-
-    :cond_6
-    move v3, p0
-
-    :goto_4
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const/16 p0, 0x5d
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    goto :goto_5
-
-    :cond_7
-    const-string p0, "/"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :goto_5
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

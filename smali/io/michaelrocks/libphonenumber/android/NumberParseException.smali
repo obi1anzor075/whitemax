@@ -33,27 +33,27 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget v1, p0, Lio/michaelrocks/libphonenumber/android/NumberParseException;->a:I
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    iget v2, p0, Lio/michaelrocks/libphonenumber/android/NumberParseException;->a:I
 
-    if-eq v1, v2, :cond_4
+    if-eq v2, v1, :cond_4
 
-    const/4 v2, 0x2
+    const/4 v1, 0x2
 
-    if-eq v1, v2, :cond_3
+    if-eq v2, v1, :cond_3
 
-    const/4 v2, 0x3
+    const/4 v1, 0x3
 
-    if-eq v1, v2, :cond_2
+    if-eq v2, v1, :cond_2
 
-    const/4 v2, 0x4
+    const/4 v1, 0x4
 
-    if-eq v1, v2, :cond_1
+    if-eq v2, v1, :cond_1
 
-    const/4 v2, 0x5
+    const/4 v1, 0x5
 
-    if-eq v1, v2, :cond_0
+    if-eq v2, v1, :cond_0
 
     const-string v1, "null"
 

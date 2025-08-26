@@ -137,19 +137,19 @@
 .method public toI420()Lorg/webrtc/VideoFrame$I420Buffer;
     .locals 7
 
-    iget v5, p0, Lorg/webrtc/NV21Buffer;->width:I
+    iget v3, p0, Lorg/webrtc/NV21Buffer;->width:I
 
-    iget v6, p0, Lorg/webrtc/NV21Buffer;->height:I
+    iget v4, p0, Lorg/webrtc/NV21Buffer;->height:I
 
     const/4 v1, 0x0
 
     const/4 v2, 0x0
 
+    move v5, v3
+
+    move v6, v4
+
     move-object v0, p0
-
-    move v3, v5
-
-    move v4, v6
 
     invoke-virtual/range {v0 .. v6}, Lorg/webrtc/NV21Buffer;->cropAndScale(IIIIII)Lorg/webrtc/VideoFrame$Buffer;
 

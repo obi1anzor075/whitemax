@@ -68,15 +68,15 @@
 
     move-result-object v0
 
-    const-string v1, "window_flags"
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const-string v2, "window_flags"
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v0
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
@@ -94,14 +94,14 @@
 
     invoke-direct {v3}, Landroid/content/Intent;-><init>()V
 
-    invoke-virtual {v3, v1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v3, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     move-object v7, v3
 
     goto :goto_0
 
     :cond_0
-    move-object v7, v2
+    move-object v7, v1
 
     :goto_0
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
@@ -138,82 +138,92 @@
 
     move-result-object v0
 
-    move-object v2, v0
+    move-object v1, v0
 
-    check-cast v2, Landroid/app/PendingIntent;
+    check-cast v1, Landroid/app/PendingIntent;
 
     :cond_1
     const/4 v0, 0x3
 
-    if-eqz p1, :cond_4
+    if-eqz p1, :cond_2
 
-    if-nez v2, :cond_2
+    if-nez v1, :cond_3
+
+    :cond_2
+    move-object v4, p0
 
     goto :goto_1
 
-    :cond_2
+    :cond_3
     :try_start_0
-    invoke-virtual {v2}, Landroid/app/PendingIntent;->getIntentSender()Landroid/content/IntentSender;
+    invoke-virtual {v1}, Landroid/app/PendingIntent;->getIntentSender()Landroid/content/IntentSender;
 
     move-result-object v5
-
-    const/4 v6, 0x0
-
-    const/4 v8, 0x0
+    :try_end_0
+    .catch Landroid/content/IntentSender$SendIntentException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/4 v9, 0x0
 
     const/4 v10, 0x0
 
+    const/4 v6, 0x0
+
+    const/4 v8, 0x0
+
     move-object v4, p0
 
+    :try_start_1
     invoke-virtual/range {v4 .. v10}, Landroid/app/Activity;->startIntentSenderForResult(Landroid/content/IntentSender;ILandroid/content/Intent;III)V
-    :try_end_0
-    .catch Landroid/content/IntentSender$SendIntentException; {:try_start_0 .. :try_end_0} :catch_0
+    :try_end_1
+    .catch Landroid/content/IntentSender$SendIntentException; {:try_start_1 .. :try_end_1} :catch_1
 
     return-void
 
     :catch_0
-    iget-object p1, p0, Lcom/google/android/play/core/common/PlayCoreDialogWrapperActivity;->a:Landroid/os/ResultReceiver;
+    move-object v4, p0
 
-    if-eqz p1, :cond_3
+    :catch_1
+    iget-object p0, v4, Lcom/google/android/play/core/common/PlayCoreDialogWrapperActivity;->a:Landroid/os/ResultReceiver;
 
-    new-instance v1, Landroid/os/Bundle;
+    if-eqz p0, :cond_4
 
-    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
+    new-instance p1, Landroid/os/Bundle;
 
-    invoke-virtual {p1, v0, v1}, Landroid/os/ResultReceiver;->send(ILandroid/os/Bundle;)V
+    invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
 
-    :cond_3
-    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
+    invoke-virtual {p0, v0, p1}, Landroid/os/ResultReceiver;->send(ILandroid/os/Bundle;)V
+
+    :cond_4
+    invoke-virtual {v4}, Landroid/app/Activity;->finish()V
 
     return-void
 
-    :cond_4
     :goto_1
-    iget-object p1, p0, Lcom/google/android/play/core/common/PlayCoreDialogWrapperActivity;->a:Landroid/os/ResultReceiver;
+    iget-object p0, v4, Lcom/google/android/play/core/common/PlayCoreDialogWrapperActivity;->a:Landroid/os/ResultReceiver;
 
-    if-eqz p1, :cond_5
+    if-eqz p0, :cond_5
 
-    new-instance v1, Landroid/os/Bundle;
+    new-instance p1, Landroid/os/Bundle;
 
-    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
+    invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
 
-    invoke-virtual {p1, v0, v1}, Landroid/os/ResultReceiver;->send(ILandroid/os/Bundle;)V
+    invoke-virtual {p0, v0, p1}, Landroid/os/ResultReceiver;->send(ILandroid/os/Bundle;)V
 
     :cond_5
-    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
+    invoke-virtual {v4}, Landroid/app/Activity;->finish()V
 
     return-void
 
     :cond_6
+    move-object v4, p0
+
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
-    move-result-object p1
+    move-result-object p0
 
-    check-cast p1, Landroid/os/ResultReceiver;
+    check-cast p0, Landroid/os/ResultReceiver;
 
-    iput-object p1, p0, Lcom/google/android/play/core/common/PlayCoreDialogWrapperActivity;->a:Landroid/os/ResultReceiver;
+    iput-object p0, v4, Lcom/google/android/play/core/common/PlayCoreDialogWrapperActivity;->a:Landroid/os/ResultReceiver;
 
     return-void
 .end method

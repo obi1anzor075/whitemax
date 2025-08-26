@@ -1,33 +1,27 @@
-.class public final Lzu1;
+.class public final synthetic Lzu1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public a:Lgu1;
-
-.field public final b:Ljava/util/concurrent/Executor;
-
-.field public final c:Lu5g;
-
-.field public final d:Lav1;
-
-
 # direct methods
-.method public constructor <init>(Lryc;Lu5g;Lfr1;)V
+.method public static a(Landroid/content/Context;Ljava/lang/Object;Ljava/util/LinkedHashSet;)Lha8;
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    :try_start_0
+    new-instance v0, Lha8;
 
-    const/4 v0, 0x0
+    invoke-direct {v0, p0, p1, p2}, Lha8;-><init>(Landroid/content/Context;Ljava/lang/Object;Ljava/util/LinkedHashSet;)V
+    :try_end_0
+    .catch Landroidx/camera/core/CameraUnavailableException; {:try_start_0 .. :try_end_0} :catch_0
 
-    iput-object v0, p0, Lzu1;->a:Lgu1;
+    return-object v0
 
-    iput-object p1, p0, Lzu1;->b:Ljava/util/concurrent/Executor;
+    :catch_0
+    move-exception p0
 
-    iput-object p2, p0, Lzu1;->c:Lu5g;
+    new-instance p1, Landroidx/camera/core/InitializationException;
 
-    iput-object p3, p0, Lzu1;->d:Lav1;
+    invoke-direct {p1, p0}, Ljava/lang/Exception;-><init>(Ljava/lang/Throwable;)V
 
-    return-void
+    throw p1
 .end method

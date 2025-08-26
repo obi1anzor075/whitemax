@@ -1,72 +1,39 @@
 .class public final Ls6d;
-.super Ljava/lang/Object;
+.super Lk7d;
 .source "SourceFile"
 
-# interfaces
-.implements Le7d;
+
+# instance fields
+.field public final g:J
+
+.field public final h:Ljava/lang/String;
+
+.field public final i:Ljava/lang/Object;
+
+
+# direct methods
+.method public constructor <init>(JLjava/lang/String;Ljava/util/List;J)V
+    .locals 0
+
+    invoke-direct {p0, p5, p6}, Lk7d;-><init>(J)V
+
+    iput-wide p1, p0, Ls6d;->g:J
+
+    iput-object p3, p0, Ls6d;->h:Ljava/lang/String;
+
+    iput-object p4, p0, Ls6d;->i:Ljava/lang/Object;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final b()Ljava/lang/Integer;
-    .locals 0
+.method public final a()Ll7d;
+    .locals 1
 
-    const/4 p0, 0x0
+    new-instance v0, Lt6d;
 
-    return-object p0
-.end method
+    invoke-direct {v0, p0}, Lt6d;-><init>(Ls6d;)V
 
-.method public final c()Lmge;
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public final d()Lv6d;
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public final e()Lmge;
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public final f()Lb7d;
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public final getItemId()J
-    .locals 2
-
-    const-wide/16 v0, 0x0
-
-    return-wide v0
-.end method
-
-.method public final getTitle()Lmge;
-    .locals 0
-
-    sget-object p0, Lmge;->a:Llge;
-
-    return-object p0
-.end method
-
-.method public final u()I
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return p0
+    return-object v0
 .end method

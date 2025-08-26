@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Lv56;
 
 
 # instance fields
@@ -38,26 +38,26 @@
 
     packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/e;->b:Lru/ok/android/externcalls/sdk/ConversationImpl;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/e;->c:Ljava/io/Serializable;
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/e;->c:Ljava/io/Serializable;
+    check-cast v0, Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
-    check-cast p0, Lru/ok/android/externcalls/sdk/id/ParticipantId;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/e;->b:Lru/ok/android/externcalls/sdk/ConversationImpl;
 
-    invoke-static {v0, p0}, Lru/ok/android/externcalls/sdk/ConversationImpl;->L(Lru/ok/android/externcalls/sdk/ConversationImpl;Lru/ok/android/externcalls/sdk/id/ParticipantId;)Ljava/util/Map;
+    invoke-static {p0, v0}, Lru/ok/android/externcalls/sdk/ConversationImpl;->L(Lru/ok/android/externcalls/sdk/ConversationImpl;Lru/ok/android/externcalls/sdk/id/ParticipantId;)Ljava/util/Map;
 
     move-result-object p0
 
     return-object p0
 
     :pswitch_0
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/e;->b:Lru/ok/android/externcalls/sdk/ConversationImpl;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/e;->c:Ljava/io/Serializable;
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/e;->c:Ljava/io/Serializable;
+    check-cast v0, Ljava/util/ArrayList;
 
-    check-cast p0, Ljava/util/ArrayList;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/e;->b:Lru/ok/android/externcalls/sdk/ConversationImpl;
 
-    invoke-static {v0, p0}, Lru/ok/android/externcalls/sdk/ConversationImpl;->c(Lru/ok/android/externcalls/sdk/ConversationImpl;Ljava/util/ArrayList;)Ljava/util/Map;
+    invoke-static {p0, v0}, Lru/ok/android/externcalls/sdk/ConversationImpl;->c(Lru/ok/android/externcalls/sdk/ConversationImpl;Ljava/util/ArrayList;)Ljava/util/Map;
 
     move-result-object p0
 

@@ -1,373 +1,136 @@
-.class public final synthetic Lxe8;
-.super Ljava/lang/Object;
+.class public final Lxe8;
+.super Landroid/os/AsyncTask;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic X:Ljava/lang/Object;
+.field public final a:I
 
-.field public final synthetic Y:Ljava/lang/Object;
+.field public final b:Landroid/content/Context;
 
-.field public final synthetic Z:Ljava/lang/Object;
-
-.field public final synthetic a:I
-
-.field public final synthetic b:Ljava/lang/Object;
-
-.field public final synthetic c:Z
-
-.field public final synthetic o:Ljava/lang/Object;
+.field public final synthetic c:Lye8;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroidx/work/impl/WorkDatabase;Lztf;Lztf;Ljava/util/List;Ljava/lang/String;Ljava/util/Set;Z)V
+.method public constructor <init>(Lye8;ILandroid/content/Context;)V
     .locals 0
 
-    .line 1
-    const/4 p4, 0x3
+    iput-object p1, p0, Lxe8;->c:Lye8;
 
-    iput p4, p0, Lxe8;->a:I
+    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Lxe8;->a:I
 
-    iput-object p1, p0, Lxe8;->o:Ljava/lang/Object;
-
-    iput-object p2, p0, Lxe8;->X:Ljava/lang/Object;
-
-    iput-object p3, p0, Lxe8;->Y:Ljava/lang/Object;
-
-    iput-object p5, p0, Lxe8;->Z:Ljava/lang/Object;
-
-    iput-object p6, p0, Lxe8;->b:Ljava/lang/Object;
-
-    iput-boolean p7, p0, Lxe8;->c:Z
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/io/IOException;ZI)V
-    .locals 0
-
-    .line 2
-    iput p7, p0, Lxe8;->a:I
-
-    iput-object p1, p0, Lxe8;->o:Ljava/lang/Object;
-
-    iput-object p2, p0, Lxe8;->X:Ljava/lang/Object;
-
-    iput-object p3, p0, Lxe8;->Y:Ljava/lang/Object;
-
-    iput-object p4, p0, Lxe8;->Z:Ljava/lang/Object;
-
-    iput-object p5, p0, Lxe8;->b:Ljava/lang/Object;
-
-    iput-boolean p6, p0, Lxe8;->c:Z
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p3, p0, Lxe8;->b:Landroid/content/Context;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 15
+.method public final doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    check-cast p1, [Ljava/lang/Void;
+
+    sget-object p1, Lye8;->B0:Landroid/util/SparseArray;
 
     iget v0, p0, Lxe8;->a:I
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p1, v0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
-    iget-object v0, p0, Lxe8;->o:Ljava/lang/Object;
+    move-result-object p1
 
-    check-cast v0, Landroidx/work/impl/WorkDatabase;
+    check-cast p1, Landroid/graphics/drawable/Drawable$ConstantState;
 
-    invoke-virtual {v0}, Landroidx/work/impl/WorkDatabase;->y()Lbuf;
+    if-nez p1, :cond_0
 
-    move-result-object v1
+    iget-object p0, p0, Lxe8;->b:Landroid/content/Context;
 
-    invoke-virtual {v0}, Landroidx/work/impl/WorkDatabase;->z()Lduf;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lxe8;->Y:Ljava/lang/Object;
-
-    check-cast v3, Lztf;
-
-    iget-object v6, v3, Lztf;->b:Lctf;
-
-    iget v9, v3, Lztf;->k:I
-
-    iget-wide v10, v3, Lztf;->n:J
-
-    iget v3, v3, Lztf;->t:I
-
-    const/4 v14, 0x1
-
-    add-int/lit8 v12, v3, 0x1
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
-
-    iget-object v3, p0, Lxe8;->X:Ljava/lang/Object;
-
-    move-object v4, v3
-
-    check-cast v4, Lztf;
-
-    const/4 v5, 0x0
-
-    const v13, 0x7dbfd
-
-    invoke-static/range {v4 .. v13}, Lztf;->b(Lztf;Ljava/lang/String;Lctf;Ljava/lang/String;Lzy3;IJII)Lztf;
-
-    move-result-object v3
-
-    iget-object v4, v1, Lbuf;->a:Ljava/lang/Object;
-
-    check-cast v4, Laec;
-
-    invoke-virtual {v4}, Laec;->b()V
-
-    invoke-virtual {v4}, Laec;->c()V
-
-    :try_start_0
-    iget-object v5, v1, Lbuf;->c:Ljava/lang/Object;
-
-    check-cast v5, Lf74;
-
-    invoke-virtual {v5, v3}, Lkz4;->B(Ljava/lang/Object;)I
-
-    invoke-virtual {v4}, Laec;->r()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    invoke-virtual {v4}, Laec;->l()V
-
-    iget-object v3, v2, Lduf;->a:Ljava/lang/Object;
-
-    check-cast v3, Laec;
-
-    invoke-virtual {v3}, Laec;->b()V
-
-    iget-object v4, v2, Lduf;->c:Ljava/lang/Object;
-
-    check-cast v4, Lrtf;
-
-    invoke-virtual {v4}, Lv2;->f()Lyz5;
-
-    move-result-object v5
-
-    iget-object v6, p0, Lxe8;->Z:Ljava/lang/Object;
-
-    check-cast v6, Ljava/lang/String;
-
-    invoke-interface {v5, v14, v6}, Le4e;->f(ILjava/lang/String;)V
-
-    invoke-virtual {v3}, Laec;->c()V
-
-    :try_start_1
-    invoke-virtual {v5}, Lyz5;->n()I
-
-    invoke-virtual {v3}, Laec;->r()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    invoke-virtual {v3}, Laec;->l()V
-
-    invoke-virtual {v4, v5}, Lv2;->u(Lyz5;)V
-
-    iget-object v3, p0, Lxe8;->b:Ljava/lang/Object;
-
-    check-cast v3, Ljava/util/Set;
-
-    invoke-virtual {v2, v6, v3}, Lduf;->s(Ljava/lang/String;Ljava/util/Set;)V
-
-    iget-boolean p0, p0, Lxe8;->c:Z
-
-    if-nez p0, :cond_0
-
-    const-wide/16 v2, -0x1
-
-    invoke-virtual {v1, v2, v3, v6}, Lbuf;->n(JLjava/lang/String;)V
-
-    invoke-virtual {v0}, Landroidx/work/impl/WorkDatabase;->x()Lstf;
+    invoke-static {p0, v0}, Liu0;->p(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p0
 
-    invoke-virtual {p0, v6}, Lstf;->l(Ljava/lang/String;)V
+    return-object p0
 
     :cond_0
-    return-void
+    const/4 p0, 0x0
 
-    :catchall_0
-    move-exception p0
+    return-object p0
+.end method
 
-    invoke-virtual {v3}, Laec;->l()V
+.method public final onCancelled(Ljava/lang/Object;)V
+    .locals 2
 
-    invoke-virtual {v4, v5}, Lv2;->u(Lyz5;)V
+    check-cast p1, Landroid/graphics/drawable/Drawable;
 
-    throw p0
+    if-eqz p1, :cond_0
 
-    :catchall_1
-    move-exception p0
+    sget-object v0, Lye8;->B0:Landroid/util/SparseArray;
 
-    invoke-virtual {v4}, Laec;->l()V
+    iget v1, p0, Lxe8;->a:I
 
-    throw p0
+    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
 
-    :pswitch_0
-    iget-object v0, p0, Lxe8;->o:Ljava/lang/Object;
+    move-result-object p1
 
-    check-cast v0, Lotf;
+    invoke-virtual {v0, v1, p1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    iget-object v0, v0, Lotf;->b:Ljava/lang/Object;
+    :cond_0
+    iget-object p0, p0, Lxe8;->c:Lye8;
 
-    check-cast v0, Lpf8;
+    const/4 p1, 0x0
 
-    iget-object v0, v0, Lpf8;->j:Ljava/lang/Object;
-
-    move-object v1, v0
-
-    check-cast v1, Lg44;
-
-    iget-object v0, p0, Lxe8;->X:Ljava/lang/Object;
-
-    check-cast v0, Landroid/util/Pair;
-
-    iget-object v2, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
-
-    check-cast v2, Ljava/lang/Integer;
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    iget-object v0, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
-
-    move-object v3, v0
-
-    check-cast v3, Lse8;
-
-    iget-object v0, p0, Lxe8;->Y:Ljava/lang/Object;
-
-    move-object v4, v0
-
-    check-cast v4, Lyi7;
-
-    iget-object v0, p0, Lxe8;->Z:Ljava/lang/Object;
-
-    move-object v5, v0
-
-    check-cast v5, Li78;
-
-    iget-object v0, p0, Lxe8;->b:Ljava/lang/Object;
-
-    move-object v6, v0
-
-    check-cast v6, Ljava/io/IOException;
-
-    iget-boolean v7, p0, Lxe8;->c:Z
-
-    invoke-virtual/range {v1 .. v7}, Lg44;->g(ILse8;Lyi7;Li78;Ljava/io/IOException;Z)V
+    iput-object p1, p0, Lye8;->q0:Lxe8;
 
     return-void
+.end method
 
-    :pswitch_1
-    iget-object v0, p0, Lxe8;->o:Ljava/lang/Object;
+.method public final onPostExecute(Ljava/lang/Object;)V
+    .locals 4
 
-    check-cast v0, Ljn;
+    check-cast p1, Landroid/graphics/drawable/Drawable;
 
-    iget v2, v0, Ljn;->b:I
+    const/4 v0, 0x0
 
-    iget-object v0, v0, Ljn;->c:Ljava/lang/Object;
+    iget v1, p0, Lxe8;->a:I
 
-    move-object v3, v0
+    iget-object p0, p0, Lxe8;->c:Lye8;
 
-    check-cast v3, Lse8;
+    if-eqz p1, :cond_0
 
-    iget-object v0, p0, Lxe8;->X:Ljava/lang/Object;
+    sget-object v2, Lye8;->B0:Landroid/util/SparseArray;
 
-    move-object v1, v0
+    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
 
-    check-cast v1, Lcf8;
+    move-result-object v3
 
-    iget-object v0, p0, Lxe8;->Y:Ljava/lang/Object;
+    invoke-virtual {v2, v1, v3}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    move-object v4, v0
+    iput-object v0, p0, Lye8;->q0:Lxe8;
 
-    check-cast v4, Lyi7;
+    goto :goto_0
 
-    iget-object v0, p0, Lxe8;->Z:Ljava/lang/Object;
+    :cond_0
+    sget-object v2, Lye8;->B0:Landroid/util/SparseArray;
 
-    move-object v5, v0
+    invoke-virtual {v2, v1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
-    check-cast v5, Li78;
+    move-result-object v1
 
-    iget-object v0, p0, Lxe8;->b:Ljava/lang/Object;
+    check-cast v1, Landroid/graphics/drawable/Drawable$ConstantState;
 
-    move-object v6, v0
+    if-eqz v1, :cond_1
 
-    check-cast v6, Ljava/io/IOException;
+    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable()Landroid/graphics/drawable/Drawable;
 
-    iget-boolean v7, p0, Lxe8;->c:Z
+    move-result-object p1
 
-    invoke-interface/range {v1 .. v7}, Lcf8;->g(ILse8;Lyi7;Li78;Ljava/io/IOException;Z)V
+    :cond_1
+    iput-object v0, p0, Lye8;->q0:Lxe8;
 
-    return-void
-
-    :pswitch_2
-    iget-object v0, p0, Lxe8;->o:Ljava/lang/Object;
-
-    check-cast v0, Laf8;
-
-    iget v2, v0, Laf8;->b:I
-
-    iget-object v0, v0, Laf8;->c:Ljava/lang/Object;
-
-    move-object v3, v0
-
-    check-cast v3, Lre8;
-
-    iget-object v0, p0, Lxe8;->X:Ljava/lang/Object;
-
-    move-object v1, v0
-
-    check-cast v1, Lbf8;
-
-    iget-object v0, p0, Lxe8;->Y:Ljava/lang/Object;
-
-    move-object v4, v0
-
-    check-cast v4, Lxi7;
-
-    iget-object v0, p0, Lxe8;->Z:Ljava/lang/Object;
-
-    move-object v5, v0
-
-    check-cast v5, Li78;
-
-    iget-object v0, p0, Lxe8;->b:Ljava/lang/Object;
-
-    move-object v6, v0
-
-    check-cast v6, Ljava/io/IOException;
-
-    iget-boolean v7, p0, Lxe8;->c:Z
-
-    invoke-interface/range {v1 .. v7}, Lbf8;->u(ILre8;Lxi7;Li78;Ljava/io/IOException;Z)V
+    :goto_0
+    invoke-virtual {p0, p1}, Lye8;->setRemoteIndicatorDrawableInternal(Landroid/graphics/drawable/Drawable;)V
 
     return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

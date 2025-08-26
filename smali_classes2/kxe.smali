@@ -1,51 +1,65 @@
-.class public final Lkxe;
-.super Ler3;
+.class public abstract Lkxe;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
+# static fields
+.field public static final a:Lwfe;
 
-.field public final synthetic Y:Loxe;
-
-.field public Z:I
-
-.field public o:Loxe;
+.field public static final b:Lwfe;
 
 
 # direct methods
-.method public constructor <init>(Loxe;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput-object p1, p0, Lkxe;->Y:Loxe;
+    sget-object v0, Ld8;->Z:Ld8;
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    new-instance v1, Lwfe;
+
+    invoke-direct {v1, v0}, Lwfe;-><init>(Lv56;)V
+
+    sput-object v1, Lkxe;->a:Lwfe;
+
+    sget-object v0, Ld8;->Y:Ld8;
+
+    new-instance v1, Lwfe;
+
+    invoke-direct {v1, v0}, Lwfe;-><init>(Lv56;)V
+
+    sput-object v1, Lkxe;->b:Lwfe;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public static a(Ljava/lang/Runnable;)V
     .locals 1
 
-    iput-object p1, p0, Lkxe;->X:Ljava/lang/Object;
+    sget-object v0, Lkxe;->b:Lwfe;
 
-    iget p1, p0, Lkxe;->Z:I
+    invoke-virtual {v0}, Lwfe;->getValue()Ljava/lang/Object;
 
-    const/high16 v0, -0x80000000
+    move-result-object v0
 
-    or-int/2addr p1, v0
+    check-cast v0, Ljava/util/concurrent/Executor;
 
-    iput p1, p0, Lkxe;->Z:I
+    invoke-interface {v0, p0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    iget-object p1, p0, Lkxe;->Y:Loxe;
+    return-void
+.end method
 
-    const/4 v0, 0x0
+.method public static b(Ljava/lang/Runnable;)V
+    .locals 1
 
-    invoke-virtual {p1, v0, p0}, Loxe;->e(Lsm6;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    sget-object v0, Lkxe;->a:Lwfe;
 
-    move-result-object p0
+    invoke-virtual {v0}, Lwfe;->getValue()Ljava/lang/Object;
 
-    return-object p0
+    move-result-object v0
+
+    check-cast v0, Ljava/util/concurrent/Executor;
+
+    invoke-interface {v0, p0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    return-void
 .end method

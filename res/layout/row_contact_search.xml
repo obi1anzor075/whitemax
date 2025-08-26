@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/RowPadding"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <ru.ok.messages.views.widgets.TamAvatarView android:id="@id/row_contact_base__av_view" android:layout_width="@dimen/avatar_large" android:layout_height="@dimen/avatar_large" android:layout_centerVertical="true" android:layout_alignParentStart="true" app:placeHolder="@drawable/ava_m_40" />
-    <include android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="12.0dip" android:layout_toEndOf="@id/row_contact_base__av_view" layout="@layout/ll_contact" />
-</RelativeLayout>

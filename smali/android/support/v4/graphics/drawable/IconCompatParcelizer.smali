@@ -12,20 +12,20 @@
     return-void
 .end method
 
-.method public static read(Lg1f;)Landroidx/core/graphics/drawable/IconCompat;
+.method public static read(Llcf;)Landroidx/core/graphics/drawable/IconCompat;
     .locals 0
 
-    invoke-static {p0}, Landroidx/core/graphics/drawable/IconCompatParcelizer;->read(Lg1f;)Landroidx/core/graphics/drawable/IconCompat;
+    invoke-static {p0}, Landroidx/core/graphics/drawable/IconCompatParcelizer;->read(Llcf;)Landroidx/core/graphics/drawable/IconCompat;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static write(Landroidx/core/graphics/drawable/IconCompat;Lg1f;)V
+.method public static write(Landroidx/core/graphics/drawable/IconCompat;Llcf;)V
     .locals 0
 
-    invoke-static {p0, p1}, Landroidx/core/graphics/drawable/IconCompatParcelizer;->write(Landroidx/core/graphics/drawable/IconCompat;Lg1f;)V
+    invoke-static {p0, p1}, Landroidx/core/graphics/drawable/IconCompatParcelizer;->write(Landroidx/core/graphics/drawable/IconCompat;Llcf;)V
 
     return-void
 .end method

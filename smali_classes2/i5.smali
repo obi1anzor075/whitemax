@@ -1,59 +1,81 @@
 .class public final Li5;
-.super Landroid/app/SharedElementCallback;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic a:Landroid/graphics/Rect;
+.field public final synthetic a:I
+
+.field public final synthetic b:Lru/ok/messages/media/attaches/ActAttachesView;
 
 
 # direct methods
-.method public constructor <init>(Landroid/graphics/Rect;)V
+.method public synthetic constructor <init>(Lru/ok/messages/media/attaches/ActAttachesView;I)V
     .locals 0
 
-    iput-object p1, p0, Li5;->a:Landroid/graphics/Rect;
+    iput p2, p0, Li5;->a:I
 
-    invoke-direct {p0}, Landroid/app/SharedElementCallback;-><init>()V
+    iput-object p1, p0, Li5;->b:Lru/ok/messages/media/attaches/ActAttachesView;
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onMapSharedElements(Ljava/util/List;Ljava/util/Map;)V
-    .locals 0
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
 
-    if-eqz p2, :cond_0
+    iget v0, p0, Li5;->a:I
 
-    iget-object p0, p0, Li5;->a:Landroid/graphics/Rect;
+    packed-switch v0, :pswitch_data_0
 
-    if-eqz p0, :cond_0
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    invoke-interface {p2}, Ljava/util/Map;->values()Ljava/util/Collection;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result p2
-
-    if-eqz p2, :cond_0
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Landroid/view/View;
-
-    invoke-static {p0, p2}, Lat7;->j(Landroid/graphics/Rect;Landroid/view/View;)V
-
-    goto :goto_0
-
-    :cond_0
     return-void
+
+    :pswitch_0
+    iget-object p0, p0, Li5;->b:Lru/ok/messages/media/attaches/ActAttachesView;
+
+    iget-object p0, p0, Lru/ok/messages/media/attaches/ActAttachesView;->k1:Landroid/widget/FrameLayout;
+
+    const/4 p1, 0x4
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public onAnimationStart(Landroid/animation/Animator;)V
+    .locals 1
+
+    iget v0, p0, Li5;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
+
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Li5;->b:Lru/ok/messages/media/attaches/ActAttachesView;
+
+    iget-object p0, p0, Lru/ok/messages/media/attaches/ActAttachesView;->k1:Landroid/widget/FrameLayout;
+
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

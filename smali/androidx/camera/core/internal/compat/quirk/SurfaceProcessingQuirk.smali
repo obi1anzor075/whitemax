@@ -3,16 +3,16 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lzkb;
+.implements Lkpb;
 
 
 # direct methods
-.method public static d(Lxe6;)Z
+.method public static b(Lly4;)Z
     .locals 1
 
     const-class v0, Landroidx/camera/core/internal/compat/quirk/SurfaceProcessingQuirk;
 
-    invoke-virtual {p0, v0}, Lxe6;->k(Ljava/lang/Class;)Ljava/util/ArrayList;
+    invoke-virtual {p0, v0}, Lly4;->i(Ljava/lang/Class;)Ljava/util/ArrayList;
 
     move-result-object p0
 
@@ -33,7 +33,7 @@
 
     check-cast v0, Landroidx/camera/core/internal/compat/quirk/SurfaceProcessingQuirk;
 
-    invoke-interface {v0}, Landroidx/camera/core/internal/compat/quirk/SurfaceProcessingQuirk;->b()Z
+    invoke-interface {v0}, Landroidx/camera/core/internal/compat/quirk/SurfaceProcessingQuirk;->c()Z
 
     move-result v0
 
@@ -51,7 +51,7 @@
 
 
 # virtual methods
-.method public b()Z
+.method public c()Z
     .locals 0
 
     const/4 p0, 0x1

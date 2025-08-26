@@ -1,53 +1,33 @@
 .class public final Lx36;
-.super Ljava/lang/Object;
+.super Ljava/lang/RuntimeException;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:I
 
-.field public final synthetic b:F
-
-.field public final synthetic c:Lz36;
+.field public final b:Ljava/lang/Throwable;
 
 
 # direct methods
-.method public constructor <init>(Lz36;IF)V
+.method public constructor <init>(Ljava/lang/Throwable;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lx36;->c:Lz36;
+    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
     iput p2, p0, Lx36;->a:I
 
-    iput p3, p0, Lx36;->b:F
+    iput-object p1, p0, Lx36;->b:Ljava/lang/Throwable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final getCause()Ljava/lang/Throwable;
+    .locals 0
 
-    iget-object v0, p0, Lx36;->c:Lz36;
+    iget-object p0, p0, Lx36;->b:Ljava/lang/Throwable;
 
-    iget-boolean v1, v0, Lz36;->h:Z
-
-    if-nez v1, :cond_0
-
-    invoke-virtual {v0}, Lz36;->a()V
-
-    :cond_0
-    iget v0, p0, Lx36;->a:I
-
-    iget p0, p0, Lx36;->b:F
-
-    invoke-static {v0, p0}, Landroid/opengl/GLES20;->glUniform1f(IF)V
-
-    return-void
+    return-object p0
 .end method

@@ -1,31 +1,55 @@
-.class public final Ljue;
+.class public abstract Ljue;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Ljue;
-
-
 # direct methods
-.method static constructor <clinit>()V
+.method public static a(Landroid/view/View;)Landroid/window/OnBackInvokedDispatcher;
+    .locals 0
+
+    invoke-virtual {p0}, Landroid/view/View;->findOnBackInvokedDispatcher()Landroid/window/OnBackInvokedDispatcher;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static b(Ljava/lang/Runnable;)Landroid/window/OnBackInvokedCallback;
+    .locals 2
+
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v0, Lnm;
+
+    const/4 v1, 0x3
+
+    invoke-direct {v0, v1, p0}, Lnm;-><init>(ILjava/lang/Object;)V
+
+    return-object v0
+.end method
+
+.method public static c(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 1
 
-    new-instance v0, Ljue;
+    check-cast p0, Landroid/window/OnBackInvokedDispatcher;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const v0, 0xf4240
 
-    sput-object v0, Ljue;->a:Ljue;
+    check-cast p1, Landroid/window/OnBackInvokedCallback;
+
+    invoke-interface {p0, v0, p1}, Landroid/window/OnBackInvokedDispatcher;->registerOnBackInvokedCallback(ILandroid/window/OnBackInvokedCallback;)V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final toString()Ljava/lang/String;
+.method public static d(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    const-string p0, "kotlin.Unit"
+    check-cast p0, Landroid/window/OnBackInvokedDispatcher;
 
-    return-object p0
+    check-cast p1, Landroid/window/OnBackInvokedCallback;
+
+    invoke-interface {p0, p1}, Landroid/window/OnBackInvokedDispatcher;->unregisterOnBackInvokedCallback(Landroid/window/OnBackInvokedCallback;)V
+
+    return-void
 .end method

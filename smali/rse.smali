@@ -1,14 +1,23 @@
-.class public interface abstract Lrse;
-.super Ljava/lang/Object;
+.class public final Lrse;
+.super Lsse;
 .source "SourceFile"
 
 
 # virtual methods
-.method public abstract a()V
+.method public final d(J)Lsse;
+    .locals 0
+
+    return-object p0
 .end method
 
-.method public abstract b(ILija;)V
+.method public final f()V
+    .locals 0
+
+    return-void
 .end method
 
-.method public abstract e(Lcke;Li75;Lpse;)V
+.method public final g(JLjava/util/concurrent/TimeUnit;)Lsse;
+    .locals 0
+
+    return-object p0
 .end method

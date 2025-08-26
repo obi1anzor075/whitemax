@@ -12,6 +12,7 @@
         Lorg/webrtc/PeerConnection$PeerConnectionState;,
         Lorg/webrtc/PeerConnection$IceGatheringState;,
         Lorg/webrtc/PeerConnection$Observer;,
+        Lorg/webrtc/PeerConnection$VpnPreference;,
         Lorg/webrtc/PeerConnection$SdpSemantics;,
         Lorg/webrtc/PeerConnection$PortPrunePolicy;,
         Lorg/webrtc/PeerConnection$ContinualGatheringPolicy;,
@@ -357,9 +358,7 @@
     .locals 1
 
     .line 1
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v0
+    sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     invoke-virtual {p0, p1, v0}, Lorg/webrtc/PeerConnection;->addTrack(Lorg/webrtc/MediaStreamTrack;Ljava/util/List;)Lorg/webrtc/RtpSender;
 

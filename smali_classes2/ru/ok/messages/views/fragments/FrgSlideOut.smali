@@ -3,11 +3,11 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lojd;
+.implements Lbrd;
 
 
 # instance fields
-.field public F1:Z
+.field public x1:Z
 
 
 # direct methods
@@ -18,14 +18,14 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lru/ok/messages/views/fragments/FrgSlideOut;->F1:Z
+    iput-boolean v0, p0, Lru/ok/messages/views/fragments/FrgSlideOut;->x1:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public D()Z
+.method public B()Z
     .locals 0
 
     const/4 p0, 0x1
@@ -33,10 +33,10 @@
     return p0
 .end method
 
-.method public N(I)V
+.method public I(I)V
     .locals 0
 
-    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->h1()Lr5;
+    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->U0()Lp5;
 
     move-result-object p1
 
@@ -45,13 +45,13 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->c0()Landroidx/fragment/app/b;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->Q()Landroidx/fragment/app/b;
 
     move-result-object p1
 
     invoke-virtual {p1}, Landroid/app/Activity;->finish()V
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->c0()Landroidx/fragment/app/b;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->Q()Landroidx/fragment/app/b;
 
     move-result-object p0
 
@@ -62,10 +62,10 @@
     return-void
 .end method
 
-.method public Q()V
+.method public K()V
     .locals 2
 
-    invoke-virtual {p0}, Lru/ok/messages/views/fragments/FrgSlideOut;->s1()Li16;
+    invoke-virtual {p0}, Lru/ok/messages/views/fragments/FrgSlideOut;->f1()Lm56;
 
     move-result-object v0
 
@@ -74,29 +74,29 @@
     return-void
 
     :cond_0
-    invoke-interface {v0}, Li16;->f()Z
+    invoke-interface {v0}, Lm56;->f()Z
 
     move-result v1
 
-    iput-boolean v1, p0, Lru/ok/messages/views/fragments/FrgSlideOut;->F1:Z
+    iput-boolean v1, p0, Lru/ok/messages/views/fragments/FrgSlideOut;->x1:Z
 
     const/4 p0, 0x0
 
     const/4 v1, 0x1
 
-    invoke-interface {v0, p0, v1, v1}, Li16;->c(ZZZ)V
+    invoke-interface {v0, p0, v1, v1}, Lm56;->c(ZZZ)V
 
     return-void
 .end method
 
-.method public n1(Lr5;)V
+.method public a1(Lp5;)V
     .locals 1
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->r1:Z
+    iput-boolean v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->j1:Z
 
-    instance-of p0, p1, Li16;
+    instance-of p0, p1, Lm56;
 
     if-eqz p0, :cond_0
 
@@ -112,16 +112,39 @@
     throw p0
 .end method
 
-.method public final p()V
+.method public f1()Lm56;
+    .locals 1
+
+    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->U0()Lp5;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->U0()Lp5;
+
+    move-result-object p0
+
+    check-cast p0, Lm56;
+
+    return-object p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public final k()V
     .locals 2
 
-    invoke-virtual {p0}, Lru/ok/messages/views/fragments/FrgSlideOut;->s1()Li16;
+    invoke-virtual {p0}, Lru/ok/messages/views/fragments/FrgSlideOut;->f1()Lm56;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    iget-boolean p0, p0, Lru/ok/messages/views/fragments/FrgSlideOut;->F1:Z
+    iget-boolean p0, p0, Lru/ok/messages/views/fragments/FrgSlideOut;->x1:Z
 
     if-nez p0, :cond_0
 
@@ -132,33 +155,9 @@
 
     const/4 v1, 0x1
 
-    invoke-interface {v0, v1, v1, p0}, Li16;->c(ZZZ)V
+    invoke-interface {v0, v1, v1, p0}, Lm56;->c(ZZZ)V
 
     :cond_1
     :goto_0
     return-void
-.end method
-
-.method public s1()Li16;
-    .locals 1
-
-    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->h1()Lr5;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->h1()Lr5;
-
-    move-result-object p0
-
-    check-cast p0, Li16;
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return-object p0
 .end method

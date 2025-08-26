@@ -1,85 +1,107 @@
-.class public final synthetic Lbf;
-.super Ljava/lang/Object;
+.class public final Lbf;
+.super Lze;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Laf;
-
-
-# direct methods
-.method public synthetic constructor <init>(Laf;I)V
-    .locals 0
-
-    iput p2, p0, Lbf;->a:I
-
-    iput-object p1, p0, Lbf;->b:Laf;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final h(Lb8g;)Lb8g;
+    .locals 6
 
-    iget v0, p0, Lbf;->a:I
+    iget-object v0, p1, Lb8g;->a:Lz7g;
 
-    packed-switch v0, :pswitch_data_0
+    iget v1, p0, Lze;->j:I
 
-    iget-object p0, p0, Lbf;->b:Laf;
+    invoke-virtual {v0, v1}, Lz7g;->f(I)Ln27;
 
-    iget-object p0, p0, Laf;->b:Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;
+    move-result-object v1
 
-    iget-object v0, p0, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->z1:Lbf;
+    iget v2, p0, Lqzd;->d:I
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0, v2}, Lz7g;->f(I)Ln27;
 
-    invoke-static {}, Lrn0;->c()V
+    move-result-object v0
+
+    iget v2, v1, Ln27;->a:I
+
+    iget v3, v0, Ln27;->a:I
+
+    sub-int/2addr v2, v3
+
+    iget v3, v1, Ln27;->b:I
+
+    iget v4, v0, Ln27;->b:I
+
+    sub-int/2addr v3, v4
+
+    iget v4, v1, Ln27;->c:I
+
+    iget v5, v0, Ln27;->c:I
+
+    sub-int/2addr v4, v5
+
+    iget v1, v1, Ln27;->d:I
+
+    iget v0, v0, Ln27;->d:I
+
+    sub-int/2addr v1, v0
+
+    invoke-static {v2, v3, v4, v1}, Ln27;->b(IIII)Ln27;
+
+    move-result-object v0
+
+    iget v1, v0, Ln27;->a:I
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
+
+    move-result v1
+
+    iget v3, v0, Ln27;->b:I
+
+    invoke-static {v3, v2}, Ljava/lang/Math;->max(II)I
+
+    move-result v3
+
+    iget v4, v0, Ln27;->c:I
+
+    invoke-static {v4, v2}, Ljava/lang/Math;->max(II)I
+
+    move-result v4
+
+    iget v0, v0, Ln27;->d:I
+
+    invoke-static {v0, v2}, Ljava/lang/Math;->max(II)I
+
+    move-result v0
+
+    invoke-static {v1, v3, v4, v0}, Ln27;->b(IIII)Ln27;
+
+    move-result-object v0
+
+    iget v1, v0, Ln27;->b:I
+
+    iget v0, v0, Ln27;->d:I
+
+    sub-int/2addr v1, v0
+
+    int-to-float v0, v1
+
+    iget-object p0, p0, Lqzd;->a:Landroid/view/View;
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->setTranslationY(F)V
+
+    return-object p1
+.end method
+
+.method public final i()V
+    .locals 1
+
+    iget-object p0, p0, Lqzd;->a:Landroid/view/View;
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->z1:Lbf;
-
-    :cond_0
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->y1:Z
-
-    invoke-static {p0}, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->a(Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;)V
-
-    invoke-virtual {p0}, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->e()V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setTranslationY(F)V
 
     return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lbf;->b:Laf;
-
-    iget-object v0, p0, Laf;->b:Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;
-
-    iget-object v0, v0, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->v1:Lrn0;
-
-    invoke-virtual {v0}, Lrn0;->b()V
-
-    new-instance v0, Lbf;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, p0, v1}, Lbf;-><init>(Laf;I)V
-
-    invoke-static {v0}, Lje;->d(Ljava/lang/Runnable;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

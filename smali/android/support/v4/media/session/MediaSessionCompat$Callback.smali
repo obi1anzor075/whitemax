@@ -79,7 +79,7 @@
 
     if-nez v0, :cond_0
 
-    return-void
+    goto :goto_3
 
     :cond_0
     const/4 v0, 0x0
@@ -159,7 +159,7 @@
 
     invoke-virtual {p0}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onPause()V
 
-    goto :goto_3
+    return-void
 
     :cond_5
     if-nez p1, :cond_6

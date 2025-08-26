@@ -1,23 +1,42 @@
-.class public abstract Lndf;
+.class public interface abstract Lndf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:I
-
-.field public final b:Ljava/lang/Long;
+# static fields
+.field public static final a:Lmdf;
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/Long;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lmdf;
 
-    iput p1, p0, Lndf;->a:I
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lndf;->b:Ljava/lang/Long;
+    sput-object v0, Lndf;->a:Lmdf;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public a(Landroid/util/Size;Lzt4;)Lfc0;
+    .locals 0
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public b(Leb0;Lzt4;)Lfc0;
+    .locals 0
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public abstract c(Lzt4;)Ljava/util/ArrayList;
 .end method

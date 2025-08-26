@@ -1,72 +1,30 @@
-.class public final synthetic Lz6e;
-.super Ljava/lang/Object;
+.class public final Lz6e;
+.super Lu97;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lc7e;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final c:Ljava/lang/String;
 
-.field public final synthetic b:Lb7e;
+.field public final d:Ljava/lang/String;
+
+.field public final e:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lb7e;I)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Z)V
     .locals 0
 
-    iput p2, p0, Lz6e;->a:I
+    invoke-direct {p0}, Lu97;-><init>()V
 
-    iput-object p1, p0, Lz6e;->b:Lb7e;
+    iput-object p1, p0, Lz6e;->c:Ljava/lang/String;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lz6e;->d:Ljava/lang/String;
+
+    iput-boolean p3, p0, Lz6e;->e:Z
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    iget v0, p0, Lz6e;->a:I
-
-    check-cast p1, Ljava/lang/Float;
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
-
-    check-cast p2, Ljava/lang/Float;
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
-
-    move-result p2
-
-    iget-object p0, p0, Lz6e;->b:Lb7e;
-
-    invoke-static {p0, p1, p2}, Lb7e;->b(Lb7e;FF)V
-
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
-
-    :pswitch_0
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object p0, p0, Lz6e;->b:Lb7e;
-
-    invoke-static {p0, p1}, Lb7e;->a(Lb7e;F)V
-
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

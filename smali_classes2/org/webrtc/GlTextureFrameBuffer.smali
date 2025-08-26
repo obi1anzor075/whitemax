@@ -27,7 +27,7 @@
 
     const-string v0, "Invalid pixel format: "
 
-    invoke-static {p1, v0}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -182,7 +182,7 @@
 
     invoke-static {v1, v0}, Landroid/opengl/GLES20;->glBindTexture(II)V
 
-    iget v9, p0, Lorg/webrtc/GlTextureFrameBuffer;->pixelFormat:I
+    iget v5, p0, Lorg/webrtc/GlTextureFrameBuffer;->pixelFormat:I
 
     const/16 v10, 0x1401
 
@@ -194,7 +194,7 @@
 
     const/4 v8, 0x0
 
-    move v5, v9
+    move v9, v5
 
     move v6, p1
 
@@ -237,7 +237,7 @@
 
     const-string p2, "Framebuffer not complete, status: "
 
-    invoke-static {p0, p2}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p2}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -246,13 +246,17 @@
     throw p1
 
     :cond_4
+    move v6, p1
+
+    move v7, p2
+
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "Invalid size: "
+    const-string p1, "Invalid size: "
 
-    const-string v1, "x"
+    const-string p2, "x"
 
-    invoke-static {v0, p1, p2, v1}, Lme4;->g(Ljava/lang/String;IILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v6, v7, p2}, Lv04;->h(Ljava/lang/String;IILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

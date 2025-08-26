@@ -1,47 +1,55 @@
 .class public final Lqi1;
-.super Ler3;
+.super Lio;
 .source "SourceFile"
 
 
-# instance fields
-.field public X:I
-
-.field public final synthetic Y:Ltv;
-
-.field public synthetic o:Ljava/lang/Object;
+# static fields
+.field public static final a:Lqi1;
 
 
 # direct methods
-.method public constructor <init>(Ltv;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lqi1;->Y:Ltv;
+    new-instance v0, Lqi1;
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0}, Lio;-><init>()V
+
+    sput-object v0, Lqi1;->a:Lqi1;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final b()Lfr1;
     .locals 1
 
-    iput-object p1, p0, Lqi1;->o:Ljava/lang/Object;
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lu4;
 
-    iget p1, p0, Lqi1;->X:I
+    move-result-object p0
 
-    const/high16 v0, -0x80000000
+    const-class v0, Lfr1;
 
-    or-int/2addr p1, v0
+    invoke-virtual {p0, v0}, Lu4;->c(Ljava/lang/Class;)Ljava/lang/Object;
 
-    iput p1, p0, Lqi1;->X:I
+    move-result-object p0
 
-    iget-object p1, p0, Lqi1;->Y:Ltv;
+    check-cast p0, Lfr1;
 
-    const/4 v0, 0x0
+    return-object p0
+.end method
 
-    invoke-virtual {p1, v0, p0}, Ltv;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+.method public final c()Lje7;
+    .locals 1
+
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lu4;
+
+    move-result-object p0
+
+    const-class v0, Ls91;
+
+    invoke-virtual {p0, v0}, Lu4;->d(Ljava/lang/Class;)Lwfe;
 
     move-result-object p0
 

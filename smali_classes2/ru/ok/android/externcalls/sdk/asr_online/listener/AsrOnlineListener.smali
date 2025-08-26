@@ -13,7 +13,7 @@
         "",
         "Lru/ok/android/externcalls/sdk/asr_online/AsrOnlineChunk;",
         "asrChunk",
-        "Ljue;",
+        "Le5f;",
         "onAsrChunk",
         "(Lru/ok/android/externcalls/sdk/asr_online/AsrOnlineChunk;)V",
         "",
@@ -28,6 +28,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

@@ -9,22 +9,13 @@
 # annotations
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000\"\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u0008\n\u0002\u0008\u0004\u0008\u0000\u0018\u00002\u00020\u0001B\u0007\u00a2\u0006\u0004\u0008\u0002\u0010\u0003J\u001d\u0010\u0007\u001a\u00020\u00062\u000c\u0010\u0005\u001a\u0008\u0012\u0004\u0012\u00020\u00010\u0004H\u0016\u00a2\u0006\u0004\u0008\u0007\u0010\u0008R\u0014\u0010\u000c\u001a\u00020\t8VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\n\u0010\u000b\u00a8\u0006\r"
+        "\u0000\u000c\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0008\u0000\u0018\u00002\u00020\u0001B\u0007\u00a2\u0006\u0004\u0008\u0002\u0010\u0003\u00a8\u0006\u0004"
     }
     d2 = {
         "Lkotlinx/coroutines/test/internal/TestMainDispatcherFactory;",
         "Lkotlinx/coroutines/internal/MainDispatcherFactory;",
         "<init>",
         "()V",
-        "",
-        "allFactories",
-        "Lzr7;",
-        "createDispatcher",
-        "(Ljava/util/List;)Lzr7;",
-        "",
-        "getLoadPriority",
-        "()I",
-        "loadPriority",
         "kotlinx-coroutines-test"
     }
     k = 0x1
@@ -33,6 +24,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -47,7 +39,7 @@
 
 
 # virtual methods
-.method public createDispatcher(Ljava/util/List;)Lzr7;
+.method public final createDispatcher(Ljava/util/List;)Lxw7;
     .locals 4
 
     new-instance v0, Ljava/util/ArrayList;
@@ -156,18 +148,24 @@
     sget-object p0, Lkotlinx/coroutines/internal/MissingMainCoroutineDispatcherFactory;->INSTANCE:Lkotlinx/coroutines/internal/MissingMainCoroutineDispatcherFactory;
 
     :cond_6
-    invoke-static {p0, v0}, Lkotlinx/coroutines/internal/MainDispatchersKt;->tryCreateDispatcher(Lkotlinx/coroutines/internal/MainDispatcherFactory;Ljava/util/List;)Lzr7;
+    invoke-static {p0, v0}, Lkotlinx/coroutines/internal/MainDispatchersKt;->tryCreateDispatcher(Lkotlinx/coroutines/internal/MainDispatcherFactory;Ljava/util/List;)Lxw7;
 
     move-result-object p0
 
-    new-instance p1, Lvee;
+    new-instance p1, Ltme;
 
-    invoke-direct {p1, p0}, Lvee;-><init>(Lzr7;)V
+    invoke-direct {p1}, Ljx3;-><init>()V
+
+    new-instance v0, Lsme;
+
+    invoke-direct {v0, p0}, Lsme;-><init>(Lxw7;)V
+
+    iput-object v0, p1, Ltme;->a:Lsme;
 
     return-object p1
 .end method
 
-.method public getLoadPriority()I
+.method public final getLoadPriority()I
     .locals 0
 
     const p0, 0x7fffffff
@@ -175,7 +173,7 @@
     return p0
 .end method
 
-.method public hintOnError()Ljava/lang/String;
+.method public final hintOnError()Ljava/lang/String;
     .locals 0
 
     invoke-static {p0}, Lkotlinx/coroutines/internal/MainDispatcherFactory$DefaultImpls;->hintOnError(Lkotlinx/coroutines/internal/MainDispatcherFactory;)Ljava/lang/String;

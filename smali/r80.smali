@@ -1,91 +1,98 @@
 .class public final Lr80;
-.super Lbk0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lqw9;
 
-# instance fields
-.field public final a:Ljava/util/List;
+
+# static fields
+.field public static final a:Lr80;
+
+.field public static final b:Lte5;
+
+.field public static final c:Lte5;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/ArrayList;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lr80;
 
-    iput-object p1, p0, Lr80;->a:Ljava/util/List;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lr80;->a:Lr80;
+
+    new-instance v0, Lxx;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lxx;-><init>(I)V
+
+    const-class v1, Lvlb;
+
+    invoke-static {v1, v0}, Lzt1;->n(Ljava/lang/Class;Lxx;)Ljava/util/HashMap;
+
+    move-result-object v0
+
+    new-instance v2, Lte5;
+
+    invoke-static {v0}, Lzt1;->o(Ljava/util/HashMap;)Ljava/util/Map;
+
+    move-result-object v0
+
+    const-string v3, "eventsDroppedCount"
+
+    invoke-direct {v2, v3, v0}, Lte5;-><init>(Ljava/lang/String;Ljava/util/Map;)V
+
+    sput-object v2, Lr80;->b:Lte5;
+
+    new-instance v0, Lxx;
+
+    const/4 v2, 0x3
+
+    invoke-direct {v0, v2}, Lxx;-><init>(I)V
+
+    invoke-static {v1, v0}, Lzt1;->n(Ljava/lang/Class;Lxx;)Ljava/util/HashMap;
+
+    move-result-object v0
+
+    new-instance v1, Lte5;
+
+    invoke-static {v0}, Lzt1;->o(Ljava/util/HashMap;)Ljava/util/Map;
+
+    move-result-object v0
+
+    const-string v2, "reason"
+
+    invoke-direct {v1, v2, v0}, Lte5;-><init>(Ljava/lang/String;Ljava/util/Map;)V
+
+    sput-object v1, Lr80;->c:Lte5;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    if-ne p1, p0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    instance-of v0, p1, Lbk0;
-
-    if-eqz v0, :cond_1
-
-    check-cast p1, Lbk0;
-
-    check-cast p1, Lr80;
-
-    iget-object p1, p1, Lr80;->a:Ljava/util/List;
-
-    iget-object p0, p0, Lr80;->a:Ljava/util/List;
-
-    invoke-interface {p0, p1}, Ljava/util/List;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-
-    :cond_1
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    iget-object p0, p0, Lr80;->a:Ljava/util/List;
-
-    invoke-interface {p0}, Ljava/util/List;->hashCode()I
-
-    move-result p0
-
-    const v0, 0xf4243
-
-    xor-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final a(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    check-cast p1, Los7;
 
-    const-string v1, "BatchedLogRequest{logRequests="
+    check-cast p2, Lrw9;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    sget-object p0, Lr80;->b:Lte5;
 
-    iget-object p0, p0, Lr80;->a:Ljava/util/List;
+    iget-wide v0, p1, Los7;->a:J
 
-    const-string v1, "}"
+    invoke-interface {p2, p0, v0, v1}, Lrw9;->e(Lte5;J)Lrw9;
 
-    invoke-static {v0, p0, v1}, Lhr1;->i(Ljava/lang/StringBuilder;Ljava/util/List;Ljava/lang/String;)Ljava/lang/String;
+    sget-object p0, Lr80;->c:Lte5;
 
-    move-result-object p0
+    iget-object p1, p1, Los7;->b:Lns7;
 
-    return-object p0
+    invoke-interface {p2, p0, p1}, Lrw9;->a(Lte5;Ljava/lang/Object;)Lrw9;
+
+    return-void
 .end method

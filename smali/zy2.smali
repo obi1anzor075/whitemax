@@ -1,105 +1,87 @@
 .class public final Lzy2;
-.super Ljava/lang/Object;
+.super Li87;
 .source "SourceFile"
+
+# interfaces
+.implements Lyy2;
 
 
 # instance fields
-.field public final a:I
-
-.field public final b:Ljava/lang/reflect/Method;
+.field public final b:Lbz2;
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/reflect/Method;)V
+.method public constructor <init>(Lbz2;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;-><init>()V
 
-    iput p1, p0, Lzy2;->a:I
-
-    iput-object p2, p0, Lzy2;->b:Ljava/lang/reflect/Method;
-
-    const/4 p0, 0x1
-
-    invoke-virtual {p2, p0}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
+    iput-object p1, p0, Lzy2;->b:Lbz2;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final a(Ljava/lang/Throwable;)Z
+    .locals 0
 
-    const/4 v0, 0x1
+    iget-object p0, p0, Li87;->a:Lx87;
 
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lzy2;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lzy2;
-
-    iget v1, p1, Lzy2;->a:I
-
-    iget v3, p0, Lzy2;->a:I
-
-    if-ne v3, v1, :cond_2
-
-    iget-object p0, p0, Lzy2;->b:Ljava/lang/reflect/Method;
-
-    invoke-virtual {p0}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
-
-    move-result-object p0
-
-    iget-object p1, p1, Lzy2;->b:Ljava/lang/reflect/Method;
-
-    invoke-virtual {p1}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_2
+    if-eqz p0, :cond_0
 
     goto :goto_0
 
-    :cond_2
-    move v0, v2
+    :cond_0
+    const/4 p0, 0x0
 
     :goto_0
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    iget v0, p0, Lzy2;->a:I
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Lzy2;->b:Ljava/lang/reflect/Method;
-
-    invoke-virtual {p0}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {p0, p1}, Lx87;->childCancelled(Ljava/lang/Throwable;)Z
 
     move-result p0
 
-    add-int/2addr p0, v0
+    return p0
+.end method
+
+.method public final c()Z
+    .locals 0
+
+    const/4 p0, 0x1
 
     return p0
+.end method
+
+.method public final d(Ljava/lang/Throwable;)V
+    .locals 0
+
+    iget-object p1, p0, Li87;->a:Lx87;
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    iget-object p0, p0, Lzy2;->b:Lbz2;
+
+    invoke-interface {p0, p1}, Lbz2;->parentCancelled(Lona;)V
+
+    return-void
+.end method
+
+.method public final getParent()Lv77;
+    .locals 0
+
+    iget-object p0, p0, Li87;->a:Lx87;
+
+    if-eqz p0, :cond_0
+
+    return-object p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return-object p0
 .end method

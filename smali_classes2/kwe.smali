@@ -1,51 +1,17 @@
 .class public final Lkwe;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public X:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
-
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
-
-.field public o:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
-
-.field public w0:I
-
-
 # direct methods
-.method public constructor <init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;Lkotlin/coroutines/Continuation;)V
-    .locals 0
-
-    iput-object p1, p0, Lkwe;->Z:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
-
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public static a(Ljava/lang/String;)V
     .locals 1
 
-    iput-object p1, p0, Lkwe;->Y:Ljava/lang/Object;
+    invoke-static {p0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    iget p1, p0, Lkwe;->w0:I
+    const-string v0, "Trace"
 
-    const/high16 v0, -0x80000000
+    invoke-static {v0, p0}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
 
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lkwe;->w0:I
-
-    iget-object p1, p0, Lkwe;->Z:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
-
-    invoke-virtual {p1, p0}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->doForegroundWork(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

@@ -1,45 +1,66 @@
 .class public final synthetic Llxf;
-.super Lkhb;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lx64;
 
-# static fields
-.field public static final a:Llxf;
+
+# instance fields
+.field public final synthetic X:Z
+
+.field public final synthetic Y:I
+
+.field public final synthetic a:J
+
+.field public final synthetic b:Lftf;
+
+.field public final synthetic c:Ljava/lang/Long;
+
+.field public final synthetic o:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public synthetic constructor <init>(JLftf;Ljava/lang/Long;Ljava/lang/String;ZI)V
+    .locals 0
 
-    new-instance v0, Llxf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-class v1, Lcod;
+    iput-wide p1, p0, Llxf;->a:J
 
-    const-string v2, "framesDropped"
+    iput-object p3, p0, Llxf;->b:Lftf;
 
-    const-string v3, "getFramesDropped()J"
+    iput-object p4, p0, Llxf;->c:Ljava/lang/Long;
 
-    const/4 v4, 0x0
+    iput-object p5, p0, Llxf;->o:Ljava/lang/String;
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lkhb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    iput-boolean p6, p0, Llxf;->X:Z
 
-    sput-object v0, Llxf;->a:Llxf;
+    iput p7, p0, Llxf;->Y:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final a()Ljava/lang/Object;
+    .locals 8
 
-    check-cast p1, Lcod;
+    new-instance v0, Lone/me/webapp/rootscreen/WebAppRootScreen;
 
-    iget-wide p0, p1, Lcod;->s:J
+    iget-wide v1, p0, Llxf;->a:J
 
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    iget-object v3, p0, Llxf;->b:Lftf;
 
-    move-result-object p0
+    iget-object v4, p0, Llxf;->c:Ljava/lang/Long;
 
-    return-object p0
+    iget-object v5, p0, Llxf;->o:Ljava/lang/String;
+
+    iget-boolean v6, p0, Llxf;->X:Z
+
+    iget v7, p0, Llxf;->Y:I
+
+    invoke-direct/range {v0 .. v7}, Lone/me/webapp/rootscreen/WebAppRootScreen;-><init>(JLftf;Ljava/lang/Long;Ljava/lang/String;ZI)V
+
+    return-object v0
 .end method

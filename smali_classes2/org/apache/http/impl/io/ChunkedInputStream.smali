@@ -347,7 +347,7 @@
 
     iput-boolean v0, p0, Lorg/apache/http/impl/io/ChunkedInputStream;->closed:Z
 
-    goto :goto_2
+    return-void
 
     :goto_1
     iput-boolean v0, p0, Lorg/apache/http/impl/io/ChunkedInputStream;->eof:Z
@@ -357,7 +357,6 @@
     throw v1
 
     :cond_1
-    :goto_2
     return-void
 .end method
 
@@ -453,12 +452,12 @@
         }
     .end annotation
 
+    const/4 v0, 0x0
+
     .line 18
-    array-length v0, p1
+    array-length v1, p1
 
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, p1, v1, v0}, Lorg/apache/http/impl/io/ChunkedInputStream;->read([BII)I
+    invoke-virtual {p0, p1, v0, v1}, Lorg/apache/http/impl/io/ChunkedInputStream;->read([BII)I
 
     move-result p0
 

@@ -1,110 +1,153 @@
-.class public final Lmme;
-.super Le07;
+.class public abstract Lmme;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final g:Ljava/lang/CharSequence;
+# static fields
+.field public static final a:Ljava/lang/String;
+
+.field public static final b:J
+
+.field public static final c:I
+
+.field public static final d:I
+
+.field public static final e:J
+
+.field public static final f:Lzo9;
+
+.field public static final g:Lql5;
+
+.field public static final h:Lql5;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/CharSequence;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 10
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "kotlinx.coroutines.scheduler.default.name"
 
-    iput-object p1, p0, Lmme;->g:Ljava/lang/CharSequence;
+    const-string v1, "DefaultDispatcher"
 
-    return-void
-.end method
+    invoke-static {v0, v1}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
+    move-result-object v0
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+    sput-object v0, Lmme;->a:Ljava/lang/String;
 
-    const/4 v0, 0x1
+    const/16 v8, 0xc
 
-    if-ne p0, p1, :cond_0
+    const/4 v9, 0x0
 
-    return v0
+    const-string v1, "kotlinx.coroutines.scheduler.resolution.ns"
 
-    :cond_0
-    instance-of v1, p1, Lmme;
+    const-wide/32 v2, 0x186a0
 
-    const/4 v2, 0x0
+    const-wide/16 v4, 0x0
 
-    if-nez v1, :cond_1
+    const-wide/16 v6, 0x0
 
-    return v2
+    invoke-static/range {v1 .. v9}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp$default(Ljava/lang/String;JJJILjava/lang/Object;)J
 
-    :cond_1
-    check-cast p1, Lmme;
+    move-result-wide v0
 
-    iget-object p0, p0, Lmme;->g:Ljava/lang/CharSequence;
+    sput-wide v0, Lmme;->b:J
 
-    iget-object p1, p1, Lmme;->g:Ljava/lang/CharSequence;
+    invoke-static {}, Lkotlinx/coroutines/internal/SystemPropsKt;->getAVAILABLE_PROCESSORS()I
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result v0
 
-    move-result p0
+    const/4 v1, 0x2
 
-    if-nez p0, :cond_2
+    if-ge v0, v1, :cond_0
 
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    iget-object p0, p0, Lmme;->g:Ljava/lang/CharSequence;
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
+    move v3, v1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
+    move v3, v0
 
     :goto_0
-    return p0
-.end method
+    const/16 v6, 0x8
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+    const/4 v7, 0x0
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const-string v2, "kotlinx.coroutines.scheduler.core.pool.size"
 
-    const-string v1, "Connected(text="
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const/4 v5, 0x0
 
-    iget-object p0, p0, Lmme;->g:Ljava/lang/CharSequence;
+    invoke-static/range {v2 .. v7}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result v0
 
-    const-string p0, ")"
+    sput v0, Lmme;->c:I
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v5, 0x4
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const/4 v6, 0x0
 
-    move-result-object p0
+    const-string v1, "kotlinx.coroutines.scheduler.max.pool.size"
 
-    return-object p0
-.end method
+    const v2, 0x1ffffe
 
-.method public final w()Ljava/lang/CharSequence;
-    .locals 0
+    const/4 v3, 0x0
 
-    iget-object p0, p0, Lmme;->g:Ljava/lang/CharSequence;
+    const v4, 0x1ffffe
 
-    return-object p0
+    invoke-static/range {v1 .. v6}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
+
+    move-result v0
+
+    sput v0, Lmme;->d:I
+
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+
+    const/16 v8, 0xc
+
+    const/4 v9, 0x0
+
+    const-string v1, "kotlinx.coroutines.scheduler.keep.alive.sec"
+
+    const-wide/16 v2, 0x3c
+
+    const-wide/16 v4, 0x0
+
+    const-wide/16 v6, 0x0
+
+    invoke-static/range {v1 .. v9}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp$default(Ljava/lang/String;JJJILjava/lang/Object;)J
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
+
+    move-result-wide v0
+
+    sput-wide v0, Lmme;->e:J
+
+    sget-object v0, Lzo9;->Z:Lzo9;
+
+    sput-object v0, Lmme;->f:Lzo9;
+
+    new-instance v0, Lql5;
+
+    const/4 v1, 0x0
+
+    const/16 v2, 0xb
+
+    invoke-direct {v0, v1, v2}, Lql5;-><init>(II)V
+
+    sput-object v0, Lmme;->g:Lql5;
+
+    new-instance v0, Lql5;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1, v2}, Lql5;-><init>(II)V
+
+    sput-object v0, Lmme;->h:Lql5;
+
+    return-void
 .end method

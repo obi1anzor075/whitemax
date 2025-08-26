@@ -13,17 +13,17 @@
         "",
         "<init>",
         "()V",
-        "Lt67;",
+        "Lkb7;",
         "writer",
         "Lru/ok/android/externcalls/analytics/events/EventItemValue;",
         "value",
-        "Ljue;",
+        "Le5f;",
         "writeValue",
-        "(Lt67;Lru/ok/android/externcalls/analytics/events/EventItemValue;)V",
+        "(Lkb7;Lru/ok/android/externcalls/analytics/events/EventItemValue;)V",
         "Lru/ok/android/externcalls/analytics/events/CallAnalyticsEvent;",
         "event",
         "serialize",
-        "(Lt67;Lru/ok/android/externcalls/analytics/events/CallAnalyticsEvent;)V",
+        "(Lkb7;Lru/ok/android/externcalls/analytics/events/CallAnalyticsEvent;)V",
         "calls-sdk-analytics_release"
     }
     k = 0x1
@@ -32,6 +32,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -60,7 +61,7 @@
     return-void
 .end method
 
-.method private final writeValue(Lt67;Lru/ok/android/externcalls/analytics/events/EventItemValue;)V
+.method private final writeValue(Lkb7;Lru/ok/android/externcalls/analytics/events/EventItemValue;)V
     .locals 2
 
     instance-of p0, p2, Lru/ok/android/externcalls/analytics/events/EventItemValue$FloatValue;
@@ -77,7 +78,7 @@
 
     move-result-object p0
 
-    check-cast p1, Lt1;
+    check-cast p1, Lu1;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -85,9 +86,9 @@
 
     move-result-wide v0
 
-    invoke-virtual {p1, v0, v1}, Lt1;->d(D)V
+    invoke-virtual {p1, v0, v1}, Lu1;->d(D)V
 
-    goto :goto_0
+    return-void
 
     :cond_0
     instance-of p0, p2, Lru/ok/android/externcalls/analytics/events/EventItemValue$IntValue;
@@ -100,7 +101,7 @@
 
     move-result p0
 
-    check-cast p1, Lt1;
+    check-cast p1, Lu1;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -108,9 +109,9 @@
 
     move-result-object p0
 
-    invoke-virtual {p1, p0}, Lt1;->a(Ljava/lang/String;)V
+    invoke-virtual {p1, p0}, Lu1;->c(Ljava/lang/String;)V
 
-    goto :goto_0
+    return-void
 
     :cond_1
     instance-of p0, p2, Lru/ok/android/externcalls/analytics/events/EventItemValue$LongValue;
@@ -123,7 +124,7 @@
 
     move-result-wide v0
 
-    check-cast p1, Lt1;
+    check-cast p1, Lu1;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -131,9 +132,9 @@
 
     move-result-object p0
 
-    invoke-virtual {p1, p0}, Lt1;->a(Ljava/lang/String;)V
+    invoke-virtual {p1, p0}, Lu1;->c(Ljava/lang/String;)V
 
-    goto :goto_0
+    return-void
 
     :cond_2
     instance-of p0, p2, Lru/ok/android/externcalls/analytics/events/EventItemValue$StringValue;
@@ -146,19 +147,18 @@
 
     move-result-object p0
 
-    invoke-interface {p1, p0}, Lt67;->i(Ljava/lang/String;)V
+    invoke-interface {p1, p0}, Lkb7;->h(Ljava/lang/String;)V
 
     :cond_3
-    :goto_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final serialize(Lt67;Lru/ok/android/externcalls/analytics/events/CallAnalyticsEvent;)V
+.method public final serialize(Lkb7;Lru/ok/android/externcalls/analytics/events/CallAnalyticsEvent;)V
     .locals 2
 
-    invoke-interface {p1}, Lt67;->s()V
+    invoke-interface {p1}, Lkb7;->s()V
 
     invoke-virtual {p2}, Lru/ok/android/externcalls/analytics/events/CallAnalyticsEvent;->getItems()Ljava/util/Map;
 
@@ -191,7 +191,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    invoke-interface {p1, v1}, Lt67;->g0(Ljava/lang/String;)Lt67;
+    invoke-interface {p1, v1}, Lkb7;->k0(Ljava/lang/String;)Lkb7;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -199,12 +199,12 @@
 
     check-cast v0, Lru/ok/android/externcalls/analytics/events/EventItemValue;
 
-    invoke-direct {p0, p1, v0}, Lru/ok/android/externcalls/analytics/internal/event/EventSerializer;->writeValue(Lt67;Lru/ok/android/externcalls/analytics/events/EventItemValue;)V
+    invoke-direct {p0, p1, v0}, Lru/ok/android/externcalls/analytics/internal/event/EventSerializer;->writeValue(Lkb7;Lru/ok/android/externcalls/analytics/events/EventItemValue;)V
 
     goto :goto_0
 
     :cond_0
-    invoke-interface {p1}, Lt67;->q()V
+    invoke-interface {p1}, Lkb7;->q()V
 
     return-void
 .end method

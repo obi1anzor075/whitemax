@@ -1,100 +1,45 @@
-.class public final Laca;
+.class public final synthetic Laca;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Leca;
+.implements Landroid/text/InputFilter;
 
 
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Laca;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static final a:Laca;
+# instance fields
+.field public final synthetic a:Lcca;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Lcca;)V
+    .locals 0
 
-    new-instance v0, Laca;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Laca;->a:Laca;
-
-    new-instance v0, Lch9;
-
-    const/16 v1, 0xf
-
-    invoke-direct {v0, v1}, Lch9;-><init>(I)V
-
-    sput-object v0, Laca;->CREATOR:Landroid/os/Parcelable$Creator;
+    iput-object p1, p0, Laca;->a:Lcca;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
+.method public final filter(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;
     .locals 0
 
-    const/4 p0, 0x0
+    iget-object p0, p0, Laca;->a:Lcca;
 
-    return p0
-.end method
+    iget-object p0, p0, Lcca;->o:Locc;
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+    invoke-virtual {p0, p1}, Locc;->a(Ljava/lang/CharSequence;)Z
 
-    const/4 v0, 0x1
+    move-result p0
 
-    if-ne p0, p1, :cond_0
+    if-eqz p0, :cond_0
 
-    return v0
+    return-object p1
 
     :cond_0
-    instance-of p0, p1, Laca;
-
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    const p0, -0x4e19c0b1
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    const-string p0, "CancelBtn"
+    const-string p0, ""
 
     return-object p0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
-
-    const/4 p0, 0x1
-
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
-
-    return-void
 .end method

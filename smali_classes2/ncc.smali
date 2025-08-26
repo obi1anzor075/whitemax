@@ -1,3 +1,3 @@
-.class public abstract Lncc;
+.class public interface abstract Lncc;
 .super Ljava/lang/Object;
 .source "SourceFile"

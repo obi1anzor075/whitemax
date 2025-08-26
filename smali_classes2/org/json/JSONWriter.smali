@@ -92,15 +92,7 @@
 
     invoke-interface {v0, v1}, Ljava/lang/Appendable;->append(C)Ljava/lang/Appendable;
 
-    goto :goto_1
-
-    :catch_0
-    move-exception p0
-
-    goto :goto_2
-
     :cond_2
-    :goto_1
     iget-object v0, p0, Lorg/json/JSONWriter;->writer:Ljava/lang/Appendable;
 
     invoke-interface {v0, p1}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
@@ -122,7 +114,9 @@
 
     return-object p0
 
-    :goto_2
+    :catch_0
+    move-exception p0
+
     new-instance p1, Lorg/json/JSONException;
 
     invoke-direct {p1, p0}, Lorg/json/JSONException;-><init>(Ljava/lang/Throwable;)V
@@ -351,9 +345,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    instance-of v0, p0, Ljava/lang/String;
-
-    if-eqz v0, :cond_1
+    if-eqz p0, :cond_1
 
     return-object p0
 
@@ -662,15 +654,7 @@
 
     invoke-interface {v0, v1}, Ljava/lang/Appendable;->append(C)Ljava/lang/Appendable;
 
-    goto :goto_0
-
-    :catch_0
-    move-exception p0
-
-    goto :goto_1
-
     :cond_0
-    :goto_0
     iget-object v0, p0, Lorg/json/JSONWriter;->writer:Ljava/lang/Appendable;
 
     invoke-static {p1}, Lorg/json/JSONObject;->quote(Ljava/lang/String;)Ljava/lang/String;
@@ -718,7 +702,9 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :goto_1
+    :catch_0
+    move-exception p0
+
     new-instance p1, Lorg/json/JSONException;
 
     invoke-direct {p1, p0}, Lorg/json/JSONException;-><init>(Ljava/lang/Throwable;)V

@@ -1,64 +1,132 @@
 .class public final Likb;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Llkb;
+.implements Ll66;
 
 
-# static fields
-.field public static final a:Likb;
+# instance fields
+.field public X:I
+
+.field public final synthetic Y:Ljkb;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ljkb;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    new-instance v0, Likb;
+    iput-object p1, p0, Likb;->Y:Ljkb;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x2
 
-    sput-object v0, Likb;->a:Likb;
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    const/4 v0, 0x1
+    check-cast p1, Lox3;
 
-    if-ne p0, p1, :cond_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    return v0
+    invoke-virtual {p0, p1, p2}, Likb;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Likb;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Likb;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
+
+    new-instance p1, Likb;
+
+    iget-object p0, p0, Likb;->Y:Ljkb;
+
+    invoke-direct {p1, p0, p2}, Likb;-><init>(Ljkb;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
+
+    iget v0, p0, Likb;->X:I
+
+    iget-object v1, p0, Likb;->Y:Ljkb;
+
+    const/4 v2, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v2, :cond_0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    goto :goto_0
 
     :cond_0
-    instance-of p0, p1, Likb;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    if-nez p0, :cond_1
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    const/4 p0, 0x0
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    return p0
+    throw p0
 
     :cond_1
-    return v0
-.end method
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-.method public final hashCode()I
-    .locals 0
+    iget-object p1, v1, Ljkb;->M0:Lx7b;
 
-    const p0, -0x55c70cd5
+    iput v2, p0, Likb;->X:I
 
-    return p0
-.end method
+    invoke-virtual {p1, p0}, Lx7b;->C(Likb;)Le5f;
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
+    move-result-object p0
 
-    const-string p0, "ModePhotoTaking"
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    iget-object p0, v1, Ljkb;->x0:Lj35;
+
+    new-instance p1, Lfjb;
+
+    sget v0, Lanc;->n:I
+
+    new-instance v1, Ljava/lang/Integer;
+
+    invoke-direct {v1, v0}, Ljava/lang/Integer;-><init>(I)V
+
+    sget v0, Lpca;->H0:I
+
+    new-instance v2, Lhoe;
+
+    invoke-direct {v2, v0}, Lhoe;-><init>(I)V
+
+    invoke-direct {p1, v2, v1}, Lfjb;-><init>(Lmoe;Ljava/lang/Integer;)V
+
+    invoke-static {p0, p1}, Ljof;->o(Lj35;Ljava/lang/Object;)V
+
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 .end method

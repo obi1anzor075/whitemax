@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lof3;
+.implements Ljj3;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$executeWithJoinLink$1;->invoke()Ldhd;
+    value = Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$executeWithJoinLink$1;->invoke()Ltod;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,7 +22,7 @@
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
-        "Lof3;"
+        "Ljj3;"
     }
 .end annotation
 
@@ -33,7 +33,7 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/api/ConversationParams;",
         "params",
-        "Ljue;",
+        "Le5f;",
         "accept",
         "(Lru/ok/android/externcalls/sdk/api/ConversationParams;)V",
         "<anonymous>"
@@ -87,22 +87,22 @@
     if-eqz v0, :cond_0
 
     .line 4
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;->access$getCidProvider$p(Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;)Lct3;
+    invoke-static {p0}, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;->access$getCidProvider$p(Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;)Lbw3;
 
     move-result-object p0
 
     iget-object p1, p1, Lru/ok/android/externcalls/sdk/api/ConversationParams;->id:Ljava/lang/String;
 
     .line 5
-    instance-of v0, p0, Ldt3;
+    instance-of v0, p0, Lcw3;
 
     if-eqz v0, :cond_0
 
     .line 6
-    check-cast p0, Ldt3;
+    check-cast p0, Lcw3;
 
     .line 7
-    iput-object p1, p0, Ldt3;->a:Ljava/lang/String;
+    iput-object p1, p0, Lcw3;->a:Ljava/lang/String;
 
     :cond_0
     return-void

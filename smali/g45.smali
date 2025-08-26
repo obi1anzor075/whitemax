@@ -1,113 +1,195 @@
-.class public final Lg45;
+.class public abstract Lg45;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/view/SurfaceHolder$Callback;
-.implements Landroid/view/TextureView$SurfaceTextureListener;
 
-
-# instance fields
-.field public final synthetic a:Lm45;
+# static fields
+.field public static final a:Lf45;
 
 
 # direct methods
-.method public constructor <init>(Lm45;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lf45;
 
-    iput-object p1, p0, Lg45;->a:Lm45;
+    const-string v1, "No further exceptions"
 
-    return-void
-.end method
+    invoke-direct {v0, v1}, Ljava/lang/Throwable;-><init>(Ljava/lang/String;)V
 
-
-# virtual methods
-.method public final onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;II)V
-    .locals 1
-
-    iget-object p0, p0, Lg45;->a:Lm45;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v0, Landroid/view/Surface;
-
-    invoke-direct {v0, p1}, Landroid/view/Surface;-><init>(Landroid/graphics/SurfaceTexture;)V
-
-    invoke-virtual {p0, v0}, Lm45;->m2(Landroid/view/Surface;)V
-
-    iput-object v0, p0, Lm45;->c1:Landroid/view/Surface;
-
-    invoke-virtual {p0, p2, p3}, Lm45;->i2(II)V
+    sput-object v0, Lg45;->a:Lf45;
 
     return-void
 .end method
 
-.method public final onSurfaceTextureDestroyed(Landroid/graphics/SurfaceTexture;)Z
-    .locals 0
+.method public static a(Ljava/util/concurrent/atomic/AtomicReference;Ljava/lang/Throwable;)Z
+    .locals 3
 
-    const/4 p1, 0x0
+    :goto_0
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-    iget-object p0, p0, Lg45;->a:Lm45;
+    move-result-object v0
 
-    invoke-virtual {p0, p1}, Lm45;->m2(Landroid/view/Surface;)V
+    check-cast v0, Ljava/lang/Throwable;
 
-    const/4 p1, 0x0
+    sget-object v1, Lg45;->a:Lf45;
 
-    invoke-virtual {p0, p1, p1}, Lm45;->i2(II)V
+    if-ne v0, v1, :cond_0
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_0
+    if-nez v0, :cond_1
+
+    move-object v1, p1
+
+    goto :goto_1
+
+    :cond_1
+    new-instance v1, Lio/reactivex/rxjava3/exceptions/CompositeException;
+
+    filled-new-array {v0, p1}, [Ljava/lang/Throwable;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Lio/reactivex/rxjava3/exceptions/CompositeException;-><init>([Ljava/lang/Throwable;)V
+
+    :cond_2
+    :goto_1
+    invoke-virtual {p0, v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
 
     const/4 p0, 0x1
 
     return p0
+
+    :cond_3
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    if-eq v2, v0, :cond_2
+
+    goto :goto_0
 .end method
 
-.method public final onSurfaceTextureSizeChanged(Landroid/graphics/SurfaceTexture;II)V
-    .locals 0
+.method public static b(Ljava/lang/String;)Ljava/lang/NullPointerException;
+    .locals 2
 
-    iget-object p0, p0, Lg45;->a:Lm45;
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    invoke-virtual {p0, p2, p3}, Lm45;->i2(II)V
+    const-string v1, " Null values are generally not allowed in 3.x operators and sources."
 
-    return-void
+    invoke-virtual {p0, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    return-object v0
 .end method
 
-.method public final onSurfaceTextureUpdated(Landroid/graphics/SurfaceTexture;)V
+.method public static c(Ljava/lang/Object;Ljava/lang/String;)V
     .locals 0
 
+    if-eqz p0, :cond_0
+
     return-void
+
+    :cond_0
+    invoke-static {p1}, Lg45;->b(Ljava/lang/String;)Ljava/lang/NullPointerException;
+
+    move-result-object p0
+
+    throw p0
 .end method
 
-.method public final surfaceChanged(Landroid/view/SurfaceHolder;III)V
-    .locals 0
+.method public static d(Ljava/util/concurrent/atomic/AtomicReference;)Ljava/lang/Throwable;
+    .locals 2
 
-    iget-object p0, p0, Lg45;->a:Lm45;
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-    invoke-virtual {p0, p3, p4}, Lm45;->i2(II)V
+    move-result-object v0
 
-    return-void
+    check-cast v0, Ljava/lang/Throwable;
+
+    sget-object v1, Lg45;->a:Lf45;
+
+    if-eq v0, v1, :cond_0
+
+    invoke-virtual {p0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/Throwable;
+
+    return-object p0
+
+    :cond_0
+    return-object v0
 .end method
 
-.method public final surfaceCreated(Landroid/view/SurfaceHolder;)V
-    .locals 0
+.method public static e(JLjava/util/concurrent/TimeUnit;)Ljava/lang/String;
+    .locals 2
 
-    iget-object p0, p0, Lg45;->a:Lm45;
+    const-string v0, "The source did not signal an event for "
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-string v1, " "
 
-    return-void
+    invoke-static {p0, p1, v0, v1}, Lzt1;->k(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p1, " and has been terminated."
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public final surfaceDestroyed(Landroid/view/SurfaceHolder;)V
-    .locals 0
+.method public static f(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
+    .locals 1
 
-    iget-object p0, p0, Lg45;->a:Lm45;
+    instance-of v0, p0, Ljava/lang/Error;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-nez v0, :cond_1
 
-    const/4 p1, 0x0
+    instance-of v0, p0, Ljava/lang/RuntimeException;
 
-    invoke-virtual {p0, p1, p1}, Lm45;->i2(II)V
+    if-eqz v0, :cond_0
 
-    return-void
+    check-cast p0, Ljava/lang/RuntimeException;
+
+    return-object p0
+
+    :cond_0
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    return-object v0
+
+    :cond_1
+    check-cast p0, Ljava/lang/Error;
+
+    throw p0
 .end method

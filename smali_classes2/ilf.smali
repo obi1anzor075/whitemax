@@ -1,420 +1,460 @@
 .class public final Lilf;
-.super Ll5e;
+.super Lyi3;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lorg/webrtc/SurfaceTextureHelper$FrameGeometryAdjuster;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final f:Lorg/webrtc/PeerConnectionFactory;
 
-.field public final synthetic Y:Lone/me/webapp/rootscreen/WebAppRootScreen;
+.field public final g:Lx1e;
+
+.field public h:Lorg/webrtc/SurfaceTextureHelper;
+
+.field public i:Lj7b;
+
+.field public final j:Logf;
+
+.field public volatile k:Lorg/webrtc/Size;
+
+.field public volatile l:F
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/webapp/rootscreen/WebAppRootScreen;)V
-    .locals 0
+.method public constructor <init>(Lorg/webrtc/PeerConnectionFactory;Ljava/lang/String;Lorg/webrtc/MediaStream;Ljava/lang/Integer;ZLx1e;Ls1c;)V
+    .locals 8
 
-    iput-object p2, p0, Lilf;->Y:Lone/me/webapp/rootscreen/WebAppRootScreen;
+    invoke-direct {p0, p2, p3, p7}, Lyi3;-><init>(Ljava/lang/String;Lorg/webrtc/MediaStream;Ls1c;)V
 
-    const/4 p2, 0x2
+    iput-object p1, p0, Lilf;->f:Lorg/webrtc/PeerConnectionFactory;
 
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p6, p0, Lilf;->g:Lx1e;
+
+    new-instance p1, Logf;
+
+    const/16 p2, 0x3c0
+
+    if-eqz p4, :cond_0
+
+    invoke-virtual {p4}, Ljava/lang/Integer;->intValue()I
+
+    move-result p3
+
+    goto :goto_0
+
+    :cond_0
+    move p3, p2
+
+    :goto_0
+    new-instance v0, Ltl8;
+
+    const/4 v6, 0x0
+
+    const/16 v7, 0x19
+
+    const/4 v1, 0x1
+
+    const-class v3, Lilf;
+
+    const-string v4, "logBufferTransform"
+
+    const-string v5, "logBufferTransform(Ljava/lang/String;)V"
+
+    move-object v2, p0
+
+    invoke-direct/range {v0 .. v7}, Ltl8;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
+
+    invoke-direct {p1, p5, p3, v0}, Logf;-><init>(ZILtl8;)V
+
+    iput-object p1, v2, Lilf;->j:Logf;
+
+    new-instance p0, Lorg/webrtc/Size;
+
+    const/16 p1, 0x21c
+
+    invoke-direct {p0, p2, p1}, Lorg/webrtc/Size;-><init>(II)V
+
+    iput-object p0, v2, Lilf;->k:Lorg/webrtc/Size;
+
+    const/high16 p0, 0x3f800000    # 1.0f
+
+    iput p0, v2, Lilf;->l:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final adjustFrameGeometry(Landroid/graphics/Matrix;II)Lorg/webrtc/SurfaceTextureHelper$FrameGeometry;
+    .locals 6
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget-object p0, p0, Lilf;->j:Logf;
 
-    invoke-virtual {p0, p1, p2}, Lilf;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object p0
+    const-string v0, "x"
 
-    check-cast p0, Lilf;
+    if-eqz p2, :cond_8
 
-    sget-object p1, Ljue;->a:Ljue;
+    if-nez p3, :cond_0
 
-    invoke-virtual {p0, p1}, Lilf;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
-
-    new-instance v0, Lilf;
-
-    iget-object p0, p0, Lilf;->Y:Lone/me/webapp/rootscreen/WebAppRootScreen;
-
-    invoke-direct {v0, p2, p0}, Lilf;-><init>(Lkotlin/coroutines/Continuation;Lone/me/webapp/rootscreen/WebAppRootScreen;)V
-
-    iput-object p1, v0, Lilf;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 17
-
-    move-object/from16 v0, p0
-
-    invoke-static/range {p1 .. p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object v1, v0, Lilf;->X:Ljava/lang/Object;
-
-    check-cast v1, Lcgf;
-
-    sget-object v2, Lone/me/webapp/rootscreen/WebAppRootScreen;->K0:[Lk77;
-
-    iget-object v0, v0, Lilf;->Y:Lone/me/webapp/rootscreen/WebAppRootScreen;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    instance-of v2, v1, Lyff;
-
-    if-eqz v2, :cond_0
-
-    iget-object v0, v0, Lone/me/webapp/rootscreen/WebAppRootScreen;->D0:Lmif;
-
-    if-eqz v0, :cond_9
-
-    check-cast v1, Lyff;
-
-    iget-object v2, v1, Lyff;->a:Ljava/lang/String;
-
-    iget-object v3, v1, Lyff;->c:Lstf;
-
-    iget-object v1, v1, Lyff;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v3, v2, v1}, Lmif;->c(Lstf;Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_4
+    goto/16 :goto_2
 
     :cond_0
-    sget-object v2, Lzff;->a:Lzff;
+    iget-object v1, p0, Logf;->f:Ldsa;
 
-    invoke-static {v1, v2}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget-object v2, p0, Logf;->d:Ljava/lang/Integer;
 
-    move-result v2
+    iget-object v3, p0, Logf;->e:Ljava/lang/Integer;
 
-    const/4 v3, 0x1
-
-    const/4 v4, 0x0
+    iget v4, p0, Logf;->c:I
 
     if-eqz v2, :cond_1
 
-    sget-object v1, Llkf;->c:Llkf;
+    if-eqz v3, :cond_1
 
-    sget-object v2, Lone/me/webapp/rootscreen/WebAppRootScreen;->K0:[Lk77;
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    aget-object v2, v2, v3
+    move-result v2
 
-    iget-object v2, v0, Lone/me/webapp/rootscreen/WebAppRootScreen;->x0:Ljr;
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
-    invoke-virtual {v2, v0}, Ljr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
+    move-result v3
 
-    move-result-object v0
+    invoke-static {v2, v3}, Ljava/lang/Math;->min(II)I
 
-    check-cast v0, Ljava/lang/Number;
+    move-result v4
 
-    invoke-virtual {v0}, Ljava/lang/Number;->longValue()J
-
-    move-result-wide v2
-
-    invoke-virtual {v1}, Lu2;->P1()Ld34;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ld34;->d()Z
-
-    invoke-virtual {v1}, Lu2;->P1()Ld34;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v5, ":settings/webapp?bot_id="
-
-    invoke-direct {v1, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1, v4}, Ld34;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
-
-    goto/16 :goto_4
+    goto :goto_0
 
     :cond_1
-    instance-of v2, v1, Lagf;
-
-    const/4 v5, 0x0
-
-    const-string v6, "BottomSheetWidget"
-
-    const-string v7, "dialog_id"
-
-    const/4 v8, 0x4
-
-    if-eqz v2, :cond_5
-
-    invoke-static {v8, v7}, Lwn6;->g(ILjava/lang/String;)Landroid/os/Bundle;
-
-    move-result-object v2
-
-    sget-object v7, Lone/me/sdk/bottomsheet/BottomSheetWidget;->B0:[Lk77;
-
-    check-cast v1, Lagf;
-
-    iget-object v7, v1, Lagf;->a:Lmge;
-
-    invoke-static {v7, v2, v8}, La24;->a(Lmge;Landroid/os/Bundle;I)Ljc3;
-
-    move-result-object v2
-
-    iget-object v7, v1, Lagf;->b:Lmge;
-
-    invoke-virtual {v2, v7}, Ljc3;->f(Lmge;)V
-
-    sget v7, Lphc;->B:I
-
-    iget-object v8, v2, Ljc3;->a:Landroid/os/Bundle;
-
-    const-string v9, "icon"
-
-    invoke-virtual {v8, v9, v7}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
-
-    new-instance v7, Lhh2;
-
-    const-string v14, "addButton([Lone/me/sdk/bottomsheet/ConfirmationBottomSheet$Button;)Lone/me/sdk/bottomsheet/ConfirmationBottomSheet$Builder;"
-
-    const/16 v15, 0x8
-
-    const/4 v10, 0x1
-
-    const-class v12, Ljc3;
-
-    const-string v13, "addButton"
-
-    const/16 v16, 0xe
-
-    move-object v9, v7
-
-    move-object v11, v2
-
-    invoke-direct/range {v9 .. v16}, Lhh2;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
-
-    new-instance v8, Lfh2;
-
-    const/16 v9, 0xc
-
-    invoke-direct {v8, v7, v9}, Lfh2;-><init>(Lz8;I)V
-
-    iget-object v1, v1, Lagf;->c:Ljava/util/List;
-
-    invoke-interface {v1, v8}, Ljava/lang/Iterable;->forEach(Ljava/util/function/Consumer;)V
-
-    invoke-virtual {v2}, Ljc3;->e()Lone/me/sdk/bottomsheet/ConfirmationBottomSheet;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v0}, Lrr3;->setTargetController(Lrr3;)V
-
-    move-object v1, v0
-
-    :goto_0
-    invoke-virtual {v1}, Lrr3;->getParentController()Lrr3;
-
-    move-result-object v2
-
     if-eqz v2, :cond_2
 
-    invoke-virtual {v1}, Lrr3;->getParentController()Lrr3;
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    move-result-object v1
+    move-result v4
 
     goto :goto_0
 
     :cond_2
-    instance-of v2, v1, Lygc;
+    if-eqz v3, :cond_3
 
-    if-eqz v2, :cond_3
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
-    check-cast v1, Lygc;
+    move-result v4
+
+    :cond_3
+    :goto_0
+    if-eqz v1, :cond_7
+
+    iget-object v2, p0, Logf;->g:Ljava/lang/Integer;
+
+    if-nez v2, :cond_4
 
     goto :goto_1
 
-    :cond_3
-    move-object v1, v4
-
-    :goto_1
-    if-eqz v1, :cond_4
-
-    invoke-interface {v1}, Lygc;->S()Lsgc;
-
-    move-result-object v4
-
     :cond_4
-    invoke-virtual {v10, v0}, Lone/me/sdk/bottomsheet/BottomSheetWidget;->y0(Lone/me/sdk/arch/Widget;)V
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    if-eqz v4, :cond_9
+    move-result v2
 
-    new-instance v0, Lvgc;
+    if-ne v2, p2, :cond_7
 
-    const/4 v12, 0x0
+    iget-object v2, p0, Logf;->h:Ljava/lang/Integer;
 
-    const/4 v15, -0x1
+    if-nez v2, :cond_5
 
-    const/4 v11, 0x0
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x0
-
-    move-object v9, v0
-
-    invoke-direct/range {v9 .. v15}, Lvgc;-><init>(Lrr3;Ljava/lang/String;Lwr3;Lwr3;ZI)V
-
-    invoke-static {v5, v0, v3, v6}, Lrf0;->k(ZLvgc;ZLjava/lang/String;)V
-
-    invoke-virtual {v4, v0}, Lsgc;->G(Lvgc;)V
-
-    goto :goto_4
+    goto :goto_1
 
     :cond_5
-    instance-of v2, v1, Lbgf;
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    if-eqz v2, :cond_a
+    move-result v2
 
-    const/4 v2, 0x5
+    if-ne v2, p3, :cond_7
 
-    invoke-static {v2, v7}, Lwn6;->g(ILjava/lang/String;)Landroid/os/Bundle;
+    iget-object v2, p0, Logf;->i:Ljava/lang/Integer;
 
-    move-result-object v2
+    if-nez v2, :cond_6
 
-    sget-object v7, Lone/me/sdk/bottomsheet/BottomSheetWidget;->B0:[Lk77;
-
-    check-cast v1, Lbgf;
-
-    iget-object v7, v1, Lbgf;->a:Lmge;
-
-    invoke-static {v7, v2, v8}, La24;->a(Lmge;Landroid/os/Bundle;I)Ljc3;
-
-    move-result-object v2
-
-    new-instance v7, Lhh2;
-
-    const-string v14, "addButton([Lone/me/sdk/bottomsheet/ConfirmationBottomSheet$Button;)Lone/me/sdk/bottomsheet/ConfirmationBottomSheet$Builder;"
-
-    const/16 v15, 0x8
-
-    const/4 v10, 0x1
-
-    const-class v12, Ljc3;
-
-    const-string v13, "addButton"
-
-    const/16 v16, 0xf
-
-    move-object v9, v7
-
-    move-object v11, v2
-
-    invoke-direct/range {v9 .. v16}, Lhh2;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
-
-    new-instance v8, Lfh2;
-
-    const/16 v9, 0xd
-
-    invoke-direct {v8, v7, v9}, Lfh2;-><init>(Lz8;I)V
-
-    iget-object v1, v1, Lbgf;->b:Ljava/util/List;
-
-    invoke-interface {v1, v8}, Ljava/lang/Iterable;->forEach(Ljava/util/function/Consumer;)V
-
-    invoke-virtual {v2}, Ljc3;->e()Lone/me/sdk/bottomsheet/ConfirmationBottomSheet;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v0}, Lrr3;->setTargetController(Lrr3;)V
-
-    move-object v1, v0
-
-    :goto_2
-    invoke-virtual {v1}, Lrr3;->getParentController()Lrr3;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_6
-
-    invoke-virtual {v1}, Lrr3;->getParentController()Lrr3;
-
-    move-result-object v1
-
-    goto :goto_2
+    goto :goto_1
 
     :cond_6
-    instance-of v2, v1, Lygc;
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    if-eqz v2, :cond_7
+    move-result v2
 
-    check-cast v1, Lygc;
+    if-ne v2, v4, :cond_7
 
     goto :goto_3
 
     :cond_7
-    move-object v1, v4
+    :goto_1
+    invoke-virtual {p0, p2, p3}, Logf;->a(II)Ldsa;
 
-    :goto_3
-    if-eqz v1, :cond_8
+    move-result-object v1
 
-    invoke-interface {v1}, Lygc;->S()Lsgc;
+    iput-object v1, p0, Logf;->f:Ldsa;
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    iput-object v2, p0, Logf;->g:Ljava/lang/Integer;
+
+    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    iput-object v2, p0, Logf;->h:Ljava/lang/Integer;
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    iput-object v2, p0, Logf;->i:Ljava/lang/Integer;
+
+    iget-object p0, p0, Logf;->b:Ltl8;
+
+    iget v2, v1, Ldsa;->g:I
+
+    iget v3, v1, Ldsa;->h:I
+
+    const-string v4, "get new transform "
+
+    const-string v5, " -> "
+
+    invoke-static {v4, p2, v0, p3, v5}, Lpg0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Ltl8;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_3
+
     :cond_8
-    invoke-virtual {v10, v0}, Lone/me/sdk/bottomsheet/BottomSheetWidget;->y0(Lone/me/sdk/arch/Widget;)V
+    :goto_2
+    iget-object p0, p0, Logf;->b:Ltl8;
 
-    if-eqz v4, :cond_9
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v0, Lvgc;
+    const-string v2, "Wrong frame size: "
 
-    const/4 v12, 0x0
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const/4 v15, -0x1
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const/4 v11, 0x0
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v13, 0x0
+    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const/4 v14, 0x0
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-object v9, v0
+    move-result-object v0
 
-    invoke-direct/range {v9 .. v15}, Lvgc;-><init>(Lrr3;Ljava/lang/String;Lwr3;Lwr3;ZI)V
+    invoke-virtual {p0, v0}, Ltl8;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v5, v0, v3, v6}, Lrf0;->k(ZLvgc;ZLjava/lang/String;)V
+    sget-object v1, Lmgf;->a:Lmgf;
 
-    invoke-virtual {v4, v0}, Lsgc;->G(Lvgc;)V
+    :goto_3
+    invoke-interface {v1, p1, p2, p3}, Lngf;->a(Landroid/graphics/Matrix;II)Lorg/webrtc/SurfaceTextureHelper$FrameGeometry;
 
-    :cond_9
-    :goto_4
-    sget-object v0, Ljue;->a:Ljue;
+    move-result-object p0
 
-    return-object v0
+    return-object p0
+.end method
 
-    :cond_a
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+.method public final b(Lorg/webrtc/MediaStream;Lorg/webrtc/MediaStreamTrack;)V
+    .locals 0
 
-    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+    check-cast p2, Lorg/webrtc/VideoTrack;
 
-    throw v0
+    sget-object p0, Lorg/webrtc/VideoTrack$ContentHint;->NONE:Lorg/webrtc/VideoTrack$ContentHint;
+
+    invoke-virtual {p2, p0}, Lorg/webrtc/VideoTrack;->setContentHint(Lorg/webrtc/VideoTrack$ContentHint;)V
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1, p2}, Lorg/webrtc/MediaStream;->addTrack(Lorg/webrtc/VideoTrack;)Z
+
+    :cond_0
+    return-void
+.end method
+
+.method public final c(Lorg/webrtc/MediaStream;Lorg/webrtc/MediaStreamTrack;)V
+    .locals 0
+
+    check-cast p2, Lorg/webrtc/VideoTrack;
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1, p2}, Lorg/webrtc/MediaStream;->removeTrack(Lorg/webrtc/VideoTrack;)Z
+
+    :cond_0
+    iget-object p1, p0, Lilf;->h:Lorg/webrtc/SurfaceTextureHelper;
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p1}, Lorg/webrtc/SurfaceTextureHelper;->dispose()V
+
+    :cond_1
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Lilf;->h:Lorg/webrtc/SurfaceTextureHelper;
+
+    return-void
+.end method
+
+.method public final g()Lorg/webrtc/MediaSource;
+    .locals 1
+
+    iget-object p0, p0, Lilf;->f:Lorg/webrtc/PeerConnectionFactory;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lorg/webrtc/PeerConnectionFactory;->createVideoSource(Z)Lorg/webrtc/VideoSource;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final h(Ljava/lang/String;Lorg/webrtc/MediaSource;)Lorg/webrtc/MediaStreamTrack;
+    .locals 0
+
+    check-cast p2, Lorg/webrtc/VideoSource;
+
+    iget-object p0, p0, Lilf;->f:Lorg/webrtc/PeerConnectionFactory;
+
+    invoke-virtual {p0, p1, p2}, Lorg/webrtc/PeerConnectionFactory;->createVideoTrack(Ljava/lang/String;Lorg/webrtc/VideoSource;)Lorg/webrtc/VideoTrack;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final j()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "VideoRecord"
+
+    return-object p0
+.end method
+
+.method public final m()V
+    .locals 1
+
+    invoke-super {p0}, Lyi3;->m()V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lilf;->i:Lj7b;
+
+    return-void
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "OkSdkVideoRecord(isScreenCast=false)"
+
+    return-object p0
+.end method
+
+.method public final u()V
+    .locals 8
+
+    iget-object v0, p0, Lyi3;->d:Ljava/lang/Object;
+
+    check-cast v0, Lorg/webrtc/MediaSource;
+
+    check-cast v0, Lorg/webrtc/VideoSource;
+
+    const-string v1, "VideoRecord"
+
+    if-nez v0, :cond_0
+
+    iget-object p0, p0, Lyi3;->c:Ljava/lang/Object;
+
+    check-cast p0, Ls1c;
+
+    const-string v0, "No source while trying to update video format"
+
+    invoke-interface {p0, v1, v0}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+
+    :cond_0
+    iget-object v2, p0, Lilf;->j:Logf;
+
+    iget-object v3, p0, Lilf;->k:Lorg/webrtc/Size;
+
+    iget v3, v3, Lorg/webrtc/Size;->width:I
+
+    iget-object v4, p0, Lilf;->k:Lorg/webrtc/Size;
+
+    iget v4, v4, Lorg/webrtc/Size;->height:I
+
+    invoke-virtual {v2, v3, v4}, Logf;->b(II)Lorg/webrtc/Size;
+
+    move-result-object v2
+
+    if-nez v2, :cond_1
+
+    new-instance v2, Lorg/webrtc/Size;
+
+    const/16 v3, 0x3c0
+
+    const/16 v4, 0x21c
+
+    invoke-direct {v2, v3, v4}, Lorg/webrtc/Size;-><init>(II)V
+
+    :cond_1
+    iget-object v3, p0, Lyi3;->c:Ljava/lang/Object;
+
+    check-cast v3, Ls1c;
+
+    iget v4, v2, Lorg/webrtc/Size;->width:I
+
+    iget v5, v2, Lorg/webrtc/Size;->height:I
+
+    const-string v6, "Apply output format adaptation: size= "
+
+    const-string v7, "x"
+
+    invoke-static {v6, v4, v5, v7}, Lv04;->h(Ljava/lang/String;IILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-interface {v3, v1, v4}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget v1, v2, Lorg/webrtc/Size;->width:I
+
+    iget v2, v2, Lorg/webrtc/Size;->height:I
+
+    iget p0, p0, Lilf;->l:F
+
+    const/high16 v3, 0x41c00000    # 24.0f
+
+    mul-float/2addr p0, v3
+
+    invoke-static {p0}, Lkhg;->x(F)I
+
+    move-result p0
+
+    invoke-virtual {v0, v1, v2, p0}, Lorg/webrtc/VideoSource;->adaptOutputFormat(III)V
+
+    return-void
 .end method

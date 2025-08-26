@@ -1,161 +1,138 @@
 .class public final Lm55;
-.super Ljava/lang/Object;
+.super Landroid/media/MediaDataSource;
 .source "SourceFile"
 
 
 # instance fields
-.field public a:Lts6;
+.field public a:J
 
-.field public b:J
+.field public final synthetic b:Lr55;
 
-.field public c:J
 
-.field public d:I
+# direct methods
+.method public constructor <init>(Lr55;)V
+    .locals 0
 
-.field public e:I
+    iput-object p1, p0, Lm55;->b:Lr55;
 
-.field public f:I
+    invoke-direct {p0}, Landroid/media/MediaDataSource;-><init>()V
 
-.field public g:Ljava/lang/String;
-
-.field public h:Ljava/lang/String;
-
-.field public i:I
-
-.field public j:Lz23;
-
-.field public k:I
-
-.field public l:I
-
-.field public m:I
-
-.field public n:Ljava/lang/String;
-
-.field public o:Ljava/lang/String;
-
-.field public p:I
-
-.field public q:Landroidx/media3/transformer/ExportException;
+    return-void
+.end method
 
 
 # virtual methods
-.method public final a()Lo55;
-    .locals 23
+.method public final close()V
+    .locals 0
 
-    move-object/from16 v0, p0
-
-    new-instance v21, Lo55;
-
-    move-object/from16 v1, v21
-
-    iget-object v2, v0, Lm55;->a:Lts6;
-
-    invoke-virtual {v2}, Lts6;->j()Le8c;
-
-    move-result-object v2
-
-    iget-wide v3, v0, Lm55;->b:J
-
-    iget-wide v5, v0, Lm55;->c:J
-
-    iget v7, v0, Lm55;->d:I
-
-    iget v8, v0, Lm55;->e:I
-
-    iget v9, v0, Lm55;->f:I
-
-    iget-object v10, v0, Lm55;->g:Ljava/lang/String;
-
-    iget-object v11, v0, Lm55;->h:Ljava/lang/String;
-
-    iget v12, v0, Lm55;->i:I
-
-    iget-object v13, v0, Lm55;->j:Lz23;
-
-    iget v14, v0, Lm55;->k:I
-
-    iget v15, v0, Lm55;->l:I
-
-    move-object/from16 v22, v1
-
-    iget v1, v0, Lm55;->m:I
-
-    move/from16 v16, v1
-
-    iget-object v1, v0, Lm55;->n:Ljava/lang/String;
-
-    move-object/from16 v17, v1
-
-    iget-object v1, v0, Lm55;->o:Ljava/lang/String;
-
-    move-object/from16 v18, v1
-
-    iget v1, v0, Lm55;->p:I
-
-    move/from16 v19, v1
-
-    iget-object v0, v0, Lm55;->q:Landroidx/media3/transformer/ExportException;
-
-    move-object/from16 v20, v0
-
-    move-object/from16 v1, v22
-
-    invoke-direct/range {v1 .. v20}, Lo55;-><init>(Le8c;JJIIILjava/lang/String;Ljava/lang/String;ILz23;IIILjava/lang/String;Ljava/lang/String;ILandroidx/media3/transformer/ExportException;)V
-
-    return-object v21
+    return-void
 .end method
 
-.method public final b()V
-    .locals 3
-
-    new-instance v0, Lts6;
-
-    const/4 v1, 0x4
-
-    invoke-direct {v0, v1}, Lms6;-><init>(I)V
-
-    iput-object v0, p0, Lm55;->a:Lts6;
-
-    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
-
-    iput-wide v0, p0, Lm55;->b:J
+.method public final getSize()J
+    .locals 2
 
     const-wide/16 v0, -0x1
 
-    iput-wide v0, p0, Lm55;->c:J
+    return-wide v0
+.end method
 
-    const v0, -0x7fffffff
+.method public final readAt(J[BII)I
+    .locals 7
 
-    iput v0, p0, Lm55;->d:I
+    if-nez p5, :cond_0
 
-    const/4 v1, -0x1
+    const/4 p0, 0x0
 
-    iput v1, p0, Lm55;->e:I
+    return p0
 
-    iput v0, p0, Lm55;->f:I
+    :cond_0
+    const-wide/16 v0, 0x0
 
-    const/4 v2, 0x0
+    cmp-long v2, p1, v0
 
-    iput-object v2, p0, Lm55;->g:Ljava/lang/String;
+    const/4 v3, -0x1
 
-    iput v0, p0, Lm55;->i:I
+    if-gez v2, :cond_1
 
-    iput-object v2, p0, Lm55;->j:Lz23;
+    return v3
 
-    iput v1, p0, Lm55;->k:I
+    :cond_1
+    :try_start_0
+    iget-wide v4, p0, Lm55;->a:J
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    iput v1, p0, Lm55;->l:I
+    cmp-long v2, v4, p1
 
-    const/4 v0, 0x0
+    iget-object v6, p0, Lm55;->b:Lr55;
 
-    iput v0, p0, Lm55;->m:I
+    if-eqz v2, :cond_3
 
-    iput-object v2, p0, Lm55;->n:Ljava/lang/String;
+    cmp-long v0, v4, v0
 
-    iput v0, p0, Lm55;->p:I
+    if-ltz v0, :cond_2
 
-    iput-object v2, p0, Lm55;->q:Landroidx/media3/transformer/ExportException;
+    :try_start_1
+    iget-object v0, v6, Ln55;->a:Ljava/io/DataInputStream;
 
-    return-void
+    invoke-virtual {v0}, Ljava/io/InputStream;->available()I
+
+    move-result v0
+
+    int-to-long v0, v0
+
+    add-long/2addr v4, v0
+
+    cmp-long v0, p1, v4
+
+    if-ltz v0, :cond_2
+
+    return v3
+
+    :cond_2
+    invoke-virtual {v6, p1, p2}, Lr55;->d(J)V
+
+    iput-wide p1, p0, Lm55;->a:J
+
+    :cond_3
+    iget-object p1, v6, Ln55;->a:Ljava/io/DataInputStream;
+
+    invoke-virtual {p1}, Ljava/io/InputStream;->available()I
+
+    move-result p1
+
+    if-le p5, p1, :cond_4
+
+    iget-object p1, v6, Ln55;->a:Ljava/io/DataInputStream;
+
+    invoke-virtual {p1}, Ljava/io/InputStream;->available()I
+
+    move-result p5
+
+    :cond_4
+    invoke-virtual {v6, p3, p4, p5}, Ln55;->read([BII)I
+
+    move-result p1
+
+    if-ltz p1, :cond_5
+
+    iget-wide p2, p0, Lm55;->a:J
+
+    int-to-long p4, p1
+
+    add-long/2addr p2, p4
+
+    iput-wide p2, p0, Lm55;->a:J
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+
+    return p1
+
+    :catch_0
+    :cond_5
+    const-wide/16 p1, -0x1
+
+    iput-wide p1, p0, Lm55;->a:J
+
+    return v3
 .end method

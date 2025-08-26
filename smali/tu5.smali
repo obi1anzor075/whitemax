@@ -1,125 +1,68 @@
-.class public final Ltu5;
+.class public final synthetic Ltu5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lv56;
+
 
 # instance fields
-.field public A:I
+.field public final synthetic a:I
 
-.field public B:I
-
-.field public C:I
-
-.field public D:I
-
-.field public a:Ljava/lang/String;
-
-.field public b:Ljava/lang/String;
-
-.field public c:Ljava/lang/String;
-
-.field public d:I
-
-.field public e:I
-
-.field public f:I
-
-.field public g:I
-
-.field public h:Ljava/lang/String;
-
-.field public i:Ly29;
-
-.field public j:Ljava/lang/String;
-
-.field public k:Ljava/lang/String;
-
-.field public l:I
-
-.field public m:Ljava/util/List;
-
-.field public n:Lwn4;
-
-.field public o:J
-
-.field public p:I
-
-.field public q:I
-
-.field public r:F
-
-.field public s:I
-
-.field public t:F
-
-.field public u:[B
-
-.field public v:I
-
-.field public w:Ly23;
-
-.field public x:I
-
-.field public y:I
-
-.field public z:I
+.field public final synthetic b:Lvu5;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 3
+.method public synthetic constructor <init>(Lvu5;I)V
+    .locals 0
+
+    iput p2, p0, Ltu5;->a:I
+
+    iput-object p1, p0, Ltu5;->b:Lvu5;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Ltu5;->f:I
-
-    iput v0, p0, Ltu5;->g:I
-
-    iput v0, p0, Ltu5;->l:I
-
-    const-wide v1, 0x7fffffffffffffffL
-
-    iput-wide v1, p0, Ltu5;->o:J
-
-    iput v0, p0, Ltu5;->p:I
-
-    iput v0, p0, Ltu5;->q:I
-
-    const/high16 v1, -0x40800000    # -1.0f
-
-    iput v1, p0, Ltu5;->r:F
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    iput v1, p0, Ltu5;->t:F
-
-    iput v0, p0, Ltu5;->v:I
-
-    iput v0, p0, Ltu5;->x:I
-
-    iput v0, p0, Ltu5;->y:I
-
-    iput v0, p0, Ltu5;->z:I
-
-    iput v0, p0, Ltu5;->C:I
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Ltu5;->D:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lvu5;
+.method public final invoke()Ljava/lang/Object;
     .locals 1
 
-    new-instance v0, Lvu5;
+    iget v0, p0, Ltu5;->a:I
 
-    invoke-direct {v0, p0}, Lvu5;-><init>(Ltu5;)V
+    iget-object p0, p0, Ltu5;->b:Lvu5;
 
-    return-object v0
+    packed-switch v0, :pswitch_data_0
+
+    iget-object p0, p0, Lvu5;->i:Lx2;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Lx2;->invoke()Ljava/lang/Object;
+
+    :cond_0
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
+
+    :pswitch_0
+    iget-object p0, p0, Lvu5;->h:Lcd1;
+
+    if-eqz p0, :cond_1
+
+    invoke-virtual {p0}, Lcd1;->invoke()Ljava/lang/Object;
+
+    :cond_1
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

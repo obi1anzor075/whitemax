@@ -1,29 +1,39 @@
 .class public final Lxab;
-.super Labb;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Lmge;
+.field public final a:Z
 
-.field public final b:Lmge;
-
-.field public final c:Ljava/util/List;
+.field public final b:Z
 
 
 # direct methods
-.method public constructor <init>(Lhge;Lhge;Ljava/util/List;)V
+.method public constructor <init>(ZZ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lxab;->a:Lmge;
+    iput-boolean p1, p0, Lxab;->a:Z
 
-    iput-object p2, p0, Lxab;->b:Lmge;
-
-    iput-object p3, p0, Lxab;->c:Ljava/util/List;
+    iput-boolean p2, p0, Lxab;->b:Z
 
     return-void
+.end method
+
+.method public static a(Lxab;Z)Lxab;
+    .locals 1
+
+    iget-boolean v0, p0, Lxab;->b:Z
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance p0, Lxab;
+
+    invoke-direct {p0, p1, v0}, Lxab;-><init>(ZZ)V
+
+    return-object p0
 .end method
 
 
@@ -49,80 +59,41 @@
     :cond_1
     check-cast p1, Lxab;
 
-    iget-object v1, p1, Lxab;->a:Lmge;
+    iget-boolean v1, p0, Lxab;->a:Z
 
-    iget-object v3, p0, Lxab;->a:Lmge;
+    iget-boolean v3, p1, Lxab;->a:Z
 
-    invoke-static {v3, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
+    if-eq v1, v3, :cond_2
 
     return v2
 
     :cond_2
-    iget-object v1, p0, Lxab;->b:Lmge;
+    iget-boolean p0, p0, Lxab;->b:Z
 
-    iget-object v3, p1, Lxab;->b:Lmge;
+    iget-boolean p1, p1, Lxab;->b:Z
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
+    if-eq p0, p1, :cond_3
 
     return v2
 
     :cond_3
-    iget-object p0, p0, Lxab;->c:Ljava/util/List;
-
-    iget-object p1, p1, Lxab;->c:Ljava/util/List;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_4
-
-    return v2
-
-    :cond_4
     return v0
 .end method
 
 .method public final hashCode()I
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lxab;->a:Lmge;
+    iget-boolean v0, p0, Lxab;->a:Z
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
 
     move-result v0
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lxab;->b:Lmge;
+    iget-boolean p0, p0, Lxab;->b:Z
 
-    if-nez v1, :cond_0
-
-    const/4 v1, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
-
-    move-result v1
-
-    :goto_0
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Lxab;->c:Ljava/util/List;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
 
     move-result p0
 
@@ -136,31 +107,27 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "ShowBottomSheet(title="
+    const-string v1, "State(isChecked="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lxab;->a:Lmge;
+    iget-boolean v1, p0, Lxab;->a:Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v1, ", description="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lxab;->b:Lmge;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", buttons="
+    const-string v1, ", isEnabled="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Lxab;->c:Ljava/util/List;
+    iget-boolean p0, p0, Lxab;->b:Z
 
-    const-string v1, ")"
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, p0, v1}, Lhr1;->i(Ljava/lang/StringBuilder;Ljava/util/List;Ljava/lang/String;)Ljava/lang/String;
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

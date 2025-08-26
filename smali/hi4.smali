@@ -1,123 +1,39 @@
 .class public final Lhi4;
-.super Ljava/lang/Object;
+.super Lp6g;
 .source "SourceFile"
 
 
-# instance fields
-.field public a:Z
+# virtual methods
+.method public final B(Ljava/lang/Object;F)V
+    .locals 0
 
-.field public b:Z
+    check-cast p1, Lii4;
 
-.field public c:Z
+    const p0, 0x461c4000    # 10000.0f
 
-.field public final d:Ljava/util/ArrayDeque;
+    div-float/2addr p2, p0
 
+    iget-object p0, p1, Lii4;->v0:Lvq4;
 
-# direct methods
-.method public constructor <init>()V
-    .locals 1
+    iput p2, p0, Lvq4;->b:F
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lhi4;->a:Z
-
-    new-instance v0, Ljava/util/ArrayDeque;
-
-    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
-
-    iput-object v0, p0, Lhi4;->d:Ljava/util/ArrayDeque;
+    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     return-void
 .end method
 
+.method public final j(Ljava/lang/Object;)F
+    .locals 0
 
-# virtual methods
-.method public final a()V
-    .locals 4
+    check-cast p1, Lii4;
 
-    iget-boolean v0, p0, Lhi4;->c:Z
+    iget-object p0, p1, Lii4;->v0:Lvq4;
 
-    if-eqz v0, :cond_0
+    iget p0, p0, Lvq4;->b:F
 
-    return-void
+    const p1, 0x461c4000    # 10000.0f
 
-    :cond_0
-    const/4 v0, 0x1
+    mul-float/2addr p0, p1
 
-    const/4 v1, 0x0
-
-    :try_start_0
-    iput-boolean v0, p0, Lhi4;->c:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_1
-    :goto_0
-    iget-object v2, p0, Lhi4;->d:Ljava/util/ArrayDeque;
-
-    :try_start_1
-    invoke-virtual {v2}, Ljava/util/ArrayDeque;->isEmpty()Z
-
-    move-result v3
-
-    xor-int/2addr v3, v0
-
-    if-eqz v3, :cond_5
-
-    iget-boolean v3, p0, Lhi4;->b:Z
-
-    if-nez v3, :cond_3
-
-    iget-boolean v3, p0, Lhi4;->a:Z
-
-    if-nez v3, :cond_2
-
-    goto :goto_1
-
-    :cond_2
-    move v3, v1
-
-    goto :goto_2
-
-    :cond_3
-    :goto_1
-    move v3, v0
-
-    :goto_2
-    if-nez v3, :cond_4
-
-    goto :goto_3
-
-    :cond_4
-    invoke-virtual {v2}, Ljava/util/ArrayDeque;->poll()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Runnable;
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v2}, Ljava/lang/Runnable;->run()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    goto :goto_4
-
-    :cond_5
-    :goto_3
-    iput-boolean v1, p0, Lhi4;->c:Z
-
-    return-void
-
-    :goto_4
-    iput-boolean v1, p0, Lhi4;->c:Z
-
-    throw v0
+    return p0
 .end method

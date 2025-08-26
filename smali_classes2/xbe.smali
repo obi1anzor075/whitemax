@@ -1,9 +1,8 @@
-.class public final Lxbe;
+.class public interface abstract Lxbe;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public a:I
-
-.field public b:J
+# virtual methods
+.method public abstract get()Ljava/lang/Object;
+.end method

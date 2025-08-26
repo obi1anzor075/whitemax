@@ -1,87 +1,91 @@
 .class public final Ljad;
-.super Llad;
+.super Lx06;
 .source "SourceFile"
 
 
-# static fields
-.field public static final h:Landroid/graphics/RectF;
-
-
 # instance fields
-.field public final b:F
+.field public final X:Lvu6;
 
-.field public final c:F
+.field public final Y:I
 
-.field public final d:F
+.field public final Z:I
 
-.field public final e:F
-
-.field public f:F
-
-.field public g:F
+.field public final o:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Landroid/graphics/RectF;
-
-    invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
-
-    sput-object v0, Ljad;->h:Landroid/graphics/RectF;
-
-    return-void
-.end method
-
-.method public constructor <init>(FFFF)V
+.method public constructor <init>(Lnv6;Landroid/util/Size;Lvu6;)V
     .locals 0
 
-    invoke-direct {p0}, Llad;-><init>()V
+    invoke-direct {p0, p1}, Lx06;-><init>(Lnv6;)V
 
-    iput p1, p0, Ljad;->b:F
+    new-instance p1, Ljava/lang/Object;
 
-    iput p2, p0, Ljad;->c:F
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
-    iput p3, p0, Ljad;->d:F
+    iput-object p1, p0, Ljad;->o:Ljava/lang/Object;
 
-    iput p4, p0, Ljad;->e:F
+    if-nez p2, :cond_0
+
+    iget-object p1, p0, Lx06;->b:Lnv6;
+
+    invoke-interface {p1}, Lnv6;->getWidth()I
+
+    move-result p1
+
+    iput p1, p0, Ljad;->Y:I
+
+    iget-object p1, p0, Lx06;->b:Lnv6;
+
+    invoke-interface {p1}, Lnv6;->getHeight()I
+
+    move-result p1
+
+    iput p1, p0, Ljad;->Z:I
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p2}, Landroid/util/Size;->getWidth()I
+
+    move-result p1
+
+    iput p1, p0, Ljad;->Y:I
+
+    invoke-virtual {p2}, Landroid/util/Size;->getHeight()I
+
+    move-result p1
+
+    iput p1, p0, Ljad;->Z:I
+
+    :goto_0
+    iput-object p3, p0, Ljad;->X:Lvu6;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/graphics/Matrix;Landroid/graphics/Path;)V
-    .locals 5
+.method public final getHeight()I
+    .locals 0
 
-    iget-object v0, p0, Llad;->a:Landroid/graphics/Matrix;
+    iget p0, p0, Ljad;->Z:I
 
-    invoke-virtual {p1, v0}, Landroid/graphics/Matrix;->invert(Landroid/graphics/Matrix;)Z
+    return p0
+.end method
 
-    invoke-virtual {p2, v0}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
+.method public final getImageInfo()Lvu6;
+    .locals 0
 
-    sget-object v0, Ljad;->h:Landroid/graphics/RectF;
+    iget-object p0, p0, Ljad;->X:Lvu6;
 
-    iget v1, p0, Ljad;->b:F
+    return-object p0
+.end method
 
-    iget v2, p0, Ljad;->c:F
+.method public final getWidth()I
+    .locals 0
 
-    iget v3, p0, Ljad;->d:F
+    iget p0, p0, Ljad;->Y:I
 
-    iget v4, p0, Ljad;->e:F
-
-    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/RectF;->set(FFFF)V
-
-    iget v1, p0, Ljad;->f:F
-
-    iget p0, p0, Ljad;->g:F
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p2, v0, v1, p0, v2}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
-
-    invoke-virtual {p2, p1}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
-
-    return-void
+    return p0
 .end method

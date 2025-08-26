@@ -4,48 +4,64 @@
 
 
 # instance fields
-.field public a:J
+.field public a:Lc10;
 
 .field public b:J
 
-.field public c:J
+.field public c:Ljava/util/Collection;
 
-.field public d:J
+.field public d:Ljava/lang/String;
 
-.field public e:I
+.field public e:Ljava/lang/String;
 
 .field public f:Ljava/lang/String;
 
+.field public g:Ljava/lang/String;
 
-# direct methods
-.method public constructor <init>(Lb10;)V
-    .locals 2
+.field public h:Ln10;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.field public i:Ljava/lang/String;
 
-    iget-wide v0, p1, Lb10;->a:J
+.field public j:Ljava/lang/String;
 
-    iput-wide v0, p0, Lb10;->a:J
+.field public k:Z
 
-    iget-wide v0, p1, Lb10;->b:J
+.field public l:I
 
-    iput-wide v0, p0, Lb10;->b:J
+.field public m:J
 
-    iget-wide v0, p1, Lb10;->c:J
+.field public n:J
 
-    iput-wide v0, p0, Lb10;->c:J
+.field public o:Ljava/lang/String;
 
-    iget-wide v0, p1, Lb10;->d:J
 
-    iput-wide v0, p0, Lb10;->d:J
+# virtual methods
+.method public final a()Ld10;
+    .locals 1
 
-    iget v0, p1, Lb10;->e:I
+    iget-object v0, p0, Lb10;->c:Ljava/util/Collection;
 
-    iput v0, p0, Lb10;->e:I
+    if-nez v0, :cond_0
 
-    iget-object p1, p1, Lb10;->f:Ljava/lang/String;
+    new-instance v0, Ljava/util/ArrayList;
 
-    iput-object p1, p0, Lb10;->f:Ljava/lang/String;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    return-void
+    iput-object v0, p0, Lb10;->c:Ljava/util/Collection;
+
+    :cond_0
+    iget-object v0, p0, Lb10;->a:Lc10;
+
+    if-nez v0, :cond_1
+
+    sget-object v0, Lc10;->a:Lc10;
+
+    iput-object v0, p0, Lb10;->a:Lc10;
+
+    :cond_1
+    new-instance v0, Ld10;
+
+    invoke-direct {v0, p0}, Ld10;-><init>(Lb10;)V
+
+    return-object v0
 .end method

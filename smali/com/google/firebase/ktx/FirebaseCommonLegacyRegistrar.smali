@@ -20,7 +20,7 @@
         "<init>",
         "()V",
         "",
-        "Lt73;",
+        "Lca3;",
         "getComponents",
         "()Ljava/util/List;",
         "com.google.firebase-firebase-common-ktx"
@@ -31,6 +31,7 @@
         0x8,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -51,7 +52,7 @@
         value = {
             "()",
             "Ljava/util/List<",
-            "Lt73;",
+            "Lca3;",
             ">;"
         }
     .end annotation
@@ -60,7 +61,7 @@
 
     const-string v0, "21.0.0"
 
-    invoke-static {p0, v0}, Lxy6;->m(Ljava/lang/String;Ljava/lang/String;)Lt73;
+    invoke-static {p0, v0}, Lfq0;->u(Ljava/lang/String;Ljava/lang/String;)Lca3;
 
     move-result-object p0
 

@@ -250,7 +250,7 @@
 
     invoke-virtual {p1, p0}, Lorg/apache/http/conn/routing/RouteTracker;->connectTarget(Z)V
 
-    goto :goto_2
+    return-void
 
     :cond_3
     iget-object p0, p0, Lorg/apache/http/impl/conn/AbstractPoolEntry;->connection:Lorg/apache/http/conn/OperatedClientConnection;
@@ -261,7 +261,6 @@
 
     invoke-virtual {p1, v0, p0}, Lorg/apache/http/conn/routing/RouteTracker;->connectProxy(Lorg/apache/http/HttpHost;Z)V
 
-    :goto_2
     return-void
 
     :cond_4

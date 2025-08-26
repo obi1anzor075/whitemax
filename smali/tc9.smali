@@ -1,405 +1,446 @@
 .class public final Ltc9;
-.super Lgxc;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lqc9;
-
-
-# static fields
-.field public static final synthetic h:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+.implements Lxv4;
 
 
 # instance fields
-.field private volatile synthetic owner$volatile:Ljava/lang/Object;
+.field public final a:Labf;
+
+.field public final b:Lvc9;
+
+.field public final c:Ljava/lang/String;
+
+.field public d:Laye;
+
+.field public e:Ljava/lang/String;
+
+.field public f:I
+
+.field public g:I
+
+.field public h:Z
+
+.field public i:Z
+
+.field public j:J
+
+.field public k:I
+
+.field public l:J
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 3
 
-    const-class v0, Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "owner$volatile"
+    const/4 v0, 0x0
 
-    const-class v2, Ltc9;
+    iput v0, p0, Ltc9;->f:I
 
-    invoke-static {v2, v0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    new-instance v1, Labf;
 
-    move-result-object v0
+    const/4 v2, 0x4
 
-    sput-object v0, Ltc9;->h:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-direct {v1, v2}, Labf;-><init>(I)V
 
-    return-void
-.end method
+    iput-object v1, p0, Ltc9;->a:Labf;
 
-.method public constructor <init>(Z)V
-    .locals 1
+    iget-object v1, v1, Labf;->a:[B
 
-    const/4 v0, 0x1
+    const/4 v2, -0x1
 
-    invoke-direct {p0, v0, p1}, Lgxc;-><init>(II)V
+    aput-byte v2, v1, v0
 
-    if-eqz p1, :cond_0
+    new-instance v0, Lvc9;
 
-    const/4 p1, 0x0
+    const/4 v1, 0x0
 
-    goto :goto_0
+    invoke-direct {v0, v1}, Lvc9;-><init>(I)V
 
-    :cond_0
-    sget-object p1, Luc9;->a:Lkotlinx/coroutines/internal/Symbol;
+    iput-object v0, p0, Ltc9;->b:Lvc9;
 
-    :goto_0
-    iput-object p1, p0, Ltc9;->owner$volatile:Ljava/lang/Object;
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
+
+    iput-wide v0, p0, Ltc9;->l:J
+
+    iput-object p1, p0, Ltc9;->c:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final d(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 6
+.method public final a()V
+    .locals 2
 
-    :cond_0
-    :goto_0
-    sget-object v0, Lgxc;->g:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->get(Ljava/lang/Object;)I
+    iput v0, p0, Ltc9;->f:I
 
-    move-result v1
+    iput v0, p0, Ltc9;->g:I
 
-    iget v2, p0, Lgxc;->a:I
+    iput-boolean v0, p0, Ltc9;->i:Z
 
-    if-le v1, v2, :cond_2
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    :cond_1
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->get(Ljava/lang/Object;)I
-
-    move-result v1
-
-    if-le v1, v2, :cond_0
-
-    invoke-virtual {v0, p0, v1, v2}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->compareAndSet(Ljava/lang/Object;II)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    goto :goto_0
-
-    :cond_2
-    sget-object v3, Ltc9;->h:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    const/4 v4, 0x1
-
-    if-gtz v1, :cond_3
-
-    move v1, v4
-
-    goto :goto_1
-
-    :cond_3
-    add-int/lit8 v5, v1, -0x1
-
-    invoke-virtual {v0, p0, v1, v5}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->compareAndSet(Ljava/lang/Object;II)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v3, p0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    const/4 v1, 0x0
-
-    :goto_1
-    sget-object v5, Ljue;->a:Ljue;
-
-    if-eqz v1, :cond_9
-
-    if-eq v1, v4, :cond_5
-
-    const/4 p0, 0x2
-
-    if-eq v1, p0, :cond_4
-
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "unexpected"
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_4
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "This mutex is already locked by the specified owner: null"
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_5
-    invoke-static {p1}, Lurd;->y(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lbm3;->n(Lkotlin/coroutines/Continuation;)Lzv1;
-
-    move-result-object p1
-
-    :try_start_0
-    new-instance v1, Lsc9;
-
-    invoke-direct {v1, p0, p1}, Lsc9;-><init>(Ltc9;Lzv1;)V
-
-    :cond_6
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->getAndDecrement(Ljava/lang/Object;)I
-
-    move-result v4
-
-    if-gt v4, v2, :cond_6
-
-    if-lez v4, :cond_7
-
-    iget-object p0, v1, Lsc9;->b:Ljava/lang/Object;
-
-    iget-object v0, v1, Lsc9;->c:Ltc9;
-
-    invoke-virtual {v3, v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    new-instance p0, Lka;
-
-    const/16 v2, 0x16
-
-    invoke-direct {p0, v0, v2, v1}, Lka;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    iget-object v0, v1, Lsc9;->a:Lzv1;
-
-    iget v1, v0, Lmi4;->resumeMode:I
-
-    new-instance v2, Lrp0;
-
-    const/4 v3, 0x2
-
-    invoke-direct {v2, v3, p0}, Lrp0;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {v0, v5, v1, v2}, Lzv1;->v(Ljava/lang/Object;ILk26;)V
-
-    goto :goto_2
-
-    :cond_7
-    invoke-virtual {p0, v1}, Lgxc;->b(Lfef;)Z
-
-    move-result v4
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v4, :cond_6
-
-    :goto_2
-    invoke-virtual {p1}, Lzv1;->m()Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Lpu3;->a:Lpu3;
-
-    if-ne p0, p1, :cond_8
-
-    goto :goto_3
-
-    :cond_8
-    move-object p0, v5
-
-    :goto_3
-    if-ne p0, p1, :cond_9
-
-    move-object v5, p0
-
-    goto :goto_4
-
-    :catchall_0
-    move-exception p0
-
-    invoke-virtual {p1}, Lzv1;->u()V
-
-    throw p0
-
-    :cond_9
-    :goto_4
-    return-object v5
-.end method
-
-.method public final e(Ljava/lang/Object;)V
-    .locals 4
-
-    :cond_0
-    :goto_0
-    sget-object v0, Lgxc;->g:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->get(Ljava/lang/Object;)I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
-
-    move-result v0
-
-    if-nez v0, :cond_4
-
-    sget-object v0, Ltc9;->h:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    sget-object v2, Luc9;->a:Lkotlinx/coroutines/internal/Symbol;
-
-    if-eq v1, v2, :cond_0
-
-    if-eq v1, p1, :cond_2
-
-    if-nez p1, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    new-instance p0, Ljava/lang/StringBuilder;
-
-    const-string v0, "This mutex is locked by "
-
-    invoke-direct {p0, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", but "
-
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p1, " is expected"
-
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_2
-    :goto_1
-    invoke-virtual {v0, p0, v1, v2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3
-
-    invoke-virtual {p0}, Lgxc;->c()V
+    iput-wide v0, p0, Ltc9;->l:J
 
     return-void
-
-    :cond_3
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    if-eq v3, v1, :cond_2
-
-    goto :goto_0
-
-    :cond_4
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "This mutex is not locked"
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
+.method public final h(Labf;)V
+    .locals 11
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object v0, p0, Ltc9;->d:Laye;
 
-    const-string v1, "Mutex@"
+    invoke-static {v0}, Lq46;->g(Ljava/lang/Object;)V
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    :goto_0
+    invoke-virtual {p1}, Labf;->c()I
 
-    invoke-static {p0}, La24;->F(Ljava/lang/Object;)Ljava/lang/String;
+    move-result v0
 
-    move-result-object v1
+    if-lez v0, :cond_c
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget v0, p0, Ltc9;->f:I
 
-    const-string v1, "[isLocked="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-object v1, Lgxc;->g:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    invoke-virtual {v1, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->get(Ljava/lang/Object;)I
-
-    move-result v1
+    iget-object v1, p0, Ltc9;->a:Labf;
 
     const/4 v2, 0x0
 
-    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
+    const/4 v3, 0x2
 
-    move-result v1
+    const/4 v4, 0x1
 
-    if-nez v1, :cond_0
+    if-eqz v0, :cond_7
 
-    const/4 v2, 0x1
+    if-eq v0, v4, :cond_3
+
+    if-ne v0, v3, :cond_2
+
+    invoke-virtual {p1}, Labf;->c()I
+
+    move-result v0
+
+    iget v1, p0, Ltc9;->k:I
+
+    iget v3, p0, Ltc9;->g:I
+
+    sub-int/2addr v1, v3
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    iget-object v1, p0, Ltc9;->d:Laye;
+
+    invoke-interface {v1, v0, p1}, Laye;->c(ILabf;)V
+
+    iget v1, p0, Ltc9;->g:I
+
+    add-int/2addr v1, v0
+
+    iput v1, p0, Ltc9;->g:I
+
+    iget v7, p0, Ltc9;->k:I
+
+    if-ge v1, v7, :cond_0
+
+    goto :goto_0
 
     :cond_0
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    iget-wide v4, p0, Ltc9;->l:J
 
-    const-string v1, ",owner="
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    cmp-long v0, v4, v0
 
-    sget-object v1, Ltc9;->h:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v1, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v3, p0, Ltc9;->d:Laye;
 
-    move-result-object p0
+    const/4 v8, 0x0
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const/4 v9, 0x0
 
-    const/16 p0, 0x5d
+    const/4 v6, 0x1
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-interface/range {v3 .. v9}, Laye;->b(JIIILyxe;)V
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-wide v0, p0, Ltc9;->l:J
 
-    move-result-object p0
+    iget-wide v3, p0, Ltc9;->j:J
 
-    return-object p0
+    add-long/2addr v0, v3
+
+    iput-wide v0, p0, Ltc9;->l:J
+
+    :cond_1
+    iput v2, p0, Ltc9;->g:I
+
+    iput v2, p0, Ltc9;->f:I
+
+    goto :goto_0
+
+    :cond_2
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
+
+    throw p0
+
+    :cond_3
+    invoke-virtual {p1}, Labf;->c()I
+
+    move-result v0
+
+    iget v5, p0, Ltc9;->g:I
+
+    const/4 v6, 0x4
+
+    rsub-int/lit8 v5, v5, 0x4
+
+    invoke-static {v0, v5}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    iget-object v5, v1, Labf;->a:[B
+
+    iget v7, p0, Ltc9;->g:I
+
+    invoke-virtual {p1, v7, v5, v0}, Labf;->e(I[BI)V
+
+    iget v5, p0, Ltc9;->g:I
+
+    add-int/2addr v5, v0
+
+    iput v5, p0, Ltc9;->g:I
+
+    if-ge v5, v6, :cond_4
+
+    goto :goto_0
+
+    :cond_4
+    invoke-virtual {v1, v2}, Labf;->E(I)V
+
+    invoke-virtual {v1}, Labf;->f()I
+
+    move-result v0
+
+    iget-object v5, p0, Ltc9;->b:Lvc9;
+
+    invoke-virtual {v5, v0}, Lvc9;->a(I)Z
+
+    move-result v0
+
+    if-nez v0, :cond_5
+
+    iput v2, p0, Ltc9;->g:I
+
+    iput v4, p0, Ltc9;->f:I
+
+    goto/16 :goto_0
+
+    :cond_5
+    iget v0, v5, Lvc9;->d:I
+
+    iput v0, p0, Ltc9;->k:I
+
+    iget-boolean v0, p0, Ltc9;->h:Z
+
+    if-nez v0, :cond_6
+
+    iget v0, v5, Lvc9;->h:I
+
+    int-to-long v7, v0
+
+    const-wide/32 v9, 0xf4240
+
+    mul-long/2addr v7, v9
+
+    iget v0, v5, Lvc9;->e:I
+
+    int-to-long v9, v0
+
+    div-long/2addr v7, v9
+
+    iput-wide v7, p0, Ltc9;->j:J
+
+    new-instance v7, Lbz5;
+
+    invoke-direct {v7}, Lbz5;-><init>()V
+
+    iget-object v8, p0, Ltc9;->e:Ljava/lang/String;
+
+    iput-object v8, v7, Lbz5;->a:Ljava/lang/String;
+
+    iget-object v8, v5, Lvc9;->c:Ljava/lang/String;
+
+    iput-object v8, v7, Lbz5;->k:Ljava/lang/String;
+
+    const/16 v8, 0x1000
+
+    iput v8, v7, Lbz5;->l:I
+
+    iget v5, v5, Lvc9;->f:I
+
+    iput v5, v7, Lbz5;->x:I
+
+    iput v0, v7, Lbz5;->y:I
+
+    iget-object v0, p0, Ltc9;->c:Ljava/lang/String;
+
+    iput-object v0, v7, Lbz5;->c:Ljava/lang/String;
+
+    new-instance v0, Ldz5;
+
+    invoke-direct {v0, v7}, Ldz5;-><init>(Lbz5;)V
+
+    iget-object v5, p0, Ltc9;->d:Laye;
+
+    invoke-interface {v5, v0}, Laye;->d(Ldz5;)V
+
+    iput-boolean v4, p0, Ltc9;->h:Z
+
+    :cond_6
+    invoke-virtual {v1, v2}, Labf;->E(I)V
+
+    iget-object v0, p0, Ltc9;->d:Laye;
+
+    invoke-interface {v0, v6, v1}, Laye;->c(ILabf;)V
+
+    iput v3, p0, Ltc9;->f:I
+
+    goto/16 :goto_0
+
+    :cond_7
+    iget-object v0, p1, Labf;->a:[B
+
+    iget v5, p1, Labf;->b:I
+
+    iget v6, p1, Labf;->c:I
+
+    :goto_1
+    if-ge v5, v6, :cond_b
+
+    aget-byte v7, v0, v5
+
+    and-int/lit16 v8, v7, 0xff
+
+    const/16 v9, 0xff
+
+    if-ne v8, v9, :cond_8
+
+    move v8, v4
+
+    goto :goto_2
+
+    :cond_8
+    move v8, v2
+
+    :goto_2
+    iget-boolean v9, p0, Ltc9;->i:Z
+
+    if-eqz v9, :cond_9
+
+    and-int/lit16 v7, v7, 0xe0
+
+    const/16 v9, 0xe0
+
+    if-ne v7, v9, :cond_9
+
+    move v7, v4
+
+    goto :goto_3
+
+    :cond_9
+    move v7, v2
+
+    :goto_3
+    iput-boolean v8, p0, Ltc9;->i:Z
+
+    if-eqz v7, :cond_a
+
+    add-int/lit8 v6, v5, 0x1
+
+    invoke-virtual {p1, v6}, Labf;->E(I)V
+
+    iput-boolean v2, p0, Ltc9;->i:Z
+
+    iget-object v1, v1, Labf;->a:[B
+
+    aget-byte v0, v0, v5
+
+    aput-byte v0, v1, v4
+
+    iput v3, p0, Ltc9;->g:I
+
+    iput v4, p0, Ltc9;->f:I
+
+    goto/16 :goto_0
+
+    :cond_a
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_1
+
+    :cond_b
+    invoke-virtual {p1, v6}, Labf;->E(I)V
+
+    goto/16 :goto_0
+
+    :cond_c
+    return-void
+.end method
+
+.method public final i(IJ)V
+    .locals 2
+
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
+
+    cmp-long p1, p2, v0
+
+    if-eqz p1, :cond_0
+
+    iput-wide p2, p0, Ltc9;->l:J
+
+    :cond_0
+    return-void
+.end method
+
+.method public final j()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final l(Lz95;Lk1f;)V
+    .locals 1
+
+    invoke-virtual {p2}, Lk1f;->a()V
+
+    invoke-virtual {p2}, Lk1f;->b()V
+
+    iget-object v0, p2, Lk1f;->f:Ljava/lang/String;
+
+    iput-object v0, p0, Ltc9;->e:Ljava/lang/String;
+
+    invoke-virtual {p2}, Lk1f;->b()V
+
+    iget p2, p2, Lk1f;->e:I
+
+    const/4 v0, 0x1
+
+    invoke-interface {p1, p2, v0}, Lz95;->A(II)Laye;
+
+    move-result-object p1
+
+    iput-object p1, p0, Ltc9;->d:Laye;
+
+    return-void
 .end method

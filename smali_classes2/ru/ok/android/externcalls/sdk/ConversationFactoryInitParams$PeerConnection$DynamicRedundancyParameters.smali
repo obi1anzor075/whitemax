@@ -112,7 +112,7 @@
 
     move-object v0, p0
 
-    invoke-direct/range {v0 .. v10}, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;-><init>(ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;ILx54;)V
+    invoke-direct/range {v0 .. v10}, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;-><init>(ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;ILl94;)V
 
     return-void
 .end method
@@ -150,253 +150,192 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;ILx54;)V
-    .locals 9
+.method public synthetic constructor <init>(ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;ILl94;)V
+    .locals 1
 
-    move/from16 v0, p9
+    and-int/lit8 p10, p9, 0x1
 
-    and-int/lit8 v1, v0, 0x1
+    if-eqz p10, :cond_0
 
-    if-eqz v1, :cond_0
+    const/4 p1, 0x0
 
-    const/4 v1, 0x0
+    :cond_0
+    and-int/lit8 p10, p9, 0x2
+
+    const/4 v0, 0x0
+
+    if-eqz p10, :cond_1
+
+    move-object p2, v0
+
+    :cond_1
+    and-int/lit8 p10, p9, 0x4
+
+    if-eqz p10, :cond_2
+
+    move-object p3, v0
+
+    :cond_2
+    and-int/lit8 p10, p9, 0x8
+
+    if-eqz p10, :cond_3
+
+    move-object p4, v0
+
+    :cond_3
+    and-int/lit8 p10, p9, 0x10
+
+    if-eqz p10, :cond_4
+
+    move-object p5, v0
+
+    :cond_4
+    and-int/lit8 p10, p9, 0x20
+
+    if-eqz p10, :cond_5
+
+    move-object p6, v0
+
+    :cond_5
+    and-int/lit8 p10, p9, 0x40
+
+    if-eqz p10, :cond_6
+
+    move-object p7, v0
+
+    :cond_6
+    and-int/lit16 p9, p9, 0x80
+
+    if-eqz p9, :cond_7
+
+    move-object p10, v0
+
+    move-object p8, p6
+
+    move-object p9, p7
+
+    move-object p6, p4
+
+    move-object p7, p5
+
+    move-object p4, p2
+
+    move-object p5, p3
+
+    move-object p2, p0
+
+    move p3, p1
 
     goto :goto_0
 
-    :cond_0
-    move v1, p1
-
-    :goto_0
-    and-int/lit8 v2, v0, 0x2
-
-    const/4 v3, 0x0
-
-    if-eqz v2, :cond_1
-
-    move-object v2, v3
-
-    goto :goto_1
-
-    :cond_1
-    move-object v2, p2
-
-    :goto_1
-    and-int/lit8 v4, v0, 0x4
-
-    if-eqz v4, :cond_2
-
-    move-object v4, v3
-
-    goto :goto_2
-
-    :cond_2
-    move-object v4, p3
-
-    :goto_2
-    and-int/lit8 v5, v0, 0x8
-
-    if-eqz v5, :cond_3
-
-    move-object v5, v3
-
-    goto :goto_3
-
-    :cond_3
-    move-object v5, p4
-
-    :goto_3
-    and-int/lit8 v6, v0, 0x10
-
-    if-eqz v6, :cond_4
-
-    move-object v6, v3
-
-    goto :goto_4
-
-    :cond_4
-    move-object v6, p5
-
-    :goto_4
-    and-int/lit8 v7, v0, 0x20
-
-    if-eqz v7, :cond_5
-
-    move-object v7, v3
-
-    goto :goto_5
-
-    :cond_5
-    move-object v7, p6
-
-    :goto_5
-    and-int/lit8 v8, v0, 0x40
-
-    if-eqz v8, :cond_6
-
-    move-object v8, v3
-
-    goto :goto_6
-
-    :cond_6
-    move-object/from16 v8, p7
-
-    :goto_6
-    and-int/lit16 v0, v0, 0x80
-
-    if-eqz v0, :cond_7
-
-    goto :goto_7
-
     :cond_7
-    move-object/from16 v3, p8
+    move-object p10, p8
 
-    :goto_7
-    move p1, v1
+    move-object p9, p7
 
-    move-object p2, v2
+    move-object p7, p5
 
-    move-object p3, v4
+    move-object p8, p6
 
-    move-object p4, v5
+    move-object p5, p3
 
-    move-object p5, v6
+    move-object p6, p4
 
-    move-object p6, v7
+    move p3, p1
 
-    move-object/from16 p7, v8
+    move-object p4, p2
 
-    move-object/from16 p8, v3
+    move-object p2, p0
 
     .line 11
-    invoke-direct/range {p0 .. p8}, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;-><init>(ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;)V
+    :goto_0
+    invoke-direct/range {p2 .. p10}, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;-><init>(ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;)V
 
     return-void
 .end method
 
 .method public static synthetic copy$default(Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;ILjava/lang/Object;)Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;
-    .locals 9
+    .locals 0
 
-    move-object v0, p0
+    and-int/lit8 p10, p9, 0x1
 
-    move/from16 v1, p9
+    if-eqz p10, :cond_0
 
-    and-int/lit8 v2, v1, 0x1
-
-    if-eqz v2, :cond_0
-
-    iget-boolean v2, v0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->isEnabled:Z
-
-    goto :goto_0
+    iget-boolean p1, p0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->isEnabled:Z
 
     :cond_0
-    move v2, p1
+    and-int/lit8 p10, p9, 0x2
 
-    :goto_0
-    and-int/lit8 v3, v1, 0x2
+    if-eqz p10, :cond_1
 
-    if-eqz v3, :cond_1
-
-    iget-object v3, v0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->minAudioBitrateBps:Ljava/lang/Integer;
-
-    goto :goto_1
+    iget-object p2, p0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->minAudioBitrateBps:Ljava/lang/Integer;
 
     :cond_1
-    move-object v3, p2
+    and-int/lit8 p10, p9, 0x4
 
-    :goto_1
-    and-int/lit8 v4, v1, 0x4
+    if-eqz p10, :cond_2
 
-    if-eqz v4, :cond_2
-
-    iget-object v4, v0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->dREDSwitchBitrateBps:Ljava/lang/Integer;
-
-    goto :goto_2
+    iget-object p3, p0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->dREDSwitchBitrateBps:Ljava/lang/Integer;
 
     :cond_2
-    move-object v4, p3
+    and-int/lit8 p10, p9, 0x8
 
-    :goto_2
-    and-int/lit8 v5, v1, 0x8
+    if-eqz p10, :cond_3
 
-    if-eqz v5, :cond_3
-
-    iget-object v5, v0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->isNoLACEEnabled:Ljava/lang/Boolean;
-
-    goto :goto_3
+    iget-object p4, p0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->isNoLACEEnabled:Ljava/lang/Boolean;
 
     :cond_3
-    move-object v5, p4
+    and-int/lit8 p10, p9, 0x10
 
-    :goto_3
-    and-int/lit8 v6, v1, 0x10
+    if-eqz p10, :cond_4
 
-    if-eqz v6, :cond_4
-
-    iget-object v6, v0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->isDREDWithFecEnabled:Ljava/lang/Boolean;
-
-    goto :goto_4
+    iget-object p5, p0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->isDREDWithFecEnabled:Ljava/lang/Boolean;
 
     :cond_4
-    move-object v6, p5
+    and-int/lit8 p10, p9, 0x20
 
-    :goto_4
-    and-int/lit8 v7, v1, 0x20
+    if-eqz p10, :cond_5
 
-    if-eqz v7, :cond_5
-
-    iget-object v7, v0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->isDREDLowBitrateEnabled:Ljava/lang/Boolean;
-
-    goto :goto_5
+    iget-object p6, p0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->isDREDLowBitrateEnabled:Ljava/lang/Boolean;
 
     :cond_5
-    move-object v7, p6
+    and-int/lit8 p10, p9, 0x40
 
-    :goto_5
-    and-int/lit8 v8, v1, 0x40
+    if-eqz p10, :cond_6
 
-    if-eqz v8, :cond_6
-
-    iget-object v8, v0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->pTimeMinMs:Ljava/lang/Integer;
-
-    goto :goto_6
+    iget-object p7, p0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->pTimeMinMs:Ljava/lang/Integer;
 
     :cond_6
-    move-object/from16 v8, p7
+    and-int/lit16 p9, p9, 0x80
 
-    :goto_6
-    and-int/lit16 v1, v1, 0x80
+    if-eqz p9, :cond_7
 
-    if-eqz v1, :cond_7
-
-    iget-object v1, v0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->pTimeMaxMs:Ljava/lang/Integer;
-
-    goto :goto_7
+    iget-object p8, p0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->pTimeMaxMs:Ljava/lang/Integer;
 
     :cond_7
-    move-object/from16 v1, p8
+    move-object p9, p7
 
-    :goto_7
-    move p1, v2
+    move-object p10, p8
 
-    move-object p2, v3
+    move-object p7, p5
 
-    move-object p3, v4
+    move-object p8, p6
 
-    move-object p4, v5
+    move-object p5, p3
 
-    move-object p5, v6
+    move-object p6, p4
 
-    move-object p6, v7
+    move p3, p1
 
-    move-object/from16 p7, v8
+    move-object p4, p2
 
-    move-object/from16 p8, v1
+    move-object p2, p0
 
-    invoke-virtual/range {p0 .. p8}, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->copy(ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;)Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;
+    invoke-virtual/range {p2 .. p10}, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->copy(ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;)Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 
@@ -466,31 +405,13 @@
 .end method
 
 .method public final copy(ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;)Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;
-    .locals 10
+    .locals 0
 
-    new-instance v9, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;
+    new-instance p0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;
 
-    move-object v0, v9
+    invoke-direct/range {p0 .. p8}, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;-><init>(ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;)V
 
-    move v1, p1
-
-    move-object v2, p2
-
-    move-object v3, p3
-
-    move-object v4, p4
-
-    move-object v5, p5
-
-    move-object/from16 v6, p6
-
-    move-object/from16 v7, p7
-
-    move-object/from16 v8, p8
-
-    invoke-direct/range {v0 .. v8}, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;-><init>(ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;)V
-
-    return-object v9
+    return-object p0
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
@@ -527,7 +448,7 @@
 
     iget-object v3, p1, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->minAudioBitrateBps:Ljava/lang/Integer;
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -540,7 +461,7 @@
 
     iget-object v3, p1, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->dREDSwitchBitrateBps:Ljava/lang/Integer;
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -553,7 +474,7 @@
 
     iget-object v3, p1, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->isNoLACEEnabled:Ljava/lang/Boolean;
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -566,7 +487,7 @@
 
     iget-object v3, p1, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->isDREDWithFecEnabled:Ljava/lang/Boolean;
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -579,7 +500,7 @@
 
     iget-object v3, p1, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->isDREDLowBitrateEnabled:Ljava/lang/Boolean;
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -592,7 +513,7 @@
 
     iget-object v3, p1, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->pTimeMinMs:Ljava/lang/Integer;
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -605,7 +526,7 @@
 
     iget-object p1, p1, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$DynamicRedundancyParameters;->pTimeMaxMs:Ljava/lang/Integer;
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 

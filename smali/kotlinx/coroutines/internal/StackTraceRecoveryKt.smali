@@ -18,10 +18,10 @@
         "Lkotlin/coroutines/Continuation;",
         "continuation",
         "(Ljava/lang/Throwable;Lkotlin/coroutines/Continuation;)Ljava/lang/Throwable;",
-        "Lqu3;",
+        "Lqx3;",
         "Lkotlinx/coroutines/internal/CoroutineStackFrame;",
         "recoverFromStackFrame",
-        "(Ljava/lang/Throwable;Lqu3;)Ljava/lang/Throwable;",
+        "(Ljava/lang/Throwable;Lqx3;)Ljava/lang/Throwable;",
         "cause",
         "result",
         "Ljava/util/ArrayDeque;",
@@ -30,12 +30,12 @@
         "resultStackTrace",
         "createFinalException",
         "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/util/ArrayDeque;)Ljava/lang/Throwable;",
-        "Lwia;",
+        "Ldna;",
         "",
         "causeAndStacktrace",
-        "(Ljava/lang/Throwable;)Lwia;",
+        "(Ljava/lang/Throwable;)Ldna;",
         "recoveredStacktrace",
-        "Ljue;",
+        "Le5f;",
         "mergeRecoveredTraces",
         "([Ljava/lang/StackTraceElement;Ljava/util/ArrayDeque;)V",
         "",
@@ -44,7 +44,7 @@
         "unwrap",
         "unwrapImpl",
         "createStackTrace",
-        "(Lqu3;)Ljava/util/ArrayDeque;",
+        "(Lqx3;)Ljava/util/ArrayDeque;",
         "",
         "isArtificial",
         "(Ljava/lang/StackTraceElement;)Z",
@@ -76,6 +76,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -99,20 +100,20 @@
 
     invoke-direct {v0}, Ljava/lang/Exception;-><init>()V
 
-    const-class v1, Lgwf;
+    const-class v1, Lrbg;
 
     invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lete;->b(Ljava/lang/Exception;Ljava/lang/String;)Ljava/lang/StackTraceElement;
+    invoke-static {v0, v1}, Liz7;->a(Ljava/lang/Exception;Ljava/lang/String;)Ljava/lang/StackTraceElement;
 
     move-result-object v0
 
     sput-object v0, Lkotlinx/coroutines/internal/StackTraceRecoveryKt;->ARTIFICIAL_FRAME:Ljava/lang/StackTraceElement;
 
     :try_start_0
-    const-class v0, Lbh0;
+    const-class v0, Lbi0;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
 
@@ -125,14 +126,14 @@
     :catchall_0
     move-exception v0
 
-    new-instance v1, Lkcc;
+    new-instance v1, Ljhc;
 
-    invoke-direct {v1, v0}, Lkcc;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v1, v0}, Ljhc;-><init>(Ljava/lang/Throwable;)V
 
     move-object v0, v1
 
     :goto_0
-    invoke-static {v0}, Lmcc;->a(Ljava/lang/Object;)Ljava/lang/Throwable;
+    invoke-static {v0}, Llhc;->a(Ljava/lang/Object;)Ljava/lang/Throwable;
 
     move-result-object v1
 
@@ -162,14 +163,14 @@
     :catchall_1
     move-exception v0
 
-    new-instance v1, Lkcc;
+    new-instance v1, Ljhc;
 
-    invoke-direct {v1, v0}, Lkcc;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v1, v0}, Ljhc;-><init>(Ljava/lang/Throwable;)V
 
     move-object v0, v1
 
     :goto_2
-    invoke-static {v0}, Lmcc;->a(Ljava/lang/Object;)Ljava/lang/Throwable;
+    invoke-static {v0}, Llhc;->a(Ljava/lang/Object;)Ljava/lang/Throwable;
 
     move-result-object v1
 
@@ -200,24 +201,24 @@
     return-void
 .end method
 
-.method public static final synthetic access$recoverFromStackFrame(Ljava/lang/Throwable;Lqu3;)Ljava/lang/Throwable;
+.method public static final synthetic access$recoverFromStackFrame(Ljava/lang/Throwable;Lqx3;)Ljava/lang/Throwable;
     .locals 0
 
-    invoke-static {p0, p1}, Lkotlinx/coroutines/internal/StackTraceRecoveryKt;->recoverFromStackFrame(Ljava/lang/Throwable;Lqu3;)Ljava/lang/Throwable;
+    invoke-static {p0, p1}, Lkotlinx/coroutines/internal/StackTraceRecoveryKt;->recoverFromStackFrame(Ljava/lang/Throwable;Lqx3;)Ljava/lang/Throwable;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method private static final causeAndStacktrace(Ljava/lang/Throwable;)Lwia;
+.method private static final causeAndStacktrace(Ljava/lang/Throwable;)Ldna;
     .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
             "Ljava/lang/Throwable;",
             ">(TE;)",
-            "Lwia;"
+            "Ldna;"
         }
     .end annotation
 
@@ -262,11 +263,11 @@
 
     if-eqz v5, :cond_0
 
-    new-instance p0, Lwia;
+    new-instance p0, Ldna;
 
-    invoke-direct {p0, v0, v2}, Lwia;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {p0, v0, v2}, Ldna;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    goto :goto_2
+    return-object p0
 
     :cond_0
     add-int/lit8 v4, v4, 0x1
@@ -276,26 +277,20 @@
     :cond_1
     new-array v0, v1, [Ljava/lang/StackTraceElement;
 
-    new-instance v1, Lwia;
+    new-instance v1, Ldna;
 
-    invoke-direct {v1, p0, v0}, Lwia;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v1, p0, v0}, Ldna;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    :goto_1
-    move-object p0, v1
-
-    goto :goto_2
+    return-object v1
 
     :cond_2
     new-array v0, v1, [Ljava/lang/StackTraceElement;
 
-    new-instance v1, Lwia;
+    new-instance v1, Ldna;
 
-    invoke-direct {v1, p0, v0}, Lwia;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v1, p0, v0}, Ldna;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    goto :goto_1
-
-    :goto_2
-    return-object p0
+    return-object v1
 .end method
 
 .method private static final createFinalException(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/util/ArrayDeque;)Ljava/lang/Throwable;
@@ -399,12 +394,12 @@
     return-object p1
 .end method
 
-.method private static final createStackTrace(Lqu3;)Ljava/util/ArrayDeque;
+.method private static final createStackTrace(Lqx3;)Ljava/util/ArrayDeque;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lqu3;",
+            "Lqx3;",
             ")",
             "Ljava/util/ArrayDeque<",
             "Ljava/lang/StackTraceElement;",
@@ -416,7 +411,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
 
-    invoke-interface {p0}, Lqu3;->getStackTraceElement()Ljava/lang/StackTraceElement;
+    invoke-interface {p0}, Lqx3;->getStackTraceElement()Ljava/lang/StackTraceElement;
 
     move-result-object v1
 
@@ -426,7 +421,7 @@
 
     :cond_0
     :goto_0
-    invoke-interface {p0}, Lqu3;->getCallerFrame()Lqu3;
+    invoke-interface {p0}, Lqx3;->getCallerFrame()Lqx3;
 
     move-result-object p0
 
@@ -435,7 +430,7 @@
     return-object v0
 
     :cond_1
-    invoke-interface {p0}, Lqu3;->getStackTraceElement()Ljava/lang/StackTraceElement;
+    invoke-interface {p0}, Lqx3;->getStackTraceElement()Ljava/lang/StackTraceElement;
 
     move-result-object v1
 
@@ -467,7 +462,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -481,7 +476,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -495,7 +490,7 @@
 
     move-result-object p1
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -503,12 +498,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -528,13 +522,13 @@
 
     move-result-object v2
 
-    invoke-static {p1, v2}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p1, v2}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    goto :goto_1
+    return v1
 
     :cond_0
     add-int/lit8 v1, v1, 0x1
@@ -542,10 +536,9 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, -0x1
+    const/4 p0, -0x1
 
-    :goto_1
-    return v1
+    return p0
 .end method
 
 .method public static final initCause(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
@@ -563,11 +556,11 @@
 
     move-result-object p0
 
-    const/4 v0, 0x0
+    const-string v0, "_COROUTINE"
 
-    const-string v1, "_COROUTINE"
+    const/4 v1, 0x0
 
-    invoke-static {p0, v1, v0}, Lp0e;->Q(Ljava/lang/String;Ljava/lang/String;Z)Z
+    invoke-static {p0, v0, v1}, Lr8e;->w0(Ljava/lang/String;Ljava/lang/String;Z)Z
 
     move-result p0
 
@@ -682,27 +675,27 @@
     throw p0
 .end method
 
-.method private static final recoverFromStackFrame(Ljava/lang/Throwable;Lqu3;)Ljava/lang/Throwable;
+.method private static final recoverFromStackFrame(Ljava/lang/Throwable;Lqx3;)Ljava/lang/Throwable;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
             "Ljava/lang/Throwable;",
             ">(TE;",
-            "Lqu3;",
+            "Lqx3;",
             ")TE;"
         }
     .end annotation
 
-    invoke-static {p0}, Lkotlinx/coroutines/internal/StackTraceRecoveryKt;->causeAndStacktrace(Ljava/lang/Throwable;)Lwia;
+    invoke-static {p0}, Lkotlinx/coroutines/internal/StackTraceRecoveryKt;->causeAndStacktrace(Ljava/lang/Throwable;)Ldna;
 
     move-result-object v0
 
-    iget-object v1, v0, Lwia;->a:Ljava/lang/Object;
+    iget-object v1, v0, Ldna;->a:Ljava/lang/Object;
 
     check-cast v1, Ljava/lang/Throwable;
 
-    iget-object v0, v0, Lwia;->b:Ljava/lang/Object;
+    iget-object v0, v0, Ldna;->b:Ljava/lang/Object;
 
     check-cast v0, [Ljava/lang/StackTraceElement;
 
@@ -712,10 +705,10 @@
 
     if-nez v2, :cond_0
 
-    return-object p0
+    goto :goto_0
 
     :cond_0
-    invoke-static {p1}, Lkotlinx/coroutines/internal/StackTraceRecoveryKt;->createStackTrace(Lqu3;)Ljava/util/ArrayDeque;
+    invoke-static {p1}, Lkotlinx/coroutines/internal/StackTraceRecoveryKt;->createStackTrace(Lqx3;)Ljava/util/ArrayDeque;
 
     move-result-object p1
 
@@ -725,6 +718,7 @@
 
     if-eqz v3, :cond_1
 
+    :goto_0
     return-object p0
 
     :cond_1
@@ -805,7 +799,7 @@
 
     move-result-object v5
 
-    invoke-static {v6, v5}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v6, v5}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v5
 

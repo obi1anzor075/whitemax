@@ -1,74 +1,83 @@
-.class public final Lv71;
-.super Ll5e;
+.class public final synthetic Lv71;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lx56;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic a:I
+
+.field public final synthetic b:Lw71;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lw71;I)V
+    .locals 0
+
+    iput p2, p0, Lv71;->a:I
+
+    iput-object p1, p0, Lv71;->b:Lw71;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Lou3;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lv71;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lv71;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lv71;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    new-instance p0, Lv71;
+    iget v0, p0, Lv71;->a:I
 
-    const/4 v0, 0x2
+    check-cast p1, Lyha;
 
-    invoke-direct {p0, v0, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    packed-switch v0, :pswitch_data_0
 
-    iput-object p1, p0, Lv71;->X:Ljava/lang/Object;
+    sget-object p1, Lqp4;->q0:Lap9;
 
-    return-object p0
-.end method
+    iget-object p0, p0, Lv71;->b:Lw71;
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    iget-object p0, p0, Lccc;->a:Landroid/view/View;
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-virtual {p1, p0}, Lap9;->h(Landroid/view/View;)Lyha;
 
-    iget-object p0, p0, Lv71;->X:Ljava/lang/Object;
+    move-result-object p0
 
-    check-cast p0, Lou3;
+    invoke-interface {p0}, Lyha;->b()Lfe0;
 
-    new-instance p1, Lu71;
+    const/4 p0, 0x0
 
-    const/4 v0, 0x2
-
-    const/4 v1, 0x0
-
-    invoke-direct {p1, v0, v1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    const/4 v0, 0x3
-
-    invoke-static {p0, v1, v1, p1, v0}, Lxs7;->E(Lou3;Lhu3;Lru3;Li26;I)Lqod;
+    :goto_0
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
 
     return-object p0
+
+    :pswitch_0
+    sget-object p1, Lqp4;->q0:Lap9;
+
+    iget-object p0, p0, Lv71;->b:Lw71;
+
+    iget-object p0, p0, Lccc;->a:Landroid/view/View;
+
+    invoke-virtual {p1, p0}, Lap9;->h(Landroid/view/View;)Lyha;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lyha;->getIcon()Lds6;
+
+    const/4 p0, -0x1
+
+    goto :goto_0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

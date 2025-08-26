@@ -1,88 +1,148 @@
-.class public final Ly20;
-.super Landroid/media/AudioDeviceCallback;
+.class public abstract Ly20;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic a:La30;
-
-
 # direct methods
-.method public constructor <init>(La30;)V
-    .locals 0
+.method private static a()Lhx6;
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lhx6;"
+        }
+    .end annotation
 
-    iput-object p1, p0, Ly20;->a:La30;
+    new-instance v0, Lgx6;
 
-    invoke-direct {p0}, Landroid/media/AudioDeviceCallback;-><init>()V
+    const/4 v1, 0x4
 
-    return-void
-.end method
+    invoke-direct {v0, v1}, Low6;-><init>(I)V
 
+    const/16 v1, 0x8
 
-# virtual methods
-.method public final onAudioDevicesAdded([Landroid/media/AudioDeviceInfo;)V
-    .locals 2
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget-object p0, p0, Ly20;->a:La30;
+    move-result-object v1
 
-    iget-object p1, p0, La30;->b:Ljava/lang/Object;
+    const/4 v2, 0x7
 
-    check-cast p1, Landroid/content/Context;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget-object v0, p0, La30;->y0:Ljava/lang/Object;
+    move-result-object v2
 
-    check-cast v0, Lk20;
+    filled-new-array {v1, v2}, [Ljava/lang/Integer;
 
-    iget-object v1, p0, La30;->x0:Ljava/lang/Object;
+    move-result-object v1
 
-    check-cast v1, Li30;
+    invoke-virtual {v0, v1}, Low6;->b([Ljava/lang/Object;)V
 
-    invoke-static {p1, v0, v1}, Lw20;->b(Landroid/content/Context;Lk20;Li30;)Lw20;
+    sget v1, Lpaf;->a:I
 
-    move-result-object p1
+    const/16 v2, 0x1f
 
-    invoke-virtual {p0, p1}, La30;->g(Lw20;)V
+    if-lt v1, v2, :cond_0
 
-    return-void
-.end method
+    const/16 v2, 0x1a
 
-.method public final onAudioDevicesRemoved([Landroid/media/AudioDeviceInfo;)V
-    .locals 2
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget-object p0, p0, Ly20;->a:La30;
+    move-result-object v2
 
-    iget-object v0, p0, La30;->x0:Ljava/lang/Object;
+    const/16 v3, 0x1b
 
-    check-cast v0, Li30;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {p1, v0}, Loze;->m([Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result-object v3
 
-    move-result p1
+    filled-new-array {v2, v3}, [Ljava/lang/Integer;
 
-    if-eqz p1, :cond_0
+    move-result-object v2
 
-    const/4 p1, 0x0
-
-    iput-object p1, p0, La30;->x0:Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Low6;->b([Ljava/lang/Object;)V
 
     :cond_0
-    iget-object p1, p0, La30;->b:Ljava/lang/Object;
+    const/16 v2, 0x21
 
-    check-cast p1, Landroid/content/Context;
+    if-lt v1, v2, :cond_1
 
-    iget-object v0, p0, La30;->y0:Ljava/lang/Object;
+    const/16 v1, 0x1e
 
-    check-cast v0, Lk20;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget-object v1, p0, La30;->x0:Ljava/lang/Object;
+    move-result-object v1
 
-    check-cast v1, Li30;
+    invoke-virtual {v0, v1}, Low6;->a(Ljava/lang/Object;)V
 
-    invoke-static {p1, v0, v1}, Lw20;->b(Landroid/content/Context;Lk20;Li30;)Lw20;
+    :cond_1
+    invoke-virtual {v0}, Lgx6;->i()Lhx6;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static b(Landroid/media/AudioManager;Lr30;)Z
+    .locals 5
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    if-nez p1, :cond_0
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const/4 p1, 0x2
+
+    invoke-virtual {p0, p1}, Landroid/media/AudioManager;->getDevices(I)[Landroid/media/AudioDeviceInfo;
+
+    move-result-object p0
+
+    goto :goto_0
+
+    :cond_0
+    new-array p0, v1, [Landroid/media/AudioDeviceInfo;
+
+    iget-object p1, p1, Lr30;->a:Landroid/media/AudioDeviceInfo;
+
+    aput-object p1, p0, v0
+
+    :goto_0
+    invoke-static {}, Ly20;->a()Lhx6;
 
     move-result-object p1
 
-    invoke-virtual {p0, p1}, La30;->g(Lw20;)V
+    array-length v2, p0
 
-    return-void
+    move v3, v0
+
+    :goto_1
+    if-ge v3, v2, :cond_2
+
+    aget-object v4, p0, v3
+
+    invoke-virtual {v4}, Landroid/media/AudioDeviceInfo;->getType()I
+
+    move-result v4
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    invoke-virtual {p1, v4}, Lpw6;->contains(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    return v1
+
+    :cond_1
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_1
+
+    :cond_2
+    return v0
 .end method

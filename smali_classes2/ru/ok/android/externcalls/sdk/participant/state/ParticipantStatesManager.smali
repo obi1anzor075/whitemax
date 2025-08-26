@@ -21,7 +21,7 @@
         "",
         "Lru/ok/android/externcalls/sdk/participant/state/ParticipantStatesManager$Listener;",
         "listener",
-        "Ljue;",
+        "Le5f;",
         "addHandListener",
         "(Lru/ok/android/externcalls/sdk/participant/state/ParticipantStatesManager$Listener;)V",
         "removeHandListener",
@@ -47,7 +47,7 @@
         "",
         "onError",
         "lowerHandForAll",
-        "(Ls16;Lu16;)V",
+        "(Lv56;Lx56;)V",
         "isHandRaised",
         "(Lru/ok/android/externcalls/sdk/id/ParticipantId;)Z",
         "getHandRaiseTime",
@@ -60,10 +60,10 @@
         "isRequested",
         "setAssistanceRequested",
         "getAssistanceRequestIds",
-        "Lv2d;",
+        "Ld9d;",
         "roomId",
         "resetAssistanceRequests",
-        "(Lv2d;)V",
+        "(Ld9d;)V",
         "Listener",
         "ParticipantStateChange",
         "StateChangedEvent",
@@ -75,11 +75,12 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # direct methods
-.method public static synthetic lowerHandForAll$default(Lru/ok/android/externcalls/sdk/participant/state/ParticipantStatesManager;Ls16;Lu16;ILjava/lang/Object;)V
+.method public static synthetic lowerHandForAll$default(Lru/ok/android/externcalls/sdk/participant/state/ParticipantStatesManager;Lv56;Lx56;ILjava/lang/Object;)V
     .locals 1
 
     if-nez p4, :cond_2
@@ -100,7 +101,7 @@
     move-object p2, v0
 
     :cond_1
-    invoke-interface {p0, p1, p2}, Lru/ok/android/externcalls/sdk/participant/state/ParticipantStatesManager;->lowerHandForAll(Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2}, Lru/ok/android/externcalls/sdk/participant/state/ParticipantStatesManager;->lowerHandForAll(Lv56;Lx56;)V
 
     return-void
 
@@ -168,12 +169,12 @@
 .method public abstract isOwnHandRaised()Z
 .end method
 
-.method public abstract lowerHandForAll(Ls16;Lu16;)V
+.method public abstract lowerHandForAll(Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -188,7 +189,7 @@
 .method public abstract removeHandListener(Lru/ok/android/externcalls/sdk/participant/state/ParticipantStatesManager$Listener;)V
 .end method
 
-.method public abstract resetAssistanceRequests(Lv2d;)V
+.method public abstract resetAssistanceRequests(Ld9d;)V
 .end method
 
 .method public abstract setAssistanceRequested(Z)V

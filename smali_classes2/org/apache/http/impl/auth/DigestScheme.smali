@@ -480,7 +480,7 @@
 
     const-string v0, " requested"
 
-    invoke-static {p1, v4, v0}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v4, v0}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -541,7 +541,7 @@
 
     invoke-direct {v1, v2}, Lorg/apache/http/util/CharArrayBuffer;-><init>(I)V
 
-    invoke-virtual/range {p0 .. p0}, Lorg/apache/http/impl/auth/AuthSchemeBase;->isProxy()Z
+    invoke-virtual {v0}, Lorg/apache/http/impl/auth/AuthSchemeBase;->isProxy()Z
 
     move-result v2
 
@@ -653,7 +653,7 @@
 
     new-instance v2, Lorg/apache/http/message/BasicNameValuePair;
 
-    invoke-direct/range {p0 .. p0}, Lorg/apache/http/impl/auth/DigestScheme;->getQopVariantString()Ljava/lang/String;
+    invoke-direct {v0}, Lorg/apache/http/impl/auth/DigestScheme;->getQopVariantString()Ljava/lang/String;
 
     move-result-object v5
 
@@ -673,7 +673,7 @@
 
     const-string v5, "cnonce"
 
-    invoke-direct/range {p0 .. p0}, Lorg/apache/http/impl/auth/DigestScheme;->getCnonce()Ljava/lang/String;
+    invoke-direct {v0}, Lorg/apache/http/impl/auth/DigestScheme;->getCnonce()Ljava/lang/String;
 
     move-result-object v0
 
@@ -798,7 +798,7 @@
 
     const-string v1, "Unsupported algorithm in HTTP Digest authentication: "
 
-    invoke-static {v1, p0}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -894,12 +894,11 @@
 
     const-string p0, "auth-int"
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     const-string p0, "auth"
 
-    :goto_0
     return-object p0
 .end method
 

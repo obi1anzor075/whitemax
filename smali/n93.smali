@@ -1,137 +1,81 @@
 .class public final Ln93;
-.super Lkga;
+.super Le93;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public final a:[Ljava/util/Comparator;
+.field public final synthetic a:I
+
+.field public final b:Le93;
+
+.field public final c:Lgsc;
 
 
 # direct methods
-.method public constructor <init>(Llu0;Llu0;)V
-    .locals 2
+.method public synthetic constructor <init>(Le93;Lgsc;I)V
+    .locals 0
 
-    invoke-direct {p0}, Lkga;-><init>()V
+    iput p3, p0, Ln93;->a:I
 
-    const/4 v0, 0x2
+    iput-object p1, p0, Ln93;->b:Le93;
 
-    new-array v0, v0, [Ljava/util/Comparator;
+    iput-object p2, p0, Ln93;->c:Lgsc;
 
-    const/4 v1, 0x0
-
-    aput-object p1, v0, v1
-
-    const/4 p1, 0x1
-
-    aput-object p2, v0, p1
-
-    iput-object v0, p0, Ln93;->a:[Ljava/util/Comparator;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 4
-
-    const/4 v0, 0x0
-
-    move v1, v0
-
-    :goto_0
-    iget-object v2, p0, Ln93;->a:[Ljava/util/Comparator;
-
-    array-length v3, v2
-
-    if-ge v1, v3, :cond_1
-
-    aget-object v2, v2, v1
-
-    invoke-interface {v2, p1, p2}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    return v2
-
-    :cond_0
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    if-ne p1, p0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    instance-of v0, p1, Ln93;
-
-    if-eqz v0, :cond_1
-
-    check-cast p1, Ln93;
-
-    iget-object p0, p0, Ln93;->a:[Ljava/util/Comparator;
-
-    iget-object p1, p1, Ln93;->a:[Ljava/util/Comparator;
-
-    invoke-static {p0, p1}, Ljava/util/Arrays;->equals([Ljava/lang/Object;[Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-
-    :cond_1
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    iget-object p0, p0, Ln93;->a:[Ljava/util/Comparator;
-
-    invoke-static {p0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final j(Lo93;)V
     .locals 2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget v0, p0, Ln93;->a:I
 
-    const-string v1, "Ordering.compound("
+    packed-switch v0, :pswitch_data_0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    new-instance v0, Lm93;
 
-    iget-object p0, p0, Ln93;->a:[Ljava/util/Comparator;
+    iget-object v1, p0, Ln93;->b:Le93;
 
-    invoke-static {p0}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+    invoke-direct {v0, p1, v1}, Lm93;-><init>(Lo93;Le93;)V
+
+    invoke-interface {p1, v0}, Lo93;->c(Lam4;)V
+
+    iget-object p0, p0, Ln93;->c:Lgsc;
+
+    invoke-virtual {p0, v0}, Lgsc;->b(Ljava/lang/Runnable;)Lam4;
 
     move-result-object p0
 
-    const-string v1, ")"
+    iget-object p1, v0, Lm93;->c:Ljava/lang/Object;
 
-    invoke-static {v0, p0, v1}, Lwn6;->l(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    check-cast p1, Lsy1;
 
-    move-result-object p0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return-object p0
+    invoke-static {p1, p0}, Lem4;->c(Ljava/util/concurrent/atomic/AtomicReference;Lam4;)Z
+
+    return-void
+
+    :pswitch_0
+    new-instance v0, Lm93;
+
+    iget-object v1, p0, Ln93;->c:Lgsc;
+
+    invoke-direct {v0, p1, v1}, Lm93;-><init>(Lo93;Lgsc;)V
+
+    iget-object p0, p0, Ln93;->b:Le93;
+
+    invoke-virtual {p0, v0}, Le93;->i(Lo93;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

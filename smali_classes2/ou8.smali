@@ -1,174 +1,177 @@
-.class public final synthetic Lou8;
+.class public final Lou8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Landroid/animation/Animator$AnimatorListener;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Lone/me/sdk/messagewrite/MessageWriteWidget;
+.field public final synthetic b:Lpu8;
+
+.field public final synthetic c:Lje7;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/sdk/messagewrite/MessageWriteWidget;I)V
+.method public synthetic constructor <init>(Lpu8;Lje7;I)V
     .locals 0
 
-    iput p2, p0, Lou8;->a:I
+    iput p3, p0, Lou8;->a:I
 
-    iput-object p1, p0, Lou8;->b:Lone/me/sdk/messagewrite/MessageWriteWidget;
+    iput-object p1, p0, Lou8;->b:Lpu8;
+
+    iput-object p2, p0, Lou8;->c:Lje7;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method private final a(Landroid/animation/Animator;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method private final b(Landroid/animation/Animator;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method private final c(Landroid/animation/Animator;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method private final d(Landroid/animation/Animator;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method private final e(Landroid/animation/Animator;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method private final f(Landroid/animation/Animator;)V
+    .locals 0
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 6
-
-    const/4 v0, 0x3
-
-    const/4 v1, 0x0
-
-    iget-object v2, p0, Lou8;->b:Lone/me/sdk/messagewrite/MessageWriteWidget;
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 0
 
     iget p0, p0, Lou8;->a:I
 
-    packed-switch p0, :pswitch_data_0
+    return-void
+.end method
 
-    sget-object p0, Lone/me/sdk/messagewrite/MessageWriteWidget;->J0:[Lk77;
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 0
 
-    new-instance p0, Lflb;
+    iget p0, p0, Lou8;->a:I
 
-    invoke-virtual {v2}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+    return-void
+.end method
 
-    move-result-object v3
+.method public final onAnimationRepeat(Landroid/animation/Animator;)V
+    .locals 0
 
-    invoke-direct {p0, v3}, Lflb;-><init>(Landroid/content/Context;)V
+    iget p0, p0, Lou8;->a:I
 
-    new-instance v3, Landroid/view/ViewGroup$LayoutParams;
+    return-void
+.end method
 
-    const/16 v4, 0x34
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 3
 
-    int-to-float v4, v4
+    iget p1, p0, Lou8;->a:I
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    packed-switch p1, :pswitch_data_0
 
-    move-result-object v5
+    iget-object p1, p0, Lou8;->b:Lpu8;
 
-    invoke-virtual {v5}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    iget-object v0, p1, Lpu8;->c:Lmu8;
 
-    move-result-object v5
+    const/4 v1, 0x0
 
-    iget v5, v5, Landroid/util/DisplayMetrics;->density:F
+    invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    mul-float/2addr v4, v5
+    iget-object v0, p1, Lpu8;->b:Landroid/widget/ImageView;
 
-    invoke-static {v4}, La24;->X(F)I
+    invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    move-result v4
+    iget-object p0, p0, Lou8;->c:Lje7;
 
-    const/4 v5, -0x1
-
-    invoke-direct {v3, v5, v4}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
-
-    invoke-virtual {p0, v3}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    sget v3, Lphc;->w:I
-
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    invoke-static {v4, v3}, Lgq3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v3
-
-    invoke-virtual {p0, v3}, Lflb;->setEndIconDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    new-instance v3, Lpu8;
-
-    invoke-direct {v3, v2, v1}, Lpu8;-><init>(Lone/me/sdk/messagewrite/MessageWriteWidget;I)V
-
-    invoke-virtual {p0, v3}, Lflb;->setEndIconClickListener(Landroid/view/View$OnClickListener;)V
-
-    new-instance v1, Lpf0;
-
-    const/4 v3, 0x0
-
-    const/16 v4, 0x9
-
-    invoke-direct {v1, v0, v3, v4}, Lpf0;-><init>(ILkotlin/coroutines/Continuation;I)V
-
-    invoke-static {v1, p0}, Lurd;->B(Lk26;Landroid/view/View;)V
-
-    invoke-virtual {p0}, Landroid/view/View;->isLaidOut()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {p0}, Landroid/view/View;->isLayoutRequested()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    invoke-virtual {p0}, Lflb;->getTitleView()Landroid/widget/TextView;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ltge;->c(Landroid/widget/TextView;)Z
+    invoke-interface {p0}, Lje7;->a()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
-    invoke-static {p0, v0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->A0(Lflb;Z)V
+    move-result-object p0
 
-    goto :goto_0
+    check-cast p0, Leyd;
+
+    invoke-virtual {p0, v1}, Landroid/view/View;->setTranslationX(F)V
 
     :cond_0
-    new-instance v1, Lzm1;
+    iget-object p0, p1, Lpu8;->r0:Landroid/widget/ImageView;
 
-    invoke-direct {v1, p0, v0, v2}, Lzm1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    const/4 p1, 0x0
 
-    invoke-virtual {p0, v1}, Landroid/view/View;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
+    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_1
-    :goto_0
-    return-object p0
+    return-void
 
     :pswitch_0
-    iget-object p0, v2, Lone/me/sdk/messagewrite/MessageWriteWidget;->Y:Lt97;
+    iget-object p1, p0, Lou8;->b:Lpu8;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    iget-object v0, p1, Lpu8;->r0:Landroid/widget/ImageView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
+
+    iget-object p1, p1, Lpu8;->b:Landroid/widget/ImageView;
+
+    invoke-virtual {p1, v1}, Landroid/view/View;->setTranslationX(F)V
+
+    iget-object p0, p0, Lou8;->c:Lje7;
+
+    invoke-interface {p0}, Lje7;->a()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lip;
+    check-cast p0, Leyd;
 
-    check-cast p0, Lkp;
+    invoke-virtual {p0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    iget-object p0, p0, Lf3;->g:Lx97;
+    :cond_1
+    return-void
 
-    const-string v0, "app.messages.send.by.enter"
-
-    invoke-virtual {p0, v0, v1}, Lx97;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result p0
-
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    return-object p0
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

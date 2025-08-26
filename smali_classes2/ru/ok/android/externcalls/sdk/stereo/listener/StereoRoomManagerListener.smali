@@ -21,7 +21,7 @@
         "",
         "Lru/ok/android/externcalls/sdk/stereo/listener/StereoRoomManagerListener$ListenersUpdated;",
         "event",
-        "Ljue;",
+        "Le5f;",
         "onListenersChanged",
         "(Lru/ok/android/externcalls/sdk/stereo/listener/StereoRoomManagerListener$ListenersUpdated;)V",
         "Lru/ok/android/externcalls/sdk/stereo/listener/StereoRoomManagerListener$HandStatusUpdated;",
@@ -45,6 +45,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

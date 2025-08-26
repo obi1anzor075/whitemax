@@ -1,142 +1,185 @@
 .class public final Lqpe;
-.super Ljava/lang/Object;
+.super Landroid/graphics/drawable/DrawableWrapper;
 .source "SourceFile"
 
 # interfaces
-.implements Lxr0;
+.implements Lppe;
+.implements Landroid/graphics/drawable/Animatable;
 
 
 # instance fields
-.field public final a:Lxr0;
-
-.field public final b:Ljava/util/concurrent/atomic/LongAdder;
-
-.field public final c:Ljava/util/concurrent/atomic/LongAdder;
-
-.field public final d:Ljava/util/concurrent/atomic/AtomicLong;
-
-.field public final e:Ljava/util/concurrent/atomic/LongAccumulator;
-
-.field public final f:Ljava/util/concurrent/atomic/LongAdder;
-
-.field public final g:Ljava/util/concurrent/atomic/LongAdder;
+.field public final a:I
 
 
 # direct methods
-.method public constructor <init>(Lfh4;)V
-    .locals 3
+.method public constructor <init>(Landroid/graphics/drawable/Drawable;Landroid/content/Context;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Lmda;->R:I
 
-    iput-object p1, p0, Lqpe;->a:Lxr0;
+    invoke-direct {p0, p1}, Landroid/graphics/drawable/DrawableWrapper;-><init>(Landroid/graphics/drawable/Drawable;)V
 
-    new-instance p1, Ljava/util/concurrent/atomic/LongAdder;
+    iput v0, p0, Lqpe;->a:I
 
-    invoke-direct {p1}, Ljava/util/concurrent/atomic/LongAdder;-><init>()V
+    if-eqz p2, :cond_0
 
-    iput-object p1, p0, Lqpe;->b:Ljava/util/concurrent/atomic/LongAdder;
+    sget-object p1, Lqp4;->q0:Lap9;
 
-    new-instance p1, Ljava/util/concurrent/atomic/LongAdder;
+    invoke-virtual {p1, p2}, Lap9;->g(Landroid/content/Context;)Lqp4;
 
-    invoke-direct {p1}, Ljava/util/concurrent/atomic/LongAdder;-><init>()V
+    move-result-object p1
 
-    iput-object p1, p0, Lqpe;->c:Ljava/util/concurrent/atomic/LongAdder;
+    invoke-virtual {p1}, Lqp4;->k()Lyha;
 
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicLong;
+    move-result-object p1
 
-    invoke-direct {p1}, Ljava/util/concurrent/atomic/AtomicLong;-><init>()V
+    invoke-interface {p1, v0}, Lyha;->g(I)I
 
-    iput-object p1, p0, Lqpe;->d:Ljava/util/concurrent/atomic/AtomicLong;
+    move-result p1
 
-    new-instance p1, Ljava/util/concurrent/atomic/LongAccumulator;
+    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->setTint(I)V
 
-    new-instance v0, Lppe;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    const-wide/16 v1, 0x0
-
-    invoke-direct {p1, v0, v1, v2}, Ljava/util/concurrent/atomic/LongAccumulator;-><init>(Ljava/util/function/LongBinaryOperator;J)V
-
-    iput-object p1, p0, Lqpe;->e:Ljava/util/concurrent/atomic/LongAccumulator;
-
-    new-instance p1, Ljava/util/concurrent/atomic/LongAdder;
-
-    invoke-direct {p1}, Ljava/util/concurrent/atomic/LongAdder;-><init>()V
-
-    iput-object p1, p0, Lqpe;->f:Ljava/util/concurrent/atomic/LongAdder;
-
-    new-instance p1, Ljava/util/concurrent/atomic/LongAdder;
-
-    invoke-direct {p1}, Ljava/util/concurrent/atomic/LongAdder;-><init>()V
-
-    iput-object p1, p0, Lqpe;->g:Ljava/util/concurrent/atomic/LongAdder;
-
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(I)Ljava/nio/ByteBuffer;
-    .locals 3
+.method public final isRunning()Z
+    .locals 1
 
-    iget-object v0, p0, Lqpe;->b:Ljava/util/concurrent/atomic/LongAdder;
-
-    int-to-long v1, p1
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/LongAdder;->add(J)V
-
-    iget-object v0, p0, Lqpe;->d:Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;->addAndGet(J)J
-
-    iget-object v0, p0, Lqpe;->f:Ljava/util/concurrent/atomic/LongAdder;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/LongAdder;->increment()V
-
-    iget-object p0, p0, Lqpe;->a:Lxr0;
-
-    invoke-interface {p0, p1}, Lxr0;->a(I)Ljava/nio/ByteBuffer;
+    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableWrapper;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object p0
 
-    return-object p0
+    instance-of v0, p0, Landroid/graphics/drawable/Animatable;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Landroid/graphics/drawable/Animatable;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    if-eqz p0, :cond_1
+
+    invoke-interface {p0}, Landroid/graphics/drawable/Animatable;->isRunning()Z
+
+    move-result p0
+
+    return p0
+
+    :cond_1
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
-.method public final b(Ljava/nio/ByteBuffer;)V
-    .locals 6
+.method public final onThemeChanged(Lyha;)V
+    .locals 1
 
-    invoke-virtual {p1}, Ljava/nio/Buffer;->capacity()I
+    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableWrapper;->getDrawable()Landroid/graphics/drawable/Drawable;
 
-    move-result v0
+    move-result-object v0
 
-    iget-object v1, p0, Lqpe;->c:Ljava/util/concurrent/atomic/LongAdder;
+    instance-of v0, v0, Lppe;
 
-    int-to-long v2, v0
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/atomic/LongAdder;->add(J)V
+    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableWrapper;->getDrawable()Landroid/graphics/drawable/Drawable;
 
-    iget-object v0, p0, Lqpe;->e:Ljava/util/concurrent/atomic/LongAccumulator;
+    move-result-object p0
 
-    iget-object v1, p0, Lqpe;->d:Ljava/util/concurrent/atomic/AtomicLong;
+    instance-of v0, p0, Lppe;
 
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicLong;->longValue()J
+    if-eqz v0, :cond_0
 
-    move-result-wide v4
+    check-cast p0, Lppe;
 
-    invoke-virtual {v0, v4, v5}, Ljava/util/concurrent/atomic/LongAccumulator;->accumulate(J)V
+    goto :goto_0
 
-    neg-long v2, v2
+    :cond_0
+    const/4 p0, 0x0
 
-    invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/atomic/AtomicLong;->addAndGet(J)J
+    :goto_0
+    if-eqz p0, :cond_2
 
-    iget-object v0, p0, Lqpe;->g:Ljava/util/concurrent/atomic/LongAdder;
+    invoke-interface {p0, p1}, Lppe;->onThemeChanged(Lyha;)V
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/LongAdder;->increment()V
+    return-void
 
-    iget-object p0, p0, Lqpe;->a:Lxr0;
+    :cond_1
+    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableWrapper;->getDrawable()Landroid/graphics/drawable/Drawable;
 
-    invoke-interface {p0, p1}, Lxr0;->b(Ljava/nio/ByteBuffer;)V
+    move-result-object v0
 
+    if-eqz v0, :cond_2
+
+    iget p0, p0, Lqpe;->a:I
+
+    invoke-interface {p1, p0}, Lyha;->g(I)I
+
+    move-result p0
+
+    invoke-virtual {v0, p0}, Landroid/graphics/drawable/Drawable;->setTint(I)V
+
+    :cond_2
+    return-void
+.end method
+
+.method public final start()V
+    .locals 1
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableWrapper;->getDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    instance-of v0, p0, Landroid/graphics/drawable/Animatable;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Landroid/graphics/drawable/Animatable;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    if-eqz p0, :cond_1
+
+    invoke-interface {p0}, Landroid/graphics/drawable/Animatable;->start()V
+
+    :cond_1
+    return-void
+.end method
+
+.method public final stop()V
+    .locals 1
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableWrapper;->getDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    instance-of v0, p0, Landroid/graphics/drawable/Animatable;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Landroid/graphics/drawable/Animatable;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    if-eqz p0, :cond_1
+
+    invoke-interface {p0}, Landroid/graphics/drawable/Animatable;->stop()V
+
+    :cond_1
     return-void
 .end method

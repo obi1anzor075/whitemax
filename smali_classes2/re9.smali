@@ -1,80 +1,111 @@
-.class public final synthetic Lre9;
+.class public final Lre9;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lj6;
+
+# static fields
+.field public static final synthetic g:[Lbc7;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lox3;
 
-.field public final synthetic b:Lse9;
+.field public final b:Lrie;
+
+.field public final c:Luj;
+
+.field public final d:Lazd;
+
+.field public final e:Lu5c;
+
+.field public final f:Ltkg;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lse9;I)V
+.method static constructor <clinit>()V
+    .locals 4
+
+    new-instance v0, Lbh9;
+
+    const-string v1, "newSelectionJob"
+
+    const-string v2, "getNewSelectionJob()Lkotlinx/coroutines/Job;"
+
+    const-class v3, Lre9;
+
+    invoke-direct {v0, v3, v1, v2}, Lbh9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
+
+    sget-object v1, Llcc;->a:Lmcc;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Lbc7;
+
+    const/4 v2, 0x0
+
+    aput-object v0, v1, v2
+
+    sput-object v1, Lre9;->g:[Lbc7;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lkotlinx/coroutines/internal/ContextScope;Lrie;Luj;)V
     .locals 0
 
-    iput p2, p0, Lre9;->a:I
-
-    iput-object p1, p0, Lre9;->b:Lse9;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lre9;->a:Lox3;
+
+    iput-object p2, p0, Lre9;->b:Lrie;
+
+    iput-object p3, p0, Lre9;->c:Luj;
+
+    new-instance p1, Lle9;
+
+    const/4 p2, 0x7
+
+    invoke-direct {p1, p2}, Lle9;-><init>(I)V
+
+    invoke-static {p1}, Lbzd;->a(Ljava/lang/Object;)Lazd;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lre9;->d:Lazd;
+
+    new-instance p2, Lu5c;
+
+    invoke-direct {p2, p1}, Lu5c;-><init>(Lgh9;)V
+
+    iput-object p2, p0, Lre9;->e:Lu5c;
+
+    invoke-static {}, Ltk9;->I()Ltkg;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lre9;->f:Ltkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final a()V
     .locals 2
 
-    iget v0, p0, Lre9;->a:I
+    new-instance v0, Lle9;
 
-    packed-switch v0, :pswitch_data_0
+    const/4 v1, 0x7
 
-    new-instance v0, Lai0;
+    invoke-direct {v0, v1}, Lle9;-><init>(I)V
 
-    const/16 v1, 0x1a
+    const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lai0;-><init>(I)V
+    iget-object p0, p0, Lre9;->d:Lazd;
 
-    iget-object p0, p0, Lre9;->b:Lse9;
-
-    invoke-virtual {p0, v0}, Lv2;->o(Lrf3;)V
+    invoke-virtual {p0, v1, v0}, Lazd;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     return-void
-
-    :pswitch_0
-    new-instance v0, Lai0;
-
-    const/16 v1, 0x19
-
-    invoke-direct {v0, v1}, Lai0;-><init>(I)V
-
-    iget-object p0, p0, Lre9;->b:Lse9;
-
-    invoke-virtual {p0, v0}, Lv2;->o(Lrf3;)V
-
-    return-void
-
-    :pswitch_1
-    new-instance v0, Lai0;
-
-    const/16 v1, 0x1b
-
-    invoke-direct {v0, v1}, Lai0;-><init>(I)V
-
-    iget-object p0, p0, Lre9;->b:Lse9;
-
-    invoke-virtual {p0, v0}, Lv2;->o(Lrf3;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

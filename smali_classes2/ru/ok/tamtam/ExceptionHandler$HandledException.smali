@@ -20,6 +20,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -32,11 +33,11 @@
     .locals 2
 
     .line 1
-    const/4 v0, 0x7
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x7
 
-    invoke-direct {p0, v1, v1, v0, v1}, Lru/ok/tamtam/ExceptionHandler$HandledException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;ILjava/lang/String;)V
+    invoke-direct {p0, v0, v0, v1, v0}, Lru/ok/tamtam/ExceptionHandler$HandledException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;ILjava/lang/String;)V
 
     return-void
 .end method

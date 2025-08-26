@@ -105,7 +105,7 @@
 
     if-eqz v0, :cond_1
 
-    return-void
+    goto/16 :goto_7
 
     :catch_0
     move-exception p0
@@ -283,7 +283,7 @@
 
     if-nez p0, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
     invoke-static {p0}, Lru/ok/android/externcalls/analytics/internal/utils/Files;->deleteFile(Ljava/io/File;)Z
@@ -292,7 +292,7 @@
 
     if-eqz v0, :cond_1
 
-    return-void
+    goto :goto_0
 
     :cond_1
     invoke-static {p0}, Lru/ok/android/externcalls/analytics/internal/utils/Files;->deleteFile(Ljava/io/File;)Z
@@ -301,6 +301,7 @@
 
     if-eqz v0, :cond_2
 
+    :goto_0
     return-void
 
     :cond_2
@@ -455,12 +456,12 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    const/4 p0, 0x1
+
     :try_start_2
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_2
     .catch Ljava/util/zip/ZipException; {:try_start_2 .. :try_end_2} :catch_0
-
-    const/4 p0, 0x1
 
     return p0
 
@@ -617,7 +618,7 @@
 
     if-eqz v0, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
     new-instance v0, Ljava/io/IOException;
@@ -651,6 +652,7 @@
 
     if-eqz v0, :cond_2
 
+    :goto_0
     return-void
 
     :cond_2

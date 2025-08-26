@@ -1,81 +1,52 @@
 .class public final Lmo5;
-.super Lan5;
-.source "SourceFile"
+.super Lbu3;
 
 
 # instance fields
-.field public final b:Lqmc;
+.field public X:I
 
-.field public final c:J
+.field public final synthetic Y:Lno5;
 
-.field public final o:Ljava/util/concurrent/TimeUnit;
+.field public Z:Ljava/lang/Object;
+
+.field public synthetic o:Ljava/lang/Object;
+
+.field public o0:Lbn5;
 
 
 # direct methods
-.method public constructor <init>(JLjava/util/concurrent/TimeUnit;Lqmc;)V
+.method public constructor <init>(Lno5;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lmo5;->Y:Lno5;
 
-    iput-wide p1, p0, Lmo5;->c:J
-
-    iput-object p3, p0, Lmo5;->o:Ljava/util/concurrent/TimeUnit;
-
-    iput-object p4, p0, Lmo5;->b:Lqmc;
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final g(Lb1e;)V
-    .locals 4
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    new-instance v0, Llo5;
+    iput-object p1, p0, Lmo5;->o:Ljava/lang/Object;
 
-    invoke-direct {v0, p1}, Llo5;-><init>(Lb1e;)V
+    iget p1, p0, Lmo5;->X:I
 
-    invoke-interface {p1, v0}, Lb1e;->e(Ld1e;)V
+    const/high16 v0, -0x80000000
 
-    iget-object p1, p0, Lmo5;->o:Ljava/util/concurrent/TimeUnit;
+    or-int/2addr p1, v0
 
-    iget-object v1, p0, Lmo5;->b:Lqmc;
+    iput p1, p0, Lmo5;->X:I
 
-    iget-wide v2, p0, Lmo5;->c:J
+    iget-object p1, p0, Lmo5;->Y:Lno5;
 
-    invoke-virtual {v1, v0, v2, v3, p1}, Lqmc;->c(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Lxi4;
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lno5;->d(Lbn5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    :cond_0
-    const/4 p1, 0x0
-
-    invoke-virtual {v0, p1, p0}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object p1
-
-    sget-object v0, Lbj4;->a:Lbj4;
-
-    if-ne p1, v0, :cond_2
-
-    invoke-interface {p0}, Lxi4;->f()V
-
-    :cond_2
-    :goto_0
-    return-void
+    return-object p0
 .end method

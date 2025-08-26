@@ -1,5 +1,5 @@
 .class final Landroidx/fragment/app/FragmentManagerViewModel;
-.super Luaf;
+.super Lkof;
 .source "SourceFile"
 
 
@@ -37,7 +37,7 @@
 .method public constructor <init>(Z)V
     .locals 1
 
-    invoke-direct {p0}, Luaf;-><init>()V
+    invoke-direct {p0}, Lkof;-><init>()V
 
     new-instance v0, Ljava/util/HashMap;
 
@@ -71,13 +71,11 @@
 
 # virtual methods
 .method public final d()V
-    .locals 2
+    .locals 1
 
-    const-string v0, "FragmentManager"
+    const/4 v0, 0x3
 
-    const/4 v1, 0x3
-
-    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v0}, Landroidx/fragment/app/c;->L(I)Z
 
     move-result v0
 
@@ -103,9 +101,9 @@
     return-void
 
     :cond_0
-    iget-object p0, p0, Landroidx/fragment/app/FragmentManagerViewModel;->b:Ljava/util/HashMap;
-
     iget-object v0, p1, Landroidx/fragment/app/a;->Y:Ljava/lang/String;
+
+    iget-object p0, p0, Landroidx/fragment/app/FragmentManagerViewModel;->b:Ljava/util/HashMap;
 
     invoke-virtual {p0, v0}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
@@ -113,18 +111,16 @@
 
     if-eqz v0, :cond_1
 
-    return-void
+    goto :goto_0
 
     :cond_1
     iget-object v0, p1, Landroidx/fragment/app/a;->Y:Ljava/lang/String;
 
     invoke-virtual {p0, v0, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string p0, "FragmentManager"
+    const/4 p0, 0x2
 
-    const/4 v0, 0x2
-
-    invoke-static {p0, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {p0}, Landroidx/fragment/app/c;->L(I)Z
 
     move-result p0
 
@@ -133,6 +129,7 @@
     invoke-virtual {p1}, Landroidx/fragment/app/a;->toString()Ljava/lang/String;
 
     :cond_2
+    :goto_0
     return-void
 .end method
 
@@ -148,17 +145,17 @@
     :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
+
+    const-class v2, Landroidx/fragment/app/FragmentManagerViewModel;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object v3
 
-    const-class v3, Landroidx/fragment/app/FragmentManagerViewModel;
+    if-eq v2, v3, :cond_1
 
-    if-eq v3, v2, :cond_1
-
-    goto :goto_1
+    goto :goto_0
 
     :cond_1
     check-cast p1, Landroidx/fragment/app/FragmentManagerViewModel;
@@ -193,16 +190,10 @@
 
     if-eqz p0, :cond_2
 
-    goto :goto_0
-
-    :cond_2
-    move v0, v1
-
-    :goto_0
     return v0
 
-    :cond_3
-    :goto_1
+    :cond_2
+    :goto_0
     return v1
 .end method
 
@@ -268,11 +259,11 @@
 
     move-result-object p2
 
-    check-cast p2, Lbbf;
+    check-cast p2, Lrof;
 
     if-eqz p2, :cond_2
 
-    invoke-virtual {p2}, Lbbf;->a()V
+    invoke-virtual {p2}, Lrof;->a()V
 
     invoke-virtual {p0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -300,11 +291,9 @@
 
     if-eqz p0, :cond_1
 
-    const-string p0, "FragmentManager"
+    const/4 p0, 0x2
 
-    const/4 v0, 0x2
-
-    invoke-static {p0, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {p0}, Landroidx/fragment/app/c;->L(I)Z
 
     move-result p0
 

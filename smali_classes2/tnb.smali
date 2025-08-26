@@ -1,13 +1,21 @@
-.class public abstract Ltnb;
-.super Ljava/lang/Object;
+.class public final Ltnb;
+.super Lio;
 .source "SourceFile"
 
 
 # static fields
-.field public static ic_file_24:I = 0x7f080492
+.field public static final a:Ltnb;
 
-.field public static ic_geolocation_24:I = 0x7f0804ba
 
-.field public static ic_microphone_24:I = 0x7f080535
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
 
-.field public static picture_plus_outline_24:I = 0x7f0807ab
+    new-instance v0, Ltnb;
+
+    invoke-direct {v0}, Lio;-><init>()V
+
+    sput-object v0, Ltnb;->a:Ltnb;
+
+    return-void
+.end method

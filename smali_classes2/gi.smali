@@ -3,92 +3,173 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lone/me/rlottie/ImageReceiver;
+.implements Lymc;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lp8d;
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public b:Lu24;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;)V
+.method public constructor <init>(Lsc6;Lp8d;)V
     .locals 0
 
-    iput p1, p0, Lgi;->a:I
-
-    iput-object p2, p0, Lgi;->b:Ljava/lang/Object;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p2, p0, Lgi;->a:Lp8d;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invalidate()V
-    .locals 1
+.method public final a(Lu24;[BI)V
+    .locals 4
 
-    iget v0, p0, Lgi;->a:I
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    packed-switch v0, :pswitch_data_0
+    invoke-static {p2}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
 
-    iget-object p0, p0, Lgi;->b:Ljava/lang/Object;
+    move-result-object p1
 
-    check-cast p0, Lbqf;
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->get()B
 
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    move-result p3
+
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->getShort()S
+
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->getInt()I
+
+    const/4 v0, 0x1
+
+    if-ne p3, v0, :cond_0
+
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->getShort()S
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->getInt()I
+
+    :goto_0
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->get()B
+
+    move-result v1
+
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
+
+    move-result-object p1
+
+    sget-object v2, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
+
+    invoke-virtual {p1, v2}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+
+    const/4 v2, 0x0
+
+    if-ne p3, v0, :cond_1
+
+    invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
+
+    move-result p3
+
+    div-int/lit8 p3, p3, 0x4
+
+    new-array v0, p3, [F
+
+    :goto_1
+    if-ge v2, p3, :cond_4
+
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->getFloat()F
+
+    move-result v1
+
+    aput v1, v0, v2
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    if-eqz v1, :cond_3
+
+    if-eq v1, v0, :cond_4
+
+    const/4 p3, 0x2
+
+    if-eq v1, p3, :cond_2
+
+    goto :goto_3
+
+    :cond_2
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->get()B
+
+    move-result p3
+
+    and-int/lit16 p3, p3, 0xff
+
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->get()B
+
+    move-result v0
+
+    and-int/lit16 v0, v0, 0xff
+
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->get()B
+
+    move-result p1
+
+    and-int/lit16 p1, p1, 0xff
+
+    invoke-static {p3, v0, p1}, Landroid/graphics/Color;->rgb(III)I
+
+    goto :goto_3
+
+    :cond_3
+    invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
+
+    move-result p3
+
+    new-array v0, p3, [F
+
+    :goto_2
+    if-ge v2, p3, :cond_4
+
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->get()B
+
+    move-result v1
+
+    and-int/lit16 v1, v1, 0xff
+
+    int-to-float v1, v1
+
+    const v3, 0x3b808081
+
+    mul-float/2addr v1, v3
+
+    aput v1, v0, v2
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_2
+
+    :cond_4
+    :goto_3
+    iget-object p0, p0, Lgi;->a:Lp8d;
+
+    iget-object p1, p0, Lp8d;->Y:Ljava/lang/Object;
+
+    check-cast p1, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
+
+    array-length p1, p2
+
+    iget-object p0, p0, Lp8d;->X:Ljava/lang/Object;
+
+    check-cast p0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicInteger;->addAndGet(I)I
 
     return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lgi;->b:Ljava/lang/Object;
-
-    check-cast p0, Lts8;
-
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
-
-    return-void
-
-    :pswitch_1
-    iget-object p0, p0, Lgi;->b:Ljava/lang/Object;
-
-    check-cast p0, Lyq8;
-
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
-
-    return-void
-
-    :pswitch_2
-    iget-object p0, p0, Lgi;->b:Ljava/lang/Object;
-
-    check-cast p0, Lht4;
-
-    iget-object p0, p0, Lb7c;->a:Landroid/view/View;
-
-    check-cast p0, Landroid/widget/ImageView;
-
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
-
-    return-void
-
-    :pswitch_3
-    iget-object p0, p0, Lgi;->b:Ljava/lang/Object;
-
-    check-cast p0, Lhi;
-
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

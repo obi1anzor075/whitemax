@@ -3,87 +3,106 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lgf0;
+.implements Ljava/lang/Iterable;
+.implements Lqb7;
 
 
 # instance fields
-.field public final a:Z
+.field public final a:Ljava/util/ArrayDeque;
+
+.field public b:Lbmc;
 
 
 # direct methods
-.method public constructor <init>(Z)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p1, p0, Lff0;->a:Z
+    new-instance v0, Ljava/util/ArrayDeque;
+
+    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
+
+    iput-object v0, p0, Lff0;->a:Ljava/util/ArrayDeque;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lff0;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lff0;
-
-    iget-boolean p0, p0, Lff0;->a:Z
-
-    iget-boolean p1, p1, Lff0;->a:Z
-
-    if-eq p0, p1, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
+.method public final a()Lfmc;
     .locals 0
 
-    iget-boolean p0, p0, Lff0;->a:Z
+    iget-object p0, p0, Lff0;->a:Ljava/util/ArrayDeque;
 
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+    invoke-virtual {p0}, Ljava/util/ArrayDeque;->peek()Ljava/lang/Object;
 
-    move-result p0
+    move-result-object p0
 
-    return p0
+    check-cast p0, Lfmc;
+
+    return-object p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final b()Lfmc;
+    .locals 1
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lff0;->a:Ljava/util/ArrayDeque;
 
-    const-string v1, "NotificationsPermissionChange(isGranted="
+    invoke-virtual {v0}, Ljava/util/ArrayDeque;->pop()Ljava/lang/Object;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
-    iget-boolean p0, p0, Lff0;->a:Z
+    check-cast v0, Lfmc;
 
-    const-string v1, ")"
+    iget-object p0, p0, Lff0;->b:Lbmc;
 
-    invoke-static {v0, p0, v1}, Lhr1;->j(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Lbmc;->c()V
+
+    :cond_0
+    iget-object p0, v0, Lfmc;->a:Lou3;
+
+    invoke-virtual {p0}, Lou3;->destroy()V
+
+    return-object v0
+.end method
+
+.method public final c()Ljava/util/Iterator;
+    .locals 0
+
+    iget-object p0, p0, Lff0;->a:Ljava/util/ArrayDeque;
+
+    invoke-static {p0}, Lp43;->O0(Ljava/util/Collection;)Ljava/util/List;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
     return-object p0
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
+    .locals 2
+
+    const/4 v0, 0x0
+
+    new-array v0, v0, [Lfmc;
+
+    iget-object p0, p0, Lff0;->a:Ljava/util/ArrayDeque;
+
+    invoke-virtual {p0, v0}, Ljava/util/ArrayDeque;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object p0
+
+    new-instance v0, Lv1;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1, p0}, Lv1;-><init>(ILjava/lang/Object;)V
+
+    return-object v0
 .end method

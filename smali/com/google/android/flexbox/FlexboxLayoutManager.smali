@@ -3,8 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Laj5;
-.implements Lw6c;
+.implements Lxbc;
 
 
 # static fields
@@ -12,13 +11,13 @@
 
 
 # instance fields
-.field public final A:Ldj5;
+.field public final A:Llm5;
 
-.field public B:Lo57;
+.field public B:Lea7;
 
-.field public C:Lo57;
+.field public C:Lea7;
 
-.field public D:Lfj5;
+.field public D:Lom5;
 
 .field public E:I
 
@@ -36,7 +35,7 @@
 
 .field public L:I
 
-.field public final M:Lea6;
+.field public final M:La9;
 
 .field public p:I
 
@@ -52,13 +51,13 @@
 
 .field public v:Ljava/util/List;
 
-.field public final w:Lj54;
+.field public final w:Lw84;
 
-.field public x:Lt6c;
+.field public x:Lubc;
 
-.field public y:Lx6c;
+.field public y:Lybc;
 
-.field public z:Lsj0;
+.field public z:Lnm5;
 
 
 # direct methods
@@ -89,19 +88,19 @@
 
     iput-object v1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
 
-    new-instance v1, Lj54;
+    new-instance v1, Lw84;
 
     invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
-    iput-object p0, v1, Lj54;->a:Ljava/lang/Object;
+    iput-object p0, v1, Lw84;->a:Ljava/lang/Object;
 
-    iput-object v1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
+    iput-object v1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
 
-    new-instance v1, Ldj5;
+    new-instance v1, Llm5;
 
-    invoke-direct {v1, p0}, Ldj5;-><init>(Lcom/google/android/flexbox/FlexboxLayoutManager;)V
+    invoke-direct {v1, p0}, Llm5;-><init>(Lcom/google/android/flexbox/FlexboxLayoutManager;)V
 
-    iput-object v1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->A:Ldj5;
+    iput-object v1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->A:Llm5;
 
     iput v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->E:I
 
@@ -121,19 +120,17 @@
 
     iput v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->L:I
 
-    new-instance v0, Lea6;
+    new-instance v0, La9;
 
-    const/16 v1, 0xe
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, v1}, Lea6;-><init>(I)V
+    iput-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->M:La9;
 
-    iput-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->M:Lea6;
-
-    invoke-static {p1, p2, p3, p4}, Landroidx/recyclerview/widget/a;->N(Landroid/content/Context;Landroid/util/AttributeSet;II)Lm6c;
+    invoke-static {p1, p2, p3, p4}, Landroidx/recyclerview/widget/a;->N(Landroid/content/Context;Landroid/util/AttributeSet;II)Lnbc;
 
     move-result-object p2
 
-    iget p3, p2, Lm6c;->a:I
+    iget p3, p2, Lnbc;->a:I
 
     const/4 p4, 0x0
 
@@ -146,34 +143,34 @@
     goto :goto_0
 
     :cond_0
-    iget-boolean p2, p2, Lm6c;->c:Z
+    iget-boolean p2, p2, Lnbc;->c:Z
 
     if-eqz p2, :cond_1
 
     const/4 p2, 0x3
 
-    invoke-virtual {p0, p2}, Lcom/google/android/flexbox/FlexboxLayoutManager;->f1(I)V
+    invoke-virtual {p0, p2}, Lcom/google/android/flexbox/FlexboxLayoutManager;->e1(I)V
 
     goto :goto_0
 
     :cond_1
     const/4 p2, 0x2
 
-    invoke-virtual {p0, p2}, Lcom/google/android/flexbox/FlexboxLayoutManager;->f1(I)V
+    invoke-virtual {p0, p2}, Lcom/google/android/flexbox/FlexboxLayoutManager;->e1(I)V
 
     goto :goto_0
 
     :cond_2
-    iget-boolean p2, p2, Lm6c;->c:Z
+    iget-boolean p2, p2, Lnbc;->c:Z
 
     if-eqz p2, :cond_3
 
-    invoke-virtual {p0, v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->f1(I)V
+    invoke-virtual {p0, v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->e1(I)V
 
     goto :goto_0
 
     :cond_3
-    invoke-virtual {p0, p4}, Lcom/google/android/flexbox/FlexboxLayoutManager;->f1(I)V
+    invoke-virtual {p0, p4}, Lcom/google/android/flexbox/FlexboxLayoutManager;->e1(I)V
 
     :goto_0
     iget p2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->q:I
@@ -185,28 +182,28 @@
     goto :goto_1
 
     :cond_4
-    invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->q0()V
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->p0()V
 
     iget-object p2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
 
     invoke-interface {p2}, Ljava/util/List;->clear()V
 
-    iget-object p2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->A:Ldj5;
+    iget-object p2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->A:Llm5;
 
-    invoke-static {p2}, Ldj5;->b(Ldj5;)V
+    invoke-static {p2}, Llm5;->b(Llm5;)V
 
-    iput p4, p2, Ldj5;->d:I
+    iput p4, p2, Llm5;->d:I
 
     :goto_1
     iput v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->q:I
 
     const/4 p2, 0x0
 
-    iput-object p2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iput-object p2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    iput-object p2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->C:Lo57;
+    iput-object p2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->C:Lea7;
 
-    invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->w0()V
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->v0()V
 
     :cond_5
     iget p2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->r:I
@@ -215,21 +212,21 @@
 
     if-eq p2, p3, :cond_6
 
-    invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->q0()V
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->p0()V
 
     iget-object p2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
 
     invoke-interface {p2}, Ljava/util/List;->clear()V
 
-    iget-object p2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->A:Ldj5;
+    iget-object p2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->A:Llm5;
 
-    invoke-static {p2}, Ldj5;->b(Ldj5;)V
+    invoke-static {p2}, Llm5;->b(Llm5;)V
 
-    iput p4, p2, Ldj5;->d:I
+    iput p4, p2, Llm5;->d:I
 
     iput p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->r:I
 
-    invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->w0()V
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->v0()V
 
     :cond_6
     iput-object p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->J:Landroid/content/Context;
@@ -274,7 +271,7 @@
     :cond_1
     if-ne p1, p0, :cond_2
 
-    move v1, v2
+    return v2
 
     :cond_2
     return v1
@@ -285,7 +282,7 @@
     :cond_4
     if-lt p1, p0, :cond_5
 
-    move v1, v2
+    return v2
 
     :cond_5
     return v1
@@ -293,82 +290,80 @@
 
 
 # virtual methods
-.method public final I0(Landroidx/recyclerview/widget/RecyclerView;I)V
+.method public final H0(Landroidx/recyclerview/widget/RecyclerView;I)V
     .locals 1
 
-    new-instance v0, Lhd7;
+    new-instance v0, Lxh7;
 
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
-    invoke-direct {v0, p1}, Lhd7;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, p1}, Lxh7;-><init>(Landroid/content/Context;)V
 
-    iput p2, v0, Lhd7;->a:I
+    iput p2, v0, Lxh7;->a:I
 
-    invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/a;->J0(Lhd7;)V
+    invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/a;->I0(Lxh7;)V
 
     return-void
 .end method
 
-.method public final L0(Lx6c;)I
-    .locals 3
+.method public final K0(Lybc;)I
+    .locals 2
 
     invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->w()I
 
     move-result v0
 
-    const/4 v1, 0x0
-
     if-nez v0, :cond_0
 
-    return v1
+    goto :goto_0
 
     :cond_0
-    invoke-virtual {p1}, Lx6c;->b()I
+    invoke-virtual {p1}, Lybc;->b()I
 
     move-result v0
 
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->O0()V
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->N0()V
 
-    invoke-virtual {p0, v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->Q0(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->P0(I)Landroid/view/View;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {p0, v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->S0(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->R0(I)Landroid/view/View;
 
     move-result-object v0
 
-    invoke-virtual {p1}, Lx6c;->b()I
+    invoke-virtual {p1}, Lybc;->b()I
 
     move-result p1
 
     if-eqz p1, :cond_2
 
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_2
 
     if-nez v0, :cond_1
 
     goto :goto_0
 
     :cond_1
-    iget-object p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {p1, v0}, Lo57;->c(Landroid/view/View;)I
+    invoke-virtual {p1, v0}, Lea7;->c(Landroid/view/View;)I
 
     move-result p1
 
-    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v0, v2}, Lo57;->f(Landroid/view/View;)I
+    invoke-virtual {v0, v1}, Lea7;->f(Landroid/view/View;)I
 
     move-result v0
 
     sub-int/2addr p1, v0
 
-    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {p0}, Lo57;->n()I
+    invoke-virtual {p0}, Lea7;->n()I
 
     move-result p0
 
@@ -380,116 +375,116 @@
 
     :cond_2
     :goto_0
-    return v1
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
-.method public final M0(Lx6c;)I
-    .locals 6
+.method public final L0(Lybc;)I
+    .locals 5
 
     invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->w()I
 
     move-result v0
 
-    const/4 v1, 0x0
-
     if-nez v0, :cond_0
 
-    return v1
+    goto :goto_0
 
     :cond_0
-    invoke-virtual {p1}, Lx6c;->b()I
+    invoke-virtual {p1}, Lybc;->b()I
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->Q0(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->P0(I)Landroid/view/View;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {p0, v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->S0(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->R0(I)Landroid/view/View;
 
     move-result-object v0
 
-    invoke-virtual {p1}, Lx6c;->b()I
+    invoke-virtual {p1}, Lybc;->b()I
 
     move-result p1
 
     if-eqz p1, :cond_3
 
-    if-eqz v2, :cond_3
+    if-eqz v1, :cond_3
 
     if-nez v0, :cond_1
 
     goto :goto_0
 
     :cond_1
-    invoke-static {v2}, Landroidx/recyclerview/widget/a;->M(Landroid/view/View;)I
+    invoke-static {v1}, Landroidx/recyclerview/widget/a;->M(Landroid/view/View;)I
 
     move-result p1
 
     invoke-static {v0}, Landroidx/recyclerview/widget/a;->M(Landroid/view/View;)I
 
-    move-result v3
+    move-result v2
 
-    iget-object v4, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v4, v0}, Lo57;->c(Landroid/view/View;)I
+    invoke-virtual {v3, v0}, Lea7;->c(Landroid/view/View;)I
 
     move-result v0
 
-    iget-object v4, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v4, v2}, Lo57;->f(Landroid/view/View;)I
+    invoke-virtual {v3, v1}, Lea7;->f(Landroid/view/View;)I
 
-    move-result v4
+    move-result v3
 
-    sub-int/2addr v0, v4
+    sub-int/2addr v0, v3
 
     invoke-static {v0}, Ljava/lang/Math;->abs(I)I
 
     move-result v0
 
-    iget-object v4, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
+    iget-object v3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
 
-    iget-object v4, v4, Lj54;->c:Ljava/lang/Object;
+    iget-object v3, v3, Lw84;->c:Ljava/lang/Object;
 
-    check-cast v4, [I
+    check-cast v3, [I
 
-    aget p1, v4, p1
+    aget p1, v3, p1
 
     if-eqz p1, :cond_3
 
-    const/4 v5, -0x1
+    const/4 v4, -0x1
 
-    if-ne p1, v5, :cond_2
+    if-ne p1, v4, :cond_2
 
     goto :goto_0
 
     :cond_2
-    aget v1, v4, v3
+    aget v2, v3, v2
 
-    sub-int/2addr v1, p1
+    sub-int/2addr v2, p1
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     int-to-float v0, v0
 
-    int-to-float v1, v1
+    int-to-float v2, v2
 
-    div-float/2addr v0, v1
+    div-float/2addr v0, v2
 
     int-to-float p1, p1
 
     mul-float/2addr p1, v0
 
-    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v0}, Lo57;->m()I
+    invoke-virtual {v0}, Lea7;->m()I
 
     move-result v0
 
-    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {p0, v2}, Lo57;->f(Landroid/view/View;)I
+    invoke-virtual {p0, v1}, Lea7;->f(Landroid/view/View;)I
 
     move-result p0
 
@@ -507,10 +502,12 @@
 
     :cond_3
     :goto_0
-    return v1
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
-.method public final N0(Lx6c;)I
+.method public final M0(Lybc;)I
     .locals 5
 
     invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->w()I
@@ -521,22 +518,22 @@
 
     if-nez v0, :cond_0
 
-    return v1
+    goto :goto_2
 
     :cond_0
-    invoke-virtual {p1}, Lx6c;->b()I
+    invoke-virtual {p1}, Lybc;->b()I
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->Q0(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->P0(I)Landroid/view/View;
 
     move-result-object v2
 
-    invoke-virtual {p0, v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->S0(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->R0(I)Landroid/view/View;
 
     move-result-object v0
 
-    invoke-virtual {p1}, Lx6c;->b()I
+    invoke-virtual {p1}, Lybc;->b()I
 
     move-result v3
 
@@ -553,7 +550,7 @@
 
     move-result v3
 
-    invoke-virtual {p0, v1, v3}, Lcom/google/android/flexbox/FlexboxLayoutManager;->U0(II)Landroid/view/View;
+    invoke-virtual {p0, v1, v3}, Lcom/google/android/flexbox/FlexboxLayoutManager;->T0(II)Landroid/view/View;
 
     move-result-object v1
 
@@ -577,7 +574,7 @@
 
     add-int/lit8 v4, v4, -0x1
 
-    invoke-virtual {p0, v4, v3}, Lcom/google/android/flexbox/FlexboxLayoutManager;->U0(II)Landroid/view/View;
+    invoke-virtual {p0, v4, v3}, Lcom/google/android/flexbox/FlexboxLayoutManager;->T0(II)Landroid/view/View;
 
     move-result-object v4
 
@@ -591,15 +588,15 @@
     move-result v3
 
     :goto_1
-    iget-object v4, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v4, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v4, v0}, Lo57;->c(Landroid/view/View;)I
+    invoke-virtual {v4, v0}, Lea7;->c(Landroid/view/View;)I
 
     move-result v0
 
-    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {p0, v2}, Lo57;->f(Landroid/view/View;)I
+    invoke-virtual {p0, v2}, Lea7;->f(Landroid/view/View;)I
 
     move-result p0
 
@@ -619,7 +616,7 @@
 
     div-float/2addr p0, v0
 
-    invoke-virtual {p1}, Lx6c;->b()I
+    invoke-virtual {p1}, Lybc;->b()I
 
     move-result p1
 
@@ -636,17 +633,17 @@
     return v1
 .end method
 
-.method public final O0()V
+.method public final N0()V
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
     if-eqz v0, :cond_0
 
     return-void
 
     :cond_0
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
     move-result v0
 
@@ -656,89 +653,88 @@
 
     if-nez v0, :cond_1
 
-    new-instance v0, Lmga;
+    new-instance v0, Luka;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lmga;-><init>(Landroidx/recyclerview/widget/a;I)V
+    invoke-direct {v0, p0, v1}, Luka;-><init>(Landroidx/recyclerview/widget/a;I)V
 
-    iput-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iput-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    new-instance v0, Lmga;
+    new-instance v0, Luka;
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p0, v1}, Lmga;-><init>(Landroidx/recyclerview/widget/a;I)V
+    invoke-direct {v0, p0, v1}, Luka;-><init>(Landroidx/recyclerview/widget/a;I)V
 
-    iput-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->C:Lo57;
+    iput-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->C:Lea7;
 
-    goto :goto_0
+    return-void
 
     :cond_1
-    new-instance v0, Lmga;
+    new-instance v0, Luka;
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p0, v1}, Lmga;-><init>(Landroidx/recyclerview/widget/a;I)V
+    invoke-direct {v0, p0, v1}, Luka;-><init>(Landroidx/recyclerview/widget/a;I)V
 
-    iput-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iput-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    new-instance v0, Lmga;
+    new-instance v0, Luka;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lmga;-><init>(Landroidx/recyclerview/widget/a;I)V
+    invoke-direct {v0, p0, v1}, Luka;-><init>(Landroidx/recyclerview/widget/a;I)V
 
-    iput-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->C:Lo57;
+    iput-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->C:Lea7;
 
-    goto :goto_0
+    return-void
 
     :cond_2
     iget v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->q:I
 
     if-nez v0, :cond_3
 
-    new-instance v0, Lmga;
+    new-instance v0, Luka;
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p0, v1}, Lmga;-><init>(Landroidx/recyclerview/widget/a;I)V
+    invoke-direct {v0, p0, v1}, Luka;-><init>(Landroidx/recyclerview/widget/a;I)V
 
-    iput-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iput-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    new-instance v0, Lmga;
+    new-instance v0, Luka;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lmga;-><init>(Landroidx/recyclerview/widget/a;I)V
+    invoke-direct {v0, p0, v1}, Luka;-><init>(Landroidx/recyclerview/widget/a;I)V
 
-    iput-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->C:Lo57;
+    iput-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->C:Lea7;
 
-    goto :goto_0
+    return-void
 
     :cond_3
-    new-instance v0, Lmga;
+    new-instance v0, Luka;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lmga;-><init>(Landroidx/recyclerview/widget/a;I)V
+    invoke-direct {v0, p0, v1}, Luka;-><init>(Landroidx/recyclerview/widget/a;I)V
 
-    iput-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iput-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    new-instance v0, Lmga;
+    new-instance v0, Luka;
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p0, v1}, Lmga;-><init>(Landroidx/recyclerview/widget/a;I)V
+    invoke-direct {v0, p0, v1}, Luka;-><init>(Landroidx/recyclerview/widget/a;I)V
 
-    iput-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->C:Lo57;
+    iput-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->C:Lea7;
 
-    :goto_0
     return-void
 .end method
 
-.method public final P0(Lt6c;Lx6c;Lsj0;)I
-    .locals 33
+.method public final O0(Lubc;Lybc;Lnm5;)I
+    .locals 31
 
     move-object/from16 v0, p0
 
@@ -746,27 +742,27 @@
 
     move-object/from16 v2, p3
 
-    iget v3, v2, Lsj0;->g:I
+    iget v3, v2, Lnm5;->f:I
 
     const/high16 v4, -0x80000000
 
     if-eq v3, v4, :cond_1
 
-    iget v5, v2, Lsj0;->b:I
+    iget v5, v2, Lnm5;->a:I
 
     if-gez v5, :cond_0
 
     add-int/2addr v3, v5
 
-    iput v3, v2, Lsj0;->g:I
+    iput v3, v2, Lnm5;->f:I
 
     :cond_0
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/flexbox/FlexboxLayoutManager;->e1(Lt6c;Lsj0;)V
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1(Lubc;Lnm5;)V
 
     :cond_1
-    iget v3, v2, Lsj0;->b:I
+    iget v3, v2, Lnm5;->a:I
 
-    invoke-virtual/range {p0 .. p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    invoke-virtual {v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
     move-result v5
 
@@ -777,36 +773,34 @@
     :goto_0
     if-gtz v7, :cond_3
 
-    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget-boolean v9, v9, Lsj0;->c:Z
+    iget-boolean v9, v9, Lnm5;->b:Z
 
     if-eqz v9, :cond_2
 
     goto :goto_1
 
     :cond_2
-    move/from16 v21, v3
+    move/from16 v23, v3
 
-    move/from16 v25, v8
-
-    goto/16 :goto_e
+    goto/16 :goto_d
 
     :cond_3
     :goto_1
     iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
 
-    iget v10, v2, Lsj0;->e:I
+    iget v10, v2, Lnm5;->d:I
 
     if-ltz v10, :cond_2
 
-    invoke-virtual/range {p2 .. p2}, Lx6c;->b()I
+    invoke-virtual/range {p2 .. p2}, Lybc;->b()I
 
     move-result v11
 
     if-ge v10, v11, :cond_2
 
-    iget v10, v2, Lsj0;->d:I
+    iget v10, v2, Lnm5;->c:I
 
     if-ltz v10, :cond_2
 
@@ -818,70 +812,72 @@
 
     iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
 
-    iget v10, v2, Lsj0;->d:I
+    iget v10, v2, Lnm5;->c:I
 
     invoke-interface {v9, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v9
 
-    check-cast v9, Lcj5;
+    move-object v12, v9
 
-    iget v10, v9, Lcj5;->k:I
+    check-cast v12, Lkm5;
 
-    iput v10, v2, Lsj0;->e:I
+    iget v9, v12, Lkm5;->k:I
 
-    invoke-virtual/range {p0 .. p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    iput v9, v2, Lnm5;->d:I
 
-    move-result v10
+    invoke-virtual {v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
-    iget-object v11, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->A:Ldj5;
+    move-result v9
 
-    const/4 v15, -0x1
+    const/4 v10, -0x1
 
     const/16 v18, 0x20
 
-    iget-object v13, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
+    iget-object v11, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->A:Llm5;
 
-    sget-object v12, Lcom/google/android/flexbox/FlexboxLayoutManager;->N:Landroid/graphics/Rect;
+    sget-object v15, Lcom/google/android/flexbox/FlexboxLayoutManager;->N:Landroid/graphics/Rect;
 
-    if-eqz v10, :cond_a
+    iget-object v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
 
-    invoke-virtual/range {p0 .. p0}, Landroidx/recyclerview/widget/a;->J()I
+    if-eqz v9, :cond_a
 
-    move-result v10
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/a;->J()I
 
-    invoke-virtual/range {p0 .. p0}, Landroidx/recyclerview/widget/a;->K()I
+    move-result v9
+
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/a;->K()I
 
     move-result v16
 
     iget v6, v0, Landroidx/recyclerview/widget/a;->n:I
 
-    iget v14, v2, Lsj0;->f:I
+    iget v13, v2, Lnm5;->e:I
 
-    iget v4, v2, Lsj0;->j:I
+    iget v14, v2, Lnm5;->h:I
 
-    if-ne v4, v15, :cond_4
+    if-ne v14, v10, :cond_4
 
-    iget v4, v9, Lcj5;->c:I
+    iget v14, v12, Lkm5;->c:I
 
-    sub-int/2addr v14, v4
+    sub-int/2addr v13, v14
 
     :cond_4
-    move v4, v14
+    move/from16 v21, v13
 
-    iget v14, v2, Lsj0;->e:I
+    iget v13, v2, Lnm5;->d:I
 
-    int-to-float v10, v10
+    int-to-float v9, v9
 
     sub-int v6, v6, v16
 
     int-to-float v6, v6
 
-    iget v11, v11, Ldj5;->d:I
+    iget v11, v11, Llm5;->d:I
 
     int-to-float v11, v11
 
-    sub-float/2addr v10, v11
+    sub-float/2addr v9, v11
 
     sub-float/2addr v6, v11
 
@@ -891,961 +887,945 @@
 
     move-result v20
 
-    iget v11, v9, Lcj5;->d:I
+    iget v11, v12, Lkm5;->d:I
 
-    move/from16 v21, v3
+    move v14, v13
 
-    move v15, v14
-
-    const/4 v3, 0x0
+    const/16 v22, 0x0
 
     :goto_2
-    add-int v1, v14, v11
+    add-int v10, v13, v11
 
-    if-ge v15, v1, :cond_9
+    if-ge v14, v10, :cond_9
 
-    invoke-virtual {v0, v15}, Lcom/google/android/flexbox/FlexboxLayoutManager;->Z0(I)Landroid/view/View;
+    move v10, v11
 
-    move-result-object v1
+    invoke-virtual {v0, v14}, Lcom/google/android/flexbox/FlexboxLayoutManager;->Y0(I)Landroid/view/View;
 
-    if-nez v1, :cond_5
+    move-result-object v11
 
-    move/from16 v29, v3
+    if-nez v11, :cond_5
 
-    move/from16 v30, v4
+    move/from16 v23, v3
 
-    move/from16 v26, v5
+    move/from16 v24, v5
 
-    move/from16 v24, v7
+    move/from16 v28, v10
 
-    move/from16 v25, v8
+    move/from16 v17, v13
 
-    move/from16 v22, v11
+    move v5, v14
 
-    move-object v3, v12
+    move-object/from16 v29, v15
 
-    move-object v4, v13
-
-    move/from16 v23, v14
-
-    move/from16 v31, v15
-
-    const/4 v5, -0x1
+    const/4 v3, -0x1
 
     goto/16 :goto_5
 
     :cond_5
-    move/from16 v22, v11
+    move/from16 v23, v3
 
-    iget v11, v2, Lsj0;->j:I
+    iget v3, v2, Lnm5;->h:I
 
-    move/from16 v23, v14
+    move/from16 v24, v5
 
-    const/4 v14, 0x1
+    const/4 v5, 0x1
 
-    if-ne v11, v14, :cond_6
+    if-ne v3, v5, :cond_6
 
-    invoke-virtual {v0, v12, v1}, Landroidx/recyclerview/widget/a;->d(Landroid/graphics/Rect;Landroid/view/View;)V
+    invoke-virtual {v0, v15, v11}, Landroidx/recyclerview/widget/a;->d(Landroid/graphics/Rect;Landroid/view/View;)V
 
-    move/from16 v24, v7
+    const/4 v3, -0x1
 
-    const/4 v7, -0x1
+    const/4 v5, 0x0
 
-    const/4 v11, 0x0
-
-    invoke-virtual {v0, v7, v1, v11}, Landroidx/recyclerview/widget/a;->b(ILandroid/view/View;Z)V
+    invoke-virtual {v0, v3, v11, v5}, Landroidx/recyclerview/widget/a;->b(ILandroid/view/View;Z)V
 
     goto :goto_3
 
     :cond_6
-    move/from16 v24, v7
+    const/4 v3, -0x1
 
-    const/4 v7, -0x1
+    const/4 v5, 0x0
 
-    const/4 v11, 0x0
+    invoke-virtual {v0, v15, v11}, Landroidx/recyclerview/widget/a;->d(Landroid/graphics/Rect;Landroid/view/View;)V
 
-    invoke-virtual {v0, v12, v1}, Landroidx/recyclerview/widget/a;->d(Landroid/graphics/Rect;Landroid/view/View;)V
+    move/from16 v3, v22
 
-    invoke-virtual {v0, v3, v1, v11}, Landroidx/recyclerview/widget/a;->b(ILandroid/view/View;Z)V
+    invoke-virtual {v0, v3, v11, v5}, Landroidx/recyclerview/widget/a;->b(ILandroid/view/View;Z)V
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v22, v3, 0x1
 
     :goto_3
-    iget-object v11, v13, Lj54;->o:Ljava/lang/Object;
+    iget-object v3, v4, Lw84;->o:Ljava/lang/Object;
 
-    check-cast v11, [J
+    check-cast v3, [J
 
-    move/from16 v25, v8
+    move/from16 v25, v6
 
-    aget-wide v7, v11, v15
+    aget-wide v5, v3, v14
 
-    long-to-int v11, v7
-
-    shr-long v7, v7, v18
-
-    long-to-int v7, v7
-
-    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v8
-
-    check-cast v8, Lej5;
-
-    invoke-virtual {v0, v1, v11, v7, v8}, Lcom/google/android/flexbox/FlexboxLayoutManager;->g1(Landroid/view/View;IILej5;)Z
-
-    move-result v17
-
-    if-eqz v17, :cond_7
-
-    invoke-virtual {v1, v11, v7}, Landroid/view/View;->measure(II)V
-
-    :cond_7
-    iget v7, v8, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
-
-    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v11
-
-    check-cast v11, Ln6c;
-
-    iget-object v11, v11, Ln6c;->b:Landroid/graphics/Rect;
-
-    iget v11, v11, Landroid/graphics/Rect;->left:I
-
-    add-int/2addr v7, v11
-
-    int-to-float v7, v7
-
-    add-float/2addr v7, v10
-
-    iget v10, v8, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
-
-    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v11
-
-    check-cast v11, Ln6c;
-
-    iget-object v11, v11, Ln6c;->b:Landroid/graphics/Rect;
-
-    iget v11, v11, Landroid/graphics/Rect;->right:I
-
-    add-int/2addr v10, v11
-
-    int-to-float v10, v10
-
-    sub-float/2addr v6, v10
-
-    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v10
-
-    check-cast v10, Ln6c;
-
-    iget-object v10, v10, Ln6c;->b:Landroid/graphics/Rect;
-
-    iget v10, v10, Landroid/graphics/Rect;->top:I
-
-    add-int v17, v4, v10
-
-    iget-boolean v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->t:Z
-
-    if-eqz v10, :cond_8
-
-    invoke-static {v6}, Ljava/lang/Math;->round(F)I
-
-    move-result v10
-
-    invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v11
-
-    sub-int v26, v10, v11
-
-    invoke-static {v6}, Ljava/lang/Math;->round(F)I
-
-    move-result v27
-
-    invoke-virtual {v1}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result v10
-
-    add-int v28, v10, v17
-
-    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
-
-    move-object v11, v1
-
-    move/from16 v29, v3
-
-    move-object v3, v12
-
-    move-object v12, v9
-
-    move/from16 v30, v4
-
-    move-object v4, v13
-
-    move/from16 v13, v26
-
-    move/from16 v26, v5
-
-    move v5, v14
-
-    move/from16 v14, v17
-
-    move/from16 v31, v15
-
-    const/4 v5, -0x1
-
-    move/from16 v15, v27
-
-    move/from16 v16, v28
-
-    invoke-virtual/range {v10 .. v16}, Lj54;->G(Landroid/view/View;Lcj5;IIII)V
-
-    goto :goto_4
-
-    :cond_8
-    move/from16 v29, v3
-
-    move/from16 v30, v4
-
-    move/from16 v26, v5
-
-    move-object v3, v12
-
-    move-object v4, v13
-
-    move/from16 v31, v15
-
-    const/4 v5, -0x1
-
-    invoke-static {v7}, Ljava/lang/Math;->round(F)I
-
-    move-result v13
-
-    invoke-static {v7}, Ljava/lang/Math;->round(F)I
-
-    move-result v10
-
-    invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v11
-
-    add-int v15, v11, v10
-
-    invoke-virtual {v1}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result v10
-
-    add-int v16, v10, v17
-
-    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
-
-    move-object v11, v1
-
-    move-object v12, v9
-
-    move/from16 v14, v17
-
-    invoke-virtual/range {v10 .. v16}, Lj54;->G(Landroid/view/View;Lcj5;IIII)V
-
-    :goto_4
-    invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v10
-
-    iget v11, v8, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
-
-    add-int/2addr v10, v11
-
-    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v11
-
-    check-cast v11, Ln6c;
-
-    iget-object v11, v11, Ln6c;->b:Landroid/graphics/Rect;
-
-    iget v11, v11, Landroid/graphics/Rect;->right:I
-
-    add-int/2addr v10, v11
-
-    int-to-float v10, v10
-
-    add-float v10, v10, v20
-
-    add-float/2addr v10, v7
-
-    invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v7
-
-    iget v8, v8, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
-
-    add-int/2addr v7, v8
-
-    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v1
-
-    check-cast v1, Ln6c;
-
-    iget-object v1, v1, Ln6c;->b:Landroid/graphics/Rect;
-
-    iget v1, v1, Landroid/graphics/Rect;->left:I
-
-    add-int/2addr v7, v1
-
-    int-to-float v1, v7
-
-    add-float v1, v1, v20
-
-    sub-float/2addr v6, v1
-
-    :goto_5
-    add-int/lit8 v15, v31, 0x1
-
-    move-object v12, v3
-
-    move-object v13, v4
-
-    move/from16 v11, v22
-
-    move/from16 v14, v23
-
-    move/from16 v7, v24
-
-    move/from16 v8, v25
-
-    move/from16 v5, v26
-
-    move/from16 v3, v29
-
-    move/from16 v4, v30
-
-    goto/16 :goto_2
-
-    :cond_9
-    move/from16 v26, v5
-
-    move/from16 v24, v7
-
-    move/from16 v25, v8
-
-    iget-object v1, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
-
-    iget v1, v1, Lsj0;->j:I
-
-    iget v3, v2, Lsj0;->d:I
-
-    add-int/2addr v3, v1
-
-    iput v3, v2, Lsj0;->d:I
-
-    iget v1, v9, Lcj5;->c:I
-
-    const/16 v28, 0x0
-
-    goto/16 :goto_c
-
-    :cond_a
-    move/from16 v21, v3
-
-    move/from16 v26, v5
-
-    move/from16 v24, v7
-
-    move/from16 v25, v8
-
-    move-object v3, v12
-
-    move-object v4, v13
-
-    move v5, v15
-
-    invoke-virtual/range {p0 .. p0}, Landroidx/recyclerview/widget/a;->L()I
-
-    move-result v1
-
-    invoke-virtual/range {p0 .. p0}, Landroidx/recyclerview/widget/a;->I()I
-
-    move-result v6
-
-    iget v7, v0, Landroidx/recyclerview/widget/a;->o:I
-
-    iget v8, v2, Lsj0;->f:I
-
-    iget v10, v2, Lsj0;->j:I
-
-    if-ne v10, v5, :cond_b
-
-    iget v10, v9, Lcj5;->c:I
-
-    sub-int v12, v8, v10
-
-    add-int/2addr v8, v10
-
-    move/from16 v22, v8
-
-    move v8, v12
-
-    goto :goto_6
-
-    :cond_b
-    move/from16 v22, v8
-
-    :goto_6
-    iget v15, v2, Lsj0;->e:I
-
-    int-to-float v1, v1
-
-    sub-int/2addr v7, v6
-
-    int-to-float v6, v7
-
-    iget v7, v11, Ldj5;->d:I
-
-    int-to-float v7, v7
-
-    sub-float/2addr v1, v7
-
-    sub-float/2addr v6, v7
-
-    const/4 v7, 0x0
-
-    invoke-static {v7, v7}, Ljava/lang/Math;->max(FF)F
-
-    move-result v7
-
-    iget v14, v9, Lcj5;->d:I
-
-    move v13, v15
-
-    const/4 v11, 0x0
-
-    :goto_7
-    add-int v10, v15, v14
-
-    if-ge v13, v10, :cond_12
-
-    invoke-virtual {v0, v13}, Lcom/google/android/flexbox/FlexboxLayoutManager;->Z0(I)Landroid/view/View;
-
-    move-result-object v12
-
-    if-nez v12, :cond_c
-
-    move-object/from16 v23, v4
-
-    move/from16 v31, v13
-
-    move/from16 v32, v14
-
-    move v4, v15
-
-    const/16 v28, 0x0
-
-    goto/16 :goto_b
-
-    :cond_c
-    iget-object v10, v4, Lj54;->o:Ljava/lang/Object;
-
-    check-cast v10, [J
-
-    move/from16 v16, v6
-
-    aget-wide v5, v10, v13
-
-    long-to-int v10, v5
+    long-to-int v3, v5
 
     shr-long v5, v5, v18
 
     long-to-int v5, v5
 
-    invoke-virtual {v12}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v11}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v6
 
-    check-cast v6, Lej5;
+    check-cast v6, Lmm5;
 
-    invoke-virtual {v0, v12, v10, v5, v6}, Lcom/google/android/flexbox/FlexboxLayoutManager;->g1(Landroid/view/View;IILej5;)Z
+    invoke-virtual {v0, v11, v3, v5, v6}, Lcom/google/android/flexbox/FlexboxLayoutManager;->f1(Landroid/view/View;IILmm5;)Z
+
+    move-result v26
+
+    if-eqz v26, :cond_7
+
+    invoke-virtual {v11, v3, v5}, Landroid/view/View;->measure(II)V
+
+    :cond_7
+    iget v3, v6, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+
+    invoke-virtual {v11}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v5
+
+    check-cast v5, Lobc;
+
+    iget-object v5, v5, Lobc;->b:Landroid/graphics/Rect;
+
+    iget v5, v5, Landroid/graphics/Rect;->left:I
+
+    add-int/2addr v3, v5
+
+    int-to-float v3, v3
+
+    add-float/2addr v9, v3
+
+    iget v3, v6, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+
+    invoke-virtual {v11}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v5
+
+    check-cast v5, Lobc;
+
+    iget-object v5, v5, Lobc;->b:Landroid/graphics/Rect;
+
+    iget v5, v5, Landroid/graphics/Rect;->right:I
+
+    add-int/2addr v3, v5
+
+    int-to-float v3, v3
+
+    sub-float v3, v25, v3
+
+    invoke-virtual {v11}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v5
+
+    check-cast v5, Lobc;
+
+    iget-object v5, v5, Lobc;->b:Landroid/graphics/Rect;
+
+    iget v5, v5, Landroid/graphics/Rect;->top:I
+
+    add-int v5, v21, v5
+
+    move/from16 v25, v3
+
+    iget-boolean v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->t:Z
+
+    if-eqz v3, :cond_8
+
+    invoke-static/range {v25 .. v25}, Ljava/lang/Math;->round(F)I
+
+    move-result v3
+
+    invoke-virtual {v11}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v26
+
+    sub-int v3, v3, v26
+
+    move-object/from16 v26, v15
+
+    invoke-static/range {v25 .. v25}, Ljava/lang/Math;->round(F)I
+
+    move-result v15
+
+    invoke-virtual {v11}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v27
+
+    add-int v27, v27, v5
+
+    move/from16 v28, v10
+
+    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
+
+    move/from16 v16, v14
+
+    move v14, v5
+
+    move/from16 v5, v16
+
+    move/from16 v17, v13
+
+    move-object/from16 v29, v26
+
+    move/from16 v16, v27
+
+    move v13, v3
+
+    const/4 v3, -0x1
+
+    invoke-virtual/range {v10 .. v16}, Lw84;->s(Landroid/view/View;Lkm5;IIII)V
+
+    goto :goto_4
+
+    :cond_8
+    move v3, v14
+
+    move v14, v5
+
+    move v5, v3
+
+    move/from16 v28, v10
+
+    move/from16 v17, v13
+
+    move-object/from16 v29, v15
+
+    const/4 v3, -0x1
+
+    invoke-static {v9}, Ljava/lang/Math;->round(F)I
+
+    move-result v13
+
+    invoke-static {v9}, Ljava/lang/Math;->round(F)I
+
+    move-result v10
+
+    invoke-virtual {v11}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v15
+
+    add-int/2addr v15, v10
+
+    invoke-virtual {v11}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v10
+
+    add-int v16, v10, v14
+
+    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
+
+    invoke-virtual/range {v10 .. v16}, Lw84;->s(Landroid/view/View;Lkm5;IIII)V
+
+    :goto_4
+    invoke-virtual {v11}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v10
+
+    iget v13, v6, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+
+    add-int/2addr v10, v13
+
+    invoke-virtual {v11}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v13
+
+    check-cast v13, Lobc;
+
+    iget-object v13, v13, Lobc;->b:Landroid/graphics/Rect;
+
+    iget v13, v13, Landroid/graphics/Rect;->right:I
+
+    add-int/2addr v10, v13
+
+    int-to-float v10, v10
+
+    add-float v10, v10, v20
+
+    add-float/2addr v10, v9
+
+    invoke-virtual {v11}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v9
+
+    iget v6, v6, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+
+    add-int/2addr v9, v6
+
+    invoke-virtual {v11}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v6
+
+    check-cast v6, Lobc;
+
+    iget-object v6, v6, Lobc;->b:Landroid/graphics/Rect;
+
+    iget v6, v6, Landroid/graphics/Rect;->left:I
+
+    add-int/2addr v9, v6
+
+    int-to-float v6, v9
+
+    add-float v6, v6, v20
+
+    sub-float v6, v25, v6
+
+    move v9, v10
+
+    :goto_5
+    add-int/lit8 v14, v5, 0x1
+
+    move/from16 v13, v17
+
+    move/from16 v3, v23
+
+    move/from16 v5, v24
+
+    move/from16 v11, v28
+
+    move-object/from16 v15, v29
+
+    goto/16 :goto_2
+
+    :cond_9
+    move/from16 v23, v3
+
+    move/from16 v24, v5
+
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
+
+    iget v3, v3, Lnm5;->h:I
+
+    iget v4, v2, Lnm5;->c:I
+
+    add-int/2addr v4, v3
+
+    iput v4, v2, Lnm5;->c:I
+
+    iget v3, v12, Lkm5;->c:I
+
+    goto/16 :goto_b
+
+    :cond_a
+    move/from16 v23, v3
+
+    move/from16 v24, v5
+
+    move v3, v10
+
+    move-object/from16 v29, v15
+
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/a;->L()I
+
+    move-result v5
+
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/a;->I()I
+
+    move-result v6
+
+    iget v9, v0, Landroidx/recyclerview/widget/a;->o:I
+
+    iget v10, v2, Lnm5;->e:I
+
+    iget v13, v2, Lnm5;->h:I
+
+    if-ne v13, v3, :cond_b
+
+    iget v13, v12, Lkm5;->c:I
+
+    sub-int v14, v10, v13
+
+    add-int/2addr v10, v13
+
+    move/from16 v22, v10
+
+    move/from16 v21, v14
+
+    goto :goto_6
+
+    :cond_b
+    move/from16 v21, v10
+
+    move/from16 v22, v21
+
+    :goto_6
+    iget v10, v2, Lnm5;->d:I
+
+    int-to-float v5, v5
+
+    sub-int/2addr v9, v6
+
+    int-to-float v6, v9
+
+    iget v9, v11, Llm5;->d:I
+
+    int-to-float v9, v9
+
+    sub-float/2addr v5, v9
+
+    sub-float/2addr v6, v9
+
+    const/4 v11, 0x0
+
+    invoke-static {v11, v11}, Ljava/lang/Math;->max(FF)F
+
+    move-result v9
+
+    iget v11, v12, Lkm5;->d:I
+
+    move v13, v6
+
+    move v14, v10
+
+    const/4 v6, 0x0
+
+    :goto_7
+    add-int v15, v10, v11
+
+    if-ge v14, v15, :cond_12
+
+    move v15, v11
+
+    invoke-virtual {v0, v14}, Lcom/google/android/flexbox/FlexboxLayoutManager;->Y0(I)Landroid/view/View;
+
+    move-result-object v11
+
+    if-nez v11, :cond_c
+
+    move-object/from16 v25, v4
+
+    move v3, v5
+
+    move/from16 v28, v10
+
+    move v5, v15
+
+    move-object/from16 v30, v29
+
+    move/from16 v29, v14
+
+    goto/16 :goto_a
+
+    :cond_c
+    iget-object v3, v4, Lw84;->o:Ljava/lang/Object;
+
+    check-cast v3, [J
+
+    move-object/from16 v25, v4
+
+    aget-wide v3, v3, v14
+
+    move/from16 v16, v5
+
+    long-to-int v5, v3
+
+    shr-long v3, v3, v18
+
+    long-to-int v3, v3
+
+    invoke-virtual {v11}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v4
+
+    check-cast v4, Lmm5;
+
+    invoke-virtual {v0, v11, v5, v3, v4}, Lcom/google/android/flexbox/FlexboxLayoutManager;->f1(Landroid/view/View;IILmm5;)Z
 
     move-result v17
 
     if-eqz v17, :cond_d
 
-    invoke-virtual {v12, v10, v5}, Landroid/view/View;->measure(II)V
+    invoke-virtual {v11, v5, v3}, Landroid/view/View;->measure(II)V
 
     :cond_d
-    iget v5, v6, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v3, v4, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    invoke-virtual {v12}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v11}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v10
+    move-result-object v5
 
-    check-cast v10, Ln6c;
+    check-cast v5, Lobc;
 
-    iget-object v10, v10, Ln6c;->b:Landroid/graphics/Rect;
+    iget-object v5, v5, Lobc;->b:Landroid/graphics/Rect;
 
-    iget v10, v10, Landroid/graphics/Rect;->top:I
+    iget v5, v5, Landroid/graphics/Rect;->top:I
 
-    add-int/2addr v5, v10
+    add-int/2addr v3, v5
 
-    int-to-float v5, v5
+    int-to-float v3, v3
 
-    add-float/2addr v1, v5
+    add-float v5, v16, v3
 
-    iget v5, v6, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v3, v4, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    invoke-virtual {v12}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v11}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v10
+    move-result-object v16
 
-    check-cast v10, Ln6c;
+    move/from16 v17, v3
 
-    iget-object v10, v10, Ln6c;->b:Landroid/graphics/Rect;
+    move-object/from16 v3, v16
 
-    iget v10, v10, Landroid/graphics/Rect;->bottom:I
+    check-cast v3, Lobc;
 
-    add-int/2addr v5, v10
+    iget-object v3, v3, Lobc;->b:Landroid/graphics/Rect;
 
-    int-to-float v5, v5
+    iget v3, v3, Landroid/graphics/Rect;->bottom:I
 
-    sub-float v5, v16, v5
+    add-int v3, v17, v3
 
-    iget v10, v2, Lsj0;->j:I
+    int-to-float v3, v3
 
-    move-object/from16 v23, v4
+    sub-float v3, v13, v3
 
-    const/4 v4, 0x1
+    iget v13, v2, Lnm5;->h:I
 
-    if-ne v10, v4, :cond_e
+    move/from16 v26, v3
 
-    invoke-virtual {v0, v3, v12}, Landroidx/recyclerview/widget/a;->d(Landroid/graphics/Rect;Landroid/view/View;)V
+    const/4 v3, 0x1
 
-    const/4 v4, -0x1
+    if-ne v13, v3, :cond_e
 
-    const/4 v10, 0x0
+    move-object/from16 v13, v29
 
-    invoke-virtual {v0, v4, v12, v10}, Landroidx/recyclerview/widget/a;->b(ILandroid/view/View;Z)V
+    invoke-virtual {v0, v13, v11}, Landroidx/recyclerview/widget/a;->d(Landroid/graphics/Rect;Landroid/view/View;)V
 
-    :goto_8
-    move/from16 v19, v11
+    move/from16 v19, v5
 
-    goto :goto_9
+    const/4 v3, -0x1
 
-    :cond_e
-    const/4 v4, -0x1
+    const/4 v5, 0x0
 
-    const/4 v10, 0x0
-
-    invoke-virtual {v0, v3, v12}, Landroidx/recyclerview/widget/a;->d(Landroid/graphics/Rect;Landroid/view/View;)V
-
-    invoke-virtual {v0, v11, v12, v10}, Landroidx/recyclerview/widget/a;->b(ILandroid/view/View;Z)V
-
-    add-int/lit8 v11, v11, 0x1
+    invoke-virtual {v0, v3, v11, v5}, Landroidx/recyclerview/widget/a;->b(ILandroid/view/View;Z)V
 
     goto :goto_8
 
-    :goto_9
-    invoke-virtual {v12}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    :cond_e
+    move/from16 v19, v5
 
-    move-result-object v11
+    move-object/from16 v13, v29
 
-    check-cast v11, Ln6c;
+    const/4 v3, -0x1
 
-    iget-object v11, v11, Ln6c;->b:Landroid/graphics/Rect;
+    const/4 v5, 0x0
 
-    iget v11, v11, Landroid/graphics/Rect;->left:I
+    invoke-virtual {v0, v13, v11}, Landroidx/recyclerview/widget/a;->d(Landroid/graphics/Rect;Landroid/view/View;)V
 
-    add-int v16, v8, v11
+    invoke-virtual {v0, v6, v11, v5}, Landroidx/recyclerview/widget/a;->b(ILandroid/view/View;Z)V
 
-    invoke-virtual {v12}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    add-int/lit8 v6, v6, 0x1
 
-    move-result-object v11
+    :goto_8
+    invoke-virtual {v11}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    check-cast v11, Ln6c;
+    move-result-object v16
 
-    iget-object v11, v11, Ln6c;->b:Landroid/graphics/Rect;
+    move-object/from16 v3, v16
 
-    iget v11, v11, Landroid/graphics/Rect;->right:I
+    check-cast v3, Lobc;
 
-    sub-int v17, v22, v11
+    iget-object v3, v3, Lobc;->b:Landroid/graphics/Rect;
 
-    iget-boolean v11, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->t:Z
+    iget v3, v3, Landroid/graphics/Rect;->left:I
 
-    if-eqz v11, :cond_10
+    add-int v3, v21, v3
 
-    iget-boolean v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->u:Z
+    invoke-virtual {v11}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    if-eqz v4, :cond_f
+    move-result-object v16
 
-    invoke-virtual {v12}, Landroid/view/View;->getMeasuredWidth()I
+    move-object/from16 v5, v16
 
-    move-result v4
+    check-cast v5, Lobc;
 
-    sub-int v4, v17, v4
+    iget-object v5, v5, Lobc;->b:Landroid/graphics/Rect;
 
-    invoke-static {v5}, Ljava/lang/Math;->round(F)I
+    iget v5, v5, Landroid/graphics/Rect;->right:I
 
-    move-result v16
+    sub-int v16, v22, v5
 
-    invoke-virtual {v12}, Landroid/view/View;->getMeasuredHeight()I
+    move-object/from16 v29, v13
 
-    move-result v27
+    iget-boolean v13, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->t:Z
 
-    sub-int v16, v16, v27
+    if-eqz v13, :cond_10
 
-    invoke-static {v5}, Ljava/lang/Math;->round(F)I
+    iget-boolean v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->u:Z
 
-    move-result v27
+    if-eqz v3, :cond_f
 
-    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
+    invoke-virtual {v11}, Landroid/view/View;->getMeasuredWidth()I
 
-    const/16 v28, 0x0
+    move-result v3
 
-    move/from16 v29, v11
+    sub-int v3, v16, v3
 
-    move-object v11, v12
+    invoke-static/range {v26 .. v26}, Ljava/lang/Math;->round(F)I
 
-    move-object/from16 v30, v12
+    move-result v5
 
-    move-object v12, v9
+    invoke-virtual {v11}, Landroid/view/View;->getMeasuredHeight()I
 
-    move/from16 v31, v13
+    move-result v17
 
-    move/from16 v13, v29
+    sub-int v5, v5, v17
 
-    move/from16 v32, v14
+    invoke-static/range {v26 .. v26}, Ljava/lang/Math;->round(F)I
 
-    move v14, v4
+    move-result v17
 
-    move v4, v15
+    move/from16 v28, v10
 
-    move/from16 v15, v16
+    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
 
-    move/from16 v16, v17
+    move/from16 v30, v15
 
-    move/from16 v17, v27
+    move v15, v5
 
-    invoke-virtual/range {v10 .. v17}, Lj54;->H(Landroid/view/View;Lcj5;ZIIII)V
+    move/from16 v5, v30
 
-    goto/16 :goto_a
+    move-object/from16 v30, v29
+
+    move/from16 v29, v14
+
+    move v14, v3
+
+    invoke-virtual/range {v10 .. v17}, Lw84;->t(Landroid/view/View;Lkm5;ZIIII)V
+
+    goto :goto_9
 
     :cond_f
     move/from16 v28, v10
 
-    move/from16 v29, v11
+    move v5, v15
 
-    move-object/from16 v30, v12
+    move-object/from16 v30, v29
 
-    move/from16 v31, v13
+    move/from16 v29, v14
 
-    move/from16 v32, v14
+    invoke-virtual {v11}, Landroid/view/View;->getMeasuredWidth()I
 
-    move v4, v15
+    move-result v3
 
-    invoke-virtual/range {v30 .. v30}, Landroid/view/View;->getMeasuredWidth()I
+    sub-int v14, v16, v3
 
-    move-result v10
-
-    sub-int v14, v17, v10
-
-    invoke-static {v1}, Ljava/lang/Math;->round(F)I
+    invoke-static/range {v19 .. v19}, Ljava/lang/Math;->round(F)I
 
     move-result v15
 
-    invoke-static {v1}, Ljava/lang/Math;->round(F)I
+    invoke-static/range {v19 .. v19}, Ljava/lang/Math;->round(F)I
+
+    move-result v3
+
+    invoke-virtual {v11}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v10
 
-    invoke-virtual/range {v30 .. v30}, Landroid/view/View;->getMeasuredHeight()I
+    add-int v17, v10, v3
 
-    move-result v11
+    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
 
-    add-int v27, v11, v10
+    invoke-virtual/range {v10 .. v17}, Lw84;->t(Landroid/view/View;Lkm5;ZIIII)V
 
-    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
-
-    move-object/from16 v11, v30
-
-    move-object v12, v9
-
-    move/from16 v13, v29
-
-    move/from16 v16, v17
-
-    move/from16 v17, v27
-
-    invoke-virtual/range {v10 .. v17}, Lj54;->H(Landroid/view/View;Lcj5;ZIIII)V
-
-    goto :goto_a
+    goto :goto_9
 
     :cond_10
     move/from16 v28, v10
 
-    move/from16 v29, v11
+    move v5, v15
 
-    move-object/from16 v30, v12
+    move-object/from16 v30, v29
 
-    move/from16 v31, v13
-
-    move/from16 v32, v14
-
-    move v4, v15
+    move/from16 v29, v14
 
     iget-boolean v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->u:Z
 
     if-eqz v10, :cond_11
 
-    invoke-static {v5}, Ljava/lang/Math;->round(F)I
+    invoke-static/range {v26 .. v26}, Ljava/lang/Math;->round(F)I
 
     move-result v10
 
-    invoke-virtual/range {v30 .. v30}, Landroid/view/View;->getMeasuredHeight()I
+    invoke-virtual {v11}, Landroid/view/View;->getMeasuredHeight()I
 
-    move-result v11
+    move-result v14
 
-    sub-int v15, v10, v11
+    sub-int v15, v10, v14
 
-    invoke-virtual/range {v30 .. v30}, Landroid/view/View;->getMeasuredWidth()I
+    invoke-virtual {v11}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v10
 
-    add-int v17, v10, v16
+    add-int v16, v10, v3
 
-    invoke-static {v5}, Ljava/lang/Math;->round(F)I
+    invoke-static/range {v26 .. v26}, Ljava/lang/Math;->round(F)I
 
-    move-result v27
+    move-result v17
 
-    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
+    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
 
-    move-object/from16 v11, v30
+    move v14, v3
 
-    move-object v12, v9
+    invoke-virtual/range {v10 .. v17}, Lw84;->t(Landroid/view/View;Lkm5;ZIIII)V
 
-    move/from16 v13, v29
-
-    move/from16 v14, v16
-
-    move/from16 v16, v17
-
-    move/from16 v17, v27
-
-    invoke-virtual/range {v10 .. v17}, Lj54;->H(Landroid/view/View;Lcj5;ZIIII)V
-
-    goto :goto_a
+    goto :goto_9
 
     :cond_11
-    invoke-static {v1}, Ljava/lang/Math;->round(F)I
+    move v14, v3
+
+    invoke-static/range {v19 .. v19}, Ljava/lang/Math;->round(F)I
 
     move-result v15
 
-    invoke-virtual/range {v30 .. v30}, Landroid/view/View;->getMeasuredWidth()I
+    invoke-virtual {v11}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v3
+
+    add-int v16, v3, v14
+
+    invoke-static/range {v19 .. v19}, Ljava/lang/Math;->round(F)I
+
+    move-result v3
+
+    invoke-virtual {v11}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v10
 
-    add-int v17, v10, v16
+    add-int v17, v10, v3
 
-    invoke-static {v1}, Ljava/lang/Math;->round(F)I
+    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
+
+    invoke-virtual/range {v10 .. v17}, Lw84;->t(Landroid/view/View;Lkm5;ZIIII)V
+
+    :goto_9
+    invoke-virtual {v11}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v3
+
+    iget v10, v4, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+
+    add-int/2addr v3, v10
+
+    invoke-virtual {v11}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v10
+
+    check-cast v10, Lobc;
+
+    iget-object v10, v10, Lobc;->b:Landroid/graphics/Rect;
+
+    iget v10, v10, Landroid/graphics/Rect;->bottom:I
+
+    add-int/2addr v3, v10
+
+    int-to-float v3, v3
+
+    add-float/2addr v3, v9
+
+    add-float v3, v3, v19
+
+    invoke-virtual {v11}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v10
 
-    invoke-virtual/range {v30 .. v30}, Landroid/view/View;->getMeasuredHeight()I
+    iget v4, v4, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    move-result v11
+    add-int/2addr v10, v4
 
-    add-int v27, v11, v10
+    invoke-virtual {v11}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
+    move-result-object v4
 
-    move-object/from16 v11, v30
+    check-cast v4, Lobc;
 
-    move-object v12, v9
+    iget-object v4, v4, Lobc;->b:Landroid/graphics/Rect;
 
-    move/from16 v13, v29
+    iget v4, v4, Landroid/graphics/Rect;->top:I
 
-    move/from16 v14, v16
+    add-int/2addr v10, v4
 
-    move/from16 v16, v17
+    int-to-float v4, v10
 
-    move/from16 v17, v27
+    add-float/2addr v4, v9
 
-    invoke-virtual/range {v10 .. v17}, Lj54;->H(Landroid/view/View;Lcj5;ZIIII)V
+    sub-float v4, v26, v4
+
+    move v13, v4
 
     :goto_a
-    invoke-virtual/range {v30 .. v30}, Landroid/view/View;->getMeasuredHeight()I
+    add-int/lit8 v14, v29, 0x1
 
-    move-result v10
+    move v11, v5
 
-    iget v11, v6, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    move-object/from16 v4, v25
 
-    add-int/2addr v10, v11
+    move/from16 v10, v28
 
-    invoke-virtual/range {v30 .. v30}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    move-object/from16 v29, v30
 
-    move-result-object v11
+    move v5, v3
 
-    check-cast v11, Ln6c;
-
-    iget-object v11, v11, Ln6c;->b:Landroid/graphics/Rect;
-
-    iget v11, v11, Landroid/graphics/Rect;->bottom:I
-
-    add-int/2addr v10, v11
-
-    int-to-float v10, v10
-
-    add-float/2addr v10, v7
-
-    add-float/2addr v10, v1
-
-    invoke-virtual/range {v30 .. v30}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result v1
-
-    iget v6, v6, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
-
-    add-int/2addr v1, v6
-
-    invoke-virtual/range {v30 .. v30}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v6
-
-    check-cast v6, Ln6c;
-
-    iget-object v6, v6, Ln6c;->b:Landroid/graphics/Rect;
-
-    iget v6, v6, Landroid/graphics/Rect;->top:I
-
-    add-int/2addr v1, v6
-
-    int-to-float v1, v1
-
-    add-float/2addr v1, v7
-
-    sub-float/2addr v5, v1
-
-    move v6, v5
-
-    move v1, v10
-
-    move/from16 v11, v19
-
-    :goto_b
-    add-int/lit8 v13, v31, 0x1
-
-    move v15, v4
-
-    move-object/from16 v4, v23
-
-    move/from16 v14, v32
-
-    const/4 v5, -0x1
+    const/4 v3, -0x1
 
     goto/16 :goto_7
 
     :cond_12
-    const/16 v28, 0x0
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget-object v1, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget v3, v3, Lnm5;->h:I
 
-    iget v1, v1, Lsj0;->j:I
+    iget v4, v2, Lnm5;->c:I
 
-    iget v3, v2, Lsj0;->d:I
+    add-int/2addr v4, v3
 
-    add-int/2addr v3, v1
+    iput v4, v2, Lnm5;->c:I
 
-    iput v3, v2, Lsj0;->d:I
+    iget v3, v12, Lkm5;->c:I
 
-    iget v1, v9, Lcj5;->c:I
+    :goto_b
+    add-int/2addr v8, v3
 
-    :goto_c
-    add-int v8, v25, v1
+    if-nez v24, :cond_13
 
-    if-nez v26, :cond_13
+    iget-boolean v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->t:Z
 
-    iget-boolean v1, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->t:Z
+    if-eqz v3, :cond_13
 
-    if-eqz v1, :cond_13
+    iget v3, v12, Lkm5;->c:I
 
-    iget v1, v9, Lcj5;->c:I
+    iget v4, v2, Lnm5;->h:I
 
-    iget v3, v2, Lsj0;->j:I
+    mul-int/2addr v3, v4
 
-    mul-int/2addr v1, v3
+    iget v4, v2, Lnm5;->e:I
 
-    iget v3, v2, Lsj0;->f:I
+    sub-int/2addr v4, v3
 
-    sub-int/2addr v3, v1
+    iput v4, v2, Lnm5;->e:I
 
-    iput v3, v2, Lsj0;->f:I
-
-    goto :goto_d
+    goto :goto_c
 
     :cond_13
-    iget v1, v9, Lcj5;->c:I
+    iget v3, v12, Lkm5;->c:I
 
-    iget v3, v2, Lsj0;->j:I
+    iget v4, v2, Lnm5;->h:I
 
-    mul-int/2addr v1, v3
+    mul-int/2addr v3, v4
 
-    iget v3, v2, Lsj0;->f:I
+    iget v4, v2, Lnm5;->e:I
 
-    add-int/2addr v3, v1
+    add-int/2addr v4, v3
 
-    iput v3, v2, Lsj0;->f:I
+    iput v4, v2, Lnm5;->e:I
 
-    :goto_d
-    iget v1, v9, Lcj5;->c:I
+    :goto_c
+    iget v3, v12, Lkm5;->c:I
 
-    sub-int v7, v24, v1
+    sub-int/2addr v7, v3
 
-    move-object/from16 v1, p1
+    move/from16 v3, v23
 
-    move/from16 v3, v21
-
-    move/from16 v5, v26
+    move/from16 v5, v24
 
     const/high16 v4, -0x80000000
 
     goto/16 :goto_0
 
-    :goto_e
-    iget v1, v2, Lsj0;->b:I
+    :goto_d
+    iget v3, v2, Lnm5;->a:I
 
-    sub-int v1, v1, v25
+    sub-int/2addr v3, v8
 
-    iput v1, v2, Lsj0;->b:I
+    iput v3, v2, Lnm5;->a:I
 
-    iget v3, v2, Lsj0;->g:I
+    iget v4, v2, Lnm5;->f:I
 
-    const/high16 v4, -0x80000000
+    const/high16 v5, -0x80000000
 
-    if-eq v3, v4, :cond_15
+    if-eq v4, v5, :cond_15
 
-    add-int v3, v3, v25
+    add-int/2addr v4, v8
 
-    iput v3, v2, Lsj0;->g:I
+    iput v4, v2, Lnm5;->f:I
 
-    if-gez v1, :cond_14
+    if-gez v3, :cond_14
 
-    add-int/2addr v3, v1
+    add-int/2addr v4, v3
 
-    iput v3, v2, Lsj0;->g:I
+    iput v4, v2, Lnm5;->f:I
 
     :cond_14
-    move-object/from16 v1, p1
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/flexbox/FlexboxLayoutManager;->e1(Lt6c;Lsj0;)V
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1(Lubc;Lnm5;)V
 
     :cond_15
-    iget v0, v2, Lsj0;->b:I
+    iget v0, v2, Lnm5;->a:I
 
-    sub-int v3, v21, v0
+    sub-int v3, v23, v0
 
     return v3
+.end method
+
+.method public final P0(I)Landroid/view/View;
+    .locals 2
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->w()I
+
+    move-result v1
+
+    invoke-virtual {p0, v0, v1, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->U0(III)Landroid/view/View;
+
+    move-result-object p1
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {p1}, Landroidx/recyclerview/widget/a;->M(Landroid/view/View;)I
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
+
+    iget-object v1, v1, Lw84;->c:Ljava/lang/Object;
+
+    check-cast v1, [I
+
+    aget v0, v1, v0
+
+    const/4 v1, -0x1
+
+    if-ne v0, v1, :cond_1
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_1
+    iget-object v1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
+
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkm5;
+
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->Q0(Landroid/view/View;Lkm5;)Landroid/view/View;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method public final Q()Z
@@ -1856,68 +1836,14 @@
     return p0
 .end method
 
-.method public final Q0(I)Landroid/view/View;
-    .locals 3
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->w()I
-
-    move-result v1
-
-    invoke-virtual {p0, v0, v1, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->V0(III)Landroid/view/View;
-
-    move-result-object p1
-
-    const/4 v0, 0x0
-
-    if-nez p1, :cond_0
-
-    return-object v0
-
-    :cond_0
-    invoke-static {p1}, Landroidx/recyclerview/widget/a;->M(Landroid/view/View;)I
-
-    move-result v1
-
-    iget-object v2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
-
-    iget-object v2, v2, Lj54;->c:Ljava/lang/Object;
-
-    check-cast v2, [I
-
-    aget v1, v2, v1
-
-    const/4 v2, -0x1
-
-    if-ne v1, v2, :cond_1
-
-    return-object v0
-
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcj5;
-
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->R0(Landroid/view/View;Lcj5;)Landroid/view/View;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final R0(Landroid/view/View;Lcj5;)Landroid/view/View;
+.method public final Q0(Landroid/view/View;Lkm5;)Landroid/view/View;
     .locals 5
 
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
     move-result v0
 
-    iget p2, p2, Lcj5;->d:I
+    iget p2, p2, Lkm5;->d:I
 
     const/4 v1, 0x1
 
@@ -1947,15 +1873,15 @@
 
     if-nez v0, :cond_1
 
-    iget-object v3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v3, p1}, Lo57;->c(Landroid/view/View;)I
+    invoke-virtual {v3, p1}, Lea7;->c(Landroid/view/View;)I
 
     move-result v3
 
-    iget-object v4, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v4, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v4, v2}, Lo57;->c(Landroid/view/View;)I
+    invoke-virtual {v4, v2}, Lea7;->c(Landroid/view/View;)I
 
     move-result v4
 
@@ -1964,15 +1890,15 @@
     goto :goto_1
 
     :cond_1
-    iget-object v3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v3, p1}, Lo57;->f(Landroid/view/View;)I
+    invoke-virtual {v3, p1}, Lea7;->f(Landroid/view/View;)I
 
     move-result v3
 
-    iget-object v4, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v4, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v4, v2}, Lo57;->f(Landroid/view/View;)I
+    invoke-virtual {v4, v2}, Lea7;->f(Landroid/view/View;)I
 
     move-result v4
 
@@ -1991,7 +1917,7 @@
     return-object p1
 .end method
 
-.method public final S0(I)Landroid/view/View;
+.method public final R0(I)Landroid/view/View;
     .locals 2
 
     invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->w()I
@@ -2002,7 +1928,7 @@
 
     const/4 v1, -0x1
 
-    invoke-virtual {p0, v0, v1, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->V0(III)Landroid/view/View;
+    invoke-virtual {p0, v0, v1, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->U0(III)Landroid/view/View;
 
     move-result-object p1
 
@@ -2017,9 +1943,9 @@
 
     move-result v0
 
-    iget-object v1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
+    iget-object v1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
 
-    iget-object v1, v1, Lj54;->c:Ljava/lang/Object;
+    iget-object v1, v1, Lw84;->c:Ljava/lang/Object;
 
     check-cast v1, [I
 
@@ -2031,19 +1957,19 @@
 
     move-result-object v0
 
-    check-cast v0, Lcj5;
+    check-cast v0, Lkm5;
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->T0(Landroid/view/View;Lcj5;)Landroid/view/View;
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->S0(Landroid/view/View;Lkm5;)Landroid/view/View;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public final T0(Landroid/view/View;Lcj5;)Landroid/view/View;
+.method public final S0(Landroid/view/View;Lkm5;)Landroid/view/View;
     .locals 5
 
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
     move-result v0
 
@@ -2057,7 +1983,7 @@
 
     move-result v2
 
-    iget p2, p2, Lcj5;->d:I
+    iget p2, p2, Lkm5;->d:I
 
     sub-int/2addr v2, p2
 
@@ -2089,15 +2015,15 @@
 
     if-nez v0, :cond_1
 
-    iget-object v3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v3, p1}, Lo57;->f(Landroid/view/View;)I
+    invoke-virtual {v3, p1}, Lea7;->f(Landroid/view/View;)I
 
     move-result v3
 
-    iget-object v4, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v4, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v4, p2}, Lo57;->f(Landroid/view/View;)I
+    invoke-virtual {v4, p2}, Lea7;->f(Landroid/view/View;)I
 
     move-result v4
 
@@ -2106,15 +2032,15 @@
     goto :goto_1
 
     :cond_1
-    iget-object v3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v3, p1}, Lo57;->c(Landroid/view/View;)I
+    invoke-virtual {v3, p1}, Lea7;->c(Landroid/view/View;)I
 
     move-result v3
 
-    iget-object v4, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v4, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v4, p2}, Lo57;->c(Landroid/view/View;)I
+    invoke-virtual {v4, p2}, Lea7;->c(Landroid/view/View;)I
 
     move-result v4
 
@@ -2133,7 +2059,7 @@
     return-object p1
 .end method
 
-.method public final U0(II)Landroid/view/View;
+.method public final T0(II)Landroid/view/View;
     .locals 12
 
     const/4 v0, 0x1
@@ -2182,7 +2108,7 @@
 
     move-result-object v7
 
-    check-cast v7, Ln6c;
+    check-cast v7, Lobc;
 
     invoke-static {v2}, Landroidx/recyclerview/widget/a;->B(Landroid/view/View;)I
 
@@ -2196,7 +2122,7 @@
 
     move-result-object v7
 
-    check-cast v7, Ln6c;
+    check-cast v7, Lobc;
 
     invoke-static {v2}, Landroidx/recyclerview/widget/a;->F(Landroid/view/View;)I
 
@@ -2210,7 +2136,7 @@
 
     move-result-object v7
 
-    check-cast v7, Ln6c;
+    check-cast v7, Lobc;
 
     invoke-static {v2}, Landroidx/recyclerview/widget/a;->E(Landroid/view/View;)I
 
@@ -2224,7 +2150,7 @@
 
     move-result-object v7
 
-    check-cast v7, Ln6c;
+    check-cast v7, Lobc;
 
     invoke-static {v2}, Landroidx/recyclerview/widget/a;->z(Landroid/view/View;)I
 
@@ -2277,47 +2203,35 @@
     return-object p0
 .end method
 
-.method public final V()V
-    .locals 0
-
-    invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->q0()V
-
-    return-void
-.end method
-
-.method public final V0(III)Landroid/view/View;
+.method public final U0(III)Landroid/view/View;
     .locals 7
 
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->O0()V
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->N0()V
 
-    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
     const/4 v1, 0x1
 
     if-nez v0, :cond_0
 
-    new-instance v0, Lsj0;
+    new-instance v0, Lnm5;
 
-    const/4 v2, 0x1
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, v2}, Lsj0;-><init>(I)V
+    iput v1, v0, Lnm5;->h:I
 
-    iput v1, v0, Lsj0;->i:I
-
-    iput v1, v0, Lsj0;->j:I
-
-    iput-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iput-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
     :cond_0
-    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v0}, Lo57;->m()I
+    invoke-virtual {v0}, Lea7;->m()I
 
     move-result v0
 
-    iget-object v2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v2}, Lo57;->h()I
+    invoke-virtual {v2}, Lea7;->h()I
 
     move-result v2
 
@@ -2357,11 +2271,11 @@
 
     move-result-object v6
 
-    check-cast v6, Ln6c;
+    check-cast v6, Lobc;
 
-    iget-object v6, v6, Ln6c;->a:Lb7c;
+    iget-object v6, v6, Lobc;->a:Lccc;
 
-    invoke-virtual {v6}, Lb7c;->p()Z
+    invoke-virtual {v6}, Lccc;->o()Z
 
     move-result v6
 
@@ -2374,17 +2288,17 @@
     goto :goto_3
 
     :cond_3
-    iget-object v6, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v6, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v6, v5}, Lo57;->f(Landroid/view/View;)I
+    invoke-virtual {v6, v5}, Lea7;->f(Landroid/view/View;)I
 
     move-result v6
 
     if-lt v6, v0, :cond_5
 
-    iget-object v6, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v6, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v6, v5}, Lo57;->c(Landroid/view/View;)I
+    invoke-virtual {v6, v5}, Lea7;->c(Landroid/view/View;)I
 
     move-result v6
 
@@ -2410,13 +2324,98 @@
     :cond_7
     if-eqz v3, :cond_8
 
-    goto :goto_4
+    return-object v3
 
     :cond_8
-    move-object v3, v4
+    return-object v4
+.end method
 
-    :goto_4
-    return-object v3
+.method public final V()V
+    .locals 0
+
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->p0()V
+
+    return-void
+.end method
+
+.method public final V0(ILubc;Lybc;Z)I
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-boolean v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->t:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
+
+    invoke-virtual {v0}, Lea7;->m()I
+
+    move-result v0
+
+    sub-int v0, p1, v0
+
+    if-lez v0, :cond_2
+
+    invoke-virtual {p0, v0, p2, p3}, Lcom/google/android/flexbox/FlexboxLayoutManager;->a1(ILubc;Lybc;)I
+
+    move-result p2
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
+
+    invoke-virtual {v0}, Lea7;->h()I
+
+    move-result v0
+
+    sub-int/2addr v0, p1
+
+    if-lez v0, :cond_2
+
+    neg-int v0, v0
+
+    invoke-virtual {p0, v0, p2, p3}, Lcom/google/android/flexbox/FlexboxLayoutManager;->a1(ILubc;Lybc;)I
+
+    move-result p2
+
+    neg-int p2, p2
+
+    :goto_0
+    add-int/2addr p1, p2
+
+    if-eqz p4, :cond_1
+
+    iget-object p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
+
+    invoke-virtual {p3}, Lea7;->h()I
+
+    move-result p3
+
+    sub-int/2addr p3, p1
+
+    if-lez p3, :cond_1
+
+    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
+
+    invoke-virtual {p0, p3}, Lea7;->r(I)V
+
+    add-int/2addr p3, p2
+
+    return p3
+
+    :cond_1
+    return p2
+
+    :cond_2
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
 .method public final W(Landroidx/recyclerview/widget/RecyclerView;)V
@@ -2433,54 +2432,49 @@
     return-void
 .end method
 
-.method public final W0(ILt6c;Lx6c;Z)I
-    .locals 2
+.method public final W0(ILubc;Lybc;Z)I
+    .locals 1
 
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
     move-result v0
 
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     iget-boolean v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->t:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v0}, Lo57;->m()I
+    invoke-virtual {v0}, Lea7;->h()I
 
     move-result v0
 
-    sub-int v0, p1, v0
+    sub-int/2addr v0, p1
 
-    if-lez v0, :cond_0
+    if-lez v0, :cond_2
 
-    invoke-virtual {p0, v0, p2, p3}, Lcom/google/android/flexbox/FlexboxLayoutManager;->b1(ILt6c;Lx6c;)I
+    neg-int v0, v0
+
+    invoke-virtual {p0, v0, p2, p3}, Lcom/google/android/flexbox/FlexboxLayoutManager;->a1(ILubc;Lybc;)I
 
     move-result p2
 
     goto :goto_0
 
     :cond_0
-    return v1
+    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
-
-    invoke-virtual {v0}, Lo57;->h()I
+    invoke-virtual {v0}, Lea7;->m()I
 
     move-result v0
 
-    sub-int/2addr v0, p1
+    sub-int v0, p1, v0
 
-    if-lez v0, :cond_3
+    if-lez v0, :cond_2
 
-    neg-int v0, v0
-
-    invoke-virtual {p0, v0, p2, p3}, Lcom/google/android/flexbox/FlexboxLayoutManager;->b1(ILt6c;Lx6c;)I
+    invoke-virtual {p0, v0, p2, p3}, Lcom/google/android/flexbox/FlexboxLayoutManager;->a1(ILubc;Lybc;)I
 
     move-result p2
 
@@ -2489,31 +2483,33 @@
     :goto_0
     add-int/2addr p1, p2
 
-    if-eqz p4, :cond_2
+    if-eqz p4, :cond_1
 
-    iget-object p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {p3}, Lo57;->h()I
+    invoke-virtual {p3}, Lea7;->m()I
 
     move-result p3
 
-    sub-int/2addr p3, p1
+    sub-int/2addr p1, p3
 
-    if-lez p3, :cond_2
+    if-lez p1, :cond_1
 
-    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {p0, p3}, Lo57;->r(I)V
+    neg-int p3, p1
 
-    add-int/2addr p3, p2
+    invoke-virtual {p0, p3}, Lea7;->r(I)V
 
-    return p3
+    sub-int/2addr p2, p1
 
-    :cond_2
+    :cond_1
     return p2
 
-    :cond_3
-    return v1
+    :cond_2
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
 .method public final X(Landroidx/recyclerview/widget/RecyclerView;)V
@@ -2522,93 +2518,10 @@
     return-void
 .end method
 
-.method public final X0(ILt6c;Lx6c;Z)I
-    .locals 2
-
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_1
-
-    iget-boolean v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->t:Z
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
-
-    invoke-virtual {v0}, Lo57;->h()I
-
-    move-result v0
-
-    sub-int/2addr v0, p1
-
-    if-lez v0, :cond_0
-
-    neg-int v0, v0
-
-    invoke-virtual {p0, v0, p2, p3}, Lcom/google/android/flexbox/FlexboxLayoutManager;->b1(ILt6c;Lx6c;)I
-
-    move-result p2
-
-    goto :goto_0
-
-    :cond_0
-    return v1
-
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
-
-    invoke-virtual {v0}, Lo57;->m()I
-
-    move-result v0
-
-    sub-int v0, p1, v0
-
-    if-lez v0, :cond_3
-
-    invoke-virtual {p0, v0, p2, p3}, Lcom/google/android/flexbox/FlexboxLayoutManager;->b1(ILt6c;Lx6c;)I
-
-    move-result p2
-
-    neg-int p2, p2
-
-    :goto_0
-    add-int/2addr p1, p2
-
-    if-eqz p4, :cond_2
-
-    iget-object p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
-
-    invoke-virtual {p3}, Lo57;->m()I
-
-    move-result p3
-
-    sub-int/2addr p1, p3
-
-    if-lez p1, :cond_2
-
-    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
-
-    neg-int p3, p1
-
-    invoke-virtual {p0, p3}, Lo57;->r(I)V
-
-    sub-int/2addr p2, p1
-
-    :cond_2
-    return p2
-
-    :cond_3
-    return v1
-.end method
-
-.method public final Y0(Landroid/view/View;)I
+.method public final X0(Landroid/view/View;)I
     .locals 0
 
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
     move-result p0
 
@@ -2618,9 +2531,9 @@
 
     move-result-object p0
 
-    check-cast p0, Ln6c;
+    check-cast p0, Lobc;
 
-    iget-object p0, p0, Ln6c;->b:Landroid/graphics/Rect;
+    iget-object p0, p0, Lobc;->b:Landroid/graphics/Rect;
 
     iget p0, p0, Landroid/graphics/Rect;->top:I
 
@@ -2628,12 +2541,13 @@
 
     move-result-object p1
 
-    check-cast p1, Ln6c;
+    check-cast p1, Lobc;
 
-    iget-object p1, p1, Ln6c;->b:Landroid/graphics/Rect;
+    iget-object p1, p1, Lobc;->b:Landroid/graphics/Rect;
 
     iget p1, p1, Landroid/graphics/Rect;->bottom:I
 
+    :goto_0
     add-int/2addr p0, p1
 
     return p0
@@ -2643,9 +2557,9 @@
 
     move-result-object p0
 
-    check-cast p0, Ln6c;
+    check-cast p0, Lobc;
 
-    iget-object p0, p0, Ln6c;->b:Landroid/graphics/Rect;
+    iget-object p0, p0, Lobc;->b:Landroid/graphics/Rect;
 
     iget p0, p0, Landroid/graphics/Rect;->left:I
 
@@ -2653,18 +2567,16 @@
 
     move-result-object p1
 
-    check-cast p1, Ln6c;
+    check-cast p1, Lobc;
 
-    iget-object p1, p1, Ln6c;->b:Landroid/graphics/Rect;
+    iget-object p1, p1, Lobc;->b:Landroid/graphics/Rect;
 
     iget p1, p1, Landroid/graphics/Rect;->right:I
 
-    add-int/2addr p0, p1
-
-    return p0
+    goto :goto_0
 .end method
 
-.method public final Z0(I)Landroid/view/View;
+.method public final Y0(I)Landroid/view/View;
     .locals 2
 
     iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->I:Landroid/util/SparseArray;
@@ -2680,85 +2592,20 @@
     return-object v0
 
     :cond_0
-    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->x:Lt6c;
+    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->x:Lubc;
 
     const-wide v0, 0x7fffffffffffffffL
 
-    invoke-virtual {p0, p1, v0, v1}, Lt6c;->j(IJ)Lb7c;
+    invoke-virtual {p0, p1, v0, v1}, Lubc;->j(IJ)Lccc;
 
     move-result-object p0
 
-    iget-object p0, p0, Lb7c;->a:Landroid/view/View;
+    iget-object p0, p0, Lccc;->a:Landroid/view/View;
 
     return-object p0
 .end method
 
-.method public final a(I)Landroid/graphics/PointF;
-    .locals 2
-
-    invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->w()I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_0
-
-    return-object v1
-
-    :cond_0
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/a;->v(I)Landroid/view/View;
-
-    move-result-object v0
-
-    if-nez v0, :cond_1
-
-    return-object v1
-
-    :cond_1
-    invoke-static {v0}, Landroidx/recyclerview/widget/a;->M(Landroid/view/View;)I
-
-    move-result v0
-
-    if-ge p1, v0, :cond_2
-
-    const/4 p1, -0x1
-
-    goto :goto_0
-
-    :cond_2
-    const/4 p1, 0x1
-
-    :goto_0
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
-
-    move-result p0
-
-    const/4 v0, 0x0
-
-    if-eqz p0, :cond_3
-
-    new-instance p0, Landroid/graphics/PointF;
-
-    int-to-float p1, p1
-
-    invoke-direct {p0, v0, p1}, Landroid/graphics/PointF;-><init>(FF)V
-
-    return-object p0
-
-    :cond_3
-    new-instance p0, Landroid/graphics/PointF;
-
-    int-to-float p1, p1
-
-    invoke-direct {p0, p1, v0}, Landroid/graphics/PointF;-><init>(FF)V
-
-    return-object p0
-.end method
-
-.method public final a1()I
+.method public final Z0()I
     .locals 4
 
     iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
@@ -2791,9 +2638,9 @@
 
     move-result-object v3
 
-    check-cast v3, Lcj5;
+    check-cast v3, Lkm5;
 
-    iget v3, v3, Lcj5;->a:I
+    iget v3, v3, Lkm5;->a:I
 
     invoke-static {v2, v3}, Ljava/lang/Math;->max(II)I
 
@@ -2807,12 +2654,78 @@
     return v2
 .end method
 
-.method public final b1(ILt6c;Lx6c;)I
-    .locals 18
+.method public final a(I)Landroid/graphics/PointF;
+    .locals 1
+
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->w()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/a;->v(I)Landroid/view/View;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_1
+    invoke-static {v0}, Landroidx/recyclerview/widget/a;->M(Landroid/view/View;)I
+
+    move-result v0
+
+    if-ge p1, v0, :cond_2
+
+    const/4 p1, -0x1
+
+    goto :goto_1
+
+    :cond_2
+    const/4 p1, 0x1
+
+    :goto_1
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
+
+    move-result p0
+
+    const/4 v0, 0x0
+
+    if-eqz p0, :cond_3
+
+    new-instance p0, Landroid/graphics/PointF;
+
+    int-to-float p1, p1
+
+    invoke-direct {p0, v0, p1}, Landroid/graphics/PointF;-><init>(FF)V
+
+    return-object p0
+
+    :cond_3
+    new-instance p0, Landroid/graphics/PointF;
+
+    int-to-float p1, p1
+
+    invoke-direct {p0, p1, v0}, Landroid/graphics/PointF;-><init>(FF)V
+
+    return-object p0
+.end method
+
+.method public final a1(ILubc;Lybc;)I
+    .locals 19
 
     move-object/from16 v0, p0
 
-    invoke-virtual/range {p0 .. p0}, Landroidx/recyclerview/widget/a;->w()I
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/a;->w()I
 
     move-result v1
 
@@ -2825,15 +2738,15 @@
     goto/16 :goto_c
 
     :cond_0
-    invoke-virtual/range {p0 .. p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->O0()V
+    invoke-virtual {v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->N0()V
 
-    iget-object v1, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v1, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
     const/4 v3, 0x1
 
-    iput-boolean v3, v1, Lsj0;->k:Z
+    iput-boolean v3, v1, Lnm5;->i:Z
 
-    invoke-virtual/range {p0 .. p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    invoke-virtual {v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
     move-result v1
 
@@ -2877,11 +2790,11 @@
 
     move-result v6
 
-    iget-object v7, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v7, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iput v5, v7, Lsj0;->j:I
+    iput v5, v7, Lnm5;->h:I
 
-    invoke-virtual/range {p0 .. p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    invoke-virtual {v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
     move-result v7
 
@@ -2891,180 +2804,182 @@
 
     invoke-static {v8, v9}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    move-result v8
+    move-result v12
 
-    iget v9, v0, Landroidx/recyclerview/widget/a;->o:I
+    iget v8, v0, Landroidx/recyclerview/widget/a;->o:I
 
-    iget v10, v0, Landroidx/recyclerview/widget/a;->m:I
+    iget v9, v0, Landroidx/recyclerview/widget/a;->m:I
 
-    invoke-static {v9, v10}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v8, v9}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    move-result v9
+    move-result v13
 
     if-nez v7, :cond_4
 
-    iget-boolean v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->t:Z
+    iget-boolean v8, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->t:Z
 
-    if-eqz v10, :cond_4
+    if-eqz v8, :cond_4
 
-    move v10, v3
+    move v8, v3
 
     goto :goto_3
 
     :cond_4
-    move v10, v2
+    move v8, v2
 
     :goto_3
-    iget-object v15, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
+    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
 
     if-ne v5, v3, :cond_a
 
-    invoke-virtual/range {p0 .. p0}, Landroidx/recyclerview/widget/a;->w()I
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/a;->w()I
 
-    move-result v11
+    move-result v10
 
-    sub-int/2addr v11, v3
+    sub-int/2addr v10, v3
 
-    invoke-virtual {v0, v11}, Landroidx/recyclerview/widget/a;->v(I)Landroid/view/View;
+    invoke-virtual {v0, v10}, Landroidx/recyclerview/widget/a;->v(I)Landroid/view/View;
 
-    move-result-object v11
+    move-result-object v10
 
-    if-nez v11, :cond_5
+    if-nez v10, :cond_5
 
     goto/16 :goto_a
 
     :cond_5
-    iget-object v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v11, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget-object v13, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v14, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v13, v11}, Lo57;->c(Landroid/view/View;)I
+    invoke-virtual {v14, v10}, Lea7;->c(Landroid/view/View;)I
 
-    move-result v13
+    move-result v14
 
-    iput v13, v12, Lsj0;->f:I
+    iput v14, v11, Lnm5;->e:I
 
-    invoke-static {v11}, Landroidx/recyclerview/widget/a;->M(Landroid/view/View;)I
+    invoke-static {v10}, Landroidx/recyclerview/widget/a;->M(Landroid/view/View;)I
 
-    move-result v12
+    move-result v11
 
-    iget-object v13, v15, Lj54;->c:Ljava/lang/Object;
-
-    check-cast v13, [I
-
-    aget v13, v13, v12
-
-    iget-object v14, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
-
-    invoke-interface {v14, v13}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v13
-
-    check-cast v13, Lcj5;
-
-    invoke-virtual {v0, v11, v13}, Lcom/google/android/flexbox/FlexboxLayoutManager;->T0(Landroid/view/View;Lcj5;)Landroid/view/View;
-
-    move-result-object v11
-
-    iget-object v13, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
-
-    iput v3, v13, Lsj0;->i:I
-
-    add-int/2addr v12, v3
-
-    iput v12, v13, Lsj0;->e:I
-
-    iget-object v14, v15, Lj54;->c:Ljava/lang/Object;
+    iget-object v14, v9, Lw84;->c:Ljava/lang/Object;
 
     check-cast v14, [I
 
-    array-length v3, v14
+    aget v14, v14, v11
 
-    if-gt v3, v12, :cond_6
+    iget-object v15, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
 
-    iput v4, v13, Lsj0;->d:I
+    invoke-interface {v15, v14}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v14
+
+    check-cast v14, Lkm5;
+
+    invoke-virtual {v0, v10, v14}, Lcom/google/android/flexbox/FlexboxLayoutManager;->S0(Landroid/view/View;Lkm5;)Landroid/view/View;
+
+    move-result-object v10
+
+    iget-object v14, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
+
+    invoke-virtual {v14}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    add-int/2addr v11, v3
+
+    iput v11, v14, Lnm5;->d:I
+
+    iget-object v15, v9, Lw84;->c:Ljava/lang/Object;
+
+    check-cast v15, [I
+
+    move/from16 v16, v3
+
+    array-length v3, v15
+
+    if-gt v3, v11, :cond_6
+
+    iput v4, v14, Lnm5;->c:I
 
     goto :goto_4
 
     :cond_6
-    aget v3, v14, v12
+    aget v3, v15, v11
 
-    iput v3, v13, Lsj0;->d:I
+    iput v3, v14, Lnm5;->c:I
 
     :goto_4
-    if-eqz v10, :cond_7
+    if-eqz v8, :cond_7
 
-    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v3, v11}, Lo57;->f(Landroid/view/View;)I
+    invoke-virtual {v3, v10}, Lea7;->f(Landroid/view/View;)I
 
     move-result v3
 
-    iput v3, v13, Lsj0;->f:I
+    iput v3, v14, Lnm5;->e:I
 
-    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v8, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v10, v11}, Lo57;->f(Landroid/view/View;)I
+    invoke-virtual {v8, v10}, Lea7;->f(Landroid/view/View;)I
 
-    move-result v10
+    move-result v8
 
-    neg-int v10, v10
+    neg-int v8, v8
 
-    iget-object v11, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v11}, Lo57;->m()I
-
-    move-result v11
-
-    add-int/2addr v11, v10
-
-    iput v11, v3, Lsj0;->g:I
-
-    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
-
-    iget v10, v3, Lsj0;->g:I
-
-    invoke-static {v10, v2}, Ljava/lang/Math;->max(II)I
+    invoke-virtual {v10}, Lea7;->m()I
 
     move-result v10
 
-    iput v10, v3, Lsj0;->g:I
+    add-int/2addr v10, v8
+
+    iput v10, v3, Lnm5;->f:I
+
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
+
+    iget v8, v3, Lnm5;->f:I
+
+    invoke-static {v8, v2}, Ljava/lang/Math;->max(II)I
+
+    move-result v8
+
+    iput v8, v3, Lnm5;->f:I
 
     goto :goto_5
 
     :cond_7
-    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v3, v11}, Lo57;->c(Landroid/view/View;)I
+    invoke-virtual {v3, v10}, Lea7;->c(Landroid/view/View;)I
 
     move-result v3
 
-    iput v3, v13, Lsj0;->f:I
+    iput v3, v14, Lnm5;->e:I
 
-    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v8, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v10, v11}, Lo57;->c(Landroid/view/View;)I
+    invoke-virtual {v8, v10}, Lea7;->c(Landroid/view/View;)I
+
+    move-result v8
+
+    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
+
+    invoke-virtual {v10}, Lea7;->h()I
 
     move-result v10
 
-    iget-object v11, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    sub-int/2addr v8, v10
 
-    invoke-virtual {v11}, Lo57;->h()I
-
-    move-result v11
-
-    sub-int/2addr v10, v11
-
-    iput v10, v3, Lsj0;->g:I
+    iput v8, v3, Lnm5;->f:I
 
     :goto_5
-    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget v3, v3, Lsj0;->d:I
+    iget v3, v3, Lnm5;->c:I
 
     if-eq v3, v4, :cond_8
 
@@ -3074,99 +2989,95 @@
 
     move-result v4
 
-    const/4 v10, 0x1
-
-    sub-int/2addr v4, v10
+    add-int/lit8 v4, v4, -0x1
 
     if-le v3, v4, :cond_10
 
     :cond_8
-    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget v3, v3, Lsj0;->e:I
+    iget v3, v3, Lnm5;->d:I
 
-    iget-object v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->y:Lx6c;
+    iget-object v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->y:Lybc;
 
-    invoke-virtual {v4}, Lx6c;->b()I
+    invoke-virtual {v4}, Lybc;->b()I
 
     move-result v4
 
     if-gt v3, v4, :cond_10
 
-    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget v4, v3, Lsj0;->g:I
+    iget v4, v3, Lnm5;->f:I
 
     sub-int v14, v6, v4
 
-    iget-object v11, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->M:Lea6;
-
     const/4 v4, 0x0
 
-    iput-object v4, v11, Lea6;->b:Ljava/lang/Object;
+    iget-object v11, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->M:La9;
+
+    iput-object v4, v11, La9;->a:Ljava/util/List;
 
     if-lez v14, :cond_10
 
     if-eqz v7, :cond_9
 
-    iget v3, v3, Lsj0;->e:I
-
-    iget-object v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
-
-    const/16 v16, -0x1
-
-    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
-
-    move v12, v8
-
-    move v13, v9
-
-    move-object v7, v15
-
-    move v15, v3
-
-    move-object/from16 v17, v4
-
-    invoke-virtual/range {v10 .. v17}, Lj54;->t(Lea6;IIIIILjava/util/List;)V
-
-    goto :goto_6
-
-    :cond_9
-    move-object v7, v15
-
-    iget v15, v3, Lsj0;->e:I
+    iget v15, v3, Lnm5;->d:I
 
     iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
 
     const/16 v16, -0x1
 
-    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
-
-    move v12, v9
-
-    move v13, v8
+    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
 
     move-object/from16 v17, v3
 
-    invoke-virtual/range {v10 .. v17}, Lj54;->t(Lea6;IIIIILjava/util/List;)V
+    invoke-virtual/range {v10 .. v17}, Lw84;->f(La9;IIIIILjava/util/List;)V
+
+    goto :goto_6
+
+    :cond_9
+    iget v15, v3, Lnm5;->d:I
+
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
+
+    const/16 v16, -0x1
+
+    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
+
+    move/from16 v17, v13
+
+    move v13, v12
+
+    move/from16 v12, v17
+
+    move-object/from16 v17, v3
+
+    invoke-virtual/range {v10 .. v17}, Lw84;->f(La9;IIIIILjava/util/List;)V
+
+    move/from16 v18, v13
+
+    move v13, v12
+
+    move/from16 v12, v18
 
     :goto_6
-    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget v3, v3, Lsj0;->e:I
+    iget v3, v3, Lnm5;->d:I
 
-    invoke-virtual {v7, v8, v9, v3}, Lj54;->x(III)V
+    invoke-virtual {v9, v12, v13, v3}, Lw84;->k(III)V
 
-    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget v3, v3, Lsj0;->e:I
+    iget v3, v3, Lnm5;->d:I
 
-    invoke-virtual {v7, v3}, Lj54;->O(I)V
+    invoke-virtual {v9, v3}, Lw84;->x(I)V
 
     goto/16 :goto_9
 
     :cond_a
-    move-object v7, v15
+    move/from16 v16, v3
 
     invoke-virtual {v0, v2}, Landroidx/recyclerview/widget/a;->v(I)Landroid/view/View;
 
@@ -3177,186 +3088,182 @@
     goto/16 :goto_a
 
     :cond_b
-    iget-object v8, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v7, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v9, v3}, Lo57;->f(Landroid/view/View;)I
+    invoke-virtual {v10, v3}, Lea7;->f(Landroid/view/View;)I
 
-    move-result v9
+    move-result v10
 
-    iput v9, v8, Lsj0;->f:I
+    iput v10, v7, Lnm5;->e:I
 
     invoke-static {v3}, Landroidx/recyclerview/widget/a;->M(Landroid/view/View;)I
 
-    move-result v8
+    move-result v7
 
-    iget-object v9, v7, Lj54;->c:Ljava/lang/Object;
+    iget-object v10, v9, Lw84;->c:Ljava/lang/Object;
 
-    check-cast v9, [I
+    check-cast v10, [I
 
-    aget v9, v9, v8
+    aget v10, v10, v7
 
     iget-object v11, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
 
-    invoke-interface {v11, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v11, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v10
 
-    check-cast v9, Lcj5;
+    check-cast v10, Lkm5;
 
-    invoke-virtual {v0, v3, v9}, Lcom/google/android/flexbox/FlexboxLayoutManager;->R0(Landroid/view/View;Lcj5;)Landroid/view/View;
+    invoke-virtual {v0, v3, v10}, Lcom/google/android/flexbox/FlexboxLayoutManager;->Q0(Landroid/view/View;Lkm5;)Landroid/view/View;
 
     move-result-object v3
 
-    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    const/4 v11, 0x1
+    invoke-virtual {v10}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput v11, v9, Lsj0;->i:I
+    iget-object v9, v9, Lw84;->c:Ljava/lang/Object;
 
-    iget-object v7, v7, Lj54;->c:Ljava/lang/Object;
+    check-cast v9, [I
 
-    check-cast v7, [I
+    aget v9, v9, v7
 
-    aget v7, v7, v8
+    if-ne v9, v4, :cond_c
 
-    if-ne v7, v4, :cond_c
-
-    move v7, v2
+    move v9, v2
 
     :cond_c
-    if-lez v7, :cond_d
+    if-lez v9, :cond_d
 
     iget-object v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
 
-    add-int/lit8 v9, v7, -0x1
+    add-int/lit8 v10, v9, -0x1
 
-    invoke-interface {v4, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v4, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v4, Lcj5;
+    check-cast v4, Lkm5;
 
-    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v10, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget v4, v4, Lcj5;->d:I
+    iget v4, v4, Lkm5;->d:I
 
-    sub-int/2addr v8, v4
+    sub-int/2addr v7, v4
 
-    iput v8, v9, Lsj0;->e:I
+    iput v7, v10, Lnm5;->d:I
 
     goto :goto_7
 
     :cond_d
-    iput v4, v9, Lsj0;->e:I
+    iput v4, v10, Lnm5;->d:I
 
     :goto_7
-    iget-object v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    if-lez v7, :cond_e
+    if-lez v9, :cond_e
 
-    const/4 v8, 0x1
-
-    sub-int/2addr v7, v8
+    add-int/lit8 v9, v9, -0x1
 
     goto :goto_8
 
     :cond_e
-    move v7, v2
+    move v9, v2
 
     :goto_8
-    iput v7, v4, Lsj0;->d:I
+    iput v9, v4, Lnm5;->c:I
 
-    if-eqz v10, :cond_f
+    if-eqz v8, :cond_f
 
-    iget-object v7, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v7, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v7, v3}, Lo57;->c(Landroid/view/View;)I
+    invoke-virtual {v7, v3}, Lea7;->c(Landroid/view/View;)I
 
     move-result v7
 
-    iput v7, v4, Lsj0;->f:I
+    iput v7, v4, Lnm5;->e:I
 
-    iget-object v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget-object v7, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v7, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v7, v3}, Lo57;->c(Landroid/view/View;)I
+    invoke-virtual {v7, v3}, Lea7;->c(Landroid/view/View;)I
 
     move-result v3
 
-    iget-object v7, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v7, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v7}, Lo57;->h()I
+    invoke-virtual {v7}, Lea7;->h()I
 
     move-result v7
 
     sub-int/2addr v3, v7
 
-    iput v3, v4, Lsj0;->g:I
+    iput v3, v4, Lnm5;->f:I
 
-    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget v4, v3, Lsj0;->g:I
+    iget v4, v3, Lnm5;->f:I
 
     invoke-static {v4, v2}, Ljava/lang/Math;->max(II)I
 
     move-result v4
 
-    iput v4, v3, Lsj0;->g:I
+    iput v4, v3, Lnm5;->f:I
 
     goto :goto_9
 
     :cond_f
-    iget-object v7, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v7, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v7, v3}, Lo57;->f(Landroid/view/View;)I
+    invoke-virtual {v7, v3}, Lea7;->f(Landroid/view/View;)I
 
     move-result v7
 
-    iput v7, v4, Lsj0;->f:I
+    iput v7, v4, Lnm5;->e:I
 
-    iget-object v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget-object v7, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v7, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v7, v3}, Lo57;->f(Landroid/view/View;)I
+    invoke-virtual {v7, v3}, Lea7;->f(Landroid/view/View;)I
 
     move-result v3
 
     neg-int v3, v3
 
-    iget-object v7, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v7, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v7}, Lo57;->m()I
+    invoke-virtual {v7}, Lea7;->m()I
 
     move-result v7
 
     add-int/2addr v7, v3
 
-    iput v7, v4, Lsj0;->g:I
+    iput v7, v4, Lnm5;->f:I
 
     :cond_10
     :goto_9
-    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget v4, v3, Lsj0;->g:I
+    iget v4, v3, Lnm5;->f:I
 
     sub-int v4, v6, v4
 
-    iput v4, v3, Lsj0;->b:I
+    iput v4, v3, Lnm5;->a:I
 
     :goto_a
-    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget v4, v3, Lsj0;->g:I
+    iget v4, v3, Lnm5;->f:I
 
     move-object/from16 v7, p2
 
     move-object/from16 v8, p3
 
-    invoke-virtual {v0, v7, v8, v3}, Lcom/google/android/flexbox/FlexboxLayoutManager;->P0(Lt6c;Lx6c;Lsj0;)I
+    invoke-virtual {v0, v7, v8, v3}, Lcom/google/android/flexbox/FlexboxLayoutManager;->O0(Lubc;Lybc;Lnm5;)I
 
     move-result v3
 
@@ -3364,7 +3271,7 @@
 
     if-gez v3, :cond_11
 
-    return v2
+    goto :goto_c
 
     :cond_11
     if-eqz v1, :cond_13
@@ -3388,15 +3295,15 @@
     mul-int v1, v5, v3
 
     :goto_b
-    iget-object v2, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v2, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
     neg-int v3, v1
 
-    invoke-virtual {v2, v3}, Lo57;->r(I)V
+    invoke-virtual {v2, v3}, Lea7;->r(I)V
 
-    iget-object v0, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v0, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iput v1, v0, Lsj0;->h:I
+    iput v1, v0, Lnm5;->g:I
 
     return v1
 
@@ -3405,7 +3312,7 @@
     return v2
 .end method
 
-.method public final c1(I)I
+.method public final b1(I)I
     .locals 4
 
     invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->w()I
@@ -3416,12 +3323,12 @@
 
     if-nez p1, :cond_0
 
-    goto :goto_5
+    goto :goto_2
 
     :cond_0
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->O0()V
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->N0()V
 
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
     move-result v0
 
@@ -3457,7 +3364,7 @@
 
     const/4 v3, 0x1
 
-    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->A:Ldj5;
+    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->A:Llm5;
 
     if-ne v2, v3, :cond_4
 
@@ -3467,7 +3374,7 @@
 
     if-gez p1, :cond_3
 
-    iget p0, p0, Ldj5;->d:I
+    iget p0, p0, Llm5;->d:I
 
     add-int/2addr v0, p0
 
@@ -3479,21 +3386,23 @@
 
     neg-int p0, p0
 
-    goto :goto_4
+    return p0
 
     :cond_3
-    iget p0, p0, Ldj5;->d:I
+    iget p0, p0, Llm5;->d:I
 
     add-int v0, p0, p1
 
-    if-lez v0, :cond_7
+    if-lez v0, :cond_6
 
-    goto :goto_2
+    neg-int p0, p0
+
+    return p0
 
     :cond_4
     if-lez p1, :cond_5
 
-    iget p0, p0, Ldj5;->d:I
+    iget p0, p0, Llm5;->d:I
 
     sub-int/2addr v0, p0
 
@@ -3503,44 +3412,31 @@
 
     move-result p0
 
-    goto :goto_4
+    return p0
 
     :cond_5
-    iget p0, p0, Ldj5;->d:I
+    iget p0, p0, Llm5;->d:I
 
     add-int v0, p0, p1
 
-    if-ltz v0, :cond_6
-
-    goto :goto_3
+    if-ltz v0, :cond_7
 
     :cond_6
-    :goto_2
-    neg-int p1, p0
+    return p1
 
     :cond_7
-    :goto_3
-    move p0, p1
+    neg-int p0, p0
 
-    :goto_4
     return p0
 
     :cond_8
-    :goto_5
+    :goto_2
     const/4 p0, 0x0
 
     return p0
 .end method
 
-.method public final d0(II)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->h1(I)V
-
-    return-void
-.end method
-
-.method public final d1()Z
+.method public final c1()Z
     .locals 1
 
     iget p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->p:I
@@ -3554,79 +3450,42 @@
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 p0, 0x0
+
+    return p0
 
     :cond_1
     :goto_0
     return v0
 .end method
 
-.method public final e()Z
-    .locals 2
+.method public final d0(II)V
+    .locals 0
 
-    iget v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->q:I
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
-
-    move-result p0
-
-    return p0
-
-    :cond_0
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    iget v0, p0, Landroidx/recyclerview/widget/a;->n:I
-
-    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->K:Landroid/view/View;
-
-    const/4 v1, 0x0
-
-    if-eqz p0, :cond_1
-
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
-
-    move-result p0
-
-    goto :goto_0
-
-    :cond_1
-    move p0, v1
-
-    :goto_0
-    if-le v0, p0, :cond_3
-
-    :cond_2
-    const/4 v1, 0x1
-
-    :cond_3
-    return v1
-.end method
-
-.method public final e1(Lt6c;Lsj0;)V
-    .locals 9
-
-    iget-boolean v0, p2, Lsj0;->k:Z
-
-    if-nez v0, :cond_0
+    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->g1(I)V
 
     return-void
+.end method
+
+.method public final d1(Lubc;Lnm5;)V
+    .locals 9
+
+    iget-boolean v0, p2, Lnm5;->i:Z
+
+    if-nez v0, :cond_0
+
+    goto/16 :goto_8
 
     :cond_0
-    iget v0, p2, Lsj0;->j:I
+    iget v0, p2, Lnm5;->h:I
 
-    const/4 v1, -0x1
+    iget-object v1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
 
-    iget-object v2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
+    const/4 v2, -0x1
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v2, :cond_a
 
-    iget v0, p2, Lsj0;->g:I
+    iget v0, p2, Lnm5;->f:I
 
     if-gez v0, :cond_1
 
@@ -3653,28 +3512,28 @@
     goto/16 :goto_8
 
     :cond_3
-    iget-object v2, v2, Lj54;->c:Ljava/lang/Object;
+    iget-object v1, v1, Lw84;->c:Ljava/lang/Object;
 
-    check-cast v2, [I
+    check-cast v1, [I
 
     invoke-static {v4}, Landroidx/recyclerview/widget/a;->M(Landroid/view/View;)I
 
     move-result v4
 
-    aget v2, v2, v4
+    aget v1, v1, v4
 
-    if-ne v2, v1, :cond_4
+    if-ne v1, v2, :cond_4
 
     goto/16 :goto_8
 
     :cond_4
-    iget-object v1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
+    iget-object v2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
 
-    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Lcj5;
+    check-cast v2, Lkm5;
 
     move v4, v3
 
@@ -3690,9 +3549,9 @@
     goto :goto_2
 
     :cond_5
-    iget v6, p2, Lsj0;->g:I
+    iget v6, p2, Lnm5;->f:I
 
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
     move-result v7
 
@@ -3702,9 +3561,9 @@
 
     if-eqz v7, :cond_6
 
-    iget-object v7, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v7, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v7, v5}, Lo57;->c(Landroid/view/View;)I
+    invoke-virtual {v7, v5}, Lea7;->c(Landroid/view/View;)I
 
     move-result v7
 
@@ -3713,15 +3572,15 @@
     goto :goto_1
 
     :cond_6
-    iget-object v7, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v7, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v7, v5}, Lo57;->f(Landroid/view/View;)I
+    invoke-virtual {v7, v5}, Lea7;->f(Landroid/view/View;)I
 
     move-result v7
 
-    iget-object v8, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v8, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v8}, Lo57;->g()I
+    invoke-virtual {v8}, Lea7;->g()I
 
     move-result v8
 
@@ -3730,7 +3589,7 @@
     if-lt v7, v8, :cond_9
 
     :goto_1
-    iget v6, v1, Lcj5;->k:I
+    iget v6, v2, Lkm5;->k:I
 
     invoke-static {v5}, Landroidx/recyclerview/widget/a;->M(Landroid/view/View;)I
 
@@ -3738,26 +3597,26 @@
 
     if-ne v6, v5, :cond_8
 
-    if-gtz v2, :cond_7
+    if-gtz v1, :cond_7
 
     move v0, v4
 
     goto :goto_3
 
     :cond_7
-    iget v0, p2, Lsj0;->j:I
+    iget v0, p2, Lnm5;->h:I
 
-    add-int/2addr v2, v0
+    add-int/2addr v1, v0
 
     iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
 
-    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcj5;
+    check-cast v0, Lkm5;
 
-    move-object v1, v0
+    move-object v2, v0
 
     move v0, v4
 
@@ -3771,14 +3630,14 @@
     :goto_3
     if-lt v3, v0, :cond_14
 
-    invoke-virtual {p0, v3, p1}, Landroidx/recyclerview/widget/a;->u0(ILt6c;)V
+    invoke-virtual {p0, v3, p1}, Landroidx/recyclerview/widget/a;->t0(ILubc;)V
 
     add-int/lit8 v3, v3, -0x1
 
     goto :goto_3
 
     :cond_a
-    iget v0, p2, Lsj0;->g:I
+    iget v0, p2, Lnm5;->f:I
 
     if-gez v0, :cond_b
 
@@ -3805,28 +3664,28 @@
     goto/16 :goto_8
 
     :cond_d
-    iget-object v2, v2, Lj54;->c:Ljava/lang/Object;
+    iget-object v1, v1, Lw84;->c:Ljava/lang/Object;
 
-    check-cast v2, [I
+    check-cast v1, [I
 
     invoke-static {v4}, Landroidx/recyclerview/widget/a;->M(Landroid/view/View;)I
 
     move-result v4
 
-    aget v2, v2, v4
+    aget v1, v1, v4
 
-    if-ne v2, v1, :cond_e
+    if-ne v1, v2, :cond_e
 
     goto :goto_8
 
     :cond_e
     iget-object v4, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
 
-    invoke-interface {v4, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v4, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v4, Lcj5;
+    check-cast v4, Lkm5;
 
     :goto_4
     if-ge v3, v0, :cond_13
@@ -3840,9 +3699,9 @@
     goto :goto_6
 
     :cond_f
-    iget v6, p2, Lsj0;->g:I
+    iget v6, p2, Lnm5;->f:I
 
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
     move-result v7
 
@@ -3852,15 +3711,15 @@
 
     if-eqz v7, :cond_10
 
-    iget-object v7, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v7, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v7}, Lo57;->g()I
+    invoke-virtual {v7}, Lea7;->g()I
 
     move-result v7
 
-    iget-object v8, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v8, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v8, v5}, Lo57;->f(Landroid/view/View;)I
+    invoke-virtual {v8, v5}, Lea7;->f(Landroid/view/View;)I
 
     move-result v8
 
@@ -3871,16 +3730,16 @@
     goto :goto_5
 
     :cond_10
-    iget-object v7, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v7, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v7, v5}, Lo57;->c(Landroid/view/View;)I
+    invoke-virtual {v7, v5}, Lea7;->c(Landroid/view/View;)I
 
     move-result v7
 
     if-gt v7, v6, :cond_13
 
     :goto_5
-    iget v6, v4, Lcj5;->l:I
+    iget v6, v4, Lkm5;->l:I
 
     invoke-static {v5}, Landroidx/recyclerview/widget/a;->M(Landroid/view/View;)I
 
@@ -3888,36 +3747,36 @@
 
     if-ne v6, v5, :cond_12
 
-    iget-object v1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
+    iget-object v2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
 
-    invoke-interface {v1}, Ljava/util/List;->size()I
+    invoke-interface {v2}, Ljava/util/List;->size()I
 
-    move-result v1
+    move-result v2
 
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v2, v2, -0x1
 
-    if-lt v2, v1, :cond_11
+    if-lt v1, v2, :cond_11
 
-    move v1, v3
+    move v2, v3
 
     goto :goto_7
 
     :cond_11
-    iget v1, p2, Lsj0;->j:I
+    iget v2, p2, Lnm5;->h:I
 
-    add-int/2addr v2, v1
+    add-int/2addr v1, v2
 
-    iget-object v1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
+    iget-object v2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
 
-    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Lcj5;
+    check-cast v2, Lkm5;
 
-    move-object v4, v1
+    move-object v4, v2
 
-    move v1, v3
+    move v2, v3
 
     :cond_12
     :goto_6
@@ -3927,16 +3786,103 @@
 
     :cond_13
     :goto_7
-    if-ltz v1, :cond_14
+    if-ltz v2, :cond_14
 
-    invoke-virtual {p0, v1, p1}, Landroidx/recyclerview/widget/a;->u0(ILt6c;)V
+    invoke-virtual {p0, v2, p1}, Landroidx/recyclerview/widget/a;->t0(ILubc;)V
 
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v2, v2, -0x1
 
     goto :goto_7
 
     :cond_14
     :goto_8
+    return-void
+.end method
+
+.method public final e()Z
+    .locals 2
+
+    iget v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->q:I
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
+
+    move-result p0
+
+    return p0
+
+    :cond_0
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    iget v0, p0, Landroidx/recyclerview/widget/a;->n:I
+
+    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->K:Landroid/view/View;
+
+    const/4 v1, 0x0
+
+    if-eqz p0, :cond_1
+
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+
+    move-result p0
+
+    goto :goto_0
+
+    :cond_1
+    move p0, v1
+
+    :goto_0
+    if-le v0, p0, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    return v1
+
+    :cond_3
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final e1(I)V
+    .locals 1
+
+    iget v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->p:I
+
+    if-eq v0, p1, :cond_0
+
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->p0()V
+
+    iput p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->p:I
+
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
+
+    iput-object p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->C:Lea7;
+
+    iget-object p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
+
+    invoke-interface {p1}, Ljava/util/List;->clear()V
+
+    iget-object p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->A:Llm5;
+
+    invoke-static {p1}, Llm5;->b(Llm5;)V
+
+    const/4 v0, 0x0
+
+    iput v0, p1, Llm5;->d:I
+
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->v0()V
+
+    :cond_0
     return-void
 .end method
 
@@ -3949,7 +3895,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
     move-result p0
 
@@ -3958,7 +3904,7 @@
     return p0
 
     :cond_0
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
     move-result v0
 
@@ -3987,7 +3933,7 @@
     goto :goto_1
 
     :cond_2
-    move v1, v2
+    return v2
 
     :cond_3
     :goto_1
@@ -4001,63 +3947,12 @@
 
     move-result p1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->h1(I)V
+    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->g1(I)V
 
     return-void
 .end method
 
-.method public final f1(I)V
-    .locals 1
-
-    iget v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->p:I
-
-    if-eq v0, p1, :cond_0
-
-    invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->q0()V
-
-    iput p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->p:I
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
-
-    iput-object p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->C:Lo57;
-
-    iget-object p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
-
-    invoke-interface {p1}, Ljava/util/List;->clear()V
-
-    iget-object p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->A:Ldj5;
-
-    invoke-static {p1}, Ldj5;->b(Ldj5;)V
-
-    const/4 v0, 0x0
-
-    iput v0, p1, Ldj5;->d:I
-
-    invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->w0()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final g(Ln6c;)Z
-    .locals 0
-
-    instance-of p0, p1, Lej5;
-
-    return p0
-.end method
-
-.method public final g0(II)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->h1(I)V
-
-    return-void
-.end method
-
-.method public final g1(Landroid/view/View;IILej5;)Z
+.method public final f1(Landroid/view/View;IILmm5;)Z
     .locals 1
 
     invoke-virtual {p1}, Landroid/view/View;->isLayoutRequested()Z
@@ -4099,25 +3994,32 @@
     :cond_0
     const/4 p0, 0x0
 
-    goto :goto_1
+    return p0
 
     :cond_1
     :goto_0
     const/4 p0, 0x1
 
-    :goto_1
     return p0
 .end method
 
-.method public final h0(I)V
+.method public final g(Lobc;)Z
     .locals 0
 
-    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->h1(I)V
+    instance-of p0, p1, Lmm5;
+
+    return p0
+.end method
+
+.method public final g0(II)V
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->g1(I)V
 
     return-void
 .end method
 
-.method public final h1(I)V
+.method public final g1(I)V
     .locals 2
 
     invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->w()I
@@ -4128,7 +4030,7 @@
 
     const/4 v1, -0x1
 
-    invoke-virtual {p0, v0, v1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->U0(II)Landroid/view/View;
+    invoke-virtual {p0, v0, v1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->T0(II)Landroid/view/View;
 
     move-result-object v0
 
@@ -4144,22 +4046,22 @@
     :goto_0
     if-lt p1, v1, :cond_1
 
-    return-void
+    goto :goto_1
 
     :cond_1
     invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->w()I
 
     move-result v0
 
-    iget-object v1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
+    iget-object v1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
 
-    invoke-virtual {v1, v0}, Lj54;->z(I)V
+    invoke-virtual {v1, v0}, Lw84;->n(I)V
 
-    invoke-virtual {v1, v0}, Lj54;->A(I)V
+    invoke-virtual {v1, v0}, Lw84;->o(I)V
 
-    invoke-virtual {v1, v0}, Lj54;->y(I)V
+    invoke-virtual {v1, v0}, Lw84;->l(I)V
 
-    iget-object v0, v1, Lj54;->c:Ljava/lang/Object;
+    iget-object v0, v1, Lw84;->c:Ljava/lang/Object;
 
     check-cast v0, [I
 
@@ -4167,7 +4069,7 @@
 
     if-lt p1, v0, :cond_2
 
-    return-void
+    goto :goto_1
 
     :cond_2
     iput p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->L:I
@@ -4180,6 +4082,7 @@
 
     if-nez p1, :cond_3
 
+    :goto_1
     return-void
 
     :cond_3
@@ -4189,7 +4092,7 @@
 
     iput v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->E:I
 
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
     move-result v0
 
@@ -4199,15 +4102,15 @@
 
     if-eqz v0, :cond_4
 
-    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v0, p1}, Lo57;->c(Landroid/view/View;)I
+    invoke-virtual {v0, p1}, Lea7;->c(Landroid/view/View;)I
 
     move-result p1
 
-    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v0}, Lo57;->i()I
+    invoke-virtual {v0}, Lea7;->i()I
 
     move-result v0
 
@@ -4215,18 +4118,18 @@
 
     iput v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->F:I
 
-    goto :goto_1
+    return-void
 
     :cond_4
-    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v0, p1}, Lo57;->f(Landroid/view/View;)I
+    invoke-virtual {v0, p1}, Lea7;->f(Landroid/view/View;)I
 
     move-result p1
 
-    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v0}, Lo57;->m()I
+    invoke-virtual {v0}, Lea7;->m()I
 
     move-result v0
 
@@ -4234,32 +4137,29 @@
 
     iput p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->F:I
 
-    :goto_1
     return-void
 .end method
 
-.method public final i0(Landroidx/recyclerview/widget/RecyclerView;II)V
+.method public final h0(I)V
     .locals 0
 
-    invoke-virtual {p0, p2}, Lcom/google/android/flexbox/FlexboxLayoutManager;->h1(I)V
-
-    invoke-virtual {p0, p2}, Lcom/google/android/flexbox/FlexboxLayoutManager;->h1(I)V
+    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->g1(I)V
 
     return-void
 .end method
 
-.method public final i1(Ldj5;ZZ)V
+.method public final h1(Llm5;ZZ)V
     .locals 4
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    const/high16 v1, -0x80000000
 
-    const/high16 v2, -0x80000000
+    const/4 v2, 0x1
 
     if-eqz p3, :cond_3
 
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
     move-result p3
 
@@ -4273,27 +4173,27 @@
     iget p3, p0, Landroidx/recyclerview/widget/a;->l:I
 
     :goto_0
-    iget-object v3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
     if-eqz p3, :cond_1
 
-    if-ne p3, v2, :cond_2
+    if-ne p3, v1, :cond_2
 
     :cond_1
-    move v1, v0
+    move v0, v2
 
     :cond_2
-    iput-boolean v1, v3, Lsj0;->c:Z
+    iput-boolean v0, v3, Lnm5;->b:Z
 
     goto :goto_1
 
     :cond_3
-    iget-object p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iput-boolean v1, p3, Lsj0;->c:Z
+    iput-boolean v0, p3, Lnm5;->b:Z
 
     :goto_1
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
     move-result p3
 
@@ -4303,55 +4203,53 @@
 
     if-eqz p3, :cond_4
 
-    iget-object p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget v1, p1, Ldj5;->c:I
+    iget v0, p1, Llm5;->c:I
 
     invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->K()I
 
     move-result v3
 
-    sub-int/2addr v1, v3
+    sub-int/2addr v0, v3
 
-    iput v1, p3, Lsj0;->b:I
+    iput v0, p3, Lnm5;->a:I
 
     goto :goto_2
 
     :cond_4
-    iget-object p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget-object v1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v1}, Lo57;->h()I
+    invoke-virtual {v0}, Lea7;->h()I
 
-    move-result v1
+    move-result v0
 
-    iget v3, p1, Ldj5;->c:I
+    iget v3, p1, Llm5;->c:I
 
-    sub-int/2addr v1, v3
+    sub-int/2addr v0, v3
 
-    iput v1, p3, Lsj0;->b:I
+    iput v0, p3, Lnm5;->a:I
 
     :goto_2
-    iget-object p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget v1, p1, Ldj5;->a:I
+    iget v0, p1, Llm5;->a:I
 
-    iput v1, p3, Lsj0;->e:I
+    iput v0, p3, Lnm5;->d:I
 
-    iput v0, p3, Lsj0;->i:I
+    iput v2, p3, Lnm5;->h:I
 
-    iput v0, p3, Lsj0;->j:I
+    iget v0, p1, Llm5;->c:I
 
-    iget v1, p1, Ldj5;->c:I
+    iput v0, p3, Lnm5;->e:I
 
-    iput v1, p3, Lsj0;->f:I
+    iput v1, p3, Lnm5;->f:I
 
-    iput v2, p3, Lsj0;->g:I
+    iget v0, p1, Llm5;->b:I
 
-    iget v1, p1, Ldj5;->b:I
-
-    iput v1, p3, Lsj0;->d:I
+    iput v0, p3, Lnm5;->c:I
 
     if-eqz p2, :cond_5
 
@@ -4361,9 +4259,9 @@
 
     move-result p2
 
-    if-le p2, v0, :cond_5
+    if-le p2, v2, :cond_5
 
-    iget p2, p1, Ldj5;->b:I
+    iget p2, p1, Llm5;->b:I
 
     if-ltz p2, :cond_5
 
@@ -4373,42 +4271,209 @@
 
     move-result p3
 
-    sub-int/2addr p3, v0
+    sub-int/2addr p3, v2
 
     if-ge p2, p3, :cond_5
 
     iget-object p2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
 
-    iget p1, p1, Ldj5;->b:I
+    iget p1, p1, Llm5;->b:I
 
     invoke-interface {p2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lcj5;
+    check-cast p1, Lkm5;
 
-    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget p2, p0, Lsj0;->d:I
+    iget p2, p0, Lnm5;->c:I
 
-    add-int/2addr p2, v0
+    add-int/2addr p2, v2
 
-    iput p2, p0, Lsj0;->d:I
+    iput p2, p0, Lnm5;->c:I
 
-    iget p1, p1, Lcj5;->d:I
+    iget p1, p1, Lkm5;->d:I
 
-    iget p2, p0, Lsj0;->e:I
+    iget p2, p0, Lnm5;->d:I
 
     add-int/2addr p2, p1
 
-    iput p2, p0, Lsj0;->e:I
+    iput p2, p0, Lnm5;->d:I
 
     :cond_5
     return-void
 .end method
 
-.method public final j0(Lt6c;Lx6c;)V
-    .locals 20
+.method public final i0(Landroidx/recyclerview/widget/RecyclerView;II)V
+    .locals 0
+
+    invoke-virtual {p0, p2}, Lcom/google/android/flexbox/FlexboxLayoutManager;->g1(I)V
+
+    invoke-virtual {p0, p2}, Lcom/google/android/flexbox/FlexboxLayoutManager;->g1(I)V
+
+    return-void
+.end method
+
+.method public final i1(Llm5;ZZ)V
+    .locals 4
+
+    const/4 v0, 0x0
+
+    const/high16 v1, -0x80000000
+
+    const/4 v2, 0x1
+
+    if-eqz p3, :cond_3
+
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
+
+    move-result p3
+
+    if-eqz p3, :cond_0
+
+    iget p3, p0, Landroidx/recyclerview/widget/a;->m:I
+
+    goto :goto_0
+
+    :cond_0
+    iget p3, p0, Landroidx/recyclerview/widget/a;->l:I
+
+    :goto_0
+    iget-object v3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
+
+    if-eqz p3, :cond_1
+
+    if-ne p3, v1, :cond_2
+
+    :cond_1
+    move v0, v2
+
+    :cond_2
+    iput-boolean v0, v3, Lnm5;->b:Z
+
+    goto :goto_1
+
+    :cond_3
+    iget-object p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
+
+    iput-boolean v0, p3, Lnm5;->b:Z
+
+    :goto_1
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
+
+    move-result p3
+
+    if-nez p3, :cond_4
+
+    iget-boolean p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->t:Z
+
+    if-eqz p3, :cond_4
+
+    iget-object p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
+
+    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->K:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->getWidth()I
+
+    move-result v0
+
+    iget v3, p1, Llm5;->c:I
+
+    sub-int/2addr v0, v3
+
+    iget-object v3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
+
+    invoke-virtual {v3}, Lea7;->m()I
+
+    move-result v3
+
+    sub-int/2addr v0, v3
+
+    iput v0, p3, Lnm5;->a:I
+
+    goto :goto_2
+
+    :cond_4
+    iget-object p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
+
+    iget v0, p1, Llm5;->c:I
+
+    iget-object v3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
+
+    invoke-virtual {v3}, Lea7;->m()I
+
+    move-result v3
+
+    sub-int/2addr v0, v3
+
+    iput v0, p3, Lnm5;->a:I
+
+    :goto_2
+    iget-object p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
+
+    iget v0, p1, Llm5;->a:I
+
+    iput v0, p3, Lnm5;->d:I
+
+    const/4 v0, -0x1
+
+    iput v0, p3, Lnm5;->h:I
+
+    iget v0, p1, Llm5;->c:I
+
+    iput v0, p3, Lnm5;->e:I
+
+    iput v1, p3, Lnm5;->f:I
+
+    iget v0, p1, Llm5;->b:I
+
+    iput v0, p3, Lnm5;->c:I
+
+    if-eqz p2, :cond_5
+
+    if-lez v0, :cond_5
+
+    iget-object p2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
+
+    invoke-interface {p2}, Ljava/util/List;->size()I
+
+    move-result p2
+
+    iget p1, p1, Llm5;->b:I
+
+    if-le p2, p1, :cond_5
+
+    iget-object p2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
+
+    invoke-interface {p2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lkm5;
+
+    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
+
+    iget p2, p0, Lnm5;->c:I
+
+    sub-int/2addr p2, v2
+
+    iput p2, p0, Lnm5;->c:I
+
+    iget p1, p1, Lkm5;->d:I
+
+    iget p2, p0, Lnm5;->d:I
+
+    sub-int/2addr p2, p1
+
+    iput p2, p0, Lnm5;->d:I
+
+    :cond_5
+    return-void
+.end method
+
+.method public final j0(Lubc;Lybc;)V
+    .locals 21
 
     move-object/from16 v0, p0
 
@@ -4416,24 +4481,24 @@
 
     move-object/from16 v2, p2
 
-    iput-object v1, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->x:Lt6c;
+    iput-object v1, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->x:Lubc;
 
-    iput-object v2, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->y:Lx6c;
+    iput-object v2, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->y:Lybc;
 
-    invoke-virtual/range {p2 .. p2}, Lx6c;->b()I
+    invoke-virtual {v2}, Lybc;->b()I
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    iget-boolean v4, v2, Lx6c;->h:Z
+    iget-boolean v4, v2, Lybc;->h:Z
 
     if-eqz v4, :cond_0
 
-    return-void
+    goto/16 :goto_1c
 
     :cond_0
-    invoke-virtual/range {p0 .. p0}, Landroidx/recyclerview/widget/a;->H()I
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/a;->H()I
 
     move-result v4
 
@@ -4570,42 +4635,38 @@
     iput-boolean v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->u:Z
 
     :goto_6
-    invoke-virtual/range {p0 .. p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->O0()V
+    invoke-virtual {v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->N0()V
 
-    iget-object v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
     if-nez v4, :cond_d
 
-    new-instance v4, Lsj0;
+    new-instance v4, Lnm5;
 
-    const/4 v5, 0x1
+    invoke-direct {v4}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v4, v5}, Lsj0;-><init>(I)V
+    iput v6, v4, Lnm5;->h:I
 
-    iput v6, v4, Lsj0;->i:I
-
-    iput v6, v4, Lsj0;->j:I
-
-    iput-object v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iput-object v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
     :cond_d
-    iget-object v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
+    iget-object v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
 
-    invoke-virtual {v4, v3}, Lj54;->z(I)V
+    invoke-virtual {v4, v3}, Lw84;->n(I)V
 
-    invoke-virtual {v4, v3}, Lj54;->A(I)V
+    invoke-virtual {v4, v3}, Lw84;->o(I)V
 
-    invoke-virtual {v4, v3}, Lj54;->y(I)V
+    invoke-virtual {v4, v3}, Lw84;->l(I)V
 
-    iget-object v5, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v5, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iput-boolean v7, v5, Lsj0;->k:Z
+    iput-boolean v7, v5, Lnm5;->i:Z
 
-    iget-object v5, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->D:Lfj5;
+    iget-object v5, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->D:Lom5;
 
     if-eqz v5, :cond_e
 
-    iget v8, v5, Lfj5;->a:I
+    iget v8, v5, Lom5;->a:I
 
     if-ltz v8, :cond_e
 
@@ -4614,9 +4675,9 @@
     iput v8, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->E:I
 
     :cond_e
-    iget-object v8, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->A:Ldj5;
+    iget-object v8, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->A:Llm5;
 
-    iget-boolean v9, v8, Ldj5;->f:Z
+    iget-boolean v9, v8, Llm5;->f:Z
 
     const/high16 v10, -0x80000000
 
@@ -4631,11 +4692,11 @@
     if-eqz v5, :cond_28
 
     :cond_f
-    invoke-static {v8}, Ldj5;->b(Ldj5;)V
+    invoke-static {v8}, Llm5;->b(Llm5;)V
 
-    iget-object v5, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->D:Lfj5;
+    iget-object v5, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->D:Lom5;
 
-    iget-boolean v9, v2, Lx6c;->h:Z
+    iget-boolean v9, v2, Lybc;->h:Z
 
     if-nez v9, :cond_1d
 
@@ -4648,7 +4709,7 @@
     :cond_10
     if-ltz v9, :cond_1c
 
-    invoke-virtual/range {p2 .. p2}, Lx6c;->b()I
+    invoke-virtual {v2}, Lybc;->b()I
 
     move-result v12
 
@@ -4659,45 +4720,45 @@
     :cond_11
     iget v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->E:I
 
-    iput v9, v8, Ldj5;->a:I
+    iput v9, v8, Llm5;->a:I
 
-    iget-object v12, v4, Lj54;->c:Ljava/lang/Object;
+    iget-object v12, v4, Lw84;->c:Ljava/lang/Object;
 
     check-cast v12, [I
 
     aget v9, v12, v9
 
-    iput v9, v8, Ldj5;->b:I
+    iput v9, v8, Llm5;->b:I
 
-    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->D:Lfj5;
+    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->D:Lom5;
 
     if-eqz v9, :cond_12
 
-    invoke-virtual/range {p2 .. p2}, Lx6c;->b()I
+    invoke-virtual {v2}, Lybc;->b()I
 
     move-result v12
 
-    iget v9, v9, Lfj5;->a:I
+    iget v9, v9, Lom5;->a:I
 
     if-ltz v9, :cond_12
 
     if-ge v9, v12, :cond_12
 
-    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v9}, Lo57;->m()I
+    invoke-virtual {v9}, Lea7;->m()I
 
     move-result v9
 
-    iget v5, v5, Lfj5;->b:I
+    iget v5, v5, Lom5;->b:I
 
     add-int/2addr v9, v5
 
-    iput v9, v8, Ldj5;->c:I
+    iput v9, v8, Llm5;->c:I
 
-    iput-boolean v6, v8, Ldj5;->g:Z
+    iput-boolean v6, v8, Llm5;->g:Z
 
-    iput v11, v8, Ldj5;->b:I
+    iput v11, v8, Llm5;->b:I
 
     goto/16 :goto_11
 
@@ -4714,34 +4775,34 @@
 
     if-eqz v5, :cond_17
 
-    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v9, v5}, Lo57;->d(Landroid/view/View;)I
+    invoke-virtual {v9, v5}, Lea7;->d(Landroid/view/View;)I
 
     move-result v9
 
-    iget-object v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v12}, Lo57;->n()I
+    invoke-virtual {v12}, Lea7;->n()I
 
     move-result v12
 
     if-le v9, v12, :cond_13
 
-    invoke-static {v8}, Ldj5;->a(Ldj5;)V
+    invoke-static {v8}, Llm5;->a(Llm5;)V
 
     goto/16 :goto_11
 
     :cond_13
-    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v9, v5}, Lo57;->f(Landroid/view/View;)I
+    invoke-virtual {v9, v5}, Lea7;->f(Landroid/view/View;)I
 
     move-result v9
 
-    iget-object v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v12}, Lo57;->m()I
+    invoke-virtual {v12}, Lea7;->m()I
 
     move-result v12
 
@@ -4749,28 +4810,28 @@
 
     if-gez v9, :cond_14
 
-    iget-object v5, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v5, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v5}, Lo57;->m()I
+    invoke-virtual {v5}, Lea7;->m()I
 
     move-result v5
 
-    iput v5, v8, Ldj5;->c:I
+    iput v5, v8, Llm5;->c:I
 
-    iput-boolean v7, v8, Ldj5;->e:Z
+    iput-boolean v7, v8, Llm5;->e:Z
 
     goto/16 :goto_11
 
     :cond_14
-    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v9}, Lo57;->h()I
+    invoke-virtual {v9}, Lea7;->h()I
 
     move-result v9
 
-    iget-object v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v12, v5}, Lo57;->c(Landroid/view/View;)I
+    invoke-virtual {v12, v5}, Lea7;->c(Landroid/view/View;)I
 
     move-result v12
 
@@ -4778,32 +4839,32 @@
 
     if-gez v9, :cond_15
 
-    iget-object v5, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v5, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v5}, Lo57;->h()I
+    invoke-virtual {v5}, Lea7;->h()I
 
     move-result v5
 
-    iput v5, v8, Ldj5;->c:I
+    iput v5, v8, Llm5;->c:I
 
-    iput-boolean v6, v8, Ldj5;->e:Z
+    iput-boolean v6, v8, Llm5;->e:Z
 
     goto/16 :goto_11
 
     :cond_15
-    iget-boolean v9, v8, Ldj5;->e:Z
+    iget-boolean v9, v8, Llm5;->e:Z
 
     if-eqz v9, :cond_16
 
-    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v9, v5}, Lo57;->c(Landroid/view/View;)I
+    invoke-virtual {v9, v5}, Lea7;->c(Landroid/view/View;)I
 
     move-result v5
 
-    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v9}, Lo57;->o()I
+    invoke-virtual {v9}, Lea7;->o()I
 
     move-result v9
 
@@ -4812,19 +4873,19 @@
     goto :goto_7
 
     :cond_16
-    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v9, v5}, Lo57;->f(Landroid/view/View;)I
+    invoke-virtual {v9, v5}, Lea7;->f(Landroid/view/View;)I
 
     move-result v9
 
     :goto_7
-    iput v9, v8, Ldj5;->c:I
+    iput v9, v8, Llm5;->c:I
 
     goto/16 :goto_11
 
     :cond_17
-    invoke-virtual/range {p0 .. p0}, Landroidx/recyclerview/widget/a;->w()I
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/a;->w()I
 
     move-result v5
 
@@ -4852,15 +4913,15 @@
     move v5, v7
 
     :goto_8
-    iput-boolean v5, v8, Ldj5;->e:Z
+    iput-boolean v5, v8, Llm5;->e:Z
 
     :cond_19
-    invoke-static {v8}, Ldj5;->a(Ldj5;)V
+    invoke-static {v8}, Llm5;->a(Llm5;)V
 
     goto/16 :goto_11
 
     :cond_1a
-    invoke-virtual/range {p0 .. p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    invoke-virtual {v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
     move-result v5
 
@@ -4872,22 +4933,22 @@
 
     iget v5, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->F:I
 
-    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v9}, Lo57;->i()I
+    invoke-virtual {v9}, Lea7;->i()I
 
     move-result v9
 
     sub-int/2addr v5, v9
 
-    iput v5, v8, Ldj5;->c:I
+    iput v5, v8, Llm5;->c:I
 
     goto/16 :goto_11
 
     :cond_1b
-    iget-object v5, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v5, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v5}, Lo57;->m()I
+    invoke-virtual {v5}, Lea7;->m()I
 
     move-result v5
 
@@ -4895,7 +4956,7 @@
 
     add-int/2addr v5, v9
 
-    iput v5, v8, Ldj5;->c:I
+    iput v5, v8, Llm5;->c:I
 
     goto/16 :goto_11
 
@@ -4907,7 +4968,7 @@
 
     :cond_1d
     :goto_a
-    invoke-virtual/range {p0 .. p0}, Landroidx/recyclerview/widget/a;->w()I
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/a;->w()I
 
     move-result v5
 
@@ -4916,47 +4977,47 @@
     goto/16 :goto_10
 
     :cond_1e
-    iget-boolean v5, v8, Ldj5;->e:Z
+    iget-boolean v5, v8, Llm5;->e:Z
 
     if-eqz v5, :cond_1f
 
-    invoke-virtual/range {p2 .. p2}, Lx6c;->b()I
+    invoke-virtual {v2}, Lybc;->b()I
 
     move-result v5
 
-    invoke-virtual {v0, v5}, Lcom/google/android/flexbox/FlexboxLayoutManager;->S0(I)Landroid/view/View;
+    invoke-virtual {v0, v5}, Lcom/google/android/flexbox/FlexboxLayoutManager;->R0(I)Landroid/view/View;
 
     move-result-object v5
 
     goto :goto_b
 
     :cond_1f
-    invoke-virtual/range {p2 .. p2}, Lx6c;->b()I
+    invoke-virtual {v2}, Lybc;->b()I
 
     move-result v5
 
-    invoke-virtual {v0, v5}, Lcom/google/android/flexbox/FlexboxLayoutManager;->Q0(I)Landroid/view/View;
+    invoke-virtual {v0, v5}, Lcom/google/android/flexbox/FlexboxLayoutManager;->P0(I)Landroid/view/View;
 
     move-result-object v5
 
     :goto_b
     if-eqz v5, :cond_26
 
-    iget-object v9, v8, Ldj5;->h:Lcom/google/android/flexbox/FlexboxLayoutManager;
+    iget-object v9, v8, Llm5;->h:Lcom/google/android/flexbox/FlexboxLayoutManager;
 
     iget v12, v9, Lcom/google/android/flexbox/FlexboxLayoutManager;->q:I
 
     if-nez v12, :cond_20
 
-    iget-object v12, v9, Lcom/google/android/flexbox/FlexboxLayoutManager;->C:Lo57;
+    iget-object v12, v9, Lcom/google/android/flexbox/FlexboxLayoutManager;->C:Lea7;
 
     goto :goto_c
 
     :cond_20
-    iget-object v12, v9, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v12, v9, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
     :goto_c
-    invoke-virtual {v9}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    invoke-virtual {v9}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
     move-result v13
 
@@ -4966,71 +5027,71 @@
 
     if-eqz v13, :cond_22
 
-    iget-boolean v13, v8, Ldj5;->e:Z
+    iget-boolean v13, v8, Llm5;->e:Z
 
     if-eqz v13, :cond_21
 
-    invoke-virtual {v12, v5}, Lo57;->f(Landroid/view/View;)I
+    invoke-virtual {v12, v5}, Lea7;->f(Landroid/view/View;)I
 
     move-result v13
 
-    invoke-virtual {v12}, Lo57;->o()I
+    invoke-virtual {v12}, Lea7;->o()I
 
     move-result v12
 
     add-int/2addr v12, v13
 
-    iput v12, v8, Ldj5;->c:I
+    iput v12, v8, Llm5;->c:I
 
     goto :goto_d
 
     :cond_21
-    invoke-virtual {v12, v5}, Lo57;->c(Landroid/view/View;)I
+    invoke-virtual {v12, v5}, Lea7;->c(Landroid/view/View;)I
 
     move-result v12
 
-    iput v12, v8, Ldj5;->c:I
+    iput v12, v8, Llm5;->c:I
 
     goto :goto_d
 
     :cond_22
-    iget-boolean v13, v8, Ldj5;->e:Z
+    iget-boolean v13, v8, Llm5;->e:Z
 
     if-eqz v13, :cond_23
 
-    invoke-virtual {v12, v5}, Lo57;->c(Landroid/view/View;)I
+    invoke-virtual {v12, v5}, Lea7;->c(Landroid/view/View;)I
 
     move-result v13
 
-    invoke-virtual {v12}, Lo57;->o()I
+    invoke-virtual {v12}, Lea7;->o()I
 
     move-result v12
 
     add-int/2addr v12, v13
 
-    iput v12, v8, Ldj5;->c:I
+    iput v12, v8, Llm5;->c:I
 
     goto :goto_d
 
     :cond_23
-    invoke-virtual {v12, v5}, Lo57;->f(Landroid/view/View;)I
+    invoke-virtual {v12, v5}, Lea7;->f(Landroid/view/View;)I
 
     move-result v12
 
-    iput v12, v8, Ldj5;->c:I
+    iput v12, v8, Llm5;->c:I
 
     :goto_d
     invoke-static {v5}, Landroidx/recyclerview/widget/a;->M(Landroid/view/View;)I
 
     move-result v5
 
-    iput v5, v8, Ldj5;->a:I
+    iput v5, v8, Llm5;->a:I
 
-    iput-boolean v7, v8, Ldj5;->g:Z
+    iput-boolean v7, v8, Llm5;->g:Z
 
-    iget-object v12, v9, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
+    iget-object v12, v9, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
 
-    iget-object v12, v12, Lj54;->c:Ljava/lang/Object;
+    iget-object v12, v12, Lw84;->c:Ljava/lang/Object;
 
     check-cast v12, [I
 
@@ -5052,7 +5113,7 @@
     move v5, v7
 
     :goto_f
-    iput v5, v8, Ldj5;->b:I
+    iput v5, v8, Llm5;->b:I
 
     iget-object v5, v9, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
 
@@ -5060,7 +5121,7 @@
 
     move-result v5
 
-    iget v12, v8, Ldj5;->b:I
+    iget v12, v8, Llm5;->b:I
 
     if-le v5, v12, :cond_27
 
@@ -5070,39 +5131,39 @@
 
     move-result-object v5
 
-    check-cast v5, Lcj5;
+    check-cast v5, Lkm5;
 
-    iget v5, v5, Lcj5;->k:I
+    iget v5, v5, Lkm5;->k:I
 
-    iput v5, v8, Ldj5;->a:I
+    iput v5, v8, Llm5;->a:I
 
     goto :goto_11
 
     :cond_26
     :goto_10
-    invoke-static {v8}, Ldj5;->a(Ldj5;)V
+    invoke-static {v8}, Llm5;->a(Llm5;)V
 
-    iput v7, v8, Ldj5;->a:I
+    iput v7, v8, Llm5;->a:I
 
-    iput v7, v8, Ldj5;->b:I
+    iput v7, v8, Llm5;->b:I
 
     :cond_27
     :goto_11
-    iput-boolean v6, v8, Ldj5;->f:Z
+    iput-boolean v6, v8, Llm5;->f:Z
 
     :cond_28
-    invoke-virtual/range {p0 .. p1}, Landroidx/recyclerview/widget/a;->q(Lt6c;)V
+    invoke-virtual/range {p0 .. p1}, Landroidx/recyclerview/widget/a;->q(Lubc;)V
 
-    iget-boolean v5, v8, Ldj5;->e:Z
+    iget-boolean v5, v8, Llm5;->e:Z
 
     if-eqz v5, :cond_29
 
-    invoke-virtual {v0, v8, v7, v6}, Lcom/google/android/flexbox/FlexboxLayoutManager;->j1(Ldj5;ZZ)V
+    invoke-virtual {v0, v8, v7, v6}, Lcom/google/android/flexbox/FlexboxLayoutManager;->i1(Llm5;ZZ)V
 
     goto :goto_12
 
     :cond_29
-    invoke-virtual {v0, v8, v7, v6}, Lcom/google/android/flexbox/FlexboxLayoutManager;->i1(Ldj5;ZZ)V
+    invoke-virtual {v0, v8, v7, v6}, Lcom/google/android/flexbox/FlexboxLayoutManager;->h1(Llm5;ZZ)V
 
     :goto_12
     iget v5, v0, Landroidx/recyclerview/widget/a;->n:I
@@ -5111,33 +5172,33 @@
 
     invoke-static {v5, v9}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    move-result v5
+    move-result v14
+
+    iget v5, v0, Landroidx/recyclerview/widget/a;->o:I
+
+    iget v9, v0, Landroidx/recyclerview/widget/a;->m:I
+
+    invoke-static {v5, v9}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v15
+
+    iget v5, v0, Landroidx/recyclerview/widget/a;->n:I
 
     iget v9, v0, Landroidx/recyclerview/widget/a;->o:I
 
-    iget v12, v0, Landroidx/recyclerview/widget/a;->m:I
+    invoke-virtual {v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
-    invoke-static {v9, v12}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    move-result v12
 
-    move-result v9
+    iget-object v13, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->J:Landroid/content/Context;
 
-    iget v12, v0, Landroidx/recyclerview/widget/a;->n:I
+    if-eqz v12, :cond_2c
 
-    iget v13, v0, Landroidx/recyclerview/widget/a;->o:I
+    iget v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->G:I
 
-    invoke-virtual/range {p0 .. p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    if-eq v12, v10, :cond_2a
 
-    move-result v14
-
-    iget-object v15, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->J:Landroid/content/Context;
-
-    if-eqz v14, :cond_2c
-
-    iget v14, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->G:I
-
-    if-eq v14, v10, :cond_2a
-
-    if-eq v14, v12, :cond_2a
+    if-eq v12, v5, :cond_2a
 
     move v10, v6
 
@@ -5147,13 +5208,13 @@
     move v10, v7
 
     :goto_13
-    iget-object v14, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget-boolean v6, v14, Lsj0;->c:Z
+    iget-boolean v6, v12, Lnm5;->b:Z
 
     if-eqz v6, :cond_2b
 
-    invoke-virtual {v15}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v13}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v6
 
@@ -5166,7 +5227,7 @@
     goto :goto_14
 
     :cond_2b
-    iget v6, v14, Lsj0;->b:I
+    iget v6, v12, Lnm5;->a:I
 
     :goto_14
     move/from16 v16, v6
@@ -5178,7 +5239,7 @@
 
     if-eq v6, v10, :cond_2d
 
-    if-eq v6, v13, :cond_2d
+    if-eq v6, v9, :cond_2d
 
     const/4 v10, 0x1
 
@@ -5188,13 +5249,13 @@
     move v10, v7
 
     :goto_15
-    iget-object v6, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v6, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iget-boolean v14, v6, Lsj0;->c:Z
+    iget-boolean v12, v6, Lnm5;->b:Z
 
-    if-eqz v14, :cond_2e
+    if-eqz v12, :cond_2e
 
-    invoke-virtual {v15}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v13}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v6
 
@@ -5207,536 +5268,381 @@
     goto :goto_14
 
     :cond_2e
-    iget v6, v6, Lsj0;->b:I
+    iget v6, v6, Lnm5;->a:I
 
     goto :goto_14
 
     :goto_16
-    iput v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->G:I
+    iput v5, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->G:I
 
-    iput v13, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->H:I
+    iput v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->H:I
 
-    iget v6, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->L:I
+    iget v5, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->L:I
 
-    iget-object v15, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->M:Lea6;
+    const/4 v6, 0x0
 
-    const/4 v12, 0x0
+    iget-object v9, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->M:La9;
 
-    if-ne v6, v11, :cond_2f
+    if-ne v5, v11, :cond_32
 
-    iget v13, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->E:I
+    iget v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->E:I
 
-    if-ne v13, v11, :cond_30
+    if-ne v12, v11, :cond_2f
 
-    if-eqz v10, :cond_2f
-
-    goto :goto_17
+    if-eqz v10, :cond_32
 
     :cond_2f
-    move-object v10, v15
+    iget-boolean v3, v8, Llm5;->e:Z
 
-    goto :goto_19
+    if-eqz v3, :cond_30
+
+    goto/16 :goto_1a
 
     :cond_30
-    :goto_17
-    iget-boolean v3, v8, Ldj5;->e:Z
-
-    if-eqz v3, :cond_31
-
-    goto/16 :goto_1c
-
-    :cond_31
     iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->clear()V
 
-    iput-object v12, v15, Lea6;->b:Ljava/lang/Object;
+    iput-object v6, v9, La9;->a:Ljava/util/List;
 
-    invoke-virtual/range {p0 .. p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    invoke-virtual {v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
     move-result v3
 
-    if-eqz v3, :cond_32
+    if-eqz v3, :cond_31
 
-    iget v3, v8, Ldj5;->a:I
+    iget v3, v8, Llm5;->a:I
 
-    iget-object v6, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
-
-    iget-object v13, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->M:Lea6;
+    iget-object v5, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
 
     const/16 v17, 0x0
 
-    iget-object v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
+    iget-object v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
 
-    move v14, v5
-
-    move-object v10, v15
-
-    move v15, v9
+    iget-object v13, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->M:La9;
 
     move/from16 v18, v3
 
-    move-object/from16 v19, v6
+    move-object/from16 v19, v5
 
-    invoke-virtual/range {v12 .. v19}, Lj54;->t(Lea6;IIIIILjava/util/List;)V
+    invoke-virtual/range {v12 .. v19}, Lw84;->f(La9;IIIIILjava/util/List;)V
 
-    goto :goto_18
+    goto :goto_17
 
-    :cond_32
-    move-object v10, v15
+    :cond_31
+    iget v3, v8, Llm5;->a:I
 
-    iget v3, v8, Ldj5;->a:I
-
-    iget-object v6, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
-
-    iget-object v13, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->M:Lea6;
+    iget-object v5, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
 
     const/16 v17, 0x0
 
-    iget-object v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
+    iget-object v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
 
-    move v14, v9
+    iget-object v13, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->M:La9;
 
-    move v15, v5
+    move/from16 v18, v15
+
+    move v15, v14
+
+    move/from16 v14, v18
 
     move/from16 v18, v3
 
-    move-object/from16 v19, v6
+    move-object/from16 v19, v5
 
-    invoke-virtual/range {v12 .. v19}, Lj54;->t(Lea6;IIIIILjava/util/List;)V
+    invoke-virtual/range {v12 .. v19}, Lw84;->f(La9;IIIIILjava/util/List;)V
 
-    :goto_18
-    iget-object v3, v10, Lea6;->b:Ljava/lang/Object;
+    move/from16 v20, v15
 
-    check-cast v3, Ljava/util/List;
+    move v15, v14
+
+    move/from16 v14, v20
+
+    :goto_17
+    iget-object v3, v9, La9;->a:Ljava/util/List;
 
     iput-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
 
-    invoke-virtual {v4, v5, v9, v7}, Lj54;->x(III)V
+    invoke-virtual {v4, v14, v15, v7}, Lw84;->k(III)V
 
-    invoke-virtual {v4, v7}, Lj54;->O(I)V
+    invoke-virtual {v4, v7}, Lw84;->x(I)V
 
-    iget-object v3, v4, Lj54;->c:Ljava/lang/Object;
+    iget-object v3, v4, Lw84;->c:Ljava/lang/Object;
 
     check-cast v3, [I
 
-    iget v4, v8, Ldj5;->a:I
+    iget v4, v8, Llm5;->a:I
 
     aget v3, v3, v4
 
-    iput v3, v8, Ldj5;->b:I
+    iput v3, v8, Llm5;->b:I
 
-    iget-object v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
+    iget-object v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
 
-    iput v3, v4, Lsj0;->d:I
+    iput v3, v4, Lnm5;->c:I
 
-    goto/16 :goto_1c
+    goto/16 :goto_1a
 
-    :goto_19
-    if-eq v6, v11, :cond_33
+    :cond_32
+    if-eq v5, v11, :cond_33
 
-    iget v11, v8, Ldj5;->a:I
+    iget v10, v8, Llm5;->a:I
 
-    invoke-static {v6, v11}, Ljava/lang/Math;->min(II)I
-
-    move-result v6
-
-    goto :goto_1a
-
-    :cond_33
-    iget v6, v8, Ldj5;->a:I
-
-    :goto_1a
-    iput-object v12, v10, Lea6;->b:Ljava/lang/Object;
-
-    invoke-virtual/range {p0 .. p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
-
-    move-result v11
-
-    if-eqz v11, :cond_35
-
-    iget-object v11, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
-
-    invoke-interface {v11}, Ljava/util/List;->size()I
-
-    move-result v11
-
-    if-lez v11, :cond_34
-
-    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
-
-    invoke-virtual {v4, v6, v3}, Lj54;->w(ILjava/util/List;)V
-
-    iget v3, v8, Ldj5;->a:I
-
-    iget-object v11, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
-
-    iget-object v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
-
-    iget-object v13, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->M:Lea6;
-
-    move v14, v5
-
-    move v15, v9
-
-    move/from16 v17, v6
-
-    move/from16 v18, v3
-
-    move-object/from16 v19, v11
-
-    invoke-virtual/range {v12 .. v19}, Lj54;->t(Lea6;IIIIILjava/util/List;)V
-
-    goto :goto_1b
-
-    :cond_34
-    invoke-virtual {v4, v3}, Lj54;->y(I)V
-
-    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
-
-    iget-object v13, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->M:Lea6;
-
-    iget-object v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
-
-    const/16 v18, -0x1
-
-    const/16 v17, 0x0
-
-    move v14, v5
-
-    move v15, v9
-
-    move-object/from16 v19, v3
-
-    invoke-virtual/range {v12 .. v19}, Lj54;->t(Lea6;IIIIILjava/util/List;)V
-
-    goto :goto_1b
-
-    :cond_35
-    iget-object v11, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
-
-    invoke-interface {v11}, Ljava/util/List;->size()I
-
-    move-result v11
-
-    if-lez v11, :cond_36
-
-    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
-
-    invoke-virtual {v4, v6, v3}, Lj54;->w(ILjava/util/List;)V
-
-    iget v3, v8, Ldj5;->a:I
-
-    iget-object v11, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
-
-    iget-object v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
-
-    iget-object v13, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->M:Lea6;
-
-    move v14, v9
-
-    move v15, v5
-
-    move/from16 v17, v6
-
-    move/from16 v18, v3
-
-    move-object/from16 v19, v11
-
-    invoke-virtual/range {v12 .. v19}, Lj54;->t(Lea6;IIIIILjava/util/List;)V
-
-    goto :goto_1b
-
-    :cond_36
-    invoke-virtual {v4, v3}, Lj54;->y(I)V
-
-    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
-
-    iget-object v13, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->M:Lea6;
-
-    iget-object v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lj54;
-
-    const/16 v18, -0x1
-
-    const/16 v17, 0x0
-
-    move v14, v9
-
-    move v15, v5
-
-    move-object/from16 v19, v3
-
-    invoke-virtual/range {v12 .. v19}, Lj54;->t(Lea6;IIIIILjava/util/List;)V
-
-    :goto_1b
-    iget-object v3, v10, Lea6;->b:Ljava/lang/Object;
-
-    check-cast v3, Ljava/util/List;
-
-    iput-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
-
-    invoke-virtual {v4, v5, v9, v6}, Lj54;->x(III)V
-
-    invoke-virtual {v4, v6}, Lj54;->O(I)V
-
-    :goto_1c
-    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/flexbox/FlexboxLayoutManager;->P0(Lt6c;Lx6c;Lsj0;)I
-
-    iget-boolean v3, v8, Ldj5;->e:Z
-
-    if-eqz v3, :cond_37
-
-    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
-
-    iget v3, v3, Lsj0;->f:I
-
-    const/4 v4, 0x1
-
-    invoke-virtual {v0, v8, v4, v7}, Lcom/google/android/flexbox/FlexboxLayoutManager;->i1(Ldj5;ZZ)V
-
-    iget-object v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
-
-    invoke-virtual {v0, v1, v2, v4}, Lcom/google/android/flexbox/FlexboxLayoutManager;->P0(Lt6c;Lx6c;Lsj0;)I
-
-    iget-object v4, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
-
-    iget v4, v4, Lsj0;->f:I
-
-    goto :goto_1d
-
-    :cond_37
-    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
-
-    iget v4, v3, Lsj0;->f:I
-
-    const/4 v3, 0x1
-
-    invoke-virtual {v0, v8, v3, v7}, Lcom/google/android/flexbox/FlexboxLayoutManager;->j1(Ldj5;ZZ)V
-
-    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/flexbox/FlexboxLayoutManager;->P0(Lt6c;Lx6c;Lsj0;)I
-
-    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
-
-    iget v3, v3, Lsj0;->f:I
-
-    :goto_1d
-    invoke-virtual/range {p0 .. p0}, Landroidx/recyclerview/widget/a;->w()I
+    invoke-static {v5, v10}, Ljava/lang/Math;->min(II)I
 
     move-result v5
 
-    if-lez v5, :cond_39
+    goto :goto_18
 
-    iget-boolean v5, v8, Ldj5;->e:Z
+    :cond_33
+    iget v5, v8, Llm5;->a:I
 
-    if-eqz v5, :cond_38
+    :goto_18
+    iput-object v6, v9, La9;->a:Ljava/util/List;
 
-    const/4 v5, 0x1
+    invoke-virtual {v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
-    invoke-virtual {v0, v4, v1, v2, v5}, Lcom/google/android/flexbox/FlexboxLayoutManager;->W0(ILt6c;Lx6c;Z)I
+    move-result v6
+
+    if-eqz v6, :cond_35
+
+    iget-object v6, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
+
+    invoke-interface {v6}, Ljava/util/List;->size()I
+
+    move-result v6
+
+    if-lez v6, :cond_34
+
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
+
+    invoke-virtual {v4, v5, v3}, Lw84;->i(ILjava/util/List;)V
+
+    iget v3, v8, Llm5;->a:I
+
+    iget-object v6, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
+
+    iget-object v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
+
+    iget-object v13, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->M:La9;
+
+    move/from16 v18, v3
+
+    move/from16 v17, v5
+
+    move-object/from16 v19, v6
+
+    invoke-virtual/range {v12 .. v19}, Lw84;->f(La9;IIIIILjava/util/List;)V
+
+    goto :goto_19
+
+    :cond_34
+    invoke-virtual {v4, v3}, Lw84;->l(I)V
+
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
+
+    const/16 v18, -0x1
+
+    iget-object v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
+
+    iget-object v13, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->M:La9;
+
+    const/16 v17, 0x0
+
+    move-object/from16 v19, v3
+
+    invoke-virtual/range {v12 .. v19}, Lw84;->f(La9;IIIIILjava/util/List;)V
+
+    goto :goto_19
+
+    :cond_35
+    iget-object v6, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
+
+    invoke-interface {v6}, Ljava/util/List;->size()I
+
+    move-result v6
+
+    if-lez v6, :cond_36
+
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
+
+    invoke-virtual {v4, v5, v3}, Lw84;->i(ILjava/util/List;)V
+
+    iget v3, v8, Llm5;->a:I
+
+    iget-object v6, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
+
+    iget-object v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
+
+    iget-object v13, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->M:La9;
+
+    move/from16 v17, v15
+
+    move v15, v14
+
+    move/from16 v14, v17
+
+    move/from16 v18, v3
+
+    move/from16 v17, v5
+
+    move-object/from16 v19, v6
+
+    invoke-virtual/range {v12 .. v19}, Lw84;->f(La9;IIIIILjava/util/List;)V
+
+    move v5, v15
+
+    move v15, v14
+
+    move v14, v5
+
+    move/from16 v5, v17
+
+    goto :goto_19
+
+    :cond_36
+    invoke-virtual {v4, v3}, Lw84;->l(I)V
+
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
+
+    const/16 v18, -0x1
+
+    iget-object v12, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->w:Lw84;
+
+    iget-object v13, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->M:La9;
+
+    const/16 v17, 0x0
+
+    move/from16 v19, v15
+
+    move v15, v14
+
+    move/from16 v14, v19
+
+    move-object/from16 v19, v3
+
+    invoke-virtual/range {v12 .. v19}, Lw84;->f(La9;IIIIILjava/util/List;)V
+
+    move/from16 v20, v15
+
+    move v15, v14
+
+    move/from16 v14, v20
+
+    :goto_19
+    iget-object v3, v9, La9;->a:Ljava/util/List;
+
+    iput-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
+
+    invoke-virtual {v4, v14, v15, v5}, Lw84;->k(III)V
+
+    invoke-virtual {v4, v5}, Lw84;->x(I)V
+
+    :goto_1a
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/flexbox/FlexboxLayoutManager;->O0(Lubc;Lybc;Lnm5;)I
+
+    iget-boolean v3, v8, Llm5;->e:Z
+
+    if-eqz v3, :cond_37
+
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
+
+    iget v3, v3, Lnm5;->e:I
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v0, v8, v4, v7}, Lcom/google/android/flexbox/FlexboxLayoutManager;->h1(Llm5;ZZ)V
+
+    iget-object v5, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
+
+    invoke-virtual {v0, v1, v2, v5}, Lcom/google/android/flexbox/FlexboxLayoutManager;->O0(Lubc;Lybc;Lnm5;)I
+
+    iget-object v5, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
+
+    iget v5, v5, Lnm5;->e:I
+
+    goto :goto_1b
+
+    :cond_37
+    const/4 v4, 0x1
+
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
+
+    iget v5, v3, Lnm5;->e:I
+
+    invoke-virtual {v0, v8, v4, v7}, Lcom/google/android/flexbox/FlexboxLayoutManager;->i1(Llm5;ZZ)V
+
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/flexbox/FlexboxLayoutManager;->O0(Lubc;Lybc;Lnm5;)I
+
+    iget-object v3, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lnm5;
+
+    iget v3, v3, Lnm5;->e:I
+
+    :goto_1b
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/a;->w()I
+
+    move-result v6
+
+    if-lez v6, :cond_39
+
+    iget-boolean v6, v8, Llm5;->e:Z
+
+    if-eqz v6, :cond_38
+
+    invoke-virtual {v0, v5, v1, v2, v4}, Lcom/google/android/flexbox/FlexboxLayoutManager;->V0(ILubc;Lybc;Z)I
 
     move-result v4
 
     add-int/2addr v4, v3
 
-    invoke-virtual {v0, v4, v1, v2, v7}, Lcom/google/android/flexbox/FlexboxLayoutManager;->X0(ILt6c;Lx6c;Z)I
+    invoke-virtual {v0, v4, v1, v2, v7}, Lcom/google/android/flexbox/FlexboxLayoutManager;->W0(ILubc;Lybc;Z)I
 
-    goto :goto_1e
+    return-void
 
     :cond_38
-    const/4 v5, 0x1
-
-    invoke-virtual {v0, v3, v1, v2, v5}, Lcom/google/android/flexbox/FlexboxLayoutManager;->X0(ILt6c;Lx6c;Z)I
+    invoke-virtual {v0, v3, v1, v2, v4}, Lcom/google/android/flexbox/FlexboxLayoutManager;->W0(ILubc;Lybc;Z)I
 
     move-result v3
 
-    add-int/2addr v3, v4
+    add-int/2addr v3, v5
 
-    invoke-virtual {v0, v3, v1, v2, v7}, Lcom/google/android/flexbox/FlexboxLayoutManager;->W0(ILt6c;Lx6c;Z)I
+    invoke-virtual {v0, v3, v1, v2, v7}, Lcom/google/android/flexbox/FlexboxLayoutManager;->V0(ILubc;Lybc;Z)I
 
     :cond_39
-    :goto_1e
+    :goto_1c
     return-void
 .end method
 
-.method public final j1(Ldj5;ZZ)V
-    .locals 4
-
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    const/high16 v2, -0x80000000
-
-    if-eqz p3, :cond_3
-
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
-
-    move-result p3
-
-    if-eqz p3, :cond_0
-
-    iget p3, p0, Landroidx/recyclerview/widget/a;->m:I
-
-    goto :goto_0
-
-    :cond_0
-    iget p3, p0, Landroidx/recyclerview/widget/a;->l:I
-
-    :goto_0
-    iget-object v3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
-
-    if-eqz p3, :cond_1
-
-    if-ne p3, v2, :cond_2
-
-    :cond_1
-    move v1, v0
-
-    :cond_2
-    iput-boolean v1, v3, Lsj0;->c:Z
-
-    goto :goto_1
-
-    :cond_3
-    iget-object p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
-
-    iput-boolean v1, p3, Lsj0;->c:Z
-
-    :goto_1
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
-
-    move-result p3
-
-    if-nez p3, :cond_4
-
-    iget-boolean p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->t:Z
-
-    if-eqz p3, :cond_4
-
-    iget-object p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
-
-    iget-object v1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->K:Landroid/view/View;
-
-    invoke-virtual {v1}, Landroid/view/View;->getWidth()I
-
-    move-result v1
-
-    iget v3, p1, Ldj5;->c:I
-
-    sub-int/2addr v1, v3
-
-    iget-object v3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
-
-    invoke-virtual {v3}, Lo57;->m()I
-
-    move-result v3
-
-    sub-int/2addr v1, v3
-
-    iput v1, p3, Lsj0;->b:I
-
-    goto :goto_2
-
-    :cond_4
-    iget-object p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
-
-    iget v1, p1, Ldj5;->c:I
-
-    iget-object v3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
-
-    invoke-virtual {v3}, Lo57;->m()I
-
-    move-result v3
-
-    sub-int/2addr v1, v3
-
-    iput v1, p3, Lsj0;->b:I
-
-    :goto_2
-    iget-object p3, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
-
-    iget v1, p1, Ldj5;->a:I
-
-    iput v1, p3, Lsj0;->e:I
-
-    iput v0, p3, Lsj0;->i:I
-
-    const/4 v1, -0x1
-
-    iput v1, p3, Lsj0;->j:I
-
-    iget v1, p1, Ldj5;->c:I
-
-    iput v1, p3, Lsj0;->f:I
-
-    iput v2, p3, Lsj0;->g:I
-
-    iget v1, p1, Ldj5;->b:I
-
-    iput v1, p3, Lsj0;->d:I
-
-    if-eqz p2, :cond_5
-
-    if-lez v1, :cond_5
-
-    iget-object p2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
-
-    invoke-interface {p2}, Ljava/util/List;->size()I
-
-    move-result p2
-
-    iget p1, p1, Ldj5;->b:I
-
-    if-le p2, p1, :cond_5
-
-    iget-object p2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->v:Ljava/util/List;
-
-    invoke-interface {p2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lcj5;
-
-    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->z:Lsj0;
-
-    iget p2, p0, Lsj0;->d:I
-
-    sub-int/2addr p2, v0
-
-    iput p2, p0, Lsj0;->d:I
-
-    iget p1, p1, Lcj5;->d:I
-
-    iget p2, p0, Lsj0;->e:I
-
-    sub-int/2addr p2, p1
-
-    iput p2, p0, Lsj0;->e:I
-
-    :cond_5
-    return-void
-.end method
-
-.method public final k(Lx6c;)I
+.method public final j1(Landroid/view/View;I)V
     .locals 0
 
-    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->L0(Lx6c;)I
+    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->I:Landroid/util/SparseArray;
+
+    invoke-virtual {p0, p2, p1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final k(Lybc;)I
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->K0(Lybc;)I
 
     move-result p0
 
     return p0
 .end method
 
-.method public final k0(Lx6c;)V
+.method public final k0(Lybc;)V
     .locals 1
 
     const/4 p1, 0x0
 
-    iput-object p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->D:Lfj5;
+    iput-object p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->D:Lom5;
 
     const/4 p1, -0x1
 
@@ -5748,9 +5654,9 @@
 
     iput p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->L:I
 
-    iget-object p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->A:Ldj5;
+    iget-object p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->A:Llm5;
 
-    invoke-static {p1}, Ldj5;->b(Ldj5;)V
+    invoke-static {p1}, Llm5;->b(Llm5;)V
 
     iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->I:Landroid/util/SparseArray;
 
@@ -5759,20 +5665,10 @@
     return-void
 .end method
 
-.method public final k1(Landroid/view/View;I)V
+.method public final l(Lybc;)I
     .locals 0
 
-    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->I:Landroid/util/SparseArray;
-
-    invoke-virtual {p0, p2, p1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final l(Lx6c;)I
-    .locals 0
-
-    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->M0(Lx6c;)I
+    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->L0(Lybc;)I
 
     move-result p0
 
@@ -5782,24 +5678,24 @@
 .method public final l0(Landroid/os/Parcelable;)V
     .locals 1
 
-    instance-of v0, p1, Lfj5;
+    instance-of v0, p1, Lom5;
 
     if-eqz v0, :cond_0
 
-    check-cast p1, Lfj5;
+    check-cast p1, Lom5;
 
-    iput-object p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->D:Lfj5;
+    iput-object p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->D:Lom5;
 
-    invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->w0()V
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->v0()V
 
     :cond_0
     return-void
 .end method
 
-.method public final m(Lx6c;)I
+.method public final m(Lybc;)I
     .locals 0
 
-    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->N0(Lx6c;)I
+    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->M0(Lybc;)I
 
     move-result p0
 
@@ -5809,26 +5705,26 @@
 .method public final m0()Landroid/os/Parcelable;
     .locals 3
 
-    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->D:Lfj5;
+    iget-object v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->D:Lom5;
 
     if-eqz v0, :cond_0
 
-    new-instance p0, Lfj5;
+    new-instance p0, Lom5;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget v1, v0, Lfj5;->a:I
+    iget v1, v0, Lom5;->a:I
 
-    iput v1, p0, Lfj5;->a:I
+    iput v1, p0, Lom5;->a:I
 
-    iget v0, v0, Lfj5;->b:I
+    iget v0, v0, Lom5;->b:I
 
-    iput v0, p0, Lfj5;->b:I
+    iput v0, p0, Lom5;->b:I
 
     return-object p0
 
     :cond_0
-    new-instance v0, Lfj5;
+    new-instance v0, Lom5;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
@@ -5848,135 +5744,134 @@
 
     move-result v2
 
-    iput v2, v0, Lfj5;->a:I
+    iput v2, v0, Lom5;->a:I
 
-    iget-object v2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object v2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {v2, v1}, Lo57;->f(Landroid/view/View;)I
+    invoke-virtual {v2, v1}, Lea7;->f(Landroid/view/View;)I
 
     move-result v1
 
-    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lo57;
+    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Lea7;
 
-    invoke-virtual {p0}, Lo57;->m()I
+    invoke-virtual {p0}, Lea7;->m()I
 
     move-result p0
 
     sub-int/2addr v1, p0
 
-    iput v1, v0, Lfj5;->b:I
+    iput v1, v0, Lom5;->b:I
 
-    goto :goto_0
+    return-object v0
 
     :cond_1
     const/4 p0, -0x1
 
-    iput p0, v0, Lfj5;->a:I
+    iput p0, v0, Lom5;->a:I
 
-    :goto_0
     return-object v0
 .end method
 
-.method public final n(Lx6c;)I
+.method public final n(Lybc;)I
     .locals 0
 
-    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->L0(Lx6c;)I
+    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->K0(Lybc;)I
 
     move-result p0
 
     return p0
 .end method
 
-.method public final o(Lx6c;)I
+.method public final o(Lybc;)I
     .locals 0
 
-    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->M0(Lx6c;)I
+    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->L0(Lybc;)I
 
     move-result p0
 
     return p0
 .end method
 
-.method public final p(Lx6c;)I
+.method public final p(Lybc;)I
     .locals 0
 
-    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->N0(Lx6c;)I
+    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->M0(Lybc;)I
 
     move-result p0
 
     return p0
 .end method
 
-.method public final s()Ln6c;
+.method public final s()Lobc;
     .locals 1
 
-    new-instance p0, Lej5;
+    new-instance p0, Lmm5;
 
     const/4 v0, -0x2
 
-    invoke-direct {p0, v0, v0}, Ln6c;-><init>(II)V
+    invoke-direct {p0, v0, v0}, Lobc;-><init>(II)V
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lej5;->X:F
+    iput v0, p0, Lmm5;->X:F
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    iput v0, p0, Lej5;->Y:F
+    iput v0, p0, Lmm5;->Y:F
 
     const/4 v0, -0x1
 
-    iput v0, p0, Lej5;->Z:I
+    iput v0, p0, Lmm5;->Z:I
 
     const/high16 v0, -0x40800000    # -1.0f
 
-    iput v0, p0, Lej5;->w0:F
+    iput v0, p0, Lmm5;->o0:F
 
     const v0, 0xffffff
 
-    iput v0, p0, Lej5;->z0:I
+    iput v0, p0, Lmm5;->r0:I
 
-    iput v0, p0, Lej5;->A0:I
+    iput v0, p0, Lmm5;->s0:I
 
     return-object p0
 .end method
 
-.method public final t(Landroid/content/Context;Landroid/util/AttributeSet;)Ln6c;
+.method public final t(Landroid/content/Context;Landroid/util/AttributeSet;)Lobc;
     .locals 0
 
-    new-instance p0, Lej5;
+    new-instance p0, Lmm5;
 
-    invoke-direct {p0, p1, p2}, Ln6c;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, p2}, Lobc;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     const/4 p1, 0x0
 
-    iput p1, p0, Lej5;->X:F
+    iput p1, p0, Lmm5;->X:F
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    iput p1, p0, Lej5;->Y:F
+    iput p1, p0, Lmm5;->Y:F
 
     const/4 p1, -0x1
 
-    iput p1, p0, Lej5;->Z:I
+    iput p1, p0, Lmm5;->Z:I
 
     const/high16 p1, -0x40800000    # -1.0f
 
-    iput p1, p0, Lej5;->w0:F
+    iput p1, p0, Lmm5;->o0:F
 
     const p1, 0xffffff
 
-    iput p1, p0, Lej5;->z0:I
+    iput p1, p0, Lmm5;->r0:I
 
-    iput p1, p0, Lej5;->A0:I
+    iput p1, p0, Lmm5;->s0:I
 
     return-object p0
 .end method
 
-.method public final x0(ILt6c;Lx6c;)I
+.method public final w0(ILubc;Lybc;)I
     .locals 1
 
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
     move-result v0
 
@@ -5989,29 +5884,29 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1(I)I
+    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->b1(I)I
 
     move-result p1
 
-    iget-object p2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->A:Ldj5;
+    iget-object p2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->A:Llm5;
 
-    iget p3, p2, Ldj5;->d:I
+    iget p3, p2, Llm5;->d:I
 
     add-int/2addr p3, p1
 
-    iput p3, p2, Ldj5;->d:I
+    iput p3, p2, Llm5;->d:I
 
-    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->C:Lo57;
+    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->C:Lea7;
 
     neg-int p2, p1
 
-    invoke-virtual {p0, p2}, Lo57;->r(I)V
+    invoke-virtual {p0, p2}, Lea7;->r(I)V
 
     return p1
 
     :cond_1
     :goto_0
-    invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/flexbox/FlexboxLayoutManager;->b1(ILt6c;Lx6c;)I
+    invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/flexbox/FlexboxLayoutManager;->a1(ILubc;Lybc;)I
 
     move-result p1
 
@@ -6022,7 +5917,7 @@
     return p1
 .end method
 
-.method public final y0(I)V
+.method public final x0(I)V
     .locals 1
 
     iput p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->E:I
@@ -6031,24 +5926,24 @@
 
     iput p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->F:I
 
-    iget-object p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->D:Lfj5;
+    iget-object p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->D:Lom5;
 
     if-eqz p1, :cond_0
 
     const/4 v0, -0x1
 
-    iput v0, p1, Lfj5;->a:I
+    iput v0, p1, Lom5;->a:I
 
     :cond_0
-    invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->w0()V
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/a;->v0()V
 
     return-void
 .end method
 
-.method public final z0(ILt6c;Lx6c;)I
+.method public final y0(ILubc;Lybc;)I
     .locals 1
 
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
     move-result v0
 
@@ -6058,7 +5953,7 @@
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->d1()Z
+    invoke-virtual {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
 
     move-result v0
 
@@ -6067,29 +5962,29 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1(I)I
+    invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->b1(I)I
 
     move-result p1
 
-    iget-object p2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->A:Ldj5;
+    iget-object p2, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->A:Llm5;
 
-    iget p3, p2, Ldj5;->d:I
+    iget p3, p2, Llm5;->d:I
 
     add-int/2addr p3, p1
 
-    iput p3, p2, Ldj5;->d:I
+    iput p3, p2, Llm5;->d:I
 
-    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->C:Lo57;
+    iget-object p0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager;->C:Lea7;
 
     neg-int p2, p1
 
-    invoke-virtual {p0, p2}, Lo57;->r(I)V
+    invoke-virtual {p0, p2}, Lea7;->r(I)V
 
     return p1
 
     :cond_1
     :goto_0
-    invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/flexbox/FlexboxLayoutManager;->b1(ILt6c;Lx6c;)I
+    invoke-virtual {p0, p1, p2, p3}, Lcom/google/android/flexbox/FlexboxLayoutManager;->a1(ILubc;Lybc;)I
 
     move-result p1
 

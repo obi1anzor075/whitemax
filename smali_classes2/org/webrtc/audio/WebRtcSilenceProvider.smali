@@ -94,13 +94,13 @@
 
     array-length p3, p6
 
-    const-string p5, "Silence provider initialized, sampleRate="
+    const-string p5, ", framesPerBuffer="
 
-    const-string p6, ", framesPerBuffer="
+    const-string p6, ", bufferDuration="
 
-    const-string v0, ", bufferDuration="
+    const-string v0, "Silence provider initialized, sampleRate="
 
-    invoke-static {p5, p2, p6, p4, v0}, Lrf0;->i(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, p2, p5, p4, p6}, Lpg0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 

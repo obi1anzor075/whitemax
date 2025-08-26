@@ -1,143 +1,132 @@
 .class public final Lg49;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final a:J
+.field public X:I
 
-.field public final b:Ljava/lang/CharSequence;
+.field public synthetic Y:Ljava/lang/Object;
 
-.field public final c:Ljava/lang/CharSequence;
+.field public final synthetic Z:Ld31;
 
-.field public final d:Ljava/lang/String;
-
-.field public final e:[Ljava/lang/Object;
-
-.field public final f:Ljava/lang/CharSequence;
-
-.field public final g:Ljava/lang/String;
-
-.field public final h:J
-
-.field public final i:I
-
-.field public final j:I
-
-.field public final k:Z
-
-.field public final l:Z
-
-.field public final m:Z
-
-.field public final n:J
-
-.field public final o:Ljava/lang/Long;
-
-.field public final p:J
-
-.field public final q:Ljava/lang/CharSequence;
-
-.field public final r:Ljava/lang/String;
-
-.field public final s:[B
-
-.field public final t:Ljava/lang/CharSequence;
-
-.field public final u:Z
+.field public final synthetic o0:Lh49;
 
 
 # direct methods
-.method public constructor <init>(JLjava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/String;[Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/String;JIIZZZJLjava/lang/Long;JLjava/lang/CharSequence;Ljava/lang/String;[BLjava/lang/CharSequence;Z)V
-    .locals 3
+.method public constructor <init>(Ld31;Lkotlin/coroutines/Continuation;Lh49;)V
+    .locals 0
 
-    move-object v0, p0
+    iput-object p1, p0, Lg49;->Z:Ld31;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p3, p0, Lg49;->o0:Lh49;
 
-    move-wide v1, p1
+    const/4 p1, 0x2
 
-    iput-wide v1, v0, Lg49;->a:J
-
-    move-object v1, p3
-
-    iput-object v1, v0, Lg49;->b:Ljava/lang/CharSequence;
-
-    move-object v1, p4
-
-    iput-object v1, v0, Lg49;->c:Ljava/lang/CharSequence;
-
-    move-object v1, p5
-
-    iput-object v1, v0, Lg49;->d:Ljava/lang/String;
-
-    move-object v1, p6
-
-    iput-object v1, v0, Lg49;->e:[Ljava/lang/Object;
-
-    move-object v1, p7
-
-    iput-object v1, v0, Lg49;->f:Ljava/lang/CharSequence;
-
-    move-object v1, p8
-
-    iput-object v1, v0, Lg49;->g:Ljava/lang/String;
-
-    move-wide v1, p9
-
-    iput-wide v1, v0, Lg49;->h:J
-
-    move v1, p11
-
-    iput v1, v0, Lg49;->i:I
-
-    move v1, p12
-
-    iput v1, v0, Lg49;->j:I
-
-    move/from16 v1, p13
-
-    iput-boolean v1, v0, Lg49;->k:Z
-
-    move/from16 v1, p14
-
-    iput-boolean v1, v0, Lg49;->l:Z
-
-    move/from16 v1, p15
-
-    iput-boolean v1, v0, Lg49;->m:Z
-
-    move-wide/from16 v1, p16
-
-    iput-wide v1, v0, Lg49;->n:J
-
-    move-object/from16 v1, p18
-
-    iput-object v1, v0, Lg49;->o:Ljava/lang/Long;
-
-    move-wide/from16 v1, p19
-
-    iput-wide v1, v0, Lg49;->p:J
-
-    move-object/from16 v1, p21
-
-    iput-object v1, v0, Lg49;->q:Ljava/lang/CharSequence;
-
-    move-object/from16 v1, p22
-
-    iput-object v1, v0, Lg49;->r:Ljava/lang/String;
-
-    move-object/from16 v1, p23
-
-    iput-object v1, v0, Lg49;->s:[B
-
-    move-object/from16 v1, p24
-
-    iput-object v1, v0, Lg49;->t:Ljava/lang/CharSequence;
-
-    move/from16 v1, p25
-
-    iput-boolean v1, v0, Lg49;->u:Z
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Lbn5;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lg49;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lg49;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lg49;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 2
+
+    new-instance v0, Lg49;
+
+    iget-object v1, p0, Lg49;->Z:Ld31;
+
+    iget-object p0, p0, Lg49;->o0:Lh49;
+
+    invoke-direct {v0, v1, p2, p0}, Lg49;-><init>(Ld31;Lkotlin/coroutines/Continuation;Lh49;)V
+
+    iput-object p1, v0, Lg49;->Y:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
+
+    iget v0, p0, Lg49;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lg49;->Y:Ljava/lang/Object;
+
+    check-cast p1, Lbn5;
+
+    new-instance v0, Loq;
+
+    iget-object v2, p0, Lg49;->o0:Lh49;
+
+    const/4 v3, 0x7
+
+    invoke-direct {v0, p1, v2, v3}, Loq;-><init>(Lbn5;Ljava/lang/Object;I)V
+
+    iput v1, p0, Lg49;->X:I
+
+    iget-object p1, p0, Lg49;->Z:Ld31;
+
+    invoke-virtual {p1, v0, p0}, Ld31;->d(Lbn5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

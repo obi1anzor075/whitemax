@@ -3,396 +3,195 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/content/ServiceConnection;
+.implements La0d;
 
 
 # instance fields
-.field public X:Lrsf;
+.field public final a:Lssf;
 
-.field public Y:Z
+.field public final b:I
 
-.field public final a:Landroid/content/Context;
+.field public final c:J
 
-.field public final b:Landroid/content/Intent;
+.field public final d:J
 
-.field public final c:Ljava/util/concurrent/ScheduledExecutorService;
-
-.field public final o:Ljava/util/ArrayDeque;
+.field public final e:J
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 4
-
-    new-instance v0, Ljava/util/concurrent/ScheduledThreadPoolExecutor;
-
-    new-instance v1, Lzf9;
-
-    const-string v2, "Firebase-FirebaseInstanceIdServiceConnection"
-
-    const/4 v3, 0x0
-
-    invoke-direct {v1, v2, v3}, Lzf9;-><init>(Ljava/lang/String;I)V
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v2, v1}, Ljava/util/concurrent/ScheduledThreadPoolExecutor;-><init>(ILjava/util/concurrent/ThreadFactory;)V
+.method public constructor <init>(Lssf;IJJ)V
+    .locals 6
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v1, Ljava/util/ArrayDeque;
+    iput-object p1, p0, Ltsf;->a:Lssf;
 
-    invoke-direct {v1}, Ljava/util/ArrayDeque;-><init>()V
+    iput p2, p0, Ltsf;->b:I
 
-    iput-object v1, p0, Ltsf;->o:Ljava/util/ArrayDeque;
+    iput-wide p3, p0, Ltsf;->c:J
 
-    iput-boolean v2, p0, Ltsf;->Y:Z
+    sub-long/2addr p5, p3
 
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+    iget p3, p1, Lssf;->c:I
 
-    move-result-object p1
+    int-to-long p3, p3
 
-    iput-object p1, p0, Ltsf;->a:Landroid/content/Context;
+    div-long/2addr p5, p3
 
-    new-instance v1, Landroid/content/Intent;
+    iput-wide p5, p0, Ltsf;->d:J
 
-    const-string v2, "com.google.firebase.MESSAGING_EVENT"
+    int-to-long p2, p2
 
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    mul-long v0, p5, p2
 
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    iget p1, p1, Lssf;->b:I
 
-    move-result-object p1
+    int-to-long v4, p1
 
-    invoke-virtual {v1, p1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+    const-wide/32 v2, 0xf4240
 
-    move-result-object p1
+    invoke-static/range {v0 .. v5}, Lnaf;->H(JJJ)J
 
-    iput-object p1, p0, Ltsf;->b:Landroid/content/Intent;
+    move-result-wide p1
 
-    iput-object v0, p0, Ltsf;->c:Ljava/util/concurrent/ScheduledExecutorService;
+    iput-wide p1, p0, Ltsf;->e:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a()V
-    .locals 8
+.method public final c()Z
+    .locals 0
 
-    monitor-enter p0
+    const/4 p0, 0x1
 
-    :goto_0
-    :try_start_0
-    iget-object v0, p0, Ltsf;->o:Ljava/util/ArrayDeque;
+    return p0
+.end method
 
-    invoke-virtual {v0}, Ljava/util/ArrayDeque;->isEmpty()Z
+.method public final e(J)Lyzc;
+    .locals 23
 
-    move-result v0
+    move-object/from16 v0, p0
 
-    if-nez v0, :cond_4
+    iget-object v1, v0, Ltsf;->a:Lssf;
 
-    iget-object v0, p0, Ltsf;->X:Lrsf;
+    iget v2, v1, Lssf;->b:I
 
-    if-eqz v0, :cond_0
+    int-to-long v2, v2
 
-    invoke-virtual {v0}, Landroid/os/Binder;->isBinderAlive()Z
+    mul-long v2, v2, p1
 
-    move-result v0
+    iget v4, v0, Ltsf;->b:I
 
-    if-eqz v0, :cond_0
+    int-to-long v5, v4
 
-    iget-object v0, p0, Ltsf;->o:Ljava/util/ArrayDeque;
+    const-wide/32 v7, 0xf4240
 
-    invoke-virtual {v0}, Ljava/util/ArrayDeque;->poll()Ljava/lang/Object;
+    mul-long/2addr v5, v7
 
-    move-result-object v0
+    div-long v7, v2, v5
 
-    check-cast v0, Lssf;
+    iget-wide v2, v0, Ltsf;->d:J
 
-    iget-object v1, p0, Ltsf;->X:Lrsf;
+    const-wide/16 v5, 0x1
 
-    invoke-virtual {v1, v0}, Lrsf;->a(Lssf;)V
+    sub-long v11, v2, v5
+
+    const-wide/16 v9, 0x0
+
+    invoke-static/range {v7 .. v12}, Lnaf;->j(JJJ)J
+
+    move-result-wide v2
+
+    iget v7, v1, Lssf;->c:I
+
+    int-to-long v8, v7
+
+    mul-long/2addr v8, v2
+
+    iget-wide v13, v0, Ltsf;->c:J
+
+    add-long/2addr v8, v13
+
+    move-wide v15, v5
+
+    int-to-long v5, v4
+
+    mul-long v17, v2, v5
+
+    iget v0, v1, Lssf;->b:I
+
+    int-to-long v5, v0
+
+    const-wide/32 v19, 0xf4240
+
+    move-wide/from16 v21, v5
+
+    invoke-static/range {v17 .. v22}, Lnaf;->H(JJJ)J
+
+    move-result-wide v5
+
+    new-instance v0, Le0d;
+
+    invoke-direct {v0, v5, v6, v8, v9}, Le0d;-><init>(JJ)V
+
+    cmp-long v5, v5, p1
+
+    if-gez v5, :cond_1
+
+    cmp-long v5, v2, v11
+
+    if-nez v5, :cond_0
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v0
-
-    goto :goto_3
-
     :cond_0
-    iget-boolean v0, p0, Ltsf;->Y:Z
+    add-long/2addr v2, v15
 
-    if-eqz v0, :cond_1
+    int-to-long v5, v7
 
-    goto :goto_2
+    mul-long/2addr v5, v2
+
+    add-long/2addr v5, v13
+
+    int-to-long v7, v4
+
+    mul-long v9, v2, v7
+
+    iget v1, v1, Lssf;->b:I
+
+    int-to-long v13, v1
+
+    const-wide/32 v11, 0xf4240
+
+    invoke-static/range {v9 .. v14}, Lnaf;->H(JJJ)J
+
+    move-result-wide v1
+
+    new-instance v3, Le0d;
+
+    invoke-direct {v3, v1, v2, v5, v6}, Le0d;-><init>(JJ)V
+
+    new-instance v1, Lyzc;
+
+    invoke-direct {v1, v0, v3}, Lyzc;-><init>(Le0d;Le0d;)V
+
+    return-object v1
 
     :cond_1
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ltsf;->Y:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :try_start_1
-    invoke-static {}, Lnfc;->p()Lnfc;
-
-    move-result-object v1
-
-    iget-object v2, p0, Ltsf;->a:Landroid/content/Context;
-
-    iget-object v4, p0, Ltsf;->b:Landroid/content/Intent;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v3
-
-    const/4 v7, 0x0
-
-    const/16 v6, 0x41
-
-    move-object v5, p0
-
-    invoke-virtual/range {v1 .. v7}, Lnfc;->s(Landroid/content/Context;Ljava/lang/String;Landroid/content/Intent;Landroid/content/ServiceConnection;ILjava/util/concurrent/Executor;)Z
-
-    move-result v0
-    :try_end_1
-    .catch Ljava/lang/SecurityException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    if-eqz v0, :cond_2
-
-    goto :goto_2
-
-    :catch_0
-    :cond_2
-    const/4 v0, 0x0
-
-    :try_start_2
-    iput-boolean v0, p0, Ltsf;->Y:Z
-
-    :goto_1
-    iget-object v0, p0, Ltsf;->o:Ljava/util/ArrayDeque;
-
-    invoke-virtual {v0}, Ljava/util/ArrayDeque;->isEmpty()Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    invoke-virtual {v0}, Ljava/util/ArrayDeque;->poll()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lssf;
-
-    iget-object v0, v0, Lssf;->b:Lvde;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lvde;->d(Ljava/lang/Object;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    goto :goto_1
-
-    :cond_3
-    :goto_2
-    monitor-exit p0
-
-    return-void
-
-    :cond_4
-    monitor-exit p0
-
-    return-void
-
-    :goto_3
-    :try_start_3
-    monitor-exit p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized b(Landroid/content/Intent;)Ln6g;
-    .locals 5
-
-    monitor-enter p0
-
-    :try_start_0
-    new-instance v0, Lssf;
-
-    invoke-direct {v0, p1}, Lssf;-><init>(Landroid/content/Intent;)V
-
-    iget-object p1, p0, Ltsf;->c:Ljava/util/concurrent/ScheduledExecutorService;
-
-    new-instance v1, Lpfe;
-
-    const/16 v2, 0x10
-
-    invoke-direct {v1, v2, v0}, Lpfe;-><init>(ILjava/lang/Object;)V
-
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    const-wide/16 v3, 0x14
-
-    invoke-interface {p1, v1, v3, v4, v2}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-
-    move-result-object v1
-
-    iget-object v2, v0, Lssf;->b:Lvde;
-
-    iget-object v2, v2, Lvde;->a:Ln6g;
-
-    new-instance v3, Lxle;
-
-    const/16 v4, 0x13
-
-    invoke-direct {v3, v4, v1}, Lxle;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {v2, p1, v3}, Ln6g;->b(Ljava/util/concurrent/Executor;Lhx9;)Ln6g;
-
-    iget-object p1, p0, Ltsf;->o:Ljava/util/ArrayDeque;
-
-    invoke-virtual {p1, v0}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {p0}, Ltsf;->a()V
-
-    iget-object p1, v0, Lssf;->b:Lvde;
-
-    iget-object p1, p1, Lvde;->a:Ln6g;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-object p1
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-.end method
-
-.method public final declared-synchronized onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
-    .locals 2
-
-    monitor-enter p0
-
-    :try_start_0
-    const-string v0, "FirebaseMessaging"
-
-    const/4 v1, 0x3
-
-    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-static {p1}, Ljava/util/Objects;->toString(Ljava/lang/Object;)Ljava/lang/String;
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    goto :goto_2
-
-    :cond_0
     :goto_0
-    const/4 p1, 0x0
+    new-instance v1, Lyzc;
 
-    iput-boolean p1, p0, Ltsf;->Y:Z
+    invoke-direct {v1, v0, v0}, Lyzc;-><init>(Le0d;Le0d;)V
 
-    instance-of p1, p2, Lrsf;
-
-    if-nez p1, :cond_2
-
-    invoke-static {p2}, Ljava/util/Objects;->toString(Ljava/lang/Object;)Ljava/lang/String;
-
-    :goto_1
-    iget-object p1, p0, Ltsf;->o:Ljava/util/ArrayDeque;
-
-    invoke-virtual {p1}, Ljava/util/ArrayDeque;->isEmpty()Z
-
-    move-result p2
-
-    if-nez p2, :cond_1
-
-    invoke-virtual {p1}, Ljava/util/ArrayDeque;->poll()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lssf;
-
-    iget-object p1, p1, Lssf;->b:Lvde;
-
-    const/4 p2, 0x0
-
-    invoke-virtual {p1, p2}, Lvde;->d(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_1
-
-    :cond_1
-    monitor-exit p0
-
-    return-void
-
-    :cond_2
-    :try_start_1
-    check-cast p2, Lrsf;
-
-    iput-object p2, p0, Ltsf;->X:Lrsf;
-
-    invoke-virtual {p0}, Ltsf;->a()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :goto_2
-    :try_start_2
-    monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    throw p1
+    return-object v1
 .end method
 
-.method public final onServiceDisconnected(Landroid/content/ComponentName;)V
+.method public final f()J
     .locals 2
 
-    const-string v0, "FirebaseMessaging"
+    iget-wide v0, p0, Ltsf;->e:J
 
-    const/4 v1, 0x3
-
-    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-static {p1}, Ljava/util/Objects;->toString(Ljava/lang/Object;)Ljava/lang/String;
-
-    :cond_0
-    invoke-virtual {p0}, Ltsf;->a()V
-
-    return-void
+    return-wide v0
 .end method

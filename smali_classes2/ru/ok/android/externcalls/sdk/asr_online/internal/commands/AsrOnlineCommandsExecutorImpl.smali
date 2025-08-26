@@ -15,20 +15,20 @@
         "Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutorImpl;",
         "Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutor;",
         "Lkotlin/Function0;",
-        "Lgx0;",
+        "Liy0;",
         "getCall",
         "Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;",
         "signalingProvider",
         "<init>",
-        "(Ls16;Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;)V",
+        "(Lv56;Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;)V",
         "",
         "isEnabled",
-        "Ljue;",
+        "Le5f;",
         "enableAsrOnline",
         "(Z)V",
         "onMigratedToServerCallTopology",
         "()V",
-        "Ls16;",
+        "Lv56;",
         "Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;",
         "isAsrOnlineEnabled",
         "Z",
@@ -40,14 +40,15 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
-.field private final getCall:Ls16;
+.field private final getCall:Lv56;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 .end field
@@ -58,12 +59,12 @@
 
 
 # direct methods
-.method public constructor <init>(Ls16;Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;)V
+.method public constructor <init>(Lv56;Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ls16;",
+            "Lv56;",
             "Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;",
             ")V"
         }
@@ -71,7 +72,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutorImpl;->getCall:Ls16;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutorImpl;->getCall:Lv56;
 
     iput-object p2, p0, Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutorImpl;->signalingProvider:Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;
 
@@ -85,24 +86,24 @@
 
     iput-boolean p1, p0, Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutorImpl;->isAsrOnlineEnabled:Z
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutorImpl;->getCall:Ls16;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutorImpl;->getCall:Lv56;
 
-    invoke-interface {v0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {v0}, Lv56;->invoke()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lgx0;
+    check-cast v0, Liy0;
 
     if-nez v0, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
-    iget-object v0, v0, Lgx0;->x1:Lsl1;
+    iget-object v0, v0, Liy0;->i0:Lwn1;
 
-    sget-object v1, Lane;->b:Lane;
+    sget-object v1, Lzve;->b:Lzve;
 
-    invoke-virtual {v0, v1}, Lsl1;->H(Lane;)Z
+    invoke-virtual {v0, v1}, Lwn1;->H(Lzve;)Z
 
     move-result v0
 
@@ -112,36 +113,36 @@
 
     const/4 v0, 0x0
 
-    invoke-static {v0, p1}, Lx87;->d(Lorg/json/JSONObject;Ljava/lang/String;)Lx66;
+    invoke-static {v0, p1}, Lcu0;->a(Lorg/json/JSONObject;Ljava/lang/String;)Lva6;
 
     move-result-object p1
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutorImpl;->signalingProvider:Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;
 
-    invoke-interface {p0}, Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;->getSignaling()Lmfd;
+    invoke-interface {p0}, Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;->getSignaling()Ldnd;
 
     move-result-object p0
 
     if-eqz p0, :cond_2
 
-    invoke-virtual {p0, p1}, Lmfd;->i(Lpfd;)V
+    invoke-virtual {p0, p1}, Ldnd;->i(Lgnd;)V
 
-    goto :goto_0
+    return-void
 
     :cond_1
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutorImpl;->getCall:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutorImpl;->getCall:Lv56;
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lgx0;
+    check-cast p0, Liy0;
 
     if-eqz p0, :cond_2
 
-    iget-object p0, p0, Lgx0;->x1:Lsl1;
+    iget-object p0, p0, Liy0;->i0:Lwn1;
 
-    invoke-virtual {p0, p1}, Lsl1;->O(Z)V
+    invoke-virtual {p0, p1}, Lwn1;->O(Z)V
 
     :cond_2
     :goto_0
@@ -155,21 +156,21 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutorImpl;->getCall:Ls16;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutorImpl;->getCall:Lv56;
 
-    invoke-interface {v0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {v0}, Lv56;->invoke()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lgx0;
+    check-cast v0, Liy0;
 
     if-eqz v0, :cond_0
 
     iget-boolean p0, p0, Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutorImpl;->isAsrOnlineEnabled:Z
 
-    iget-object v0, v0, Lgx0;->x1:Lsl1;
+    iget-object v0, v0, Liy0;->i0:Lwn1;
 
-    invoke-virtual {v0, p0}, Lsl1;->O(Z)V
+    invoke-virtual {v0, p0}, Lwn1;->O(Z)V
 
     :cond_0
     return-void

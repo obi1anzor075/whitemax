@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="34" android:compileSdkVersionCodename="14" android:installLocation="auto" package="ru.oneme.app" platformBuildVersionCode="34" platformBuildVersionName="14">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="35" android:compileSdkVersionCodename="15" android:installLocation="auto" package="ru.oneme.app" platformBuildVersionCode="35" platformBuildVersionName="15">
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     <uses-permission android:name="com.sec.android.provider.badge.permission.READ"/>
     <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE"/>
@@ -135,7 +135,6 @@
         <service android:directBootAware="false" android:enabled="@bool/enable_system_foreground_service_default" android:exported="false" android:foregroundServiceType="dataSync|mediaPlayback|location|camera|microphone" android:name="androidx.work.impl.foreground.SystemForegroundService"/>
         <meta-data android:name="android.max_aspect" android:value="2.5"/>
         <meta-data android:name="fontProviderRequests" android:value="Noto Color Emoji Compat"/>
-        <activity android:exported="false" android:name="one.me.chats.picker.ActChatPickerCompat"/>
         <service android:exported="false" android:foregroundServiceType="mediaPlayback|mediaProjection|camera|microphone" android:name="one.me.calls.impl.service.CallServiceImpl"/>
         <service android:exported="false" android:name="one.me.sdk.vendor.push.FcmMessagingService">
             <intent-filter>

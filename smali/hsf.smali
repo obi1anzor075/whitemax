@@ -1,121 +1,77 @@
 .class public abstract Lhsf;
-.super Lgsf;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# direct methods
-.method public constructor <init>(Lnsf;Landroid/view/WindowInsets;)V
-    .locals 0
+# static fields
+.field public static final a:Ljava/lang/String;
 
-    invoke-direct {p0, p1, p2}, Lgsf;-><init>(Lnsf;Landroid/view/WindowInsets;)V
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "WakeLocks"
+
+    invoke-static {v0}, Lfc2;->F(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lhsf;->a:Ljava/lang/String;
 
     return-void
 .end method
 
+.method public static final a(Landroid/content/Context;Ljava/lang/String;)Landroid/os/PowerManager$WakeLock;
+    .locals 2
 
-# virtual methods
-.method public a()Lnsf;
-    .locals 1
-
-    iget-object p0, p0, Lfsf;->c:Landroid/view/WindowInsets;
-
-    invoke-virtual {p0}, Landroid/view/WindowInsets;->consumeDisplayCutout()Landroid/view/WindowInsets;
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p0
 
-    const/4 v0, 0x0
+    const-string v0, "power"
 
-    invoke-static {v0, p0}, Lnsf;->f(Landroid/view/View;Landroid/view/WindowInsets;)Lnsf;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public e()Lri4;
-    .locals 1
-
-    iget-object p0, p0, Lfsf;->c:Landroid/view/WindowInsets;
-
-    invoke-virtual {p0}, Landroid/view/WindowInsets;->getDisplayCutout()Landroid/view/DisplayCutout;
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p0
 
-    if-nez p0, :cond_0
+    check-cast p0, Landroid/os/PowerManager;
 
-    const/4 p0, 0x0
+    const-string v0, "WorkManager: "
 
-    goto :goto_0
+    invoke-virtual {v0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    :cond_0
-    new-instance v0, Lri4;
-
-    invoke-direct {v0, p0}, Lri4;-><init>(Landroid/view/DisplayCutout;)V
-
-    move-object p0, v0
-
-    :goto_0
-    return-object p0
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .locals 4
+    move-result-object p1
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_0
+    invoke-virtual {p0, v0, p1}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
 
-    return v0
+    move-result-object p0
 
-    :cond_0
-    instance-of v1, p1, Lhsf;
+    sget-object v0, Lisf;->a:Lisf;
 
-    const/4 v2, 0x0
+    monitor-enter v0
 
-    if-nez v1, :cond_1
+    :try_start_0
+    sget-object v1, Lisf;->b:Ljava/util/WeakHashMap;
 
-    return v2
+    invoke-virtual {v1, p0, p1}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_1
-    check-cast p1, Lhsf;
+    move-result-object p1
 
-    iget-object v1, p1, Lfsf;->c:Landroid/view/WindowInsets;
+    check-cast p1, Ljava/lang/String;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v3, p0, Lfsf;->c:Landroid/view/WindowInsets;
+    monitor-exit v0
 
-    invoke-static {v3, v1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    return-object p0
 
-    move-result v1
+    :catchall_0
+    move-exception p0
 
-    if-eqz v1, :cond_2
+    monitor-exit v0
 
-    iget-object p0, p0, Lfsf;->g:Lqy6;
-
-    iget-object p1, p1, Lfsf;->g:Lqy6;
-
-    invoke-static {p0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    move v0, v2
-
-    :goto_0
-    return v0
-.end method
-
-.method public hashCode()I
-    .locals 0
-
-    iget-object p0, p0, Lfsf;->c:Landroid/view/WindowInsets;
-
-    invoke-virtual {p0}, Landroid/view/WindowInsets;->hashCode()I
-
-    move-result p0
-
-    return p0
+    throw p0
 .end method

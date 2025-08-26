@@ -126,7 +126,7 @@
     :cond_1
     if-eqz v2, :cond_2
 
-    move v0, p1
+    return p1
 
     :cond_2
     return v0
@@ -141,12 +141,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 

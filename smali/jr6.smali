@@ -1,21 +1,11 @@
 .class public abstract Ljr6;
-.super Ljava/lang/Object;
+.super Landroid/os/Binder;
 .source "SourceFile"
+
+# interfaces
+.implements Lkr6;
+.implements Landroid/os/IInterface;
 
 
 # static fields
-.field public static final synthetic a:I
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    return-void
-.end method
+.field public static final synthetic c:I

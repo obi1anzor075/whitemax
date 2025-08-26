@@ -1,32 +1,30 @@
 .class public final Lkjf;
-.super Ll5e;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Ll66;
 
 
 # instance fields
 .field public X:I
 
-.field public synthetic Y:Ljava/lang/Object;
+.field public final synthetic Y:Lljf;
 
-.field public final synthetic Z:Lsjf;
-
-.field public final synthetic w0:Lpjf;
+.field public final synthetic Z:Landroid/graphics/Bitmap;
 
 
 # direct methods
-.method public constructor <init>(Lpjf;Lsjf;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lljf;Landroid/graphics/Bitmap;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    iput-object p2, p0, Lkjf;->Z:Lsjf;
+    iput-object p1, p0, Lkjf;->Y:Lljf;
 
-    iput-object p1, p0, Lkjf;->w0:Lpjf;
+    iput-object p2, p0, Lkjf;->Z:Landroid/graphics/Bitmap;
 
     const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p3}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p3}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -36,17 +34,17 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    check-cast p1, Lyif;
+    check-cast p1, Lox3;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {p0, p1, p2}, Lkjf;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0, p1, p2}, Lkjf;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
     check-cast p0, Lkjf;
 
-    sget-object p1, Ljue;->a:Ljue;
+    sget-object p1, Le5f;->a:Le5f;
 
     invoke-virtual {p0, p1}, Lkjf;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -55,147 +53,146 @@
     return-object p0
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 2
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    new-instance v0, Lkjf;
+    new-instance p1, Lkjf;
 
-    iget-object v1, p0, Lkjf;->Z:Lsjf;
+    iget-object v0, p0, Lkjf;->Y:Lljf;
 
-    iget-object p0, p0, Lkjf;->w0:Lpjf;
+    iget-object p0, p0, Lkjf;->Z:Landroid/graphics/Bitmap;
 
-    invoke-direct {v0, p0, v1, p2}, Lkjf;-><init>(Lpjf;Lsjf;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p1, v0, p0, p2}, Lkjf;-><init>(Lljf;Landroid/graphics/Bitmap;Lkotlin/coroutines/Continuation;)V
 
-    iput-object p1, v0, Lkjf;->Y:Ljava/lang/Object;
-
-    return-object v0
+    return-object p1
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 18
+    .locals 6
 
-    move-object/from16 v0, p0
+    sget-object v0, Lpx3;->a:Lpx3;
 
-    sget-object v1, Lpu3;->a:Lpu3;
+    iget v1, p0, Lkjf;->X:I
 
-    iget v2, v0, Lkjf;->X:I
+    const/4 v2, 0x1
 
-    iget-object v3, v0, Lkjf;->w0:Lpjf;
+    if-eqz v1, :cond_1
 
-    const/4 v4, 0x1
+    if-ne v1, v2, :cond_0
 
-    if-eqz v2, :cond_1
-
-    if-ne v2, v4, :cond_0
-
-    iget-object v0, v0, Lkjf;->Y:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-static/range {p1 .. p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    move-object v9, v0
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "call to \'resume\' before \'invoke\' with coroutine"
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v0
+    throw p0
 
     :cond_1
-    invoke-static/range {p1 .. p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    iget-object v2, v0, Lkjf;->Y:Ljava/lang/Object;
+    iget-object p1, p0, Lkjf;->Y:Lljf;
 
-    check-cast v2, Lyif;
+    iget-object v1, p1, Lljf;->q0:Ll61;
 
-    sget-object v5, Lfjf;->a:Ly76;
+    iget-object v3, p0, Lkjf;->Z:Landroid/graphics/Bitmap;
 
-    new-instance v5, Lvjf;
+    iget-object p1, p1, Lljf;->b:Lje7;
 
-    iget-object v6, v0, Lkjf;->Z:Lsjf;
+    invoke-interface {p1}, Lje7;->getValue()Ljava/lang/Object;
 
-    iget-object v6, v6, Lsjf;->a:Ljava/lang/String;
+    move-result-object p1
 
-    iget-object v2, v2, Lyif;->a:Ljava/lang/String;
+    check-cast p1, Lhi5;
 
-    invoke-direct {v5, v6, v2}, Lvjf;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    check-cast p1, Lvj5;
 
-    iget-object v2, v3, Lpjf;->f:Lus0;
+    invoke-virtual {p1}, Lvj5;->m()Ljava/io/File;
 
-    new-instance v6, Lf57;
+    move-result-object p1
 
-    iget-object v7, v3, Lpjf;->a:Lr57;
+    iput v2, p0, Lkjf;->X:I
 
-    invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v1, v3, p1, p0}, Ll61;->a(Landroid/graphics/Bitmap;Ljava/io/File;Lbu3;)Ljava/lang/Object;
 
-    sget-object v8, Lvjf;->Companion:Lujf;
+    move-result-object p1
 
-    invoke-virtual {v8}, Lujf;->serializer()Ll77;
+    if-ne p1, v0, :cond_2
 
-    move-result-object v8
+    return-object v0
 
-    invoke-virtual {v7, v8, v5}, Lr57;->b(Ll77;Ljava/lang/Object;)Ljava/lang/String;
+    :cond_2
+    :goto_0
+    move-object v4, p1
 
-    move-result-object v5
+    check-cast v4, Ljava/lang/String;
 
-    const-string v7, "WebAppDownloadFile"
+    const-class p1, Lljf;
 
-    invoke-direct {v6, v7, v5}, Lf57;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    iput-object v7, v0, Lkjf;->Y:Ljava/lang/Object;
+    move-result-object p1
 
-    iput v4, v0, Lkjf;->X:I
+    sget-object v0, Lg47;->m:Llr6;
 
-    invoke-interface {v2, v6, v0}, Lkxc;->o(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    if-nez v0, :cond_3
+
+    goto :goto_1
+
+    :cond_3
+    invoke-interface {v0}, Llr6;->c()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    sget-object v1, Lqs7;->o:Lqs7;
+
+    const-string v2, "Save placeholder"
+
+    const/4 v3, 0x0
+
+    invoke-interface {v0, v1, p1, v2, v3}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_4
+    :goto_1
+    iget-object p0, p0, Lkjf;->Y:Lljf;
+
+    iget-object p0, p0, Lljf;->x0:Lazd;
+
+    :cond_5
+    invoke-virtual {p0}, Lazd;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    move-object v0, p1
+
+    check-cast v0, Lbjf;
+
+    const/4 v3, 0x0
+
+    const/4 v5, 0x7
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    invoke-static/range {v0 .. v5}, Lbjf;->a(Lbjf;Landroid/util/Size;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Lbjf;
 
     move-result-object v0
 
-    if-ne v0, v1, :cond_2
+    invoke-virtual {p0, p1, v0}, Lazd;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    return-object v1
+    move-result p1
 
-    :cond_2
-    move-object v9, v7
+    if-eqz p1, :cond_5
 
-    :goto_0
-    iget-object v0, v3, Lpjf;->g:Ljff;
+    sget-object p0, Le5f;->a:Le5f;
 
-    if-eqz v0, :cond_3
-
-    iget-object v1, v3, Lpjf;->b:Lt97;
-
-    invoke-interface {v1}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v8, v1
-
-    check-cast v8, Ltif;
-
-    const/4 v14, 0x0
-
-    const/16 v16, 0x0
-
-    iget-wide v10, v0, Ljff;->a:J
-
-    iget-object v12, v0, Ljff;->b:Ljava/lang/String;
-
-    const/4 v13, 0x1
-
-    const/4 v15, 0x0
-
-    const/16 v17, 0xf0
-
-    invoke-static/range {v8 .. v17}, Ltif;->a(Ltif;Ljava/lang/String;JLjava/lang/String;ZILjava/lang/Integer;Ljava/lang/Integer;I)V
-
-    :cond_3
-    sget-object v0, Ljue;->a:Ljue;
-
-    return-object v0
+    return-object p0
 .end method

@@ -23,7 +23,7 @@
         "(Lone/me/sdk/richvector/internal/element/ElementHolder;)V",
         "Lone/me/sdk/richvector/internal/element/GroupElement;",
         "element",
-        "Ljue;",
+        "Le5f;",
         "addGroup",
         "(Lone/me/sdk/richvector/internal/element/GroupElement;)V",
         "Lone/me/sdk/richvector/internal/element/PathElement;",
@@ -65,6 +65,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -171,7 +172,7 @@
 
     const/4 v5, 0x0
 
-    invoke-direct {v3, v1, v5, v4, v5}, Lone/me/sdk/richvector/internal/element/GroupElement;-><init>(Lone/me/sdk/richvector/internal/element/GroupElement;Lone/me/sdk/richvector/internal/element/GroupElement;ILx54;)V
+    invoke-direct {v3, v1, v5, v4, v5}, Lone/me/sdk/richvector/internal/element/GroupElement;-><init>(Lone/me/sdk/richvector/internal/element/GroupElement;Lone/me/sdk/richvector/internal/element/GroupElement;ILl94;)V
 
     invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -413,7 +414,7 @@
 
     move-result-object v3
 
-    invoke-static {v3, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -427,7 +428,7 @@
     :goto_0
     check-cast v1, Lone/me/sdk/richvector/internal/element/ClipPathElement;
 
-    if-nez v1, :cond_3
+    if-nez v1, :cond_4
 
     invoke-virtual {p0}, Lone/me/sdk/richvector/internal/element/ElementHolderImpl;->getGroupElements()Ljava/util/List;
 
@@ -442,7 +443,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -456,16 +457,13 @@
 
     if-eqz v0, :cond_2
 
-    move-object v2, v0
-
-    goto :goto_1
+    return-object v0
 
     :cond_3
-    move-object v2, v1
+    return-object v2
 
     :cond_4
-    :goto_1
-    return-object v2
+    return-object v1
 .end method
 
 .method public findGroup(Ljava/lang/String;)Lone/me/sdk/richvector/internal/element/GroupElement;
@@ -500,7 +498,7 @@
 
     move-result-object v3
 
-    invoke-static {v3, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -514,7 +512,7 @@
     :goto_0
     check-cast v1, Lone/me/sdk/richvector/internal/element/GroupElement;
 
-    if-nez v1, :cond_3
+    if-nez v1, :cond_4
 
     invoke-virtual {p0}, Lone/me/sdk/richvector/internal/element/ElementHolderImpl;->getGroupElements()Ljava/util/List;
 
@@ -529,7 +527,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -543,16 +541,13 @@
 
     if-eqz v0, :cond_2
 
-    move-object v2, v0
-
-    goto :goto_1
+    return-object v0
 
     :cond_3
-    move-object v2, v1
+    return-object v2
 
     :cond_4
-    :goto_1
-    return-object v2
+    return-object v1
 .end method
 
 .method public findPath(Ljava/lang/String;)Lone/me/sdk/richvector/internal/element/PathElement;
@@ -587,7 +582,7 @@
 
     move-result-object v3
 
-    invoke-static {v3, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -601,7 +596,7 @@
     :goto_0
     check-cast v1, Lone/me/sdk/richvector/internal/element/PathElement;
 
-    if-nez v1, :cond_3
+    if-nez v1, :cond_4
 
     invoke-virtual {p0}, Lone/me/sdk/richvector/internal/element/ElementHolderImpl;->getGroupElements()Ljava/util/List;
 
@@ -616,7 +611,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -630,16 +625,13 @@
 
     if-eqz v0, :cond_2
 
-    move-object v2, v0
-
-    goto :goto_1
+    return-object v0
 
     :cond_3
-    move-object v2, v1
+    return-object v2
 
     :cond_4
-    :goto_1
-    return-object v2
+    return-object v1
 .end method
 
 .method public getClipPathElements()Ljava/util/List;

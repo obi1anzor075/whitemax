@@ -1,47 +1,88 @@
 .class public final Lnf6;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Lru/ok/tamtam/android/services/HeartbeatScheduler$TaskHeartbeatWorker;
-
-.field public Z:I
-
-.field public o:Lru/ok/tamtam/android/services/HeartbeatScheduler$TaskHeartbeatWorker;
+.field public final a:[I
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/tamtam/android/services/HeartbeatScheduler$TaskHeartbeatWorker;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>([I)V
     .locals 0
 
-    iput-object p1, p0, Lnf6;->Y:Lru/ok/tamtam/android/services/HeartbeatScheduler$TaskHeartbeatWorker;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lnf6;->a:[I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-    iput-object p1, p0, Lnf6;->X:Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    iget p1, p0, Lnf6;->Z:I
+    if-ne p0, p1, :cond_0
 
-    const/high16 v0, -0x80000000
+    return v0
 
-    or-int/2addr p1, v0
+    :cond_0
+    instance-of v1, p1, Lnf6;
 
-    iput p1, p0, Lnf6;->Z:I
+    const/4 v2, 0x0
 
-    iget-object p1, p0, Lnf6;->Y:Lru/ok/tamtam/android/services/HeartbeatScheduler$TaskHeartbeatWorker;
+    if-nez v1, :cond_1
 
-    invoke-virtual {p1, p0}, Lru/ok/tamtam/android/services/HeartbeatScheduler$TaskHeartbeatWorker;->doWork(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    return v2
+
+    :cond_1
+    check-cast p1, Lnf6;
+
+    iget-object p0, p0, Lnf6;->a:[I
+
+    iget-object p1, p1, Lnf6;->a:[I
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    iget-object p0, p0, Lnf6;->a:[I
+
+    invoke-static {p0}, Ljava/util/Arrays;->hashCode([I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    iget-object p0, p0, Lnf6;->a:[I
+
+    invoke-static {p0}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v0, "GradientsBannerDKStrokeColors(iconContainerGradient="
+
+    const-string v1, ")"
+
+    invoke-static {v0, p0, v1}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

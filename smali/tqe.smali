@@ -3,9 +3,28 @@
 .source "SourceFile"
 
 # interfaces
-.implements La5f;
+.implements Lr5c;
 
 
-# virtual methods
-.method public abstract h(I)Lob6;
+# static fields
+.field public static final b0:Ls90;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 4
+
+    new-instance v0, Ls90;
+
+    const-string v1, "camerax.core.thread.backgroundExecutor"
+
+    const-class v2, Ljava/util/concurrent/Executor;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v0, v1, v2, v3}, Ls90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Ltqe;->b0:Ls90;
+
+    return-void
 .end method

@@ -1,82 +1,49 @@
-.class public final Lxi9;
-.super Ll5e;
+.class public interface abstract Lxi9;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Li26;
 
-
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Lone/me/login/neuroavatars/NeuroAvatarsScreen;
-
-
-# direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/login/neuroavatars/NeuroAvatarsScreen;)V
+# virtual methods
+.method public E(ILandroid/view/KeyEvent;)Z
     .locals 0
 
-    iput-object p2, p0, Lxi9;->Y:Lone/me/login/neuroavatars/NeuroAvatarsScreen;
+    const/4 p0, 0x0
 
-    const/4 p2, 0x2
+    return p0
+.end method
 
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+.method public Q()V
+    .locals 0
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Ljava/util/List;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lxi9;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lxi9;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lxi9;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
+.method public abstract c()Z
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
-
-    new-instance v0, Lxi9;
-
-    iget-object p0, p0, Lxi9;->Y:Lone/me/login/neuroavatars/NeuroAvatarsScreen;
-
-    invoke-direct {v0, p2, p0}, Lxi9;-><init>(Lkotlin/coroutines/Continuation;Lone/me/login/neuroavatars/NeuroAvatarsScreen;)V
-
-    iput-object p1, v0, Lxi9;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public d0(Z)V
     .locals 0
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    return-void
+.end method
 
-    iget-object p1, p0, Lxi9;->X:Ljava/lang/Object;
+.method public abstract e()J
+.end method
 
-    check-cast p1, Ljava/util/List;
+.method public abstract e0(Z)V
+.end method
 
-    iget-object p0, p0, Lxi9;->Y:Lone/me/login/neuroavatars/NeuroAvatarsScreen;
+.method public abstract getDuration()J
+.end method
 
-    iget-object p0, p0, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->M0:Lmr5;
+.method public abstract l0()Landroid/view/View;
+.end method
 
-    invoke-virtual {p0, p1}, Lig7;->E(Ljava/util/List;)V
+.method public t0()V
+    .locals 0
 
-    sget-object p0, Ljue;->a:Ljue;
+    return-void
+.end method
 
-    return-object p0
+.method public abstract w()Z
 .end method

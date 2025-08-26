@@ -1,58 +1,90 @@
-.class public final synthetic Lo56;
+.class public final Lo56;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lmwc;
-
 
 # instance fields
-.field public final synthetic a:Lm66;
+.field public final a:Ljava/util/concurrent/ConcurrentHashMap;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lm66;)V
+.method public synthetic constructor <init>(Ljava/util/concurrent/ConcurrentHashMap;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lo56;->a:Lm66;
+    iput-object p1, p0, Lo56;->a:Ljava/util/concurrent/ConcurrentHashMap;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final s1(Lrwc;)V
-    .locals 3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    iget-object p0, p0, Lo56;->a:Lm66;
+    instance-of v0, p1, Lo56;
 
-    invoke-virtual {p0}, Lm66;->s()Lpae;
+    if-nez v0, :cond_0
 
-    move-result-object v0
+    goto :goto_0
 
-    check-cast v0, Ln3a;
+    :cond_0
+    check-cast p1, Lo56;
 
-    invoke-virtual {v0}, Ln3a;->e()Lju3;
+    iget-object p1, p1, Lo56;->a:Ljava/util/concurrent/ConcurrentHashMap;
 
-    move-result-object v0
+    iget-object p0, p0, Lo56;->a:Ljava/util/concurrent/ConcurrentHashMap;
 
-    iget-object v1, p0, Lm66;->o:Lku3;
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Le0;->plus(Lhu3;)Lhu3;
+    move-result p0
 
-    move-result-object v0
+    if-nez p0, :cond_1
 
-    new-instance v1, Le66;
+    :goto_0
+    const/4 p0, 0x0
 
-    const/4 v2, 0x0
+    return p0
 
-    invoke-direct {v1, p0, p1, v2}, Le66;-><init>(Lm66;Lrwc;Lkotlin/coroutines/Continuation;)V
+    :cond_1
+    const/4 p0, 0x1
 
-    const/4 p1, 0x2
+    return p0
+.end method
 
-    invoke-static {p0, v0, v2, v1, p1}, Ltaf;->n(Ltaf;Lhu3;Lru3;Li26;I)Lqod;
+.method public final hashCode()I
+    .locals 0
 
-    return-void
+    iget-object p0, p0, Lo56;->a:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {p0}, Ljava/util/concurrent/ConcurrentHashMap;->hashCode()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "FtsCache(titles="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lo56;->a:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

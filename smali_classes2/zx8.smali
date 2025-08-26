@@ -1,47 +1,131 @@
 .class public final Lzx8;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic X:Lzz8;
+.field public final a:Z
 
-.field public Y:I
-
-.field public synthetic o:Ljava/lang/Object;
+.field public final b:Ljava/lang/CharSequence;
 
 
 # direct methods
-.method public constructor <init>(Lzz8;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Ljava/lang/String;Z)V
     .locals 0
 
-    iput-object p1, p0, Lzx8;->X:Lzz8;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-boolean p2, p0, Lzx8;->a:Z
+
+    iput-object p1, p0, Lzx8;->b:Ljava/lang/CharSequence;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lzx8;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lzx8;
+
+    iget-boolean v1, p0, Lzx8;->a:Z
+
+    iget-boolean v3, p1, Lzx8;->a:Z
+
+    if-eq v1, v3, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object p0, p0, Lzx8;->b:Ljava/lang/CharSequence;
+
+    iget-object p1, p1, Lzx8;->b:Ljava/lang/CharSequence;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
+
+    return v2
+
+    :cond_3
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    iget-boolean v0, p0, Lzx8;->a:Z
+
+    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Lzx8;->b:Ljava/lang/CharSequence;
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    :goto_0
+    add-int/2addr v0, p0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
     .locals 2
 
-    iput-object p1, p0, Lzx8;->o:Ljava/lang/Object;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget p1, p0, Lzx8;->Y:I
+    const-string v1, "MiniAppData(isVisible="
 
-    const/high16 v0, -0x80000000
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    or-int/2addr p1, v0
+    iget-boolean v1, p0, Lzx8;->a:Z
 
-    iput p1, p0, Lzx8;->Y:I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    iget-object p1, p0, Lzx8;->X:Lzz8;
+    const-string v1, ", title="
 
-    const-wide/16 v0, 0x0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v0, v1, p0}, Lzz8;->x(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iget-object p0, p0, Lzx8;->b:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

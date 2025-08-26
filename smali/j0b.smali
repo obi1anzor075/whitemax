@@ -1,376 +1,105 @@
-.class public final Lj0b;
-.super Ljava/io/InputStream;
+.class public abstract Lj0b;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public X:I
-
-.field public Y:Z
-
-.field public final a:Ljava/io/InputStream;
-
-.field public final b:[B
-
-.field public final c:Lnbc;
-
-.field public o:I
+# static fields
+.field public static final a:Ljava/lang/reflect/Method;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/InputStream;[BLnbc;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 10
 
-    invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
+    const-class v0, Ljava/lang/Throwable;
 
-    iput-object p1, p0, Lj0b;->a:Ljava/io/InputStream;
+    invoke-virtual {v0}, Ljava/lang/Class;->getMethods()[Ljava/lang/reflect/Method;
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object v1
 
-    iput-object p2, p0, Lj0b;->b:[B
+    array-length v2, v1
 
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v3, 0x0
 
-    iput-object p3, p0, Lj0b;->c:Lnbc;
-
-    const/4 p1, 0x0
-
-    iput p1, p0, Lj0b;->o:I
-
-    iput p1, p0, Lj0b;->X:I
-
-    iput-boolean p1, p0, Lj0b;->Y:Z
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final available()I
-    .locals 2
-
-    iget v0, p0, Lj0b;->X:I
-
-    iget v1, p0, Lj0b;->o:I
-
-    if-gt v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
+    move v4, v3
 
     :goto_0
-    invoke-static {v0}, Lez3;->o(Z)V
+    const/4 v5, 0x0
 
-    invoke-virtual {p0}, Lj0b;->m()V
+    if-ge v4, v2, :cond_2
 
-    iget v0, p0, Lj0b;->o:I
+    aget-object v6, v1, v4
 
-    iget v1, p0, Lj0b;->X:I
+    invoke-virtual {v6}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
-    sub-int/2addr v0, v1
+    move-result-object v7
 
-    iget-object p0, p0, Lj0b;->a:Ljava/io/InputStream;
+    const-string v8, "addSuppressed"
 
-    invoke-virtual {p0}, Ljava/io/InputStream;->available()I
+    invoke-static {v7, v8}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result p0
+    move-result v7
 
-    add-int/2addr p0, v0
+    if-eqz v7, :cond_1
 
-    return p0
-.end method
+    invoke-virtual {v6}, Ljava/lang/reflect/Method;->getParameterTypes()[Ljava/lang/Class;
 
-.method public final close()V
-    .locals 2
+    move-result-object v7
 
-    iget-boolean v0, p0, Lj0b;->Y:Z
+    array-length v8, v7
 
-    if-nez v0, :cond_0
+    const/4 v9, 0x1
 
-    const/4 v0, 0x1
+    if-ne v8, v9, :cond_0
 
-    iput-boolean v0, p0, Lj0b;->Y:Z
-
-    iget-object v0, p0, Lj0b;->c:Lnbc;
-
-    iget-object v1, p0, Lj0b;->b:[B
-
-    invoke-interface {v0, v1}, Lnbc;->g(Ljava/lang/Object;)V
-
-    invoke-super {p0}, Ljava/io/InputStream;->close()V
+    aget-object v5, v7, v3
 
     :cond_0
-    return-void
-.end method
+    invoke-static {v5, v0}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-.method public final finalize()V
-    .locals 3
+    move-result v5
 
-    iget-boolean v0, p0, Lj0b;->Y:Z
+    if-eqz v5, :cond_1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Lm75;->a:Leo7;
-
-    const/4 v1, 0x6
-
-    invoke-interface {v0, v1}, Leo7;->i(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lm75;->a:Leo7;
-
-    const-string v1, "PooledByteInputStream"
-
-    const-string v2, "Finalized without closing"
-
-    invoke-interface {v0, v1, v2}, Leo7;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_0
-    invoke-virtual {p0}, Lj0b;->close()V
-
-    :cond_1
-    invoke-super {p0}, Ljava/lang/Object;->finalize()V
-
-    return-void
-.end method
-
-.method public final m()V
-    .locals 1
-
-    iget-boolean p0, p0, Lj0b;->Y:Z
-
-    if-nez p0, :cond_0
-
-    return-void
-
-    :cond_0
-    new-instance p0, Ljava/io/IOException;
-
-    const-string v0, "stream already closed"
-
-    invoke-direct {p0, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method public final read()I
-    .locals 4
-
-    .line 1
-    iget v0, p0, Lj0b;->X:I
-
-    iget v1, p0, Lj0b;->o:I
-
-    const/4 v2, 0x0
-
-    if-gt v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    move v0, v2
-
-    :goto_0
-    invoke-static {v0}, Lez3;->o(Z)V
-
-    .line 2
-    invoke-virtual {p0}, Lj0b;->m()V
-
-    .line 3
-    iget v0, p0, Lj0b;->X:I
-
-    iget v1, p0, Lj0b;->o:I
-
-    iget-object v3, p0, Lj0b;->b:[B
-
-    if-ge v0, v1, :cond_1
+    move-object v5, v6
 
     goto :goto_1
 
-    .line 4
     :cond_1
-    iget-object v0, p0, Lj0b;->a:Ljava/io/InputStream;
-
-    invoke-virtual {v0, v3}, Ljava/io/InputStream;->read([B)I
-
-    move-result v0
-
-    if-gtz v0, :cond_2
-
-    const/4 p0, -0x1
-
-    return p0
-
-    .line 5
-    :cond_2
-    iput v0, p0, Lj0b;->o:I
-
-    .line 6
-    iput v2, p0, Lj0b;->X:I
-
-    .line 7
-    :goto_1
-    iget v0, p0, Lj0b;->X:I
-
-    add-int/lit8 v1, v0, 0x1
-
-    iput v1, p0, Lj0b;->X:I
-
-    aget-byte p0, v3, v0
-
-    and-int/lit16 p0, p0, 0xff
-
-    return p0
-.end method
-
-.method public final read([BII)I
-    .locals 4
-
-    .line 8
-    iget v0, p0, Lj0b;->X:I
-
-    iget v1, p0, Lj0b;->o:I
-
-    const/4 v2, 0x0
-
-    if-gt v0, v1, :cond_0
-
-    const/4 v0, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    :cond_0
-    move v0, v2
-
-    :goto_0
-    invoke-static {v0}, Lez3;->o(Z)V
-
-    .line 9
-    invoke-virtual {p0}, Lj0b;->m()V
-
-    .line 10
-    iget v0, p0, Lj0b;->X:I
-
-    iget v1, p0, Lj0b;->o:I
-
-    iget-object v3, p0, Lj0b;->b:[B
-
-    if-ge v0, v1, :cond_1
-
-    goto :goto_1
-
-    .line 11
-    :cond_1
-    iget-object v0, p0, Lj0b;->a:Ljava/io/InputStream;
-
-    invoke-virtual {v0, v3}, Ljava/io/InputStream;->read([B)I
-
-    move-result v0
-
-    if-gtz v0, :cond_2
-
-    const/4 p0, -0x1
-
-    return p0
-
-    .line 12
     :cond_2
-    iput v0, p0, Lj0b;->o:I
-
-    .line 13
-    iput v2, p0, Lj0b;->X:I
-
-    .line 14
     :goto_1
-    iget v0, p0, Lj0b;->o:I
+    sput-object v5, Lj0b;->a:Ljava/lang/reflect/Method;
 
-    iget v1, p0, Lj0b;->X:I
+    array-length v0, v1
 
-    sub-int/2addr v0, v1
+    :goto_2
+    if-ge v3, v0, :cond_4
 
-    invoke-static {v0, p3}, Ljava/lang/Math;->min(II)I
+    aget-object v2, v1, v3
 
-    move-result p3
+    invoke-virtual {v2}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
-    .line 15
-    iget v0, p0, Lj0b;->X:I
+    move-result-object v2
 
-    invoke-static {v3, v0, p1, p2, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    const-string v4, "getSuppressed"
 
-    .line 16
-    iget p1, p0, Lj0b;->X:I
+    invoke-static {v2, v4}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    add-int/2addr p1, p3
+    move-result v2
 
-    iput p1, p0, Lj0b;->X:I
+    if-eqz v2, :cond_3
 
-    return p3
-.end method
+    return-void
 
-.method public final skip(J)J
-    .locals 5
+    :cond_3
+    add-int/lit8 v3, v3, 0x1
 
-    iget v0, p0, Lj0b;->X:I
+    goto :goto_2
 
-    iget v1, p0, Lj0b;->o:I
-
-    if-gt v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-static {v0}, Lez3;->o(Z)V
-
-    invoke-virtual {p0}, Lj0b;->m()V
-
-    iget v0, p0, Lj0b;->o:I
-
-    iget v1, p0, Lj0b;->X:I
-
-    sub-int v2, v0, v1
-
-    int-to-long v2, v2
-
-    cmp-long v4, v2, p1
-
-    if-ltz v4, :cond_1
-
-    int-to-long v0, v1
-
-    add-long/2addr v0, p1
-
-    long-to-int v0, v0
-
-    iput v0, p0, Lj0b;->X:I
-
-    return-wide p1
-
-    :cond_1
-    iput v0, p0, Lj0b;->X:I
-
-    iget-object p0, p0, Lj0b;->a:Ljava/io/InputStream;
-
-    sub-long/2addr p1, v2
-
-    invoke-virtual {p0, p1, p2}, Ljava/io/InputStream;->skip(J)J
-
-    move-result-wide p0
-
-    add-long/2addr p0, v2
-
-    return-wide p0
+    :cond_4
+    return-void
 .end method

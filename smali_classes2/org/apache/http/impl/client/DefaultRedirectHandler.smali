@@ -289,7 +289,7 @@
 
     invoke-virtual {v0, p1}, Lorg/apache/http/impl/client/RedirectLocations;->add(Ljava/net/URI;)V
 
-    goto :goto_2
+    return-object p0
 
     :cond_6
     new-instance p0, Lorg/apache/http/client/CircularRedirectException;
@@ -313,7 +313,6 @@
     throw p0
 
     :cond_7
-    :goto_2
     return-object p0
 
     :catch_2
@@ -323,7 +322,7 @@
 
     const-string p2, "Invalid redirect URI: "
 
-    invoke-static {p2, v0}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, v0}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 

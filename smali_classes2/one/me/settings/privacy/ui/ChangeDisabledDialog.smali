@@ -27,11 +27,12 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # static fields
-.field public static final synthetic C0:I
+.field public static final synthetic u0:I
 
 
 # direct methods
@@ -42,23 +43,23 @@
 
     const/4 v1, 0x1
 
-    invoke-direct {p0, v0, v1, v0}, Lone/me/sdk/bottomsheet/BottomSheetWidget;-><init>(Landroid/os/Bundle;ILx54;)V
+    invoke-direct {p0, v0, v1, v0}, Lone/me/sdk/bottomsheet/BottomSheetWidget;-><init>(Landroid/os/Bundle;ILl94;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final w0(Landroid/view/LayoutInflater;Landroid/widget/FrameLayout;)Landroid/view/View;
+.method public final A0(Landroid/view/LayoutInflater;Landroid/widget/FrameLayout;)Landroid/view/View;
     .locals 0
 
     invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
-    new-instance p2, Lyy1;
+    new-instance p2, Lq12;
 
-    invoke-direct {p2, p0, p1}, Lyy1;-><init>(Lone/me/settings/privacy/ui/ChangeDisabledDialog;Landroid/content/Context;)V
+    invoke-direct {p2, p0, p1}, Lq12;-><init>(Lone/me/settings/privacy/ui/ChangeDisabledDialog;Landroid/content/Context;)V
 
     return-object p2
 .end method

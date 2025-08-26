@@ -105,10 +105,10 @@
 
     if-ne p0, p1, :cond_2
 
-    move v1, v2
+    return v2
 
     :cond_2
-    move v0, v1
+    return v1
 
     :cond_3
     return v0

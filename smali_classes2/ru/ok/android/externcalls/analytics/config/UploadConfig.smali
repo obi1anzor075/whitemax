@@ -33,7 +33,7 @@
         "compressContentProvider",
         "disableUploadWhenCallIsActiveProvider",
         "<init>",
-        "(ILjava/util/concurrent/Executor;JJLs16;Ls16;Ls16;Ls16;Ls16;Ls16;)V",
+        "(ILjava/util/concurrent/Executor;JJLv56;Lv56;Lv56;Lv56;Lv56;Lv56;)V",
         "component1",
         "()I",
         "component2",
@@ -42,14 +42,14 @@
         "()J",
         "component4",
         "component5",
-        "()Ls16;",
+        "()Lv56;",
         "component6",
         "component7",
         "component8",
         "component9",
         "component10",
         "copy",
-        "(ILjava/util/concurrent/Executor;JJLs16;Ls16;Ls16;Ls16;Ls16;Ls16;)Lru/ok/android/externcalls/analytics/config/UploadConfig;",
+        "(ILjava/util/concurrent/Executor;JJLv56;Lv56;Lv56;Lv56;Lv56;Lv56;)Lru/ok/android/externcalls/analytics/config/UploadConfig;",
         "",
         "toString",
         "()Ljava/lang/String;",
@@ -64,7 +64,7 @@
         "J",
         "getMaxTimeToUploadMillis",
         "getSilenceToUploadMillis",
-        "Ls16;",
+        "Lv56;",
         "getMaxFileLengthKbProvider",
         "getMaxEventCountProvider",
         "getMaxLocalCacheFileCountProvider",
@@ -94,6 +94,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -106,42 +107,42 @@
 
 
 # instance fields
-.field private final compressContentProvider:Ls16;
+.field private final compressContentProvider:Lv56;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 .end field
 
-.field private final disableUploadWhenCallIsActiveProvider:Ls16;
+.field private final disableUploadWhenCallIsActiveProvider:Lv56;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 .end field
 
-.field private final maxEventCountProvider:Ls16;
+.field private final maxEventCountProvider:Lv56;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 .end field
 
-.field private final maxFileLengthKbProvider:Ls16;
+.field private final maxFileLengthKbProvider:Lv56;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 .end field
 
-.field private final maxLocalCacheFileCountProvider:Ls16;
+.field private final maxLocalCacheFileCountProvider:Lv56;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 .end field
@@ -150,10 +151,10 @@
 
 .field private final silenceToUploadMillis:J
 
-.field private final timeToUploadNextMsProvider:Ls16;
+.field private final timeToUploadNextMsProvider:Lv56;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 .end field
@@ -171,7 +172,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lru/ok/android/externcalls/analytics/config/UploadConfig$Companion;-><init>(Lx54;)V
+    invoke-direct {v0, v1}, Lru/ok/android/externcalls/analytics/config/UploadConfig$Companion;-><init>(Ll94;)V
 
     sput-object v0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->Companion:Lru/ok/android/externcalls/analytics/config/UploadConfig$Companion;
 
@@ -208,24 +209,24 @@
 
     move-object v0, p0
 
-    invoke-direct/range {v0 .. v14}, Lru/ok/android/externcalls/analytics/config/UploadConfig;-><init>(ILjava/util/concurrent/Executor;JJLs16;Ls16;Ls16;Ls16;Ls16;Ls16;ILx54;)V
+    invoke-direct/range {v0 .. v14}, Lru/ok/android/externcalls/analytics/config/UploadConfig;-><init>(ILjava/util/concurrent/Executor;JJLv56;Lv56;Lv56;Lv56;Lv56;Lv56;ILl94;)V
 
     return-void
 .end method
 
-.method public constructor <init>(ILjava/util/concurrent/Executor;JJLs16;Ls16;Ls16;Ls16;Ls16;Ls16;)V
+.method public constructor <init>(ILjava/util/concurrent/Executor;JJLv56;Lv56;Lv56;Lv56;Lv56;Lv56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
             "Ljava/util/concurrent/Executor;",
             "JJ",
-            "Ls16;",
-            "Ls16;",
-            "Ls16;",
-            "Ls16;",
-            "Ls16;",
-            "Ls16;",
+            "Lv56;",
+            "Lv56;",
+            "Lv56;",
+            "Lv56;",
+            "Lv56;",
+            "Lv56;",
             ")V"
         }
     .end annotation
@@ -246,329 +247,245 @@
     iput-wide p5, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->silenceToUploadMillis:J
 
     .line 7
-    iput-object p7, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxFileLengthKbProvider:Ls16;
+    iput-object p7, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxFileLengthKbProvider:Lv56;
 
     .line 8
-    iput-object p8, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxEventCountProvider:Ls16;
+    iput-object p8, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxEventCountProvider:Lv56;
 
     .line 9
-    iput-object p9, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxLocalCacheFileCountProvider:Ls16;
+    iput-object p9, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxLocalCacheFileCountProvider:Lv56;
 
     .line 10
-    iput-object p10, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->timeToUploadNextMsProvider:Ls16;
+    iput-object p10, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->timeToUploadNextMsProvider:Lv56;
 
     .line 11
-    iput-object p11, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->compressContentProvider:Ls16;
+    iput-object p11, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->compressContentProvider:Lv56;
 
     .line 12
-    iput-object p12, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->disableUploadWhenCallIsActiveProvider:Ls16;
+    iput-object p12, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->disableUploadWhenCallIsActiveProvider:Lv56;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(ILjava/util/concurrent/Executor;JJLs16;Ls16;Ls16;Ls16;Ls16;Ls16;ILx54;)V
-    .locals 13
+.method public synthetic constructor <init>(ILjava/util/concurrent/Executor;JJLv56;Lv56;Lv56;Lv56;Lv56;Lv56;ILl94;)V
+    .locals 1
 
-    move/from16 v0, p13
+    and-int/lit8 p14, p13, 0x1
 
-    and-int/lit8 v1, v0, 0x1
+    if-eqz p14, :cond_0
 
-    if-eqz v1, :cond_0
-
-    const v1, 0x3a37f5
-
-    goto :goto_0
+    const p1, 0x3a37f5
 
     :cond_0
-    move v1, p1
+    and-int/lit8 p14, p13, 0x2
+
+    const/4 v0, 0x0
+
+    if-eqz p14, :cond_1
+
+    move-object p2, v0
+
+    :cond_1
+    and-int/lit8 p14, p13, 0x4
+
+    if-eqz p14, :cond_2
+
+    const-wide p3, 0x7fffffffffffffffL
+
+    :cond_2
+    and-int/lit8 p14, p13, 0x8
+
+    if-eqz p14, :cond_3
+
+    const-wide/16 p5, 0x3a98
+
+    :cond_3
+    and-int/lit8 p14, p13, 0x10
+
+    if-eqz p14, :cond_4
+
+    move-object p7, v0
+
+    :cond_4
+    and-int/lit8 p14, p13, 0x20
+
+    if-eqz p14, :cond_5
+
+    move-object p8, v0
+
+    :cond_5
+    and-int/lit8 p14, p13, 0x40
+
+    if-eqz p14, :cond_6
+
+    move-object p9, v0
+
+    :cond_6
+    and-int/lit16 p14, p13, 0x80
+
+    if-eqz p14, :cond_7
+
+    move-object p10, v0
+
+    :cond_7
+    and-int/lit16 p14, p13, 0x100
+
+    if-eqz p14, :cond_8
+
+    move-object p11, v0
+
+    :cond_8
+    and-int/lit16 p13, p13, 0x200
+
+    if-eqz p13, :cond_9
+
+    move-object p14, v0
+
+    move-object p12, p10
+
+    move-object p13, p11
+
+    move-object p10, p8
+
+    move-object p11, p9
+
+    move-object p9, p7
 
     :goto_0
-    and-int/lit8 v2, v0, 0x2
+    move-wide p7, p5
 
-    const/4 v3, 0x0
+    move-wide p5, p3
 
-    if-eqz v2, :cond_1
+    move p3, p1
 
-    move-object v2, v3
+    move-object p4, p2
+
+    move-object p2, p0
 
     goto :goto_1
 
-    :cond_1
-    move-object v2, p2
-
-    :goto_1
-    and-int/lit8 v4, v0, 0x4
-
-    if-eqz v4, :cond_2
-
-    const-wide v4, 0x7fffffffffffffffL
-
-    goto :goto_2
-
-    :cond_2
-    move-wide/from16 v4, p3
-
-    :goto_2
-    and-int/lit8 v6, v0, 0x8
-
-    if-eqz v6, :cond_3
-
-    const-wide/16 v6, 0x3a98
-
-    goto :goto_3
-
-    :cond_3
-    move-wide/from16 v6, p5
-
-    :goto_3
-    and-int/lit8 v8, v0, 0x10
-
-    if-eqz v8, :cond_4
-
-    move-object v8, v3
-
-    goto :goto_4
-
-    :cond_4
-    move-object/from16 v8, p7
-
-    :goto_4
-    and-int/lit8 v9, v0, 0x20
-
-    if-eqz v9, :cond_5
-
-    move-object v9, v3
-
-    goto :goto_5
-
-    :cond_5
-    move-object/from16 v9, p8
-
-    :goto_5
-    and-int/lit8 v10, v0, 0x40
-
-    if-eqz v10, :cond_6
-
-    move-object v10, v3
-
-    goto :goto_6
-
-    :cond_6
-    move-object/from16 v10, p9
-
-    :goto_6
-    and-int/lit16 v11, v0, 0x80
-
-    if-eqz v11, :cond_7
-
-    move-object v11, v3
-
-    goto :goto_7
-
-    :cond_7
-    move-object/from16 v11, p10
-
-    :goto_7
-    and-int/lit16 v12, v0, 0x100
-
-    if-eqz v12, :cond_8
-
-    move-object v12, v3
-
-    goto :goto_8
-
-    :cond_8
-    move-object/from16 v12, p11
-
-    :goto_8
-    and-int/lit16 v0, v0, 0x200
-
-    if-eqz v0, :cond_9
-
-    goto :goto_9
-
     :cond_9
-    move-object/from16 v3, p12
+    move-object p14, p12
 
-    :goto_9
-    move p1, v1
+    move-object p13, p11
 
-    move-object p2, v2
+    move-object p11, p9
 
-    move-wide/from16 p3, v4
+    move-object p12, p10
 
-    move-wide/from16 p5, v6
+    move-object p9, p7
 
-    move-object/from16 p7, v8
+    move-object p10, p8
 
-    move-object/from16 p8, v9
-
-    move-object/from16 p9, v10
-
-    move-object/from16 p10, v11
-
-    move-object/from16 p11, v12
-
-    move-object/from16 p12, v3
+    goto :goto_0
 
     .line 13
-    invoke-direct/range {p0 .. p12}, Lru/ok/android/externcalls/analytics/config/UploadConfig;-><init>(ILjava/util/concurrent/Executor;JJLs16;Ls16;Ls16;Ls16;Ls16;Ls16;)V
+    :goto_1
+    invoke-direct/range {p2 .. p14}, Lru/ok/android/externcalls/analytics/config/UploadConfig;-><init>(ILjava/util/concurrent/Executor;JJLv56;Lv56;Lv56;Lv56;Lv56;Lv56;)V
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lru/ok/android/externcalls/analytics/config/UploadConfig;ILjava/util/concurrent/Executor;JJLs16;Ls16;Ls16;Ls16;Ls16;Ls16;ILjava/lang/Object;)Lru/ok/android/externcalls/analytics/config/UploadConfig;
-    .locals 13
+.method public static synthetic copy$default(Lru/ok/android/externcalls/analytics/config/UploadConfig;ILjava/util/concurrent/Executor;JJLv56;Lv56;Lv56;Lv56;Lv56;Lv56;ILjava/lang/Object;)Lru/ok/android/externcalls/analytics/config/UploadConfig;
+    .locals 0
 
-    move-object v0, p0
+    and-int/lit8 p14, p13, 0x1
 
-    move/from16 v1, p13
+    if-eqz p14, :cond_0
 
-    and-int/lit8 v2, v1, 0x1
-
-    if-eqz v2, :cond_0
-
-    iget v2, v0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->uploadJobId:I
-
-    goto :goto_0
+    iget p1, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->uploadJobId:I
 
     :cond_0
-    move v2, p1
+    and-int/lit8 p14, p13, 0x2
 
-    :goto_0
-    and-int/lit8 v3, v1, 0x2
+    if-eqz p14, :cond_1
 
-    if-eqz v3, :cond_1
-
-    iget-object v3, v0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->uploadExecutor:Ljava/util/concurrent/Executor;
-
-    goto :goto_1
+    iget-object p2, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->uploadExecutor:Ljava/util/concurrent/Executor;
 
     :cond_1
-    move-object v3, p2
+    and-int/lit8 p14, p13, 0x4
 
-    :goto_1
-    and-int/lit8 v4, v1, 0x4
+    if-eqz p14, :cond_2
 
-    if-eqz v4, :cond_2
-
-    iget-wide v4, v0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxTimeToUploadMillis:J
-
-    goto :goto_2
+    iget-wide p3, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxTimeToUploadMillis:J
 
     :cond_2
-    move-wide/from16 v4, p3
+    and-int/lit8 p14, p13, 0x8
 
-    :goto_2
-    and-int/lit8 v6, v1, 0x8
+    if-eqz p14, :cond_3
 
-    if-eqz v6, :cond_3
-
-    iget-wide v6, v0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->silenceToUploadMillis:J
-
-    goto :goto_3
+    iget-wide p5, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->silenceToUploadMillis:J
 
     :cond_3
-    move-wide/from16 v6, p5
+    and-int/lit8 p14, p13, 0x10
 
-    :goto_3
-    and-int/lit8 v8, v1, 0x10
+    if-eqz p14, :cond_4
 
-    if-eqz v8, :cond_4
-
-    iget-object v8, v0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxFileLengthKbProvider:Ls16;
-
-    goto :goto_4
+    iget-object p7, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxFileLengthKbProvider:Lv56;
 
     :cond_4
-    move-object/from16 v8, p7
+    and-int/lit8 p14, p13, 0x20
 
-    :goto_4
-    and-int/lit8 v9, v1, 0x20
+    if-eqz p14, :cond_5
 
-    if-eqz v9, :cond_5
-
-    iget-object v9, v0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxEventCountProvider:Ls16;
-
-    goto :goto_5
+    iget-object p8, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxEventCountProvider:Lv56;
 
     :cond_5
-    move-object/from16 v9, p8
+    and-int/lit8 p14, p13, 0x40
 
-    :goto_5
-    and-int/lit8 v10, v1, 0x40
+    if-eqz p14, :cond_6
 
-    if-eqz v10, :cond_6
-
-    iget-object v10, v0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxLocalCacheFileCountProvider:Ls16;
-
-    goto :goto_6
+    iget-object p9, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxLocalCacheFileCountProvider:Lv56;
 
     :cond_6
-    move-object/from16 v10, p9
+    and-int/lit16 p14, p13, 0x80
 
-    :goto_6
-    and-int/lit16 v11, v1, 0x80
+    if-eqz p14, :cond_7
 
-    if-eqz v11, :cond_7
-
-    iget-object v11, v0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->timeToUploadNextMsProvider:Ls16;
-
-    goto :goto_7
+    iget-object p10, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->timeToUploadNextMsProvider:Lv56;
 
     :cond_7
-    move-object/from16 v11, p10
+    and-int/lit16 p14, p13, 0x100
 
-    :goto_7
-    and-int/lit16 v12, v1, 0x100
+    if-eqz p14, :cond_8
 
-    if-eqz v12, :cond_8
-
-    iget-object v12, v0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->compressContentProvider:Ls16;
-
-    goto :goto_8
+    iget-object p11, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->compressContentProvider:Lv56;
 
     :cond_8
-    move-object/from16 v12, p11
+    and-int/lit16 p13, p13, 0x200
 
-    :goto_8
-    and-int/lit16 v1, v1, 0x200
+    if-eqz p13, :cond_9
 
-    if-eqz v1, :cond_9
-
-    iget-object v1, v0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->disableUploadWhenCallIsActiveProvider:Ls16;
-
-    goto :goto_9
+    iget-object p12, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->disableUploadWhenCallIsActiveProvider:Lv56;
 
     :cond_9
-    move-object/from16 v1, p12
+    move-object p13, p11
 
-    :goto_9
-    move p1, v2
+    move-object p14, p12
 
-    move-object p2, v3
+    move-object p11, p9
 
-    move-wide/from16 p3, v4
+    move-object p12, p10
 
-    move-wide/from16 p5, v6
+    move-object p9, p7
 
-    move-object/from16 p7, v8
+    move-object p10, p8
 
-    move-object/from16 p8, v9
+    move-wide p7, p5
 
-    move-object/from16 p9, v10
+    move-wide p5, p3
 
-    move-object/from16 p10, v11
+    move p3, p1
 
-    move-object/from16 p11, v12
+    move-object p4, p2
 
-    move-object/from16 p12, v1
+    move-object p2, p0
 
-    invoke-virtual/range {p0 .. p12}, Lru/ok/android/externcalls/analytics/config/UploadConfig;->copy(ILjava/util/concurrent/Executor;JJLs16;Ls16;Ls16;Ls16;Ls16;Ls16;)Lru/ok/android/externcalls/analytics/config/UploadConfig;
+    invoke-virtual/range {p2 .. p14}, Lru/ok/android/externcalls/analytics/config/UploadConfig;->copy(ILjava/util/concurrent/Executor;JJLv56;Lv56;Lv56;Lv56;Lv56;Lv56;)Lru/ok/android/externcalls/analytics/config/UploadConfig;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 
@@ -581,16 +498,16 @@
     return p0
 .end method
 
-.method public final component10()Ls16;
+.method public final component10()Lv56;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->disableUploadWhenCallIsActiveProvider:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->disableUploadWhenCallIsActiveProvider:Lv56;
 
     return-object p0
 .end method
@@ -619,121 +536,99 @@
     return-wide v0
 .end method
 
-.method public final component5()Ls16;
+.method public final component5()Lv56;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxFileLengthKbProvider:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxFileLengthKbProvider:Lv56;
 
     return-object p0
 .end method
 
-.method public final component6()Ls16;
+.method public final component6()Lv56;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxEventCountProvider:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxEventCountProvider:Lv56;
 
     return-object p0
 .end method
 
-.method public final component7()Ls16;
+.method public final component7()Lv56;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxLocalCacheFileCountProvider:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxLocalCacheFileCountProvider:Lv56;
 
     return-object p0
 .end method
 
-.method public final component8()Ls16;
+.method public final component8()Lv56;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->timeToUploadNextMsProvider:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->timeToUploadNextMsProvider:Lv56;
 
     return-object p0
 .end method
 
-.method public final component9()Ls16;
+.method public final component9()Lv56;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->compressContentProvider:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->compressContentProvider:Lv56;
 
     return-object p0
 .end method
 
-.method public final copy(ILjava/util/concurrent/Executor;JJLs16;Ls16;Ls16;Ls16;Ls16;Ls16;)Lru/ok/android/externcalls/analytics/config/UploadConfig;
-    .locals 14
+.method public final copy(ILjava/util/concurrent/Executor;JJLv56;Lv56;Lv56;Lv56;Lv56;Lv56;)Lru/ok/android/externcalls/analytics/config/UploadConfig;
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
             "Ljava/util/concurrent/Executor;",
             "JJ",
-            "Ls16;",
-            "Ls16;",
-            "Ls16;",
-            "Ls16;",
-            "Ls16;",
-            "Ls16;",
+            "Lv56;",
+            "Lv56;",
+            "Lv56;",
+            "Lv56;",
+            "Lv56;",
+            "Lv56;",
             ")",
             "Lru/ok/android/externcalls/analytics/config/UploadConfig;"
         }
     .end annotation
 
-    new-instance v13, Lru/ok/android/externcalls/analytics/config/UploadConfig;
+    new-instance p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;
 
-    move-object v0, v13
+    invoke-direct/range {p0 .. p12}, Lru/ok/android/externcalls/analytics/config/UploadConfig;-><init>(ILjava/util/concurrent/Executor;JJLv56;Lv56;Lv56;Lv56;Lv56;Lv56;)V
 
-    move v1, p1
-
-    move-object/from16 v2, p2
-
-    move-wide/from16 v3, p3
-
-    move-wide/from16 v5, p5
-
-    move-object/from16 v7, p7
-
-    move-object/from16 v8, p8
-
-    move-object/from16 v9, p9
-
-    move-object/from16 v10, p10
-
-    move-object/from16 v11, p11
-
-    move-object/from16 v12, p12
-
-    invoke-direct/range {v0 .. v12}, Lru/ok/android/externcalls/analytics/config/UploadConfig;-><init>(ILjava/util/concurrent/Executor;JJLs16;Ls16;Ls16;Ls16;Ls16;Ls16;)V
-
-    return-object v13
+    return-object p0
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
@@ -770,7 +665,7 @@
 
     iget-object v3, p1, Lru/ok/android/externcalls/analytics/config/UploadConfig;->uploadExecutor:Ljava/util/concurrent/Executor;
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -801,11 +696,11 @@
     return v2
 
     :cond_5
-    iget-object v1, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxFileLengthKbProvider:Ls16;
+    iget-object v1, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxFileLengthKbProvider:Lv56;
 
-    iget-object v3, p1, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxFileLengthKbProvider:Ls16;
+    iget-object v3, p1, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxFileLengthKbProvider:Lv56;
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -814,11 +709,11 @@
     return v2
 
     :cond_6
-    iget-object v1, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxEventCountProvider:Ls16;
+    iget-object v1, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxEventCountProvider:Lv56;
 
-    iget-object v3, p1, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxEventCountProvider:Ls16;
+    iget-object v3, p1, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxEventCountProvider:Lv56;
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -827,11 +722,11 @@
     return v2
 
     :cond_7
-    iget-object v1, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxLocalCacheFileCountProvider:Ls16;
+    iget-object v1, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxLocalCacheFileCountProvider:Lv56;
 
-    iget-object v3, p1, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxLocalCacheFileCountProvider:Ls16;
+    iget-object v3, p1, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxLocalCacheFileCountProvider:Lv56;
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -840,11 +735,11 @@
     return v2
 
     :cond_8
-    iget-object v1, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->timeToUploadNextMsProvider:Ls16;
+    iget-object v1, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->timeToUploadNextMsProvider:Lv56;
 
-    iget-object v3, p1, Lru/ok/android/externcalls/analytics/config/UploadConfig;->timeToUploadNextMsProvider:Ls16;
+    iget-object v3, p1, Lru/ok/android/externcalls/analytics/config/UploadConfig;->timeToUploadNextMsProvider:Lv56;
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -853,11 +748,11 @@
     return v2
 
     :cond_9
-    iget-object v1, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->compressContentProvider:Ls16;
+    iget-object v1, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->compressContentProvider:Lv56;
 
-    iget-object v3, p1, Lru/ok/android/externcalls/analytics/config/UploadConfig;->compressContentProvider:Ls16;
+    iget-object v3, p1, Lru/ok/android/externcalls/analytics/config/UploadConfig;->compressContentProvider:Lv56;
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -866,11 +761,11 @@
     return v2
 
     :cond_a
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->disableUploadWhenCallIsActiveProvider:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->disableUploadWhenCallIsActiveProvider:Lv56;
 
-    iget-object p1, p1, Lru/ok/android/externcalls/analytics/config/UploadConfig;->disableUploadWhenCallIsActiveProvider:Ls16;
+    iget-object p1, p1, Lru/ok/android/externcalls/analytics/config/UploadConfig;->disableUploadWhenCallIsActiveProvider:Lv56;
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -885,11 +780,11 @@
 .method public final getCompressContent()Z
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->compressContentProvider:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->compressContentProvider:Lv56;
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     move-result-object p0
 
@@ -901,25 +796,24 @@
 
     move-result p0
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
-.method public final getCompressContentProvider()Ls16;
+.method public final getCompressContentProvider()Lv56;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->compressContentProvider:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->compressContentProvider:Lv56;
 
     return-object p0
 .end method
@@ -927,11 +821,11 @@
 .method public final getDisableUploadWhenCallIsActive()Z
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->disableUploadWhenCallIsActiveProvider:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->disableUploadWhenCallIsActiveProvider:Lv56;
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     move-result-object p0
 
@@ -943,25 +837,24 @@
 
     move-result p0
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x1
 
-    :goto_0
     return p0
 .end method
 
-.method public final getDisableUploadWhenCallIsActiveProvider()Ls16;
+.method public final getDisableUploadWhenCallIsActiveProvider()Lv56;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->disableUploadWhenCallIsActiveProvider:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->disableUploadWhenCallIsActiveProvider:Lv56;
 
     return-object p0
 .end method
@@ -969,11 +862,11 @@
 .method public final getEventCountToUploadNumber()I
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxEventCountProvider:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxEventCountProvider:Lv56;
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     move-result-object p0
 
@@ -985,23 +878,22 @@
 
     move-result p0
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/16 p0, 0x1f4
 
-    :goto_0
     return p0
 .end method
 
 .method public final getFileLengthTriggerToUploadBytes()I
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxFileLengthKbProvider:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxFileLengthKbProvider:Lv56;
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     move-result-object p0
 
@@ -1024,30 +916,30 @@
     return p0
 .end method
 
-.method public final getMaxEventCountProvider()Ls16;
+.method public final getMaxEventCountProvider()Lv56;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxEventCountProvider:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxEventCountProvider:Lv56;
 
     return-object p0
 .end method
 
-.method public final getMaxFileLengthKbProvider()Ls16;
+.method public final getMaxFileLengthKbProvider()Lv56;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxFileLengthKbProvider:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxFileLengthKbProvider:Lv56;
 
     return-object p0
 .end method
@@ -1055,11 +947,11 @@
 .method public final getMaxLocalCacheFileCount()I
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxLocalCacheFileCountProvider:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxLocalCacheFileCountProvider:Lv56;
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     move-result-object p0
 
@@ -1071,25 +963,24 @@
 
     move-result p0
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x1
 
-    :goto_0
     return p0
 .end method
 
-.method public final getMaxLocalCacheFileCountProvider()Ls16;
+.method public final getMaxLocalCacheFileCountProvider()Lv56;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxLocalCacheFileCountProvider:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxLocalCacheFileCountProvider:Lv56;
 
     return-object p0
 .end method
@@ -1113,35 +1004,34 @@
 .method public final getTimeToUploadNextMs()Ljava/lang/Long;
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->timeToUploadNextMsProvider:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->timeToUploadNextMsProvider:Lv56;
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     move-result-object p0
 
     check-cast p0, Ljava/lang/Long;
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return-object p0
 .end method
 
-.method public final getTimeToUploadNextMsProvider()Ls16;
+.method public final getTimeToUploadNextMsProvider()Lv56;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->timeToUploadNextMsProvider:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->timeToUploadNextMsProvider:Lv56;
 
     return-object p0
 .end method
@@ -1197,17 +1087,17 @@
 
     iget-wide v4, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxTimeToUploadMillis:J
 
-    invoke-static {v0, v1, v4, v5}, Lsxe;->m(IIJ)I
+    invoke-static {v0, v1, v4, v5}, Lzge;->m(IIJ)I
 
     move-result v0
 
     iget-wide v4, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->silenceToUploadMillis:J
 
-    invoke-static {v0, v1, v4, v5}, Lsxe;->m(IIJ)I
+    invoke-static {v0, v1, v4, v5}, Lzge;->m(IIJ)I
 
     move-result v0
 
-    iget-object v2, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxFileLengthKbProvider:Ls16;
+    iget-object v2, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxFileLengthKbProvider:Lv56;
 
     if-nez v2, :cond_1
 
@@ -1225,7 +1115,7 @@
 
     mul-int/2addr v0, v1
 
-    iget-object v2, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxEventCountProvider:Ls16;
+    iget-object v2, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxEventCountProvider:Lv56;
 
     if-nez v2, :cond_2
 
@@ -1243,7 +1133,7 @@
 
     mul-int/2addr v0, v1
 
-    iget-object v2, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxLocalCacheFileCountProvider:Ls16;
+    iget-object v2, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxLocalCacheFileCountProvider:Lv56;
 
     if-nez v2, :cond_3
 
@@ -1261,7 +1151,7 @@
 
     mul-int/2addr v0, v1
 
-    iget-object v2, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->timeToUploadNextMsProvider:Ls16;
+    iget-object v2, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->timeToUploadNextMsProvider:Lv56;
 
     if-nez v2, :cond_4
 
@@ -1279,7 +1169,7 @@
 
     mul-int/2addr v0, v1
 
-    iget-object v2, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->compressContentProvider:Ls16;
+    iget-object v2, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->compressContentProvider:Lv56;
 
     if-nez v2, :cond_5
 
@@ -1297,7 +1187,7 @@
 
     mul-int/2addr v0, v1
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->disableUploadWhenCallIsActiveProvider:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->disableUploadWhenCallIsActiveProvider:Lv56;
 
     if-nez p0, :cond_6
 
@@ -1325,17 +1215,17 @@
 
     iget-wide v4, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->silenceToUploadMillis:J
 
-    iget-object v6, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxFileLengthKbProvider:Ls16;
+    iget-object v6, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxFileLengthKbProvider:Lv56;
 
-    iget-object v7, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxEventCountProvider:Ls16;
+    iget-object v7, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxEventCountProvider:Lv56;
 
-    iget-object v8, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxLocalCacheFileCountProvider:Ls16;
+    iget-object v8, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->maxLocalCacheFileCountProvider:Lv56;
 
-    iget-object v9, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->timeToUploadNextMsProvider:Ls16;
+    iget-object v9, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->timeToUploadNextMsProvider:Lv56;
 
-    iget-object v10, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->compressContentProvider:Ls16;
+    iget-object v10, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->compressContentProvider:Lv56;
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->disableUploadWhenCallIsActiveProvider:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;->disableUploadWhenCallIsActiveProvider:Lv56;
 
     new-instance v11, Ljava/lang/StringBuilder;
 
@@ -1361,7 +1251,7 @@
 
     const-string v1, ", maxFileLengthKbProvider="
 
-    invoke-static {v11, v0, v4, v5, v1}, Lhr1;->s(Ljava/lang/StringBuilder;Ljava/lang/String;JLjava/lang/String;)V
+    invoke-static {v4, v5, v0, v1, v11}, Lzt1;->q(JLjava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)V
 
     invoke-virtual {v11, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

@@ -60,7 +60,7 @@
 
     mul-int/2addr p1, p3
 
-    goto :goto_0
+    return p1
 
     :cond_0
     mul-int/2addr p3, p2
@@ -71,7 +71,6 @@
 
     add-int/2addr p1, p3
 
-    :goto_0
     return p1
 .end method
 

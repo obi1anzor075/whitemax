@@ -1,52 +1,35 @@
-.class public final Lmaf;
+.class public abstract Lmaf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final d:Lo0b;
-
-
-# instance fields
-.field public a:I
-
-.field public b:Lms;
-
-.field public c:Lms;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public static a(Landroid/app/Service;ILandroid/app/Notification;ILjava/lang/String;)V
+    .locals 0
 
-    new-instance v0, Lo0b;
-
-    const/16 v1, 0x14
-
-    invoke-direct {v0, v1}, Lo0b;-><init>(I)V
-
-    sput-object v0, Lmaf;->d:Lo0b;
+    :try_start_0
+    invoke-virtual {p0, p1, p2, p3}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;I)V
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
-.end method
 
-.method public static a()Lmaf;
-    .locals 1
+    :catch_0
+    move-exception p0
 
-    sget-object v0, Lmaf;->d:Lo0b;
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lo0b;->h()Ljava/lang/Object;
+    const-string p2, "The service must be declared with a foregroundServiceType that includes "
 
-    move-result-object v0
+    invoke-direct {p1, p2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    check-cast v0, Lmaf;
+    invoke-virtual {p1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-nez v0, :cond_0
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    new-instance v0, Lmaf;
+    move-result-object p1
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-static {p1}, Lou0;->m(Ljava/lang/String;)V
 
-    :cond_0
-    return-object v0
+    throw p0
 .end method

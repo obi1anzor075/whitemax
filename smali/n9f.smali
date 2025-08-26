@@ -2,120 +2,106 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/view/View$OnClickListener;
-.implements Lxi4;
-
 
 # instance fields
-.field public final a:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public final a:Lk8d;
 
-.field public final b:Landroid/view/View;
+.field public final b:Lp9f;
 
-.field public final c:Lbw9;
+.field public final c:Lnb0;
+
+.field public final d:Ljava/util/List;
+
+.field public e:Z
+
+.field public f:Z
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Lbw9;)V
+.method public constructor <init>(Lk8d;Lp9f;Lnb0;Ljava/util/List;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
+    iput-boolean v0, p0, Ln9f;->e:Z
 
-    iput-object v0, p0, Ln9f;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-boolean v0, p0, Ln9f;->f:Z
 
-    iput-object p1, p0, Ln9f;->b:Landroid/view/View;
+    iput-object p1, p0, Ln9f;->a:Lk8d;
 
-    iput-object p2, p0, Ln9f;->c:Lbw9;
+    iput-object p2, p0, Ln9f;->b:Lp9f;
+
+    iput-object p3, p0, Ln9f;->c:Lnb0;
+
+    iput-object p4, p0, Ln9f;->d:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final f()V
-    .locals 3
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    iget-object v0, p0, Ln9f;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const/4 v1, 0x0
+    const-string v1, "UseCaseAttachInfo{mSessionConfig="
 
-    const/4 v2, 0x1
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+    iget-object v1, p0, Ln9f;->a:Lk8d;
 
-    move-result v0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    if-eqz v0, :cond_1
+    const-string v1, ", mUseCaseConfig="
 
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    iget-object v1, p0, Ln9f;->b:Lp9f;
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    const-string v1, ", mStreamSpec="
 
-    if-ne v0, v1, :cond_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Ln9f;->b:Landroid/view/View;
+    iget-object v1, p0, Ln9f;->c:Lnb0;
 
-    const/4 v0, 0x0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    const-string v1, ", mCaptureTypes="
 
-    goto :goto_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_0
-    invoke-static {}, Lde;->a()Lqmc;
+    iget-object v1, p0, Ln9f;->d:Ljava/util/List;
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    new-instance v1, Leq6;
+    const-string v1, ", mAttached="
 
-    const/4 v2, 0x5
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v1, v2, p0}, Leq6;-><init>(ILjava/lang/Object;)V
+    iget-boolean v1, p0, Ln9f;->e:Z
 
-    invoke-virtual {v0, v1}, Lqmc;->b(Ljava/lang/Runnable;)Lxi4;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    :cond_1
-    :goto_0
-    return-void
-.end method
+    const-string v1, ", mActive="
 
-.method public final h()Z
-    .locals 0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Ln9f;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-boolean p0, p0, Ln9f;->f:Z
 
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result p0
+    const/16 p0, 0x7d
 
-    return p0
-.end method
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-.method public final onClick(Landroid/view/View;)V
-    .locals 0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iget-object p1, p0, Ln9f;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    move-result-object p0
 
-    invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    iget-object p0, p0, Ln9f;->c:Lbw9;
-
-    invoke-interface {p0, p1}, Lbw9;->c(Ljava/lang/Object;)V
-
-    :cond_0
-    return-void
+    return-object p0
 .end method

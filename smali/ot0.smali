@@ -1,132 +1,194 @@
-.class public final Lot0;
-.super Ljava/lang/Object;
+.class public final synthetic Lot0;
+.super La76;
 .source "SourceFile"
 
 # interfaces
-.implements Lbpe;
+.implements Ln66;
 
 
-# instance fields
-.field public final a:I
-
-.field public final b:Lxu5;
-
-.field public final c:Lqh4;
-
-.field public d:Lxu5;
-
-.field public e:Lbpe;
-
-.field public f:J
+# static fields
+.field public static final a:Lot0;
 
 
 # direct methods
-.method public constructor <init>(IILxu5;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 6
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lot0;
 
-    iput p2, p0, Lot0;->a:I
+    const-string v4, "registerSelectForReceive(Lkotlinx/coroutines/selects/SelectInstance;Ljava/lang/Object;)V"
 
-    iput-object p3, p0, Lot0;->b:Lxu5;
+    const/4 v5, 0x0
 
-    new-instance p1, Lqh4;
+    const/4 v1, 0x3
 
-    invoke-direct {p1}, Lqh4;-><init>()V
+    const-class v2, Lst0;
 
-    iput-object p1, p0, Lot0;->c:Lqh4;
+    const-string v3, "registerSelectForReceive"
+
+    invoke-direct/range {v0 .. v5}, La76;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    sput-object v0, Lot0;->a:Lot0;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(JIIILzoe;)V
-    .locals 8
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
-    iget-wide v0, p0, Lot0;->f:J
+    move-object v0, p1
 
-    const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
+    check-cast v0, Lst0;
 
-    cmp-long v2, v0, v2
+    move-object v5, p2
 
-    if-eqz v2, :cond_0
+    check-cast v5, Lf2d;
 
-    cmp-long v0, p1, v0
+    sget-object p0, Lst0;->b:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-    if-ltz v0, :cond_0
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object v0, p0, Lot0;->c:Lqh4;
+    sget-object p0, Lst0;->Z:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    iput-object v0, p0, Lot0;->e:Lbpe;
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_0
-    iget-object v1, p0, Lot0;->e:Lbpe;
+    move-result-object p0
 
-    sget p0, Loze;->a:I
+    check-cast p0, Ld42;
 
-    move-wide v2, p1
+    :goto_0
+    invoke-virtual {v0}, Lst0;->u()Z
 
-    move v4, p3
+    move-result p1
 
-    move v5, p4
+    if-eqz p1, :cond_0
 
-    move v6, p5
+    sget-object p0, Lut0;->l:Lkotlinx/coroutines/internal/Symbol;
 
-    move-object v7, p6
+    check-cast v5, Le2d;
 
-    invoke-interface/range {v1 .. v7}, Lbpe;->a(JIIILzoe;)V
+    iput-object p0, v5, Le2d;->X:Ljava/lang/Object;
 
-    return-void
-.end method
-
-.method public final b(Lija;II)V
-    .locals 0
-
-    iget-object p0, p0, Lot0;->e:Lbpe;
-
-    sget p3, Loze;->a:I
-
-    const/4 p3, 0x0
-
-    invoke-interface {p0, p1, p2, p3}, Lbpe;->b(Lija;II)V
-
-    return-void
-.end method
-
-.method public final c(Ljz3;IZ)I
-    .locals 1
-
-    iget-object p0, p0, Lot0;->e:Lbpe;
-
-    sget v0, Loze;->a:I
-
-    invoke-interface {p0, p1, p2, p3}, Lbpe;->d(Ljz3;IZ)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final e(Lxu5;)V
-    .locals 1
-
-    iget-object v0, p0, Lot0;->b:Lxu5;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p1, v0}, Lxu5;->f(Lxu5;)Lxu5;
-
-    move-result-object p1
+    goto :goto_4
 
     :cond_0
-    iput-object p1, p0, Lot0;->d:Lxu5;
+    sget-object p1, Lst0;->c:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-    iget-object p0, p0, Lot0;->e:Lbpe;
+    invoke-virtual {p1, v0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->getAndIncrement(Ljava/lang/Object;)J
 
-    sget v0, Loze;->a:I
+    move-result-wide v3
 
-    invoke-interface {p0, p1}, Lbpe;->e(Lxu5;)V
+    sget p1, Lut0;->b:I
 
-    return-void
+    int-to-long p1, p1
+
+    div-long v1, v3, p1
+
+    rem-long p1, v3, p1
+
+    long-to-int p1, p1
+
+    iget-wide p2, p0, Lkotlinx/coroutines/internal/Segment;->id:J
+
+    cmp-long p2, p2, v1
+
+    if-eqz p2, :cond_2
+
+    invoke-virtual {v0, v1, v2, p0}, Lst0;->o(JLd42;)Ld42;
+
+    move-result-object p2
+
+    if-nez p2, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    move-object v1, p2
+
+    :goto_1
+    move v2, p1
+
+    goto :goto_2
+
+    :cond_2
+    move-object v1, p0
+
+    goto :goto_1
+
+    :goto_2
+    invoke-virtual/range {v0 .. v5}, Lst0;->F(Ld42;IJLjava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    move-object p2, v1
+
+    sget-object p1, Lut0;->m:Lkotlinx/coroutines/internal/Symbol;
+
+    if-ne p0, p1, :cond_4
+
+    instance-of p0, v5, Lzrf;
+
+    if-eqz p0, :cond_3
+
+    check-cast v5, Lzrf;
+
+    goto :goto_3
+
+    :cond_3
+    const/4 v5, 0x0
+
+    :goto_3
+    if-eqz v5, :cond_7
+
+    invoke-interface {v5, p2, v2}, Lzrf;->a(Lkotlinx/coroutines/internal/Segment;I)V
+
+    goto :goto_4
+
+    :cond_4
+    sget-object p1, Lut0;->o:Lkotlinx/coroutines/internal/Symbol;
+
+    if-ne p0, p1, :cond_6
+
+    invoke-virtual {v0}, Lst0;->r()J
+
+    move-result-wide p0
+
+    cmp-long p0, v3, p0
+
+    if-gez p0, :cond_5
+
+    invoke-virtual {p2}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->cleanPrev()V
+
+    :cond_5
+    move-object p0, p2
+
+    goto :goto_0
+
+    :cond_6
+    sget-object p1, Lut0;->n:Lkotlinx/coroutines/internal/Symbol;
+
+    if-eq p0, p1, :cond_8
+
+    invoke-virtual {p2}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->cleanPrev()V
+
+    check-cast v5, Le2d;
+
+    iput-object p0, v5, Le2d;->X:Ljava/lang/Object;
+
+    :cond_7
+    :goto_4
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
+
+    :cond_8
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "unexpected"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

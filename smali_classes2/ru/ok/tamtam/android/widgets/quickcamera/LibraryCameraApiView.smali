@@ -3,7 +3,11 @@
 .source "SourceFile"
 
 # interfaces
-.implements Los1;
+.implements Lhv1;
+
+
+# instance fields
+.field public final a:Landroid/view/View;
 
 
 # direct methods
@@ -17,6 +21,8 @@
     new-instance p2, Landroid/view/View;
 
     invoke-direct {p2, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+
+    iput-object p2, p0, Lru/ok/tamtam/android/widgets/quickcamera/LibraryCameraApiView;->a:Landroid/view/View;
 
     const/4 p1, 0x1
 
@@ -103,7 +109,7 @@
     return p0
 .end method
 
-.method public setCameraListener(Lju1;)V
+.method public setCameraListener(Lcx1;)V
     .locals 0
 
     return-void
@@ -115,13 +121,13 @@
     return-void
 .end method
 
-.method public setPictureSize(Lgkb;)V
+.method public setPictureSize(Lrob;)V
     .locals 0
 
     return-void
 .end method
 
-.method public setVideoQuality(Ls7f;)V
+.method public setVideoQuality(Lblf;)V
     .locals 0
 
     return-void

@@ -1,161 +1,472 @@
-.class public final synthetic Luxe;
+.class public final Luxe;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ll7e;
+
+# static fields
+.field public static final f:Ljava/lang/String;
+
+.field public static final g:Ljava/lang/String;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:I
 
-.field public final synthetic b:Lvxe;
+.field public final b:Ljava/lang/String;
 
-.field public final synthetic c:Lhb0;
+.field public final c:I
+
+.field public final d:[Lfz5;
+
+.field public e:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lvxe;Lhb0;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput p3, p0, Luxe;->a:I
+    sget v0, Lpaf;->a:I
 
-    iput-object p1, p0, Luxe;->b:Lvxe;
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Luxe;->c:Lhb0;
+    const/16 v1, 0x24
+
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Luxe;->f:Ljava/lang/String;
+
+    const/4 v0, 0x1
+
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Luxe;->g:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public varargs constructor <init>(Ljava/lang/String;[Lfz5;)V
+    .locals 6
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    array-length v0, p2
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    if-lez v0, :cond_0
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_0
+    move v0, v2
+
+    :goto_0
+    invoke-static {v0}, Lu27;->f(Z)V
+
+    iput-object p1, p0, Luxe;->b:Ljava/lang/String;
+
+    iput-object p2, p0, Luxe;->d:[Lfz5;
+
+    array-length p1, p2
+
+    iput p1, p0, Luxe;->a:I
+
+    aget-object p1, p2, v2
+
+    iget-object p1, p1, Lfz5;->m:Ljava/lang/String;
+
+    invoke-static {p1}, La99;->g(Ljava/lang/String;)I
+
+    move-result p1
+
+    const/4 v0, -0x1
+
+    if-ne p1, v0, :cond_1
+
+    aget-object p1, p2, v2
+
+    iget-object p1, p1, Lfz5;->l:Ljava/lang/String;
+
+    invoke-static {p1}, La99;->g(Ljava/lang/String;)I
+
+    move-result p1
+
+    :cond_1
+    iput p1, p0, Luxe;->c:I
+
+    aget-object p0, p2, v2
+
+    iget-object p0, p0, Lfz5;->d:Ljava/lang/String;
+
+    const-string p1, ""
+
+    const-string v0, "und"
+
+    if-eqz p0, :cond_2
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_3
+
+    :cond_2
+    move-object p0, p1
+
+    :cond_3
+    aget-object v3, p2, v2
+
+    iget v3, v3, Lfz5;->f:I
+
+    or-int/lit16 v3, v3, 0x4000
+
+    :goto_1
+    array-length v4, p2
+
+    if-ge v1, v4, :cond_8
+
+    aget-object v4, p2, v1
+
+    iget-object v4, v4, Lfz5;->d:Ljava/lang/String;
+
+    if-eqz v4, :cond_4
+
+    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_5
+
+    :cond_4
+    move-object v4, p1
+
+    :cond_5
+    invoke-virtual {p0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_6
+
+    aget-object p0, p2, v2
+
+    iget-object p0, p0, Lfz5;->d:Ljava/lang/String;
+
+    aget-object p1, p2, v1
+
+    iget-object p1, p1, Lfz5;->d:Ljava/lang/String;
+
+    const-string p2, "languages"
+
+    invoke-static {p2, v1, p0, p1}, Luxe;->c(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
+
+    return-void
+
+    :cond_6
+    aget-object v4, p2, v1
+
+    iget v4, v4, Lfz5;->f:I
+
+    or-int/lit16 v4, v4, 0x4000
+
+    if-eq v3, v4, :cond_7
+
+    aget-object p0, p2, v2
+
+    iget p0, p0, Lfz5;->f:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->toBinaryString(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    aget-object p1, p2, v1
+
+    iget p1, p1, Lfz5;->f:I
+
+    invoke-static {p1}, Ljava/lang/Integer;->toBinaryString(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string p2, "role flags"
+
+    invoke-static {p2, v1, p0, p1}, Luxe;->c(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
+
+    return-void
+
+    :cond_7
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
+
+    :cond_8
+    return-void
+.end method
+
+.method public static a(Landroid/os/Bundle;)Luxe;
+    .locals 3
+
+    sget-object v0, Luxe;->f:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Landroid/os/Bundle;->getParcelableArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Lxw6;->b:Las5;
+
+    sget-object v0, Lddc;->X:Lddc;
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v1, Ll2e;
+
+    const/16 v2, 0x15
+
+    invoke-direct {v1, v2}, Ll2e;-><init>(I)V
+
+    invoke-static {v1, v0}, Liu0;->m(Lh66;Ljava/util/List;)Lddc;
+
+    move-result-object v0
+
+    :goto_0
+    sget-object v1, Luxe;->g:Ljava/lang/String;
+
+    const-string v2, ""
+
+    invoke-virtual {p0, v1, v2}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    new-instance v1, Luxe;
+
+    const/4 v2, 0x0
+
+    new-array v2, v2, [Lfz5;
+
+    invoke-virtual {v0, v2}, Lpw6;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lfz5;
+
+    invoke-direct {v1, p0, v0}, Luxe;-><init>(Ljava/lang/String;[Lfz5;)V
+
+    return-object v1
+.end method
+
+.method public static c(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
+    .locals 4
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, " combined in one TrackGroup: \'"
+
+    const-string v2, "\' (track 0) and \'"
+
+    const-string v3, "Different "
+
+    invoke-static {v3, p0, v1, p2, v2}, Lzge;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p2, "\' (track "
+
+    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p1, ")"
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    const-string p0, ""
+
+    invoke-static {p0, v0}, Lou0;->n(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
+.method public final b(Lfz5;)I
     .locals 3
 
-    iget v0, p0, Luxe;->a:I
+    const/4 v0, 0x0
 
-    packed-switch v0, :pswitch_data_0
+    :goto_0
+    iget-object v1, p0, Luxe;->d:[Lfz5;
 
-    iget-object v0, p0, Luxe;->b:Lvxe;
+    array-length v2, v1
 
-    iget-object v0, v0, Lvxe;->c:La15;
+    if-ge v0, v2, :cond_1
 
-    check-cast v0, Lxic;
+    aget-object v1, v1, v0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-ne p1, v1, :cond_0
 
-    new-instance v1, Lw48;
+    return v0
 
-    iget-object p0, p0, Luxe;->c:Lhb0;
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
 
-    const/16 v2, 0x1c
+    goto :goto_0
 
-    invoke-direct {v1, v0, v2, p0}, Lw48;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    :cond_1
+    const/4 p0, -0x1
 
-    invoke-virtual {v0, v1}, Lxic;->o(Lvic;)Ljava/lang/Object;
+    return p0
+.end method
 
-    move-result-object p0
+.method public final d()Landroid/os/Bundle;
+    .locals 7
 
-    check-cast p0, Ljava/lang/Iterable;
+    new-instance v0, Landroid/os/Bundle;
 
-    return-object p0
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    :pswitch_0
-    iget-object v0, p0, Luxe;->c:Lhb0;
+    new-instance v1, Ljava/util/ArrayList;
 
-    iget-object p0, p0, Luxe;->b:Lvxe;
+    iget-object v2, p0, Luxe;->d:[Lfz5;
 
-    iget-object p0, p0, Lvxe;->c:La15;
+    array-length v3, v2
 
-    check-cast p0, Lxic;
+    invoke-direct {v1, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    invoke-virtual {p0}, Lxic;->m()Landroid/database/sqlite/SQLiteDatabase;
+    array-length v3, v2
 
-    move-result-object v1
+    const/4 v4, 0x0
 
-    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
+    :goto_0
+    if-ge v4, v3, :cond_0
 
-    :try_start_0
-    invoke-static {v1, v0}, Lxic;->n(Landroid/database/sqlite/SQLiteDatabase;Lhb0;)Ljava/lang/Long;
+    aget-object v5, v2, v4
 
-    move-result-object v0
+    const/4 v6, 0x1
 
-    if-nez v0, :cond_0
+    invoke-virtual {v5, v6}, Lfz5;->c(Z)Landroid/os/Bundle;
 
-    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    move-result-object v5
+
+    invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0}, Lxic;->m()Landroid/database/sqlite/SQLiteDatabase;
+    sget-object v2, Luxe;->f:Ljava/lang/String;
 
-    move-result-object p0
+    invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putParcelableArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    invoke-virtual {v0}, Ljava/lang/Long;->toString()Ljava/lang/String;
+    sget-object v1, Luxe;->g:Ljava/lang/String;
 
-    move-result-object v0
+    iget-object p0, p0, Luxe;->b:Ljava/lang/String;
 
-    filled-new-array {v0}, [Ljava/lang/String;
+    invoke-virtual {v0, v1, p0}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v0
+    return-object v0
+.end method
 
-    const-string v2, "SELECT 1 FROM events WHERE context_id = ? LIMIT 1"
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    invoke-virtual {p0, v2, v0}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
+    const/4 v0, 0x1
 
-    move-result-object p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    if-ne p0, p1, :cond_0
 
-    :try_start_1
-    invoke-interface {p0}, Landroid/database/Cursor;->moveToNext()Z
+    return v0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    if-eqz p1, :cond_2
+
+    const-class v2, Luxe;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    if-eq v2, v3, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Luxe;
+
+    iget-object v2, p0, Luxe;->b:Ljava/lang/String;
+
+    iget-object v3, p1, Luxe;->b:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object p0, p0, Luxe;->d:[Lfz5;
+
+    iget-object p1, p1, Luxe;->d:[Lfz5;
+
+    invoke-static {p0, p1}, Ljava/util/Arrays;->equals([Ljava/lang/Object;[Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    return v0
+
+    :cond_2
+    :goto_0
+    return v1
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    iget v0, p0, Luxe;->e:I
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Luxe;->b:Ljava/lang/String;
+
+    const/16 v1, 0x1f
+
+    const/16 v2, 0x20f
+
+    invoke-static {v2, v1, v0}, Lv04;->d(IILjava/lang/String;)I
 
     move-result v0
 
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iget-object v1, p0, Luxe;->d:[Lfz5;
 
-    move-result-object v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    invoke-static {v1}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
 
-    :try_start_2
-    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+    move-result v1
 
-    move-object p0, v0
+    add-int/2addr v1, v0
 
-    :goto_0
-    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    iput v1, p0, Luxe;->e:I
 
-    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+    :cond_0
+    iget p0, p0, Luxe;->e:I
 
-    return-object p0
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_1
-
-    :catchall_1
-    move-exception v0
-
-    :try_start_3
-    invoke-interface {p0}, Landroid/database/Cursor;->close()V
-
-    throw v0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    :goto_1
-    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
-
-    throw p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method

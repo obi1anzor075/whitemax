@@ -1,5 +1,5 @@
 .class public abstract Le1;
-.super Lk1;
+.super Lm1;
 .source "SourceFile"
 
 # interfaces
@@ -10,7 +10,7 @@
 .method public final isCancelled()Z
     .locals 0
 
-    iget-object p0, p0, Lk1;->a:Ljava/lang/Object;
+    iget-object p0, p0, Lm1;->a:Ljava/lang/Object;
 
     instance-of p0, p0, Lq0;
 

@@ -1,52 +1,125 @@
 .class public final Lb70;
-.super Libe;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# instance fields
+.field public final a:Ljava/util/ArrayList;
+
+.field public final b:Lazd;
+
+.field public final c:Lu5c;
+
+
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>()V
     .locals 2
 
-    const/4 v0, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eq p1, v0, :cond_1
+    new-instance v0, Ljava/util/ArrayList;
 
-    const/4 v0, 0x2
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    if-ne p1, v0, :cond_0
+    iput-object v0, p0, Lb70;->a:Ljava/util/ArrayList;
+
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Lbzd;->a(Ljava/lang/Object;)Lazd;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lb70;->b:Lazd;
+
+    new-instance v1, Lu5c;
+
+    invoke-direct {v1, v0}, Lu5c;-><init>(Lgh9;)V
+
+    iput-object v1, p0, Lb70;->c:Lu5c;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()V
+    .locals 7
+
+    iget-object v0, p0, Lb70;->a:Ljava/util/ArrayList;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_3
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    new-array v2, v2, [B
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    const/4 v3, 0x0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    add-int/lit8 v5, v3, 0x1
+
+    if-ltz v3, :cond_1
+
+    check-cast v4, Ljava/lang/Number;
+
+    invoke-virtual {v4}, Ljava/lang/Number;->intValue()I
+
+    move-result v4
+
+    mul-int/lit8 v4, v4, 0x7f
+
+    const v6, 0x8000
+
+    div-int/2addr v4, v6
+
+    int-to-byte v4, v4
+
+    aput-byte v4, v2, v3
+
+    move v3, v5
 
     goto :goto_0
 
-    :cond_0
-    const/4 p0, 0x0
-
-    throw p0
-
     :cond_1
-    :goto_0
-    invoke-static {v0}, Ljava/lang/Short;->valueOf(S)Ljava/lang/Short;
+    invoke-static {}, Lq43;->j0()V
 
-    move-result-object p1
+    throw v1
 
-    new-instance v0, Lwia;
+    :cond_2
+    move-object v1, v2
 
-    const-string v1, "reason"
+    :cond_3
+    :goto_1
+    iget-object p0, p0, Lb70;->b:Lazd;
 
-    invoke-direct {v0, v1, p1}, Lwia;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    filled-new-array {v0}, [Lwia;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lllc;->b([Lwia;)Ljc9;
-
-    move-result-object p1
-
-    const-string v0, "registration_failed"
-
-    const/4 v1, 0x3
-
-    invoke-direct {p0, v0, v1, p1}, Libe;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-virtual {p0, v1}, Lazd;->setValue(Ljava/lang/Object;)V
 
     return-void
 .end method

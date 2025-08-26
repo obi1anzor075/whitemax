@@ -1,35 +1,33 @@
 .class public final Lvj7;
-.super Ler3;
+.super Lbu3;
 .source "SourceFile"
 
 
 # instance fields
-.field public A0:I
+.field public X:Lbn5;
 
-.field public X:Ljava/util/List;
+.field public Y:Landroid/net/Uri;
 
-.field public Y:Ljava/util/LinkedHashMap;
+.field public Z:J
 
-.field public Z:Ljava/util/Iterator;
+.field public o:Lwj7;
 
-.field public o:Lyj7;
+.field public o0:J
 
-.field public w0:Li22;
+.field public synthetic p0:Ljava/lang/Object;
 
-.field public x0:Z
+.field public final synthetic q0:Lwj7;
 
-.field public synthetic y0:Ljava/lang/Object;
-
-.field public final synthetic z0:Lyj7;
+.field public r0:I
 
 
 # direct methods
-.method public constructor <init>(Lyj7;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lwj7;Lbu3;)V
     .locals 0
 
-    iput-object p1, p0, Lvj7;->z0:Lyj7;
+    iput-object p1, p0, Lvj7;->q0:Lwj7;
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -37,23 +35,31 @@
 
 # virtual methods
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    .locals 8
 
-    iput-object p1, p0, Lvj7;->y0:Ljava/lang/Object;
+    iput-object p1, p0, Lvj7;->p0:Ljava/lang/Object;
 
-    iget p1, p0, Lvj7;->A0:I
+    iget p1, p0, Lvj7;->r0:I
 
     const/high16 v0, -0x80000000
 
     or-int/2addr p1, v0
 
-    iput p1, p0, Lvj7;->A0:I
+    iput p1, p0, Lvj7;->r0:I
 
-    iget-object p1, p0, Lvj7;->z0:Lyj7;
+    const-wide/16 v3, 0x0
 
-    const/4 v0, 0x0
+    const-wide/16 v5, 0x0
 
-    invoke-virtual {p1, v0, p0}, Lyj7;->q(Lzb9;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iget-object v0, p0, Lvj7;->q0:Lwj7;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    move-object v7, p0
+
+    invoke-virtual/range {v0 .. v7}, Lwj7;->k(Lbn5;Landroid/net/Uri;JJLbu3;)Ljava/lang/Object;
 
     move-result-object p0
 

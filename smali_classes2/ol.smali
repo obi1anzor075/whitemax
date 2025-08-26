@@ -1,297 +1,109 @@
-.class public abstract Lol;
-.super Ljava/lang/Object;
+.class public final Lol;
+.super Landroid/content/ContextWrapper;
 .source "SourceFile"
+
+# interfaces
+.implements Lng;
+.implements Lgqe;
+
+
+# static fields
+.field public static o:Lol;
 
 
 # instance fields
-.field public final a:J
+.field public final a:Landroid/app/Application;
 
-.field public b:Libe;
+.field public final b:Lje7;
 
-.field public c:Lpl;
+.field public final c:Lwfe;
 
 
 # direct methods
-.method public constructor <init>(J)V
+.method public constructor <init>(Landroid/app/Application;Lje7;Lwfe;Lo4a;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
 
-    iput-wide p1, p0, Lol;->a:J
+    sput-object p4, Lq14;->o:Lo4a;
+
+    iput-object p2, p0, Lol;->b:Lje7;
+
+    iput-object p1, p0, Lol;->a:Landroid/app/Application;
+
+    iput-object p3, p0, Lol;->c:Lwfe;
+
+    sput-object p0, Lol;->o:Lol;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public abstract i()Libe;
-.end method
-
-.method public final j()Lpk;
-    .locals 0
-
-    iget-object p0, p0, Lol;->c:Lpl;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    invoke-virtual {p0}, Lpl;->a()Lpk;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final k()Lzy9;
-    .locals 0
-
-    iget-object p0, p0, Lol;->c:Lpl;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    iget-object p0, p0, Lpl;->f:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lzy9;
-
-    return-object p0
-.end method
-
-.method public final l()Ltt0;
-    .locals 0
-
-    iget-object p0, p0, Lol;->c:Lpl;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    invoke-virtual {p0}, Lpl;->b()Ltt0;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final m()Lt52;
-    .locals 0
-
-    iget-object p0, p0, Lol;->c:Lpl;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    invoke-virtual {p0}, Lpl;->c()Lt52;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final n()Ldi3;
-    .locals 0
-
-    iget-object p0, p0, Lol;->c:Lpl;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    iget-object p0, p0, Lpl;->k:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ldi3;
-
-    return-object p0
-.end method
-
-.method public final o()Lin7;
-    .locals 0
-
-    iget-object p0, p0, Lol;->c:Lpl;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    iget-object p0, p0, Lpl;->Q:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lin7;
-
-    return-object p0
-.end method
-
-.method public final p()Lto8;
-    .locals 0
-
-    iget-object p0, p0, Lol;->c:Lpl;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    invoke-virtual {p0}, Lpl;->d()Lto8;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final q()Lr59;
-    .locals 0
-
-    iget-object p0, p0, Lol;->c:Lpl;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    iget-object p0, p0, Lpl;->m:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lr59;
-
-    return-object p0
-.end method
-
-.method public final r()Lg2b;
-    .locals 0
-
-    iget-object p0, p0, Lol;->c:Lpl;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    iget-object p0, p0, Lpl;->c:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lg2b;
-
-    return-object p0
-.end method
-
-.method public final s()Libe;
+.method public static b()Lsb3;
     .locals 1
 
-    iget-object v0, p0, Lol;->b:Libe;
+    sget-object v0, Lol;->o:Lol;
 
-    if-nez v0, :cond_0
+    iget-object v0, v0, Lol;->c:Lwfe;
 
-    invoke-virtual {p0}, Lol;->i()Libe;
+    invoke-virtual {v0}, Lwfe;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    iput-object v0, p0, Lol;->b:Libe;
+    check-cast v0, Lsb3;
 
-    :cond_0
-    iget-object p0, p0, Lol;->b:Libe;
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final a()La5b;
+    .locals 0
+
+    iget-object p0, p0, Lol;->b:Lje7;
+
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, La5b;
 
     return-object p0
 .end method
 
-.method public final t()Ljee;
+.method public final getBaseContext()Landroid/content/Context;
     .locals 0
 
-    iget-object p0, p0, Lol;->c:Lpl;
+    iget-object p0, p0, Lol;->a:Landroid/app/Application;
 
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    invoke-virtual {p0}, Lpl;->e()Ljee;
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public toString()Ljava/lang/String;
-    .locals 4
+.method public final p()Lvke;
+    .locals 1
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {}, Lol;->b()Lsb3;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    check-cast p0, Lq6a;
 
-    move-result-object v0
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lu4;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    move-result-object p0
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-class v0, Lwke;
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Lu4;->c(Ljava/lang/Class;)Ljava/lang/Object;
 
-    const-string v0, "/requestId: "
+    move-result-object p0
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast p0, Lwke;
 
-    iget-wide v2, p0, Lol;->a:J
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Lwke;->c()Lvke;
 
     move-result-object p0
 

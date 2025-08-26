@@ -21,7 +21,7 @@
         "()V",
         "Lone/me/sdk/media/ffmpeg/WebmConfig$Config;",
         "config",
-        "Ljue;",
+        "Le5f;",
         "init",
         "(Lone/me/sdk/media/ffmpeg/WebmConfig$Config;)V",
         "Lone/me/sdk/media/ffmpeg/WebmConfig$Config;",
@@ -29,9 +29,9 @@
         "()Lone/me/sdk/media/ffmpeg/WebmConfig$Config;",
         "setConfig",
         "getConfig$annotations",
-        "Lgg9;",
+        "Lzk9;",
         "getLogger",
-        "()Lgg9;",
+        "()Lzk9;",
         "getLogger$annotations",
         "logger",
         "Config",
@@ -43,6 +43,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -94,14 +95,14 @@
     return-void
 .end method
 
-.method public static final getLogger()Lgg9;
+.method public static final getLogger()Lzk9;
     .locals 1
 
     invoke-static {}, Lone/me/sdk/media/ffmpeg/WebmConfig;->getConfig()Lone/me/sdk/media/ffmpeg/WebmConfig$Config;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lone/me/sdk/media/ffmpeg/WebmConfig$Config;->getLogger()Lgg9;
+    invoke-virtual {v0}, Lone/me/sdk/media/ffmpeg/WebmConfig$Config;->getLogger()Lzk9;
 
     move-result-object v0
 

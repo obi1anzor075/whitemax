@@ -1,51 +1,91 @@
-.class public final Lv3c;
-.super Ler3;
+.class public final enum Lv3c;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
+# static fields
+.field public static final enum b:Lv3c;
+
+.field public static final synthetic c:[Lv3c;
+
+.field public static final synthetic o:Ln25;
+
+
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Ly3c;
-
-.field public Z:I
-
-.field public o:Ly3c;
+.field public final a:I
 
 
 # direct methods
-.method public constructor <init>(Ly3c;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
-    iput-object p1, p0, Lv3c;->Y:Ly3c;
+    new-instance v0, Lv3c;
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    const-string v1, "EMOJI"
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2, v2}, Lv3c;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lv3c;->b:Lv3c;
+
+    new-instance v1, Lv3c;
+
+    const-string v2, "STICKER"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3, v3}, Lv3c;-><init>(Ljava/lang/String;II)V
+
+    filled-new-array {v0, v1}, [Lv3c;
+
+    move-result-object v0
+
+    sput-object v0, Lv3c;->c:[Lv3c;
+
+    new-instance v1, Ln25;
+
+    invoke-direct {v1, v0}, Ln25;-><init>([Ljava/lang/Enum;)V
+
+    sput-object v1, Lv3c;->o:Ln25;
 
     return-void
 .end method
 
+.method public constructor <init>(Ljava/lang/String;II)V
+    .locals 0
 
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iput-object p1, p0, Lv3c;->X:Ljava/lang/Object;
+    iput p3, p0, Lv3c;->a:I
 
-    iget p1, p0, Lv3c;->Z:I
+    return-void
+.end method
 
-    const/high16 v0, -0x80000000
+.method public static valueOf(Ljava/lang/String;)Lv3c;
+    .locals 1
 
-    or-int/2addr p1, v0
+    const-class v0, Lv3c;
 
-    iput p1, p0, Lv3c;->Z:I
-
-    iget-object p1, p0, Lv3c;->Y:Ly3c;
-
-    const-wide/16 v0, 0x0
-
-    invoke-static {p1, v0, v1, p0}, Ly3c;->s(Ly3c;JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
+    check-cast p0, Lv3c;
+
     return-object p0
+.end method
+
+.method public static values()[Lv3c;
+    .locals 1
+
+    sget-object v0, Lv3c;->c:[Lv3c;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lv3c;
+
+    return-object v0
 .end method

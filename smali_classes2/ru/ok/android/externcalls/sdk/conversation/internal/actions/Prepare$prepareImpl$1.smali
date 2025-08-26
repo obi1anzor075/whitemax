@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Llk0;
+.implements Lil0;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;->prepareImpl(ZLs16;)Ldhd;
+    value = Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;->prepareImpl(ZLv56;)Ltod;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,7 +24,7 @@
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
-        "Llk0;"
+        "Lil0;"
     }
 .end annotation
 
@@ -37,7 +37,7 @@
         "<anonymous parameter 0>",
         "",
         "error",
-        "Ljue;",
+        "Le5f;",
         "accept",
         "(Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareResult;Ljava/lang/Throwable;)V",
         "<anonymous>"
@@ -101,28 +101,27 @@
     .line 4
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$prepareImpl$1;->this$0:Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;
 
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;->access$getLog$p(Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;)Lxwb;
+    invoke-static {p0}, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;->access$getLog$p(Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;)Ls1c;
 
     move-result-object p0
 
     const-string v0, "Conversation prepare failed"
 
-    invoke-interface {p0, p1, v0, p2}, Lxwb;->logException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-interface {p0, p1, v0, p2}, Ls1c;->logException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    goto :goto_0
+    return-void
 
     .line 5
     :cond_0
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$prepareImpl$1;->this$0:Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;
 
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;->access$getLog$p(Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;)Lxwb;
+    invoke-static {p0}, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;->access$getLog$p(Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;)Ls1c;
 
     move-result-object p0
 
     const-string p2, "Conversation prepared"
 
-    invoke-interface {p0, p1, p2}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p0, p1, p2}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_0
     return-void
 .end method

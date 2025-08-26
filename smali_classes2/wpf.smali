@@ -1,93 +1,87 @@
 .class public final Lwpf;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Lkmf;
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Landroid/widget/TextView;
 
 
 # direct methods
-.method public constructor <init>(Lkmf;)V
+.method public constructor <init>(Landroid/widget/TextView;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lwpf;->Y:Landroid/widget/TextView;
 
-    iput-object p1, p0, Lwpf;->a:Lkmf;
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final postEvent(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 3
-    .annotation runtime Landroid/webkit/JavascriptInterface;
-    .end annotation
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object p0, p0, Lwpf;->a:Lkmf;
+    check-cast p1, Lyha;
 
-    iget-object p0, p0, Lkmf;->G0:Lb0d;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object v0, p0, Lb0d;->c:Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Lwpf;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    check-cast v0, Lpae;
+    move-result-object p0
 
-    check-cast v0, Ln3a;
+    check-cast p0, Lwpf;
 
-    invoke-virtual {v0}, Ln3a;->a()Lju3;
+    sget-object p1, Le5f;->a:Le5f;
 
-    move-result-object v0
+    invoke-virtual {p0, p1}, Lwpf;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v1, Lk57;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, p1, p2, p0, v2}, Lk57;-><init>(Ljava/lang/String;Ljava/lang/String;Lb0d;Lkotlin/coroutines/Continuation;)V
-
-    const/4 p1, 0x2
-
-    iget-object p0, p0, Lb0d;->b:Ljava/lang/Object;
-
-    check-cast p0, Lou3;
-
-    invoke-static {p0, v0, v2, v1, p1}, Lxs7;->E(Lou3;Lhu3;Lru3;Li26;I)Lqod;
-
-    return-void
+    return-object p1
 .end method
 
-.method public final resolveShare(Ljava/lang/String;[BLjava/lang/String;Ljava/lang/String;)V
-    .locals 8
-    .annotation runtime Landroid/webkit/JavascriptInterface;
-    .end annotation
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    iget-object p0, p0, Lwpf;->a:Lkmf;
+    new-instance v0, Lwpf;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p0, p0, Lwpf;->Y:Landroid/widget/TextView;
 
-    new-instance v7, Ldmf;
+    invoke-direct {v0, p0, p2}, Lwpf;-><init>(Landroid/widget/TextView;Lkotlin/coroutines/Continuation;)V
 
-    const/4 v6, 0x0
+    iput-object p1, v0, Lwpf;->X:Ljava/lang/Object;
 
-    move-object v0, v7
+    return-object v0
+.end method
 
-    move-object v1, p0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    move-object v2, p1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    move-object v3, p2
+    iget-object p1, p0, Lwpf;->X:Ljava/lang/Object;
 
-    move-object v4, p3
+    check-cast p1, Lyha;
 
-    move-object v5, p4
+    iget-object p0, p0, Lwpf;->Y:Landroid/widget/TextView;
 
-    invoke-direct/range {v0 .. v6}, Ldmf;-><init>(Lkmf;Ljava/lang/String;[BLjava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
+    invoke-virtual {p0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
-    const/4 p1, 0x3
+    move-result-object p0
 
-    const/4 p2, 0x0
+    if-eqz p0, :cond_0
 
-    invoke-static {p0, p2, p2, v7, p1}, Ltaf;->n(Ltaf;Lhu3;Lru3;Li26;I)Lqod;
+    invoke-static {p0, p1}, Lk3c;->f(Ljava/lang/CharSequence;Lyha;)V
 
-    return-void
+    :cond_0
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

@@ -1,112 +1,93 @@
 .class public final Lccb;
-.super Lncb;
+.super Lv64;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lp92;
+# static fields
+.field public static final b:Lccb;
+
+.field public static final c:Lr64;
+
+.field public static final d:Lr64;
+
+.field public static final e:Lr64;
+
+.field public static final f:Lr64;
 
 
 # direct methods
-.method public constructor <init>(Lp92;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 7
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lccb;
 
-    iput-object p1, p0, Lccb;->a:Lp92;
+    invoke-direct {v0}, Lv64;-><init>()V
+
+    sput-object v0, Lccb;->b:Lccb;
+
+    const-string v1, "id"
+
+    const-string v2, "type"
+
+    filled-new-array {v1, v2}, [Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, ":profile/edit"
+
+    const/4 v5, 0x0
+
+    const/16 v6, 0xe
+
+    invoke-static {v0, v4, v3, v5, v6}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v3
+
+    sput-object v3, Lccb;->c:Lr64;
+
+    const-string v3, ":profile/member_permissions"
+
+    filled-new-array {v1}, [Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v0, v3, v4, v5, v6}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v3
+
+    sput-object v3, Lccb;->d:Lr64;
+
+    const-string v3, "flow"
+
+    filled-new-array {v1, v2, v3}, [Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, ":profile/edit/link"
+
+    invoke-static {v0, v2, v1, v5, v6}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v1
+
+    sput-object v1, Lccb;->e:Lr64;
+
+    const-string v1, "contact_id"
+
+    const-string v2, "permissions_type"
+
+    const-string v3, "chat_id"
+
+    filled-new-array {v3, v1, v2}, [Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, ":profile/edit/admin_permission"
+
+    invoke-static {v0, v2, v1, v5, v6}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v0
+
+    sput-object v0, Lccb;->f:Lr64;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lccb;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lccb;
-
-    iget-object p0, p0, Lccb;->a:Lp92;
-
-    iget-object p1, p1, Lccb;->a:Lp92;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final getItemId()J
-    .locals 2
-
-    const/16 p0, 0x4000
-
-    int-to-long v0, p0
-
-    return-wide v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    iget-object p0, p0, Lccb;->a:Lp92;
-
-    invoke-virtual {p0}, Lp92;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final l()I
-    .locals 0
-
-    const/16 p0, 0x4000
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ChatLinkItem(model="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lccb;->a:Lp92;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

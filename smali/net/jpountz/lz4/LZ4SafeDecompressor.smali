@@ -104,20 +104,20 @@
     move-result p0
 
     .line 8
-    invoke-virtual {p1}, Ljava/nio/Buffer;->limit()I
+    invoke-virtual {v1}, Ljava/nio/Buffer;->limit()I
 
-    move-result v0
+    move-result p1
 
-    invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v1, p1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     .line 9
-    invoke-virtual {p2}, Ljava/nio/Buffer;->position()I
+    invoke-virtual {v4}, Ljava/nio/Buffer;->position()I
 
     move-result p1
 
     add-int/2addr p1, p0
 
-    invoke-virtual {p2, p1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v4, p1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     return-void
 .end method
@@ -125,12 +125,12 @@
 .method public final decompress([BI)[B
     .locals 2
 
+    const/4 v0, 0x0
+
     .line 6
-    array-length v0, p1
+    array-length v1, p1
 
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, p1, v1, v0, p2}, Lnet/jpountz/lz4/LZ4SafeDecompressor;->decompress([BIII)[B
+    invoke-virtual {p0, p1, v0, v1, p2}, Lnet/jpountz/lz4/LZ4SafeDecompressor;->decompress([BIII)[B
 
     move-result-object p0
 
@@ -138,10 +138,10 @@
 .end method
 
 .method public final decompress([BIII)[B
-    .locals 8
+    .locals 7
 
     .line 3
-    new-array v7, p4, [B
+    new-array v4, p4, [B
 
     const/4 v5, 0x0
 
@@ -153,8 +153,6 @@
 
     move v3, p3
 
-    move-object v4, v7
-
     move v6, p4
 
     .line 4
@@ -162,15 +160,17 @@
 
     move-result p0
 
-    if-eq p0, p4, :cond_0
+    if-eq p0, v6, :cond_0
 
     .line 5
-    invoke-static {v7, p0}, Ljava/util/Arrays;->copyOf([BI)[B
+    invoke-static {v4, p0}, Ljava/util/Arrays;->copyOf([BI)[B
 
-    move-result-object v7
+    move-result-object p0
+
+    return-object p0
 
     :cond_0
-    return-object v7
+    return-object v4
 .end method
 
 .method public toString()Ljava/lang/String;

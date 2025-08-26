@@ -3,23 +3,23 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lmhe;
+.implements Lppe;
 
 
 # static fields
-.field public static final synthetic P0:I
+.field public static final synthetic H0:I
 
 
 # instance fields
-.field public final K0:Landroid/widget/TextView;
+.field public final C0:Landroid/widget/TextView;
 
-.field public final L0:Landroid/widget/ImageView;
+.field public final D0:Landroid/widget/ImageView;
 
-.field public final M0:Landroid/widget/ImageView;
+.field public final E0:Landroid/widget/ImageView;
 
-.field public final N0:Landroid/widget/ProgressBar;
+.field public final F0:Landroid/widget/ProgressBar;
 
-.field public final O0:Landroid/view/View;
+.field public final G0:Landroid/view/View;
 
 
 # direct methods
@@ -30,11 +30,11 @@
 
     invoke-direct {p0, p1, p2, v0}, Landroidx/constraintlayout/widget/ConstraintLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    sget p2, Lzrb;->chat_msg_search_result_view:I
+    sget p2, Lqwb;->chat_msg_search_result_view:I
 
     invoke-static {p1, p2, p0}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    sget p1, Lyqb;->chat_msg_search_result_view__result:I
+    sget p1, Lpvb;->chat_msg_search_result_view__result:I
 
     invoke-virtual {p0, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -42,9 +42,9 @@
 
     check-cast p1, Landroid/widget/TextView;
 
-    iput-object p1, p0, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->K0:Landroid/widget/TextView;
+    iput-object p1, p0, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->C0:Landroid/widget/TextView;
 
-    sget p1, Lyqb;->chat_msg_search_result_view__next:I
+    sget p1, Lpvb;->chat_msg_search_result_view__next:I
 
     invoke-virtual {p0, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -52,19 +52,19 @@
 
     check-cast p1, Landroid/widget/ImageView;
 
-    iput-object p1, p0, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->L0:Landroid/widget/ImageView;
+    iput-object p1, p0, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->D0:Landroid/widget/ImageView;
 
-    new-instance p2, Ld5;
+    new-instance p2, Lb5;
 
     const/16 v0, 0x11
 
-    invoke-direct {p2, v0, p0}, Ld5;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p2, v0, p0}, Lb5;-><init>(ILjava/lang/Object;)V
 
     const-wide/16 v0, 0x64
 
-    invoke-static {p1, v0, v1, p2}, La24;->Z(Landroid/view/View;JLandroid/view/View$OnClickListener;)V
+    invoke-static {p1, v0, v1, p2}, Lu7;->P(Landroid/view/View;JLandroid/view/View$OnClickListener;)V
 
-    sget p1, Lyqb;->chat_msg_search_result_view__prev:I
+    sget p1, Lpvb;->chat_msg_search_result_view__prev:I
 
     invoke-virtual {p0, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -72,17 +72,17 @@
 
     check-cast p1, Landroid/widget/ImageView;
 
-    iput-object p1, p0, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->M0:Landroid/widget/ImageView;
+    iput-object p1, p0, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->E0:Landroid/widget/ImageView;
 
-    new-instance p2, Ld5;
+    new-instance p2, Lb5;
 
     const/16 v2, 0x11
 
-    invoke-direct {p2, v2, p0}, Ld5;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p2, v2, p0}, Lb5;-><init>(ILjava/lang/Object;)V
 
-    invoke-static {p1, v0, v1, p2}, La24;->Z(Landroid/view/View;JLandroid/view/View$OnClickListener;)V
+    invoke-static {p1, v0, v1, p2}, Lu7;->P(Landroid/view/View;JLandroid/view/View$OnClickListener;)V
 
-    sget p1, Lyqb;->chat_msg_search_result_view__pb_loading:I
+    sget p1, Lpvb;->chat_msg_search_result_view__pb_loading:I
 
     invoke-virtual {p0, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -90,76 +90,76 @@
 
     check-cast p1, Landroid/widget/ProgressBar;
 
-    iput-object p1, p0, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->N0:Landroid/widget/ProgressBar;
+    iput-object p1, p0, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->F0:Landroid/widget/ProgressBar;
 
-    sget p1, Lyqb;->chat_msg_search_result_view_next_prev_separator:I
+    sget p1, Lpvb;->chat_msg_search_result_view_next_prev_separator:I
 
     invoke-virtual {p0, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object p1
 
-    iput-object p1, p0, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->O0:Landroid/view/View;
+    iput-object p1, p0, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->G0:Landroid/view/View;
 
-    invoke-virtual {p0}, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->c()V
+    invoke-virtual {p0}, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->e()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c()V
-    .locals 6
+.method public final e()V
+    .locals 5
 
-    sget-object v0, Lkm4;->y0:Ls59;
+    sget-object v0, Lqp4;->q0:Lap9;
 
-    invoke-virtual {v0, p0}, Ls59;->r(Landroid/view/View;)Lpda;
+    invoke-virtual {v0, p0}, Lap9;->h(Landroid/view/View;)Lyha;
 
     move-result-object v1
 
-    invoke-interface {v1}, Lpda;->a()Ljo2;
+    invoke-interface {v1}, Lyha;->a()Ldq2;
 
     move-result-object v2
 
-    invoke-interface {v2}, Ljo2;->d()Lavf;
+    invoke-interface {v2}, Ldq2;->j()Llag;
 
     move-result-object v2
 
-    iget-object v2, v2, Lavf;->a:Lzuf;
+    iget-object v2, v2, Llag;->a:Lkag;
 
-    iget v2, v2, Lzuf;->a:I
+    iget v2, v2, Lkag;->d:I
 
     invoke-virtual {p0, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    iget-object v2, p0, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->L0:Landroid/widget/ImageView;
+    iget-object v2, p0, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->D0:Landroid/widget/ImageView;
 
     invoke-virtual {v2}, Landroid/view/View;->isEnabled()Z
 
     move-result v3
 
-    xor-int/lit8 v4, v3, 0x1
-
-    invoke-virtual {v0, p0}, Ls59;->r(Landroid/view/View;)Lpda;
-
-    move-result-object v5
-
-    if-eqz v4, :cond_0
-
-    invoke-interface {v5}, Lpda;->c()Lord;
+    invoke-virtual {v0, p0}, Lap9;->h(Landroid/view/View;)Lyha;
 
     move-result-object v4
 
-    iget-object v4, v4, Lord;->b:Lprd;
+    if-nez v3, :cond_0
 
-    iget v4, v4, Lprd;->f:I
+    invoke-interface {v4}, Lyha;->c()Lkzd;
+
+    move-result-object v4
+
+    iget-object v4, v4, Lkzd;->b:Llzd;
+
+    iget-object v4, v4, Llzd;->a:Lmzd;
+
+    iget v4, v4, Lmzd;->f:I
 
     goto :goto_0
 
     :cond_0
-    invoke-interface {v5}, Lpda;->getIcon()Lyn6;
+    invoke-interface {v4}, Lyha;->getIcon()Lds6;
 
     move-result-object v4
 
-    iget v4, v4, Lyn6;->f:I
+    iget v4, v4, Lds6;->f:I
 
     :goto_0
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setColorFilter(I)V
@@ -170,36 +170,36 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    iget-object v2, p0, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->M0:Landroid/widget/ImageView;
+    iget-object v2, p0, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->E0:Landroid/widget/ImageView;
 
     invoke-virtual {v2}, Landroid/view/View;->isEnabled()Z
 
     move-result v4
 
-    xor-int/lit8 v5, v4, 0x1
-
-    invoke-virtual {v0, p0}, Ls59;->r(Landroid/view/View;)Lpda;
+    invoke-virtual {v0, p0}, Lap9;->h(Landroid/view/View;)Lyha;
 
     move-result-object v0
 
-    if-eqz v5, :cond_1
+    if-nez v4, :cond_1
 
-    invoke-interface {v0}, Lpda;->c()Lord;
+    invoke-interface {v0}, Lyha;->c()Lkzd;
 
     move-result-object v0
 
-    iget-object v0, v0, Lord;->b:Lprd;
+    iget-object v0, v0, Lkzd;->b:Llzd;
 
-    iget v0, v0, Lprd;->f:I
+    iget-object v0, v0, Llzd;->a:Lmzd;
+
+    iget v0, v0, Lmzd;->f:I
 
     goto :goto_1
 
     :cond_1
-    invoke-interface {v0}, Lpda;->getIcon()Lyn6;
+    invoke-interface {v0}, Lyha;->getIcon()Lds6;
 
     move-result-object v0
 
-    iget v0, v0, Lyn6;->f:I
+    iget v0, v0, Lds6;->f:I
 
     :goto_1
     invoke-virtual {v2, v0}, Landroid/widget/ImageView;->setColorFilter(I)V
@@ -208,45 +208,49 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    const v0, -0xff8501
-
-    iget-object v2, p0, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->N0:Landroid/widget/ProgressBar;
-
-    invoke-static {v2, v0}, Ljs;->E(Landroid/widget/ProgressBar;I)V
-
-    sget-object v0, Lnte;->k:Lnge;
-
-    sget-object v2, Lyq4;->b:Lyq4;
-
-    iget-object v3, p0, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->K0:Landroid/widget/TextView;
-
-    invoke-virtual {v0, v3, v2}, Lnge;->b(Landroid/widget/TextView;Lyq4;)V
-
-    invoke-interface {v1}, Lpda;->getText()Lcfe;
+    invoke-interface {v1}, Lyha;->e()Lx3;
 
     move-result-object v0
 
-    iget v0, v0, Lcfe;->g:I
+    iget v0, v0, Lx3;->c:I
+
+    iget-object v2, p0, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->F0:Landroid/widget/ProgressBar;
+
+    invoke-static {v2, v0}, Lgad;->k0(Landroid/widget/ProgressBar;I)V
+
+    sget-object v0, Lh4f;->l:Lnoe;
+
+    sget-object v2, Lyt4;->b:Lyt4;
+
+    iget-object v3, p0, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->C0:Landroid/widget/TextView;
+
+    invoke-virtual {v0, v3, v2}, Lnoe;->b(Landroid/widget/TextView;Lyt4;)V
+
+    invoke-interface {v1}, Lyha;->getText()Lane;
+
+    move-result-object v0
+
+    iget v0, v0, Lane;->h:I
 
     invoke-virtual {v3, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    invoke-interface {v1}, Lpda;->getIcon()Lyn6;
+    invoke-interface {v1}, Lyha;->getIcon()Lds6;
 
     move-result-object v0
 
-    iget v0, v0, Lyn6;->g:I
+    iget v0, v0, Lds6;->h:I
 
-    iget-object p0, p0, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->O0:Landroid/view/View;
+    iget-object p0, p0, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->G0:Landroid/view/View;
 
     invoke-virtual {p0, v0}, Landroid/view/View;->setBackgroundColor(I)V
 
     return-void
 .end method
 
-.method public final onThemeChanged(Lpda;)V
+.method public final onThemeChanged(Lyha;)V
     .locals 0
 
-    invoke-virtual {p0}, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->c()V
+    invoke-virtual {p0}, Lru/ok/messages/messages/widgets/ChatMsgSearchResultView;->e()V
 
     return-void
 .end method

@@ -1,64 +1,41 @@
 .class public final Lu6d;
-.super Ljava/lang/Object;
+.super Lk7d;
 .source "SourceFile"
 
-# interfaces
-.implements Lv6d;
 
+# instance fields
+.field public final g:J
 
-# static fields
-.field public static final a:Lu6d;
+.field public final h:J
+
+.field public final i:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(JJJ)V
+    .locals 2
 
-    new-instance v0, Lu6d;
+    const-wide/16 v0, 0x0
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, v0, v1}, Lk7d;-><init>(J)V
 
-    sput-object v0, Lu6d;->a:Lu6d;
+    iput-wide p1, p0, Lu6d;->g:J
+
+    iput-wide p3, p0, Lu6d;->h:J
+
+    iput-wide p5, p0, Lu6d;->i:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final a()Ll7d;
     .locals 1
 
-    const/4 v0, 0x1
+    new-instance v0, Lv6d;
 
-    if-ne p0, p1, :cond_0
+    invoke-direct {v0, p0}, Lv6d;-><init>(Lu6d;)V
 
-    return v0
-
-    :cond_0
-    instance-of p0, p1, Lu6d;
-
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    const p0, 0x589f1ca
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    const-string p0, "Alert"
-
-    return-object p0
+    return-object v0
 .end method

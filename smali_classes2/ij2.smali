@@ -1,172 +1,227 @@
-.class public final synthetic Lij2;
-.super Ljava/lang/Object;
+.class public final Lij2;
+.super Llje;
 .source "SourceFile"
-
-# interfaces
-.implements Ls16;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:Lfr8;
 
-.field public final synthetic b:Lone/me/notifications/settings/screens/chat/ChatNotificationsSettingsScreen;
+.field public Y:Ljava/util/List;
+
+.field public o:Lz42;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/notifications/settings/screens/chat/ChatNotificationsSettingsScreen;I)V
+.method public constructor <init>(Ldx8;)V
     .locals 0
 
-    iput p2, p0, Lij2;->a:I
+    invoke-direct {p0, p1}, Llje;-><init>(Ldx8;)V
 
-    iput-object p1, p0, Lij2;->b:Lone/me/notifications/settings/screens/chat/ChatNotificationsSettingsScreen;
+    iget-object p1, p0, Lij2;->Y:Ljava/util/List;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    if-nez p1, :cond_0
 
+    sget-object p1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+
+    iput-object p1, p0, Lij2;->Y:Ljava/util/List;
+
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 8
+.method public final c(Ldx8;Ljava/lang/String;)V
+    .locals 4
 
-    const/16 v0, 0xc
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const/4 v1, 0x6
+    invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
 
-    iget-object v2, p0, Lij2;->b:Lone/me/notifications/settings/screens/chat/ChatNotificationsSettingsScreen;
+    move-result v0
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
-    iget p0, p0, Lij2;->a:I
+    const/4 v2, -0x1
 
-    packed-switch p0, :pswitch_data_0
+    sparse-switch v0, :sswitch_data_0
 
-    sget-object p0, Lone/me/notifications/settings/screens/chat/ChatNotificationsSettingsScreen;->Y:[Lk77;
+    goto :goto_0
 
-    new-instance p0, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;
+    :sswitch_0
+    const-string v0, "message"
 
-    invoke-virtual {v2}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v4
+    move-result p2
 
-    const/4 v5, 0x0
+    if-nez p2, :cond_0
 
-    invoke-direct {p0, v4, v5, v1}, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    goto :goto_0
 
-    sget v1, Lq7a;->c:I
+    :cond_0
+    const/4 v2, 0x2
 
-    invoke-virtual {p0, v1}, Landroid/view/View;->setId(I)V
+    goto :goto_0
 
-    new-instance v1, Landroid/view/ViewGroup$LayoutParams;
+    :sswitch_1
+    const-string v0, "chat"
 
-    const/4 v4, -0x1
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-direct {v1, v4, v4}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+    move-result p2
 
-    invoke-virtual {p0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    if-nez p2, :cond_1
 
-    new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
+    goto :goto_0
 
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    :cond_1
+    const/4 v2, 0x1
 
-    invoke-direct {v1}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>()V
+    goto :goto_0
 
-    invoke-virtual {p0, v1}, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;->setLayoutManager(Landroidx/recyclerview/widget/a;)V
+    :sswitch_2
+    const-string v0, "deletedMessageIds"
 
-    const/4 v1, 0x2
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {p0, v1}, Landroid/view/View;->setOverScrollMode(I)V
+    move-result p2
 
-    iget-object v1, v2, Lone/me/notifications/settings/screens/chat/ChatNotificationsSettingsScreen;->c:Lg7d;
+    if-nez p2, :cond_2
 
-    invoke-virtual {p0, v1}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->setAdapter(Lf6c;)V
+    goto :goto_0
 
-    new-instance v4, Lzx1;
+    :cond_2
+    move v2, v1
 
-    invoke-direct {v4, v0, v2}, Lzx1;-><init>(ILjava/lang/Object;)V
+    :goto_0
+    packed-switch v2, :pswitch_data_0
 
-    new-instance v6, Lqtc;
+    invoke-virtual {p1}, Ldx8;->B()V
 
-    sget-object v7, Lkm4;->y0:Ls59;
-
-    invoke-virtual {v7, p0}, Ls59;->r(Landroid/view/View;)Lpda;
-
-    move-result-object v7
-
-    invoke-direct {v6, v7, v4, v5, v0}, Lqtc;-><init>(Lpda;Lotc;Lo8;I)V
-
-    invoke-virtual {p0, v6}, Landroidx/recyclerview/widget/RecyclerView;->j(Ll6c;)V
-
-    new-instance v0, Lvi2;
-
-    invoke-direct {v0, v3}, Lvi2;-><init>(I)V
-
-    invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/RecyclerView;->j(Ll6c;)V
-
-    new-instance v0, Lhj2;
-
-    new-instance v4, Lka;
-
-    const/4 v6, 0x5
-
-    invoke-direct {v4, v2, v6, p0}, Lka;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-direct {v0, v3, v4}, Lhj2;-><init>(ILu16;)V
-
-    new-instance v2, Lryd;
-
-    invoke-direct {v2, p0, v1, v0}, Lryd;-><init>(Landroidx/recyclerview/widget/RecyclerView;Lf6c;Lsyd;)V
-
-    invoke-virtual {p0, v2}, Landroidx/recyclerview/widget/RecyclerView;->j(Ll6c;)V
-
-    new-instance v0, Ljj2;
-
-    invoke-direct {v0, v2, v5, v3}, Ljj2;-><init>(Lryd;Lkotlin/coroutines/Continuation;I)V
-
-    invoke-static {v0, p0}, Lurd;->B(Lk26;Landroid/view/View;)V
-
-    return-object p0
+    return-void
 
     :pswitch_0
-    sget-object p0, Lone/me/notifications/settings/screens/chat/ChatNotificationsSettingsScreen;->Y:[Lk77;
+    invoke-static {p1}, Lod7;->C(Ldx8;)Lfr8;
 
-    new-instance p0, Lnea;
+    move-result-object p1
 
-    invoke-virtual {v2}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+    iput-object p1, p0, Lij2;->X:Lfr8;
 
-    move-result-object v0
+    return-void
 
-    invoke-direct {p0, v0, v1}, Lnea;-><init>(Landroid/content/Context;I)V
+    :pswitch_1
+    invoke-static {p1}, Lz42;->d(Ldx8;)Lz42;
 
-    sget v0, Lq7a;->e:I
+    move-result-object p1
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setId(I)V
+    iput-object p1, p0, Lij2;->o:Lz42;
 
-    sget-object v0, Lfea;->a:Lfea;
+    return-void
 
-    invoke-virtual {p0, v0}, Lnea;->setForm(Lfea;)V
+    :pswitch_2
+    invoke-virtual {p1}, Ldx8;->n()Lxt8;
 
-    sget v0, Lr7a;->d:I
+    move-result-object p2
 
-    invoke-virtual {p0, v0}, Lnea;->setTitle(I)V
+    invoke-virtual {p2}, Lxt8;->a()I
 
-    new-instance v0, Lvda;
+    move-result p2
 
-    new-instance v1, Lhd1;
+    const/4 v0, 0x7
 
-    const/16 v2, 0x13
+    if-ne p2, v0, :cond_3
 
-    invoke-direct {v1, v2}, Lhd1;-><init>(I)V
+    new-instance p2, Ljava/util/ArrayList;
 
-    invoke-direct {v0, v1}, Lvda;-><init>(Lu16;)V
+    invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-virtual {p0, v0}, Lnea;->setLeftActions(Lbea;)V
+    invoke-virtual {p1}, Ldx8;->w0()I
 
-    return-object p0
+    move-result v0
+
+    :goto_1
+    if-ge v1, v0, :cond_4
+
+    const-wide/16 v2, 0x0
+
+    invoke-static {p1, v2, v3}, Lxq7;->c0(Ldx8;J)J
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    invoke-virtual {p2, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
+
+    :cond_3
+    invoke-virtual {p1}, Ldx8;->B()V
+
+    const/4 p2, 0x0
+
+    :cond_4
+    iput-object p2, p0, Lij2;->Y:Ljava/util/List;
+
+    return-void
+
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        -0x223131d6 -> :sswitch_2
+        0x2e9358 -> :sswitch_1
+        0x38eb0007 -> :sswitch_0
+    .end sparse-switch
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
         :pswitch_0
     .end packed-switch
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 4
+
+    iget-object v0, p0, Lij2;->o:Lz42;
+
+    iget-object v1, p0, Lij2;->X:Lfr8;
+
+    iget-object p0, p0, Lij2;->Y:Ljava/util/List;
+
+    invoke-static {p0}, Lzx7;->n(Ljava/util/Collection;)I
+
+    move-result p0
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "{chat="
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", message="
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", deletedMessageIds="
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-static {v2, p0, v0}, Lm26;->i(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

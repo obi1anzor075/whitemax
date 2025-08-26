@@ -1,87 +1,60 @@
 .class public abstract Lgtb;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # static fields
-.field public static abc_action_bar_home_description:I = 0x7f130001
+.field public static call_history_empty:I = 0x7f0a0165
 
-.field public static abc_action_bar_up_description:I = 0x7f130002
+.field public static call_history_info_copy_link:I = 0x7f0a0166
 
-.field public static abc_action_menu_overflow_description:I = 0x7f130003
+.field public static call_history_info_open_chat_call:I = 0x7f0a0167
 
-.field public static abc_action_mode_done:I = 0x7f130004
+.field public static call_history_info_recreate:I = 0x7f0a0168
 
-.field public static abc_activity_chooser_view_see_all:I = 0x7f130005
+.field public static call_history_info_send_to_chat:I = 0x7f0a0169
 
-.field public static abc_activitychooserview_choose_application:I = 0x7f130006
+.field public static call_history_info_share_link:I = 0x7f0a016a
 
-.field public static abc_capital_off:I = 0x7f130007
+.field public static call_history_info_start_call:I = 0x7f0a016b
 
-.field public static abc_capital_on:I = 0x7f130008
+.field public static call_history_list:I = 0x7f0a016c
 
-.field public static abc_menu_alt_shortcut_label:I = 0x7f130009
+.field public static call_history_page_empty:I = 0x7f0a016d
 
-.field public static abc_menu_ctrl_shortcut_label:I = 0x7f13000a
+.field public static call_history_pager:I = 0x7f0a016e
 
-.field public static abc_menu_delete_shortcut_label:I = 0x7f13000b
+.field public static call_history_screen_banner:I = 0x7f0a016f
 
-.field public static abc_menu_enter_shortcut_label:I = 0x7f13000c
+.field public static call_history_screen_contact_call:I = 0x7f0a0170
 
-.field public static abc_menu_function_shortcut_label:I = 0x7f13000d
+.field public static call_history_screen_container:I = 0x7f0a0171
 
-.field public static abc_menu_meta_shortcut_label:I = 0x7f13000e
+.field public static call_history_screen_group_call:I = 0x7f0a0172
 
-.field public static abc_menu_shift_shortcut_label:I = 0x7f13000f
+.field public static call_history_screen_toolbar:I = 0x7f0a0173
 
-.field public static abc_menu_space_shortcut_label:I = 0x7f130010
+.field public static call_history_tabs:I = 0x7f0a0174
 
-.field public static abc_menu_sym_shortcut_label:I = 0x7f130011
+.field public static call_info_action_list:I = 0x7f0a017e
 
-.field public static abc_prepend_shortcut_label:I = 0x7f130012
+.field public static call_info_action_vh:I = 0x7f0a017f
 
-.field public static abc_search_hint:I = 0x7f130013
+.field public static call_info_appbarlayout:I = 0x7f0a0182
 
-.field public static abc_searchview_description_clear:I = 0x7f130014
+.field public static call_info_button:I = 0x7f0a0183
 
-.field public static abc_searchview_description_query:I = 0x7f130015
+.field public static call_info_collapsiblecontainerlinearlayout:I = 0x7f0a0184
 
-.field public static abc_searchview_description_search:I = 0x7f130016
+.field public static call_info_coordinator_layout:I = 0x7f0a0185
 
-.field public static abc_searchview_description_submit:I = 0x7f130017
+.field public static call_info_description:I = 0x7f0a0186
 
-.field public static abc_searchview_description_voice:I = 0x7f130018
+.field public static call_info_icon:I = 0x7f0a0187
 
-.field public static abc_shareactionprovider_share_with:I = 0x7f130019
+.field public static call_info_link_state:I = 0x7f0a0188
 
-.field public static abc_shareactionprovider_share_with_application:I = 0x7f13001a
+.field public static call_info_onemetoolbar:I = 0x7f0a0189
 
-.field public static abc_toolbar_collapse_description:I = 0x7f13001b
+.field public static call_info_title:I = 0x7f0a018a
 
-.field public static confirm_device_credential_password:I = 0x7f1303c6
-
-.field public static default_error_msg:I = 0x7f130414
-
-.field public static fingerprint_dialog_touch_sensor:I = 0x7f1304d9
-
-.field public static fingerprint_error_hw_not_available:I = 0x7f1304da
-
-.field public static fingerprint_error_hw_not_present:I = 0x7f1304db
-
-.field public static fingerprint_error_lockout:I = 0x7f1304dc
-
-.field public static fingerprint_error_no_fingerprints:I = 0x7f1304dd
-
-.field public static fingerprint_error_user_canceled:I = 0x7f1304de
-
-.field public static fingerprint_not_recognized:I = 0x7f1304df
-
-.field public static generic_error_no_device_credential:I = 0x7f130557
-
-.field public static generic_error_no_keyguard:I = 0x7f130558
-
-.field public static generic_error_user_canceled:I = 0x7f130559
-
-.field public static search_menu_title:I = 0x7f130bda
-
-.field public static status_bar_notification_info_overflow:I = 0x7f130c37
+.field public static oneme_calllist_fragment_container:I = 0x7f0a0635

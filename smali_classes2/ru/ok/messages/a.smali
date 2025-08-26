@@ -1,126 +1,96 @@
 .class public final Lru/ok/messages/a;
-.super Liuf;
+.super Lt9g;
 .source "SourceFile"
 
 
 # instance fields
-.field public final b:Lt97;
+.field public final b:Lje7;
 
-.field public final c:Lt97;
+.field public final c:Lje7;
 
-.field public final d:Lt97;
+.field public final d:Lje7;
 
-.field public final e:Lt97;
+.field public final e:Lje7;
 
-.field public final f:Lt97;
+.field public final f:Lje7;
 
-.field public final g:Lt97;
+.field public final g:Lje7;
 
-.field public final h:Lt97;
+.field public final h:Lje7;
 
-.field public final i:Lt97;
+.field public final i:Lje7;
 
-.field public final j:Lt97;
+.field public final j:Lje7;
 
-.field public final k:Lt97;
+.field public final k:Lje7;
 
-.field public final l:Lt97;
+.field public final l:Lje7;
 
-.field public final m:Lt97;
+.field public final m:Lje7;
 
-.field public final n:Lt97;
+.field public final n:Lje7;
 
-.field public final o:Lt97;
+.field public final o:Lje7;
 
-.field public final p:Lt97;
+.field public final p:Lje7;
 
-.field public final q:Lt97;
+.field public final q:Lje7;
 
-.field public final r:Lt97;
+.field public final r:Lje7;
 
 
 # direct methods
-.method public constructor <init>(Lt97;Lt97;Lt97;Lt97;Lt97;Lt97;Lt97;Lt97;Lt97;Lt97;Lt97;Lt97;Lt97;Lt97;Lt97;Lt97;Lt97;)V
-    .locals 2
-
-    move-object v0, p0
+.method public constructor <init>(Lje7;Lje7;Lje7;Lje7;Lje7;Lje7;Lje7;Lje7;Lje7;Lje7;Lje7;Lje7;Lje7;Lje7;Lje7;Lje7;Lje7;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object/from16 v1, p17
+    move-object/from16 v0, p17
 
-    iput-object v1, v0, Lru/ok/messages/a;->b:Lt97;
+    iput-object v0, p0, Lru/ok/messages/a;->b:Lje7;
 
-    move-object v1, p1
+    iput-object p1, p0, Lru/ok/messages/a;->c:Lje7;
 
-    iput-object v1, v0, Lru/ok/messages/a;->c:Lt97;
+    iput-object p2, p0, Lru/ok/messages/a;->d:Lje7;
 
-    move-object v1, p2
+    iput-object p3, p0, Lru/ok/messages/a;->e:Lje7;
 
-    iput-object v1, v0, Lru/ok/messages/a;->d:Lt97;
+    iput-object p4, p0, Lru/ok/messages/a;->f:Lje7;
 
-    move-object v1, p3
+    iput-object p5, p0, Lru/ok/messages/a;->g:Lje7;
 
-    iput-object v1, v0, Lru/ok/messages/a;->e:Lt97;
+    iput-object p6, p0, Lru/ok/messages/a;->h:Lje7;
 
-    move-object v1, p4
+    iput-object p7, p0, Lru/ok/messages/a;->i:Lje7;
 
-    iput-object v1, v0, Lru/ok/messages/a;->f:Lt97;
+    iput-object p8, p0, Lru/ok/messages/a;->j:Lje7;
 
-    move-object v1, p5
+    iput-object p9, p0, Lru/ok/messages/a;->k:Lje7;
 
-    iput-object v1, v0, Lru/ok/messages/a;->g:Lt97;
+    iput-object p10, p0, Lru/ok/messages/a;->l:Lje7;
 
-    move-object v1, p6
+    iput-object p11, p0, Lru/ok/messages/a;->m:Lje7;
 
-    iput-object v1, v0, Lru/ok/messages/a;->h:Lt97;
+    iput-object p12, p0, Lru/ok/messages/a;->n:Lje7;
 
-    move-object v1, p7
+    iput-object p13, p0, Lru/ok/messages/a;->o:Lje7;
 
-    iput-object v1, v0, Lru/ok/messages/a;->i:Lt97;
+    iput-object p14, p0, Lru/ok/messages/a;->p:Lje7;
 
-    move-object v1, p8
+    move-object/from16 p1, p15
 
-    iput-object v1, v0, Lru/ok/messages/a;->j:Lt97;
+    iput-object p1, p0, Lru/ok/messages/a;->q:Lje7;
 
-    move-object v1, p9
+    move-object/from16 p1, p16
 
-    iput-object v1, v0, Lru/ok/messages/a;->k:Lt97;
-
-    move-object v1, p10
-
-    iput-object v1, v0, Lru/ok/messages/a;->l:Lt97;
-
-    move-object v1, p11
-
-    iput-object v1, v0, Lru/ok/messages/a;->m:Lt97;
-
-    move-object v1, p12
-
-    iput-object v1, v0, Lru/ok/messages/a;->n:Lt97;
-
-    move-object v1, p13
-
-    iput-object v1, v0, Lru/ok/messages/a;->o:Lt97;
-
-    move-object/from16 v1, p14
-
-    iput-object v1, v0, Lru/ok/messages/a;->p:Lt97;
-
-    move-object/from16 v1, p15
-
-    iput-object v1, v0, Lru/ok/messages/a;->q:Lt97;
-
-    move-object/from16 v1, p16
-
-    iput-object v1, v0, Lru/ok/messages/a;->r:Lt97;
+    iput-object p1, p0, Lru/ok/messages/a;->r:Lje7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;Ljava/lang/String;Landroidx/work/WorkerParameters;)Lhh7;
+.method public final a(Landroid/content/Context;Ljava/lang/String;Landroidx/work/WorkerParameters;)Lgm7;
     .locals 12
 
     const-class v0, Lru/ok/messages/analytics/DailyAnalyticsWorker;
@@ -133,300 +103,290 @@
 
     move-result v0
 
-    iget-object v1, p0, Lru/ok/messages/a;->d:Lt97;
+    iget-object v1, p0, Lru/ok/messages/a;->d:Lje7;
 
     if-eqz v0, :cond_0
 
-    new-instance p2, Lru/ok/messages/analytics/DailyAnalyticsWorker;
+    new-instance v2, Lru/ok/messages/analytics/DailyAnalyticsWorker;
 
-    iget-object v0, p0, Lru/ok/messages/a;->c:Lt97;
+    iget-object p2, p0, Lru/ok/messages/a;->c:Lje7;
 
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {p2}, Lje7;->getValue()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p2
 
-    move-object v5, v0
+    move-object v5, p2
 
-    check-cast v5, Lbd;
+    check-cast v5, Luc;
 
-    invoke-interface {v1}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v6, v0
-
-    check-cast v6, Lfp;
-
-    iget-object v0, p0, Lru/ok/messages/a;->e:Lt97;
-
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v7, v0
-
-    check-cast v7, Led3;
-
-    iget-object v0, p0, Lru/ok/messages/a;->f:Lt97;
-
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v8, v0
-
-    check-cast v8, Ltf4;
-
-    iget-object v0, p0, Lru/ok/messages/a;->g:Lt97;
-
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v9, v0
-
-    check-cast v9, Lezd;
-
-    iget-object v0, p0, Lru/ok/messages/a;->r:Lt97;
-
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v10, v0
-
-    check-cast v10, Lmna;
-
-    iget-object v11, p0, Lru/ok/messages/a;->b:Lt97;
-
-    move-object v2, p2
-
-    move-object v3, p1
-
-    move-object v4, p3
-
-    invoke-direct/range {v2 .. v11}, Lru/ok/messages/analytics/DailyAnalyticsWorker;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Lbd;Lfp;Led3;Ltf4;Lezd;Lmna;Lt97;)V
-
-    goto/16 :goto_0
-
-    :cond_0
-    const-class v0, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    iget-object v2, p0, Lru/ok/messages/a;->h:Lt97;
-
-    if-eqz v0, :cond_1
-
-    iget-object p2, p0, Lru/ok/messages/a;->i:Lt97;
-
-    invoke-interface {p2}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {v1}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object p2
 
     move-object v6, p2
 
-    check-cast v6, Ljee;
+    check-cast v6, Luo;
 
-    iget-object p2, p0, Lru/ok/messages/a;->j:Lt97;
+    iget-object p2, p0, Lru/ok/messages/a;->e:Lje7;
 
-    invoke-interface {p2}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {p2}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    move-object v7, p2
+
+    check-cast v7, Ldh3;
+
+    iget-object p2, p0, Lru/ok/messages/a;->f:Lje7;
+
+    invoke-interface {p2}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object p2
 
     move-object v8, p2
 
-    check-cast v8, Lluf;
+    check-cast v8, Lwi4;
 
-    invoke-interface {v2}, Lt97;->getValue()Ljava/lang/Object;
+    iget-object p2, p0, Lru/ok/messages/a;->g:Lje7;
+
+    invoke-interface {p2}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object p2
 
-    check-cast p2, Lg2b;
+    move-object v9, p2
 
-    check-cast p2, Lj2b;
+    check-cast v9, Lh7e;
 
-    iget-object v9, p2, Lj2b;->a:Li03;
+    iget-object p2, p0, Lru/ok/messages/a;->r:Lje7;
 
-    iget-object p0, p0, Lru/ok/messages/a;->q:Lt97;
+    invoke-interface {p2}, Lje7;->getValue()Ljava/lang/Object;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    move-result-object p2
+
+    move-object v10, p2
+
+    check-cast v10, Lqra;
+
+    iget-object v11, p0, Lru/ok/messages/a;->b:Lje7;
+
+    move-object v3, p1
+
+    move-object v4, p3
+
+    invoke-direct/range {v2 .. v11}, Lru/ok/messages/analytics/DailyAnalyticsWorker;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Luc;Luo;Ldh3;Lwi4;Lh7e;Lqra;Lje7;)V
+
+    return-object v2
+
+    :cond_0
+    move-object v4, p1
+
+    move-object v5, p3
+
+    const-class p1, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p2, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    iget-object p3, p0, Lru/ok/messages/a;->h:Lje7;
+
+    if-eqz p1, :cond_1
+
+    iget-object p1, p0, Lru/ok/messages/a;->i:Lje7;
+
+    invoke-interface {p1}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    move-object v6, p1
+
+    check-cast v6, Lhme;
+
+    iget-object p1, p0, Lru/ok/messages/a;->j:Lje7;
+
+    invoke-interface {p1}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    move-object v8, p1
+
+    check-cast v8, Lw9g;
+
+    invoke-interface {p3}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lx4b;
+
+    check-cast p1, La5b;
+
+    iget-object v9, p1, La5b;->a:Lj23;
+
+    iget-object p0, p0, Lru/ok/messages/a;->q:Lje7;
+
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
     move-object v7, p0
 
-    check-cast v7, Lmbe;
+    check-cast v7, Lmje;
 
-    new-instance p2, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;
+    new-instance v3, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;
 
-    move-object v3, p2
+    invoke-direct/range {v3 .. v9}, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Lhme;Lmje;Lw9g;Lh23;)V
 
-    move-object v4, p1
-
-    move-object v5, p3
-
-    invoke-direct/range {v3 .. v9}, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Ljee;Lmbe;Lluf;Lf03;)V
-
-    goto/16 :goto_0
+    return-object v3
 
     :cond_1
-    const-class v0, Lru/ok/tamtam/android/services/HeartbeatScheduler$TaskHeartbeatWorker;
+    const-class p1, Lru/ok/tamtam/android/services/HeartbeatScheduler$TaskHeartbeatWorker;
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {p2, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p2, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result p1
 
-    if-eqz v0, :cond_2
+    if-eqz p1, :cond_2
 
-    new-instance p2, Lru/ok/tamtam/android/services/HeartbeatScheduler$TaskHeartbeatWorker;
+    new-instance p1, Lru/ok/tamtam/android/services/HeartbeatScheduler$TaskHeartbeatWorker;
 
-    iget-object p0, p0, Lru/ok/messages/a;->k:Lt97;
+    iget-object p0, p0, Lru/ok/messages/a;->k:Lje7;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lmf6;
+    check-cast p0, Lak6;
 
-    invoke-direct {p2, p1, p3, p0}, Lru/ok/tamtam/android/services/HeartbeatScheduler$TaskHeartbeatWorker;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Lmf6;)V
+    invoke-direct {p1, v4, v5, p0}, Lru/ok/tamtam/android/services/HeartbeatScheduler$TaskHeartbeatWorker;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Lak6;)V
 
-    goto/16 :goto_0
+    return-object p1
 
     :cond_2
-    const-class v0, Lru/ok/messages/TimeChangeReceiver$TaskTimeChangeWorker;
+    const-class p1, Lru/ok/messages/TimeChangeReceiver$TaskTimeChangeWorker;
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {p2, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p2, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result p1
 
-    if-eqz v0, :cond_3
+    if-eqz p1, :cond_3
 
-    new-instance p2, Lru/ok/messages/TimeChangeReceiver$TaskTimeChangeWorker;
+    new-instance v3, Lru/ok/messages/TimeChangeReceiver$TaskTimeChangeWorker;
 
-    iget-object v0, p0, Lru/ok/messages/a;->l:Lt97;
+    iget-object p1, p0, Lru/ok/messages/a;->l:Lje7;
 
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {p1}, Lje7;->getValue()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p1
 
-    move-object v6, v0
+    move-object v6, p1
 
-    check-cast v6, Ln1b;
+    check-cast v6, Lf4b;
 
-    iget-object v0, p0, Lru/ok/messages/a;->m:Lt97;
+    iget-object p1, p0, Lru/ok/messages/a;->m:Lje7;
 
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {p1}, Lje7;->getValue()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p1
 
-    move-object v7, v0
+    move-object v7, p1
 
-    check-cast v7, Lt52;
+    check-cast v7, Ln82;
 
-    iget-object v0, p0, Lru/ok/messages/a;->n:Lt97;
+    iget-object p1, p0, Lru/ok/messages/a;->n:Lje7;
 
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {p1}, Lje7;->getValue()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p1
 
-    move-object v8, v0
+    move-object v8, p1
 
-    check-cast v8, Lzs7;
+    check-cast v8, Lyx7;
 
-    iget-object p0, p0, Lru/ok/messages/a;->o:Lt97;
+    iget-object p0, p0, Lru/ok/messages/a;->o:Lje7;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
     move-object v9, p0
 
-    check-cast v9, Lxce;
+    check-cast v9, Lwke;
 
-    move-object v3, p2
+    invoke-direct/range {v3 .. v9}, Lru/ok/messages/TimeChangeReceiver$TaskTimeChangeWorker;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Lf4b;Ln82;Lvu0;Lwke;)V
 
-    move-object v4, p1
-
-    move-object v5, p3
-
-    invoke-direct/range {v3 .. v9}, Lru/ok/messages/TimeChangeReceiver$TaskTimeChangeWorker;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Ln1b;Lt52;Ltt0;Lxce;)V
-
-    goto :goto_0
+    return-object v3
 
     :cond_3
-    const-class v0, Lru/ok/messages/controllers/NotificationDraftScheduler$TaskNotificationDraftWorker;
+    const-class p1, Lru/ok/messages/controllers/NotificationDraftScheduler$TaskNotificationDraftWorker;
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {p2, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p2, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result p1
 
-    if-eqz v0, :cond_4
+    if-eqz p1, :cond_4
 
-    new-instance p2, Lru/ok/messages/controllers/NotificationDraftScheduler$TaskNotificationDraftWorker;
+    new-instance p0, Lru/ok/messages/controllers/NotificationDraftScheduler$TaskNotificationDraftWorker;
 
-    invoke-interface {v1}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {v1}, Lje7;->getValue()Ljava/lang/Object;
 
-    move-result-object p0
+    move-result-object p1
 
-    check-cast p0, Lfp;
+    check-cast p1, Luo;
 
-    iget-object p0, p0, Lfp;->m:Lt97;
+    iget-object p1, p1, Luo;->m:Ljava/lang/Object;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {p1}, Lje7;->getValue()Ljava/lang/Object;
 
-    move-result-object p0
+    move-result-object p1
 
-    check-cast p0, Lqm4;
+    check-cast p1, Lwp4;
 
-    invoke-direct {p2, p1, p3, p0}, Lru/ok/messages/controllers/NotificationDraftScheduler$TaskNotificationDraftWorker;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Lqm4;)V
+    invoke-direct {p0, v4, v5, p1}, Lru/ok/messages/controllers/NotificationDraftScheduler$TaskNotificationDraftWorker;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Lwp4;)V
 
-    goto :goto_0
+    return-object p0
 
     :cond_4
-    const-class v0, Lru/ok/messages/location/StopLiveLocationSchedulerImpl$StopLiveLocationSchedulerWorker;
+    const-class p1, Lru/ok/messages/location/StopLiveLocationSchedulerImpl$StopLiveLocationSchedulerWorker;
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {p2, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p2, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result p1
 
-    if-eqz v0, :cond_5
+    if-eqz p1, :cond_5
 
-    new-instance p2, Lru/ok/messages/location/StopLiveLocationSchedulerImpl$StopLiveLocationSchedulerWorker;
+    new-instance p1, Lru/ok/messages/location/StopLiveLocationSchedulerImpl$StopLiveLocationSchedulerWorker;
 
-    iget-object p0, p0, Lru/ok/messages/a;->p:Lt97;
+    iget-object p0, p0, Lru/ok/messages/a;->p:Lje7;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Ldi7;
+    check-cast p0, Lcn7;
 
-    invoke-direct {p2, p1, p3, p0}, Lru/ok/messages/location/StopLiveLocationSchedulerImpl$StopLiveLocationSchedulerWorker;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Ldi7;)V
+    invoke-direct {p1, v4, v5, p0}, Lru/ok/messages/location/StopLiveLocationSchedulerImpl$StopLiveLocationSchedulerWorker;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Lcn7;)V
 
-    goto :goto_0
+    return-object p1
 
     :cond_5
     const-class p0, Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;
@@ -441,39 +401,38 @@
 
     if-eqz p0, :cond_6
 
-    new-instance p2, Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;
+    new-instance p0, Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;
 
-    invoke-interface {v1}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {v1}, Lje7;->getValue()Ljava/lang/Object;
 
-    move-result-object p0
+    move-result-object p1
 
-    check-cast p0, Lfp;
+    check-cast p1, Luo;
 
-    iget-object p0, p0, Lpbe;->h:Lt97;
+    iget-object p1, p1, Lpje;->h:Lje7;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {p1}, Lje7;->getValue()Ljava/lang/Object;
 
-    move-result-object p0
+    move-result-object p1
 
-    check-cast p0, Lmr9;
+    check-cast p1, Lvv9;
 
-    invoke-interface {v2}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {p3}, Lje7;->getValue()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p2
 
-    check-cast v0, Lg2b;
+    check-cast p2, Lx4b;
 
-    check-cast v0, Lj2b;
+    check-cast p2, La5b;
 
-    iget-object v0, v0, Lj2b;->a:Li03;
+    iget-object p2, p2, La5b;->a:Lj23;
 
-    invoke-direct {p2, p1, p3, p0, v0}, Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Lmr9;Lf03;)V
+    invoke-direct {p0, v4, v5, p1, p2}, Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Lvv9;Lh23;)V
 
-    goto :goto_0
+    return-object p0
 
     :cond_6
-    const/4 p2, 0x0
+    const/4 p0, 0x0
 
-    :goto_0
-    return-object p2
+    return-object p0
 .end method

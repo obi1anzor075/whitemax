@@ -1,179 +1,105 @@
-.class public final synthetic Lblf;
-.super Ljava/lang/Object;
+.class public final enum Lblf;
+.super Ljava/lang/Enum;
 .source "SourceFile"
-
-# interfaces
-.implements Lt66;
 
 
 # static fields
-.field public static final a:Lblf;
-
-.field private static final descriptor:Lsyc;
+.field public static final synthetic a:[Lblf;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 9
 
     new-instance v0, Lblf;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lblf;->a:Lblf;
-
-    new-instance v1, Lwza;
-
-    const-string v2, "one.me.webapp.domain.jsbridge.delegates.phone.WebAppRequestPhoneResponse"
-
-    const/4 v3, 0x2
-
-    invoke-direct {v1, v2, v0, v3}, Lwza;-><init>(Ljava/lang/String;Lt66;I)V
-
-    const-string v0, "requestId"
+    const-string v1, "LOWEST"
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v0, v2}, Lwza;->k(Ljava/lang/String;Z)V
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    const-string v0, "phone"
+    new-instance v1, Lblf;
 
-    invoke-virtual {v1, v0, v2}, Lwza;->k(Ljava/lang/String;Z)V
+    const-string v2, "HIGHEST"
 
-    sput-object v1, Lblf;->descriptor:Lsyc;
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v2, Lblf;
+
+    const-string v3, "MAX_QVGA"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v3, Lblf;
+
+    const-string v4, "MAX_480P"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v4, Lblf;
+
+    const-string v5, "MAX_720P"
+
+    const/4 v6, 0x4
+
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v5, Lblf;
+
+    const-string v6, "MAX_1080P"
+
+    const/4 v7, 0x5
+
+    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v6, Lblf;
+
+    const-string v7, "MAX_2160P"
+
+    const/4 v8, 0x6
+
+    invoke-direct {v6, v7, v8}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    filled-new-array/range {v0 .. v6}, [Lblf;
+
+    move-result-object v0
+
+    sput-object v0, Lblf;->a:[Lblf;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Lblf;
+    .locals 1
 
-# virtual methods
-.method public final a(Lb9;)Ljava/lang/Object;
-    .locals 8
+    const-class v0, Lblf;
 
-    sget-object p0, Lblf;->descriptor:Lsyc;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    invoke-virtual {p1, p0}, Lb9;->j(Lsyc;)Lb9;
+    move-result-object p0
 
-    move-result-object p1
-
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    move v4, v0
-
-    move v5, v1
-
-    move-object v3, v2
-
-    :goto_0
-    if-eqz v4, :cond_3
-
-    invoke-virtual {p1, p0}, Lb9;->p(Lsyc;)I
-
-    move-result v6
-
-    const/4 v7, -0x1
-
-    if-eq v6, v7, :cond_2
-
-    if-eqz v6, :cond_1
-
-    if-ne v6, v0, :cond_0
-
-    invoke-virtual {p1, p0, v0}, Lb9;->w(Lsyc;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    or-int/lit8 v5, v5, 0x2
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Lkotlinx/serialization/UnknownFieldException;
-
-    invoke-direct {p0, v6}, Lkotlinx/serialization/UnknownFieldException;-><init>(I)V
-
-    throw p0
-
-    :cond_1
-    invoke-virtual {p1, p0, v1}, Lb9;->w(Lsyc;I)Ljava/lang/String;
-
-    move-result-object v2
-
-    or-int/lit8 v5, v5, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    move v4, v1
-
-    goto :goto_0
-
-    :cond_3
-    invoke-virtual {p1, p0}, Lb9;->z(Lsyc;)V
-
-    new-instance p0, Ldlf;
-
-    invoke-direct {p0, v5, v2, v3}, Ldlf;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    check-cast p0, Lblf;
 
     return-object p0
 .end method
 
-.method public final b(Lur3;Ljava/lang/Object;)V
-    .locals 2
+.method public static values()[Lblf;
+    .locals 1
 
-    check-cast p2, Ldlf;
+    sget-object v0, Lblf;->a:[Lblf;
 
-    sget-object p0, Lblf;->descriptor:Lsyc;
+    invoke-virtual {v0}, [Lblf;->clone()Ljava/lang/Object;
 
-    invoke-virtual {p1, p0}, Lur3;->b(Lsyc;)Lur3;
+    move-result-object v0
 
-    move-result-object p1
+    check-cast v0, [Lblf;
 
-    iget-object v0, p2, Ldlf;->a:Ljava/lang/String;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, p0, v1, v0}, Lur3;->n(Lsyc;ILjava/lang/String;)V
-
-    const/4 v0, 0x1
-
-    iget-object p2, p2, Ldlf;->b:Ljava/lang/String;
-
-    invoke-virtual {p1, p0, v0, p2}, Lur3;->n(Lsyc;ILjava/lang/String;)V
-
-    invoke-virtual {p1}, Lur3;->o()V
-
-    return-void
-.end method
-
-.method public final c()[Ll77;
-    .locals 2
-
-    const/4 p0, 0x2
-
-    new-array p0, p0, [Ll77;
-
-    sget-object v0, Ld0e;->a:Ld0e;
-
-    const/4 v1, 0x0
-
-    aput-object v0, p0, v1
-
-    const/4 v1, 0x1
-
-    aput-object v0, p0, v1
-
-    return-object p0
-.end method
-
-.method public final d()Lsyc;
-    .locals 0
-
-    sget-object p0, Lblf;->descriptor:Lsyc;
-
-    return-object p0
+    return-object v0
 .end method

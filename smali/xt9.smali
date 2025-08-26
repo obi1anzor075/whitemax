@@ -1,239 +1,160 @@
 .class public final Lxt9;
-.super Ljava/util/concurrent/atomic/AtomicInteger;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lxi4;
-.implements Lbw9;
+
+# static fields
+.field public static final c:Ljava/lang/Object;
+
+.field public static d:Ljava/lang/String;
+
+.field public static e:Ljava/util/HashSet;
+
+.field public static final f:Ljava/lang/Object;
+
+.field public static g:Lwt9;
 
 
 # instance fields
-.field public final X:Ln83;
+.field public final a:Landroid/content/Context;
 
-.field public Y:Lxi4;
-
-.field public volatile Z:Z
-
-.field public final a:Lg73;
-
-.field public final b:Ley;
-
-.field public final c:Lj26;
-
-.field public final o:Z
+.field public final b:Landroid/app/NotificationManager;
 
 
 # direct methods
-.method public constructor <init>(Lg73;Lj26;Z)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
+    new-instance v0, Ljava/lang/Object;
 
-    iput-object p1, p0, Lxt9;->a:Lg73;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lxt9;->c:Lj26;
+    sput-object v0, Lxt9;->c:Ljava/lang/Object;
 
-    iput-boolean p3, p0, Lxt9;->o:Z
+    new-instance v0, Ljava/util/HashSet;
 
-    new-instance p1, Ley;
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    invoke-direct {p1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+    sput-object v0, Lxt9;->e:Ljava/util/HashSet;
 
-    iput-object p1, p0, Lxt9;->b:Ley;
+    new-instance v0, Ljava/lang/Object;
 
-    new-instance p1, Ln83;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lxt9;->f:Ljava/lang/Object;
 
-    iput-object p1, p0, Lxt9;->X:Ln83;
+    return-void
+.end method
 
-    const/4 p1, 0x1
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 1
 
-    invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lxt9;->a:Landroid/content/Context;
+
+    const-string v0, "notification"
+
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/app/NotificationManager;
+
+    iput-object p1, p0, Lxt9;->b:Landroid/app/NotificationManager;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .locals 1
+.method public final a(Ljava/lang/String;ILandroid/app/Notification;)V
+    .locals 3
 
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
+    iget-object v0, p0, Lxt9;->b:Landroid/app/NotificationManager;
 
-    move-result v0
+    iget-object v1, p3, Landroid/app/Notification;->extras:Landroid/os/Bundle;
 
-    if-nez v0, :cond_0
+    if-eqz v1, :cond_1
 
-    iget-object v0, p0, Lxt9;->b:Ley;
+    const-string v2, "android.support.useSideChannel"
 
-    iget-object p0, p0, Lxt9;->a:Lg73;
+    invoke-virtual {v1, v2}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;)Z
 
-    invoke-virtual {v0, p0}, Ley;->c(Lg73;)V
+    move-result v1
 
-    :cond_0
-    return-void
-.end method
+    if-eqz v1, :cond_1
 
-.method public final c(Ljava/lang/Object;)V
-    .locals 2
+    new-instance v1, Ltt9;
+
+    iget-object v2, p0, Lxt9;->a:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2, p2, p1, p3}, Ltt9;-><init>(Ljava/lang/String;ILjava/lang/String;Landroid/app/Notification;)V
+
+    sget-object v2, Lxt9;->f:Ljava/lang/Object;
+
+    monitor-enter v2
 
     :try_start_0
-    iget-object v0, p0, Lxt9;->c:Lj26;
+    sget-object p3, Lxt9;->g:Lwt9;
 
-    invoke-interface {v0, p1}, Lj26;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+    if-nez p3, :cond_0
 
-    move-result-object p1
+    new-instance p3, Lwt9;
 
-    const-string v0, "The mapper returned a null CompletableSource"
+    iget-object p0, p0, Lxt9;->a:Landroid/content/Context;
 
-    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    check-cast p1, Lv63;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-object p0
 
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
+    invoke-direct {p3, p0}, Lwt9;-><init>(Landroid/content/Context;)V
 
-    new-instance v0, Lx63;
-
-    invoke-direct {v0, p0}, Lx63;-><init>(Lxt9;)V
-
-    iget-boolean v1, p0, Lxt9;->Z:Z
-
-    if-nez v1, :cond_0
-
-    iget-object p0, p0, Lxt9;->X:Ln83;
-
-    invoke-virtual {p0, v0}, Ln83;->a(Lxi4;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    invoke-virtual {p1, v0}, Lv63;->i(Lg73;)V
-
-    :cond_0
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    invoke-static {p1}, Lek8;->a0(Ljava/lang/Throwable;)V
-
-    iget-object v0, p0, Lxt9;->Y:Lxi4;
-
-    invoke-interface {v0}, Lxi4;->f()V
-
-    invoke-virtual {p0, p1}, Lxt9;->onError(Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public final d(Lxi4;)V
-    .locals 1
-
-    iget-object v0, p0, Lxt9;->Y:Lxi4;
-
-    invoke-static {v0, p1}, Lbj4;->g(Lxi4;Lxi4;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iput-object p1, p0, Lxt9;->Y:Lxi4;
-
-    iget-object p1, p0, Lxt9;->a:Lg73;
-
-    invoke-interface {p1, p0}, Lg73;->d(Lxi4;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final f()V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lxt9;->Z:Z
-
-    iget-object v0, p0, Lxt9;->Y:Lxi4;
-
-    invoke-interface {v0}, Lxi4;->f()V
-
-    iget-object v0, p0, Lxt9;->X:Ln83;
-
-    invoke-virtual {v0}, Ln83;->f()V
-
-    iget-object p0, p0, Lxt9;->b:Ley;
-
-    invoke-virtual {p0}, Ley;->b()V
-
-    return-void
-.end method
-
-.method public final h()Z
-    .locals 0
-
-    iget-object p0, p0, Lxt9;->Y:Lxi4;
-
-    invoke-interface {p0}, Lxi4;->h()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final onError(Ljava/lang/Throwable;)V
-    .locals 1
-
-    iget-object v0, p0, Lxt9;->b:Ley;
-
-    invoke-virtual {v0, p1}, Ley;->a(Ljava/lang/Throwable;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    iget-boolean p1, p0, Lxt9;->o:Z
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
-
-    move-result p1
-
-    if-nez p1, :cond_1
-
-    iget-object p1, p0, Lxt9;->b:Ley;
-
-    iget-object p0, p0, Lxt9;->a:Lg73;
-
-    invoke-virtual {p1, p0}, Ley;->c(Lg73;)V
+    sput-object p3, Lxt9;->g:Lwt9;
 
     goto :goto_0
 
+    :catchall_0
+    move-exception p0
+
+    goto :goto_1
+
     :cond_0
-    const/4 p1, 0x1
+    :goto_0
+    sget-object p0, Lxt9;->g:Lwt9;
 
-    iput-boolean p1, p0, Lxt9;->Z:Z
+    iget-object p0, p0, Lwt9;->b:Landroid/os/Handler;
 
-    iget-object p1, p0, Lxt9;->Y:Lxi4;
+    const/4 p3, 0x0
 
-    invoke-interface {p1}, Lxi4;->f()V
+    invoke-virtual {p0, p3, v1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
-    iget-object p1, p0, Lxt9;->X:Ln83;
+    move-result-object p0
 
-    invoke-virtual {p1}, Ln83;->f()V
+    invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
 
-    iget-object p1, p0, Lxt9;->b:Ley;
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object p0, p0, Lxt9;->a:Lg73;
+    invoke-virtual {v0, p1, p2}, Landroid/app/NotificationManager;->cancel(Ljava/lang/String;I)V
 
-    invoke-virtual {p1, p0}, Ley;->c(Lg73;)V
+    return-void
+
+    :goto_1
+    :try_start_1
+    monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p0
 
     :cond_1
-    :goto_0
+    invoke-virtual {v0, p1, p2, p3}, Landroid/app/NotificationManager;->notify(Ljava/lang/String;ILandroid/app/Notification;)V
+
     return-void
 .end method

@@ -1,145 +1,88 @@
 .class public final Lnr7;
-.super Ll5e;
+.super Ln3;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lnhc;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lnr7;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final a:Lcom/google/android/gms/common/api/Status;
 
-.field public final synthetic Y:Lone/me/android/MainActivity;
+.field public final b:Lor7;
 
 
 # direct methods
-.method public constructor <init>(Lone/me/android/MainActivity;Lkotlin/coroutines/Continuation;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lmrf;
+
+    const/16 v1, 0x19
+
+    invoke-direct {v0, v1}, Lmrf;-><init>(I)V
+
+    sput-object v0, Lnr7;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcom/google/android/gms/common/api/Status;Lor7;)V
     .locals 0
 
-    iput-object p1, p0, Lnr7;->Y:Lone/me/android/MainActivity;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
+    iput-object p1, p0, Lnr7;->a:Lcom/google/android/gms/common/api/Status;
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Lnr7;->b:Lor7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a()Lcom/google/android/gms/common/api/Status;
     .locals 0
 
-    check-cast p1, Landroid/net/Uri;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lnr7;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lnr7;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lnr7;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
+    iget-object p0, p0, Lnr7;->a:Lcom/google/android/gms/common/api/Status;
 
     return-object p0
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 3
 
-    new-instance v0, Lnr7;
+    const/16 v0, 0x4f45
 
-    iget-object p0, p0, Lnr7;->Y:Lone/me/android/MainActivity;
+    invoke-static {p1, v0}, Lq14;->B0(Landroid/os/Parcel;I)I
 
-    invoke-direct {v0, p0, p2}, Lnr7;-><init>(Lone/me/android/MainActivity;Lkotlin/coroutines/Continuation;)V
+    move-result v0
 
-    iput-object p1, v0, Lnr7;->X:Ljava/lang/Object;
+    const/4 v1, 0x1
 
-    return-object v0
-.end method
+    iget-object v2, p0, Lnr7;->a:Lcom/google/android/gms/common/api/Status;
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+    invoke-static {p1, v1, v2, p2}, Lq14;->x0(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    const/4 v1, 0x2
 
-    iget-object p1, p0, Lnr7;->X:Ljava/lang/Object;
+    iget-object p0, p0, Lnr7;->b:Lor7;
 
-    check-cast p1, Landroid/net/Uri;
+    invoke-static {p1, v1, p0, p2}, Lq14;->x0(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
-    iget-object p0, p0, Lnr7;->Y:Lone/me/android/MainActivity;
+    invoke-static {p1, v0}, Lq14;->C0(Landroid/os/Parcel;I)V
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object p0
-
-    sget-object v0, Ludd;->e:Lfn6;
-
-    if-nez v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-interface {v0}, Lfn6;->c()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    sget-object v1, Ltn7;->X:Ltn7;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "handle mytracker link "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    invoke-interface {v0, v1, p0, v2, v3}, Lfn6;->d(Ltn7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_1
-    :goto_0
-    sget-object p0, Lo2a;->a:Lo2a;
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p0
-
-    const-class v0, Lff7;
-
-    invoke-virtual {p0, v0}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lff7;
-
-    iget-object p0, p0, Lff7;->b:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lef7;
-
-    invoke-virtual {p0, p1}, Lef7;->e(Landroid/net/Uri;)Lbc;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

@@ -1,487 +1,336 @@
-.class public abstract Lrhc;
+.class public final Lrhc;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final A:I
+# instance fields
+.field public final a:Lgbc;
 
-.field public static final A0:I
+.field public b:I
 
-.field public static final B:I
+.field public c:I
 
-.field public static final C:I
+.field public final d:Ljava/lang/ref/WeakReference;
 
-.field public static final D:I
+.field public final e:Lfh7;
 
-.field public static final E:I
+.field public f:Z
 
-.field public static final F:I
+.field public final g:Lphc;
 
-.field public static final G:I
+.field public final h:Lvj;
 
-.field public static final H:I
-
-.field public static final I:I
-
-.field public static final J:I
-
-.field public static final K:I
-
-.field public static final L:I
-
-.field public static final M:I
-
-.field public static final N:I
-
-.field public static final O:I
-
-.field public static final P:I
-
-.field public static final Q:I
-
-.field public static final R:I
-
-.field public static final S:I
-
-.field public static final T:I
-
-.field public static final U:I
-
-.field public static final V:I
-
-.field public static final W:I
-
-.field public static final X:I
-
-.field public static final Y:I
-
-.field public static final Z:I
-
-.field public static final a:I
-
-.field public static final a0:I
-
-.field public static final b:I
-
-.field public static final b0:I
-
-.field public static final c:I
-
-.field public static final c0:I
-
-.field public static final d:I
-
-.field public static final d0:I
-
-.field public static final e:I
-
-.field public static final e0:I
-
-.field public static final f:I
-
-.field public static final f0:I
-
-.field public static final g:I
-
-.field public static final g0:I
-
-.field public static final h:I
-
-.field public static final h0:I
-
-.field public static final i:I
-
-.field public static final i0:I
-
-.field public static final j:I
-
-.field public static final j0:I
-
-.field public static final k:I
-
-.field public static final k0:I
-
-.field public static final l:I
-
-.field public static final l0:I
-
-.field public static final m:I
-
-.field public static final m0:I
-
-.field public static final n:I
-
-.field public static final n0:I
-
-.field public static final o:I
-
-.field public static final o0:I
-
-.field public static final p:I
-
-.field public static final p0:I
-
-.field public static final q:I
-
-.field public static final q0:I
-
-.field public static final r:I
-
-.field public static final r0:I
-
-.field public static final s:I
-
-.field public static final s0:I
-
-.field public static final t:I
-
-.field public static final t0:I
-
-.field public static final u:I
-
-.field public static final u0:I
-
-.field public static final v:I
-
-.field public static final v0:I
-
-.field public static final w:I
-
-.field public static final w0:I
-
-.field public static final x:I
-
-.field public static final x0:I
-
-.field public static final y:I
-
-.field public static final y0:I
-
-.field public static final z:I
-
-.field public static final z0:I
+.field public final i:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lgbc;Lone/me/sdk/lists/widgets/EndlessRecyclerView2;)V
+    .locals 4
 
-    sget v0, Lxub;->call_history_item_call_audio_button_accessibility:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput v0, Lrhc;->a:I
+    iput-object p1, p0, Lrhc;->a:Lgbc;
 
-    sget v0, Lxub;->call_history_item_call_video_button_accessibility:I
+    const/4 p1, -0x1
 
-    sput v0, Lrhc;->b:I
+    iput p1, p0, Lrhc;->b:I
 
-    sget v0, Lxub;->empty_view_subtitle_empty_search:I
+    const/4 p1, 0x0
 
-    sput v0, Lrhc;->c:I
+    iput p1, p0, Lrhc;->c:I
 
-    sget v0, Lxub;->empty_view_title_empty_search:I
+    new-instance p1, Ljava/lang/ref/WeakReference;
 
-    sput v0, Lrhc;->d:I
+    invoke-direct {p1, p2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    sget v0, Lxub;->oneme_action_share:I
+    iput-object p1, p0, Lrhc;->d:Ljava/lang/ref/WeakReference;
 
-    sput v0, Lrhc;->e:I
+    new-instance p1, Lphc;
 
-    sget v0, Lxub;->oneme_action_share_qr_code_error:I
+    const/4 v0, 0x0
 
-    sput v0, Lrhc;->f:I
+    invoke-direct {p1, v0, p0}, Lphc;-><init>(ILjava/lang/Object;)V
 
-    sget v0, Lxub;->oneme_belarus_name:I
+    iput-object p1, p0, Lrhc;->g:Lphc;
 
-    sput v0, Lrhc;->g:I
+    new-instance p1, Lvj;
 
-    sget v0, Lxub;->oneme_bottom_sheet_cancel:I
+    const/4 v0, 0x7
 
-    sput v0, Lrhc;->h:I
+    invoke-direct {p1, v0, p0}, Lvj;-><init>(ILjava/lang/Object;)V
 
-    sget v0, Lxub;->oneme_channel_shortlink_action_share_link_text:I
+    iput-object p1, p0, Lrhc;->h:Lvj;
 
-    sput v0, Lrhc;->i:I
+    const-class v0, Lrhc;
 
-    sget v0, Lxub;->oneme_chat_modal_action_add_to_folder:I
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    sput v0, Lrhc;->j:I
+    move-result-object v0
 
-    sget v0, Lxub;->oneme_chat_modal_action_block_user:I
+    iput-object v0, p0, Lrhc;->i:Ljava/lang/String;
 
-    sput v0, Lrhc;->k:I
+    invoke-virtual {p2, p1}, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
-    sget v0, Lxub;->oneme_chat_modal_action_clear_chat_history:I
+    invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    sput v0, Lrhc;->l:I
+    move-result-object p1
 
-    sget v0, Lxub;->oneme_chat_modal_action_clear_saved_messages:I
+    :goto_0
+    instance-of v0, p1, Landroid/content/ContextWrapper;
 
-    sput v0, Lrhc;->m:I
+    const/4 v1, 0x0
 
-    sget v0, Lxub;->oneme_chat_modal_action_delete_channel:I
+    if-eqz v0, :cond_1
 
-    sput v0, Lrhc;->n:I
+    instance-of v0, p1, Ldh7;
 
-    sget v0, Lxub;->oneme_chat_modal_action_delete_chat:I
+    if-eqz v0, :cond_0
 
-    sput v0, Lrhc;->o:I
+    check-cast p1, Ldh7;
 
-    sget v0, Lxub;->oneme_chat_modal_action_leave_chanel:I
+    goto :goto_1
 
-    sput v0, Lrhc;->p:I
+    :cond_0
+    check-cast p1, Landroid/content/ContextWrapper;
 
-    sget v0, Lxub;->oneme_chat_modal_action_leave_chat:I
+    invoke-virtual {p1}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
 
-    sput v0, Lrhc;->q:I
+    move-result-object p1
 
-    sget v0, Lxub;->oneme_chat_modal_action_mark_as_read:I
+    goto :goto_0
 
-    sput v0, Lrhc;->r:I
+    :cond_1
+    move-object p1, v1
 
-    sget v0, Lxub;->oneme_chat_modal_action_mark_as_unread:I
+    :goto_1
+    if-nez p1, :cond_3
 
-    sput v0, Lrhc;->s:I
+    iget-object p1, p0, Lrhc;->i:Ljava/lang/String;
 
-    sget v0, Lxub;->oneme_chat_modal_action_modal_pin:I
+    sget-object v0, Lg47;->m:Llr6;
 
-    sput v0, Lrhc;->t:I
+    if-nez v0, :cond_2
 
-    sget v0, Lxub;->oneme_chat_modal_action_modal_unpin:I
+    goto :goto_2
 
-    sput v0, Lrhc;->u:I
+    :cond_2
+    invoke-interface {v0}, Llr6;->c()Z
 
-    sget v0, Lxub;->oneme_chat_modal_action_mute:I
+    move-result v2
 
-    sput v0, Lrhc;->v:I
+    if-eqz v2, :cond_5
 
-    sget v0, Lxub;->oneme_chat_modal_action_remove_from_folder:I
+    sget-object v2, Lqs7;->o:Lqs7;
 
-    sput v0, Lrhc;->w:I
+    const-string v3, "registerLifecycleObserver findLifecycleOwner() is null"
 
-    sget v0, Lxub;->oneme_chat_modal_action_report:I
+    invoke-interface {v0, v2, p1, v3, v1}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    sput v0, Lrhc;->x:I
+    goto :goto_2
 
-    sget v0, Lxub;->oneme_chat_modal_action_select:I
+    :cond_3
+    invoke-interface {p1}, Ldh7;->L()Lfh7;
 
-    sput v0, Lrhc;->y:I
+    move-result-object v0
 
-    sget v0, Lxub;->oneme_chat_modal_action_suspend_and_delete_bot:I
+    iput-object v0, p0, Lrhc;->e:Lfh7;
 
-    sput v0, Lrhc;->z:I
+    if-eqz v0, :cond_4
 
-    sget v0, Lxub;->oneme_chat_modal_action_suspend_bot:I
+    iget-object v1, p0, Lrhc;->g:Lphc;
 
-    sput v0, Lrhc;->A:I
+    invoke-virtual {v0, v1}, Lfh7;->a(Lzg7;)V
 
-    sget v0, Lxub;->oneme_chat_modal_action_unmute:I
+    :cond_4
+    invoke-interface {p1}, Ldh7;->L()Lfh7;
 
-    sput v0, Lrhc;->B:I
+    move-result-object p1
 
-    sget v0, Lxub;->oneme_chat_modal_action_unsubscribe_chanel:I
+    iget-object p1, p1, Lfh7;->d:Lgg7;
 
-    sput v0, Lrhc;->C:I
+    sget-object v0, Lgg7;->o:Lgg7;
 
-    sget v0, Lxub;->oneme_chat_notifications_bottom_sheet_title:I
+    invoke-virtual {p1, v0}, Lgg7;->a(Lgg7;)Z
 
-    sput v0, Lrhc;->D:I
+    move-result p1
 
-    sget v0, Lxub;->oneme_chat_notifications_disable_1_day:I
+    xor-int/lit8 p1, p1, 0x1
 
-    sput v0, Lrhc;->E:I
+    iput-boolean p1, p0, Lrhc;->f:Z
 
-    sget v0, Lxub;->oneme_chat_notifications_disable_1_hour:I
+    :cond_5
+    :goto_2
+    iget-object p0, p0, Lrhc;->h:Lvj;
 
-    sput v0, Lrhc;->F:I
+    invoke-virtual {p0, p2}, Lvj;->onViewAttachedToWindow(Landroid/view/View;)V
 
-    sget v0, Lxub;->oneme_chat_notifications_disable_4_hour:I
+    return-void
+.end method
 
-    sput v0, Lrhc;->G:I
 
-    sget v0, Lxub;->oneme_chat_notifications_disable_forever:I
+# virtual methods
+.method public final a(Landroidx/recyclerview/widget/RecyclerView;)V
+    .locals 5
 
-    sput v0, Lrhc;->H:I
+    iget-object v0, p0, Lrhc;->i:Ljava/lang/String;
 
-    sget v0, Lxub;->oneme_chat_notifications_off_snackbar_title:I
+    sget-object v1, Lg47;->m:Llr6;
 
-    sput v0, Lrhc;->I:I
+    const/4 v2, 0x0
 
-    sget v0, Lxub;->oneme_chat_notifications_on_snackbar_title:I
+    if-nez v1, :cond_0
 
-    sput v0, Lrhc;->J:I
+    goto :goto_0
 
-    sget v0, Lxub;->oneme_chat_toolbar_more_action_notifications:I
+    :cond_0
+    invoke-interface {v1}, Llr6;->c()Z
 
-    sput v0, Lrhc;->K:I
+    move-result v3
 
-    sget v0, Lxub;->oneme_chat_toolbar_more_action_search:I
+    if-eqz v3, :cond_1
 
-    sput v0, Lrhc;->L:I
+    sget-object v3, Lqs7;->o:Lqs7;
 
-    sget v0, Lxub;->oneme_chat_toolbar_more_action_video_call:I
+    const-string v4, "attachAdapter"
 
-    sput v0, Lrhc;->M:I
+    invoke-interface {v1, v3, v0, v4, v2}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    sget v0, Lxub;->oneme_connection_network_error_description:I
+    :cond_1
+    :goto_0
+    iget-object v0, p0, Lrhc;->a:Lgbc;
 
-    sput v0, Lrhc;->N:I
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getRecycledViewPool()Landroidx/recyclerview/widget/b;
 
-    sget v0, Lxub;->oneme_connection_network_error_title:I
+    move-result-object v1
 
-    sput v0, Lrhc;->O:I
+    invoke-virtual {p1, v2}, Landroidx/recyclerview/widget/RecyclerView;->setRecycledViewPool(Landroidx/recyclerview/widget/b;)V
 
-    sget v0, Lxub;->oneme_connection_server_error_description:I
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lgbc;
 
-    sput v0, Lrhc;->P:I
+    move-result-object v3
 
-    sget v0, Lxub;->oneme_connection_server_error_title:I
+    if-eq v3, v0, :cond_2
 
-    sput v0, Lrhc;->Q:I
+    invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Lgbc;)V
 
-    sget v0, Lxub;->oneme_contactlist_action_audio_call:I
+    :cond_2
+    invoke-virtual {p1, v1}, Landroidx/recyclerview/widget/RecyclerView;->setRecycledViewPool(Landroidx/recyclerview/widget/b;)V
 
-    sput v0, Lrhc;->R:I
+    iget v0, p0, Lrhc;->b:I
 
-    sget v0, Lxub;->oneme_contactlist_action_block:I
+    const/4 v1, -0x1
 
-    sput v0, Lrhc;->S:I
+    if-eq v0, v1, :cond_4
 
-    sget v0, Lxub;->oneme_contactlist_action_delete:I
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/a;
 
-    sput v0, Lrhc;->T:I
+    move-result-object p1
 
-    sget v0, Lxub;->oneme_contactlist_action_open_profile:I
+    instance-of v0, p1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    sput v0, Lrhc;->U:I
+    if-eqz v0, :cond_3
 
-    sget v0, Lxub;->oneme_contactlist_action_select:I
+    move-object v2, p1
 
-    sput v0, Lrhc;->V:I
+    check-cast v2, Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    sget v0, Lxub;->oneme_contactlist_action_share_contact:I
+    :cond_3
+    if-eqz v2, :cond_4
 
-    sput v0, Lrhc;->W:I
+    iget p1, p0, Lrhc;->b:I
 
-    sget v0, Lxub;->oneme_contactlist_action_suspend_bot:I
+    iget p0, p0, Lrhc;->c:I
 
-    sput v0, Lrhc;->X:I
+    invoke-virtual {v2, p1, p0}, Landroidx/recyclerview/widget/LinearLayoutManager;->m1(II)V
 
-    sget v0, Lxub;->oneme_contactlist_action_video_call:I
+    :cond_4
+    return-void
+.end method
 
-    sput v0, Lrhc;->Y:I
+.method public final b(Landroidx/recyclerview/widget/RecyclerView;)V
+    .locals 5
 
-    sget v0, Lxub;->oneme_contactlist_action_write:I
+    iget-object v0, p0, Lrhc;->i:Ljava/lang/String;
 
-    sput v0, Lrhc;->Z:I
+    sget-object v1, Lg47;->m:Llr6;
 
-    sget v0, Lxub;->oneme_countries_bottomsheet_selection_title:I
+    const/4 v2, 0x0
 
-    sput v0, Lrhc;->a0:I
+    if-nez v1, :cond_0
 
-    sget v0, Lxub;->oneme_empty_search_subtitle:I
+    goto :goto_0
 
-    sput v0, Lrhc;->b0:I
+    :cond_0
+    invoke-interface {v1}, Llr6;->c()Z
 
-    sget v0, Lxub;->oneme_empty_search_title:I
+    move-result v3
 
-    sput v0, Lrhc;->c0:I
+    if-eqz v3, :cond_1
 
-    sget v0, Lxub;->oneme_empty_search_view_title:I
+    sget-object v3, Lqs7;->o:Lqs7;
 
-    sput v0, Lrhc;->d0:I
+    const-string v4, "detachAdapter"
 
-    sget v0, Lxub;->oneme_error_phone_empty:I
+    invoke-interface {v1, v3, v0, v4, v2}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    sput v0, Lrhc;->e0:I
+    :cond_1
+    :goto_0
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/a;
 
-    sget v0, Lxub;->oneme_error_phone_too_long:I
+    move-result-object v0
 
-    sput v0, Lrhc;->f0:I
+    instance-of v1, v0, Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    sget v0, Lxub;->oneme_forward_author_invisible:I
+    if-eqz v1, :cond_2
 
-    sput v0, Lrhc;->g0:I
+    check-cast v0, Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    sget v0, Lxub;->oneme_forward_author_visibility_onboarding:I
+    goto :goto_1
 
-    sput v0, Lrhc;->h0:I
+    :cond_2
+    move-object v0, v2
 
-    sget v0, Lxub;->oneme_forward_author_visible:I
+    :goto_1
+    if-eqz v0, :cond_4
 
-    sput v0, Lrhc;->i0:I
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/LinearLayoutManager;->V0()I
 
-    sget v0, Lxub;->oneme_forward_confirm_cancel:I
+    move-result v0
 
-    sput v0, Lrhc;->j0:I
+    iput v0, p0, Lrhc;->b:I
 
-    sget v0, Lxub;->oneme_forward_confirm_close:I
+    const/4 v0, 0x0
 
-    sput v0, Lrhc;->k0:I
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    sget v0, Lxub;->oneme_forward_confirmation_close_title:I
+    move-result-object v1
 
-    sput v0, Lrhc;->l0:I
+    if-eqz v1, :cond_3
 
-    sget v0, Lxub;->oneme_input_error_empty_name:I
+    invoke-virtual {v1}, Landroid/view/View;->getTop()I
 
-    sput v0, Lrhc;->m0:I
+    move-result v0
 
-    sget v0, Lxub;->oneme_input_error_empty_title:I
+    :cond_3
+    iput v0, p0, Lrhc;->c:I
 
-    sput v0, Lrhc;->n0:I
+    :cond_4
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getRecycledViewPool()Landroidx/recyclerview/widget/b;
 
-    sget v0, Lxub;->oneme_input_error_incorrect_symbols:I
+    move-result-object p0
 
-    sput v0, Lrhc;->o0:I
+    invoke-virtual {p1, v2}, Landroidx/recyclerview/widget/RecyclerView;->setRecycledViewPool(Landroidx/recyclerview/widget/b;)V
 
-    sget v0, Lxub;->oneme_input_error_name_length:I
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lgbc;
 
-    sput v0, Lrhc;->p0:I
+    move-result-object v0
 
-    sget v0, Lxub;->oneme_input_error_name_only_spaces:I
+    if-eqz v0, :cond_5
 
-    sput v0, Lrhc;->q0:I
+    invoke-virtual {p1, v2}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Lgbc;)V
 
-    sget v0, Lxub;->oneme_last_message_pinned:I
-
-    sput v0, Lrhc;->r0:I
-
-    sget v0, Lxub;->oneme_narnia_name:I
-
-    sput v0, Lrhc;->s0:I
-
-    sget v0, Lxub;->oneme_pinned_message_title:I
-
-    sput v0, Lrhc;->t0:I
-
-    sget v0, Lxub;->oneme_russia_name:I
-
-    sput v0, Lrhc;->u0:I
-
-    sget v0, Lxub;->oneme_search_view_default_hint:I
-
-    sput v0, Lrhc;->v0:I
-
-    sget v0, Lxub;->oneme_wait_please:I
-
-    sput v0, Lrhc;->w0:I
-
-    sget v0, Lxub;->search_all_contacts_header:I
-
-    sput v0, Lrhc;->x0:I
-
-    sget v0, Lxub;->search_contacts_header:I
-
-    sput v0, Lrhc;->y0:I
-
-    sget v0, Lxub;->search_global_contacts_header:I
-
-    sput v0, Lrhc;->z0:I
-
-    sget v0, Lxub;->search_phonebook_contacts_header:I
-
-    sput v0, Lrhc;->A0:I
+    :cond_5
+    invoke-virtual {p1, p0}, Landroidx/recyclerview/widget/RecyclerView;->setRecycledViewPool(Landroidx/recyclerview/widget/b;)V
 
     return-void
 .end method

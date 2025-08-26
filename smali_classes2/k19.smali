@@ -1,105 +1,84 @@
-.class public final Lk19;
+.class public abstract Lk19;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lhcd;
-
-.field public final b:Lkotlinx/coroutines/internal/ContextScope;
+# static fields
+.field public static final a:Lysc;
 
 
 # direct methods
-.method public constructor <init>(Ltt0;Lpae;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ly5f;
 
-    const/4 v0, 0x7
+    const-string v1, "messages-list-scope"
 
-    const/4 v1, 0x0
+    invoke-direct {v0, v1}, Ly5f;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v1, v1, v1, v0}, Licd;->b(IIII)Lhcd;
+    sget-object v1, Lfc2;->Y:Lysc;
+
+    if-eqz v1, :cond_0
+
+    iget-object v2, v0, Ly5f;->c:Ljava/util/ArrayList;
+
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    new-instance v1, Lye7;
+
+    const/16 v2, 0x1a
+
+    invoke-direct {v1, v2}, Lye7;-><init>(I)V
+
+    const-class v2, Li19;
+
+    invoke-virtual {v0, v2, v1}, Ly5f;->e(Ljava/lang/Class;Ls27;)V
+
+    new-instance v1, Lft7;
+
+    const/16 v2, 0x9
+
+    invoke-direct {v1, v2}, Lft7;-><init>(I)V
+
+    const-class v2, Lj19;
+
+    invoke-virtual {v0, v2, v1}, Ly5f;->e(Ljava/lang/Class;Ls27;)V
+
+    new-instance v1, Lft7;
+
+    const/16 v2, 0xa
+
+    invoke-direct {v1, v2}, Lft7;-><init>(I)V
+
+    const-class v2, Lxb6;
+
+    invoke-virtual {v0, v2, v1}, Ly5f;->e(Ljava/lang/Class;Ls27;)V
+
+    new-instance v1, Lft7;
+
+    const/16 v2, 0xb
+
+    invoke-direct {v1, v2}, Lft7;-><init>(I)V
+
+    const-class v2, Lg79;
+
+    invoke-virtual {v0, v2, v1}, Ly5f;->e(Ljava/lang/Class;Ls27;)V
+
+    invoke-virtual {v0}, Ly5f;->a()Lysc;
 
     move-result-object v0
 
-    iput-object v0, p0, Lk19;->a:Lhcd;
-
-    check-cast p2, Ln3a;
-
-    invoke-virtual {p2}, Ln3a;->c()Lzr7;
-
-    move-result-object p2
-
-    invoke-static {p2}, Ln1g;->a(Lhu3;)Lkotlinx/coroutines/internal/ContextScope;
-
-    move-result-object p2
-
-    iput-object p2, p0, Lk19;->b:Lkotlinx/coroutines/internal/ContextScope;
-
-    invoke-virtual {p1, p0}, Ltt0;->d(Ljava/lang/Object;)V
+    sput-object v0, Lk19;->a:Lysc;
 
     return-void
-.end method
 
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-# virtual methods
-.method public final onEvent(Lbk4;)V
-    .locals 4
-    .annotation runtime La1e;
-    .end annotation
+    const-string v1, "Trying to access DI graph before initialization!"
 
-    .line 1
-    new-instance v0, Lg19;
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p1, Lbk4;->o:Ljava/lang/String;
-
-    iget-wide v2, p1, Lbk4;->X:J
-
-    invoke-direct {v0, v2, v3, v1}, Lg19;-><init>(JLjava/lang/String;)V
-
-    .line 2
-    new-instance p1, Lj19;
-
-    const/4 v1, 0x0
-
-    invoke-direct {p1, p0, v0, v1}, Lj19;-><init>(Lk19;Li19;Lkotlin/coroutines/Continuation;)V
-
-    const/4 v0, 0x3
-
-    iget-object p0, p0, Lk19;->b:Lkotlinx/coroutines/internal/ContextScope;
-
-    invoke-static {p0, v1, v1, p1, v0}, Lxs7;->E(Lou3;Lhu3;Lru3;Li26;I)Lqod;
-
-    return-void
-.end method
-
-.method public final onEvent(Ldk4;)V
-    .locals 4
-    .annotation runtime La1e;
-    .end annotation
-
-    .line 3
-    new-instance v0, Lh19;
-
-    iget-object v1, p1, Ldk4;->c:Ljava/lang/String;
-
-    iget-wide v2, p1, Ldk4;->o:J
-
-    invoke-direct {v0, v2, v3, v1}, Lh19;-><init>(JLjava/lang/String;)V
-
-    .line 4
-    new-instance p1, Lj19;
-
-    const/4 v1, 0x0
-
-    invoke-direct {p1, p0, v0, v1}, Lj19;-><init>(Lk19;Li19;Lkotlin/coroutines/Continuation;)V
-
-    const/4 v0, 0x3
-
-    iget-object p0, p0, Lk19;->b:Lkotlinx/coroutines/internal/ContextScope;
-
-    invoke-static {p0, v1, v1, p1, v0}, Lxs7;->E(Lou3;Lhu3;Lru3;Li26;I)Lqod;
-
-    return-void
+    throw v0
 .end method

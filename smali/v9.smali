@@ -2,209 +2,333 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ly4b;
+
+# static fields
+.field public static final h:Lv9;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Z
 
-.field public final b:Ljava/lang/Object;
+.field public final b:Z
+
+.field public final c:Z
+
+.field public final d:Z
+
+.field public final e:Z
+
+.field public final f:Z
+
+.field public final g:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Ly4b;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 8
 
-    .line 1
-    iput p2, p0, Lv9;->a:I
+    new-instance v0, Lv9;
 
-    iput-object p1, p0, Lv9;->b:Ljava/lang/Object;
+    const/4 v6, 0x1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v7, 0x0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x1
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x1
+
+    invoke-direct/range {v0 .. v7}, Lv9;-><init>(ZZZZZZZ)V
+
+    sput-object v0, Lv9;->h:Lv9;
 
     return-void
 .end method
 
-.method public constructor <init>([Lwie;)V
-    .locals 1
+.method public constructor <init>(ZZZZZZZ)V
+    .locals 0
 
-    const/4 v0, 0x3
-
-    iput v0, p0, Lv9;->a:I
-
-    .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3
-    check-cast p1, [Lwie;
+    iput-boolean p1, p0, Lv9;->a:Z
 
-    iput-object p1, p0, Lv9;->b:Ljava/lang/Object;
+    iput-boolean p2, p0, Lv9;->b:Z
 
-    const/4 p0, 0x0
+    iput-boolean p3, p0, Lv9;->c:Z
 
-    .line 4
-    array-length p1, p1
+    iput-boolean p4, p0, Lv9;->d:Z
 
-    invoke-static {p0, p1}, Lez3;->m(II)V
+    iput-boolean p5, p0, Lv9;->e:Z
+
+    iput-boolean p6, p0, Lv9;->f:Z
+
+    iput-boolean p7, p0, Lv9;->g:Z
 
     return-void
+.end method
+
+.method public static a(Lv9;ZZZZZZI)Lv9;
+    .locals 8
+
+    and-int/lit8 v0, p7, 0x1
+
+    if-eqz v0, :cond_0
+
+    iget-boolean p1, p0, Lv9;->a:Z
+
+    :cond_0
+    move v1, p1
+
+    and-int/lit8 p1, p7, 0x2
+
+    if-eqz p1, :cond_1
+
+    iget-boolean p2, p0, Lv9;->b:Z
+
+    :cond_1
+    move v2, p2
+
+    and-int/lit8 p1, p7, 0x4
+
+    if-eqz p1, :cond_2
+
+    iget-boolean p3, p0, Lv9;->c:Z
+
+    :cond_2
+    move v3, p3
+
+    and-int/lit8 p1, p7, 0x8
+
+    if-eqz p1, :cond_3
+
+    iget-boolean p4, p0, Lv9;->d:Z
+
+    :cond_3
+    move v4, p4
+
+    and-int/lit8 p1, p7, 0x10
+
+    if-eqz p1, :cond_4
+
+    iget-boolean p5, p0, Lv9;->e:Z
+
+    :cond_4
+    move v5, p5
+
+    iget-boolean v6, p0, Lv9;->f:Z
+
+    and-int/lit8 p1, p7, 0x40
+
+    if-eqz p1, :cond_5
+
+    iget-boolean p6, p0, Lv9;->g:Z
+
+    :cond_5
+    move v7, p6
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v0, Lv9;
+
+    invoke-direct/range {v0 .. v7}, Lv9;-><init>(ZZZZZZZ)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Lah0;Lz4b;)V
-    .locals 3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
-    iget v0, p0, Lv9;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    move-object v0, p2
-
-    check-cast v0, Lji0;
-
-    iget-object v0, v0, Lji0;->a:Ltr6;
-
-    iget-object v0, v0, Ltr6;->i:Lhbc;
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p1, v1, v2}, Lah0;->g(ILjava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0, p1, p2}, Lv9;->c(ILah0;Lz4b;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_1
-
-    invoke-virtual {p1, v1, v2}, Lah0;->g(ILjava/lang/Object;)V
-
-    :cond_1
-    :goto_0
-    return-void
-
-    :pswitch_0
-    new-instance v0, Lu9;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, p1, v1}, Lu9;-><init>(Lah0;I)V
-
-    iget-object p0, p0, Lv9;->b:Ljava/lang/Object;
-
-    check-cast p0, Ly4b;
-
-    invoke-interface {p0, v0, p2}, Ly4b;->a(Lah0;Lz4b;)V
-
-    return-void
-
-    :pswitch_1
-    new-instance v0, Lu9;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, p1, v1}, Lu9;-><init>(Lah0;I)V
-
-    iget-object p0, p0, Lv9;->b:Ljava/lang/Object;
-
-    check-cast p0, Ly4b;
-
-    invoke-interface {p0, v0, p2}, Ly4b;->a(Lah0;Lz4b;)V
-
-    return-void
-
-    :pswitch_2
-    new-instance v0, Lu9;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p1, v1}, Lu9;-><init>(Lah0;I)V
-
-    iget-object p0, p0, Lv9;->b:Ljava/lang/Object;
-
-    check-cast p0, Ly4b;
-
-    invoke-interface {p0, v0, p2}, Ly4b;->a(Lah0;Lz4b;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public c(ILah0;Lz4b;)Z
-    .locals 4
-
-    move-object v0, p3
-
-    check-cast v0, Lji0;
-
-    iget-object v0, v0, Lji0;->a:Ltr6;
-
-    iget-object v0, v0, Ltr6;->i:Lhbc;
-
-    :goto_0
-    iget-object v1, p0, Lv9;->b:Ljava/lang/Object;
-
-    check-cast v1, [Lwie;
-
-    array-length v2, v1
-
-    const/4 v3, -0x1
-
-    if-ge p1, v2, :cond_1
-
-    aget-object v2, v1, p1
-
-    invoke-interface {v2, v0}, Lwie;->b(Lhbc;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
+    if-ne p0, p1, :cond_0
 
     goto :goto_1
 
     :cond_0
-    add-int/lit8 p1, p1, 0x1
+    instance-of v0, p1, Lv9;
+
+    if-nez v0, :cond_1
 
     goto :goto_0
 
     :cond_1
-    move p1, v3
+    check-cast p1, Lv9;
 
-    :goto_1
-    if-ne p1, v3, :cond_2
+    iget-boolean v0, p0, Lv9;->a:Z
 
+    iget-boolean v1, p1, Lv9;->a:Z
+
+    if-eq v0, v1, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    iget-boolean v0, p0, Lv9;->b:Z
+
+    iget-boolean v1, p1, Lv9;->b:Z
+
+    if-eq v0, v1, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    iget-boolean v0, p0, Lv9;->c:Z
+
+    iget-boolean v1, p1, Lv9;->c:Z
+
+    if-eq v0, v1, :cond_4
+
+    goto :goto_0
+
+    :cond_4
+    iget-boolean v0, p0, Lv9;->d:Z
+
+    iget-boolean v1, p1, Lv9;->d:Z
+
+    if-eq v0, v1, :cond_5
+
+    goto :goto_0
+
+    :cond_5
+    iget-boolean v0, p0, Lv9;->e:Z
+
+    iget-boolean v1, p1, Lv9;->e:Z
+
+    if-eq v0, v1, :cond_6
+
+    goto :goto_0
+
+    :cond_6
+    iget-boolean v0, p0, Lv9;->f:Z
+
+    iget-boolean v1, p1, Lv9;->f:Z
+
+    if-eq v0, v1, :cond_7
+
+    goto :goto_0
+
+    :cond_7
+    iget-boolean p0, p0, Lv9;->g:Z
+
+    iget-boolean p1, p1, Lv9;->g:Z
+
+    if-eq p0, p1, :cond_8
+
+    :goto_0
     const/4 p0, 0x0
 
     return p0
 
-    :cond_2
-    aget-object v0, v1, p1
-
-    new-instance v1, Lvie;
-
-    invoke-direct {v1, p0, p2, p3, p1}, Lvie;-><init>(Lv9;Lah0;Lz4b;I)V
-
-    invoke-interface {v0, v1, p3}, Ly4b;->a(Lah0;Lz4b;)V
-
+    :cond_8
+    :goto_1
     const/4 p0, 0x1
 
     return p0
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    iget-boolean v0, p0, Lv9;->a:Z
+
+    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget-boolean v2, p0, Lv9;->b:Z
+
+    invoke-static {v0, v1, v2}, Luz1;->f(IIZ)I
+
+    move-result v0
+
+    iget-boolean v2, p0, Lv9;->c:Z
+
+    invoke-static {v0, v1, v2}, Luz1;->f(IIZ)I
+
+    move-result v0
+
+    iget-boolean v2, p0, Lv9;->d:Z
+
+    invoke-static {v0, v1, v2}, Luz1;->f(IIZ)I
+
+    move-result v0
+
+    iget-boolean v2, p0, Lv9;->e:Z
+
+    invoke-static {v0, v1, v2}, Luz1;->f(IIZ)I
+
+    move-result v0
+
+    iget-boolean v2, p0, Lv9;->f:Z
+
+    invoke-static {v0, v1, v2}, Luz1;->f(IIZ)I
+
+    move-result v0
+
+    iget-boolean p0, p0, Lv9;->g:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 5
+
+    const-string v0, ", isEnableCameraAvailableInCall="
+
+    const-string v1, ", isEnableMicrophoneAvailableInCall="
+
+    const-string v2, "AdminCallState(isAdminOrCreator="
+
+    iget-boolean v3, p0, Lv9;->a:Z
+
+    iget-boolean v4, p0, Lv9;->b:Z
+
+    invoke-static {v2, v3, v0, v4, v1}, Lm26;->o(Ljava/lang/String;ZLjava/lang/String;ZLjava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", isEnableSharingScreenAvailableInCall="
+
+    const-string v2, ", isEnableRecordScreenAvailableInCall="
+
+    iget-boolean v3, p0, Lv9;->c:Z
+
+    iget-boolean v4, p0, Lv9;->d:Z
+
+    invoke-static {v1, v2, v0, v3, v4}, Lzt1;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;ZZ)V
+
+    const-string v1, ", isEnableHandsUpAvailableInCall="
+
+    const-string v2, ", isEnableWaitingRoom="
+
+    iget-boolean v3, p0, Lv9;->e:Z
+
+    iget-boolean v4, p0, Lv9;->f:Z
+
+    invoke-static {v1, v2, v0, v3, v4}, Lzt1;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;ZZ)V
+
+    const-string v1, ")"
+
+    iget-boolean p0, p0, Lv9;->g:Z
+
+    invoke-static {v0, p0, v1}, Lzt1;->j(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

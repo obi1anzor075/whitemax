@@ -1,6 +1,19 @@
-.class public interface abstract Leca;
+.class public abstract Leca;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/os/Parcelable;
+
+# static fields
+.field public static final a:I
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    sget v0, Lhxb;->pinbars_group_call_participants_count:I
+
+    sput v0, Leca;->a:I
+
+    return-void
+.end method

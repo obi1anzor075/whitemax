@@ -1,57 +1,64 @@
-.class public final Ldd2;
-.super Ler3;
+.class public final synthetic Ldd2;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/util/function/UnaryOperator;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic a:Lzs8;
 
-.field public final synthetic Y:Lgd2;
+.field public final synthetic b:Lf10;
 
-.field public Z:I
+.field public final synthetic c:Lw10;
 
-.field public o:Ljava/util/ArrayList;
+.field public final synthetic d:Lgn4;
 
 
 # direct methods
-.method public constructor <init>(Lgd2;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(Lzs8;Lf10;Lw10;Lgn4;)V
     .locals 0
 
-    iput-object p1, p0, Ldd2;->Y:Lgd2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Ldd2;->a:Lzs8;
+
+    iput-object p2, p0, Ldd2;->b:Lf10;
+
+    iput-object p3, p0, Ldd2;->c:Lw10;
+
+    iput-object p4, p0, Ldd2;->d:Lgn4;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 7
+.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 8
 
-    iput-object p1, p0, Ldd2;->X:Ljava/lang/Object;
+    check-cast p1, Led2;
 
-    iget p1, p0, Ldd2;->Z:I
+    new-instance v0, Led2;
 
-    const/high16 v0, -0x80000000
+    iget-object p1, p0, Ldd2;->a:Lzs8;
 
-    or-int/2addr p1, v0
+    iget-wide v1, p1, Lhi0;->b:J
 
-    iput p1, p0, Ldd2;->Z:I
+    iget-object p1, p0, Ldd2;->b:Lf10;
 
-    const/4 v1, 0x0
+    iget-wide v3, p1, Lf10;->a:J
 
-    const-wide/16 v4, 0x0
+    iget-object p1, p0, Ldd2;->c:Lw10;
 
-    iget-object v0, p0, Ldd2;->Y:Lgd2;
+    iget-object v5, p1, Lw10;->r:Ljava/lang/String;
 
-    const-wide/16 v2, 0x0
+    const/4 v7, 0x0
 
-    move-object v6, p0
+    iget-object v6, p0, Ldd2;->d:Lgn4;
 
-    invoke-virtual/range {v0 .. v6}, Lgd2;->b(IJJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-direct/range {v0 .. v7}, Led2;-><init>(JJLjava/lang/String;Lgn4;Z)V
 
-    move-result-object p0
-
-    return-object p0
+    return-object v0
 .end method

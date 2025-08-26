@@ -1,154 +1,220 @@
 .class public final Liu2;
-.super Ll5e;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Lo26;
+.implements Ll66;
 
 
 # instance fields
-.field public synthetic X:Lhq2;
-
-.field public synthetic Y:Ljava/util/List;
-
-.field public synthetic Z:Ljava/util/List;
-
-.field public synthetic w0:Ljava/util/List;
-
-.field public final synthetic x0:Lone/me/chats/list/ChatsListWidget;
+.field public final synthetic X:Lyu2;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chats/list/ChatsListWidget;)V
+.method public constructor <init>(Lyu2;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    iput-object p2, p0, Liu2;->x0:Lone/me/chats/list/ChatsListWidget;
+    iput-object p1, p0, Liu2;->X:Lyu2;
 
-    const/4 p2, 0x5
+    const/4 p1, 0x2
 
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final m(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    check-cast p1, Lhq2;
+    check-cast p1, Lox3;
 
-    check-cast p2, Ljava/util/List;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    check-cast p3, Ljava/util/List;
+    invoke-virtual {p0, p1, p2}, Liu2;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    check-cast p4, Ljava/util/List;
+    move-result-object p0
 
-    check-cast p5, Lkotlin/coroutines/Continuation;
+    check-cast p0, Liu2;
 
-    new-instance v0, Liu2;
+    sget-object p1, Le5f;->a:Le5f;
 
-    iget-object p0, p0, Liu2;->x0:Lone/me/chats/list/ChatsListWidget;
+    invoke-virtual {p0, p1}, Liu2;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {v0, p5, p0}, Liu2;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chats/list/ChatsListWidget;)V
+    return-object p1
+.end method
 
-    iput-object p1, v0, Liu2;->X:Lhq2;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
 
-    iput-object p2, v0, Liu2;->Y:Ljava/util/List;
+    new-instance p1, Liu2;
 
-    iput-object p3, v0, Liu2;->Z:Ljava/util/List;
+    iget-object p0, p0, Liu2;->X:Lyu2;
 
-    iput-object p4, v0, Liu2;->w0:Ljava/util/List;
+    invoke-direct {p1, p0, p2}, Liu2;-><init>(Lyu2;Lkotlin/coroutines/Continuation;)V
 
-    sget-object p0, Ljue;->a:Ljue;
-
-    invoke-virtual {v0, p0}, Liu2;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p0
+    return-object p1
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+    .locals 6
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Liu2;->X:Lhq2;
+    iget-object p0, p0, Liu2;->X:Lyu2;
 
-    iget-object v0, p0, Liu2;->Y:Ljava/util/List;
+    iget-object p1, p0, Lyu2;->b:Li7c;
 
-    iget-object v1, p0, Liu2;->Z:Ljava/util/List;
+    iget-object v0, p1, Li7c;->b:Lxk3;
 
-    iget-object v2, p0, Liu2;->w0:Ljava/util/List;
+    sget-object v1, Lxk3;->r:Ljava/util/EnumSet;
 
-    sget-object v3, Lhq2;->c:Lhq2;
+    sget-object v2, Lxk3;->t:Lms;
 
-    sget-object v4, Lhw4;->a:Lhw4;
-
-    iget-object p0, p0, Liu2;->x0:Lone/me/chats/list/ChatsListWidget;
-
-    if-ne p1, v3, :cond_0
-
-    iget-object v0, p0, Lone/me/chats/list/ChatsListWidget;->E0:Lmr5;
-
-    invoke-virtual {v0, v4}, Lig7;->E(Ljava/util/List;)V
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v3, p0, Lone/me/chats/list/ChatsListWidget;->E0:Lmr5;
-
-    invoke-virtual {v3, v0}, Lig7;->E(Ljava/util/List;)V
-
-    :goto_0
-    iget-object v0, p0, Lone/me/chats/list/ChatsListWidget;->D0:Lfv4;
-
-    iget-object v3, p1, Lhq2;->a:Ljava/util/List;
-
-    invoke-virtual {v0, v3}, Lig7;->E(Ljava/util/List;)V
-
-    invoke-virtual {p0}, Lrr3;->getView()Landroid/view/View;
+    invoke-virtual {v0, v1, v2}, Lxk3;->j(Ljava/util/Set;Ljava/util/Set;)Ljava/util/List;
 
     move-result-object v0
 
-    iget-boolean p1, p1, Lhq2;->b:Z
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p0}, Lone/me/chats/list/ChatsListWidget;->n0()Lone/me/sdk/lists/widgets/EndlessRecyclerView2;
+    invoke-static {v0}, Lvw9;->i(Ljava/lang/Iterable;)Lv93;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;->setRefreshingNext(Z)V
+    new-instance v1, Lpta;
 
-    :cond_1
-    iget-object v0, p0, Lone/me/chats/list/ChatsListWidget;->F0:Lcpf;
+    const/16 v2, 0xf
 
-    invoke-virtual {v0, v1}, Lig7;->E(Ljava/util/List;)V
+    invoke-direct {v1, p1, v2}, Lpta;-><init>(Li7c;I)V
 
-    iget-object v0, p0, Lone/me/chats/list/ChatsListWidget;->G0:Lcpf;
+    new-instance v2, Lyw9;
 
-    if-eqz p1, :cond_2
+    const/4 v3, 0x1
 
-    invoke-virtual {v0, v4}, Lig7;->E(Ljava/util/List;)V
+    invoke-direct {v2, v0, v1, v3}, Lyw9;-><init>(Lvw9;Ln4b;I)V
 
-    goto :goto_1
+    new-instance v0, Lh7c;
 
-    :cond_2
-    const-string p1, "all.chat.folder"
+    const/4 v1, 0x0
 
-    iget-object p0, p0, Lone/me/chats/list/ChatsListWidget;->b:Ljava/lang/String;
+    invoke-direct {v0, p1, v1}, Lh7c;-><init>(Li7c;I)V
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    new-instance v1, Lyw9;
 
-    move-result p0
+    invoke-direct {v1, v2, v0, v3}, Lyw9;-><init>(Lvw9;Ln4b;I)V
 
-    if-eqz p0, :cond_3
+    new-instance v0, Lh7c;
 
-    invoke-virtual {v0, v2}, Lig7;->E(Ljava/util/List;)V
+    const/4 v2, 0x2
 
-    :cond_3
-    :goto_1
-    sget-object p0, Ljue;->a:Ljue;
+    invoke-direct {v0, p1, v2}, Lh7c;-><init>(Li7c;I)V
+
+    new-instance v2, Ley9;
+
+    invoke-direct {v2, v1, v0}, Ley9;-><init>(Lvw9;Lm66;)V
+
+    iget-object v0, p1, Li7c;->a:Ln82;
+
+    sget-object v1, Ln82;->I:Lk00;
+
+    invoke-virtual {v0, v1}, Ln82;->E(Ljava/util/Comparator;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lvw9;->i(Ljava/lang/Iterable;)Lv93;
+
+    move-result-object v0
+
+    new-instance v1, Lpta;
+
+    const/16 v3, 0xa
+
+    invoke-direct {v1, p1, v3}, Lpta;-><init>(Li7c;I)V
+
+    new-instance v3, Lyw9;
+
+    const/4 v4, 0x1
+
+    invoke-direct {v3, v0, v1, v4}, Lyw9;-><init>(Lvw9;Ln4b;I)V
+
+    new-instance v0, Lh7c;
+
+    const/4 v1, 0x3
+
+    invoke-direct {v0, p1, v1}, Lh7c;-><init>(Li7c;I)V
+
+    new-instance v1, Ley9;
+
+    invoke-direct {v1, v3, v0}, Ley9;-><init>(Lvw9;Lm66;)V
+
+    new-instance v0, Lf93;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v0, v1, v3, v2}, Lf93;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    iget-object p1, p1, Li7c;->c:Lgsc;
+
+    invoke-virtual {v0, p1}, Le93;->k(Lgsc;)Ln93;
+
+    move-result-object p1
+
+    new-instance v0, Lqa4;
+
+    const/4 v1, 0x5
+
+    invoke-direct {v0, v1}, Lqa4;-><init>(I)V
+
+    new-instance v1, Lpta;
+
+    const/16 v2, 0xe
+
+    invoke-direct {v1, v2}, Lpta;-><init>(I)V
+
+    new-instance v2, Lfq1;
+
+    invoke-direct {v2, v1, v3, v0}, Lfq1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-virtual {p1, v2}, Le93;->i(Lo93;)V
+
+    iget-object p0, p0, Lyu2;->A0:Lazd;
+
+    invoke-virtual {p0}, Lazd;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    move-object v0, p1
+
+    check-cast v0, Lhu2;
+
+    iget-object p1, v0, Lhu2;->c:Lkt6;
+
+    iget-object v1, p1, Lkt6;->a:Ljava/util/List;
+
+    iget-object p1, p1, Lkt6;->c:Ljava/util/List;
+
+    new-instance v2, Lkt6;
+
+    sget-object v3, Lgz4;->a:Lgz4;
+
+    invoke-direct {v2, v1, v3, p1}, Lkt6;-><init>(Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
+
+    const/4 v4, 0x0
+
+    const/16 v5, 0x1b
+
+    const/4 v1, 0x0
+
+    const/4 v3, 0x0
+
+    invoke-static/range {v0 .. v5}, Lhu2;->a(Lhu2;Lgu2;Lkt6;Ljava/util/ArrayList;ZI)Lhu2;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0, p1}, Lazd;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 .end method

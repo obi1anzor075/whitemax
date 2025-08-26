@@ -1,23 +1,14 @@
-.class public abstract Lcc7;
+.class public interface abstract Lcc7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Ljava/util/concurrent/atomic/AtomicBoolean;
+# virtual methods
+.method public abstract a(Lu40;Ljava/lang/Object;)V
+.end method
 
+.method public abstract b(Lnye;)Ljava/lang/Object;
+.end method
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    sput-object v0, Lcc7;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    return-void
+.method public abstract d()Lx4d;
 .end method

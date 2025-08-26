@@ -20,6 +20,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -28,113 +29,66 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Iterable;)V
+.method public constructor <init>(Ljava/util/Collection;)V
     .locals 11
 
-    sget v0, Lzp4;->o:I
+    sget v0, Lat4;->o:I
 
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v0
 
-    sget-object v2, Leq4;->b:Leq4;
+    sget-object v2, Lft4;->b:Lft4;
 
-    invoke-static {v0, v1, v2}, Lmt0;->Q(JLeq4;)J
+    invoke-static {v0, v1, v2}, La4f;->G(JLft4;)J
 
     move-result-wide v0
 
-    new-instance v2, Lyu7;
+    new-instance v3, Lyz7;
 
-    const/4 v3, 0x1
+    const/4 v4, 0x2
 
-    invoke-direct {v2, v0, v1, v3}, Lyu7;-><init>(JI)V
+    invoke-direct {v3, v0, v1, v4}, Lyz7;-><init>(JI)V
 
-    invoke-static {p1, v2}, Lo23;->m0(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
+    invoke-static {p1, v3}, Lp43;->Q0(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;
 
-    move-result-object v4
+    move-result-object v5
 
-    instance-of v2, p1, Ljava/util/Collection;
+    invoke-interface {p1}, Ljava/util/Collection;->size()I
 
-    const/4 v10, 0x0
+    move-result v3
 
-    if-eqz v2, :cond_0
+    const-string v4, "Tasks in queue: "
 
-    move-object v2, p1
+    const-string v6, "\n"
 
-    check-cast v2, Ljava/util/Collection;
+    invoke-static {v3, v4, v6}, Lpg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-interface {v2}, Ljava/util/Collection;->size()I
+    move-result-object v7
 
-    move-result v2
+    new-instance v9, Lzf2;
 
-    goto :goto_1
+    const/4 v3, 0x7
 
-    :cond_0
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-direct {v9, v0, v1, v3}, Lzf2;-><init>(JI)V
 
-    move-result-object v2
+    const/16 v10, 0x1d
 
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    const/4 v8, 0x0
 
-    move-result v6
-
-    if-eqz v6, :cond_2
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    add-int/2addr v5, v3
-
-    if-ltz v5, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    invoke-static {}, Lp23;->F()V
-
-    throw v10
-
-    :cond_2
-    move v2, v5
-
-    :goto_1
-    const-string v3, "Tasks in queue: "
-
-    const-string v5, "\n"
-
-    invoke-static {v2, v3, v5}, Lrf0;->f(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    new-instance v8, Lje2;
-
-    const/4 v2, 0x7
-
-    invoke-direct {v8, v0, v1, v2}, Lje2;-><init>(JI)V
-
-    const/4 v5, 0x0
-
-    const/4 v7, 0x0
-
-    const/16 v9, 0x1d
-
-    invoke-static/range {v4 .. v9}, Lo23;->c0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lu16;I)Ljava/lang/String;
+    invoke-static/range {v5 .. v10}, Lp43;->G0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lx56;I)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    sget v0, Lzp4;->o:I
-
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v0
 
-    sget-object v2, Leq4;->b:Leq4;
-
-    invoke-static {v0, v1, v2}, Lmt0;->Q(JLeq4;)J
+    invoke-static {v0, v1, v2}, La4f;->G(JLft4;)J
 
     move-result-wide v0
 
@@ -146,87 +100,94 @@
 
     move-result v2
 
-    if-nez v2, :cond_3
+    if-nez v2, :cond_0
 
-    goto :goto_2
+    const/4 p1, 0x0
 
-    :cond_3
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    goto :goto_1
 
-    move-result-object v10
-
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-nez v2, :cond_4
-
-    goto :goto_2
-
-    :cond_4
-    move-object v2, v10
-
-    check-cast v2, Lpef;
-
-    invoke-virtual {v2, v0, v1}, Lpef;->b(J)J
-
-    move-result-wide v2
-
-    new-instance v4, Lzp4;
-
-    invoke-direct {v4, v2, v3}, Lzp4;-><init>(J)V
-
-    :cond_5
+    :cond_0
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    :goto_0
+    move-object p1, v2
+
+    goto :goto_1
+
+    :cond_1
     move-object v3, v2
 
-    check-cast v3, Lpef;
+    check-cast v3, Llsf;
 
-    invoke-virtual {v3, v0, v1}, Lpef;->b(J)J
+    invoke-virtual {v3, v0, v1}, Llsf;->b(J)J
 
-    move-result-wide v5
+    move-result-wide v3
 
-    new-instance v3, Lzp4;
+    new-instance v5, Lat4;
 
-    invoke-direct {v3, v5, v6}, Lzp4;-><init>(J)V
+    invoke-direct {v5, v3, v4}, Lat4;-><init>(J)V
 
-    invoke-virtual {v4, v3}, Lzp4;->compareTo(Ljava/lang/Object;)I
+    :cond_2
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result v5
-
-    if-gez v5, :cond_6
-
-    move-object v10, v2
+    move-result-object v3
 
     move-object v4, v3
 
-    :cond_6
+    check-cast v4, Llsf;
+
+    invoke-virtual {v4, v0, v1}, Llsf;->b(J)J
+
+    move-result-wide v6
+
+    new-instance v4, Lat4;
+
+    invoke-direct {v4, v6, v7}, Lat4;-><init>(J)V
+
+    invoke-virtual {v5, v4}, Lat4;->compareTo(Ljava/lang/Object;)I
+
+    move-result v6
+
+    if-gez v6, :cond_3
+
+    move-object v2, v3
+
+    move-object v5, v4
+
+    :cond_3
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_5
+    if-nez v3, :cond_2
 
-    :goto_2
-    check-cast v10, Lpef;
+    goto :goto_0
 
-    if-eqz v10, :cond_7
+    :goto_1
+    check-cast p1, Llsf;
 
-    iget-object p1, v10, Lpef;->d:Ljava/lang/Thread;
+    if-eqz p1, :cond_4
 
-    if-eqz p1, :cond_7
+    iget-object p1, p1, Llsf;->d:Ljava/lang/Thread;
+
+    if-eqz p1, :cond_4
 
     invoke-virtual {p1}, Ljava/lang/Thread;->getStackTrace()[Ljava/lang/StackTraceElement;
 
     move-result-object p1
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_4
 
     invoke-virtual {p0, p1}, Ljava/lang/Throwable;->setStackTrace([Ljava/lang/StackTraceElement;)V
 
-    :cond_7
+    :cond_4
     return-void
 .end method

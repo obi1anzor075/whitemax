@@ -3,26 +3,22 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Lv56;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Ld3a;
-
-.field public final synthetic c:Lxt7;
+.field public final synthetic b:Lj3a;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ld3a;Lwt7;I)V
+.method public synthetic constructor <init>(Lj3a;I)V
     .locals 0
 
-    iput p3, p0, Lz2a;->a:I
+    iput p2, p0, Lz2a;->a:I
 
-    iput-object p1, p0, Lz2a;->b:Ld3a;
-
-    iput-object p2, p0, Lz2a;->c:Lxt7;
+    iput-object p1, p0, Lz2a;->b:Lj3a;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,91 +34,117 @@
 
     packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p0, Lz2a;->c:Lxt7;
+    iget-object p0, p0, Lz2a;->b:Lj3a;
 
-    check-cast v0, Lwt7;
-
-    invoke-virtual {v0}, Lwt7;->c()Ljava/util/List;
-
-    move-result-object v1
-
-    iget v2, v0, Lwt7;->c:I
-
-    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lone/me/messages/list/loader/MessageModel;
-
-    invoke-virtual {v0}, Lwt7;->c()Ljava/util/List;
-
-    move-result-object v3
-
-    add-int/lit8 v2, v2, 0x1
-
-    invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lone/me/messages/list/loader/MessageModel;
-
-    iget-object p0, p0, Lz2a;->b:Ld3a;
-
-    invoke-virtual {p0, v0, v1, v2}, Ld3a;->c(Lwt7;Lone/me/messages/list/loader/MessageModel;Lone/me/messages/list/loader/MessageModel;)Z
-
-    move-result p0
-
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {p0}, Lj3a;->a(Lj3a;)Landroid/graphics/drawable/LayerDrawable;
 
     move-result-object p0
 
     return-object p0
 
     :pswitch_0
-    iget-object v0, p0, Lz2a;->c:Lxt7;
+    sget v0, Lyrb;->call_fill_16:I
 
-    check-cast v0, Lwt7;
+    sget-object v1, Lqp4;->q0:Lap9;
 
-    invoke-virtual {v0}, Lwt7;->c()Ljava/util/List;
+    iget-object p0, p0, Lz2a;->b:Lj3a;
 
-    move-result-object v1
-
-    iget v2, v0, Lwt7;->c:I
-
-    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1, p0}, Lap9;->h(Landroid/view/View;)Lyha;
 
     move-result-object v1
 
-    check-cast v1, Lone/me/messages/list/loader/MessageModel;
+    invoke-interface {v1}, Lyha;->getIcon()Lds6;
 
-    invoke-virtual {v0}, Lwt7;->c()Ljava/util/List;
-
-    move-result-object v3
-
-    add-int/lit8 v2, v2, -0x1
-
-    invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lone/me/messages/list/loader/MessageModel;
-
-    iget-object p0, p0, Lz2a;->b:Ld3a;
-
-    invoke-virtual {p0, v0, v1, v2}, Ld3a;->c(Lwt7;Lone/me/messages/list/loader/MessageModel;Lone/me/messages/list/loader/MessageModel;)Z
-
-    move-result p0
-
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object p0
 
+    invoke-static {p0, v0}, Let3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    const/4 v0, -0x1
+
+    invoke-static {p0, v0}, Lgad;->j0(Landroid/graphics/drawable/Drawable;I)V
+
     return-object p0
+
+    :pswitch_1
+    new-instance v0, Landroid/graphics/drawable/GradientDrawable;
+
+    invoke-direct {v0}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
+
+    const/4 v1, 0x2
+
+    int-to-float v1, v1
+
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v2
+
+    iget v2, v2, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v1, v2
+
+    invoke-static {v1}, Lkhg;->x(F)I
+
+    move-result v1
+
+    sget-object v2, Lqp4;->q0:Lap9;
+
+    iget-object p0, p0, Lz2a;->b:Lj3a;
+
+    invoke-virtual {v2, p0}, Lap9;->h(Landroid/view/View;)Lyha;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Lyha;->b()Lfe0;
+
+    move-result-object v3
+
+    iget v3, v3, Lfe0;->l:I
+
+    invoke-virtual {v0, v1, v3}, Landroid/graphics/drawable/GradientDrawable;->setStroke(II)V
+
+    invoke-virtual {v2, p0}, Lap9;->h(Landroid/view/View;)Lyha;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lyha;->getIcon()Lds6;
+
+    move-result-object p0
+
+    iget p0, p0, Lds6;->k:I
+
+    invoke-virtual {v0, p0}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
+
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object p0
+
+    iget p0, p0, Landroid/util/DisplayMetrics;->density:F
+
+    const/high16 v1, 0x42000000    # 32.0f
+
+    mul-float/2addr p0, v1
+
+    invoke-virtual {v0, p0}, Landroid/graphics/drawable/GradientDrawable;->setCornerRadius(F)V
+
+    return-object v0
 
     nop
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

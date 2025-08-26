@@ -29,9 +29,7 @@
 
     new-instance v0, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipantsUpdate;
 
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v1
+    sget-object v1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     const/4 v2, 0x0
 

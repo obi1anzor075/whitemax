@@ -1,13 +1,39 @@
-.class public abstract Ltbc;
+.class public final Ltbc;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# direct methods
-.method public static a(Landroid/content/res/Resources$Theme;)V
-    .locals 0
+# instance fields
+.field public final a:Ljava/util/ArrayList;
 
-    invoke-virtual {p0}, Landroid/content/res/Resources$Theme;->rebase()V
+.field public b:I
+
+.field public c:J
+
+.field public d:J
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Ltbc;->a:Ljava/util/ArrayList;
+
+    const/4 v0, 0x5
+
+    iput v0, p0, Ltbc;->b:I
+
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Ltbc;->c:J
+
+    iput-wide v0, p0, Ltbc;->d:J
 
     return-void
 .end method

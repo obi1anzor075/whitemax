@@ -1,52 +1,47 @@
-.class public final synthetic Lih6;
-.super Lx26;
+.class public final Lih6;
+.super Lbu3;
 .source "SourceFile"
 
-# interfaces
-.implements Lu16;
 
+# instance fields
+.field public final synthetic X:Lkh6;
 
-# static fields
-.field public static final a:Lih6;
+.field public Y:I
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
+.method public constructor <init>(Lkh6;Lbu3;)V
+    .locals 0
 
-    new-instance v6, Lih6;
+    iput-object p1, p0, Lih6;->X:Lkh6;
 
-    const-class v2, Lrg6;
-
-    const-string v3, "getId"
-
-    const/4 v1, 0x1
-
-    const-string v4, "getId()J"
-
-    const/4 v5, 0x0
-
-    move-object v0, v6
-
-    invoke-direct/range {v0 .. v5}, Lx26;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    sput-object v6, Lih6;->a:Lih6;
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    check-cast p1, Lrg6;
+    iput-object p1, p0, Lih6;->o:Ljava/lang/Object;
 
-    invoke-interface {p1}, Lrg6;->getId()J
+    iget p1, p0, Lih6;->Y:I
 
-    move-result-wide p0
+    const/high16 v0, -0x80000000
 
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lih6;->Y:I
+
+    iget-object p1, p0, Lih6;->X:Lkh6;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lkh6;->b(Ljava/util/List;Lbu3;)Ljava/io/Serializable;
 
     move-result-object p0
 

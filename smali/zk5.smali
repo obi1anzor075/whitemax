@@ -1,124 +1,316 @@
 .class public final Lzk5;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
 
 
 # instance fields
-.field public X:I
+.field public final a:Ljava/lang/String;
 
-.field public synthetic Y:Ljava/lang/Object;
+.field public final b:Ljava/lang/String;
 
-.field public final synthetic Z:Lpj5;
+.field public final c:Ljava/lang/String;
+
+.field public final d:Ljava/lang/String;
+
+.field public final e:Ljava/lang/String;
+
+.field public final f:Ljava/lang/String;
+
+.field public final g:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lpj5;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
 
-    iput-object p1, p0, Lzk5;->Z:Lpj5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
+    sget v0, Li8e;->a:I
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    const/4 v0, 0x1
 
-    return-void
-.end method
+    if-eqz p1, :cond_1
 
+    invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+    move-result-object v1
 
-    check-cast p1, Ld5b;
+    invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    move-result v1
 
-    invoke-virtual {p0, p1, p2}, Lzk5;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lzk5;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lzk5;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
-
-    new-instance v0, Lzk5;
-
-    iget-object p0, p0, Lzk5;->Z:Lpj5;
-
-    invoke-direct {v0, p0, p2}, Lzk5;-><init>(Lpj5;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lzk5;->Y:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
-
-    sget-object v0, Lpu3;->a:Lpu3;
-
-    iget v1, p0, Lzk5;->X:I
-
-    const/4 v2, 0x1
-
-    if-eqz v1, :cond_1
-
-    if-ne v1, v2, :cond_0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    if-eqz v1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    const/4 v1, 0x0
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+    goto :goto_1
 
     :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    :goto_0
+    move v1, v0
 
-    iget-object p1, p0, Lzk5;->Y:Ljava/lang/Object;
+    :goto_1
+    xor-int/2addr v0, v1
 
-    check-cast p1, Ld5b;
+    const-string v1, "ApplicationId must be set."
 
-    new-instance v1, Lwj5;
+    invoke-static {v1, v0}, Lkhg;->m(Ljava/lang/String;Z)V
 
-    const/4 v3, 0x2
+    iput-object p1, p0, Lzk5;->b:Ljava/lang/String;
 
-    invoke-direct {v1, p1, v3}, Lwj5;-><init>(Ld5b;I)V
+    iput-object p2, p0, Lzk5;->a:Ljava/lang/String;
 
-    iput v2, p0, Lzk5;->X:I
+    iput-object p3, p0, Lzk5;->c:Ljava/lang/String;
 
-    iget-object p1, p0, Lzk5;->Z:Lpj5;
+    iput-object p4, p0, Lzk5;->d:Ljava/lang/String;
 
-    invoke-interface {p1, v1, p0}, Lpj5;->c(Lrj5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iput-object p5, p0, Lzk5;->e:Ljava/lang/String;
+
+    iput-object p6, p0, Lzk5;->f:Ljava/lang/String;
+
+    iput-object p7, p0, Lzk5;->g:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public static a(Landroid/content/Context;)Lzk5;
+    .locals 9
+
+    new-instance v0, Lj7b;
+
+    invoke-direct {v0, p0}, Lj7b;-><init>(Landroid/content/Context;)V
+
+    const-string p0, "google_app_id"
+
+    invoke-virtual {v0, p0}, Lj7b;->h(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_0
+    new-instance v1, Lzk5;
+
+    const-string p0, "google_api_key"
+
+    invoke-virtual {v0, p0}, Lj7b;->h(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string p0, "firebase_database_url"
+
+    invoke-virtual {v0, p0}, Lj7b;->h(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string p0, "ga_trackingId"
+
+    invoke-virtual {v0, p0}, Lj7b;->h(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    const-string p0, "gcm_defaultSenderId"
+
+    invoke-virtual {v0, p0}, Lj7b;->h(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string p0, "google_storage_bucket"
+
+    invoke-virtual {v0, p0}, Lj7b;->h(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
+    const-string p0, "project_id"
+
+    invoke-virtual {v0, p0}, Lj7b;->h(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-direct/range {v1 .. v8}, Lzk5;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v1
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    instance-of v0, p1, Lzk5;
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    return v1
+
+    :cond_0
+    check-cast p1, Lzk5;
+
+    iget-object v0, p0, Lzk5;->b:Ljava/lang/String;
+
+    iget-object v2, p1, Lzk5;->b:Ljava/lang/String;
+
+    invoke-static {v0, v2}, Lgr0;->j(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lzk5;->a:Ljava/lang/String;
+
+    iget-object v2, p1, Lzk5;->a:Ljava/lang/String;
+
+    invoke-static {v0, v2}, Lgr0;->j(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lzk5;->c:Ljava/lang/String;
+
+    iget-object v2, p1, Lzk5;->c:Ljava/lang/String;
+
+    invoke-static {v0, v2}, Lgr0;->j(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lzk5;->d:Ljava/lang/String;
+
+    iget-object v2, p1, Lzk5;->d:Ljava/lang/String;
+
+    invoke-static {v0, v2}, Lgr0;->j(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lzk5;->e:Ljava/lang/String;
+
+    iget-object v2, p1, Lzk5;->e:Ljava/lang/String;
+
+    invoke-static {v0, v2}, Lgr0;->j(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lzk5;->f:Ljava/lang/String;
+
+    iget-object v2, p1, Lzk5;->f:Ljava/lang/String;
+
+    invoke-static {v0, v2}, Lgr0;->j(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object p0, p0, Lzk5;->g:Ljava/lang/String;
+
+    iget-object p1, p1, Lzk5;->g:Ljava/lang/String;
+
+    invoke-static {p0, p1}, Lgr0;->j(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_1
+    return v1
+.end method
+
+.method public final hashCode()I
+    .locals 7
+
+    iget-object v5, p0, Lzk5;->f:Ljava/lang/String;
+
+    iget-object v6, p0, Lzk5;->g:Ljava/lang/String;
+
+    iget-object v0, p0, Lzk5;->b:Ljava/lang/String;
+
+    iget-object v1, p0, Lzk5;->a:Ljava/lang/String;
+
+    iget-object v2, p0, Lzk5;->c:Ljava/lang/String;
+
+    iget-object v3, p0, Lzk5;->d:Ljava/lang/String;
+
+    iget-object v4, p0, Lzk5;->e:Ljava/lang/String;
+
+    filled-new-array/range {v0 .. v6}, [Ljava/lang/Object;
 
     move-result-object p0
 
-    if-ne p0, v0, :cond_2
+    invoke-static {p0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
 
-    return-object v0
+    move-result p0
 
-    :cond_2
-    :goto_0
-    sget-object p0, Ljue;->a:Ljue;
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    new-instance v0, Lnz7;
+
+    invoke-direct {v0, p0}, Lnz7;-><init>(Ljava/lang/Object;)V
+
+    const-string v1, "applicationId"
+
+    iget-object v2, p0, Lzk5;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v2, v1}, Lnz7;->z(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "apiKey"
+
+    iget-object v2, p0, Lzk5;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, v2, v1}, Lnz7;->z(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "databaseUrl"
+
+    iget-object v2, p0, Lzk5;->c:Ljava/lang/String;
+
+    invoke-virtual {v0, v2, v1}, Lnz7;->z(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "gcmSenderId"
+
+    iget-object v2, p0, Lzk5;->e:Ljava/lang/String;
+
+    invoke-virtual {v0, v2, v1}, Lnz7;->z(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "storageBucket"
+
+    iget-object v2, p0, Lzk5;->f:Ljava/lang/String;
+
+    invoke-virtual {v0, v2, v1}, Lnz7;->z(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "projectId"
+
+    iget-object p0, p0, Lzk5;->g:Ljava/lang/String;
+
+    invoke-virtual {v0, p0, v1}, Lnz7;->z(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Lnz7;->toString()Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

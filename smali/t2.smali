@@ -4,7 +4,7 @@
 
 # interfaces
 .implements Ljava/util/Set;
-.implements La77;
+.implements Lrb7;
 
 
 # direct methods

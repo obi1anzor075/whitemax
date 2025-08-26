@@ -1,51 +1,58 @@
 .class public final Lce0;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public X:Ljava/util/HashSet;
+.field public final a:J
 
-.field public Y:Ljava/util/HashSet;
+.field public final b:Ljava/lang/String;
 
-.field public synthetic Z:Ljava/lang/Object;
-
-.field public o:Ljava/lang/Object;
-
-.field public final synthetic w0:Lru/ok/tamtam/workmanager/BacklogWorker;
-
-.field public x0:I
+.field public final c:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/tamtam/workmanager/BacklogWorker;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(JLjava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    iput-object p1, p0, Lce0;->w0:Lru/ok/tamtam/workmanager/BacklogWorker;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-wide p1, p0, Lce0;->a:J
+
+    iput-object p3, p0, Lce0;->b:Ljava/lang/String;
+
+    iput-object p4, p0, Lce0;->c:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 5
 
-    iput-object p1, p0, Lce0;->Z:Ljava/lang/Object;
+    const-string v0, "Background{id="
 
-    iget p1, p0, Lce0;->x0:I
+    const-string v1, ", url="
 
-    const/high16 v0, -0x80000000
+    iget-wide v2, p0, Lce0;->a:J
 
-    or-int/2addr p1, v0
+    iget-object v4, p0, Lce0;->b:Ljava/lang/String;
 
-    iput p1, p0, Lce0;->x0:I
+    invoke-static {v0, v2, v3, v1, v4}, Lp3a;->k(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p1, p0, Lce0;->w0:Lru/ok/tamtam/workmanager/BacklogWorker;
+    move-result-object v0
 
-    invoke-virtual {p1, p0}, Lru/ok/tamtam/workmanager/BacklogWorker;->h(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    const-string v1, ", color="
+
+    const-string v2, "}"
+
+    iget-object p0, p0, Lce0;->c:Ljava/lang/String;
+
+    invoke-static {v0, v1, p0, v2}, Lrqc;->j(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

@@ -1,59 +1,118 @@
 .class public final Lsx3;
-.super Ludd;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
+
+
+# instance fields
+.field public X:Lh87;
+
+.field public Y:I
+
+.field public final synthetic Z:Lh87;
+
+.field public final synthetic o0:Landroidx/work/CoroutineWorker;
+
+
+# direct methods
+.method public constructor <init>(Lh87;Landroidx/work/CoroutineWorker;Lkotlin/coroutines/Continuation;)V
+    .locals 0
+
+    iput-object p1, p0, Lsx3;->Z:Lh87;
+
+    iput-object p2, p0, Lsx3;->o0:Landroidx/work/CoroutineWorker;
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final y(Lnad;FF)V
-    .locals 5
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    mul-float p0, p3, p2
+    check-cast p1, Lox3;
 
-    const/4 v0, 0x0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    const/high16 v1, 0x43340000    # 180.0f
+    invoke-virtual {p0, p1, p2}, Lsx3;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    const/high16 v2, 0x42b40000    # 90.0f
+    move-result-object p0
 
-    invoke-virtual {p1, v0, p0, v1, v2}, Lnad;->d(FFFF)V
+    check-cast p0, Lsx3;
 
-    float-to-double v1, v2
+    sget-object p1, Le5f;->a:Le5f;
 
-    invoke-static {v1, v2}, Ljava/lang/Math;->toRadians(D)D
+    invoke-virtual {p0, p1}, Lsx3;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-wide v1
+    return-object p1
+.end method
 
-    invoke-static {v1, v2}, Ljava/lang/Math;->sin(D)D
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    move-result-wide v1
+    new-instance p1, Lsx3;
 
-    float-to-double v3, p3
+    iget-object v0, p0, Lsx3;->Z:Lh87;
 
-    mul-double/2addr v1, v3
+    iget-object p0, p0, Lsx3;->o0:Landroidx/work/CoroutineWorker;
 
-    float-to-double p2, p2
+    invoke-direct {p1, v0, p0, p2}, Lsx3;-><init>(Lh87;Landroidx/work/CoroutineWorker;Lkotlin/coroutines/Continuation;)V
 
-    mul-double/2addr v1, p2
+    return-object p1
+.end method
 
-    double-to-float p0, v1
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    float-to-double v0, v0
+    iget v0, p0, Lsx3;->Y:I
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->toRadians(D)D
+    const/4 v1, 0x1
 
-    move-result-wide v0
+    if-eqz v0, :cond_1
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
+    if-ne v0, v1, :cond_0
 
-    move-result-wide v0
+    iget-object p0, p0, Lsx3;->X:Lh87;
 
-    mul-double/2addr v0, v3
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    mul-double/2addr v0, p2
+    iget-object p0, p0, Lh87;->a:Liad;
 
-    double-to-float p2, v0
+    invoke-virtual {p0, p1}, Liad;->i(Ljava/lang/Object;)Z
 
-    invoke-virtual {p1, p0, p2}, Lnad;->c(FF)V
+    sget-object p0, Le5f;->a:Le5f;
 
-    return-void
+    return-object p0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lsx3;->Z:Lh87;
+
+    iput-object p1, p0, Lsx3;->X:Lh87;
+
+    iput v1, p0, Lsx3;->Y:I
+
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "Not implemented"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

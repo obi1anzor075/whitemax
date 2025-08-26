@@ -1,64 +1,75 @@
 .class public final Lgx6;
-.super Landroid/view/inputmethod/InputConnectionWrapper;
+.super Low6;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic a:Lhy5;
-
-
-# direct methods
-.method public constructor <init>(Landroid/view/inputmethod/InputConnection;Lhy5;)V
+# virtual methods
+.method public final bridge synthetic c(Ljava/lang/Object;)Low6;
     .locals 0
 
-    iput-object p2, p0, Lgx6;->a:Lhy5;
+    invoke-virtual {p0, p1}, Lgx6;->h(Ljava/lang/Object;)V
 
-    const/4 p2, 0x0
+    return-object p0
+.end method
 
-    invoke-direct {p0, p1, p2}, Landroid/view/inputmethod/InputConnectionWrapper;-><init>(Landroid/view/inputmethod/InputConnection;Z)V
+.method public final h(Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {p0, p1}, Low6;->a(Ljava/lang/Object;)V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final commitContent(Landroid/view/inputmethod/InputContentInfo;ILandroid/os/Bundle;)Z
+.method public final i()Lhx6;
     .locals 3
 
-    if-nez p1, :cond_0
-
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lmv4;
-
-    new-instance v1, Llv1;
-
-    invoke-direct {v1, p1}, Llv1;-><init>(Ljava/lang/Object;)V
-
-    const/16 v2, 0x10
-
-    invoke-direct {v0, v2, v1}, Lmv4;-><init>(ILjava/lang/Object;)V
-
-    :goto_0
-    iget-object v1, p0, Lgx6;->a:Lhy5;
-
-    invoke-virtual {v1, v0, p2, p3}, Lhy5;->f(Lmv4;ILandroid/os/Bundle;)Z
-
-    move-result v0
+    iget v0, p0, Low6;->b:I
 
     if-eqz v0, :cond_1
 
-    const/4 p0, 0x1
+    const/4 v1, 0x1
 
-    return p0
+    if-eq v0, v1, :cond_0
+
+    iget-object v2, p0, Low6;->c:[Ljava/lang/Object;
+
+    invoke-static {v0, v2}, Lhx6;->i(I[Ljava/lang/Object;)Lhx6;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/AbstractCollection;->size()I
+
+    move-result v2
+
+    iput v2, p0, Low6;->b:I
+
+    iput-boolean v1, p0, Low6;->a:Z
+
+    return-object v0
+
+    :cond_0
+    iget-object p0, p0, Low6;->c:[Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    aget-object p0, p0, v0
+
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget v0, Lhx6;->c:I
+
+    new-instance v0, Lrqd;
+
+    invoke-direct {v0, p0}, Lrqd;-><init>(Ljava/lang/Object;)V
+
+    return-object v0
 
     :cond_1
-    invoke-super {p0, p1, p2, p3}, Landroid/view/inputmethod/InputConnectionWrapper;->commitContent(Landroid/view/inputmethod/InputContentInfo;ILandroid/os/Bundle;)Z
+    sget p0, Lhx6;->c:I
 
-    move-result p0
+    sget-object p0, Ljdc;->q0:Ljdc;
 
-    return p0
+    return-object p0
 .end method

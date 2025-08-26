@@ -42,14 +42,13 @@
 
     iput-wide p3, p0, Lorg/apache/http/impl/conn/IdleConnectionHandler$TimeValues;->timeExpires:J
 
-    goto :goto_0
+    return-void
 
     :cond_0
     const-wide p1, 0x7fffffffffffffffL
 
     iput-wide p1, p0, Lorg/apache/http/impl/conn/IdleConnectionHandler$TimeValues;->timeExpires:J
 
-    :goto_0
     return-void
 .end method
 

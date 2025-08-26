@@ -1,75 +1,76 @@
 .class public abstract Ltub;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # static fields
-.field public static oneme_stickers_settings_empty_favorite_title:I = 0x7f130996
+.field public static audio_record__action_view:I = 0x7f0a00ea
 
-.field public static oneme_stickers_settings_empty_recent_subtitle:I = 0x7f130997
+.field public static audio_record__action_view_background:I = 0x7f0a00eb
 
-.field public static oneme_stickers_settings_empty_recent_title:I = 0x7f130998
+.field public static audio_record__action_view_bg_container:I = 0x7f0a00ec
 
-.field public static oneme_stickers_settings_favorite_title:I = 0x7f130999
+.field public static audio_record__action_view_container:I = 0x7f0a00ed
 
-.field public static oneme_stickers_settings_favorite_toolbar_title:I = 0x7f13099a
+.field public static audio_record__audio_hand_free_record_view:I = 0x7f0a00ee
 
-.field public static oneme_stickers_settings_menu_copy_link_title:I = 0x7f13099b
+.field public static audio_record__audio_record_root:I = 0x7f0a00ef
 
-.field public static oneme_stickers_settings_menu_copy_set_link_snackbar_title:I = 0x7f13099c
+.field public static audio_record__cancel_view:I = 0x7f0a00f0
 
-.field public static oneme_stickers_settings_menu_delete_set_confirm_action:I = 0x7f13099d
+.field public static audio_record__dot_view:I = 0x7f0a00f1
 
-.field public static oneme_stickers_settings_menu_delete_set_confirm_cancel:I = 0x7f13099e
+.field public static audio_record__duration_view:I = 0x7f0a00f2
 
-.field public static oneme_stickers_settings_menu_delete_set_confirm_subtitle:I = 0x7f13099f
+.field public static audio_record__hand_free_dot_view:I = 0x7f0a00f3
 
-.field public static oneme_stickers_settings_menu_delete_set_confirm_title:I = 0x7f1309a0
+.field public static audio_record__hand_free_duration_view:I = 0x7f0a00f4
 
-.field public static oneme_stickers_settings_menu_delete_set_snackbar_title:I = 0x7f1309a1
+.field public static audio_record__lock_view:I = 0x7f0a00f5
 
-.field public static oneme_stickers_settings_menu_delete_set_title:I = 0x7f1309a2
+.field public static audio_record__pause_recording_button:I = 0x7f0a00f6
 
-.field public static oneme_stickers_settings_menu_forward_title:I = 0x7f1309a3
+.field public static audio_record__play_pause_listening_button:I = 0x7f0a00f7
 
-.field public static oneme_stickers_settings_menu_share_title:I = 0x7f1309a4
+.field public static audio_record__play_recording_button:I = 0x7f0a00f8
 
-.field public static oneme_stickers_settings_recent_title:I = 0x7f1309a5
+.field public static audio_record__recording_panel:I = 0x7f0a00f9
 
-.field public static oneme_stickers_settings_recent_toolbar_title:I = 0x7f1309a6
+.field public static audio_record__remove_button:I = 0x7f0a00fa
 
-.field public static oneme_stickers_settings_sets_title:I = 0x7f1309a7
+.field public static audio_record__swipe_remove_button:I = 0x7f0a00fb
 
-.field public static oneme_stickers_settings_stickers_confirm_delete_sticker_title:I = 0x7f1309a8
+.field public static audio_record__wave_container:I = 0x7f0a00fc
 
-.field public static oneme_stickers_settings_stickers_confirm_delete_stickers_title:I = 0x7f1309a9
+.field public static audio_record__wave_view:I = 0x7f0a00fd
 
-.field public static oneme_stickers_settings_stickers_confirm_delete_subtitle:I = 0x7f1309aa
+.field public static writebar__add_link_bottom_sheet_button_add:I = 0x7f0a0d5b
 
-.field public static oneme_stickers_settings_stickers_favorite_confirm_clear_subtitle:I = 0x7f1309ab
+.field public static writebar__add_link_bottom_sheet_input:I = 0x7f0a0d5c
 
-.field public static oneme_stickers_settings_stickers_favorite_confirm_clear_title:I = 0x7f1309ac
+.field public static writebar__container:I = 0x7f0a0d5d
 
-.field public static oneme_stickers_settings_stickers_favorite_delete_all_snackbar:I = 0x7f1309ad
+.field public static writebar__record_controls:I = 0x7f0a0d5e
 
-.field public static oneme_stickers_settings_stickers_favorite_snackbar_from:I = 0x7f1309ae
+.field public static writebar__root:I = 0x7f0a0d5f
 
-.field public static oneme_stickers_settings_stickers_menu_change_title:I = 0x7f1309af
+.field public static writebar__suggestion_close_button:I = 0x7f0a0d60
 
-.field public static oneme_stickers_settings_stickers_recent_confirm_clear_subtitle:I = 0x7f1309b0
+.field public static writebar__suggestion_close_panel:I = 0x7f0a0d61
 
-.field public static oneme_stickers_settings_stickers_recent_confirm_clear_title:I = 0x7f1309b1
+.field public static writebar__suggestion_container:I = 0x7f0a0d62
 
-.field public static oneme_stickers_settings_stickers_recent_delete_all_snackbar:I = 0x7f1309b2
+.field public static writebar__suggestion_item:I = 0x7f0a0d63
 
-.field public static oneme_stickers_settings_stickers_recent_menu_clear_title:I = 0x7f1309b3
+.field public static writebar__suggestion_not_found:I = 0x7f0a0d64
 
-.field public static oneme_stickers_settings_stickers_recent_snackbar_from:I = 0x7f1309b4
+.field public static writebar__suggestion_panel:I = 0x7f0a0d65
 
-.field public static oneme_stickers_settings_stickers_snackbar_delete_stickers_title:I = 0x7f1309b5
+.field public static writebar__suggestion_popup_drag_layout:I = 0x7f0a0d66
 
-.field public static oneme_stickers_settings_toolbar_title:I = 0x7f1309b6
+.field public static writebar__suggestion_popup_layout:I = 0x7f0a0d67
 
-.field public static oneme_strickers_settings_stickers_multiselect_empty_title:I = 0x7f1309b8
+.field public static writebar__suggestion_popup_layout_content:I = 0x7f0a0d68
 
-.field public static oneme_strickers_settings_stickers_multiselect_title:I = 0x7f1309b9
+.field public static writebar__suggestion_popup_layout_list:I = 0x7f0a0d69
+
+.field public static writebar__suggestion_title:I = 0x7f0a0d6a

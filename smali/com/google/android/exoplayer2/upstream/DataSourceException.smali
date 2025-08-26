@@ -24,6 +24,18 @@
     return-void
 .end method
 
+.method public constructor <init>(Ljava/lang/Exception;I)V
+    .locals 0
+
+    .line 3
+    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
+
+    .line 4
+    iput p2, p0, Lcom/google/android/exoplayer2/upstream/DataSourceException;->a:I
+
+    return-void
+.end method
+
 .method public constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
@@ -36,7 +48,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/Exception;I)V
     .locals 0
 
     .line 7
@@ -44,18 +56,6 @@
 
     .line 8
     iput p3, p0, Lcom/google/android/exoplayer2/upstream/DataSourceException;->a:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/Throwable;I)V
-    .locals 0
-
-    .line 3
-    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
-
-    .line 4
-    iput p2, p0, Lcom/google/android/exoplayer2/upstream/DataSourceException;->a:I
 
     return-void
 .end method

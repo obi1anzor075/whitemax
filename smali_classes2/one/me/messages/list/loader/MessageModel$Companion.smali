@@ -35,38 +35,33 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # virtual methods
 .method public final control(Ljava/lang/CharSequence;J)Lone/me/messages/list/loader/MessageModel;
-    .locals 27
+    .locals 28
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    move-object/from16 v7, p1
+    sget-object v24, Lft8;->X:Lft8;
 
-    sget-object v13, Lwy;->f:Lwy;
-
-    sget-object v23, Lbp8;->Y:Lbp8;
-
-    new-instance v0, Lfr8;
-
-    move-object/from16 v17, v0
+    new-instance v0, Lmv8;
 
     move-wide/from16 v1, p2
 
-    invoke-direct {v0, v1, v2}, Lfr8;-><init>(J)V
+    invoke-direct {v0, v1, v2}, Lmv8;-><init>(J)V
 
-    sget-object v10, Ldcf;->b:Ldcf;
+    sget-object v10, Ltpf;->b:Ltpf;
 
-    new-instance v26, Lone/me/messages/list/loader/MessageModel;
+    move-object/from16 v17, v0
 
-    move-object/from16 v0, v26
+    new-instance v0, Lone/me/messages/list/loader/MessageModel;
 
-    const/16 v22, 0x1
+    const/16 v25, 0x0
 
-    const/16 v24, 0x0
+    const v27, 0x605c00
 
     const-wide/16 v1, 0x0
 
@@ -82,21 +77,29 @@
 
     const/4 v12, 0x0
 
+    sget-object v13, Liz;->f:Liz;
+
     const/4 v14, 0x0
 
     const/4 v15, 0x0
 
     const/16 v16, 0x0
 
-    const/16 v18, 0x2
+    const/16 v18, 0x0
 
-    const/16 v19, 0x0
+    const/16 v19, 0x2
 
-    const-wide/16 v20, 0x0
+    const/16 v20, 0x0
 
-    const v25, 0x301c00
+    const-wide/16 v21, 0x0
 
-    invoke-direct/range {v0 .. v25}, Lone/me/messages/list/loader/MessageModel;-><init>(JJJLjava/lang/CharSequence;Ljava/lang/String;Ljava/lang/CharSequence;Ldcf;ZZLwy;ZLqs8;Ltq8;Lfr8;ILyr8;JZLbp8;Ler8;I)V
+    const/16 v23, 0x1
 
-    return-object v26
+    const/16 v26, 0x0
+
+    move-object/from16 v7, p1
+
+    invoke-direct/range {v0 .. v27}, Lone/me/messages/list/loader/MessageModel;-><init>(JJJLjava/lang/CharSequence;Ljava/lang/String;Ljava/lang/CharSequence;Ltpf;ZZLiz;ZLyw8;Lzu8;Lmv8;Laz2;ILfw8;JZLft8;Llv8;II)V
+
+    return-object v0
 .end method

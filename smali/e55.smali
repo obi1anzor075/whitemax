@@ -1,36 +1,23 @@
-.class public final Le55;
+.class public interface abstract Le55;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Luoe;
+# virtual methods
+.method public abstract b()Ljava/util/concurrent/ExecutorService;
+.end method
 
-.field public final b:[I
+.method public abstract e()Ljava/util/concurrent/ExecutorService;
+.end method
 
+.method public abstract i()Ljava/util/concurrent/ExecutorService;
+.end method
 
-# direct methods
-.method public constructor <init>(Luoe;[I)V
-    .locals 2
+.method public abstract j()Ljava/util/concurrent/ExecutorService;
+.end method
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.method public abstract m()Ljava/util/concurrent/ExecutorService;
+.end method
 
-    array-length v0, p2
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
-
-    const-string v1, "Empty tracks are not allowed"
-
-    invoke-static {v1, v0}, Lez3;->B(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_0
-    iput-object p1, p0, Le55;->a:Luoe;
-
-    iput-object p2, p0, Le55;->b:[I
-
-    return-void
+.method public abstract o()Ljava/util/concurrent/ExecutorService;
 .end method

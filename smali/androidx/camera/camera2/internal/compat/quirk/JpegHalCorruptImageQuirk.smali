@@ -16,13 +16,13 @@
 
     new-instance v0, Ljava/util/HashSet;
 
-    const-string v1, "k61v1_basic_ref"
+    const-string v1, "heroqltetmo"
 
-    const-string v2, "heroqltevzw"
+    const-string v2, "k61v1_basic_ref"
 
-    const-string v3, "heroqltetmo"
+    const-string v3, "heroqltevzw"
 
-    filled-new-array {v2, v3, v1}, [Ljava/lang/String;
+    filled-new-array {v3, v1, v2}, [Ljava/lang/String;
 
     move-result-object v1
 

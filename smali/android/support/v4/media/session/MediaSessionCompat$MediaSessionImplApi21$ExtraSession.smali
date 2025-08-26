@@ -203,12 +203,11 @@
 
     iget p0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi21;->mRatingType:I
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -227,12 +226,11 @@
 
     iget p0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi21;->mRepeatMode:I
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, -0x1
 
-    :goto_0
     return p0
 .end method
 
@@ -253,7 +251,7 @@
 
     const/4 p0, 0x0
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     new-instance v0, Landroid/os/Bundle;
@@ -262,10 +260,7 @@
 
     invoke-direct {v0, p0}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
 
-    move-object p0, v0
-
-    :goto_0
-    return-object p0
+    return-object v0
 .end method
 
 .method public getShuffleMode()I
@@ -283,12 +278,11 @@
 
     iget p0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi21;->mShuffleMode:I
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, -0x1
 
-    :goto_0
     return p0
 .end method
 
@@ -331,12 +325,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -522,11 +515,11 @@
 
     move-result v1
 
-    new-instance v2, Lqd8;
+    new-instance v2, Lfi8;
 
     const-string v3, "android.media.session.MediaController"
 
-    invoke-direct {v2, v3, v0, v1}, Lqd8;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v2, v3, v0, v1}, Lfi8;-><init>(Ljava/lang/String;II)V
 
     iget-object v3, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi21;->mExtraControllerCallbacks:Landroid/os/RemoteCallbackList;
 

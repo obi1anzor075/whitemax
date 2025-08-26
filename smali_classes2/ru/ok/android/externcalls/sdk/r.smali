@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lpf3;
+.implements Lkj3;
 
 
 # instance fields

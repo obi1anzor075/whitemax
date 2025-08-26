@@ -1,328 +1,145 @@
 .class public final Lb0e;
-.super Lope;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lg34;
+
+
+# instance fields
+.field public final a:Lg34;
+
+.field public b:J
+
+.field public c:Landroid/net/Uri;
+
+.field public o:Ljava/util/Map;
+
+
+# direct methods
+.method public constructor <init>(Lg34;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p1, p0, Lb0e;->a:Lg34;
+
+    sget-object p1, Landroid/net/Uri;->EMPTY:Landroid/net/Uri;
+
+    iput-object p1, p0, Lb0e;->c:Landroid/net/Uri;
+
+    sget-object p1, Ljava/util/Collections;->EMPTY_MAP:Ljava/util/Map;
+
+    iput-object p1, p0, Lb0e;->o:Ljava/util/Map;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final N()B
+.method public final O(Lo34;)J
     .locals 3
 
-    invoke-virtual {p0}, Lb0e;->T()I
+    iget-object v0, p1, Lo34;->a:Landroid/net/Uri;
 
-    move-result v0
+    iput-object v0, p0, Lb0e;->c:Landroid/net/Uri;
 
-    iget-object v1, p0, Lope;->c:Ljava/lang/Object;
+    sget-object v0, Ljava/util/Collections;->EMPTY_MAP:Ljava/util/Map;
 
-    check-cast v1, Ljava/lang/String;
+    iput-object v0, p0, Lb0e;->o:Ljava/util/Map;
 
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    iget-object v0, p0, Lb0e;->a:Lg34;
 
-    move-result v2
+    invoke-interface {v0, p1}, Lg34;->O(Lo34;)J
 
-    if-ge v0, v2, :cond_1
+    move-result-wide v1
 
-    const/4 v2, -0x1
+    invoke-interface {v0}, Lg34;->getUri()Landroid/net/Uri;
 
-    if-ne v0, v2, :cond_0
+    move-result-object p1
 
-    goto :goto_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    :cond_0
-    iput v0, p0, Lope;->b:I
+    iput-object p1, p0, Lb0e;->c:Landroid/net/Uri;
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->charAt(I)C
+    invoke-interface {v0}, Lg34;->w()Ljava/util/Map;
 
-    move-result p0
+    move-result-object p1
 
-    invoke-static {p0}, Lxie;->j(C)B
+    iput-object p1, p0, Lb0e;->o:Ljava/util/Map;
 
-    move-result p0
-
-    return p0
-
-    :cond_1
-    :goto_0
-    const/16 p0, 0xa
-
-    return p0
+    return-wide v1
 .end method
 
-.method public final T()I
-    .locals 9
+.method public final P(Laze;)V
+    .locals 0
 
-    iget v0, p0, Lope;->b:I
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const/4 v1, -0x1
+    iget-object p0, p0, Lb0e;->a:Lg34;
 
-    if-ne v0, v1, :cond_0
-
-    return v0
-
-    :cond_0
-    :goto_0
-    iget-object v2, p0, Lope;->c:Ljava/lang/Object;
-
-    check-cast v2, Ljava/lang/String;
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    if-ge v0, v3, :cond_6
-
-    invoke-virtual {v2, v0}, Ljava/lang/String;->charAt(I)C
-
-    move-result v3
-
-    const/16 v4, 0x20
-
-    if-eq v3, v4, :cond_5
-
-    const/16 v4, 0xa
-
-    if-eq v3, v4, :cond_5
-
-    const/16 v5, 0xd
-
-    if-eq v3, v5, :cond_5
-
-    const/16 v5, 0x9
-
-    if-ne v3, v5, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    const/16 v5, 0x2f
-
-    if-ne v3, v5, :cond_6
-
-    add-int/lit8 v3, v0, 0x1
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v6
-
-    if-ge v3, v6, :cond_6
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->charAt(I)C
-
-    move-result v3
-
-    const/16 v6, 0x2a
-
-    const/4 v7, 0x4
-
-    const/4 v8, 0x0
-
-    if-eq v3, v6, :cond_3
-
-    if-eq v3, v5, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    add-int/lit8 v0, v0, 0x2
-
-    invoke-static {v2, v4, v0, v8, v7}, Lh0e;->Z(Ljava/lang/CharSequence;CIZI)I
-
-    move-result v0
-
-    if-ne v0, v1, :cond_5
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    goto :goto_0
-
-    :cond_3
-    add-int/lit8 v0, v0, 0x2
-
-    const-string v3, "*/"
-
-    invoke-static {v2, v3, v0, v8, v7}, Lh0e;->a0(Ljava/lang/CharSequence;Ljava/lang/String;IZI)I
-
-    move-result v0
-
-    if-eq v0, v1, :cond_4
-
-    add-int/lit8 v0, v0, 0x2
-
-    goto :goto_0
-
-    :cond_4
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    iput v0, p0, Lope;->b:I
-
-    const/4 v0, 0x6
-
-    const-string v1, "Expected end of the block comment: \"*/\", but had EOF instead"
-
-    const/4 v2, 0x0
-
-    invoke-static {p0, v1, v8, v2, v0}, Lope;->v(Lope;Ljava/lang/String;ILjava/lang/String;I)V
-
-    throw v2
-
-    :cond_5
-    :goto_1
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_6
-    :goto_2
-    iput v0, p0, Lope;->b:I
-
-    return v0
-.end method
-
-.method public final h()Z
-    .locals 3
-
-    invoke-virtual {p0}, Lb0e;->T()I
-
-    move-result v0
-
-    iget-object p0, p0, Lope;->c:Ljava/lang/Object;
-
-    check-cast p0, Ljava/lang/String;
-
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    if-ge v0, v1, :cond_1
-
-    const/4 v1, -0x1
-
-    if-ne v0, v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
-
-    move-result p0
-
-    const/16 v0, 0x2c
-
-    if-eq p0, v0, :cond_1
-
-    const/16 v0, 0x3a
-
-    if-eq p0, v0, :cond_1
-
-    const/16 v0, 0x5d
-
-    if-eq p0, v0, :cond_1
-
-    const/16 v0, 0x7d
-
-    if-eq p0, v0, :cond_1
-
-    const/4 v2, 0x1
-
-    :cond_1
-    :goto_0
-    return v2
-.end method
-
-.method public final m()B
-    .locals 3
-
-    invoke-virtual {p0}, Lb0e;->T()I
-
-    move-result v0
-
-    iget-object v1, p0, Lope;->c:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/String;
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    if-ge v0, v2, :cond_1
-
-    const/4 v2, -0x1
-
-    if-ne v0, v2, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    add-int/lit8 v2, v0, 0x1
-
-    iput v2, p0, Lope;->b:I
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->charAt(I)C
-
-    move-result p0
-
-    invoke-static {p0}, Lxie;->j(C)B
-
-    move-result p0
-
-    return p0
-
-    :cond_1
-    :goto_0
-    const/16 p0, 0xa
-
-    return p0
-.end method
-
-.method public final n(C)V
-    .locals 5
-
-    invoke-virtual {p0}, Lb0e;->T()I
-
-    move-result v0
-
-    iget-object v1, p0, Lope;->c:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/String;
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    const/4 v3, 0x0
-
-    const/4 v4, -0x1
-
-    if-ge v0, v2, :cond_1
-
-    if-eq v0, v4, :cond_1
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->charAt(I)C
-
-    move-result v1
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lope;->b:I
-
-    if-ne v1, p1, :cond_0
+    invoke-interface {p0, p1}, Lg34;->P(Laze;)V
 
     return-void
+.end method
+
+.method public final close()V
+    .locals 0
+
+    iget-object p0, p0, Lb0e;->a:Lg34;
+
+    invoke-interface {p0}, Lg34;->close()V
+
+    return-void
+.end method
+
+.method public final getUri()Landroid/net/Uri;
+    .locals 0
+
+    iget-object p0, p0, Lb0e;->a:Lg34;
+
+    invoke-interface {p0}, Lg34;->getUri()Landroid/net/Uri;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final read([BII)I
+    .locals 2
+
+    iget-object v0, p0, Lb0e;->a:Lg34;
+
+    invoke-interface {v0, p1, p2, p3}, La34;->read([BII)I
+
+    move-result p1
+
+    const/4 p2, -0x1
+
+    if-eq p1, p2, :cond_0
+
+    iget-wide p2, p0, Lb0e;->b:J
+
+    int-to-long v0, p1
+
+    add-long/2addr p2, v0
+
+    iput-wide p2, p0, Lb0e;->b:J
 
     :cond_0
-    invoke-virtual {p0, p1}, Lope;->W(C)V
+    return p1
+.end method
 
-    throw v3
+.method public final w()Ljava/util/Map;
+    .locals 0
 
-    :cond_1
-    iput v4, p0, Lope;->b:I
+    iget-object p0, p0, Lb0e;->a:Lg34;
 
-    invoke-virtual {p0, p1}, Lope;->W(C)V
+    invoke-interface {p0}, Lg34;->w()Ljava/util/Map;
 
-    throw v3
+    move-result-object p0
+
+    return-object p0
 .end method

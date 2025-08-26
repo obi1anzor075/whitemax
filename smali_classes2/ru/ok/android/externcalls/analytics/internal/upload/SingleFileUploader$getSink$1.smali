@@ -1,9 +1,9 @@
 .class final Lru/ok/android/externcalls/analytics/internal/upload/SingleFileUploader$getSink$1;
-.super Lb97;
+.super Lsd7;
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Lv56;
 
 
 # annotations
@@ -18,8 +18,8 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lb97;",
-        "Ls16;"
+        "Lsd7;",
+        "Lv56;"
     }
 .end annotation
 
@@ -54,7 +54,7 @@
 
     const/4 p1, 0x0
 
-    invoke-direct {p0, p1}, Lb97;-><init>(I)V
+    invoke-direct {p0, p1}, Lsd7;-><init>(I)V
 
     return-void
 .end method

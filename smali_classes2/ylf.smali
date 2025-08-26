@@ -1,319 +1,235 @@
 .class public final Lylf;
-.super Ll5e;
+.super Lv06;
 .source "SourceFile"
 
-# interfaces
-.implements Li26;
+
+# static fields
+.field public static final q0:Landroid/graphics/Typeface;
 
 
 # instance fields
-.field public final synthetic X:Lkmf;
+.field public X:Lck4;
 
-.field public final synthetic Y:Lzif;
+.field public Y:Landroid/graphics/Paint;
 
-.field public final synthetic Z:J
+.field public Z:Landroid/graphics/Paint;
+
+.field public o0:Landroid/graphics/RectF;
+
+.field public p0:Landroid/graphics/Path;
 
 
 # direct methods
-.method public constructor <init>(Lkmf;Lzif;JLkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput-object p1, p0, Lylf;->X:Lkmf;
+    const-string v0, "sans-serif-medium"
 
-    iput-object p2, p0, Lylf;->Y:Lzif;
+    const/4 v1, 0x0
 
-    iput-wide p3, p0, Lylf;->Z:J
+    invoke-static {v0, v1}, Landroid/graphics/Typeface;->create(Ljava/lang/String;I)Landroid/graphics/Typeface;
 
-    const/4 p1, 0x2
+    move-result-object v0
 
-    invoke-direct {p0, p1, p5}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    sput-object v0, Lylf;->q0:Landroid/graphics/Typeface;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final draw(Landroid/graphics/Canvas;)V
+    .locals 7
 
-    check-cast p1, Lou3;
+    iget-object v0, p0, Lylf;->X:Lck4;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget-object v1, p0, Lylf;->o0:Landroid/graphics/RectF;
 
-    invoke-virtual {p0, p1, p2}, Lylf;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    iget-object v2, p0, Lv06;->a:Landroid/graphics/drawable/Drawable;
 
-    move-result-object p0
+    invoke-virtual {p0}, Lylf;->getIntrinsicWidth()I
 
-    check-cast p0, Lylf;
+    move-result v3
 
-    sget-object p1, Ljue;->a:Ljue;
+    const/4 v4, 0x0
 
-    invoke-virtual {p0, p1}, Lylf;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v4}, Lxja;->v(Ljava/lang/CharSequence;)Z
 
-    return-object p1
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 6
-
-    new-instance p1, Lylf;
-
-    iget-object v2, p0, Lylf;->Y:Lzif;
-
-    iget-wide v3, p0, Lylf;->Z:J
-
-    iget-object v1, p0, Lylf;->X:Lkmf;
-
-    move-object v0, p1
-
-    move-object v5, p2
-
-    invoke-direct/range {v0 .. v5}, Lylf;-><init>(Lkmf;Lzif;JLkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 18
-
-    move-object/from16 v0, p0
-
-    invoke-static/range {p1 .. p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object v1, v0, Lylf;->X:Lkmf;
-
-    iget-object v2, v1, Lkmf;->C0:Lt97;
-
-    invoke-interface {v2}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljc5;
-
-    iget-object v3, v0, Lylf;->Y:Lzif;
-
-    iget-object v11, v3, Lzif;->d:Ljava/lang/String;
-
-    new-instance v12, Ldee;
-
-    iget-wide v13, v0, Lylf;->Z:J
-
-    iget-wide v9, v1, Lkmf;->b:J
-
-    iget-object v15, v3, Lzif;->c:Ljava/lang/String;
-
-    move-object v4, v12
-
-    move-object v5, v15
-
-    move-object v6, v11
-
-    move-wide v7, v13
-
-    move-wide/from16 v16, v9
-
-    invoke-direct/range {v4 .. v10}, Ldee;-><init>(Ljava/lang/String;Ljava/lang/String;JJ)V
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    filled-new-array {v12}, [Ljava/lang/Object;
-
-    move-result-object v4
-
-    const-string v5, "ru.ok.tamtam.upload.workers.DownloadFileFromWebAppWorker"
-
-    const-string v6, "start %s"
-
-    invoke-static {v5, v6, v4}, Ludd;->p(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v6, "ru.ok.tamtam.upload.workers.DownloadFileFromWebAppWorker/"
-
-    invoke-direct {v4, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    new-instance v6, Lbfa;
-
-    const-class v7, Lru/ok/tamtam/upload/workers/DownloadFileFromWebAppWorker;
-
-    invoke-direct {v6, v7}, Lbfa;-><init>(Ljava/lang/Class;)V
-
-    sget-object v7, Lvga;->a:Lvga;
-
-    invoke-virtual {v6, v7}, Landroidx/work/WorkRequest$Builder;->setExpedited(Lvga;)Landroidx/work/WorkRequest$Builder;
-
-    move-result-object v6
-
-    check-cast v6, Lbfa;
-
-    sget-object v7, Lhe0;->b:Lhe0;
-
-    const-wide/16 v8, 0x2710
-
-    sget-object v10, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {v6, v7, v8, v9, v10}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Lhe0;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
-
-    move-result-object v6
-
-    check-cast v6, Lbfa;
-
-    invoke-virtual {v6, v5}, Landroidx/work/WorkRequest$Builder;->addTag(Ljava/lang/String;)Landroidx/work/WorkRequest$Builder;
-
-    move-result-object v5
-
-    check-cast v5, Lbfa;
-
-    new-instance v6, Lwia;
-
-    const-string v7, "taskName"
-
-    invoke-direct {v6, v7, v4}, Lwia;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    invoke-static {v13, v14}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v7
-
-    new-instance v8, Lwia;
-
-    const-string v9, "requestId"
-
-    invoke-direct {v8, v9, v7}, Lwia;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    invoke-static/range {v16 .. v17}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v7
-
-    new-instance v9, Lwia;
-
-    const-string v10, "botId"
-
-    invoke-direct {v9, v10, v7}, Lwia;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    new-instance v7, Lwia;
-
-    const-string v10, "fileName"
-
-    invoke-direct {v7, v10, v11}, Lwia;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    new-instance v10, Lwia;
-
-    const-string v11, "fileUrl"
-
-    invoke-direct {v10, v11, v15}, Lwia;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    filled-new-array {v6, v8, v9, v7, v10}, [Lwia;
-
-    move-result-object v6
-
-    new-instance v7, Lx3a;
-
-    const/16 v8, 0x9
-
-    invoke-direct {v7, v8}, Lx3a;-><init>(I)V
-
-    const/4 v8, 0x0
-
-    move v9, v8
-
-    :goto_0
-    const/4 v10, 0x5
-
-    if-ge v9, v10, :cond_0
-
-    aget-object v10, v6, v9
-
-    iget-object v11, v10, Lwia;->a:Ljava/lang/Object;
-
-    check-cast v11, Ljava/lang/String;
-
-    iget-object v10, v10, Lwia;->b:Ljava/lang/Object;
-
-    invoke-virtual {v7, v10, v11}, Lx3a;->H(Ljava/lang/Object;Ljava/lang/String;)V
-
-    add-int/lit8 v9, v9, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v7}, Lx3a;->k()Lzy3;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Landroidx/work/WorkRequest$Builder;->setInputData(Lzy3;)Landroidx/work/WorkRequest$Builder;
-
-    move-result-object v5
-
-    check-cast v5, Lbfa;
-
-    invoke-virtual {v5}, Landroidx/work/WorkRequest$Builder;->build()Landroidx/work/WorkRequest;
-
-    move-result-object v5
-
-    check-cast v5, Lcfa;
-
-    sget-object v6, La35;->b:La35;
-
-    iget-object v2, v2, Ljc5;->a:Lmtf;
-
-    invoke-virtual {v2, v4, v6, v5, v8}, Lmtf;->b(Ljava/lang/String;La35;Lcfa;Z)Lvc7;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lvc7;->O()Lga3;
-
-    iget-object v2, v2, Lvc7;->t:Lpa2;
-
-    invoke-virtual {v2}, Lpa2;->r()Lyh7;
-
-    move-result-object v2
-
-    new-instance v4, Lym5;
+    move-result v4
 
     const/4 v5, 0x0
 
-    invoke-direct {v4, v2, v5}, Lym5;-><init>(Lyh7;Lkotlin/coroutines/Continuation;)V
+    if-eqz v4, :cond_0
 
-    invoke-static {v4}, Lez3;->h(Li26;)Lrn1;
+    goto :goto_1
 
-    move-result-object v2
+    :cond_0
+    const/4 v4, 0x0
 
-    const/4 v4, 0x2
+    invoke-static {v4}, Lxja;->v(Ljava/lang/CharSequence;)Z
 
-    const/4 v5, -0x1
+    move-result v4
 
-    invoke-static {v2, v5, v4}, Lez3;->f(Lpj5;II)Lpj5;
+    if-eqz v4, :cond_1
 
-    sget-object v2, Lyif;->c:Lyif;
+    move v4, v5
 
-    iget-object v4, v3, Le57;->a:Lus0;
-
-    invoke-virtual {v4}, Lus0;->p()Z
-
-    move-result v5
-
-    if-nez v5, :cond_1
-
-    invoke-interface {v4, v2}, Lkxc;->n(Ljava/lang/Object;)Ljava/lang/Object;
+    goto :goto_0
 
     :cond_1
-    iget-object v1, v1, Lkmf;->T0:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v4, p0, Lylf;->Y:Landroid/graphics/Paint;
 
-    new-instance v2, Ljava/lang/Long;
+    const/4 v6, 0x0
 
-    iget-wide v4, v0, Lylf;->Z:J
+    invoke-virtual {v4, v6}, Landroid/graphics/Paint;->measureText(Ljava/lang/String;)F
 
-    invoke-direct {v2, v4, v5}, Ljava/lang/Long;-><init>(J)V
+    move-result v4
 
-    invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    float-to-int v4, v4
 
-    sget-object v0, Ljue;->a:Ljue;
+    :goto_0
+    invoke-super {p0}, Lv06;->getIntrinsicWidth()I
 
-    return-object v0
+    move-result v6
+
+    div-int/lit8 v6, v6, 0x2
+
+    sub-int/2addr v4, v6
+
+    if-gez v4, :cond_2
+
+    :goto_1
+    move v4, v5
+
+    :cond_2
+    sub-int/2addr v3, v4
+
+    invoke-virtual {p0}, Lv06;->getIntrinsicHeight()I
+
+    move-result v4
+
+    invoke-virtual {v2, v5, v5, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    const/4 v2, 0x0
+
+    invoke-static {v2}, Lxja;->v(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_3
+
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    iget-object v3, p0, Lylf;->p0:Landroid/graphics/Path;
+
+    sget-object v4, Landroid/graphics/Region$Op;->DIFFERENCE:Landroid/graphics/Region$Op;
+
+    invoke-virtual {p1, v3, v4}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;Landroid/graphics/Region$Op;)Z
+
+    :cond_3
+    iget-object v3, p0, Lv06;->a:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v3, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
+    if-nez v2, :cond_4
+
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
+
+    iget v2, v0, Lck4;->b:I
+
+    int-to-float v2, v2
+
+    iget-object v3, p0, Lylf;->Z:Landroid/graphics/Paint;
+
+    invoke-virtual {p1, v1, v2, v2, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+
+    iget v2, v1, Landroid/graphics/RectF;->left:F
+
+    iget v3, v0, Lck4;->a:I
+
+    int-to-float v3, v3
+
+    add-float/2addr v2, v3
+
+    iget v1, v1, Landroid/graphics/RectF;->bottom:F
+
+    iget v0, v0, Lck4;->c:I
+
+    int-to-float v0, v0
+
+    sub-float/2addr v1, v0
+
+    iget-object p0, p0, Lylf;->Y:Landroid/graphics/Paint;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, v2, v1, p0}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
+
+    :cond_4
+    return-void
+.end method
+
+.method public final getIntrinsicWidth()I
+    .locals 4
+
+    invoke-super {p0}, Lv06;->getIntrinsicWidth()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Lxja;->v(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Lxja;->v(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    move v1, v2
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v1, p0, Lylf;->Y:Landroid/graphics/Paint;
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, v3}, Landroid/graphics/Paint;->measureText(Ljava/lang/String;)F
+
+    move-result v1
+
+    float-to-int v1, v1
+
+    :goto_0
+    invoke-super {p0}, Lv06;->getIntrinsicWidth()I
+
+    move-result p0
+
+    div-int/lit8 p0, p0, 0x2
+
+    sub-int/2addr v1, p0
+
+    if-gez v1, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    move v2, v1
+
+    :goto_1
+    add-int/2addr v2, v0
+
+    return v2
 .end method

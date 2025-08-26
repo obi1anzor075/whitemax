@@ -55,59 +55,59 @@
 
     move-object/from16 v0, p0
 
-    move/from16 v1, p1
-
-    move/from16 v2, p2
-
-    move/from16 v3, p3
-
-    move/from16 v4, p4
-
-    move/from16 v5, p5
-
-    move/from16 v6, p6
-
     invoke-static/range {p5 .. p6}, Lorg/webrtc/JavaI420Buffer;->allocate(II)Lorg/webrtc/JavaI420Buffer;
 
-    move-result-object v18
+    move-result-object v1
 
-    iget-object v7, v0, Lorg/webrtc/NV12Buffer;->buffer:Ljava/nio/ByteBuffer;
+    iget-object v8, v0, Lorg/webrtc/NV12Buffer;->buffer:Ljava/nio/ByteBuffer;
 
-    iget v8, v0, Lorg/webrtc/NV12Buffer;->width:I
+    iget v9, v0, Lorg/webrtc/NV12Buffer;->width:I
 
-    iget v9, v0, Lorg/webrtc/NV12Buffer;->height:I
+    iget v10, v0, Lorg/webrtc/NV12Buffer;->height:I
 
-    iget v10, v0, Lorg/webrtc/NV12Buffer;->stride:I
+    iget v11, v0, Lorg/webrtc/NV12Buffer;->stride:I
 
-    iget v11, v0, Lorg/webrtc/NV12Buffer;->sliceHeight:I
+    iget v12, v0, Lorg/webrtc/NV12Buffer;->sliceHeight:I
 
-    invoke-virtual/range {v18 .. v18}, Lorg/webrtc/JavaI420Buffer;->getDataY()Ljava/nio/ByteBuffer;
+    invoke-virtual {v1}, Lorg/webrtc/JavaI420Buffer;->getDataY()Ljava/nio/ByteBuffer;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-virtual/range {v18 .. v18}, Lorg/webrtc/JavaI420Buffer;->getStrideY()I
+    invoke-virtual {v1}, Lorg/webrtc/JavaI420Buffer;->getStrideY()I
 
-    move-result v13
+    move-result v14
 
-    invoke-virtual/range {v18 .. v18}, Lorg/webrtc/JavaI420Buffer;->getDataU()Ljava/nio/ByteBuffer;
+    invoke-virtual {v1}, Lorg/webrtc/JavaI420Buffer;->getDataU()Ljava/nio/ByteBuffer;
 
-    move-result-object v14
+    move-result-object v15
 
-    invoke-virtual/range {v18 .. v18}, Lorg/webrtc/JavaI420Buffer;->getStrideU()I
+    invoke-virtual {v1}, Lorg/webrtc/JavaI420Buffer;->getStrideU()I
 
-    move-result v15
+    move-result v16
 
-    invoke-virtual/range {v18 .. v18}, Lorg/webrtc/JavaI420Buffer;->getDataV()Ljava/nio/ByteBuffer;
+    invoke-virtual {v1}, Lorg/webrtc/JavaI420Buffer;->getDataV()Ljava/nio/ByteBuffer;
 
-    move-result-object v16
+    move-result-object v17
 
-    invoke-virtual/range {v18 .. v18}, Lorg/webrtc/JavaI420Buffer;->getStrideV()I
+    invoke-virtual {v1}, Lorg/webrtc/JavaI420Buffer;->getStrideV()I
 
-    move-result v17
+    move-result v18
 
-    invoke-static/range {v1 .. v17}, Lorg/webrtc/NV12Buffer;->nativeCropAndScale(IIIIIILjava/nio/ByteBuffer;IIIILjava/nio/ByteBuffer;ILjava/nio/ByteBuffer;ILjava/nio/ByteBuffer;I)V
+    move/from16 v2, p1
 
-    return-object v18
+    move/from16 v3, p2
+
+    move/from16 v4, p3
+
+    move/from16 v5, p4
+
+    move/from16 v6, p5
+
+    move/from16 v7, p6
+
+    invoke-static/range {v2 .. v18}, Lorg/webrtc/NV12Buffer;->nativeCropAndScale(IIIIIILjava/nio/ByteBuffer;IIIILjava/nio/ByteBuffer;ILjava/nio/ByteBuffer;ILjava/nio/ByteBuffer;I)V
+
+    return-object v1
 .end method
 
 .method public getHeight()I
@@ -149,19 +149,19 @@
 .method public toI420()Lorg/webrtc/VideoFrame$I420Buffer;
     .locals 7
 
-    iget v5, p0, Lorg/webrtc/NV12Buffer;->width:I
+    iget v3, p0, Lorg/webrtc/NV12Buffer;->width:I
 
-    iget v6, p0, Lorg/webrtc/NV12Buffer;->height:I
+    iget v4, p0, Lorg/webrtc/NV12Buffer;->height:I
 
     const/4 v1, 0x0
 
     const/4 v2, 0x0
 
+    move v5, v3
+
+    move v6, v4
+
     move-object v0, p0
-
-    move v3, v5
-
-    move v4, v6
 
     invoke-virtual/range {v0 .. v6}, Lorg/webrtc/NV12Buffer;->cropAndScale(IIIIII)Lorg/webrtc/VideoFrame$Buffer;
 

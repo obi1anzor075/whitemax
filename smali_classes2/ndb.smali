@@ -1,88 +1,138 @@
 .class public final Lndb;
-.super Lt81;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ln66;
 
 
 # instance fields
-.field public final b:I
+.field public final synthetic X:I
+
+.field public synthetic Y:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
+
+.field public synthetic Z:Lyha;
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 1
+.method public synthetic constructor <init>(ILkotlin/coroutines/Continuation;I)V
+    .locals 0
 
-    const/16 v0, 0xb
+    iput p3, p0, Lndb;->X:I
 
-    invoke-direct {p0, v0}, Lt81;-><init>(I)V
-
-    iput p1, p0, Lndb;->b:I
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lndb;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lndb;
-
-    iget p0, p0, Lndb;->b:I
-
-    iget p1, p1, Lndb;->b:I
-
-    if-eq p0, p1, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    iget p0, p0, Lndb;->b:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget p0, p0, Lndb;->X:I
 
-    const-string v1, "CallByNumber(contactId="
+    check-cast p1, Landroidx/coordinatorlayout/widget/CoordinatorLayout;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    check-cast p2, Lyha;
 
-    iget p0, p0, Lndb;->b:I
+    check-cast p3, Lkotlin/coroutines/Continuation;
 
-    const-string v1, ")"
+    packed-switch p0, :pswitch_data_0
 
-    invoke-static {v0, p0, v1}, Lwn6;->j(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    new-instance p0, Lndb;
+
+    const/4 v0, 0x3
+
+    const/4 v1, 0x1
+
+    invoke-direct {p0, v0, p3, v1}, Lndb;-><init>(ILkotlin/coroutines/Continuation;I)V
+
+    iput-object p1, p0, Lndb;->Y:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
+
+    iput-object p2, p0, Lndb;->Z:Lyha;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lndb;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+
+    :pswitch_0
+    new-instance p0, Lndb;
+
+    const/4 v0, 0x3
+
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, p3, v1}, Lndb;-><init>(ILkotlin/coroutines/Continuation;I)V
+
+    iput-object p1, p0, Lndb;->Y:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
+
+    iput-object p2, p0, Lndb;->Z:Lyha;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lndb;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    iget v0, p0, Lndb;->X:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lndb;->Y:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
+
+    iget-object p0, p0, Lndb;->Z:Lyha;
+
+    invoke-interface {p0}, Lyha;->b()Lfe0;
 
     move-result-object p0
 
+    iget p0, p0, Lfe0;->k:I
+
+    invoke-virtual {p1, p0}, Landroid/view/View;->setBackgroundColor(I)V
+
+    sget-object p0, Le5f;->a:Le5f;
+
     return-object p0
+
+    :pswitch_0
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lndb;->Y:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
+
+    iget-object p0, p0, Lndb;->Z:Lyha;
+
+    invoke-interface {p0}, Lyha;->b()Lfe0;
+
+    move-result-object p0
+
+    iget p0, p0, Lfe0;->k:I
+
+    invoke-virtual {p1, p0}, Landroid/view/View;->setBackgroundColor(I)V
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

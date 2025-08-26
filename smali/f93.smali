@@ -1,82 +1,165 @@
 .class public final Lf93;
-.super Ljava/lang/Object;
+.super Le93;
 .source "SourceFile"
-
-# interfaces
-.implements Ln3b;
 
 
 # instance fields
-.field public final a:Lk4f;
+.field public final synthetic a:I
+
+.field public final b:Ljava/lang/Object;
+
+.field public final c:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Le93;)V
-    .locals 0
+.method public constructor <init>(Lh93;Lgsc;)V
+    .locals 1
 
+    const/4 v0, 0x2
+
+    iput v0, p0, Lf93;->a:I
+
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+
+    .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lf93;->a:Lk4f;
+    .line 3
+    iput-object p1, p0, Lf93;->b:Ljava/lang/Object;
+
+    .line 4
+    iput-object p2, p0, Lf93;->c:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    .locals 0
+
+    .line 1
+    iput p2, p0, Lf93;->a:I
+
+    iput-object p1, p0, Lf93;->b:Ljava/lang/Object;
+
+    iput-object p3, p0, Lf93;->c:Ljava/lang/Object;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;Lz23;Lz4f;Lc93;Le8c;)Lm3b;
-    .locals 6
+.method public final j(Lo93;)V
+    .locals 7
 
-    :try_start_0
-    const-class v0, Landroidx/media3/effect/PreviewingSingleInputVideoGraph$Factory;
+    iget v0, p0, Lf93;->a:I
 
-    const-class v1, Lk4f;
+    packed-switch v0, :pswitch_data_0
 
-    filled-new-array {v1}, [Ljava/lang/Class;
+    new-instance v0, Lfq1;
 
-    move-result-object v1
+    iget-object v1, p0, Lf93;->c:Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    check-cast v1, Lm66;
 
-    move-result-object v0
+    const/16 v2, 0x8
 
-    iget-object p0, p0, Lf93;->a:Lk4f;
+    invoke-direct {v0, p1, v2, v1}, Lfq1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    filled-new-array {p0}, [Ljava/lang/Object;
+    invoke-interface {p1, v0}, Lo93;->c(Lam4;)V
 
-    move-result-object p0
+    iget-object p0, p0, Lf93;->b:Ljava/lang/Object;
 
-    invoke-virtual {v0, p0}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast p0, Ltod;
 
-    move-result-object p0
+    invoke-virtual {p0, v0}, Ltod;->k(Lnpd;)V
 
-    move-object v0, p0
+    return-void
 
-    check-cast v0, Ln3b;
+    :pswitch_0
+    new-instance v0, Lva3;
 
-    move-object v1, p1
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    move-object v2, p2
+    invoke-interface {p1, v0}, Lo93;->c(Lam4;)V
 
-    move-object v3, p3
+    new-instance v1, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    move-object v4, p4
+    invoke-direct {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
 
-    move-object v5, p5
+    iget-object v2, p0, Lf93;->c:Ljava/lang/Object;
 
-    invoke-interface/range {v0 .. v5}, Ln3b;->a(Landroid/content/Context;Lz23;Lz4f;Lc93;Le8c;)Lm3b;
+    check-cast v2, Lgsc;
 
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    new-instance v3, Lu93;
 
-    return-object p0
+    invoke-direct {v3, p0, v1, v0, p1}, Lu93;-><init>(Lf93;Ljava/util/concurrent/atomic/AtomicBoolean;Lva3;Lo93;)V
 
-    :catch_0
-    move-exception p0
+    const-wide/16 v4, 0x3
 
-    invoke-static {p0}, Landroidx/media3/common/VideoFrameProcessingException;->a(Ljava/lang/Exception;)Landroidx/media3/common/VideoFrameProcessingException;
+    sget-object v6, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    move-result-object p0
+    invoke-virtual {v2, v3, v4, v5, v6}, Lgsc;->c(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Lam4;
 
-    throw p0
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lva3;->a(Lam4;)Z
+
+    iget-object p0, p0, Lf93;->b:Ljava/lang/Object;
+
+    check-cast p0, Lh93;
+
+    new-instance v2, Lhjc;
+
+    const/4 v3, 0x4
+
+    invoke-direct {v2, v0, v1, p1, v3}, Lhjc;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+
+    invoke-virtual {p0, v2}, Le93;->i(Lo93;)V
+
+    return-void
+
+    :pswitch_1
+    iget-object v0, p0, Lf93;->b:Ljava/lang/Object;
+
+    check-cast v0, Le93;
+
+    new-instance v1, Lb9g;
+
+    const/16 v2, 0xb
+
+    invoke-direct {v1, p0, v2, p1}, Lb9g;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-virtual {v0, v1}, Le93;->i(Lo93;)V
+
+    return-void
+
+    :pswitch_2
+    iget-object v0, p0, Lf93;->b:Ljava/lang/Object;
+
+    check-cast v0, Le93;
+
+    new-instance v1, Lfq1;
+
+    iget-object p0, p0, Lf93;->c:Ljava/lang/Object;
+
+    check-cast p0, Le93;
+
+    const/4 v2, 0x1
+
+    invoke-direct {v1, p1, v2, p0}, Lfq1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-virtual {v0, v1}, Le93;->i(Lo93;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

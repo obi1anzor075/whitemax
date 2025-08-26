@@ -1,113 +1,76 @@
-.class public final Lh45;
+.class public final synthetic Lh45;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/SurfaceHolder$Callback;
-.implements Landroid/view/TextureView$SurfaceTextureListener;
+.implements Lx56;
 
 
 # instance fields
-.field public final synthetic a:Ln45;
+.field public final synthetic a:I
+
+.field public final synthetic b:Ljava/lang/reflect/Constructor;
 
 
 # direct methods
-.method public constructor <init>(Ln45;)V
+.method public synthetic constructor <init>(Ljava/lang/reflect/Constructor;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Lh45;->a:I
 
-    iput-object p1, p0, Lh45;->a:Ln45;
+    iput-object p1, p0, Lh45;->b:Ljava/lang/reflect/Constructor;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;II)V
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget-object p0, p0, Lh45;->a:Ln45;
+    iget v0, p0, Lh45;->a:I
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p0, p0, Lh45;->b:Ljava/lang/reflect/Constructor;
 
-    new-instance v0, Landroid/view/Surface;
+    check-cast p1, Ljava/lang/Throwable;
 
-    invoke-direct {v0, p1}, Landroid/view/Surface;-><init>(Landroid/graphics/SurfaceTexture;)V
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p0, v0}, Ln45;->p2(Ljava/lang/Object;)V
+    invoke-static {p0, p1}, Lkotlinx/coroutines/internal/ExceptionsConstructorKt;->a(Ljava/lang/reflect/Constructor;Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
-    iput-object v0, p0, Ln45;->g1:Landroid/view/Surface;
+    move-result-object p0
 
-    invoke-virtual {p0, p2, p3}, Ln45;->k2(II)V
+    return-object p0
 
-    return-void
-.end method
+    :pswitch_0
+    invoke-static {p0, p1}, Lkotlinx/coroutines/internal/ExceptionsConstructorKt;->c(Ljava/lang/reflect/Constructor;Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
-.method public final onSurfaceTextureDestroyed(Landroid/graphics/SurfaceTexture;)Z
-    .locals 0
+    move-result-object p0
 
-    iget-object p0, p0, Lh45;->a:Ln45;
+    return-object p0
 
-    const/4 p1, 0x0
+    :pswitch_1
+    invoke-static {p0, p1}, Lkotlinx/coroutines/internal/ExceptionsConstructorKt;->d(Ljava/lang/reflect/Constructor;Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
-    invoke-virtual {p0, p1}, Ln45;->p2(Ljava/lang/Object;)V
+    move-result-object p0
 
-    const/4 p1, 0x0
+    return-object p0
 
-    invoke-virtual {p0, p1, p1}, Ln45;->k2(II)V
+    :pswitch_2
+    invoke-static {p0, p1}, Lkotlinx/coroutines/internal/ExceptionsConstructorKt;->e(Ljava/lang/reflect/Constructor;Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
-    const/4 p0, 0x1
+    move-result-object p0
 
-    return p0
-.end method
+    return-object p0
 
-.method public final onSurfaceTextureSizeChanged(Landroid/graphics/SurfaceTexture;II)V
-    .locals 0
+    nop
 
-    iget-object p0, p0, Lh45;->a:Ln45;
-
-    invoke-virtual {p0, p2, p3}, Ln45;->k2(II)V
-
-    return-void
-.end method
-
-.method public final onSurfaceTextureUpdated(Landroid/graphics/SurfaceTexture;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final surfaceChanged(Landroid/view/SurfaceHolder;III)V
-    .locals 0
-
-    iget-object p0, p0, Lh45;->a:Ln45;
-
-    invoke-virtual {p0, p3, p4}, Ln45;->k2(II)V
-
-    return-void
-.end method
-
-.method public final surfaceCreated(Landroid/view/SurfaceHolder;)V
-    .locals 0
-
-    iget-object p0, p0, Lh45;->a:Ln45;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-void
-.end method
-
-.method public final surfaceDestroyed(Landroid/view/SurfaceHolder;)V
-    .locals 0
-
-    iget-object p0, p0, Lh45;->a:Ln45;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 p1, 0x0
-
-    invoke-virtual {p0, p1, p1}, Ln45;->k2(II)V
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

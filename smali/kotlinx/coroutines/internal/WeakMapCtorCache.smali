@@ -19,7 +19,7 @@
         "Lkotlin/Function1;",
         "Lkotlinx/coroutines/internal/Ctor;",
         "get",
-        "(Ljava/lang/Class;)Lu16;",
+        "(Ljava/lang/Class;)Lx56;",
         "Ljava/util/concurrent/locks/ReentrantReadWriteLock;",
         "cacheLock",
         "Ljava/util/concurrent/locks/ReentrantReadWriteLock;",
@@ -34,6 +34,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -50,7 +51,7 @@
             "+",
             "Ljava/lang/Throwable;",
             ">;",
-            "Lu16;",
+            "Lx56;",
             ">;"
         }
     .end annotation
@@ -92,7 +93,7 @@
 
 
 # virtual methods
-.method public get(Ljava/lang/Class;)Lu16;
+.method public get(Ljava/lang/Class;)Lx56;
     .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -101,7 +102,7 @@
             "+",
             "Ljava/lang/Throwable;",
             ">;)",
-            "Lu16;"
+            "Lx56;"
         }
     .end annotation
 
@@ -120,7 +121,7 @@
 
     move-result-object v1
 
-    check-cast v1, Lu16;
+    check-cast v1, Lx56;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
@@ -178,7 +179,7 @@
 
     move-result-object v4
 
-    check-cast v4, Lu16;
+    check-cast v4, Lx56;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -200,7 +201,7 @@
 
     :cond_4
     :try_start_2
-    invoke-static {p1}, Lkotlinx/coroutines/internal/ExceptionsConstructorKt;->access$createConstructor(Ljava/lang/Class;)Lu16;
+    invoke-static {p1}, Lkotlinx/coroutines/internal/ExceptionsConstructorKt;->access$createConstructor(Ljava/lang/Class;)Lx56;
 
     move-result-object v4
 

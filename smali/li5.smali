@@ -2,290 +2,120 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lkl0;
-
 
 # instance fields
-.field public final a:Lti5;
+.field public final a:Lvu0;
 
-.field public final b:I
+.field public final b:Lwjd;
 
-.field public final c:Lle4;
+.field public final c:Lkotlinx/coroutines/internal/ContextScope;
 
 
 # direct methods
-.method public constructor <init>(Lti5;I)V
-    .locals 0
+.method public constructor <init>(Lvu0;Lrie;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lli5;->a:Lti5;
+    iput-object p1, p0, Lli5;->a:Lvu0;
 
-    iput p2, p0, Lli5;->b:I
+    const/4 v0, 0x0
 
-    new-instance p1, Lle4;
+    const/4 v1, 0x7
 
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+    invoke-static {v0, v0, v1}, Lxjd;->b(III)Lwjd;
 
-    iput-object p1, p0, Lli5;->c:Lle4;
+    move-result-object v0
+
+    iput-object v0, p0, Lli5;->b:Lwjd;
+
+    check-cast p2, Lo7a;
+
+    invoke-virtual {p2}, Lo7a;->c()Lxw7;
+
+    move-result-object p2
+
+    invoke-static {p2}, Lvk9;->a(Lhx3;)Lkotlinx/coroutines/internal/ContextScope;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lli5;->c:Lkotlinx/coroutines/internal/ContextScope;
+
+    invoke-virtual {p1, p0}, Lvu0;->d(Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lr74;)J
-    .locals 16
+.method public final onEvent(Lqj5;)V
+    .locals 2
+    .annotation runtime Li9e;
+    .end annotation
 
-    move-object/from16 v0, p0
+    .line 1
+    sget-object v0, Lfq0;->n:Lhq6;
 
-    move-object/from16 v1, p1
+    iget-object p1, p1, Lqj5;->c:Lhq6;
 
-    :goto_0
-    invoke-virtual/range {p1 .. p1}, Lr74;->s()J
+    .line 2
+    invoke-virtual {v0, p1}, Lhq6;->equals(Ljava/lang/Object;)Z
 
-    move-result-wide v2
+    move-result p1
 
-    iget-wide v4, v1, Lr74;->c:J
+    if-nez p1, :cond_0
 
-    const-wide/16 v6, 0x6
+    return-void
 
-    sub-long v8, v4, v6
-
-    cmp-long v2, v2, v8
-
-    const/4 v3, 0x0
-
-    iget-object v8, v0, Lli5;->c:Lle4;
-
-    iget-object v9, v0, Lli5;->a:Lti5;
-
-    if-gez v2, :cond_3
-
-    invoke-virtual/range {p1 .. p1}, Lr74;->s()J
-
-    move-result-wide v10
-
-    const/4 v2, 0x2
-
-    new-array v12, v2, [B
-
-    invoke-virtual {v1, v12, v3, v2, v3}, Lr74;->r([BIIZ)Z
-
-    aget-byte v13, v12, v3
-
-    and-int/lit16 v13, v13, 0xff
-
-    shl-int/lit8 v13, v13, 0x8
-
-    const/4 v14, 0x1
-
-    aget-byte v15, v12, v14
-
-    and-int/lit16 v15, v15, 0xff
-
-    or-int/2addr v13, v15
-
-    iget v15, v0, Lli5;->b:I
-
-    if-eq v13, v15, :cond_0
-
-    iput v3, v1, Lr74;->Y:I
-
-    iget-wide v12, v1, Lr74;->o:J
-
-    sub-long/2addr v10, v12
-
-    long-to-int v2, v10
-
-    invoke-virtual {v1, v2, v3}, Lr74;->b(IZ)Z
-
-    move v2, v3
-
-    goto :goto_3
-
+    .line 3
     :cond_0
-    new-instance v13, Lija;
+    new-instance p1, Lji5;
 
-    const/16 v6, 0x10
+    const/4 v0, 0x0
 
-    invoke-direct {v13, v6}, Lija;-><init>(I)V
+    invoke-direct {p1, p0, v0}, Lji5;-><init>(Lli5;Lkotlin/coroutines/Continuation;)V
 
-    iget-object v6, v13, Lija;->a:[B
+    const/4 v1, 0x3
 
-    invoke-static {v12, v3, v6, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    iget-object p0, p0, Lli5;->c:Lkotlinx/coroutines/internal/ContextScope;
 
-    iget-object v6, v13, Lija;->a:[B
+    invoke-static {p0, v0, v0, p1, v1}, Lzo3;->E(Lox3;Lhx3;Lrx3;Ll66;I)Ldwd;
 
-    move v7, v3
-
-    :goto_1
-    const/16 v12, 0xe
-
-    if-ge v7, v12, :cond_2
-
-    add-int v12, v2, v7
-
-    rsub-int/lit8 v2, v7, 0xe
-
-    invoke-virtual {v1, v12, v6, v2}, Lr74;->d(I[BI)I
-
-    move-result v2
-
-    const/4 v12, -0x1
-
-    if-ne v2, v12, :cond_1
-
-    goto :goto_2
-
-    :cond_1
-    add-int/2addr v7, v2
-
-    const/4 v2, 0x2
-
-    goto :goto_1
-
-    :cond_2
-    :goto_2
-    invoke-virtual {v13, v7}, Lija;->F(I)V
-
-    iput v3, v1, Lr74;->Y:I
-
-    iget-wide v6, v1, Lr74;->o:J
-
-    sub-long/2addr v10, v6
-
-    long-to-int v2, v10
-
-    invoke-virtual {v1, v2, v3}, Lr74;->b(IZ)Z
-
-    invoke-static {v13, v9, v15, v8}, Lct0;->e(Lija;Lti5;ILle4;)Z
-
-    move-result v2
-
-    :goto_3
-    if-nez v2, :cond_3
-
-    invoke-virtual {v1, v14, v3}, Lr74;->b(IZ)Z
-
-    goto :goto_0
-
-    :cond_3
-    invoke-virtual/range {p1 .. p1}, Lr74;->s()J
-
-    move-result-wide v6
-
-    const-wide/16 v10, 0x6
-
-    sub-long v10, v4, v10
-
-    cmp-long v0, v6, v10
-
-    if-ltz v0, :cond_4
-
-    invoke-virtual/range {p1 .. p1}, Lr74;->s()J
-
-    move-result-wide v6
-
-    sub-long/2addr v4, v6
-
-    long-to-int v0, v4
-
-    invoke-virtual {v1, v0, v3}, Lr74;->b(IZ)Z
-
-    iget-wide v0, v9, Lti5;->k:J
-
-    return-wide v0
-
-    :cond_4
-    iget-wide v0, v8, Lle4;->a:J
-
-    return-wide v0
+    return-void
 .end method
 
-.method public final k(Lr74;J)Lil0;
-    .locals 18
+.method public final onEvent(Ls3d;)V
+    .locals 2
+    .annotation runtime Li9e;
+    .end annotation
 
-    move-object/from16 v0, p1
+    .line 4
+    const-string v0, "file.local.max.size.reached"
 
-    iget-wide v4, v0, Lr74;->o:J
+    iget-object p1, p1, Lni0;->b:Ljava/lang/String;
 
-    invoke-virtual/range {p0 .. p1}, Lli5;->a(Lr74;)J
+    .line 5
+    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    move-result-wide v2
+    move-result p1
 
-    invoke-virtual/range {p1 .. p1}, Lr74;->s()J
+    if-nez p1, :cond_0
 
-    move-result-wide v10
+    return-void
 
-    move-object/from16 v1, p0
-
-    iget-object v6, v1, Lli5;->a:Lti5;
-
-    iget v6, v6, Lti5;->d:I
-
-    const/4 v7, 0x6
-
-    invoke-static {v7, v6}, Ljava/lang/Math;->max(II)I
-
-    move-result v6
-
-    const/4 v7, 0x0
-
-    invoke-virtual {v0, v6, v7}, Lr74;->b(IZ)Z
-
-    invoke-virtual/range {p0 .. p1}, Lli5;->a(Lr74;)J
-
-    move-result-wide v14
-
-    invoke-virtual/range {p1 .. p1}, Lr74;->s()J
-
-    move-result-wide v16
-
-    cmp-long v0, v2, p2
-
-    if-gtz v0, :cond_0
-
-    cmp-long v0, v14, p2
-
-    if-lez v0, :cond_0
-
-    new-instance v0, Lil0;
-
-    const/4 v7, 0x0
-
-    const-wide v8, -0x7fffffffffffffffL    # -4.9E-324
-
-    move-object v6, v0
-
-    invoke-direct/range {v6 .. v11}, Lil0;-><init>(IJJ)V
-
-    return-object v0
-
+    .line 6
     :cond_0
-    cmp-long v0, v14, p2
+    new-instance p1, Lki5;
 
-    if-gtz v0, :cond_1
+    const/4 v0, 0x0
 
-    new-instance v0, Lil0;
+    invoke-direct {p1, p0, v0}, Lki5;-><init>(Lli5;Lkotlin/coroutines/Continuation;)V
 
-    const/4 v13, -0x2
+    const/4 v1, 0x3
 
-    move-object v12, v0
+    iget-object p0, p0, Lli5;->c:Lkotlinx/coroutines/internal/ContextScope;
 
-    invoke-direct/range {v12 .. v17}, Lil0;-><init>(IJJ)V
+    invoke-static {p0, v0, v0, p1, v1}, Lzo3;->E(Lox3;Lhx3;Lrx3;Ll66;I)Ldwd;
 
-    return-object v0
-
-    :cond_1
-    new-instance v6, Lil0;
-
-    const/4 v1, -0x1
-
-    move-object v0, v6
-
-    invoke-direct/range {v0 .. v5}, Lil0;-><init>(IJJ)V
-
-    return-object v6
+    return-void
 .end method

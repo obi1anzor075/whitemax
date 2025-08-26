@@ -1,53 +1,58 @@
 .class public final Lu2c;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lnld;
 
 
 # instance fields
-.field public X:Ljava/util/List;
-
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lv2c;
-
-.field public o:Lv2c;
-
-.field public w0:I
+.field public final a:Ljava/util/HashSet;
 
 
 # direct methods
-.method public constructor <init>(Lv2c;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    iput-object p1, p0, Lu2c;->Z:Lv2c;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    iput-object v0, p0, Lu2c;->a:Ljava/util/HashSet;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final onRateCall(Lorg/json/JSONObject;)V
     .locals 1
 
-    iput-object p1, p0, Lu2c;->Y:Ljava/lang/Object;
+    iget-object p0, p0, Lu2c;->a:Ljava/util/HashSet;
 
-    iget p1, p0, Lu2c;->w0:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lu2c;->w0:I
-
-    iget-object p1, p0, Lu2c;->Z:Lv2c;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lv2c;->c(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    return-object p0
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lnld;
+
+    invoke-interface {v0, p1}, Lnld;->onRateCall(Lorg/json/JSONObject;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
 .end method

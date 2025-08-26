@@ -1,45 +1,33 @@
 .class public final Luj7;
-.super Ler3;
+.super Lbu3;
 .source "SourceFile"
 
 
 # instance fields
-.field public A0:Z
+.field public X:Lbn5;
 
-.field public B0:J
+.field public Y:Landroid/net/Uri;
 
-.field public C0:J
+.field public Z:Ljava/lang/String;
 
-.field public synthetic D0:Ljava/lang/Object;
+.field public o:Lwj7;
 
-.field public final synthetic E0:Lyj7;
+.field public o0:J
 
-.field public F0:I
+.field public synthetic p0:Ljava/lang/Object;
 
-.field public X:Ljava/lang/Object;
+.field public final synthetic q0:Lwj7;
 
-.field public Y:Ljava/lang/Object;
-
-.field public Z:Ljava/io/Serializable;
-
-.field public o:Ljava/lang/Object;
-
-.field public w0:Ljava/lang/Object;
-
-.field public x0:Ljava/lang/Object;
-
-.field public y0:I
-
-.field public z0:I
+.field public r0:I
 
 
 # direct methods
-.method public constructor <init>(Lyj7;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lwj7;Lbu3;)V
     .locals 0
 
-    iput-object p1, p0, Luj7;->E0:Lyj7;
+    iput-object p1, p0, Luj7;->q0:Lwj7;
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -49,31 +37,29 @@
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 7
 
-    iput-object p1, p0, Luj7;->D0:Ljava/lang/Object;
+    iput-object p1, p0, Luj7;->p0:Ljava/lang/Object;
 
-    iget p1, p0, Luj7;->F0:I
+    iget p1, p0, Luj7;->r0:I
 
     const/high16 v0, -0x80000000
 
     or-int/2addr p1, v0
 
-    iput p1, p0, Luj7;->F0:I
+    iput p1, p0, Luj7;->r0:I
 
-    iget-object v0, p0, Luj7;->E0:Lyj7;
+    const-wide/16 v3, 0x0
+
+    const/4 v5, 0x0
+
+    iget-object v0, p0, Luj7;->q0:Lwj7;
 
     const/4 v1, 0x0
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
     move-object v6, p0
 
-    invoke-virtual/range {v0 .. v6}, Lyj7;->p(Li22;Ljava/util/List;Ljava/util/List;IZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual/range {v0 .. v6}, Lwj7;->j(Lbn5;Landroid/net/Uri;JLjava/lang/String;Lbu3;)Ljava/lang/Object;
 
     move-result-object p0
 

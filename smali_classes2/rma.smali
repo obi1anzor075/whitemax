@@ -2,63 +2,40 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lzw8;
 
+# instance fields
+.field public final a:Lkie;
 
-# static fields
-.field public static final a:Lrma;
+.field public final b:Ltma;
+
+.field public final c:J
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lkie;Ltma;)V
     .locals 1
 
-    new-instance v0, Lrma;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lrma;->a:Lkie;
 
-    sput-object v0, Lrma;->a:Lrma;
+    iput-object p2, p0, Lrma;->b:Ltma;
+
+    sget p1, Ldc7;->a:I
+
+    sget p1, Lat4;->o:I
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide p1
+
+    sget-object v0, Lft4;->c:Lft4;
+
+    invoke-static {p1, p2, v0}, La4f;->G(JLft4;)J
+
+    move-result-wide p1
+
+    iput-wide p1, p0, Lrma;->c:J
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of p0, p1, Lrma;
-
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    const p0, 0x3e66b1b7
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    const-string p0, "PerformHaptic"
-
-    return-object p0
 .end method

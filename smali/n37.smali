@@ -1,175 +1,282 @@
 .class public final Ln37;
-.super Ljava/lang/Object;
+.super Let6;
 .source "SourceFile"
 
-# interfaces
-.implements Lm37;
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Ln37;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final b:Ljava/lang/String;
 
-.field public final b:Landroid/app/job/JobWorkItem;
+.field public final c:Ljava/lang/String;
 
-.field public final synthetic c:Landroid/app/job/JobServiceEngine;
+.field public final o:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/app/job/JobServiceEngine;Landroid/app/job/JobWorkItem;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput p3, p0, Ln37;->a:I
+    new-instance v0, Lao6;
 
-    iput-object p1, p0, Ln37;->c:Landroid/app/job/JobServiceEngine;
+    const/16 v1, 0x9
 
-    iput-object p2, p0, Ln37;->b:Landroid/app/job/JobWorkItem;
+    invoke-direct {v0, v1}, Lao6;-><init>(I)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Ln37;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Parcel;)V
+    .locals 2
+
+    .line 5
+    const-string v0, "----"
+
+    invoke-direct {p0, v0}, Let6;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    sget v1, Lnaf;->a:I
+
+    iput-object v0, p0, Ln37;->b:Ljava/lang/String;
+
+    .line 7
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ln37;->c:Ljava/lang/String;
+
+    .line 8
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Ln37;->o:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "----"
+
+    invoke-direct {p0, v0}, Let6;-><init>(Ljava/lang/String;)V
+
+    .line 2
+    iput-object p1, p0, Ln37;->b:Ljava/lang/String;
+
+    .line 3
+    iput-object p2, p0, Ln37;->c:Ljava/lang/String;
+
+    .line 4
+    iput-object p3, p0, Ln37;->o:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget v0, p0, Ln37;->a:I
+    const/4 v0, 0x1
 
-    packed-switch v0, :pswitch_data_0
+    if-ne p0, p1, :cond_0
 
-    iget-object v0, p0, Ln37;->c:Landroid/app/job/JobServiceEngine;
+    return v0
 
-    check-cast v0, Lo37;
+    :cond_0
+    const/4 v1, 0x0
 
-    iget-object v0, v0, Lo37;->c:Ljava/lang/Object;
+    if-eqz p1, :cond_2
 
-    monitor-enter v0
+    const-class v2, Ln37;
 
-    :try_start_0
-    iget-object v1, p0, Ln37;->c:Landroid/app/job/JobServiceEngine;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    check-cast v1, Lo37;
+    move-result-object v3
 
-    iget-object v1, v1, Lo37;->d:Landroid/app/job/JobParameters;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v1, :cond_0
-
-    :try_start_1
-    iget-object p0, p0, Ln37;->b:Landroid/app/job/JobWorkItem;
-
-    invoke-virtual {v1, p0}, Landroid/app/job/JobParameters;->completeWork(Landroid/app/job/JobWorkItem;)V
-    :try_end_1
-    .catch Ljava/lang/SecurityException; {:try_start_1 .. :try_end_1} :catch_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    if-eq v2, v3, :cond_1
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p0
+    :cond_1
+    check-cast p1, Ln37;
 
-    goto :goto_1
+    iget-object v2, p0, Ln37;->c:Ljava/lang/String;
 
-    :catch_0
-    move-exception p0
+    iget-object v3, p1, Ln37;->c:Ljava/lang/String;
 
-    :try_start_2
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Ln37;->b:Ljava/lang/String;
+
+    iget-object v3, p1, Ln37;->b:Ljava/lang/String;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object p0, p0, Ln37;->o:Ljava/lang/String;
+
+    iget-object p1, p1, Ln37;->o:Ljava/lang/String;
+
+    invoke-static {p0, p1}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    return v0
+
+    :cond_2
+    :goto_0
+    return v1
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Ln37;->b:Ljava/lang/String;
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    goto :goto_0
 
     :cond_0
+    move v1, v0
+
     :goto_0
-    monitor-exit v0
+    const/16 v2, 0x20f
 
-    return-void
+    add-int/2addr v2, v1
 
-    :goto_1
-    monitor-exit v0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    mul-int/lit8 v2, v2, 0x1f
 
-    throw p0
-
-    :pswitch_0
-    iget-object v0, p0, Ln37;->c:Landroid/app/job/JobServiceEngine;
-
-    check-cast v0, Lo37;
-
-    iget-object v0, v0, Lo37;->c:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_3
-    iget-object v1, p0, Ln37;->c:Landroid/app/job/JobServiceEngine;
-
-    check-cast v1, Lo37;
-
-    iget-object v1, v1, Lo37;->d:Landroid/app/job/JobParameters;
+    iget-object v1, p0, Ln37;->c:Ljava/lang/String;
 
     if-eqz v1, :cond_1
 
-    iget-object p0, p0, Ln37;->b:Landroid/app/job/JobWorkItem;
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
-    invoke-virtual {v1, p0}, Landroid/app/job/JobParameters;->completeWork(Landroid/app/job/JobWorkItem;)V
+    move-result v1
 
-    goto :goto_2
-
-    :catchall_1
-    move-exception p0
-
-    goto :goto_3
+    goto :goto_1
 
     :cond_1
-    :goto_2
-    monitor-exit v0
+    move v1, v0
 
-    return-void
+    :goto_1
+    add-int/2addr v2, v1
 
-    :goto_3
-    monitor-exit v0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    mul-int/lit8 v2, v2, 0x1f
 
-    throw p0
+    iget-object p0, p0, Ln37;->o:Ljava/lang/String;
 
-    nop
+    if-eqz p0, :cond_2
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    :cond_2
+    add-int/2addr v2, v0
+
+    return v2
 .end method
 
-.method public final getIntent()Landroid/content/Intent;
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 4
 
-    iget v0, p0, Ln37;->a:I
+    const/16 v0, 0x17
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v1, p0, Let6;->a:Ljava/lang/String;
 
-    iget-object p0, p0, Ln37;->b:Landroid/app/job/JobWorkItem;
+    invoke-static {v0, v1}, Lv04;->e(ILjava/lang/String;)I
 
-    invoke-virtual {p0}, Landroid/app/job/JobWorkItem;->getIntent()Landroid/content/Intent;
+    move-result v0
+
+    iget-object v2, p0, Ln37;->b:Ljava/lang/String;
+
+    invoke-static {v0, v2}, Lv04;->e(ILjava/lang/String;)I
+
+    move-result v0
+
+    iget-object p0, p0, Ln37;->c:Ljava/lang/String;
+
+    invoke-static {v0, p0}, Lv04;->e(ILjava/lang/String;)I
+
+    move-result v0
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ": domain="
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", description="
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
+.end method
 
-    :pswitch_0
-    iget-object p0, p0, Ln37;->b:Landroid/app/job/JobWorkItem;
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 0
 
-    invoke-virtual {p0}, Landroid/app/job/JobWorkItem;->getIntent()Landroid/content/Intent;
+    iget-object p2, p0, Let6;->a:Ljava/lang/String;
 
-    move-result-object p0
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    return-object p0
+    iget-object p2, p0, Ln37;->b:Ljava/lang/String;
 
-    nop
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    iget-object p0, p0, Ln37;->o:Ljava/lang/String;
+
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    return-void
 .end method

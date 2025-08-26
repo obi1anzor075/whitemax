@@ -1,74 +1,46 @@
 .class public final Lib4;
-.super Lwb4;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Comparable;
+.implements Lnw4;
+
+
+# static fields
+.field public static final b:Ljava/lang/ThreadLocal;
 
 
 # instance fields
-.field public final X:I
-
-.field public final Y:I
+.field public final a:Landroid/text/TextPaint;
 
 
 # direct methods
-.method public constructor <init>(ILuoe;ILnb4;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0, p1, p2, p3}, Lwb4;-><init>(ILuoe;I)V
+    new-instance v0, Ljava/lang/ThreadLocal;
 
-    iget-boolean p1, p4, Lnb4;->t0:Z
+    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
 
-    invoke-static {p5, p1}, Lqi0;->o(IZ)Z
-
-    move-result p1
-
-    iput p1, p0, Lib4;->X:I
-
-    iget-object p1, p0, Lwb4;->o:Lxu5;
-
-    invoke-virtual {p1}, Lxu5;->b()I
-
-    move-result p1
-
-    iput p1, p0, Lib4;->Y:I
+    sput-object v0, Lib4;->b:Ljava/lang/ThreadLocal;
 
     return-void
 .end method
 
+.method public constructor <init>()V
+    .locals 1
 
-# virtual methods
-.method public final a()I
-    .locals 0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget p0, p0, Lib4;->X:I
+    new-instance v0, Landroid/text/TextPaint;
 
-    return p0
-.end method
+    invoke-direct {v0}, Landroid/text/TextPaint;-><init>()V
 
-.method public final bridge synthetic b(Lwb4;)Z
-    .locals 0
+    iput-object v0, p0, Lib4;->a:Landroid/text/TextPaint;
 
-    check-cast p1, Lib4;
+    const/high16 p0, 0x41200000    # 10.0f
 
-    const/4 p0, 0x0
+    invoke-virtual {v0, p0}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    return p0
-.end method
-
-.method public final compareTo(Ljava/lang/Object;)I
-    .locals 0
-
-    check-cast p1, Lib4;
-
-    iget p0, p0, Lib4;->Y:I
-
-    iget p1, p1, Lib4;->Y:I
-
-    invoke-static {p0, p1}, Ljava/lang/Integer;->compare(II)I
-
-    move-result p0
-
-    return p0
+    return-void
 .end method

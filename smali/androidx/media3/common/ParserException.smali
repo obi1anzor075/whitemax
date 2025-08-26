@@ -10,7 +10,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/Exception;ZI)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;ZI)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
@@ -29,7 +29,7 @@
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p1, p0, v1, v1}, Landroidx/media3/common/ParserException;-><init>(Ljava/lang/String;Ljava/lang/Exception;ZI)V
+    invoke-direct {v0, p1, p0, v1, v1}, Landroidx/media3/common/ParserException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;ZI)V
 
     return-object v0
 .end method
@@ -43,7 +43,7 @@
 
     const/4 v2, 0x4
 
-    invoke-direct {v0, p1, p0, v1, v2}, Landroidx/media3/common/ParserException;-><init>(Ljava/lang/String;Ljava/lang/Exception;ZI)V
+    invoke-direct {v0, p1, p0, v1, v2}, Landroidx/media3/common/ParserException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;ZI)V
 
     return-object v0
 .end method
@@ -53,13 +53,13 @@
 
     new-instance v0, Landroidx/media3/common/ParserException;
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
     const/4 v3, 0x0
 
-    invoke-direct {v0, p0, v2, v3, v1}, Landroidx/media3/common/ParserException;-><init>(Ljava/lang/String;Ljava/lang/Exception;ZI)V
+    invoke-direct {v0, p0, v3, v1, v2}, Landroidx/media3/common/ParserException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;ZI)V
 
     return-object v0
 .end method
@@ -95,7 +95,7 @@
 
     const-string v1, "}"
 
-    invoke-static {v0, p0, v1}, Lwn6;->j(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lm26;->i(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

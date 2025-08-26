@@ -2,102 +2,84 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Comparable;
 
-
-# instance fields
-.field public final X:J
-
-.field public final Y:Lxn4;
-
-.field public final Z:Ljava/lang/String;
-
-.field public final a:Ljava/lang/String;
-
-.field public final b:Lii6;
-
-.field public final c:J
-
-.field public final o:I
-
-.field public final w0:Ljava/lang/String;
-
-.field public final x0:J
-
-.field public final y0:J
-
-.field public final z0:Z
+# static fields
+.field private static volatile choreographer:Landroid/view/Choreographer;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lii6;JIJLxn4;Ljava/lang/String;Ljava/lang/String;JJZ)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    :try_start_0
+    new-instance v0, Lji6;
 
-    iput-object p1, p0, Lki6;->a:Ljava/lang/String;
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
-    iput-object p2, p0, Lki6;->b:Lii6;
+    move-result-object v1
 
-    iput-wide p3, p0, Lki6;->c:J
+    invoke-static {v1}, Lki6;->a(Landroid/os/Looper;)Landroid/os/Handler;
 
-    iput p5, p0, Lki6;->o:I
+    move-result-object v1
 
-    iput-wide p6, p0, Lki6;->X:J
+    const/4 v2, 0x0
 
-    iput-object p8, p0, Lki6;->Y:Lxn4;
+    invoke-direct {v0, v1, v2}, Lji6;-><init>(Landroid/os/Handler;Z)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iput-object p9, p0, Lki6;->Z:Ljava/lang/String;
+    goto :goto_0
 
-    iput-object p10, p0, Lki6;->w0:Ljava/lang/String;
+    :catchall_0
+    move-exception v0
 
-    iput-wide p11, p0, Lki6;->x0:J
+    new-instance v1, Ljhc;
 
-    iput-wide p13, p0, Lki6;->y0:J
+    invoke-direct {v1, v0}, Ljhc;-><init>(Ljava/lang/Throwable;)V
 
-    iput-boolean p15, p0, Lki6;->z0:Z
+    move-object v0, v1
+
+    :goto_0
+    instance-of v1, v0, Ljhc;
+
+    if-eqz v1, :cond_0
+
+    const/4 v0, 0x0
+
+    :cond_0
+    check-cast v0, Lji6;
 
     return-void
 .end method
 
+.method public static final a(Landroid/os/Looper;)Landroid/os/Handler;
+    .locals 3
 
-# virtual methods
-.method public final compareTo(Ljava/lang/Object;)I
-    .locals 4
+    const-class v0, Landroid/os/Looper;
 
-    check-cast p1, Ljava/lang/Long;
+    filled-new-array {v0}, [Ljava/lang/Class;
 
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    move-result-object v0
 
-    move-result-wide v0
+    const-class v1, Landroid/os/Handler;
 
-    iget-wide v2, p0, Lki6;->X:J
+    const-string v2, "createAsync"
 
-    cmp-long p0, v2, v0
+    invoke-virtual {v1, v2, v0}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    if-lez p0, :cond_0
+    move-result-object v0
 
-    const/4 p0, 0x1
+    const/4 v1, 0x0
 
-    goto :goto_0
+    filled-new-array {p0}, [Ljava/lang/Object;
 
-    :cond_0
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    move-result-object p0
 
-    move-result-wide p0
+    invoke-virtual {v0, v1, p0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    cmp-long p0, v2, p0
+    move-result-object p0
 
-    if-gez p0, :cond_1
+    check-cast p0, Landroid/os/Handler;
 
-    const/4 p0, -0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
+    return-object p0
 .end method

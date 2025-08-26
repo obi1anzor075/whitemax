@@ -1,62 +1,151 @@
-.class public abstract Lz27;
+.class public abstract synthetic Lz27;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final a:Ljava/lang/Integer;
+.field public static final synthetic a:[I
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 3
 
-    const/4 v0, 0x0
+    invoke-static {}, Ljava/math/RoundingMode;->values()[Ljava/math/RoundingMode;
+
+    move-result-object v0
+
+    array-length v0, v0
+
+    new-array v0, v0, [I
+
+    sput-object v0, Lz27;->a:[I
 
     :try_start_0
-    const-string v1, "android.os.Build$VERSION"
+    sget-object v1, Ljava/math/RoundingMode;->UNNECESSARY:Ljava/math/RoundingMode;
 
-    invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    move-result-object v1
+    move-result v1
 
-    const-string v2, "SDK_INT"
+    const/4 v2, 0x1
 
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    instance-of v2, v1, Ljava/lang/Integer;
-
-    if-eqz v2, :cond_0
-
-    check-cast v1, Ljava/lang/Integer;
+    aput v2, v0, v1
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    :catch_0
+    :try_start_1
+    sget-object v0, Lz27;->a:[I
 
-    :catchall_0
-    :cond_0
-    move-object v1, v0
+    sget-object v1, Ljava/math/RoundingMode;->DOWN:Ljava/math/RoundingMode;
 
-    :goto_0
-    if-eqz v1, :cond_1
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    invoke-virtual {v1}, Ljava/lang/Number;->intValue()I
+    move-result v1
 
-    move-result v2
+    const/4 v2, 0x2
 
-    if-lez v2, :cond_1
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    move-object v0, v1
+    :catch_1
+    :try_start_2
+    sget-object v0, Lz27;->a:[I
 
-    :cond_1
-    sput-object v0, Lz27;->a:Ljava/lang/Integer;
+    sget-object v1, Ljava/math/RoundingMode;->FLOOR:Ljava/math/RoundingMode;
 
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
+    :catch_2
+    :try_start_3
+    sget-object v0, Lz27;->a:[I
+
+    sget-object v1, Ljava/math/RoundingMode;->UP:Ljava/math/RoundingMode;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+
+    :catch_3
+    :try_start_4
+    sget-object v0, Lz27;->a:[I
+
+    sget-object v1, Ljava/math/RoundingMode;->CEILING:Ljava/math/RoundingMode;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x5
+
+    aput v2, v0, v1
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+
+    :catch_4
+    :try_start_5
+    sget-object v0, Lz27;->a:[I
+
+    sget-object v1, Ljava/math/RoundingMode;->HALF_DOWN:Ljava/math/RoundingMode;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x6
+
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+
+    :catch_5
+    :try_start_6
+    sget-object v0, Lz27;->a:[I
+
+    sget-object v1, Ljava/math/RoundingMode;->HALF_UP:Ljava/math/RoundingMode;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x7
+
+    aput v2, v0, v1
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
+
+    :catch_6
+    :try_start_7
+    sget-object v0, Lz27;->a:[I
+
+    sget-object v1, Ljava/math/RoundingMode;->HALF_EVEN:Ljava/math/RoundingMode;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0x8
+
+    aput v2, v0, v1
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
+
+    :catch_7
     return-void
 .end method

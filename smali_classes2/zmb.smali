@@ -1,51 +1,339 @@
-.class public abstract Lzmb;
-.super Ljava/lang/Object;
+.class public final Lzmb;
+.super Llje;
 .source "SourceFile"
 
 
-# static fields
-.field public static onechat_react_add_tension:I = 0x7f0703c0
+# instance fields
+.field public X:I
 
-.field public static onechat_react_animation_drawable_size:I = 0x7f0703c1
+.field public Y:Ljava/lang/Long;
 
-.field public static onechat_react_badge_corners_radius:I = 0x7f0703c2
+.field public o:Ljava/util/List;
 
-.field public static onechat_react_bubble_width_tension:I = 0x7f0703c3
 
-.field public static onechat_react_change_tension:I = 0x7f0703c4
+# direct methods
+.method public constructor <init>(Ldx8;)V
+    .locals 0
 
-.field public static onechat_react_counter_padding:I = 0x7f0703c5
+    invoke-direct {p0, p1}, Llje;-><init>(Ldx8;)V
 
-.field public static onechat_react_default_small_height_fallback:I = 0x7f0703c6
+    iget-object p1, p0, Lzmb;->o:Ljava/util/List;
 
-.field public static onechat_react_default_small_width_fallback:I = 0x7f0703c7
+    if-nez p1, :cond_0
 
-.field public static onechat_react_move_tension:I = 0x7f0703c8
+    sget-object p1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
-.field public static onechat_react_next_change_delay_coef:I = 0x7f0703c9
+    iput-object p1, p0, Lzmb;->o:Ljava/util/List;
 
-.field public static onechat_react_next_move_delay_coef:I = 0x7f0703ca
+    :cond_0
+    return-void
+.end method
 
-.field public static onechat_react_panel_corner_radius:I = 0x7f0703cb
 
-.field public static onechat_react_panel_popup_side_margin:I = 0x7f0703cc
+# virtual methods
+.method public final c(Ldx8;Ljava/lang/String;)V
+    .locals 13
 
-.field public static onechat_react_panel_selected_text_size:I = 0x7f0703cd
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-.field public static onechat_react_panel_side_margin:I = 0x7f0703ce
+    invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
 
-.field public static onechat_react_panel_size:I = 0x7f0703cf
+    move-result v0
 
-.field public static onechat_react_panel_text_size:I = 0x7f0703d0
+    const/4 v1, 0x2
 
-.field public static onechat_react_panel_vertical_margin:I = 0x7f0703d1
+    const/4 v2, 0x1
 
-.field public static onechat_react_scale_1_step:I = 0x7f0703d2
+    const/4 v3, 0x0
 
-.field public static onechat_react_scale_2_step:I = 0x7f0703d3
+    const/4 v4, -0x1
 
-.field public static onechat_react_scale_3_step:I = 0x7f0703d4
+    sparse-switch v0, :sswitch_data_0
 
-.field public static onechat_react_side_margin:I = 0x7f0703d5
+    :goto_0
+    move p2, v4
 
-.field public static onechat_react_text_size_small:I = 0x7f0703d6
+    goto :goto_1
+
+    :sswitch_0
+    const-string v0, "total"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-nez p2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    move p2, v1
+
+    goto :goto_1
+
+    :sswitch_1
+    const-string v0, "result"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-nez p2, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    move p2, v2
+
+    goto :goto_1
+
+    :sswitch_2
+    const-string v0, "marker"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-nez p2, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    move p2, v3
+
+    :goto_1
+    packed-switch p2, :pswitch_data_0
+
+    invoke-virtual {p1}, Ldx8;->B()V
+
+    return-void
+
+    :pswitch_0
+    invoke-virtual {p1}, Ldx8;->z0()I
+
+    move-result p1
+
+    iput p1, p0, Lzmb;->X:I
+
+    return-void
+
+    :pswitch_1
+    invoke-static {p1}, Lxq7;->V(Ldx8;)I
+
+    move-result p2
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0, p2}, Ljava/util/ArrayList;-><init>(I)V
+
+    iput-object v0, p0, Lzmb;->o:Ljava/util/List;
+
+    move v0, v3
+
+    :goto_2
+    if-ge v0, p2, :cond_7
+
+    iget-object v5, p0, Lzmb;->o:Ljava/util/List;
+
+    invoke-static {p1}, Lxq7;->d0(Ldx8;)I
+
+    move-result v6
+
+    const/4 v7, 0x0
+
+    move v10, v3
+
+    move-object v8, v7
+
+    move-object v9, v8
+
+    :goto_3
+    if-ge v10, v6, :cond_6
+
+    invoke-virtual {p1}, Ldx8;->D0()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v11}, Ljava/lang/String;->hashCode()I
+
+    move-result v12
+
+    sparse-switch v12, :sswitch_data_1
+
+    :goto_4
+    move v11, v4
+
+    goto :goto_5
+
+    :sswitch_3
+    const-string v12, "contact"
+
+    invoke-virtual {v11, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-nez v11, :cond_3
+
+    goto :goto_4
+
+    :cond_3
+    move v11, v1
+
+    goto :goto_5
+
+    :sswitch_4
+    const-string v12, "highlights"
+
+    invoke-virtual {v11, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-nez v11, :cond_4
+
+    goto :goto_4
+
+    :cond_4
+    move v11, v2
+
+    goto :goto_5
+
+    :sswitch_5
+    const-string v12, "chat"
+
+    invoke-virtual {v11, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-nez v11, :cond_5
+
+    goto :goto_4
+
+    :cond_5
+    move v11, v3
+
+    :goto_5
+    packed-switch v11, :pswitch_data_1
+
+    invoke-virtual {p1}, Ldx8;->B()V
+
+    goto :goto_6
+
+    :pswitch_2
+    invoke-static {p1}, Ldq3;->a(Ldx8;)Ldq3;
+
+    move-result-object v9
+
+    goto :goto_6
+
+    :pswitch_3
+    invoke-static {p1}, Llz;->g(Ldx8;)Llz;
+
+    move-result-object v8
+
+    goto :goto_6
+
+    :pswitch_4
+    invoke-static {p1}, Lz42;->d(Ldx8;)Lz42;
+
+    move-result-object v7
+
+    :goto_6
+    add-int/lit8 v10, v10, 0x1
+
+    goto :goto_3
+
+    :cond_6
+    new-instance v6, Lanb;
+
+    invoke-direct {v6, v7, v8, v9}, Lanb;-><init>(Lz42;Llz;Ldq3;)V
+
+    invoke-interface {v5, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_2
+
+    :cond_7
+    return-void
+
+    :pswitch_5
+    invoke-virtual {p1}, Ldx8;->A0()J
+
+    move-result-wide p1
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lzmb;->Y:Ljava/lang/Long;
+
+    return-void
+
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        -0x40736bc6 -> :sswitch_2
+        -0x37b237e3 -> :sswitch_1
+        0x696db44 -> :sswitch_0
+    .end sparse-switch
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_5
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+
+    :sswitch_data_1
+    .sparse-switch
+        0x2e9358 -> :sswitch_5
+        0x154c0a3f -> :sswitch_4
+        0x38b72420 -> :sswitch_3
+    .end sparse-switch
+
+    :pswitch_data_1
+    .packed-switch 0x0
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+    .end packed-switch
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 5
+
+    iget-object v0, p0, Lzmb;->o:Ljava/util/List;
+
+    invoke-static {v0}, Lzx7;->n(Ljava/util/Collection;)I
+
+    move-result v0
+
+    iget v1, p0, Lzmb;->X:I
+
+    iget-object p0, p0, Lzmb;->Y:Ljava/lang/Long;
+
+    const-string v2, ", total="
+
+    const-string v3, ", marker="
+
+    const-string v4, "{result="
+
+    invoke-static {v4, v0, v2, v1, v3}, Lpg0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, "}"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method

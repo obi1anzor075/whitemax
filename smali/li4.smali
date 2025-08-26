@@ -1,98 +1,125 @@
 .class public final Lli4;
-.super Lkotlinx/coroutines/internal/ScopeCoroutine;
+.super Lv64;
 .source "SourceFile"
 
 
 # static fields
-.field public static final synthetic a:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+.field public static final b:Lli4;
 
+.field public static final c:Lr64;
 
-# instance fields
-.field private volatile synthetic _decision$volatile:I
+.field public static final d:Lr64;
+
+.field public static final e:Lr64;
+
+.field public static final f:Lr64;
+
+.field public static final g:Lr64;
+
+.field public static final h:Lr64;
+
+.field public static final i:Lr64;
+
+.field public static final j:Lr64;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 6
 
-    const-class v0, Lli4;
+    new-instance v0, Lli4;
 
-    const-string v1, "_decision$volatile"
+    invoke-direct {v0}, Lv64;-><init>()V
 
-    invoke-static {v0, v1}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+    sput-object v0, Lli4;->b:Lli4;
+
+    const/4 v1, 0x0
+
+    new-array v2, v1, [Ljava/lang/String;
+
+    const/4 v3, 0x2
+
+    const-string v4, ":settings/dev"
+
+    const/4 v5, 0x0
+
+    invoke-static {v0, v4, v2, v5, v3}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v2
+
+    sput-object v2, Lli4;->c:Lr64;
+
+    new-array v2, v1, [Ljava/lang/String;
+
+    const-string v3, ":settings/dev/logsviewer"
+
+    const/16 v4, 0xa
+
+    invoke-static {v0, v3, v2, v5, v4}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v2
+
+    sput-object v2, Lli4;->d:Lr64;
+
+    const-string v2, ":settings/dev/showroom"
+
+    new-array v3, v1, [Ljava/lang/String;
+
+    invoke-static {v0, v2, v3, v5, v4}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v2
+
+    sput-object v2, Lli4;->e:Lr64;
+
+    const-string v2, ":settings/dev/threadsviewer"
+
+    new-array v3, v1, [Ljava/lang/String;
+
+    invoke-static {v0, v2, v3, v5, v4}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v2
+
+    sput-object v2, Lli4;->f:Lr64;
+
+    const-string v2, ":settings/magic-room"
+
+    new-array v3, v1, [Ljava/lang/String;
+
+    invoke-static {v0, v2, v3, v5, v4}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v2
+
+    sput-object v2, Lli4;->g:Lr64;
+
+    const-string v2, ":settings/server-host"
+
+    new-array v3, v1, [Ljava/lang/String;
+
+    invoke-static {v0, v2, v3, v5, v4}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v2
+
+    sput-object v2, Lli4;->h:Lr64;
+
+    const-string v2, ":settings/server-port"
+
+    new-array v3, v1, [Ljava/lang/String;
+
+    invoke-static {v0, v2, v3, v5, v4}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v2
+
+    sput-object v2, Lli4;->i:Lr64;
+
+    const-string v2, ":settings/themes-room"
+
+    new-array v1, v1, [Ljava/lang/String;
+
+    invoke-static {v0, v2, v1, v5, v4}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
 
     move-result-object v0
 
-    sput-object v0, Lli4;->a:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final afterCompletion(Ljava/lang/Object;)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Lli4;->afterResume(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final afterResume(Ljava/lang/Object;)V
-    .locals 3
-
-    :cond_0
-    sget-object v0, Lli4;->a:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->get(Ljava/lang/Object;)I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    if-eqz v1, :cond_2
-
-    const/4 v0, 0x1
-
-    if-ne v1, v0, :cond_1
-
-    iget-object p0, p0, Lkotlinx/coroutines/internal/ScopeCoroutine;->uCont:Lkotlin/coroutines/Continuation;
-
-    invoke-static {p0}, Lurd;->y(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    invoke-static {p1}, Lct0;->G(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    const/4 v0, 0x0
-
-    invoke-static {p0, p1, v0, v2, v0}, Lkotlinx/coroutines/internal/DispatchedContinuationKt;->resumeCancellableWith$default(Lkotlin/coroutines/Continuation;Ljava/lang/Object;Lu16;ILjava/lang/Object;)V
-
-    return-void
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "Already resumed"
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_2
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, p0, v1, v2}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->compareAndSet(Ljava/lang/Object;II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
+    sput-object v0, Lli4;->j:Lr64;
 
     return-void
 .end method

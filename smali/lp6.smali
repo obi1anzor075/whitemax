@@ -1,422 +1,244 @@
-.class public abstract Llp6;
-.super Ljava/lang/Object;
+.class public final Llp6;
+.super Lple;
 .source "SourceFile"
-
-# interfaces
-.implements Lmr6;
 
 
 # instance fields
-.field public final A0:Ljava/lang/Object;
+.field public final synthetic e:I
 
-.field public B0:Z
+.field public final synthetic f:Lop6;
 
-.field public X:Landroid/media/ImageWriter;
-
-.field public Y:Landroid/graphics/Rect;
-
-.field public Z:Landroid/graphics/Matrix;
-
-.field public volatile a:I
-
-.field public volatile b:I
-
-.field public volatile c:Z
-
-.field public o:Lyic;
-
-.field public w0:Ljava/nio/ByteBuffer;
-
-.field public x0:Ljava/nio/ByteBuffer;
-
-.field public y0:Ljava/nio/ByteBuffer;
-
-.field public z0:Ljava/nio/ByteBuffer;
+.field public final synthetic g:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Ljava/lang/String;Lop6;II)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p4, 0x2
 
-    const/4 v0, 0x1
+    iput p4, p0, Llp6;->e:I
 
-    iput v0, p0, Llp6;->b:I
+    iput-object p2, p0, Llp6;->f:Lop6;
 
-    new-instance v1, Landroid/graphics/Rect;
+    iput p3, p0, Llp6;->g:I
 
-    invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
+    const/4 p2, 0x1
 
-    iput-object v1, p0, Llp6;->Y:Landroid/graphics/Rect;
+    .line 1
+    invoke-direct {p0, p1, p2}, Lple;-><init>(Ljava/lang/String;Z)V
 
-    new-instance v1, Landroid/graphics/Rect;
+    return-void
+.end method
 
-    invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
+.method public constructor <init>(Ljava/lang/String;Lop6;ILjava/util/List;)V
+    .locals 0
 
-    new-instance v1, Landroid/graphics/Matrix;
+    const/4 p4, 0x1
 
-    invoke-direct {v1}, Landroid/graphics/Matrix;-><init>()V
+    iput p4, p0, Llp6;->e:I
 
-    iput-object v1, p0, Llp6;->Z:Landroid/graphics/Matrix;
+    iput-object p2, p0, Llp6;->f:Lop6;
 
-    new-instance v1, Landroid/graphics/Matrix;
+    iput p3, p0, Llp6;->g:I
 
-    invoke-direct {v1}, Landroid/graphics/Matrix;-><init>()V
+    const/4 p2, 0x1
 
-    new-instance v1, Ljava/lang/Object;
+    .line 2
+    invoke-direct {p0, p1, p2}, Lple;-><init>(Ljava/lang/String;Z)V
 
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+    return-void
+.end method
 
-    iput-object v1, p0, Llp6;->A0:Ljava/lang/Object;
+.method public constructor <init>(Ljava/lang/String;Lop6;ILjava/util/List;Z)V
+    .locals 0
 
-    iput-boolean v0, p0, Llp6;->B0:Z
+    const/4 p4, 0x0
+
+    iput p4, p0, Llp6;->e:I
+
+    iput-object p2, p0, Llp6;->f:Lop6;
+
+    iput p3, p0, Llp6;->g:I
+
+    const/4 p2, 0x1
+
+    .line 3
+    invoke-direct {p0, p1, p2}, Lple;-><init>(Ljava/lang/String;Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a(Lnr6;)Llr6;
-.end method
-
-.method public final b(Llr6;)Lch7;
+.method public final a()J
     .locals 3
 
-    iget-boolean v0, p0, Llp6;->c:Z
+    iget v0, p0, Llp6;->e:I
 
-    if-eqz v0, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    iget v0, p0, Llp6;->a:I
+    iget-object v0, p0, Llp6;->f:Lop6;
 
-    goto :goto_0
+    iget-object v0, v0, Lop6;->r0:Lz22;
 
-    :cond_0
-    const/4 v0, 0x0
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    :goto_0
-    iget-object v1, p0, Llp6;->A0:Ljava/lang/Object;
+    iget-object v0, p0, Llp6;->f:Lop6;
 
-    monitor-enter v1
+    monitor-enter v0
 
     :try_start_0
-    iget-boolean v2, p0, Llp6;->c:Z
+    iget-object v1, p0, Llp6;->f:Lop6;
 
-    if-eqz v2, :cond_1
+    iget-object v1, v1, Lop6;->F0:Ljava/util/LinkedHashSet;
 
-    if-eqz v0, :cond_1
+    iget p0, p0, Llp6;->g:I
 
-    invoke-virtual {p0, p1, v0}, Llp6;->g(Llr6;I)V
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    goto :goto_1
+    move-result-object p0
+
+    invoke-interface {v1, p0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v0
+
+    const-wide/16 v0, -0x1
+
+    return-wide v0
 
     :catchall_0
     move-exception p0
 
-    goto :goto_2
-
-    :cond_1
-    :goto_1
-    iget-boolean v0, p0, Llp6;->c:Z
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {p0, p1}, Llp6;->d(Llr6;)V
-
-    :cond_2
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    new-instance p0, Landroidx/core/os/OperationCanceledException;
-
-    const-string p1, "No analyzer or executor currently set."
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    new-instance p1, Las6;
-
-    const/4 v0, 0x1
-
-    invoke-direct {p1, v0, p0}, Las6;-><init>(ILjava/lang/Object;)V
-
-    return-object p1
-
-    :goto_2
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    monitor-exit v0
 
     throw p0
-.end method
 
-.method public abstract c()V
-.end method
+    :pswitch_0
+    iget-object v0, p0, Llp6;->f:Lop6;
 
-.method public final d(Llr6;)V
-    .locals 3
+    iget-object v0, v0, Lop6;->r0:Lz22;
 
-    iget v0, p0, Llp6;->b:I
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const/4 v1, 0x1
+    :try_start_1
+    iget-object v0, p0, Llp6;->f:Lop6;
 
-    if-ne v0, v1, :cond_3
+    iget-object v0, v0, Lop6;->D0:Lwp6;
 
-    iget-object v0, p0, Llp6;->x0:Ljava/nio/ByteBuffer;
+    iget v1, p0, Llp6;->g:I
 
-    if-nez v0, :cond_0
+    const/16 v2, 0x9
 
-    invoke-interface {p1}, Llr6;->getWidth()I
+    invoke-virtual {v0, v1, v2}, Lwp6;->W(II)V
 
-    move-result v0
+    iget-object v0, p0, Llp6;->f:Lop6;
 
-    invoke-interface {p1}, Llr6;->getHeight()I
+    monitor-enter v0
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    move-result v1
+    :try_start_2
+    iget-object v1, p0, Llp6;->f:Lop6;
 
-    mul-int/2addr v1, v0
+    iget-object v1, v1, Lop6;->F0:Ljava/util/LinkedHashSet;
 
-    invoke-static {v1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
+    iget p0, p0, Llp6;->g:I
 
-    move-result-object v0
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iput-object v0, p0, Llp6;->x0:Ljava/nio/ByteBuffer;
+    move-result-object p0
 
-    :cond_0
-    iget-object v0, p0, Llp6;->x0:Ljava/nio/ByteBuffer;
+    invoke-interface {v1, p0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
-    iget-object v0, p0, Llp6;->y0:Ljava/nio/ByteBuffer;
-
-    if-nez v0, :cond_1
-
-    invoke-interface {p1}, Llr6;->getWidth()I
-
-    move-result v0
-
-    invoke-interface {p1}, Llr6;->getHeight()I
-
-    move-result v2
-
-    mul-int/2addr v2, v0
-
-    div-int/lit8 v2, v2, 0x4
-
-    invoke-static {v2}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
-
-    move-result-object v0
-
-    iput-object v0, p0, Llp6;->y0:Ljava/nio/ByteBuffer;
-
-    :cond_1
-    iget-object v0, p0, Llp6;->y0:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
-    iget-object v0, p0, Llp6;->z0:Ljava/nio/ByteBuffer;
-
-    if-nez v0, :cond_2
-
-    invoke-interface {p1}, Llr6;->getWidth()I
-
-    move-result v0
-
-    invoke-interface {p1}, Llr6;->getHeight()I
-
-    move-result p1
-
-    mul-int/2addr p1, v0
-
-    div-int/lit8 p1, p1, 0x4
-
-    invoke-static {p1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
-
-    move-result-object p1
-
-    iput-object p1, p0, Llp6;->z0:Ljava/nio/ByteBuffer;
-
-    :cond_2
-    iget-object p0, p0, Llp6;->z0:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {p0, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    :try_start_3
+    monitor-exit v0
 
     goto :goto_0
 
-    :cond_3
-    iget v0, p0, Llp6;->b:I
+    :catchall_1
+    move-exception p0
 
-    const/4 v1, 0x2
+    monitor-exit v0
 
-    if-ne v0, v1, :cond_4
-
-    iget-object v0, p0, Llp6;->w0:Ljava/nio/ByteBuffer;
-
-    if-nez v0, :cond_4
-
-    invoke-interface {p1}, Llr6;->getWidth()I
-
-    move-result v0
-
-    invoke-interface {p1}, Llr6;->getHeight()I
-
-    move-result p1
-
-    mul-int/2addr p1, v0
-
-    mul-int/lit8 p1, p1, 0x4
-
-    invoke-static {p1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
-
-    move-result-object p1
-
-    iput-object p1, p0, Llp6;->w0:Ljava/nio/ByteBuffer;
-
-    :cond_4
-    :goto_0
-    return-void
-.end method
-
-.method public abstract e(Llr6;)V
-.end method
-
-.method public final f(Lnr6;)V
-    .locals 0
-
-    :try_start_0
-    invoke-virtual {p0, p1}, Llp6;->a(Lnr6;)Llr6;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0, p1}, Llp6;->e(Llr6;)V
-    :try_end_0
-    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
+    throw p0
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
 
     :catch_0
-    :cond_0
-    return-void
-.end method
+    :goto_0
+    const-wide/16 v0, -0x1
 
-.method public final g(Llr6;I)V
-    .locals 5
+    return-wide v0
 
-    iget-object v0, p0, Llp6;->o:Lyic;
+    :pswitch_1
+    iget-object v0, p0, Llp6;->f:Lop6;
 
-    if-nez v0, :cond_0
+    iget-object v0, v0, Lop6;->r0:Lz22;
 
-    return-void
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    :cond_0
-    invoke-virtual {v0}, Lyic;->a()V
+    :try_start_4
+    iget-object v0, p0, Llp6;->f:Lop6;
 
-    invoke-interface {p1}, Llr6;->getWidth()I
+    iget-object v0, v0, Lop6;->D0:Lwp6;
 
-    move-result v0
+    iget v1, p0, Llp6;->g:I
 
-    invoke-interface {p1}, Llr6;->getHeight()I
+    const/16 v2, 0x9
 
-    move-result p1
+    invoke-virtual {v0, v1, v2}, Lwp6;->W(II)V
 
-    iget-object v1, p0, Llp6;->o:Lyic;
+    iget-object v0, p0, Llp6;->f:Lop6;
 
-    invoke-virtual {v1}, Lyic;->f()I
+    monitor-enter v0
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
 
-    move-result v1
+    :try_start_5
+    iget-object v1, p0, Llp6;->f:Lop6;
 
-    iget-object v2, p0, Llp6;->o:Lyic;
+    iget-object v1, v1, Lop6;->F0:Ljava/util/LinkedHashSet;
 
-    invoke-virtual {v2}, Lyic;->l()I
+    iget p0, p0, Llp6;->g:I
 
-    move-result v2
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const/16 v3, 0x5a
+    move-result-object p0
 
-    const/4 v4, 0x1
+    invoke-interface {v1, p0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
-    if-eq p2, v3, :cond_2
-
-    const/16 v3, 0x10e
-
-    if-ne p2, v3, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 p2, 0x0
+    :try_start_6
+    monitor-exit v0
 
     goto :goto_1
 
-    :cond_2
-    :goto_0
-    move p2, v4
+    :catchall_2
+    move-exception p0
 
+    monitor-exit v0
+
+    throw p0
+    :try_end_6
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_1
+
+    :catch_1
     :goto_1
-    if-eqz p2, :cond_3
+    const-wide/16 v0, -0x1
 
-    move v3, p1
+    return-wide v0
 
-    goto :goto_2
+    nop
 
-    :cond_3
-    move v3, v0
-
-    :goto_2
-    if-eqz p2, :cond_4
-
-    goto :goto_3
-
-    :cond_4
-    move v0, p1
-
-    :goto_3
-    new-instance p1, Lyic;
-
-    invoke-static {v3, v0, v1, v2}, Lx87;->n(IIII)Lud;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Lyic;-><init>(Lnr6;)V
-
-    iput-object p1, p0, Llp6;->o:Lyic;
-
-    iget p1, p0, Llp6;->b:I
-
-    if-ne p1, v4, :cond_6
-
-    iget-object p1, p0, Llp6;->X:Landroid/media/ImageWriter;
-
-    if-eqz p1, :cond_5
-
-    invoke-virtual {p1}, Landroid/media/ImageWriter;->close()V
-
-    :cond_5
-    iget-object p1, p0, Llp6;->o:Lyic;
-
-    invoke-virtual {p1}, Lyic;->getSurface()Landroid/view/Surface;
-
-    move-result-object p1
-
-    iget-object p2, p0, Llp6;->o:Lyic;
-
-    invoke-virtual {p2}, Lyic;->l()I
-
-    move-result p2
-
-    invoke-static {p1, p2}, Landroid/media/ImageWriter;->newInstance(Landroid/view/Surface;I)Landroid/media/ImageWriter;
-
-    move-result-object p1
-
-    iput-object p1, p0, Llp6;->X:Landroid/media/ImageWriter;
-
-    :cond_6
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

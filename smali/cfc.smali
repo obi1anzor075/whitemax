@@ -1,220 +1,193 @@
-.class public final synthetic Lcfc;
-.super Ljava/lang/Object;
+.class public final Lcfc;
+.super Lgfc;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lq24;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Ldfc;
+.field public final Y:Lr0d;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ldfc;I)V
+.method public constructor <init>(Lfz5;Lxw6;Lr0d;Ljava/util/ArrayList;)V
     .locals 0
 
-    iput p2, p0, Lcfc;->a:I
+    invoke-direct {p0, p1, p2, p3, p4}, Lgfc;-><init>(Lfz5;Ljava/util/List;La1d;Ljava/util/List;)V
 
-    iput-object p1, p0, Lcfc;->b:Ldfc;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p3, p0, Lcfc;->Y:Lr0d;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 7
+.method public final B()J
+    .locals 2
 
-    iget v0, p0, Lcfc;->a:I
+    iget-object p0, p0, Lcfc;->Y:Lr0d;
 
-    packed-switch v0, :pswitch_data_0
+    iget-wide v0, p0, Lr0d;->d:J
 
-    iget-object p0, p0, Lcfc;->b:Ldfc;
+    return-wide v0
+.end method
 
-    iget v0, p0, Lyh7;->c:I
+.method public final C(J)J
+    .locals 0
 
-    const/4 v1, 0x0
+    iget-object p0, p0, Lcfc;->Y:Lr0d;
 
-    const/4 v2, 0x1
+    invoke-virtual {p0, p1, p2}, Lr0d;->e(J)J
 
-    if-lez v0, :cond_0
+    move-result-wide p0
 
-    move v0, v2
+    return-wide p0
+.end method
 
-    goto :goto_0
+.method public final D(JJ)J
+    .locals 0
+
+    iget-object p0, p0, Lcfc;->Y:Lr0d;
+
+    invoke-virtual {p0, p1, p2, p3, p4}, Lr0d;->c(JJ)J
+
+    move-result-wide p0
+
+    return-wide p0
+.end method
+
+.method public final a(J)J
+    .locals 0
+
+    iget-object p0, p0, Lcfc;->Y:Lr0d;
+
+    invoke-virtual {p0, p1, p2}, Lr0d;->h(J)J
+
+    move-result-wide p0
+
+    return-wide p0
+.end method
+
+.method public final b()Ljava/lang/String;
+    .locals 0
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public final c()Lq24;
+    .locals 0
+
+    return-object p0
+.end method
+
+.method public final d()Lj2c;
+    .locals 0
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public final e(JJ)J
+    .locals 0
+
+    iget-object p0, p0, Lcfc;->Y:Lr0d;
+
+    invoke-virtual {p0, p1, p2, p3, p4}, Lr0d;->f(JJ)J
+
+    move-result-wide p0
+
+    return-wide p0
+.end method
+
+.method public final h(JJ)J
+    .locals 0
+
+    iget-object p0, p0, Lcfc;->Y:Lr0d;
+
+    invoke-virtual {p0, p1, p2, p3, p4}, Lr0d;->d(JJ)J
+
+    move-result-wide p0
+
+    return-wide p0
+.end method
+
+.method public final j(JJ)J
+    .locals 2
+
+    iget-object p0, p0, Lcfc;->Y:Lr0d;
+
+    iget-object v0, p0, Lr0d;->f:Ljava/util/List;
+
+    if-eqz v0, :cond_0
+
+    const-wide p0, -0x7fffffffffffffffL    # -4.9E-324
+
+    return-wide p0
 
     :cond_0
-    move v0, v1
+    invoke-virtual {p0, p1, p2, p3, p4}, Lr0d;->d(JJ)J
 
-    :goto_0
-    iget-object v3, p0, Ldfc;->q:Ljava/util/concurrent/atomic/AtomicBoolean;
+    move-result-wide v0
 
-    invoke-virtual {v3, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+    invoke-virtual {p0, p1, p2, p3, p4}, Lr0d;->c(JJ)J
 
-    move-result v1
+    move-result-wide p3
 
-    if-eqz v1, :cond_3
+    add-long/2addr p3, v0
 
-    if-eqz v0, :cond_3
+    invoke-virtual {p0, p3, p4}, Lr0d;->h(J)J
 
-    const/4 v0, 0x0
+    move-result-wide v0
 
-    iget-boolean v1, p0, Ldfc;->n:Z
+    invoke-virtual {p0, p3, p4, p1, p2}, Lr0d;->f(JJ)J
 
-    iget-object v2, p0, Ldfc;->l:Laec;
+    move-result-wide p1
 
-    if-eqz v1, :cond_2
+    add-long/2addr p1, v0
 
-    iget-object v1, v2, Laec;->c:Lqm;
+    iget-wide p3, p0, Lr0d;->i:J
 
-    if-nez v1, :cond_1
+    sub-long/2addr p1, p3
 
-    goto :goto_1
+    return-wide p1
+.end method
 
-    :cond_1
-    move-object v0, v1
+.method public final k(J)Lj2c;
+    .locals 1
 
-    goto :goto_1
+    iget-object v0, p0, Lcfc;->Y:Lr0d;
 
-    :cond_2
-    iget-object v1, v2, Laec;->b:Ljava/util/concurrent/Executor;
+    invoke-virtual {v0, p0, p1, p2}, Lr0d;->i(Lcfc;J)Lj2c;
 
-    if-nez v1, :cond_1
+    move-result-object p0
 
-    :goto_1
-    iget-object p0, p0, Ldfc;->t:Lcfc;
+    return-object p0
+.end method
 
-    invoke-interface {v0, p0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+.method public final t(JJ)J
+    .locals 0
 
-    :cond_3
-    return-void
+    iget-object p0, p0, Lcfc;->Y:Lr0d;
 
-    :pswitch_0
-    iget-object p0, p0, Lcfc;->b:Ldfc;
+    invoke-virtual {p0, p1, p2, p3, p4}, Lr0d;->g(JJ)J
 
-    iget-object v0, p0, Ldfc;->s:Ljava/util/concurrent/atomic/AtomicBoolean;
+    move-result-wide p0
 
-    const/4 v1, 0x0
+    return-wide p0
+.end method
 
-    const/4 v2, 0x1
+.method public final z()Z
+    .locals 0
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+    iget-object p0, p0, Lcfc;->Y:Lr0d;
 
-    move-result v0
+    invoke-virtual {p0}, Lr0d;->j()Z
 
-    if-eqz v0, :cond_4
+    move-result p0
 
-    iget-object v0, p0, Ldfc;->l:Laec;
-
-    iget-object v0, v0, Laec;->e:Lq07;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v3, Lp07;
-
-    iget-object v4, p0, Ldfc;->p:Lwu3;
-
-    invoke-direct {v3, v0, v4}, Lp07;-><init>(Lq07;Ln07;)V
-
-    invoke-virtual {v0, v3}, Lq07;->a(Ln07;)V
-
-    :cond_4
-    iget-object v0, p0, Ldfc;->r:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
-
-    move-result v3
-
-    iget-object v4, p0, Ldfc;->q:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    if-eqz v3, :cond_7
-
-    const/4 v3, 0x0
-
-    move v5, v1
-
-    :goto_2
-    :try_start_0
-    invoke-virtual {v4, v2, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
-
-    move-result v6
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v6, :cond_5
-
-    :try_start_1
-    iget-object v3, p0, Ldfc;->o:Ljava/util/concurrent/Callable;
-
-    invoke-interface {v3}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
-
-    move-result-object v3
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    move v5, v2
-
-    goto :goto_2
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_3
-
-    :catch_0
-    move-exception p0
-
-    :try_start_2
-    new-instance v2, Ljava/lang/RuntimeException;
-
-    const-string v3, "Exception while computing database live data."
-
-    invoke-direct {v2, v3, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v2
-
-    :cond_5
-    if-eqz v5, :cond_6
-
-    invoke-virtual {p0, v3}, Lyh7;->i(Ljava/lang/Object;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    :cond_6
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    goto :goto_4
-
-    :goto_3
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    throw p0
-
-    :cond_7
-    move v5, v1
-
-    :goto_4
-    if-eqz v5, :cond_8
-
-    invoke-virtual {v4}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v0
-
-    if-nez v0, :cond_4
-
-    :cond_8
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method

@@ -4,607 +4,942 @@
 
 
 # static fields
-.field public static final synthetic h:[Lk77;
-
-.field public static final i:Ljava/lang/String;
+.field public static volatile J:Lck4;
 
 
 # instance fields
-.field public final a:Lnj4;
+.field public A:I
 
-.field public final b:Lnj4;
+.field public B:I
 
-.field public final c:Lnj4;
+.field public C:I
 
-.field public final d:Lnj4;
+.field public D:I
 
-.field public final e:Lnj4;
+.field public E:F
 
-.field public final f:Lnj4;
+.field public F:F
 
-.field public final g:Lnj4;
+.field public G:F
+
+.field public H:F
+
+.field public I:F
+
+.field public a:I
+
+.field public b:I
+
+.field public c:I
+
+.field public d:I
+
+.field public e:I
+
+.field public f:I
+
+.field public g:I
+
+.field public h:I
+
+.field public i:I
+
+.field public j:I
+
+.field public k:I
+
+.field public l:I
+
+.field public m:I
+
+.field public n:I
+
+.field public o:I
+
+.field public p:I
+
+.field public q:I
+
+.field public r:I
+
+.field public s:I
+
+.field public t:I
+
+.field public u:I
+
+.field public v:I
+
+.field public w:I
+
+.field public x:I
+
+.field public y:I
+
+.field public z:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 11
+.method public static a(F)I
+    .locals 0
 
-    new-instance v0, Lkhb;
+    invoke-static {}, Lck4;->b()Lck4;
+
+    float-to-int p0, p0
+
+    invoke-static {p0}, Lgk4;->b(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static b()Lck4;
+    .locals 2
+
+    sget-object v0, Lck4;->J:Lck4;
+
+    if-nez v0, :cond_1
 
     const-class v1, Lck4;
 
-    const-string v2, "chatController"
+    monitor-enter v1
 
-    const-string v3, "getChatController()Lru/ok/tamtam/chats/ChatController;"
+    :try_start_0
+    sget-object v0, Lck4;->J:Lck4;
 
-    const/4 v4, 0x0
+    if-nez v0, :cond_0
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lkhb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    new-instance v0, Lck4;
 
-    sget-object v2, Lm7c;->a:Ln7c;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    const-string v3, "contactController"
+    invoke-virtual {v0}, Lck4;->c()V
 
-    const-string v5, "getContactController()Lru/ok/tamtam/contacts/ContactController;"
+    sput-object v0, Lck4;->J:Lck4;
 
-    invoke-static {v2, v1, v3, v5, v4}, Lwn6;->e(Ln7c;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lkhb;
+    goto :goto_0
 
-    move-result-object v3
+    :catchall_0
+    move-exception v0
 
-    const-string v5, "draftSerializer"
+    goto :goto_1
 
-    const-string v6, "getDraftSerializer()Lru/ok/tamtam/draft/DraftSerializer;"
+    :cond_0
+    :goto_0
+    monitor-exit v1
 
-    invoke-static {v1, v5, v6, v4, v2}, Lwn6;->f(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;ILn7c;)Lkhb;
+    return-object v0
 
-    move-result-object v5
+    :goto_1
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const-string v6, "messageController"
+    throw v0
 
-    const-string v7, "getMessageController()Lru/ok/tamtam/messages/MessageController;"
-
-    invoke-static {v1, v6, v7, v4, v2}, Lwn6;->f(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;ILn7c;)Lkhb;
-
-    move-result-object v6
-
-    const-string v7, "api"
-
-    const-string v8, "getApi()Lru/ok/tamtam/api/Api;"
-
-    invoke-static {v1, v7, v8, v4, v2}, Lwn6;->f(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;ILn7c;)Lkhb;
-
-    move-result-object v7
-
-    const-string v8, "tamTamObservables"
-
-    const-string v9, "getTamTamObservables()Lru/ok/tamtam/rx/TamTamObservables;"
-
-    invoke-static {v1, v8, v9, v4, v2}, Lwn6;->f(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;ILn7c;)Lkhb;
-
-    move-result-object v8
-
-    const-string v9, "ioNetworkScheduler"
-
-    const-string v10, "getIoNetworkScheduler()Lio/reactivex/rxjava3/core/Scheduler;"
-
-    invoke-static {v1, v9, v10, v4, v2}, Lwn6;->f(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;ILn7c;)Lkhb;
-
-    move-result-object v2
-
-    const/4 v9, 0x7
-
-    new-array v9, v9, [Lk77;
-
-    aput-object v0, v9, v4
-
-    const/4 v0, 0x1
-
-    aput-object v3, v9, v0
-
-    const/4 v0, 0x2
-
-    aput-object v5, v9, v0
-
-    const/4 v0, 0x3
-
-    aput-object v6, v9, v0
-
-    const/4 v0, 0x4
-
-    aput-object v7, v9, v0
-
-    const/4 v0, 0x5
-
-    aput-object v8, v9, v0
-
-    const/4 v0, 0x6
-
-    aput-object v2, v9, v0
-
-    sput-object v9, Lck4;->h:[Lk77;
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lck4;->i:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lnj4;Lnj4;Lnj4;Lnj4;Lnj4;Lnj4;Lnj4;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lck4;->a:Lnj4;
-
-    iput-object p2, p0, Lck4;->b:Lnj4;
-
-    iput-object p3, p0, Lck4;->c:Lnj4;
-
-    iput-object p4, p0, Lck4;->d:Lnj4;
-
-    iput-object p5, p0, Lck4;->e:Lnj4;
-
-    iput-object p6, p0, Lck4;->f:Lnj4;
-
-    iput-object p7, p0, Lck4;->g:Lnj4;
-
-    return-void
+    :cond_1
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Long;Ljava/lang/Long;Lnzc;)V
-    .locals 12
+.method public final c()V
+    .locals 22
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    move-object/from16 v0, p0
 
-    const-string v1, "execute: chatId="
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    float-to-int v2, v1
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Lgk4;->b(I)I
 
-    const-string v1, ", contactId="
+    move-result v2
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput v2, v0, Lck4;->a:I
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const/high16 v2, 0x40000000    # 2.0f
 
-    const-string v1, ", serverDraft="
+    float-to-int v3, v2
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3}, Lgk4;->b(I)I
 
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result v3
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iput v3, v0, Lck4;->b:I
 
-    move-result-object v0
+    const/high16 v3, 0x40400000    # 3.0f
 
-    sget-object v1, Lck4;->i:Ljava/lang/String;
+    float-to-int v4, v3
 
-    invoke-static {v1, v0}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    const/4 v2, 0x1
-
-    sget-object v3, Lck4;->h:[Lk77;
-
-    const-wide/16 v4, 0x0
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v6
-
-    cmp-long v6, v6, v4
-
-    if-eqz v6, :cond_0
-
-    invoke-virtual {p0}, Lck4;->b()Lt52;
-
-    move-result-object p2
-
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v6
-
-    invoke-virtual {p2, v6, v7}, Lt52;->y(J)Li22;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_0
-    if-eqz p2, :cond_3
-
-    invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v6
-
-    cmp-long p1, v6, v4
-
-    if-eqz p1, :cond_3
-
-    aget-object p1, v3, v2
-
-    iget-object p1, p0, Lck4;->b:Lnj4;
-
-    invoke-virtual {p1}, Lnj4;->get()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ldi3;
-
-    invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v6
-
-    const/4 v8, 0x0
-
-    invoke-virtual {p1, v6, v7, v8}, Ldi3;->i(JZ)Ltf3;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_1
-
-    invoke-virtual {p1}, Ltf3;->s()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    const-string p1, "contact is blocked"
-
-    invoke-static {v1, p1}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_1
-    invoke-virtual {p0}, Lck4;->b()Lt52;
-
-    move-result-object p1
-
-    invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v6
-
-    invoke-virtual {p1, v6, v7}, Lt52;->E(J)Li22;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_2
-
-    invoke-virtual {p1}, Li22;->A()Z
-
-    move-result v6
-
-    if-nez v6, :cond_4
-
-    :cond_2
-    const-string p1, "No dialog on device. Create it"
-
-    invoke-static {v1, p1}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lck4;->b()Lt52;
-
-    move-result-object p1
-
-    invoke-static {p2}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object p2
-
-    sget-object v6, Ln62;->a:Ln62;
-
-    invoke-virtual {p1, v6, p2, v0, v0}, Lt52;->b(Ln62;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Li22;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_3
-    move-object p1, v0
-
-    :cond_4
-    :goto_0
-    if-nez p1, :cond_5
-
-    const-string p0, "Chat is null. Ignore"
-
-    invoke-static {v1, p0}, Ludd;->U(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-
-    :cond_5
-    iget-object p2, p1, Li22;->b:Lo62;
-
-    iget-object v6, p2, Lo62;->f0:Lj4a;
-
-    if-eqz v6, :cond_6
-
-    invoke-virtual {v6}, Lj4a;->b()Ljava/lang/Long;
-
-    move-result-object v6
-
-    if-eqz v6, :cond_6
-
-    invoke-virtual {v6}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v4
-
-    :cond_6
-    iget-wide v6, p3, Lnzc;->g:J
-
-    cmp-long v4, v4, v6
-
-    if-lez v4, :cond_7
-
-    const-string p0, "We already have this draft. Ignore"
-
-    invoke-static {v1, p0}, Ludd;->U(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-
-    :cond_7
-    iget-wide v4, p2, Lo62;->g0:J
-
-    cmp-long v4, v4, v6
-
-    if-nez v4, :cond_8
-
-    iget-object v4, p2, Lo62;->f0:Lj4a;
-
-    if-nez v4, :cond_8
-
-    const-string p0, "draft was discarded, ignore it!"
-
-    invoke-static {v1, p0}, Ludd;->U(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-
-    :cond_8
-    iget-object v4, p0, Lck4;->d:Lnj4;
-
-    const/4 v5, 0x3
-
-    iget-wide v6, p1, Li22;->a:J
-
-    iget-object v8, p3, Lnzc;->f:Ljava/lang/Long;
-
-    if-eqz v8, :cond_9
-
-    aget-object v9, v3, v5
-
-    invoke-virtual {v4}, Lnj4;->get()Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Lto8;
-
-    invoke-virtual {v8}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v10
-
-    invoke-virtual {v9, v6, v7, v10, v11}, Lto8;->e(JJ)Z
-
-    move-result v9
-
-    if-nez v9, :cond_9
-
-    :goto_1
-    move-object v0, v8
-
-    goto :goto_2
-
-    :cond_9
-    iget-object v8, p3, Lnzc;->e:Ljava/lang/Long;
-
-    if-eqz v8, :cond_a
-
-    aget-object v5, v3, v5
-
-    invoke-virtual {v4}, Lnj4;->get()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lto8;
-
-    invoke-virtual {v8}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v9
-
-    invoke-virtual {v4, v6, v7, v9, v10}, Lto8;->e(JJ)Z
+    invoke-static {v4}, Lgk4;->b(I)I
 
     move-result v4
 
-    if-nez v4, :cond_a
+    iput v4, v0, Lck4;->c:I
 
-    goto :goto_1
+    const/high16 v4, 0x40800000    # 4.0f
 
-    :cond_a
-    :goto_2
-    if-nez v0, :cond_b
+    float-to-int v5, v4
 
-    invoke-virtual {p0, p1, p3}, Lck4;->c(Li22;Lnzc;)V
+    invoke-static {v5}, Lgk4;->b(I)I
 
-    return-void
+    move-result v5
 
-    :cond_b
-    new-instance v4, Ljava/lang/StringBuilder;
+    iput v5, v0, Lck4;->d:I
 
-    const-string v5, "Don\'t have message "
+    const/high16 v5, 0x40a00000    # 5.0f
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    float-to-int v6, v5
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v6}, Lgk4;->b(I)I
 
-    const-string v5, ". Request it"
+    move-result v6
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput v6, v0, Lck4;->e:I
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const/high16 v6, 0x40c00000    # 6.0f
 
-    move-result-object v4
+    float-to-int v7, v6
 
-    invoke-static {v1, v4}, Ludd;->U(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v7}, Lgk4;->b(I)I
 
-    const/4 v1, 0x4
+    move-result v7
 
-    aget-object v1, v3, v1
+    iput v7, v0, Lck4;->f:I
 
-    iget-object v1, p0, Lck4;->e:Lnj4;
+    const/high16 v7, 0x40e00000    # 7.0f
 
-    invoke-virtual {v1}, Lnj4;->get()Ljava/lang/Object;
+    float-to-int v8, v7
 
-    move-result-object v1
+    invoke-static {v8}, Lgk4;->b(I)I
 
-    check-cast v1, Lpk;
+    move-result v8
 
-    new-instance v4, Lpn2;
+    iput v8, v0, Lck4;->g:I
 
-    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+    const/high16 v8, 0x41000000    # 8.0f
 
-    move-result-object v0
+    float-to-int v9, v8
 
-    iget-wide v5, p2, Lo62;->a:J
+    invoke-static {v9}, Lgk4;->b(I)I
 
-    invoke-direct {v4, v5, v6, v0}, Lpn2;-><init>(JLjava/util/List;)V
+    move-result v9
 
-    const/4 p2, 0x6
+    iput v9, v0, Lck4;->h:I
 
-    aget-object p2, v3, p2
+    const/high16 v9, 0x41100000    # 9.0f
 
-    iget-object p2, p0, Lck4;->g:Lnj4;
+    float-to-int v10, v9
 
-    invoke-virtual {p2}, Lnj4;->get()Ljava/lang/Object;
+    invoke-static {v10}, Lgk4;->b(I)I
 
-    move-result-object p2
+    const/high16 v10, 0x41200000    # 10.0f
 
-    check-cast p2, Lqmc;
+    float-to-int v11, v10
 
-    check-cast v1, Lgy9;
+    invoke-static {v11}, Lgk4;->b(I)I
 
-    invoke-virtual {v1, v4, p2}, Lgy9;->L(Libe;Lqmc;)Lyhd;
+    move-result v11
 
-    move-result-object p2
+    iput v11, v0, Lck4;->i:I
 
-    new-instance v0, Lmb1;
+    const/high16 v11, 0x41300000    # 11.0f
 
-    const-class v1, Lkt;
+    float-to-int v12, v11
 
-    const/16 v4, 0xd
+    invoke-static {v12}, Lgk4;->b(I)I
 
-    invoke-direct {v0, v4, v1}, Lmb1;-><init>(ILjava/lang/Object;)V
+    const/high16 v12, 0x41400000    # 12.0f
 
-    invoke-virtual {p2, v0}, Ldhd;->h(Lj26;)Lphd;
+    float-to-int v13, v12
 
-    move-result-object p2
+    invoke-static {v13}, Lgk4;->b(I)I
 
-    const/4 v0, 0x5
+    move-result v13
 
-    aget-object v0, v3, v0
+    iput v13, v0, Lck4;->j:I
 
-    iget-object v0, p0, Lck4;->f:Lnj4;
+    const/high16 v13, 0x41500000    # 13.0f
 
-    invoke-virtual {v0}, Lnj4;->get()Ljava/lang/Object;
+    float-to-int v14, v13
 
-    move-result-object v0
+    invoke-static {v14}, Lgk4;->b(I)I
 
-    check-cast v0, Llce;
+    const/high16 v14, 0x41600000    # 14.0f
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    float-to-int v15, v14
 
-    new-instance v1, Lice;
+    invoke-static {v15}, Lgk4;->b(I)I
 
-    const/4 v3, 0x0
+    const/high16 v15, 0x41700000    # 15.0f
 
-    invoke-direct {v1, v0, v2, v3}, Lice;-><init>(Llce;II)V
+    move/from16 v16, v1
 
-    invoke-virtual {p2, v1}, Ldhd;->j(Lice;)Lho5;
+    float-to-int v1, v15
 
-    move-result-object p2
+    invoke-static {v1}, Lgk4;->b(I)I
 
-    new-instance v0, Lul7;
+    move-result v1
 
-    invoke-direct {v0, p0, p1, p3}, Lul7;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    iput v1, v0, Lck4;->k:I
 
-    new-instance v1, Ljg8;
+    const/high16 v1, 0x41800000    # 16.0f
 
-    const/4 v2, 0x7
+    move/from16 v17, v2
 
-    invoke-direct {v1, p0, p1, p3, v2}, Ljg8;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+    float-to-int v2, v1
 
-    new-instance p0, Lpn1;
+    invoke-static {v2}, Lgk4;->b(I)I
 
-    const/4 p1, 0x2
+    move-result v2
 
-    invoke-direct {p0, v0, p1, v1}, Lpn1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    iput v2, v0, Lck4;->l:I
 
-    invoke-virtual {p2, p0}, Ldhd;->k(Lzhd;)V
+    const/high16 v2, 0x41880000    # 17.0f
 
-    return-void
-.end method
+    move/from16 v18, v1
 
-.method public final b()Lt52;
-    .locals 2
+    float-to-int v1, v2
 
-    sget-object v0, Lck4;->h:[Lk77;
+    invoke-static {v1}, Lgk4;->b(I)I
 
-    const/4 v1, 0x0
+    const/high16 v1, 0x41900000    # 18.0f
 
-    aget-object v0, v0, v1
+    move/from16 v19, v2
 
-    iget-object p0, p0, Lck4;->a:Lnj4;
+    float-to-int v2, v1
 
-    invoke-virtual {p0}, Lnj4;->get()Ljava/lang/Object;
+    invoke-static {v2}, Lgk4;->b(I)I
 
-    move-result-object p0
+    move-result v2
 
-    check-cast p0, Lt52;
+    iput v2, v0, Lck4;->m:I
 
-    return-object p0
-.end method
+    const/high16 v2, 0x41980000    # 19.0f
 
-.method public final c(Li22;Lnzc;)V
-    .locals 9
+    move/from16 v20, v1
 
-    sget-object v0, Lck4;->i:Ljava/lang/String;
+    float-to-int v1, v2
 
-    const-string v1, "Save server draft"
+    invoke-static {v1}, Lgk4;->b(I)I
 
-    invoke-static {v0, v1}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    const/high16 v1, 0x41a00000    # 20.0f
 
-    sget-object v0, Lck4;->h:[Lk77;
+    move/from16 v21, v2
 
-    const/4 v1, 0x2
+    float-to-int v2, v1
 
-    aget-object v0, v0, v1
+    invoke-static {v2}, Lgk4;->b(I)I
 
-    iget-object v0, p0, Lck4;->c:Lnj4;
+    move-result v2
 
-    invoke-virtual {v0}, Lnj4;->get()Ljava/lang/Object;
+    iput v2, v0, Lck4;->n:I
 
-    move-result-object v0
+    const/high16 v2, 0x41a80000    # 21.0f
 
-    check-cast v0, Ldm4;
+    float-to-int v2, v2
 
-    iget-wide v1, p1, Li22;->a:J
+    invoke-static {v2}, Lgk4;->b(I)I
 
-    invoke-interface {v0, v1, v2, p2}, Ldm4;->b(JLnzc;)Lj4a;
+    const/high16 v2, 0x41b00000    # 22.0f
 
-    move-result-object v8
+    float-to-int v2, v2
 
-    invoke-virtual {p0}, Lck4;->b()Lt52;
+    invoke-static {v2}, Lgk4;->b(I)I
 
-    move-result-object v3
+    const/high16 v2, 0x41b80000    # 23.0f
 
-    iget-wide v4, p1, Li22;->a:J
+    float-to-int v2, v2
 
-    iget-wide v6, p2, Lnzc;->g:J
+    invoke-static {v2}, Lgk4;->b(I)I
 
-    invoke-virtual/range {v3 .. v8}, Lt52;->k(JJLj4a;)V
+    const/high16 v2, 0x41c00000    # 24.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    move-result v2
+
+    iput v2, v0, Lck4;->o:I
+
+    const/high16 v2, 0x41c80000    # 25.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    move-result v2
+
+    iput v2, v0, Lck4;->p:I
+
+    const/high16 v2, 0x41d00000    # 26.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    move-result v2
+
+    iput v2, v0, Lck4;->q:I
+
+    const/high16 v2, 0x41d80000    # 27.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x41e00000    # 28.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    move-result v2
+
+    iput v2, v0, Lck4;->r:I
+
+    const/high16 v2, 0x41e80000    # 29.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x41f00000    # 30.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x41f80000    # 31.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42000000    # 32.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    move-result v2
+
+    iput v2, v0, Lck4;->s:I
+
+    const/high16 v2, 0x42040000    # 33.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42080000    # 34.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x420c0000    # 35.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42100000    # 36.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    move-result v2
+
+    iput v2, v0, Lck4;->t:I
+
+    const/high16 v2, 0x42140000    # 37.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42180000    # 38.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x421c0000    # 39.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42200000    # 40.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    move-result v2
+
+    iput v2, v0, Lck4;->u:I
+
+    const/high16 v2, 0x42240000    # 41.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42280000    # 42.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x422c0000    # 43.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42300000    # 44.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42340000    # 45.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42380000    # 46.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    move-result v2
+
+    iput v2, v0, Lck4;->v:I
+
+    const/high16 v2, 0x423c0000    # 47.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42400000    # 48.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    move-result v2
+
+    iput v2, v0, Lck4;->w:I
+
+    const/high16 v2, 0x42440000    # 49.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42480000    # 50.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    move-result v2
+
+    iput v2, v0, Lck4;->x:I
+
+    const/high16 v2, 0x424c0000    # 51.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42500000    # 52.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42540000    # 53.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42580000    # 54.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x425c0000    # 55.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42600000    # 56.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    move-result v2
+
+    iput v2, v0, Lck4;->y:I
+
+    const/high16 v2, 0x42640000    # 57.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42680000    # 58.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x426c0000    # 59.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42700000    # 60.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    move-result v2
+
+    iput v2, v0, Lck4;->z:I
+
+    const/high16 v2, 0x42740000    # 61.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42780000    # 62.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x427c0000    # 63.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42800000    # 64.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    move-result v2
+
+    iput v2, v0, Lck4;->A:I
+
+    const/high16 v2, 0x42820000    # 65.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42840000    # 66.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42860000    # 67.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42880000    # 68.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x428a0000    # 69.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x428c0000    # 70.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    move-result v2
+
+    iput v2, v0, Lck4;->B:I
+
+    const/high16 v2, 0x428e0000    # 71.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42900000    # 72.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42920000    # 73.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42940000    # 74.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42960000    # 75.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42980000    # 76.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x429a0000    # 77.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x429c0000    # 78.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x429e0000    # 79.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42a00000    # 80.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    move-result v2
+
+    iput v2, v0, Lck4;->C:I
+
+    const/high16 v2, 0x42a20000    # 81.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42a40000    # 82.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42a60000    # 83.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42a80000    # 84.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42aa0000    # 85.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42ac0000    # 86.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42ae0000    # 87.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42b00000    # 88.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42b20000    # 89.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42b40000    # 90.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42b60000    # 91.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42b80000    # 92.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42ba0000    # 93.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42bc0000    # 94.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42be0000    # 95.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42c00000    # 96.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42c20000    # 97.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42c40000    # 98.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42c60000    # 99.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    const/high16 v2, 0x42c80000    # 100.0f
+
+    float-to-int v2, v2
+
+    invoke-static {v2}, Lgk4;->b(I)I
+
+    move-result v2
+
+    iput v2, v0, Lck4;->D:I
+
+    invoke-static/range {v16 .. v16}, Lgk4;->e(F)F
+
+    invoke-static/range {v17 .. v17}, Lgk4;->e(F)F
+
+    invoke-static {v3}, Lgk4;->e(F)F
+
+    invoke-static {v4}, Lgk4;->e(F)F
+
+    move-result v2
+
+    iput v2, v0, Lck4;->E:F
+
+    invoke-static {v5}, Lgk4;->e(F)F
+
+    invoke-static {v6}, Lgk4;->e(F)F
+
+    invoke-static {v7}, Lgk4;->e(F)F
+
+    invoke-static {v8}, Lgk4;->e(F)F
+
+    invoke-static {v9}, Lgk4;->e(F)F
+
+    invoke-static {v10}, Lgk4;->e(F)F
+
+    move-result v2
+
+    iput v2, v0, Lck4;->F:F
+
+    invoke-static {v11}, Lgk4;->e(F)F
+
+    invoke-static {v12}, Lgk4;->e(F)F
+
+    move-result v2
+
+    iput v2, v0, Lck4;->G:F
+
+    invoke-static {v13}, Lgk4;->e(F)F
+
+    invoke-static {v14}, Lgk4;->e(F)F
+
+    move-result v2
+
+    iput v2, v0, Lck4;->H:F
+
+    invoke-static {v15}, Lgk4;->e(F)F
+
+    invoke-static/range {v18 .. v18}, Lgk4;->e(F)F
+
+    move-result v2
+
+    iput v2, v0, Lck4;->I:F
+
+    invoke-static/range {v19 .. v19}, Lgk4;->e(F)F
+
+    invoke-static/range {v20 .. v20}, Lgk4;->e(F)F
+
+    invoke-static/range {v21 .. v21}, Lgk4;->e(F)F
+
+    invoke-static {v1}, Lgk4;->e(F)F
 
     return-void
 .end method

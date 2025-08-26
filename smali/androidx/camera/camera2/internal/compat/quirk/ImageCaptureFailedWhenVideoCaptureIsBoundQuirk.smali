@@ -41,12 +41,11 @@
 
     const/4 v0, 0x1
 
-    goto :goto_0
+    return v0
 
     :cond_0
     const/4 v0, 0x0
 
-    :goto_0
     return v0
 .end method
 
@@ -75,12 +74,11 @@
 
     const/4 v0, 0x1
 
-    goto :goto_0
+    return v0
 
     :cond_0
     const/4 v0, 0x0
 
-    :goto_0
     return v0
 .end method
 
@@ -109,12 +107,11 @@
 
     const/4 v0, 0x1
 
-    goto :goto_0
+    return v0
 
     :cond_0
     const/4 v0, 0x0
 
-    :goto_0
     return v0
 .end method
 
@@ -152,12 +149,11 @@
     :cond_0
     const/4 v0, 0x1
 
-    goto :goto_0
+    return v0
 
     :cond_1
     const/4 v0, 0x0
 
-    :goto_0
     return v0
 .end method
 
@@ -186,18 +182,17 @@
 
     const/4 v0, 0x1
 
-    goto :goto_0
+    return v0
 
     :cond_0
     const/4 v0, 0x0
 
-    :goto_0
     return v0
 .end method
 
 
 # virtual methods
-.method public final b()Z
+.method public final c()Z
     .locals 2
 
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ImageCaptureFailedWhenVideoCaptureIsBoundQuirk;->e()Z
@@ -275,17 +270,16 @@
     :cond_2
     const/4 p0, 0x0
 
-    goto :goto_1
+    return p0
 
     :cond_3
     :goto_0
     const/4 p0, 0x1
 
-    :goto_1
     return p0
 .end method
 
-.method public final c()Z
+.method public final d()Z
     .locals 0
 
     invoke-static {}, Landroidx/camera/camera2/internal/compat/quirk/ImageCaptureFailedWhenVideoCaptureIsBoundQuirk;->e()Z
@@ -317,12 +311,11 @@
     :cond_0
     const/4 p0, 0x0
 
-    goto :goto_1
+    return p0
 
     :cond_1
     :goto_0
     const/4 p0, 0x1
 
-    :goto_1
     return p0
 .end method

@@ -1,87 +1,189 @@
 .class public final Lyf3;
-.super Lfy;
+.super Landroid/widget/EditText;
 .source "SourceFile"
+
+# interfaces
+.implements Lppe;
+
+
+# static fields
+.field public static final b:Locc;
+
+.field public static final c:Lxf3;
 
 
 # instance fields
-.field public final X:J
-
-.field public final Y:Ljava/lang/String;
-
-.field public final Z:Ljava/lang/String;
-
-.field public final o:Ljava/lang/String;
-
-.field public final w0:Ljava/lang/String;
-
-.field public final x0:Ljava/lang/String;
-
-.field public final y0:Ljava/lang/String;
+.field public a:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZ)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
-    sget-object v0, Le00;->A0:Le00;
+    new-instance v0, Locc;
 
-    invoke-direct {p0, v0, p9, p10}, Lfy;-><init>(Le00;ZZ)V
+    const-string v1, "[0-9]*"
 
-    iput-object p1, p0, Lyf3;->o:Ljava/lang/String;
+    invoke-direct {v0, v1}, Locc;-><init>(Ljava/lang/String;)V
 
-    iput-wide p2, p0, Lyf3;->X:J
+    sput-object v0, Lyf3;->b:Locc;
 
-    iput-object p4, p0, Lyf3;->Y:Ljava/lang/String;
+    new-instance v0, Lxf3;
 
-    iput-object p7, p0, Lyf3;->x0:Ljava/lang/String;
+    const/4 v1, 0x0
 
-    iput-object p8, p0, Lyf3;->y0:Ljava/lang/String;
+    invoke-direct {v0, v1}, Lxf3;-><init>(I)V
 
-    iput-object p5, p0, Lyf3;->Z:Ljava/lang/String;
-
-    iput-object p6, p0, Lyf3;->w0:Ljava/lang/String;
+    sput-object v0, Lyf3;->c:Lxf3;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/util/HashMap;
-    .locals 5
+.method public final onFocusChanged(ZILandroid/graphics/Rect;)V
+    .locals 0
 
-    invoke-super {p0}, Lfy;->a()Ljava/util/HashMap;
+    invoke-super {p0, p1, p2, p3}, Landroid/view/View;->onFocusChanged(ZILandroid/graphics/Rect;)V
+
+    if-nez p1, :cond_0
+
+    iget-boolean p1, p0, Lyf3;->a:Z
+
+    if-eqz p1, :cond_0
+
+    const-wide/16 p1, 0x5dc
+
+    invoke-virtual {p0, p1, p2}, Landroid/view/View;->postInvalidateDelayed(J)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final onThemeChanged(Lyha;)V
+    .locals 2
+
+    sget-object v0, Lqp4;->q0:Lap9;
+
+    invoke-virtual {v0, p0}, Lap9;->h(Landroid/view/View;)Lyha;
 
     move-result-object v0
 
-    iget-object v1, p0, Lyf3;->o:Ljava/lang/String;
+    invoke-interface {v0}, Lyha;->b()Lfe0;
 
-    invoke-static {v1}, Lr1g;->p(Ljava/lang/CharSequence;)Z
+    move-result-object v0
 
-    move-result v2
+    iget-object v0, v0, Lfe0;->a:Lee0;
 
-    if-nez v2, :cond_0
+    iget v0, v0, Lee0;->i:I
 
-    const-string v2, "vcfBody"
+    new-instance v1, Landroid/graphics/drawable/ColorDrawable;
 
-    invoke-virtual {v0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v1, v0}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
+
+    invoke-virtual {p0, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    invoke-virtual {p0}, Landroid/widget/TextView;->getTextCursorDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    instance-of v1, v0, Landroid/graphics/drawable/GradientDrawable;
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Landroid/graphics/drawable/GradientDrawable;
+
+    goto :goto_0
 
     :cond_0
-    iget-wide v1, p0, Lyf3;->X:J
+    const/4 v0, 0x0
 
-    const-wide/16 v3, 0x0
+    :goto_0
+    if-eqz v0, :cond_1
 
-    cmp-long p0, v1, v3
+    invoke-interface {p1}, Lyha;->getText()Lane;
 
-    if-eqz p0, :cond_1
+    move-result-object v1
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    iget v1, v1, Lane;->j:I
 
-    move-result-object p0
+    invoke-static {v1}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
 
-    const-string v1, "contactId"
+    move-result-object v1
 
-    invoke-virtual {v0, v1, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/GradientDrawable;->setColor(Landroid/content/res/ColorStateList;)V
 
     :cond_1
-    return-object v0
+    invoke-interface {p1}, Lyha;->getText()Lane;
+
+    move-result-object p1
+
+    iget p1, p1, Lane;->e:I
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
+
+    return-void
+.end method
+
+.method public final setSecure(Z)V
+    .locals 0
+
+    iput-boolean p1, p0, Lyf3;->a:Z
+
+    if-eqz p1, :cond_0
+
+    invoke-static {}, Landroid/text/method/PasswordTransformationMethod;->getInstance()Landroid/text/method/PasswordTransformationMethod;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTransformationMethod(Landroid/text/method/TransformationMethod;)V
+
+    const p1, 0x80012
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setInputType(I)V
+
+    invoke-static {}, Landroid/text/method/PasswordTransformationMethod;->getInstance()Landroid/text/method/PasswordTransformationMethod;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->removeTextChangedListener(Landroid/text/TextWatcher;)V
+
+    invoke-static {}, Landroid/text/method/PasswordTransformationMethod;->getInstance()Landroid/text/method/PasswordTransformationMethod;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
+
+    return-void
+
+    :cond_0
+    invoke-static {}, Landroid/text/method/PasswordTransformationMethod;->getInstance()Landroid/text/method/PasswordTransformationMethod;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->removeTextChangedListener(Landroid/text/TextWatcher;)V
+
+    invoke-static {}, Landroid/text/method/SingleLineTransformationMethod;->getInstance()Landroid/text/method/SingleLineTransformationMethod;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTransformationMethod(Landroid/text/method/TransformationMethod;)V
+
+    const/4 p1, 0x2
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setInputType(I)V
+
+    return-void
+.end method
+
+.method public final setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
+    .locals 1
+
+    iget-boolean v0, p0, Lyf3;->a:Z
+
+    invoke-virtual {p0, v0}, Lyf3;->setSecure(Z)V
+
+    invoke-super {p0, p1, p2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
+
+    return-void
 .end method

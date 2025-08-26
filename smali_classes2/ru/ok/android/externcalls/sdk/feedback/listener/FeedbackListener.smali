@@ -14,7 +14,7 @@
         "",
         "Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedback;",
         "feedback",
-        "Ljue;",
+        "Le5f;",
         "onFeedbackAdded",
         "(Ljava/util/List;)V",
         "onFeedbackRemoved",
@@ -30,6 +30,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

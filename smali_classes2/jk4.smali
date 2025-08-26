@@ -1,64 +1,231 @@
-.class public final Ljk4;
+.class public final synthetic Ljk4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lpk4;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final a:Ljk4;
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Llk4;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Llk4;I)V
+    .locals 0
 
-    new-instance v0, Ljk4;
+    iput p2, p0, Ljk4;->a:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ljk4;->b:Llk4;
 
-    sput-object v0, Ljk4;->a:Ljk4;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+.method public final run()V
+    .locals 7
 
-    const/4 v0, 0x1
+    iget v0, p0, Ljk4;->a:I
 
-    if-ne p0, p1, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    return v0
+    iget-object p0, p0, Ljk4;->b:Llk4;
+
+    invoke-virtual {p0}, Lwn1;->I()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Llk4;->z:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
 
     :cond_0
-    instance-of p0, p1, Ljk4;
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    if-nez p0, :cond_1
+    move-result v1
 
-    const/4 p0, 0x0
+    if-eqz v1, :cond_2
 
-    return p0
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/Map$Entry;
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lrf1;
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lfqa;
+
+    invoke-virtual {v1}, Lfqa;->B()Lorg/webrtc/PeerConnection$IceConnectionState;
+
+    move-result-object v1
+
+    sget-object v3, Lorg/webrtc/PeerConnection$IceConnectionState;->CONNECTED:Lorg/webrtc/PeerConnection$IceConnectionState;
+
+    if-eq v1, v3, :cond_0
+
+    invoke-virtual {p0, v2}, Lwn1;->z(Lrf1;)Lvf1;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Lwn1;->b:Z
+
+    iget-object v1, p0, Lwn1;->e:Lv1c;
+
+    const/4 v2, 0x0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, v0, Lvf1;->k:Ljava/lang/String;
+
+    goto :goto_0
 
     :cond_1
-    return v0
-.end method
+    move-object v0, v2
 
-.method public final hashCode()I
-    .locals 0
+    :goto_0
+    const-string v3, "DIRECT_CONNECTION_TIMEOUT"
 
-    const p0, 0x26b7c16c
+    invoke-static {v1, v3, v0}, Lz99;->d(Lv1c;Ljava/lang/String;Ljava/lang/String;)V
 
-    return p0
-.end method
+    iget-object v0, p0, Lwn1;->n:Liy0;
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
+    if-eqz v0, :cond_2
 
-    const-string p0, "Cancelled"
+    iget-object v1, v0, Liy0;->y:Lxof;
 
-    return-object p0
+    iget-object v3, v0, Liy0;->h:Landroid/os/Handler;
+
+    sget-object v4, Lzve;->b:Lzve;
+
+    invoke-virtual {p0, v4}, Lwn1;->H(Lzve;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    iget-object p0, v0, Liy0;->K:Ls1c;
+
+    const-string v4, "OKRTCCall"
+
+    const-string v5, "onTopologyUpgradeProposed"
+
+    invoke-interface {p0, v4, v5}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object p0, v0, Liy0;->g:Ldnd;
+
+    const-string v4, "SERVER"
+
+    const-string v5, "switch-topology"
+
+    invoke-static {v2, v5}, Lcu0;->a(Lorg/json/JSONObject;Ljava/lang/String;)Lva6;
+
+    move-result-object v2
+
+    iget-object v5, v2, Lva6;->a:Lorg/json/JSONObject;
+
+    :try_start_0
+    const-string v6, "topology"
+
+    invoke-virtual {v5, v6, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    const-string v4, "force"
+
+    const/4 v6, 0x0
+
+    invoke-virtual {v5, v4, v6}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v4
+
+    invoke-virtual {v4}, Ljava/lang/Throwable;->printStackTrace()V
+
+    :goto_1
+    invoke-virtual {p0, v2}, Ldnd;->i(Lgnd;)V
+
+    invoke-virtual {v3, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    iget-object p0, v0, Liy0;->j:Lqf1;
+
+    iget-object p0, p0, Lqf1;->b:Lpf1;
+
+    const/16 p0, 0x7530
+
+    int-to-long v4, p0
+
+    invoke-virtual {v3, v1, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    :cond_2
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Ljk4;->b:Llk4;
+
+    iget-object v0, p0, Llk4;->z:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_2
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lfqa;
+
+    invoke-virtual {v1}, Lfqa;->B()Lorg/webrtc/PeerConnection$IceConnectionState;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v1, v2}, Llk4;->Z(Lfqa;Lorg/webrtc/PeerConnection$IceConnectionState;)V
+
+    goto :goto_2
+
+    :cond_3
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

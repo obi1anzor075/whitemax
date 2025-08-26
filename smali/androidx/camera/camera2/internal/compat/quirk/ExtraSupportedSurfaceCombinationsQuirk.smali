@@ -3,13 +3,13 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lzkb;
+.implements Lkpb;
 
 
 # static fields
-.field public static final a:Li4e;
+.field public static final a:Lpce;
 
-.field public static final b:Li4e;
+.field public static final b:Lpce;
 
 .field public static final c:Ljava/util/HashSet;
 
@@ -20,63 +20,63 @@
 .method static constructor <clinit>()V
     .locals 9
 
-    new-instance v0, Li4e;
+    new-instance v0, Lpce;
 
-    invoke-direct {v0}, Li4e;-><init>()V
+    invoke-direct {v0}, Lpce;-><init>()V
 
-    sget-object v1, Lj4e;->b:Lj4e;
+    const/4 v1, 0x2
 
-    const/4 v2, 0x2
+    sget-object v2, Lqce;->b:Lqce;
 
     const-wide/16 v3, 0x0
 
-    invoke-static {v2, v1, v3, v4, v0}, Lc3d;->l(ILj4e;JLi4e;)V
+    invoke-static {v1, v2, v3, v4, v0}, Lrqc;->k(ILqce;JLpce;)V
 
-    sget-object v5, Lj4e;->o:Lj4e;
+    const/4 v5, 0x1
 
-    const/4 v6, 0x1
+    sget-object v6, Lqce;->o:Lqce;
 
-    invoke-static {v6, v5, v3, v4, v0}, Lc3d;->l(ILj4e;JLi4e;)V
+    invoke-static {v5, v6, v3, v4, v0}, Lrqc;->k(ILqce;JLpce;)V
 
-    sget-object v7, Lj4e;->Z:Lj4e;
+    sget-object v7, Lqce;->Z:Lqce;
 
-    invoke-static {v2, v7, v3, v4, v0}, Lc3d;->l(ILj4e;JLi4e;)V
+    invoke-static {v1, v7, v3, v4, v0}, Lrqc;->k(ILqce;JLpce;)V
 
-    sput-object v0, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedSurfaceCombinationsQuirk;->a:Li4e;
+    sput-object v0, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedSurfaceCombinationsQuirk;->a:Lpce;
 
-    new-instance v0, Li4e;
+    new-instance v0, Lpce;
 
-    invoke-direct {v0}, Li4e;-><init>()V
+    invoke-direct {v0}, Lpce;-><init>()V
 
-    new-instance v8, Lxa0;
+    new-instance v8, Lpb0;
 
-    invoke-direct {v8, v6, v5, v3, v4}, Lxa0;-><init>(ILj4e;J)V
+    invoke-direct {v8, v5, v6, v3, v4}, Lpb0;-><init>(ILqce;J)V
 
-    invoke-virtual {v0, v8}, Li4e;->a(Lxa0;)V
+    invoke-virtual {v0, v8}, Lpce;->a(Lpb0;)V
 
-    new-instance v5, Lxa0;
+    new-instance v6, Lpb0;
 
-    invoke-direct {v5, v6, v1, v3, v4}, Lxa0;-><init>(ILj4e;J)V
+    invoke-direct {v6, v5, v2, v3, v4}, Lpb0;-><init>(ILqce;J)V
 
-    invoke-virtual {v0, v5}, Li4e;->a(Lxa0;)V
+    invoke-virtual {v0, v6}, Lpce;->a(Lpb0;)V
 
-    invoke-static {v2, v7, v3, v4, v0}, Lc3d;->l(ILj4e;JLi4e;)V
+    invoke-static {v1, v7, v3, v4, v0}, Lrqc;->k(ILqce;JLpce;)V
 
-    sput-object v0, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedSurfaceCombinationsQuirk;->b:Li4e;
+    sput-object v0, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedSurfaceCombinationsQuirk;->b:Lpce;
 
     new-instance v0, Ljava/util/HashSet;
 
-    const-string v3, "PIXEL 7"
+    const-string v5, "PIXEL 8"
 
-    const-string v4, "PIXEL 7 PRO"
+    const-string v6, "PIXEL 8 PRO"
 
     const-string v1, "PIXEL 6"
 
     const-string v2, "PIXEL 6 PRO"
 
-    const-string v5, "PIXEL 8"
+    const-string v3, "PIXEL 7"
 
-    const-string v6, "PIXEL 8 PRO"
+    const-string v4, "PIXEL 7 PRO"
 
     filled-new-array/range {v1 .. v6}, [Ljava/lang/String;
 
@@ -92,9 +92,9 @@
 
     new-instance v0, Ljava/util/HashSet;
 
-    const-string v4, "SM-S926"
+    const-string v6, "SC-52E"
 
-    const-string v5, "SM-S928"
+    const-string v7, "SCG26"
 
     const-string v1, "SM-S921"
 
@@ -102,9 +102,9 @@
 
     const-string v3, "SCG25"
 
-    const-string v6, "SC-52E"
+    const-string v4, "SM-S926"
 
-    const-string v7, "SCG26"
+    const-string v5, "SM-S928"
 
     filled-new-array/range {v1 .. v7}, [Ljava/lang/String;
 
@@ -130,7 +130,7 @@
 .end method
 
 .method public static e()Z
-    .locals 4
+    .locals 3
 
     const-string v0, "samsung"
 
@@ -140,50 +140,51 @@
 
     move-result v0
 
-    const/4 v1, 0x0
-
     if-nez v0, :cond_0
 
-    return v1
+    goto :goto_0
 
     :cond_0
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
+    sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v0
 
-    sget-object v2, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedSurfaceCombinationsQuirk;->d:Ljava/util/HashSet;
+    sget-object v1, Landroidx/camera/camera2/internal/compat/quirk/ExtraSupportedSurfaceCombinationsQuirk;->d:Ljava/util/HashSet;
 
-    invoke-virtual {v2}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v1}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
-    :cond_1
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v2, Ljava/lang/String;
 
-    move-result v3
+    invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    if-eqz v3, :cond_2
+    move-result v2
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/String;
-
-    invoke-virtual {v0, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
+    if-eqz v2, :cond_1
 
     const/4 v0, 0x1
 
     return v0
 
     :cond_2
-    return v1
+    :goto_0
+    const/4 v0, 0x0
+
+    return v0
 .end method

@@ -1,5 +1,5 @@
 .class public Lcom/google/android/material/floatingactionbutton/FloatingActionButton$BaseBehavior;
-.super Lkt3;
+.super Lkw3;
 .source "SourceFile"
 
 
@@ -9,7 +9,7 @@
         "<T:",
         "Ljava/lang/Object;",
         ">",
-        "Lkt3;"
+        "Lkw3;"
     }
 .end annotation
 
@@ -31,7 +31,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 3
-    sget-object p0, Lxvb;->FloatingActionButton_Behavior_Layout:[I
+    sget-object p0, Lt0c;->FloatingActionButton_Behavior_Layout:[I
 
     .line 4
     invoke-virtual {p1, p2, p0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
@@ -39,7 +39,7 @@
     move-result-object p0
 
     .line 5
-    sget p1, Lxvb;->FloatingActionButton_Behavior_Layout_behavior_autoHide:I
+    sget p1, Lt0c;->FloatingActionButton_Behavior_Layout_behavior_autoHide:I
 
     const/4 p2, 0x1
 
@@ -57,23 +57,23 @@
 .method public final e(Landroid/view/View;)Z
     .locals 0
 
-    invoke-static {p1}, Lwn6;->o(Ljava/lang/Object;)V
+    new-instance p0, Ljava/lang/ClassCastException;
 
-    const/4 p0, 0x0
+    invoke-direct {p0}, Ljava/lang/ClassCastException;-><init>()V
 
     throw p0
 .end method
 
-.method public final g(Lnt3;)V
+.method public final g(Lnw3;)V
     .locals 0
 
-    iget p0, p1, Lnt3;->h:I
+    iget p0, p1, Lnw3;->h:I
 
     if-nez p0, :cond_0
 
     const/16 p0, 0x50
 
-    iput p0, p1, Lnt3;->h:I
+    iput p0, p1, Lnw3;->h:I
 
     :cond_0
     return-void
@@ -82,9 +82,9 @@
 .method public final h(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;)Z
     .locals 0
 
-    invoke-static {p2}, Lwn6;->o(Ljava/lang/Object;)V
+    new-instance p0, Ljava/lang/ClassCastException;
 
-    const/4 p0, 0x0
+    invoke-direct {p0}, Ljava/lang/ClassCastException;-><init>()V
 
     throw p0
 .end method
@@ -92,9 +92,9 @@
 .method public final l(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;I)Z
     .locals 0
 
-    invoke-static {p2}, Lwn6;->o(Ljava/lang/Object;)V
+    new-instance p0, Ljava/lang/ClassCastException;
 
-    const/4 p0, 0x0
+    invoke-direct {p0}, Ljava/lang/ClassCastException;-><init>()V
 
     throw p0
 .end method

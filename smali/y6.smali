@@ -1,184 +1,186 @@
 .class public final Ly6;
-.super Lz6;
+.super Liq8;
 .source "SourceFile"
 
 
 # instance fields
-.field public final b:Lmge;
+.field public final synthetic l:I
 
-.field public final c:I
-
-.field public final d:I
+.field public final synthetic m:Lb7;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 3
+.method public constructor <init>(Lb7;Landroid/content/Context;Le9e;Landroid/view/View;)V
+    .locals 8
 
-    sget v0, Lr1a;->G:I
+    const/4 v0, 0x0
 
-    new-instance v1, Lhge;
+    iput v0, p0, Ly6;->l:I
 
-    invoke-direct {v1, v0}, Lhge;-><init>(I)V
+    .line 9
+    iput-object p1, p0, Ly6;->m:Lb7;
 
-    sget v0, Ln1a;->z:I
+    .line 10
+    sget v6, Lkqb;->actionOverflowMenuStyle:I
 
-    sget v2, Lo1a;->z:I
+    const/4 v7, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v5, 0x0
 
-    iput-object v1, p0, Ly6;->b:Lmge;
+    move-object v1, p0
 
-    iput v0, p0, Ly6;->c:I
+    move-object v2, p2
 
-    iput v2, p0, Ly6;->d:I
+    move-object v3, p3
 
+    move-object v4, p4
+
+    .line 11
+    invoke-direct/range {v1 .. v7}, Liq8;-><init>(Landroid/content/Context;Lxp8;Landroid/view/View;ZII)V
+
+    .line 12
+    iget-object p0, v3, Le9e;->H0:Lbq8;
+
+    .line 13
+    iget p0, p0, Lbq8;->E0:I
+
+    const/16 p2, 0x20
+
+    and-int/2addr p0, p2
+
+    if-ne p0, p2, :cond_0
+
+    goto :goto_0
+
+    .line 14
+    :cond_0
+    iget-object p0, p1, Lb7;->p0:La7;
+
+    if-nez p0, :cond_1
+
+    .line 15
+    iget-object p0, p1, Lb7;->o0:Lqq8;
+
+    .line 16
+    check-cast p0, Landroid/view/View;
+
+    .line 17
+    :cond_1
+    iput-object p0, v1, Liq8;->e:Landroid/view/View;
+
+    .line 18
+    :goto_0
+    iget-object p0, p1, Lb7;->D0:Lzod;
+
+    .line 19
+    iput-object p0, v1, Liq8;->h:Lnq8;
+
+    .line 20
+    iget-object p1, v1, Liq8;->i:Lgq8;
+
+    if-eqz p1, :cond_2
+
+    .line 21
+    invoke-interface {p1, p0}, Loq8;->e(Lnq8;)V
+
+    :cond_2
+    return-void
+.end method
+
+.method public constructor <init>(Lb7;Landroid/content/Context;Lxp8;Landroid/view/View;)V
+    .locals 8
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Ly6;->l:I
+
+    .line 1
+    iput-object p1, p0, Ly6;->m:Lb7;
+
+    .line 2
+    sget v6, Lkqb;->actionOverflowMenuStyle:I
+
+    const/4 v7, 0x0
+
+    const/4 v5, 0x1
+
+    move-object v1, p0
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    .line 3
+    invoke-direct/range {v1 .. v7}, Liq8;-><init>(Landroid/content/Context;Lxp8;Landroid/view/View;ZII)V
+
+    const p0, 0x800005
+
+    .line 4
+    iput p0, v1, Liq8;->f:I
+
+    .line 5
+    iget-object p0, p1, Lb7;->D0:Lzod;
+
+    .line 6
+    iput-object p0, v1, Liq8;->h:Lnq8;
+
+    .line 7
+    iget-object p1, v1, Liq8;->i:Lgq8;
+
+    if-eqz p1, :cond_0
+
+    .line 8
+    invoke-interface {p1, p0}, Loq8;->e(Lnq8;)V
+
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Ly6;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Ly6;
-
-    iget-object v1, p1, Ly6;->b:Lmge;
-
-    iget-object v3, p0, Ly6;->b:Lmge;
-
-    invoke-static {v3, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget v1, p0, Ly6;->c:I
-
-    iget v3, p1, Ly6;->c:I
-
-    if-eq v1, v3, :cond_3
-
-    return v2
-
-    :cond_3
-    iget p0, p0, Ly6;->d:I
-
-    iget p1, p1, Ly6;->d:I
-
-    if-eq p0, p1, :cond_4
-
-    return v2
-
-    :cond_4
-    return v0
-.end method
-
-.method public final getIcon()I
-    .locals 0
-
-    iget p0, p0, Ly6;->c:I
-
-    return p0
-.end method
-
-.method public final getId()I
-    .locals 0
-
-    iget p0, p0, Ly6;->d:I
-
-    return p0
-.end method
-
-.method public final getName()Lmge;
-    .locals 0
-
-    iget-object p0, p0, Ly6;->b:Lmge;
-
-    return-object p0
-.end method
-
-.method public final hashCode()I
+.method public final c()V
     .locals 3
 
-    iget-object v0, p0, Ly6;->b:Lmge;
+    iget v0, p0, Ly6;->l:I
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    packed-switch v0, :pswitch_data_0
 
-    move-result v0
+    iget-object v0, p0, Ly6;->m:Lb7;
 
-    const/16 v1, 0x1f
+    iget-object v1, v0, Lb7;->c:Lxp8;
 
-    mul-int/2addr v0, v1
+    if-eqz v1, :cond_0
 
-    iget v2, p0, Ly6;->c:I
+    const/4 v2, 0x1
 
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
+    invoke-virtual {v1, v2}, Lxp8;->c(Z)V
 
-    move-result v0
+    :cond_0
+    const/4 v1, 0x0
 
-    iget p0, p0, Ly6;->d:I
+    iput-object v1, v0, Lb7;->z0:Ly6;
 
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+    invoke-super {p0}, Liq8;->c()V
 
-    move-result p0
+    return-void
 
-    add-int/2addr p0, v0
+    :pswitch_0
+    const/4 v0, 0x0
 
-    return p0
-.end method
+    iget-object v1, p0, Ly6;->m:Lb7;
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+    iput-object v0, v1, Lb7;->A0:Ly6;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const-string v1, "SpeakerMode(name="
+    invoke-super {p0}, Liq8;->c()V
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    return-void
 
-    iget-object v1, p0, Ly6;->b:Lmge;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", icon="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Ly6;->c:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", id="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget p0, p0, Ly6;->d:I
-
-    const-string v1, ")"
-
-    invoke-static {v0, p0, v1}, Lwn6;->j(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

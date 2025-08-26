@@ -20,7 +20,7 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/participant/ParticipantsUpdater$MappingUpdater;",
         "",
-        "Ljue;",
+        "Le5f;",
         "triggerMapUpdate",
         "()V",
         "reportIfApplicable",
@@ -32,6 +32,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

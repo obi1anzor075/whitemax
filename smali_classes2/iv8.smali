@@ -1,128 +1,53 @@
 .class public final Liv8;
-.super Ljava/lang/Object;
+.super Lbu3;
 .source "SourceFile"
-
-# interfaces
-.implements Lpj5;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:Lzs8;
 
-.field public final synthetic b:Lpj5;
+.field public synthetic Y:Ljava/lang/Object;
 
-.field public final synthetic c:Lone/me/sdk/messagewrite/MessageWriteWidget;
+.field public final synthetic Z:Ljv8;
+
+.field public o:Ljv8;
+
+.field public o0:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lt0c;Lone/me/sdk/messagewrite/MessageWriteWidget;I)V
+.method public constructor <init>(Ljv8;Lbu3;)V
     .locals 0
 
-    iput p3, p0, Liv8;->a:I
+    iput-object p1, p0, Liv8;->Z:Ljv8;
 
-    iput-object p1, p0, Liv8;->b:Lpj5;
-
-    iput-object p2, p0, Liv8;->c:Lone/me/sdk/messagewrite/MessageWriteWidget;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Lrj5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 3
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    iget v0, p0, Liv8;->a:I
+    iput-object p1, p0, Liv8;->Y:Ljava/lang/Object;
 
-    packed-switch v0, :pswitch_data_0
+    iget p1, p0, Liv8;->o0:I
 
-    new-instance v0, Lhv8;
+    const/high16 v0, -0x80000000
 
-    iget-object v1, p0, Liv8;->c:Lone/me/sdk/messagewrite/MessageWriteWidget;
+    or-int/2addr p1, v0
 
-    const/4 v2, 0x2
+    iput p1, p0, Liv8;->o0:I
 
-    invoke-direct {v0, p1, v1, v2}, Lhv8;-><init>(Lrj5;Lone/me/sdk/messagewrite/MessageWriteWidget;I)V
+    iget-object p1, p0, Liv8;->Z:Ljv8;
 
-    iget-object p0, p0, Liv8;->b:Lpj5;
+    const-wide/16 v0, 0x0
 
-    invoke-interface {p0, v0, p2}, Lpj5;->c(Lrj5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Lpu3;->a:Lpu3;
-
-    if-ne p0, p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    sget-object p0, Ljue;->a:Ljue;
-
-    :goto_0
-    return-object p0
-
-    :pswitch_0
-    new-instance v0, Lhv8;
-
-    iget-object v1, p0, Liv8;->c:Lone/me/sdk/messagewrite/MessageWriteWidget;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v0, p1, v1, v2}, Lhv8;-><init>(Lrj5;Lone/me/sdk/messagewrite/MessageWriteWidget;I)V
-
-    iget-object p0, p0, Liv8;->b:Lpj5;
-
-    invoke-interface {p0, v0, p2}, Lpj5;->c(Lrj5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v1, p0}, Ljv8;->a(JLbu3;)Ljava/lang/Object;
 
     move-result-object p0
 
-    sget-object p1, Lpu3;->a:Lpu3;
-
-    if-ne p0, p1, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    sget-object p0, Ljue;->a:Ljue;
-
-    :goto_1
     return-object p0
-
-    :pswitch_1
-    new-instance v0, Lhv8;
-
-    iget-object v1, p0, Liv8;->c:Lone/me/sdk/messagewrite/MessageWriteWidget;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, p1, v1, v2}, Lhv8;-><init>(Lrj5;Lone/me/sdk/messagewrite/MessageWriteWidget;I)V
-
-    iget-object p0, p0, Liv8;->b:Lpj5;
-
-    invoke-interface {p0, v0, p2}, Lpj5;->c(Lrj5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Lpu3;->a:Lpu3;
-
-    if-ne p0, p1, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    sget-object p0, Ljue;->a:Ljue;
-
-    :goto_2
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

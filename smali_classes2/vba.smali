@@ -1,133 +1,139 @@
-.class public final Lvba;
+.class public abstract Lvba;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lzba;
-
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lvba;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public static final a:I
 
+.field public static final b:I
 
-# instance fields
-.field public final a:I
+.field public static final c:I
+
+.field public static final d:I
+
+.field public static final e:I
+
+.field public static final f:I
+
+.field public static final g:I
+
+.field public static final h:I
+
+.field public static final i:I
+
+.field public static final j:I
+
+.field public static final k:I
+
+.field public static final l:I
+
+.field public static final m:I
+
+.field public static final n:I
+
+.field public static final o:I
+
+.field public static final p:I
+
+.field public static final q:I
+
+.field public static final r:I
+
+.field public static final s:I
+
+.field public static final t:I
+
+.field public static final u:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Lch9;
+    sget v0, Ltyb;->oneme_notifications_settings_chat_enable_notifications_button:I
 
-    const/16 v1, 0xb
+    sput v0, Lvba;->a:I
 
-    invoke-direct {v0, v1}, Lch9;-><init>(I)V
+    sget v0, Ltyb;->oneme_notifications_settings_chat_enabled_section_title:I
 
-    sput-object v0, Lvba;->CREATOR:Landroid/os/Parcelable$Creator;
+    sput v0, Lvba;->b:I
 
-    return-void
-.end method
+    sget v0, Ltyb;->oneme_notifications_settings_chat_settings_button:I
 
-.method public constructor <init>(I)V
-    .locals 0
+    sput v0, Lvba;->c:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Ltyb;->oneme_notifications_settings_chat_toolbar_title:I
 
-    iput p1, p0, Lvba;->a:I
+    sput v0, Lvba;->d:I
 
-    return-void
-.end method
+    sget v0, Ltyb;->oneme_notifications_settings_chat_type_all_button:I
 
+    sput v0, Lvba;->e:I
 
-# virtual methods
-.method public final describeContents()I
-    .locals 0
+    sget v0, Ltyb;->oneme_notifications_settings_chat_type_pin_reply_button:I
 
-    const/4 p0, 0x0
+    sput v0, Lvba;->f:I
 
-    return p0
-.end method
+    sget v0, Ltyb;->oneme_notifications_settings_dialog_enable_notifications_button:I
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+    sput v0, Lvba;->g:I
 
-    const/4 v0, 0x1
+    sget v0, Ltyb;->oneme_notifications_settings_dialog_settings_button:I
 
-    if-ne p0, p1, :cond_0
+    sput v0, Lvba;->h:I
 
-    return v0
+    sget v0, Ltyb;->oneme_notifications_settings_dialog_toolbar_title:I
 
-    :cond_0
-    instance-of v1, p1, Lvba;
+    sput v0, Lvba;->i:I
 
-    const/4 v2, 0x0
+    sget v0, Ltyb;->oneme_notifications_settings_enable_all_notifications:I
 
-    if-nez v1, :cond_1
+    sput v0, Lvba;->j:I
 
-    return v2
+    sget v0, Ltyb;->oneme_notifications_settings_open_settings_button_description:I
 
-    :cond_1
-    check-cast p1, Lvba;
+    sput v0, Lvba;->k:I
 
-    iget p0, p0, Lvba;->a:I
+    sget v0, Ltyb;->oneme_notifications_settings_open_settings_button_title:I
 
-    iget p1, p1, Lvba;->a:I
+    sput v0, Lvba;->l:I
 
-    if-eq p0, p1, :cond_2
+    sget v0, Ltyb;->oneme_notifications_settings_other_new_user_button:I
 
-    return v2
+    sput v0, Lvba;->m:I
 
-    :cond_2
-    return v0
-.end method
+    sget v0, Ltyb;->oneme_notifications_settings_other_settings_button:I
 
-.method public final hashCode()I
-    .locals 0
+    sput v0, Lvba;->n:I
 
-    iget p0, p0, Lvba;->a:I
+    sget v0, Ltyb;->oneme_notifications_settings_other_toolbar_title:I
 
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+    sput v0, Lvba;->o:I
 
-    move-result p0
+    sget v0, Ltyb;->oneme_notifications_settings_reset_default_button:I
 
-    return p0
-.end method
+    sput v0, Lvba;->p:I
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+    sget v0, Ltyb;->oneme_notifications_settings_show_content_button:I
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    sput v0, Lvba;->q:I
 
-    const-string v1, "ContrastIcon(iconRes="
+    sget v0, Ltyb;->oneme_notifications_settings_toolbar_title:I
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    sput v0, Lvba;->r:I
 
-    iget p0, p0, Lvba;->a:I
+    sget v0, Ltyb;->oneme_notifications_settings_type_off:I
 
-    const-string v1, ")"
+    sput v0, Lvba;->s:I
 
-    invoke-static {v0, p0, v1}, Lwn6;->j(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    sget v0, Ltyb;->oneme_notifications_settings_type_on:I
 
-    move-result-object p0
+    sput v0, Lvba;->t:I
 
-    return-object p0
-.end method
+    sget v0, Ltyb;->oneme_notifications_settings_type_reply:I
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
-
-    iget p0, p0, Lvba;->a:I
-
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+    sput v0, Lvba;->u:I
 
     return-void
 .end method

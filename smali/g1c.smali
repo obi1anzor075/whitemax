@@ -1,29 +1,44 @@
-.class public final Lg1c;
+.class public abstract Lg1c;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
-# instance fields
-.field public final a:I
+# static fields
+.field public static Fragment:[I = null
 
-.field public final b:Luu0;
+.field public static FragmentContainerView:[I = null
 
-.field public final c:J
+.field public static FragmentContainerView_android_name:I = 0x0
+
+.field public static FragmentContainerView_android_tag:I = 0x1
+
+.field public static Fragment_android_id:I = 0x1
+
+.field public static Fragment_android_name:I = 0x0
+
+.field public static Fragment_android_tag:I = 0x2
 
 
 # direct methods
-.method public constructor <init>(ILuu0;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const v0, 0x1010003
 
-    iput p1, p0, Lg1c;->a:I
+    const v1, 0x10100d0
 
-    iput-object p2, p0, Lg1c;->b:Luu0;
+    const v2, 0x10100d1
 
-    const-wide/32 p1, 0xea60
+    filled-new-array {v0, v1, v2}, [I
 
-    iput-wide p1, p0, Lg1c;->c:J
+    move-result-object v1
+
+    sput-object v1, Lg1c;->Fragment:[I
+
+    filled-new-array {v0, v2}, [I
+
+    move-result-object v0
+
+    sput-object v0, Lg1c;->FragmentContainerView:[I
 
     return-void
 .end method

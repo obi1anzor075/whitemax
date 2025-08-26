@@ -1,12 +1,12 @@
 .class public abstract Lcom/google/android/material/transformation/ExpandableBehavior;
-.super Lkt3;
+.super Lkw3;
 .source "SourceFile"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lkt3;"
+        "Lkw3;"
     }
 .end annotation
 
@@ -41,9 +41,11 @@
 .method public final h(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;)Z
     .locals 0
 
-    invoke-static {p3}, Lhr1;->r(Ljava/lang/Object;)V
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const/4 p0, 0x0
+    new-instance p0, Ljava/lang/ClassCastException;
+
+    invoke-direct {p0}, Ljava/lang/ClassCastException;-><init>()V
 
     throw p0
 .end method
@@ -51,7 +53,7 @@
 .method public final l(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;I)Z
     .locals 3
 
-    sget-object p3, Leaf;->a:Ljava/util/WeakHashMap;
+    sget-object p3, Ltnf;->a:Ljava/util/WeakHashMap;
 
     invoke-virtual {p2}, Landroid/view/View;->isLaidOut()Z
 

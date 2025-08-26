@@ -1,159 +1,138 @@
-.class public final Ln7a;
+.class public final synthetic Ln7a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lko0;
+.implements Lv56;
 
 
 # instance fields
-.field public final a:Lt97;
+.field public final synthetic a:I
+
+.field public final synthetic b:Lo7a;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
-
-    .line 2
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 3
-    new-instance v0, Lk6b;
-
-    const/16 v1, 0x1b
-
-    invoke-direct {v0, v1}, Lk6b;-><init>(I)V
-
-    const/4 v1, 0x2
-
-    invoke-static {v1, v0}, Lez3;->O(ILs16;)Lt97;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ln7a;->a:Lt97;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lt97;)V
+.method public synthetic constructor <init>(Lo7a;I)V
     .locals 0
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Ln7a;->a:I
 
-    iput-object p1, p0, Ln7a;->a:Lt97;
+    iput-object p1, p0, Ln7a;->b:Lo7a;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(I)V
-    .locals 1
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
 
-    invoke-virtual {p0}, Ln7a;->e()Landroid/graphics/RenderNode;
+    iget v0, p0, Ln7a;->a:I
 
-    move-result-object p0
+    iget-object p0, p0, Ln7a;->b:Lo7a;
 
-    int-to-float p1, p1
+    packed-switch v0, :pswitch_data_0
 
-    const/high16 v0, 0x437f0000    # 255.0f
-
-    div-float/2addr p1, v0
-
-    invoke-virtual {p0, p1}, Landroid/graphics/RenderNode;->setAlpha(F)Z
-
-    return-void
-.end method
-
-.method public b()V
-    .locals 0
-
-    invoke-virtual {p0}, Ln7a;->e()Landroid/graphics/RenderNode;
+    invoke-virtual {p0}, Lo7a;->d()La9a;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Landroid/graphics/RenderNode;->discardDisplayList()V
+    iget-object v0, p0, La9a;->i:Ln45;
 
-    return-void
-.end method
+    sget-object v1, La9a;->p:[Lbc7;
 
-.method public c(Landroid/graphics/Canvas;Landroid/graphics/Bitmap;)V
-    .locals 0
+    const/4 v2, 0x3
 
-    invoke-virtual {p0}, Ln7a;->e()Landroid/graphics/RenderNode;
+    aget-object v1, v1, v2
 
-    move-result-object p0
-
-    invoke-virtual {p1, p0}, Landroid/graphics/Canvas;->drawRenderNode(Landroid/graphics/RenderNode;)V
-
-    return-void
-.end method
-
-.method public d(Landroid/graphics/Bitmap;F)V
-    .locals 4
-
-    invoke-virtual {p0}, Ln7a;->e()Landroid/graphics/RenderNode;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v1
-
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v2
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/RenderNode;->setPosition(IIII)Z
-
-    invoke-virtual {p0}, Ln7a;->e()Landroid/graphics/RenderNode;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/graphics/RenderNode;->beginRecording()Landroid/graphics/RecordingCanvas;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, p1, v1, v1, v2}, Landroid/graphics/RecordingCanvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
-
-    invoke-virtual {p0}, Ln7a;->e()Landroid/graphics/RenderNode;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/graphics/RenderNode;->endRecording()V
-
-    invoke-virtual {p0}, Ln7a;->e()Landroid/graphics/RenderNode;
+    invoke-virtual {p0, v0}, La9a;->e(Ln45;)Ljava/util/concurrent/ExecutorService;
 
     move-result-object p0
 
-    sget-object p1, Landroid/graphics/Shader$TileMode;->MIRROR:Landroid/graphics/Shader$TileMode;
+    new-instance v0, Lp45;
 
-    invoke-static {p2, p2, p1}, Lc88;->c(FFLandroid/graphics/Shader$TileMode;)Landroid/graphics/RenderEffect;
+    invoke-direct {v0, p0}, Lp45;-><init>(Ljava/util/concurrent/Executor;)V
 
-    move-result-object p1
+    return-object v0
 
-    invoke-static {p0, p1}, Lc88;->o(Landroid/graphics/RenderNode;Landroid/graphics/RenderEffect;)V
-
-    return-void
-.end method
-
-.method public e()Landroid/graphics/RenderNode;
-    .locals 0
-
-    iget-object p0, p0, Ln7a;->a:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    :pswitch_0
+    invoke-virtual {p0}, Lo7a;->d()La9a;
 
     move-result-object p0
 
-    check-cast p0, Landroid/graphics/RenderNode;
+    invoke-virtual {p0}, La9a;->d()Ljava/util/concurrent/ExecutorService;
 
-    return-object p0
+    move-result-object p0
+
+    new-instance v0, Lp45;
+
+    invoke-direct {v0, p0}, Lp45;-><init>(Ljava/util/concurrent/Executor;)V
+
+    return-object v0
+
+    :pswitch_1
+    invoke-virtual {p0}, Lo7a;->d()La9a;
+
+    move-result-object p0
+
+    iget-object v0, p0, La9a;->j:Ln45;
+
+    sget-object v1, La9a;->p:[Lbc7;
+
+    const/4 v2, 0x4
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {p0, v0}, La9a;->e(Ln45;)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object p0
+
+    new-instance v0, Lp45;
+
+    invoke-direct {v0, p0}, Lp45;-><init>(Ljava/util/concurrent/Executor;)V
+
+    return-object v0
+
+    :pswitch_2
+    invoke-virtual {p0}, Lo7a;->d()La9a;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, La9a;->c()Ljava/util/concurrent/ExecutorService;
+
+    move-result-object p0
+
+    new-instance v0, Lp45;
+
+    invoke-direct {v0, p0}, Lp45;-><init>(Ljava/util/concurrent/Executor;)V
+
+    return-object v0
+
+    :pswitch_3
+    invoke-virtual {p0}, Lo7a;->d()La9a;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, La9a;->a()Ljava/util/concurrent/ExecutorService;
+
+    move-result-object p0
+
+    new-instance v0, Lp45;
+
+    invoke-direct {v0, p0}, Lp45;-><init>(Ljava/util/concurrent/Executor;)V
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

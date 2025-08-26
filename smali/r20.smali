@@ -1,110 +1,229 @@
-.class public abstract Lr20;
+.class public final Lr20;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lnu0;
+
+
+# static fields
+.field public static final Z:Lr20;
+
+
+# instance fields
+.field public final X:I
+
+.field public Y:Landroid/media/AudioAttributes;
+
+.field public final a:I
+
+.field public final b:I
+
+.field public final c:I
+
+.field public final o:I
+
 
 # direct methods
-.method public static a()[I
-    .locals 9
+.method static constructor <clinit>()V
+    .locals 6
 
-    invoke-static {}, Lws6;->i()Lts6;
+    new-instance v0, Lr20;
 
-    move-result-object v0
+    const/4 v1, 0x0
 
-    sget-object v1, Lv20;->e:[I
+    const/4 v3, 0x1
 
-    array-length v2, v1
-
-    const/4 v3, 0x0
+    move v2, v1
 
     move v4, v3
 
-    :goto_0
-    if-ge v4, v2, :cond_1
+    move v5, v1
 
-    aget v5, v1, v4
+    invoke-direct/range {v0 .. v5}, Lr20;-><init>(IIIII)V
 
-    new-instance v6, Landroid/media/AudioFormat$Builder;
+    sput-object v0, Lr20;->Z:Lr20;
 
-    invoke-direct {v6}, Landroid/media/AudioFormat$Builder;-><init>()V
+    return-void
+.end method
 
-    const/16 v7, 0xc
+.method public constructor <init>(IIIII)V
+    .locals 0
 
-    invoke-virtual {v6, v7}, Landroid/media/AudioFormat$Builder;->setChannelMask(I)Landroid/media/AudioFormat$Builder;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v6
+    iput p1, p0, Lr20;->a:I
 
-    invoke-virtual {v6, v5}, Landroid/media/AudioFormat$Builder;->setEncoding(I)Landroid/media/AudioFormat$Builder;
+    iput p2, p0, Lr20;->b:I
 
-    move-result-object v6
+    iput p3, p0, Lr20;->c:I
 
-    const v7, 0xbb80
+    iput p4, p0, Lr20;->o:I
 
-    invoke-virtual {v6, v7}, Landroid/media/AudioFormat$Builder;->setSampleRate(I)Landroid/media/AudioFormat$Builder;
+    iput p5, p0, Lr20;->X:I
 
-    move-result-object v6
+    return-void
+.end method
 
-    invoke-virtual {v6}, Landroid/media/AudioFormat$Builder;->build()Landroid/media/AudioFormat;
 
-    move-result-object v6
+# virtual methods
+.method public final a()Landroid/media/AudioAttributes;
+    .locals 3
 
-    new-instance v7, Landroid/media/AudioAttributes$Builder;
+    iget-object v0, p0, Lr20;->Y:Landroid/media/AudioAttributes;
 
-    invoke-direct {v7}, Landroid/media/AudioAttributes$Builder;-><init>()V
+    if-nez v0, :cond_2
 
-    const/4 v8, 0x1
+    new-instance v0, Landroid/media/AudioAttributes$Builder;
 
-    invoke-virtual {v7, v8}, Landroid/media/AudioAttributes$Builder;->setUsage(I)Landroid/media/AudioAttributes$Builder;
+    invoke-direct {v0}, Landroid/media/AudioAttributes$Builder;-><init>()V
 
-    move-result-object v7
+    iget v1, p0, Lr20;->a:I
 
-    const/4 v8, 0x3
+    invoke-virtual {v0, v1}, Landroid/media/AudioAttributes$Builder;->setContentType(I)Landroid/media/AudioAttributes$Builder;
 
-    invoke-virtual {v7, v8}, Landroid/media/AudioAttributes$Builder;->setContentType(I)Landroid/media/AudioAttributes$Builder;
+    move-result-object v0
 
-    move-result-object v7
+    iget v1, p0, Lr20;->b:I
 
-    invoke-virtual {v7, v3}, Landroid/media/AudioAttributes$Builder;->setFlags(I)Landroid/media/AudioAttributes$Builder;
+    invoke-virtual {v0, v1}, Landroid/media/AudioAttributes$Builder;->setFlags(I)Landroid/media/AudioAttributes$Builder;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-virtual {v7}, Landroid/media/AudioAttributes$Builder;->build()Landroid/media/AudioAttributes;
+    iget v1, p0, Lr20;->c:I
 
-    move-result-object v7
+    invoke-virtual {v0, v1}, Landroid/media/AudioAttributes$Builder;->setUsage(I)Landroid/media/AudioAttributes$Builder;
 
-    invoke-static {v6, v7}, Landroid/media/AudioTrack;->isDirectPlaybackSupported(Landroid/media/AudioFormat;Landroid/media/AudioAttributes;)Z
+    move-result-object v0
 
-    move-result v6
+    sget v1, Lnaf;->a:I
 
-    if-eqz v6, :cond_0
+    const/16 v2, 0x1d
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    if-lt v1, v2, :cond_0
 
-    move-result-object v5
+    iget v2, p0, Lr20;->o:I
 
-    invoke-virtual {v0, v5}, Lms6;->a(Ljava/lang/Object;)V
+    invoke-static {v0, v2}, Ln20;->a(Landroid/media/AudioAttributes$Builder;I)V
 
     :cond_0
-    add-int/lit8 v4, v4, 0x1
+    const/16 v2, 0x20
+
+    if-lt v1, v2, :cond_1
+
+    iget v1, p0, Lr20;->X:I
+
+    invoke-static {v0, v1}, Lp20;->a(Landroid/media/AudioAttributes$Builder;I)V
+
+    :cond_1
+    invoke-virtual {v0}, Landroid/media/AudioAttributes$Builder;->build()Landroid/media/AudioAttributes;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lr20;->Y:Landroid/media/AudioAttributes;
+
+    :cond_2
+    iget-object p0, p0, Lr20;->Y:Landroid/media/AudioAttributes;
+
+    return-object p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    if-eqz p1, :cond_2
+
+    const-class v2, Lr20;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    if-eq v2, v3, :cond_1
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x2
+    check-cast p1, Lr20;
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget v2, p0, Lr20;->a:I
 
-    move-result-object v1
+    iget v3, p1, Lr20;->a:I
 
-    invoke-virtual {v0, v1}, Lms6;->a(Ljava/lang/Object;)V
+    if-ne v2, v3, :cond_2
 
-    invoke-virtual {v0}, Lts6;->j()Le8c;
+    iget v2, p0, Lr20;->b:I
 
-    move-result-object v0
+    iget v3, p1, Lr20;->b:I
 
-    invoke-static {v0}, Lxie;->H(Ljava/util/Collection;)[I
+    if-ne v2, v3, :cond_2
 
-    move-result-object v0
+    iget v2, p0, Lr20;->c:I
 
-    return-object v0
+    iget v3, p1, Lr20;->c:I
+
+    if-ne v2, v3, :cond_2
+
+    iget v2, p0, Lr20;->o:I
+
+    iget v3, p1, Lr20;->o:I
+
+    if-ne v2, v3, :cond_2
+
+    iget p0, p0, Lr20;->X:I
+
+    iget p1, p1, Lr20;->X:I
+
+    if-ne p0, p1, :cond_2
+
+    return v0
+
+    :cond_2
+    :goto_0
+    return v1
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    const/16 v0, 0x20f
+
+    iget v1, p0, Lr20;->a:I
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v1, p0, Lr20;->b:I
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v1, p0, Lr20;->c:I
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v1, p0, Lr20;->o:I
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget p0, p0, Lr20;->X:I
+
+    add-int/2addr v0, p0
+
+    return v0
 .end method

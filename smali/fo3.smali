@@ -1,151 +1,236 @@
-.class public final synthetic Lfo3;
-.super Ljava/lang/Object;
+.class public final Lfo3;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Le8;
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic a:Lho3;
+.field public X:Lio3;
+
+.field public Y:Lj35;
+
+.field public Z:I
+
+.field public final synthetic o0:Lio3;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lho3;)V
+.method public constructor <init>(Lio3;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfo3;->o0:Lio3;
 
-    iput-object p1, p0, Lfo3;->a:Lho3;
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lsgc;)V
-    .locals 4
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object p0, p0, Lfo3;->a:Lho3;
+    check-cast p1, Lox3;
 
-    const/4 v0, 0x0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    :try_start_0
-    invoke-static {p1}, Ljjd;->C(Lsgc;)Landroid/app/Activity;
+    invoke-virtual {p0, p1, p2}, Lfo3;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    move-result-object p1
+    move-result-object p0
 
-    new-instance v1, Lstf;
+    check-cast p0, Lfo3;
 
-    invoke-direct {v1, p1}, Lstf;-><init>(Landroid/content/Context;)V
+    sget-object p1, Le5f;->a:Le5f;
 
-    iget-object v2, p0, Lho3;->b:Lt97;
+    invoke-virtual {p0, p1}, Lfo3;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {v2}, Lt97;->getValue()Ljava/lang/Object;
+    move-result-object p0
 
-    move-result-object v2
+    return-object p0
+.end method
 
-    check-cast v2, Lxzc;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
 
-    check-cast v2, Lvqc;
+    new-instance p1, Lfo3;
 
-    const-string v3, "invite-header"
+    iget-object p0, p0, Lfo3;->o0:Lio3;
 
-    iget-object v2, v2, Lf3;->g:Lx97;
+    invoke-direct {p1, p0, p2}, Lfo3;-><init>(Lio3;Lkotlin/coroutines/Continuation;)V
 
-    invoke-virtual {v2, v3, v0}, Lx97;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    return-object p1
+.end method
 
-    move-result-object v2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 10
 
-    if-eqz v2, :cond_0
+    iget v0, p0, Lfo3;->Z:I
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x2
+
+    iget-object v3, p0, Lfo3;->o0:Lio3;
+
+    sget-object v4, Lpx3;->a:Lpx3;
+
+    if-eqz v0, :cond_2
+
+    if-eq v0, v1, :cond_1
+
+    if-ne v0, v2, :cond_0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    goto/16 :goto_3
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    iget-object v0, p0, Lfo3;->Y:Lj35;
+
+    iget-object v1, p0, Lfo3;->X:Lio3;
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
     goto :goto_0
 
-    :cond_0
-    sget v2, Lwhc;->v:I
+    :cond_2
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    iget-object v0, v3, Lio3;->B0:Lj35;
 
-    move-result-object v2
+    iget-object p1, v3, Lio3;->s0:Lje7;
 
-    :goto_0
-    iput-object v2, v1, Lstf;->c:Ljava/lang/Object;
-
-    const-string v2, "text/plain"
-
-    iget-object v3, v1, Lstf;->b:Ljava/lang/Object;
-
-    check-cast v3, Landroid/content/Intent;
-
-    invoke-virtual {v3, v2}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
-
-    iget-object p0, p0, Lho3;->b:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lxzc;
-
-    check-cast p0, Lvqc;
-
-    const-string v2, "invite-long"
-
-    iget-object v3, p0, Lf3;->g:Lx97;
-
-    invoke-virtual {v3, v2, v0}, Lx97;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    sget v2, Lwhc;->C:I
-
-    invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-interface {p1}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object p1
 
-    sget-object v2, Lru/ok/tamtam/android/prefs/PmsKey;->invite-link:Lru/ok/tamtam/android/prefs/PmsKey;
+    check-cast p1, Lad6;
 
-    const-string v3, "https://max.ru"
+    new-instance v5, Lrnb;
 
-    invoke-virtual {p0, v2, v3}, Lvqc;->q(Ljava/lang/Enum;Ljava/lang/String;)Ljava/lang/String;
+    iget-object v6, v3, Lio3;->t0:Lje7;
 
-    move-result-object p0
+    invoke-interface {v6}, Lje7;->getValue()Ljava/lang/Object;
 
-    filled-new-array {p0}, [Ljava/lang/Object;
+    move-result-object v6
 
-    move-result-object p0
+    check-cast v6, Lh23;
 
-    const/4 v2, 0x1
+    check-cast v6, Lmwc;
 
-    invoke-static {p0, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    invoke-virtual {v6}, Lmwc;->p()J
 
-    move-result-object p0
+    move-result-wide v6
 
-    invoke-static {p1, p0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    iget-object v8, v3, Lio3;->u0:Lje7;
 
-    move-result-object v2
+    invoke-interface {v8}, Lje7;->getValue()Ljava/lang/Object;
 
-    :goto_1
-    invoke-virtual {v1, v2}, Lstf;->L(Ljava/lang/CharSequence;)V
+    move-result-object v8
 
-    invoke-virtual {v1}, Lstf;->M()V
-    :try_end_0
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    check-cast v8, Landroid/content/Context;
+
+    sget-object v9, Lqp4;->q0:Lap9;
+
+    invoke-virtual {v9, v8}, Lap9;->g(Landroid/content/Context;)Lqp4;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Lqp4;->k()Lyha;
+
+    move-result-object v8
+
+    invoke-interface {v8}, Lyha;->getName()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-direct {v5, v6, v7, v8}, Lsnb;-><init>(JLjava/lang/String;)V
+
+    iput-object v3, p0, Lfo3;->X:Lio3;
+
+    iput-object v0, p0, Lfo3;->Y:Lj35;
+
+    iput v1, p0, Lfo3;->Z:I
+
+    invoke-virtual {p1, v5, v1, p0}, Lad6;->a(Lsnb;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, v4, :cond_3
 
     goto :goto_2
 
-    :catch_0
-    const-string p0, "ContactsDeepLinkFactory"
+    :cond_3
+    move-object v1, v3
 
-    const-string p1, "shareInvite: failed, no activity found"
+    :goto_0
+    check-cast p1, Lmnb;
 
-    invoke-static {p0, p1, v0}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    const/4 v5, 0x0
+
+    if-eqz p1, :cond_4
+
+    iget-object p1, p1, Lmnb;->a:Landroid/net/Uri;
+
+    goto :goto_1
+
+    :cond_4
+    move-object p1, v5
+
+    :goto_1
+    new-instance v6, Lvld;
+
+    invoke-direct {v6, p1}, Lvld;-><init>(Landroid/net/Uri;)V
+
+    sget-object p1, Lio3;->E0:[Lbc7;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {v0, v6}, Ljof;->o(Lj35;Ljava/lang/Object;)V
+
+    iget-object p1, v3, Lio3;->c:Lrie;
+
+    check-cast p1, Lo7a;
+
+    invoke-virtual {p1}, Lo7a;->a()Ljx3;
+
+    move-result-object p1
+
+    new-instance v0, Leo3;
+
+    invoke-direct {v0, v2, v5}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
+
+    iput-object v5, p0, Lfo3;->X:Lio3;
+
+    iput-object v5, p0, Lfo3;->Y:Lj35;
+
+    iput v2, p0, Lfo3;->Z:I
+
+    invoke-static {p1, v0, p0}, Lzo3;->j0(Lhx3;Ll66;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-ne p0, v4, :cond_5
 
     :goto_2
-    return-void
+    return-object v4
+
+    :cond_5
+    :goto_3
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

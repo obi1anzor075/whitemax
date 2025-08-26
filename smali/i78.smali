@@ -1,43 +1,47 @@
-.class public final Li78;
+.class public abstract Li78;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:I
-
-.field public final b:I
-
-.field public final c:I
-
-.field public final d:Ljava/lang/Object;
-
-.field public final e:J
-
-.field public final f:J
-
-.field public final g:Ljava/lang/Object;
-
-
 # direct methods
-.method public synthetic constructor <init>(IILjava/lang/Object;ILjava/lang/Object;JJ)V
-    .locals 0
+.method public static a(Lm60;Ljava/lang/Object;)V
+    .locals 1
 
-    iput p1, p0, Li78;->a:I
+    check-cast p1, Landroid/media/AudioDeviceInfo;
 
-    iput p2, p0, Li78;->b:I
+    check-cast p0, Lp84;
 
-    iput-object p3, p0, Li78;->g:Ljava/lang/Object;
+    if-nez p1, :cond_0
 
-    iput p4, p0, Li78;->c:I
+    const/4 v0, 0x0
 
-    iput-object p5, p0, Li78;->d:Ljava/lang/Object;
+    goto :goto_0
 
-    iput-wide p6, p0, Li78;->e:J
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-wide p8, p0, Li78;->f:J
+    new-instance v0, Lr30;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0, p1}, Lr30;-><init>(Landroid/media/AudioDeviceInfo;)V
 
+    :goto_0
+    iput-object v0, p0, Lp84;->c0:Lr30;
+
+    iget-object v0, p0, Lp84;->y:Li30;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0, p1}, Li30;->d(Landroid/media/AudioDeviceInfo;)V
+
+    :cond_1
+    iget-object p1, p0, Lp84;->w:Landroid/media/AudioTrack;
+
+    if-eqz p1, :cond_2
+
+    iget-object p0, p0, Lp84;->c0:Lr30;
+
+    invoke-static {p1, p0}, Lb84;->a(Landroid/media/AudioTrack;Lr30;)V
+
+    :cond_2
     return-void
 .end method

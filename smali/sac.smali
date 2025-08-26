@@ -1,20 +1,58 @@
-.class public interface abstract Lsac;
+.class public final synthetic Lsac;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lc5b;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic X:Ljava/lang/Throwable;
+
+.field public final synthetic a:Lzac;
+
+.field public final synthetic b:Lfb0;
+
+.field public final synthetic c:J
+
+.field public final synthetic o:I
+
+
+# direct methods
+.method public synthetic constructor <init>(Lzac;Lfb0;JILjava/lang/Throwable;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lsac;->a:Lzac;
+
+    iput-object p2, p0, Lsac;->b:Lfb0;
+
+    iput-wide p3, p0, Lsac;->c:J
+
+    iput p5, p0, Lsac;->o:I
+
+    iput-object p6, p0, Lsac;->X:Ljava/lang/Throwable;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract c(Lz4b;)V
-.end method
+.method public final run()V
+    .locals 6
 
-.method public abstract f(Lz4b;Ljava/lang/Throwable;)V
-.end method
+    iget v4, p0, Lsac;->o:I
 
-.method public abstract g(Lz4b;)V
-.end method
+    iget-object v5, p0, Lsac;->X:Ljava/lang/Throwable;
 
-.method public abstract h(Lz4b;)V
+    iget-object v0, p0, Lsac;->a:Lzac;
+
+    iget-object v1, p0, Lsac;->b:Lfb0;
+
+    iget-wide v2, p0, Lsac;->c:J
+
+    invoke-virtual/range {v0 .. v5}, Lzac;->F(Lfb0;JILjava/lang/Throwable;)V
+
+    return-void
 .end method

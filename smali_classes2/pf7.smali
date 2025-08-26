@@ -1,93 +1,89 @@
-.class public final synthetic Lpf7;
+.class public abstract synthetic Lpf7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lu26;
 
-
-# instance fields
-.field public final synthetic a:Lrf7;
+# static fields
+.field public static final synthetic $EnumSwitchMapping$0:[I
 
 
 # direct methods
-.method public constructor <init>(Lrf7;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 6
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {}, Lq00;->values()[Lq00;
 
-    iput-object p1, p0, Lpf7;->a:Lrf7;
+    move-result-object v0
 
-    return-void
-.end method
+    array-length v0, v0
 
+    new-array v0, v0, [I
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
+    :try_start_0
+    sget-object v1, Lq00;->b:Lq00;
 
-    instance-of v0, p1, Lpf7;
+    const/16 v1, 0x9
 
-    const/4 v1, 0x0
+    const/4 v2, 0x1
 
-    if-eqz v0, :cond_0
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    instance-of v0, p1, Lu26;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p0}, Lu26;->getFunctionDelegate()Ln26;
-
-    move-result-object p0
-
-    check-cast p1, Lu26;
-
-    invoke-interface {p1}, Lu26;->getFunctionDelegate()Ln26;
-
-    move-result-object p1
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    :cond_0
-    return v1
-.end method
-
-.method public final getFunctionDelegate()Ln26;
-    .locals 8
-
-    new-instance v7, Lx26;
-
+    :catch_0
     const/4 v1, 0x2
 
-    iget-object v4, p0, Lpf7;->a:Lrf7;
+    :try_start_1
+    sget-object v2, Lq00;->b:Lq00;
 
-    const-class v3, Lrf7;
+    const/16 v2, 0xf
 
-    const-string v5, "onProfileTagClicked"
+    aput v1, v0, v2
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    const-string v6, "onProfileTagClicked(Landroid/view/View;Ljava/lang/String;)V"
+    :catch_1
+    const/4 v2, 0x3
 
-    const/4 v2, 0x0
+    const/4 v3, 0x4
 
-    move-object v0, v7
+    :try_start_2
+    sget-object v4, Lq00;->b:Lq00;
 
-    invoke-direct/range {v0 .. v6}, Lw26;-><init>(IILjava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
+    aput v2, v0, v3
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    return-object v7
-.end method
+    :catch_2
+    const/4 v4, 0x5
 
-.method public final hashCode()I
-    .locals 0
+    :try_start_3
+    sget-object v5, Lq00;->b:Lq00;
 
-    invoke-interface {p0}, Lu26;->getFunctionDelegate()Ln26;
+    aput v3, v0, v4
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
-    move-result-object p0
+    :catch_3
+    :try_start_4
+    sget-object v3, Lq00;->b:Lq00;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    aput v4, v0, v2
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
-    move-result p0
+    :catch_4
+    :try_start_5
+    sget-object v2, Lq00;->b:Lq00;
 
-    return p0
+    const/4 v2, 0x6
+
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+
+    :catch_5
+    sput-object v0, Lpf7;->$EnumSwitchMapping$0:[I
+
+    return-void
 .end method

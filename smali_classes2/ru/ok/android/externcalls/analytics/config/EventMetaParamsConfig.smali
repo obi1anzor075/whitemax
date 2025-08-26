@@ -15,10 +15,10 @@
         "",
         "appName",
         "<init>",
-        "(Ls16;)V",
-        "Ls16;",
+        "(Lv56;)V",
+        "Lv56;",
         "getAppName",
-        "()Ls16;",
+        "()Lv56;",
         "calls-sdk-analytics_release"
     }
     k = 0x1
@@ -27,14 +27,15 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
-.field private final appName:Ls16;
+.field private final appName:Lv56;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 .end field
@@ -49,17 +50,17 @@
 
     const/4 v1, 0x1
 
-    invoke-direct {p0, v0, v1, v0}, Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;-><init>(Ls16;ILx54;)V
+    invoke-direct {p0, v0, v1, v0}, Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;-><init>(Lv56;ILl94;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ls16;)V
+.method public constructor <init>(Lv56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ls16;",
+            "Lv56;",
             ")V"
         }
     .end annotation
@@ -68,12 +69,12 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 3
-    iput-object p1, p0, Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;->appName:Ls16;
+    iput-object p1, p0, Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;->appName:Lv56;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Ls16;ILx54;)V
+.method public synthetic constructor <init>(Lv56;ILl94;)V
     .locals 0
 
     and-int/lit8 p2, p2, 0x1
@@ -85,23 +86,23 @@
 
     .line 5
     :cond_0
-    invoke-direct {p0, p1}, Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;-><init>(Ls16;)V
+    invoke-direct {p0, p1}, Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;-><init>(Lv56;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getAppName()Ls16;
+.method public final getAppName()Lv56;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;->appName:Ls16;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;->appName:Lv56;
 
     return-object p0
 .end method

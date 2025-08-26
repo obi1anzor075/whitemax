@@ -1,68 +1,152 @@
-.class public final Lpt9;
-.super Ldhd;
+.class public final enum Lpt9;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Lf36;
 
+# static fields
+.field public static final enum a:Lpt9;
 
-# instance fields
-.field public final a:Lnv9;
-
-.field public final b:J
+.field public static final synthetic b:[Lpt9;
 
 
 # direct methods
-.method public constructor <init>(Lau9;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lpt9;
 
-    iput-object p1, p0, Lpt9;->a:Lnv9;
+    const-string v1, "COMPLETE"
 
-    const-wide/16 v0, 0x0
+    const/4 v2, 0x0
 
-    iput-wide v0, p0, Lpt9;->b:J
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lpt9;->a:Lpt9;
+
+    filled-new-array {v0}, [Lpt9;
+
+    move-result-object v0
+
+    sput-object v0, Lpt9;->b:[Lpt9;
 
     return-void
+.end method
+
+.method public static a(La0a;Ljava/lang/Object;)Z
+    .locals 2
+
+    sget-object v0, Lpt9;->a:Lpt9;
+
+    const/4 v1, 0x1
+
+    if-ne p1, v0, :cond_0
+
+    invoke-interface {p0}, La0a;->b()V
+
+    return v1
+
+    :cond_0
+    instance-of v0, p1, Lnt9;
+
+    if-eqz v0, :cond_1
+
+    check-cast p1, Lnt9;
+
+    iget-object p1, p1, Lnt9;->a:Ljava/lang/Throwable;
+
+    invoke-interface {p0, p1}, La0a;->onError(Ljava/lang/Throwable;)V
+
+    return v1
+
+    :cond_1
+    invoke-interface {p0, p1}, La0a;->h(Ljava/lang/Object;)V
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public static b(La0a;Ljava/lang/Object;)Z
+    .locals 2
+
+    sget-object v0, Lpt9;->a:Lpt9;
+
+    const/4 v1, 0x1
+
+    if-ne p1, v0, :cond_0
+
+    invoke-interface {p0}, La0a;->b()V
+
+    return v1
+
+    :cond_0
+    instance-of v0, p1, Lnt9;
+
+    if-eqz v0, :cond_1
+
+    check-cast p1, Lnt9;
+
+    iget-object p1, p1, Lnt9;->a:Ljava/lang/Throwable;
+
+    invoke-interface {p0, p1}, La0a;->onError(Ljava/lang/Throwable;)V
+
+    return v1
+
+    :cond_1
+    instance-of v0, p1, Lmt9;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_2
+
+    check-cast p1, Lmt9;
+
+    iget-object p1, p1, Lmt9;->a:Lam4;
+
+    invoke-interface {p0, p1}, La0a;->c(Lam4;)V
+
+    return v1
+
+    :cond_2
+    invoke-interface {p0, p1}, La0a;->h(Ljava/lang/Object;)V
+
+    return v1
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lpt9;
+    .locals 1
+
+    const-class v0, Lpt9;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    move-result-object p0
+
+    check-cast p0, Lpt9;
+
+    return-object p0
+.end method
+
+.method public static values()[Lpt9;
+    .locals 1
+
+    sget-object v0, Lpt9;->b:[Lpt9;
+
+    invoke-virtual {v0}, [Lpt9;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lpt9;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final c()Lms9;
-    .locals 7
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    new-instance v6, Lmt9;
+    const-string p0, "NotificationLite.Complete"
 
-    iget-object v1, p0, Lpt9;->a:Lnv9;
-
-    iget-wide v2, p0, Lpt9;->b:J
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x1
-
-    move-object v0, v6
-
-    invoke-direct/range {v0 .. v5}, Lmt9;-><init>(Lnv9;JLjava/lang/Object;Z)V
-
-    return-object v6
-.end method
-
-.method public final l(Lzhd;)V
-    .locals 4
-
-    new-instance v0, Lnt9;
-
-    iget-wide v1, p0, Lpt9;->b:J
-
-    const/4 v3, 0x1
-
-    invoke-direct {v0, p1, v1, v2, v3}, Lnt9;-><init>(Ljava/lang/Object;JI)V
-
-    iget-object p0, p0, Lpt9;->a:Lnv9;
-
-    invoke-interface {p0, v0}, Lnv9;->a(Lbw9;)V
-
-    return-void
+    return-object p0
 .end method

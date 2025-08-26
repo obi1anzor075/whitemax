@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Lv56;
 
 
 # instance fields
@@ -30,62 +30,65 @@
 .method public final invoke()Ljava/lang/Object;
     .locals 4
 
-    iget-object v0, p0, Ly2;->b:Lone/me/chats/picker/AbstractPickerScreen;
+    iget v0, p0, Ly2;->a:I
 
-    iget p0, p0, Ly2;->a:I
+    iget-object p0, p0, Ly2;->b:Lone/me/chats/picker/AbstractPickerScreen;
 
-    packed-switch p0, :pswitch_data_0
+    packed-switch v0, :pswitch_data_0
 
-    sget-object p0, Lone/me/chats/picker/AbstractPickerScreen;->w0:[Lk77;
+    sget-object v0, Lone/me/chats/picker/AbstractPickerScreen;->p0:[Lbc7;
 
-    new-instance p0, Lx2a;
+    new-instance v0, Ly6a;
 
-    invoke-virtual {v0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-direct {p0, v1, v2}, Lx2a;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-
-    invoke-virtual {p0}, Lx2a;->getEditText()Landroid/widget/EditText;
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-virtual {v0}, Lone/me/chats/picker/AbstractPickerScreen;->r0()Lzqd;
+    invoke-direct {v0, v1}, Ly6a;-><init>(Landroid/content/Context;)V
 
-    move-result-object v3
+    invoke-virtual {v0}, Ly6a;->getEditText()Landroid/widget/EditText;
 
-    if-eqz v3, :cond_0
+    move-result-object v1
 
-    check-cast v3, Lgrd;
-
-    invoke-virtual {v3}, Lgrd;->getValue()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lmge;
-
-    if-eqz v3, :cond_0
-
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lone/me/chats/picker/AbstractPickerScreen;->v0()Ltyd;
 
     move-result-object v2
 
-    invoke-virtual {v3, v2}, Lmge;->a(Landroid/content/Context;)Ljava/lang/CharSequence;
+    if-eqz v2, :cond_0
+
+    check-cast v2, Lazd;
+
+    invoke-virtual {v2}, Lazd;->getValue()Ljava/lang/Object;
 
     move-result-object v2
+
+    check-cast v2, Lmoe;
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lmoe;->b(Landroid/content/Context;)Ljava/lang/CharSequence;
+
+    move-result-object v2
+
+    goto :goto_0
 
     :cond_0
+    const/4 v2, 0x0
+
+    :goto_0
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setHint(Ljava/lang/CharSequence;)V
 
-    new-instance v1, Lotf;
+    new-instance v1, Lvh4;
 
-    invoke-direct {v1, v0, p0}, Lotf;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v1, p0, v0}, Lvh4;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    invoke-virtual {p0, v1}, Lx2a;->setCallback(Lv2a;)V
+    invoke-virtual {v0, v1}, Ly6a;->setCallback(Lw6a;)V
 
-    invoke-virtual {p0}, Lx2a;->getEditText()Landroid/widget/EditText;
+    invoke-virtual {v0}, Ly6a;->getEditText()Landroid/widget/EditText;
 
     move-result-object v1
 
@@ -93,26 +96,24 @@
 
     const/4 v3, 0x0
 
-    invoke-direct {v2, v3, v0}, Lz2;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v2, v3, p0}, Lz2;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    return-object p0
+    return-object v0
 
     :pswitch_0
-    sget-object p0, Lone/me/chats/picker/AbstractPickerScreen;->w0:[Lk77;
+    sget-object v0, Lone/me/chats/picker/AbstractPickerScreen;->p0:[Lbc7;
 
-    invoke-virtual {v0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
 
-    move-result-object p0
+    move-result-object v0
 
-    invoke-virtual {v0, p0}, Lone/me/chats/picker/AbstractPickerScreen;->o0(Landroid/content/Context;)Lnea;
+    invoke-virtual {p0, v0}, Lone/me/chats/picker/AbstractPickerScreen;->s0(Landroid/content/Context;)Lvia;
 
     move-result-object p0
 
     return-object p0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

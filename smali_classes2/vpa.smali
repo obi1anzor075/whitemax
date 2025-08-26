@@ -1,96 +1,69 @@
-.class public final Lvpa;
-.super Ll5e;
+.class public final synthetic Lvpa;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lkj3;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic a:Lfqa;
 
-.field public final synthetic Y:Lone/me/startconversation/chat/PickChatMembers;
+.field public final synthetic b:Z
+
+.field public final synthetic c:Lorg/webrtc/SessionDescription;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/startconversation/chat/PickChatMembers;)V
+.method public synthetic constructor <init>(Lfqa;ZLorg/webrtc/SessionDescription;)V
     .locals 0
 
-    iput-object p2, p0, Lvpa;->Y:Lone/me/startconversation/chat/PickChatMembers;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p2, 0x2
+    iput-object p1, p0, Lvpa;->a:Lfqa;
 
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-boolean p2, p0, Lvpa;->b:Z
+
+    iput-object p3, p0, Lvpa;->c:Lorg/webrtc/SessionDescription;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final accept(Ljava/lang/Object;)V
+    .locals 3
 
-    check-cast p1, Ljava/util/Set;
+    check-cast p1, Lorg/webrtc/PeerConnection;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget-object p1, p0, Lvpa;->a:Lfqa;
 
-    invoke-virtual {p0, p1, p2}, Lvpa;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    iget-object v0, p1, Lfqa;->r:Landroid/os/Handler;
 
-    move-result-object p0
+    iget-boolean v1, p0, Lvpa;->b:Z
 
-    check-cast p0, Lvpa;
+    iget-object p0, p0, Lvpa;->c:Lorg/webrtc/SessionDescription;
 
-    sget-object p1, Ljue;->a:Ljue;
+    if-eqz v1, :cond_0
 
-    invoke-virtual {p0, p1}, Lvpa;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v1, Lzpa;
 
-    return-object p1
-.end method
+    const/4 v2, 0x0
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
+    invoke-direct {v1, p1, p0, v2}, Lzpa;-><init>(Lfqa;Lorg/webrtc/SessionDescription;I)V
 
-    new-instance v0, Lvpa;
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    iget-object p0, p0, Lvpa;->Y:Lone/me/startconversation/chat/PickChatMembers;
+    return-void
 
-    invoke-direct {v0, p2, p0}, Lvpa;-><init>(Lkotlin/coroutines/Continuation;Lone/me/startconversation/chat/PickChatMembers;)V
+    :cond_0
+    new-instance v1, Lzpa;
 
-    iput-object p1, v0, Lvpa;->X:Ljava/lang/Object;
+    const/4 v2, 0x1
 
-    return-object v0
-.end method
+    invoke-direct {v1, p1, p0, v2}, Lzpa;-><init>(Lfqa;Lorg/webrtc/SessionDescription;I)V
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lvpa;->X:Ljava/lang/Object;
-
-    check-cast p1, Ljava/util/Set;
-
-    invoke-static {p1}, Lo23;->t0(Ljava/util/Collection;)[J
-
-    move-result-object p1
-
-    sget-object v0, Lone/me/startconversation/chat/PickChatMembers;->B0:[Lk77;
-
-    iget-object p0, p0, Lvpa;->Y:Lone/me/startconversation/chat/PickChatMembers;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object v0, Lone/me/startconversation/chat/PickChatMembers;->B0:[Lk77;
-
-    const/4 v1, 0x0
-
-    aget-object v0, v0, v1
-
-    iget-object v0, p0, Lone/me/startconversation/chat/PickChatMembers;->x0:Ljr;
-
-    invoke-virtual {v0, p0, p1}, Ljr;->b(Lone/me/sdk/arch/Widget;Ljava/lang/Object;)V
-
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
+    return-void
 .end method

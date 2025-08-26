@@ -548,7 +548,7 @@
 
     if-nez p0, :cond_1
 
-    move v1, v2
+    return v2
 
     :cond_1
     return v1
@@ -567,12 +567,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -598,7 +597,9 @@
 
     if-nez p0, :cond_1
 
-    const/4 v2, 0x1
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_1
     return v2

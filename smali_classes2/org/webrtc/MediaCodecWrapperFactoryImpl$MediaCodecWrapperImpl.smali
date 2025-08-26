@@ -197,21 +197,11 @@
 .end method
 
 .method public queueInputBuffer(IIIJI)V
-    .locals 7
+    .locals 0
 
-    iget-object v0, p0, Lorg/webrtc/MediaCodecWrapperFactoryImpl$MediaCodecWrapperImpl;->mediaCodec:Landroid/media/MediaCodec;
+    iget-object p0, p0, Lorg/webrtc/MediaCodecWrapperFactoryImpl$MediaCodecWrapperImpl;->mediaCodec:Landroid/media/MediaCodec;
 
-    move v1, p1
-
-    move v2, p2
-
-    move v3, p3
-
-    move-wide v4, p4
-
-    move v6, p6
-
-    invoke-virtual/range {v0 .. v6}, Landroid/media/MediaCodec;->queueInputBuffer(IIIJI)V
+    invoke-virtual/range {p0 .. p6}, Landroid/media/MediaCodec;->queueInputBuffer(IIIJI)V
 
     return-void
 .end method

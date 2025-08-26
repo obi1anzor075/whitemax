@@ -2,248 +2,89 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lrj5;
-
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Li26;
+.field public final b:Landroid/util/SparseBooleanArray;
 
-.field public final synthetic c:Ll7c;
+.field public c:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Ll5e;Ll7c;I)V
+.method public constructor <init>(I)V
     .locals 0
 
-    iput p3, p0, Ldm5;->a:I
+    iput p1, p0, Ldm5;->a:I
 
-    check-cast p1, Li26;
-
-    iput-object p1, p0, Ldm5;->b:Li26;
-
-    iput-object p2, p0, Ldm5;->c:Ll7c;
+    packed-switch p1, :pswitch_data_0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    new-instance p1, Landroid/util/SparseBooleanArray;
+
+    invoke-direct {p1}, Landroid/util/SparseBooleanArray;-><init>()V
+
+    iput-object p1, p0, Ldm5;->b:Landroid/util/SparseBooleanArray;
+
     return-void
+
+    :pswitch_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance p1, Landroid/util/SparseBooleanArray;
+
+    invoke-direct {p1}, Landroid/util/SparseBooleanArray;-><init>()V
+
+    iput-object p1, p0, Ldm5;->b:Landroid/util/SparseBooleanArray;
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 4
+.method public final a(I)V
+    .locals 2
 
     iget v0, p0, Ldm5;->a:I
 
     packed-switch v0, :pswitch_data_0
 
-    instance-of v0, p2, Lgm5;
+    iget-boolean v0, p0, Ldm5;->c:Z
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x1
 
-    move-object v0, p2
+    xor-int/2addr v0, v1
 
-    check-cast v0, Lgm5;
+    invoke-static {v0}, Lu27;->j(Z)V
 
-    iget v1, v0, Lgm5;->Y:I
+    iget-object p0, p0, Ldm5;->b:Landroid/util/SparseBooleanArray;
 
-    const/high16 v2, -0x80000000
+    invoke-virtual {p0, p1, v1}, Landroid/util/SparseBooleanArray;->append(IZ)V
 
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_0
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Lgm5;->Y:I
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lgm5;
-
-    invoke-direct {v0, p0, p2}, Lgm5;-><init>(Ldm5;Lkotlin/coroutines/Continuation;)V
-
-    :goto_0
-    iget-object p2, v0, Lgm5;->X:Ljava/lang/Object;
-
-    sget-object v1, Lpu3;->a:Lpu3;
-
-    iget v2, v0, Lgm5;->Y:I
-
-    const/4 v3, 0x1
-
-    if-eqz v2, :cond_2
-
-    if-ne v2, v3, :cond_1
-
-    iget-object p1, v0, Lgm5;->w0:Ljava/lang/Object;
-
-    iget-object p0, v0, Lgm5;->o:Ldm5;
-
-    invoke-static {p2}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_2
-    invoke-static {p2}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iput-object p0, v0, Lgm5;->o:Ldm5;
-
-    iput-object p1, v0, Lgm5;->w0:Ljava/lang/Object;
-
-    iput v3, v0, Lgm5;->Y:I
-
-    iget-object p2, p0, Ldm5;->b:Li26;
-
-    invoke-interface {p2, p1, v0}, Li26;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    if-ne p2, v1, :cond_3
-
-    goto :goto_2
-
-    :cond_3
-    :goto_1
-    check-cast p2, Ljava/lang/Boolean;
-
-    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p2
-
-    if-nez p2, :cond_4
-
-    sget-object v1, Ljue;->a:Ljue;
-
-    :goto_2
-    return-object v1
-
-    :cond_4
-    iget-object p2, p0, Ldm5;->c:Ll7c;
-
-    iput-object p1, p2, Ll7c;->a:Ljava/lang/Object;
-
-    new-instance p1, Lkotlinx/coroutines/flow/internal/AbortFlowException;
-
-    invoke-direct {p1, p0}, Lkotlinx/coroutines/flow/internal/AbortFlowException;-><init>(Ljava/lang/Object;)V
-
-    throw p1
+    return-void
 
     :pswitch_0
-    instance-of v0, p2, Lcm5;
+    iget-boolean v0, p0, Ldm5;->c:Z
 
-    if-eqz v0, :cond_5
+    const/4 v1, 0x1
 
-    move-object v0, p2
+    xor-int/2addr v0, v1
 
-    check-cast v0, Lcm5;
+    invoke-static {v0}, Lq46;->f(Z)V
 
-    iget v1, v0, Lcm5;->Y:I
+    iget-object p0, p0, Ldm5;->b:Landroid/util/SparseBooleanArray;
 
-    const/high16 v2, -0x80000000
+    invoke-virtual {p0, p1, v1}, Landroid/util/SparseBooleanArray;->append(IZ)V
 
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_5
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Lcm5;->Y:I
-
-    goto :goto_3
-
-    :cond_5
-    new-instance v0, Lcm5;
-
-    invoke-direct {v0, p0, p2}, Lcm5;-><init>(Ldm5;Lkotlin/coroutines/Continuation;)V
-
-    :goto_3
-    iget-object p2, v0, Lcm5;->X:Ljava/lang/Object;
-
-    sget-object v1, Lpu3;->a:Lpu3;
-
-    iget v2, v0, Lcm5;->Y:I
-
-    const/4 v3, 0x1
-
-    if-eqz v2, :cond_7
-
-    if-ne v2, v3, :cond_6
-
-    iget-object p1, v0, Lcm5;->w0:Ljava/lang/Object;
-
-    iget-object p0, v0, Lcm5;->o:Ldm5;
-
-    invoke-static {p2}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto :goto_4
-
-    :cond_6
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_7
-    invoke-static {p2}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iput-object p0, v0, Lcm5;->o:Ldm5;
-
-    iput-object p1, v0, Lcm5;->w0:Ljava/lang/Object;
-
-    iput v3, v0, Lcm5;->Y:I
-
-    iget-object p2, p0, Ldm5;->b:Li26;
-
-    invoke-interface {p2, p1, v0}, Li26;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    if-ne p2, v1, :cond_8
-
-    goto :goto_5
-
-    :cond_8
-    :goto_4
-    check-cast p2, Ljava/lang/Boolean;
-
-    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p2
-
-    if-nez p2, :cond_9
-
-    sget-object v1, Ljue;->a:Ljue;
-
-    :goto_5
-    return-object v1
-
-    :cond_9
-    iget-object p2, p0, Ldm5;->c:Ll7c;
-
-    iput-object p1, p2, Ll7c;->a:Ljava/lang/Object;
-
-    new-instance p1, Lkotlinx/coroutines/flow/internal/AbortFlowException;
-
-    invoke-direct {p1, p0}, Lkotlinx/coroutines/flow/internal/AbortFlowException;-><init>(Ljava/lang/Object;)V
-
-    throw p1
+    return-void
 
     nop
 
@@ -251,4 +92,98 @@
     .packed-switch 0x0
         :pswitch_0
     .end packed-switch
+.end method
+
+.method public b(Lfm5;)V
+    .locals 2
+
+    const/4 v0, 0x0
+
+    :goto_0
+    iget-object v1, p1, Lfm5;->a:Landroid/util/SparseBooleanArray;
+
+    invoke-virtual {v1}, Landroid/util/SparseBooleanArray;->size()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_0
+
+    invoke-virtual {p1, v0}, Lfm5;->b(I)I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Ldm5;->a(I)V
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public varargs c([I)V
+    .locals 3
+
+    array-length v0, p1
+
+    const/4 v1, 0x0
+
+    :goto_0
+    if-ge v1, v0, :cond_0
+
+    aget v2, p1, v1
+
+    invoke-virtual {p0, v2}, Ldm5;->a(I)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public d()Lem5;
+    .locals 2
+
+    iget-boolean v0, p0, Ldm5;->c:Z
+
+    const/4 v1, 0x1
+
+    xor-int/2addr v0, v1
+
+    invoke-static {v0}, Lq46;->f(Z)V
+
+    iput-boolean v1, p0, Ldm5;->c:Z
+
+    new-instance v0, Lem5;
+
+    iget-object p0, p0, Ldm5;->b:Landroid/util/SparseBooleanArray;
+
+    invoke-direct {v0, p0}, Lem5;-><init>(Landroid/util/SparseBooleanArray;)V
+
+    return-object v0
+.end method
+
+.method public e()Lfm5;
+    .locals 2
+
+    iget-boolean v0, p0, Ldm5;->c:Z
+
+    const/4 v1, 0x1
+
+    xor-int/2addr v0, v1
+
+    invoke-static {v0}, Lu27;->j(Z)V
+
+    iput-boolean v1, p0, Ldm5;->c:Z
+
+    new-instance v0, Lfm5;
+
+    iget-object p0, p0, Ldm5;->b:Landroid/util/SparseBooleanArray;
+
+    invoke-direct {v0, p0}, Lfm5;-><init>(Landroid/util/SparseBooleanArray;)V
+
+    return-object v0
 .end method

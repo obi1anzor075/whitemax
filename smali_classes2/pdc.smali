@@ -3,142 +3,262 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/concurrent/Callable;
+.implements Lc36;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Liv6;
 
-.field public final synthetic b:Ludc;
+.field public final b:Ljava/lang/String;
+
+.field public c:Lz26;
+
+.field public d:Lg0;
+
+.field public e:Lg0;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ludc;I)V
+.method public constructor <init>(Liv6;)V
     .locals 0
 
-    iput p2, p0, Lpdc;->a:I
-
-    iput-object p1, p0, Lpdc;->b:Ludc;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lpdc;->a:Liv6;
+
+    const-class p1, Lpdc;
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lpdc;->b:Ljava/lang/String;
+
+    sget-object p1, Lz26;->d:Lz26;
+
+    iput-object p1, p0, Lpdc;->c:Lz26;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final call()Ljava/lang/Object;
+.method public final a()Z
+    .locals 0
+
+    iget-object p0, p0, Lpdc;->c:Lz26;
+
+    iget-object p0, p0, Lz26;->a:Lief;
+
+    if-eqz p0, :cond_0
+
+    invoke-interface {p0}, Lief;->b()Ljy;
+
+    move-result-object p0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    if-eqz p0, :cond_1
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_1
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final b()Lz26;
+    .locals 0
+
+    iget-object p0, p0, Lpdc;->c:Lz26;
+
+    return-object p0
+.end method
+
+.method public final c(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 5
+
+    iget-object v0, p0, Lpdc;->e:Lg0;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lg0;->a()Z
+
+    :cond_0
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lpdc;->e:Lg0;
+
+    iget-object v1, p0, Lpdc;->c:Lz26;
+
+    iget-object v1, v1, Lz26;->a:Lief;
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v1}, Lief;->b()Ljy;
+
+    move-result-object v2
+
+    goto :goto_0
+
+    :cond_1
+    move-object v2, v0
+
+    :goto_0
+    if-eqz v1, :cond_3
+
+    if-nez v2, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    new-instance v3, Lqy1;
+
+    invoke-static {p3}, Lwx7;->E(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p3
+
+    const/4 v4, 0x1
+
+    invoke-direct {v3, v4, p3}, Lqy1;-><init>(ILkotlin/coroutines/Continuation;)V
+
+    invoke-virtual {v3}, Lqy1;->o()V
+
+    iget-object p3, v2, Ljy;->Y:Ljava/lang/Object;
+
+    check-cast p3, Ljava/lang/String;
+
+    invoke-static {p3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object p3
+
+    invoke-static {p3}, Lwv6;->d(Landroid/net/Uri;)Lwv6;
+
+    move-result-object p3
+
+    sget-object v2, Lbp4;->c:Lbp4;
+
+    iput-object v2, p3, Lwv6;->n:Lbp4;
+
+    new-instance v2, Lk36;
+
+    invoke-direct {v2, v1, p1, p2}, Lk36;-><init>(Lief;J)V
+
+    iput-object v2, p3, Lwv6;->k:Lc4b;
+
+    iget-object p1, p0, Lpdc;->a:Liv6;
+
+    invoke-virtual {p3}, Lwv6;->a()Lvv6;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2, v0}, Liv6;->a(Lvv6;Ljava/lang/Object;)Lg0;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lpdc;->e:Lg0;
+
+    new-instance p2, Lbv6;
+
+    invoke-direct {p2, v3, p1, p0}, Lbv6;-><init>(Lqy1;Lg0;Lpdc;)V
+
+    sget-object p0, Lnq1;->a:Lnq1;
+
+    invoke-virtual {p1, p2, p0}, Lg0;->m(Lq34;Ljava/util/concurrent/Executor;)V
+
+    invoke-virtual {v3}, Lqy1;->m()Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_3
+    :goto_1
+    iget-object p0, p0, Lpdc;->b:Ljava/lang/String;
+
+    const-string p1, "Video collage is null"
+
+    invoke-static {p0, p1, v0}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-object v0
+.end method
+
+.method public final prepare()V
     .locals 3
 
-    iget v0, p0, Lpdc;->a:I
+    iget-object v0, p0, Lpdc;->c:Lz26;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v0, v0, Lz26;->a:Lief;
 
-    iget-object p0, p0, Lpdc;->b:Ludc;
+    iget-object v1, p0, Lpdc;->b:Ljava/lang/String;
 
-    iget-object v0, p0, Ludc;->h:Ltdc;
+    const/4 v2, 0x0
 
-    iget-object p0, p0, Ludc;->a:Laec;
+    if-nez v0, :cond_0
 
-    invoke-virtual {v0}, Lv2;->f()Lyz5;
+    const-string p0, "You should call init before prepare!"
 
-    move-result-object v1
+    invoke-static {v1, p0, v2}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :try_start_0
-    invoke-virtual {p0}, Laec;->c()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    return-void
 
-    :try_start_1
-    invoke-virtual {v1}, Lyz5;->n()I
+    :cond_0
+    invoke-interface {v0}, Lief;->b()Ljy;
 
-    invoke-virtual {p0}, Laec;->r()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    move-result-object v0
 
-    :try_start_2
-    invoke-virtual {p0}, Laec;->l()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    if-nez v0, :cond_1
 
-    invoke-virtual {v0, v1}, Lv2;->u(Lyz5;)V
+    const-string p0, "Video collage is null"
 
-    sget-object p0, Ljue;->a:Ljue;
+    invoke-static {v1, p0, v2}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    return-object p0
+    return-void
 
-    :catchall_0
-    move-exception v2
+    :cond_1
+    iget-object v0, v0, Ljy;->Y:Ljava/lang/Object;
 
-    :try_start_3
-    invoke-virtual {p0}, Laec;->l()V
+    check-cast v0, Ljava/lang/String;
 
-    throw v2
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-    :catchall_1
-    move-exception p0
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Lv2;->u(Lyz5;)V
+    invoke-static {v0}, Lwv6;->d(Landroid/net/Uri;)Lwv6;
 
-    throw p0
+    move-result-object v0
 
-    :pswitch_0
-    iget-object p0, p0, Lpdc;->b:Ludc;
+    sget-object v1, Lbp4;->c:Lbp4;
 
-    iget-object v0, p0, Ludc;->d:Lyv8;
+    iput-object v1, v0, Lwv6;->n:Lbp4;
 
-    iget-object p0, p0, Ludc;->a:Laec;
+    iget-object v1, p0, Lpdc;->d:Lg0;
 
-    invoke-virtual {v0}, Lv2;->f()Lyz5;
+    if-eqz v1, :cond_2
 
-    move-result-object v1
+    invoke-virtual {v1}, Lg0;->a()Z
 
-    :try_start_4
-    invoke-virtual {p0}, Laec;->c()V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_3
+    :cond_2
+    iput-object v2, p0, Lpdc;->d:Lg0;
 
-    :try_start_5
-    invoke-virtual {v1}, Lyz5;->n()I
+    iget-object v1, p0, Lpdc;->a:Liv6;
 
-    invoke-virtual {p0}, Laec;->r()V
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_2
+    invoke-virtual {v0}, Lwv6;->a()Lvv6;
 
-    :try_start_6
-    invoke-virtual {p0}, Laec;->l()V
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_3
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Lv2;->u(Lyz5;)V
+    invoke-virtual {v1, v0, v2}, Liv6;->e(Lvv6;Lf99;)Lg0;
 
-    sget-object p0, Ljue;->a:Ljue;
+    move-result-object v0
 
-    return-object p0
+    iput-object v0, p0, Lpdc;->d:Lg0;
 
-    :catchall_2
-    move-exception v2
-
-    :try_start_7
-    invoke-virtual {p0}, Laec;->l()V
-
-    throw v2
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_3
-
-    :catchall_3
-    move-exception p0
-
-    invoke-virtual {v0, v1}, Lv2;->u(Lyz5;)V
-
-    throw p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

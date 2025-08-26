@@ -1,11 +1,19 @@
-.class public interface abstract Licf;
+.class public abstract Licf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a(I)Lzg9;
-.end method
+# static fields
+.field public static final a:I
 
-.method public abstract b(Lzg9;)Lhcf;
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    sput v0, Licf;->a:I
+
+    return-void
 .end method

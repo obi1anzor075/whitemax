@@ -1,14 +1,25 @@
-.class public interface abstract Liae;
+.class public final Liae;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # virtual methods
-.method public abstract c(Llbe;)V
-.end method
+.method public final serializer()Lcc7;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcc7;"
+        }
+    .end annotation
 
-.method public abstract d(Luae;)V
-.end method
+    sget-object p0, Ljae;->a:Ljava/lang/Object;
 
-.method public abstract f()J
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lcc7;
+
+    return-object p0
 .end method

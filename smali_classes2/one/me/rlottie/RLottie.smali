@@ -22,7 +22,7 @@
         "()V",
         "Lone/me/rlottie/RLottie$Config;",
         "config",
-        "Ljue;",
+        "Le5f;",
         "init",
         "(Lone/me/rlottie/RLottie$Config;)V",
         "checkNativeLibraryLoad$rlottie_release",
@@ -32,9 +32,9 @@
         "()Lone/me/rlottie/RLottie$Config;",
         "setConfig",
         "getConfig$annotations",
-        "Lgg9;",
+        "Lzk9;",
         "getLogger",
-        "()Lgg9;",
+        "()Lzk9;",
         "getLogger$annotations",
         "logger",
         "WorkQueue",
@@ -47,6 +47,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -98,14 +99,14 @@
     return-void
 .end method
 
-.method public static final getLogger()Lgg9;
+.method public static final getLogger()Lzk9;
     .locals 1
 
     invoke-static {}, Lone/me/rlottie/RLottie;->getConfig()Lone/me/rlottie/RLottie$Config;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lone/me/rlottie/RLottie$Config;->getLogger()Lgg9;
+    invoke-virtual {v0}, Lone/me/rlottie/RLottie$Config;->getLogger()Lzk9;
 
     move-result-object v0
 
@@ -150,7 +151,7 @@
     :try_end_0
     .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-void
 
     :catch_0
     sget-object p0, Lone/me/rlottie/NativeLibraryLoader;->Companion:Lone/me/rlottie/NativeLibraryLoader$Companion;
@@ -161,6 +162,5 @@
 
     invoke-interface {p0}, Lone/me/rlottie/NativeLibraryLoader;->load()V
 
-    :goto_0
     return-void
 .end method

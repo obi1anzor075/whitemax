@@ -1,235 +1,215 @@
 .class public final Lhw8;
-.super Lhd7;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final p:Z
+.field public final a:Ljava/lang/Object;
+
+.field public final b:Lfw8;
+
+.field public final c:Lbw8;
+
+.field public final d:J
 
 
 # direct methods
-.method public constructor <init>(ILandroid/content/Context;Z)V
+.method public constructor <init>(Ljava/util/List;Lfw8;Lbw8;J)V
     .locals 0
 
-    invoke-direct {p0, p2}, Lhd7;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p3, p0, Lhw8;->p:Z
+    iput-object p1, p0, Lhw8;->a:Ljava/lang/Object;
 
-    if-ltz p1, :cond_0
+    iput-object p2, p0, Lhw8;->b:Lfw8;
 
-    iput p1, p0, Lhd7;->a:I
+    iput-object p3, p0, Lhw8;->c:Lbw8;
 
-    :cond_0
+    iput-wide p4, p0, Lhw8;->d:J
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final j(Landroid/view/View;Ll34;)V
-    .locals 7
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
-    invoke-virtual {p0}, Lhd7;->h()I
-
-    move-result v5
-
-    iget-object v0, p0, Lhd7;->c:Landroidx/recyclerview/widget/a;
-
-    const/4 v6, 0x0
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v0}, Landroidx/recyclerview/widget/a;->f()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v1
-
-    check-cast v1, Ln6c;
-
-    invoke-static {p1}, Landroidx/recyclerview/widget/a;->F(Landroid/view/View;)I
-
-    move-result v2
-
-    iget v3, v1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
-
-    sub-int/2addr v2, v3
-
-    invoke-static {p1}, Landroidx/recyclerview/widget/a;->z(Landroid/view/View;)I
-
-    move-result p1
-
-    iget v1, v1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
-
-    add-int/2addr p1, v1
-
-    invoke-virtual {v0}, Landroidx/recyclerview/widget/a;->L()I
-
-    move-result v3
-
-    iget v1, v0, Landroidx/recyclerview/widget/a;->o:I
-
-    invoke-virtual {v0}, Landroidx/recyclerview/widget/a;->I()I
-
-    move-result v0
-
-    sub-int v4, v1, v0
-
-    move-object v0, p0
-
-    move v1, v2
-
-    move v2, p1
-
-    invoke-virtual/range {v0 .. v5}, Lhw8;->l(IIIII)I
-
-    move-result p1
+    if-ne p0, p1, :cond_0
 
     goto :goto_1
 
-    :cond_1
-    :goto_0
-    move p1, v6
+    :cond_0
+    instance-of v0, p1, Lhw8;
 
-    :goto_1
-    invoke-virtual {p0, p1}, Lhd7;->e(I)I
-
-    move-result v0
-
-    if-lez v0, :cond_3
-
-    neg-int p1, p1
-
-    const/16 v1, 0x12c
-
-    if-le v0, v1, :cond_2
-
-    move v0, v1
-
-    :cond_2
-    iget-object p0, p0, Lhd7;->i:Landroid/view/animation/DecelerateInterpolator;
-
-    invoke-virtual {p2, v6, p1, v0, p0}, Ll34;->e(IIILandroid/view/animation/Interpolator;)V
-
-    :cond_3
-    return-void
-.end method
-
-.method public final l(IIIII)I
-    .locals 6
-
-    const/4 v0, -0x1
-
-    if-eq p5, v0, :cond_4
-
-    iget-boolean v0, p0, Lhw8;->p:Z
-
-    if-eqz p5, :cond_1
-
-    const/4 p0, 0x1
-
-    if-ne p5, p0, :cond_0
-
-    sub-int/2addr p4, p2
-
-    sub-int/2addr p2, p1
-
-    sub-int p0, p4, p2
-
-    if-ge p0, p3, :cond_5
-
-    if-nez v0, :cond_5
-
-    sub-int p4, p3, p1
+    if-nez v0, :cond_1
 
     goto :goto_0
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "snap preference should be one of the constants defined in SmoothScroller, starting with SNAP_"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
     :cond_1
+    check-cast p1, Lhw8;
+
+    iget-object v0, p0, Lhw8;->a:Ljava/lang/Object;
+
+    iget-object v1, p1, Lhw8;->a:Ljava/lang/Object;
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
     if-nez v0, :cond_2
 
-    const/4 v5, -0x1
-
-    move-object v0, p0
-
-    move v1, p1
-
-    move v2, p2
-
-    move v3, p3
-
-    move v4, p4
-
-    invoke-virtual/range {v0 .. v5}, Lhw8;->l(IIIII)I
-
-    move-result p5
-
-    if-lez p5, :cond_2
-
-    return p5
+    goto :goto_0
 
     :cond_2
-    const/4 v5, 0x1
+    iget-object v0, p0, Lhw8;->b:Lfw8;
 
-    move-object v0, p0
+    iget-object v1, p1, Lhw8;->b:Lfw8;
 
-    move v1, p1
+    invoke-static {v0, v1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move v2, p2
+    move-result v0
 
-    move v3, p3
+    if-nez v0, :cond_3
 
-    move v4, p4
-
-    invoke-virtual/range {v0 .. v5}, Lhw8;->l(IIIII)I
-
-    move-result p0
-
-    if-gez p0, :cond_3
-
-    return p0
+    goto :goto_0
 
     :cond_3
-    const/4 p4, 0x0
+    iget-object v0, p0, Lhw8;->c:Lbw8;
+
+    iget-object v1, p1, Lhw8;->c:Lbw8;
+
+    invoke-static {v0, v1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
 
     goto :goto_0
 
     :cond_4
-    sub-int/2addr p3, p1
+    iget-wide v0, p0, Lhw8;->d:J
 
-    const/16 p0, 0x1e
+    iget-wide p0, p1, Lhw8;->d:J
 
-    int-to-float p0, p0
+    cmp-long p0, v0, p0
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    if-eqz p0, :cond_5
 
-    move-result-object p1
+    :goto_0
+    const/4 p0, 0x0
 
-    invoke-virtual {p1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object p1
-
-    iget p1, p1, Landroid/util/DisplayMetrics;->density:F
-
-    invoke-static {p0, p1, p3}, Lme4;->c(FFI)I
-
-    move-result p4
+    return p0
 
     :cond_5
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    iget-object v0, p0, Lhw8;->a:Ljava/lang/Object;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lhw8;->b:Lfw8;
+
+    if-nez v2, :cond_0
+
+    move v2, v1
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v2}, Lfw8;->hashCode()I
+
+    move-result v2
+
     :goto_0
-    return p4
+    add-int/2addr v0, v2
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v2, p0, Lhw8;->c:Lbw8;
+
+    if-nez v2, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {v2}, Lbw8;->hashCode()I
+
+    move-result v1
+
+    :goto_1
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-wide v1, p0, Lhw8;->d:J
+
+    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "MessageReactionsDetailedData(reactionEntries="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lhw8;->a:Ljava/lang/Object;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", reactionsInfo="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lhw8;->b:Lfw8;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", yourReactionEntry="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lhw8;->c:Lbw8;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", markerForNextQuery="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lhw8;->d:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

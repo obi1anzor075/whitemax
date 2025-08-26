@@ -29,11 +29,12 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # virtual methods
-.method public abstract getContext()Lhu3;
+.method public abstract getContext()Lhx3;
 .end method
 
 .method public abstract resumeWith(Ljava/lang/Object;)V

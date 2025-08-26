@@ -39,16 +39,16 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lx54;)V
+.method public synthetic constructor <init>(Ll94;)V
     .locals 0
 
-    .line 2
+    .line 1
     invoke-direct {p0}, Lru/ok/android/externcalls/sdk/feature/roles/FeatureRoles$Companion;-><init>()V
 
     return-void
@@ -61,7 +61,7 @@
 
     new-instance p0, Lru/ok/android/externcalls/sdk/feature/roles/FeatureRoles$EnabledForRoles;
 
-    sget-object v0, Lqw4;->a:Lqw4;
+    sget-object v0, Lpz4;->a:Lpz4;
 
     invoke-direct {p0, v0}, Lru/ok/android/externcalls/sdk/feature/roles/FeatureRoles$EnabledForRoles;-><init>(Ljava/util/Set;)V
 

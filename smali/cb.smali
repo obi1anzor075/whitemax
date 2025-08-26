@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lkb;
+.implements Leb;
 
 
 # instance fields
@@ -71,17 +71,13 @@
 .method public final toString()Ljava/lang/String;
     .locals 2
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "DisableAllRaiseHandsOnce(isSuccess="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-boolean p0, p0, Lcb;->a:Z
+    const-string v0, "DisableScreenRecord(isRemoved="
 
     const-string v1, ")"
 
-    invoke-static {v0, p0, v1}, Lhr1;->j(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+    iget-boolean p0, p0, Lcb;->a:Z
+
+    invoke-static {v0, v1, p0}, Lzge;->p(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
 
     move-result-object p0
 

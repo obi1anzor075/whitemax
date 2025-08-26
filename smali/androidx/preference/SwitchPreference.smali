@@ -7,17 +7,17 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
 
-    sget v0, Lulb;->switchPreferenceStyle:I
+    sget v0, Lgqb;->switchPreferenceStyle:I
 
     const v1, 0x101036d
 
-    invoke-static {v0, v1, p1}, Lhwf;->e(IILandroid/content/Context;)I
+    invoke-static {v0, v1, p1}, Ltk9;->n(IILandroid/content/Context;)I
 
     move-result v0
 
     invoke-direct {p0, p1, p2, v0}, Landroidx/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    sget-object p0, Lrvb;->SwitchPreference:[I
+    sget-object p0, Ln0c;->SwitchPreference:[I
 
     const/4 v1, 0x0
 
@@ -25,15 +25,9 @@
 
     move-result-object p0
 
-    sget p1, Lrvb;->SwitchPreference_summaryOn:I
+    sget p1, Ln0c;->SwitchPreference_summaryOn:I
 
-    sget p2, Lrvb;->SwitchPreference_android_summaryOn:I
-
-    invoke-static {p0, p1, p2}, Lhwf;->h(Landroid/content/res/TypedArray;II)Ljava/lang/String;
-
-    sget p1, Lrvb;->SwitchPreference_summaryOff:I
-
-    sget p2, Lrvb;->SwitchPreference_android_summaryOff:I
+    sget p2, Ln0c;->SwitchPreference_android_summaryOn:I
 
     invoke-virtual {p0, p1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -44,9 +38,9 @@
     invoke-virtual {p0, p2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     :cond_0
-    sget p1, Lrvb;->SwitchPreference_switchTextOn:I
+    sget p1, Ln0c;->SwitchPreference_summaryOff:I
 
-    sget p2, Lrvb;->SwitchPreference_android_switchTextOn:I
+    sget p2, Ln0c;->SwitchPreference_android_summaryOff:I
 
     invoke-virtual {p0, p1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -57,9 +51,9 @@
     invoke-virtual {p0, p2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     :cond_1
-    sget p1, Lrvb;->SwitchPreference_switchTextOff:I
+    sget p1, Ln0c;->SwitchPreference_switchTextOn:I
 
-    sget p2, Lrvb;->SwitchPreference_android_switchTextOff:I
+    sget p2, Ln0c;->SwitchPreference_android_switchTextOn:I
 
     invoke-virtual {p0, p1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
@@ -70,9 +64,22 @@
     invoke-virtual {p0, p2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     :cond_2
-    sget p1, Lrvb;->SwitchPreference_disableDependentsState:I
+    sget p1, Ln0c;->SwitchPreference_switchTextOff:I
 
-    sget p2, Lrvb;->SwitchPreference_android_disableDependentsState:I
+    sget p2, Ln0c;->SwitchPreference_android_switchTextOff:I
+
+    invoke-virtual {p0, p1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    if-nez p1, :cond_3
+
+    invoke-virtual {p0, p2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+
+    :cond_3
+    sget p1, Ln0c;->SwitchPreference_disableDependentsState:I
+
+    sget p2, Ln0c;->SwitchPreference_android_disableDependentsState:I
 
     invoke-virtual {p0, p2, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 

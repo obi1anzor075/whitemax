@@ -1,49 +1,145 @@
 .class public final Lg08;
-.super Ler3;
+.super Le16;
 .source "SourceFile"
 
 
+# static fields
+.field public static final X:Ljava/lang/Object;
+
+
 # instance fields
-.field public X:I
+.field public final c:Ljava/lang/Object;
 
-.field public final synthetic Y:Lsc5;
-
-.field public synthetic o:Ljava/lang/Object;
+.field public final o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lsc5;Lkotlin/coroutines/Continuation;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lg08;->X:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lpse;Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    iput-object p1, p0, Lg08;->Y:Lsc5;
+    invoke-direct {p0, p1}, Le16;-><init>(Lpse;)V
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Lg08;->c:Ljava/lang/Object;
+
+    iput-object p3, p0, Lg08;->o:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final b(Ljava/lang/Object;)I
     .locals 1
 
-    iput-object p1, p0, Lg08;->o:Ljava/lang/Object;
+    sget-object v0, Lg08;->X:Ljava/lang/Object;
 
-    iget p1, p0, Lg08;->X:I
+    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    const/high16 v0, -0x80000000
+    move-result v0
 
-    or-int/2addr p1, v0
+    if-eqz v0, :cond_0
 
-    iput p1, p0, Lg08;->X:I
+    iget-object v0, p0, Lg08;->o:Ljava/lang/Object;
 
-    iget-object p1, p0, Lg08;->Y:Lsc5;
+    if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
+    move-object p1, v0
 
-    invoke-virtual {p1, v0, p0}, Lsc5;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    :cond_0
+    iget-object p0, p0, Le16;->b:Lpse;
 
-    move-result-object p0
+    invoke-virtual {p0, p1}, Lpse;->b(Ljava/lang/Object;)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final f(ILkse;Z)Lkse;
+    .locals 1
+
+    iget-object v0, p0, Le16;->b:Lpse;
+
+    invoke-virtual {v0, p1, p2, p3}, Lpse;->f(ILkse;Z)Lkse;
+
+    iget-object p1, p2, Lkse;->b:Ljava/lang/Object;
+
+    iget-object p0, p0, Lg08;->o:Ljava/lang/Object;
+
+    invoke-static {p1, p0}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    if-eqz p3, :cond_0
+
+    sget-object p0, Lg08;->X:Ljava/lang/Object;
+
+    iput-object p0, p2, Lkse;->b:Ljava/lang/Object;
+
+    :cond_0
+    return-object p2
+.end method
+
+.method public final l(I)Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Le16;->b:Lpse;
+
+    invoke-virtual {v0, p1}, Lpse;->l(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    iget-object p0, p0, Lg08;->o:Ljava/lang/Object;
+
+    invoke-static {p1, p0}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    sget-object p0, Lg08;->X:Ljava/lang/Object;
 
     return-object p0
+
+    :cond_0
+    return-object p1
+.end method
+
+.method public final m(ILnse;J)Lnse;
+    .locals 1
+
+    iget-object v0, p0, Le16;->b:Lpse;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lpse;->m(ILnse;J)Lnse;
+
+    iget-object p1, p2, Lnse;->a:Ljava/lang/Object;
+
+    iget-object p0, p0, Lg08;->c:Ljava/lang/Object;
+
+    invoke-static {p1, p0}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    sget-object p0, Lnse;->y0:Ljava/lang/Object;
+
+    iput-object p0, p2, Lnse;->a:Ljava/lang/Object;
+
+    :cond_0
+    return-object p2
 .end method

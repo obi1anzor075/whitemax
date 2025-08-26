@@ -109,58 +109,58 @@
 .method private chooseStabilizationMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .locals 9
 
-    iget-object v0, p0, Lorg/webrtc/Camera2Session$CaptureSessionCallback;->this$0:Lorg/webrtc/Camera2Session;
+    const/4 v0, 0x0
 
-    invoke-static {v0}, Lorg/webrtc/Camera2Session;->b(Lorg/webrtc/Camera2Session;)Landroid/hardware/camera2/CameraCharacteristics;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object v1
 
-    sget-object v1, Landroid/hardware/camera2/CameraCharacteristics;->LENS_INFO_AVAILABLE_OPTICAL_STABILIZATION:Landroid/hardware/camera2/CameraCharacteristics$Key;
-
-    invoke-virtual {v0, v1}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [I
-
-    const-string v1, "Camera2Session"
-
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
-    const/4 v4, 0x1
+    iget-object v4, p0, Lorg/webrtc/Camera2Session$CaptureSessionCallback;->this$0:Lorg/webrtc/Camera2Session;
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v4}, Lorg/webrtc/Camera2Session;->b(Lorg/webrtc/Camera2Session;)Landroid/hardware/camera2/CameraCharacteristics;
 
-    move-result-object v5
+    move-result-object v4
 
-    if-eqz v0, :cond_1
+    sget-object v5, Landroid/hardware/camera2/CameraCharacteristics;->LENS_INFO_AVAILABLE_OPTICAL_STABILIZATION:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
-    array-length v6, v0
+    invoke-virtual {v4, v5}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
 
-    move v7, v2
+    move-result-object v4
+
+    check-cast v4, [I
+
+    const-string v5, "Camera2Session"
+
+    if-eqz v4, :cond_1
+
+    array-length v6, v4
+
+    move v7, v0
 
     :goto_0
     if-ge v7, v6, :cond_1
 
-    aget v8, v0, v7
+    aget v8, v4, v7
 
-    if-ne v8, v4, :cond_0
+    if-ne v8, v2, :cond_0
 
     sget-object p0, Landroid/hardware/camera2/CaptureRequest;->LENS_OPTICAL_STABILIZATION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    invoke-virtual {p1, p0, v5}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    invoke-virtual {p1, p0, v3}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
     sget-object p0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_VIDEO_STABILIZATION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    invoke-virtual {p1, p0, v3}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    invoke-virtual {p1, p0, v1}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
     const-string p0, "Using optical stabilization."
 
-    invoke-static {v1, p0}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v5, p0}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 
@@ -176,9 +176,9 @@
 
     move-result-object p0
 
-    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_AVAILABLE_VIDEO_STABILIZATION_MODES:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    sget-object v4, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_AVAILABLE_VIDEO_STABILIZATION_MODES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
-    invoke-virtual {p0, v0}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+    invoke-virtual {p0, v4}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -186,38 +186,38 @@
 
     if-eqz p0, :cond_3
 
-    array-length v0, p0
+    array-length v4, p0
 
     :goto_1
-    if-ge v2, v0, :cond_3
+    if-ge v0, v4, :cond_3
 
-    aget v6, p0, v2
+    aget v6, p0, v0
 
-    if-ne v6, v4, :cond_2
+    if-ne v6, v2, :cond_2
 
     sget-object p0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_VIDEO_STABILIZATION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    invoke-virtual {p1, p0, v5}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    invoke-virtual {p1, p0, v3}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
     sget-object p0, Landroid/hardware/camera2/CaptureRequest;->LENS_OPTICAL_STABILIZATION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    invoke-virtual {p1, p0, v3}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    invoke-virtual {p1, p0, v1}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
     const-string p0, "Using video stabilization."
 
-    invoke-static {v1, p0}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v5, p0}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 
     :cond_2
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
     :cond_3
     const-string p0, "Stabilization not available."
 
-    invoke-static {v1, p0}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v5, p0}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -367,28 +367,28 @@
 
     invoke-static {v0}, Lorg/webrtc/Camera2Session;->u(Lorg/webrtc/Camera2Session;)V
 
-    const-string v0, "Camera2Session"
+    const-string v0, "Camera capture session configured."
 
-    const-string v1, "Camera capture session configured."
+    const-string v1, "Camera2Session"
 
-    invoke-static {v0, v1}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v1, p0, Lorg/webrtc/Camera2Session$CaptureSessionCallback;->this$0:Lorg/webrtc/Camera2Session;
+    iget-object v0, p0, Lorg/webrtc/Camera2Session$CaptureSessionCallback;->this$0:Lorg/webrtc/Camera2Session;
 
-    invoke-static {v1, p1}, Lorg/webrtc/Camera2Session;->q(Lorg/webrtc/Camera2Session;Landroid/hardware/camera2/CameraCaptureSession;)V
+    invoke-static {v0, p1}, Lorg/webrtc/Camera2Session;->q(Lorg/webrtc/Camera2Session;Landroid/hardware/camera2/CameraCaptureSession;)V
 
     :try_start_0
-    iget-object v1, p0, Lorg/webrtc/Camera2Session$CaptureSessionCallback;->this$0:Lorg/webrtc/Camera2Session;
+    iget-object v0, p0, Lorg/webrtc/Camera2Session$CaptureSessionCallback;->this$0:Lorg/webrtc/Camera2Session;
 
-    invoke-static {v1}, Lorg/webrtc/Camera2Session;->c(Lorg/webrtc/Camera2Session;)Landroid/hardware/camera2/CameraDevice;
+    invoke-static {v0}, Lorg/webrtc/Camera2Session;->c(Lorg/webrtc/Camera2Session;)Landroid/hardware/camera2/CameraDevice;
 
-    move-result-object v1
+    move-result-object v0
 
     const/4 v2, 0x3
 
-    invoke-virtual {v1, v2}, Landroid/hardware/camera2/CameraDevice;->createCaptureRequest(I)Landroid/hardware/camera2/CaptureRequest$Builder;
+    invoke-virtual {v0, v2}, Landroid/hardware/camera2/CameraDevice;->createCaptureRequest(I)Landroid/hardware/camera2/CaptureRequest$Builder;
 
-    move-result-object v1
+    move-result-object v0
 
     sget-object v2, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_TARGET_FPS_RANGE:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -440,7 +440,7 @@
 
     invoke-direct {v3, v4, v5}, Landroid/util/Range;-><init>(Ljava/lang/Comparable;Ljava/lang/Comparable;)V
 
-    invoke-virtual {v1, v2, v3}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    invoke-virtual {v0, v2, v3}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
     sget-object v2, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -450,17 +450,17 @@
 
     move-result-object v3
 
-    invoke-virtual {v1, v2, v3}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    invoke-virtual {v0, v2, v3}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
     sget-object v2, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_LOCK:Landroid/hardware/camera2/CaptureRequest$Key;
 
     sget-object v3, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    invoke-virtual {v1, v2, v3}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    invoke-virtual {v0, v2, v3}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    invoke-direct {p0, v1}, Lorg/webrtc/Camera2Session$CaptureSessionCallback;->chooseStabilizationMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-direct {p0, v0}, Lorg/webrtc/Camera2Session$CaptureSessionCallback;->chooseStabilizationMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    invoke-direct {p0, v1}, Lorg/webrtc/Camera2Session$CaptureSessionCallback;->chooseFocusMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-direct {p0, v0}, Lorg/webrtc/Camera2Session$CaptureSessionCallback;->chooseFocusMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     iget-object v2, p0, Lorg/webrtc/Camera2Session$CaptureSessionCallback;->this$0:Lorg/webrtc/Camera2Session;
 
@@ -468,11 +468,11 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroid/hardware/camera2/CaptureRequest$Builder;->addTarget(Landroid/view/Surface;)V
+    invoke-virtual {v0, v2}, Landroid/hardware/camera2/CaptureRequest$Builder;->addTarget(Landroid/view/Surface;)V
 
-    invoke-virtual {v1}, Landroid/hardware/camera2/CaptureRequest$Builder;->build()Landroid/hardware/camera2/CaptureRequest;
+    invoke-virtual {v0}, Landroid/hardware/camera2/CaptureRequest$Builder;->build()Landroid/hardware/camera2/CaptureRequest;
 
-    move-result-object v1
+    move-result-object v0
 
     new-instance v2, Lorg/webrtc/Camera2Session$CameraCaptureCallback;
 
@@ -486,7 +486,7 @@
 
     move-result-object v3
 
-    invoke-virtual {p1, v1, v2, v3}, Landroid/hardware/camera2/CameraCaptureSession;->setRepeatingRequest(Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;Landroid/os/Handler;)I
+    invoke-virtual {p1, v0, v2, v3}, Landroid/hardware/camera2/CameraCaptureSession;->setRepeatingRequest(Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;Landroid/os/Handler;)I
     :try_end_0
     .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -496,17 +496,17 @@
 
     move-result-object p1
 
-    new-instance v1, Lorg/webrtc/a;
+    new-instance v0, Lorg/webrtc/a;
 
     const/4 v2, 0x1
 
-    invoke-direct {v1, v2, p0}, Lorg/webrtc/a;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v0, v2, p0}, Lorg/webrtc/a;-><init>(ILjava/lang/Object;)V
 
-    invoke-virtual {p1, v1}, Lorg/webrtc/SurfaceTextureHelper;->startListening(Lorg/webrtc/VideoSink;)V
+    invoke-virtual {p1, v0}, Lorg/webrtc/SurfaceTextureHelper;->startListening(Lorg/webrtc/VideoSink;)V
 
     const-string p1, "Camera device successfully started."
 
-    invoke-static {v0, p1}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, p1}, Lorg/webrtc/Logging;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object p1, p0, Lorg/webrtc/Camera2Session$CaptureSessionCallback;->this$0:Lorg/webrtc/Camera2Session;
 

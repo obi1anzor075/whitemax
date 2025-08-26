@@ -70,18 +70,13 @@
 
     return-void
 
-    :catchall_0
-    move-exception p0
-
-    goto :goto_0
-
     .line 20
     :cond_0
     iget-object v0, p0, Lcom/my/tracker/obfuscated/d;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
     monitor-enter v0
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 21
     :try_start_1
@@ -94,7 +89,7 @@
     .line 22
     monitor-exit v0
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 23
     :try_start_2
@@ -102,26 +97,28 @@
 
     invoke-static {p0}, Lcom/my/tracker/obfuscated/y0;->a(Ljava/lang/String;)V
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     return-void
 
-    :catchall_1
+    :catchall_0
     move-exception p0
 
     .line 24
     :try_start_3
     monitor-exit v0
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     :try_start_4
     throw p0
     :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+
+    :catchall_1
+    move-exception p0
 
     .line 25
-    :goto_0
     const-string v0, "AppSetIdProvider: attempt to block thread retrieving app set id finished unsuccessfully"
 
     invoke-static {v0, p0}, Lcom/my/tracker/obfuscated/y0;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
@@ -129,11 +126,11 @@
     return-void
 .end method
 
-.method private a(ILcom/my/tracker/obfuscated/p0;Ljava/lang/String;Lnp;)V
+.method private a(ILcom/my/tracker/obfuscated/p0;Ljava/lang/String;Lcp;)V
     .locals 1
 
     .line 2
-    iget v0, p4, Lnp;->b:I
+    iget v0, p4, Lcp;->b:I
 
     if-eq v0, p1, :cond_0
 
@@ -142,7 +139,7 @@
 
     .line 4
     :cond_0
-    iget-object p1, p4, Lnp;->a:Ljava/lang/String;
+    iget-object p1, p4, Lcp;->a:Ljava/lang/String;
 
     .line 5
     invoke-virtual {p1, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -225,17 +222,17 @@
     throw p0
 .end method
 
-.method public static synthetic a(Lcom/my/tracker/obfuscated/d;ILcom/my/tracker/obfuscated/p0;Ljava/lang/String;Lnp;)V
+.method public static synthetic a(Lcom/my/tracker/obfuscated/d;ILcom/my/tracker/obfuscated/p0;Ljava/lang/String;Lcp;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/my/tracker/obfuscated/d;->a(ILcom/my/tracker/obfuscated/p0;Ljava/lang/String;Lnp;)V
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/my/tracker/obfuscated/d;->a(ILcom/my/tracker/obfuscated/p0;Ljava/lang/String;Lcp;)V
 
     return-void
 .end method
 
 .method private b(Landroid/content/Context;)V
-    .locals 8
+    .locals 5
 
     invoke-static {p1}, Lcom/my/tracker/obfuscated/p0;->a(Landroid/content/Context;)Lcom/my/tracker/obfuscated/p0;
 
@@ -289,101 +286,23 @@
 
     :cond_2
     :try_start_0
-    new-instance v4, Lv2b;
+    new-instance v4, Lj6c;
 
-    invoke-direct {v4, p1}, Lv2b;-><init>(Landroid/content/Context;)V
+    invoke-direct {v4, p1}, Lj6c;-><init>(Landroid/content/Context;)V
 
-    iget-object p1, v4, Lv2b;->b:Ljava/lang/Object;
-
-    check-cast p1, Lm5g;
-
-    iget-object v5, p1, Lm5g;->A0:Lna6;
-
-    iget-object v6, p1, Lm5g;->z0:Landroid/content/Context;
-
-    const v7, 0xcaf1200
-
-    invoke-virtual {v5, v6, v7}, Lna6;->b(Landroid/content/Context;I)I
-
-    move-result v5
-
-    if-nez v5, :cond_3
-
-    new-instance v5, Lbq0;
-
-    invoke-direct {v5}, Lbq0;-><init>()V
-
-    sget-object v6, Lfja;->b:Lib5;
-
-    filled-new-array {v6}, [Lib5;
-
-    move-result-object v6
-
-    iput-object v6, v5, Lbq0;->e:Ljava/lang/Object;
-
-    new-instance v6, Lj06;
-
-    invoke-direct {v6}, Ljava/lang/Object;-><init>()V
-
-    iput-object v6, v5, Lbq0;->d:Ljava/lang/Object;
-
-    const/4 v6, 0x0
-
-    iput-boolean v6, v5, Lbq0;->c:Z
-
-    const/16 v7, 0x6bd1
-
-    iput v7, v5, Lbq0;->b:I
-
-    invoke-virtual {v5}, Lbq0;->a()Lszf;
-
-    move-result-object v5
-
-    invoke-virtual {p1, v6, v5}, Lla6;->c(ILms6;)Ln6g;
+    invoke-virtual {v4}, Lj6c;->i()Lmlg;
 
     move-result-object p1
 
-    goto :goto_0
+    new-instance v4, Lad0;
 
-    :cond_3
-    new-instance p1, Lcom/google/android/gms/common/api/ApiException;
+    invoke-direct {v4, p0, v2, v0, v1}, Lad0;-><init>(Ljava/lang/Object;ILjava/lang/Object;Ljava/lang/Object;)V
 
-    new-instance v5, Lcom/google/android/gms/common/api/Status;
-
-    const/4 v6, 0x0
-
-    const/16 v7, 0x11
-
-    invoke-direct {v5, v7, v6, v6, v6}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;Landroid/app/PendingIntent;Lnd3;)V
-
-    invoke-direct {p1, v5}, Lcom/google/android/gms/common/api/ApiException;-><init>(Lcom/google/android/gms/common/api/Status;)V
-
-    invoke-static {p1}, Lgwf;->n(Ljava/lang/Exception;)Ln6g;
-
-    move-result-object p1
-
-    :goto_0
-    new-instance v5, Lk2e;
-
-    invoke-direct {v5, v4}, Lk2e;-><init>(Ljava/lang/Object;)V
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object v4, Lcee;->a:Lc27;
-
-    invoke-virtual {p1, v4, v5}, Ln6g;->k(Ljava/util/concurrent/Executor;Lcr3;)Ln6g;
-
-    move-result-object p1
-
-    new-instance v4, Lic0;
-
-    invoke-direct {v4, p0, v2, v0, v1}, Lic0;-><init>(Ljava/lang/Object;ILjava/lang/Object;Ljava/lang/Object;)V
-
-    invoke-virtual {p1, v3, v4}, Ln6g;->d(Ljava/util/concurrent/Executor;Ltx9;)Ln6g;
+    invoke-virtual {p1, v3, v4}, Lmlg;->d(Ljava/util/concurrent/Executor;Lo1a;)Lmlg;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_1
+    goto :goto_0
 
     :catchall_0
     move-exception p1
@@ -392,7 +311,7 @@
 
     invoke-static {v0, p1}, Lcom/my/tracker/obfuscated/y0;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_1
+    :goto_0
     invoke-direct {p0}, Lcom/my/tracker/obfuscated/d;->a()V
 
     return-void

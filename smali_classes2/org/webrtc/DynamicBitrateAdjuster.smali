@@ -81,7 +81,7 @@
 
     if-nez v4, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
     iget v4, p0, Lorg/webrtc/BaseBitrateAdjuster;->targetBitrateBps:I
@@ -144,6 +144,7 @@
 
     if-gtz p1, :cond_1
 
+    :goto_0
     return-void
 
     :cond_1
@@ -175,7 +176,7 @@
 
     iput-wide v0, p0, Lorg/webrtc/DynamicBitrateAdjuster;->deviationBytes:D
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_2
     neg-double v8, v0
@@ -209,7 +210,7 @@
     iput-wide v8, p0, Lorg/webrtc/DynamicBitrateAdjuster;->deviationBytes:D
 
     :cond_3
-    :goto_0
+    :goto_1
     iput-wide v2, p0, Lorg/webrtc/DynamicBitrateAdjuster;->timeSinceLastAdjustmentMs:D
 
     return-void

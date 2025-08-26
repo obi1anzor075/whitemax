@@ -1,319 +1,149 @@
-.class public abstract Lfi5;
-.super Ltia;
+.class public final Lfi5;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final c:Landroidx/fragment/app/c;
+.field public final a:F
 
-.field public d:Lhd0;
+.field public final b:I
 
-.field public final e:Lkr7;
+.field public c:F
 
-.field public final f:Z
+.field public d:F
 
-.field public final g:Ljava/util/HashMap;
+.field public final e:F
 
-.field public h:Landroidx/fragment/app/a;
+.field public f:F
+
+.field public g:F
+
+.field public h:F
+
+.field public i:F
+
+.field public j:I
+
+.field public k:F
+
+.field public final l:Landroid/view/animation/AccelerateDecelerateInterpolator;
+
+.field public final synthetic m:Lgi5;
 
 
 # direct methods
-.method public constructor <init>(Lvx5;)V
-    .locals 4
+.method public constructor <init>(Lgi5;)V
+    .locals 2
 
-    invoke-direct {p0}, Ltia;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lfi5;->m:Lgi5;
 
-    iput-object v0, p0, Lfi5;->d:Lhd0;
+    const/high16 p1, 0x40000000    # 2.0f
 
-    new-instance v1, Lkr7;
+    float-to-double v0, p1
 
-    const/16 v2, 0xa
+    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
 
-    invoke-direct {v1, v2}, Lkr7;-><init>(I)V
+    move-result-wide v0
 
-    iput-object v1, p0, Lfi5;->e:Lkr7;
+    double-to-float p1, v0
 
-    new-instance v1, Llhd;
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    const/16 v2, 0x13
+    div-float p1, v0, p1
 
-    const/4 v3, 0x0
+    iput p1, p0, Lfi5;->a:F
 
-    invoke-direct {v1, v2, v3}, Llhd;-><init>(IB)V
+    const/4 p1, 0x2
 
-    new-instance v1, Ljava/util/HashMap;
+    int-to-float p1, p1
 
-    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
 
-    iput-object v1, p0, Lfi5;->g:Ljava/util/HashMap;
+    move-result-object v1
 
-    iput-object v0, p0, Lfi5;->h:Landroidx/fragment/app/a;
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    iput-object p1, p0, Lfi5;->c:Landroidx/fragment/app/c;
+    move-result-object v1
 
-    const/4 p1, 0x0
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
 
-    iput-boolean p1, p0, Lfi5;->f:Z
+    mul-float/2addr v1, p1
+
+    invoke-static {v1}, Lkhg;->x(F)I
+
+    move-result v1
+
+    iput v1, p0, Lfi5;->b:I
+
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr p1, v1
+
+    invoke-static {p1}, Lkhg;->x(F)I
+
+    move-result p1
+
+    int-to-float p1, p1
+
+    iput p1, p0, Lfi5;->e:F
+
+    iput v0, p0, Lfi5;->i:F
+
+    const/4 p1, -0x1
+
+    iput p1, p0, Lfi5;->j:I
+
+    new-instance p1, Landroid/view/animation/AccelerateDecelerateInterpolator;
+
+    invoke-direct {p1}, Landroid/view/animation/AccelerateDecelerateInterpolator;-><init>()V
+
+    iput-object p1, p0, Lfi5;->l:Landroid/view/animation/AccelerateDecelerateInterpolator;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroid/view/ViewGroup;ILandroidx/fragment/app/a;)V
-    .locals 3
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    iget-object p1, p0, Lfi5;->d:Lhd0;
+    iget v0, p0, Lfi5;->f:F
 
-    iget-object p2, p0, Lfi5;->c:Landroidx/fragment/app/c;
-
-    if-nez p1, :cond_0
-
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance p1, Lhd0;
-
-    invoke-direct {p1, p2}, Lhd0;-><init>(Landroidx/fragment/app/c;)V
-
-    iput-object p1, p0, Lfi5;->d:Lhd0;
-
-    :cond_0
-    iget-object p1, p0, Lfi5;->g:Ljava/util/HashMap;
-
-    invoke-virtual {p1}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    iget v1, p0, Lfi5;->g:F
 
-    move-result-object v0
-
-    :cond_1
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v1
 
-    check-cast v1, Ljava/lang/String;
+    iget p0, p0, Lfi5;->h:F
 
-    invoke-virtual {p1, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroidx/fragment/app/a;
-
-    invoke-virtual {p3, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    goto :goto_0
-
-    :cond_2
-    const/4 v1, 0x0
-
-    :goto_0
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_4
-
-    invoke-virtual {p3}, Landroidx/fragment/app/a;->p0()Z
-
-    move-result v0
-
-    iget-object v2, p0, Lfi5;->e:Lkr7;
-
-    if-nez v0, :cond_3
-
-    invoke-virtual {v2, v1}, Lkr7;->e(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_3
-    new-instance v0, Lei5;
-
-    invoke-virtual {p2, p3}, Landroidx/fragment/app/c;->b0(Landroidx/fragment/app/a;)Lfx5;
-
-    move-result-object p2
-
-    invoke-direct {v0, v1, p2}, Lei5;-><init>(Ljava/lang/String;Lfx5;)V
-
-    invoke-virtual {v2, v1, v0}, Lkr7;->d(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :goto_1
-    invoke-virtual {p1, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_4
-    iget-object p0, p0, Lfi5;->d:Lhd0;
-
-    invoke-virtual {p0, p3}, Lhd0;->h(Landroidx/fragment/app/a;)V
-
-    return-void
-.end method
-
-.method public final e(Landroid/os/Parcelable;Ljava/lang/ClassLoader;)V
-    .locals 5
-
-    if-eqz p1, :cond_1
-
-    check-cast p1, Landroid/os/Bundle;
-
-    invoke-virtual {p1, p2}, Landroid/os/Bundle;->setClassLoader(Ljava/lang/ClassLoader;)V
-
-    const-string p2, "states"
-
-    invoke-virtual {p1, p2}, Landroid/os/Bundle;->getParcelableArray(Ljava/lang/String;)[Landroid/os/Parcelable;
-
-    move-result-object p2
-
-    iget-object v0, p0, Lfi5;->g:Ljava/util/HashMap;
-
-    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
-
-    if-eqz p2, :cond_0
-
-    array-length v0, p2
-
-    const/4 v1, 0x0
-
-    :goto_0
-    if-ge v1, v0, :cond_0
-
-    aget-object v2, p2, v1
-
-    check-cast v2, Lei5;
-
-    iget-object v3, p0, Lfi5;->e:Lkr7;
-
-    iget-object v4, v2, Lei5;->a:Ljava/lang/String;
-
-    invoke-virtual {v3, v4, v2}, Lkr7;->d(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0, p1}, Lfi5;->i(Landroid/os/Bundle;)V
-
-    :cond_1
-    return-void
-.end method
-
-.method public final f(Landroid/view/ViewGroup;)V
-    .locals 2
-
-    invoke-virtual {p1}, Landroid/view/View;->getId()I
-
-    move-result p1
-
-    const/4 v0, -0x1
-
-    if-eq p1, v0, :cond_0
-
-    return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ViewPager with adapter "
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, " requires a view id"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object p0
 
-    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    filled-new-array {v0, v1, p0}, [Ljava/lang/Object;
 
-    throw p1
-.end method
+    move-result-object p0
 
-.method public abstract g(I)Landroidx/fragment/app/a;
-.end method
+    const-string v0, "(%.1f, %.1f, %.1f)"
 
-.method public abstract h(I)Ljava/lang/String;
-.end method
+    invoke-static {v0, p0}, Loaf;->h(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-.method public i(Landroid/os/Bundle;)V
-    .locals 5
+    move-result-object p0
 
-    invoke-virtual {p1}, Landroid/os/BaseBundle;->keySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :catch_0
-    :cond_0
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
-
-    const-string v2, "f"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    :try_start_0
-    iget-object v2, p0, Lfi5;->c:Landroidx/fragment/app/c;
-
-    invoke-virtual {v2, v1, p1}, Landroidx/fragment/app/c;->H(Ljava/lang/String;Landroid/os/Bundle;)Landroidx/fragment/app/a;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_0
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v2, v3}, Landroidx/fragment/app/a;->a1(Z)V
-
-    iget-object v3, p0, Lfi5;->g:Ljava/util/HashMap;
-
-    const/4 v4, 0x1
-
-    invoke-virtual {v1, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v3, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :cond_1
-    return-void
+    return-object p0
 .end method

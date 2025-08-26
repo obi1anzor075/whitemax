@@ -99,7 +99,7 @@
 
     sput-object p1, Lorg/apache/commons/logging/LogFactory;->nullClassLoaderFactory:Lorg/apache/commons/logging/LogFactory;
 
-    goto :goto_0
+    return-void
 
     :cond_0
     sget-object v0, Lorg/apache/commons/logging/LogFactory;->factories:Ljava/util/Hashtable;
@@ -107,7 +107,6 @@
     invoke-virtual {v0, p0, p1}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_1
-    :goto_0
     return-void
 .end method
 
@@ -621,19 +620,11 @@
 
     move-object v2, v0
 
-    goto :goto_2
+    goto :goto_0
 
     :catch_0
     move-exception v0
 
-    goto :goto_0
-
-    :catch_1
-    move-exception v0
-
-    goto :goto_1
-
-    :goto_0
     :try_start_2
     invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->getTargetException()Ljava/lang/Throwable;
 
@@ -643,7 +634,7 @@
 
     if-eqz v1, :cond_0
 
-    goto :goto_2
+    goto :goto_0
 
     :cond_0
     new-instance v1, Lorg/apache/commons/logging/LogConfigurationException;
@@ -658,7 +649,9 @@
 
     throw v1
 
-    :goto_1
+    :catch_1
+    move-exception v0
+
     new-instance v1, Lorg/apache/commons/logging/LogConfigurationException;
 
     const-string v2, "Unexpected IllegalAccessException"
@@ -676,7 +669,7 @@
 
     move-result-object v2
 
-    :goto_2
+    :goto_0
     return-object v2
 .end method
 
@@ -687,7 +680,7 @@
 
     sget-object p0, Lorg/apache/commons/logging/LogFactory;->nullClassLoaderFactory:Lorg/apache/commons/logging/LogFactory;
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     sget-object v0, Lorg/apache/commons/logging/LogFactory;->factories:Ljava/util/Hashtable;
@@ -698,7 +691,6 @@
 
     check-cast p0, Lorg/apache/commons/logging/LogFactory;
 
-    :goto_0
     return-object p0
 .end method
 
@@ -1001,7 +993,7 @@
 
     const-string v1, "\' found."
 
-    invoke-static {p0, p1, v1}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p1, v1}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -1212,14 +1204,9 @@
     goto :goto_1
 
     :catch_0
-    move-exception v0
-
-    goto :goto_2
-
-    :catch_1
     move-exception v5
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_5
     :goto_1
@@ -1227,7 +1214,7 @@
 
     move-result-object v8
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_6
     invoke-static {}, Lorg/apache/commons/logging/LogFactory;->isDiagnosticsEnabled()Z
@@ -1240,12 +1227,14 @@
 
     invoke-static {v5}, Lorg/apache/commons/logging/LogFactory;->logDiagnostic(Ljava/lang/String;)V
     :try_end_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
 
-    goto :goto_4
+    goto :goto_3
 
-    :goto_2
+    :catch_1
+    move-exception v0
+
     invoke-static {}, Lorg/apache/commons/logging/LogFactory;->isDiagnosticsEnabled()Z
 
     move-result v1
@@ -1281,7 +1270,7 @@
     :cond_7
     throw v0
 
-    :goto_3
+    :goto_2
     invoke-static {}, Lorg/apache/commons/logging/LogFactory;->isDiagnosticsEnabled()Z
 
     move-result v6
@@ -1311,7 +1300,7 @@
     invoke-static {v5}, Lorg/apache/commons/logging/LogFactory;->logDiagnostic(Ljava/lang/String;)V
 
     :cond_8
-    :goto_4
+    :goto_3
     if-nez v8, :cond_c
 
     invoke-static {}, Lorg/apache/commons/logging/LogFactory;->isDiagnosticsEnabled()Z
@@ -1350,12 +1339,12 @@
     .catch Ljava/io/UnsupportedEncodingException; {:try_start_2 .. :try_end_2} :catch_3
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
-    goto :goto_5
+    goto :goto_4
 
     :catch_2
     move-exception v3
 
-    goto :goto_6
+    goto :goto_5
 
     :catch_3
     :try_start_3
@@ -1367,7 +1356,7 @@
 
     invoke-direct {v6, v11}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
-    :goto_5
+    :goto_4
     invoke-virtual {v6}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
     move-result-object v5
@@ -1409,7 +1398,7 @@
 
     move-result-object v8
 
-    goto :goto_7
+    goto :goto_6
 
     :cond_b
     invoke-static {}, Lorg/apache/commons/logging/LogFactory;->isDiagnosticsEnabled()Z
@@ -1424,9 +1413,9 @@
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
 
-    goto :goto_7
+    goto :goto_6
 
-    :goto_6
+    :goto_5
     invoke-static {}, Lorg/apache/commons/logging/LogFactory;->isDiagnosticsEnabled()Z
 
     move-result v4
@@ -1456,7 +1445,7 @@
     invoke-static {v0}, Lorg/apache/commons/logging/LogFactory;->logDiagnostic(Ljava/lang/String;)V
 
     :cond_c
-    :goto_7
+    :goto_6
     if-nez v8, :cond_11
 
     if-eqz v9, :cond_10
@@ -1488,7 +1477,7 @@
 
     const-string v2, "\'"
 
-    invoke-static {v1, v0, v2}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0, v2}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1499,7 +1488,7 @@
 
     move-result-object v8
 
-    goto :goto_8
+    goto :goto_7
 
     :cond_f
     invoke-static {}, Lorg/apache/commons/logging/LogFactory;->isDiagnosticsEnabled()Z
@@ -1512,7 +1501,7 @@
 
     invoke-static {v0}, Lorg/apache/commons/logging/LogFactory;->logDiagnostic(Ljava/lang/String;)V
 
-    goto :goto_8
+    goto :goto_7
 
     :cond_10
     invoke-static {}, Lorg/apache/commons/logging/LogFactory;->isDiagnosticsEnabled()Z
@@ -1526,7 +1515,7 @@
     invoke-static {v0}, Lorg/apache/commons/logging/LogFactory;->logDiagnostic(Ljava/lang/String;)V
 
     :cond_11
-    :goto_8
+    :goto_7
     if-nez v8, :cond_13
 
     invoke-static {}, Lorg/apache/commons/logging/LogFactory;->isDiagnosticsEnabled()Z
@@ -1559,7 +1548,7 @@
 
     move-result-object v0
 
-    :goto_9
+    :goto_8
     invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
 
     move-result v1
@@ -1578,7 +1567,7 @@
 
     invoke-virtual {v8, v1, v2}, Lorg/apache/commons/logging/LogFactory;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
-    goto :goto_9
+    goto :goto_8
 
     :cond_14
     return-object v8
@@ -1688,7 +1677,7 @@
 
     invoke-static {p0}, Lorg/apache/commons/logging/LogFactory;->logDiagnostic(Ljava/lang/String;)V
 
-    goto/16 :goto_2
+    return v1
 
     :catch_0
     move-exception p0
@@ -1735,7 +1724,7 @@
 
     invoke-static {p0}, Lorg/apache/commons/logging/LogFactory;->logDiagnostic(Ljava/lang/String;)V
 
-    goto :goto_2
+    return v1
 
     :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1762,7 +1751,7 @@
     .catch Ljava/lang/LinkageError; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_2
 
-    goto :goto_2
+    return v1
 
     :catch_2
     const-string p0, "[CUSTOM LOG FACTORY] LogFactory class cannot be loaded by classloader which loaded the custom LogFactory implementation. Is the custom factory in the right classloader?"
@@ -1830,7 +1819,7 @@
 
     if-nez v0, :cond_0
 
-    return-void
+    goto :goto_2
 
     :cond_0
     const-string v1, "STDOUT"
@@ -1905,13 +1894,14 @@
 
     const-string v2, "] "
 
-    invoke-static {v1, v0, v2}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0, v2}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     sput-object v0, Lorg/apache/commons/logging/LogFactory;->diagnosticPrefix:Ljava/lang/String;
 
     :catch_1
+    :goto_2
     return-void
 .end method
 
@@ -1924,12 +1914,11 @@
 
     const/4 v0, 0x1
 
-    goto :goto_0
+    return v0
 
     :cond_0
     const/4 v0, 0x0
 
-    :goto_0
     return v0
 .end method
 
@@ -2011,7 +2000,7 @@
 
     const-string v2, " was loaded via classloader "
 
-    invoke-static {v1, v0, v2}, Lhr1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1, v0, v2}, Lzt1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2031,7 +2020,7 @@
 
     const-string v2, " is "
 
-    invoke-static {v1, v0, v2}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0, v2}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -2083,7 +2072,7 @@
 
     if-nez v0, :cond_0
 
-    return-void
+    goto :goto_1
 
     :cond_0
     if-eqz p1, :cond_1
@@ -2092,7 +2081,7 @@
 
     move-result-object v0
 
-    invoke-static {p0}, Lhr1;->l(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0}, Lzt1;->l(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2132,7 +2121,7 @@
 
     const-string v2, "ClassLoader tree:"
 
-    invoke-static {p0, v2}, Lhr1;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v2}, Lzt1;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -2184,12 +2173,13 @@
     invoke-static {p0}, Lorg/apache/commons/logging/LogFactory;->logDiagnostic(Ljava/lang/String;)V
 
     :cond_4
+    :goto_1
     return-void
 
     :catch_1
     const-string p1, "Security forbids determining the system classloader."
 
-    invoke-static {p0, p1}, Lhr1;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lzt1;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

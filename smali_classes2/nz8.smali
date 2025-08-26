@@ -1,34 +1,26 @@
 .class public final Lnz8;
-.super Ll5e;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Ll66;
 
 
 # instance fields
-.field public X:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic Y:Lzz8;
-
-.field public final synthetic Z:Ljava/lang/String;
-
-.field public final synthetic w0:Lo10;
+.field public final synthetic Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
 
 
 # direct methods
-.method public constructor <init>(Lzz8;Ljava/lang/String;Lo10;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/MessageWriteWidget;)V
     .locals 0
 
-    iput-object p1, p0, Lnz8;->Y:Lzz8;
+    iput-object p2, p0, Lnz8;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
 
-    iput-object p2, p0, Lnz8;->Z:Ljava/lang/String;
+    const/4 p2, 0x2
 
-    iput-object p3, p0, Lnz8;->w0:Lo10;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p4}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2, p1}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -38,93 +30,49 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    check-cast p1, Lou3;
-
     check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {p0, p1, p2}, Lnz8;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0, p1, p2}, Lnz8;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
     check-cast p0, Lnz8;
 
-    sget-object p1, Ljue;->a:Ljue;
+    sget-object p1, Le5f;->a:Le5f;
 
     invoke-virtual {p0, p1}, Lnz8;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object p0
-
-    return-object p0
+    return-object p1
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 2
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    new-instance p1, Lnz8;
+    new-instance v0, Lnz8;
 
-    iget-object v0, p0, Lnz8;->Z:Ljava/lang/String;
+    iget-object p0, p0, Lnz8;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
 
-    iget-object v1, p0, Lnz8;->w0:Lo10;
+    invoke-direct {v0, p2, p0}, Lnz8;-><init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/MessageWriteWidget;)V
 
-    iget-object p0, p0, Lnz8;->Y:Lzz8;
+    iput-object p1, v0, Lnz8;->X:Ljava/lang/Object;
 
-    invoke-direct {p1, p0, v0, v1, p2}, Lnz8;-><init>(Lzz8;Ljava/lang/String;Lo10;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
+    return-object v0
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 0
 
-    sget-object v0, Lpu3;->a:Lpu3;
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    iget v1, p0, Lnz8;->X:I
+    iget-object p1, p0, Lnz8;->X:Ljava/lang/Object;
 
-    const/4 v2, 0x1
+    check-cast p1, Lwx8;
 
-    if-eqz v1, :cond_1
+    iget-object p0, p0, Lnz8;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
 
-    if-ne v1, v2, :cond_0
+    invoke-static {p0, p1}, Lone/me/sdk/messagewrite/MessageWriteWidget;->q0(Lone/me/sdk/messagewrite/MessageWriteWidget;Lwx8;)V
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    sget-object p0, Le5f;->a:Le5f;
 
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lnz8;->Y:Lzz8;
-
-    iget-object p1, p1, Lzz8;->A0:Likc;
-
-    iget-object v1, p0, Lnz8;->w0:Lo10;
-
-    iget-object v1, v1, Lo10;->b:La10;
-
-    iget-boolean v1, v1, La10;->X:Z
-
-    iput v2, p0, Lnz8;->X:I
-
-    iget-object v2, p0, Lnz8;->Z:Ljava/lang/String;
-
-    invoke-virtual {p1, v2, v1, p0}, Likc;->b(Ljava/lang/String;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v0, :cond_2
-
-    return-object v0
-
-    :cond_2
-    :goto_0
-    return-object p1
+    return-object p0
 .end method

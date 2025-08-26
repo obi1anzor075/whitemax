@@ -22,12 +22,12 @@
         "(Lru/ok/android/externcalls/sdk/id/ParticipantId;)Ljava/util/Map;",
         "key",
         "renderers",
-        "Ljue;",
+        "Le5f;",
         "setRenderers",
         "(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;Ljava/util/List;)V",
-        "Ltc1;",
+        "Lee1;",
         "getCallRenderer",
-        "()Ltc1;",
+        "()Lee1;",
         "callRenderer",
         "Lorg/webrtc/EglBase$Context;",
         "getEglBaseContext",
@@ -41,11 +41,12 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # virtual methods
-.method public abstract getCallRenderer()Ltc1;
+.method public abstract getCallRenderer()Lee1;
 .end method
 
 .method public abstract getEglBaseContext()Lorg/webrtc/EglBase$Context;

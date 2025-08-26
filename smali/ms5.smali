@@ -1,193 +1,144 @@
 .class public final Lms5;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Ljava/util/Comparator;
 
 
 # instance fields
-.field public X:I
+.field public final a:Landroid/graphics/Rect;
 
-.field public final synthetic Y:Los5;
+.field public final b:Landroid/graphics/Rect;
 
-.field public final synthetic Z:Lep5;
+.field public final c:Z
+
+.field public final o:Lyo9;
 
 
 # direct methods
-.method public constructor <init>(Los5;Lep5;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method public constructor <init>(ZLyo9;)V
+    .locals 1
 
-    iput-object p1, p0, Lms5;->Y:Los5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lms5;->Z:Lep5;
+    new-instance v0, Landroid/graphics/Rect;
 
-    const/4 p1, 0x2
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    invoke-direct {p0, p1, p3}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object v0, p0, Lms5;->a:Landroid/graphics/Rect;
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object v0, p0, Lms5;->b:Landroid/graphics/Rect;
+
+    iput-boolean p1, p0, Lms5;->c:Z
+
+    iput-object p2, p0, Lms5;->o:Lyo9;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 2
 
-    check-cast p1, Lou3;
+    iget-object v0, p0, Lms5;->o:Lyo9;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {p0, p1, p2}, Lms5;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    check-cast p1, Lk4;
 
-    move-result-object p0
+    iget-object v0, p0, Lms5;->a:Landroid/graphics/Rect;
 
-    check-cast p0, Lms5;
+    invoke-virtual {p1, v0}, Lk4;->f(Landroid/graphics/Rect;)V
 
-    sget-object p1, Ljue;->a:Ljue;
+    check-cast p2, Lk4;
 
-    invoke-virtual {p0, p1}, Lms5;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object p1, p0, Lms5;->b:Landroid/graphics/Rect;
 
-    move-result-object p0
+    invoke-virtual {p2, p1}, Lk4;->f(Landroid/graphics/Rect;)V
 
-    return-object p0
-.end method
+    iget p2, v0, Landroid/graphics/Rect;->top:I
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
+    iget v1, p1, Landroid/graphics/Rect;->top:I
 
-    new-instance p1, Lms5;
+    if-ge p2, v1, :cond_0
 
-    iget-object v0, p0, Lms5;->Y:Los5;
-
-    iget-object p0, p0, Lms5;->Z:Lep5;
-
-    invoke-direct {p1, v0, p0, p2}, Lms5;-><init>(Los5;Lep5;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 7
-
-    sget-object v0, Lpu3;->a:Lpu3;
-
-    iget v1, p0, Lms5;->X:I
-
-    sget-object v2, Ljue;->a:Ljue;
-
-    const/4 v3, 0x1
-
-    if-eqz v1, :cond_1
-
-    if-ne v1, v3, :cond_0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto :goto_2
+    goto :goto_0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    if-le p2, v1, :cond_1
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+    goto :goto_1
 
     :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    iget p2, v0, Landroid/graphics/Rect;->left:I
 
-    iget-object p1, p0, Lms5;->Y:Los5;
+    iget v1, p1, Landroid/graphics/Rect;->left:I
 
-    iget-object v1, p1, Los5;->X:Lgrd;
+    iget-boolean p0, p0, Lms5;->c:Z
 
-    invoke-virtual {v1}, Lgrd;->getValue()Ljava/lang/Object;
+    if-ge p2, v1, :cond_2
 
-    move-result-object v1
+    if-eqz p0, :cond_7
 
-    check-cast v1, Ljava/util/List;
-
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v4
-
-    invoke-interface {v1, v4}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;
-
-    move-result-object v1
+    goto :goto_1
 
     :cond_2
-    invoke-interface {v1}, Ljava/util/ListIterator;->hasPrevious()Z
+    if-le p2, v1, :cond_3
 
-    move-result v4
-
-    if-eqz v4, :cond_3
-
-    invoke-interface {v1}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lxye;
-
-    iget-object v4, v4, Lxye;->b:Lwye;
-
-    sget-object v5, Lwye;->b:Lwye;
-
-    if-ne v4, v5, :cond_2
-
-    invoke-interface {v1}, Ljava/util/ListIterator;->nextIndex()I
-
-    move-result v1
+    if-eqz p0, :cond_8
 
     goto :goto_0
 
     :cond_3
-    const/4 v1, -0x1
+    iget p2, v0, Landroid/graphics/Rect;->bottom:I
 
-    :goto_0
-    add-int/2addr v1, v3
+    iget v1, p1, Landroid/graphics/Rect;->bottom:I
 
-    const v4, 0x3fff7
+    if-ge p2, v1, :cond_4
 
-    iget-object v5, p0, Lms5;->Z:Lep5;
+    goto :goto_0
 
-    const/4 v6, 0x0
-
-    invoke-static {v5, v6, v1, v6, v4}, Lep5;->a(Lep5;Ljava/lang/String;ILjava/util/List;I)Lep5;
-
-    move-result-object v1
-
-    iput v3, p0, Lms5;->X:I
-
-    iget-object p1, p1, Los5;->b:Lv72;
-
-    check-cast p1, Lb92;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v3, Lj82;
-
-    invoke-direct {v3, p1, v1, v6, v6}, Lj82;-><init>(Lb92;Lep5;Ls16;Lkotlin/coroutines/Continuation;)V
-
-    iget-object p1, p1, Lb92;->Y:Lhu3;
-
-    invoke-static {p1, v3, p0}, Lxs7;->U(Lhu3;Li26;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-ne p0, v0, :cond_4
+    :cond_4
+    if-le p2, v1, :cond_5
 
     goto :goto_1
 
-    :cond_4
-    move-object p0, v2
-
-    :goto_1
-    if-ne p0, v0, :cond_5
-
-    return-object v0
-
     :cond_5
-    :goto_2
-    return-object v2
+    iget p2, v0, Landroid/graphics/Rect;->right:I
+
+    iget p1, p1, Landroid/graphics/Rect;->right:I
+
+    if-ge p2, p1, :cond_6
+
+    if-eqz p0, :cond_7
+
+    goto :goto_1
+
+    :cond_6
+    if-le p2, p1, :cond_9
+
+    if-eqz p0, :cond_8
+
+    :cond_7
+    :goto_0
+    const/4 p0, -0x1
+
+    return p0
+
+    :cond_8
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_9
+    const/4 p0, 0x0
+
+    return p0
 .end method

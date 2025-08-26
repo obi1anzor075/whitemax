@@ -1,47 +1,6 @@
-.class public final synthetic Lkr6;
+.class public interface abstract Lkr6;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lpw5;
-
-
-# instance fields
-.field public final synthetic a:Llr6;
-
-.field public final synthetic b:Llr6;
-
-
-# direct methods
-.method public synthetic constructor <init>(Llr6;Llr6;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lkr6;->a:Llr6;
-
-    iput-object p2, p0, Lkr6;->b:Llr6;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Llr6;)V
-    .locals 0
-
-    sget p1, Landroidx/camera/core/ImageProcessingUtil;->a:I
-
-    iget-object p1, p0, Lkr6;->a:Llr6;
-
-    if-eqz p1, :cond_0
-
-    iget-object p0, p0, Lkr6;->b:Llr6;
-
-    if-eqz p0, :cond_0
-
-    invoke-interface {p0}, Ljava/lang/AutoCloseable;->close()V
-
-    :cond_0
-    return-void
-.end method
+.implements Landroid/os/IInterface;

@@ -1,121 +1,63 @@
-.class public final Lvt7;
+.class public abstract synthetic Lvt7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public a:Li22;
+# static fields
+.field public static final synthetic $EnumSwitchMapping$0:[I
 
-.field public b:I
-
-.field public c:Lvo8;
-
-.field public d:Lone/me/messages/list/loader/MessageModel;
-
-.field public e:Lo1b;
-
-.field public f:Ljava/util/List;
+.field public static final synthetic $EnumSwitchMapping$1:[I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    sget-object v0, Lhw4;->a:Lhw4;
-
-    iput-object v0, p0, Lvt7;->f:Ljava/util/List;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Lu16;)Lwt7;
+.method static constructor <clinit>()V
     .locals 3
 
-    invoke-interface {p1, p0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {}, Liq3;->values()[Liq3;
 
-    iget-object p1, p0, Lvt7;->a:Li22;
+    move-result-object v0
 
-    const-string v0, "Required value was null."
+    array-length v0, v0
 
-    if-eqz p1, :cond_3
+    new-array v0, v0, [I
 
-    iget v1, p0, Lvt7;->b:I
+    const/4 v1, 0x1
 
-    iget-object v2, p0, Lvt7;->e:Lo1b;
+    :try_start_0
+    aput v1, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-eqz v2, :cond_2
+    :catch_0
+    sput-object v0, Lvt7;->$EnumSwitchMapping$0:[I
 
-    new-instance v0, Lwt7;
+    invoke-static {}, Ltw8;->values()[Ltw8;
 
-    invoke-direct {v0, p1, v2, v1}, Lwt7;-><init>(Li22;Lo1b;I)V
+    move-result-object v0
 
-    iget-object p1, p0, Lvt7;->c:Lvo8;
+    array-length v0, v0
 
-    if-eqz p1, :cond_0
+    new-array v0, v0, [I
 
-    sget-object v1, Lwt7;->h:[Lk77;
+    :try_start_1
+    sget-object v2, Ltw8;->a:Ljava/util/HashMap;
 
-    const/4 v2, 0x0
+    aput v1, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    aget-object v1, v1, v2
+    :catch_1
+    :try_start_2
+    sget-object v1, Ltw8;->a:Ljava/util/HashMap;
 
-    iget-object v1, v0, Lwt7;->d:Llv1;
+    const/4 v1, 0x2
 
-    iput-object p1, v1, Llv1;->b:Ljava/lang/Object;
+    aput v1, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    :cond_0
-    iget-object p1, p0, Lvt7;->d:Lone/me/messages/list/loader/MessageModel;
+    :catch_2
+    sput-object v0, Lvt7;->$EnumSwitchMapping$1:[I
 
-    if-eqz p1, :cond_1
-
-    sget-object v1, Lwt7;->h:[Lk77;
-
-    const/4 v2, 0x1
-
-    aget-object v1, v1, v2
-
-    iget-object v1, v0, Lwt7;->e:Llv1;
-
-    iput-object p1, v1, Llv1;->b:Ljava/lang/Object;
-
-    :cond_1
-    iget-object p0, p0, Lvt7;->f:Ljava/util/List;
-
-    sget-object p1, Lwt7;->h:[Lk77;
-
-    const/4 v1, 0x3
-
-    aget-object p1, p1, v1
-
-    iget-object p1, v0, Lwt7;->g:Llv1;
-
-    iput-object p0, p1, Llv1;->b:Ljava/lang/Object;
-
-    return-object v0
-
-    :cond_2
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_3
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+    return-void
 .end method

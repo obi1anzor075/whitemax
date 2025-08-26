@@ -1,49 +1,147 @@
 .class public final Lpt2;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lpbc;
 
 
 # instance fields
-.field public X:I
+.field public X:Z
 
-.field public final synthetic Y:Lmt2;
+.field public final a:Landroidx/recyclerview/widget/RecyclerView;
 
-.field public synthetic o:Ljava/lang/Object;
+.field public final b:Lhw2;
+
+.field public final c:Lje7;
+
+.field public o:Z
 
 
 # direct methods
-.method public constructor <init>(Lmt2;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lone/me/sdk/lists/widgets/EndlessRecyclerView2;Lhw2;Lje7;)V
     .locals 0
 
-    iput-object p1, p0, Lpt2;->Y:Lmt2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lpt2;->a:Landroidx/recyclerview/widget/RecyclerView;
+
+    iput-object p2, p0, Lpt2;->b:Lhw2;
+
+    iput-object p3, p0, Lpt2;->c:Lje7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final b(Landroid/view/View;)V
+    .locals 0
 
-    iput-object p1, p0, Lpt2;->o:Ljava/lang/Object;
+    return-void
+.end method
 
-    iget p1, p0, Lpt2;->X:I
+.method public final d(Landroid/view/View;)V
+    .locals 3
 
-    const/high16 v0, -0x80000000
+    iget-object v0, p0, Lpt2;->a:Landroidx/recyclerview/widget/RecyclerView;
 
-    or-int/2addr p1, v0
+    invoke-virtual {v0, p1}, Landroidx/recyclerview/widget/RecyclerView;->I(Landroid/view/View;)Landroid/view/View;
 
-    iput p1, p0, Lpt2;->X:I
+    move-result-object v1
 
-    iget-object p1, p0, Lpt2;->Y:Lmt2;
+    if-nez v1, :cond_0
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0, p0}, Lmt2;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    goto :goto_0
 
-    move-result-object p0
+    :cond_0
+    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->S(Landroid/view/View;)Lccc;
 
-    return-object p0
+    move-result-object v0
+
+    :goto_0
+    instance-of v1, v0, Lx47;
+
+    const/4 v2, 0x1
+
+    if-eqz v1, :cond_2
+
+    iget-boolean v0, p0, Lpt2;->o:Z
+
+    if-eqz v0, :cond_1
+
+    goto :goto_2
+
+    :cond_1
+    iput-boolean v2, p0, Lpt2;->o:Z
+
+    new-instance v0, Lot2;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p1, p0, v1}, Lot2;-><init>(Landroid/view/View;Lpt2;I)V
+
+    invoke-static {p1, v0}, Lija;->a(Landroid/view/View;Ljava/lang/Runnable;)Lija;
+
+    return-void
+
+    :cond_2
+    instance-of v1, v0, Lsa5;
+
+    if-nez v1, :cond_5
+
+    instance-of v1, v0, Loa5;
+
+    if-eqz v1, :cond_3
+
+    goto :goto_1
+
+    :cond_3
+    instance-of v0, v0, Ljr2;
+
+    if-eqz v0, :cond_6
+
+    iget-boolean v0, p0, Lpt2;->X:Z
+
+    if-eqz v0, :cond_4
+
+    goto :goto_2
+
+    :cond_4
+    iput-boolean v2, p0, Lpt2;->X:Z
+
+    new-instance v0, Lot2;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, p1, p0, v1}, Lot2;-><init>(Landroid/view/View;Lpt2;I)V
+
+    invoke-static {p1, v0}, Lija;->a(Landroid/view/View;Ljava/lang/Runnable;)Lija;
+
+    return-void
+
+    :cond_5
+    :goto_1
+    iget-boolean v0, p0, Lpt2;->X:Z
+
+    if-eqz v0, :cond_7
+
+    :cond_6
+    :goto_2
+    return-void
+
+    :cond_7
+    iput-boolean v2, p0, Lpt2;->X:Z
+
+    new-instance v0, Lt76;
+
+    const/4 v1, 0x4
+
+    invoke-direct {v0, p1, v1, p0}, Lt76;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-static {p1, v0}, Lija;->a(Landroid/view/View;Ljava/lang/Runnable;)Lija;
+
+    return-void
 .end method

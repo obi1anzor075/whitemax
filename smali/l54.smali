@@ -1,69 +1,61 @@
-.class public abstract Ll54;
-.super Ljava/lang/Object;
+.class public final Ll54;
+.super Lus;
 .source "SourceFile"
 
 
 # static fields
-.field public static final a:Landroid/util/SparseIntArray;
+.field public static final i:Ll54;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Landroid/util/SparseIntArray;
+    new-instance v0, Ll54;
 
-    const/4 v1, 0x0
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, v1}, Landroid/util/SparseIntArray;-><init>(I)V
-
-    sput-object v0, Ll54;->a:Landroid/util/SparseIntArray;
+    sput-object v0, Ll54;->i:Ll54;
 
     return-void
 .end method
 
-.method public static final a()Lh0b;
-    .locals 5
 
-    new-instance v0, Lh0b;
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
+    const/4 v0, 0x1
 
-    move-result-object v1
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {v1}, Ljava/lang/Runtime;->maxMemory()J
-
-    move-result-wide v1
-
-    const-wide/32 v3, 0x7fffffff
-
-    invoke-static {v1, v2, v3, v4}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v1
-
-    long-to-int v1, v1
-
-    const/high16 v2, 0x1000000
-
-    if-le v1, v2, :cond_0
-
-    div-int/lit8 v1, v1, 0x4
-
-    mul-int/lit8 v1, v1, 0x3
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    div-int/lit8 v1, v1, 0x2
+    instance-of p0, p1, Ll54;
 
-    :goto_0
-    sget-object v2, Ll54;->a:Landroid/util/SparseIntArray;
+    if-nez p0, :cond_1
 
-    const/4 v3, 0x0
+    const/4 p0, 0x0
 
-    const/4 v4, -0x1
+    return p0
 
-    invoke-direct {v0, v3, v1, v2, v4}, Lh0b;-><init>(IILandroid/util/SparseIntArray;I)V
+    :cond_1
+    return v0
+.end method
 
-    return-object v0
+.method public final hashCode()I
+    .locals 0
+
+    const p0, 0x2e75b35f
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "Click"
+
+    return-object p0
 .end method

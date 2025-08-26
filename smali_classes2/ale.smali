@@ -1,49 +1,59 @@
 .class public final Lale;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lble;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final a:Lble;
 
-.field public final synthetic Y:Lcle;
-
-.field public Z:I
-
-.field public o:Lcle;
+.field public final b:Ljava/util/HashMap;
 
 
 # direct methods
-.method public constructor <init>(Lcle;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lble;)V
     .locals 0
 
-    iput-object p1, p0, Lale;->Y:Lcle;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lale;->a:Lble;
+
+    new-instance p1, Ljava/util/HashMap;
+
+    invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
+
+    iput-object p1, p0, Lale;->b:Ljava/util/HashMap;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a(Ljava/lang/String;)Ljava/util/concurrent/ThreadFactory;
+    .locals 2
 
-    iput-object p1, p0, Lale;->X:Ljava/lang/Object;
+    iget-object v0, p0, Lale;->b:Ljava/util/HashMap;
 
-    iget p1, p0, Lale;->Z:I
+    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/high16 v0, -0x80000000
+    move-result-object v1
 
-    or-int/2addr p1, v0
+    check-cast v1, Ljava/util/concurrent/ThreadFactory;
 
-    iput p1, p0, Lale;->Z:I
+    if-nez v1, :cond_0
 
-    iget-object p1, p0, Lale;->Y:Lcle;
+    iget-object p0, p0, Lale;->a:Lble;
 
-    invoke-virtual {p1, p0}, Lcle;->o(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-interface {p0, p1}, Lble;->a(Ljava/lang/String;)Ljava/util/concurrent/ThreadFactory;
 
     move-result-object p0
 
+    invoke-virtual {v0, p1, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     return-object p0
+
+    :cond_0
+    return-object v1
 .end method

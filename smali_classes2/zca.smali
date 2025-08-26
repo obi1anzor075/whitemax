@@ -1,69 +1,61 @@
 .class public final Lzca;
-.super Ler3;
+.super Lcda;
 .source "SourceFile"
 
 
-# instance fields
-.field public X:Ljava/lang/Object;
-
-.field public Y:Ljava/util/Iterator;
-
-.field public synthetic Z:Ljava/lang/Object;
-
-.field public o:Ldda;
-
-.field public final synthetic w0:Ldda;
-
-.field public x0:I
+# static fields
+.field public static final a:Lzca;
 
 
 # direct methods
-.method public constructor <init>(Ldda;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lzca;->w0:Ldda;
+    new-instance v0, Lzca;
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lzca;->a:Lzca;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 10
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    iput-object p1, p0, Lzca;->Z:Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    iget p1, p0, Lzca;->x0:I
+    if-ne p0, p1, :cond_0
 
-    const/high16 v0, -0x80000000
+    return v0
 
-    or-int/2addr p1, v0
+    :cond_0
+    instance-of p0, p1, Lzca;
 
-    iput p1, p0, Lzca;->x0:I
+    if-nez p0, :cond_1
 
-    iget-object v0, p0, Lzca;->w0:Ldda;
+    const/4 p0, 0x0
 
-    const/4 v1, 0x0
+    return p0
 
-    const-wide/16 v2, 0x0
+    :cond_1
+    return v0
+.end method
 
-    const/4 v4, 0x0
+.method public final hashCode()I
+    .locals 0
 
-    const/4 v5, 0x0
+    const p0, 0x4b0cc9f9    # 9226745.0f
 
-    const/4 v6, 0x0
+    return p0
+.end method
 
-    const/4 v7, 0x0
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    const/4 v8, 0x0
-
-    move-object v9, p0
-
-    invoke-virtual/range {v0 .. v9}, Ldda;->g(Lf1c;JLjava/io/File;Lxbc;Lvca;Ljava/io/File;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
+    const-string p0, "Medium"
 
     return-object p0
 .end method

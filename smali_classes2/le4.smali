@@ -1,184 +1,195 @@
 .class public final Lle4;
-.super Ljava/lang/Object;
+.super Lvke;
 .source "SourceFile"
 
-# interfaces
-.implements Lj26;
-.implements Lvc9;
-.implements Lgod;
 
-
-# instance fields
-.field public a:J
+# static fields
+.field public static final e0:Lle4;
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 41
 
-    packed-switch p1, :pswitch_data_0
+    new-instance v0, Lle4;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v1, Ll53;
 
-    const-wide/16 v0, -0x1
+    const-wide v2, 0xff697cffL
 
-    iput-wide v0, p0, Lle4;->a:J
+    long-to-int v2, v2
+
+    const-wide v3, 0xffffffffL
+
+    long-to-int v3, v3
+
+    const-wide v4, 0xff000000L
+
+    long-to-int v5, v4
+
+    const-wide v6, 0xff6988e0L
+
+    long-to-int v6, v6
+
+    const-wide v7, 0xff333344L
+
+    long-to-int v8, v7
+
+    const-wide v9, 0xff5b5b69L
+
+    long-to-int v13, v9
+
+    const-wide v9, 0xfff5f5f5L
+
+    long-to-int v15, v9
+
+    const-wide v9, 0xffff3f3fL
+
+    long-to-int v4, v9
+
+    const-wide v9, 0xfffbc03dL
+
+    long-to-int v7, v9
+
+    const-wide v9, 0xffecececL
+
+    long-to-int v9, v9
+
+    const-wide v10, 0xfff2f2f2L
+
+    long-to-int v10, v10
+
+    const-wide v11, 0xffd7f5bcL
+
+    long-to-int v11, v11
+
+    move-object/from16 v40, v0
+
+    move-object v12, v1
+
+    const-wide v0, 0xffbceb91L
+
+    long-to-int v0, v0
+
+    move/from16 v22, v0
+
+    const-wide v0, 0xff222222L
+
+    long-to-int v0, v0
+
+    move/from16 v23, v0
+
+    const-wide v0, 0xffe8e8e8L
+
+    long-to-int v0, v0
+
+    move/from16 v28, v0
+
+    const-wide v0, 0xffbdbfcdL
+
+    long-to-int v0, v0
+
+    move/from16 v29, v0
+
+    const-wide v0, 0xff999999L
+
+    long-to-int v0, v0
+
+    move/from16 v30, v0
+
+    const-wide v0, 0xff10bc07L
+
+    long-to-int v0, v0
+
+    move/from16 v32, v0
+
+    const-wide v0, 0xff9da4afL
+
+    long-to-int v0, v0
+
+    move/from16 v33, v0
+
+    const-wide v0, 0xff5b5b68L
+
+    long-to-int v0, v0
+
+    move/from16 v37, v0
+
+    const-wide v0, 0xff474757L
+
+    long-to-int v0, v0
+
+    const/16 v39, 0x3e0
+
+    move/from16 v16, v4
+
+    move v4, v3
+
+    move/from16 v17, v7
+
+    move v7, v3
+
+    move/from16 v18, v9
+
+    move v9, v3
+
+    move/from16 v20, v10
+
+    move v10, v8
+
+    move/from16 v21, v11
+
+    move v11, v3
+
+    move-object v1, v12
+
+    move v12, v5
+
+    move v14, v13
+
+    move/from16 v19, v3
+
+    move/from16 v24, v2
+
+    move/from16 v25, v15
+
+    move/from16 v26, v18
+
+    move/from16 v27, v13
+
+    move/from16 v31, v3
+
+    move/from16 v34, v3
+
+    move/from16 v35, v3
+
+    move/from16 v36, v8
+
+    move/from16 v38, v0
+
+    invoke-direct/range {v1 .. v39}, Ll53;-><init>(IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII)V
+
+    sget-object v7, Ldwc;->X:Lcs0;
+
+    sget-object v8, Ldwc;->o:Lcs0;
+
+    const/4 v4, 0x1
+
+    const-string v5, "DEFAULT"
+
+    move-object v6, v1
+
+    const-string v1, "TamTam Default"
+
+    const-string v2, "TamTam Team"
+
+    const/4 v3, 0x0
+
+    move-object/from16 v0, v40
+
+    invoke-direct/range {v0 .. v8}, Lvke;-><init>(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;Ll53;Lcs0;Lcs0;)V
+
+    sput-object v0, Lle4;->e0:Lle4;
 
     return-void
-
-    :pswitch_0
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
-
-    iput-wide v0, p0, Lle4;->a:J
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x4
-        :pswitch_0
-    .end packed-switch
-.end method
-
-
-# virtual methods
-.method public a(J)J
-    .locals 4
-
-    const-wide/16 v0, -0x1
-
-    cmp-long v2, p1, v0
-
-    if-nez v2, :cond_0
-
-    iput-wide v0, p0, Lle4;->a:J
-
-    return-wide v0
-
-    :cond_0
-    iget-wide v2, p0, Lle4;->a:J
-
-    cmp-long v0, v2, v0
-
-    if-eqz v0, :cond_2
-
-    cmp-long v0, p1, v2
-
-    if-gez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    sub-long v0, p1, v2
-
-    iput-wide p1, p0, Lle4;->a:J
-
-    return-wide v0
-
-    :cond_2
-    :goto_0
-    iput-wide p1, p0, Lle4;->a:J
-
-    const-wide/16 p0, 0x0
-
-    return-wide p0
-.end method
-
-.method public apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
-
-    check-cast p1, Lnm4;
-
-    const-string v0, "SELECT * FROM draft_uploads WHERE chat_id = ?"
-
-    const/4 v1, 0x1
-
-    invoke-static {v1, v0}, Lpec;->a(ILjava/lang/String;)Lpec;
-
-    move-result-object v0
-
-    iget-wide v2, p0, Lle4;->a:J
-
-    invoke-virtual {v0, v1, v2, v3}, Lpec;->j(IJ)V
-
-    new-instance p0, Lmm4;
-
-    invoke-direct {p0, p1, v0, v1}, Lmm4;-><init>(Lnm4;Lpec;I)V
-
-    new-instance p1, Lox7;
-
-    invoke-direct {p1, p0}, Lox7;-><init>(Ljava/util/concurrent/Callable;)V
-
-    return-object p1
-.end method
-
-.method public b(I)Lws6;
-    .locals 0
-
-    const/4 p0, 0x2
-
-    if-ne p1, p0, :cond_0
-
-    sget-object p0, Lpz5;->w0:Le8c;
-
-    return-object p0
-
-    :cond_0
-    const/4 p0, 0x1
-
-    if-ne p1, p0, :cond_1
-
-    sget-object p0, Lpz5;->x0:Le8c;
-
-    return-object p0
-
-    :cond_1
-    sget-object p0, Lws6;->b:Lpo5;
-
-    sget-object p0, Le8c;->X:Le8c;
-
-    return-object p0
-.end method
-
-.method public k(Ljava/lang/String;)Lyc9;
-    .locals 3
-
-    :try_start_0
-    new-instance v0, Landroid/media/MediaMuxer;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p1, v1}, Landroid/media/MediaMuxer;-><init>(Ljava/lang/String;I)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    new-instance p1, Lpz5;
-
-    iget-wide v1, p0, Lle4;->a:J
-
-    invoke-direct {p1, v0, v1, v2}, Lpz5;-><init>(Landroid/media/MediaMuxer;J)V
-
-    return-object p1
-
-    :catch_0
-    move-exception p0
-
-    new-instance p1, Landroidx/media3/muxer/Muxer$MuxerException;
-
-    const-string v0, "Error creating muxer"
-
-    invoke-direct {p1, v0, p0}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw p1
-.end method
-
-.method public w()Lfod;
-    .locals 1
-
-    new-instance v0, Lv4b;
-
-    invoke-direct {v0, p0}, Lv4b;-><init>(Lle4;)V
-
-    return-object v0
 .end method

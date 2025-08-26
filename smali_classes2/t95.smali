@@ -1,58 +1,50 @@
-.class public final synthetic Lt95;
+.class public abstract Lt95;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lq3e;
+.implements Lzke;
 
 
 # instance fields
-.field public final synthetic a:Lw95;
+.field public a:Landroid/view/View;
 
-.field public final synthetic b:J
-
-.field public final synthetic c:J
+.field public final b:Ljava/util/LinkedList;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lw95;JJ)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lt95;->a:Lw95;
+    new-instance v0, Ljava/util/LinkedList;
 
-    iput-wide p2, p0, Lt95;->b:J
+    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
-    iput-wide p4, p0, Lt95;->c:J
+    iput-object v0, p0, Lt95;->b:Ljava/util/LinkedList;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final get()Ljava/lang/Object;
-    .locals 8
+.method public final a(I)Lhw4;
+    .locals 3
 
-    iget-object v6, p0, Lt95;->a:Lw95;
+    new-instance v0, Lhw4;
 
-    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v1, Lk25;
 
-    new-instance v7, Lv95;
+    const/4 v2, 0x1
 
-    iget-wide v2, p0, Lt95;->b:J
+    invoke-direct {v1, p1, v2, p0}, Lk25;-><init>(IILjava/lang/Object;)V
 
-    iget-wide v4, p0, Lt95;->c:J
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    move-object v0, v7
+    iput-object p0, v0, Lhw4;->c:Ljava/lang/Object;
 
-    move-object v1, v6
+    iput-object v1, v0, Lhw4;->a:Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v5}, Lv95;-><init>(Lw95;JJ)V
-
-    invoke-virtual {v6, v7}, Lw95;->a(Ljava/util/concurrent/Callable;)Lsid;
-
-    move-result-object p0
-
-    return-object p0
+    return-object v0
 .end method

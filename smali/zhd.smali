@@ -1,14 +1,28 @@
-.class public interface abstract Lzhd;
+.class public abstract Lzhd;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# instance fields
+.field public final a:Landroid/graphics/Matrix;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Landroid/graphics/Matrix;
+
+    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
+
+    iput-object v0, p0, Lzhd;->a:Landroid/graphics/Matrix;
+
+    return-void
+.end method
+
+
 # virtual methods
-.method public abstract a(Ljava/lang/Object;)V
-.end method
-
-.method public abstract d(Lxi4;)V
-.end method
-
-.method public abstract onError(Ljava/lang/Throwable;)V
+.method public abstract a(Landroid/graphics/Matrix;Landroid/graphics/Path;)V
 .end method

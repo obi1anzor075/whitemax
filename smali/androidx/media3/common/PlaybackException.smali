@@ -12,9 +12,9 @@
 
 .field public static final o:Ljava/lang/String;
 
-.field public static final w0:Ljava/lang/String;
+.field public static final o0:Ljava/lang/String;
 
-.field public static final x0:Ljava/lang/String;
+.field public static final p0:Ljava/lang/String;
 
 
 # instance fields
@@ -29,7 +29,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    sget v0, Loze;->a:I
+    sget v0, Lpaf;->a:I
 
     const/4 v0, 0x0
 
@@ -71,7 +71,7 @@
 
     move-result-object v0
 
-    sput-object v0, Landroidx/media3/common/PlaybackException;->w0:Ljava/lang/String;
+    sput-object v0, Landroidx/media3/common/PlaybackException;->o0:Ljava/lang/String;
 
     const/4 v0, 0x5
 
@@ -79,7 +79,7 @@
 
     move-result-object v0
 
-    sput-object v0, Landroidx/media3/common/PlaybackException;->x0:Ljava/lang/String;
+    sput-object v0, Landroidx/media3/common/PlaybackException;->p0:Ljava/lang/String;
 
     return-void
 .end method
@@ -112,7 +112,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_5
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -124,7 +124,7 @@
 
     if-eq v2, v3, :cond_1
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_1
     invoke-virtual {p0}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
@@ -147,7 +147,7 @@
 
     move-result-object v5
 
-    invoke-static {v4, v5}, Loze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v4, v5}, Lpaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v4
 
@@ -173,11 +173,11 @@
     return v1
 
     :cond_3
-    if-nez v2, :cond_6
+    if-nez v2, :cond_5
 
     if-eqz v3, :cond_4
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_4
     iget v2, p0, Landroidx/media3/common/PlaybackException;->a:I
@@ -194,7 +194,7 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Loze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lpaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -208,16 +208,10 @@
 
     if-nez p0, :cond_5
 
-    goto :goto_0
-
-    :cond_5
-    move v0, v1
-
-    :goto_0
     return v0
 
-    :cond_6
-    :goto_1
+    :cond_5
+    :goto_0
     return v1
 .end method
 
@@ -274,278 +268,279 @@
 
     const-string p0, "custom error code"
 
-    goto/16 :goto_0
+    return-object p0
 
     :cond_0
     const-string p0, "invalid error code"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_0
     const-string p0, "ERROR_CODE_DRM_LICENSE_EXPIRED"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_1
     const-string p0, "ERROR_CODE_DRM_DEVICE_REVOKED"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_2
     const-string p0, "ERROR_CODE_DRM_SYSTEM_ERROR"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_3
     const-string p0, "ERROR_CODE_DRM_DISALLOWED_OPERATION"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_4
     const-string p0, "ERROR_CODE_DRM_LICENSE_ACQUISITION_FAILED"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_5
     const-string p0, "ERROR_CODE_DRM_CONTENT_ERROR"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_6
     const-string p0, "ERROR_CODE_DRM_PROVISIONING_FAILED"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_7
     const-string p0, "ERROR_CODE_DRM_SCHEME_UNSUPPORTED"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_8
     const-string p0, "ERROR_CODE_DRM_UNSPECIFIED"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_9
     const-string p0, "ERROR_CODE_AUDIO_TRACK_OFFLOAD_INIT_FAILED"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_a
     const-string p0, "ERROR_CODE_AUDIO_TRACK_OFFLOAD_WRITE_FAILED"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_b
     const-string p0, "ERROR_CODE_AUDIO_TRACK_WRITE_FAILED"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_c
     const-string p0, "ERROR_CODE_AUDIO_TRACK_INIT_FAILED"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_d
     const-string p0, "ERROR_CODE_DECODING_RESOURCES_RECLAIMED"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_e
     const-string p0, "ERROR_CODE_DECODING_FORMAT_UNSUPPORTED"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_f
     const-string p0, "ERROR_CODE_DECODING_FORMAT_EXCEEDS_CAPABILITIES"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_10
     const-string p0, "ERROR_CODE_DECODING_FAILED"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_11
     const-string p0, "ERROR_CODE_DECODER_QUERY_FAILED"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_12
     const-string p0, "ERROR_CODE_DECODER_INIT_FAILED"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_13
     const-string p0, "ERROR_CODE_PARSING_MANIFEST_UNSUPPORTED"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_14
     const-string p0, "ERROR_CODE_PARSING_CONTAINER_UNSUPPORTED"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_15
     const-string p0, "ERROR_CODE_PARSING_MANIFEST_MALFORMED"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_16
     const-string p0, "ERROR_CODE_PARSING_CONTAINER_MALFORMED"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_17
     const-string p0, "ERROR_CODE_IO_READ_POSITION_OUT_OF_RANGE"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_18
     const-string p0, "ERROR_CODE_IO_CLEARTEXT_NOT_PERMITTED"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_19
     const-string p0, "ERROR_CODE_IO_NO_PERMISSION"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_1a
     const-string p0, "ERROR_CODE_IO_FILE_NOT_FOUND"
 
-    goto/16 :goto_0
+    return-object p0
 
     :pswitch_1b
     const-string p0, "ERROR_CODE_IO_BAD_HTTP_STATUS"
 
-    goto :goto_0
+    return-object p0
 
     :pswitch_1c
     const-string p0, "ERROR_CODE_IO_INVALID_HTTP_CONTENT_TYPE"
 
-    goto :goto_0
+    return-object p0
 
     :pswitch_1d
     const-string p0, "ERROR_CODE_IO_NETWORK_CONNECTION_TIMEOUT"
 
-    goto :goto_0
+    return-object p0
 
     :pswitch_1e
     const-string p0, "ERROR_CODE_IO_NETWORK_CONNECTION_FAILED"
 
-    goto :goto_0
+    return-object p0
 
     :pswitch_1f
     const-string p0, "ERROR_CODE_IO_UNSPECIFIED"
 
-    goto :goto_0
+    return-object p0
 
     :pswitch_20
     const-string p0, "ERROR_CODE_FAILED_RUNTIME_CHECK"
 
-    goto :goto_0
+    return-object p0
 
     :pswitch_21
     const-string p0, "ERROR_CODE_TIMEOUT"
 
-    goto :goto_0
+    return-object p0
 
     :pswitch_22
     const-string p0, "ERROR_CODE_BEHIND_LIVE_WINDOW"
 
-    goto :goto_0
+    return-object p0
 
     :pswitch_23
     const-string p0, "ERROR_CODE_REMOTE_ERROR"
 
-    goto :goto_0
+    return-object p0
 
     :pswitch_24
     const-string p0, "ERROR_CODE_UNSPECIFIED"
 
-    goto :goto_0
+    return-object p0
 
     :pswitch_25
     const-string p0, "ERROR_CODE_AUTHENTICATION_EXPIRED"
 
-    goto :goto_0
+    return-object p0
 
     :pswitch_26
     const-string p0, "ERROR_CODE_PREMIUM_ACCOUNT_REQUIRED"
 
-    goto :goto_0
+    return-object p0
 
     :pswitch_27
     const-string p0, "ERROR_CODE_CONCURRENT_STREAM_LIMIT"
 
-    goto :goto_0
+    return-object p0
 
     :pswitch_28
     const-string p0, "ERROR_CODE_PARENTAL_CONTROL_RESTRICTED"
 
-    goto :goto_0
+    return-object p0
 
     :pswitch_29
     const-string p0, "ERROR_CODE_NOT_AVAILABLE_IN_REGION"
 
-    goto :goto_0
+    return-object p0
 
     :pswitch_2a
     const-string p0, "ERROR_CODE_SKIP_LIMIT_REACHED"
 
-    goto :goto_0
+    return-object p0
 
     :pswitch_2b
     const-string p0, "ERROR_CODE_SETUP_REQUIRED"
 
-    goto :goto_0
+    return-object p0
 
     :pswitch_2c
     const-string p0, "ERROR_CODE_END_OF_PLAYLIST"
 
-    goto :goto_0
+    return-object p0
 
     :pswitch_2d
     const-string p0, "ERROR_CODE_CONTENT_ALREADY_PLAYING"
 
-    goto :goto_0
+    return-object p0
 
     :cond_1
     const-string p0, "ERROR_CODE_VIDEO_FRAME_PROCESSING_FAILED"
 
-    goto :goto_0
+    return-object p0
 
     :cond_2
     const-string p0, "ERROR_CODE_VIDEO_FRAME_PROCESSOR_INIT_FAILED"
 
-    goto :goto_0
+    return-object p0
 
     :cond_3
     const-string p0, "ERROR_CODE_INVALID_STATE"
 
-    goto :goto_0
+    return-object p0
 
     :cond_4
     const-string p0, "ERROR_CODE_BAD_VALUE"
 
-    goto :goto_0
+    return-object p0
 
     :cond_5
     const-string p0, "ERROR_CODE_PERMISSION_DENIED"
 
-    goto :goto_0
+    return-object p0
 
     :cond_6
     const-string p0, "ERROR_CODE_NOT_SUPPORTED"
 
-    goto :goto_0
+    return-object p0
 
     :cond_7
     const-string p0, "ERROR_CODE_DISCONNECTED"
 
-    :goto_0
     return-object p0
+
+    nop
 
     :pswitch_data_0
     .packed-switch -0x6e
@@ -649,7 +644,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    sget-object v1, Landroidx/media3/common/PlaybackException;->x0:Ljava/lang/String;
+    sget-object v1, Landroidx/media3/common/PlaybackException;->p0:Ljava/lang/String;
 
     iget-object v2, p0, Landroidx/media3/common/PlaybackException;->c:Landroid/os/Bundle;
 
@@ -673,7 +668,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    sget-object v1, Landroidx/media3/common/PlaybackException;->w0:Ljava/lang/String;
+    sget-object v1, Landroidx/media3/common/PlaybackException;->o0:Ljava/lang/String;
 
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 

@@ -1,47 +1,48 @@
 .class public final Lqr1;
-.super Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;
-.source "SourceFile"
+.super Lbu3;
+
+
+# instance fields
+.field public X:I
+
+.field public final synthetic Y:Lpk1;
+
+.field public synthetic o:Ljava/lang/Object;
+
+
+# direct methods
+.method public constructor <init>(Lpk1;Lkotlin/coroutines/Continuation;)V
+    .locals 0
+
+    iput-object p1, p0, Lqr1;->Y:Lpk1;
+
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final onCaptureBufferLost(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/view/Surface;J)V
-    .locals 0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    return-void
-.end method
+    iput-object p1, p0, Lqr1;->o:Ljava/lang/Object;
 
-.method public final onCaptureCompleted(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/TotalCaptureResult;)V
-    .locals 0
+    iget p1, p0, Lqr1;->X:I
 
-    return-void
-.end method
+    const/high16 v0, -0x80000000
 
-.method public final onCaptureFailed(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CaptureFailure;)V
-    .locals 0
+    or-int/2addr p1, v0
 
-    return-void
-.end method
+    iput p1, p0, Lqr1;->X:I
 
-.method public final onCaptureProgressed(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CaptureResult;)V
-    .locals 0
+    iget-object p1, p0, Lqr1;->Y:Lpk1;
 
-    return-void
-.end method
+    const/4 v0, 0x0
 
-.method public final onCaptureSequenceAborted(Landroid/hardware/camera2/CameraCaptureSession;I)V
-    .locals 0
+    invoke-virtual {p1, v0, p0}, Lpk1;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object p0
 
-.method public final onCaptureSequenceCompleted(Landroid/hardware/camera2/CameraCaptureSession;IJ)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final onCaptureStarted(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;JJ)V
-    .locals 0
-
-    return-void
+    return-object p0
 .end method

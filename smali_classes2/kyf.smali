@@ -1,168 +1,168 @@
-.class public final synthetic Lkyf;
+.class public final Lkyf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
+
+# static fields
+.field public static final Companion:Ljyf;
 
 
 # instance fields
-.field public final synthetic a:Llyf;
+.field public final a:Ljava/lang/String;
 
-.field public final synthetic b:Z
-
-.field public final synthetic c:Z
+.field public final b:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Llyf;ZZ)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
+    new-instance v0, Ljyf;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lkyf;->Companion:Ljyf;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
+    .locals 2
+
+    and-int/lit8 v0, p1, 0x3
+
+    const/4 v1, 0x3
+
+    if-ne v1, v0, :cond_0
+
+    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lkyf;->a:Llyf;
+    iput-object p2, p0, Lkyf;->a:Ljava/lang/String;
 
-    iput-boolean p2, p0, Lkyf;->b:Z
+    iput-object p3, p0, Lkyf;->b:Ljava/lang/String;
 
-    iput-boolean p3, p0, Lkyf;->c:Z
+    return-void
+
+    :cond_0
+    sget-object p0, Liyf;->a:Liyf;
+
+    invoke-virtual {p0}, Liyf;->d()Lx4d;
+
+    move-result-object p0
+
+    invoke-static {p1, v1, p0}, Lrbg;->G(IILx4d;)V
+
+    const/4 p0, 0x0
+
+    throw p0
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
+
+    .line 2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 3
+    iput-object p1, p0, Lkyf;->a:Ljava/lang/String;
+
+    .line 4
+    iput-object p2, p0, Lkyf;->b:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget-object v0, p0, Lkyf;->a:Llyf;
+    const/4 v0, 0x1
 
-    iget-boolean v1, p0, Lkyf;->b:Z
+    if-ne p0, p1, :cond_0
 
-    iget-boolean p0, p0, Lkyf;->c:Z
-
-    iget-object v2, v0, Llyf;->a:Ljava/lang/Object;
-
-    check-cast v2, Ljl7;
-
-    iget-object v2, v2, Ljl7;->n:Lxwb;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "capture state changed, isCapturing="
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v4, ", isFailedStart="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string v4, "OKRTCLmsAdapter"
-
-    invoke-interface {v2, v4, v3}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v2, v0, Llyf;->a:Ljava/lang/Object;
-
-    check-cast v2, Ljl7;
-
-    iget-object v2, v2, Ljl7;->r:Lat1;
-
-    if-nez v2, :cond_0
-
-    goto :goto_1
+    return v0
 
     :cond_0
-    if-eqz v1, :cond_1
+    instance-of v1, p1, Lkyf;
 
-    iget-object p0, v2, Lat1;->f:Ljava/util/concurrent/CopyOnWriteArraySet;
+    const/4 v2, 0x0
 
-    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
+    if-nez v1, :cond_1
 
-    move-result-object p0
-
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljl7;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    goto :goto_0
+    return v2
 
     :cond_1
-    if-eqz p0, :cond_2
+    check-cast p1, Lkyf;
 
-    goto :goto_3
+    iget-object v1, p0, Lkyf;->a:Ljava/lang/String;
 
-    :cond_2
-    invoke-virtual {v2}, Lat1;->b()V
+    iget-object v3, p1, Lkyf;->a:Ljava/lang/String;
 
-    :cond_3
-    :goto_1
-    iget-object p0, v0, Llyf;->a:Ljava/lang/Object;
-
-    check-cast p0, Ljl7;
-
-    iget-object p0, p0, Ljl7;->x:Lqqe;
-
-    if-eqz p0, :cond_4
-
-    sget-object v2, Lg41;->Z:Lg41;
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    iget-object p0, p0, Lqqe;->a:Ljava/lang/Object;
-
-    check-cast p0, Lgx0;
-
-    invoke-virtual {p0, v2, v1}, Lgx0;->k(Lg41;Ljava/lang/Object;)V
-
-    :cond_4
-    iget-object p0, v0, Llyf;->a:Ljava/lang/Object;
-
-    check-cast p0, Ljl7;
-
-    iget-object v0, p0, Ljl7;->c:Ljava/util/concurrent/CopyOnWriteArraySet;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_2
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_5
+    if-nez v1, :cond_2
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    return v2
 
-    move-result-object v1
+    :cond_2
+    iget-object p0, p0, Lkyf;->b:Ljava/lang/String;
 
-    check-cast v1, Lll7;
+    iget-object p1, p1, Lkyf;->b:Ljava/lang/String;
 
-    invoke-interface {v1, p0}, Lll7;->b(Ljl7;)V
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    goto :goto_2
+    move-result p0
 
-    :cond_5
-    :goto_3
-    return-void
+    if-nez p0, :cond_3
+
+    return v2
+
+    :cond_3
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    iget-object v0, p0, Lkyf;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Lkyf;->b:Ljava/lang/String;
+
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 4
+
+    const-string v0, ", status="
+
+    const-string v1, ")"
+
+    const-string v2, "WebAppDownloadFileResponse(requestId="
+
+    iget-object v3, p0, Lkyf;->a:Ljava/lang/String;
+
+    iget-object p0, p0, Lkyf;->b:Ljava/lang/String;
+
+    invoke-static {v2, v3, v0, p0, v1}, Lrqc;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

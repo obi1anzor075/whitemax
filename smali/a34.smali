@@ -1,21 +1,8 @@
-.class public final La34;
-.super Lsg9;
+.class public interface abstract La34;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final b:Ljava/lang/String;
-
-
-# direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 1
-
-    sget-object v0, Ljue;->a:Ljue;
-
-    invoke-direct {p0, v0}, Lsg9;-><init>(Ljava/lang/Object;)V
-
-    iput-object p1, p0, La34;->b:Ljava/lang/String;
-
-    return-void
+# virtual methods
+.method public abstract read([BII)I
 .end method

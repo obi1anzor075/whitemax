@@ -1,47 +1,136 @@
 .class public final Lwi2;
-.super Ler3;
+.super Llje;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic X:Lfj2;
+.field public X:J
 
-.field public Y:I
-
-.field public synthetic o:Ljava/lang/Object;
+.field public o:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public constructor <init>(Lfj2;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method public constructor <init>(Ldx8;)V
+    .locals 2
 
-    iput-object p1, p0, Lwi2;->X:Lfj2;
+    invoke-direct {p0, p1}, Llje;-><init>(Ldx8;)V
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    const-wide/16 v0, -0x1
 
+    iput-wide v0, p0, Lwi2;->X:J
+
+    iget-object p1, p0, Lwi2;->o:Ljava/util/ArrayList;
+
+    if-nez p1, :cond_0
+
+    new-instance p1, Ljava/util/ArrayList;
+
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object p1, p0, Lwi2;->o:Ljava/util/ArrayList;
+
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final c(Ldx8;Ljava/lang/String;)V
+    .locals 3
 
-    iput-object p1, p0, Lwi2;->o:Ljava/lang/Object;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget p1, p0, Lwi2;->Y:I
+    const-string v0, "marker"
 
-    const/high16 v0, -0x80000000
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    or-int/2addr p1, v0
+    move-result v0
 
-    iput p1, p0, Lwi2;->Y:I
+    if-nez v0, :cond_2
 
-    iget-object p1, p0, Lwi2;->X:Lfj2;
+    const-string v0, "members"
 
-    const-wide/16 v0, 0x0
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {p1, v0, v1, p0}, Lfj2;->a(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    move-result p2
+
+    if-nez p2, :cond_0
+
+    invoke-virtual {p1}, Ldx8;->B()V
+
+    return-void
+
+    :cond_0
+    invoke-static {p1}, Lxq7;->V(Ldx8;)I
+
+    move-result p2
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lwi2;->o:Ljava/util/ArrayList;
+
+    const/4 v0, 0x0
+
+    :goto_0
+    if-ge v0, p2, :cond_1
+
+    iget-object v1, p0, Lwi2;->o:Ljava/util/ArrayList;
+
+    invoke-static {p1}, Lui2;->a(Ldx8;)Lui2;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return-void
+
+    :cond_2
+    invoke-virtual {p1}, Ldx8;->A0()J
+
+    move-result-wide p1
+
+    iput-wide p1, p0, Lwi2;->X:J
+
+    return-void
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 4
+
+    iget-object v0, p0, Lwi2;->o:Ljava/util/ArrayList;
+
+    invoke-static {v0}, Lzx7;->n(Ljava/util/Collection;)I
+
+    move-result v0
+
+    iget-wide v1, p0, Lwi2;->X:J
+
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    const-string v3, "{members="
+
+    invoke-direct {p0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v0, ", marker="
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

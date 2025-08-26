@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants;->loadWaitingParticipantIdsPageSingle(Lgx0;Ldn1;)Ldhd;
+    value = Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants;->loadWaitingParticipantIdsPageSingle(Liy0;Ljp1;)Ltod;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -21,7 +21,7 @@
         "\u0000\u0008\n\u0002\u0018\u0002\n\u0002\u0008\u0004\u0010\u0004\u001a\u00020\u0000H\n\u00a2\u0006\u0004\u0008\u0001\u0010\u0002\u00a8\u0006\u0003"
     }
     d2 = {
-        "Ljue;",
+        "Le5f;",
         "run",
         "()V",
         "ru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$resolveInternalIds$1",
@@ -37,11 +37,11 @@
 
 
 # instance fields
-.field final synthetic $emitter$inlined:Lnhd;
+.field final synthetic $emitter$inlined:Lbpd;
 
-.field final synthetic $emitter$inlined$1:Lnhd;
+.field final synthetic $emitter$inlined$1:Lbpd;
 
-.field final synthetic $page$inlined:Lkn1;
+.field final synthetic $page$inlined:Laq1;
 
 .field final synthetic $waitingParticipants:Ljava/util/List;
 
@@ -49,18 +49,18 @@
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants;Ljava/util/List;Lnhd;Lkn1;Lnhd;)V
+.method public constructor <init>(Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants;Ljava/util/List;Lbpd;Laq1;Lbpd;)V
     .locals 0
 
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$loadWaitingParticipantIdsPageSingle$lambda$6$lambda$4$$inlined$resolveInternalIds$1;->this$0:Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants;
 
     iput-object p2, p0, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$loadWaitingParticipantIdsPageSingle$lambda$6$lambda$4$$inlined$resolveInternalIds$1;->$waitingParticipants:Ljava/util/List;
 
-    iput-object p3, p0, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$loadWaitingParticipantIdsPageSingle$lambda$6$lambda$4$$inlined$resolveInternalIds$1;->$emitter$inlined:Lnhd;
+    iput-object p3, p0, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$loadWaitingParticipantIdsPageSingle$lambda$6$lambda$4$$inlined$resolveInternalIds$1;->$emitter$inlined:Lbpd;
 
-    iput-object p4, p0, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$loadWaitingParticipantIdsPageSingle$lambda$6$lambda$4$$inlined$resolveInternalIds$1;->$page$inlined:Lkn1;
+    iput-object p4, p0, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$loadWaitingParticipantIdsPageSingle$lambda$6$lambda$4$$inlined$resolveInternalIds$1;->$page$inlined:Laq1;
 
-    iput-object p5, p0, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$loadWaitingParticipantIdsPageSingle$lambda$6$lambda$4$$inlined$resolveInternalIds$1;->$emitter$inlined$1:Lnhd;
+    iput-object p5, p0, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$loadWaitingParticipantIdsPageSingle$lambda$6$lambda$4$$inlined$resolveInternalIds$1;->$emitter$inlined$1:Lbpd;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -81,28 +81,28 @@
     move-result-object v0
 
     :try_start_0
-    iget-object v1, p0, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$loadWaitingParticipantIdsPageSingle$lambda$6$lambda$4$$inlined$resolveInternalIds$1;->$emitter$inlined:Lnhd;
+    iget-object v1, p0, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$loadWaitingParticipantIdsPageSingle$lambda$6$lambda$4$$inlined$resolveInternalIds$1;->$emitter$inlined:Lbpd;
 
     new-instance v2, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$WaitingParticipantsPage;
 
-    iget-object v3, p0, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$loadWaitingParticipantIdsPageSingle$lambda$6$lambda$4$$inlined$resolveInternalIds$1;->$page$inlined:Lkn1;
+    iget-object v3, p0, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$loadWaitingParticipantIdsPageSingle$lambda$6$lambda$4$$inlined$resolveInternalIds$1;->$page$inlined:Laq1;
 
-    iget-boolean v3, v3, Lkn1;->b:Z
+    iget-boolean v3, v3, Laq1;->b:Z
 
     invoke-direct {v2, v0, v3}, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$WaitingParticipantsPage;-><init>(Ljava/util/List;Z)V
 
-    check-cast v1, Lihd;
+    check-cast v1, Lxod;
 
-    invoke-virtual {v1, v2}, Lihd;->a(Ljava/lang/Object;)V
+    invoke-virtual {v1, v2}, Lxod;->a(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-void
 
     :catch_0
     move-exception v0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$loadWaitingParticipantIdsPageSingle$lambda$6$lambda$4$$inlined$resolveInternalIds$1;->$emitter$inlined$1:Lnhd;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$loadWaitingParticipantIdsPageSingle$lambda$6$lambda$4$$inlined$resolveInternalIds$1;->$emitter$inlined$1:Lbpd;
 
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -112,16 +112,15 @@
 
     const-string v2, "Can\'t resolve internal ids: "
 
-    invoke-static {v2, v0}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v0}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    check-cast p0, Lihd;
+    check-cast p0, Lxod;
 
-    invoke-virtual {p0, v1}, Lihd;->c(Ljava/lang/Throwable;)Z
+    invoke-virtual {p0, v1}, Lxod;->d(Ljava/lang/Throwable;)Z
 
-    :goto_0
     return-void
 .end method

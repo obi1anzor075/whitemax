@@ -1,55 +1,132 @@
 .class public abstract Laod;
-.super Leod;
+.super Lhl7;
 .source "SourceFile"
 
 
-# instance fields
-.field public final h:Ljava/math/BigInteger;
-
-.field public final i:Ljava/math/BigInteger;
-
-.field public final j:Ljava/math/BigInteger;
-
-.field public final k:J
-
-
 # direct methods
-.method public constructor <init>(IJLjava/lang/String;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;JLjava/lang/String;Lw4g;)V
-    .locals 9
+.method public constructor <init>(Ljava/util/concurrent/Executor;)V
+    .locals 2
 
-    move-object v8, p0
+    new-instance v0, Lm44;
 
-    const/4 v2, 0x1
+    const/16 v1, 0x9
 
-    move-object v0, p0
+    invoke-direct {v0, v1}, Lm44;-><init>(I)V
 
-    move v1, p1
+    new-instance v1, Lha8;
 
-    move-wide v3, p2
+    invoke-direct {v1, p1, v0}, Lha8;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    move-object v5, p4
+    invoke-direct {p0, v1}, Lhl7;-><init>(Lha8;)V
 
-    move-object/from16 v6, p10
+    const/4 p1, 0x1
 
-    move-object/from16 v7, p11
+    invoke-super {p0, p1}, Lgbc;->A(Z)V
 
-    invoke-direct/range {v0 .. v7}, Leod;-><init>(IIJLjava/lang/String;Ljava/lang/String;Lw4g;)V
+    return-void
+.end method
 
-    move-object v0, p5
 
-    iput-object v0, v8, Laod;->h:Ljava/math/BigInteger;
+# virtual methods
+.method public final G(I)Lol7;
+    .locals 1
 
-    move-object v0, p6
+    if-ltz p1, :cond_0
 
-    iput-object v0, v8, Laod;->i:Ljava/math/BigInteger;
+    iget-object v0, p0, Lhl7;->o:Lwu;
 
-    move-object/from16 v0, p7
+    iget-object v0, v0, Lwu;->f:Ljava/util/List;
 
-    iput-object v0, v8, Laod;->j:Ljava/math/BigInteger;
+    invoke-interface {v0}, Ljava/util/Collection;->size()I
 
-    move-wide/from16 v0, p8
+    move-result v0
 
-    iput-wide v0, v8, Laod;->k:J
+    if-ge p1, v0, :cond_0
+
+    invoke-virtual {p0, p1}, Lhl7;->C(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lol7;
+
+    return-object p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public H(Lsod;I)V
+    .locals 0
+
+    invoke-virtual {p0, p2}, Lhl7;->C(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lol7;
+
+    invoke-virtual {p1, p0}, Lsod;->x(Lol7;)V
+
+    return-void
+.end method
+
+.method public I(Lsod;)V
+    .locals 0
+
+    invoke-virtual {p1}, Lsod;->C()V
+
+    return-void
+.end method
+
+.method public k(I)J
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lhl7;->C(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lol7;
+
+    invoke-interface {p0}, Lol7;->getItemId()J
+
+    move-result-wide p0
+
+    return-wide p0
+.end method
+
+.method public l(I)I
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lhl7;->C(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lol7;
+
+    invoke-interface {p0}, Lol7;->m()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public bridge synthetic r(Lccc;I)V
+    .locals 0
+
+    check-cast p1, Lsod;
+
+    invoke-virtual {p0, p1, p2}, Laod;->H(Lsod;I)V
+
+    return-void
+.end method
+
+.method public bridge synthetic y(Lccc;)V
+    .locals 0
+
+    check-cast p1, Lsod;
+
+    invoke-virtual {p0, p1}, Laod;->I(Lsod;)V
 
     return-void
 .end method

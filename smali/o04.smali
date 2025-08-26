@@ -3,282 +3,157 @@
 .source "SourceFile"
 
 
-# static fields
-.field public static final d:Ljava/util/regex/Pattern;
-
-.field public static final e:Ljava/util/regex/Pattern;
-
-.field public static final f:Ljava/util/ArrayList;
-
-
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public a:Ljava/lang/CharSequence;
 
-.field public b:Ljava/util/ArrayList;
+.field public final b:Landroid/graphics/Bitmap;
 
-.field public c:Ljava/util/ArrayList;
+.field public c:Landroid/text/Layout$Alignment;
+
+.field public d:Landroid/text/Layout$Alignment;
+
+.field public e:F
+
+.field public f:I
+
+.field public g:I
+
+.field public h:F
+
+.field public i:I
+
+.field public j:I
+
+.field public k:F
+
+.field public l:F
+
+.field public final m:F
+
+.field public final n:Z
+
+.field public final o:I
+
+.field public p:I
+
+.field public q:F
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .locals 2
-
-    const-string v0, "\\|[^\\|]*\\|"
-
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lo04;->d:Ljava/util/regex/Pattern;
-
-    const-string v0, "f{1,9}"
-
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lo04;->e:Ljava/util/regex/Pattern;
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    sput-object v0, Lo04;->f:Ljava/util/ArrayList;
-
-    const-string v1, "YYYY"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "YY"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "MMMM"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "MMM"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "MM"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "M"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "DD"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "D"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "WWWW"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "WWW"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "hh12"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "h12"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "hh"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "h"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "mm"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "m"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "ss"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "s"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "a"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "fffffffff"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "ffffffff"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "fffffff"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "ffffff"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "fffff"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "ffff"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "fff"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "ff"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const-string v1, "f"
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/LinkedHashMap;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
+    iput-object v0, p0, Lo04;->a:Ljava/lang/CharSequence;
 
-    new-instance v0, Ljava/util/LinkedHashMap;
+    iput-object v0, p0, Lo04;->b:Landroid/graphics/Bitmap;
 
-    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
+    iput-object v0, p0, Lo04;->c:Landroid/text/Layout$Alignment;
 
-    new-instance v0, Ljava/util/LinkedHashMap;
+    iput-object v0, p0, Lo04;->d:Landroid/text/Layout$Alignment;
 
-    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
+    const v0, -0x800001
 
-    iput-object p1, p0, Lo04;->a:Ljava/lang/String;
+    iput v0, p0, Lo04;->e:F
 
-    invoke-static {p1}, Lvx3;->L(Ljava/lang/String;)Z
+    const/high16 v1, -0x80000000
 
-    move-result p0
+    iput v1, p0, Lo04;->f:I
 
-    if-eqz p0, :cond_0
+    iput v1, p0, Lo04;->g:I
+
+    iput v0, p0, Lo04;->h:F
+
+    iput v1, p0, Lo04;->i:I
+
+    iput v1, p0, Lo04;->j:I
+
+    iput v0, p0, Lo04;->k:F
+
+    iput v0, p0, Lo04;->l:F
+
+    iput v0, p0, Lo04;->m:F
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lo04;->n:Z
+
+    const/high16 v0, -0x1000000
+
+    iput v0, p0, Lo04;->o:I
+
+    iput v1, p0, Lo04;->p:I
 
     return-void
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "DateTime format has no content."
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
-.method public static a(Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
 
-    invoke-static {p0}, Lvx3;->L(Ljava/lang/String;)Z
+# virtual methods
+.method public final a()Lq04;
+    .locals 19
 
-    move-result v0
+    move-object/from16 v0, p0
 
-    if-eqz v0, :cond_0
+    new-instance v1, Lq04;
 
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
+    move-object v2, v1
 
-    move-result v0
+    iget-object v1, v0, Lo04;->a:Ljava/lang/CharSequence;
 
-    const/4 v1, 0x1
+    move-object v3, v2
 
-    if-ne v0, v1, :cond_0
+    iget-object v2, v0, Lo04;->c:Landroid/text/Layout$Alignment;
 
-    const-string v0, "0"
+    move-object v4, v3
 
-    invoke-virtual {v0, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    iget-object v3, v0, Lo04;->d:Landroid/text/Layout$Alignment;
 
-    move-result-object p0
+    iget v5, v0, Lo04;->e:F
 
-    :cond_0
-    return-object p0
-.end method
+    iget v6, v0, Lo04;->f:I
 
-.method public static b(Ljava/lang/Integer;)Ljava/lang/Integer;
-    .locals 2
+    iget v7, v0, Lo04;->g:I
 
-    if-eqz p0, :cond_1
+    iget v8, v0, Lo04;->h:F
 
-    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
+    iget v9, v0, Lo04;->i:I
 
-    move-result v0
+    iget v10, v0, Lo04;->j:I
 
-    const/16 v1, 0xc
+    iget v11, v0, Lo04;->k:F
 
-    if-nez v0, :cond_0
+    iget v12, v0, Lo04;->l:F
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget v13, v0, Lo04;->p:I
 
-    move-result-object p0
+    iget v14, v0, Lo04;->q:F
 
-    goto :goto_0
+    move-object v15, v4
 
-    :cond_0
-    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
+    iget-object v4, v0, Lo04;->b:Landroid/graphics/Bitmap;
 
-    move-result v0
+    move/from16 v16, v13
 
-    if-le v0, v1, :cond_1
+    iget v13, v0, Lo04;->m:F
 
-    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
+    move/from16 v17, v14
 
-    move-result p0
+    iget-boolean v14, v0, Lo04;->n:Z
 
-    sub-int/2addr p0, v1
+    iget v0, v0, Lo04;->o:I
 
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-object/from16 v18, v15
 
-    move-result-object p0
+    move v15, v0
 
-    :cond_1
-    :goto_0
-    return-object p0
-.end method
+    move-object/from16 v0, v18
 
-.method public static c(Ljava/lang/Object;)Ljava/lang/String;
-    .locals 0
+    invoke-direct/range {v0 .. v17}, Lq04;-><init>(Ljava/lang/CharSequence;Landroid/text/Layout$Alignment;Landroid/text/Layout$Alignment;Landroid/graphics/Bitmap;FIIFIIFFFZIIF)V
 
-    if-eqz p0, :cond_0
+    move-object v15, v0
 
-    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
-
-    goto :goto_0
-
-    :cond_0
-    const-string p0, ""
-
-    :goto_0
-    return-object p0
+    return-object v15
 .end method

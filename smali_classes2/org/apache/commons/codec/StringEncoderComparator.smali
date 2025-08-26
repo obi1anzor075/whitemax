@@ -65,11 +65,10 @@
     :try_end_0
     .catch Lorg/apache/commons/codec/EncoderException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return p0
 
     :catch_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method

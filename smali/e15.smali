@@ -1,82 +1,96 @@
 .class public final Le15;
-.super Le0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lku3;
 
-
-# static fields
-.field public static final a:Le15;
-
-.field public static final b:Ljava/lang/Object;
+# instance fields
+.field public final synthetic a:Lf15;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lf15;)V
+    .locals 0
 
-    new-instance v0, Le15;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v1, Lzl3;->b:Lzl3;
-
-    invoke-direct {v0, v1}, Le0;-><init>(Lgu3;)V
-
-    sput-object v0, Le15;->a:Le15;
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Le15;->b:Ljava/lang/Object;
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    new-instance v0, Ljava/util/LinkedHashMap;
-
-    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
+    iput-object p1, p0, Le15;->a:Lf15;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 0
+.method public final a(Lcom/google/android/material/textfield/TextInputLayout;)V
+    .locals 3
 
-    instance-of p0, p1, Le15;
+    iget-object p0, p0, Le15;->a:Lf15;
 
-    if-nez p0, :cond_1
+    iget-object v0, p0, Lf15;->F0:Ld15;
 
-    instance-of p0, p1, Lf15;
+    iget-object v1, p0, Lf15;->C0:Landroid/widget/EditText;
 
-    if-eqz p0, :cond_0
+    invoke-virtual {p1}, Lcom/google/android/material/textfield/TextInputLayout;->getEditText()Landroid/widget/EditText;
 
-    goto :goto_0
+    move-result-object v2
+
+    if-ne v1, v2, :cond_0
+
+    return-void
 
     :cond_0
-    const/4 p0, 0x0
+    iget-object v1, p0, Lf15;->C0:Landroid/widget/EditText;
 
-    goto :goto_1
+    if-eqz v1, :cond_1
+
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->removeTextChangedListener(Landroid/text/TextWatcher;)V
+
+    iget-object v1, p0, Lf15;->C0:Landroid/widget/EditText;
+
+    invoke-virtual {v1}, Landroid/view/View;->getOnFocusChangeListener()Landroid/view/View$OnFocusChangeListener;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Lf15;->b()Lg15;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lg15;->e()Landroid/view/View$OnFocusChangeListener;
+
+    move-result-object v2
+
+    if-ne v1, v2, :cond_1
+
+    iget-object v1, p0, Lf15;->C0:Landroid/widget/EditText;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
 
     :cond_1
-    :goto_0
-    const/4 p0, 0x1
+    invoke-virtual {p1}, Lcom/google/android/material/textfield/TextInputLayout;->getEditText()Landroid/widget/EditText;
 
-    :goto_1
-    return p0
-.end method
+    move-result-object p1
 
-.method public final g(Lhu3;Ljava/lang/Throwable;)V
-    .locals 0
+    iput-object p1, p0, Lf15;->C0:Landroid/widget/EditText;
 
-    sget-object p0, Le15;->b:Ljava/lang/Object;
+    if-eqz p1, :cond_2
 
-    monitor-enter p0
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    monitor-exit p0
+    :cond_2
+    invoke-virtual {p0}, Lf15;->b()Lg15;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lf15;->C0:Landroid/widget/EditText;
+
+    invoke-virtual {p1, v0}, Lg15;->m(Landroid/widget/EditText;)V
+
+    invoke-virtual {p0}, Lf15;->b()Lg15;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lf15;->j(Lg15;)V
 
     return-void
 .end method

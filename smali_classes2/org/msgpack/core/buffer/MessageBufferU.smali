@@ -95,12 +95,11 @@
 
     move-result-object p0
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return-object p0
 .end method
 
@@ -143,12 +142,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -358,7 +356,7 @@
 
     invoke-virtual {p2, p0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    goto :goto_0
+    return-void
 
     :cond_0
     invoke-virtual {p2}, Ljava/nio/Buffer;->limit()I
@@ -386,7 +384,6 @@
 
     invoke-virtual {p2, v0}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
-    :goto_0
     return-void
 
     :catchall_0
@@ -532,23 +529,21 @@
     invoke-virtual {v1, v0}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
     .line 6
-    new-instance v0, Lorg/msgpack/core/buffer/MessageBufferU;
+    new-instance v2, Lorg/msgpack/core/buffer/MessageBufferU;
 
     iget-object v3, p0, Lorg/msgpack/core/buffer/MessageBuffer;->base:Ljava/lang/Object;
 
-    iget-wide v1, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
+    iget-wide v0, p0, Lorg/msgpack/core/buffer/MessageBuffer;->address:J
 
     int-to-long v4, p1
 
-    add-long/2addr v4, v1
+    add-long/2addr v4, v0
 
     iget-object p1, p0, Lorg/msgpack/core/buffer/MessageBufferU;->wrap:Ljava/nio/ByteBuffer;
 
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
 
     move-result-object v7
-
-    move-object v2, v0
 
     move v6, p2
 
@@ -559,10 +554,12 @@
     .line 7
     invoke-direct {p0}, Lorg/msgpack/core/buffer/MessageBufferU;->resetBufferPosition()V
 
-    return-object v0
+    return-object v2
 
     :catchall_0
-    move-exception p1
+    move-exception v0
+
+    move-object p1, v0
 
     invoke-direct {p0}, Lorg/msgpack/core/buffer/MessageBufferU;->resetBufferPosition()V
 

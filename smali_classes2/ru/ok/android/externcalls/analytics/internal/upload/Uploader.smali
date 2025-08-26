@@ -18,7 +18,7 @@
     d2 = {
         "Lru/ok/android/externcalls/analytics/internal/upload/Uploader;",
         "",
-        "Ljue;",
+        "Le5f;",
         "upload",
         "()V",
         "drop",
@@ -39,6 +39,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

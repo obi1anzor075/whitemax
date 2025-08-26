@@ -19,7 +19,7 @@
         "<init>",
         "()V",
         "listener",
-        "Ljue;",
+        "Le5f;",
         "addListener",
         "(Lru/ok/android/externcalls/sdk/stereo/listener/StereoRoomManagerListener;)V",
         "removeListener",
@@ -48,6 +48,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

@@ -17,7 +17,7 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/audio/ProximityTracker;",
         "",
-        "Ljue;",
+        "Le5f;",
         "stopTrackingProximity",
         "()V",
         "startTrackingProximity",
@@ -34,6 +34,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

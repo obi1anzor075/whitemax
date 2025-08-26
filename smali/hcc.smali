@@ -1,50 +1,24 @@
-.class public abstract Lhcc;
-.super Lbh0;
+.class public final Lhcc;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/io/Serializable;
 
-# direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;)V
-    .locals 0
 
-    invoke-direct {p0, p1}, Lbh0;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    if-eqz p1, :cond_1
-
-    invoke-interface {p1}, Lkotlin/coroutines/Continuation;->getContext()Lhu3;
-
-    move-result-object p0
-
-    sget-object p1, Lbw4;->a:Lbw4;
-
-    if-ne p0, p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Coroutines with restricted suspension must have EmptyCoroutineContext"
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    :goto_0
-    return-void
-.end method
+# instance fields
+.field public a:Z
 
 
 # virtual methods
-.method public final getContext()Lhu3;
+.method public final toString()Ljava/lang/String;
     .locals 0
 
-    sget-object p0, Lbw4;->a:Lbw4;
+    iget-boolean p0, p0, Lhcc;->a:Z
+
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

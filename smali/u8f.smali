@@ -1,327 +1,161 @@
-.class public final Lu8f;
-.super Lu2;
+.class public final synthetic Lu8f;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lpfe;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic a:I
 
-.field public Y:Z
+.field public final synthetic b:Lv8f;
 
-.field public Z:Z
-
-.field public final c:Lyze;
-
-.field public final o:Lyze;
-
-.field public w0:I
+.field public final synthetic c:Lzb0;
 
 
 # direct methods
-.method public constructor <init>(Lape;)V
-    .locals 1
+.method public synthetic constructor <init>(Lv8f;Lzb0;I)V
+    .locals 0
 
-    const/16 v0, 0xa
+    iput p3, p0, Lu8f;->a:I
 
-    invoke-direct {p0, v0, p1}, Lu2;-><init>(ILjava/lang/Object;)V
+    iput-object p1, p0, Lu8f;->b:Lv8f;
 
-    new-instance p1, Lyze;
+    iput-object p2, p0, Lu8f;->c:Lzb0;
 
-    sget-object v0, Lkjd;->l:[B
-
-    invoke-direct {p1, v0}, Lyze;-><init>([B)V
-
-    iput-object p1, p0, Lu8f;->c:Lyze;
-
-    new-instance p1, Lyze;
-
-    const/4 v0, 0x4
-
-    invoke-direct {p1, v0}, Lyze;-><init>(I)V
-
-    iput-object p1, p0, Lu8f;->o:Lyze;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final Z1(Lyze;)Z
-    .locals 2
+.method public final a()Ljava/lang/Object;
+    .locals 3
 
-    invoke-virtual {p1}, Lyze;->v()I
+    iget v0, p0, Lu8f;->a:I
 
-    move-result p1
+    packed-switch v0, :pswitch_data_0
 
-    shr-int/lit8 v0, p1, 0x4
+    iget-object v0, p0, Lu8f;->b:Lv8f;
 
-    and-int/lit8 v0, v0, 0xf
+    iget-object v0, v0, Lv8f;->c:Ly35;
 
-    and-int/lit8 p1, p1, 0xf
+    check-cast v0, Lhoc;
 
-    const/4 v1, 0x7
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    if-ne p1, v1, :cond_1
+    new-instance v1, Lvh8;
 
-    iput v0, p0, Lu8f;->w0:I
+    const/16 v2, 0x1d
 
-    const/4 p0, 0x5
+    iget-object p0, p0, Lu8f;->c:Lzb0;
 
-    if-eq v0, p0, :cond_0
+    invoke-direct {v1, v0, v2, p0}, Lvh8;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    const/4 p0, 0x1
+    invoke-virtual {v0, v1}, Lhoc;->o(Lfoc;)Ljava/lang/Object;
 
-    goto :goto_0
+    move-result-object p0
 
-    :cond_0
-    const/4 p0, 0x0
+    check-cast p0, Ljava/lang/Iterable;
 
-    :goto_0
-    return p0
+    return-object p0
 
-    :cond_1
-    new-instance p0, Lcom/google/android/exoplayer2/extractor/flv/TagPayloadReader$UnsupportedFormatException;
+    :pswitch_0
+    iget-object v0, p0, Lu8f;->c:Lzb0;
 
-    const/16 v0, 0x27
+    iget-object p0, p0, Lu8f;->b:Lv8f;
 
-    const-string v1, "Video format not supported: "
+    iget-object p0, p0, Lv8f;->c:Ly35;
 
-    invoke-static {v0, p1, v1}, Lm4b;->h(IILjava/lang/String;)Ljava/lang/String;
+    check-cast p0, Lhoc;
 
-    move-result-object p1
+    invoke-virtual {p0}, Lhoc;->m()Landroid/database/sqlite/SQLiteDatabase;
 
-    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/extractor/flv/TagPayloadReader$UnsupportedFormatException;-><init>(Ljava/lang/String;)V
+    move-result-object v1
 
-    throw p0
-.end method
+    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
-.method public final a2(JLyze;)Z
-    .locals 10
+    :try_start_0
+    invoke-static {v1, v0}, Lhoc;->n(Landroid/database/sqlite/SQLiteDatabase;Lzb0;)Ljava/lang/Long;
 
-    invoke-virtual {p3}, Lyze;->v()I
-
-    move-result v0
-
-    iget-object v1, p3, Lyze;->a:[B
-
-    iget v2, p3, Lyze;->b:I
-
-    add-int/lit8 v3, v2, 0x1
-
-    iput v3, p3, Lyze;->b:I
-
-    aget-byte v4, v1, v2
-
-    and-int/lit16 v4, v4, 0xff
-
-    shl-int/lit8 v4, v4, 0x18
-
-    shr-int/lit8 v4, v4, 0x8
-
-    add-int/lit8 v5, v2, 0x2
-
-    iput v5, p3, Lyze;->b:I
-
-    aget-byte v3, v1, v3
-
-    and-int/lit16 v3, v3, 0xff
-
-    shl-int/lit8 v3, v3, 0x8
-
-    or-int/2addr v3, v4
-
-    add-int/lit8 v2, v2, 0x3
-
-    iput v2, p3, Lyze;->b:I
-
-    aget-byte v1, v1, v5
-
-    and-int/lit16 v1, v1, 0xff
-
-    or-int/2addr v1, v3
-
-    int-to-long v1, v1
-
-    const-wide/16 v3, 0x3e8
-
-    mul-long/2addr v1, v3
-
-    add-long v4, v1, p1
-
-    const/4 p1, 0x1
-
-    iget-object p2, p0, Lu2;->b:Ljava/lang/Object;
-
-    check-cast p2, Lape;
-
-    const/4 v1, 0x0
+    move-result-object v0
 
     if-nez v0, :cond_0
 
-    iget-boolean v2, p0, Lu8f;->Y:Z
-
-    if-nez v2, :cond_0
-
-    new-instance v0, Lyze;
-
-    invoke-virtual {p3}, Lyze;->c()I
-
-    move-result v2
-
-    new-array v2, v2, [B
-
-    invoke-direct {v0, v2}, Lyze;-><init>([B)V
-
-    invoke-virtual {p3}, Lyze;->c()I
-
-    move-result v3
-
-    invoke-virtual {p3, v1, v2, v3}, Lyze;->g(I[BI)V
-
-    invoke-static {v0}, Ltc0;->a(Lyze;)Ltc0;
-
-    move-result-object p3
-
-    iget v0, p3, Ltc0;->b:I
-
-    iput v0, p0, Lu8f;->X:I
-
-    new-instance v0, Ltu5;
-
-    invoke-direct {v0}, Ltu5;-><init>()V
-
-    const-string v2, "video/avc"
-
-    iput-object v2, v0, Ltu5;->k:Ljava/lang/String;
-
-    iget-object v2, p3, Ltc0;->f:Ljava/lang/String;
-
-    iput-object v2, v0, Ltu5;->h:Ljava/lang/String;
-
-    iget v2, p3, Ltc0;->c:I
-
-    iput v2, v0, Ltu5;->p:I
-
-    iget v2, p3, Ltc0;->d:I
-
-    iput v2, v0, Ltu5;->q:I
-
-    iget v2, p3, Ltc0;->e:F
-
-    iput v2, v0, Ltu5;->t:F
-
-    iget-object p3, p3, Ltc0;->a:Ljava/util/List;
-
-    iput-object p3, v0, Ltu5;->m:Ljava/util/List;
-
-    new-instance p3, Lvu5;
-
-    invoke-direct {p3, v0}, Lvu5;-><init>(Ltu5;)V
-
-    invoke-interface {p2, p3}, Lape;->d(Lvu5;)V
-
-    iput-boolean p1, p0, Lu8f;->Y:Z
-
-    return v1
-
-    :cond_0
-    if-ne v0, p1, :cond_4
-
-    iget-boolean v0, p0, Lu8f;->Y:Z
-
-    if-eqz v0, :cond_4
-
-    iget v0, p0, Lu8f;->w0:I
-
-    if-ne v0, p1, :cond_1
-
-    move v6, p1
+    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     goto :goto_0
 
-    :cond_1
-    move v6, v1
+    :cond_0
+    invoke-virtual {p0}, Lhoc;->m()Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object p0
+
+    const-string v2, "SELECT 1 FROM events WHERE context_id = ? LIMIT 1"
+
+    invoke-virtual {v0}, Ljava/lang/Long;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    filled-new-array {v0}, [Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v2, v0}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :try_start_1
+    invoke-interface {p0}, Landroid/database/Cursor;->moveToNext()Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    :try_start_2
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    move-object p0, v0
 
     :goto_0
-    iget-boolean v0, p0, Lu8f;->Z:Z
+    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    if-nez v0, :cond_2
+    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    if-nez v6, :cond_2
+    return-object p0
 
-    return v1
-
-    :cond_2
-    iget-object v0, p0, Lu8f;->o:Lyze;
-
-    iget-object v2, v0, Lyze;->a:[B
-
-    aput-byte v1, v2, v1
-
-    aput-byte v1, v2, p1
-
-    const/4 v3, 0x2
-
-    aput-byte v1, v2, v3
-
-    iget v2, p0, Lu8f;->X:I
-
-    const/4 v3, 0x4
-
-    rsub-int/lit8 v2, v2, 0x4
-
-    move v7, v1
-
-    :goto_1
-    invoke-virtual {p3}, Lyze;->c()I
-
-    move-result v8
-
-    if-lez v8, :cond_3
-
-    iget-object v8, v0, Lyze;->a:[B
-
-    iget v9, p0, Lu8f;->X:I
-
-    invoke-virtual {p3, v2, v8, v9}, Lyze;->g(I[BI)V
-
-    invoke-virtual {v0, v1}, Lyze;->H(I)V
-
-    invoke-virtual {v0}, Lyze;->y()I
-
-    move-result v8
-
-    iget-object v9, p0, Lu8f;->c:Lyze;
-
-    invoke-virtual {v9, v1}, Lyze;->H(I)V
-
-    invoke-interface {p2, v3, v9}, Lape;->c(ILyze;)V
-
-    add-int/lit8 v7, v7, 0x4
-
-    invoke-interface {p2, v8, p3}, Lape;->c(ILyze;)V
-
-    add-int/2addr v7, v8
+    :catchall_0
+    move-exception p0
 
     goto :goto_1
 
-    :cond_3
-    const/4 v9, 0x0
+    :catchall_1
+    move-exception v0
 
-    iget-object p2, p0, Lu2;->b:Ljava/lang/Object;
+    :try_start_3
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
 
-    move-object v3, p2
+    throw v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    check-cast v3, Lape;
+    :goto_1
+    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    const/4 v8, 0x0
+    throw p0
 
-    invoke-interface/range {v3 .. v9}, Lape;->b(JIIILyoe;)V
-
-    iput-boolean p1, p0, Lu8f;->Z:Z
-
-    return p1
-
-    :cond_4
-    return v1
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

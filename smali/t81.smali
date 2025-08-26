@@ -1,108 +1,87 @@
-.class public abstract Lt81;
-.super Lsg9;
+.class public final Lt81;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lu81;
+
+
+# instance fields
+.field public final a:Z
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>(Z)V
     .locals 0
 
-    packed-switch p1, :pswitch_data_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    :pswitch_0
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-direct {p0, p1}, Lsg9;-><init>(Ljava/lang/Object;)V
+    iput-boolean p1, p0, Lt81;->a:Z
 
     return-void
+.end method
 
-    :pswitch_1
-    sget-object p1, Ljue;->a:Ljue;
 
-    invoke-direct {p0, p1}, Lsg9;-><init>(Ljava/lang/Object;)V
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    return-void
+    if-ne p0, p1, :cond_0
 
-    :pswitch_2
-    sget-object p1, Ljue;->a:Ljue;
+    goto :goto_1
 
-    invoke-direct {p0, p1}, Lsg9;-><init>(Ljava/lang/Object;)V
+    :cond_0
+    instance-of v0, p1, Lt81;
 
-    return-void
+    if-nez v0, :cond_1
 
-    :pswitch_3
-    sget-object p1, Ljue;->a:Ljue;
+    goto :goto_0
 
-    invoke-direct {p0, p1}, Lsg9;-><init>(Ljava/lang/Object;)V
+    :cond_1
+    check-cast p1, Lt81;
 
-    return-void
+    iget-boolean p0, p0, Lt81;->a:Z
 
-    :pswitch_4
-    sget-object p1, Ljue;->a:Ljue;
+    iget-boolean p1, p1, Lt81;->a:Z
 
-    invoke-direct {p0, p1}, Lsg9;-><init>(Ljava/lang/Object;)V
+    if-eq p0, p1, :cond_2
 
-    return-void
+    :goto_0
+    const/4 p0, 0x0
 
-    :pswitch_5
-    sget-object p1, Ljue;->a:Ljue;
+    return p0
 
-    invoke-direct {p0, p1}, Lsg9;-><init>(Ljava/lang/Object;)V
+    :cond_2
+    :goto_1
+    const/4 p0, 0x1
 
-    return-void
+    return p0
+.end method
 
-    :pswitch_6
-    sget-object p1, Ljue;->a:Ljue;
+.method public final hashCode()I
+    .locals 0
 
-    invoke-direct {p0, p1}, Lsg9;-><init>(Ljava/lang/Object;)V
+    iget-boolean p0, p0, Lt81;->a:Z
 
-    return-void
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
 
-    :pswitch_7
-    sget-object p1, Ljue;->a:Ljue;
+    move-result p0
 
-    invoke-direct {p0, p1}, Lsg9;-><init>(Ljava/lang/Object;)V
+    return p0
+.end method
 
-    return-void
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    :pswitch_8
-    sget-object p1, Ljue;->a:Ljue;
+    const-string v0, "End(isCallAccepted="
 
-    invoke-direct {p0, p1}, Lsg9;-><init>(Ljava/lang/Object;)V
+    const-string v1, ")"
 
-    return-void
+    iget-boolean p0, p0, Lt81;->a:Z
 
-    :pswitch_9
-    sget-object p1, Ljue;->a:Ljue;
+    invoke-static {v0, v1, p0}, Lzge;->p(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
 
-    invoke-direct {p0, p1}, Lsg9;-><init>(Ljava/lang/Object;)V
+    move-result-object p0
 
-    return-void
-
-    :pswitch_a
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-direct {p0, p1}, Lsg9;-><init>(Ljava/lang/Object;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_a
-        :pswitch_0
-        :pswitch_9
-        :pswitch_0
-        :pswitch_8
-        :pswitch_0
-        :pswitch_0
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-object p0
 .end method

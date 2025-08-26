@@ -1,114 +1,107 @@
-.class public abstract Lht0;
+.class public final Lht0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# static fields
+.field public static final c:[I
+
+.field public static final d:[I
+
+
+# instance fields
+.field public final a:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+
+.field public final b:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+
+
 # direct methods
-.method public static a(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Landroid/os/Bundle;",
-            "Ljava/lang/String;",
-            "Ljava/lang/Class<",
-            "TT;>;)TT;"
-        }
-    .end annotation
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-virtual {p0, p1, p2}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+    const/16 v0, 0x1f40
 
-    move-result-object p0
+    const/16 v1, 0x7d0
 
-    return-object p0
+    filled-new-array {v0, v0, v1, v1}, [I
+
+    move-result-object v0
+
+    sput-object v0, Lht0;->c:[I
+
+    const/16 v0, 0xfa0
+
+    const/16 v1, 0xc8
+
+    filled-new-array {v0, v0, v1, v1}, [I
+
+    move-result-object v0
+
+    sput-object v0, Lht0;->d:[I
+
+    return-void
 .end method
 
-.method public static b(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)[Ljava/lang/Object;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Landroid/os/Bundle;",
-            "Ljava/lang/String;",
-            "Ljava/lang/Class<",
-            "TT;>;)[TT;"
-        }
-    .end annotation
+.method public constructor <init>()V
+    .locals 2
 
-    invoke-virtual {p0, p1, p2}, Landroid/os/Bundle;->getParcelableArray(Ljava/lang/String;Ljava/lang/Class;)[Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object p0
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
-    return-object p0
+    const/4 v1, 0x4
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;-><init>(I)V
+
+    iput-object v0, p0, Lht0;->a:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReferenceArray;
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;-><init>(I)V
+
+    iput-object v0, p0, Lht0;->b:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+
+    return-void
 .end method
 
-.method public static c(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Ljava/util/ArrayList;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Landroid/os/Bundle;",
-            "Ljava/lang/String;",
-            "Ljava/lang/Class<",
-            "+TT;>;)",
-            "Ljava/util/ArrayList<",
-            "TT;>;"
-        }
-    .end annotation
 
-    invoke-virtual {p0, p1, p2}, Landroid/os/Bundle;->getParcelableArrayList(Ljava/lang/String;Ljava/lang/Class;)Ljava/util/ArrayList;
+# virtual methods
+.method public final a(II)[C
+    .locals 1
+
+    sget-object v0, Lht0;->d:[I
+
+    aget v0, v0, p1
+
+    if-ge p2, v0, :cond_0
+
+    move p2, v0
+
+    :cond_0
+    iget-object p0, p0, Lht0;->b:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->getAndSet(ILjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
+    check-cast p0, [C
+
+    if-eqz p0, :cond_2
+
+    array-length p1, p0
+
+    if-ge p1, p2, :cond_1
+
+    goto :goto_0
+
+    :cond_1
     return-object p0
-.end method
 
-.method public static d(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Ljava/io/Serializable;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T::",
-            "Ljava/io/Serializable;",
-            ">(",
-            "Landroid/os/Bundle;",
-            "Ljava/lang/String;",
-            "Ljava/lang/Class<",
-            "TT;>;)TT;"
-        }
-    .end annotation
-
-    invoke-virtual {p0, p1, p2}, Landroid/os/Bundle;->getSerializable(Ljava/lang/String;Ljava/lang/Class;)Ljava/io/Serializable;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static e(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Landroid/util/SparseArray;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Landroid/os/Bundle;",
-            "Ljava/lang/String;",
-            "Ljava/lang/Class<",
-            "+TT;>;)",
-            "Landroid/util/SparseArray<",
-            "TT;>;"
-        }
-    .end annotation
-
-    invoke-virtual {p0, p1, p2}, Landroid/os/Bundle;->getSparseParcelableArray(Ljava/lang/String;Ljava/lang/Class;)Landroid/util/SparseArray;
-
-    move-result-object p0
+    :cond_2
+    :goto_0
+    new-array p0, p2, [C
 
     return-object p0
 .end method

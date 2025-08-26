@@ -3,22 +3,22 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Lx56;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Lj8e;
+.field public final synthetic b:Lone/me/chats/forward/ForwardPickerScreen;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lj8e;I)V
+.method public synthetic constructor <init>(Lone/me/chats/forward/ForwardPickerScreen;I)V
     .locals 0
 
     iput p2, p0, Ld06;->a:I
 
-    iput-object p1, p0, Ld06;->b:Lj8e;
+    iput-object p1, p0, Ld06;->b:Lone/me/chats/forward/ForwardPickerScreen;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,103 +27,142 @@
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 3
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 8
 
-    iget-object v0, p0, Ld06;->b:Lj8e;
+    iget v0, p0, Ld06;->a:I
 
-    iget p0, p0, Ld06;->a:I
+    sget-object v1, Le5f;->a:Le5f;
 
-    packed-switch p0, :pswitch_data_0
+    iget-object p0, p0, Ld06;->b:Lone/me/chats/forward/ForwardPickerScreen;
 
-    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object p0
+    check-cast p1, Landroid/view/View;
 
-    invoke-virtual {p0}, Ljava/lang/Runtime;->availableProcessors()I
+    sget-object v0, Lone/me/chats/forward/ForwardPickerScreen;->F0:[Lbc7;
 
-    move-result p0
+    const/4 v0, 0x1
 
-    iget-object v0, v0, Lj8e;->a:Ljava/lang/Object;
-
-    check-cast v0, Lt97;
-
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-static {v0}, Ld46;->b(I)Lkt3;
 
     move-result-object v0
 
-    check-cast v0, Lx4a;
+    invoke-interface {v0, p1}, Lkt3;->v(Landroid/view/View;)Lkt3;
 
-    sget-object v1, Lx4a;->p:[Lk77;
+    move-result-object p1
 
-    const/4 v1, 0x5
+    invoke-virtual {p0}, Lone/me/chats/forward/ForwardPickerScreen;->E0()Z
 
-    const-string v2, "frsc-sch"
+    move-result v0
 
-    invoke-virtual {v0, p0, v2, p0, v1}, Lx4a;->e(ILjava/lang/String;II)Ljava/util/concurrent/ExecutorService;
+    if-eqz v0, :cond_0
 
-    move-result-object p0
+    new-instance v2, Lnt3;
 
-    invoke-virtual {v0, p0, v2}, Lx4a;->h(Ljava/util/concurrent/ExecutorService;Ljava/lang/String;)Ljava/util/concurrent/ScheduledExecutorService;
+    sget v3, Ld6a;->e:I
 
-    move-result-object p0
+    sget v0, Lf6a;->b:I
 
-    return-object p0
+    new-instance v4, Lhoe;
+
+    invoke-direct {v4, v0}, Lhoe;-><init>(I)V
+
+    sget v0, Lanc;->t1:I
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    const/4 v6, 0x0
+
+    const/16 v7, 0x14
+
+    invoke-direct/range {v2 .. v7}, Lnt3;-><init>(ILmoe;Ljava/lang/Integer;Ljava/lang/Integer;I)V
+
+    invoke-static {v2}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v2, Lnt3;
+
+    sget v3, Ld6a;->f:I
+
+    sget v0, Lf6a;->c:I
+
+    new-instance v4, Lhoe;
+
+    invoke-direct {v4, v0}, Lhoe;-><init>(I)V
+
+    sget v0, Lanc;->s1:I
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    const/4 v6, 0x0
+
+    const/16 v7, 0x14
+
+    invoke-direct/range {v2 .. v7}, Lnt3;-><init>(ILmoe;Ljava/lang/Integer;Ljava/lang/Integer;I)V
+
+    invoke-static {v2}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {p1, v0}, Lkt3;->j(Ljava/util/Collection;)Lkt3;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Lkt3;->b()Lkt3;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Lkt3;->build()Llt3;
+
+    move-result-object p1
+
+    invoke-interface {p1, p0}, Llt3;->r(Lone/me/sdk/arch/Widget;)V
+
+    return-object v1
 
     :pswitch_0
-    iget-object p0, v0, Lj8e;->a:Ljava/lang/Object;
+    check-cast p1, Landroid/view/View;
 
-    check-cast p0, Lt97;
+    sget-object p1, Lone/me/chats/forward/ForwardPickerScreen;->F0:[Lbc7;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lx4a;
-
-    invoke-virtual {p0}, Lx4a;->a()Ljava/util/concurrent/ExecutorService;
+    invoke-virtual {p0}, Lou3;->getOnBackPressedDispatcher()Ld1a;
 
     move-result-object p0
 
-    return-object p0
+    if-eqz p0, :cond_1
+
+    invoke-virtual {p0}, Ld1a;->d()V
+
+    :cond_1
+    return-object v1
 
     :pswitch_1
-    iget-object p0, v0, Lj8e;->a:Ljava/lang/Object;
+    check-cast p1, Ljava/lang/Boolean;
 
-    check-cast p0, Lt97;
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    move-result p1
 
-    move-result-object p0
+    sget-object v0, Lone/me/chats/forward/ForwardPickerScreen;->F0:[Lbc7;
 
-    check-cast p0, Lx4a;
+    invoke-virtual {p0, p1}, Lone/me/chats/forward/ForwardPickerScreen;->F0(Z)V
 
-    invoke-virtual {p0}, Lx4a;->a()Ljava/util/concurrent/ExecutorService;
+    return-object v1
 
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_2
-    iget-object p0, v0, Lj8e;->a:Ljava/lang/Object;
-
-    check-cast p0, Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lx4a;
-
-    invoke-virtual {p0}, Lx4a;->b()Ljava/util/concurrent/ExecutorService;
-
-    move-result-object p0
-
-    return-object p0
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2
         :pswitch_1
         :pswitch_0
     .end packed-switch

@@ -4,8 +4,8 @@
 
 
 # virtual methods
-.method public abstract cancel()V
+.method public abstract m(Lg1e;)V
 .end method
 
-.method public abstract i(J)V
+.method public abstract o(Lg1e;)V
 .end method

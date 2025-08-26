@@ -1,72 +1,112 @@
-.class public final synthetic Lcc1;
+.class public final Lcc1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lec1;
 
 
-# instance fields
-.field public final synthetic a:I
+# static fields
+.field public static final a:Lcc1;
 
-.field public final synthetic b:Lu5g;
+.field public static final b:J
 
-.field public final synthetic c:Lpg7;
+.field public static final c:Lhoe;
+
+.field public static final d:Ls4a;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lu5g;Ljx0;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput p3, p0, Lcc1;->a:I
+    new-instance v0, Lcc1;
 
-    iput-object p1, p0, Lcc1;->b:Lu5g;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lcc1;->c:Lpg7;
+    sput-object v0, Lcc1;->a:Lcc1;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Li5a;->f:I
+
+    int-to-long v0, v0
+
+    sput-wide v0, Lcc1;->b:J
+
+    sget v0, Lk5a;->j:I
+
+    new-instance v1, Lhoe;
+
+    invoke-direct {v1, v0}, Lhoe;-><init>(I)V
+
+    sput-object v1, Lcc1;->c:Lhoe;
+
+    sget-object v0, Ls4a;->a:Ls4a;
+
+    sput-object v0, Lcc1;->d:Ls4a;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public final a()Ls4a;
+    .locals 0
+
+    sget-object p0, Lcc1;->d:Ls4a;
+
+    return-object p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of p0, p1, Lcc1;
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final getItemId()J
     .locals 2
 
-    iget p1, p0, Lcc1;->a:I
+    sget-wide v0, Lcc1;->b:J
 
-    packed-switch p1, :pswitch_data_0
+    return-wide v0
+.end method
 
-    iget-object p1, p0, Lcc1;->c:Lpg7;
+.method public final getTitle()Lhoe;
+    .locals 0
 
-    check-cast p1, Ljx0;
+    sget-object p0, Lcc1;->c:Lhoe;
 
-    iget-wide v0, p1, Ljx0;->o:J
+    return-object p0
+.end method
 
-    iget-object p0, p0, Lcc1;->b:Lu5g;
+.method public final hashCode()I
+    .locals 0
 
-    invoke-virtual {p0, v0, v1}, Lu5g;->j(J)V
+    const p0, 0x38c47456
 
-    return-void
+    return p0
+.end method
 
-    :pswitch_0
-    iget-object p1, p0, Lcc1;->c:Lpg7;
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    check-cast p1, Ljx0;
+    const-string p0, "StartCall"
 
-    iget-wide v0, p1, Ljx0;->o:J
-
-    iget-object p0, p0, Lcc1;->b:Lu5g;
-
-    invoke-virtual {p0, v0, v1}, Lu5g;->j(J)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

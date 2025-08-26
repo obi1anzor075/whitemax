@@ -106,7 +106,7 @@
     :cond_0
     iput-boolean v1, p0, Lorg/apache/http/impl/io/ContentLengthInputStream;->closed:Z
 
-    goto :goto_1
+    return-void
 
     :catchall_0
     move-exception v0
@@ -116,7 +116,6 @@
     throw v0
 
     :cond_1
-    :goto_1
     return-void
 .end method
 
@@ -182,12 +181,12 @@
         }
     .end annotation
 
+    const/4 v0, 0x0
+
     .line 11
-    array-length v0, p1
+    array-length v1, p1
 
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, p1, v1, v0}, Lorg/apache/http/impl/io/ContentLengthInputStream;->read([BII)I
+    invoke-virtual {p0, p1, v0, v1}, Lorg/apache/http/impl/io/ContentLengthInputStream;->read([BII)I
 
     move-result p0
 

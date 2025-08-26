@@ -94,7 +94,7 @@
 .end method
 
 .method public static convertMatrixFromAndroidGraphicsMatrix(Landroid/graphics/Matrix;)[F
-    .locals 19
+    .locals 20
 
     const/16 v0, 0x9
 
@@ -140,6 +140,8 @@
 
     aget v1, v1, v18
 
+    move/from16 v19, v0
+
     const/16 v0, 0x10
 
     new-array v0, v0, [F
@@ -164,9 +166,7 @@
 
     aput v2, v0, v18
 
-    const/16 v3, 0x9
-
-    aput v2, v0, v3
+    aput v2, v0, v19
 
     const/high16 v3, 0x3f800000    # 1.0f
 

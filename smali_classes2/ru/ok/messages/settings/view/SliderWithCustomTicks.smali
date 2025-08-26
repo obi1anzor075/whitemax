@@ -1,9 +1,9 @@
 .class public final Lru/ok/messages/settings/view/SliderWithCustomTicks;
-.super Lpjd;
+.super Lcrd;
 .source "SourceFile"
 
 # interfaces
-.implements Lfi0;
+.implements Lfj0;
 
 
 # annotations
@@ -13,11 +13,11 @@
     }
     d2 = {
         "Lru/ok/messages/settings/view/SliderWithCustomTicks;",
-        "Lpjd;",
+        "Lcrd;",
         "",
         "",
         "valueFrom",
-        "Ljue;",
+        "Le5f;",
         "setValueFrom",
         "(F)V",
         "valueTo",
@@ -36,46 +36,47 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
-.field public final O1:I
+.field public final G1:I
 
-.field public P1:[F
+.field public H1:[F
 
-.field public Q1:Z
+.field public I1:Z
 
-.field public final R1:Landroid/graphics/Paint;
+.field public final J1:Landroid/graphics/Paint;
 
-.field public final S1:Landroid/graphics/Paint;
+.field public final K1:Landroid/graphics/Paint;
 
-.field public final T1:Landroid/graphics/Paint;
+.field public final L1:Landroid/graphics/Paint;
 
-.field public final U1:I
+.field public final M1:I
 
-.field public final V1:F
+.field public final N1:F
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 8
 
-    const/4 v0, 0x0
+    invoke-direct {p0, p1, p2}, Lwj0;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    invoke-direct {p0, p1, p2, v0}, Lxi0;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    const v0, 0x1010024
 
-    const v1, 0x1010024
+    filled-new-array {v0}, [I
 
-    filled-new-array {v1}, [I
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
-    invoke-virtual {p1, p2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    move-result-object v0
 
-    move-result-object v1
+    const/4 v1, 0x0
 
-    invoke-virtual {v1, v0}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v2
 
@@ -83,116 +84,116 @@
 
     if-eqz v2, :cond_0
 
-    invoke-virtual {v1, v0, v3}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
     move-result v2
 
-    invoke-virtual {p0, v2}, Lpjd;->setValue(F)V
+    invoke-virtual {p0, v2}, Lcrd;->setValue(F)V
 
     :cond_0
-    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v1
+    move-result-object v0
 
-    sget v2, Lvmb;->mtrl_slider_track_height:I
+    sget v2, Lhrb;->mtrl_slider_track_height:I
 
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
+    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
-    move-result v1
+    move-result v0
 
-    iput v1, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->O1:I
+    iput v0, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->G1:I
 
-    new-array v1, v0, [F
+    new-array v0, v1, [F
 
-    iput-object v1, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->P1:[F
+    iput-object v0, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->H1:[F
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    iput-boolean v1, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->Q1:Z
+    iput-boolean v0, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->I1:Z
 
     new-instance v2, Landroid/graphics/Paint;
 
-    invoke-direct {v2, v1}, Landroid/graphics/Paint;-><init>(I)V
+    invoke-direct {v2, v0}, Landroid/graphics/Paint;-><init>(I)V
 
-    iput-object v2, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->R1:Landroid/graphics/Paint;
+    iput-object v2, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->J1:Landroid/graphics/Paint;
 
     new-instance v4, Landroid/graphics/Paint;
 
-    invoke-direct {v4, v1}, Landroid/graphics/Paint;-><init>(I)V
+    invoke-direct {v4, v0}, Landroid/graphics/Paint;-><init>(I)V
 
-    iput-object v4, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->S1:Landroid/graphics/Paint;
+    iput-object v4, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->K1:Landroid/graphics/Paint;
 
     new-instance v5, Landroid/graphics/Paint;
 
-    invoke-direct {v5, v1}, Landroid/graphics/Paint;-><init>(I)V
+    invoke-direct {v5, v0}, Landroid/graphics/Paint;-><init>(I)V
 
-    iput-object v5, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->T1:Landroid/graphics/Paint;
+    iput-object v5, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->L1:Landroid/graphics/Paint;
 
-    sget-object v1, Lxvb;->Slider:[I
+    sget-object v0, Lt0c;->Slider:[I
 
     sget v6, Lcom/google/android/material/ComGoogleAndroidMaterialR$style;->Widget_MaterialComponents_Slider:I
 
-    invoke-virtual {p1, p2, v1, v0, v6}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, p2, v0, v1, v6}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
-    move-result-object v1
+    move-result-object v0
 
-    sget v6, Lxvb;->Slider_tickColor:I
+    sget v6, Lt0c;->Slider_tickColor:I
 
-    invoke-virtual {v1, v6}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {v0, v6}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v6
 
     if-eqz v6, :cond_1
 
-    sget v7, Lxvb;->Slider_tickColor:I
+    sget v7, Lt0c;->Slider_tickColor:I
 
     goto :goto_0
 
     :cond_1
-    sget v7, Lxvb;->Slider_tickColorInactive:I
+    sget v7, Lt0c;->Slider_tickColorInactive:I
 
     :goto_0
     if-eqz v6, :cond_2
 
-    sget v6, Lxvb;->Slider_tickColor:I
+    sget v6, Lt0c;->Slider_tickColor:I
 
     goto :goto_1
 
     :cond_2
-    sget v6, Lxvb;->Slider_tickColorActive:I
+    sget v6, Lt0c;->Slider_tickColorActive:I
 
     :goto_1
-    invoke-virtual {v1, v7, v0}, Landroid/content/res/TypedArray;->getColor(II)I
+    invoke-virtual {v0, v7, v1}, Landroid/content/res/TypedArray;->getColor(II)I
 
     move-result v7
 
     invoke-virtual {v2, v7}, Landroid/graphics/Paint;->setColor(I)V
 
-    invoke-virtual {v1, v6, v0}, Landroid/content/res/TypedArray;->getColor(II)I
+    invoke-virtual {v0, v6, v1}, Landroid/content/res/TypedArray;->getColor(II)I
 
     move-result v2
 
     invoke-virtual {v4, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    sget-object v1, Lzvb;->SliderWithCustomTicks:[I
+    sget-object v0, Lv0c;->SliderWithCustomTicks:[I
 
-    invoke-virtual {p1, p2, v1, v0, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, p2, v0, v1, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object p1
 
-    sget p2, Lzvb;->SliderWithCustomTicks_tickRadius:I
+    sget p2, Lv0c;->SliderWithCustomTicks_tickRadius:I
 
-    invoke-static {}, Lzg4;->b()Lzg4;
+    invoke-static {}, Lck4;->b()Lck4;
 
     const/high16 v0, 0x40800000    # 4.0f
 
     float-to-int v0, v0
 
-    invoke-static {v0}, Ldh4;->b(I)I
+    invoke-static {v0}, Lgk4;->b(I)I
 
     move-result v0
 
@@ -200,15 +201,15 @@
 
     move-result p2
 
-    iput p2, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->U1:I
+    iput p2, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->M1:I
 
-    sget p2, Lzvb;->SliderWithCustomTicks_normalValue:I
+    sget p2, Lv0c;->SliderWithCustomTicks_normalValue:I
 
     invoke-virtual {p1, p2, v3}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
     move-result p2
 
-    iput p2, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->V1:F
+    iput p2, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->N1:F
 
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
@@ -233,7 +234,7 @@
     invoke-virtual {v5, p1}, Landroid/graphics/Paint;->setColor(I)V
 
     :cond_3
-    iget-object p1, p0, Lxi0;->E0:Ljava/util/ArrayList;
+    iget-object p1, p0, Lwj0;->w0:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -243,15 +244,15 @@
 
 # virtual methods
 .method public final onDraw(Landroid/graphics/Canvas;)V
-    .locals 16
+    .locals 17
 
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
-    invoke-super/range {p0 .. p1}, Lxi0;->onDraw(Landroid/graphics/Canvas;)V
+    invoke-super/range {p0 .. p1}, Lwj0;->onDraw(Landroid/graphics/Canvas;)V
 
-    iget-boolean v2, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->Q1:Z
+    iget-boolean v2, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->I1:Z
 
     const/4 v3, 0x0
 
@@ -262,28 +263,28 @@
     goto :goto_1
 
     :cond_0
-    invoke-virtual/range {p0 .. p0}, Lpjd;->getStepSize()F
+    invoke-virtual {v0}, Lcrd;->getStepSize()F
 
     move-result v2
 
-    cmpg-float v2, v2, v4
+    cmpg-float v2, v2, v3
 
     if-gtz v2, :cond_1
 
     goto :goto_1
 
     :cond_1
-    invoke-virtual/range {p0 .. p0}, Lpjd;->getValueTo()F
+    invoke-virtual {v0}, Lcrd;->getValueTo()F
 
     move-result v2
 
-    invoke-virtual/range {p0 .. p0}, Lpjd;->getValueFrom()F
+    invoke-virtual {v0}, Lcrd;->getValueFrom()F
 
     move-result v5
 
     sub-float/2addr v2, v5
 
-    invoke-virtual/range {p0 .. p0}, Lpjd;->getStepSize()F
+    invoke-virtual {v0}, Lcrd;->getStepSize()F
 
     move-result v5
 
@@ -297,11 +298,11 @@
 
     float-to-int v2, v2
 
-    invoke-virtual/range {p0 .. p0}, Lpjd;->getTrackWidth()I
+    invoke-virtual {v0}, Lcrd;->getTrackWidth()I
 
     move-result v6
 
-    invoke-virtual/range {p0 .. p0}, Lpjd;->getTrackHeight()I
+    invoke-virtual {v0}, Lcrd;->getTrackHeight()I
 
     move-result v7
 
@@ -315,7 +316,7 @@
 
     move-result v2
 
-    iget-object v6, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->P1:[F
+    iget-object v6, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->H1:[F
 
     array-length v6, v6
 
@@ -325,10 +326,10 @@
 
     new-array v6, v7, [F
 
-    iput-object v6, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->P1:[F
+    iput-object v6, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->H1:[F
 
     :cond_2
-    invoke-virtual/range {p0 .. p0}, Lpjd;->getTrackWidth()I
+    invoke-virtual {v0}, Lcrd;->getTrackWidth()I
 
     move-result v6
 
@@ -340,14 +341,14 @@
 
     div-float/2addr v6, v2
 
-    move v2, v3
+    move v2, v4
 
     :goto_0
     if-ge v2, v7, :cond_3
 
-    iget-object v5, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->P1:[F
+    iget-object v5, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->H1:[F
 
-    invoke-virtual/range {p0 .. p0}, Lpjd;->getTrackSidePadding()I
+    invoke-virtual {v0}, Lcrd;->getTrackSidePadding()I
 
     move-result v8
 
@@ -363,11 +364,11 @@
 
     aput v9, v5, v2
 
-    iget-object v5, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->P1:[F
+    iget-object v5, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->H1:[F
 
     add-int/lit8 v8, v2, 0x1
 
-    iget v9, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->O1:I
+    iget v9, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->G1:I
 
     int-to-float v9, v9
 
@@ -378,68 +379,68 @@
     goto :goto_0
 
     :cond_3
-    iput-boolean v3, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->Q1:Z
+    iput-boolean v4, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->I1:Z
 
     :goto_1
-    invoke-virtual/range {p0 .. p0}, Lpjd;->getStepSize()F
+    invoke-virtual {v0}, Lcrd;->getStepSize()F
 
     move-result v2
 
-    cmpg-float v2, v2, v4
+    cmpg-float v2, v2, v3
 
     if-gtz v2, :cond_4
 
-    goto/16 :goto_5
+    goto/16 :goto_6
 
     :cond_4
-    invoke-virtual/range {p0 .. p0}, Lpjd;->getValue()F
+    invoke-virtual {v0}, Lcrd;->getValue()F
 
     move-result v2
 
-    invoke-virtual/range {p0 .. p0}, Lpjd;->getValueFrom()F
+    invoke-virtual {v0}, Lcrd;->getValueFrom()F
 
-    move-result v4
+    move-result v3
 
-    sub-float/2addr v2, v4
+    sub-float/2addr v2, v3
 
     float-to-int v2, v2
 
-    iget v4, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->V1:F
+    iget v3, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->N1:F
 
-    invoke-virtual/range {p0 .. p0}, Lpjd;->getValueFrom()F
+    invoke-virtual {v0}, Lcrd;->getValueFrom()F
 
     move-result v5
 
-    sub-float/2addr v4, v5
+    sub-float/2addr v3, v5
 
-    float-to-int v4, v4
+    float-to-int v3, v3
 
-    iget v5, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->U1:I
+    iget v5, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->M1:I
 
     int-to-float v5, v5
 
-    iget-object v6, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->P1:[F
+    iget-object v6, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->H1:[F
 
     array-length v6, v6
 
     div-int/lit8 v6, v6, 0x2
 
     :goto_2
-    if-ge v3, v6, :cond_a
+    if-ge v4, v6, :cond_a
 
-    iget-object v7, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->T1:Landroid/graphics/Paint;
+    iget-object v8, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->L1:Landroid/graphics/Paint;
 
-    iget-object v8, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->R1:Landroid/graphics/Paint;
+    iget-object v9, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->J1:Landroid/graphics/Paint;
 
-    iget-object v9, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->S1:Landroid/graphics/Paint;
+    iget-object v10, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->K1:Landroid/graphics/Paint;
 
-    if-ne v3, v4, :cond_7
+    if-ne v4, v3, :cond_7
 
-    if-eq v3, v2, :cond_7
+    if-eq v4, v2, :cond_7
 
-    iget-object v11, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->P1:[F
+    iget-object v11, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->H1:[F
 
-    mul-int/lit8 v12, v3, 0x2
+    mul-int/lit8 v12, v4, 0x2
 
     aget v13, v11, v12
 
@@ -447,126 +448,127 @@
 
     aget v11, v11, v14
 
-    invoke-virtual/range {p0 .. p0}, Lpjd;->getThumbRadius()I
+    invoke-virtual {v0}, Lcrd;->getThumbRadius()I
 
     move-result v15
 
     int-to-float v15, v15
 
-    if-ge v3, v2, :cond_5
+    if-ge v4, v2, :cond_5
 
-    move-object v10, v9
+    move-object v7, v10
+
+    :goto_3
+    const/high16 v16, 0x40000000    # 2.0f
+
+    goto :goto_4
+
+    :cond_5
+    move-object v7, v9
 
     goto :goto_3
 
-    :cond_5
-    move-object v10, v8
+    :goto_4
+    invoke-virtual {v1, v13, v11, v15, v7}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    :goto_3
-    invoke-virtual {v1, v13, v11, v15, v10}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    iget-object v7, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->H1:[F
 
-    iget-object v10, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->P1:[F
-
-    aget v11, v10, v12
-
-    aget v10, v10, v14
-
-    invoke-virtual {v1, v11, v10, v5, v7}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
-
-    iget-object v7, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->P1:[F
-
-    aget v10, v7, v12
+    aget v11, v7, v12
 
     aget v7, v7, v14
 
-    const/high16 v11, 0x40000000    # 2.0f
+    invoke-virtual {v1, v11, v7, v5, v8}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    div-float v11, v5, v11
+    iget-object v7, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->H1:[F
 
-    if-ge v3, v2, :cond_6
+    aget v8, v7, v12
 
-    move-object v8, v9
+    aget v7, v7, v14
+
+    div-float v11, v5, v16
+
+    if-ge v4, v2, :cond_6
+
+    move-object v9, v10
 
     :cond_6
-    invoke-virtual {v1, v10, v7, v11, v8}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v1, v8, v7, v11, v9}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_7
-    if-ge v3, v2, :cond_8
+    const/high16 v16, 0x40000000    # 2.0f
 
-    iget-object v8, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->P1:[F
+    if-ge v4, v2, :cond_8
 
-    mul-int/lit8 v10, v3, 0x2
+    iget-object v7, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->H1:[F
 
-    aget v11, v8, v10
+    mul-int/lit8 v9, v4, 0x2
 
-    add-int/lit8 v12, v10, 0x1
+    aget v11, v7, v9
 
-    aget v8, v8, v12
+    add-int/lit8 v12, v9, 0x1
 
-    invoke-virtual {v1, v11, v8, v5, v9}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    aget v7, v7, v12
 
-    iget-object v8, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->P1:[F
+    invoke-virtual {v1, v11, v7, v5, v10}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    aget v9, v8, v10
+    iget-object v7, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->H1:[F
 
-    aget v8, v8, v12
+    aget v9, v7, v9
 
-    const/high16 v10, 0x40000000    # 2.0f
+    aget v7, v7, v12
 
-    div-float v10, v5, v10
+    div-float v10, v5, v16
 
-    invoke-virtual {v1, v9, v8, v10, v7}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v1, v9, v7, v10, v8}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_8
-    if-le v3, v2, :cond_9
+    if-le v4, v2, :cond_9
 
-    iget-object v9, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->P1:[F
+    iget-object v7, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->H1:[F
 
-    mul-int/lit8 v10, v3, 0x2
+    mul-int/lit8 v10, v4, 0x2
 
-    aget v11, v9, v10
+    aget v11, v7, v10
 
     add-int/lit8 v12, v10, 0x1
 
-    aget v9, v9, v12
+    aget v7, v7, v12
 
-    invoke-virtual {v1, v11, v9, v5, v8}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v1, v11, v7, v5, v9}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    iget-object v8, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->P1:[F
+    iget-object v7, v0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->H1:[F
 
-    aget v9, v8, v10
+    aget v9, v7, v10
 
-    aget v8, v8, v12
+    aget v7, v7, v12
 
-    const/high16 v10, 0x40000000    # 2.0f
+    div-float v10, v5, v16
 
-    div-float v10, v5, v10
-
-    invoke-virtual {v1, v9, v8, v10, v7}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v1, v9, v7, v10, v8}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     :cond_9
-    :goto_4
-    add-int/lit8 v3, v3, 0x1
+    :goto_5
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_2
 
     :cond_a
-    :goto_5
+    :goto_6
     return-void
 .end method
 
 .method public final onSizeChanged(IIII)V
     .locals 0
 
-    invoke-super {p0, p1, p2, p3, p4}, Lxi0;->onSizeChanged(IIII)V
+    invoke-super {p0, p1, p2, p3, p4}, Lwj0;->onSizeChanged(IIII)V
 
     const/4 p1, 0x1
 
-    iput-boolean p1, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->Q1:Z
+    iput-boolean p1, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->I1:Z
 
     return-void
 .end method
@@ -581,7 +583,7 @@
 
     invoke-super {p0, p1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    iget-object p0, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->T1:Landroid/graphics/Paint;
+    iget-object p0, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->L1:Landroid/graphics/Paint;
 
     invoke-virtual {p0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
@@ -591,11 +593,11 @@
 .method public setStepSize(F)V
     .locals 0
 
-    invoke-super {p0, p1}, Lpjd;->setStepSize(F)V
+    invoke-super {p0, p1}, Lcrd;->setStepSize(F)V
 
     const/4 p1, 0x1
 
-    iput-boolean p1, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->Q1:Z
+    iput-boolean p1, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->I1:Z
 
     return-void
 .end method
@@ -603,11 +605,11 @@
 .method public setValueFrom(F)V
     .locals 0
 
-    invoke-super {p0, p1}, Lpjd;->setValueFrom(F)V
+    invoke-super {p0, p1}, Lcrd;->setValueFrom(F)V
 
     const/4 p1, 0x1
 
-    iput-boolean p1, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->Q1:Z
+    iput-boolean p1, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->I1:Z
 
     return-void
 .end method
@@ -615,11 +617,11 @@
 .method public setValueTo(F)V
     .locals 0
 
-    invoke-super {p0, p1}, Lpjd;->setValueTo(F)V
+    invoke-super {p0, p1}, Lcrd;->setValueTo(F)V
 
     const/4 p1, 0x1
 
-    iput-boolean p1, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->Q1:Z
+    iput-boolean p1, p0, Lru/ok/messages/settings/view/SliderWithCustomTicks;->I1:Z
 
     return-void
 .end method

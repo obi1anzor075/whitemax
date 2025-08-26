@@ -1,108 +1,101 @@
 .class public final Lpya;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
 
 
 # instance fields
-.field public X:I
+.field public final a:Lwjd;
 
-.field public final synthetic Y:Lrya;
+.field public final b:Lkotlinx/coroutines/internal/ContextScope;
 
 
 # direct methods
-.method public constructor <init>(Lrya;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method public constructor <init>(Lvu0;Lrie;)V
+    .locals 2
 
-    iput-object p1, p0, Lpya;->Y:Lrya;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
+    const/4 v0, 0x0
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    const/4 v1, 0x7
+
+    invoke-static {v0, v0, v1}, Lxjd;->b(III)Lwjd;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lpya;->a:Lwjd;
+
+    check-cast p2, Lo7a;
+
+    invoke-virtual {p2}, Lo7a;->c()Lxw7;
+
+    move-result-object p2
+
+    invoke-static {p2}, Lvk9;->a(Lhx3;)Lkotlinx/coroutines/internal/ContextScope;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lpya;->b:Lkotlinx/coroutines/internal/ContextScope;
+
+    invoke-virtual {p1, p0}, Lvu0;->d(Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Lou3;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lpya;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lpya;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lpya;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 0
-
-    new-instance p1, Lpya;
-
-    iget-object p0, p0, Lpya;->Y:Lrya;
-
-    invoke-direct {p1, p0, p2}, Lpya;-><init>(Lrya;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final onEvent(Lny2;)V
     .locals 4
+    .annotation runtime Li9e;
+    .end annotation
 
-    sget-object v0, Lpu3;->a:Lpu3;
+    new-instance v0, Lqg9;
 
-    iget v1, p0, Lpya;->X:I
+    const/4 v1, 0x0
 
-    sget-object v2, Ljue;->a:Ljue;
+    invoke-direct {v0, v1}, Lqg9;-><init>(Ljava/lang/Object;)V
 
-    const/4 v3, 0x1
+    iget-object p1, p1, Lny2;->b:Ljava/util/Collection;
 
-    if-eqz v1, :cond_1
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    if-ne v1, v3, :cond_0
+    move-result-object p1
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Number;
+
+    invoke-virtual {v2}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide v2
+
+    invoke-virtual {v0, v2, v3}, Lqg9;->a(J)Z
 
     goto :goto_0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    new-instance p1, Lmx7;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    new-instance v0, Loya;
 
-    throw p0
+    invoke-direct {v0, p0, p1, v1}, Loya;-><init>(Lpya;Lmx7;Lkotlin/coroutines/Continuation;)V
 
-    :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    const/4 p1, 0x3
 
-    iput v3, p0, Lpya;->X:I
+    iget-object p0, p0, Lpya;->b:Lkotlinx/coroutines/internal/ContextScope;
 
-    iget-object p0, p0, Lpya;->Y:Lrya;
+    invoke-static {p0, v1, v1, v0, p1}, Lzo3;->E(Lox3;Lhx3;Lrx3;Ll66;I)Ldwd;
 
-    invoke-static {p0}, Lrya;->a(Lrya;)V
-
-    if-ne v2, v0, :cond_2
-
-    return-object v0
-
-    :cond_2
-    :goto_0
-    return-object v2
+    return-void
 .end method

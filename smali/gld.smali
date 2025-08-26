@@ -1,76 +1,23 @@
 .class public final Lgld;
-.super Lhld;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# direct methods
-.method public static a(Ljava/lang/String;Landroid/content/Context;[Lild;)Lgld;
-    .locals 3
+# instance fields
+.field public a:Landroid/content/Context;
 
-    const-string v0, "couldn\'t find DSO to load: "
+.field public b:Ljava/lang/String;
 
-    const-string v1, "\n\texisting SO sources: "
+.field public c:[Landroid/content/Intent;
 
-    invoke-static {v0, p0, v1}, Lhr1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+.field public d:Ljava/lang/String;
 
-    move-result-object v0
+.field public e:Ljava/lang/String;
 
-    const/4 v1, 0x0
+.field public f:Landroidx/core/graphics/drawable/IconCompat;
 
-    :goto_0
-    array-length v2, p2
+.field public g:Lms;
 
-    if-ge v1, v2, :cond_0
+.field public h:Ltr7;
 
-    const-string v2, "\n\t\tSoSource "
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v2, ": "
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    aget-object v2, p2, v1
-
-    invoke-virtual {v2}, Lild;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    if-eqz p1, :cond_1
-
-    const-string p2, "\n\tNative lib dir: "
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
-
-    move-result-object p1
-
-    iget-object p1, p1, Landroid/content/pm/ApplicationInfo;->nativeLibraryDir:Ljava/lang/String;
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p1, "\n"
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_1
-    new-instance p1, Lgld;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p0, p2}, Lhld;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object p1
-.end method
+.field public i:Z

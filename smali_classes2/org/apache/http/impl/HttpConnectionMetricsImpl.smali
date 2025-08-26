@@ -83,13 +83,13 @@
 
     if-eqz v2, :cond_1
 
-    new-instance v0, Ljava/lang/Long;
+    new-instance p1, Ljava/lang/Long;
 
-    iget-wide p0, p0, Lorg/apache/http/impl/HttpConnectionMetricsImpl;->requestCount:J
+    iget-wide v0, p0, Lorg/apache/http/impl/HttpConnectionMetricsImpl;->requestCount:J
 
-    invoke-direct {v0, p0, p1}, Ljava/lang/Long;-><init>(J)V
+    invoke-direct {p1, v0, v1}, Ljava/lang/Long;-><init>(J)V
 
-    goto :goto_1
+    return-object p1
 
     :cond_1
     const-string v2, "http.response-count"
@@ -100,13 +100,13 @@
 
     if-eqz v2, :cond_2
 
-    new-instance v0, Ljava/lang/Long;
+    new-instance p1, Ljava/lang/Long;
 
-    iget-wide p0, p0, Lorg/apache/http/impl/HttpConnectionMetricsImpl;->responseCount:J
+    iget-wide v0, p0, Lorg/apache/http/impl/HttpConnectionMetricsImpl;->responseCount:J
 
-    invoke-direct {v0, p0, p1}, Ljava/lang/Long;-><init>(J)V
+    invoke-direct {p1, v0, v1}, Ljava/lang/Long;-><init>(J)V
 
-    goto :goto_1
+    return-object p1
 
     :cond_2
     const-string v2, "http.received-bytes-count"
@@ -161,7 +161,6 @@
     return-object v1
 
     :cond_6
-    :goto_1
     return-object v0
 .end method
 

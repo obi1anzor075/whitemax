@@ -1,27 +1,80 @@
 .class public final Lzka;
-.super Libe;
+.super Lqde;
 .source "SourceFile"
 
+# interfaces
+.implements Ll66;
 
-# static fields
-.field public static final o:Lzka;
+
+# instance fields
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;)V
+    .locals 0
+
+    iput-object p2, p0, Lzka;->Y:Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;
+
+    const/4 p2, 0x2
+
+    invoke-direct {p0, p2, p1}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lzka;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lzka;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lzka;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
     new-instance v0, Lzka;
 
-    sget-object v1, Landroid/graphics/Path$FillType;->WINDING:Landroid/graphics/Path$FillType;
+    iget-object p0, p0, Lzka;->Y:Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;
 
-    const-string v2, "fillType"
+    invoke-direct {v0, p2, p0}, Lzka;-><init>(Lkotlin/coroutines/Continuation;Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;)V
 
-    const/16 v3, 0xb
+    iput-object p1, v0, Lzka;->X:Ljava/lang/Object;
 
-    invoke-direct {v0, v2, v3, v1}, Libe;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    return-object v0
+.end method
 
-    sput-object v0, Lzka;->o:Lzka;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    return-void
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lzka;->X:Ljava/lang/Object;
+
+    check-cast p1, Ljava/util/List;
+
+    iget-object p0, p0, Lzka;->Y:Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;
+
+    iget-object p0, p0, Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;->c:Ludd;
+
+    invoke-virtual {p0, p1}, Lhl7;->E(Ljava/util/List;)V
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

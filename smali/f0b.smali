@@ -1,260 +1,698 @@
-.class public final Lf0b;
+.class public Lf0b;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lh0b;
+# static fields
+.field public static volatile a:Lf0b;
 
-.field public final b:Lmk9;
-
-.field public final c:Lh0b;
-
-.field public final d:Llk9;
-
-.field public final e:Lh0b;
-
-.field public final f:Lmk9;
-
-.field public final g:Lh0b;
-
-.field public final h:Lmk9;
-
-.field public final i:Ljava/lang/String;
-
-.field public final j:I
+.field public static final b:Ljava/util/logging/Logger;
 
 
 # direct methods
-.method public constructor <init>(Lotf;)V
-    .locals 13
+.method static constructor <clinit>()V
+    .locals 12
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {}, Loa9;->g()Z
 
-    invoke-static {}, Ln06;->s()Lm06;
+    move-result v0
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v1, 0x0
 
-    invoke-static {}, Ll54;->a()Lh0b;
+    const/4 v2, 0x0
+
+    if-eqz v0, :cond_6
+
+    sget-object v0, Lmd;->b:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
 
-    iput-object v0, p0, Lf0b;->a:Lh0b;
-
-    invoke-static {}, Lmk9;->j()Lmk9;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
-
-    iput-object v0, p0, Lf0b;->b:Lmk9;
-
-    new-instance v0, Lh0b;
-
-    sget v1, Lv74;->a:I
-
-    const/high16 v2, 0x400000
-
-    mul-int v3, v1, v2
-
-    new-instance v4, Landroid/util/SparseIntArray;
-
-    invoke-direct {v4}, Landroid/util/SparseIntArray;-><init>()V
-
-    const/high16 v5, 0x20000
-
-    move v6, v5
-
-    :goto_0
-    if-gt v6, v2, :cond_0
-
-    invoke-virtual {v4, v6, v1}, Landroid/util/SparseIntArray;->put(II)V
-
-    mul-int/lit8 v6, v6, 0x2
-
-    goto :goto_0
 
     :cond_0
-    sget v1, Lv74;->a:I
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-direct {v0, v2, v3, v4, v1}, Lh0b;-><init>(IILandroid/util/SparseIntArray;I)V
+    move-result v3
 
-    iput-object v0, p0, Lf0b;->c:Lh0b;
+    if-eqz v3, :cond_3
 
-    invoke-static {}, Llk9;->g()Llk9;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v3
 
-    iput-object v0, p0, Lf0b;->d:Llk9;
+    check-cast v3, Ljava/util/Map$Entry;
 
-    new-instance v0, Landroid/util/SparseIntArray;
+    invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
+    move-result-object v4
 
-    const/16 v1, 0x400
+    check-cast v4, Ljava/lang/String;
 
-    const/4 v3, 0x5
+    invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->put(II)V
+    move-result-object v3
 
-    const/16 v1, 0x800
+    check-cast v3, Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->put(II)V
+    invoke-static {v4}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
 
-    const/16 v1, 0x1000
+    move-result-object v4
 
-    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->put(II)V
+    sget-object v5, Lmd;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
-    const/16 v1, 0x2000
+    invoke-virtual {v5, v4}, Ljava/util/concurrent/CopyOnWriteArraySet;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->put(II)V
+    move-result v5
 
-    const/16 v1, 0x4000
+    if-eqz v5, :cond_0
 
-    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->put(II)V
+    invoke-virtual {v4, v1}, Ljava/util/logging/Logger;->setUseParentHandlers(Z)V
 
-    const v4, 0x8000
+    const/4 v5, 0x3
 
-    invoke-virtual {v0, v4, v3}, Landroid/util/SparseIntArray;->put(II)V
+    invoke-static {v3, v5}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
-    const/high16 v4, 0x10000
+    move-result v5
 
-    invoke-virtual {v0, v4, v3}, Landroid/util/SparseIntArray;->put(II)V
+    if-eqz v5, :cond_1
 
-    invoke-virtual {v0, v5, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/high16 v4, 0x40000
-
-    const/4 v5, 0x2
-
-    invoke-virtual {v0, v4, v5}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/high16 v4, 0x80000
-
-    invoke-virtual {v0, v4, v5}, Landroid/util/SparseIntArray;->put(II)V
-
-    const/high16 v4, 0x100000
-
-    invoke-virtual {v0, v4, v5}, Landroid/util/SparseIntArray;->put(II)V
-
-    new-instance v6, Lh0b;
-
-    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/Runtime;->maxMemory()J
-
-    move-result-wide v7
-
-    const-wide/32 v9, 0x7fffffff
-
-    invoke-static {v7, v8, v9, v10}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v7
-
-    long-to-int v7, v7
-
-    const/high16 v8, 0x1000000
-
-    if-ge v7, v8, :cond_1
-
-    const/high16 v7, 0x300000
+    sget-object v3, Ljava/util/logging/Level;->FINE:Ljava/util/logging/Level;
 
     goto :goto_1
 
     :cond_1
-    const/high16 v11, 0x2000000
+    const/4 v5, 0x4
 
-    if-ge v7, v11, :cond_2
+    invoke-static {v3, v5}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
-    const/high16 v7, 0x600000
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    sget-object v3, Ljava/util/logging/Level;->INFO:Ljava/util/logging/Level;
 
     goto :goto_1
 
     :cond_2
-    const/high16 v7, 0xc00000
+    sget-object v3, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
 
     :goto_1
-    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
+    invoke-virtual {v4, v3}, Ljava/util/logging/Logger;->setLevel(Ljava/util/logging/Level;)V
 
-    move-result-object v11
+    sget-object v3, Lnd;->a:Lnd;
 
-    invoke-virtual {v11}, Ljava/lang/Runtime;->maxMemory()J
+    invoke-virtual {v4, v3}, Ljava/util/logging/Logger;->addHandler(Ljava/util/logging/Handler;)V
 
-    move-result-wide v11
+    goto :goto_0
 
-    invoke-static {v11, v12, v9, v10}, Ljava/lang/Math;->min(JJ)J
+    :cond_3
+    sget-boolean v0, Lbd;->d:Z
 
-    move-result-wide v9
+    if-eqz v0, :cond_4
 
-    long-to-int v9, v9
+    new-instance v0, Lbd;
 
-    if-ge v9, v8, :cond_3
-
-    div-int/2addr v9, v5
+    invoke-direct {v0}, Lbd;-><init>()V
 
     goto :goto_2
 
-    :cond_3
-    div-int/lit8 v9, v9, 0x4
-
-    mul-int/lit8 v9, v9, 0x3
+    :cond_4
+    move-object v0, v2
 
     :goto_2
-    const/4 v5, -0x1
+    if-eqz v0, :cond_5
 
-    invoke-direct {v6, v7, v9, v0, v5}, Lh0b;-><init>(IILandroid/util/SparseIntArray;I)V
+    :goto_3
+    move-object v2, v0
 
-    iput-object v6, p0, Lf0b;->e:Lh0b;
-
-    invoke-static {}, Lmk9;->j()Lmk9;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lf0b;->f:Lmk9;
-
-    iget-object v0, p1, Lotf;->a:Ljava/lang/Object;
-
-    check-cast v0, Lh0b;
-
-    if-nez v0, :cond_4
-
-    new-instance v0, Landroid/util/SparseIntArray;
-
-    invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
-
-    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->put(II)V
-
-    new-instance v1, Lh0b;
-
-    const v3, 0x14000
-
-    invoke-direct {v1, v3, v4, v0, v5}, Lh0b;-><init>(IILandroid/util/SparseIntArray;I)V
-
-    move-object v0, v1
-
-    :cond_4
-    iput-object v0, p0, Lf0b;->g:Lh0b;
-
-    invoke-static {}, Lmk9;->j()Lmk9;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lf0b;->h:Lmk9;
-
-    iget-object p1, p1, Lotf;->b:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/String;
-
-    if-nez p1, :cond_5
-
-    const-string p1, "legacy"
+    goto/16 :goto_9
 
     :cond_5
-    iput-object p1, p0, Lf0b;->i:Ljava/lang/String;
+    sget-boolean v0, Lqd;->e:Z
 
-    iput v2, p0, Lf0b;->j:I
+    if-eqz v0, :cond_11
 
-    invoke-static {}, Ln06;->s()Lm06;
+    new-instance v2, Lqd;
+
+    invoke-direct {v2}, Lqd;-><init>()V
+
+    goto/16 :goto_9
+
+    :cond_6
+    invoke-static {}, Ljava/security/Security;->getProviders()[Ljava/security/Provider;
+
+    move-result-object v0
+
+    aget-object v0, v0, v1
+
+    invoke-virtual {v0}, Ljava/security/Provider;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v3, "Conscrypt"
+
+    invoke-virtual {v3, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8
+
+    sget-boolean v0, Lzh3;->d:Z
+
+    if-eqz v0, :cond_7
+
+    new-instance v0, Lzh3;
+
+    invoke-direct {v0}, Lzh3;-><init>()V
+
+    goto :goto_4
+
+    :cond_7
+    move-object v0, v2
+
+    :goto_4
+    if-eqz v0, :cond_8
+
+    goto :goto_3
+
+    :cond_8
+    invoke-static {}, Ljava/security/Security;->getProviders()[Ljava/security/Provider;
+
+    move-result-object v0
+
+    aget-object v0, v0, v1
+
+    invoke-virtual {v0}, Ljava/security/Provider;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v3, "BC"
+
+    invoke-virtual {v3, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    sget-boolean v0, Lhr0;->d:Z
+
+    if-eqz v0, :cond_9
+
+    new-instance v0, Lhr0;
+
+    invoke-direct {v0}, Lhr0;-><init>()V
+
+    goto :goto_5
+
+    :cond_9
+    move-object v0, v2
+
+    :goto_5
+    if-eqz v0, :cond_a
+
+    goto :goto_3
+
+    :cond_a
+    invoke-static {}, Ljava/security/Security;->getProviders()[Ljava/security/Provider;
+
+    move-result-object v0
+
+    aget-object v0, v0, v1
+
+    invoke-virtual {v0}, Ljava/security/Provider;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "OpenJSSE"
+
+    invoke-virtual {v1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_c
+
+    sget-boolean v0, Lyja;->d:Z
+
+    if-eqz v0, :cond_b
+
+    new-instance v0, Lyja;
+
+    invoke-direct {v0}, Lyja;-><init>()V
+
+    goto :goto_6
+
+    :cond_b
+    move-object v0, v2
+
+    :goto_6
+    if-eqz v0, :cond_c
+
+    goto :goto_3
+
+    :cond_c
+    sget-boolean v0, Lu77;->c:Z
+
+    if-eqz v0, :cond_d
+
+    new-instance v0, Lu77;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    goto :goto_7
+
+    :cond_d
+    move-object v0, v2
+
+    :goto_7
+    if-eqz v0, :cond_e
+
+    goto :goto_3
+
+    :cond_e
+    const-class v0, Ljavax/net/ssl/SSLSocket;
+
+    const-string v1, "java.specification.version"
+
+    const-string v3, "unknown"
+
+    invoke-static {v1, v3}, Ljava/lang/System;->getProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    :try_start_0
+    invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v1
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    const/16 v3, 0x9
+
+    if-lt v1, v3, :cond_f
+
+    goto :goto_8
+
+    :catch_0
+    :cond_f
+    const-string v1, "org.eclipse.jetty.alpn.ALPN"
+
+    const/4 v3, 0x1
+
+    :try_start_1
+    invoke-static {v1, v3, v2}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+
+    move-result-object v1
+
+    const-string v4, "org.eclipse.jetty.alpn.ALPN$Provider"
+
+    invoke-static {v4, v3, v2}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+
+    move-result-object v4
+
+    const-string v5, "org.eclipse.jetty.alpn.ALPN$ClientProvider"
+
+    invoke-static {v5, v3, v2}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+
+    move-result-object v10
+
+    const-string v5, "org.eclipse.jetty.alpn.ALPN$ServerProvider"
+
+    invoke-static {v5, v3, v2}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+
+    move-result-object v11
+
+    const-string v3, "put"
+
+    filled-new-array {v0, v4}, [Ljava/lang/Class;
+
+    move-result-object v4
+
+    invoke-virtual {v1, v3, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v7
+
+    const-string v3, "get"
+
+    filled-new-array {v0}, [Ljava/lang/Class;
+
+    move-result-object v4
+
+    invoke-virtual {v1, v3, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v8
+
+    const-string v3, "remove"
+
+    filled-new-array {v0}, [Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v3, v0}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v9
+
+    new-instance v6, Lt77;
+
+    invoke-direct/range {v6 .. v11}, Lt77;-><init>(Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;Ljava/lang/Class;Ljava/lang/Class;)V
+    :try_end_1
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_1} :catch_1
+
+    move-object v2, v6
+
+    :catch_1
+    :goto_8
+    if-eqz v2, :cond_10
+
+    goto :goto_9
+
+    :cond_10
+    new-instance v0, Lf0b;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    goto/16 :goto_3
+
+    :cond_11
+    :goto_9
+    sput-object v2, Lf0b;->a:Lf0b;
+
+    const-class v0, Lp0a;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
+
+    move-result-object v0
+
+    sput-object v0, Lf0b;->b:Ljava/util/logging/Logger;
 
     return-void
+.end method
+
+.method public static i(ILjava/lang/String;Ljava/lang/Throwable;)V
+    .locals 1
+
+    const/4 v0, 0x5
+
+    if-ne p0, v0, :cond_0
+
+    sget-object p0, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
+
+    goto :goto_0
+
+    :cond_0
+    sget-object p0, Ljava/util/logging/Level;->INFO:Ljava/util/logging/Level;
+
+    :goto_0
+    sget-object v0, Lf0b;->b:Ljava/util/logging/Logger;
+
+    invoke-virtual {v0, p0, p1, p2}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a(Ljavax/net/ssl/SSLSocket;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public b(Ljavax/net/ssl/X509TrustManager;)Lgr0;
+    .locals 1
+
+    new-instance v0, Lnk0;
+
+    invoke-virtual {p0, p1}, Lf0b;->c(Ljavax/net/ssl/X509TrustManager;)Lc1f;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Lnk0;-><init>(Lc1f;)V
+
+    return-object v0
+.end method
+
+.method public c(Ljavax/net/ssl/X509TrustManager;)Lc1f;
+    .locals 1
+
+    new-instance p0, Luk0;
+
+    invoke-interface {p1}, Ljavax/net/ssl/X509TrustManager;->getAcceptedIssuers()[Ljava/security/cert/X509Certificate;
+
+    move-result-object p1
+
+    array-length v0, p1
+
+    invoke-static {p1, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, [Ljava/security/cert/X509Certificate;
+
+    invoke-direct {p0, p1}, Luk0;-><init>([Ljava/security/cert/X509Certificate;)V
+
+    return-object p0
+.end method
+
+.method public d(Ljavax/net/ssl/SSLSocket;Ljava/lang/String;Ljava/util/List;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public e(Ljava/net/Socket;Ljava/net/InetSocketAddress;I)V
+    .locals 0
+
+    invoke-virtual {p1, p2, p3}, Ljava/net/Socket;->connect(Ljava/net/SocketAddress;I)V
+
+    return-void
+.end method
+
+.method public f(Ljavax/net/ssl/SSLSocket;)Ljava/lang/String;
+    .locals 0
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public g()Ljava/lang/Object;
+    .locals 1
+
+    sget-object p0, Lf0b;->b:Ljava/util/logging/Logger;
+
+    sget-object v0, Ljava/util/logging/Level;->FINE:Ljava/util/logging/Level;
+
+    invoke-virtual {p0, v0}, Ljava/util/logging/Logger;->isLoggable(Ljava/util/logging/Level;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    new-instance p0, Ljava/lang/Throwable;
+
+    const-string v0, "response.body().close()"
+
+    invoke-direct {p0, v0}, Ljava/lang/Throwable;-><init>(Ljava/lang/String;)V
+
+    return-object p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public h(Ljava/lang/String;)Z
+    .locals 0
+
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public j(Ljava/lang/Object;Ljava/lang/String;)V
+    .locals 0
+
+    if-nez p1, :cond_0
+
+    const-string p0, " To see where this was allocated, set the OkHttpClient logger level to FINE: Logger.getLogger(OkHttpClient.class.getName()).setLevel(Level.FINE);"
+
+    invoke-virtual {p2, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
+
+    :cond_0
+    const/4 p0, 0x5
+
+    check-cast p1, Ljava/lang/Throwable;
+
+    invoke-static {p0, p2, p1}, Lf0b;->i(ILjava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public k()Ljavax/net/ssl/SSLContext;
+    .locals 0
+
+    const-string p0, "TLS"
+
+    invoke-static {p0}, Ljavax/net/ssl/SSLContext;->getInstance(Ljava/lang/String;)Ljavax/net/ssl/SSLContext;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public l(Ljavax/net/ssl/X509TrustManager;)Ljavax/net/ssl/SSLSocketFactory;
+    .locals 2
+
+    :try_start_0
+    invoke-virtual {p0}, Lf0b;->k()Ljavax/net/ssl/SSLContext;
+
+    move-result-object p0
+
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljavax/net/ssl/TrustManager;
+
+    const/4 v1, 0x0
+
+    aput-object p1, v0, v1
+
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, p1, v0, p1}, Ljavax/net/ssl/SSLContext;->init([Ljavax/net/ssl/KeyManager;[Ljavax/net/ssl/TrustManager;Ljava/security/SecureRandom;)V
+
+    invoke-virtual {p0}, Ljavax/net/ssl/SSLContext;->getSocketFactory()Ljavax/net/ssl/SSLSocketFactory;
+
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :catch_0
+    move-exception p0
+
+    new-instance p1, Ljava/lang/AssertionError;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "No System TLS: "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0, p0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw p1
+.end method
+
+.method public m()Ljavax/net/ssl/X509TrustManager;
+    .locals 3
+
+    invoke-static {}, Ljavax/net/ssl/TrustManagerFactory;->getDefaultAlgorithm()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljavax/net/ssl/TrustManagerFactory;->getInstance(Ljava/lang/String;)Ljavax/net/ssl/TrustManagerFactory;
+
+    move-result-object p0
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Ljavax/net/ssl/TrustManagerFactory;->init(Ljava/security/KeyStore;)V
+
+    invoke-virtual {p0}, Ljavax/net/ssl/TrustManagerFactory;->getTrustManagers()[Ljavax/net/ssl/TrustManager;
+
+    move-result-object p0
+
+    array-length v0, p0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_0
+
+    aget-object v0, p0, v1
+
+    instance-of v0, v0, Ljavax/net/ssl/X509TrustManager;
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    move v2, v1
+
+    :goto_0
+    if-eqz v2, :cond_2
+
+    aget-object p0, p0, v1
+
+    if-eqz p0, :cond_1
+
+    check-cast p0, Ljavax/net/ssl/X509TrustManager;
+
+    return-object p0
+
+    :cond_1
+    new-instance p0, Ljava/lang/NullPointerException;
+
+    const-string v0, "null cannot be cast to non-null type javax.net.ssl.X509TrustManager"
+
+    invoke-direct {p0, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_2
+    invoke-static {p0}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v0, "Unexpected default trust managers: "
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

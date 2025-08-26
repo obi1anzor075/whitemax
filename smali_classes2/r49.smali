@@ -2,194 +2,47 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lhk7;
+
 
 # instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:Ljava/lang/CharSequence;
-
-.field public final c:Ldv3;
-
-.field public final d:Ljava/util/Set;
+.field public final synthetic a:Lone/me/messages/list/ui/MessagesListWidget;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/CharSequence;Ldv3;Ljava/util/Set;)V
+.method public constructor <init>(Lone/me/messages/list/ui/MessagesListWidget;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lr49;->a:Ljava/lang/String;
-
-    iput-object p2, p0, Lr49;->b:Ljava/lang/CharSequence;
-
-    iput-object p3, p0, Lr49;->c:Ldv3;
-
-    iput-object p4, p0, Lr49;->d:Ljava/util/Set;
+    iput-object p1, p0, Lr49;->a:Lone/me/messages/list/ui/MessagesListWidget;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lr49;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lr49;
-
-    iget-object v1, p1, Lr49;->a:Ljava/lang/String;
-
-    iget-object v3, p0, Lr49;->a:Ljava/lang/String;
-
-    invoke-static {v3, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object v1, p0, Lr49;->b:Ljava/lang/CharSequence;
-
-    iget-object v3, p1, Lr49;->b:Ljava/lang/CharSequence;
-
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-object v1, p0, Lr49;->c:Ldv3;
-
-    iget-object v3, p1, Lr49;->c:Ldv3;
-
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_4
-
-    return v2
-
-    :cond_4
-    iget-object p0, p0, Lr49;->d:Ljava/util/Set;
-
-    iget-object p1, p1, Lr49;->d:Ljava/util/Set;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_5
-
-    return v2
-
-    :cond_5
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    iget-object v0, p0, Lr49;->a:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget-object v2, p0, Lr49;->b:Ljava/lang/CharSequence;
-
-    invoke-static {v2, v0, v1}, Lme4;->f(Ljava/lang/CharSequence;II)I
-
-    move-result v0
-
-    iget-object v2, p0, Lr49;->c:Ldv3;
-
-    iget v2, v2, Ldv3;->a:I
-
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
-
-    move-result v0
-
-    iget-object p0, p0, Lr49;->d:Ljava/util/Set;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final a(Lkt8;)V
     .locals 2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object p0, p0, Lr49;->a:Lone/me/messages/list/ui/MessagesListWidget;
 
-    const-string v1, "MiniFolder(id="
+    const-wide/16 v0, 0x0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-static {p0, p1, v0, v1}, Lone/me/messages/list/ui/MessagesListWidget;->q0(Lone/me/messages/list/ui/MessagesListWidget;Lkt8;J)V
 
-    iget-object v1, p0, Lr49;->a:Ljava/lang/String;
+    return-void
+.end method
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method public final b(Ljava/lang/String;Llk7;Landroid/text/style/ClickableSpan;)V
+    .locals 2
 
-    const-string v1, ", name="
+    iget-object p0, p0, Lr49;->a:Lone/me/messages/list/ui/MessagesListWidget;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-wide/16 v0, 0x0
 
-    iget-object v1, p0, Lr49;->b:Ljava/lang/CharSequence;
+    invoke-static {p0, p1, p2, v0, v1}, Lone/me/messages/list/ui/MessagesListWidget;->p0(Lone/me/messages/list/ui/MessagesListWidget;Ljava/lang/String;Llk7;J)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", counter="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lr49;->c:Ldv3;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", options="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lr49;->d:Ljava/util/Set;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

@@ -11,7 +11,7 @@
     d2 = {
         "Lru/ok/android/externcalls/analytics/config/CallAnalyticsConfig;",
         "",
-        "Lmw9;",
+        "Ll0a;",
         "okApi",
         "Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;",
         "eventMetaParams",
@@ -20,10 +20,10 @@
         "Lru/ok/android/externcalls/analytics/config/UploadConfig;",
         "upload",
         "<init>",
-        "(Lmw9;Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;Lru/ok/android/externcalls/analytics/log/CallAnalyticsLogger;Lru/ok/android/externcalls/analytics/config/UploadConfig;)V",
-        "Lmw9;",
+        "(Ll0a;Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;Lru/ok/android/externcalls/analytics/log/CallAnalyticsLogger;Lru/ok/android/externcalls/analytics/config/UploadConfig;)V",
+        "Ll0a;",
         "getOkApi",
-        "()Lmw9;",
+        "()Ll0a;",
         "Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;",
         "getEventMetaParams",
         "()Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;",
@@ -41,6 +41,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -49,20 +50,20 @@
 
 .field private final logger:Lru/ok/android/externcalls/analytics/log/CallAnalyticsLogger;
 
-.field private final okApi:Lmw9;
+.field private final okApi:Ll0a;
 
 .field private final upload:Lru/ok/android/externcalls/analytics/config/UploadConfig;
 
 
 # direct methods
-.method public constructor <init>(Lmw9;Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;Lru/ok/android/externcalls/analytics/log/CallAnalyticsLogger;Lru/ok/android/externcalls/analytics/config/UploadConfig;)V
+.method public constructor <init>(Ll0a;Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;Lru/ok/android/externcalls/analytics/log/CallAnalyticsLogger;Lru/ok/android/externcalls/analytics/config/UploadConfig;)V
     .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-object p1, p0, Lru/ok/android/externcalls/analytics/config/CallAnalyticsConfig;->okApi:Lmw9;
+    iput-object p1, p0, Lru/ok/android/externcalls/analytics/config/CallAnalyticsConfig;->okApi:Ll0a;
 
     .line 3
     iput-object p2, p0, Lru/ok/android/externcalls/analytics/config/CallAnalyticsConfig;->eventMetaParams:Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;
@@ -76,7 +77,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lmw9;Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;Lru/ok/android/externcalls/analytics/log/CallAnalyticsLogger;Lru/ok/android/externcalls/analytics/config/UploadConfig;ILx54;)V
+.method public synthetic constructor <init>(Ll0a;Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;Lru/ok/android/externcalls/analytics/log/CallAnalyticsLogger;Lru/ok/android/externcalls/analytics/config/UploadConfig;ILl94;)V
     .locals 18
 
     and-int/lit8 v0, p5, 0x2
@@ -90,7 +91,7 @@
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v1, v2}, Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;-><init>(Ls16;ILx54;)V
+    invoke-direct {v0, v2, v1, v2}, Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;-><init>(Lv56;ILl94;)V
 
     goto :goto_0
 
@@ -118,7 +119,7 @@
     if-eqz v2, :cond_2
 
     .line 8
-    new-instance v2, Lru/ok/android/externcalls/analytics/config/UploadConfig;
+    new-instance v3, Lru/ok/android/externcalls/analytics/config/UploadConfig;
 
     const/16 v16, 0x3ff
 
@@ -144,26 +145,23 @@
 
     const/4 v15, 0x0
 
-    move-object v3, v2
+    invoke-direct/range {v3 .. v17}, Lru/ok/android/externcalls/analytics/config/UploadConfig;-><init>(ILjava/util/concurrent/Executor;JJLv56;Lv56;Lv56;Lv56;Lv56;Lv56;ILl94;)V
 
-    invoke-direct/range {v3 .. v17}, Lru/ok/android/externcalls/analytics/config/UploadConfig;-><init>(ILjava/util/concurrent/Executor;JJLs16;Ls16;Ls16;Ls16;Ls16;Ls16;ILx54;)V
-
-    move-object/from16 v3, p0
+    :goto_2
+    move-object/from16 v2, p0
 
     move-object/from16 v4, p1
+
+    goto :goto_3
+
+    :cond_2
+    move-object/from16 v3, p4
 
     goto :goto_2
 
-    :cond_2
-    move-object/from16 v3, p0
-
-    move-object/from16 v4, p1
-
-    move-object/from16 v2, p4
-
     .line 9
-    :goto_2
-    invoke-direct {v3, v4, v0, v1, v2}, Lru/ok/android/externcalls/analytics/config/CallAnalyticsConfig;-><init>(Lmw9;Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;Lru/ok/android/externcalls/analytics/log/CallAnalyticsLogger;Lru/ok/android/externcalls/analytics/config/UploadConfig;)V
+    :goto_3
+    invoke-direct {v2, v4, v0, v1, v3}, Lru/ok/android/externcalls/analytics/config/CallAnalyticsConfig;-><init>(Ll0a;Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;Lru/ok/android/externcalls/analytics/log/CallAnalyticsLogger;Lru/ok/android/externcalls/analytics/config/UploadConfig;)V
 
     return-void
 .end method
@@ -186,10 +184,10 @@
     return-object p0
 .end method
 
-.method public final getOkApi()Lmw9;
+.method public final getOkApi()Ll0a;
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/CallAnalyticsConfig;->okApi:Lmw9;
+    iget-object p0, p0, Lru/ok/android/externcalls/analytics/config/CallAnalyticsConfig;->okApi:Ll0a;
 
     return-object p0
 .end method

@@ -119,7 +119,7 @@
 
     const/16 v1, 0xd
 
-    if-eq v0, v1, :cond_1
+    if-eq v0, v1, :cond_2
 
     const/16 v1, 0xa
 
@@ -134,15 +134,16 @@
 
     cmp-long v4, v0, v4
 
-    if-lez v4, :cond_2
+    if-lez v4, :cond_1
 
     sub-long/2addr v0, v2
 
     iput-wide v0, p0, Lorg/json/JSONTokener;->character:J
 
-    goto :goto_1
-
     :cond_1
+    return-void
+
+    :cond_2
     :goto_0
     iget-wide v0, p0, Lorg/json/JSONTokener;->line:J
 
@@ -154,8 +155,6 @@
 
     iput-wide v0, p0, Lorg/json/JSONTokener;->character:J
 
-    :cond_2
-    :goto_1
     return-void
 .end method
 
@@ -237,7 +236,7 @@
 
     iput-wide v0, p0, Lorg/json/JSONTokener;->character:J
 
-    goto :goto_0
+    return-void
 
     :cond_0
     const/16 v5, 0xa
@@ -261,7 +260,7 @@
     :cond_1
     iput-wide v0, p0, Lorg/json/JSONTokener;->character:J
 
-    goto :goto_0
+    return-void
 
     :cond_2
     iget-wide v0, p0, Lorg/json/JSONTokener;->character:J
@@ -271,7 +270,6 @@
     iput-wide v0, p0, Lorg/json/JSONTokener;->character:J
 
     :cond_3
-    :goto_0
     return-void
 .end method
 
@@ -332,12 +330,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -380,11 +377,6 @@
 
     return p0
 
-    :catch_0
-    move-exception p0
-
-    goto :goto_0
-
     :cond_1
     iget-object p0, p0, Lorg/json/JSONTokener;->reader:Ljava/io/Reader;
 
@@ -394,7 +386,9 @@
 
     return v1
 
-    :goto_0
+    :catch_0
+    move-exception p0
+
     new-instance v0, Lorg/json/JSONException;
 
     const-string v1, "Unable to read the next character from the stream"
@@ -1088,11 +1082,6 @@
 
     return p0
 
-    :catch_0
-    move-exception p0
-
-    goto :goto_0
-
     :cond_1
     if-ne v6, p1, :cond_0
 
@@ -1108,7 +1097,9 @@
 
     return v6
 
-    :goto_0
+    :catch_0
+    move-exception p0
+
     new-instance p1, Lorg/json/JSONException;
 
     invoke-direct {p1, p0}, Lorg/json/JSONException;-><init>(Ljava/lang/Throwable;)V
@@ -1123,7 +1114,7 @@
     new-instance v0, Lorg/json/JSONException;
 
     .line 2
-    invoke-static {p1}, Lhr1;->l(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p1}, Lzt1;->l(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -1150,7 +1141,7 @@
     new-instance v0, Lorg/json/JSONException;
 
     .line 8
-    invoke-static {p1}, Lhr1;->l(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p1}, Lzt1;->l(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -1199,7 +1190,7 @@
 
     const-string p0, "]"
 
-    invoke-static {v0, v1, v2, p0}, Lwn6;->k(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1, v2, p0}, Lu88;->m(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

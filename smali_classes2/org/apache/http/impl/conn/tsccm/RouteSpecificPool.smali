@@ -157,7 +157,7 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-object p1
 
     :catch_0
     move-exception v0
@@ -168,7 +168,6 @@
 
     invoke-interface {p0, v1, v0}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;Ljava/lang/Throwable;)V
 
-    :goto_0
     return-object p1
 
     :cond_2
@@ -409,13 +408,12 @@
 
     if-eqz p0, :cond_0
 
-    goto :goto_0
+    return v1
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 p0, 0x0
 
-    :goto_0
-    return v1
+    return p0
 .end method
 
 .method public nextThread()Lorg/apache/http/impl/conn/tsccm/WaitingThread;

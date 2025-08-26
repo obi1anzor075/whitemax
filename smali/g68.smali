@@ -4,194 +4,78 @@
 
 
 # instance fields
-.field public a:Ljava/lang/Object;
+.field public final a:Landroid/content/Context;
 
-.field public b:Ljava/lang/String;
+.field public final b:Landroid/media/browse/MediaBrowser;
 
-.field public c:Ljava/io/Serializable;
+.field public final c:Landroid/os/Bundle;
 
-.field public d:I
+.field public final d:Le68;
 
-.field public e:I
+.field public final e:Ljs;
 
-.field public f:Ljava/lang/Object;
+.field public f:Lvh4;
 
-.field public g:Ljava/io/Serializable;
+.field public g:Landroid/os/Messenger;
+
+.field public h:Lih8;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Class;[Ljava/lang/Class;)V
+.method public constructor <init>(Landroid/content/Context;Landroid/content/ComponentName;Lrq7;)V
     .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    new-instance v0, Le68;
 
-    iput-object v0, p0, Lg68;->b:Ljava/lang/String;
+    invoke-direct {v0, p0}, Le68;-><init>(Lg68;)V
 
-    new-instance v0, Ljava/util/HashSet;
+    iput-object v0, p0, Lg68;->d:Le68;
 
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
-
-    iput-object v0, p0, Lg68;->a:Ljava/lang/Object;
-
-    new-instance v1, Ljava/util/HashSet;
-
-    invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
-
-    iput-object v1, p0, Lg68;->c:Ljava/io/Serializable;
+    new-instance v0, Ljs;
 
     const/4 v1, 0x0
 
-    iput v1, p0, Lg68;->d:I
+    invoke-direct {v0, v1}, Lbod;-><init>(I)V
 
-    iput v1, p0, Lg68;->e:I
+    iput-object v0, p0, Lg68;->e:Ljs;
 
-    new-instance v2, Ljava/util/HashSet;
+    iput-object p1, p0, Lg68;->a:Landroid/content/Context;
 
-    invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
+    new-instance v0, Landroid/os/Bundle;
 
-    iput-object v2, p0, Lg68;->g:Ljava/io/Serializable;
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    invoke-static {p1}, Lpjb;->a(Ljava/lang/Class;)Lpjb;
+    iput-object v0, p0, Lg68;->c:Landroid/os/Bundle;
 
-    move-result-object p1
+    const-string v1, "extra_client_version"
 
-    invoke-virtual {v0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    const/4 v2, 0x1
 
-    array-length p1, p2
+    invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    :goto_0
-    if-ge v1, p1, :cond_0
+    const-string v1, "extra_calling_pid"
 
-    aget-object v0, p2, v1
+    invoke-static {}, Landroid/os/Process;->myPid()I
 
-    const-string v2, "Null interface"
+    move-result v2
 
-    invoke-static {v0, v2}, Ln06;->j(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    iget-object v2, p0, Lg68;->a:Ljava/lang/Object;
+    iput-object p0, p3, Lrq7;->b:Ljava/lang/Object;
 
-    check-cast v2, Ljava/util/HashSet;
+    new-instance v1, Landroid/media/browse/MediaBrowser;
 
-    invoke-static {v0}, Lpjb;->a(Ljava/lang/Class;)Lpjb;
+    iget-object p3, p3, Lrq7;->a:Ljava/lang/Object;
 
-    move-result-object v0
+    check-cast p3, Lf68;
 
-    invoke-virtual {v2, v0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    add-int/lit8 v1, v1, 0x1
+    invoke-direct {v1, p1, p2, p3, v0}, Landroid/media/browse/MediaBrowser;-><init>(Landroid/content/Context;Landroid/content/ComponentName;Landroid/media/browse/MediaBrowser$ConnectionCallback;Landroid/os/Bundle;)V
 
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-
-# virtual methods
-.method public a(Loe4;)V
-    .locals 2
-
-    iget-object v0, p0, Lg68;->a:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/HashSet;
-
-    iget-object v1, p1, Loe4;->a:Lpjb;
-
-    invoke-virtual {v0, v1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    if-eqz v0, :cond_0
-
-    iget-object p0, p0, Lg68;->c:Ljava/io/Serializable;
-
-    check-cast p0, Ljava/util/HashSet;
-
-    invoke-virtual {p0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    iput-object v1, p0, Lg68;->b:Landroid/media/browse/MediaBrowser;
 
     return-void
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Components are not allowed to depend on interfaces they themselves provide."
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method public b()Lt73;
-    .locals 9
-
-    iget-object v0, p0, Lg68;->f:Ljava/lang/Object;
-
-    check-cast v0, Li83;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    new-instance v0, Lt73;
-
-    iget-object v2, p0, Lg68;->b:Ljava/lang/String;
-
-    new-instance v3, Ljava/util/HashSet;
-
-    iget-object v1, p0, Lg68;->a:Ljava/lang/Object;
-
-    check-cast v1, Ljava/util/HashSet;
-
-    invoke-direct {v3, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
-
-    new-instance v4, Ljava/util/HashSet;
-
-    iget-object v1, p0, Lg68;->c:Ljava/io/Serializable;
-
-    check-cast v1, Ljava/util/HashSet;
-
-    invoke-direct {v4, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
-
-    iget v5, p0, Lg68;->d:I
-
-    iget v6, p0, Lg68;->e:I
-
-    iget-object v1, p0, Lg68;->f:Ljava/lang/Object;
-
-    move-object v7, v1
-
-    check-cast v7, Li83;
-
-    iget-object p0, p0, Lg68;->g:Ljava/io/Serializable;
-
-    move-object v8, p0
-
-    check-cast v8, Ljava/util/HashSet;
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v8}, Lt73;-><init>(Ljava/lang/String;Ljava/util/Set;Ljava/util/Set;IILi83;Ljava/util/Set;)V
-
-    return-object v0
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string v0, "Missing required property: factory."
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method

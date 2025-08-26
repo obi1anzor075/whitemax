@@ -1,105 +1,73 @@
 .class public final Luy2;
-.super Loi0;
+.super Lz;
 .source "SourceFile"
 
 
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Luy2;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
 # instance fields
-.field public h:I
-
-.field public i:I
-
-.field public j:I
+.field public c:Z
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 12
+.method static constructor <clinit>()V
+    .locals 2
 
-    sget v6, Lwlb;->circularProgressIndicatorStyle:I
+    new-instance v0, Ly;
 
-    sget v7, Lty2;->E0:I
+    const/4 v1, 0x2
 
-    invoke-direct {p0, p1, p2, v6, v7}, Loi0;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+    invoke-direct {v0, v1}, Ly;-><init>(I)V
 
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    sput-object v0, Luy2;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    move-result-object v0
+    return-void
+.end method
 
-    sget v1, Lvmb;->mtrl_progress_circular_size_medium:I
+.method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+    .locals 0
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-direct {p0, p1, p2}, Lz;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
 
-    move-result v8
-
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    sget v1, Lvmb;->mtrl_progress_circular_inset_medium:I
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v9
-
-    sget-object v10, Lxvb;->CircularProgressIndicator:[I
-
-    const/4 v11, 0x0
-
-    new-array v5, v11, [I
-
-    invoke-static {p1, p2, v6, v7}, Lshe;->a(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-
-    move-object v0, p1
-
-    move-object v1, p2
-
-    move-object v2, v10
-
-    move v3, v6
-
-    move v4, v7
-
-    invoke-static/range {v0 .. v5}, Lshe;->b(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)V
-
-    invoke-virtual {p1, p2, v10, v6, v7}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
-
-    move-result-object p2
-
-    sget v0, Lxvb;->CircularProgressIndicator_indicatorSize:I
-
-    invoke-static {p1, p2, v0, v8}, Lwx3;->j(Landroid/content/Context;Landroid/content/res/TypedArray;II)I
-
-    move-result v0
-
-    iget v1, p0, Loi0;->a:I
-
-    mul-int/lit8 v1, v1, 0x2
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
-
-    move-result v0
-
-    iput v0, p0, Luy2;->h:I
-
-    sget v0, Lxvb;->CircularProgressIndicator_indicatorInset:I
-
-    invoke-static {p1, p2, v0, v9}, Lwx3;->j(Landroid/content/Context;Landroid/content/res/TypedArray;II)I
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result p1
 
-    iput p1, p0, Luy2;->i:I
+    const/4 p2, 0x1
 
-    sget p1, Lxvb;->CircularProgressIndicator_indicatorDirectionCircular:I
+    if-ne p1, p2, :cond_0
 
-    invoke-virtual {p2, p1, v11}, Landroid/content/res/TypedArray;->getInt(II)I
+    goto :goto_0
 
-    move-result p1
+    :cond_0
+    const/4 p2, 0x0
 
-    iput p1, p0, Luy2;->j:I
+    :goto_0
+    iput-boolean p2, p0, Luy2;->c:Z
 
-    invoke-virtual {p2}, Landroid/content/res/TypedArray;->recycle()V
+    return-void
+.end method
 
-    invoke-virtual {p0}, Loi0;->a()V
+
+# virtual methods
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 0
+
+    invoke-super {p0, p1, p2}, Lz;->writeToParcel(Landroid/os/Parcel;I)V
+
+    iget-boolean p0, p0, Luy2;->c:Z
+
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
 
     return-void
 .end method

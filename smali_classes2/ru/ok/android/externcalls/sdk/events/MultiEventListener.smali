@@ -5,7 +5,7 @@
 # interfaces
 .implements Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;
 .implements Ljava/util/Collection;
-.implements La77;
+.implements Lrb7;
 
 
 # annotations
@@ -16,7 +16,7 @@
         "Ljava/util/Collection<",
         "Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;",
         ">;",
-        "La77;"
+        "Lrb7;"
     }
 .end annotation
 
@@ -40,7 +40,7 @@
         "elements",
         "addAll",
         "(Ljava/util/Collection;)Z",
-        "Ljue;",
+        "Le5f;",
         "clear",
         "()V",
         "contains",
@@ -70,10 +70,10 @@
         "(Lorg/json/JSONObject;)V",
         "Lru/ok/android/externcalls/sdk/ConversationParticipant;",
         "id",
-        "Lie1;",
+        "Ltf1;",
         "newState",
         "onStateChanged",
-        "(Lru/ok/android/externcalls/sdk/ConversationParticipant;Lie1;)V",
+        "(Lru/ok/android/externcalls/sdk/ConversationParticipant;Ltf1;)V",
         "",
         "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
         "externalIds",
@@ -102,10 +102,10 @@
         "(Lru/ok/android/externcalls/sdk/ConversationParticipant;Z)V",
         "recurring",
         "onRecurringChanged",
-        "Loc9;",
+        "Ljh9;",
         "muteEvent",
         "onMuteStateInitialized",
-        "(Loc9;)V",
+        "(Ljh9;)V",
         "onMuteChanged",
         "isAnonJoinForbidden",
         "onAnonJoinForbiddenChanged",
@@ -157,6 +157,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -849,13 +850,12 @@
 
     if-eqz v0, :cond_0
 
-    goto :goto_0
+    return-object v0
 
     :cond_1
-    const/4 v0, 0x0
+    const/4 p0, 0x0
 
-    :goto_0
-    return-object v0
+    return-object p0
 .end method
 
 .method public onJoinLinkUpdated(Ljava/lang/String;)V
@@ -1026,7 +1026,7 @@
     return-void
 .end method
 
-.method public onMuteChanged(Loc9;)V
+.method public onMuteChanged(Ljh9;)V
     .locals 1
 
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -1046,7 +1046,7 @@
 
     check-cast v0, Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;
 
-    invoke-interface {v0, p1}, Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;->onMuteChanged(Loc9;)V
+    invoke-interface {v0, p1}, Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;->onMuteChanged(Ljh9;)V
 
     goto :goto_0
 
@@ -1054,7 +1054,7 @@
     return-void
 .end method
 
-.method public onMuteStateInitialized(Loc9;)V
+.method public onMuteStateInitialized(Ljh9;)V
     .locals 1
 
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -1074,7 +1074,7 @@
 
     check-cast v0, Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;
 
-    invoke-interface {v0, p1}, Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;->onMuteStateInitialized(Loc9;)V
+    invoke-interface {v0, p1}, Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;->onMuteStateInitialized(Ljh9;)V
 
     goto :goto_0
 
@@ -1467,7 +1467,7 @@
     return-void
 .end method
 
-.method public onStateChanged(Lru/ok/android/externcalls/sdk/ConversationParticipant;Lie1;)V
+.method public onStateChanged(Lru/ok/android/externcalls/sdk/ConversationParticipant;Ltf1;)V
     .locals 1
 
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -1487,7 +1487,7 @@
 
     check-cast v0, Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;
 
-    invoke-interface {v0, p1, p2}, Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;->onStateChanged(Lru/ok/android/externcalls/sdk/ConversationParticipant;Lie1;)V
+    invoke-interface {v0, p1, p2}, Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;->onStateChanged(Lru/ok/android/externcalls/sdk/ConversationParticipant;Ltf1;)V
 
     goto :goto_0
 
@@ -1642,7 +1642,7 @@
     .locals 0
 
     .line 1
-    invoke-static {p0}, Ln06;->D(Ljava/util/Collection;)[Ljava/lang/Object;
+    invoke-static {p0}, Lq46;->J(Ljava/util/Collection;)[Ljava/lang/Object;
 
     move-result-object p0
 
@@ -1660,7 +1660,7 @@
     .end annotation
 
     .line 2
-    invoke-static {p0, p1}, Ln06;->E(Ljava/util/Collection;[Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-static {p0, p1}, Lq46;->K(Ljava/util/Collection;[Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object p0
 

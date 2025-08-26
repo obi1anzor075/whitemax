@@ -1,190 +1,140 @@
 .class public final Lvm3;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lm26;
 
 
 # instance fields
-.field public final synthetic X:I
+.field public final a:Lje7;
 
-.field public synthetic Y:Ljava/util/List;
+.field public final b:Lje7;
 
-.field public synthetic Z:Ljava/lang/Object;
-
-.field public synthetic w0:Ljava/lang/Object;
+.field public final c:Lje7;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILkotlin/coroutines/Continuation;)V
-    .locals 1
+.method public constructor <init>(Lje7;Lje7;Lje7;)V
+    .locals 0
 
-    .line 1
-    const/4 v0, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput v0, p0, Lvm3;->X:I
+    iput-object p1, p0, Lvm3;->a:Lje7;
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Lvm3;->b:Lje7;
 
-    return-void
-.end method
-
-.method public constructor <init>(Lym3;Lkotlin/coroutines/Continuation;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lvm3;->X:I
-
-    .line 2
-    iput-object p1, p0, Lvm3;->w0:Ljava/lang/Object;
-
-    const/4 p1, 0x4
-
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p3, p0, Lvm3;->c:Lje7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final h(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a(Lsm3;[JJ)V
+    .locals 4
 
-    iget v0, p0, Lvm3;->X:I
+    iget-object v0, p0, Lvm3;->b:Lje7;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-interface {v0}, Lje7;->getValue()Ljava/lang/Object;
 
-    check-cast p1, Ljava/util/List;
+    move-result-object v0
 
-    check-cast p2, Ljava/util/List;
+    check-cast v0, Lxk3;
 
-    check-cast p3, Ljava/util/List;
+    invoke-virtual {p1}, Lsm3;->d()Ljava/util/List;
 
-    check-cast p4, Lkotlin/coroutines/Continuation;
+    move-result-object v1
 
-    new-instance p0, Lvm3;
+    invoke-virtual {v0, v1, p2}, Lxk3;->r(Ljava/util/List;[J)V
 
-    const/4 v0, 0x4
+    invoke-virtual {p1}, Lsm3;->d()Ljava/util/List;
 
-    invoke-direct {p0, v0, p4}, Lvm3;-><init>(ILkotlin/coroutines/Continuation;)V
+    move-result-object p1
 
-    iput-object p1, p0, Lvm3;->Y:Ljava/util/List;
+    new-instance v0, Lms;
 
-    iput-object p2, p0, Lvm3;->Z:Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    iput-object p3, p0, Lvm3;->w0:Ljava/lang/Object;
+    invoke-direct {v0, v1}, Lms;-><init>(I)V
 
-    sget-object p1, Ljue;->a:Ljue;
+    check-cast p1, Ljava/util/ArrayList;
 
-    invoke-virtual {p0, p1}, Lvm3;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    move-result-object p0
+    move-result-object p1
 
-    return-object p0
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    :pswitch_0
-    check-cast p1, Ltf3;
+    move-result v2
 
-    check-cast p2, Ll2b;
+    if-eqz v2, :cond_0
 
-    check-cast p3, Ljava/util/List;
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    check-cast p4, Lkotlin/coroutines/Continuation;
+    move-result-object v2
 
-    new-instance p2, Lvm3;
+    check-cast v2, Lpm3;
 
-    iget-object p0, p0, Lvm3;->w0:Ljava/lang/Object;
+    iget-wide v2, v2, Lpm3;->a:J
 
-    check-cast p0, Lym3;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-direct {p2, p0, p4}, Lvm3;-><init>(Lym3;Lkotlin/coroutines/Continuation;)V
+    move-result-object v2
 
-    iput-object p1, p2, Lvm3;->Z:Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Lms;->add(Ljava/lang/Object;)Z
 
-    iput-object p3, p2, Lvm3;->Y:Ljava/util/List;
+    goto :goto_0
 
-    sget-object p0, Ljue;->a:Ljue;
+    :cond_0
+    array-length p1, p2
 
-    invoke-virtual {p2, p0}, Lvm3;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    :goto_1
+    if-ge v1, p1, :cond_1
 
-    move-result-object p0
+    aget-wide v2, p2, v1
 
-    return-object p0
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
+    move-result-object v2
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    invoke-virtual {v0, v2}, Lms;->add(Ljava/lang/Object;)Z
 
-    iget v0, p0, Lvm3;->X:I
+    add-int/lit8 v1, v1, 0x1
 
-    packed-switch v0, :pswitch_data_0
+    goto :goto_1
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    :cond_1
+    invoke-virtual {v0}, Lms;->isEmpty()Z
 
-    iget-object p1, p0, Lvm3;->Y:Ljava/util/List;
+    move-result p1
 
-    iget-object v0, p0, Lvm3;->Z:Ljava/lang/Object;
+    if-eqz p1, :cond_2
 
-    check-cast v0, Ljava/util/List;
+    return-void
 
-    iget-object p0, p0, Lvm3;->w0:Ljava/lang/Object;
+    :cond_2
+    iget-object p1, p0, Lvm3;->c:Lje7;
 
-    check-cast p0, Ljava/util/List;
+    invoke-interface {p1}, Lje7;->getValue()Ljava/lang/Object;
 
-    new-instance v1, Lcxd;
+    move-result-object p1
 
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+    check-cast p1, Lo47;
 
-    iput-object p1, v1, Lcxd;->a:Ljava/util/List;
+    invoke-virtual {p1, v0}, Lo47;->a(Ljava/util/Collection;)V
 
-    iput-object v0, v1, Lcxd;->b:Ljava/util/List;
+    iget-object p0, p0, Lvm3;->a:Lje7;
 
-    iput-object p0, v1, Lcxd;->c:Ljava/util/List;
-
-    return-object v1
-
-    :pswitch_0
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lvm3;->Z:Ljava/lang/Object;
-
-    check-cast p1, Ltf3;
-
-    iget-object v0, p0, Lvm3;->Y:Ljava/util/List;
-
-    iget-object p0, p0, Lvm3;->w0:Ljava/lang/Object;
-
-    check-cast p0, Lym3;
-
-    invoke-virtual {p0, p1}, Lym3;->E(Ltf3;)Lwia;
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    iget-object p1, p0, Lwia;->a:Ljava/lang/Object;
+    check-cast p0, Lvu0;
 
-    check-cast p1, Ll5b;
+    new-instance p1, Lhs3;
 
-    iget-object p0, p0, Lwia;->b:Ljava/lang/Object;
+    invoke-direct {p1, p3, p4, v0}, Lhs3;-><init>(JLjava/util/Collection;)V
 
-    check-cast p0, Ljava/util/List;
+    invoke-virtual {p0, p1}, Lvu0;->c(Ljava/lang/Object;)V
 
-    new-instance v1, Lg5b;
-
-    invoke-direct {v1, p1, p0, v0}, Lg5b;-><init>(Ll5b;Ljava/util/List;Ljava/util/List;)V
-
-    return-object v1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

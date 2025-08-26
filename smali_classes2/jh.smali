@@ -1,86 +1,91 @@
-.class public final Ljh;
-.super Lmh;
+.class public abstract Ljh;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:I
+# static fields
+.field public static final a:Lmv9;
+
+.field public static final b:Z
+
+.field public static final c:Lyi;
+
+.field public static final d:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Ljh;->a:I
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method static constructor <clinit>()V
     .locals 3
 
-    const/4 v0, 0x1
+    sget-object v0, Lgh;->a:Lmv9;
 
-    if-ne p0, p1, :cond_0
+    sput-object v0, Ljh;->a:Lmv9;
 
-    return v0
+    const-string v0, "animoji.debug"
+
+    const-string v1, "false"
+
+    invoke-static {v0, v1}, Ljava/lang/System;->getProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {v0}, Lj8e;->g1(Ljava/lang/String;)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    goto :goto_0
 
     :cond_0
-    instance-of v1, p1, Ljh;
+    const/4 v0, 0x0
 
-    const/4 v2, 0x0
+    :goto_0
+    sput-boolean v0, Ljh;->b:Z
 
-    if-nez v1, :cond_1
+    new-instance v0, Lyi;
 
-    return v2
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    :cond_1
-    check-cast p1, Ljh;
+    new-instance v1, Ljava/util/concurrent/atomic/AtomicReference;
 
-    iget p0, p0, Ljh;->a:I
+    sget-object v2, Lcwc;->b:Lvh;
 
-    iget p1, p1, Ljh;->a:I
+    invoke-direct {v1, v2}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
 
-    if-eq p0, p1, :cond_2
+    iput-object v1, v0, Lyi;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
-    return v2
+    new-instance v1, Ljava/util/concurrent/ConcurrentHashMap;
 
-    :cond_2
-    return v0
-.end method
+    invoke-direct {v1}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
-.method public final hashCode()I
-    .locals 0
+    new-instance v1, Ljava/util/concurrent/ConcurrentHashMap;
 
-    iget p0, p0, Ljh;->a:I
+    invoke-direct {v1}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+    new-instance v1, Ljava/util/HashMap;
 
-    move-result p0
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    return p0
-.end method
+    iput-object v1, v0, Lyi;->b:Ljava/util/HashMap;
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+    sput-object v0, Ljh;->c:Lyi;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v0, Lm;
 
-    const-string v1, "IntNumber(value="
+    const/4 v1, 0x5
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lm;-><init>(I)V
 
-    iget p0, p0, Ljh;->a:I
+    const/4 v1, 0x3
 
-    const-string v1, ")"
+    invoke-static {v1, v0}, Lkhg;->o(ILv56;)Lje7;
 
-    invoke-static {v0, p0, v1}, Lwn6;->j(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

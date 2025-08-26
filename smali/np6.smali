@@ -1,122 +1,62 @@
 .class public final Lnp6;
-.super Ljava/lang/Object;
+.super Lple;
 .source "SourceFile"
-
-# interfaces
-.implements Lpye;
-.implements Lbr6;
-.implements Lyhe;
-
-
-# static fields
-.field public static final X:Lz80;
-
-.field public static final Y:Lz80;
-
-.field public static final Z:Lz80;
-
-.field public static final b:Lz80;
-
-.field public static final c:Lz80;
-
-.field public static final o:Lz80;
 
 
 # instance fields
-.field public final a:Lhga;
+.field public final synthetic e:Lop6;
+
+.field public final synthetic f:I
+
+.field public final synthetic g:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
-
-    new-instance v0, Lz80;
-
-    const-string v1, "camerax.core.imageAnalysis.backpressureStrategy"
-
-    const-class v2, Lgp6;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v0, v2, v3, v1}, Lz80;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
-
-    sput-object v0, Lnp6;->b:Lz80;
-
-    sget-object v0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    new-instance v1, Lz80;
-
-    const-string v2, "camerax.core.imageAnalysis.imageQueueDepth"
-
-    invoke-direct {v1, v0, v3, v2}, Lz80;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
-
-    sput-object v1, Lnp6;->c:Lz80;
-
-    new-instance v0, Lz80;
-
-    const-string v1, "camerax.core.imageAnalysis.imageReaderProxyProvider"
-
-    const-class v2, Lor6;
-
-    invoke-direct {v0, v2, v3, v1}, Lz80;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
-
-    sput-object v0, Lnp6;->o:Lz80;
-
-    new-instance v0, Lz80;
-
-    const-string v1, "camerax.core.imageAnalysis.outputImageFormat"
-
-    const-class v2, Ljp6;
-
-    invoke-direct {v0, v2, v3, v1}, Lz80;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
-
-    sput-object v0, Lnp6;->X:Lz80;
-
-    new-instance v0, Lz80;
-
-    const-string v1, "camerax.core.imageAnalysis.onePixelShiftEnabled"
-
-    const-class v2, Ljava/lang/Boolean;
-
-    invoke-direct {v0, v2, v3, v1}, Lz80;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
-
-    sput-object v0, Lnp6;->Y:Lz80;
-
-    new-instance v0, Lz80;
-
-    const-string v1, "camerax.core.imageAnalysis.outputImageRotationEnabled"
-
-    invoke-direct {v0, v2, v3, v1}, Lz80;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
-
-    sput-object v0, Lnp6;->Z:Lz80;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lhga;)V
+.method public constructor <init>(Ljava/lang/String;Lop6;IJ)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lnp6;->e:Lop6;
 
-    iput-object p1, p0, Lnp6;->a:Lhga;
+    iput p3, p0, Lnp6;->f:I
+
+    iput-wide p4, p0, Lnp6;->g:J
+
+    const/4 p2, 0x1
+
+    invoke-direct {p0, p1, p2}, Lple;-><init>(Ljava/lang/String;Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getConfig()Lia3;
-    .locals 0
+.method public final a()J
+    .locals 5
 
-    iget-object p0, p0, Lnp6;->a:Lhga;
+    iget-object v0, p0, Lnp6;->e:Lop6;
 
-    return-object p0
-.end method
+    :try_start_0
+    iget-object v1, v0, Lop6;->D0:Lwp6;
 
-.method public final getInputFormat()I
-    .locals 0
+    iget v2, p0, Lnp6;->f:I
 
-    const/16 p0, 0x23
+    iget-wide v3, p0, Lnp6;->g:J
 
-    return p0
+    invoke-virtual {v1, v2, v3, v4}, Lwp6;->X(IJ)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception p0
+
+    const/4 v1, 0x2
+
+    invoke-virtual {v0, v1, v1, p0}, Lop6;->c(IILjava/io/IOException;)V
+
+    :goto_0
+    const-wide/16 v0, -0x1
+
+    return-wide v0
 .end method

@@ -199,7 +199,7 @@
 
     check-cast p1, Ljava/net/InetSocketAddress;
 
-    new-instance v1, Lorg/apache/http/HttpHost;
+    new-instance p2, Lorg/apache/http/HttpHost;
 
     invoke-virtual {p0, p1}, Lorg/apache/http/impl/conn/ProxySelectorRoutePlanner;->getHost(Ljava/net/InetSocketAddress;)Ljava/lang/String;
 
@@ -209,9 +209,9 @@
 
     move-result p1
 
-    invoke-direct {v1, p0, p1}, Lorg/apache/http/HttpHost;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p2, p0, p1}, Lorg/apache/http/HttpHost;-><init>(Ljava/lang/String;I)V
 
-    goto :goto_0
+    return-object p2
 
     :cond_2
     new-instance p0, Lorg/apache/http/HttpException;
@@ -237,7 +237,6 @@
     throw p0
 
     :cond_3
-    :goto_0
     return-object v1
 
     :catch_0
@@ -348,14 +347,13 @@
 
     invoke-direct {p2, p1, v0, p0}, Lorg/apache/http/conn/routing/HttpRoute;-><init>(Lorg/apache/http/HttpHost;Ljava/net/InetAddress;Z)V
 
-    goto :goto_1
+    return-object p2
 
     :cond_3
     new-instance p2, Lorg/apache/http/conn/routing/HttpRoute;
 
     invoke-direct {p2, p1, v0, v1, p0}, Lorg/apache/http/conn/routing/HttpRoute;-><init>(Lorg/apache/http/HttpHost;Ljava/net/InetAddress;Lorg/apache/http/HttpHost;Z)V
 
-    :goto_1
     return-object p2
 
     :cond_4
@@ -390,7 +388,7 @@
 
     move-result-object p0
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     invoke-virtual {p1}, Ljava/net/InetSocketAddress;->getAddress()Ljava/net/InetAddress;
@@ -401,7 +399,6 @@
 
     move-result-object p0
 
-    :goto_0
     return-object p0
 .end method
 

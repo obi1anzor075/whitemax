@@ -19,19 +19,18 @@
         0x8,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
 .field public final a:Ljava/lang/Class;
 
-.field public final b:Lhnc;
-
-.field public final c:Ljava/lang/Throwable;
+.field public final b:Lysc;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Class;Lhnc;)V
+.method public constructor <init>(Ljava/lang/Class;Lysc;)V
     .locals 1
 
     const/4 v0, 0x0
@@ -40,11 +39,7 @@
 
     iput-object p1, p0, Lscout/exception/ObjectNullabilityException;->a:Ljava/lang/Class;
 
-    iput-object p2, p0, Lscout/exception/ObjectNullabilityException;->b:Lhnc;
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lscout/exception/ObjectNullabilityException;->c:Ljava/lang/Throwable;
+    iput-object p2, p0, Lscout/exception/ObjectNullabilityException;->b:Lysc;
 
     return-void
 .end method
@@ -54,7 +49,7 @@
 .method public final getCause()Ljava/lang/Throwable;
     .locals 0
 
-    iget-object p0, p0, Lscout/exception/ObjectNullabilityException;->c:Ljava/lang/Throwable;
+    const/4 p0, 0x0
 
     return-object p0
 .end method
@@ -96,7 +91,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Lscout/exception/ObjectNullabilityException;->b:Lhnc;
+    iget-object p0, p0, Lscout/exception/ObjectNullabilityException;->b:Lysc;
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

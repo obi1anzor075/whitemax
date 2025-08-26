@@ -1,39 +1,155 @@
-.class public abstract Lxf4;
+.class public final Lxf4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lagf;
 
-# static fields
-.field public static volatile a:Lxe6;
+
+# instance fields
+.field public final a:I
+
+.field public final b:Z
+
+.field public final c:Lmd6;
+
+.field public final d:Ljava/util/concurrent/ExecutorService;
+
+.field public final e:Lud6;
+
+.field public final f:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(IZLmd6;Ljava/util/concurrent/ExecutorService;Lud6;I)V
+    .locals 0
 
-    sget-object v0, Lclb;->c:Lclb;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {}, Lpa2;->j()Lmh4;
+    iput p1, p0, Lxf4;->a:I
+
+    iput-boolean p2, p0, Lxf4;->b:Z
+
+    iput-object p3, p0, Lxf4;->c:Lmd6;
+
+    iput-object p4, p0, Lxf4;->d:Ljava/util/concurrent/ExecutorService;
+
+    iput-object p5, p0, Lxf4;->e:Lud6;
+
+    iput p6, p0, Lxf4;->f:I
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final bridge synthetic a(Landroid/content/Context;Lqw0;La53;ZLaz2;)Lcgf;
+    .locals 0
+
+    invoke-virtual/range {p0 .. p5}, Lxf4;->b(Landroid/content/Context;Lqw0;La53;ZLbgf;)Lyf4;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final b(Landroid/content/Context;Lqw0;La53;ZLbgf;)Lyf4;
+    .locals 10
+
+    const/4 v0, 0x1
+
+    iget-object v1, p0, Lxf4;->d:Ljava/util/concurrent/ExecutorService;
+
+    if-nez v1, :cond_0
+
+    move v3, v0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v3, 0x0
+
+    :goto_0
+    if-nez v1, :cond_1
+
+    sget v1, Lpaf;->a:I
+
+    new-instance v1, Ldc3;
+
+    const/4 v4, 0x2
+
+    const-string v5, "Effect:DefaultVideoFrameProcessor:GlThread"
+
+    invoke-direct {v1, v4, v5}, Ldc3;-><init>(ILjava/io/Serializable;)V
+
+    invoke-static {v1}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
 
     move-result-object v1
 
-    new-instance v2, Lai0;
+    :cond_1
+    move-object v9, v1
 
-    const/16 v3, 0xc
+    new-instance v7, Lit1;
 
-    invoke-direct {v2, v3}, Lai0;-><init>(I)V
+    new-instance v1, Ltf4;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {v1, p5, v0}, Ltf4;-><init>(Lbgf;I)V
 
-    new-instance v3, Lblb;
+    invoke-direct {v7, v9, v3, v1}, Lit1;-><init>(Ljava/util/concurrent/ExecutorService;ZLxff;)V
 
-    const/4 v4, 0x0
+    new-instance v1, Lwf4;
 
-    invoke-direct {v3, v4, v2}, Lblb;-><init>(ILjava/lang/Object;)V
+    move-object v2, p0
 
-    iget-object v0, v0, Lclb;->a:Lk96;
+    move-object v3, p1
 
-    invoke-virtual {v0, v1, v3}, Lk96;->g(Ljava/util/concurrent/Executor;Lls9;)V
+    move-object v4, p2
 
-    return-void
+    move-object v5, p3
+
+    move v6, p4
+
+    move-object v8, p5
+
+    invoke-direct/range {v1 .. v8}, Lwf4;-><init>(Lxf4;Landroid/content/Context;Lqw0;La53;ZLit1;Lbgf;)V
+
+    invoke-interface {v9, v1}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+
+    move-result-object v0
+
+    :try_start_0
+    invoke-interface {v0}, Ljava/util/concurrent/Future;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lyf4;
+    :try_end_0
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Thread;->interrupt()V
+
+    new-instance v1, Landroidx/media3/common/VideoFrameProcessingException;
+
+    invoke-direct {v1, v0}, Ljava/lang/Exception;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+
+    :catch_1
+    move-exception v0
+
+    new-instance v1, Landroidx/media3/common/VideoFrameProcessingException;
+
+    invoke-direct {v1, v0}, Ljava/lang/Exception;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
 .end method

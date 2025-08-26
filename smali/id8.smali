@@ -1,19 +1,32 @@
-.class public abstract Lid8;
+.class public interface abstract Lid8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lo4d;
 
-# direct methods
-.method public static a(Lvc8;Landroid/content/ComponentName;)V
-    .locals 0
 
-    iget-object p0, p0, Lvc8;->a:Lqc8;
+# virtual methods
+.method public abstract G(Lgd8;J)V
+.end method
 
-    iget-object p0, p0, Lpc8;->a:Landroid/media/session/MediaSession;
+.method public abstract J([Lz75;[Z[Lgpc;[ZJ)J
+.end method
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+.method public abstract f()V
+.end method
 
-    invoke-static {p0, p1}, Lc88;->v(Landroid/media/session/MediaSession;Landroid/content/ComponentName;)V
+.method public abstract g(J)J
+.end method
 
-    return-void
+.method public abstract n()J
+.end method
+
+.method public abstract o()Lvxe;
+.end method
+
+.method public abstract w(JLc0d;)J
+.end method
+
+.method public abstract x(J)V
 .end method

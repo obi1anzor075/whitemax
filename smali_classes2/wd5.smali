@@ -1,257 +1,183 @@
-.class public final Lwd5;
-.super Ljava/lang/Object;
+.class public final enum Lwd5;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
 # static fields
-.field public static final synthetic f:[Lk77;
+.field public static final enum X:Lwd5;
 
-.field public static final g:Ljava/lang/String;
+.field public static final enum Y:Lwd5;
+
+.field public static final enum Z:Lwd5;
+
+.field public static final b:[Lwd5;
+
+.field public static final enum c:Lwd5;
+
+.field public static final enum o:Lwd5;
+
+.field public static final enum o0:Lwd5;
+
+.field public static final enum p0:Lwd5;
+
+.field public static final enum q0:Lwd5;
+
+.field public static final synthetic r0:[Lwd5;
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
-
-.field public final b:Lnj4;
-
-.field public final c:Lnj4;
-
-.field public final d:Lnj4;
-
-.field public final e:Lr7e;
+.field public final a:Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
+    .locals 11
 
-    new-instance v0, Lkhb;
+    new-instance v0, Lwd5;
 
-    const-class v1, Lwd5;
+    const/4 v1, 0x0
 
-    const-string v2, "fileSystem"
+    const-string v2, "Message"
 
-    const-string v3, "getFileSystem()Lru/ok/tamtam/FileSystem;"
+    const-string v3, "MESSAGE"
 
-    const/4 v4, 0x0
+    invoke-direct {v0, v3, v1, v2}, Lwd5;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lkhb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    sput-object v0, Lwd5;->c:Lwd5;
 
-    sget-object v2, Lm7c;->a:Ln7c;
+    new-instance v1, Lwd5;
 
-    const-string v3, "exceptionHandler"
+    const/4 v2, 0x1
 
-    const-string v5, "getExceptionHandler()Lru/ok/tamtam/ExceptionHandler;"
+    const-string v3, "ChatMessage"
 
-    invoke-static {v2, v1, v3, v5, v4}, Lwn6;->e(Ln7c;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lkhb;
+    const-string v4, "CHAT_MESSAGE"
 
-    move-result-object v3
+    invoke-direct {v1, v4, v2, v3}, Lwd5;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    const-string v5, "dispatcher"
+    sput-object v1, Lwd5;->o:Lwd5;
 
-    const-string v6, "getDispatcher()Lru/ok/tamtam/coroutines/IoDispatcher;"
+    new-instance v2, Lwd5;
 
-    invoke-static {v1, v5, v6, v4, v2}, Lwn6;->f(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;ILn7c;)Lkhb;
+    const/4 v3, 0x2
 
-    move-result-object v5
+    const-string v4, "ChatMessage-channel"
 
-    const-string v6, "serverPrefs"
+    const-string v5, "CHANNEL_MESSAGE"
 
-    const-string v7, "getServerPrefs()Lru/ok/tamtam/prefs/ServerPrefs;"
+    invoke-direct {v2, v5, v3, v4}, Lwd5;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    invoke-static {v1, v6, v7, v4, v2}, Lwn6;->f(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;ILn7c;)Lkhb;
+    sput-object v2, Lwd5;->X:Lwd5;
 
-    move-result-object v2
+    new-instance v3, Lwd5;
 
-    const/4 v6, 0x4
+    const/4 v4, 0x3
 
-    new-array v6, v6, [Lk77;
+    const-string v5, "ChatSystemMessage"
 
-    aput-object v0, v6, v4
+    const-string v6, "CHAT_SYSTEM_MESSAGE"
 
-    const/4 v0, 0x1
+    invoke-direct {v3, v6, v4, v5}, Lwd5;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    aput-object v3, v6, v0
+    sput-object v3, Lwd5;->Y:Lwd5;
 
-    const/4 v0, 0x2
+    new-instance v4, Lwd5;
 
-    aput-object v5, v6, v0
+    const/4 v5, 0x4
 
-    const/4 v0, 0x3
+    const-string v6, "ChatReply"
 
-    aput-object v2, v6, v0
+    const-string v7, "CHAT_REPLY"
 
-    sput-object v6, Lwd5;->f:[Lk77;
+    invoke-direct {v4, v7, v5, v6}, Lwd5;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    sput-object v4, Lwd5;->Z:Lwd5;
+
+    new-instance v5, Lwd5;
+
+    const/4 v6, 0x5
+
+    const-string v7, "GroupChat"
+
+    const-string v8, "GROUP_CHAT"
+
+    invoke-direct {v5, v8, v6, v7}, Lwd5;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v5, Lwd5;->o0:Lwd5;
+
+    new-instance v6, Lwd5;
+
+    const/4 v7, 0x6
+
+    const-string v8, "Scheduled"
+
+    const-string v9, "SCHEDULED"
+
+    invoke-direct {v6, v9, v7, v8}, Lwd5;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v6, Lwd5;->p0:Lwd5;
+
+    new-instance v7, Lwd5;
+
+    const/4 v8, 0x7
+
+    const-string v9, "Unknown"
+
+    const-string v10, "UNKNOWN"
+
+    invoke-direct {v7, v10, v8, v9}, Lwd5;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v7, Lwd5;->q0:Lwd5;
+
+    filled-new-array/range {v0 .. v7}, [Lwd5;
 
     move-result-object v0
 
-    sput-object v0, Lwd5;->g:Ljava/lang/String;
+    sput-object v0, Lwd5;->r0:[Lwd5;
+
+    invoke-static {}, Lwd5;->values()[Lwd5;
+
+    move-result-object v0
+
+    sput-object v0, Lwd5;->b:[Lwd5;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lnj4;Lnj4;Lnj4;)V
+.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iput-object p1, p0, Lwd5;->a:Landroid/content/Context;
-
-    iput-object p2, p0, Lwd5;->b:Lnj4;
-
-    iput-object p3, p0, Lwd5;->c:Lnj4;
-
-    iput-object p4, p0, Lwd5;->d:Lnj4;
-
-    new-instance p1, Lxd3;
-
-    const/16 p2, 0x1a
-
-    invoke-direct {p1, p2}, Lxd3;-><init>(I)V
-
-    new-instance p2, Lr7e;
-
-    invoke-direct {p2, p1}, Lr7e;-><init>(Ls16;)V
-
-    iput-object p2, p0, Lwd5;->e:Lr7e;
+    iput-object p3, p0, Lwd5;->a:Ljava/lang/String;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Lwd5;
+    .locals 1
 
-# virtual methods
-.method public final a(Ljava/io/File;Z)V
-    .locals 5
+    const-class v0, Lwd5;
 
-    if-nez p1, :cond_0
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    const-string p0, "file is null!"
+    move-result-object p0
 
-    sget-object p1, Lwd5;->g:Ljava/lang/String;
+    check-cast p0, Lwd5;
 
-    invoke-static {p1, p0}, Ludd;->U(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lwd5;->e:Lr7e;
-
-    invoke-virtual {v0}, Lr7e;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lou3;
-
-    sget-object v1, Lwd5;->f:[Lk77;
-
-    const/4 v2, 0x2
-
-    aget-object v1, v1, v2
-
-    iget-object v1, p0, Lwd5;->c:Lnj4;
-
-    invoke-virtual {v1}, Lnj4;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lb27;
-
-    iget-object v1, v1, Lb27;->a:Lju3;
-
-    sget-object v3, Lsk9;->a:Lsk9;
-
-    invoke-virtual {v1, v3}, Le0;->plus(Lhu3;)Lhu3;
-
-    move-result-object v1
-
-    new-instance v3, Lvd5;
-
-    const/4 v4, 0x0
-
-    invoke-direct {v3, p1, p0, p2, v4}, Lvd5;-><init>(Ljava/io/File;Lwd5;ZLkotlin/coroutines/Continuation;)V
-
-    invoke-static {v0, v1, v4, v3, v2}, Lxs7;->E(Lou3;Lhu3;Lru3;Li26;I)Lqod;
-
-    return-void
+    return-object p0
 .end method
 
-.method public final b(Ljava/io/File;)V
-    .locals 8
+.method public static values()[Lwd5;
+    .locals 1
 
-    :try_start_0
-    sget-object v0, Lwd5;->f:[Lk77;
+    sget-object v0, Lwd5;->r0:[Lwd5;
 
-    const/4 v1, 0x3
-
-    aget-object v0, v0, v1
-
-    iget-object v0, p0, Lwd5;->d:Lnj4;
-
-    invoke-virtual {v0}, Lnj4;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lxzc;
+    check-cast v0, [Lwd5;
 
-    check-cast v0, Lvqc;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object v1, Lru/ok/tamtam/android/prefs/PmsKey;->max-downloaded-size-for-notify-kb:Lru/ok/tamtam/android/prefs/PmsKey;
-
-    const/16 v2, 0x400
-
-    int-to-long v2, v2
-
-    invoke-virtual {v0, v1, v2, v3}, Lvqc;->o(Ljava/lang/Enum;J)J
-
-    move-result-wide v0
-
-    long-to-int v0, v0
-
-    int-to-long v0, v0
-
-    invoke-virtual {p1}, Ljava/io/File;->length()J
-
-    move-result-wide v4
-
-    const-wide/16 v6, 0x0
-
-    invoke-static {v4, v5, v6, v7}, Lgwf;->h(JJ)J
-
-    move-result-wide v4
-
-    div-long/2addr v4, v2
-
-    cmp-long v0, v0, v4
-
-    if-gez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-virtual {p0, p1, v0}, Lwd5;->a(Ljava/io/File;Z)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception p0
-
-    sget-object p1, Lwd5;->g:Ljava/lang/String;
-
-    const-string v0, "notifyWithForegroundCheckAndSize fail!"
-
-    invoke-static {p1, v0, p0}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :goto_1
-    return-void
+    return-object v0
 .end method

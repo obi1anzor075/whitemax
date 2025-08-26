@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lboe;
+.implements Lbxe;
 
 
 # direct methods
@@ -60,7 +60,7 @@
 .method public versionName()Ljava/lang/String;
     .locals 0
 
-    const-string p0, "125.1.0.48.1"
+    const-string p0, "125.1.0.48.3"
 
     return-object p0
 .end method

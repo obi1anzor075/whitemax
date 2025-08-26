@@ -1,6 +1,9 @@
 .class public final Lxv8;
-.super Lscout/Component;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ln19;
 
 
 # static fields
@@ -9,13 +12,11 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
     new-instance v0, Lxv8;
 
-    sget-object v1, Lxw8;->a:Lhnc;
-
-    invoke-direct {v0, v1}, Lscout/Component;-><init>(Lhnc;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lxv8;->a:Lxv8;
 
@@ -24,72 +25,40 @@
 
 
 # virtual methods
-.method public final b()Likc;
-    .locals 4
-
-    new-instance v0, Likc;
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object v1
-
-    const-class v2, Lknc;
-
-    invoke-virtual {v1, v2}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lknc;
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object v2
-
-    const-class v3, Lpae;
-
-    invoke-virtual {v2, v3}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lpae;
-
-    check-cast v2, Ln3a;
-
-    invoke-virtual {v2}, Ln3a;->b()Lju3;
-
-    move-result-object v2
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p0
-
-    const-class v3, Lcla;
-
-    invoke-virtual {p0, v3}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lcla;
-
-    invoke-direct {v0, v1, v2, p0}, Likc;-><init>(Lknc;Lju3;Lcla;)V
-
-    return-object v0
-.end method
-
-.method public final getDispatchers()Lpae;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
+    const/4 v0, 0x1
 
-    move-result-object p0
+    if-ne p0, p1, :cond_0
 
-    const-class v0, Lpae;
+    return v0
 
-    invoke-virtual {p0, v0}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    :cond_0
+    instance-of p0, p1, Lxv8;
 
-    move-result-object p0
+    if-nez p0, :cond_1
 
-    check-cast p0, Lpae;
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    const p0, 0x43f6b71e
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "MessagePinned"
 
     return-object p0
 .end method

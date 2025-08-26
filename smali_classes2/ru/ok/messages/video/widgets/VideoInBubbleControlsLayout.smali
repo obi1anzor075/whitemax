@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final a:Lzg4;
+.field public final a:Lck4;
 
 .field public final b:I
 
@@ -17,13 +17,13 @@
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    invoke-static {}, Lzg4;->b()Lzg4;
+    invoke-static {}, Lck4;->b()Lck4;
 
     move-result-object p1
 
-    iput-object p1, p0, Lru/ok/messages/video/widgets/VideoInBubbleControlsLayout;->a:Lzg4;
+    iput-object p1, p0, Lru/ok/messages/video/widgets/VideoInBubbleControlsLayout;->a:Lck4;
 
-    iget p1, p1, Lzg4;->e:I
+    iget p1, p1, Lck4;->e:I
 
     iput p1, p0, Lru/ok/messages/video/widgets/VideoInBubbleControlsLayout;->b:I
 
@@ -46,7 +46,7 @@
 
     move-result p3
 
-    if-ge p2, p3, :cond_4
+    if-ge p2, p3, :cond_5
 
     invoke-virtual {p0, p2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
@@ -56,17 +56,17 @@
 
     move-result p4
 
-    if-nez p4, :cond_3
+    if-nez p4, :cond_4
 
     invoke-virtual {p3}, Landroid/view/View;->getLeft()I
 
     move-result p2
 
-    iget-object p3, p0, Lru/ok/messages/video/widgets/VideoInBubbleControlsLayout;->a:Lzg4;
+    iget-object p3, p0, Lru/ok/messages/video/widgets/VideoInBubbleControlsLayout;->a:Lck4;
 
-    iget p3, p3, Lzg4;->h:I
+    iget p3, p3, Lck4;->h:I
 
-    if-ge p2, p3, :cond_4
+    if-ge p2, p3, :cond_3
 
     :goto_1
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
@@ -110,14 +110,14 @@
     :cond_2
     invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
-    goto :goto_2
-
     :cond_3
+    return-void
+
+    :cond_4
     add-int/lit8 p2, p2, 0x1
 
     goto :goto_0
 
-    :cond_4
-    :goto_2
+    :cond_5
     return-void
 .end method

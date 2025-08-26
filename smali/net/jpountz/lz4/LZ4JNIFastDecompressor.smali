@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public decompress(Ljava/nio/ByteBuffer;ILjava/nio/ByteBuffer;II)I
-    .locals 8
+    .locals 7
 
     .line 5
     invoke-virtual {p3}, Ljava/nio/Buffer;->isReadOnly()Z
@@ -45,10 +45,10 @@
     if-nez p0, :cond_7
 
     .line 6
-    invoke-static {p2, p1}, Lnu0;->a(ILjava/nio/ByteBuffer;)V
+    invoke-static {p2, p1}, Lnv0;->a(ILjava/nio/ByteBuffer;)V
 
     .line 7
-    invoke-static {p3, p4, p5}, Lnu0;->b(Ljava/nio/ByteBuffer;II)V
+    invoke-static {p3, p4, p5}, Lnv0;->b(Ljava/nio/ByteBuffer;II)V
 
     .line 8
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->hasArray()Z
@@ -61,28 +61,39 @@
 
     move-result p0
 
-    if-eqz p0, :cond_1
+    if-eqz p0, :cond_2
 
     :cond_0
     invoke-virtual {p3}, Ljava/nio/ByteBuffer;->hasArray()Z
 
     move-result p0
 
-    if-nez p0, :cond_3
+    if-nez p0, :cond_1
 
     invoke-virtual {p3}, Ljava/nio/ByteBuffer;->isDirect()Z
 
     move-result p0
 
-    if-eqz p0, :cond_1
+    if-eqz p0, :cond_2
+
+    :cond_1
+    move-object v1, p1
+
+    move v2, p2
+
+    move-object v3, p3
+
+    move v4, p4
+
+    move v5, p5
 
     goto :goto_0
 
     .line 9
-    :cond_1
+    :cond_2
     sget-object p0, Lnet/jpountz/lz4/LZ4JNIFastDecompressor;->SAFE_INSTANCE:Lnet/jpountz/lz4/LZ4FastDecompressor;
 
-    if-nez p0, :cond_2
+    if-nez p0, :cond_3
 
     .line 10
     invoke-static {}, Lnet/jpountz/lz4/LZ4Factory;->safeInstance()Lnet/jpountz/lz4/LZ4Factory;
@@ -95,7 +106,7 @@
 
     sput-object p0, Lnet/jpountz/lz4/LZ4JNIFastDecompressor;->SAFE_INSTANCE:Lnet/jpountz/lz4/LZ4FastDecompressor;
 
-    :cond_2
+    :cond_3
     move-object v0, p0
 
     move-object v1, p1
@@ -116,81 +127,80 @@
     return p0
 
     .line 12
-    :cond_3
     :goto_0
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->hasArray()Z
+    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->hasArray()Z
 
     move-result p0
 
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
     if-eqz p0, :cond_4
 
     .line 13
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
+    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object p0
 
     .line 14
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->arrayOffset()I
+    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->arrayOffset()I
 
-    move-result p1
+    move-result p2
 
-    add-int/2addr p2, p1
+    add-int/2addr p2, v2
 
-    move-object v1, p0
+    move-object v0, p0
 
-    move-object v2, v0
+    move-object v1, p1
+
+    move v2, p2
 
     goto :goto_1
 
     :cond_4
-    move-object v2, p1
-
-    move-object v1, v0
+    move-object v0, p1
 
     .line 15
     :goto_1
-    invoke-virtual {p3}, Ljava/nio/ByteBuffer;->hasArray()Z
+    invoke-virtual {v3}, Ljava/nio/ByteBuffer;->hasArray()Z
 
     move-result p0
 
     if-eqz p0, :cond_5
 
     .line 16
-    invoke-virtual {p3}, Ljava/nio/ByteBuffer;->array()[B
+    invoke-virtual {v3}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object p0
 
     .line 17
-    invoke-virtual {p3}, Ljava/nio/ByteBuffer;->arrayOffset()I
+    invoke-virtual {v3}, Ljava/nio/ByteBuffer;->arrayOffset()I
 
-    move-result p1
+    move-result p2
 
-    add-int/2addr p4, p1
+    add-int p4, p2, v4
 
-    move-object v4, p0
+    move-object v3, p0
 
-    move v6, p4
+    move-object v4, p1
 
-    move-object v5, v0
+    move v6, v5
+
+    move v5, p4
 
     goto :goto_2
 
     :cond_5
-    move-object v5, p3
+    move v6, v5
 
-    move v6, p4
+    move v5, v4
 
-    move-object v4, v0
+    move-object v4, v3
 
-    :goto_2
-    move v3, p2
-
-    move v7, p5
+    move-object v3, p1
 
     .line 18
-    invoke-static/range {v1 .. v7}, Lnet/jpountz/lz4/LZ4JNI;->LZ4_decompress_fast([BLjava/nio/ByteBuffer;I[BLjava/nio/ByteBuffer;II)I
+    :goto_2
+    invoke-static/range {v0 .. v6}, Lnet/jpountz/lz4/LZ4JNI;->LZ4_decompress_fast([BLjava/nio/ByteBuffer;I[BLjava/nio/ByteBuffer;II)I
 
     move-result p0
 
@@ -202,21 +212,21 @@
     :cond_6
     new-instance p1, Lnet/jpountz/lz4/LZ4Exception;
 
-    new-instance p3, Ljava/lang/StringBuilder;
+    new-instance p2, Ljava/lang/StringBuilder;
 
-    const-string p4, "Error decoding offset "
+    const-string p3, "Error decoding offset "
 
-    invoke-direct {p3, p4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {p2, p3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    sub-int/2addr p2, p0
+    sub-int/2addr v2, p0
 
-    invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string p0, " of input buffer"
 
-    invoke-virtual {p3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -237,10 +247,10 @@
     .locals 7
 
     .line 1
-    invoke-static {p2, p1}, Lnjc;->a(I[B)V
+    invoke-static {p2, p1}, Lwoc;->a(I[B)V
 
     .line 2
-    invoke-static {p4, p3, p5}, Lnjc;->b(I[BI)V
+    invoke-static {p4, p3, p5}, Lwoc;->b(I[BI)V
 
     const/4 v1, 0x0
 
@@ -269,21 +279,21 @@
     :cond_0
     new-instance p1, Lnet/jpountz/lz4/LZ4Exception;
 
-    new-instance p3, Ljava/lang/StringBuilder;
+    new-instance p2, Ljava/lang/StringBuilder;
 
-    const-string p4, "Error decoding offset "
+    const-string p3, "Error decoding offset "
 
-    invoke-direct {p3, p4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {p2, p3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    sub-int/2addr p2, p0
+    sub-int p0, v2, p0
 
-    invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string p0, " of input buffer"
 
-    invoke-virtual {p3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

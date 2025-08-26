@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="calls_notif_background">#ff191921</color>
-    <color name="calls_notif_green">#ff2cb72d</color>
-    <color name="calls_notif_red">#ffff4128</color>
-    <color name="calls_notif_text_primary">#ffd6d6d9</color>
-    <color name="calls_notif_text_secondary">#ff84848e</color>
-</resources>

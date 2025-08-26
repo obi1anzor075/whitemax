@@ -1,394 +1,496 @@
 .class public abstract Lgt6;
-.super Lns6;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/util/Set;
 
 
 # static fields
-.field public static final synthetic c:I
-
-
-# instance fields
-.field public transient b:Lws6;
+.field public static final a:Lddc;
 
 
 # direct methods
-.method public static h(I)I
-    .locals 5
+.method static constructor <clinit>()V
+    .locals 181
 
-    const/4 v0, 0x2
+    const-string v179, "Garage Rock"
 
-    invoke-static {p0, v0}, Ljava/lang/Math;->max(II)I
+    const-string v180, "Psybient"
 
-    move-result p0
+    const-string v1, "Other"
 
-    const v0, 0x2ccccccc
+    const-string v2, "Pop"
 
-    const/4 v1, 0x1
+    const-string v3, "R&B"
 
-    if-ge p0, v0, :cond_1
+    const-string v4, "Rap"
 
-    add-int/lit8 v0, p0, -0x1
+    const-string v5, "Reggae"
 
-    invoke-static {v0}, Ljava/lang/Integer;->highestOneBit(I)I
+    const-string v6, "Rock"
 
-    move-result v0
+    const-string v7, "Techno"
 
-    shl-int/2addr v0, v1
+    const-string v8, "Industrial"
 
-    :goto_0
-    int-to-double v1, v0
+    const-string v9, "Alternative"
 
-    const-wide v3, 0x3fe6666666666666L    # 0.7
+    const-string v10, "Ska"
 
-    mul-double/2addr v1, v3
+    const-string v11, "Death Metal"
 
-    int-to-double v3, p0
+    const-string v12, "Pranks"
 
-    cmpg-double v1, v1, v3
+    const-string v13, "Soundtrack"
 
-    if-gez v1, :cond_0
+    const-string v14, "Euro-Techno"
 
-    shl-int/lit8 v0, v0, 0x1
+    const-string v15, "Ambient"
 
-    goto :goto_0
+    const-string v16, "Trip-Hop"
 
-    :cond_0
-    return v0
+    const-string v17, "Vocal"
 
-    :cond_1
-    const/high16 v0, 0x40000000    # 2.0f
+    const-string v18, "Jazz+Funk"
 
-    if-ge p0, v0, :cond_2
+    const-string v19, "Fusion"
 
-    goto :goto_1
+    const-string v20, "Trance"
 
-    :cond_2
-    const/4 v1, 0x0
+    const-string v21, "Classical"
 
-    :goto_1
-    if-eqz v1, :cond_3
+    const-string v22, "Instrumental"
 
-    return v0
+    const-string v23, "Acid"
 
-    :cond_3
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    const-string v24, "House"
 
-    const-string v0, "collection too large"
+    const-string v25, "Game"
 
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    const-string v26, "Sound Clip"
 
-    throw p0
-.end method
+    const-string v27, "Gospel"
 
-.method public static varargs i(I[Ljava/lang/Object;)Lgt6;
-    .locals 13
+    const-string v28, "Noise"
 
-    if-eqz p0, :cond_8
+    const-string v29, "AlternRock"
 
-    const/4 v0, 0x1
+    const-string v30, "Bass"
 
-    const/4 v1, 0x0
+    const-string v31, "Soul"
 
-    if-eq p0, v0, :cond_7
+    const-string v32, "Punk"
 
-    invoke-static {p0}, Lgt6;->h(I)I
+    const-string v33, "Space"
 
-    move-result v2
+    const-string v34, "Meditative"
 
-    new-array v8, v2, [Ljava/lang/Object;
+    const-string v35, "Instrumental Pop"
 
-    add-int/lit8 v5, v2, -0x1
+    const-string v36, "Instrumental Rock"
 
-    move v3, v1
+    const-string v37, "Ethnic"
 
-    move v4, v3
+    const-string v38, "Gothic"
 
-    move v6, v4
+    const-string v39, "Darkwave"
 
-    :goto_0
-    if-ge v3, p0, :cond_3
+    const-string v40, "Techno-Industrial"
 
-    aget-object v7, p1, v3
+    const-string v41, "Electronic"
 
-    if-eqz v7, :cond_2
+    const-string v42, "Pop-Folk"
 
-    invoke-virtual {v7}, Ljava/lang/Object;->hashCode()I
+    const-string v43, "Eurodance"
 
-    move-result v9
+    const-string v44, "Dream"
 
-    invoke-static {v9}, Lgp0;->E(I)I
+    const-string v45, "Southern Rock"
 
-    move-result v10
+    const-string v46, "Comedy"
 
-    :goto_1
-    and-int v11, v10, v5
+    const-string v47, "Cult"
 
-    aget-object v12, v8, v11
+    const-string v48, "Gangsta"
 
-    if-nez v12, :cond_0
+    const-string v49, "Top 40"
 
-    add-int/lit8 v10, v6, 0x1
+    const-string v50, "Christian Rap"
 
-    aput-object v7, p1, v6
+    const-string v51, "Pop/Funk"
 
-    aput-object v7, v8, v11
+    const-string v52, "Jungle"
 
-    add-int/2addr v4, v9
+    const-string v53, "Native American"
 
-    move v6, v10
+    const-string v54, "Cabaret"
 
-    goto :goto_2
+    const-string v55, "New Wave"
 
-    :cond_0
-    invoke-virtual {v12, v7}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    const-string v56, "Psychadelic"
 
-    move-result v11
+    const-string v57, "Rave"
 
-    if-eqz v11, :cond_1
+    const-string v58, "Showtunes"
 
-    :goto_2
-    add-int/lit8 v3, v3, 0x1
+    const-string v59, "Trailer"
 
-    goto :goto_0
+    const-string v60, "Lo-Fi"
 
-    :cond_1
-    add-int/lit8 v10, v10, 0x1
+    const-string v61, "Tribal"
 
-    goto :goto_1
+    const-string v62, "Acid Punk"
 
-    :cond_2
-    new-instance p0, Ljava/lang/NullPointerException;
+    const-string v63, "Acid Jazz"
 
-    const-string p1, "at index "
+    const-string v64, "Polka"
 
-    invoke-static {v3, p1}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    const-string v65, "Retro"
 
-    move-result-object p1
+    const-string v66, "Musical"
 
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    const-string v67, "Rock & Roll"
 
-    throw p0
+    const-string v68, "Hard Rock"
 
-    :cond_3
-    const/4 v3, 0x0
+    const-string v69, "Folk"
 
-    invoke-static {p1, v6, p0, v3}, Ljava/util/Arrays;->fill([Ljava/lang/Object;IILjava/lang/Object;)V
+    const-string v70, "Folk-Rock"
 
-    if-ne v6, v0, :cond_4
+    const-string v71, "National Folk"
 
-    aget-object p0, p1, v1
+    const-string v72, "Swing"
 
-    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v73, "Fast Fusion"
 
-    new-instance p1, Lejd;
+    const-string v74, "Bebob"
 
-    invoke-direct {p1, p0}, Lejd;-><init>(Ljava/lang/Object;)V
+    const-string v75, "Latin"
 
-    return-object p1
+    const-string v76, "Revival"
 
-    :cond_4
-    invoke-static {v6}, Lgt6;->h(I)I
+    const-string v77, "Celtic"
 
-    move-result p0
+    const-string v78, "Bluegrass"
 
-    div-int/lit8 v2, v2, 0x2
+    const-string v79, "Avantgarde"
 
-    if-ge p0, v2, :cond_5
+    const-string v80, "Gothic Rock"
 
-    invoke-static {v6, p1}, Lgt6;->i(I[Ljava/lang/Object;)Lgt6;
+    const-string v81, "Progressive Rock"
 
-    move-result-object p0
+    const-string v82, "Psychedelic Rock"
 
-    return-object p0
+    const-string v83, "Symphonic Rock"
 
-    :cond_5
-    array-length p0, p1
+    const-string v84, "Slow Rock"
 
-    shr-int/lit8 v0, p0, 0x1
+    const-string v85, "Big Band"
 
-    shr-int/lit8 p0, p0, 0x2
+    const-string v86, "Chorus"
 
-    add-int/2addr v0, p0
+    const-string v87, "Easy Listening"
 
-    if-ge v6, v0, :cond_6
+    const-string v88, "Acoustic"
 
-    invoke-static {p1, v6}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    const-string v89, "Humour"
 
-    move-result-object p1
+    const-string v90, "Speech"
 
-    :cond_6
-    move-object v7, p1
+    const-string v91, "Chanson"
 
-    new-instance p0, Lk8c;
+    const-string v92, "Opera"
 
-    move-object v3, p0
+    const-string v93, "Chamber Music"
 
-    invoke-direct/range {v3 .. v8}, Lk8c;-><init>(III[Ljava/lang/Object;[Ljava/lang/Object;)V
+    const-string v94, "Sonata"
 
-    return-object p0
+    const-string v95, "Symphony"
 
-    :cond_7
-    aget-object p0, p1, v1
+    const-string v96, "Booty Bass"
 
-    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v97, "Primus"
 
-    new-instance p1, Lejd;
+    const-string v98, "Porn Groove"
 
-    invoke-direct {p1, p0}, Lejd;-><init>(Ljava/lang/Object;)V
+    const-string v99, "Satire"
 
-    return-object p1
+    const-string v100, "Slow Jam"
 
-    :cond_8
-    sget-object p0, Lk8c;->y0:Lk8c;
+    const-string v101, "Club"
 
-    return-object p0
-.end method
+    const-string v102, "Tango"
 
-.method public static j(Ljava/util/Collection;)Lgt6;
-    .locals 2
+    const-string v103, "Samba"
 
-    instance-of v0, p0, Lgt6;
+    const-string v104, "Folklore"
 
-    if-eqz v0, :cond_0
+    const-string v105, "Ballad"
 
-    instance-of v0, p0, Ljava/util/SortedSet;
+    const-string v106, "Power Ballad"
 
-    if-nez v0, :cond_0
+    const-string v107, "Rhythmic Soul"
 
-    move-object v0, p0
+    const-string v108, "Freestyle"
 
-    check-cast v0, Lgt6;
+    const-string v109, "Duet"
 
-    invoke-virtual {v0}, Lns6;->f()Z
+    const-string v110, "Punk Rock"
 
-    move-result v1
+    const-string v111, "Drum Solo"
 
-    if-nez v1, :cond_0
+    const-string v112, "A capella"
 
-    return-object v0
+    const-string v113, "Euro-House"
 
-    :cond_0
-    invoke-interface {p0}, Ljava/util/Collection;->toArray()[Ljava/lang/Object;
+    const-string v114, "Dance Hall"
 
-    move-result-object p0
+    const-string v115, "Goa"
 
-    array-length v0, p0
+    const-string v116, "Drum & Bass"
 
-    invoke-static {v0, p0}, Lgt6;->i(I[Ljava/lang/Object;)Lgt6;
+    const-string v117, "Club-House"
 
-    move-result-object p0
+    const-string v118, "Hardcore"
 
-    return-object p0
-.end method
+    const-string v119, "Terror"
 
+    const-string v120, "Indie"
 
-# virtual methods
-.method public a()Lws6;
-    .locals 1
+    const-string v121, "BritPop"
 
-    iget-object v0, p0, Lgt6;->b:Lws6;
+    const-string v122, "Afro-Punk"
 
-    if-nez v0, :cond_0
+    const-string v123, "Polsk Punk"
 
-    invoke-virtual {p0}, Lgt6;->k()Lws6;
+    const-string v124, "Beat"
+
+    const-string v125, "Christian Gangsta Rap"
+
+    const-string v126, "Heavy Metal"
+
+    const-string v127, "Black Metal"
+
+    const-string v128, "Crossover"
+
+    const-string v129, "Contemporary Christian"
+
+    const-string v130, "Christian Rock"
+
+    const-string v131, "Merengue"
+
+    const-string v132, "Salsa"
+
+    const-string v133, "Thrash Metal"
+
+    const-string v134, "Anime"
+
+    const-string v135, "Jpop"
+
+    const-string v136, "Synthpop"
+
+    const-string v137, "Abstract"
+
+    const-string v138, "Art Rock"
+
+    const-string v139, "Baroque"
+
+    const-string v140, "Bhangra"
+
+    const-string v141, "Big beat"
+
+    const-string v142, "Breakbeat"
+
+    const-string v143, "Chillout"
+
+    const-string v144, "Downtempo"
+
+    const-string v145, "Dub"
+
+    const-string v146, "EBM"
+
+    const-string v147, "Eclectic"
+
+    const-string v148, "Electro"
+
+    const-string v149, "Electroclash"
+
+    const-string v150, "Emo"
+
+    const-string v151, "Experimental"
+
+    const-string v152, "Garage"
+
+    const-string v153, "Global"
+
+    const-string v154, "IDM"
+
+    const-string v155, "Illbient"
+
+    const-string v156, "Industro-Goth"
+
+    const-string v157, "Jam Band"
+
+    const-string v158, "Krautrock"
+
+    const-string v159, "Leftfield"
+
+    const-string v160, "Lounge"
+
+    const-string v161, "Math Rock"
+
+    const-string v162, "New Romantic"
+
+    const-string v163, "Nu-Breakz"
+
+    const-string v164, "Post-Punk"
+
+    const-string v165, "Post-Rock"
+
+    const-string v166, "Psytrance"
+
+    const-string v167, "Shoegaze"
+
+    const-string v168, "Space Rock"
+
+    const-string v169, "Trop Rock"
+
+    const-string v170, "World Music"
+
+    const-string v171, "Neoclassical"
+
+    const-string v172, "Audiobook"
+
+    const-string v173, "Audio theatre"
+
+    const-string v174, "Neue Deutsche Welle"
+
+    const-string v175, "Podcast"
+
+    const-string v176, "Indie-Rock"
+
+    const-string v177, "G-Funk"
+
+    const-string v178, "Dubstep"
+
+    filled-new-array/range {v1 .. v180}, [Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lgt6;->b:Lws6;
+    sget-object v1, Lxw6;->b:Las5;
 
-    :cond_0
-    return-object v0
+    const/16 v1, 0xc0
+
+    new-array v2, v1, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    const-string v4, "Blues"
+
+    aput-object v4, v2, v3
+
+    const/4 v4, 0x1
+
+    const-string v5, "Classic Rock"
+
+    aput-object v5, v2, v4
+
+    const/4 v4, 0x2
+
+    const-string v5, "Country"
+
+    aput-object v5, v2, v4
+
+    const/4 v4, 0x3
+
+    const-string v5, "Dance"
+
+    aput-object v5, v2, v4
+
+    const/4 v4, 0x4
+
+    const-string v5, "Disco"
+
+    aput-object v5, v2, v4
+
+    const/4 v4, 0x5
+
+    const-string v5, "Funk"
+
+    aput-object v5, v2, v4
+
+    const/4 v4, 0x6
+
+    const-string v5, "Grunge"
+
+    aput-object v5, v2, v4
+
+    const/4 v4, 0x7
+
+    const-string v5, "Hip-Hop"
+
+    aput-object v5, v2, v4
+
+    const/16 v4, 0x8
+
+    const-string v5, "Jazz"
+
+    aput-object v5, v2, v4
+
+    const/16 v4, 0x9
+
+    const-string v5, "Metal"
+
+    aput-object v5, v2, v4
+
+    const/16 v4, 0xa
+
+    const-string v5, "New Age"
+
+    aput-object v5, v2, v4
+
+    const/16 v4, 0xb
+
+    const-string v5, "Oldies"
+
+    aput-object v5, v2, v4
+
+    const/16 v4, 0xc
+
+    const/16 v5, 0xb4
+
+    invoke-static {v0, v3, v2, v4, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    invoke-static {v1, v2}, Lfq0;->o(I[Ljava/lang/Object;)V
+
+    invoke-static {v1, v2}, Lxw6;->h(I[Ljava/lang/Object;)Lddc;
+
+    move-result-object v0
+
+    sput-object v0, Lgt6;->a:Lddc;
+
+    return-void
 .end method
 
-.method public equals(Ljava/lang/Object;)Z
+.method public static a(I)Ljava/lang/String;
     .locals 2
 
-    if-ne p1, p0, :cond_0
+    if-ltz p0, :cond_0
 
-    const/4 p0, 0x1
+    sget-object v0, Lgt6;->a:Lddc;
 
-    return p0
+    iget v1, v0, Lddc;->o:I
 
-    :cond_0
-    instance-of v0, p1, Lgt6;
+    if-ge p0, v1, :cond_0
 
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p0}, Lgt6;->l()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    move-object v0, p1
-
-    check-cast v0, Lgt6;
-
-    invoke-virtual {v0}, Lgt6;->l()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p0}, Lgt6;->hashCode()I
-
-    move-result v0
-
-    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
-
-    move-result v1
-
-    if-eq v0, v1, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    invoke-static {p0, p1}, Lgp0;->i(Ljava/util/Set;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public hashCode()I
-    .locals 0
-
-    invoke-static {p0}, Lgp0;->v(Ljava/util/Set;)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public k()Lws6;
-    .locals 1
-
-    sget-object v0, Lns6;->a:[Ljava/lang/Object;
-
-    invoke-virtual {p0, v0}, Lns6;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-virtual {v0, p0}, Lddc;->get(I)Ljava/lang/Object;
 
     move-result-object p0
 
-    sget-object v0, Lws6;->b:Lpo5;
-
-    array-length v0, p0
-
-    invoke-static {v0, p0}, Lws6;->h(I[Ljava/lang/Object;)Le8c;
-
-    move-result-object p0
+    check-cast p0, Ljava/lang/String;
 
     return-object p0
-.end method
 
-.method public l()Z
-    .locals 0
+    :cond_0
+    const/4 p0, 0x0
 
-    instance-of p0, p0, Lk8c;
-
-    return p0
+    return-object p0
 .end method

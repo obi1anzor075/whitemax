@@ -1,208 +1,85 @@
-.class public final Lel;
-.super Ljava/lang/Object;
+.class public final enum Lel;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Ljava/util/ArrayList;
+# static fields
+.field public static final enum a:Lel;
 
-.field public b:Z
-
-.field public c:Z
-
-.field public d:Z
-
-.field public e:Z
+.field public static final synthetic b:[Lel;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 6
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lel;
 
-    new-instance v0, Ljava/util/ArrayList;
+    const-string v1, "SAME"
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    const/4 v2, 0x0
 
-    iput-object v0, p0, Lel;->a:Ljava/util/ArrayList;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    const/4 v0, 0x1
+    sput-object v0, Lel;->a:Lel;
 
-    iput-boolean v0, p0, Lel;->b:Z
+    new-instance v1, Lel;
 
-    return-void
-.end method
+    const-string v2, "NO_SESSION"
 
+    const/4 v3, 0x1
 
-# virtual methods
-.method public final a(Ldl;)V
-    .locals 2
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iget-object v0, p0, Lel;->a:Ljava/util/ArrayList;
+    new-instance v2, Lel;
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    const-string v3, "ANONYMOUS_SESSION"
 
-    iget-boolean v0, p0, Lel;->b:Z
+    const/4 v4, 0x2
 
-    invoke-virtual {p1}, Ldl;->a()Z
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    move-result v1
+    new-instance v3, Lel;
 
-    and-int/2addr v0, v1
+    const-string v4, "SESSION"
 
-    iput-boolean v0, p0, Lel;->b:Z
+    const/4 v5, 0x3
 
-    iget-boolean v0, p0, Lel;->c:Z
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-virtual {p1}, Ldl;->c()Z
-
-    move-result v1
-
-    or-int/2addr v0, v1
-
-    iput-boolean v0, p0, Lel;->c:Z
-
-    iget-boolean v0, p0, Lel;->d:Z
-
-    invoke-virtual {p1}, Ldl;->b()Z
-
-    move-result v1
-
-    xor-int/lit8 v1, v1, 0x1
-
-    or-int/2addr v0, v1
-
-    iput-boolean v0, p0, Lel;->d:Z
-
-    iget-boolean v0, p0, Lel;->e:Z
-
-    invoke-virtual {p1}, Ldl;->b()Z
-
-    move-result p1
-
-    or-int/2addr p1, v0
-
-    iput-boolean p1, p0, Lel;->e:Z
-
-    return-void
-.end method
-
-.method public final b(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 1
-
-    new-instance v0, Lyzd;
-
-    invoke-direct {v0, p1, p2}, Lf0e;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {p0, v0}, Lel;->a(Ldl;)V
-
-    return-void
-.end method
-
-.method public final c(Lt67;)V
-    .locals 2
-
-    iget-boolean v0, p0, Lel;->d:Z
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object p0, p0, Lel;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    if-le v0, v1, :cond_1
-
-    new-instance v0, Lzo4;
-
-    const/16 v1, 0x8
-
-    invoke-direct {v0, v1}, Lzo4;-><init>(I)V
-
-    invoke-static {p0, v0}, Lt23;->J(Ljava/util/List;Ljava/util/Comparator;)V
-
-    :cond_1
-    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :cond_2
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    filled-new-array {v0, v1, v2, v3}, [Lel;
 
     move-result-object v0
 
-    check-cast v0, Ldl;
+    sput-object v0, Lel;->b:[Lel;
 
-    invoke-virtual {v0}, Ldl;->b()Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    invoke-virtual {v0, p1}, Ldl;->d(Lt67;)V
-
-    goto :goto_0
-
-    :cond_3
     return-void
 .end method
 
-.method public final d(Lt67;)V
-    .locals 2
+.method public static valueOf(Ljava/lang/String;)Lel;
+    .locals 1
 
-    iget-boolean v0, p0, Lel;->e:Z
+    const-class v0, Lel;
 
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object p0, p0, Lel;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    check-cast p0, Lel;
 
-    move-result v0
+    return-object p0
+.end method
 
-    if-eqz v0, :cond_2
+.method public static values()[Lel;
+    .locals 1
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    sget-object v0, Lel;->b:[Lel;
+
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ldl;
+    check-cast v0, [Lel;
 
-    invoke-virtual {v0}, Ldl;->b()Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {v0, p1}, Ldl;->d(Lt67;)V
-
-    goto :goto_0
-
-    :cond_2
-    return-void
+    return-object v0
 .end method

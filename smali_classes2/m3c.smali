@@ -1,89 +1,76 @@
-.class public final Lm3c;
+.class public interface abstract Lm3c;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lp3c;
-
-
-# instance fields
-.field public final a:Z
-
 
 # direct methods
-.method public constructor <init>(Z)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-boolean p1, p0, Lm3c;->a:Z
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public static a(Lhl;Lvie;)V
     .locals 3
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lhl;->c:Lil;
 
-    if-ne p0, p1, :cond_0
+    const/4 v1, 0x0
 
-    return v0
+    if-eqz v0, :cond_0
+
+    goto :goto_0
 
     :cond_0
-    instance-of v1, p1, Lm3c;
+    move-object v0, v1
 
-    const/4 v2, 0x0
+    :goto_0
+    iget-object v0, v0, Lil;->d:Lje7;
 
-    if-nez v1, :cond_1
+    invoke-interface {v0}, Lje7;->getValue()Ljava/lang/Object;
 
-    return v2
+    move-result-object v0
+
+    check-cast v0, Ld6d;
+
+    check-cast v0, Lvwc;
+
+    iget-object v0, v0, Lvwc;->j:Lzfc;
+
+    invoke-virtual {v0}, Lzfc;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
+
+    iget-object v2, p1, Lvie;->c:Ljava/lang/String;
+
+    invoke-interface {v0, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    filled-new-array {p1}, [Ljava/lang/Object;
+
+    move-result-object p1
+
+    const/4 v2, 0x1
+
+    invoke-static {p1, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object p1
+
+    const-string v2, "detect common reaction error, call onMaxFailCount() for task"
+
+    invoke-static {v0, v1, v2, p1}, Lg47;->N(Ljava/lang/String;Ljava/lang/Exception;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    check-cast p0, Lxra;
+
+    invoke-interface {p0}, Lxra;->d()V
 
     :cond_1
-    check-cast p1, Lm3c;
-
-    iget-boolean p0, p0, Lm3c;->a:Z
-
-    iget-boolean p1, p1, Lm3c;->a:Z
-
-    if-eq p0, p1, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    iget-boolean p0, p0, Lm3c;->a:Z
-
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Pause(isForced="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-boolean p0, p0, Lm3c;->a:Z
-
-    const-string v1, ")"
-
-    invoke-static {v0, p0, v1}, Lhr1;->j(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

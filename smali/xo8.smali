@@ -1,128 +1,126 @@
 .class public final Lxo8;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/io/Closeable;
+.implements Ll66;
 
 
 # instance fields
-.field public final X:Ljava/io/Closeable;
+.field public final synthetic X:Ljava/lang/Object;
 
-.field public final synthetic a:I
-
-.field public final b:Lwr0;
-
-.field public final c:Z
-
-.field public final o:Ljava/lang/Object;
+.field public final synthetic Y:Lm9g;
 
 
 # direct methods
-.method public constructor <init>(ZI)V
-    .locals 2
+.method public constructor <init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;Lm9g;)V
+    .locals 0
 
-    iput p2, p0, Lxo8;->a:I
+    iput-object p1, p0, Lxo8;->X:Ljava/lang/Object;
 
-    packed-switch p2, :pswitch_data_0
+    iput-object p3, p0, Lxo8;->Y:Lm9g;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x2
 
-    iput-boolean p1, p0, Lxo8;->c:Z
-
-    new-instance p1, Lwr0;
-
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lxo8;->b:Lwr0;
-
-    new-instance p2, Ljava/util/zip/Deflater;
-
-    const/4 v0, -0x1
-
-    const/4 v1, 0x1
-
-    invoke-direct {p2, v0, v1}, Ljava/util/zip/Deflater;-><init>(IZ)V
-
-    iput-object p2, p0, Lxo8;->o:Ljava/lang/Object;
-
-    new-instance v0, Lgd4;
-
-    invoke-direct {v0, p1, p2}, Lgd4;-><init>(Lwr0;Ljava/util/zip/Deflater;)V
-
-    iput-object v0, p0, Lxo8;->X:Ljava/io/Closeable;
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
-
-    :pswitch_0
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-boolean p1, p0, Lxo8;->c:Z
-
-    new-instance p1, Lwr0;
-
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lxo8;->b:Lwr0;
-
-    new-instance p2, Ljava/util/zip/Inflater;
-
-    const/4 v0, 0x1
-
-    invoke-direct {p2, v0}, Ljava/util/zip/Inflater;-><init>(Z)V
-
-    iput-object p2, p0, Lxo8;->o:Ljava/lang/Object;
-
-    new-instance v0, Lyv6;
-
-    new-instance v1, Lv0c;
-
-    invoke-direct {v1, p1}, Lv0c;-><init>(Ltld;)V
-
-    invoke-direct {v0, v1, p2}, Lyv6;-><init>(Lv0c;Ljava/util/zip/Inflater;)V
-
-    iput-object v0, p0, Lxo8;->X:Ljava/io/Closeable;
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public final close()V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Lox3;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lxo8;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lxo8;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lxo8;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .locals 1
 
-    iget v0, p0, Lxo8;->a:I
+    new-instance p1, Lxo8;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v0, p0, Lxo8;->X:Ljava/lang/Object;
 
-    iget-object p0, p0, Lxo8;->X:Ljava/io/Closeable;
+    iget-object p0, p0, Lxo8;->Y:Lm9g;
 
-    check-cast p0, Lyv6;
+    invoke-direct {p1, v0, p2, p0}, Lxo8;-><init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;Lm9g;)V
 
-    invoke-virtual {p0}, Lyv6;->close()V
+    return-object p1
+.end method
 
-    return-void
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    :pswitch_0
-    iget-object p0, p0, Lxo8;->X:Ljava/io/Closeable;
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    check-cast p0, Lgd4;
+    iget-object p1, p0, Lxo8;->X:Ljava/lang/Object;
 
-    invoke-virtual {p0}, Lgd4;->close()V
+    check-cast p1, Ly42;
 
-    return-void
+    invoke-virtual {p1}, Ly42;->L()Z
 
-    nop
+    move-result v0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p1}, Ly42;->l()Lnj3;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    iget-object p0, p0, Lxo8;->Y:Lm9g;
+
+    iget-object p0, p0, Lm9g;->e:Ljava/lang/Object;
+
+    check-cast p0, Lwfe;
+
+    invoke-virtual {p0}, Lwfe;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljwa;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Ljwa;->a(Lnj3;Z)Ldva;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "Dialog contact is not found"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "Only dialogs are supported"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

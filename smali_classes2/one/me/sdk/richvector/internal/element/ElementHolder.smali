@@ -16,7 +16,7 @@
         "",
         "Lone/me/sdk/richvector/internal/element/GroupElement;",
         "element",
-        "Ljue;",
+        "Le5f;",
         "addGroup",
         "(Lone/me/sdk/richvector/internal/element/GroupElement;)V",
         "Lone/me/sdk/richvector/internal/element/PathElement;",
@@ -57,6 +57,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

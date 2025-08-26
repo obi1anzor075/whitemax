@@ -1,23 +1,23 @@
 .class public final Lled;
-.super Lh05;
+.super Lu2;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:I
-
-.field public final b:I
+# static fields
+.field public static final c:Lled;
 
 
 # direct methods
-.method public constructor <init>(II)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lled;
 
-    iput p1, p0, Lled;->a:I
+    const/16 v1, 0x8
 
-    iput p2, p0, Lled;->b:I
+    invoke-direct {v0, v1}, Lu2;-><init>(I)V
+
+    sput-object v0, Lled;->c:Lled;
 
     return-void
 .end method

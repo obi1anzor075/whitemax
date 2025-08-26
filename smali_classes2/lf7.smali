@@ -1,99 +1,83 @@
 .class public final Llf7;
-.super Landroid/text/style/ClickableSpan;
+.super Lv64;
 .source "SourceFile"
 
-# interfaces
-.implements Luu7;
 
+# static fields
+.field public static final b:Llf7;
 
-# instance fields
-.field public a:I
+.field public static final c:Lr64;
 
-.field public final b:Ljava/lang/String;
+.field public static final d:Lr64;
 
-.field public c:Lkf7;
-
-.field public final o:I
+.field public static final e:Lr64;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;I)V
-    .locals 0
-
-    invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
-
-    iput p2, p0, Llf7;->a:I
-
-    invoke-static {p1}, Lh0e;->B0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    iput-object p1, p0, Llf7;->b:Ljava/lang/String;
-
-    const/4 p1, 0x6
-
-    iput p1, p0, Llf7;->o:I
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final copy()Lqt3;
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 5
 
     new-instance v0, Llf7;
 
-    iget-object v1, p0, Llf7;->b:Ljava/lang/String;
+    invoke-direct {v0}, Lv64;-><init>()V
 
-    iget p0, p0, Llf7;->a:I
+    sput-object v0, Llf7;->b:Llf7;
 
-    invoke-direct {v0, v1, p0}, Llf7;-><init>(Ljava/lang/String;I)V
+    const-string v1, "lat"
 
-    return-object v0
-.end method
+    const-string v2, "lon"
 
-.method public final getType()I
-    .locals 0
+    filled-new-array {v1, v2}, [Ljava/lang/String;
 
-    iget p0, p0, Llf7;->o:I
+    move-result-object v1
 
-    return p0
-.end method
+    const-string v2, ":location/show"
 
-.method public final onClick(Landroid/view/View;)V
-    .locals 1
+    const/4 v3, 0x0
 
-    iget-object v0, p0, Llf7;->c:Lkf7;
+    const/16 v4, 0xe
 
-    if-eqz v0, :cond_0
+    invoke-static {v0, v2, v1, v3, v4}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
 
-    iget-object p0, p0, Llf7;->b:Ljava/lang/String;
+    move-result-object v1
 
-    invoke-interface {v0, p1, p0}, Lkf7;->b(Landroid/view/View;Ljava/lang/String;)V
+    sput-object v1, Llf7;->c:Lr64;
 
-    :cond_0
-    return-void
-.end method
+    const-string v1, "request_code"
 
-.method public final updateDrawState(Landroid/text/TextPaint;)V
-    .locals 1
+    filled-new-array {v1}, [Ljava/lang/String;
 
-    iget v0, p0, Llf7;->a:I
+    move-result-object v1
 
-    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
+    const-string v2, ":location/pick"
 
-    iget p0, p0, Llf7;->a:I
+    invoke-static {v0, v2, v1, v3, v4}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
 
-    iput p0, p1, Landroid/text/TextPaint;->linkColor:I
+    move-result-object v1
 
-    const/4 p0, 0x1
+    sput-object v1, Llf7;->d:Lr64;
 
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setUnderlineText(Z)V
+    const-string v1, "attachment_id"
+
+    filled-new-array {v1}, [Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "message"
+
+    invoke-static {v2}, Ljava/util/Collections;->singleton(Ljava/lang/Object;)Ljava/util/Set;
+
+    move-result-object v2
+
+    const/16 v3, 0xc
+
+    const-string v4, ":attach/fullscreen"
+
+    invoke-static {v0, v4, v1, v2, v3}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v0
+
+    sput-object v0, Llf7;->e:Lr64;
 
     return-void
 .end method

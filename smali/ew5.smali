@@ -1,98 +1,111 @@
 .class public final Lew5;
-.super Ll5e;
+.super Lv64;
 .source "SourceFile"
 
-# interfaces
-.implements Li26;
 
+# static fields
+.field public static final b:Lew5;
 
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public static final c:Lr64;
 
-.field public final synthetic Y:Lone/me/chats/forward/ForwardPickerScreen;
+.field public static final d:Lr64;
+
+.field public static final e:Lr64;
+
+.field public static final f:Lr64;
+
+.field public static final g:Lr64;
+
+.field public static final h:Lr64;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chats/forward/ForwardPickerScreen;)V
-    .locals 0
-
-    iput-object p2, p0, Lew5;->Y:Lone/me/chats/forward/ForwardPickerScreen;
-
-    const/4 p2, 0x2
-
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lew5;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lew5;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lew5;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 7
 
     new-instance v0, Lew5;
 
-    iget-object p0, p0, Lew5;->Y:Lone/me/chats/forward/ForwardPickerScreen;
+    invoke-direct {v0}, Lv64;-><init>()V
 
-    invoke-direct {v0, p2, p0}, Lew5;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chats/forward/ForwardPickerScreen;)V
+    sput-object v0, Lew5;->b:Lew5;
 
-    iput-object p1, v0, Lew5;->X:Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    return-object v0
-.end method
+    new-array v2, v1, [Ljava/lang/String;
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+    const-string v3, ":settings/folder-list"
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    const/4 v4, 0x0
 
-    iget-object p1, p0, Lew5;->X:Ljava/lang/Object;
+    const/16 v5, 0xe
 
-    check-cast p1, Ljava/lang/Boolean;
+    invoke-static {v0, v3, v2, v4, v5}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object v2
 
-    sget-object p1, Lone/me/chats/forward/ForwardPickerScreen;->M0:[Lk77;
+    sput-object v2, Lew5;->c:Lr64;
 
-    iget-object p0, p0, Lew5;->Y:Lone/me/chats/forward/ForwardPickerScreen;
+    const-string v2, "id"
 
-    invoke-virtual {p0}, Lone/me/chats/forward/ForwardPickerScreen;->y0()Lflb;
+    filled-new-array {v2}, [Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v3
 
-    invoke-virtual {p0}, Lone/me/chats/picker/AbstractPickerScreen;->u0()Lwra;
+    const-string v6, ":settings/folder"
 
-    move-result-object p0
+    invoke-static {v0, v6, v3, v4, v5}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
 
-    iget-object p0, p0, Lwra;->c:Lmua;
+    move-result-object v3
 
-    check-cast p0, Lpv5;
+    sput-object v3, Lew5;->d:Lr64;
 
-    invoke-virtual {p0}, Lpv5;->g()Landroid/graphics/drawable/Drawable;
+    const-string v3, ":settings/folder/edit"
 
-    move-result-object p0
+    new-array v6, v1, [Ljava/lang/String;
 
-    invoke-virtual {p1, p0}, Lflb;->setStartIconDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-static {v0, v3, v6, v4, v5}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
 
-    sget-object p0, Ljue;->a:Ljue;
+    move-result-object v3
 
-    return-object p0
+    sput-object v3, Lew5;->e:Lr64;
+
+    const-string v3, ":settings/folder/create"
+
+    new-array v6, v1, [Ljava/lang/String;
+
+    invoke-static {v0, v3, v6, v4, v5}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v3
+
+    sput-object v3, Lew5;->f:Lr64;
+
+    const-string v3, ":settings/folder/by-chat"
+
+    filled-new-array {v2}, [Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v3, v2, v4, v5}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v2
+
+    sput-object v2, Lew5;->g:Lr64;
+
+    const-string v2, ":settings/folder/settings"
+
+    new-array v3, v1, [Ljava/lang/String;
+
+    invoke-static {v0, v2, v3, v4, v5}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    const-string v2, ":settings/folder/members-picker"
+
+    new-array v1, v1, [Ljava/lang/String;
+
+    invoke-static {v0, v2, v1, v4, v5}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v0
+
+    sput-object v0, Lew5;->h:Lr64;
+
+    return-void
 .end method

@@ -1,202 +1,122 @@
 .class public final Lh91;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Lt97;
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Lk91;
 
 
 # direct methods
-.method public constructor <init>(Lt97;)V
+.method public constructor <init>(Lk91;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lh91;->Y:Lk91;
 
-    iput-object p1, p0, Lh91;->a:Lt97;
+    const/4 p1, 0x2
 
-    return-void
-.end method
-
-.method public static b(Landroid/content/Intent;Lk11;Z)V
-    .locals 2
-
-    const-string v0, "action-open-incoming"
-
-    invoke-virtual {p0, v0}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
-
-    iget-object v0, p1, Lk11;->b:Ljava/lang/CharSequence;
-
-    if-nez v0, :cond_0
-
-    const-string v0, ""
-
-    :cond_0
-    const-string v1, "incoming_param_name"
-
-    invoke-virtual {p0, v1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/content/Intent;
-
-    iget-object v0, p1, Lk11;->c:Ljava/lang/String;
-
-    if-eqz v0, :cond_1
-
-    sget-object v1, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    :goto_0
-    const-string v1, "incoming_param_avatar"
-
-    invoke-virtual {p0, v1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    iget-object p1, p1, Lk11;->a:Ljava/lang/Long;
-
-    if-eqz p1, :cond_2
-
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    goto :goto_1
-
-    :cond_2
-    const-wide/16 v0, 0x0
-
-    :goto_1
-    const-string p1, "incoming_param_chat_id"
-
-    invoke-virtual {p0, p1, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
-
-    const-string p1, "incoming_param_is_video"
-
-    invoke-virtual {p0, p1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    const/high16 p1, 0x10000000
-
-    invoke-virtual {p0, p1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/app/Application;Lu16;)Landroid/app/PendingIntent;
-    .locals 3
-
-    sget p0, Ld1f;->a:I
-
-    const/16 v0, 0x1f
-
-    const/high16 v1, 0xc000000
-
-    const/4 v2, 0x0
-
-    if-lt p0, v0, :cond_0
-
-    new-instance p0, Landroid/content/Intent;
-
-    const-class v0, Lone/me/android/calls/CallNotifierFixActivity;
-
-    invoke-direct {p0, p1, v0}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    invoke-interface {p2, p0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {p1, v2, p0, v1}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
-
-    move-result-object p0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Landroid/content/Intent;
-
-    const-class v0, Lone/me/android/calls/CallNotifierBroadcastReceiver;
-
-    invoke-direct {p0, p1, v0}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    invoke-interface {p2, p0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {p1, v2, p0, v1}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
-
-    move-result-object p0
-
-    :goto_0
-    return-object p0
-.end method
-
-.method public final c()Landroid/app/Application;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    iget-object p0, p0, Lh91;->a:Lt97;
+    check-cast p1, Ljava/lang/Long;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lh91;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    check-cast p0, Landroid/app/Application;
+    check-cast p0, Lh91;
 
-    return-object p0
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lh91;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
 .end method
 
-.method public final d()Landroid/app/PendingIntent;
-    .locals 5
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    invoke-virtual {p0}, Lh91;->c()Landroid/app/Application;
+    new-instance v0, Lh91;
 
-    move-result-object p0
+    iget-object p0, p0, Lh91;->Y:Lk91;
 
-    sget v0, Ld1f;->a:I
+    invoke-direct {v0, p0, p2}, Lh91;-><init>(Lk91;Lkotlin/coroutines/Continuation;)V
 
-    const-string v1, "action-microphone-state"
+    iput-object p1, v0, Lh91;->X:Ljava/lang/Object;
 
-    const/16 v2, 0x1f
+    return-object v0
+.end method
 
-    const/high16 v3, 0xc000000
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
 
-    const/4 v4, 0x0
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    if-lt v0, v2, :cond_0
+    iget-object p1, p0, Lh91;->X:Ljava/lang/Object;
 
-    new-instance v0, Landroid/content/Intent;
+    check-cast p1, Ljava/lang/Long;
 
-    const-class v2, Lone/me/android/calls/CallNotifierFixActivity;
+    iget-object p0, p0, Lh91;->Y:Lk91;
 
-    invoke-direct {v0, p0, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    iget-object v0, p0, Lk91;->Z:Lazd;
 
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    :cond_0
+    invoke-virtual {v0}, Lazd;->getValue()Ljava/lang/Object;
 
-    invoke-static {p0, v4, v0, v3}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+    move-result-object v1
 
-    move-result-object p0
+    move-object v2, v1
+
+    check-cast v2, Ljava/lang/String;
+
+    if-eqz p1, :cond_1
+
+    iget-object v2, p0, Lk91;->o:Lzm1;
+
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {p1}, Lzm1;->e(Ljava/lang/Long;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "\u00b7\u00a0"
+
+    invoke-static {v3, v2}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
 
     goto :goto_0
 
-    :cond_0
-    new-instance v0, Landroid/content/Intent;
-
-    const-class v2, Lone/me/android/calls/CallNotifierBroadcastReceiver;
-
-    invoke-direct {v0, p0, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
-
-    invoke-static {p0, v4, v0, v3}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
-
-    move-result-object p0
+    :cond_1
+    const/4 v2, 0x0
 
     :goto_0
+    if-nez v2, :cond_2
+
+    const-string v2, ""
+
+    :cond_2
+    invoke-virtual {v0, v1, v2}, Lazd;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    sget-object p0, Le5f;->a:Le5f;
+
     return-object p0
 .end method

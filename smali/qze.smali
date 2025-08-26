@@ -1,105 +1,48 @@
 .class public final Lqze;
-.super Ljava/lang/Object;
+.super Ljpd;
 .source "SourceFile"
 
-
-# static fields
-.field public static final b:J
-
-.field public static final c:Ljava/util/regex/Pattern;
-
-.field public static d:Lqze;
+# interfaces
+.implements Lsze;
 
 
 # instance fields
-.field public final a:Ldr9;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->HOURS:Ljava/util/concurrent/TimeUnit;
-
-    const-wide/16 v1, 0x1
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toSeconds(J)J
-
-    move-result-wide v0
-
-    sput-wide v0, Lqze;->b:J
-
-    const-string v0, "\\AA[\\w-]{38}\\z"
-
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lqze;->c:Ljava/util/regex/Pattern;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ldr9;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lqze;->a:Ldr9;
-
-    return-void
-.end method
+.field public p:Lzff;
 
 
 # virtual methods
-.method public final a(Lha0;)Z
-    .locals 6
+.method public final b(I)Lfg6;
+    .locals 4
 
-    iget-object v0, p1, Lha0;->c:Ljava/lang/String;
+    iget-object v0, p0, Lqze;->p:Lzff;
 
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    if-nez v0, :cond_0
 
-    move-result v0
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_0
-
-    return v1
+    goto :goto_0
 
     :cond_0
-    iget-wide v2, p1, Lha0;->f:J
+    const/4 v0, 0x0
 
-    iget-wide v4, p1, Lha0;->e:J
+    :goto_0
+    invoke-static {v0}, Lu27;->j(Z)V
 
-    add-long/2addr v2, v4
+    invoke-virtual {p0, p1}, Ljpd;->d(I)V
 
-    sget-object p1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    new-instance v0, Lzff;
 
-    iget-object p0, p0, Lqze;->a:Ldr9;
+    invoke-virtual {p0, p1}, Ljpd;->c(I)Lcgf;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object p1
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    iget-object v1, p0, Ljpd;->i:Ll5b;
 
-    move-result-wide v4
+    iget-wide v2, p0, Ljpd;->h:J
 
-    invoke-virtual {p1, v4, v5}, Ljava/util/concurrent/TimeUnit;->toSeconds(J)J
+    invoke-direct {v0, p1, v1, v2, v3}, Lzff;-><init>(Lcgf;Ll5b;J)V
 
-    move-result-wide p0
+    iput-object v0, p0, Lqze;->p:Lzff;
 
-    sget-wide v4, Lqze;->b:J
-
-    add-long/2addr p0, v4
-
-    cmp-long p0, v2, p0
-
-    if-gez p0, :cond_1
-
-    return v1
-
-    :cond_1
-    const/4 p0, 0x0
-
-    return p0
+    return-object v0
 .end method

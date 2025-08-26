@@ -1,84 +1,118 @@
 .class public final Ldff;
-.super Lu12;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final c:J
+.field public final a:I
+
+.field public final b:I
+
+.field public final c:I
 
 
 # direct methods
-.method public constructor <init>(J)V
-    .locals 2
+.method public constructor <init>(Lw3;)V
+    .locals 1
 
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    iget v0, p1, Lw3;->a:I
 
-    const/4 v1, 0x3
+    iput v0, p0, Ldff;->a:I
 
-    invoke-direct {p0, v1, v0}, Lu12;-><init>(ILjava/lang/Long;)V
+    iget v0, p1, Lw3;->b:I
 
-    iput-wide p1, p0, Ldff;->c:J
+    iput v0, p0, Ldff;->b:I
+
+    iget p1, p1, Lw3;->c:I
+
+    iput p1, p0, Ldff;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Long;
-    .locals 2
-
-    iget-wide v0, p0, Ldff;->c:J
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 5
-
-    const/4 v0, 0x1
+    .locals 2
 
     if-ne p0, p1, :cond_0
 
-    return v0
+    goto :goto_0
 
     :cond_0
-    instance-of v1, p1, Ldff;
+    if-eqz p1, :cond_2
 
-    const/4 v2, 0x0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    if-nez v1, :cond_1
+    move-result-object v0
 
-    return v2
+    const-class v1, Ldff;
+
+    if-eq v1, v0, :cond_1
+
+    goto :goto_1
 
     :cond_1
     check-cast p1, Ldff;
 
-    iget-wide v3, p0, Ldff;->c:J
+    iget v0, p0, Ldff;->a:I
 
-    iget-wide p0, p1, Ldff;->c:J
+    iget v1, p1, Ldff;->a:I
 
-    cmp-long p0, v3, p0
+    if-ne v0, v1, :cond_2
 
-    if-eqz p0, :cond_2
+    iget v0, p0, Ldff;->b:I
 
-    return v2
+    iget v1, p1, Ldff;->b:I
+
+    if-ne v0, v1, :cond_2
+
+    iget p0, p0, Ldff;->c:I
+
+    iget p1, p1, Ldff;->c:I
+
+    if-ne p0, p1, :cond_2
+
+    :goto_0
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_2
-    return v0
+    :goto_1
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
 .method public final hashCode()I
     .locals 2
 
-    iget-wide v0, p0, Ldff;->c:J
+    iget v0, p0, Ldff;->a:I
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    iget v1, p0, Ldff;->b:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    iget p0, p0, Ldff;->c:I
+
+    invoke-static {p0}, Lzt1;->a(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    filled-new-array {v0, v1, p0}, [Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
 
     move-result p0
 
@@ -86,19 +120,60 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "ChatId(sourceId="
+    const-string v1, "VideoDisplayLayout{width="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-wide v1, p0, Ldff;->c:J
+    iget v1, p0, Ldff;->a:I
 
-    const-string p0, ")"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v1, v2, p0}, Lwn6;->k(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
+    const-string v1, ", height="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Ldff;->b:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", fit="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/4 v1, 0x1
+
+    iget p0, p0, Ldff;->c:I
+
+    if-eq p0, v1, :cond_1
+
+    const/4 v1, 0x2
+
+    if-eq p0, v1, :cond_0
+
+    const-string p0, "null"
+
+    goto :goto_0
+
+    :cond_0
+    const-string p0, "CONTAIN"
+
+    goto :goto_0
+
+    :cond_1
+    const-string p0, "COVER"
+
+    :goto_0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 p0, 0x7d
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

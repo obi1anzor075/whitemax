@@ -48,7 +48,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -57,7 +57,7 @@
 .method public synthetic constructor <init>(I)V
     .locals 0
 
-    .line 2
+    .line 1
     invoke-direct {p0}, Lorg/webrtc/audio/WebRtcSilenceProvider$Statistics;-><init>()V
 
     return-void
@@ -145,23 +145,19 @@
 
     const-string v0, "ns, log delta: "
 
-    invoke-static {v1, v2, p4, v0}, Lhr1;->k(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1, v2, p4, v0}, Lzt1;->k(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p4
 
-    invoke-virtual {p4, p5, p6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    const-string v0, "ns, reads: "
 
-    const-string p5, "ns, reads: "
-
-    invoke-virtual {p4, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p4, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-static {p4, p5, p6, v0, p3}, Lv04;->q(Ljava/lang/StringBuilder;JLjava/lang/String;I)V
 
     const-string p3, ", read time: "
 
     const-string p5, "ms, suspend time: "
 
-    invoke-static {p4, p3, p1, p2, p5}, Lhr1;->s(Ljava/lang/StringBuilder;Ljava/lang/String;JLjava/lang/String;)V
+    invoke-static {p1, p2, p3, p5, p4}, Lzt1;->q(JLjava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)V
 
     invoke-virtual {p4, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 

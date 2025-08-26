@@ -1,54 +1,46 @@
-.class public final synthetic Lief;
+.class public interface abstract Lief;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lnhd;
-
-
-# direct methods
-.method public synthetic constructor <init>(Lnhd;I)V
-    .locals 0
-
-    iput p2, p0, Lief;->a:I
-
-    iput-object p1, p0, Lief;->b:Lnhd;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public a(J)Lief;
+    .locals 0
 
-    iget v0, p0, Lief;->a:I
+    return-object p0
+.end method
 
-    iget-object p0, p0, Lief;->b:Lnhd;
+.method public b()Ljy;
+    .locals 0
 
-    packed-switch v0, :pswitch_data_0
+    const/4 p0, 0x0
 
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants;->a(Lnhd;)V
+    return-object p0
+.end method
 
-    return-void
+.method public abstract c()J
+.end method
 
-    :pswitch_0
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants;->e(Lnhd;)V
+.method public abstract d()J
+.end method
 
-    return-void
+.method public abstract g()J
+.end method
 
-    nop
+.method public abstract getDuration()J
+.end method
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+.method public abstract getHeight()I
+.end method
+
+.method public abstract getWidth()I
+.end method
+
+.method public abstract h()Landroid/net/Uri;
+.end method
+
+.method public abstract i()J
+.end method
+
+.method public abstract w()Z
 .end method

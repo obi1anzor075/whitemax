@@ -1,317 +1,290 @@
 .class public final Lmtc;
-.super Ljava/lang/Object;
+.super Landroid/view/View;
 .source "SourceFile"
-
-# interfaces
-.implements Lrse;
 
 
 # instance fields
-.field public final a:Lktc;
+.field public a:Llw1;
 
-.field public final b:Lija;
+.field public b:Landroid/view/Window;
 
-.field public c:I
-
-.field public d:I
-
-.field public e:Z
-
-.field public f:Z
+.field public c:Lltc;
 
 
 # direct methods
-.method public constructor <init>(Lktc;)V
+.method public static synthetic a(Lmtc;)F
+    .locals 0
+
+    invoke-direct {p0}, Lmtc;->getBrightness()F
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static synthetic b(Lmtc;F)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lmtc;->setBrightness(F)V
+
+    return-void
+.end method
+
+.method private getBrightness()F
+    .locals 0
+
+    iget-object p0, p0, Lmtc;->b:Landroid/view/Window;
+
+    if-nez p0, :cond_0
+
+    const/high16 p0, 0x7fc00000    # Float.NaN
+
+    return p0
+
+    :cond_0
+    invoke-virtual {p0}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+
+    move-result-object p0
+
+    iget p0, p0, Landroid/view/WindowManager$LayoutParams;->screenBrightness:F
+
+    return p0
+.end method
+
+.method private setBrightness(F)V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object v0, p0, Lmtc;->b:Landroid/view/Window;
 
-    iput-object p1, p0, Lmtc;->a:Lktc;
+    if-nez v0, :cond_0
 
-    new-instance p1, Lija;
+    return-void
 
-    const/16 v0, 0x20
+    :cond_0
+    invoke-static {p1}, Ljava/lang/Float;->isNaN(F)Z
 
-    invoke-direct {p1, v0}, Lija;-><init>(I)V
+    move-result v0
 
-    iput-object p1, p0, Lmtc;->b:Lija;
+    if-eqz v0, :cond_1
 
+    return-void
+
+    :cond_1
+    iget-object v0, p0, Lmtc;->b:Landroid/view/Window;
+
+    invoke-virtual {v0}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+
+    move-result-object v0
+
+    iput p1, v0, Landroid/view/WindowManager$LayoutParams;->screenBrightness:F
+
+    iget-object p0, p0, Lmtc;->b:Landroid/view/Window;
+
+    invoke-virtual {p0, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+
+    return-void
+.end method
+
+.method private setScreenFlashUiInfo(Lgu6;)V
+    .locals 3
+
+    iget-object p0, p0, Lmtc;->a:Llw1;
+
+    if-nez p0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Lktc;
+
+    sget-object v1, Ljtc;->b:Ljtc;
+
+    invoke-direct {v0, v1, p1}, Lktc;-><init>(Ljtc;Lgu6;)V
+
+    invoke-virtual {p0}, Llw1;->f()Lktc;
+
+    move-result-object p1
+
+    iget-object v2, p0, Llw1;->C:Ljava/util/HashMap;
+
+    invoke-virtual {v2, v1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p0}, Llw1;->f()Lktc;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {v0, p1}, Lktc;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_2
+
+    invoke-virtual {p0}, Llw1;->f()Lktc;
+
+    move-result-object p1
+
+    if-nez p1, :cond_1
+
+    iget-object p0, p0, Llw1;->d:Lhu6;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance p1, Lntc;
+
+    sget-object v0, Llw1;->D:Ljw1;
+
+    invoke-direct {p1, v0}, Lntc;-><init>(Lgu6;)V
+
+    iput-object p1, p0, Lhu6;->u:Lntc;
+
+    invoke-virtual {p0}, Lm9f;->d()Lhw1;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Lhw1;->g(Lgu6;)V
+
+    return-void
+
+    :cond_1
+    iget-object p0, p0, Llw1;->d:Lhu6;
+
+    iget-object v0, p1, Lktc;->b:Lgu6;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v1, Lntc;
+
+    invoke-direct {v1, v0}, Lntc;-><init>(Lgu6;)V
+
+    iput-object v1, p0, Lhu6;->u:Lntc;
+
+    invoke-virtual {p0}, Lm9f;->d()Lhw1;
+
+    move-result-object p0
+
+    invoke-interface {p0, v1}, Lhw1;->g(Lgu6;)V
+
+    iget-object p0, p1, Lktc;->a:Ljtc;
+
+    invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method public getScreenFlash()Lgu6;
+    .locals 0
+
+    iget-object p0, p0, Lmtc;->c:Lltc;
+
+    return-object p0
+.end method
+
+.method public getVisibilityRampUpAnimationDurationMillis()J
+    .locals 2
+
+    const-wide/16 v0, 0x3e8
+
+    return-wide v0
+.end method
+
+.method public setController(Llw1;)V
     .locals 1
 
-    const/4 v0, 0x1
+    invoke-static {}, Lp6g;->c()V
 
-    iput-boolean v0, p0, Lmtc;->f:Z
+    iget-object v0, p0, Lmtc;->a:Llw1;
+
+    if-eqz v0, :cond_0
+
+    if-eq v0, p1, :cond_0
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lmtc;->setScreenFlashUiInfo(Lgu6;)V
+
+    :cond_0
+    iput-object p1, p0, Lmtc;->a:Llw1;
+
+    if-nez p1, :cond_1
+
+    return-void
+
+    :cond_1
+    invoke-static {}, Lp6g;->c()V
+
+    iget-object p1, p1, Llw1;->d:Lhu6;
+
+    invoke-virtual {p1}, Lhu6;->H()I
+
+    move-result p1
+
+    const/4 v0, 0x3
+
+    if-ne p1, v0, :cond_3
+
+    iget-object p1, p0, Lmtc;->b:Landroid/view/Window;
+
+    if-eqz p1, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "No window set despite setting FLASH_MODE_SCREEN in CameraController"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_3
+    :goto_0
+    invoke-virtual {p0}, Lmtc;->getScreenFlash()Lgu6;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lmtc;->setScreenFlashUiInfo(Lgu6;)V
 
     return-void
 .end method
 
-.method public final b(ILija;)V
-    .locals 7
+.method public setScreenFlashWindow(Landroid/view/Window;)V
+    .locals 1
 
-    const/4 v0, 0x1
+    invoke-static {}, Lp6g;->c()V
 
-    and-int/2addr p1, v0
+    iget-object v0, p0, Lmtc;->b:Landroid/view/Window;
 
-    const/4 v1, 0x0
+    if-eq v0, p1, :cond_1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    move p1, v0
+    const/4 v0, 0x0
 
     goto :goto_0
 
     :cond_0
-    move p1, v1
+    new-instance v0, Lltc;
+
+    invoke-direct {v0, p0}, Lltc;-><init>(Lmtc;)V
 
     :goto_0
-    const/4 v2, -0x1
-
-    if-eqz p1, :cond_1
-
-    invoke-virtual {p2}, Lija;->u()I
-
-    move-result v3
-
-    iget v4, p2, Lija;->b:I
-
-    add-int/2addr v4, v3
-
-    goto :goto_1
+    iput-object v0, p0, Lmtc;->c:Lltc;
 
     :cond_1
-    move v4, v2
+    iput-object p1, p0, Lmtc;->b:Landroid/view/Window;
 
-    :goto_1
-    iget-boolean v3, p0, Lmtc;->f:Z
+    invoke-virtual {p0}, Lmtc;->getScreenFlash()Lgu6;
 
-    if-eqz v3, :cond_3
+    move-result-object p1
 
-    if-nez p1, :cond_2
-
-    return-void
-
-    :cond_2
-    iput-boolean v1, p0, Lmtc;->f:Z
-
-    invoke-virtual {p2, v4}, Lija;->G(I)V
-
-    iput v1, p0, Lmtc;->d:I
-
-    :cond_3
-    :goto_2
-    invoke-virtual {p2}, Lija;->a()I
-
-    move-result p1
-
-    if-lez p1, :cond_9
-
-    iget p1, p0, Lmtc;->d:I
-
-    const/4 v3, 0x3
-
-    iget-object v4, p0, Lmtc;->b:Lija;
-
-    if-ge p1, v3, :cond_6
-
-    if-nez p1, :cond_4
-
-    invoke-virtual {p2}, Lija;->u()I
-
-    move-result p1
-
-    iget v5, p2, Lija;->b:I
-
-    sub-int/2addr v5, v0
-
-    invoke-virtual {p2, v5}, Lija;->G(I)V
-
-    const/16 v5, 0xff
-
-    if-ne p1, v5, :cond_4
-
-    iput-boolean v0, p0, Lmtc;->f:Z
-
-    return-void
-
-    :cond_4
-    invoke-virtual {p2}, Lija;->a()I
-
-    move-result p1
-
-    iget v5, p0, Lmtc;->d:I
-
-    rsub-int/lit8 v5, v5, 0x3
-
-    invoke-static {p1, v5}, Ljava/lang/Math;->min(II)I
-
-    move-result p1
-
-    iget-object v5, v4, Lija;->a:[B
-
-    iget v6, p0, Lmtc;->d:I
-
-    invoke-virtual {p2, v6, v5, p1}, Lija;->e(I[BI)V
-
-    iget v5, p0, Lmtc;->d:I
-
-    add-int/2addr v5, p1
-
-    iput v5, p0, Lmtc;->d:I
-
-    if-ne v5, v3, :cond_3
-
-    invoke-virtual {v4, v1}, Lija;->G(I)V
-
-    invoke-virtual {v4, v3}, Lija;->F(I)V
-
-    invoke-virtual {v4, v0}, Lija;->H(I)V
-
-    invoke-virtual {v4}, Lija;->u()I
-
-    move-result p1
-
-    invoke-virtual {v4}, Lija;->u()I
-
-    move-result v5
-
-    and-int/lit16 v6, p1, 0x80
-
-    if-eqz v6, :cond_5
-
-    move v6, v0
-
-    goto :goto_3
-
-    :cond_5
-    move v6, v1
-
-    :goto_3
-    iput-boolean v6, p0, Lmtc;->e:Z
-
-    and-int/lit8 p1, p1, 0xf
-
-    shl-int/lit8 p1, p1, 0x8
-
-    or-int/2addr p1, v5
-
-    add-int/2addr p1, v3
-
-    iput p1, p0, Lmtc;->c:I
-
-    iget-object v3, v4, Lija;->a:[B
-
-    array-length v5, v3
-
-    if-ge v5, p1, :cond_3
-
-    array-length v3, v3
-
-    mul-int/lit8 v3, v3, 0x2
-
-    invoke-static {p1, v3}, Ljava/lang/Math;->max(II)I
-
-    move-result p1
-
-    const/16 v3, 0x1002
-
-    invoke-static {v3, p1}, Ljava/lang/Math;->min(II)I
-
-    move-result p1
-
-    invoke-virtual {v4, p1}, Lija;->b(I)V
-
-    goto :goto_2
-
-    :cond_6
-    invoke-virtual {p2}, Lija;->a()I
-
-    move-result p1
-
-    iget v3, p0, Lmtc;->c:I
-
-    iget v5, p0, Lmtc;->d:I
-
-    sub-int/2addr v3, v5
-
-    invoke-static {p1, v3}, Ljava/lang/Math;->min(II)I
-
-    move-result p1
-
-    iget-object v3, v4, Lija;->a:[B
-
-    iget v5, p0, Lmtc;->d:I
-
-    invoke-virtual {p2, v5, v3, p1}, Lija;->e(I[BI)V
-
-    iget v3, p0, Lmtc;->d:I
-
-    add-int/2addr v3, p1
-
-    iput v3, p0, Lmtc;->d:I
-
-    iget p1, p0, Lmtc;->c:I
-
-    if-ne v3, p1, :cond_3
-
-    iget-boolean v3, p0, Lmtc;->e:Z
-
-    if-eqz v3, :cond_8
-
-    iget-object v3, v4, Lija;->a:[B
-
-    invoke-static {v1, p1, v2, v3}, Loze;->n(III[B)I
-
-    move-result p1
-
-    if-eqz p1, :cond_7
-
-    iput-boolean v0, p0, Lmtc;->f:Z
-
-    return-void
-
-    :cond_7
-    iget p1, p0, Lmtc;->c:I
-
-    add-int/lit8 p1, p1, -0x4
-
-    invoke-virtual {v4, p1}, Lija;->F(I)V
-
-    goto :goto_4
-
-    :cond_8
-    invoke-virtual {v4, p1}, Lija;->F(I)V
-
-    :goto_4
-    invoke-virtual {v4, v1}, Lija;->G(I)V
-
-    iget-object p1, p0, Lmtc;->a:Lktc;
-
-    invoke-interface {p1, v4}, Lktc;->f(Lija;)V
-
-    iput v1, p0, Lmtc;->d:I
-
-    goto/16 :goto_2
-
-    :cond_9
-    return-void
-.end method
-
-.method public final e(Lcke;Li75;Lpse;)V
-    .locals 1
-
-    iget-object v0, p0, Lmtc;->a:Lktc;
-
-    invoke-interface {v0, p1, p2, p3}, Lktc;->e(Lcke;Li75;Lpse;)V
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lmtc;->f:Z
+    invoke-direct {p0, p1}, Lmtc;->setScreenFlashUiInfo(Lgu6;)V
 
     return-void
 .end method

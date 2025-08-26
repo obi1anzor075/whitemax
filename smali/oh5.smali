@@ -1,236 +1,89 @@
-.class public final synthetic Loh5;
+.class public final Loh5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
-
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lea0;
 
-.field public final synthetic b:Lcom/google/firebase/messaging/FirebaseMessaging;
+.field public final b:Lea0;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/google/firebase/messaging/FirebaseMessaging;I)V
+.method public constructor <init>(Lea0;)V
     .locals 0
 
-    iput p2, p0, Loh5;->a:I
-
-    iput-object p1, p0, Loh5;->b:Lcom/google/firebase/messaging/FirebaseMessaging;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Loh5;->a:Lea0;
+
+    iput-object p1, p0, Loh5;->b:Lea0;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 8
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    iget v0, p0, Loh5;->a:I
+    if-ne p0, p1, :cond_0
 
-    packed-switch v0, :pswitch_data_0
+    const/4 p0, 0x1
 
-    iget-object p0, p0, Loh5;->b:Lcom/google/firebase/messaging/FirebaseMessaging;
-
-    iget-object v0, p0, Lcom/google/firebase/messaging/FirebaseMessaging;->b:Landroid/content/Context;
-
-    invoke-static {v0}, Loyb;->G(Landroid/content/Context;)V
-
-    invoke-virtual {p0}, Lcom/google/firebase/messaging/FirebaseMessaging;->g()Z
-
-    move-result v1
-
-    invoke-static {v0}, Ludd;->B(Landroid/content/Context;)Landroid/content/SharedPreferences;
-
-    move-result-object v2
-
-    const-string v3, "proxy_retention"
-
-    invoke-interface {v2, v3}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    const/4 v4, 0x0
-
-    invoke-interface {v2, v3, v4}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v2
-
-    if-ne v2, v1, :cond_0
-
-    goto :goto_1
+    return p0
 
     :cond_0
-    iget-object v2, p0, Lcom/google/firebase/messaging/FirebaseMessaging;->c:Lmif;
+    instance-of v0, p1, Loh5;
 
-    iget-object v2, v2, Lmif;->c:Ljava/lang/Object;
+    if-nez v0, :cond_1
 
-    check-cast v2, Lzgc;
+    const/4 p0, 0x0
 
-    iget-object v4, v2, Lzgc;->c:Lhw9;
-
-    invoke-virtual {v4}, Lhw9;->g()I
-
-    move-result v4
-
-    const v5, 0xe5ee4e0
-
-    if-lt v4, v5, :cond_1
-
-    new-instance v4, Landroid/os/Bundle;
-
-    invoke-direct {v4}, Landroid/os/Bundle;-><init>()V
-
-    invoke-virtual {v4, v3, v1}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
-
-    iget-object v2, v2, Lzgc;->b:Landroid/content/Context;
-
-    invoke-static {v2}, Li6g;->g(Landroid/content/Context;)Li6g;
-
-    move-result-object v2
-
-    new-instance v3, Lv5g;
-
-    monitor-enter v2
-
-    :try_start_0
-    iget v5, v2, Li6g;->b:I
-
-    add-int/lit8 v6, v5, 0x1
-
-    iput v6, v2, Li6g;->b:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit v2
-
-    const/4 v6, 0x4
-
-    const/4 v7, 0x0
-
-    invoke-direct {v3, v5, v6, v4, v7}, Lv5g;-><init>(IILandroid/os/Bundle;I)V
-
-    invoke-virtual {v2, v3}, Li6g;->h(Lv5g;)Ln6g;
-
-    move-result-object v2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p0
-
-    :try_start_1
-    monitor-exit v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p0
+    return p0
 
     :cond_1
-    new-instance v2, Ljava/io/IOException;
+    check-cast p1, Loh5;
 
-    const-string v3, "SERVICE_NOT_AVAILABLE"
+    iget-object p1, p1, Loh5;->b:Lea0;
 
-    invoke-direct {v2, v3}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    iget-object p0, p0, Loh5;->b:Lea0;
 
-    invoke-static {v2}, Lgwf;->n(Ljava/lang/Exception;)Ln6g;
+    invoke-virtual {p0, p1}, Lea0;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v2
+    move-result p0
 
-    :goto_0
-    new-instance v3, Lgr;
+    return p0
+.end method
 
-    const/4 v4, 0x2
+.method public final hashCode()I
+    .locals 0
 
-    invoke-direct {v3, v4}, Lgr;-><init>(I)V
+    iget-object p0, p0, Loh5;->b:Lea0;
 
-    new-instance v4, Lqib;
+    invoke-virtual {p0}, Lea0;->hashCode()I
 
-    const/4 v5, 0x0
+    move-result p0
 
-    invoke-direct {v4, v5, v0, v1}, Lqib;-><init>(ILandroid/content/Context;Z)V
+    return p0
+.end method
 
-    invoke-virtual {v2, v3, v4}, Ln6g;->d(Ljava/util/concurrent/Executor;Ltx9;)Ln6g;
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    :goto_1
-    invoke-virtual {p0}, Lcom/google/firebase/messaging/FirebaseMessaging;->g()Z
+    iget-object p0, p0, Loh5;->b:Lea0;
 
-    move-result v0
+    invoke-virtual {p0}, Lea0;->toString()Ljava/lang/String;
 
-    if-eqz v0, :cond_2
+    move-result-object p0
 
-    invoke-virtual {p0}, Lcom/google/firebase/messaging/FirebaseMessaging;->f()V
+    const-string v0, "FileOutputOptionsInternal"
 
-    :cond_2
-    return-void
+    const-string v1, "FileOutputOptions"
 
-    :pswitch_0
-    iget-object p0, p0, Loh5;->b:Lcom/google/firebase/messaging/FirebaseMessaging;
+    invoke-virtual {p0, v0, v1}, Ljava/lang/String;->replaceFirst(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    iget-object v0, p0, Lcom/google/firebase/messaging/FirebaseMessaging;->e:Le06;
+    move-result-object p0
 
-    invoke-virtual {v0}, Le06;->k()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    invoke-virtual {p0}, Lcom/google/firebase/messaging/FirebaseMessaging;->e()Ldzd;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/google/firebase/messaging/FirebaseMessaging;->i(Ldzd;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    monitor-enter p0
-
-    :try_start_2
-    iget-boolean v0, p0, Lcom/google/firebase/messaging/FirebaseMessaging;->i:Z
-
-    if-nez v0, :cond_3
-
-    const-wide/16 v0, 0x0
-
-    invoke-virtual {p0, v0, v1}, Lcom/google/firebase/messaging/FirebaseMessaging;->h(J)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    goto :goto_2
-
-    :catchall_1
-    move-exception v0
-
-    goto :goto_3
-
-    :cond_3
-    :goto_2
-    monitor-exit p0
-
-    goto :goto_4
-
-    :goto_3
-    :try_start_3
-    monitor-exit p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    throw v0
-
-    :cond_4
-    :goto_4
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

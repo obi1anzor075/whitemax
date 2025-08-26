@@ -1,25 +1,14 @@
-.class public final Lbc7;
-.super Law4;
+.class public interface abstract Lbc7;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+# interfaces
+.implements Lmb7;
 
 
 # virtual methods
-.method public onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
-    .locals 0
+.method public abstract isConst()Z
+.end method
 
-    sget p0, Laac;->a:I
-
-    invoke-static {p1}, Lpa2;->t(Landroid/app/Activity;)V
-
-    return-void
+.method public abstract isLateinit()Z
 .end method

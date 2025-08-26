@@ -1,400 +1,292 @@
-.class public abstract Ln27;
+.class public final Ln27;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final X:Ll27;
-
-.field public static final o:Ll27;
+.field public static final e:Ln27;
 
 
 # instance fields
-.field public a:I
+.field public final a:I
 
 .field public final b:I
 
 .field public final c:I
+
+.field public final d:I
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Ll27;
+    new-instance v0, Ln27;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Ll27;-><init>(I)V
+    invoke-direct {v0, v1, v1, v1, v1}, Ln27;-><init>(IIII)V
 
-    sput-object v0, Ln27;->o:Ll27;
-
-    new-instance v0, Ll27;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Ll27;-><init>(I)V
-
-    sput-object v0, Ln27;->X:Ll27;
+    sput-object v0, Ln27;->e:Ln27;
 
     return-void
 .end method
 
-.method public constructor <init>(II)V
-    .locals 1
+.method public constructor <init>(IIII)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, -0x1
-
-    iput v0, p0, Ln27;->a:I
+    iput p1, p0, Ln27;->a:I
 
     iput p2, p0, Ln27;->b:I
 
-    iput p1, p0, Ln27;->c:I
+    iput p3, p0, Ln27;->c:I
+
+    iput p4, p0, Ln27;->d:I
 
     return-void
 .end method
 
-.method public static b(II)I
-    .locals 3
+.method public static a(Ln27;Ln27;)Ln27;
+    .locals 4
 
-    const v0, 0x303030
+    iget v0, p0, Ln27;->a:I
 
-    and-int v1, p0, v0
+    iget v1, p1, Ln27;->a:I
 
-    if-nez v1, :cond_0
+    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
 
-    return p0
+    move-result v0
 
-    :cond_0
-    not-int v2, v1
+    iget v1, p0, Ln27;->b:I
 
-    and-int/2addr p0, v2
+    iget v2, p1, Ln27;->b:I
 
-    if-nez p1, :cond_1
+    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
 
-    shr-int/lit8 p1, v1, 0x2
+    move-result v1
 
-    :goto_0
-    or-int/2addr p0, p1
+    iget v2, p0, Ln27;->c:I
 
-    return p0
+    iget v3, p1, Ln27;->c:I
 
-    :cond_1
-    shr-int/lit8 p1, v1, 0x1
+    invoke-static {v2, v3}, Ljava/lang/Math;->max(II)I
 
-    const v1, -0x303031
+    move-result v2
 
-    and-int/2addr v1, p1
+    iget p0, p0, Ln27;->d:I
 
-    or-int/2addr p0, v1
+    iget p1, p1, Ln27;->d:I
 
-    and-int/2addr p1, v0
+    invoke-static {p0, p1}, Ljava/lang/Math;->max(II)I
 
-    shr-int/lit8 p1, p1, 0x2
+    move-result p0
 
-    goto :goto_0
+    invoke-static {v0, v1, v2, p0}, Ln27;->b(IIII)Ln27;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public static c(II)I
-    .locals 3
+.method public static b(IIII)Ln27;
+    .locals 1
 
-    const v0, 0xc0c0c
+    if-nez p0, :cond_0
 
-    and-int v1, p0, v0
+    if-nez p1, :cond_0
 
-    if-nez v1, :cond_0
+    if-nez p2, :cond_0
 
-    return p0
+    if-nez p3, :cond_0
+
+    sget-object p0, Ln27;->e:Ln27;
+
+    return-object p0
 
     :cond_0
-    not-int v2, v1
+    new-instance v0, Ln27;
 
-    and-int/2addr p0, v2
+    invoke-direct {v0, p0, p1, p2, p3}, Ln27;-><init>(IIII)V
 
-    if-nez p1, :cond_1
+    return-object v0
+.end method
 
-    shl-int/lit8 p1, v1, 0x2
+.method public static c(Landroid/graphics/Insets;)Ln27;
+    .locals 3
 
-    :goto_0
-    or-int/2addr p0, p1
+    iget v0, p0, Landroid/graphics/Insets;->left:I
 
-    return p0
+    iget v1, p0, Landroid/graphics/Insets;->top:I
 
-    :cond_1
-    shl-int/lit8 p1, v1, 0x1
+    iget v2, p0, Landroid/graphics/Insets;->right:I
 
-    const v1, -0xc0c0d
+    iget p0, p0, Landroid/graphics/Insets;->bottom:I
 
-    and-int/2addr v1, p1
+    invoke-static {v0, v1, v2, p0}, Ln27;->b(IIII)Ln27;
 
-    or-int/2addr p0, v1
+    move-result-object p0
 
-    and-int/2addr p1, v0
-
-    shl-int/lit8 p1, p1, 0x2
-
-    goto :goto_0
+    return-object p0
 .end method
 
 
 # virtual methods
-.method public a(Landroidx/recyclerview/widget/RecyclerView;Lb7c;)V
-    .locals 0
-
-    iget-object p0, p2, Lb7c;->a:Landroid/view/View;
-
-    sget p1, Lhob;->item_touch_helper_previous_elevation:I
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    instance-of p2, p1, Ljava/lang/Float;
-
-    if-eqz p2, :cond_0
-
-    check-cast p1, Ljava/lang/Float;
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
-
-    sget-object p2, Leaf;->a:Ljava/util/WeakHashMap;
-
-    invoke-static {p0, p1}, Lt9f;->s(Landroid/view/View;F)V
-
-    :cond_0
-    sget p1, Lhob;->item_touch_helper_previous_elevation:I
-
-    const/4 p2, 0x0
-
-    invoke-virtual {p0, p1, p2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
-
-    const/4 p1, 0x0
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setTranslationX(F)V
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setTranslationY(F)V
-
-    return-void
-.end method
-
-.method public d(F)F
-    .locals 0
-
-    return p1
-.end method
-
-.method public e()F
-    .locals 0
-
-    const/high16 p0, 0x3f000000    # 0.5f
-
-    return p0
-.end method
-
-.method public final f(Landroidx/recyclerview/widget/RecyclerView;IIJ)I
+.method public final d()Landroid/graphics/Insets;
     .locals 3
 
-    iget v0, p0, Ln27;->a:I
+    iget v0, p0, Ln27;->c:I
 
-    const/4 v1, -0x1
+    iget v1, p0, Ln27;->d:I
 
-    if-ne v0, v1, :cond_0
+    iget v2, p0, Ln27;->a:I
 
-    invoke-virtual {p1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    iget p0, p0, Ln27;->b:I
 
-    move-result-object p1
+    invoke-static {v2, p0, v0, v1}, Lm27;->a(IIII)Landroid/graphics/Insets;
 
-    sget v0, Lumb;->item_touch_helper_max_drag_scroll_per_frame:I
+    move-result-object p0
 
-    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    return-object p0
+.end method
 
-    move-result p1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iput p1, p0, Ln27;->a:I
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
 
     :cond_0
-    iget p0, p0, Ln27;->a:I
+    const/4 v1, 0x0
 
-    invoke-static {p3}, Ljava/lang/Math;->abs(I)I
+    if-eqz p1, :cond_6
 
-    move-result p1
+    const-class v2, Ln27;
 
-    int-to-float v0, p3
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-static {v0}, Ljava/lang/Math;->signum(F)F
+    move-result-object v3
 
-    move-result v0
-
-    float-to-int v0, v0
-
-    int-to-float p1, p1
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    mul-float/2addr p1, v2
-
-    int-to-float p2, p2
-
-    div-float/2addr p1, p2
-
-    invoke-static {v2, p1}, Ljava/lang/Math;->min(FF)F
-
-    move-result p1
-
-    mul-int/2addr v0, p0
-
-    int-to-float p0, v0
-
-    sget-object p2, Ln27;->X:Ll27;
-
-    invoke-virtual {p2, p1}, Ll27;->getInterpolation(F)F
-
-    move-result p1
-
-    mul-float/2addr p1, p0
-
-    float-to-int p0, p1
-
-    const-wide/16 p1, 0x7d0
-
-    cmp-long p1, p4, p1
-
-    if-lez p1, :cond_1
+    if-eq v2, v3, :cond_1
 
     goto :goto_0
 
     :cond_1
-    long-to-float p1, p4
+    check-cast p1, Ln27;
 
-    const/high16 p2, 0x44fa0000    # 2000.0f
+    iget v2, p0, Ln27;->d:I
 
-    div-float v2, p1, p2
+    iget v3, p1, Ln27;->d:I
 
-    :goto_0
-    int-to-float p0, p0
+    if-eq v2, v3, :cond_2
 
-    sget-object p1, Ln27;->o:Ll27;
-
-    invoke-virtual {p1, v2}, Ll27;->getInterpolation(F)F
-
-    move-result p1
-
-    mul-float/2addr p1, p0
-
-    float-to-int p0, p1
-
-    if-nez p0, :cond_3
-
-    if-lez p3, :cond_2
-
-    const/4 v1, 0x1
+    return v1
 
     :cond_2
+    iget v2, p0, Ln27;->a:I
+
+    iget v3, p1, Ln27;->a:I
+
+    if-eq v2, v3, :cond_3
+
     return v1
 
     :cond_3
-    return p0
+    iget v2, p0, Ln27;->c:I
+
+    iget v3, p1, Ln27;->c:I
+
+    if-eq v2, v3, :cond_4
+
+    return v1
+
+    :cond_4
+    iget p0, p0, Ln27;->b:I
+
+    iget p1, p1, Ln27;->b:I
+
+    if-eq p0, p1, :cond_5
+
+    return v1
+
+    :cond_5
+    return v0
+
+    :cond_6
+    :goto_0
+    return v1
 .end method
 
-.method public g()Z
-    .locals 0
-
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public h(Landroid/graphics/Canvas;Landroidx/recyclerview/widget/RecyclerView;Lb7c;FFIZ)V
+.method public final hashCode()I
     .locals 2
 
-    iget-object p0, p3, Lb7c;->a:Landroid/view/View;
+    iget v0, p0, Ln27;->a:I
 
-    if-eqz p7, :cond_3
+    mul-int/lit8 v0, v0, 0x1f
 
-    sget p1, Lhob;->item_touch_helper_previous_elevation:I
+    iget v1, p0, Ln27;->b:I
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+    add-int/2addr v0, v1
 
-    move-result-object p1
+    mul-int/lit8 v0, v0, 0x1f
 
-    if-nez p1, :cond_3
+    iget v1, p0, Ln27;->c:I
 
-    sget-object p1, Leaf;->a:Ljava/util/WeakHashMap;
+    add-int/2addr v0, v1
 
-    invoke-static {p0}, Lt9f;->i(Landroid/view/View;)F
+    mul-int/lit8 v0, v0, 0x1f
 
-    move-result p1
+    iget p0, p0, Ln27;->d:I
 
-    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    add-int/2addr v0, p0
 
-    move-result-object p1
-
-    invoke-virtual {p2}, Landroid/view/ViewGroup;->getChildCount()I
-
-    move-result p3
-
-    const/4 p6, 0x0
-
-    const/4 p7, 0x0
-
-    :goto_0
-    if-ge p7, p3, :cond_2
-
-    invoke-virtual {p2, p7}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    if-ne v0, p0, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    sget-object v1, Leaf;->a:Ljava/util/WeakHashMap;
-
-    invoke-static {v0}, Lt9f;->i(Landroid/view/View;)F
-
-    move-result v0
-
-    cmpl-float v1, v0, p6
-
-    if-lez v1, :cond_1
-
-    move p6, v0
-
-    :cond_1
-    :goto_1
-    add-int/lit8 p7, p7, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    const/high16 p2, 0x3f800000    # 1.0f
-
-    add-float/2addr p6, p2
-
-    invoke-static {p0, p6}, Lt9f;->s(Landroid/view/View;F)V
-
-    sget p2, Lhob;->item_touch_helper_previous_elevation:I
-
-    invoke-virtual {p0, p2, p1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
-
-    :cond_3
-    invoke-virtual {p0, p4}, Landroid/view/View;->setTranslationX(F)V
-
-    invoke-virtual {p0, p5}, Landroid/view/View;->setTranslationY(F)V
-
-    return-void
+    return v0
 .end method
 
-.method public abstract i(Lb7c;Lb7c;)Z
-.end method
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-.method public j(Lb7c;I)V
-    .locals 0
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    return-void
+    const-string v1, "Insets{left="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget v1, p0, Ln27;->a:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", top="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Ln27;->b:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", right="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Ln27;->c:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", bottom="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget p0, p0, Ln27;->d:I
+
+    const/16 v1, 0x7d
+
+    invoke-static {v0, p0, v1}, Lzt1;->h(Ljava/lang/StringBuilder;IC)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

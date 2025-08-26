@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lof3;
+.implements Ljj3;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lru/ok/android/externcalls/sdk/stat/supportedcodecs/SupportedCodecsStatistics;->tryToReport(Lmw9;Lc2b;Lxwb;Lfe1;)V
+    value = Lru/ok/android/externcalls/sdk/stat/supportedcodecs/SupportedCodecsStatistics;->tryToReport(Ll0a;Lu4b;Ls1c;Lqf1;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,7 +22,7 @@
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
-        "Lof3;"
+        "Ljj3;"
     }
 .end annotation
 
@@ -33,7 +33,7 @@
     d2 = {
         "",
         "it",
-        "Ljue;",
+        "Le5f;",
         "accept",
         "(Ljava/lang/Throwable;)V",
         "<anonymous>"
@@ -48,14 +48,14 @@
 
 
 # instance fields
-.field final synthetic $rtcLog:Lxwb;
+.field final synthetic $rtcLog:Ls1c;
 
 
 # direct methods
-.method public constructor <init>(Lxwb;)V
+.method public constructor <init>(Ls1c;)V
     .locals 0
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/stat/supportedcodecs/SupportedCodecsStatistics$tryToReport$2;->$rtcLog:Lxwb;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/stat/supportedcodecs/SupportedCodecsStatistics$tryToReport$2;->$rtcLog:Ls1c;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -79,7 +79,7 @@
     .locals 2
 
     .line 2
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/stat/supportedcodecs/SupportedCodecsStatistics$tryToReport$2;->$rtcLog:Lxwb;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/stat/supportedcodecs/SupportedCodecsStatistics$tryToReport$2;->$rtcLog:Ls1c;
 
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
@@ -99,7 +99,7 @@
 
     const-string v0, "SupportedCodecsStatistics"
 
-    invoke-interface {p0, v0, p1}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p0, v0, p1}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

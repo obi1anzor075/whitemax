@@ -1,7 +1,3 @@
-.class public abstract Lbp;
-.super Landroid/app/Service;
+.class public interface abstract Lbp;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-
-# static fields
-.field public static final synthetic a:I

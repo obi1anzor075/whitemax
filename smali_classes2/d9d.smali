@@ -1,200 +1,85 @@
-.class public final synthetic Ld9d;
+.class public final Ld9d;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Le9d;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lone/me/settings/privacy/ui/SettingsPrivacyScreen;
+.field public final a:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/settings/privacy/ui/SettingsPrivacyScreen;I)V
+.method public constructor <init>(I)V
     .locals 0
 
-    iput p2, p0, Ld9d;->a:I
-
-    iput-object p1, p0, Ld9d;->b:Lone/me/settings/privacy/ui/SettingsPrivacyScreen;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Ld9d;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 12
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-    iget-object v0, p0, Ld9d;->b:Lone/me/settings/privacy/ui/SettingsPrivacyScreen;
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Ld9d;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Ld9d;
 
     iget p0, p0, Ld9d;->a:I
 
-    packed-switch p0, :pswitch_data_0
+    iget p1, p1, Ld9d;->a:I
 
-    sget-object p0, Lone/me/settings/privacy/ui/SettingsPrivacyScreen;->Z:[Lk77;
+    if-eq p0, p1, :cond_2
 
-    invoke-virtual {v0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    iget p0, p0, Ld9d;->a:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    const-string v0, "Room(id="
+
+    const-string v1, ")"
+
+    iget p0, p0, Ld9d;->a:I
+
+    invoke-static {p0, v0, v1}, Lpg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
-
-    :pswitch_0
-    sget-object p0, Lone/me/settings/privacy/ui/SettingsPrivacyScreen;->Z:[Lk77;
-
-    new-instance v2, Lm5d;
-
-    sget-object p0, Ly8d;->a:Ly8d;
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object v1
-
-    const-class v3, Ltt0;
-
-    invoke-virtual {v1, v3}, Lw4;->d(Ljava/lang/Class;)Lr7e;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Ly8d;->b()Lt97;
-
-    move-result-object v3
-
-    check-cast v3, Lr7e;
-
-    invoke-virtual {v3}, Lr7e;->getValue()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lpae;
-
-    invoke-direct {v2, v1, v3}, Lm5d;-><init>(Lt97;Lpae;)V
-
-    invoke-virtual {p0}, Ly8d;->b()Lt97;
-
-    move-result-object v1
-
-    check-cast v1, Lr7e;
-
-    invoke-virtual {v1}, Lr7e;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v4, v1
-
-    check-cast v4, Lpae;
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object v1
-
-    const-class v3, Lqpc;
-
-    invoke-virtual {v1, v3}, Lw4;->d(Ljava/lang/Class;)Lr7e;
-
-    move-result-object v5
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object v1
-
-    const-class v3, Lpk;
-
-    invoke-virtual {v1, v3}, Lw4;->d(Ljava/lang/Class;)Lr7e;
-
-    move-result-object v9
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object v1
-
-    const-class v3, Lb9e;
-
-    invoke-virtual {v1, v3}, Lw4;->d(Ljava/lang/Class;)Lr7e;
-
-    move-result-object v10
-
-    new-instance v3, Lv2b;
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object v1
-
-    const-class v6, Lf03;
-
-    invoke-virtual {v1, v6}, Lw4;->d(Ljava/lang/Class;)Lr7e;
-
-    move-result-object v1
-
-    new-instance v7, Ld9d;
-
-    const/4 v8, 0x1
-
-    invoke-direct {v7, v0, v8}, Ld9d;-><init>(Lone/me/settings/privacy/ui/SettingsPrivacyScreen;I)V
-
-    const/16 v0, 0xa
-
-    invoke-direct {v3, v1, v0, v7}, Lv2b;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object v0
-
-    const-class v1, Lxzc;
-
-    invoke-virtual {v0, v1}, Lw4;->d(Ljava/lang/Class;)Lr7e;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v6}, Lw4;->d(Ljava/lang/Class;)Lr7e;
-
-    move-result-object v7
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object v1
-
-    const-class v6, Ljb5;
-
-    invoke-virtual {v1, v6}, Lw4;->d(Ljava/lang/Class;)Lr7e;
-
-    move-result-object v8
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p0
-
-    const-class v1, Loa3;
-
-    invoke-virtual {p0, v1}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    move-object v11, p0
-
-    check-cast v11, Loa3;
-
-    new-instance p0, Lt9d;
-
-    move-object v1, p0
-
-    move-object v6, v0
-
-    invoke-direct/range {v1 .. v11}, Lt9d;-><init>(Lm5d;Lv2b;Lpae;Lt97;Lt97;Lt97;Lt97;Lt97;Lt97;Loa3;)V
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

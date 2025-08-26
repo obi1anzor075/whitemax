@@ -1,149 +1,80 @@
-.class public final Lu72;
+.class public final synthetic Lu72;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final c:Lu72;
+# interfaces
+.implements Lc6;
 
 
 # instance fields
-.field public final a:Ljava/util/Set;
+.field public final synthetic a:I
 
-.field public final b:Ljava/util/List;
+.field public final synthetic b:Ln82;
+
+.field public final synthetic c:J
+
+.field public final synthetic d:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    new-instance v0, Lu72;
-
-    sget-object v1, Lqw4;->a:Lqw4;
-
-    sget-object v2, Lhw4;->a:Lhw4;
-
-    invoke-direct {v0, v2, v1}, Lu72;-><init>(Ljava/util/List;Ljava/util/Set;)V
-
-    sput-object v0, Lu72;->c:Lu72;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/util/List;Ljava/util/Set;)V
+.method public synthetic constructor <init>(Ln82;JJI)V
     .locals 0
 
+    iput p6, p0, Lu72;->a:I
+
+    iput-object p1, p0, Lu72;->b:Ln82;
+
+    iput-wide p2, p0, Lu72;->c:J
+
+    iput-wide p4, p0, Lu72;->d:J
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p2, p0, Lu72;->a:Ljava/util/Set;
-
-    iput-object p1, p0, Lu72;->b:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final run()V
+    .locals 7
 
-    const/4 v0, 0x1
+    iget v0, p0, Lu72;->a:I
 
-    if-ne p0, p1, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    return v0
+    iget-object v1, p0, Lu72;->b:Ln82;
 
-    :cond_0
-    instance-of v1, p1, Lu72;
+    iget-wide v2, p0, Lu72;->c:J
 
-    const/4 v2, 0x0
+    invoke-virtual {v1, v2, v3}, Ln82;->A(J)Lk92;
 
-    if-nez v1, :cond_1
+    move-result-object v0
 
-    return v2
+    iget-wide v2, v0, Lhi0;->b:J
 
-    :cond_1
-    check-cast p1, Lu72;
+    iget-object v4, v0, Lk92;->c:Lj92;
 
-    iget-object v1, p1, Lu72;->a:Ljava/util/Set;
+    iget-wide v5, p0, Lu72;->d:J
 
-    iget-object v3, p0, Lu72;->a:Ljava/util/Set;
+    invoke-virtual/range {v1 .. v6}, Ln82;->i0(JLj92;J)V
 
-    invoke-static {v3, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    return-void
 
-    move-result v1
+    :pswitch_0
+    iget-wide v0, p0, Lu72;->c:J
 
-    if-nez v1, :cond_2
+    iget-wide v2, p0, Lu72;->d:J
 
-    return v2
+    iget-object p0, p0, Lu72;->b:Ln82;
 
-    :cond_2
-    iget-object p0, p0, Lu72;->b:Ljava/util/List;
+    invoke-virtual {p0, v0, v1, v2, v3}, Ln82;->h0(JJ)V
 
-    iget-object p1, p1, Lu72;->b:Ljava/util/List;
+    return-void
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    nop
 
-    move-result p0
-
-    if-nez p0, :cond_3
-
-    return v2
-
-    :cond_3
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    iget-object v0, p0, Lu72;->a:Ljava/util/Set;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Lu72;->b:Ljava/util/List;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ChatFolders(allFilterExclude="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lu72;->a:Ljava/util/Set;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", folders="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lu72;->b:Ljava/util/List;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

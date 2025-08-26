@@ -97,12 +97,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x2
 
-    :goto_0
     return p0
 .end method
 
@@ -165,7 +164,7 @@
 
     move-result-object p0
 
-    goto/16 :goto_0
+    return-object p0
 
     :cond_0
     instance-of v1, v0, Lone/me/rlottie/RLottieFactory$Way$File;
@@ -212,7 +211,7 @@
 
     move-result-object p0
 
-    goto/16 :goto_0
+    return-object p0
 
     :cond_1
     instance-of v1, v0, Lone/me/rlottie/RLottieFactory$Way$Json;
@@ -263,7 +262,7 @@
 
     move-result-object p0
 
-    goto :goto_0
+    return-object p0
 
     :cond_2
     instance-of v1, v0, Lone/me/rlottie/RLottieFactory$Way$RawRes;
@@ -314,7 +313,7 @@
 
     move-result-object p0
 
-    goto :goto_0
+    return-object p0
 
     :cond_3
     instance-of v1, v0, Lone/me/rlottie/RLottieFactory$Way$Url;
@@ -365,7 +364,6 @@
 
     move-result-object p0
 
-    :goto_0
     return-object p0
 
     :cond_4
@@ -511,9 +509,9 @@
 
     invoke-static/range {v0 .. v11}, Lone/me/rlottie/RLottieFactory;->createByAsset$default(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIZZZZZILjava/lang/Object;)Lone/me/rlottie/RLottieDrawable;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static final createByAsset(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIZ)Lone/me/rlottie/RLottieDrawable;
@@ -546,9 +544,9 @@
 
     invoke-static/range {v0 .. v11}, Lone/me/rlottie/RLottieFactory;->createByAsset$default(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIZZZZZILjava/lang/Object;)Lone/me/rlottie/RLottieDrawable;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static final createByAsset(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIZZ)Lone/me/rlottie/RLottieDrawable;
@@ -581,9 +579,9 @@
 
     invoke-static/range {v0 .. v11}, Lone/me/rlottie/RLottieFactory;->createByAsset$default(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIZZZZZILjava/lang/Object;)Lone/me/rlottie/RLottieDrawable;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static final createByAsset(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIZZZ)Lone/me/rlottie/RLottieDrawable;
@@ -616,9 +614,9 @@
 
     invoke-static/range {v0 .. v11}, Lone/me/rlottie/RLottieFactory;->createByAsset$default(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIZZZZZILjava/lang/Object;)Lone/me/rlottie/RLottieDrawable;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static final createByAsset(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIZZZZ)Lone/me/rlottie/RLottieDrawable;
@@ -651,223 +649,159 @@
 
     invoke-static/range {v0 .. v11}, Lone/me/rlottie/RLottieFactory;->createByAsset$default(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIZZZZZILjava/lang/Object;)Lone/me/rlottie/RLottieDrawable;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static final createByAsset(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIZZZZZ)Lone/me/rlottie/RLottieDrawable;
-    .locals 10
+    .locals 1
 
     .line 9
     :try_start_0
-    sget-object v0, Llg9;->a:Ljava/lang/String;
+    sget-object v0, Ldl9;->a:Ljava/lang/String;
 
     invoke-virtual {p0}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
 
-    move-result-object v0
+    move-result-object p0
 
-    move-object v1, p1
+    invoke-virtual {p0, p1}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;)Ljava/io/InputStream;
 
-    invoke-virtual {v0, p1}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;)Ljava/io/InputStream;
+    move-result-object p0
 
-    move-result-object v0
+    invoke-static {p0}, Ldl9;->c(Ljava/io/InputStream;)Ljava/lang/String;
 
-    invoke-static {v0}, Llg9;->c(Ljava/io/InputStream;)Ljava/lang/String;
-
-    move-result-object v0
+    move-result-object p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :goto_0
-    move-object v1, v0
+    move p1, p5
+
+    move p5, p3
+
+    move p3, p8
+
+    move p8, p7
+
+    move p7, p1
+
+    move p1, p6
+
+    move p6, p4
+
+    move p4, p1
+
+    move-object p1, p0
 
     goto :goto_1
 
     :catchall_0
-    const/4 v0, 0x0
+    const/4 p0, 0x0
 
     goto :goto_0
 
-    :goto_1
-    move-object v2, p2
-
-    move/from16 v3, p8
-
-    move/from16 v4, p6
-
-    move v5, p3
-
-    move v6, p4
-
-    move v7, p5
-
-    move/from16 v8, p7
-
-    move/from16 v9, p9
-
     .line 10
-    invoke-static/range {v1 .. v9}, Lone/me/rlottie/RLottieFactory;->createByJsonString(Ljava/lang/String;Ljava/lang/String;ZZIIZZZ)Lone/me/rlottie/RLottieDrawable;
+    :goto_1
+    invoke-static/range {p1 .. p9}, Lone/me/rlottie/RLottieFactory;->createByJsonString(Ljava/lang/String;Ljava/lang/String;ZZIIZZZ)Lone/me/rlottie/RLottieDrawable;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static synthetic createByAsset$default(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIZZZZZILjava/lang/Object;)Lone/me/rlottie/RLottieDrawable;
-    .locals 8
+    .locals 0
 
-    move/from16 v0, p10
+    and-int/lit8 p11, p10, 0x4
 
-    and-int/lit8 v1, v0, 0x4
+    if-eqz p11, :cond_0
 
-    if-eqz v1, :cond_0
-
-    move-object v1, p1
-
-    goto :goto_0
+    move-object p2, p1
 
     :cond_0
-    move-object v1, p2
+    and-int/lit8 p11, p10, 0x8
 
-    :goto_0
-    and-int/lit8 v2, v0, 0x8
+    if-eqz p11, :cond_1
 
-    if-eqz v2, :cond_1
+    sget-object p3, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    sget-object v2, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
+    invoke-virtual {p3}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultSize()I
 
-    invoke-virtual {v2}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultSize()I
-
-    move-result v2
-
-    goto :goto_1
+    move-result p3
 
     :cond_1
-    move v2, p3
+    and-int/lit8 p11, p10, 0x10
 
-    :goto_1
-    and-int/lit8 v3, v0, 0x10
+    if-eqz p11, :cond_2
 
-    if-eqz v3, :cond_2
+    sget-object p4, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    sget-object v3, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
+    invoke-virtual {p4}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultSize()I
 
-    invoke-virtual {v3}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultSize()I
-
-    move-result v3
-
-    goto :goto_2
+    move-result p4
 
     :cond_2
-    move v3, p4
+    and-int/lit8 p11, p10, 0x20
 
-    :goto_2
-    and-int/lit8 v4, v0, 0x20
+    if-eqz p11, :cond_3
 
-    if-eqz v4, :cond_3
+    sget-object p5, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    sget-object v4, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
+    invoke-virtual {p5}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultShouldLimitFps()Z
 
-    invoke-virtual {v4}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultShouldLimitFps()Z
-
-    move-result v4
-
-    goto :goto_3
+    move-result p5
 
     :cond_3
-    move v4, p5
+    and-int/lit8 p11, p10, 0x40
 
-    :goto_3
-    and-int/lit8 v5, v0, 0x40
+    if-eqz p11, :cond_4
 
-    if-eqz v5, :cond_4
+    sget-object p6, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    sget-object v5, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
+    invoke-virtual {p6}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultAutoRepeat()Z
 
-    invoke-virtual {v5}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultAutoRepeat()Z
-
-    move-result v5
-
-    goto :goto_4
+    move-result p6
 
     :cond_4
-    move v5, p6
+    and-int/lit16 p11, p10, 0x80
 
-    :goto_4
-    and-int/lit16 v6, v0, 0x80
+    if-eqz p11, :cond_5
 
-    if-eqz v6, :cond_5
+    sget-object p7, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    sget-object v6, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
+    invoke-virtual {p7}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultStartDecodeFirstFrame()Z
 
-    invoke-virtual {v6}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultStartDecodeFirstFrame()Z
-
-    move-result v6
-
-    goto :goto_5
+    move-result p7
 
     :cond_5
-    move v6, p7
+    and-int/lit16 p11, p10, 0x100
 
-    :goto_5
-    and-int/lit16 v7, v0, 0x100
+    if-eqz p11, :cond_6
 
-    if-eqz v7, :cond_6
+    sget-object p8, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    sget-object v7, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
+    invoke-virtual {p8}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultAutoStart()Z
 
-    invoke-virtual {v7}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultAutoStart()Z
-
-    move-result v7
-
-    goto :goto_6
+    move-result p8
 
     :cond_6
-    move/from16 v7, p8
+    and-int/lit16 p10, p10, 0x200
 
-    :goto_6
-    and-int/lit16 v0, v0, 0x200
+    if-eqz p10, :cond_7
 
-    if-eqz v0, :cond_7
+    sget-object p9, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    sget-object v0, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
+    invoke-virtual {p9}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultPrecache()Z
 
-    invoke-virtual {v0}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultPrecache()Z
-
-    move-result v0
-
-    goto :goto_7
+    move-result p9
 
     :cond_7
-    move/from16 v0, p9
+    invoke-static/range {p0 .. p9}, Lone/me/rlottie/RLottieFactory;->createByAsset(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIZZZZZ)Lone/me/rlottie/RLottieDrawable;
 
-    :goto_7
-    move-object p2, p0
+    move-result-object p0
 
-    move-object p3, p1
-
-    move-object p4, v1
-
-    move p5, v2
-
-    move p6, v3
-
-    move p7, v4
-
-    move/from16 p8, v5
-
-    move/from16 p9, v6
-
-    move/from16 p10, v7
-
-    move/from16 p11, v0
-
-    invoke-static/range {p2 .. p11}, Lone/me/rlottie/RLottieFactory;->createByAsset(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIZZZZZ)Lone/me/rlottie/RLottieDrawable;
-
-    move-result-object v0
-
-    return-object v0
+    return-object p0
 .end method
 
 .method public static final createByFile(Ljava/io/File;)Lone/me/rlottie/RLottieDrawable;
@@ -1082,9 +1016,9 @@
 
     invoke-static/range {v0 .. v9}, Lone/me/rlottie/RLottieFactory;->createByFile$default(Ljava/io/File;ZIIZZZZILjava/lang/Object;)Lone/me/rlottie/RLottieDrawable;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static final createByFile(Ljava/io/File;ZIIZZZZ)Lone/me/rlottie/RLottieDrawable;
@@ -1096,28 +1030,17 @@
     invoke-virtual {v0}, Lone/me/rlottie/RLottie;->checkNativeLibraryLoad$rlottie_release()V
 
     .line 9
-    new-instance v0, Lone/me/rlottie/RLottieDrawable;
+    new-instance v1, Lone/me/rlottie/RLottieDrawable;
 
     if-eqz p1, :cond_0
 
     .line 10
-    new-instance v1, Lon0;
+    new-instance v0, Lmo0;
 
-    invoke-direct {v1}, Lon0;-><init>()V
+    .line 11
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     :goto_0
-    move-object v5, v1
-
-    goto :goto_1
-
-    :cond_0
-    const/4 v1, 0x0
-
-    goto :goto_0
-
-    :goto_1
-    move-object v1, v0
-
     move-object v2, p0
 
     move v3, p2
@@ -1126,35 +1049,45 @@
 
     move v6, p5
 
-    .line 11
-    invoke-direct/range {v1 .. v6}, Lone/me/rlottie/RLottieDrawable;-><init>(Ljava/io/File;IILon0;Z)V
+    move-object v5, v0
+
+    goto :goto_1
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 
     .line 12
-    iput-boolean p1, v0, Lone/me/rlottie/RLottieDrawable;->m1:Z
+    :goto_1
+    invoke-direct/range {v1 .. v6}, Lone/me/rlottie/RLottieDrawable;-><init>(Ljava/io/File;IILmo0;Z)V
 
     .line 13
+    iput-boolean p1, v1, Lone/me/rlottie/RLottieDrawable;->e1:Z
+
+    .line 14
     sget-object p0, Lone/me/rlottie/RLottieFactory;->INSTANCE:Lone/me/rlottie/RLottieFactory;
 
     invoke-direct {p0, p4}, Lone/me/rlottie/RLottieFactory;->autoRepeatModeByBoolean(Z)I
 
     move-result p0
 
-    invoke-virtual {v0, p0}, Lone/me/rlottie/RLottieDrawable;->setAutoRepeat(I)V
+    invoke-virtual {v1, p0}, Lone/me/rlottie/RLottieDrawable;->setAutoRepeat(I)V
 
-    .line 14
-    invoke-virtual {v0, p6}, Lone/me/rlottie/RLottieDrawable;->setAllowDecodeSingleFrame(Z)V
+    .line 15
+    invoke-virtual {v1, p6}, Lone/me/rlottie/RLottieDrawable;->setAllowDecodeSingleFrame(Z)V
 
     if-eqz p7, :cond_1
 
-    .line 15
-    invoke-virtual {v0}, Lone/me/rlottie/RLottieDrawable;->start()V
+    .line 16
+    invoke-virtual {v1}, Lone/me/rlottie/RLottieDrawable;->start()V
 
     :cond_1
-    return-object v0
+    return-object v1
 .end method
 
 .method public static synthetic createByFile$default(Ljava/io/File;ZIIZZZZILjava/lang/Object;)Lone/me/rlottie/RLottieDrawable;
-    .locals 5
+    .locals 0
 
     and-int/lit8 p9, p8, 0x2
 
@@ -1178,88 +1111,76 @@
     move-result p2
 
     :cond_1
-    move p9, p2
+    and-int/lit8 p9, p8, 0x8
 
-    and-int/lit8 p2, p8, 0x8
+    if-eqz p9, :cond_2
 
-    if-eqz p2, :cond_2
+    sget-object p3, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    sget-object p2, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
-
-    invoke-virtual {p2}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultSize()I
+    invoke-virtual {p3}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultSize()I
 
     move-result p3
 
     :cond_2
-    move v0, p3
+    and-int/lit8 p9, p8, 0x10
 
-    and-int/lit8 p2, p8, 0x10
+    if-eqz p9, :cond_3
 
-    if-eqz p2, :cond_3
+    sget-object p4, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    sget-object p2, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
-
-    invoke-virtual {p2}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultAutoRepeat()Z
+    invoke-virtual {p4}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultAutoRepeat()Z
 
     move-result p4
 
     :cond_3
-    move v1, p4
+    and-int/lit8 p9, p8, 0x20
 
-    and-int/lit8 p2, p8, 0x20
+    if-eqz p9, :cond_4
 
-    if-eqz p2, :cond_4
+    sget-object p5, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    sget-object p2, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
-
-    invoke-virtual {p2}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultShouldLimitFps()Z
+    invoke-virtual {p5}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultShouldLimitFps()Z
 
     move-result p5
 
     :cond_4
-    move v2, p5
+    and-int/lit8 p9, p8, 0x40
 
-    and-int/lit8 p2, p8, 0x40
+    if-eqz p9, :cond_5
 
-    if-eqz p2, :cond_5
+    sget-object p6, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    sget-object p2, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
-
-    invoke-virtual {p2}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultStartDecodeFirstFrame()Z
+    invoke-virtual {p6}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultStartDecodeFirstFrame()Z
 
     move-result p6
 
     :cond_5
-    move v3, p6
+    and-int/lit16 p8, p8, 0x80
 
-    and-int/lit16 p2, p8, 0x80
+    if-eqz p8, :cond_6
 
-    if-eqz p2, :cond_6
+    sget-object p7, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    sget-object p2, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
-
-    invoke-virtual {p2}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultAutoStart()Z
+    invoke-virtual {p7}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultAutoStart()Z
 
     move-result p7
 
     :cond_6
-    move v4, p7
+    move p8, p6
+
+    move p9, p7
+
+    move p6, p4
+
+    move p7, p5
+
+    move p4, p2
+
+    move p5, p3
 
     move-object p2, p0
 
     move p3, p1
-
-    move p4, p9
-
-    move p5, v0
-
-    move p6, v1
-
-    move p7, v2
-
-    move p8, v3
-
-    move p9, v4
 
     invoke-static/range {p2 .. p9}, Lone/me/rlottie/RLottieFactory;->createByFile(Ljava/io/File;ZIIZZZZ)Lone/me/rlottie/RLottieDrawable;
 
@@ -1428,9 +1349,9 @@
 
     invoke-static/range {v0 .. v10}, Lone/me/rlottie/RLottieFactory;->createByJsonString$default(Ljava/lang/String;Ljava/lang/String;ZZIIZZZILjava/lang/Object;)Lone/me/rlottie/RLottieDrawable;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static final createByJsonString(Ljava/lang/String;Ljava/lang/String;ZZIIZ)Lone/me/rlottie/RLottieDrawable;
@@ -1461,9 +1382,9 @@
 
     invoke-static/range {v0 .. v10}, Lone/me/rlottie/RLottieFactory;->createByJsonString$default(Ljava/lang/String;Ljava/lang/String;ZZIIZZZILjava/lang/Object;)Lone/me/rlottie/RLottieDrawable;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static final createByJsonString(Ljava/lang/String;Ljava/lang/String;ZZIIZZ)Lone/me/rlottie/RLottieDrawable;
@@ -1494,9 +1415,9 @@
 
     invoke-static/range {v0 .. v10}, Lone/me/rlottie/RLottieFactory;->createByJsonString$default(Ljava/lang/String;Ljava/lang/String;ZZIIZZZILjava/lang/Object;)Lone/me/rlottie/RLottieDrawable;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static final createByJsonString(Ljava/lang/String;Ljava/lang/String;ZZIIZZZ)Lone/me/rlottie/RLottieDrawable;
@@ -1508,13 +1429,11 @@
     invoke-virtual {v0}, Lone/me/rlottie/RLottie;->checkNativeLibraryLoad$rlottie_release()V
 
     .line 9
-    new-instance v0, Lone/me/rlottie/RLottieDrawable;
+    new-instance v1, Lone/me/rlottie/RLottieDrawable;
 
     const/4 v6, 0x1
 
     const/4 v7, 0x0
-
-    move-object v1, v0
 
     move-object v2, p0
 
@@ -1526,39 +1445,33 @@
 
     invoke-direct/range {v1 .. v7}, Lone/me/rlottie/RLottieDrawable;-><init>(Ljava/lang/String;Ljava/lang/String;IIZ[I)V
 
-    move v1, p6
-
     .line 10
-    iput-boolean v1, v0, Lone/me/rlottie/RLottieDrawable;->X0:Z
+    iput-boolean p6, v1, Lone/me/rlottie/RLottieDrawable;->P0:Z
 
-    move/from16 v1, p8
+    move/from16 p0, p8
 
     .line 11
-    iput-boolean v1, v0, Lone/me/rlottie/RLottieDrawable;->m1:Z
+    iput-boolean p0, v1, Lone/me/rlottie/RLottieDrawable;->e1:Z
 
     .line 12
-    sget-object v1, Lone/me/rlottie/RLottieFactory;->INSTANCE:Lone/me/rlottie/RLottieFactory;
+    sget-object p0, Lone/me/rlottie/RLottieFactory;->INSTANCE:Lone/me/rlottie/RLottieFactory;
 
-    move v2, p3
+    invoke-direct {p0, p3}, Lone/me/rlottie/RLottieFactory;->autoRepeatModeByBoolean(Z)I
 
-    invoke-direct {v1, p3}, Lone/me/rlottie/RLottieFactory;->autoRepeatModeByBoolean(Z)I
+    move-result p0
 
-    move-result v1
-
-    invoke-virtual {v0, v1}, Lone/me/rlottie/RLottieDrawable;->setAutoRepeat(I)V
-
-    move v1, p7
+    invoke-virtual {v1, p0}, Lone/me/rlottie/RLottieDrawable;->setAutoRepeat(I)V
 
     .line 13
-    invoke-virtual {v0, p7}, Lone/me/rlottie/RLottieDrawable;->setAllowDecodeSingleFrame(Z)V
+    invoke-virtual {v1, p7}, Lone/me/rlottie/RLottieDrawable;->setAllowDecodeSingleFrame(Z)V
 
     if-eqz p2, :cond_0
 
     .line 14
-    invoke-virtual {v0}, Lone/me/rlottie/RLottieDrawable;->start()V
+    invoke-virtual {v1}, Lone/me/rlottie/RLottieDrawable;->start()V
 
     :cond_0
-    return-object v0
+    return-object v1
 .end method
 
 .method public static synthetic createByJsonString$default(Ljava/lang/String;Ljava/lang/String;ZZIIZZZILjava/lang/Object;)Lone/me/rlottie/RLottieDrawable;
@@ -1672,10 +1585,7 @@
 
     move-result v0
 
-    goto :goto_6
-
-    :cond_6
-    move v0, p8
+    move/from16 p10, v0
 
     :goto_6
     move-object p2, p0
@@ -1694,8 +1604,14 @@
 
     move/from16 p9, v6
 
-    move/from16 p10, v0
+    goto :goto_7
 
+    :cond_6
+    move/from16 p10, p8
+
+    goto :goto_6
+
+    :goto_7
     invoke-static/range {p2 .. p10}, Lone/me/rlottie/RLottieFactory;->createByJsonString(Ljava/lang/String;Ljava/lang/String;ZZIIZZZ)Lone/me/rlottie/RLottieDrawable;
 
     move-result-object v0
@@ -1863,9 +1779,9 @@
 
     invoke-static/range {v0 .. v10}, Lone/me/rlottie/RLottieFactory;->createByRawRes$default(ILjava/lang/String;IIZZZZZILjava/lang/Object;)Lone/me/rlottie/RLottieDrawable;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static final createByRawRes(ILjava/lang/String;IIZZZ)Lone/me/rlottie/RLottieDrawable;
@@ -1896,9 +1812,9 @@
 
     invoke-static/range {v0 .. v10}, Lone/me/rlottie/RLottieFactory;->createByRawRes$default(ILjava/lang/String;IIZZZZZILjava/lang/Object;)Lone/me/rlottie/RLottieDrawable;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static final createByRawRes(ILjava/lang/String;IIZZZZ)Lone/me/rlottie/RLottieDrawable;
@@ -1929,9 +1845,9 @@
 
     invoke-static/range {v0 .. v10}, Lone/me/rlottie/RLottieFactory;->createByRawRes$default(ILjava/lang/String;IIZZZZZILjava/lang/Object;)Lone/me/rlottie/RLottieDrawable;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static final createByRawRes(ILjava/lang/String;IIZZZZZ)Lone/me/rlottie/RLottieDrawable;
@@ -1948,10 +1864,10 @@
     invoke-direct {v0, p0, p1, p2, p3}, Lone/me/rlottie/RLottieDrawable;-><init>(ILjava/lang/String;II)V
 
     .line 10
-    iput-boolean p5, v0, Lone/me/rlottie/RLottieDrawable;->X0:Z
+    iput-boolean p5, v0, Lone/me/rlottie/RLottieDrawable;->P0:Z
 
     .line 11
-    iput-boolean p8, v0, Lone/me/rlottie/RLottieDrawable;->m1:Z
+    iput-boolean p8, v0, Lone/me/rlottie/RLottieDrawable;->e1:Z
 
     if-eqz p7, :cond_0
 
@@ -2085,10 +2001,7 @@
 
     move-result v0
 
-    goto :goto_6
-
-    :cond_6
-    move v0, p8
+    move/from16 p10, v0
 
     :goto_6
     move p2, p0
@@ -2107,8 +2020,14 @@
 
     move/from16 p9, v6
 
-    move/from16 p10, v0
+    goto :goto_7
 
+    :cond_6
+    move/from16 p10, p8
+
+    goto :goto_6
+
+    :goto_7
     invoke-static/range {p2 .. p10}, Lone/me/rlottie/RLottieFactory;->createByRawRes(ILjava/lang/String;IIZZZZZ)Lone/me/rlottie/RLottieDrawable;
 
     move-result-object v0
@@ -2309,9 +2228,9 @@
 
     invoke-static/range {v0 .. v10}, Lone/me/rlottie/RLottieFactory;->createByUrl$default(Ljava/lang/String;IIZZZZZZILjava/lang/Object;)Lone/me/rlottie/RLottieDrawable;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static final createByUrl(Ljava/lang/String;IIZZZZ)Lone/me/rlottie/RLottieDrawable;
@@ -2342,9 +2261,9 @@
 
     invoke-static/range {v0 .. v10}, Lone/me/rlottie/RLottieFactory;->createByUrl$default(Ljava/lang/String;IIZZZZZZILjava/lang/Object;)Lone/me/rlottie/RLottieDrawable;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static final createByUrl(Ljava/lang/String;IIZZZZZ)Lone/me/rlottie/RLottieDrawable;
@@ -2375,15 +2294,13 @@
 
     invoke-static/range {v0 .. v10}, Lone/me/rlottie/RLottieFactory;->createByUrl$default(Ljava/lang/String;IIZZZZZZILjava/lang/Object;)Lone/me/rlottie/RLottieDrawable;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static final createByUrl(Ljava/lang/String;IIZZZZZZ)Lone/me/rlottie/RLottieDrawable;
-    .locals 9
-
-    move-object v7, p0
+    .locals 7
 
     .line 9
     sget-object v0, Lone/me/rlottie/RLottie;->INSTANCE:Lone/me/rlottie/RLottie;
@@ -2391,15 +2308,13 @@
     invoke-virtual {v0}, Lone/me/rlottie/RLottie;->checkNativeLibraryLoad$rlottie_release()V
 
     .line 10
-    new-instance v8, Lone/me/rlottie/RLottieDrawable;
+    new-instance v0, Lone/me/rlottie/RLottieDrawable;
+
+    const/4 v5, 0x0
 
     const/4 v6, 0x0
 
     const-string v1, ""
-
-    const/4 v5, 0x0
-
-    move-object v0, v8
 
     move-object v2, p0
 
@@ -2410,210 +2325,160 @@
     invoke-direct/range {v0 .. v6}, Lone/me/rlottie/RLottieDrawable;-><init>(Ljava/lang/String;Ljava/lang/String;IIZ[I)V
 
     .line 11
-    iput-object v7, v8, Lone/me/rlottie/RLottieDrawable;->E1:Ljava/lang/String;
-
-    move v0, p3
+    iput-object p0, v0, Lone/me/rlottie/RLottieDrawable;->w1:Ljava/lang/String;
 
     .line 12
-    iput-boolean v0, v8, Lone/me/rlottie/RLottieDrawable;->X0:Z
+    iput-boolean p3, v0, Lone/me/rlottie/RLottieDrawable;->P0:Z
 
     .line 13
-    iput-object v7, v8, Lone/me/rlottie/RLottieDrawable;->H1:Ljava/lang/String;
-
-    move/from16 v0, p8
+    iput-object p0, v0, Lone/me/rlottie/RLottieDrawable;->z1:Ljava/lang/String;
 
     .line 14
-    iput-boolean v0, v8, Lone/me/rlottie/RLottieDrawable;->m1:Z
+    iput-boolean p8, v0, Lone/me/rlottie/RLottieDrawable;->e1:Z
 
     .line 15
-    sget-object v0, Lone/me/rlottie/RLottieFactory;->INSTANCE:Lone/me/rlottie/RLottieFactory;
+    sget-object v1, Lone/me/rlottie/RLottieFactory;->INSTANCE:Lone/me/rlottie/RLottieFactory;
 
-    move v1, p4
+    invoke-direct {v1, p4}, Lone/me/rlottie/RLottieFactory;->autoRepeatModeByBoolean(Z)I
 
-    invoke-direct {v0, p4}, Lone/me/rlottie/RLottieFactory;->autoRepeatModeByBoolean(Z)I
+    move-result v1
 
-    move-result v0
-
-    invoke-virtual {v8, v0}, Lone/me/rlottie/RLottieDrawable;->setAutoRepeat(I)V
-
-    move v0, p6
+    invoke-virtual {v0, v1}, Lone/me/rlottie/RLottieDrawable;->setAutoRepeat(I)V
 
     .line 16
-    invoke-virtual {v8, p6}, Lone/me/rlottie/RLottieDrawable;->setAllowDecodeSingleFrame(Z)V
+    invoke-virtual {v0, p6}, Lone/me/rlottie/RLottieDrawable;->setAllowDecodeSingleFrame(Z)V
 
     if-eqz p7, :cond_0
 
     .line 17
-    invoke-virtual {v8}, Lone/me/rlottie/RLottieDrawable;->start()V
+    invoke-virtual {v0}, Lone/me/rlottie/RLottieDrawable;->start()V
 
     :cond_0
-    const/4 v0, 0x1
-
-    move v1, p5
+    const/4 v1, 0x1
 
     .line 18
-    invoke-static {p0, v0, p5}, Lkg9;->a(Ljava/lang/String;IZ)Lig9;
+    invoke-static {p0, v1, p5}, Lcl9;->a(Ljava/lang/String;IZ)Lal9;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 19
-    invoke-virtual {v0, v8}, Lig9;->e(Ljg9;)V
+    invoke-virtual {v1, v0}, Lal9;->e(Lbl9;)V
 
-    return-object v8
+    return-object v0
 .end method
 
 .method public static synthetic createByUrl$default(Ljava/lang/String;IIZZZZZZILjava/lang/Object;)Lone/me/rlottie/RLottieDrawable;
-    .locals 8
+    .locals 0
 
-    move/from16 v0, p9
+    and-int/lit8 p10, p9, 0x2
 
-    and-int/lit8 v1, v0, 0x2
+    if-eqz p10, :cond_0
 
-    if-eqz v1, :cond_0
+    sget-object p1, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    sget-object v1, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
+    invoke-virtual {p1}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultSize()I
 
-    invoke-virtual {v1}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultSize()I
-
-    move-result v1
-
-    goto :goto_0
+    move-result p1
 
     :cond_0
-    move v1, p1
+    and-int/lit8 p10, p9, 0x4
 
-    :goto_0
-    and-int/lit8 v2, v0, 0x4
+    if-eqz p10, :cond_1
 
-    if-eqz v2, :cond_1
+    sget-object p2, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    sget-object v2, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
+    invoke-virtual {p2}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultSize()I
 
-    invoke-virtual {v2}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultSize()I
-
-    move-result v2
-
-    goto :goto_1
+    move-result p2
 
     :cond_1
-    move v2, p2
+    and-int/lit8 p10, p9, 0x8
 
-    :goto_1
-    and-int/lit8 v3, v0, 0x8
+    if-eqz p10, :cond_2
 
-    if-eqz v3, :cond_2
+    sget-object p3, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    sget-object v3, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
+    invoke-virtual {p3}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultShouldLimitFps()Z
 
-    invoke-virtual {v3}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultShouldLimitFps()Z
-
-    move-result v3
-
-    goto :goto_2
+    move-result p3
 
     :cond_2
-    move v3, p3
+    and-int/lit8 p10, p9, 0x10
 
-    :goto_2
-    and-int/lit8 v4, v0, 0x10
+    if-eqz p10, :cond_3
 
-    if-eqz v4, :cond_3
+    sget-object p4, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    sget-object v4, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
+    invoke-virtual {p4}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultAutoRepeat()Z
 
-    invoke-virtual {v4}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultAutoRepeat()Z
-
-    move-result v4
-
-    goto :goto_3
+    move-result p4
 
     :cond_3
-    move v4, p4
+    and-int/lit8 p10, p9, 0x20
 
-    :goto_3
-    and-int/lit8 v5, v0, 0x20
+    if-eqz p10, :cond_4
 
-    if-eqz v5, :cond_4
+    sget-object p5, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    sget-object v5, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
+    invoke-virtual {p5}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultNetworkFetchEnabled()Z
 
-    invoke-virtual {v5}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultNetworkFetchEnabled()Z
-
-    move-result v5
-
-    goto :goto_4
+    move-result p5
 
     :cond_4
-    move v5, p5
+    and-int/lit8 p10, p9, 0x40
 
-    :goto_4
-    and-int/lit8 v6, v0, 0x40
+    if-eqz p10, :cond_5
 
-    if-eqz v6, :cond_5
+    sget-object p6, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    sget-object v6, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
+    invoke-virtual {p6}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultStartDecodeFirstFrame()Z
 
-    invoke-virtual {v6}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultStartDecodeFirstFrame()Z
-
-    move-result v6
-
-    goto :goto_5
+    move-result p6
 
     :cond_5
-    move v6, p6
+    and-int/lit16 p10, p9, 0x80
 
-    :goto_5
-    and-int/lit16 v7, v0, 0x80
+    if-eqz p10, :cond_6
 
-    if-eqz v7, :cond_6
+    sget-object p7, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    sget-object v7, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
+    invoke-virtual {p7}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultAutoStart()Z
 
-    invoke-virtual {v7}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultAutoStart()Z
-
-    move-result v7
-
-    goto :goto_6
+    move-result p7
 
     :cond_6
-    move v7, p7
+    and-int/lit16 p9, p9, 0x100
 
-    :goto_6
-    and-int/lit16 v0, v0, 0x100
+    if-eqz p9, :cond_7
 
-    if-eqz v0, :cond_7
+    sget-object p8, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    sget-object v0, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
+    invoke-virtual {p8}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultPrecache()Z
 
-    invoke-virtual {v0}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultPrecache()Z
-
-    move-result v0
-
-    goto :goto_7
+    move-result p8
 
     :cond_7
-    move/from16 v0, p8
+    move p9, p7
 
-    :goto_7
-    move p1, v1
+    move p10, p8
 
-    move p2, v2
+    move p7, p5
 
-    move p3, v3
+    move p8, p6
 
-    move p4, v4
+    move p5, p3
 
-    move p5, v5
+    move p6, p4
 
-    move p6, v6
+    move p3, p1
 
-    move p7, v7
+    move p4, p2
 
-    move/from16 p8, v0
+    move-object p2, p0
 
-    invoke-static/range {p0 .. p8}, Lone/me/rlottie/RLottieFactory;->createByUrl(Ljava/lang/String;IIZZZZZZ)Lone/me/rlottie/RLottieDrawable;
+    invoke-static/range {p2 .. p10}, Lone/me/rlottie/RLottieFactory;->createByUrl(Ljava/lang/String;IIZZZZZZ)Lone/me/rlottie/RLottieDrawable;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method

@@ -1,61 +1,37 @@
 .class public final Lrz9;
-.super Lfja;
+.super Lw2;
 .source "SourceFile"
 
 
-# static fields
-.field public static final e:Lrz9;
+# instance fields
+.field public final b:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lvw9;J)V
+    .locals 0
 
-    new-instance v0, Lrz9;
+    invoke-direct {p0, p1}, Lw2;-><init>(Lqz9;)V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lrz9;->e:Lrz9;
+    iput-wide p2, p0, Lrz9;->b:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+.method public final p(La0a;)V
+    .locals 3
 
-    const/4 v0, 0x1
+    new-instance v0, Lvx9;
 
-    if-ne p0, p1, :cond_0
+    iget-wide v1, p0, Lrz9;->b:J
 
-    return v0
+    invoke-direct {v0, p1, v1, v2}, Lvx9;-><init>(La0a;J)V
 
-    :cond_0
-    instance-of p0, p1, Lrz9;
+    iget-object p0, p0, Lw2;->a:Lqz9;
 
-    if-nez p0, :cond_1
+    invoke-interface {p0, v0}, Lqz9;->a(La0a;)V
 
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    const p0, 0x5bcc451e
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    const-string p0, "None"
-
-    return-object p0
+    return-void
 .end method

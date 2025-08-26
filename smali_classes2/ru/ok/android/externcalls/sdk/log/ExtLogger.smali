@@ -1,5 +1,5 @@
 .class public Lru/ok/android/externcalls/sdk/log/ExtLogger;
-.super Laxb;
+.super Lv1c;
 .source "SourceFile"
 
 
@@ -23,9 +23,13 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Lru/ok/android/externcalls/sdk/log/ExtLogger$TimeProvider;)V
-    .locals 0
+    .locals 1
 
-    invoke-direct {p0}, Laxb;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const-string v0, ""
+
+    iput-object v0, p0, Lv1c;->conversationId:Ljava/lang/String;
 
     :try_start_0
     invoke-static {}, Lru/ok/android/ext/OneLogger;->ensureInitialized()V
@@ -40,26 +44,26 @@
     return-void
 .end method
 
-.method public static simpleBuilder(Ltqd;)Lzx9;
+.method public static simpleBuilder(Loyd;)Lt1a;
     .locals 2
 
-    new-instance v0, Lzx9;
+    new-instance v0, Lt1a;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {v0}, Lzx9;->b()V
+    invoke-virtual {v0}, Lt1a;->b()V
 
     const-string v1, "ok.mobile.apps.video"
 
-    iput-object v1, v0, Lzx9;->a:Ljava/lang/String;
+    iput-object v1, v0, Lt1a;->a:Ljava/lang/String;
 
     const/4 v1, 0x1
 
-    iput v1, v0, Lzx9;->b:I
+    iput v1, v0, Lt1a;->b:I
 
     if-eqz p0, :cond_0
 
-    iget-object p0, p0, Ltqd;->a:Ljava/lang/String;
+    iget-object p0, p0, Loyd;->a:Ljava/lang/String;
 
     goto :goto_0
 
@@ -67,118 +71,85 @@
     const/4 p0, 0x0
 
     :goto_0
-    iput-object p0, v0, Lzx9;->c:Ljava/lang/String;
+    iput-object p0, v0, Lt1a;->c:Ljava/lang/String;
 
-    iput v1, v0, Lzx9;->d:I
+    iput v1, v0, Lt1a;->d:I
 
     return-object v0
 .end method
 
-.method public static simpleBuilderAny(Ljava/lang/String;)Lzx9;
+.method public static simpleBuilderAny(Ljava/lang/String;)Lt1a;
     .locals 2
 
-    new-instance v0, Lzx9;
+    new-instance v0, Lt1a;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {v0}, Lzx9;->b()V
+    invoke-virtual {v0}, Lt1a;->b()V
 
     const-string v1, "ok.mobile.apps.video"
 
-    iput-object v1, v0, Lzx9;->a:Ljava/lang/String;
+    iput-object v1, v0, Lt1a;->a:Ljava/lang/String;
 
     const/4 v1, 0x1
 
-    iput v1, v0, Lzx9;->b:I
+    iput v1, v0, Lt1a;->b:I
 
-    iput-object p0, v0, Lzx9;->c:Ljava/lang/String;
+    iput-object p0, v0, Lt1a;->c:Ljava/lang/String;
 
-    iput v1, v0, Lzx9;->d:I
+    iput v1, v0, Lt1a;->d:I
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public log(Lay9;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    sget-object p0, Lxx9;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    return-void
-
-    :cond_0
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lhr1;->r(Ljava/lang/Object;)V
-
-    const/4 p0, 0x0
-
-    .line 3
-    throw p0
-.end method
-
 .method public log(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)V
     .locals 2
 
-    .line 6
-    new-instance v0, Lzx9;
+    .line 11
+    new-instance v0, Lt1a;
 
-    .line 7
+    .line 12
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    .line 8
-    invoke-virtual {v0}, Lzx9;->b()V
+    .line 13
+    invoke-virtual {v0}, Lt1a;->b()V
 
-    .line 9
+    .line 14
     const-string v1, "ok.mobile.apps.video"
 
-    iput-object v1, v0, Lzx9;->a:Ljava/lang/String;
+    .line 15
+    iput-object v1, v0, Lt1a;->a:Ljava/lang/String;
 
     const/4 v1, 0x1
 
-    .line 10
-    iput v1, v0, Lzx9;->b:I
+    .line 16
+    iput v1, v0, Lt1a;->b:I
 
-    .line 11
-    iput-object p1, v0, Lzx9;->c:Ljava/lang/String;
+    .line 17
+    iput-object p1, v0, Lt1a;->c:Ljava/lang/String;
 
-    .line 12
-    iput v1, v0, Lzx9;->d:I
+    .line 18
+    iput v1, v0, Lt1a;->d:I
 
-    .line 13
-    invoke-virtual {v0, p2, p3}, Lzx9;->d(J)V
+    .line 19
+    invoke-virtual {v0, p2, p3}, Lt1a;->d(J)V
 
     if-eqz p4, :cond_0
 
-    .line 14
+    .line 20
     const-string p2, "param"
 
-    invoke-virtual {v0, p2, p4}, Lzx9;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, p2, p4}, Lt1a;->c(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 15
+    .line 21
     :cond_0
     iget-object p2, p0, Lru/ok/android/externcalls/sdk/log/ExtLogger;->place:Ljava/lang/String;
 
     if-eqz p2, :cond_1
 
-    .line 16
+    .line 22
     const-string p3, "callStart"
 
     invoke-virtual {p3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -187,26 +158,26 @@
 
     if-eqz p1, :cond_1
 
-    .line 17
+    .line 23
     const-string p1, "place"
 
-    invoke-virtual {v0, p1, p2}, Lzx9;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, p1, p2}, Lt1a;->c(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_1
     if-eqz p5, :cond_2
 
-    .line 18
+    .line 24
     const-string p1, "stat_type"
 
-    invoke-virtual {v0, p1, p5}, Lzx9;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, p1, p5}, Lt1a;->c(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 19
+    .line 25
     :cond_2
-    invoke-virtual {v0}, Lzx9;->a()Lay9;
+    invoke-virtual {v0}, Lt1a;->a()Lu1a;
 
     move-result-object p1
 
-    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/log/ExtLogger;->log(Lay9;)V
+    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/log/ExtLogger;->log(Lu1a;)V
 
     return-void
 .end method
@@ -237,7 +208,7 @@
 
     move-object v3, p3
 
-    .line 5
+    .line 10
     invoke-virtual/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/log/ExtLogger;->log(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/Long;)V
 
     return-void
@@ -260,50 +231,50 @@
         }
     .end annotation
 
-    .line 20
-    new-instance v0, Lzx9;
+    .line 26
+    new-instance v0, Lt1a;
 
-    .line 21
+    .line 27
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    .line 22
-    invoke-virtual {v0}, Lzx9;->b()V
+    .line 28
+    invoke-virtual {v0}, Lt1a;->b()V
 
-    .line 23
-    iput-object p1, v0, Lzx9;->a:Ljava/lang/String;
+    .line 29
+    iput-object p1, v0, Lt1a;->a:Ljava/lang/String;
 
     const/4 p1, 0x1
 
-    .line 24
-    iput p1, v0, Lzx9;->b:I
+    .line 30
+    iput p1, v0, Lt1a;->b:I
 
-    .line 25
-    iput-object p2, v0, Lzx9;->c:Ljava/lang/String;
+    .line 31
+    iput-object p2, v0, Lt1a;->c:Ljava/lang/String;
 
-    .line 26
-    iput p1, v0, Lzx9;->d:I
+    .line 32
+    iput p1, v0, Lt1a;->d:I
 
     if-eqz p4, :cond_0
 
-    .line 27
-    iput-object p4, v0, Lzx9;->f:Ljava/lang/String;
+    .line 33
+    iput-object p4, v0, Lt1a;->f:Ljava/lang/String;
 
-    .line 28
-    iput-boolean p1, v0, Lzx9;->g:Z
+    .line 34
+    iput-boolean p1, v0, Lt1a;->g:Z
 
     :cond_0
     if-eqz p5, :cond_1
 
-    .line 29
+    .line 35
     invoke-virtual {p5}, Ljava/lang/Long;->longValue()J
 
     move-result-wide p1
 
-    invoke-virtual {v0, p1, p2}, Lzx9;->d(J)V
+    invoke-virtual {v0, p1, p2}, Lt1a;->d(J)V
 
     goto :goto_0
 
-    .line 30
+    .line 36
     :cond_1
     iget-object p1, p0, Lru/ok/android/externcalls/sdk/log/ExtLogger;->timeProvider:Lru/ok/android/externcalls/sdk/log/ExtLogger$TimeProvider;
 
@@ -311,9 +282,9 @@
 
     move-result-wide p1
 
-    invoke-virtual {v0, p1, p2}, Lzx9;->d(J)V
+    invoke-virtual {v0, p1, p2}, Lt1a;->d(J)V
 
-    .line 31
+    .line 37
     :goto_0
     invoke-interface {p3}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -336,7 +307,7 @@
 
     check-cast p2, Ljava/util/Map$Entry;
 
-    .line 32
+    .line 38
     invoke-interface {p2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object p3
@@ -349,27 +320,27 @@
 
     check-cast p2, Ljava/lang/String;
 
-    invoke-virtual {v0, p3, p2}, Lzx9;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, p3, p2}, Lt1a;->c(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
 
-    .line 33
+    .line 39
     :cond_2
-    invoke-virtual {v0}, Lzx9;->a()Lay9;
+    invoke-virtual {v0}, Lt1a;->a()Lu1a;
 
     move-result-object p1
 
-    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/log/ExtLogger;->log(Lay9;)V
+    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/log/ExtLogger;->log(Lu1a;)V
 
     return-void
 .end method
 
-.method public log(Ltqd;Ljava/util/Map;)V
+.method public log(Loyd;Ljava/util/Map;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ltqd;",
+            "Loyd;",
             "Ljava/util/Map<",
             "Ljava/lang/String;",
             "Ljava/lang/String;",
@@ -377,30 +348,61 @@
         }
     .end annotation
 
-    .line 4
+    .line 9
     const-string v0, "ok.mobile.apps.video"
 
-    iget-object p1, p1, Ltqd;->a:Ljava/lang/String;
+    iget-object p1, p1, Loyd;->a:Ljava/lang/String;
 
     invoke-virtual {p0, v0, p1, p2}, Lru/ok/android/externcalls/sdk/log/ExtLogger;->log(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V
 
     return-void
 .end method
 
-.method public logSimple(Ltqd;Ljava/lang/String;Ljava/lang/String;)V
+.method public log(Lu1a;)V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    sget-object p0, Lr1a;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    return-void
+
+    .line 3
+    :cond_0
+    invoke-static {p0}, Lv04;->f(Ljava/util/Iterator;)Ljava/lang/ClassCastException;
+
+    move-result-object p0
+
+    .line 4
+    throw p0
+.end method
+
+.method public logSimple(Loyd;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    invoke-static {p1}, Lru/ok/android/externcalls/sdk/log/ExtLogger;->simpleBuilder(Ltqd;)Lzx9;
+    invoke-static {p1}, Lru/ok/android/externcalls/sdk/log/ExtLogger;->simpleBuilder(Loyd;)Lt1a;
 
     move-result-object p1
 
     const-string v0, "vcid"
 
-    invoke-virtual {p1, v0, p2}, Lzx9;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p1, v0, p2}, Lt1a;->c(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string p2, "param"
 
-    invoke-virtual {p1, p2, p3}, Lzx9;->c(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p1, p2, p3}, Lt1a;->c(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object p2, p0, Lru/ok/android/externcalls/sdk/log/ExtLogger;->timeProvider:Lru/ok/android/externcalls/sdk/log/ExtLogger$TimeProvider;
 
@@ -408,13 +410,13 @@
 
     move-result-wide p2
 
-    invoke-virtual {p1, p2, p3}, Lzx9;->d(J)V
+    invoke-virtual {p1, p2, p3}, Lt1a;->d(J)V
 
-    invoke-virtual {p1}, Lzx9;->a()Lay9;
+    invoke-virtual {p1}, Lt1a;->a()Lu1a;
 
     move-result-object p1
 
-    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/log/ExtLogger;->log(Lay9;)V
+    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/log/ExtLogger;->log(Lu1a;)V
 
     return-void
 .end method

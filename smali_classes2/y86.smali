@@ -2,26 +2,29 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lc96;
+
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final a:I
 
 .field public final b:Ljava/lang/String;
 
-.field public final c:Lub0;
+.field public final c:Lwp7;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Lub0;)V
+.method public constructor <init>(ILjava/lang/String;Lwp7;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ly86;->a:Ljava/lang/String;
+    iput p1, p0, Ly86;->a:I
 
     iput-object p2, p0, Ly86;->b:Ljava/lang/String;
 
-    iput-object p3, p0, Ly86;->c:Lub0;
+    iput-object p3, p0, Ly86;->c:Lwp7;
 
     return-void
 .end method
@@ -49,15 +52,11 @@
     :cond_1
     check-cast p1, Ly86;
 
-    iget-object v1, p1, Ly86;->a:Ljava/lang/String;
+    iget v1, p0, Ly86;->a:I
 
-    iget-object v3, p0, Ly86;->a:Ljava/lang/String;
+    iget v3, p1, Ly86;->a:I
 
-    invoke-static {v3, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
+    if-eq v1, v3, :cond_2
 
     return v2
 
@@ -66,7 +65,7 @@
 
     iget-object v3, p1, Ly86;->b:Ljava/lang/String;
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -75,11 +74,11 @@
     return v2
 
     :cond_3
-    iget-object p0, p0, Ly86;->c:Lub0;
+    iget-object p0, p0, Ly86;->c:Lwp7;
 
-    iget-object p1, p1, Ly86;->c:Lub0;
+    iget-object p1, p1, Ly86;->c:Lwp7;
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -94,9 +93,9 @@
 .method public final hashCode()I
     .locals 3
 
-    iget-object v0, p0, Ly86;->a:Ljava/lang/String;
+    iget v0, p0, Ly86;->a:I
 
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
 
     move-result v0
 
@@ -106,13 +105,13 @@
 
     iget-object v2, p0, Ly86;->b:Ljava/lang/String;
 
-    invoke-static {v0, v1, v2}, Lme4;->d(IILjava/lang/String;)I
+    invoke-static {v0, v1, v2}, Lv04;->d(IILjava/lang/String;)I
 
     move-result v0
 
-    iget-object p0, p0, Ly86;->c:Lub0;
+    iget-object p0, p0, Ly86;->c:Lwp7;
 
-    invoke-virtual {p0}, Lub0;->hashCode()I
+    invoke-virtual {p0}, Lwp7;->hashCode()I
 
     move-result p0
 
@@ -126,15 +125,15 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "WebAppContactData(displayName="
+    const-string v1, "OpenFullScreenMedia(uiPosition="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Ly86;->a:Ljava/lang/String;
+    iget v1, p0, Ly86;->a:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v1, ", avatarUrl="
+    const-string v1, ", albumId="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -142,11 +141,11 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", abbreviationModel="
+    const-string v1, ", item="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Ly86;->c:Lub0;
+    iget-object p0, p0, Ly86;->c:Lwp7;
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

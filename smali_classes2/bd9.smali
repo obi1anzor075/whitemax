@@ -1,309 +1,98 @@
-.class public final synthetic Lbd9;
+.class public abstract Lbd9;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lof3;
-
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lfd9;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lfd9;I)V
-    .locals 0
+.method public static a([B)Lcd9;
+    .locals 14
 
-    iput p2, p0, Lbd9;->a:I
+    new-instance v0, Lru/ok/tamtam/nano/Tasks$MsgDelete;
 
-    iput-object p1, p0, Lbd9;->b:Lfd9;
+    invoke-direct {v0}, Lru/ok/tamtam/nano/Tasks$MsgDelete;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .locals 12
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x0
-
-    iget-object v2, p0, Lbd9;->b:Lfd9;
-
-    iget p0, p0, Lbd9;->a:I
-
-    packed-switch p0, :pswitch_data_0
-
-    check-cast p1, Ljava/lang/Long;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object p0, v2, Lfd9;->D0:Lp7f;
-
-    invoke-virtual {p0}, Lp7f;->a()Lo7f;
+    :try_start_0
+    invoke-static {v0, p0}, Lnv8;->mergeFrom(Lnv8;[B)Lnv8;
 
     move-result-object p0
 
-    iget-object p1, v2, Lfd9;->c:Lq98;
+    check-cast p0, Lru/ok/tamtam/nano/Tasks$MsgDelete;
+    :try_end_0
+    .catch Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException; {:try_start_0 .. :try_end_0} :catch_0
 
-    check-cast p1, Lal7;
+    iget-object v0, p0, Lru/ok/tamtam/nano/Tasks$MsgDelete;->complaint:Ljava/lang/String;
 
-    invoke-virtual {p1}, Lal7;->e()J
+    invoke-static {v0}, Lxja;->v(Ljava/lang/CharSequence;)Z
 
-    move-result-wide v3
+    move-result v0
 
-    iput-wide v3, p0, Lo7f;->k:J
+    if-nez v0, :cond_0
 
-    invoke-virtual {p1}, Lal7;->c()J
+    iget-object v0, p0, Lru/ok/tamtam/nano/Tasks$MsgDelete;->complaint:Ljava/lang/String;
 
-    move-result-wide v3
+    invoke-static {v0}, Ls83;->a(Ljava/lang/String;)Ls83;
 
-    iput-wide v3, p0, Lo7f;->l:J
-
-    iput-object v1, p0, Lo7f;->q:Landroid/net/Uri;
-
-    iput-object v1, p0, Lo7f;->p:Landroid/graphics/drawable/Drawable;
-
-    new-instance p1, Lp7f;
-
-    invoke-direct {p1, p0}, Lp7f;-><init>(Lo7f;)V
-
-    iput-object p1, v2, Lfd9;->D0:Lp7f;
-
-    iget-object p0, v2, Lu2;->b:Ljava/lang/Object;
-
-    check-cast p0, Lge9;
-
-    check-cast p0, Llf9;
-
-    invoke-interface {p0, p1}, Llf9;->d(Lp7f;)V
-
-    return-void
-
-    :pswitch_0
-    check-cast p1, Ljava/lang/Long;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object p0, v2, Lfd9;->D0:Lp7f;
-
-    invoke-virtual {p0}, Lp7f;->a()Lo7f;
-
-    move-result-object p0
-
-    iget-object p1, v2, Lfd9;->E0:Ln10;
-
-    iget-object v0, v2, Lfd9;->x0:Lg2b;
-
-    invoke-static {v0, p1}, Lete;->Z(Lg2b;Ln10;)Z
-
-    move-result p1
-
-    iput-boolean p1, p0, Lo7f;->h:Z
-
-    new-instance p1, Lp7f;
-
-    invoke-direct {p1, p0}, Lp7f;-><init>(Lo7f;)V
-
-    iput-object p1, v2, Lfd9;->D0:Lp7f;
-
-    iget-object p0, v2, Lu2;->b:Ljava/lang/Object;
-
-    check-cast p0, Lge9;
-
-    check-cast p0, Llf9;
-
-    invoke-interface {p0, p1}, Llf9;->d(Lp7f;)V
-
-    iget-object p0, v2, Lfd9;->E0:Ln10;
-
-    invoke-static {v0, p0}, Lete;->O(Lg2b;Ln10;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_0
-
-    iget-object p0, v2, Lfd9;->J0:Lc97;
-
-    invoke-static {p0}, Ltic;->b(Lxi4;)V
-
-    invoke-virtual {v2}, Lfd9;->i2()V
-
-    :cond_0
-    return-void
-
-    :pswitch_1
-    check-cast p1, Ljava/lang/Throwable;
-
-    invoke-virtual {v2, p1}, Lfd9;->d2(Ljava/lang/Throwable;)V
-
-    return-void
-
-    :pswitch_2
-    check-cast p1, Lu2f;
-
-    iget-object v3, v2, Lfd9;->F0:Ld1c;
-
-    if-eqz v3, :cond_4
-
-    iput-object p1, v3, Ld1c;->d:Ljava/lang/Object;
-
-    const-string p0, "d1c"
-
-    const-string v4, "sendVideoRePlayStat"
-
-    invoke-static {p0, v4}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
-
-    const/4 p0, 0x1
-
-    iget v4, v3, Ld1c;->b:I
-
-    if-ne v4, p0, :cond_1
-
-    move v8, p0
-
-    goto :goto_0
-
-    :cond_1
-    move v8, v0
+    move-result-object v0
 
     :goto_0
-    invoke-virtual {v3}, Ld1c;->a()Ljava/lang/String;
-
-    move-result-object v9
-
-    const/4 v5, 0x5
-
-    if-ne v4, v5, :cond_2
-
-    move v10, p0
+    move-object v10, v0
 
     goto :goto_1
 
-    :cond_2
-    move v10, v0
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 
     :goto_1
-    const/4 p0, 0x3
+    new-instance v1, Lcd9;
 
-    if-ne v4, p0, :cond_3
+    iget-wide v2, p0, Lru/ok/tamtam/nano/Tasks$MsgDelete;->requestId:J
 
-    const-string p0, "auto"
+    iget-wide v4, p0, Lru/ok/tamtam/nano/Tasks$MsgDelete;->chatId:J
 
-    move-object v11, p0
+    iget-wide v6, p0, Lru/ok/tamtam/nano/Tasks$MsgDelete;->chatServerId:J
 
-    goto :goto_2
+    iget-object v0, p0, Lru/ok/tamtam/nano/Tasks$MsgDelete;->messagesId:[J
 
-    :cond_3
-    move-object v11, v1
+    invoke-static {v0}, Lns;->l0([J)Ljava/util/List;
 
-    :goto_2
-    const-string v4, "replay"
+    move-result-object v8
 
-    const/4 v5, 0x0
+    iget-object v0, p0, Lru/ok/tamtam/nano/Tasks$MsgDelete;->messagesServerId:[J
 
-    const/4 v6, 0x0
+    invoke-static {v0}, Lns;->l0([J)Ljava/util/List;
 
-    const/4 v7, 0x0
+    move-result-object v9
 
-    invoke-virtual/range {v3 .. v11}, Ld1c;->f(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;ZLjava/lang/String;)V
+    iget-boolean v11, p0, Lru/ok/tamtam/nano/Tasks$MsgDelete;->forMe:Z
 
-    :cond_4
-    iget-object p0, v2, Lfd9;->E0:Ln10;
+    sget-object v0, Ltg4;->o:Ldwc;
 
-    iget-object p0, p0, Ln10;->d:Ljava/lang/String;
+    iget v12, p0, Lru/ok/tamtam/nano/Tasks$MsgDelete;->itemTypeId:I
 
-    iget-object p0, v2, Lfd9;->c:Lq98;
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    check-cast p0, Lal7;
+    move-result-object v12
 
-    invoke-virtual {p0, p1, v2}, Lal7;->r(Lu2f;Lo98;)V
+    invoke-static {v0, v12}, Ldwc;->l(Ldwc;Ljava/lang/Integer;)Ltg4;
 
-    iget-object p0, v2, Lfd9;->D0:Lp7f;
+    move-result-object v12
 
-    invoke-virtual {p0}, Lp7f;->a()Lo7f;
+    iget-boolean v13, p0, Lru/ok/tamtam/nano/Tasks$MsgDelete;->notDeleteMessageFromDb:Z
 
-    move-result-object p0
+    invoke-direct/range {v1 .. v13}, Lcd9;-><init>(JJJLjava/util/List;Ljava/util/List;Ls83;ZLtg4;Z)V
 
-    iput-object p1, p0, Lo7f;->n:Lu2f;
+    return-object v1
 
-    iput-object v1, p0, Lo7f;->p:Landroid/graphics/drawable/Drawable;
+    :catch_0
+    move-exception v0
 
-    iput-object v1, p0, Lo7f;->q:Landroid/net/Uri;
+    move-object p0, v0
 
-    new-instance p1, Lp7f;
+    new-instance v0, Lru/ok/tamtam/nano/ProtoException;
 
-    invoke-direct {p1, p0}, Lp7f;-><init>(Lo7f;)V
+    invoke-direct {v0, p0}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
 
-    iput-object p1, v2, Lfd9;->D0:Lp7f;
-
-    iget-object p0, v2, Lu2;->b:Ljava/lang/Object;
-
-    check-cast p0, Lge9;
-
-    check-cast p0, Llf9;
-
-    invoke-interface {p0, p1}, Llf9;->d(Lp7f;)V
-
-    invoke-virtual {v2}, Lfd9;->n2()V
-
-    invoke-interface {p0, v2}, Llf9;->b(La9f;)V
-
-    return-void
-
-    :pswitch_3
-    check-cast p1, Ljava/lang/Long;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const-string p0, "fd9"
-
-    const-string p1, "hideControls"
-
-    invoke-static {p0, p1}, Ludd;->n(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object p0, v2, Lfd9;->D0:Lp7f;
-
-    invoke-virtual {p0}, Lp7f;->a()Lo7f;
-
-    move-result-object p0
-
-    iput-boolean v0, p0, Lo7f;->a:Z
-
-    new-instance p1, Lp7f;
-
-    invoke-direct {p1, p0}, Lp7f;-><init>(Lo7f;)V
-
-    iput-object p1, v2, Lfd9;->D0:Lp7f;
-
-    iget-object p0, v2, Lu2;->b:Ljava/lang/Object;
-
-    check-cast p0, Lge9;
-
-    check-cast p0, Llf9;
-
-    invoke-interface {p0, p1}, Llf9;->d(Lp7f;)V
-
-    iget-object p0, v2, Lfd9;->y0:Led9;
-
-    if-eqz p0, :cond_5
-
-    invoke-interface {p0, v0}, Led9;->q(Z)V
-
-    :cond_5
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    throw v0
 .end method

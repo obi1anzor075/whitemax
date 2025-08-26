@@ -1,35 +1,42 @@
-.class public abstract synthetic Lz3a;
+.class public final Lz3a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lone/me/sdk/vendor/SystemServicesManager$PushTokenGeneratedListener;
 
-# static fields
-.field public static final synthetic $EnumSwitchMapping$0:[I
+
+# instance fields
+.field public final synthetic a:Lb4a;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lb4a;)V
+    .locals 0
 
-    const/4 v0, 0x2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lhr1;->w(I)[I
+    iput-object p1, p0, Lz3a;->a:Lb4a;
 
-    move-result-object v0
+    return-void
+.end method
 
-    array-length v0, v0
 
-    new-array v0, v0, [I
+# virtual methods
+.method public final onPushTokenGenerated(Ljava/lang/String;)V
+    .locals 1
 
-    const/4 v1, 0x1
+    iget-object p0, p0, Lz3a;->a:Lb4a;
 
-    :try_start_0
-    aput v1, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    iget-object p1, p0, Lb4a;->i:Lazd;
 
-    :catch_0
-    sput-object v0, Lz3a;->$EnumSwitchMapping$0:[I
+    invoke-virtual {p0}, Lb4a;->e()Ljava/util/List;
+
+    move-result-object p0
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lazd;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     return-void
 .end method

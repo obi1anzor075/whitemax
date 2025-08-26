@@ -1,97 +1,79 @@
-.class public final enum Lrt7;
-.super Ljava/lang/Enum;
+.class public final Lrt7;
+.super Lki0;
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic X:[Lrt7;
+# instance fields
+.field public final X:Lqg9;
 
-.field public static final enum a:Lrt7;
+.field public final b:Z
 
-.field public static final enum b:Lrt7;
+.field public final c:Z
 
-.field public static final enum c:Lrt7;
-
-.field public static final enum o:Lrt7;
+.field public final o:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public constructor <init>(JZZZLqg9;)V
+    .locals 0
 
-    new-instance v0, Lrt7;
+    invoke-direct {p0, p1, p2}, Lki0;-><init>(J)V
 
-    const-string v1, "ACTIVE_SMALL"
+    iput-boolean p3, p0, Lrt7;->b:Z
 
-    const/4 v2, 0x0
+    iput-boolean p4, p0, Lrt7;->c:Z
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-boolean p5, p0, Lrt7;->o:Z
 
-    sput-object v0, Lrt7;->a:Lrt7;
-
-    new-instance v1, Lrt7;
-
-    const-string v2, "ACTIVE_BIG"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lrt7;->b:Lrt7;
-
-    new-instance v2, Lrt7;
-
-    const-string v3, "PASSIVE_SMALL"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lrt7;->c:Lrt7;
-
-    new-instance v3, Lrt7;
-
-    const-string v4, "PASSIVE_BIG"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Lrt7;->o:Lrt7;
-
-    filled-new-array {v0, v1, v2, v3}, [Lrt7;
-
-    move-result-object v0
-
-    sput-object v0, Lrt7;->X:[Lrt7;
+    iput-object p6, p0, Lrt7;->X:Lqg9;
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lrt7;
-    .locals 1
 
-    const-class v0, Lrt7;
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .locals 6
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    iget-object v0, p0, Lrt7;->X:Lqg9;
+
+    iget v0, v0, Lqg9;->d:I
+
+    const-string v1, "LoginEvent(requestId="
+
+    const-string v2, ", isFirstLogin="
+
+    iget-wide v3, p0, Lki0;->a:J
+
+    iget-boolean v5, p0, Lrt7;->b:Z
+
+    invoke-static {v3, v4, v1, v2, v5}, Lpg0;->i(JLjava/lang/String;Ljava/lang/String;Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ", hasNewMessages="
+
+    const-string v3, ", videoChatHistory="
+
+    iget-boolean v4, p0, Lrt7;->c:Z
+
+    iget-boolean p0, p0, Lrt7;->o:Z
+
+    invoke-static {v2, v3, v1, v4, p0}, Lv04;->o(Ljava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;ZZ)V
+
+    const-string p0, ", chats="
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    check-cast p0, Lrt7;
-
     return-object p0
-.end method
-
-.method public static values()[Lrt7;
-    .locals 1
-
-    sget-object v0, Lrt7;->X:[Lrt7;
-
-    invoke-virtual {v0}, [Lrt7;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lrt7;
-
-    return-object v0
 .end method

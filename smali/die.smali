@@ -1,54 +1,58 @@
-.class public abstract Ldie;
+.class public final synthetic Ldie;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final a:Ljava/lang/ThreadLocal;
+
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Leie;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Leie;I)V
+    .locals 0
 
-    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+    iput p2, p0, Ldie;->a:I
 
-    const-string v1, "ThreadLocalEventLoop"
+    iput-object p1, p0, Ldie;->b:Leie;
 
-    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
-
-    invoke-static {v0}, Lkotlinx/coroutines/internal/ThreadLocalKt;->commonThreadLocal(Lkotlinx/coroutines/internal/Symbol;)Ljava/lang/ThreadLocal;
-
-    move-result-object v0
-
-    sput-object v0, Ldie;->a:Ljava/lang/ThreadLocal;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a()Lt05;
-    .locals 3
 
-    sget-object v0, Ldie;->a:Ljava/lang/ThreadLocal;
+# virtual methods
+.method public final run()V
+    .locals 1
 
-    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+    iget v0, p0, Ldie;->a:I
 
-    move-result-object v1
+    packed-switch v0, :pswitch_data_0
 
-    check-cast v1, Lt05;
+    iget-object p0, p0, Ldie;->b:Leie;
 
-    if-nez v1, :cond_0
+    invoke-virtual {p0}, Leie;->c()V
 
-    new-instance v1, Lgo0;
+    return-void
 
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+    :pswitch_0
+    const/4 v0, 0x0
 
-    move-result-object v2
+    iget-object p0, p0, Ldie;->b:Leie;
 
-    invoke-direct {v1, v2}, Lgo0;-><init>(Ljava/lang/Thread;)V
+    iput-object v0, p0, Leie;->o:Lsfc;
 
-    invoke-virtual {v0, v1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+    invoke-virtual {p0}, Leie;->c()V
 
-    :cond_0
-    return-object v1
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

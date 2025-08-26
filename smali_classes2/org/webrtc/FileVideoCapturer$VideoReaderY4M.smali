@@ -226,13 +226,13 @@
 
     iput v5, p0, Lorg/webrtc/FileVideoCapturer$VideoReaderY4M;->frameHeight:I
 
-    const-string p0, "frame dim: ("
+    const-string p0, ", "
 
-    const-string p1, ", "
+    const-string p1, ")"
 
-    const-string v1, ")"
+    const-string v1, "frame dim: ("
 
-    invoke-static {p0, v4, p1, v5, v1}, Lrf0;->g(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v4, p0, v5, p1}, Lpg0;->f(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -261,7 +261,7 @@
 
     const-string v0, "Found end of file before end of header for file: "
 
-    invoke-static {v0, p1}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p1}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -282,7 +282,7 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-void
 
     :catch_0
     move-exception p0
@@ -293,7 +293,6 @@
 
     invoke-static {v0, v1, p0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_0
     return-void
 .end method
 
@@ -378,11 +377,6 @@
 
     throw p0
 
-    :catch_0
-    move-exception p0
-
-    goto :goto_1
-
     :cond_1
     :goto_0
     new-instance v7, Ljava/lang/String;
@@ -453,7 +447,9 @@
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    :goto_1
+    :catch_0
+    move-exception p0
+
     new-instance v0, Ljava/lang/RuntimeException;
 
     invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V

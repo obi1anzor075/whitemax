@@ -1,3 +1,102 @@
-.class public abstract Lgw1;
+.class public final Lgw1;
 .super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lhw1;
+
+
+# virtual methods
+.method public final b(F)Lbm7;
+    .locals 0
+
+    sget-object p0, Lcw6;->c:Lcw6;
+
+    return-object p0
+.end method
+
+.method public final c(Lrc3;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final d(F)Lbm7;
+    .locals 0
+
+    sget-object p0, Lcw6;->c:Lcw6;
+
+    return-object p0
+.end method
+
+.method public final e()Landroid/graphics/Rect;
+    .locals 0
+
+    new-instance p0, Landroid/graphics/Rect;
+
+    invoke-direct {p0}, Landroid/graphics/Rect;-><init>()V
+
+    return-object p0
+.end method
+
+.method public final f(I)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final h(Ljava/util/ArrayList;II)Lbm7;
+    .locals 0
+
+    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+
+    invoke-static {p0}, Lu7;->z(Ljava/lang/Object;)Lcw6;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final i(Lg8d;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final j(Z)Lbm7;
+    .locals 0
+
+    sget-object p0, Lcw6;->c:Lcw6;
+
+    return-object p0
+.end method
+
+.method public final l()Lrc3;
+    .locals 0
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public final m()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final n(Lgs5;)Lbm7;
+    .locals 0
+
+    new-instance p0, Lls5;
+
+    const/4 p1, 0x0
+
+    invoke-direct {p0, p1}, Lls5;-><init>(Z)V
+
+    invoke-static {p0}, Lu7;->z(Ljava/lang/Object;)Lcw6;
+
+    move-result-object p0
+
+    return-object p0
+.end method

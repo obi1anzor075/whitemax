@@ -1,104 +1,57 @@
-.class public final synthetic Lw50;
+.class public interface abstract Lw50;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
 
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lotf;
-
-.field public final synthetic c:Ljava/lang/Exception;
+# static fields
+.field public static final a:Ljava/nio/ByteBuffer;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lotf;Ljava/lang/Exception;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput p3, p0, Lw50;->a:I
+    const/4 v0, 0x0
 
-    iput-object p1, p0, Lw50;->b:Lotf;
+    invoke-static {v0}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
-    iput-object p2, p0, Lw50;->c:Ljava/lang/Exception;
+    move-result-object v0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    sput-object v0, Lw50;->a:Ljava/nio/ByteBuffer;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 4
+.method public abstract a()Ljava/nio/ByteBuffer;
+.end method
 
-    iget-object v0, p0, Lw50;->c:Ljava/lang/Exception;
+.method public abstract b(Ljava/nio/ByteBuffer;)V
+.end method
 
-    iget-object v1, p0, Lw50;->b:Lotf;
+.method public abstract c()V
+.end method
 
-    iget p0, p0, Lw50;->a:I
+.method public abstract d()Z
+.end method
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+.method public abstract e(Lu50;)Lu50;
+.end method
 
-    packed-switch p0, :pswitch_data_0
+.method public abstract flush()V
+.end method
 
-    sget p0, Lmze;->a:I
+.method public abstract isActive()Z
+.end method
 
-    iget-object p0, v1, Lotf;->b:Ljava/lang/Object;
-
-    check-cast p0, Lg45;
-
-    iget-object p0, p0, Lg45;->a:Lm45;
-
-    iget-object p0, p0, Lm45;->G0:Lf44;
-
-    invoke-virtual {p0}, Lf44;->P()Lfd;
-
-    move-result-object v1
-
-    new-instance v2, Lt34;
-
-    const/16 v3, 0x16
-
-    invoke-direct {v2, v1, v3, v0}, Lt34;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    const/16 v0, 0x3f6
-
-    invoke-virtual {p0, v1, v0, v2}, Lf44;->Q(Lfd;ILkh7;)V
-
-    return-void
-
-    :pswitch_0
-    sget p0, Lmze;->a:I
-
-    iget-object p0, v1, Lotf;->b:Ljava/lang/Object;
-
-    check-cast p0, Lg45;
-
-    iget-object p0, p0, Lg45;->a:Lm45;
-
-    iget-object p0, p0, Lm45;->G0:Lf44;
-
-    invoke-virtual {p0}, Lf44;->P()Lfd;
-
-    move-result-object v1
-
-    new-instance v2, Lz34;
-
-    const/16 v3, 0x1b
-
-    invoke-direct {v2, v1, v0, v3}, Lz34;-><init>(Lfd;Ljava/lang/Object;I)V
-
-    const/16 v0, 0x405
-
-    invoke-virtual {p0, v1, v0, v2}, Lf44;->Q(Lfd;ILkh7;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+.method public abstract reset()V
 .end method

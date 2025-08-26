@@ -64,7 +64,7 @@
 
     const-string p0, "Unknown camera error: "
 
-    invoke-static {p1, p0}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p0}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -181,7 +181,7 @@
 
     invoke-interface {p0, p1, v0}, Lorg/webrtc/CameraSession$CreateSessionCallback;->onFailure(Lorg/webrtc/CameraSession$FailureType;Ljava/lang/String;)V
 
-    goto :goto_1
+    return-void
 
     :cond_1
     iget-object p1, p0, Lorg/webrtc/Camera2Session$CameraStateCallback;->this$0:Lorg/webrtc/Camera2Session;
@@ -194,7 +194,6 @@
 
     invoke-interface {p1, p0}, Lorg/webrtc/CameraSession$Events;->onCameraDisconnected(Lorg/webrtc/CameraSession;)V
 
-    :goto_1
     return-void
 .end method
 

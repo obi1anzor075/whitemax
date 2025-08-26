@@ -1,70 +1,21 @@
 .class public final Ldj4;
-.super Ljava/lang/Object;
+.super Lio;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/util/concurrent/Future;
 
-
-# instance fields
-.field public final a:Lxi4;
+# static fields
+.field public static final a:Ldj4;
 
 
 # direct methods
-.method public constructor <init>(Lxi4;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ldj4;
 
-    iput-object p1, p0, Ldj4;->a:Lxi4;
+    invoke-direct {v0}, Lio;-><init>()V
+
+    sput-object v0, Ldj4;->a:Ldj4;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final cancel(Z)Z
-    .locals 0
-
-    iget-object p0, p0, Ldj4;->a:Lxi4;
-
-    invoke-interface {p0}, Lxi4;->f()V
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final get()Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public final get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-    .locals 0
-
-    .line 2
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public final isCancelled()Z
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final isDone()Z
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return p0
 .end method

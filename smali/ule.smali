@@ -1,99 +1,94 @@
-.class public final Lule;
-.super Lz;
+.class public Lule;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lule;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
 # instance fields
-.field public c:I
-
-.field public o:Z
+.field public final a:Lbolts/Task;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ly;
-
-    const/16 v1, 0xb
-
-    invoke-direct {v0, v1}, Ly;-><init>(I)V
-
-    sput-object v0, Lule;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Parcel;)V
+.method public constructor <init>()V
     .locals 1
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1
-    invoke-direct {p0, p1, v0}, Lule;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+    new-instance v0, Lbolts/Task;
 
-    return-void
-.end method
+    invoke-direct {v0}, Lbolts/Task;-><init>()V
 
-.method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-    .locals 0
-
-    .line 2
-    invoke-direct {p0, p1, p2}, Lz;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-
-    .line 3
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result p2
-
-    iput p2, p0, Lule;->c:I
-
-    .line 4
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    iput-boolean p1, p0, Lule;->o:Z
+    iput-object v0, p0, Lule;->a:Lbolts/Task;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
+.method public final a()V
+    .locals 1
 
-    invoke-super {p0, p1, p2}, Lz;->writeToParcel(Landroid/os/Parcel;I)V
+    iget-object p0, p0, Lule;->a:Lbolts/Task;
 
-    iget p2, p0, Lule;->c:I
+    invoke-virtual {p0}, Lbolts/Task;->trySetCancelled()Z
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    move-result p0
 
-    iget-boolean p0, p0, Lule;->o:Z
-
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+    if-eqz p0, :cond_0
 
     return-void
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string v0, "Cannot cancel a completed task."
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final b(Ljava/lang/Exception;)V
+    .locals 0
+
+    iget-object p0, p0, Lule;->a:Lbolts/Task;
+
+    invoke-virtual {p0, p1}, Lbolts/Task;->trySetError(Ljava/lang/Exception;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    return-void
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "Cannot set the error on a completed task."
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final c(Ljava/lang/Object;)V
+    .locals 0
+
+    iget-object p0, p0, Lule;->a:Lbolts/Task;
+
+    invoke-virtual {p0, p1}, Lbolts/Task;->trySetResult(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    return-void
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "Cannot set the result of a completed task."
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

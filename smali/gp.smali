@@ -1,55 +1,106 @@
-.class public abstract Lgp;
+.class public final Lgp;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lo64;
+
+
+# static fields
+.field public static final a:Lgp;
+
+.field public static final b:Lhp;
+
 
 # direct methods
-.method public static a(Landroid/content/Context;Ljava/lang/Class;)Ljava/lang/Object;
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lgp;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lgp;->a:Lgp;
+
+    sget-object v0, Lhp;->b:Lhp;
+
+    sput-object v0, Lgp;->b:Lhp;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()Lv64;
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Landroid/content/Context;",
-            "Ljava/lang/Class<",
-            "TT;>;)TT;"
-        }
-    .end annotation
 
-    invoke-virtual {p0, p1}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
+    sget-object p0, Lgp;->b:Lhp;
 
     return-object p0
 .end method
 
-.method public static b(Landroid/app/AppOpsManager;Ljava/lang/String;Ljava/lang/String;)I
-    .locals 0
+.method public final b(Ljava/lang/String;Lr64;Landroid/os/Bundle;)Ly64;
+    .locals 8
 
-    invoke-virtual {p0, p1, p2}, Landroid/app/AppOpsManager;->noteProxyOp(Ljava/lang/String;Ljava/lang/String;)I
+    sget-object p0, Lgp;->b:Lhp;
 
-    move-result p0
+    iget-object p0, p0, Lv64;->a:Ljava/util/LinkedHashSet;
 
-    return p0
-.end method
-
-.method public static c(Landroid/app/AppOpsManager;Ljava/lang/String;Ljava/lang/String;)I
-    .locals 0
-
-    invoke-virtual {p0, p1, p2}, Landroid/app/AppOpsManager;->noteProxyOpNoThrow(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-interface {p0, p2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
     move-result p0
 
-    return p0
-.end method
+    if-nez p0, :cond_0
 
-.method public static d(Ljava/lang/String;)Ljava/lang/String;
-    .locals 0
-
-    invoke-static {p0}, Landroid/app/AppOpsManager;->permissionToOp(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
+    const/4 p0, 0x0
 
     return-object p0
+
+    :cond_0
+    sget-object p0, Lhp;->c:Lr64;
+
+    invoke-virtual {p2, p0}, Lr64;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1
+
+    new-instance v6, Li;
+
+    const/4 p0, 0x1
+
+    invoke-direct {v6, p0}, Li;-><init>(I)V
+
+    new-instance v0, Ly64;
+
+    const/4 v5, 0x0
+
+    const/16 v7, 0x10
+
+    const/4 v4, 0x1
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    invoke-direct/range {v0 .. v7}, Ly64;-><init>(Ljava/lang/String;Lr64;Landroid/os/Bundle;ILw64;Lx64;I)V
+
+    return-object v0
+
+    :cond_1
+    move-object v2, p2
+
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "Unknown route="
+
+    invoke-static {p1, v2}, Lzt1;->f(Ljava/lang/String;Lr64;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

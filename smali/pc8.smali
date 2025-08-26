@@ -1,166 +1,190 @@
-.class public abstract Lpc8;
+.class public final Lpc8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lnc8;
-
 
 # instance fields
-.field public final a:Landroid/media/session/MediaSession;
+.field public A:Ljava/lang/CharSequence;
 
-.field public final b:Loc8;
+.field public B:Ljava/lang/Integer;
 
-.field public final c:Luc8;
+.field public C:Ljava/lang/Integer;
 
-.field public final d:Ljava/lang/Object;
+.field public D:Ljava/lang/CharSequence;
 
-.field public final e:Landroid/os/Bundle;
+.field public E:Ljava/lang/CharSequence;
 
-.field public final f:Landroid/os/RemoteCallbackList;
+.field public F:Ljava/lang/CharSequence;
 
-.field public g:Lcya;
+.field public G:Ljava/lang/Integer;
 
-.field public h:Ljava/util/List;
+.field public H:Landroid/os/Bundle;
 
-.field public i:La88;
+.field public a:Ljava/lang/CharSequence;
 
-.field public j:I
+.field public b:Ljava/lang/CharSequence;
 
-.field public k:I
+.field public c:Ljava/lang/CharSequence;
 
-.field public l:Lm18;
+.field public d:Ljava/lang/CharSequence;
 
+.field public e:Ljava/lang/CharSequence;
 
-# direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)V
-    .locals 2
+.field public f:Ljava/lang/CharSequence;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.field public g:Ljava/lang/CharSequence;
 
-    new-instance v0, Ljava/lang/Object;
+.field public h:Ljava/lang/Long;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+.field public i:Lw2c;
 
-    iput-object v0, p0, Lpc8;->d:Ljava/lang/Object;
+.field public j:Lw2c;
 
-    new-instance v0, Landroid/os/RemoteCallbackList;
+.field public k:[B
 
-    invoke-direct {v0}, Landroid/os/RemoteCallbackList;-><init>()V
+.field public l:Ljava/lang/Integer;
 
-    iput-object v0, p0, Lpc8;->f:Landroid/os/RemoteCallbackList;
+.field public m:Landroid/net/Uri;
 
-    invoke-virtual {p0, p1, p2, p3}, Lpc8;->b(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Landroid/media/session/MediaSession;
+.field public n:Ljava/lang/Integer;
 
-    move-result-object p1
+.field public o:Ljava/lang/Integer;
 
-    iput-object p1, p0, Lpc8;->a:Landroid/media/session/MediaSession;
+.field public p:Ljava/lang/Integer;
 
-    new-instance p2, Loc8;
+.field public q:Ljava/lang/Boolean;
 
-    move-object v0, p0
+.field public r:Ljava/lang/Boolean;
 
-    check-cast v0, Lqc8;
+.field public s:Ljava/lang/Integer;
 
-    invoke-direct {p2, v0}, Loc8;-><init>(Lqc8;)V
+.field public t:Ljava/lang/Integer;
 
-    iput-object p2, p0, Lpc8;->b:Loc8;
+.field public u:Ljava/lang/Integer;
 
-    new-instance v0, Luc8;
+.field public v:Ljava/lang/Integer;
 
-    invoke-virtual {p1}, Landroid/media/session/MediaSession;->getSessionToken()Landroid/media/session/MediaSession$Token;
+.field public w:Ljava/lang/Integer;
 
-    move-result-object v1
+.field public x:Ljava/lang/Integer;
 
-    invoke-direct {v0, v1, p2}, Luc8;-><init>(Ljava/lang/Object;Lmn6;)V
+.field public y:Ljava/lang/CharSequence;
 
-    iput-object v0, p0, Lpc8;->c:Luc8;
-
-    iput-object p3, p0, Lpc8;->e:Landroid/os/Bundle;
-
-    const/4 p0, 0x3
-
-    invoke-virtual {p1, p0}, Landroid/media/session/MediaSession;->setFlags(I)V
-
-    return-void
-.end method
+.field public z:Ljava/lang/CharSequence;
 
 
 # virtual methods
-.method public abstract b(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Landroid/media/session/MediaSession;
-.end method
-
-.method public final c(Lm18;Landroid/os/Handler;)V
+.method public final a(I[B)V
     .locals 3
 
-    iget-object v0, p0, Lpc8;->d:Ljava/lang/Object;
+    const/4 v0, 0x3
 
-    monitor-enter v0
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    :try_start_0
-    iput-object p1, p0, Lpc8;->l:Lm18;
+    move-result-object v0
 
-    iget-object v1, p0, Lpc8;->a:Landroid/media/session/MediaSession;
+    iget-object v1, p0, Lpc8;->k:[B
 
-    if-nez p1, :cond_0
+    if-eqz v1, :cond_1
 
-    const/4 v2, 0x0
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    sget v2, Lpaf;->a:I
+
+    invoke-virtual {v1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    iget-object v1, p0, Lpc8;->l:Ljava/lang/Integer;
+
+    invoke-static {v1, v0}, Lpaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    iget-object v2, p1, Lm18;->b:Ljava/lang/Object;
+    return-void
 
-    check-cast v2, Lmc8;
+    :cond_1
+    :goto_0
+    invoke-virtual {p2}, [B->clone()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, [B
+
+    iput-object p2, p0, Lpc8;->k:[B
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lpc8;->l:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public final b([BLjava/lang/Integer;)V
+    .locals 0
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, [B->clone()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, [B
 
     :goto_0
-    invoke-virtual {v1, v2, p2}, Landroid/media/session/MediaSession;->setCallback(Landroid/media/session/MediaSession$Callback;Landroid/os/Handler;)V
+    iput-object p1, p0, Lpc8;->k:[B
+
+    iput-object p2, p0, Lpc8;->l:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public final c(Ljava/lang/Long;)V
+    .locals 4
 
     if-eqz p1, :cond_1
 
-    invoke-virtual {p1, p0, p2}, Lm18;->I(Lnc8;Landroid/os/Handler;)V
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v0
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v0, v0, v2
+
+    if-ltz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_1
 
-    :catchall_0
-    move-exception p0
-
-    goto :goto_2
-
     :cond_1
+    :goto_0
+    const/4 v0, 0x1
+
     :goto_1
-    monitor-exit v0
+    invoke-static {v0}, Lu27;->f(Z)V
+
+    iput-object p1, p0, Lpc8;->h:Ljava/lang/Long;
 
     return-void
-
-    :goto_2
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p0
-.end method
-
-.method public final getCallback()Lm18;
-    .locals 1
-
-    iget-object v0, p0, Lpc8;->d:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object p0, p0, Lpc8;->l:Lm18;
-
-    monitor-exit v0
-
-    return-object p0
-
-    :catchall_0
-    move-exception p0
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p0
 .end method

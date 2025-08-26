@@ -1,193 +1,101 @@
-.class public final Lvkf;
-.super Ll5e;
+.class public final synthetic Lvkf;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Ljj3;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic a:I
 
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lalf;
-
-.field public final synthetic w0:Lxkf;
-
-.field public final synthetic x0:Ljava/lang/String;
+.field public final synthetic b:Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;
 
 
 # direct methods
-.method public constructor <init>(Lxkf;Lalf;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;I)V
     .locals 0
 
-    iput-object p2, p0, Lvkf;->Z:Lalf;
+    iput p2, p0, Lvkf;->a:I
 
-    iput-object p1, p0, Lvkf;->w0:Lxkf;
+    iput-object p1, p0, Lvkf;->b:Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;
 
-    const-string p1, "WebAppRequestPhone"
-
-    iput-object p1, p0, Lvkf;->x0:Ljava/lang/String;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p3}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final accept(Ljava/lang/Object;)V
+    .locals 4
 
-    check-cast p1, Ljava/lang/String;
+    iget v0, p0, Lvkf;->a:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget-object p0, p0, Lvkf;->b:Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;
 
-    invoke-virtual {p0, p1, p2}, Lvkf;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object p0
+    check-cast p1, Landroid/graphics/Bitmap;
 
-    check-cast p0, Lvkf;
+    sget v0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->A0:I
 
-    sget-object p1, Ljue;->a:Ljue;
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    invoke-virtual {p0, p1}, Lvkf;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-wide v0
 
-    move-result-object p0
+    iput-wide v0, p0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->x0:J
 
-    return-object p0
-.end method
+    iget-object v0, p0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->q0:Ltd7;
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 2
+    invoke-static {v0}, Ldoc;->b(Lam4;)V
 
-    new-instance v0, Lvkf;
+    iget-object p0, p0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->c:Lru/ok/messages/video/widgets/VideoFramePreview;
 
-    iget-object v1, p0, Lvkf;->w0:Lxkf;
+    iget-object v0, p0, Lru/ok/messages/video/widgets/VideoFramePreview;->o0:Landroidx/appcompat/widget/AppCompatImageView;
 
-    iget-object p0, p0, Lvkf;->Z:Lalf;
+    invoke-virtual {v0, p1}, Landroidx/appcompat/widget/AppCompatImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    invoke-direct {v0, v1, p0, p2}, Lvkf;-><init>(Lxkf;Lalf;Lkotlin/coroutines/Continuation;)V
+    const/4 p1, 0x0
 
-    iput-object p1, v0, Lvkf;->Y:Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lru/ok/messages/video/widgets/VideoFramePreview;->a(Z)V
 
-    return-object v0
-.end method
+    return-void
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 11
+    :pswitch_0
+    check-cast p1, Ljava/lang/Long;
 
-    sget-object v0, Lpu3;->a:Lpu3;
+    sget p1, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->A0:I
 
-    iget v1, p0, Lvkf;->X:I
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object v2, p0, Lvkf;->w0:Lxkf;
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    const/4 v3, 0x1
+    move-result-wide v0
 
-    if-eqz v1, :cond_1
+    iget-wide v2, p0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->x0:J
 
-    if-ne v1, v3, :cond_0
+    sub-long/2addr v0, v2
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    const-wide/16 v2, 0x3e8
 
-    goto :goto_0
+    cmp-long p1, v0, v2
+
+    if-lez p1, :cond_0
+
+    iget-object p0, p0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->c:Lru/ok/messages/video/widgets/VideoFramePreview;
+
+    const/4 p1, 0x1
+
+    invoke-virtual {p0, p1}, Lru/ok/messages/video/widgets/VideoFramePreview;->a(Z)V
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    return-void
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    nop
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lvkf;->Y:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/String;
-
-    new-instance v1, Ldlf;
-
-    iget-object v4, p0, Lvkf;->Z:Lalf;
-
-    iget-object v4, v4, Lalf;->a:Ljava/lang/String;
-
-    invoke-direct {v1, v4, p1}, Ldlf;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object p1, v2, Lxkf;->e:Lus0;
-
-    new-instance v4, Lf57;
-
-    iget-object v5, v2, Lxkf;->a:Lr57;
-
-    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object v6, Ldlf;->Companion:Lclf;
-
-    invoke-virtual {v6}, Lclf;->serializer()Ll77;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6, v1}, Lr57;->b(Ll77;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-object v5, p0, Lvkf;->x0:Ljava/lang/String;
-
-    invoke-direct {v4, v5, v1}, Lf57;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    iput v3, p0, Lvkf;->X:I
-
-    invoke-interface {p1, v4, p0}, Lkxc;->o(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v0, :cond_2
-
-    return-object v0
-
-    :cond_2
-    :goto_0
-    iget-object p1, v2, Lxkf;->f:Ljff;
-
-    if-eqz p1, :cond_3
-
-    iget-object v0, v2, Lxkf;->b:Lt97;
-
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    check-cast v1, Ltif;
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    iget-object v2, p0, Lvkf;->x0:Ljava/lang/String;
-
-    iget-wide v3, p1, Ljff;->a:J
-
-    iget-object v5, p1, Ljff;->b:Ljava/lang/String;
-
-    const/4 v6, 0x1
-
-    const/4 v7, 0x0
-
-    const/16 v10, 0xf0
-
-    invoke-static/range {v1 .. v10}, Ltif;->a(Ltif;Ljava/lang/String;JLjava/lang/String;ZILjava/lang/Integer;Ljava/lang/Integer;I)V
-
-    :cond_3
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,23 +1,47 @@
-.class public final Lrvd;
-.super Lu2;
+.class public abstract Lrvd;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final c:Lrvd;
+# instance fields
+.field public final a:I
+
+.field public final b:I
+
+.field public final c:J
+
+.field public final d:Ljava/lang/String;
+
+.field public final e:Ljava/lang/String;
+
+.field public final f:Ljo7;
+
+.field public final g:Ljava/util/HashMap;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(IIJLjava/lang/String;Ljava/lang/String;Ljo7;)V
+    .locals 1
 
-    new-instance v0, Lrvd;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0x8
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {v0, v1}, Lu2;-><init>(I)V
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    sput-object v0, Lrvd;->c:Lrvd;
+    iput-object v0, p0, Lrvd;->g:Ljava/util/HashMap;
+
+    iput p1, p0, Lrvd;->a:I
+
+    iput p2, p0, Lrvd;->b:I
+
+    iput-wide p3, p0, Lrvd;->c:J
+
+    iput-object p5, p0, Lrvd;->d:Ljava/lang/String;
+
+    iput-object p6, p0, Lrvd;->e:Ljava/lang/String;
+
+    iput-object p7, p0, Lrvd;->f:Ljo7;
 
     return-void
 .end method

@@ -1,6 +1,5 @@
 .class public interface abstract synthetic Landroid/window/OnBackInvokedCallback;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # direct methods

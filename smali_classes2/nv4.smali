@@ -1,61 +1,36 @@
-.class public final Lnv4;
+.class public final synthetic Lnv4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+
 
 # instance fields
+.field public final synthetic X:Ljava/lang/Object;
+
 .field public final synthetic a:I
 
-.field public b:I
+.field public final synthetic b:Landroid/view/View;
 
-.field public c:I
+.field public final synthetic c:Ljava/lang/Object;
 
-.field public d:I
-
-.field public e:I
+.field public final synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    const/4 v0, 0x3
-
-    iput v0, p0, Lnv4;->a:I
-
-    .line 2
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    .line 3
-    iput v0, p0, Lnv4;->b:I
-
-    .line 4
-    iput v0, p0, Lnv4;->c:I
-
-    .line 5
-    iput v0, p0, Lnv4;->d:I
-
-    .line 6
-    iput v0, p0, Lnv4;->e:I
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(IIIII)V
+.method public synthetic constructor <init>(Landroid/view/View;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
     .locals 0
 
-    .line 1
     iput p5, p0, Lnv4;->a:I
 
-    iput p1, p0, Lnv4;->b:I
+    iput-object p1, p0, Lnv4;->b:Landroid/view/View;
 
-    iput p2, p0, Lnv4;->c:I
+    iput-object p2, p0, Lnv4;->c:Ljava/lang/Object;
 
-    iput p3, p0, Lnv4;->d:I
+    iput-object p3, p0, Lnv4;->o:Ljava/lang/Object;
 
-    iput p4, p0, Lnv4;->e:I
+    iput-object p4, p0, Lnv4;->X:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -64,162 +39,343 @@
 
 
 # virtual methods
-.method public a(I)Z
-    .locals 2
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 12
 
     iget v0, p0, Lnv4;->a:I
 
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    iget-object v2, p0, Lnv4;->X:Ljava/lang/Object;
+
+    iget-object v3, p0, Lnv4;->o:Ljava/lang/Object;
+
+    iget-object v4, p0, Lnv4;->c:Ljava/lang/Object;
+
+    iget-object p0, p0, Lnv4;->b:Landroid/view/View;
+
+    const/4 v5, 0x0
+
     packed-switch v0, :pswitch_data_0
 
-    const/4 v0, 0x0
+    check-cast p0, Lyla;
 
-    const/4 v1, 0x1
+    check-cast v4, Landroid/graphics/RectF;
 
-    if-ne p1, v1, :cond_0
+    check-cast v3, Landroid/graphics/RectF;
 
-    iget p1, p0, Lnv4;->b:I
+    check-cast v2, Landroid/graphics/RectF;
 
-    iget p0, p0, Lnv4;->c:I
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-    sub-int/2addr p1, p0
+    move-result-object p1
 
-    if-le p1, v1, :cond_1
+    check-cast p1, Ljava/lang/Float;
+
+    iget-object v0, p0, Lyla;->a:Landroid/graphics/RectF;
+
+    invoke-virtual {v4, v0}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
+
+    iget v6, v3, Landroid/graphics/RectF;->left:F
+
+    iget v7, v2, Landroid/graphics/RectF;->left:F
+
+    sub-float/2addr v7, v6
+
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+
+    move-result v8
+
+    mul-float/2addr v8, v7
+
+    add-float/2addr v8, v6
+
+    iput v8, v0, Landroid/graphics/RectF;->left:F
+
+    iget v6, v3, Landroid/graphics/RectF;->top:F
+
+    iget v7, v2, Landroid/graphics/RectF;->top:F
+
+    sub-float/2addr v7, v6
+
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+
+    move-result v8
+
+    mul-float/2addr v8, v7
+
+    add-float/2addr v8, v6
+
+    iput v8, v0, Landroid/graphics/RectF;->top:F
+
+    iget v6, v3, Landroid/graphics/RectF;->right:F
+
+    iget v7, v2, Landroid/graphics/RectF;->right:F
+
+    sub-float/2addr v7, v6
+
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+
+    move-result v8
+
+    mul-float/2addr v8, v7
+
+    add-float/2addr v8, v6
+
+    iput v8, v0, Landroid/graphics/RectF;->right:F
+
+    iget v3, v3, Landroid/graphics/RectF;->bottom:F
+
+    iget v2, v2, Landroid/graphics/RectF;->bottom:F
+
+    sub-float/2addr v2, v3
+
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+
+    move-result p1
+
+    mul-float/2addr p1, v2
+
+    add-float/2addr p1, v3
+
+    iput p1, v0, Landroid/graphics/RectF;->bottom:F
+
+    invoke-virtual {p0}, Lyla;->b()V
+
+    iget-object p1, p0, Lyla;->I0:Lzla;
+
+    if-eqz p1, :cond_1
+
+    check-cast p1, Lone/me/image/crop/view/ImageCropView;
+
+    iget-object p1, p1, Lone/me/image/crop/view/ImageCropView;->a:Lfb6;
+
+    iget-object v2, p1, Lm37;->z0:Landroid/graphics/Matrix;
+
+    invoke-virtual {v2}, Landroid/graphics/Matrix;->reset()V
+
+    invoke-virtual {p1}, Lfze;->getCurrentScale()F
+
+    move-result v3
+
+    div-float/2addr v1, v3
+
+    invoke-virtual {v2, v1, v1}, Landroid/graphics/Matrix;->postScale(FF)Z
+
+    iget-object v1, p1, Lm37;->A0:Landroid/graphics/RectF;
+
+    invoke-virtual {v1, v4}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
+
+    invoke-virtual {v2, v1}, Landroid/graphics/Matrix;->mapRect(Landroid/graphics/RectF;)Z
+
+    iget-object v3, p1, Lfze;->q0:Landroid/graphics/Matrix;
+
+    const/4 v6, 0x2
+
+    invoke-static {v3, v6}, Lxqd;->o(Landroid/graphics/Matrix;I)F
+
+    move-result v7
+
+    sget-object v8, Lxqd;->d:[F
+
+    invoke-virtual {v3, v8}, Landroid/graphics/Matrix;->getValues([F)V
+
+    const/4 v9, 0x5
+
+    aget v10, v8, v9
+
+    iget v11, v4, Landroid/graphics/RectF;->left:F
+
+    sub-float/2addr v7, v11
+
+    iget v4, v4, Landroid/graphics/RectF;->top:F
+
+    sub-float/2addr v10, v4
+
+    new-array v4, v6, [F
+
+    aput v7, v4, v5
+
+    const/4 v7, 0x1
+
+    aput v10, v4, v7
+
+    invoke-virtual {v2, v4}, Landroid/graphics/Matrix;->mapPoints([F)V
+
+    invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
+
+    move-result v10
+
+    invoke-virtual {v1}, Landroid/graphics/RectF;->width()F
+
+    move-result v11
+
+    div-float/2addr v10, v11
+
+    invoke-virtual {v0}, Landroid/graphics/RectF;->height()F
+
+    move-result v11
+
+    invoke-virtual {v1}, Landroid/graphics/RectF;->height()F
+
+    move-result v1
+
+    div-float/2addr v11, v1
+
+    invoke-static {v10, v11}, Ljava/lang/Math;->max(FF)F
+
+    move-result v1
+
+    invoke-virtual {p1}, Lfze;->getCurrentScale()F
+
+    move-result v10
+
+    div-float/2addr v1, v10
+
+    invoke-virtual {v0}, Landroid/graphics/RectF;->centerX()F
+
+    move-result v10
+
+    invoke-virtual {v0}, Landroid/graphics/RectF;->centerY()F
+
+    move-result v11
+
+    invoke-virtual {v3, v1, v1, v10, v11}, Landroid/graphics/Matrix;->postScale(FFFF)Z
+
+    invoke-virtual {v3, v8}, Landroid/graphics/Matrix;->getValues([F)V
+
+    aget v1, v8, v6
+
+    neg-float v1, v1
+
+    invoke-virtual {v3, v8}, Landroid/graphics/Matrix;->getValues([F)V
+
+    aget v6, v8, v9
+
+    neg-float v6, v6
+
+    invoke-virtual {v3, v1, v6}, Landroid/graphics/Matrix;->postTranslate(FF)Z
+
+    invoke-virtual {v2}, Landroid/graphics/Matrix;->reset()V
+
+    invoke-virtual {p1}, Lfze;->getCurrentScale()F
+
+    move-result v1
+
+    invoke-virtual {v2, v1, v1}, Landroid/graphics/Matrix;->postScale(FF)Z
+
+    invoke-virtual {v2, v4}, Landroid/graphics/Matrix;->mapPoints([F)V
+
+    iget v1, v0, Landroid/graphics/RectF;->left:F
+
+    aget v2, v4, v5
+
+    add-float/2addr v1, v2
+
+    iget v2, v0, Landroid/graphics/RectF;->top:F
+
+    aget v4, v4, v7
+
+    add-float/2addr v2, v4
+
+    invoke-virtual {v3, v1, v2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
+
+    invoke-virtual {p1, v3}, Lfze;->setImageMatrix(Landroid/graphics/Matrix;)V
+
+    iget-object v1, p1, Lm37;->y0:Landroid/graphics/RectF;
+
+    invoke-virtual {v1, v0}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
+
+    invoke-virtual {p1}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    invoke-virtual {p1, v1, v0}, Lm37;->h(FF)V
 
     :goto_0
-    move v0, v1
+    invoke-virtual {p1}, Landroid/view/View;->postInvalidateOnAnimation()V
+
+    :cond_1
+    invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V
+
+    return-void
+
+    :pswitch_0
+    check-cast p0, Lqv4;
+
+    check-cast v4, [F
+
+    check-cast v3, [F
+
+    check-cast v2, [F
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Float;
+
+    :goto_1
+    const/16 v0, 0x9
+
+    if-ge v5, v0, :cond_2
+
+    aget v0, v3, v5
+
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+
+    move-result v6
+
+    sub-float v6, v1, v6
+
+    mul-float/2addr v6, v0
+
+    aget v0, v2, v5
+
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+
+    move-result v7
+
+    mul-float/2addr v7, v0
+
+    add-float/2addr v7, v6
+
+    aput v7, v4, v5
+
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
-    :cond_0
-    iget p1, p0, Lnv4;->d:I
-
-    iget p0, p0, Lnv4;->e:I
-
-    sub-int/2addr p1, p0
-
-    if-le p1, v1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    :goto_1
-    return v0
-
-    :pswitch_0
-    const/4 v0, 0x0
-
-    const/4 v1, 0x1
-
-    if-ne p1, v1, :cond_2
-
-    iget p1, p0, Lnv4;->b:I
-
-    iget p0, p0, Lnv4;->c:I
-
-    sub-int/2addr p1, p0
-
-    if-le p1, v1, :cond_3
-
-    :goto_2
-    move v0, v1
-
-    goto :goto_3
-
     :cond_2
-    iget p1, p0, Lnv4;->d:I
+    iget-object p1, p0, Lqv4;->o:Landroid/graphics/Matrix;
 
-    iget p0, p0, Lnv4;->e:I
+    invoke-virtual {p1, v4}, Landroid/graphics/Matrix;->setValues([F)V
 
-    sub-int/2addr p1, p0
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    if-le p1, v1, :cond_3
-
-    goto :goto_2
-
-    :cond_3
-    :goto_3
-    return v0
-
-    nop
+    return-void
 
     :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public b()I
-    .locals 0
-
-    iget p0, p0, Lnv4;->e:I
-
-    if-ltz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 2
-
-    iget v0, p0, Lnv4;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "MeasureResult{layoutWidth="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v1, p0, Lnv4;->b:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", layoutHeight="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lnv4;->c:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", imageWidth="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lnv4;->d:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", imageHeight="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget p0, p0, Lnv4;->e:I
-
-    const/16 v1, 0x7d
-
-    invoke-static {v0, p0, v1}, Lhr1;->h(Ljava/lang/StringBuilder;IC)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x3
+    .packed-switch 0x0
         :pswitch_0
     .end packed-switch
 .end method

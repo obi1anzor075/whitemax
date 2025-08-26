@@ -4,254 +4,324 @@
 
 
 # instance fields
-.field public final a:Landroid/util/Size;
+.field public a:I
 
-.field public final b:Landroid/graphics/Rect;
+.field public b:Ljava/lang/Object;
 
-.field public final c:Lhu1;
+.field public c:Ljava/lang/Object;
 
-.field public final d:I
+.field public d:Ljava/lang/Object;
 
-.field public final e:Z
+.field public e:Ljava/lang/Object;
+
+.field public f:Ljava/lang/Object;
+
+.field public g:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Landroid/util/Size;Landroid/graphics/Rect;Lhu1;IZ)V
+.method public constructor <init>(Landroid/content/Context;Ld74;Ltfc;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p1, :cond_1
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    iput-object p1, p0, Lya0;->a:Landroid/util/Size;
+    move-result-object p1
 
-    if-eqz p2, :cond_0
+    iput-object p1, p0, Lya0;->b:Ljava/lang/Object;
 
-    iput-object p2, p0, Lya0;->b:Landroid/graphics/Rect;
+    iput-object p2, p0, Lya0;->c:Ljava/lang/Object;
 
-    iput-object p3, p0, Lya0;->c:Lhu1;
+    iput-object p3, p0, Lya0;->d:Ljava/lang/Object;
 
-    iput p4, p0, Lya0;->d:I
+    const/4 p1, 0x0
 
-    iput-boolean p5, p0, Lya0;->e:Z
+    invoke-static {p1}, Lpaf;->o(Lil4;)Landroid/os/Handler;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lya0;->e:Ljava/lang/Object;
 
     return-void
-
-    :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    const-string p1, "Null inputCropRect"
-
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    const-string p1, "Null inputSize"
-
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public a()Lza0;
+    .locals 12
 
-    const/4 v0, 0x1
+    iget v0, p0, Lya0;->a:I
 
-    if-ne p1, p0, :cond_0
+    if-nez v0, :cond_0
 
-    return v0
+    const-string v0, " registrationStatus"
+
+    goto :goto_0
 
     :cond_0
-    instance-of v1, p1, Lya0;
+    const-string v0, ""
 
-    const/4 v2, 0x0
+    :goto_0
+    iget-object v1, p0, Lya0;->f:Ljava/lang/Object;
 
-    if-eqz v1, :cond_3
+    check-cast v1, Ljava/lang/Long;
 
-    check-cast p1, Lya0;
+    if-nez v1, :cond_1
 
-    iget-object v1, p1, Lya0;->a:Landroid/util/Size;
+    const-string v1, " expiresInSecs"
 
-    iget-object v3, p0, Lya0;->a:Landroid/util/Size;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {v3, v1}, Landroid/util/Size;->equals(Ljava/lang/Object;)Z
+    move-result-object v0
 
-    move-result v1
+    :cond_1
+    iget-object v1, p0, Lya0;->g:Ljava/lang/Object;
 
-    if-eqz v1, :cond_2
-
-    iget-object v1, p0, Lya0;->b:Landroid/graphics/Rect;
-
-    iget-object v3, p1, Lya0;->b:Landroid/graphics/Rect;
-
-    invoke-virtual {v1, v3}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    iget-object v1, p1, Lya0;->c:Lhu1;
-
-    iget-object v3, p0, Lya0;->c:Lhu1;
-
-    if-nez v3, :cond_1
+    check-cast v1, Ljava/lang/Long;
 
     if-nez v1, :cond_2
 
-    goto :goto_0
+    const-string v1, " tokenCreationEpochInSecs"
 
-    :cond_1
-    invoke-virtual {v3, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lzt1;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    :cond_2
+    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
-    :goto_0
-    iget v1, p0, Lya0;->d:I
+    new-instance v2, Lza0;
 
-    iget v3, p1, Lya0;->d:I
+    iget-object v0, p0, Lya0;->b:Ljava/lang/Object;
 
-    if-ne v1, v3, :cond_2
+    move-object v8, v0
 
-    iget-boolean p0, p0, Lya0;->e:Z
+    check-cast v8, Ljava/lang/String;
 
-    iget-boolean p1, p1, Lya0;->e:Z
+    iget v3, p0, Lya0;->a:I
 
-    if-ne p0, p1, :cond_2
+    iget-object v0, p0, Lya0;->c:Ljava/lang/Object;
 
-    goto :goto_1
+    move-object v9, v0
 
-    :cond_2
-    move v0, v2
+    check-cast v9, Ljava/lang/String;
 
-    :goto_1
-    return v0
+    iget-object v0, p0, Lya0;->d:Ljava/lang/Object;
+
+    move-object v10, v0
+
+    check-cast v10, Ljava/lang/String;
+
+    iget-object v0, p0, Lya0;->f:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v4
+
+    iget-object v0, p0, Lya0;->g:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v6
+
+    iget-object p0, p0, Lya0;->e:Ljava/lang/Object;
+
+    move-object v11, p0
+
+    check-cast v11, Ljava/lang/String;
+
+    invoke-direct/range {v2 .. v11}, Lza0;-><init>(IJJLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v2
 
     :cond_3
-    return v2
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Missing required properties:"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method
 
-.method public final hashCode()I
-    .locals 3
+.method public b()V
+    .locals 2
 
-    iget-object v0, p0, Lya0;->a:Landroid/util/Size;
+    iget-object v0, p0, Lya0;->d:Ljava/lang/Object;
 
-    invoke-virtual {v0}, Landroid/util/Size;->hashCode()I
+    check-cast v0, Ltfc;
+
+    iget-object v1, p0, Lya0;->b:Ljava/lang/Object;
+
+    check-cast v1, Landroid/content/Context;
+
+    invoke-virtual {v0, v1}, Ltfc;->a(Landroid/content/Context;)I
 
     move-result v0
 
-    const v1, 0xf4243
+    iget v1, p0, Lya0;->a:I
 
-    xor-int/2addr v0, v1
+    if-eq v1, v0, :cond_0
 
-    mul-int/2addr v0, v1
+    iput v0, p0, Lya0;->a:I
 
-    iget-object v2, p0, Lya0;->b:Landroid/graphics/Rect;
+    iget-object v1, p0, Lya0;->c:Ljava/lang/Object;
 
-    invoke-virtual {v2}, Landroid/graphics/Rect;->hashCode()I
+    check-cast v1, Ld74;
+
+    iget-object v1, v1, Ld74;->b:Ljava/lang/Object;
+
+    check-cast v1, Luo4;
+
+    invoke-virtual {v1, p0, v0}, Luo4;->b(Lya0;I)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public c()I
+    .locals 5
+
+    iget-object v0, p0, Lya0;->d:Ljava/lang/Object;
+
+    check-cast v0, Ltfc;
+
+    iget-object v1, p0, Lya0;->b:Ljava/lang/Object;
+
+    check-cast v1, Landroid/content/Context;
+
+    invoke-virtual {v0, v1}, Ltfc;->a(Landroid/content/Context;)I
 
     move-result v2
 
-    xor-int/2addr v0, v2
+    iput v2, p0, Lya0;->a:I
 
-    mul-int/2addr v0, v1
+    new-instance v2, Landroid/content/IntentFilter;
 
-    iget-object v2, p0, Lya0;->c:Lhu1;
+    invoke-direct {v2}, Landroid/content/IntentFilter;-><init>()V
 
-    if-nez v2, :cond_0
+    iget v0, v0, Ltfc;->a:I
 
-    const/4 v2, 0x0
+    and-int/lit8 v3, v0, 0x1
+
+    if-eqz v3, :cond_1
+
+    sget v3, Lpaf;->a:I
+
+    const/16 v4, 0x18
+
+    if-lt v3, v4, :cond_0
+
+    const-string v3, "connectivity"
+
+    invoke-virtual {v1, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/net/ConnectivityManager;
+
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v4, Lvfc;
+
+    invoke-direct {v4, p0}, Lvfc;-><init>(Lya0;)V
+
+    iput-object v4, p0, Lya0;->g:Ljava/lang/Object;
+
+    invoke-virtual {v3, v4}, Landroid/net/ConnectivityManager;->registerDefaultNetworkCallback(Landroid/net/ConnectivityManager$NetworkCallback;)V
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+    const-string v3, "android.net.conn.CONNECTIVITY_CHANGE"
 
-    move-result v2
+    invoke-virtual {v2, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+    :cond_1
     :goto_0
-    xor-int/2addr v0, v2
+    and-int/lit8 v3, v0, 0x8
 
-    mul-int/2addr v0, v1
+    if-eqz v3, :cond_2
 
-    iget v2, p0, Lya0;->d:I
+    const-string v3, "android.intent.action.ACTION_POWER_CONNECTED"
 
-    xor-int/2addr v0, v2
+    invoke-virtual {v2, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    mul-int/2addr v0, v1
+    const-string v3, "android.intent.action.ACTION_POWER_DISCONNECTED"
 
-    iget-boolean p0, p0, Lya0;->e:Z
+    invoke-virtual {v2, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    if-eqz p0, :cond_1
+    :cond_2
+    and-int/lit8 v3, v0, 0x4
 
-    const/16 p0, 0x4cf
+    if-eqz v3, :cond_4
+
+    sget v3, Lpaf;->a:I
+
+    const/16 v4, 0x17
+
+    if-lt v3, v4, :cond_3
+
+    const-string v3, "android.os.action.DEVICE_IDLE_MODE_CHANGED"
+
+    invoke-virtual {v2, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
     goto :goto_1
 
-    :cond_1
-    const/16 p0, 0x4d5
+    :cond_3
+    const-string v3, "android.intent.action.SCREEN_ON"
 
+    invoke-virtual {v2, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    const-string v3, "android.intent.action.SCREEN_OFF"
+
+    invoke-virtual {v2, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    :cond_4
     :goto_1
-    xor-int/2addr p0, v0
+    and-int/lit8 v0, v0, 0x10
+
+    if-eqz v0, :cond_5
+
+    const-string v0, "android.intent.action.DEVICE_STORAGE_LOW"
+
+    invoke-virtual {v2, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    const-string v0, "android.intent.action.DEVICE_STORAGE_OK"
+
+    invoke-virtual {v2, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    :cond_5
+    new-instance v0, Lrm;
+
+    const/16 v3, 0xb
+
+    invoke-direct {v0, v3, p0}, Lrm;-><init>(ILjava/lang/Object;)V
+
+    iput-object v0, p0, Lya0;->f:Ljava/lang/Object;
+
+    iget-object v3, p0, Lya0;->e:Ljava/lang/Object;
+
+    check-cast v3, Landroid/os/Handler;
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v1, v0, v2, v4, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
+
+    iget p0, p0, Lya0;->a:I
 
     return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "CameraInputInfo{inputSize="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lya0;->a:Landroid/util/Size;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", inputCropRect="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lya0;->b:Landroid/graphics/Rect;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", cameraInternal="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lya0;->c:Lhu1;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", rotationDegrees="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lya0;->d:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mirroring="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean p0, p0, Lya0;->e:Z
-
-    const-string v1, "}"
-
-    invoke-static {v0, p0, v1}, Lhr1;->j(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

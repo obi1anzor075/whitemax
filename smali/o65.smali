@@ -1,61 +1,102 @@
-.class public final Lo65;
+.class public final synthetic Lo65;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljm7;
+.implements Lkm7;
+.implements Lij3;
 
-# static fields
-.field public static final a:Lo65;
+
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:F
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(IF)V
+    .locals 0
 
-    new-instance v0, Lo65;
+    iput p1, p0, Lo65;->a:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Lo65;->b:F
 
-    sput-object v0, Lo65;->a:Lo65;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public accept(Ljava/lang/Object;)V
     .locals 1
 
-    const/4 v0, 0x1
+    iget v0, p0, Lo65;->a:I
 
-    if-ne p0, p1, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    return v0
+    check-cast p1, Lk2b;
 
-    :cond_0
-    instance-of p0, p1, Lo65;
+    invoke-virtual {p1}, Lk2b;->o0()V
 
-    if-nez p0, :cond_1
+    iget-object p1, p1, Lk2b;->a:Lh75;
 
-    const/4 p0, 0x0
+    iget p0, p0, Lo65;->b:F
 
-    return p0
+    invoke-virtual {p1, p0}, Lh75;->x1(F)V
 
-    :cond_1
-    return v0
+    return-void
+
+    :pswitch_0
+    iget p0, p0, Lo65;->b:F
+
+    check-cast p1, Lk2b;
+
+    invoke-virtual {p1, p0}, Lk2b;->j0(F)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x3
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final hashCode()I
-    .locals 0
+.method public invoke(Ljava/lang/Object;)V
+    .locals 1
 
-    const p0, -0x1b0269f
+    iget v0, p0, Lo65;->a:I
 
-    return p0
-.end method
+    iget p0, p0, Lo65;->b:F
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
+    packed-switch v0, :pswitch_data_0
 
-    const-string p0, "Removed"
+    check-cast p1, Lz0b;
 
-    return-object p0
+    invoke-interface {p1, p0}, Lz0b;->f(F)V
+
+    return-void
+
+    :pswitch_0
+    check-cast p1, Lz0b;
+
+    invoke-interface {p1, p0}, Lz0b;->f(F)V
+
+    return-void
+
+    :pswitch_1
+    check-cast p1, Ly0b;
+
+    invoke-interface {p1, p0}, Ly0b;->f(F)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

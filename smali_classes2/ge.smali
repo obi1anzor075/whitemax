@@ -1,282 +1,85 @@
-.class public abstract Lge;
-.super Ljava/lang/Object;
+.class public final Lge;
+.super Landroid/view/View;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lp7c;
-
-.field public static final b:Lp7c;
+# instance fields
+.field public final a:Landroid/graphics/Paint;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Landroid/content/Context;)V
     .locals 2
 
-    new-instance v0, Lp7c;
+    const/4 v0, 0x0
 
-    const-string v1, "[\\n\\r]"
+    const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lp7c;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1, v0, v1}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    sput-object v0, Lge;->a:Lp7c;
+    new-instance p1, Landroid/graphics/Paint;
 
-    new-instance v0, Lp7c;
+    invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
 
-    const-string v1, "\\s{2,}"
-
-    invoke-direct {v0, v1}, Lp7c;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lge;->b:Lp7c;
+    iput-object p1, p0, Lge;->a:Landroid/graphics/Paint;
 
     return-void
 .end method
 
-.method public static a(Landroid/text/Spannable;)Landroid/text/Spannable;
-    .locals 8
 
-    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
+# virtual methods
+.method public final onDraw(Landroid/graphics/Canvas;)V
+    .locals 4
 
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    goto/16 :goto_a
-
-    :cond_0
-    invoke-static {p0}, Lh0e;->B0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v0
 
-    if-nez v0, :cond_1
+    int-to-float v0, v0
 
-    new-instance p0, Landroid/text/SpannableString;
+    const/high16 v1, 0x40000000    # 2.0f
 
-    const-string v0, ""
+    div-float/2addr v0, v1
 
-    invoke-direct {p0, v0}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
-    goto/16 :goto_a
+    move-result v2
 
-    :cond_1
-    new-instance v0, Landroid/text/SpannableString;
+    int-to-float v2, v2
 
-    invoke-direct {v0, p0}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
+    div-float/2addr v2, v1
 
-    invoke-virtual {v0}, Landroid/text/SpannableString;->length()I
-
-    move-result p0
-
-    new-array v1, p0, [C
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v2, p0, v1, v2}, Landroid/text/SpannableString;->getChars(II[CI)V
-
-    aget-char v3, v1, v2
-
-    invoke-static {v3}, Ljava/lang/Character;->isSpaceChar(C)Z
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v3
 
-    const/16 v4, 0xa
+    int-to-float v3, v3
 
-    if-nez v3, :cond_3
+    div-float/2addr v3, v1
 
-    aget-char v3, v1, v2
+    iget-object v1, p0, Lge;->a:Landroid/graphics/Paint;
 
-    if-ne v3, v4, :cond_2
+    invoke-virtual {p1, v0, v2, v3, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    goto :goto_0
+    invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    :cond_2
-    move v3, v2
+    return-void
+.end method
 
-    goto :goto_2
+.method public final onMeasure(II)V
+    .locals 2
 
-    :cond_3
-    :goto_0
-    move v3, v2
-
-    :goto_1
-    if-ge v3, p0, :cond_5
-
-    aget-char v5, v1, v3
-
-    invoke-static {v5}, Ljava/lang/Character;->isSpaceChar(C)Z
-
-    move-result v5
-
-    if-nez v5, :cond_4
-
-    aget-char v5, v1, v3
-
-    if-ne v5, v4, :cond_5
-
-    :cond_4
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_1
-
-    :cond_5
-    :goto_2
-    add-int/lit8 v5, p0, -0x1
-
-    aget-char v6, v1, v5
-
-    invoke-static {v6}, Ljava/lang/Character;->isSpaceChar(C)Z
-
-    move-result v6
-
-    if-nez v6, :cond_7
-
-    aget-char v5, v1, v5
-
-    if-ne v5, v4, :cond_6
-
-    goto :goto_3
-
-    :cond_6
-    move v5, p0
-
-    goto :goto_5
-
-    :cond_7
-    :goto_3
-    move v5, p0
-
-    :goto_4
-    const/4 v6, 0x1
-
-    if-le v5, v6, :cond_9
-
-    add-int/lit8 v6, v5, -0x1
-
-    aget-char v7, v1, v6
-
-    invoke-static {v7}, Ljava/lang/Character;->isSpaceChar(C)Z
-
-    move-result v7
-
-    if-nez v7, :cond_8
-
-    aget-char v6, v1, v6
-
-    if-ne v6, v4, :cond_9
-
-    :cond_8
-    add-int/lit8 v5, v5, -0x1
-
-    goto :goto_4
-
-    :cond_9
-    :goto_5
-    if-nez v3, :cond_a
-
-    if-ne v5, p0, :cond_a
-
-    move-object p0, v0
-
-    goto :goto_a
-
-    :cond_a
-    invoke-virtual {v0, v3, v5}, Landroid/text/SpannableString;->subSequence(II)Ljava/lang/CharSequence;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/text/SpannableString;
-
-    invoke-virtual {p0}, Landroid/text/SpannableString;->length()I
+    invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    const-class v1, Ljava/lang/Object;
+    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
-    invoke-virtual {p0, v2, v0, v1}, Landroid/text/SpannableString;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
+    move-result v1
 
-    move-result-object v0
+    invoke-virtual {p0, v0, v1}, Landroid/view/View;->setMeasuredDimension(II)V
 
-    :goto_6
-    array-length v1, v0
+    invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
 
-    if-ge v2, v1, :cond_f
-
-    add-int/lit8 v1, v2, 0x1
-
-    :try_start_0
-    aget-object v2, v0, v2
-    :try_end_0
-    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
-
-    if-eqz v2, :cond_c
-
-    invoke-virtual {p0, v2}, Landroid/text/SpannableString;->getSpanStart(Ljava/lang/Object;)I
-
-    move-result v3
-
-    invoke-virtual {p0, v2}, Landroid/text/SpannableString;->getSpanEnd(Ljava/lang/Object;)I
-
-    move-result v4
-
-    const/4 v5, -0x1
-
-    if-eq v3, v5, :cond_e
-
-    invoke-virtual {p0}, Landroid/text/SpannableString;->length()I
-
-    move-result v6
-
-    if-le v3, v6, :cond_b
-
-    goto :goto_9
-
-    :cond_b
-    if-eq v4, v5, :cond_d
-
-    invoke-virtual {p0}, Landroid/text/SpannableString;->length()I
-
-    move-result v3
-
-    if-le v4, v3, :cond_c
-
-    goto :goto_8
-
-    :cond_c
-    :goto_7
-    move v2, v1
-
-    goto :goto_6
-
-    :cond_d
-    :goto_8
-    invoke-virtual {p0, v2}, Landroid/text/SpannableString;->removeSpan(Ljava/lang/Object;)V
-
-    goto :goto_7
-
-    :cond_e
-    :goto_9
-    invoke-virtual {p0, v2}, Landroid/text/SpannableString;->removeSpan(Ljava/lang/Object;)V
-
-    goto :goto_7
-
-    :catch_0
-    move-exception p0
-
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_f
-    :goto_a
-    return-object p0
+    return-void
 .end method

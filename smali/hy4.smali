@@ -1,181 +1,127 @@
-.class public abstract Lhy4;
-.super Ljava/lang/Object;
+.class public final Lhy4;
+.super Low4;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Lcom/google/android/material/textfield/TextInputLayout;
+.field public final synthetic a:I
 
-.field public final b:Lgy4;
-
-.field public final c:Landroid/content/Context;
-
-.field public final d:Lcom/google/android/material/internal/CheckableImageButton;
+.field public final b:Ljava/lang/ref/WeakReference;
 
 
 # direct methods
-.method public constructor <init>(Lgy4;)V
+.method public constructor <init>(Landroid/widget/EditText;)V
     .locals 1
 
+    const/4 v0, 0x0
+
+    iput v0, p0, Lhy4;->a:I
+
+    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p1, Lgy4;->a:Lcom/google/android/material/textfield/TextInputLayout;
+    .line 2
+    new-instance v0, Ljava/lang/ref/WeakReference;
 
-    iput-object v0, p0, Lhy4;->a:Lcom/google/android/material/textfield/TextInputLayout;
+    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object p1, p0, Lhy4;->b:Lgy4;
+    iput-object v0, p0, Lhy4;->b:Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    return-void
+.end method
 
-    move-result-object v0
+.method public constructor <init>(Landroidx/appcompat/widget/SwitchCompat;)V
+    .locals 1
 
-    iput-object v0, p0, Lhy4;->c:Landroid/content/Context;
+    const/4 v0, 0x1
 
-    iget-object p1, p1, Lgy4;->y0:Lcom/google/android/material/internal/CheckableImageButton;
+    iput v0, p0, Lhy4;->a:I
 
-    iput-object p1, p0, Lhy4;->d:Lcom/google/android/material/internal/CheckableImageButton;
+    .line 3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 4
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lhy4;->b:Ljava/lang/ref/WeakReference;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
+.method public h(Ljava/lang/Throwable;)V
     .locals 0
+
+    iget p1, p0, Lhy4;->a:I
+
+    packed-switch p1, :pswitch_data_0
 
     return-void
-.end method
 
-.method public b()V
-    .locals 0
+    :pswitch_0
+    iget-object p0, p0, Lhy4;->b:Ljava/lang/ref/WeakReference;
 
+    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroidx/appcompat/widget/SwitchCompat;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Landroidx/appcompat/widget/SwitchCompat;->d()V
+
+    :cond_0
     return-void
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public c()I
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public d()I
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public e()Landroid/view/View$OnFocusChangeListener;
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public f()Landroid/view/View$OnClickListener;
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public g()Landroid/view/View$OnFocusChangeListener;
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public h()Lr34;
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public i(I)Z
-    .locals 0
-
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public j()Z
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public k()Z
-    .locals 0
-
-    instance-of p0, p0, Lkp4;
-
-    return p0
-.end method
-
-.method public l()Z
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public m(Landroid/widget/EditText;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public n(Ll4;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public o(Landroid/view/accessibility/AccessibilityEvent;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public p(Z)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final q()V
+.method public final i()V
     .locals 1
 
-    iget-object p0, p0, Lhy4;->b:Lgy4;
+    iget v0, p0, Lhy4;->a:I
 
-    const/4 v0, 0x0
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p0, v0}, Lgy4;->f(Z)V
+    iget-object p0, p0, Lhy4;->b:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroidx/appcompat/widget/SwitchCompat;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Landroidx/appcompat/widget/SwitchCompat;->d()V
+
+    :cond_0
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lhy4;->b:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/widget/EditText;
+
+    const/4 v0, 0x1
+
+    invoke-static {p0, v0}, Ljy4;->a(Landroid/widget/EditText;I)V
 
     return-void
-.end method
 
-.method public r()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public s()V
-    .locals 0
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

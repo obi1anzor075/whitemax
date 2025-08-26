@@ -68,12 +68,11 @@
     :cond_0
     iput-object v1, p0, Lorg/webrtc/RtpSender;->dtmfSender:Lorg/webrtc/DtmfSender;
 
-    goto :goto_0
+    return-void
 
     :cond_1
     iput-object v1, p0, Lorg/webrtc/RtpSender;->dtmfSender:Lorg/webrtc/DtmfSender;
 
-    :goto_0
     return-void
 .end method
 

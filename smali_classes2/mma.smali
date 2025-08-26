@@ -1,35 +1,32 @@
-.class public final Lmma;
+.class public abstract Lmma;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:J
+.field public final a:I
 
-.field public final b:Ljava/lang/String;
+.field public final b:[B
 
-.field public final c:J
-
-.field public final d:Ljava/lang/String;
-
-.field public final e:Ljava/util/Map;
+.field public final c:I
 
 
 # direct methods
-.method public constructor <init>(JLjava/lang/String;JLjava/lang/String;Ljava/util/Map;)V
+.method public constructor <init>([BII)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Lmma;->a:J
+    iput-object p1, p0, Lmma;->b:[B
 
-    iput-object p3, p0, Lmma;->b:Ljava/lang/String;
+    iput p2, p0, Lmma;->a:I
 
-    iput-wide p4, p0, Lmma;->c:J
-
-    iput-object p6, p0, Lmma;->d:Ljava/lang/String;
-
-    iput-object p7, p0, Lmma;->e:Ljava/util/Map;
+    iput p3, p0, Lmma;->c:I
 
     return-void
+.end method
+
+
+# virtual methods
+.method public abstract a(I)S
 .end method

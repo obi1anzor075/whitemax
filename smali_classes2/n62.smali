@@ -1,97 +1,111 @@
-.class public final enum Ln62;
-.super Ljava/lang/Enum;
+.class public final Ln62;
+.super Lqde;
 .source "SourceFile"
 
+# interfaces
+.implements Ll66;
 
-# static fields
-.field public static final synthetic X:[Ln62;
 
-.field public static final enum a:Ln62;
+# instance fields
+.field public synthetic X:Ljava/lang/Object;
 
-.field public static final enum b:Ln62;
-
-.field public static final enum c:Ln62;
-
-.field public static final enum o:Ln62;
+.field public final synthetic Y:Lf72;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public constructor <init>(Lf72;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    new-instance v0, Ln62;
+    iput-object p1, p0, Ln62;->Y:Lf72;
 
-    const-string v1, "DIALOG"
+    const/4 p1, 0x2
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ln62;->a:Ln62;
-
-    new-instance v1, Ln62;
-
-    const-string v2, "CHAT"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Ln62;->b:Ln62;
-
-    new-instance v2, Ln62;
-
-    const-string v3, "CHANNEL"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Ln62;->c:Ln62;
-
-    new-instance v3, Ln62;
-
-    const-string v4, "GROUP_CHAT"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Ln62;->o:Ln62;
-
-    filled-new-array {v0, v1, v2, v3}, [Ln62;
-
-    move-result-object v0
-
-    sput-object v0, Ln62;->X:[Ln62;
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Ln62;
-    .locals 1
 
-    const-class v0, Ln62;
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    check-cast p1, Ll22;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Ln62;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
     check-cast p0, Ln62;
 
-    return-object p0
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Ln62;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
 .end method
 
-.method public static values()[Ln62;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .locals 1
 
-    sget-object v0, Ln62;->X:[Ln62;
+    new-instance v0, Ln62;
 
-    invoke-virtual {v0}, [Ln62;->clone()Ljava/lang/Object;
+    iget-object p0, p0, Ln62;->Y:Lf72;
 
-    move-result-object v0
+    invoke-direct {v0, p0, p2}, Ln62;-><init>(Lf72;Lkotlin/coroutines/Continuation;)V
 
-    check-cast v0, [Ln62;
+    iput-object p1, v0, Ln62;->X:Ljava/lang/Object;
 
     return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Ln62;->X:Ljava/lang/Object;
+
+    check-cast p1, Ll22;
+
+    iget-object p0, p0, Ln62;->Y:Lf72;
+
+    iget-object v0, p0, Lw12;->i:Lazd;
+
+    invoke-virtual {v0}, Lazd;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ll22;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, v1, Ll22;->b:Lk22;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
+    sget-object v2, Lk22;->b:Lk22;
+
+    if-ne v1, v2, :cond_1
+
+    invoke-virtual {v0, p1}, Lazd;->setValue(Ljava/lang/Object;)V
+
+    :cond_1
+    sget-object p1, Lf72;->z:[Lbc7;
+
+    invoke-virtual {p0}, Lf72;->t()Lv12;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lw12;->d(Lv12;)V
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

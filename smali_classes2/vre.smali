@@ -1,174 +1,64 @@
 .class public final Lvre;
-.super Lure;
+.super Lccc;
 .source "SourceFile"
+
+# interfaces
+.implements Lzke;
 
 
 # instance fields
-.field public b:Z
-
-.field public c:Ljava/util/Iterator;
-
-.field public d:Z
-
-.field public final synthetic e:Llf5;
+.field public final B0:Landroidx/appcompat/widget/AppCompatTextView;
 
 
 # direct methods
-.method public constructor <init>(Llf5;Ljava/lang/Object;)V
-    .locals 0
+.method public constructor <init>(Landroid/view/View;)V
+    .locals 1
 
-    iput-object p1, p0, Lvre;->e:Llf5;
+    invoke-direct {p0, p1}, Lccc;-><init>(Landroid/view/View;)V
 
-    iget-object p1, p1, Llf5;->X:Ldyc;
+    move-object v0, p1
 
-    invoke-direct {p0, p2}, Lzre;-><init>(Ljava/lang/Object;)V
+    check-cast v0, Landroidx/appcompat/widget/AppCompatTextView;
+
+    iput-object v0, p0, Lvre;->B0:Landroidx/appcompat/widget/AppCompatTextView;
+
+    invoke-virtual {p1}, Landroid/view/View;->isInEditMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget-object p1, Lle4;->e0:Lle4;
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    sget-object v0, Lvke;->a0:Lwfe;
+
+    invoke-static {p1}, Lp54;->M(Landroid/content/Context;)Lvke;
+
+    move-result-object p1
+
+    :goto_0
+    invoke-virtual {p0, p1}, Lvre;->z(Lvke;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 8
+.method public final z(Lvke;)V
+    .locals 0
 
-    iget-boolean v0, p0, Lvre;->d:Z
+    iget-object p0, p0, Lvre;->B0:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const/4 v1, 0x1
+    iget p1, p1, Lvke;->F:I
 
-    const/4 v2, 0x0
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    iget-object v3, p0, Lvre;->e:Llf5;
-
-    iget-object v4, p0, Lzre;->a:Ljava/lang/Object;
-
-    if-nez v0, :cond_3
-
-    iget-object v0, p0, Lvre;->c:Ljava/util/Iterator;
-
-    if-nez v0, :cond_3
-
-    iget-object v0, v3, Llf5;->X:Ldyc;
-
-    check-cast v0, Lase;
-
-    iget-object v0, v0, Lase;->d:Lu16;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, v4}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return-object v2
-
-    :cond_0
-    iget-object v0, v3, Llf5;->X:Ldyc;
-
-    check-cast v0, Lase;
-
-    iget-object v0, v0, Lase;->b:Lu16;
-
-    invoke-interface {v0, v4}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldyc;
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v0}, Ldyc;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_1
-    move-object v0, v2
-
-    :goto_0
-    iput-object v0, p0, Lvre;->c:Ljava/util/Iterator;
-
-    if-nez v0, :cond_3
-
-    iget-object v0, v3, Llf5;->X:Ldyc;
-
-    check-cast v0, Lase;
-
-    iget-object v0, v0, Lase;->f:Li26;
-
-    if-eqz v0, :cond_2
-
-    new-instance v5, Ljava/lang/IllegalStateException;
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    const-string v7, "Cannot list leafs of "
-
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-direct {v5, v6}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    invoke-interface {v0, v4, v5}, Li26;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_2
-    iput-boolean v1, p0, Lvre;->d:Z
-
-    :cond_3
-    iget-object v0, p0, Lvre;->c:Ljava/util/Iterator;
-
-    if-eqz v0, :cond_4
-
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-ne v0, v1, :cond_4
-
-    iget-object p0, p0, Lvre;->c:Ljava/util/Iterator;
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto :goto_1
-
-    :cond_4
-    iget-boolean v0, p0, Lvre;->b:Z
-
-    if-nez v0, :cond_5
-
-    iput-boolean v1, p0, Lvre;->b:Z
-
-    move-object v2, v4
-
-    goto :goto_1
-
-    :cond_5
-    iget-object p0, v3, Llf5;->X:Ldyc;
-
-    check-cast p0, Lase;
-
-    iget-object p0, p0, Lase;->e:Lu16;
-
-    if-eqz p0, :cond_6
-
-    invoke-interface {p0, v4}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_6
-    :goto_1
-    return-object v2
+    return-void
 .end method

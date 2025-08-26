@@ -1,201 +1,361 @@
-.class public final Lql8;
+.class public final synthetic Lql8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnKeyListener;
-.implements Landroid/content/DialogInterface$OnClickListener;
-.implements Landroid/content/DialogInterface$OnDismissListener;
-.implements Lgm8;
+.implements Lv56;
 
 
 # instance fields
-.field public a:Lpl8;
+.field public final synthetic a:I
 
-.field public b:Luc;
+.field public final synthetic b:Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;
 
-.field public c:Lrg7;
+
+# direct methods
+.method public synthetic constructor <init>(Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;I)V
+    .locals 0
+
+    iput p2, p0, Lql8;->a:I
+
+    iput-object p1, p0, Lql8;->b:Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final f(Lpl8;Z)V
-    .locals 0
+.method public final invoke()Ljava/lang/Object;
+    .locals 13
 
-    if-nez p2, :cond_0
+    iget v0, p0, Lql8;->a:I
 
-    iget-object p2, p0, Lql8;->a:Lpl8;
+    const/4 v1, 0x0
 
-    if-ne p1, p2, :cond_1
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    iget-object p0, p0, Lql8;->b:Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;
+
+    packed-switch v0, :pswitch_data_0
+
+    sget-object v0, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->Y:[Lbc7;
+
+    new-instance v0, Lyk8;
+
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+
+    move-result-object v4
+
+    invoke-direct {v0, v4}, Lyk8;-><init>(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->p0()Lil8;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v5, v4, Lil8;->Z:Lje7;
+
+    invoke-static {}, Lxja;->i()Lkl7;
+
+    move-result-object v6
+
+    sget-object v7, Lll8;->a:Lll8;
+
+    invoke-virtual {v6, v7}, Lkl7;->add(Ljava/lang/Object;)Z
+
+    iget-object v7, v4, Lil8;->o0:Lje7;
+
+    invoke-interface {v7}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Lbx2;
+
+    iget-wide v8, v4, Lil8;->c:J
+
+    check-cast v7, Lcy2;
+
+    invoke-virtual {v7, v8, v9}, Lcy2;->P(J)Lu5c;
+
+    move-result-object v4
+
+    iget-object v4, v4, Lu5c;->a:Ltyd;
+
+    invoke-interface {v4}, Ltyd;->getValue()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ly42;
+
+    if-nez v4, :cond_0
+
+    goto :goto_2
 
     :cond_0
-    iget-object p0, p0, Lql8;->b:Luc;
+    iget-object v7, v4, Ly42;->b:Lj92;
 
-    if-eqz p0, :cond_1
+    iget-wide v7, v7, Lj92;->a:J
 
-    invoke-virtual {p0}, Lfn;->dismiss()V
+    const-wide/16 v9, 0x0
+
+    cmp-long v7, v7, v9
+
+    if-eqz v7, :cond_1
+
+    move v7, v3
+
+    goto :goto_0
 
     :cond_1
-    return-void
-.end method
+    move v7, v2
 
-.method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 1
+    :goto_0
+    invoke-virtual {v4}, Ly42;->L()Z
 
-    iget-object p1, p0, Lql8;->c:Lrg7;
+    move-result v8
 
-    iget-object v0, p1, Lrg7;->Z:Lqg7;
+    if-eqz v8, :cond_2
 
-    if-nez v0, :cond_0
+    invoke-virtual {v4}, Ly42;->G()Z
 
-    new-instance v0, Lqg7;
+    move-result v4
 
-    invoke-direct {v0, p1}, Lqg7;-><init>(Lrg7;)V
+    if-nez v4, :cond_2
 
-    iput-object v0, p1, Lrg7;->Z:Lqg7;
-
-    :cond_0
-    iget-object p1, p1, Lrg7;->Z:Lqg7;
-
-    invoke-virtual {p1, p2}, Lqg7;->b(I)Lul8;
-
-    move-result-object p1
-
-    iget-object p0, p0, Lql8;->a:Lpl8;
-
-    const/4 p2, 0x0
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, v0, p2}, Lpl8;->q(Landroid/view/MenuItem;Lhm8;I)Z
-
-    return-void
-.end method
-
-.method public final onDismiss(Landroid/content/DialogInterface;)V
-    .locals 1
-
-    iget-object p1, p0, Lql8;->c:Lrg7;
-
-    iget-object p0, p0, Lql8;->a:Lpl8;
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p1, p0, v0}, Lrg7;->f(Lpl8;Z)V
-
-    return-void
-.end method
-
-.method public final onKey(Landroid/content/DialogInterface;ILandroid/view/KeyEvent;)Z
-    .locals 3
-
-    const/16 v0, 0x52
-
-    iget-object v1, p0, Lql8;->a:Lpl8;
-
-    if-eq p2, v0, :cond_0
-
-    const/4 v0, 0x4
-
-    if-ne p2, v0, :cond_2
-
-    :cond_0
-    invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
-
-    move-result v0
-
-    const/4 v2, 0x1
-
-    if-nez v0, :cond_1
-
-    invoke-virtual {p3}, Landroid/view/KeyEvent;->getRepeatCount()I
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    iget-object p1, p0, Lql8;->b:Luc;
-
-    invoke-virtual {p1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_2
-
-    invoke-virtual {p1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_2
-
-    invoke-virtual {p1}, Landroid/view/View;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_2
-
-    invoke-virtual {p1, p3, p0}, Landroid/view/KeyEvent$DispatcherState;->startTracking(Landroid/view/KeyEvent;Ljava/lang/Object;)V
-
-    return v2
-
-    :cond_1
-    invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
-
-    move-result v0
-
-    if-ne v0, v2, :cond_2
-
-    invoke-virtual {p3}, Landroid/view/KeyEvent;->isCanceled()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    iget-object p0, p0, Lql8;->b:Luc;
-
-    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_2
-
-    invoke-virtual {p0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_2
-
-    invoke-virtual {p0}, Landroid/view/View;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_2
-
-    invoke-virtual {p0, p3}, Landroid/view/KeyEvent$DispatcherState;->isTracking(Landroid/view/KeyEvent;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_2
-
-    invoke-virtual {v1, v2}, Lpl8;->c(Z)V
-
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
-
-    return v2
+    goto :goto_1
 
     :cond_2
-    const/4 p0, 0x0
+    move v3, v2
 
-    invoke-virtual {v1, p2, p3, p0}, Lpl8;->performShortcut(ILandroid/view/KeyEvent;I)Z
+    :goto_1
+    invoke-interface {v5}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ld6d;
+
+    check-cast v4, Lvwc;
+
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object v8, Lru/ok/tamtam/android/prefs/PmsKey;->money-transfer-botid:Lru/ok/tamtam/android/prefs/PmsKey;
+
+    invoke-virtual {v4, v8, v9, v10}, Lvwc;->n(Ljava/lang/Enum;J)J
+
+    move-result-wide v11
+
+    cmp-long v4, v11, v9
+
+    if-eqz v4, :cond_3
+
+    if-eqz v3, :cond_3
+
+    if-eqz v7, :cond_3
+
+    sget-object v3, Lnl8;->a:Lnl8;
+
+    invoke-virtual {v6, v3}, Lkl7;->add(Ljava/lang/Object;)Z
+
+    :cond_3
+    :goto_2
+    invoke-interface {v5}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ld6d;
+
+    check-cast v3, Lvwc;
+
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object v4, Lru/ok/tamtam/android/prefs/PmsKey;->send-location-enabled:Lru/ok/tamtam/android/prefs/PmsKey;
+
+    invoke-virtual {v3, v4, v2}, Lvwc;->k(Ljava/lang/Enum;Z)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4
+
+    sget-object v2, Lml8;->a:Lml8;
+
+    invoke-virtual {v6, v2}, Lkl7;->add(Ljava/lang/Object;)Z
+
+    :cond_4
+    sget-object v2, Ljl8;->a:Ljl8;
+
+    invoke-virtual {v6, v2}, Lkl7;->add(Ljava/lang/Object;)Z
+
+    sget-object v2, Lkl8;->a:Lkl8;
+
+    invoke-virtual {v6, v2}, Lkl7;->add(Ljava/lang/Object;)Z
+
+    invoke-static {v6}, Lxja;->b(Ljava/util/List;)Lkl7;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lyk8;->setState(Ljava/util/List;)V
+
+    new-instance v3, Ltl8;
+
+    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->p0()Lil8;
+
+    move-result-object v5
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    const/4 v4, 0x1
+
+    const-class v6, Lil8;
+
+    const-string v7, "onButtonClicked"
+
+    const-string v8, "onButtonClicked(Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerViewState$Button;)V"
+
+    invoke-direct/range {v3 .. v10}, Ltl8;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
+
+    invoke-virtual {v0, v3}, Lyk8;->setOnClickListener(Lx56;)V
+
+    invoke-virtual {v0}, Landroid/view/View;->isAttachedToWindow()Z
 
     move-result p0
 
-    return p0
-.end method
+    if-eqz p0, :cond_6
 
-.method public final x(Lpl8;)Z
-    .locals 0
+    invoke-virtual {v0}, Landroid/view/View;->getRootWindowInsets()Landroid/view/WindowInsets;
 
-    const/4 p0, 0x0
+    move-result-object p0
 
-    return p0
+    invoke-static {v1, p0}, Lb8g;->f(Landroid/view/View;Landroid/view/WindowInsets;)Lb8g;
+
+    move-result-object p0
+
+    iget-object p0, p0, Lb8g;->a:Lz7g;
+
+    const/4 v1, 0x2
+
+    invoke-virtual {p0, v1}, Lz7g;->f(I)Ln27;
+
+    move-result-object p0
+
+    iget p0, p0, Ln27;->d:I
+
+    if-lez p0, :cond_5
+
+    int-to-float p0, v1
+
+    :goto_3
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr p0, v1
+
+    invoke-static {p0}, Lkhg;->x(F)I
+
+    move-result p0
+
+    goto :goto_4
+
+    :cond_5
+    const/16 p0, 0x8
+
+    int-to-float p0, p0
+
+    goto :goto_3
+
+    :goto_4
+    invoke-virtual {v0}, Landroid/view/View;->getPaddingLeft()I
+
+    move-result v1
+
+    invoke-virtual {v0}, Landroid/view/View;->getPaddingTop()I
+
+    move-result v2
+
+    invoke-virtual {v0}, Landroid/view/View;->getPaddingRight()I
+
+    move-result v3
+
+    invoke-virtual {v0, v1, v2, v3, p0}, Landroid/view/View;->setPadding(IIII)V
+
+    goto :goto_5
+
+    :cond_6
+    new-instance p0, La50;
+
+    const/4 v1, 0x6
+
+    invoke-direct {p0, v0, v1, v0}, La50;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-virtual {v0, p0}, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+
+    :goto_5
+    return-object v0
+
+    :pswitch_0
+    new-instance v0, Lil8;
+
+    iget-object v4, p0, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->b:Lvr;
+
+    sget-object v5, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->Y:[Lbc7;
+
+    aget-object v3, v5, v3
+
+    invoke-virtual {v4, p0}, Lvr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lzsc;
+
+    iget-object v3, v3, Lzsc;->a:Ljava/lang/String;
+
+    const-class v4, Lgl8;
+
+    invoke-virtual {p0, v3, v4, v1}, Lone/me/sdk/arch/Widget;->getSharedViewModel-cp94BC8(Ljava/lang/String;Ljava/lang/Class;Lv56;)Lje7;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lgl8;
+
+    iget-object v3, p0, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->a:Lvr;
+
+    aget-object v2, v5, v2
+
+    invoke-virtual {v3, p0}, Lvr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/Number;
+
+    invoke-virtual {p0}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide v2
+
+    invoke-direct {v0, v1, v2, v3}, Lil8;-><init>(Lgl8;J)V
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

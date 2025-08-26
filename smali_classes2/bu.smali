@@ -1,118 +1,99 @@
-.class public final synthetic Lbu;
-.super Ljava/lang/Object;
+.class public final Lbu;
+.super Llje;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:J
 
-.field public final synthetic b:Lvc2;
-
-.field public final synthetic c:Lrg6;
+.field public o:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lvc2;Lxm8;I)V
+.method public constructor <init>(Ldx8;)V
     .locals 0
 
-    iput p3, p0, Lbu;->a:I
-
-    iput-object p1, p0, Lbu;->b:Lvc2;
-
-    iput-object p2, p0, Lbu;->c:Lrg6;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Llje;-><init>(Ldx8;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final c(Ldx8;Ljava/lang/String;)V
+    .locals 2
 
-    iget v0, p0, Lbu;->a:I
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    packed-switch v0, :pswitch_data_0
+    const-string v0, "success"
 
-    iget-object v0, p0, Lbu;->c:Lrg6;
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    iget-object p0, p0, Lbu;->b:Lvc2;
+    move-result v0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-nez v0, :cond_1
 
-    :try_start_0
-    iget-object v1, p0, Lvc2;->b:Ljh6;
+    const-string v0, "updateTime"
 
-    invoke-virtual {v1, v0}, Ljh6;->r(Lrg6;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    goto :goto_0
+    move-result p2
 
-    :catchall_0
-    move-exception v0
+    if-nez p2, :cond_0
 
-    iget-object v1, p0, Lvc2;->a:Ljava/lang/String;
+    invoke-virtual {p1}, Ldx8;->B()V
 
-    const-string v2, "updateHistoryItemSync: exception"
-
-    invoke-static {v1, v2, v0}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    new-instance v1, Lru/ok/tamtam/util/HandledException;
-
-    invoke-direct {v1, v0}, Lru/ok/tamtam/util/HandledException;-><init>(Ljava/lang/Throwable;)V
-
-    iget-object p0, p0, Lvc2;->Y:Lg15;
-
-    invoke-interface {p0, v1}, Lg15;->a(Ljava/lang/Throwable;)V
-
-    :goto_0
     return-void
 
-    :pswitch_0
-    iget-object v0, p0, Lbu;->c:Lrg6;
+    :cond_0
+    const-wide/16 v0, 0x0
 
-    iget-object p0, p0, Lbu;->b:Lvc2;
+    invoke-static {p1, v0, v1}, Lxq7;->c0(Ldx8;J)J
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-wide p1
 
-    :try_start_1
-    iget-object v1, p0, Lvc2;->b:Ljh6;
+    iput-wide p1, p0, Lbu;->X:J
 
-    invoke-virtual {v1, v0}, Ljh6;->b(Lrg6;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    goto :goto_1
-
-    :catchall_1
-    move-exception v0
-
-    iget-object v1, p0, Lvc2;->a:Ljava/lang/String;
-
-    const-string v2, "addHistoryItem: exception"
-
-    invoke-static {v1, v2, v0}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    new-instance v1, Lru/ok/tamtam/util/HandledException;
-
-    invoke-direct {v1, v0}, Lru/ok/tamtam/util/HandledException;-><init>(Ljava/lang/Throwable;)V
-
-    iget-object p0, p0, Lvc2;->Y:Lg15;
-
-    invoke-interface {p0, v1}, Lg15;->a(Ljava/lang/Throwable;)V
-
-    :goto_1
     return-void
 
-    nop
+    :cond_1
+    invoke-static {p1}, Lxq7;->W(Ldx8;)Z
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    move-result p1
+
+    iput-boolean p1, p0, Lbu;->o:Z
+
+    return-void
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 4
+
+    iget-boolean v0, p0, Lbu;->o:Z
+
+    iget-wide v1, p0, Lbu;->X:J
+
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    const-string v3, "Response{success="
+
+    invoke-direct {p0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, ", updateTime="
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

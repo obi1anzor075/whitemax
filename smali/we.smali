@@ -1,127 +1,144 @@
-.class public final synthetic Lwe;
+.class public final Lwe;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Liq6;
 
+# static fields
+.field public static final a:Lcom/facebook/animated/gif/GifImage;
 
-# instance fields
-.field public final synthetic a:Lcom/facebook/fresco/animation/factory/AnimatedFactoryV2Impl;
+.field public static final b:Lcom/facebook/animated/gif/GifImage;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/facebook/fresco/animation/factory/AnimatedFactoryV2Impl;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lwe;->a:Lcom/facebook/fresco/animation/factory/AnimatedFactoryV2Impl;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Lax4;ILtjb;Lgq6;)Lb13;
+.method static constructor <clinit>()V
     .locals 2
 
-    iget-object p0, p0, Lwe;->a:Lcom/facebook/fresco/animation/factory/AnimatedFactoryV2Impl;
-
-    iget-object p2, p0, Lcom/facebook/fresco/animation/factory/AnimatedFactoryV2Impl;->e:Ldf;
-
-    if-nez p2, :cond_0
-
-    new-instance p2, Ldf;
-
-    invoke-direct {p2}, Ljava/lang/Object;-><init>()V
-
-    iput-object p2, p0, Lcom/facebook/fresco/animation/factory/AnimatedFactoryV2Impl;->e:Ldf;
-
-    :cond_0
-    iget-object p0, p0, Lcom/facebook/fresco/animation/factory/AnimatedFactoryV2Impl;->e:Ldf;
-
-    iget-object p2, p4, Lgq6;->b:Landroid/graphics/Bitmap$Config;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object p0, Ldf;->b:Lcom/facebook/animated/gif/GifImage;
-
-    if-eqz p0, :cond_2
-
-    iget-object p0, p1, Lax4;->a:Le13;
-
-    invoke-static {p0}, Le13;->o(Le13;)Le13;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v0, 0x0
 
     :try_start_0
-    invoke-virtual {p0}, Le13;->e0()Ljava/lang/Object;
+    const-class v1, Lcom/facebook/animated/gif/GifImage;
 
-    move-result-object p2
+    invoke-virtual {v1}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
 
-    check-cast p2, Ljl8;
+    move-result-object v1
 
-    invoke-virtual {p2}, Ljl8;->r()Ljava/nio/ByteBuffer;
-
-    move-result-object p3
-
-    if-eqz p3, :cond_1
-
-    invoke-virtual {p2}, Ljl8;->r()Ljava/nio/ByteBuffer;
-
-    move-result-object p2
-
-    invoke-static {p2, p4}, Lcom/facebook/animated/gif/GifImage;->a(Ljava/nio/ByteBuffer;Lgq6;)Lcom/facebook/animated/gif/GifImage;
-
-    move-result-object p2
+    check-cast v1, Lcom/facebook/animated/gif/GifImage;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
     :catchall_0
-    move-exception p1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {p2}, Ljl8;->n()J
-
-    move-result-wide v0
-
-    invoke-virtual {p2}, Ljl8;->U()I
-
-    move-result p2
-
-    invoke-static {v0, v1, p2, p4}, Lcom/facebook/animated/gif/GifImage;->b(JILgq6;)Lcom/facebook/animated/gif/GifImage;
-
-    move-result-object p2
+    move-object v1, v0
 
     :goto_0
-    iget-object p1, p1, Lax4;->z0:Ljava/lang/String;
+    sput-object v1, Lwe;->a:Lcom/facebook/animated/gif/GifImage;
 
-    invoke-static {p1, p4, p2}, Ldf;->a(Ljava/lang/String;Lgq6;Lcom/facebook/animated/gif/GifImage;)Lz03;
+    const-string v1, "com.facebook.animated.webp.WebPImage"
 
-    move-result-object p1
+    :try_start_1
+    invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/facebook/animated/gif/GifImage;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    move-object v0, v1
+
+    :catchall_1
+    sput-object v0, Lwe;->b:Lcom/facebook/animated/gif/GifImage;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ly7a;Lh0b;Z)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static a(Ljava/lang/String;Lmu6;Lcom/facebook/animated/gif/GifImage;)La33;
+    .locals 1
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance p1, Lh6d;
+
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+
+    iput-object p2, p1, Lh6d;->b:Ljava/lang/Object;
+
+    const/4 p2, 0x0
+
+    iput-object p2, p1, Lh6d;->c:Ljava/lang/Object;
+
+    iput-object p2, p1, Lh6d;->o:Ljava/lang/Object;
+
+    iput-object p0, p1, Lh6d;->a:Ljava/lang/Object;
+
+    const/4 p0, 0x0
+
+    :try_start_0
+    new-instance p2, Lr3d;
+
+    invoke-direct {p2, p1}, Lr3d;-><init>(Lh6d;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-static {p0}, Le13;->S(Le13;)V
+    iget-object v0, p1, Lh6d;->c:Ljava/lang/Object;
 
-    return-object p1
+    check-cast v0, Lf33;
 
-    :goto_1
-    invoke-static {p0}, Le13;->S(Le13;)V
+    invoke-static {v0}, Lf33;->W(Lf33;)V
 
-    throw p1
+    iput-object p0, p1, Lh6d;->c:Ljava/lang/Object;
 
-    :cond_2
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    iget-object v0, p1, Lh6d;->o:Ljava/lang/Object;
 
-    const-string p1, "To encode animated webp please add the dependency to the animated-webp module"
+    check-cast v0, Ljava/util/ArrayList;
 
-    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    invoke-static {v0}, Lf33;->X(Ljava/util/ArrayList;)V
 
-    throw p0
+    iput-object p0, p1, Lh6d;->o:Ljava/lang/Object;
+
+    new-instance p0, La33;
+
+    invoke-direct {p0}, Lzh0;-><init>()V
+
+    iput-object p2, p0, La33;->o:Lr3d;
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, La33;->X:Z
+
+    return-object p0
+
+    :catchall_0
+    move-exception p2
+
+    iget-object v0, p1, Lh6d;->c:Ljava/lang/Object;
+
+    check-cast v0, Lf33;
+
+    invoke-static {v0}, Lf33;->W(Lf33;)V
+
+    iput-object p0, p1, Lh6d;->c:Ljava/lang/Object;
+
+    iget-object v0, p1, Lh6d;->o:Ljava/lang/Object;
+
+    check-cast v0, Ljava/util/ArrayList;
+
+    invoke-static {v0}, Lf33;->X(Ljava/util/ArrayList;)V
+
+    iput-object p0, p1, Lh6d;->o:Ljava/lang/Object;
+
+    throw p2
 .end method

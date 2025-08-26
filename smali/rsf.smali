@@ -1,86 +1,698 @@
 .class public final Lrsf;
-.super Landroid/os/Binder;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lw95;
 
 
 # instance fields
-.field public final c:Lza6;
+.field public X:Losf;
+
+.field public Y:I
+
+.field public Z:J
+
+.field public a:Laa5;
+
+.field public b:Lbye;
+
+.field public c:I
+
+.field public o:J
 
 
 # direct methods
-.method public constructor <init>(Lza6;)V
+.method static constructor <clinit>()V
     .locals 0
 
-    invoke-direct {p0}, Landroid/os/Binder;-><init>()V
+    return-void
+.end method
 
-    iput-object p1, p0, Lrsf;->c:Lza6;
+.method public constructor <init>()V
+    .locals 3
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lrsf;->c:I
+
+    const-wide/16 v0, -0x1
+
+    iput-wide v0, p0, Lrsf;->o:J
+
+    const/4 v2, -0x1
+
+    iput v2, p0, Lrsf;->Y:I
+
+    iput-wide v0, p0, Lrsf;->Z:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lssf;)V
-    .locals 4
+.method public final W(Laa5;)V
+    .locals 2
 
-    invoke-static {}, Landroid/os/Binder;->getCallingUid()I
+    iput-object p1, p0, Lrsf;->a:Laa5;
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    invoke-interface {p1, v0, v1}, Laa5;->A(II)Lbye;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lrsf;->b:Lbye;
+
+    invoke-interface {p1}, Laa5;->v()V
+
+    return-void
+.end method
+
+.method public final X(Ly95;Lh7;)I
+    .locals 25
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    iget-object v2, v0, Lrsf;->b:Lbye;
+
+    invoke-static {v2}, Lu27;->k(Ljava/lang/Object;)V
+
+    sget v2, Lpaf;->a:I
+
+    iget v2, v0, Lrsf;->c:I
+
+    const/4 v3, -0x1
+
+    const/4 v4, 0x4
+
+    const/4 v5, 0x1
+
+    const/4 v6, 0x0
+
+    if-eqz v2, :cond_12
+
+    const/16 v7, 0x8
+
+    const/4 v8, 0x2
+
+    const-wide/16 v9, -0x1
+
+    if-eq v2, v5, :cond_10
+
+    const/4 v11, 0x3
+
+    if-eq v2, v8, :cond_6
+
+    if-eq v2, v11, :cond_3
+
+    if-ne v2, v4, :cond_2
+
+    iget-wide v7, v0, Lrsf;->Z:J
+
+    cmp-long v2, v7, v9
+
+    if-eqz v2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    move v5, v6
+
+    :goto_0
+    invoke-static {v5}, Lu27;->j(Z)V
+
+    iget-wide v4, v0, Lrsf;->Z:J
+
+    invoke-interface {v1}, Ly95;->getPosition()J
+
+    move-result-wide v7
+
+    sub-long/2addr v4, v7
+
+    iget-object v0, v0, Lrsf;->X:Losf;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-interface {v0, v1, v4, v5}, Losf;->c(Ly95;J)Z
 
     move-result v0
 
-    invoke-static {}, Landroid/os/Process;->myUid()I
+    if-eqz v0, :cond_1
 
-    move-result v1
+    return v3
 
-    if-ne v0, v1, :cond_0
+    :cond_1
+    return v6
 
-    iget-object v0, p1, Lssf;->a:Landroid/content/Intent;
+    :cond_2
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    iget-object p0, p0, Lrsf;->c:Lza6;
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
-    iget-object p0, p0, Lza6;->a:Ljava/lang/Object;
+    throw v0
 
-    check-cast p0, Lzy4;
+    :cond_3
+    invoke-interface {v1}, Ly95;->x()V
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v2, Lpna;
 
-    new-instance v1, Lvde;
+    invoke-direct {v2, v7}, Lpna;-><init>(I)V
 
-    invoke-direct {v1}, Lvde;-><init>()V
+    const v3, 0x64617461
 
-    new-instance v2, Lpx4;
+    invoke-static {v3, v1, v2}, Ln1c;->v(ILy95;Lpna;)Lv01;
 
-    const/4 v3, 0x2
+    move-result-object v2
 
-    invoke-direct {v2, p0, v0, v1, v3}, Lpx4;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+    invoke-interface {v1, v7}, Ly95;->y(I)V
 
-    iget-object p0, p0, Lzy4;->a:Ljava/util/concurrent/ExecutorService;
+    invoke-interface {v1}, Ly95;->getPosition()J
 
-    invoke-interface {p0, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    move-result-wide v7
 
-    new-instance p0, Lgr;
+    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    const/4 v0, 0x2
+    move-result-object v3
 
-    invoke-direct {p0, v0}, Lgr;-><init>(I)V
+    iget-wide v7, v2, Lv01;->c:J
 
-    new-instance v0, Lxle;
+    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    const/16 v2, 0x12
+    move-result-object v2
 
-    invoke-direct {v0, v2, p1}, Lxle;-><init>(ILjava/lang/Object;)V
+    invoke-static {v3, v2}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
-    iget-object p1, v1, Lvde;->a:Ln6g;
+    move-result-object v2
 
-    invoke-virtual {p1, p0, v0}, Ln6g;->b(Ljava/util/concurrent/Executor;Lhx9;)Ln6g;
+    iget-object v3, v2, Landroid/util/Pair;->first:Ljava/lang/Object;
 
-    return-void
+    check-cast v3, Ljava/lang/Long;
+
+    invoke-virtual {v3}, Ljava/lang/Long;->intValue()I
+
+    move-result v3
+
+    iput v3, v0, Lrsf;->Y:I
+
+    iget-object v2, v2, Landroid/util/Pair;->second:Ljava/lang/Object;
+
+    check-cast v2, Ljava/lang/Long;
+
+    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    iget-wide v7, v0, Lrsf;->o:J
+
+    cmp-long v5, v7, v9
+
+    if-eqz v5, :cond_4
+
+    const-wide v11, 0xffffffffL
+
+    cmp-long v5, v2, v11
+
+    if-nez v5, :cond_4
+
+    move-wide v2, v7
+
+    :cond_4
+    iget v5, v0, Lrsf;->Y:I
+
+    int-to-long v7, v5
+
+    add-long/2addr v7, v2
+
+    iput-wide v7, v0, Lrsf;->Z:J
+
+    invoke-interface {v1}, Ly95;->getLength()J
+
+    move-result-wide v1
+
+    cmp-long v3, v1, v9
+
+    if-eqz v3, :cond_5
+
+    iget-wide v7, v0, Lrsf;->Z:J
+
+    cmp-long v3, v7, v1
+
+    if-lez v3, :cond_5
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v5, "Data exceeds input length: "
+
+    invoke-direct {v3, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-wide v7, v0, Lrsf;->Z:J
+
+    invoke-virtual {v3, v7, v8}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v5, ", "
+
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lou0;->J(Ljava/lang/String;)V
+
+    iput-wide v1, v0, Lrsf;->Z:J
+
+    :cond_5
+    iget-object v1, v0, Lrsf;->X:Losf;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget v2, v0, Lrsf;->Y:I
+
+    iget-wide v7, v0, Lrsf;->Z:J
+
+    invoke-interface {v1, v2, v7, v8}, Losf;->b(IJ)V
+
+    iput v4, v0, Lrsf;->c:I
+
+    return v6
+
+    :cond_6
+    new-instance v2, Lpna;
+
+    const/16 v3, 0x10
+
+    invoke-direct {v2, v3}, Lpna;-><init>(I)V
+
+    const v7, 0x666d7420
+
+    invoke-static {v7, v1, v2}, Ln1c;->v(ILy95;Lpna;)Lv01;
+
+    move-result-object v7
+
+    iget-wide v7, v7, Lv01;->c:J
+
+    const-wide/16 v9, 0x10
+
+    cmp-long v9, v7, v9
+
+    if-ltz v9, :cond_7
+
+    move v9, v5
+
+    goto :goto_1
+
+    :cond_7
+    move v9, v6
+
+    :goto_1
+    invoke-static {v9}, Lu27;->j(Z)V
+
+    iget-object v9, v2, Lpna;->a:[B
+
+    invoke-interface {v1, v6, v9, v3}, Ly95;->i(I[BI)V
+
+    invoke-virtual {v2, v6}, Lpna;->G(I)V
+
+    invoke-virtual {v2}, Lpna;->n()I
+
+    move-result v13
+
+    invoke-virtual {v2}, Lpna;->n()I
+
+    move-result v14
+
+    invoke-virtual {v2}, Lpna;->m()I
+
+    move-result v15
+
+    invoke-virtual {v2}, Lpna;->m()I
+
+    invoke-virtual {v2}, Lpna;->n()I
+
+    move-result v16
+
+    invoke-virtual {v2}, Lpna;->n()I
+
+    move-result v17
+
+    long-to-int v2, v7
+
+    sub-int/2addr v2, v3
+
+    if-lez v2, :cond_8
+
+    new-array v3, v2, [B
+
+    invoke-interface {v1, v6, v3, v2}, Ly95;->i(I[BI)V
+
+    :goto_2
+    move-object/from16 v18, v3
+
+    goto :goto_3
+
+    :cond_8
+    sget-object v3, Lpaf;->f:[B
+
+    goto :goto_2
+
+    :goto_3
+    invoke-interface {v1}, Ly95;->o()J
+
+    move-result-wide v2
+
+    invoke-interface {v1}, Ly95;->getPosition()J
+
+    move-result-wide v7
+
+    sub-long/2addr v2, v7
+
+    long-to-int v2, v2
+
+    invoke-interface {v1, v2}, Ly95;->y(I)V
+
+    new-instance v22, Lssf;
+
+    move-object/from16 v12, v22
+
+    invoke-direct/range {v12 .. v18}, Lssf;-><init>(IIIII[B)V
+
+    move/from16 v1, v17
+
+    const/16 v2, 0x11
+
+    if-ne v13, v2, :cond_9
+
+    new-instance v1, Lmsf;
+
+    iget-object v2, v0, Lrsf;->a:Laa5;
+
+    iget-object v3, v0, Lrsf;->b:Lbye;
+
+    invoke-direct {v1, v2, v3, v12}, Lmsf;-><init>(Laa5;Lbye;Lssf;)V
+
+    iput-object v1, v0, Lrsf;->X:Losf;
+
+    goto/16 :goto_6
+
+    :cond_9
+    const/4 v2, 0x6
+
+    if-ne v13, v2, :cond_a
+
+    new-instance v19, Lpsf;
+
+    iget-object v1, v0, Lrsf;->a:Laa5;
+
+    iget-object v2, v0, Lrsf;->b:Lbye;
+
+    const-string v23, "audio/g711-alaw"
+
+    const/16 v24, -0x1
+
+    move-object/from16 v20, v1
+
+    move-object/from16 v21, v2
+
+    move-object/from16 v22, v12
+
+    invoke-direct/range {v19 .. v24}, Lpsf;-><init>(Laa5;Lbye;Lssf;Ljava/lang/String;I)V
+
+    move-object/from16 v1, v19
+
+    iput-object v1, v0, Lrsf;->X:Losf;
+
+    goto :goto_6
+
+    :cond_a
+    move-object/from16 v22, v12
+
+    const/4 v2, 0x7
+
+    if-ne v13, v2, :cond_b
+
+    new-instance v19, Lpsf;
+
+    iget-object v1, v0, Lrsf;->a:Laa5;
+
+    iget-object v2, v0, Lrsf;->b:Lbye;
+
+    const-string v23, "audio/g711-mlaw"
+
+    const/16 v24, -0x1
+
+    move-object/from16 v20, v1
+
+    move-object/from16 v21, v2
+
+    invoke-direct/range {v19 .. v24}, Lpsf;-><init>(Laa5;Lbye;Lssf;Ljava/lang/String;I)V
+
+    move-object/from16 v1, v19
+
+    iput-object v1, v0, Lrsf;->X:Losf;
+
+    goto :goto_6
+
+    :cond_b
+    if-eq v13, v5, :cond_e
+
+    if-eq v13, v11, :cond_d
+
+    const v2, 0xfffe
+
+    if-eq v13, v2, :cond_e
+
+    :cond_c
+    move/from16 v24, v6
+
+    goto :goto_5
+
+    :cond_d
+    const/16 v2, 0x20
+
+    if-ne v1, v2, :cond_c
+
+    :goto_4
+    move/from16 v24, v4
+
+    goto :goto_5
+
+    :cond_e
+    invoke-static {v1}, Lpaf;->B(I)I
+
+    move-result v4
+
+    goto :goto_4
+
+    :goto_5
+    if-eqz v24, :cond_f
+
+    new-instance v19, Lpsf;
+
+    iget-object v1, v0, Lrsf;->a:Laa5;
+
+    iget-object v2, v0, Lrsf;->b:Lbye;
+
+    const-string v23, "audio/raw"
+
+    move-object/from16 v20, v1
+
+    move-object/from16 v21, v2
+
+    invoke-direct/range {v19 .. v24}, Lpsf;-><init>(Laa5;Lbye;Lssf;Ljava/lang/String;I)V
+
+    move-object/from16 v1, v19
+
+    iput-object v1, v0, Lrsf;->X:Losf;
+
+    :goto_6
+    iput v11, v0, Lrsf;->c:I
+
+    return v6
+
+    :cond_f
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Unsupported WAV format type: "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroidx/media3/common/ParserException;->c(Ljava/lang/String;)Landroidx/media3/common/ParserException;
+
+    move-result-object v0
+
+    throw v0
+
+    :cond_10
+    new-instance v2, Lpna;
+
+    invoke-direct {v2, v7}, Lpna;-><init>(I)V
+
+    invoke-static {v1, v2}, Lv01;->c(Ly95;Lpna;)Lv01;
+
+    move-result-object v3
+
+    iget v4, v3, Lv01;->b:I
+
+    const v5, 0x64733634
+
+    if-eq v4, v5, :cond_11
+
+    invoke-interface {v1}, Ly95;->x()V
+
+    goto :goto_7
+
+    :cond_11
+    invoke-interface {v1, v7}, Ly95;->p(I)V
+
+    invoke-virtual {v2, v6}, Lpna;->G(I)V
+
+    iget-object v4, v2, Lpna;->a:[B
+
+    invoke-interface {v1, v6, v4, v7}, Ly95;->i(I[BI)V
+
+    invoke-virtual {v2}, Lpna;->j()J
+
+    move-result-wide v9
+
+    iget-wide v2, v3, Lv01;->c:J
+
+    long-to-int v2, v2
+
+    add-int/2addr v2, v7
+
+    invoke-interface {v1, v2}, Ly95;->y(I)V
+
+    :goto_7
+    iput-wide v9, v0, Lrsf;->o:J
+
+    iput v8, v0, Lrsf;->c:I
+
+    return v6
+
+    :cond_12
+    invoke-interface {v1}, Ly95;->getPosition()J
+
+    move-result-wide v7
+
+    const-wide/16 v9, 0x0
+
+    cmp-long v2, v7, v9
+
+    if-nez v2, :cond_13
+
+    move v2, v5
+
+    goto :goto_8
+
+    :cond_13
+    move v2, v6
+
+    :goto_8
+    invoke-static {v2}, Lu27;->j(Z)V
+
+    iget v2, v0, Lrsf;->Y:I
+
+    if-eq v2, v3, :cond_14
+
+    invoke-interface {v1, v2}, Ly95;->y(I)V
+
+    iput v4, v0, Lrsf;->c:I
+
+    return v6
+
+    :cond_14
+    invoke-static {v1}, Ln1c;->g(Ly95;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_15
+
+    invoke-interface {v1}, Ly95;->o()J
+
+    move-result-wide v2
+
+    invoke-interface {v1}, Ly95;->getPosition()J
+
+    move-result-wide v7
+
+    sub-long/2addr v2, v7
+
+    long-to-int v2, v2
+
+    invoke-interface {v1, v2}, Ly95;->y(I)V
+
+    iput v5, v0, Lrsf;->c:I
+
+    return v6
+
+    :cond_15
+    const-string v0, "Unsupported or unrecognized wav file type."
+
+    const/4 v1, 0x0
+
+    invoke-static {v1, v0}, Landroidx/media3/common/ParserException;->a(Ljava/lang/RuntimeException;Ljava/lang/String;)Landroidx/media3/common/ParserException;
+
+    move-result-object v0
+
+    throw v0
+.end method
+
+.method public final d(JJ)V
+    .locals 2
+
+    const-wide/16 v0, 0x0
+
+    cmp-long p1, p1, v0
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x0
+
+    goto :goto_0
 
     :cond_0
-    new-instance p0, Ljava/lang/SecurityException;
+    const/4 p1, 0x4
 
-    const-string p1, "Binding only allowed within app"
+    :goto_0
+    iput p1, p0, Lrsf;->c:I
 
-    invoke-direct {p0, p1}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
+    iget-object p0, p0, Lrsf;->X:Losf;
 
-    throw p0
+    if-eqz p0, :cond_1
+
+    invoke-interface {p0, p3, p4}, Losf;->a(J)V
+
+    :cond_1
+    return-void
+.end method
+
+.method public final n(Ly95;)Z
+    .locals 0
+
+    invoke-static {p1}, Ln1c;->g(Ly95;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final release()V
+    .locals 0
+
+    return-void
 .end method

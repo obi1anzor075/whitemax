@@ -1,18 +1,63 @@
-.class public interface abstract Lfr3;
-.super Ljava/lang/Object;
+.class public final Lfr3;
+.super Lvkc;
 .source "SourceFile"
-
-# interfaces
-.implements Lfu3;
 
 
 # static fields
-.field public static final synthetic n:I
+.field public static final b:Lfr3;
+
+.field public static final c:Lr64;
+
+.field public static final d:Lr64;
+
+.field public static final e:Lr64;
 
 
-# virtual methods
-.method public abstract interceptContinuation(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-.end method
+# direct methods
+.method static constructor <clinit>()V
+    .locals 6
 
-.method public abstract releaseInterceptedContinuation(Lkotlin/coroutines/Continuation;)V
+    new-instance v0, Lfr3;
+
+    invoke-direct {v0}, Lv64;-><init>()V
+
+    sput-object v0, Lfr3;->b:Lfr3;
+
+    const/4 v1, 0x0
+
+    new-array v2, v1, [Ljava/lang/String;
+
+    const-string v3, ":contact-list/create-contact"
+
+    const/4 v4, 0x0
+
+    const/16 v5, 0xe
+
+    invoke-static {v0, v3, v2, v4, v5}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v2
+
+    sput-object v2, Lfr3;->c:Lr64;
+
+    const-string v2, ":contact-list/share-invite"
+
+    new-array v3, v1, [Ljava/lang/String;
+
+    invoke-static {v0, v2, v3, v4, v5}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v2
+
+    sput-object v2, Lfr3;->d:Lr64;
+
+    const-string v2, ":call-contact"
+
+    new-array v1, v1, [Ljava/lang/String;
+
+    invoke-static {v0, v2, v1, v4, v5}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
+
+    move-result-object v0
+
+    sput-object v0, Lfr3;->e:Lr64;
+
+    return-void
 .end method

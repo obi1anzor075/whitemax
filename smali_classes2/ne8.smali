@@ -1,11 +1,3 @@
-.class public interface abstract Lne8;
-.super Ljava/lang/Object;
+.class public final Lne8;
+.super Landroid/os/Binder;
 .source "SourceFile"
-
-
-# virtual methods
-.method public abstract a(Lyfd;)V
-.end method
-
-.method public abstract c(Lyfd;)V
-.end method

@@ -18,10 +18,10 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/api/extern/ExternErrorParser;",
         "",
-        "Lxwb;",
+        "Ls1c;",
         "log",
         "<init>",
-        "(Lxwb;)V",
+        "(Ls1c;)V",
         "Lru/ok/android/api/core/ApiInvocationException;",
         "exception",
         "",
@@ -33,7 +33,7 @@
         "Lru/ok/android/externcalls/sdk/api/extern/ExternErrorParser$ErrorDescription;",
         "parse",
         "(Lru/ok/android/api/core/ApiInvocationException;)Lru/ok/android/externcalls/sdk/api/extern/ExternErrorParser$ErrorDescription;",
-        "Lxwb;",
+        "Ls1c;",
         "Companion",
         "ErrorDescription",
         "calls-sdk_release"
@@ -44,6 +44,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -54,7 +55,7 @@
 
 
 # instance fields
-.field private final log:Lxwb;
+.field private final log:Ls1c;
 
 
 # direct methods
@@ -65,19 +66,19 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/api/extern/ExternErrorParser$Companion;-><init>(Lx54;)V
+    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/api/extern/ExternErrorParser$Companion;-><init>(Ll94;)V
 
     sput-object v0, Lru/ok/android/externcalls/sdk/api/extern/ExternErrorParser;->Companion:Lru/ok/android/externcalls/sdk/api/extern/ExternErrorParser$Companion;
 
     return-void
 .end method
 
-.method public constructor <init>(Lxwb;)V
+.method public constructor <init>(Ls1c;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/api/extern/ExternErrorParser;->log:Lxwb;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/api/extern/ExternErrorParser;->log:Ls1c;
 
     return-void
 .end method
@@ -97,8 +98,6 @@
     invoke-static {v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v1
-
-    invoke-static {v0}, Lh0e;->n0(I)V
 
     invoke-virtual {v1, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
@@ -215,7 +214,7 @@
 
     add-int/2addr v1, v2
 
-    invoke-static {p1, v1}, Lo23;->n0(Ljava/lang/Iterable;I)Ljava/util/List;
+    invoke-static {p1, v1}, Lp43;->R0(Ljava/lang/Iterable;I)Ljava/util/List;
 
     move-result-object p1
 
@@ -227,7 +226,7 @@
     goto :goto_3
 
     :cond_3
-    sget-object p1, Lhw4;->a:Lhw4;
+    sget-object p1, Lgz4;->a:Lgz4;
 
     :goto_2
     new-array v1, v0, [Ljava/lang/String;
@@ -256,23 +255,24 @@
 
     invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_4
+    return p0
+
+    :cond_4
+    return v0
 
     :goto_3
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/api/extern/ExternErrorParser;->log:Lxwb;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/api/extern/ExternErrorParser;->log:Ls1c;
 
     const-string v1, "ExternErrorParser"
 
     const-string v2, "errorcode.parse.failed"
 
-    invoke-interface {p0, v1, v2, p1}, Lxwb;->reportException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-interface {p0, v1, v2, p1}, Ls1c;->reportException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :cond_4
-    :goto_4
     return v0
 .end method
 

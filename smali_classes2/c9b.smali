@@ -1,23 +1,24 @@
 .class public final Lc9b;
-.super Lt81;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Li9b;
 
 
 # static fields
-.field public static final b:Lc9b;
+.field public static final a:Lc9b;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
     new-instance v0, Lc9b;
 
-    const/16 v1, 0x9
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, v1}, Lt81;-><init>(I)V
-
-    sput-object v0, Lc9b;->b:Lc9b;
+    sput-object v0, Lc9b;->a:Lc9b;
 
     return-void
 .end method
@@ -49,7 +50,7 @@
 .method public final hashCode()I
     .locals 0
 
-    const p0, 0x5dad53ff
+    const p0, -0x7ce09cf0
 
     return p0
 .end method
@@ -57,7 +58,7 @@
 .method public final toString()Ljava/lang/String;
     .locals 0
 
-    const-string p0, "SelectPhotoFromGallery"
+    const-string p0, "Finish"
 
     return-object p0
 .end method

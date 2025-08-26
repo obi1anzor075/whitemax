@@ -1,48 +1,99 @@
-.class public final Lfo0;
-.super Ld0;
+.class public final synthetic Lfo0;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lyff;
 
 
 # instance fields
-.field public final a:Ljava/lang/Thread;
+.field public final synthetic a:I
 
-.field public final b:Lt05;
+.field public final synthetic b:Lho0;
 
 
 # direct methods
-.method public constructor <init>(Lhu3;Ljava/lang/Thread;Lt05;)V
-    .locals 1
+.method public synthetic constructor <init>(Lho0;I)V
+    .locals 0
 
-    const/4 v0, 0x1
+    iput p2, p0, Lfo0;->a:I
 
-    invoke-direct {p0, p1, v0, v0}, Ld0;-><init>(Lhu3;ZZ)V
+    iput-object p1, p0, Lfo0;->b:Lho0;
 
-    iput-object p2, p0, Lfo0;->a:Ljava/lang/Thread;
-
-    iput-object p3, p0, Lfo0;->b:Lt05;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final afterCompletion(Ljava/lang/Object;)V
-    .locals 0
+.method public final run()V
+    .locals 1
 
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+    iget v0, p0, Lfo0;->a:I
 
-    move-result-object p1
+    packed-switch v0, :pswitch_data_0
 
-    iget-object p0, p0, Lfo0;->a:Ljava/lang/Thread;
+    iget-object p0, p0, Lfo0;->b:Lho0;
 
-    invoke-static {p1, p0}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget-object v0, p0, Lho0;->Z:Ltd6;
 
-    move-result p1
+    if-eqz v0, :cond_0
 
-    if-nez p1, :cond_0
-
-    invoke-static {p0}, Ljava/util/concurrent/locks/LockSupport;->unpark(Ljava/lang/Thread;)V
+    invoke-virtual {v0}, Ltd6;->a()V
 
     :cond_0
+    iget-object p0, p0, Lho0;->o:Ljava/util/concurrent/LinkedBlockingQueue;
+
+    invoke-virtual {p0}, Ljava/util/concurrent/LinkedBlockingQueue;->clear()V
+
     return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lfo0;->b:Lho0;
+
+    iget v0, p0, Lho0;->o0:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Lho0;->o0:I
+
+    invoke-virtual {p0}, Lho0;->A()V
+
+    return-void
+
+    :pswitch_1
+    iget-object p0, p0, Lfo0;->b:Lho0;
+
+    iget-object v0, p0, Lho0;->o:Ljava/util/concurrent/LinkedBlockingQueue;
+
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object p0, p0, Lho0;->Y:Lvd4;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {p0}, Lli0;->e()V
+
+    invoke-static {}, Lq54;->a()V
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lho0;->p0:Z
+
+    :goto_0
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

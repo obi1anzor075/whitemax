@@ -4,7 +4,7 @@
 
 # interfaces
 .implements Landroid/graphics/drawable/Animatable;
-.implements Ls0f;
+.implements Lwbf;
 
 
 # annotations
@@ -34,7 +34,7 @@
         "(Landroid/content/Context;I)V",
         "Landroid/graphics/Canvas;",
         "canvas",
-        "Ljue;",
+        "Le5f;",
         "draw",
         "(Landroid/graphics/Canvas;)V",
         "getAlpha",
@@ -85,12 +85,12 @@
         "stop",
         "isRunning",
         "()Z",
-        "Lne;",
+        "Lde;",
         "callback",
         "registerAnimationCallback",
-        "(Lne;)V",
+        "(Lde;)V",
         "unregisterAnimationCallback",
-        "(Lne;)Z",
+        "(Lde;)Z",
         "clearAnimationCallbacks",
         "",
         "targetName",
@@ -111,8 +111,8 @@
         "prepareLocalAnimator",
         "(I)Landroid/animation/Animator;",
         "I",
-        "yy4",
-        "Lyy4;",
+        "w15",
+        "Lw15;",
         "Lone/me/sdk/richvector/EnhancedVectorDrawable;",
         "drawable",
         "Lone/me/sdk/richvector/EnhancedVectorDrawable;",
@@ -125,20 +125,20 @@
         "Landroid/util/ArrayMap;",
         "animatorSetFromXml",
         "Landroid/animation/AnimatorSet;",
-        "Lwy4;",
+        "Lu15;",
         "animator",
-        "Lwy4;",
-        "xy4",
+        "Lu15;",
+        "v15",
         "animatorListener$delegate",
-        "Lt97;",
+        "Lje7;",
         "getAnimatorListener",
-        "()Lxy4;",
+        "()Lv15;",
         "animatorListener",
         "",
         "animationCallbacks",
         "Ljava/util/List;",
         "Companion",
-        "vy4",
+        "t15",
         "rich-vector_release"
     }
     k = 0x1
@@ -147,11 +147,12 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # static fields
-.field private static final Companion:Lvy4;
+.field private static final Companion:Lt15;
 
 .field public static final SHOULD_IGNORE_INVALID_ANIMATION:Z = true
     .annotation runtime Ljava/lang/Deprecated;
@@ -164,15 +165,15 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
-            "Lne;",
+            "Lde;",
             ">;"
         }
     .end annotation
 .end field
 
-.field private animator:Lwy4;
+.field private animator:Lu15;
 
-.field private final animatorListener$delegate:Lt97;
+.field private final animatorListener$delegate:Lje7;
 
 .field private animatorSetFromXml:Landroid/animation/AnimatorSet;
 
@@ -186,7 +187,7 @@
     .end annotation
 .end field
 
-.field private final callback:Lyy4;
+.field private final callback:Lw15;
 
 .field private final drawable:Lone/me/sdk/richvector/EnhancedVectorDrawable;
 
@@ -208,11 +209,11 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lvy4;
+    new-instance v0, Lt15;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->Companion:Lvy4;
+    sput-object v0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->Companion:Lt15;
 
     return-void
 .end method
@@ -224,27 +225,27 @@
 
     move/from16 v1, p2
 
-    invoke-direct/range {p0 .. p0}, Landroid/graphics/drawable/Drawable;-><init>()V
+    invoke-direct {v0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
     iput v1, v0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->resId:I
 
-    new-instance v2, Lyy4;
+    new-instance v2, Lw15;
 
-    invoke-direct {v2, v0}, Lyy4;-><init>(Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;)V
+    invoke-direct {v2, v0}, Lw15;-><init>(Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;)V
 
-    iput-object v2, v0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->callback:Lyy4;
+    iput-object v2, v0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->callback:Lw15;
 
-    new-instance v2, Lgz3;
+    new-instance v2, Lur3;
 
-    const/4 v3, 0x5
+    const/16 v3, 0xc
 
-    invoke-direct {v2, v3, v0}, Lgz3;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v2, v3, v0}, Lur3;-><init>(ILjava/lang/Object;)V
 
-    new-instance v3, Lr7e;
+    new-instance v3, Lwfe;
 
-    invoke-direct {v3, v2}, Lr7e;-><init>(Ls16;)V
+    invoke-direct {v3, v2}, Lwfe;-><init>(Lv56;)V
 
-    iput-object v3, v0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animatorListener$delegate:Lt97;
+    iput-object v3, v0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animatorListener$delegate:Lje7;
 
     new-instance v2, Ljava/util/ArrayList;
 
@@ -252,19 +253,19 @@
 
     iput-object v2, v0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animationCallbacks:Ljava/util/List;
 
-    new-instance v2, Luf;
+    new-instance v2, Lof;
 
     move-object/from16 v3, p1
 
-    invoke-direct {v2, v3}, Luf;-><init>(Landroid/content/Context;)V
+    invoke-direct {v2, v3}, Lof;-><init>(Landroid/content/Context;)V
 
-    sget-object v3, Luf;->c:Llv1;
+    sget-object v3, Lof;->c:Lzvd;
 
-    iget-object v4, v3, Llv1;->b:Ljava/lang/Object;
+    iget-object v4, v3, Lzvd;->b:Ljava/lang/Object;
 
     check-cast v4, Landroid/util/LruCache;
 
-    invoke-static/range {p2 .. p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
@@ -272,7 +273,7 @@
 
     move-result-object v4
 
-    check-cast v4, Ltf;
+    check-cast v4, Lnf;
 
     if-eqz v4, :cond_1
 
@@ -284,9 +285,9 @@
 
     invoke-direct {v7}, Landroid/util/ArrayMap;-><init>()V
 
-    iget-object v8, v4, Ltf;->b:Ljava/util/ArrayList;
+    iget-object v8, v4, Lnf;->b:Ljava/util/ArrayList;
 
-    invoke-interface {v8}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v8}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v8
 
@@ -309,7 +310,7 @@
 
     invoke-virtual {v6, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    iget-object v11, v4, Ltf;->c:Landroid/util/ArrayMap;
+    iget-object v11, v4, Lnf;->c:Landroid/util/ArrayMap;
 
     invoke-virtual {v11, v9}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -320,15 +321,15 @@
     goto :goto_0
 
     :cond_0
-    new-instance v8, Ltf;
+    new-instance v8, Lnf;
 
     new-instance v9, Lone/me/sdk/richvector/EnhancedVectorDrawable;
 
-    iget-object v4, v4, Ltf;->a:Lone/me/sdk/richvector/EnhancedVectorDrawable;
+    iget-object v4, v4, Lnf;->a:Lone/me/sdk/richvector/EnhancedVectorDrawable;
 
     invoke-direct {v9, v4}, Lone/me/sdk/richvector/EnhancedVectorDrawable;-><init>(Lone/me/sdk/richvector/EnhancedVectorDrawable;)V
 
-    invoke-direct {v8, v9, v6, v7}, Ltf;-><init>(Lone/me/sdk/richvector/EnhancedVectorDrawable;Ljava/util/ArrayList;Landroid/util/ArrayMap;)V
+    invoke-direct {v8, v9, v6, v7}, Lnf;-><init>(Lone/me/sdk/richvector/EnhancedVectorDrawable;Ljava/util/ArrayList;Landroid/util/ArrayMap;)V
 
     goto :goto_1
 
@@ -341,7 +342,7 @@
     goto/16 :goto_7
 
     :cond_2
-    iget-object v4, v2, Luf;->b:Landroid/content/res/Resources;
+    iget-object v4, v2, Lof;->b:Landroid/content/res/Resources;
 
     invoke-virtual {v4, v1}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
 
@@ -352,13 +353,13 @@
     move-result v6
 
     :goto_2
-    const/4 v7, 0x1
+    const/4 v7, 0x2
 
-    const/4 v8, 0x2
-
-    if-eq v6, v8, :cond_3
+    const/4 v8, 0x1
 
     if-eq v6, v7, :cond_3
+
+    if-eq v6, v8, :cond_3
 
     invoke-interface {v4}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
@@ -367,7 +368,7 @@
     goto :goto_2
 
     :cond_3
-    if-ne v6, v8, :cond_d
+    if-ne v6, v7, :cond_d
 
     new-instance v6, Ljava/util/ArrayList;
 
@@ -389,7 +390,7 @@
     const/4 v12, 0x0
 
     :goto_3
-    if-eq v10, v7, :cond_b
+    if-eq v10, v8, :cond_b
 
     invoke-interface {v4}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 
@@ -402,7 +403,7 @@
     if-eq v10, v13, :cond_b
 
     :cond_4
-    if-eq v10, v8, :cond_5
+    if-eq v10, v7, :cond_5
 
     invoke-interface {v4}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
@@ -432,13 +433,13 @@
 
     const-string v13, "animated-vector"
 
-    invoke-static {v10, v13}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v10, v13}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v13
 
     if-eqz v13, :cond_6
 
-    invoke-virtual {v2, v4}, Luf;->b(Landroid/content/res/XmlResourceParser;)Lone/me/sdk/richvector/EnhancedVectorDrawable;
+    invoke-virtual {v2, v4}, Lof;->b(Landroid/content/res/XmlResourceParser;)Lone/me/sdk/richvector/EnhancedVectorDrawable;
 
     move-result-object v10
 
@@ -451,7 +452,7 @@
     :cond_6
     const-string v13, "target"
 
-    invoke-static {v10, v13}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v10, v13}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v10
 
@@ -476,7 +477,7 @@
 
     const-string v7, "name"
 
-    invoke-static {v5, v7}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v5, v7}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v7
 
@@ -491,7 +492,7 @@
     :cond_7
     const-string v7, "animation"
 
-    invoke-static {v5, v7}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v5, v7}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v5
 
@@ -503,19 +504,19 @@
 
     if-eqz v5, :cond_9
 
-    iget-object v7, v2, Luf;->a:Landroid/content/Context;
+    iget-object v7, v2, Lof;->a:Landroid/content/Context;
 
     invoke-static {v7, v5}, Landroid/animation/AnimatorInflater;->loadAnimator(Landroid/content/Context;I)Landroid/animation/Animator;
 
     move-result-object v7
 
-    invoke-static {v7}, Luf;->c(Landroid/animation/Animator;)Z
+    invoke-static {v7}, Lof;->c(Landroid/animation/Animator;)Z
 
     move-result v16
 
     if-eqz v16, :cond_8
 
-    invoke-virtual {v2, v5}, Luf;->a(I)Landroid/animation/Animator;
+    invoke-virtual {v2, v5}, Lof;->a(I)Landroid/animation/Animator;
 
     move-result-object v7
 
@@ -528,7 +529,7 @@
     :goto_5
     add-int/lit8 v14, v14, 0x1
 
-    const/4 v7, 0x1
+    const/4 v7, 0x2
 
     goto :goto_4
 
@@ -542,7 +543,7 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 v7, 0x1
+    const/4 v7, 0x2
 
     goto :goto_3
 
@@ -551,34 +552,34 @@
 
     if-eqz v12, :cond_c
 
-    new-instance v8, Ltf;
+    new-instance v8, Lnf;
 
-    invoke-direct {v8, v12, v6, v9}, Ltf;-><init>(Lone/me/sdk/richvector/EnhancedVectorDrawable;Ljava/util/ArrayList;Landroid/util/ArrayMap;)V
+    invoke-direct {v8, v12, v6, v9}, Lnf;-><init>(Lone/me/sdk/richvector/EnhancedVectorDrawable;Ljava/util/ArrayList;Landroid/util/ArrayMap;)V
 
-    iget-object v2, v3, Llv1;->b:Ljava/lang/Object;
+    iget-object v2, v3, Lzvd;->b:Ljava/lang/Object;
 
     check-cast v2, Landroid/util/LruCache;
 
-    invoke-static/range {p2 .. p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     invoke-virtual {v2, v1, v8}, Landroid/util/LruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :goto_7
-    iget-object v1, v0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->callback:Lyy4;
+    iget-object v1, v8, Lnf;->a:Lone/me/sdk/richvector/EnhancedVectorDrawable;
 
-    iget-object v2, v8, Ltf;->a:Lone/me/sdk/richvector/EnhancedVectorDrawable;
+    iget-object v2, v0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->callback:Lw15;
 
-    invoke-virtual {v2, v1}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+    invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    iput-object v2, v0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->drawable:Lone/me/sdk/richvector/EnhancedVectorDrawable;
+    iput-object v1, v0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->drawable:Lone/me/sdk/richvector/EnhancedVectorDrawable;
 
-    iget-object v1, v8, Ltf;->b:Ljava/util/ArrayList;
+    iget-object v1, v8, Lnf;->b:Ljava/util/ArrayList;
 
     iput-object v1, v0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animators:Ljava/util/ArrayList;
 
-    iget-object v1, v8, Ltf;->c:Landroid/util/ArrayMap;
+    iget-object v1, v8, Lnf;->c:Landroid/util/ArrayMap;
 
     iput-object v1, v0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->targetNameMap:Landroid/util/ArrayMap;
 
@@ -590,11 +591,11 @@
 
     iput-object v1, v0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animatorSetFromXml:Landroid/animation/AnimatorSet;
 
-    new-instance v2, Lwy4;
+    new-instance v2, Lu15;
 
-    invoke-direct {v2, v0, v1}, Lwy4;-><init>(Landroid/graphics/drawable/Drawable;Landroid/animation/AnimatorSet;)V
+    invoke-direct {v2, v0, v1}, Lu15;-><init>(Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;Landroid/animation/AnimatorSet;)V
 
-    iput-object v2, v0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lwy4;
+    iput-object v2, v0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lu15;
 
     return-void
 
@@ -602,10 +603,6 @@
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "VectorDrawable was not found in XML"
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -639,10 +636,10 @@
     throw v0
 .end method
 
-.method public static synthetic a(Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;)Lxy4;
+.method public static synthetic a(Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;)Lv15;
     .locals 0
 
-    invoke-static {p0}, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animatorListener_delegate$lambda$0(Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;)Lxy4;
+    invoke-static {p0}, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animatorListener_delegate$lambda$0(Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;)Lv15;
 
     move-result-object p0
 
@@ -657,26 +654,26 @@
     return-object p0
 .end method
 
-.method private static final animatorListener_delegate$lambda$0(Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;)Lxy4;
+.method private static final animatorListener_delegate$lambda$0(Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;)Lv15;
     .locals 1
 
-    new-instance v0, Lxy4;
+    new-instance v0, Lv15;
 
-    invoke-direct {v0, p0}, Lxy4;-><init>(Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;)V
+    invoke-direct {v0, p0}, Lv15;-><init>(Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;)V
 
     return-object v0
 .end method
 
-.method private final getAnimatorListener()Lxy4;
+.method private final getAnimatorListener()Lv15;
     .locals 0
 
-    iget-object p0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animatorListener$delegate:Lt97;
+    iget-object p0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animatorListener$delegate:Lje7;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lxy4;
+    check-cast p0, Lv15;
 
     return-object p0
 .end method
@@ -770,7 +767,7 @@
 
     const-string v1, "\" cannot be found in the VectorDrawable to be animated."
 
-    invoke-static {v0, p1, v1}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p1, v1}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -824,13 +821,13 @@
 .method public clearAnimationCallbacks()V
     .locals 2
 
-    iget-object v0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lwy4;
+    iget-object v0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lu15;
 
-    invoke-direct {p0}, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->getAnimatorListener()Lxy4;
+    invoke-direct {p0}, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->getAnimatorListener()Lv15;
 
     move-result-object v1
 
-    iget-object v0, v0, Lwy4;->b:Landroid/animation/AnimatorSet;
+    iget-object v0, v0, Lu15;->b:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->removeListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -844,9 +841,9 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    iget-object v0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lwy4;
+    iget-object v0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lu15;
 
-    iget-object v1, v0, Lwy4;->b:Landroid/animation/AnimatorSet;
+    iget-object v1, v0, Lu15;->b:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->isStarted()Z
 
@@ -854,7 +851,7 @@
 
     if-eqz v1, :cond_0
 
-    iget-object v0, v0, Lwy4;->a:Landroid/graphics/drawable/Drawable;
+    iget-object v0, v0, Lu15;->a:Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
@@ -875,7 +872,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lo23;->Z(Ljava/lang/Iterable;Ljava/lang/Object;)I
+    invoke-static {v0, p1}, Lp43;->D0(Ljava/lang/Iterable;Ljava/lang/Object;)I
 
     move-result p1
 
@@ -909,9 +906,9 @@
 
     move-result-object p0
 
-    move-object v1, p0
+    check-cast p0, Landroid/animation/Animator;
 
-    check-cast v1, Landroid/animation/Animator;
+    return-object p0
 
     :cond_1
     return-object v1
@@ -1032,21 +1029,21 @@
 
     iput-object v0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animatorSetFromXml:Landroid/animation/AnimatorSet;
 
-    iget-object v0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lwy4;
+    iget-object v0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lu15;
 
-    invoke-direct {p0}, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->getAnimatorListener()Lxy4;
+    invoke-direct {p0}, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->getAnimatorListener()Lv15;
 
     move-result-object v1
 
-    iget-object v0, v0, Lwy4;->b:Landroid/animation/AnimatorSet;
+    iget-object v0, v0, Lu15;->b:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->removeListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    new-instance v0, Lwy4;
+    new-instance v0, Lu15;
 
     iget-object v1, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animatorSetFromXml:Landroid/animation/AnimatorSet;
 
-    invoke-direct {v0, p0, v1}, Lwy4;-><init>(Landroid/graphics/drawable/Drawable;Landroid/animation/AnimatorSet;)V
+    invoke-direct {v0, p0, v1}, Lu15;-><init>(Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;Landroid/animation/AnimatorSet;)V
 
     iget-object v1, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animationCallbacks:Ljava/util/List;
 
@@ -1056,16 +1053,16 @@
 
     if-eqz v1, :cond_0
 
-    invoke-direct {p0}, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->getAnimatorListener()Lxy4;
+    invoke-direct {p0}, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->getAnimatorListener()Lv15;
 
     move-result-object v1
 
-    iget-object v2, v0, Lwy4;->b:Landroid/animation/AnimatorSet;
+    iget-object v2, v0, Lu15;->b:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v2, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     :cond_0
-    iput-object v0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lwy4;
+    iput-object v0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lu15;
 
     return-void
 .end method
@@ -1081,9 +1078,9 @@
 .method public isRunning()Z
     .locals 0
 
-    iget-object p0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lwy4;
+    iget-object p0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lu15;
 
-    iget-object p0, p0, Lwy4;->b:Landroid/animation/AnimatorSet;
+    iget-object p0, p0, Lu15;->b:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p0}, Landroid/animation/AnimatorSet;->isRunning()Z
 
@@ -1095,9 +1092,9 @@
 .method public jumpToCurrentState()V
     .locals 0
 
-    iget-object p0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lwy4;
+    iget-object p0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lu15;
 
-    iget-object p0, p0, Lwy4;->b:Landroid/animation/AnimatorSet;
+    iget-object p0, p0, Lu15;->b:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p0}, Landroid/animation/AnimatorSet;->end()V
 
@@ -1140,7 +1137,7 @@
     return p0
 .end method
 
-.method public registerAnimationCallback(Lne;)V
+.method public registerAnimationCallback(Lde;)V
     .locals 2
 
     iget-object v0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animationCallbacks:Ljava/util/List;
@@ -1151,13 +1148,13 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lwy4;
+    iget-object v0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lu15;
 
-    invoke-direct {p0}, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->getAnimatorListener()Lxy4;
+    invoke-direct {p0}, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->getAnimatorListener()Lv15;
 
     move-result-object v1
 
-    iget-object v0, v0, Lwy4;->b:Landroid/animation/AnimatorSet;
+    iget-object v0, v0, Lu15;->b:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -1221,13 +1218,13 @@
 .method public setVisible(ZZ)Z
     .locals 2
 
-    iget-object v0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lwy4;
+    iget-object v0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lu15;
 
-    iget-boolean v1, v0, Lwy4;->c:Z
+    iget-boolean v1, v0, Lu15;->c:Z
 
     if-eqz v1, :cond_1
 
-    iget-object v0, v0, Lwy4;->b:Landroid/animation/AnimatorSet;
+    iget-object v0, v0, Lu15;->b:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->isStarted()Z
 
@@ -1237,18 +1234,18 @@
 
     if-eqz p1, :cond_0
 
-    iget-object v0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lwy4;
+    iget-object v0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lu15;
 
-    iget-object v0, v0, Lwy4;->b:Landroid/animation/AnimatorSet;
+    iget-object v0, v0, Lu15;->b:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->resume()V
 
     goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lwy4;
+    iget-object v0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lu15;
 
-    iget-object v0, v0, Lwy4;->b:Landroid/animation/AnimatorSet;
+    iget-object v0, v0, Lu15;->b:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->pause()V
 
@@ -1268,9 +1265,9 @@
 .method public start()V
     .locals 2
 
-    iget-object p0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lwy4;
+    iget-object p0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lu15;
 
-    iget-object v0, p0, Lwy4;->b:Landroid/animation/AnimatorSet;
+    iget-object v0, p0, Lu15;->b:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->isStarted()Z
 
@@ -1280,7 +1277,7 @@
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    iget-object p0, p0, Lwy4;->a:Landroid/graphics/drawable/Drawable;
+    iget-object p0, p0, Lu15;->a:Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;
 
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
@@ -1291,16 +1288,16 @@
 .method public stop()V
     .locals 0
 
-    iget-object p0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lwy4;
+    iget-object p0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lu15;
 
-    iget-object p0, p0, Lwy4;->b:Landroid/animation/AnimatorSet;
+    iget-object p0, p0, Lu15;->b:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p0}, Landroid/animation/AnimatorSet;->end()V
 
     return-void
 .end method
 
-.method public unregisterAnimationCallback(Lne;)Z
+.method public unregisterAnimationCallback(Lde;)Z
     .locals 1
 
     iget-object v0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animationCallbacks:Ljava/util/List;
@@ -1317,13 +1314,13 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lwy4;
+    iget-object v0, p0, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->animator:Lu15;
 
-    invoke-direct {p0}, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->getAnimatorListener()Lxy4;
+    invoke-direct {p0}, Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;->getAnimatorListener()Lv15;
 
     move-result-object p0
 
-    iget-object v0, v0, Lwy4;->b:Landroid/animation/AnimatorSet;
+    iget-object v0, v0, Lu15;->b:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0, p0}, Landroid/animation/Animator;->removeListener(Landroid/animation/Animator$AnimatorListener;)V
 

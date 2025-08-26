@@ -447,7 +447,7 @@
 
     const-string v3, ", have: "
 
-    invoke-static {v2, p0, v3, v1}, Lme4;->j(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, p0, v3, v1}, Lv04;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -800,12 +800,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -828,11 +827,10 @@
 
     if-ne p0, p1, :cond_0
 
-    goto :goto_0
+    return p1
 
     :cond_0
-    const/4 p1, 0x0
+    const/4 p0, 0x0
 
-    :goto_0
-    return p1
+    return p0
 .end method

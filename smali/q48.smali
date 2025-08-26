@@ -1,65 +1,64 @@
-.class public final synthetic Lq48;
+.class public final Lq48;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Llh7;
-.implements Lnh7;
+.implements Lv48;
 
 
-# instance fields
-.field public final synthetic a:Lu48;
+# static fields
+.field public static final a:Lq48;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lu48;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lq48;->a:Lu48;
+    new-instance v0, Lq48;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lq48;->a:Lq48;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public d(Ljava/lang/Object;Lwi5;)V
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
-    check-cast p1, Lhya;
+    const/4 v0, 0x1
 
-    iget-object p0, p0, Lq48;->a:Lu48;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return v0
 
-    new-instance v0, Lfya;
+    :cond_0
+    instance-of p0, p1, Lq48;
 
-    invoke-direct {v0, p2}, Lfya;-><init>(Lwi5;)V
+    if-nez p0, :cond_1
 
-    iget-object p0, p0, Lu48;->b:Lr38;
+    const/4 p0, 0x0
 
-    invoke-interface {p1, p0, v0}, Lhya;->Y(Lkya;Lfya;)V
+    return p0
 
-    return-void
+    :cond_1
+    return v0
 .end method
 
-.method public invoke(Ljava/lang/Object;)V
+.method public final hashCode()I
     .locals 0
 
-    check-cast p1, Lhya;
+    const p0, 0x5a175638    # 1.064938E16f
 
-    iget-object p0, p0, Lq48;->a:Lu48;
+    return p0
+.end method
 
-    iget-object p0, p0, Lu48;->m:Lyd3;
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    iget-object p0, p0, Lyd3;->a:Ljava/lang/Object;
+    const-string p0, "OnClosing"
 
-    check-cast p0, Lfza;
-
-    iget-object p0, p0, Lfza;->z:Lz78;
-
-    invoke-interface {p1, p0}, Lhya;->b0(Lz78;)V
-
-    return-void
+    return-object p0
 .end method

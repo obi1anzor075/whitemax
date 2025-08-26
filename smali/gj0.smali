@@ -1,125 +1,80 @@
 .class public final Lgj0;
-.super Ljava/lang/Object;
+.super Lva9;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:Ljava/lang/String;
-
-.field public final c:I
-
-.field public final d:I
-
-
-# direct methods
-.method public constructor <init>(Ljava/lang/String;IILjava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lgj0;->a:Ljava/lang/String;
-
-    iput-object p4, p0, Lgj0;->b:Ljava/lang/String;
-
-    iput p2, p0, Lgj0;->c:I
-
-    iput p3, p0, Lgj0;->d:I
-
-    return-void
-.end method
-
-
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final handleMessage(Landroid/os/Message;)V
+    .locals 1
+
+    iget p0, p1, Landroid/os/Message;->what:I
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_0
+    if-eq p0, v0, :cond_1
 
-    return v0
+    const/4 v0, 0x2
 
-    :cond_0
-    instance-of v1, p1, Lgj0;
+    if-eq p0, v0, :cond_0
 
-    const/4 v2, 0x0
+    const-string p1, "Don\'t know how to handle message: "
 
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lgj0;
-
-    iget v1, p1, Lgj0;->c:I
-
-    iget v3, p0, Lgj0;->c:I
-
-    if-ne v3, v1, :cond_2
-
-    iget v1, p0, Lgj0;->d:I
-
-    iget v3, p1, Lgj0;->d:I
-
-    if-ne v1, v3, :cond_2
-
-    iget-object v1, p0, Lgj0;->a:Ljava/lang/String;
-
-    iget-object v3, p1, Lgj0;->a:Ljava/lang/String;
-
-    invoke-static {v1, v3}, Lam7;->j(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    iget-object p0, p0, Lgj0;->b:Ljava/lang/String;
-
-    iget-object p1, p1, Lgj0;->b:Ljava/lang/String;
-
-    invoke-static {p0, p1}, Lam7;->j(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    move v0, v2
-
-    :goto_0
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    iget v0, p0, Lgj0;->c:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    iget v1, p0, Lgj0;->d:I
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lgj0;->a:Ljava/lang/String;
-
-    iget-object p0, p0, Lgj0;->b:Ljava/lang/String;
-
-    filled-new-array {v2, p0, v0, v1}, [Ljava/lang/Object;
+    invoke-static {p0, p1}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-static {p0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+    new-instance p1, Ljava/lang/Exception;
 
-    move-result p0
+    invoke-direct {p1}, Ljava/lang/Exception;-><init>()V
 
-    return p0
+    const-string v0, "BasePendingResult"
+
+    invoke-static {v0, p0, p1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    return-void
+
+    :cond_0
+    iget-object p0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;
+
+    sget-object p1, Lcom/google/android/gms/common/api/Status;->o0:Lcom/google/android/gms/common/api/Status;
+
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->P(Lcom/google/android/gms/common/api/Status;)V
+
+    return-void
+
+    :cond_1
+    iget-object p0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast p0, Landroid/util/Pair;
+
+    iget-object p1, p0, Landroid/util/Pair;->first:Ljava/lang/Object;
+
+    if-nez p1, :cond_2
+
+    iget-object p0, p0, Landroid/util/Pair;->second:Ljava/lang/Object;
+
+    check-cast p0, Lnhc;
+
+    const/4 p0, 0x0
+
+    :try_start_0
+    throw p0
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    move-exception p0
+
+    sget-object p1, Lcom/google/android/gms/common/api/internal/BasePendingResult;->o:Ltu0;
+
+    throw p0
+
+    :cond_2
+    new-instance p0, Ljava/lang/ClassCastException;
+
+    invoke-direct {p0}, Ljava/lang/ClassCastException;-><init>()V
+
+    throw p0
 .end method

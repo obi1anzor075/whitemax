@@ -1,64 +1,59 @@
 .class public final Lvc6;
-.super Ljava/lang/Object;
+.super Lbu3;
 .source "SourceFile"
 
-# interfaces
-.implements Lwc6;
 
+# instance fields
+.field public synthetic X:Ljava/lang/Object;
 
-# static fields
-.field public static final a:Lvc6;
+.field public final synthetic Y:Lwc6;
+
+.field public Z:I
+
+.field public o:Lwc6;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lwc6;Lbu3;)V
+    .locals 0
 
-    new-instance v0, Lvc6;
+    iput-object p1, p0, Lvc6;->Y:Lwc6;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lvc6;->a:Lvc6;
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 8
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Lvc6;->X:Ljava/lang/Object;
 
-    if-ne p0, p1, :cond_0
+    iget p1, p0, Lvc6;->Z:I
 
-    return v0
+    const/high16 v0, -0x80000000
 
-    :cond_0
-    instance-of p0, p1, Lvc6;
+    or-int/2addr p1, v0
 
-    if-nez p0, :cond_1
+    iput p1, p0, Lvc6;->Z:I
 
-    const/4 p0, 0x0
+    const-wide/16 v4, 0x0
 
-    return p0
+    const/4 v6, 0x0
 
-    :cond_1
-    return v0
-.end method
+    iget-object v0, p0, Lvc6;->Y:Lwc6;
 
-.method public final hashCode()I
-    .locals 0
+    const-wide/16 v1, 0x0
 
-    const p0, 0x5493c731
+    const/4 v3, 0x0
 
-    return p0
-.end method
+    move-object v7, p0
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
+    invoke-virtual/range {v0 .. v7}, Lwc6;->a(JLvi2;JLjava/lang/String;Lbu3;)Ljava/lang/Object;
 
-    const-string p0, "Empty"
+    move-result-object p0
 
     return-object p0
 .end method

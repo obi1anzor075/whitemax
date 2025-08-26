@@ -1,45 +1,35 @@
 .class public final Lqo5;
-.super Lro5;
+.super Lbu3;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic a:[Ljava/lang/Iterable;
+.field public synthetic X:Ljava/lang/Object;
 
+.field public Y:I
 
-# direct methods
-.method public constructor <init>([Ljava/lang/Iterable;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lqo5;->a:[Ljava/lang/Iterable;
-
-    return-void
-.end method
+.field public o:Lkcc;
 
 
 # virtual methods
-.method public final iterator()Ljava/util/Iterator;
-    .locals 2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    new-instance v0, Lpo5;
+    iput-object p1, p0, Lqo5;->X:Ljava/lang/Object;
 
-    iget-object v1, p0, Lqo5;->a:[Ljava/lang/Iterable;
+    iget p1, p0, Lqo5;->Y:I
 
-    array-length v1, v1
+    const/high16 v0, -0x80000000
 
-    invoke-direct {v0, p0, v1}, Lpo5;-><init>(Lqo5;I)V
+    or-int/2addr p1, v0
 
-    new-instance p0, Lw27;
+    iput p1, p0, Lqo5;->Y:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x0
 
-    sget-object v1, Lv27;->X:Lv27;
+    invoke-static {p0, p1, p1}, Lsgg;->g(Lbu3;Lzm5;Lbn5;)Ljava/io/Serializable;
 
-    iput-object v1, p0, Lw27;->b:Ljava/util/Iterator;
-
-    iput-object v0, p0, Lw27;->c:Ljava/util/Iterator;
+    move-result-object p0
 
     return-object p0
 .end method

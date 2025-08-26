@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/RowPadding"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <ru.ok.messages.views.widgets.TamAvatarView android:id="@id/row_phone__av_view" android:layout_width="@dimen/avatar_large" android:layout_height="@dimen/avatar_large" android:layout_centerVertical="true" android:layout_alignParentStart="true" app:placeHolder="@drawable/ava_m_40" />
-    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/font_medium" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/row_phone__tv_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_alignTop="@id/row_phone__av_view" android:layout_alignBottom="@id/row_phone__av_view" android:fontFamily="sans-serif-medium" android:layout_marginStart="@dimen/activity_horizontal_margin" android:layout_toStartOf="@id/row_phone_picker__iv_state" android:layout_toEndOf="@id/row_phone__av_view" />
-    <androidx.appcompat.widget.AppCompatImageView android:id="@id/row_phone_picker__iv_state" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_checkbox_24" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
-</RelativeLayout>

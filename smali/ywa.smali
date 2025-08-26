@@ -1,56 +1,82 @@
 .class public final Lywa;
-.super Ln0;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final p:Lfr6;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final q:Lkv2;
-
-.field public r:Lcom/facebook/fresco/ui/common/ImagePerfDataListener;
+.field public final synthetic Y:Lone/me/chats/picker/members/PickerMembersListWidget;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lkv2;Lfr6;Ljava/util/Set;Ljava/util/Set;)V
+.method public constructor <init>(Lone/me/chats/picker/members/PickerMembersListWidget;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0, p1, p4, p5}, Ln0;-><init>(Landroid/content/Context;Ljava/util/Set;Ljava/util/Set;)V
+    iput-object p1, p0, Lywa;->Y:Lone/me/chats/picker/members/PickerMembersListWidget;
 
-    iput-object p3, p0, Lywa;->p:Lfr6;
+    const/4 p1, 0x2
 
-    iput-object p2, p0, Lywa;->q:Lkv2;
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Landroid/net/Uri;)V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Ljava/util/List;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lywa;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lywa;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lywa;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .locals 1
 
-    if-nez p1, :cond_0
+    new-instance v0, Lywa;
 
-    const/4 p1, 0x0
+    iget-object p0, p0, Lywa;->Y:Lone/me/chats/picker/members/PickerMembersListWidget;
 
-    iput-object p1, p0, Ln0;->e:Ljava/lang/Object;
+    invoke-direct {v0, p0, p2}, Lywa;-><init>(Lone/me/chats/picker/members/PickerMembersListWidget;Lkotlin/coroutines/Continuation;)V
 
-    return-void
+    iput-object p1, v0, Lywa;->X:Ljava/lang/Object;
 
-    :cond_0
-    invoke-static {p1}, Lur6;->d(Landroid/net/Uri;)Lur6;
+    return-object v0
+.end method
 
-    move-result-object p1
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    sget-object v0, Lrfc;->c:Lrfc;
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    iput-object v0, p1, Lur6;->e:Lrfc;
+    iget-object p1, p0, Lywa;->X:Ljava/lang/Object;
 
-    invoke-virtual {p1}, Lur6;->a()Ltr6;
+    check-cast p1, Ljava/util/List;
 
-    move-result-object p1
+    iget-object p0, p0, Lywa;->Y:Lone/me/chats/picker/members/PickerMembersListWidget;
 
-    iput-object p1, p0, Ln0;->e:Ljava/lang/Object;
+    iget-object p0, p0, Lone/me/chats/picker/members/PickerMembersListWidget;->o0:Lbva;
 
-    return-void
+    invoke-virtual {p0, p1}, Lhl7;->E(Ljava/util/List;)V
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

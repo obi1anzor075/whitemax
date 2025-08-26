@@ -1,53 +1,92 @@
 .class public final Lgm5;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Li4d;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic a:I
 
-.field public Y:I
+.field public final b:Ljava/lang/Object;
 
-.field public final synthetic Z:Ldm5;
+.field public final c:Lx56;
 
-.field public o:Ldm5;
-
-.field public w0:Ljava/lang/Object;
+.field public final d:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ldm5;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method public constructor <init>(Li4d;Lx56;Lx56;)V
+    .locals 1
 
-    iput-object p1, p0, Lgm5;->Z:Ldm5;
+    const/4 v0, 0x0
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput v0, p0, Lgm5;->a:I
+
+    .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 6
+    iput-object p1, p0, Lgm5;->d:Ljava/lang/Object;
+
+    .line 7
+    iput-object p2, p0, Lgm5;->c:Lx56;
+
+    .line 8
+    iput-object p3, p0, Lgm5;->b:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/Object;Lx56;Lx56;)V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Lgm5;->a:I
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    iput-object p1, p0, Lgm5;->b:Ljava/lang/Object;
+
+    .line 3
+    iput-object p2, p0, Lgm5;->c:Lx56;
+
+    .line 4
+    iput-object p3, p0, Lgm5;->d:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final iterator()Ljava/util/Iterator;
     .locals 1
 
-    iput-object p1, p0, Lgm5;->X:Ljava/lang/Object;
+    iget v0, p0, Lgm5;->a:I
 
-    iget p1, p0, Lgm5;->Y:I
+    packed-switch v0, :pswitch_data_0
 
-    const/high16 v0, -0x80000000
+    new-instance v0, Lri5;
 
-    or-int/2addr p1, v0
+    invoke-direct {v0, p0}, Lri5;-><init>(Lgm5;)V
 
-    iput p1, p0, Lgm5;->Y:I
+    return-object v0
 
-    iget-object p1, p0, Lgm5;->Z:Ldm5;
+    :pswitch_0
+    new-instance v0, Lak5;
 
-    const/4 v0, 0x0
+    invoke-direct {v0, p0}, Lak5;-><init>(Lgm5;)V
 
-    invoke-virtual {p1, v0, p0}, Ldm5;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    return-object v0
 
-    move-result-object p0
+    nop
 
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

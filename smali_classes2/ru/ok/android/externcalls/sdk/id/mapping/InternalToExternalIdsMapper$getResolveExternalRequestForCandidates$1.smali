@@ -1,14 +1,14 @@
 .class final Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper$getResolveExternalRequestForCandidates$1;
-.super Lb97;
+.super Lsd7;
 .source "SourceFile"
 
 # interfaces
-.implements Lu16;
+.implements Lx56;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper;->getResolveExternalRequestForCandidates(Ljava/util/List;)Lnj0;
+    value = Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper;->getResolveExternalRequestForCandidates(Ljava/util/List;)Lmk0;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,8 +18,8 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lb97;",
-        "Lu16;"
+        "Lsd7;",
+        "Lx56;"
     }
 .end annotation
 
@@ -28,12 +28,12 @@
         "\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\r\n\u0002\u0008\u0003\u0010\u0006\u001a\u00020\u00032\n\u0010\u0002\u001a\u00060\u0000j\u0002`\u0001H\n\u00a2\u0006\u0004\u0008\u0004\u0010\u0005"
     }
     d2 = {
-        "Lge1;",
+        "Lrf1;",
         "Lru/ok/android/externcalls/sdk/id/InternalId;",
         "it",
         "",
         "invoke",
-        "(Lge1;)Ljava/lang/CharSequence;",
+        "(Lrf1;)Ljava/lang/CharSequence;",
         "<anonymous>"
     }
     k = 0x3
@@ -67,18 +67,18 @@
 
     const/4 v0, 0x1
 
-    invoke-direct {p0, v0}, Lb97;-><init>(I)V
+    invoke-direct {p0, v0}, Lsd7;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Lge1;)Ljava/lang/CharSequence;
+.method public final invoke(Lrf1;)Ljava/lang/CharSequence;
     .locals 0
 
     .line 1
-    iget-wide p0, p1, Lge1;->a:J
+    iget-wide p0, p1, Lrf1;->a:J
 
     invoke-static {p0, p1}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
@@ -91,9 +91,9 @@
     .locals 0
 
     .line 2
-    check-cast p1, Lge1;
+    check-cast p1, Lrf1;
 
-    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper$getResolveExternalRequestForCandidates$1;->invoke(Lge1;)Ljava/lang/CharSequence;
+    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper$getResolveExternalRequestForCandidates$1;->invoke(Lrf1;)Ljava/lang/CharSequence;
 
     move-result-object p0
 

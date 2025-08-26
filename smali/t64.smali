@@ -1,29 +1,21 @@
 .class public final Lt64;
-.super Ljava/lang/Object;
+.super Lio;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:J
-
-.field public final b:Z
-
-.field public final c:Ljava/lang/Object;
-
-.field public d:I
+# static fields
+.field public static final a:Lt64;
 
 
 # direct methods
-.method public constructor <init>(JZJLjava/lang/Object;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lt64;
 
-    iput-wide p1, p0, Lt64;->a:J
+    invoke-direct {v0}, Lio;-><init>()V
 
-    iput-boolean p3, p0, Lt64;->b:Z
-
-    iput-object p6, p0, Lt64;->c:Ljava/lang/Object;
+    sput-object v0, Lt64;->a:Lt64;
 
     return-void
 .end method

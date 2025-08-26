@@ -1,65 +1,47 @@
-.class public abstract Lkoe;
+.class public final Lkoe;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final a:Lr7e;
-
-.field public static final b:Lr7e;
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+# virtual methods
+.method public final createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 0
 
-    sget-object v0, Ll8;->Z:Ll8;
+    sget-object p0, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
 
-    new-instance v1, Lr7e;
+    invoke-interface {p0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
-    invoke-direct {v1, v0}, Lr7e;-><init>(Ls16;)V
+    move-result-object p0
 
-    sput-object v1, Lkoe;->a:Lr7e;
+    check-cast p0, Ljava/lang/CharSequence;
 
-    sget-object v0, Ll8;->Y:Ll8;
+    const-string p1, ""
 
-    new-instance v1, Lr7e;
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-direct {v1, v0}, Lr7e;-><init>(Ls16;)V
+    move-result p1
 
-    sput-object v1, Lkoe;->b:Lr7e;
+    if-eqz p1, :cond_0
 
-    return-void
+    sget-object p0, Lmoe;->a:Lloe;
+
+    return-object p0
+
+    :cond_0
+    new-instance p1, Lloe;
+
+    invoke-direct {p1, p0}, Lloe;-><init>(Ljava/lang/CharSequence;)V
+
+    return-object p1
 .end method
 
-.method public static a(Ljava/lang/Runnable;)V
-    .locals 1
+.method public final newArray(I)[Ljava/lang/Object;
+    .locals 0
 
-    sget-object v0, Lkoe;->b:Lr7e;
+    new-array p0, p1, [Lloe;
 
-    invoke-virtual {v0}, Lr7e;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/concurrent/Executor;
-
-    invoke-interface {v0, p0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public static b(Ljava/lang/Runnable;)V
-    .locals 1
-
-    sget-object v0, Lkoe;->a:Lr7e;
-
-    invoke-virtual {v0}, Lr7e;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/concurrent/Executor;
-
-    invoke-interface {v0, p0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
+    return-object p0
 .end method

@@ -1,58 +1,61 @@
 .class public final Lsja;
-.super Ljava/lang/Object;
+.super Lvja;
 .source "SourceFile"
 
-# interfaces
-.implements Loe1;
 
-
-# instance fields
-.field public final a:Ljava/util/concurrent/CopyOnWriteArraySet;
+# static fields
+.field public static final a:Lsja;
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lsja;
 
-    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
-
-    iput-object v0, p0, Lsja;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
+    sput-object v0, Lsja;->a:Lsja;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onStateChanged(Lge1;Lie1;)V
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
-    iget-object p0, p0, Lsja;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
+    const/4 v0, 0x1
 
-    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
+    if-ne p0, p1, :cond_0
 
-    move-result-object p0
-
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Loe1;
-
-    invoke-interface {v0, p1, p2}, Loe1;->onStateChanged(Lge1;Lie1;)V
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    return-void
+    instance-of p0, p1, Lsja;
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    const p0, -0x5d064544
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "NotFound"
+
+    return-object p0
 .end method

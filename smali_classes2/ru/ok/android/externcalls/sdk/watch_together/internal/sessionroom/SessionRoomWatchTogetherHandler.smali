@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lnj1;
+.implements Lol1;
 
 
 # annotations
@@ -13,25 +13,25 @@
     }
     d2 = {
         "Lru/ok/android/externcalls/sdk/watch_together/internal/sessionroom/SessionRoomWatchTogetherHandler;",
-        "Lnj1;",
+        "Lol1;",
         "Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;",
         "store",
         "Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;",
         "watchTogetherManager",
         "<init>",
         "(Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;)V",
-        "Ljue;",
+        "Le5f;",
         "stopWatchTogetherForMe",
         "()V",
-        "Ljj1;",
+        "Lkl1;",
         "params",
         "onCurrentParticipantActiveRoomChanged",
-        "(Ljj1;)V",
+        "(Lkl1;)V",
         "Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;",
         "Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;",
-        "Lw2d;",
+        "Le9d;",
         "roomId",
-        "Lw2d;",
+        "Le9d;",
         "calls-sdk_release"
     }
     k = 0x1
@@ -40,11 +40,12 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
-.field private roomId:Lw2d;
+.field private roomId:Le9d;
 
 .field private final store:Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;
 
@@ -61,9 +62,9 @@
 
     iput-object p2, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/sessionroom/SessionRoomWatchTogetherHandler;->watchTogetherManager:Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;
 
-    sget-object p1, Lu2d;->a:Lu2d;
+    sget-object p1, Lc9d;->a:Lc9d;
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/sessionroom/SessionRoomWatchTogetherHandler;->roomId:Lw2d;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/sessionroom/SessionRoomWatchTogetherHandler;->roomId:Le9d;
 
     return-void
 .end method
@@ -109,7 +110,7 @@
 
     move-object v4, v2
 
-    check-cast v4, Lw69;
+    check-cast v4, Lsb9;
 
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -139,7 +140,7 @@
     const/4 v2, 0x0
 
     :goto_1
-    invoke-static {v1, v2}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v2}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -155,7 +156,7 @@
 
     const/4 v6, 0x0
 
-    invoke-static/range {v3 .. v8}, Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;->stop$default(Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;Lw69;Ls16;Lu16;ILjava/lang/Object;)V
+    invoke-static/range {v3 .. v8}, Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;->stop$default(Lru/ok/android/externcalls/sdk/watch_together/WatchTogetherPlayer;Lsb9;Lv56;Lx56;ILjava/lang/Object;)V
 
     goto :goto_0
 
@@ -165,14 +166,14 @@
 
 
 # virtual methods
-.method public onCurrentParticipantActiveRoomChanged(Ljj1;)V
+.method public onCurrentParticipantActiveRoomChanged(Lkl1;)V
     .locals 1
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/sessionroom/SessionRoomWatchTogetherHandler;->roomId:Lw2d;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/sessionroom/SessionRoomWatchTogetherHandler;->roomId:Le9d;
 
-    iget-object p1, p1, Ljj1;->a:Lw2d;
+    iget-object p1, p1, Lkl1;->a:Le9d;
 
-    invoke-static {v0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -181,24 +182,24 @@
     invoke-direct {p0}, Lru/ok/android/externcalls/sdk/watch_together/internal/sessionroom/SessionRoomWatchTogetherHandler;->stopWatchTogetherForMe()V
 
     :cond_0
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/sessionroom/SessionRoomWatchTogetherHandler;->roomId:Lw2d;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/sessionroom/SessionRoomWatchTogetherHandler;->roomId:Le9d;
 
     return-void
 .end method
 
-.method public bridge synthetic onCurrentParticipantInvitedToRoom(Lkj1;)V
+.method public bridge synthetic onCurrentParticipantInvitedToRoom(Lll1;)V
     .locals 0
 
     return-void
 .end method
 
-.method public bridge synthetic onRoomRemoved(Llj1;)V
+.method public bridge synthetic onRoomRemoved(Lml1;)V
     .locals 0
 
     return-void
 .end method
 
-.method public bridge synthetic onRoomUpdated(Lmj1;)V
+.method public bridge synthetic onRoomUpdated(Lnl1;)V
     .locals 0
 
     return-void

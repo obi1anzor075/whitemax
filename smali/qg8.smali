@@ -1,64 +1,41 @@
 .class public final Lqg8;
-.super Ljava/lang/Object;
+.super Landroid/media/MediaRouter$VolumeCallback;
 .source "SourceFile"
 
-# interfaces
-.implements Lug8;
 
-
-# static fields
-.field public static final a:Lqg8;
+# instance fields
+.field public final a:Lpg8;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lpg8;)V
+    .locals 0
 
-    new-instance v0, Lqg8;
+    invoke-direct {p0}, Landroid/media/MediaRouter$VolumeCallback;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lqg8;->a:Lqg8;
+    iput-object p1, p0, Lqg8;->a:Lpg8;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of p0, p1, Lqg8;
-
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
+.method public final onVolumeSetRequest(Landroid/media/MediaRouter$RouteInfo;I)V
     .locals 0
 
-    const p0, -0x78451a1f
+    iget-object p0, p0, Lqg8;->a:Lpg8;
 
-    return p0
+    invoke-interface {p0, p1, p2}, Lpg8;->a(Landroid/media/MediaRouter$RouteInfo;I)V
+
+    return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public final onVolumeUpdateRequest(Landroid/media/MediaRouter$RouteInfo;I)V
     .locals 0
 
-    const-string p0, "CloseAndScrollChat"
+    iget-object p0, p0, Lqg8;->a:Lpg8;
 
-    return-object p0
+    invoke-interface {p0, p1, p2}, Lpg8;->b(Landroid/media/MediaRouter$RouteInfo;I)V
+
+    return-void
 .end method

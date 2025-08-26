@@ -1,21 +1,848 @@
 .class public final Lqc8;
-.super Lpc8;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lnu0;
 
-# virtual methods
-.method public final a(Lpd8;)V
-    .locals 0
+
+# static fields
+.field public static final O0:Lqc8;
+
+.field public static final P0:Lia8;
+
+
+# instance fields
+.field public final A0:Ljava/lang/Integer;
+
+.field public final B0:Ljava/lang/Integer;
+
+.field public final C0:Ljava/lang/Integer;
+
+.field public final D0:Ljava/lang/Integer;
+
+.field public final E0:Ljava/lang/Integer;
+
+.field public final F0:Ljava/lang/CharSequence;
+
+.field public final G0:Ljava/lang/CharSequence;
+
+.field public final H0:Ljava/lang/CharSequence;
+
+.field public final I0:Ljava/lang/Integer;
+
+.field public final J0:Ljava/lang/Integer;
+
+.field public final K0:Ljava/lang/CharSequence;
+
+.field public final L0:Ljava/lang/CharSequence;
+
+.field public final M0:Ljava/lang/CharSequence;
+
+.field public final N0:Landroid/os/Bundle;
+
+.field public final X:Ljava/lang/CharSequence;
+
+.field public final Y:Ljava/lang/CharSequence;
+
+.field public final Z:Ljava/lang/CharSequence;
+
+.field public final a:Ljava/lang/CharSequence;
+
+.field public final b:Ljava/lang/CharSequence;
+
+.field public final c:Ljava/lang/CharSequence;
+
+.field public final o:Ljava/lang/CharSequence;
+
+.field public final o0:Landroid/net/Uri;
+
+.field public final p0:Lv2c;
+
+.field public final q0:Lv2c;
+
+.field public final r0:[B
+
+.field public final s0:Ljava/lang/Integer;
+
+.field public final t0:Landroid/net/Uri;
+
+.field public final u0:Ljava/lang/Integer;
+
+.field public final v0:Ljava/lang/Integer;
+
+.field public final w0:Ljava/lang/Integer;
+
+.field public final x0:Ljava/lang/Boolean;
+
+.field public final y0:Ljava/lang/Integer;
+
+.field public final z0:Ljava/lang/Integer;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Loc8;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v1, Lqc8;
+
+    invoke-direct {v1, v0}, Lqc8;-><init>(Loc8;)V
+
+    sput-object v1, Lqc8;->O0:Lqc8;
+
+    new-instance v0, Lia8;
+
+    const/4 v1, 0x6
+
+    invoke-direct {v0, v1}, Lia8;-><init>(I)V
+
+    sput-object v0, Lqc8;->P0:Lia8;
 
     return-void
 .end method
 
-.method public final b(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Landroid/media/session/MediaSession;
-    .locals 0
+.method public constructor <init>(Loc8;)V
+    .locals 1
 
-    new-instance p0, Landroid/media/session/MediaSession;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, p2, p3}, Landroid/media/session/MediaSession;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)V
+    iget-object v0, p1, Loc8;->a:Ljava/lang/CharSequence;
 
-    return-object p0
+    iput-object v0, p0, Lqc8;->a:Ljava/lang/CharSequence;
+
+    iget-object v0, p1, Loc8;->b:Ljava/lang/CharSequence;
+
+    iput-object v0, p0, Lqc8;->b:Ljava/lang/CharSequence;
+
+    iget-object v0, p1, Loc8;->c:Ljava/lang/CharSequence;
+
+    iput-object v0, p0, Lqc8;->c:Ljava/lang/CharSequence;
+
+    iget-object v0, p1, Loc8;->d:Ljava/lang/CharSequence;
+
+    iput-object v0, p0, Lqc8;->o:Ljava/lang/CharSequence;
+
+    iget-object v0, p1, Loc8;->e:Ljava/lang/CharSequence;
+
+    iput-object v0, p0, Lqc8;->X:Ljava/lang/CharSequence;
+
+    iget-object v0, p1, Loc8;->f:Ljava/lang/CharSequence;
+
+    iput-object v0, p0, Lqc8;->Y:Ljava/lang/CharSequence;
+
+    iget-object v0, p1, Loc8;->g:Ljava/lang/CharSequence;
+
+    iput-object v0, p0, Lqc8;->Z:Ljava/lang/CharSequence;
+
+    iget-object v0, p1, Loc8;->h:Landroid/net/Uri;
+
+    iput-object v0, p0, Lqc8;->o0:Landroid/net/Uri;
+
+    iget-object v0, p1, Loc8;->i:Lv2c;
+
+    iput-object v0, p0, Lqc8;->p0:Lv2c;
+
+    iget-object v0, p1, Loc8;->j:Lv2c;
+
+    iput-object v0, p0, Lqc8;->q0:Lv2c;
+
+    iget-object v0, p1, Loc8;->k:[B
+
+    iput-object v0, p0, Lqc8;->r0:[B
+
+    iget-object v0, p1, Loc8;->l:Ljava/lang/Integer;
+
+    iput-object v0, p0, Lqc8;->s0:Ljava/lang/Integer;
+
+    iget-object v0, p1, Loc8;->m:Landroid/net/Uri;
+
+    iput-object v0, p0, Lqc8;->t0:Landroid/net/Uri;
+
+    iget-object v0, p1, Loc8;->n:Ljava/lang/Integer;
+
+    iput-object v0, p0, Lqc8;->u0:Ljava/lang/Integer;
+
+    iget-object v0, p1, Loc8;->o:Ljava/lang/Integer;
+
+    iput-object v0, p0, Lqc8;->v0:Ljava/lang/Integer;
+
+    iget-object v0, p1, Loc8;->p:Ljava/lang/Integer;
+
+    iput-object v0, p0, Lqc8;->w0:Ljava/lang/Integer;
+
+    iget-object v0, p1, Loc8;->q:Ljava/lang/Boolean;
+
+    iput-object v0, p0, Lqc8;->x0:Ljava/lang/Boolean;
+
+    iget-object v0, p1, Loc8;->r:Ljava/lang/Integer;
+
+    iput-object v0, p0, Lqc8;->y0:Ljava/lang/Integer;
+
+    iput-object v0, p0, Lqc8;->z0:Ljava/lang/Integer;
+
+    iget-object v0, p1, Loc8;->s:Ljava/lang/Integer;
+
+    iput-object v0, p0, Lqc8;->A0:Ljava/lang/Integer;
+
+    iget-object v0, p1, Loc8;->t:Ljava/lang/Integer;
+
+    iput-object v0, p0, Lqc8;->B0:Ljava/lang/Integer;
+
+    iget-object v0, p1, Loc8;->u:Ljava/lang/Integer;
+
+    iput-object v0, p0, Lqc8;->C0:Ljava/lang/Integer;
+
+    iget-object v0, p1, Loc8;->v:Ljava/lang/Integer;
+
+    iput-object v0, p0, Lqc8;->D0:Ljava/lang/Integer;
+
+    iget-object v0, p1, Loc8;->w:Ljava/lang/Integer;
+
+    iput-object v0, p0, Lqc8;->E0:Ljava/lang/Integer;
+
+    iget-object v0, p1, Loc8;->x:Ljava/lang/CharSequence;
+
+    iput-object v0, p0, Lqc8;->F0:Ljava/lang/CharSequence;
+
+    iget-object v0, p1, Loc8;->y:Ljava/lang/CharSequence;
+
+    iput-object v0, p0, Lqc8;->G0:Ljava/lang/CharSequence;
+
+    iget-object v0, p1, Loc8;->z:Ljava/lang/CharSequence;
+
+    iput-object v0, p0, Lqc8;->H0:Ljava/lang/CharSequence;
+
+    iget-object v0, p1, Loc8;->A:Ljava/lang/Integer;
+
+    iput-object v0, p0, Lqc8;->I0:Ljava/lang/Integer;
+
+    iget-object v0, p1, Loc8;->B:Ljava/lang/Integer;
+
+    iput-object v0, p0, Lqc8;->J0:Ljava/lang/Integer;
+
+    iget-object v0, p1, Loc8;->C:Ljava/lang/CharSequence;
+
+    iput-object v0, p0, Lqc8;->K0:Ljava/lang/CharSequence;
+
+    iget-object v0, p1, Loc8;->D:Ljava/lang/CharSequence;
+
+    iput-object v0, p0, Lqc8;->L0:Ljava/lang/CharSequence;
+
+    iget-object v0, p1, Loc8;->E:Ljava/lang/CharSequence;
+
+    iput-object v0, p0, Lqc8;->M0:Ljava/lang/CharSequence;
+
+    iget-object p1, p1, Loc8;->F:Landroid/os/Bundle;
+
+    iput-object p1, p0, Lqc8;->N0:Landroid/os/Bundle;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()Loc8;
+    .locals 2
+
+    new-instance v0, Loc8;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iget-object v1, p0, Lqc8;->a:Ljava/lang/CharSequence;
+
+    iput-object v1, v0, Loc8;->a:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lqc8;->b:Ljava/lang/CharSequence;
+
+    iput-object v1, v0, Loc8;->b:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lqc8;->c:Ljava/lang/CharSequence;
+
+    iput-object v1, v0, Loc8;->c:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lqc8;->o:Ljava/lang/CharSequence;
+
+    iput-object v1, v0, Loc8;->d:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lqc8;->X:Ljava/lang/CharSequence;
+
+    iput-object v1, v0, Loc8;->e:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lqc8;->Y:Ljava/lang/CharSequence;
+
+    iput-object v1, v0, Loc8;->f:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lqc8;->Z:Ljava/lang/CharSequence;
+
+    iput-object v1, v0, Loc8;->g:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lqc8;->o0:Landroid/net/Uri;
+
+    iput-object v1, v0, Loc8;->h:Landroid/net/Uri;
+
+    iget-object v1, p0, Lqc8;->p0:Lv2c;
+
+    iput-object v1, v0, Loc8;->i:Lv2c;
+
+    iget-object v1, p0, Lqc8;->q0:Lv2c;
+
+    iput-object v1, v0, Loc8;->j:Lv2c;
+
+    iget-object v1, p0, Lqc8;->r0:[B
+
+    iput-object v1, v0, Loc8;->k:[B
+
+    iget-object v1, p0, Lqc8;->s0:Ljava/lang/Integer;
+
+    iput-object v1, v0, Loc8;->l:Ljava/lang/Integer;
+
+    iget-object v1, p0, Lqc8;->t0:Landroid/net/Uri;
+
+    iput-object v1, v0, Loc8;->m:Landroid/net/Uri;
+
+    iget-object v1, p0, Lqc8;->u0:Ljava/lang/Integer;
+
+    iput-object v1, v0, Loc8;->n:Ljava/lang/Integer;
+
+    iget-object v1, p0, Lqc8;->v0:Ljava/lang/Integer;
+
+    iput-object v1, v0, Loc8;->o:Ljava/lang/Integer;
+
+    iget-object v1, p0, Lqc8;->w0:Ljava/lang/Integer;
+
+    iput-object v1, v0, Loc8;->p:Ljava/lang/Integer;
+
+    iget-object v1, p0, Lqc8;->x0:Ljava/lang/Boolean;
+
+    iput-object v1, v0, Loc8;->q:Ljava/lang/Boolean;
+
+    iget-object v1, p0, Lqc8;->z0:Ljava/lang/Integer;
+
+    iput-object v1, v0, Loc8;->r:Ljava/lang/Integer;
+
+    iget-object v1, p0, Lqc8;->A0:Ljava/lang/Integer;
+
+    iput-object v1, v0, Loc8;->s:Ljava/lang/Integer;
+
+    iget-object v1, p0, Lqc8;->B0:Ljava/lang/Integer;
+
+    iput-object v1, v0, Loc8;->t:Ljava/lang/Integer;
+
+    iget-object v1, p0, Lqc8;->C0:Ljava/lang/Integer;
+
+    iput-object v1, v0, Loc8;->u:Ljava/lang/Integer;
+
+    iget-object v1, p0, Lqc8;->D0:Ljava/lang/Integer;
+
+    iput-object v1, v0, Loc8;->v:Ljava/lang/Integer;
+
+    iget-object v1, p0, Lqc8;->E0:Ljava/lang/Integer;
+
+    iput-object v1, v0, Loc8;->w:Ljava/lang/Integer;
+
+    iget-object v1, p0, Lqc8;->F0:Ljava/lang/CharSequence;
+
+    iput-object v1, v0, Loc8;->x:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lqc8;->G0:Ljava/lang/CharSequence;
+
+    iput-object v1, v0, Loc8;->y:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lqc8;->H0:Ljava/lang/CharSequence;
+
+    iput-object v1, v0, Loc8;->z:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lqc8;->I0:Ljava/lang/Integer;
+
+    iput-object v1, v0, Loc8;->A:Ljava/lang/Integer;
+
+    iget-object v1, p0, Lqc8;->J0:Ljava/lang/Integer;
+
+    iput-object v1, v0, Loc8;->B:Ljava/lang/Integer;
+
+    iget-object v1, p0, Lqc8;->K0:Ljava/lang/CharSequence;
+
+    iput-object v1, v0, Loc8;->C:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lqc8;->L0:Ljava/lang/CharSequence;
+
+    iput-object v1, v0, Loc8;->D:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lqc8;->M0:Ljava/lang/CharSequence;
+
+    iput-object v1, v0, Loc8;->E:Ljava/lang/CharSequence;
+
+    iget-object p0, p0, Lqc8;->N0:Landroid/os/Bundle;
+
+    iput-object p0, v0, Loc8;->F:Landroid/os/Bundle;
+
+    return-object v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    if-eqz p1, :cond_2
+
+    const-class v2, Lqc8;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    if-eq v2, v3, :cond_1
+
+    goto/16 :goto_0
+
+    :cond_1
+    check-cast p1, Lqc8;
+
+    iget-object v2, p0, Lqc8;->a:Ljava/lang/CharSequence;
+
+    iget-object v3, p1, Lqc8;->a:Ljava/lang/CharSequence;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->b:Ljava/lang/CharSequence;
+
+    iget-object v3, p1, Lqc8;->b:Ljava/lang/CharSequence;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->c:Ljava/lang/CharSequence;
+
+    iget-object v3, p1, Lqc8;->c:Ljava/lang/CharSequence;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->o:Ljava/lang/CharSequence;
+
+    iget-object v3, p1, Lqc8;->o:Ljava/lang/CharSequence;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->X:Ljava/lang/CharSequence;
+
+    iget-object v3, p1, Lqc8;->X:Ljava/lang/CharSequence;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->Y:Ljava/lang/CharSequence;
+
+    iget-object v3, p1, Lqc8;->Y:Ljava/lang/CharSequence;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->Z:Ljava/lang/CharSequence;
+
+    iget-object v3, p1, Lqc8;->Z:Ljava/lang/CharSequence;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->o0:Landroid/net/Uri;
+
+    iget-object v3, p1, Lqc8;->o0:Landroid/net/Uri;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->p0:Lv2c;
+
+    iget-object v3, p1, Lqc8;->p0:Lv2c;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->q0:Lv2c;
+
+    iget-object v3, p1, Lqc8;->q0:Lv2c;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->r0:[B
+
+    iget-object v3, p1, Lqc8;->r0:[B
+
+    invoke-static {v2, v3}, Ljava/util/Arrays;->equals([B[B)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->s0:Ljava/lang/Integer;
+
+    iget-object v3, p1, Lqc8;->s0:Ljava/lang/Integer;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->t0:Landroid/net/Uri;
+
+    iget-object v3, p1, Lqc8;->t0:Landroid/net/Uri;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->u0:Ljava/lang/Integer;
+
+    iget-object v3, p1, Lqc8;->u0:Ljava/lang/Integer;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->v0:Ljava/lang/Integer;
+
+    iget-object v3, p1, Lqc8;->v0:Ljava/lang/Integer;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->w0:Ljava/lang/Integer;
+
+    iget-object v3, p1, Lqc8;->w0:Ljava/lang/Integer;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->x0:Ljava/lang/Boolean;
+
+    iget-object v3, p1, Lqc8;->x0:Ljava/lang/Boolean;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->z0:Ljava/lang/Integer;
+
+    iget-object v3, p1, Lqc8;->z0:Ljava/lang/Integer;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->A0:Ljava/lang/Integer;
+
+    iget-object v3, p1, Lqc8;->A0:Ljava/lang/Integer;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->B0:Ljava/lang/Integer;
+
+    iget-object v3, p1, Lqc8;->B0:Ljava/lang/Integer;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->C0:Ljava/lang/Integer;
+
+    iget-object v3, p1, Lqc8;->C0:Ljava/lang/Integer;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->D0:Ljava/lang/Integer;
+
+    iget-object v3, p1, Lqc8;->D0:Ljava/lang/Integer;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->E0:Ljava/lang/Integer;
+
+    iget-object v3, p1, Lqc8;->E0:Ljava/lang/Integer;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->F0:Ljava/lang/CharSequence;
+
+    iget-object v3, p1, Lqc8;->F0:Ljava/lang/CharSequence;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->G0:Ljava/lang/CharSequence;
+
+    iget-object v3, p1, Lqc8;->G0:Ljava/lang/CharSequence;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->H0:Ljava/lang/CharSequence;
+
+    iget-object v3, p1, Lqc8;->H0:Ljava/lang/CharSequence;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->I0:Ljava/lang/Integer;
+
+    iget-object v3, p1, Lqc8;->I0:Ljava/lang/Integer;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->J0:Ljava/lang/Integer;
+
+    iget-object v3, p1, Lqc8;->J0:Ljava/lang/Integer;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->K0:Ljava/lang/CharSequence;
+
+    iget-object v3, p1, Lqc8;->K0:Ljava/lang/CharSequence;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lqc8;->L0:Ljava/lang/CharSequence;
+
+    iget-object v3, p1, Lqc8;->L0:Ljava/lang/CharSequence;
+
+    invoke-static {v2, v3}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object p0, p0, Lqc8;->M0:Ljava/lang/CharSequence;
+
+    iget-object p1, p1, Lqc8;->M0:Ljava/lang/CharSequence;
+
+    invoke-static {p0, p1}, Lnaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    return v0
+
+    :cond_2
+    :goto_0
+    return v1
+.end method
+
+.method public final hashCode()I
+    .locals 33
+
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lqc8;->r0:[B
+
+    invoke-static {v1}, Ljava/util/Arrays;->hashCode([B)I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    iget-object v1, v0, Lqc8;->L0:Ljava/lang/CharSequence;
+
+    iget-object v2, v0, Lqc8;->M0:Ljava/lang/CharSequence;
+
+    move-object/from16 v32, v2
+
+    iget-object v2, v0, Lqc8;->a:Ljava/lang/CharSequence;
+
+    iget-object v3, v0, Lqc8;->b:Ljava/lang/CharSequence;
+
+    iget-object v4, v0, Lqc8;->c:Ljava/lang/CharSequence;
+
+    iget-object v5, v0, Lqc8;->o:Ljava/lang/CharSequence;
+
+    iget-object v6, v0, Lqc8;->X:Ljava/lang/CharSequence;
+
+    iget-object v7, v0, Lqc8;->Y:Ljava/lang/CharSequence;
+
+    iget-object v8, v0, Lqc8;->Z:Ljava/lang/CharSequence;
+
+    iget-object v9, v0, Lqc8;->o0:Landroid/net/Uri;
+
+    iget-object v10, v0, Lqc8;->p0:Lv2c;
+
+    iget-object v11, v0, Lqc8;->q0:Lv2c;
+
+    iget-object v13, v0, Lqc8;->s0:Ljava/lang/Integer;
+
+    iget-object v14, v0, Lqc8;->t0:Landroid/net/Uri;
+
+    iget-object v15, v0, Lqc8;->u0:Ljava/lang/Integer;
+
+    move-object/from16 v31, v1
+
+    iget-object v1, v0, Lqc8;->v0:Ljava/lang/Integer;
+
+    move-object/from16 v16, v1
+
+    iget-object v1, v0, Lqc8;->w0:Ljava/lang/Integer;
+
+    move-object/from16 v17, v1
+
+    iget-object v1, v0, Lqc8;->x0:Ljava/lang/Boolean;
+
+    move-object/from16 v18, v1
+
+    iget-object v1, v0, Lqc8;->z0:Ljava/lang/Integer;
+
+    move-object/from16 v19, v1
+
+    iget-object v1, v0, Lqc8;->A0:Ljava/lang/Integer;
+
+    move-object/from16 v20, v1
+
+    iget-object v1, v0, Lqc8;->B0:Ljava/lang/Integer;
+
+    move-object/from16 v21, v1
+
+    iget-object v1, v0, Lqc8;->C0:Ljava/lang/Integer;
+
+    move-object/from16 v22, v1
+
+    iget-object v1, v0, Lqc8;->D0:Ljava/lang/Integer;
+
+    move-object/from16 v23, v1
+
+    iget-object v1, v0, Lqc8;->E0:Ljava/lang/Integer;
+
+    move-object/from16 v24, v1
+
+    iget-object v1, v0, Lqc8;->F0:Ljava/lang/CharSequence;
+
+    move-object/from16 v25, v1
+
+    iget-object v1, v0, Lqc8;->G0:Ljava/lang/CharSequence;
+
+    move-object/from16 v26, v1
+
+    iget-object v1, v0, Lqc8;->H0:Ljava/lang/CharSequence;
+
+    move-object/from16 v27, v1
+
+    iget-object v1, v0, Lqc8;->I0:Ljava/lang/Integer;
+
+    move-object/from16 v28, v1
+
+    iget-object v1, v0, Lqc8;->J0:Ljava/lang/Integer;
+
+    iget-object v0, v0, Lqc8;->K0:Ljava/lang/CharSequence;
+
+    move-object/from16 v30, v0
+
+    move-object/from16 v29, v1
+
+    filled-new-array/range {v2 .. v32}, [Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+
+    move-result v0
+
+    return v0
 .end method

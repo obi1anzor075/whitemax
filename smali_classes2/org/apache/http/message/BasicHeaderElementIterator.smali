@@ -139,7 +139,7 @@
 
     invoke-virtual {v3, p0}, Lorg/apache/http/message/ParserCursor;->updatePos(I)V
 
-    goto :goto_0
+    return-void
 
     :cond_1
     invoke-interface {v0}, Lorg/apache/http/Header;->getValue()Ljava/lang/String;
@@ -173,7 +173,6 @@
     iput-object v0, p0, Lorg/apache/http/message/BasicHeaderElementIterator;->cursor:Lorg/apache/http/message/ParserCursor;
 
     :cond_2
-    :goto_0
     return-void
 .end method
 
@@ -295,12 +294,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_1
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 

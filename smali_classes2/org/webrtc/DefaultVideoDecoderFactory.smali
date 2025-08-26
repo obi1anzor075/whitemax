@@ -110,13 +110,10 @@
     :cond_1
     if-eqz v1, :cond_2
 
-    goto :goto_0
+    return-object v1
 
     :cond_2
-    move-object v1, v0
-
-    :goto_0
-    return-object v1
+    return-object v0
 .end method
 
 .method public getSupportedCodecs()[Lorg/webrtc/VideoCodecInfo;

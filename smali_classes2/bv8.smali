@@ -1,135 +1,192 @@
 .class public final Lbv8;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Landroid/os/Parcelable;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lbv8;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
+.field public final a:Lyu8;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/MessageWriteWidget;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Ldj7;
+
+    const/16 v1, 0x13
+
+    invoke-direct {v0, v1}, Ldj7;-><init>(I)V
+
+    sput-object v0, Lbv8;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Parcel;)V
+    .locals 12
+
+    .line 3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 4
+    invoke-static {p1}, Ltk9;->G(Landroid/os/Parcel;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 5
+    const-class v0, Luv8;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Luv8;
+
+    .line 6
+    iget-object v5, v0, Luv8;->a:Ler8;
+
+    .line 7
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    .line 8
+    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v3
+
+    .line 9
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 10
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v7
+
+    .line 11
+    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v8
+
+    .line 12
+    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v10
+
+    .line 13
+    new-instance v1, Lyu8;
+
+    invoke-direct/range {v1 .. v11}, Lyu8;-><init>(IJLer8;Ljava/lang/String;Ljava/lang/String;JJ)V
+
+    iput-object v1, p0, Lbv8;->a:Lyu8;
+
+    return-void
+
+    :cond_0
+    const/4 p1, 0x0
+
+    .line 14
+    iput-object p1, p0, Lbv8;->a:Lyu8;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lyu8;)V
     .locals 0
 
-    iput-object p2, p0, Lbv8;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p2, 0x2
-
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    .line 2
+    iput-object p1, p0, Lbv8;->a:Lyu8;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final describeContents()I
     .locals 0
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    const/4 p0, 0x0
 
-    invoke-virtual {p0, p1, p2}, Lbv8;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lbv8;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lbv8;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
+    return p0
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 2
 
-    new-instance v0, Lbv8;
+    iget-object p0, p0, Lbv8;->a:Lyu8;
 
-    iget-object p0, p0, Lbv8;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
+    if-nez p0, :cond_0
 
-    invoke-direct {v0, p2, p0}, Lbv8;-><init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/MessageWriteWidget;)V
-
-    iput-object p1, v0, Lbv8;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    const/4 v0, 0x0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lbv8;->X:Ljava/lang/Object;
-
-    check-cast p1, Li05;
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p1, Li05;->a:Ljava/lang/Object;
-
-    check-cast p1, Ljt8;
+    const/4 v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    sget-object v1, Lone/me/sdk/messagewrite/MessageWriteWidget;->J0:[Lk77;
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
-    iget-object p0, p0, Lbv8;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
+    if-eqz p0, :cond_1
 
-    if-eqz p1, :cond_1
+    new-instance v0, Luv8;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v1, p0, Lyu8;->c:Ler8;
 
-    iget-object p1, p1, Ljt8;->a:Lzp8;
+    invoke-direct {v0, v1}, Luv8;-><init>(Ler8;)V
 
-    if-nez p1, :cond_2
+    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+
+    iget p2, p0, Lyu8;->a:I
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget-wide v0, p0, Lyu8;->b:J
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
+
+    iget-object p2, p0, Lyu8;->d:Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    iget-object p2, p0, Lyu8;->e:Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    iget-wide v0, p0, Lyu8;->f:J
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
+
+    iget-wide v0, p0, Lyu8;->g:J
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
     :cond_1
-    sget-object p1, Lzp8;->a:Lzp8;
-
-    :cond_2
-    invoke-virtual {p0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->p0()Ljq8;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljq8;->setEmojiExpandableState(Lzp8;)V
-
-    sget-object v1, Lzp8;->b:Lzp8;
-
-    if-ne p1, v1, :cond_3
-
-    invoke-virtual {p0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->p0()Ljq8;
-
-    move-result-object p1
-
-    new-instance v1, Lqu8;
-
-    const/4 v2, 0x3
-
-    invoke-direct {v1, p0, v2}, Lqu8;-><init>(Lone/me/sdk/messagewrite/MessageWriteWidget;I)V
-
-    iget-object p0, p1, Ljq8;->c:Lhq8;
-
-    invoke-virtual {p0, v0}, Landroid/widget/TextView;->setShowSoftInputOnFocus(Z)V
-
-    new-instance p1, Lxp8;
-
-    invoke-direct {p1, v0, v1}, Lxp8;-><init>(ILu16;)V
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
-
-    :cond_3
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
+    return-void
 .end method

@@ -4,12 +4,12 @@
 
 # interfaces
 .implements Lru/ok/android/externcalls/sdk/rate/internal/RateHintCollection;
-.implements Lu26;
+.implements Lx66;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lru/ok/android/externcalls/sdk/rate/internal/RateManagerImpl;-><init>(Lxwb;Lru/ok/android/externcalls/sdk/rate/rtt/RttRateHintConfig;)V
+    value = Lru/ok/android/externcalls/sdk/rate/internal/RateManagerImpl;-><init>(Ls1c;Lru/ok/android/externcalls/sdk/rate/rtt/RttRateHintConfig;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -56,48 +56,54 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 2
+    .locals 1
 
     instance-of v0, p1, Lru/ok/android/externcalls/sdk/rate/internal/RateHintCollection;
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_0
+
+    instance-of v0, p1, Lx66;
 
     if-eqz v0, :cond_0
 
-    instance-of v0, p1, Lu26;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/rate/internal/RateManagerImpl$rttTrigger$1;->getFunctionDelegate()Ln26;
+    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/rate/internal/RateManagerImpl$rttTrigger$1;->getFunctionDelegate()Lq66;
 
     move-result-object p0
 
-    check-cast p1, Lu26;
+    check-cast p1, Lx66;
 
-    invoke-interface {p1}, Lu26;->getFunctionDelegate()Ln26;
+    invoke-interface {p1}, Lx66;->getFunctionDelegate()Lq66;
 
     move-result-object p1
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result p0
+
+    return p0
 
     :cond_0
-    return v1
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
-.method public final getFunctionDelegate()Ln26;
-    .locals 8
+.method public final getFunctionDelegate()Lq66;
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ln26;"
+            "Lq66;"
         }
     .end annotation
 
-    new-instance v7, Lx26;
+    new-instance v0, La76;
 
     iget-object v4, p0, Lru/ok/android/externcalls/sdk/rate/internal/RateManagerImpl$rttTrigger$1;->$tmp0:Lru/ok/android/externcalls/sdk/rate/internal/RateManagerImpl;
+
+    const-string v6, "addRateHint(Lru/ok/android/externcalls/sdk/rate/RateHint;)V"
+
+    const/4 v2, 0x0
 
     const/4 v1, 0x1
 
@@ -105,21 +111,15 @@
 
     const-string v5, "addRateHint"
 
-    const-string v6, "addRateHint(Lru/ok/android/externcalls/sdk/rate/RateHint;)V"
+    invoke-direct/range {v0 .. v6}, Lz66;-><init>(IILjava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
 
-    const/4 v2, 0x0
-
-    move-object v0, v7
-
-    invoke-direct/range {v0 .. v6}, Lw26;-><init>(IILjava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object v7
+    return-object v0
 .end method
 
 .method public final hashCode()I
     .locals 0
 
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/rate/internal/RateManagerImpl$rttTrigger$1;->getFunctionDelegate()Ln26;
+    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/rate/internal/RateManagerImpl$rttTrigger$1;->getFunctionDelegate()Lq66;
 
     move-result-object p0
 

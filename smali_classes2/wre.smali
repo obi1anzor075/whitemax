@@ -1,73 +1,83 @@
 .class public final Lwre;
-.super Lure;
+.super Lhl7;
 .source "SourceFile"
 
 
-# instance fields
-.field public final b:Ljava/util/Iterator;
-
-
 # direct methods
-.method public constructor <init>(Llf5;Ljava/lang/Object;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    iget-object p1, p1, Llf5;->X:Ldyc;
+    sget-object v0, Lm44;->f:Lm44;
 
-    check-cast p1, Lase;
+    invoke-direct {p0, v0}, Lhl7;-><init>(Lxq7;)V
 
-    invoke-direct {p0, p2}, Lzre;-><init>(Ljava/lang/Object;)V
+    const/4 v0, 0x1
 
-    iget-object p1, p1, Lase;->b:Lu16;
-
-    invoke-interface {p1, p2}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ldyc;
-
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1}, Ldyc;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    iput-object p1, p0, Lwre;->b:Ljava/util/Iterator;
+    invoke-virtual {p0, v0}, Lgbc;->A(Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 2
+.method public final k(I)J
+    .locals 0
 
-    iget-object p0, p0, Lwre;->b:Ljava/util/Iterator;
-
-    if-eqz p0, :cond_0
-
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lhl7;->C(I)Ljava/lang/Object;
 
     move-result-object p0
 
-    goto :goto_0
+    check-cast p0, Lure;
 
-    :cond_0
-    const/4 p0, 0x0
+    iget p0, p0, Lure;->a:I
 
-    :goto_0
-    return-object p0
+    int-to-long p0, p0
+
+    return-wide p0
+.end method
+
+.method public final r(Lccc;I)V
+    .locals 0
+
+    check-cast p1, Lvre;
+
+    iget-object p1, p1, Lvre;->B0:Landroidx/appcompat/widget/AppCompatTextView;
+
+    invoke-virtual {p0, p2}, Lhl7;->C(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lure;
+
+    iget-object p0, p0, Lure;->b:Ljava/lang/String;
+
+    invoke-virtual {p1, p0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    return-void
+.end method
+
+.method public final t(Landroid/view/ViewGroup;I)Lccc;
+    .locals 1
+
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object p0
+
+    invoke-static {p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+
+    move-result-object p0
+
+    sget p2, Lhwb;->number_item:I
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p2, p1, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object p0
+
+    new-instance p1, Lvre;
+
+    invoke-direct {p1, p0}, Lvre;-><init>(Landroid/view/View;)V
+
+    return-object p1
 .end method

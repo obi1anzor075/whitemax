@@ -1,235 +1,53 @@
 .class public final Lfib;
-.super Lgr8;
+.super Lbu3;
 .source "SourceFile"
 
 
-# static fields
-.field public static volatile e:[Lfib;
-
-
 # instance fields
-.field public a:I
+.field public X:J
 
-.field public b:I
+.field public synthetic Y:Ljava/lang/Object;
 
-.field public c:I
+.field public final synthetic Z:Liib;
 
-.field public d:Lgt5;
+.field public o:Liib;
+
+.field public o0:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Liib;Lbu3;)V
+    .locals 0
 
-    invoke-direct {p0}, Lgr8;-><init>()V
+    iput-object p1, p0, Lfib;->Z:Liib;
 
-    const/4 v0, 0x0
-
-    iput v0, p0, Lfib;->a:I
-
-    iput v0, p0, Lfib;->b:I
-
-    iput v0, p0, Lfib;->c:I
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lfib;->d:Lgt5;
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lgr8;->cachedSize:I
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final computeSerializedSize()I
-    .locals 3
-
-    iget v0, p0, Lfib;->a:I
-
-    if-eqz v0, :cond_0
-
-    const/4 v1, 0x1
-
-    invoke-static {v1, v0}, Lo13;->f(II)I
-
-    move-result v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    iget v1, p0, Lfib;->b:I
-
-    if-eqz v1, :cond_1
-
-    const/4 v2, 0x2
-
-    invoke-static {v2, v1}, Lo13;->f(II)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_1
-    iget v1, p0, Lfib;->c:I
-
-    if-eqz v1, :cond_2
-
-    const/4 v2, 0x3
-
-    invoke-static {v2, v1}, Lo13;->f(II)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_2
-    iget-object p0, p0, Lfib;->d:Lgt5;
-
-    if-eqz p0, :cond_3
-
-    const/4 v1, 0x4
-
-    invoke-static {v1, p0}, Lo13;->i(ILgr8;)I
-
-    move-result p0
-
-    add-int/2addr v0, p0
-
-    :cond_3
-    return v0
-.end method
-
-.method public final mergeFrom(Ln13;)Lgr8;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Ln13;->s()I
+    iput-object p1, p0, Lfib;->Y:Ljava/lang/Object;
 
-    move-result v0
+    iget p1, p0, Lfib;->o0:I
 
-    if-eqz v0, :cond_6
+    const/high16 v0, -0x80000000
 
-    const/16 v1, 0x8
+    or-int/2addr p1, v0
 
-    if-eq v0, v1, :cond_5
+    iput p1, p0, Lfib;->o0:I
 
-    const/16 v1, 0x10
+    iget-object p1, p0, Lfib;->Z:Liib;
 
-    if-eq v0, v1, :cond_4
+    const-wide/16 v0, 0x0
 
-    const/16 v1, 0x18
+    invoke-virtual {p1, v0, v1, p0}, Liib;->a(JLbu3;)Ljava/lang/Object;
 
-    if-eq v0, v1, :cond_3
+    move-result-object p0
 
-    const/16 v1, 0x22
-
-    if-eq v0, v1, :cond_1
-
-    invoke-virtual {p1, v0}, Ln13;->u(I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    goto :goto_1
-
-    :cond_1
-    iget-object v0, p0, Lfib;->d:Lgt5;
-
-    if-nez v0, :cond_2
-
-    new-instance v0, Lgt5;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1}, Lgt5;-><init>(I)V
-
-    iput-object v0, p0, Lfib;->d:Lgt5;
-
-    :cond_2
-    iget-object v0, p0, Lfib;->d:Lgt5;
-
-    invoke-virtual {p1, v0}, Ln13;->j(Lgr8;)V
-
-    goto :goto_0
-
-    :cond_3
-    invoke-virtual {p1}, Ln13;->p()I
-
-    move-result v0
-
-    iput v0, p0, Lfib;->c:I
-
-    goto :goto_0
-
-    :cond_4
-    invoke-virtual {p1}, Ln13;->p()I
-
-    move-result v0
-
-    iput v0, p0, Lfib;->b:I
-
-    goto :goto_0
-
-    :cond_5
-    invoke-virtual {p1}, Ln13;->p()I
-
-    move-result v0
-
-    iput v0, p0, Lfib;->a:I
-
-    goto :goto_0
-
-    :cond_6
-    :goto_1
     return-object p0
-.end method
-
-.method public final writeTo(Lo13;)V
-    .locals 2
-
-    iget v0, p0, Lfib;->a:I
-
-    if-eqz v0, :cond_0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p1, v1, v0}, Lo13;->w(II)V
-
-    :cond_0
-    iget v0, p0, Lfib;->b:I
-
-    if-eqz v0, :cond_1
-
-    const/4 v1, 0x2
-
-    invoke-virtual {p1, v1, v0}, Lo13;->w(II)V
-
-    :cond_1
-    iget v0, p0, Lfib;->c:I
-
-    if-eqz v0, :cond_2
-
-    const/4 v1, 0x3
-
-    invoke-virtual {p1, v1, v0}, Lo13;->w(II)V
-
-    :cond_2
-    iget-object p0, p0, Lfib;->d:Lgt5;
-
-    if-eqz p0, :cond_3
-
-    const/4 v0, 0x4
-
-    invoke-virtual {p1, v0, p0}, Lo13;->y(ILgr8;)V
-
-    :cond_3
-    return-void
 .end method

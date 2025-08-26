@@ -4,21 +4,20 @@
 
 
 # direct methods
-.method public static a(Landroid/widget/ThemedSpinnerAdapter;Landroid/content/res/Resources$Theme;)V
-    .locals 1
+.method public static a(Ljava/lang/String;)Landroid/os/LocaleList;
+    .locals 0
 
-    invoke-interface {p0}, Landroid/widget/ThemedSpinnerAdapter;->getDropDownViewTheme()Landroid/content/res/Resources$Theme;
+    invoke-static {p0}, Landroid/os/LocaleList;->forLanguageTags(Ljava/lang/String;)Landroid/os/LocaleList;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    return-object p0
+.end method
 
-    move-result v0
+.method public static b(Landroid/widget/TextView;Landroid/os/LocaleList;)V
+    .locals 0
 
-    if-nez v0, :cond_0
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextLocales(Landroid/os/LocaleList;)V
 
-    invoke-interface {p0, p1}, Landroid/widget/ThemedSpinnerAdapter;->setDropDownViewTheme(Landroid/content/res/Resources$Theme;)V
-
-    :cond_0
     return-void
 .end method

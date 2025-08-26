@@ -1,138 +1,80 @@
-.class public final Lzi9;
-.super Ll5e;
+.class public final synthetic Lzi9;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lk26;
+.implements Lc6;
 
 
 # instance fields
-.field public final synthetic X:I
+.field public final synthetic a:I
 
-.field public synthetic Y:Lfm;
-
-.field public synthetic Z:Lpda;
+.field public final synthetic b:Laj9;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILkotlin/coroutines/Continuation;I)V
+.method public synthetic constructor <init>(Laj9;I)V
     .locals 0
 
-    iput p3, p0, Lzi9;->X:I
+    iput p2, p0, Lzi9;->a:I
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lzi9;->b:Laj9;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final run()V
     .locals 2
 
-    iget p0, p0, Lzi9;->X:I
-
-    check-cast p1, Lfm;
-
-    check-cast p2, Lpda;
-
-    check-cast p3, Lkotlin/coroutines/Continuation;
-
-    packed-switch p0, :pswitch_data_0
-
-    new-instance p0, Lzi9;
-
-    const/4 v0, 0x3
-
-    const/4 v1, 0x1
-
-    invoke-direct {p0, v0, p3, v1}, Lzi9;-><init>(ILkotlin/coroutines/Continuation;I)V
-
-    iput-object p1, p0, Lzi9;->Y:Lfm;
-
-    iput-object p2, p0, Lzi9;->Z:Lpda;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lzi9;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-
-    :pswitch_0
-    new-instance p0, Lzi9;
-
-    const/4 v0, 0x3
-
-    const/4 v1, 0x0
-
-    invoke-direct {p0, v0, p3, v1}, Lzi9;-><init>(ILkotlin/coroutines/Continuation;I)V
-
-    iput-object p1, p0, Lzi9;->Y:Lfm;
-
-    iput-object p2, p0, Lzi9;->Z:Lpda;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lzi9;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    iget v0, p0, Lzi9;->X:I
+    iget v0, p0, Lzi9;->a:I
 
     packed-switch v0, :pswitch_data_0
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    new-instance v0, Laj0;
 
-    iget-object p1, p0, Lzi9;->Y:Lfm;
+    const/16 v1, 0x14
 
-    iget-object p0, p0, Lzi9;->Z:Lpda;
+    invoke-direct {v0, v1}, Laj0;-><init>(I)V
 
-    invoke-interface {p0}, Lpda;->b()Lnd0;
+    iget-object p0, p0, Lzi9;->b:Laj9;
 
-    move-result-object p0
+    invoke-virtual {p0, v0}, Lv2;->o(Lmj3;)V
 
-    iget p0, p0, Lnd0;->h:I
-
-    invoke-virtual {p1, p0}, Landroid/view/View;->setBackgroundColor(I)V
-
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
+    return-void
 
     :pswitch_0
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    new-instance v0, Laj0;
 
-    iget-object p1, p0, Lzi9;->Y:Lfm;
+    const/16 v1, 0x12
 
-    iget-object p0, p0, Lzi9;->Z:Lpda;
+    invoke-direct {v0, v1}, Laj0;-><init>(I)V
 
-    invoke-interface {p0}, Lpda;->b()Lnd0;
+    iget-object p0, p0, Lzi9;->b:Laj9;
 
-    move-result-object p0
+    invoke-virtual {p0, v0}, Lv2;->o(Lmj3;)V
 
-    iget p0, p0, Lnd0;->i:I
+    return-void
 
-    invoke-virtual {p1, p0}, Landroid/view/View;->setBackgroundColor(I)V
+    :pswitch_1
+    new-instance v0, Laj0;
 
-    sget-object p0, Ljue;->a:Ljue;
+    const/16 v1, 0x12
 
-    return-object p0
+    invoke-direct {v0, v1}, Laj0;-><init>(I)V
 
-    nop
+    iget-object p0, p0, Lzi9;->b:Laj9;
+
+    invoke-virtual {p0, v0}, Lv2;->o(Lmj3;)V
+
+    return-void
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

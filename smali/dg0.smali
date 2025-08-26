@@ -1,88 +1,83 @@
 .class public final Ldg0;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Leg0;
 
 
 # instance fields
-.field public final synthetic X:Lsf0;
+.field public final a:Z
 
 
 # direct methods
-.method public constructor <init>(Lsf0;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Z)V
     .locals 0
 
-    iput-object p1, p0, Ldg0;->X:Lsf0;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-boolean p1, p0, Ldg0;->a:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-    check-cast p1, Lou3;
+    const/4 v0, 0x1
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {p0, p1, p2}, Ldg0;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    return v0
 
-    move-result-object p0
+    :cond_0
+    instance-of v1, p1, Ldg0;
 
-    check-cast p0, Ldg0;
+    const/4 v2, 0x0
 
-    sget-object p1, Ljue;->a:Ljue;
+    if-nez v1, :cond_1
 
-    invoke-virtual {p0, p1}, Ldg0;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    return v2
 
-    move-result-object p0
+    :cond_1
+    check-cast p1, Ldg0;
 
-    return-object p0
+    iget-boolean p0, p0, Ldg0;->a:Z
+
+    iget-boolean p1, p1, Ldg0;->a:Z
+
+    if-eq p0, p1, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final hashCode()I
     .locals 0
 
-    new-instance p1, Ldg0;
+    iget-boolean p0, p0, Ldg0;->a:Z
 
-    iget-object p0, p0, Ldg0;->X:Lsf0;
-
-    invoke-direct {p1, p0, p2}, Ldg0;-><init>(Lsf0;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p0, p0, Ldg0;->X:Lsf0;
-
-    invoke-virtual {p0}, Lsf0;->c()Ls16;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
 
     move-result p0
 
-    xor-int/lit8 p0, p0, 0x1
+    return p0
+.end method
 
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    const-string v0, "NotificationsPermissionChange(isGranted="
+
+    const-string v1, ")"
+
+    iget-boolean p0, p0, Ldg0;->a:Z
+
+    invoke-static {v0, v1, p0}, Lzge;->p(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
 
     move-result-object p0
 

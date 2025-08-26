@@ -1,101 +1,209 @@
-.class public final Ltx1;
+.class public final synthetic Ltx1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final c:Lyz;
+# interfaces
+.implements Lmj3;
 
 
 # instance fields
-.field public final a:Luw3;
+.field public final synthetic a:I
 
-.field public final b:I
+.field public final synthetic b:Ljava/lang/Object;
+
+.field public final synthetic c:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    .locals 0
 
-    new-instance v0, Lyz;
+    iput p2, p0, Ltx1;->a:I
 
-    const/16 v1, 0x8
+    iput-object p1, p0, Ltx1;->b:Ljava/lang/Object;
 
-    invoke-direct {v0, v1}, Lyz;-><init>(I)V
+    iput-object p3, p0, Ltx1;->c:Ljava/lang/Object;
 
-    sput-object v0, Ltx1;->c:Lyz;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/text/SpannableStringBuilder;Landroid/text/Layout$Alignment;FIFIZII)V
-    .locals 21
 
-    move-object/from16 v0, p0
+# virtual methods
+.method public final accept(Ljava/lang/Object;)V
+    .locals 4
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
-    if-eqz p7, :cond_0
+    iget v0, p0, Ltx1;->a:I
 
     const/4 v1, 0x1
 
-    move/from16 v18, p8
+    const/4 v2, 0x0
 
-    move/from16 v17, v1
+    iget-object v3, p0, Ltx1;->c:Ljava/lang/Object;
+
+    iget-object p0, p0, Ltx1;->b:Ljava/lang/Object;
+
+    packed-switch v0, :pswitch_data_0
+
+    check-cast p0, Lzac;
+
+    check-cast v3, Liq1;
+
+    check-cast p1, Ljava/lang/Throwable;
+
+    iget-object v0, p0, Lzac;->V:Ljava/lang/Throwable;
+
+    if-nez v0, :cond_1
+
+    instance-of v0, p1, Landroidx/camera/video/internal/encoder/EncodeException;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x5
+
+    iput v0, p0, Lzac;->e0:I
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v0, 0x6
 
-    const/high16 v2, -0x1000000
-
-    move/from16 v17, v1
-
-    move/from16 v18, v2
+    iput v0, p0, Lzac;->e0:I
 
     :goto_0
-    new-instance v1, Luw3;
+    iput-object p1, p0, Lzac;->V:Ljava/lang/Throwable;
 
-    move-object v3, v1
+    invoke-virtual {p0}, Lzac;->H()V
 
-    const v14, -0x800001
+    invoke-virtual {v3, v2}, Liq1;->b(Ljava/lang/Object;)Z
 
-    move/from16 v16, v14
+    :cond_1
+    return-void
 
-    const/16 v20, 0x0
+    :pswitch_0
+    check-cast p0, Lti9;
 
-    const/4 v7, 0x0
+    check-cast v3, Ljava/lang/Boolean;
 
-    move-object v6, v7
+    check-cast p1, Lcr7;
 
-    const/4 v9, 0x0
+    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
 
-    const/high16 v19, -0x80000000
+    move-result v0
 
-    move/from16 v13, v19
+    iput-boolean v0, p1, Lcr7;->f:Z
 
-    const v15, -0x800001
+    iget-object p0, p0, Lti9;->Y:Ljr7;
 
-    move-object/from16 v4, p1
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-object/from16 v5, p2
+    const-string p0, "jr7"
 
-    move/from16 v8, p3
+    const-string v0, "background permissions is not supported yet"
 
-    move/from16 v10, p4
+    invoke-static {p0, v0, v2}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    move/from16 v11, p5
+    const/4 p0, 0x0
 
-    move/from16 v12, p6
-
-    invoke-direct/range {v3 .. v20}, Luw3;-><init>(Ljava/lang/CharSequence;Landroid/text/Layout$Alignment;Landroid/text/Layout$Alignment;Landroid/graphics/Bitmap;FIIFIIFFFZIIF)V
-
-    iput-object v1, v0, Ltx1;->a:Luw3;
-
-    move/from16 v1, p9
-
-    iput v1, v0, Ltx1;->b:I
+    iput-boolean p0, p1, Lcr7;->g:Z
 
     return-void
+
+    :pswitch_1
+    check-cast p0, Lqs4;
+
+    check-cast v3, Lxce;
+
+    check-cast p1, Lrb0;
+
+    invoke-virtual {v3}, Lxce;->close()V
+
+    iget-object p1, p0, Lqs4;->o0:Ljava/util/LinkedHashMap;
+
+    invoke-interface {p1, v3}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/view/Surface;
+
+    if-eqz p1, :cond_2
+
+    iget-object p0, p0, Lqs4;->a:Lns4;
+
+    iget-object v0, p0, Lbn4;->c:Ljava/lang/Object;
+
+    check-cast v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-static {v0, v1}, Lz76;->d(Ljava/util/concurrent/atomic/AtomicBoolean;Z)V
+
+    iget-object v0, p0, Lbn4;->e:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/Thread;
+
+    invoke-static {v0}, Lz76;->c(Ljava/lang/Thread;)V
+
+    invoke-virtual {p0, p1, v1}, Lbn4;->s(Landroid/view/Surface;Z)V
+
+    :cond_2
+    return-void
+
+    :pswitch_2
+    check-cast p0, Lje4;
+
+    check-cast v3, Lxce;
+
+    check-cast p1, Lrb0;
+
+    invoke-virtual {v3}, Lxce;->close()V
+
+    iget-object p1, p0, Lje4;->o0:Ljava/util/LinkedHashMap;
+
+    invoke-interface {p1, v3}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/view/Surface;
+
+    if-eqz p1, :cond_3
+
+    iget-object p0, p0, Lje4;->a:Lbn4;
+
+    iget-object v0, p0, Lbn4;->c:Ljava/lang/Object;
+
+    check-cast v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-static {v0, v1}, Lz76;->d(Ljava/util/concurrent/atomic/AtomicBoolean;Z)V
+
+    iget-object v0, p0, Lbn4;->e:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/Thread;
+
+    invoke-static {v0}, Lz76;->c(Ljava/lang/Thread;)V
+
+    invoke-virtual {p0, p1, v1}, Lbn4;->s(Landroid/view/Surface;Z)V
+
+    :cond_3
+    return-void
+
+    :pswitch_3
+    check-cast p0, Landroid/view/Surface;
+
+    check-cast v3, Landroid/graphics/SurfaceTexture;
+
+    check-cast p1, Ltb0;
+
+    invoke-virtual {p0}, Landroid/view/Surface;->release()V
+
+    invoke-virtual {v3}, Landroid/graphics/SurfaceTexture;->release()V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

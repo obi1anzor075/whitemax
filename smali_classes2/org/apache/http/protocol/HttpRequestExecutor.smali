@@ -67,7 +67,9 @@
 
     if-eq p0, p2, :cond_1
 
-    const/4 p1, 0x1
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_1
     return p1
@@ -360,32 +362,36 @@
 
     invoke-virtual {p0, p1, p2, p3}, Lorg/apache/http/protocol/HttpRequestExecutor;->doReceiveResponse(Lorg/apache/http/HttpRequest;Lorg/apache/http/HttpClientConnection;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;
 
-    move-result-object v0
+    move-result-object p0
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
     .catch Lorg/apache/http/HttpException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-object p0
 
     :catch_0
     move-exception p0
 
-    goto :goto_1
+    goto :goto_0
 
     :catch_1
     move-exception p0
 
-    goto :goto_2
+    goto :goto_1
 
     :catch_2
     move-exception p0
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_0
-    :goto_0
     return-object v0
+
+    :goto_0
+    invoke-interface {p2}, Lorg/apache/http/HttpConnection;->close()V
+
+    throw p0
 
     :goto_1
     invoke-interface {p2}, Lorg/apache/http/HttpConnection;->close()V
@@ -393,11 +399,6 @@
     throw p0
 
     :goto_2
-    invoke-interface {p2}, Lorg/apache/http/HttpConnection;->close()V
-
-    throw p0
-
-    :goto_3
     invoke-interface {p2}, Lorg/apache/http/HttpConnection;->close()V
 
     throw p0

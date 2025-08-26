@@ -1,25 +1,25 @@
 .class public Lru/ok/messages/views/widgets/ContextMenuGridLayout;
-.super Ldc6;
+.super Lug6;
 .source "SourceFile"
 
 
 # instance fields
-.field public final T0:Lzg4;
+.field public final L0:Lck4;
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ldc6;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, p2}, Lug6;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    invoke-static {}, Lzg4;->b()Lzg4;
+    invoke-static {}, Lck4;->b()Lck4;
 
     move-result-object p1
 
-    iput-object p1, p0, Lru/ok/messages/views/widgets/ContextMenuGridLayout;->T0:Lzg4;
+    iput-object p1, p0, Lru/ok/messages/views/widgets/ContextMenuGridLayout;->L0:Lck4;
 
     return-void
 .end method
@@ -27,168 +27,168 @@
 
 # virtual methods
 .method public setupText(Ljava/lang/String;)V
-    .locals 9
-
-    const/4 v0, 0x1
+    .locals 8
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
+    move-result-object v0
+
+    sget v1, Lqwb;->row_context_menu_action:I
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v0
+
+    sget v1, Lpvb;->row_options_action__iv_icon:I
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
     move-result-object v1
 
-    sget v2, Lzrb;->row_context_menu_action:I
+    check-cast v1, Landroid/widget/ImageView;
 
-    const/4 v3, 0x0
+    const/16 v2, 0x8
 
-    invoke-static {v1, v2, v3}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
+    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    sget v1, Lpvb;->row_options_action__tv_title:I
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    sget v2, Lyqb;->row_options_action__iv_icon:I
+    check-cast v1, Landroid/widget/TextView;
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/widget/ImageView;
-
-    const/16 v3, 0x8
-
-    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    sget v2, Lyqb;->row_options_action__tv_title:I
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/widget/TextView;
-
-    invoke-virtual {v2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     const/4 p1, 0x2
 
-    const/high16 v3, 0x41600000    # 14.0f
+    const/high16 v2, 0x41600000    # 14.0f
 
-    invoke-virtual {v2, p1, v3}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v1, p1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const p1, 0x800003
 
-    invoke-virtual {v2, p1}, Landroid/widget/TextView;->setGravity(I)V
+    invoke-virtual {v1, p1}, Landroid/widget/TextView;->setGravity(I)V
 
-    new-instance p1, Lac6;
+    new-instance p1, Lrg6;
 
-    invoke-direct {p1}, Lac6;-><init>()V
+    invoke-direct {p1}, Lrg6;-><init>()V
 
-    iget-object v2, p1, Lac6;->a:Lcc6;
+    iget-object v1, p1, Lrg6;->a:Ltg6;
 
-    const/4 v3, 0x7
+    const/4 v2, 0x7
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    invoke-static {v3, v4}, Ldc6;->d(IZ)Ln1g;
+    invoke-static {v2, v3}, Lug6;->d(IZ)Ltk9;
 
-    move-result-object v5
+    move-result-object v4
 
-    new-instance v6, Lcc6;
+    new-instance v5, Ltg6;
 
-    iget-object v7, v2, Lcc6;->b:Lzb6;
+    iget-boolean v6, v1, Ltg6;->a:Z
 
-    iget v8, v2, Lcc6;->d:F
+    iget-object v7, v1, Ltg6;->b:Lqg6;
 
-    iget-boolean v2, v2, Lcc6;->a:Z
+    iget v1, v1, Ltg6;->d:F
 
-    invoke-direct {v6, v2, v7, v5, v8}, Lcc6;-><init>(ZLzb6;Ln1g;F)V
+    invoke-direct {v5, v6, v7, v4, v1}, Ltg6;-><init>(ZLqg6;Ltk9;F)V
 
-    iput-object v6, p1, Lac6;->a:Lcc6;
+    iput-object v5, p1, Lrg6;->a:Ltg6;
 
-    iget-object v2, p1, Lac6;->b:Lcc6;
+    iget-object v1, p1, Lrg6;->b:Ltg6;
 
-    invoke-static {v3, v0}, Ldc6;->d(IZ)Ln1g;
+    const/4 v4, 0x1
 
-    move-result-object v3
+    invoke-static {v2, v4}, Lug6;->d(IZ)Ltk9;
 
-    new-instance v5, Lcc6;
+    move-result-object v2
 
-    iget-object v6, v2, Lcc6;->b:Lzb6;
+    new-instance v4, Ltg6;
 
-    iget v7, v2, Lcc6;->d:F
+    iget-boolean v5, v1, Ltg6;->a:Z
 
-    iget-boolean v2, v2, Lcc6;->a:Z
+    iget-object v6, v1, Ltg6;->b:Lqg6;
 
-    invoke-direct {v5, v2, v6, v3, v7}, Lcc6;-><init>(ZLzb6;Ln1g;F)V
+    iget v1, v1, Ltg6;->d:F
 
-    iput-object v5, p1, Lac6;->b:Lcc6;
+    invoke-direct {v4, v5, v6, v2, v1}, Ltg6;-><init>(ZLqg6;Ltk9;F)V
 
-    const/4 v2, -0x1
+    iput-object v4, p1, Lrg6;->b:Ltg6;
 
-    iput v2, p1, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
+    const/4 v1, -0x1
 
-    iput v2, p1, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
+    iput v1, p1, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
 
-    invoke-virtual {p0, v1, p1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    iput v1, p1, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
+
+    invoke-virtual {p0, v0, p1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
-    sget-object v1, Lwce;->a0:Lr7e;
+    sget-object v0, Lvke;->a0:Lwfe;
 
-    invoke-static {p1}, Lfja;->E(Landroid/content/Context;)Lwce;
+    invoke-static {p1}, Lp54;->M(Landroid/content/Context;)Lvke;
 
     move-result-object p1
 
-    iget-object v1, p0, Lru/ok/messages/views/widgets/ContextMenuGridLayout;->T0:Lzg4;
+    iget-object v0, p0, Lru/ok/messages/views/widgets/ContextMenuGridLayout;->L0:Lck4;
 
-    iget v1, v1, Lzg4;->q:I
+    iget v0, v0, Lck4;->q:I
 
-    iget v2, p1, Lwce;->M:I
+    iget v1, p1, Lvke;->M:I
 
-    move v3, v4
+    move v2, v3
 
     :goto_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
-    move-result v5
+    move-result v4
 
-    if-ge v3, v5, :cond_0
+    if-ge v2, v4, :cond_0
 
-    invoke-virtual {p0, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v4
+
+    sget v5, Lpvb;->row_options_action__iv_icon:I
+
+    invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v5
 
-    sget v6, Lyqb;->row_options_action__iv_icon:I
+    check-cast v5, Landroid/widget/ImageView;
 
-    invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    iget v6, p1, Lvke;->w:I
+
+    invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setColorFilter(I)V
+
+    iget v6, p1, Lvke;->I:I
+
+    iget v7, p1, Lvke;->i:I
+
+    invoke-static {v6, v7, v3, v0}, Ld46;->f(IIII)Landroid/graphics/drawable/RippleDrawable;
 
     move-result-object v6
 
-    check-cast v6, Landroid/widget/ImageView;
+    invoke-virtual {v5, v6}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    iget v7, p1, Lwce;->w:I
+    sget v5, Lpvb;->row_options_action__tv_title:I
 
-    invoke-virtual {v6, v7}, Landroid/widget/ImageView;->setColorFilter(I)V
+    invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    iget v7, p1, Lwce;->I:I
+    move-result-object v4
 
-    iget v8, p1, Lwce;->i:I
+    check-cast v4, Landroid/widget/TextView;
 
-    invoke-static {v7, v8, v4, v1}, Lswb;->c(IIII)Landroid/graphics/drawable/RippleDrawable;
+    invoke-virtual {v4, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    sget v6, Lyqb;->row_options_action__tv_title:I
-
-    invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/widget/TextView;
-
-    invoke-virtual {v5, v2}, Landroid/widget/TextView;->setTextColor(I)V
-
-    add-int/2addr v3, v0
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 

@@ -1,78 +1,50 @@
-.class public final synthetic Lm61;
+.class public final Lm61;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lu16;
+.implements Las1;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Led4;
 
-.field public final synthetic b:Ln61;
+.field public final b:Lwfe;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ln61;I)V
-    .locals 0
-
-    iput p2, p0, Lm61;->a:I
-
-    iput-object p1, p0, Lm61;->b:Ln61;
+.method public constructor <init>(Lje7;Lje7;Lje7;Led4;Lje7;Lje7;Lje7;)V
+    .locals 9
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p4, p0, Lm61;->a:Led4;
+
+    new-instance v0, Li61;
+
+    const/4 v8, 0x0
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v6, p2
+
+    move-object v3, p3
+
+    move-object v7, p5
+
+    move-object v4, p6
+
+    move-object/from16 v5, p7
+
+    invoke-direct/range {v0 .. v8}, Li61;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+
+    new-instance p1, Lwfe;
+
+    invoke-direct {p1, v0}, Lwfe;-><init>(Lv56;)V
+
+    iput-object p1, p0, Lm61;->b:Lwfe;
+
     return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    iget v0, p0, Lm61;->a:I
-
-    check-cast p1, Lpda;
-
-    packed-switch v0, :pswitch_data_0
-
-    sget-object p1, Lkm4;->y0:Ls59;
-
-    iget-object p0, p0, Lm61;->b:Ln61;
-
-    iget-object p0, p0, Lb7c;->a:Landroid/view/View;
-
-    invoke-virtual {p1, p0}, Ls59;->r(Landroid/view/View;)Lpda;
-
-    const/4 p0, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    sget-object p1, Lkm4;->y0:Ls59;
-
-    iget-object p0, p0, Lm61;->b:Ln61;
-
-    iget-object p0, p0, Lb7c;->a:Landroid/view/View;
-
-    invoke-virtual {p1, p0}, Ls59;->r(Landroid/view/View;)Lpda;
-
-    const/4 p0, -0x1
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p0
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

@@ -2,139 +2,67 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lqw9;
 
-# instance fields
-.field public final a:I
 
-.field public final b:Ljava/lang/Throwable;
+# static fields
+.field public static final a:Lu80;
+
+.field public static final b:Lte5;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Throwable;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lu80;
 
-    iput p2, p0, Lu80;->a:I
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lu80;->b:Ljava/lang/Throwable;
+    sput-object v0, Lu80;->a:Lu80;
+
+    new-instance v0, Lxx;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lxx;-><init>(I)V
+
+    const-class v1, Lvlb;
+
+    invoke-static {v1, v0}, Lzt1;->n(Ljava/lang/Class;Lxx;)Ljava/util/HashMap;
+
+    move-result-object v0
+
+    new-instance v1, Lte5;
+
+    invoke-static {v0}, Lzt1;->o(Ljava/util/HashMap;)Ljava/util/Map;
+
+    move-result-object v0
+
+    const-string v2, "messagingClientEvent"
+
+    invoke-direct {v1, v2, v0}, Lte5;-><init>(Ljava/lang/String;Ljava/util/Map;)V
+
+    sput-object v1, Lu80;->b:Lte5;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final a(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
 
-    const/4 v0, 0x1
+    check-cast p1, Ls79;
 
-    if-ne p1, p0, :cond_0
+    check-cast p2, Lrw9;
 
-    return v0
+    sget-object p0, Lu80;->b:Lte5;
 
-    :cond_0
-    instance-of v1, p1, Lu80;
+    iget-object p1, p1, Ls79;->a:Lr79;
 
-    const/4 v2, 0x0
+    invoke-interface {p2, p0, p1}, Lrw9;->a(Lte5;Ljava/lang/Object;)Lrw9;
 
-    if-eqz v1, :cond_3
-
-    check-cast p1, Lu80;
-
-    iget v1, p1, Lu80;->a:I
-
-    iget v3, p0, Lu80;->a:I
-
-    if-ne v3, v1, :cond_2
-
-    iget-object p1, p1, Lu80;->b:Ljava/lang/Throwable;
-
-    iget-object p0, p0, Lu80;->b:Ljava/lang/Throwable;
-
-    if-nez p0, :cond_1
-
-    if-nez p1, :cond_2
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    move v0, v2
-
-    :goto_0
-    return v0
-
-    :cond_3
-    return v2
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    iget v0, p0, Lu80;->a:I
-
-    const v1, 0xf4243
-
-    xor-int/2addr v0, v1
-
-    mul-int/2addr v0, v1
-
-    iget-object p0, p0, Lu80;->b:Ljava/lang/Throwable;
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    :goto_0
-    xor-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "StateError{code="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v1, p0, Lu80;->a:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", cause="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lu80;->b:Ljava/lang/Throwable;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, "}"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

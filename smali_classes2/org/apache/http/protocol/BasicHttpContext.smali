@@ -75,7 +75,9 @@
 
     invoke-interface {p0, p1}, Lorg/apache/http/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p0
+
+    return-object p0
 
     :cond_1
     return-object v0

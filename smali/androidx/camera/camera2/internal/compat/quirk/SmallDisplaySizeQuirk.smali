@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lzkb;
+.implements Lkpb;
 
 
 # static fields
@@ -42,29 +42,29 @@
 
     new-instance v1, Landroid/util/Size;
 
-    const/16 v4, 0x2d0
+    const/16 v4, 0x618
 
-    const/16 v5, 0x618
+    const/16 v5, 0x2d0
 
-    invoke-direct {v1, v4, v5}, Landroid/util/Size;-><init>(II)V
+    invoke-direct {v1, v5, v4}, Landroid/util/Size;-><init>(II)V
 
-    const-string v5, "SM-A207M"
+    const-string v4, "SM-A207M"
 
-    invoke-virtual {v0, v5, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v4, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v1, Landroid/util/Size;
 
     invoke-direct {v1, v2, v3}, Landroid/util/Size;-><init>(II)V
 
-    const-string v5, "REDMI NOTE 7S"
+    const-string v4, "REDMI NOTE 7S"
 
-    invoke-virtual {v0, v5, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v4, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v1, Landroid/util/Size;
 
-    const/16 v5, 0x640
+    const/16 v4, 0x640
 
-    invoke-direct {v1, v4, v5}, Landroid/util/Size;-><init>(II)V
+    invoke-direct {v1, v5, v4}, Landroid/util/Size;-><init>(II)V
 
     const-string v6, "SM-A127F"
 
@@ -82,7 +82,7 @@
 
     new-instance v1, Landroid/util/Size;
 
-    invoke-direct {v1, v4, v5}, Landroid/util/Size;-><init>(II)V
+    invoke-direct {v1, v5, v4}, Landroid/util/Size;-><init>(II)V
 
     const-string v7, "220233L2I"
 
@@ -90,7 +90,7 @@
 
     new-instance v1, Landroid/util/Size;
 
-    invoke-direct {v1, v4, v5}, Landroid/util/Size;-><init>(II)V
+    invoke-direct {v1, v5, v4}, Landroid/util/Size;-><init>(II)V
 
     const-string v7, "V2149"
 
@@ -114,7 +114,7 @@
 
     new-instance v1, Landroid/util/Size;
 
-    invoke-direct {v1, v4, v5}, Landroid/util/Size;-><init>(II)V
+    invoke-direct {v1, v5, v4}, Landroid/util/Size;-><init>(II)V
 
     const-string v3, "V2029"
 
@@ -124,7 +124,7 @@
 
     const/16 v3, 0x5f0
 
-    invoke-direct {v1, v4, v3}, Landroid/util/Size;-><init>(II)V
+    invoke-direct {v1, v5, v3}, Landroid/util/Size;-><init>(II)V
 
     const-string v7, "CPH1901"
 
@@ -132,7 +132,7 @@
 
     new-instance v1, Landroid/util/Size;
 
-    invoke-direct {v1, v4, v3}, Landroid/util/Size;-><init>(II)V
+    invoke-direct {v1, v5, v3}, Landroid/util/Size;-><init>(II)V
 
     const-string v7, "REDMI Y3"
 
@@ -140,7 +140,7 @@
 
     new-instance v1, Landroid/util/Size;
 
-    invoke-direct {v1, v4, v5}, Landroid/util/Size;-><init>(II)V
+    invoke-direct {v1, v5, v4}, Landroid/util/Size;-><init>(II)V
 
     const-string v7, "SM-A045M"
 
@@ -158,7 +158,7 @@
 
     new-instance v1, Landroid/util/Size;
 
-    invoke-direct {v1, v4, v3}, Landroid/util/Size;-><init>(II)V
+    invoke-direct {v1, v5, v3}, Landroid/util/Size;-><init>(II)V
 
     const-string v8, "CPH1909"
 
@@ -166,7 +166,7 @@
 
     new-instance v1, Landroid/util/Size;
 
-    invoke-direct {v1, v4, v3}, Landroid/util/Size;-><init>(II)V
+    invoke-direct {v1, v5, v3}, Landroid/util/Size;-><init>(II)V
 
     const-string v8, "NOKIA 4.2"
 
@@ -194,7 +194,7 @@
 
     new-instance v1, Landroid/util/Size;
 
-    invoke-direct {v1, v4, v3}, Landroid/util/Size;-><init>(II)V
+    invoke-direct {v1, v5, v3}, Landroid/util/Size;-><init>(II)V
 
     const-string v3, "VIVO 1816"
 
@@ -204,7 +204,7 @@
 
     const/16 v3, 0x64c
 
-    invoke-direct {v1, v4, v3}, Landroid/util/Size;-><init>(II)V
+    invoke-direct {v1, v5, v3}, Landroid/util/Size;-><init>(II)V
 
     const-string v3, "INFINIX X6817"
 
@@ -212,7 +212,7 @@
 
     new-instance v1, Landroid/util/Size;
 
-    invoke-direct {v1, v4, v5}, Landroid/util/Size;-><init>(II)V
+    invoke-direct {v1, v5, v4}, Landroid/util/Size;-><init>(II)V
 
     const-string v3, "SM-A037F"
 
@@ -220,7 +220,7 @@
 
     new-instance v1, Landroid/util/Size;
 
-    invoke-direct {v1, v4, v5}, Landroid/util/Size;-><init>(II)V
+    invoke-direct {v1, v5, v4}, Landroid/util/Size;-><init>(II)V
 
     const-string v3, "NOKIA 2.4"
 
@@ -228,7 +228,7 @@
 
     new-instance v1, Landroid/util/Size;
 
-    invoke-direct {v1, v4, v5}, Landroid/util/Size;-><init>(II)V
+    invoke-direct {v1, v5, v4}, Landroid/util/Size;-><init>(II)V
 
     const-string v3, "SM-A125M"
 

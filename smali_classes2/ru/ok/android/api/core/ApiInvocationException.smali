@@ -19,6 +19,7 @@
         0x8,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -40,19 +41,19 @@
 .method public constructor <init>(ILjava/lang/String;)V
     .locals 7
 
-    const/4 v2, 0x0
-
-    const/4 v4, 0x0
-
     const/4 v5, 0x0
 
     const/4 v6, 0x0
 
+    const/4 v2, 0x0
+
+    const/4 v4, 0x0
+
     move-object v0, p0
 
-    move-object v1, p2
-
     move v3, p1
+
+    move-object v1, p2
 
     .line 1
     invoke-direct/range {v0 .. v6}, Lru/ok/android/api/core/ApiInvocationException;-><init>(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
@@ -159,7 +160,7 @@
 
     const-string v1, "\'}"
 
-    invoke-static {v0, p0, v1}, Lwn6;->l(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lm26;->j(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

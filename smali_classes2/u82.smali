@@ -1,151 +1,440 @@
 .class public final Lu82;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lf1a;
 
 
 # instance fields
-.field public X:Lb92;
+.field public X:Ljava/lang/Object;
 
-.field public Y:I
+.field public a:I
 
-.field public final synthetic Z:Lb92;
+.field public b:J
+
+.field public c:J
+
+.field public o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lb92;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method public static b(Lneg;Lcom/google/android/gms/common/internal/a;I)Lth3;
+    .locals 4
 
-    iput-object p1, p0, Lu82;->Z:Lb92;
+    iget-object p1, p1, Lcom/google/android/gms/common/internal/a;->B0:Lqjg;
 
-    const/4 p1, 0x2
+    const/4 v0, 0x0
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    if-nez p1, :cond_0
 
-    return-void
+    move-object p1, v0
+
+    goto :goto_0
+
+    :cond_0
+    iget-object p1, p1, Lqjg;->o:Lth3;
+
+    :goto_0
+    if-eqz p1, :cond_6
+
+    iget-boolean v1, p1, Lth3;->b:Z
+
+    if-eqz v1, :cond_6
+
+    iget-object v1, p1, Lth3;->o:[I
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_3
+
+    iget-object v1, p1, Lth3;->Y:[I
+
+    if-nez v1, :cond_1
+
+    goto :goto_3
+
+    :cond_1
+    :goto_1
+    array-length v3, v1
+
+    if-ge v2, v3, :cond_4
+
+    aget v3, v1, v2
+
+    if-ne v3, p2, :cond_2
+
+    goto :goto_4
+
+    :cond_2
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_1
+
+    :cond_3
+    :goto_2
+    array-length v3, v1
+
+    if-ge v2, v3, :cond_6
+
+    aget v3, v1, v2
+
+    if-ne v3, p2, :cond_5
+
+    :cond_4
+    :goto_3
+    iget p0, p0, Lneg;->n:I
+
+    iget p2, p1, Lth3;->X:I
+
+    if-ge p0, p2, :cond_6
+
+    return-object p1
+
+    :cond_5
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_2
+
+    :cond_6
+    :goto_4
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public a()Lv82;
+    .locals 9
 
-    check-cast p1, Lou3;
+    iget-object v0, p0, Lu82;->X:Ljava/lang/Object;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    check-cast v0, Ljava/util/List;
 
-    invoke-virtual {p0, p1, p2}, Lu82;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    if-nez v0, :cond_0
 
-    move-result-object p0
+    sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
-    check-cast p0, Lu82;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lu82;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 0
-
-    new-instance p1, Lu82;
-
-    iget-object p0, p0, Lu82;->Z:Lb92;
-
-    invoke-direct {p1, p0, p2}, Lu82;-><init>(Lb92;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
-
-    sget-object v0, Lpu3;->a:Lpu3;
-
-    iget v1, p0, Lu82;->Y:I
-
-    const/4 v2, 0x2
-
-    const/4 v3, 0x1
-
-    if-eqz v1, :cond_2
-
-    if-eq v1, v3, :cond_1
-
-    if-ne v1, v2, :cond_0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto :goto_1
+    iput-object v0, p0, Lu82;->X:Ljava/lang/Object;
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    new-instance v1, Lv82;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    iget-object v0, p0, Lu82;->o:Ljava/lang/Object;
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    move-object v2, v0
 
-    throw p0
+    check-cast v2, Lb92;
+
+    iget v3, p0, Lu82;->a:I
+
+    iget-wide v4, p0, Lu82;->b:J
+
+    iget-wide v6, p0, Lu82;->c:J
+
+    iget-object p0, p0, Lu82;->X:Ljava/lang/Object;
+
+    move-object v8, p0
+
+    check-cast v8, Ljava/util/List;
+
+    invoke-direct/range {v1 .. v8}, Lv82;-><init>(Lb92;IJJLjava/util/List;)V
+
+    return-object v1
+.end method
+
+.method public l(Lcom/google/android/gms/tasks/Task;)V
+    .locals 21
+
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lu82;->o:Ljava/lang/Object;
+
+    check-cast v1, Lue6;
+
+    invoke-virtual {v1}, Lue6;->a()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    goto/16 :goto_8
+
+    :cond_0
+    invoke-static {}, Lykc;->j()Lykc;
+
+    move-result-object v1
+
+    iget-object v1, v1, Lykc;->b:Ljava/lang/Object;
+
+    check-cast v1, Lzkc;
+
+    if-eqz v1, :cond_1
+
+    iget-boolean v2, v1, Lzkc;->b:Z
+
+    if-eqz v2, :cond_b
 
     :cond_1
-    iget-object v1, p0, Lu82;->X:Lb92;
+    iget-object v2, v0, Lu82;->o:Ljava/lang/Object;
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    check-cast v2, Lue6;
+
+    iget-object v3, v0, Lu82;->X:Ljava/lang/Object;
+
+    check-cast v3, Lsk;
+
+    iget-object v2, v2, Lue6;->q0:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v2, v3}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lneg;
+
+    if-eqz v2, :cond_b
+
+    iget-object v3, v2, Lneg;->d:Lhk;
+
+    instance-of v4, v3, Lcom/google/android/gms/common/internal/a;
+
+    if-eqz v4, :cond_b
+
+    check-cast v3, Lcom/google/android/gms/common/internal/a;
+
+    iget-wide v4, v0, Lu82;->b:J
+
+    const-wide/16 v6, 0x0
+
+    cmp-long v4, v4, v6
+
+    const/4 v5, 0x1
+
+    const/4 v8, 0x0
+
+    if-lez v4, :cond_2
+
+    move v4, v5
 
     goto :goto_0
 
     :cond_2
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    move v4, v8
 
-    sget-object p1, Lb92;->O0:Ljava/lang/String;
+    :goto_0
+    iget v9, v3, Lcom/google/android/gms/common/internal/a;->w0:I
 
-    iget-object v1, p0, Lu82;->Z:Lb92;
+    const/16 v10, 0x64
 
-    invoke-virtual {v1}, Lb92;->e()Ludc;
+    if-eqz v1, :cond_5
 
-    move-result-object p1
+    iget-boolean v11, v1, Lzkc;->c:Z
 
-    iput-object v1, p0, Lu82;->X:Lb92;
+    and-int/2addr v4, v11
 
-    iput v3, p0, Lu82;->Y:I
+    iget v11, v1, Lzkc;->o:I
 
-    invoke-virtual {p1, p0}, Ludc;->d(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iget v12, v1, Lzkc;->X:I
 
-    move-result-object p1
+    iget v1, v1, Lzkc;->a:I
 
-    if-ne p1, v0, :cond_3
+    iget-object v13, v3, Lcom/google/android/gms/common/internal/a;->B0:Lqjg;
 
-    return-object v0
+    if-eqz v13, :cond_4
+
+    invoke-virtual {v3}, Lcom/google/android/gms/common/internal/a;->c()Z
+
+    move-result v13
+
+    if-nez v13, :cond_4
+
+    iget v4, v0, Lu82;->a:I
+
+    invoke-static {v2, v3, v4}, Lu82;->b(Lneg;Lcom/google/android/gms/common/internal/a;I)Lth3;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_b
+
+    iget-boolean v3, v2, Lth3;->c:Z
+
+    if-eqz v3, :cond_3
+
+    iget-wide v3, v0, Lu82;->b:J
+
+    cmp-long v3, v3, v6
+
+    if-lez v3, :cond_3
+
+    goto :goto_1
 
     :cond_3
-    :goto_0
-    check-cast p1, Ljava/util/List;
+    move v5, v8
 
-    const/4 v3, 0x0
+    :goto_1
+    iget v12, v2, Lth3;->X:I
 
-    iput-object v3, p0, Lu82;->X:Lb92;
-
-    iput v2, p0, Lu82;->Y:I
-
-    const/4 v2, 0x0
-
-    invoke-static {v1, p1, v2, p0}, Lb92;->j(Lb92;Ljava/util/List;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-ne p0, v0, :cond_4
-
-    return-object v0
+    move v4, v5
 
     :cond_4
-    :goto_1
-    sget-object p0, Ljue;->a:Ljue;
+    move v2, v11
 
-    return-object p0
+    move v3, v12
+
+    goto :goto_2
+
+    :cond_5
+    const/16 v11, 0x1388
+
+    move v1, v8
+
+    move v3, v10
+
+    move v2, v11
+
+    :goto_2
+    iget-object v5, v0, Lu82;->o:Ljava/lang/Object;
+
+    check-cast v5, Lue6;
+
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/gms/tasks/Task;->h()Z
+
+    move-result v11
+
+    const/4 v12, -0x1
+
+    if-eqz v11, :cond_6
+
+    move v11, v8
+
+    goto :goto_5
+
+    :cond_6
+    move-object/from16 v8, p1
+
+    check-cast v8, Lmlg;
+
+    iget-boolean v8, v8, Lmlg;->d:Z
+
+    if-eqz v8, :cond_7
+
+    :goto_3
+    move v11, v10
+
+    :goto_4
+    move v8, v12
+
+    goto :goto_5
+
+    :cond_7
+    invoke-virtual/range {p1 .. p1}, Lcom/google/android/gms/tasks/Task;->e()Ljava/lang/Exception;
+
+    move-result-object v8
+
+    instance-of v10, v8, Lcom/google/android/gms/common/api/ApiException;
+
+    if-eqz v10, :cond_9
+
+    check-cast v8, Lcom/google/android/gms/common/api/ApiException;
+
+    iget-object v8, v8, Lcom/google/android/gms/common/api/ApiException;->a:Lcom/google/android/gms/common/api/Status;
+
+    iget v10, v8, Lcom/google/android/gms/common/api/Status;->a:I
+
+    iget-object v8, v8, Lcom/google/android/gms/common/api/Status;->o:Lmh3;
+
+    if-nez v8, :cond_8
+
+    goto :goto_3
+
+    :cond_8
+    iget v8, v8, Lmh3;->b:I
+
+    move v11, v10
+
+    goto :goto_5
+
+    :cond_9
+    const/16 v8, 0x65
+
+    move v11, v8
+
+    goto :goto_4
+
+    :goto_5
+    if-eqz v4, :cond_a
+
+    iget-wide v6, v0, Lu82;->b:J
+
+    iget-wide v12, v0, Lu82;->c:J
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v14
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v16
+
+    sub-long v12, v16, v12
+
+    long-to-int v12, v12
+
+    move-wide v15, v14
+
+    move-wide v13, v6
+
+    :goto_6
+    move/from16 v20, v12
+
+    goto :goto_7
+
+    :cond_a
+    move-wide v13, v6
+
+    move-wide v15, v13
+
+    goto :goto_6
+
+    :goto_7
+    iget v10, v0, Lu82;->a:I
+
+    move/from16 v19, v9
+
+    new-instance v9, Lq89;
+
+    const/16 v17, 0x0
+
+    const/16 v18, 0x0
+
+    move v12, v8
+
+    invoke-direct/range {v9 .. v20}, Lq89;-><init>(IIIJJLjava/lang/String;Ljava/lang/String;II)V
+
+    int-to-long v6, v2
+
+    new-instance v12, Lweg;
+
+    move v14, v1
+
+    move/from16 v17, v3
+
+    move-wide v15, v6
+
+    move-object v13, v9
+
+    invoke-direct/range {v12 .. v17}, Lweg;-><init>(Lq89;IJI)V
+
+    iget-object v0, v5, Lue6;->t0:Lva9;
+
+    const/16 v1, 0x12
+
+    invoke-virtual {v0, v1, v12}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    :cond_b
+    :goto_8
+    return-void
 .end method

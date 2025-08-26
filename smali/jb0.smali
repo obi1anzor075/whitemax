@@ -3,135 +3,166 @@
 .source "SourceFile"
 
 
-# static fields
-.field public static final d:Ljb0;
-
-.field public static final e:Ljb0;
-
-.field public static final f:Ljb0;
-
-.field public static final g:Ljb0;
-
-
 # instance fields
-.field public final a:I
+.field public final a:Leg4;
 
-.field public final b:I
+.field public final b:Ljava/util/List;
 
 .field public final c:I
 
+.field public final d:I
+
+.field public final e:Lzt4;
+
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
-
-    new-instance v0, Ljb0;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1, v1, v1}, Ljb0;-><init>(III)V
-
-    sput-object v0, Ljb0;->d:Ljb0;
-
-    new-instance v0, Ljb0;
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x3
-
-    const/4 v3, 0x2
-
-    invoke-direct {v0, v1, v2, v3}, Ljb0;-><init>(III)V
-
-    sput-object v0, Ljb0;->e:Ljb0;
-
-    new-instance v0, Ljb0;
-
-    const/4 v2, 0x6
-
-    const/4 v3, 0x7
-
-    invoke-direct {v0, v2, v3, v1}, Ljb0;-><init>(III)V
-
-    sput-object v0, Ljb0;->f:Ljb0;
-
-    new-instance v0, Ljb0;
-
-    invoke-direct {v0, v2, v2, v1}, Ljb0;-><init>(III)V
-
-    sput-object v0, Ljb0;->g:Ljb0;
-
-    return-void
-.end method
-
-.method public constructor <init>(III)V
+.method public constructor <init>(Leg4;Ljava/util/List;IILzt4;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Ljb0;->a:I
+    iput-object p1, p0, Ljb0;->a:Leg4;
 
-    iput p2, p0, Ljb0;->b:I
+    iput-object p2, p0, Ljb0;->b:Ljava/util/List;
 
     iput p3, p0, Ljb0;->c:I
 
+    iput p4, p0, Ljb0;->d:I
+
+    iput-object p5, p0, Ljb0;->e:Lzt4;
+
     return-void
+.end method
+
+.method public static a(Leg4;)Lg13;
+    .locals 2
+
+    const/4 v0, -0x1
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    new-instance v1, Lg13;
+
+    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+
+    if-eqz p0, :cond_1
+
+    iput-object p0, v1, Lg13;->a:Ljava/lang/Object;
+
+    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+
+    if-eqz p0, :cond_0
+
+    iput-object p0, v1, Lg13;->b:Ljava/lang/Object;
+
+    iput-object v0, v1, Lg13;->c:Ljava/lang/Object;
+
+    iput-object v0, v1, Lg13;->d:Ljava/lang/Object;
+
+    sget-object p0, Lzt4;->d:Lzt4;
+
+    iput-object p0, v1, Lg13;->e:Ljava/lang/Object;
+
+    return-object v1
+
+    :cond_0
+    new-instance p0, Ljava/lang/NullPointerException;
+
+    const-string v0, "Null sharedSurfaces"
+
+    invoke-direct {p0, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    new-instance p0, Ljava/lang/NullPointerException;
+
+    const-string v0, "Null surface"
+
+    invoke-direct {p0, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method
 
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v0, 0x1
+    .locals 2
 
     if-ne p1, p0, :cond_0
 
-    return v0
+    goto :goto_0
 
     :cond_0
-    instance-of v1, p1, Ljb0;
+    instance-of v0, p1, Ljb0;
 
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_1
 
     check-cast p1, Ljb0;
 
-    iget v1, p1, Ljb0;->a:I
+    iget-object v0, p0, Ljb0;->a:Leg4;
 
-    iget v3, p0, Ljb0;->a:I
+    iget-object v1, p1, Ljb0;->a:Leg4;
 
-    if-ne v3, v1, :cond_1
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    iget v1, p0, Ljb0;->b:I
+    move-result v0
 
-    iget v3, p1, Ljb0;->b:I
+    if-eqz v0, :cond_1
 
-    if-ne v1, v3, :cond_1
+    iget-object v0, p0, Ljb0;->b:Ljava/util/List;
 
-    iget p0, p0, Ljb0;->c:I
+    iget-object v1, p1, Ljb0;->b:Ljava/util/List;
 
-    iget p1, p1, Ljb0;->c:I
+    invoke-interface {v0, v1}, Ljava/util/List;->equals(Ljava/lang/Object;)Z
 
-    if-ne p0, p1, :cond_1
+    move-result v0
 
-    goto :goto_0
+    if-eqz v0, :cond_1
 
-    :cond_1
-    move v0, v2
+    iget v0, p0, Ljb0;->c:I
+
+    iget v1, p1, Ljb0;->c:I
+
+    if-ne v0, v1, :cond_1
+
+    iget v0, p0, Ljb0;->d:I
+
+    iget v1, p1, Ljb0;->d:I
+
+    if-ne v0, v1, :cond_1
+
+    iget-object p0, p0, Ljb0;->e:Lzt4;
+
+    iget-object p1, p1, Ljb0;->e:Lzt4;
+
+    invoke-virtual {p0, p1}, Lzt4;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1
 
     :goto_0
-    return v0
+    const/4 p0, 0x1
 
-    :cond_2
-    return v2
+    return p0
+
+    :cond_1
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
 .method public final hashCode()I
     .locals 3
 
-    iget v0, p0, Ljb0;->a:I
+    iget-object v0, p0, Ljb0;->a:Leg4;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
 
     const v1, 0xf4243
 
@@ -139,13 +170,35 @@
 
     mul-int/2addr v0, v1
 
-    iget v2, p0, Ljb0;->b:I
+    iget-object v2, p0, Ljb0;->b:Ljava/util/List;
+
+    invoke-interface {v2}, Ljava/util/List;->hashCode()I
+
+    move-result v2
+
+    xor-int/2addr v0, v2
+
+    const v2, -0x2aff6277
+
+    mul-int/2addr v0, v2
+
+    iget v2, p0, Ljb0;->c:I
 
     xor-int/2addr v0, v2
 
     mul-int/2addr v0, v1
 
-    iget p0, p0, Ljb0;->c:I
+    iget v2, p0, Ljb0;->d:I
+
+    xor-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget-object p0, p0, Ljb0;->e:Lzt4;
+
+    invoke-virtual {p0}, Lzt4;->hashCode()I
+
+    move-result p0
 
     xor-int/2addr p0, v0
 
@@ -157,31 +210,51 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "VideoEncoderDataSpace{standard="
+    const-string v1, "OutputConfig{surface="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget v1, p0, Ljb0;->a:I
+    iget-object v1, p0, Ljb0;->a:Leg4;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", transfer="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Ljb0;->b:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", range="
+    const-string v1, ", sharedSurfaces="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget p0, p0, Ljb0;->c:I
+    iget-object v1, p0, Ljb0;->b:Ljava/util/List;
 
-    const-string v1, "}"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, p0, v1}, Lwn6;->j(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    const-string v1, ", physicalCameraId=null, mirrorMode="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Ljb0;->c:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", surfaceGroupId="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Ljb0;->d:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", dynamicRange="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Ljb0;->e:Lzt4;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, "}"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

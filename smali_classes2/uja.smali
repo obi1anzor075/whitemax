@@ -1,136 +1,121 @@
 .class public final Luja;
-.super Ljava/lang/Object;
+.super Lvja;
 .source "SourceFile"
-
-# interfaces
-.implements Lorg/webrtc/VideoSink;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final a:J
 
-.field public b:J
-
-.field public final synthetic c:Lvja;
+.field public final b:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lvja;Ljava/lang/String;)V
-    .locals 2
+.method public constructor <init>(JLjava/lang/String;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Luja;->c:Lvja;
+    iput-wide p1, p0, Luja;->a:J
 
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Luja;->b:J
-
-    iput-object p2, p0, Luja;->a:Ljava/lang/String;
+    iput-object p3, p0, Luja;->b:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onFrame(Lorg/webrtc/VideoFrame;)V
-    .locals 6
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 7
 
-    invoke-virtual {p1}, Lorg/webrtc/VideoFrame;->getCompactParticipantId()Ljava/lang/Long;
+    const/4 v0, 0x1
 
-    move-result-object p1
+    if-ne p0, p1, :cond_0
 
-    const-wide/16 v0, -0x1
-
-    if-nez p1, :cond_0
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p1
+    return v0
 
     :cond_0
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    instance-of v1, p1, Luja;
 
-    move-result-wide v2
+    const/4 v2, 0x0
 
-    iget-wide v4, p0, Luja;->b:J
+    if-nez v1, :cond_1
 
-    cmp-long v2, v2, v4
-
-    if-eqz v2, :cond_3
-
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    iput-wide v2, p0, Luja;->b:J
-
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    cmp-long v0, v2, v0
-
-    if-nez v0, :cond_1
-
-    const/4 p1, 0x0
+    return v2
 
     :cond_1
-    iget-object v0, p0, Luja;->c:Lvja;
+    check-cast p1, Luja;
 
-    iget-object v1, v0, Lvja;->z0:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-wide v3, p0, Luja;->a:J
 
-    iget-object p0, p0, Luja;->a:Ljava/lang/String;
+    iget-wide v5, p1, Luja;->a:J
 
-    invoke-virtual {v1, p0}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lxm1;
-
-    iget-object v2, v0, Lvja;->A0:Ljava/util/concurrent/ConcurrentHashMap;
-
-    iget-object v3, v0, Lvja;->z0:Ljava/util/concurrent/ConcurrentHashMap;
+    cmp-long v1, v3, v5
 
     if-eqz v1, :cond_2
 
-    invoke-virtual {v3, p0, v1}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    invoke-virtual {v2, v1, p0}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
+    return v2
 
     :cond_2
-    if-eqz p1, :cond_3
+    iget-object p0, p0, Luja;->b:Ljava/lang/String;
 
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    iget-object p1, p1, Luja;->b:Ljava/lang/String;
 
-    move-result-wide v4
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    long-to-int p1, v4
+    move-result p0
 
-    iget-object v0, v0, Lcf3;->X:Ljava/lang/Object;
+    if-nez p0, :cond_3
 
-    check-cast v0, Lgvf;
-
-    iget-object v0, v0, Lgvf;->b:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lxm1;
-
-    if-eqz p1, :cond_3
-
-    invoke-virtual {v3, p0, p1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {v2, p1, p0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    return v2
 
     :cond_3
-    return-void
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    iget-wide v0, p0, Luja;->a:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Luja;->b:Ljava/lang/String;
+
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 4
+
+    const-string v0, "OpenImage(messageId="
+
+    const-string v1, ", attachLocalId="
+
+    iget-wide v2, p0, Luja;->a:J
+
+    iget-object p0, p0, Luja;->b:Ljava/lang/String;
+
+    invoke-static {v0, v2, v3, v1, p0}, Lp3a;->k(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    const-string v0, ")"
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

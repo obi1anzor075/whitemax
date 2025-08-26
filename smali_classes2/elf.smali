@@ -1,124 +1,69 @@
-.class public final synthetic Lelf;
-.super Ljava/lang/Object;
+.class public final Lelf;
+.super Lflf;
 .source "SourceFile"
 
-# interfaces
-.implements Ls16;
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lelf;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lone/me/webapp/rootscreen/WebAppRootScreen;
+.field public final a:Lwnb;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/webapp/rootscreen/WebAppRootScreen;I)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lmrd;
+
+    const/16 v1, 0x1c
+
+    invoke-direct {v0, v1}, Lmrd;-><init>(I)V
+
+    sput-object v0, Lelf;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lwnb;)V
     .locals 0
 
-    iput p2, p0, Lelf;->a:I
-
-    iput-object p1, p0, Lelf;->b:Lone/me/webapp/rootscreen/WebAppRootScreen;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lelf;->a:Lwnb;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 7
+.method public final describeContents()I
+    .locals 0
 
-    iget-object v0, p0, Lelf;->b:Lone/me/webapp/rootscreen/WebAppRootScreen;
+    const/4 p0, 0x0
 
-    iget p0, p0, Lelf;->a:I
+    return p0
+.end method
 
-    packed-switch p0, :pswitch_data_0
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 0
 
-    sget-object p0, Lone/me/webapp/rootscreen/WebAppRootScreen;->K0:[Lk77;
+    iget-object p0, p0, Lelf;->a:Lwnb;
 
-    new-instance p0, Lvpf;
+    invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    invoke-virtual {v0}, Lone/me/webapp/rootscreen/WebAppRootScreen;->z0()Llpc;
+    move-result-object p0
 
-    move-result-object v0
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    invoke-direct {p0, v0}, Lvpf;-><init>(Llpc;)V
-
-    return-object p0
-
-    :pswitch_0
-    sget-object p0, Lone/me/webapp/rootscreen/WebAppRootScreen;->K0:[Lk77;
-
-    new-instance p0, Lkmf;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object v1, Lone/me/webapp/rootscreen/WebAppRootScreen;->K0:[Lk77;
-
-    const/4 v2, 0x1
-
-    aget-object v2, v1, v2
-
-    iget-object v2, v0, Lone/me/webapp/rootscreen/WebAppRootScreen;->x0:Ljr;
-
-    invoke-virtual {v2, v0}, Ljr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Number;
-
-    invoke-virtual {v2}, Ljava/lang/Number;->longValue()J
-
-    move-result-wide v2
-
-    const/4 v4, 0x2
-
-    aget-object v4, v1, v4
-
-    iget-object v4, v0, Lone/me/webapp/rootscreen/WebAppRootScreen;->y0:Ljr;
-
-    invoke-virtual {v4, v0}, Ljr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lbff;
-
-    const/4 v5, 0x0
-
-    aget-object v5, v1, v5
-
-    iget-object v5, v0, Lone/me/webapp/rootscreen/WebAppRootScreen;->w0:Ljr;
-
-    invoke-virtual {v5, v0}, Ljr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Ljava/lang/Long;
-
-    const/4 v6, 0x3
-
-    aget-object v1, v1, v6
-
-    iget-object v1, v0, Lone/me/webapp/rootscreen/WebAppRootScreen;->z0:Ljr;
-
-    invoke-virtual {v1, v0}, Ljr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v6, v0
-
-    check-cast v6, Ljava/lang/String;
-
-    move-object v1, p0
-
-    invoke-direct/range {v1 .. v6}, Lkmf;-><init>(JLbff;Ljava/lang/Long;Ljava/lang/String;)V
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

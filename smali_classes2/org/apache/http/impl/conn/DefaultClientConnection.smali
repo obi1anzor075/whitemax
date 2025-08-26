@@ -125,7 +125,7 @@
 
     invoke-direct {p2, p1, p3}, Lorg/apache/http/impl/conn/LoggingSessionInputBuffer;-><init>(Lorg/apache/http/io/SessionInputBuffer;Lorg/apache/http/impl/conn/Wire;)V
 
-    move-object p1, p2
+    return-object p2
 
     :cond_0
     return-object p1
@@ -161,7 +161,7 @@
 
     invoke-direct {p2, p1, p3}, Lorg/apache/http/impl/conn/LoggingSessionOutputBuffer;-><init>(Lorg/apache/http/io/SessionOutputBuffer;Lorg/apache/http/impl/conn/Wire;)V
 
-    move-object p1, p2
+    return-object p2
 
     :cond_0
     return-object p1

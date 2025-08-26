@@ -1,153 +1,154 @@
 .class public final Lclc;
-.super Ljava/util/concurrent/atomic/AtomicInteger;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lzjb;
+
+# static fields
+.field public static final b:Lclc;
+
+.field public static final c:Lclc;
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
-
-.field public final b:Lb1e;
+.field public final a:Z
 
 
 # direct methods
-.method public constructor <init>(Lb1e;Ljava/lang/Object;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lclc;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lclc;-><init>(Z)V
+
+    sput-object v0, Lclc;->b:Lclc;
+
+    new-instance v0, Lclc;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lclc;-><init>(Z)V
+
+    sput-object v0, Lclc;->c:Lclc;
+
+    return-void
+.end method
+
+.method public constructor <init>(Z)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lclc;->b:Lb1e;
-
-    iput-object p2, p0, Lclc;->a:Ljava/lang/Object;
+    iput-boolean p1, p0, Lclc;->a:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final cancel()V
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
-    const/4 v0, 0x2
-
-    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
-
-    return-void
-.end method
-
-.method public final clear()V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
-
-    return-void
-.end method
-
-.method public final i(J)V
-    .locals 0
-
-    invoke-static {p1, p2}, Lf1e;->d(J)Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    const/4 p2, 0x1
-
-    invoke-virtual {p0, p1, p2}, Ljava/util/concurrent/atomic/AtomicInteger;->compareAndSet(II)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    iget-object p1, p0, Lclc;->a:Ljava/lang/Object;
-
-    iget-object p2, p0, Lclc;->b:Lb1e;
-
-    invoke-interface {p2, p1}, Lb1e;->c(Ljava/lang/Object;)V
-
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
-
-    move-result p0
-
-    const/4 p1, 0x2
-
-    if-eq p0, p1, :cond_1
-
-    invoke-interface {p2}, Lb1e;->b()V
-
-    :cond_1
-    return-void
-.end method
-
-.method public final isEmpty()Z
-    .locals 0
-
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
+    if-ne p1, p0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x0
+    instance-of v0, p1, Lclc;
+
+    if-nez v0, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    check-cast p1, Lclc;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-boolean p0, p0, Lclc;->a:Z
+
+    iget-boolean p1, p1, Lclc;->a:Z
+
+    if-ne p0, p1, :cond_2
 
     :goto_0
-    return p0
-.end method
-
-.method public final offer(Ljava/lang/Object;)Z
-    .locals 0
-
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    const-string p1, "Should not be called!"
-
-    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method public final poll()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
-
-    iget-object p0, p0, Lclc;->a:Ljava/lang/Object;
-
-    return-object p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public final q(I)I
-    .locals 0
-
     const/4 p0, 0x1
 
     return p0
+
+    :cond_2
+    :goto_1
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    const/4 v0, -0x1
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    iget-boolean p0, p0, Lclc;->a:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    add-int/lit8 v0, v0, 0x1f
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    add-int/2addr v0, p0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    const/4 v0, -0x1
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    iget-boolean p0, p0, Lclc;->a:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p0
+
+    filled-new-array {v0, p0}, [Ljava/lang/Object;
+
+    move-result-object p0
+
+    const/4 v0, 0x2
+
+    invoke-static {p0, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object p0
+
+    const/4 v0, 0x0
+
+    const-string v1, "%d defer:%b"
+
+    invoke-static {v0, v1, p0}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

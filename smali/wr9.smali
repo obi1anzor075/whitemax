@@ -3,41 +3,93 @@
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lkotlinx/coroutines/internal/Symbol;
-
-.field public static final b:Lkotlinx/coroutines/internal/Symbol;
-
-.field public static final c:Lkotlinx/coroutines/internal/Symbol;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public static a(Landroid/app/RemoteInput;)Z
+    .locals 0
 
-    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+    invoke-virtual {p0}, Landroid/app/RemoteInput;->getAllowFreeFormInput()Z
 
-    const-string v1, "NULL"
+    move-result p0
 
-    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
+    return p0
+.end method
 
-    sput-object v0, Lwr9;->a:Lkotlinx/coroutines/internal/Symbol;
+.method public static b(Landroid/app/RemoteInput;)[Ljava/lang/CharSequence;
+    .locals 0
 
-    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+    invoke-virtual {p0}, Landroid/app/RemoteInput;->getChoices()[Ljava/lang/CharSequence;
 
-    const-string v1, "UNINITIALIZED"
+    move-result-object p0
 
-    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
+    return-object p0
+.end method
 
-    sput-object v0, Lwr9;->b:Lkotlinx/coroutines/internal/Symbol;
+.method public static c(Landroid/app/Notification$Action;)Landroid/os/Bundle;
+    .locals 0
 
-    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+    invoke-virtual {p0}, Landroid/app/Notification$Action;->getExtras()Landroid/os/Bundle;
 
-    const-string v1, "DONE"
+    move-result-object p0
 
-    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
+    return-object p0
+.end method
 
-    sput-object v0, Lwr9;->c:Lkotlinx/coroutines/internal/Symbol;
+.method public static d(Landroid/app/RemoteInput;)Landroid/os/Bundle;
+    .locals 0
 
-    return-void
+    invoke-virtual {p0}, Landroid/app/RemoteInput;->getExtras()Landroid/os/Bundle;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static e(Landroid/app/Notification;)Ljava/lang/String;
+    .locals 0
+
+    invoke-virtual {p0}, Landroid/app/Notification;->getGroup()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static f(Landroid/app/RemoteInput;)Ljava/lang/CharSequence;
+    .locals 0
+
+    invoke-virtual {p0}, Landroid/app/RemoteInput;->getLabel()Ljava/lang/CharSequence;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static g(Landroid/app/Notification$Action;)[Landroid/app/RemoteInput;
+    .locals 0
+
+    invoke-virtual {p0}, Landroid/app/Notification$Action;->getRemoteInputs()[Landroid/app/RemoteInput;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static h(Landroid/app/RemoteInput;)Ljava/lang/String;
+    .locals 0
+
+    invoke-virtual {p0}, Landroid/app/RemoteInput;->getResultKey()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static i(Landroid/app/Notification;)Ljava/lang/String;
+    .locals 0
+
+    invoke-virtual {p0}, Landroid/app/Notification;->getSortKey()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

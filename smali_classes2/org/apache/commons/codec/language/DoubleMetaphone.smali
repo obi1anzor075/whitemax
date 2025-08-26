@@ -241,7 +241,7 @@
 
     const/16 p2, 0x45
 
-    if-ne p0, p2, :cond_6
+    if-ne p0, p2, :cond_5
 
     :cond_4
     const-string p0, "BACHER"
@@ -254,16 +254,13 @@
 
     move-result p0
 
-    if-eqz p0, :cond_5
-
-    goto :goto_0
+    if-eqz p0, :cond_6
 
     :cond_5
-    move v1, v0
+    return v1
 
     :cond_6
-    :goto_0
-    return v1
+    return v0
 .end method
 
 .method private conditionCH0(Ljava/lang/String;I)Z
@@ -306,29 +303,32 @@
 
     invoke-static/range {v1 .. v7}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
-    move-result p2
+    move-result p1
 
-    if-nez p2, :cond_1
+    if-nez p1, :cond_2
 
     return p0
 
     :cond_1
-    const-string p2, "CHORE"
+    move-object v1, p1
 
-    invoke-static {p1, p0, v8, p2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    :cond_2
+    const-string p1, "CHORE"
+
+    invoke-static {v1, p0, v8, p1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_3
 
     return p0
 
-    :cond_2
+    :cond_3
     return v0
 .end method
 
 .method private conditionCH1(Ljava/lang/String;I)Z
-    .locals 10
+    .locals 9
 
     const-string p0, "VAN "
 
@@ -344,7 +344,7 @@
 
     const/4 v0, 0x1
 
-    if-nez p0, :cond_1
+    if-nez p0, :cond_2
 
     const/4 p0, 0x3
 
@@ -354,7 +354,7 @@
 
     move-result p0
 
-    if-nez p0, :cond_1
+    if-nez p0, :cond_2
 
     add-int/lit8 v3, p2, -0x2
 
@@ -372,66 +372,67 @@
 
     move-result p0
 
-    if-nez p0, :cond_1
+    if-nez p0, :cond_2
 
     add-int/lit8 p0, p2, 0x2
 
-    const-string v2, "T"
+    const-string p1, "T"
 
     const-string v3, "S"
 
-    invoke-static {p1, p0, v0, v2, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v2, p0, v0, p1, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
-    move-result v2
+    move-result p1
 
-    if-nez v2, :cond_1
+    if-nez p1, :cond_2
 
-    add-int/lit8 v4, p2, -0x1
+    add-int/lit8 v3, p2, -0x1
 
-    const-string v8, "U"
+    const-string v7, "U"
 
-    const-string v9, "E"
+    const-string v8, "E"
 
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
-    const-string v6, "A"
+    const-string v5, "A"
 
-    const-string v7, "O"
+    const-string v6, "O"
 
-    move-object v3, p1
+    invoke-static/range {v2 .. v8}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
-    invoke-static/range {v3 .. v9}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+    move-result p1
 
-    move-result v2
+    if-nez p1, :cond_0
 
-    if-nez v2, :cond_0
-
-    if-nez p2, :cond_2
+    if-nez p2, :cond_1
 
     :cond_0
-    sget-object v2, Lorg/apache/commons/codec/language/DoubleMetaphone;->L_R_N_M_B_H_F_V_W_SPACE:[Ljava/lang/String;
+    sget-object p1, Lorg/apache/commons/codec/language/DoubleMetaphone;->L_R_N_M_B_H_F_V_W_SPACE:[Ljava/lang/String;
 
-    invoke-static {p1, p0, v0, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;II[Ljava/lang/String;)Z
+    invoke-static {v2, p0, v0, p1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;II[Ljava/lang/String;)Z
 
     move-result p0
 
-    if-nez p0, :cond_1
+    if-nez p0, :cond_2
 
     add-int/2addr p2, v0
 
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
     move-result p0
 
     sub-int/2addr p0, v0
 
-    if-ne p2, p0, :cond_2
+    if-ne p2, p0, :cond_1
+
+    goto :goto_0
 
     :cond_1
-    move v1, v0
+    return v1
 
     :cond_2
-    return v1
+    :goto_0
+    return v0
 .end method
 
 .method private conditionL0(Ljava/lang/String;I)Z
@@ -463,55 +464,58 @@
 
     move-result p0
 
-    if-eqz p0, :cond_0
+    if-eqz p0, :cond_1
 
     return v0
 
     :cond_0
+    move-object v1, p1
+
+    :cond_1
     sub-int/2addr p2, v0
 
     const-string p0, "AS"
 
-    const-string v1, "OS"
+    const-string p1, "OS"
 
     const/4 v2, 0x2
 
-    invoke-static {p1, p2, v2, p0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v1, p2, v2, p0, p1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result p0
 
-    if-nez p0, :cond_1
+    if-nez p0, :cond_2
 
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result p0
 
     sub-int/2addr p0, v0
 
-    const-string v1, "A"
+    const-string p1, "A"
 
     const-string v2, "O"
 
-    invoke-static {p1, p0, v0, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v1, p0, v0, p1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_2
+    if-eqz p0, :cond_3
 
-    :cond_1
+    :cond_2
     const/4 p0, 0x4
 
-    const-string v1, "ALLE"
+    const-string p1, "ALLE"
 
-    invoke-static {p1, p2, p0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {v1, p2, p0, p1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_2
+    if-eqz p0, :cond_3
 
     return v0
 
-    :cond_2
+    :cond_3
     const/4 p0, 0x0
 
     return p0
@@ -545,7 +549,7 @@
 
     move-result p0
 
-    if-eqz p0, :cond_1
+    if-eqz p0, :cond_2
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
@@ -553,7 +557,7 @@
 
     sub-int/2addr p0, v2
 
-    if-eq v0, p0, :cond_2
+    if-eq v0, p0, :cond_1
 
     const/4 p0, 0x2
 
@@ -565,16 +569,15 @@
 
     move-result p0
 
-    if-eqz p0, :cond_1
-
-    goto :goto_0
+    if-eqz p0, :cond_2
 
     :cond_1
-    const/4 v2, 0x0
+    return v2
 
     :cond_2
-    :goto_0
-    return v2
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
 .method private static contains(Ljava/lang/String;IILjava/lang/String;)Z
@@ -705,9 +708,9 @@
 
     if-eqz p2, :cond_0
 
-    const/4 v0, 0x1
+    const/4 p0, 0x1
 
-    goto :goto_1
+    return p0
 
     :cond_0
     add-int/lit8 p1, p1, 0x1
@@ -715,7 +718,6 @@
     goto :goto_0
 
     :cond_1
-    :goto_1
     return v0
 .end method
 
@@ -735,136 +737,132 @@
 .end method
 
 .method private handleC(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;I)I
-    .locals 15
+    .locals 12
 
-    move-object v0, p0
+    move v2, p3
 
-    move-object/from16 v6, p1
+    invoke-direct {p0, p1, p3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->conditionC0(Ljava/lang/String;I)Z
 
-    move-object/from16 v7, p2
+    move-result v3
 
-    move/from16 v8, p3
+    const/16 v6, 0x4b
 
-    invoke-direct {p0, v6, v8}, Lorg/apache/commons/codec/language/DoubleMetaphone;->conditionC0(Ljava/lang/String;I)Z
+    const/4 v7, 0x2
 
-    move-result v1
+    if-eqz v3, :cond_0
 
-    const/16 v9, 0x4b
+    invoke-virtual {p2, v6}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
-    const/4 v10, 0x2
+    add-int/lit8 v0, v2, 0x2
 
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v7, v9}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
-
-    :goto_0
-    add-int/lit8 v0, v8, 0x2
-
-    goto/16 :goto_2
+    return v0
 
     :cond_0
-    const/16 v11, 0x53
+    const/16 v8, 0x53
 
-    if-nez v8, :cond_1
+    if-nez v2, :cond_1
 
-    const/4 v1, 0x6
+    const/4 v3, 0x6
 
-    const-string v2, "CAESAR"
+    const-string v4, "CAESAR"
 
-    invoke-static {v6, v8, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, p3, v3, v4}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
-    move-result v1
+    move-result v3
 
-    if-eqz v1, :cond_1
+    if-eqz v3, :cond_1
 
-    invoke-virtual {v7, v11}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+    invoke-virtual {p2, v8}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
-    goto :goto_0
+    add-int/lit8 v0, v2, 0x2
+
+    return v0
 
     :cond_1
-    const-string v1, "CH"
+    const-string v3, "CH"
 
-    invoke-static {v6, v8, v10, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, p3, v7, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
-    move-result v1
+    move-result v3
 
-    if-eqz v1, :cond_2
+    if-eqz v3, :cond_2
 
     invoke-direct/range {p0 .. p3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->handleCH(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;I)I
 
     move-result v0
 
-    goto/16 :goto_2
+    return v0
 
     :cond_2
-    const-string v1, "CZ"
+    const-string v3, "CZ"
 
-    invoke-static {v6, v8, v10, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, p3, v7, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
-    move-result v1
+    move-result v3
 
-    const/16 v12, 0x58
+    const/16 v9, 0x58
 
-    if-eqz v1, :cond_3
+    if-eqz v3, :cond_3
 
-    add-int/lit8 v1, v8, -0x2
+    add-int/lit8 v3, v2, -0x2
 
-    const/4 v2, 0x4
+    const/4 v4, 0x4
 
-    const-string v3, "WICZ"
+    const-string v5, "WICZ"
 
-    invoke-static {v6, v1, v2, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, v3, v4, v5}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
-    move-result v1
+    move-result v3
 
-    if-nez v1, :cond_3
+    if-nez v3, :cond_3
 
-    invoke-virtual {v7, v11, v12}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
+    invoke-virtual {p2, v8, v9}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
 
-    goto :goto_0
+    add-int/lit8 v0, v2, 0x2
+
+    return v0
 
     :cond_3
-    add-int/lit8 v13, v8, 0x1
+    add-int/lit8 v10, v2, 0x1
 
-    const-string v1, "CIA"
+    const-string v3, "CIA"
 
-    const/4 v14, 0x3
+    const/4 v11, 0x3
 
-    invoke-static {v6, v13, v14, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, v10, v11, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
-    move-result v1
+    move-result v3
 
-    if-eqz v1, :cond_4
+    if-eqz v3, :cond_4
 
-    invoke-virtual {v7, v12}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+    invoke-virtual {p2, v9}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
-    :goto_1
-    add-int/lit8 v0, v8, 0x3
+    add-int/lit8 v0, v2, 0x3
 
-    goto/16 :goto_2
+    return v0
 
     :cond_4
-    const-string v1, "CC"
+    const-string v3, "CC"
 
-    invoke-static {v6, v8, v10, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, p3, v7, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
-    move-result v1
+    move-result v3
 
-    if-eqz v1, :cond_6
+    if-eqz v3, :cond_6
 
-    const/4 v1, 0x1
+    const/4 v3, 0x1
 
-    if-ne v8, v1, :cond_5
+    if-ne v2, v3, :cond_5
 
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {p0, v6, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+    invoke-virtual {p0, p1, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
 
-    move-result v1
+    move-result v3
 
-    const/16 v2, 0x4d
+    const/16 v4, 0x4d
 
-    if-eq v1, v2, :cond_6
+    if-eq v3, v4, :cond_6
 
     :cond_5
     invoke-direct/range {p0 .. p3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->handleCC(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;I)I
@@ -882,19 +880,21 @@
 
     const-string v3, "CK"
 
-    move-object/from16 v0, p1
+    move-object v0, p1
 
-    move/from16 v1, p3
+    move v1, p3
 
     invoke-static/range {v0 .. v5}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_7
+    if-eqz v2, :cond_7
 
-    invoke-virtual {v7, v9}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+    invoke-virtual {p2, v6}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
-    goto :goto_0
+    add-int/lit8 v0, p3, 0x2
+
+    return v0
 
     :cond_7
     const-string v4, "CE"
@@ -905,15 +905,15 @@
 
     const-string v3, "CI"
 
-    move-object/from16 v0, p1
+    move-object v0, p1
 
-    move/from16 v1, p3
+    move v1, p3
 
     invoke-static/range {v0 .. v5}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_9
+    if-eqz v2, :cond_9
 
     const-string v4, "CIE"
 
@@ -923,9 +923,9 @@
 
     const-string v3, "CIO"
 
-    move-object/from16 v0, p1
+    move-object v0, p1
 
-    move/from16 v1, p3
+    move v1, p3
 
     invoke-static/range {v0 .. v5}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
@@ -933,17 +933,20 @@
 
     if-eqz v0, :cond_8
 
-    invoke-virtual {v7, v11, v12}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
+    invoke-virtual {p2, v8, v9}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_8
-    invoke-virtual {v7, v11}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+    invoke-virtual {p2, v8}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
-    goto/16 :goto_0
+    :goto_0
+    add-int/lit8 v0, p3, 0x2
+
+    return v0
 
     :cond_9
-    invoke-virtual {v7, v9}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+    invoke-virtual {p2, v6}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
     const-string v4, " Q"
 
@@ -953,17 +956,19 @@
 
     const-string v3, " C"
 
-    move-object/from16 v0, p1
+    move-object v0, p1
 
-    move v1, v13
+    move v1, v10
 
     invoke-static/range {v0 .. v5}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_a
+    if-eqz v2, :cond_a
 
-    goto :goto_1
+    add-int/lit8 v0, p3, 0x3
+
+    return v0
 
     :cond_a
     const-string v4, "K"
@@ -974,39 +979,36 @@
 
     const-string v3, "C"
 
-    move-object/from16 v0, p1
-
-    move v1, v13
+    move-object v0, p1
 
     invoke-static/range {v0 .. v5}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_b
+    if-eqz v2, :cond_b
 
-    const-string v0, "CE"
+    const-string v2, "CE"
 
-    const-string v1, "CI"
+    const-string v3, "CI"
 
-    invoke-static {v6, v13, v10, v0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1, v1, v7, v2, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_b
 
-    goto/16 :goto_0
+    add-int/lit8 v0, p3, 0x2
+
+    return v0
 
     :cond_b
-    move v0, v13
-
-    :goto_2
-    return v0
+    return v1
 .end method
 
 .method private handleCC(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;I)I
-    .locals 7
+    .locals 6
 
-    add-int/lit8 v6, p3, 0x2
+    add-int/lit8 v1, p3, 0x2
 
     const-string v4, "E"
 
@@ -1018,48 +1020,46 @@
 
     move-object v0, p1
 
-    move v1, v6
-
     invoke-static/range {v0 .. v5}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
-    move-result v0
+    move-result p1
 
-    if-eqz v0, :cond_3
+    if-eqz p1, :cond_3
 
-    const-string v0, "HU"
+    const-string p1, "HU"
 
-    const/4 v1, 0x2
+    const/4 v2, 0x2
 
-    invoke-static {p1, v6, v1, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {v0, v1, v2, p1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
-    move-result v0
+    move-result p1
 
-    if-nez v0, :cond_3
+    if-nez p1, :cond_3
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
-    if-ne p3, v0, :cond_0
+    if-ne p3, p1, :cond_0
 
-    add-int/lit8 v0, p3, -0x1
+    add-int/lit8 p1, p3, -0x1
 
-    invoke-virtual {p0, p1, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+    invoke-virtual {p0, v0, p1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
 
     move-result p0
 
-    const/16 v0, 0x41
+    const/16 p1, 0x41
 
-    if-eq p0, v0, :cond_1
+    if-eq p0, p1, :cond_1
 
     :cond_0
     add-int/lit8 p0, p3, -0x1
 
-    const-string v0, "UCCEE"
+    const-string p1, "UCCEE"
 
     const-string v1, "UCCES"
 
     const/4 v2, 0x5
 
-    invoke-static {p1, p0, v2, v0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v0, p0, v2, p1, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result p0
 
@@ -1078,17 +1078,16 @@
     invoke-virtual {p2, p0}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
     :goto_0
-    add-int/lit8 v6, p3, 0x3
+    add-int/lit8 p3, p3, 0x3
 
-    goto :goto_1
+    return p3
 
     :cond_3
     const/16 p0, 0x4b
 
     invoke-virtual {p2, p0}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
-    :goto_1
-    return v6
+    return v1
 .end method
 
 .method private handleCH(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;I)I
@@ -1185,7 +1184,7 @@
 
     if-eqz p0, :cond_1
 
-    add-int/lit8 p0, p3, 0x2
+    add-int/lit8 v2, p3, 0x2
 
     const-string v5, "E"
 
@@ -1197,35 +1196,35 @@
 
     move-object v1, p1
 
-    move v2, p0
-
     invoke-static/range {v1 .. v6}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
-    move-result p1
+    move-result p0
 
-    if-eqz p1, :cond_0
+    if-eqz p0, :cond_0
 
     const/16 p0, 0x4a
 
     invoke-virtual {p2, p0}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
-    add-int/lit8 p0, p3, 0x3
+    add-int/lit8 p3, p3, 0x3
 
-    goto :goto_0
+    return p3
 
     :cond_0
-    const-string p1, "TK"
+    const-string p0, "TK"
 
-    invoke-virtual {p2, p1}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(Ljava/lang/String;)V
+    invoke-virtual {p2, p0}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(Ljava/lang/String;)V
 
-    goto :goto_0
+    return v2
 
     :cond_1
+    move-object v1, p1
+
     const-string p0, "DT"
 
-    const-string v1, "DD"
+    const-string p1, "DD"
 
-    invoke-static {p1, p3, v0, p0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v1, p3, v0, p0, p1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result p0
 
@@ -1235,124 +1234,123 @@
 
     invoke-virtual {p2, p1}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
-    add-int/lit8 p0, p3, 0x2
+    add-int/2addr p3, v0
 
-    goto :goto_0
+    return p3
 
     :cond_2
     invoke-virtual {p2, p1}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
-    add-int/lit8 p0, p3, 0x1
+    add-int/lit8 p3, p3, 0x1
 
-    :goto_0
-    return p0
+    return p3
 .end method
 
 .method private handleG(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;IZ)I
-    .locals 17
+    .locals 16
 
     move-object/from16 v0, p0
 
-    move-object/from16 v7, p1
+    move-object/from16 v1, p1
 
-    move-object/from16 v8, p2
+    move-object/from16 v7, p2
 
-    move/from16 v9, p3
+    move/from16 v8, p3
 
-    add-int/lit8 v10, v9, 0x1
+    add-int/lit8 v9, v8, 0x1
 
-    invoke-virtual {v0, v7, v10}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+    invoke-virtual {v0, v1, v9}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
 
-    move-result v1
+    move-result v2
 
-    const/16 v2, 0x48
+    const/16 v3, 0x48
 
-    if-ne v1, v2, :cond_0
+    if-ne v2, v3, :cond_0
 
     invoke-direct/range {p0 .. p3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->handleGH(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;I)I
 
-    move-result v10
+    move-result v0
 
-    goto/16 :goto_5
+    return v0
 
     :cond_0
-    invoke-virtual {v0, v7, v10}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+    invoke-virtual {v0, v1, v9}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
 
-    move-result v1
+    move-result v2
 
-    const/16 v2, 0x4e
+    const/16 v3, 0x4e
 
-    const/16 v3, 0x59
+    const/16 v4, 0x59
 
-    const/4 v11, 0x0
+    const/4 v10, 0x0
 
-    const/4 v12, 0x2
+    const/4 v11, 0x2
 
-    const/4 v13, 0x1
+    const/4 v12, 0x1
 
-    if-ne v1, v2, :cond_3
+    if-ne v2, v3, :cond_3
 
-    const-string v1, "N"
+    const-string v2, "N"
 
-    const-string v2, "KN"
+    const-string v3, "KN"
 
-    if-ne v9, v13, :cond_1
+    if-ne v8, v12, :cond_1
 
-    invoke-virtual {v0, v7, v11}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+    invoke-virtual {v0, v1, v10}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
 
-    move-result v4
+    move-result v5
 
-    invoke-direct {v0, v4}, Lorg/apache/commons/codec/language/DoubleMetaphone;->isVowel(C)Z
+    invoke-direct {v0, v5}, Lorg/apache/commons/codec/language/DoubleMetaphone;->isVowel(C)Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_1
+    if-eqz v5, :cond_1
 
     if-nez p4, :cond_1
 
-    invoke-virtual {v8, v2, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v7, v3, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_1
-    add-int/lit8 v4, v9, 0x2
+    add-int/lit8 v5, v8, 0x2
 
-    const-string v5, "EY"
+    const-string v6, "EY"
 
-    invoke-static {v7, v4, v12, v5}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {v1, v5, v11, v6}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
-    move-result v4
+    move-result v5
 
-    if-nez v4, :cond_2
+    if-nez v5, :cond_2
 
-    invoke-virtual {v0, v7, v10}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+    invoke-virtual {v0, v1, v9}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
 
     move-result v0
 
-    if-eq v0, v3, :cond_2
+    if-eq v0, v4, :cond_2
 
     if-nez p4, :cond_2
 
-    invoke-virtual {v8, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v7, v2, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_2
-    invoke-virtual {v8, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(Ljava/lang/String;)V
+    invoke-virtual {v7, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(Ljava/lang/String;)V
 
     :goto_0
-    add-int/lit8 v10, v9, 0x2
+    add-int/lit8 v0, v8, 0x2
 
-    goto/16 :goto_5
+    return v0
 
     :cond_3
-    const-string v1, "LI"
+    const-string v2, "LI"
 
-    invoke-static {v7, v10, v12, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {v1, v9, v11, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_4
+    if-eqz v2, :cond_4
 
     if-nez p4, :cond_4
 
@@ -1360,65 +1358,61 @@
 
     const-string v1, "L"
 
-    invoke-virtual {v8, v0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v7, v0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_0
+    add-int/lit8 v0, v8, 0x2
+
+    return v0
 
     :cond_4
-    const/16 v14, 0x4a
+    const/16 v13, 0x4a
 
-    const/16 v15, 0x4b
+    const/16 v14, 0x4b
 
-    if-nez v9, :cond_6
+    if-nez v8, :cond_6
 
-    invoke-virtual {v0, v7, v10}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+    invoke-virtual {v0, v1, v9}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
 
-    move-result v1
+    move-result v2
 
-    if-eq v1, v3, :cond_5
+    if-eq v2, v4, :cond_5
 
-    sget-object v1, Lorg/apache/commons/codec/language/DoubleMetaphone;->ES_EP_EB_EL_EY_IB_IL_IN_IE_EI_ER:[Ljava/lang/String;
+    sget-object v2, Lorg/apache/commons/codec/language/DoubleMetaphone;->ES_EP_EB_EL_EY_IB_IL_IN_IE_EI_ER:[Ljava/lang/String;
 
-    invoke-static {v7, v10, v12, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;II[Ljava/lang/String;)Z
+    invoke-static {v1, v9, v11, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;II[Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_6
+    if-eqz v2, :cond_6
 
     :cond_5
-    invoke-virtual {v8, v15, v14}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
+    invoke-virtual {v7, v14, v13}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
 
-    goto :goto_0
+    add-int/lit8 v0, v8, 0x2
+
+    return v0
 
     :cond_6
-    const-string v1, "ER"
+    const-string v2, "ER"
 
-    invoke-static {v7, v10, v12, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {v1, v9, v11, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
-    move-result v1
+    move-result v2
 
-    const/4 v6, 0x3
+    const/4 v15, 0x3
 
-    if-nez v1, :cond_8
+    if-nez v2, :cond_7
 
-    invoke-virtual {v0, v7, v10}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+    invoke-virtual {v0, v1, v9}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
 
-    move-result v1
+    move-result v2
 
-    if-ne v1, v3, :cond_7
-
-    goto :goto_1
+    if-ne v2, v4, :cond_8
 
     :cond_7
-    move v11, v6
-
-    goto :goto_2
-
-    :cond_8
-    :goto_1
     const-string v5, "RANGER"
 
-    const-string v16, "MANGER"
+    const-string v6, "MANGER"
 
     const/4 v2, 0x0
 
@@ -1426,46 +1420,41 @@
 
     const-string v4, "DANGER"
 
-    move-object/from16 v1, p1
-
-    move v11, v6
-
-    move-object/from16 v6, v16
-
     invoke-static/range {v1 .. v6}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_9
-
-    add-int/lit8 v1, v9, -0x1
-
-    const-string v2, "E"
-
-    const-string v3, "I"
-
-    invoke-static {v7, v1, v13, v2, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v2
 
-    if-nez v2, :cond_9
+    if-nez v2, :cond_8
 
-    const-string v2, "RGY"
+    add-int/lit8 v2, v8, -0x1
 
-    const-string v3, "OGY"
+    const-string v3, "E"
 
-    invoke-static {v7, v1, v11, v2, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    const-string v4, "I"
 
-    move-result v1
+    invoke-static {v1, v2, v12, v3, v4}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
-    if-nez v1, :cond_9
+    move-result v3
 
-    invoke-virtual {v8, v15, v14}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
+    if-nez v3, :cond_8
 
-    goto :goto_0
+    const-string v3, "RGY"
 
-    :cond_9
-    :goto_2
+    const-string v4, "OGY"
+
+    invoke-static {v1, v2, v15, v3, v4}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_8
+
+    invoke-virtual {v7, v14, v13}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
+
+    add-int/lit8 v0, v8, 0x2
+
+    return v0
+
+    :cond_8
     const-string v5, "I"
 
     const-string v6, "Y"
@@ -1474,297 +1463,286 @@
 
     const-string v4, "E"
 
-    move-object/from16 v1, p1
-
-    move v2, v10
+    move v2, v9
 
     invoke-static/range {v1 .. v6}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v3
 
-    const/4 v2, 0x4
+    const/4 v4, 0x4
 
-    if-nez v1, :cond_c
+    if-nez v3, :cond_b
 
-    add-int/lit8 v1, v9, -0x1
+    add-int/lit8 v3, v8, -0x1
 
-    const-string v3, "AGGI"
+    const-string v5, "AGGI"
 
-    const-string v4, "OGGI"
+    const-string v6, "OGGI"
 
-    invoke-static {v7, v1, v2, v3, v4}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v1, v3, v4, v5, v6}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v3
 
-    if-eqz v1, :cond_a
+    if-eqz v3, :cond_9
 
-    goto :goto_3
+    goto :goto_1
 
-    :cond_a
-    invoke-virtual {v0, v7, v10}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+    :cond_9
+    invoke-virtual {v0, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
 
     move-result v0
 
     const/16 v1, 0x47
 
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_a
 
-    add-int/lit8 v10, v9, 0x2
+    add-int/lit8 v0, v8, 0x2
 
-    invoke-virtual {v8, v15}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+    invoke-virtual {v7, v14}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
-    goto :goto_5
+    return v0
+
+    :cond_a
+    invoke-virtual {v7, v14}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+
+    return v2
 
     :cond_b
-    invoke-virtual {v8, v15}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
-
-    goto :goto_5
-
-    :cond_c
-    :goto_3
+    :goto_1
     const-string v0, "VAN "
 
-    const-string v1, "VON "
+    const-string v3, "VON "
 
-    const/4 v3, 0x0
-
-    invoke-static {v7, v3, v2, v0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v1, v10, v4, v0, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_e
 
     const-string v0, "SCH"
 
-    invoke-static {v7, v3, v11, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {v1, v10, v15, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_e
 
     const-string v0, "ET"
 
-    invoke-static {v7, v10, v12, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {v1, v2, v11, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_c
+
+    goto :goto_2
+
+    :cond_c
+    const-string v0, "IER"
+
+    invoke-static {v1, v2, v4, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_d
 
-    goto :goto_4
+    invoke-virtual {v7, v13}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+
+    goto :goto_3
 
     :cond_d
-    const-string v0, "IER"
+    invoke-virtual {v7, v13, v14}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
 
-    invoke-static {v7, v10, v2, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_e
-
-    invoke-virtual {v8, v14}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
-
-    goto/16 :goto_0
+    goto :goto_3
 
     :cond_e
-    invoke-virtual {v8, v14, v15}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
+    :goto_2
+    invoke-virtual {v7, v14}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
-    goto/16 :goto_0
+    :goto_3
+    add-int/lit8 v0, v8, 0x2
 
-    :cond_f
-    :goto_4
-    invoke-virtual {v8, v15}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
-
-    goto/16 :goto_0
-
-    :goto_5
-    return v10
+    return v0
 .end method
 
 .method private handleGH(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;I)I
-    .locals 15
+    .locals 12
 
-    move-object v0, p0
+    const/16 v0, 0x4b
 
-    move-object/from16 v9, p1
+    const/4 v1, 0x2
 
-    move-object/from16 v10, p2
+    if-lez p3, :cond_0
 
-    move/from16 v11, p3
+    add-int/lit8 v2, p3, -0x1
 
-    const/16 v12, 0x4b
+    invoke-virtual {p0, p1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
 
-    const/4 v13, 0x2
+    move-result v2
 
-    if-lez v11, :cond_1
+    invoke-direct {p0, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->isVowel(C)Z
 
-    add-int/lit8 v1, v11, -0x1
+    move-result v2
 
-    invoke-virtual {p0, v9, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+    if-nez v2, :cond_0
 
-    move-result v1
+    invoke-virtual {p2, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
-    invoke-direct {p0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->isVowel(C)Z
+    add-int/2addr p3, v1
 
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    invoke-virtual {v10, v12}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+    return p3
 
     :cond_0
-    :goto_0
-    add-int/lit8 v0, v11, 0x2
+    const/16 v2, 0x49
 
-    goto/16 :goto_2
+    if-nez p3, :cond_2
+
+    add-int/2addr p3, v1
+
+    invoke-virtual {p0, p1, p3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+
+    move-result p0
+
+    if-ne p0, v2, :cond_1
+
+    const/16 p0, 0x4a
+
+    invoke-virtual {p2, p0}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+
+    goto :goto_0
 
     :cond_1
-    const/16 v14, 0x49
+    invoke-virtual {p2, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
-    if-nez v11, :cond_3
+    :goto_0
+    return p3
 
-    add-int/lit8 v1, v11, 0x2
+    :cond_2
+    const/4 v3, 0x1
 
-    invoke-virtual {p0, v9, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+    if-le p3, v3, :cond_3
 
-    move-result v0
+    add-int/lit8 v5, p3, -0x2
 
-    if-ne v0, v14, :cond_2
+    const-string v8, "H"
 
-    const/16 v0, 0x4a
+    const-string v9, "D"
 
-    invoke-virtual {v10, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+    const/4 v6, 0x1
+
+    const-string v7, "B"
+
+    move-object v4, p1
+
+    invoke-static/range {v4 .. v9}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_5
 
     goto :goto_1
 
-    :cond_2
-    invoke-virtual {v10, v12}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+    :cond_3
+    move-object v4, p1
 
     :goto_1
-    move v0, v1
+    if-le p3, v1, :cond_4
 
-    goto/16 :goto_2
+    add-int/lit8 v5, p3, -0x3
 
-    :cond_3
-    const/4 v7, 0x1
+    const-string v8, "H"
 
-    if-le v11, v7, :cond_4
+    const-string v9, "D"
 
-    add-int/lit8 v2, v11, -0x2
+    const/4 v6, 0x1
 
-    const-string v5, "H"
+    const-string v7, "B"
 
-    const-string v6, "D"
+    invoke-static/range {v4 .. v9}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
-    const/4 v3, 0x1
+    move-result p1
 
-    const-string v4, "B"
-
-    move-object/from16 v1, p1
-
-    invoke-static/range {v1 .. v6}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
+    if-nez p1, :cond_5
 
     :cond_4
-    if-le v11, v13, :cond_5
+    const/4 p1, 0x3
 
-    add-int/lit8 v2, v11, -0x3
+    if-le p3, p1, :cond_6
 
-    const-string v5, "H"
+    add-int/lit8 p1, p3, -0x4
 
-    const-string v6, "D"
+    const-string v5, "B"
 
-    const/4 v3, 0x1
+    const-string v6, "H"
 
-    const-string v4, "B"
+    invoke-static {v4, p1, v3, v5, v6}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
-    move-object/from16 v1, p1
+    move-result p1
 
-    invoke-static/range {v1 .. v6}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
+    if-eqz p1, :cond_6
 
     :cond_5
-    const/4 v1, 0x3
+    add-int/2addr p3, v1
 
-    if-le v11, v1, :cond_6
-
-    add-int/lit8 v1, v11, -0x4
-
-    const-string v2, "B"
-
-    const-string v3, "H"
-
-    invoke-static {v9, v1, v7, v2, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_6
-
-    goto :goto_0
+    return p3
 
     :cond_6
-    if-le v11, v13, :cond_7
+    if-le p3, v1, :cond_7
 
-    add-int/lit8 v1, v11, -0x1
+    add-int/lit8 p1, p3, -0x1
 
-    invoke-virtual {p0, v9, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+    invoke-virtual {p0, v4, p1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
 
-    move-result v1
+    move-result p1
 
-    const/16 v2, 0x55
+    const/16 v3, 0x55
 
-    if-ne v1, v2, :cond_7
+    if-ne p1, v3, :cond_7
 
-    add-int/lit8 v2, v11, -0x3
+    add-int/lit8 v5, p3, -0x3
 
-    const-string v7, "R"
+    const-string v10, "R"
 
-    const-string v8, "T"
+    const-string v11, "T"
 
-    const/4 v3, 0x1
+    const/4 v6, 0x1
 
-    const-string v4, "C"
+    const-string v7, "C"
 
-    const-string v5, "G"
+    const-string v8, "G"
 
-    const-string v6, "L"
+    const-string v9, "L"
 
-    move-object/from16 v1, p1
+    invoke-static/range {v4 .. v11}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
-    invoke-static/range {v1 .. v8}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
+    move-result p1
 
-    move-result v1
+    if-eqz p1, :cond_7
 
-    if-eqz v1, :cond_7
+    const/16 p0, 0x46
 
-    const/16 v0, 0x46
+    invoke-virtual {p2, p0}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
-    invoke-virtual {v10, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
-
-    goto :goto_0
+    goto :goto_2
 
     :cond_7
-    if-lez v11, :cond_0
+    if-lez p3, :cond_8
 
-    add-int/lit8 v1, v11, -0x1
+    add-int/lit8 p1, p3, -0x1
 
-    invoke-virtual {p0, v9, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+    invoke-virtual {p0, v4, p1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
 
-    move-result v0
+    move-result p0
 
-    if-eq v0, v14, :cond_0
+    if-eq p0, v2, :cond_8
 
-    invoke-virtual {v10, v12}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+    invoke-virtual {p2, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
-    goto/16 :goto_0
-
+    :cond_8
     :goto_2
-    return v0
+    add-int/2addr p3, v1
+
+    return p3
 .end method
 
 .method private handleH(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;I)I
@@ -1803,130 +1781,123 @@
 
     add-int/lit8 p3, p3, 0x2
 
-    goto :goto_0
+    return p3
 
     :cond_1
     add-int/lit8 p3, p3, 0x1
 
-    :goto_0
     return p3
 .end method
 
 .method private handleJ(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;IZ)I
-    .locals 13
+    .locals 12
 
-    move-object v0, p0
+    move v7, p3
 
-    move-object v7, p1
+    const/4 v2, 0x4
 
-    move-object v8, p2
+    const-string v3, "JOSE"
 
-    move/from16 v9, p3
+    invoke-static {p1, p3, v2, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
-    const/4 v1, 0x4
+    move-result v4
 
-    const-string v2, "JOSE"
+    const/16 v5, 0x20
 
-    invoke-static {p1, v9, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    const-string v6, "SAN "
 
-    move-result v3
+    const/4 v8, 0x0
 
-    const/16 v4, 0x20
+    const/16 v9, 0x48
 
-    const-string v5, "SAN "
+    const/16 v10, 0x4a
 
-    const/4 v6, 0x0
+    const/4 v11, 0x1
 
-    const/16 v10, 0x48
+    if-nez v4, :cond_7
 
-    const/16 v11, 0x4a
+    invoke-static {p1, v8, v2, v6}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
-    const/4 v12, 0x1
+    move-result v4
 
-    if-nez v3, :cond_6
-
-    invoke-static {p1, v6, v1, v5}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
+    if-eqz v4, :cond_0
 
     goto :goto_1
 
     :cond_0
-    const/16 v3, 0x41
+    const/16 v4, 0x41
 
-    if-nez v9, :cond_1
+    if-nez v7, :cond_1
 
-    invoke-static {p1, v9, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, p3, v2, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
-    move-result v1
+    move-result v2
 
-    if-nez v1, :cond_1
+    if-nez v2, :cond_1
 
-    invoke-virtual {p2, v11, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
+    invoke-virtual {p2, v10, v4}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
 
     goto :goto_0
 
     :cond_1
-    add-int/lit8 v2, v9, -0x1
+    add-int/lit8 v2, v7, -0x1
 
     invoke-virtual {p0, p1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
 
-    move-result v1
+    move-result v3
 
-    invoke-direct {p0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->isVowel(C)Z
+    invoke-direct {p0, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->isVowel(C)Z
 
-    move-result v1
+    move-result v3
 
-    if-eqz v1, :cond_3
+    if-eqz v3, :cond_3
 
     if-nez p4, :cond_3
 
-    add-int/lit8 v1, v9, 0x1
+    add-int/lit8 v3, v7, 0x1
 
-    invoke-virtual {p0, p1, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+    invoke-virtual {p0, p1, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
 
-    move-result v5
+    move-result v6
 
-    if-eq v5, v3, :cond_2
+    if-eq v6, v4, :cond_2
 
-    invoke-virtual {p0, p1, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+    invoke-virtual {p0, p1, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
 
-    move-result v1
+    move-result v3
 
-    const/16 v3, 0x4f
+    const/16 v4, 0x4f
 
-    if-ne v1, v3, :cond_3
+    if-ne v3, v4, :cond_3
 
     :cond_2
-    invoke-virtual {p2, v11, v10}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
+    invoke-virtual {p2, v10, v9}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
 
     goto :goto_0
 
     :cond_3
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v1
+    move-result v3
 
-    sub-int/2addr v1, v12
+    sub-int/2addr v3, v11
 
-    if-ne v9, v1, :cond_4
+    if-ne v7, v3, :cond_4
 
-    invoke-virtual {p2, v11, v4}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
+    invoke-virtual {p2, v10, v5}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
 
     goto :goto_0
 
     :cond_4
-    add-int/lit8 v1, v9, 0x1
+    add-int/lit8 v3, v7, 0x1
 
-    sget-object v3, Lorg/apache/commons/codec/language/DoubleMetaphone;->L_T_K_S_N_M_B_Z:[Ljava/lang/String;
+    sget-object v4, Lorg/apache/commons/codec/language/DoubleMetaphone;->L_T_K_S_N_M_B_Z:[Ljava/lang/String;
 
-    invoke-static {p1, v1, v12, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;II[Ljava/lang/String;)Z
+    invoke-static {p1, v3, v11, v4}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;II[Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v3
 
-    if-nez v1, :cond_5
+    if-nez v3, :cond_5
 
     const-string v5, "K"
 
@@ -1940,68 +1911,69 @@
 
     invoke-static/range {v1 .. v6}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v2
 
-    if-nez v1, :cond_5
+    if-nez v2, :cond_5
 
-    invoke-virtual {p2, v11}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+    invoke-virtual {p2, v10}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
     :cond_5
     :goto_0
-    add-int/lit8 v1, v9, 0x1
-
-    invoke-virtual {p0, p1, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
-
-    move-result v0
-
-    if-ne v0, v11, :cond_a
-
-    add-int/lit8 v1, v9, 0x2
-
-    goto :goto_4
-
-    :cond_6
-    :goto_1
-    if-nez v9, :cond_7
-
-    add-int/lit8 v2, v9, 0x4
+    add-int/lit8 v2, v7, 0x1
 
     invoke-virtual {p0, p1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
 
     move-result v0
 
-    if-eq v0, v4, :cond_9
+    if-ne v0, v10, :cond_6
+
+    add-int/lit8 v0, v7, 0x2
+
+    return v0
+
+    :cond_6
+    return v2
 
     :cond_7
+    :goto_1
+    if-nez v7, :cond_8
+
+    add-int/lit8 v3, v7, 0x4
+
+    invoke-virtual {p0, p1, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+
+    move-result v0
+
+    if-eq v0, v5, :cond_a
+
+    :cond_8
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    if-eq v0, v1, :cond_9
+    if-eq v0, v2, :cond_a
 
-    invoke-static {p1, v6, v1, v5}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, v8, v2, v6}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_9
 
     goto :goto_2
 
-    :cond_8
-    invoke-virtual {p2, v11, v10}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
+    :cond_9
+    invoke-virtual {p2, v10, v9}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
 
     goto :goto_3
 
-    :cond_9
+    :cond_a
     :goto_2
-    invoke-virtual {p2, v10}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+    invoke-virtual {p2, v9}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
     :goto_3
-    add-int/lit8 v1, v9, 0x1
+    add-int/lit8 v0, v7, 0x1
 
-    :cond_a
-    :goto_4
-    return v1
+    return v0
 .end method
 
 .method private handleL(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;I)I
@@ -2030,7 +2002,9 @@
     invoke-virtual {p2, p0}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->appendAlternate(C)V
 
     :cond_0
-    add-int/lit8 v1, p3, 0x2
+    add-int/lit8 p3, p3, 0x2
+
+    return p3
 
     :cond_1
     return v1
@@ -2055,7 +2029,7 @@
 
     add-int/lit8 p3, p3, 0x2
 
-    goto :goto_0
+    return p3
 
     :cond_0
     const/16 p0, 0x50
@@ -2074,13 +2048,12 @@
 
     if-eqz p0, :cond_1
 
-    add-int/lit8 v0, p3, 0x2
+    add-int/lit8 p3, p3, 0x2
+
+    return p3
 
     :cond_1
-    move p3, v0
-
-    :goto_0
-    return p3
+    return v0
 .end method
 
 .method private handleR(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;IZ)I
@@ -2138,75 +2111,76 @@
 
     if-ne p0, v1, :cond_1
 
-    add-int/lit8 p2, p3, 0x2
+    add-int/2addr p3, v2
+
+    return p3
 
     :cond_1
     return p2
 .end method
 
 .method private handleS(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;IZ)I
-    .locals 15
+    .locals 14
 
-    move-object/from16 v7, p1
+    move-object/from16 v7, p2
 
-    move-object/from16 v8, p2
+    move/from16 v8, p3
 
-    move/from16 v9, p3
+    add-int/lit8 v1, v8, -0x1
 
-    add-int/lit8 v0, v9, -0x1
+    const-string v2, "ISL"
 
-    const-string v1, "ISL"
+    const-string v3, "YSL"
 
-    const-string v2, "YSL"
+    const/4 v4, 0x3
 
-    const/4 v3, 0x3
+    invoke-static {p1, v1, v4, v2, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
-    invoke-static {v7, v0, v3, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    move-result v1
 
-    move-result v0
+    const/4 v9, 0x1
 
-    const/4 v10, 0x1
+    if-eqz v1, :cond_0
 
-    if-eqz v0, :cond_0
+    add-int/lit8 v0, v8, 0x1
 
-    :goto_0
-    add-int/lit8 v0, v9, 0x1
-
-    goto/16 :goto_5
+    return v0
 
     :cond_0
-    const/16 v11, 0x58
+    const/16 v10, 0x58
 
-    const/16 v12, 0x53
+    const/16 v11, 0x53
 
-    if-nez v9, :cond_1
+    if-nez v8, :cond_1
 
-    const/4 v0, 0x5
+    const/4 v1, 0x5
 
-    const-string v1, "SUGAR"
+    const-string v2, "SUGAR"
 
-    invoke-static {v7, v9, v0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, v8, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_1
 
-    invoke-virtual {v8, v11, v12}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
+    invoke-virtual {v7, v10, v11}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
 
-    goto :goto_0
+    add-int/lit8 v0, v8, 0x1
+
+    return v0
 
     :cond_1
-    const-string v0, "SH"
+    const-string v1, "SH"
 
-    const/4 v13, 0x2
+    const/4 v12, 0x2
 
-    invoke-static {v7, v9, v13, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, v8, v12, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_3
+    if-eqz v1, :cond_3
 
-    add-int/lit8 v1, v9, 0x1
+    add-int/lit8 v1, v8, 0x1
 
     const-string v5, "HOLM"
 
@@ -2218,7 +2192,7 @@
 
     const-string v4, "HOEK"
 
-    move-object/from16 v0, p1
+    move-object v0, p1
 
     invoke-static/range {v0 .. v6}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
@@ -2226,47 +2200,47 @@
 
     if-eqz v0, :cond_2
 
-    invoke-virtual {v8, v12}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+    invoke-virtual {v7, v11}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_2
-    invoke-virtual {v8, v11}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+    invoke-virtual {v7, v10}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
-    :goto_1
-    add-int/lit8 v0, v9, 0x2
+    :goto_0
+    add-int/lit8 v0, v8, 0x2
 
-    goto/16 :goto_5
+    return v0
 
     :cond_3
-    const-string v0, "SIO"
+    const-string v1, "SIO"
 
-    const-string v1, "SIA"
+    const-string v2, "SIA"
 
-    invoke-static {v7, v9, v3, v0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1, v8, v4, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_a
+    if-nez v1, :cond_c
 
-    const/4 v0, 0x4
+    const/4 v1, 0x4
 
-    const-string v1, "SIAN"
+    const-string v2, "SIAN"
 
-    invoke-static {v7, v9, v0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, v8, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_4
+    if-eqz v1, :cond_4
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_4
-    const-string v14, "Z"
+    const-string v13, "Z"
 
-    if-nez v9, :cond_5
+    if-nez v8, :cond_5
 
-    add-int/lit8 v1, v9, 0x1
+    add-int/lit8 v1, v8, 0x1
 
     const-string v5, "L"
 
@@ -2278,135 +2252,139 @@
 
     const-string v4, "N"
 
-    move-object/from16 v0, p1
+    move-object v0, p1
 
     invoke-static/range {v0 .. v6}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_6
+    if-nez v1, :cond_6
 
     :cond_5
-    add-int/lit8 v0, v9, 0x1
+    add-int/lit8 v1, v8, 0x1
 
-    invoke-static {v7, v0, v10, v14}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, v1, v9, v13}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_7
+    if-eqz v2, :cond_8
 
     :cond_6
-    invoke-virtual {v8, v12, v11}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
+    invoke-virtual {v7, v11, v10}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
 
-    add-int/lit8 v0, v9, 0x1
+    add-int/lit8 v1, v8, 0x1
 
-    invoke-static {v7, v0, v10, v14}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, v1, v9, v13}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_c
+    if-eqz v0, :cond_7
 
-    goto :goto_1
+    add-int/lit8 v0, v8, 0x2
+
+    return v0
 
     :cond_7
-    const-string v1, "SC"
+    return v1
 
-    invoke-static {v7, v9, v13, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    :cond_8
+    const-string v2, "SC"
 
-    move-result v1
+    invoke-static {p1, v8, v12, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
-    if-eqz v1, :cond_8
+    move-result v2
+
+    if-eqz v2, :cond_9
 
     invoke-direct/range {p0 .. p3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->handleSC(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;I)I
 
     move-result v0
 
-    goto :goto_5
-
-    :cond_8
-    invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    sub-int/2addr v1, v10
-
-    if-ne v9, v1, :cond_9
-
-    add-int/lit8 v1, v9, -0x2
-
-    const-string v2, "AI"
-
-    const-string v3, "OI"
-
-    invoke-static {v7, v1, v13, v2, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_9
-
-    invoke-virtual {v8, v12}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->appendAlternate(C)V
-
-    goto :goto_2
+    return v0
 
     :cond_9
-    invoke-virtual {v8, v12}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    :goto_2
-    const-string v1, "S"
+    move-result v2
 
-    invoke-static {v7, v0, v10, v1, v14}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    sub-int/2addr v2, v9
 
-    move-result v1
+    if-ne v8, v2, :cond_a
 
-    if-eqz v1, :cond_c
+    add-int/lit8 v2, v8, -0x2
+
+    const-string v3, "AI"
+
+    const-string v4, "OI"
+
+    invoke-static {p1, v2, v12, v3, v4}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_a
+
+    invoke-virtual {v7, v11}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->appendAlternate(C)V
 
     goto :goto_1
 
     :cond_a
-    :goto_3
-    if-eqz p4, :cond_b
+    invoke-virtual {v7, v11}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
-    invoke-virtual {v8, v12}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+    :goto_1
+    const-string v2, "S"
 
-    goto :goto_4
+    invoke-static {p1, v1, v9, v2, v13}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_b
+
+    add-int/lit8 v0, v8, 0x2
+
+    return v0
 
     :cond_b
-    invoke-virtual {v8, v12, v11}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
-
-    :goto_4
-    add-int/lit8 v0, v9, 0x3
+    return v1
 
     :cond_c
-    :goto_5
+    :goto_2
+    if-eqz p4, :cond_d
+
+    invoke-virtual {v7, v11}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+
+    goto :goto_3
+
+    :cond_d
+    invoke-virtual {v7, v11, v10}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
+
+    :goto_3
+    add-int/lit8 v0, v8, 0x3
+
     return v0
 .end method
 
 .method private handleSC(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;I)I
-    .locals 16
+    .locals 14
 
-    move-object/from16 v0, p0
+    move-object/from16 v10, p2
 
-    move-object/from16 v10, p1
+    add-int/lit8 v2, p3, 0x2
 
-    move-object/from16 v11, p2
+    invoke-virtual {p0, p1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
 
-    add-int/lit8 v1, p3, 0x2
+    move-result v3
 
-    invoke-virtual {v0, v10, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+    const/16 v4, 0x48
 
-    move-result v2
+    const/16 v11, 0x53
 
-    const/16 v3, 0x48
+    const-string v12, "SK"
 
-    const/16 v12, 0x53
+    const/4 v13, 0x3
 
-    const-string v13, "SK"
+    if-ne v3, v4, :cond_3
 
-    const/4 v14, 0x3
-
-    if-ne v2, v3, :cond_3
-
-    add-int/lit8 v15, p3, 0x3
+    add-int/lit8 v2, p3, 0x3
 
     const-string v8, "ED"
 
@@ -2422,23 +2400,21 @@
 
     const-string v7, "UY"
 
-    move-object/from16 v1, p1
-
-    move v2, v15
+    move-object v1, p1
 
     invoke-static/range {v1 .. v9}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v3
 
-    if-eqz v1, :cond_1
+    if-eqz v3, :cond_1
 
     const-string v0, "ER"
 
-    const-string v1, "EN"
+    const-string v3, "EN"
 
-    const/4 v2, 0x2
+    const/4 v4, 0x2
 
-    invoke-static {v10, v15, v2, v0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1, v2, v4, v0, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -2446,44 +2422,44 @@
 
     const-string v0, "X"
 
-    invoke-virtual {v11, v0, v13}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v10, v0, v12}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v11, v13}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(Ljava/lang/String;)V
+    invoke-virtual {v10, v12}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_1
-    const/16 v1, 0x58
+    const/16 v2, 0x58
 
     if-nez p3, :cond_2
 
-    invoke-virtual {v0, v10, v14}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+    invoke-virtual {p0, p1, v13}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
 
-    move-result v2
+    move-result v3
 
-    invoke-direct {v0, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->isVowel(C)Z
+    invoke-direct {p0, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->isVowel(C)Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_2
+    if-nez v3, :cond_2
 
-    invoke-virtual {v0, v10, v14}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+    invoke-virtual {p0, p1, v13}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
 
     move-result v0
 
-    const/16 v2, 0x57
+    const/16 v1, 0x57
 
-    if-eq v0, v2, :cond_2
+    if-eq v0, v1, :cond_2
 
-    invoke-virtual {v11, v1, v12}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
+    invoke-virtual {v10, v2, v11}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
 
     goto :goto_0
 
     :cond_2
-    invoke-virtual {v11, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+    invoke-virtual {v10, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
     goto :goto_0
 
@@ -2492,11 +2468,13 @@
 
     const-string v5, "Y"
 
+    move v1, v2
+
     const/4 v2, 0x1
 
     const-string v3, "I"
 
-    move-object/from16 v0, p1
+    move-object v0, p1
 
     invoke-static/range {v0 .. v5}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
@@ -2504,12 +2482,12 @@
 
     if-eqz v0, :cond_4
 
-    invoke-virtual {v11, v12}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+    invoke-virtual {v10, v11}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
     goto :goto_0
 
     :cond_4
-    invoke-virtual {v11, v13}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(Ljava/lang/String;)V
+    invoke-virtual {v10, v12}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(Ljava/lang/String;)V
 
     :goto_0
     add-int/lit8 v0, p3, 0x3
@@ -2539,7 +2517,7 @@
     :goto_0
     add-int/2addr p3, v2
 
-    goto :goto_3
+    return p3
 
     :cond_0
     const-string p0, "TIA"
@@ -2598,12 +2576,10 @@
 
     add-int/2addr p3, v1
 
-    goto :goto_3
+    return p3
 
     :cond_3
-    move p3, p0
-
-    goto :goto_3
+    return p0
 
     :cond_4
     :goto_1
@@ -2673,10 +2649,9 @@
 
     invoke-virtual {p2, p0}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
-    :goto_0
     add-int/2addr p3, v1
 
-    goto/16 :goto_4
+    return p3
 
     :cond_0
     const/16 v0, 0x46
@@ -2718,15 +2693,13 @@
 
     invoke-virtual {p2, p1, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(CC)V
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_2
     invoke-virtual {p2, p1}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
-    :goto_1
-    move p3, v2
-
-    goto :goto_4
+    :goto_0
+    return v2
 
     :cond_3
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -2772,26 +2745,26 @@
 
     const/4 p0, 0x3
 
-    const-string v1, "SCH"
+    const-string p1, "SCH"
 
     const/4 v2, 0x0
 
-    invoke-static {p1, v2, p0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {v1, v2, p0, p1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result p0
 
     if-eqz p0, :cond_5
 
-    goto :goto_3
+    goto :goto_1
 
     :cond_5
     const-string p0, "WICZ"
 
-    const-string v0, "WITZ"
+    const-string p1, "WITZ"
 
-    const/4 v1, 0x4
+    const/4 v0, 0x4
 
-    invoke-static {p1, p3, v1, p0, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v1, p3, v0, p0, p1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result p0
 
@@ -2803,21 +2776,21 @@
 
     invoke-virtual {p2, p0, p1}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_0
+    add-int/2addr p3, v0
+
+    return p3
 
     :cond_6
-    :goto_2
     add-int/lit8 p3, p3, 0x1
 
-    goto :goto_4
+    return p3
 
     :cond_7
-    :goto_3
+    :goto_1
     invoke-virtual {p2, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->appendAlternate(C)V
 
-    goto :goto_2
+    add-int/lit8 p3, p3, 0x1
 
-    :goto_4
     return p3
 .end method
 
@@ -2834,7 +2807,7 @@
 
     add-int/2addr p3, p0
 
-    goto :goto_0
+    return p3
 
     :cond_0
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -2893,27 +2866,24 @@
 
     add-int/2addr p3, v1
 
-    goto :goto_0
+    return p3
 
     :cond_3
-    move p3, p2
-
-    :goto_0
-    return p3
+    return p2
 .end method
 
 .method private handleZ(Ljava/lang/String;Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;IZ)I
-    .locals 7
+    .locals 6
 
-    add-int/lit8 v6, p3, 0x1
+    add-int/lit8 v1, p3, 0x1
 
-    invoke-virtual {p0, p1, v6}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+    invoke-virtual {p0, p1, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
 
     move-result v0
 
-    const/16 v1, 0x48
+    const/16 v2, 0x48
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v2, :cond_0
 
     const/16 p0, 0x4a
 
@@ -2921,7 +2891,7 @@
 
     add-int/lit8 p3, p3, 0x2
 
-    goto :goto_2
+    return p3
 
     :cond_0
     const-string v4, "ZI"
@@ -2934,47 +2904,45 @@
 
     move-object v0, p1
 
-    move v1, v6
-
     invoke-static/range {v0 .. v5}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
-    move-result v0
+    move-result p1
 
-    if-nez v0, :cond_2
+    if-nez p1, :cond_2
 
     if-eqz p4, :cond_1
 
     if-lez p3, :cond_1
 
-    add-int/lit8 p4, p3, -0x1
+    add-int/lit8 p1, p3, -0x1
 
-    invoke-virtual {p0, p1, p4}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+    invoke-virtual {p0, v0, p1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
 
-    move-result p4
+    move-result p1
 
-    const/16 v0, 0x54
+    const/16 p4, 0x54
 
-    if-eq p4, v0, :cond_1
+    if-eq p1, p4, :cond_1
 
     goto :goto_0
 
     :cond_1
-    const/16 p4, 0x53
+    const/16 p1, 0x53
 
-    invoke-virtual {p2, p4}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
+    invoke-virtual {p2, p1}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(C)V
 
     goto :goto_1
 
     :cond_2
     :goto_0
-    const-string p4, "S"
+    const-string p1, "S"
 
-    const-string v0, "TS"
+    const-string p4, "TS"
 
-    invoke-virtual {p2, p4, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p2, p1, p4}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->append(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_1
-    invoke-virtual {p0, p1, v6}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
+    invoke-virtual {p0, v0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->charAt(Ljava/lang/String;I)C
 
     move-result p0
 
@@ -2982,13 +2950,12 @@
 
     if-ne p0, p1, :cond_3
 
-    add-int/lit8 v6, p3, 0x2
+    add-int/lit8 p3, p3, 0x2
+
+    return p3
 
     :cond_3
-    move p3, v6
-
-    :goto_2
-    return p3
+    return v1
 .end method
 
 .method private isSilentStart(Ljava/lang/String;)Z
@@ -3015,7 +2982,7 @@
 
     const/4 p0, 0x1
 
-    goto :goto_1
+    return p0
 
     :cond_0
     add-int/lit8 v0, v0, 0x1
@@ -3023,7 +2990,6 @@
     goto :goto_0
 
     :cond_1
-    :goto_1
     return p0
 .end method
 
@@ -3069,13 +3035,12 @@
     :cond_0
     const/4 p0, 0x0
 
-    goto :goto_1
+    return p0
 
     :cond_1
     :goto_0
     const/4 p0, 0x1
 
-    :goto_1
     return p0
 .end method
 
@@ -3094,12 +3059,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -3477,14 +3441,13 @@
 
     move-result-object p0
 
-    goto :goto_3
+    return-object p0
 
     :cond_6
     invoke-virtual {v2}, Lorg/apache/commons/codec/language/DoubleMetaphone$DoubleMetaphoneResult;->getPrimary()Ljava/lang/String;
 
     move-result-object p0
 
-    :goto_3
     return-object p0
 
     nop

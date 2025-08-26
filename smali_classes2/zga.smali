@@ -1,69 +1,19 @@
-.class public final Lzga;
+.class public abstract Lzga;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:I
-
-.field public final b:J
-
-.field public final c:J
+# static fields
+.field public static final a:I
 
 
 # direct methods
-.method public constructor <init>(IJJ)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Lqzb;->oneme_stickers_showcase_toolbar_title:I
 
-    iput p1, p0, Lzga;->a:I
-
-    iput-wide p2, p0, Lzga;->b:J
-
-    iput-wide p4, p0, Lzga;->c:J
+    sput v0, Lzga;->a:I
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "OutgoingMessageLink{type="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v1, p0, Lzga;->a:I
-
-    invoke-static {v1}, Lwn6;->q(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", chatId="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Lzga;->b:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", messageId="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Lzga;->c:J
-
-    const-string p0, "}"
-
-    invoke-static {v0, v1, v2, p0}, Lwn6;->k(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

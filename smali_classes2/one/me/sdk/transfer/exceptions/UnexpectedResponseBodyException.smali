@@ -20,6 +20,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -41,25 +42,21 @@
 
 # virtual methods
 .method public final toString()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "UnexpectedResponseBodyException(msg=\'"
+    const-string v1, "\', response=\'"
 
-    const-string v2, "\', response=\'"
+    const-string v2, "\')"
 
-    invoke-static {v1, v0, v2}, Lhr1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    const-string v3, "UnexpectedResponseBodyException(msg=\'"
 
     iget-object p0, p0, Lone/me/sdk/transfer/exceptions/UnexpectedResponseBodyException;->a:Ljava/lang/String;
 
-    const-string v1, "\')"
-
-    invoke-static {v0, p0, v1}, Lwn6;->l(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v0, v1, p0, v2}, Lrqc;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

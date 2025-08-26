@@ -12,7 +12,7 @@
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;)Z
+.method public static a(Lone/me/android/OneMeApplication;)Z
     .locals 3
 
     invoke-static {}, Landroid/os/Process;->myPid()I
@@ -144,7 +144,7 @@
 
     const-string v2, ". Does an activity specify the DEFAULT category in its intent filter?"
 
-    invoke-static {v1, v0, v2}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0, v2}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

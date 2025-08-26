@@ -31,7 +31,7 @@
         "get",
         "(I)Ljava/lang/Object;",
         "value",
-        "Ljue;",
+        "Le5f;",
         "setSynchronized",
         "(ILjava/lang/Object;)V",
         "Ljava/util/concurrent/atomic/AtomicReferenceArray;",
@@ -45,6 +45,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -108,12 +109,11 @@
 
     move-result-object p0
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return-object p0
 .end method
 

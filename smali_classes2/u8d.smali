@@ -1,32 +1,68 @@
 .class public final Lu8d;
-.super Lchd;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# instance fields
+.field public a:Ljava/lang/String;
+
+.field public volatile b:I
+
+.field public c:J
+
+.field public d:Z
+
+.field public e:Ljava/lang/String;
+
+.field public f:J
+
+.field public g:J
+
+
 # virtual methods
-.method public final A(Lpg7;)V
-    .locals 1
+.method public final a()Lpl5;
+    .locals 9
 
-    instance-of v0, p1, Latc;
+    iget-wide v0, p0, Lu8d;->f:J
 
-    if-nez v0, :cond_0
+    const-wide/16 v2, 0x0
 
-    return-void
+    cmp-long v4, v0, v2
+
+    if-eqz v4, :cond_0
+
+    iget-wide v4, p0, Lu8d;->g:J
+
+    cmp-long v2, v4, v2
+
+    if-eqz v2, :cond_0
+
+    cmp-long v2, v4, v0
+
+    if-lez v2, :cond_0
+
+    sub-long/2addr v4, v0
+
+    long-to-int v0, v4
+
+    int-to-long v0, v0
+
+    iput-wide v0, p0, Lu8d;->c:J
 
     :cond_0
-    iget-object p0, p0, Lb7c;->a:Landroid/view/View;
+    new-instance v2, Lpl5;
 
-    check-cast p0, Ln7d;
+    iget-object v3, p0, Lu8d;->a:Ljava/lang/String;
 
-    check-cast p1, Le7d;
+    iget v4, p0, Lu8d;->b:I
 
-    invoke-virtual {p0, p1}, Ln7d;->setModelItem(Le7d;)V
+    iget-wide v5, p0, Lu8d;->c:J
 
-    return-void
-.end method
+    iget-boolean v7, p0, Lu8d;->d:Z
 
-.method public final D()V
-    .locals 0
+    iget-object v8, p0, Lu8d;->e:Ljava/lang/String;
 
-    return-void
+    invoke-direct/range {v2 .. v8}, Lpl5;-><init>(Ljava/lang/String;IJZLjava/lang/String;)V
+
+    return-object v2
 .end method

@@ -31,13 +31,13 @@
 
     invoke-direct {p0, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
+    const-string v0, "packageName"
+
     invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v1, "packageName"
-
-    invoke-virtual {p0, v1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {p0, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     const-string v0, "className"
 

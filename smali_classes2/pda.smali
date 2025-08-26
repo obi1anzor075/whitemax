@@ -1,41 +1,19 @@
-.class public interface abstract Lpda;
+.class public abstract Lpda;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a()Ljo2;
-.end method
+# static fields
+.field public static final a:I
 
-.method public abstract b()Lnd0;
-.end method
 
-.method public abstract c()Lord;
-.end method
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
 
-.method public abstract d()Lib6;
-.end method
+    sget v0, Lpub;->dynamic_font_sizes:I
 
-.method public abstract e()Ly3;
-.end method
+    sput v0, Lpda;->a:I
 
-.method public abstract f()Ln1f;
-.end method
-
-.method public abstract g()Lc33;
-.end method
-
-.method public abstract getIcon()Lyn6;
-.end method
-
-.method public abstract getName()Ljava/lang/String;
-.end method
-
-.method public abstract getText()Lcfe;
-.end method
-
-.method public abstract h()Lr0e;
-.end method
-
-.method public abstract i(I)I
+    return-void
 .end method

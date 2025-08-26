@@ -1,100 +1,63 @@
 .class public final Len3;
-.super Llbe;
+.super Lki0;
 .source "SourceFile"
 
 
 # instance fields
-.field public c:Ljava/util/List;
+.field public final b:I
 
-.field public o:I
+.field public final c:Ljava/lang/Object;
 
 
-# virtual methods
-.method public final b(Lws8;Ljava/lang/String;)V
-    .locals 3
+# direct methods
+.method public constructor <init>(IJLjava/util/List;)V
+    .locals 0
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {p0, p2, p3}, Lki0;-><init>(J)V
 
-    const-string v0, "result"
+    iput p1, p0, Len3;->b:I
 
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    iput-object p4, p0, Len3;->c:Ljava/lang/Object;
 
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    const-string v0, "total"
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_0
-
-    invoke-virtual {p1}, Lws8;->z()V
-
-    goto :goto_1
-
-    :cond_0
-    invoke-virtual {p1}, Lws8;->v0()I
-
-    move-result p1
-
-    iput p1, p0, Len3;->o:I
-
-    goto :goto_1
-
-    :cond_1
-    sget p2, Lzy;->a:I
-
-    invoke-static {p1}, Ljjd;->D(Lws8;)I
-
-    move-result p2
-
-    new-instance v0, Lzy;
-
-    invoke-direct {v0, p2}, Ljava/util/ArrayList;-><init>(I)V
-
-    const/4 v1, 0x0
-
-    :goto_0
-    if-ge v1, p2, :cond_2
-
-    invoke-static {p1}, Lgn3;->a(Lws8;)Lgn3;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    iput-object v0, p0, Len3;->c:Ljava/util/List;
-
-    :goto_1
     return-void
 .end method
 
+
+# virtual methods
 .method public final toString()Ljava/lang/String;
-    .locals 4
+    .locals 2
 
-    iget-object v0, p0, Len3;->c:Ljava/util/List;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-static {v0}, Lete;->p(Ljava/util/Collection;)I
+    const-string v1, "ContactListEvent{status="
 
-    move-result v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget p0, p0, Len3;->o:I
+    sget-object v1, Liq3;->a:Liq3;
 
-    const-string v1, "{contacts="
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v2, ", total="
+    const-string v1, ", from="
 
-    const-string v3, "}"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1, v0, v2, p0, v3}, Lrf0;->g(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    iget v1, p0, Len3;->b:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", count=40, contactIds="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Len3;->c:Ljava/lang/Object;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const/16 p0, 0x7d
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

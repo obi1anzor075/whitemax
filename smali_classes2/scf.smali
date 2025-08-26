@@ -2,133 +2,50 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/view/View$OnAttachStateChangeListener;
-
-
-# instance fields
-.field public final synthetic X:Landroid/view/View;
-
-.field public final synthetic a:I
-
-.field public final synthetic b:Landroid/view/View;
-
-.field public final synthetic c:Landroid/view/ViewTreeObserver;
-
-.field public final synthetic o:Lucf;
-
-
-# direct methods
-.method public synthetic constructor <init>(Landroid/view/View;Landroid/view/ViewTreeObserver;Lucf;Landroid/view/View;I)V
-    .locals 0
-
-    iput p5, p0, Lscf;->a:I
-
-    iput-object p1, p0, Lscf;->b:Landroid/view/View;
-
-    iput-object p2, p0, Lscf;->c:Landroid/view/ViewTreeObserver;
-
-    iput-object p3, p0, Lscf;->o:Lucf;
-
-    iput-object p4, p0, Lscf;->X:Landroid/view/View;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method private final a(Landroid/view/View;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method private final b(Landroid/view/View;)V
-    .locals 0
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final onViewAttachedToWindow(Landroid/view/View;)V
-    .locals 7
-
-    iget v0, p0, Lscf;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Lscf;->b:Landroid/view/View;
-
-    invoke-virtual {v0, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
-
-    invoke-virtual {p1}, Landroid/view/View;->isAttachedToWindow()Z
-
-    move-result v0
-
-    iget-object v5, p0, Lscf;->X:Landroid/view/View;
-
-    iget-object v4, p0, Lscf;->o:Lucf;
-
-    iget-object v3, p0, Lscf;->c:Landroid/view/ViewTreeObserver;
-
-    if-nez v0, :cond_0
-
-    invoke-static {v4, v5, v3}, Lk96;->a(Lucf;Landroid/view/View;Landroid/view/ViewTreeObserver;)V
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Lscf;
-
-    const/4 v6, 0x1
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    invoke-direct/range {v1 .. v6}, Lscf;-><init>(Landroid/view/View;Landroid/view/ViewTreeObserver;Lucf;Landroid/view/View;I)V
-
-    invoke-virtual {p1, p0}, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
-
-    :goto_0
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final onViewDetachedFromWindow(Landroid/view/View;)V
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
-    iget p1, p0, Lscf;->a:I
+    const/4 v0, 0x1
 
-    packed-switch p1, :pswitch_data_0
+    if-ne p0, p1, :cond_0
 
-    iget-object p1, p0, Lscf;->b:Landroid/view/View;
+    return v0
 
-    invoke-virtual {p1, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+    :cond_0
+    instance-of p0, p1, Lscf;
 
-    iget-object p1, p0, Lscf;->o:Lucf;
+    if-nez p0, :cond_1
 
-    iget-object v0, p0, Lscf;->X:Landroid/view/View;
+    const/4 p0, 0x0
 
-    iget-object p0, p0, Lscf;->c:Landroid/view/ViewTreeObserver;
+    return p0
 
-    invoke-static {p1, v0, p0}, Lk96;->a(Lucf;Landroid/view/View;Landroid/view/ViewTreeObserver;)V
+    :cond_1
+    check-cast p1, Lscf;
 
-    :pswitch_0
-    return-void
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    const/high16 p0, 0x1f000000
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "VfxButtonIconOverlayPlainElevation1Colors(color=520093696)"
+
+    return-object p0
 .end method

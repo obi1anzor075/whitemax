@@ -2,180 +2,67 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lqw9;
 
-# instance fields
-.field public final a:I
 
-.field public final b:J
+# static fields
+.field public static final a:Lq80;
+
+.field public static final b:Lte5;
 
 
 # direct methods
-.method public constructor <init>(IJ)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lq80;
 
-    if-eqz p1, :cond_0
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lq80;->a:I
+    sput-object v0, Lq80;->a:Lq80;
 
-    iput-wide p2, p0, Lq80;->b:J
+    new-instance v0, Lxx;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lxx;-><init>(I)V
+
+    const-class v1, Lvlb;
+
+    invoke-static {v1, v0}, Lzt1;->n(Ljava/lang/Class;Lxx;)Ljava/util/HashMap;
+
+    move-result-object v0
+
+    new-instance v1, Lte5;
+
+    invoke-static {v0}, Lzt1;->o(Ljava/util/HashMap;)Ljava/util/Map;
+
+    move-result-object v0
+
+    const-string v2, "storageMetrics"
+
+    invoke-direct {v1, v2, v0}, Lte5;-><init>(Ljava/lang/String;Ljava/util/Map;)V
+
+    sput-object v1, Lq80;->b:Lte5;
 
     return-void
-
-    :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    const-string p1, "Null status"
-
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 5
+.method public final a(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
 
-    const/4 v0, 0x1
+    check-cast p1, Lje6;
 
-    if-ne p1, p0, :cond_0
+    check-cast p2, Lrw9;
 
-    return v0
+    sget-object p0, Lq80;->b:Lte5;
 
-    :cond_0
-    instance-of v1, p1, Lq80;
+    iget-object p1, p1, Lje6;->a:Ld7e;
 
-    const/4 v2, 0x0
+    invoke-interface {p2, p0, p1}, Lrw9;->a(Lte5;Ljava/lang/Object;)Lrw9;
 
-    if-eqz v1, :cond_2
-
-    check-cast p1, Lq80;
-
-    iget v1, p1, Lq80;->a:I
-
-    iget v3, p0, Lq80;->a:I
-
-    invoke-static {v3, v1}, Lhr1;->c(II)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-wide v3, p0, Lq80;->b:J
-
-    iget-wide p0, p1, Lq80;->b:J
-
-    cmp-long p0, v3, p0
-
-    if-nez p0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    move v0, v2
-
-    :goto_0
-    return v0
-
-    :cond_2
-    return v2
-.end method
-
-.method public final hashCode()I
-    .locals 5
-
-    iget v0, p0, Lq80;->a:I
-
-    invoke-static {v0}, Lhr1;->t(I)I
-
-    move-result v0
-
-    const v1, 0xf4243
-
-    xor-int/2addr v0, v1
-
-    mul-int/2addr v0, v1
-
-    iget-wide v1, p0, Lq80;->b:J
-
-    const/16 p0, 0x20
-
-    ushr-long v3, v1, p0
-
-    xor-long/2addr v1, v3
-
-    long-to-int p0, v1
-
-    xor-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "BackendResponse{status="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v1, p0, Lq80;->a:I
-
-    const/4 v2, 0x1
-
-    if-eq v1, v2, :cond_3
-
-    const/4 v2, 0x2
-
-    if-eq v1, v2, :cond_2
-
-    const/4 v2, 0x3
-
-    if-eq v1, v2, :cond_1
-
-    const/4 v2, 0x4
-
-    if-eq v1, v2, :cond_0
-
-    const-string v1, "null"
-
-    goto :goto_0
-
-    :cond_0
-    const-string v1, "INVALID_PAYLOAD"
-
-    goto :goto_0
-
-    :cond_1
-    const-string v1, "FATAL_ERROR"
-
-    goto :goto_0
-
-    :cond_2
-    const-string v1, "TRANSIENT_ERROR"
-
-    goto :goto_0
-
-    :cond_3
-    const-string v1, "OK"
-
-    :goto_0
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", nextRequestWaitMillis="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Lq80;->b:J
-
-    const-string p0, "}"
-
-    invoke-static {v0, v1, v2, p0}, Lwn6;->k(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

@@ -1,84 +1,130 @@
 .class public final Lvr1;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Lvs1;
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/Executor;
+.field public X:I
 
-.field public final b:Lyr1;
+.field public final synthetic Y:Lzr1;
 
-.field public final c:I
+.field public final synthetic Z:Lhs3;
 
 
 # direct methods
-.method public constructor <init>(Lyr1;Ljava/util/concurrent/Executor;I)V
+.method public constructor <init>(Lzr1;Lhs3;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lvr1;->Y:Lzr1;
 
-    iput-object p1, p0, Lvr1;->b:Lyr1;
+    iput-object p2, p0, Lvr1;->Z:Lhs3;
 
-    iput-object p2, p0, Lvr1;->a:Ljava/util/concurrent/Executor;
+    const/4 p1, 0x2
 
-    iput p3, p0, Lvr1;->c:I
+    invoke-direct {p0, p1, p3}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lch7;
-    .locals 3
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object v0, p0, Lvr1;->b:Lyr1;
+    check-cast p1, Lox3;
 
-    iget v1, p0, Lvr1;->c:I
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {v0, v1}, Lyr1;->a(I)Lch7;
+    invoke-virtual {p0, p1, p2}, Lvr1;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lj36;->a(Lch7;)Lj36;
+    check-cast p0, Lvr1;
 
-    move-result-object v0
+    sget-object p1, Le5f;->a:Le5f;
 
-    new-instance v1, Lsr1;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v1, v2}, Lsr1;-><init>(I)V
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v2, Le3;
-
-    invoke-direct {v2, v1}, Le3;-><init>(Ljava/lang/Object;)V
-
-    iget-object p0, p0, Lvr1;->a:Ljava/util/concurrent/Executor;
-
-    invoke-static {v0, v2, p0}, Lct0;->N(Lch7;Lau;Ljava/util/concurrent/Executor;)Loy1;
+    invoke-virtual {p0, p1}, Lvr1;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public final b()Lch7;
-    .locals 2
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    new-instance v0, Lrgc;
+    new-instance p1, Lvr1;
 
-    const/16 v1, 0x19
+    iget-object v0, p0, Lvr1;->Y:Lzr1;
 
-    invoke-direct {v0, v1, p0}, Lrgc;-><init>(ILjava/lang/Object;)V
+    iget-object p0, p0, Lvr1;->Z:Lhs3;
 
-    invoke-static {v0}, Lhwf;->f(Ltn1;)Lvn1;
+    invoke-direct {p1, v0, p0, p2}, Lvr1;-><init>(Lzr1;Lhs3;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
+
+    iget v0, p0, Lvr1;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lvr1;->Y:Lzr1;
+
+    iget-object p1, p1, Lzr1;->a:Lwjd;
+
+    new-instance v0, Lm51;
+
+    iget-object v2, p0, Lvr1;->Z:Lhs3;
+
+    iget-object v2, v2, Lhs3;->b:Ljava/util/List;
+
+    invoke-static {v2}, Lp43;->a1(Ljava/util/Collection;)Ljava/util/Set;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2}, Lm51;-><init>(Ljava/util/Set;)V
+
+    iput v1, p0, Lvr1;->X:I
+
+    invoke-virtual {p1, v0, p0}, Lwjd;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
+
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 .end method

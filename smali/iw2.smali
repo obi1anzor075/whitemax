@@ -1,126 +1,62 @@
-.class public final Liw2;
-.super Ll5e;
+.class public final synthetic Liw2;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lnfa;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lone/me/chats/tab/ChatsTabWidget;
+.field public final synthetic b:Lpld;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chats/tab/ChatsTabWidget;)V
+.method public synthetic constructor <init>(Lpld;I)V
     .locals 0
 
-    iput-object p2, p0, Liw2;->Y:Lone/me/chats/tab/ChatsTabWidget;
+    iput p2, p0, Liw2;->a:I
 
-    const/4 p2, 0x2
+    iput-object p1, p0, Liw2;->b:Lpld;
 
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Liw2;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Liw2;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Liw2;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final m(Lofa;)V
     .locals 1
 
-    new-instance v0, Liw2;
+    iget v0, p0, Liw2;->a:I
 
-    iget-object p0, p0, Liw2;->Y:Lone/me/chats/tab/ChatsTabWidget;
+    iget-object p0, p0, Liw2;->b:Lpld;
 
-    invoke-direct {v0, p2, p0}, Liw2;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chats/tab/ChatsTabWidget;)V
+    packed-switch v0, :pswitch_data_0
 
-    iput-object p1, v0, Liw2;->X:Ljava/lang/Object;
+    sget-object v0, Lone/me/contactlist/ContactListWidget;->L0:[Lbc7;
 
-    return-object v0
-.end method
+    iget-object p0, p0, Lpld;->b:Lx56;
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+    invoke-interface {p0, p1}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    return-void
 
-    iget-object p1, p0, Liw2;->X:Ljava/lang/Object;
+    :pswitch_0
+    sget-object v0, Lone/me/chats/list/ChatsListWidget;->I0:[Lbc7;
 
-    check-cast p1, Ljava/lang/Number;
+    iget-object p0, p0, Lpld;->b:Lx56;
 
-    invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
+    invoke-interface {p0, p1}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result v1
+    return-void
 
-    sget-object p1, Lone/me/chats/tab/ChatsTabWidget;->F0:[Lk77;
+    nop
 
-    iget-object p0, p0, Liw2;->Y:Lone/me/chats/tab/ChatsTabWidget;
-
-    invoke-virtual {p0}, Lone/me/chats/tab/ChatsTabWidget;->m0()Landroidx/viewpager2/widget/ViewPager2;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroidx/viewpager2/widget/ViewPager2;->getCurrentItem()I
-
-    move-result p1
-
-    if-ne p1, v1, :cond_0
-
-    invoke-virtual {p0}, Lone/me/chats/tab/ChatsTabWidget;->l0()Lhda;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lcom/google/android/material/tabs/TabLayout;->getSelectedTabPosition()I
-
-    move-result p1
-
-    if-eq p1, v1, :cond_1
-
-    :cond_0
-    invoke-virtual {p0}, Lone/me/chats/tab/ChatsTabWidget;->m0()Landroidx/viewpager2/widget/ViewPager2;
-
-    move-result-object p1
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v1, v0}, Landroidx/viewpager2/widget/ViewPager2;->e(IZ)V
-
-    invoke-virtual {p0}, Lone/me/chats/tab/ChatsTabWidget;->l0()Lhda;
-
-    move-result-object v0
-
-    const/4 v2, 0x0
-
-    const/4 v5, 0x1
-
-    const/4 v3, 0x1
-
-    const/4 v4, 0x1
-
-    invoke-virtual/range {v0 .. v5}, Lcom/google/android/material/tabs/TabLayout;->q(IFZZZ)V
-
-    :cond_1
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

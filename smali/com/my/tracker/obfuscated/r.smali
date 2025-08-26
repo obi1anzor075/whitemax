@@ -116,11 +116,9 @@
     :catchall_0
     move-exception v0
 
-    move-object v3, v0
+    const-string v3, "DeviceParamsDataProvider: collecting packageName exception: "
 
-    const-string v0, "DeviceParamsDataProvider: collecting packageName exception: "
-
-    invoke-static {v0, v3}, Lcom/my/tracker/obfuscated/y0;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v3, v0}, Lcom/my/tracker/obfuscated/y0;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     move-object v8, v2
 
@@ -264,18 +262,16 @@
     .catchall {:try_start_6 .. :try_end_6} :catchall_5
 
     :try_start_7
-    iget v0, v0, Landroid/util/DisplayMetrics;->ydpi:F
+    iget v4, v0, Landroid/util/DisplayMetrics;->ydpi:F
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_4
 
-    move/from16 v22, v0
-
     :goto_6
-    move/from16 v19, v5
+    move/from16 v21, v4
 
-    move/from16 v20, v13
+    move/from16 v19, v13
 
-    move/from16 v21, v15
+    move/from16 v20, v15
 
     goto :goto_8
 
@@ -312,13 +308,13 @@
     goto :goto_7
 
     :cond_3
-    move/from16 v20, v4
+    move/from16 v19, v4
+
+    move/from16 v20, v19
 
     move/from16 v21, v20
 
-    move/from16 v22, v21
-
-    const/16 v19, -0x1
+    const/4 v5, -0x1
 
     goto :goto_8
 
@@ -326,8 +322,6 @@
     const-string v3, "DeviceParamsDataProvider: collecting display metrics exception: "
 
     invoke-static {v3, v0}, Lcom/my/tracker/obfuscated/y0;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    move/from16 v22, v4
 
     goto :goto_6
 
@@ -384,20 +378,18 @@
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_9
 
-    move/from16 v23, v0
+    move/from16 v22, v0
 
     goto :goto_a
 
     :catchall_9
     move-exception v0
 
-    move-object v3, v0
+    const-string v3, "DeviceParamsDataProvider: collecting isRooted exception: "
 
-    const-string v0, "DeviceParamsDataProvider: collecting isRooted exception: "
+    invoke-static {v3, v0}, Lcom/my/tracker/obfuscated/y0;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-static {v0, v3}, Lcom/my/tracker/obfuscated/y0;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    const/16 v23, -0x1
+    const/16 v22, -0x1
 
     :goto_a
     const-wide/16 v3, -0x1
@@ -411,7 +403,7 @@
 
     invoke-virtual {v0}, Ljava/io/File;->getTotalSpace()J
 
-    move-result-wide v24
+    move-result-wide v23
     :try_end_a
     .catchall {:try_start_a .. :try_end_a} :catchall_b
 
@@ -423,7 +415,7 @@
     .catchall {:try_start_b .. :try_end_b} :catchall_a
 
     :goto_b
-    move-wide/from16 v26, v3
+    move-wide/from16 v25, v3
 
     goto :goto_d
 
@@ -435,21 +427,21 @@
     :catchall_b
     move-exception v0
 
-    move-wide/from16 v24, v3
+    move-wide/from16 v23, v3
 
     goto :goto_c
 
     :cond_4
-    move-wide/from16 v24, v3
+    move-wide/from16 v23, v3
 
-    move-wide/from16 v26, v24
+    move-wide/from16 v25, v23
 
     goto :goto_d
 
     :goto_c
-    const-string v5, "DeviceParamsDataProvider: collecting disk info exception: "
+    const-string v13, "DeviceParamsDataProvider: collecting disk info exception: "
 
-    invoke-static {v5, v0}, Lcom/my/tracker/obfuscated/y0;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v13, v0}, Lcom/my/tracker/obfuscated/y0;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_b
 
@@ -493,7 +485,7 @@
     :try_end_d
     .catchall {:try_start_d .. :try_end_d} :catchall_d
 
-    move v2, v0
+    move/from16 v27, v0
 
     goto :goto_10
 
@@ -504,7 +496,7 @@
 
     invoke-static {v2, v0}, Lcom/my/tracker/obfuscated/y0;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    const/4 v2, -0x1
+    const/16 v27, -0x1
 
     :goto_10
     :try_start_e
@@ -512,10 +504,10 @@
     :try_end_e
     .catchall {:try_start_e .. :try_end_e} :catchall_f
 
-    move-object/from16 v3, p1
+    move-object/from16 v2, p1
 
     :try_start_f
-    invoke-virtual {v3, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v2, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -523,11 +515,11 @@
 
     invoke-virtual {v0}, Landroid/app/UiModeManager;->getCurrentModeType()I
 
-    move-result v0
+    move-result v3
     :try_end_f
     .catchall {:try_start_f .. :try_end_f} :catchall_e
 
-    move/from16 v28, v0
+    move/from16 v28, v3
 
     goto :goto_12
 
@@ -539,49 +531,35 @@
     :catchall_f
     move-exception v0
 
-    move-object/from16 v3, p1
+    move-object/from16 v2, p1
 
     :goto_11
-    const-string v4, "DeviceParamsDataProvider: collecting ui mode info exception: "
+    const-string v3, "DeviceParamsDataProvider: collecting ui mode info exception: "
 
-    invoke-static {v4, v0}, Lcom/my/tracker/obfuscated/y0;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v3, v0}, Lcom/my/tracker/obfuscated/y0;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     const/16 v28, -0x1
 
     :goto_12
-    invoke-static/range {p1 .. p1}, Lcom/my/tracker/obfuscated/c1;->a(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/my/tracker/obfuscated/c1;->a(Landroid/content/Context;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    new-instance v0, Lcom/my/tracker/obfuscated/q;
-
-    move-object v3, v0
+    new-instance v3, Lcom/my/tracker/obfuscated/q;
 
     const/4 v4, 0x3
 
-    move/from16 v18, v19
+    move/from16 v18, v5
 
-    move/from16 v19, v20
-
-    move/from16 v20, v21
-
-    move/from16 v21, v22
-
-    move/from16 v22, v23
-
-    move-wide/from16 v23, v24
-
-    move-wide/from16 v25, v26
-
-    move/from16 v27, v2
+    move-object v5, v0
 
     invoke-direct/range {v3 .. v28}, Lcom/my/tracker/obfuscated/q;-><init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIIFFFIJJII)V
 
-    const-string v2, "DeviceParamsDataProvider: collected"
+    const-string v0, "DeviceParamsDataProvider: collected"
 
-    invoke-static {v2}, Lcom/my/tracker/obfuscated/y0;->a(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/my/tracker/obfuscated/y0;->a(Ljava/lang/String;)V
 
-    iput-object v0, v1, Lcom/my/tracker/obfuscated/r;->a:Lcom/my/tracker/obfuscated/q;
+    iput-object v3, v1, Lcom/my/tracker/obfuscated/r;->a:Lcom/my/tracker/obfuscated/q;
 
-    return-object v0
+    return-object v3
 .end method

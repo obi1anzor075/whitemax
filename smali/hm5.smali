@@ -1,37 +1,27 @@
 .class public final Lhm5;
-.super Ler3;
+.super Lua6;
 .source "SourceFile"
 
 
-# instance fields
-.field public X:Lbm5;
-
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public Z:I
-
-.field public o:Ll7c;
-
-
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final m(I)Ljs0;
+    .locals 2
 
-    iput-object p1, p0, Lhm5;->Y:Ljava/lang/Object;
+    new-instance v0, Low9;
 
-    iget p1, p0, Lhm5;->Z:I
+    iget-object p0, p0, Lhj0;->c:Lz2b;
 
-    const/high16 v0, -0x80000000
+    iget p0, p0, Lz2b;->d:I
 
-    or-int/2addr p1, v0
+    const/4 v1, 0x0
 
-    iput p1, p0, Lhm5;->Z:I
+    invoke-direct {v0, p1, p0, v1}, Ljs0;-><init>(III)V
 
-    const/4 p1, 0x0
+    new-instance p0, Ljava/util/LinkedList;
 
-    invoke-static {p1, p0}, Lez3;->F(Lpj5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/util/LinkedList;-><init>()V
 
-    move-result-object p0
+    iput-object p0, v0, Low9;->e:Ljava/util/LinkedList;
 
-    return-object p0
+    return-object v0
 .end method

@@ -1,124 +1,81 @@
-.class public final Lmi8;
-.super Ll5e;
+.class public final synthetic Lmi8;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lyi8;
+.implements Lzi8;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic a:Lbj8;
 
-.field public final synthetic Y:J
+.field public final synthetic b:I
+
+.field public final synthetic c:I
 
 
 # direct methods
-.method public constructor <init>(JLkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(Lbj8;II)V
     .locals 0
 
-    iput-wide p1, p0, Lmi8;->Y:J
+    iput-object p1, p0, Lmi8;->a:Lbj8;
 
-    const/4 p1, 0x2
+    iput p2, p0, Lmi8;->b:I
 
-    invoke-direct {p0, p1, p3}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput p3, p0, Lmi8;->c:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public b(Lk2b;Lwg8;Ljava/util/List;)V
+    .locals 2
 
-    check-cast p1, Ltf3;
+    iget-object v0, p0, Lmi8;->a:Lbj8;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget v1, p0, Lmi8;->b:I
 
-    invoke-virtual {p0, p1, p2}, Lmi8;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-virtual {v0, p2, p1, v1}, Lbj8;->Y(Lwg8;Lk2b;I)I
 
-    move-result-object p0
+    move-result v1
 
-    check-cast p0, Lmi8;
+    iget p0, p0, Lmi8;->c:I
 
-    sget-object p1, Ljue;->a:Ljue;
+    invoke-virtual {v0, p2, p1, p0}, Lbj8;->Y(Lwg8;Lk2b;I)I
 
-    invoke-virtual {p0, p1}, Lmi8;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result p0
 
-    move-result-object p0
+    invoke-virtual {p1, p3, v1, p0}, Lk2b;->W(Ljava/util/List;II)V
 
-    return-object p0
+    return-void
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 3
+.method public e(Lk2b;Lwg8;)V
+    .locals 2
 
-    new-instance v0, Lmi8;
+    iget-object v0, p0, Lmi8;->a:Lbj8;
 
-    iget-wide v1, p0, Lmi8;->Y:J
+    iget v1, p0, Lmi8;->b:I
 
-    invoke-direct {v0, v1, v2, p2}, Lmi8;-><init>(JLkotlin/coroutines/Continuation;)V
+    invoke-virtual {v0, p2, p1, v1}, Lbj8;->Y(Lwg8;Lk2b;I)I
 
-    iput-object p1, v0, Lmi8;->X:Ljava/lang/Object;
+    move-result v1
 
-    return-object v0
-.end method
+    iget p0, p0, Lmi8;->c:I
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 9
+    invoke-virtual {v0, p2, p1, p0}, Lbj8;->Y(Lwg8;Lk2b;I)I
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    move-result p0
 
-    iget-object p1, p0, Lmi8;->X:Ljava/lang/Object;
+    invoke-virtual {p1}, Lk2b;->o0()V
 
-    check-cast p1, Ltf3;
+    iget-object p1, p1, Lk2b;->a:Lh75;
 
-    new-instance v8, Lkta;
+    invoke-virtual {p1, v1, p0}, Lh75;->m1(II)V
 
-    invoke-virtual {p1}, Ltf3;->n()J
-
-    move-result-wide v3
-
-    invoke-virtual {p1}, Ltf3;->d()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, ""
-
-    if-nez v0, :cond_0
-
-    move-object v6, v1
-
-    goto :goto_0
-
-    :cond_0
-    move-object v6, v0
-
-    :goto_0
-    sget-object v0, Lfj0;->a:Lfj0;
-
-    invoke-virtual {p1, v0}, Ltf3;->p(Lfj0;)Ljava/lang/String;
-
-    move-result-object v0
-
-    if-nez v0, :cond_1
-
-    move-object v7, v1
-
-    goto :goto_1
-
-    :cond_1
-    move-object v7, v0
-
-    :goto_1
-    invoke-virtual {p1}, Ltf3;->m()Ljava/lang/CharSequence;
-
-    move-result-object v5
-
-    iget-wide v1, p0, Lmi8;->Y:J
-
-    move-object v0, v8
-
-    invoke-direct/range {v0 .. v7}, Lkta;-><init>(JJLjava/lang/CharSequence;Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object v8
+    return-void
 .end method

@@ -1,26 +1,14 @@
-.class public final Lj0a;
+.class public interface abstract Lj0a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ll0a;
 
+# virtual methods
+.method public abstract a()La0d;
+.end method
 
-# instance fields
-.field public final a:Lu16;
+.method public abstract b(J)V
+.end method
 
-.field public final b:Lk26;
-
-
-# direct methods
-.method public constructor <init>(Lk26;Lu16;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p2, p0, Lj0a;->a:Lu16;
-
-    iput-object p1, p0, Lj0a;->b:Lk26;
-
-    return-void
+.method public abstract i(Lx95;)J
 .end method

@@ -1,6 +1,5 @@
 .class public interface abstract synthetic Landroid/media/AudioManager$OnCommunicationDeviceChangedListener;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # direct methods

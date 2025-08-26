@@ -1,113 +1,58 @@
-.class public abstract Lgob;
+.class public final synthetic Lgob;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static mr_art:I = 0x7f0a0581
 
-.field public static mr_cast_checkbox:I = 0x7f0a0582
+# instance fields
+.field public final synthetic a:I
 
-.field public static mr_cast_close_button:I = 0x7f0a0583
+.field public final synthetic b:Lhob;
 
-.field public static mr_cast_divider:I = 0x7f0a0584
 
-.field public static mr_cast_group_icon:I = 0x7f0a0585
+# direct methods
+.method public synthetic constructor <init>(Lhob;I)V
+    .locals 0
 
-.field public static mr_cast_group_name:I = 0x7f0a0586
+    iput p2, p0, Lgob;->a:I
 
-.field public static mr_cast_group_progress_bar:I = 0x7f0a0587
+    iput-object p1, p0, Lgob;->b:Lhob;
 
-.field public static mr_cast_header_name:I = 0x7f0a0588
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field public static mr_cast_list:I = 0x7f0a0589
+    return-void
+.end method
 
-.field public static mr_cast_meta_art:I = 0x7f0a058a
 
-.field public static mr_cast_meta_background:I = 0x7f0a058b
+# virtual methods
+.method public final run()V
+    .locals 1
 
-.field public static mr_cast_meta_black_scrim:I = 0x7f0a058c
+    iget v0, p0, Lgob;->a:I
 
-.field public static mr_cast_meta_subtitle:I = 0x7f0a058d
+    iget-object p0, p0, Lgob;->b:Lhob;
 
-.field public static mr_cast_meta_title:I = 0x7f0a058e
+    packed-switch v0, :pswitch_data_0
 
-.field public static mr_cast_mute_button:I = 0x7f0a058f
+    iget-object p0, p0, Lhob;->c:Lxb6;
 
-.field public static mr_cast_route_icon:I = 0x7f0a0590
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-.field public static mr_cast_route_name:I = 0x7f0a0591
+    return-void
 
-.field public static mr_cast_route_progress_bar:I = 0x7f0a0592
+    :pswitch_0
+    iget-object p0, p0, Lhob;->c:Lxb6;
 
-.field public static mr_cast_stop_button:I = 0x7f0a0593
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-.field public static mr_cast_volume_layout:I = 0x7f0a0594
+    return-void
 
-.field public static mr_cast_volume_slider:I = 0x7f0a0595
+    nop
 
-.field public static mr_chooser_list:I = 0x7f0a0596
-
-.field public static mr_chooser_route_desc:I = 0x7f0a0597
-
-.field public static mr_chooser_route_icon:I = 0x7f0a0598
-
-.field public static mr_chooser_route_name:I = 0x7f0a0599
-
-.field public static mr_chooser_route_progress_bar:I = 0x7f0a059a
-
-.field public static mr_chooser_title:I = 0x7f0a059b
-
-.field public static mr_close:I = 0x7f0a059c
-
-.field public static mr_control_divider:I = 0x7f0a059d
-
-.field public static mr_control_playback_ctrl:I = 0x7f0a059e
-
-.field public static mr_control_subtitle:I = 0x7f0a059f
-
-.field public static mr_control_title:I = 0x7f0a05a0
-
-.field public static mr_control_title_container:I = 0x7f0a05a1
-
-.field public static mr_custom_control:I = 0x7f0a05a2
-
-.field public static mr_default_control:I = 0x7f0a05a3
-
-.field public static mr_dialog_area:I = 0x7f0a05a4
-
-.field public static mr_expandable_area:I = 0x7f0a05a5
-
-.field public static mr_group_expand_collapse:I = 0x7f0a05a6
-
-.field public static mr_group_volume_route_name:I = 0x7f0a05a7
-
-.field public static mr_media_main_control:I = 0x7f0a05a8
-
-.field public static mr_name:I = 0x7f0a05a9
-
-.field public static mr_picker_close_button:I = 0x7f0a05aa
-
-.field public static mr_picker_header_name:I = 0x7f0a05ab
-
-.field public static mr_picker_list:I = 0x7f0a05ac
-
-.field public static mr_picker_route_icon:I = 0x7f0a05ad
-
-.field public static mr_picker_route_name:I = 0x7f0a05ae
-
-.field public static mr_picker_route_progress_bar:I = 0x7f0a05af
-
-.field public static mr_playback_control:I = 0x7f0a05b0
-
-.field public static mr_title_bar:I = 0x7f0a05b1
-
-.field public static mr_volume_control:I = 0x7f0a05b2
-
-.field public static mr_volume_group_list:I = 0x7f0a05b3
-
-.field public static mr_volume_item_icon:I = 0x7f0a05b4
-
-.field public static mr_volume_slider:I = 0x7f0a05b5
-
-.field public static volume_item_container:I = 0x7f0a0cd3
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method

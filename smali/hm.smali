@@ -1,76 +1,27 @@
-.class public final Lhm;
+.class public abstract Lhm;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljx9;
-
-
-# instance fields
-.field public final synthetic a:Lim;
-
 
 # direct methods
-.method public constructor <init>(Lim;)V
+.method public static a(Ljava/lang/Object;)Landroid/os/LocaleList;
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    check-cast p0, Landroid/app/LocaleManager;
 
-    iput-object p1, p0, Lhm;->a:Lim;
+    invoke-virtual {p0}, Landroid/app/LocaleManager;->getApplicationLocales()Landroid/os/LocaleList;
 
-    return-void
+    move-result-object p0
+
+    return-object p0
 .end method
 
+.method public static b(Ljava/lang/Object;Landroid/os/LocaleList;)V
+    .locals 0
 
-# virtual methods
-.method public final a()V
-    .locals 4
+    check-cast p0, Landroid/app/LocaleManager;
 
-    iget-object p0, p0, Lhm;->a:Lim;
-
-    invoke-virtual {p0}, Lim;->V()Lrm;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    check-cast v1, Ldn;
-
-    iget-object v2, v1, Ldn;->z0:Landroid/content/Context;
-
-    invoke-static {v2}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/view/LayoutInflater;->getFactory()Landroid/view/LayoutInflater$Factory;
-
-    move-result-object v3
-
-    if-nez v3, :cond_0
-
-    invoke-virtual {v2, v1}, Landroid/view/LayoutInflater;->setFactory2(Landroid/view/LayoutInflater$Factory2;)V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v2}, Landroid/view/LayoutInflater;->getFactory2()Landroid/view/LayoutInflater$Factory2;
-
-    move-result-object v1
-
-    instance-of v1, v1, Ldn;
-
-    :goto_0
-    iget-object p0, p0, Le83;->o:Lud;
-
-    iget-object p0, p0, Lud;->o:Ljava/lang/Object;
-
-    check-cast p0, Lmm;
-
-    const-string v1, "androidx:appcompat"
-
-    invoke-virtual {p0, v1}, Lmm;->c(Ljava/lang/String;)Landroid/os/Bundle;
-
-    invoke-virtual {v0}, Lrm;->c()V
+    invoke-virtual {p0, p1}, Landroid/app/LocaleManager;->setApplicationLocales(Landroid/os/LocaleList;)V
 
     return-void
 .end method

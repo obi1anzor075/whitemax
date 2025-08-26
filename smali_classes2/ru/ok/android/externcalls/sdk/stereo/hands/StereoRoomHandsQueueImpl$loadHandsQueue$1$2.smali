@@ -1,9 +1,9 @@
 .class final Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl$loadHandsQueue$1$2;
-.super Lb97;
+.super Lsd7;
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Lv56;
 
 
 # annotations
@@ -18,8 +18,8 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lb97;",
-        "Ls16;"
+        "Lsd7;",
+        "Lv56;"
     }
 .end annotation
 
@@ -28,7 +28,7 @@
         "\u0000\u0008\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0010\u0003\u001a\u00020\u0000H\n\u00a2\u0006\u0004\u0008\u0001\u0010\u0002"
     }
     d2 = {
-        "Ljue;",
+        "Le5f;",
         "invoke",
         "()V",
         "<anonymous>"
@@ -43,10 +43,10 @@
 
 
 # instance fields
-.field final synthetic $onSuccess:Ls16;
+.field final synthetic $onSuccess:Lv56;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 .end field
@@ -55,7 +55,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
-            "Ldn1;",
+            "Ljp1;",
             ">;"
         }
     .end annotation
@@ -65,15 +65,15 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;Ls16;Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl;)V
+.method public constructor <init>(Ljava/util/List;Lv56;Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List<",
-            "Ldn1;",
+            "Ljp1;",
             ">;",
-            "Ls16;",
+            "Lv56;",
             "Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl;",
             ")V"
         }
@@ -81,13 +81,13 @@
 
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl$loadHandsQueue$1$2;->$queue:Ljava/util/List;
 
-    iput-object p2, p0, Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl$loadHandsQueue$1$2;->$onSuccess:Ls16;
+    iput-object p2, p0, Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl$loadHandsQueue$1$2;->$onSuccess:Lv56;
 
     iput-object p3, p0, Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl$loadHandsQueue$1$2;->this$0:Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl;
 
     const/4 p1, 0x0
 
-    invoke-direct {p0, p1}, Lb97;-><init>(I)V
+    invoke-direct {p0, p1}, Lsd7;-><init>(I)V
 
     return-void
 .end method
@@ -100,7 +100,7 @@
     .line 1
     invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl$loadHandsQueue$1$2;->invoke()V
 
-    sget-object p0, Ljue;->a:Ljue;
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 .end method
@@ -130,18 +130,18 @@
 
     move-result-object v2
 
-    check-cast v2, Ldn1;
+    check-cast v2, Ljp1;
 
     .line 4
-    invoke-static {v1}, Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl;->access$getGetExternalId$p(Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl;)Lu16;
+    invoke-static {v1}, Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl;->access$getGetExternalId$p(Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl;)Lx56;
 
     move-result-object v3
 
     .line 5
-    iget-object v4, v2, Ldn1;->b:Lge1;
+    iget-object v4, v2, Ljp1;->b:Lrf1;
 
     .line 6
-    invoke-interface {v3, v4}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v3, v4}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -152,8 +152,10 @@
     .line 7
     new-instance v4, Lru/ok/android/externcalls/sdk/stereo/hands/StereoHandQueueItem;
 
-    iget-wide v5, v2, Ldn1;->a:J
+    .line 8
+    iget-wide v5, v2, Ljp1;->a:J
 
+    .line 9
     invoke-direct {v4, v3, v5, v6}, Lru/ok/android/externcalls/sdk/stereo/hands/StereoHandQueueItem;-><init>(Lru/ok/android/externcalls/sdk/id/ParticipantId;J)V
 
     const/4 v2, 0x1
@@ -162,13 +164,13 @@
 
     goto :goto_0
 
-    .line 8
+    .line 10
     :cond_1
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl$loadHandsQueue$1$2;->$onSuccess:Ls16;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl$loadHandsQueue$1$2;->$onSuccess:Lv56;
 
-    invoke-interface {v0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {v0}, Lv56;->invoke()Ljava/lang/Object;
 
-    .line 9
+    .line 11
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl$loadHandsQueue$1$2;->this$0:Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl;
 
     invoke-static {p0}, Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl;->access$notifyHandsStatusChanged(Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueueImpl;)V

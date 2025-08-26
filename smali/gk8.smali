@@ -1,203 +1,351 @@
 .class public final Lgk8;
-.super Ll5e;
+.super Lxs9;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
 
 
 # instance fields
-.field public X:I
+.field public final e:Lyg8;
 
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lpk8;
+.field public f:[I
 
 
 # direct methods
-.method public constructor <init>(Lpk8;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lyg8;)V
     .locals 0
 
-    iput-object p1, p0, Lgk8;->Z:Lpk8;
+    invoke-direct {p0}, Lxs9;-><init>()V
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lgk8;->e:Lyg8;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final b(Lku5;)V
+    .locals 2
 
-    check-cast p1, Ljava/util/List;
+    iget-object p1, p1, Lku5;->b:Ljava/lang/Object;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    check-cast p1, Landroid/app/Notification$Builder;
 
-    invoke-virtual {p0, p1, p2}, Lgk8;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    sget v0, Lpaf;->a:I
+
+    const/16 v1, 0x15
+
+    if-lt v0, v1, :cond_0
+
+    invoke-static {}, Lfk8;->a()Landroid/app/Notification$MediaStyle;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lgk8;->f:[I
+
+    iget-object p0, p0, Lgk8;->e:Lyg8;
+
+    invoke-static {v0, v1, p0}, Lfk8;->b(Landroid/app/Notification$MediaStyle;[ILyg8;)Landroid/app/Notification$MediaStyle;
+
+    move-result-object v0
+
+    invoke-static {p1, v0}, Lfk8;->c(Landroid/app/Notification$Builder;Landroid/app/Notification$MediaStyle;)V
+
+    new-instance v0, Landroid/os/Bundle;
+
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+
+    iget-object p0, p0, Lyg8;->a:Lqh8;
+
+    iget-object p0, p0, Lqh8;->j:Lt9d;
+
+    invoke-virtual {p0}, Lt9d;->b()Landroid/os/Bundle;
 
     move-result-object p0
 
-    check-cast p0, Lgk8;
+    const-string v1, "androidx.media3.session"
 
-    sget-object p1, Ljue;->a:Ljue;
+    invoke-virtual {v0, v1, p0}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    invoke-virtual {p0, p1}, Lgk8;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
-
-    new-instance v0, Lgk8;
-
-    iget-object p0, p0, Lgk8;->Z:Lpk8;
-
-    invoke-direct {v0, p0, p2}, Lgk8;-><init>(Lpk8;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lgk8;->Y:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 8
-
-    sget-object v0, Lpu3;->a:Lpu3;
-
-    iget v1, p0, Lgk8;->X:I
-
-    const/4 v2, 0x1
-
-    if-eqz v1, :cond_1
-
-    if-ne v1, v2, :cond_0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto :goto_2
+    invoke-virtual {p1, v0}, Landroid/app/Notification$Builder;->addExtras(Landroid/os/Bundle;)Landroid/app/Notification$Builder;
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    return-void
+.end method
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+.method public final g()Landroid/widget/RemoteViews;
+    .locals 5
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    sget v0, Lpaf;->a:I
 
-    throw p0
+    const/16 v1, 0x15
 
-    :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    if-lt v0, v1, :cond_0
 
-    iget-object p1, p0, Lgk8;->Y:Ljava/lang/Object;
+    const/4 p0, 0x0
 
-    check-cast p1, Ljava/util/List;
+    return-object p0
 
-    new-instance v1, Lzb9;
+    :cond_0
+    iget-object v0, p0, Lxs9;->b:Ljava/lang/Object;
 
-    invoke-interface {p1}, Ljava/util/List;->size()I
+    check-cast v0, Ljs9;
 
-    move-result v3
+    iget-object v0, v0, Ljs9;->b:Ljava/util/ArrayList;
 
-    invoke-direct {v1, v3}, Lzb9;-><init>(I)V
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    new-instance v3, Ljava/util/ArrayList;
+    move-result v0
 
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+    const/4 v1, 0x5
 
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
-    move-result-object p1
+    move-result v0
 
-    :cond_2
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    const/4 v1, 0x3
 
-    move-result v4
+    if-gt v0, v1, :cond_1
 
-    iget-object v5, p0, Lgk8;->Z:Lpk8;
-
-    if-eqz v4, :cond_4
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ltf3;
-
-    invoke-virtual {v4}, Ltf3;->n()J
-
-    move-result-wide v6
-
-    invoke-virtual {v1, v6, v7}, Lzb9;->a(J)Z
-
-    move-result v6
-
-    if-nez v6, :cond_3
-
-    const/4 v4, 0x0
-
-    goto :goto_1
-
-    :cond_3
-    iget-object v5, v5, Lpk8;->e:Lt97;
-
-    invoke-interface {v5}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lmta;
-
-    const/4 v6, 0x0
-
-    invoke-virtual {v5, v4, v6}, Lmta;->a(Ltf3;Z)Lira;
-
-    move-result-object v4
-
-    :goto_1
-    if-eqz v4, :cond_2
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    sget v1, Ljwb;->media3_notification_template_big_media_narrow:I
 
     goto :goto_0
 
-    :cond_4
-    iget-object p1, v5, Lpk8;->c:Lt97;
+    :cond_1
+    sget v1, Ljwb;->media3_notification_template_big_media:I
 
-    invoke-interface {p1}, Lt97;->getValue()Ljava/lang/Object;
+    :goto_0
+    invoke-virtual {p0, v1}, Lxs9;->c(I)Landroid/widget/RemoteViews;
 
-    move-result-object p1
+    move-result-object v1
 
-    check-cast p1, Lkn3;
+    sget v2, Ltsb;->media_actions:I
 
-    new-instance v1, Lxz6;
+    invoke-virtual {v1, v2}, Landroid/widget/RemoteViews;->removeAllViews(I)V
 
-    const/16 v4, 0xe
+    if-lez v0, :cond_2
 
-    invoke-direct {v1, v4}, Lxz6;-><init>(I)V
+    const/4 v2, 0x0
 
-    invoke-virtual {p1, v3, v1}, Lkn3;->c(Ljava/util/ArrayList;Lu16;)V
+    :goto_1
+    if-ge v2, v0, :cond_2
 
-    iget-object p1, v5, Lpk8;->l:Lhcd;
+    iget-object v3, p0, Lxs9;->b:Ljava/lang/Object;
 
-    iput v2, p0, Lgk8;->X:I
+    check-cast v3, Ljs9;
 
-    invoke-virtual {p1, v3, p0}, Lhcd;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iget-object v3, v3, Ljs9;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lvr9;
+
+    invoke-virtual {p0, v3}, Lgk8;->n(Lvr9;)Landroid/widget/RemoteViews;
+
+    move-result-object v3
+
+    sget v4, Ltsb;->media_actions:I
+
+    invoke-virtual {v1, v4, v3}, Landroid/widget/RemoteViews;->addView(ILandroid/widget/RemoteViews;)V
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_1
+
+    :cond_2
+    sget p0, Ltsb;->cancel_action:I
+
+    const/16 v0, 0x8
+
+    invoke-virtual {v1, p0, v0}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+
+    return-object v1
+.end method
+
+.method public final h()Landroid/widget/RemoteViews;
+    .locals 8
+
+    sget v0, Lpaf;->a:I
+
+    const/16 v1, 0x15
+
+    if-lt v0, v1, :cond_0
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_0
+    sget v0, Ljwb;->media3_notification_template_media:I
+
+    invoke-virtual {p0, v0}, Lxs9;->c(I)Landroid/widget/RemoteViews;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lxs9;->b:Ljava/lang/Object;
+
+    check-cast v1, Ljs9;
+
+    iget-object v1, v1, Ljs9;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    iget-object v2, p0, Lgk8;->f:[I
+
+    const/4 v3, 0x0
+
+    if-eqz v2, :cond_2
+
+    array-length v4, v2
+
+    const/4 v5, 0x3
+
+    invoke-static {v4, v5}, Ljava/lang/Math;->min(II)I
+
+    move-result v4
+
+    sget v5, Ltsb;->media_actions:I
+
+    invoke-virtual {v0, v5}, Landroid/widget/RemoteViews;->removeAllViews(I)V
+
+    if-lez v4, :cond_2
+
+    move v5, v3
+
+    :goto_0
+    if-ge v5, v4, :cond_2
+
+    if-ge v5, v1, :cond_1
+
+    iget-object v6, p0, Lxs9;->b:Ljava/lang/Object;
+
+    check-cast v6, Ljs9;
+
+    iget-object v6, v6, Ljs9;->b:Ljava/util/ArrayList;
+
+    aget v7, v2, v5
+
+    invoke-virtual {v6, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lvr9;
+
+    invoke-virtual {p0, v6}, Lgk8;->n(Lvr9;)Landroid/widget/RemoteViews;
+
+    move-result-object v6
+
+    sget v7, Ltsb;->media_actions:I
+
+    invoke-virtual {v0, v7, v6}, Landroid/widget/RemoteViews;->addView(ILandroid/widget/RemoteViews;)V
+
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    add-int/lit8 v1, v1, -0x1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    filled-new-array {v0, v1}, [Ljava/lang/Object;
+
+    move-result-object v0
+
+    const-string v1, "setShowActionsInCompactView: action %d out of bounds (max %d)"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_2
+    sget p0, Ltsb;->end_padder:I
+
+    invoke-virtual {v0, p0, v3}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+
+    sget p0, Ltsb;->cancel_action:I
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, p0, v1}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+
+    return-object v0
+.end method
+
+.method public final n(Lvr9;)Landroid/widget/RemoteViews;
+    .locals 3
+
+    iget-object v0, p1, Lvr9;->j:Landroid/app/PendingIntent;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    new-instance v1, Landroid/widget/RemoteViews;
+
+    iget-object p0, p0, Lxs9;->b:Ljava/lang/Object;
+
+    check-cast p0, Ljs9;
+
+    iget-object p0, p0, Ljs9;->a:Landroid/content/Context;
+
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object p0
 
-    if-ne p0, v0, :cond_5
+    sget v2, Ljwb;->media3_notification_media_action:I
 
-    return-object v0
+    invoke-direct {v1, p0, v2}, Landroid/widget/RemoteViews;-><init>(Ljava/lang/String;I)V
 
-    :cond_5
-    :goto_2
-    sget-object p0, Ljue;->a:Ljue;
+    invoke-virtual {p1}, Lvr9;->a()Landroidx/core/graphics/drawable/IconCompat;
 
-    return-object p0
+    move-result-object p0
+
+    if-eqz p0, :cond_1
+
+    sget v2, Ltsb;->action0:I
+
+    invoke-virtual {p0}, Landroidx/core/graphics/drawable/IconCompat;->e()I
+
+    move-result p0
+
+    invoke-virtual {v1, v2, p0}, Landroid/widget/RemoteViews;->setImageViewResource(II)V
+
+    :cond_1
+    if-nez v0, :cond_2
+
+    sget p0, Ltsb;->action0:I
+
+    iget-object v0, p1, Lvr9;->j:Landroid/app/PendingIntent;
+
+    invoke-virtual {v1, p0, v0}, Landroid/widget/RemoteViews;->setOnClickPendingIntent(ILandroid/app/PendingIntent;)V
+
+    :cond_2
+    sget p0, Ltsb;->action0:I
+
+    iget-object p1, p1, Lvr9;->i:Ljava/lang/CharSequence;
+
+    invoke-virtual {v1, p0, p1}, Landroid/widget/RemoteViews;->setContentDescription(ILjava/lang/CharSequence;)V
+
+    return-object v1
 .end method

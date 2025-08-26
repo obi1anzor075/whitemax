@@ -10,14 +10,14 @@
     }
     d2 = {
         "",
-        "Ljue;",
+        "Le5f;",
         "checkParallelism",
         "(I)V",
-        "Lju3;",
+        "Ljx3;",
         "",
         "name",
         "namedOrThis",
-        "(Lju3;Ljava/lang/String;)Lju3;",
+        "(Ljx3;Ljava/lang/String;)Ljx3;",
         "kotlinx-coroutines-core"
     }
     k = 0x2
@@ -26,6 +26,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -42,7 +43,7 @@
     :cond_0
     const-string v0, "Expected positive parallelism level, but got "
 
-    invoke-static {p0, v0}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v0}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -57,14 +58,14 @@
     throw v0
 .end method
 
-.method public static final namedOrThis(Lju3;Ljava/lang/String;)Lju3;
+.method public static final namedOrThis(Ljx3;Ljava/lang/String;)Ljx3;
     .locals 1
 
     if-eqz p1, :cond_0
 
     new-instance v0, Lkotlinx/coroutines/internal/NamedDispatcher;
 
-    invoke-direct {v0, p0, p1}, Lkotlinx/coroutines/internal/NamedDispatcher;-><init>(Lju3;Ljava/lang/String;)V
+    invoke-direct {v0, p0, p1}, Lkotlinx/coroutines/internal/NamedDispatcher;-><init>(Ljx3;Ljava/lang/String;)V
 
     return-object v0
 

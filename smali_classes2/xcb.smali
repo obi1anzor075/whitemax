@@ -1,77 +1,63 @@
 .class public final Lxcb;
-.super Ll5e;
+.super Lca1;
 .source "SourceFile"
 
-# interfaces
-.implements Li26;
+
+# static fields
+.field public static final b:Lxcb;
 
 
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lxcb;
+
+    const/16 v1, 0x9
+
+    invoke-direct {v0, v1}, Lca1;-><init>(I)V
+
+    sput-object v0, Lxcb;->b:Lxcb;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Lsg9;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lxcb;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lxcb;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lxcb;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
-    new-instance p0, Lxcb;
+    const/4 v0, 0x1
 
-    const/4 v0, 0x2
+    if-ne p0, p1, :cond_0
 
-    invoke-direct {p0, v0, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    iput-object p1, p0, Lxcb;->X:Ljava/lang/Object;
-
-    return-object p0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p0, p0, Lxcb;->X:Ljava/lang/Object;
-
-    check-cast p0, Lsg9;
-
-    sget-object p1, Lv03;->b:Lv03;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    sget-object p0, Ls8b;->c:Ls8b;
-
-    invoke-virtual {p0}, Lu2;->P1()Ld34;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ld34;->d()Z
+    return v0
 
     :cond_0
-    sget-object p0, Ljue;->a:Ljue;
+    instance-of p0, p1, Lxcb;
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    const p0, 0x5c26daea
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "Save"
 
     return-object p0
 .end method

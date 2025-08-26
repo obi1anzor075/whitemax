@@ -1,519 +1,169 @@
 .class public final Lmb4;
-.super Llpe;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljm6;
 
 
 # static fields
-.field public static final synthetic d1:I
+.field public static final d:[I
 
 
 # instance fields
-.field public final O0:I
+.field public b:Lcwc;
 
-.field public final P0:Z
-
-.field public final Q0:Z
-
-.field public final R0:Z
-
-.field public final S0:Z
-
-.field public final T0:Z
-
-.field public final U0:Z
-
-.field public final V0:Z
-
-.field public final W0:Z
-
-.field public final X0:Z
-
-.field public final Y0:Z
-
-.field public final Z0:Z
-
-.field public final a1:Z
-
-.field public final b1:Landroid/util/SparseArray;
-
-.field public final c1:Landroid/util/SparseBooleanArray;
+.field public c:Z
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lob4;
-
-    invoke-direct {v0}, Lob4;-><init>()V
-
-    new-instance v1, Lmb4;
-
-    invoke-direct {v1, v0}, Lmb4;-><init>(Lob4;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lob4;)V
     .locals 1
 
-    invoke-direct {p0, p1}, Llpe;-><init>(Ljpe;)V
+    const/4 v0, 0x7
 
-    iget-boolean v0, p1, Lob4;->z:Z
+    new-array v0, v0, [I
 
-    iput-boolean v0, p0, Lmb4;->P0:Z
+    fill-array-data v0, :array_0
 
-    iget-boolean v0, p1, Lob4;->A:Z
+    sput-object v0, Lmb4;->d:[I
 
-    iput-boolean v0, p0, Lmb4;->Q0:Z
+    return-void
 
-    iget-boolean v0, p1, Lob4;->B:Z
+    nop
 
-    iput-boolean v0, p0, Lmb4;->R0:Z
+    :array_0
+    .array-data 4
+        0x8
+        0xd
+        0xb
+        0x2
+        0x0
+        0x1
+        0x7
+    .end array-data
+.end method
 
-    iget-boolean v0, p1, Lob4;->C:Z
+.method public static a(Ljava/util/ArrayList;I)V
+    .locals 3
 
-    iput-boolean v0, p0, Lmb4;->S0:Z
+    const/4 v0, 0x0
 
-    iget-boolean v0, p1, Lob4;->D:Z
+    const/4 v1, 0x7
 
-    iput-boolean v0, p0, Lmb4;->T0:Z
+    sget-object v2, Lmb4;->d:[I
 
-    iget-boolean v0, p1, Lob4;->E:Z
+    invoke-static {p1, v0, v1, v2}, Lzx7;->G(III[I)I
 
-    iput-boolean v0, p0, Lmb4;->U0:Z
+    move-result v0
 
-    iget-boolean v0, p1, Lob4;->F:Z
+    const/4 v1, -0x1
 
-    iput-boolean v0, p0, Lmb4;->V0:Z
+    if-eq v0, v1, :cond_1
 
-    iget-boolean v0, p1, Lob4;->G:Z
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iput-boolean v0, p0, Lmb4;->W0:Z
+    move-result-object v0
 
-    iget-boolean v0, p1, Lob4;->H:Z
+    invoke-virtual {p0, v0}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    iput-boolean v0, p0, Lmb4;->X0:Z
+    move-result v0
 
-    iget v0, p1, Lob4;->I:I
+    if-eqz v0, :cond_0
 
-    iput v0, p0, Lmb4;->O0:I
+    goto :goto_0
 
-    iget-boolean v0, p1, Lob4;->J:Z
+    :cond_0
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iput-boolean v0, p0, Lmb4;->Y0:Z
+    move-result-object p1
 
-    iget-boolean v0, p1, Lob4;->K:Z
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    iput-boolean v0, p0, Lmb4;->Z0:Z
-
-    iget-boolean v0, p1, Lob4;->L:Z
-
-    iput-boolean v0, p0, Lmb4;->a1:Z
-
-    iget-object v0, p1, Lob4;->M:Landroid/util/SparseArray;
-
-    iput-object v0, p0, Lmb4;->b1:Landroid/util/SparseArray;
-
-    iget-object p1, p1, Lob4;->N:Landroid/util/SparseBooleanArray;
-
-    iput-object p1, p0, Lmb4;->c1:Landroid/util/SparseBooleanArray;
-
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(ILvoe;)Lpb4;
-    .locals 0
-
-    iget-object p0, p0, Lmb4;->b1:Landroid/util/SparseArray;
-
-    invoke-virtual {p0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/util/Map;
-
-    if-eqz p0, :cond_0
-
-    invoke-interface {p0, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lpb4;
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return-object p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 9
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    if-eqz p1, :cond_b
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    const-class v3, Lmb4;
-
-    if-eq v3, v2, :cond_1
-
-    goto/16 :goto_3
-
-    :cond_1
-    check-cast p1, Lmb4;
-
-    invoke-super {p0, p1}, Llpe;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_9
-
-    iget-boolean v2, p0, Lmb4;->P0:Z
-
-    iget-boolean v3, p1, Lmb4;->P0:Z
-
-    if-ne v2, v3, :cond_9
-
-    iget-boolean v2, p0, Lmb4;->Q0:Z
-
-    iget-boolean v3, p1, Lmb4;->Q0:Z
-
-    if-ne v2, v3, :cond_9
-
-    iget-boolean v2, p0, Lmb4;->R0:Z
-
-    iget-boolean v3, p1, Lmb4;->R0:Z
-
-    if-ne v2, v3, :cond_9
-
-    iget-boolean v2, p0, Lmb4;->S0:Z
-
-    iget-boolean v3, p1, Lmb4;->S0:Z
-
-    if-ne v2, v3, :cond_9
-
-    iget-boolean v2, p0, Lmb4;->T0:Z
-
-    iget-boolean v3, p1, Lmb4;->T0:Z
-
-    if-ne v2, v3, :cond_9
-
-    iget-boolean v2, p0, Lmb4;->U0:Z
-
-    iget-boolean v3, p1, Lmb4;->U0:Z
-
-    if-ne v2, v3, :cond_9
-
-    iget-boolean v2, p0, Lmb4;->V0:Z
-
-    iget-boolean v3, p1, Lmb4;->V0:Z
-
-    if-ne v2, v3, :cond_9
-
-    iget-boolean v2, p0, Lmb4;->W0:Z
-
-    iget-boolean v3, p1, Lmb4;->W0:Z
-
-    if-ne v2, v3, :cond_9
-
-    iget-boolean v2, p0, Lmb4;->X0:Z
-
-    iget-boolean v3, p1, Lmb4;->X0:Z
-
-    if-ne v2, v3, :cond_9
-
-    iget v2, p0, Lmb4;->O0:I
-
-    iget v3, p1, Lmb4;->O0:I
-
-    if-ne v2, v3, :cond_9
-
-    iget-boolean v2, p0, Lmb4;->Y0:Z
-
-    iget-boolean v3, p1, Lmb4;->Y0:Z
-
-    if-ne v2, v3, :cond_9
-
-    iget-boolean v2, p0, Lmb4;->Z0:Z
-
-    iget-boolean v3, p1, Lmb4;->Z0:Z
-
-    if-ne v2, v3, :cond_9
-
-    iget-boolean v2, p0, Lmb4;->a1:Z
-
-    iget-boolean v3, p1, Lmb4;->a1:Z
-
-    if-ne v2, v3, :cond_9
-
-    iget-object v2, p0, Lmb4;->c1:Landroid/util/SparseBooleanArray;
-
-    invoke-virtual {v2}, Landroid/util/SparseBooleanArray;->size()I
-
-    move-result v3
-
-    iget-object v4, p1, Lmb4;->c1:Landroid/util/SparseBooleanArray;
-
-    invoke-virtual {v4}, Landroid/util/SparseBooleanArray;->size()I
-
-    move-result v5
-
-    if-eq v5, v3, :cond_2
-
-    goto/16 :goto_2
-
-    :cond_2
-    move v5, v1
-
-    :goto_0
-    if-ge v5, v3, :cond_4
-
-    invoke-virtual {v2, v5}, Landroid/util/SparseBooleanArray;->keyAt(I)I
-
-    move-result v6
-
-    invoke-virtual {v4, v6}, Landroid/util/SparseBooleanArray;->indexOfKey(I)I
-
-    move-result v6
-
-    if-gez v6, :cond_3
-
-    goto :goto_2
-
-    :cond_3
-    add-int/lit8 v5, v5, 0x1
-
-    goto :goto_0
-
-    :cond_4
-    iget-object p0, p0, Lmb4;->b1:Landroid/util/SparseArray;
-
-    invoke-virtual {p0}, Landroid/util/SparseArray;->size()I
-
-    move-result v2
-
-    iget-object p1, p1, Lmb4;->b1:Landroid/util/SparseArray;
-
-    invoke-virtual {p1}, Landroid/util/SparseArray;->size()I
-
-    move-result v3
-
-    if-eq v3, v2, :cond_5
-
-    goto :goto_2
-
-    :cond_5
-    move v3, v1
-
-    :goto_1
-    if-ge v3, v2, :cond_a
-
-    invoke-virtual {p0, v3}, Landroid/util/SparseArray;->keyAt(I)I
-
-    move-result v4
-
-    invoke-virtual {p1, v4}, Landroid/util/SparseArray;->indexOfKey(I)I
-
-    move-result v4
-
-    if-ltz v4, :cond_9
-
-    invoke-virtual {p0, v3}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Ljava/util/Map;
-
-    invoke-virtual {p1, v4}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/util/Map;
-
-    invoke-interface {v5}, Ljava/util/Map;->size()I
-
-    move-result v6
-
-    invoke-interface {v4}, Ljava/util/Map;->size()I
-
-    move-result v7
-
-    if-eq v7, v6, :cond_6
-
-    goto :goto_2
-
-    :cond_6
-    invoke-interface {v5}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object v5
-
-    invoke-interface {v5}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v5
-
-    :cond_7
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_8
-
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Ljava/util/Map$Entry;
-
-    invoke-interface {v6}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lvoe;
-
-    invoke-interface {v4, v7}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_9
-
-    invoke-interface {v6}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v6
-
-    invoke-interface {v4, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Lmze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_7
-
-    goto :goto_2
-
-    :cond_8
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_1
-
-    :cond_9
-    :goto_2
-    move v0, v1
-
-    :cond_a
-    return v0
-
-    :cond_b
-    :goto_3
-    return v1
-.end method
-
-.method public final hashCode()I
+.method public b(Lfz5;)Lfz5;
     .locals 3
 
-    invoke-super {p0}, Llpe;->hashCode()I
+    iget-boolean v0, p0, Lmb4;->c:Z
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lmb4;->b:Lcwc;
+
+    invoke-virtual {v0, p1}, Lcwc;->m(Lfz5;)Z
 
     move-result v0
 
-    const/16 v1, 0x1f
+    if-eqz v0, :cond_1
 
-    add-int/2addr v0, v1
+    invoke-virtual {p1}, Lfz5;->a()Lcz5;
 
-    mul-int/2addr v0, v1
+    move-result-object v0
 
-    iget-boolean v2, p0, Lmb4;->P0:Z
+    iget-object v1, p1, Lfz5;->j:Ljava/lang/String;
 
-    add-int/2addr v0, v2
+    const-string v2, "application/x-media3-cues"
 
-    mul-int/2addr v0, v1
+    invoke-static {v2}, La99;->l(Ljava/lang/String;)Ljava/lang/String;
 
-    iget-boolean v2, p0, Lmb4;->Q0:Z
+    move-result-object v2
 
-    add-int/2addr v0, v2
+    iput-object v2, v0, Lcz5;->l:Ljava/lang/String;
 
-    mul-int/2addr v0, v1
+    iget-object p0, p0, Lmb4;->b:Lcwc;
 
-    iget-boolean v2, p0, Lmb4;->R0:Z
+    invoke-virtual {p0, p1}, Lcwc;->t(Lfz5;)I
 
-    add-int/2addr v0, v2
+    move-result p0
 
-    mul-int/2addr v0, v1
+    iput p0, v0, Lcz5;->F:I
 
-    iget-boolean v2, p0, Lmb4;->S0:Z
+    new-instance p0, Ljava/lang/StringBuilder;
 
-    add-int/2addr v0, v2
+    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
 
-    mul-int/2addr v0, v1
+    iget-object p1, p1, Lfz5;->m:Ljava/lang/String;
 
-    iget-boolean v2, p0, Lmb4;->T0:Z
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    add-int/2addr v0, v2
+    if-eqz v1, :cond_0
 
-    mul-int/2addr v0, v1
+    const-string p1, " "
 
-    iget-boolean v2, p0, Lmb4;->U0:Z
+    invoke-virtual {p1, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    add-int/2addr v0, v2
+    move-result-object p1
 
-    mul-int/2addr v0, v1
+    goto :goto_0
 
-    iget-boolean v2, p0, Lmb4;->V0:Z
+    :cond_0
+    const-string p1, ""
 
-    add-int/2addr v0, v2
+    :goto_0
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    mul-int/2addr v0, v1
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iget-boolean v2, p0, Lmb4;->W0:Z
+    move-result-object p0
 
-    add-int/2addr v0, v2
+    iput-object p0, v0, Lcz5;->i:Ljava/lang/String;
 
-    mul-int/2addr v0, v1
+    const-wide p0, 0x7fffffffffffffffL
 
-    iget-boolean v2, p0, Lmb4;->X0:Z
+    iput-wide p0, v0, Lcz5;->q:J
 
-    add-int/2addr v0, v2
+    new-instance p0, Lfz5;
 
-    mul-int/2addr v0, v1
+    invoke-direct {p0, v0}, Lfz5;-><init>(Lcz5;)V
 
-    iget v2, p0, Lmb4;->O0:I
+    return-object p0
 
-    add-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget-boolean v2, p0, Lmb4;->Y0:Z
-
-    add-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget-boolean v2, p0, Lmb4;->Z0:Z
-
-    add-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget-boolean p0, p0, Lmb4;->a1:Z
-
-    add-int/2addr v0, p0
-
-    return v0
+    :cond_1
+    return-object p1
 .end method

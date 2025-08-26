@@ -1,585 +1,383 @@
 .class public final Ldp4;
-.super Ljava/lang/Object;
+.super Lhl;
 .source "SourceFile"
+
+# interfaces
+.implements Lxra;
+.implements Loke;
 
 
 # instance fields
-.field public final a:Ljava/io/File;
+.field public final X:J
 
-.field public final b:Ljava/io/File;
+.field public final Y:Ljava/lang/String;
 
-.field public final c:Ljava/io/File;
-
-.field public final d:Ljava/io/File;
-
-.field public volatile e:Lgt0;
-
-.field public final f:Ljava/lang/Object;
+.field public final o:J
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(JJJ)V
     .locals 0
 
-    return-void
-.end method
+    invoke-direct {p0, p1, p2}, Lhl;-><init>(J)V
 
-.method public constructor <init>(Ljava/io/File;)V
-    .locals 3
+    iput-wide p3, p0, Ldp4;->o:J
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-wide p5, p0, Ldp4;->X:J
 
-    iput-object p1, p0, Ldp4;->a:Ljava/io/File;
+    const-class p1, Ldp4;
 
-    invoke-virtual {p1}, Ljava/io/File;->getParentFile()Ljava/io/File;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iput-object v0, p0, Ldp4;->b:Ljava/io/File;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, ".tmp"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lng5;->N(Ljava/io/File;Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object v1
-
-    iput-object v1, p0, Ldp4;->c:Ljava/io/File;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p1, ".taken"
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {v0, p1}, Lng5;->N(Ljava/io/File;Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object p1
-
-    iput-object p1, p0, Ldp4;->d:Ljava/io/File;
-
-    sget-object p1, Lbp4;->h:Lbp4;
-
-    iput-object p1, p0, Ldp4;->e:Lgt0;
-
-    new-instance p1, Ljava/lang/Object;
-
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldp4;->f:Ljava/lang/Object;
+    iput-object p1, p0, Ldp4;->Y:Ljava/lang/String;
 
     return-void
-
-    :cond_0
-    new-instance p0, Ljava/lang/StringBuilder;
-
-    const-string v0, "File "
-
-    invoke-direct {p0, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p1, " not in directory"
-
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/List;)V
+.method public final c()I
+    .locals 0
+
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final d()V
     .locals 3
 
-    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
+    const-string v0, "onMaxFailCount"
 
-    move-result v0
+    const/4 v1, 0x0
 
-    if-eqz v0, :cond_0
+    iget-object v2, p0, Ldp4;->Y:Ljava/lang/String;
+
+    invoke-static {v2, v0, v1}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    invoke-virtual {p0}, Lhl;->t()Lhme;
+
+    move-result-object v0
+
+    iget-wide v1, p0, Lhl;->a:J
+
+    invoke-virtual {v0, v1, v2}, Lhme;->d(J)V
+
+    return-void
+.end method
+
+.method public final e(Llje;)V
+    .locals 12
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "onSuccess: "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    iget-object v0, p0, Ldp4;->Y:Ljava/lang/String;
+
+    invoke-static {v0, p1}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lhl;->m()Ln82;
+
+    move-result-object p1
+
+    iget-wide v1, p0, Ldp4;->o:J
+
+    invoke-virtual {p1, v1, v2}, Ln82;->C(J)Ly42;
+
+    move-result-object p1
+
+    const/4 v1, 0x0
+
+    if-nez p1, :cond_0
+
+    const-string p0, "no chat, ignore!"
+
+    invoke-static {v0, p0, v1}, Lg47;->x(Ljava/lang/String;Ljava/lang/String;Ljava/util/concurrent/CancellationException;)V
 
     return-void
 
     :cond_0
-    iget-object v0, p0, Ldp4;->f:Ljava/lang/Object;
+    iget-object p1, p1, Ly42;->b:Lj92;
 
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Ldp4;->e:Lgt0;
-
-    instance-of v2, v1, Lcp4;
-
-    if-eqz v2, :cond_1
-
-    check-cast v1, Lcp4;
-
-    iget-object v1, v1, Lcp4;->h:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v1}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/util/List;
-
-    if-ne p1, v1, :cond_1
-
-    iget-object v1, p0, Ldp4;->b:Ljava/io/File;
-
-    invoke-virtual {v1}, Ljava/io/File;->mkdirs()Z
-
-    iget-object v1, p0, Ldp4;->d:Ljava/io/File;
-
-    iget-object v2, p0, Ldp4;->a:Ljava/io/File;
-
-    invoke-virtual {v1, v2}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
-
-    new-instance v1, Lap4;
-
-    invoke-direct {v1, p1}, Lap4;-><init>(Ljava/util/List;)V
-
-    iput-object v1, p0, Ldp4;->e:Lgt0;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_1
-
-    :cond_1
-    :try_start_1
-    iget-object v1, p0, Ldp4;->e:Lgt0;
-
-    instance-of v2, v1, Lbp4;
-
-    if-eqz v2, :cond_2
-
-    invoke-virtual {p0}, Ldp4;->b()Ljava/util/List;
-
-    move-result-object v1
-
-    goto :goto_0
-
-    :cond_2
-    instance-of v2, v1, Lap4;
+    iget-object v2, p1, Lj92;->f0:Lm8a;
 
     if-eqz v2, :cond_3
 
-    check-cast v1, Lap4;
+    iget-wide v2, p1, Lj92;->g0:J
 
-    iget-object v1, v1, Lap4;->h:Ljava/util/List;
+    const-wide/16 v4, 0x0
 
-    goto :goto_0
+    cmp-long p1, v2, v4
 
-    :cond_3
-    instance-of v1, v1, Lcp4;
+    if-nez p1, :cond_1
 
-    if-eqz v1, :cond_4
+    const-string p0, "local draft not yet sync, ignore!"
 
-    sget-object v1, Lhw4;->a:Lhw4;
-
-    :goto_0
-    invoke-static {v1, p1}, Lcqc;->t(Ljava/util/List;Ljava/util/List;)Ljava/util/List;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Ldp4;->c(Ljava/util/List;)V
-
-    new-instance v1, Lap4;
-
-    invoke-direct {v1, p1}, Lap4;-><init>(Ljava/util/List;)V
-
-    iput-object v1, p0, Ldp4;->e:Lgt0;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    monitor-exit v0
+    invoke-static {v0, p0, v1}, Lg47;->x(Ljava/lang/String;Ljava/lang/String;Ljava/util/concurrent/CancellationException;)V
 
     return-void
 
-    :cond_4
-    :try_start_2
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+    :cond_1
+    iget-wide v4, p0, Ldp4;->X:J
 
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+    cmp-long p1, v2, v4
 
-    throw p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    if-gez p1, :cond_2
 
-    :goto_1
-    monitor-exit v0
+    invoke-virtual {p0}, Lhl;->m()Ln82;
 
-    throw p0
+    move-result-object v6
+
+    const/4 v11, 0x0
+
+    iget-wide v9, p0, Ldp4;->X:J
+
+    iget-wide v7, p0, Ldp4;->o:J
+
+    invoke-virtual/range {v6 .. v11}, Ln82;->k(JJLm8a;)V
+
+    sub-long/2addr v4, v2
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
+
+    filled-new-array {p0}, [Ljava/lang/Object;
+
+    move-result-object p0
+
+    const/4 p1, 0x1
+
+    invoke-static {p0, p1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object p0
+
+    const-string p1, "chat has server draft older than current DRAFT_DISCARD server time, diff = %d, clear it"
+
+    invoke-static {v0, v1, p1, p0}, Lg47;->N(Ljava/lang/String;Ljava/lang/Exception;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    :cond_2
+    return-void
+
+    :cond_3
+    const-string p1, "draft already is null, ignore!"
+
+    invoke-static {v0, p1, v1}, Lg47;->x(Ljava/lang/String;Ljava/lang/String;Ljava/util/concurrent/CancellationException;)V
+
+    invoke-virtual {p0}, Lhl;->m()Ln82;
+
+    move-result-object v2
+
+    const/4 v7, 0x0
+
+    iget-wide v5, p0, Ldp4;->X:J
+
+    iget-wide v3, p0, Ldp4;->o:J
+
+    invoke-virtual/range {v2 .. v7}, Ln82;->k(JJLm8a;)V
+
+    return-void
 .end method
 
-.method public final b()Ljava/util/List;
+.method public final f(Lvie;)V
+    .locals 0
+
+    iget-object p1, p1, Lvie;->c:Ljava/lang/String;
+
+    invoke-static {p1}, Lou0;->w(Ljava/lang/String;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    invoke-virtual {p0}, Ldp4;->d()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final g()[B
+    .locals 3
+
+    new-instance v0, Lru/ok/tamtam/nano/Tasks$DraftDiscard;
+
+    invoke-direct {v0}, Lru/ok/tamtam/nano/Tasks$DraftDiscard;-><init>()V
+
+    iget-wide v1, p0, Lhl;->a:J
+
+    iput-wide v1, v0, Lru/ok/tamtam/nano/Tasks$DraftDiscard;->requestId:J
+
+    iget-wide v1, p0, Ldp4;->o:J
+
+    iput-wide v1, v0, Lru/ok/tamtam/nano/Tasks$DraftDiscard;->chatId:J
+
+    iget-wide v1, p0, Ldp4;->X:J
+
+    iput-wide v1, v0, Lru/ok/tamtam/nano/Tasks$DraftDiscard;->serverTime:J
+
+    invoke-static {v0}, Lnv8;->toByteArray(Lnv8;)[B
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final getId()J
+    .locals 2
+
+    iget-wide v0, p0, Lhl;->a:J
+
+    return-wide v0
+.end method
+
+.method public final getType()Lyra;
+    .locals 0
+
+    sget-object p0, Lyra;->T0:Lyra;
+
+    return-object p0
+.end method
+
+.method public final h()I
+    .locals 0
+
+    const p0, 0xf4240
+
+    return p0
+.end method
+
+.method public final i()Lije;
     .locals 10
 
-    iget-object p0, p0, Ldp4;->a:Ljava/io/File;
+    invoke-virtual {p0}, Lhl;->m()Ln82;
 
-    invoke-virtual {p0}, Ljava/io/File;->exists()Z
+    move-result-object v0
 
-    move-result v0
+    iget-wide v1, p0, Ldp4;->o:J
 
-    sget-object v1, Lhw4;->a:Lhw4;
+    invoke-virtual {v0, v1, v2}, Ln82;->C(J)Ly42;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    return-object v1
+    iget-object p0, p0, Ldp4;->Y:Ljava/lang/String;
 
-    :cond_0
-    :try_start_0
-    invoke-static {p0}, Lng5;->M(Ljava/io/File;)Ljava/lang/String;
+    const-string v0, "createRequest: No chat. return null"
 
-    move-result-object v0
-
-    new-instance v2, Lorg/json/JSONArray;
-
-    invoke-direct {v2, v0}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
-
-    invoke-static {}, Lhwf;->c()Llg7;
-
-    move-result-object v0
-
-    invoke-virtual {v2}, Lorg/json/JSONArray;->length()I
-
-    move-result v3
-
-    const/4 v4, 0x0
-
-    :goto_0
-    if-ge v4, v3, :cond_1
-
-    invoke-virtual {v2, v4}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
-
-    move-result-object v5
-
-    new-instance v6, Lfp4;
-
-    const-string v7, "event"
-
-    invoke-virtual {v5, v7}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v7
-
-    const-string v8, "reason"
-
-    invoke-virtual {v5, v8}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v8
-
-    const-string v9, "count"
-
-    invoke-virtual {v5, v9}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
-
-    move-result v5
-
-    invoke-direct {v6, v7, v8, v5}, Lfp4;-><init>(Ljava/lang/String;Ljava/lang/String;I)V
-
-    invoke-virtual {v0, v6}, Llg7;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    invoke-static {v0}, Lhwf;->a(Ljava/util/List;)Llg7;
-
-    move-result-object p0
-    :try_end_0
-    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p0
-
-    :catch_0
-    invoke-static {p0}, Ljava/util/Objects;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, v0}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v1
 
-    :catch_1
-    invoke-static {p0}, Ljava/util/Objects;->toString(Ljava/lang/Object;)Ljava/lang/String;
-
-    :try_start_1
-    invoke-static {p0}, Lh2g;->h(Ljava/io/File;)V
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
-
-    goto :goto_1
-
-    :catch_2
-    invoke-static {p0}, Ljava/util/Objects;->toString(Ljava/lang/Object;)Ljava/lang/String;
-
-    :goto_1
-    return-object v1
-.end method
-
-.method public final c(Ljava/util/List;)V
-    .locals 7
-
-    iget-object v0, p0, Ldp4;->c:Ljava/io/File;
-
-    iget-object v1, p0, Ldp4;->a:Ljava/io/File;
-
-    new-instance v2, Lorg/json/JSONArray;
-
-    invoke-direct {v2}, Lorg/json/JSONArray;-><init>()V
-
-    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lfp4;
-
-    new-instance v4, Lorg/json/JSONObject;
-
-    invoke-direct {v4}, Lorg/json/JSONObject;-><init>()V
-
-    iget-object v5, v3, Lfp4;->a:Ljava/lang/String;
-
-    const-string v6, "event"
-
-    invoke-virtual {v4, v6, v5}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    const-string v5, "reason"
-
-    iget-object v6, v3, Lfp4;->b:Ljava/lang/String;
-
-    invoke-virtual {v4, v5, v6}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    const-string v5, "count"
-
-    iget v3, v3, Lfp4;->c:I
-
-    invoke-virtual {v4, v5, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
-
-    invoke-virtual {v2, v4}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
-
-    goto :goto_0
-
     :cond_0
-    invoke-virtual {v2}, Lorg/json/JSONArray;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    :try_start_0
-    iget-object p0, p0, Ldp4;->b:Ljava/io/File;
-
-    invoke-static {p0}, Lh2g;->t(Ljava/io/File;)V
-
-    invoke-static {v0, p1}, Lng5;->O(Ljava/io/File;Ljava/lang/String;)V
-
-    invoke-static {v0, v1}, Lh2g;->y(Ljava/io/File;Ljava/io/File;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_1
-
-    :catch_0
-    invoke-static {v1}, Ljava/util/Objects;->toString(Ljava/lang/Object;)Ljava/lang/String;
-
-    :try_start_1
-    invoke-static {v1}, Lh2g;->h(Ljava/io/File;)V
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
-
-    goto :goto_1
-
-    :catch_1
-    invoke-static {v1}, Ljava/util/Objects;->toString(Ljava/lang/Object;)Ljava/lang/String;
-
-    :goto_1
-    return-void
-.end method
-
-.method public final d()Ljava/util/List;
-    .locals 4
-
-    iget-object v0, p0, Ldp4;->e:Lgt0;
-
-    instance-of v1, v0, Lap4;
-
-    if-eqz v1, :cond_0
-
-    move-object v1, v0
-
-    check-cast v1, Lap4;
-
-    iget-object v1, v1, Lap4;->h:Ljava/util/List;
-
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    sget-object p0, Lhw4;->a:Lhw4;
-
-    return-object p0
-
-    :cond_0
-    instance-of v0, v0, Lcp4;
-
-    if-eqz v0, :cond_1
-
-    sget-object p0, Lhw4;->a:Lhw4;
-
-    return-object p0
-
-    :cond_1
-    iget-object v0, p0, Ldp4;->f:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Ldp4;->e:Lgt0;
-
-    instance-of v2, v1, Lbp4;
-
-    if-eqz v2, :cond_2
-
-    invoke-virtual {p0}, Ldp4;->b()Ljava/util/List;
-
-    move-result-object v1
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_2
-
-    :cond_2
-    instance-of v2, v1, Lap4;
-
-    if-eqz v2, :cond_4
-
-    check-cast v1, Lap4;
-
-    iget-object v1, v1, Lap4;->h:Ljava/util/List;
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Collection;->isEmpty()Z
+    invoke-virtual {v0}, Ly42;->L()Z
 
     move-result v2
 
-    xor-int/lit8 v2, v2, 0x1
+    const-wide/16 v3, 0x0
 
     if-eqz v2, :cond_3
 
-    iget-object v2, p0, Ldp4;->a:Ljava/io/File;
+    invoke-virtual {v0}, Ly42;->l()Lnj3;
 
-    iget-object v3, p0, Ldp4;->d:Ljava/io/File;
+    move-result-object v2
 
-    invoke-virtual {v2, v3}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
+    if-eqz v2, :cond_1
 
-    new-instance v2, Lcp4;
+    invoke-virtual {v2}, Lnj3;->n()J
 
-    invoke-direct {v2, v1}, Lcp4;-><init>(Ljava/util/List;)V
+    move-result-wide v5
 
-    iput-object v2, p0, Ldp4;->e:Lgt0;
+    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    goto :goto_0
+
+    :cond_1
+    move-object v2, v1
+
+    :goto_0
+    if-eqz v2, :cond_2
+
+    invoke-virtual {v2}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide v5
 
     goto :goto_1
 
+    :cond_2
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "Required value was null."
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
     :cond_3
-    new-instance v2, Lap4;
-
-    sget-object v3, Lhw4;->a:Lhw4;
-
-    invoke-direct {v2, v3}, Lap4;-><init>(Ljava/util/List;)V
-
-    iput-object v2, p0, Ldp4;->e:Lgt0;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-wide v5, v3
 
     :goto_1
-    monitor-exit v0
+    new-instance v2, Lnb2;
 
-    return-object v1
+    cmp-long v7, v5, v3
+
+    if-nez v7, :cond_4
+
+    iget-object v0, v0, Ly42;->b:Lj92;
+
+    iget-wide v8, v0, Lj92;->a:J
+
+    goto :goto_2
 
     :cond_4
-    :try_start_1
-    instance-of p0, v1, Lcp4;
-
-    if-eqz p0, :cond_5
-
-    sget-object p0, Lhw4;->a:Lhw4;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    monitor-exit v0
-
-    return-object p0
-
-    :cond_5
-    :try_start_2
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    move-wide v8, v3
 
     :goto_2
-    monitor-exit v0
+    const/16 v0, 0x12
 
-    throw p0
+    invoke-direct {v2, v1, v0}, Lnb2;-><init>(Llja;I)V
+
+    if-eqz v7, :cond_5
+
+    const-string v0, "userId"
+
+    invoke-virtual {v2, v5, v6, v0}, Lije;->i(JLjava/lang/String;)V
+
+    :cond_5
+    cmp-long v0, v8, v3
+
+    if-eqz v0, :cond_6
+
+    const-string v0, "chatId"
+
+    invoke-virtual {v2, v8, v9, v0}, Lije;->i(JLjava/lang/String;)V
+
+    :cond_6
+    iget-wide v0, p0, Ldp4;->X:J
+
+    cmp-long p0, v0, v3
+
+    if-eqz p0, :cond_7
+
+    const-string p0, "time"
+
+    invoke-virtual {v2, v0, v1, p0}, Lije;->i(JLjava/lang/String;)V
+
+    :cond_7
+    return-object v2
 .end method

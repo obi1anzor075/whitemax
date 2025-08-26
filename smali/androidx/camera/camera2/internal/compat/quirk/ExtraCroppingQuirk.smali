@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lzkb;
+.implements Lkpb;
 
 
 # static fields
@@ -84,11 +84,9 @@
 
     move-result v0
 
-    const/4 v1, 0x0
-
     if-eqz v0, :cond_3
 
-    invoke-static {p0}, Lhr1;->t(I)I
+    invoke-static {p0}, Lzt1;->s(I)I
 
     move-result p0
 
@@ -102,7 +100,7 @@
 
     if-eq p0, v0, :cond_0
 
-    return-object v1
+    goto :goto_0
 
     :cond_0
     new-instance p0, Landroid/util/Size;
@@ -138,7 +136,10 @@
     return-object p0
 
     :cond_3
-    return-object v1
+    :goto_0
+    const/4 p0, 0x0
+
+    return-object p0
 .end method
 
 .method public static f()Z
@@ -154,27 +155,27 @@
 
     if-eqz v0, :cond_1
 
-    sget-object v0, Landroidx/camera/camera2/internal/compat/quirk/ExtraCroppingQuirk;->a:Ljava/util/HashMap;
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v3
+    sget-object v3, Landroidx/camera/camera2/internal/compat/quirk/ExtraCroppingQuirk;->a:Ljava/util/HashMap;
 
-    invoke-virtual {v0, v3}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v2}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_1
+    if-eqz v2, :cond_1
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -184,7 +185,7 @@
 
     const/4 v0, 0x1
 
-    goto :goto_0
+    return v0
 
     :cond_0
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -197,7 +198,6 @@
 
     move-result v0
 
-    :goto_0
     return v0
 
     :cond_1

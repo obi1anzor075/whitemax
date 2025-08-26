@@ -38,14 +38,11 @@
 
     if-eqz p0, :cond_0
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
-    move-result-object p0
-
-    :goto_0
     return-object p0
 .end method
 

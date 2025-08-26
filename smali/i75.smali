@@ -1,34 +1,19 @@
-.class public interface abstract Li75;
+.class public final Li75;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final v:Lsmc;
+# instance fields
+.field public final synthetic a:Ls75;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ls75;)V
+    .locals 0
 
-    new-instance v0, Lsmc;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0xa
-
-    invoke-direct {v0, v1}, Lsmc;-><init>(I)V
-
-    sput-object v0, Li75;->v:Lsmc;
+    iput-object p1, p0, Li75;->a:Ls75;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public abstract B(II)Lbpe;
-.end method
-
-.method public abstract M(Lvtc;)V
-.end method
-
-.method public abstract w()V
 .end method

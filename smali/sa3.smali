@@ -1,163 +1,86 @@
-.class public final Lsa3;
+.class public final synthetic Lsa3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Llmb;
+
 
 # instance fields
-.field public final a:Ljava/util/concurrent/Executor;
-
-.field public final b:Ljava/util/concurrent/Executor;
-
-.field public final c:Liuf;
-
-.field public final d:Lcqc;
-
-.field public final e:Lgvf;
-
-.field public final f:I
-
-.field public final g:I
-
-.field public final h:I
+.field public final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>(Ldi9;)V
-    .locals 6
+.method public synthetic constructor <init>(I)V
+    .locals 0
+
+    iput p1, p0, Lsa3;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p1, Ldi9;->b:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/concurrent/Executor;
-
-    const/4 v1, 0x2
-
-    const/4 v2, 0x4
-
-    const/4 v3, 0x1
-
-    if-nez v0, :cond_0
-
-    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Runtime;->availableProcessors()I
-
-    move-result v0
-
-    sub-int/2addr v0, v3
-
-    invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
-
-    move-result v0
-
-    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
-
-    move-result v0
-
-    new-instance v4, Lpa3;
-
-    const/4 v5, 0x0
-
-    invoke-direct {v4, v5}, Lpa3;-><init>(Z)V
-
-    invoke-static {v0, v4}, Ljava/util/concurrent/Executors;->newFixedThreadPool(ILjava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lsa3;->a:Ljava/util/concurrent/Executor;
-
-    goto :goto_0
-
-    :cond_0
-    iput-object v0, p0, Lsa3;->a:Ljava/util/concurrent/Executor;
-
-    :goto_0
-    iget-object v0, p1, Ldi9;->d:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/concurrent/Executor;
-
-    if-nez v0, :cond_1
-
-    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Runtime;->availableProcessors()I
-
-    move-result v0
-
-    sub-int/2addr v0, v3
-
-    invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
-
-    move-result v0
-
-    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
-
-    move-result v0
-
-    new-instance v1, Lpa3;
-
-    invoke-direct {v1, v3}, Lpa3;-><init>(Z)V
-
-    invoke-static {v0, v1}, Ljava/util/concurrent/Executors;->newFixedThreadPool(ILjava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lsa3;->b:Ljava/util/concurrent/Executor;
-
-    goto :goto_1
-
-    :cond_1
-    iput-object v0, p0, Lsa3;->b:Ljava/util/concurrent/Executor;
-
-    :goto_1
-    iget-object v0, p1, Ldi9;->c:Ljava/lang/Object;
-
-    check-cast v0, Liuf;
-
-    if-nez v0, :cond_2
-
-    sget-object v0, Liuf;->a:Ljava/lang/String;
-
-    new-instance v0, Lhuf;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lsa3;->c:Liuf;
-
-    goto :goto_2
-
-    :cond_2
-    iput-object v0, p0, Lsa3;->c:Liuf;
-
-    :goto_2
-    new-instance v0, Lcqc;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lsa3;->d:Lcqc;
-
-    new-instance v0, Lgvf;
-
-    const/16 v1, 0xc
-
-    invoke-direct {v0, v1}, Lgvf;-><init>(I)V
-
-    iput-object v0, p0, Lsa3;->e:Lgvf;
-
-    iput v2, p0, Lsa3;->f:I
-
-    const v0, 0x7fffffff
-
-    iput v0, p0, Lsa3;->g:I
-
-    iget p1, p1, Ldi9;->a:I
-
-    iput p1, p0, Lsa3;->h:I
-
     return-void
+.end method
+
+
+# virtual methods
+.method public final get()Ljava/lang/Object;
+    .locals 1
+
+    iget p0, p0, Lsa3;->a:I
+
+    const/4 v0, 0x0
+
+    packed-switch p0, :pswitch_data_0
+
+    return-object v0
+
+    :pswitch_0
+    sget-object p0, Lcom/google/firebase/messaging/FirebaseMessaging;->k:Lg7e;
+
+    return-object v0
+
+    :pswitch_1
+    invoke-static {}, Lcom/google/firebase/concurrent/ExecutorsRegistrar;->b()Ljava/util/concurrent/ScheduledExecutorService;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_2
+    invoke-static {}, Lcom/google/firebase/concurrent/ExecutorsRegistrar;->h()Ljava/util/concurrent/ScheduledExecutorService;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_3
+    invoke-static {}, Lcom/google/firebase/concurrent/ExecutorsRegistrar;->c()Ljava/util/concurrent/ScheduledExecutorService;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_4
+    invoke-static {}, Lcom/google/firebase/concurrent/ExecutorsRegistrar;->f()Ljava/util/concurrent/ScheduledExecutorService;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_5
+    sget-object p0, Ljava/util/Collections;->EMPTY_SET:Ljava/util/Set;
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

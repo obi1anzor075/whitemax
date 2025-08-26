@@ -1,19 +1,19 @@
 .class public final Lveb;
-.super Lcfb;
+.super Lxeb;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Landroid/content/Intent;
+.field public final a:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Intent;)V
+.method public constructor <init>(Ljava/util/List;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lveb;->a:Landroid/content/Intent;
+    iput-object p1, p0, Lveb;->a:Ljava/util/List;
 
     return-void
 .end method
@@ -41,11 +41,11 @@
     :cond_1
     check-cast p1, Lveb;
 
-    iget-object p0, p0, Lveb;->a:Landroid/content/Intent;
+    iget-object p0, p0, Lveb;->a:Ljava/util/List;
 
-    iget-object p1, p1, Lveb;->a:Landroid/content/Intent;
+    iget-object p1, p1, Lveb;->a:Ljava/util/List;
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -60,7 +60,7 @@
 .method public final hashCode()I
     .locals 0
 
-    iget-object p0, p0, Lveb;->a:Landroid/content/Intent;
+    iget-object p0, p0, Lveb;->a:Ljava/util/List;
 
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
@@ -74,11 +74,11 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "SelectPhotoFromCamera(intent="
+    const-string v1, "ShowMoreActions(actions="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p0, Lveb;->a:Landroid/content/Intent;
+    iget-object p0, p0, Lveb;->a:Ljava/util/List;
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

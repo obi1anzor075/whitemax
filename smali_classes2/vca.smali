@@ -1,27 +1,61 @@
 .class public final Lvca;
-.super Ljava/lang/Object;
+.super Lxca;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Ly0c;
-
-.field public final b:Ljava/util/concurrent/CopyOnWriteArrayList;
+# static fields
+.field public static final a:Lvca;
 
 
 # direct methods
-.method public constructor <init>(Ly0c;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lvca;
 
-    iput-object p1, p0, Lvca;->a:Ly0c;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    new-instance p1, Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    invoke-direct {p1}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
-
-    iput-object p1, p0, Lvca;->b:Ljava/util/concurrent/CopyOnWriteArrayList;
+    sput-object v0, Lvca;->a:Lvca;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of p0, p1, Lvca;
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    const p0, -0x18624f91
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "Stub"
+
+    return-object p0
 .end method

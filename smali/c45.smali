@@ -1,58 +1,81 @@
-.class public final synthetic Lc45;
-.super Ljava/lang/Object;
+.class public final Lc45;
+.super Le0;
 .source "SourceFile"
 
 # interfaces
-.implements Llh7;
+.implements Lkx3;
 
 
-# instance fields
-.field public final synthetic a:I
+# static fields
+.field public static final a:Lc45;
 
-.field public final synthetic b:Lk20;
+.field public static final b:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lk20;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput p2, p0, Lc45;->a:I
+    new-instance v0, Lc45;
 
-    iput-object p1, p0, Lc45;->b:Lk20;
+    sget-object v1, Loa9;->b:Loa9;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0, v1}, Le0;-><init>(Lgx3;)V
+
+    sput-object v0, Lc45;->a:Lc45;
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lc45;->b:Ljava/lang/Object;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    new-instance v0, Ljava/util/LinkedHashMap;
+
+    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 0
 
-    iget v0, p0, Lc45;->a:I
+    instance-of p0, p1, Lc45;
 
-    check-cast p1, Lhya;
+    if-nez p0, :cond_1
 
-    packed-switch v0, :pswitch_data_0
+    instance-of p0, p1, Ld45;
 
-    iget-object p0, p0, Lc45;->b:Lk20;
+    if-eqz p0, :cond_0
 
-    invoke-interface {p1, p0}, Lhya;->v(Lk20;)V
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    :goto_0
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final i(Lhx3;Ljava/lang/Throwable;)V
+    .locals 0
+
+    sget-object p0, Lc45;->b:Ljava/lang/Object;
+
+    monitor-enter p0
+
+    monitor-exit p0
 
     return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lc45;->b:Lk20;
-
-    invoke-interface {p1, p0}, Lhya;->v(Lk20;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

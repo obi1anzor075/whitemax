@@ -1,42 +1,61 @@
 .class public final Lxld;
-.super Ljava/lang/Object;
+.super Lf35;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Comparable;
 
-
-# instance fields
-.field public final a:I
-
-.field public final b:I
+# static fields
+.field public static final a:Lxld;
 
 
 # direct methods
-.method public constructor <init>(II)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lxld;
 
-    iput p1, p0, Lxld;->a:I
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput p2, p0, Lxld;->b:I
+    sput-object v0, Lxld;->a:Lxld;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compareTo(Ljava/lang/Object;)I
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    check-cast p1, Lxld;
+    const/4 v0, 0x1
 
-    iget p0, p0, Lxld;->a:I
+    if-ne p0, p1, :cond_0
 
-    iget p1, p1, Lxld;->a:I
+    return v0
 
-    sub-int/2addr p0, p1
+    :cond_0
+    instance-of p0, p1, Lxld;
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
 
     return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    const p0, -0x18b578b0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "ShowKeyboard"
+
+    return-object p0
 .end method

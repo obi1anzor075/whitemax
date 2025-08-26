@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:fresco="http://schemas.android.com/apk/res-auto">
-    <include layout="@layout/row_message_control__tv" />
-    <FrameLayout android:layout_gravity="center" android:id="@id/row_message_control__iv_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1.0dip" android:layout_marginBottom="3.0dip">
-        <com.facebook.drawee.view.SimpleDraweeView android:layout_gravity="center" android:id="@id/row_message_control__iv" android:layout_width="50.0dip" android:layout_height="50.0dip" fresco:actualImageScaleType="centerCrop" fresco:roundAsCircle="true" />
-    </FrameLayout>
-    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/font_small" android:gravity="center" android:autoLink="none" android:layout_gravity="center" android:id="@id/row_message_control__tv_action_text" android:paddingLeft="12.0dip" android:paddingTop="6.0dip" android:paddingRight="12.0dip" android:paddingBottom="7.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1.0dip" android:layout_marginBottom="9.0dip" android:maxWidth="276.0dip" android:paddingStart="12.0dip" android:paddingEnd="12.0dip" />
-</LinearLayout>

@@ -1,5 +1,5 @@
 .class public abstract Landroidx/work/CoroutineWorker;
-.super Lhh7;
+.super Lgm7;
 .source "SourceFile"
 
 
@@ -10,7 +10,7 @@
     }
     d2 = {
         "Landroidx/work/CoroutineWorker;",
-        "Lhh7;",
+        "Lgm7;",
         "Landroid/content/Context;",
         "appContext",
         "Landroidx/work/WorkerParameters;",
@@ -25,56 +25,57 @@
         0x7,
         0x1
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
-.field public final a:Lh37;
+.field public final a:Lw77;
 
-.field public final b:Lb4d;
+.field public final b:Liad;
 
-.field public final c:Lha4;
+.field public final c:Lqd4;
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroidx/work/WorkerParameters;)V
     .locals 1
 
-    invoke-direct {p0, p1, p2}, Lhh7;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;)V
+    invoke-direct {p0, p1, p2}, Lgm7;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;)V
 
-    invoke-static {}, Llp;->a()Lh37;
+    invoke-static {}, Lk3c;->b()Lw77;
 
     move-result-object p1
 
-    iput-object p1, p0, Landroidx/work/CoroutineWorker;->a:Lh37;
+    iput-object p1, p0, Landroidx/work/CoroutineWorker;->a:Lw77;
 
-    new-instance p1, Lb4d;
+    new-instance p1, Liad;
 
     invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Landroidx/work/CoroutineWorker;->b:Lb4d;
+    iput-object p1, p0, Landroidx/work/CoroutineWorker;->b:Liad;
 
-    new-instance p2, Lds1;
+    new-instance p2, Lvt1;
 
-    const/16 v0, 0x12
+    const/16 v0, 0x17
 
-    invoke-direct {p2, v0, p0}, Lds1;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p2, v0, p0}, Lvt1;-><init>(ILjava/lang/Object;)V
 
-    invoke-virtual {p0}, Lhh7;->getTaskExecutor()Lbee;
+    invoke-virtual {p0}, Lgm7;->getTaskExecutor()Lzle;
 
     move-result-object v0
 
-    check-cast v0, Lduf;
+    check-cast v0, Ljab;
 
-    iget-object v0, v0, Lduf;->a:Ljava/lang/Object;
+    iget-object v0, v0, Ljab;->a:Ljava/lang/Object;
 
-    check-cast v0, Lqm;
+    check-cast v0, La5d;
 
-    invoke-virtual {p1, p2, v0}, Ll1;->c(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    invoke-virtual {p1, p2, v0}, Ln1;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
-    sget-object p1, Loi4;->a:Lha4;
+    sget-object p1, Lql4;->a:Lqd4;
 
-    iput-object p1, p0, Landroidx/work/CoroutineWorker;->c:Lha4;
+    iput-object p1, p0, Landroidx/work/CoroutineWorker;->c:Lqd4;
 
     return-void
 .end method
@@ -84,36 +85,36 @@
 .method public abstract doWork(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 .end method
 
-.method public final getForegroundInfoAsync()Lch7;
+.method public final getForegroundInfoAsync()Lbm7;
     .locals 4
 
-    invoke-static {}, Llp;->a()Lh37;
+    invoke-static {}, Lk3c;->b()Lw77;
 
     move-result-object v0
 
-    iget-object v1, p0, Landroidx/work/CoroutineWorker;->c:Lha4;
+    iget-object v1, p0, Landroidx/work/CoroutineWorker;->c:Lqd4;
 
-    invoke-virtual {v1, v0}, Le0;->plus(Lhu3;)Lhu3;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ln1g;->a(Lhu3;)Lkotlinx/coroutines/internal/ContextScope;
+    invoke-virtual {v1, v0}, Le0;->plus(Lhx3;)Lhx3;
 
     move-result-object v1
 
-    new-instance v2, Ls37;
+    invoke-static {v1}, Lvk9;->a(Lhx3;)Lkotlinx/coroutines/internal/ContextScope;
 
-    invoke-direct {v2, v0}, Ls37;-><init>(Lh37;)V
+    move-result-object v1
 
-    new-instance v0, Lsu3;
+    new-instance v2, Lh87;
+
+    invoke-direct {v2, v0}, Lh87;-><init>(Lw77;)V
+
+    new-instance v0, Lsx3;
 
     const/4 v3, 0x0
 
-    invoke-direct {v0, v2, p0, v3}, Lsu3;-><init>(Ls37;Landroidx/work/CoroutineWorker;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, v2, p0, v3}, Lsx3;-><init>(Lh87;Landroidx/work/CoroutineWorker;Lkotlin/coroutines/Continuation;)V
 
     const/4 p0, 0x3
 
-    invoke-static {v1, v3, v3, v0, p0}, Lxs7;->E(Lou3;Lhu3;Lru3;Li26;I)Lqod;
+    invoke-static {v1, v3, v3, v0, p0}, Lzo3;->E(Lox3;Lhx3;Lrx3;Ll66;I)Ldwd;
 
     return-object v2
 .end method
@@ -121,41 +122,41 @@
 .method public final onStopped()V
     .locals 1
 
-    iget-object p0, p0, Landroidx/work/CoroutineWorker;->b:Lb4d;
+    iget-object p0, p0, Landroidx/work/CoroutineWorker;->b:Liad;
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Ll1;->cancel(Z)Z
+    invoke-virtual {p0, v0}, Ln1;->cancel(Z)Z
 
     return-void
 .end method
 
-.method public final startWork()Lch7;
+.method public final startWork()Lbm7;
     .locals 4
 
-    iget-object v0, p0, Landroidx/work/CoroutineWorker;->a:Lh37;
+    iget-object v0, p0, Landroidx/work/CoroutineWorker;->c:Lqd4;
 
-    iget-object v1, p0, Landroidx/work/CoroutineWorker;->c:Lha4;
+    iget-object v1, p0, Landroidx/work/CoroutineWorker;->a:Lw77;
 
-    invoke-virtual {v1, v0}, Le0;->plus(Lhu3;)Lhu3;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ln1g;->a(Lhu3;)Lkotlinx/coroutines/internal/ContextScope;
+    invoke-virtual {v0, v1}, Le0;->plus(Lhx3;)Lhx3;
 
     move-result-object v0
 
-    new-instance v1, Ltu3;
+    invoke-static {v0}, Lvk9;->a(Lhx3;)Lkotlinx/coroutines/internal/ContextScope;
+
+    move-result-object v0
+
+    new-instance v1, Ltx3;
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, p0, v2}, Ltu3;-><init>(Landroidx/work/CoroutineWorker;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v1, p0, v2}, Ltx3;-><init>(Landroidx/work/CoroutineWorker;Lkotlin/coroutines/Continuation;)V
 
     const/4 v3, 0x3
 
-    invoke-static {v0, v2, v2, v1, v3}, Lxs7;->E(Lou3;Lhu3;Lru3;Li26;I)Lqod;
+    invoke-static {v0, v2, v2, v1, v3}, Lzo3;->E(Lox3;Lhx3;Lrx3;Ll66;I)Ldwd;
 
-    iget-object p0, p0, Landroidx/work/CoroutineWorker;->b:Lb4d;
+    iget-object p0, p0, Landroidx/work/CoroutineWorker;->b:Liad;
 
     return-object p0
 .end method

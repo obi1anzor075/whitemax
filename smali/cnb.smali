@@ -1,257 +1,400 @@
-.class public abstract Lcnb;
-.super Ljava/lang/Object;
+.class public final Lcnb;
+.super Lsg3;
 .source "SourceFile"
 
 
 # static fields
-.field public static bg_icon_top_panel:I = 0x7f0801b5
+.field public static final c:[Lbnb;
 
-.field public static call_audio_32:I = 0x7f0801ca
+.field public static final o:[Lbnb;
 
-.field public static call_video_32:I = 0x7f0801cd
 
-.field public static cancel_outline_32:I = 0x7f0801d2
+# instance fields
+.field public final a:Ljava/util/concurrent/atomic/AtomicReference;
 
-.field public static ic_add_members_fill_24:I = 0x7f0803b9
+.field public b:Ljava/lang/Throwable;
 
-.field public static ic_add_more_users_22:I = 0x7f0803ba
 
-.field public static ic_add_to_call_24:I = 0x7f0803bc
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
 
-.field public static ic_add_user_18:I = 0x7f0803be
+    const/4 v0, 0x0
 
-.field public static ic_admin_camera_disable_24:I = 0x7f0803c1
+    new-array v1, v0, [Lbnb;
 
-.field public static ic_admin_camera_disable_28:I = 0x7f0803c2
+    sput-object v1, Lcnb;->c:[Lbnb;
 
-.field public static ic_admin_camera_setting_24:I = 0x7f0803c3
+    new-array v0, v0, [Lbnb;
 
-.field public static ic_admin_mic_disable_24:I = 0x7f0803c4
+    sput-object v0, Lcnb;->o:[Lbnb;
 
-.field public static ic_admin_mic_disable_28:I = 0x7f0803c5
+    return-void
+.end method
 
-.field public static ic_admin_mic_setting_24:I = 0x7f0803c6
+.method public constructor <init>()V
+    .locals 2
 
-.field public static ic_admin_record_setting_24:I = 0x7f0803c7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field public static ic_admin_screen_action_disable_28:I = 0x7f0803c8
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
-.field public static ic_admin_setting_camera_disable_24:I = 0x7f0803c9
+    sget-object v1, Lcnb;->o:[Lbnb;
 
-.field public static ic_admin_setting_mic_disable_24:I = 0x7f0803ca
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
 
-.field public static ic_admin_setting_remove_user_24:I = 0x7f0803cb
+    iput-object v0, p0, Lcnb;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
-.field public static ic_admin_setting_sharing_disable_24:I = 0x7f0803cc
+    return-void
+.end method
 
-.field public static ic_admin_settings_24:I = 0x7f0803cd
 
-.field public static ic_admin_settings_low_hand_24:I = 0x7f0803ce
+# virtual methods
+.method public final b()V
+    .locals 4
 
-.field public static ic_admin_sharing_setting_24:I = 0x7f0803cf
+    iget-object p0, p0, Lcnb;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
-.field public static ic_apply_16:I = 0x7f0803d2
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-.field public static ic_back_18:I = 0x7f0803ee
+    move-result-object v0
 
-.field public static ic_bluetooth_32:I = 0x7f0803f8
+    sget-object v1, Lcnb;->c:[Lbnb;
 
-.field public static ic_bluetooth_fill_24:I = 0x7f0803f9
+    if-ne v0, v1, :cond_0
 
-.field public static ic_bluetooth_fill_28:I = 0x7f0803fa
+    goto :goto_1
 
-.field public static ic_call_22:I = 0x7f080401
+    :cond_0
+    invoke-virtual {p0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
 
-.field public static ic_call_90:I = 0x7f080403
+    move-result-object p0
 
-.field public static ic_call_add_user_24:I = 0x7f080404
+    check-cast p0, [Lbnb;
 
-.field public static ic_call_fill_16:I = 0x7f08040c
+    array-length v0, p0
 
-.field public static ic_call_mode_default_18:I = 0x7f080414
+    const/4 v1, 0x0
 
-.field public static ic_call_mode_grid_24:I = 0x7f080415
+    :goto_0
+    if-ge v1, v0, :cond_2
 
-.field public static ic_call_oneme_18:I = 0x7f080417
+    aget-object v2, p0, v1
 
-.field public static ic_call_settings_24:I = 0x7f08041a
+    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-.field public static ic_call_settings_28:I = 0x7f08041b
+    move-result v3
 
-.field public static ic_call_speaker_24:I = 0x7f08041c
+    if-nez v3, :cond_1
 
-.field public static ic_cancel_call_25:I = 0x7f080424
+    iget-object v2, v2, Lbnb;->a:La0a;
 
-.field public static ic_chevron_down_24:I = 0x7f080440
+    invoke-interface {v2}, La0a;->b()V
 
-.field public static ic_chevron_left_12:I = 0x7f080441
+    :cond_1
+    add-int/lit8 v1, v1, 0x1
 
-.field public static ic_clear_16:I = 0x7f080442
+    goto :goto_0
 
-.field public static ic_close_16:I = 0x7f08044d
+    :cond_2
+    :goto_1
+    return-void
+.end method
 
-.field public static ic_close_24:I = 0x7f08044e
+.method public final c(Lam4;)V
+    .locals 1
 
-.field public static ic_close_gray_20:I = 0x7f08044f
+    iget-object p0, p0, Lcnb;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
-.field public static ic_connection_fill_16:I = 0x7f080454
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-.field public static ic_connection_fill_28:I = 0x7f080455
+    move-result-object p0
 
-.field public static ic_copy_18:I = 0x7f08045c
+    sget-object v0, Lcnb;->c:[Lbnb;
 
-.field public static ic_copy_21:I = 0x7f08045e
+    if-ne p0, v0, :cond_0
 
-.field public static ic_delete_user_22:I = 0x7f080473
+    invoke-interface {p1}, Lam4;->f()V
 
-.field public static ic_down_chevron_24:I = 0x7f080480
+    :cond_0
+    return-void
+.end method
 
-.field public static ic_grid_mode_24:I = 0x7f0804bf
+.method public final h(Ljava/lang/Object;)V
+    .locals 4
 
-.field public static ic_hand_40:I = 0x7f0804e1
+    const-string v0, "onNext called with a null value."
 
-.field public static ic_hand_fill_left_28:I = 0x7f0804e2
+    invoke-static {p1, v0}, Lg45;->c(Ljava/lang/Object;Ljava/lang/String;)V
 
-.field public static ic_handdown_24:I = 0x7f0804e3
+    iget-object p0, p0, Lcnb;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
-.field public static ic_handdown_fill_28:I = 0x7f0804e4
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-.field public static ic_handup_fill_20:I = 0x7f0804e5
+    move-result-object p0
 
-.field public static ic_headphones_24:I = 0x7f0804e7
+    check-cast p0, [Lbnb;
 
-.field public static ic_headphones_fill_24:I = 0x7f0804e8
+    array-length v0, p0
 
-.field public static ic_headphones_fill_28:I = 0x7f0804e9
+    const/4 v1, 0x0
 
-.field public static ic_headphones_fill_32:I = 0x7f0804ea
+    :goto_0
+    if-ge v1, v0, :cond_1
 
-.field public static ic_incoming_call_fill_16:I = 0x7f0804f3
+    aget-object v2, p0, v1
 
-.field public static ic_incoming_video_call_fill_16:I = 0x7f0804f5
+    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-.field public static ic_invite_opponents_43:I = 0x7f0804fa
+    move-result v3
 
-.field public static ic_link_20:I = 0x7f080505
+    if-nez v3, :cond_0
 
-.field public static ic_link_24:I = 0x7f080507
+    iget-object v2, v2, Lbnb;->a:La0a;
 
-.field public static ic_link_44:I = 0x7f080508
+    invoke-interface {v2, p1}, La0a;->h(Ljava/lang/Object;)V
 
-.field public static ic_loading_16:I = 0x7f08050a
+    :cond_0
+    add-int/lit8 v1, v1, 0x1
 
-.field public static ic_lock_36:I = 0x7f080510
+    goto :goto_0
 
-.field public static ic_logo_21:I = 0x7f080511
+    :cond_1
+    return-void
+.end method
 
-.field public static ic_make_admin_19:I = 0x7f08051c
+.method public final onError(Ljava/lang/Throwable;)V
+    .locals 4
 
-.field public static ic_mic_disabled_24:I = 0x7f080532
+    const-string v0, "onError called with a null Throwable."
 
-.field public static ic_microphone_22:I = 0x7f080534
+    invoke-static {p1, v0}, Lg45;->c(Ljava/lang/Object;Ljava/lang/String;)V
 
-.field public static ic_microphone_26:I = 0x7f080536
+    iget-object v0, p0, Lcnb;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
-.field public static ic_microphone_disable_12:I = 0x7f080537
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-.field public static ic_microphone_disable_14:I = 0x7f080538
+    move-result-object v1
 
-.field public static ic_microphone_disable_26:I = 0x7f080539
+    sget-object v2, Lcnb;->c:[Lbnb;
 
-.field public static ic_microphone_off_fill_28:I = 0x7f08053e
+    if-ne v1, v2, :cond_0
 
-.field public static ic_microphone_on_fill_28:I = 0x7f080541
+    invoke-static {p1}, Lou0;->x(Ljava/lang/Throwable;)V
 
-.field public static ic_more_22:I = 0x7f080546
+    return-void
 
-.field public static ic_more_action_24:I = 0x7f080547
+    :cond_0
+    iput-object p1, p0, Lcnb;->b:Ljava/lang/Throwable;
 
-.field public static ic_open_chat_20:I = 0x7f0805e5
+    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
 
-.field public static ic_open_chat_22:I = 0x7f0805e6
+    move-result-object p0
 
-.field public static ic_phone_off_fill_28:I = 0x7f0805f5
+    check-cast p0, [Lbnb;
 
-.field public static ic_pin_13:I = 0x7f0805f9
+    array-length v0, p0
 
-.field public static ic_pin_21:I = 0x7f0805fa
+    const/4 v1, 0x0
 
-.field public static ic_pin_chat_21:I = 0x7f0805fc
+    :goto_0
+    if-ge v1, v0, :cond_2
 
-.field public static ic_pin_profile_21:I = 0x7f0805fe
+    aget-object v2, p0, v1
 
-.field public static ic_pip_mic_none_24:I = 0x7f080601
+    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-.field public static ic_pip_mic_off_24:I = 0x7f080602
+    move-result v3
 
-.field public static ic_profile_21:I = 0x7f08060e
+    if-eqz v3, :cond_1
 
-.field public static ic_record_24:I = 0x7f080611
+    invoke-static {p1}, Lou0;->x(Ljava/lang/Throwable;)V
 
-.field public static ic_record_screen_20:I = 0x7f080612
+    goto :goto_1
 
-.field public static ic_reject_16:I = 0x7f080614
+    :cond_1
+    iget-object v2, v2, Lbnb;->a:La0a;
 
-.field public static ic_rotation_view_16:I = 0x7f080623
+    invoke-interface {v2, p1}, La0a;->onError(Ljava/lang/Throwable;)V
 
-.field public static ic_row_right_24:I = 0x7f080626
+    :goto_1
+    add-int/lit8 v1, v1, 0x1
 
-.field public static ic_save_favorite_28:I = 0x7f080628
+    goto :goto_0
 
-.field public static ic_search_32:I = 0x7f08062a
+    :cond_2
+    return-void
+.end method
 
-.field public static ic_search_outline_16:I = 0x7f08062d
+.method public final p(La0a;)V
+    .locals 6
 
-.field public static ic_send_21:I = 0x7f080631
+    new-instance v0, Lbnb;
 
-.field public static ic_services_fill_24:I = 0x7f080639
+    invoke-direct {v0, p1, p0}, Lbnb;-><init>(La0a;Lcnb;)V
 
-.field public static ic_share_24:I = 0x7f080640
+    invoke-interface {p1, v0}, La0a;->c(Lam4;)V
 
-.field public static ic_share_screen_20:I = 0x7f080645
+    :goto_0
+    iget-object v1, p0, Lcnb;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
-.field public static ic_share_screen_41:I = 0x7f080646
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-.field public static ic_share_screen_fill_20:I = 0x7f080647
+    move-result-object v2
 
-.field public static ic_share_sound_22:I = 0x7f080649
+    check-cast v2, [Lbnb;
 
-.field public static ic_sound_on_fill_24:I = 0x7f080656
+    sget-object v3, Lcnb;->c:[Lbnb;
 
-.field public static ic_sound_on_fill_28:I = 0x7f080657
+    if-ne v2, v3, :cond_1
 
-.field public static ic_sound_on_fill_32:I = 0x7f080658
+    iget-object p0, p0, Lcnb;->b:Ljava/lang/Throwable;
 
-.field public static ic_speaker_mode_24:I = 0x7f080659
+    if-eqz p0, :cond_0
 
-.field public static ic_stop_record_24:I = 0x7f080663
+    invoke-interface {p1, p0}, La0a;->onError(Ljava/lang/Throwable;)V
 
-.field public static ic_unpin_21:I = 0x7f080676
+    return-void
 
-.field public static ic_user_more_24:I = 0x7f080681
+    :cond_0
+    invoke-interface {p1}, La0a;->b()V
 
-.field public static ic_user_waiting_room_48:I = 0x7f080682
+    return-void
 
-.field public static ic_user_was_removed_28:I = 0x7f080683
+    :cond_1
+    array-length v3, v2
 
-.field public static ic_video_22:I = 0x7f080689
+    add-int/lit8 v4, v3, 0x1
 
-.field public static ic_video_27:I = 0x7f08068b
+    new-array v4, v4, [Lbnb;
 
-.field public static ic_video_disabled_27:I = 0x7f08068f
+    const/4 v5, 0x0
 
-.field public static ic_videocam_off_fill_28:I = 0x7f080694
+    invoke-static {v2, v5, v4, v5, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-.field public static ic_videocam_on_fill_16:I = 0x7f080695
+    aput-object v0, v4, v3
 
-.field public static ic_videocam_on_fill_28:I = 0x7f080697
+    :cond_2
+    invoke-virtual {v1, v2, v4}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-.field public static ic_volume_bluetooth_23:I = 0x7f0806a3
+    move-result v3
 
-.field public static ic_volume_phone_24:I = 0x7f0806a4
+    if-eqz v3, :cond_4
 
-.field public static ic_volume_speakerphone_25:I = 0x7f0806a5
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-.field public static ic_waitin_room_24:I = 0x7f0806a6
+    move-result p1
 
-.field public static show_profile_24:I = 0x7f0807f8
+    if-eqz p1, :cond_3
+
+    invoke-virtual {p0, v0}, Lcnb;->y(Lbnb;)V
+
+    :cond_3
+    return-void
+
+    :cond_4
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    if-eq v3, v2, :cond_2
+
+    goto :goto_0
+.end method
+
+.method public final y(Lbnb;)V
+    .locals 7
+
+    :goto_0
+    iget-object v0, p0, Lcnb;->a:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, [Lbnb;
+
+    sget-object v2, Lcnb;->c:[Lbnb;
+
+    if-eq v1, v2, :cond_7
+
+    sget-object v2, Lcnb;->o:[Lbnb;
+
+    if-ne v1, v2, :cond_0
+
+    goto :goto_4
+
+    :cond_0
+    array-length v3, v1
+
+    const/4 v4, 0x0
+
+    move v5, v4
+
+    :goto_1
+    if-ge v5, v3, :cond_2
+
+    aget-object v6, v1, v5
+
+    if-ne v6, p1, :cond_1
+
+    goto :goto_2
+
+    :cond_1
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_1
+
+    :cond_2
+    const/4 v5, -0x1
+
+    :goto_2
+    if-gez v5, :cond_3
+
+    goto :goto_4
+
+    :cond_3
+    const/4 v6, 0x1
+
+    if-ne v3, v6, :cond_4
+
+    goto :goto_3
+
+    :cond_4
+    add-int/lit8 v2, v3, -0x1
+
+    new-array v2, v2, [Lbnb;
+
+    invoke-static {v1, v4, v2, v4, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    add-int/lit8 v4, v5, 0x1
+
+    sub-int/2addr v3, v5
+
+    sub-int/2addr v3, v6
+
+    invoke-static {v1, v4, v2, v5, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    :cond_5
+    :goto_3
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_6
+
+    goto :goto_4
+
+    :cond_6
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    if-eq v3, v1, :cond_5
+
+    goto :goto_0
+
+    :cond_7
+    :goto_4
+    return-void
+.end method

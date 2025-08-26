@@ -1,246 +1,100 @@
 .class public final Loj7;
-.super Landroid/graphics/drawable/Drawable;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/graphics/drawable/Animatable;
+.implements Lzm5;
 
 
 # instance fields
-.field public final X:Landroid/animation/ObjectAnimator;
+.field public final synthetic a:I
 
-.field public final a:Landroid/content/Context;
+.field public final synthetic b:Lzm5;
 
-.field public final b:I
-
-.field public final c:Lt97;
-
-.field public final o:Lbg;
+.field public final synthetic c:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(IILandroid/content/Context;)V
+.method public synthetic constructor <init>(Lzm5;Ljava/lang/String;I)V
     .locals 0
 
-    invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
+    iput p3, p0, Loj7;->a:I
 
-    iput-object p3, p0, Loj7;->a:Landroid/content/Context;
+    iput-object p1, p0, Loj7;->b:Lzm5;
 
-    iput p2, p0, Loj7;->b:I
+    iput-object p2, p0, Loj7;->c:Ljava/lang/String;
 
-    new-instance p2, Lz65;
-
-    const/4 p3, 0x1
-
-    invoke-direct {p2, p1, p3, p0}, Lz65;-><init>(IILjava/lang/Object;)V
-
-    const/4 p1, 0x3
-
-    invoke-static {p1, p2}, Lez3;->O(ILs16;)Lt97;
-
-    move-result-object p1
-
-    iput-object p1, p0, Loj7;->c:Lt97;
-
-    new-instance p1, Lbg;
-
-    const-string p2, "rotation"
-
-    const/4 p3, 0x0
-
-    invoke-direct {p1, p2, p3}, Lbg;-><init>(Ljava/lang/String;F)V
-
-    iput-object p1, p0, Loj7;->o:Lbg;
-
-    const/4 p2, 0x2
-
-    new-array p2, p2, [F
-
-    fill-array-data p2, :array_0
-
-    const/4 p3, 0x0
-
-    invoke-static {p3, p1, p2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object p1
-
-    const-wide/16 p2, 0x4b0
-
-    invoke-virtual {p1, p2, p3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
-
-    const/4 p2, -0x1
-
-    invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setRepeatCount(I)V
-
-    new-instance p2, Landroid/view/animation/LinearInterpolator;
-
-    invoke-direct {p2}, Landroid/view/animation/LinearInterpolator;-><init>()V
-
-    invoke-virtual {p1, p2}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    new-instance p2, Lc00;
-
-    const/16 p3, 0xb
-
-    invoke-direct {p2, p3, p0}, Lc00;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
-
-    iput-object p1, p0, Loj7;->X:Landroid/animation/ObjectAnimator;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-
-    nop
-
-    :array_0
-    .array-data 4
-        0x0
-        0x43b38000    # 359.0f
-    .end array-data
 .end method
 
 
 # virtual methods
-.method public final draw(Landroid/graphics/Canvas;)V
+.method public final d(Lbn5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 3
 
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+    iget v0, p0, Loj7;->a:I
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object v0
+    new-instance v0, Lnj7;
 
-    invoke-virtual {v0}, Landroid/graphics/Rect;->centerX()I
+    iget-object v1, p0, Loj7;->c:Ljava/lang/String;
 
-    move-result v0
+    const/4 v2, 0x1
 
-    int-to-float v0, v0
+    invoke-direct {v0, p1, v1, v2}, Lnj7;-><init>(Lbn5;Ljava/lang/String;I)V
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+    iget-object p0, p0, Loj7;->b:Lzm5;
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/graphics/Rect;->centerY()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    iget-object v2, p0, Loj7;->o:Lbg;
-
-    iget v2, v2, Lbg;->a:F
-
-    invoke-virtual {p1, v2, v0, v1}, Landroid/graphics/Canvas;->rotate(FFF)V
-
-    iget-object p0, p0, Loj7;->c:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {p0, v0, p2}, Lzm5;->d(Lbn5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Landroid/graphics/drawable/Drawable;
+    sget-object p1, Lpx3;->a:Lpx3;
 
-    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
+    goto :goto_0
 
-    return-void
-.end method
+    :cond_0
+    sget-object p0, Le5f;->a:Le5f;
 
-.method public final getIntrinsicHeight()I
-    .locals 0
+    :goto_0
+    return-object p0
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+    :pswitch_0
+    new-instance v0, Lnj7;
 
-    move-result-object p0
+    iget-object v1, p0, Loj7;->c:Ljava/lang/String;
 
-    invoke-virtual {p0}, Landroid/graphics/Rect;->height()I
+    const/4 v2, 0x0
 
-    move-result p0
+    invoke-direct {v0, p1, v1, v2}, Lnj7;-><init>(Lbn5;Ljava/lang/String;I)V
 
-    return p0
-.end method
+    iget-object p0, p0, Loj7;->b:Lzm5;
 
-.method public final getIntrinsicWidth()I
-    .locals 0
-
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+    invoke-interface {p0, v0, p2}, Lzm5;->d(Lbn5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Landroid/graphics/Rect;->width()I
+    sget-object p1, Lpx3;->a:Lpx3;
 
-    move-result p0
+    if-ne p0, p1, :cond_1
 
-    return p0
-.end method
+    goto :goto_1
 
-.method public final getOpacity()I
-    .locals 0
+    :cond_1
+    sget-object p0, Le5f;->a:Le5f;
 
-    const/4 p0, -0x3
+    :goto_1
+    return-object p0
 
-    return p0
-.end method
+    nop
 
-.method public final isRunning()Z
-    .locals 0
-
-    iget-object p0, p0, Loj7;->X:Landroid/animation/ObjectAnimator;
-
-    invoke-virtual {p0}, Landroid/animation/Animator;->isRunning()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final onBoundsChange(Landroid/graphics/Rect;)V
-    .locals 0
-
-    invoke-super {p0, p1}, Landroid/graphics/drawable/Drawable;->onBoundsChange(Landroid/graphics/Rect;)V
-
-    iget-object p0, p0, Loj7;->c:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
-
-    return-void
-.end method
-
-.method public final setAlpha(I)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final setColorFilter(Landroid/graphics/ColorFilter;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final start()V
-    .locals 0
-
-    iget-object p0, p0, Loj7;->X:Landroid/animation/ObjectAnimator;
-
-    invoke-virtual {p0}, Landroid/animation/ObjectAnimator;->start()V
-
-    return-void
-.end method
-
-.method public final stop()V
-    .locals 0
-
-    iget-object p0, p0, Loj7;->X:Landroid/animation/ObjectAnimator;
-
-    invoke-virtual {p0}, Landroid/animation/Animator;->cancel()V
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

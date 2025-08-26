@@ -1,35 +1,39 @@
-.class public abstract La0e;
+.class public final La0e;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Ljava/text/DecimalFormat;
+# instance fields
+.field public final a:Lkjc;
+
+.field public final b:Llh;
+
+.field public final c:Lbjc;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;)V
+    .locals 2
 
-    new-instance v0, Ljava/text/DecimalFormat;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "#.#"
+    iput-object p1, p0, La0e;->a:Lkjc;
 
-    invoke-direct {v0, v1}, Ljava/text/DecimalFormat;-><init>(Ljava/lang/String;)V
+    new-instance v0, Llh;
 
-    sget-object v1, Ljava/math/RoundingMode;->DOWN:Ljava/math/RoundingMode;
+    const/16 v1, 0x17
 
-    invoke-virtual {v0, v1}, Ljava/text/DecimalFormat;->setRoundingMode(Ljava/math/RoundingMode;)V
+    invoke-direct {v0, p1, v1}, Llh;-><init>(Lkjc;I)V
 
-    sput-object v0, La0e;->a:Ljava/text/DecimalFormat;
+    iput-object v0, p0, La0e;->b:Llh;
 
-    new-instance v0, Ljava/text/DecimalFormat;
+    new-instance v0, Lbjc;
 
-    const-string v2, "0.0"
+    const/4 v1, 0x7
 
-    invoke-direct {v0, v2}, Ljava/text/DecimalFormat;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p1, v1}, Lbjc;-><init>(Lkjc;I)V
 
-    invoke-virtual {v0, v1}, Ljava/text/DecimalFormat;->setRoundingMode(Ljava/math/RoundingMode;)V
+    iput-object v0, p0, La0e;->c:Lbjc;
 
     return-void
 .end method

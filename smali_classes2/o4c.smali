@@ -1,211 +1,154 @@
 .class public final Lo4c;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
 
 
 # instance fields
-.field public final synthetic X:Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
+.field public final a:J
 
-.field public final synthetic Y:[B
+.field public final b:Ljava/lang/String;
+
+.field public final c:Ln3c;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;[B)V
+.method public constructor <init>(JLn3c;Ljava/lang/String;)V
     .locals 0
 
-    iput-object p2, p0, Lo4c;->X:Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lo4c;->Y:[B
+    iput-wide p1, p0, Lo4c;->a:J
 
-    const/4 p2, 0x2
+    iput-object p4, p0, Lo4c;->b:Ljava/lang/String;
 
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p3, p0, Lo4c;->c:Ln3c;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Lou3;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lo4c;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lo4c;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lo4c;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
-
-    new-instance p1, Lo4c;
-
-    iget-object v0, p0, Lo4c;->X:Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
-
-    iget-object p0, p0, Lo4c;->Y:[B
-
-    invoke-direct {p1, p2, v0, p0}, Lo4c;-><init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;[B)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 9
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    sget-object p1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->m1:[Lk77;
-
-    iget-object p1, p0, Lo4c;->X:Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
-
-    invoke-virtual {p1}, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->N0()Lq60;
-
-    move-result-object p1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 7
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p1, Lq60;->y0:Z
+    if-ne p0, p1, :cond_0
 
-    iget-object v1, p1, Lq60;->D0:Landroid/graphics/Path;
-
-    invoke-virtual {v1}, Landroid/graphics/Path;->isEmpty()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    invoke-virtual {v1}, Landroid/graphics/Path;->reset()V
+    instance-of v1, p1, Lo4c;
 
-    :goto_0
-    iget-object p0, p0, Lo4c;->Y:[B
+    const/4 v2, 0x0
 
-    if-nez p0, :cond_1
+    if-nez v1, :cond_1
 
-    goto :goto_4
+    return v2
 
     :cond_1
-    invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
+    check-cast p1, Lo4c;
 
-    move-result v2
+    iget-wide v3, p0, Lo4c;->a:J
 
-    int-to-float v2, v2
+    iget-wide v5, p1, Lo4c;->a:J
 
-    const/high16 v3, 0x40000000    # 2.0f
+    cmp-long v1, v3, v5
 
-    div-float/2addr v2, v3
+    if-eqz v1, :cond_2
 
-    invoke-virtual {v1}, Landroid/graphics/Path;->reset()V
-
-    array-length v4, p0
-
-    if-nez v4, :cond_2
-
-    move v4, v0
-
-    goto :goto_1
+    return v2
 
     :cond_2
-    const/4 v4, 0x0
+    iget-object v1, p0, Lo4c;->b:Ljava/lang/String;
 
-    :goto_1
-    xor-int/2addr v0, v4
+    iget-object v3, p1, Lo4c;->b:Ljava/lang/String;
 
-    if-eqz v0, :cond_5
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object p0, p0, Lo4c;->c:Ln3c;
+
+    iget-object p1, p1, Lo4c;->c:Ln3c;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_4
+
+    return v2
+
+    :cond_4
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    iget-wide v0, p0, Lo4c;->a:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
 
     move-result v0
 
-    int-to-float v0, v0
+    const/16 v1, 0x1f
 
-    iget v4, p1, Lq60;->o:F
+    mul-int/2addr v0, v1
 
-    div-float v5, v4, v3
+    iget-object v2, p0, Lo4c;->b:Ljava/lang/String;
 
-    sub-float/2addr v0, v5
+    invoke-static {v0, v1, v2}, Lv04;->d(IILjava/lang/String;)I
 
-    array-length v5, p0
+    move-result v0
 
-    add-int/lit8 v5, v5, -0x1
+    iget-object p0, p0, Lo4c;->c:Ln3c;
 
-    if-ltz v5, :cond_5
+    invoke-virtual {p0}, Ln3c;->hashCode()I
 
-    :goto_2
-    add-int/lit8 v6, v5, -0x1
+    move-result p0
 
-    aget-byte v5, p0, v5
+    add-int/2addr p0, v0
 
-    int-to-float v5, v5
+    return p0
+.end method
 
-    invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
+.method public final toString()Ljava/lang/String;
+    .locals 5
 
-    move-result v7
+    const-string v0, "PlayingState(msgId="
 
-    int-to-float v7, v7
+    const-string v1, ", url="
 
-    const/high16 v8, 0x42fe0000    # 127.0f
+    iget-wide v2, p0, Lo4c;->a:J
 
-    div-float/2addr v7, v8
+    iget-object v4, p0, Lo4c;->b:Ljava/lang/String;
 
-    mul-float/2addr v7, v5
+    invoke-static {v0, v2, v3, v1, v4}, Lp3a;->k(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v5, p1, Lq60;->b:F
+    move-result-object v0
 
-    cmpg-float v8, v7, v5
+    const-string v1, ", reaction="
 
-    if-gez v8, :cond_3
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move v7, v5
+    iget-object p0, p0, Lo4c;->c:Ln3c;
 
-    :cond_3
-    div-float/2addr v7, v3
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    sub-float v5, v2, v7
+    const-string p0, ")"
 
-    add-float/2addr v7, v2
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v0, v5}, Landroid/graphics/Path;->moveTo(FF)V
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1, v0, v7}, Landroid/graphics/Path;->lineTo(FF)V
-
-    sub-float/2addr v0, v4
-
-    iget v5, p1, Lq60;->c:F
-
-    sub-float/2addr v0, v5
-
-    if-gez v6, :cond_4
-
-    goto :goto_3
-
-    :cond_4
-    move v5, v6
-
-    goto :goto_2
-
-    :cond_5
-    :goto_3
-    invoke-virtual {p1}, Landroid/view/View;->invalidate()V
-
-    :goto_4
-    sget-object p0, Ljue;->a:Ljue;
+    move-result-object p0
 
     return-object p0
 .end method

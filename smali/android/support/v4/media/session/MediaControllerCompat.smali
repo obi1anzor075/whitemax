@@ -124,7 +124,7 @@
 
     move-result-object v0
 
-    sget v1, Lgrb;->media_controller_compat_view_tag:I
+    sget v1, Lxvb;->media_controller_compat_view_tag:I
 
     .line 2
     invoke-virtual {v0, v1}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
@@ -161,7 +161,7 @@
 
     move-result-object v0
 
-    sget v1, Lgrb;->media_controller_compat_view_tag:I
+    sget v1, Lxvb;->media_controller_compat_view_tag:I
 
     invoke-virtual {v0, v1, p1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -175,7 +175,7 @@
 
     if-nez p0, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
     const-string v0, "android.support.v4.media.session.action.FOLLOW"
@@ -217,7 +217,7 @@
 
     const-string v1, "."
 
-    invoke-static {v0, p0, v1}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -424,12 +424,12 @@
     return p0
 .end method
 
-.method public getSession2Token()Li1f;
+.method public getSession2Token()Lncf;
     .locals 0
 
     iget-object p0, p0, Landroid/support/v4/media/session/MediaControllerCompat;->mToken:Landroid/support/v4/media/session/MediaSessionCompat$Token;
 
-    invoke-virtual {p0}, Landroid/support/v4/media/session/MediaSessionCompat$Token;->getSession2Token()Li1f;
+    invoke-virtual {p0}, Landroid/support/v4/media/session/MediaSessionCompat$Token;->getSession2Token()Lncf;
 
     move-result-object p0
 

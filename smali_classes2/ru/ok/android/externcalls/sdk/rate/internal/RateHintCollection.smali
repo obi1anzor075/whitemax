@@ -13,7 +13,7 @@
         "",
         "Lru/ok/android/externcalls/sdk/rate/RateHint;",
         "rateHint",
-        "Ljue;",
+        "Le5f;",
         "addRateHint",
         "(Lru/ok/android/externcalls/sdk/rate/RateHint;)V",
         "calls-sdk_release"
@@ -24,6 +24,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

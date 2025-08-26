@@ -1,122 +1,146 @@
-.class public abstract Lpbe;
+.class public final synthetic Lpbe;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljj3;
+.implements Loae;
+
 
 # instance fields
-.field public final a:Landroid/content/Context;
-
-.field public final b:Lo54;
-
-.field public final c:Lt97;
-
-.field public final d:Lt97;
-
-.field public final e:Lt97;
-
-.field public final f:Lt97;
-
-.field public final g:Lt97;
-
-.field public final h:Lt97;
-
-.field public final i:Lr7e;
-
-.field public final j:Lr7e;
+.field public final synthetic a:Lqbe;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lo54;Lt97;Lt97;Lt97;Lt97;Lt97;)V
+.method public synthetic constructor <init>(Lqbe;)V
     .locals 0
 
+    iput-object p1, p0, Lpbe;->a:Lqbe;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lpbe;->a:Landroid/content/Context;
-
-    iput-object p2, p0, Lpbe;->b:Lo54;
-
-    iput-object p3, p0, Lpbe;->c:Lt97;
-
-    iput-object p5, p0, Lpbe;->d:Lt97;
-
-    iput-object p4, p0, Lpbe;->e:Lt97;
-
-    iput-object p6, p0, Lpbe;->f:Lt97;
-
-    invoke-interface {p7}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lm19;
-
-    iget-object p1, p1, Lm19;->a:Lt97;
-
-    iput-object p1, p0, Lpbe;->g:Lt97;
-
-    invoke-interface {p7}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lm19;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-interface {p7}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lm19;
-
-    iget-object p1, p1, Lm19;->b:Lt97;
-
-    iput-object p1, p0, Lpbe;->h:Lt97;
-
-    new-instance p1, Lobe;
-
-    move-object p2, p0
-
-    check-cast p2, Lfp;
-
-    const/4 p3, 0x0
-
-    invoke-direct {p1, p2, p3}, Lobe;-><init>(Lfp;I)V
-
-    new-instance p3, Lr7e;
-
-    invoke-direct {p3, p1}, Lr7e;-><init>(Ls16;)V
-
-    iput-object p3, p0, Lpbe;->i:Lr7e;
-
-    new-instance p1, Lobe;
-
-    const/4 p3, 0x1
-
-    invoke-direct {p1, p2, p3}, Lobe;-><init>(Lfp;I)V
-
-    new-instance p2, Lr7e;
-
-    invoke-direct {p2, p1}, Lr7e;-><init>(Ls16;)V
-
-    iput-object p2, p0, Lpbe;->j:Lr7e;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lo7a;
-    .locals 0
+.method public a()Ljava/util/List;
+    .locals 1
 
-    iget-object p0, p0, Lpbe;->e:Lt97;
+    iget-object p0, p0, Lpbe;->a:Lqbe;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    iget-object v0, p0, Lqbe;->n:Ly42;
+
+    invoke-virtual {v0}, Ly42;->j()Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iget-object p0, p0, Lqbe;->m:Lje7;
+
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lo7a;
+    check-cast p0, Lhq3;
 
-    return-object p0
+    invoke-virtual {p0, v0}, Lhq3;->b(Ljava/util/List;)V
+
+    return-object v0
 .end method
 
-.method public abstract b()Z
+.method public accept(Ljava/lang/Object;)V
+    .locals 6
+
+    iget-object p0, p0, Lpbe;->a:Lqbe;
+
+    check-cast p1, Lc62;
+
+    new-instance v0, Lzp0;
+
+    iget-object v1, p1, Lc62;->o:Ljava/util/List;
+
+    iget-object v2, p1, Lc62;->X:Ljava/util/HashMap;
+
+    invoke-direct {v0, v1, v2}, Lzp0;-><init>(Ljava/util/List;Ljava/util/Map;)V
+
+    iget-object v1, p0, Lqbe;->d:Lyp0;
+
+    iget-object v2, p0, Lqbe;->n:Ly42;
+
+    iget-wide v2, v2, Ly42;->a:J
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object v4, Ldoc;->a:Lly4;
+
+    new-instance v5, Ls5;
+
+    invoke-direct {v5, v1, v2, v3, v0}, Ls5;-><init>(Lyp0;JLzp0;)V
+
+    new-instance v0, Lxp0;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lxp0;-><init>(I)V
+
+    iget-object v1, v4, Lly4;->b:Ljava/lang/Object;
+
+    check-cast v1, Lgsc;
+
+    const/4 v2, 0x0
+
+    invoke-static {v5, v1, v2, v0, v2}, Ldoc;->a(Lc6;Lgsc;Lc6;Ljj3;Lgsc;)Lfq1;
+
+    iget-object v0, p0, Lqbe;->f:Ltkg;
+
+    iget-object v1, p1, Lc62;->o:Ljava/util/List;
+
+    iget-object p1, p1, Lc62;->X:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    if-nez v1, :cond_0
+
+    sget-object p1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v2, Lz8;
+
+    const/4 v3, 0x3
+
+    invoke-direct {v2, v0, v3, p1}, Lz8;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-static {v1, v2}, Lq14;->Y(Ljava/util/Collection;Lm66;)Ljava/util/ArrayList;
+
+    move-result-object p1
+
+    :goto_0
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lqbe;->p:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+
+    iget-object v0, p0, Lqbe;->p:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
 .end method

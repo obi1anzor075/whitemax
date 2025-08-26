@@ -17,7 +17,7 @@
     value = {
         "Ljava/lang/Object;",
         "Lru/ok/android/externcalls/sdk/id/mapping/IdsMapper<",
-        "Lge1;",
+        "Lrf1;",
         "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
         ">;"
     }
@@ -30,42 +30,42 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper;",
         "Lru/ok/android/externcalls/sdk/id/mapping/IdsMapper;",
-        "Lge1;",
+        "Lrf1;",
         "Lru/ok/android/externcalls/sdk/id/InternalId;",
         "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
         "Lru/ok/android/externcalls/sdk/id/ExternalId;",
-        "Lmw9;",
+        "Ll0a;",
         "okApi",
-        "Lfe1;",
+        "Lqf1;",
         "callParams",
-        "Lxwb;",
+        "Ls1c;",
         "logger",
         "<init>",
-        "(Lmw9;Lfe1;Lxwb;)V",
+        "(Ll0a;Lqf1;Ls1c;)V",
         "",
         "resolutionCandidates",
         "",
-        "Lnj0;",
+        "Lmk0;",
         "Lru/ok/android/externcalls/sdk/api/ExternalIdsResponse;",
         "kotlin.jvm.PlatformType",
         "getBatchedExternalsRequest",
         "(Ljava/util/Collection;)Ljava/util/List;",
         "candidates",
         "getResolveExternalRequestForCandidates",
-        "(Ljava/util/List;)Lnj0;",
+        "(Ljava/util/List;)Lmk0;",
         "response",
         "",
         "idsMap",
-        "Ljue;",
+        "Le5f;",
         "applyExternals",
         "(Lru/ok/android/externcalls/sdk/api/ExternalIdsResponse;Ljava/util/Map;)V",
         "from",
         "",
         "map",
         "(Ljava/util/Collection;)Ljava/util/Map;",
-        "Lmw9;",
-        "Lfe1;",
-        "Lxwb;",
+        "Ll0a;",
+        "Lqf1;",
+        "Ls1c;",
         "Companion",
         "calls-sdk_release"
     }
@@ -75,6 +75,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -85,11 +86,11 @@
 
 
 # instance fields
-.field private final callParams:Lfe1;
+.field private final callParams:Lqf1;
 
-.field private final logger:Lxwb;
+.field private final logger:Ls1c;
 
-.field private final okApi:Lmw9;
+.field private final okApi:Ll0a;
 
 
 # direct methods
@@ -100,23 +101,23 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper$Companion;-><init>(Lx54;)V
+    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper$Companion;-><init>(Ll94;)V
 
     sput-object v0, Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper;->Companion:Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper$Companion;
 
     return-void
 .end method
 
-.method public constructor <init>(Lmw9;Lfe1;Lxwb;)V
+.method public constructor <init>(Ll0a;Lqf1;Ls1c;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper;->okApi:Lmw9;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper;->okApi:Ll0a;
 
-    iput-object p2, p0, Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper;->callParams:Lfe1;
+    iput-object p2, p0, Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper;->callParams:Lqf1;
 
-    iput-object p3, p0, Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper;->logger:Lxwb;
+    iput-object p3, p0, Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper;->logger:Ls1c;
 
     return-void
 .end method
@@ -128,7 +129,7 @@
             "(",
             "Lru/ok/android/externcalls/sdk/api/ExternalIdsResponse;",
             "Ljava/util/Map<",
-            "Lge1;",
+            "Lrf1;",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
             ">;)V"
         }
@@ -205,17 +206,17 @@
         value = {
             "(",
             "Ljava/util/Collection<",
-            "Lge1;",
+            "Lrf1;",
             ">;)",
             "Ljava/util/List<",
-            "Lnj0;",
+            "Lmk0;",
             ">;"
         }
     .end annotation
 
     const/16 v0, 0xc8
 
-    invoke-static {p1, v0, v0}, Lo23;->x0(Ljava/lang/Iterable;II)Ljava/util/ArrayList;
+    invoke-static {p1, v0, v0}, Lp43;->b1(Ljava/lang/Iterable;II)Ljava/util/ArrayList;
 
     move-result-object p1
 
@@ -223,7 +224,7 @@
 
     const/16 v1, 0xa
 
-    invoke-static {p1, v1}, Lq23;->H(Ljava/lang/Iterable;I)I
+    invoke-static {p1, v1}, Lr43;->k0(Ljava/lang/Iterable;I)I
 
     move-result v1
 
@@ -246,7 +247,7 @@
 
     check-cast v1, Ljava/util/List;
 
-    invoke-direct {p0, v1}, Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper;->getResolveExternalRequestForCandidates(Ljava/util/List;)Lnj0;
+    invoke-direct {p0, v1}, Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper;->getResolveExternalRequestForCandidates(Ljava/util/List;)Lmk0;
 
     move-result-object v1
 
@@ -258,57 +259,57 @@
     return-object v0
 .end method
 
-.method private final getResolveExternalRequestForCandidates(Ljava/util/List;)Lnj0;
+.method private final getResolveExternalRequestForCandidates(Ljava/util/List;)Lmk0;
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List<",
-            "Lge1;",
+            "Lrf1;",
             ">;)",
-            "Lnj0;"
+            "Lmk0;"
         }
     .end annotation
 
     const-string p0, "vchat.getExternalIdsByOkIds"
 
-    invoke-static {p0}, Lez3;->R(Ljava/lang/String;)Lmj0;
+    invoke-static {p0}, Lkhg;->r(Ljava/lang/String;)Llk0;
 
     move-result-object p0
 
-    sget-object v0, Lkl;->c:Lkl;
+    sget-object v0, Ldl;->c:Ldl;
 
-    iput-object v0, p0, Lmj0;->b:Lkl;
+    iput-object v0, p0, Llk0;->b:Ldl;
 
-    new-instance v0, Lyzd;
+    new-instance v0, Lb8e;
 
     sget-object v5, Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper$getResolveExternalRequestForCandidates$1;->INSTANCE:Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper$getResolveExternalRequestForCandidates$1;
+
+    const/16 v6, 0x1e
+
+    const-string v2, ","
 
     const/4 v3, 0x0
 
     const/4 v4, 0x0
 
-    const-string v2, ","
-
-    const/16 v6, 0x1e
-
     move-object v1, p1
 
-    invoke-static/range {v1 .. v6}, Lo23;->c0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lu16;I)Ljava/lang/String;
+    invoke-static/range {v1 .. v6}, Lp43;->G0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lx56;I)Ljava/lang/String;
 
     move-result-object p1
 
     const-string v1, "uids"
 
-    invoke-direct {v0, v1, p1}, Lf0e;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, p1}, Lh8e;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object p1, p0, Lmj0;->c:Lel;
+    iget-object p1, p0, Llk0;->c:Lxk;
 
-    invoke-virtual {p1, v0}, Lel;->a(Ldl;)V
+    invoke-virtual {p1, v0}, Lxk;->a(Lwk;)V
 
-    sget-object p1, Lru/ok/android/externcalls/sdk/api/ExternalIdsResponse;->INSTANCE:Lh67;
+    sget-object p1, Lru/ok/android/externcalls/sdk/api/ExternalIdsResponse;->INSTANCE:Lza7;
 
-    invoke-virtual {p0, p1}, Lmj0;->a(Lh67;)Lnj0;
+    invoke-virtual {p0, p1}, Llk0;->a(Lza7;)Lmk0;
 
     move-result-object p0
 
@@ -318,21 +319,21 @@
 
 # virtual methods
 .method public map(Ljava/util/Collection;)Ljava/util/Map;
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/Collection<",
-            "Lge1;",
+            "Lrf1;",
             ">;)",
             "Ljava/util/Map<",
-            "Lge1;",
+            "Lrf1;",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
             ">;"
         }
     .end annotation
 
-    sget-boolean v0, Ld59;->a:Z
+    sget-boolean v0, Lz99;->a:Z
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
@@ -354,7 +355,7 @@
 
     if-eqz v0, :cond_0
 
-    sget-object p0, Liw4;->a:Liw4;
+    sget-object p0, Lhz4;->a:Lhz4;
 
     return-object p0
 
@@ -363,7 +364,7 @@
 
     move-result-object p1
 
-    sget-object v0, Lwj0;->X:Landroid/net/Uri;
+    sget-object v0, Lvk0;->c:Landroid/net/Uri;
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -384,60 +385,58 @@
 
     move-result-object v2
 
-    check-cast v2, Lnj0;
+    check-cast v2, Lmk0;
 
-    new-instance v3, Lil;
+    new-instance v3, Lbl;
 
-    invoke-direct {v3, v2, v2}, Lil;-><init>(Lnj0;Lnj0;)V
+    invoke-direct {v3, v2, v2}, Lbl;-><init>(Lmk0;Lrk;)V
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_1
-    iget-object v1, p0, Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper;->okApi:Lmw9;
+    iget-object v1, p0, Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper;->okApi:Ll0a;
 
-    invoke-virtual {v1}, Lmw9;->c()Ljic;
+    invoke-virtual {v1}, Ll0a;->c()Lunc;
 
     move-result-object v1
 
-    new-instance v2, Lwj0;
+    new-instance v2, Lvk0;
 
     const/4 v3, 0x0
 
-    new-array v4, v3, [Lil;
+    new-array v3, v3, [Lbl;
 
-    invoke-interface {v0, v4}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lil;
-
-    const/4 v4, 0x0
-
-    invoke-direct {v2, v4, v0, v3}, Lwj0;-><init>(Ljava/lang/String;[Lil;I)V
-
-    invoke-virtual {v1, v2}, Ljic;->a(Lyk;)Lyhd;
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v1, p0, Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper;->callParams:Lfe1;
+    check-cast v0, [Lbl;
 
-    iget-object v1, v1, Lfe1;->B:Lde1;
+    invoke-direct {v2, v0}, Lvk0;-><init>([Lbl;)V
 
-    iget-boolean v1, v1, Lde1;->h:Z
-
-    iget-object v2, p0, Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper;->logger:Lxwb;
-
-    invoke-static {v0, v1, v2}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt;->retryApiCallForFastWorkRequired(Ldhd;ZLxwb;)Ldhd;
+    invoke-virtual {v1, v2}, Lunc;->a(Lrk;)Lmpd;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ldhd;->e()Ljava/lang/Object;
+    iget-object v1, p0, Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper;->callParams:Lqf1;
+
+    iget-object v1, v1, Lqf1;->B:Lof1;
+
+    iget-boolean v1, v1, Lof1;->h:Z
+
+    iget-object v2, p0, Lru/ok/android/externcalls/sdk/id/mapping/InternalToExternalIdsMapper;->logger:Ls1c;
+
+    invoke-static {v0, v1, v2}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt;->retryApiCallForFastWorkRequired(Ltod;ZLs1c;)Ltod;
 
     move-result-object v0
 
-    check-cast v0, Lxj0;
+    invoke-virtual {v0}, Ltod;->e()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lwk0;
 
     new-instance v1, Ljava/util/LinkedHashMap;
 
@@ -458,9 +457,9 @@
 
     move-result-object v2
 
-    check-cast v2, Lnj0;
+    check-cast v2, Lmk0;
 
-    invoke-virtual {v0, v2}, Lxj0;->a(Lnj0;)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Lwk0;->a(Lmk0;)Ljava/lang/Object;
 
     move-result-object v2
 

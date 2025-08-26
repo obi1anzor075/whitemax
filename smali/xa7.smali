@@ -1,16 +1,17 @@
-.class public final Lxa7;
+.class public interface abstract annotation Lxa7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lxkc;
+.implements Ljava/lang/annotation/Annotation;
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
+# annotations
+.annotation runtime Ljava/lang/annotation/Retention;
+    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
+.end annotation
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
+# virtual methods
+.method public abstract names()[Ljava/lang/String;
 .end method

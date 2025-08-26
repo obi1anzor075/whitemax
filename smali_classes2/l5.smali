@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljj3;
 
 
 # instance fields
@@ -27,297 +27,167 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 9
+.method public final accept(Ljava/lang/Object;)V
+    .locals 8
 
-    const/high16 p1, 0x40000000    # 2.0f
+    iget v0, p0, Ll5;->a:I
 
-    const-wide/16 v0, 0xfa
+    const/4 v1, 0x0
 
-    const/4 v2, 0x1
+    iget-object p0, p0, Ll5;->b:Lru/ok/messages/views/ActAvatarCrop;
 
-    const/4 v3, 0x2
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v4, p0, Ll5;->b:Lru/ok/messages/views/ActAvatarCrop;
+    check-cast p1, Ljava/lang/Throwable;
 
-    const/4 v5, 0x0
+    sget v0, Lru/ok/messages/views/ActAvatarCrop;->a1:I
 
-    iget p0, p0, Ll5;->a:I
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    packed-switch p0, :pswitch_data_0
+    const-string v2, "Error occurred during applying image transformation. Error: "
 
-    sget p0, Lru/ok/messages/views/ActAvatarCrop;->h1:I
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, v4, Lr5;->O0:Lv2b;
-
-    iget-object p0, p0, Lv2b;->b:Ljava/lang/Object;
-
-    check-cast p0, Lk93;
-
-    check-cast p0, Lo2a;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object p0, Lnqc;->a:Lnqc;
-
-    new-instance p1, Lm5;
-
-    invoke-direct {p1, v5, v4}, Lm5;-><init>(ILjava/lang/Object;)V
-
-    new-instance v0, Lmv9;
-
-    invoke-direct {v0, v3, p1}, Lmv9;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {p0}, Lnqc;->t()Lmbe;
+    invoke-virtual {p1}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    check-cast p1, Lnbe;
-
-    invoke-virtual {p1}, Lnbe;->a()Lqmc;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Ldhd;->m(Lqmc;)Lyhd;
+    const-string v0, "ru.ok.messages.views.ActAvatarCrop"
+
+    invoke-static {v0, p1}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {p0, v1}, Landroid/app/Activity;->setResult(I)V
+
+    sget p1, Lnnc;->G:I
+
+    sget-object v0, Lus;->h:Landroid/os/Handler;
+
+    invoke-virtual {p0, p1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {p0}, Lnqc;->t()Lmbe;
+    const/4 v0, 0x1
 
-    move-result-object p0
+    invoke-static {v0, p0, p1}, Lus;->F(ILandroid/content/Context;Ljava/lang/String;)V
 
-    check-cast p0, Lnbe;
-
-    invoke-virtual {p0}, Lnbe;->b()Lqmc;
-
-    move-result-object p0
-
-    invoke-virtual {p1, p0}, Ldhd;->i(Lqmc;)Lyhd;
-
-    move-result-object p0
-
-    new-instance p1, Ln5;
-
-    invoke-direct {p1, v4, v5}, Ln5;-><init>(Lru/ok/messages/views/ActAvatarCrop;I)V
-
-    new-instance v0, Ln5;
-
-    invoke-direct {v0, v4, v2}, Ln5;-><init>(Lru/ok/messages/views/ActAvatarCrop;I)V
-
-    new-instance v1, Lpn1;
-
-    invoke-direct {v1, p1, v3, v0}, Lpn1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-virtual {p0, v1}, Ldhd;->k(Lzhd;)V
+    invoke-virtual {p0}, Lp5;->finish()V
 
     return-void
 
     :pswitch_0
-    iput-boolean v5, v4, Lru/ok/messages/views/ActAvatarCrop;->g1:Z
+    check-cast p1, Landroid/graphics/Rect;
 
-    iget-object p0, v4, Lru/ok/messages/views/ActAvatarCrop;->Y0:Lru/ok/messages/views/widgets/AvatarCropView;
+    sget v0, Lru/ok/messages/views/ActAvatarCrop;->a1:I
 
-    invoke-virtual {p0}, Lone/me/sdk/zoom/ZoomableDraweeView;->getZoomableController()Lbwf;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v0, Landroid/content/Intent;
+
+    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
+
+    const-string v2, "ru.ok.tamtam.extra.CROPPED_ABSOLUTE"
+
+    invoke-virtual {v0, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+
+    iget-object v2, p0, Lru/ok/messages/views/ActAvatarCrop;->X0:Landroid/graphics/Point;
+
+    new-instance v3, Landroid/graphics/RectF;
+
+    iget v4, p1, Landroid/graphics/Rect;->left:I
+
+    int-to-float v4, v4
+
+    iget v5, v2, Landroid/graphics/Point;->x:I
+
+    int-to-float v5, v5
+
+    div-float/2addr v4, v5
+
+    iget v6, p1, Landroid/graphics/Rect;->top:I
+
+    int-to-float v6, v6
+
+    iget v2, v2, Landroid/graphics/Point;->y:I
+
+    int-to-float v2, v2
+
+    div-float/2addr v6, v2
+
+    iget v7, p1, Landroid/graphics/Rect;->right:I
+
+    int-to-float v7, v7
+
+    div-float/2addr v7, v5
+
+    iget p1, p1, Landroid/graphics/Rect;->bottom:I
+
+    int-to-float p1, p1
+
+    div-float/2addr p1, v2
+
+    invoke-direct {v3, v4, v6, v7, p1}, Landroid/graphics/RectF;-><init>(FFFF)V
+
+    const-string p1, "ru.ok.tamtam.extra.CROPPED_RECT"
+
+    invoke-virtual {v0, p1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+
+    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
     move-result-object p1
 
-    check-cast p1, Lkw3;
+    const-string v2, "ru.ok.tamtam.extra.URI"
 
-    invoke-virtual {p1}, Lkw3;->reset()V
+    invoke-virtual {p1, v2}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 
-    invoke-virtual {p1}, Lkw3;->e()V
+    move-result-object p1
 
-    iget v0, p0, Lru/ok/messages/views/widgets/AvatarCropView;->S0:I
+    check-cast p1, Landroid/net/Uri;
 
-    if-lez v0, :cond_0
+    invoke-virtual {v0, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    iget v0, p0, Lru/ok/messages/views/widgets/AvatarCropView;->T0:I
+    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
-    if-nez v0, :cond_0
+    move-result-object p1
 
-    invoke-virtual {p0}, Lone/me/sdk/zoom/ZoomableDraweeView;->getZoomableController()Lbwf;
+    const-string v2, "ru.ok.tamtam.extra.FILE_PATH"
 
-    move-result-object v0
+    invoke-virtual {p1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    check-cast v0, Lkw3;
+    move-result-object p1
 
-    iget v1, p0, Lru/ok/messages/views/widgets/AvatarCropView;->S0:I
+    invoke-virtual {v0, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    invoke-virtual {v0, v1}, Lkw3;->d(I)V
+    const/4 p1, -0x1
+
+    invoke-virtual {p0, p1, v0}, Landroid/app/Activity;->setResult(ILandroid/content/Intent;)V
+
+    invoke-virtual {p0}, Lp5;->finish()V
+
+    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+
+    move-result-object p1
+
+    const-string v0, "ru.ok.tamtam.extra.NO_ANIM "
+
+    invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p0, v1, v1}, Landroid/app/Activity;->overridePendingTransition(II)V
 
     :cond_0
-    iget-object p1, p1, Luc4;->k:Landroid/graphics/Matrix;
-
-    invoke-virtual {p0, p1}, Lru/ok/messages/views/widgets/AvatarCropView;->f(Landroid/graphics/Matrix;)V
-
-    iget-object p0, v4, Lru/ok/messages/views/ActAvatarCrop;->f1:Landroid/graphics/Matrix;
-
-    invoke-virtual {p0}, Landroid/graphics/Matrix;->reset()V
-
-    iget-object p0, v4, Lru/ok/messages/views/ActAvatarCrop;->c1:Lone/me/sdk/uikit/common/button/OneMeButton;
-
-    const/16 p1, 0x8
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
-
     return-void
-
-    :pswitch_1
-    sget p0, Lru/ok/messages/views/ActAvatarCrop;->h1:I
-
-    invoke-virtual {v4}, Lr5;->finish()V
-
-    return-void
-
-    :pswitch_2
-    iget-object p0, v4, Lru/ok/messages/views/ActAvatarCrop;->Y0:Lru/ok/messages/views/widgets/AvatarCropView;
-
-    invoke-virtual {p0}, Lone/me/sdk/zoom/ZoomableDraweeView;->getZoomableController()Lbwf;
-
-    move-result-object p0
-
-    check-cast p0, Lkw3;
-
-    iget-boolean v6, p0, Luc4;->d:Z
-
-    if-eqz v6, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v6, p0, Luc4;->k:Landroid/graphics/Matrix;
-
-    invoke-static {v6, v5}, Le07;->v(Landroid/graphics/Matrix;I)F
-
-    move-result v6
-
-    neg-float v7, v6
-
-    new-array v3, v3, [F
-
-    aput v6, v3, v5
-
-    aput v7, v3, v2
-
-    invoke-static {v3}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
-
-    new-instance v0, Lc00;
-
-    const/4 v1, 0x6
-
-    invoke-direct {v0, v1, p0}, Lc00;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {v2, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
-
-    invoke-virtual {v2, p0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
-    invoke-virtual {v2}, Landroid/animation/ValueAnimator;->start()V
-
-    iget-object p0, v4, Lru/ok/messages/views/ActAvatarCrop;->f1:Landroid/graphics/Matrix;
-
-    iget-object v0, v4, Lru/ok/messages/views/ActAvatarCrop;->e1:Landroid/graphics/Point;
-
-    iget v1, v0, Landroid/graphics/Point;->x:I
-
-    int-to-float v1, v1
-
-    div-float/2addr v1, p1
-
-    iget v0, v0, Landroid/graphics/Point;->y:I
-
-    int-to-float v0, v0
-
-    div-float/2addr v0, p1
-
-    const/high16 p1, -0x40800000    # -1.0f
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    invoke-virtual {p0, p1, v2, v1, v0}, Landroid/graphics/Matrix;->postScale(FFFF)Z
-
-    :goto_0
-    return-void
-
-    :pswitch_3
-    iget-object p0, v4, Lru/ok/messages/views/ActAvatarCrop;->Y0:Lru/ok/messages/views/widgets/AvatarCropView;
-
-    invoke-virtual {p0}, Lone/me/sdk/zoom/ZoomableDraweeView;->getZoomableController()Lbwf;
-
-    move-result-object p0
-
-    check-cast p0, Lkw3;
-
-    iget-boolean v6, p0, Luc4;->d:Z
-
-    if-eqz v6, :cond_2
-
-    goto :goto_1
-
-    :cond_2
-    iget v6, p0, Lkw3;->p:F
-
-    const/high16 v7, 0x42b40000    # 90.0f
-
-    new-array v8, v2, [F
-
-    aput v7, v8, v5
-
-    invoke-static {v8}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
-
-    new-instance v0, Lgfc;
-
-    invoke-direct {v0, p0, v6, v3}, Lgfc;-><init>(Ljava/lang/Object;FI)V
-
-    invoke-virtual {v5, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
-
-    invoke-virtual {v5, p0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
-    invoke-virtual {v5}, Landroid/animation/ValueAnimator;->start()V
-
-    iget-boolean p0, v4, Lru/ok/messages/views/ActAvatarCrop;->g1:Z
-
-    xor-int/2addr p0, v2
-
-    iput-boolean p0, v4, Lru/ok/messages/views/ActAvatarCrop;->g1:Z
-
-    iget-object p0, v4, Lru/ok/messages/views/ActAvatarCrop;->f1:Landroid/graphics/Matrix;
-
-    iget-object v0, v4, Lru/ok/messages/views/ActAvatarCrop;->e1:Landroid/graphics/Point;
-
-    iget v1, v0, Landroid/graphics/Point;->x:I
-
-    int-to-float v1, v1
-
-    div-float/2addr v1, p1
-
-    iget v0, v0, Landroid/graphics/Point;->y:I
-
-    int-to-float v0, v0
-
-    div-float/2addr v0, p1
-
-    invoke-virtual {p0, v7, v1, v0}, Landroid/graphics/Matrix;->postRotate(FFF)Z
-
-    :goto_1
-    return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

@@ -78,39 +78,45 @@
 
     invoke-virtual {p0}, Lorg/apache/http/impl/io/AbstractSessionInputBuffer;->hasBufferedData()Z
 
-    move-result v0
+    move-result p1
     :try_end_0
     .catch Ljava/io/InterruptedIOException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :goto_0
     iget-object p0, p0, Lorg/apache/http/impl/io/SocketInputBuffer;->socket:Ljava/net/Socket;
 
     invoke-virtual {p0, v1}, Ljava/net/Socket;->setSoTimeout(I)V
 
-    goto :goto_2
+    return p1
 
     :catchall_0
     move-exception p1
 
-    goto :goto_1
+    goto :goto_0
 
     :catch_0
     move-exception p1
 
     :try_start_1
     instance-of v2, p1, Ljava/net/SocketTimeoutException;
-
-    if-eqz v2, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    throw p1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :goto_1
+    if-eqz v2, :cond_0
+
+    iget-object p0, p0, Lorg/apache/http/impl/io/SocketInputBuffer;->socket:Ljava/net/Socket;
+
+    invoke-virtual {p0, v1}, Ljava/net/Socket;->setSoTimeout(I)V
+
+    goto :goto_1
+
+    :cond_0
+    :try_start_2
+    throw p1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    :goto_0
     iget-object p0, p0, Lorg/apache/http/impl/io/SocketInputBuffer;->socket:Ljava/net/Socket;
 
     invoke-virtual {p0, v1}, Ljava/net/Socket;->setSoTimeout(I)V
@@ -118,7 +124,7 @@
     throw p1
 
     :cond_1
-    :goto_2
+    :goto_1
     return v0
 .end method
 

@@ -1,75 +1,99 @@
-.class public final Lda3;
-.super Lt2;
+.class public final synthetic Lda3;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Li26;
+.field public final synthetic a:I
 
-.field public final synthetic b:Lea3;
+.field public final synthetic b:Landroidx/fragment/app/b;
 
 
 # direct methods
-.method public constructor <init>(Lea3;Li26;)V
+.method public synthetic constructor <init>(Landroidx/fragment/app/b;I)V
     .locals 0
 
-    iput-object p1, p0, Lda3;->b:Lea3;
+    iput p2, p0, Lda3;->a:I
 
-    invoke-direct {p0}, Lt2;-><init>()V
+    iput-object p1, p0, Lda3;->b:Landroidx/fragment/app/b;
 
-    iput-object p2, p0, Lda3;->a:Li26;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final add(Ljava/lang/Object;)Z
-    .locals 0
-
-    sget-object p0, Lfa3;->a:Lkotlinx/coroutines/internal/Symbol;
-
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    const-string p1, "not implemented"
-
-    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method public final getSize()I
-    .locals 0
-
-    iget-object p0, p0, Lda3;->b:Lea3;
-
-    invoke-virtual {p0}, Ls2;->size()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final iterator()Ljava/util/Iterator;
+.method public final run()V
     .locals 2
 
-    sget-object v0, Lea3;->c:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    iget v0, p0, Lda3;->a:I
 
-    iget-object v1, p0, Lda3;->b:Lea3;
+    iget-object p0, p0, Lda3;->b:Landroidx/fragment/app/b;
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
+
+    :try_start_0
+    invoke-static {p0}, Lna3;->s(Landroidx/fragment/app/b;)V
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception p0
+
+    invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Lba3;
+    const-string v1, "Attempt to invoke virtual method \'android.os.Handler android.app.FragmentHostCallback.getHandler()\' on a null object reference"
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {v0, v1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    new-instance v1, Laa3;
+    move-result v0
 
-    iget-object p0, p0, Lda3;->a:Li26;
+    if-eqz v0, :cond_0
 
-    invoke-direct {v1, v0, p0}, Laa3;-><init>(Lba3;Li26;)V
+    goto :goto_0
 
-    return-object v1
+    :cond_0
+    throw p0
+
+    :catch_1
+    move-exception p0
+
+    invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "Can not perform this action after onSaveInstanceState"
+
+    invoke-static {v0, v1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :goto_0
+    return-void
+
+    :cond_1
+    throw p0
+
+    :pswitch_0
+    invoke-virtual {p0}, Landroid/app/Activity;->invalidateOptionsMenu()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

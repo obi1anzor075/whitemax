@@ -1,11 +1,52 @@
-.class public interface abstract Lfh6;
-.super Ljava/lang/Object;
+.class public final synthetic Lfh6;
+.super Lq8;
 .source "SourceFile"
+
+# interfaces
+.implements Ln66;
+
+
+# static fields
+.field public static final o0:Lfh6;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 5
+
+    new-instance v0, Lfh6;
+
+    const-string v1, "<init>(Ljava/lang/Object;Ljava/lang/Object;)V"
+
+    const/4 v2, 0x4
+
+    const/4 v3, 0x3
+
+    const-class v4, Ldna;
+
+    invoke-direct {v0, v3, v4, v1, v2}, Lq8;-><init>(ILjava/lang/Class;Ljava/lang/String;I)V
+
+    sput-object v0, Lfh6;->o0:Lfh6;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public k()V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    return-void
+    check-cast p1, Ly42;
+
+    check-cast p2, Lw04;
+
+    check-cast p3, Lkotlin/coroutines/Continuation;
+
+    sget p0, Lkh6;->j:I
+
+    new-instance p0, Ldna;
+
+    invoke-direct {p0, p1, p2}, Ldna;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-object p0
 .end method

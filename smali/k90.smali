@@ -1,122 +1,69 @@
 .class public final Lk90;
-.super Ljava/lang/Object;
+.super Lzk0;
 .source "SourceFile"
 
 
-# static fields
-.field public static final c:Lk90;
-
-
 # instance fields
-.field public final a:Lma0;
-
-.field public final b:I
+.field public final a:Ljava/util/ArrayList;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    new-instance v0, Lk90;
-
-    sget-object v1, Lma0;->j:Lma0;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lk90;-><init>(Lma0;I)V
-
-    sput-object v0, Lk90;->c:Lk90;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lma0;I)V
+.method public constructor <init>(Ljava/util/ArrayList;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p1, :cond_0
-
-    iput-object p1, p0, Lk90;->a:Lma0;
-
-    iput p2, p0, Lk90;->b:I
+    iput-object p1, p0, Lk90;->a:Ljava/util/ArrayList;
 
     return-void
-
-    :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    const-string p1, "Null fallbackQuality"
-
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v0, 0x1
+    .locals 1
 
     if-ne p1, p0, :cond_0
 
-    return v0
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_0
-    instance-of v1, p1, Lk90;
+    instance-of v0, p1, Lzk0;
 
-    const/4 v2, 0x0
+    if-eqz v0, :cond_1
 
-    if-eqz v1, :cond_2
+    check-cast p1, Lzk0;
 
     check-cast p1, Lk90;
 
-    iget-object v1, p1, Lk90;->a:Lma0;
+    iget-object p1, p1, Lk90;->a:Ljava/util/ArrayList;
 
-    iget-object v3, p0, Lk90;->a:Lma0;
+    iget-object p0, p0, Lk90;->a:Ljava/util/ArrayList;
 
-    invoke-virtual {v3, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result p0
 
-    if-eqz v1, :cond_1
-
-    iget p0, p0, Lk90;->b:I
-
-    iget p1, p1, Lk90;->b:I
-
-    if-ne p0, p1, :cond_1
-
-    goto :goto_0
+    return p0
 
     :cond_1
-    move v0, v2
+    const/4 p0, 0x0
 
-    :goto_0
-    return v0
-
-    :cond_2
-    return v2
+    return p0
 .end method
 
 .method public final hashCode()I
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lk90;->a:Lma0;
+    iget-object p0, p0, Lk90;->a:Ljava/util/ArrayList;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {p0}, Ljava/util/ArrayList;->hashCode()I
 
-    move-result v0
+    move-result p0
 
-    const v1, 0xf4243
-
-    xor-int/2addr v0, v1
-
-    mul-int/2addr v0, v1
-
-    iget p0, p0, Lk90;->b:I
+    const v0, 0xf4243
 
     xor-int/2addr p0, v0
 
@@ -128,23 +75,19 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "RuleStrategy{fallbackQuality="
+    const-string v1, "BatchedLogRequest{logRequests="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lk90;->a:Lma0;
+    iget-object p0, p0, Lk90;->a:Ljava/util/ArrayList;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", fallbackRule="
+    const-string p0, "}"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget p0, p0, Lk90;->b:I
-
-    const-string v1, "}"
-
-    invoke-static {v0, p0, v1}, Lwn6;->j(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

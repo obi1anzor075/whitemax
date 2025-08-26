@@ -4,46 +4,89 @@
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:[Lz75;
+
+.field public b:I
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
+.method public varargs constructor <init>([Lz75;)V
     .locals 0
 
-    iput p1, p0, Leye;->a:I
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Leye;->a:[Lz75;
+
+    array-length p0, p1
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
+.method public final equals(Ljava/lang/Object;)Z
     .locals 2
 
-    iget p0, p0, Leye;->a:I
+    if-ne p0, p1, :cond_0
 
-    packed-switch p0, :pswitch_data_0
+    const/4 p0, 0x1
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    return p0
 
-    move-result-wide v0
+    :cond_0
+    if-eqz p1, :cond_2
 
-    return-wide v0
+    const-class v0, Leye;
 
-    :pswitch_0
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-wide v0
+    move-result-object v1
 
-    return-wide v0
+    if-eq v0, v1, :cond_1
 
-    nop
+    goto :goto_0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    :cond_1
+    check-cast p1, Leye;
+
+    iget-object p0, p0, Leye;->a:[Lz75;
+
+    iget-object p1, p1, Leye;->a:[Lz75;
+
+    invoke-static {p0, p1}, Ljava/util/Arrays;->equals([Ljava/lang/Object;[Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+
+    :cond_2
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    iget v0, p0, Leye;->b:I
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Leye;->a:[Lz75;
+
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+
+    move-result v0
+
+    const/16 v1, 0x20f
+
+    add-int/2addr v1, v0
+
+    iput v1, p0, Leye;->b:I
+
+    :cond_0
+    iget p0, p0, Leye;->b:I
+
+    return p0
 .end method

@@ -1,144 +1,147 @@
-.class public final synthetic Lx85;
-.super Ljava/lang/Object;
+.class public final Lx85;
+.super Llje;
 .source "SourceFile"
-
-# interfaces
-.implements Lj6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final X:Ljava/lang/String;
 
-.field public final synthetic b:Lha5;
-
-.field public final synthetic c:Ljava/util/List;
+.field public final o:Ljava/lang/Long;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lha5;Ljava/util/List;I)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/Long;)V
+    .locals 1
 
-    iput p3, p0, Lx85;->a:I
+    const/4 v0, 0x0
 
-    iput-object p1, p0, Lx85;->b:Lha5;
+    invoke-direct {p0, v0}, Lhi0;-><init>(Z)V
 
-    iput-object p2, p0, Lx85;->c:Ljava/util/List;
+    iput-object p2, p0, Lx85;->o:Ljava/lang/Long;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lx85;->X:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget v0, p0, Lx85;->a:I
+    const/4 v0, 0x1
 
-    packed-switch v0, :pswitch_data_0
+    if-ne p0, p1, :cond_0
 
-    iget-object v0, p0, Lx85;->c:Ljava/util/List;
+    return v0
 
-    iget-object p0, p0, Lx85;->b:Lha5;
+    :cond_0
+    instance-of v1, p1, Lx85;
 
-    iget-object v1, p0, Lha5;->a:Laec;
+    const/4 v2, 0x0
 
-    invoke-virtual {v1}, Laec;->c()V
+    if-nez v1, :cond_1
 
-    :try_start_0
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return v2
 
-    const-string v2, "SELECT MAX(`index`) FROM favorite_stickers"
+    :cond_1
+    check-cast p1, Lx85;
 
-    const/4 v3, 0x0
+    iget-object v1, p0, Lx85;->o:Ljava/lang/Long;
 
-    invoke-static {v3, v2}, Lpec;->a(ILjava/lang/String;)Lpec;
+    iget-object v3, p1, Lx85;->o:Ljava/lang/Long;
 
-    move-result-object v2
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-object p0, p0, Lha5;->a:Laec;
+    move-result v1
 
-    invoke-virtual {p0}, Laec;->b()V
+    if-nez v1, :cond_2
 
-    const/4 v4, 0x0
+    return v2
 
-    invoke-virtual {p0, v2, v4}, Laec;->o(Lf4e;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
+    :cond_2
+    iget-object p0, p0, Lx85;->X:Ljava/lang/String;
 
-    move-result-object p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    iget-object p1, p1, Lx85;->X:Ljava/lang/String;
 
-    :try_start_1
-    invoke-interface {p0}, Landroid/database/Cursor;->moveToFirst()Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result p0
 
-    if-eqz v4, :cond_0
+    if-nez p0, :cond_3
 
-    invoke-interface {p0, v3}, Landroid/database/Cursor;->getInt(I)I
+    return v2
 
-    move-result v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :cond_3
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lx85;->o:Ljava/lang/Long;
+
+    if-nez v1, :cond_0
+
+    move v1, v0
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v0
+    :cond_0
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    :goto_0
+    mul-int/lit8 v1, v1, 0x1f
+
+    iget-object p0, p0, Lx85;->X:Ljava/lang/String;
+
+    if-nez p0, :cond_1
 
     goto :goto_1
 
-    :cond_0
-    :goto_0
-    :try_start_2
-    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+    :cond_1
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
-    invoke-virtual {v2}, Lpec;->m()V
-
-    add-int/lit8 v3, v3, 0x1
-
-    invoke-static {v3, v0}, Lha5;->b(ILjava/util/List;)Ljava/util/ArrayList;
-
-    invoke-virtual {v1}, Laec;->r()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    invoke-virtual {v1}, Laec;->l()V
-
-    return-void
-
-    :catchall_1
-    move-exception p0
-
-    goto :goto_2
+    move-result v0
 
     :goto_1
-    :try_start_3
-    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+    add-int/2addr v1, v0
 
-    invoke-virtual {v2}, Lpec;->m()V
+    return v1
+.end method
 
-    throw v0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    :goto_2
-    invoke-virtual {v1}, Laec;->l()V
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    throw p0
+    const-string v1, "Response(botId="
 
-    :pswitch_0
-    iget-object v0, p0, Lx85;->b:Lha5;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p0, Lx85;->c:Ljava/util/List;
+    iget-object v1, p0, Lx85;->o:Ljava/lang/Long;
 
-    invoke-virtual {v0, p0}, Lha5;->a(Ljava/util/List;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    return-void
+    const-string v1, ", startParams="
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lx85;->X:Ljava/lang/String;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

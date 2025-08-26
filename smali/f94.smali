@@ -1,113 +1,301 @@
 .class public final Lf94;
-.super Ljava/lang/Object;
+.super Lg94;
 .source "SourceFile"
 
 # interfaces
-.implements Lh28;
+.implements Lg33;
+.implements Lppe;
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field public final X:Ltyd;
+
+.field public Y:Z
+
+.field public final Z:Lkotlinx/coroutines/internal/ContextScope;
+
+.field public o:Landroid/graphics/drawable/Drawable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/content/Context;)V
-    .locals 0
+.method public constructor <init>(Landroid/graphics/drawable/Drawable;Ltyd;Lxw7;)V
+    .locals 8
 
-    iput-object p1, p0, Lf94;->a:Landroid/content/Context;
+    invoke-direct {p0}, Lzh0;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lf94;->o:Landroid/graphics/drawable/Drawable;
+
+    iput-object p2, p0, Lf94;->X:Ltyd;
+
+    invoke-static {p3}, Lvk9;->a(Lhx3;)Lkotlinx/coroutines/internal/ContextScope;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lf94;->Z:Lkotlinx/coroutines/internal/ContextScope;
+
+    new-instance v0, Lgq0;
+
+    const/4 v6, 0x4
+
+    const/16 v7, 0x10
+
+    const/4 v1, 0x2
+
+    const-class v3, Lf94;
+
+    const-string v4, "onThemeChanged"
+
+    const-string v5, "onThemeChanged(Lone/me/sdk/design/OneMeTheme;)V"
+
+    move-object v2, p0
+
+    invoke-direct/range {v0 .. v7}, Lgq0;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
+
+    new-instance p0, Lgp5;
+
+    const/4 p3, 0x1
+
+    invoke-direct {p0, p2, v0, p3}, Lgp5;-><init>(Lzm5;Ll66;I)V
+
+    invoke-static {p0, p1}, Lsgg;->L(Lzm5;Lox3;)Ldwd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b(Lf28;)Lj28;
+.method public final L()Landroid/graphics/drawable/Drawable;
     .locals 2
 
-    sget v0, Loze;->a:I
+    iget-object v0, p0, Lf94;->o:Landroid/graphics/drawable/Drawable;
 
-    const/16 v1, 0x17
+    if-nez v0, :cond_0
 
-    if-lt v0, v1, :cond_1
+    const/4 p0, 0x0
 
-    const/16 v1, 0x1f
+    return-object p0
 
-    if-lt v0, v1, :cond_0
+    :cond_0
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    if-eq v1, v0, :cond_1
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
+
+    :cond_1
+    instance-of v0, v1, Lppe;
+
+    if-eqz v0, :cond_2
+
+    move-object v0, v1
+
+    check-cast v0, Lppe;
+
+    iget-object p0, p0, Lf94;->X:Ltyd;
+
+    invoke-interface {p0}, Ltyd;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lyha;
+
+    invoke-interface {v0, p0}, Lppe;->onThemeChanged(Lyha;)V
+
+    :cond_2
+    return-object v1
+.end method
+
+.method public final close()V
+    .locals 3
+
+    iget-object v0, p0, Lf94;->Z:Lkotlinx/coroutines/internal/ContextScope;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lvk9;->c(Lox3;Ljava/util/concurrent/CancellationException;)V
+
+    iget-object v0, p0, Lf94;->o:Landroid/graphics/drawable/Drawable;
+
+    instance-of v2, v0, Ljava/io/Closeable;
+
+    if-eqz v2, :cond_0
+
+    check-cast v0, Ljava/io/Closeable;
 
     goto :goto_0
 
     :cond_0
-    iget-object p0, p0, Lf94;->a:Landroid/content/Context;
-
-    if-eqz p0, :cond_1
-
-    const/16 v1, 0x1c
-
-    if-lt v0, v1, :cond_1
-
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object p0
-
-    const-string v0, "com.amazon.hardware.tv_screen"
-
-    invoke-virtual {p0, v0}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
+    move-object v0, v1
 
     :goto_0
-    iget-object p0, p1, Lf28;->c:Lxu5;
+    if-eqz v0, :cond_1
 
-    iget-object p0, p0, Lxu5;->n:Ljava/lang/String;
+    invoke-interface {v0}, Ljava/io/Closeable;->close()V
 
-    invoke-static {p0}, Lc49;->g(Ljava/lang/String;)I
+    :cond_1
+    iput-object v1, p0, Lf94;->o:Landroid/graphics/drawable/Drawable;
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lf94;->Y:Z
+
+    return-void
+.end method
+
+.method public final getHeight()I
+    .locals 1
+
+    iget-object p0, p0, Lf94;->o:Landroid/graphics/drawable/Drawable;
+
+    if-eqz p0, :cond_1
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     move-result p0
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Creating an asynchronous MediaCodec adapter for track type "
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {p0}, Loze;->H(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lez3;->M(Ljava/lang/String;)V
-
-    new-instance v0, Lud;
-
-    invoke-direct {v0, p0}, Lud;-><init>(I)V
-
-    const/4 p0, 0x1
-
-    iput-boolean p0, v0, Lud;->b:Z
-
-    invoke-virtual {v0, p1}, Lud;->o(Lf28;)Lex;
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
 
-    return-object p0
+    invoke-virtual {p0}, Ljava/lang/Number;->intValue()I
+
+    move-result v0
+
+    if-ltz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    if-eqz p0, :cond_1
+
+    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
+
+    move-result p0
+
+    return p0
 
     :cond_1
-    new-instance p0, Llk9;
+    const/4 p0, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    return p0
+.end method
 
-    invoke-virtual {p0, p1}, Llk9;->b(Lf28;)Lj28;
+.method public final getSizeInBytes()I
+    .locals 1
+
+    invoke-virtual {p0}, Lf94;->getWidth()I
+
+    move-result v0
+
+    invoke-virtual {p0}, Lf94;->getHeight()I
+
+    move-result p0
+
+    mul-int/2addr p0, v0
+
+    mul-int/lit8 p0, p0, 0x4
+
+    return p0
+.end method
+
+.method public final getWidth()I
+    .locals 1
+
+    iget-object p0, p0, Lf94;->o:Landroid/graphics/drawable/Drawable;
+
+    if-eqz p0, :cond_1
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result p0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
 
-    return-object p0
+    invoke-virtual {p0}, Ljava/lang/Number;->intValue()I
+
+    move-result v0
+
+    if-ltz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    if-eqz p0, :cond_1
+
+    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
+
+    move-result p0
+
+    return p0
+
+    :cond_1
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final isClosed()Z
+    .locals 0
+
+    iget-boolean p0, p0, Lf94;->Y:Z
+
+    return p0
+.end method
+
+.method public final isStateful()Z
+    .locals 0
+
+    iget-object p0, p0, Lf94;->o:Landroid/graphics/drawable/Drawable;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
+
+    move-result p0
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final onThemeChanged(Lyha;)V
+    .locals 1
+
+    iget-object p0, p0, Lf94;->o:Landroid/graphics/drawable/Drawable;
+
+    instance-of v0, p0, Lppe;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Lppe;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    if-eqz p0, :cond_1
+
+    invoke-interface {p0, p1}, Lppe;->onThemeChanged(Lyha;)V
+
+    :cond_1
+    return-void
 .end method

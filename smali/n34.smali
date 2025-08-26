@@ -1,86 +1,100 @@
-.class public final synthetic Ln34;
+.class public final Ln34;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Llh7;
-
 
 # instance fields
-.field public final synthetic a:I
+.field public a:Landroid/net/Uri;
 
-.field public final synthetic b:Lgd;
+.field public b:J
 
-.field public final synthetic c:Z
+.field public c:I
 
+.field public d:[B
 
-# direct methods
-.method public synthetic constructor <init>(Lgd;ZI)V
-    .locals 0
+.field public e:Ljava/util/Map;
 
-    iput p3, p0, Ln34;->a:I
+.field public f:J
 
-    iput-object p1, p0, Ln34;->b:Lgd;
+.field public g:J
 
-    iput-boolean p2, p0, Ln34;->c:Z
+.field public h:Ljava/lang/String;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.field public i:I
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
-    .locals 1
+.method public a()Lo34;
+    .locals 14
 
-    iget v0, p0, Ln34;->a:I
+    iget-object v0, p0, Ln34;->a:Landroid/net/Uri;
 
-    check-cast p1, Lhd;
+    if-eqz v0, :cond_0
 
-    packed-switch v0, :pswitch_data_0
+    new-instance v1, Lo34;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v2, p0, Ln34;->a:Landroid/net/Uri;
 
-    iget-object v0, p0, Ln34;->b:Lgd;
+    iget-wide v3, p0, Ln34;->b:J
 
-    iget-boolean p0, p0, Ln34;->c:Z
+    iget v5, p0, Ln34;->c:I
 
-    invoke-interface {p1, v0, p0}, Lhd;->y0(Lgd;Z)V
+    iget-object v6, p0, Ln34;->d:[B
 
-    return-void
+    iget-object v7, p0, Ln34;->e:Ljava/util/Map;
 
-    :pswitch_0
-    iget-object v0, p0, Ln34;->b:Lgd;
+    iget-wide v8, p0, Ln34;->f:J
 
-    iget-boolean p0, p0, Ln34;->c:Z
+    iget-wide v10, p0, Ln34;->g:J
 
-    invoke-interface {p1, v0, p0}, Lhd;->r(Lgd;Z)V
+    iget-object v12, p0, Ln34;->h:Ljava/lang/String;
 
-    return-void
+    iget v13, p0, Ln34;->i:I
 
-    :pswitch_1
-    iget-object v0, p0, Ln34;->b:Lgd;
+    invoke-direct/range {v1 .. v13}, Lo34;-><init>(Landroid/net/Uri;JI[BLjava/util/Map;JJLjava/lang/String;I)V
 
-    iget-boolean p0, p0, Ln34;->c:Z
+    return-object v1
 
-    invoke-interface {p1, v0, p0}, Lhd;->A(Lgd;Z)V
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    return-void
+    const-string v0, "The uri must be set."
 
-    :pswitch_2
-    iget-object v0, p0, Ln34;->b:Lgd;
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    iget-boolean p0, p0, Ln34;->c:Z
+    throw p0
+.end method
 
-    invoke-interface {p1, v0, p0}, Lhd;->t(Lgd;Z)V
+.method public b()Lp34;
+    .locals 15
 
-    return-void
+    iget-object v0, p0, Ln34;->a:Landroid/net/Uri;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    const-string v1, "The uri must be set."
+
+    invoke-static {v0, v1}, Lu27;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v2, Lp34;
+
+    iget-object v3, p0, Ln34;->a:Landroid/net/Uri;
+
+    iget-wide v4, p0, Ln34;->b:J
+
+    iget v6, p0, Ln34;->c:I
+
+    iget-object v7, p0, Ln34;->d:[B
+
+    iget-object v8, p0, Ln34;->e:Ljava/util/Map;
+
+    iget-wide v9, p0, Ln34;->f:J
+
+    iget-wide v11, p0, Ln34;->g:J
+
+    iget-object v13, p0, Ln34;->h:Ljava/lang/String;
+
+    iget v14, p0, Ln34;->i:I
+
+    invoke-direct/range {v2 .. v14}, Lp34;-><init>(Landroid/net/Uri;JI[BLjava/util/Map;JJLjava/lang/String;I)V
+
+    return-object v2
 .end method

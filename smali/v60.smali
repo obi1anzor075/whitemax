@@ -1,33 +1,37 @@
-.class public abstract Lv60;
+.class public final Lv60;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lqe4;
+# instance fields
+.field public final a:Landroid/media/AudioTrack;
+
+.field public final b:Landroid/media/AudioTimestamp;
+
+.field public c:J
+
+.field public d:J
+
+.field public e:J
+
+.field public f:Z
+
+.field public g:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Landroid/media/AudioTrack;)V
+    .locals 0
 
-    new-instance v0, Ls59;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lv60;->a:Landroid/media/AudioTrack;
 
-    new-instance v1, Lwyf;
+    new-instance p1, Landroid/media/AudioTimestamp;
 
-    const/4 v2, 0x6
+    invoke-direct {p1}, Landroid/media/AudioTimestamp;-><init>()V
 
-    invoke-direct {v1, v2}, Lwyf;-><init>(I)V
-
-    new-instance v2, Lqe4;
-
-    const-string v3, "Auth.GOOGLE_SIGN_IN_API"
-
-    invoke-direct {v2, v3, v1, v0}, Lqe4;-><init>(Ljava/lang/String;Ln06;Ls59;)V
-
-    sput-object v2, Lv60;->a:Lqe4;
+    iput-object p1, p0, Lv60;->b:Landroid/media/AudioTimestamp;
 
     return-void
 .end method

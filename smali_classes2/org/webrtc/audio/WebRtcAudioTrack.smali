@@ -276,12 +276,11 @@
 
     const/4 p0, 0x4
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/16 p0, 0xc
 
-    :goto_0
     return p0
 .end method
 
@@ -296,7 +295,7 @@
 
     invoke-static {p0}, Lorg/webrtc/audio/WebRtcAudioTrack;->logNativeOutputSampleRate(I)V
 
-    new-instance v0, Landroid/media/AudioTrack;
+    new-instance v2, Landroid/media/AudioTrack;
 
     invoke-static {p3}, Lorg/webrtc/audio/WebRtcAudioTrack;->getAudioAttributes(Landroid/media/AudioAttributes;)Landroid/media/AudioAttributes;
 
@@ -306,9 +305,9 @@
 
     invoke-direct {p3}, Landroid/media/AudioFormat$Builder;-><init>()V
 
-    const/4 v1, 0x2
+    const/4 v0, 0x2
 
-    invoke-virtual {p3, v1}, Landroid/media/AudioFormat$Builder;->setEncoding(I)Landroid/media/AudioFormat$Builder;
+    invoke-virtual {p3, v0}, Landroid/media/AudioFormat$Builder;->setEncoding(I)Landroid/media/AudioFormat$Builder;
 
     move-result-object p3
 
@@ -328,13 +327,11 @@
 
     const/4 v7, 0x0
 
-    move-object v2, v0
-
     move v5, p2
 
     invoke-direct/range {v2 .. v7}, Landroid/media/AudioTrack;-><init>(Landroid/media/AudioAttributes;Landroid/media/AudioFormat;III)V
 
-    return-object v0
+    return-object v2
 .end method
 
 .method private static createAudioTrackOnOreoOrHigher(IIILandroid/media/AudioAttributes;)Landroid/media/AudioTrack;
@@ -451,7 +448,7 @@
 
     invoke-interface {p0}, Lorg/webrtc/audio/JavaAudioDeviceModule$AudioTrackStateCallback;->onWebRtcAudioTrackStart()V
 
-    goto :goto_0
+    return-void
 
     :cond_0
     const/4 v0, 0x1
@@ -460,7 +457,7 @@
 
     invoke-interface {p0}, Lorg/webrtc/audio/JavaAudioDeviceModule$AudioTrackStateCallback;->onWebRtcAudioTrackStop()V
 
-    goto :goto_0
+    return-void
 
     :cond_1
     const-string p0, "Invalid audio state"
@@ -468,7 +465,6 @@
     invoke-static {v1, p0}, Lorg/webrtc/Logging;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_2
-    :goto_0
     return-void
 .end method
 
@@ -991,13 +987,13 @@
 
     move-result v2
 
-    const-string v3, "AudioTrack: session ID: "
+    const-string v3, ", channels: "
 
-    const-string v4, ", channels: "
+    const-string v4, ", sample rate: "
 
-    const-string v5, ", sample rate: "
+    const-string v5, "AudioTrack: session ID: "
 
-    invoke-static {v3, v0, v4, v1, v5}, Lrf0;->i(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v5, v0, v3, v1, v4}, Lpg0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -1373,7 +1369,7 @@
 
     const-string v3, "AudioTrack.play failed - incorrect state :"
 
-    invoke-static {v1, v3}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v3}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1394,7 +1390,7 @@
 
     const-string v3, "AudioTrack.play failed: "
 
-    invoke-static {v3, v0}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v0}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

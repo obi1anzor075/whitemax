@@ -1,293 +1,262 @@
 .class public final Le68;
-.super Ljava/lang/Object;
+.super Landroid/os/Handler;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Landroid/net/Uri;
+.field public final synthetic a:I
 
-.field public final b:Ljava/lang/String;
+.field public b:Ljava/lang/Object;
 
-.field public final c:Ljava/lang/String;
-
-.field public final d:I
-
-.field public final e:I
-
-.field public final f:Ljava/lang/String;
-
-.field public final g:Ljava/lang/String;
+.field public c:Ljava/lang/Object;
 
 
 # direct methods
 .method public constructor <init>(Lg68;)V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
 
-    iget-object v0, p1, Lg68;->a:Ljava/lang/Object;
+    iput v0, p0, Le68;->a:I
 
-    check-cast v0, Landroid/net/Uri;
+    .line 3
+    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    iput-object v0, p0, Le68;->a:Landroid/net/Uri;
+    .line 4
+    new-instance v0, Ljava/lang/ref/WeakReference;
 
-    iget-object v0, p1, Lg68;->b:Ljava/lang/String;
+    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object v0, p0, Le68;->b:Ljava/lang/String;
+    iput-object v0, p0, Le68;->b:Ljava/lang/Object;
 
-    iget-object v0, p1, Lg68;->c:Ljava/io/Serializable;
+    return-void
+.end method
 
-    check-cast v0, Ljava/lang/String;
+.method public constructor <init>(Lqh8;Landroid/os/Looper;)V
+    .locals 1
 
-    iput-object v0, p0, Le68;->c:Ljava/lang/String;
+    const/4 v0, 0x1
 
-    iget v0, p1, Lg68;->d:I
+    iput v0, p0, Le68;->a:I
 
-    iput v0, p0, Le68;->d:I
+    .line 1
+    iput-object p1, p0, Le68;->c:Ljava/lang/Object;
 
-    iget v0, p1, Lg68;->e:I
-
-    iput v0, p0, Le68;->e:I
-
-    iget-object v0, p1, Lg68;->f:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/String;
-
-    iput-object v0, p0, Le68;->f:Ljava/lang/String;
-
-    iget-object p1, p1, Lg68;->g:Ljava/io/Serializable;
-
-    check-cast p1, Ljava/lang/String;
-
-    iput-object p1, p0, Le68;->g:Ljava/lang/String;
+    .line 2
+    invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lg68;
-    .locals 2
+.method public handleMessage(Landroid/os/Message;)V
+    .locals 6
 
-    new-instance v0, Lg68;
+    iget v0, p0, Le68;->a:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v1, p0, Le68;->a:Landroid/net/Uri;
+    invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    iput-object v1, v0, Lg68;->a:Ljava/lang/Object;
+    return-void
 
-    iget-object v1, p0, Le68;->b:Ljava/lang/String;
+    :pswitch_0
+    iget-object v0, p0, Le68;->c:Ljava/lang/Object;
 
-    iput-object v1, v0, Lg68;->b:Ljava/lang/String;
+    check-cast v0, Ljava/lang/ref/WeakReference;
 
-    iget-object v1, p0, Le68;->c:Ljava/lang/String;
+    if-nez v0, :cond_0
 
-    iput-object v1, v0, Lg68;->c:Ljava/io/Serializable;
-
-    iget v1, p0, Le68;->d:I
-
-    iput v1, v0, Lg68;->d:I
-
-    iget v1, p0, Le68;->e:I
-
-    iput v1, v0, Lg68;->e:I
-
-    iget-object v1, p0, Le68;->f:Ljava/lang/String;
-
-    iput-object v1, v0, Lg68;->f:Ljava/lang/Object;
-
-    iget-object p0, p0, Le68;->g:Ljava/lang/String;
-
-    iput-object p0, v0, Lg68;->g:Ljava/io/Serializable;
-
-    return-object v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
+    goto/16 :goto_3
 
     :cond_0
-    instance-of v1, p1, Le68;
+    invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    move-result-object v0
 
-    if-nez v1, :cond_1
+    check-cast v0, Landroid/os/Messenger;
 
-    return v2
+    iget-object p0, p0, Le68;->b:Ljava/lang/Object;
+
+    check-cast p0, Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lg68;
+
+    if-eqz v0, :cond_9
+
+    if-nez p0, :cond_1
+
+    goto/16 :goto_3
 
     :cond_1
-    check-cast p1, Le68;
+    invoke-virtual {p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
-    iget-object v1, p1, Le68;->a:Landroid/net/Uri;
+    move-result-object v1
 
-    iget-object v3, p0, Le68;->a:Landroid/net/Uri;
+    invoke-static {v1}, Ljh8;->a(Landroid/os/Bundle;)V
 
-    invoke-virtual {v3, v1}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+    :try_start_0
+    iget v2, p1, Landroid/os/Message;->what:I
+    :try_end_0
+    .catch Landroid/os/BadParcelableException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v1
+    const/4 v3, 0x1
 
-    if-eqz v1, :cond_2
+    const-string v4, "data_media_item_id"
 
-    iget-object v1, p0, Le68;->b:Ljava/lang/String;
+    if-eq v2, v3, :cond_8
 
-    iget-object v3, p1, Le68;->b:Ljava/lang/String;
+    const/4 v3, 0x2
 
-    invoke-static {v1, v3}, Lmze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    if-eq v2, v3, :cond_9
 
-    move-result v1
+    const/4 v3, 0x3
 
-    if-eqz v1, :cond_2
+    if-eq v2, v3, :cond_2
 
-    iget-object v1, p0, Le68;->c:Ljava/lang/String;
+    :try_start_1
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    iget-object v3, p1, Le68;->c:Ljava/lang/String;
-
-    invoke-static {v1, v3}, Lmze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    iget v1, p0, Le68;->d:I
-
-    iget v3, p1, Le68;->d:I
-
-    if-ne v1, v3, :cond_2
-
-    iget v1, p0, Le68;->e:I
-
-    iget v3, p1, Le68;->e:I
-
-    if-ne v1, v3, :cond_2
-
-    iget-object v1, p0, Le68;->f:Ljava/lang/String;
-
-    iget-object v3, p1, Le68;->f:Ljava/lang/String;
-
-    invoke-static {v1, v3}, Lmze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    iget-object p0, p0, Le68;->g:Ljava/lang/String;
-
-    iget-object p1, p1, Le68;->g:Ljava/lang/String;
-
-    invoke-static {p0, p1}, Lmze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_2
-
-    goto :goto_0
+    goto/16 :goto_3
 
     :cond_2
-    move v0, v2
+    const-string p1, "data_options"
 
-    :goto_0
-    return v0
-.end method
+    invoke-virtual {v1, p1}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
-.method public final hashCode()I
-    .locals 3
+    move-result-object p1
 
-    iget-object v0, p0, Le68;->a:Landroid/net/Uri;
+    invoke-static {p1}, Ljh8;->a(Landroid/os/Bundle;)V
 
-    invoke-virtual {v0}, Landroid/net/Uri;->hashCode()I
+    const-string p1, "data_notify_children_changed_options"
 
-    move-result v0
+    invoke-virtual {v1, p1}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
-    mul-int/lit8 v0, v0, 0x1f
+    move-result-object p1
 
-    const/4 v1, 0x0
+    invoke-static {p1}, Ljh8;->a(Landroid/os/Bundle;)V
 
-    iget-object v2, p0, Le68;->b:Ljava/lang/String;
+    invoke-virtual {v1, v4}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    move-result-object p1
 
-    move v2, v1
+    const-string v2, "data_media_item_list"
 
-    goto :goto_0
+    invoke-virtual {v1, v2}, Landroid/os/Bundle;->getParcelableArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
 
-    :cond_0
-    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+    move-result-object v1
 
-    move-result v2
+    sget-object v2, Lh68;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    :goto_0
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v2, p0, Le68;->c:Ljava/lang/String;
-
-    if-nez v2, :cond_1
-
-    move v2, v1
+    if-nez v1, :cond_3
 
     goto :goto_1
 
-    :cond_1
-    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+    :cond_3
+    new-instance v3, Ljava/util/ArrayList;
 
-    move-result v2
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
+    const/4 v4, 0x0
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v5
+
+    if-ge v4, v5, :cond_4
+
+    invoke-interface {v1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/os/Parcelable;
+
+    invoke-static {v5, v2}, Lmf7;->a(Landroid/os/Parcelable;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_0
+
+    :cond_4
     :goto_1
-    add-int/2addr v0, v2
+    iget-object v1, p0, Lg68;->g:Landroid/os/Messenger;
 
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget v2, p0, Le68;->d:I
-
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget v2, p0, Le68;->e:I
-
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v2, p0, Le68;->f:Ljava/lang/String;
-
-    if-nez v2, :cond_2
-
-    move v2, v1
-
-    goto :goto_2
-
-    :cond_2
-    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
-
-    move-result v2
-
-    :goto_2
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Le68;->g:Ljava/lang/String;
-
-    if-nez p0, :cond_3
+    if-eq v1, v0, :cond_5
 
     goto :goto_3
 
-    :cond_3
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+    :cond_5
+    if-nez p1, :cond_6
 
-    move-result v1
+    goto :goto_2
 
+    :cond_6
+    iget-object p0, p0, Lg68;->e:Ljs;
+
+    invoke-virtual {p0, p1}, Lbod;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-nez p0, :cond_7
+
+    :goto_2
+    sget p0, Li68;->b:I
+
+    goto :goto_3
+
+    :cond_7
+    new-instance p0, Ljava/lang/ClassCastException;
+
+    invoke-direct {p0}, Ljava/lang/ClassCastException;-><init>()V
+
+    throw p0
+
+    :cond_8
+    const-string p0, "data_root_hints"
+
+    invoke-virtual {v1, p0}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljh8;->a(Landroid/os/Bundle;)V
+
+    invoke-virtual {v1, v4}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    const-string p0, "data_media_session_token"
+
+    invoke-virtual {v1, p0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object p0
+
+    sget-object p1, Lih8;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p0, p1}, Lmf7;->a(Landroid/os/Parcelable;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object p0
+
+    check-cast p0, Lih8;
+    :try_end_1
+    .catch Landroid/os/BadParcelableException; {:try_start_1 .. :try_end_1} :catch_0
+
+    :catch_0
+    :cond_9
     :goto_3
-    add-int/2addr v0, v1
+    return-void
 
-    return v0
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

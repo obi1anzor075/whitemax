@@ -61,7 +61,7 @@
 
     if-nez v0, :cond_1
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_1
     invoke-virtual {p2, p1}, Landroid/os/Bundle;->getParcelableArray(Ljava/lang/String;)[Landroid/os/Parcelable;
@@ -102,7 +102,7 @@
 
     invoke-virtual {p1, v0, p0, p2}, Landroid/support/v4/media/MediaBrowserCompat$SearchCallback;->onSearchResult(Ljava/lang/String;Landroid/os/Bundle;Ljava/util/List;)V
 
-    goto :goto_1
+    return-void
 
     :cond_3
     iget-object p1, p0, Landroid/support/v4/media/MediaBrowserCompat$SearchResultReceiver;->mCallback:Landroid/support/v4/media/MediaBrowserCompat$SearchCallback;
@@ -113,11 +113,10 @@
 
     invoke-virtual {p1, p2, p0}, Landroid/support/v4/media/MediaBrowserCompat$SearchCallback;->onError(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    :goto_1
     return-void
 
     :cond_4
-    :goto_2
+    :goto_1
     iget-object p1, p0, Landroid/support/v4/media/MediaBrowserCompat$SearchResultReceiver;->mCallback:Landroid/support/v4/media/MediaBrowserCompat$SearchCallback;
 
     iget-object p2, p0, Landroid/support/v4/media/MediaBrowserCompat$SearchResultReceiver;->mQuery:Ljava/lang/String;

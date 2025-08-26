@@ -1,85 +1,99 @@
-.class public final enum Ljxc;
-.super Ljava/lang/Enum;
+.class public final Ljxc;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final enum a:Ljxc;
+# instance fields
+.field public final a:Lwjd;
 
-.field public static final enum b:Ljxc;
-
-.field public static final enum c:Ljxc;
-
-.field public static final synthetic o:[Ljxc;
+.field public final b:Lkotlinx/coroutines/internal/ContextScope;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(Lje7;Lje7;)V
+    .locals 2
 
-    new-instance v0, Ljxc;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "HideKeyboard"
+    const/4 v0, 0x0
 
-    const/4 v2, 0x0
+    const/4 v1, 0x7
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ljxc;->a:Ljxc;
-
-    new-instance v1, Ljxc;
-
-    const-string v2, "SendMessage"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Ljxc;->b:Ljxc;
-
-    new-instance v2, Ljxc;
-
-    const-string v3, "SendMessageWithDisabling"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Ljxc;->c:Ljxc;
-
-    filled-new-array {v0, v1, v2}, [Ljxc;
+    invoke-static {v0, v0, v1}, Lxjd;->b(III)Lwjd;
 
     move-result-object v0
 
-    sput-object v0, Ljxc;->o:[Ljxc;
+    iput-object v0, p0, Ljxc;->a:Lwjd;
+
+    invoke-interface {p2}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lrie;
+
+    check-cast p2, Lo7a;
+
+    invoke-virtual {p2}, Lo7a;->c()Lxw7;
+
+    move-result-object p2
+
+    invoke-static {p2}, Lvk9;->a(Lhx3;)Lkotlinx/coroutines/internal/ContextScope;
+
+    move-result-object p2
+
+    iput-object p2, p0, Ljxc;->b:Lkotlinx/coroutines/internal/ContextScope;
+
+    invoke-interface {p1}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lvu0;
+
+    invoke-virtual {p1, p0}, Lvu0;->d(Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Ljxc;
-    .locals 1
 
-    const-class v0, Ljxc;
+# virtual methods
+.method public final onEvent(Lji0;)V
+    .locals 2
+    .annotation runtime Li9e;
+    .end annotation
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    .line 2
+    new-instance v0, Lixc;
 
-    move-result-object p0
+    const/4 v1, 0x0
 
-    check-cast p0, Ljxc;
+    invoke-direct {v0, p0, p1, v1}, Lixc;-><init>(Ljxc;Lji0;Lkotlin/coroutines/Continuation;)V
 
-    return-object p0
+    const/4 p1, 0x3
+
+    iget-object p0, p0, Ljxc;->b:Lkotlinx/coroutines/internal/ContextScope;
+
+    invoke-static {p0, v1, v1, v0, p1}, Lzo3;->E(Lox3;Lhx3;Lrx3;Ll66;I)Ldwd;
+
+    return-void
 .end method
 
-.method public static values()[Ljxc;
-    .locals 1
+.method public final onEvent(Lyj2;)V
+    .locals 2
+    .annotation runtime Li9e;
+    .end annotation
 
-    sget-object v0, Ljxc;->o:[Ljxc;
+    .line 1
+    new-instance v0, Lhxc;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    invoke-direct {v0, p0, p1, v1}, Lhxc;-><init>(Ljxc;Lyj2;Lkotlin/coroutines/Continuation;)V
 
-    check-cast v0, [Ljxc;
+    const/4 p1, 0x3
 
-    return-object v0
+    iget-object p0, p0, Ljxc;->b:Lkotlinx/coroutines/internal/ContextScope;
+
+    invoke-static {p0, v1, v1, v0, p1}, Lzo3;->E(Lox3;Lhx3;Lrx3;Ll66;I)Ldwd;
+
+    return-void
 .end method

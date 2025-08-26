@@ -1,52 +1,69 @@
 .class public final Lktf;
-.super Landroid/content/ContextWrapper;
+.super Lk42;
 .source "SourceFile"
 
-# interfaces
-.implements Lqa3;
 
-
-# instance fields
-.field public final synthetic a:Lmtf;
+# static fields
+.field public static final c:Lktf;
 
 
 # direct methods
-.method public constructor <init>(Lmtf;Landroid/content/Context;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
-    iput-object p1, p0, Lktf;->a:Lmtf;
+    new-instance v0, Lktf;
 
-    invoke-direct {p0, p2}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
+    const-wide/16 v1, 0x0
+
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v2, v1}, Lk42;-><init>(ILjava/lang/Long;)V
+
+    sput-object v0, Lktf;->c:Lktf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lsa3;
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    iget-object p0, p0, Lktf;->a:Lmtf;
+    const/4 v0, 0x1
 
-    iget-object p0, p0, Lmtf;->a:Landroid/content/Context;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+    return v0
 
-    move-result-object p0
+    :cond_0
+    instance-of p0, p1, Lktf;
 
-    check-cast p0, Lqa3;
-
-    invoke-interface {p0}, Lqa3;->a()Lsa3;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final isDeviceProtectedStorage()Z
-    .locals 0
+    if-nez p0, :cond_1
 
     const/4 p0, 0x0
 
     return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    const p0, 0x3cd4b16
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "External"
+
+    return-object p0
 .end method

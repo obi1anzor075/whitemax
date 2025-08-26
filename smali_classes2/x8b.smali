@@ -1,90 +1,102 @@
-.class public final Lx8b;
-.super Lt81;
+.class public final synthetic Lx8b;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lv56;
 
 
 # instance fields
-.field public final b:J
+.field public final synthetic a:I
+
+.field public final synthetic b:Lone/me/profile/screens/avatars/ProfileAvatarsScreen;
 
 
 # direct methods
-.method public constructor <init>(J)V
-    .locals 1
+.method public synthetic constructor <init>(Lone/me/profile/screens/avatars/ProfileAvatarsScreen;I)V
+    .locals 0
 
-    const/16 v0, 0x9
+    iput p2, p0, Lx8b;->a:I
 
-    invoke-direct {p0, v0}, Lt81;-><init>(I)V
+    iput-object p1, p0, Lx8b;->b:Lone/me/profile/screens/avatars/ProfileAvatarsScreen;
 
-    iput-wide p1, p0, Lx8b;->b:J
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 5
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lx8b;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lx8b;
-
-    iget-wide v3, p0, Lx8b;->b:J
-
-    iget-wide p0, p1, Lx8b;->b:J
-
-    cmp-long p0, v3, p0
-
-    if-eqz p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
+.method public final invoke()Ljava/lang/Object;
     .locals 2
 
-    iget-wide v0, p0, Lx8b;->b:J
+    iget v0, p0, Lx8b;->a:I
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    iget-object p0, p0, Lx8b;->b:Lone/me/profile/screens/avatars/ProfileAvatarsScreen;
 
-    move-result p0
+    packed-switch v0, :pswitch_data_0
 
-    return p0
-.end method
+    sget-object v0, Lone/me/profile/screens/avatars/ProfileAvatarsScreen;->v0:[Lbc7;
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->requireResources()Landroid/content/res/Resources;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    move-result-object p0
 
-    const-string v1, "InviteByLink(id="
+    sget v0, Lwzb;->tt_of:I
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-wide v1, p0, Lx8b;->b:J
-
-    const-string p0, ")"
-
-    invoke-static {v0, v1, v2, p0}, Lwn6;->k(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
+
+    :pswitch_0
+    sget-object v0, Lone/me/profile/screens/avatars/ProfileAvatarsScreen;->v0:[Lbc7;
+
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->requireActivity()Lam;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object p0
+
+    new-instance v1, Le8g;
+
+    invoke-direct {v1, v0, p0}, Le8g;-><init>(Landroid/view/Window;Landroid/view/View;)V
+
+    return-object v1
+
+    :pswitch_1
+    sget-object v0, Lone/me/profile/screens/avatars/ProfileAvatarsScreen;->v0:[Lbc7;
+
+    sget-object v0, Lqp4;->q0:Lap9;
+
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Lap9;->i(Landroid/content/Context;)Lk9a;
+
+    move-result-object p0
+
+    iget-object p0, p0, Lk9a;->c:Lyha;
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

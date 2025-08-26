@@ -1,410 +1,316 @@
-.class public final Lcq1;
+.class public abstract Lcq1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lmb7;
+.implements Ljava/io/Serializable;
+
+
+# static fields
+.field public static final NO_RECEIVER:Ljava/lang/Object;
+
 
 # instance fields
-.field public final a:Lt97;
+.field private final isTopLevel:Z
 
-.field public final b:Lt97;
+.field private final name:Ljava/lang/String;
 
-.field public final c:Lt97;
+.field private final owner:Ljava/lang/Class;
 
-.field public final d:Lt97;
+.field protected final receiver:Ljava/lang/Object;
 
-.field public final e:Lr7e;
+.field private transient reflected:Lmb7;
 
-.field public final f:Lt97;
-
-.field public final g:Lt97;
-
-.field public final h:Lt97;
-
-.field public final i:Lt97;
-
-.field public final j:Lt97;
-
-.field public final k:Lt97;
+.field private final signature:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lt97;Lt97;Lt97;Lt97;Lt97;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    sget-object v0, Lbq1;->a:Lbq1;
+
+    sput-object v0, Lcq1;->NO_RECEIVER:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p4, p0, Lcq1;->a:Lt97;
+    iput-object p1, p0, Lcq1;->receiver:Ljava/lang/Object;
 
-    iput-object p5, p0, Lcq1;->b:Lt97;
+    iput-object p2, p0, Lcq1;->owner:Ljava/lang/Class;
 
-    iput-object p3, p0, Lcq1;->c:Lt97;
+    iput-object p3, p0, Lcq1;->name:Ljava/lang/String;
 
-    iput-object p2, p0, Lcq1;->d:Lt97;
+    iput-object p4, p0, Lcq1;->signature:Ljava/lang/String;
 
-    new-instance p3, Lxq;
-
-    const/4 p4, 0x4
-
-    invoke-direct {p3, p4, p2}, Lxq;-><init>(ILt97;)V
-
-    new-instance p2, Lr7e;
-
-    invoke-direct {p2, p3}, Lr7e;-><init>(Ls16;)V
-
-    iput-object p2, p0, Lcq1;->e:Lr7e;
-
-    new-instance p2, Lxq;
-
-    const/4 p3, 0x5
-
-    invoke-direct {p2, p3, p1}, Lxq;-><init>(ILt97;)V
-
-    const/4 p3, 0x3
-
-    invoke-static {p3, p2}, Lez3;->O(ILs16;)Lt97;
-
-    move-result-object p2
-
-    iput-object p2, p0, Lcq1;->f:Lt97;
-
-    new-instance p2, Lxq;
-
-    const/4 p4, 0x6
-
-    invoke-direct {p2, p4, p1}, Lxq;-><init>(ILt97;)V
-
-    invoke-static {p3, p2}, Lez3;->O(ILs16;)Lt97;
-
-    move-result-object p2
-
-    iput-object p2, p0, Lcq1;->g:Lt97;
-
-    new-instance p2, Lxq;
-
-    const/4 p4, 0x7
-
-    invoke-direct {p2, p4, p1}, Lxq;-><init>(ILt97;)V
-
-    invoke-static {p3, p2}, Lez3;->O(ILs16;)Lt97;
-
-    move-result-object p2
-
-    iput-object p2, p0, Lcq1;->h:Lt97;
-
-    new-instance p2, Lxq;
-
-    const/16 p4, 0x8
-
-    invoke-direct {p2, p4, p1}, Lxq;-><init>(ILt97;)V
-
-    invoke-static {p3, p2}, Lez3;->O(ILs16;)Lt97;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcq1;->i:Lt97;
-
-    new-instance p1, Ldi1;
-
-    const/16 p2, 0x18
-
-    invoke-direct {p1, p2}, Ldi1;-><init>(I)V
-
-    invoke-static {p3, p1}, Lez3;->O(ILs16;)Lt97;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcq1;->j:Lt97;
-
-    new-instance p1, Ldi1;
-
-    const/16 p2, 0x19
-
-    invoke-direct {p1, p2}, Ldi1;-><init>(I)V
-
-    invoke-static {p3, p1}, Lez3;->O(ILs16;)Lt97;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcq1;->k:Lt97;
+    iput-boolean p5, p0, Lcq1;->isTopLevel:Z
 
     return-void
-.end method
-
-.method public static b(Ljava/lang/CharSequence;Ljava/lang/String;Landroid/graphics/Bitmap;)Lwna;
-    .locals 3
-
-    invoke-static {p0}, Lh0e;->c0(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    xor-int/2addr v0, v1
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {p1}, Lh0e;->c0(Ljava/lang/CharSequence;)Z
-
-    move-result p0
-
-    xor-int/2addr p0, v1
-
-    if-eqz p0, :cond_1
-
-    move-object p0, p1
-
-    goto :goto_0
-
-    :cond_1
-    const-string p0, "..."
-
-    :goto_0
-    const/4 p1, 0x0
-
-    if-eqz p2, :cond_2
-
-    new-instance v0, Landroidx/core/graphics/drawable/IconCompat;
-
-    const/4 v2, 0x5
-
-    invoke-direct {v0, v2}, Landroidx/core/graphics/drawable/IconCompat;-><init>(I)V
-
-    iput-object p2, v0, Landroidx/core/graphics/drawable/IconCompat;->b:Ljava/lang/Object;
-
-    goto :goto_1
-
-    :cond_2
-    move-object v0, p1
-
-    :goto_1
-    new-instance p2, Lwna;
-
-    invoke-direct {p2}, Ljava/lang/Object;-><init>()V
-
-    iput-object p0, p2, Lwna;->a:Ljava/lang/CharSequence;
-
-    iput-object v0, p2, Lwna;->b:Landroidx/core/graphics/drawable/IconCompat;
-
-    iput-object p1, p2, Lwna;->c:Ljava/lang/String;
-
-    iput-object p1, p2, Lwna;->d:Ljava/lang/String;
-
-    const/4 p0, 0x0
-
-    iput-boolean p0, p2, Lwna;->e:Z
-
-    iput-boolean v1, p2, Lwna;->f:Z
-
-    return-object p2
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
+.method public varargs call([Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    const-string v0, "CallsNotification"
-
-    const-string v1, "cancel call notification"
-
-    invoke-static {v0, v1}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcq1;->e()Lip9;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lip9;->b:Landroid/app/NotificationManager;
-
-    const/4 v1, 0x0
-
-    const/16 v2, 0xef
-
-    invoke-virtual {v0, v1, v2}, Landroid/app/NotificationManager;->cancel(Ljava/lang/String;I)V
-
-    invoke-virtual {p0}, Lcq1;->e()Lip9;
+    invoke-virtual {p0}, Lcq1;->getReflected()Lmb7;
 
     move-result-object p0
 
-    iget-object p0, p0, Lip9;->b:Landroid/app/NotificationManager;
+    invoke-interface {p0, p1}, Lmb7;->call([Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/16 v0, 0xf0
+    move-result-object p0
 
-    invoke-virtual {p0, v1, v0}, Landroid/app/NotificationManager;->cancel(Ljava/lang/String;I)V
-
-    return-void
+    return-object p0
 .end method
 
-.method public final c(Landroid/content/Context;Lk11;ZZ)Landroid/app/Notification;
-    .locals 2
+.method public callBy(Ljava/util/Map;)Ljava/lang/Object;
+    .locals 0
 
-    const-string v0, "CallsNotification"
-
-    const-string v1, "createTempNotification"
-
-    invoke-static {v0, v1}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object p2, p2, Lk11;->b:Ljava/lang/CharSequence;
-
-    if-nez p2, :cond_0
-
-    iget-object p2, p0, Lcq1;->f:Lt97;
-
-    invoke-interface {p2}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Ljava/lang/String;
-
-    :cond_0
-    if-nez p4, :cond_1
-
-    iget-object p4, p0, Lcq1;->i:Lt97;
-
-    invoke-interface {p4}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p4
-
-    check-cast p4, Ljava/lang/String;
-
-    goto :goto_0
-
-    :cond_1
-    if-eqz p3, :cond_2
-
-    iget-object p4, p0, Lcq1;->h:Lt97;
-
-    invoke-interface {p4}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p4
-
-    check-cast p4, Ljava/lang/String;
-
-    goto :goto_0
-
-    :cond_2
-    iget-object p4, p0, Lcq1;->g:Lt97;
-
-    invoke-interface {p4}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p4
-
-    check-cast p4, Ljava/lang/String;
-
-    :goto_0
-    if-eqz p3, :cond_3
-
-    iget-object p3, p0, Lcq1;->k:Lt97;
-
-    invoke-interface {p3}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p3
-
-    check-cast p3, Ljava/lang/Number;
-
-    invoke-virtual {p3}, Ljava/lang/Number;->intValue()I
-
-    move-result p3
-
-    goto :goto_1
-
-    :cond_3
-    iget-object p3, p0, Lcq1;->j:Lt97;
-
-    invoke-interface {p3}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p3
-
-    check-cast p3, Ljava/lang/Number;
-
-    invoke-virtual {p3}, Ljava/lang/Number;->intValue()I
-
-    move-result p3
-
-    :goto_1
-    iget-object v0, p0, Lcq1;->d:Lt97;
-
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lo7a;
-
-    invoke-virtual {v0}, Lo7a;->m()V
-
-    new-instance v0, Lun9;
-
-    iget-object p0, p0, Lcq1;->c:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Lcq1;->getReflected()Lmb7;
 
     move-result-object p0
 
-    check-cast p0, Lo54;
+    invoke-interface {p0, p1}, Lmb7;->callBy(Ljava/util/Map;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public compute()Lmb7;
+    .locals 1
+
+    iget-object v0, p0, Lcq1;->reflected:Lmb7;
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Lcq1;->computeReflected()Lmb7;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcq1;->reflected:Lmb7;
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public abstract computeReflected()Lmb7;
+.end method
+
+.method public getAnnotations()Ljava/util/List;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/annotation/Annotation;",
+            ">;"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Lcq1;->getReflected()Lmb7;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Llb7;->getAnnotations()Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public getBoundReceiver()Ljava/lang/Object;
+    .locals 0
+
+    iget-object p0, p0, Lcq1;->receiver:Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method public getName()Ljava/lang/String;
+    .locals 0
+
+    iget-object p0, p0, Lcq1;->name:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method public getOwner()Lob7;
+    .locals 1
+
+    iget-object v0, p0, Lcq1;->owner:Ljava/lang/Class;
+
+    if-nez v0, :cond_0
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_0
+    iget-boolean p0, p0, Lcq1;->isTopLevel:Z
+
+    if-eqz p0, :cond_1
+
+    sget-object p0, Llcc;->a:Lmcc;
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const-string p0, "ru.oneme.app.new.activeCalls"
+    new-instance p0, Lpma;
 
-    invoke-direct {v0, p1, p0}, Lun9;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lpma;-><init>(Ljava/lang/Class;)V
 
-    const/4 p0, -0x1
+    return-object p0
 
-    iput p0, v0, Lun9;->k:I
-
-    const-string p0, "call"
-
-    iput-object p0, v0, Lun9;->v:Ljava/lang/String;
-
-    iget-object p0, v0, Lun9;->F:Landroid/app/Notification;
-
-    iput p3, p0, Landroid/app/Notification;->icon:I
-
-    invoke-static {p2}, Lun9;->c(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-
-    move-result-object p0
-
-    iput-object p0, v0, Lun9;->e:Ljava/lang/CharSequence;
-
-    invoke-static {p4}, Lun9;->c(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-
-    move-result-object p0
-
-    iput-object p0, v0, Lun9;->f:Ljava/lang/CharSequence;
-
-    invoke-virtual {v0}, Lun9;->b()Landroid/app/Notification;
+    :cond_1
+    invoke-static {v0}, Llcc;->a(Ljava/lang/Class;)Lz03;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public final d()Lh91;
+.method public getParameters()Ljava/util/List;
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
 
-    iget-object p0, p0, Lcq1;->b:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Lcq1;->getReflected()Lmb7;
 
     move-result-object p0
 
-    check-cast p0, Lh91;
+    invoke-interface {p0}, Lmb7;->getParameters()Ljava/util/List;
+
+    move-result-object p0
 
     return-object p0
 .end method
 
-.method public final e()Lip9;
+.method public abstract getReflected()Lmb7;
+.end method
+
+.method public getReturnType()Lec7;
     .locals 0
 
-    iget-object p0, p0, Lcq1;->e:Lr7e;
-
-    invoke-virtual {p0}, Lr7e;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Lcq1;->getReflected()Lmb7;
 
     move-result-object p0
 
-    check-cast p0, Lip9;
+    invoke-interface {p0}, Lmb7;->getReturnType()Lec7;
+
+    const/4 p0, 0x0
 
     return-object p0
+.end method
+
+.method public getSignature()Ljava/lang/String;
+    .locals 0
+
+    iget-object p0, p0, Lcq1;->signature:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method public getTypeParameters()Ljava/util/List;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Lcq1;->getReflected()Lmb7;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lmb7;->getTypeParameters()Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public getVisibility()Lfc7;
+    .locals 0
+
+    invoke-virtual {p0}, Lcq1;->getReflected()Lmb7;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lmb7;->getVisibility()Lfc7;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public isAbstract()Z
+    .locals 0
+
+    invoke-virtual {p0}, Lcq1;->getReflected()Lmb7;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lmb7;->isAbstract()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public isFinal()Z
+    .locals 0
+
+    invoke-virtual {p0}, Lcq1;->getReflected()Lmb7;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lmb7;->isFinal()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public isOpen()Z
+    .locals 0
+
+    invoke-virtual {p0}, Lcq1;->getReflected()Lmb7;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lmb7;->isOpen()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public isSuspend()Z
+    .locals 0
+
+    invoke-virtual {p0}, Lcq1;->getReflected()Lmb7;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lmb7;->isSuspend()Z
+
+    move-result p0
+
+    return p0
 .end method

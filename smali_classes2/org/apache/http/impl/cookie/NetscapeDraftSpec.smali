@@ -274,23 +274,23 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
-
     if-eqz p1, :cond_3
 
     if-eqz p2, :cond_2
 
-    sget-object v1, Lorg/apache/http/impl/cookie/NetscapeDraftHeaderParser;->DEFAULT:Lorg/apache/http/impl/cookie/NetscapeDraftHeaderParser;
+    sget-object v0, Lorg/apache/http/impl/cookie/NetscapeDraftHeaderParser;->DEFAULT:Lorg/apache/http/impl/cookie/NetscapeDraftHeaderParser;
 
-    instance-of v2, p1, Lorg/apache/http/FormattedHeader;
+    instance-of v1, p1, Lorg/apache/http/FormattedHeader;
 
-    if-eqz v2, :cond_0
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_0
 
     check-cast p1, Lorg/apache/http/FormattedHeader;
 
     invoke-interface {p1}, Lorg/apache/http/FormattedHeader;->getBuffer()Lorg/apache/http/util/CharArrayBuffer;
 
-    move-result-object v2
+    move-result-object v1
 
     new-instance v3, Lorg/apache/http/message/ParserCursor;
 
@@ -298,7 +298,7 @@
 
     move-result p1
 
-    invoke-virtual {v2}, Lorg/apache/http/util/CharArrayBuffer;->length()I
+    invoke-virtual {v1}, Lorg/apache/http/util/CharArrayBuffer;->length()I
 
     move-result v4
 
@@ -313,36 +313,36 @@
 
     if-eqz p1, :cond_1
 
-    new-instance v2, Lorg/apache/http/util/CharArrayBuffer;
+    new-instance v1, Lorg/apache/http/util/CharArrayBuffer;
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    invoke-direct {v2, v3}, Lorg/apache/http/util/CharArrayBuffer;-><init>(I)V
+    invoke-direct {v1, v3}, Lorg/apache/http/util/CharArrayBuffer;-><init>(I)V
 
-    invoke-virtual {v2, p1}, Lorg/apache/http/util/CharArrayBuffer;->append(Ljava/lang/String;)V
+    invoke-virtual {v1, p1}, Lorg/apache/http/util/CharArrayBuffer;->append(Ljava/lang/String;)V
 
     new-instance v3, Lorg/apache/http/message/ParserCursor;
 
-    invoke-virtual {v2}, Lorg/apache/http/util/CharArrayBuffer;->length()I
+    invoke-virtual {v1}, Lorg/apache/http/util/CharArrayBuffer;->length()I
 
     move-result p1
 
-    invoke-direct {v3, v0, p1}, Lorg/apache/http/message/ParserCursor;-><init>(II)V
+    invoke-direct {v3, v2, p1}, Lorg/apache/http/message/ParserCursor;-><init>(II)V
 
     :goto_0
-    invoke-virtual {v1, v2, v3}, Lorg/apache/http/impl/cookie/NetscapeDraftHeaderParser;->parseHeader(Lorg/apache/http/util/CharArrayBuffer;Lorg/apache/http/message/ParserCursor;)Lorg/apache/http/HeaderElement;
+    invoke-virtual {v0, v1, v3}, Lorg/apache/http/impl/cookie/NetscapeDraftHeaderParser;->parseHeader(Lorg/apache/http/util/CharArrayBuffer;Lorg/apache/http/message/ParserCursor;)Lorg/apache/http/HeaderElement;
 
     move-result-object p1
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    new-array v1, v1, [Lorg/apache/http/HeaderElement;
+    new-array v0, v0, [Lorg/apache/http/HeaderElement;
 
-    aput-object p1, v1, v0
+    aput-object p1, v0, v2
 
-    invoke-virtual {p0, v1, p2}, Lorg/apache/http/impl/cookie/CookieSpecBase;->parse([Lorg/apache/http/HeaderElement;Lorg/apache/http/cookie/CookieOrigin;)Ljava/util/List;
+    invoke-virtual {p0, v0, p2}, Lorg/apache/http/impl/cookie/CookieSpecBase;->parse([Lorg/apache/http/HeaderElement;Lorg/apache/http/cookie/CookieOrigin;)Ljava/util/List;
 
     move-result-object p0
 

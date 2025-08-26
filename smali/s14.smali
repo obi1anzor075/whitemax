@@ -1,42 +1,90 @@
-.class public interface abstract annotation Ls14;
+.class public final Ls14;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/annotation/Annotation;
+
+# instance fields
+.field public final a:Lvnb;
+
+.field public final b:Z
 
 
-# annotations
-.annotation system Ldalvik/annotation/AnnotationDefault;
-    value = .subannotation Ls14;
-        c = ""
-        f = ""
-        i = {}
-        l = {}
-        m = ""
-        n = {}
-        s = {}
-        v = 0x1
-    .end subannotation
-.end annotation
+# direct methods
+.method public constructor <init>(Lvnb;Z)V
+    .locals 0
 
-.annotation runtime Ljava/lang/annotation/Retention;
-    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
-.end annotation
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ls14;->a:Lvnb;
+
+    iput-boolean p2, p0, Ls14;->b:Z
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract c()Ljava/lang/String;
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    instance-of v0, p1, Ls14;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Ls14;
+
+    iget-object v0, p1, Ls14;->a:Lvnb;
+
+    iget-object v2, p0, Ls14;->a:Lvnb;
+
+    invoke-virtual {v0, v2}, Lvnb;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-boolean p1, p1, Ls14;->b:Z
+
+    iget-boolean p0, p0, Ls14;->b:Z
+
+    if-ne p1, p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    return v1
 .end method
 
-.method public abstract f()Ljava/lang/String;
-.end method
+.method public final hashCode()I
+    .locals 2
 
-.method public abstract l()[I
-.end method
+    iget-object v0, p0, Ls14;->a:Lvnb;
 
-.method public abstract m()Ljava/lang/String;
-.end method
+    invoke-virtual {v0}, Lvnb;->hashCode()I
 
-.method public abstract v()I
+    move-result v0
+
+    const v1, 0xf4243
+
+    xor-int/2addr v0, v1
+
+    mul-int/2addr v0, v1
+
+    iget-boolean p0, p0, Ls14;->b:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/Boolean;->hashCode()I
+
+    move-result p0
+
+    xor-int/2addr p0, v0
+
+    return p0
 .end method

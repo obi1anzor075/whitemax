@@ -1,37 +1,82 @@
 .class public final Lcu5;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Landroid/net/Uri;
+.field public final synthetic X:Lhu5;
 
-.field public final b:I
-
-.field public final c:I
-
-.field public final d:Z
-
-.field public final e:I
+.field public final synthetic Y:J
 
 
 # direct methods
-.method public constructor <init>(Landroid/net/Uri;IIZI)V
+.method public constructor <init>(Lhu5;JLkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcu5;->X:Lhu5;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-wide p2, p0, Lcu5;->Y:J
 
-    iput-object p1, p0, Lcu5;->a:Landroid/net/Uri;
+    const/4 p1, 0x2
 
-    iput p2, p0, Lcu5;->b:I
-
-    iput p3, p0, Lcu5;->c:I
-
-    iput-boolean p4, p0, Lcu5;->d:Z
-
-    iput p5, p0, Lcu5;->e:I
+    invoke-direct {p0, p1, p4}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Lox3;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lcu5;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lcu5;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lcu5;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 3
+
+    new-instance p1, Lcu5;
+
+    iget-object v0, p0, Lcu5;->X:Lhu5;
+
+    iget-wide v1, p0, Lcu5;->Y:J
+
+    invoke-direct {p1, v0, v1, v2, p2}, Lcu5;-><init>(Lhu5;JLkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    sget-object p1, Lhu5;->B0:[Lbc7;
+
+    iget-object p1, p0, Lcu5;->X:Lhu5;
+
+    iget-wide v0, p0, Lcu5;->Y:J
+
+    invoke-virtual {p1, v0, v1}, Lhu5;->s(J)V
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

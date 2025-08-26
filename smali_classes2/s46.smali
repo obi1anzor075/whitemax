@@ -1,61 +1,80 @@
-.class public final Ls46;
-.super Lt46;
+.class public final synthetic Ls46;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lc6;
 
-# static fields
-.field public static final a:Ls46;
+
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lru/ok/messages/media/attaches/fragments/FrgAttachPhoto;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Lru/ok/messages/media/attaches/fragments/FrgAttachPhoto;I)V
+    .locals 0
 
-    new-instance v0, Ls46;
+    iput p2, p0, Ls46;->a:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ls46;->b:Lru/ok/messages/media/attaches/fragments/FrgAttachPhoto;
 
-    sput-object v0, Ls46;->a:Ls46;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    const/4 v0, 0x1
+    iget v0, p0, Ls46;->a:I
 
-    if-ne p0, p1, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    return v0
+    iget-object p0, p0, Ls46;->b:Lru/ok/messages/media/attaches/fragments/FrgAttachPhoto;
+
+    invoke-virtual {p0}, Lru/ok/messages/media/attaches/fragments/FrgAttachView;->i1()Ly46;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_0
+
+    check-cast p0, Lru/ok/messages/media/attaches/ActAttachesView;
+
+    invoke-virtual {p0}, Lru/ok/messages/media/attaches/ActAttachesView;->d()V
 
     :cond_0
-    instance-of p0, p1, Ls46;
+    return-void
 
-    if-nez p0, :cond_1
+    :pswitch_0
+    iget-object p0, p0, Ls46;->b:Lru/ok/messages/media/attaches/fragments/FrgAttachPhoto;
 
-    const/4 p0, 0x0
+    iget-object v0, p0, Lru/ok/messages/media/attaches/fragments/FrgAttachPhoto;->F1:Lru/ok/messages/media/attaches/AttachPhotoView;
 
-    return p0
+    iget-object v1, p0, Lru/ok/messages/media/attaches/fragments/FrgAttachView;->z1:Lw10;
+
+    iget-object v2, p0, Lru/ok/messages/media/attaches/fragments/FrgAttachView;->y1:Ler8;
+
+    invoke-virtual {v0, v1, v2}, Lru/ok/messages/media/attaches/AttachPhotoView;->r(Lw10;Ler8;)V
+
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->Q()Landroidx/fragment/app/b;
+
+    move-result-object p0
+
+    instance-of v0, p0, Lam;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Landroid/app/Activity;->invalidateOptionsMenu()V
 
     :cond_1
-    return v0
-.end method
+    return-void
 
-.method public final hashCode()I
-    .locals 0
-
-    const p0, 0x36203517
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    const-string p0, "CameraPermission"
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

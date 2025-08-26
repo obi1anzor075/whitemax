@@ -1,79 +1,171 @@
-.class public abstract Lbaf;
+.class public final Lbaf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lsdd;
+
+
+# instance fields
+.field public final a:Ljoe;
+
 
 # direct methods
-.method public static a(Landroid/view/View;)[Ljava/lang/String;
+.method public constructor <init>(Ljoe;)V
     .locals 0
 
-    invoke-virtual {p0}, Landroid/view/View;->getReceiveContentMimeTypes()[Ljava/lang/String;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object p0
+    iput-object p1, p0, Lbaf;->a:Ljoe;
 
-    return-object p0
+    return-void
 .end method
 
-.method public static b(Landroid/view/View;Lxp3;)Lxp3;
-    .locals 1
 
-    iget-object v0, p1, Lxp3;->a:Lwp3;
-
-    invoke-interface {v0}, Lwp3;->i()Landroid/view/ContentInfo;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {v0}, Lp20;->m(Ljava/lang/Object;)Landroid/view/ContentInfo;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/view/View;->performReceiveContent(Landroid/view/ContentInfo;)Landroid/view/ContentInfo;
-
-    move-result-object p0
-
-    if-nez p0, :cond_0
+# virtual methods
+.method public final b()Lmoe;
+    .locals 0
 
     const/4 p0, 0x0
 
     return-object p0
-
-    :cond_0
-    if-ne p0, v0, :cond_1
-
-    return-object p1
-
-    :cond_1
-    new-instance p1, Lxp3;
-
-    new-instance v0, Llv1;
-
-    invoke-direct {v0, p0}, Llv1;-><init>(Landroid/view/ContentInfo;)V
-
-    invoke-direct {p1, v0}, Lxp3;-><init>(Lwp3;)V
-
-    return-object p1
 .end method
 
-.method public static c(Landroid/view/View;[Ljava/lang/String;Lrx9;)V
+.method public final c()Ljdd;
+    .locals 0
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public final d()Lmoe;
+    .locals 0
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public final e()Lpdd;
+    .locals 0
+
+    sget-object p0, Lkdd;->a:Lkdd;
+
+    return-object p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
-    if-nez p2, :cond_0
+    if-ne p0, p1, :cond_0
 
-    const/4 p2, 0x0
+    goto :goto_1
 
-    invoke-virtual {p0, p1, p2}, Landroid/view/View;->setOnReceiveContentListener([Ljava/lang/String;Landroid/view/OnReceiveContentListener;)V
+    :cond_0
+    instance-of v0, p1, Lbaf;
+
+    if-nez v0, :cond_1
 
     goto :goto_0
 
-    :cond_0
-    new-instance v0, Lcaf;
+    :cond_1
+    check-cast p1, Lbaf;
 
-    invoke-direct {v0, p2}, Lcaf;-><init>(Lrx9;)V
+    iget-object p0, p0, Lbaf;->a:Ljoe;
 
-    invoke-virtual {p0, p1, v0}, Landroid/view/View;->setOnReceiveContentListener([Ljava/lang/String;Landroid/view/OnReceiveContentListener;)V
+    iget-object p1, p1, Lbaf;->a:Ljoe;
+
+    invoke-virtual {p0, p1}, Ljoe;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
 
     :goto_0
-    return-void
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_2
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final f()Ljava/lang/Integer;
+    .locals 0
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public final getItemId()J
+    .locals 2
+
+    const-wide/high16 v0, -0x8000000000000000L
+
+    return-wide v0
+.end method
+
+.method public final getTitle()Lmoe;
+    .locals 0
+
+    iget-object p0, p0, Lbaf;->a:Ljoe;
+
+    return-object p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    iget-object p0, p0, Lbaf;->a:Ljoe;
+
+    invoke-virtual {p0}, Ljoe;->hashCode()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final m()I
+    .locals 0
+
+    sget p0, Lp5a;->S0:I
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "UserInWaitingMore(title="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lbaf;->a:Ljoe;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final u()I
+    .locals 0
+
+    const/4 p0, 0x0
+
+    return p0
 .end method

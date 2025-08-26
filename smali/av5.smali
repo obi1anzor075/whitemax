@@ -1,63 +1,66 @@
-.class public final Lav5;
-.super Ler3;
+.class public final synthetic Lav5;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public X:Z
+.field public final synthetic a:I
 
-.field public Y:Lcv5;
+.field public final synthetic b:Lx56;
 
-.field public synthetic Z:Ljava/lang/Object;
-
-.field public o:Z
-
-.field public final synthetic w0:Lcv5;
-
-.field public x0:I
+.field public final synthetic c:Lx9f;
 
 
 # direct methods
-.method public constructor <init>(Lcv5;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(La76;Lx9f;I)V
     .locals 0
 
-    iput-object p1, p0, Lav5;->w0:Lcv5;
+    iput p3, p0, Lav5;->a:I
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    check-cast p1, Lx56;
+
+    iput-object p1, p0, Lav5;->b:Lx56;
+
+    iput-object p2, p0, Lav5;->c:Lx9f;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+.method public final onClick(Landroid/view/View;)V
+    .locals 0
 
-    iput-object p1, p0, Lav5;->Z:Ljava/lang/Object;
+    iget p1, p0, Lav5;->a:I
 
-    iget p1, p0, Lav5;->x0:I
+    packed-switch p1, :pswitch_data_0
 
-    const/high16 v0, -0x80000000
+    iget-object p1, p0, Lav5;->b:Lx56;
 
-    or-int/2addr p1, v0
+    iget-object p0, p0, Lav5;->c:Lx9f;
 
-    iput p1, p0, Lav5;->x0:I
+    invoke-interface {p1, p0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v3, 0x0
+    return-void
 
-    const/4 v4, 0x0
+    :pswitch_0
+    iget-object p1, p0, Lav5;->b:Lx56;
 
-    iget-object v0, p0, Lav5;->w0:Lcv5;
+    iget-object p0, p0, Lav5;->c:Lx9f;
 
-    const/4 v1, 0x0
+    invoke-interface {p1, p0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    return-void
 
-    move-object v5, p0
+    nop
 
-    invoke-virtual/range {v0 .. v5}, Lcv5;->a(Lvo8;Ljava/lang/Long;ZZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

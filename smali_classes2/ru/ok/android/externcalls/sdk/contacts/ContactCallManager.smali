@@ -13,7 +13,7 @@
         "",
         "Lru/ok/android/externcalls/sdk/contacts/listener/ContactCallListener;",
         "listener",
-        "Ljue;",
+        "Le5f;",
         "addContactCallListener",
         "(Lru/ok/android/externcalls/sdk/contacts/listener/ContactCallListener;)V",
         "removeContactCallListener",
@@ -31,6 +31,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

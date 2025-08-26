@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ltw6;
+.implements Lp07;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Ltw6;"
+        "Lp07;"
     }
 .end annotation
 
@@ -20,8 +20,8 @@
     }
     d2 = {
         "Landroidx/lifecycle/ProcessLifecycleInitializer;",
-        "Ltw6;",
-        "Lnc7;",
+        "Lp07;",
+        "Ldh7;",
         "<init>",
         "()V",
         "lifecycle-process_release"
@@ -32,6 +32,7 @@
         0x8,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -49,7 +50,7 @@
 .method public final a()Ljava/util/List;
     .locals 0
 
-    sget-object p0, Lhw4;->a:Lhw4;
+    sget-object p0, Lgz4;->a:Lgz4;
 
     return-object p0
 .end method
@@ -57,11 +58,11 @@
 .method public final b(Landroid/content/Context;)Ljava/lang/Object;
     .locals 2
 
-    invoke-static {p1}, Ljj7;->A(Landroid/content/Context;)Ljj7;
+    invoke-static {p1}, Ljo7;->A(Landroid/content/Context;)Ljo7;
 
     move-result-object p0
 
-    iget-object p0, p0, Ljj7;->b:Ljava/lang/Object;
+    iget-object p0, p0, Ljo7;->b:Ljava/lang/Object;
 
     check-cast p0, Ljava/util/HashSet;
 
@@ -73,7 +74,7 @@
 
     if-eqz p0, :cond_1
 
-    sget-object p0, Lcc7;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    sget-object p0, Lug7;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v0, 0x1
 
@@ -92,14 +93,14 @@
 
     check-cast p0, Landroid/app/Application;
 
-    new-instance v0, Lbc7;
+    new-instance v0, Ltg7;
 
-    invoke-direct {v0}, Lbc7;-><init>()V
+    invoke-direct {v0}, Ltg7;-><init>()V
 
     invoke-virtual {p0, v0}, Landroid/app/Application;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
 
     :goto_0
-    sget-object p0, Lk4b;->w0:Lk4b;
+    sget-object p0, Lz6b;->o0:Lz6b;
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -107,13 +108,13 @@
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    iput-object v0, p0, Lk4b;->X:Landroid/os/Handler;
+    iput-object v0, p0, Lz6b;->X:Landroid/os/Handler;
 
-    iget-object v0, p0, Lk4b;->Y:Lpc7;
+    iget-object v0, p0, Lz6b;->Y:Lfh7;
 
-    sget-object v1, Lnb7;->ON_CREATE:Lnb7;
+    sget-object v1, Lfg7;->ON_CREATE:Lfg7;
 
-    invoke-virtual {v0, v1}, Lpc7;->d(Lnb7;)V
+    invoke-virtual {v0, v1}, Lfh7;->d(Lfg7;)V
 
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
@@ -121,9 +122,9 @@
 
     check-cast p1, Landroid/app/Application;
 
-    new-instance v0, Lj4b;
+    new-instance v0, Ly6b;
 
-    invoke-direct {v0, p0}, Lj4b;-><init>(Lk4b;)V
+    invoke-direct {v0, p0}, Ly6b;-><init>(Lz6b;)V
 
     invoke-virtual {p1, v0}, Landroid/app/Application;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
 
@@ -133,10 +134,6 @@
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const-string p1, "ProcessLifecycleInitializer cannot be initialized lazily.\n               Please ensure that you have:\n               <meta-data\n                   android:name=\'androidx.lifecycle.ProcessLifecycleInitializer\'\n                   android:value=\'androidx.startup\' />\n               under InitializationProvider in your AndroidManifest.xml"
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

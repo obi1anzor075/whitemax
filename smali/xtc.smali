@@ -1,284 +1,277 @@
 .class public final Lxtc;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
 
-
-# static fields
-.field public static final c:Lxtc;
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final a:J
+.field public X:[J
 
-.field public final b:J
+.field public Y:[J
+
+.field public Z:I
+
+.field public o0:I
+
+.field public p0:I
+
+.field public q0:I
+
+.field public r0:J
+
+.field public s0:I
+
+.field public synthetic t0:Ljava/lang/Object;
+
+.field public final synthetic u0:Lfm3;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public constructor <init>(Lfm3;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    new-instance v0, Lxtc;
+    iput-object p1, p0, Lxtc;->u0:Lfm3;
 
-    const-wide/16 v1, 0x0
+    const/4 p1, 0x2
 
-    invoke-direct {v0, v1, v2, v1, v2}, Lxtc;-><init>(JJ)V
-
-    new-instance v3, Lxtc;
-
-    const-wide v4, 0x7fffffffffffffffL
-
-    invoke-direct {v3, v4, v5, v4, v5}, Lxtc;-><init>(JJ)V
-
-    new-instance v3, Lxtc;
-
-    invoke-direct {v3, v4, v5, v1, v2}, Lxtc;-><init>(JJ)V
-
-    new-instance v3, Lxtc;
-
-    invoke-direct {v3, v1, v2, v4, v5}, Lxtc;-><init>(JJ)V
-
-    sput-object v0, Lxtc;->c:Lxtc;
-
-    return-void
-.end method
-
-.method public constructor <init>(JJ)V
-    .locals 5
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v2, p1, v0
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
-
-    if-ltz v2, :cond_0
-
-    move v2, v4
-
-    goto :goto_0
-
-    :cond_0
-    move v2, v3
-
-    :goto_0
-    invoke-static {v2}, Loyb;->d(Z)V
-
-    cmp-long v0, p3, v0
-
-    if-ltz v0, :cond_1
-
-    move v3, v4
-
-    :cond_1
-    invoke-static {v3}, Loyb;->d(Z)V
-
-    iput-wide p1, p0, Lxtc;->a:J
-
-    iput-wide p3, p0, Lxtc;->b:J
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(JJJ)J
-    .locals 12
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    move-object v0, p0
+    check-cast p1, Lbn5;
 
-    iget-wide v1, v0, Lxtc;->a:J
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    const-wide/16 v3, 0x0
+    invoke-virtual {p0, p1, p2}, Lxtc;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    cmp-long v5, v1, v3
+    move-result-object p0
 
-    iget-wide v6, v0, Lxtc;->b:J
+    check-cast p0, Lxtc;
 
-    if-nez v5, :cond_0
+    sget-object p1, Le5f;->a:Le5f;
 
-    cmp-long v0, v6, v3
+    invoke-virtual {p0, p1}, Lxtc;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-nez v0, :cond_0
+    move-result-object p0
 
-    return-wide p1
+    return-object p0
+.end method
 
-    :cond_0
-    sget v0, Loze;->a:I
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    sub-long v8, p1, v1
+    new-instance v0, Lxtc;
 
-    xor-long v0, p1, v1
+    iget-object p0, p0, Lxtc;->u0:Lfm3;
 
-    xor-long v10, p1, v8
+    invoke-direct {v0, p0, p2}, Lxtc;-><init>(Lfm3;Lkotlin/coroutines/Continuation;)V
 
-    and-long/2addr v0, v10
+    iput-object p1, v0, Lxtc;->t0:Ljava/lang/Object;
 
-    cmp-long v0, v0, v3
+    return-object v0
+.end method
 
-    if-gez v0, :cond_1
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 19
 
-    const-wide/high16 v8, -0x8000000000000000L
+    move-object/from16 v0, p0
 
-    :cond_1
-    add-long v0, p1, v6
+    iget v1, v0, Lxtc;->s0:I
 
-    xor-long v10, p1, v0
+    const/4 v2, 0x0
 
-    xor-long v5, v6, v0
-
-    and-long/2addr v5, v10
-
-    cmp-long v2, v5, v3
-
-    if-gez v2, :cond_2
-
-    const-wide v0, 0x7fffffffffffffffL
-
-    :cond_2
-    cmp-long v2, v8, p3
-
-    const/4 v3, 0x0
+    const/16 v3, 0x8
 
     const/4 v4, 0x1
 
-    if-gtz v2, :cond_3
+    if-eqz v1, :cond_1
 
-    cmp-long v2, p3, v0
+    if-ne v1, v4, :cond_0
 
-    if-gtz v2, :cond_3
+    iget v1, v0, Lxtc;->q0:I
 
-    move v2, v4
+    iget v5, v0, Lxtc;->p0:I
 
-    goto :goto_0
+    iget-wide v6, v0, Lxtc;->r0:J
 
-    :cond_3
-    move v2, v3
+    iget v8, v0, Lxtc;->o0:I
 
-    :goto_0
-    cmp-long v5, v8, p5
+    iget v9, v0, Lxtc;->Z:I
 
-    if-gtz v5, :cond_4
+    iget-object v10, v0, Lxtc;->Y:[J
 
-    cmp-long v0, p5, v0
+    iget-object v11, v0, Lxtc;->X:[J
 
-    if-gtz v0, :cond_4
+    iget-object v12, v0, Lxtc;->t0:Ljava/lang/Object;
 
-    move v3, v4
+    check-cast v12, Lbn5;
 
-    :cond_4
-    if-eqz v2, :cond_6
+    invoke-static/range {p1 .. p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    if-eqz v3, :cond_6
-
-    sub-long v0, p3, p1
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->abs(J)J
-
-    move-result-wide v0
-
-    sub-long v2, p5, p1
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->abs(J)J
-
-    move-result-wide v2
-
-    cmp-long v0, v0, v2
-
-    if-gtz v0, :cond_5
-
-    return-wide p3
-
-    :cond_5
-    return-wide p5
-
-    :cond_6
-    if-eqz v2, :cond_7
-
-    return-wide p3
-
-    :cond_7
-    if-eqz v3, :cond_8
-
-    return-wide p5
-
-    :cond_8
-    return-wide v8
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 6
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
+    goto/16 :goto_2
 
     :cond_0
-    const/4 v1, 0x0
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    if-eqz p1, :cond_3
+    const-string v1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    move-result-object v2
+    throw v0
 
-    const-class v3, Lxtc;
+    :cond_1
+    invoke-static/range {p1 .. p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    if-eq v3, v2, :cond_1
+    iget-object v1, v0, Lxtc;->t0:Ljava/lang/Object;
+
+    check-cast v1, Lbn5;
+
+    iget-object v5, v0, Lxtc;->u0:Lfm3;
+
+    iget-object v5, v5, Lfm3;->a:Lqg9;
+
+    iget-object v6, v5, Lqg9;->b:[J
+
+    iget-object v5, v5, Lqg9;->a:[J
+
+    array-length v7, v5
+
+    add-int/lit8 v7, v7, -0x2
+
+    if-ltz v7, :cond_5
+
+    move v8, v2
+
+    :goto_0
+    aget-wide v9, v5, v8
+
+    not-long v11, v9
+
+    const/4 v13, 0x7
+
+    shl-long/2addr v11, v13
+
+    and-long/2addr v11, v9
+
+    const-wide v13, -0x7f7f7f7f7f7f7f80L    # -2.937446524422997E-306
+
+    and-long/2addr v11, v13
+
+    cmp-long v11, v11, v13
+
+    if-eqz v11, :cond_4
+
+    sub-int v11, v8, v7
+
+    not-int v11, v11
+
+    ushr-int/lit8 v11, v11, 0x1f
+
+    rsub-int/lit8 v11, v11, 0x8
+
+    move-object v12, v1
+
+    move v1, v2
+
+    move-wide/from16 v17, v9
+
+    move-object v10, v5
+
+    move v9, v7
+
+    move v5, v11
+
+    move-object v11, v6
+
+    move-wide/from16 v6, v17
+
+    :goto_1
+    if-ge v1, v5, :cond_3
+
+    const-wide/16 v13, 0xff
+
+    and-long/2addr v13, v6
+
+    const-wide/16 v15, 0x80
+
+    cmp-long v13, v13, v15
+
+    if-gez v13, :cond_2
+
+    shl-int/lit8 v13, v8, 0x3
+
+    add-int/2addr v13, v1
+
+    aget-wide v13, v11, v13
+
+    new-instance v15, Ljava/lang/Long;
+
+    invoke-direct {v15, v13, v14}, Ljava/lang/Long;-><init>(J)V
+
+    iput-object v12, v0, Lxtc;->t0:Ljava/lang/Object;
+
+    iput-object v11, v0, Lxtc;->X:[J
+
+    iput-object v10, v0, Lxtc;->Y:[J
+
+    iput v9, v0, Lxtc;->Z:I
+
+    iput v8, v0, Lxtc;->o0:I
+
+    iput-wide v6, v0, Lxtc;->r0:J
+
+    iput v5, v0, Lxtc;->p0:I
+
+    iput v1, v0, Lxtc;->q0:I
+
+    iput v4, v0, Lxtc;->s0:I
+
+    invoke-interface {v12, v15, v0}, Lbn5;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object v13
+
+    sget-object v14, Lpx3;->a:Lpx3;
+
+    if-ne v13, v14, :cond_2
+
+    return-object v14
+
+    :cond_2
+    :goto_2
+    shr-long/2addr v6, v3
+
+    add-int/2addr v1, v4
 
     goto :goto_1
 
-    :cond_1
-    check-cast p1, Lxtc;
+    :cond_3
+    if-ne v5, v3, :cond_5
 
-    iget-wide v2, p0, Lxtc;->a:J
+    move v7, v9
 
-    iget-wide v4, p1, Lxtc;->a:J
+    move-object v5, v10
 
-    cmp-long v2, v2, v4
+    move-object v6, v11
 
-    if-nez v2, :cond_2
+    move-object v1, v12
 
-    iget-wide v2, p0, Lxtc;->b:J
+    :cond_4
+    if-eq v8, v7, :cond_5
 
-    iget-wide p0, p1, Lxtc;->b:J
-
-    cmp-long p0, v2, p0
-
-    if-nez p0, :cond_2
+    add-int/lit8 v8, v8, 0x1
 
     goto :goto_0
 
-    :cond_2
-    move v0, v1
+    :cond_5
+    sget-object v0, Le5f;->a:Le5f;
 
-    :goto_0
-    return v0
-
-    :cond_3
-    :goto_1
-    return v1
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    iget-wide v0, p0, Lxtc;->a:J
-
-    long-to-int v0, v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-wide v1, p0, Lxtc;->b:J
-
-    long-to-int p0, v1
-
-    add-int/2addr v0, p0
-
-    return v0
+    return-object v0
 .end method

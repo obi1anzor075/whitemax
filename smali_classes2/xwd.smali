@@ -1,82 +1,118 @@
-.class public final Lxwd;
-.super Ll5e;
+.class public final synthetic Lxwd;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lx64;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Lone/me/stickerssettings/StickersSettingsScreen;
+.field public final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/stickerssettings/StickersSettingsScreen;)V
+.method public synthetic constructor <init>(I)V
     .locals 0
 
-    iput-object p2, p0, Lxwd;->Y:Lone/me/stickerssettings/StickersSettingsScreen;
+    iput p1, p0, Lxwd;->a:I
 
-    const/4 p2, 0x2
-
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final a()Ljava/lang/Object;
+    .locals 7
 
-    check-cast p1, Ljava/util/List;
+    iget p0, p0, Lxwd;->a:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    packed-switch p0, :pswitch_data_0
 
-    invoke-virtual {p0, p1, p2}, Lxwd;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    new-instance p0, Lone/me/webview/FaqWebViewWidget;
 
-    move-result-object p0
-
-    check-cast p0, Lxwd;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lxwd;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
-
-    new-instance v0, Lxwd;
-
-    iget-object p0, p0, Lxwd;->Y:Lone/me/stickerssettings/StickersSettingsScreen;
-
-    invoke-direct {v0, p2, p0}, Lxwd;-><init>(Lkotlin/coroutines/Continuation;Lone/me/stickerssettings/StickersSettingsScreen;)V
-
-    iput-object p1, v0, Lxwd;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lxwd;->X:Ljava/lang/Object;
-
-    check-cast p1, Ljava/util/List;
-
-    iget-object p0, p0, Lxwd;->Y:Lone/me/stickerssettings/StickersSettingsScreen;
-
-    iget-object p0, p0, Lone/me/stickerssettings/StickersSettingsScreen;->X:Ltwd;
-
-    invoke-virtual {p0, p1}, Lig7;->E(Ljava/util/List;)V
-
-    sget-object p0, Ljue;->a:Ljue;
+    invoke-direct {p0}, Lone/me/webview/FaqWebViewWidget;-><init>()V
 
     return-object p0
+
+    :pswitch_0
+    new-instance p0, Lone/me/webapp/settings/WebAppsSettingScreen;
+
+    invoke-direct {p0}, Lone/me/webapp/settings/WebAppsSettingScreen;-><init>()V
+
+    return-object p0
+
+    :pswitch_1
+    new-instance v0, Lone/me/stickerssettings/stickersscreen/StickersScreen;
+
+    const/4 v4, 0x2
+
+    const/4 v5, 0x0
+
+    sget-object v1, Ll3e;->c:Ll3e;
+
+    const-wide/16 v2, 0x0
+
+    invoke-direct/range {v0 .. v5}, Lone/me/stickerssettings/stickersscreen/StickersScreen;-><init>(Ll3e;JILl94;)V
+
+    return-object v0
+
+    :pswitch_2
+    new-instance v1, Lone/me/stickerssettings/stickersscreen/StickersScreen;
+
+    const/4 v5, 0x2
+
+    const/4 v6, 0x0
+
+    sget-object v2, Ll3e;->b:Ll3e;
+
+    const-wide/16 v3, 0x0
+
+    invoke-direct/range {v1 .. v6}, Lone/me/stickerssettings/stickersscreen/StickersScreen;-><init>(Ll3e;JILl94;)V
+
+    return-object v1
+
+    :pswitch_3
+    new-instance p0, Lone/me/stickerssettings/StickersSettingsScreen;
+
+    invoke-direct {p0}, Lone/me/stickerssettings/StickersSettingsScreen;-><init>()V
+
+    return-object p0
+
+    :pswitch_4
+    new-instance p0, Lone/me/startconversation/chattitleicon/ChatTitleIconScreen;
+
+    const/4 v0, 0x0
+
+    sget-object v1, Lzwd;->c:Lzwd;
+
+    invoke-direct {p0, v0, v1}, Lone/me/startconversation/chattitleicon/ChatTitleIconScreen;-><init>([JLzwd;)V
+
+    return-object p0
+
+    :pswitch_5
+    new-instance p0, Lone/me/startconversation/chat/PickChatMembers;
+
+    invoke-direct {p0}, Lone/me/startconversation/chat/PickChatMembers;-><init>()V
+
+    return-object p0
+
+    :pswitch_6
+    new-instance p0, Lone/me/startconversation/StartConversationScreen;
+
+    invoke-direct {p0}, Lone/me/startconversation/StartConversationScreen;-><init>()V
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

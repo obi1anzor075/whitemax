@@ -1,105 +1,84 @@
 .class public final Lps9;
-.super Lw2;
+.super Lxs9;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic b:I
+.field public e:[I
 
-.field public final c:Lv1b;
+.field public f:Landroid/support/v4/media/session/MediaSessionCompat$Token;
 
 
-# direct methods
-.method public synthetic constructor <init>(Lnv9;Lv1b;I)V
-    .locals 0
+# virtual methods
+.method public final b(Lku5;)V
+    .locals 4
 
-    iput p3, p0, Lps9;->b:I
+    iget-object p1, p1, Lku5;->b:Ljava/lang/Object;
 
-    invoke-direct {p0, p1}, Lw2;-><init>(Lnv9;)V
+    check-cast p1, Landroid/app/Notification$Builder;
 
-    iput-object p2, p0, Lps9;->c:Lv1b;
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x22
+
+    if-lt v0, v1, :cond_0
+
+    invoke-static {}, Lxr9;->a()Landroid/app/Notification$MediaStyle;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    sget-object v2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    const/4 v3, 0x0
+
+    invoke-static {v0, v3, v1, v3, v2}, Lds9;->a(Landroid/app/Notification$MediaStyle;Ljava/lang/CharSequence;ILandroid/app/PendingIntent;Ljava/lang/Boolean;)Landroid/app/Notification$MediaStyle;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lps9;->e:[I
+
+    iget-object p0, p0, Lps9;->f:Landroid/support/v4/media/session/MediaSessionCompat$Token;
+
+    invoke-static {v0, v1, p0}, Lxr9;->b(Landroid/app/Notification$MediaStyle;[ILandroid/support/v4/media/session/MediaSessionCompat$Token;)Landroid/app/Notification$MediaStyle;
+
+    move-result-object p0
+
+    invoke-static {p1, p0}, Lxr9;->d(Landroid/app/Notification$Builder;Landroid/app/Notification$MediaStyle;)V
+
+    return-void
+
+    :cond_0
+    invoke-static {}, Lxr9;->a()Landroid/app/Notification$MediaStyle;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lps9;->e:[I
+
+    iget-object p0, p0, Lps9;->f:Landroid/support/v4/media/session/MediaSessionCompat$Token;
+
+    invoke-static {v0, v1, p0}, Lxr9;->b(Landroid/app/Notification$MediaStyle;[ILandroid/support/v4/media/session/MediaSessionCompat$Token;)Landroid/app/Notification$MediaStyle;
+
+    move-result-object p0
+
+    invoke-static {p1, p0}, Lxr9;->d(Landroid/app/Notification$Builder;Landroid/app/Notification$MediaStyle;)V
 
     return-void
 .end method
 
+.method public final g()Landroid/widget/RemoteViews;
+    .locals 0
 
-# virtual methods
-.method public final q(Lbw9;)V
-    .locals 3
+    const/4 p0, 0x0
 
-    iget v0, p0, Lps9;->b:I
+    return-object p0
+.end method
 
-    packed-switch v0, :pswitch_data_0
+.method public final h()Landroid/widget/RemoteViews;
+    .locals 0
 
-    new-instance v0, Los9;
+    const/4 p0, 0x0
 
-    iget-object v1, p0, Lps9;->c:Lv1b;
-
-    check-cast v1, Liee;
-
-    const/4 v2, 0x2
-
-    invoke-direct {v0, p1, v1, v2}, Los9;-><init>(Lbw9;Lv1b;I)V
-
-    iget-object p0, p0, Lw2;->a:Lnv9;
-
-    invoke-interface {p0, v0}, Lnv9;->a(Lbw9;)V
-
-    return-void
-
-    :pswitch_0
-    new-instance v0, Los9;
-
-    iget-object v1, p0, Lps9;->c:Lv1b;
-
-    check-cast v1, Lfee;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v0, p1, v1, v2}, Los9;-><init>(Lbw9;Lv1b;I)V
-
-    iget-object p0, p0, Lw2;->a:Lnv9;
-
-    invoke-interface {p0, v0}, Lnv9;->a(Lbw9;)V
-
-    return-void
-
-    :pswitch_1
-    new-instance v0, Lst9;
-
-    iget-object v1, p0, Lps9;->c:Lv1b;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, p1, v1, v2}, Lst9;-><init>(Lbw9;Ljava/lang/Object;I)V
-
-    iget-object p0, p0, Lw2;->a:Lnv9;
-
-    invoke-interface {p0, v0}, Lnv9;->a(Lbw9;)V
-
-    return-void
-
-    :pswitch_2
-    new-instance v0, Los9;
-
-    iget-object v1, p0, Lps9;->c:Lv1b;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, p1, v1, v2}, Los9;-><init>(Lbw9;Lv1b;I)V
-
-    iget-object p0, p0, Lw2;->a:Lnv9;
-
-    invoke-interface {p0, v0}, Lnv9;->a(Lbw9;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

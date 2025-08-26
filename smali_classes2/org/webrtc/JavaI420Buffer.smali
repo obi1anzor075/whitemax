@@ -74,15 +74,15 @@
 
     add-int/lit8 v1, p0, 0x1
 
-    div-int/lit8 v10, v1, 0x2
+    div-int/lit8 v8, v1, 0x2
 
     mul-int v1, p0, p1
 
-    mul-int v2, v10, v0
+    mul-int v2, v8, v0
 
     add-int v3, v1, v2
 
-    mul-int/lit8 v4, v10, 0x2
+    mul-int/lit8 v4, v8, 0x2
 
     mul-int/2addr v4, v0
 
@@ -120,27 +120,25 @@
 
     move-result-object v9
 
-    new-instance v1, Lorg/webrtc/JavaI420Buffer;
+    new-instance v2, Lorg/webrtc/JavaI420Buffer;
 
-    new-instance v11, Lc37;
+    new-instance v11, Lr77;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    invoke-direct {v11, v2, v0}, Lc37;-><init>(ILjava/nio/ByteBuffer;)V
+    invoke-direct {v11, v1, v0}, Lr77;-><init>(ILjava/nio/ByteBuffer;)V
 
-    move-object v2, v1
+    move v6, p0
+
+    move v10, v8
 
     move v3, p0
 
     move v4, p1
 
-    move v6, p0
-
-    move v8, v10
-
     invoke-direct/range {v2 .. v11}, Lorg/webrtc/JavaI420Buffer;-><init>(IILjava/nio/ByteBuffer;ILjava/nio/ByteBuffer;ILjava/nio/ByteBuffer;ILjava/lang/Runnable;)V
 
-    return-object v1
+    return-object v2
 .end method
 
 .method private static checkCapacity(Ljava/nio/ByteBuffer;III)V
@@ -171,7 +169,7 @@
 
     const-string v0, " bytes, but was "
 
-    invoke-static {p3, p2, p0, v0}, Lme4;->g(Ljava/lang/String;IILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p3, p2, p0, v0}, Lv04;->h(Ljava/lang/String;IILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -185,113 +183,101 @@
 
     move/from16 v8, p3
 
-    move/from16 v9, p5
+    move/from16 v0, p5
 
-    if-ne v8, v9, :cond_1
+    move/from16 v9, p4
 
-    move/from16 v7, p4
+    if-ne v8, v0, :cond_0
 
-    move/from16 v6, p6
+    move/from16 v1, p6
 
-    if-ne v7, v6, :cond_0
+    if-ne v9, v1, :cond_0
 
     invoke-interface/range {p0 .. p0}, Lorg/webrtc/VideoFrame$I420Buffer;->getDataY()Ljava/nio/ByteBuffer;
 
-    move-result-object v0
+    move-result-object v2
 
     invoke-interface/range {p0 .. p0}, Lorg/webrtc/VideoFrame$I420Buffer;->getDataU()Ljava/nio/ByteBuffer;
 
-    move-result-object v1
+    move-result-object v3
 
     invoke-interface/range {p0 .. p0}, Lorg/webrtc/VideoFrame$I420Buffer;->getDataV()Ljava/nio/ByteBuffer;
 
-    move-result-object v2
+    move-result-object v4
 
     invoke-interface/range {p0 .. p0}, Lorg/webrtc/VideoFrame$I420Buffer;->getStrideY()I
 
-    move-result v3
-
-    mul-int v3, v3, p2
-
-    add-int v3, v3, p1
-
-    invoke-virtual {v0, v3}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/ByteBuffer;
-
-    div-int/lit8 v3, p1, 0x2
-
-    div-int/lit8 v4, p2, 0x2
-
-    invoke-interface/range {p0 .. p0}, Lorg/webrtc/VideoFrame$I420Buffer;->getStrideU()I
-
     move-result v5
 
-    mul-int/2addr v5, v4
+    mul-int v5, v5, p2
 
-    add-int/2addr v5, v3
-
-    invoke-virtual {v1, v5}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/ByteBuffer;
-
-    invoke-interface/range {p0 .. p0}, Lorg/webrtc/VideoFrame$I420Buffer;->getStrideV()I
-
-    move-result v5
-
-    mul-int/2addr v5, v4
-
-    add-int/2addr v5, v3
+    add-int v5, v5, p1
 
     invoke-virtual {v2, v5}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/ByteBuffer;
 
-    invoke-interface/range {p0 .. p0}, Lorg/webrtc/VideoFrame$Buffer;->retain()V
+    div-int/lit8 v5, p1, 0x2
 
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
-
-    move-result-object v3
-
-    invoke-interface/range {p0 .. p0}, Lorg/webrtc/VideoFrame$I420Buffer;->getStrideY()I
-
-    move-result v4
-
-    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
-
-    move-result-object v5
+    div-int/lit8 v6, p2, 0x2
 
     invoke-interface/range {p0 .. p0}, Lorg/webrtc/VideoFrame$I420Buffer;->getStrideU()I
 
     move-result v7
 
-    invoke-virtual {v2}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
+    mul-int/2addr v7, v6
 
-    move-result-object v8
+    add-int/2addr v7, v5
+
+    invoke-virtual {v3, v7}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/ByteBuffer;
 
     invoke-interface/range {p0 .. p0}, Lorg/webrtc/VideoFrame$I420Buffer;->getStrideV()I
 
-    move-result v10
+    move-result v7
 
-    new-instance v11, Leq6;
+    mul-int/2addr v7, v6
 
-    const/4 v0, 0x2
+    add-int/2addr v7, v5
 
-    move-object/from16 v12, p0
+    invoke-virtual {v4, v7}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/ByteBuffer;
 
-    invoke-direct {v11, v0, v12}, Leq6;-><init>(ILjava/lang/Object;)V
+    invoke-interface/range {p0 .. p0}, Lorg/webrtc/VideoFrame$Buffer;->retain()V
 
-    move/from16 v0, p5
+    invoke-virtual {v2}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
 
-    move/from16 v1, p6
+    move-result-object v2
 
-    move-object v2, v3
+    move-object v5, v3
 
-    move v3, v4
+    invoke-interface/range {p0 .. p0}, Lorg/webrtc/VideoFrame$I420Buffer;->getStrideY()I
+
+    move-result v3
+
+    invoke-virtual {v5}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
+
+    move-result-object v5
+
+    move-object v6, v4
 
     move-object v4, v5
 
-    move v5, v7
+    invoke-interface/range {p0 .. p0}, Lorg/webrtc/VideoFrame$I420Buffer;->getStrideU()I
 
-    move-object v6, v8
+    move-result v5
 
-    move v7, v10
+    invoke-virtual {v6}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
 
-    move-object v8, v11
+    move-result-object v6
+
+    invoke-interface/range {p0 .. p0}, Lorg/webrtc/VideoFrame$I420Buffer;->getStrideV()I
+
+    move-result v7
+
+    new-instance v8, Lz46;
+
+    const/4 v9, 0x7
+
+    move-object/from16 v10, p0
+
+    invoke-direct {v8, v9, v10}, Lz46;-><init>(ILjava/lang/Object;)V
 
     invoke-static/range {v0 .. v8}, Lorg/webrtc/JavaI420Buffer;->wrap(IILjava/nio/ByteBuffer;ILjava/nio/ByteBuffer;ILjava/nio/ByteBuffer;ILjava/lang/Runnable;)Lorg/webrtc/JavaI420Buffer;
 
@@ -300,43 +286,33 @@
     return-object v0
 
     :cond_0
-    move-object/from16 v12, p0
+    move-object/from16 v10, p0
 
-    goto :goto_0
-
-    :cond_1
-    move-object/from16 v12, p0
-
-    move/from16 v7, p4
-
-    move/from16 v6, p6
-
-    :goto_0
     invoke-static/range {p5 .. p6}, Lorg/webrtc/JavaI420Buffer;->allocate(II)Lorg/webrtc/JavaI420Buffer;
 
     move-result-object v18
 
-    invoke-interface/range {p0 .. p0}, Lorg/webrtc/VideoFrame$I420Buffer;->getDataY()Ljava/nio/ByteBuffer;
+    invoke-interface {v10}, Lorg/webrtc/VideoFrame$I420Buffer;->getDataY()Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    invoke-interface/range {p0 .. p0}, Lorg/webrtc/VideoFrame$I420Buffer;->getStrideY()I
+    invoke-interface {v10}, Lorg/webrtc/VideoFrame$I420Buffer;->getStrideY()I
 
     move-result v1
 
-    invoke-interface/range {p0 .. p0}, Lorg/webrtc/VideoFrame$I420Buffer;->getDataU()Ljava/nio/ByteBuffer;
+    invoke-interface {v10}, Lorg/webrtc/VideoFrame$I420Buffer;->getDataU()Ljava/nio/ByteBuffer;
 
     move-result-object v2
 
-    invoke-interface/range {p0 .. p0}, Lorg/webrtc/VideoFrame$I420Buffer;->getStrideU()I
+    invoke-interface {v10}, Lorg/webrtc/VideoFrame$I420Buffer;->getStrideU()I
 
     move-result v3
 
-    invoke-interface/range {p0 .. p0}, Lorg/webrtc/VideoFrame$I420Buffer;->getDataV()Ljava/nio/ByteBuffer;
+    invoke-interface {v10}, Lorg/webrtc/VideoFrame$I420Buffer;->getDataV()Ljava/nio/ByteBuffer;
 
     move-result-object v4
 
-    invoke-interface/range {p0 .. p0}, Lorg/webrtc/VideoFrame$I420Buffer;->getStrideV()I
+    invoke-interface {v10}, Lorg/webrtc/VideoFrame$I420Buffer;->getStrideV()I
 
     move-result v5
 
@@ -368,10 +344,6 @@
 
     move/from16 v7, p2
 
-    move/from16 v8, p3
-
-    move/from16 v9, p4
-
     move/from16 v16, p5
 
     move/from16 v17, p6
@@ -393,11 +365,7 @@
 .end method
 
 .method public static wrap(IILjava/nio/ByteBuffer;ILjava/nio/ByteBuffer;ILjava/nio/ByteBuffer;ILjava/lang/Runnable;)Lorg/webrtc/JavaI420Buffer;
-    .locals 11
-
-    move v1, p0
-
-    move v2, p1
+    .locals 10
 
     if-eqz p2, :cond_1
 
@@ -435,29 +403,23 @@
 
     move-result-object v7
 
-    add-int/lit8 v0, v1, 0x1
+    add-int/lit8 v0, p0, 0x1
 
     div-int/lit8 v0, v0, 0x2
 
-    add-int/lit8 v4, v2, 0x1
+    add-int/lit8 v4, p1, 0x1
 
     div-int/lit8 v4, v4, 0x2
 
-    move v6, p3
-
     invoke-static {v3, p0, p1, p3}, Lorg/webrtc/JavaI420Buffer;->checkCapacity(Ljava/nio/ByteBuffer;III)V
 
-    move/from16 v8, p5
-
-    invoke-static {v5, v0, v4, v8}, Lorg/webrtc/JavaI420Buffer;->checkCapacity(Ljava/nio/ByteBuffer;III)V
+    invoke-static {v5, v0, v4, p5}, Lorg/webrtc/JavaI420Buffer;->checkCapacity(Ljava/nio/ByteBuffer;III)V
 
     move/from16 v9, p7
 
     invoke-static {v7, v0, v4, v9}, Lorg/webrtc/JavaI420Buffer;->checkCapacity(Ljava/nio/ByteBuffer;III)V
 
-    new-instance v10, Lorg/webrtc/JavaI420Buffer;
-
-    move-object v0, v10
+    new-instance v0, Lorg/webrtc/JavaI420Buffer;
 
     move v1, p0
 
@@ -465,15 +427,15 @@
 
     move v4, p3
 
-    move/from16 v6, p5
+    move v6, p5
 
-    move/from16 v8, p7
+    move v8, v9
 
     move-object/from16 v9, p8
 
     invoke-direct/range {v0 .. v9}, Lorg/webrtc/JavaI420Buffer;-><init>(IILjava/nio/ByteBuffer;ILjava/nio/ByteBuffer;ILjava/nio/ByteBuffer;ILjava/lang/Runnable;)V
 
-    return-object v10
+    return-object v0
 
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;

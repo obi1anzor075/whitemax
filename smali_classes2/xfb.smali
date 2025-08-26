@@ -1,141 +1,112 @@
 .class public final Lxfb;
-.super Ll5e;
+.super Ljgb;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
 
 
 # instance fields
-.field public final synthetic X:Landroid/content/Intent;
-
-.field public final synthetic Y:Lfgb;
+.field public final a:Ljava/lang/CharSequence;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Intent;Lfgb;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Ljava/lang/CharSequence;)V
     .locals 0
 
-    iput-object p1, p0, Lxfb;->X:Landroid/content/Intent;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lxfb;->Y:Lfgb;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p3}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lxfb;->a:Ljava/lang/CharSequence;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lxfb;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lxfb;
+
+    iget-object p0, p0, Lxfb;->a:Ljava/lang/CharSequence;
+
+    iget-object p1, p1, Lxfb;->a:Ljava/lang/CharSequence;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final getItemId()J
+    .locals 2
+
+    const/16 p0, 0x8
+
+    int-to-long v0, p0
+
+    return-wide v0
+.end method
+
+.method public final hashCode()I
     .locals 0
 
-    check-cast p1, Lou3;
+    iget-object p0, p0, Lxfb;->a:Ljava/lang/CharSequence;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    invoke-virtual {p0, p1, p2}, Lxfb;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    move-result p0
 
-    move-result-object p0
+    return p0
+.end method
 
-    check-cast p0, Lxfb;
+.method public final m()I
+    .locals 0
 
-    sget-object p1, Ljue;->a:Ljue;
+    const/16 p0, 0x8
 
-    invoke-virtual {p0, p1}, Lxfb;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "ChatDescription(text="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lxfb;->a:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
-
-    new-instance p1, Lxfb;
-
-    iget-object v0, p0, Lxfb;->X:Landroid/content/Intent;
-
-    iget-object p0, p0, Lxfb;->Y:Lfgb;
-
-    invoke-direct {p1, v0, p0, p2}, Lxfb;-><init>(Landroid/content/Intent;Lfgb;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lxfb;->X:Landroid/content/Intent;
-
-    const-string v0, "ru.ok.tamtam.extra.CROPPED_RECT"
-
-    invoke-virtual {p1, v0}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/graphics/RectF;
-
-    sget-object v0, Ljue;->a:Ljue;
-
-    if-nez p1, :cond_0
-
-    return-object v0
-
-    :cond_0
-    sget-object v1, Lfgb;->X0:[Lk77;
-
-    iget-object p0, p0, Lxfb;->Y:Lfgb;
-
-    iget-object v1, p0, Lfgb;->A0:Lt97;
-
-    invoke-interface {v1}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lmg5;
-
-    iget-object v2, p0, Lfgb;->U0:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Lmg5;->q(Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Lfgb;->u()Lpae;
-
-    move-result-object v2
-
-    check-cast v2, Ln3a;
-
-    invoke-virtual {v2}, Ln3a;->b()Lju3;
-
-    move-result-object v2
-
-    new-instance v3, Lwfb;
-
-    const/4 v4, 0x0
-
-    invoke-direct {v3, p0, v1, p1, v4}, Lwfb;-><init>(Lfgb;Ljava/lang/String;Landroid/graphics/RectF;Lkotlin/coroutines/Continuation;)V
-
-    const/4 p1, 0x2
-
-    iget-object p0, p0, Ltaf;->a:Lkotlinx/coroutines/internal/ContextScope;
-
-    invoke-static {p0, v2, v4, v3, p1}, Lxs7;->E(Lou3;Lhu3;Lru3;Li26;I)Lqod;
-
-    return-object v0
 .end method

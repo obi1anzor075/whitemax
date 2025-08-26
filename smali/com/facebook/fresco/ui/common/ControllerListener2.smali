@@ -32,7 +32,7 @@
         "callerContext",
         "Lcom/facebook/fresco/ui/common/ControllerListener2$Extras;",
         "extraData",
-        "Ljue;",
+        "Le5f;",
         "onSubmit",
         "(Ljava/lang/String;Ljava/lang/Object;Lcom/facebook/fresco/ui/common/ControllerListener2$Extras;)V",
         "imageInfo",
@@ -58,6 +58,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

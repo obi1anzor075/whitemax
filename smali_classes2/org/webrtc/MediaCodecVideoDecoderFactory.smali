@@ -214,7 +214,7 @@
 
 # virtual methods
 .method public createDecoder(Lorg/webrtc/VideoCodecInfo;)Lorg/webrtc/VideoDecoder;
-    .locals 8
+    .locals 7
 
     invoke-virtual {p1}, Lorg/webrtc/VideoCodecInfo;->getName()Ljava/lang/String;
 
@@ -243,7 +243,11 @@
 
     move-result-object v0
 
-    new-instance v7, Lorg/webrtc/AndroidVideoDecoder;
+    move-object v1, v0
+
+    new-instance v0, Lorg/webrtc/AndroidVideoDecoder;
+
+    move-object v2, v1
 
     new-instance v1, Lorg/webrtc/MediaCodecWrapperFactoryImpl;
 
@@ -251,15 +255,15 @@
 
     invoke-virtual {p1}, Landroid/media/MediaCodecInfo;->getName()Ljava/lang/String;
 
-    move-result-object v2
-
-    sget-object p1, Lorg/webrtc/MediaCodecUtils;->DECODER_COLOR_FORMATS:[I
-
-    invoke-static {p1, v0}, Lorg/webrtc/MediaCodecUtils;->selectColorFormat([ILandroid/media/MediaCodecInfo$CodecCapabilities;)Ljava/lang/Integer;
-
     move-result-object p1
 
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+    sget-object v4, Lorg/webrtc/MediaCodecUtils;->DECODER_COLOR_FORMATS:[I
+
+    invoke-static {v4, v2}, Lorg/webrtc/MediaCodecUtils;->selectColorFormat([ILandroid/media/MediaCodecInfo$CodecCapabilities;)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v4
 
@@ -269,11 +273,11 @@
 
     iget-object v6, p0, Lorg/webrtc/MediaCodecVideoDecoderFactory;->sharedContext:Lorg/webrtc/EglBase$Context;
 
-    move-object v0, v7
+    move-object v2, p1
 
     invoke-direct/range {v0 .. v6}, Lorg/webrtc/AndroidVideoDecoder;-><init>(Lorg/webrtc/MediaCodecWrapperFactory;Ljava/lang/String;Lorg/webrtc/VideoCodecMimeType;ILorg/webrtc/DecoderSsrcControl;Lorg/webrtc/EglBase$Context;)V
 
-    return-object v7
+    return-object v0
 .end method
 
 .method public getControl()Lorg/webrtc/DecoderSsrcControl;

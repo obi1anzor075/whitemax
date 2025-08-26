@@ -1,282 +1,102 @@
 .class public final Lrg7;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Lhm8;
-.implements Landroid/widget/AdapterView$OnItemClickListener;
+.implements Ll66;
 
 
 # instance fields
-.field public final X:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public Y:Lgm8;
-
-.field public Z:Lqg7;
-
-.field public a:Landroid/content/Context;
-
-.field public b:Landroid/view/LayoutInflater;
-
-.field public c:Lpl8;
-
-.field public o:Landroidx/appcompat/view/menu/ExpandedMenuView;
+.field public final synthetic Y:Lsg7;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;I)V
+.method public constructor <init>(Lsg7;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lrg7;->Y:Lsg7;
 
-    iput p2, p0, Lrg7;->X:I
+    const/4 p1, 0x2
 
-    iput-object p1, p0, Lrg7;->a:Landroid/content/Context;
-
-    invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lrg7;->b:Landroid/view/LayoutInflater;
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Lw0e;)Z
-    .locals 6
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    invoke-virtual {p1}, Lpl8;->hasVisibleItems()Z
+    check-cast p1, Lox3;
 
-    move-result v0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    if-nez v0, :cond_0
+    invoke-virtual {p0, p1, p2}, Lrg7;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    const/4 p0, 0x0
+    move-result-object p0
 
-    return p0
+    check-cast p0, Lrg7;
 
-    :cond_0
-    new-instance v0, Lql8;
+    sget-object p1, Le5f;->a:Le5f;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p0, p1}, Lrg7;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object p1, v0, Lql8;->a:Lpl8;
+    return-object p1
+.end method
 
-    new-instance v1, Ltc;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    iget-object v2, p1, Lpl8;->a:Landroid/content/Context;
+    new-instance v0, Lrg7;
 
-    invoke-direct {v1, v2}, Ltc;-><init>(Landroid/content/Context;)V
+    iget-object p0, p0, Lrg7;->Y:Lsg7;
 
-    new-instance v3, Lrg7;
+    invoke-direct {v0, p0, p2}, Lrg7;-><init>(Lsg7;Lkotlin/coroutines/Continuation;)V
 
-    invoke-virtual {v1}, Ltc;->getContext()Landroid/content/Context;
+    iput-object p1, v0, Lrg7;->X:Ljava/lang/Object;
 
-    move-result-object v4
+    return-object v0
+.end method
 
-    sget v5, Lasb;->abc_list_menu_item_layout:I
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
-    invoke-direct {v3, v4, v5}, Lrg7;-><init>(Landroid/content/Context;I)V
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    iput-object v3, v0, Lql8;->c:Lrg7;
+    iget-object p1, p0, Lrg7;->X:Ljava/lang/Object;
 
-    iput-object v0, v3, Lrg7;->Y:Lgm8;
+    check-cast p1, Lox3;
 
-    invoke-virtual {p1, v3, v2}, Lpl8;->b(Lhm8;Landroid/content/Context;)V
+    iget-object p0, p0, Lrg7;->Y:Lsg7;
 
-    iget-object v2, v0, Lql8;->c:Lrg7;
+    iget-object v0, p0, Lsg7;->a:Lfh7;
 
-    iget-object v3, v2, Lrg7;->Z:Lqg7;
+    iget-object v1, v0, Lfh7;->d:Lgg7;
 
-    if-nez v3, :cond_1
+    sget-object v2, Lgg7;->b:Lgg7;
 
-    new-instance v3, Lqg7;
+    invoke-virtual {v1, v2}, Ljava/lang/Enum;->compareTo(Ljava/lang/Enum;)I
 
-    invoke-direct {v3, v2}, Lqg7;-><init>(Lrg7;)V
+    move-result v1
 
-    iput-object v3, v2, Lrg7;->Z:Lqg7;
+    if-ltz v1, :cond_0
 
-    :cond_1
-    iget-object v2, v2, Lrg7;->Z:Lqg7;
-
-    iget-object v3, v1, Ltc;->a:Lpc;
-
-    iput-object v2, v3, Lpc;->q:Landroid/widget/ListAdapter;
-
-    iput-object v0, v3, Lpc;->r:Landroid/content/DialogInterface$OnClickListener;
-
-    iget-object v2, p1, Lpl8;->D0:Landroid/view/View;
-
-    if-eqz v2, :cond_2
-
-    iput-object v2, v3, Lpc;->e:Landroid/view/View;
+    invoke-virtual {v0, p0}, Lfh7;->a(Lzg7;)V
 
     goto :goto_0
 
-    :cond_2
-    iget-object v2, p1, Lpl8;->C0:Landroid/graphics/drawable/Drawable;
+    :cond_0
+    invoke-interface {p1}, Lox3;->getCoroutineContext()Lhx3;
 
-    iput-object v2, v3, Lpc;->c:Landroid/graphics/drawable/Drawable;
+    move-result-object p0
 
-    iget-object v2, p1, Lpl8;->B0:Ljava/lang/CharSequence;
-
-    invoke-virtual {v1, v2}, Ltc;->setTitle(Ljava/lang/CharSequence;)Ltc;
+    invoke-static {p0}, Lk3c;->d(Lhx3;)V
 
     :goto_0
-    iput-object v0, v3, Lpc;->o:Landroid/content/DialogInterface$OnKeyListener;
+    sget-object p0, Le5f;->a:Le5f;
 
-    invoke-virtual {v1}, Ltc;->create()Luc;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lql8;->b:Luc;
-
-    invoke-virtual {v1, v0}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
-
-    iget-object v1, v0, Lql8;->b:Luc;
-
-    invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
-
-    move-result-object v1
-
-    const/16 v2, 0x3eb
-
-    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->type:I
-
-    iget v2, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
-
-    const/high16 v3, 0x20000
-
-    or-int/2addr v2, v3
-
-    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
-
-    iget-object v0, v0, Lql8;->b:Luc;
-
-    invoke-virtual {v0}, Landroid/app/Dialog;->show()V
-
-    iget-object p0, p0, Lrg7;->Y:Lgm8;
-
-    if-eqz p0, :cond_3
-
-    invoke-interface {p0, p1}, Lgm8;->x(Lpl8;)Z
-
-    :cond_3
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final c()Z
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final d(Lul8;)Z
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final e(Lgm8;)V
-    .locals 0
-
-    iput-object p1, p0, Lrg7;->Y:Lgm8;
-
-    return-void
-.end method
-
-.method public final f(Lpl8;Z)V
-    .locals 0
-
-    iget-object p0, p0, Lrg7;->Y:Lgm8;
-
-    if-eqz p0, :cond_0
-
-    invoke-interface {p0, p1, p2}, Lgm8;->f(Lpl8;Z)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final h(Lul8;)Z
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final i()V
-    .locals 0
-
-    iget-object p0, p0, Lrg7;->Z:Lqg7;
-
-    if-eqz p0, :cond_0
-
-    invoke-virtual {p0}, Lqg7;->notifyDataSetChanged()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final k(Landroid/content/Context;Lpl8;)V
-    .locals 1
-
-    iget-object v0, p0, Lrg7;->a:Landroid/content/Context;
-
-    if-eqz v0, :cond_0
-
-    iput-object p1, p0, Lrg7;->a:Landroid/content/Context;
-
-    iget-object v0, p0, Lrg7;->b:Landroid/view/LayoutInflater;
-
-    if-nez v0, :cond_0
-
-    invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lrg7;->b:Landroid/view/LayoutInflater;
-
-    :cond_0
-    iput-object p2, p0, Lrg7;->c:Lpl8;
-
-    iget-object p0, p0, Lrg7;->Z:Lqg7;
-
-    if-eqz p0, :cond_1
-
-    invoke-virtual {p0}, Lqg7;->notifyDataSetChanged()V
-
-    :cond_1
-    return-void
-.end method
-
-.method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 0
-
-    iget-object p1, p0, Lrg7;->c:Lpl8;
-
-    iget-object p2, p0, Lrg7;->Z:Lqg7;
-
-    invoke-virtual {p2, p3}, Lqg7;->b(I)Lul8;
-
-    move-result-object p2
-
-    const/4 p3, 0x0
-
-    invoke-virtual {p1, p2, p0, p3}, Lpl8;->q(Landroid/view/MenuItem;Lhm8;I)Z
-
-    return-void
+    return-object p0
 .end method

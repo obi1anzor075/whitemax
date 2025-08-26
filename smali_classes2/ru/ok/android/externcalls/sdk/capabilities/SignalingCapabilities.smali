@@ -31,7 +31,7 @@
 
     iput p1, p0, Lru/ok/android/externcalls/sdk/capabilities/SignalingCapabilities;->value:I
 
-    goto :goto_0
+    return-void
 
     :cond_0
     iget p2, p0, Lru/ok/android/externcalls/sdk/capabilities/SignalingCapabilities;->value:I
@@ -44,7 +44,6 @@
 
     iput p1, p0, Lru/ok/android/externcalls/sdk/capabilities/SignalingCapabilities;->value:I
 
-    :goto_0
     return-void
 .end method
 

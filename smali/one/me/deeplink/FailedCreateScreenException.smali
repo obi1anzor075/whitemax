@@ -20,11 +20,12 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # direct methods
-.method public constructor <init>(Landroid/net/Uri;Ljava/lang/String;Lc34;Ljava/util/Map;Landroid/os/Bundle;Ljava/lang/Throwable;)V
+.method public constructor <init>(Landroid/net/Uri;Ljava/lang/String;Lr64;Ljava/util/Map;Landroid/os/Bundle;Ljava/lang/Throwable;)V
     .locals 2
 
     invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;

@@ -114,12 +114,12 @@
 
     invoke-virtual {p1, p2}, Lorg/apache/http/util/CharArrayBuffer;->append(Ljava/lang/String;)V
 
+    const/4 p2, 0x0
+
     .line 15
-    array-length p2, p0
+    array-length v0, p0
 
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, p0, v0, p2}, Lorg/apache/http/util/CharArrayBuffer;->append([BII)V
+    invoke-virtual {p1, p0, p2, v0}, Lorg/apache/http/util/CharArrayBuffer;->append([BII)V
 
     .line 16
     new-instance p0, Lorg/apache/http/message/BufferedHeader;

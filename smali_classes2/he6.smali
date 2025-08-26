@@ -2,89 +2,76 @@
 .super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Lke6;
-
 
 # static fields
+.field public static final synthetic X:[Lhe6;
+
 .field public static final enum b:Lhe6;
 
-.field public static final synthetic c:[Lhe6;
+.field public static final enum c:Lhe6;
+
+.field public static final enum o:Lhe6;
 
 
 # instance fields
-.field public final a:I
+.field public final a:Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
+    .locals 6
 
     new-instance v0, Lhe6;
 
-    const/4 v1, 0x7
+    const/4 v1, 0x0
 
-    const-string v2, "KEYBOARD_RELEASE"
+    const-string v2, "int_data"
 
-    const/4 v3, 0x0
+    const-string v3, "INTERNAL_DATA"
 
-    invoke-direct {v0, v2, v3, v1}, Lhe6;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v3, v1, v2}, Lhe6;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, Lhe6;->b:Lhe6;
 
     new-instance v1, Lhe6;
 
-    const/16 v2, 0x8
+    const/4 v2, 0x1
 
-    const-string v3, "VIRTUAL_KEY_RELEASE"
+    const-string v3, "ext_data"
 
-    const/4 v4, 0x1
+    const-string v4, "EXTERNAL_DATA"
 
-    invoke-direct {v1, v3, v4, v2}, Lhe6;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v1, v4, v2, v3}, Lhe6;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v1, Lhe6;->c:Lhe6;
 
     new-instance v2, Lhe6;
 
-    const-string v3, "CLOCK_TICK"
+    const/4 v3, 0x2
 
-    const/4 v4, 0x2
+    const-string v4, "src_data"
 
-    const/4 v5, 0x4
+    const-string v5, "SRC"
 
-    invoke-direct {v2, v3, v4, v5}, Lhe6;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v2, v5, v3, v4}, Lhe6;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    sput-object v2, Lhe6;->b:Lhe6;
+    sput-object v2, Lhe6;->o:Lhe6;
 
-    new-instance v3, Lhe6;
-
-    const/16 v4, 0x9
-
-    const-string v6, "TEXT_HANDLE_MOVE"
-
-    const/4 v7, 0x3
-
-    invoke-direct {v3, v6, v7, v4}, Lhe6;-><init>(Ljava/lang/String;II)V
-
-    new-instance v4, Lhe6;
-
-    const-string v6, "GESTURE_END"
-
-    const/16 v7, 0xd
-
-    invoke-direct {v4, v6, v5, v7}, Lhe6;-><init>(Ljava/lang/String;II)V
-
-    filled-new-array {v0, v1, v2, v3, v4}, [Lhe6;
+    filled-new-array {v0, v1, v2}, [Lhe6;
 
     move-result-object v0
 
-    sput-object v0, Lhe6;->c:[Lhe6;
+    sput-object v0, Lhe6;->X:[Lhe6;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;II)V
+.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iput p3, p0, Lhe6;->a:I
+    iput-object p3, p0, Lhe6;->a:Ljava/lang/String;
 
     return-void
 .end method
@@ -106,23 +93,13 @@
 .method public static values()[Lhe6;
     .locals 1
 
-    sget-object v0, Lhe6;->c:[Lhe6;
+    sget-object v0, Lhe6;->X:[Lhe6;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, [Lhe6;
 
     return-object v0
-.end method
-
-
-# virtual methods
-.method public final a()I
-    .locals 0
-
-    iget p0, p0, Lhe6;->a:I
-
-    return p0
 .end method

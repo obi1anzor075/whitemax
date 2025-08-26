@@ -17,12 +17,12 @@
         "source",
         "Lkotlin/Function1;",
         "",
-        "Ljue;",
+        "Le5f;",
         "onError",
         "Lkotlin/Function0;",
         "onSuccess",
         "sendFeedback",
-        "(Ljava/lang/String;Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedbackSource;Lu16;Ls16;)V",
+        "(Ljava/lang/String;Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedbackSource;Lx56;Lv56;)V",
         "",
         "millis",
         "setTimeout",
@@ -43,11 +43,12 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # direct methods
-.method public static synthetic sendFeedback$default(Lru/ok/android/externcalls/sdk/feedback/FeedbackManager;Ljava/lang/String;Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedbackSource;Lu16;Ls16;ILjava/lang/Object;)V
+.method public static synthetic sendFeedback$default(Lru/ok/android/externcalls/sdk/feedback/FeedbackManager;Ljava/lang/String;Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedbackSource;Lx56;Lv56;ILjava/lang/Object;)V
     .locals 1
 
     if-nez p6, :cond_2
@@ -68,7 +69,7 @@
     move-object p4, v0
 
     :cond_1
-    invoke-interface {p0, p1, p2, p3, p4}, Lru/ok/android/externcalls/sdk/feedback/FeedbackManager;->sendFeedback(Ljava/lang/String;Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedbackSource;Lu16;Ls16;)V
+    invoke-interface {p0, p1, p2, p3, p4}, Lru/ok/android/externcalls/sdk/feedback/FeedbackManager;->sendFeedback(Ljava/lang/String;Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedbackSource;Lx56;Lv56;)V
 
     return-void
 
@@ -93,14 +94,14 @@
 .method public abstract removeListener(Lru/ok/android/externcalls/sdk/feedback/listener/FeedbackListener;)V
 .end method
 
-.method public abstract sendFeedback(Ljava/lang/String;Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedbackSource;Lu16;Ls16;)V
+.method public abstract sendFeedback(Ljava/lang/String;Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedbackSource;Lx56;Lv56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
             "Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedbackSource;",
-            "Lu16;",
-            "Ls16;",
+            "Lx56;",
+            "Lv56;",
             ")V"
         }
     .end annotation

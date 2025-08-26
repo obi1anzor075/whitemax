@@ -1,90 +1,86 @@
 .class public final Low8;
-.super Ll5e;
+.super Lqw8;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
 
 
 # instance fields
-.field public final synthetic X:Ls97;
-
-.field public final synthetic Y:Lt97;
+.field public final c:J
 
 
 # direct methods
-.method public constructor <init>(Ls97;Lr7e;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method public constructor <init>(J)V
+    .locals 1
 
-    iput-object p1, p0, Low8;->X:Ls97;
+    const/4 v0, 0x2
 
-    iput-object p2, p0, Low8;->Y:Lt97;
+    invoke-direct {p0, p1, p2, v0}, Lqw8;-><init>(JI)V
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p3}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-wide p1, p0, Low8;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 5
 
-    check-cast p1, Lou3;
+    const/4 v0, 0x1
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {p0, p1, p2}, Low8;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    return v0
 
-    move-result-object p0
+    :cond_0
+    instance-of v1, p1, Low8;
 
-    check-cast p0, Low8;
+    const/4 v2, 0x0
 
-    sget-object p1, Ljue;->a:Ljue;
+    if-nez v1, :cond_1
 
-    invoke-virtual {p0, p1}, Low8;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    return v2
 
-    return-object p1
+    :cond_1
+    check-cast p1, Low8;
+
+    iget-wide v3, p0, Low8;->c:J
+
+    iget-wide p0, p1, Low8;->c:J
+
+    cmp-long p0, v3, p0
+
+    if-eqz p0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
+.method public final hashCode()I
+    .locals 2
 
-    new-instance p1, Low8;
+    iget-wide v0, p0, Low8;->c:J
 
-    iget-object v0, p0, Low8;->Y:Lt97;
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
 
-    check-cast v0, Lr7e;
+    move-result p0
 
-    iget-object p0, p0, Low8;->X:Ls97;
-
-    invoke-direct {p1, p0, v0, p2}, Low8;-><init>(Ls97;Lr7e;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
+    return p0
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final toString()Ljava/lang/String;
+    .locals 4
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    const-string v0, "DialogBotId(botId="
 
-    iget-object p1, p0, Low8;->X:Ls97;
+    const-string v1, ")"
 
-    iget-object p1, p1, Ls97;->a:Lqs8;
+    iget-wide v2, p0, Low8;->c:J
 
-    iget-object p0, p0, Low8;->Y:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-static {v2, v3, v0, v1}, Lu88;->i(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
-
-    check-cast p0, Landroid/text/Layout;
-
-    invoke-virtual {p1, p0}, Lqs8;->b(Landroid/text/Layout;)V
-
-    sget-object p0, Ljue;->a:Ljue;
 
     return-object p0
 .end method

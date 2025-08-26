@@ -74,7 +74,7 @@
 
     move-result-object p0
 
-    invoke-static {p0}, Lh2g;->C(Landroid/content/Intent;)Z
+    invoke-static {p0}, Lmna;->E(Landroid/content/Intent;)Z
 
     move-result v0
 
@@ -86,7 +86,7 @@
 
     move-result-object p0
 
-    invoke-static {v0, p0}, Lh2g;->r(Ljava/lang/String;Landroid/os/Bundle;)V
+    invoke-static {v0, p0}, Lmna;->x(Ljava/lang/String;Landroid/os/Bundle;)V
 
     :cond_2
     const/4 p0, -0x1
@@ -102,7 +102,7 @@
 
 # virtual methods
 .method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 8
+    .locals 7
 
     if-nez p2, :cond_0
 
@@ -117,82 +117,82 @@
 
     move-result-object v5
 
-    const-class v0, Lcom/google/firebase/iid/FirebaseInstanceIdReceiver;
+    const-class v1, Lcom/google/firebase/iid/FirebaseInstanceIdReceiver;
 
-    monitor-enter v0
+    monitor-enter v1
 
     :try_start_0
-    sget-object v1, Lcom/google/firebase/iid/FirebaseInstanceIdReceiver;->a:Ljava/lang/ref/SoftReference;
+    sget-object v0, Lcom/google/firebase/iid/FirebaseInstanceIdReceiver;->a:Ljava/lang/ref/SoftReference;
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v1}, Ljava/lang/ref/SoftReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/SoftReference;->get()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Ljava/util/concurrent/ExecutorService;
+    check-cast v0, Ljava/util/concurrent/ExecutorService;
 
     goto :goto_0
 
     :catchall_0
-    move-exception p0
+    move-exception v0
+
+    move-object p0, v0
 
     goto :goto_1
 
     :cond_1
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    if-nez v1, :cond_2
+    if-nez v0, :cond_2
 
-    new-instance v1, Lzf9;
+    new-instance v0, Lqk9;
 
     const-string v2, "firebase-iid-executor"
 
     const/4 v3, 0x0
 
-    invoke-direct {v1, v2, v3}, Lzf9;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v2, v3}, Lqk9;-><init>(Ljava/lang/String;I)V
 
-    invoke-static {v1}, Ljava/util/concurrent/Executors;->newCachedThreadPool(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
+    invoke-static {v0}, Ljava/util/concurrent/Executors;->newCachedThreadPool(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Ljava/util/concurrent/Executors;->unconfigurableExecutorService(Ljava/util/concurrent/ExecutorService;)Ljava/util/concurrent/ExecutorService;
+    invoke-static {v0}, Ljava/util/concurrent/Executors;->unconfigurableExecutorService(Ljava/util/concurrent/ExecutorService;)Ljava/util/concurrent/ExecutorService;
 
-    move-result-object v1
+    move-result-object v0
 
     new-instance v2, Ljava/lang/ref/SoftReference;
 
-    invoke-direct {v2, v1}, Ljava/lang/ref/SoftReference;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v2, v0}, Ljava/lang/ref/SoftReference;-><init>(Ljava/lang/Object;)V
 
     sput-object v2, Lcom/google/firebase/iid/FirebaseInstanceIdReceiver;->a:Ljava/lang/ref/SoftReference;
 
     :cond_2
-    move-object v6, v1
+    move-object v6, v0
 
-    monitor-exit v0
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    new-instance v7, Lb4g;
-
-    move-object v0, v7
+    new-instance v0, Lo5f;
 
     move-object v1, p0
 
-    move-object v2, p2
-
     move-object v3, p1
 
-    invoke-direct/range {v0 .. v5}, Lb4g;-><init>(Lcom/google/firebase/iid/FirebaseInstanceIdReceiver;Landroid/content/Intent;Landroid/content/Context;ZLandroid/content/BroadcastReceiver$PendingResult;)V
+    move-object v2, p2
 
-    invoke-interface {v6, v7}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    invoke-direct/range {v0 .. v5}, Lo5f;-><init>(Lcom/google/firebase/iid/FirebaseInstanceIdReceiver;Landroid/content/Intent;Landroid/content/Context;ZLandroid/content/BroadcastReceiver$PendingResult;)V
+
+    invoke-interface {v6, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
     return-void
 
     :goto_1
     :try_start_1
-    monitor-exit v0
+    monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 

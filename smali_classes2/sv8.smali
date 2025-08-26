@@ -1,44 +1,73 @@
-.class public final Lsv8;
+.class public abstract Lsv8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lwv8;
 
+# static fields
+.field public static final a:Ljava/nio/charset/Charset;
 
-# instance fields
-.field public final a:J
+.field public static final b:Lqv8;
 
-.field public final b:Lrz;
+.field public static final c:Lrv8;
 
 
 # direct methods
-.method public constructor <init>(JLrz;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "UTF-8"
 
-    iput-wide p1, p0, Lsv8;->a:J
+    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
 
-    iput-object p3, p0, Lsv8;->b:Lrz;
+    move-result-object v0
+
+    sput-object v0, Lsv8;->a:Ljava/nio/charset/Charset;
+
+    new-instance v0, Lqv8;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lsv8;->b:Lqv8;
+
+    new-instance v0, Lrv8;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sget-object v1, Ljava/nio/charset/CodingErrorAction;->REPLACE:Ljava/nio/charset/CodingErrorAction;
+
+    iput-object v1, v0, Lrv8;->a:Ljava/nio/charset/CodingErrorAction;
+
+    iput-object v1, v0, Lrv8;->b:Ljava/nio/charset/CodingErrorAction;
+
+    const v1, 0x7fffffff
+
+    iput v1, v0, Lrv8;->c:I
+
+    const/16 v1, 0x2000
+
+    iput v1, v0, Lrv8;->o:I
+
+    iput v1, v0, Lrv8;->X:I
+
+    sput-object v0, Lsv8;->c:Lrv8;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()Z
-    .locals 0
-
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final j()J
+.method public static a([B)Ldx8;
     .locals 2
 
-    iget-wide v0, p0, Lsv8;->a:J
+    sget-object v0, Lsv8;->c:Lrv8;
 
-    return-wide v0
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v1, Lorg/msgpack/core/buffer/ArrayBufferInput;
+
+    invoke-direct {v1, p0}, Lorg/msgpack/core/buffer/ArrayBufferInput;-><init>([B)V
+
+    new-instance p0, Ldx8;
+
+    invoke-direct {p0, v1, v0}, Ldx8;-><init>(Lorg/msgpack/core/buffer/ArrayBufferInput;Lrv8;)V
+
+    return-object p0
 .end method

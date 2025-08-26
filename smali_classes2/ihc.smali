@@ -1,20 +1,19 @@
-.class public interface abstract Lihc;
-.super Ljava/lang/Object;
+.class public final Lihc;
+.super Lmhc;
 .source "SourceFile"
 
 
-# virtual methods
-.method public a(I[B)V
+# instance fields
+.field public final a:Ljava/lang/Throwable;
+
+
+# direct methods
+.method public constructor <init>(Ljava/lang/Throwable;)V
     .locals 0
 
-    return-void
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract b(Lhhc;)V
-.end method
-
-.method public c(Ljava/lang/Throwable;)V
-    .locals 0
+    iput-object p1, p0, Lihc;->a:Ljava/lang/Throwable;
 
     return-void
 .end method

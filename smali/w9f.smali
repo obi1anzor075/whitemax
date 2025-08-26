@@ -1,160 +1,97 @@
-.class public abstract Lw9f;
-.super Ljava/lang/Object;
+.class public final enum Lw9f;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
+# static fields
+.field public static final synthetic X:[Lw9f;
+
+.field public static final enum a:Lw9f;
+
+.field public static final enum b:Lw9f;
+
+.field public static final enum c:Lw9f;
+
+.field public static final enum o:Lw9f;
+
+
 # direct methods
-.method public static a(Landroid/view/View;Ljava/util/Collection;I)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/view/View;",
-            "Ljava/util/Collection<",
-            "Landroid/view/View;",
-            ">;I)V"
-        }
-    .end annotation
+.method static constructor <clinit>()V
+    .locals 6
 
-    invoke-virtual {p0, p1, p2}, Landroid/view/View;->addKeyboardNavigationClusters(Ljava/util/Collection;I)V
+    new-instance v0, Lw9f;
+
+    const-string v1, "ALL"
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lw9f;->a:Lw9f;
+
+    new-instance v1, Lw9f;
+
+    const-string v2, "USER_FOLDER"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lw9f;->b:Lw9f;
+
+    new-instance v2, Lw9f;
+
+    const-string v3, "CREATE_FOLDER"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lw9f;->c:Lw9f;
+
+    new-instance v3, Lw9f;
+
+    const-string v4, "RECOMMENDED_FOLDER"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lw9f;->o:Lw9f;
+
+    filled-new-array {v0, v1, v2, v3}, [Lw9f;
+
+    move-result-object v0
+
+    sput-object v0, Lw9f;->X:[Lw9f;
 
     return-void
 .end method
 
-.method public static b(Landroid/view/View;)Landroid/view/autofill/AutofillId;
-    .locals 0
+.method public static valueOf(Ljava/lang/String;)Lw9f;
+    .locals 1
 
-    invoke-virtual {p0}, Landroid/view/View;->getAutofillId()Landroid/view/autofill/AutofillId;
+    const-class v0, Lw9f;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
+
+    check-cast p0, Lw9f;
 
     return-object p0
 .end method
 
-.method public static c(Landroid/view/View;)I
-    .locals 0
+.method public static values()[Lw9f;
+    .locals 1
 
-    invoke-virtual {p0}, Landroid/view/View;->getImportantForAutofill()I
+    sget-object v0, Lw9f;->X:[Lw9f;
 
-    move-result p0
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    return p0
-.end method
+    move-result-object v0
 
-.method public static d(Landroid/view/View;)I
-    .locals 0
+    check-cast v0, [Lw9f;
 
-    invoke-virtual {p0}, Landroid/view/View;->getNextClusterForwardId()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static e(Landroid/view/View;)Z
-    .locals 0
-
-    invoke-virtual {p0}, Landroid/view/View;->hasExplicitFocusable()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static f(Landroid/view/View;)Z
-    .locals 0
-
-    invoke-virtual {p0}, Landroid/view/View;->isFocusedByDefault()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static g(Landroid/view/View;)Z
-    .locals 0
-
-    invoke-virtual {p0}, Landroid/view/View;->isImportantForAutofill()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static h(Landroid/view/View;)Z
-    .locals 0
-
-    invoke-virtual {p0}, Landroid/view/View;->isKeyboardNavigationCluster()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static i(Landroid/view/View;Landroid/view/View;I)Landroid/view/View;
-    .locals 0
-
-    invoke-virtual {p0, p1, p2}, Landroid/view/View;->keyboardNavigationClusterSearch(Landroid/view/View;I)Landroid/view/View;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static j(Landroid/view/View;)Z
-    .locals 0
-
-    invoke-virtual {p0}, Landroid/view/View;->restoreDefaultFocus()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static varargs k(Landroid/view/View;[Ljava/lang/String;)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setAutofillHints([Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static l(Landroid/view/View;Z)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setFocusedByDefault(Z)V
-
-    return-void
-.end method
-
-.method public static m(Landroid/view/View;I)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setImportantForAutofill(I)V
-
-    return-void
-.end method
-
-.method public static n(Landroid/view/View;Z)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setKeyboardNavigationCluster(Z)V
-
-    return-void
-.end method
-
-.method public static o(Landroid/view/View;I)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setNextClusterForwardId(I)V
-
-    return-void
-.end method
-
-.method public static p(Landroid/view/View;Ljava/lang/CharSequence;)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setTooltipText(Ljava/lang/CharSequence;)V
-
-    return-void
+    return-object v0
 .end method

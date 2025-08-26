@@ -1,66 +1,49 @@
-.class public final synthetic Ld44;
+.class public final Ld44;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Llh7;
-
 
 # instance fields
-.field public final synthetic a:I
+.field public a:I
 
-.field public final synthetic b:Lgd;
+.field public b:I
 
-.field public final synthetic c:Li78;
-
-
-# direct methods
-.method public synthetic constructor <init>(Lgd;Li78;I)V
-    .locals 0
-
-    iput p3, p0, Ld44;->a:I
-
-    iput-object p1, p0, Ld44;->b:Lgd;
-
-    iput-object p2, p0, Ld44;->c:Li78;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.field public c:Ljava/lang/String;
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    iget v0, p0, Ld44;->a:I
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    check-cast p1, Lhd;
+    const-string v1, "Start:"
 
-    packed-switch v0, :pswitch_data_0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v0, p0, Ld44;->b:Lgd;
+    iget v1, p0, Ld44;->a:I
 
-    iget-object p0, p0, Ld44;->c:Li78;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-interface {p1, v0, p0}, Lhd;->W(Lgd;Li78;)V
+    const-string v1, " End:"
 
-    return-void
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :pswitch_0
-    iget-object v0, p0, Ld44;->b:Lgd;
+    iget v1, p0, Ld44;->b:I
 
-    iget-object p0, p0, Ld44;->c:Li78;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-interface {p1, v0, p0}, Lhd;->E0(Lgd;Li78;)V
+    const-string v1, " \'"
 
-    return-void
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    nop
+    iget-object p0, p0, Ld44;->c:Ljava/lang/String;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    const-string v1, "\'"
+
+    invoke-static {v0, p0, v1}, Lm26;->j(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lof3;
+.implements Ljj3;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants;-><init>(Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$Listener;Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;Lxwb;)V
+    value = Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants;-><init>(Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants$Listener;Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;Ls1c;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,7 +22,7 @@
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
-        "Lof3;"
+        "Ljj3;"
     }
 .end annotation
 
@@ -33,7 +33,7 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipantsUpdate;",
         "data",
-        "Ljue;",
+        "Le5f;",
         "accept",
         "(Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipantsUpdate;)V",
         "<anonymous>"

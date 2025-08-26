@@ -1,345 +1,110 @@
 .class public final Lkd9;
-.super Lu2;
+.super Llje;
 .source "SourceFile"
-
-# interfaces
-.implements Lkf9;
-.implements Lfe9;
-.implements La9f;
-.implements Lp98;
-.implements Lo98;
 
 
 # instance fields
-.field public final X:Lee9;
+.field public X:Ljava/util/List;
 
-.field public Y:Ld96;
-
-.field public final c:Lq98;
-
-.field public final o:Lbf5;
+.field public o:J
 
 
 # direct methods
-.method public constructor <init>(Lbf9;Lq98;Lbf5;Lee9;)V
-    .locals 1
+.method public constructor <init>(Ldx8;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    invoke-direct {p0, p1}, Llje;-><init>(Ldx8;)V
 
-    invoke-direct {p0, v0, p1}, Lu2;-><init>(ILjava/lang/Object;)V
+    iget-object p1, p0, Lkd9;->X:Ljava/util/List;
 
-    iput-object p2, p0, Lkd9;->c:Lq98;
+    if-nez p1, :cond_0
 
-    iput-object p3, p0, Lkd9;->o:Lbf5;
+    sget-object p1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
-    iput-object p4, p0, Lkd9;->X:Lee9;
+    iput-object p1, p0, Lkd9;->X:Ljava/util/List;
 
-    invoke-virtual {p1, p0}, Lv2;->t(Ljava/lang/Object;)V
-
-    check-cast p2, Lal7;
-
-    iput-object p0, p2, Lal7;->e:Lp98;
-
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final D1(Ljava/lang/Throwable;)V
-    .locals 0
-
-    iget-object p0, p0, Lkd9;->X:Lee9;
-
-    if-nez p0, :cond_0
-
-    return-void
-
-    :cond_0
-    invoke-interface {p0, p1}, Lee9;->Y(Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public final G(Landroid/view/Surface;)V
-    .locals 0
-
-    iget-object p0, p0, Lkd9;->c:Lq98;
-
-    check-cast p0, Lal7;
-
-    invoke-virtual {p0, p1}, Lal7;->q(Landroid/view/Surface;)V
-
-    return-void
-.end method
-
-.method public final M0()I
-    .locals 0
-
-    iget-object p0, p0, Lkd9;->c:Lq98;
-
-    check-cast p0, Lal7;
-
-    invoke-virtual {p0}, Lal7;->g()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final P(III)V
-    .locals 0
-
-    iget-object p0, p0, Lu2;->b:Ljava/lang/Object;
-
-    check-cast p0, Lge9;
-
-    check-cast p0, Llf9;
-
-    invoke-interface {p0, p1, p2}, Llf9;->a(II)V
-
-    return-void
-.end method
-
-.method public final R()I
-    .locals 0
-
-    iget-object p0, p0, Lkd9;->c:Lq98;
-
-    check-cast p0, Lal7;
-
-    invoke-virtual {p0}, Lal7;->i()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final T()V
-    .locals 0
-
-    iget-object p0, p0, Lkd9;->X:Lee9;
-
-    if-nez p0, :cond_0
-
-    return-void
-
-    :cond_0
-    invoke-interface {p0}, Lee9;->T()V
-
-    return-void
-.end method
-
-.method public final W()V
-    .locals 0
-
-    iget-object p0, p0, Lkd9;->X:Lee9;
-
-    if-nez p0, :cond_0
-
-    return-void
-
-    :cond_0
-    invoke-interface {p0}, Lee9;->W()V
-
-    return-void
-.end method
-
-.method public final W0()V
+.method public final c(Ldx8;Ljava/lang/String;)V
     .locals 1
 
-    const-string p0, "kd9"
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const-string v0, "onMediaPlayerControllerDetach"
+    const-string v0, "chatId"
 
-    invoke-static {p0, v0}, Ludd;->n(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    return-void
-.end method
+    move-result v0
 
-.method public final a()Z
-    .locals 0
+    if-nez v0, :cond_1
 
-    iget-object p0, p0, Lkd9;->c:Lq98;
+    const-string v0, "messages"
 
-    check-cast p0, Lal7;
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {p0}, Lal7;->j()Z
+    move-result p2
 
-    move-result p0
+    if-nez p2, :cond_0
 
-    return p0
-.end method
-
-.method public final c()J
-    .locals 2
-
-    iget-object p0, p0, Lkd9;->c:Lq98;
-
-    check-cast p0, Lal7;
-
-    invoke-virtual {p0}, Lal7;->f()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final c0()Z
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final c1()V
-    .locals 1
-
-    iget-object v0, p0, Lkd9;->Y:Ld96;
-
-    if-nez v0, :cond_0
+    invoke-virtual {p1}, Ldx8;->B()V
 
     return-void
 
     :cond_0
-    iget-object p0, p0, Lkd9;->X:Lee9;
+    invoke-static {p1}, Llz;->e(Ldx8;)Llz;
 
-    if-eqz p0, :cond_1
+    move-result-object p1
 
-    invoke-interface {p0}, Lee9;->X()V
+    iput-object p1, p0, Lkd9;->X:Ljava/util/List;
+
+    return-void
 
     :cond_1
+    invoke-virtual {p1}, Ldx8;->A0()J
+
+    move-result-wide p1
+
+    iput-wide p1, p0, Lkd9;->o:J
+
     return-void
 .end method
 
-.method public final f1()V
-    .locals 0
+.method public final toString()Ljava/lang/String;
+    .locals 4
 
-    return-void
-.end method
+    iget-wide v0, p0, Lkd9;->o:J
 
-.method public final i1()I
-    .locals 0
+    iget-object p0, p0, Lkd9;->X:Ljava/util/List;
 
-    iget-object p0, p0, Lkd9;->c:Lq98;
-
-    check-cast p0, Lal7;
-
-    invoke-virtual {p0}, Lal7;->h()I
+    invoke-static {p0}, Lzx7;->n(Ljava/util/Collection;)I
 
     move-result p0
 
-    return p0
-.end method
+    new-instance v2, Ljava/lang/StringBuilder;
 
-.method public final j()I
-    .locals 0
+    const-string v3, "{chatId="
 
-    iget-object p0, p0, Lkd9;->c:Lq98;
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    check-cast p0, Lal7;
+    invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Lal7;->f:Lu2f;
+    const-string v0, ", messages="
 
-    if-nez p0, :cond_0
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 p0, 0x0
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    goto :goto_0
+    const-string p0, "}"
 
-    :cond_0
-    invoke-interface {p0}, Lu2f;->j()I
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result p0
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    :goto_0
-    return p0
-.end method
-
-.method public final k()J
-    .locals 2
-
-    iget-object p0, p0, Lkd9;->c:Lq98;
-
-    check-cast p0, Lal7;
-
-    invoke-virtual {p0}, Lal7;->e()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final l1(Z)V
-    .locals 1
-
-    iget-object p1, p0, Lkd9;->c:Lq98;
-
-    check-cast p1, Lal7;
-
-    iget-object v0, p1, Lal7;->g:Lo98;
-
-    if-ne v0, p0, :cond_0
-
-    invoke-virtual {p1}, Lal7;->t()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p1, Lal7;->e:Lp98;
-
-    invoke-virtual {p1, v0}, Lal7;->q(Landroid/view/Surface;)V
-
-    iput-object v0, p1, Lal7;->g:Lo98;
-
-    iput-object v0, p0, Lkd9;->Y:Ld96;
-
-    iget-object p1, p0, Lu2;->b:Ljava/lang/Object;
-
-    check-cast p1, Lge9;
-
-    check-cast p1, Llf9;
-
-    move-object v0, p1
-
-    check-cast v0, Lv2;
-
-    iget-object v0, v0, Lv2;->a:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/Set;
-
-    invoke-interface {v0, p0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
-
-    invoke-interface {p1}, Llf9;->release()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final u1()Landroid/view/View;
-    .locals 1
-
-    iget-object p0, p0, Lu2;->b:Ljava/lang/Object;
-
-    check-cast p0, Lge9;
-
-    check-cast p0, Llf9;
-
-    check-cast p0, Lv2;
-
-    iget-object p0, p0, Lv2;->c:Ljava/lang/Object;
-
-    check-cast p0, Landroid/view/View;
-
-    if-eqz p0, :cond_0
+    move-result-object p0
 
     return-object p0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string v0, "Mvc view root is null"
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method

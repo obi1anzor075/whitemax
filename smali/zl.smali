@@ -3,92 +3,70 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+.implements Lg1a;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Landroid/view/View;
-
-.field public final synthetic c:Landroid/view/View;
-
-.field public final synthetic o:Ljava/lang/Object;
+.field public final synthetic a:Lam;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;Landroid/view/View;Landroid/view/View;I)V
+.method public constructor <init>(Lam;)V
     .locals 0
 
-    iput p4, p0, Lzl;->a:I
-
-    iput-object p1, p0, Lzl;->o:Ljava/lang/Object;
-
-    iput-object p2, p0, Lzl;->b:Landroid/view/View;
-
-    iput-object p3, p0, Lzl;->c:Landroid/view/View;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lzl;->a:Lam;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 2
+.method public final a()V
+    .locals 4
 
-    iget v0, p0, Lzl;->a:I
+    iget-object p0, p0, Lzl;->a:Lam;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p0}, Lam;->H()Lim;
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
+    move-result-object v0
 
-    move-result p1
+    move-object v1, v0
 
-    iget-object v0, p0, Lzl;->o:Ljava/lang/Object;
+    check-cast v1, Lum;
 
-    check-cast v0, Li9e;
+    iget-object v2, v1, Lum;->r0:Landroid/content/Context;
 
-    iget-object v1, p0, Lzl;->b:Landroid/view/View;
+    invoke-static {v2}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    iget-object p0, p0, Lzl;->c:Landroid/view/View;
+    move-result-object v2
 
-    invoke-virtual {v0, v1, p0, p1}, Li9e;->c(Landroid/view/View;Landroid/view/View;F)V
+    invoke-virtual {v2}, Landroid/view/LayoutInflater;->getFactory()Landroid/view/LayoutInflater$Factory;
 
-    return-void
+    move-result-object v3
 
-    :pswitch_0
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    if-nez v3, :cond_0
 
-    move-result-object p1
+    invoke-virtual {v2, v1}, Landroid/view/LayoutInflater;->setFactory2(Landroid/view/LayoutInflater$Factory2;)V
 
-    check-cast p1, Ljava/lang/Integer;
+    goto :goto_0
 
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+    :cond_0
+    invoke-virtual {v2}, Landroid/view/LayoutInflater;->getFactory2()Landroid/view/LayoutInflater$Factory2;
 
-    move-result p1
+    :goto_0
+    iget-object p0, p0, Lna3;->o:Lld;
 
-    iget-object v0, p0, Lzl;->b:Landroid/view/View;
+    iget-object p0, p0, Lld;->o:Ljava/lang/Object;
 
-    check-cast v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;
+    check-cast p0, Lem;
 
-    iget-object v1, p0, Lzl;->c:Landroid/view/View;
+    const-string v1, "androidx:appcompat"
 
-    check-cast v1, Lfm;
+    invoke-virtual {p0, v1}, Lem;->c(Ljava/lang/String;)Landroid/os/Bundle;
 
-    iget-object p0, p0, Lzl;->o:Ljava/lang/Object;
-
-    check-cast p0, Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;
-
-    invoke-virtual {p0, v0, v1, p1}, Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;->K(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;I)V
+    invoke-virtual {v0}, Lim;->c()V
 
     return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

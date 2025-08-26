@@ -1,415 +1,521 @@
 .class public final Lws9;
-.super Ljava/util/concurrent/atomic/AtomicInteger;
+.super Lxs9;
 .source "SourceFile"
-
-# interfaces
-.implements Lbw9;
-.implements Lxi4;
 
 
 # instance fields
-.field public A0:I
+.field public final e:Ljava/util/ArrayList;
 
-.field public final X:Lvs9;
+.field public final f:Ljava/util/ArrayList;
 
-.field public final Y:Z
+.field public final g:Lasa;
 
-.field public Z:Lxgd;
+.field public h:Ljava/lang/String;
 
-.field public final a:Lbw9;
-
-.field public final b:Lj26;
-
-.field public final c:I
-
-.field public final o:Ley;
-
-.field public w0:Lxi4;
-
-.field public volatile x0:Z
-
-.field public volatile y0:Z
-
-.field public volatile z0:Z
+.field public i:Ljava/lang/Boolean;
 
 
 # direct methods
-.method public constructor <init>(Lbw9;Lj26;IZ)V
-    .locals 0
+.method public constructor <init>(Lasa;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
+    invoke-direct {p0}, Lxs9;-><init>()V
 
-    iput-object p1, p0, Lws9;->a:Lbw9;
+    new-instance v0, Ljava/util/ArrayList;
 
-    iput-object p2, p0, Lws9;->b:Lj26;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput p3, p0, Lws9;->c:I
+    iput-object v0, p0, Lws9;->e:Ljava/util/ArrayList;
 
-    iput-boolean p4, p0, Lws9;->Y:Z
+    new-instance v0, Ljava/util/ArrayList;
 
-    new-instance p2, Ley;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-direct {p2}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+    iput-object v0, p0, Lws9;->f:Ljava/util/ArrayList;
 
-    iput-object p2, p0, Lws9;->o:Ley;
+    iget-object v0, p1, Lasa;->a:Ljava/lang/CharSequence;
 
-    new-instance p2, Lvs9;
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    const/4 p3, 0x0
+    move-result v0
 
-    invoke-direct {p2, p1, p0, p3}, Lvs9;-><init>(Lbw9;Ljava/util/concurrent/atomic/AtomicInteger;I)V
+    if-nez v0, :cond_0
 
-    iput-object p2, p0, Lws9;->X:Lvs9;
+    iput-object p1, p0, Lws9;->g:Lasa;
 
     return-void
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "User\'s name must not be empty."
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 7
+.method public final a(Landroid/os/Bundle;)V
+    .locals 6
 
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
+    invoke-super {p0, p1}, Lxs9;->a(Landroid/os/Bundle;)V
+
+    iget-object v0, p0, Lws9;->g:Lasa;
+
+    iget-object v1, v0, Lasa;->a:Ljava/lang/CharSequence;
+
+    const-string v2, "android.selfDisplayName"
+
+    invoke-virtual {p1, v2, v1}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
+
+    new-instance v1, Landroid/os/Bundle;
+
+    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
+
+    const-string v2, "name"
+
+    iget-object v3, v0, Lasa;->a:Ljava/lang/CharSequence;
+
+    invoke-virtual {v1, v2, v3}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
+
+    iget-object v2, v0, Lasa;->b:Landroidx/core/graphics/drawable/IconCompat;
+
+    if-eqz v2, :cond_1
+
+    new-instance v3, Landroid/os/Bundle;
+
+    invoke-direct {v3}, Landroid/os/Bundle;-><init>()V
+
+    iget v4, v2, Landroidx/core/graphics/drawable/IconCompat;->a:I
+
+    const-string v5, "obj"
+
+    packed-switch v4, :pswitch_data_0
+
+    :pswitch_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "Invalid icon"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :pswitch_1
+    iget-object v4, v2, Landroidx/core/graphics/drawable/IconCompat;->b:Ljava/lang/Object;
+
+    check-cast v4, [B
+
+    invoke-virtual {v3, v5, v4}, Landroid/os/Bundle;->putByteArray(Ljava/lang/String;[B)V
+
+    goto :goto_0
+
+    :pswitch_2
+    iget-object v4, v2, Landroidx/core/graphics/drawable/IconCompat;->b:Ljava/lang/Object;
+
+    check-cast v4, Ljava/lang/String;
+
+    invoke-virtual {v3, v5, v4}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :pswitch_3
+    iget-object v4, v2, Landroidx/core/graphics/drawable/IconCompat;->b:Ljava/lang/Object;
+
+    check-cast v4, Landroid/graphics/Bitmap;
+
+    invoke-virtual {v3, v5, v4}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+
+    goto :goto_0
+
+    :pswitch_4
+    iget-object v4, v2, Landroidx/core/graphics/drawable/IconCompat;->b:Ljava/lang/Object;
+
+    check-cast v4, Landroid/os/Parcelable;
+
+    invoke-virtual {v3, v5, v4}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+
+    :goto_0
+    const-string v4, "type"
+
+    iget v5, v2, Landroidx/core/graphics/drawable/IconCompat;->a:I
+
+    invoke-virtual {v3, v4, v5}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
+
+    const-string v4, "int1"
+
+    iget v5, v2, Landroidx/core/graphics/drawable/IconCompat;->e:I
+
+    invoke-virtual {v3, v4, v5}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
+
+    const-string v4, "int2"
+
+    iget v5, v2, Landroidx/core/graphics/drawable/IconCompat;->f:I
+
+    invoke-virtual {v3, v4, v5}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
+
+    const-string v4, "string1"
+
+    iget-object v5, v2, Landroidx/core/graphics/drawable/IconCompat;->j:Ljava/lang/String;
+
+    invoke-virtual {v3, v4, v5}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v4, v2, Landroidx/core/graphics/drawable/IconCompat;->g:Landroid/content/res/ColorStateList;
+
+    if-eqz v4, :cond_0
+
+    const-string v5, "tint_list"
+
+    invoke-virtual {v3, v5, v4}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+
+    :cond_0
+    iget-object v2, v2, Landroidx/core/graphics/drawable/IconCompat;->h:Landroid/graphics/PorterDuff$Mode;
+
+    sget-object v4, Landroidx/core/graphics/drawable/IconCompat;->k:Landroid/graphics/PorterDuff$Mode;
+
+    if-eq v2, v4, :cond_2
+
+    const-string v4, "tint_mode"
+
+    invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v3, v4, v2}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v3, 0x0
+
+    :cond_2
+    :goto_1
+    const-string v2, "icon"
+
+    invoke-virtual {v1, v2, v3}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
+
+    const-string v2, "uri"
+
+    iget-object v3, v0, Lasa;->c:Ljava/lang/String;
+
+    invoke-virtual {v1, v2, v3}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v2, "key"
+
+    iget-object v3, v0, Lasa;->d:Ljava/lang/String;
+
+    invoke-virtual {v1, v2, v3}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v2, "isBot"
+
+    iget-boolean v3, v0, Lasa;->e:Z
+
+    invoke-virtual {v1, v2, v3}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
+
+    const-string v2, "isImportant"
+
+    iget-boolean v0, v0, Lasa;->f:Z
+
+    invoke-virtual {v1, v2, v0}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
+
+    const-string v0, "android.messagingStyleUser"
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
+
+    const-string v0, "android.hiddenConversationTitle"
+
+    iget-object v1, p0, Lws9;->h:Ljava/lang/String;
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
+
+    iget-object v0, p0, Lws9;->h:Ljava/lang/String;
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lws9;->i:Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_3
 
+    const-string v0, "android.conversationTitle"
+
+    iget-object v1, p0, Lws9;->h:Ljava/lang/String;
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
+
+    :cond_3
+    iget-object v0, p0, Lws9;->e:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_4
+
+    const-string v1, "android.messages"
+
+    invoke-static {v0}, Lvs9;->a(Ljava/util/ArrayList;)[Landroid/os/Bundle;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putParcelableArray(Ljava/lang/String;[Landroid/os/Parcelable;)V
+
+    :cond_4
+    iget-object v0, p0, Lws9;->f:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_5
+
+    const-string v1, "android.messages.historic"
+
+    invoke-static {v0}, Lvs9;->a(Ljava/util/ArrayList;)[Landroid/os/Bundle;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putParcelableArray(Ljava/lang/String;[Landroid/os/Parcelable;)V
+
+    :cond_5
+    iget-object p0, p0, Lws9;->i:Ljava/lang/Boolean;
+
+    if-eqz p0, :cond_6
+
+    const-string v0, "android.isGroupConversation"
+
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p0
+
+    invoke-virtual {p1, v0, p0}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
+
+    :cond_6
     return-void
 
+    nop
+
+    :pswitch_data_0
+    .packed-switch -0x1
+        :pswitch_4
+        :pswitch_0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_2
+    .end packed-switch
+.end method
+
+.method public final b(Lku5;)V
+    .locals 8
+
+    iget-object v0, p0, Lxs9;->b:Ljava/lang/Object;
+
+    check-cast v0, Ljs9;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, v0, Ljs9;->a:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
+
+    const/16 v2, 0x1c
+
+    if-ge v0, v2, :cond_0
+
+    iget-object v0, p0, Lws9;->i:Ljava/lang/Boolean;
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lws9;->h:Ljava/lang/String;
+
+    if-eqz v0, :cond_1
+
+    const/4 v1, 0x1
+
+    goto :goto_0
+
     :cond_0
-    iget-object v0, p0, Lws9;->a:Lbw9;
+    iget-object v0, p0, Lws9;->i:Ljava/lang/Boolean;
 
-    iget-object v1, p0, Lws9;->Z:Lxgd;
+    if-eqz v0, :cond_1
 
-    iget-object v2, p0, Lws9;->o:Ley;
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
 
     :cond_1
     :goto_0
-    iget-boolean v3, p0, Lws9;->x0:Z
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    if-nez v3, :cond_7
+    move-result-object v0
 
-    iget-boolean v3, p0, Lws9;->z0:Z
+    iput-object v0, p0, Lws9;->i:Ljava/lang/Boolean;
 
-    if-eqz v3, :cond_2
+    iget-object v0, p0, Lws9;->g:Lasa;
 
-    invoke-interface {v1}, Lxgd;->clear()V
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return-void
+    invoke-static {v0}, Lzra;->b(Lasa;)Landroid/app/Person;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lss9;->a(Landroid/app/Person;)Landroid/app/Notification$MessagingStyle;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lws9;->e:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    if-eqz v2, :cond_4
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lvs9;
+
+    iget-object v4, v2, Lvs9;->c:Lasa;
+
+    iget-object v5, v2, Lvs9;->a:Ljava/lang/CharSequence;
+
+    iget-wide v6, v2, Lvs9;->b:J
+
+    if-nez v4, :cond_2
+
+    goto :goto_2
 
     :cond_2
-    iget-boolean v3, p0, Lws9;->Y:Z
-
-    const/4 v4, 0x1
-
-    if-nez v3, :cond_3
-
-    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    invoke-static {v4}, Lzra;->b(Lasa;)Landroid/app/Person;
 
     move-result-object v3
 
-    check-cast v3, Ljava/lang/Throwable;
+    :goto_2
+    invoke-static {v5, v6, v7, v3}, Lus9;->b(Ljava/lang/CharSequence;JLandroid/app/Person;)Landroid/app/Notification$MessagingStyle$Message;
 
-    if-eqz v3, :cond_3
+    move-result-object v3
 
-    invoke-interface {v1}, Lxgd;->clear()V
+    iget-object v4, v2, Lvs9;->e:Ljava/lang/String;
 
-    iput-boolean v4, p0, Lws9;->z0:Z
+    if-eqz v4, :cond_3
 
-    invoke-virtual {v2, v0}, Ley;->d(Lbw9;)V
+    iget-object v2, v2, Lvs9;->f:Landroid/net/Uri;
 
-    return-void
+    invoke-static {v3, v4, v2}, Lts9;->b(Landroid/app/Notification$MessagingStyle$Message;Ljava/lang/String;Landroid/net/Uri;)Landroid/app/Notification$MessagingStyle$Message;
 
     :cond_3
-    iget-boolean v3, p0, Lws9;->y0:Z
-
-    :try_start_0
-    invoke-interface {v1}, Lxgd;->poll()Ljava/lang/Object;
-
-    move-result-object v5
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_2
-
-    if-nez v5, :cond_4
-
-    move v6, v4
+    invoke-static {v0, v3}, Lqs9;->a(Landroid/app/Notification$MessagingStyle;Landroid/app/Notification$MessagingStyle$Message;)Landroid/app/Notification$MessagingStyle;
 
     goto :goto_1
 
     :cond_4
-    const/4 v6, 0x0
+    iget-object v1, p0, Lws9;->f:Ljava/util/ArrayList;
 
-    :goto_1
-    if-eqz v3, :cond_5
+    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    if-eqz v6, :cond_5
+    move-result-object v1
 
-    iput-boolean v4, p0, Lws9;->z0:Z
+    :goto_3
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-virtual {v2, v0}, Ley;->d(Lbw9;)V
+    move-result v2
 
-    return-void
+    if-eqz v2, :cond_7
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lvs9;
+
+    iget-object v4, v2, Lvs9;->c:Lasa;
+
+    iget-object v5, v2, Lvs9;->a:Ljava/lang/CharSequence;
+
+    iget-wide v6, v2, Lvs9;->b:J
+
+    if-nez v4, :cond_5
+
+    move-object v4, v3
+
+    goto :goto_4
 
     :cond_5
-    if-nez v6, :cond_7
+    invoke-static {v4}, Lzra;->b(Lasa;)Landroid/app/Person;
 
-    :try_start_1
-    iget-object v3, p0, Lws9;->b:Lj26;
+    move-result-object v4
 
-    invoke-interface {v3, v5}, Lj26;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+    :goto_4
+    invoke-static {v5, v6, v7, v4}, Lus9;->b(Ljava/lang/CharSequence;JLandroid/app/Person;)Landroid/app/Notification$MessagingStyle$Message;
 
-    move-result-object v3
+    move-result-object v4
 
-    const-string v5, "The mapper returned a null ObservableSource"
-
-    invoke-static {v3, v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    check-cast v3, Lnv9;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    instance-of v5, v3, Lq3e;
+    iget-object v5, v2, Lvs9;->e:Ljava/lang/String;
 
     if-eqz v5, :cond_6
 
-    :try_start_2
-    check-cast v3, Lq3e;
+    iget-object v2, v2, Lvs9;->f:Landroid/net/Uri;
 
-    invoke-interface {v3}, Lq3e;->get()Ljava/lang/Object;
-
-    move-result-object v3
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    if-eqz v3, :cond_1
-
-    iget-boolean v4, p0, Lws9;->z0:Z
-
-    if-nez v4, :cond_1
-
-    invoke-interface {v0, v3}, Lbw9;->c(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v3
-
-    invoke-static {v3}, Lek8;->a0(Ljava/lang/Throwable;)V
-
-    invoke-virtual {v2, v3}, Ley;->a(Ljava/lang/Throwable;)Z
-
-    goto :goto_0
+    invoke-static {v4, v5, v2}, Lts9;->b(Landroid/app/Notification$MessagingStyle$Message;Ljava/lang/String;Landroid/net/Uri;)Landroid/app/Notification$MessagingStyle$Message;
 
     :cond_6
-    iput-boolean v4, p0, Lws9;->x0:Z
+    invoke-static {v0, v4}, Lrs9;->a(Landroid/app/Notification$MessagingStyle;Landroid/app/Notification$MessagingStyle$Message;)Landroid/app/Notification$MessagingStyle;
 
-    iget-object v4, p0, Lws9;->X:Lvs9;
-
-    invoke-interface {v3, v4}, Lnv9;->a(Lbw9;)V
-
-    goto :goto_2
-
-    :catchall_1
-    move-exception v3
-
-    invoke-static {v3}, Lek8;->a0(Ljava/lang/Throwable;)V
-
-    iput-boolean v4, p0, Lws9;->z0:Z
-
-    iget-object p0, p0, Lws9;->w0:Lxi4;
-
-    invoke-interface {p0}, Lxi4;->f()V
-
-    invoke-interface {v1}, Lxgd;->clear()V
-
-    invoke-virtual {v2, v3}, Ley;->a(Ljava/lang/Throwable;)Z
-
-    invoke-virtual {v2, v0}, Ley;->d(Lbw9;)V
-
-    return-void
-
-    :catchall_2
-    move-exception v1
-
-    invoke-static {v1}, Lek8;->a0(Ljava/lang/Throwable;)V
-
-    iput-boolean v4, p0, Lws9;->z0:Z
-
-    iget-object p0, p0, Lws9;->w0:Lxi4;
-
-    invoke-interface {p0}, Lxi4;->f()V
-
-    invoke-virtual {v2, v1}, Ley;->a(Ljava/lang/Throwable;)Z
-
-    invoke-virtual {v2, v0}, Ley;->d(Lbw9;)V
-
-    return-void
+    goto :goto_3
 
     :cond_7
-    :goto_2
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
+    iget-object v1, p0, Lws9;->i:Ljava/lang/Boolean;
 
-    move-result v3
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    if-nez v3, :cond_1
+    iget-object v1, p0, Lws9;->h:Ljava/lang/String;
 
-    return-void
-.end method
+    invoke-static {v0, v1}, Lqs9;->c(Landroid/app/Notification$MessagingStyle;Ljava/lang/CharSequence;)Landroid/app/Notification$MessagingStyle;
 
-.method public final b()V
-    .locals 1
+    iget-object p0, p0, Lws9;->i:Ljava/lang/Boolean;
 
-    const/4 v0, 0x1
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    iput-boolean v0, p0, Lws9;->y0:Z
+    move-result p0
 
-    invoke-virtual {p0}, Lws9;->a()V
+    invoke-static {v0, p0}, Lss9;->b(Landroid/app/Notification$MessagingStyle;Z)Landroid/app/Notification$MessagingStyle;
 
-    return-void
-.end method
+    iget-object p0, p1, Lku5;->b:Ljava/lang/Object;
 
-.method public final c(Ljava/lang/Object;)V
-    .locals 1
+    check-cast p0, Landroid/app/Notification$Builder;
 
-    iget v0, p0, Lws9;->A0:I
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lws9;->Z:Lxgd;
-
-    invoke-interface {v0, p1}, Lxgd;->offer(Ljava/lang/Object;)Z
-
-    :cond_0
-    invoke-virtual {p0}, Lws9;->a()V
+    invoke-virtual {v0, p0}, Landroid/app/Notification$Style;->setBuilder(Landroid/app/Notification$Builder;)V
 
     return-void
 .end method
 
-.method public final d(Lxi4;)V
-    .locals 2
-
-    iget-object v0, p0, Lws9;->w0:Lxi4;
-
-    invoke-static {v0, p1}, Lbj4;->g(Lxi4;Lxi4;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    iput-object p1, p0, Lws9;->w0:Lxi4;
-
-    instance-of v0, p1, Lxjb;
-
-    if-eqz v0, :cond_1
-
-    check-cast p1, Lxjb;
-
-    const/4 v0, 0x3
-
-    invoke-interface {p1, v0}, Lyjb;->q(I)I
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_0
-
-    iput v0, p0, Lws9;->A0:I
-
-    iput-object p1, p0, Lws9;->Z:Lxgd;
-
-    iput-boolean v1, p0, Lws9;->y0:Z
-
-    iget-object p1, p0, Lws9;->a:Lbw9;
-
-    invoke-interface {p1, p0}, Lbw9;->d(Lxi4;)V
-
-    invoke-virtual {p0}, Lws9;->a()V
-
-    return-void
-
-    :cond_0
-    const/4 v1, 0x2
-
-    if-ne v0, v1, :cond_1
-
-    iput v0, p0, Lws9;->A0:I
-
-    iput-object p1, p0, Lws9;->Z:Lxgd;
-
-    iget-object p1, p0, Lws9;->a:Lbw9;
-
-    invoke-interface {p1, p0}, Lbw9;->d(Lxi4;)V
-
-    return-void
-
-    :cond_1
-    new-instance p1, Lknd;
-
-    iget v0, p0, Lws9;->c:I
-
-    invoke-direct {p1, v0}, Lknd;-><init>(I)V
-
-    iput-object p1, p0, Lws9;->Z:Lxgd;
-
-    iget-object p1, p0, Lws9;->a:Lbw9;
-
-    invoke-interface {p1, p0}, Lbw9;->d(Lxi4;)V
-
-    :cond_2
-    return-void
-.end method
-
-.method public final f()V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lws9;->z0:Z
-
-    iget-object v0, p0, Lws9;->w0:Lxi4;
-
-    invoke-interface {v0}, Lxi4;->f()V
-
-    iget-object v0, p0, Lws9;->X:Lvs9;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-static {v0}, Lbj4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
-
-    iget-object p0, p0, Lws9;->o:Ley;
-
-    invoke-virtual {p0}, Ley;->b()V
-
-    return-void
-.end method
-
-.method public final h()Z
+.method public final d()Ljava/lang/String;
     .locals 0
 
-    iget-boolean p0, p0, Lws9;->z0:Z
+    const-string p0, "androidx.core.app.NotificationCompat$MessagingStyle"
 
-    return p0
-.end method
-
-.method public final onError(Ljava/lang/Throwable;)V
-    .locals 1
-
-    iget-object v0, p0, Lws9;->o:Ley;
-
-    invoke-virtual {v0, p1}, Ley;->a(Ljava/lang/Throwable;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lws9;->y0:Z
-
-    invoke-virtual {p0}, Lws9;->a()V
-
-    :cond_0
-    return-void
+    return-object p0
 .end method

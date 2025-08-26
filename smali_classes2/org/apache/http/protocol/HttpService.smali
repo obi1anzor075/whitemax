@@ -90,14 +90,13 @@
 
     invoke-interface {p0, p1, p2, p3}, Lorg/apache/http/protocol/HttpRequestHandler;->handle(Lorg/apache/http/HttpRequest;Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)V
 
-    goto :goto_1
+    return-void
 
     :cond_1
     const/16 p0, 0x1f5
 
     invoke-interface {p2, p0}, Lorg/apache/http/HttpResponse;->setStatusCode(I)V
 
-    :goto_1
     return-void
 .end method
 

@@ -1,83 +1,48 @@
-.class public abstract synthetic Lwk1;
-.super Ljava/lang/Object;
-.source "SourceFile"
+.class public final Lwk1;
+.super Lbu3;
 
 
-# static fields
-.field public static final synthetic $EnumSwitchMapping$0:[I
+# instance fields
+.field public X:I
+
+.field public final synthetic Y:Lpk1;
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Lpk1;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    const/4 v0, 0x7
+    iput-object p1, p0, Lwk1;->Y:Lpk1;
 
-    invoke-static {v0}, Lhr1;->w(I)[I
-
-    move-result-object v1
-
-    array-length v1, v1
-
-    new-array v1, v1, [I
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    :try_start_0
-    aput v3, v1, v2
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    const/4 v2, 0x2
-
-    :try_start_1
-    aput v2, v1, v3
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    const/4 v3, 0x3
-
-    :try_start_2
-    aput v3, v1, v3
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    const/4 v3, 0x4
-
-    :try_start_3
-    aput v3, v1, v2
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
-    const/4 v2, 0x5
-
-    :try_start_4
-    aput v2, v1, v3
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
-
-    :catch_4
-    const/4 v3, 0x6
-
-    :try_start_5
-    aput v3, v1, v2
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
-
-    :catch_5
-    :try_start_6
-    aput v0, v1, v3
-    :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
-
-    :catch_6
-    sput-object v1, Lwk1;->$EnumSwitchMapping$0:[I
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    iput-object p1, p0, Lwk1;->o:Ljava/lang/Object;
+
+    iget p1, p0, Lwk1;->X:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lwk1;->X:I
+
+    iget-object p1, p0, Lwk1;->Y:Lpk1;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lpk1;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

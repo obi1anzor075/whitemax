@@ -1,45 +1,119 @@
-.class public abstract synthetic Lpwf;
+.class public final synthetic Lpwf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lv56;
 
-# static fields
-.field public static final synthetic a:[I
+
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lrwf;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public synthetic constructor <init>(Lrwf;I)V
+    .locals 0
+
+    iput p2, p0, Lpwf;->a:I
+
+    iput-object p1, p0, Lpwf;->b:Lrwf;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
     .locals 4
 
-    const/4 v0, 0x2
+    iget v0, p0, Lpwf;->a:I
 
-    invoke-static {v0}, Lhr1;->w(I)[I
+    packed-switch v0, :pswitch_data_0
+
+    new-instance v0, Lwm0;
+
+    iget-object p0, p0, Lpwf;->b:Lrwf;
+
+    iget-object v1, p0, Lrwf;->b:Ljava/lang/Object;
+
+    check-cast v1, Landroidx/fragment/app/b;
+
+    iget-object p0, p0, Lrwf;->e:Ljava/lang/Object;
+
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lqwf;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    if-eqz v1, :cond_2
+
+    if-eqz p0, :cond_1
+
+    invoke-virtual {v1}, Landroidx/fragment/app/b;->E()Lb26;
+
+    move-result-object v2
+
+    new-instance v3, Lrsd;
+
+    invoke-direct {v3, v1}, Lrsd;-><init>(Lsof;)V
+
+    const-class v1, Landroidx/biometric/BiometricViewModel;
+
+    invoke-static {v1}, Llcc;->a(Ljava/lang/Class;)Lz03;
 
     move-result-object v1
 
-    array-length v1, v1
+    invoke-virtual {v3, v1}, Lrsd;->a(Lz03;)Lkof;
 
-    new-array v1, v1, [I
+    move-result-object v1
 
-    sput-object v1, Lpwf;->a:[I
+    check-cast v1, Landroidx/biometric/BiometricViewModel;
 
-    const/4 v2, 0x0
+    iput-object v2, v0, Lwm0;->a:Lb26;
 
-    const/4 v3, 0x1
+    if-eqz v1, :cond_0
 
-    :try_start_0
-    aput v3, v1, v2
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    iput-object p0, v1, Landroidx/biometric/BiometricViewModel;->b:Lap;
 
-    :catch_0
-    :try_start_1
-    sget-object v1, Lpwf;->a:[I
+    :cond_0
+    return-object v0
 
-    aput v0, v1, v3
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    :catch_1
-    return-void
+    const-string v0, "AuthenticationCallback must not be null."
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_2
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "FragmentActivity must not be null."
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :pswitch_0
+    new-instance v0, Lqwf;
+
+    iget-object p0, p0, Lpwf;->b:Lrwf;
+
+    invoke-direct {v0, p0}, Lqwf;-><init>(Lrwf;)V
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,53 +1,180 @@
-.class public final Lfd2;
-.super Ler3;
+.class public final synthetic Lfd2;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/util/function/UnaryOperator;
 
 
 # instance fields
-.field public X:Ljava/util/List;
-
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lgd2;
-
-.field public o:Lgd2;
-
-.field public w0:I
+.field public final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>(Lgd2;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(I)V
     .locals 0
 
-    iput-object p1, p0, Lfd2;->Z:Lgd2;
+    iput p1, p0, Lfd2;->a:I
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 9
 
-    iput-object p1, p0, Lfd2;->Y:Ljava/lang/Object;
-
-    iget p1, p0, Lfd2;->w0:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lfd2;->w0:I
-
-    iget-object p1, p0, Lfd2;->Z:Lgd2;
+    iget p0, p0, Lfd2;->a:I
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0, p0}, Lgd2;->a(Ljava/util/ArrayList;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    packed-switch p0, :pswitch_data_0
+
+    check-cast p1, Lc8d;
+
+    if-eqz p1, :cond_0
+
+    const/4 p0, 0x1
+
+    invoke-virtual {p1, p0}, Lc8d;->f(Z)V
+
+    :cond_0
+    return-object v0
+
+    :pswitch_0
+    check-cast p1, Lw3e;
+
+    new-instance p0, Lw3e;
+
+    const/4 p1, 0x3
+
+    invoke-direct {p0, v0, p1}, Lw3e;-><init>(Ljava/lang/String;I)V
+
+    return-object p0
+
+    :pswitch_1
+    check-cast p1, Ljava/util/Set;
+
+    sget-object p0, Lpz4;->a:Lpz4;
+
+    return-object p0
+
+    :pswitch_2
+    check-cast p1, Ljava/lang/String;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide p0
+
+    invoke-static {p0, p1}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
+
+    :pswitch_3
+    check-cast p1, Lq69;
+
+    return-object v0
+
+    :pswitch_4
+    check-cast p1, Lq69;
+
+    sget-object p0, Ld79;->q:[Lbc7;
+
+    return-object v0
+
+    :pswitch_5
+    check-cast p1, Lqg9;
+
+    invoke-static {}, Lsv7;->a()Lqg9;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_6
+    check-cast p1, Ljava/util/Set;
+
+    new-instance p0, Ljava/util/LinkedHashSet;
+
+    invoke-direct {p0}, Ljava/util/LinkedHashSet;-><init>()V
+
+    return-object p0
+
+    :pswitch_7
+    check-cast p1, Lqg9;
+
+    invoke-static {}, Lsv7;->a()Lqg9;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_8
+    check-cast p1, Ljava/util/Set;
+
+    new-instance p0, Ljava/util/LinkedHashSet;
+
+    invoke-direct {p0}, Ljava/util/LinkedHashSet;-><init>()V
+
+    return-object p0
+
+    :pswitch_9
+    check-cast p1, Ljava/util/Set;
+
+    new-instance p0, Ljava/util/LinkedHashSet;
+
+    invoke-direct {p0}, Ljava/util/LinkedHashSet;-><init>()V
+
+    return-object p0
+
+    :pswitch_a
+    check-cast p1, Led2;
+
+    if-eqz p1, :cond_1
+
+    iget-wide v2, p1, Led2;->a:J
+
+    iget-wide v4, p1, Led2;->b:J
+
+    iget-object v6, p1, Led2;->c:Ljava/lang/String;
+
+    iget-object v7, p1, Led2;->d:Lgn4;
+
+    new-instance v1, Led2;
+
+    const/4 v8, 0x1
+
+    invoke-direct/range {v1 .. v8}, Led2;-><init>(JJLjava/lang/String;Lgn4;Z)V
+
+    move-object v0, v1
+
+    :cond_1
+    return-object v0
+
+    :pswitch_b
+    check-cast p1, Led2;
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

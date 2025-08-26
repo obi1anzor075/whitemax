@@ -3,26 +3,23 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Ljavax/inject/Provider;
+.implements Lxbe;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Landroid/content/Context;
-
-.field public final synthetic c:Lh01;
+.field public final synthetic b:Lje7;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/content/Context;Lh01;I)V
+.method public synthetic constructor <init>(Lje7;I)V
     .locals 0
 
-    iput p3, p0, Lg01;->a:I
+    iput p2, p0, Lg01;->a:I
 
-    iput-object p1, p0, Lg01;->b:Landroid/content/Context;
-
-    iput-object p2, p0, Lg01;->c:Lh01;
+    iput-object p1, p0, Lg01;->b:Lje7;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,62 +28,48 @@
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 3
+.method public final get()Ljava/lang/Object;
+    .locals 1
 
     iget v0, p0, Lg01;->a:I
 
+    iget-object p0, p0, Lg01;->b:Lje7;
+
     packed-switch v0, :pswitch_data_0
 
-    new-instance v0, Lzz0;
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    move-result-object p0
 
-    iget-object v2, p0, Lg01;->b:Landroid/content/Context;
+    check-cast p0, Laf6;
 
-    invoke-direct {v0, v2, v1}, Lzz0;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-
-    iget-object p0, p0, Lg01;->c:Lh01;
-
-    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->removeAllViews()V
-
-    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-    return-object v0
+    return-object p0
 
     :pswitch_0
-    new-instance v0, Lf01;
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    move-result-object p0
 
-    iget-object v2, p0, Lg01;->b:Landroid/content/Context;
+    check-cast p0, Lye6;
 
-    invoke-direct {v0, v2, v1}, Lf01;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    return-object p0
 
-    iget-object p0, p0, Lg01;->c:Lh01;
+    :pswitch_1
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
-    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    move-result-object p0
 
-    move-result-object v1
+    check-cast p0, Lti4;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p0}, Lti4;->a()Ljava/lang/String;
 
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->removeAllViews()V
+    move-result-object p0
 
-    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-    return-object v0
-
-    nop
+    return-object p0
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

@@ -1,233 +1,109 @@
 .class public final Lryc;
-.super Ljava/lang/Object;
+.super Lz;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/util/concurrent/Executor;
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lryc;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public X:J
-
-.field public final a:Ljava/util/ArrayDeque;
-
-.field public final b:Ljava/util/concurrent/Executor;
-
-.field public final c:Lvp6;
-
-.field public o:I
+.field public c:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Executor;)V
+.method static constructor <clinit>()V
     .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ly;
 
-    new-instance v0, Ljava/util/ArrayDeque;
+    const/4 v1, 0x7
 
-    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
+    invoke-direct {v0, v1}, Ly;-><init>(I)V
 
-    iput-object v0, p0, Lryc;->a:Ljava/util/ArrayDeque;
+    sput-object v0, Lryc;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    new-instance v0, Lvp6;
+    return-void
+.end method
 
-    const/16 v1, 0x1a
+.method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+    .locals 0
 
-    invoke-direct {v0, v1, p0}, Lvp6;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p0, p1, p2}, Lz;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
 
-    iput-object v0, p0, Lryc;->c:Lvp6;
+    const/4 p2, 0x0
 
-    const/4 v0, 0x1
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->readValue(Ljava/lang/ClassLoader;)Ljava/lang/Object;
 
-    iput v0, p0, Lryc;->o:I
+    move-result-object p1
 
-    const-wide/16 v0, 0x0
+    check-cast p1, Ljava/lang/Boolean;
 
-    iput-wide v0, p0, Lryc;->X:J
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result p1
 
-    iput-object p1, p0, Lryc;->b:Ljava/util/concurrent/Executor;
+    iput-boolean p1, p0, Lryc;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 7
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lryc;->a:Ljava/util/ArrayDeque;
+    const-string v1, "SearchView.SavedState{"
 
-    monitor-enter v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    :try_start_0
-    iget v1, p0, Lryc;->o:I
+    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
-    const/4 v2, 0x4
+    move-result v1
 
-    if-eq v1, v2, :cond_6
+    invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
-    const/4 v2, 0x3
+    move-result-object v1
 
-    if-ne v1, v2, :cond_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_4
+    const-string v1, " isIconified="
 
-    :cond_0
-    iget-wide v3, p0, Lryc;->X:J
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-instance v1, Lkjc;
+    iget-boolean p0, p0, Lryc;->c:Z
 
-    const/4 v5, 0x2
+    const-string v1, "}"
 
-    invoke-direct {v1, p1, v5}, Lkjc;-><init>(Ljava/lang/Runnable;I)V
+    invoke-static {v0, p0, v1}, Lzt1;->j(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
 
-    iget-object p1, p0, Lryc;->a:Ljava/util/ArrayDeque;
+    move-result-object p0
 
-    invoke-virtual {p1, v1}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
+    return-object p0
+.end method
 
-    const/4 p1, 0x2
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 0
 
-    iput p1, p0, Lryc;->o:I
+    invoke-super {p0, p1, p2}, Lz;->writeToParcel(Landroid/os/Parcel;I)V
 
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_2
+    iget-boolean p0, p0, Lryc;->c:Z
 
-    :try_start_1
-    iget-object v0, p0, Lryc;->b:Ljava/util/concurrent/Executor;
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iget-object v5, p0, Lryc;->c:Lvp6;
+    move-result-object p0
 
-    invoke-interface {v0, v5}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_1
-    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
-    .catch Ljava/lang/Error; {:try_start_1 .. :try_end_1} :catch_0
-
-    iget v0, p0, Lryc;->o:I
-
-    if-eq v0, p1, :cond_1
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeValue(Ljava/lang/Object;)V
 
     return-void
-
-    :cond_1
-    iget-object v0, p0, Lryc;->a:Ljava/util/ArrayDeque;
-
-    monitor-enter v0
-
-    :try_start_2
-    iget-wide v5, p0, Lryc;->X:J
-
-    cmp-long v1, v5, v3
-
-    if-nez v1, :cond_2
-
-    iget v1, p0, Lryc;->o:I
-
-    if-ne v1, p1, :cond_2
-
-    iput v2, p0, Lryc;->o:I
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_1
-
-    :cond_2
-    :goto_0
-    monitor-exit v0
-
-    return-void
-
-    :goto_1
-    monitor-exit v0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    throw p0
-
-    :catch_0
-    move-exception v0
-
-    iget-object v2, p0, Lryc;->a:Ljava/util/ArrayDeque;
-
-    monitor-enter v2
-
-    :try_start_3
-    iget v3, p0, Lryc;->o:I
-
-    const/4 v4, 0x1
-
-    if-eq v3, v4, :cond_3
-
-    if-ne v3, p1, :cond_4
-
-    :cond_3
-    iget-object p0, p0, Lryc;->a:Ljava/util/ArrayDeque;
-
-    invoke-virtual {p0, v1}, Ljava/util/ArrayDeque;->removeLastOccurrence(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_4
-
-    goto :goto_2
-
-    :cond_4
-    const/4 v4, 0x0
-
-    :goto_2
-    instance-of p0, v0, Ljava/util/concurrent/RejectedExecutionException;
-
-    if-eqz p0, :cond_5
-
-    if-nez v4, :cond_5
-
-    monitor-exit v2
-
-    return-void
-
-    :catchall_1
-    move-exception p0
-
-    goto :goto_3
-
-    :cond_5
-    throw v0
-
-    :goto_3
-    monitor-exit v2
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    throw p0
-
-    :catchall_2
-    move-exception p0
-
-    goto :goto_5
-
-    :cond_6
-    :goto_4
-    :try_start_4
-    iget-object p0, p0, Lryc;->a:Ljava/util/ArrayDeque;
-
-    invoke-virtual {p0, p1}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
-
-    monitor-exit v0
-
-    return-void
-
-    :goto_5
-    monitor-exit v0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_2
-
-    throw p0
 .end method

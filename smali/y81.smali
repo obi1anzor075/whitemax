@@ -3,62 +3,48 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lf91;
+.implements Lwl1;
 
 
-# static fields
-.field public static final a:Ly81;
+# instance fields
+.field public final synthetic a:Ld91;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ld91;)V
+    .locals 0
 
-    new-instance v0, Ly81;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Ly81;->a:Ly81;
+    iput-object p1, p0, Ly81;->a:Ld91;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final f()V
     .locals 1
 
-    const/4 v0, 0x1
+    iget-object p0, p0, Ly81;->a:Ld91;
 
-    if-ne p0, p1, :cond_0
+    const/4 v0, 0x0
 
-    return v0
+    invoke-virtual {p0, v0}, Ld91;->h(Z)V
 
-    :cond_0
-    instance-of p0, p1, Ly81;
-
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 0
+.method public final h()V
+    .locals 1
 
-    const p0, -0xe84aa25
+    iget-object p0, p0, Ly81;->a:Ld91;
 
-    return p0
-.end method
+    const/4 v0, 0x0
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
+    iput-boolean v0, p0, Ld91;->r0:Z
 
-    const-string p0, "DeclineCall"
+    invoke-virtual {p0, v0}, Ld91;->f(Z)V
 
-    return-object p0
+    return-void
 .end method

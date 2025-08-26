@@ -1,122 +1,71 @@
-.class public final Ljw2;
-.super Ll5e;
+.class public abstract synthetic Ljw2;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Li26;
 
+# static fields
+.field public static final synthetic $EnumSwitchMapping$0:[I
 
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Lone/me/chats/tab/ChatsTabWidget;
+.field public static final synthetic $EnumSwitchMapping$1:[I
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chats/tab/ChatsTabWidget;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
-    iput-object p2, p0, Ljw2;->Y:Lone/me/chats/tab/ChatsTabWidget;
+    const/4 v0, 0x7
 
-    const/4 p2, 0x2
+    invoke-static {v0}, Lzt1;->v(I)[I
 
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    move-result-object v0
 
-    return-void
-.end method
+    array-length v0, v0
 
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Ljava/util/List;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Ljw2;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Ljw2;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Ljw2;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
-
-    new-instance v0, Ljw2;
-
-    iget-object p0, p0, Ljw2;->Y:Lone/me/chats/tab/ChatsTabWidget;
-
-    invoke-direct {v0, p2, p0}, Ljw2;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chats/tab/ChatsTabWidget;)V
-
-    iput-object p1, v0, Ljw2;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Ljw2;->X:Ljava/lang/Object;
-
-    check-cast p1, Ljava/util/List;
-
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result p1
-
-    const/4 v0, 0x0
+    new-array v0, v0, [I
 
     const/4 v1, 0x1
 
-    iget-object p0, p0, Ljw2;->Y:Lone/me/chats/tab/ChatsTabWidget;
+    const/4 v2, 0x3
 
-    if-le p1, v1, :cond_0
+    :try_start_0
+    aput v1, v0, v2
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    sget-object p1, Lone/me/chats/tab/ChatsTabWidget;->F0:[Lk77;
+    :catch_0
+    sput-object v0, Ljw2;->$EnumSwitchMapping$0:[I
 
-    invoke-virtual {p0}, Lone/me/chats/tab/ChatsTabWidget;->l0()Lhda;
+    invoke-static {}, Lu47;->values()[Lu47;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+    array-length v0, v0
 
-    invoke-virtual {p0}, Lone/me/chats/tab/ChatsTabWidget;->m0()Landroidx/viewpager2/widget/ViewPager2;
+    new-array v0, v0, [I
 
-    move-result-object p0
+    const/4 v3, 0x0
 
-    invoke-virtual {p0, v1}, Landroidx/viewpager2/widget/ViewPager2;->setUserInputEnabled(Z)V
+    :try_start_1
+    aput v1, v0, v3
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_0
+    :catch_1
+    const/4 v3, 0x2
 
-    :cond_0
-    sget-object p1, Lone/me/chats/tab/ChatsTabWidget;->F0:[Lk77;
+    :try_start_2
+    aput v3, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    invoke-virtual {p0}, Lone/me/chats/tab/ChatsTabWidget;->l0()Lhda;
+    :catch_2
+    :try_start_3
+    aput v2, v0, v3
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
-    move-result-object p1
+    :catch_3
+    sput-object v0, Ljw2;->$EnumSwitchMapping$1:[I
 
-    const/16 v1, 0x8
-
-    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
-
-    invoke-virtual {p0}, Lone/me/chats/tab/ChatsTabWidget;->m0()Landroidx/viewpager2/widget/ViewPager2;
-
-    move-result-object p0
-
-    invoke-virtual {p0, v0}, Landroidx/viewpager2/widget/ViewPager2;->setUserInputEnabled(Z)V
-
-    :goto_0
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
+    return-void
 .end method

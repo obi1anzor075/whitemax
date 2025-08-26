@@ -4,67 +4,26 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/IOException;Lxz3;II)V
+.method public constructor <init>(Ljava/io/IOException;Lo34;II)V
     .locals 0
 
-    .line 2
-    invoke-static {p3, p4}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;->a(II)I
+    const/16 p2, 0x7d0
 
-    move-result p2
-
-    invoke-direct {p0, p1, p2}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(Ljava/lang/Throwable;I)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Ljava/io/IOException;Lxz3;I)V
-    .locals 0
-
-    const/4 p3, 0x1
-
-    .line 3
-    invoke-static {p4, p3}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;->a(II)I
-
-    move-result p3
-
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Lxz3;I)V
-    .locals 0
+    if-ne p3, p2, :cond_0
 
     const/4 p2, 0x1
 
-    .line 1
-    invoke-static {p3, p2}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;->a(II)I
+    if-ne p4, p2, :cond_0
 
-    move-result p2
+    const/16 p3, 0x7d1
 
-    invoke-direct {p0, p1, p2}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(Ljava/lang/String;I)V
+    :cond_0
+    invoke-direct {p0, p1, p3}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(Ljava/lang/Exception;I)V
 
     return-void
 .end method
 
-.method public static a(II)I
-    .locals 1
-
-    const/16 v0, 0x7d0
-
-    if-ne p0, v0, :cond_0
-
-    const/4 v0, 0x1
-
-    if-ne p1, v0, :cond_0
-
-    const/16 p0, 0x7d1
-
-    :cond_0
-    return p0
-.end method
-
-.method public static b(Ljava/io/IOException;Lxz3;I)Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
+.method public static a(Ljava/io/IOException;Lo34;I)Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
     .locals 3
 
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
@@ -93,7 +52,7 @@
     :cond_1
     if-eqz v0, :cond_2
 
-    invoke-static {v0}, Lfja;->A(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Ld46;->M(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -115,21 +74,18 @@
     :goto_0
     if-ne v0, v2, :cond_3
 
-    new-instance p2, Lcom/google/android/exoplayer2/upstream/HttpDataSource$CleartextNotPermittedException;
+    new-instance p1, Lcom/google/android/exoplayer2/upstream/HttpDataSource$CleartextNotPermittedException;
 
-    const-string v0, "Cleartext HTTP traffic not permitted. See https://exoplayer.dev/issues/cleartext-not-permitted"
+    const-string p2, "Cleartext HTTP traffic not permitted. See https://exoplayer.dev/issues/cleartext-not-permitted"
 
-    invoke-direct {p2, v0, p0, p1, v2}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;-><init>(Ljava/lang/String;Ljava/io/IOException;Lxz3;I)V
+    invoke-direct {p1, p2, p0, v2}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(Ljava/lang/String;Ljava/lang/Exception;I)V
 
-    goto :goto_1
+    return-object p1
 
     :cond_3
     new-instance v1, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;
 
-    invoke-direct {v1, p0, p1, v0, p2}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;-><init>(Ljava/io/IOException;Lxz3;II)V
+    invoke-direct {v1, p0, p1, v0, p2}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;-><init>(Ljava/io/IOException;Lo34;II)V
 
-    move-object p2, v1
-
-    :goto_1
-    return-object p2
+    return-object v1
 .end method

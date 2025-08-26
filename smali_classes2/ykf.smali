@@ -1,152 +1,217 @@
-.class public final synthetic Lykf;
+.class public final Lykf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lt66;
 
+# instance fields
+.field public final a:Z
 
-# static fields
-.field public static final a:Lykf;
+.field public final b:Z
 
-.field private static final descriptor:Lsyc;
+.field public final c:Z
+
+.field public final d:Z
+
+.field public final e:Z
+
+.field public final f:Z
+
+.field public final g:Z
+
+.field public final h:Z
+
+.field public final i:J
+
+.field public final j:J
+
+.field public final k:J
+
+.field public final l:Lwnb;
+
+.field public final m:Lhef;
+
+.field public final n:Lv10;
+
+.field public final o:Landroid/graphics/drawable/BitmapDrawable;
+
+.field public final p:Landroid/net/Uri;
+
+.field public final q:Z
+
+.field public final r:Z
+
+.field public final s:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Lxkf;)V
+    .locals 2
 
-    new-instance v0, Lykf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iget-boolean v0, p1, Lxkf;->a:Z
 
-    sput-object v0, Lykf;->a:Lykf;
+    iput-boolean v0, p0, Lykf;->a:Z
 
-    new-instance v1, Lwza;
+    iget-boolean v0, p1, Lxkf;->b:Z
 
-    const-string v2, "one.me.webapp.domain.jsbridge.delegates.phone.WebAppRequestPhoneRequest"
+    iput-boolean v0, p0, Lykf;->b:Z
 
-    const/4 v3, 0x1
+    iget-boolean v0, p1, Lxkf;->c:Z
 
-    invoke-direct {v1, v2, v0, v3}, Lwza;-><init>(Ljava/lang/String;Lt66;I)V
+    iput-boolean v0, p0, Lykf;->c:Z
 
-    const-string v0, "requestId"
+    iget-boolean v0, p1, Lxkf;->d:Z
 
-    const/4 v2, 0x0
+    iput-boolean v0, p0, Lykf;->d:Z
 
-    invoke-virtual {v1, v0, v2}, Lwza;->k(Ljava/lang/String;Z)V
+    iget-boolean v0, p1, Lxkf;->e:Z
 
-    sput-object v1, Lykf;->descriptor:Lsyc;
+    iput-boolean v0, p0, Lykf;->e:Z
+
+    iget-boolean v0, p1, Lxkf;->f:Z
+
+    iput-boolean v0, p0, Lykf;->f:Z
+
+    iget-boolean v0, p1, Lxkf;->g:Z
+
+    iput-boolean v0, p0, Lykf;->g:Z
+
+    iget-boolean v0, p1, Lxkf;->h:Z
+
+    iput-boolean v0, p0, Lykf;->h:Z
+
+    iget-wide v0, p1, Lxkf;->i:J
+
+    iput-wide v0, p0, Lykf;->i:J
+
+    iget-wide v0, p1, Lxkf;->j:J
+
+    iput-wide v0, p0, Lykf;->j:J
+
+    iget-wide v0, p1, Lxkf;->k:J
+
+    iput-wide v0, p0, Lykf;->k:J
+
+    iget-object v0, p1, Lxkf;->l:Lwnb;
+
+    iput-object v0, p0, Lykf;->l:Lwnb;
+
+    iget-object v0, p1, Lxkf;->m:Lhef;
+
+    iput-object v0, p0, Lykf;->m:Lhef;
+
+    iget-object v0, p1, Lxkf;->n:Lv10;
+
+    iput-object v0, p0, Lykf;->n:Lv10;
+
+    iget-object v0, p1, Lxkf;->o:Landroid/graphics/drawable/BitmapDrawable;
+
+    iput-object v0, p0, Lykf;->o:Landroid/graphics/drawable/BitmapDrawable;
+
+    iget-object v0, p1, Lxkf;->p:Landroid/net/Uri;
+
+    iput-object v0, p0, Lykf;->p:Landroid/net/Uri;
+
+    iget-boolean v0, p1, Lxkf;->q:Z
+
+    iput-boolean v0, p0, Lykf;->q:Z
+
+    iget-boolean v0, p1, Lxkf;->r:Z
+
+    iput-boolean v0, p0, Lykf;->r:Z
+
+    iget-boolean p1, p1, Lxkf;->s:Z
+
+    iput-boolean p1, p0, Lykf;->s:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lb9;)Ljava/lang/Object;
-    .locals 7
+.method public final a()Lxkf;
+    .locals 3
 
-    sget-object p0, Lykf;->descriptor:Lsyc;
+    new-instance v0, Lxkf;
 
-    invoke-virtual {p1, p0}, Lb9;->j(Lsyc;)Lb9;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object p1
+    iget-boolean v1, p0, Lykf;->a:Z
 
-    const/4 v0, 0x1
+    iput-boolean v1, v0, Lxkf;->a:Z
 
-    const/4 v1, 0x0
+    iget-boolean v1, p0, Lykf;->b:Z
 
-    const/4 v2, 0x0
+    iput-boolean v1, v0, Lxkf;->b:Z
 
-    move v3, v0
+    iget-boolean v1, p0, Lykf;->c:Z
 
-    move v4, v1
+    iput-boolean v1, v0, Lxkf;->c:Z
 
-    :goto_0
-    if-eqz v3, :cond_2
+    iget-boolean v1, p0, Lykf;->d:Z
 
-    invoke-virtual {p1, p0}, Lb9;->p(Lsyc;)I
+    iput-boolean v1, v0, Lxkf;->d:Z
 
-    move-result v5
+    iget-boolean v1, p0, Lykf;->e:Z
 
-    const/4 v6, -0x1
+    iput-boolean v1, v0, Lxkf;->e:Z
 
-    if-eq v5, v6, :cond_1
+    iget-boolean v1, p0, Lykf;->f:Z
 
-    if-nez v5, :cond_0
+    iput-boolean v1, v0, Lxkf;->f:Z
 
-    invoke-virtual {p1, p0, v1}, Lb9;->w(Lsyc;I)Ljava/lang/String;
+    iget-boolean v1, p0, Lykf;->g:Z
 
-    move-result-object v2
+    iput-boolean v1, v0, Lxkf;->g:Z
 
-    move v4, v0
+    iget-boolean v1, p0, Lykf;->h:Z
 
-    goto :goto_0
+    iput-boolean v1, v0, Lxkf;->h:Z
 
-    :cond_0
-    new-instance p0, Lkotlinx/serialization/UnknownFieldException;
+    iget-wide v1, p0, Lykf;->i:J
 
-    invoke-direct {p0, v5}, Lkotlinx/serialization/UnknownFieldException;-><init>(I)V
+    iput-wide v1, v0, Lxkf;->i:J
 
-    throw p0
+    iget-wide v1, p0, Lykf;->j:J
 
-    :cond_1
-    move v3, v1
+    iput-wide v1, v0, Lxkf;->j:J
 
-    goto :goto_0
+    iget-wide v1, p0, Lykf;->k:J
 
-    :cond_2
-    invoke-virtual {p1, p0}, Lb9;->z(Lsyc;)V
+    iput-wide v1, v0, Lxkf;->k:J
 
-    new-instance p0, Lalf;
+    iget-object v1, p0, Lykf;->l:Lwnb;
 
-    invoke-direct {p0, v4, v2}, Lalf;-><init>(ILjava/lang/String;)V
+    iput-object v1, v0, Lxkf;->l:Lwnb;
 
-    return-object p0
-.end method
+    iget-object v1, p0, Lykf;->m:Lhef;
 
-.method public final b(Lur3;Ljava/lang/Object;)V
-    .locals 1
+    iput-object v1, v0, Lxkf;->m:Lhef;
 
-    check-cast p2, Lalf;
+    iget-object v1, p0, Lykf;->n:Lv10;
 
-    sget-object p0, Lykf;->descriptor:Lsyc;
+    iput-object v1, v0, Lxkf;->n:Lv10;
 
-    invoke-virtual {p1, p0}, Lur3;->b(Lsyc;)Lur3;
+    iget-object v1, p0, Lykf;->o:Landroid/graphics/drawable/BitmapDrawable;
 
-    move-result-object p1
+    iput-object v1, v0, Lxkf;->o:Landroid/graphics/drawable/BitmapDrawable;
 
-    const/4 v0, 0x0
+    iget-object v1, p0, Lykf;->p:Landroid/net/Uri;
 
-    iget-object p2, p2, Lalf;->a:Ljava/lang/String;
+    iput-object v1, v0, Lxkf;->p:Landroid/net/Uri;
 
-    invoke-virtual {p1, p0, v0, p2}, Lur3;->n(Lsyc;ILjava/lang/String;)V
+    iget-boolean v1, p0, Lykf;->q:Z
 
-    invoke-virtual {p1}, Lur3;->o()V
+    iput-boolean v1, v0, Lxkf;->q:Z
 
-    return-void
-.end method
+    iget-boolean v1, p0, Lykf;->r:Z
 
-.method public final c()[Ll77;
-    .locals 2
+    iput-boolean v1, v0, Lxkf;->r:Z
 
-    const/4 p0, 0x1
+    iget-boolean p0, p0, Lykf;->s:Z
 
-    new-array p0, p0, [Ll77;
+    iput-boolean p0, v0, Lxkf;->s:Z
 
-    sget-object v0, Ld0e;->a:Ld0e;
-
-    const/4 v1, 0x0
-
-    aput-object v0, p0, v1
-
-    return-object p0
-.end method
-
-.method public final d()Lsyc;
-    .locals 0
-
-    sget-object p0, Lykf;->descriptor:Lsyc;
-
-    return-object p0
+    return-object v0
 .end method

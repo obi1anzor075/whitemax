@@ -1,283 +1,97 @@
-.class public abstract Ld59;
-.super Ljava/lang/Object;
+.class public final Ld59;
+.super Lqde;
 .source "SourceFile"
 
+# interfaces
+.implements Ll66;
 
-# static fields
-.field public static final a:Z
+
+# instance fields
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Lone/me/messages/list/ui/MessagesListWidget;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/messages/list/ui/MessagesListWidget;)V
+    .locals 0
 
-    const-string v0, "HUAWEI CHM-U01 hwCHM-H"
+    iput-object p2, p0, Ld59;->Y:Lone/me/messages/list/ui/MessagesListWidget;
 
-    filled-new-array {v0}, [Ljava/lang/String;
+    const/4 p2, 0x2
 
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    sget-object v2, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, " "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-object v3, Landroid/os/Build;->MODEL:Ljava/lang/String;
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-object v2, Landroid/os/Build;->DEVICE:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    aget-object v0, v0, v2
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v0
-
-    sput-boolean v0, Ld59;->a:Z
+    invoke-direct {p0, p2, p1}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public static a(II)Landroid/graphics/Point;
-    .locals 2
 
-    const/16 v0, 0x500
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    if-gt p0, v0, :cond_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    const/16 v1, 0x2d0
+    invoke-virtual {p0, p1, p2}, Ld59;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    if-gt p1, v1, :cond_0
+    move-result-object p0
 
-    new-instance v0, Landroid/graphics/Point;
+    check-cast p0, Ld59;
 
-    invoke-direct {v0, p0, p1}, Landroid/graphics/Point;-><init>(II)V
+    sget-object p1, Le5f;->a:Le5f;
 
-    return-object v0
+    invoke-virtual {p0, p1}, Ld59;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_0
-    invoke-static {p0, p1}, Ljava/lang/Math;->max(II)I
+    return-object p1
+.end method
 
-    move-result v1
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    if-le v1, v0, :cond_1
+    new-instance v0, Ld59;
 
-    int-to-float v0, v1
+    iget-object p0, p0, Ld59;->Y:Lone/me/messages/list/ui/MessagesListWidget;
 
-    const/high16 v1, 0x44a00000    # 1280.0f
+    invoke-direct {v0, p2, p0}, Ld59;-><init>(Lkotlin/coroutines/Continuation;Lone/me/messages/list/ui/MessagesListWidget;)V
 
-    div-float/2addr v1, v0
-
-    int-to-float p0, p0
-
-    mul-float/2addr p0, v1
-
-    invoke-static {p0}, Ljava/lang/Math;->round(F)I
-
-    move-result p0
-
-    int-to-float p1, p1
-
-    mul-float/2addr p1, v1
-
-    invoke-static {p1}, Ljava/lang/Math;->round(F)I
-
-    move-result p1
-
-    :cond_1
-    new-instance v0, Landroid/graphics/Point;
-
-    invoke-direct {v0, p0, p1}, Landroid/graphics/Point;-><init>(II)V
+    iput-object p1, v0, Ld59;->X:Ljava/lang/Object;
 
     return-object v0
 .end method
 
-.method public static b(Landroid/net/ConnectivityManager;Landroid/telephony/TelephonyManager;)Ljava/lang/String;
-    .locals 2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    const-string v0, "unknown"
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    if-eqz p0, :cond_3
+    iget-object p1, p0, Ld59;->X:Ljava/lang/Object;
 
-    invoke-virtual {p0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
+    check-cast p1, Le5f;
 
-    move-result-object p0
+    sget-object p1, Lone/me/messages/list/ui/MessagesListWidget;->V0:[Lbc7;
 
-    if-eqz p0, :cond_1
+    iget-object p0, p0, Ld59;->Y:Lone/me/messages/list/ui/MessagesListWidget;
 
-    invoke-virtual {p0}, Landroid/net/NetworkInfo;->getType()I
+    invoke-virtual {p0}, Lone/me/messages/list/ui/MessagesListWidget;->y0()Lone/me/sdk/lists/widgets/EndlessRecyclerView2;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getScrollState()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Landroid/net/NetworkInfo;->getSubtypeName()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0}, Landroid/net/NetworkInfo;->getTypeName()Ljava/lang/String;
-
-    move-result-object v0
-
-    :cond_1
-    :goto_0
-    if-eqz p1, :cond_3
-
-    if-eqz p0, :cond_2
-
-    invoke-virtual {p0}, Landroid/net/NetworkInfo;->getType()I
-
-    move-result p0
-
-    const/4 v1, 0x1
-
-    if-eq p0, v1, :cond_3
-
-    :cond_2
-    const-string p0, "."
-
-    invoke-static {v0, p0}, Lme4;->n(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0}, Lone/me/messages/list/ui/MessagesListWidget;->s0()Ljdf;
 
     move-result-object p0
 
-    invoke-virtual {p1}, Landroid/telephony/TelephonyManager;->getNetworkOperatorName()Ljava/lang/String;
+    const/4 v0, 0x0
 
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    :cond_3
-    return-object v0
-.end method
-
-.method public static c(Ljava/lang/Object;)Ljava/lang/String;
-    .locals 2
-
-    if-eqz p0, :cond_0
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const/16 v1, 0x40
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
-
-    move-result p0
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    goto :goto_0
+    invoke-virtual {p0, p1, v0}, Ljdf;->e(Landroidx/recyclerview/widget/RecyclerView;Z)V
 
     :cond_0
-    const-string p0, "\u00d8"
+    sget-object p0, Le5f;->a:Le5f;
 
-    :goto_0
     return-object p0
-.end method
-
-.method public static d(Laxb;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 2
-
-    new-instance v0, Ljava/util/HashMap;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(I)V
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p1, "_"
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string p2, "param"
-
-    invoke-virtual {v0, p2, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    sget-object p1, Laxb;->COLLECTOR_WEBRTC:Ljava/lang/String;
-
-    const-string p2, "callSpecError"
-
-    invoke-virtual {p0, p1, p2, v0}, Laxb;->log(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V
-
-    return-void
-.end method
-
-.method public static e()V
-    .locals 2
-
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Looper;->getThread()Ljava/lang/Thread;
-
-    move-result-object v0
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v1
-
-    if-ne v0, v1, :cond_0
-
-    return-void
-
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Main (UI) thread expected"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method

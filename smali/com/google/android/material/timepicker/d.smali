@@ -2,32 +2,15 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field public final synthetic a:Lcom/google/android/material/timepicker/TimePickerView;
-
-
-# direct methods
-.method public synthetic constructor <init>(Lcom/google/android/material/timepicker/TimePickerView;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/google/android/material/timepicker/d;->a:Lcom/google/android/material/timepicker/TimePickerView;
-
-    return-void
-.end method
+# interfaces
+.implements La18;
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method public final a(IZ)V
+    .locals 0
 
-    sget v0, Lcom/google/android/material/timepicker/TimePickerView;->L0:I
-
-    iget-object p0, p0, Lcom/google/android/material/timepicker/d;->a:Lcom/google/android/material/timepicker/TimePickerView;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sget p0, Lcom/google/android/material/timepicker/TimePickerView;->D0:I
 
     return-void
 .end method

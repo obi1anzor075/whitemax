@@ -1,47 +1,60 @@
 .class public final Lkq1;
-.super Ler3;
+.super Lm3;
 .source "SourceFile"
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Lmq1;
-
-.field public Z:I
-
-.field public o:Lmq1;
+.field public final synthetic o0:Llq1;
 
 
 # direct methods
-.method public constructor <init>(Lmq1;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Llq1;)V
     .locals 0
 
-    iput-object p1, p0, Lkq1;->Y:Lmq1;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lkq1;->o0:Llq1;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final h()Ljava/lang/String;
+    .locals 2
 
-    iput-object p1, p0, Lkq1;->X:Ljava/lang/Object;
+    iget-object p0, p0, Lkq1;->o0:Llq1;
 
-    iget p1, p0, Lkq1;->Z:I
+    iget-object p0, p0, Llq1;->a:Ljava/lang/ref/WeakReference;
 
-    const/high16 v0, -0x80000000
+    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
-    or-int/2addr p1, v0
+    move-result-object p0
 
-    iput p1, p0, Lkq1;->Z:I
+    check-cast p0, Liq1;
 
-    iget-object p1, p0, Lkq1;->Y:Lmq1;
+    if-nez p0, :cond_0
 
-    invoke-virtual {p1, p0}, Lmq1;->a(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    const-string p0, "Completer object has been garbage collected, future will fail soon"
+
+    return-object p0
+
+    :cond_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "tag=["
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Liq1;->a:Ljava/lang/Object;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, "]"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

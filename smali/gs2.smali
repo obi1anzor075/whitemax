@@ -3,102 +3,151 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lzqe;
+.implements Lv56;
 
 
 # instance fields
-.field public final synthetic a:Landroid/view/View;
+.field public final synthetic a:I
 
-.field public final synthetic b:Lhs2;
+.field public final synthetic b:Ljava/lang/Object;
 
-.field public final synthetic c:Z
+.field public final synthetic c:Ljava/lang/Object;
+
+.field public final synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Lhs2;Z)V
-    .locals 0
+.method public constructor <init>(Louc;Lxuc;Lsuc;)V
+    .locals 1
 
+    const/4 v0, 0x1
+
+    iput v0, p0, Lgs2;->a:I
+
+    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgs2;->a:Landroid/view/View;
+    iput-object p1, p0, Lgs2;->b:Ljava/lang/Object;
 
-    iput-object p2, p0, Lgs2;->b:Lhs2;
+    iput-object p2, p0, Lgs2;->c:Ljava/lang/Object;
 
-    iput-boolean p3, p0, Lgs2;->c:Z
+    iput-object p3, p0, Lgs2;->o:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lwfe;Lu4;Lwfe;)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lgs2;->a:I
+
+    .line 2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgs2;->b:Ljava/lang/Object;
+
+    iput-object p2, p0, Lgs2;->o:Ljava/lang/Object;
+
+    iput-object p3, p0, Lgs2;->c:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcre;)V
-    .locals 1
+.method public final invoke()Ljava/lang/Object;
+    .locals 6
 
-    iget-object p1, p0, Lgs2;->a:Landroid/view/View;
+    iget v0, p0, Lgs2;->a:I
 
-    if-nez p1, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    return-void
+    iget-object v0, p0, Lgs2;->o:Ljava/lang/Object;
+
+    check-cast v0, Lsuc;
+
+    iget-object v1, p0, Lgs2;->c:Ljava/lang/Object;
+
+    check-cast v1, Lxuc;
+
+    iget-object p0, p0, Lgs2;->b:Ljava/lang/Object;
+
+    check-cast p0, Louc;
+
+    invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v1, p0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
     :cond_0
-    iget-object v0, p0, Lgs2;->b:Lhs2;
+    sget-object v2, Lsuc;->a:Lsuc;
 
-    iget-object v0, v0, Lhs2;->B0:Ljava/lang/String;
+    if-ne v0, v2, :cond_1
 
-    invoke-static {p1, v0}, Lswb;->p(Landroid/view/View;Ljava/lang/String;)Landroid/view/View;
+    invoke-virtual {v1}, Landroid/view/ViewGroup;->getChildCount()I
 
-    move-result-object p1
+    move-result v2
 
-    check-cast p1, Lnea;
-
-    iget-boolean p0, p0, Lgs2;->c:Z
-
-    if-eqz p0, :cond_1
-
-    invoke-virtual {p1}, Lnea;->getSearchView()Lraa;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_2
-
-    invoke-virtual {p0}, Lraa;->d()V
+    invoke-virtual {v1, p0, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
 
     goto :goto_0
 
     :cond_1
-    invoke-virtual {p1}, Lnea;->getSearchView()Lraa;
+    const/4 v2, 0x0
 
-    move-result-object p0
+    invoke-virtual {v1, p0, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
 
-    if-eqz p0, :cond_2
-
-    invoke-virtual {p0}, Lraa;->b()V
-
-    :cond_2
     :goto_0
-    return-void
-.end method
+    iget-object v2, v1, Lxuc;->q0:Ljava/util/EnumMap;
 
-.method public final b()V
-    .locals 0
+    iget-object v3, v1, Lxuc;->r0:Ljava/util/EnumMap;
 
-    return-void
-.end method
+    new-instance v4, Lir1;
 
-.method public final c(Lcre;)V
-    .locals 0
+    const/16 v5, 0xb
 
-    return-void
-.end method
+    invoke-direct {v4, p0, v1, v0, v5}, Lir1;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
 
-.method public final f()V
-    .locals 0
+    invoke-static {v0, v2, v3, v4}, Lxuc;->a(Lsuc;Ljava/util/EnumMap;Ljava/util/EnumMap;Lx56;)V
 
-    return-void
-.end method
+    sget-object p0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-.method public final g(Lcre;)V
-    .locals 0
+    return-object p0
 
-    return-void
+    :pswitch_0
+    new-instance v0, Lzc5;
+
+    iget-object v1, p0, Lgs2;->b:Ljava/lang/Object;
+
+    check-cast v1, Lwfe;
+
+    iget-object v2, p0, Lgs2;->o:Ljava/lang/Object;
+
+    check-cast v2, Lu4;
+
+    const-class v3, Lqt2;
+
+    invoke-virtual {v2, v3}, Lu4;->d(Ljava/lang/Class;)Lwfe;
+
+    move-result-object v2
+
+    iget-object p0, p0, Lgs2;->c:Ljava/lang/Object;
+
+    check-cast p0, Lwfe;
+
+    invoke-direct {v0, v2, v1, p0}, Lzc5;-><init>(Lje7;Lwfe;Lwfe;)V
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

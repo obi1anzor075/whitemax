@@ -3,174 +3,126 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/concurrent/Callable;
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lyv8;
 
-.field public final synthetic b:J
-
-.field public final synthetic c:J
-
-.field public final synthetic o:Lcw8;
+.field public final b:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcw8;JJI)V
+.method public constructor <init>(Lyv8;I)V
     .locals 0
 
-    iput p6, p0, Lzv8;->a:I
-
-    iput-object p1, p0, Lzv8;->o:Lcw8;
-
-    iput-wide p2, p0, Lzv8;->b:J
-
-    iput-wide p4, p0, Lzv8;->c:J
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lzv8;->a:Lyv8;
+
+    iput p2, p0, Lzv8;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final call()Ljava/lang/Object;
-    .locals 6
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget v0, p0, Lzv8;->a:I
+    const/4 v0, 0x1
 
-    packed-switch v0, :pswitch_data_0
+    if-ne p0, p1, :cond_0
 
-    iget-object v0, p0, Lzv8;->o:Lcw8;
+    return v0
 
-    iget-object v1, v0, Lcw8;->r:Lyv8;
+    :cond_0
+    instance-of v1, p1, Lzv8;
 
-    iget-object v0, v0, Lcw8;->a:Laec;
+    const/4 v2, 0x0
 
-    invoke-virtual {v1}, Lv2;->f()Lyz5;
+    if-nez v1, :cond_1
 
-    move-result-object v2
+    return v2
 
-    const/4 v3, 0x1
+    :cond_1
+    check-cast p1, Lzv8;
 
-    iget-wide v4, p0, Lzv8;->b:J
+    iget-object v1, p0, Lzv8;->a:Lyv8;
 
-    invoke-interface {v2, v3, v4, v5}, Le4e;->j(IJ)V
+    iget-object v3, p1, Lzv8;->a:Lyv8;
 
-    const/4 v3, 0x2
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-wide v4, p0, Lzv8;->c:J
+    move-result v1
 
-    invoke-interface {v2, v3, v4, v5}, Le4e;->j(IJ)V
+    if-nez v1, :cond_2
 
-    :try_start_0
-    invoke-virtual {v0}, Laec;->c()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    return v2
 
-    :try_start_1
-    invoke-virtual {v2}, Lyz5;->n()I
+    :cond_2
+    iget p0, p0, Lzv8;->b:I
 
-    invoke-virtual {v0}, Laec;->r()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    iget p1, p1, Lzv8;->b:I
 
-    :try_start_2
-    invoke-virtual {v0}, Laec;->l()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    if-eq p0, p1, :cond_3
 
-    invoke-virtual {v1, v2}, Lv2;->u(Lyz5;)V
+    return v2
 
-    sget-object p0, Ljue;->a:Ljue;
+    :cond_3
+    return v0
+.end method
 
-    return-object p0
+.method public final hashCode()I
+    .locals 1
 
-    :catchall_0
-    move-exception p0
+    iget-object v0, p0, Lzv8;->a:Lyv8;
 
-    :try_start_3
-    invoke-virtual {v0}, Laec;->l()V
+    invoke-virtual {v0}, Lyv8;->hashCode()I
 
-    throw p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    move-result v0
 
-    :catchall_1
-    move-exception p0
+    mul-int/lit8 v0, v0, 0x1f
 
-    invoke-virtual {v1, v2}, Lv2;->u(Lyz5;)V
+    iget p0, p0, Lzv8;->b:I
 
-    throw p0
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
-    :pswitch_0
-    iget-object v0, p0, Lzv8;->o:Lcw8;
+    move-result p0
 
-    iget-object v1, v0, Lcw8;->q:Lyv8;
+    add-int/2addr p0, v0
 
-    iget-object v0, v0, Lcw8;->a:Laec;
+    return p0
+.end method
 
-    invoke-virtual {v1}, Lv2;->f()Lyz5;
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    move-result-object v2
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const/4 v3, 0x1
+    const-string v1, "MessageReactionCounter(reaction="
 
-    iget-wide v4, p0, Lzv8;->b:J
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {v2, v3, v4, v5}, Le4e;->j(IJ)V
+    iget-object v1, p0, Lzv8;->a:Lyv8;
 
-    const/4 v3, 0x2
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iget-wide v4, p0, Lzv8;->c:J
+    const-string v1, ", count="
 
-    invoke-interface {v2, v3, v4, v5}, Le4e;->j(IJ)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :try_start_4
-    invoke-virtual {v0}, Laec;->c()V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_3
+    iget p0, p0, Lzv8;->b:I
 
-    :try_start_5
-    invoke-virtual {v2}, Lyz5;->n()I
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Laec;->r()V
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_2
+    const-string p0, ")"
 
-    :try_start_6
-    invoke-virtual {v0}, Laec;->l()V
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_3
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Lv2;->u(Lyz5;)V
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    sget-object p0, Ljue;->a:Ljue;
+    move-result-object p0
 
     return-object p0
-
-    :catchall_2
-    move-exception p0
-
-    :try_start_7
-    invoke-virtual {v0}, Laec;->l()V
-
-    throw p0
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_3
-
-    :catchall_3
-    move-exception p0
-
-    invoke-virtual {v1, v2}, Lv2;->u(Lyz5;)V
-
-    throw p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

@@ -34,7 +34,7 @@
 
     const/4 p0, 0x0
 
-    invoke-interface {p1, p0}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;->setCurrentControllerInfo(Lqd8;)V
+    invoke-interface {p1, p0}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;->setCurrentControllerInfo(Lfi8;)V
 
     return-void
 .end method
@@ -73,13 +73,12 @@
 
     if-ne p0, v0, :cond_0
 
-    goto :goto_0
+    return-object v1
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 p0, 0x0
 
-    :goto_0
-    return-object v1
+    return-object p0
 
     :catchall_0
     move-exception p0
@@ -153,11 +152,11 @@
     :goto_0
     invoke-virtual {p1, v3, v2}, Landroid/os/Bundle;->putBinder(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    invoke-virtual {p2}, Landroid/support/v4/media/session/MediaSessionCompat$Token;->getSession2Token()Li1f;
+    invoke-virtual {p2}, Landroid/support/v4/media/session/MediaSessionCompat$Token;->getSession2Token()Lncf;
 
     move-result-object p2
 
-    invoke-static {p1, p2}, Lfja;->x(Landroid/os/Bundle;Li1f;)V
+    invoke-static {p1, p2}, Lmna;->B(Landroid/os/Bundle;Lncf;)V
 
     const/4 p2, 0x0
 
@@ -631,19 +630,24 @@
 
     invoke-direct {p0, v0}, Landroid/support/v4/media/session/MediaSessionCompat$Callback$MediaSessionCallbackApi21;->clearCurrentControllerInfo(Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;)V
 
-    if-nez v2, :cond_1
+    if-nez v2, :cond_2
 
     invoke-super {p0, p1}, Landroid/media/session/MediaSession$Callback;->onMediaButtonEvent(Landroid/content/Intent;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_2
+    if-eqz p0, :cond_1
+
+    goto :goto_0
 
     :cond_1
-    const/4 v1, 0x1
+    return v1
 
     :cond_2
-    return v1
+    :goto_0
+    const/4 p0, 0x1
+
+    return p0
 .end method
 
 .method public onPause()V

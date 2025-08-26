@@ -1,35 +1,15 @@
-.class public final Lum0;
+.class public abstract Lum0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Landroid/graphics/Bitmap;
-
-.field public final b:Ljava/lang/Exception;
-
-
 # direct methods
-.method public constructor <init>(Landroid/graphics/Bitmap;Lo25;)V
+.method public static a(Landroid/hardware/biometrics/BiometricManager;I)I
     .locals 0
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p0, p1}, Landroid/hardware/biometrics/BiometricManager;->canAuthenticate(I)I
 
-    .line 2
-    iput-object p1, p0, Lum0;->a:Landroid/graphics/Bitmap;
+    move-result p0
 
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/Exception;)V
-    .locals 0
-
-    .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    iput-object p1, p0, Lum0;->b:Ljava/lang/Exception;
-
-    return-void
+    return p0
 .end method

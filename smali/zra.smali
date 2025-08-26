@@ -1,47 +1,128 @@
-.class public final Lzra;
-.super Ler3;
+.class public abstract Lzra;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public X:I
-
-.field public final synthetic Y:Lof9;
-
-.field public synthetic o:Ljava/lang/Object;
-
-
 # direct methods
-.method public constructor <init>(Lof9;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method public static a(Landroid/app/Person;)Lasa;
+    .locals 6
 
-    iput-object p1, p0, Lzra;->Y:Lof9;
+    invoke-virtual {p0}, Landroid/app/Person;->getName()Ljava/lang/CharSequence;
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    move-result-object v0
 
-    return-void
+    invoke-virtual {p0}, Landroid/app/Person;->getIcon()Landroid/graphics/drawable/Icon;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {p0}, Landroid/app/Person;->getIcon()Landroid/graphics/drawable/Icon;
+
+    move-result-object v1
+
+    sget-object v2, Landroidx/core/graphics/drawable/IconCompat;->k:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-static {v1}, Les6;->a(Landroid/graphics/drawable/Icon;)Landroidx/core/graphics/drawable/IconCompat;
+
+    move-result-object v1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
+    invoke-virtual {p0}, Landroid/app/Person;->getUri()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0}, Landroid/app/Person;->getKey()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p0}, Landroid/app/Person;->isBot()Z
+
+    move-result v4
+
+    invoke-virtual {p0}, Landroid/app/Person;->isImportant()Z
+
+    move-result p0
+
+    new-instance v5, Lasa;
+
+    invoke-direct {v5}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, v5, Lasa;->a:Ljava/lang/CharSequence;
+
+    iput-object v1, v5, Lasa;->b:Landroidx/core/graphics/drawable/IconCompat;
+
+    iput-object v2, v5, Lasa;->c:Ljava/lang/String;
+
+    iput-object v3, v5, Lasa;->d:Ljava/lang/String;
+
+    iput-boolean v4, v5, Lasa;->e:Z
+
+    iput-boolean p0, v5, Lasa;->f:Z
+
+    return-object v5
 .end method
 
+.method public static b(Lasa;)Landroid/app/Person;
+    .locals 3
 
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    new-instance v0, Landroid/app/Person$Builder;
 
-    iput-object p1, p0, Lzra;->o:Ljava/lang/Object;
+    invoke-direct {v0}, Landroid/app/Person$Builder;-><init>()V
 
-    iget p1, p0, Lzra;->X:I
+    iget-object v1, p0, Lasa;->a:Ljava/lang/CharSequence;
 
-    const/high16 v0, -0x80000000
+    invoke-virtual {v0, v1}, Landroid/app/Person$Builder;->setName(Ljava/lang/CharSequence;)Landroid/app/Person$Builder;
 
-    or-int/2addr p1, v0
+    move-result-object v0
 
-    iput p1, p0, Lzra;->X:I
+    iget-object v1, p0, Lasa;->b:Landroidx/core/graphics/drawable/IconCompat;
 
-    iget-object p1, p0, Lzra;->Y:Lof9;
+    const/4 v2, 0x0
 
-    const/4 v0, 0x0
+    if-eqz v1, :cond_0
 
-    invoke-virtual {p1, v0, p0}, Lof9;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {v1, v2}, Les6;->d(Landroidx/core/graphics/drawable/IconCompat;Landroid/content/Context;)Landroid/graphics/drawable/Icon;
+
+    move-result-object v2
+
+    :cond_0
+    invoke-virtual {v0, v2}, Landroid/app/Person$Builder;->setIcon(Landroid/graphics/drawable/Icon;)Landroid/app/Person$Builder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lasa;->c:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Landroid/app/Person$Builder;->setUri(Ljava/lang/String;)Landroid/app/Person$Builder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lasa;->d:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Landroid/app/Person$Builder;->setKey(Ljava/lang/String;)Landroid/app/Person$Builder;
+
+    move-result-object v0
+
+    iget-boolean v1, p0, Lasa;->e:Z
+
+    invoke-virtual {v0, v1}, Landroid/app/Person$Builder;->setBot(Z)Landroid/app/Person$Builder;
+
+    move-result-object v0
+
+    iget-boolean p0, p0, Lasa;->f:Z
+
+    invoke-virtual {v0, p0}, Landroid/app/Person$Builder;->setImportant(Z)Landroid/app/Person$Builder;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/app/Person$Builder;->build()Landroid/app/Person;
 
     move-result-object p0
 

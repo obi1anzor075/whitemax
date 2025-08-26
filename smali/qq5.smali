@@ -1,134 +1,267 @@
 .class public final Lqq5;
-.super Ll5e;
+.super Ljava/util/concurrent/atomic/AtomicReference;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lnpd;
+.implements La0a;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic a:I
 
-.field public final synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lrq5;
+.field public final b:Ljava/util/concurrent/atomic/AtomicInteger;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;Lrq5;)V
+.method public constructor <init>(Lfy9;)V
+    .locals 1
+
+    const/4 v0, 0x2
+
+    iput v0, p0, Lqq5;->a:I
+
+    .line 2
+    iput-object p1, p0, Lqq5;->b:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Ljava/util/concurrent/atomic/AtomicInteger;I)V
     .locals 0
 
-    iput-object p1, p0, Lqq5;->Y:Ljava/lang/Object;
+    .line 1
+    iput p2, p0, Lqq5;->a:I
 
-    iput-object p3, p0, Lqq5;->Z:Lrq5;
+    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lqq5;->b:Ljava/util/concurrent/atomic/AtomicInteger;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Lou3;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lqq5;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lqq5;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lqq5;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public a(Ljava/lang/Object;)V
     .locals 1
 
-    new-instance p1, Lqq5;
+    iget v0, p0, Lqq5;->a:I
 
-    iget-object v0, p0, Lqq5;->Y:Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
 
-    iget-object p0, p0, Lqq5;->Z:Lrq5;
+    iget-object p0, p0, Lqq5;->b:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    invoke-direct {p1, v0, p2, p0}, Lqq5;-><init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;Lrq5;)V
+    check-cast p0, Lhx9;
 
-    return-object p1
+    iput-object p1, p0, Lhx9;->r0:Ljava/lang/Object;
+
+    const/4 p1, 0x2
+
+    iput p1, p0, Lhx9;->s0:I
+
+    invoke-virtual {p0}, Lhx9;->a()V
+
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lqq5;->b:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    check-cast p0, Lrq5;
+
+    iput-object p1, p0, Lrq5;->v0:Ljava/lang/Object;
+
+    const/4 p1, 0x2
+
+    iput p1, p0, Lrq5;->w0:I
+
+    invoke-virtual {p0}, Lrq5;->a()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+.method public b()V
+    .locals 2
 
-    sget-object v0, Lpu3;->a:Lpu3;
+    iget-object p0, p0, Lqq5;->b:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    iget v1, p0, Lqq5;->X:I
+    check-cast p0, Lfy9;
 
-    const/4 v2, 0x1
+    iget-object v0, p0, Lfy9;->Z:Ljava/util/concurrent/atomic/AtomicReference;
 
-    if-eqz v1, :cond_1
+    invoke-static {v0}, Lem4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
 
-    if-ne v1, v2, :cond_0
+    iget-object v0, p0, Lfy9;->b:La0a;
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    iget-object v1, p0, Lfy9;->X:Lpy;
 
-    goto :goto_0
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
+
+    move-result p0
+
+    if-nez p0, :cond_0
+
+    invoke-virtual {v1, v0}, Lpy;->d(La0a;)V
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    return-void
+.end method
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+.method public final c(Lam4;)V
+    .locals 1
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    iget v0, p0, Lqq5;->a:I
 
-    throw p0
+    packed-switch v0, :pswitch_data_0
+
+    invoke-static {p0, p1}, Lem4;->e(Ljava/util/concurrent/atomic/AtomicReference;Lam4;)Z
+
+    return-void
+
+    :pswitch_0
+    invoke-static {p0, p1}, Lem4;->c(Ljava/util/concurrent/atomic/AtomicReference;Lam4;)Z
+
+    return-void
+
+    :pswitch_1
+    invoke-static {p0, p1}, Lem4;->c(Ljava/util/concurrent/atomic/AtomicReference;Lam4;)Z
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public h(Ljava/lang/Object;)V
+    .locals 0
+
+    iget-object p0, p0, Lqq5;->b:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    check-cast p0, Lfy9;
+
+    invoke-virtual {p0}, Lfy9;->d()V
+
+    return-void
+.end method
+
+.method public final onError(Ljava/lang/Throwable;)V
+    .locals 2
+
+    iget v0, p0, Lqq5;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object p0, p0, Lqq5;->b:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    check-cast p0, Lfy9;
+
+    iget-object v0, p0, Lfy9;->Z:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-static {v0}, Lem4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
+
+    iget-object v0, p0, Lfy9;->b:La0a;
+
+    iget-object v1, p0, Lfy9;->X:Lpy;
+
+    invoke-virtual {v1, p1}, Lpy;->a(Ljava/lang/Throwable;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
+
+    move-result p0
+
+    if-nez p0, :cond_0
+
+    invoke-virtual {v1, v0}, Lpy;->d(La0a;)V
+
+    :cond_0
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lqq5;->b:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    check-cast p0, Lhx9;
+
+    iget-object v0, p0, Lhx9;->a:Lpy;
+
+    invoke-virtual {v0, p1}, Lpy;->a(Ljava/lang/Throwable;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    iget p1, p0, Lhx9;->c:I
+
+    const/4 v0, 0x3
+
+    if-eq p1, v0, :cond_1
+
+    iget-object p1, p0, Lhx9;->X:Lam4;
+
+    invoke-interface {p1}, Lam4;->f()V
 
     :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    const/4 p1, 0x0
 
-    iget-object p1, p0, Lqq5;->Y:Ljava/lang/Object;
+    iput p1, p0, Lhx9;->s0:I
 
-    check-cast p1, Ljava/lang/Number;
-
-    invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
-
-    move-result-wide v3
-
-    sget-object p1, Lrq5;->H0:[Lk77;
-
-    iget-object p1, p0, Lqq5;->Z:Lrq5;
-
-    iget-object p1, p1, Lrq5;->Z:Lt97;
-
-    invoke-interface {p1}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lbv2;
-
-    iput v2, p0, Lqq5;->X:I
-
-    check-cast p1, Law2;
-
-    invoke-virtual {p1, v3, v4, p0}, Law2;->k(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v0, :cond_2
-
-    return-object v0
+    invoke-virtual {p0}, Lhx9;->a()V
 
     :cond_2
-    :goto_0
-    return-object p1
+    return-void
+
+    :pswitch_1
+    iget-object p0, p0, Lqq5;->b:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    check-cast p0, Lrq5;
+
+    iget-object v0, p0, Lrq5;->a:Lpy;
+
+    invoke-virtual {v0, p1}, Lpy;->a(Ljava/lang/Throwable;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_4
+
+    iget p1, p0, Lrq5;->c:I
+
+    const/4 v0, 0x3
+
+    if-eq p1, v0, :cond_3
+
+    iget-object p1, p0, Lrq5;->X:Ll9e;
+
+    invoke-interface {p1}, Ll9e;->cancel()V
+
+    :cond_3
+    const/4 p1, 0x0
+
+    iput p1, p0, Lrq5;->w0:I
+
+    invoke-virtual {p0}, Lrq5;->a()V
+
+    :cond_4
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

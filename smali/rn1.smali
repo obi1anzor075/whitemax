@@ -1,144 +1,117 @@
 .class public final Lrn1;
-.super Lq02;
+.super Ljof;
 .source "SourceFile"
 
 
 # instance fields
-.field public final Y:Li26;
+.field public final X:Lgp5;
+
+.field public final b:Lbl1;
+
+.field public final c:Lfr1;
+
+.field public final o:Lu5c;
 
 
 # direct methods
-.method public constructor <init>(Li26;Lhu3;II)V
+.method public constructor <init>(Lbl1;)V
     .locals 6
+
+    sget-object v0, Lqi1;->a:Lqi1;
+
+    invoke-virtual {v0}, Lqi1;->b()Lfr1;
+
+    move-result-object v0
+
+    invoke-direct {p0}, Ljof;-><init>()V
+
+    iput-object p1, p0, Lrn1;->b:Lbl1;
+
+    iput-object v0, p0, Lrn1;->c:Lfr1;
+
+    iget-object v1, p1, Lbl1;->E0:Lazd;
+
+    invoke-virtual {v0}, Lfr1;->f()Lazd;
+
+    move-result-object v2
+
+    invoke-virtual {v0}, Lfr1;->e()Ltyd;
+
+    move-result-object v3
+
+    new-instance v4, Lon1;
 
     const/4 v5, 0x0
 
-    move-object v0, p0
+    invoke-direct {v4, p0, v5}, Lon1;-><init>(Lrn1;Lkotlin/coroutines/Continuation;)V
 
-    move-object v1, p1
+    invoke-static {v1, v2, v3, v4}, Lsgg;->k(Lzm5;Lzm5;Lzm5;Lp66;)Lkk3;
 
-    move-object v2, p2
+    move-result-object v1
 
-    move v3, p3
+    invoke-static {v1}, Lsgg;->p(Lzm5;)Lzm5;
 
-    move v4, p4
+    move-result-object v1
 
-    invoke-direct/range {v0 .. v5}, Lq02;-><init>(Ljava/lang/Object;Lhu3;III)V
+    invoke-virtual {v0}, Lfr1;->e()Ltyd;
 
-    iput-object p1, p0, Lrn1;->Y:Li26;
+    move-result-object v0
+
+    new-instance v2, Lew;
+
+    const/16 v3, 0x19
+
+    invoke-direct {v2, v0, v3}, Lew;-><init>(Lzm5;I)V
+
+    invoke-static {v2}, Lsgg;->p(Lzm5;)Lzm5;
+
+    move-result-object v0
+
+    const/4 v2, 0x0
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    sget-object v3, Likd;->a:Lxo3;
+
+    iget-object v4, p0, Ljof;->a:Lkotlinx/coroutines/internal/ContextScope;
+
+    invoke-static {v0, v4, v3, v2}, Lsgg;->W(Lzm5;Lox3;Ljkd;Ljava/lang/Object;)Lu5c;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lrn1;->o:Lu5c;
+
+    iget-object v0, p1, Lbl1;->y0:Lu5c;
+
+    iget-object v2, p1, Lbl1;->K0:Lu5c;
+
+    new-instance v3, Lhk1;
+
+    const/4 v4, 0x1
+
+    invoke-direct {v3, p0, v5, v4}, Lhk1;-><init>(Ljof;Lkotlin/coroutines/Continuation;I)V
+
+    invoke-static {v0, v2, v1, v3}, Lsgg;->k(Lzm5;Lzm5;Lzm5;Lp66;)Lkk3;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lsgg;->p(Lzm5;)Lzm5;
+
+    move-result-object v0
+
+    new-instance v1, Lqn1;
+
+    invoke-direct {v1, p1, v5}, Lqn1;-><init>(Lbl1;Lkotlin/coroutines/Continuation;)V
+
+    new-instance p1, Lgp5;
+
+    const/4 v2, 0x1
+
+    invoke-direct {p1, v0, v1, v2}, Lgp5;-><init>(Lzm5;Ll66;I)V
+
+    iput-object p1, p0, Lrn1;->X:Lgp5;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final h(Ld5b;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 4
-
-    instance-of v0, p2, Lqn1;
-
-    if-eqz v0, :cond_0
-
-    move-object v0, p2
-
-    check-cast v0, Lqn1;
-
-    iget v1, v0, Lqn1;->Z:I
-
-    const/high16 v2, -0x80000000
-
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_0
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Lqn1;->Z:I
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lqn1;
-
-    invoke-direct {v0, p0, p2}, Lqn1;-><init>(Lrn1;Lkotlin/coroutines/Continuation;)V
-
-    :goto_0
-    iget-object p2, v0, Lqn1;->X:Ljava/lang/Object;
-
-    sget-object v1, Lpu3;->a:Lpu3;
-
-    iget v2, v0, Lqn1;->Z:I
-
-    const/4 v3, 0x1
-
-    if-eqz v2, :cond_2
-
-    if-ne v2, v3, :cond_1
-
-    iget-object p1, v0, Lqn1;->o:Ld5b;
-
-    invoke-static {p2}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_2
-    invoke-static {p2}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iput-object p1, v0, Lqn1;->o:Ld5b;
-
-    iput v3, v0, Lqn1;->Z:I
-
-    invoke-super {p0, p1, v0}, Lq02;->h(Ld5b;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-ne p0, v1, :cond_3
-
-    return-object v1
-
-    :cond_3
-    :goto_1
-    check-cast p1, La5b;
-
-    iget-object p0, p1, La5b;->a:Li02;
-
-    invoke-interface {p0}, Lkxc;->p()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_4
-
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
-
-    :cond_4
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "\'awaitClose { yourCallbackOrListener.cancel() }\' should be used in the end of callbackFlow block.\nOtherwise, a callback/listener may leak in case of external cancellation.\nSee callbackFlow API documentation for the details."
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method public final j(Lhu3;II)Lp02;
-    .locals 1
-
-    new-instance v0, Lrn1;
-
-    iget-object p0, p0, Lrn1;->Y:Li26;
-
-    invoke-direct {v0, p0, p1, p2, p3}, Lrn1;-><init>(Li26;Lhu3;II)V
-
-    return-object v0
 .end method

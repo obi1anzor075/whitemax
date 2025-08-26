@@ -2,22 +2,21 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lvt8;
+
 
 # instance fields
-.field public final a:Z
-
-.field public final b:Ljava/lang/CharSequence;
+.field public final a:Ljava/util/Collection;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Z)V
+.method public constructor <init>(Ljava/util/Collection;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p2, p0, Lst8;->a:Z
-
-    iput-object p1, p0, Lst8;->b:Ljava/lang/CharSequence;
+    iput-object p1, p0, Lst8;->a:Ljava/util/Collection;
 
     return-void
 .end method
@@ -25,7 +24,7 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -45,59 +44,32 @@
     :cond_1
     check-cast p1, Lst8;
 
-    iget-boolean v1, p1, Lst8;->a:Z
+    iget-object p0, p0, Lst8;->a:Ljava/util/Collection;
 
-    iget-boolean v3, p0, Lst8;->a:Z
+    iget-object p1, p1, Lst8;->a:Ljava/util/Collection;
 
-    if-eq v3, v1, :cond_2
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
 
     return v2
 
     :cond_2
-    iget-object p0, p0, Lst8;->b:Ljava/lang/CharSequence;
-
-    iget-object p1, p1, Lst8;->b:Ljava/lang/CharSequence;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_3
-
-    return v2
-
-    :cond_3
     return v0
 .end method
 
 .method public final hashCode()I
-    .locals 1
+    .locals 0
 
-    iget-boolean v0, p0, Lst8;->a:Z
+    iget-object p0, p0, Lst8;->a:Ljava/util/Collection;
 
-    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Lst8;->b:Ljava/lang/CharSequence;
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result p0
 
-    :goto_0
-    add-int/2addr v0, p0
-
-    return v0
+    return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
@@ -105,19 +77,11 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "MiniAppData(isVisible="
+    const-string v1, "ByIds(messageIds="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-boolean v1, p0, Lst8;->a:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", title="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lst8;->b:Ljava/lang/CharSequence;
+    iget-object p0, p0, Lst8;->a:Ljava/util/Collection;
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

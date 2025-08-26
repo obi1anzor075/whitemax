@@ -3,37 +3,21 @@
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic c:I
-
-
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final a:Ljava/io/IOException;
 
-.field public final b:Ljava/util/List;
+.field public final b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Ljava/util/List;)V
+.method public synthetic constructor <init>(ILjava/io/IOException;)V
     .locals 0
 
+    iput-object p2, p0, Lwn7;->a:Ljava/io/IOException;
+
+    iput p1, p0, Lwn7;->b:I
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lwn7;->a:Ljava/lang/String;
-
-    iput-object p2, p0, Lwn7;->b:Ljava/util/List;
 
     return-void
 .end method

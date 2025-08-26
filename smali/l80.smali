@@ -3,291 +3,148 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lkx4;
+.implements Lqw9;
 
 
-# instance fields
-.field public final a:Ljava/lang/String;
+# static fields
+.field public static final a:Ll80;
 
-.field public final b:I
+.field public static final b:Lte5;
 
-.field public final c:Lkje;
+.field public static final c:Lte5;
 
-.field public final d:I
+.field public static final d:Lte5;
 
-.field public final e:I
+.field public static final e:Lte5;
 
-.field public final f:I
+.field public static final f:Lte5;
+
+.field public static final g:Lte5;
+
+.field public static final h:Lte5;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;ILkje;III)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ll80;
 
-    iput-object p1, p0, Ll80;->a:Ljava/lang/String;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput p2, p0, Ll80;->b:I
+    sput-object v0, Ll80;->a:Ll80;
 
-    iput-object p3, p0, Ll80;->c:Lkje;
+    const-string v0, "requestTimeMs"
 
-    iput p4, p0, Ll80;->d:I
+    invoke-static {v0}, Lte5;->a(Ljava/lang/String;)Lte5;
 
-    iput p5, p0, Ll80;->e:I
+    move-result-object v0
 
-    iput p6, p0, Ll80;->f:I
+    sput-object v0, Ll80;->b:Lte5;
+
+    const-string v0, "requestUptimeMs"
+
+    invoke-static {v0}, Lte5;->a(Ljava/lang/String;)Lte5;
+
+    move-result-object v0
+
+    sput-object v0, Ll80;->c:Lte5;
+
+    const-string v0, "clientInfo"
+
+    invoke-static {v0}, Lte5;->a(Ljava/lang/String;)Lte5;
+
+    move-result-object v0
+
+    sput-object v0, Ll80;->d:Lte5;
+
+    const-string v0, "logSource"
+
+    invoke-static {v0}, Lte5;->a(Ljava/lang/String;)Lte5;
+
+    move-result-object v0
+
+    sput-object v0, Ll80;->e:Lte5;
+
+    const-string v0, "logSourceName"
+
+    invoke-static {v0}, Lte5;->a(Ljava/lang/String;)Lte5;
+
+    move-result-object v0
+
+    sput-object v0, Ll80;->f:Lte5;
+
+    const-string v0, "logEvent"
+
+    invoke-static {v0}, Lte5;->a(Ljava/lang/String;)Lte5;
+
+    move-result-object v0
+
+    sput-object v0, Ll80;->g:Lte5;
+
+    const-string v0, "qosTier"
+
+    invoke-static {v0}, Lte5;->a(Ljava/lang/String;)Lte5;
+
+    move-result-object v0
+
+    sput-object v0, Ll80;->h:Lte5;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
-    .locals 0
-
-    iget-object p0, p0, Ll80;->a:Ljava/lang/String;
-
-    return-object p0
-.end method
-
-.method public final b()Landroid/media/MediaFormat;
-    .locals 4
-
-    iget-object v0, p0, Ll80;->a:Ljava/lang/String;
-
-    iget v1, p0, Ll80;->e:I
-
-    iget v2, p0, Ll80;->f:I
-
-    invoke-static {v0, v1, v2}, Landroid/media/MediaFormat;->createAudioFormat(Ljava/lang/String;II)Landroid/media/MediaFormat;
-
-    move-result-object v1
-
-    const-string v2, "bitrate"
-
-    iget v3, p0, Ll80;->d:I
-
-    invoke-virtual {v1, v2, v3}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
-
-    const/4 v2, -0x1
-
-    iget p0, p0, Ll80;->b:I
-
-    if-eq p0, v2, :cond_1
-
-    const-string v2, "audio/mp4a-latm"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const-string v0, "aac-profile"
-
-    invoke-virtual {v1, v0, p0}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
-
-    goto :goto_0
-
-    :cond_0
-    const-string v0, "profile"
-
-    invoke-virtual {v1, v0, p0}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
-
-    :cond_1
-    :goto_0
-    return-object v1
-.end method
-
-.method public final c()Lkje;
-    .locals 0
-
-    iget-object p0, p0, Ll80;->c:Lkje;
-
-    return-object p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v0, 0x1
-
-    if-ne p1, p0, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Ll80;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_2
-
-    check-cast p1, Ll80;
-
-    iget-object v1, p1, Ll80;->a:Ljava/lang/String;
-
-    iget-object v3, p0, Ll80;->a:Ljava/lang/String;
-
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget v1, p0, Ll80;->b:I
-
-    iget v3, p1, Ll80;->b:I
-
-    if-ne v1, v3, :cond_1
-
-    iget-object v1, p0, Ll80;->c:Lkje;
-
-    iget-object v3, p1, Ll80;->c:Lkje;
-
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget v1, p0, Ll80;->d:I
-
-    iget v3, p1, Ll80;->d:I
-
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Ll80;->e:I
-
-    iget v3, p1, Ll80;->e:I
-
-    if-ne v1, v3, :cond_1
-
-    iget p0, p0, Ll80;->f:I
-
-    iget p1, p1, Ll80;->f:I
-
-    if-ne p0, p1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    move v0, v2
-
-    :goto_0
-    return v0
-
-    :cond_2
-    return v2
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    iget-object v0, p0, Ll80;->a:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    const v1, 0xf4243
-
-    xor-int/2addr v0, v1
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Ll80;->b:I
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget-object v2, p0, Ll80;->c:Lkje;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Ll80;->d:I
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Ll80;->e:I
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget p0, p0, Ll80;->f:I
-
-    xor-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final a(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    check-cast p1, Lss7;
 
-    const-string v1, "AudioEncoderConfig{mimeType="
+    check-cast p2, Lrw9;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    check-cast p1, Lqa0;
 
-    iget-object v1, p0, Ll80;->a:Ljava/lang/String;
+    iget-wide v0, p1, Lqa0;->a:J
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object p0, Ll80;->b:Lte5;
 
-    const-string v1, ", profile="
+    invoke-interface {p2, p0, v0, v1}, Lrw9;->e(Lte5;J)Lrw9;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object p0, Ll80;->c:Lte5;
 
-    iget v1, p0, Ll80;->b:I
+    iget-wide v0, p1, Lqa0;->b:J
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-interface {p2, p0, v0, v1}, Lrw9;->e(Lte5;J)Lrw9;
 
-    const-string v1, ", inputTimebase="
+    sget-object p0, Ll80;->d:Lte5;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, p1, Lqa0;->c:Lr90;
 
-    iget-object v1, p0, Ll80;->c:Lkje;
+    invoke-interface {p2, p0, v0}, Lrw9;->a(Lte5;Ljava/lang/Object;)Lrw9;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    sget-object p0, Ll80;->e:Lte5;
 
-    const-string v1, ", bitrate="
+    iget-object v0, p1, Lqa0;->d:Ljava/lang/Integer;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {p2, p0, v0}, Lrw9;->a(Lte5;Ljava/lang/Object;)Lrw9;
 
-    iget v1, p0, Ll80;->d:I
+    sget-object p0, Ll80;->f:Lte5;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iget-object v0, p1, Lqa0;->e:Ljava/lang/String;
 
-    const-string v1, ", sampleRate="
+    invoke-interface {p2, p0, v0}, Lrw9;->a(Lte5;Ljava/lang/Object;)Lrw9;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object p0, Ll80;->g:Lte5;
 
-    iget v1, p0, Ll80;->e:I
+    iget-object p1, p1, Lqa0;->f:Ljava/util/ArrayList;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-interface {p2, p0, p1}, Lrw9;->a(Lte5;Ljava/lang/Object;)Lrw9;
 
-    const-string v1, ", channelCount="
+    sget-object p0, Ll80;->h:Lte5;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object p1, Llnb;->a:Llnb;
 
-    iget p0, p0, Ll80;->f:I
+    invoke-interface {p2, p0, p1}, Lrw9;->a(Lte5;Ljava/lang/Object;)Lrw9;
 
-    const-string v1, "}"
-
-    invoke-static {v0, p0, v1}, Lwn6;->j(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

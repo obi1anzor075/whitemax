@@ -1,18 +1,12 @@
-.class public final enum Lbq;
-.super Ljava/lang/Enum;
+.class public final Lbq;
+.super Lv64;
 .source "SourceFile"
 
 
 # static fields
-.field public static final synthetic X:Lpz4;
+.field public static final b:Lbq;
 
-.field public static final enum a:Lbq;
-
-.field public static final enum b:Lbq;
-
-.field public static final enum c:Lbq;
-
-.field public static final synthetic o:[Lbq;
+.field public static final c:Lr64;
 
 
 # direct methods
@@ -21,73 +15,25 @@
 
     new-instance v0, Lbq;
 
-    const-string v1, "SYSTEM"
+    invoke-direct {v0}, Lv64;-><init>()V
+
+    sput-object v0, Lbq;->b:Lbq;
+
+    const/4 v1, 0x0
+
+    new-array v1, v1, [Ljava/lang/String;
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    const/16 v3, 0xe
 
-    sput-object v0, Lbq;->a:Lbq;
+    const-string v4, ":settings/appearance"
 
-    new-instance v1, Lbq;
-
-    const-string v2, "LIGHT"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lbq;->b:Lbq;
-
-    new-instance v2, Lbq;
-
-    const-string v3, "DARK"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lbq;->c:Lbq;
-
-    filled-new-array {v0, v1, v2}, [Lbq;
+    invoke-static {v0, v4, v1, v2, v3}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
 
     move-result-object v0
 
-    sput-object v0, Lbq;->o:[Lbq;
-
-    new-instance v1, Lpz4;
-
-    invoke-direct {v1, v0}, Lpz4;-><init>([Ljava/lang/Enum;)V
-
-    sput-object v1, Lbq;->X:Lpz4;
+    sput-object v0, Lbq;->c:Lr64;
 
     return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lbq;
-    .locals 1
-
-    const-class v0, Lbq;
-
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    move-result-object p0
-
-    check-cast p0, Lbq;
-
-    return-object p0
-.end method
-
-.method public static values()[Lbq;
-    .locals 1
-
-    sget-object v0, Lbq;->o:[Lbq;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lbq;
-
-    return-object v0
 .end method

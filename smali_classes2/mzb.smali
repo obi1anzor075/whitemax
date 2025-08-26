@@ -1,31 +1,54 @@
 .class public abstract Lmzb;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # static fields
-.field public static a:I
+.field public static oneme_startconversation_channel_add_subscribers_error:I = 0x7f1309de
 
-.field public static b:Landroid/util/Size;
+.field public static oneme_startconversation_channel_create_error:I = 0x7f1309df
 
+.field public static oneme_startconversation_channel_limit_add_subscribers_error:I = 0x7f1309e0
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.field public static oneme_startconversation_channel_select_subscribers_skip_button:I = 0x7f1309e1
 
-    invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
+.field public static oneme_startconversation_channel_select_subscribers_toolbar_title:I = 0x7f1309e2
 
-    const/16 v0, 0x8
+.field public static oneme_startconversation_title:I = 0x7f1309e3
 
-    sput v0, Lmzb;->a:I
+.field public static oneme_startconversations_chat_members:I = 0x7f1309e4
 
-    new-instance v0, Landroid/util/Size;
+.field public static oneme_startconversations_chat_titleicon_avatar_bottomsheet_title:I = 0x7f1309e5
 
-    const/16 v1, 0xa0
+.field public static oneme_startconversations_chat_titleicon_avatars_cancel_action:I = 0x7f1309e6
 
-    invoke-direct {v0, v1, v1}, Landroid/util/Size;-><init>(II)V
+.field public static oneme_startconversations_chat_titleicon_avatars_load_from_gallery_action:I = 0x7f1309e7
 
-    sput-object v0, Lmzb;->b:Landroid/util/Size;
+.field public static oneme_startconversations_chat_titleicon_avatars_take_photo_action:I = 0x7f1309e8
 
-    return-void
-.end method
+.field public static oneme_startconversations_chat_titleicon_confirm_button_title:I = 0x7f1309e9
+
+.field public static oneme_startconversations_chat_titleicon_confirm_button_title_channel:I = 0x7f1309ea
+
+.field public static oneme_startconversations_chat_titleicon_hint:I = 0x7f1309eb
+
+.field public static oneme_startconversations_chat_titleicon_hint_channel:I = 0x7f1309ec
+
+.field public static oneme_startconversations_chat_titleicon_input_description_hint:I = 0x7f1309ed
+
+.field public static oneme_startconversations_chat_titleicon_input_hint:I = 0x7f1309ee
+
+.field public static oneme_startconversations_chat_titleicon_input_hint_channel:I = 0x7f1309ef
+
+.field public static oneme_startconversations_chat_titleicon_toolbar_title:I = 0x7f1309f0
+
+.field public static oneme_startconversations_chat_titleicon_toolbar_title_channel:I = 0x7f1309f1
+
+.field public static oneme_startconversations_continue_create_chat:I = 0x7f1309f2
+
+.field public static oneme_startconversations_create_empty_chat:I = 0x7f1309f3
+
+.field public static oneme_startconversations_member_search_hint:I = 0x7f1309f4
+
+.field public static oneme_startconversations_phonebook_section_header:I = 0x7f1309f5
+
+.field public static oneme_startconversations_search_hint:I = 0x7f1309f6

@@ -1,43 +1,182 @@
 .class public final Lxt;
-.super Ljava/lang/Object;
+.super Loh0;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Lzsd;
+.field public final X:[J
 
-.field public final b:Lg2b;
-
-.field public final c:Lpk;
-
-.field public final d:Ll95;
-
-.field public final e:Lfa5;
-
-.field public final f:Lzpc;
-
-.field public final g:Lgj;
+.field public final Y:J
 
 
 # direct methods
-.method public constructor <init>(Lzsd;Lg2b;Lt52;Lpk;Ll95;Lfa5;Lzpc;Lgj;)V
+.method public constructor <init>(JI[JJ)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2, p3}, Loh0;-><init>(JI)V
 
-    iput-object p1, p0, Lxt;->a:Lzsd;
+    iput-object p4, p0, Lxt;->X:[J
 
-    iput-object p2, p0, Lxt;->b:Lg2b;
+    iput-wide p5, p0, Lxt;->Y:J
 
-    iput-object p4, p0, Lxt;->c:Lpk;
+    return-void
+.end method
 
-    iput-object p5, p0, Lxt;->d:Ll95;
 
-    iput-object p6, p0, Lxt;->e:Lfa5;
+# virtual methods
+.method public final g()[B
+    .locals 3
 
-    iput-object p7, p0, Lxt;->f:Lzpc;
+    new-instance v0, Lru/ok/tamtam/nano/Tasks$AssetsListModify;
 
-    iput-object p8, p0, Lxt;->g:Lgj;
+    invoke-direct {v0}, Lru/ok/tamtam/nano/Tasks$AssetsListModify;-><init>()V
+
+    iget v1, p0, Loh0;->o:I
+
+    invoke-static {v1}, Lru/ok/tamtam/nano/b;->p(I)I
+
+    move-result v1
+
+    iput v1, v0, Lru/ok/tamtam/nano/Tasks$AssetsListModify;->assetType:I
+
+    iget-wide v1, p0, Lhl;->a:J
+
+    iput-wide v1, v0, Lru/ok/tamtam/nano/Tasks$AssetsListModify;->requestId:J
+
+    iget-object v1, p0, Lxt;->X:[J
+
+    iput-object v1, v0, Lru/ok/tamtam/nano/Tasks$AssetsListModify;->ids:[J
+
+    iget-wide v1, p0, Lxt;->Y:J
+
+    iput-wide v1, v0, Lru/ok/tamtam/nano/Tasks$AssetsListModify;->modifyTime:J
+
+    invoke-static {v0}, Lnv8;->toByteArray(Lnv8;)[B
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final getType()Lyra;
+    .locals 0
+
+    sget-object p0, Lyra;->O0:Lyra;
+
+    return-object p0
+.end method
+
+.method public final i()Lije;
+    .locals 5
+
+    new-instance v0, Lqt;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x3
+
+    invoke-direct {v0, v1, v2}, Lqt;-><init>(Llja;I)V
+
+    iget v1, p0, Loh0;->o:I
+
+    if-eqz v1, :cond_2
+
+    iget-object v2, p0, Lxt;->X:[J
+
+    if-eqz v2, :cond_1
+
+    const-string v3, "type"
+
+    invoke-static {v1}, Lzt1;->d(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v3, v1}, Lije;->p(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v1, "ids"
+
+    invoke-virtual {v0, v1, v2}, Lije;->h(Ljava/lang/String;[J)V
+
+    const-wide/16 v1, 0x0
+
+    iget-wide v3, p0, Lxt;->Y:J
+
+    cmp-long p0, v3, v1
+
+    if-ltz p0, :cond_0
+
+    const-string p0, "updateTime"
+
+    invoke-virtual {v0, v3, v4, p0}, Lije;->i(JLjava/lang/String;)V
+
+    :cond_0
+    return-object v0
+
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "ids must not be null"
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_2
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "type must not be null"
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final u(Llje;)V
+    .locals 4
+
+    check-cast p1, Lyt;
+
+    iget-boolean v0, p1, Lyt;->o:Z
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_1
+
+    iget-wide v2, p1, Lyt;->X:J
+
+    invoke-virtual {p0, v2, v3}, Loh0;->v(J)V
+
+    iget-object p1, p0, Lhl;->c:Lil;
+
+    if-eqz p1, :cond_0
+
+    move-object v1, p1
+
+    :cond_0
+    invoke-virtual {v1}, Lil;->b()Lvu0;
+
+    move-result-object p1
+
+    new-instance v0, Lzt;
+
+    iget-wide v1, p0, Lhl;->a:J
+
+    invoke-direct {v0, v1, v2}, Lki0;-><init>(J)V
+
+    invoke-virtual {p1, v0}, Lvu0;->c(Ljava/lang/Object;)V
+
+    return-void
+
+    :cond_1
+    new-instance p1, Lvie;
+
+    const-string v0, "asset.task.failed"
+
+    const-string v2, "failed to modify asset list"
+
+    invoke-direct {p1, v0, v2, v1}, Lvie;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {p0, p1}, Loh0;->f(Lvie;)V
 
     return-void
 .end method

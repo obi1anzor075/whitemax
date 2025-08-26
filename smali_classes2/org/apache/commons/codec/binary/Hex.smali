@@ -243,11 +243,6 @@
 
     goto :goto_0
 
-    :catch_0
-    move-exception p0
-
-    goto :goto_1
-
     :cond_0
     move-object p0, p1
 
@@ -263,8 +258,10 @@
 
     return-object p0
 
+    :catch_0
+    move-exception p0
+
     .line 4
-    :goto_1
     new-instance p1, Lorg/apache/commons/codec/DecoderException;
 
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
@@ -322,11 +319,6 @@
 
     goto :goto_0
 
-    :catch_0
-    move-exception p0
-
-    goto :goto_1
-
     :cond_0
     move-object p0, p1
 
@@ -342,8 +334,10 @@
 
     return-object p0
 
+    :catch_0
+    move-exception p0
+
     .line 4
-    :goto_1
     new-instance p1, Lorg/apache/commons/codec/EncoderException;
 
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;

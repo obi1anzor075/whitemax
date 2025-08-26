@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ru.ok.messages.views.widgets.HighlightableFrameLayout android:id="@id/row_chat_media__audio_attach_container" android:paddingTop="12.0dip" android:paddingBottom="12.0dip" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ru.ok.messages.media.attaches.AudioAttachView android:id="@id/row_chat_media__audio_attach_view" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-</ru.ok.messages.views.widgets.HighlightableFrameLayout>

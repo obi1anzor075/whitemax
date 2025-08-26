@@ -1,20 +1,34 @@
-.class public abstract Lrj0;
-.super Ljava/util/concurrent/atomic/AtomicInteger;
+.class public final synthetic Lrj0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lzjb;
+.implements Landroid/view/ViewTreeObserver$OnScrollChangedListener;
+
+
+# instance fields
+.field public final synthetic a:Lcrd;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lcrd;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lrj0;->a:Lcrd;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final offer(Ljava/lang/Object;)Z
+.method public final onScrollChanged()V
     .locals 0
 
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    iget-object p0, p0, Lrj0;->a:Lcrd;
 
-    const-string p1, "Should not be called!"
+    invoke-virtual {p0}, Lwj0;->w()V
 
-    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+    return-void
 .end method

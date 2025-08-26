@@ -1,98 +1,60 @@
-.class public final synthetic Lca5;
+.class public final Lca5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lof3;
-
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lgnd;
 
-.field public final synthetic b:Lfa5;
+.field public final b:J
 
-.field public final synthetic c:J
+.field public final c:Lt14;
+
+.field public final d:Lcnd;
+
+.field public final e:Lcnd;
+
+.field public final synthetic f:Ldnd;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lfa5;JI)V
-    .locals 0
-
-    iput p4, p0, Lca5;->a:I
-
-    iput-object p1, p0, Lca5;->b:Lfa5;
-
-    iput-wide p2, p0, Lca5;->c:J
+.method public constructor <init>(Ldnd;Lgnd;Lt14;Lcnd;Lcnd;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lca5;->f:Ldnd;
+
+    iget-wide v0, p3, Lt14;->b:J
+
+    iput-object p2, p0, Lca5;->a:Lgnd;
+
+    iput-wide v0, p0, Lca5;->b:J
+
+    iput-object p3, p0, Lca5;->c:Lt14;
+
+    iput-object p4, p0, Lca5;->d:Lcnd;
+
+    iput-object p5, p0, Lca5;->e:Lcnd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .locals 5
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    const-string v0, "fa5"
+    iget-object p0, p0, Lca5;->c:Lt14;
 
-    iget-wide v1, p0, Lca5;->c:J
+    if-nez p0, :cond_0
 
-    iget-object v3, p0, Lca5;->b:Lfa5;
+    const-string p0, "<unknown command>"
 
-    iget p0, p0, Lca5;->a:I
+    return-object p0
 
-    check-cast p1, Ljava/lang/Throwable;
+    :cond_0
+    iget-object p0, p0, Lt14;->a:Ljava/lang/String;
 
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    packed-switch p0, :pswitch_data_0
-
-    sget-object p0, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
-
-    new-instance p0, Ljava/lang/StringBuilder;
-
-    const-string v4, "onNotifUpdated: failed for id: "
-
-    invoke-direct {p0, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {v0, p0, p1}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    invoke-virtual {v3}, Lfa5;->c()V
-
-    return-void
-
-    :pswitch_0
-    sget-object p0, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
-
-    new-instance p0, Ljava/lang/StringBuilder;
-
-    const-string v4, "onNotifAdded: failed to add sticker "
-
-    invoke-direct {p0, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string v4, " to cache"
-
-    invoke-static {p0, v1, v2, v4}, Lwn6;->k(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {v0, p0, p1}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    invoke-virtual {v3}, Lfa5;->c()V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

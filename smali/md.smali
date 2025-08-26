@@ -1,63 +1,92 @@
-.class public final Lmd;
+.class public abstract Lmd;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final b:Lmd;
+.field public static final a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
-.field public static final c:I
-
-.field public static final d:I
-
-
-# instance fields
-.field public final a:Lmh4;
+.field public static final b:Ljava/util/Map;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 4
 
-    new-instance v0, Lmd;
+    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
 
-    invoke-direct {v0}, Lmd;-><init>()V
+    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
 
-    sput-object v0, Lmd;->b:Lmd;
+    sput-object v0, Lmd;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
-    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
+    new-instance v0, Ljava/util/LinkedHashMap;
+
+    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
+
+    const-class v1, Lp0a;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getPackage()Ljava/lang/Package;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v2}, Ljava/lang/Package;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v2, 0x0
+
+    :goto_0
+    if-eqz v2, :cond_1
+
+    const-string v3, "OkHttp"
+
+    invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_1
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "okhttp.OkHttpClient"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-class v1, Lfp6;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "okhttp.Http2"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-class v1, Lime;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "okhttp.TaskRunner"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v1, "okhttp3.mockwebserver.MockWebServer"
+
+    const-string v2, "okhttp.MockWebServer"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {v0}, Ljz7;->G(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/Runtime;->availableProcessors()I
-
-    move-result v0
-
-    add-int/lit8 v1, v0, 0x1
-
-    sput v1, Lmd;->c:I
-
-    mul-int/lit8 v0, v0, 0x2
-
-    add-int/lit8 v0, v0, 0x1
-
-    sput v0, Lmd;->d:I
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Lmh4;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1}, Lmh4;-><init>(I)V
-
-    iput-object v0, p0, Lmd;->a:Lmh4;
+    sput-object v0, Lmd;->b:Ljava/util/Map;
 
     return-void
 .end method

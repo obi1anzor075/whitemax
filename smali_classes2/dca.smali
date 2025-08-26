@@ -1,137 +1,67 @@
-.class public final Ldca;
+.class public abstract Ldca;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Leca;
-
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Ldca;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public static final a:I
 
+.field public static final b:I
 
-# instance fields
-.field public final a:Lmge;
+.field public static final c:I
+
+.field public static final d:I
+
+.field public static final e:I
+
+.field public static final f:I
+
+.field public static final g:I
+
+.field public static final h:I
+
+.field public static final i:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Lch9;
+    sget v0, Lgub;->pinbars_group_call_bar:I
 
-    const/16 v1, 0x12
+    sput v0, Ldca;->a:I
 
-    invoke-direct {v0, v1}, Lch9;-><init>(I)V
+    sget v0, Lgub;->pinbars_group_call_bar_button:I
 
-    sput-object v0, Ldca;->CREATOR:Landroid/os/Parcelable$Creator;
+    sput v0, Ldca;->b:I
 
-    return-void
-.end method
+    sget v0, Lgub;->pinbars_group_call_bar_stack:I
 
-.method public constructor <init>(Lmge;)V
-    .locals 0
+    sput v0, Ldca;->c:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Lgub;->pinbars_group_call_bar_subtitle:I
 
-    iput-object p1, p0, Ldca;->a:Lmge;
+    sput v0, Ldca;->d:I
 
-    return-void
-.end method
+    sget v0, Lgub;->pinbars_group_call_bar_title:I
 
+    sput v0, Ldca;->e:I
 
-# virtual methods
-.method public final describeContents()I
-    .locals 0
+    sget v0, Lgub;->pinbars_message:I
 
-    const/4 p0, 0x0
+    sput v0, Ldca;->f:I
 
-    return p0
-.end method
+    sget v0, Lgub;->pinbars_miniplayer:I
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+    sput v0, Ldca;->g:I
 
-    const/4 v0, 0x1
+    sget v0, Lgub;->pinbars_root:I
 
-    if-ne p0, p1, :cond_0
+    sput v0, Ldca;->h:I
 
-    return v0
+    sget v0, Lgub;->unknown_contact:I
 
-    :cond_0
-    instance-of v1, p1, Ldca;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Ldca;
-
-    iget-object p0, p0, Ldca;->a:Lmge;
-
-    iget-object p1, p1, Ldca;->a:Lmge;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    iget-object p0, p0, Ldca;->a:Lmge;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "TextButton(caption="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Ldca;->a:Lmge;
-
-    const-string v1, ")"
-
-    invoke-static {v0, p0, v1}, Lme4;->k(Ljava/lang/StringBuilder;Lmge;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
-
-    iget-object p0, p0, Ldca;->a:Lmge;
-
-    invoke-virtual {p1, p0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+    sput v0, Ldca;->i:I
 
     return-void
 .end method

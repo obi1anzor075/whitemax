@@ -1,125 +1,123 @@
-.class public final Lpdb;
-.super Lt81;
+.class public final synthetic Lpdb;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lx56;
 
 
 # instance fields
-.field public final b:J
+.field public final synthetic a:I
 
-.field public final c:Lch2;
+.field public final synthetic b:Ld4g;
 
 
 # direct methods
-.method public constructor <init>(JLch2;)V
-    .locals 1
+.method public synthetic constructor <init>(Ld4g;I)V
+    .locals 0
 
-    const/16 v0, 0xb
+    iput p2, p0, Lpdb;->a:I
 
-    invoke-direct {p0, v0}, Lt81;-><init>(I)V
+    iput-object p1, p0, Lpdb;->b:Ld4g;
 
-    iput-wide p1, p0, Lpdb;->b:J
-
-    iput-object p3, p0, Lpdb;->c:Lch2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 7
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    const/4 v0, 0x1
+    iget v0, p0, Lpdb;->a:I
 
-    if-ne p0, p1, :cond_0
+    check-cast p1, Ljava/lang/String;
 
-    return v0
+    packed-switch v0, :pswitch_data_0
 
-    :cond_0
-    instance-of v1, p1, Lpdb;
+    iget-object p0, p0, Lpdb;->b:Ld4g;
 
-    const/4 v2, 0x0
+    iget-object p0, p0, Ld4g;->Y:Ljava/lang/Object;
 
-    if-nez v1, :cond_1
+    check-cast p0, Lone/me/profileedit/ProfileEditScreen;
 
-    return v2
-
-    :cond_1
-    check-cast p1, Lpdb;
-
-    iget-wide v3, p1, Lpdb;->b:J
-
-    iget-wide v5, p0, Lpdb;->b:J
-
-    cmp-long v1, v5, v3
-
-    if-eqz v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object p0, p0, Lpdb;->c:Lch2;
-
-    iget-object p1, p1, Lpdb;->c:Lch2;
-
-    if-eq p0, p1, :cond_3
-
-    return v2
-
-    :cond_3
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    iget-wide v0, p0, Lpdb;->b:J
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Lpdb;->c:Lch2;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ChatMembers(chatId="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-wide v1, p0, Lpdb;->b:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", type="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lpdb;->c:Lch2;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Lone/me/profileedit/ProfileEditScreen;->q0()Ldeb;
 
     move-result-object p0
 
+    iget-object p0, p0, Ldeb;->b:Lcv4;
+
+    const/4 v0, 0x4
+
+    invoke-virtual {p0, v0, p1}, Lcv4;->m(ILjava/lang/String;)V
+
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
+
     return-object p0
+
+    :pswitch_0
+    iget-object p0, p0, Lpdb;->b:Ld4g;
+
+    iget-object p0, p0, Ld4g;->Y:Ljava/lang/Object;
+
+    check-cast p0, Lone/me/profileedit/ProfileEditScreen;
+
+    invoke-virtual {p0}, Lone/me/profileedit/ProfileEditScreen;->q0()Ldeb;
+
+    move-result-object p0
+
+    iget-object p0, p0, Ldeb;->b:Lcv4;
+
+    const/high16 v0, 0x20000
+
+    invoke-virtual {p0, v0, p1}, Lcv4;->m(ILjava/lang/String;)V
+
+    goto :goto_0
+
+    :pswitch_1
+    iget-object p0, p0, Lpdb;->b:Ld4g;
+
+    iget-object p0, p0, Ld4g;->Y:Ljava/lang/Object;
+
+    check-cast p0, Lone/me/profileedit/ProfileEditScreen;
+
+    invoke-virtual {p0}, Lone/me/profileedit/ProfileEditScreen;->q0()Ldeb;
+
+    move-result-object p0
+
+    iget-object p0, p0, Ldeb;->b:Lcv4;
+
+    const/4 v0, 0x2
+
+    invoke-virtual {p0, v0, p1}, Lcv4;->m(ILjava/lang/String;)V
+
+    goto :goto_0
+
+    :pswitch_2
+    iget-object p0, p0, Lpdb;->b:Ld4g;
+
+    iget-object p0, p0, Ld4g;->Y:Ljava/lang/Object;
+
+    check-cast p0, Lone/me/profileedit/ProfileEditScreen;
+
+    invoke-virtual {p0}, Lone/me/profileedit/ProfileEditScreen;->q0()Ldeb;
+
+    move-result-object p0
+
+    iget-object p0, p0, Ldeb;->b:Lcv4;
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0, p1}, Lcv4;->m(ILjava/lang/String;)V
+
+    goto :goto_0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

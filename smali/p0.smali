@@ -1,14 +1,14 @@
 .class public abstract Lp0;
-.super Lan5;
+.super Llq5;
 .source "SourceFile"
 
 
 # instance fields
-.field public final b:Lan5;
+.field public final b:Llq5;
 
 
 # direct methods
-.method public constructor <init>(Lan5;)V
+.method public constructor <init>(Llq5;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,7 +17,7 @@
 
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iput-object p1, p0, Lp0;->b:Lan5;
+    iput-object p1, p0, Lp0;->b:Llq5;
 
     return-void
 .end method

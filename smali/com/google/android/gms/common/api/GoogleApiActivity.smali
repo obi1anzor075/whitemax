@@ -61,7 +61,7 @@
 
     if-eqz p1, :cond_3
 
-    invoke-static {p0}, Lqa6;->f(Landroid/content/Context;)Lqa6;
+    invoke-static {p0}, Lue6;->f(Landroid/content/Context;)Lue6;
 
     move-result-object p1
 
@@ -74,13 +74,13 @@
     goto :goto_0
 
     :cond_0
-    new-instance p2, Lnd3;
+    new-instance p2, Lmh3;
 
     const/16 v0, 0xd
 
     const/4 v1, 0x0
 
-    invoke-direct {p2, v0, v1}, Lnd3;-><init>(ILandroid/app/PendingIntent;)V
+    invoke-direct {p2, v0, v1}, Lmh3;-><init>(ILandroid/app/PendingIntent;)V
 
     invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
@@ -92,12 +92,12 @@
 
     move-result p3
 
-    invoke-virtual {p1, p2, p3}, Lqa6;->g(Lnd3;I)V
+    invoke-virtual {p1, p2, p3}, Lue6;->g(Lmh3;I)V
 
     goto :goto_0
 
     :cond_1
-    iget-object p1, p1, Lqa6;->B0:Lz59;
+    iget-object p1, p1, Lue6;->t0:Lva9;
 
     const/4 p2, 0x3
 
@@ -173,7 +173,7 @@
 
     invoke-virtual {p0}, Landroid/app/Activity;->finish()V
 
-    goto/16 :goto_2
+    return-void
 
     :cond_1
     const-string v1, "pending_intent"
@@ -201,7 +201,7 @@
     :cond_2
     invoke-virtual {p0}, Landroid/app/Activity;->finish()V
 
-    goto :goto_2
+    return-void
 
     :cond_3
     :goto_0
@@ -211,6 +211,11 @@
     invoke-virtual {v1}, Landroid/app/PendingIntent;->getIntentSender()Landroid/content/IntentSender;
 
     move-result-object v4
+    :try_end_0
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Landroid/content/IntentSender$SendIntentException; {:try_start_0 .. :try_end_0} :catch_0
+
+    const/4 v8, 0x0
 
     const/4 v9, 0x0
 
@@ -220,108 +225,115 @@
 
     const/4 v7, 0x0
 
-    const/4 v8, 0x0
-
     move-object v3, p0
 
+    :try_start_1
     invoke-virtual/range {v3 .. v9}, Landroid/app/Activity;->startIntentSenderForResult(Landroid/content/IntentSender;ILandroid/content/Intent;III)V
 
-    iput v0, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->a:I
-    :try_end_0
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Landroid/content/IntentSender$SendIntentException; {:try_start_0 .. :try_end_0} :catch_0
+    iput v0, v3, Lcom/google/android/gms/common/api/GoogleApiActivity;->a:I
+    :try_end_1
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_1 .. :try_end_1} :catch_3
+    .catch Landroid/content/IntentSender$SendIntentException; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_2
+    return-void
 
     :catch_0
-    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
+    move-object v3, p0
+
+    :catch_1
+    invoke-virtual {v3}, Landroid/app/Activity;->finish()V
 
     goto :goto_2
 
-    :catch_1
-    const-string v2, "notify_manager"
+    :catch_2
+    move-object v3, p0
 
-    invoke-virtual {p1, v2, v0}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;Z)Z
+    :catch_3
+    const-string p0, "notify_manager"
 
-    move-result p1
+    invoke-virtual {p1, p0, v0}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;Z)Z
 
-    if-eqz p1, :cond_4
+    move-result p0
 
-    invoke-static {p0}, Lqa6;->f(Landroid/content/Context;)Lqa6;
+    if-eqz p0, :cond_4
 
-    move-result-object p1
+    invoke-static {v3}, Lue6;->f(Landroid/content/Context;)Lue6;
 
-    new-instance v1, Lnd3;
+    move-result-object p0
 
-    const/16 v2, 0x16
+    new-instance p1, Lmh3;
 
-    const/4 v3, 0x0
+    const/16 v1, 0x16
 
-    invoke-direct {v1, v2, v3}, Lnd3;-><init>(ILandroid/app/PendingIntent;)V
+    const/4 v2, 0x0
 
-    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+    invoke-direct {p1, v1, v2}, Lmh3;-><init>(ILandroid/app/PendingIntent;)V
 
-    move-result-object v2
+    invoke-virtual {v3}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
-    const-string v3, "failing_client_id"
+    move-result-object v1
+
+    const-string v2, "failing_client_id"
 
     const/4 v4, -0x1
 
-    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {v1, v2, v4}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    move-result v2
+    move-result v1
 
-    invoke-virtual {p1, v1, v2}, Lqa6;->g(Lnd3;I)V
+    invoke-virtual {p0, p1, v1}, Lue6;->g(Lmh3;I)V
 
     goto :goto_1
 
     :cond_4
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object p0
 
-    const-string v1, "Activity not found while launching "
+    const-string p1, "Activity not found while launching "
 
-    const-string v2, "."
+    const-string v1, "."
 
-    invoke-static {v1, p1, v2}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p0, v1}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object p0
 
-    sget-object v1, Landroid/os/Build;->FINGERPRINT:Ljava/lang/String;
+    sget-object p1, Landroid/os/Build;->FINGERPRINT:Ljava/lang/String;
 
-    const-string v2, "generic"
+    const-string v1, "generic"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {p1, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v1
+    move-result p1
 
-    if-eqz v1, :cond_5
+    if-eqz p1, :cond_5
 
-    const-string v1, " This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store."
+    const-string p1, " This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store."
 
-    invoke-virtual {p1, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     :cond_5
     :goto_1
-    iput v0, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->a:I
+    iput v0, v3, Lcom/google/android/gms/common/api/GoogleApiActivity;->a:I
 
-    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
+    invoke-virtual {v3}, Landroid/app/Activity;->finish()V
 
     goto :goto_2
 
     :cond_6
-    invoke-static {v2}, La24;->o(Ljava/lang/Object;)V
+    move-object v3, p0
+
+    invoke-static {v2}, Lkhg;->k(Ljava/lang/Object;)V
 
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    move-result p1
+    move-result p0
 
-    sget-object v1, Lma6;->d:Lma6;
+    sget-object p1, Lqe6;->d:Lqe6;
 
-    invoke-virtual {v1, p0, p1, p0}, Lma6;->c(Landroid/app/Activity;ILandroid/content/DialogInterface$OnCancelListener;)V
+    invoke-virtual {p1, v3, p0, v3}, Lqe6;->c(Lcom/google/android/gms/common/api/GoogleApiActivity;ILcom/google/android/gms/common/api/GoogleApiActivity;)V
 
-    iput v0, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->a:I
+    iput v0, v3, Lcom/google/android/gms/common/api/GoogleApiActivity;->a:I
 
     :cond_7
     :goto_2

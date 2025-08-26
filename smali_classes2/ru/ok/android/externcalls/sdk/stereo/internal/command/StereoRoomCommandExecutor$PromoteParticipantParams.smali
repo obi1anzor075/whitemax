@@ -20,19 +20,19 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;",
         "",
-        "Lge1;",
+        "Lrf1;",
         "Lru/ok/android/externcalls/sdk/id/InternalId;",
         "participantId",
         "",
         "promote",
         "<init>",
-        "(Lge1;Z)V",
+        "(Lrf1;Z)V",
         "component1",
-        "()Lge1;",
+        "()Lrf1;",
         "component2",
         "()Z",
         "copy",
-        "(Lge1;Z)Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;",
+        "(Lrf1;Z)Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;",
         "",
         "toString",
         "()Ljava/lang/String;",
@@ -42,7 +42,7 @@
         "other",
         "equals",
         "(Ljava/lang/Object;)Z",
-        "Lge1;",
+        "Lrf1;",
         "getParticipantId",
         "Z",
         "getPromote",
@@ -54,36 +54,37 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
-.field private final participantId:Lge1;
+.field private final participantId:Lrf1;
 
 .field private final promote:Z
 
 
 # direct methods
-.method public constructor <init>(Lge1;Z)V
+.method public constructor <init>(Lrf1;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->participantId:Lge1;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->participantId:Lrf1;
 
     iput-boolean p2, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->promote:Z
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;Lge1;ZILjava/lang/Object;)Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;
+.method public static synthetic copy$default(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;Lrf1;ZILjava/lang/Object;)Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;
     .locals 0
 
     and-int/lit8 p4, p3, 0x1
 
     if-eqz p4, :cond_0
 
-    iget-object p1, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->participantId:Lge1;
+    iget-object p1, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->participantId:Lrf1;
 
     :cond_0
     and-int/lit8 p3, p3, 0x2
@@ -93,7 +94,7 @@
     iget-boolean p2, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->promote:Z
 
     :cond_1
-    invoke-virtual {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->copy(Lge1;Z)Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;
+    invoke-virtual {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->copy(Lrf1;Z)Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;
 
     move-result-object p0
 
@@ -102,10 +103,10 @@
 
 
 # virtual methods
-.method public final component1()Lge1;
+.method public final component1()Lrf1;
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->participantId:Lge1;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->participantId:Lrf1;
 
     return-object p0
 .end method
@@ -118,12 +119,12 @@
     return p0
 .end method
 
-.method public final copy(Lge1;Z)Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;
+.method public final copy(Lrf1;Z)Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;
     .locals 0
 
     new-instance p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;
 
-    invoke-direct {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;-><init>(Lge1;Z)V
+    invoke-direct {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;-><init>(Lrf1;Z)V
 
     return-object p0
 .end method
@@ -149,11 +150,11 @@
     :cond_1
     check-cast p1, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;
 
-    iget-object v1, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->participantId:Lge1;
+    iget-object v1, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->participantId:Lrf1;
 
-    iget-object v3, p1, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->participantId:Lge1;
+    iget-object v3, p1, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->participantId:Lrf1;
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -174,10 +175,10 @@
     return v0
 .end method
 
-.method public final getParticipantId()Lge1;
+.method public final getParticipantId()Lrf1;
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->participantId:Lge1;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->participantId:Lrf1;
 
     return-object p0
 .end method
@@ -193,9 +194,9 @@
 .method public hashCode()I
     .locals 1
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->participantId:Lge1;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->participantId:Lrf1;
 
-    invoke-virtual {v0}, Lge1;->hashCode()I
+    invoke-virtual {v0}, Lrf1;->hashCode()I
 
     move-result v0
 
@@ -215,7 +216,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->participantId:Lge1;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->participantId:Lrf1;
 
     iget-boolean p0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->promote:Z
 

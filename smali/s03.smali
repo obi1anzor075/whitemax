@@ -1,353 +1,366 @@
 .class public final Ls03;
-.super Lu83;
+.super Lije;
 .source "SourceFile"
 
 
+# static fields
+.field public static final s0:[I
+
+.field public static final t0:[I
+
+.field public static final u0:[I
+
+.field public static final v0:Lh12;
+
+.field public static final w0:Lh12;
+
+
 # instance fields
-.field public final k:Lyh0;
+.field public X:Landroid/animation/ObjectAnimator;
 
-.field public final l:J
+.field public final Y:Lhb5;
 
-.field public final m:J
+.field public final Z:Lw03;
 
-.field public final n:Z
+.field public o:Landroid/animation/ObjectAnimator;
 
-.field public final o:Ljava/util/ArrayList;
+.field public o0:I
 
-.field public final p:Lsje;
+.field public p0:F
 
-.field public q:Lq03;
+.field public q0:F
 
-.field public r:Lcom/google/android/exoplayer2/source/ClippingMediaSource$IllegalClippingException;
-
-.field public s:J
-
-.field public t:J
+.field public r0:Lde;
 
 
 # direct methods
-.method public constructor <init>(Lchb;J)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 4
 
-    invoke-direct {p0}, Lu83;-><init>()V
+    const/16 v0, 0xa8c
 
-    iput-object p1, p0, Ls03;->k:Lyh0;
+    const/16 v1, 0xfd2
 
-    const-wide/16 v0, 0x0
+    const/4 v2, 0x0
 
-    iput-wide v0, p0, Ls03;->l:J
+    const/16 v3, 0x546
 
-    iput-wide p2, p0, Ls03;->m:J
+    filled-new-array {v2, v3, v0, v1}, [I
 
-    const/4 p1, 0x1
+    move-result-object v0
 
-    iput-boolean p1, p0, Ls03;->n:Z
+    sput-object v0, Ls03;->s0:[I
 
-    new-instance p1, Ljava/util/ArrayList;
+    const/16 v0, 0xd27
 
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+    const/16 v1, 0x126d
 
-    iput-object p1, p0, Ls03;->o:Ljava/util/ArrayList;
+    const/16 v2, 0x29b
 
-    new-instance p1, Lsje;
+    const/16 v3, 0x7e1
 
-    invoke-direct {p1}, Lsje;-><init>()V
+    filled-new-array {v2, v3, v0, v1}, [I
 
-    iput-object p1, p0, Ls03;->p:Lsje;
+    move-result-object v0
+
+    sput-object v0, Ls03;->t0:[I
+
+    const/16 v0, 0xe74
+
+    const/16 v1, 0x13ba
+
+    const/16 v2, 0x3e8
+
+    const/16 v3, 0x92e
+
+    filled-new-array {v2, v3, v0, v1}, [I
+
+    move-result-object v0
+
+    sput-object v0, Ls03;->u0:[I
+
+    new-instance v0, Lh12;
+
+    const-string v1, "animationFraction"
+
+    const/4 v2, 0x5
+
+    const-class v3, Ljava/lang/Float;
+
+    invoke-direct {v0, v3, v1, v2}, Lh12;-><init>(Ljava/lang/Class;Ljava/lang/String;I)V
+
+    sput-object v0, Ls03;->v0:Lh12;
+
+    new-instance v0, Lh12;
+
+    const-string v1, "completeEndFraction"
+
+    const/4 v2, 0x6
+
+    invoke-direct {v0, v3, v1, v2}, Lh12;-><init>(Ljava/lang/Class;Ljava/lang/String;I)V
+
+    sput-object v0, Ls03;->w0:Lh12;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lw03;)V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    invoke-direct {p0, v0}, Lije;-><init>(I)V
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Ls03;->o0:I
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Ls03;->r0:Lde;
+
+    iput-object p1, p0, Ls03;->Z:Lw03;
+
+    new-instance p1, Lhb5;
+
+    invoke-direct {p1}, Lhb5;-><init>()V
+
+    iput-object p1, p0, Ls03;->Y:Lhb5;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lre8;Ll34;J)Lr88;
-    .locals 8
-
-    new-instance v7, Lo03;
-
-    iget-object v0, p0, Ls03;->k:Lyh0;
-
-    invoke-virtual {v0, p1, p2, p3, p4}, Lyh0;->a(Lre8;Ll34;J)Lr88;
-
-    move-result-object v1
-
-    iget-wide v3, p0, Ls03;->s:J
-
-    iget-wide v5, p0, Ls03;->t:J
-
-    iget-boolean v2, p0, Ls03;->n:Z
-
-    move-object v0, v7
-
-    invoke-direct/range {v0 .. v6}, Lo03;-><init>(Lr88;ZJJ)V
-
-    iget-object p0, p0, Ls03;->o:Ljava/util/ArrayList;
-
-    invoke-virtual {p0, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    return-object v7
-.end method
-
-.method public final f()Lj68;
-    .locals 0
-
-    iget-object p0, p0, Ls03;->k:Lyh0;
-
-    invoke-virtual {p0}, Lyh0;->f()Lj68;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final g()V
-    .locals 1
-
-    iget-object v0, p0, Ls03;->r:Lcom/google/android/exoplayer2/source/ClippingMediaSource$IllegalClippingException;
-
-    if-nez v0, :cond_0
-
-    invoke-super {p0}, Lu83;->g()V
-
-    return-void
-
-    :cond_0
-    throw v0
-.end method
-
-.method public final i(Lbqe;)V
-    .locals 1
-
-    iput-object p1, p0, Lu83;->j:Lbqe;
-
-    const/4 p1, 0x0
-
-    invoke-static {p1}, Lmze;->m(Landroid/os/Handler$Callback;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lu83;->i:Landroid/os/Handler;
-
-    iget-object v0, p0, Ls03;->k:Lyh0;
-
-    invoke-virtual {p0, p1, v0}, Lu83;->r(Ljava/lang/Integer;Lyh0;)V
-
-    return-void
-.end method
-
-.method public final k(Lr88;)V
-    .locals 2
-
-    iget-object v0, p0, Ls03;->o:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    invoke-static {v1}, Lswb;->h(Z)V
-
-    check-cast p1, Lo03;
-
-    iget-object p1, p1, Lo03;->a:Lr88;
-
-    iget-object v1, p0, Ls03;->k:Lyh0;
-
-    invoke-virtual {v1, p1}, Lyh0;->k(Lr88;)V
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p0, Ls03;->q:Lq03;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object p1, p1, Lzw5;->b:Luje;
-
-    invoke-virtual {p0, p1}, Ls03;->s(Luje;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final m()V
-    .locals 1
-
-    invoke-super {p0}, Lu83;->m()V
+.method public final Q()V
+    .locals 3
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Ls03;->r:Lcom/google/android/exoplayer2/source/ClippingMediaSource$IllegalClippingException;
+    iput v0, p0, Ls03;->o0:I
 
-    iput-object v0, p0, Ls03;->q:Lq03;
+    iget-object v1, p0, Lije;->c:Ljava/lang/Object;
+
+    check-cast v1, Ljava/util/ArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lvq4;
+
+    iget-object v2, p0, Ls03;->Z:Lw03;
+
+    iget-object v2, v2, Loj0;->c:[I
+
+    aget v0, v2, v0
+
+    iput v0, v1, Lvq4;->c:I
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Ls03;->q0:F
 
     return-void
 .end method
 
-.method public final q(Ljava/lang/Integer;Lyh0;Luje;)V
+.method public final W(Lmj0;)V
     .locals 0
 
-    check-cast p1, Ljava/lang/Void;
+    iput-object p1, p0, Ls03;->r0:Lde;
 
-    iget-object p1, p0, Ls03;->r:Lcom/google/android/exoplayer2/source/ClippingMediaSource$IllegalClippingException;
-
-    if-eqz p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0, p3}, Ls03;->s(Luje;)V
-
-    :goto_0
     return-void
 .end method
 
-.method public final s(Luje;)V
-    .locals 16
+.method public final X()V
+    .locals 1
 
-    move-object/from16 v1, p0
-
-    const/4 v2, 0x0
-
-    iget-object v0, v1, Ls03;->p:Lsje;
-
-    move-object/from16 v4, p1
-
-    invoke-virtual {v4, v2, v0}, Luje;->o(ILsje;)V
-
-    iget-wide v5, v0, Lsje;->F0:J
-
-    iget-object v0, v1, Ls03;->q:Lq03;
-
-    iget-object v9, v1, Ls03;->o:Ljava/util/ArrayList;
-
-    iget-wide v7, v1, Ls03;->m:J
-
-    const-wide/high16 v10, -0x8000000000000000L
+    iget-object v0, p0, Ls03;->X:Landroid/animation/ObjectAnimator;
 
     if-eqz v0, :cond_2
 
-    invoke-virtual {v9}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {v0}, Landroid/animation/Animator;->isRunning()Z
 
     move-result v0
 
-    if-nez v0, :cond_2
-
-    iget-wide v12, v1, Ls03;->s:J
-
-    sub-long/2addr v12, v5
-
-    cmp-long v0, v7, v10
-
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    iget-wide v7, v1, Ls03;->t:J
+    iget-object v0, p0, Lije;->b:Ljava/lang/Object;
 
-    sub-long v10, v7, v5
+    check-cast v0, Llz6;
 
-    :goto_0
-    move-wide v7, v10
-
-    :cond_1
-    move-wide v5, v12
-
-    goto :goto_3
-
-    :cond_2
-    iget-wide v12, v1, Ls03;->l:J
-
-    add-long v14, v5, v12
-
-    iput-wide v14, v1, Ls03;->s:J
-
-    cmp-long v0, v7, v10
-
-    if-nez v0, :cond_3
-
-    goto :goto_1
-
-    :cond_3
-    add-long v10, v5, v7
-
-    :goto_1
-    iput-wide v10, v1, Ls03;->t:J
-
-    invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isVisible()Z
 
     move-result v0
 
-    move v3, v2
+    if-eqz v0, :cond_1
 
-    :goto_2
-    if-ge v3, v0, :cond_1
+    iget-object p0, p0, Ls03;->X:Landroid/animation/ObjectAnimator;
 
-    invoke-virtual {v9, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lo03;
-
-    iget-wide v10, v1, Ls03;->s:J
-
-    iget-wide v14, v1, Ls03;->t:J
-
-    iput-wide v10, v5, Lo03;->X:J
-
-    iput-wide v14, v5, Lo03;->Y:J
-
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_2
-
-    :goto_3
-    :try_start_0
-    new-instance v0, Lq03;
-
-    move-object v3, v0
-
-    move-object/from16 v4, p1
-
-    invoke-direct/range {v3 .. v8}, Lq03;-><init>(Luje;JJ)V
-
-    iput-object v0, v1, Ls03;->q:Lq03;
-    :try_end_0
-    .catch Lcom/google/android/exoplayer2/source/ClippingMediaSource$IllegalClippingException; {:try_start_0 .. :try_end_0} :catch_0
-
-    invoke-virtual {v1, v0}, Lyh0;->j(Luje;)V
+    invoke-virtual {p0}, Landroid/animation/ObjectAnimator;->start()V
 
     return-void
 
-    :catch_0
-    move-exception v0
+    :cond_1
+    invoke-virtual {p0}, Ls03;->w()V
 
-    iput-object v0, v1, Ls03;->r:Lcom/google/android/exoplayer2/source/ClippingMediaSource$IllegalClippingException;
+    :cond_2
+    :goto_0
+    return-void
+.end method
 
-    :goto_4
-    invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
+.method public final Z()V
+    .locals 5
 
-    move-result v0
+    iget-object v0, p0, Ls03;->o:Landroid/animation/ObjectAnimator;
 
-    if-ge v2, v0, :cond_4
+    const/4 v1, 0x0
 
-    invoke-virtual {v9, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    const/4 v2, 0x2
+
+    if-nez v0, :cond_0
+
+    new-array v0, v2, [F
+
+    fill-array-data v0, :array_0
+
+    sget-object v3, Ls03;->v0:Lh12;
+
+    invoke-static {p0, v3, v0}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
-    check-cast v0, Lo03;
+    iput-object v0, p0, Ls03;->o:Landroid/animation/ObjectAnimator;
 
-    iget-object v3, v1, Ls03;->r:Lcom/google/android/exoplayer2/source/ClippingMediaSource$IllegalClippingException;
+    const-wide/16 v3, 0x1518
 
-    iput-object v3, v0, Lo03;->Z:Lcom/google/android/exoplayer2/source/ClippingMediaSource$IllegalClippingException;
+    invoke-virtual {v0, v3, v4}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    add-int/lit8 v2, v2, 0x1
+    iget-object v0, p0, Ls03;->o:Landroid/animation/ObjectAnimator;
 
-    goto :goto_4
+    const/4 v3, 0x0
 
-    :cond_4
+    invoke-virtual {v0, v3}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    iget-object v0, p0, Ls03;->o:Landroid/animation/ObjectAnimator;
+
+    const/4 v3, -0x1
+
+    invoke-virtual {v0, v3}, Landroid/animation/ValueAnimator;->setRepeatCount(I)V
+
+    iget-object v0, p0, Ls03;->o:Landroid/animation/ObjectAnimator;
+
+    new-instance v3, Lr03;
+
+    invoke-direct {v3, p0, v1}, Lr03;-><init>(Ls03;I)V
+
+    invoke-virtual {v0, v3}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    :cond_0
+    iget-object v0, p0, Ls03;->X:Landroid/animation/ObjectAnimator;
+
+    if-nez v0, :cond_1
+
+    new-array v0, v2, [F
+
+    fill-array-data v0, :array_1
+
+    sget-object v2, Ls03;->w0:Lh12;
+
+    invoke-static {p0, v2, v0}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ls03;->X:Landroid/animation/ObjectAnimator;
+
+    const-wide/16 v2, 0x14d
+
+    invoke-virtual {v0, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    iget-object v0, p0, Ls03;->X:Landroid/animation/ObjectAnimator;
+
+    iget-object v2, p0, Ls03;->Y:Lhb5;
+
+    invoke-virtual {v0, v2}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    iget-object v0, p0, Ls03;->X:Landroid/animation/ObjectAnimator;
+
+    new-instance v2, Lr03;
+
+    const/4 v3, 0x1
+
+    invoke-direct {v2, p0, v3}, Lr03;-><init>(Ls03;I)V
+
+    invoke-virtual {v0, v2}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    :cond_1
+    iput v1, p0, Ls03;->o0:I
+
+    iget-object v0, p0, Lije;->c:Ljava/lang/Object;
+
+    check-cast v0, Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lvq4;
+
+    iget-object v2, p0, Ls03;->Z:Lw03;
+
+    iget-object v2, v2, Loj0;->c:[I
+
+    aget v1, v2, v1
+
+    iput v1, v0, Lvq4;->c:I
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Ls03;->q0:F
+
+    iget-object p0, p0, Ls03;->o:Landroid/animation/ObjectAnimator;
+
+    invoke-virtual {p0}, Landroid/animation/ObjectAnimator;->start()V
+
+    return-void
+
+    nop
+
+    :array_0
+    .array-data 4
+        0x0
+        0x3f800000    # 1.0f
+    .end array-data
+
+    :array_1
+    .array-data 4
+        0x0
+        0x3f800000    # 1.0f
+    .end array-data
+.end method
+
+.method public final a0()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Ls03;->r0:Lde;
+
+    return-void
+.end method
+
+.method public final w()V
+    .locals 0
+
+    iget-object p0, p0, Ls03;->o:Landroid/animation/ObjectAnimator;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Landroid/animation/Animator;->cancel()V
+
+    :cond_0
     return-void
 .end method

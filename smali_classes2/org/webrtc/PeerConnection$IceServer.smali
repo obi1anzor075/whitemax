@@ -454,7 +454,7 @@
 
     if-eqz p0, :cond_3
 
-    move v0, v1
+    return v1
 
     :cond_3
     return v0

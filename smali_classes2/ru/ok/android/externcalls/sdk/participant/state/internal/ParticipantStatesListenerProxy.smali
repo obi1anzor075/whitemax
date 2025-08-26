@@ -28,7 +28,7 @@
         "(Lru/ok/android/externcalls/sdk/participant/state/ParticipantStatesManager;Landroid/os/Handler;)V",
         "Lru/ok/android/externcalls/sdk/participant/state/ParticipantStatesManager$StateChangedEvent;",
         "event",
-        "Ljue;",
+        "Le5f;",
         "accumulate",
         "(Lru/ok/android/externcalls/sdk/participant/state/ParticipantStatesManager$StateChangedEvent;)V",
         "merge",
@@ -72,6 +72,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -130,7 +131,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesListenerProxy$Companion;-><init>(Lx54;)V
+    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesListenerProxy$Companion;-><init>(Ll94;)V
 
     sput-object v0, Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesListenerProxy;->Companion:Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesListenerProxy$Companion;
 
@@ -162,11 +163,11 @@
 
     iput-boolean p1, p0, Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesListenerProxy;->scheduleNextRaise:Z
 
-    new-instance p1, Leq6;
+    new-instance p1, Lz46;
 
-    const/16 p2, 0x15
+    const/16 p2, 0x19
 
-    invoke-direct {p1, p2, p0}, Leq6;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p1, p2, p0}, Lz46;-><init>(ILjava/lang/Object;)V
 
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesListenerProxy;->raiseRunnable:Ljava/lang/Runnable;
 
@@ -276,7 +277,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lo23;->s0(Ljava/lang/Iterable;)Ljava/util/List;
+    invoke-static {v1}, Lp43;->W0(Ljava/lang/Iterable;)Ljava/util/List;
 
     move-result-object v1
 

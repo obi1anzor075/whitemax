@@ -1,67 +1,80 @@
-.class public abstract synthetic Lwwe;
+.class public final Lwwe;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lbxe;
 
-# static fields
-.field public static final synthetic $EnumSwitchMapping$0:[I
+
+# annotations
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\u000c\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0018\u00002\u00020\u0001B\u0007\u00a2\u0006\u0004\u0008\u0002\u0010\u0003\u00a8\u0006\u0004"
+    }
+    d2 = {
+        "Lwwe;",
+        "Lbxe;",
+        "<init>",
+        "()V",
+        "tracer-commons_release"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x7,
+        0x1
+    }
+    xi = 0x30
+.end annotation
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>()V
+    .locals 0
 
-    invoke-static {}, Lj10;->values()[Lj10;
-
-    move-result-object v0
-
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x2
-
-    :try_start_0
-    aput v1, v0, v2
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    const/4 v1, 0x4
-
-    :try_start_1
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    const/4 v2, 0x3
-
-    :try_start_2
-    aput v2, v0, v2
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    const/16 v2, 0x9
-
-    :try_start_3
-    aput v1, v0, v2
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
-    const/4 v1, 0x5
-
-    :try_start_4
-    aput v1, v0, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
-
-    :catch_4
-    sput-object v0, Lwwe;->$EnumSwitchMapping$0:[I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final appToken()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "uhiEuhaOmhldPqWb01EFotBM4JlJMdJd5OaPN9Fcsqw"
+
+    return-object p0
+.end method
+
+.method public final buildUuid()Ljava/lang/String;
+    .locals 0
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public final environment()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "release"
+
+    return-object p0
+.end method
+
+.method public final namespace()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "ru.ok.tracer"
+
+    return-object p0
+.end method
+
+.method public final versionName()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "1.1.1"
+
+    return-object p0
 .end method

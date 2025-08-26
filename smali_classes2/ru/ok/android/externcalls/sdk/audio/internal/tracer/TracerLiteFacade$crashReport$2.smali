@@ -1,9 +1,9 @@
 .class final Lru/ok/android/externcalls/sdk/audio/internal/tracer/TracerLiteFacade$crashReport$2;
-.super Lb97;
+.super Lsd7;
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Lv56;
 
 
 # annotations
@@ -18,8 +18,8 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lb97;",
-        "Ls16;"
+        "Lsd7;",
+        "Lv56;"
     }
 .end annotation
 
@@ -28,9 +28,9 @@
         "\u0000\u0008\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0010\u0003\u001a\u00020\u0000H\n\u00a2\u0006\u0004\u0008\u0001\u0010\u0002"
     }
     d2 = {
-        "Ltne;",
+        "Lswe;",
         "invoke",
-        "()Ltne;",
+        "()Lswe;",
         "<anonymous>"
     }
     k = 0x3
@@ -54,7 +54,7 @@
 
     const/4 p1, 0x0
 
-    invoke-direct {p0, p1}, Lb97;-><init>(I)V
+    invoke-direct {p0, p1}, Lsd7;-><init>(I)V
 
     return-void
 .end method
@@ -65,26 +65,26 @@
     .locals 0
 
     .line 1
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/audio/internal/tracer/TracerLiteFacade$crashReport$2;->invoke()Ltne;
+    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/audio/internal/tracer/TracerLiteFacade$crashReport$2;->invoke()Lswe;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public final invoke()Ltne;
+.method public final invoke()Lswe;
     .locals 1
 
     .line 2
-    new-instance v0, Ltne;
+    new-instance v0, Lswe;
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/audio/internal/tracer/TracerLiteFacade$crashReport$2;->this$0:Lru/ok/android/externcalls/sdk/audio/internal/tracer/TracerLiteFacade;
 
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/audio/internal/tracer/TracerLiteFacade;->access$getTracerLite(Lru/ok/android/externcalls/sdk/audio/internal/tracer/TracerLiteFacade;)Lzne;
+    invoke-static {p0}, Lru/ok/android/externcalls/sdk/audio/internal/tracer/TracerLiteFacade;->access$getTracerLite(Lru/ok/android/externcalls/sdk/audio/internal/tracer/TracerLiteFacade;)Lzwe;
 
     move-result-object p0
 
-    invoke-direct {v0, p0}, Ltne;-><init>(Lzne;)V
+    invoke-direct {v0, p0}, Lswe;-><init>(Lzwe;)V
 
     return-object v0
 .end method

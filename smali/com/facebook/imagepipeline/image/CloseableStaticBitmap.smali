@@ -3,18 +3,18 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lb13;
+.implements Lc33;
 
 
 # direct methods
-.method public static of(Landroid/graphics/Bitmap;Lnbc;Ltjb;I)Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;
+.method public static of(Landroid/graphics/Bitmap;Ljgc;Lznb;I)Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/graphics/Bitmap;",
-            "Lnbc;",
-            "Ltjb;",
+            "Ljgc;",
+            "Lznb;",
             "I)",
             "Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;"
         }
@@ -23,33 +23,31 @@
     const/4 v0, 0x0
 
     .line 1
-    invoke-static {p0, p1, p2, p3, v0}, Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;->of(Landroid/graphics/Bitmap;Lnbc;Ltjb;II)Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;
+    invoke-static {p0, p1, p2, p3, v0}, Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;->of(Landroid/graphics/Bitmap;Ljgc;Lznb;II)Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static of(Landroid/graphics/Bitmap;Lnbc;Ltjb;II)Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;
+.method public static of(Landroid/graphics/Bitmap;Ljgc;Lznb;II)Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/graphics/Bitmap;",
-            "Lnbc;",
-            "Ltjb;",
+            "Ljgc;",
+            "Lznb;",
             "II)",
             "Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;"
         }
     .end annotation
 
     .line 3
-    sget v0, Lu54;->x0:I
+    sget v0, Li94;->p0:I
 
     .line 4
-    new-instance v0, Lu54;
-
-    move-object v1, v0
+    new-instance v1, Li94;
 
     move-object v2, p0
 
@@ -62,18 +60,18 @@
     move v6, p4
 
     .line 5
-    invoke-direct/range {v1 .. v6}, Lu54;-><init>(Landroid/graphics/Bitmap;Lnbc;Ltjb;II)V
+    invoke-direct/range {v1 .. v6}, Li94;-><init>(Landroid/graphics/Bitmap;Ljgc;Lznb;II)V
 
-    return-object v0
+    return-object v1
 .end method
 
-.method public static of(Le13;Ltjb;I)Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;
+.method public static of(Lf33;Lznb;I)Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Le13;",
-            "Ltjb;",
+            "Lf33;",
+            "Lznb;",
             "I)",
             "Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;"
         }
@@ -82,44 +80,44 @@
     const/4 v0, 0x0
 
     .line 2
-    invoke-static {p0, p1, p2, v0}, Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;->of(Le13;Ltjb;II)Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;
+    invoke-static {p0, p1, p2, v0}, Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;->of(Lf33;Lznb;II)Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static of(Le13;Ltjb;II)Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;
+.method public static of(Lf33;Lznb;II)Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Le13;",
-            "Ltjb;",
+            "Lf33;",
+            "Lznb;",
             "II)",
             "Lcom/facebook/imagepipeline/image/CloseableStaticBitmap;"
         }
     .end annotation
 
     .line 6
-    sget v0, Lu54;->x0:I
+    sget v0, Li94;->p0:I
 
     .line 7
-    new-instance v0, Lu54;
+    new-instance v0, Li94;
 
     .line 8
-    invoke-direct {v0, p0, p1, p2, p3}, Lu54;-><init>(Le13;Ltjb;II)V
+    invoke-direct {v0, p0, p1, p2, p3}, Li94;-><init>(Lf33;Lznb;II)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public abstract cloneUnderlyingBitmapReference()Le13;
+.method public abstract cloneUnderlyingBitmapReference()Lf33;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Le13;"
+            "Lf33;"
         }
     .end annotation
 .end method
@@ -127,11 +125,11 @@
 .method public abstract synthetic close()V
 .end method
 
-.method public abstract convertToBitmapReference()Le13;
+.method public abstract convertToBitmapReference()Lf33;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Le13;"
+            "Lf33;"
         }
     .end annotation
 .end method
@@ -145,10 +143,10 @@
 .method public abstract synthetic getHeight()I
 .end method
 
-.method public abstract synthetic getImageInfo()Loq6;
+.method public abstract synthetic getImageInfo()Luu6;
 .end method
 
-.method public abstract synthetic getQualityInfo()Ltjb;
+.method public abstract synthetic getQualityInfo()Lznb;
 .end method
 
 .method public abstract getRotationAngle()I

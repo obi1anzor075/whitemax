@@ -1,89 +1,74 @@
-.class public final Lb9d;
-.super Lg34;
+.class public final synthetic Lb9d;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lcnd;
 
-# static fields
-.field public static final b:Lb9d;
 
-.field public static final c:Lc34;
+# instance fields
+.field public final synthetic a:I
 
-.field public static final d:Lc34;
+.field public final synthetic b:Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;
 
-.field public static final e:Lc34;
-
-.field public static final f:Lc34;
+.field public final synthetic c:Lx56;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
+.method public synthetic constructor <init>(Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;Lx56;I)V
+    .locals 0
 
-    new-instance v6, Lb9d;
+    iput p3, p0, Lb9d;->a:I
 
-    invoke-direct {v6}, Lg34;-><init>()V
+    iput-object p1, p0, Lb9d;->b:Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;
 
-    sput-object v6, Lb9d;->b:Lb9d;
+    iput-object p2, p0, Lb9d;->c:Lx56;
 
-    const/4 v7, 0x0
-
-    new-array v2, v7, [Ljava/lang/String;
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const-string v1, ":settings/privacy"
-
-    const/16 v5, 0xe
-
-    move-object v0, v6
-
-    invoke-static/range {v0 .. v5}, Lg34;->a(Lg34;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lc34;
-
-    move-result-object v0
-
-    sput-object v0, Lb9d;->c:Lc34;
-
-    new-array v2, v7, [Ljava/lang/String;
-
-    const-string v1, ":settings/blacklist"
-
-    move-object v0, v6
-
-    invoke-static/range {v0 .. v5}, Lg34;->a(Lg34;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lc34;
-
-    move-result-object v0
-
-    sput-object v0, Lb9d;->d:Lc34;
-
-    new-array v2, v7, [Ljava/lang/String;
-
-    const-string v1, ":settings/privacy/onboarding"
-
-    move-object v0, v6
-
-    invoke-static/range {v0 .. v5}, Lg34;->a(Lg34;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lc34;
-
-    move-result-object v0
-
-    sput-object v0, Lb9d;->e:Lc34;
-
-    const-string v0, "mode"
-
-    filled-new-array {v0}, [Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v1, ":settings/privacy/pincode"
-
-    move-object v0, v6
-
-    invoke-static/range {v0 .. v5}, Lg34;->a(Lg34;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lc34;
-
-    move-result-object v0
-
-    sput-object v0, Lb9d;->f:Lc34;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final j(Lorg/json/JSONObject;)V
+    .locals 1
+
+    iget v0, p0, Lb9d;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Lb9d;->b:Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;
+
+    iget-object p0, p0, Lb9d;->c:Lx56;
+
+    invoke-static {v0, p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;->f(Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
+
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Lb9d;->b:Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;
+
+    iget-object p0, p0, Lb9d;->c:Lx56;
+
+    invoke-static {v0, p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;->d(Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
+
+    return-void
+
+    :pswitch_1
+    iget-object v0, p0, Lb9d;->b:Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;
+
+    iget-object p0, p0, Lb9d;->c:Lx56;
+
+    invoke-static {v0, p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;->c(Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;Lx56;Lorg/json/JSONObject;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

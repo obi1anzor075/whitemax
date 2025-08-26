@@ -3,127 +3,294 @@
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Ljava/lang/Number;
+# static fields
+.field public static final c:Lzvd;
 
-.field public final b:Ljava/lang/Number;
+
+# instance fields
+.field public final a:Landroid/content/Context;
+
+.field public final b:Landroid/content/res/Resources;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Float;Ljava/lang/Float;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lzvd;
 
-    iput-object p1, p0, Lof;->a:Ljava/lang/Number;
+    const/16 v1, 0x1a
 
-    iput-object p2, p0, Lof;->b:Ljava/lang/Number;
+    invoke-direct {v0, v1}, Lzvd;-><init>(I)V
+
+    sput-object v0, Lof;->c:Lzvd;
 
     return-void
 .end method
 
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 0
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Lof;->a:Landroid/content/Context;
 
-    if-ne p0, p1, :cond_0
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    return v0
+    move-result-object p1
 
-    :cond_0
-    instance-of v1, p1, Lof;
+    iput-object p1, p0, Lof;->b:Landroid/content/res/Resources;
 
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lof;
-
-    iget-object v1, p1, Lof;->a:Ljava/lang/Number;
-
-    iget-object v3, p0, Lof;->a:Ljava/lang/Number;
-
-    invoke-static {v3, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object p0, p0, Lof;->b:Ljava/lang/Number;
-
-    iget-object p1, p1, Lof;->b:Ljava/lang/Number;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_3
-
-    return v2
-
-    :cond_3
-    return v0
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 1
+.method public static c(Landroid/animation/Animator;)Z
+    .locals 4
 
-    iget-object v0, p0, Lof;->a:Ljava/lang/Number;
+    instance-of v0, p0, Landroid/animation/AnimatorSet;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    move-object v0, p0
+
+    check-cast v0, Landroid/animation/AnimatorSet;
+
+    goto :goto_0
+
+    :cond_0
+    move-object v0, v1
+
+    :goto_0
+    const-string v2, "pathData"
+
+    if-eqz v0, :cond_6
+
+    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->getChildAnimations()Ljava/util/ArrayList;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v0
 
-    mul-int/lit8 v0, v0, 0x1f
+    if-eqz v0, :cond_1
 
-    iget-object p0, p0, Lof;->b:Ljava/lang/Number;
+    goto :goto_3
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    :cond_1
+    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :cond_2
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/animation/Animator;
+
+    instance-of v3, v0, Landroid/animation/ObjectAnimator;
+
+    if-eqz v3, :cond_3
+
+    check-cast v0, Landroid/animation/ObjectAnimator;
+
+    goto :goto_1
+
+    :cond_3
+    move-object v0, v1
+
+    :goto_1
+    if-eqz v0, :cond_4
+
+    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->getPropertyName()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_2
+
+    :cond_4
+    move-object v0, v1
+
+    :goto_2
+    invoke-static {v0, v2}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_5
+    :goto_3
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_6
+    instance-of v0, p0, Landroid/animation/ObjectAnimator;
+
+    if-eqz v0, :cond_7
+
+    check-cast p0, Landroid/animation/ObjectAnimator;
+
+    goto :goto_4
+
+    :cond_7
+    move-object p0, v1
+
+    :goto_4
+    if-eqz p0, :cond_8
+
+    invoke-virtual {p0}, Landroid/animation/ObjectAnimator;->getPropertyName()Ljava/lang/String;
+
+    move-result-object v1
+
+    :cond_8
+    invoke-static {v1, v2}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
-
-    add-int/2addr p0, v0
 
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+# virtual methods
+.method public final a(I)Landroid/animation/Animator;
+    .locals 4
 
-    const-string v1, "AnimatedValues(start="
+    new-instance v0, Lzg;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object p0, p0, Lof;->a:Landroid/content/Context;
 
-    iget-object v1, p0, Lof;->a:Ljava/lang/Number;
+    invoke-direct {v0, p0}, Lzg;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    sget-object p0, Lzg;->c:Lzvd;
 
-    const-string v1, ", finish="
+    iget-object v1, p0, Lzvd;->b:Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v1, Landroid/util/LruCache;
 
-    iget-object p0, p0, Lof;->b:Ljava/lang/Number;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    const-string p0, ")"
+    invoke-virtual {v1, v2}, Landroid/util/LruCache;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    check-cast v1, Landroid/animation/Animator;
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1}, Landroid/animation/Animator;->clone()Landroid/animation/Animator;
 
     move-result-object p0
 
     return-object p0
+
+    :cond_0
+    iget-object v1, v0, Lzg;->b:Landroid/content/res/Resources;
+
+    invoke-virtual {v1, p1}, Landroid/content/res/Resources;->getAnimation(I)Landroid/content/res/XmlResourceParser;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, v1, v3, v2}, Lzg;->a(Landroid/content/res/XmlResourceParser;Landroid/animation/AnimatorSet;I)Landroid/animation/Animator;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Landroid/animation/Animator;->clone()Landroid/animation/Animator;
+
+    move-result-object v1
+
+    iget-object p0, p0, Lzvd;->b:Ljava/lang/Object;
+
+    check-cast p0, Landroid/util/LruCache;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1, v1}, Landroid/util/LruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object v0
+
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "Required value was null."
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final b(Landroid/content/res/XmlResourceParser;)Lone/me/sdk/richvector/EnhancedVectorDrawable;
+    .locals 5
+
+    invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeCount()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    move v2, v1
+
+    :goto_0
+    if-ge v2, v0, :cond_1
+
+    invoke-interface {p1, v2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeName(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "drawable"
+
+    invoke-static {v3, v4}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-interface {p1, v2, v1}, Landroid/util/AttributeSet;->getAttributeResourceValue(II)I
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    new-instance v0, Lone/me/sdk/richvector/EnhancedVectorDrawable;
+
+    iget-object p0, p0, Lof;->b:Landroid/content/res/Resources;
+
+    invoke-direct {v0, p0, p1}, Lone/me/sdk/richvector/EnhancedVectorDrawable;-><init>(Landroid/content/res/Resources;I)V
+
+    return-object v0
+
+    :cond_0
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
+
+    throw p0
 .end method

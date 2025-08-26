@@ -8,7 +8,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/IllegalStateException;Lp28;)V
+.method public constructor <init>(Ljava/lang/IllegalStateException;Ln78;)V
     .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -26,7 +26,7 @@
     goto :goto_0
 
     :cond_0
-    iget-object p2, p2, Lp28;->a:Ljava/lang/String;
+    iget-object p2, p2, Ln78;->a:Ljava/lang/String;
 
     :goto_0
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -37,7 +37,7 @@
 
     invoke-direct {p0, p2, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    sget p2, Loze;->a:I
+    sget p2, Lpaf;->a:I
 
     const/16 v0, 0x15
 
@@ -78,7 +78,7 @@
     goto :goto_1
 
     :cond_3
-    invoke-static {v1}, Loze;->y(Ljava/lang/String;)I
+    invoke-static {v1}, Lpaf;->x(Ljava/lang/String;)I
 
     move-result p1
 

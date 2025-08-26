@@ -1,59 +1,45 @@
-.class public abstract synthetic Lpn8;
-.super Ljava/lang/Object;
+.class public final Lpn8;
+.super Lio;
 .source "SourceFile"
 
 
 # static fields
-.field public static final synthetic $EnumSwitchMapping$0:[I
+.field public static final a:Lpn8;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 1
 
-    const/4 v0, 0x4
+    new-instance v0, Lpn8;
 
-    invoke-static {v0}, Lhr1;->w(I)[I
+    invoke-direct {v0}, Lio;-><init>()V
 
-    move-result-object v1
-
-    array-length v1, v1
-
-    new-array v1, v1, [I
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    :try_start_0
-    aput v3, v1, v2
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    const/4 v2, 0x2
-
-    :try_start_1
-    aput v2, v1, v3
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    const/4 v3, 0x3
-
-    :try_start_2
-    aput v3, v1, v2
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    :try_start_3
-    aput v0, v1, v3
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
-    sput-object v1, Lpn8;->$EnumSwitchMapping$0:[I
+    sput-object v0, Lpn8;->a:Lpn8;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final b()Ljava/util/concurrent/ExecutorService;
+    .locals 1
+
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lu4;
+
+    move-result-object p0
+
+    const-class v0, La9a;
+
+    invoke-virtual {p0, v0}, Lu4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, La9a;
+
+    invoke-virtual {p0}, La9a;->a()Ljava/util/concurrent/ExecutorService;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -1,232 +1,62 @@
 .class public final Lind;
-.super Landroid/graphics/drawable/Drawable$ConstantState;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lgnd;
 
 
 # instance fields
-.field public final a:Lhu4;
+.field public final a:Lpnd;
 
-.field public b:I
+.field public final b:Z
 
-.field public final c:I
-
-.field public final d:I
-
-.field public final e:Lit4;
+.field public final c:Z
 
 
 # direct methods
-.method public constructor <init>(Lhu4;ILit4;)V
+.method public constructor <init>(Lpnd;ZZ)V
     .locals 0
 
-    invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lind;->a:Lhu4;
+    iput-object p1, p0, Lind;->a:Lpnd;
 
-    iput p2, p0, Lind;->b:I
+    iput-boolean p2, p0, Lind;->b:Z
 
-    const/4 p1, 0x0
-
-    iput p1, p0, Lind;->c:I
-
-    iput p1, p0, Lind;->d:I
-
-    iput-object p3, p0, Lind;->e:Lit4;
+    iput-boolean p3, p0, Lind;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lind;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lind;
-
-    iget-object v1, p1, Lind;->a:Lhu4;
-
-    iget-object v3, p0, Lind;->a:Lhu4;
-
-    invoke-static {v3, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget v1, p0, Lind;->b:I
-
-    iget v3, p1, Lind;->b:I
-
-    if-eq v1, v3, :cond_3
-
-    return v2
-
-    :cond_3
-    iget v1, p0, Lind;->c:I
-
-    iget v3, p1, Lind;->c:I
-
-    if-eq v1, v3, :cond_4
-
-    return v2
-
-    :cond_4
-    iget v1, p0, Lind;->d:I
-
-    iget v3, p1, Lind;->d:I
-
-    if-eq v1, v3, :cond_5
-
-    return v2
-
-    :cond_5
-    iget-object p0, p0, Lind;->e:Lit4;
-
-    iget-object p1, p1, Lind;->e:Lit4;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_6
-
-    return v2
-
-    :cond_6
-    return v0
-.end method
-
-.method public final getChangingConfigurations()I
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final hashCode()I
+.method public final a()Lorg/json/JSONObject;
     .locals 3
 
-    iget-object v0, p0, Lind;->a:Lhu4;
+    new-instance v0, Lorg/json/JSONObject;
 
-    invoke-virtual {v0}, Lhu4;->hashCode()I
+    invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
 
-    move-result v0
+    const-string v1, "command"
 
-    const/16 v1, 0x1f
+    const-string v2, "change-media-settings"
 
-    mul-int/2addr v0, v1
+    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    iget v2, p0, Lind;->b:I
+    iget-boolean v1, p0, Lind;->b:Z
 
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
+    iget-boolean v2, p0, Lind;->c:Z
 
-    move-result v0
+    iget-object p0, p0, Lind;->a:Lpnd;
 
-    iget v2, p0, Lind;->c:I
-
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
-
-    move-result v0
-
-    iget v2, p0, Lind;->d:I
-
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
-
-    move-result v0
-
-    iget-object p0, p0, Lind;->e:Lit4;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final newDrawable()Landroid/graphics/drawable/Drawable;
-    .locals 1
-
-    new-instance v0, Lhnd;
-
-    invoke-direct {v0, p0}, Lhnd;-><init>(Lind;)V
-
-    return-object v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    iget v0, p0, Lind;->b:I
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "SpriteEmojiDrawableState(location="
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v2, p0, Lind;->a:Lhu4;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v2, ", size="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, ", paddingHorizontal="
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v0, p0, Lind;->c:I
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, ", paddingVertical="
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v0, p0, Lind;->d:I
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, ", bitmapResolver="
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lind;->e:Lit4;
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p0, v1, v2}, Lcu0;->n(Lpnd;ZZ)Lorg/json/JSONObject;
 
     move-result-object p0
 
-    return-object p0
+    const-string v1, "mediaSettings"
+
+    invoke-virtual {v0, v1, p0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    return-object v0
 .end method

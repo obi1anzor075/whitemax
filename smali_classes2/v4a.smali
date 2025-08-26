@@ -1,78 +1,69 @@
-.class public final synthetic Lv4a;
-.super Ljava/lang/Object;
+.class public final enum Lv4a;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Ls16;
 
+# static fields
+.field public static final enum a:Lv4a;
 
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lx4a;
+.field public static final synthetic b:[Lv4a;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lx4a;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
-    iput p2, p0, Lv4a;->a:I
+    new-instance v0, Lv4a;
 
-    iput-object p1, p0, Lv4a;->b:Lx4a;
+    const-string v1, "IDLE"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lv4a;->a:Lv4a;
+
+    new-instance v1, Lv4a;
+
+    const-string v2, "LOADING"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    filled-new-array {v0, v1}, [Lv4a;
+
+    move-result-object v0
+
+    sput-object v0, Lv4a;->b:[Lv4a;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Lv4a;
+    .locals 1
 
-# virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 3
+    const-class v0, Lv4a;
 
-    iget v0, p0, Lv4a;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Lv4a;->b:Lx4a;
-
-    invoke-virtual {p0}, Lx4a;->b()Ljava/util/concurrent/ExecutorService;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
-    return-object p0
-
-    :pswitch_0
-    new-instance v0, Lduf;
-
-    new-instance v1, Lv4a;
-
-    iget-object p0, p0, Lv4a;->b:Lx4a;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, p0, v2}, Lv4a;-><init>(Lx4a;I)V
-
-    iget-object p0, p0, Lx4a;->c:Ljava/lang/Thread$UncaughtExceptionHandler;
-
-    invoke-direct {v0, p0, v1}, Lduf;-><init>(Ljava/lang/Thread$UncaughtExceptionHandler;Lv4a;)V
-
-    new-instance p0, Lt4a;
-
-    invoke-direct {p0, v0}, Lt4a;-><init>(Lduf;)V
+    check-cast p0, Lv4a;
 
     return-object p0
+.end method
 
-    :pswitch_1
-    iget-object p0, p0, Lv4a;->b:Lx4a;
+.method public static values()[Lv4a;
+    .locals 1
 
-    iget-object p0, p0, Lx4a;->b:Leie;
+    sget-object v0, Lv4a;->b:[Lv4a;
 
-    return-object p0
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    move-result-object v0
+
+    check-cast v0, [Lv4a;
+
+    return-object v0
 .end method

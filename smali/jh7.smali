@@ -1,8 +1,6 @@
-.class public interface abstract Ljh7;
+.class public interface abstract annotation Ljh7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# virtual methods
-.method public abstract a(Ljava/lang/Object;)V
-.end method
+# interfaces
+.implements Ljava/lang/annotation/Annotation;

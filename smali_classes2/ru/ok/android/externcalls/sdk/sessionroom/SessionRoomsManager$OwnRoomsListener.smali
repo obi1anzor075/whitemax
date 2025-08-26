@@ -22,7 +22,7 @@
         "",
         "Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;",
         "event",
-        "Ljue;",
+        "Le5f;",
         "onRoomUpdated",
         "(Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;)V",
         "onProposedRoomChanged",
@@ -36,6 +36,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

@@ -3,4 +3,4 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lwt1;
+.implements Lpw1;

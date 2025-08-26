@@ -20,40 +20,5 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
-
-
-# instance fields
-.field public final a:Ljava/util/Collection;
-
-
-# direct methods
-.method public constructor <init>(Ljava/lang/Throwable;Ljava/util/ArrayList;)V
-    .locals 6
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    const/16 v5, 0x3f
-
-    move-object v0, p2
-
-    invoke-static/range {v0 .. v5}, Lo23;->c0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lu16;I)Ljava/lang/String;
-
-    move-result-object p2
-
-    const-string v0, "missed contacts "
-
-    invoke-virtual {v0, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p0, p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-void
-.end method

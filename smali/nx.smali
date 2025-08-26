@@ -1,181 +1,112 @@
-.class public final Lnx;
-.super Lrx;
+.class public final synthetic Lnx;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/media/MediaCodec$OnFrameRenderedListener;
 
 
 # instance fields
-.field public final X:Ljava/util/ArrayList;
+.field public final synthetic a:I
 
-.field public final c:J
-
-.field public final o:Ljava/util/ArrayList;
+.field public final synthetic b:Lg88;
 
 
 # direct methods
-.method public constructor <init>(IJ)V
-    .locals 1
+.method public synthetic constructor <init>(Lh78;Lg88;I)V
+    .locals 0
 
-    const/4 v0, 0x0
+    iput p3, p0, Lnx;->a:I
 
-    invoke-direct {p0, p1, v0}, Lrx;-><init>(II)V
+    iput-object p2, p0, Lnx;->b:Lg88;
 
-    iput-wide p2, p0, Lnx;->c:J
-
-    new-instance p1, Ljava/util/ArrayList;
-
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object p1, p0, Lnx;->o:Ljava/util/ArrayList;
-
-    new-instance p1, Ljava/util/ArrayList;
-
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object p1, p0, Lnx;->X:Ljava/util/ArrayList;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 4
+.method public final onFrameRendered(Landroid/media/MediaCodec;JJ)V
+    .locals 0
 
-    iget v0, p0, Lrx;->b:I
+    iget p1, p0, Lnx;->a:I
 
-    invoke-static {v0}, Lrx;->d(I)Ljava/lang/String;
+    packed-switch p1, :pswitch_data_0
 
-    move-result-object v0
+    iget-object p0, p0, Lnx;->b:Lg88;
 
-    iget-object v1, p0, Lnx;->o:Ljava/util/ArrayList;
+    iget-object p1, p0, Lg88;->b:Landroid/os/Handler;
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->toArray()[Ljava/lang/Object;
+    sget p4, Lpaf;->a:I
 
-    move-result-object v1
+    const/16 p5, 0x1e
 
-    invoke-static {v1}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+    if-ge p4, p5, :cond_0
 
-    move-result-object v1
+    const/16 p0, 0x20
 
-    iget-object p0, p0, Lnx;->X:Ljava/util/ArrayList;
+    shr-long p4, p2, p0
 
-    invoke-virtual {p0}, Ljava/util/ArrayList;->toArray()[Ljava/lang/Object;
+    long-to-int p0, p4
 
-    move-result-object p0
+    long-to-int p2, p2
 
-    invoke-static {p0}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+    const/4 p3, 0x0
 
-    move-result-object p0
-
-    const/16 v2, 0x16
-
-    invoke-static {v2, v0}, Lme4;->e(ILjava/lang/String;)I
-
-    move-result v2
-
-    invoke-static {v2, v1}, Lme4;->e(ILjava/lang/String;)I
-
-    move-result v2
-
-    invoke-static {v2, p0}, Lme4;->e(ILjava/lang/String;)I
-
-    move-result v2
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, " leaves: "
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, " containers: "
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p1, p3, p0, p2}, Landroid/os/Message;->obtain(Landroid/os/Handler;III)Landroid/os/Message;
 
     move-result-object p0
 
-    return-object p0
-.end method
-
-.method public final v(I)Lnx;
-    .locals 4
-
-    iget-object p0, p0, Lnx;->X:Ljava/util/ArrayList;
-
-    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    :goto_0
-    if-ge v1, v0, :cond_1
-
-    invoke-virtual {p0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lnx;
-
-    iget v3, v2, Lrx;->b:I
-
-    if-ne v3, p1, :cond_0
-
-    return-object v2
-
-    :cond_0
-    add-int/lit8 v1, v1, 0x1
+    invoke-virtual {p1, p0}, Landroid/os/Handler;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
 
     goto :goto_0
 
-    :cond_1
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public final w(I)Lpx;
-    .locals 4
-
-    iget-object p0, p0, Lnx;->o:Ljava/util/ArrayList;
-
-    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    const/4 v1, 0x0
+    :cond_0
+    invoke-virtual {p0, p2, p3}, Lg88;->a(J)V
 
     :goto_0
-    if-ge v1, v0, :cond_1
+    return-void
 
-    invoke-virtual {p0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    :pswitch_0
+    iget-object p0, p0, Lnx;->b:Lg88;
 
-    move-result-object v2
+    iget-object p1, p0, Lg88;->b:Landroid/os/Handler;
 
-    check-cast v2, Lpx;
+    sget p4, Lpaf;->a:I
 
-    iget v3, v2, Lrx;->b:I
+    const/16 p5, 0x1e
 
-    if-ne v3, p1, :cond_0
+    if-ge p4, p5, :cond_1
 
-    return-object v2
+    const/16 p0, 0x20
 
-    :cond_0
-    add-int/lit8 v1, v1, 0x1
+    shr-long p4, p2, p0
 
-    goto :goto_0
+    long-to-int p0, p4
+
+    long-to-int p2, p2
+
+    const/4 p3, 0x0
+
+    invoke-static {p1, p3, p0, p2}, Landroid/os/Message;->obtain(Landroid/os/Handler;III)Landroid/os/Message;
+
+    move-result-object p0
+
+    invoke-virtual {p1, p0}, Landroid/os/Handler;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
+
+    goto :goto_1
 
     :cond_1
-    const/4 p0, 0x0
+    invoke-virtual {p0, p2, p3}, Lg88;->a(J)V
 
-    return-object p0
+    :goto_1
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

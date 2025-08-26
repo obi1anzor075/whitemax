@@ -24,6 +24,7 @@
         0x8,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -41,7 +42,7 @@
 .method public final getComponents()Ljava/util/List;
     .locals 0
 
-    sget-object p0, Lhw4;->a:Lhw4;
+    sget-object p0, Lgz4;->a:Lgz4;
 
     return-object p0
 .end method

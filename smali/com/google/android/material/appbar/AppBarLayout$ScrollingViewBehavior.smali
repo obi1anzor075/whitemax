@@ -1,5 +1,5 @@
 .class public Lcom/google/android/material/appbar/AppBarLayout$ScrollingViewBehavior;
-.super Lfbf;
+.super Lvof;
 .source "SourceFile"
 
 
@@ -18,7 +18,7 @@
     .locals 1
 
     .line 1
-    invoke-direct {p0}, Lfbf;-><init>()V
+    invoke-direct {p0}, Lvof;-><init>()V
 
     .line 2
     new-instance v0, Landroid/graphics/Rect;
@@ -48,7 +48,7 @@
     const/4 v0, 0x0
 
     .line 5
-    invoke-direct {p0, v0}, Lfbf;-><init>(I)V
+    invoke-direct {p0, v0}, Lvof;-><init>(I)V
 
     .line 6
     new-instance v1, Landroid/graphics/Rect;
@@ -68,7 +68,7 @@
     iput v0, p0, Lcom/google/android/material/appbar/AppBarLayout$ScrollingViewBehavior;->e:I
 
     .line 9
-    sget-object v1, Lxvb;->ScrollingViewBehavior_Layout:[I
+    sget-object v1, Lt0c;->ScrollingViewBehavior_Layout:[I
 
     .line 10
     invoke-virtual {p1, p2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
@@ -76,7 +76,7 @@
     move-result-object p1
 
     .line 11
-    sget p2, Lxvb;->ScrollingViewBehavior_Layout_behavior_overlapTop:I
+    sget p2, Lt0c;->ScrollingViewBehavior_Layout_behavior_overlapTop:I
 
     .line 12
     invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
@@ -92,7 +92,7 @@
     return-void
 .end method
 
-.method public static A(Ljava/util/List;)Lfm;
+.method public static A(Ljava/util/List;)Lxl;
     .locals 4
 
     invoke-interface {p0}, Ljava/util/List;->size()I
@@ -110,11 +110,11 @@
 
     check-cast v2, Landroid/view/View;
 
-    instance-of v3, v2, Lfm;
+    instance-of v3, v2, Lxl;
 
     if-eqz v3, :cond_0
 
-    check-cast v2, Lfm;
+    check-cast v2, Lxl;
 
     return-object v2
 
@@ -140,22 +140,22 @@
 
     if-nez v0, :cond_0
 
-    goto :goto_2
+    return v1
 
     :cond_0
-    instance-of v0, p1, Lfm;
+    instance-of v0, p1, Lxl;
 
     const/4 v2, 0x0
 
     if-eqz v0, :cond_3
 
-    check-cast p1, Lfm;
+    check-cast p1, Lxl;
 
-    invoke-virtual {p1}, Lfm;->getTotalScrollRange()I
+    invoke-virtual {p1}, Lxl;->getTotalScrollRange()I
 
     move-result v0
 
-    invoke-virtual {p1}, Lfm;->getDownNestedPreScrollRange()I
+    invoke-virtual {p1}, Lxl;->getDownNestedPreScrollRange()I
 
     move-result v3
 
@@ -163,9 +163,9 @@
 
     move-result-object p1
 
-    check-cast p1, Lnt3;
+    check-cast p1, Lnw3;
 
-    iget-object p1, p1, Lnt3;->a:Lkt3;
+    iget-object p1, p1, Lnw3;->a:Lkw3;
 
     instance-of v4, p1, Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;
 
@@ -216,18 +216,17 @@
 
     float-to-int p1, v2
 
-    invoke-static {p1, v1, p0}, Lxy6;->j(III)I
+    invoke-static {p1, v1, p0}, Lus;->j(III)I
 
-    move-result v1
+    move-result p0
 
-    :goto_2
-    return v1
+    return p0
 .end method
 
 .method public final f(Landroid/view/View;Landroid/view/View;)Z
     .locals 0
 
-    instance-of p0, p2, Lfm;
+    instance-of p0, p2, Lxl;
 
     return p0
 .end method
@@ -239,9 +238,9 @@
 
     move-result-object p1
 
-    check-cast p1, Lnt3;
+    check-cast p1, Lnw3;
 
-    iget-object p1, p1, Lnt3;->a:Lkt3;
+    iget-object p1, p1, Lnw3;->a:Lkw3;
 
     instance-of v0, p1, Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;
 
@@ -273,26 +272,26 @@
 
     sub-int/2addr v0, p0
 
-    sget-object p0, Leaf;->a:Ljava/util/WeakHashMap;
+    sget-object p0, Ltnf;->a:Ljava/util/WeakHashMap;
 
     invoke-virtual {p2, v0}, Landroid/view/View;->offsetTopAndBottom(I)V
 
     :cond_0
-    instance-of p0, p3, Lfm;
+    instance-of p0, p3, Lxl;
 
     if-eqz p0, :cond_1
 
-    check-cast p3, Lfm;
+    check-cast p3, Lxl;
 
-    iget-boolean p0, p3, Lfm;->D0:Z
+    iget-boolean p0, p3, Lxl;->v0:Z
 
     if-eqz p0, :cond_1
 
-    invoke-virtual {p3, p2}, Lfm;->h(Landroid/view/View;)Z
+    invoke-virtual {p3, p2}, Lxl;->h(Landroid/view/View;)Z
 
     move-result p0
 
-    invoke-virtual {p3, p0}, Lfm;->g(Z)Z
+    invoke-virtual {p3, p0}, Lxl;->g(Z)Z
 
     :cond_1
     const/4 p0, 0x0
@@ -303,13 +302,13 @@
 .method public final i(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;)V
     .locals 0
 
-    instance-of p0, p2, Lfm;
+    instance-of p0, p2, Lxl;
 
     if-eqz p0, :cond_0
 
     const/4 p0, 0x0
 
-    invoke-static {p1, p0}, Leaf;->j(Landroid/view/View;Lb4;)V
+    invoke-static {p1, p0}, Ltnf;->j(Landroid/view/View;La4;)V
 
     :cond_0
     return-void
@@ -337,7 +336,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/google/android/material/appbar/AppBarLayout$ScrollingViewBehavior;->A(Ljava/util/List;)Lfm;
+    invoke-static {v2}, Lcom/google/android/material/appbar/AppBarLayout$ScrollingViewBehavior;->A(Ljava/util/List;)Lxl;
 
     move-result-object v2
 
@@ -349,7 +348,7 @@
 
     if-lez p5, :cond_1
 
-    sget-object v3, Leaf;->a:Ljava/util/WeakHashMap;
+    sget-object v3, Ltnf;->a:Ljava/util/WeakHashMap;
 
     invoke-virtual {v2}, Landroid/view/View;->getFitsSystemWindows()Z
 
@@ -357,17 +356,17 @@
 
     if-eqz v3, :cond_2
 
-    invoke-virtual {p1}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getLastWindowInsets()Lnsf;
+    invoke-virtual {p1}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getLastWindowInsets()Lb8g;
 
     move-result-object v3
 
     if-eqz v3, :cond_2
 
-    invoke-virtual {v3}, Lnsf;->d()I
+    invoke-virtual {v3}, Lb8g;->d()I
 
     move-result v4
 
-    invoke-virtual {v3}, Lnsf;->a()I
+    invoke-virtual {v3}, Lb8g;->a()I
 
     move-result v3
 
@@ -384,7 +383,7 @@
 
     :cond_2
     :goto_0
-    invoke-virtual {v2}, Lfm;->getTotalScrollRange()I
+    invoke-virtual {v2}, Lxl;->getTotalScrollRange()I
 
     move-result v3
 
@@ -447,7 +446,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/material/appbar/AppBarLayout$ScrollingViewBehavior;->A(Ljava/util/List;)Lfm;
+    invoke-static {v0}, Lcom/google/android/material/appbar/AppBarLayout$ScrollingViewBehavior;->A(Ljava/util/List;)Lxl;
 
     move-result-object v0
 
@@ -491,7 +490,7 @@
 
     xor-int/lit8 p1, p4, 0x1
 
-    invoke-virtual {v0, v1, p1, p0}, Lfm;->f(ZZZ)V
+    invoke-virtual {v0, v1, p1, p0}, Lxl;->f(ZZZ)V
 
     return p0
 
@@ -500,187 +499,178 @@
 .end method
 
 .method public final y(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;I)V
-    .locals 14
-
-    move-object v0, p0
+    .locals 13
 
     invoke-virtual/range {p1 .. p2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->d(Landroid/view/View;)Ljava/util/List;
 
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/material/appbar/AppBarLayout$ScrollingViewBehavior;->A(Ljava/util/List;)Lxl;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
     move-result-object v1
 
-    invoke-static {v1}, Lcom/google/android/material/appbar/AppBarLayout$ScrollingViewBehavior;->A(Ljava/util/List;)Lfm;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_2
-
-    invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v2
-
-    check-cast v2, Lnt3;
+    check-cast v1, Lnw3;
 
     invoke-virtual {p1}, Landroid/view/View;->getPaddingLeft()I
 
+    move-result v2
+
+    iget v3, v1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+
+    add-int/2addr v2, v3
+
+    invoke-virtual {v0}, Landroid/view/View;->getBottom()I
+
     move-result v3
 
-    iget v4, v2, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v4, v1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     add-int/2addr v3, v4
 
-    invoke-virtual {v1}, Landroid/view/View;->getBottom()I
-
-    move-result v4
-
-    iget v5, v2, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
-
-    add-int/2addr v4, v5
-
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
-    move-result v5
+    move-result v4
 
     invoke-virtual {p1}, Landroid/view/View;->getPaddingRight()I
 
-    move-result v6
+    move-result v5
 
-    sub-int/2addr v5, v6
+    sub-int/2addr v4, v5
 
-    iget v6, v2, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v5, v1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    sub-int/2addr v5, v6
+    sub-int/2addr v4, v5
 
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
+    move-result v5
+
+    invoke-virtual {v0}, Landroid/view/View;->getBottom()I
+
     move-result v6
 
-    invoke-virtual {v1}, Landroid/view/View;->getBottom()I
-
-    move-result v7
-
-    add-int/2addr v7, v6
+    add-int/2addr v6, v5
 
     invoke-virtual {p1}, Landroid/view/View;->getPaddingBottom()I
 
-    move-result v6
+    move-result v5
 
-    sub-int/2addr v7, v6
+    sub-int/2addr v6, v5
 
-    iget v6, v2, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v5, v1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    sub-int/2addr v7, v6
+    sub-int/2addr v6, v5
 
-    iget-object v11, v0, Lcom/google/android/material/appbar/AppBarLayout$ScrollingViewBehavior;->c:Landroid/graphics/Rect;
+    iget-object v10, p0, Lcom/google/android/material/appbar/AppBarLayout$ScrollingViewBehavior;->c:Landroid/graphics/Rect;
 
-    invoke-virtual {v11, v3, v4, v5, v7}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {v10, v2, v3, v4, v6}, Landroid/graphics/Rect;->set(IIII)V
 
-    invoke-virtual {p1}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getLastWindowInsets()Lnsf;
+    invoke-virtual {p1}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getLastWindowInsets()Lb8g;
 
-    move-result-object v3
+    move-result-object v2
 
-    if-eqz v3, :cond_0
+    if-eqz v2, :cond_0
 
-    sget-object v4, Leaf;->a:Ljava/util/WeakHashMap;
+    sget-object v3, Ltnf;->a:Ljava/util/WeakHashMap;
 
     invoke-virtual {p1}, Landroid/view/View;->getFitsSystemWindows()Z
 
-    move-result v4
+    move-result p1
 
-    if-eqz v4, :cond_0
+    if-eqz p1, :cond_0
 
-    invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getFitsSystemWindows()Z
+    invoke-virtual {p2}, Landroid/view/View;->getFitsSystemWindows()Z
 
-    move-result v4
+    move-result p1
 
-    if-nez v4, :cond_0
+    if-nez p1, :cond_0
 
-    iget v4, v11, Landroid/graphics/Rect;->left:I
+    iget p1, v10, Landroid/graphics/Rect;->left:I
 
-    invoke-virtual {v3}, Lnsf;->b()I
-
-    move-result v5
-
-    add-int/2addr v5, v4
-
-    iput v5, v11, Landroid/graphics/Rect;->left:I
-
-    iget v4, v11, Landroid/graphics/Rect;->right:I
-
-    invoke-virtual {v3}, Lnsf;->c()I
+    invoke-virtual {v2}, Lb8g;->b()I
 
     move-result v3
 
-    sub-int/2addr v4, v3
+    add-int/2addr v3, p1
 
-    iput v4, v11, Landroid/graphics/Rect;->right:I
+    iput v3, v10, Landroid/graphics/Rect;->left:I
+
+    iget p1, v10, Landroid/graphics/Rect;->right:I
+
+    invoke-virtual {v2}, Lb8g;->c()I
+
+    move-result v2
+
+    sub-int/2addr p1, v2
+
+    iput p1, v10, Landroid/graphics/Rect;->right:I
 
     :cond_0
-    iget v2, v2, Lnt3;->c:I
+    iget p1, v1, Lnw3;->c:I
 
-    if-nez v2, :cond_1
+    if-nez p1, :cond_1
 
-    const v2, 0x800033
+    const p1, 0x800033
 
     :cond_1
-    move v8, v2
+    move v7, p1
 
-    invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getMeasuredWidth()I
+    invoke-virtual {p2}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v8
+
+    invoke-virtual {p2}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v9
 
-    invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getMeasuredHeight()I
+    iget-object v11, p0, Lcom/google/android/material/appbar/AppBarLayout$ScrollingViewBehavior;->d:Landroid/graphics/Rect;
 
-    move-result v10
+    move/from16 v12, p3
 
-    iget-object v2, v0, Lcom/google/android/material/appbar/AppBarLayout$ScrollingViewBehavior;->d:Landroid/graphics/Rect;
+    invoke-static/range {v7 .. v12}, Landroid/view/Gravity;->apply(IIILandroid/graphics/Rect;Landroid/graphics/Rect;I)V
 
-    move-object v12, v2
+    invoke-virtual {p0, v0}, Lcom/google/android/material/appbar/AppBarLayout$ScrollingViewBehavior;->B(Landroid/view/View;)I
 
-    move/from16 v13, p3
+    move-result p1
 
-    invoke-static/range {v8 .. v13}, Landroid/view/Gravity;->apply(IIILandroid/graphics/Rect;Landroid/graphics/Rect;I)V
+    iget v1, v11, Landroid/graphics/Rect;->left:I
 
-    invoke-virtual {p0, v1}, Lcom/google/android/material/appbar/AppBarLayout$ScrollingViewBehavior;->B(Landroid/view/View;)I
+    iget v2, v11, Landroid/graphics/Rect;->top:I
 
-    move-result v3
+    sub-int/2addr v2, p1
 
-    iget v4, v2, Landroid/graphics/Rect;->left:I
+    iget v3, v11, Landroid/graphics/Rect;->right:I
 
-    iget v5, v2, Landroid/graphics/Rect;->top:I
+    iget v4, v11, Landroid/graphics/Rect;->bottom:I
 
-    sub-int/2addr v5, v3
+    sub-int/2addr v4, p1
 
-    iget v6, v2, Landroid/graphics/Rect;->right:I
+    invoke-virtual {p2, v1, v2, v3, v4}, Landroid/view/View;->layout(IIII)V
 
-    iget v7, v2, Landroid/graphics/Rect;->bottom:I
+    iget p1, v11, Landroid/graphics/Rect;->top:I
 
-    sub-int/2addr v7, v3
+    invoke-virtual {v0}, Landroid/view/View;->getBottom()I
 
-    move-object/from16 v3, p2
+    move-result p2
 
-    invoke-virtual {v3, v4, v5, v6, v7}, Landroid/view/View;->layout(IIII)V
+    sub-int/2addr p1, p2
 
-    iget v2, v2, Landroid/graphics/Rect;->top:I
+    iput p1, p0, Lcom/google/android/material/appbar/AppBarLayout$ScrollingViewBehavior;->e:I
 
-    invoke-virtual {v1}, Landroid/view/View;->getBottom()I
-
-    move-result v1
-
-    sub-int/2addr v2, v1
-
-    iput v2, v0, Lcom/google/android/material/appbar/AppBarLayout$ScrollingViewBehavior;->e:I
-
-    goto :goto_0
+    return-void
 
     :cond_2
-    move-object/from16 v3, p2
-
     invoke-virtual/range {p1 .. p3}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->p(Landroid/view/View;I)V
 
-    const/4 v1, 0x0
+    const/4 p1, 0x0
 
-    iput v1, v0, Lcom/google/android/material/appbar/AppBarLayout$ScrollingViewBehavior;->e:I
+    iput p1, p0, Lcom/google/android/material/appbar/AppBarLayout$ScrollingViewBehavior;->e:I
 
-    :goto_0
     return-void
 .end method

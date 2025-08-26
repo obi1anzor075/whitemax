@@ -1,103 +1,63 @@
 .class public final Lcfd;
-.super Ljava/lang/Object;
+.super Lca1;
 .source "SourceFile"
 
 
-# instance fields
-.field public A:Z
+# static fields
+.field public static final b:Lcfd;
 
-.field public B:I
 
-.field public C:I
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
 
-.field public D:I
+    new-instance v0, Lcfd;
 
-.field public E:Z
+    const/16 v1, 0xe
 
-.field public F:[Ljava/lang/String;
+    invoke-direct {v0, v1}, Lca1;-><init>(I)V
 
-.field public G:F
+    sput-object v0, Lcfd;->b:Lcfd;
 
-.field public H:F
+    return-void
+.end method
 
-.field public I:Z
 
-.field public J:Ljava/lang/String;
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-.field public K:I
+    const/4 v0, 0x1
 
-.field public L:I
+    if-ne p0, p1, :cond_0
 
-.field public M:I
+    return v0
 
-.field public N:I
+    :cond_0
+    instance-of p0, p1, Lcfd;
 
-.field public O:I
+    if-nez p0, :cond_1
 
-.field public P:I
+    const/4 p0, 0x0
 
-.field public Q:Z
+    return p0
 
-.field public R:Z
+    :cond_1
+    return v0
+.end method
 
-.field public S:I
+.method public final hashCode()I
+    .locals 0
 
-.field public T:Ljava/text/NumberFormat;
+    const p0, 0x6e285b4b
 
-.field public U:Z
+    return p0
+.end method
 
-.field public V:Z
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-.field public W:Z
+    const-string p0, "CameraPermission"
 
-.field public a:Ljfd;
-
-.field public b:F
-
-.field public c:F
-
-.field public d:F
-
-.field public e:Z
-
-.field public f:I
-
-.field public g:I
-
-.field public h:I
-
-.field public i:I
-
-.field public j:I
-
-.field public k:I
-
-.field public l:I
-
-.field public m:I
-
-.field public n:Z
-
-.field public o:Z
-
-.field public p:Z
-
-.field public q:I
-
-.field public r:I
-
-.field public s:I
-
-.field public t:I
-
-.field public u:Z
-
-.field public v:I
-
-.field public w:I
-
-.field public x:Z
-
-.field public y:J
-
-.field public z:Z
+    return-object p0
+.end method

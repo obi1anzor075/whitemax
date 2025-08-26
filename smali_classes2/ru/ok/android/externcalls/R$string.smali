@@ -1,6 +1,5 @@
 .class public final Lru/ok/android/externcalls/R$string;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # annotations
@@ -15,7 +14,7 @@
 
 
 # static fields
-.field public static app_name:I = 0x7f13006d
+.field public static app_name:I = 0x7f13006e
 
 
 # direct methods

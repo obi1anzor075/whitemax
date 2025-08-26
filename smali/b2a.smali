@@ -14,60 +14,30 @@
 
 .field public static final e:I
 
-.field public static final f:I
-
-.field public static final g:I
-
-.field public static final h:I
-
-.field public static final i:I
-
-.field public static final j:I
-
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    sget v0, Lhtb;->oneme_chatmedia_viewer_close_reason_photo_delete_text:I
+    sget v0, Lctb;->oneme_force_update_app_icon:I
 
     sput v0, Lb2a;->a:I
 
-    sget v0, Lhtb;->oneme_chatmedia_viewer_close_reason_video_delete_text:I
+    sget v0, Lctb;->oneme_force_update_subtitle:I
 
     sput v0, Lb2a;->b:I
 
-    sget v0, Lhtb;->oneme_chatmedia_viewer_seek_seconds:I
+    sget v0, Lctb;->oneme_force_update_title:I
 
     sput v0, Lb2a;->c:I
 
-    sget v0, Lhtb;->oneme_chatmedia_viewer_toolbar_action_forward_photo:I
+    sget v0, Lctb;->oneme_force_update_update_button:I
 
     sput v0, Lb2a;->d:I
 
-    sget v0, Lhtb;->oneme_chatmedia_viewer_toolbar_action_forward_video:I
+    sget v0, Lctb;->oneme_force_update_update_icon:I
 
     sput v0, Lb2a;->e:I
-
-    sget v0, Lhtb;->oneme_chatmedia_viewer_toolbar_action_goto_message:I
-
-    sput v0, Lb2a;->f:I
-
-    sget v0, Lhtb;->oneme_chatmedia_viewer_toolbar_action_share:I
-
-    sput v0, Lb2a;->g:I
-
-    sget v0, Lhtb;->oneme_chatmedia_viewer_toolbar_countable_title:I
-
-    sput v0, Lb2a;->h:I
-
-    sget v0, Lhtb;->oneme_chatmedia_viewer_toolbar_photo_title:I
-
-    sput v0, Lb2a;->i:I
-
-    sget v0, Lhtb;->oneme_chatmedia_viewer_toolbar_video_title:I
-
-    sput v0, Lb2a;->j:I
 
     return-void
 .end method

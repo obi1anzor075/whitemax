@@ -1,117 +1,296 @@
-.class public final Lma8;
+.class public Lma8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/view/View$OnClickListener;
+
+# static fields
+.field public static final h:Lma8;
+
+.field public static final i:Ljava/lang/String;
+
+.field public static final j:Ljava/lang/String;
+
+.field public static final k:Ljava/lang/String;
+
+.field public static final l:Ljava/lang/String;
+
+.field public static final m:Ljava/lang/String;
+
+.field public static final n:Ljava/lang/String;
+
+.field public static final o:Ljava/lang/String;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:J
 
-.field public final synthetic b:Landroidx/mediarouter/app/d;
+.field public final b:J
+
+.field public final c:J
+
+.field public final d:J
+
+.field public final e:Z
+
+.field public final f:Z
+
+.field public final g:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroidx/mediarouter/app/d;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput p2, p0, Lma8;->a:I
+    new-instance v0, Lka8;
 
-    iput-object p1, p0, Lma8;->b:Landroidx/mediarouter/app/d;
+    invoke-direct {v0}, Lka8;-><init>()V
+
+    new-instance v1, Lma8;
+
+    invoke-direct {v1, v0}, Lma8;-><init>(Lka8;)V
+
+    sput-object v1, Lma8;->h:Lma8;
+
+    const/4 v0, 0x0
+
+    const/16 v1, 0x24
+
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lma8;->i:Ljava/lang/String;
+
+    const/4 v0, 0x1
+
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lma8;->j:Ljava/lang/String;
+
+    const/4 v0, 0x2
+
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lma8;->k:Ljava/lang/String;
+
+    const/4 v0, 0x3
+
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lma8;->l:Ljava/lang/String;
+
+    const/4 v0, 0x4
+
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lma8;->m:Ljava/lang/String;
+
+    const/4 v0, 0x5
+
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lma8;->n:Ljava/lang/String;
+
+    const/4 v0, 0x6
+
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lma8;->o:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lka8;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iget-wide v0, p1, Lka8;->a:J
+
+    invoke-static {v0, v1}, Lpaf;->e0(J)J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lma8;->a:J
+
+    iget-wide v0, p1, Lka8;->b:J
+
+    invoke-static {v0, v1}, Lpaf;->e0(J)J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lma8;->c:J
+
+    iget-wide v0, p1, Lka8;->a:J
+
+    iput-wide v0, p0, Lma8;->b:J
+
+    iget-wide v0, p1, Lka8;->b:J
+
+    iput-wide v0, p0, Lma8;->d:J
+
+    iget-boolean v0, p1, Lka8;->c:Z
+
+    iput-boolean v0, p0, Lma8;->e:Z
+
+    iget-boolean v0, p1, Lka8;->d:Z
+
+    iput-boolean v0, p0, Lma8;->f:Z
+
+    iget-boolean p1, p1, Lka8;->e:Z
+
+    iput-boolean p1, p0, Lma8;->g:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 2
+.method public final a()Lka8;
+    .locals 3
 
-    iget p1, p0, Lma8;->a:I
+    new-instance v0, Lka8;
 
-    packed-switch p1, :pswitch_data_0
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iget-object p0, p0, Lma8;->b:Landroidx/mediarouter/app/d;
+    iget-wide v1, p0, Lma8;->b:J
 
-    iget-boolean p1, p0, Landroidx/mediarouter/app/d;->s1:Z
+    iput-wide v1, v0, Lka8;->a:J
+
+    iget-wide v1, p0, Lma8;->d:J
+
+    iput-wide v1, v0, Lka8;->b:J
+
+    iget-boolean v1, p0, Lma8;->e:Z
+
+    iput-boolean v1, v0, Lka8;->c:Z
+
+    iget-boolean v1, p0, Lma8;->f:Z
+
+    iput-boolean v1, v0, Lka8;->d:Z
+
+    iget-boolean p0, p0, Lma8;->g:Z
+
+    iput-boolean p0, v0, Lka8;->e:Z
+
+    return-object v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 7
 
     const/4 v0, 0x1
 
-    xor-int/2addr p1, v0
+    if-ne p0, p1, :cond_0
 
-    iput-boolean p1, p0, Landroidx/mediarouter/app/d;->s1:Z
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p0, Landroidx/mediarouter/app/d;->S0:Landroidx/mediarouter/app/OverlayListView;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
+    return v0
 
     :cond_0
-    iget-boolean p1, p0, Landroidx/mediarouter/app/d;->s1:Z
+    instance-of v1, p1, Lma8;
 
-    if-eqz p1, :cond_1
+    const/4 v2, 0x0
 
-    iget-object p1, p0, Landroidx/mediarouter/app/d;->z1:Landroid/view/animation/Interpolator;
+    if-nez v1, :cond_1
 
-    goto :goto_0
+    return v2
 
     :cond_1
-    iget-object p1, p0, Landroidx/mediarouter/app/d;->A1:Landroid/view/animation/Interpolator;
+    check-cast p1, Lma8;
 
-    :goto_0
-    iput-object p1, p0, Landroidx/mediarouter/app/d;->y1:Landroid/view/animation/Interpolator;
+    iget-wide v3, p0, Lma8;->b:J
 
-    invoke-virtual {p0, v0}, Landroidx/mediarouter/app/d;->t(Z)V
+    iget-wide v5, p1, Lma8;->b:J
 
-    return-void
+    cmp-long v1, v3, v5
 
-    :pswitch_0
-    iget-object p0, p0, Lma8;->b:Landroidx/mediarouter/app/d;
+    if-nez v1, :cond_2
 
-    iget-object p1, p0, Landroidx/mediarouter/app/d;->g1:Landroid/support/v4/media/session/MediaControllerCompat;
+    iget-wide v3, p0, Lma8;->d:J
 
-    if-eqz p1, :cond_2
+    iget-wide v5, p1, Lma8;->d:J
 
-    invoke-virtual {p1}, Landroid/support/v4/media/session/MediaControllerCompat;->getSessionActivity()Landroid/app/PendingIntent;
+    cmp-long v1, v3, v5
 
-    move-result-object p1
+    if-nez v1, :cond_2
 
-    if-eqz p1, :cond_2
+    iget-boolean v1, p0, Lma8;->e:Z
 
-    :try_start_0
-    invoke-virtual {p1}, Landroid/app/PendingIntent;->send()V
+    iget-boolean v3, p1, Lma8;->e:Z
 
-    invoke-virtual {p0}, Lfn;->dismiss()V
-    :try_end_0
-    .catch Landroid/app/PendingIntent$CanceledException; {:try_start_0 .. :try_end_0} :catch_0
+    if-ne v1, v3, :cond_2
 
-    goto :goto_1
+    iget-boolean v1, p0, Lma8;->f:Z
 
-    :catch_0
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    iget-boolean v3, p1, Lma8;->f:Z
+
+    if-ne v1, v3, :cond_2
+
+    iget-boolean p0, p0, Lma8;->g:Z
+
+    iget-boolean p1, p1, Lma8;->g:Z
+
+    if-ne p0, p1, :cond_2
+
+    return v0
 
     :cond_2
-    :goto_1
-    return-void
+    return v2
+.end method
 
-    :pswitch_1
-    iget-object p0, p0, Lma8;->b:Landroidx/mediarouter/app/d;
+.method public final hashCode()I
+    .locals 5
 
-    invoke-virtual {p0}, Lfn;->dismiss()V
+    iget-wide v0, p0, Lma8;->b:J
 
-    return-void
+    const/16 v2, 0x20
 
-    nop
+    ushr-long v3, v0, v2
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    xor-long/2addr v0, v3
+
+    long-to-int v0, v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-wide v3, p0, Lma8;->d:J
+
+    ushr-long v1, v3, v2
+
+    xor-long/2addr v1, v3
+
+    long-to-int v1, v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean v1, p0, Lma8;->e:Z
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean v1, p0, Lma8;->f:Z
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean p0, p0, Lma8;->g:Z
+
+    add-int/2addr v0, p0
+
+    return v0
 .end method

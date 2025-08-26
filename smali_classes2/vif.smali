@@ -1,160 +1,121 @@
-.class public final synthetic Lvif;
+.class public final Lvif;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Lmj3;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lxce;
+
+.field public final synthetic b:Lxif;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
+.method public constructor <init>(Lxif;Lxce;)V
     .locals 0
 
-    iput p1, p0, Lvif;->a:I
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lvif;->b:Lxif;
+
+    iput-object p2, p0, Lvif;->a:Lxce;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 2
+.method public final accept(Ljava/lang/Object;)V
+    .locals 4
 
-    iget p0, p0, Lvif;->a:I
+    check-cast p1, Lrb0;
 
-    packed-switch p0, :pswitch_data_0
+    iget-object v0, p0, Lvif;->b:Lxif;
 
-    new-instance p0, Lgyf;
+    iget-object v0, v0, Lxif;->a:Ljava/lang/String;
 
-    invoke-direct {p0}, Lgyf;-><init>()V
+    sget-object v1, Lg47;->m:Llr6;
 
-    return-object p0
+    if-nez v1, :cond_0
 
-    :pswitch_0
-    sget-object p0, Lone/me/login/welcome/WelcomeScreen;->w0:[Lk77;
+    goto :goto_0
 
-    sget-object p0, Ly0f;->a:Ly0f;
+    :cond_0
+    invoke-interface {v1}, Llr6;->c()Z
 
-    invoke-virtual {p0}, Ly0f;->b()Lq0a;
+    move-result v2
 
-    move-result-object p0
+    if-eqz v2, :cond_1
 
-    return-object p0
+    sget-object v2, Lqs7;->o:Lqs7;
 
-    :pswitch_1
-    sget-object p0, Lone/me/login/welcome/WelcomeScreen;->w0:[Lk77;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    sget-object p0, Lmnc;->c:Lmnc;
+    const-string p1, "onOutputSurface close event=0"
 
-    return-object p0
+    const/4 v3, 0x0
 
-    :pswitch_2
-    sget-object p0, Lone/me/webapp/settings/WebAppsSettingScreen;->X:[Lk77;
+    invoke-interface {v1, v2, v0, p1, v3}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    new-instance p0, Lipf;
+    :cond_1
+    :goto_0
+    iget-object p1, p0, Lvif;->b:Lxif;
 
-    sget-object v0, Luif;->a:Luif;
+    invoke-virtual {p1}, Lxif;->e()V
 
-    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lw4;
+    iget-object p1, p0, Lvif;->a:Lxce;
 
-    move-result-object v0
+    invoke-virtual {p1}, Lxce;->close()V
 
-    const-class v1, Lf03;
+    iget-object p1, p0, Lvif;->b:Lxif;
 
-    invoke-virtual {v0, v1}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    iget-object p1, p1, Lxif;->Z:Ljava/util/LinkedHashMap;
 
-    move-result-object v0
+    iget-object v0, p0, Lvif;->a:Lxce;
 
-    check-cast v0, Lf03;
+    invoke-virtual {p1, v0}, Ljava/util/AbstractMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    check-cast v0, Llqc;
+    move-result-object p1
 
-    invoke-virtual {v0}, Llqc;->s()J
+    check-cast p1, Landroid/view/Surface;
 
-    move-result-wide v0
+    if-eqz p1, :cond_3
 
-    invoke-direct {p0, v0, v1}, Lipf;-><init>(J)V
+    iget-object p0, p0, Lvif;->b:Lxif;
 
-    return-object p0
+    iget-object p0, p0, Lxif;->q0:Lmjf;
 
-    :pswitch_3
-    sget-object p0, Lone/me/webapp/settings/WebAppsSettingScreen;->X:[Lk77;
+    if-eqz p0, :cond_2
 
-    sget-object p0, Lmnc;->H1:Lmnc;
+    iget-object v0, p0, Lbn4;->c:Ljava/lang/Object;
 
-    return-object p0
+    check-cast v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    :pswitch_4
-    sget-object p0, Lone/me/webapp/settings/WebAppSettingsScreen;->w0:[Lk77;
+    const/4 v1, 0x1
 
-    sget-object p0, Lmnc;->I1:Lmnc;
+    invoke-static {v0, v1}, Lz76;->d(Ljava/util/concurrent/atomic/AtomicBoolean;Z)V
 
-    return-object p0
+    iget-object v0, p0, Lbn4;->e:Ljava/lang/Object;
 
-    :pswitch_5
-    sget-object p0, Lone/me/webapp/rootscreen/WebAppRootScreen;->K0:[Lk77;
+    check-cast v0, Ljava/lang/Thread;
 
-    sget-object p0, Lmnc;->J1:Lmnc;
+    invoke-static {v0}, Lz76;->c(Ljava/lang/Thread;)V
 
-    return-object p0
+    invoke-virtual {p0, p1, v1}, Lbn4;->s(Landroid/view/Surface;Z)V
 
-    :pswitch_6
-    const-string p0, "AES/CBC/PKCS7Padding"
+    return-void
 
-    invoke-static {p0}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;
+    :cond_2
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    move-result-object p0
+    const-string p1, "Required value was null."
 
-    return-object p0
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    :pswitch_7
-    const-string p0, "AndroidKeyStore"
+    throw p0
 
-    invoke-static {p0}, Ljava/security/KeyStore;->getInstance(Ljava/lang/String;)Ljava/security/KeyStore;
-
-    move-result-object p0
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Ljava/security/KeyStore;->load(Ljava/security/KeyStore$LoadStoreParameter;)V
-
-    return-object p0
-
-    :pswitch_8
-    new-instance p0, Lbhd;
-
-    const/4 v0, 0x1
-
-    invoke-direct {p0, v0}, Lbhd;-><init>(Z)V
-
-    return-object p0
-
-    :pswitch_9
-    new-instance p0, Lbhd;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lbhd;-><init>(Z)V
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    :cond_3
+    return-void
 .end method

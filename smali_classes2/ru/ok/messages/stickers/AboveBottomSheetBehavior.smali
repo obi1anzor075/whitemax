@@ -1,12 +1,12 @@
 .class public Lru/ok/messages/stickers/AboveBottomSheetBehavior;
-.super Lkt3;
+.super Lkw3;
 .source "SourceFile"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lkt3;"
+        "Lkw3;"
     }
 .end annotation
 
@@ -43,9 +43,9 @@
 
     move-result-object p0
 
-    check-cast p0, Lnt3;
+    check-cast p0, Lnw3;
 
-    iget-object p0, p0, Lnt3;->a:Lkt3;
+    iget-object p0, p0, Lnw3;->a:Lkw3;
 
     instance-of p0, p0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;
 
@@ -55,35 +55,33 @@
 .method public final h(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;)Z
     .locals 12
 
-    const/4 p0, 0x1
+    instance-of p0, p2, Landroid/view/ViewGroup;
 
-    instance-of v0, p2, Landroid/view/ViewGroup;
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    if-nez p0, :cond_0
 
-    if-nez v0, :cond_0
-
-    return v1
+    goto/16 :goto_2
 
     :cond_0
-    move-object v0, p2
+    move-object p0, p2
 
-    check-cast v0, Landroid/view/ViewGroup;
+    check-cast p0, Landroid/view/ViewGroup;
 
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_1
+    if-nez v1, :cond_1
 
-    return v1
+    goto/16 :goto_2
 
     :cond_1
     invoke-virtual {p3}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    invoke-static {}, Lzg4;->b()Lzg4;
+    invoke-static {}, Lck4;->b()Lck4;
 
-    move-result-object v2
+    move-result-object v1
 
     invoke-virtual {p3}, Landroid/view/View;->getY()F
 
@@ -91,42 +89,44 @@
 
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
-    move-result-object v3
+    move-result-object v2
 
-    iget v3, v3, Landroid/content/res/Configuration;->orientation:I
+    iget v2, v2, Landroid/content/res/Configuration;->orientation:I
 
-    if-ne p0, v3, :cond_a
+    const/4 v3, 0x1
+
+    if-ne v3, v2, :cond_9
 
     const/4 p1, 0x0
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     const v4, 0x7f7fffff    # Float.MAX_VALUE
 
     move v7, p1
 
-    move v6, v1
+    move v6, v0
 
     move v5, v4
 
-    move-object v4, v3
+    move-object v4, v2
 
     :goto_0
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v8
 
     if-ge v6, v8, :cond_5
 
-    invoke-virtual {v0, v6}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v6}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v8
 
@@ -159,7 +159,7 @@
 
     if-lez v11, :cond_3
 
-    move-object v3, v8
+    move-object v2, v8
 
     move v7, v10
 
@@ -174,62 +174,58 @@
 
     :cond_4
     :goto_1
-    add-int/2addr v6, p0
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
     :cond_5
-    if-eqz v3, :cond_9
+    if-eqz v2, :cond_a
 
     if-nez v4, :cond_6
 
     goto :goto_2
 
     :cond_6
-    iget v0, v2, Lzg4;->n:I
+    iget p0, v1, Lck4;->n:I
 
-    int-to-float v0, v0
+    int-to-float p0, p0
 
-    add-float v1, v7, v0
+    add-float v0, v7, p0
 
     sub-float/2addr v7, v5
 
-    add-float/2addr v7, v0
+    add-float/2addr v7, p0
 
-    cmpg-float v0, p3, v1
+    cmpg-float p0, p3, v0
 
-    if-gez v0, :cond_8
+    if-gez p0, :cond_8
 
-    cmpg-float p1, p3, v7
+    cmpg-float p0, p3, v7
 
-    if-gez p1, :cond_7
+    if-gez p0, :cond_7
 
-    sub-float/2addr v7, v1
+    sub-float/2addr v7, v0
 
     invoke-virtual {p2, v7}, Landroid/view/View;->setTranslationY(F)V
 
-    goto :goto_3
+    return v3
 
     :cond_7
-    sub-float/2addr p3, v1
+    sub-float/2addr p3, v0
 
     invoke-virtual {p2, p3}, Landroid/view/View;->setTranslationY(F)V
 
-    goto :goto_3
+    return v3
 
     :cond_8
     invoke-virtual {p2, p1}, Landroid/view/View;->setTranslationY(F)V
 
-    goto :goto_3
+    return v3
 
     :cond_9
-    :goto_2
-    return v1
-
-    :cond_a
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
-    move-result v0
+    move-result p0
 
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
@@ -237,49 +233,49 @@
 
     int-to-float p1, p1
 
-    sub-float v2, p1, p3
+    sub-float v1, p1, p3
 
-    int-to-float v3, v1
+    int-to-float v2, v0
 
-    cmpl-float v2, v2, v3
+    cmpl-float v1, v1, v2
 
-    if-lez v2, :cond_b
+    if-lez v1, :cond_a
 
-    add-float/2addr p3, v3
+    add-float/2addr p3, v2
 
     div-float/2addr p3, p1
 
-    float-to-double v1, p3
+    float-to-double v0, p3
 
-    const-wide v3, 0x3ff199999999999aL    # 1.1
+    const-wide v4, 0x3ff199999999999aL    # 1.1
 
-    sub-double/2addr v3, v1
+    sub-double/2addr v4, v0
 
-    const-wide/high16 v1, 0x3ff0000000000000L    # 1.0
+    const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
-    invoke-static {v1, v2, v3, v4}, Ljava/lang/Math;->min(DD)D
+    invoke-static {v0, v1, v4, v5}, Ljava/lang/Math;->min(DD)D
 
-    move-result-wide v1
+    move-result-wide v0
 
-    int-to-float p1, v0
+    int-to-float p0, p0
 
-    const/high16 p3, 0x40800000    # 4.0f
+    const/high16 p1, 0x40800000    # 4.0f
 
-    div-float/2addr p1, p3
+    div-float/2addr p0, p1
 
-    neg-float p1, p1
+    neg-float p0, p0
 
-    float-to-double v3, p1
+    float-to-double p0, p0
 
-    mul-double/2addr v3, v1
+    mul-double/2addr p0, v0
 
-    double-to-float p1, v3
+    double-to-float p0, p0
 
-    invoke-virtual {p2, p1}, Landroid/view/View;->setTranslationX(F)V
+    invoke-virtual {p2, p0}, Landroid/view/View;->setTranslationX(F)V
 
-    :goto_3
-    return p0
+    return v3
 
-    :cond_b
-    return v1
+    :cond_a
+    :goto_2
+    return v0
 .end method

@@ -117,7 +117,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/AssertionError;)V
-    .locals 3
+    .locals 4
 
     const/16 v0, 0x2712
 
@@ -126,32 +126,28 @@
 
     move-result-object v1
 
-    const-string v2, "CAMERA_CHARACTERISTICS_CREATION_ERROR"
-
-    filled-new-array {v2, v1, p1}, [Ljava/lang/Object;
-
-    move-result-object v1
-
     const-string v2, "%s (%d): %s"
 
-    invoke-static {v2, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const-string v3, "CAMERA_CHARACTERISTICS_CREATION_ERROR"
 
-    move-result-object v1
+    filled-new-array {v3, v1, p1}, [Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
 
     .line 4
-    invoke-direct {p0, v1, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {p0, v2, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 5
     iput v0, p0, Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;->a:I
 
     .line 6
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    sget-object p0, Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;->b:Ljava/util/Set;
 
-    move-result-object p0
-
-    sget-object v1, Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;->b:Ljava/util/Set;
-
-    invoke-interface {v1, p0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    invoke-interface {p0, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -164,14 +160,4 @@
 
     :cond_0
     return-void
-.end method
-
-.method public static a(Landroid/hardware/camera2/CameraAccessException;)Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;
-    .locals 1
-
-    new-instance v0, Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;
-
-    invoke-direct {v0, p0}, Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;-><init>(Landroid/hardware/camera2/CameraAccessException;)V
-
-    return-object v0
 .end method

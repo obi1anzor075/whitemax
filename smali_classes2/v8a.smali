@@ -1,61 +1,75 @@
 .class public final Lv8a;
-.super Ly8a;
+.super Ljava/util/concurrent/LinkedTransferQueue;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lv8a;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lv8a;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lv8a;->a:Lv8a;
-
-    return-void
-.end method
-
-
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final bridge contains(Ljava/lang/Object;)Z
     .locals 1
+
+    if-nez p1, :cond_0
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_0
-
-    return v0
+    goto :goto_0
 
     :cond_0
-    instance-of p0, p1, Lv8a;
+    instance-of v0, p1, Ljava/lang/Runnable;
 
-    if-nez p0, :cond_1
+    :goto_0
+    if-nez v0, :cond_1
 
     const/4 p0, 0x0
 
     return p0
 
     :cond_1
-    return v0
-.end method
+    check-cast p1, Ljava/lang/Runnable;
 
-.method public final hashCode()I
-    .locals 0
+    invoke-super {p0, p1}, Ljava/util/concurrent/LinkedTransferQueue;->contains(Ljava/lang/Object;)Z
 
-    const p0, 0x4b0cc9f9    # 9226745.0f
+    move-result p0
 
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public final offer(Ljava/lang/Object;)Z
     .locals 0
 
-    const-string p0, "Medium"
+    check-cast p1, Ljava/lang/Runnable;
 
-    return-object p0
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/LinkedTransferQueue;->tryTransfer(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final bridge remove(Ljava/lang/Object;)Z
+    .locals 1
+
+    if-nez p1, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    instance-of v0, p1, Ljava/lang/Runnable;
+
+    :goto_0
+    if-nez v0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    check-cast p1, Ljava/lang/Runnable;
+
+    invoke-super {p0, p1}, Ljava/util/concurrent/LinkedTransferQueue;->remove(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
 .end method

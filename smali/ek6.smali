@@ -1,39 +1,91 @@
-.class public final Lek6;
-.super Lchd;
+.class public abstract Lek6;
+.super Lbj3;
 .source "SourceFile"
 
 
+# instance fields
+.field public q0:[Lbj3;
+
+.field public r0:I
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    invoke-direct {p0}, Lbj3;-><init>()V
+
+    const/4 v0, 0x4
+
+    new-array v0, v0, [Lbj3;
+
+    iput-object v0, p0, Lek6;->q0:[Lbj3;
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lek6;->r0:I
+
+    return-void
+.end method
+
+
 # virtual methods
-.method public final A(Lpg7;)V
-    .locals 2
+.method public final R(ILs6g;Ljava/util/ArrayList;)V
+    .locals 5
 
-    check-cast p1, Lck6;
+    const/4 v0, 0x0
 
-    iget-object p0, p0, Lb7c;->a:Landroid/view/View;
+    move v1, v0
 
-    check-cast p0, Ldk6;
+    :goto_0
+    iget v2, p0, Lek6;->r0:I
 
-    iget-object v0, p0, Ldk6;->K0:Landroidx/appcompat/widget/AppCompatTextView;
+    if-ge v1, v2, :cond_1
 
-    iget-object v1, p1, Lck6;->a:Ljava/lang/String;
+    iget-object v2, p0, Lek6;->q0:[Lbj3;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    aget-object v2, v2, v1
 
-    iget-object p1, p1, Lck6;->b:Ljava/lang/Boolean;
+    iget-object v3, p2, Ls6g;->a:Ljava/util/ArrayList;
 
-    if-eqz p1, :cond_0
+    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    move-result v4
 
-    move-result p1
+    if-eqz v4, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :goto_1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :cond_0
-    const/4 p1, 0x0
+    :cond_1
+    :goto_2
+    iget v1, p0, Lek6;->r0:I
 
-    :goto_0
-    invoke-virtual {p0, p1}, Ldk6;->setSelected(Z)V
+    if-ge v0, v1, :cond_2
+
+    iget-object v1, p0, Lek6;->q0:[Lbj3;
+
+    aget-object v1, v1, v0
+
+    invoke-static {v1, p1, p3, p2}, Lvk9;->k(Lbj3;ILjava/util/ArrayList;Ls6g;)Ls6g;
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_2
+
+    :cond_2
+    return-void
+.end method
+
+.method public S()V
+    .locals 0
 
     return-void
 .end method

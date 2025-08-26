@@ -67,7 +67,7 @@
 
     invoke-static {p2}, Ljava/util/Objects;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    goto :goto_0
+    return-void
 
     :cond_1
     iget-object p1, p0, Landroid/support/v4/media/MediaBrowserCompat$CustomActionResultReceiver;->mCallback:Landroid/support/v4/media/MediaBrowserCompat$CustomActionCallback;
@@ -78,7 +78,7 @@
 
     invoke-virtual {p1, v0, p0, p2}, Landroid/support/v4/media/MediaBrowserCompat$CustomActionCallback;->onProgressUpdate(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/Bundle;)V
 
-    goto :goto_0
+    return-void
 
     :cond_2
     iget-object p1, p0, Landroid/support/v4/media/MediaBrowserCompat$CustomActionResultReceiver;->mCallback:Landroid/support/v4/media/MediaBrowserCompat$CustomActionCallback;
@@ -89,7 +89,7 @@
 
     invoke-virtual {p1, v0, p0, p2}, Landroid/support/v4/media/MediaBrowserCompat$CustomActionCallback;->onResult(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/Bundle;)V
 
-    goto :goto_0
+    return-void
 
     :cond_3
     iget-object p1, p0, Landroid/support/v4/media/MediaBrowserCompat$CustomActionResultReceiver;->mCallback:Landroid/support/v4/media/MediaBrowserCompat$CustomActionCallback;
@@ -100,6 +100,5 @@
 
     invoke-virtual {p1, v0, p0, p2}, Landroid/support/v4/media/MediaBrowserCompat$CustomActionCallback;->onError(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/Bundle;)V
 
-    :goto_0
     return-void
 .end method

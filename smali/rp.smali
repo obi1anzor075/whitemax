@@ -2,105 +2,100 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lz24;
 
-
-# static fields
-.field public static final a:Lrp;
-
-.field public static final b:Lsp;
+# instance fields
+.field public final a:Ljava/lang/Boolean;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ljava/lang/Boolean;)V
+    .locals 0
 
-    new-instance v0, Lrp;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lrp;->a:Lrp;
-
-    sget-object v0, Lsp;->b:Lsp;
-
-    sput-object v0, Lrp;->b:Lsp;
+    iput-object p1, p0, Lrp;->a:Ljava/lang/Boolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lg34;
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-    sget-object p0, Lrp;->b:Lsp;
+    const/4 v0, 0x1
 
-    return-object p0
-.end method
+    if-ne p0, p1, :cond_0
 
-.method public final b(Ljava/lang/String;Lc34;Landroid/os/Bundle;)Lj34;
-    .locals 8
+    return v0
 
-    sget-object p0, Lrp;->b:Lsp;
+    :cond_0
+    instance-of v1, p1, Lrp;
 
-    iget-object p0, p0, Lg34;->a:Ljava/util/LinkedHashSet;
+    const/4 v2, 0x0
 
-    invoke-interface {p0, p2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lrp;
+
+    iget-object p0, p0, Lrp;->a:Ljava/lang/Boolean;
+
+    iget-object p1, p1, Lrp;->a:Ljava/lang/Boolean;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
+
+    if-nez p0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    iget-object p0, p0, Lrp;->a:Ljava/lang/Boolean;
 
     if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
-    return-object p0
+    return p0
 
     :cond_0
-    sget-object p0, Lsp;->c:Lc34;
-
-    invoke-virtual {p2, p0}, Lc34;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result p0
 
-    if-eqz p0, :cond_1
+    return p0
+.end method
 
-    new-instance v6, Li;
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    const/4 p0, 0x1
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6, p0}, Li;-><init>(I)V
+    const-string v1, "Selection(isSelected="
 
-    new-instance p0, Lj34;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const/16 v7, 0x10
+    iget-object p0, p0, Lrp;->a:Ljava/lang/Boolean;
 
-    const/4 v5, 0x0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const/4 v4, 0x1
+    const-string p0, ")"
 
-    move-object v0, p0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object v1, p1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-object v2, p2
-
-    move-object v3, p3
-
-    invoke-direct/range {v0 .. v7}, Lj34;-><init>(Ljava/lang/String;Lc34;Landroid/os/Bundle;ILh34;Li34;I)V
+    move-result-object p0
 
     return-object p0
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "Unknown route="
-
-    invoke-static {p1, p2}, Lhr1;->f(Ljava/lang/String;Lc34;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method

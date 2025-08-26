@@ -3,123 +3,52 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ld87;
+.implements Lvv5;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Ljava/util/ArrayList;
 
-.field public final synthetic b:Lone/me/sdk/arch/Widget;
+.field public final b:I
+
+.field public final c:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/sdk/arch/Widget;I)V
-    .locals 0
-
-    iput p2, p0, Lbw5;->a:I
-
-    iput-object p1, p0, Lbw5;->b:Lone/me/sdk/arch/Widget;
+.method public constructor <init>(Ljava/util/ArrayList;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbw5;->a:Ljava/util/ArrayList;
+
+    sget p1, Lltb;->oneme_folder_widget_section_view_type:I
+
+    iput p1, p0, Lbw5;->b:I
+
+    sget p1, Lltb;->oneme_folder_widget_section_id:I
+
+    int-to-long v0, p1
+
+    iput-wide v0, p0, Lbw5;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final m()V
+.method public final getItemId()J
     .locals 2
 
-    const/4 v0, 0x0
+    iget-wide v0, p0, Lbw5;->c:J
 
-    iget-object v1, p0, Lbw5;->b:Lone/me/sdk/arch/Widget;
+    return-wide v0
+.end method
 
-    iget p0, p0, Lbw5;->a:I
+.method public final m()I
+    .locals 0
 
-    packed-switch p0, :pswitch_data_0
+    iget p0, p0, Lbw5;->b:I
 
-    check-cast v1, Lone/me/sharedata/ShareDataPickerScreen;
-
-    iget-object p0, v1, Lone/me/sharedata/ShareDataPickerScreen;->B0:Lnl0;
-
-    invoke-virtual {p0}, Lnl0;->a()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {p0}, Lnl0;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljq8;
-
-    invoke-virtual {p0, v0}, Ljq8;->e(Z)V
-
-    :cond_0
-    return-void
-
-    :pswitch_0
-    check-cast v1, Lone/me/chats/picker/PickerChatController;
-
-    iget-object p0, v1, Lone/me/chats/picker/PickerChatController;->y0:Lnl0;
-
-    invoke-virtual {p0}, Lnl0;->a()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-virtual {p0}, Lnl0;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljq8;
-
-    invoke-virtual {p0, v0}, Ljq8;->e(Z)V
-
-    :cond_1
-    return-void
-
-    :pswitch_1
-    sget-object p0, Lone/me/chatscreen/mediabar/MediaBarWidget;->h1:[Lk77;
-
-    check-cast v1, Lone/me/chatscreen/mediabar/MediaBarWidget;
-
-    invoke-virtual {v1}, Lone/me/chatscreen/mediabar/MediaBarWidget;->v0()Ljq8;
-
-    move-result-object p0
-
-    invoke-virtual {p0, v0}, Ljq8;->e(Z)V
-
-    return-void
-
-    :pswitch_2
-    check-cast v1, Lone/me/chats/forward/ForwardPickerScreen;
-
-    iget-object p0, v1, Lone/me/chats/forward/ForwardPickerScreen;->E0:Lnl0;
-
-    invoke-virtual {p0}, Lnl0;->a()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    invoke-virtual {p0}, Lnl0;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljq8;
-
-    invoke-virtual {p0, v0}, Ljq8;->e(Z)V
-
-    :cond_2
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method

@@ -1,115 +1,40 @@
-.class public final Li1c;
-.super Lrde;
-.source "SourceFile"
+.class public abstract Li1c;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field public final synthetic e:I
+# static fields
+.field public static MediaRouteButton:[I = null
 
-.field public final synthetic f:Lk1c;
+.field public static MediaRouteButton_android_minHeight:I = 0x1
+
+.field public static MediaRouteButton_android_minWidth:I = 0x0
+
+.field public static MediaRouteButton_externalRouteEnabledDrawable:I = 0x2
+
+.field public static MediaRouteButton_externalRouteEnabledDrawableStatic:I = 0x3
+
+.field public static MediaRouteButton_mediaRouteButtonTint:I = 0x4
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lk1c;)V
-    .locals 1
+.method public static constructor <clinit>()V
+    .locals 5
 
-    const/4 v0, 0x1
+    const v0, 0x7f0403a2
 
-    iput v0, p0, Li1c;->e:I
+    const v1, 0x7f040653
 
-    iput-object p2, p0, Li1c;->f:Lk1c;
+    const v2, 0x101013f
 
-    const/4 p2, 0x1
+    const v3, 0x1010140
 
-    .line 1
-    invoke-direct {p0, p1, p2}, Lrde;-><init>(Ljava/lang/String;Z)V
+    const v4, 0x7f0403a1
 
-    return-void
-.end method
+    filled-new-array {v2, v3, v4, v0, v1}, [I
 
-.method public constructor <init>(Lk1c;)V
-    .locals 2
+    move-result-object v0
 
-    const/4 v0, 0x0
-
-    iput v0, p0, Li1c;->e:I
-
-    .line 2
-    iput-object p1, p0, Li1c;->f:Lk1c;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 3
-    iget-object p1, p1, Lk1c;->g:Ljava/lang/String;
-
-    .line 4
-    const-string v1, " writer"
-
-    .line 5
-    invoke-static {v0, p1, v1}, Lwn6;->l(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const/4 v0, 0x1
-
-    .line 6
-    invoke-direct {p0, p1, v0}, Lrde;-><init>(Ljava/lang/String;Z)V
+    sput-object v0, Li1c;->MediaRouteButton:[I
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final a()J
-    .locals 2
-
-    iget v0, p0, Li1c;->e:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Li1c;->f:Lk1c;
-
-    iget-object p0, p0, Lk1c;->b:Ly0c;
-
-    invoke-virtual {p0}, Ly0c;->d()V
-
-    const-wide/16 v0, -0x1
-
-    return-wide v0
-
-    :pswitch_0
-    iget-object p0, p0, Li1c;->f:Lk1c;
-
-    :try_start_0
-    invoke-virtual {p0}, Lk1c;->h()Z
-
-    move-result p0
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    if-eqz p0, :cond_0
-
-    const-wide/16 v0, 0x0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    invoke-virtual {p0, v0}, Lk1c;->c(Ljava/lang/Exception;)V
-
-    :cond_0
-    const-wide/16 v0, -0x1
-
-    :goto_0
-    return-wide v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

@@ -1,133 +1,232 @@
 .class public final Lth7;
-.super Ljava/util/AbstractList;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/util/RandomAccess;
-.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public final a:Ljava/util/List;
+.field public a:Z
 
-.field public final b:Le26;
+.field public b:I
 
+.field public c:I
 
-# direct methods
-.method public constructor <init>(Le26;Ljava/util/List;)V
-    .locals 0
+.field public d:I
 
-    invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
+.field public e:I
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+.field public f:I
 
-    iput-object p2, p0, Lth7;->a:Ljava/util/List;
+.field public g:I
 
-    iput-object p1, p0, Lth7;->b:Le26;
+.field public h:I
 
-    return-void
-.end method
+.field public i:I
+
+.field public j:I
+
+.field public k:Ljava/util/List;
+
+.field public l:Z
 
 
 # virtual methods
-.method public final get(I)Ljava/lang/Object;
-    .locals 1
+.method public final a(Landroid/view/View;)V
+    .locals 7
 
-    iget-object v0, p0, Lth7;->a:Ljava/util/List;
+    iget-object v0, p0, Lth7;->k:Ljava/util/List;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    move-result-object p1
-
-    iget-object p0, p0, Lth7;->b:Le26;
-
-    invoke-interface {p0, p1}, Le26;->apply(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final isEmpty()Z
-    .locals 0
-
-    iget-object p0, p0, Lth7;->a:Ljava/util/List;
-
-    invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final iterator()Ljava/util/Iterator;
-    .locals 0
-
-    invoke-virtual {p0}, Ljava/util/AbstractList;->listIterator()Ljava/util/ListIterator;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final listIterator(I)Ljava/util/ListIterator;
-    .locals 2
-
-    new-instance v0, Lsh7;
-
-    iget-object v1, p0, Lth7;->a:Ljava/util/List;
-
-    invoke-interface {v1, p1}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;
-
-    move-result-object p1
+    move-result v0
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, p1, v1}, Lsh7;-><init>(Ljava/util/AbstractList;Ljava/util/ListIterator;I)V
+    const v2, 0x7fffffff
 
-    return-object v0
-.end method
+    const/4 v3, 0x0
 
-.method public final remove(I)Ljava/lang/Object;
-    .locals 1
+    :goto_0
+    if-ge v3, v0, :cond_4
 
-    iget-object v0, p0, Lth7;->a:Ljava/util/List;
+    iget-object v4, p0, Lth7;->k:Ljava/util/List;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+    invoke-interface {v4, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lccc;
+
+    iget-object v4, v4, Lccc;->a:Landroid/view/View;
+
+    invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v5
+
+    check-cast v5, Lobc;
+
+    if-eq v4, p1, :cond_3
+
+    iget-object v6, v5, Lobc;->a:Lccc;
+
+    invoke-virtual {v6}, Lccc;->o()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    iget-object v5, v5, Lobc;->a:Lccc;
+
+    invoke-virtual {v5}, Lccc;->i()I
+
+    move-result v5
+
+    iget v6, p0, Lth7;->d:I
+
+    sub-int/2addr v5, v6
+
+    iget v6, p0, Lth7;->e:I
+
+    mul-int/2addr v5, v6
+
+    if-gez v5, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    if-ge v5, v2, :cond_3
+
+    move-object v1, v4
+
+    if-nez v5, :cond_2
+
+    goto :goto_2
+
+    :cond_2
+    move v2, v5
+
+    :cond_3
+    :goto_1
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_4
+    :goto_2
+    if-nez v1, :cond_5
+
+    const/4 p1, -0x1
+
+    iput p1, p0, Lth7;->d:I
+
+    return-void
+
+    :cond_5
+    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p1
 
-    iget-object p0, p0, Lth7;->b:Le26;
+    check-cast p1, Lobc;
 
-    invoke-interface {p0, p1}, Le26;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object p1, p1, Lobc;->a:Lccc;
 
-    move-result-object p0
+    invoke-virtual {p1}, Lccc;->i()I
 
-    return-object p0
-.end method
+    move-result p1
 
-.method public final removeRange(II)V
-    .locals 0
-
-    iget-object p0, p0, Lth7;->a:Ljava/util/List;
-
-    invoke-interface {p0, p1, p2}, Ljava/util/List;->subList(II)Ljava/util/List;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Ljava/util/List;->clear()V
+    iput p1, p0, Lth7;->d:I
 
     return-void
 .end method
 
-.method public final size()I
-    .locals 0
+.method public final b(Lubc;)Landroid/view/View;
+    .locals 4
 
-    iget-object p0, p0, Lth7;->a:Ljava/util/List;
+    iget-object v0, p0, Lth7;->k:Ljava/util/List;
 
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    if-eqz v0, :cond_3
 
-    move-result p0
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    return p0
+    move-result p1
+
+    const/4 v0, 0x0
+
+    :goto_0
+    if-ge v0, p1, :cond_2
+
+    iget-object v1, p0, Lth7;->k:Ljava/util/List;
+
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lccc;
+
+    iget-object v1, v1, Lccc;->a:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v2
+
+    check-cast v2, Lobc;
+
+    iget-object v3, v2, Lobc;->a:Lccc;
+
+    invoke-virtual {v3}, Lccc;->o()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    iget v3, p0, Lth7;->d:I
+
+    iget-object v2, v2, Lobc;->a:Lccc;
+
+    invoke-virtual {v2}, Lccc;->i()I
+
+    move-result v2
+
+    if-ne v3, v2, :cond_1
+
+    invoke-virtual {p0, v1}, Lth7;->a(Landroid/view/View;)V
+
+    return-object v1
+
+    :cond_1
+    :goto_1
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_3
+    iget v0, p0, Lth7;->d:I
+
+    const-wide v1, 0x7fffffffffffffffL
+
+    invoke-virtual {p1, v0, v1, v2}, Lubc;->j(IJ)Lccc;
+
+    move-result-object p1
+
+    iget-object p1, p1, Lccc;->a:Landroid/view/View;
+
+    iget v0, p0, Lth7;->d:I
+
+    iget v1, p0, Lth7;->e:I
+
+    add-int/2addr v0, v1
+
+    iput v0, p0, Lth7;->d:I
+
+    return-object p1
 .end method

@@ -1,220 +1,110 @@
-.class public final enum Lwfd;
-.super Ljava/lang/Enum;
+.class public final Lwfd;
+.super Lqde;
 .source "SourceFile"
 
-
-# static fields
-.field public static final b:Lmk9;
-
-.field public static final synthetic c:[Lwfd;
-
-.field public static final synthetic o:Lpz4;
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public X:I
+
+.field public final synthetic Y:Llgd;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 13
-
-    new-instance v0, Lwfd;
-
-    const-string v1, "CANCELED"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2, v1}, Lwfd;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    new-instance v1, Lwfd;
-
-    const-string v2, "REJECTED"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3, v2}, Lwfd;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    new-instance v2, Lwfd;
-
-    const-string v3, "HUNGUP"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4, v3}, Lwfd;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    new-instance v3, Lwfd;
-
-    const-string v4, "MISSED"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v3, v4, v5, v4}, Lwfd;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    new-instance v4, Lwfd;
-
-    const-string v5, "TIMEOUT"
-
-    const/4 v6, 0x4
-
-    invoke-direct {v4, v5, v6, v5}, Lwfd;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    new-instance v5, Lwfd;
-
-    const-string v6, "BUSY"
-
-    const/4 v7, 0x5
-
-    invoke-direct {v5, v6, v7, v6}, Lwfd;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    new-instance v6, Lwfd;
-
-    const-string v7, "FAILED"
-
-    const/4 v8, 0x6
-
-    invoke-direct {v6, v7, v8, v7}, Lwfd;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    new-instance v7, Lwfd;
-
-    const-string v8, "REMOVED"
-
-    const/4 v9, 0x7
-
-    invoke-direct {v7, v8, v9, v8}, Lwfd;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    new-instance v8, Lwfd;
-
-    const-string v9, "ANOTHER_DEVICE"
-
-    const/16 v10, 0x8
-
-    invoke-direct {v8, v9, v10, v9}, Lwfd;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    new-instance v9, Lwfd;
-
-    const-string v10, "KILLED"
-
-    const/16 v11, 0x9
-
-    invoke-direct {v9, v10, v11, v10}, Lwfd;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    new-instance v10, Lwfd;
-
-    const-string v11, "CALL_TIMEOUT"
-
-    const/16 v12, 0xa
-
-    invoke-direct {v10, v11, v12, v11}, Lwfd;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    filled-new-array/range {v0 .. v10}, [Lwfd;
-
-    move-result-object v0
-
-    sput-object v0, Lwfd;->c:[Lwfd;
-
-    new-instance v1, Lpz4;
-
-    invoke-direct {v1, v0}, Lpz4;-><init>([Ljava/lang/Enum;)V
-
-    sput-object v1, Lwfd;->o:Lpz4;
-
-    new-instance v0, Lmk9;
-
-    const/16 v1, 0x10
-
-    invoke-direct {v0, v1}, Lmk9;-><init>(I)V
-
-    sput-object v0, Lwfd;->b:Lmk9;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
+.method public constructor <init>(Llgd;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p1, p0, Lwfd;->Y:Llgd;
 
-    iput-object p3, p0, Lwfd;->a:Ljava/lang/String;
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public static final a(Ljava/lang/String;)Lwfd;
-    .locals 3
 
-    sget-object v0, Lwfd;->b:Lmk9;
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast p1, Lw7b;
 
-    sget-object v0, Lwfd;->o:Lpz4;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v1, Lu1;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v2, v0}, Lu1;-><init>(ILjava/lang/Object;)V
-
-    :cond_0
-    invoke-virtual {v1}, Lu1;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v1}, Lu1;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Lwfd;
-
-    iget-object v2, v2, Lwfd;->a:Ljava/lang/String;
-
-    invoke-static {v2, p0}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    :goto_0
-    check-cast v0, Lwfd;
-
-    return-object v0
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lwfd;
-    .locals 1
-
-    const-class v0, Lwfd;
-
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-virtual {p0, p1, p2}, Lwfd;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
     check-cast p0, Lwfd;
 
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lwfd;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
     return-object p0
 .end method
 
-.method public static values()[Lwfd;
-    .locals 1
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
 
-    sget-object v0, Lwfd;->c:[Lwfd;
+    new-instance p1, Lwfd;
 
-    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
+    iget-object p0, p0, Lwfd;->Y:Llgd;
 
-    move-result-object v0
+    invoke-direct {p1, p0, p2}, Lwfd;-><init>(Llgd;Lkotlin/coroutines/Continuation;)V
 
-    check-cast v0, [Lwfd;
+    return-object p1
+.end method
 
-    return-object v0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    iget v0, p0, Lwfd;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iput v1, p0, Lwfd;->X:I
+
+    iget-object p1, p0, Lwfd;->Y:Llgd;
+
+    invoke-static {p1, p0}, Llgd;->r(Llgd;Lqde;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

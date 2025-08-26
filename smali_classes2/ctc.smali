@@ -1,64 +1,29 @@
-.class public final Lctc;
+.class public interface abstract Lctc;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ldtc;
-
-
-# instance fields
-.field public final X:I
-
-.field public final a:Lo7d;
-
-.field public final b:La34;
-
-.field public final c:I
-
-.field public final o:J
-
-
-# direct methods
-.method public constructor <init>(Lo7d;La34;IJI)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lctc;->a:Lo7d;
-
-    iput-object p2, p0, Lctc;->b:La34;
-
-    iput p3, p0, Lctc;->c:I
-
-    iput-wide p4, p0, Lctc;->o:J
-
-    iput p6, p0, Lctc;->X:I
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final a()I
-    .locals 0
-
-    iget p0, p0, Lctc;->X:I
-
-    return p0
+.method public abstract a()I
 .end method
 
-.method public final getItemId()J
-    .locals 2
-
-    iget-wide v0, p0, Lctc;->o:J
-
-    return-wide v0
+.method public abstract b(Landroid/content/ContentResolver;Landroid/net/Uri;)V
 .end method
 
-.method public final l()I
-    .locals 0
+.method public abstract c()Landroid/net/Uri;
+.end method
 
-    iget p0, p0, Lctc;->c:I
+.method public abstract d()Ljava/lang/String;
+.end method
 
-    return p0
+.method public abstract e()Ljava/lang/Integer;
+.end method
+
+.method public abstract f(Ljava/io/File;)V
+.end method
+
+.method public abstract getHeight()Ljava/lang/Integer;
+.end method
+
+.method public abstract getWidth()Ljava/lang/Integer;
 .end method

@@ -1,41 +1,63 @@
-.class public final Lu7d;
-.super Lg34;
+.class public abstract Lu7d;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final b:Lu7d;
-
-.field public static final c:Lc34;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public static a([B)Lv7d;
+    .locals 7
 
-    new-instance v0, Lu7d;
+    new-instance v0, Lru/ok/tamtam/nano/Tasks$SyncChatHistory;
 
-    invoke-direct {v0}, Lg34;-><init>()V
+    invoke-direct {v0}, Lru/ok/tamtam/nano/Tasks$SyncChatHistory;-><init>()V
 
-    sput-object v0, Lu7d;->b:Lu7d;
+    :try_start_0
+    invoke-static {v0, p0}, Lnv8;->mergeFrom(Lnv8;[B)Lnv8;
 
-    const/4 v1, 0x0
+    move-result-object p0
 
-    new-array v2, v1, [Ljava/lang/String;
+    check-cast p0, Lru/ok/tamtam/nano/Tasks$SyncChatHistory;
+    :try_end_0
+    .catch Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/4 v3, 0x0
+    new-instance v0, Lv7d;
 
-    const/4 v4, 0x0
+    iget-wide v1, p0, Lru/ok/tamtam/nano/Tasks$SyncChatHistory;->taskId:J
 
-    const-string v1, ":settings/caching"
+    iget-wide v3, p0, Lru/ok/tamtam/nano/Tasks$SyncChatHistory;->chatId:J
 
-    const/16 v5, 0xe
+    iget v5, p0, Lru/ok/tamtam/nano/Tasks$SyncChatHistory;->count:I
 
-    invoke-static/range {v0 .. v5}, Lg34;->a(Lg34;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lc34;
+    sget-object v6, Ltg4;->o:Ldwc;
 
-    move-result-object v0
+    iget p0, p0, Lru/ok/tamtam/nano/Tasks$SyncChatHistory;->itemTypeId:I
 
-    sput-object v0, Lu7d;->c:Lc34;
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    return-void
+    move-result-object p0
+
+    invoke-static {v6, p0}, Ldwc;->l(Ldwc;Ljava/lang/Integer;)Ltg4;
+
+    move-result-object v6
+
+    invoke-direct/range {v0 .. v6}, Lv7d;-><init>(JJILtg4;)V
+
+    iget-object p0, v0, Lv7d;->Y:Ljava/lang/String;
+
+    const-string v1, "parseFrom"
+
+    invoke-static {p0, v1}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    move-object p0, v0
+
+    new-instance v0, Lru/ok/tamtam/nano/ProtoException;
+
+    invoke-direct {v0, p0}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
 .end method

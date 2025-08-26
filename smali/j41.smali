@@ -3,57 +3,96 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lqk1;
+.implements Lx64;
 
 
 # instance fields
-.field public final synthetic a:Ld5b;
+.field public final synthetic a:J
+
+.field public final synthetic b:Ljava/lang/String;
+
+.field public final synthetic c:Ljava/lang/String;
+
+.field public final synthetic o:Z
 
 
 # direct methods
-.method public constructor <init>(Ld5b;)V
+.method public constructor <init>(JLjava/lang/String;Ljava/lang/String;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj41;->a:Ld5b;
+    iput-wide p1, p0, Lj41;->a:J
+
+    iput-object p3, p0, Lj41;->b:Ljava/lang/String;
+
+    iput-object p4, p0, Lj41;->c:Ljava/lang/String;
+
+    iput-boolean p5, p0, Lj41;->o:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onMediaConnected(Lru/ok/android/externcalls/sdk/connection/MediaConnectionListener$ConnectedInfo;)V
-    .locals 0
+.method public final a()Ljava/lang/Object;
+    .locals 6
 
-    invoke-virtual {p1}, Lru/ok/android/externcalls/sdk/connection/MediaConnectionListener$ConnectedInfo;->isFirstConnection()Z
+    sget-object v0, Lone/me/calls/ui/ui/incoming/CallIncomingScreen;->Z:Lec2;
 
-    move-result p1
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    if-nez p1, :cond_0
+    new-instance v0, Lone/me/calls/ui/ui/incoming/CallIncomingScreen;
 
-    sget-object p1, Lp31;->c:Lp31;
+    new-instance v1, Ldna;
 
-    iget-object p0, p0, Lj41;->a:Ld5b;
+    const-string v2, "call_incoming_avatar"
 
-    check-cast p0, La5b;
+    iget-object v3, p0, Lj41;->c:Ljava/lang/String;
 
-    invoke-virtual {p0, p1}, La5b;->n(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v1, v2, v3}, Ldna;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    :cond_0
-    return-void
-.end method
+    new-instance v2, Ldna;
 
-.method public final onMediaDisconnected(Lru/ok/android/externcalls/sdk/connection/MediaConnectionListener$DisconnectedInfo;)V
-    .locals 0
+    const-string v3, "call_incoming_name"
 
-    sget-object p1, Lq31;->c:Lq31;
+    iget-object v4, p0, Lj41;->b:Ljava/lang/String;
 
-    iget-object p0, p0, Lj41;->a:Ld5b;
+    invoke-direct {v2, v3, v4}, Ldna;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    check-cast p0, La5b;
+    iget-wide v3, p0, Lj41;->a:J
 
-    invoke-virtual {p0, p1}, La5b;->n(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    return-void
+    move-result-object v3
+
+    new-instance v4, Ldna;
+
+    const-string v5, "call_incoming_chat_id"
+
+    invoke-direct {v4, v5, v3}, Ldna;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    iget-boolean p0, p0, Lj41;->o:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p0
+
+    new-instance v3, Ldna;
+
+    const-string v5, "call_incoming_video"
+
+    invoke-direct {v3, v5, p0}, Ldna;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    filled-new-array {v1, v2, v4, v3}, [Ldna;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lp54;->d([Ldna;)Landroid/os/Bundle;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Lone/me/calls/ui/ui/incoming/CallIncomingScreen;-><init>(Landroid/os/Bundle;)V
+
+    return-object v0
 .end method

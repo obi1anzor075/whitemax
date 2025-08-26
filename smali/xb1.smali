@@ -1,25 +1,58 @@
 .class public final Lxb1;
-.super Lac1;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lbc1;
 
-# instance fields
-.field public final b:Lmge;
 
-.field public final c:Lai1;
+# static fields
+.field public static final X:Lrdd;
+
+.field public static final a:Lxb1;
+
+.field public static final b:J
+
+.field public static final c:Lhoe;
+
+.field public static final o:Ljava/lang/Integer;
 
 
 # direct methods
-.method public constructor <init>(Ljge;Lai1;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
-    sget-object v0, Lraf;->b:Lraf;
+    new-instance v0, Lxb1;
 
-    invoke-direct {p0, v0}, Lac1;-><init>(Lraf;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lxb1;->b:Lmge;
+    sput-object v0, Lxb1;->a:Lxb1;
 
-    iput-object p2, p0, Lxb1;->c:Lai1;
+    sget v0, Li5a;->a:I
+
+    int-to-long v0, v0
+
+    sput-wide v0, Lxb1;->b:J
+
+    sget v0, Lk5a;->e:I
+
+    new-instance v1, Lhoe;
+
+    invoke-direct {v1, v0}, Lhoe;-><init>(I)V
+
+    sput-object v1, Lxb1;->c:Lhoe;
+
+    sget v0, Lh5a;->d:I
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    sput-object v0, Lxb1;->o:Ljava/lang/Integer;
+
+    sget-object v0, Lrdd;->a:Lrdd;
+
+    sput-object v0, Lxb1;->X:Lrdd;
 
     return-void
 .end method
@@ -27,7 +60,7 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -36,178 +69,86 @@
     return v0
 
     :cond_0
-    instance-of v1, p1, Lxb1;
+    instance-of p0, p1, Lxb1;
 
-    const/4 v2, 0x0
+    if-nez p0, :cond_1
 
-    if-nez v1, :cond_1
+    const/4 p0, 0x0
 
-    return v2
+    return p0
 
     :cond_1
-    check-cast p1, Lxb1;
-
-    iget-object v1, p1, Lxb1;->b:Lmge;
-
-    iget-object v3, p0, Lxb1;->b:Lmge;
-
-    invoke-static {v3, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object p0, p0, Lxb1;->c:Lai1;
-
-    iget-object p1, p1, Lxb1;->c:Lai1;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_3
-
-    return v2
-
-    :cond_3
     return v0
+.end method
+
+.method public final f()Ljava/lang/Integer;
+    .locals 0
+
+    sget-object p0, Lxb1;->o:Ljava/lang/Integer;
+
+    return-object p0
 .end method
 
 .method public final getItemId()J
     .locals 2
 
-    const-wide/16 v0, 0xe1
+    sget-wide v0, Lxb1;->b:J
 
     return-wide v0
 .end method
 
-.method public final hashCode()I
-    .locals 1
-
-    iget-object v0, p0, Lxb1;->b:Lmge;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Lxb1;->c:Lai1;
-
-    invoke-virtual {p0}, Lai1;->hashCode()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final l()I
+.method public final getTitle()Lmoe;
     .locals 0
 
-    const/16 p0, 0xe1
+    sget-object p0, Lxb1;->c:Lhoe;
+
+    return-object p0
+.end method
+
+.method public final getType()Lrdd;
+    .locals 0
+
+    sget-object p0, Lxb1;->X:Lrdd;
+
+    return-object p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    const p0, -0x122eeb95
 
     return p0
 .end method
 
-.method public final n(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+.method public final m()I
+    .locals 0
 
-    check-cast p1, Lpg7;
+    sget p0, Li5a;->m:I
 
-    instance-of v0, p1, Lxb1;
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lxb1;
-
-    goto :goto_0
-
-    :cond_0
-    move-object p1, v1
-
-    :goto_0
-    if-nez p1, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    new-instance v1, Lwb1;
-
-    const/4 v0, 0x7
-
-    invoke-direct {v1, v0}, Lu2;-><init>(I)V
-
-    iget-object v0, p0, Lxb1;->c:Lai1;
-
-    iget-object v2, p1, Lxb1;->c:Lai1;
-
-    invoke-static {v0, v2}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    const/4 v2, 0x1
-
-    xor-int/2addr v0, v2
-
-    iget-object v3, v1, Lu2;->b:Ljava/lang/Object;
-
-    check-cast v3, Ljava/util/BitSet;
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v3, v4, v0}, Ljava/util/BitSet;->set(IZ)V
-
-    iget-object p0, p0, Lxb1;->b:Lmge;
-
-    iget-object p1, p1, Lxb1;->b:Lmge;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    xor-int/2addr p0, v2
-
-    invoke-virtual {v3, v2, p0}, Ljava/util/BitSet;->set(IZ)V
-
-    :goto_1
-    return-object v1
+    return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 2
+    .locals 0
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Sharing(title="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lxb1;->b:Lmge;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", sharingState="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lxb1;->c:Lai1;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
+    const-string p0, "CopyLink"
 
     return-object p0
+.end method
+
+.method public final u()I
+    .locals 0
+
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final v()I
+    .locals 0
+
+    const/4 p0, 0x1
+
+    return p0
 .end method

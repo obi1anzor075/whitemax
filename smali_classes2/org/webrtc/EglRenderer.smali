@@ -218,7 +218,7 @@
 
     const-string p0, "NA"
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     sget-object p0, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
@@ -245,7 +245,6 @@
 
     move-result-object p0
 
-    :goto_0
     return-object p0
 .end method
 
@@ -882,245 +881,246 @@
 .end method
 
 .method private notifyCallbacks(Lorg/webrtc/VideoFrame;Z)V
-    .locals 15
+    .locals 13
 
-    move-object v0, p0
+    iget-object v0, p0, Lorg/webrtc/EglRenderer;->frameListeners:Ljava/util/ArrayList;
 
-    iget-object v1, v0, Lorg/webrtc/EglRenderer;->frameListeners:Ljava/util/ArrayList;
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
+    move-result v0
 
-    move-result v1
+    if-eqz v0, :cond_0
 
-    if-eqz v1, :cond_0
-
-    return-void
+    goto/16 :goto_4
 
     :cond_0
-    iget-object v1, v0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
 
-    invoke-virtual {v1}, Landroid/graphics/Matrix;->reset()V
+    invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
 
-    iget-object v1, v0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
 
-    const/high16 v2, 0x3f000000    # 0.5f
+    const/high16 v1, 0x3f000000    # 0.5f
 
-    invoke-virtual {v1, v2, v2}, Landroid/graphics/Matrix;->preTranslate(FF)Z
+    invoke-virtual {v0, v1, v1}, Landroid/graphics/Matrix;->preTranslate(FF)Z
 
-    iget-object v1, v0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
 
-    iget-boolean v2, v0, Lorg/webrtc/EglRenderer;->mirrorHorizontally:Z
+    iget-boolean v1, p0, Lorg/webrtc/EglRenderer;->mirrorHorizontally:Z
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    const/high16 v4, -0x40800000    # -1.0f
+    const/high16 v3, -0x40800000    # -1.0f
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
-    move v2, v4
+    move v1, v3
 
     goto :goto_0
 
     :cond_1
-    move v2, v3
+    move v1, v2
 
     :goto_0
-    iget-boolean v5, v0, Lorg/webrtc/EglRenderer;->mirrorVertically:Z
+    iget-boolean v4, p0, Lorg/webrtc/EglRenderer;->mirrorVertically:Z
 
-    if-eqz v5, :cond_2
+    if-eqz v4, :cond_2
 
-    move v5, v4
+    move v4, v3
 
     goto :goto_1
 
     :cond_2
-    move v5, v3
+    move v4, v2
 
     :goto_1
-    invoke-virtual {v1, v2, v5}, Landroid/graphics/Matrix;->preScale(FF)Z
+    invoke-virtual {v0, v1, v4}, Landroid/graphics/Matrix;->preScale(FF)Z
 
-    iget-object v1, v0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
 
-    invoke-virtual {v1, v3, v4}, Landroid/graphics/Matrix;->preScale(FF)Z
+    invoke-virtual {v0, v2, v3}, Landroid/graphics/Matrix;->preScale(FF)Z
 
-    iget-object v1, v0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
 
-    const/high16 v2, -0x41000000    # -0.5f
+    const/high16 v1, -0x41000000    # -0.5f
 
-    invoke-virtual {v1, v2, v2}, Landroid/graphics/Matrix;->preTranslate(FF)Z
+    invoke-virtual {v0, v1, v1}, Landroid/graphics/Matrix;->preTranslate(FF)Z
 
-    iget-object v1, v0, Lorg/webrtc/EglRenderer;->frameListeners:Ljava/util/ArrayList;
+    iget-object v0, p0, Lorg/webrtc/EglRenderer;->frameListeners:Ljava/util/ArrayList;
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_2
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_6
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    :goto_2
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_6
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lorg/webrtc/EglRenderer$FrameListenerAndParams;
+    check-cast v1, Lorg/webrtc/EglRenderer$FrameListenerAndParams;
 
     if-nez p2, :cond_3
 
-    iget-boolean v3, v2, Lorg/webrtc/EglRenderer$FrameListenerAndParams;->applyFpsReduction:Z
+    iget-boolean v2, v1, Lorg/webrtc/EglRenderer$FrameListenerAndParams;->applyFpsReduction:Z
 
-    if-eqz v3, :cond_3
+    if-eqz v2, :cond_3
 
     goto :goto_2
 
     :cond_3
-    invoke-interface {v1}, Ljava/util/Iterator;->remove()V
+    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    iget v3, v2, Lorg/webrtc/EglRenderer$FrameListenerAndParams;->scale:F
+    iget v2, v1, Lorg/webrtc/EglRenderer$FrameListenerAndParams;->scale:F
 
-    invoke-virtual/range {p1 .. p1}, Lorg/webrtc/VideoFrame;->getRotatedWidth()I
+    invoke-virtual {p1}, Lorg/webrtc/VideoFrame;->getRotatedWidth()I
 
-    move-result v4
+    move-result v3
 
-    int-to-float v4, v4
+    int-to-float v3, v3
 
-    mul-float/2addr v3, v4
+    mul-float/2addr v2, v3
 
-    float-to-int v3, v3
+    float-to-int v5, v2
 
-    iget v4, v2, Lorg/webrtc/EglRenderer$FrameListenerAndParams;->scale:F
+    iget v2, v1, Lorg/webrtc/EglRenderer$FrameListenerAndParams;->scale:F
 
-    invoke-virtual/range {p1 .. p1}, Lorg/webrtc/VideoFrame;->getRotatedHeight()I
+    invoke-virtual {p1}, Lorg/webrtc/VideoFrame;->getRotatedHeight()I
 
-    move-result v5
+    move-result v3
 
-    int-to-float v5, v5
+    int-to-float v3, v3
 
-    mul-float/2addr v4, v5
+    mul-float/2addr v2, v3
 
-    float-to-int v12, v4
+    float-to-int v6, v2
 
-    if-eqz v3, :cond_5
+    if-eqz v5, :cond_5
 
-    if-nez v12, :cond_4
+    if-nez v6, :cond_4
 
     goto :goto_3
 
     :cond_4
-    iget-object v4, v0, Lorg/webrtc/EglRenderer;->bitmapTextureFramebuffer:Lorg/webrtc/GlTextureFrameBuffer;
+    iget-object v2, p0, Lorg/webrtc/EglRenderer;->bitmapTextureFramebuffer:Lorg/webrtc/GlTextureFrameBuffer;
 
-    invoke-virtual {v4, v3, v12}, Lorg/webrtc/GlTextureFrameBuffer;->setSize(II)V
+    invoke-virtual {v2, v5, v6}, Lorg/webrtc/GlTextureFrameBuffer;->setSize(II)V
 
-    iget-object v4, v0, Lorg/webrtc/EglRenderer;->bitmapTextureFramebuffer:Lorg/webrtc/GlTextureFrameBuffer;
+    iget-object v2, p0, Lorg/webrtc/EglRenderer;->bitmapTextureFramebuffer:Lorg/webrtc/GlTextureFrameBuffer;
 
-    invoke-virtual {v4}, Lorg/webrtc/GlTextureFrameBuffer;->getFrameBufferId()I
+    invoke-virtual {v2}, Lorg/webrtc/GlTextureFrameBuffer;->getFrameBufferId()I
 
-    move-result v4
+    move-result v2
 
-    const v13, 0x8d40
+    const v11, 0x8d40
 
-    invoke-static {v13, v4}, Landroid/opengl/GLES20;->glBindFramebuffer(II)V
+    invoke-static {v11, v2}, Landroid/opengl/GLES20;->glBindFramebuffer(II)V
 
-    iget-object v4, v0, Lorg/webrtc/EglRenderer;->bitmapTextureFramebuffer:Lorg/webrtc/GlTextureFrameBuffer;
+    iget-object v2, p0, Lorg/webrtc/EglRenderer;->bitmapTextureFramebuffer:Lorg/webrtc/GlTextureFrameBuffer;
 
-    invoke-virtual {v4}, Lorg/webrtc/GlTextureFrameBuffer;->getTextureId()I
+    invoke-virtual {v2}, Lorg/webrtc/GlTextureFrameBuffer;->getTextureId()I
 
-    move-result v4
+    move-result v2
 
-    const v5, 0x8ce0
+    const v3, 0x8ce0
 
-    const/16 v6, 0xde1
+    const/16 v4, 0xde1
 
-    const/4 v14, 0x0
+    const/4 v12, 0x0
 
-    invoke-static {v13, v5, v6, v4, v14}, Landroid/opengl/GLES20;->glFramebufferTexture2D(IIIII)V
+    invoke-static {v11, v3, v4, v2, v12}, Landroid/opengl/GLES20;->glFramebufferTexture2D(IIIII)V
 
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
-    invoke-static {v4, v4, v4, v4}, Landroid/opengl/GLES20;->glClearColor(FFFF)V
+    invoke-static {v2, v2, v2, v2}, Landroid/opengl/GLES20;->glClearColor(FFFF)V
 
-    const/16 v4, 0x4000
+    const/16 v2, 0x4000
 
-    invoke-static {v4}, Landroid/opengl/GLES20;->glClear(I)V
+    invoke-static {v2}, Landroid/opengl/GLES20;->glClear(I)V
 
-    iget-object v4, v0, Lorg/webrtc/EglRenderer;->frameDrawer:Lorg/webrtc/VideoFrameDrawer;
+    iget-object v3, p0, Lorg/webrtc/EglRenderer;->frameDrawer:Lorg/webrtc/VideoFrameDrawer;
 
-    iget-object v6, v2, Lorg/webrtc/EglRenderer$FrameListenerAndParams;->drawer:Lorg/webrtc/RendererCommon$GlDrawer;
+    move v9, v5
 
-    iget-object v7, v0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
+    iget-object v5, v1, Lorg/webrtc/EglRenderer$FrameListenerAndParams;->drawer:Lorg/webrtc/RendererCommon$GlDrawer;
+
+    move v10, v6
+
+    iget-object v6, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
+
+    const/4 v7, 0x0
 
     const/4 v8, 0x0
 
-    const/4 v9, 0x0
+    move-object v4, p1
 
-    move-object/from16 v5, p1
+    invoke-virtual/range {v3 .. v10}, Lorg/webrtc/VideoFrameDrawer;->drawFrame(Lorg/webrtc/VideoFrame;Lorg/webrtc/RendererCommon$GlDrawer;Landroid/graphics/Matrix;IIII)V
 
-    move v10, v3
+    mul-int v5, v9, v10
 
-    move v11, v12
+    mul-int/lit8 v5, v5, 0x4
 
-    invoke-virtual/range {v4 .. v11}, Lorg/webrtc/VideoFrameDrawer;->drawFrame(Lorg/webrtc/VideoFrame;Lorg/webrtc/RendererCommon$GlDrawer;Landroid/graphics/Matrix;IIII)V
+    invoke-static {v5}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
-    mul-int v4, v3, v12
+    move-result-object v2
 
-    mul-int/lit8 v4, v4, 0x4
+    invoke-static {v12, v12, v9, v10}, Landroid/opengl/GLES20;->glViewport(IIII)V
 
-    invoke-static {v4}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
+    const/16 v7, 0x1908
 
-    move-result-object v11
+    const/16 v8, 0x1401
 
-    invoke-static {v14, v14, v3, v12}, Landroid/opengl/GLES20;->glViewport(IIII)V
-
-    const/16 v8, 0x1908
-
-    const/16 v9, 0x1401
+    const/4 v3, 0x0
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    move v5, v9
 
-    move v6, v3
+    move v6, v10
 
-    move v7, v12
+    move-object v9, v2
 
-    move-object v10, v11
+    invoke-static/range {v3 .. v9}, Landroid/opengl/GLES20;->glReadPixels(IIIIIILjava/nio/Buffer;)V
 
-    invoke-static/range {v4 .. v10}, Landroid/opengl/GLES20;->glReadPixels(IIIIIILjava/nio/Buffer;)V
+    move v9, v5
 
-    invoke-static {v13, v14}, Landroid/opengl/GLES20;->glBindFramebuffer(II)V
+    invoke-static {v11, v12}, Landroid/opengl/GLES20;->glBindFramebuffer(II)V
 
-    const-string v4, "EglRenderer.notifyCallbacks"
+    const-string v3, "EglRenderer.notifyCallbacks"
 
-    invoke-static {v4}, Lorg/webrtc/GlUtil;->checkNoGLES2Error(Ljava/lang/String;)V
+    invoke-static {v3}, Lorg/webrtc/GlUtil;->checkNoGLES2Error(Ljava/lang/String;)V
 
-    sget-object v4, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+    sget-object v3, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    invoke-static {v3, v12, v4}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    invoke-static {v9, v10, v3}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v3
 
-    invoke-virtual {v3, v11}, Landroid/graphics/Bitmap;->copyPixelsFromBuffer(Ljava/nio/Buffer;)V
+    invoke-virtual {v3, v2}, Landroid/graphics/Bitmap;->copyPixelsFromBuffer(Ljava/nio/Buffer;)V
 
-    iget-object v2, v2, Lorg/webrtc/EglRenderer$FrameListenerAndParams;->listener:Lorg/webrtc/EglRenderer$FrameListener;
+    iget-object v1, v1, Lorg/webrtc/EglRenderer$FrameListenerAndParams;->listener:Lorg/webrtc/EglRenderer$FrameListener;
 
-    invoke-interface {v2, v3}, Lorg/webrtc/EglRenderer$FrameListener;->onFrame(Landroid/graphics/Bitmap;)V
+    invoke-interface {v1, v3}, Lorg/webrtc/EglRenderer$FrameListener;->onFrame(Landroid/graphics/Bitmap;)V
 
     goto/16 :goto_2
 
     :cond_5
     :goto_3
-    iget-object v2, v2, Lorg/webrtc/EglRenderer$FrameListenerAndParams;->listener:Lorg/webrtc/EglRenderer$FrameListener;
+    iget-object v1, v1, Lorg/webrtc/EglRenderer$FrameListenerAndParams;->listener:Lorg/webrtc/EglRenderer$FrameListener;
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    invoke-interface {v2, v3}, Lorg/webrtc/EglRenderer$FrameListener;->onFrame(Landroid/graphics/Bitmap;)V
+    invoke-interface {v1, v2}, Lorg/webrtc/EglRenderer$FrameListener;->onFrame(Landroid/graphics/Bitmap;)V
 
     goto/16 :goto_2
 
     :cond_6
+    :goto_4
     return-void
 .end method
 
@@ -1164,32 +1164,34 @@
 .end method
 
 .method private renderFrameOnRenderThread()V
-    .locals 14
+    .locals 13
 
-    iget-object v0, p0, Lorg/webrtc/EglRenderer;->frameLock:Ljava/lang/Object;
+    iget-object v1, p0, Lorg/webrtc/EglRenderer;->frameLock:Ljava/lang/Object;
 
-    monitor-enter v0
+    monitor-enter v1
 
     :try_start_0
-    iget-object v9, p0, Lorg/webrtc/EglRenderer;->pendingFrame:Lorg/webrtc/VideoFrame;
+    iget-object v3, p0, Lorg/webrtc/EglRenderer;->pendingFrame:Lorg/webrtc/VideoFrame;
 
-    if-nez v9, :cond_0
+    if-nez v3, :cond_0
 
-    monitor-exit v0
+    monitor-exit v1
 
     return-void
 
     :catchall_0
-    move-exception p0
+    move-exception v0
 
-    goto/16 :goto_d
+    move-object p0, v0
+
+    goto/16 :goto_b
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    iput-object v1, p0, Lorg/webrtc/EglRenderer;->pendingFrame:Lorg/webrtc/VideoFrame;
+    iput-object v0, p0, Lorg/webrtc/EglRenderer;->pendingFrame:Lorg/webrtc/VideoFrame;
 
-    monitor-exit v0
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -1203,264 +1205,264 @@
 
     if-nez v0, :cond_1
 
-    goto/16 :goto_c
+    goto/16 :goto_a
 
     :cond_1
     iget-object v0, p0, Lorg/webrtc/EglRenderer;->eglBase:Lorg/webrtc/EglBase;
 
     invoke-interface {v0}, Lorg/webrtc/EglBase;->makeCurrent()V
 
-    iget-object v0, p0, Lorg/webrtc/EglRenderer;->fpsReductionLock:Ljava/lang/Object;
+    iget-object v1, p0, Lorg/webrtc/EglRenderer;->fpsReductionLock:Ljava/lang/Object;
 
-    monitor-enter v0
+    monitor-enter v1
 
     :try_start_1
-    iget-wide v1, p0, Lorg/webrtc/EglRenderer;->minRenderPeriodNs:J
+    iget-wide v4, p0, Lorg/webrtc/EglRenderer;->minRenderPeriodNs:J
 
-    const-wide v3, 0x7fffffffffffffffL
+    const-wide v6, 0x7fffffffffffffffL
 
-    cmp-long v3, v1, v3
+    cmp-long v0, v4, v6
 
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
     const/4 v10, 0x1
 
-    if-nez v3, :cond_2
+    if-nez v0, :cond_2
 
     :goto_0
-    move v11, v4
+    move v0, v2
 
     goto :goto_2
 
     :cond_2
-    const-wide/16 v5, 0x0
+    const-wide/16 v6, 0x0
 
-    cmp-long v1, v1, v5
+    cmp-long v0, v4, v6
 
-    if-gtz v1, :cond_3
+    if-gtz v0, :cond_3
 
     :goto_1
-    move v11, v10
+    move v0, v10
 
     goto :goto_2
 
     :cond_3
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
-    move-result-wide v1
+    move-result-wide v4
 
-    iget-wide v5, p0, Lorg/webrtc/EglRenderer;->nextFrameTimeNs:J
+    iget-wide v6, p0, Lorg/webrtc/EglRenderer;->nextFrameTimeNs:J
 
-    cmp-long v3, v1, v5
+    cmp-long v0, v4, v6
 
-    if-gez v3, :cond_4
+    if-gez v0, :cond_4
 
-    const-string v1, "Skipping frame rendering - fps reduction is active."
+    const-string v0, "Skipping frame rendering - fps reduction is active."
 
-    invoke-direct {p0, v1}, Lorg/webrtc/EglRenderer;->logD(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lorg/webrtc/EglRenderer;->logD(Ljava/lang/String;)V
 
     goto :goto_0
 
     :catchall_1
-    move-exception p0
+    move-exception v0
 
-    goto/16 :goto_b
+    move-object p0, v0
+
+    goto/16 :goto_9
 
     :cond_4
-    iget-wide v3, p0, Lorg/webrtc/EglRenderer;->minRenderPeriodNs:J
+    iget-wide v8, p0, Lorg/webrtc/EglRenderer;->minRenderPeriodNs:J
 
-    add-long/2addr v5, v3
+    add-long/2addr v6, v8
 
-    iput-wide v5, p0, Lorg/webrtc/EglRenderer;->nextFrameTimeNs:J
+    iput-wide v6, p0, Lorg/webrtc/EglRenderer;->nextFrameTimeNs:J
 
-    invoke-static {v5, v6, v1, v2}, Ljava/lang/Math;->max(JJ)J
+    invoke-static {v6, v7, v4, v5}, Ljava/lang/Math;->max(JJ)J
 
-    move-result-wide v1
+    move-result-wide v4
 
-    iput-wide v1, p0, Lorg/webrtc/EglRenderer;->nextFrameTimeNs:J
+    iput-wide v4, p0, Lorg/webrtc/EglRenderer;->nextFrameTimeNs:J
 
     goto :goto_1
 
     :goto_2
-    monitor-exit v0
+    monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
-    move-result-wide v12
+    move-result-wide v11
 
-    invoke-virtual {v9}, Lorg/webrtc/VideoFrame;->getRotatedWidth()I
-
-    move-result v0
-
-    int-to-float v0, v0
-
-    invoke-virtual {v9}, Lorg/webrtc/VideoFrame;->getRotatedHeight()I
+    invoke-virtual {v3}, Lorg/webrtc/VideoFrame;->getRotatedWidth()I
 
     move-result v1
 
     int-to-float v1, v1
 
-    div-float/2addr v0, v1
+    invoke-virtual {v3}, Lorg/webrtc/VideoFrame;->getRotatedHeight()I
 
-    iget-object v1, p0, Lorg/webrtc/EglRenderer;->layoutLock:Ljava/lang/Object;
+    move-result v2
 
-    monitor-enter v1
+    int-to-float v2, v2
+
+    div-float/2addr v1, v2
+
+    iget-object v2, p0, Lorg/webrtc/EglRenderer;->layoutLock:Ljava/lang/Object;
+
+    monitor-enter v2
 
     :try_start_2
-    iget v2, p0, Lorg/webrtc/EglRenderer;->layoutAspectRatio:F
+    iget v4, p0, Lorg/webrtc/EglRenderer;->layoutAspectRatio:F
 
-    const/4 v3, 0x0
+    const/4 v5, 0x0
 
-    cmpl-float v4, v2, v3
+    cmpl-float v6, v4, v5
 
-    if-eqz v4, :cond_5
+    if-eqz v6, :cond_5
 
     goto :goto_3
 
     :cond_5
-    move v2, v0
+    move v4, v1
 
     :goto_3
-    monitor-exit v1
+    monitor-exit v2
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_4
 
-    cmpl-float v1, v0, v2
+    cmpl-float v2, v1, v4
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    const/high16 v6, 0x3f800000    # 1.0f
 
-    if-lez v1, :cond_6
+    if-lez v2, :cond_6
 
-    div-float/2addr v2, v0
+    div-float/2addr v4, v1
 
-    move v0, v4
+    move v1, v6
 
     goto :goto_4
 
     :cond_6
-    div-float/2addr v0, v2
+    div-float/2addr v1, v4
 
-    move v2, v4
+    move v4, v6
 
     :goto_4
-    iget-object v1, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
+    iget-object v2, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
 
-    invoke-virtual {v1}, Landroid/graphics/Matrix;->reset()V
+    invoke-virtual {v2}, Landroid/graphics/Matrix;->reset()V
 
-    iget-object v1, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
+    iget-object v2, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
 
-    const/high16 v5, 0x3f000000    # 0.5f
+    const/high16 v7, 0x3f000000    # 0.5f
 
-    invoke-virtual {v1, v5, v5}, Landroid/graphics/Matrix;->preTranslate(FF)Z
+    invoke-virtual {v2, v7, v7}, Landroid/graphics/Matrix;->preTranslate(FF)Z
 
-    iget-object v1, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
+    iget-object v2, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
 
-    iget-boolean v5, p0, Lorg/webrtc/EglRenderer;->mirrorHorizontally:Z
+    iget-boolean v7, p0, Lorg/webrtc/EglRenderer;->mirrorHorizontally:Z
 
-    const/high16 v6, -0x40800000    # -1.0f
+    const/high16 v8, -0x40800000    # -1.0f
 
-    if-eqz v5, :cond_7
+    if-eqz v7, :cond_7
 
-    move v5, v6
+    move v7, v8
 
     goto :goto_5
 
     :cond_7
-    move v5, v4
+    move v7, v6
 
     :goto_5
-    iget-boolean v7, p0, Lorg/webrtc/EglRenderer;->mirrorVertically:Z
+    iget-boolean v9, p0, Lorg/webrtc/EglRenderer;->mirrorVertically:Z
 
-    if-eqz v7, :cond_8
+    if-eqz v9, :cond_8
 
-    move v4, v6
+    move v6, v8
 
     :cond_8
-    invoke-virtual {v1, v5, v4}, Landroid/graphics/Matrix;->preScale(FF)Z
+    invoke-virtual {v2, v7, v6}, Landroid/graphics/Matrix;->preScale(FF)Z
+
+    iget-object v2, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
+
+    invoke-virtual {v2, v4, v1}, Landroid/graphics/Matrix;->preScale(FF)Z
 
     iget-object v1, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
 
-    invoke-virtual {v1, v2, v0}, Landroid/graphics/Matrix;->preScale(FF)Z
+    const/high16 v2, -0x41000000    # -0.5f
 
-    iget-object v0, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
+    invoke-virtual {v1, v2, v2}, Landroid/graphics/Matrix;->preTranslate(FF)Z
 
-    const/high16 v1, -0x41000000    # -0.5f
-
-    invoke-virtual {v0, v1, v1}, Landroid/graphics/Matrix;->preTranslate(FF)Z
-
-    if-eqz v11, :cond_9
+    if-eqz v0, :cond_9
 
     :try_start_3
-    invoke-static {v3, v3, v3, v3}, Landroid/opengl/GLES20;->glClearColor(FFFF)V
+    invoke-static {v5, v5, v5, v5}, Landroid/opengl/GLES20;->glClearColor(FFFF)V
 
-    const/16 v0, 0x4000
+    const/16 v1, 0x4000
 
-    invoke-static {v0}, Landroid/opengl/GLES20;->glClear(I)V
+    invoke-static {v1}, Landroid/opengl/GLES20;->glClear(I)V
 
-    iget-object v1, p0, Lorg/webrtc/EglRenderer;->frameDrawer:Lorg/webrtc/VideoFrameDrawer;
+    iget-object v2, p0, Lorg/webrtc/EglRenderer;->frameDrawer:Lorg/webrtc/VideoFrameDrawer;
 
-    iget-object v3, p0, Lorg/webrtc/EglRenderer;->drawer:Lorg/webrtc/RendererCommon$GlDrawer;
+    iget-object v4, p0, Lorg/webrtc/EglRenderer;->drawer:Lorg/webrtc/RendererCommon$GlDrawer;
 
-    iget-object v4, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
+    iget-object v5, p0, Lorg/webrtc/EglRenderer;->drawMatrix:Landroid/graphics/Matrix;
 
-    iget-object v0, p0, Lorg/webrtc/EglRenderer;->eglBase:Lorg/webrtc/EglBase;
+    iget-object v1, p0, Lorg/webrtc/EglRenderer;->eglBase:Lorg/webrtc/EglBase;
 
-    invoke-interface {v0}, Lorg/webrtc/EglBase;->surfaceWidth()I
-
-    move-result v7
-
-    iget-object v0, p0, Lorg/webrtc/EglRenderer;->eglBase:Lorg/webrtc/EglBase;
-
-    invoke-interface {v0}, Lorg/webrtc/EglBase;->surfaceHeight()I
+    invoke-interface {v1}, Lorg/webrtc/EglBase;->surfaceWidth()I
 
     move-result v8
 
-    const/4 v5, 0x0
+    iget-object v1, p0, Lorg/webrtc/EglRenderer;->eglBase:Lorg/webrtc/EglBase;
+
+    invoke-interface {v1}, Lorg/webrtc/EglBase;->surfaceHeight()I
+
+    move-result v9
 
     const/4 v6, 0x0
 
-    move-object v2, v9
+    const/4 v7, 0x0
 
-    invoke-virtual/range {v1 .. v8}, Lorg/webrtc/VideoFrameDrawer;->drawFrame(Lorg/webrtc/VideoFrame;Lorg/webrtc/RendererCommon$GlDrawer;Landroid/graphics/Matrix;IIII)V
+    invoke-virtual/range {v2 .. v9}, Lorg/webrtc/VideoFrameDrawer;->drawFrame(Lorg/webrtc/VideoFrame;Lorg/webrtc/RendererCommon$GlDrawer;Landroid/graphics/Matrix;IIII)V
 
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
-    move-result-wide v0
+    move-result-wide v1
 
-    invoke-direct {p0, v9, v0, v1}, Lorg/webrtc/EglRenderer;->swapBuffersOnRenderThread(Lorg/webrtc/VideoFrame;J)V
+    invoke-direct {p0, v3, v1, v2}, Lorg/webrtc/EglRenderer;->swapBuffersOnRenderThread(Lorg/webrtc/VideoFrame;J)V
 
-    iget-object v2, p0, Lorg/webrtc/EglRenderer;->statisticsLock:Ljava/lang/Object;
+    iget-object v4, p0, Lorg/webrtc/EglRenderer;->statisticsLock:Ljava/lang/Object;
 
-    monitor-enter v2
+    monitor-enter v4
     :try_end_3
     .catch Lorg/webrtc/GlUtil$GlOutOfMemoryException; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
     :try_start_4
-    iget v3, p0, Lorg/webrtc/EglRenderer;->framesRendered:I
+    iget v5, p0, Lorg/webrtc/EglRenderer;->framesRendered:I
 
-    add-int/2addr v3, v10
+    add-int/2addr v5, v10
 
-    iput v3, p0, Lorg/webrtc/EglRenderer;->framesRendered:I
+    iput v5, p0, Lorg/webrtc/EglRenderer;->framesRendered:I
 
-    iget-wide v3, p0, Lorg/webrtc/EglRenderer;->renderTimeNs:J
+    iget-wide v5, p0, Lorg/webrtc/EglRenderer;->renderTimeNs:J
 
-    sub-long/2addr v0, v12
+    sub-long/2addr v1, v11
 
-    add-long/2addr v0, v3
+    add-long/2addr v1, v5
 
-    iput-wide v0, p0, Lorg/webrtc/EglRenderer;->renderTimeNs:J
+    iput-wide v1, p0, Lorg/webrtc/EglRenderer;->renderTimeNs:J
 
-    monitor-exit v2
+    monitor-exit v4
 
     goto :goto_6
 
     :catchall_2
     move-exception v0
 
-    monitor-exit v2
+    monitor-exit v4
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
@@ -1468,28 +1470,29 @@
     throw v0
 
     :catchall_3
-    move-exception p0
+    move-exception v0
 
-    goto :goto_a
+    move-object p0, v0
+
+    goto :goto_8
 
     :catch_0
     move-exception v0
 
-    goto :goto_8
+    goto :goto_7
 
     :cond_9
     :goto_6
-    invoke-direct {p0, v9, v11}, Lorg/webrtc/EglRenderer;->notifyCallbacks(Lorg/webrtc/VideoFrame;Z)V
+    invoke-direct {p0, v3, v0}, Lorg/webrtc/EglRenderer;->notifyCallbacks(Lorg/webrtc/VideoFrame;Z)V
     :try_end_5
     .catch Lorg/webrtc/GlUtil$GlOutOfMemoryException; {:try_start_5 .. :try_end_5} :catch_0
     .catchall {:try_start_5 .. :try_end_5} :catchall_3
 
+    invoke-virtual {v3}, Lorg/webrtc/VideoFrame;->release()V
+
+    return-void
+
     :goto_7
-    invoke-virtual {v9}, Lorg/webrtc/VideoFrame;->release()V
-
-    goto :goto_9
-
-    :goto_8
     :try_start_6
     const-string v1, "Error while drawing frame"
 
@@ -1516,47 +1519,48 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_3
 
-    goto :goto_7
+    invoke-virtual {v3}, Lorg/webrtc/VideoFrame;->release()V
 
-    :goto_9
     return-void
 
-    :goto_a
-    invoke-virtual {v9}, Lorg/webrtc/VideoFrame;->release()V
+    :goto_8
+    invoke-virtual {v3}, Lorg/webrtc/VideoFrame;->release()V
 
     throw p0
 
     :catchall_4
-    move-exception p0
+    move-exception v0
+
+    move-object p0, v0
 
     :try_start_7
-    monitor-exit v1
+    monitor-exit v2
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_4
 
     throw p0
 
-    :goto_b
+    :goto_9
     :try_start_8
-    monitor-exit v0
+    monitor-exit v1
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_1
 
     throw p0
 
     :cond_b
-    :goto_c
+    :goto_a
     const-string v0, "Dropping frame - No surface"
 
     invoke-direct {p0, v0}, Lorg/webrtc/EglRenderer;->logD(Ljava/lang/String;)V
 
-    invoke-virtual {v9}, Lorg/webrtc/VideoFrame;->release()V
+    invoke-virtual {v3}, Lorg/webrtc/VideoFrame;->release()V
 
     return-void
 
-    :goto_d
+    :goto_b
     :try_start_9
-    monitor-exit v0
+    monitor-exit v1
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_0
 
@@ -1613,9 +1617,9 @@
 
     if-eqz v1, :cond_0
 
-    new-instance v2, Lts4;
+    new-instance v2, Luv4;
 
-    invoke-direct {v2, p0, p1, p2, p3}, Lts4;-><init>(Lorg/webrtc/EglRenderer;Lorg/webrtc/VideoFrame;J)V
+    invoke-direct {v2, p0, p1, p2, p3}, Luv4;-><init>(Lorg/webrtc/EglRenderer;Lorg/webrtc/VideoFrame;J)V
 
     invoke-virtual {v1, v2}, Lorg/webrtc/EglThread;->scheduleRenderUpdate(Lorg/webrtc/EglThread$RenderUpdate;)V
 
@@ -1667,26 +1671,24 @@
 .end method
 
 .method public addFrameListener(Lorg/webrtc/EglRenderer$FrameListener;FLorg/webrtc/RendererCommon$GlDrawer;Z)V
-    .locals 7
+    .locals 6
 
     .line 3
-    new-instance v6, Lrs4;
-
-    move-object v0, v6
+    new-instance v0, Lsv4;
 
     move-object v1, p0
-
-    move-object v2, p3
 
     move-object v3, p1
 
     move v4, p2
 
+    move-object v2, p3
+
     move v5, p4
 
-    invoke-direct/range {v0 .. v5}, Lrs4;-><init>(Lorg/webrtc/EglRenderer;Lorg/webrtc/RendererCommon$GlDrawer;Lorg/webrtc/EglRenderer$FrameListener;FZ)V
+    invoke-direct/range {v0 .. v5}, Lsv4;-><init>(Lorg/webrtc/EglRenderer;Lorg/webrtc/RendererCommon$GlDrawer;Lorg/webrtc/EglRenderer$FrameListener;FZ)V
 
-    invoke-direct {p0, v6}, Lorg/webrtc/EglRenderer;->postToRenderThread(Ljava/lang/Runnable;)V
+    invoke-direct {v1, v0}, Lorg/webrtc/EglRenderer;->postToRenderThread(Ljava/lang/Runnable;)V
 
     return-void
 .end method
@@ -1703,38 +1705,38 @@
 .end method
 
 .method public clearImage(FFFF)V
-    .locals 9
+    .locals 8
 
     .line 2
-    iget-object v0, p0, Lorg/webrtc/EglRenderer;->threadLock:Ljava/lang/Object;
+    iget-object v1, p0, Lorg/webrtc/EglRenderer;->threadLock:Ljava/lang/Object;
 
-    monitor-enter v0
+    monitor-enter v1
 
     .line 3
     :try_start_0
-    iget-object v1, p0, Lorg/webrtc/EglRenderer;->eglThread:Lorg/webrtc/EglThread;
+    iget-object v0, p0, Lorg/webrtc/EglRenderer;->eglThread:Lorg/webrtc/EglThread;
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
     .line 4
-    monitor-exit v0
+    monitor-exit v1
 
     return-void
 
     :catchall_0
-    move-exception p0
+    move-exception v0
+
+    move-object p0, v0
 
     goto :goto_0
 
     .line 5
     :cond_0
-    invoke-virtual {v1}, Lorg/webrtc/EglThread;->getHandler()Landroid/os/Handler;
+    invoke-virtual {v0}, Lorg/webrtc/EglThread;->getHandler()Landroid/os/Handler;
 
-    move-result-object v1
+    move-result-object v0
 
-    new-instance v8, Lss4;
-
-    move-object v2, v8
+    new-instance v2, Ltv4;
 
     move-object v3, p0
 
@@ -1746,17 +1748,17 @@
 
     move v7, p4
 
-    invoke-direct/range {v2 .. v7}, Lss4;-><init>(Lorg/webrtc/EglRenderer;FFFF)V
+    invoke-direct/range {v2 .. v7}, Ltv4;-><init>(Lorg/webrtc/EglRenderer;FFFF)V
 
-    invoke-virtual {v1, v8}, Landroid/os/Handler;->postAtFrontOfQueue(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v2}, Landroid/os/Handler;->postAtFrontOfQueue(Ljava/lang/Runnable;)Z
 
     .line 6
-    monitor-exit v0
+    monitor-exit v1
 
     return-void
 
     :goto_0
-    monitor-exit v0
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -1977,7 +1979,7 @@
     :catchall_0
     move-exception p0
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_0
     iget-object v0, p0, Lorg/webrtc/EglRenderer;->frameLock:Ljava/lang/Object;
@@ -2008,7 +2010,7 @@
     :catchall_1
     move-exception p0
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_2
     :goto_1
@@ -2022,11 +2024,11 @@
 
     move-result-object p1
 
-    new-instance v3, Loc4;
+    new-instance v3, Lka4;
 
-    const/16 v5, 0x9
+    const/16 v5, 0xc
 
-    invoke-direct {v3, v5, p0}, Loc4;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v3, v5, p0}, Lka4;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {p1, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -2054,7 +2056,7 @@
 
     monitor-exit p1
 
-    goto :goto_2
+    return-void
 
     :catchall_2
     move-exception p0
@@ -2066,10 +2068,9 @@
     throw p0
 
     :cond_3
-    :goto_2
     return-void
 
-    :goto_3
+    :goto_2
     :try_start_5
     monitor-exit v0
     :try_end_5
@@ -2078,7 +2079,7 @@
     :try_start_6
     throw p0
 
-    :goto_4
+    :goto_3
     monitor-exit v1
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
@@ -2243,11 +2244,11 @@
 
     move-result-object v2
 
-    new-instance v3, Lii4;
+    new-instance v3, Los4;
 
-    const/4 v4, 0x6
+    const/4 v4, 0x2
 
-    invoke-direct {v3, p0, v4, v0}, Lii4;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-direct {v3, p0, v4, v0}, Los4;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->postAtFrontOfQueue(Ljava/lang/Runnable;)Z
 
@@ -2346,11 +2347,11 @@
 
     move-result-object v1
 
-    new-instance v2, Lii4;
+    new-instance v2, Los4;
 
-    const/4 v3, 0x5
+    const/4 v3, 0x1
 
-    invoke-direct {v2, p0, v3, p1}, Lii4;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-direct {v2, p0, v3, p1}, Los4;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->postAtFrontOfQueue(Ljava/lang/Runnable;)Z
 
@@ -2429,11 +2430,11 @@
 
     if-eq v2, v3, :cond_1
 
-    new-instance v2, Lg5;
+    new-instance v2, Le5;
 
-    const/16 v3, 0x1a
+    const/16 v3, 0x1b
 
-    invoke-direct {v2, p0, v0, p1, v3}, Lg5;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+    invoke-direct {v2, p0, v0, p1, v3}, Le5;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
 
     invoke-direct {p0, v2}, Lorg/webrtc/EglRenderer;->postToRenderThread(Ljava/lang/Runnable;)V
 

@@ -1,25 +1,22 @@
-.class public abstract Lcp9;
-.super Ljava/lang/Object;
+.class public final Lcp9;
+.super Lkotlinx/coroutines/internal/LockFreeLinkedListHead;
 .source "SourceFile"
 
+# interfaces
+.implements Lfz6;
 
-# direct methods
-.method public static a(Landroid/app/NotificationManager;)Z
+
+# virtual methods
+.method public final b()Lcp9;
     .locals 0
 
-    invoke-virtual {p0}, Landroid/app/NotificationManager;->areNotificationsEnabled()Z
-
-    move-result p0
-
-    return p0
+    return-object p0
 .end method
 
-.method public static b(Landroid/app/NotificationManager;)I
+.method public final isActive()Z
     .locals 0
 
-    invoke-virtual {p0}, Landroid/app/NotificationManager;->getImportance()I
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
 .end method

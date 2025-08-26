@@ -1,5 +1,5 @@
 .class public final Lone/me/android/deeplink/LinkInterceptorActivity;
-.super Lim;
+.super Lam;
 .source "SourceFile"
 
 
@@ -10,7 +10,7 @@
     }
     d2 = {
         "Lone/me/android/deeplink/LinkInterceptorActivity;",
-        "Lim;",
+        "Lam;",
         "<init>",
         "()V",
         "oneme_playGoogleRelease"
@@ -21,25 +21,26 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # static fields
-.field public static final synthetic O0:I
+.field public static final synthetic G0:I
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lim;-><init>()V
+    invoke-direct {p0}, Lam;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final X(Landroid/content/Intent;)Z
+.method public final N(Landroid/content/Intent;)Z
     .locals 2
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -48,11 +49,11 @@
 
     if-eqz v0, :cond_1
 
-    invoke-static {v0}, Llu7;->a(Ljava/lang/String;)Lf91;
+    invoke-static {v0}, Lvo9;->b(Ljava/lang/String;)Loa1;
 
     move-result-object v0
 
-    sget-object v1, Le91;->a:Le91;
+    sget-object v1, Lna1;->a:Lna1;
 
     invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
@@ -107,9 +108,9 @@
 
     if-lt v0, v1, :cond_0
 
-    invoke-static {p0}, Lfn0;->h(Lone/me/android/deeplink/LinkInterceptorActivity;)V
+    invoke-static {p0}, Ldo0;->h(Lone/me/android/deeplink/LinkInterceptorActivity;)V
 
-    invoke-static {p0}, Lfn0;->m(Lone/me/android/deeplink/LinkInterceptorActivity;)V
+    invoke-static {p0}, Ldo0;->m(Lone/me/android/deeplink/LinkInterceptorActivity;)V
 
     goto :goto_0
 
@@ -149,7 +150,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lone/me/android/deeplink/LinkInterceptorActivity;->X(Landroid/content/Intent;)Z
+    invoke-virtual {p0, v0}, Lone/me/android/deeplink/LinkInterceptorActivity;->N(Landroid/content/Intent;)Z
 
     move-result v0
 
@@ -166,9 +167,9 @@
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    const-string v1, "link:result"
 
-    const-string v2, "link:result"
+    const/4 v2, 0x0
 
     if-nez v0, :cond_2
 
@@ -176,7 +177,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3, v2}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
+    invoke-virtual {v3, v1}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
 
     move-result v3
 
@@ -184,14 +185,14 @@
 
     const/16 p1, 0xe
 
-    invoke-static {p0, v1, v1, v1, p1}, Lsmc;->m(Landroid/content/Context;Landroid/net/Uri;Lfca;Luy1;I)V
+    invoke-static {p0, v2, v2, v2, p1}, Loa9;->h(Lam;Landroid/net/Uri;Lkga;Lo12;I)V
 
     invoke-virtual {p0}, Landroid/app/Activity;->finish()V
 
     return-void
 
     :cond_2
-    sget-object v3, Lrf9;->a:Lrf9;
+    sget-object v3, Lik9;->a:Lik9;
 
     invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
@@ -212,7 +213,11 @@
 
     if-nez v4, :cond_4
 
-    goto :goto_1
+    :cond_3
+    :goto_1
+    move-object v3, v2
+
+    goto :goto_2
 
     :catchall_0
     move-exception v3
@@ -221,34 +226,33 @@
 
     const-string v5, "fail to handle deep link"
 
-    invoke-static {v4, v5, v3}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v4, v5, v3}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :cond_3
-    :goto_1
-    move-object v3, v1
+    goto :goto_1
 
     :cond_4
-    invoke-static {p0}, Lx87;->b(Landroid/content/Context;)Laz1;
+    :goto_2
+    invoke-static {p0}, Lou0;->a(Landroid/content/Context;)Ls12;
 
     move-result-object v4
 
-    sget v5, Lnob;->root:I
+    sget v5, Lbtb;->root:I
 
     invoke-virtual {v4, v5}, Landroid/view/View;->setId(I)V
 
-    invoke-virtual {p0, v4}, Lim;->setContentView(Landroid/view/View;)V
+    invoke-virtual {p0, v4}, Lam;->setContentView(Landroid/view/View;)V
 
-    invoke-static {p0, v4, p1}, Lbm3;->c(Landroid/app/Activity;Landroid/view/ViewGroup;Landroid/os/Bundle;)Lsgc;
+    invoke-static {p0, v4, p1}, Lsgg;->b(Lam;Ls12;Landroid/os/Bundle;)Lcmc;
 
     move-result-object p1
 
     const/4 v4, 0x1
 
-    iput v4, p1, Lsgc;->e:I
+    iput v4, p1, Lcmc;->e:I
 
-    invoke-virtual {p1, v4}, Lsgc;->Q(Z)V
+    invoke-virtual {p1, v4}, Lcmc;->R(Z)V
 
-    invoke-virtual {p1}, Lsgc;->n()Z
+    invoke-virtual {p1}, Lcmc;->n()Z
 
     move-result v4
 
@@ -264,37 +268,37 @@
 
     if-nez v3, :cond_5
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_5
     move-object v0, v3
 
     :cond_6
-    :goto_2
+    :goto_3
     invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
     move-result-object p0
 
-    invoke-virtual {p0, v2}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+    invoke-virtual {p0, v1}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 
     move-result-object p0
 
-    check-cast p0, Lne7;
+    check-cast p0, Lfj7;
 
-    invoke-direct {v4, v0, p0}, Lone/me/android/deeplink/LinkInterceptorWidget;-><init>(Landroid/net/Uri;Lne7;)V
+    invoke-direct {v4, v0, p0}, Lone/me/android/deeplink/LinkInterceptorWidget;-><init>(Landroid/net/Uri;Lfj7;)V
 
-    invoke-static {v4, v1, v1}, Ln06;->f(Lrr3;Lwr3;Lwr3;)Lvgc;
+    invoke-static {v4, v2, v2}, Lus;->d(Lou3;Lvg;Lvg;)Lfmc;
 
     move-result-object p0
 
     const-string v0, "link"
 
-    invoke-virtual {p0, v0}, Lvgc;->d(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Lfmc;->d(Ljava/lang/String;)V
 
-    invoke-virtual {p1, p0}, Lsgc;->R(Lvgc;)V
+    invoke-virtual {p1, p0}, Lcmc;->S(Lfmc;)V
 
     :cond_7
-    invoke-virtual {p1}, Lsgc;->I()V
+    invoke-virtual {p1}, Lcmc;->J()V
 
     return-void
 .end method
@@ -302,9 +306,9 @@
 .method public final onNewIntent(Landroid/content/Intent;)V
     .locals 0
 
-    invoke-super {p0, p1}, Le83;->onNewIntent(Landroid/content/Intent;)V
+    invoke-super {p0, p1}, Lna3;->onNewIntent(Landroid/content/Intent;)V
 
-    invoke-virtual {p0, p1}, Lone/me/android/deeplink/LinkInterceptorActivity;->X(Landroid/content/Intent;)Z
+    invoke-virtual {p0, p1}, Lone/me/android/deeplink/LinkInterceptorActivity;->N(Landroid/content/Intent;)Z
 
     return-void
 .end method

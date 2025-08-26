@@ -1,50 +1,19 @@
-.class public interface abstract Lm67;
+.class public final Lm67;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/io/Closeable;
+
+# instance fields
+.field public final a:Ljx3;
 
 
-# virtual methods
-.method public abstract D()I
-.end method
+# direct methods
+.method public constructor <init>(Ljx3;)V
+    .locals 0
 
-.method public abstract H()Ljava/lang/String;
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract T()Ljava/lang/String;
-.end method
+    iput-object p1, p0, Lm67;->a:Ljx3;
 
-.method public abstract V()Ljava/lang/String;
-.end method
-
-.method public abstract a0()Z
-.end method
-
-.method public abstract f0()Ljava/lang/String;
-.end method
-
-.method public abstract hasNext()Z
-.end method
-
-.method public abstract peek()I
-.end method
-
-.method public abstract q()V
-.end method
-
-.method public abstract s()V
-.end method
-
-.method public abstract t()V
-.end method
-
-.method public abstract u()V
-.end method
-
-.method public abstract w()J
-.end method
-
-.method public abstract z()V
+    return-void
 .end method

@@ -19,15 +19,15 @@
         "Lru/ok/android/externcalls/sdk/stat/start/ConversationStartedStat;",
         "",
         "Lkotlin/Function0;",
-        "Lw41;",
+        "Lf61;",
         "getEventualStatSender",
         "Lru/ok/android/externcalls/sdk/Conversation$CallType;",
         "callType",
-        "Leje;",
+        "Lzre;",
         "timeProvider",
         "<init>",
-        "(Ls16;Lru/ok/android/externcalls/sdk/Conversation$CallType;Leje;)V",
-        "Ljue;",
+        "(Lv56;Lru/ok/android/externcalls/sdk/Conversation$CallType;Lzre;)V",
+        "Le5f;",
         "report",
         "()V",
         "",
@@ -36,9 +36,9 @@
         "getWarmupStatusString",
         "()Ljava/lang/String;",
         "onConversationStarted",
-        "Ls16;",
+        "Lv56;",
         "Lru/ok/android/externcalls/sdk/Conversation$CallType;",
-        "Leje;",
+        "Lzre;",
         "",
         "isReported",
         "Z",
@@ -54,6 +54,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -94,10 +95,10 @@
 # instance fields
 .field private final callType:Lru/ok/android/externcalls/sdk/Conversation$CallType;
 
-.field private final getEventualStatSender:Ls16;
+.field private final getEventualStatSender:Lv56;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ls16;"
+            "Lv56;"
         }
     .end annotation
 .end field
@@ -106,7 +107,7 @@
 
 .field private final startTimeMs:J
 
-.field private final timeProvider:Leje;
+.field private final timeProvider:Lzre;
 
 
 # direct methods
@@ -117,32 +118,32 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/stat/start/ConversationStartedStat$Companion;-><init>(Lx54;)V
+    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/stat/start/ConversationStartedStat$Companion;-><init>(Ll94;)V
 
     sput-object v0, Lru/ok/android/externcalls/sdk/stat/start/ConversationStartedStat;->Companion:Lru/ok/android/externcalls/sdk/stat/start/ConversationStartedStat$Companion;
 
     return-void
 .end method
 
-.method public constructor <init>(Ls16;Lru/ok/android/externcalls/sdk/Conversation$CallType;Leje;)V
+.method public constructor <init>(Lv56;Lru/ok/android/externcalls/sdk/Conversation$CallType;Lzre;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ls16;",
+            "Lv56;",
             "Lru/ok/android/externcalls/sdk/Conversation$CallType;",
-            "Leje;",
+            "Lzre;",
             ")V"
         }
     .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/stat/start/ConversationStartedStat;->getEventualStatSender:Ls16;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/stat/start/ConversationStartedStat;->getEventualStatSender:Lv56;
 
     iput-object p2, p0, Lru/ok/android/externcalls/sdk/stat/start/ConversationStartedStat;->callType:Lru/ok/android/externcalls/sdk/Conversation$CallType;
 
-    iput-object p3, p0, Lru/ok/android/externcalls/sdk/stat/start/ConversationStartedStat;->timeProvider:Leje;
+    iput-object p3, p0, Lru/ok/android/externcalls/sdk/stat/start/ConversationStartedStat;->timeProvider:Lzre;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -178,7 +179,7 @@
 
     const-string p0, "join"
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     new-instance p0, Lkotlin/NoWhenBranchMatchedException;
@@ -190,12 +191,11 @@
     :cond_1
     const-string p0, "outgoing"
 
-    goto :goto_0
+    return-object p0
 
     :cond_2
     const-string p0, "incoming"
 
-    :goto_0
     return-object p0
 .end method
 
@@ -210,9 +210,9 @@
 .method private final report()V
     .locals 6
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/stat/start/ConversationStartedStat;->timeProvider:Leje;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/stat/start/ConversationStartedStat;->timeProvider:Lzre;
 
-    check-cast v0, Lfje;
+    check-cast v0, Lase;
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -224,13 +224,13 @@
 
     sub-long/2addr v0, v2
 
-    iget-object v2, p0, Lru/ok/android/externcalls/sdk/stat/start/ConversationStartedStat;->getEventualStatSender:Ls16;
+    iget-object v2, p0, Lru/ok/android/externcalls/sdk/stat/start/ConversationStartedStat;->getEventualStatSender:Lv56;
 
-    invoke-interface {v2}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {v2}, Lv56;->invoke()Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lw41;
+    check-cast v2, Lf61;
 
     if-eqz v2, :cond_5
 
@@ -256,7 +256,7 @@
 
     move-result-object p0
 
-    invoke-static {p0}, Lp23;->B([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {p0}, Lq43;->e0([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
 
@@ -284,13 +284,11 @@
 
     check-cast v5, Ljava/lang/String;
 
-    invoke-static {v5}, Lh0e;->c0(Ljava/lang/CharSequence;)Z
+    invoke-static {v5}, Lj8e;->J0(Ljava/lang/CharSequence;)Z
 
     move-result v5
 
-    xor-int/lit8 v5, v5, 0x1
-
-    if-eqz v5, :cond_0
+    if-nez v5, :cond_0
 
     invoke-interface {v3, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
@@ -301,7 +299,7 @@
 
     const/16 v4, 0xa
 
-    invoke-static {v3, v4}, Lq23;->H(Ljava/lang/Iterable;I)I
+    invoke-static {v3, v4}, Lr43;->k0(Ljava/lang/Iterable;I)I
 
     move-result v4
 
@@ -341,9 +339,7 @@
 
     move-result v3
 
-    xor-int/lit8 v3, v3, 0x1
-
-    if-eqz v3, :cond_4
+    if-nez v3, :cond_4
 
     new-instance v3, Lorg/json/JSONObject;
 
@@ -388,11 +384,11 @@
     invoke-virtual {v1, v3, p0}, Lru/ok/android/externcalls/analytics/events/EventItemsMap;->set(Ljava/lang/String;Ljava/lang/String;)Lru/ok/android/externcalls/analytics/events/EventItemsMap;
 
     :cond_4
-    check-cast v2, Lx41;
+    check-cast v2, Lg61;
 
     const-string p0, "call_start"
 
-    invoke-virtual {v2, p0, v0, v1}, Lx41;->c(Ljava/lang/String;Lru/ok/android/externcalls/analytics/events/EventItemValue;Lru/ok/android/externcalls/analytics/events/EventItemsMap;)V
+    invoke-virtual {v2, p0, v0, v1}, Lg61;->c(Ljava/lang/String;Lru/ok/android/externcalls/analytics/events/EventItemValue;Lru/ok/android/externcalls/analytics/events/EventItemsMap;)V
 
     :cond_5
     return-void

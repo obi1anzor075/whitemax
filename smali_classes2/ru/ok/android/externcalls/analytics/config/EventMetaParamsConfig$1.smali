@@ -1,14 +1,14 @@
 .class final Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig$1;
-.super Lb97;
+.super Lsd7;
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Lv56;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;-><init>(Ls16;ILx54;)V
+    value = Lru/ok/android/externcalls/analytics/config/EventMetaParamsConfig;-><init>(Lv56;ILl94;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -57,7 +57,7 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lb97;-><init>(I)V
+    invoke-direct {p0, v0}, Lsd7;-><init>(I)V
 
     return-void
 .end method

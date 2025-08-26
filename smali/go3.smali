@@ -1,53 +1,48 @@
-.class public final synthetic Lgo3;
-.super Ljava/lang/Object;
-.source "SourceFile"
+.class public final Lgo3;
+.super Lbu3;
 
-# interfaces
-.implements Le8;
+
+# instance fields
+.field public X:I
+
+.field public final synthetic Y:Ltb;
+
+.field public synthetic o:Ljava/lang/Object;
+
+
+# direct methods
+.method public constructor <init>(Ltb;Lkotlin/coroutines/Continuation;)V
+    .locals 0
+
+    iput-object p1, p0, Lgo3;->Y:Ltb;
+
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final a(Lsgc;)V
-    .locals 2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    new-instance p0, Landroid/content/Intent;
+    iput-object p1, p0, Lgo3;->o:Ljava/lang/Object;
 
-    const-string v0, "android.intent.action.INSERT"
+    iget p1, p0, Lgo3;->X:I
 
-    invoke-direct {p0, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    const/high16 v0, -0x80000000
 
-    const-string v0, "vnd.android.cursor.dir/raw_contact"
+    or-int/2addr p1, v0
 
-    invoke-virtual {p0, v0}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
+    iput p1, p0, Lgo3;->X:I
 
-    const-string v0, "finishActivityOnSaveCompleted"
+    iget-object p1, p0, Lgo3;->Y:Ltb;
 
-    const/4 v1, 0x1
+    const/4 v0, 0x0
 
-    invoke-virtual {p0, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+    invoke-virtual {p1, v0, p0}, Ltb;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    :try_start_0
-    invoke-static {p1}, Ljjd;->C(Lsgc;)Landroid/app/Activity;
+    move-result-object p0
 
-    move-result-object p1
-
-    const/16 v0, 0x66
-
-    invoke-virtual {p1, p0, v0}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
-    :try_end_0
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    const/4 p0, 0x0
-
-    const-string p1, "ContactsDeepLinkFactory"
-
-    const-string v0, "createContact: failed, no activity found"
-
-    invoke-static {p1, v0, p0}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :goto_0
-    return-void
+    return-object p0
 .end method

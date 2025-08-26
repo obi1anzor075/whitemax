@@ -1,342 +1,151 @@
-.class public final Lnv7;
-.super Lx1;
+.class public abstract synthetic Lnv7;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic a:I
-
-.field public final b:Ljava/lang/Object;
+# static fields
+.field public static final synthetic a:[I
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 3
 
-    const/4 v0, 0x1
+    invoke-static {}, Ljava/math/RoundingMode;->values()[Ljava/math/RoundingMode;
 
-    iput v0, p0, Lnv7;->a:I
+    move-result-object v0
 
-    .line 1
-    invoke-direct {p0}, Lx1;-><init>()V
+    array-length v0, v0
 
-    iput-object p1, p0, Lnv7;->b:Ljava/lang/Object;
+    new-array v0, v0, [I
 
+    sput-object v0, Lnv7;->a:[I
+
+    :try_start_0
+    sget-object v1, Ljava/math/RoundingMode;->UNNECESSARY:Ljava/math/RoundingMode;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    :try_start_1
+    sget-object v0, Lnv7;->a:[I
+
+    sget-object v1, Ljava/math/RoundingMode;->DOWN:Ljava/math/RoundingMode;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    :catch_1
+    :try_start_2
+    sget-object v0, Lnv7;->a:[I
+
+    sget-object v1, Ljava/math/RoundingMode;->FLOOR:Ljava/math/RoundingMode;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
+    :catch_2
+    :try_start_3
+    sget-object v0, Lnv7;->a:[I
+
+    sget-object v1, Ljava/math/RoundingMode;->UP:Ljava/math/RoundingMode;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+
+    :catch_3
+    :try_start_4
+    sget-object v0, Lnv7;->a:[I
+
+    sget-object v1, Ljava/math/RoundingMode;->CEILING:Ljava/math/RoundingMode;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x5
+
+    aput v2, v0, v1
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+
+    :catch_4
+    :try_start_5
+    sget-object v0, Lnv7;->a:[I
+
+    sget-object v1, Ljava/math/RoundingMode;->HALF_DOWN:Ljava/math/RoundingMode;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x6
+
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+
+    :catch_5
+    :try_start_6
+    sget-object v0, Lnv7;->a:[I
+
+    sget-object v1, Ljava/math/RoundingMode;->HALF_UP:Ljava/math/RoundingMode;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x7
+
+    aput v2, v0, v1
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
+
+    :catch_6
+    :try_start_7
+    sget-object v0, Lnv7;->a:[I
+
+    sget-object v1, Ljava/math/RoundingMode;->HALF_EVEN:Ljava/math/RoundingMode;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0x8
+
+    aput v2, v0, v1
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
+
+    :catch_7
     return-void
-.end method
-
-.method public constructor <init>(Lmn;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lnv7;->a:I
-
-    iput-object p1, p0, Lnv7;->b:Ljava/lang/Object;
-
-    .line 2
-    invoke-direct {p0}, Lx1;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public bridge contains(Ljava/lang/Object;)Z
-    .locals 1
-
-    iget v0, p0, Lnv7;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0, p1}, Lx1;->contains(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-
-    :pswitch_0
-    instance-of v0, p1, Ljava/lang/String;
-
-    if-nez v0, :cond_0
-
-    const/4 p0, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    check-cast p1, Ljava/lang/String;
-
-    invoke-super {p0, p1}, Lx1;->contains(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    :goto_0
-    return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final get(I)Ljava/lang/Object;
-    .locals 1
-
-    iget v0, p0, Lnv7;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lnv7;->b:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/List;
-
-    invoke-static {p1, p0}, Lo23;->P(ILjava/util/List;)I
-
-    move-result p0
-
-    invoke-interface {v0, p0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    iget-object p0, p0, Lnv7;->b:Ljava/lang/Object;
-
-    check-cast p0, Lmn;
-
-    iget-object p0, p0, Lmn;->b:Ljava/lang/Object;
-
-    check-cast p0, Ljava/util/regex/Matcher;
-
-    invoke-virtual {p0, p1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object p0
-
-    if-nez p0, :cond_0
-
-    const-string p0, ""
-
-    :cond_0
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final getSize()I
-    .locals 1
-
-    iget v0, p0, Lnv7;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Lnv7;->b:Ljava/lang/Object;
-
-    check-cast p0, Ljava/util/List;
-
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result p0
-
-    return p0
-
-    :pswitch_0
-    iget-object p0, p0, Lnv7;->b:Ljava/lang/Object;
-
-    check-cast p0, Lmn;
-
-    iget-object p0, p0, Lmn;->b:Ljava/lang/Object;
-
-    check-cast p0, Ljava/util/regex/Matcher;
-
-    invoke-virtual {p0}, Ljava/util/regex/Matcher;->groupCount()I
-
-    move-result p0
-
-    add-int/lit8 p0, p0, 0x1
-
-    return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public bridge indexOf(Ljava/lang/Object;)I
-    .locals 1
-
-    iget v0, p0, Lnv7;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0, p1}, Lx1;->indexOf(Ljava/lang/Object;)I
-
-    move-result p0
-
-    return p0
-
-    :pswitch_0
-    instance-of v0, p1, Ljava/lang/String;
-
-    if-nez v0, :cond_0
-
-    const/4 p0, -0x1
-
-    goto :goto_0
-
-    :cond_0
-    check-cast p1, Ljava/lang/String;
-
-    invoke-super {p0, p1}, Lx1;->indexOf(Ljava/lang/Object;)I
-
-    move-result p0
-
-    :goto_0
-    return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public iterator()Ljava/util/Iterator;
-    .locals 2
-
-    iget v0, p0, Lnv7;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0}, Lx1;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    new-instance v0, Lzcc;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Lzcc;-><init>(Lnv7;I)V
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public bridge lastIndexOf(Ljava/lang/Object;)I
-    .locals 1
-
-    iget v0, p0, Lnv7;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0, p1}, Lx1;->lastIndexOf(Ljava/lang/Object;)I
-
-    move-result p0
-
-    return p0
-
-    :pswitch_0
-    instance-of v0, p1, Ljava/lang/String;
-
-    if-nez v0, :cond_0
-
-    const/4 p0, -0x1
-
-    goto :goto_0
-
-    :cond_0
-    check-cast p1, Ljava/lang/String;
-
-    invoke-super {p0, p1}, Lx1;->lastIndexOf(Ljava/lang/Object;)I
-
-    move-result p0
-
-    :goto_0
-    return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public listIterator()Ljava/util/ListIterator;
-    .locals 2
-
-    iget v0, p0, Lnv7;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0}, Lx1;->listIterator()Ljava/util/ListIterator;
-
-    move-result-object p0
-
-    return-object p0
-
-    .line 1
-    :pswitch_0
-    new-instance v0, Lzcc;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Lzcc;-><init>(Lnv7;I)V
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public listIterator(I)Ljava/util/ListIterator;
-    .locals 1
-
-    iget v0, p0, Lnv7;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0, p1}, Lx1;->listIterator(I)Ljava/util/ListIterator;
-
-    move-result-object p0
-
-    return-object p0
-
-    .line 2
-    :pswitch_0
-    new-instance v0, Lzcc;
-
-    invoke-direct {v0, p0, p1}, Lzcc;-><init>(Lnv7;I)V
-
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
 .end method

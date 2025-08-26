@@ -1,181 +1,408 @@
-.class public final enum Ls00;
-.super Ljava/lang/Enum;
+.class public final synthetic Ls00;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/content/DialogInterface$OnClickListener;
 
-# static fields
-.field public static final synthetic A0:[Ls00;
 
-.field public static final enum X:Ls00;
+# instance fields
+.field public final synthetic a:I
 
-.field public static final enum Y:Ls00;
-
-.field public static final enum Z:Ls00;
-
-.field public static final enum a:Ls00;
-
-.field public static final enum b:Ls00;
-
-.field public static final enum c:Ls00;
-
-.field public static final enum o:Ls00;
-
-.field public static final enum w0:Ls00;
-
-.field public static final enum x0:Ls00;
-
-.field public static final enum y0:Ls00;
-
-.field public static final enum z0:Ls00;
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 13
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
+    .locals 0
 
-    new-instance v0, Ls00;
+    iput p1, p0, Ls00;->a:I
 
-    const-string v1, "UNKNOWN"
+    iput-object p2, p0, Ls00;->b:Ljava/lang/Object;
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ls00;->a:Ls00;
-
-    new-instance v1, Ls00;
-
-    const-string v2, "NEW"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Ls00;->b:Ls00;
-
-    new-instance v2, Ls00;
-
-    const-string v3, "ADD"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Ls00;->c:Ls00;
-
-    new-instance v3, Ls00;
-
-    const-string v4, "REMOVE"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Ls00;->o:Ls00;
-
-    new-instance v4, Ls00;
-
-    const-string v5, "LEAVE"
-
-    const/4 v6, 0x4
-
-    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v4, Ls00;->X:Ls00;
-
-    new-instance v5, Ls00;
-
-    const-string v6, "TITLE"
-
-    const/4 v7, 0x5
-
-    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v5, Ls00;->Y:Ls00;
-
-    new-instance v6, Ls00;
-
-    const-string v7, "ICON"
-
-    const/4 v8, 0x6
-
-    invoke-direct {v6, v7, v8}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v6, Ls00;->Z:Ls00;
-
-    new-instance v7, Ls00;
-
-    const-string v8, "SYSTEM"
-
-    const/4 v9, 0x7
-
-    invoke-direct {v7, v8, v9}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v7, Ls00;->w0:Ls00;
-
-    new-instance v8, Ls00;
-
-    const-string v9, "JOIN_BY_LINK"
-
-    const/16 v10, 0x8
-
-    invoke-direct {v8, v9, v10}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v8, Ls00;->x0:Ls00;
-
-    new-instance v9, Ls00;
-
-    const-string v10, "PIN"
-
-    const/16 v11, 0x9
-
-    invoke-direct {v9, v10, v11}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v9, Ls00;->y0:Ls00;
-
-    new-instance v10, Ls00;
-
-    const-string v11, "BOT_STARTED"
-
-    const/16 v12, 0xa
-
-    invoke-direct {v10, v11, v12}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v10, Ls00;->z0:Ls00;
-
-    filled-new-array/range {v0 .. v10}, [Ls00;
-
-    move-result-object v0
-
-    sput-object v0, Ls00;->A0:[Ls00;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Ls00;
-    .locals 1
 
-    const-class v0, Ls00;
+# virtual methods
+.method public final onClick(Landroid/content/DialogInterface;I)V
+    .locals 8
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    iget p1, p0, Ls00;->a:I
 
-    move-result-object p0
+    const/4 v0, 0x0
 
-    check-cast p0, Ls00;
+    iget-object p0, p0, Ls00;->b:Ljava/lang/Object;
 
-    return-object p0
-.end method
+    packed-switch p1, :pswitch_data_0
 
-.method public static values()[Ls00;
-    .locals 1
+    check-cast p0, Lru/ok/messages/views/dialogs/VideoQualityPickerDialog;
 
-    sget-object v0, Ls00;->A0:[Ls00;
+    sget-object p1, Ldlf;->a:Ldlf;
 
-    invoke-virtual {v0}, [Ls00;->clone()Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lru/ok/messages/views/dialogs/VideoQualityPickerDialog;->c1(Lflf;)V
 
-    move-result-object v0
+    return-void
 
-    check-cast v0, [Ls00;
+    :pswitch_0
+    check-cast p0, Lru/ok/messages/views/dialogs/LoadMediaDialog;
 
-    return-object v0
+    const/4 p1, 0x1
+
+    invoke-virtual {p0, p1}, Landroidx/fragment/app/a;->X(Z)Landroidx/fragment/app/a;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_3
+
+    new-instance v2, Landroid/content/Intent;
+
+    invoke-direct {v2}, Landroid/content/Intent;-><init>()V
+
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->H0()Landroid/os/Bundle;
+
+    move-result-object v3
+
+    const-string v4, "ru.ok.tamtam.extra.SETTING_ID"
+
+    invoke-virtual {v3, v4}, Landroid/os/BaseBundle;->getInt(Ljava/lang/String;)I
+
+    move-result v3
+
+    invoke-virtual {v2, v4, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    const/4 v3, -0x1
+
+    const-string v4, "ru.ok.tamtam.extra.RESULT_ITEM"
+
+    if-eqz p2, :cond_2
+
+    if-eq p2, p1, :cond_1
+
+    const/4 p1, 0x2
+
+    if-eq p2, p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v2, v4, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {v2, v4, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {v2, v4, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    :goto_0
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->Y()I
+
+    move-result p0
+
+    invoke-virtual {v1, p0, v3, v2}, Landroidx/fragment/app/a;->h0(IILandroid/content/Intent;)V
+
+    :cond_3
+    return-void
+
+    :pswitch_1
+    check-cast p0, Lru/ok/messages/views/dialogs/FrgDlgStopLiveLocation;
+
+    invoke-virtual {p0, v0, v0}, Landroidx/fragment/app/DialogFragment;->T0(ZZ)V
+
+    return-void
+
+    :pswitch_2
+    check-cast p0, Lru/ok/messages/views/dialogs/FrgDlgAudioTracksPicker;
+
+    iget-object p1, p0, Landroidx/fragment/app/a;->E0:Landroidx/fragment/app/a;
+
+    const-class v1, Lru/ok/messages/media/attaches/fragments/FrgAttachVideo;
+
+    if-eqz p1, :cond_4
+
+    invoke-virtual {v1, p1}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    goto :goto_1
+
+    :cond_4
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->Q()Landroidx/fragment/app/b;
+
+    move-result-object p1
+
+    invoke-virtual {v1, p1}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    :goto_1
+    check-cast p1, Lru/ok/messages/media/attaches/fragments/FrgAttachVideo;
+
+    iget-object v1, p0, Lru/ok/messages/views/dialogs/FrgDlgAudioTracksPicker;->B1:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Loxe;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const-string v1, "onAudioTrackSelected %s"
+
+    filled-new-array {p2}, [Ljava/lang/Object;
+
+    move-result-object v2
+
+    const-string v3, "ru.ok.messages.media.attaches.fragments.FrgAttachVideo"
+
+    invoke-static {v3, v1, v2}, Lg47;->o(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object p1, p1, Lru/ok/messages/media/attaches/fragments/FrgAttachVideo;->J1:Lai9;
+
+    if-nez p1, :cond_5
+
+    goto/16 :goto_3
+
+    :cond_5
+    const-string v1, "selectAudioTrack %s"
+
+    filled-new-array {p2}, [Ljava/lang/Object;
+
+    move-result-object v2
+
+    const-string v3, "ai9"
+
+    invoke-static {v3, v1, v2}, Lg47;->o(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    invoke-virtual {p1}, Lai9;->V0()Z
+
+    move-result v1
+
+    if-nez v1, :cond_6
+
+    goto/16 :goto_3
+
+    :cond_6
+    iget-object v1, p1, Lai9;->u0:Lw10;
+
+    if-eqz v1, :cond_7
+
+    iget-object v2, p1, Lai9;->t0:Lzs8;
+
+    if-eqz v2, :cond_7
+
+    iget-object v3, p1, Lai9;->o0:Lxs8;
+
+    iget v4, p2, Loxe;->p0:I
+
+    iget v5, p2, Loxe;->o0:I
+
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v1, v1, Lw10;->r:Ljava/lang/String;
+
+    new-instance v6, Lt65;
+
+    const/4 v7, 0x4
+
+    invoke-direct {v6, v4, v5, v7}, Lt65;-><init>(III)V
+
+    invoke-virtual {v3, v2, v1, v6}, Lxs8;->t(Lzs8;Ljava/lang/String;Ljj3;)Lzs8;
+
+    :cond_7
+    iget-object p1, p1, Lai9;->c:Lge8;
+
+    check-cast p1, Lyp7;
+
+    iget-object v1, p1, Lyp7;->f:Lhef;
+
+    if-nez v1, :cond_8
+
+    goto :goto_3
+
+    :cond_8
+    iget-object p1, p1, Lyp7;->b:Lh65;
+
+    const-string v1, "selectAudioTrack: %s"
+
+    filled-new-array {p2}, [Ljava/lang/Object;
+
+    move-result-object v2
+
+    const-string v3, "h65"
+
+    invoke-static {v3, v1, v2}, Lg47;->o(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    invoke-static {}, Lh65;->y()V
+
+    iget-object p1, p1, Lh65;->b:Lua3;
+
+    iget-object v1, p1, Lua3;->a:Ljava/lang/Object;
+
+    check-cast v1, Ljf4;
+
+    sget-object v2, Loxe;->q0:Loxe;
+
+    if-ne p2, v2, :cond_d
+
+    iget-object p2, v1, Ldz7;->c:Lbz7;
+
+    if-nez p2, :cond_9
+
+    goto :goto_3
+
+    :cond_9
+    invoke-virtual {p1, p2}, Lua3;->n(Lbz7;)Landroid/util/Pair;
+
+    move-result-object p1
+
+    iget-object p1, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    if-gez p1, :cond_a
+
+    goto :goto_3
+
+    :cond_a
+    invoke-virtual {v1}, Ljf4;->a()Lxe4;
+
+    move-result-object p2
+
+    iget-object v2, p2, Lxe4;->M:Landroid/util/SparseArray;
+
+    invoke-virtual {v2, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/Map;
+
+    if-eqz v3, :cond_c
+
+    invoke-interface {v3}, Ljava/util/Map;->isEmpty()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_b
+
+    goto :goto_2
+
+    :cond_b
+    invoke-virtual {v2, p1}, Landroid/util/SparseArray;->remove(I)V
+
+    :cond_c
+    :goto_2
+    invoke-virtual {v1, p2}, Ljf4;->g(Lxe4;)V
+
+    goto :goto_3
+
+    :cond_d
+    iget-object p1, v1, Ldz7;->c:Lbz7;
+
+    if-nez p1, :cond_e
+
+    goto :goto_3
+
+    :cond_e
+    new-instance v2, Lye4;
+
+    iget v3, p2, Loxe;->o0:I
+
+    iget v4, p2, Loxe;->Z:I
+
+    iget p2, p2, Loxe;->p0:I
+
+    filled-new-array {p2}, [I
+
+    move-result-object p2
+
+    invoke-direct {v2, v3, v0, p2}, Lye4;-><init>(II[I)V
+
+    iget-object p1, p1, Lbz7;->c:[Lvxe;
+
+    aget-object p1, p1, v4
+
+    invoke-virtual {v1}, Ljf4;->a()Lxe4;
+
+    move-result-object p2
+
+    invoke-virtual {p2, v4, p1, v2}, Lxe4;->d(ILvxe;Lye4;)V
+
+    invoke-virtual {v1, p2}, Ljf4;->g(Lxe4;)V
+
+    :goto_3
+    invoke-virtual {p0, v0, v0}, Landroidx/fragment/app/DialogFragment;->T0(ZZ)V
+
+    return-void
+
+    :pswitch_3
+    check-cast p0, Landroid/content/Context;
+
+    sget-object p1, Lg47;->l:Ljava/util/ArrayList;
+
+    const-string p1, "package:"
+
+    :try_start_0
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    invoke-direct {p2, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object p1
+
+    new-instance p2, Landroid/content/Intent;
+
+    const-string v0, "android.settings.MANAGE_UNKNOWN_APP_SOURCES"
+
+    invoke-direct {p2, v0, p1}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+
+    invoke-virtual {p0, p2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_4
+
+    :catch_0
+    move-exception p0
+
+    const-string p1, "g47"
+
+    invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-static {p1, p2, p0}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :goto_4
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

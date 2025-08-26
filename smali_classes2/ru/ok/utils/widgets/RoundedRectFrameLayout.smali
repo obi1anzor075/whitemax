@@ -26,13 +26,13 @@
     goto :goto_0
 
     :cond_0
-    sget-object v0, Lewb;->RoundedRectFrameLayout:[I
+    sget-object v0, La1c;->RoundedRectFrameLayout:[I
 
     invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object p1
 
-    sget p2, Lewb;->RoundedRectFrameLayout_cornersRadius:I
+    sget p2, La1c;->RoundedRectFrameLayout_cornersRadius:I
 
     const/4 v0, -0x1
 
@@ -84,12 +84,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    return p0
 
     :catchall_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -100,7 +99,7 @@
 
     if-nez p3, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
     new-instance p3, Landroid/graphics/Rect;
@@ -111,7 +110,7 @@
 
     iget-boolean p1, p0, Lru/ok/utils/widgets/RoundedRectFrameLayout;->o:Z
 
-    if-eqz p1, :cond_1
+    if-eqz p1, :cond_2
 
     iget-object p1, p0, Lru/ok/utils/widgets/RoundedRectFrameLayout;->a:Landroid/graphics/Path;
 
@@ -135,16 +134,18 @@
 
     move-result p1
 
-    if-nez p1, :cond_2
+    if-nez p1, :cond_1
 
     iget-object p0, p0, Lru/ok/utils/widgets/RoundedRectFrameLayout;->a:Landroid/graphics/Path;
 
     invoke-virtual {p0}, Landroid/graphics/Path;->toggleInverseFillType()V
 
-    goto :goto_0
-
     :cond_1
-    new-instance p1, Logc;
+    :goto_0
+    return-void
+
+    :cond_2
+    new-instance p1, Lxlc;
 
     iget-object p2, p0, Lru/ok/utils/widgets/RoundedRectFrameLayout;->c:[F
 
@@ -152,12 +153,10 @@
 
     const/4 p4, 0x1
 
-    invoke-direct {p1, p3, p2, p4}, Logc;-><init>(Landroid/graphics/Rect;FI)V
+    invoke-direct {p1, p3, p2, p4}, Lxlc;-><init>(Landroid/graphics/Rect;FI)V
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    :cond_2
-    :goto_0
     return-void
 .end method
 
@@ -308,7 +307,7 @@
 
     iput-boolean p1, p0, Lru/ok/utils/widgets/RoundedRectFrameLayout;->o:Z
 
-    if-eqz p1, :cond_3
+    if-nez v2, :cond_3
 
     const/4 p1, 0x0
 
@@ -340,12 +339,11 @@
 
     invoke-virtual {p0, p1}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    goto :goto_1
+    return-void
 
     :cond_3
     invoke-virtual {p0, v1}, Landroid/view/View;->setClipToOutline(Z)V
 
     :cond_4
-    :goto_1
     return-void
 .end method

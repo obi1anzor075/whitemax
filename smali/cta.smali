@@ -1,86 +1,206 @@
-.class public final synthetic Lcta;
+.class public final Lcta;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Ljava/io/Externalizable;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:Ljava/lang/String;
 
-.field public final synthetic b:Lone/me/chats/picker/PickerChatsTabWidget;
+.field public Y:Z
+
+.field public Z:Z
+
+.field public a:Ljava/lang/String;
+
+.field public b:Ljava/lang/String;
+
+.field public final c:Ljava/util/ArrayList;
+
+.field public o:Z
+
+.field public o0:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/chats/picker/PickerChatsTabWidget;I)V
-    .locals 0
-
-    iput p2, p0, Lcta;->a:I
-
-    iput-object p1, p0, Lcta;->b:Lone/me/chats/picker/PickerChatsTabWidget;
+.method public constructor <init>()V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const-string v0, ""
+
+    iput-object v0, p0, Lcta;->a:Ljava/lang/String;
+
+    iput-object v0, p0, Lcta;->b:Ljava/lang/String;
+
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v1, p0, Lcta;->c:Ljava/util/ArrayList;
+
+    iput-object v0, p0, Lcta;->X:Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, p0, Lcta;->Y:Z
+
+    iput-object v0, p0, Lcta;->o0:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 2
+.method public final readExternal(Ljava/io/ObjectInput;)V
+    .locals 4
 
-    iget-object v0, p0, Lcta;->b:Lone/me/chats/picker/PickerChatsTabWidget;
-
-    iget p0, p0, Lcta;->a:I
-
-    packed-switch p0, :pswitch_data_0
-
-    sget-object p0, Lone/me/chats/picker/PickerChatsTabWidget;->z0:[Lk77;
-
-    new-instance p0, Landroidx/viewpager2/widget/ViewPager2;
-
-    invoke-virtual {v0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+    invoke-interface {p1}, Ljava/io/DataInput;->readUTF()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Landroidx/viewpager2/widget/ViewPager2;-><init>(Landroid/content/Context;)V
+    iput-object v0, p0, Lcta;->a:Ljava/lang/String;
 
-    sget v0, Lf2a;->d:I
-
-    invoke-virtual {p0, v0}, Landroid/view/View;->setId(I)V
-
-    invoke-static {p0}, Lswb;->r(Landroidx/viewpager2/widget/ViewPager2;)V
-
-    return-object p0
-
-    :pswitch_0
-    sget-object p0, Lone/me/chats/picker/PickerChatsTabWidget;->z0:[Lk77;
-
-    new-instance p0, Lhda;
-
-    invoke-virtual {v0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+    invoke-interface {p1}, Ljava/io/DataInput;->readUTF()Ljava/lang/String;
 
     move-result-object v0
+
+    iput-object v0, p0, Lcta;->b:Ljava/lang/String;
+
+    invoke-interface {p1}, Ljava/io/DataInput;->readInt()I
+
+    move-result v0
 
     const/4 v1, 0x0
 
-    invoke-direct {p0, v0, v1}, Lhda;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    :goto_0
+    if-ge v1, v0, :cond_0
 
-    sget v0, Lf2a;->e:I
+    iget-object v2, p0, Lcta;->c:Ljava/util/ArrayList;
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setId(I)V
+    invoke-interface {p1}, Ljava/io/DataInput;->readUTF()Ljava/lang/String;
 
-    const/4 v0, 0x0
+    move-result-object v3
 
-    invoke-virtual {p0, v0}, Lcom/google/android/material/tabs/TabLayout;->setTabMode(I)V
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    return-object p0
+    add-int/lit8 v1, v1, 0x1
 
-    nop
+    goto :goto_0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    :cond_0
+    invoke-interface {p1}, Ljava/io/DataInput;->readBoolean()Z
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p1}, Ljava/io/DataInput;->readUTF()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-boolean v1, p0, Lcta;->o:Z
+
+    iput-object v0, p0, Lcta;->X:Ljava/lang/String;
+
+    :cond_1
+    invoke-interface {p1}, Ljava/io/DataInput;->readBoolean()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {p1}, Ljava/io/DataInput;->readUTF()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-boolean v1, p0, Lcta;->Z:Z
+
+    iput-object v0, p0, Lcta;->o0:Ljava/lang/String;
+
+    :cond_2
+    invoke-interface {p1}, Ljava/io/DataInput;->readBoolean()Z
+
+    move-result p1
+
+    iput-boolean p1, p0, Lcta;->Y:Z
+
+    return-void
+.end method
+
+.method public final writeExternal(Ljava/io/ObjectOutput;)V
+    .locals 3
+
+    iget-object v0, p0, Lcta;->a:Ljava/lang/String;
+
+    invoke-interface {p1, v0}, Ljava/io/DataOutput;->writeUTF(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcta;->b:Ljava/lang/String;
+
+    invoke-interface {p1, v0}, Ljava/io/DataOutput;->writeUTF(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcta;->c:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    invoke-interface {p1, v0}, Ljava/io/DataOutput;->writeInt(I)V
+
+    const/4 v1, 0x0
+
+    :goto_0
+    if-ge v1, v0, :cond_0
+
+    iget-object v2, p0, Lcta;->c:Ljava/util/ArrayList;
+
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-interface {p1, v2}, Ljava/io/DataOutput;->writeUTF(Ljava/lang/String;)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    iget-boolean v0, p0, Lcta;->o:Z
+
+    invoke-interface {p1, v0}, Ljava/io/DataOutput;->writeBoolean(Z)V
+
+    iget-boolean v0, p0, Lcta;->o:Z
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcta;->X:Ljava/lang/String;
+
+    invoke-interface {p1, v0}, Ljava/io/DataOutput;->writeUTF(Ljava/lang/String;)V
+
+    :cond_1
+    iget-boolean v0, p0, Lcta;->Z:Z
+
+    invoke-interface {p1, v0}, Ljava/io/DataOutput;->writeBoolean(Z)V
+
+    iget-boolean v0, p0, Lcta;->Z:Z
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcta;->o0:Ljava/lang/String;
+
+    invoke-interface {p1, v0}, Ljava/io/DataOutput;->writeUTF(Ljava/lang/String;)V
+
+    :cond_2
+    iget-boolean p0, p0, Lcta;->Y:Z
+
+    invoke-interface {p1, p0}, Ljava/io/DataOutput;->writeBoolean(Z)V
+
+    return-void
 .end method

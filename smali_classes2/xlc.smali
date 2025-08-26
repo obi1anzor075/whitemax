@@ -1,61 +1,89 @@
-.class public final synthetic Lxlc;
-.super Ljava/lang/Object;
+.class public final Lxlc;
+.super Landroid/view/ViewOutlineProvider;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/content/DialogInterface$OnKeyListener;
 
 
 # instance fields
-.field public final synthetic a:Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;
+.field public final synthetic a:I
+
+.field public final b:Landroid/graphics/Rect;
+
+.field public final c:F
 
 
 # direct methods
-.method public synthetic constructor <init>(Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;)V
+.method public constructor <init>(Landroid/graphics/Rect;F)V
+    .locals 1
+
+    const/4 v0, 0x2
+
+    iput v0, p0, Lxlc;->a:I
+
+    iput-object p1, p0, Lxlc;->b:Landroid/graphics/Rect;
+
+    iput p2, p0, Lxlc;->c:F
+
+    .line 2
+    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Landroid/graphics/Rect;FI)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 1
+    iput p3, p0, Lxlc;->a:I
 
-    iput-object p1, p0, Lxlc;->a:Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;
+    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
+
+    iput-object p1, p0, Lxlc;->b:Landroid/graphics/Rect;
+
+    iput p2, p0, Lxlc;->c:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onKey(Landroid/content/DialogInterface;ILandroid/view/KeyEvent;)Z
+.method public final getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 0
 
-    const/4 p1, 0x4
+    iget p1, p0, Lxlc;->a:I
 
-    if-ne p2, p1, :cond_0
+    packed-switch p1, :pswitch_data_0
 
-    invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
+    iget-object p1, p0, Lxlc;->b:Landroid/graphics/Rect;
 
-    move-result p1
+    iget p0, p0, Lxlc;->c:F
 
-    const/4 p2, 0x1
+    invoke-virtual {p2, p1, p0}, Landroid/graphics/Outline;->setRoundRect(Landroid/graphics/Rect;F)V
 
-    if-ne p1, p2, :cond_0
+    return-void
 
-    new-instance p1, Lzlc;
+    :pswitch_0
+    iget-object p1, p0, Lxlc;->b:Landroid/graphics/Rect;
 
-    iget-object p0, p0, Lxlc;->a:Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;
+    iget p0, p0, Lxlc;->c:F
 
-    iget-object p2, p0, Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;->J1:Lt97;
+    invoke-virtual {p2, p1, p0}, Landroid/graphics/Outline;->setRoundRect(Landroid/graphics/Rect;F)V
 
-    invoke-interface {p2}, Lt97;->getValue()Ljava/lang/Object;
+    return-void
 
-    move-result-object p2
+    :pswitch_1
+    iget-object p1, p0, Lxlc;->b:Landroid/graphics/Rect;
 
-    check-cast p2, Landroid/os/Parcelable;
+    iget p0, p0, Lxlc;->c:F
 
-    invoke-direct {p1, p2}, Lzlc;-><init>(Landroid/os/Parcelable;)V
+    invoke-virtual {p2, p1, p0}, Landroid/graphics/Outline;->setRoundRect(Landroid/graphics/Rect;F)V
 
-    invoke-virtual {p0, p1}, Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;->p1(Lbmc;)V
+    return-void
 
-    :cond_0
-    const/4 p0, 0x0
+    nop
 
-    return p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

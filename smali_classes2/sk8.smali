@@ -1,57 +1,74 @@
-.class public final Lsk8;
-.super Ler3;
+.class public final synthetic Lsk8;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public X:Ljava/lang/Object;
+.field public final synthetic a:I
 
-.field public Y:Llg7;
+.field public final synthetic b:Luk8;
 
-.field public Z:Llg7;
-
-.field public o:Lcl8;
-
-.field public synthetic w0:Ljava/lang/Object;
-
-.field public final synthetic x0:Lcl8;
-
-.field public y0:I
+.field public final synthetic c:Lkze;
 
 
 # direct methods
-.method public constructor <init>(Lcl8;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(Luk8;Lkze;I)V
     .locals 0
 
-    iput-object p1, p0, Lsk8;->x0:Lcl8;
+    iput p3, p0, Lsk8;->a:I
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lsk8;->b:Luk8;
+
+    iput-object p2, p0, Lsk8;->c:Lkze;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final run()V
     .locals 1
 
-    iput-object p1, p0, Lsk8;->w0:Ljava/lang/Object;
+    iget v0, p0, Lsk8;->a:I
 
-    iget p1, p0, Lsk8;->y0:I
+    packed-switch v0, :pswitch_data_0
 
-    const/high16 v0, -0x80000000
+    iget-object v0, p0, Lsk8;->b:Luk8;
 
-    or-int/2addr p1, v0
+    iget-object p0, p0, Lsk8;->c:Lkze;
 
-    iput p1, p0, Lsk8;->y0:I
+    invoke-virtual {v0, p0}, Luk8;->d(Lkze;)V
 
-    iget-object p1, p0, Lsk8;->x0:Lcl8;
+    return-void
 
-    const/4 v0, 0x0
+    :pswitch_0
+    iget-object v0, p0, Lsk8;->b:Luk8;
 
-    invoke-virtual {p1, v0, v0, p0}, Lcl8;->v(Li22;Lvo8;Lkotlin/coroutines/Continuation;)Ljava/io/Serializable;
+    iget-object p0, p0, Lsk8;->c:Lkze;
 
-    move-result-object p0
+    invoke-virtual {v0, p0}, Luk8;->p(Lkze;)V
 
-    return-object p0
+    return-void
+
+    :pswitch_1
+    iget-object v0, p0, Lsk8;->b:Luk8;
+
+    iget-object p0, p0, Lsk8;->c:Lkze;
+
+    invoke-virtual {v0, p0}, Luk8;->p(Lkze;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

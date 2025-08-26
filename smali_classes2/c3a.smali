@@ -1,61 +1,61 @@
 .class public final Lc3a;
-.super Ler3;
+.super Ld3a;
 .source "SourceFile"
 
 
-# instance fields
-.field public A0:I
-
-.field public X:Ljava/lang/Object;
-
-.field public Y:Lone/me/messages/list/loader/MessageModel;
-
-.field public Z:Lone/me/messages/list/loader/MessageModel;
-
-.field public o:Ljava/lang/Object;
-
-.field public w0:Lone/me/messages/list/loader/MessageModel;
-
-.field public x0:I
-
-.field public synthetic y0:Ljava/lang/Object;
-
-.field public final synthetic z0:Ld3a;
+# static fields
+.field public static final a:Lc3a;
 
 
 # direct methods
-.method public constructor <init>(Ld3a;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lc3a;->z0:Ld3a;
+    new-instance v0, Lc3a;
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lc3a;->a:Lc3a;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
-    iput-object p1, p0, Lc3a;->y0:Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    iget p1, p0, Lc3a;->A0:I
+    if-ne p0, p1, :cond_0
 
-    const/high16 v0, -0x80000000
+    return v0
 
-    or-int/2addr p1, v0
+    :cond_0
+    instance-of p0, p1, Lc3a;
 
-    iput p1, p0, Lc3a;->A0:I
+    if-nez p0, :cond_1
 
-    iget-object p1, p0, Lc3a;->z0:Ld3a;
+    const/4 p0, 0x0
 
-    const/4 v0, 0x0
+    return p0
 
-    invoke-virtual {p1, v0, p0}, Ld3a;->e(Lwt7;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    :cond_1
+    return v0
+.end method
 
-    move-result-object p0
+.method public final hashCode()I
+    .locals 0
+
+    const p0, -0x581272ac
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "Squircle"
 
     return-object p0
 .end method

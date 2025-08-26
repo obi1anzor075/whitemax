@@ -1,64 +1,37 @@
 .class public final Lsp5;
-.super Ljava/lang/Object;
+.super Lbu3;
 .source "SourceFile"
 
-# interfaces
-.implements Lup5;
 
+# instance fields
+.field public X:Lkp5;
 
-# static fields
-.field public static final a:Lsp5;
+.field public synthetic Y:Ljava/lang/Object;
 
+.field public Z:I
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lsp5;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lsp5;->a:Lsp5;
-
-    return-void
-.end method
+.field public o:Lkcc;
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Lsp5;->Y:Ljava/lang/Object;
 
-    if-ne p0, p1, :cond_0
+    iget p1, p0, Lsp5;->Z:I
 
-    return v0
+    const/high16 v0, -0x80000000
 
-    :cond_0
-    instance-of p0, p1, Lsp5;
+    or-int/2addr p1, v0
 
-    if-nez p0, :cond_1
+    iput p1, p0, Lsp5;->Z:I
 
-    const/4 p0, 0x0
+    const/4 p1, 0x0
 
-    return p0
+    invoke-static {p1, p0}, Lsgg;->V(Lzm5;Lbu3;)Ljava/lang/Object;
 
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    const p0, -0x667a69eb
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    const-string p0, "ConfirmDeletion"
+    move-result-object p0
 
     return-object p0
 .end method

@@ -21,9 +21,9 @@
         "args",
         "<init>",
         "(Landroid/os/Bundle;)V",
-        "Linc;",
+        "Lzsc;",
         "scopeId",
-        "(Ljava/lang/String;Lx54;)V",
+        "(Ljava/lang/String;Ll94;)V",
         "media-picker_release"
     }
     k = 0x1
@@ -32,48 +32,49 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # static fields
-.field public static final synthetic o:[Lk77;
+.field public static final synthetic o:[Lbc7;
 
 
 # instance fields
-.field public final a:Ljr;
+.field public final a:Lvr;
 
-.field public final b:Lt97;
+.field public final b:Lje7;
 
-.field public final c:Lt97;
+.field public final c:Lje7;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 5
 
-    new-instance v0, Lkhb;
+    new-instance v0, Lnlb;
 
-    const-string v1, "getScopeId-IluPPks()Ljava/lang/String;"
+    const-class v1, Lone/me/mediapicker/permissions/MediaPickerPermissionWidget;
 
-    const/4 v2, 0x0
+    const-string v2, "scopeId"
 
-    const-class v3, Lone/me/mediapicker/permissions/MediaPickerPermissionWidget;
+    const-string v3, "getScopeId-IluPPks()Ljava/lang/String;"
 
-    const-string v4, "scopeId"
+    const/4 v4, 0x0
 
-    invoke-direct {v0, v3, v4, v1, v2}, Lkhb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2, v3, v4}, Lnlb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
-    sget-object v1, Lm7c;->a:Ln7c;
+    sget-object v1, Llcc;->a:Lmcc;
 
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     const/4 v1, 0x1
 
-    new-array v1, v1, [Lk77;
+    new-array v1, v1, [Lbc7;
 
-    aput-object v0, v1, v2
+    aput-object v0, v1, v4
 
-    sput-object v1, Lone/me/mediapicker/permissions/MediaPickerPermissionWidget;->o:[Lk77;
+    sput-object v1, Lone/me/mediapicker/permissions/MediaPickerPermissionWidget;->o:[Lbc7;
 
     return-void
 .end method
@@ -88,26 +89,26 @@
     const/4 v2, 0x0
 
     .line 4
-    invoke-direct {p0, p1, v0, v1, v2}, Lone/me/sdk/arch/Widget;-><init>(Landroid/os/Bundle;IILx54;)V
+    invoke-direct {p0, p1, v0, v1, v2}, Lone/me/sdk/arch/Widget;-><init>(Landroid/os/Bundle;IILl94;)V
 
     .line 5
-    new-instance p1, Linc;
+    new-instance p1, Lzsc;
 
     const-string v0, "default"
 
-    invoke-direct {p1, v0}, Linc;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v0}, Lzsc;-><init>(Ljava/lang/String;)V
 
     .line 6
-    new-instance v0, Ljr;
+    new-instance v0, Lvr;
 
-    const-class v1, Linc;
+    const-class v1, Lzsc;
 
     const-string v3, "arg_key_scope_id"
 
-    invoke-direct {v0, v1, p1, v3}, Ljr;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v0, v1, p1, v3}, Lvr;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 7
-    iput-object v0, p0, Lone/me/mediapicker/permissions/MediaPickerPermissionWidget;->a:Ljr;
+    iput-object v0, p0, Lone/me/mediapicker/permissions/MediaPickerPermissionWidget;->a:Lvr;
 
     .line 8
     invoke-virtual {p0}, Lone/me/mediapicker/permissions/MediaPickerPermissionWidget;->getScopeId-IluPPks()Ljava/lang/String;
@@ -115,49 +116,49 @@
     move-result-object p1
 
     .line 9
-    const-class v0, Ln98;
+    const-class v0, Lde8;
 
     .line 10
-    invoke-virtual {p0, p1, v0, v2}, Lone/me/sdk/arch/Widget;->getSharedViewModel-cp94BC8(Ljava/lang/String;Ljava/lang/Class;Ls16;)Lt97;
+    invoke-virtual {p0, p1, v0, v2}, Lone/me/sdk/arch/Widget;->getSharedViewModel-cp94BC8(Ljava/lang/String;Ljava/lang/Class;Lv56;)Lje7;
 
     move-result-object p1
 
     .line 11
-    iput-object p1, p0, Lone/me/mediapicker/permissions/MediaPickerPermissionWidget;->b:Lt97;
+    iput-object p1, p0, Lone/me/mediapicker/permissions/MediaPickerPermissionWidget;->b:Lje7;
 
     .line 12
-    sget-object p1, Lrna;->a:Lrna;
+    sget-object p1, Lvra;->a:Lvra;
 
-    invoke-virtual {p1}, Lrna;->b()Lt97;
+    invoke-virtual {p1}, Lvra;->b()Lje7;
 
     move-result-object p1
 
-    iput-object p1, p0, Lone/me/mediapicker/permissions/MediaPickerPermissionWidget;->c:Lt97;
+    iput-object p1, p0, Lone/me/mediapicker/permissions/MediaPickerPermissionWidget;->c:Lje7;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Lx54;)V
+.method public constructor <init>(Ljava/lang/String;Ll94;)V
     .locals 1
 
     .line 1
-    new-instance p2, Linc;
+    new-instance p2, Lzsc;
 
-    invoke-direct {p2, p1}, Linc;-><init>(Ljava/lang/String;)V
+    invoke-direct {p2, p1}, Lzsc;-><init>(Ljava/lang/String;)V
 
     .line 2
-    new-instance p1, Lwia;
+    new-instance p1, Ldna;
 
     const-string v0, "arg_key_scope_id"
 
-    invoke-direct {p1, v0, p2}, Lwia;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {p1, v0, p2}, Ldna;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 3
-    filled-new-array {p1}, [Lwia;
+    filled-new-array {p1}, [Ldna;
 
     move-result-object p1
 
-    invoke-static {p1}, Ljjd;->j([Lwia;)Landroid/os/Bundle;
+    invoke-static {p1}, Lp54;->d([Ldna;)Landroid/os/Bundle;
 
     move-result-object p1
 
@@ -171,21 +172,21 @@
 .method public final getScopeId-IluPPks()Ljava/lang/String;
     .locals 2
 
-    sget-object v0, Lone/me/mediapicker/permissions/MediaPickerPermissionWidget;->o:[Lk77;
+    sget-object v0, Lone/me/mediapicker/permissions/MediaPickerPermissionWidget;->o:[Lbc7;
 
     const/4 v1, 0x0
 
     aget-object v0, v0, v1
 
-    iget-object v0, p0, Lone/me/mediapicker/permissions/MediaPickerPermissionWidget;->a:Ljr;
+    iget-object v0, p0, Lone/me/mediapicker/permissions/MediaPickerPermissionWidget;->a:Lvr;
 
-    invoke-virtual {v0, p0}, Ljr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
+    invoke-virtual {v0, p0}, Lvr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Linc;
+    check-cast p0, Lzsc;
 
-    iget-object p0, p0, Linc;->a:Ljava/lang/String;
+    iget-object p0, p0, Lzsc;->a:Ljava/lang/String;
 
     return-object p0
 .end method
@@ -193,21 +194,21 @@
 .method public final onActivityResumed(Landroid/app/Activity;)V
     .locals 2
 
-    iget-object v0, p0, Lone/me/mediapicker/permissions/MediaPickerPermissionWidget;->b:Lt97;
+    iget-object v0, p0, Lone/me/mediapicker/permissions/MediaPickerPermissionWidget;->b:Lje7;
 
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {v0}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ln98;
+    check-cast v0, Lde8;
 
-    iget-object v1, v0, Ln98;->x0:Lpna;
+    iget-object v1, v0, Lde8;->p0:Ltra;
 
-    invoke-virtual {v1}, Lpna;->e()V
+    invoke-virtual {v1}, Ltra;->f()V
 
-    iget-object v0, v0, Ln98;->y0:Lpna;
+    iget-object v0, v0, Lde8;->q0:Ltra;
 
-    invoke-virtual {v0}, Lpna;->e()V
+    invoke-virtual {v0}, Ltra;->f()V
 
     invoke-super {p0, p1}, Lone/me/sdk/arch/Widget;->onActivityResumed(Landroid/app/Activity;)V
 
@@ -243,7 +244,7 @@
 
     int-to-float v0, v0
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
 
     move-result-object v1
 
@@ -255,7 +256,7 @@
 
     mul-float/2addr v1, v0
 
-    invoke-static {v1}, La24;->X(F)I
+    invoke-static {v1}, Lkhg;->x(F)I
 
     move-result v1
 
@@ -263,7 +264,7 @@
 
     int-to-float v2, v2
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
 
     move-result-object v3
 
@@ -275,11 +276,11 @@
 
     mul-float/2addr v3, v2
 
-    invoke-static {v3}, La24;->X(F)I
+    invoke-static {v3}, Lkhg;->x(F)I
 
     move-result v3
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
 
     move-result-object v4
 
@@ -291,11 +292,11 @@
 
     mul-float/2addr v0, v4
 
-    invoke-static {v0}, La24;->X(F)I
+    invoke-static {v0}, Lkhg;->x(F)I
 
     move-result v0
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
 
     move-result-object v4
 
@@ -307,7 +308,7 @@
 
     mul-float/2addr v2, v4
 
-    invoke-static {v2}, La24;->X(F)I
+    invoke-static {v2}, Lkhg;->x(F)I
 
     move-result v2
 
@@ -323,13 +324,13 @@
 
     invoke-direct {p3, v0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    sget v0, Lr6a;->j:I
+    sget v0, Lvaa;->j:I
 
     invoke-virtual {p3, v0}, Landroid/widget/TextView;->setText(I)V
 
-    sget-object v0, Lnte;->n:Lnge;
+    sget-object v0, Lh4f;->o:Lnoe;
 
-    invoke-static {v0, p3}, Lnge;->d(Lnge;Landroid/widget/TextView;)V
+    invoke-static {v0, p3}, Lnoe;->d(Lnoe;Landroid/widget/TextView;)V
 
     invoke-virtual {p3, p2}, Landroid/widget/TextView;->setGravity(I)V
 
@@ -341,19 +342,19 @@
 
     invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    sget v1, Lr6a;->i:I
+    sget v1, Lvaa;->i:I
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    sget-object v1, Lnte;->r:Lnge;
+    sget-object v1, Lh4f;->s:Lnoe;
 
-    invoke-static {v1, v0}, Lnge;->d(Lnge;Landroid/widget/TextView;)V
+    invoke-static {v1, v0}, Lnoe;->d(Lnoe;Landroid/widget/TextView;)V
 
     const/4 v1, 0x4
 
     int-to-float v1, v1
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
 
     move-result-object v2
 
@@ -365,7 +366,7 @@
 
     mul-float/2addr v1, v2
 
-    invoke-static {v1}, La24;->X(F)I
+    invoke-static {v1}, Lkhg;->x(F)I
 
     move-result v1
 
@@ -373,7 +374,7 @@
 
     int-to-float v2, v2
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
 
     move-result-object v3
 
@@ -385,7 +386,7 @@
 
     mul-float/2addr v2, v3
 
-    invoke-static {v2}, La24;->X(F)I
+    invoke-static {v2}, Lkhg;->x(F)I
 
     move-result v2
 
@@ -411,7 +412,7 @@
 
     invoke-direct {p2, v1, v2}, Lone/me/sdk/uikit/common/button/OneMeButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    sget v1, Lr6a;->d:I
+    sget v1, Lvaa;->d:I
 
     invoke-virtual {p2, v1}, Lone/me/sdk/uikit/common/button/OneMeButton;->setText(I)V
 
@@ -423,21 +424,21 @@
 
     invoke-virtual {p2, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    new-instance v1, Leu5;
+    new-instance v1, Ljs4;
 
-    const/16 v3, 0xc
+    const/16 v3, 0x15
 
-    invoke-direct {v1, v3, p0}, Leu5;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v1, v3, p0}, Ljs4;-><init>(ILjava/lang/Object;)V
 
-    invoke-static {p2, v1}, La24;->a0(Landroid/view/View;Landroid/view/View$OnClickListener;)V
+    invoke-static {p2, v1}, Lu7;->Q(Landroid/view/View;Landroid/view/View$OnClickListener;)V
 
-    new-instance p0, Lfu5;
+    new-instance p0, Loy5;
 
     const/4 v1, 0x1
 
-    invoke-direct {p0, p3, v0, v2, v1}, Lfu5;-><init>(Landroid/widget/TextView;Landroid/widget/TextView;Lkotlin/coroutines/Continuation;I)V
+    invoke-direct {p0, p3, v0, v2, v1}, Loy5;-><init>(Landroid/widget/TextView;Landroid/widget/TextView;Lkotlin/coroutines/Continuation;I)V
 
-    invoke-static {p0, p1}, Lurd;->B(Lk26;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lxq7;->J(Ln66;Landroid/view/View;)V
 
     invoke-virtual {p1, p3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
@@ -451,19 +452,19 @@
 .method public final onRequestPermissionsResult(I[Ljava/lang/String;[I)V
     .locals 7
 
-    iget-object v0, p0, Lone/me/mediapicker/permissions/MediaPickerPermissionWidget;->c:Lt97;
+    const/16 v0, 0x9d
 
-    const/16 v1, 0x9d
+    iget-object v1, p0, Lone/me/mediapicker/permissions/MediaPickerPermissionWidget;->c:Lje7;
 
     const/4 v2, -0x1
 
     const/4 v3, 0x0
 
-    if-eq p1, v1, :cond_2
+    if-eq p1, v0, :cond_2
 
-    const/16 v1, 0xa2
+    const/16 v0, 0xa2
 
-    if-eq p1, v1, :cond_0
+    if-eq p1, v0, :cond_0
 
     goto :goto_2
 
@@ -473,79 +474,85 @@
     :goto_0
     if-ge v3, p1, :cond_1
 
-    aget v1, p3, v3
+    aget v0, p3, v3
 
-    if-ne v1, v2, :cond_4
+    if-ne v0, v2, :cond_3
 
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
     :cond_1
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {v1}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object p1
 
     move-object v0, p1
 
-    check-cast v0, Lqna;
+    check-cast v0, Lura;
 
-    new-instance v1, Ljrf;
+    new-instance v1, Lo6g;
 
     const/4 p1, 0x1
 
-    invoke-direct {v1, p0, p1}, Ljrf;-><init>(Lone/me/sdk/arch/Widget;I)V
+    invoke-direct {v1, p0, p1}, Lo6g;-><init>(Lone/me/sdk/arch/Widget;I)V
 
-    sget-object v4, Lqna;->n:[Ljava/lang/String;
+    sget-object v4, Lura;->n:[Ljava/lang/String;
 
-    sget v5, Lr6a;->f:I
+    sget v5, Lvaa;->f:I
 
-    sget v6, Lr6a;->e:I
+    sget v6, Lvaa;->e:I
 
     move-object v2, p2
 
     move-object v3, p3
 
-    invoke-static/range {v0 .. v6}, Lqna;->l(Lqna;Ljrf;[Ljava/lang/String;[I[Ljava/lang/String;II)Z
+    invoke-static/range {v0 .. v6}, Lura;->l(Lura;Lo6g;[Ljava/lang/String;[I[Ljava/lang/String;II)Z
 
-    goto :goto_2
+    return-void
 
     :cond_2
-    array-length p1, p3
+    move-object p1, p2
+
+    move-object p2, p3
+
+    array-length p3, p2
 
     :goto_1
-    if-ge v3, p1, :cond_3
+    if-ge v3, p3, :cond_4
 
-    aget v1, p3, v3
+    aget v0, p2, v3
 
-    if-ne v1, v2, :cond_4
+    if-ne v0, v2, :cond_3
 
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
     :cond_3
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
+    :goto_2
+    return-void
 
-    move-result-object p1
+    :cond_4
+    invoke-interface {v1}, Lje7;->getValue()Ljava/lang/Object;
 
-    check-cast p1, Lqna;
+    move-result-object p3
 
-    new-instance v0, Ljrf;
+    check-cast p3, Lura;
+
+    new-instance v0, Lo6g;
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p0, v1}, Ljrf;-><init>(Lone/me/sdk/arch/Widget;I)V
+    invoke-direct {v0, p0, v1}, Lo6g;-><init>(Lone/me/sdk/arch/Widget;I)V
 
-    sget p0, Lr6a;->h:I
+    sget p0, Lvaa;->h:I
 
-    sget v1, Lr6a;->g:I
+    sget v1, Lvaa;->g:I
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-static {v0, p2, p3, p0, v1}, Lqna;->j(Ljrf;[Ljava/lang/String;[III)V
+    invoke-static {v0, p1, p2, p0, v1}, Lura;->j(Lo6g;[Ljava/lang/String;[III)V
 
-    :cond_4
-    :goto_2
     return-void
 .end method

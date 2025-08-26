@@ -1,6 +1,7 @@
-.class public abstract Lyb7;
+.class public interface abstract Lyb7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lou3;
+.implements Lxb7;
+.implements Lv56;

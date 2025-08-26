@@ -1,211 +1,360 @@
 .class public final Lbr7;
-.super Lone/me/rlottie/RLottieImageView;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lone/me/rlottie/RLottieDrawable$OnNextFrameRenderedListener;
-.implements Lone/me/rlottie/RLottieDrawable$DrawableLoadListener;
-.implements Lcr7;
 
 
 # instance fields
-.field public B0:Ljava/lang/String;
+.field public final a:Lar7;
 
-.field public C0:Z
+.field public final b:J
 
-.field public D0:Lar7;
 
-.field public E0:Lzq7;
+# direct methods
+.method public constructor <init>(Lar7;J)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbr7;->a:Lar7;
+
+    iput-wide p2, p0, Lbr7;->b:J
+
+    return-void
+.end method
+
+.method public static a(Ldx8;)Lbr7;
+    .locals 24
+
+    move-object/from16 v0, p0
+
+    const-wide/high16 v1, 0x36a0000000000000L    # 1.401298464324817E-45
+
+    invoke-static {v1, v2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    invoke-static {v4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v5
+
+    invoke-static {v0}, Lxq7;->d0(Ldx8;)I
+
+    move-result v6
+
+    const-wide/16 v7, 0x0
+
+    const/4 v11, 0x0
+
+    move-wide v13, v1
+
+    move-wide v15, v13
+
+    move/from16 v19, v4
+
+    move/from16 v20, v19
+
+    move/from16 v21, v20
+
+    move-wide v9, v7
+
+    move v1, v11
+
+    const-wide/16 v17, 0x0
+
+    const-wide/16 v22, 0x0
+
+    :goto_0
+    if-ge v1, v6, :cond_7
+
+    invoke-virtual {v0}, Ldx8;->D0()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+
+    move-result v4
+
+    const/4 v12, -0x1
+
+    sparse-switch v4, :sswitch_data_0
+
+    goto :goto_1
+
+    :sswitch_0
+    const-string v4, "time"
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    const/4 v12, 0x6
+
+    goto :goto_1
+
+    :sswitch_1
+    const-string v4, "spd"
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v12, 0x5
+
+    goto :goto_1
+
+    :sswitch_2
+    const-string v4, "lng"
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    const/4 v12, 0x4
+
+    goto :goto_1
+
+    :sswitch_3
+    const-string v4, "lat"
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_3
+
+    goto :goto_1
+
+    :cond_3
+    const/4 v12, 0x3
+
+    goto :goto_1
+
+    :sswitch_4
+    const-string v4, "hdn"
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_4
+
+    goto :goto_1
+
+    :cond_4
+    const/4 v12, 0x2
+
+    goto :goto_1
+
+    :sswitch_5
+    const-string v4, "epu"
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_5
+
+    goto :goto_1
+
+    :cond_5
+    const/4 v12, 0x1
+
+    goto :goto_1
+
+    :sswitch_6
+    const-string v4, "alt"
+
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_6
+
+    goto :goto_1
+
+    :cond_6
+    move v12, v11
+
+    :goto_1
+    packed-switch v12, :pswitch_data_0
+
+    invoke-virtual {v0}, Ldx8;->B()V
+
+    goto :goto_2
+
+    :pswitch_0
+    invoke-static {v0, v7, v8}, Lxq7;->c0(Ldx8;J)J
+
+    move-result-wide v9
+
+    goto :goto_2
+
+    :pswitch_1
+    invoke-static {v0, v5}, Lxq7;->Z(Ldx8;Ljava/lang/Float;)Ljava/lang/Float;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+
+    move-result v2
+
+    move/from16 v21, v2
+
+    goto :goto_2
+
+    :pswitch_2
+    invoke-static {v0, v3}, Lxq7;->Y(Ldx8;Ljava/lang/Double;)Ljava/lang/Double;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v15
+
+    goto :goto_2
+
+    :pswitch_3
+    invoke-static {v0, v3}, Lxq7;->Y(Ldx8;Ljava/lang/Double;)Ljava/lang/Double;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v12
+
+    move-wide v13, v12
+
+    goto :goto_2
+
+    :pswitch_4
+    invoke-static {v0, v5}, Lxq7;->Z(Ldx8;Ljava/lang/Float;)Ljava/lang/Float;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+
+    move-result v2
+
+    move/from16 v20, v2
+
+    goto :goto_2
+
+    :pswitch_5
+    invoke-static {v0, v5}, Lxq7;->Z(Ldx8;Ljava/lang/Float;)Ljava/lang/Float;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+
+    move-result v2
+
+    move/from16 v19, v2
+
+    goto :goto_2
+
+    :pswitch_6
+    invoke-static/range {v22 .. v23}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lxq7;->Y(Ldx8;Ljava/lang/Double;)Ljava/lang/Double;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v17
+
+    :goto_2
+    add-int/lit8 v1, v1, 0x1
+
+    goto/16 :goto_0
+
+    :cond_7
+    new-instance v0, Lbr7;
+
+    new-instance v12, Lar7;
+
+    invoke-direct/range {v12 .. v21}, Lar7;-><init>(DDDFFF)V
+
+    invoke-direct {v0, v12, v9, v10}, Lbr7;-><init>(Lar7;J)V
+
+    return-object v0
+
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        0x179a9 -> :sswitch_6
+        0x1892a -> :sswitch_5
+        0x192f2 -> :sswitch_4
+        0x1a19f -> :sswitch_3
+        0x1a325 -> :sswitch_2
+        0x1bda7 -> :sswitch_1
+        0x3652cd -> :sswitch_0
+    .end sparse-switch
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
 
 
 # virtual methods
-.method public final c()V
-    .locals 1
-
-    invoke-static {p0}, Lone/me/rlottie/RLottieImageViewUtils;->release(Lone/me/rlottie/RLottieImageView;)V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lbr7;->B0:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public final f(IILjava/lang/String;)Z
+.method public final toString()Ljava/lang/String;
     .locals 3
 
-    const/4 v0, 0x1
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    if-eqz p3, :cond_2
+    const-string v1, "LocationInfo{location="
 
-    invoke-interface {p3}, Ljava/lang/CharSequence;->length()I
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result v1
+    iget-object v1, p0, Lbr7;->a:Lar7;
 
-    if-nez v1, :cond_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    goto :goto_0
+    const-string v1, ", time="
 
-    :cond_0
-    iget-object v1, p0, Lbr7;->B0:Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz v1, :cond_1
+    iget-wide v1, p0, Lbr7;->b:J
 
-    invoke-static {v1, p3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-result v1
+    const-string p0, "}"
 
-    if-eqz v1, :cond_1
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    iput-boolean v0, p0, Lbr7;->C0:Z
-
-    iput-object p3, p0, Lbr7;->B0:Ljava/lang/String;
-
-    new-instance v1, Lone/me/rlottie/RLottieFactory$Config$Builder;
-
-    invoke-direct {v1}, Lone/me/rlottie/RLottieFactory$Config$Builder;-><init>()V
-
-    invoke-virtual {v1, v0}, Lone/me/rlottie/RLottieFactory$Config$Builder;->setAutoStart(Z)Lone/me/rlottie/RLottieFactory$Config$Builder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lone/me/rlottie/RLottieFactory$Config$Builder;->setAutoRepeat(Z)Lone/me/rlottie/RLottieFactory$Config$Builder;
-
-    move-result-object v1
-
-    new-instance v2, Lone/me/rlottie/RLottieFactory$Way$Url$Builder;
-
-    invoke-direct {v2}, Lone/me/rlottie/RLottieFactory$Way$Url$Builder;-><init>()V
-
-    invoke-virtual {v2, p3}, Lone/me/rlottie/RLottieFactory$Way$Url$Builder;->setUrl(Ljava/lang/String;)Lone/me/rlottie/RLottieFactory$Way$Url$Builder;
-
-    move-result-object p3
-
-    invoke-virtual {p3, p1, p2}, Lone/me/rlottie/RLottieFactory$Way$Builder;->setSize(II)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lone/me/rlottie/RLottieFactory$Way$Url$Builder;
-
-    invoke-virtual {p1, v0}, Lone/me/rlottie/RLottieFactory$Way$Url$Builder;->setNetworkFetchEnabled(Z)Lone/me/rlottie/RLottieFactory$Way$Url$Builder;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lone/me/rlottie/RLottieFactory$Way$Url$Builder;->build()Lone/me/rlottie/RLottieFactory$Way$Url;
-
-    move-result-object p1
-
-    invoke-virtual {v1, p1}, Lone/me/rlottie/RLottieFactory$Config$Builder;->setWay(Lone/me/rlottie/RLottieFactory$Way;)Lone/me/rlottie/RLottieFactory$Config$Builder;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lone/me/rlottie/RLottieFactory$Config$Builder;->build()Lone/me/rlottie/RLottieFactory$Config;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lone/me/rlottie/RLottieFactory;->create(Lone/me/rlottie/RLottieFactory$Config;)Lone/me/rlottie/RLottieDrawable;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p0}, Lone/me/rlottie/RLottieDrawable;->addDrawableLoadListener(Lone/me/rlottie/RLottieDrawable$DrawableLoadListener;)V
-
-    invoke-virtual {p1, p0}, Lone/me/rlottie/RLottieDrawable;->addOnNextFrameRenderedListener(Lone/me/rlottie/RLottieDrawable$OnNextFrameRenderedListener;)V
-
-    invoke-static {p0, p1}, Lone/me/rlottie/RLottieImageViewUtils;->setLottieDrawable(Lone/me/rlottie/RLottieImageView;Lone/me/rlottie/RLottieDrawable;)Z
-
-    return v0
-
-    :cond_2
-    :goto_0
-    invoke-virtual {p0}, Lbr7;->c()V
-
-    return v0
-.end method
-
-.method public final onError(Ljava/lang/Throwable;)V
-    .locals 1
-
-    iget-object p0, p0, Lbr7;->E0:Lzq7;
-
-    if-eqz p0, :cond_0
-
-    const-class p0, Lgr7;
-
-    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    const-string v0, "lottie set animation failed: "
-
-    invoke-static {p0, v0, p1}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final onLoaded(Lone/me/rlottie/RLottieDrawable;)V
-    .locals 1
-
-    const-class p0, Lbr7;
-
-    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object p0
-
-    const-string v0, "onLoaded %s"
-
-    filled-new-array {p1}, [Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-static {p0, v0, p1}, Ludd;->p(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final onNextFrameRendered(Lone/me/rlottie/RLottieDrawable;I)V
-    .locals 0
-
-    iget-boolean p1, p0, Lbr7;->C0:Z
-
-    if-eqz p1, :cond_1
-
-    iget-object p1, p0, Lbr7;->D0:Lar7;
-
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1}, Lar7;->e()V
-
-    :cond_0
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lbr7;->C0:Z
-
-    :cond_1
-    return-void
-.end method
-
-.method public final setFailureListener(Lzq7;)V
-    .locals 0
-
-    iput-object p1, p0, Lbr7;->E0:Lzq7;
-
-    return-void
-.end method
-
-.method public final setOnFirstFrameListener(Lar7;)V
-    .locals 0
-
-    iput-object p1, p0, Lbr7;->D0:Lar7;
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lbr7;->C0:Z
-
-    return-void
+    return-object p0
 .end method

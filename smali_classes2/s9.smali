@@ -1,223 +1,159 @@
 .class public final Ls9;
-.super Lpr3;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ln19;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Ln3c;
 
-.field public final synthetic b:Lrr3;
+.field public final b:Ljava/lang/String;
 
-.field public final synthetic c:Lhq0;
+.field public final c:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Lrr3;Lhq0;I)V
+.method public constructor <init>(JLn3c;Ljava/lang/String;)V
     .locals 0
 
-    iput p3, p0, Ls9;->a:I
-
-    iput-object p1, p0, Ls9;->b:Lrr3;
-
-    iput-object p2, p0, Ls9;->c:Lhq0;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p3, p0, Ls9;->a:Ln3c;
+
+    iput-object p4, p0, Ls9;->b:Ljava/lang/String;
+
+    iput-wide p1, p0, Ls9;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final h(Lrr3;)V
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 5
 
-    iget p1, p0, Ls9;->a:I
+    const/4 v0, 0x1
 
-    packed-switch p1, :pswitch_data_0
+    if-ne p0, p1, :cond_0
 
-    iget-object p1, p0, Ls9;->b:Lrr3;
+    return v0
 
-    invoke-virtual {p1}, Lrr3;->getRouter()Lsgc;
+    :cond_0
+    instance-of v1, p1, Ls9;
 
-    move-result-object p1
+    const/4 v2, 0x0
 
-    iget-object p0, p0, Ls9;->c:Lhq0;
+    if-nez v1, :cond_1
 
-    invoke-virtual {p1, p0}, Lsgc;->a(Lvr3;)V
+    return v2
 
-    return-void
+    :cond_1
+    check-cast p1, Ls9;
 
-    :pswitch_0
-    iget-object p1, p0, Ls9;->b:Lrr3;
+    iget-object v1, p0, Ls9;->a:Ln3c;
 
-    invoke-virtual {p1}, Lrr3;->getRouter()Lsgc;
+    iget-object v3, p1, Ls9;->a:Ln3c;
 
-    move-result-object p1
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-object p0, p0, Ls9;->c:Lhq0;
+    move-result v1
 
-    invoke-virtual {p1, p0}, Lsgc;->a(Lvr3;)V
+    if-nez v1, :cond_2
 
-    return-void
+    return v2
 
-    :pswitch_1
-    iget-object p1, p0, Ls9;->b:Lrr3;
+    :cond_2
+    iget-object v1, p0, Ls9;->b:Ljava/lang/String;
 
-    invoke-virtual {p1}, Lrr3;->getRouter()Lsgc;
+    iget-object v3, p1, Ls9;->b:Ljava/lang/String;
 
-    move-result-object p1
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-object p0, p0, Ls9;->c:Lhq0;
+    move-result v1
 
-    invoke-virtual {p1, p0}, Lsgc;->a(Lvr3;)V
+    if-nez v1, :cond_3
 
-    return-void
+    return v2
 
-    :pswitch_2
-    iget-object p1, p0, Ls9;->b:Lrr3;
+    :cond_3
+    iget-wide v3, p0, Ls9;->c:J
 
-    invoke-virtual {p1}, Lrr3;->getRouter()Lsgc;
+    iget-wide p0, p1, Ls9;->c:J
 
-    move-result-object p1
+    cmp-long p0, v3, p0
 
-    iget-object p0, p0, Ls9;->c:Lhq0;
+    if-eqz p0, :cond_4
 
-    invoke-virtual {p1, p0}, Lsgc;->a(Lvr3;)V
+    return v2
 
-    return-void
+    :cond_4
+    return v0
+.end method
 
-    :pswitch_3
-    iget-object p1, p0, Ls9;->b:Lrr3;
+.method public final hashCode()I
+    .locals 3
 
-    invoke-virtual {p1}, Lrr3;->getRouter()Lsgc;
+    iget-object v0, p0, Ls9;->a:Ln3c;
 
-    move-result-object p1
+    invoke-virtual {v0}, Ln3c;->hashCode()I
 
-    iget-object p0, p0, Ls9;->c:Lhq0;
+    move-result v0
 
-    invoke-virtual {p1, p0}, Lsgc;->a(Lvr3;)V
+    const/16 v1, 0x1f
 
-    return-void
+    mul-int/2addr v0, v1
 
-    :pswitch_4
-    iget-object p1, p0, Ls9;->b:Lrr3;
+    iget-object v2, p0, Ls9;->b:Ljava/lang/String;
 
-    invoke-virtual {p1}, Lrr3;->getRouter()Lsgc;
+    invoke-static {v0, v1, v2}, Lv04;->d(IILjava/lang/String;)I
 
-    move-result-object p1
+    move-result v0
 
-    iget-object p0, p0, Ls9;->c:Lhq0;
+    iget-wide v1, p0, Ls9;->c:J
 
-    invoke-virtual {p1, p0}, Lsgc;->a(Lvr3;)V
+    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
 
-    return-void
+    move-result p0
 
-    :pswitch_5
-    iget-object p1, p0, Ls9;->b:Lrr3;
+    add-int/2addr p0, v0
 
-    invoke-virtual {p1}, Lrr3;->getRouter()Lsgc;
+    return p0
+.end method
 
-    move-result-object p1
+.method public final toString()Ljava/lang/String;
+    .locals 4
 
-    iget-object p0, p0, Ls9;->c:Lhq0;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, p0}, Lsgc;->a(Lvr3;)V
+    const-string v1, "AddReactionEffect(reaction="
 
-    return-void
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    :pswitch_6
-    iget-object p1, p0, Ls9;->b:Lrr3;
+    iget-object v1, p0, Ls9;->a:Ln3c;
 
-    invoke-virtual {p1}, Lrr3;->getRouter()Lsgc;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object p1
+    const-string v1, ", effectUrl="
 
-    iget-object p0, p0, Ls9;->c:Lhq0;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, p0}, Lsgc;->a(Lvr3;)V
+    iget-object v1, p0, Ls9;->b:Ljava/lang/String;
 
-    return-void
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :pswitch_7
-    iget-object p1, p0, Ls9;->b:Lrr3;
+    const-string v1, ", msgId="
 
-    invoke-virtual {p1}, Lrr3;->getRouter()Lsgc;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object p1
+    const-string v1, ")"
 
-    iget-object p0, p0, Ls9;->c:Lhq0;
+    iget-wide v2, p0, Ls9;->c:J
 
-    invoke-virtual {p1, p0}, Lsgc;->a(Lvr3;)V
+    invoke-static {v0, v2, v3, v1}, Lu88;->m(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
 
-    return-void
+    move-result-object p0
 
-    :pswitch_8
-    iget-object p1, p0, Ls9;->b:Lrr3;
-
-    invoke-virtual {p1}, Lrr3;->getRouter()Lsgc;
-
-    move-result-object p1
-
-    iget-object p0, p0, Ls9;->c:Lhq0;
-
-    invoke-virtual {p1, p0}, Lsgc;->a(Lvr3;)V
-
-    return-void
-
-    :pswitch_9
-    iget-object p1, p0, Ls9;->b:Lrr3;
-
-    invoke-virtual {p1}, Lrr3;->getRouter()Lsgc;
-
-    move-result-object p1
-
-    iget-object p0, p0, Ls9;->c:Lhq0;
-
-    invoke-virtual {p1, p0}, Lsgc;->a(Lvr3;)V
-
-    return-void
-
-    :pswitch_a
-    iget-object p1, p0, Ls9;->b:Lrr3;
-
-    invoke-virtual {p1}, Lrr3;->getRouter()Lsgc;
-
-    move-result-object p1
-
-    iget-object p0, p0, Ls9;->c:Lhq0;
-
-    invoke-virtual {p1, p0}, Lsgc;->a(Lvr3;)V
-
-    return-void
-
-    :pswitch_b
-    iget-object p1, p0, Ls9;->b:Lrr3;
-
-    invoke-virtual {p1}, Lrr3;->getRouter()Lsgc;
-
-    move-result-object p1
-
-    iget-object p0, p0, Ls9;->c:Lhq0;
-
-    invoke-virtual {p1, p0}, Lsgc;->a(Lvr3;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

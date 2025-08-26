@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field public final p1:Landroid/os/Handler;
+.field public final h1:Landroid/os/Handler;
 
-.field public q1:Landroidx/biometric/BiometricViewModel;
+.field public i1:Landroidx/biometric/BiometricViewModel;
 
 
 # direct methods
@@ -23,164 +23,146 @@
 
     invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    iput-object v0, p0, Landroidx/biometric/BiometricFragment;->p1:Landroid/os/Handler;
+    iput-object v0, p0, Landroidx/biometric/BiometricFragment;->h1:Landroid/os/Handler;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final N0()V
+.method public final A0()V
     .locals 3
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroidx/fragment/app/a;->W0:Z
+    iput-boolean v0, p0, Landroidx/fragment/app/a;->O0:Z
 
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x1d
 
-    if-ne v1, v2, :cond_3
+    if-ne v1, v2, :cond_1
 
-    iget-object v1, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iget-object v1, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
-    iget-object v2, v1, Landroidx/biometric/BiometricViewModel;->c:Lex;
+    iget-object v1, v1, Landroidx/biometric/BiometricViewModel;->c:Lhjc;
 
-    if-eqz v2, :cond_2
-
-    iget-object v1, v1, Landroidx/biometric/BiometricViewModel;->d:Lstf;
-
-    iget v2, v2, Lex;->c:I
-
-    if-eqz v2, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     const/16 v1, 0xf
 
-    :goto_0
-    move v2, v1
-
-    goto :goto_1
-
-    :cond_1
-    const/16 v1, 0xff
-
     goto :goto_0
 
-    :cond_2
-    const/4 v2, 0x0
+    :cond_0
+    const/4 v1, 0x0
 
-    :goto_1
-    invoke-static {v2}, Lh2g;->p(I)Z
+    :goto_0
+    invoke-static {v1}, Lmna;->s(I)Z
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_1
 
-    iget-object v1, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iget-object v1, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
-    iput-boolean v0, v1, Landroidx/biometric/BiometricViewModel;->m:Z
+    iput-boolean v0, v1, Landroidx/biometric/BiometricViewModel;->l:Z
 
-    iget-object p0, p0, Landroidx/biometric/BiometricFragment;->p1:Landroid/os/Handler;
-
-    new-instance v0, Lvl0;
+    new-instance v0, Lsm0;
 
     const/4 v2, 0x2
 
-    invoke-direct {v0, v1, v2}, Lvl0;-><init>(Landroidx/biometric/BiometricViewModel;I)V
+    invoke-direct {v0, v1, v2}, Lsm0;-><init>(Landroidx/biometric/BiometricViewModel;I)V
 
     const-wide/16 v1, 0xfa
 
+    iget-object p0, p0, Landroidx/biometric/BiometricFragment;->h1:Landroid/os/Handler;
+
     invoke-virtual {p0, v0, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    :cond_3
+    :cond_1
     return-void
 .end method
 
-.method public final O0()V
+.method public final B0()V
     .locals 1
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroidx/fragment/app/a;->W0:Z
+    iput-boolean v0, p0, Landroidx/fragment/app/a;->O0:Z
 
     return-void
 .end method
 
-.method public final f1(I)V
-    .locals 1
+.method public final S0(I)V
+    .locals 2
 
     const/4 v0, 0x3
 
     if-eq p1, v0, :cond_0
 
-    iget-object p1, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iget-object p1, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
-    iget-boolean p1, p1, Landroidx/biometric/BiometricViewModel;->m:Z
+    iget-boolean p1, p1, Landroidx/biometric/BiometricViewModel;->l:Z
 
     if-eqz p1, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
-    invoke-virtual {p0}, Landroidx/biometric/BiometricFragment;->h1()V
+    invoke-virtual {p0}, Landroidx/biometric/BiometricFragment;->U0()V
 
-    iget-object p0, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iget-object p0, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
-    iget-object p1, p0, Landroidx/biometric/BiometricViewModel;->f:Lmn;
+    iget-object p1, p0, Landroidx/biometric/BiometricViewModel;->f:Lykc;
 
     if-nez p1, :cond_1
 
-    new-instance p1, Lmn;
+    new-instance p1, Lykc;
 
     const/16 v0, 0x8
 
-    invoke-direct {p1, v0}, Lmn;-><init>(I)V
+    const/4 v1, 0x0
 
-    iput-object p1, p0, Landroidx/biometric/BiometricViewModel;->f:Lmn;
+    invoke-direct {p1, v0, v1}, Lykc;-><init>(IZ)V
+
+    iput-object p1, p0, Landroidx/biometric/BiometricViewModel;->f:Lykc;
 
     :cond_1
-    iget-object p0, p0, Landroidx/biometric/BiometricViewModel;->f:Lmn;
+    iget-object p0, p0, Landroidx/biometric/BiometricViewModel;->f:Lykc;
 
-    iget-object p1, p0, Lmn;->c:Ljava/lang/Object;
+    iget-object p1, p0, Lykc;->b:Ljava/lang/Object;
 
     check-cast p1, Landroid/os/CancellationSignal;
-
-    const/4 v0, 0x0
 
     if-eqz p1, :cond_2
 
     :try_start_0
-    invoke-static {p1}, Lfw1;->a(Landroid/os/CancellationSignal;)V
+    invoke-static {p1}, Lwy1;->a(Landroid/os/CancellationSignal;)V
     :try_end_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
-    iput-object v0, p0, Lmn;->c:Ljava/lang/Object;
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Lykc;->b:Ljava/lang/Object;
 
     :cond_2
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
+    :goto_0
     return-void
 .end method
 
-.method public final g1()V
+.method public final T0()V
     .locals 6
 
-    iget-object v0, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iget-object v0, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
     const/4 v1, 0x0
 
-    iput-boolean v1, v0, Landroidx/biometric/BiometricViewModel;->i:Z
+    iput-boolean v1, v0, Landroidx/biometric/BiometricViewModel;->h:Z
 
-    iput-boolean v1, v0, Landroidx/biometric/BiometricViewModel;->i:Z
+    iput-boolean v1, v0, Landroidx/biometric/BiometricViewModel;->h:Z
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->p0()Z
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->d0()Z
 
     move-result v0
 
@@ -188,7 +170,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->g0()Landroidx/fragment/app/c;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->U()Landroidx/fragment/app/c;
 
     move-result-object v0
 
@@ -202,53 +184,53 @@
 
     if-eqz v3, :cond_1
 
-    invoke-virtual {v3}, Landroidx/fragment/app/a;->p0()Z
+    invoke-virtual {v3}, Landroidx/fragment/app/a;->d0()Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    invoke-virtual {v3}, Landroidx/fragment/app/DialogFragment;->f1()V
+    invoke-virtual {v3}, Landroidx/fragment/app/DialogFragment;->S0()V
 
     goto :goto_0
 
     :cond_0
-    new-instance v4, Lhd0;
+    new-instance v4, Lzd0;
 
-    invoke-direct {v4, v0}, Lhd0;-><init>(Landroidx/fragment/app/c;)V
+    invoke-direct {v4, v0}, Lzd0;-><init>(Landroidx/fragment/app/c;)V
 
-    invoke-virtual {v4, v3}, Lhd0;->h(Landroidx/fragment/app/a;)V
+    invoke-virtual {v4, v3}, Lzd0;->h(Landroidx/fragment/app/a;)V
 
-    invoke-virtual {v4, v2}, Lhd0;->d(Z)I
+    invoke-virtual {v4, v2}, Lzd0;->d(Z)I
 
     :cond_1
     :goto_0
-    iget-object v0, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iget-object v0, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
-    iget-boolean v0, v0, Landroidx/biometric/BiometricViewModel;->k:Z
+    iget-boolean v0, v0, Landroidx/biometric/BiometricViewModel;->j:Z
 
     if-nez v0, :cond_2
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->p0()Z
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->d0()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->g0()Landroidx/fragment/app/c;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->U()Landroidx/fragment/app/c;
 
     move-result-object v0
 
-    new-instance v3, Lhd0;
+    new-instance v3, Lzd0;
 
-    invoke-direct {v3, v0}, Lhd0;-><init>(Landroidx/fragment/app/c;)V
+    invoke-direct {v3, v0}, Lzd0;-><init>(Landroidx/fragment/app/c;)V
 
-    invoke-virtual {v3, p0}, Lhd0;->h(Landroidx/fragment/app/a;)V
+    invoke-virtual {v3, p0}, Lzd0;->h(Landroidx/fragment/app/a;)V
 
-    invoke-virtual {v3, v2}, Lhd0;->d(Z)I
+    invoke-virtual {v3, v2}, Lzd0;->d(Z)I
 
     :cond_2
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->e0()Landroid/content/Context;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->S()Landroid/content/Context;
 
     move-result-object v0
 
@@ -265,7 +247,7 @@
     goto :goto_2
 
     :cond_3
-    sget v4, Lnlb;->delay_showing_prompt_models:I
+    sget v4, Lzpb;->delay_showing_prompt_models:I
 
     if-nez v3, :cond_4
 
@@ -293,23 +275,23 @@
 
     if-eqz v5, :cond_5
 
-    iget-object v0, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iget-object v0, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
-    iput-boolean v2, v0, Landroidx/biometric/BiometricViewModel;->l:Z
+    iput-boolean v2, v0, Landroidx/biometric/BiometricViewModel;->k:Z
 
-    iget-object p0, p0, Landroidx/biometric/BiometricFragment;->p1:Landroid/os/Handler;
-
-    new-instance v1, Lvl0;
+    new-instance v1, Lsm0;
 
     const/4 v2, 0x1
 
-    invoke-direct {v1, v0, v2}, Lvl0;-><init>(Landroidx/biometric/BiometricViewModel;I)V
+    invoke-direct {v1, v0, v2}, Lsm0;-><init>(Landroidx/biometric/BiometricViewModel;I)V
 
     const-wide/16 v2, 0x258
 
+    iget-object p0, p0, Landroidx/biometric/BiometricFragment;->h1:Landroid/os/Handler;
+
     invoke-virtual {p0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    goto :goto_2
+    return-void
 
     :cond_5
     add-int/lit8 v1, v1, 0x1
@@ -321,18 +303,18 @@
     return-void
 .end method
 
-.method public final h1()V
+.method public final U0()V
     .locals 1
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->c0()Landroidx/fragment/app/b;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->Q()Landroidx/fragment/app/b;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    iget-object p0, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iget-object p0, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
-    iget-object p0, p0, Landroidx/biometric/BiometricViewModel;->d:Lstf;
+    iget-object p0, p0, Landroidx/biometric/BiometricViewModel;->d:Lh6d;
 
     if-eqz p0, :cond_0
 
@@ -344,19 +326,19 @@
     return-void
 .end method
 
-.method public final i1(ILjava/lang/CharSequence;)V
+.method public final V0(ILjava/lang/CharSequence;)V
     .locals 2
 
-    iget-object v0, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iget-object v0, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
-    iget-boolean v1, v0, Landroidx/biometric/BiometricViewModel;->k:Z
+    iget-boolean v1, v0, Landroidx/biometric/BiometricViewModel;->j:Z
 
     if-eqz v1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    iget-boolean v1, v0, Landroidx/biometric/BiometricViewModel;->j:Z
+    iget-boolean v1, v0, Landroidx/biometric/BiometricViewModel;->i:Z
 
     if-nez v1, :cond_1
 
@@ -365,7 +347,7 @@
     :cond_1
     const/4 v1, 0x0
 
-    iput-boolean v1, v0, Landroidx/biometric/BiometricViewModel;->j:Z
+    iput-boolean v1, v0, Landroidx/biometric/BiometricViewModel;->i:Z
 
     new-instance v0, Landroid/os/Handler;
 
@@ -375,24 +357,24 @@
 
     invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    new-instance v1, Lpl0;
+    new-instance v1, Lmm0;
 
-    invoke-direct {v1, p0, p1, p2}, Lpl0;-><init>(Landroidx/biometric/BiometricFragment;ILjava/lang/CharSequence;)V
+    invoke-direct {v1, p0, p1, p2}, Lmm0;-><init>(Landroidx/biometric/BiometricFragment;ILjava/lang/CharSequence;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     :goto_0
-    invoke-virtual {p0}, Landroidx/biometric/BiometricFragment;->g1()V
+    invoke-virtual {p0}, Landroidx/biometric/BiometricFragment;->T0()V
 
     return-void
 .end method
 
-.method public final j1(Lyl0;)V
+.method public final W0(Lvm0;)V
     .locals 2
 
-    iget-object v0, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iget-object v0, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
-    iget-boolean v1, v0, Landroidx/biometric/BiometricViewModel;->j:Z
+    iget-boolean v1, v0, Landroidx/biometric/BiometricViewModel;->i:Z
 
     if-nez v1, :cond_0
 
@@ -401,7 +383,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    iput-boolean v1, v0, Landroidx/biometric/BiometricViewModel;->j:Z
+    iput-boolean v1, v0, Landroidx/biometric/BiometricViewModel;->i:Z
 
     new-instance v0, Landroid/os/Handler;
 
@@ -411,47 +393,47 @@
 
     invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    new-instance v1, Lpl0;
+    new-instance v1, Lmm0;
 
-    invoke-direct {v1, p0, p1}, Lpl0;-><init>(Landroidx/biometric/BiometricFragment;Lyl0;)V
+    invoke-direct {v1, p0, p1}, Lmm0;-><init>(Landroidx/biometric/BiometricFragment;Lvm0;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     :goto_0
-    invoke-virtual {p0}, Landroidx/biometric/BiometricFragment;->g1()V
+    invoke-virtual {p0}, Landroidx/biometric/BiometricFragment;->T0()V
 
     return-void
 .end method
 
-.method public final k1()V
-    .locals 9
+.method public final X0()V
+    .locals 10
 
-    iget-object v0, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iget-object v0, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
-    iget-boolean v0, v0, Landroidx/biometric/BiometricViewModel;->i:Z
+    iget-boolean v0, v0, Landroidx/biometric/BiometricViewModel;->h:Z
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_11
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->e0()Landroid/content/Context;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->S()Landroid/content/Context;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    return-void
+    goto/16 :goto_5
 
     :cond_0
-    iget-object v0, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iget-object v0, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
     const/4 v1, 0x1
 
+    iput-boolean v1, v0, Landroidx/biometric/BiometricViewModel;->h:Z
+
     iput-boolean v1, v0, Landroidx/biometric/BiometricViewModel;->i:Z
 
-    iput-boolean v1, v0, Landroidx/biometric/BiometricViewModel;->j:Z
+    invoke-virtual {p0}, Landroidx/biometric/BiometricFragment;->U0()V
 
-    invoke-virtual {p0}, Landroidx/biometric/BiometricFragment;->h1()V
-
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->V0()Landroid/content/Context;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->I0()Landroid/content/Context;
 
     move-result-object v0
 
@@ -459,19 +441,19 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lrl0;->d(Landroid/content/Context;)Landroid/hardware/biometrics/BiometricPrompt$Builder;
+    invoke-static {v0}, Lom0;->d(Landroid/content/Context;)Landroid/hardware/biometrics/BiometricPrompt$Builder;
 
     move-result-object v0
 
-    iget-object v2, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iget-object v2, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
-    iget-object v3, v2, Landroidx/biometric/BiometricViewModel;->c:Lex;
+    iget-object v3, v2, Landroidx/biometric/BiometricViewModel;->c:Lhjc;
 
     const/4 v4, 0x0
 
     if-eqz v3, :cond_1
 
-    iget-object v3, v3, Lex;->o:Ljava/lang/Object;
+    iget-object v3, v3, Lhjc;->b:Ljava/lang/Object;
 
     check-cast v3, Ljava/lang/CharSequence;
 
@@ -483,495 +465,469 @@
     :goto_0
     invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object v2, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iget-object v2, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
-    iget-object v2, v2, Landroidx/biometric/BiometricViewModel;->c:Lex;
+    iget-object v2, v2, Landroidx/biometric/BiometricViewModel;->c:Lhjc;
 
     if-eqz v2, :cond_2
 
-    iget-object v2, v2, Lex;->X:Ljava/lang/Object;
+    iget-object v2, v2, Lhjc;->c:Ljava/lang/Object;
+
+    check-cast v2, Ljava/lang/CharSequence;
+
+    goto :goto_1
+
+    :cond_2
+    move-object v2, v4
+
+    :goto_1
+    if-eqz v3, :cond_3
+
+    invoke-static {v0, v3}, Lom0;->g(Landroid/hardware/biometrics/BiometricPrompt$Builder;Ljava/lang/CharSequence;)V
+
+    :cond_3
+    if-eqz v2, :cond_4
+
+    invoke-static {v0, v2}, Lom0;->e(Landroid/hardware/biometrics/BiometricPrompt$Builder;Ljava/lang/CharSequence;)V
+
+    :cond_4
+    iget-object v2, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
+
+    iget-object v2, v2, Landroidx/biometric/BiometricViewModel;->c:Lhjc;
+
+    const-string v3, ""
+
+    if-eqz v2, :cond_6
+
+    iget-object v2, v2, Lhjc;->o:Ljava/lang/Object;
 
     move-object v4, v2
 
     check-cast v4, Ljava/lang/CharSequence;
 
-    :cond_2
-    if-eqz v3, :cond_3
-
-    invoke-static {v0, v3}, Lrl0;->g(Landroid/hardware/biometrics/BiometricPrompt$Builder;Ljava/lang/CharSequence;)V
-
-    :cond_3
-    if-eqz v4, :cond_4
-
-    invoke-static {v0, v4}, Lrl0;->e(Landroid/hardware/biometrics/BiometricPrompt$Builder;Ljava/lang/CharSequence;)V
-
-    :cond_4
-    iget-object v2, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
-
-    invoke-virtual {v2}, Landroidx/biometric/BiometricViewModel;->e()Ljava/lang/CharSequence;
-
-    move-result-object v2
-
-    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_6
-
-    iget-object v3, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
-
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v3, Lc27;
-
-    const/4 v4, 0x1
-
-    invoke-direct {v3, v4}, Lc27;-><init>(I)V
-
-    iget-object v4, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
-
-    iget-object v5, v4, Landroidx/biometric/BiometricViewModel;->g:Lcm0;
-
-    if-nez v5, :cond_5
-
-    new-instance v5, Lcm0;
-
-    invoke-direct {v5, v4}, Lcm0;-><init>(Landroidx/biometric/BiometricViewModel;)V
-
-    iput-object v5, v4, Landroidx/biometric/BiometricViewModel;->g:Lcm0;
-
-    :cond_5
-    iget-object v4, v4, Landroidx/biometric/BiometricViewModel;->g:Lcm0;
-
-    invoke-static {v0, v2, v3, v4}, Lrl0;->f(Landroid/hardware/biometrics/BiometricPrompt$Builder;Ljava/lang/CharSequence;Ljava/util/concurrent/Executor;Landroid/content/DialogInterface$OnClickListener;)V
-
-    :cond_6
-    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    iget-object v3, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
-
-    iget-object v3, v3, Landroidx/biometric/BiometricViewModel;->c:Lex;
-
-    const/4 v4, 0x0
-
-    if-eqz v3, :cond_8
-
-    iget-boolean v3, v3, Lex;->b:Z
-
-    if-eqz v3, :cond_7
-
-    goto :goto_1
-
-    :cond_7
-    move v3, v4
+    if-eqz v4, :cond_5
 
     goto :goto_2
 
-    :cond_8
-    :goto_1
-    move v3, v1
+    :cond_5
+    move-object v4, v3
 
+    :cond_6
     :goto_2
-    invoke-static {v0, v3}, Lsl0;->a(Landroid/hardware/biometrics/BiometricPrompt$Builder;Z)V
-
-    iget-object v3, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
-
-    iget-object v5, v3, Landroidx/biometric/BiometricViewModel;->c:Lex;
-
-    if-eqz v5, :cond_b
-
-    iget-object v3, v3, Landroidx/biometric/BiometricViewModel;->d:Lstf;
-
-    iget v4, v5, Lex;->c:I
-
-    if-eqz v4, :cond_9
-
-    goto :goto_4
-
-    :cond_9
-    if-eqz v3, :cond_a
-
-    const/16 v3, 0xf
-
-    goto :goto_3
-
-    :cond_a
-    const/16 v3, 0xff
-
-    :goto_3
-    move v4, v3
-
-    :cond_b
-    :goto_4
-    const/16 v3, 0x1e
-
-    if-lt v2, v3, :cond_c
-
-    invoke-static {v0, v4}, Ltl0;->a(Landroid/hardware/biometrics/BiometricPrompt$Builder;I)V
-
-    goto :goto_5
-
-    :cond_c
-    invoke-static {v4}, Lh2g;->p(I)Z
+    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    invoke-static {v0, v2}, Lsl0;->b(Landroid/hardware/biometrics/BiometricPrompt$Builder;Z)V
+    if-nez v2, :cond_8
 
-    :goto_5
-    invoke-static {v0}, Lrl0;->c(Landroid/hardware/biometrics/BiometricPrompt$Builder;)Landroid/hardware/biometrics/BiometricPrompt;
+    iget-object v2, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
+
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v2, Lo67;
+
+    const/4 v5, 0x1
+
+    invoke-direct {v2, v5}, Lo67;-><init>(I)V
+
+    iget-object v5, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
+
+    iget-object v6, v5, Landroidx/biometric/BiometricViewModel;->g:Lzm0;
+
+    if-nez v6, :cond_7
+
+    new-instance v6, Lzm0;
+
+    invoke-direct {v6, v5}, Lzm0;-><init>(Landroidx/biometric/BiometricViewModel;)V
+
+    iput-object v6, v5, Landroidx/biometric/BiometricViewModel;->g:Lzm0;
+
+    :cond_7
+    iget-object v5, v5, Landroidx/biometric/BiometricViewModel;->g:Lzm0;
+
+    invoke-static {v0, v4, v2, v5}, Lom0;->f(Landroid/hardware/biometrics/BiometricPrompt$Builder;Ljava/lang/CharSequence;Ljava/util/concurrent/Executor;Landroid/content/DialogInterface$OnClickListener;)V
+
+    :cond_8
+    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    iget-object v4, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
+
+    iget-object v4, v4, Landroidx/biometric/BiometricViewModel;->c:Lhjc;
+
+    invoke-static {v0, v1}, Lpm0;->a(Landroid/hardware/biometrics/BiometricPrompt$Builder;Z)V
+
+    iget-object v4, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
+
+    iget-object v4, v4, Landroidx/biometric/BiometricViewModel;->c:Lhjc;
+
+    if-eqz v4, :cond_9
+
+    const/16 v4, 0xf
+
+    goto :goto_3
+
+    :cond_9
+    const/4 v4, 0x0
+
+    :goto_3
+    const/16 v5, 0x1e
+
+    if-lt v2, v5, :cond_a
+
+    invoke-static {v0, v4}, Lqm0;->a(Landroid/hardware/biometrics/BiometricPrompt$Builder;I)V
+
+    goto :goto_4
+
+    :cond_a
+    invoke-static {v4}, Lmna;->s(I)Z
+
+    move-result v2
+
+    invoke-static {v0, v2}, Lpm0;->b(Landroid/hardware/biometrics/BiometricPrompt$Builder;Z)V
+
+    :goto_4
+    invoke-static {v0}, Lom0;->c(Landroid/hardware/biometrics/BiometricPrompt$Builder;)Landroid/hardware/biometrics/BiometricPrompt;
 
     move-result-object v0
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->e0()Landroid/content/Context;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->S()Landroid/content/Context;
 
     move-result-object v2
 
-    iget-object v3, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iget-object v4, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
-    iget-object v3, v3, Landroidx/biometric/BiometricViewModel;->d:Lstf;
+    iget-object v4, v4, Landroidx/biometric/BiometricViewModel;->d:Lh6d;
 
-    invoke-static {v3}, Llp;->W(Lstf;)Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;
+    invoke-static {v4}, Lk3c;->E(Lh6d;)Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;
 
-    move-result-object v3
+    move-result-object v4
 
-    iget-object v4, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iget-object v5, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
-    iget-object v5, v4, Landroidx/biometric/BiometricViewModel;->f:Lmn;
+    iget-object v6, v5, Landroidx/biometric/BiometricViewModel;->f:Lykc;
 
-    if-nez v5, :cond_d
+    if-nez v6, :cond_b
 
-    new-instance v5, Lmn;
+    new-instance v6, Lykc;
 
-    const/16 v6, 0x8
+    const/16 v7, 0x8
 
-    invoke-direct {v5, v6}, Lmn;-><init>(I)V
+    const/4 v8, 0x0
 
-    iput-object v5, v4, Landroidx/biometric/BiometricViewModel;->f:Lmn;
+    invoke-direct {v6, v7, v8}, Lykc;-><init>(IZ)V
 
-    :cond_d
-    iget-object v4, v4, Landroidx/biometric/BiometricViewModel;->f:Lmn;
+    iput-object v6, v5, Landroidx/biometric/BiometricViewModel;->f:Lykc;
 
-    iget-object v5, v4, Lmn;->c:Ljava/lang/Object;
+    :cond_b
+    iget-object v5, v5, Landroidx/biometric/BiometricViewModel;->f:Lykc;
+
+    iget-object v6, v5, Lykc;->b:Ljava/lang/Object;
+
+    check-cast v6, Landroid/os/CancellationSignal;
+
+    if-nez v6, :cond_c
+
+    invoke-static {}, Lwy1;->b()Landroid/os/CancellationSignal;
+
+    move-result-object v6
+
+    iput-object v6, v5, Lykc;->b:Ljava/lang/Object;
+
+    :cond_c
+    iget-object v5, v5, Lykc;->b:Ljava/lang/Object;
 
     check-cast v5, Landroid/os/CancellationSignal;
 
-    if-nez v5, :cond_e
+    new-instance v6, Lrm0;
 
-    iget-object v5, v4, Lmn;->b:Ljava/lang/Object;
+    invoke-direct {v6}, Lrm0;-><init>()V
 
-    check-cast v5, Loa2;
+    iget-object v7, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
-    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v8, v7, Landroidx/biometric/BiometricViewModel;->e:Lnz7;
 
-    invoke-static {}, Lfw1;->b()Landroid/os/CancellationSignal;
+    if-nez v8, :cond_d
 
-    move-result-object v5
+    new-instance v8, Lnz7;
 
-    iput-object v5, v4, Lmn;->c:Ljava/lang/Object;
+    new-instance v9, Lym0;
+
+    invoke-direct {v9, v7}, Lym0;-><init>(Landroidx/biometric/BiometricViewModel;)V
+
+    invoke-direct {v8, v9}, Lnz7;-><init>(Lym0;)V
+
+    iput-object v8, v7, Landroidx/biometric/BiometricViewModel;->e:Lnz7;
+
+    :cond_d
+    iget-object v7, v7, Landroidx/biometric/BiometricViewModel;->e:Lnz7;
+
+    iget-object v8, v7, Lnz7;->b:Ljava/lang/Object;
+
+    check-cast v8, Landroid/hardware/biometrics/BiometricPrompt$AuthenticationCallback;
+
+    if-nez v8, :cond_e
+
+    iget-object v8, v7, Lnz7;->c:Ljava/lang/Object;
+
+    check-cast v8, Lym0;
+
+    invoke-static {v8}, Ld80;->a(Lf80;)Landroid/hardware/biometrics/BiometricPrompt$AuthenticationCallback;
+
+    move-result-object v8
+
+    iput-object v8, v7, Lnz7;->b:Ljava/lang/Object;
 
     :cond_e
-    iget-object v4, v4, Lmn;->c:Ljava/lang/Object;
-
-    check-cast v4, Landroid/os/CancellationSignal;
-
-    new-instance v5, Lul0;
-
-    invoke-direct {v5}, Lul0;-><init>()V
-
-    iget-object v6, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
-
-    iget-object v7, v6, Landroidx/biometric/BiometricViewModel;->e:Lb2b;
-
-    if-nez v7, :cond_f
-
-    new-instance v7, Lb2b;
-
-    new-instance v8, Lbm0;
-
-    invoke-direct {v8, v6}, Lbm0;-><init>(Landroidx/biometric/BiometricViewModel;)V
-
-    invoke-direct {v7, v8}, Lb2b;-><init>(Lbm0;)V
-
-    iput-object v7, v6, Landroidx/biometric/BiometricViewModel;->e:Lb2b;
-
-    :cond_f
-    iget-object v6, v6, Landroidx/biometric/BiometricViewModel;->e:Lb2b;
-
-    iget-object v7, v6, Lb2b;->b:Ljava/lang/Object;
+    iget-object v7, v7, Lnz7;->b:Ljava/lang/Object;
 
     check-cast v7, Landroid/hardware/biometrics/BiometricPrompt$AuthenticationCallback;
 
-    if-nez v7, :cond_10
-
-    iget-object v7, v6, Lb2b;->c:Ljava/lang/Object;
-
-    check-cast v7, Lm70;
-
-    invoke-static {v7}, Lk70;->a(Lm70;)Landroid/hardware/biometrics/BiometricPrompt$AuthenticationCallback;
-
-    move-result-object v7
-
-    iput-object v7, v6, Lb2b;->b:Ljava/lang/Object;
-
-    :cond_10
-    iget-object v6, v6, Lb2b;->b:Ljava/lang/Object;
-
-    check-cast v6, Landroid/hardware/biometrics/BiometricPrompt$AuthenticationCallback;
-
-    if-nez v3, :cond_11
+    if-nez v4, :cond_f
 
     :try_start_0
-    invoke-static {v0, v4, v5, v6}, Lrl0;->b(Landroid/hardware/biometrics/BiometricPrompt;Landroid/os/CancellationSignal;Ljava/util/concurrent/Executor;Landroid/hardware/biometrics/BiometricPrompt$AuthenticationCallback;)V
+    invoke-static {v0, v5, v6, v7}, Lom0;->b(Landroid/hardware/biometrics/BiometricPrompt;Landroid/os/CancellationSignal;Ljava/util/concurrent/Executor;Landroid/hardware/biometrics/BiometricPrompt$AuthenticationCallback;)V
 
-    goto :goto_7
+    return-void
 
-    :cond_11
-    invoke-static {v0, v3, v4, v5, v6}, Lrl0;->a(Landroid/hardware/biometrics/BiometricPrompt;Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;Landroid/os/CancellationSignal;Ljava/util/concurrent/Executor;Landroid/hardware/biometrics/BiometricPrompt$AuthenticationCallback;)V
+    :cond_f
+    invoke-static {v0, v4, v5, v6, v7}, Lom0;->a(Landroid/hardware/biometrics/BiometricPrompt;Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;Landroid/os/CancellationSignal;Ljava/util/concurrent/Executor;Landroid/hardware/biometrics/BiometricPrompt$AuthenticationCallback;)V
     :try_end_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_7
+    return-void
 
     :catch_0
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_10
 
-    sget v0, Lgtb;->default_error_msg:I
+    sget v0, Lzxb;->default_error_msg:I
 
     invoke-virtual {v2, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v3
 
-    goto :goto_6
+    :cond_10
+    invoke-virtual {p0, v1, v3}, Landroidx/biometric/BiometricFragment;->V0(ILjava/lang/CharSequence;)V
 
-    :cond_12
-    const-string v0, ""
-
-    :goto_6
-    invoke-virtual {p0, v1, v0}, Landroidx/biometric/BiometricFragment;->i1(ILjava/lang/CharSequence;)V
-
-    :cond_13
-    :goto_7
+    :cond_11
+    :goto_5
     return-void
 .end method
 
-.method public final t0(IILandroid/content/Intent;)V
+.method public final h0(IILandroid/content/Intent;)V
     .locals 1
 
-    invoke-super {p0, p1, p2, p3}, Landroidx/fragment/app/a;->t0(IILandroid/content/Intent;)V
+    invoke-super {p0, p1, p2, p3}, Landroidx/fragment/app/a;->h0(IILandroid/content/Intent;)V
 
     const/4 p3, 0x1
 
     if-ne p1, p3, :cond_1
 
-    iget-object p1, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iget-object p1, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p1, Landroidx/biometric/BiometricViewModel;->k:Z
+    iput-boolean v0, p1, Landroidx/biometric/BiometricViewModel;->j:Z
 
     const/4 p1, -0x1
 
     if-ne p2, p1, :cond_0
 
-    new-instance p1, Lyl0;
+    new-instance p1, Lvm0;
 
     const/4 p2, 0x0
 
-    invoke-direct {p1, p2, p3}, Lyl0;-><init>(Lstf;I)V
+    invoke-direct {p1, p2, p3}, Lvm0;-><init>(Lh6d;I)V
 
-    invoke-virtual {p0, p1}, Landroidx/biometric/BiometricFragment;->j1(Lyl0;)V
+    invoke-virtual {p0, p1}, Landroidx/biometric/BiometricFragment;->W0(Lvm0;)V
 
-    goto :goto_0
+    return-void
 
     :cond_0
-    sget p1, Lgtb;->generic_error_user_canceled:I
+    sget p1, Lzxb;->generic_error_user_canceled:I
 
-    invoke-virtual {p0, p1}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object p1
 
     const/16 p2, 0xa
 
-    invoke-virtual {p0, p2, p1}, Landroidx/biometric/BiometricFragment;->i1(ILjava/lang/CharSequence;)V
+    invoke-virtual {p0, p2, p1}, Landroidx/biometric/BiometricFragment;->V0(ILjava/lang/CharSequence;)V
 
     :cond_1
-    :goto_0
     return-void
 .end method
 
-.method public final w0(Landroid/os/Bundle;)V
+.method public final k0(Landroid/os/Bundle;)V
     .locals 2
 
-    invoke-super {p0, p1}, Landroidx/fragment/app/a;->w0(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Landroidx/fragment/app/a;->k0(Landroid/os/Bundle;)V
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->c0()Landroidx/fragment/app/b;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->Q()Landroidx/fragment/app/b;
 
     move-result-object p1
 
     if-nez p1, :cond_0
 
-    goto/16 :goto_0
+    return-void
 
     :cond_0
-    new-instance p1, Lfzd;
+    new-instance p1, Lrsd;
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->c0()Landroidx/fragment/app/b;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->Q()Landroidx/fragment/app/b;
 
     move-result-object v0
 
-    invoke-direct {p1, v0}, Lfzd;-><init>(Lcbf;)V
+    invoke-direct {p1, v0}, Lrsd;-><init>(Lsof;)V
 
     const-class v0, Landroidx/biometric/BiometricViewModel;
 
-    invoke-static {v0}, Lm7c;->a(Ljava/lang/Class;)Lxy2;
+    invoke-static {v0}, Llcc;->a(Ljava/lang/Class;)Lz03;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Lfzd;->a(Lxy2;)Luaf;
+    invoke-virtual {p1, v0}, Lrsd;->a(Lz03;)Lkof;
 
     move-result-object p1
 
     check-cast p1, Landroidx/biometric/BiometricViewModel;
 
-    iput-object p1, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iput-object p1, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
-    iget-object v0, p1, Landroidx/biometric/BiometricViewModel;->n:Lvb9;
+    iget-object v0, p1, Landroidx/biometric/BiometricViewModel;->m:Lmg9;
 
     if-nez v0, :cond_1
 
-    new-instance v0, Lvb9;
+    new-instance v0, Lmg9;
 
-    invoke-direct {v0}, Lyh7;-><init>()V
+    invoke-direct {v0}, Lxm7;-><init>()V
 
-    iput-object v0, p1, Landroidx/biometric/BiometricViewModel;->n:Lvb9;
+    iput-object v0, p1, Landroidx/biometric/BiometricViewModel;->m:Lmg9;
 
     :cond_1
-    iget-object p1, p1, Landroidx/biometric/BiometricViewModel;->n:Lvb9;
+    iget-object p1, p1, Landroidx/biometric/BiometricViewModel;->m:Lmg9;
 
-    new-instance v0, Lql0;
+    new-instance v0, Lnm0;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lql0;-><init>(Landroidx/biometric/BiometricFragment;I)V
+    invoke-direct {v0, p0, v1}, Lnm0;-><init>(Landroidx/biometric/BiometricFragment;I)V
 
-    invoke-virtual {p1, p0, v0}, Lyh7;->e(Lnc7;Lcw9;)V
+    invoke-virtual {p1, p0, v0}, Lxm7;->e(Ldh7;Lb0a;)V
 
-    iget-object p1, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iget-object p1, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
-    iget-object v0, p1, Landroidx/biometric/BiometricViewModel;->o:Lvb9;
+    iget-object v0, p1, Landroidx/biometric/BiometricViewModel;->n:Lmg9;
 
     if-nez v0, :cond_2
 
-    new-instance v0, Lvb9;
+    new-instance v0, Lmg9;
 
-    invoke-direct {v0}, Lyh7;-><init>()V
+    invoke-direct {v0}, Lxm7;-><init>()V
 
-    iput-object v0, p1, Landroidx/biometric/BiometricViewModel;->o:Lvb9;
+    iput-object v0, p1, Landroidx/biometric/BiometricViewModel;->n:Lmg9;
 
     :cond_2
-    iget-object p1, p1, Landroidx/biometric/BiometricViewModel;->o:Lvb9;
+    iget-object p1, p1, Landroidx/biometric/BiometricViewModel;->n:Lmg9;
 
-    new-instance v0, Lql0;
+    new-instance v0, Lnm0;
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p0, v1}, Lql0;-><init>(Landroidx/biometric/BiometricFragment;I)V
+    invoke-direct {v0, p0, v1}, Lnm0;-><init>(Landroidx/biometric/BiometricFragment;I)V
 
-    invoke-virtual {p1, p0, v0}, Lyh7;->e(Lnc7;Lcw9;)V
+    invoke-virtual {p1, p0, v0}, Lxm7;->e(Ldh7;Lb0a;)V
 
-    iget-object p1, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iget-object p1, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
-    iget-object v0, p1, Landroidx/biometric/BiometricViewModel;->p:Lvb9;
+    iget-object v0, p1, Landroidx/biometric/BiometricViewModel;->o:Lmg9;
 
     if-nez v0, :cond_3
 
-    new-instance v0, Lvb9;
+    new-instance v0, Lmg9;
 
-    invoke-direct {v0}, Lyh7;-><init>()V
+    invoke-direct {v0}, Lxm7;-><init>()V
 
-    iput-object v0, p1, Landroidx/biometric/BiometricViewModel;->p:Lvb9;
+    iput-object v0, p1, Landroidx/biometric/BiometricViewModel;->o:Lmg9;
 
     :cond_3
-    iget-object p1, p1, Landroidx/biometric/BiometricViewModel;->p:Lvb9;
+    iget-object p1, p1, Landroidx/biometric/BiometricViewModel;->o:Lmg9;
 
-    new-instance v0, Lql0;
+    new-instance v0, Lnm0;
 
     const/4 v1, 0x2
 
-    invoke-direct {v0, p0, v1}, Lql0;-><init>(Landroidx/biometric/BiometricFragment;I)V
+    invoke-direct {v0, p0, v1}, Lnm0;-><init>(Landroidx/biometric/BiometricFragment;I)V
 
-    invoke-virtual {p1, p0, v0}, Lyh7;->e(Lnc7;Lcw9;)V
+    invoke-virtual {p1, p0, v0}, Lxm7;->e(Ldh7;Lb0a;)V
 
-    iget-object p1, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iget-object p1, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
-    iget-object v0, p1, Landroidx/biometric/BiometricViewModel;->q:Lvb9;
+    iget-object v0, p1, Landroidx/biometric/BiometricViewModel;->p:Lmg9;
 
     if-nez v0, :cond_4
 
-    new-instance v0, Lvb9;
+    new-instance v0, Lmg9;
 
-    invoke-direct {v0}, Lyh7;-><init>()V
+    invoke-direct {v0}, Lxm7;-><init>()V
 
-    iput-object v0, p1, Landroidx/biometric/BiometricViewModel;->q:Lvb9;
+    iput-object v0, p1, Landroidx/biometric/BiometricViewModel;->p:Lmg9;
 
     :cond_4
-    iget-object p1, p1, Landroidx/biometric/BiometricViewModel;->q:Lvb9;
+    iget-object p1, p1, Landroidx/biometric/BiometricViewModel;->p:Lmg9;
 
-    new-instance v0, Lql0;
+    new-instance v0, Lnm0;
 
     const/4 v1, 0x3
 
-    invoke-direct {v0, p0, v1}, Lql0;-><init>(Landroidx/biometric/BiometricFragment;I)V
+    invoke-direct {v0, p0, v1}, Lnm0;-><init>(Landroidx/biometric/BiometricFragment;I)V
 
-    invoke-virtual {p1, p0, v0}, Lyh7;->e(Lnc7;Lcw9;)V
+    invoke-virtual {p1, p0, v0}, Lxm7;->e(Ldh7;Lb0a;)V
 
-    iget-object p1, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iget-object p1, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
-    iget-object v0, p1, Landroidx/biometric/BiometricViewModel;->r:Lvb9;
+    iget-object v0, p1, Landroidx/biometric/BiometricViewModel;->q:Lmg9;
 
     if-nez v0, :cond_5
 
-    new-instance v0, Lvb9;
+    new-instance v0, Lmg9;
 
-    invoke-direct {v0}, Lyh7;-><init>()V
+    invoke-direct {v0}, Lxm7;-><init>()V
 
-    iput-object v0, p1, Landroidx/biometric/BiometricViewModel;->r:Lvb9;
+    iput-object v0, p1, Landroidx/biometric/BiometricViewModel;->q:Lmg9;
 
     :cond_5
-    iget-object p1, p1, Landroidx/biometric/BiometricViewModel;->r:Lvb9;
+    iget-object p1, p1, Landroidx/biometric/BiometricViewModel;->q:Lmg9;
 
-    new-instance v0, Lql0;
+    new-instance v0, Lnm0;
 
     const/4 v1, 0x4
 
-    invoke-direct {v0, p0, v1}, Lql0;-><init>(Landroidx/biometric/BiometricFragment;I)V
+    invoke-direct {v0, p0, v1}, Lnm0;-><init>(Landroidx/biometric/BiometricFragment;I)V
 
-    invoke-virtual {p1, p0, v0}, Lyh7;->e(Lnc7;Lcw9;)V
+    invoke-virtual {p1, p0, v0}, Lxm7;->e(Ldh7;Lb0a;)V
 
-    iget-object p1, p0, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    iget-object p1, p0, Landroidx/biometric/BiometricFragment;->i1:Landroidx/biometric/BiometricViewModel;
 
-    iget-object v0, p1, Landroidx/biometric/BiometricViewModel;->s:Lvb9;
+    iget-object v0, p1, Landroidx/biometric/BiometricViewModel;->r:Lmg9;
 
     if-nez v0, :cond_6
 
-    new-instance v0, Lvb9;
+    new-instance v0, Lmg9;
 
-    invoke-direct {v0}, Lyh7;-><init>()V
+    invoke-direct {v0}, Lxm7;-><init>()V
 
-    iput-object v0, p1, Landroidx/biometric/BiometricViewModel;->s:Lvb9;
+    iput-object v0, p1, Landroidx/biometric/BiometricViewModel;->r:Lmg9;
 
     :cond_6
-    iget-object p1, p1, Landroidx/biometric/BiometricViewModel;->s:Lvb9;
+    iget-object p1, p1, Landroidx/biometric/BiometricViewModel;->r:Lmg9;
 
-    new-instance v0, Lql0;
+    new-instance v0, Lnm0;
 
     const/4 v1, 0x5
 
-    invoke-direct {v0, p0, v1}, Lql0;-><init>(Landroidx/biometric/BiometricFragment;I)V
+    invoke-direct {v0, p0, v1}, Lnm0;-><init>(Landroidx/biometric/BiometricFragment;I)V
 
-    invoke-virtual {p1, p0, v0}, Lyh7;->e(Lnc7;Lcw9;)V
+    invoke-virtual {p1, p0, v0}, Lxm7;->e(Ldh7;Lb0a;)V
 
-    :goto_0
     return-void
 .end method

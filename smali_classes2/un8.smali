@@ -1,164 +1,64 @@
-.class public final synthetic Lun8;
+.class public final Lun8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lu16;
+.implements Lvn8;
 
 
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Z
+# static fields
+.field public static final a:Lun8;
 
 
 # direct methods
-.method public synthetic constructor <init>(ZI)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p2, p0, Lun8;->a:I
+    new-instance v0, Lun8;
 
-    iput-boolean p1, p0, Lun8;->b:Z
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lun8;->a:Lun8;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
-    iget v0, p0, Lun8;->a:I
+    const/4 v0, 0x1
 
-    check-cast p1, Lpda;
+    if-ne p0, p1, :cond_0
 
-    packed-switch v0, :pswitch_data_0
-
-    new-instance v0, La1f;
-
-    iget-boolean p0, p0, Lun8;->b:Z
-
-    if-eqz p0, :cond_0
-
-    invoke-interface {p1}, Lpda;->getIcon()Lyn6;
-
-    move-result-object p0
-
-    iget-object p0, p0, Lyn6;->a:Ldo6;
-
-    iget p0, p0, Ldo6;->c:I
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    invoke-interface {p1}, Lpda;->a()Ljo2;
+    instance-of p0, p1, Lun8;
 
-    move-result-object p0
+    if-nez p0, :cond_1
 
-    invoke-interface {p0}, Ljo2;->o()Lj53;
+    const/4 p0, 0x0
 
-    move-result-object p0
-
-    iget-object p0, p0, Lj53;->b:Lw53;
-
-    iget p0, p0, Lw53;->a:I
-
-    :goto_0
-    const/4 p1, 0x0
-
-    invoke-direct {v0, p1, p0}, La1f;-><init>(II)V
-
-    return-object v0
-
-    :pswitch_0
-    new-instance v0, La1f;
-
-    iget-boolean p0, p0, Lun8;->b:Z
-
-    if-eqz p0, :cond_1
-
-    invoke-interface {p1}, Lpda;->a()Ljo2;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Ljo2;->c()Ldr0;
-
-    move-result-object p0
-
-    iget-object p0, p0, Ldr0;->c:Ler0;
-
-    iget p0, p0, Ler0;->l:I
-
-    goto :goto_1
+    return p0
 
     :cond_1
-    invoke-interface {p1}, Lpda;->a()Ljo2;
+    return v0
+.end method
 
-    move-result-object p0
+.method public final hashCode()I
+    .locals 0
 
-    invoke-interface {p0}, Ljo2;->f()Ldr0;
+    const p0, -0x27fcdd22
 
-    move-result-object p0
+    return p0
+.end method
 
-    iget-object p0, p0, Ldr0;->c:Ler0;
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    iget p0, p0, Ler0;->l:I
+    const-string p0, "OnSelfClicked"
 
-    :goto_1
-    const/4 p1, 0x0
-
-    invoke-direct {v0, p1, p0}, La1f;-><init>(II)V
-
-    return-object v0
-
-    :pswitch_1
-    new-instance v0, La1f;
-
-    iget-boolean p0, p0, Lun8;->b:Z
-
-    if-eqz p0, :cond_2
-
-    invoke-interface {p1}, Lpda;->a()Ljo2;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Ljo2;->c()Ldr0;
-
-    move-result-object p0
-
-    iget-object p0, p0, Ldr0;->c:Ler0;
-
-    iget p0, p0, Ler0;->n:I
-
-    goto :goto_2
-
-    :cond_2
-    invoke-interface {p1}, Lpda;->a()Ljo2;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Ljo2;->f()Ldr0;
-
-    move-result-object p0
-
-    iget-object p0, p0, Ldr0;->c:Ler0;
-
-    iget p0, p0, Ler0;->n:I
-
-    :goto_2
-    const/4 p1, 0x0
-
-    invoke-direct {v0, p1, p0}, La1f;-><init>(II)V
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

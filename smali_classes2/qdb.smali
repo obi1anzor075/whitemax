@@ -1,96 +1,117 @@
-.class public final Lqdb;
-.super Lt81;
+.class public final synthetic Lqdb;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lv56;
 
 
 # instance fields
-.field public final b:Landroid/content/Intent;
+.field public final synthetic a:I
+
+.field public final synthetic b:Ld4g;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Intent;)V
-    .locals 1
+.method public synthetic constructor <init>(Ld4g;I)V
+    .locals 0
 
-    const/16 v0, 0xb
+    iput p2, p0, Lqdb;->a:I
 
-    invoke-direct {p0, v0}, Lt81;-><init>(I)V
+    iput-object p1, p0, Lqdb;->b:Ld4g;
 
-    iput-object p1, p0, Lqdb;->b:Landroid/content/Intent;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+.method public final invoke()Ljava/lang/Object;
+    .locals 1
 
-    const/4 v0, 0x1
+    iget v0, p0, Lqdb;->a:I
 
-    if-ne p0, p1, :cond_0
+    iget-object p0, p0, Lqdb;->b:Ld4g;
 
-    return v0
+    packed-switch v0, :pswitch_data_0
 
-    :cond_0
-    instance-of v1, p1, Lqdb;
+    iget-object p0, p0, Ld4g;->Y:Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    check-cast p0, Lone/me/profileedit/ProfileEditScreen;
 
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lqdb;
-
-    iget-object p0, p0, Lqdb;->b:Landroid/content/Intent;
-
-    iget-object p1, p1, Lqdb;->b:Landroid/content/Intent;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    iget-object p0, p0, Lqdb;->b:Landroid/content/Intent;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "CropAvatar(intent="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lqdb;->b:Landroid/content/Intent;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Lone/me/profileedit/ProfileEditScreen;->q0()Ldeb;
 
     move-result-object p0
 
+    iget-object p0, p0, Ldeb;->b:Lcv4;
+
+    const/16 v0, 0x200
+
+    invoke-virtual {p0, v0}, Lcv4;->a(I)V
+
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
+
     return-object p0
+
+    :pswitch_0
+    iget-object p0, p0, Ld4g;->Y:Ljava/lang/Object;
+
+    check-cast p0, Lone/me/profileedit/ProfileEditScreen;
+
+    invoke-virtual {p0}, Lone/me/profileedit/ProfileEditScreen;->q0()Ldeb;
+
+    move-result-object p0
+
+    iget-object p0, p0, Ldeb;->b:Lcv4;
+
+    const/16 v0, 0x100
+
+    invoke-virtual {p0, v0}, Lcv4;->a(I)V
+
+    goto :goto_0
+
+    :pswitch_1
+    iget-object p0, p0, Ld4g;->Y:Ljava/lang/Object;
+
+    check-cast p0, Lone/me/profileedit/ProfileEditScreen;
+
+    invoke-virtual {p0}, Lone/me/profileedit/ProfileEditScreen;->q0()Ldeb;
+
+    move-result-object p0
+
+    iget-object p0, p0, Ldeb;->b:Lcv4;
+
+    const/16 v0, 0x80
+
+    invoke-virtual {p0, v0}, Lcv4;->a(I)V
+
+    goto :goto_0
+
+    :pswitch_2
+    iget-object p0, p0, Ld4g;->Y:Ljava/lang/Object;
+
+    check-cast p0, Lone/me/profileedit/ProfileEditScreen;
+
+    invoke-virtual {p0}, Lone/me/profileedit/ProfileEditScreen;->q0()Ldeb;
+
+    move-result-object p0
+
+    iget-object p0, p0, Ldeb;->b:Lcv4;
+
+    const/16 v0, 0x40
+
+    invoke-virtual {p0, v0}, Lcv4;->a(I)V
+
+    goto :goto_0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

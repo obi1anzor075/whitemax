@@ -1,29 +1,56 @@
-.class public final Lbc5;
+.class public final synthetic Lbc5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lc6;
 
-# static fields
-.field public static final synthetic a:Lbc5;
 
-.field public static final b:Lac5;
+# instance fields
+.field public final synthetic a:J
+
+.field public final synthetic b:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(JJ)V
+    .locals 0
 
-    new-instance v0, Lbc5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-wide p1, p0, Lbc5;->a:J
 
-    sput-object v0, Lbc5;->a:Lbc5;
+    iput-wide p3, p0, Lbc5;->b:J
 
-    new-instance v0, Lac5;
+    return-void
+.end method
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lbc5;->b:Lac5;
+# virtual methods
+.method public final run()V
+    .locals 3
+
+    iget-wide v0, p0, Lbc5;->a:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    iget-wide v1, p0, Lbc5;->b:J
+
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
+
+    filled-new-array {v0, p0}, [Ljava/lang/Object;
+
+    move-result-object p0
+
+    const-string v0, "dc5"
+
+    const-string v1, "setFavoriteStickerSetMoved: success move stickerSetId=%d, to position of stickerSetId=%d"
+
+    invoke-static {v0, v1, p0}, Lg47;->o(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-void
 .end method

@@ -1,318 +1,262 @@
 .class public final Ldsa;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lngf;
 
 
 # instance fields
-.field public X:I
+.field public final a:Ljava/lang/Object;
 
-.field public final synthetic Y:Lksa;
+.field public b:Z
 
-.field public final synthetic Z:Ljava/lang/String;
+.field public c:I
+
+.field public d:I
+
+.field public e:I
+
+.field public f:I
+
+.field public g:I
+
+.field public h:I
+
+.field public i:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lksa;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(I)V
+    .locals 2
+
+    packed-switch p1, :pswitch_data_0
+
+    .line 10
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 11
+    new-instance p1, Labf;
+
+    const/4 v0, 0x3
+
+    const/4 v1, 0x0
+
+    invoke-direct {p1, v0, v1}, Labf;-><init>(IZ)V
+
+    iput-object p1, p0, Ldsa;->i:Ljava/lang/Object;
+
+    const/16 p1, 0x100
+
+    .line 12
+    new-array p1, p1, [I
+
+    iput-object p1, p0, Ldsa;->a:Ljava/lang/Object;
+
+    return-void
+
+    .line 13
+    :pswitch_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 14
+    new-instance p1, Lpna;
+
+    invoke-direct {p1}, Lpna;-><init>()V
+
+    iput-object p1, p0, Ldsa;->i:Ljava/lang/Object;
+
+    const/16 p1, 0x100
+
+    .line 15
+    new-array p1, p1, [I
+
+    iput-object p1, p0, Ldsa;->a:Ljava/lang/Object;
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public constructor <init>(IIIIIIZ)V
     .locals 0
 
-    iput-object p1, p0, Ldsa;->Y:Lksa;
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Ldsa;->Z:Ljava/lang/String;
+    .line 2
+    iput p1, p0, Ldsa;->c:I
 
-    const/4 p1, 0x2
+    .line 3
+    iput p2, p0, Ldsa;->d:I
 
-    invoke-direct {p0, p1, p3}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    .line 4
+    iput p3, p0, Ldsa;->e:I
+
+    .line 5
+    iput p4, p0, Ldsa;->f:I
+
+    .line 6
+    iput p5, p0, Ldsa;->g:I
+
+    .line 7
+    iput p6, p0, Ldsa;->h:I
+
+    .line 8
+    iput-boolean p7, p0, Ldsa;->b:Z
+
+    .line 9
+    new-instance p1, Landroid/graphics/Matrix;
+
+    invoke-direct {p1}, Landroid/graphics/Matrix;-><init>()V
+
+    iput-object p1, p0, Ldsa;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public a(Landroid/graphics/Matrix;II)Lorg/webrtc/SurfaceTextureHelper$FrameGeometry;
+    .locals 12
 
-    check-cast p1, Lou3;
+    iget v0, p0, Ldsa;->e:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget v1, p0, Ldsa;->c:I
 
-    invoke-virtual {p0, p1, p2}, Ldsa;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    iget v2, p0, Ldsa;->d:I
 
-    move-result-object p0
+    iget v3, p0, Ldsa;->f:I
 
-    check-cast p0, Ldsa;
+    iget-object v4, p0, Ldsa;->i:Ljava/lang/Object;
 
-    sget-object p1, Ljue;->a:Ljue;
+    check-cast v4, Lorg/webrtc/SurfaceTextureHelper$FrameGeometry;
 
-    invoke-virtual {p0, p1}, Ldsa;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v5, p0, Ldsa;->a:Ljava/lang/Object;
 
-    move-result-object p0
+    check-cast v5, Landroid/graphics/Matrix;
 
-    return-object p0
-.end method
+    if-eqz v4, :cond_0
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
+    iget v6, v4, Lorg/webrtc/SurfaceTextureHelper$FrameGeometry;->width:I
 
-    new-instance p1, Ldsa;
+    if-ne v6, p2, :cond_0
 
-    iget-object v0, p0, Ldsa;->Y:Lksa;
+    iget v6, v4, Lorg/webrtc/SurfaceTextureHelper$FrameGeometry;->height:I
 
-    iget-object p0, p0, Ldsa;->Z:Ljava/lang/String;
+    if-ne v6, p3, :cond_0
 
-    invoke-direct {p1, v0, p0, p2}, Ldsa;-><init>(Lksa;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 10
-
-    sget-object v0, Lpu3;->a:Lpu3;
-
-    iget v1, p0, Ldsa;->X:I
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x2
-
-    iget-object v4, p0, Ldsa;->Y:Lksa;
-
-    if-eqz v1, :cond_2
-
-    if-eq v1, v2, :cond_1
-
-    if-ne v1, v3, :cond_0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto/16 :goto_4
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_2
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Ldsa;->Z:Ljava/lang/String;
-
-    iput v2, p0, Ldsa;->X:I
-
-    new-instance v1, Lzv1;
-
-    invoke-static {p0}, Lurd;->y(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object v5
-
-    invoke-direct {v1, v2, v5}, Lzv1;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    invoke-virtual {v1}, Lzv1;->n()V
-
-    sget-object v5, Lksa;->K0:[Lk77;
-
-    invoke-virtual {v4}, Lksa;->r()Lvs7;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Lvs7;->d()V
-
-    invoke-virtual {v4}, Lksa;->r()Lvs7;
-
-    move-result-object v5
-
-    new-instance v6, Lduf;
-
-    invoke-direct {v6, v4, p1, v1}, Lduf;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-
-    iput-object v6, v5, Lvs7;->h:Lms7;
-
-    invoke-virtual {v4}, Lksa;->r()Lvs7;
-
-    move-result-object v5
-
-    invoke-virtual {v5, p1}, Lvs7;->f(Ljava/lang/String;)V
-
-    new-instance p1, Lty0;
-
-    const/16 v5, 0x8
-
-    invoke-direct {p1, v5, v4}, Lty0;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {v1, p1}, Lzv1;->d(Lu16;)V
-
-    invoke-virtual {v1}, Lzv1;->m()Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v0, :cond_3
-
-    return-object v0
-
-    :cond_3
-    :goto_0
-    check-cast p1, Ljava/util/List;
-
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :cond_4
-    :goto_1
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_8
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v5
-
-    move-object v6, v5
-
-    check-cast v6, Lprc;
-
-    iget v7, v6, Lprc;->a:I
-
-    const/4 v8, 0x4
-
-    const/4 v9, 0x0
-
-    if-ne v7, v8, :cond_5
-
-    move v7, v2
-
-    goto :goto_2
-
-    :cond_5
-    move v7, v9
-
-    :goto_2
-    if-eqz v7, :cond_6
-
-    iget-object v8, v6, Lprc;->X:Ltf3;
-
-    invoke-virtual {v8}, Ltf3;->t()Z
-
-    move-result v8
-
-    if-eqz v8, :cond_6
-
-    move v9, v2
-
-    :cond_6
-    iget v6, v6, Lprc;->a:I
-
-    if-eq v6, v2, :cond_7
-
-    if-nez v9, :cond_7
-
-    iget-object v6, v4, Lksa;->Y:Ls16;
-
-    invoke-interface {v6}, Ls16;->invoke()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Ljava/lang/Boolean;
-
-    invoke-virtual {v6}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-static {v5, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v6
 
-    if-eqz v6, :cond_4
+    if-eqz v6, :cond_0
 
-    if-eqz v7, :cond_4
+    return-object v4
 
-    :cond_7
-    invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :cond_0
+    iget-boolean v4, p0, Ldsa;->b:Z
 
-    goto :goto_1
+    if-eqz v4, :cond_1
 
-    :cond_8
-    iget-object p1, p0, Ler3;->b:Lhu3;
+    new-instance v4, Landroid/graphics/Matrix;
 
-    invoke-static {p1}, Ln1g;->a(Lhu3;)Lkotlinx/coroutines/internal/ContextScope;
+    invoke-direct {v4, p1}, Landroid/graphics/Matrix;-><init>(Landroid/graphics/Matrix;)V
 
-    move-result-object p1
+    add-int/2addr v2, v3
 
-    new-instance v2, Ljava/util/ArrayList;
+    sub-int v2, p3, v2
 
-    const/16 v5, 0xa
+    int-to-float v1, v1
 
-    invoke-static {v1, v5}, Lq23;->H(Ljava/lang/Iterable;I)I
+    int-to-float v6, p2
 
-    move-result v5
+    div-float/2addr v1, v6
 
-    invoke-direct {v2, v5}, Ljava/util/ArrayList;-><init>(I)V
+    int-to-float v2, v2
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    int-to-float v7, p3
 
-    move-result-object v1
+    div-float/2addr v2, v7
 
-    :goto_3
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {v4, v1, v2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    move-result v5
+    int-to-float v0, v0
 
-    const/4 v6, 0x0
+    div-float/2addr v0, v6
 
-    if-eqz v5, :cond_9
+    int-to-float v1, v3
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    div-float/2addr v1, v7
 
-    move-result-object v5
+    invoke-virtual {v4, v0, v1}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    new-instance v7, Lcsa;
+    move-object v11, v4
 
-    invoke-direct {v7, v5, v6, v4}, Lcsa;-><init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;Lksa;)V
+    goto :goto_0
 
-    const/4 v5, 0x3
+    :cond_1
+    new-instance v4, Landroid/graphics/Matrix;
 
-    invoke-static {p1, v6, v7, v5}, Lxs7;->d(Lou3;Lju3;Li26;I)Lzc4;
+    invoke-direct {v4}, Landroid/graphics/Matrix;-><init>()V
 
-    move-result-object v5
+    add-int/2addr v2, v3
 
-    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    sub-int v2, p3, v2
 
-    goto :goto_3
+    int-to-float v1, v1
 
-    :cond_9
-    iput v3, p0, Ldsa;->X:I
+    int-to-float v6, p2
 
-    invoke-static {v2, p0}, Llp;->c(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    div-float/2addr v1, v6
 
-    move-result-object p1
+    int-to-float v2, v2
 
-    if-ne p1, v0, :cond_a
+    int-to-float v7, p3
 
-    return-object v0
+    div-float/2addr v2, v7
 
-    :cond_a
-    :goto_4
-    check-cast p1, Ljava/util/List;
+    invoke-virtual {v4, v1, v2}, Landroid/graphics/Matrix;->preTranslate(FF)Z
 
-    iget-object p0, v4, Lksa;->F0:Lgrd;
+    int-to-float v0, v0
 
-    invoke-virtual {p0, p1}, Lgrd;->setValue(Ljava/lang/Object;)V
+    div-float/2addr v0, v6
 
-    sget-object p0, Ljue;->a:Ljue;
+    int-to-float v1, v3
 
-    return-object p0
+    div-float/2addr v1, v7
+
+    invoke-virtual {v4, v0, v1}, Landroid/graphics/Matrix;->preScale(FF)Z
+
+    new-instance v0, Landroid/graphics/Matrix;
+
+    invoke-direct {v0, p1}, Landroid/graphics/Matrix;-><init>(Landroid/graphics/Matrix;)V
+
+    invoke-virtual {v0, v4}, Landroid/graphics/Matrix;->preConcat(Landroid/graphics/Matrix;)Z
+
+    move-object v11, v0
+
+    :goto_0
+    new-instance v6, Lorg/webrtc/SurfaceTextureHelper$FrameGeometry;
+
+    iget v9, p0, Ldsa;->g:I
+
+    iget v10, p0, Ldsa;->h:I
+
+    move v7, p2
+
+    move v8, p3
+
+    invoke-direct/range {v6 .. v11}, Lorg/webrtc/SurfaceTextureHelper$FrameGeometry;-><init>(IIIILandroid/graphics/Matrix;)V
+
+    invoke-virtual {v5, p1}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
+
+    iput-object v6, p0, Ldsa;->i:Ljava/lang/Object;
+
+    return-object v6
 .end method

@@ -4,10 +4,10 @@
 
 
 # static fields
-.field public static final PARSER:Lh67;
+.field public static final PARSER:Lza7;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lh67;"
+            "Lza7;"
         }
     .end annotation
 .end field
@@ -55,13 +55,13 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Lak0;
+    new-instance v0, Lxp0;
 
-    const/16 v1, 0x8
+    const/4 v1, 0x6
 
-    invoke-direct {v0, v1}, Lak0;-><init>(I)V
+    invoke-direct {v0, v1}, Lxp0;-><init>(I)V
 
-    sput-object v0, Lru/ok/android/externcalls/sdk/api/CallInfo;->PARSER:Lh67;
+    sput-object v0, Lru/ok/android/externcalls/sdk/api/CallInfo;->PARSER:Lza7;
 
     return-void
 .end method
@@ -111,8 +111,8 @@
     return-void
 .end method
 
-.method public static parse(Lm67;)Lru/ok/android/externcalls/sdk/api/CallInfo;
-    .locals 15
+.method public static parse(Ldb7;)Lru/ok/android/externcalls/sdk/api/CallInfo;
+    .locals 14
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -120,25 +120,21 @@
         }
     .end annotation
 
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+    sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
-    move-result-object v0
+    invoke-interface {p0}, Ldb7;->s()V
 
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-interface {p0}, Lm67;->s()V
+    const/4 v1, 0x0
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move-object v10, v0
 
-    move-object v11, v0
+    move-object v11, v10
 
-    move-object v12, v1
+    move-object v4, v1
 
-    move-object v5, v2
+    move-object v5, v4
 
     move-object v6, v5
 
@@ -146,41 +142,39 @@
 
     move-object v8, v7
 
-    move-object v9, v8
+    move v9, v2
 
-    move v10, v3
+    move v12, v9
 
-    move v13, v10
-
-    move v14, v13
+    move v13, v12
 
     :goto_0
-    invoke-interface {p0}, Lm67;->hasNext()Z
+    invoke-interface {p0}, Ldb7;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_a
 
-    invoke-interface {p0}, Lm67;->T()Ljava/lang/String;
+    invoke-interface {p0}, Ldb7;->name()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const/4 v1, -0x1
-
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
-    move-result v2
+    move-result v1
 
-    sparse-switch v2, :sswitch_data_0
+    const/4 v3, -0x1
+
+    sparse-switch v1, :sswitch_data_0
 
     goto/16 :goto_1
 
     :sswitch_0
-    const-string v2, "endpoint"
+    const-string v1, "endpoint"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -189,14 +183,14 @@
     goto/16 :goto_1
 
     :cond_0
-    const/16 v1, 0x9
+    const/16 v3, 0x9
 
     goto/16 :goto_1
 
     :sswitch_1
-    const-string v2, "stun_server"
+    const-string v1, "stun_server"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -205,14 +199,14 @@
     goto/16 :goto_1
 
     :cond_1
-    const/16 v1, 0x8
+    const/16 v3, 0x8
 
     goto/16 :goto_1
 
     :sswitch_2
-    const-string v2, "turn_server"
+    const-string v1, "turn_server"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -221,14 +215,14 @@
     goto :goto_1
 
     :cond_2
-    const/4 v1, 0x7
+    const/4 v3, 0x7
 
     goto :goto_1
 
     :sswitch_3
-    const-string v2, "is_concurrent"
+    const-string v1, "is_concurrent"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -237,14 +231,14 @@
     goto :goto_1
 
     :cond_3
-    const/4 v1, 0x6
+    const/4 v3, 0x6
 
     goto :goto_1
 
     :sswitch_4
-    const-string v2, "device_idx"
+    const-string v1, "device_idx"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -253,14 +247,14 @@
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x5
+    const/4 v3, 0x5
 
     goto :goto_1
 
     :sswitch_5
-    const-string v2, "token"
+    const-string v1, "token"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -269,14 +263,14 @@
     goto :goto_1
 
     :cond_5
-    const/4 v1, 0x4
+    const/4 v3, 0x4
 
     goto :goto_1
 
     :sswitch_6
-    const-string v2, "id"
+    const-string v1, "id"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -285,14 +279,14 @@
     goto :goto_1
 
     :cond_6
-    const/4 v1, 0x3
+    const/4 v3, 0x3
 
     goto :goto_1
 
     :sswitch_7
-    const-string v2, "p2p_forbidden"
+    const-string v1, "p2p_forbidden"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -301,14 +295,14 @@
     goto :goto_1
 
     :cond_7
-    const/4 v1, 0x2
+    const/4 v3, 0x2
 
     goto :goto_1
 
     :sswitch_8
-    const-string v2, "client_type"
+    const-string v1, "client_type"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -317,14 +311,14 @@
     goto :goto_1
 
     :cond_8
-    const/4 v1, 0x1
+    const/4 v3, 0x1
 
     goto :goto_1
 
     :sswitch_9
-    const-string v2, "join_link"
+    const-string v1, "join_link"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -333,97 +327,93 @@
     goto :goto_1
 
     :cond_9
-    move v1, v3
+    move v3, v2
 
     :goto_1
-    packed-switch v1, :pswitch_data_0
+    packed-switch v3, :pswitch_data_0
 
-    invoke-interface {p0}, Lm67;->z()V
+    invoke-interface {p0}, Ldb7;->B()V
 
     goto/16 :goto_0
 
     :pswitch_0
-    invoke-interface {p0}, Lm67;->H()Ljava/lang/String;
-
-    move-result-object v7
-
-    goto/16 :goto_0
-
-    :pswitch_1
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/api/TurnStunParser;->parseStun(Lm67;)Ljava/util/List;
-
-    move-result-object v12
-
-    goto/16 :goto_0
-
-    :pswitch_2
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/api/TurnStunParser;->parseTurn(Lm67;)Ljava/util/List;
-
-    move-result-object v11
-
-    goto/16 :goto_0
-
-    :pswitch_3
-    invoke-interface {p0}, Lm67;->a0()Z
-
-    move-result v10
-
-    goto/16 :goto_0
-
-    :pswitch_4
-    invoke-interface {p0}, Lm67;->D()I
-
-    move-result v14
-
-    goto/16 :goto_0
-
-    :pswitch_5
-    invoke-interface {p0}, Lm67;->H()Ljava/lang/String;
-
-    move-result-object v5
-
-    goto/16 :goto_0
-
-    :pswitch_6
-    invoke-interface {p0}, Lm67;->H()Ljava/lang/String;
-
-    move-result-object v8
-
-    goto/16 :goto_0
-
-    :pswitch_7
-    invoke-interface {p0}, Lm67;->a0()Z
-
-    move-result v13
-
-    goto/16 :goto_0
-
-    :pswitch_8
-    invoke-interface {p0}, Lm67;->H()Ljava/lang/String;
+    invoke-interface {p0}, Ldb7;->H()Ljava/lang/String;
 
     move-result-object v6
 
     goto/16 :goto_0
 
-    :pswitch_9
-    invoke-interface {p0}, Lm67;->H()Ljava/lang/String;
+    :pswitch_1
+    invoke-static {p0}, Lru/ok/android/externcalls/sdk/api/TurnStunParser;->parseStun(Ldb7;)Ljava/util/List;
 
-    move-result-object v9
+    move-result-object v11
+
+    goto/16 :goto_0
+
+    :pswitch_2
+    invoke-static {p0}, Lru/ok/android/externcalls/sdk/api/TurnStunParser;->parseTurn(Ldb7;)Ljava/util/List;
+
+    move-result-object v10
+
+    goto/16 :goto_0
+
+    :pswitch_3
+    invoke-interface {p0}, Ldb7;->e0()Z
+
+    move-result v9
+
+    goto/16 :goto_0
+
+    :pswitch_4
+    invoke-interface {p0}, Ldb7;->E()I
+
+    move-result v13
+
+    goto/16 :goto_0
+
+    :pswitch_5
+    invoke-interface {p0}, Ldb7;->H()Ljava/lang/String;
+
+    move-result-object v4
+
+    goto/16 :goto_0
+
+    :pswitch_6
+    invoke-interface {p0}, Ldb7;->H()Ljava/lang/String;
+
+    move-result-object v7
+
+    goto/16 :goto_0
+
+    :pswitch_7
+    invoke-interface {p0}, Ldb7;->e0()Z
+
+    move-result v12
+
+    goto/16 :goto_0
+
+    :pswitch_8
+    invoke-interface {p0}, Ldb7;->H()Ljava/lang/String;
+
+    move-result-object v5
+
+    goto/16 :goto_0
+
+    :pswitch_9
+    invoke-interface {p0}, Ldb7;->H()Ljava/lang/String;
+
+    move-result-object v8
 
     goto/16 :goto_0
 
     :cond_a
-    invoke-interface {p0}, Lm67;->q()V
+    invoke-interface {p0}, Ldb7;->q()V
 
-    new-instance p0, Lru/ok/android/externcalls/sdk/api/CallInfo;
+    new-instance v3, Lru/ok/android/externcalls/sdk/api/CallInfo;
 
-    move-object v4, p0
+    invoke-direct/range {v3 .. v13}, Lru/ok/android/externcalls/sdk/api/CallInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/util/List;Ljava/util/List;ZI)V
 
-    invoke-direct/range {v4 .. v14}, Lru/ok/android/externcalls/sdk/api/CallInfo;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/util/List;Ljava/util/List;ZI)V
-
-    return-object p0
-
-    nop
+    return-object v3
 
     :sswitch_data_0
     .sparse-switch
@@ -459,7 +449,7 @@
 .method public getFormattedJoinLink(Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
-    invoke-static {p1}, Lhr1;->l(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p1}, Lzt1;->l(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 

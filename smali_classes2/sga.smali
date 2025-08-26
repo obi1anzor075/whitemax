@@ -1,80 +1,49 @@
-.class public final Lsga;
-.super Ll5e;
+.class public abstract Lsga;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Li26;
 
+# static fields
+.field public static final a:I
 
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public static final b:I
 
-.field public final synthetic Y:Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;
+.field public static final c:I
+
+.field public static final d:I
+
+.field public static final e:I
+
+.field public static final f:I
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;)V
-    .locals 0
-
-    iput-object p2, p0, Lsga;->Y:Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;
-
-    const/4 p2, 0x2
-
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lsga;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lsga;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lsga;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lsga;
+    sget v0, Lnzb;->oneme_stickers_preview_action_favorite_title:I
 
-    iget-object p0, p0, Lsga;->Y:Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;
+    sput v0, Lsga;->a:I
 
-    invoke-direct {v0, p2, p0}, Lsga;-><init>(Lkotlin/coroutines/Continuation;Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;)V
+    sget v0, Lnzb;->oneme_stickers_preview_action_forward_title:I
 
-    iput-object p1, v0, Lsga;->X:Ljava/lang/Object;
+    sput v0, Lsga;->b:I
 
-    return-object v0
-.end method
+    sget v0, Lnzb;->oneme_stickers_preview_action_in_favorite_title:I
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+    sput v0, Lsga;->c:I
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    sget v0, Lnzb;->oneme_stickers_preview_action_send_title:I
 
-    iget-object p1, p0, Lsga;->X:Ljava/lang/Object;
+    sput v0, Lsga;->d:I
 
-    check-cast p1, Ljava/util/List;
+    sget v0, Lnzb;->oneme_stickers_preview_snackbar_favorite_added:I
 
-    iget-object p0, p0, Lsga;->Y:Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;
+    sput v0, Lsga;->e:I
 
-    iget-object p0, p0, Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;->c:Lg7d;
+    sget v0, Lnzb;->oneme_stickers_preview_snackbar_favorite_removed:I
 
-    invoke-virtual {p0, p1}, Lig7;->E(Ljava/util/List;)V
+    sput v0, Lsga;->f:I
 
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
+    return-void
 .end method

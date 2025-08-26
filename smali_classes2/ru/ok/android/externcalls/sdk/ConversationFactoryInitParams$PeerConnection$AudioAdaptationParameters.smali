@@ -117,105 +117,61 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Double;ILx54;)V
-    .locals 7
+.method public synthetic constructor <init>(ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Double;ILl94;)V
+    .locals 1
 
-    and-int/lit8 v0, p8, 0x2
+    and-int/lit8 p9, p8, 0x2
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    if-eqz v0, :cond_0
+    if-eqz p9, :cond_0
 
-    move-object v0, v1
-
-    goto :goto_0
+    move-object p2, v0
 
     :cond_0
-    move-object v0, p2
+    and-int/lit8 p9, p8, 0x4
 
-    :goto_0
-    and-int/lit8 v2, p8, 0x4
+    if-eqz p9, :cond_1
 
-    if-eqz v2, :cond_1
-
-    move-object v2, v1
-
-    goto :goto_1
+    move-object p3, v0
 
     :cond_1
-    move-object v2, p3
+    and-int/lit8 p9, p8, 0x8
 
-    :goto_1
-    and-int/lit8 v3, p8, 0x8
-
-    if-eqz v3, :cond_2
-
-    move-object v3, v1
-
-    goto :goto_2
-
-    :cond_2
-    move-object v3, p4
-
-    :goto_2
-    and-int/lit8 v4, p8, 0x10
-
-    if-eqz v4, :cond_3
-
-    move-object v4, v1
-
-    goto :goto_3
-
-    :cond_3
-    move-object v4, p5
-
-    :goto_3
-    and-int/lit8 v5, p8, 0x20
-
-    if-eqz v5, :cond_4
-
-    move-object v5, v1
-
-    goto :goto_4
-
-    :cond_4
-    move-object v5, p6
-
-    :goto_4
-    and-int/lit8 v6, p8, 0x40
-
-    if-eqz v6, :cond_5
-
-    goto :goto_5
-
-    :cond_5
-    move-object v1, p7
-
-    :goto_5
-    move-object p2, p0
-
-    move p3, p1
+    if-eqz p9, :cond_2
 
     move-object p4, v0
 
-    move-object p5, v2
+    :cond_2
+    and-int/lit8 p9, p8, 0x10
 
-    move-object p6, v3
+    if-eqz p9, :cond_3
 
-    move-object p7, v4
+    move-object p5, v0
 
-    move-object p8, v5
+    :cond_3
+    and-int/lit8 p9, p8, 0x20
 
-    move-object/from16 p9, v1
+    if-eqz p9, :cond_4
+
+    move-object p6, v0
+
+    :cond_4
+    and-int/lit8 p8, p8, 0x40
+
+    if-eqz p8, :cond_5
+
+    move-object p7, v0
 
     .line 9
-    invoke-direct/range {p2 .. p9}, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$AudioAdaptationParameters;-><init>(ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Double;)V
+    :cond_5
+    invoke-direct/range {p0 .. p7}, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$AudioAdaptationParameters;-><init>(ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Double;)V
 
     return-void
 .end method
 
 .method public static synthetic copy$default(Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$AudioAdaptationParameters;ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Double;ILjava/lang/Object;)Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$AudioAdaptationParameters;
-    .locals 5
+    .locals 0
 
     and-int/lit8 p9, p8, 0x1
 
@@ -231,68 +187,56 @@
     iget-object p2, p0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$AudioAdaptationParameters;->minEncoderBitrateKBps:Ljava/lang/Integer;
 
     :cond_1
-    move-object p9, p2
+    and-int/lit8 p9, p8, 0x4
 
-    and-int/lit8 p2, p8, 0x4
-
-    if-eqz p2, :cond_2
+    if-eqz p9, :cond_2
 
     iget-object p3, p0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$AudioAdaptationParameters;->minPayloadBitrateKBps:Ljava/lang/Integer;
 
     :cond_2
-    move-object v0, p3
+    and-int/lit8 p9, p8, 0x8
 
-    and-int/lit8 p2, p8, 0x8
-
-    if-eqz p2, :cond_3
+    if-eqz p9, :cond_3
 
     iget-object p4, p0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$AudioAdaptationParameters;->useSlowAdaptation:Ljava/lang/Boolean;
 
     :cond_3
-    move-object v1, p4
+    and-int/lit8 p9, p8, 0x10
 
-    and-int/lit8 p2, p8, 0x10
-
-    if-eqz p2, :cond_4
+    if-eqz p9, :cond_4
 
     iget-object p5, p0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$AudioAdaptationParameters;->maxBitrateConstraintBps:Ljava/lang/Integer;
 
     :cond_4
-    move-object v2, p5
+    and-int/lit8 p9, p8, 0x20
 
-    and-int/lit8 p2, p8, 0x20
-
-    if-eqz p2, :cond_5
+    if-eqz p9, :cond_5
 
     iget-object p6, p0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$AudioAdaptationParameters;->minBitrateConstraintBps:Ljava/lang/Integer;
 
     :cond_5
-    move-object v3, p6
+    and-int/lit8 p8, p8, 0x40
 
-    and-int/lit8 p2, p8, 0x40
-
-    if-eqz p2, :cond_6
+    if-eqz p8, :cond_6
 
     iget-object p7, p0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$AudioAdaptationParameters;->bitratePriority:Ljava/lang/Double;
 
     :cond_6
-    move-object v4, p7
+    move-object p8, p6
+
+    move-object p9, p7
+
+    move-object p6, p4
+
+    move-object p7, p5
+
+    move-object p4, p2
+
+    move-object p5, p3
 
     move-object p2, p0
 
     move p3, p1
-
-    move-object p4, p9
-
-    move-object p5, v0
-
-    move-object p6, v1
-
-    move-object p7, v2
-
-    move-object p8, v3
-
-    move-object p9, v4
 
     invoke-virtual/range {p2 .. p9}, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$AudioAdaptationParameters;->copy(ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Double;)Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$AudioAdaptationParameters;
 
@@ -360,27 +304,11 @@
 .end method
 
 .method public final copy(ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Double;)Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$AudioAdaptationParameters;
-    .locals 8
+    .locals 0
 
     new-instance p0, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$AudioAdaptationParameters;
 
-    move-object v0, p0
-
-    move v1, p1
-
-    move-object v2, p2
-
-    move-object v3, p3
-
-    move-object v4, p4
-
-    move-object v5, p5
-
-    move-object v6, p6
-
-    move-object v7, p7
-
-    invoke-direct/range {v0 .. v7}, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$AudioAdaptationParameters;-><init>(ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Double;)V
+    invoke-direct/range {p0 .. p7}, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$AudioAdaptationParameters;-><init>(ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Double;)V
 
     return-object p0
 .end method
@@ -419,7 +347,7 @@
 
     iget-object v3, p1, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$AudioAdaptationParameters;->minEncoderBitrateKBps:Ljava/lang/Integer;
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -432,7 +360,7 @@
 
     iget-object v3, p1, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$AudioAdaptationParameters;->minPayloadBitrateKBps:Ljava/lang/Integer;
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -445,7 +373,7 @@
 
     iget-object v3, p1, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$AudioAdaptationParameters;->useSlowAdaptation:Ljava/lang/Boolean;
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -458,7 +386,7 @@
 
     iget-object v3, p1, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$AudioAdaptationParameters;->maxBitrateConstraintBps:Ljava/lang/Integer;
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -471,7 +399,7 @@
 
     iget-object v3, p1, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$AudioAdaptationParameters;->minBitrateConstraintBps:Ljava/lang/Integer;
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -484,7 +412,7 @@
 
     iget-object p1, p1, Lru/ok/android/externcalls/sdk/ConversationFactoryInitParams$PeerConnection$AudioAdaptationParameters;->bitratePriority:Ljava/lang/Double;
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 

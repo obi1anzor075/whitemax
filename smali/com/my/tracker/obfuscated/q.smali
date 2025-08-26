@@ -53,103 +53,71 @@
 
 # direct methods
 .method public constructor <init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIIFFFIJJII)V
-    .locals 3
-
-    move-object v0, p0
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move v1, p1
+    iput p1, p0, Lcom/my/tracker/obfuscated/q;->a:I
 
-    iput v1, v0, Lcom/my/tracker/obfuscated/q;->a:I
+    iput-object p2, p0, Lcom/my/tracker/obfuscated/q;->b:Ljava/lang/String;
 
-    move-object v1, p2
+    iput-object p3, p0, Lcom/my/tracker/obfuscated/q;->c:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/my/tracker/obfuscated/q;->b:Ljava/lang/String;
+    iput-object p4, p0, Lcom/my/tracker/obfuscated/q;->d:Ljava/lang/String;
 
-    move-object v1, p3
+    iput-object p5, p0, Lcom/my/tracker/obfuscated/q;->e:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/my/tracker/obfuscated/q;->c:Ljava/lang/String;
+    iput-object p6, p0, Lcom/my/tracker/obfuscated/q;->f:Ljava/lang/String;
 
-    move-object v1, p4
+    iput-object p7, p0, Lcom/my/tracker/obfuscated/q;->g:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/my/tracker/obfuscated/q;->d:Ljava/lang/String;
+    iput-object p8, p0, Lcom/my/tracker/obfuscated/q;->h:Ljava/lang/String;
 
-    move-object v1, p5
+    iput-object p9, p0, Lcom/my/tracker/obfuscated/q;->i:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/my/tracker/obfuscated/q;->e:Ljava/lang/String;
+    iput-object p10, p0, Lcom/my/tracker/obfuscated/q;->j:Ljava/lang/String;
 
-    move-object v1, p6
+    iput-object p11, p0, Lcom/my/tracker/obfuscated/q;->k:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/my/tracker/obfuscated/q;->f:Ljava/lang/String;
+    iput-object p12, p0, Lcom/my/tracker/obfuscated/q;->l:Ljava/lang/String;
 
-    move-object v1, p7
+    iput p13, p0, Lcom/my/tracker/obfuscated/q;->m:I
 
-    iput-object v1, v0, Lcom/my/tracker/obfuscated/q;->g:Ljava/lang/String;
+    iput p14, p0, Lcom/my/tracker/obfuscated/q;->n:I
 
-    move-object v1, p8
+    iput p15, p0, Lcom/my/tracker/obfuscated/q;->o:I
 
-    iput-object v1, v0, Lcom/my/tracker/obfuscated/q;->h:Ljava/lang/String;
+    move/from16 p1, p16
 
-    move-object v1, p9
+    iput p1, p0, Lcom/my/tracker/obfuscated/q;->p:F
 
-    iput-object v1, v0, Lcom/my/tracker/obfuscated/q;->i:Ljava/lang/String;
+    move/from16 p1, p17
 
-    move-object v1, p10
+    iput p1, p0, Lcom/my/tracker/obfuscated/q;->q:F
 
-    iput-object v1, v0, Lcom/my/tracker/obfuscated/q;->j:Ljava/lang/String;
+    move/from16 p1, p18
 
-    move-object v1, p11
+    iput p1, p0, Lcom/my/tracker/obfuscated/q;->r:F
 
-    iput-object v1, v0, Lcom/my/tracker/obfuscated/q;->k:Ljava/lang/String;
+    move/from16 p1, p19
 
-    move-object v1, p12
+    iput p1, p0, Lcom/my/tracker/obfuscated/q;->s:I
 
-    iput-object v1, v0, Lcom/my/tracker/obfuscated/q;->l:Ljava/lang/String;
+    move-wide/from16 p1, p20
 
-    move/from16 v1, p13
+    iput-wide p1, p0, Lcom/my/tracker/obfuscated/q;->t:J
 
-    iput v1, v0, Lcom/my/tracker/obfuscated/q;->m:I
+    move-wide/from16 p1, p22
 
-    move/from16 v1, p14
+    iput-wide p1, p0, Lcom/my/tracker/obfuscated/q;->u:J
 
-    iput v1, v0, Lcom/my/tracker/obfuscated/q;->n:I
+    move/from16 p1, p24
 
-    move/from16 v1, p15
+    iput p1, p0, Lcom/my/tracker/obfuscated/q;->v:I
 
-    iput v1, v0, Lcom/my/tracker/obfuscated/q;->o:I
+    move/from16 p1, p25
 
-    move/from16 v1, p16
-
-    iput v1, v0, Lcom/my/tracker/obfuscated/q;->p:F
-
-    move/from16 v1, p17
-
-    iput v1, v0, Lcom/my/tracker/obfuscated/q;->q:F
-
-    move/from16 v1, p18
-
-    iput v1, v0, Lcom/my/tracker/obfuscated/q;->r:F
-
-    move/from16 v1, p19
-
-    iput v1, v0, Lcom/my/tracker/obfuscated/q;->s:I
-
-    move-wide/from16 v1, p20
-
-    iput-wide v1, v0, Lcom/my/tracker/obfuscated/q;->t:J
-
-    move-wide/from16 v1, p22
-
-    iput-wide v1, v0, Lcom/my/tracker/obfuscated/q;->u:J
-
-    move/from16 v1, p24
-
-    iput v1, v0, Lcom/my/tracker/obfuscated/q;->v:I
-
-    move/from16 v1, p25
-
-    iput v1, v0, Lcom/my/tracker/obfuscated/q;->w:I
+    iput p1, p0, Lcom/my/tracker/obfuscated/q;->w:I
 
     return-void
 .end method

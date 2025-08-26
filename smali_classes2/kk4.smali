@@ -2,63 +2,44 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lpk4;
 
+# instance fields
+.field public a:Lckd;
 
-# static fields
-.field public static final a:Lkk4;
+.field public b:Ld;
 
+.field public c:Lnzc;
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.field public d:Ljava/util/concurrent/ExecutorService;
 
-    new-instance v0, Lkk4;
+.field public e:Landroid/content/Context;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+.field public f:Lorg/webrtc/EglBase;
 
-    sput-object v0, Lkk4;->a:Lkk4;
+.field public g:Ltg9;
 
-    return-void
-.end method
+.field public h:Lag1;
 
+.field public i:Ldnd;
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+.field public j:Lqf1;
 
-    const/4 v0, 0x1
+.field public k:Ls1c;
 
-    if-ne p0, p1, :cond_0
+.field public l:Lv1c;
 
-    return v0
+.field public m:Lal5;
 
-    :cond_0
-    instance-of p0, p1, Lkk4;
+.field public n:Z
 
-    if-nez p0, :cond_1
+.field public o:Lsag;
 
-    const/4 p0, 0x0
+.field public p:Lsc6;
 
-    return p0
+.field public q:Lyc1;
 
-    :cond_1
-    return v0
-.end method
+.field public r:Ln38;
 
-.method public final hashCode()I
-    .locals 0
+.field public s:Lsmc;
 
-    const p0, -0x494f719a
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    const-string p0, "Completed"
-
-    return-object p0
-.end method
+.field public t:Lase;

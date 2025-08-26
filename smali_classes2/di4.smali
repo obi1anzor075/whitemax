@@ -1,48 +1,60 @@
 .class public final Ldi4;
-.super Ljava/lang/Object;
+.super Lsdb;
 .source "SourceFile"
-
-# interfaces
-.implements Lqne;
 
 
 # instance fields
-.field public final a:Z
+.field public B0:Lq74;
 
 
-# direct methods
-.method public constructor <init>(Llv1;)V
-    .locals 0
+# virtual methods
+.method public final C()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object v0, p0, Ldi4;->B0:Lq74;
 
-    iget-object p1, p1, Llv1;->b:Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    check-cast p1, Ljava/lang/Boolean;
+    iget-object v1, v0, Lq74;->b:Ljava/lang/Object;
 
-    if-eqz p1, :cond_0
+    check-cast v1, Lci4;
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    iget-object v0, v0, Lq74;->c:Ljava/lang/Object;
 
-    move-result p1
+    check-cast v0, Llf1;
 
-    goto :goto_0
+    iget-object v1, v1, Lci4;->p0:Landroid/widget/EditText;
+
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->removeTextChangedListener(Landroid/text/TextWatcher;)V
 
     :cond_0
-    const/4 p1, 0x1
+    const/4 v0, 0x0
 
-    :goto_0
-    iput-boolean p1, p0, Ldi4;->a:Z
+    iput-object v0, p0, Ldi4;->B0:Lq74;
 
     return-void
 .end method
 
+.method public final x(Lol7;)V
+    .locals 1
 
-# virtual methods
-.method public final a()Lx3a;
-    .locals 0
+    check-cast p1, Lai4;
 
-    sget-object p0, Lhwf;->a:Lx3a;
+    iget-object p0, p0, Lccc;->a:Landroid/view/View;
 
-    return-object p0
+    check-cast p0, Lci4;
+
+    iget v0, p1, Lai4;->c:I
+
+    invoke-virtual {p0, v0}, Lci4;->setMaxCount(I)V
+
+    iget-object v0, p1, Lai4;->a:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lci4;->setText(Ljava/lang/String;)V
+
+    iget-object p1, p1, Lai4;->b:Lhoe;
+
+    invoke-virtual {p0, p1}, Lci4;->setHint(Lmoe;)V
+
+    return-void
 .end method

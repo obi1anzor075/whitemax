@@ -1,174 +1,124 @@
-.class public final Lli9;
+.class public final synthetic Lli9;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lw66;
+
 
 # instance fields
-.field public final a:J
+.field public final synthetic a:I
 
-.field public final b:Ljava/lang/String;
+.field public final synthetic b:Lni9;
 
-.field public final c:Ljava/lang/Boolean;
+.field public final synthetic c:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public synthetic constructor <init>(Lni9;Ljava/lang/Object;I)V
     .locals 0
 
-    return-void
-.end method
+    iput p3, p0, Lli9;->a:I
 
-.method public constructor <init>(JLjava/lang/String;Ljava/lang/Boolean;)V
-    .locals 0
+    iput-object p1, p0, Lli9;->b:Lni9;
+
+    iput-object p2, p0, Lli9;->c:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-wide p1, p0, Lli9;->a:J
-
-    iput-object p3, p0, Lli9;->b:Ljava/lang/String;
-
-    iput-object p4, p0, Lli9;->c:Ljava/lang/Boolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 7
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lli9;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lli9;
-
-    iget-wide v3, p1, Lli9;->a:J
-
-    iget-wide v5, p0, Lli9;->a:J
-
-    cmp-long v1, v5, v3
-
-    if-eqz v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object v1, p0, Lli9;->b:Ljava/lang/String;
-
-    iget-object v3, p1, Lli9;->b:Ljava/lang/String;
-
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-object p0, p0, Lli9;->c:Ljava/lang/Boolean;
-
-    iget-object p1, p1, Lli9;->c:Ljava/lang/Boolean;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_4
-
-    return v2
-
-    :cond_4
-    return v0
-.end method
-
-.method public final hashCode()I
+.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 3
 
-    iget-wide v0, p0, Lli9;->a:J
+    iget v0, p0, Lli9;->a:I
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    packed-switch v0, :pswitch_data_0
 
-    move-result v0
+    iget-object v0, p0, Lli9;->c:Ljava/lang/Object;
 
-    const/16 v1, 0x1f
+    check-cast v0, Lwnb;
 
-    mul-int/2addr v0, v1
+    check-cast p1, Lkq7;
 
-    iget-object v2, p0, Lli9;->b:Ljava/lang/String;
+    iget-object p0, p0, Lli9;->b:Lni9;
 
-    invoke-static {v0, v1, v2}, Lme4;->d(IILjava/lang/String;)I
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result v0
+    const/4 v1, 0x0
 
-    iget-object p0, p0, Lli9;->c:Ljava/lang/Boolean;
+    iput-boolean v1, p1, Lkq7;->a:Z
 
-    if-nez p0, :cond_0
+    const/4 v2, 0x1
 
-    const/4 p0, 0x0
+    iput-boolean v2, p1, Lkq7;->b:Z
 
-    goto :goto_0
+    iput-boolean v1, p1, Lkq7;->c:Z
 
-    :cond_0
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    iput-object v0, p1, Lkq7;->i:Lwnb;
 
-    move-result p0
+    iput-boolean v1, p1, Lkq7;->g:Z
 
-    :goto_0
-    add-int/2addr v0, p0
+    iput-boolean v1, p1, Lkq7;->h:Z
 
-    return v0
-.end method
+    iget-object p0, p0, Lni9;->p0:Lsef;
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
+    iget-boolean p0, p0, Lsef;->d:Z
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iput-boolean p0, p1, Lkq7;->n:Z
 
-    const-string v1, "NeuroAvatarInfo(id="
+    return-object p1
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    :pswitch_0
+    iget-object v0, p0, Lli9;->c:Ljava/lang/Object;
 
-    iget-wide v1, p0, Lli9;->a:J
+    check-cast v0, Lmi9;
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    check-cast p1, Lkq7;
 
-    const-string v1, ", url="
+    iget-object p0, p0, Lli9;->b:Lni9;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object v1, p0, Lli9;->b:Ljava/lang/String;
+    iget-object v1, v0, Lmi9;->b:Lsef;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v1, v1, Lsef;->a:Lwnb;
 
-    const-string v1, ", default="
+    iput-object v1, p1, Lkq7;->i:Lwnb;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v1, 0x1
 
-    iget-object p0, p0, Lli9;->c:Ljava/lang/Boolean;
+    iput-boolean v1, p1, Lkq7;->a:Z
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iput-boolean v1, p1, Lkq7;->b:Z
 
-    const-string p0, ")"
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput-boolean v1, p1, Lkq7;->g:Z
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iput-boolean v1, p1, Lkq7;->h:Z
 
-    move-result-object p0
+    iput-boolean v1, p1, Lkq7;->c:Z
 
-    return-object p0
+    iget-object p0, p0, Lni9;->p0:Lsef;
+
+    iget-boolean p0, p0, Lsef;->d:Z
+
+    iput-boolean p0, p1, Lkq7;->n:Z
+
+    iget-boolean p0, v0, Lmi9;->e:Z
+
+    iput-boolean p0, p1, Lkq7;->o:Z
+
+    return-object p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

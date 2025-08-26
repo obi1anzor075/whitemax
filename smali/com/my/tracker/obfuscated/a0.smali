@@ -99,11 +99,11 @@
     invoke-direct {v1, p0, p1, p2}, Lcom/my/tracker/obfuscated/a0;-><init>(Lcom/my/tracker/obfuscated/t;Lcom/my/tracker/obfuscated/i;Landroid/content/Context;)V
 
     .line 6
-    new-instance p0, Lkwf;
+    new-instance p0, Lubg;
 
     const/4 p1, 0x1
 
-    invoke-direct {p0, v1, p1}, Lkwf;-><init>(Lcom/my/tracker/obfuscated/a0;I)V
+    invoke-direct {p0, v1, p1}, Lubg;-><init>(Lcom/my/tracker/obfuscated/a0;I)V
 
     invoke-static {p0}, Lcom/my/tracker/obfuscated/h;->a(Ljava/lang/Runnable;)V
 
@@ -274,11 +274,11 @@
 
     .line 18
     :cond_0
-    new-instance v0, Lkwf;
+    new-instance v0, Lubg;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lkwf;-><init>(Lcom/my/tracker/obfuscated/a0;I)V
+    invoke-direct {v0, p0, v1}, Lubg;-><init>(Lcom/my/tracker/obfuscated/a0;I)V
 
     invoke-static {v0}, Lcom/my/tracker/obfuscated/h;->b(Ljava/lang/Runnable;)V
 
@@ -319,11 +319,11 @@
     move-result-object p1
 
     .line 23
-    new-instance v0, Ljwf;
+    new-instance v0, Ljff;
 
-    const/4 v1, 0x1
+    const/16 v1, 0x15
 
-    invoke-direct {v0, p0, v1, p1}, Ljwf;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-direct {v0, p0, v1, p1}, Ljff;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
     invoke-static {v0}, Lcom/my/tracker/obfuscated/h;->a(Ljava/lang/Runnable;)V
 
@@ -449,7 +449,7 @@
 .end method
 
 .method public a(Lcom/android/installreferrer/api/ReferrerDetails;)V
-    .locals 9
+    .locals 8
 
     .line 45
     iget-object v0, p0, Lcom/my/tracker/obfuscated/a0;->c:Landroid/content/Context;
@@ -476,16 +476,16 @@
     :cond_0
     invoke-virtual {p1}, Lcom/android/installreferrer/api/ReferrerDetails;->getInstallReferrer()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v2
 
     .line 49
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "ReferrerHandler: retrieving install referrer is completed. Referrer: "
+    const-string v3, "ReferrerHandler: retrieving install referrer is completed. Referrer: "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -513,15 +513,13 @@
 
     move-result-wide v6
 
-    move-object v2, v8
-
     .line 54
     invoke-virtual/range {v1 .. v7}, Lcom/my/tracker/obfuscated/t;->a(Ljava/lang/String;Ljava/lang/String;JJ)V
 
     .line 55
     iget-object p0, p0, Lcom/my/tracker/obfuscated/a0;->b:Lcom/my/tracker/obfuscated/i;
 
-    invoke-virtual {p0, v8}, Lcom/my/tracker/obfuscated/i;->a(Ljava/lang/String;)V
+    invoke-virtual {p0, v2}, Lcom/my/tracker/obfuscated/i;->a(Ljava/lang/String;)V
 
     .line 56
     invoke-virtual {v0}, Lcom/my/tracker/obfuscated/p0;->r()V

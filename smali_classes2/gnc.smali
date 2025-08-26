@@ -1,50 +1,61 @@
-.class public final Lgnc;
-.super Lb97;
+.class public abstract Lgnc;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ls16;
 
+# static fields
+.field public static final a:I
 
-# instance fields
-.field public final synthetic a:Lhnc;
+.field public static final b:I
 
-.field public final synthetic b:Ljava/lang/Class;
+.field public static final c:I
 
-.field public final synthetic c:Z
+.field public static final d:I
+
+.field public static final e:I
+
+.field public static final f:I
+
+.field public static final g:I
+
+.field public static final h:I
 
 
 # direct methods
-.method public constructor <init>(Lhnc;Ljava/lang/Class;Z)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lgnc;->a:Lhnc;
+    sget v0, Lqvb;->link_context_menu_action_copy_call:I
 
-    iput-object p2, p0, Lgnc;->b:Ljava/lang/Class;
+    sput v0, Lgnc;->a:I
 
-    iput-boolean p3, p0, Lgnc;->c:Z
+    sget v0, Lqvb;->link_context_menu_action_copy_link:I
 
-    const/4 p1, 0x0
+    sput v0, Lgnc;->b:I
 
-    invoke-direct {p0, p1}, Lb97;-><init>(I)V
+    sget v0, Lqvb;->link_context_menu_action_copy_mail:I
+
+    sput v0, Lgnc;->c:I
+
+    sget v0, Lqvb;->link_context_menu_action_copy_profile:I
+
+    sput v0, Lgnc;->d:I
+
+    sget v0, Lqvb;->link_context_menu_action_open_call:I
+
+    sput v0, Lgnc;->e:I
+
+    sget v0, Lqvb;->link_context_menu_action_open_link:I
+
+    sput v0, Lgnc;->f:I
+
+    sget v0, Lqvb;->link_context_menu_action_open_mail:I
+
+    sput v0, Lgnc;->g:I
+
+    sget v0, Lqvb;->link_context_menu_action_open_profile:I
+
+    sput v0, Lgnc;->h:I
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 2
-
-    iget-object v0, p0, Lgnc;->b:Ljava/lang/Class;
-
-    iget-boolean v1, p0, Lgnc;->c:Z
-
-    iget-object p0, p0, Lgnc;->a:Lhnc;
-
-    invoke-virtual {p0, v0, v1}, Lhnc;->d(Ljava/lang/Class;Z)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
 .end method

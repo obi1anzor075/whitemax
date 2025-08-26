@@ -1,94 +1,41 @@
-.class public final Lfx5;
-.super Ljava/lang/Object;
+.class public final synthetic Lfx5;
+.super Lnlb;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/os/Parcelable;
 
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lfx5;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
-# instance fields
-.field public final a:Landroid/os/Bundle;
+.field public static final a:Lfx5;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 5
 
-    new-instance v0, Ly;
+    new-instance v0, Lfx5;
 
-    const/4 v1, 0x5
+    const-string v1, "getId()Ljava/lang/String;"
 
-    invoke-direct {v0, v1}, Ly;-><init>(I)V
+    const/4 v2, 0x0
 
-    sput-object v0, Lfx5;->CREATOR:Landroid/os/Parcelable$Creator;
+    const-class v3, Lns5;
 
-    return-void
-.end method
+    const-string v4, "id"
 
-.method public constructor <init>(Landroid/os/Bundle;)V
-    .locals 0
+    invoke-direct {v0, v3, v4, v1, v2}, Lnlb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lfx5;->a:Lfx5;
 
-    .line 2
-    iput-object p1, p0, Lfx5;->a:Landroid/os/Bundle;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-    .locals 0
-
-    .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    invoke-virtual {p1}, Landroid/os/Parcel;->readBundle()Landroid/os/Bundle;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lfx5;->a:Landroid/os/Bundle;
-
-    if-eqz p2, :cond_0
-
-    if-eqz p1, :cond_0
-
-    .line 5
-    invoke-virtual {p1, p2}, Landroid/os/Bundle;->setClassLoader(Ljava/lang/ClassLoader;)V
-
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
+.method public final get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    const/4 p0, 0x0
+    check-cast p1, Lns5;
 
-    return p0
-.end method
+    iget-object p0, p1, Lns5;->a:Ljava/lang/String;
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
-
-    iget-object p0, p0, Lfx5;->a:Landroid/os/Bundle;
-
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
-
-    return-void
+    return-object p0
 .end method

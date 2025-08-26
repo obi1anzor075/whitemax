@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:paddingTop="@dimen/spacing_normal" android:paddingBottom="@dimen/spacing_normal" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="4.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <androidx.appcompat.widget.AppCompatImageView android:id="@id/row_profile__iv_icon" android:layout_width="@dimen/row_profile_icon_size" android:layout_height="@dimen/row_profile_icon_size" android:layout_marginStart="@dimen/row_profile_with_icon__space_between_icon_and_text" />
-    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/font_normal_subtitle" android:gravity="center" android:id="@id/row_profile__tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/row_profile_with_icon__space_between_icon_and_text" />
-</LinearLayout>

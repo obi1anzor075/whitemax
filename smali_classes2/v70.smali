@@ -4,137 +4,186 @@
 
 
 # instance fields
-.field public final a:Lt97;
+.field public final a:Lje7;
 
-.field public final b:Lt97;
-
-.field public final c:Lt97;
+.field public final b:Lje7;
 
 
 # direct methods
-.method public constructor <init>(Lt97;Lt97;Lsma;)V
+.method public constructor <init>(Lje7;Lje7;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lv70;->a:Lt97;
+    iput-object p1, p0, Lv70;->a:Lje7;
 
-    iput-object p2, p0, Lv70;->b:Lt97;
-
-    new-instance p1, Lx2;
-
-    const/4 p2, 0x3
-
-    invoke-direct {p1, p3, p2, p0}, Lx2;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-static {p2, p1}, Lez3;->O(ILs16;)Lt97;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lv70;->c:Lt97;
+    iput-object p2, p0, Lv70;->b:Lje7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 6
+.method public final a(Ljava/lang/String;Ljava/lang/String;Lbu3;)Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Lv70;->a:Lt97;
+    instance-of v0, p3, Lu70;
 
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    move-result-object v1
+    move-object v0, p3
 
-    check-cast v1, Led3;
+    check-cast v0, Lu70;
 
-    invoke-interface {v1}, Led3;->g()Z
+    iget v1, v0, Lu70;->Z:I
 
-    move-result v1
+    const/high16 v2, -0x80000000
 
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
+    and-int v3, v1, v2
 
-    move-result-object v0
+    if-eqz v3, :cond_0
 
-    check-cast v0, Led3;
+    sub-int/2addr v1, v2
 
-    invoke-interface {v0}, Led3;->b()Lwd3;
-
-    move-result-object v0
-
-    sget-object v2, Lwd3;->c:Lwd3;
-
-    const/4 v3, 0x1
-
-    const/4 v4, 0x0
-
-    if-ne v0, v2, :cond_0
-
-    move v0, v3
+    iput v1, v0, Lu70;->Z:I
 
     goto :goto_0
 
     :cond_0
-    move v0, v4
+    new-instance v0, Lu70;
+
+    invoke-direct {v0, p0, p3}, Lu70;-><init>(Lv70;Lbu3;)V
 
     :goto_0
-    iget-object p0, p0, Lv70;->b:Lt97;
+    iget-object p3, v0, Lu70;->X:Ljava/lang/Object;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    iget v1, v0, Lu70;->Z:I
 
-    move-result-object v2
+    const/4 v2, 0x1
 
-    check-cast v2, Lg2b;
+    if-eqz v1, :cond_2
 
-    check-cast v2, Lj2b;
+    if-ne v1, v2, :cond_1
 
-    iget-object v2, v2, Lj2b;->c:Lkp;
+    iget-object p0, v0, Lu70;->o:Lv70;
 
-    iget-object v2, v2, Lf3;->g:Lx97;
+    invoke-static {p3}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    const-string v5, "app.video.auto.play"
+    goto :goto_1
 
-    invoke-virtual {v2, v5, v3}, Lx97;->getInt(Ljava/lang/String;I)I
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_2
+    invoke-static {p3}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p3, p0, Lv70;->b:Lje7;
+
+    invoke-interface {p3}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p3
+
+    check-cast p3, Lv2a;
+
+    iput-object p0, v0, Lu70;->o:Lv70;
+
+    iput v2, v0, Lu70;->Z:I
+
+    iget-object p3, p3, Lv2a;->a:Lje7;
+
+    invoke-interface {p3}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p3
+
+    check-cast p3, Lrke;
+
+    new-instance v1, Lqt;
+
+    sget-object v2, Llja;->s0:Llja;
+
+    const/4 v3, 0x7
+
+    invoke-direct {v1, v2, v3}, Lqt;-><init>(Llja;I)V
+
+    if-eqz p2, :cond_5
+
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_5
 
-    if-eq v2, v3, :cond_2
+    const-string v2, "token"
 
-    :cond_1
-    move v3, v4
+    invoke-virtual {v1, v2, p2}, Lije;->p(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_1
+    if-eqz p1, :cond_4
 
-    :cond_2
-    move v3, v0
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    goto :goto_1
+    move-result p2
+
+    if-eqz p2, :cond_4
+
+    const-string p2, "verifyCode"
+
+    invoke-virtual {v1, p2, p1}, Lije;->p(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string p1, "authTokenType"
+
+    const-string p2, "CHECK_CODE"
+
+    invoke-virtual {v1, p1, p2}, Lije;->p(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {p3, v1, v0}, Lrke;->e(Lije;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p3
+
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p3, p1, :cond_3
+
+    return-object p1
 
     :cond_3
-    if-nez v0, :cond_4
+    :goto_1
+    check-cast p3, Lm70;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    iget-object p0, p0, Lv70;->a:Lje7;
+
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lg2b;
+    check-cast p0, Luc;
 
-    check-cast p0, Lj2b;
+    const-string p1, "CONFIRM_PHONE_SUCCESS"
 
-    iget-object p0, p0, Lj2b;->c:Lkp;
+    invoke-virtual {p0, p1}, Luc;->f(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lqpc;->m()Z
-
-    move-result p0
-
-    if-nez p0, :cond_4
-
-    if-nez v1, :cond_1
+    return-object p3
 
     :cond_4
-    :goto_1
-    return v3
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "AuthCmd param \'verifyCode\' can\'t be null when param \'authTokenType\' is \'PHONE\' or \'PHONE_CONFIRM\'"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_5
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "AuthCmd param \'token\' can\'t be null"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

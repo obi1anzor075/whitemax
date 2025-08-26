@@ -132,19 +132,17 @@
 
 # virtual methods
 .method public createIceServer()Lorg/webrtc/PeerConnection$IceServer;
-    .locals 11
+    .locals 10
 
-    new-instance v10, Lorg/webrtc/PeerConnection$IceServer;
+    new-instance v0, Lorg/webrtc/PeerConnection$IceServer;
 
-    iget-object v0, p0, Lorg/webrtc/PeerConnection$IceServer$Builder;->urls:Ljava/util/List;
+    iget-object v1, p0, Lorg/webrtc/PeerConnection$IceServer$Builder;->urls:Ljava/util/List;
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v0
-
-    move-object v1, v0
+    move-result-object v1
 
     check-cast v1, Ljava/lang/String;
 
@@ -164,11 +162,9 @@
 
     const/4 v9, 0x0
 
-    move-object v0, v10
-
     invoke-direct/range {v0 .. v9}, Lorg/webrtc/PeerConnection$IceServer;-><init>(Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Lorg/webrtc/PeerConnection$TlsCertPolicy;Ljava/lang/String;Ljava/util/List;Ljava/util/List;I)V
 
-    return-object v10
+    return-object v0
 .end method
 
 .method public setHostname(Ljava/lang/String;)Lorg/webrtc/PeerConnection$IceServer$Builder;

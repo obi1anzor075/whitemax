@@ -2,45 +2,76 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lmt4;
-
-
-# static fields
-.field public static final b:Ljava/lang/ThreadLocal;
-
 
 # instance fields
-.field public final a:Landroid/text/TextPaint;
+.field public a:J
+
+.field public final b:Lv50;
+
+.field public final c:Lz32;
+
+.field public final synthetic d:Lx74;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lx74;Lv50;Lz32;J)V
+    .locals 0
 
-    new-instance v0, Ljava/lang/ThreadLocal;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
+    iput-object p1, p0, Lw74;->d:Lx74;
 
-    sput-object v0, Lw74;->b:Ljava/lang/ThreadLocal;
+    iput-object p2, p0, Lw74;->b:Lv50;
+
+    iput-wide p4, p0, Lw74;->a:J
+
+    iput-object p3, p0, Lw74;->c:Lz32;
 
     return-void
 .end method
 
-.method public constructor <init>()V
-    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final a(JLjava/nio/ByteBuffer;)V
+    .locals 3
 
-    new-instance v0, Landroid/text/TextPaint;
+    iget-wide v0, p0, Lw74;->a:J
 
-    invoke-direct {v0}, Landroid/text/TextPaint;-><init>()V
+    cmp-long v0, p1, v0
 
-    iput-object v0, p0, Lw74;->a:Landroid/text/TextPaint;
+    if-ltz v0, :cond_0
 
-    const/high16 p0, 0x41200000    # 10.0f
+    const/4 v0, 0x1
 
-    invoke-virtual {v0, p0}, Landroid/graphics/Paint;->setTextSize(F)V
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    invoke-static {v0}, Lu27;->f(Z)V
+
+    iget-wide v0, p0, Lw74;->a:J
+
+    sub-long v0, p1, v0
+
+    long-to-int v0, v0
+
+    invoke-virtual {p3}, Ljava/nio/Buffer;->position()I
+
+    move-result v1
+
+    iget-object v2, p0, Lw74;->b:Lv50;
+
+    iget v2, v2, Lv50;->d:I
+
+    mul-int/2addr v0, v2
+
+    add-int/2addr v0, v1
+
+    invoke-virtual {p3, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+
+    iput-wide p1, p0, Lw74;->a:J
 
     return-void
 .end method

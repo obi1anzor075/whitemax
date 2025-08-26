@@ -1,65 +1,50 @@
 .class public final Llif;
-.super La06;
-.source "SourceFile"
+.super Lbu3;
 
 
 # instance fields
-.field public final synthetic i:Lmif;
+.field public X:I
+
+.field public Y:Lbn5;
+
+.field public final synthetic Z:Lv29;
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lmif;)V
+.method public constructor <init>(Lv29;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Llif;->Z:Lv29;
 
-    iput-object p1, p0, Llif;->i:Lmif;
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final x()V
-    .locals 0
-
-    iget-object p0, p0, Llif;->i:Lmif;
-
-    iget-object p0, p0, Lmif;->c:Ljava/lang/Object;
-
-    check-cast p0, Ls16;
-
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public final y()V
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget-object p0, p0, Llif;->i:Lmif;
+    iput-object p1, p0, Llif;->o:Ljava/lang/Object;
 
-    iget-object p0, p0, Lmif;->o:Ljava/lang/Object;
+    iget p1, p0, Llif;->X:I
 
-    check-cast p0, Ljava/lang/String;
+    const/high16 v0, -0x80000000
 
-    const-string v0, "onAuthenticationFailed"
+    or-int/2addr p1, v0
 
-    invoke-static {p0, v0}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    iput p1, p0, Llif;->X:I
 
-    return-void
-.end method
+    iget-object p1, p0, Llif;->Z:Lv29;
 
-.method public final z()V
-    .locals 0
+    const/4 v0, 0x0
 
-    iget-object p0, p0, Llif;->i:Lmif;
+    invoke-virtual {p1, v0, p0}, Lv29;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    iget-object p0, p0, Lmif;->b:Ljava/lang/Object;
+    move-result-object p0
 
-    check-cast p0, Ls16;
-
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
-
-    return-void
+    return-object p0
 .end method

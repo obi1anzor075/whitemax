@@ -13,7 +13,7 @@
         "",
         "Lru/ok/android/externcalls/sdk/asr/AsrInfo;",
         "callAsrInfo",
-        "Ljue;",
+        "Le5f;",
         "onAsrRecordStarted",
         "(Lru/ok/android/externcalls/sdk/asr/AsrInfo;)V",
         "onAsrRecordStopped",
@@ -26,6 +26,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

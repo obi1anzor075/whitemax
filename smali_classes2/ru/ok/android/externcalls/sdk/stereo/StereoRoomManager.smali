@@ -15,13 +15,13 @@
         "Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;",
         "Lru/ok/android/externcalls/sdk/stereo/listener/StereoRoomListenerManager;",
         "Lkotlin/Function0;",
-        "Ljue;",
+        "Le5f;",
         "onSuccess",
         "Lkotlin/Function1;",
         "",
         "onError",
         "requestPromotion",
-        "(Ls16;Lu16;)V",
+        "(Lv56;Lx56;)V",
         "cancelPromotionRequest",
         "acceptPromotion",
         "rejectPromotion",
@@ -29,7 +29,7 @@
         "Lru/ok/android/externcalls/sdk/id/ExternalId;",
         "participantId",
         "promoteParticipant",
-        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V",
+        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V",
         "rejectPromotionRequest",
         "revokePromotion",
         "unpromoteParticipant",
@@ -50,11 +50,12 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # direct methods
-.method public static synthetic acceptPromotion$default(Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;Ls16;Lu16;ILjava/lang/Object;)V
+.method public static synthetic acceptPromotion$default(Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;Lv56;Lx56;ILjava/lang/Object;)V
     .locals 0
 
     if-nez p4, :cond_1
@@ -66,7 +67,7 @@
     const/4 p2, 0x0
 
     :cond_0
-    invoke-interface {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;->acceptPromotion(Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;->acceptPromotion(Lv56;Lx56;)V
 
     return-void
 
@@ -80,7 +81,7 @@
     throw p0
 .end method
 
-.method public static synthetic cancelPromotionRequest$default(Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;Ls16;Lu16;ILjava/lang/Object;)V
+.method public static synthetic cancelPromotionRequest$default(Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;Lv56;Lx56;ILjava/lang/Object;)V
     .locals 0
 
     if-nez p4, :cond_1
@@ -92,7 +93,7 @@
     const/4 p2, 0x0
 
     :cond_0
-    invoke-interface {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;->cancelPromotionRequest(Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;->cancelPromotionRequest(Lv56;Lx56;)V
 
     return-void
 
@@ -106,7 +107,7 @@
     throw p0
 .end method
 
-.method public static synthetic grantAdmin$default(Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;ILjava/lang/Object;)V
+.method public static synthetic grantAdmin$default(Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;ILjava/lang/Object;)V
     .locals 0
 
     if-nez p5, :cond_1
@@ -118,7 +119,7 @@
     const/4 p3, 0x0
 
     :cond_0
-    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;->grantAdmin(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;->grantAdmin(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
 
     return-void
 
@@ -132,7 +133,7 @@
     throw p0
 .end method
 
-.method public static synthetic promoteParticipant$default(Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;ILjava/lang/Object;)V
+.method public static synthetic promoteParticipant$default(Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;ILjava/lang/Object;)V
     .locals 0
 
     if-nez p5, :cond_1
@@ -144,7 +145,7 @@
     const/4 p3, 0x0
 
     :cond_0
-    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;->promoteParticipant(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;->promoteParticipant(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
 
     return-void
 
@@ -158,7 +159,7 @@
     throw p0
 .end method
 
-.method public static synthetic rejectPromotion$default(Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;Ls16;Lu16;ILjava/lang/Object;)V
+.method public static synthetic rejectPromotion$default(Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;Lv56;Lx56;ILjava/lang/Object;)V
     .locals 0
 
     if-nez p4, :cond_1
@@ -170,7 +171,7 @@
     const/4 p2, 0x0
 
     :cond_0
-    invoke-interface {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;->rejectPromotion(Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;->rejectPromotion(Lv56;Lx56;)V
 
     return-void
 
@@ -184,7 +185,7 @@
     throw p0
 .end method
 
-.method public static synthetic rejectPromotionRequest$default(Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;ILjava/lang/Object;)V
+.method public static synthetic rejectPromotionRequest$default(Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;ILjava/lang/Object;)V
     .locals 0
 
     if-nez p5, :cond_1
@@ -196,7 +197,7 @@
     const/4 p3, 0x0
 
     :cond_0
-    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;->rejectPromotionRequest(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;->rejectPromotionRequest(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
 
     return-void
 
@@ -210,7 +211,7 @@
     throw p0
 .end method
 
-.method public static synthetic requestPromotion$default(Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;Ls16;Lu16;ILjava/lang/Object;)V
+.method public static synthetic requestPromotion$default(Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;Lv56;Lx56;ILjava/lang/Object;)V
     .locals 0
 
     if-nez p4, :cond_1
@@ -222,7 +223,7 @@
     const/4 p2, 0x0
 
     :cond_0
-    invoke-interface {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;->requestPromotion(Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;->requestPromotion(Lv56;Lx56;)V
 
     return-void
 
@@ -236,7 +237,7 @@
     throw p0
 .end method
 
-.method public static synthetic revokeAdmin$default(Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;ILjava/lang/Object;)V
+.method public static synthetic revokeAdmin$default(Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;ILjava/lang/Object;)V
     .locals 0
 
     if-nez p5, :cond_1
@@ -248,7 +249,7 @@
     const/4 p3, 0x0
 
     :cond_0
-    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;->revokeAdmin(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;->revokeAdmin(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
 
     return-void
 
@@ -262,7 +263,7 @@
     throw p0
 .end method
 
-.method public static synthetic revokePromotion$default(Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;ILjava/lang/Object;)V
+.method public static synthetic revokePromotion$default(Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;ILjava/lang/Object;)V
     .locals 0
 
     if-nez p5, :cond_1
@@ -274,7 +275,7 @@
     const/4 p3, 0x0
 
     :cond_0
-    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;->revokePromotion(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;->revokePromotion(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
 
     return-void
 
@@ -288,7 +289,7 @@
     throw p0
 .end method
 
-.method public static synthetic unpromoteParticipant$default(Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;ILjava/lang/Object;)V
+.method public static synthetic unpromoteParticipant$default(Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;ILjava/lang/Object;)V
     .locals 0
 
     if-nez p5, :cond_1
@@ -300,7 +301,7 @@
     const/4 p3, 0x0
 
     :cond_0
-    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;->unpromoteParticipant(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/StereoRoomManager;->unpromoteParticipant(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
 
     return-void
 
@@ -316,23 +317,23 @@
 
 
 # virtual methods
-.method public abstract acceptPromotion(Ls16;Lu16;)V
+.method public abstract acceptPromotion(Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 .end method
 
-.method public abstract cancelPromotionRequest(Ls16;Lu16;)V
+.method public abstract cancelPromotionRequest(Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -341,13 +342,13 @@
 .method public abstract getHandsQueue()Lru/ok/android/externcalls/sdk/stereo/hands/StereoRoomHandsQueue;
 .end method
 
-.method public abstract grantAdmin(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+.method public abstract grantAdmin(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -356,83 +357,83 @@
 .method public abstract isMePromoted()Z
 .end method
 
-.method public abstract promoteParticipant(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+.method public abstract promoteParticipant(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 .end method
 
-.method public abstract rejectPromotion(Ls16;Lu16;)V
+.method public abstract rejectPromotion(Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 .end method
 
-.method public abstract rejectPromotionRequest(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-            "Ls16;",
-            "Lu16;",
-            ")V"
-        }
-    .end annotation
-.end method
-
-.method public abstract requestPromotion(Ls16;Lu16;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ls16;",
-            "Lu16;",
-            ")V"
-        }
-    .end annotation
-.end method
-
-.method public abstract revokeAdmin(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+.method public abstract rejectPromotionRequest(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 .end method
 
-.method public abstract revokePromotion(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+.method public abstract requestPromotion(Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 .end method
 
-.method public abstract unpromoteParticipant(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ls16;Lu16;)V
+.method public abstract revokeAdmin(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
+            ")V"
+        }
+    .end annotation
+.end method
+
+.method public abstract revokePromotion(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
+            "Lv56;",
+            "Lx56;",
+            ")V"
+        }
+    .end annotation
+.end method
+
+.method public abstract unpromoteParticipant(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lv56;Lx56;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation

@@ -1,92 +1,85 @@
-.class public interface abstract Lfu1;
-.super Ljava/lang/Object;
+.class public final Lfu1;
+.super Lgm8;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a()Ljava/util/Set;
-.end method
+# instance fields
+.field public m:Lxm7;
 
-.method public abstract b()I
-.end method
+.field public final n:Ljava/lang/Object;
 
-.method public abstract c()Z
-.end method
 
-.method public abstract d()Ljava/lang/String;
-.end method
-
-.method public abstract e()Lyh7;
-.end method
-
-.method public f()Lfu1;
+# direct methods
+.method public constructor <init>(Ljava/lang/Object;)V
     .locals 0
 
+    invoke-direct {p0}, Lgm8;-><init>()V
+
+    iput-object p1, p0, Lfu1;->n:Ljava/lang/Object;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final d()Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Lfu1;->m:Lxm7;
+
+    if-nez v0, :cond_0
+
+    iget-object p0, p0, Lfu1;->n:Ljava/lang/Object;
+
+    return-object p0
+
+    :cond_0
+    invoke-virtual {v0}, Lxm7;->d()Ljava/lang/Object;
+
+    move-result-object p0
+
     return-object p0
 .end method
 
-.method public abstract g()I
+.method public final l(Lxm7;Lb0a;)V
+    .locals 0
+
+    const/4 p0, 0x0
+
+    throw p0
 .end method
 
-.method public abstract h()Lkje;
-.end method
-
-.method public i()Lwu1;
+.method public final m(Lmg9;)V
     .locals 2
 
-    new-instance v0, Ljava/util/LinkedHashSet;
+    iget-object v0, p0, Lfu1;->m:Lxm7;
 
-    invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
+    if-eqz v0, :cond_0
 
-    new-instance v1, Leu1;
+    iget-object v1, p0, Lgm8;->l:Lsoc;
 
-    invoke-direct {v1, p0}, Leu1;-><init>(Lfu1;)V
+    invoke-virtual {v1, v0}, Lsoc;->c(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
+    move-result-object v0
 
-    new-instance v1, Ldb7;
+    check-cast v0, Lfm8;
 
-    invoke-interface {p0}, Lfu1;->g()I
+    if-eqz v0, :cond_0
 
-    move-result p0
+    iget-object v1, v0, Lfm8;->a:Lxm7;
 
-    invoke-direct {v1, p0}, Ldb7;-><init>(I)V
+    invoke-virtual {v1, v0}, Lxm7;->j(Lb0a;)V
 
-    invoke-virtual {v0, v1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
+    :cond_0
+    iput-object p1, p0, Lfu1;->m:Lxm7;
 
-    new-instance p0, Lwu1;
+    new-instance v0, Leu1;
 
-    invoke-direct {p0, v0}, Lwu1;-><init>(Ljava/util/LinkedHashSet;)V
+    const/4 v1, 0x0
 
-    return-object p0
-.end method
+    invoke-direct {v0, v1, p0}, Leu1;-><init>(ILjava/lang/Object;)V
 
-.method public abstract j()Ljava/lang/String;
-.end method
+    invoke-super {p0, p1, v0}, Lgm8;->l(Lxm7;Lb0a;)V
 
-.method public abstract k(I)Ljava/util/List;
-.end method
-
-.method public abstract l(I)I
-.end method
-
-.method public abstract m()Z
-.end method
-
-.method public abstract n(Lmh4;Lwq1;)V
-.end method
-
-.method public abstract o()Lyx4;
-.end method
-
-.method public abstract p()Lxe6;
-.end method
-
-.method public abstract q(I)Ljava/util/List;
-.end method
-
-.method public abstract r()Lyh7;
-.end method
-
-.method public abstract s(Lps1;)V
+    return-void
 .end method

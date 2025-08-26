@@ -1,41 +1,41 @@
 .class public final Lcom/google/android/material/datepicker/c;
-.super Lf6c;
+.super Lgbc;
 .source "SourceFile"
 
 
 # instance fields
-.field public final X:Lnfc;
+.field public final X:Lly4;
 
 .field public final Y:I
 
-.field public final o:Lkw0;
+.field public final o:Lmx0;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/ContextThemeWrapper;Lkw0;Lnfc;)V
-    .locals 3
+.method public constructor <init>(Landroid/view/ContextThemeWrapper;Lmx0;Lly4;)V
+    .locals 4
 
-    invoke-direct {p0}, Lf6c;-><init>()V
+    invoke-direct {p0}, Lgbc;-><init>()V
 
-    iget-object v0, p2, Lkw0;->a:Le69;
+    iget-object v0, p2, Lmx0;->a:Lab9;
 
-    iget-object v1, p2, Lkw0;->o:Le69;
+    iget-object v1, p2, Lmx0;->b:Lab9;
 
-    iget-object v0, v0, Le69;->a:Ljava/util/Calendar;
+    iget-object v2, p2, Lmx0;->o:Lab9;
 
-    iget-object v2, v1, Le69;->a:Ljava/util/Calendar;
+    iget-object v0, v0, Lab9;->a:Ljava/util/Calendar;
 
-    invoke-virtual {v0, v2}, Ljava/util/Calendar;->compareTo(Ljava/util/Calendar;)I
+    iget-object v3, v2, Lab9;->a:Ljava/util/Calendar;
+
+    invoke-virtual {v0, v3}, Ljava/util/Calendar;->compareTo(Ljava/util/Calendar;)I
 
     move-result v0
 
     if-gtz v0, :cond_2
 
-    iget-object v0, v1, Le69;->a:Ljava/util/Calendar;
+    iget-object v0, v2, Lab9;->a:Ljava/util/Calendar;
 
-    iget-object v1, p2, Lkw0;->b:Le69;
-
-    iget-object v1, v1, Le69;->a:Ljava/util/Calendar;
+    iget-object v1, v1, Lab9;->a:Ljava/util/Calendar;
 
     invoke-virtual {v0, v1}, Ljava/util/Calendar;->compareTo(Ljava/util/Calendar;)I
 
@@ -43,13 +43,13 @@
 
     if-gtz v0, :cond_1
 
-    sget v0, Lf69;->o:I
+    sget v0, Lbb9;->o:I
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    sget v2, Lvmb;->mtrl_calendar_day_height:I
+    sget v2, Lhrb;->mtrl_calendar_day_height:I
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -59,7 +59,7 @@
 
     const v0, 0x101020d
 
-    invoke-static {p1, v0}, Lcom/google/android/material/datepicker/MaterialDatePicker;->o1(Landroid/content/Context;I)Z
+    invoke-static {p1, v0}, Lcom/google/android/material/datepicker/MaterialDatePicker;->b1(Landroid/content/Context;I)Z
 
     move-result v0
 
@@ -69,7 +69,7 @@
 
     move-result-object p1
 
-    sget v0, Lvmb;->mtrl_calendar_day_height:I
+    sget v0, Lhrb;->mtrl_calendar_day_height:I
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -85,13 +85,13 @@
 
     iput v1, p0, Lcom/google/android/material/datepicker/c;->Y:I
 
-    iput-object p2, p0, Lcom/google/android/material/datepicker/c;->o:Lkw0;
+    iput-object p2, p0, Lcom/google/android/material/datepicker/c;->o:Lmx0;
 
-    iput-object p3, p0, Lcom/google/android/material/datepicker/c;->X:Lnfc;
+    iput-object p3, p0, Lcom/google/android/material/datepicker/c;->X:Lly4;
 
     const/4 p1, 0x1
 
-    invoke-virtual {p0, p1}, Lf6c;->A(Z)V
+    invoke-virtual {p0, p1}, Lgbc;->A(Z)V
 
     return-void
 
@@ -119,23 +119,23 @@
 .method public final j()I
     .locals 0
 
-    iget-object p0, p0, Lcom/google/android/material/datepicker/c;->o:Lkw0;
+    iget-object p0, p0, Lcom/google/android/material/datepicker/c;->o:Lmx0;
 
-    iget p0, p0, Lkw0;->Z:I
+    iget p0, p0, Lmx0;->Z:I
 
     return p0
 .end method
 
 .method public final k(I)J
-    .locals 1
+    .locals 2
 
-    iget-object p0, p0, Lcom/google/android/material/datepicker/c;->o:Lkw0;
+    iget-object p0, p0, Lcom/google/android/material/datepicker/c;->o:Lmx0;
 
-    iget-object p0, p0, Lkw0;->a:Le69;
+    iget-object p0, p0, Lmx0;->a:Lab9;
 
-    iget-object p0, p0, Le69;->a:Ljava/util/Calendar;
+    iget-object p0, p0, Lab9;->a:Ljava/util/Calendar;
 
-    invoke-static {p0}, Ljze;->b(Ljava/util/Calendar;)Ljava/util/Calendar;
+    invoke-static {p0}, Lkaf;->a(Ljava/util/Calendar;)Ljava/util/Calendar;
 
     move-result-object p0
 
@@ -143,11 +143,27 @@
 
     invoke-virtual {p0, v0, p1}, Ljava/util/Calendar;->add(II)V
 
-    new-instance p1, Le69;
+    const/4 p1, 0x5
 
-    invoke-direct {p1, p0}, Le69;-><init>(Ljava/util/Calendar;)V
+    const/4 v1, 0x1
 
-    iget-object p0, p1, Le69;->a:Ljava/util/Calendar;
+    invoke-virtual {p0, p1, v1}, Ljava/util/Calendar;->set(II)V
+
+    invoke-static {p0}, Lkaf;->a(Ljava/util/Calendar;)Ljava/util/Calendar;
+
+    move-result-object p0
+
+    invoke-virtual {p0, v0}, Ljava/util/Calendar;->get(I)I
+
+    invoke-virtual {p0, v1}, Ljava/util/Calendar;->get(I)I
+
+    const/4 v0, 0x7
+
+    invoke-virtual {p0, v0}, Ljava/util/Calendar;->getMaximum(I)I
+
+    invoke-virtual {p0, p1}, Ljava/util/Calendar;->getActualMaximum(I)I
+
+    invoke-virtual {p0}, Ljava/util/Calendar;->getTimeInMillis()J
 
     invoke-virtual {p0}, Ljava/util/Calendar;->getTimeInMillis()J
 
@@ -156,18 +172,18 @@
     return-wide p0
 .end method
 
-.method public final r(Lb7c;I)V
+.method public final r(Lccc;I)V
     .locals 2
 
     check-cast p1, Lcom/google/android/material/datepicker/b;
 
-    iget-object p0, p0, Lcom/google/android/material/datepicker/c;->o:Lkw0;
+    iget-object p0, p0, Lcom/google/android/material/datepicker/c;->o:Lmx0;
 
-    iget-object v0, p0, Lkw0;->a:Le69;
+    iget-object v0, p0, Lmx0;->a:Lab9;
 
-    iget-object v0, v0, Le69;->a:Ljava/util/Calendar;
+    iget-object v0, v0, Lab9;->a:Ljava/util/Calendar;
 
-    invoke-static {v0}, Ljze;->b(Ljava/util/Calendar;)Ljava/util/Calendar;
+    invoke-static {v0}, Lkaf;->a(Ljava/util/Calendar;)Ljava/util/Calendar;
 
     move-result-object v0
 
@@ -175,21 +191,21 @@
 
     invoke-virtual {v0, v1, p2}, Ljava/util/Calendar;->add(II)V
 
-    new-instance p2, Le69;
+    new-instance p2, Lab9;
 
-    invoke-direct {p2, v0}, Le69;-><init>(Ljava/util/Calendar;)V
+    invoke-direct {p2, v0}, Lab9;-><init>(Ljava/util/Calendar;)V
 
-    iget-object v0, p1, Lcom/google/android/material/datepicker/b;->J0:Landroid/widget/TextView;
+    iget-object v0, p1, Lcom/google/android/material/datepicker/b;->B0:Landroid/widget/TextView;
 
-    invoke-virtual {p2}, Le69;->c()Ljava/lang/String;
+    invoke-virtual {p2}, Lab9;->c()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    iget-object p1, p1, Lcom/google/android/material/datepicker/b;->K0:Lcom/google/android/material/datepicker/MaterialCalendarGridView;
+    iget-object p1, p1, Lcom/google/android/material/datepicker/b;->C0:Lcom/google/android/material/datepicker/MaterialCalendarGridView;
 
-    sget v0, Llob;->month_grid:I
+    sget v0, Lzsb;->month_grid:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -197,21 +213,19 @@
 
     check-cast p1, Lcom/google/android/material/datepicker/MaterialCalendarGridView;
 
-    invoke-virtual {p1}, Lcom/google/android/material/datepicker/MaterialCalendarGridView;->a()Lf69;
+    invoke-virtual {p1}, Lcom/google/android/material/datepicker/MaterialCalendarGridView;->a()Lbb9;
 
     move-result-object v0
-
-    const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p1}, Lcom/google/android/material/datepicker/MaterialCalendarGridView;->a()Lf69;
+    invoke-virtual {p1}, Lcom/google/android/material/datepicker/MaterialCalendarGridView;->a()Lbb9;
 
     move-result-object v0
 
-    iget-object v0, v0, Lf69;->a:Le69;
+    iget-object v0, v0, Lbb9;->a:Lab9;
 
-    invoke-virtual {p2, v0}, Le69;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p2, v0}, Lab9;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -219,7 +233,7 @@
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    invoke-virtual {p1}, Lcom/google/android/material/datepicker/MaterialCalendarGridView;->a()Lf69;
+    invoke-virtual {p1}, Lcom/google/android/material/datepicker/MaterialCalendarGridView;->a()Lbb9;
 
     move-result-object p0
 
@@ -230,14 +244,16 @@
     throw p0
 
     :cond_0
-    new-instance p1, Lf69;
+    new-instance p1, Lbb9;
 
-    invoke-direct {p1, p2, p0}, Lf69;-><init>(Le69;Lkw0;)V
+    invoke-direct {p1, p2, p0}, Lbb9;-><init>(Lab9;Lmx0;)V
 
-    throw v1
+    const/4 p0, 0x0
+
+    throw p0
 .end method
 
-.method public final t(Landroid/view/ViewGroup;I)Lb7c;
+.method public final t(Landroid/view/ViewGroup;I)Lccc;
     .locals 2
 
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -248,7 +264,7 @@
 
     move-result-object p2
 
-    sget v0, Lwrb;->mtrl_calendar_month_labeled:I
+    sget v0, Lnwb;->mtrl_calendar_month_labeled:I
 
     const/4 v1, 0x0
 
@@ -264,19 +280,19 @@
 
     const v0, 0x101020d
 
-    invoke-static {p1, v0}, Lcom/google/android/material/datepicker/MaterialDatePicker;->o1(Landroid/content/Context;I)Z
+    invoke-static {p1, v0}, Lcom/google/android/material/datepicker/MaterialDatePicker;->b1(Landroid/content/Context;I)Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    new-instance p1, Ln6c;
+    new-instance p1, Lobc;
 
     const/4 v0, -0x1
 
     iget p0, p0, Lcom/google/android/material/datepicker/c;->Y:I
 
-    invoke-direct {p1, v0, p0}, Ln6c;-><init>(II)V
+    invoke-direct {p1, v0, p0}, Lobc;-><init>(II)V
 
     invoke-virtual {p2, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
@@ -286,13 +302,12 @@
 
     invoke-direct {p0, p2, p1}, Lcom/google/android/material/datepicker/b;-><init>(Landroid/widget/LinearLayout;Z)V
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     new-instance p0, Lcom/google/android/material/datepicker/b;
 
     invoke-direct {p0, p2, v1}, Lcom/google/android/material/datepicker/b;-><init>(Landroid/widget/LinearLayout;Z)V
 
-    :goto_0
     return-object p0
 .end method

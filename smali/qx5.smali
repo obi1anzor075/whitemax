@@ -1,76 +1,107 @@
-.class public final Lqx5;
+.class public final synthetic Lqx5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/os/Parcelable;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lqx5;",
-            ">;"
-        }
-    .end annotation
-.end field
+.implements Lv56;
 
 
 # instance fields
-.field public a:Ljava/lang/String;
+.field public final synthetic a:I
 
-.field public b:I
+.field public final synthetic b:Li30;
+
+.field public final synthetic c:Lmha;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lw33;
-
-    const/16 v1, 0x16
-
-    invoke-direct {v0, v1}, Lw33;-><init>(I)V
-
-    sput-object v0, Lqx5;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;I)V
+.method public synthetic constructor <init>(Li30;Lmha;I)V
     .locals 0
 
+    iput p3, p0, Lqx5;->a:I
+
+    iput-object p1, p0, Lqx5;->b:Li30;
+
+    iput-object p2, p0, Lqx5;->c:Lmha;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lqx5;->a:Ljava/lang/String;
-
-    iput p2, p0, Lqx5;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
-    .locals 0
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
 
+    iget v0, p0, Lqx5;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Lqx5;->b:Li30;
+
+    iget-object v1, v0, Li30;->c:Ljava/lang/Object;
+
+    check-cast v1, Lrx5;
+
+    if-eqz v1, :cond_0
+
+    iget-object p0, p0, Lqx5;->c:Lmha;
+
+    invoke-virtual {p0, v1}, Lcom/google/android/material/tabs/TabLayout;->l(Llhe;)V
+
+    :cond_0
     const/4 p0, 0x0
 
-    return p0
-.end method
+    iput-object p0, v0, Li30;->c:Ljava/lang/Object;
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
+    iput-object p0, v0, Li30;->o:Ljava/lang/Object;
 
-    iget-object p2, p0, Lqx5;->a:Ljava/lang/String;
+    iget-object v1, v0, Li30;->p0:Ljava/lang/Object;
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    check-cast v1, Lwu;
 
-    iget p0, p0, Lqx5;->b:I
+    iget-object v2, v1, Lwu;->f:Ljava/util/List;
 
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+    iput-object v2, v0, Li30;->o0:Ljava/lang/Object;
 
-    return-void
+    invoke-virtual {v1, p0, p0}, Lwu;->b(Ljava/util/List;Ljava/lang/Runnable;)V
+
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
+
+    :pswitch_0
+    iget-object v0, p0, Lqx5;->b:Li30;
+
+    iget-object v1, v0, Li30;->o0:Ljava/lang/Object;
+
+    check-cast v1, Ljava/util/List;
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_1
+
+    iget-object p0, p0, Lqx5;->c:Lmha;
+
+    invoke-virtual {p0}, Lcom/google/android/material/tabs/TabLayout;->k()V
+
+    iget-object p0, v0, Li30;->p0:Ljava/lang/Object;
+
+    check-cast p0, Lwu;
+
+    invoke-virtual {p0, v1, v2}, Lwu;->b(Ljava/util/List;Ljava/lang/Runnable;)V
+
+    :cond_1
+    iput-object v2, v0, Li30;->o0:Ljava/lang/Object;
+
+    goto :goto_0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

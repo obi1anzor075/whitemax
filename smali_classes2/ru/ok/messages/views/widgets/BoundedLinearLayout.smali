@@ -27,22 +27,22 @@
 
     iput v0, p0, Lru/ok/messages/views/widgets/BoundedLinearLayout;->b:I
 
-    goto :goto_1
+    return-void
 
     :cond_0
-    sget-object v1, Lzvb;->BoundedLinearLayout:[I
+    sget-object v1, Lv0c;->BoundedLinearLayout:[I
 
     invoke-virtual {p1, p2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object p1
 
-    sget p2, Lzvb;->BoundedLinearLayout_boundedWidth:I
+    sget p2, Lv0c;->BoundedLinearLayout_boundedWidth:I
 
     invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
     move-result p2
 
-    sget v1, Lzvb;->BoundedLinearLayout_boundedHeight:I
+    sget v1, Lv0c;->BoundedLinearLayout_boundedHeight:I
 
     invoke-virtual {p1, v1, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
@@ -67,7 +67,6 @@
     :goto_0
     iput v0, p0, Lru/ok/messages/views/widgets/BoundedLinearLayout;->b:I
 
-    :goto_1
     return-void
 .end method
 
@@ -80,15 +79,15 @@
 
     move-result v0
 
-    iget v1, p0, Lru/ok/messages/views/widgets/BoundedLinearLayout;->a:I
+    const/high16 v1, -0x80000000
 
-    const/high16 v2, -0x80000000
+    iget v2, p0, Lru/ok/messages/views/widgets/BoundedLinearLayout;->a:I
 
     const/4 v3, -0x1
 
-    if-eq v1, v3, :cond_1
+    if-eq v2, v3, :cond_1
 
-    if-le v0, v1, :cond_1
+    if-le v0, v2, :cond_1
 
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
@@ -96,7 +95,7 @@
 
     if-nez p1, :cond_0
 
-    move p1, v2
+    move p1, v1
 
     :cond_0
     iget v0, p0, Lru/ok/messages/views/widgets/BoundedLinearLayout;->a:I
@@ -110,11 +109,11 @@
 
     move-result v0
 
-    iget v1, p0, Lru/ok/messages/views/widgets/BoundedLinearLayout;->b:I
+    iget v2, p0, Lru/ok/messages/views/widgets/BoundedLinearLayout;->b:I
 
-    if-eq v1, v3, :cond_3
+    if-eq v2, v3, :cond_3
 
-    if-le v0, v1, :cond_3
+    if-le v0, v2, :cond_3
 
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
@@ -125,12 +124,12 @@
     goto :goto_0
 
     :cond_2
-    move v2, p2
+    move v1, p2
 
     :goto_0
     iget p2, p0, Lru/ok/messages/views/widgets/BoundedLinearLayout;->b:I
 
-    invoke-static {p2, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {p2, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2
 

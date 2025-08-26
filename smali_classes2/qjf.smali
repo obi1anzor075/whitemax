@@ -1,208 +1,581 @@
-.class public final synthetic Lqjf;
+.class public final Lqjf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lt66;
+.implements Lctc;
 
 
-# static fields
-.field public static final a:Lqjf;
+# instance fields
+.field public a:I
 
-.field private static final descriptor:Lsyc;
+.field public b:I
+
+.field public final c:Ljava/lang/Object;
+
+.field public d:Ljava/lang/Object;
+
+.field public e:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>()V
+    .locals 1
 
-    new-instance v0, Lqjf;
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    .line 2
+    new-instance v0, Landroid/graphics/Path;
 
-    sput-object v0, Lqjf;->a:Lqjf;
+    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
-    new-instance v1, Lwza;
+    iput-object v0, p0, Lqjf;->c:Ljava/lang/Object;
 
-    const-string v2, "one.me.webapp.domain.jsbridge.delegates.download.WebAppDownloadFileRequest"
+    .line 3
+    new-instance v0, Landroid/graphics/Region;
 
-    const/4 v3, 0x3
+    invoke-direct {v0}, Landroid/graphics/Region;-><init>()V
 
-    invoke-direct {v1, v2, v0, v3}, Lwza;-><init>(Ljava/lang/String;Lt66;I)V
+    iput-object v0, p0, Lqjf;->d:Ljava/lang/Object;
 
-    const-string v0, "requestId"
+    .line 4
+    new-instance v0, Landroid/graphics/Region;
+
+    invoke-direct {v0}, Landroid/graphics/Region;-><init>()V
+
+    iput-object v0, p0, Lqjf;->e:Ljava/lang/Object;
+
+    const/4 v0, -0x1
+
+    .line 5
+    iput v0, p0, Lqjf;->a:I
+
+    .line 6
+    iput v0, p0, Lqjf;->b:I
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 1
+
+    .line 13
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    .line 14
+    iput v0, p0, Lqjf;->b:I
+
+    .line 15
+    iput-object p1, p0, Lqjf;->c:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lrp8;ILjava/lang/String;)V
+    .locals 0
+
+    .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 8
+    iput-object p1, p0, Lqjf;->c:Ljava/lang/Object;
+
+    .line 9
+    iput p2, p0, Lqjf;->a:I
+
+    .line 10
+    iput-object p3, p0, Lqjf;->d:Ljava/lang/Object;
+
+    .line 11
+    invoke-virtual {p1}, Lrp8;->X()I
+
+    move-result p1
+
+    iput p1, p0, Lqjf;->b:I
+
+    .line 12
+    const-string p1, "external_primary"
+
+    invoke-static {p1}, Landroid/provider/MediaStore$Images$Media;->getContentUri(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lqjf;->e:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public static h(Lqk5;)Ljava/lang/String;
+    .locals 3
+
+    invoke-virtual {p0}, Lqk5;->a()V
+
+    iget-object v0, p0, Lqk5;->c:Lzk5;
+
+    iget-object v1, v0, Lzk5;->e:Ljava/lang/String;
+
+    if-eqz v1, :cond_0
+
+    return-object v1
+
+    :cond_0
+    invoke-virtual {p0}, Lqk5;->a()V
+
+    iget-object p0, v0, Lzk5;->b:Ljava/lang/String;
+
+    const-string v0, "1:"
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    return-object p0
+
+    :cond_1
+    const-string v0, ":"
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object p0
+
+    array-length v0, p0
+
+    const/4 v1, 0x2
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v0, v2}, Lwza;->k(Ljava/lang/String;Z)V
+    if-ge v0, v1, :cond_2
 
-    const-string v0, "url"
+    return-object v2
 
-    invoke-virtual {v1, v0, v2}, Lwza;->k(Ljava/lang/String;Z)V
+    :cond_2
+    const/4 v0, 0x1
 
-    const-string v0, "file_name"
+    aget-object p0, p0, v0
 
-    invoke-virtual {v1, v0, v2}, Lwza;->k(Ljava/lang/String;Z)V
+    invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
 
-    sput-object v1, Lqjf;->descriptor:Lsyc;
+    move-result v0
 
-    return-void
+    if-eqz v0, :cond_3
+
+    return-object v2
+
+    :cond_3
+    return-object p0
 .end method
 
 
 # virtual methods
-.method public final a(Lb9;)Ljava/lang/Object;
-    .locals 9
+.method public a()I
+    .locals 0
 
-    sget-object p0, Lqjf;->descriptor:Lsyc;
+    iget p0, p0, Lqjf;->a:I
 
-    invoke-virtual {p1, p0}, Lb9;->j(Lsyc;)Lb9;
-
-    move-result-object p1
-
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    move v5, v0
-
-    move v6, v1
-
-    move-object v3, v2
-
-    move-object v4, v3
-
-    :goto_0
-    if-eqz v5, :cond_4
-
-    invoke-virtual {p1, p0}, Lb9;->p(Lsyc;)I
-
-    move-result v7
-
-    const/4 v8, -0x1
-
-    if-eq v7, v8, :cond_3
-
-    if-eqz v7, :cond_2
-
-    if-eq v7, v0, :cond_1
-
-    const/4 v4, 0x2
-
-    if-ne v7, v4, :cond_0
-
-    invoke-virtual {p1, p0, v4}, Lb9;->w(Lsyc;I)Ljava/lang/String;
-
-    move-result-object v4
-
-    or-int/lit8 v6, v6, 0x4
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Lkotlinx/serialization/UnknownFieldException;
-
-    invoke-direct {p0, v7}, Lkotlinx/serialization/UnknownFieldException;-><init>(I)V
-
-    throw p0
-
-    :cond_1
-    invoke-virtual {p1, p0, v0}, Lb9;->w(Lsyc;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    or-int/lit8 v6, v6, 0x2
-
-    goto :goto_0
-
-    :cond_2
-    invoke-virtual {p1, p0, v1}, Lb9;->w(Lsyc;I)Ljava/lang/String;
-
-    move-result-object v2
-
-    or-int/lit8 v6, v6, 0x1
-
-    goto :goto_0
-
-    :cond_3
-    move v5, v1
-
-    goto :goto_0
-
-    :cond_4
-    invoke-virtual {p1, p0}, Lb9;->z(Lsyc;)V
-
-    new-instance p0, Lsjf;
-
-    invoke-direct {p0, v2, v6, v3, v4}, Lsjf;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
-
-    return-object p0
+    return p0
 .end method
 
-.method public final b(Lur3;Ljava/lang/Object;)V
-    .locals 2
+.method public b(Landroid/content/ContentResolver;Landroid/net/Uri;)V
+    .locals 1
 
-    check-cast p2, Lsjf;
+    const-string v0, "w"
 
-    sget-object p0, Lqjf;->descriptor:Lsyc;
-
-    invoke-virtual {p1, p0}, Lur3;->b(Lsyc;)Lur3;
+    invoke-virtual {p1, p2, v0}, Landroid/content/ContentResolver;->openOutputStream(Landroid/net/Uri;Ljava/lang/String;)Ljava/io/OutputStream;
 
     move-result-object p1
 
-    iget-object v0, p2, Lsjf;->a:Ljava/lang/String;
+    if-eqz p1, :cond_0
 
-    const/4 v1, 0x0
+    :try_start_0
+    invoke-virtual {p0, p1}, Lqjf;->k(Ljava/io/OutputStream;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {p1, p0, v1, v0}, Lur3;->n(Lsyc;ILjava/lang/String;)V
+    invoke-interface {p1}, Ljava/io/Closeable;->close()V
 
-    const/4 v0, 0x1
+    return-void
 
-    iget-object v1, p2, Lsjf;->b:Ljava/lang/String;
+    :catchall_0
+    move-exception p0
 
-    invoke-virtual {p1, p0, v0, v1}, Lur3;->n(Lsyc;ILjava/lang/String;)V
+    :try_start_1
+    throw p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    const/4 v0, 0x2
+    :catchall_1
+    move-exception p2
 
-    iget-object p2, p2, Lsjf;->c:Ljava/lang/String;
+    invoke-static {p1, p0}, Liz7;->d(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
-    invoke-virtual {p1, p0, v0, p2}, Lur3;->n(Lsyc;ILjava/lang/String;)V
+    throw p2
 
-    invoke-virtual {p1}, Lur3;->o()V
-
+    :cond_0
     return-void
 .end method
 
-.method public final c()[Ll77;
-    .locals 2
+.method public c()Landroid/net/Uri;
+    .locals 0
 
-    const/4 p0, 0x3
+    iget-object p0, p0, Lqjf;->e:Ljava/lang/Object;
 
-    new-array p0, p0, [Ll77;
-
-    sget-object v0, Ld0e;->a:Ld0e;
-
-    const/4 v1, 0x0
-
-    aput-object v0, p0, v1
-
-    const/4 v1, 0x1
-
-    aput-object v0, p0, v1
-
-    const/4 v1, 0x2
-
-    aput-object v0, p0, v1
+    check-cast p0, Landroid/net/Uri;
 
     return-object p0
 .end method
 
-.method public final d()Lsyc;
+.method public d()Ljava/lang/String;
     .locals 0
 
-    sget-object p0, Lqjf;->descriptor:Lsyc;
+    iget-object p0, p0, Lqjf;->d:Ljava/lang/Object;
+
+    check-cast p0, Ljava/lang/String;
 
     return-object p0
+.end method
+
+.method public e()Ljava/lang/Integer;
+    .locals 0
+
+    iget p0, p0, Lqjf;->b:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public f(Ljava/io/File;)V
+    .locals 1
+
+    new-instance v0, Ljava/io/FileOutputStream;
+
+    invoke-direct {v0, p1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+
+    :try_start_0
+    invoke-virtual {p0, v0}, Lqjf;->k(Ljava/io/OutputStream;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
+
+    return-void
+
+    :catchall_0
+    move-exception p0
+
+    :try_start_1
+    throw p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    :catchall_1
+    move-exception p1
+
+    invoke-static {v0, p0}, Liz7;->d(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+
+    throw p1
+.end method
+
+.method public declared-synchronized g()Ljava/lang/String;
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lqjf;->d:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/String;
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Lqjf;->j()V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_1
+
+    :cond_0
+    :goto_0
+    iget-object v0, p0, Lqjf;->d:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/String;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :goto_1
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
+.end method
+
+.method public getHeight()Ljava/lang/Integer;
+    .locals 0
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public getWidth()Ljava/lang/Integer;
+    .locals 0
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public i()Z
+    .locals 4
+
+    monitor-enter p0
+
+    :try_start_0
+    iget v0, p0, Lqjf;->b:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    monitor-exit p0
+
+    goto :goto_1
+
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, Lqjf;->c:Ljava/lang/Object;
+
+    check-cast v0, Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v0
+
+    const-string v2, "com.google.android.c2dm.permission.SEND"
+
+    const-string v3, "com.google.android.gms"
+
+    invoke-virtual {v0, v2, v3}, Landroid/content/pm/PackageManager;->checkPermission(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    const/4 v3, -0x1
+
+    if-ne v2, v3, :cond_1
+
+    monitor-exit p0
+
+    move v0, v1
+
+    goto :goto_1
+
+    :cond_1
+    :try_start_2
+    new-instance v2, Landroid/content/Intent;
+
+    const-string v3, "com.google.iid.TOKEN_REQUEST"
+
+    invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const-string v3, "com.google.android.gms"
+
+    invoke-virtual {v2, v3}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+
+    invoke-virtual {v0, v2, v1}, Landroid/content/pm/PackageManager;->queryBroadcastReceivers(Landroid/content/Intent;I)Ljava/util/List;
+
+    move-result-object v0
+
+    const/4 v2, 0x2
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_2
+
+    iput v2, p0, Lqjf;->b:I
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    monitor-exit p0
+
+    :goto_0
+    move v0, v2
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_2
+
+    :cond_2
+    :try_start_3
+    iput v2, p0, Lqjf;->b:I
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    monitor-exit p0
+
+    goto :goto_0
+
+    :goto_1
+    if-eqz v0, :cond_3
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_3
+    return v1
+
+    :goto_2
+    :try_start_4
+    monitor-exit p0
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+
+    throw v0
+.end method
+
+.method public declared-synchronized j()V
+    .locals 3
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lqjf;->c:Ljava/lang/Object;
+
+    check-cast v0, Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :try_start_1
+    iget-object v1, p0, Lqjf;->c:Ljava/lang/Object;
+
+    check-cast v1, Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v0, v2}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+
+    move-result-object v0
+    :try_end_1
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    :try_start_2
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_0
+
+    iget v1, v0, Landroid/content/pm/PackageInfo;->versionCode:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lqjf;->d:Ljava/lang/Object;
+
+    iget-object v0, v0, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
+
+    iput-object v0, p0, Lqjf;->e:Ljava/lang/Object;
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_2
+
+    :cond_0
+    :goto_1
+    monitor-exit p0
+
+    return-void
+
+    :goto_2
+    :try_start_3
+    monitor-exit p0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    throw v0
+.end method
+
+.method public k(Ljava/io/OutputStream;)V
+    .locals 7
+
+    iget v0, p0, Lqjf;->b:I
+
+    const/16 v1, 0x800
+
+    new-array v2, v1, [B
+
+    const/4 v3, 0x0
+
+    move v4, v3
+
+    :cond_0
+    sub-int v5, v0, v4
+
+    invoke-static {v1, v5}, Ljava/lang/Math;->min(II)I
+
+    move-result v5
+
+    iget-object v6, p0, Lqjf;->c:Ljava/lang/Object;
+
+    check-cast v6, Lrp8;
+
+    invoke-virtual {v6, v4, v3, v5, v2}, Lrp8;->W(III[B)V
+
+    invoke-virtual {p1, v2, v3, v5}, Ljava/io/OutputStream;->write([BII)V
+
+    add-int/2addr v4, v5
+
+    if-lt v4, v0, :cond_0
+
+    invoke-virtual {p1}, Ljava/io/OutputStream;->flush()V
+
+    return-void
 .end method

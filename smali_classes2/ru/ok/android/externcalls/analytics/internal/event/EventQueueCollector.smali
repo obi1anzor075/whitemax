@@ -242,7 +242,7 @@
 
     sget-object v0, Lru/ok/android/commons/app/ApplicationProvider;->a:Landroid/app/Application;
 
-    invoke-static {}, Lek8;->w()Landroid/app/Application;
+    invoke-static {}, Lq14;->C()Landroid/app/Application;
 
     move-result-object v0
 
@@ -399,7 +399,7 @@
 
     invoke-direct {v4}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
 
-    new-instance v0, Lru/ok/android/externcalls/analytics/internal/upload/Worker;
+    new-instance v1, Lru/ok/android/externcalls/analytics/internal/upload/Worker;
 
     sget-object v2, Lru/ok/android/externcalls/analytics/internal/event/EventQueueCollector;->looperProvider:Lru/ok/android/externcalls/analytics/internal/event/EventQueueCollector$LooperProvider;
 
@@ -409,25 +409,23 @@
 
     move-result v6
 
-    move-object v1, v0
-
     invoke-direct/range {v1 .. v6}, Lru/ok/android/externcalls/analytics/internal/upload/Worker;-><init>(Ljavax/inject/Provider;Ljavax/inject/Provider;Ljava/util/concurrent/locks/Lock;Ljava/lang/String;Z)V
 
-    iget-object v1, p0, Lru/ok/android/externcalls/analytics/internal/event/EventQueueCollector;->worker:Ljava/util/concurrent/atomic/AtomicReference;
+    iget-object v0, p0, Lru/ok/android/externcalls/analytics/internal/event/EventQueueCollector;->worker:Ljava/util/concurrent/atomic/AtomicReference;
 
     :cond_1
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2, v0}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v0, v2, v1}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    return-object v0
+    return-object v1
 
     :cond_2
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -539,11 +537,11 @@
     goto :goto_0
 
     :cond_0
-    new-instance v0, Lr34;
+    new-instance v0, Ld74;
 
-    const/16 v1, 0xd
+    const/16 v1, 0xe
 
-    invoke-direct {v0, v1, p0}, Lr34;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v0, v1, p0}, Ld74;-><init>(ILjava/lang/Object;)V
 
     move-object p0, v0
 
@@ -680,11 +678,11 @@
 
     invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v2, Lr34;
+    new-instance v2, Ld74;
 
-    const/16 v3, 0xc
+    const/16 v3, 0xd
 
-    invoke-direct {v2, v3, v1}, Lr34;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v2, v3, v1}, Ld74;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {v0, v2}, Lru/ok/android/externcalls/analytics/internal/upload/Worker;->grab(Ljavax/inject/Provider;)V
     :try_end_0

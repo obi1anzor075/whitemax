@@ -4,7 +4,7 @@
 
 
 # direct methods
-.method public static synthetic a(Lsun/misc/Unsafe;Ljava/lang/Object;JLjava/lang/Object;Ljava/lang/Object;)Z
+.method public static synthetic a(Lsun/misc/Unsafe;Lm1;JLk1;Lk1;)Z
     .locals 1
 
     :cond_0

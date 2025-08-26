@@ -1,25 +1,31 @@
-.class public abstract Lnrf;
-.super Ljava/lang/Object;
+.class public final Lnrf;
+.super Lqrf;
 .source "SourceFile"
 
 
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lnrf;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
 # direct methods
-.method public static a(Landroid/view/Window$Callback;Landroid/view/SearchEvent;)Z
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-interface {p0, p1}, Landroid/view/Window$Callback;->onSearchRequested(Landroid/view/SearchEvent;)Z
+    new-instance v0, Lmrd;
 
-    move-result p0
+    const/16 v1, 0x1d
 
-    return p0
-.end method
+    invoke-direct {v0, v1}, Lmrd;-><init>(I)V
 
-.method public static b(Landroid/view/Window$Callback;Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;
-    .locals 0
+    sput-object v0, Lnrf;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-interface {p0, p1, p2}, Landroid/view/Window$Callback;->onWindowStartingActionMode(Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

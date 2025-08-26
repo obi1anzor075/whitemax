@@ -3,33 +3,23 @@
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic a:I
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public static a(Landroid/graphics/drawable/Drawable;)I
+    .locals 0
 
-    const/4 v0, 0x4
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getLayoutDirection()I
 
-    new-array v1, v0, [Ljava/lang/ThreadLocal;
+    move-result p0
 
-    const/4 v2, 0x0
+    return p0
+.end method
 
-    :goto_0
-    if-ge v2, v0, :cond_0
+.method public static b(Landroid/graphics/drawable/Drawable;I)Z
+    .locals 0
 
-    new-instance v3, Ljava/lang/ThreadLocal;
+    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)Z
 
-    invoke-direct {v3}, Ljava/lang/ThreadLocal;-><init>()V
+    move-result p0
 
-    aput-object v3, v1, v2
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-void
+    return p0
 .end method

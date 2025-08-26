@@ -85,13 +85,13 @@
 .end method
 
 .method public static bridge synthetic b(Landroid/content/Context;Lorg/webrtc/PeerConnectionFactory$Options;JJJLorg/webrtc/VideoEncoderFactory;Lorg/webrtc/VideoDecoderFactory;JJJJJ)Lorg/webrtc/PeerConnectionFactory;
-    .locals 1
+    .locals 0
 
     invoke-static/range {p0 .. p19}, Lorg/webrtc/PeerConnectionFactory;->nativeCreatePeerConnectionFactory(Landroid/content/Context;Lorg/webrtc/PeerConnectionFactory$Options;JJJLorg/webrtc/VideoEncoderFactory;Lorg/webrtc/VideoDecoderFactory;JJJJJ)Lorg/webrtc/PeerConnectionFactory;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static builder()Lorg/webrtc/PeerConnectionFactory$Builder;
@@ -169,12 +169,11 @@
 
     move-result-object p0
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     const-string p0, ""
 
-    :goto_0
     return-object p0
 .end method
 
@@ -230,7 +229,7 @@
 
     invoke-static {v0, p0}, Lorg/webrtc/PeerConnectionFactory;->nativeInjectLoggable(Lorg/webrtc/JNILogging;I)V
 
-    goto :goto_0
+    return-void
 
     :cond_1
     const-string p0, "PeerConnectionFactory"
@@ -243,7 +242,6 @@
 
     invoke-static {}, Lorg/webrtc/PeerConnectionFactory;->nativeDeleteLoggable()V
 
-    :goto_0
     return-void
 .end method
 
@@ -427,7 +425,7 @@
 
     if-nez p0, :cond_0
 
-    return-void
+    goto :goto_1
 
     :cond_0
     iget-object v0, p0, Lorg/webrtc/PeerConnectionFactory$ThreadInfo;->thread:Ljava/lang/Thread;
@@ -496,13 +494,13 @@
 
     iget v1, p0, Lorg/webrtc/PeerConnectionFactory$ThreadInfo;->tid:I
 
-    const-string v2, "pid: "
+    const-string v2, ", tid: "
 
-    const-string v4, ", tid: "
+    const-string v4, ", name: "
 
-    const-string v5, ", name: "
+    const-string v5, "pid: "
 
-    invoke-static {v2, p1, v4, v1, v5}, Lrf0;->i(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v5, p1, v2, v1, v4}, Lpg0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -523,6 +521,7 @@
     invoke-static {p0}, Lorg/webrtc/PeerConnectionFactory;->nativePrintStackTrace(I)V
 
     :cond_2
+    :goto_1
     return-void
 .end method
 
@@ -978,29 +977,22 @@
 .method public setPreprocessorParams(ZLorg/webrtc/PeerConnectionFactory$EnhancerKind;Ljava/lang/String;IIIIIZLjava/lang/Runnable;)V
     .locals 12
 
-    move-object v0, p0
-
-    iget-wide v0, v0, Lorg/webrtc/PeerConnectionFactory;->nativeFactory:J
+    iget-wide v0, p0, Lorg/webrtc/PeerConnectionFactory;->nativeFactory:J
 
     if-nez p2, :cond_0
 
-    sget-object v2, Lorg/webrtc/PeerConnectionFactory$EnhancerKind;->NONE:Lorg/webrtc/PeerConnectionFactory$EnhancerKind;
-
-    goto :goto_0
+    sget-object p2, Lorg/webrtc/PeerConnectionFactory$EnhancerKind;->NONE:Lorg/webrtc/PeerConnectionFactory$EnhancerKind;
 
     :cond_0
-    move-object v2, p2
-
-    :goto_0
-    invoke-static {v2}, Lorg/webrtc/PeerConnectionFactory$EnhancerKind;->a(Lorg/webrtc/PeerConnectionFactory$EnhancerKind;)I
+    invoke-static {p2}, Lorg/webrtc/PeerConnectionFactory$EnhancerKind;->a(Lorg/webrtc/PeerConnectionFactory$EnhancerKind;)I
 
     move-result v3
 
     new-instance v11, Lorg/webrtc/NativeRunnable;
 
-    move-object/from16 v2, p10
+    move-object/from16 p0, p10
 
-    invoke-direct {v11, v2}, Lorg/webrtc/NativeRunnable;-><init>(Ljava/lang/Runnable;)V
+    invoke-direct {v11, p0}, Lorg/webrtc/NativeRunnable;-><init>(Ljava/lang/Runnable;)V
 
     move v2, p1
 

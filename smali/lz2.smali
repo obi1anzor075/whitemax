@@ -2,97 +2,163 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final d:Ljava/util/Set;
+# interfaces
+.implements Landroid/view/ViewGroup$OnHierarchyChangeListener;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public a:Landroid/view/ViewGroup$OnHierarchyChangeListener;
 
-.field public final b:Lt97;
-
-.field public final c:Lt97;
+.field public final synthetic b:Lcom/google/android/material/chip/ChipGroup;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    sget-object v0, Luna;->b1:Luna;
-
-    sget-object v1, Luna;->c1:Luna;
-
-    filled-new-array {v0, v1}, [Luna;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lz3d;->N([Ljava/lang/Object;)Ljava/util/Set;
-
-    move-result-object v0
-
-    sput-object v0, Llz2;->d:Ljava/util/Set;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lt97;Lt97;)V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/material/chip/ChipGroup;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-class v0, Llz2;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Llz2;->a:Ljava/lang/String;
-
-    iput-object p1, p0, Llz2;->b:Lt97;
-
-    iput-object p2, p0, Llz2;->c:Lt97;
+    iput-object p1, p0, Llz2;->b:Lcom/google/android/material/chip/ChipGroup;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(JLer3;)Ljava/lang/Object;
-    .locals 3
+.method public final onChildViewAdded(Landroid/view/View;Landroid/view/View;)V
+    .locals 4
 
-    iget-object v0, p0, Llz2;->b:Lt97;
+    iget-object v0, p0, Llz2;->b:Lcom/google/android/material/chip/ChipGroup;
 
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
+    if-ne p1, v0, :cond_2
 
-    move-result-object v0
+    instance-of v1, p2, Lcom/google/android/material/chip/Chip;
 
-    check-cast v0, Lpae;
+    if-eqz v1, :cond_2
 
-    check-cast v0, Ln3a;
+    invoke-virtual {p2}, Landroid/view/View;->getId()I
 
-    invoke-virtual {v0}, Ln3a;->b()Lju3;
+    move-result v1
 
-    move-result-object v0
+    const/4 v2, -0x1
 
-    new-instance v1, Lkz2;
+    if-ne v1, v2, :cond_0
+
+    sget-object v1, Ltnf;->a:Ljava/util/WeakHashMap;
+
+    invoke-static {}, Landroid/view/View;->generateViewId()I
+
+    move-result v1
+
+    invoke-virtual {p2, v1}, Landroid/view/View;->setId(I)V
+
+    :cond_0
+    iget-object v0, v0, Lcom/google/android/material/chip/ChipGroup;->r0:Lty2;
+
+    move-object v1, p2
+
+    check-cast v1, Lcom/google/android/material/chip/Chip;
+
+    iget-object v2, v0, Lty2;->c:Ljava/lang/Object;
+
+    check-cast v2, Ljava/util/HashMap;
+
+    invoke-interface {v1}, Li18;->getId()I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-interface {v1}, Landroid/widget/Checkable;->isChecked()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-virtual {v0, v1}, Lty2;->a(Li18;)Z
+
+    :cond_1
+    new-instance v2, Lsag;
+
+    const/16 v3, 0x9
+
+    invoke-direct {v2, v3, v0}, Lsag;-><init>(ILjava/lang/Object;)V
+
+    invoke-interface {v1, v2}, Li18;->setInternalOnCheckedChangeListener(Lh18;)V
+
+    :cond_2
+    iget-object p0, p0, Llz2;->a:Landroid/view/ViewGroup$OnHierarchyChangeListener;
+
+    if-eqz p0, :cond_3
+
+    invoke-interface {p0, p1, p2}, Landroid/view/ViewGroup$OnHierarchyChangeListener;->onChildViewAdded(Landroid/view/View;Landroid/view/View;)V
+
+    :cond_3
+    return-void
+.end method
+
+.method public final onChildViewRemoved(Landroid/view/View;Landroid/view/View;)V
+    .locals 4
+
+    iget-object v0, p0, Llz2;->b:Lcom/google/android/material/chip/ChipGroup;
+
+    if-ne p1, v0, :cond_0
+
+    instance-of v1, p2, Lcom/google/android/material/chip/Chip;
+
+    if-eqz v1, :cond_0
+
+    iget-object v0, v0, Lcom/google/android/material/chip/ChipGroup;->r0:Lty2;
+
+    move-object v1, p2
+
+    check-cast v1, Lcom/google/android/material/chip/Chip;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, p0, p1, p2, v2}, Lkz2;-><init>(Llz2;JLkotlin/coroutines/Continuation;)V
+    invoke-interface {v1, v2}, Li18;->setInternalOnCheckedChangeListener(Lh18;)V
 
-    invoke-static {v0, v1, p3}, Lxs7;->U(Lhu3;Li26;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iget-object v2, v0, Lty2;->c:Ljava/lang/Object;
 
-    move-result-object p0
+    check-cast v2, Ljava/util/HashMap;
 
-    sget-object p1, Lpu3;->a:Lpu3;
+    invoke-interface {v1}, Li18;->getId()I
 
-    if-ne p0, p1, :cond_0
+    move-result v3
 
-    return-object p0
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v0, v0, Lty2;->o:Ljava/lang/Object;
+
+    check-cast v0, Ljava/util/HashSet;
+
+    invoke-interface {v1}, Li18;->getId()I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
     :cond_0
-    sget-object p0, Ljue;->a:Ljue;
+    iget-object p0, p0, Llz2;->a:Landroid/view/ViewGroup$OnHierarchyChangeListener;
 
-    return-object p0
+    if-eqz p0, :cond_1
+
+    invoke-interface {p0, p1, p2}, Landroid/view/ViewGroup$OnHierarchyChangeListener;->onChildViewRemoved(Landroid/view/View;Landroid/view/View;)V
+
+    :cond_1
+    return-void
 .end method

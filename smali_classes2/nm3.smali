@@ -1,109 +1,58 @@
 .class public final Lnm3;
-.super Lkh0;
+.super Lpm3;
 .source "SourceFile"
 
+# interfaces
+.implements Lzs7;
 
-# instance fields
-.field public final synthetic b:I
 
-.field public final c:Ljava/util/AbstractCollection;
+# static fields
+.field public static final w0:Lnm3;
 
 
 # direct methods
-.method public constructor <init>(JLzy;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 20
 
-    const/4 v0, 0x1
+    new-instance v0, Lnm3;
 
-    iput v0, p0, Lnm3;->b:I
+    sget-object v7, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
-    .line 1
-    invoke-direct {p0, p1, p2}, Lkh0;-><init>(J)V
+    const/4 v1, 0x0
 
-    .line 2
-    iput-object p3, p0, Lnm3;->c:Ljava/util/AbstractCollection;
+    new-array v1, v1, [I
+
+    move-object/from16 v19, v1
+
+    const-wide/16 v1, 0x0
+
+    const-wide/16 v3, 0x0
+
+    const-string v5, ""
+
+    const-string v6, ""
+
+    const-wide/16 v8, 0x0
+
+    const-wide/16 v10, 0x0
+
+    sget-object v12, Liq3;->b:Liq3;
+
+    const/4 v13, 0x1
+
+    const-string v15, ""
+
+    const-string v16, ""
+
+    const-string v17, ""
+
+    const/16 v18, 0x0
+
+    move-object v14, v7
+
+    invoke-direct/range {v0 .. v19}, Lpm3;-><init>(JJLjava/lang/String;Ljava/lang/String;Ljava/util/List;JJLiq3;ILjava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkc7;[I)V
+
+    sput-object v0, Lnm3;->w0:Lnm3;
 
     return-void
-.end method
-
-.method public constructor <init>(Ljava/util/List;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lnm3;->b:I
-
-    .line 3
-    invoke-direct {p0}, Lkh0;-><init>()V
-
-    .line 4
-    new-instance v0, Ljava/util/LinkedHashSet;
-
-    invoke-direct {v0, p1}, Ljava/util/LinkedHashSet;-><init>(Ljava/util/Collection;)V
-
-    iput-object v0, p0, Lnm3;->c:Ljava/util/AbstractCollection;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    iget v0, p0, Lnm3;->b:I
-
-    packed-switch v0, :pswitch_data_0
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "SharePreviewEvent{attaches="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lnm3;->c:Ljava/util/AbstractCollection;
-
-    check-cast p0, Lzy;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 p0, 0x7d
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ContactNotFoundEvent{contactServerIds="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lnm3;->c:Ljava/util/AbstractCollection;
-
-    check-cast p0, Ljava/util/LinkedHashSet;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 p0, 0x7d
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

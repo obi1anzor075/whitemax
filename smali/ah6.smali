@@ -1,86 +1,106 @@
 .class public final Lah6;
-.super Ldh6;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Z
+.field public final a:Landroidx/viewpager2/widget/ViewPager2;
+
+.field public final b:Leh6;
+
+.field public c:Z
+
+.field public d:Lgbc;
+
+.field public e:Lzg6;
+
+.field public f:Liz4;
 
 
 # direct methods
-.method public constructor <init>(Z)V
+.method public constructor <init>(Landroidx/viewpager2/widget/ViewPager2;Leh6;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p1, p0, Lah6;->a:Z
+    iput-object p1, p0, Lah6;->a:Landroidx/viewpager2/widget/ViewPager2;
+
+    iput-object p2, p0, Lah6;->b:Leh6;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+.method public final a()V
+    .locals 4
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lah6;->d:Lgbc;
 
-    if-ne p0, p1, :cond_0
+    if-nez v0, :cond_0
 
-    return v0
+    return-void
 
     :cond_0
-    instance-of v1, p1, Lah6;
+    :try_start_0
+    invoke-virtual {v0}, Lgbc;->j()I
 
-    const/4 v2, 0x0
+    move-result v0
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
-    return v2
+    const/4 v1, 0x0
+
+    goto :goto_0
 
     :cond_1
-    check-cast p1, Lah6;
+    iget-object v1, p0, Lah6;->a:Landroidx/viewpager2/widget/ViewPager2;
 
-    iget-boolean p0, p0, Lah6;->a:Z
+    invoke-virtual {v1}, Landroidx/viewpager2/widget/ViewPager2;->getCurrentItem()I
 
-    iget-boolean p1, p1, Lah6;->a:Z
+    move-result v1
 
-    if-eq p0, p1, :cond_2
+    add-int/lit8 v2, v0, -0x1
 
-    return v2
+    invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
 
-    :cond_2
-    return v0
-.end method
+    move-result v1
 
-.method public final hashCode()I
-    .locals 0
+    :goto_0
+    iget-object p0, p0, Lah6;->b:Leh6;
 
-    iget-boolean p0, p0, Lah6;->a:Z
+    invoke-virtual {p0, v0, v1}, Leh6;->b(II)V
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+    return-void
 
-    move-result p0
+    :catch_0
+    move-exception p0
 
-    return p0
-.end method
+    const-class v0, Lah6;
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    const-string v1, "Missing(isMissing="
+    invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v1
 
-    iget-boolean p0, p0, Lah6;->a:Z
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v1, ")"
+    const-string v3, "updatePagesNumber error: "
 
-    invoke-static {v0, p0, v1}, Lhr1;->j(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result-object p0
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-object p0
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1, p0}, Lg47;->O(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
 .end method

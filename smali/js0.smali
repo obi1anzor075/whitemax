@@ -1,160 +1,94 @@
-.class public final synthetic Ljs0;
+.class public Ljs0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
-
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:I
 
-.field public final synthetic b:Lls0;
+.field public final b:I
+
+.field public final c:Ljava/util/LinkedList;
+
+.field public d:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lls0;I)V
-    .locals 0
-
-    iput p2, p0, Ljs0;->a:I
-
-    iput-object p1, p0, Ljs0;->b:Lls0;
+.method public constructor <init>(III)V
+    .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    if-lez p1, :cond_0
+
+    move v2, v1
+
+    goto :goto_0
+
+    :cond_0
+    move v2, v0
+
+    :goto_0
+    invoke-static {v2}, Ll23;->l(Z)V
+
+    if-ltz p2, :cond_1
+
+    move v2, v1
+
+    goto :goto_1
+
+    :cond_1
+    move v2, v0
+
+    :goto_1
+    invoke-static {v2}, Ll23;->l(Z)V
+
+    if-ltz p3, :cond_2
+
+    move v0, v1
+
+    :cond_2
+    invoke-static {v0}, Ll23;->l(Z)V
+
+    iput p1, p0, Ljs0;->a:I
+
+    iput p2, p0, Ljs0;->b:I
+
+    new-instance p1, Ljava/util/LinkedList;
+
+    invoke-direct {p1}, Ljava/util/LinkedList;-><init>()V
+
+    iput-object p1, p0, Ljs0;->c:Ljava/util/LinkedList;
+
+    iput p3, p0, Ljs0;->d:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public a(Ljava/lang/Object;)V
+    .locals 0
 
-    iget v0, p0, Ljs0;->a:I
+    iget-object p0, p0, Ljs0;->c:Ljava/util/LinkedList;
 
-    iget-object p0, p0, Ljs0;->b:Lls0;
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lls0;->k:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    iget-object v0, p0, Lls0;->g:Le60;
-
-    invoke-interface {v0}, Le60;->release()V
-
-    iget-object v0, p0, Lls0;->e:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    const/4 v1, 0x0
-
-    :try_start_0
-    iput-object v1, p0, Lls0;->f:Lks0;
-
-    iget-object p0, p0, Lls0;->c:Ljava/util/concurrent/ConcurrentLinkedQueue;
-
-    invoke-virtual {p0}, Ljava/util/concurrent/ConcurrentLinkedQueue;->clear()V
-
-    monitor-exit v0
+    invoke-virtual {p0, p1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
     return-void
+.end method
 
-    :catchall_0
-    move-exception p0
+.method public b()Ljava/lang/Object;
+    .locals 0
 
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object p0, p0, Ljs0;->c:Ljava/util/LinkedList;
 
-    throw p0
+    invoke-virtual {p0}, Ljava/util/LinkedList;->poll()Ljava/lang/Object;
 
-    :pswitch_0
-    invoke-virtual {p0}, Lls0;->c()V
+    move-result-object p0
 
-    return-void
-
-    :pswitch_1
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    :try_start_1
-    iget-object v0, p0, Lls0;->g:Le60;
-
-    invoke-interface {v0}, Le60;->start()V
-
-    iget-object v0, p0, Lls0;->k:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0}, Lls0;->c()V
-    :try_end_1
-    .catch Landroidx/camera/video/internal/audio/AudioStream$AudioStreamException; {:try_start_1 .. :try_end_1} :catch_0
-
-    :goto_0
-    return-void
-
-    :catch_0
-    move-exception p0
-
-    new-instance v0, Ljava/lang/RuntimeException;
-
-    invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v0
-
-    :pswitch_2
-    iget-object v0, p0, Lls0;->k:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    iget-object v0, p0, Lls0;->g:Le60;
-
-    invoke-interface {v0}, Le60;->stop()V
-
-    iget-object v0, p0, Lls0;->e:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    const/4 v1, 0x0
-
-    :try_start_2
-    iput-object v1, p0, Lls0;->f:Lks0;
-
-    iget-object p0, p0, Lls0;->c:Ljava/util/concurrent/ConcurrentLinkedQueue;
-
-    invoke-virtual {p0}, Ljava/util/concurrent/ConcurrentLinkedQueue;->clear()V
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_1
-    move-exception p0
-
-    monitor-exit v0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    throw p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

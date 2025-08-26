@@ -1,92 +1,68 @@
-.class public final Lk74;
+.class public final synthetic Lk74;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lo3e;
+.implements Lkm7;
 
 
-# static fields
-.field public static final a:J
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lzc;
+
+.field public final synthetic c:Lfz5;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(Lzc;Lfz5;Lf64;I)V
+    .locals 0
 
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
+    iput p4, p0, Lk74;->a:I
 
-    const-wide/16 v1, 0x5
+    iput-object p1, p0, Lk74;->b:Lzc;
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
+    iput-object p2, p0, Lk74;->c:Lfz5;
 
-    move-result-wide v0
-
-    sput-wide v0, Lk74;->a:J
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final get()Ljava/lang/Object;
-    .locals 7
+.method public final invoke(Ljava/lang/Object;)V
+    .locals 1
 
-    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
+    iget v0, p0, Lk74;->a:I
 
-    move-result-object p0
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p0}, Ljava/lang/Runtime;->maxMemory()J
+    iget-object v0, p0, Lk74;->c:Lfz5;
 
-    move-result-wide v0
+    check-cast p1, Lad;
 
-    const-wide/32 v2, 0x7fffffff
+    iget-object p0, p0, Lk74;->b:Lzc;
 
-    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->min(JJ)J
+    invoke-interface {p1, p0, v0}, Lad;->G(Lzc;Lfz5;)V
 
-    move-result-wide v0
+    return-void
 
-    long-to-int p0, v0
+    :pswitch_0
+    iget-object v0, p0, Lk74;->c:Lfz5;
 
-    const/high16 v0, 0x1000000
+    check-cast p1, Lad;
 
-    if-ge p0, v0, :cond_0
+    iget-object p0, p0, Lk74;->b:Lzc;
 
-    const/high16 p0, 0x100000
+    invoke-interface {p1, p0, v0}, Lad;->U(Lzc;Lfz5;)V
 
-    :goto_0
-    move v3, p0
+    return-void
 
-    goto :goto_1
+    nop
 
-    :cond_0
-    const/high16 v0, 0x2000000
-
-    if-ge p0, v0, :cond_1
-
-    const/high16 p0, 0x200000
-
-    goto :goto_0
-
-    :cond_1
-    const/high16 p0, 0x400000
-
-    goto :goto_0
-
-    :goto_1
-    div-int/lit8 v6, v3, 0x8
-
-    new-instance p0, Lfl8;
-
-    sget-wide v4, Lk74;->a:J
-
-    const v2, 0x7fffffff
-
-    move-object v0, p0
-
-    move v1, v3
-
-    invoke-direct/range {v0 .. v6}, Lfl8;-><init>(IIIJI)V
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

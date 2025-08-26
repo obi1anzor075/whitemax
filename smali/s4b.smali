@@ -4,102 +4,134 @@
 
 
 # instance fields
-.field public final a:I
+.field public final a:Ljava/lang/String;
 
-.field public final b:Landroid/graphics/Rect;
-
-.field public final c:I
-
-.field public final d:I
-
-.field public final e:Landroid/graphics/Matrix;
-
-.field public final f:Lxac;
-
-.field public final g:Ljava/lang/String;
-
-.field public final h:Ljava/util/ArrayList;
-
-.field public final i:Lch7;
-
-.field public j:I
+.field public final b:Ljava/lang/Long;
 
 
 # direct methods
-.method public constructor <init>(Lnw1;Landroid/graphics/Rect;IILandroid/graphics/Matrix;Lxac;Lvn1;I)V
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/Long;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, -0x1
+    iput-object p1, p0, Ls4b;->a:Ljava/lang/String;
 
-    iput v0, p0, Ls4b;->j:I
+    iput-object p2, p0, Ls4b;->b:Ljava/lang/Long;
 
-    iput p8, p0, Ls4b;->a:I
+    return-void
+.end method
 
-    iput p4, p0, Ls4b;->d:I
 
-    iput p3, p0, Ls4b;->c:I
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iput-object p2, p0, Ls4b;->b:Landroid/graphics/Rect;
+    const/4 v0, 0x1
 
-    iput-object p5, p0, Ls4b;->e:Landroid/graphics/Matrix;
+    if-ne p0, p1, :cond_0
 
-    iput-object p6, p0, Ls4b;->f:Lxac;
+    return v0
 
-    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
+    :cond_0
+    instance-of v1, p1, Ls4b;
 
-    move-result p2
+    const/4 v2, 0x0
 
-    invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    if-nez v1, :cond_1
 
-    move-result-object p2
+    return v2
 
-    iput-object p2, p0, Ls4b;->g:Ljava/lang/String;
+    :cond_1
+    check-cast p1, Ls4b;
 
-    new-instance p2, Ljava/util/ArrayList;
+    iget-object v1, p0, Ls4b;->a:Ljava/lang/String;
 
-    invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
+    iget-object v3, p1, Ls4b;->a:Ljava/lang/String;
 
-    iput-object p2, p0, Ls4b;->h:Ljava/util/ArrayList;
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-object p1, p1, Lnw1;->a:Ljava/util/List;
+    move-result v1
 
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    if-nez v1, :cond_2
 
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    return v2
 
-    move-result-object p1
+    :cond_2
+    iget-object p0, p0, Ls4b;->b:Ljava/lang/Long;
 
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    iget-object p1, p1, Ls4b;->b:Ljava/lang/Long;
 
-    move-result p2
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-eqz p2, :cond_0
+    move-result p0
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    if-nez p0, :cond_3
 
-    move-result-object p2
+    return v2
 
-    check-cast p2, Lxw1;
+    :cond_3
+    return v0
+.end method
 
-    iget-object p3, p0, Ls4b;->h:Ljava/util/ArrayList;
+.method public final hashCode()I
+    .locals 1
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v0, p0, Ls4b;->a:Ljava/lang/String;
 
-    const/4 p2, 0x0
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result v0
 
-    move-result-object p2
+    mul-int/lit8 v0, v0, 0x1f
 
-    invoke-virtual {p3, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    iget-object p0, p0, Ls4b;->b:Ljava/lang/Long;
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
 
     goto :goto_0
 
     :cond_0
-    iput-object p7, p0, Ls4b;->i:Lch7;
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    return-void
+    move-result p0
+
+    :goto_0
+    add-int/2addr v0, p0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Preference(key="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Ls4b;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", value="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Ls4b;->b:Ljava/lang/Long;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const/16 p0, 0x29
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

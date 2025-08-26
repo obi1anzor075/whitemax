@@ -1,36 +1,21 @@
-.class public interface abstract Li5e;
-.super Ljava/lang/Object;
+.class public final Li5e;
+.super Lio;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a()V
-.end method
+# static fields
+.field public static final a:Li5e;
 
-.method public b()Ljue;
-    .locals 0
 
-    sget-object p0, Ljue;->a:Ljue;
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
 
-    return-object p0
-.end method
+    new-instance v0, Li5e;
 
-.method public abstract c(FJJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-.end method
+    invoke-direct {v0}, Lio;-><init>()V
 
-.method public d(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 0
+    sput-object v0, Li5e;->a:Li5e;
 
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
-.end method
-
-.method public abstract e(ZZ)V
-.end method
-
-.method public abstract f(Ljava/io/File;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-.end method
-
-.method public abstract getDownloadContext()Ljava/lang/String;
+    return-void
 .end method

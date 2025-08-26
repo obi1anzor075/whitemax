@@ -1,92 +1,27 @@
 .class public final Lejb;
-.super Ljava/lang/Object;
+.super Lgjb;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/os/Parcelable;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lejb;",
-            ">;"
-        }
-    .end annotation
-.end field
 
 
 # instance fields
-.field public final X:J
-
-.field public final Y:Ljava/lang/String;
-
-.field public final Z:J
-
-.field public final a:J
-
-.field public final b:Ljava/lang/String;
-
-.field public final c:J
-
-.field public final o:Ljava/lang/Long;
-
-.field public final w0:Lti2;
+.field public final a:Ljava/util/List;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lx3b;
-
-    const/16 v1, 0x8
-
-    invoke-direct {v0, v1}, Lx3b;-><init>(I)V
-
-    sput-object v0, Lejb;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(JLjava/lang/String;JLjava/lang/Long;JLjava/lang/String;JLti2;)V
+.method public constructor <init>(Ljava/util/List;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Lejb;->a:J
-
-    iput-object p3, p0, Lejb;->b:Ljava/lang/String;
-
-    iput-wide p4, p0, Lejb;->c:J
-
-    iput-object p6, p0, Lejb;->o:Ljava/lang/Long;
-
-    iput-wide p7, p0, Lejb;->X:J
-
-    iput-object p9, p0, Lejb;->Y:Ljava/lang/String;
-
-    iput-wide p10, p0, Lejb;->Z:J
-
-    iput-object p12, p0, Lejb;->w0:Lti2;
+    iput-object p1, p0, Lejb;->a:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 7
+    .locals 3
 
     const/4 v0, 0x1
 
@@ -106,263 +41,44 @@
     :cond_1
     check-cast p1, Lejb;
 
-    iget-wide v3, p1, Lejb;->a:J
+    iget-object p0, p0, Lejb;->a:Ljava/util/List;
 
-    iget-wide v5, p0, Lejb;->a:J
+    iget-object p1, p1, Lejb;->a:Ljava/util/List;
 
-    cmp-long v1, v5, v3
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-eqz v1, :cond_2
+    move-result p0
+
+    if-nez p0, :cond_2
 
     return v2
 
     :cond_2
-    iget-object v1, p0, Lejb;->b:Ljava/lang/String;
-
-    iget-object v3, p1, Lejb;->b:Ljava/lang/String;
-
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-wide v3, p0, Lejb;->c:J
-
-    iget-wide v5, p1, Lejb;->c:J
-
-    cmp-long v1, v3, v5
-
-    if-eqz v1, :cond_4
-
-    return v2
-
-    :cond_4
-    iget-object v1, p0, Lejb;->o:Ljava/lang/Long;
-
-    iget-object v3, p1, Lejb;->o:Ljava/lang/Long;
-
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_5
-
-    return v2
-
-    :cond_5
-    iget-wide v3, p0, Lejb;->X:J
-
-    iget-wide v5, p1, Lejb;->X:J
-
-    cmp-long v1, v3, v5
-
-    if-eqz v1, :cond_6
-
-    return v2
-
-    :cond_6
-    iget-object v1, p0, Lejb;->Y:Ljava/lang/String;
-
-    iget-object v3, p1, Lejb;->Y:Ljava/lang/String;
-
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_7
-
-    return v2
-
-    :cond_7
-    iget-wide v3, p0, Lejb;->Z:J
-
-    iget-wide v5, p1, Lejb;->Z:J
-
-    cmp-long v1, v3, v5
-
-    if-eqz v1, :cond_8
-
-    return v2
-
-    :cond_8
-    iget-object p0, p0, Lejb;->w0:Lti2;
-
-    iget-object p1, p1, Lejb;->w0:Lti2;
-
-    if-eq p0, p1, :cond_9
-
-    return v2
-
-    :cond_9
     return v0
 .end method
 
 .method public final hashCode()I
-    .locals 5
+    .locals 0
 
-    iget-wide v0, p0, Lejb;->a:J
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    const/4 v2, 0x0
-
-    iget-object v3, p0, Lejb;->b:Ljava/lang/String;
-
-    if-nez v3, :cond_0
-
-    move v3, v2
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
-
-    move-result v3
-
-    :goto_0
-    add-int/2addr v0, v3
-
-    mul-int/2addr v0, v1
-
-    iget-wide v3, p0, Lejb;->c:J
-
-    invoke-static {v0, v1, v3, v4}, Lsxe;->m(IIJ)I
-
-    move-result v0
-
-    iget-object v3, p0, Lejb;->o:Ljava/lang/Long;
-
-    if-nez v3, :cond_1
-
-    move v3, v2
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
-
-    move-result v3
-
-    :goto_1
-    add-int/2addr v0, v3
-
-    mul-int/2addr v0, v1
-
-    iget-wide v3, p0, Lejb;->X:J
-
-    invoke-static {v0, v1, v3, v4}, Lsxe;->m(IIJ)I
-
-    move-result v0
-
-    iget-object v3, p0, Lejb;->Y:Ljava/lang/String;
-
-    if-nez v3, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
-
-    move-result v2
-
-    :goto_2
-    add-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget-wide v2, p0, Lejb;->Z:J
-
-    invoke-static {v0, v1, v2, v3}, Lsxe;->m(IIJ)I
-
-    move-result v0
-
-    iget-object p0, p0, Lejb;->w0:Lti2;
+    iget-object p0, p0, Lejb;->a:Ljava/util/List;
 
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result p0
 
-    add-int/2addr p0, v0
-
     return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "PushInfo(pushId="
+    const-string v1, "ShowPhoneActionsMenu(actions="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-wide v1, p0, Lejb;->a:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", eventKey="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lejb;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", chatServerId="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Lejb;->c:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", chatId="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lejb;->o:Ljava/lang/Long;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", messageServerId="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Lejb;->X:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", pushType="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lejb;->Y:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", createdTime="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Lejb;->Z:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", chatType="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lejb;->w0:Lti2;
+    iget-object p0, p0, Lejb;->a:Ljava/util/List;
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -375,60 +91,4 @@
     move-result-object p0
 
     return-object p0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 2
-
-    iget-wide v0, p0, Lejb;->a:J
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
-
-    iget-object v0, p0, Lejb;->b:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    iget-wide v0, p0, Lejb;->c:J
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
-
-    iget-object v0, p0, Lejb;->o:Ljava/lang/Long;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x1
-
-    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
-
-    :goto_0
-    iget-wide v0, p0, Lejb;->X:J
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
-
-    iget-object v0, p0, Lejb;->Y:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    iget-wide v0, p0, Lejb;->Z:J
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
-
-    iget-object p0, p0, Lejb;->w0:Lti2;
-
-    invoke-virtual {p0, p1, p2}, Lti2;->writeToParcel(Landroid/os/Parcel;I)V
-
-    return-void
 .end method

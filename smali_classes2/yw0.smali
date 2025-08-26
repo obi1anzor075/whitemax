@@ -1,178 +1,129 @@
-.class public final synthetic Lyw0;
+.class public final Lyw0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Llfd;
-
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:J
 
-.field public final synthetic b:Ljava/lang/Object;
-
-.field public final synthetic c:Ljava/lang/Object;
-
-.field public final synthetic o:Ljava/lang/Object;
+.field public final b:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+.method public constructor <init>(JLjava/util/ArrayList;)V
     .locals 0
 
-    iput p4, p0, Lyw0;->a:I
-
-    iput-object p1, p0, Lyw0;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Lyw0;->c:Ljava/lang/Object;
-
-    iput-object p3, p0, Lyw0;->o:Ljava/lang/Object;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-wide p1, p0, Lyw0;->a:J
+
+    iput-object p3, p0, Lyw0;->b:Ljava/util/ArrayList;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final k(Lorg/json/JSONObject;)V
-    .locals 3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget v0, p0, Lyw0;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lyw0;->c:Ljava/lang/Object;
-
-    check-cast v0, Lu16;
-
-    iget-object v1, p0, Lyw0;->o:Ljava/lang/Object;
-
-    check-cast v1, Lk26;
-
-    iget-object p0, p0, Lyw0;->b:Ljava/lang/Object;
-
-    check-cast p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;
-
-    invoke-static {p0, v0, v1, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->d(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lu16;Lk26;Lorg/json/JSONObject;)V
-
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Lyw0;->c:Ljava/lang/Object;
-
-    check-cast v0, Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl;
-
-    iget-object v1, p0, Lyw0;->o:Ljava/lang/Object;
-
-    check-cast v1, Ljava/util/Map;
-
-    iget-object p0, p0, Lyw0;->b:Ljava/lang/Object;
-
-    check-cast p0, Llfd;
-
-    invoke-static {p0, v0, v1, p1}, Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl;->c(Llfd;Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl;Ljava/util/Map;Lorg/json/JSONObject;)V
-
-    return-void
-
-    :pswitch_1
-    const-string v0, "rooms"
-
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v1, p0, Lyw0;->b:Ljava/lang/Object;
-
-    check-cast v1, Lotf;
-
-    iget-object v1, v1, Lotf;->a:Ljava/lang/Object;
-
-    check-cast v1, Lul7;
-
-    invoke-virtual {v1, v0}, Lul7;->C(Lorg/json/JSONObject;)Ldgd;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-nez v0, :cond_1
-
-    new-instance v0, Ljava/lang/RuntimeException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Can\'t parse rooms from "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {v0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lyw0;->c:Ljava/lang/Object;
-
-    check-cast p0, Lu16;
-
-    invoke-interface {p0, v0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    if-ne p0, p1, :cond_0
 
     goto :goto_1
 
+    :cond_0
+    instance-of v0, p1, Lyw0;
+
+    if-nez v0, :cond_1
+
+    goto :goto_0
+
     :cond_1
-    iget-object p0, p0, Lyw0;->o:Ljava/lang/Object;
+    check-cast p1, Lyw0;
 
-    check-cast p0, Lu16;
+    iget-wide v0, p0, Lyw0;->a:J
 
-    invoke-interface {p0, v0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-wide v2, p1, Lyw0;->a:J
 
-    :goto_1
-    return-void
+    cmp-long v0, v0, v2
 
-    :pswitch_2
-    iget-object v0, p0, Lyw0;->b:Ljava/lang/Object;
+    if-eqz v0, :cond_2
 
-    check-cast v0, Lgx0;
-
-    iget-object v0, v0, Lgx0;->R1:Lgvf;
-
-    invoke-virtual {v0, p1}, Lgvf;->p(Lorg/json/JSONObject;)Lkn1;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_2
-
-    iget-object p0, p0, Lyw0;->c:Ljava/lang/Object;
-
-    check-cast p0, Lpf3;
-
-    invoke-interface {p0, p1}, Lpf3;->accept(Ljava/lang/Object;)V
-
-    goto :goto_2
+    goto :goto_0
 
     :cond_2
-    iget-object p0, p0, Lyw0;->o:Ljava/lang/Object;
+    iget-object p0, p0, Lyw0;->b:Ljava/util/ArrayList;
 
-    check-cast p0, Ljava/lang/Runnable;
+    iget-object p1, p1, Lyw0;->b:Ljava/util/ArrayList;
 
-    invoke-interface {p0}, Ljava/lang/Runnable;->run()V
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    :goto_2
-    return-void
+    move-result p0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    if-nez p0, :cond_3
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_3
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    iget-wide v0, p0, Lyw0;->a:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Lyw0;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "CacheState(totalSizeBytes="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-wide v1, p0, Lyw0;->a:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", items="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lyw0;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -1,68 +1,161 @@
-.class public final synthetic Lwif;
+.class public final Lwif;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li34;
+.implements Lmj3;
 
 
 # instance fields
-.field public final synthetic X:Z
+.field public final a:Lede;
 
-.field public final synthetic Y:I
+.field public final b:Landroid/graphics/SurfaceTexture;
 
-.field public final synthetic a:J
+.field public final c:Landroid/view/Surface;
 
-.field public final synthetic b:Lbff;
-
-.field public final synthetic c:Ljava/lang/Long;
-
-.field public final synthetic o:Ljava/lang/String;
+.field public final synthetic d:Lxif;
 
 
 # direct methods
-.method public synthetic constructor <init>(JLbff;Ljava/lang/Long;Ljava/lang/String;ZI)V
+.method public constructor <init>(Lxif;Lede;Landroid/graphics/SurfaceTexture;Landroid/view/Surface;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Lwif;->a:J
+    iput-object p1, p0, Lwif;->d:Lxif;
 
-    iput-object p3, p0, Lwif;->b:Lbff;
+    iput-object p2, p0, Lwif;->a:Lede;
 
-    iput-object p4, p0, Lwif;->c:Ljava/lang/Long;
+    iput-object p3, p0, Lwif;->b:Landroid/graphics/SurfaceTexture;
 
-    iput-object p5, p0, Lwif;->o:Ljava/lang/String;
-
-    iput-boolean p6, p0, Lwif;->X:Z
-
-    iput p7, p0, Lwif;->Y:I
+    iput-object p4, p0, Lwif;->c:Landroid/view/Surface;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 9
+.method public final accept(Ljava/lang/Object;)V
+    .locals 5
 
-    new-instance v8, Lone/me/webapp/rootscreen/WebAppRootScreen;
+    check-cast p1, Ltb0;
 
-    iget-wide v1, p0, Lwif;->a:J
+    iget-object v0, p0, Lwif;->b:Landroid/graphics/SurfaceTexture;
 
-    iget-object v3, p0, Lwif;->b:Lbff;
+    iget-object v1, p0, Lwif;->d:Lxif;
 
-    iget-object v4, p0, Lwif;->c:Ljava/lang/Long;
+    iget-object v2, v1, Lxif;->a:Ljava/lang/String;
 
-    iget-object v5, p0, Lwif;->o:Ljava/lang/String;
+    iget p1, p1, Ltb0;->a:I
 
-    iget-boolean v6, p0, Lwif;->X:Z
+    if-eqz p1, :cond_4
 
-    iget v7, p0, Lwif;->Y:I
+    const/4 v3, 0x1
 
-    move-object v0, v8
+    if-eq p1, v3, :cond_3
 
-    invoke-direct/range {v0 .. v7}, Lone/me/webapp/rootscreen/WebAppRootScreen;-><init>(JLbff;Ljava/lang/Long;Ljava/lang/String;ZI)V
+    const/4 v3, 0x2
 
-    return-object v8
+    if-eq p1, v3, :cond_2
+
+    const/4 v3, 0x3
+
+    if-eq p1, v3, :cond_1
+
+    const/4 v3, 0x4
+
+    if-eq p1, v3, :cond_0
+
+    const-string v3, "SerufaceRequest.Result_UNKNOWN_code_"
+
+    invoke-static {p1, v3}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    const-string p1, "WILL_NOT_PROVIDE_SURFACE"
+
+    goto :goto_0
+
+    :cond_1
+    const-string p1, "SURFACE_ALREADY_PROVIDED"
+
+    goto :goto_0
+
+    :cond_2
+    const-string p1, "INVALID_SURFACE"
+
+    goto :goto_0
+
+    :cond_3
+    const-string p1, "REQUEST_CANCELLED"
+
+    goto :goto_0
+
+    :cond_4
+    const-string p1, "SURFACE_USED_SUCCESSFULLY"
+
+    :goto_0
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, "onSurfaceRequestResult event="
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {v2, p1}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v1}, Lxif;->e()V
+
+    iget-object p1, p0, Lwif;->a:Lede;
+
+    iget-object v2, p1, Lede;->a:Ljava/lang/Object;
+
+    monitor-enter v2
+
+    const/4 v3, 0x0
+
+    :try_start_0
+    iput-object v3, p1, Lede;->n:Ldde;
+
+    iput-object v3, p1, Lede;->o:Ljava/util/concurrent/Executor;
+
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {v0, v3}, Landroid/graphics/SurfaceTexture;->setOnFrameAvailableListener(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V
+
+    invoke-virtual {v0}, Landroid/graphics/SurfaceTexture;->release()V
+
+    iget-object p0, p0, Lwif;->c:Landroid/view/Surface;
+
+    invoke-virtual {p0}, Landroid/view/Surface;->release()V
+
+    iget p0, v1, Lxif;->s0:I
+
+    add-int/lit8 p0, p0, -0x1
+
+    iput p0, v1, Lxif;->s0:I
+
+    invoke-virtual {v1}, Lxif;->f()V
+
+    return-void
+
+    :catchall_0
+    move-exception p0
+
+    :try_start_1
+    monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p0
 .end method

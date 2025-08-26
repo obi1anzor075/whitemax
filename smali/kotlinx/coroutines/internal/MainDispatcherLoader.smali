@@ -13,14 +13,14 @@
         "",
         "<init>",
         "()V",
-        "Lzr7;",
+        "Lxw7;",
         "loadMainDispatcher",
-        "()Lzr7;",
+        "()Lxw7;",
         "",
         "FAST_SERVICE_LOADER_ENABLED",
         "Z",
         "dispatcher",
-        "Lzr7;",
+        "Lxw7;",
         "kotlinx-coroutines-core"
     }
     k = 0x1
@@ -29,6 +29,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -37,7 +38,7 @@
 
 .field public static final INSTANCE:Lkotlinx/coroutines/internal/MainDispatcherLoader;
 
-.field public static final dispatcher:Lzr7;
+.field public static final dispatcher:Lxw7;
 
 
 # direct methods
@@ -56,11 +57,11 @@
 
     invoke-static {v1, v2}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp(Ljava/lang/String;Z)Z
 
-    invoke-direct {v0}, Lkotlinx/coroutines/internal/MainDispatcherLoader;->loadMainDispatcher()Lzr7;
+    invoke-direct {v0}, Lkotlinx/coroutines/internal/MainDispatcherLoader;->loadMainDispatcher()Lxw7;
 
     move-result-object v0
 
-    sput-object v0, Lkotlinx/coroutines/internal/MainDispatcherLoader;->dispatcher:Lzr7;
+    sput-object v0, Lkotlinx/coroutines/internal/MainDispatcherLoader;->dispatcher:Lxw7;
 
     return-void
 .end method
@@ -73,7 +74,7 @@
     return-void
 .end method
 
-.method private final loadMainDispatcher()Lzr7;
+.method private final loadMainDispatcher()Lxw7;
     .locals 6
 
     const-class p0, Lkotlinx/coroutines/internal/MainDispatcherFactory;
@@ -93,17 +94,17 @@
 
     move-result-object p0
 
-    new-instance v1, Les;
+    new-instance v1, Lps;
 
-    const/4 v2, 0x7
+    const/4 v2, 0x6
 
-    invoke-direct {v1, v2, p0}, Les;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v1, v2, p0}, Lps;-><init>(ILjava/lang/Object;)V
 
-    new-instance p0, Lle3;
+    new-instance p0, Lii3;
 
-    invoke-direct {p0, v1}, Lle3;-><init>(Ldyc;)V
+    invoke-direct {p0, v1}, Lii3;-><init>(Li4d;)V
 
-    invoke-static {p0}, Lmyc;->U(Ldyc;)Ljava/util/List;
+    invoke-static {p0}, Lr4d;->X(Li4d;)Ljava/util/List;
 
     move-result-object p0
 
@@ -172,22 +173,25 @@
     :goto_0
     check-cast v2, Lkotlinx/coroutines/internal/MainDispatcherFactory;
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_5
 
-    invoke-static {v2, p0}, Lkotlinx/coroutines/internal/MainDispatchersKt;->tryCreateDispatcher(Lkotlinx/coroutines/internal/MainDispatcherFactory;Ljava/util/List;)Lzr7;
+    invoke-static {v2, p0}, Lkotlinx/coroutines/internal/MainDispatchersKt;->tryCreateDispatcher(Lkotlinx/coroutines/internal/MainDispatcherFactory;Ljava/util/List;)Lxw7;
 
     move-result-object p0
 
-    if-nez p0, :cond_5
+    if-nez p0, :cond_4
 
     goto :goto_1
+
+    :cond_4
+    return-object p0
 
     :catchall_0
     move-exception p0
 
     goto :goto_2
 
-    :cond_4
+    :cond_5
     :goto_1
     const/4 p0, 0x3
 
@@ -197,7 +201,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_3
+    return-object p0
 
     :goto_2
     const/4 v1, 0x2
@@ -206,7 +210,5 @@
 
     move-result-object p0
 
-    :cond_5
-    :goto_3
     return-object p0
 .end method

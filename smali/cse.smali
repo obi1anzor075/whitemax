@@ -1,331 +1,140 @@
 .class public final Lcse;
-.super Lqg0;
+.super Lcud;
 .source "SourceFile"
 
 
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lcse;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
 # instance fields
-.field public i:I
+.field public final a:J
 
-.field public j:I
-
-.field public k:Z
-
-.field public l:I
-
-.field public m:[B
-
-.field public n:I
-
-.field public o:J
+.field public final b:J
 
 
-# virtual methods
-.method public final a()Ljava/nio/ByteBuffer;
-    .locals 4
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-super {p0}, Lqg0;->d()Z
+    new-instance v0, Lmrd;
+
+    const/16 v1, 0x14
+
+    invoke-direct {v0, v1}, Lmrd;-><init>(I)V
+
+    sput-object v0, Lcse;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(JJ)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-wide p1, p0, Lcse;->a:J
+
+    iput-wide p3, p0, Lcse;->b:J
+
+    return-void
+.end method
+
+.method public static a(JLpna;)J
+    .locals 6
+
+    invoke-virtual {p2}, Lpna;->u()I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    int-to-long v0, v0
 
-    iget v0, p0, Lcse;->n:I
+    const-wide/16 v2, 0x80
 
-    if-lez v0, :cond_0
+    and-long/2addr v2, v0
 
-    invoke-virtual {p0, v0}, Lqg0;->j(I)Ljava/nio/ByteBuffer;
+    const-wide/16 v4, 0x0
 
-    move-result-object v0
+    cmp-long v2, v2, v4
 
-    iget-object v1, p0, Lcse;->m:[B
+    if-eqz v2, :cond_0
 
-    iget v2, p0, Lcse;->n:I
+    const-wide/16 v2, 0x1
 
-    const/4 v3, 0x0
+    and-long/2addr v0, v2
 
-    invoke-virtual {v0, v1, v3, v2}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
+    const/16 v2, 0x20
 
-    move-result-object v0
+    shl-long/2addr v0, v2
 
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
+    invoke-virtual {p2}, Lpna;->w()J
 
-    iput v3, p0, Lcse;->n:I
+    move-result-wide v2
+
+    or-long/2addr v0, v2
+
+    add-long/2addr v0, p0
+
+    const-wide p0, 0x1ffffffffL
+
+    and-long/2addr p0, v0
+
+    return-wide p0
 
     :cond_0
-    invoke-super {p0}, Lqg0;->a()Ljava/nio/ByteBuffer;
+    const-wide p0, -0x7fffffffffffffffL    # -4.9E-324
+
+    return-wide p0
+.end method
+
+
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "SCTE-35 TimeSignalCommand { ptsTime="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-wide v1, p0, Lcse;->a:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", playbackPositionUs= "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lcse;->b:J
+
+    const-string p0, " }"
+
+    invoke-static {v0, v1, v2, p0}, Lu88;->m(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public final b(Ljava/nio/ByteBuffer;)V
-    .locals 8
-
-    invoke-virtual {p1}, Ljava/nio/Buffer;->position()I
-
-    move-result v0
-
-    invoke-virtual {p1}, Ljava/nio/Buffer;->limit()I
-
-    move-result v1
-
-    sub-int v2, v1, v0
-
-    if-nez v2, :cond_0
-
-    return-void
-
-    :cond_0
-    iget v3, p0, Lcse;->l:I
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->min(II)I
-
-    move-result v3
-
-    iget-wide v4, p0, Lcse;->o:J
-
-    iget-object v6, p0, Lqg0;->b:Lg50;
-
-    iget v6, v6, Lg50;->d:I
-
-    div-int v6, v3, v6
-
-    int-to-long v6, v6
-
-    add-long/2addr v4, v6
-
-    iput-wide v4, p0, Lcse;->o:J
-
-    iget v4, p0, Lcse;->l:I
-
-    sub-int/2addr v4, v3
-
-    iput v4, p0, Lcse;->l:I
-
-    add-int/2addr v0, v3
-
-    invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
-    iget v0, p0, Lcse;->l:I
-
-    if-lez v0, :cond_1
-
-    return-void
-
-    :cond_1
-    sub-int/2addr v2, v3
-
-    iget v0, p0, Lcse;->n:I
-
-    add-int/2addr v0, v2
-
-    iget-object v3, p0, Lcse;->m:[B
-
-    array-length v3, v3
-
-    sub-int/2addr v0, v3
-
-    invoke-virtual {p0, v0}, Lqg0;->j(I)Ljava/nio/ByteBuffer;
-
-    move-result-object v3
-
-    iget v4, p0, Lcse;->n:I
-
-    const/4 v5, 0x0
-
-    invoke-static {v0, v5, v4}, Lmze;->j(III)I
-
-    move-result v4
-
-    iget-object v6, p0, Lcse;->m:[B
-
-    invoke-virtual {v3, v6, v5, v4}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
-
-    sub-int/2addr v0, v4
-
-    invoke-static {v0, v5, v2}, Lmze;->j(III)I
-
-    move-result v0
-
-    invoke-virtual {p1}, Ljava/nio/Buffer;->position()I
-
-    move-result v6
-
-    add-int/2addr v6, v0
-
-    invoke-virtual {p1, v6}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
-
-    invoke-virtual {v3, p1}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
-
-    invoke-virtual {p1, v1}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
-
-    sub-int/2addr v2, v0
-
-    iget v0, p0, Lcse;->n:I
-
-    sub-int/2addr v0, v4
-
-    iput v0, p0, Lcse;->n:I
-
-    iget-object v1, p0, Lcse;->m:[B
-
-    invoke-static {v1, v4, v1, v5, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    iget-object v0, p0, Lcse;->m:[B
-
-    iget v1, p0, Lcse;->n:I
-
-    invoke-virtual {p1, v0, v1, v2}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;
-
-    iget p1, p0, Lcse;->n:I
-
-    add-int/2addr p1, v2
-
-    iput p1, p0, Lcse;->n:I
-
-    invoke-virtual {v3}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
-
-    return-void
-.end method
-
-.method public final d()Z
-    .locals 1
-
-    invoke-super {p0}, Lqg0;->d()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget p0, p0, Lcse;->n:I
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
-.end method
-
-.method public final f(Lg50;)Lg50;
+.method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
 
-    iget v0, p1, Lg50;->c:I
+    iget-wide v0, p0, Lcse;->a:J
 
-    const/4 v1, 0x2
+    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    if-ne v0, v1, :cond_2
+    iget-wide v0, p0, Lcse;->b:J
 
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcse;->k:Z
-
-    iget v0, p0, Lcse;->i:I
-
-    if-nez v0, :cond_1
-
-    iget p0, p0, Lcse;->j:I
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    sget-object p1, Lg50;->e:Lg50;
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :cond_2
-    new-instance p0, Lcom/google/android/exoplayer2/audio/AudioProcessor$UnhandledAudioFormatException;
-
-    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/audio/AudioProcessor$UnhandledAudioFormatException;-><init>(Lg50;)V
-
-    throw p0
-.end method
-
-.method public final g()V
-    .locals 3
-
-    iget-boolean v0, p0, Lcse;->k:Z
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    iput-boolean v1, p0, Lcse;->k:Z
-
-    iget v0, p0, Lcse;->j:I
-
-    iget-object v2, p0, Lqg0;->b:Lg50;
-
-    iget v2, v2, Lg50;->d:I
-
-    mul-int/2addr v0, v2
-
-    new-array v0, v0, [B
-
-    iput-object v0, p0, Lcse;->m:[B
-
-    iget v0, p0, Lcse;->i:I
-
-    mul-int/2addr v0, v2
-
-    iput v0, p0, Lcse;->l:I
-
-    :cond_0
-    iput v1, p0, Lcse;->n:I
-
-    return-void
-.end method
-
-.method public final h()V
-    .locals 5
-
-    iget-boolean v0, p0, Lcse;->k:Z
-
-    if-eqz v0, :cond_1
-
-    iget v0, p0, Lcse;->n:I
-
-    if-lez v0, :cond_0
-
-    iget-wide v1, p0, Lcse;->o:J
-
-    iget-object v3, p0, Lqg0;->b:Lg50;
-
-    iget v3, v3, Lg50;->d:I
-
-    div-int/2addr v0, v3
-
-    int-to-long v3, v0
-
-    add-long/2addr v1, v3
-
-    iput-wide v1, p0, Lcse;->o:J
-
-    :cond_0
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcse;->n:I
-
-    :cond_1
-    return-void
-.end method
-
-.method public final i()V
-    .locals 1
-
-    sget-object v0, Lmze;->f:[B
-
-    iput-object v0, p0, Lcse;->m:[B
+    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
     return-void
 .end method

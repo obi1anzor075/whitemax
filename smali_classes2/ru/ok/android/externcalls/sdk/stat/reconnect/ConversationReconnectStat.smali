@@ -19,16 +19,16 @@
         "",
         "Lru/ok/android/externcalls/sdk/log/ExtLogger;",
         "statReporter",
-        "Lct3;",
+        "Lbw3;",
         "cidProvider",
         "<init>",
-        "(Lru/ok/android/externcalls/sdk/log/ExtLogger;Lct3;)V",
-        "Ljue;",
+        "(Lru/ok/android/externcalls/sdk/log/ExtLogger;Lbw3;)V",
+        "Le5f;",
         "onDisconnected",
         "()V",
         "onConnected",
         "Lru/ok/android/externcalls/sdk/log/ExtLogger;",
-        "Lct3;",
+        "Lbw3;",
         "",
         "wasDisconnected",
         "Z",
@@ -41,6 +41,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -53,7 +54,7 @@
 
 
 # instance fields
-.field private final cidProvider:Lct3;
+.field private final cidProvider:Lbw3;
 
 .field private final statReporter:Lru/ok/android/externcalls/sdk/log/ExtLogger;
 
@@ -68,21 +69,21 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat$Companion;-><init>(Lx54;)V
+    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat$Companion;-><init>(Ll94;)V
 
     sput-object v0, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;->Companion:Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat$Companion;
 
     return-void
 .end method
 
-.method public constructor <init>(Lru/ok/android/externcalls/sdk/log/ExtLogger;Lct3;)V
+.method public constructor <init>(Lru/ok/android/externcalls/sdk/log/ExtLogger;Lbw3;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;->statReporter:Lru/ok/android/externcalls/sdk/log/ExtLogger;
 
-    iput-object p2, p0, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;->cidProvider:Lct3;
+    iput-object p2, p0, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;->cidProvider:Lbw3;
 
     return-void
 .end method
@@ -101,17 +102,17 @@
     :cond_0
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;->statReporter:Lru/ok/android/externcalls/sdk/log/ExtLogger;
 
-    sget-object v1, Ltqd;->B0:Ltqd;
+    iget-object v1, p0, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;->cidProvider:Lbw3;
 
-    iget-object v2, p0, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;->cidProvider:Lct3;
+    check-cast v1, Lcw3;
 
-    check-cast v2, Ldt3;
+    iget-object v1, v1, Lcw3;->a:Ljava/lang/String;
 
-    iget-object v2, v2, Ldt3;->a:Ljava/lang/String;
+    const-string v2, "0"
 
-    const-string v3, "0"
+    sget-object v3, Loyd;->t0:Loyd;
 
-    invoke-virtual {v0, v1, v2, v3}, Lru/ok/android/externcalls/sdk/log/ExtLogger;->logSimple(Ltqd;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v3, v1, v2}, Lru/ok/android/externcalls/sdk/log/ExtLogger;->logSimple(Loyd;Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -129,17 +130,17 @@
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;->statReporter:Lru/ok/android/externcalls/sdk/log/ExtLogger;
 
-    sget-object v1, Ltqd;->B0:Ltqd;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;->cidProvider:Lbw3;
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;->cidProvider:Lct3;
+    check-cast p0, Lcw3;
 
-    check-cast p0, Ldt3;
+    iget-object p0, p0, Lcw3;->a:Ljava/lang/String;
 
-    iget-object p0, p0, Ldt3;->a:Ljava/lang/String;
+    const-string v1, "1"
 
-    const-string v2, "1"
+    sget-object v2, Loyd;->t0:Loyd;
 
-    invoke-virtual {v0, v1, p0, v2}, Lru/ok/android/externcalls/sdk/log/ExtLogger;->logSimple(Ltqd;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v2, p0, v1}, Lru/ok/android/externcalls/sdk/log/ExtLogger;->logSimple(Loyd;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

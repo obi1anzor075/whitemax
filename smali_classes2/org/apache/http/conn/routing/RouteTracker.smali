@@ -330,20 +330,19 @@
 
     if-nez p0, :cond_0
 
-    goto :goto_0
+    return v0
 
     :cond_0
     array-length p0, p0
 
-    add-int/2addr v0, p0
+    add-int/2addr p0, v0
 
-    goto :goto_0
+    return p0
 
     :cond_1
-    const/4 v0, 0x0
+    const/4 p0, 0x0
 
-    :goto_0
-    return v0
+    return p0
 .end method
 
 .method public final getHopTarget(I)Lorg/apache/http/HttpHost;
@@ -365,24 +364,23 @@
 
     aget-object p0, p0, p1
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     iget-object p0, p0, Lorg/apache/http/conn/routing/RouteTracker;->targetHost:Lorg/apache/http/HttpHost;
 
-    :goto_0
     return-object p0
 
     :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "Hop index "
+    const-string v1, " exceeds tracked route length "
 
-    const-string v2, " exceeds tracked route length "
+    const-string v2, "."
 
-    const-string v3, "."
+    const-string v3, "Hop index "
 
-    invoke-static {v1, p1, v2, v0, v3}, Lrf0;->g(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, p1, v1, v0, v2}, Lpg0;->f(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -395,7 +393,7 @@
 
     const-string v0, "Hop index must not be negative: "
 
-    invoke-static {p1, v0}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -429,14 +427,13 @@
 
     const/4 p0, 0x0
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     const/4 v0, 0x0
 
     aget-object p0, p0, v0
 
-    :goto_0
     return-object p0
 .end method
 
@@ -562,12 +559,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -590,12 +586,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -625,7 +620,7 @@
 .end method
 
 .method public final toRoute()Lorg/apache/http/conn/routing/HttpRoute;
-    .locals 8
+    .locals 7
 
     iget-boolean v0, p0, Lorg/apache/http/conn/routing/RouteTracker;->connected:Z
 
@@ -633,10 +628,10 @@
 
     const/4 p0, 0x0
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
-    new-instance v7, Lorg/apache/http/conn/routing/HttpRoute;
+    new-instance v0, Lorg/apache/http/conn/routing/HttpRoute;
 
     iget-object v1, p0, Lorg/apache/http/conn/routing/RouteTracker;->targetHost:Lorg/apache/http/HttpHost;
 
@@ -650,14 +645,9 @@
 
     iget-object v6, p0, Lorg/apache/http/conn/routing/RouteTracker;->layered:Lorg/apache/http/conn/routing/RouteInfo$LayerType;
 
-    move-object v0, v7
-
     invoke-direct/range {v0 .. v6}, Lorg/apache/http/conn/routing/HttpRoute;-><init>(Lorg/apache/http/HttpHost;Ljava/net/InetAddress;[Lorg/apache/http/HttpHost;ZLorg/apache/http/conn/routing/RouteInfo$TunnelType;Lorg/apache/http/conn/routing/RouteInfo$LayerType;)V
 
-    move-object p0, v7
-
-    :goto_0
-    return-object p0
+    return-object v0
 .end method
 
 .method public final toString()Ljava/lang/String;

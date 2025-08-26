@@ -226,7 +226,7 @@
 
     move-result-object p1
 
-    invoke-static {v2, p1}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, p1}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -264,7 +264,7 @@
 
     invoke-virtual {p0, v5}, Lorg/apache/commons/logging/impl/SimpleLog;->setLevel(I)V
 
-    goto :goto_1
+    return-void
 
     :cond_2
     const-string p1, "trace"
@@ -279,7 +279,7 @@
 
     invoke-virtual {p0, p1}, Lorg/apache/commons/logging/impl/SimpleLog;->setLevel(I)V
 
-    goto :goto_1
+    return-void
 
     :cond_3
     const-string p1, "debug"
@@ -294,7 +294,7 @@
 
     invoke-virtual {p0, p1}, Lorg/apache/commons/logging/impl/SimpleLog;->setLevel(I)V
 
-    goto :goto_1
+    return-void
 
     :cond_4
     const-string p1, "info"
@@ -307,7 +307,7 @@
 
     invoke-virtual {p0, v0}, Lorg/apache/commons/logging/impl/SimpleLog;->setLevel(I)V
 
-    goto :goto_1
+    return-void
 
     :cond_5
     const-string p1, "warn"
@@ -322,7 +322,7 @@
 
     invoke-virtual {p0, p1}, Lorg/apache/commons/logging/impl/SimpleLog;->setLevel(I)V
 
-    goto :goto_1
+    return-void
 
     :cond_6
     const-string p1, "error"
@@ -337,7 +337,7 @@
 
     invoke-virtual {p0, p1}, Lorg/apache/commons/logging/impl/SimpleLog;->setLevel(I)V
 
-    goto :goto_1
+    return-void
 
     :cond_7
     const-string p1, "fatal"
@@ -352,7 +352,7 @@
 
     invoke-virtual {p0, p1}, Lorg/apache/commons/logging/impl/SimpleLog;->setLevel(I)V
 
-    goto :goto_1
+    return-void
 
     :cond_8
     const-string p1, "off"
@@ -368,7 +368,6 @@
     invoke-virtual {p0, p1}, Lorg/apache/commons/logging/impl/SimpleLog;->setLevel(I)V
 
     :cond_9
-    :goto_1
     return-void
 .end method
 
@@ -391,17 +390,16 @@
 
     if-nez p0, :cond_0
 
-    goto :goto_0
+    return p1
 
     :cond_0
     const-string p1, "true"
 
     invoke-virtual {p1, p0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    move-result p1
+    move-result p0
 
-    :goto_0
-    return p1
+    return p0
 .end method
 
 .method private static getContextClassLoader()Ljava/lang/ClassLoader;
@@ -538,13 +536,10 @@
 
     if-nez p0, :cond_0
 
-    goto :goto_0
+    return-object p1
 
     :cond_0
-    move-object p1, p0
-
-    :goto_0
-    return-object p1
+    return-object p0
 .end method
 
 
@@ -774,12 +769,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 

@@ -1,89 +1,107 @@
-.class public final synthetic Lkaa;
-.super Ljava/lang/Object;
+.class public final Lkaa;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:I
 
-.field public final synthetic b:Lraa;
+.field public final synthetic Y:Lmaa;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lraa;I)V
+.method public constructor <init>(Lmaa;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    iput p2, p0, Lkaa;->a:I
+    iput-object p1, p0, Lkaa;->Y:Lmaa;
 
-    iput-object p1, p0, Lkaa;->b:Lraa;
+    const/4 p1, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    iget p1, p0, Lkaa;->a:I
+    check-cast p1, Lox3;
 
-    packed-switch p1, :pswitch_data_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object p0, p0, Lkaa;->b:Lraa;
-
-    iget-object p0, p0, Lraa;->G0:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Lkaa;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    check-cast p0, Landroidx/appcompat/widget/AppCompatEditText;
+    check-cast p0, Lkaa;
 
-    const/4 p1, 0x0
+    sget-object p1, Le5f;->a:Le5f;
 
-    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, p1}, Lkaa;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-void
+    move-result-object p0
 
-    :pswitch_0
-    iget-object p0, p0, Lkaa;->b:Lraa;
+    return-object p0
+.end method
 
-    invoke-virtual {p0}, Lraa;->d()V
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
 
-    return-void
+    new-instance p1, Lkaa;
 
-    :pswitch_1
-    iget-object p0, p0, Lkaa;->b:Lraa;
+    iget-object p0, p0, Lkaa;->Y:Lmaa;
 
-    invoke-virtual {p0}, Lraa;->b()V
+    invoke-direct {p1, p0, p2}, Lkaa;-><init>(Lmaa;Lkotlin/coroutines/Continuation;)V
 
-    iget-object p0, p0, Lraa;->y0:Loaa;
+    return-object p1
+.end method
 
-    if-eqz p0, :cond_0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    invoke-interface {p0}, Loaa;->p()V
+    iget v0, p0, Lkaa;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    return-object p1
 
     :cond_0
-    return-void
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    :pswitch_2
-    iget-object p0, p0, Lkaa;->b:Lraa;
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    invoke-virtual {p0}, Lraa;->d()V
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    return-void
+    throw p0
 
-    nop
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    iput v1, p0, Lkaa;->X:I
+
+    iget-object p1, p0, Lkaa;->Y:Lmaa;
+
+    invoke-virtual {p1, p0}, Lmaa;->k(Lbu3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    return-object p0
 .end method

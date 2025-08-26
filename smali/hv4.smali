@@ -1,166 +1,183 @@
 .class public final Lhv4;
-.super Le07;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final g:Lgv4;
+.field public final a:Leb8;
+
+.field public final b:Z
+
+.field public final c:Z
+
+.field public final d:J
+
+.field public final e:I
+
+.field public final f:Lrv4;
 
 
 # direct methods
-.method public constructor <init>(Landroid/widget/TextView;)V
-    .locals 1
+.method public constructor <init>(Leb8;ZZJILrv4;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lgv4;
+    if-eqz p2, :cond_1
 
-    invoke-direct {v0, p1}, Lgv4;-><init>(Landroid/widget/TextView;)V
+    if-nez p3, :cond_0
 
-    iput-object v0, p0, Lhv4;->g:Lgv4;
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 v0, 0x1
+
+    :goto_1
+    const-string v1, "Audio and video cannot both be removed"
+
+    invoke-static {v1, v0}, Lu27;->i(Ljava/lang/Object;Z)V
+
+    iput-object p1, p0, Lhv4;->a:Leb8;
+
+    iput-boolean p2, p0, Lhv4;->b:Z
+
+    iput-boolean p3, p0, Lhv4;->c:Z
+
+    iput-wide p4, p0, Lhv4;->d:J
+
+    iput p6, p0, Lhv4;->e:I
+
+    iput-object p7, p0, Lhv4;->f:Lrv4;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final L(Z)V
-    .locals 2
+.method public final a()Lgv4;
+    .locals 3
 
-    sget-object v0, Lpt4;->p:Lpt4;
+    new-instance v0, Lgv4;
 
-    const/4 v1, 0x1
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz v0, :cond_0
+    iget-object v1, p0, Lhv4;->a:Leb8;
 
-    move v0, v1
+    iput-object v1, v0, Lgv4;->a:Leb8;
 
-    goto :goto_0
+    iget-boolean v1, p0, Lhv4;->b:Z
 
-    :cond_0
-    const/4 v0, 0x0
+    iput-boolean v1, v0, Lgv4;->b:Z
 
-    :goto_0
-    xor-int/2addr v0, v1
+    iget-boolean v1, p0, Lhv4;->c:Z
 
-    if-eqz v0, :cond_1
+    iput-boolean v1, v0, Lgv4;->c:Z
 
-    return-void
+    iget-wide v1, p0, Lhv4;->d:J
 
-    :cond_1
-    iget-object p0, p0, Lhv4;->g:Lgv4;
+    iput-wide v1, v0, Lgv4;->d:J
 
-    invoke-virtual {p0, p1}, Lgv4;->L(Z)V
+    iget v1, p0, Lhv4;->e:I
 
-    return-void
+    iput v1, v0, Lgv4;->e:I
+
+    iget-object p0, p0, Lhv4;->f:Lrv4;
+
+    iput-object p0, v0, Lgv4;->f:Lrv4;
+
+    return-object v0
 .end method
 
-.method public final M(Z)V
-    .locals 2
+.method public final b(J)J
+    .locals 8
 
-    sget-object v0, Lpt4;->p:Lpt4;
+    iget-boolean v0, p0, Lhv4;->b:Z
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lhv4;->f:Lrv4;
+
+    const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
     if-eqz v0, :cond_0
 
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    xor-int/2addr v0, v1
-
-    iget-object p0, p0, Lhv4;->g:Lgv4;
-
-    if-eqz v0, :cond_1
-
-    iput-boolean p1, p0, Lgv4;->i:Z
+    move-wide v5, v3
 
     goto :goto_1
 
-    :cond_1
-    invoke-virtual {p0, p1}, Lgv4;->M(Z)V
+    :cond_0
+    iget-object v0, v2, Lrv4;->a:Lxw6;
 
+    invoke-virtual {v0, v1}, Lxw6;->l(I)Las5;
+
+    move-result-object v0
+
+    move-wide v5, p1
+
+    :goto_0
+    invoke-virtual {v0}, Lq1;->hasNext()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_1
+
+    invoke-virtual {v0}, Lq1;->next()Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Ly50;
+
+    invoke-interface {v7, v5, v6}, Ly50;->f(J)J
+
+    move-result-wide v5
+
+    goto :goto_0
+
+    :cond_1
     :goto_1
-    return-void
-.end method
+    iget-boolean p0, p0, Lhv4;->c:Z
 
-.method public final N(Landroid/text/method/TransformationMethod;)Landroid/text/method/TransformationMethod;
-    .locals 2
+    if-eqz p0, :cond_2
 
-    sget-object v0, Lpt4;->p:Lpt4;
+    move-wide p1, v3
 
-    const/4 v1, 0x1
+    goto :goto_3
 
-    if-eqz v0, :cond_0
+    :cond_2
+    iget-object p0, v2, Lrv4;->b:Lxw6;
 
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    xor-int/2addr v0, v1
-
-    if-eqz v0, :cond_1
-
-    return-object p1
-
-    :cond_1
-    iget-object p0, p0, Lhv4;->g:Lgv4;
-
-    invoke-virtual {p0, p1}, Lgv4;->N(Landroid/text/method/TransformationMethod;)Landroid/text/method/TransformationMethod;
+    invoke-virtual {p0, v1}, Lxw6;->l(I)Las5;
 
     move-result-object p0
 
-    return-object p0
-.end method
+    :goto_2
+    invoke-virtual {p0}, Lq1;->hasNext()Z
 
-.method public final t([Landroid/text/InputFilter;)[Landroid/text/InputFilter;
-    .locals 2
+    move-result v0
 
-    sget-object v0, Lpt4;->p:Lpt4;
+    if-eqz v0, :cond_3
 
-    const/4 v1, 0x1
+    invoke-virtual {p0}, Lq1;->next()Ljava/lang/Object;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    move v0, v1
+    check-cast v0, Lu18;
 
-    goto :goto_0
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    :cond_0
-    const/4 v0, 0x0
+    goto :goto_2
 
-    :goto_0
-    xor-int/2addr v0, v1
+    :cond_3
+    :goto_3
+    invoke-static {v5, v6, p1, p2}, Ljava/lang/Math;->max(JJ)J
 
-    if-eqz v0, :cond_1
+    move-result-wide p0
 
-    return-object p1
-
-    :cond_1
-    iget-object p0, p0, Lhv4;->g:Lgv4;
-
-    invoke-virtual {p0, p1}, Lgv4;->t([Landroid/text/InputFilter;)[Landroid/text/InputFilter;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final z()Z
-    .locals 0
-
-    iget-object p0, p0, Lhv4;->g:Lgv4;
-
-    iget-boolean p0, p0, Lgv4;->i:Z
-
-    return p0
+    return-wide p0
 .end method

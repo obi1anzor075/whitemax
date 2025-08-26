@@ -100,7 +100,7 @@
 
     const/4 p0, 0x0
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     iget-object p0, p0, Lorg/apache/http/impl/conn/AbstractPooledConnAdapter;->poolEntry:Lorg/apache/http/impl/conn/AbstractPoolEntry;
@@ -111,7 +111,6 @@
 
     move-result-object p0
 
-    :goto_0
     return-object p0
 .end method
 

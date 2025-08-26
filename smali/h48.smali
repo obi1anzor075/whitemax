@@ -1,100 +1,146 @@
-.class public final synthetic Lh48;
-.super Ljava/lang/Object;
+.class public final Lh48;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Lm48;
+.implements Ln66;
 
 
 # instance fields
-.field public final synthetic a:Lo48;
+.field public final synthetic X:I
 
-.field public final synthetic b:Ljava/util/List;
+.field public synthetic Y:Lyha;
 
-.field public final synthetic c:I
-
-.field public final synthetic o:J
+.field public final synthetic Z:Landroid/graphics/drawable/GradientDrawable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lo48;Ljava/util/List;IJ)V
+.method public synthetic constructor <init>(Landroid/graphics/drawable/GradientDrawable;Lkotlin/coroutines/Continuation;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p3, p0, Lh48;->X:I
 
-    iput-object p1, p0, Lh48;->a:Lo48;
+    iput-object p1, p0, Lh48;->Z:Landroid/graphics/drawable/GradientDrawable;
 
-    iput-object p2, p0, Lh48;->b:Ljava/util/List;
+    const/4 p1, 0x3
 
-    iput p3, p0, Lh48;->c:I
-
-    iput-wide p4, p0, Lh48;->o:J
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final f(Lnn6;I)V
-    .locals 8
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Lh48;->a:Lo48;
+    iget v0, p0, Lh48;->X:I
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    packed-switch v0, :pswitch_data_0
 
-    new-instance v4, Lit0;
+    check-cast p1, Laq0;
 
-    invoke-static {}, Lws6;->i()Lts6;
+    check-cast p2, Lyha;
 
-    move-result-object v1
+    check-cast p3, Lkotlin/coroutines/Continuation;
 
-    const/4 v2, 0x0
+    new-instance p1, Lh48;
 
-    :goto_0
-    iget-object v3, p0, Lh48;->b:Ljava/util/List;
+    iget-object p0, p0, Lh48;->Z:Landroid/graphics/drawable/GradientDrawable;
 
-    invoke-interface {v3}, Ljava/util/List;->size()I
+    const/4 v0, 0x1
 
-    move-result v5
+    invoke-direct {p1, p0, p3, v0}, Lh48;-><init>(Landroid/graphics/drawable/GradientDrawable;Lkotlin/coroutines/Continuation;I)V
 
-    if-ge v2, v5, :cond_0
+    iput-object p2, p1, Lh48;->Y:Lyha;
 
-    invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    sget-object p0, Le5f;->a:Le5f;
 
-    move-result-object v3
+    invoke-virtual {p1, p0}, Lh48;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    check-cast v3, Ll68;
+    return-object p0
 
-    const/4 v5, 0x1
+    :pswitch_0
+    check-cast p1, Landroid/widget/FrameLayout;
 
-    invoke-virtual {v3, v5}, Ll68;->d(Z)Landroid/os/Bundle;
+    check-cast p2, Lyha;
 
-    move-result-object v3
+    check-cast p3, Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {v1, v3}, Lms6;->a(Ljava/lang/Object;)V
+    new-instance p1, Lh48;
 
-    add-int/lit8 v2, v2, 0x1
+    iget-object p0, p0, Lh48;->Z:Landroid/graphics/drawable/GradientDrawable;
 
-    goto :goto_0
+    const/4 v0, 0x0
 
-    :cond_0
-    invoke-virtual {v1}, Lts6;->j()Le8c;
+    invoke-direct {p1, p0, p3, v0}, Lh48;-><init>(Landroid/graphics/drawable/GradientDrawable;Lkotlin/coroutines/Continuation;I)V
 
-    move-result-object v1
+    iput-object p2, p1, Lh48;->Y:Lyha;
 
-    invoke-direct {v4, v1}, Lit0;-><init>(Ljava/util/List;)V
+    sget-object p0, Le5f;->a:Le5f;
 
-    iget v5, p0, Lh48;->c:I
+    invoke-virtual {p1, p0}, Lh48;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-wide v6, p0, Lh48;->o:J
+    return-object p0
 
-    iget-object v2, v0, Lo48;->c:Lz48;
+    nop
 
-    move-object v1, p1
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    move v3, p2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    invoke-interface/range {v1 .. v7}, Lnn6;->v(Lhn6;ILandroid/os/IBinder;IJ)V
+    iget v0, p0, Lh48;->X:I
 
-    return-void
+    packed-switch v0, :pswitch_data_0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lh48;->Y:Lyha;
+
+    invoke-interface {p1}, Lyha;->a()Ldq2;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ldq2;->r()Ll73;
+
+    move-result-object p1
+
+    iget-object p1, p1, Ll73;->b:Lc63;
+
+    iget-object p1, p1, Lc63;->w:[I
+
+    iget-object p0, p0, Lh48;->Z:Landroid/graphics/drawable/GradientDrawable;
+
+    invoke-virtual {p0, p1}, Landroid/graphics/drawable/GradientDrawable;->setColors([I)V
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
+
+    :pswitch_0
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lh48;->Y:Lyha;
+
+    invoke-interface {p1}, Lyha;->b()Lfe0;
+
+    const/high16 p1, -0x67000000
+
+    iget-object p0, p0, Lh48;->Z:Landroid/graphics/drawable/GradientDrawable;
+
+    invoke-static {p0, p1}, Lgad;->j0(Landroid/graphics/drawable/Drawable;I)V
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

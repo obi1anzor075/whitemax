@@ -2,97 +2,156 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/view/animation/Animation$AnimationListener;
-
 
 # instance fields
-.field public final synthetic a:Ljmd;
+.field public final a:[B
 
-.field public final synthetic b:Landroid/view/ViewGroup;
+.field public final b:Ljava/util/ArrayDeque;
 
-.field public final synthetic c:Landroid/view/View;
+.field public c:I
 
-.field public final synthetic d:Lqa4;
+.field public d:I
+
+.field public e:J
+
+.field public final f:Ljava/lang/Object;
+
+.field public g:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ljmd;Landroid/view/ViewGroup;Landroid/view/View;Lqa4;)V
-    .locals 0
+.method public constructor <init>(I)V
+    .locals 2
+
+    packed-switch p1, :pswitch_data_0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lpa4;->a:Ljmd;
+    const/16 p1, 0x8
 
-    iput-object p2, p0, Lpa4;->b:Landroid/view/ViewGroup;
+    new-array p1, p1, [B
 
-    iput-object p3, p0, Lpa4;->c:Landroid/view/View;
+    iput-object p1, p0, Lpa4;->a:[B
 
-    iput-object p4, p0, Lpa4;->d:Lqa4;
+    new-instance p1, Ljava/util/ArrayDeque;
+
+    invoke-direct {p1}, Ljava/util/ArrayDeque;-><init>()V
+
+    iput-object p1, p0, Lpa4;->b:Ljava/util/ArrayDeque;
+
+    new-instance p1, Labf;
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
+
+    invoke-direct {p1, v0, v1}, Labf;-><init>(IZ)V
+
+    iput-object p1, p0, Lpa4;->f:Ljava/lang/Object;
 
     return-void
+
+    :pswitch_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/16 p1, 0x8
+
+    new-array p1, p1, [B
+
+    iput-object p1, p0, Lpa4;->a:[B
+
+    new-instance p1, Ljava/util/ArrayDeque;
+
+    invoke-direct {p1}, Ljava/util/ArrayDeque;-><init>()V
+
+    iput-object p1, p0, Lpa4;->b:Ljava/util/ArrayDeque;
+
+    new-instance p1, Labf;
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    invoke-direct {p1, v0, v1}, Labf;-><init>(IZ)V
+
+    iput-object p1, p0, Lpa4;->f:Ljava/lang/Object;
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/view/animation/Animation;)V
-    .locals 4
+.method public a(Lx95;I)J
+    .locals 5
 
-    new-instance p1, Lg5;
+    iget-object p0, p0, Lpa4;->a:[B
 
-    iget-object v0, p0, Lpa4;->b:Landroid/view/ViewGroup;
+    const/4 v0, 0x0
 
-    iget-object v1, p0, Lpa4;->c:Landroid/view/View;
+    invoke-interface {p1, p0, v0, p2}, Lx95;->readFully([BII)V
 
-    iget-object v2, p0, Lpa4;->d:Lqa4;
+    const-wide/16 v1, 0x0
 
-    const/16 v3, 0x12
+    :goto_0
+    if-ge v0, p2, :cond_0
 
-    invoke-direct {p1, v0, v1, v2, v3}, Lg5;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+    const/16 p1, 0x8
 
-    invoke-virtual {v0, p1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+    shl-long/2addr v1, p1
 
-    const-string p1, "FragmentManager"
+    aget-byte p1, p0, v0
 
-    const/4 v0, 0x2
+    and-int/lit16 p1, p1, 0xff
 
-    invoke-static {p1, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    int-to-long v3, p1
 
-    move-result p1
+    or-long/2addr v1, v3
 
-    if-eqz p1, :cond_0
+    add-int/lit8 v0, v0, 0x1
 
-    iget-object p0, p0, Lpa4;->a:Ljmd;
-
-    invoke-static {p0}, Ljava/util/Objects;->toString(Ljava/lang/Object;)Ljava/lang/String;
-
-    :cond_0
-    return-void
-.end method
-
-.method public final onAnimationRepeat(Landroid/view/animation/Animation;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final onAnimationStart(Landroid/view/animation/Animation;)V
-    .locals 1
-
-    const-string p1, "FragmentManager"
-
-    const/4 v0, 0x2
-
-    invoke-static {p1, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    iget-object p0, p0, Lpa4;->a:Ljmd;
-
-    invoke-static {p0}, Ljava/util/Objects;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    goto :goto_0
 
     :cond_0
-    return-void
+    return-wide v1
+.end method
+
+.method public b(Ly95;I)J
+    .locals 5
+
+    iget-object p0, p0, Lpa4;->a:[B
+
+    const/4 v0, 0x0
+
+    invoke-interface {p1, p0, v0, p2}, Ly95;->readFully([BII)V
+
+    const-wide/16 v1, 0x0
+
+    :goto_0
+    if-ge v0, p2, :cond_0
+
+    const/16 p1, 0x8
+
+    shl-long/2addr v1, p1
+
+    aget-byte p1, p0, v0
+
+    and-int/lit16 p1, p1, 0xff
+
+    int-to-long v3, p1
+
+    or-long/2addr v1, v3
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-wide v1
 .end method

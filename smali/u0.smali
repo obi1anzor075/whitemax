@@ -37,7 +37,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-boolean v0, Ll1;->o:Z
+    sget-boolean v0, Ln1;->o:Z
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 

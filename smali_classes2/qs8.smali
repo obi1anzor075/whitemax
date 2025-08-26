@@ -1,243 +1,179 @@
-.class public final Lqs8;
+.class public final synthetic Lqs8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lv56;
+
 
 # instance fields
-.field public final a:Li22;
+.field public final synthetic a:I
 
-.field public final b:Lxm8;
-
-.field public final c:Lt97;
-
-.field public final d:Ljava/util/concurrent/CopyOnWriteArraySet;
+.field public final synthetic b:Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;
 
 
 # direct methods
-.method public constructor <init>(Li22;Lxm8;Lr7e;)V
+.method public synthetic constructor <init>(Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;I)V
     .locals 0
 
+    iput p2, p0, Lqs8;->a:I
+
+    iput-object p1, p0, Lqs8;->b:Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lqs8;->a:Li22;
-
-    iput-object p2, p0, Lqs8;->b:Lxm8;
-
-    iput-object p3, p0, Lqs8;->c:Lt97;
-
-    new-instance p1, Ljava/util/concurrent/CopyOnWriteArraySet;
-
-    invoke-direct {p1}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
-
-    iput-object p1, p0, Lqs8;->d:Ljava/util/concurrent/CopyOnWriteArraySet;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/text/Layout;
-    .locals 0
+.method public final invoke()Ljava/lang/Object;
+    .locals 9
 
-    iget-object p0, p0, Lqs8;->c:Lt97;
+    iget v0, p0, Lqs8;->a:I
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    iget-object p0, p0, Lqs8;->b:Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;
+
+    packed-switch v0, :pswitch_data_0
+
+    sget-object v0, Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;->V0:[Lbc7;
+
+    invoke-virtual {p0}, Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;->H0()Llp8;
 
     move-result-object p0
 
-    check-cast p0, Landroid/text/Layout;
-
-    return-object p0
-.end method
-
-.method public final b(Landroid/text/Layout;)V
-    .locals 3
-
-    iget-object p1, p0, Lqs8;->d:Ljava/util/concurrent/CopyOnWriteArraySet;
-
-    invoke-virtual {p1}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lps8;
-
-    check-cast v0, Lts8;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v1, Lzo5;
-
-    const/16 v2, 0x1a
-
-    invoke-direct {v1, v0, v2, p0}, Lzo5;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 6
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lqs8;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    invoke-virtual {p0}, Lqs8;->a()Landroid/text/Layout;
-
-    move-result-object v1
-
-    check-cast p1, Lqs8;
-
-    invoke-virtual {p1}, Lqs8;->a()Landroid/text/Layout;
-
-    move-result-object v3
-
-    if-eq v1, v3, :cond_2
-
-    return v2
-
-    :cond_2
-    const/4 v1, 0x0
-
-    iget-object v3, p0, Lqs8;->a:Li22;
-
-    if-eqz v3, :cond_3
-
-    iget-wide v3, v3, Li22;->a:J
-
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    goto :goto_0
-
-    :cond_3
-    move-object v3, v1
-
-    :goto_0
-    iget-object v4, p1, Lqs8;->a:Li22;
-
-    if-eqz v4, :cond_4
-
-    iget-wide v4, v4, Li22;->a:J
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    :cond_4
-    invoke-static {v3, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_5
-
-    return v2
-
-    :cond_5
-    iget-object p0, p0, Lqs8;->b:Lxm8;
-
-    iget-object p0, p0, Lxm8;->a:Lvo8;
-
-    iget-wide v3, p0, Lhh0;->b:J
-
-    iget-object p0, p1, Lqs8;->b:Lxm8;
-
-    iget-object p0, p0, Lxm8;->a:Lvo8;
-
-    iget-wide p0, p0, Lhh0;->b:J
-
-    cmp-long p0, v3, p0
-
-    if-eqz p0, :cond_6
-
-    return v2
-
-    :cond_6
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 4
-
-    iget-object v0, p0, Lqs8;->a:Li22;
-
-    if-eqz v0, :cond_0
-
-    iget-wide v0, v0, Li22;->a:J
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v0, 0x0
-
-    :goto_1
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget-object v2, p0, Lqs8;->b:Lxm8;
-
-    iget-object v2, v2, Lxm8;->a:Lvo8;
-
-    iget-wide v2, v2, Lhh0;->b:J
-
-    invoke-static {v0, v1, v2, v3}, Lsxe;->m(IIJ)I
-
-    move-result v0
-
-    invoke-virtual {p0}, Lqs8;->a()Landroid/text/Layout;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {p0}, Llp8;->w()Z
 
     move-result p0
 
-    add-int/2addr p0, v0
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    return p0
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_0
+    sget-object v0, Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;->V0:[Lbc7;
+
+    new-instance v1, Llp8;
+
+    iget-object v0, p0, Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;->D0:Lvr;
+
+    sget-object v2, Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;->V0:[Lbc7;
+
+    const/4 v3, 0x6
+
+    aget-object v3, v2, v3
+
+    invoke-virtual {v0, p0}, Lvr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Number;
+
+    invoke-virtual {v0}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide v3
+
+    iget-object v0, p0, Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;->E0:Lvr;
+
+    const/4 v5, 0x7
+
+    aget-object v5, v2, v5
+
+    invoke-virtual {v0, p0}, Lvr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Number;
+
+    invoke-virtual {v0}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide v5
+
+    iget-object v0, p0, Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;->F0:Lvr;
+
+    const/16 v7, 0x8
+
+    aget-object v2, v2, v7
+
+    invoke-virtual {v0, p0}, Lvr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/Number;
+
+    invoke-virtual {p0}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide v7
+
+    move-wide v2, v3
+
+    move-wide v4, v5
+
+    move-wide v6, v7
+
+    invoke-direct/range {v1 .. v7}, Llp8;-><init>(JJJ)V
+
+    return-object v1
+
+    :pswitch_1
+    sget-object v0, Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;->V0:[Lbc7;
+
+    iget-object v0, p0, Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;->G0:Lvr;
+
+    sget-object v1, Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;->V0:[Lbc7;
+
+    const/16 v2, 0x9
+
+    aget-object v3, v1, v2
+
+    invoke-virtual {v0, p0}, Lvr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Boolean;
+
+    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    aget-object v1, v1, v2
+
+    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-virtual {v0, p0, v1}, Lvr;->b(Lone/me/sdk/arch/Widget;Ljava/lang/Object;)V
+
+    invoke-virtual {p0}, Lou3;->getTargetController()Lou3;
+
+    move-result-object p0
+
+    instance-of v0, p0, Lrt3;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Lrt3;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    if-eqz p0, :cond_1
+
+    invoke-interface {p0}, Lrt3;->onDismiss()V
+
+    :cond_1
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

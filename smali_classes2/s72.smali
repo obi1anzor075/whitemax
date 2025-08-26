@@ -1,466 +1,197 @@
-.class public final Ls72;
+.class public final synthetic Ls72;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/io/Serializable;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final A0:Ljava/util/Set;
+.field public final synthetic a:Ln82;
 
-.field public final X:Ljava/util/Set;
+.field public final synthetic b:J
 
-.field public final Y:Ljava/util/Set;
+.field public final synthetic c:Ly42;
 
-.field public final Z:Z
-
-.field public final a:Ljava/lang/String;
-
-.field public final b:Ljava/lang/String;
-
-.field public final c:Ljava/lang/String;
-
-.field public final o:Ljava/util/Set;
-
-.field public final w0:Ljava/util/List;
-
-.field public final x0:J
-
-.field public final y0:Ljava/util/Map;
-
-.field public final z0:Ljava/util/List;
+.field public final synthetic o:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;Ljava/util/Set;Ljava/util/Set;ZLjava/util/List;JLjava/util/Map;Ljava/util/List;Ljava/util/Set;)V
+.method public synthetic constructor <init>(Ln82;JLy42;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ls72;->a:Ljava/lang/String;
+    iput-object p1, p0, Ls72;->a:Ln82;
 
-    iput-object p2, p0, Ls72;->b:Ljava/lang/String;
+    iput-wide p2, p0, Ls72;->b:J
 
-    iput-object p3, p0, Ls72;->c:Ljava/lang/String;
+    iput-object p4, p0, Ls72;->c:Ly42;
 
-    iput-object p4, p0, Ls72;->o:Ljava/util/Set;
-
-    iput-object p5, p0, Ls72;->X:Ljava/util/Set;
-
-    iput-object p6, p0, Ls72;->Y:Ljava/util/Set;
-
-    iput-boolean p7, p0, Ls72;->Z:Z
-
-    iput-object p8, p0, Ls72;->w0:Ljava/util/List;
-
-    iput-wide p9, p0, Ls72;->x0:J
-
-    iput-object p11, p0, Ls72;->y0:Ljava/util/Map;
-
-    iput-object p12, p0, Ls72;->z0:Ljava/util/List;
-
-    iput-object p13, p0, Ls72;->A0:Ljava/util/Set;
+    iput-boolean p5, p0, Ls72;->o:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 7
+.method public final run()V
+    .locals 18
 
-    const/4 v0, 0x1
+    move-object/from16 v0, p0
 
-    if-ne p0, p1, :cond_0
+    iget-object v1, v0, Ls72;->a:Ln82;
 
-    return v0
+    iget-object v2, v1, Ln82;->C:Lje7;
+
+    iget-object v3, v1, Ln82;->h:Ljava/util/concurrent/ConcurrentHashMap;
+
+    iget-object v4, v1, Ln82;->f:Ljava/util/concurrent/ConcurrentHashMap;
+
+    iget-wide v5, v0, Ls72;->b:J
+
+    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v7
+
+    invoke-virtual {v4, v7}, Ljava/util/concurrent/ConcurrentHashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v8
+
+    iget-object v9, v0, Ls72;->c:Ly42;
+
+    invoke-virtual {v4, v8, v9}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v1}, Ln82;->K()J
+
+    move-result-wide v10
+
+    iget-object v4, v9, Ly42;->b:Lj92;
+
+    invoke-virtual {v4, v10, v11}, Lj92;->e(J)Z
+
+    move-result v8
+
+    iget-wide v10, v4, Lj92;->a:J
+
+    if-nez v8, :cond_0
+
+    iget-object v12, v1, Ln82;->c:Ljava/util/concurrent/ConcurrentHashMap;
+
+    iget-wide v13, v4, Lj92;->l:J
+
+    invoke-static {v13, v14}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v13
+
+    invoke-virtual {v12, v13, v9}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
-    instance-of v1, p1, Ls72;
+    if-nez v8, :cond_1
 
-    const/4 v2, 0x0
+    const-wide/16 v12, 0x0
 
-    if-nez v1, :cond_1
+    cmp-long v8, v10, v12
 
-    return v2
+    if-eqz v8, :cond_2
 
     :cond_1
-    check-cast p1, Ls72;
+    iget-object v8, v1, Ln82;->g:Ljava/util/concurrent/ConcurrentHashMap;
 
-    iget-object v1, p1, Ls72;->a:Ljava/lang/String;
+    invoke-static {v10, v11}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    iget-object v3, p0, Ls72;->a:Ljava/lang/String;
+    move-result-object v10
 
-    invoke-static {v3, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
+    invoke-virtual {v8, v10, v9}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_2
-    iget-object v1, p0, Ls72;->b:Ljava/lang/String;
+    iget-object v4, v4, Lj92;->I:Ljava/lang/String;
 
-    iget-object v3, p1, Ls72;->b:Ljava/lang/String;
+    invoke-static {v4}, Lxja;->v(Ljava/lang/CharSequence;)Z
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result v4
 
-    move-result v1
+    if-nez v4, :cond_3
 
-    if-nez v1, :cond_3
+    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    return v2
+    move-result-object v4
 
-    :cond_3
-    iget-object v1, p0, Ls72;->c:Ljava/lang/String;
-
-    iget-object v3, p1, Ls72;->c:Ljava/lang/String;
-
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_4
-
-    return v2
-
-    :cond_4
-    iget-object v1, p0, Ls72;->o:Ljava/util/Set;
-
-    iget-object v3, p1, Ls72;->o:Ljava/util/Set;
-
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_5
-
-    return v2
-
-    :cond_5
-    iget-object v1, p0, Ls72;->X:Ljava/util/Set;
-
-    iget-object v3, p1, Ls72;->X:Ljava/util/Set;
-
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_6
-
-    return v2
-
-    :cond_6
-    iget-object v1, p0, Ls72;->Y:Ljava/util/Set;
-
-    iget-object v3, p1, Ls72;->Y:Ljava/util/Set;
-
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_7
-
-    return v2
-
-    :cond_7
-    iget-boolean v1, p0, Ls72;->Z:Z
-
-    iget-boolean v3, p1, Ls72;->Z:Z
-
-    if-eq v1, v3, :cond_8
-
-    return v2
-
-    :cond_8
-    iget-object v1, p0, Ls72;->w0:Ljava/util/List;
-
-    iget-object v3, p1, Ls72;->w0:Ljava/util/List;
-
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_9
-
-    return v2
-
-    :cond_9
-    iget-wide v3, p0, Ls72;->x0:J
-
-    iget-wide v5, p1, Ls72;->x0:J
-
-    cmp-long v1, v3, v5
-
-    if-eqz v1, :cond_a
-
-    return v2
-
-    :cond_a
-    iget-object v1, p0, Ls72;->y0:Ljava/util/Map;
-
-    iget-object v3, p1, Ls72;->y0:Ljava/util/Map;
-
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_b
-
-    return v2
-
-    :cond_b
-    iget-object v1, p0, Ls72;->z0:Ljava/util/List;
-
-    iget-object v3, p1, Ls72;->z0:Ljava/util/List;
-
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_c
-
-    return v2
-
-    :cond_c
-    iget-object p0, p0, Ls72;->A0:Ljava/util/Set;
-
-    iget-object p1, p1, Ls72;->A0:Ljava/util/Set;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_d
-
-    return v2
-
-    :cond_d
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 4
-
-    iget-object v0, p0, Ls72;->a:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget-object v2, p0, Ls72;->b:Ljava/lang/String;
-
-    invoke-static {v0, v1, v2}, Lme4;->d(IILjava/lang/String;)I
-
-    move-result v0
-
-    iget-object v2, p0, Ls72;->c:Ljava/lang/String;
-
-    if-nez v2, :cond_0
-
-    const/4 v2, 0x0
+    invoke-virtual {v3, v4, v9}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    :cond_0
-    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+    :cond_3
+    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result v2
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     :goto_0
-    add-int/2addr v0, v2
+    if-eqz v7, :cond_5
 
-    mul-int/2addr v0, v1
+    invoke-interface {v2}, Lje7;->getValue()Ljava/lang/Object;
 
-    iget-object v2, p0, Ls72;->o:Ljava/util/Set;
+    move-result-object v3
 
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+    if-eqz v3, :cond_4
 
-    move-result v2
+    invoke-interface {v2}, Lje7;->getValue()Ljava/lang/Object;
 
-    add-int/2addr v2, v0
+    move-result-object v2
 
-    mul-int/2addr v2, v1
+    check-cast v2, Lpx5;
 
-    iget-object v0, p0, Ls72;->X:Ljava/util/Set;
+    invoke-interface {v2, v5, v6, v9}, Lpx5;->d(JLy42;)V
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    :cond_4
+    iget-boolean v0, v0, Ls72;->o:Z
 
-    move-result v0
+    if-eqz v0, :cond_5
 
-    add-int/2addr v0, v2
+    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    mul-int/2addr v0, v1
+    move-result-object v0
 
-    iget-object v2, p0, Ls72;->Y:Ljava/util/Set;
+    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+    move-result-object v11
 
-    move-result v2
+    sget-object v14, Ltg4;->X:Ltg4;
 
-    add-int/2addr v2, v0
+    new-instance v10, Lny2;
 
-    mul-int/2addr v2, v1
+    const/4 v13, 0x0
 
-    iget-boolean v0, p0, Ls72;->Z:Z
+    const/4 v15, 0x0
 
-    invoke-static {v2, v1, v0}, Lth2;->f(IIZ)I
+    const/4 v12, 0x0
 
-    move-result v0
+    const/16 v16, 0x1
 
-    iget-object v2, p0, Ls72;->w0:Ljava/util/List;
+    sget-object v17, Lpz4;->a:Lpz4;
 
-    invoke-static {v2, v0, v1}, Lc3d;->f(Ljava/util/List;II)I
+    invoke-direct/range {v10 .. v17}, Lny2;-><init>(Ljava/util/Collection;ZZLtg4;Lji0;ZLjava/util/Set;)V
 
-    move-result v0
+    iget-object v0, v1, Ln82;->m:Lvu0;
 
-    iget-wide v2, p0, Ls72;->x0:J
+    invoke-virtual {v0, v10}, Lvu0;->c(Ljava/lang/Object;)V
 
-    invoke-static {v0, v1, v2, v3}, Lsxe;->m(IIJ)I
+    invoke-static {v9}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
-    move-result v0
+    move-result-object v0
 
-    iget-object v2, p0, Ls72;->y0:Ljava/util/Map;
+    iget-object v1, v1, Ln82;->G:Lm82;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+    if-eqz v1, :cond_5
 
-    move-result v2
+    invoke-interface {v1, v0}, Lm82;->x(Ljava/util/Collection;)V
 
-    add-int/2addr v2, v0
-
-    mul-int/2addr v2, v1
-
-    iget-object v0, p0, Ls72;->z0:Ljava/util/List;
-
-    invoke-static {v0, v2, v1}, Lc3d;->f(Ljava/util/List;II)I
-
-    move-result v0
-
-    iget-object p0, p0, Ls72;->A0:Ljava/util/Set;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ChatFolder(id="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Ls72;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", title="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Ls72;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", emoji="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Ls72;->c:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", include="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Ls72;->o:Ljava/util/Set;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", favorites="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Ls72;->X:Ljava/util/Set;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", filters="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Ls72;->Y:Ljava/util/Set;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", hideEmpty="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Ls72;->Z:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", elements="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Ls72;->w0:Ljava/util/List;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", creatorId="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Ls72;->x0:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", filterSubjects="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Ls72;->y0:Ljava/util/Map;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", widgets="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Ls72;->z0:Ljava/util/List;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", options="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Ls72;->A0:Ljava/util/Set;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    :cond_5
+    return-void
 .end method

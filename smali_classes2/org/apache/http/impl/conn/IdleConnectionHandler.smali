@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public add(Lorg/apache/http/HttpConnection;JLjava/util/concurrent/TimeUnit;)V
-    .locals 7
+    .locals 6
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -94,9 +94,7 @@
     :cond_0
     iget-object p0, p0, Lorg/apache/http/impl/conn/IdleConnectionHandler;->connectionToTimes:Ljava/util/Map;
 
-    new-instance v6, Lorg/apache/http/impl/conn/IdleConnectionHandler$TimeValues;
-
-    move-object v0, v6
+    new-instance v0, Lorg/apache/http/impl/conn/IdleConnectionHandler$TimeValues;
 
     move-wide v3, p2
 
@@ -104,7 +102,7 @@
 
     invoke-direct/range {v0 .. v5}, Lorg/apache/http/impl/conn/IdleConnectionHandler$TimeValues;-><init>(JJLjava/util/concurrent/TimeUnit;)V
 
-    invoke-interface {p0, p1, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p0, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
@@ -397,13 +395,12 @@
 
     if-gtz p0, :cond_1
 
-    goto :goto_0
+    return v0
 
     :cond_1
-    const/4 v0, 0x0
+    const/4 p0, 0x0
 
-    :goto_0
-    return v0
+    return p0
 .end method
 
 .method public removeAll()V

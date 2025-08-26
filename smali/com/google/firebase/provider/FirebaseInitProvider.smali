@@ -4,14 +4,14 @@
 
 
 # static fields
-.field public static final a:Lsa0;
+.field public static final a:Lkb0;
 
 .field public static final b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
+    .locals 7
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -25,13 +25,11 @@
 
     move-result-wide v5
 
-    new-instance v7, Lsa0;
+    new-instance v0, Lkb0;
 
-    move-object v0, v7
+    invoke-direct/range {v0 .. v6}, Lkb0;-><init>(JJJ)V
 
-    invoke-direct/range {v0 .. v6}, Lsa0;-><init>(JJJ)V
-
-    sput-object v7, Lcom/google/firebase/provider/FirebaseInitProvider;->a:Lsa0;
+    sput-object v0, Lcom/google/firebase/provider/FirebaseInitProvider;->a:Lkb0;
 
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -59,7 +57,7 @@
 
     const-string v0, "FirebaseInitProvider ProviderInfo cannot be null."
 
-    invoke-static {p2, v0}, La24;->p(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkhg;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "com.google.firebase.firebaseinitprovider"
 
@@ -114,29 +112,29 @@
 
     sget-object v0, Lcom/google/firebase/provider/FirebaseInitProvider;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
     :try_start_0
-    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     invoke-virtual {p0}, Landroid/content/ContentProvider;->getContext()Landroid/content/Context;
 
     move-result-object p0
 
-    invoke-static {p0}, Lih5;->e(Landroid/content/Context;)Lih5;
+    invoke-static {p0}, Lqk5;->e(Landroid/content/Context;)Lqk5;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    return v1
+    return v2
 
     :catchall_0
     move-exception p0
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     throw p0
 .end method

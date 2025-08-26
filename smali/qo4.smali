@@ -1,33 +1,31 @@
-.class public abstract Lqo4;
+.class public final Lqo4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# instance fields
+.field public final a:Lfn4;
+
+.field public final b:Z
+
+.field public final c:Ljava/util/ArrayList;
+
+.field public final d:Ljava/lang/Exception;
+
+
 # direct methods
-.method public static a(Ljava/lang/Throwable;)Z
+.method public constructor <init>(Lfn4;ZLjava/util/ArrayList;Ljava/lang/Exception;)V
     .locals 0
 
-    instance-of p0, p0, Landroid/media/MediaDrm$MediaDrmStateException;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return p0
-.end method
+    iput-object p1, p0, Lqo4;->a:Lfn4;
 
-.method public static b(Ljava/lang/Throwable;)I
-    .locals 0
+    iput-boolean p2, p0, Lqo4;->b:Z
 
-    check-cast p0, Landroid/media/MediaDrm$MediaDrmStateException;
+    iput-object p3, p0, Lqo4;->c:Ljava/util/ArrayList;
 
-    invoke-virtual {p0}, Landroid/media/MediaDrm$MediaDrmStateException;->getDiagnosticInfo()Ljava/lang/String;
+    iput-object p4, p0, Lqo4;->d:Ljava/lang/Exception;
 
-    move-result-object p0
-
-    invoke-static {p0}, Loze;->y(Ljava/lang/String;)I
-
-    move-result p0
-
-    invoke-static {p0}, Loze;->x(I)I
-
-    move-result p0
-
-    return p0
+    return-void
 .end method

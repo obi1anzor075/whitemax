@@ -1,254 +1,578 @@
-.class public final Lxy8;
-.super Ll5e;
+.class public final synthetic Lxy8;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lx56;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic a:I
 
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Ljava/util/List;
-
-.field public final synthetic w0:Lzz8;
+.field public final synthetic b:Lone/me/sdk/messagewrite/MessageWriteWidget;
 
 
 # direct methods
-.method public constructor <init>(Lzz8;Ljava/util/List;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(Lone/me/sdk/messagewrite/MessageWriteWidget;I)V
     .locals 0
 
-    iput-object p2, p0, Lxy8;->Z:Ljava/util/List;
+    iput p2, p0, Lxy8;->a:I
 
-    iput-object p1, p0, Lxy8;->w0:Lzz8;
+    iput-object p1, p0, Lxy8;->b:Lone/me/sdk/messagewrite/MessageWriteWidget;
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p3}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 19
 
-    check-cast p1, Lou3;
+    move-object/from16 v0, p0
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget v1, v0, Lxy8;->a:I
 
-    invoke-virtual {p0, p1, p2}, Lxy8;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    const/4 v3, 0x1
 
-    move-result-object p0
+    iget-object v4, v0, Lxy8;->b:Lone/me/sdk/messagewrite/MessageWriteWidget;
 
-    check-cast p0, Lxy8;
+    sget-object v5, Le5f;->a:Le5f;
 
-    sget-object p1, Ljue;->a:Ljue;
+    const/4 v6, 0x0
 
-    invoke-virtual {p0, p1}, Lxy8;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    packed-switch v1, :pswitch_data_0
 
-    move-result-object p0
+    iget-object v9, v0, Lxy8;->b:Lone/me/sdk/messagewrite/MessageWriteWidget;
 
-    return-object p0
-.end method
+    iget-object v0, v9, Lone/me/sdk/messagewrite/MessageWriteWidget;->o0:Lje7;
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 2
+    move-object/from16 v1, p1
 
-    new-instance v0, Lxy8;
+    check-cast v1, Landroid/view/ViewGroup;
 
-    iget-object v1, p0, Lxy8;->Z:Ljava/util/List;
+    sget-object v4, Lone/me/sdk/messagewrite/MessageWriteWidget;->C0:[Lbc7;
 
-    iget-object p0, p0, Lxy8;->w0:Lzz8;
+    new-instance v4, Lpu8;
 
-    invoke-direct {v0, p0, v1, p2}, Lxy8;-><init>(Lzz8;Ljava/util/List;Lkotlin/coroutines/Continuation;)V
+    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    iput-object p1, v0, Lxy8;->Y:Ljava/lang/Object;
+    move-result-object v7
 
-    return-object v0
-.end method
+    invoke-direct {v4, v7}, Lpu8;-><init>(Landroid/content/Context;)V
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 11
+    invoke-virtual {v4}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    sget-object v0, Lpu3;->a:Lpu3;
+    move-result-object v7
 
-    iget v1, p0, Lxy8;->X:I
+    new-instance v10, Laz8;
 
-    sget-object v2, Ljue;->a:Ljue;
+    invoke-virtual {v9}, Lone/me/sdk/messagewrite/MessageWriteWidget;->y0()Luy8;
 
-    const/4 v3, 0x2
+    move-result-object v14
 
-    const/4 v4, 0x0
+    const-string v16, "onEmojiClick(ZZ)V"
 
-    const/4 v5, 0x3
+    const/4 v12, 0x0
 
-    const/4 v6, 0x1
+    const/4 v11, 0x0
 
-    iget-object v7, p0, Lxy8;->w0:Lzz8;
+    const-class v13, Luy8;
 
-    if-eqz v1, :cond_3
+    const-string v15, "onEmojiClick"
 
-    if-eq v1, v6, :cond_2
+    invoke-direct/range {v10 .. v16}, Lq8;-><init>(IILjava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
 
-    if-eq v1, v3, :cond_1
+    new-instance v8, Lf00;
 
-    if-ne v1, v5, :cond_0
+    const/16 v15, 0xf
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-direct {v8, v15, v10}, Lf00;-><init>(ILjava/lang/Object;)V
 
-    goto/16 :goto_4
+    new-instance v10, Landroid/view/GestureDetector;
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    invoke-direct {v10, v7, v8}, Landroid/view/GestureDetector;-><init>(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;)V
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    invoke-virtual {v10, v6}, Landroid/view/GestureDetector;->setIsLongpressEnabled(Z)V
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    new-instance v7, Lc56;
 
-    throw p0
+    const/4 v8, 0x5
 
-    :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-direct {v7, v10, v8}, Lc56;-><init>(Landroid/view/GestureDetector;I)V
 
-    goto :goto_1
+    invoke-virtual {v4, v7}, Lpu8;->setLeftInnerIconTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    :cond_2
-    iget-object v1, p0, Lxy8;->Y:Ljava/lang/Object;
+    invoke-virtual {v4, v3}, Lpu8;->setRightInnerIconVisible(Z)V
 
-    check-cast v1, Lyc4;
+    invoke-virtual {v4}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    move-result-object v7
+
+    move-object v10, v7
+
+    new-instance v7, Ly01;
+
+    const/4 v13, 0x0
+
+    const/16 v14, 0x1d
+
+    move v11, v8
+
+    const/4 v8, 0x0
+
+    move-object v12, v10
+
+    const-class v10, Lone/me/sdk/messagewrite/MessageWriteWidget;
+
+    move/from16 v16, v11
+
+    const-string v11, "onClickAttachPicker"
+
+    move-object/from16 v17, v12
+
+    const-string v12, "onClickAttachPicker()V"
+
+    move/from16 v2, v16
+
+    move-object/from16 v3, v17
+
+    invoke-direct/range {v7 .. v14}, Ly01;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
+
+    new-instance v8, Lf00;
+
+    invoke-direct {v8, v15, v7}, Lf00;-><init>(ILjava/lang/Object;)V
+
+    new-instance v7, Landroid/view/GestureDetector;
+
+    invoke-direct {v7, v3, v8}, Landroid/view/GestureDetector;-><init>(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;)V
+
+    invoke-virtual {v7, v6}, Landroid/view/GestureDetector;->setIsLongpressEnabled(Z)V
+
+    new-instance v3, Lc56;
+
+    invoke-direct {v3, v7, v2}, Lc56;-><init>(Landroid/view/GestureDetector;I)V
+
+    invoke-virtual {v4, v3}, Lpu8;->setRightInnerIconTouchListener(Landroid/view/View$OnTouchListener;)V
+
+    invoke-virtual {v4}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    new-instance v7, Lbz8;
+
+    const/4 v14, 0x0
+
+    const/4 v8, 0x0
+
+    const-class v10, Lone/me/sdk/messagewrite/MessageWriteWidget;
+
+    const-string v11, "onRightOuterIconClick"
+
+    const-string v12, "onRightOuterIconClick()V"
+
+    invoke-direct/range {v7 .. v14}, Lbz8;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
+
+    move-object v3, v7
+
+    new-instance v7, Lbz8;
+
+    const/4 v14, 0x1
+
+    const-class v10, Lone/me/sdk/messagewrite/MessageWriteWidget;
+
+    const-string v11, "onSendLongClick"
+
+    const-string v12, "onSendLongClick()V"
+
+    invoke-direct/range {v7 .. v14}, Lbz8;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
+
+    move-object v15, v7
+
+    new-instance v7, Ltl8;
+
+    const/4 v14, 0x4
+
+    const/4 v8, 0x1
+
+    const-class v10, Lone/me/sdk/messagewrite/MessageWriteWidget;
+
+    const-string v11, "onTouch"
+
+    const-string v12, "onTouch(Landroid/view/MotionEvent;)V"
+
+    invoke-direct/range {v7 .. v14}, Ltl8;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
+
+    new-instance v8, Lh53;
+
+    const/4 v10, 0x2
+
+    invoke-direct {v8, v3, v10, v15}, Lh53;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    new-instance v3, Landroid/view/GestureDetector;
+
+    invoke-direct {v3, v2, v8}, Landroid/view/GestureDetector;-><init>(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;)V
+
+    new-instance v2, Lhf1;
+
+    invoke-direct {v2, v7, v10, v3}, Lhf1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-virtual {v4, v2}, Lpu8;->setRightOuterIconTouchListener(Landroid/view/View$OnTouchListener;)V
+
+    iget-object v2, v9, Lone/me/sdk/messagewrite/MessageWriteWidget;->X:Lvr;
+
+    sget-object v3, Lone/me/sdk/messagewrite/MessageWriteWidget;->C0:[Lbc7;
+
+    aget-object v3, v3, v6
+
+    invoke-virtual {v2, v9}, Lvr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Boolean;
+
+    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v0}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lzd5;
+
+    check-cast v2, Lbe5;
+
+    invoke-virtual {v2}, Lbe5;->t()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v0}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lzd5;
+
+    check-cast v0, Lbe5;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object v2, Lru/ok/tamtam/android/prefs/PmsKey;->video-msg-channels-enabled:Lru/ok/tamtam/android/prefs/PmsKey;
+
+    invoke-virtual {v0, v2, v6}, Ltwc;->k(Lru/ok/tamtam/android/prefs/PmsKey;Z)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
 
     goto :goto_0
 
-    :cond_3
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    :cond_0
+    move v0, v6
 
-    iget-object p1, p0, Lxy8;->Y:Ljava/lang/Object;
+    goto :goto_0
 
-    check-cast p1, Lou3;
+    :cond_1
+    invoke-interface {v0}, Lje7;->getValue()Ljava/lang/Object;
 
-    iget-object v1, p0, Lxy8;->Z:Ljava/util/List;
+    move-result-object v0
 
-    invoke-static {v1}, Lo23;->X(Ljava/util/List;)Ljava/lang/Object;
+    check-cast v0, Lzd5;
 
-    move-result-object v1
+    check-cast v0, Lbe5;
 
-    check-cast v1, Ljava/lang/Long;
+    invoke-virtual {v0}, Lbe5;->t()Z
 
-    if-eqz v1, :cond_8
+    move-result v0
 
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v8
-
-    iget-object v1, v7, Lzz8;->Y:Lpae;
-
-    check-cast v1, Ln3a;
-
-    invoke-virtual {v1}, Ln3a;->b()Lju3;
-
-    move-result-object v1
-
-    new-instance v10, Lwy8;
-
-    invoke-direct {v10, v7, v8, v9, v4}, Lwy8;-><init>(Lzz8;JLkotlin/coroutines/Continuation;)V
-
-    invoke-static {p1, v1, v10, v3}, Lxs7;->d(Lou3;Lju3;Li26;I)Lzc4;
-
-    move-result-object v1
-
-    iget-object p1, v7, Lzz8;->P0:Lt97;
-
-    invoke-interface {p1}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lcr8;
-
-    iput-object v1, p0, Lxy8;->Y:Ljava/lang/Object;
-
-    iput v6, p0, Lxy8;->X:I
-
-    invoke-virtual {p1, v8, v9, p0}, Lcr8;->a(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v0, :cond_4
-
-    return-object v0
-
-    :cond_4
     :goto_0
-    iput-object v4, p0, Lxy8;->Y:Ljava/lang/Object;
+    invoke-virtual {v4, v0}, Lpu8;->setVideoMessageEnabled(Z)V
 
-    iput v3, p0, Lxy8;->X:I
+    new-instance v0, Luh1;
 
-    invoke-interface {v1, p0}, Lyc4;->a(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    const/4 v2, 0x3
 
-    move-result-object p1
+    invoke-direct {v0, v2, v9}, Luh1;-><init>(ILjava/lang/Object;)V
 
-    if-ne p1, v0, :cond_5
+    invoke-virtual {v4, v0}, Lpu8;->setVideoMessageTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    return-object v0
+    iget-object v0, v9, Lone/me/sdk/messagewrite/MessageWriteWidget;->q0:Ljava/lang/Object;
 
-    :cond_5
+    invoke-interface {v0}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    new-instance v0, Lxy8;
+
+    invoke-direct {v0, v9, v6}, Lxy8;-><init>(Lone/me/sdk/messagewrite/MessageWriteWidget;I)V
+
+    new-instance v2, Llf1;
+
+    const/4 v3, 0x7
+
+    invoke-direct {v2, v0, v3, v4}, Llf1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    iget-object v0, v4, Lpu8;->c:Lmu8;
+
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
+
+    :cond_2
+    new-instance v0, Lyy8;
+
+    invoke-direct {v0, v6, v9}, Lyy8;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {v4, v0}, Lpu8;->setInputKeyListener(Landroid/view/View$OnKeyListener;)V
+
+    new-instance v0, Lxy8;
+
+    const/4 v2, 0x1
+
+    invoke-direct {v0, v9, v2}, Lxy8;-><init>(Lone/me/sdk/messagewrite/MessageWriteWidget;I)V
+
+    invoke-virtual {v4, v0}, Lpu8;->setCustomSelectionActionModeCallback(Lx56;)V
+
+    invoke-virtual {v1, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    new-instance v0, Ls12;
+
+    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+
+    sget v2, Lbea;->x:I
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setId(I)V
+
+    new-instance v2, Landroid/widget/FrameLayout$LayoutParams;
+
+    const/4 v3, -0x2
+
+    const/4 v4, -0x1
+
+    invoke-direct {v2, v4, v3}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
+
+    const/16 v3, 0x50
+
+    iput v3, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    invoke-virtual {v0, v6}, Landroid/view/View;->setBackgroundColor(I)V
+
+    invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    return-object v5
+
+    :pswitch_0
+    move-object/from16 v0, p1
+
+    check-cast v0, Landroid/net/Uri;
+
+    sget-object v1, Lone/me/sdk/messagewrite/MessageWriteWidget;->C0:[Lbc7;
+
+    invoke-virtual {v4}, Lone/me/sdk/messagewrite/MessageWriteWidget;->y0()Luy8;
+
+    move-result-object v1
+
+    iget-object v1, v1, Luy8;->v0:Lj35;
+
+    new-instance v2, Ley8;
+
+    invoke-direct {v2, v0}, Ley8;-><init>(Landroid/net/Uri;)V
+
+    invoke-static {v1, v2}, Ljof;->o(Lj35;Ljava/lang/Object;)V
+
+    return-object v5
+
+    :pswitch_1
+    move-object/from16 v0, p1
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    sget-object v1, Lone/me/sdk/messagewrite/MessageWriteWidget;->C0:[Lbc7;
+
+    if-eqz v0, :cond_3
+
+    invoke-virtual {v4}, Lone/me/sdk/messagewrite/MessageWriteWidget;->y0()Luy8;
+
+    move-result-object v0
+
+    const/4 v10, 0x2
+
+    invoke-static {v0, v10}, Luy8;->z(Luy8;I)V
+
+    :cond_3
+    return-object v5
+
+    :pswitch_2
+    move-object/from16 v0, p1
+
+    check-cast v0, Landroid/widget/EditText;
+
+    sget-object v1, Lone/me/sdk/messagewrite/MessageWriteWidget;->C0:[Lbc7;
+
+    new-instance v1, Ltz7;
+
+    new-instance v2, Lcy1;
+
+    const/16 v3, 0x17
+
+    invoke-direct {v2, v3, v4}, Lcy1;-><init>(ILjava/lang/Object;)V
+
+    invoke-direct {v1, v0, v2}, Ltz7;-><init>(Landroid/widget/EditText;Lcy1;)V
+
+    iput-object v1, v4, Lone/me/sdk/messagewrite/MessageWriteWidget;->x0:Ltz7;
+
+    return-object v1
+
+    :pswitch_3
+    move-object/from16 v0, p1
+
+    check-cast v0, Ljava/lang/CharSequence;
+
+    sget-object v1, Lone/me/sdk/messagewrite/MessageWriteWidget;->C0:[Lbc7;
+
+    if-eqz v0, :cond_a
+
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+
+    move-result v1
+
+    const/16 v18, 0x1
+
+    add-int/lit8 v1, v1, -0x1
+
+    move v2, v6
+
+    move v3, v2
+
     :goto_1
-    check-cast p1, Lvo8;
+    if-gt v3, v1, :cond_8
 
-    if-eqz p1, :cond_8
+    if-nez v2, :cond_4
 
-    iput v5, p0, Lxy8;->X:I
-
-    sget-object v1, Lzz8;->I1:[Lk77;
-
-    invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-wide v3, p1, Lvo8;->o:J
-
-    const-wide/16 v5, 0x1
-
-    sub-long/2addr v3, v5
-
-    iget-object p1, v7, Lzz8;->z1:Ll05;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v1, Lyue;
-
-    invoke-direct {v1, v3, v4}, Lyue;-><init>(J)V
-
-    iget-object p1, p1, Ll05;->b:Llc9;
-
-    invoke-interface {p1, v1, p0}, Llc9;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-ne p0, v0, :cond_6
+    move v7, v3
 
     goto :goto_2
 
-    :cond_6
-    move-object p0, v2
+    :cond_4
+    move v7, v1
 
     :goto_2
-    if-ne p0, v0, :cond_7
+    invoke-interface {v0, v7}, Ljava/lang/CharSequence;->charAt(I)C
+
+    move-result v7
+
+    const/16 v8, 0x20
+
+    invoke-static {v7, v8}, Lxq7;->l(II)I
+
+    move-result v7
+
+    if-gtz v7, :cond_5
+
+    const/4 v7, 0x1
 
     goto :goto_3
 
-    :cond_7
-    move-object p0, v2
+    :cond_5
+    move v7, v6
 
     :goto_3
-    if-ne p0, v0, :cond_8
+    if-nez v2, :cond_7
 
-    return-object v0
+    if-nez v7, :cond_6
+
+    const/4 v2, 0x1
+
+    goto :goto_1
+
+    :cond_6
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_1
+
+    :cond_7
+    if-nez v7, :cond_9
 
     :cond_8
+    const/16 v18, 0x1
+
+    goto :goto_4
+
+    :cond_9
+    add-int/lit8 v1, v1, -0x1
+
+    goto :goto_1
+
     :goto_4
-    return-object v2
+    add-int/lit8 v1, v1, 0x1
+
+    invoke-interface {v0, v3, v1}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
+
+    move-result-object v1
+
+    goto :goto_5
+
+    :cond_a
+    const/4 v1, 0x0
+
+    :goto_5
+    if-eqz v1, :cond_c
+
+    invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
+
+    move-result v1
+
+    if-nez v1, :cond_b
+
+    goto :goto_6
+
+    :cond_b
+    if-eqz v0, :cond_c
+
+    invoke-static {v0}, Lj8e;->K0(Ljava/lang/CharSequence;)C
+
+    move-result v0
+
+    const/16 v1, 0xa
+
+    if-ne v0, v1, :cond_c
+
+    invoke-virtual {v4}, Lone/me/sdk/messagewrite/MessageWriteWidget;->C0()V
+
+    :cond_c
+    :goto_6
+    return-object v5
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -14,43 +14,10 @@
 
 
 # virtual methods
-.method public final H0(Landroid/view/MenuItem;)Z
+.method public final m0(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 1
 
-    invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
-
-    move-result p1
-
-    const v0, 0x102002c
-
-    if-eq p1, v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->h1()Lr5;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_1
-
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->c0()Landroidx/fragment/app/b;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
-
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final y0(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
-    .locals 1
-
-    sget p3, Lzrb;->frg_unknown_attach_view:I
+    sget p3, Lqwb;->frg_unknown_attach_view:I
 
     const/4 v0, 0x0
 
@@ -60,9 +27,9 @@
 
     check-cast p1, Lru/ok/messages/views/widgets/SlideOutLayout;
 
-    invoke-virtual {p0}, Lru/ok/messages/media/attaches/fragments/FrgAttachView;->A1()V
+    invoke-virtual {p0}, Lru/ok/messages/media/attaches/fragments/FrgAttachView;->n1()V
 
-    sget p2, Lyqb;->frg_unknown_attach__deleted_view:I
+    sget p2, Lpvb;->frg_unknown_attach__deleted_view:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -86,36 +53,69 @@
 
     invoke-virtual {p2, p3}, Landroid/view/View;->setBackgroundColor(I)V
 
-    new-instance p3, Lf5;
+    new-instance p3, Ld5;
 
-    const/16 v0, 0x8
+    const/16 v0, 0xa
 
-    invoke-direct {p3, v0, p0}, Lf5;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p3, v0, p0}, Ld5;-><init>(ILjava/lang/Object;)V
 
-    invoke-static {p2, p3}, Lat7;->i(Landroid/view/View;Lj6;)Lc97;
+    invoke-static {p2, p3}, Lfc2;->e(Landroid/view/View;Lc6;)Ltd7;
 
-    invoke-virtual {p1, p0}, Lru/ok/messages/views/widgets/SlideOutLayout;->setSlideOutListener(Lojd;)V
+    invoke-virtual {p1, p0}, Lru/ok/messages/views/widgets/SlideOutLayout;->setSlideOutListener(Lbrd;)V
 
     const/4 p3, 0x1
 
-    invoke-virtual {p0, p3}, Landroidx/fragment/app/a;->Z0(Z)V
+    invoke-virtual {p0, p3}, Landroidx/fragment/app/a;->M0(Z)V
 
-    invoke-virtual {p0}, Lru/ok/messages/media/attaches/fragments/FrgAttachView;->w1()Lmif;
+    invoke-virtual {p0}, Lru/ok/messages/media/attaches/fragments/FrgAttachView;->j1()Llx2;
 
     move-result-object p3
 
     if-eqz p3, :cond_0
 
-    invoke-virtual {p3}, Lmif;->m()V
+    invoke-virtual {p3}, Llx2;->o()V
 
     :cond_0
-    invoke-virtual {p0, p1, p2}, Lru/ok/messages/media/attaches/fragments/FrgAttachView;->B1(Lru/ok/messages/views/widgets/SlideOutLayout;Landroid/view/View;)V
+    invoke-virtual {p0, p1, p2}, Lru/ok/messages/media/attaches/fragments/FrgAttachView;->o1(Lru/ok/messages/views/widgets/SlideOutLayout;Landroid/view/View;)V
 
     return-object p1
 .end method
 
-.method public final z1(Z)V
+.method public final m1(Z)V
     .locals 0
 
     return-void
+.end method
+
+.method public final u0(Landroid/view/MenuItem;)Z
+    .locals 1
+
+    invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
+
+    move-result p1
+
+    const v0, 0x102002c
+
+    if-eq p1, v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->U0()Lp5;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->Q()Landroidx/fragment/app/b;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
+
+    :cond_1
+    :goto_0
+    const/4 p0, 0x1
+
+    return p0
 .end method

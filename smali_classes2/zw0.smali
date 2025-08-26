@@ -1,127 +1,157 @@
-.class public final synthetic Lzw0;
-.super Ljava/lang/Object;
+.class public final enum Lzw0;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
 
+# static fields
+.field public static final enum X:Lzw0;
 
-# instance fields
-.field public final synthetic a:I
+.field public static final enum Y:Lzw0;
 
-.field public final synthetic b:Lgx0;
+.field public static final enum Z:Lzw0;
 
-.field public final synthetic c:Ljava/lang/Runnable;
+.field public static final enum a:Lzw0;
+
+.field public static final enum b:Lzw0;
+
+.field public static final enum c:Lzw0;
+
+.field public static final enum o:Lzw0;
+
+.field public static final enum o0:Lzw0;
+
+.field public static final enum p0:Lzw0;
+
+.field public static final synthetic q0:[Lzw0;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lgx0;Ljava/lang/Runnable;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 11
 
-    iput p3, p0, Lzw0;->a:I
+    new-instance v0, Lzw0;
 
-    iput-object p1, p0, Lzw0;->b:Lgx0;
+    const-string v1, "ROOT"
 
-    iput-object p2, p0, Lzw0;->c:Ljava/lang/Runnable;
+    const/4 v2, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lzw0;->a:Lzw0;
+
+    new-instance v1, Lzw0;
+
+    const-string v2, "IMAGES"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lzw0;->b:Lzw0;
+
+    new-instance v2, Lzw0;
+
+    const-string v3, "AUDIO"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lzw0;->c:Lzw0;
+
+    new-instance v3, Lzw0;
+
+    const-string v4, "GIF"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lzw0;->o:Lzw0;
+
+    new-instance v4, Lzw0;
+
+    const-string v5, "STICKERS"
+
+    const/4 v6, 0x4
+
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v4, Lzw0;->X:Lzw0;
+
+    new-instance v5, Lzw0;
+
+    const-string v6, "UPLOAD"
+
+    const/4 v7, 0x5
+
+    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v5, Lzw0;->Y:Lzw0;
+
+    new-instance v6, Lzw0;
+
+    const-string v7, "MUSIC"
+
+    const/4 v8, 0x6
+
+    invoke-direct {v6, v7, v8}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v6, Lzw0;->Z:Lzw0;
+
+    new-instance v7, Lzw0;
+
+    const-string v8, "VIDEO"
+
+    const/4 v9, 0x7
+
+    invoke-direct {v7, v8, v9}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v7, Lzw0;->o0:Lzw0;
+
+    new-instance v8, Lzw0;
+
+    const-string v9, "OTHERS"
+
+    const/16 v10, 0x8
+
+    invoke-direct {v8, v9, v10}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v8, Lzw0;->p0:Lzw0;
+
+    filled-new-array/range {v0 .. v8}, [Lzw0;
+
+    move-result-object v0
+
+    sput-object v0, Lzw0;->q0:[Lzw0;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Lzw0;
+    .locals 1
 
-# virtual methods
-.method public final run()V
-    .locals 18
+    const-class v0, Lzw0;
 
-    move-object/from16 v0, p0
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    iget v1, v0, Lzw0;->a:I
+    move-result-object p0
 
-    packed-switch v1, :pswitch_data_0
+    check-cast p0, Lzw0;
 
-    iget-object v1, v0, Lzw0;->b:Lgx0;
+    return-object p0
+.end method
 
-    iget-object v2, v1, Lgx0;->Z0:Lxwb;
+.method public static values()[Lzw0;
+    .locals 1
 
-    const-string v3, "OKRTCCall"
+    sget-object v0, Lzw0;->q0:[Lzw0;
 
-    const-string v4, "disabling enhancer"
+    invoke-virtual {v0}, [Lzw0;->clone()Ljava/lang/Object;
 
-    invoke-interface {v2, v3, v4}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object v0
 
-    iget-boolean v2, v1, Lgx0;->E0:Z
+    check-cast v0, [Lzw0;
 
-    if-nez v2, :cond_0
-
-    const/4 v2, 0x1
-
-    iput-boolean v2, v1, Lgx0;->e1:Z
-
-    new-instance v2, Lrk9;
-
-    const/4 v15, 0x0
-
-    const/16 v17, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x1
-
-    const/4 v6, 0x1
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    const/4 v11, 0x0
-
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x0
-
-    const/16 v16, 0x0
-
-    move-object v3, v2
-
-    invoke-direct/range {v3 .. v17}, Lrk9;-><init>(ZZZZLorg/webrtc/PeerConnectionFactory$EnhancerKind;Ljava/lang/String;IIIIIZLtg0;I)V
-
-    invoke-virtual {v1, v2}, Lgx0;->F(Lrk9;)V
-
-    iget-object v0, v0, Lzw0;->c:Ljava/lang/Runnable;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-
-    :cond_0
-    return-void
-
-    :pswitch_0
-    iget-object v1, v0, Lzw0;->b:Lgx0;
-
-    iget-object v2, v1, Lgx0;->w0:Landroid/os/Handler;
-
-    new-instance v3, Lzw0;
-
-    iget-object v0, v0, Lzw0;->c:Ljava/lang/Runnable;
-
-    const/4 v4, 0x1
-
-    invoke-direct {v3, v1, v0, v4}, Lzw0;-><init>(Lgx0;Ljava/lang/Runnable;I)V
-
-    invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

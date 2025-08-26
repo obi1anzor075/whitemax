@@ -1,5 +1,5 @@
 .class public Lru/ok/android/externcalls/analytics/internal/upload/UploadService;
-.super Ljjc;
+.super Ltoc;
 .source "SourceFile"
 
 
@@ -15,7 +15,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lr37;-><init>()V
+    invoke-direct {p0}, Lg87;-><init>()V
 
     return-void
 .end method
@@ -30,7 +30,7 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-void
 
     :catch_0
     move-exception p0
@@ -47,7 +47,6 @@
 
     invoke-interface {p1, v0, v1, p0}, Lru/ok/android/externcalls/analytics/log/CallAnalyticsLogger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_0
     return-void
 .end method
 
@@ -56,7 +55,7 @@
 
     sget-object v0, Lru/ok/android/commons/app/ApplicationProvider;->a:Landroid/app/Application;
 
-    invoke-static {}, Lek8;->w()Landroid/app/Application;
+    invoke-static {}, Lq14;->C()Landroid/app/Application;
 
     move-result-object v0
 
@@ -98,7 +97,7 @@
 
     move-result v2
 
-    invoke-static {v0, v1, v2, p0}, Lr37;->enqueueWork(Landroid/content/Context;Ljava/lang/Class;ILandroid/content/Intent;)V
+    invoke-static {v0, v1, v2, p0}, Lg87;->enqueueWork(Landroid/content/Context;Ljava/lang/Class;ILandroid/content/Intent;)V
 
     return-void
 .end method
@@ -110,7 +109,7 @@
 
     if-nez p1, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -119,7 +118,7 @@
 
     if-nez v0, :cond_1
 
-    return-void
+    goto :goto_0
 
     :cond_1
     invoke-virtual {p1}, Landroid/content/Intent;->getData()Landroid/net/Uri;
@@ -143,5 +142,6 @@
     invoke-direct {p0, p1}, Lru/ok/android/externcalls/analytics/internal/upload/UploadService;->onHandleUpload(Ljava/lang/String;)V
 
     :cond_2
+    :goto_0
     return-void
 .end method

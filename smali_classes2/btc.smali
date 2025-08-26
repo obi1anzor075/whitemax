@@ -1,96 +1,87 @@
-.class public final Lbtc;
+.class public interface abstract Lbtc;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ldtc;
 
-
-# instance fields
-.field public final X:Ljava/lang/String;
-
-.field public final Y:Z
-
-.field public final Z:I
-
-.field public final a:J
-
-.field public final b:Ljava/lang/String;
-
-.field public final c:Ljava/lang/CharSequence;
-
-.field public final o:Ljava/lang/String;
-
-.field public final w0:J
-
-.field public final x0:I
+# static fields
+.field public static final a:Latc;
 
 
 # direct methods
-.method public constructor <init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Latc;->a:Latc;
 
-    iput-wide p1, p0, Lbtc;->a:J
-
-    iput-object p3, p0, Lbtc;->b:Ljava/lang/String;
-
-    iput-object p4, p0, Lbtc;->c:Ljava/lang/CharSequence;
-
-    iput-object p5, p0, Lbtc;->o:Ljava/lang/String;
-
-    iput-object p6, p0, Lbtc;->X:Ljava/lang/String;
-
-    iput-boolean p7, p0, Lbtc;->Y:Z
-
-    const/4 p3, 0x0
-
-    iput p3, p0, Lbtc;->Z:I
-
-    const-wide/16 p3, 0x0
-
-    cmp-long p3, p1, p3
-
-    if-gez p3, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    neg-long p1, p1
-
-    :goto_0
-    iput-wide p1, p0, Lbtc;->w0:J
-
-    sget p1, Lrca;->r:I
-
-    iput p1, p0, Lbtc;->x0:I
+    sput-object v0, Lbtc;->a:Latc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 0
-
-    iget p0, p0, Lbtc;->Z:I
-
-    return p0
-.end method
-
-.method public final getItemId()J
+.method public a()Ljava/lang/String;
     .locals 2
 
-    iget-wide v0, p0, Lbtc;->w0:J
+    check-cast p0, Lrd;
 
-    return-wide v0
+    new-instance v0, Ljava/util/Date;
+
+    invoke-direct {v0}, Ljava/util/Date;-><init>()V
+
+    iget-object p0, p0, Lrd;->d:Lze7;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {v0}, Lze7;->a(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v0, "MOV_"
+
+    const-string v1, ".mp4"
+
+    invoke-static {v0, p0, v1}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public final l()I
-    .locals 0
+.method public b(Z)Ljava/lang/String;
+    .locals 2
 
-    iget p0, p0, Lbtc;->x0:I
+    check-cast p0, Lrd;
 
-    return p0
+    new-instance v0, Ljava/util/Date;
+
+    invoke-direct {v0}, Ljava/util/Date;-><init>()V
+
+    iget-object p0, p0, Lrd;->d:Lze7;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {v0}, Lze7;->a(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object p0
+
+    if-eqz p1, :cond_0
+
+    const-string p1, "gif"
+
+    goto :goto_0
+
+    :cond_0
+    const-string p1, "jpg"
+
+    :goto_0
+    const-string v0, "IMG_"
+
+    const-string v1, "."
+
+    invoke-static {v0, p0, v1, p1}, Lv04;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

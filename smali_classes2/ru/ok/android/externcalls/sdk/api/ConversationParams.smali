@@ -6,10 +6,10 @@
 # static fields
 .field private static final LOG_TAG:Ljava/lang/String; = "ConversationParams"
 
-.field public static final PARSER:Lh67;
+.field public static final PARSER:Lza7;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lh67;"
+            "Lza7;"
         }
     .end annotation
 .end field
@@ -53,13 +53,13 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Lno3;
+    new-instance v0, Ltv3;
 
-    const/4 v1, 0x7
+    const/4 v1, 0x6
 
-    invoke-direct {v0, v1}, Lno3;-><init>(I)V
+    invoke-direct {v0, v1}, Ltv3;-><init>(I)V
 
-    sput-object v0, Lru/ok/android/externcalls/sdk/api/ConversationParams;->PARSER:Lh67;
+    sput-object v0, Lru/ok/android/externcalls/sdk/api/ConversationParams;->PARSER:Lza7;
 
     return-void
 .end method
@@ -78,10 +78,10 @@
     return-void
 .end method
 
-.method public static synthetic a(Lm67;)Lru/ok/android/externcalls/sdk/api/ConversationParams;
+.method public static synthetic a(Ldb7;)Lru/ok/android/externcalls/sdk/api/ConversationParams;
     .locals 0
 
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/api/ConversationParams;->parseCallParams(Lm67;)Lru/ok/android/externcalls/sdk/api/ConversationParams;
+    invoke-static {p0}, Lru/ok/android/externcalls/sdk/api/ConversationParams;->parseCallParams(Ldb7;)Lru/ok/android/externcalls/sdk/api/ConversationParams;
 
     move-result-object p0
 
@@ -89,7 +89,7 @@
 .end method
 
 .method public static decode(Ljava/lang/String;)Lru/ok/android/externcalls/sdk/api/ConversationParams;
-    .locals 4
+    .locals 3
 
     :try_start_0
     const-string v0, ":"
@@ -102,11 +102,9 @@
 
     const/4 v1, 0x2
 
-    const/4 v2, 0x0
-
     if-ge v0, v1, :cond_0
 
-    return-object v2
+    goto :goto_0
 
     :cond_0
     const/4 v0, 0x0
@@ -119,12 +117,12 @@
 
     if-gtz v1, :cond_1
 
-    return-object v2
+    goto :goto_0
 
     :cond_1
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    aget-object p0, p0, v3
+    aget-object p0, p0, v2
 
     invoke-static {p0, v0}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
 
@@ -138,7 +136,10 @@
 
     if-eq p0, v1, :cond_2
 
-    return-object v2
+    :goto_0
+    const/4 p0, 0x0
+
+    return-object p0
 
     :cond_2
     new-instance p0, Lorg/json/JSONObject;
@@ -169,7 +170,7 @@
     throw v0
 .end method
 
-.method private static parseCallParams(Lm67;)Lru/ok/android/externcalls/sdk/api/ConversationParams;
+.method private static parseCallParams(Ldb7;)Lru/ok/android/externcalls/sdk/api/ConversationParams;
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -179,7 +180,7 @@
     .end annotation
 
     .line 36
-    invoke-static {p0}, Lgwf;->D(Lm67;)Lorg/json/JSONObject;
+    invoke-static {p0}, Lzx7;->T(Ldb7;)Lorg/json/JSONObject;
 
     move-result-object p0
 
@@ -726,9 +727,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v2
+    sget-object v2, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     :cond_1
     new-instance p0, Lru/ok/android/externcalls/sdk/rate/RateCallData;
@@ -817,7 +816,7 @@
 
     const-string v1, "\'}"
 
-    invoke-static {v0, p0, v1}, Lwn6;->l(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lm26;->j(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

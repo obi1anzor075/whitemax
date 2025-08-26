@@ -1,58 +1,67 @@
 .class public final Lyjd;
-.super Ljava/lang/Object;
+.super Lp3;
 .source "SourceFile"
-
-# interfaces
-.implements Ldyc;
 
 
 # instance fields
-.field public final synthetic a:Ldyc;
+.field public a:J
 
-.field public final synthetic b:I
-
-.field public final synthetic c:I
-
-.field public final synthetic d:Z
-
-
-# direct methods
-.method public constructor <init>(Les;II)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lyjd;->a:Ldyc;
-
-    iput p2, p0, Lyjd;->b:I
-
-    iput p3, p0, Lyjd;->c:I
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lyjd;->d:Z
-
-    return-void
-.end method
+.field public b:Lqy1;
 
 
 # virtual methods
-.method public final iterator()Ljava/util/Iterator;
-    .locals 3
+.method public final a(Lo3;)Z
+    .locals 4
 
-    iget-object v0, p0, Lyjd;->a:Ldyc;
+    check-cast p1, Lwjd;
 
-    invoke-interface {v0}, Ldyc;->iterator()Ljava/util/Iterator;
+    iget-wide v0, p0, Lyjd;->a:J
 
-    move-result-object v0
+    const-wide/16 v2, 0x0
 
-    iget v1, p0, Lyjd;->b:I
+    cmp-long v0, v0, v2
 
-    iget v2, p0, Lyjd;->c:I
+    if-ltz v0, :cond_0
 
-    iget-boolean p0, p0, Lyjd;->d:Z
+    const/4 p0, 0x0
 
-    invoke-static {v0, v1, v2, p0}, Lpfa;->G(Ljava/util/Iterator;IIZ)Ljava/util/Iterator;
+    return p0
+
+    :cond_0
+    iget-wide v0, p1, Lwjd;->p0:J
+
+    iget-wide v2, p1, Lwjd;->q0:J
+
+    cmp-long v2, v0, v2
+
+    if-gez v2, :cond_1
+
+    iput-wide v0, p1, Lwjd;->q0:J
+
+    :cond_1
+    iput-wide v0, p0, Lyjd;->a:J
+
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final b(Lo3;)[Lkotlin/coroutines/Continuation;
+    .locals 4
+
+    check-cast p1, Lwjd;
+
+    iget-wide v0, p0, Lyjd;->a:J
+
+    const-wide/16 v2, -0x1
+
+    iput-wide v2, p0, Lyjd;->a:J
+
+    const/4 v2, 0x0
+
+    iput-object v2, p0, Lyjd;->b:Lqy1;
+
+    invoke-virtual {p1, v0, v1}, Lwjd;->y(J)[Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 

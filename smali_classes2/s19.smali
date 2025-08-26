@@ -1,65 +1,83 @@
 .class public final Ls19;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lv19;
 
 
 # instance fields
-.field public A0:J
-
-.field public synthetic B0:Ljava/lang/Object;
-
-.field public final synthetic C0:Lx19;
-
-.field public D0:I
-
-.field public X:Ljava/lang/Object;
-
-.field public Y:Ljava/lang/Object;
-
-.field public Z:[J
-
-.field public o:Lx19;
-
-.field public w0:I
-
-.field public x0:I
-
-.field public y0:I
-
-.field public z0:I
+.field public final a:I
 
 
 # direct methods
-.method public constructor <init>(Lx19;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(I)V
     .locals 0
 
-    iput-object p1, p0, Ls19;->C0:Lx19;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput p1, p0, Ls19;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-    iput-object p1, p0, Ls19;->B0:Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    iget p1, p0, Ls19;->D0:I
+    if-ne p0, p1, :cond_0
 
-    const/high16 v0, -0x80000000
+    return v0
 
-    or-int/2addr p1, v0
+    :cond_0
+    instance-of v1, p1, Ls19;
 
-    iput p1, p0, Ls19;->D0:I
+    const/4 v2, 0x0
 
-    iget-object p1, p0, Ls19;->C0:Lx19;
+    if-nez v1, :cond_1
 
-    const/4 v0, 0x0
+    return v2
 
-    invoke-virtual {p1, v0, p0}, Lx19;->j(Lzb9;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    :cond_1
+    check-cast p1, Ls19;
+
+    iget p0, p0, Ls19;->a:I
+
+    iget p1, p1, Ls19;->a:I
+
+    if-eq p0, p1, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    iget p0, p0, Ls19;->a:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    const-string v0, "ProcessClickMultiSelect(actionId="
+
+    const-string v1, ")"
+
+    iget p0, p0, Ls19;->a:I
+
+    invoke-static {p0, v0, v1}, Lpg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

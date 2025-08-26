@@ -2,20 +2,23 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lv56;
+
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Lf25;
+.field public final synthetic b:Lone/me/settings/privacy/ui/pincode/EnterPinCodeScreen;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lf25;I)V
+.method public synthetic constructor <init>(Lone/me/settings/privacy/ui/pincode/EnterPinCodeScreen;I)V
     .locals 0
 
     iput p2, p0, La25;->a:I
 
-    iput-object p1, p0, La25;->b:Lf25;
+    iput-object p1, p0, La25;->b:Lone/me/settings/privacy/ui/pincode/EnterPinCodeScreen;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,41 +27,57 @@
 
 
 # virtual methods
-.method public final a(J)V
+.method public final invoke()Ljava/lang/Object;
     .locals 2
 
     iget v0, p0, La25;->a:I
 
+    sget-object v1, Le5f;->a:Le5f;
+
+    iget-object p0, p0, La25;->b:Lone/me/settings/privacy/ui/pincode/EnterPinCodeScreen;
+
     packed-switch v0, :pswitch_data_0
 
-    const-wide/16 v0, -0x1
+    sget-object v0, Lone/me/settings/privacy/ui/pincode/EnterPinCodeScreen;->X:[Lbc7;
 
-    cmp-long v0, p1, v0
+    iget-object p0, p0, Lone/me/settings/privacy/ui/pincode/EnterPinCodeScreen;->c:Lje7;
 
-    if-eqz v0, :cond_0
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
-    iget-object p0, p0, La25;->b:Lf25;
+    move-result-object p0
 
-    invoke-virtual {p0, p1, p2}, Lf25;->a(J)V
+    check-cast p0, Lg25;
+
+    iget-boolean v0, p0, Lg25;->p0:Z
+
+    if-nez v0, :cond_0
+
+    iget-object p0, p0, Lg25;->Z:Lj35;
+
+    invoke-static {p0, v1}, Ljof;->o(Lj35;Ljava/lang/Object;)V
 
     :cond_0
-    return-void
+    return-object v1
 
     :pswitch_0
-    const-wide/16 v0, -0x1
+    sget-object v0, Lone/me/settings/privacy/ui/pincode/EnterPinCodeScreen;->X:[Lbc7;
 
-    cmp-long v0, p1, v0
+    invoke-virtual {p0}, Lou3;->getView()Landroid/view/View;
 
-    if-eqz v0, :cond_1
+    move-result-object v0
 
-    iget-object p0, p0, La25;->b:Lf25;
+    invoke-static {v0}, Lsbg;->w(Landroid/view/View;)V
 
-    invoke-virtual {p0, p1, p2}, Lf25;->a(J)V
+    invoke-virtual {p0}, Lou3;->getOnBackPressedDispatcher()Ld1a;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_1
+
+    invoke-virtual {p0}, Ld1a;->d()V
 
     :cond_1
-    return-void
-
-    nop
+    return-object v1
 
     :pswitch_data_0
     .packed-switch 0x0

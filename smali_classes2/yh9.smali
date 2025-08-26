@@ -1,71 +1,104 @@
-.class public final Lyh9;
+.class public final synthetic Lyh9;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lpc1;
+.implements Lmj3;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/CopyOnWriteArraySet;
+.field public final synthetic a:Lai9;
+
+.field public final synthetic b:Z
+
+.field public final synthetic c:Landroid/net/Uri;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public synthetic constructor <init>(Lai9;ZLandroid/net/Uri;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
+    iput-object p1, p0, Lyh9;->a:Lai9;
 
-    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
+    iput-boolean p2, p0, Lyh9;->b:Z
 
-    iput-object v0, p0, Lyh9;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
+    iput-object p3, p0, Lyh9;->c:Landroid/net/Uri;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCallParticipantNetworkStatusChanged(Ljava/util/List;)V
-    .locals 1
+.method public final accept(Ljava/lang/Object;)V
+    .locals 4
 
-    move-object v0, p1
+    check-cast p1, Lxkf;
 
-    check-cast v0, Ljava/util/ArrayList;
+    iget-object v0, p0, Lyh9;->a:Lai9;
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+    iget-object v1, v0, Lai9;->c:Lge8;
 
-    move-result v0
+    check-cast v1, Lyp7;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v1}, Lyp7;->k()Z
 
-    return-void
+    move-result v1
 
-    :cond_0
-    iget-object p0, p0, Lyh9;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
+    iput-boolean v1, p1, Lxkf;->e:Z
 
-    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
+    iget-object v1, v0, Lai9;->w0:Lv10;
 
-    move-result-object p0
+    iget-boolean v2, v1, Lv10;->g:Z
 
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    iput-boolean v2, p1, Lxkf;->f:Z
 
-    move-result v0
+    iget-object v2, v0, Lai9;->p0:Lx4b;
 
-    if-eqz v0, :cond_1
+    invoke-static {v2, v1}, Lzx7;->f0(Lx4b;Lv10;)Z
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result v1
 
-    move-result-object v0
+    iput-boolean v1, p1, Lxkf;->g:Z
 
-    check-cast v0, Lpc1;
+    iget-boolean v1, p0, Lyh9;->b:Z
 
-    invoke-interface {v0, p1}, Lpc1;->onCallParticipantNetworkStatusChanged(Ljava/util/List;)V
+    iput-boolean v1, p1, Lxkf;->h:Z
 
-    goto :goto_0
+    iget-object v1, v0, Lai9;->w0:Lv10;
 
-    :cond_1
+    iget-wide v2, v1, Lv10;->c:J
+
+    iput-wide v2, p1, Lxkf;->i:J
+
+    iget-wide v2, v1, Lv10;->k:J
+
+    iput-wide v2, p1, Lxkf;->j:J
+
+    const/4 v2, 0x0
+
+    iput-object v2, p1, Lxkf;->m:Lhef;
+
+    iput-object v1, p1, Lxkf;->n:Lv10;
+
+    iput-object v2, p1, Lxkf;->o:Landroid/graphics/drawable/BitmapDrawable;
+
+    iget-object p0, p0, Lyh9;->c:Landroid/net/Uri;
+
+    iput-object p0, p1, Lxkf;->p:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Lai9;->W0()Z
+
+    const/4 p0, 0x1
+
+    iput-boolean p0, p1, Lxkf;->r:Z
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p1, Lxkf;->s:Z
+
+    iput-boolean p0, p1, Lxkf;->q:Z
+
     return-void
 .end method

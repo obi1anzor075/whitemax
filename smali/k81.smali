@@ -1,26 +1,26 @@
 .class public final Lk81;
-.super Ll5e;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Ll66;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public synthetic X:Z
 
-.field public final synthetic Y:Lone/me/calls/ui/ui/indicator/CallIndicatorWidget;
+.field public final synthetic Y:Ln81;
 
 
 # direct methods
-.method public constructor <init>(Lone/me/calls/ui/ui/indicator/CallIndicatorWidget;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Ln81;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    iput-object p1, p0, Lk81;->Y:Lone/me/calls/ui/ui/indicator/CallIndicatorWidget;
+    iput-object p1, p0, Lk81;->Y:Ln81;
 
     const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -30,55 +30,148 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    check-cast p1, Ljava/lang/String;
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {p0, p1, p2}, Lk81;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0, p1, p2}, Lk81;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
     check-cast p0, Lk81;
 
-    sget-object p1, Ljue;->a:Ljue;
+    sget-object p1, Le5f;->a:Le5f;
 
     invoke-virtual {p0, p1}, Lk81;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object p1
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .locals 1
 
     new-instance v0, Lk81;
 
-    iget-object p0, p0, Lk81;->Y:Lone/me/calls/ui/ui/indicator/CallIndicatorWidget;
+    iget-object p0, p0, Lk81;->Y:Ln81;
 
-    invoke-direct {v0, p0, p2}, Lk81;-><init>(Lone/me/calls/ui/ui/indicator/CallIndicatorWidget;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, p0, p2}, Lk81;-><init>(Ln81;Lkotlin/coroutines/Continuation;)V
 
-    iput-object p1, v0, Lk81;->X:Ljava/lang/Object;
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p0
+
+    iput-boolean p0, v0, Lk81;->X:Z
 
     return-object v0
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+    .locals 6
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lk81;->X:Ljava/lang/Object;
+    iget-boolean p1, p0, Lk81;->X:Z
 
-    check-cast p1, Ljava/lang/String;
+    if-eqz p1, :cond_0
 
-    iget-object p0, p0, Lk81;->Y:Lone/me/calls/ui/ui/indicator/CallIndicatorWidget;
+    sget-object p1, Lgz4;->a:Lgz4;
 
-    invoke-static {p0}, Lone/me/calls/ui/ui/indicator/CallIndicatorWidget;->l0(Lone/me/calls/ui/ui/indicator/CallIndicatorWidget;)Lz71;
+    goto :goto_1
 
-    move-result-object p0
+    :cond_0
+    sget-object p1, Lo81;->X:Ln25;
 
-    invoke-virtual {p0, p1}, Lz71;->setTime(Ljava/lang/CharSequence;)V
+    new-instance v0, Ljava/util/ArrayList;
 
-    sget-object p0, Ljue;->a:Ljue;
+    const/16 v1, 0xa
+
+    invoke-static {p1, v1}, Lr43;->k0(Ljava/lang/Iterable;I)I
+
+    move-result v1
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+
+    new-instance v1, Lv1;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, v2, p1}, Lv1;-><init>(ILjava/lang/Object;)V
+
+    :goto_0
+    invoke-virtual {v1}, Lv1;->hasNext()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {v1}, Lv1;->next()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lo81;
+
+    new-instance v2, Lp81;
+
+    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v3
+
+    iget v4, p1, Lo81;->a:I
+
+    invoke-direct {v2, v3, v4, p1}, Lp81;-><init>(IILo81;)V
+
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_1
+    move-object p1, v0
+
+    :goto_1
+    iget-object p0, p0, Lk81;->Y:Ln81;
+
+    iget-object v0, p0, Ln81;->p0:Lazd;
+
+    :cond_2
+    invoke-virtual {v0}, Lazd;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v2, v1
+
+    check-cast v2, Lis1;
+
+    iget-object v3, p0, Ln81;->Y:Ljava/lang/Object;
+
+    invoke-interface {v3}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Boolean;
+
+    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v3
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x4
+
+    invoke-static {v2, p1, v3, v4, v5}, Lis1;->a(Lis1;Ljava/util/List;ZZI)Lis1;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lazd;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 .end method

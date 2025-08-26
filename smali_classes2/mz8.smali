@@ -1,36 +1,26 @@
 .class public final Lmz8;
-.super Ll5e;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic X:Lzz8;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic Y:Lvo8;
-
-.field public final synthetic Z:Z
-
-.field public final synthetic w0:Lo10;
+.field public final synthetic Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
 
 
 # direct methods
-.method public constructor <init>(Lzz8;Lvo8;ZLo10;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/MessageWriteWidget;)V
     .locals 0
 
-    iput-object p1, p0, Lmz8;->X:Lzz8;
+    iput-object p2, p0, Lmz8;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
 
-    iput-object p2, p0, Lmz8;->Y:Lvo8;
+    const/4 p2, 0x2
 
-    iput-boolean p3, p0, Lmz8;->Z:Z
-
-    iput-object p4, p0, Lmz8;->w0:Lo10;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p5}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2, p1}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -40,69 +30,49 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    check-cast p1, Lou3;
-
     check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {p0, p1, p2}, Lmz8;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0, p1, p2}, Lmz8;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
     check-cast p0, Lmz8;
 
-    sget-object p1, Ljue;->a:Ljue;
+    sget-object p1, Le5f;->a:Le5f;
 
     invoke-virtual {p0, p1}, Lmz8;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object p1
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 6
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    new-instance p1, Lmz8;
+    new-instance v0, Lmz8;
 
-    iget-boolean v3, p0, Lmz8;->Z:Z
+    iget-object p0, p0, Lmz8;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
 
-    iget-object v4, p0, Lmz8;->w0:Lo10;
+    invoke-direct {v0, p2, p0}, Lmz8;-><init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/MessageWriteWidget;)V
 
-    iget-object v1, p0, Lmz8;->X:Lzz8;
+    iput-object p1, v0, Lmz8;->X:Ljava/lang/Object;
 
-    iget-object v2, p0, Lmz8;->Y:Lvo8;
-
-    move-object v0, p1
-
-    move-object v5, p2
-
-    invoke-direct/range {v0 .. v5}, Lmz8;-><init>(Lzz8;Lvo8;ZLo10;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
+    return-object v0
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+    .locals 0
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lmz8;->Y:Lvo8;
+    iget-object p1, p0, Lmz8;->X:Ljava/lang/Object;
 
-    iget-wide v1, p1, Lhh0;->b:J
+    check-cast p1, Lux8;
 
-    iget-object p1, p0, Lmz8;->w0:Lo10;
+    iget-object p0, p0, Lmz8;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
 
-    invoke-virtual {p1}, Lo10;->d()Z
+    invoke-static {p0, p1}, Lone/me/sdk/messagewrite/MessageWriteWidget;->p0(Lone/me/sdk/messagewrite/MessageWriteWidget;Lux8;)V
 
-    move-result v5
-
-    iget-object v0, p0, Lmz8;->X:Lzz8;
-
-    iget-boolean v3, p0, Lmz8;->Z:Z
-
-    const/4 v4, 0x0
-
-    invoke-virtual/range {v0 .. v5}, Lzz8;->J(JZZZ)V
-
-    sget-object p0, Ljue;->a:Ljue;
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 .end method

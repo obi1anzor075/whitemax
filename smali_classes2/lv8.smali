@@ -1,146 +1,192 @@
 .class public final Llv8;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Li26;
+
+# static fields
+.field public static final d:Llv8;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final a:J
 
-.field public final synthetic Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
+.field public final b:Ljava/lang/String;
+
+.field public final c:Ljava/lang/CharSequence;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/MessageWriteWidget;)V
+.method static constructor <clinit>()V
+    .locals 4
+
+    new-instance v0, Llv8;
+
+    const-wide/16 v1, -0x1
+
+    const/4 v3, 0x0
+
+    invoke-direct {v0, v1, v2, v3, v3}, Llv8;-><init>(JLjava/lang/CharSequence;Ljava/lang/String;)V
+
+    sput-object v0, Llv8;->d:Llv8;
+
+    return-void
+.end method
+
+.method public constructor <init>(JLjava/lang/CharSequence;Ljava/lang/String;)V
     .locals 0
 
-    iput-object p2, p0, Llv8;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p2, 0x2
+    iput-wide p1, p0, Llv8;->a:J
 
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p4, p0, Llv8;->b:Ljava/lang/String;
+
+    iput-object p3, p0, Llv8;->c:Ljava/lang/CharSequence;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 7
 
-    check-cast p1, Lst8;
+    const/4 v0, 0x1
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {p0, p1, p2}, Llv8;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Llv8;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Llv8;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
-
-    new-instance v0, Llv8;
-
-    iget-object p0, p0, Llv8;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
-
-    invoke-direct {v0, p2, p0}, Llv8;-><init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/MessageWriteWidget;)V
-
-    iput-object p1, v0, Llv8;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 10
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Llv8;->X:Ljava/lang/Object;
-
-    check-cast p1, Lst8;
-
-    const/4 v0, 0x0
-
-    if-eqz p1, :cond_0
-
-    const/4 v1, 0x1
-
-    iget-boolean v2, p1, Lst8;->a:Z
-
-    if-ne v2, v1, :cond_0
-
-    move v0, v1
+    return v0
 
     :cond_0
-    sget-object v1, Lone/me/sdk/messagewrite/MessageWriteWidget;->J0:[Lk77;
-
-    iget-object p0, p0, Llv8;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
-
-    invoke-virtual {p0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->p0()Ljq8;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljq8;->setLeftOuterIconVisible(Z)V
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {p0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->p0()Ljq8;
-
-    move-result-object v0
-
-    new-instance v9, Le78;
-
-    invoke-virtual {p0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->u0()Lnu8;
-
-    move-result-object v3
-
-    const-string v6, "onMiniAppClick$message_write_widget_release()V"
-
-    const/4 v7, 0x0
+    instance-of v1, p1, Llv8;
 
     const/4 v2, 0x0
 
-    const-class v4, Lnu8;
+    if-nez v1, :cond_1
 
-    const-string v5, "onMiniAppClick"
+    return v2
 
-    const/4 v8, 0x4
+    :cond_1
+    check-cast p1, Llv8;
 
-    move-object v1, v9
+    iget-wide v3, p0, Llv8;->a:J
 
-    invoke-direct/range {v1 .. v8}, Le78;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
+    iget-wide v5, p1, Llv8;->a:J
 
-    invoke-virtual {v0, v9}, Ljq8;->setLeftOuterIconOnClickListener(Ls16;)V
+    cmp-long v1, v3, v5
 
-    invoke-virtual {p0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->p0()Ljq8;
+    if-eqz v1, :cond_2
 
-    move-result-object p0
+    return v2
 
-    if-eqz p1, :cond_1
+    :cond_2
+    iget-object v1, p0, Llv8;->b:Ljava/lang/String;
 
-    iget-object p1, p1, Lst8;->b:Ljava/lang/CharSequence;
+    iget-object v3, p1, Llv8;->b:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object p0, p0, Llv8;->c:Ljava/lang/CharSequence;
+
+    iget-object p1, p1, Llv8;->c:Ljava/lang/CharSequence;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_4
+
+    return v2
+
+    :cond_4
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    iget-wide v0, p0, Llv8;->a:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Llv8;->b:Ljava/lang/String;
+
+    if-nez v2, :cond_0
+
+    move v2, v1
 
     goto :goto_0
 
-    :cond_1
-    const/4 p1, 0x0
+    :cond_0
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+
+    move-result v2
 
     :goto_0
-    invoke-virtual {p0, p1}, Ljq8;->setLeftOuterIconText(Ljava/lang/CharSequence;)V
+    add-int/2addr v0, v2
 
-    :cond_2
-    sget-object p0, Ljue;->a:Ljue;
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Llv8;->c:Ljava/lang/CharSequence;
+
+    if-nez p0, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    :goto_1
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 5
+
+    const-string v0, "AvatarParams(id="
+
+    const-string v1, ", url="
+
+    iget-wide v2, p0, Llv8;->a:J
+
+    iget-object v4, p0, Llv8;->b:Ljava/lang/String;
+
+    invoke-static {v0, v2, v3, v1, v4}, Lp3a;->k(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", placeholder="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Llv8;->c:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

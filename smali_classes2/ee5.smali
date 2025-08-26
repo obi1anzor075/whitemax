@@ -1,53 +1,58 @@
 .class public final Lee5;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lv61;
 
 
 # instance fields
-.field public X:Lqc9;
-
-.field public Y:Ljava/lang/String;
-
-.field public synthetic Z:Ljava/lang/Object;
-
-.field public o:Lle5;
-
-.field public final synthetic w0:Lle5;
-
-.field public x0:I
+.field public final a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
 
 # direct methods
-.method public constructor <init>(Lle5;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    iput-object p1, p0, Lee5;->w0:Lle5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
+
+    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
+
+    iput-object v0, p0, Lee5;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final onFeedback(Lu61;)V
     .locals 1
 
-    iput-object p1, p0, Lee5;->Z:Ljava/lang/Object;
+    iget-object p0, p0, Lee5;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
-    iget p1, p0, Lee5;->x0:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lee5;->x0:I
-
-    iget-object p1, p0, Lee5;->w0:Lle5;
-
-    invoke-virtual {p1, p0}, Lle5;->b(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    return-object p0
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lv61;
+
+    invoke-interface {v0, p1}, Lv61;->onFeedback(Lu61;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
 .end method

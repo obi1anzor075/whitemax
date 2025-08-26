@@ -1,21 +1,26 @@
 .class public abstract Laub;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # static fields
-.field public static audio_onboarding_intro:I = 0x7f130085
+.field public static oneme_main_bottom_bar:I = 0x7f0a0717
 
-.field public static pinbars_group_call_bar_button_text:I = 0x7f130a40
+.field public static oneme_main_calls_bottom_item:I = 0x7f0a0718
 
-.field public static pinbars_group_call_bar_title:I = 0x7f130a41
+.field public static oneme_main_calls_container:I = 0x7f0a0719
 
-.field public static pinbars_snackbar_unpinned:I = 0x7f130a42
+.field public static oneme_main_chats_bottom_item:I = 0x7f0a071a
 
-.field public static pinbars_snackbar_unpinned_cancel:I = 0x7f130a43
+.field public static oneme_main_chats_container:I = 0x7f0a071b
 
-.field public static unknown_contact_add_to_contact:I = 0x7f130d51
+.field public static oneme_main_contacts_bottom_item:I = 0x7f0a071c
 
-.field public static unknown_contact_block_contact:I = 0x7f130d52
+.field public static oneme_main_contacts_container:I = 0x7f0a071d
 
-.field public static unknown_contact_snackbar_add_contact:I = 0x7f130d53
+.field public static oneme_main_container:I = 0x7f0a071e
+
+.field public static oneme_main_root:I = 0x7f0a071f
+
+.field public static oneme_main_settings_bottom_item:I = 0x7f0a0720
+
+.field public static oneme_main_settings_container:I = 0x7f0a0721

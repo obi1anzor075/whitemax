@@ -1,59 +1,32 @@
-.class public final Lk86;
-.super Ler3;
+.class public abstract Lk86;
+.super Ll86;
 .source "SourceFile"
 
 
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Ll86;
-
-.field public Z:I
-
-.field public o:Ll86;
-
-
-# direct methods
-.method public constructor <init>(Ll86;Lkotlin/coroutines/Continuation;)V
-    .locals 0
-
-    iput-object p1, p0, Lk86;->Y:Ll86;
-
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    return-void
+# virtual methods
+.method public abstract f()Lb86;
 .end method
 
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 9
+    invoke-virtual {p0}, Lk86;->f()Lb86;
 
-    iput-object p1, p0, Lk86;->X:Ljava/lang/Object;
+    move-result-object p0
 
-    iget p1, p0, Lk86;->Z:I
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const/high16 v0, -0x80000000
+    const-string v1, "Virtual(name="
 
-    or-int/2addr p1, v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iput p1, p0, Lk86;->Z:I
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const/4 v6, 0x0
+    const-string p0, ")"
 
-    const/4 v7, 0x0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lk86;->Y:Ll86;
-
-    const-wide/16 v1, 0x0
-
-    const-wide/16 v3, 0x0
-
-    const/4 v5, 0x0
-
-    move-object v8, p0
-
-    invoke-virtual/range {v0 .. v8}, Ll86;->a(JJLjava/lang/String;Ljava/lang/Long;Ljava/lang/Integer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

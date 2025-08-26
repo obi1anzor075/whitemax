@@ -1,130 +1,56 @@
-.class public final Lz74;
+.class public abstract Lz74;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lhf6;
-.implements Lif6;
-
-
-# instance fields
-.field public final a:Ljib;
-
-.field public final b:Landroid/content/Context;
-
-.field public final c:Ljib;
-
-.field public final d:Ljava/util/Set;
-
-.field public final e:Ljava/util/concurrent/Executor;
-
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/util/Set;Ljib;Ljava/util/concurrent/Executor;)V
-    .locals 2
+.method public static a(Landroid/media/AudioFormat;Landroid/media/AudioAttributes;Z)Lk50;
+    .locals 3
 
-    new-instance v0, Lk83;
+    invoke-static {p0, p1}, Lps3;->a(Landroid/media/AudioFormat;Landroid/media/AudioAttributes;)I
 
-    const/4 v1, 0x1
+    move-result p0
 
-    invoke-direct {v0, p1, v1, p2}, Lk83;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    if-nez p0, :cond_0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lz74;->a:Ljib;
-
-    iput-object p3, p0, Lz74;->d:Ljava/util/Set;
-
-    iput-object p5, p0, Lz74;->e:Ljava/util/concurrent/Executor;
-
-    iput-object p4, p0, Lz74;->c:Ljib;
-
-    iput-object p1, p0, Lz74;->b:Landroid/content/Context;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()Ln6g;
-    .locals 2
-
-    iget-object v0, p0, Lz74;->b:Landroid/content/Context;
-
-    invoke-static {v0}, Ldze;->a(Landroid/content/Context;)Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    if-eqz v0, :cond_0
-
-    const-string p0, ""
-
-    invoke-static {p0}, Lgwf;->o(Ljava/lang/Object;)Ln6g;
-
-    move-result-object p0
+    sget-object p0, Lk50;->d:Lk50;
 
     return-object p0
 
     :cond_0
-    new-instance v0, Ly74;
+    new-instance p1, Lj50;
 
-    const/4 v1, 0x0
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, p0, v1}, Ly74;-><init>(Lz74;I)V
+    sget v0, Lpaf;->a:I
 
-    iget-object p0, p0, Lz74;->e:Ljava/util/concurrent/Executor;
+    const/16 v1, 0x20
 
-    invoke-static {v0, p0}, Lgwf;->c(Ljava/util/concurrent/Callable;Ljava/util/concurrent/Executor;)Ln6g;
+    const/4 v2, 0x1
 
-    move-result-object p0
+    if-le v0, v1, :cond_1
 
-    return-object p0
-.end method
+    const/4 v0, 0x2
 
-.method public final b()V
-    .locals 2
+    if-ne p0, v0, :cond_1
 
-    iget-object v0, p0, Lz74;->d:Ljava/util/Set;
+    move p0, v2
 
-    invoke-interface {v0}, Ljava/util/Set;->size()I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    if-gtz v0, :cond_0
-
-    invoke-static {v1}, Lgwf;->o(Ljava/lang/Object;)Ln6g;
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lz74;->b:Landroid/content/Context;
-
-    invoke-static {v0}, Ldze;->a(Landroid/content/Context;)Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    if-eqz v0, :cond_1
-
-    invoke-static {v1}, Lgwf;->o(Ljava/lang/Object;)Ln6g;
-
-    return-void
+    goto :goto_0
 
     :cond_1
-    new-instance v0, Ly74;
+    const/4 p0, 0x0
 
-    const/4 v1, 0x1
+    :goto_0
+    iput-boolean v2, p1, Lj50;->a:Z
 
-    invoke-direct {v0, p0, v1}, Ly74;-><init>(Lz74;I)V
+    iput-boolean p0, p1, Lj50;->b:Z
 
-    iget-object p0, p0, Lz74;->e:Ljava/util/concurrent/Executor;
+    iput-boolean p2, p1, Lj50;->c:Z
 
-    invoke-static {v0, p0}, Lgwf;->c(Ljava/util/concurrent/Callable;Ljava/util/concurrent/Executor;)Ln6g;
+    invoke-virtual {p1}, Lj50;->a()Lk50;
 
-    return-void
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -3,4 +3,4 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lch7;
+.implements Lbm7;

@@ -11,24 +11,24 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/sessionroom/participant/SessionRoomParticipantsDataProvider;",
         "",
-        "Lw2d;",
+        "Le9d;",
         "roomId",
         "Lkotlin/Function1;",
         "Lru/ok/android/externcalls/sdk/sessionroom/participant/SessionRoomParticipants;",
-        "Ljue;",
+        "Le5f;",
         "onSuccess",
         "",
         "onError",
         "getRoomParticipants",
-        "(Lw2d;Lu16;Lu16;)V",
+        "(Le9d;Lx56;Lx56;)V",
         "",
         "getAllInRoomParticipants",
-        "(Lu16;Lu16;)V",
+        "(Lx56;Lx56;)V",
         "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
         "Lru/ok/android/externcalls/sdk/id/ExternalId;",
         "participantId",
         "getParticipantRoomId",
-        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lu16;Lu16;)V",
+        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lx56;Lx56;)V",
         "calls-sdk_release"
     }
     k = 0x1
@@ -37,40 +37,41 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # virtual methods
-.method public abstract getAllInRoomParticipants(Lu16;Lu16;)V
+.method public abstract getAllInRoomParticipants(Lx56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lu16;",
-            "Lu16;",
+            "Lx56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 .end method
 
-.method public abstract getParticipantRoomId(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lu16;Lu16;)V
+.method public abstract getParticipantRoomId(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lx56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-            "Lu16;",
-            "Lu16;",
+            "Lx56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 .end method
 
-.method public abstract getRoomParticipants(Lw2d;Lu16;Lu16;)V
+.method public abstract getRoomParticipants(Le9d;Lx56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw2d;",
-            "Lu16;",
-            "Lu16;",
+            "Le9d;",
+            "Lx56;",
+            "Lx56;",
             ")V"
         }
     .end annotation

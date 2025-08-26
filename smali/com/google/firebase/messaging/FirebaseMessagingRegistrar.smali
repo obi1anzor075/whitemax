@@ -24,80 +24,81 @@
     return-void
 .end method
 
-.method public static synthetic a(Lpjb;Luwb;)Lcom/google/firebase/messaging/FirebaseMessaging;
+.method public static synthetic a(Lvnb;Lsc6;)Lcom/google/firebase/messaging/FirebaseMessaging;
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/google/firebase/messaging/FirebaseMessagingRegistrar;->lambda$getComponents$0(Lpjb;Lf83;)Lcom/google/firebase/messaging/FirebaseMessaging;
+    invoke-static {p0, p1}, Lcom/google/firebase/messaging/FirebaseMessagingRegistrar;->lambda$getComponents$0(Lvnb;Loa3;)Lcom/google/firebase/messaging/FirebaseMessaging;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method private static synthetic lambda$getComponents$0(Lpjb;Lf83;)Lcom/google/firebase/messaging/FirebaseMessaging;
-    .locals 8
+.method private static synthetic lambda$getComponents$0(Lvnb;Loa3;)Lcom/google/firebase/messaging/FirebaseMessaging;
+    .locals 7
 
-    new-instance v7, Lcom/google/firebase/messaging/FirebaseMessaging;
+    new-instance v0, Lcom/google/firebase/messaging/FirebaseMessaging;
 
-    const-class v0, Lih5;
+    const-class v1, Lqk5;
 
-    invoke-interface {p1, v0}, Lf83;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-interface {p1, v1}, Loa3;->a(Ljava/lang/Class;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    move-object v1, v0
+    check-cast v1, Lqk5;
 
-    check-cast v1, Lih5;
+    const-class v2, Lvk5;
 
-    const-class v0, Lnh5;
-
-    invoke-interface {p1, v0}, Lf83;->a(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lhr1;->r(Ljava/lang/Object;)V
-
-    const-class v0, Ldc4;
-
-    invoke-interface {p1, v0}, Lf83;->c(Ljava/lang/Class;)Ljib;
+    invoke-interface {p1, v2}, Loa3;->a(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v2
 
-    const-class v0, Lif6;
+    if-nez v2, :cond_0
 
-    invoke-interface {p1, v0}, Lf83;->c(Ljava/lang/Class;)Ljib;
+    const-class v2, Lmf4;
+
+    invoke-interface {p1, v2}, Loa3;->f(Ljava/lang/Class;)Llmb;
+
+    move-result-object v2
+
+    const-class v3, Lwj6;
+
+    invoke-interface {p1, v3}, Loa3;->f(Ljava/lang/Class;)Llmb;
 
     move-result-object v3
 
-    const-class v0, Lmh5;
+    const-class v4, Luk5;
 
-    invoke-interface {p1, v0}, Lf83;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-interface {p1, v4}, Loa3;->a(Ljava/lang/Class;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v4
 
-    move-object v4, v0
+    check-cast v4, Luk5;
 
-    check-cast v4, Lmh5;
-
-    invoke-interface {p1, p0}, Lf83;->e(Lpjb;)Ljib;
+    invoke-interface {p1, p0}, Loa3;->k(Lvnb;)Llmb;
 
     move-result-object v5
 
-    const-class p0, Lc1e;
+    const-class p0, Lk9e;
 
-    invoke-interface {p1, p0}, Lf83;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-interface {p1, p0}, Loa3;->a(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object p0
 
     move-object v6, p0
 
-    check-cast v6, Lc1e;
+    check-cast v6, Lk9e;
 
-    move-object v0, v7
+    invoke-direct/range {v0 .. v6}, Lcom/google/firebase/messaging/FirebaseMessaging;-><init>(Lqk5;Llmb;Llmb;Luk5;Llmb;Lk9e;)V
 
-    invoke-direct/range {v0 .. v6}, Lcom/google/firebase/messaging/FirebaseMessaging;-><init>(Lih5;Ljib;Ljib;Lmh5;Ljib;Lc1e;)V
+    return-object v0
 
-    return-object v7
+    :cond_0
+    new-instance p0, Ljava/lang/ClassCastException;
+
+    invoke-direct {p0}, Ljava/lang/ClassCastException;-><init>()V
+
+    throw p0
 .end method
 
 
@@ -111,20 +112,20 @@
         value = {
             "()",
             "Ljava/util/List<",
-            "Lt73;",
+            "Lca3;",
             ">;"
         }
     .end annotation
 
-    new-instance p0, Lpjb;
+    new-instance p0, Lvnb;
 
-    const-class v0, Lpre;
+    const-class v0, Ll0f;
 
-    const-class v1, Lrre;
+    const-class v1, Ln0f;
 
-    invoke-direct {p0, v0, v1}, Lpjb;-><init>(Ljava/lang/Class;Ljava/lang/Class;)V
+    invoke-direct {p0, v0, v1}, Lvnb;-><init>(Ljava/lang/Class;Ljava/lang/Class;)V
 
-    new-instance v0, Lg68;
+    new-instance v0, Lba3;
 
     const/4 v1, 0x0
 
@@ -132,98 +133,98 @@
 
     const-class v3, Lcom/google/firebase/messaging/FirebaseMessaging;
 
-    invoke-direct {v0, v3, v2}, Lg68;-><init>(Ljava/lang/Class;[Ljava/lang/Class;)V
+    invoke-direct {v0, v3, v2}, Lba3;-><init>(Ljava/lang/Class;[Ljava/lang/Class;)V
 
     const-string v2, "fire-fcm"
 
-    iput-object v2, v0, Lg68;->b:Ljava/lang/String;
+    iput-object v2, v0, Lba3;->a:Ljava/lang/String;
 
-    const-class v3, Lih5;
+    const-class v3, Lqk5;
 
-    invoke-static {v3}, Loe4;->a(Ljava/lang/Class;)Loe4;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, Lg68;->a(Loe4;)V
-
-    new-instance v3, Loe4;
-
-    const-class v4, Lnh5;
-
-    invoke-direct {v3, v1, v1, v4}, Loe4;-><init>(IILjava/lang/Class;)V
-
-    invoke-virtual {v0, v3}, Lg68;->a(Loe4;)V
-
-    new-instance v3, Loe4;
-
-    const-class v4, Ldc4;
-
-    const/4 v5, 0x1
-
-    invoke-direct {v3, v1, v5, v4}, Loe4;-><init>(IILjava/lang/Class;)V
-
-    invoke-virtual {v0, v3}, Lg68;->a(Loe4;)V
-
-    new-instance v3, Loe4;
-
-    const-class v4, Lif6;
-
-    invoke-direct {v3, v1, v5, v4}, Loe4;-><init>(IILjava/lang/Class;)V
-
-    invoke-virtual {v0, v3}, Lg68;->a(Loe4;)V
-
-    const-class v3, Lmh5;
-
-    invoke-static {v3}, Loe4;->a(Ljava/lang/Class;)Loe4;
+    invoke-static {v3}, Lth4;->a(Ljava/lang/Class;)Lth4;
 
     move-result-object v3
 
-    invoke-virtual {v0, v3}, Lg68;->a(Loe4;)V
+    invoke-virtual {v0, v3}, Lba3;->a(Lth4;)V
 
-    new-instance v3, Loe4;
+    new-instance v3, Lth4;
 
-    invoke-direct {v3, p0, v1, v5}, Loe4;-><init>(Lpjb;II)V
+    const-class v4, Lvk5;
 
-    invoke-virtual {v0, v3}, Lg68;->a(Loe4;)V
+    invoke-direct {v3, v1, v1, v4}, Lth4;-><init>(IILjava/lang/Class;)V
 
-    const-class v3, Lc1e;
+    invoke-virtual {v0, v3}, Lba3;->a(Lth4;)V
 
-    invoke-static {v3}, Loe4;->a(Ljava/lang/Class;)Loe4;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, Lg68;->a(Loe4;)V
-
-    new-instance v3, Lx74;
+    new-instance v3, Lth4;
 
     const/4 v4, 0x1
 
-    invoke-direct {v3, p0, v4}, Lx74;-><init>(Lpjb;I)V
+    const-class v5, Lmf4;
 
-    iput-object v3, v0, Lg68;->f:Ljava/lang/Object;
+    invoke-direct {v3, v1, v4, v5}, Lth4;-><init>(IILjava/lang/Class;)V
 
-    iget p0, v0, Lg68;->d:I
+    invoke-virtual {v0, v3}, Lba3;->a(Lth4;)V
+
+    new-instance v3, Lth4;
+
+    const-class v5, Lwj6;
+
+    invoke-direct {v3, v1, v4, v5}, Lth4;-><init>(IILjava/lang/Class;)V
+
+    invoke-virtual {v0, v3}, Lba3;->a(Lth4;)V
+
+    const-class v3, Luk5;
+
+    invoke-static {v3}, Lth4;->a(Ljava/lang/Class;)Lth4;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Lba3;->a(Lth4;)V
+
+    new-instance v3, Lth4;
+
+    invoke-direct {v3, p0, v1, v4}, Lth4;-><init>(Lvnb;II)V
+
+    invoke-virtual {v0, v3}, Lba3;->a(Lth4;)V
+
+    const-class v3, Lk9e;
+
+    invoke-static {v3}, Lth4;->a(Ljava/lang/Class;)Lth4;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Lba3;->a(Lth4;)V
+
+    new-instance v3, Ljb4;
+
+    const/4 v5, 0x1
+
+    invoke-direct {v3, p0, v5}, Ljb4;-><init>(Lvnb;I)V
+
+    iput-object v3, v0, Lba3;->g:Ljava/lang/Object;
+
+    iget p0, v0, Lba3;->b:I
 
     if-nez p0, :cond_0
 
-    move v1, v5
+    move v1, v4
 
     :cond_0
     if-eqz v1, :cond_1
 
-    iput v5, v0, Lg68;->d:I
+    iput v4, v0, Lba3;->b:I
 
-    invoke-virtual {v0}, Lg68;->b()Lt73;
+    invoke-virtual {v0}, Lba3;->b()Lca3;
 
     move-result-object p0
 
     const-string v0, "24.0.1"
 
-    invoke-static {v2, v0}, Lxy6;->m(Ljava/lang/String;Ljava/lang/String;)Lt73;
+    invoke-static {v2, v0}, Lfq0;->u(Ljava/lang/String;Ljava/lang/String;)Lca3;
 
     move-result-object v0
 
-    filled-new-array {p0, v0}, [Lt73;
+    filled-new-array {p0, v0}, [Lca3;
 
     move-result-object p0
 

@@ -1,53 +1,29 @@
 .class public final Lclb;
-.super Ljava/lang/Object;
+.super Le16;
 .source "SourceFile"
 
 
-# static fields
-.field public static final b:Lalb;
+# virtual methods
+.method public final f(ILkse;Z)Lkse;
+    .locals 0
 
-.field public static final c:Lclb;
+    invoke-super {p0, p1, p2, p3}, Le16;->f(ILkse;Z)Lkse;
 
+    const/4 p0, 0x1
 
-# instance fields
-.field public final a:Lk96;
+    iput-boolean p0, p2, Lkse;->Y:Z
 
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    new-instance v0, Lalb;
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2, v2}, Lalb;-><init>(ZLjava/util/HashSet;Ljava/util/HashSet;)V
-
-    sput-object v0, Lclb;->b:Lalb;
-
-    new-instance v0, Lclb;
-
-    invoke-direct {v0}, Lclb;-><init>()V
-
-    sput-object v0, Lclb;->c:Lclb;
-
-    return-void
+    return-object p2
 .end method
 
-.method public constructor <init>()V
-    .locals 2
+.method public final m(ILnse;J)Lnse;
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-super {p0, p1, p2, p3, p4}, Le16;->m(ILnse;J)Lnse;
 
-    new-instance v0, Lk96;
+    const/4 p0, 0x1
 
-    sget-object v1, Lclb;->b:Lalb;
+    iput-boolean p0, p2, Lnse;->s0:Z
 
-    invoke-direct {v0, v1}, Lk96;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Lclb;->a:Lk96;
-
-    return-void
+    return-object p2
 .end method

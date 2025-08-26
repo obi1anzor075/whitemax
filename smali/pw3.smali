@@ -1,65 +1,141 @@
-.class public abstract Lpw3;
-.super Ljava/lang/Object;
+.class public final Lpw3;
+.super Lz;
 .source "SourceFile"
 
 
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lpw3;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# instance fields
+.field public c:Landroid/util/SparseArray;
+
+
 # direct methods
-.method public static a(Ljava/security/Signature;)Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
-    new-instance v0, Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;
+    new-instance v0, Ly;
 
-    invoke-direct {v0, p0}, Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;-><init>(Ljava/security/Signature;)V
+    const/4 v1, 0x3
 
-    return-object v0
+    invoke-direct {v0, v1}, Ly;-><init>(I)V
+
+    sput-object v0, Lpw3;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
 .end method
 
-.method public static b(Ljavax/crypto/Cipher;)Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;
-    .locals 1
+.method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+    .locals 5
 
-    new-instance v0, Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;
+    invoke-direct {p0, p1, p2}, Lz;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
 
-    invoke-direct {v0, p0}, Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;-><init>(Ljavax/crypto/Cipher;)V
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    return-object v0
+    move-result v0
+
+    new-array v1, v0, [I
+
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->readIntArray([I)V
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->readParcelableArray(Ljava/lang/ClassLoader;)[Landroid/os/Parcelable;
+
+    move-result-object p1
+
+    new-instance p2, Landroid/util/SparseArray;
+
+    invoke-direct {p2, v0}, Landroid/util/SparseArray;-><init>(I)V
+
+    iput-object p2, p0, Lpw3;->c:Landroid/util/SparseArray;
+
+    const/4 p2, 0x0
+
+    :goto_0
+    if-ge p2, v0, :cond_0
+
+    iget-object v2, p0, Lpw3;->c:Landroid/util/SparseArray;
+
+    aget v3, v1, p2
+
+    aget-object v4, p1, p2
+
+    invoke-virtual {v2, v3, v4}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
+
+    add-int/lit8 p2, p2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
 .end method
 
-.method public static c(Ljavax/crypto/Mac;)Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;
-    .locals 1
 
-    new-instance v0, Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;
+# virtual methods
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 5
 
-    invoke-direct {v0, p0}, Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;-><init>(Ljavax/crypto/Mac;)V
+    invoke-super {p0, p1, p2}, Lz;->writeToParcel(Landroid/os/Parcel;I)V
 
-    return-object v0
-.end method
+    iget-object v0, p0, Lpw3;->c:Landroid/util/SparseArray;
 
-.method public static d(Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;)Ljavax/crypto/Cipher;
-    .locals 0
+    const/4 v1, 0x0
 
-    invoke-virtual {p0}, Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;->getCipher()Ljavax/crypto/Cipher;
+    if-eqz v0, :cond_0
 
-    move-result-object p0
+    invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
 
-    return-object p0
-.end method
+    move-result v0
 
-.method public static e(Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;)Ljavax/crypto/Mac;
-    .locals 0
+    goto :goto_0
 
-    invoke-virtual {p0}, Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;->getMac()Ljavax/crypto/Mac;
+    :cond_0
+    move v0, v1
 
-    move-result-object p0
+    :goto_0
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    return-object p0
-.end method
+    new-array v2, v0, [I
 
-.method public static f(Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;)Ljava/security/Signature;
-    .locals 0
+    new-array v3, v0, [Landroid/os/Parcelable;
 
-    invoke-virtual {p0}, Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;->getSignature()Ljava/security/Signature;
+    :goto_1
+    if-ge v1, v0, :cond_1
 
-    move-result-object p0
+    iget-object v4, p0, Lpw3;->c:Landroid/util/SparseArray;
 
-    return-object p0
+    invoke-virtual {v4, v1}, Landroid/util/SparseArray;->keyAt(I)I
+
+    move-result v4
+
+    aput v4, v2, v1
+
+    iget-object v4, p0, Lpw3;->c:Landroid/util/SparseArray;
+
+    invoke-virtual {v4, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/os/Parcelable;
+
+    aput-object v4, v3, v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeIntArray([I)V
+
+    invoke-virtual {p1, v3, p2}, Landroid/os/Parcel;->writeParcelableArray([Landroid/os/Parcelable;I)V
+
+    return-void
 .end method

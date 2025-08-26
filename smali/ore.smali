@@ -1,66 +1,114 @@
 .class public final Lore;
-.super Ljava/lang/Thread;
+.super Lv2c;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic a:La4d;
+.field public final b:Z
 
-.field public final synthetic b:Landroid/content/Context;
-
-.field public final synthetic c:Ljava/lang/String;
-
-.field public final synthetic o:J
+.field public final c:Z
 
 
 # direct methods
-.method public constructor <init>(La4d;Landroid/content/Context;Ljava/lang/String;J)V
+.method static constructor <clinit>()V
     .locals 0
 
-    iput-object p1, p0, Lore;->a:La4d;
+    return-void
+.end method
 
-    iput-object p2, p0, Lore;->b:Landroid/content/Context;
+.method public constructor <init>()V
+    .locals 1
 
-    iput-object p3, p0, Lore;->c:Ljava/lang/String;
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p4, p0, Lore;->o:J
+    const/4 v0, 0x0
 
-    const-string p1, "TransmuxTranscodeHelper:Mp4Info"
+    .line 2
+    iput-boolean v0, p0, Lore;->b:Z
 
-    invoke-direct {p0, p1}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
+    .line 3
+    iput-boolean v0, p0, Lore;->c:Z
+
+    return-void
+.end method
+
+.method public constructor <init>(Z)V
+    .locals 1
+
+    .line 4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x1
+
+    .line 5
+    iput-boolean v0, p0, Lore;->b:Z
+
+    .line 6
+    iput-boolean p1, p0, Lore;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
-    iget-object v0, p0, Lore;->a:La4d;
+    instance-of v0, p1, Lore;
 
-    :try_start_0
-    iget-object v1, p0, Lore;->b:Landroid/content/Context;
-
-    iget-object v2, p0, Lore;->c:Ljava/lang/String;
-
-    iget-wide v3, p0, Lore;->o:J
-
-    invoke-static {v1, v3, v4, v2}, Lt79;->a(Landroid/content/Context;JLjava/lang/String;)Lt79;
-
-    move-result-object p0
-
-    invoke-virtual {v0, p0}, Lk1;->l(Ljava/lang/Object;)Z
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    if-nez v0, :cond_0
 
     goto :goto_0
 
-    :catch_0
-    move-exception p0
+    :cond_0
+    check-cast p1, Lore;
 
-    invoke-virtual {v0, p0}, Lk1;->m(Ljava/lang/Throwable;)Z
+    iget-boolean v0, p0, Lore;->c:Z
 
+    iget-boolean v1, p1, Lore;->c:Z
+
+    if-ne v0, v1, :cond_1
+
+    iget-boolean p0, p0, Lore;->b:Z
+
+    iget-boolean p1, p1, Lore;->b:Z
+
+    if-ne p0, p1, :cond_1
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_1
     :goto_0
-    return-void
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    iget-boolean v0, p0, Lore;->b:Z
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    iget-boolean p0, p0, Lore;->c:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p0
+
+    filled-new-array {v0, p0}, [Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+
+    move-result p0
+
+    return p0
 .end method

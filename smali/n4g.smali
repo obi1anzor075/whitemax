@@ -1,179 +1,254 @@
 .class public final Ln4g;
-.super Lcom/google/android/gms/common/api/internal/BasePendingResult;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic t:I
+.field public final a:Z
+
+.field public final b:Ljava/lang/Integer;
+
+.field public final c:Z
+
+.field public final d:Ljava/lang/Integer;
+
+.field public final e:Z
+
+.field public final f:Z
 
 
 # direct methods
-.method public constructor <init>(Lfzf;I)V
+.method public constructor <init>(ZLjava/lang/Integer;ZLjava/lang/Integer;ZZ)V
     .locals 0
 
-    iput p2, p0, Ln4g;->t:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string p2, "GoogleApiClient must not be null"
+    iput-boolean p1, p0, Ln4g;->a:Z
 
-    invoke-static {p1, p2}, La24;->p(Ljava/lang/Object;Ljava/lang/String;)V
+    iput-object p2, p0, Ln4g;->b:Ljava/lang/Integer;
 
-    invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;-><init>(Lfzf;)V
+    iput-boolean p3, p0, Ln4g;->c:Z
 
-    const-string p0, "Api must not be null"
+    iput-object p4, p0, Ln4g;->d:Ljava/lang/Integer;
 
-    sget-object p1, Lv60;->a:Lqe4;
+    iput-boolean p5, p0, Ln4g;->e:Z
 
-    invoke-static {p1, p0}, La24;->p(Ljava/lang/Object;Ljava/lang/String;)V
+    iput-boolean p6, p0, Ln4g;->f:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic Y(Lcom/google/android/gms/common/api/Status;)Locc;
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
-    iget p0, p0, Ln4g;->t:I
+    if-eq p0, p1, :cond_1
 
-    return-object p1
-.end method
+    instance-of v0, p1, Ln4g;
 
-.method public final c0(Lok;)V
-    .locals 5
+    if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
+    check-cast p1, Ln4g;
 
-    const/4 v1, 0x1
+    iget-boolean v0, p0, Ln4g;->a:Z
 
-    iget v2, p0, Ln4g;->t:I
+    iget-boolean v1, p1, Ln4g;->a:Z
 
-    packed-switch v2, :pswitch_data_0
+    if-ne v0, v1, :cond_0
 
-    check-cast p1, Lu3g;
+    iget-object v0, p0, Ln4g;->b:Ljava/lang/Integer;
 
-    invoke-virtual {p1}, Lcom/google/android/gms/common/internal/a;->o()Landroid/os/IInterface;
+    iget-object v1, p1, Ln4g;->b:Ljava/lang/Integer;
 
-    move-result-object v2
+    invoke-static {v0, v1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    check-cast v2, Lp6g;
+    move-result v0
 
-    new-instance v3, Le5g;
+    if-eqz v0, :cond_0
 
-    invoke-direct {v3, p0, v1}, Le5g;-><init>(Ln4g;I)V
+    iget-boolean v0, p0, Ln4g;->c:Z
 
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    iget-boolean v1, p1, Ln4g;->c:Z
 
-    move-result-object p0
+    if-ne v0, v1, :cond_0
 
-    iget-object v4, v2, Lvyf;->e:Ljava/lang/String;
+    iget-object v0, p0, Ln4g;->d:Ljava/lang/Integer;
 
-    invoke-virtual {p0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+    iget-object v1, p1, Ln4g;->d:Ljava/lang/Integer;
 
-    sget v4, Ls3g;->a:I
+    invoke-static {v0, v1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {p0, v3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+    move-result v0
 
-    iget-object p1, p1, Lu3g;->O0:Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;
+    if-eqz v0, :cond_0
 
-    if-nez p1, :cond_0
+    iget-boolean v0, p0, Ln4g;->e:Z
 
-    invoke-virtual {p0, v0}, Landroid/os/Parcel;->writeInt(I)V
+    iget-boolean v1, p1, Ln4g;->e:Z
+
+    if-ne v0, v1, :cond_0
+
+    iget-boolean p0, p0, Ln4g;->f:Z
+
+    iget-boolean p1, p1, Ln4g;->f:Z
+
+    if-ne p0, p1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0, v1}, Landroid/os/Parcel;->writeInt(I)V
+    const/4 p0, 0x0
 
-    invoke-interface {p1, p0, v0}, Landroid/os/Parcelable;->writeToParcel(Landroid/os/Parcel;I)V
+    return p0
+
+    :cond_1
+    :goto_0
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 4
+
+    const/4 v0, 0x1
+
+    iget-boolean v1, p0, Ln4g;->a:Z
+
+    if-eqz v1, :cond_0
+
+    move v1, v0
+
+    :cond_0
+    mul-int/lit8 v1, v1, 0x1f
+
+    const/4 v2, 0x0
+
+    iget-object v3, p0, Ln4g;->b:Ljava/lang/Integer;
+
+    if-eqz v3, :cond_1
+
+    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
+
+    move-result v3
+
+    goto :goto_0
+
+    :cond_1
+    move v3, v2
 
     :goto_0
-    const/16 p1, 0x67
+    add-int/2addr v1, v3
 
-    invoke-virtual {v2, p0, p1}, Lvyf;->H0(Landroid/os/Parcel;I)V
+    mul-int/lit8 v1, v1, 0x1f
 
-    return-void
+    iget-boolean v3, p0, Ln4g;->c:Z
 
-    :pswitch_0
-    check-cast p1, Lu3g;
+    if-eqz v3, :cond_2
 
-    invoke-virtual {p1}, Lcom/google/android/gms/common/internal/a;->o()Landroid/os/IInterface;
+    move v3, v0
 
-    move-result-object v2
+    :cond_2
+    add-int/2addr v1, v3
 
-    check-cast v2, Lp6g;
+    mul-int/lit8 v1, v1, 0x1f
 
-    new-instance v3, Le5g;
+    iget-object v3, p0, Ln4g;->d:Ljava/lang/Integer;
 
-    invoke-direct {v3, p0, v0}, Le5g;-><init>(Ln4g;I)V
+    if-eqz v3, :cond_3
 
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
 
-    move-result-object p0
+    move-result v2
 
-    iget-object v4, v2, Lvyf;->e:Ljava/lang/String;
+    :cond_3
+    add-int/2addr v1, v2
 
-    invoke-virtual {p0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+    mul-int/lit8 v1, v1, 0x1f
 
-    sget v4, Ls3g;->a:I
+    iget-boolean v2, p0, Ln4g;->e:Z
 
-    invoke-virtual {p0, v3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+    if-eqz v2, :cond_4
 
-    iget-object p1, p1, Lu3g;->O0:Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;
+    move v2, v0
 
-    if-nez p1, :cond_1
+    :cond_4
+    add-int/2addr v1, v2
 
-    invoke-virtual {p0, v0}, Landroid/os/Parcel;->writeInt(I)V
+    mul-int/lit8 v1, v1, 0x1f
+
+    iget-boolean p0, p0, Ln4g;->f:Z
+
+    if-eqz p0, :cond_5
 
     goto :goto_1
 
-    :cond_1
-    invoke-virtual {p0, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    invoke-interface {p1, p0, v0}, Landroid/os/Parcelable;->writeToParcel(Landroid/os/Parcel;I)V
+    :cond_5
+    move v0, p0
 
     :goto_1
-    const/16 p1, 0x66
+    add-int/2addr v1, v0
 
-    invoke-virtual {v2, p0, p1}, Lvyf;->H0(Landroid/os/Parcel;I)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return v1
 .end method
 
-.method public final d0(Lcom/google/android/gms/common/api/Status;)V
+.method public final toString()Ljava/lang/String;
     .locals 2
 
-    iget v0, p1, Lcom/google/android/gms/common/api/Status;->a:I
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const/4 v1, 0x1
+    const-string v1, "WebSocketExtensions(perMessageDeflate="
 
-    if-gtz v0, :cond_0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move v0, v1
+    iget-boolean v1, p0, Ln4g;->a:Z
 
-    goto :goto_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    :cond_0
-    const/4 v0, 0x0
+    const-string v1, ", clientMaxWindowBits="
 
-    :goto_0
-    xor-int/2addr v0, v1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "Failed result must not be success"
+    iget-object v1, p0, Ln4g;->b:Ljava/lang/Integer;
 
-    invoke-static {v1, v0}, La24;->h(Ljava/lang/String;Z)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->Y(Lcom/google/android/gms/common/api/Status;)Locc;
+    const-string v1, ", clientNoContextTakeover="
 
-    move-result-object p1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->b0(Locc;)V
+    iget-boolean v1, p0, Ln4g;->c:Z
 
-    return-void
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", serverMaxWindowBits="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Ln4g;->d:Ljava/lang/Integer;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", serverNoContextTakeover="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Ln4g;->e:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", unknownValues="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean p0, p0, Ln4g;->f:Z
+
+    const-string v1, ")"
+
+    invoke-static {v0, p0, v1}, Lzt1;->j(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

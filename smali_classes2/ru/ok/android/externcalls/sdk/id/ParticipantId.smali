@@ -221,13 +221,13 @@
 
     if-eqz p1, :cond_4
 
+    const-class v1, Lru/ok/android/externcalls/sdk/id/ParticipantId;
+
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-class v2, Lru/ok/android/externcalls/sdk/id/ParticipantId;
-
-    if-eq v2, v1, :cond_1
+    if-eq v1, v2, :cond_1
 
     goto :goto_0
 
@@ -316,7 +316,7 @@
 
     iget-object v3, p0, Lru/ok/android/externcalls/sdk/id/ParticipantId;->id:Ljava/lang/String;
 
-    invoke-static {v1, v3, v2}, Lwn6;->l(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v3, v2}, Lm26;->j(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -331,7 +331,7 @@
 
     iget-object v3, p0, Lru/ok/android/externcalls/sdk/id/ParticipantId;->id:Ljava/lang/String;
 
-    invoke-static {v1, v3, v2}, Lwn6;->l(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v3, v2}, Lm26;->j(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 

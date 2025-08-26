@@ -4,79 +4,110 @@
 
 
 # instance fields
-.field public final a:Lz23;
+.field public A:I
 
-.field public final b:I
+.field public B:I
 
-.field public final c:I
+.field public C:I
 
-.field public final d:F
+.field public D:I
 
-.field public final e:J
+.field public a:Ljava/lang/String;
+
+.field public b:Ljava/lang/String;
+
+.field public c:Ljava/lang/String;
+
+.field public d:I
+
+.field public e:I
+
+.field public f:I
+
+.field public g:I
+
+.field public h:Ljava/lang/String;
+
+.field public i:Lw79;
+
+.field public j:Ljava/lang/String;
+
+.field public k:Ljava/lang/String;
+
+.field public l:I
+
+.field public m:Ljava/util/List;
+
+.field public n:Lcr4;
+
+.field public o:J
+
+.field public p:I
+
+.field public q:I
+
+.field public r:F
+
+.field public s:I
+
+.field public t:F
+
+.field public u:[B
+
+.field public v:I
+
+.field public w:Lz43;
+
+.field public x:I
+
+.field public y:I
+
+.field public z:I
 
 
 # direct methods
-.method public constructor <init>(Lz23;IIFJ)V
-    .locals 5
+.method public constructor <init>()V
+    .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    const/4 v0, -0x1
+
+    iput v0, p0, Lbz5;->f:I
+
+    iput v0, p0, Lbz5;->g:I
+
+    iput v0, p0, Lbz5;->l:I
+
+    const-wide v1, 0x7fffffffffffffffL
+
+    iput-wide v1, p0, Lbz5;->o:J
+
+    iput v0, p0, Lbz5;->p:I
+
+    iput v0, p0, Lbz5;->q:I
+
+    const/high16 v1, -0x40800000    # -1.0f
+
+    iput v1, p0, Lbz5;->r:F
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    iput v1, p0, Lbz5;->t:F
+
+    iput v0, p0, Lbz5;->v:I
+
+    iput v0, p0, Lbz5;->x:I
+
+    iput v0, p0, Lbz5;->y:I
+
+    iput v0, p0, Lbz5;->z:I
+
+    iput v0, p0, Lbz5;->C:I
+
     const/4 v0, 0x0
 
-    const/4 v1, 0x1
-
-    if-lez p2, :cond_0
-
-    move v2, v1
-
-    goto :goto_0
-
-    :cond_0
-    move v2, v0
-
-    :goto_0
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "width must be positive, but is: "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3, v2}, Loyb;->c(Ljava/lang/Object;Z)V
-
-    if-lez p3, :cond_1
-
-    move v0, v1
-
-    :cond_1
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "height must be positive, but is: "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1, v0}, Loyb;->c(Ljava/lang/Object;Z)V
-
-    iput-object p1, p0, Lbz5;->a:Lz23;
-
-    iput p2, p0, Lbz5;->b:I
-
-    iput p3, p0, Lbz5;->c:I
-
-    iput p4, p0, Lbz5;->d:F
-
-    iput-wide p5, p0, Lbz5;->e:J
+    iput v0, p0, Lbz5;->D:I
 
     return-void
 .end method

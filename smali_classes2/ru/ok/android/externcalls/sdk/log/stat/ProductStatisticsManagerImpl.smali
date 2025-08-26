@@ -29,7 +29,7 @@
         "getTime",
         "(J)J",
         "statItem",
-        "Ljue;",
+        "Le5f;",
         "log",
         "(Lru/ok/android/externcalls/sdk/log/stat/item/ProductStatItem;)V",
         "Lru/ok/android/externcalls/sdk/log/stat/StatisticsManager$TimeProvider;",
@@ -41,6 +41,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -74,7 +75,9 @@
 
     invoke-interface {p0}, Lru/ok/android/externcalls/sdk/log/stat/StatisticsManager$TimeProvider;->getCurrentTimeMillis()J
 
-    move-result-wide p1
+    move-result-wide p0
+
+    return-wide p0
 
     :cond_0
     return-wide p1

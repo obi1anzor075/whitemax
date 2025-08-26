@@ -1,83 +1,75 @@
 .class public final Lzw7;
-.super Landroid/widget/ScrollView;
+.super Lvkc;
 .source "SourceFile"
 
 
-# instance fields
-.field public a:I
+# static fields
+.field public static final b:Lzw7;
+
+.field public static final c:Lr64;
+
+.field public static final d:Lr64;
+
+.field public static final e:Lr64;
+
+.field public static final f:Lr64;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 6
 
-    const/4 v0, 0x0
+    new-instance v0, Lzw7;
 
-    invoke-direct {p0, p1, v0}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {v0}, Lv64;-><init>()V
 
-    const/4 p1, -0x1
+    sput-object v0, Lzw7;->b:Lzw7;
 
-    iput p1, p0, Lzw7;->a:I
+    const/4 v1, 0x0
 
-    return-void
-.end method
+    new-array v2, v1, [Ljava/lang/String;
 
+    const-string v3, ":contact-list"
 
-# virtual methods
-.method public final onMeasure(II)V
-    .locals 2
+    const/4 v4, 0x0
 
-    iget v0, p0, Lzw7;->a:I
+    const/16 v5, 0xe
 
-    if-lez v0, :cond_1
+    invoke-static {v0, v3, v2, v4, v5}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
 
-    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
+    move-result-object v2
 
-    move-result v0
+    sput-object v2, Lzw7;->c:Lr64;
 
-    if-nez v0, :cond_0
+    const-string v2, ":call-list"
 
-    iget p2, p0, Lzw7;->a:I
+    new-array v3, v1, [Ljava/lang/String;
 
-    const/high16 v0, -0x80000000
+    invoke-static {v0, v2, v3, v4, v5}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
 
-    invoke-static {p2, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    move-result-object v2
 
-    move-result p2
+    sput-object v2, Lzw7;->d:Lr64;
 
-    goto :goto_0
+    const-string v2, ":chat-list"
 
-    :cond_0
-    iget v1, p0, Lzw7;->a:I
+    new-array v3, v1, [Ljava/lang/String;
 
-    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
+    invoke-static {v0, v2, v3, v4, v5}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
 
-    move-result p2
+    move-result-object v2
 
-    invoke-static {v1, p2}, Ljava/lang/Math;->min(II)I
+    sput-object v2, Lzw7;->e:Lr64;
 
-    move-result p2
+    const-string v2, ":settings"
 
-    invoke-static {p2, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    new-array v1, v1, [Ljava/lang/String;
 
-    move-result p2
+    invoke-static {v0, v2, v1, v4, v5}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
 
-    :goto_0
-    invoke-super {p0, p1, p2}, Landroid/widget/ScrollView;->onMeasure(II)V
+    move-result-object v0
 
-    goto :goto_1
-
-    :cond_1
-    invoke-super {p0, p1, p2}, Landroid/widget/ScrollView;->onMeasure(II)V
-
-    :goto_1
-    return-void
-.end method
-
-.method public final setMaxHeight(I)V
-    .locals 0
-
-    iput p1, p0, Lzw7;->a:I
+    sput-object v0, Lzw7;->f:Lr64;
 
     return-void
 .end method

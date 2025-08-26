@@ -1,125 +1,87 @@
 .class public final Laf6;
-.super Landroid/text/style/RelativeSizeSpan;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Luu7;
-.implements Landroid/os/Parcelable;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Laf6;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
-# instance fields
-.field public final a:F
-
-.field public final b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public static a(Landroid/content/Context;Llr7;)V
+    .locals 4
+
+    sget v0, Lkr7;->a:I
+
+    new-instance v0, Lrfg;
+
+    sget-object v1, Lrfg;->s0:Lnz7;
+
+    sget-object v2, Lgk;->d:Lfk;
+
+    sget-object v3, Loe6;->c:Loe6;
+
+    invoke-direct {v0, p0, v1, v2, v3}, Lpe6;-><init>(Landroid/content/Context;Lnz7;Lgk;Loe6;)V
+
+    new-instance p0, Ljava/util/ArrayList;
+
+    invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
+
+    new-instance v1, Lcom/google/android/gms/location/LocationRequest;
+
+    invoke-direct {v1}, Lcom/google/android/gms/location/LocationRequest;-><init>()V
+
+    const/16 v2, 0x64
+
+    invoke-static {v2}, Lxqd;->I(I)V
+
+    iput v2, v1, Lcom/google/android/gms/location/LocationRequest;->a:I
+
+    invoke-virtual {p0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    new-instance v1, Lmr7;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, v2, v2}, Lmr7;-><init>(Ljava/util/ArrayList;ZZ)V
+
+    new-instance p0, Lyq0;
+
+    const/4 v3, 0x5
+
+    invoke-direct {p0, v3}, Lyq0;-><init>(I)V
+
+    const/4 v3, 0x1
+
+    iput-boolean v3, p0, Lyq0;->c:Z
+
+    new-instance v3, Ltwe;
+
+    invoke-direct {v3, v1}, Ltwe;-><init>(Ljava/lang/Object;)V
+
+    iput-object v3, p0, Lyq0;->d:Ljava/lang/Object;
+
+    const/16 v1, 0x97a
+
+    iput v1, p0, Lyq0;->b:I
+
+    invoke-virtual {p0}, Lyq0;->e()Lbfg;
+
+    move-result-object p0
+
+    invoke-virtual {v0, v2, p0}, Lpe6;->c(ILow6;)Lmlg;
+
+    move-result-object p0
 
     new-instance v0, Lze6;
 
-    const/4 v1, 0x0
+    invoke-direct {v0, p1}, Lze6;-><init>(Llr7;)V
 
-    invoke-direct {v0, v1}, Lze6;-><init>(I)V
+    invoke-virtual {p0, v0}, Lmlg;->i(Lf1a;)Lmlg;
 
-    sput-object v0, Laf6;->CREATOR:Landroid/os/Parcelable$Creator;
+    new-instance v0, Lze6;
 
-    return-void
-.end method
+    invoke-direct {v0, p1}, Lze6;-><init>(Llr7;)V
 
-.method public synthetic constructor <init>()V
-    .locals 1
+    sget-object p1, Lame;->a:Lo67;
 
-    const v0, 0x3fa66666    # 1.3f
-
-    .line 1
-    invoke-direct {p0, v0}, Laf6;-><init>(F)V
-
-    return-void
-.end method
-
-.method public constructor <init>(F)V
-    .locals 0
-
-    .line 2
-    invoke-direct {p0, p1}, Landroid/text/style/RelativeSizeSpan;-><init>(F)V
-
-    .line 3
-    iput p1, p0, Laf6;->a:F
-
-    const/16 p1, 0x8
-
-    .line 4
-    iput p1, p0, Laf6;->b:I
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final copy()Lqt3;
-    .locals 1
-
-    new-instance v0, Laf6;
-
-    iget p0, p0, Laf6;->a:F
-
-    invoke-direct {v0, p0}, Laf6;-><init>(F)V
-
-    return-object v0
-.end method
-
-.method public final getType()I
-    .locals 0
-
-    iget p0, p0, Laf6;->b:I
-
-    return p0
-.end method
-
-.method public final updateDrawState(Landroid/text/TextPaint;)V
-    .locals 0
-
-    invoke-super {p0, p1}, Landroid/text/style/RelativeSizeSpan;->updateDrawState(Landroid/text/TextPaint;)V
-
-    const/4 p0, 0x1
-
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setFakeBoldText(Z)V
-
-    return-void
-.end method
-
-.method public final updateMeasureState(Landroid/text/TextPaint;)V
-    .locals 0
-
-    invoke-super {p0, p1}, Landroid/text/style/RelativeSizeSpan;->updateMeasureState(Landroid/text/TextPaint;)V
-
-    const/4 p0, 0x1
-
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setFakeBoldText(Z)V
-
-    return-void
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
-
-    iget p0, p0, Laf6;->a:F
-
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeFloat(F)V
+    invoke-virtual {p0, p1, v0}, Lmlg;->c(Ljava/util/concurrent/Executor;Lh1a;)Lmlg;
 
     return-void
 .end method

@@ -1,87 +1,83 @@
 .class public final Ld62;
-.super Ljava/lang/Object;
+.super Lki0;
 .source "SourceFile"
 
 
-# static fields
-.field public static final j:Ld62;
-
-
 # instance fields
-.field public final a:Z
+.field public final b:J
 
-.field public final b:Z
+.field public final c:Ljava/util/List;
 
-.field public final c:Z
-
-.field public final d:Z
-
-.field public final e:Z
-
-.field public final f:Z
-
-.field public final g:Z
-
-.field public final h:Z
-
-.field public final i:Z
+.field public final o:Ljava/util/Map;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 11
+.method public constructor <init>(JJLjava/util/List;Ljava/util/Map;)V
+    .locals 0
 
-    new-instance v10, Ld62;
+    invoke-direct {p0, p1, p2}, Lki0;-><init>(J)V
 
-    const/4 v8, 0x0
+    iput-wide p3, p0, Ld62;->b:J
 
-    const/4 v9, 0x0
+    iput-object p5, p0, Ld62;->c:Ljava/util/List;
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    move-object v0, v10
-
-    invoke-direct/range {v0 .. v9}, Ld62;-><init>(ZZZZZZZZZ)V
-
-    sput-object v10, Ld62;->j:Ld62;
+    iput-object p6, p0, Ld62;->o:Ljava/util/Map;
 
     return-void
 .end method
 
-.method public constructor <init>(ZZZZZZZZZ)V
-    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    iput-boolean p1, p0, Ld62;->a:Z
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iput-boolean p2, p0, Ld62;->b:Z
+    const-string v1, "ChatBotCommandsEvent{chatId="
 
-    iput-boolean p3, p0, Ld62;->c:Z
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iput-boolean p4, p0, Ld62;->d:Z
+    iget-wide v1, p0, Ld62;->b:J
 
-    iput-boolean p5, p0, Ld62;->e:Z
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    iput-boolean p6, p0, Ld62;->f:Z
+    const-string v1, ", botCommands count="
 
-    iput-boolean p7, p0, Ld62;->g:Z
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iput-boolean p8, p0, Ld62;->h:Z
+    iget-object v1, p0, Ld62;->c:Ljava/util/List;
 
-    iput-boolean p9, p0, Ld62;->i:Z
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    return-void
+    move-result v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", botsInfoMap count="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Ld62;->o:Ljava/util/Map;
+
+    invoke-interface {v1}, Ljava/util/Map;->size()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, "} "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-super {p0}, Lki0;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -1,60 +1,50 @@
-.class public abstract Ls54;
-.super Lzg0;
+.class public final Ls54;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lf3b;
+
+
+# static fields
+.field public static final a:Ltu0;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Ltu0;
+
+    const/4 v1, 0x3
+
+    invoke-direct {v0, v1}, Ltu0;-><init>(I)V
+
+    sput-object v0, Ls54;->a:Ltu0;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final finalize()V
-    .locals 3
+.method public final bridge synthetic f(Ljava/lang/Object;)Z
+    .locals 0
 
-    invoke-interface {p0}, Lb13;->isClosed()Z
+    const/4 p0, 0x1
 
-    move-result v0
+    return p0
+.end method
 
-    if-eqz v0, :cond_0
+.method public final g()Ljava/lang/Object;
+    .locals 0
 
-    return-void
+    sget-object p0, Ls54;->a:Ltu0;
 
-    :cond_0
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    check-cast p0, Ljava/nio/ByteBuffer;
 
-    move-result-object v0
-
-    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    filled-new-array {v0, v1}, [Ljava/lang/Object;
-
-    move-result-object v0
-
-    const-string v1, "CloseableImage"
-
-    const-string v2, "finalize: %s %x still open."
-
-    invoke-static {v1, v2, v0}, Lm75;->m(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    :try_start_0
-    invoke-interface {p0}, Lb13;->close()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-super {p0}, Ljava/lang/Object;->finalize()V
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    invoke-super {p0}, Ljava/lang/Object;->finalize()V
-
-    throw v0
+    return-object p0
 .end method

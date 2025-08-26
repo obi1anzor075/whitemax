@@ -4,24 +4,20 @@
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final a:J
 
 .field public final b:Ljava/lang/String;
 
-.field public final c:I
-
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;I)V
+.method public constructor <init>(JLjava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfp4;->a:Ljava/lang/String;
+    iput-wide p1, p0, Lfp4;->a:J
 
-    iput-object p2, p0, Lfp4;->b:Ljava/lang/String;
-
-    iput p3, p0, Lfp4;->c:I
+    iput-object p3, p0, Lfp4;->b:Ljava/lang/String;
 
     return-void
 .end method
@@ -29,13 +25,13 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 7
 
     const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
-    goto :goto_1
+    return v0
 
     :cond_0
     instance-of v1, p1, Lfp4;
@@ -44,109 +40,80 @@
 
     if-nez v1, :cond_1
 
-    :goto_0
-    move v0, v2
-
-    goto :goto_1
+    return v2
 
     :cond_1
     check-cast p1, Lfp4;
 
-    iget-object v1, p1, Lfp4;->a:Ljava/lang/String;
+    iget-wide v3, p0, Lfp4;->a:J
 
-    iget-object v3, p0, Lfp4;->a:Ljava/lang/String;
+    iget-wide v5, p1, Lfp4;->a:J
 
-    invoke-static {v3, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    cmp-long v1, v3, v5
 
-    move-result v1
+    if-eqz v1, :cond_2
 
-    if-nez v1, :cond_2
-
-    goto :goto_0
+    return v2
 
     :cond_2
-    iget-object v1, p0, Lfp4;->b:Ljava/lang/String;
+    iget-object p0, p0, Lfp4;->b:Ljava/lang/String;
 
-    iget-object v3, p1, Lfp4;->b:Ljava/lang/String;
+    iget-object p1, p1, Lfp4;->b:Ljava/lang/String;
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result p0
 
-    if-nez v1, :cond_3
+    if-nez p0, :cond_3
 
-    goto :goto_0
+    return v2
 
     :cond_3
-    iget p0, p0, Lfp4;->c:I
-
-    iget p1, p1, Lfp4;->c:I
-
-    if-eq p0, p1, :cond_4
-
-    goto :goto_0
-
-    :cond_4
-    :goto_1
     return v0
 .end method
 
 .method public final hashCode()I
-    .locals 3
+    .locals 2
 
-    iget-object v0, p0, Lfp4;->a:Ljava/lang/String;
+    iget-wide v0, p0, Lfp4;->a:J
 
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget-object v2, p0, Lfp4;->b:Ljava/lang/String;
-
-    invoke-static {v0, v1, v2}, Lme4;->d(IILjava/lang/String;)I
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
 
     move-result v0
 
-    iget p0, p0, Lfp4;->c:I
+    mul-int/lit8 v0, v0, 0x1f
 
-    add-int/2addr v0, p0
+    iget-object p0, p0, Lfp4;->b:Ljava/lang/String;
 
-    return v0
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 2
+    .locals 4
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const-string v0, "DraftMediaUploadKeyDb(chatId="
 
-    const-string v1, "DropRecord(event=\'"
+    const-string v1, ", attachLocalId="
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-wide v2, p0, Lfp4;->a:J
 
-    iget-object v1, p0, Lfp4;->a:Ljava/lang/String;
+    iget-object p0, p0, Lfp4;->b:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, v2, v3, v1, p0}, Lp3a;->k(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "\', reason=\'"
+    move-result-object p0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v0, ")"
 
-    iget-object v1, p0, Lfp4;->b:Ljava/lang/String;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "\', count="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget p0, p0, Lfp4;->c:I
-
-    const/16 v1, 0x29
-
-    invoke-static {v0, p0, v1}, Lhr1;->h(Ljava/lang/StringBuilder;IC)Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

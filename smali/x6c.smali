@@ -1,202 +1,84 @@
 .class public final Lx6c;
-.super Ljava/lang/Object;
+.super Lsod;
 .source "SourceFile"
 
 
-# instance fields
-.field public a:I
-
-.field public b:Landroid/util/SparseArray;
-
-.field public c:I
-
-.field public d:I
-
-.field public e:I
-
-.field public f:I
-
-.field public g:Z
-
-.field public h:Z
-
-.field public i:Z
-
-.field public j:Z
-
-.field public k:Z
-
-.field public l:Z
-
-.field public m:I
-
-.field public n:J
-
-.field public o:I
-
-
 # virtual methods
-.method public final a(I)V
-    .locals 3
+.method public final D(Lu6c;)V
+    .locals 5
 
-    iget v0, p0, Lx6c;->e:I
+    iget-boolean v0, p1, Lu6c;->Z:Z
 
-    and-int/2addr v0, p1
+    iget-object v1, p0, Lccc;->a:Landroid/view/View;
 
     if-eqz v0, :cond_0
+
+    move-object v0, v1
+
+    check-cast v0, Lw6c;
+
+    sget-object v2, Lc3a;->a:Lc3a;
+
+    invoke-virtual {v0, v2}, Lw6c;->setAvatarShape(Ld3a;)V
+
+    :cond_0
+    iget-object v0, p1, Lu6c;->c:Ljava/lang/String;
+
+    move-object v2, v1
+
+    check-cast v2, Lw6c;
+
+    invoke-virtual {v2, v0}, Lw6c;->setAvatar(Ljava/lang/String;)V
+
+    iget-object v0, p1, Lu6c;->o:Ljava/lang/CharSequence;
+
+    move-object v2, v1
+
+    check-cast v2, Lw6c;
+
+    iget-wide v3, p0, Lccc;->X:J
+
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
+
+    invoke-static {v0, p0}, Lk3c;->a(Ljava/lang/CharSequence;Ljava/lang/Long;)Lmc0;
+
+    move-result-object p0
+
+    invoke-virtual {v2, p0}, Lw6c;->setAbbreviation(Lmc0;)V
+
+    iget-object p0, p1, Lu6c;->b:Ljava/lang/CharSequence;
+
+    move-object v0, v1
+
+    check-cast v0, Lw6c;
+
+    invoke-virtual {v0, p0}, Lw6c;->setName(Ljava/lang/CharSequence;)V
+
+    iget-boolean p0, p1, Lu6c;->Y:Z
+
+    move-object v0, v1
+
+    check-cast v0, Lw6c;
+
+    invoke-virtual {v0, p0}, Lw6c;->setVerified(Z)V
+
+    iget-boolean p0, p1, Lu6c;->X:Z
+
+    check-cast v1, Lw6c;
+
+    invoke-virtual {v1, p0}, Lw6c;->setOnline(Z)V
 
     return-void
-
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Layout state should be one of "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {p1}, Ljava/lang/Integer;->toBinaryString(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p1, " but it is "
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget p0, p0, Lx6c;->e:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->toBinaryString(I)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
-.method public final b()I
-    .locals 1
+.method public final bridge synthetic x(Lol7;)V
+    .locals 0
 
-    iget-boolean v0, p0, Lx6c;->h:Z
+    check-cast p1, Lu6c;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {p0, p1}, Lx6c;->D(Lu6c;)V
 
-    iget v0, p0, Lx6c;->c:I
-
-    iget p0, p0, Lx6c;->d:I
-
-    sub-int/2addr v0, p0
-
-    goto :goto_0
-
-    :cond_0
-    iget v0, p0, Lx6c;->f:I
-
-    :goto_0
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "State{mTargetPosition="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v1, p0, Lx6c;->a:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mData="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lx6c;->b:Landroid/util/SparseArray;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mItemCount="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lx6c;->f:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mIsMeasuring="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lx6c;->j:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mPreviousLayoutItemCount="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lx6c;->c:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mDeletedInvisibleItemCountSincePreviousLayout="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lx6c;->d:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mStructureChanged="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lx6c;->g:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mInPreLayout="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lx6c;->h:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mRunSimpleAnimations="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lx6c;->k:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mRunPredictiveAnimations="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean p0, p0, Lx6c;->l:Z
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const/16 p0, 0x7d
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

@@ -3,44 +3,119 @@
 .source "SourceFile"
 
 # interfaces
-.implements Led4;
+.implements Ljava/util/concurrent/ThreadFactory;
+
+
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Z
+
+.field public final c:Ljava/io/Serializable;
+
+
+# direct methods
+.method public constructor <init>(Ljava/lang/String;Z)V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Lce3;->a:I
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lce3;->c:Ljava/io/Serializable;
+
+    iput-boolean p2, p0, Lce3;->b:Z
+
+    return-void
+.end method
+
+.method public constructor <init>(Z)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lce3;->a:I
+
+    .line 2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-boolean p1, p0, Lce3;->b:Z
+
+    .line 3
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-direct {p1, v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+
+    iput-object p1, p0, Lce3;->c:Ljava/io/Serializable;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final a(Ljavax/net/ssl/SSLSocket;)Z
-    .locals 0
+.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+    .locals 2
 
-    sget-boolean p0, Lbe3;->d:Z
+    iget v0, p0, Lce3;->a:I
 
-    invoke-static {}, Lzd3;->b()Z
+    packed-switch v0, :pswitch_data_0
 
-    move-result p0
+    new-instance v0, Ljava/lang/Thread;
 
-    if-eqz p0, :cond_0
+    iget-object v1, p0, Lce3;->c:Ljava/io/Serializable;
 
-    invoke-static {p1}, Lorg/conscrypt/Conscrypt;->isConscrypt(Ljavax/net/ssl/SSLSocket;)Z
+    check-cast v1, Ljava/lang/String;
 
-    move-result p0
+    invoke-direct {v0, p1, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
 
-    if-eqz p0, :cond_0
+    iget-boolean p0, p0, Lce3;->b:Z
 
-    const/4 p0, 0x1
+    invoke-virtual {v0, p0}, Ljava/lang/Thread;->setDaemon(Z)V
+
+    return-object v0
+
+    :pswitch_0
+    iget-boolean v0, p0, Lce3;->b:Z
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "WM.task-"
 
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x0
+    const-string v0, "androidx.work-"
 
     :goto_0
-    return p0
-.end method
+    new-instance v1, Ljava/lang/Thread;
 
-.method public final b(Ljavax/net/ssl/SSLSocket;)Ljld;
-    .locals 0
+    invoke-static {v0}, Lzt1;->l(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-instance p0, Lde3;
+    move-result-object v0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object p0, p0, Lce3;->c:Ljava/io/Serializable;
 
-    return-object p0
+    check-cast p0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
+
+    move-result p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v1, p1, p0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
+
+    return-object v1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

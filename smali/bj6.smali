@@ -4,8 +4,8 @@
 
 
 # virtual methods
-.method public abstract b()Llja;
+.method public abstract i()Lpof;
 .end method
 
-.method public abstract i(Lvi6;Lni6;)Llja;
+.method public abstract j()Lgg9;
 .end method

@@ -1,134 +1,120 @@
-.class public final synthetic Lwh0;
-.super Ljava/lang/Object;
+.class public final Lwh0;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:I
 
-.field public final synthetic b:Lxh0;
+.field public final synthetic Y:Lxh0;
+
+.field public final synthetic Z:Lxr2;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lxh0;I)V
+.method public constructor <init>(Lxh0;Lxr2;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    iput p2, p0, Lwh0;->a:I
+    iput-object p1, p0, Lwh0;->Y:Lxh0;
 
-    iput-object p1, p0, Lwh0;->b:Lxh0;
+    iput-object p2, p0, Lwh0;->Z:Lxr2;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 6
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget v0, p0, Lwh0;->a:I
+    check-cast p1, Lox3;
 
-    packed-switch v0, :pswitch_data_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object p0, p0, Lwh0;->b:Lxh0;
-
-    iget-object p0, p0, Lxh0;->g:Ljava/util/concurrent/CopyOnWriteArraySet;
-
-    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
+    invoke-virtual {p0, p1, p2}, Lwh0;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    check-cast p0, Lwh0;
 
-    move-result v0
+    sget-object p1, Le5f;->a:Le5f;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {p0, p1}, Lwh0;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object p0
 
-    move-result-object v0
+    return-object p0
+.end method
 
-    check-cast v0, Lw1f;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    invoke-virtual {v0}, Lw1f;->c()V
+    new-instance p1, Lwh0;
+
+    iget-object v0, p0, Lwh0;->Y:Lxh0;
+
+    iget-object p0, p0, Lwh0;->Z:Lxr2;
+
+    invoke-direct {p1, v0, p0, p2}, Lwh0;-><init>(Lxh0;Lxr2;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    iget v0, p0, Lwh0;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
-    return-void
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    :pswitch_0
-    iget-object p0, p0, Lwh0;->b:Lxh0;
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    iget-object p0, p0, Lxh0;->g:Ljava/util/concurrent/CopyOnWriteArraySet;
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lwh0;->Y:Lxh0;
+
+    iget-object p1, p1, Lxh0;->a:Lwjd;
+
+    iput v1, p0, Lwh0;->X:I
+
+    iget-object v0, p0, Lwh0;->Z:Lxr2;
+
+    invoke-virtual {p1, v0, p0}, Lwjd;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    :cond_1
-    :goto_1
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    sget-object p1, Lpx3;->a:Lpx3;
 
-    move-result v0
+    if-ne p0, p1, :cond_2
 
-    if-eqz v0, :cond_4
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lw1f;
-
-    iget-object v1, v0, Lw1f;->d:Ljava/lang/String;
-
-    sget-object v2, Ludd;->e:Lfn6;
-
-    if-nez v2, :cond_2
-
-    goto :goto_2
+    return-object p1
 
     :cond_2
-    invoke-interface {v2}, Lfn6;->c()Z
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
 
-    move-result v3
-
-    if-eqz v3, :cond_3
-
-    sget-object v3, Ltn7;->X:Ltn7;
-
-    const/4 v4, 0x0
-
-    const-string v5, "Player autoplay. onMediaProcessingFinished."
-
-    invoke-interface {v2, v3, v1, v5, v4}, Lfn6;->d(Ltn7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_3
-    :goto_2
-    const/4 v1, 0x0
-
-    iput-boolean v1, v0, Lw1f;->n:Z
-
-    iget-object v2, v0, Lw1f;->e:Landroidx/recyclerview/widget/RecyclerView;
-
-    if-eqz v2, :cond_1
-
-    invoke-virtual {v0, v2, v1}, Lw1f;->e(Landroidx/recyclerview/widget/RecyclerView;Z)V
-
-    goto :goto_1
-
-    :cond_4
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

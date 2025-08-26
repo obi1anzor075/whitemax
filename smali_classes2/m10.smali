@@ -1,61 +1,85 @@
-.class public final Lm10;
-.super Ljava/lang/Object;
+.class public final enum Lm10;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
 # static fields
-.field public static final synthetic e:I
+.field public static final enum a:Lm10;
 
+.field public static final enum b:Lm10;
 
-# instance fields
-.field public final a:F
+.field public static final enum c:Lm10;
 
-.field public final b:F
-
-.field public final c:Lqjb;
-
-.field public final d:Z
+.field public static final synthetic o:[Lm10;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 5
 
-    new-instance v0, Ll10;
+    new-instance v0, Lm10;
 
-    const/4 v1, 0x0
+    const-string v1, "DEFAULT"
 
-    invoke-direct {v0, v1}, Ll10;-><init>(I)V
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lm10;->a:Lm10;
 
     new-instance v1, Lm10;
 
-    invoke-direct {v1, v0}, Lm10;-><init>(Ll10;)V
+    const-string v2, "PROCESSING"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lm10;->b:Lm10;
+
+    new-instance v2, Lm10;
+
+    const-string v3, "PROCESSED"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lm10;->c:Lm10;
+
+    filled-new-array {v0, v1, v2}, [Lm10;
+
+    move-result-object v0
+
+    sput-object v0, Lm10;->o:[Lm10;
 
     return-void
 .end method
 
-.method public constructor <init>(Ll10;)V
+.method public static valueOf(Ljava/lang/String;)Lm10;
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-class v0, Lm10;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    iget v0, p1, Ll10;->b:F
+    move-result-object p0
 
-    iput v0, p0, Lm10;->a:F
+    check-cast p0, Lm10;
 
-    iget v0, p1, Ll10;->c:F
+    return-object p0
+.end method
 
-    iput v0, p0, Lm10;->b:F
+.method public static values()[Lm10;
+    .locals 1
 
-    iget-object v0, p1, Ll10;->a:Lqjb;
+    sget-object v0, Lm10;->o:[Lm10;
 
-    iput-object v0, p0, Lm10;->c:Lqjb;
+    invoke-virtual {v0}, [Lm10;->clone()Ljava/lang/Object;
 
-    iget-boolean p1, p1, Ll10;->d:Z
+    move-result-object v0
 
-    iput-boolean p1, p0, Lm10;->d:Z
+    check-cast v0, [Lm10;
 
-    return-void
+    return-object v0
 .end method

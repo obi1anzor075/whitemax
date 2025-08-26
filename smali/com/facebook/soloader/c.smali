@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field public final a:[Lb55;
+.field public final a:[Lv75;
 
 
 # direct methods
-.method public constructor <init>(Lc55;Luue;)V
+.method public constructor <init>(Lw75;Lw75;)V
     .locals 17
 
     const-string v0, ".so"
@@ -17,7 +17,7 @@
 
     move-object/from16 v1, p1
 
-    iget-object v1, v1, Luue;->d:Landroid/content/Context;
+    iget-object v1, v1, Lp5f;->d:Landroid/content/Context;
 
     new-instance v2, Ljava/io/File;
 
@@ -165,9 +165,9 @@
 
     move-object/from16 v6, v16
 
-    check-cast v6, Lb55;
+    check-cast v6, Lv75;
 
-    iget-object v6, v6, Libe;->b:Ljava/lang/Object;
+    iget-object v6, v6, Lije;->b:Ljava/lang/Object;
 
     check-cast v6, Ljava/lang/String;
 
@@ -217,13 +217,13 @@
 
     move-result-object v11
 
-    new-instance v12, Lb55;
+    new-instance v12, Lv75;
 
     new-instance v14, Ljava/io/File;
 
     invoke-direct {v14, v9, v6}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    invoke-direct {v12, v13, v14, v11}, Lb55;-><init>(Ljava/lang/String;Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v12, v13, v14, v11}, Lv75;-><init>(Ljava/lang/String;Ljava/io/File;Ljava/lang/String;)V
 
     invoke-virtual {v1, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -289,10 +289,8 @@
     :catchall_2
     move-exception v0
 
-    move-object v2, v0
-
     :try_start_4
-    invoke-virtual {v1, v2}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+    invoke-virtual {v1, v0}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
     :goto_6
     throw v1
@@ -310,9 +308,7 @@
     :catchall_3
     move-exception v0
 
-    move-object v2, v0
-
-    invoke-virtual {v1, v2}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+    invoke-virtual {v1, v0}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
     :goto_8
     throw v1
@@ -330,33 +326,31 @@
 
     check-cast v0, [Ljava/lang/String;
 
-    invoke-virtual/range {p2 .. p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    new-array v0, v0, [Lb55;
+    new-array v0, v0, [Lv75;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, [Lb55;
+    check-cast v0, [Lv75;
 
     move-object/from16 v1, p0
 
-    iput-object v0, v1, Lcom/facebook/soloader/c;->a:[Lb55;
+    iput-object v0, v1, Lcom/facebook/soloader/c;->a:[Lv75;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final m()[Libe;
+.method public final m()[Lije;
     .locals 0
 
-    iget-object p0, p0, Lcom/facebook/soloader/c;->a:[Lb55;
+    iget-object p0, p0, Lcom/facebook/soloader/c;->a:[Lv75;
 
     return-object p0
 .end method
@@ -368,7 +362,7 @@
 
     new-array v0, v0, [B
 
-    iget-object p0, p0, Lcom/facebook/soloader/c;->a:[Lb55;
+    iget-object p0, p0, Lcom/facebook/soloader/c;->a:[Lv75;
 
     array-length v1, p0
 
@@ -381,28 +375,28 @@
 
     new-instance v4, Ljava/io/FileInputStream;
 
-    iget-object v5, v3, Lb55;->o:Ljava/io/File;
+    iget-object v5, v3, Lv75;->o:Ljava/io/File;
 
     invoke-direct {v4, v5}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
     :try_start_0
-    new-instance v5, Lbe5;
+    new-instance v5, Lzg5;
 
     const/4 v6, 0x2
 
-    invoke-direct {v5, v3, v6, v4}, Lbe5;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-direct {v5, v3, v6, v4}, Lzg5;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     const/4 v4, 0x0
 
     :try_start_1
-    invoke-static {v5, v0, p1}, Lcom/facebook/soloader/e;->a(Lbe5;[BLjava/io/File;)V
+    invoke-static {v5, v0, p1}, Lcom/facebook/soloader/e;->c(Lzg5;[BLjava/io/File;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     :try_start_2
-    invoke-virtual {v5}, Lbe5;->close()V
+    invoke-virtual {v5}, Lzg5;->close()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
@@ -419,7 +413,7 @@
     move-exception p0
 
     :try_start_3
-    invoke-virtual {v5}, Lbe5;->close()V
+    invoke-virtual {v5}, Lzg5;->close()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_2
 

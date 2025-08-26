@@ -31,12 +31,11 @@
 
     invoke-direct {p0, p1}, Lorg/apache/http/entity/SerializableEntity;->createBytes(Ljava/io/Serializable;)V
 
-    goto :goto_0
+    return-void
 
     :cond_0
     iput-object p1, p0, Lorg/apache/http/entity/SerializableEntity;->objRef:Ljava/io/Serializable;
 
-    :goto_0
     return-void
 
     :cond_1
@@ -143,12 +142,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -176,14 +174,13 @@
 
     invoke-virtual {v0}, Ljava/io/ObjectOutputStream;->flush()V
 
-    goto :goto_0
+    return-void
 
     :cond_0
     invoke-virtual {p1, v0}, Ljava/io/OutputStream;->write([B)V
 
     invoke-virtual {p1}, Ljava/io/OutputStream;->flush()V
 
-    :goto_0
     return-void
 
     :cond_1

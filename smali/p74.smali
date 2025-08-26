@@ -1,58 +1,63 @@
-.class public abstract Lp74;
+.class public final synthetic Lp74;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lkm7;
+.implements Lai8;
 
-# static fields
-.field public static final a:Lhd4;
+
+# instance fields
+.field public final synthetic a:F
+
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Ljava/lang/Object;F)V
+    .locals 0
 
-    const-string v0, "kotlinx.coroutines.main.delay"
+    iput-object p1, p0, Lp74;->b:Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    iput p2, p0, Lp74;->a:F
 
-    invoke-static {v0, v1}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp(Ljava/lang/String;Z)Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result v0
+    return-void
+.end method
 
-    if-nez v0, :cond_0
 
-    sget-object v0, Lo74;->w0:Lo74;
+# virtual methods
+.method public b(Lwg8;)V
+    .locals 0
 
-    goto :goto_1
+    iget-object p1, p0, Lp74;->b:Ljava/lang/Object;
 
-    :cond_0
-    sget-object v0, Loi4;->a:Lha4;
+    check-cast p1, Lbi8;
 
-    sget-object v0, Lkotlinx/coroutines/internal/MainDispatcherLoader;->dispatcher:Lzr7;
+    iget-object p1, p1, Lbi8;->f:Lqh8;
 
-    invoke-static {v0}, Lkotlinx/coroutines/internal/MainDispatchersKt;->isMissing(Lzr7;)Z
+    iget-object p1, p1, Lqh8;->s:Lk2b;
 
-    move-result v1
+    iget p0, p0, Lp74;->a:F
 
-    if-nez v1, :cond_2
+    invoke-virtual {p1, p0}, Lk2b;->j0(F)V
 
-    instance-of v1, v0, Lhd4;
+    return-void
+.end method
 
-    if-nez v1, :cond_1
+.method public invoke(Ljava/lang/Object;)V
+    .locals 1
 
-    goto :goto_0
+    iget-object v0, p0, Lp74;->b:Ljava/lang/Object;
 
-    :cond_1
-    check-cast v0, Lhd4;
+    check-cast v0, Lzc;
 
-    goto :goto_1
+    iget p0, p0, Lp74;->a:F
 
-    :cond_2
-    :goto_0
-    sget-object v0, Lo74;->w0:Lo74;
+    check-cast p1, Lad;
 
-    :goto_1
-    sput-object v0, Lp74;->a:Lhd4;
+    invoke-interface {p1, v0, p0}, Lad;->l0(Lzc;F)V
 
     return-void
 .end method

@@ -1,108 +1,232 @@
 .class public final Lyw6;
-.super Landroid/widget/FrameLayout;
+.super Lp1;
 .source "SourceFile"
 
 # interfaces
-.implements Liu0;
+.implements Luw6;
 
 
 # instance fields
-.field public final a:F
-
-.field public final b:F
-
-.field public c:J
-
-.field public o:Lvw6;
-
-.field public final w0:Lku0;
-
-.field public x0:Lxw6;
-
-.field public final y0:Ln14;
+.field public final a:J
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 3
+.method public constructor <init>(J)V
+    .locals 0
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object p1
-
-    iget p1, p1, Landroid/util/DisplayMetrics;->density:F
-
-    const/high16 v0, 0x41800000    # 16.0f
-
-    mul-float/2addr p1, v0
-
-    iput p1, p0, Lyw6;->a:F
-
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object p1
-
-    iget p1, p1, Landroid/util/DisplayMetrics;->density:F
-
-    const/high16 v0, 0x40c00000    # 6.0f
-
-    mul-float/2addr p1, v0
-
-    iput p1, p0, Lyw6;->b:F
-
-    new-instance p1, Lku0;
-
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-direct {p1, v0}, Lku0;-><init>(Landroid/content/Context;)V
-
-    iput-object p1, p0, Lyw6;->w0:Lku0;
-
-    new-instance v0, Ln14;
-
-    const-wide/16 v1, 0x12c
-
-    invoke-direct {v0, v1, v2}, Ln14;-><init>(J)V
-
-    iput-object v0, p0, Lyw6;->y0:Ln14;
-
-    invoke-virtual {p1, p0}, Lku0;->setClickListener(Liu0;)V
-
-    sget v0, La7a;->L:I
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->setId(I)V
-
-    new-instance v0, Landroid/view/ViewGroup$LayoutParams;
-
-    const/4 v1, -0x1
-
-    invoke-direct {v0, v1, v1}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
-
-    invoke-virtual {p0, p1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    iput-wide p1, p0, Lyw6;->a:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final setClickListener(Lxw6;)V
+.method public final a()Ljava/lang/String;
+    .locals 2
+
+    iget-wide v0, p0, Lyw6;->a:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final b()J
+    .locals 2
+
+    iget-wide v0, p0, Lyw6;->a:J
+
+    return-wide v0
+.end method
+
+.method public final d()I
+    .locals 4
+
+    const-wide/32 v0, -0x80000000
+
+    iget-wide v2, p0, Lyw6;->a:J
+
+    cmp-long p0, v0, v2
+
+    if-gtz p0, :cond_0
+
+    const-wide/32 v0, 0x7fffffff
+
+    cmp-long p0, v2, v0
+
+    if-gtz p0, :cond_0
+
+    long-to-int p0, v2
+
+    return p0
+
+    :cond_0
+    new-instance p0, Lorg/msgpack/core/MessageIntegerOverflowException;
+
+    invoke-static {v2, v3}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lorg/msgpack/core/MessageIntegerOverflowException;-><init>(Ljava/math/BigInteger;)V
+
+    throw p0
+.end method
+
+.method public final e()I
     .locals 0
 
-    iput-object p1, p0, Lyw6;->x0:Lxw6;
+    const/4 p0, 0x3
 
-    return-void
+    return p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    if-ne p1, p0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    instance-of v0, p1, Lvaf;
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    check-cast p1, Lvaf;
+
+    check-cast p1, Lp1;
+
+    invoke-interface {p1}, Lvaf;->e()I
+
+    move-result v0
+
+    const/4 v2, 0x3
+
+    if-ne v0, v2, :cond_3
+
+    invoke-interface {p1}, Lvaf;->f()Luw6;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Luw6;->j()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    iget-wide v2, p0, Lyw6;->a:J
+
+    invoke-interface {p1}, Ljw9;->b()J
+
+    move-result-wide p0
+
+    cmp-long p0, v2, p0
+
+    if-nez p0, :cond_3
+
+    :goto_0
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_3
+    :goto_1
+    return v1
+.end method
+
+.method public final f()Luw6;
+    .locals 0
+
+    return-object p0
+.end method
+
+.method public final h()Ljava/math/BigInteger;
+    .locals 2
+
+    iget-wide v0, p0, Lyw6;->a:J
+
+    invoke-static {v0, v1}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final hashCode()I
+    .locals 4
+
+    const-wide/32 v0, -0x80000000
+
+    iget-wide v2, p0, Lyw6;->a:J
+
+    cmp-long p0, v0, v2
+
+    if-gtz p0, :cond_0
+
+    const-wide/32 v0, 0x7fffffff
+
+    cmp-long p0, v2, v0
+
+    if-gtz p0, :cond_0
+
+    long-to-int p0, v2
+
+    return p0
+
+    :cond_0
+    const/16 p0, 0x20
+
+    ushr-long v0, v2, p0
+
+    xor-long/2addr v0, v2
+
+    long-to-int p0, v0
+
+    return p0
+.end method
+
+.method public final i()J
+    .locals 2
+
+    iget-wide v0, p0, Lyw6;->a:J
+
+    return-wide v0
+.end method
+
+.method public final j()Z
+    .locals 0
+
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final k()Luw6;
+    .locals 0
+
+    return-object p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    iget-wide v0, p0, Lyw6;->a:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

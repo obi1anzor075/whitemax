@@ -25,7 +25,7 @@
         "Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$OwnRoomsListener;",
         "Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;",
         "event",
-        "Ljue;",
+        "Le5f;",
         "onActiveRoomChanged",
         "(Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;)V",
         "onProposedRoomChanged",
@@ -39,6 +39,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -80,11 +81,11 @@
 
     move-result-object p0
 
-    invoke-virtual {p1}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;->getRoomId()Lw2d;
+    invoke-virtual {p1}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;->getRoomId()Le9d;
 
     move-result-object p1
 
-    invoke-static {p0}, Lete;->f(Ljava/util/Map;)Ljava/util/Map;
+    invoke-static {p0}, La4f;->b(Ljava/util/Map;)Ljava/util/Map;
 
     invoke-interface {p0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -94,7 +95,7 @@
 .method public onRoomUpdated(Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;)V
     .locals 1
 
-    invoke-virtual {p1}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;->getRoom()Lq2d;
+    invoke-virtual {p1}, Lru/ok/android/externcalls/sdk/sessionroom/SessionRoomsManager$SessionRoomInfo;->getRoom()Ly8d;
 
     move-result-object p1
 
@@ -109,7 +110,7 @@
 
     move-result-object p0
 
-    iget-object v0, p1, Lq2d;->a:Lv2d;
+    iget-object v0, p1, Ly8d;->a:Ld9d;
 
     invoke-interface {p0, v0, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

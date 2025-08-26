@@ -1,24 +1,59 @@
-.class public final synthetic Lx61;
-.super Ljava/lang/Object;
+.class public final Lx61;
+.super Lmbc;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Lone/me/calllist/ui/CallHistoryScreen;
+.field public final b:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/calllist/ui/CallHistoryScreen;I)V
+.method public constructor <init>()V
+    .locals 2
+
+    const/4 v0, 0x5
+
+    iput v0, p0, Lx61;->a:I
+
+    .line 2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/16 v0, 0x18
+
+    int-to-float v0, v0
+
+    .line 3
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v0, v1
+
+    invoke-static {v0}, Lkhg;->x(F)I
+
+    move-result v0
+
+    .line 4
+    iput v0, p0, Lx61;->b:I
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(II)V
     .locals 0
 
+    .line 1
     iput p2, p0, Lx61;->a:I
 
-    iput-object p1, p0, Lx61;->b:Lone/me/calllist/ui/CallHistoryScreen;
+    iput p1, p0, Lx61;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,107 +62,253 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 3
+.method public final f(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Lybc;)V
+    .locals 2
 
-    const/4 p1, 0x0
+    iget v0, p0, Lx61;->a:I
 
-    iget-object v0, p0, Lx61;->b:Lone/me/calllist/ui/CallHistoryScreen;
+    packed-switch v0, :pswitch_data_0
 
-    iget p0, p0, Lx61;->a:I
+    invoke-virtual {p3, p2}, Landroidx/recyclerview/widget/RecyclerView;->S(Landroid/view/View;)Lccc;
 
-    packed-switch p0, :pswitch_data_0
+    move-result-object p4
 
-    iget-object p0, v0, Lone/me/calllist/ui/CallHistoryScreen;->b:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lqna;
-
-    new-instance v1, Ljrf;
-
-    invoke-direct {v1, v0, p1}, Ljrf;-><init>(Lone/me/sdk/arch/Widget;I)V
-
-    sget-object p1, Lqna;->h:[Ljava/lang/String;
-
-    const/16 v0, 0xa0
-
-    invoke-virtual {p0, v1, p1, v0}, Lqna;->f(Ljrf;[Ljava/lang/String;I)V
-
-    return-void
-
-    :pswitch_0
-    sget-object p0, Lone/me/calllist/ui/CallHistoryScreen;->G0:[Lk77;
-
-    invoke-virtual {v0}, Lone/me/calllist/ui/CallHistoryScreen;->m0()Le71;
-
-    move-result-object p0
-
-    new-instance v0, La01;
-
-    const/16 v1, 0xa
-
-    invoke-direct {v0, v1}, La01;-><init>(I)V
-
-    iget-object p0, p0, Le71;->o:Lwe1;
-
-    invoke-virtual {p0}, Lwe1;->c()V
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, p0, Lwe1;->j:Z
-
-    invoke-virtual {p0}, Lwe1;->e()Lqna;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lwe1;->a:Ljrf;
-
-    invoke-virtual {v1, p1, v2}, Lqna;->a(ZLjrf;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object p0, p0, Lwe1;->d:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Led3;
-
-    invoke-interface {p0}, Led3;->f()Z
-
-    move-result p0
-
-    if-nez p0, :cond_0
-
-    invoke-virtual {v2}, Ljrf;->b()V
+    if-nez p4, :cond_0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0}, La01;->invoke()Ljava/lang/Object;
+    invoke-static {p2}, Landroidx/recyclerview/widget/RecyclerView;->R(Landroid/view/View;)I
 
-    goto :goto_0
+    move-result p2
+
+    invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lgbc;
+
+    move-result-object p3
+
+    iget p4, p4, Lccc;->Y:I
+
+    if-eqz p4, :cond_1
+
+    if-eqz p3, :cond_1
+
+    if-ltz p2, :cond_1
+
+    invoke-virtual {p3}, Lgbc;->j()I
+
+    move-result p3
+
+    if-ge p2, p3, :cond_1
+
+    if-nez p2, :cond_1
+
+    iget p0, p0, Lx61;->b:I
+
+    iput p0, p1, Landroid/graphics/Rect;->top:I
+
+    iput p0, p1, Landroid/graphics/Rect;->bottom:I
 
     :cond_1
-    iput-object v0, p0, Lwe1;->l:Ls16;
+    :goto_0
+    return-void
+
+    :pswitch_0
+    iget p0, p0, Lx61;->b:I
+
+    iput p0, p1, Landroid/graphics/Rect;->right:I
+
+    iput p0, p1, Landroid/graphics/Rect;->left:I
+
+    return-void
+
+    :pswitch_1
+    invoke-static {p2}, Landroidx/recyclerview/widget/RecyclerView;->R(Landroid/view/View;)I
+
+    move-result p3
+
+    invoke-virtual {p4}, Lybc;->b()I
+
+    move-result p4
+
+    add-int/lit8 p4, p4, -0x1
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lwe1;->h:Lfpd;
+    iget p0, p0, Lx61;->b:I
 
-    iput-boolean p1, p0, Lwe1;->i:Z
+    if-ne p3, p4, :cond_2
 
-    :goto_0
+    iput p0, p1, Landroid/graphics/Rect;->left:I
+
+    iput v0, p1, Landroid/graphics/Rect;->right:I
+
+    goto :goto_1
+
+    :cond_2
+    invoke-static {p2}, Landroidx/recyclerview/widget/RecyclerView;->R(Landroid/view/View;)I
+
+    move-result p2
+
+    if-nez p2, :cond_3
+
+    iput v0, p1, Landroid/graphics/Rect;->left:I
+
+    iput p0, p1, Landroid/graphics/Rect;->right:I
+
+    goto :goto_1
+
+    :cond_3
+    iput p0, p1, Landroid/graphics/Rect;->left:I
+
+    iput p0, p1, Landroid/graphics/Rect;->right:I
+
+    :goto_1
+    return-void
+
+    :pswitch_2
+    invoke-static {p2}, Landroidx/recyclerview/widget/RecyclerView;->R(Landroid/view/View;)I
+
+    move-result p2
+
+    iget p0, p0, Lx61;->b:I
+
+    if-nez p2, :cond_4
+
+    iget p4, p1, Landroid/graphics/Rect;->top:I
+
+    add-int/2addr p4, p0
+
+    iput p4, p1, Landroid/graphics/Rect;->top:I
+
+    :cond_4
+    invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lgbc;
+
+    move-result-object p3
+
+    if-eqz p3, :cond_5
+
+    invoke-virtual {p3}, Lgbc;->j()I
+
+    move-result p3
+
+    goto :goto_2
+
+    :cond_5
+    const/4 p3, 0x0
+
+    :goto_2
+    add-int/lit8 p3, p3, -0x1
+
+    if-ne p2, p3, :cond_6
+
+    iget p2, p1, Landroid/graphics/Rect;->bottom:I
+
+    const-wide/high16 p3, 0x3ff0000000000000L    # 1.0
+
+    int-to-double v0, p0
+
+    mul-double/2addr v0, p3
+
+    invoke-static {v0, v1}, Lkhg;->w(D)I
+
+    move-result p0
+
+    add-int/2addr p0, p2
+
+    iput p0, p1, Landroid/graphics/Rect;->bottom:I
+
+    :cond_6
+    return-void
+
+    :pswitch_3
+    invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lgbc;
+
+    move-result-object p3
+
+    if-nez p3, :cond_7
+
+    goto :goto_3
+
+    :cond_7
+    invoke-static {p2}, Landroidx/recyclerview/widget/RecyclerView;->R(Landroid/view/View;)I
+
+    move-result p2
+
+    if-ltz p2, :cond_8
+
+    invoke-virtual {p3}, Lgbc;->j()I
+
+    move-result p3
+
+    if-gt p2, p3, :cond_8
+
+    iget p0, p0, Lx61;->b:I
+
+    iput p0, p1, Landroid/graphics/Rect;->bottom:I
+
+    iput p0, p1, Landroid/graphics/Rect;->top:I
+
+    iput p0, p1, Landroid/graphics/Rect;->left:I
+
+    iput p0, p1, Landroid/graphics/Rect;->right:I
+
+    :cond_8
+    :goto_3
+    return-void
+
+    :pswitch_4
+    invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lgbc;
+
+    move-result-object p3
+
+    if-nez p3, :cond_9
+
+    goto :goto_4
+
+    :cond_9
+    invoke-static {p2}, Landroidx/recyclerview/widget/RecyclerView;->R(Landroid/view/View;)I
+
+    move-result p4
+
+    if-ltz p4, :cond_b
+
+    invoke-virtual {p3}, Lgbc;->j()I
+
+    move-result p3
+
+    if-gt p4, p3, :cond_b
+
+    invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object p2
+
+    iget p2, p2, Landroid/view/ViewGroup$LayoutParams;->width:I
+
+    if-nez p2, :cond_a
+
+    goto :goto_4
+
+    :cond_a
+    iget p0, p0, Lx61;->b:I
+
+    iput p0, p1, Landroid/graphics/Rect;->bottom:I
+
+    iput p0, p1, Landroid/graphics/Rect;->top:I
+
+    iput p0, p1, Landroid/graphics/Rect;->left:I
+
+    iput p0, p1, Landroid/graphics/Rect;->right:I
+
+    :cond_b
+    :goto_4
     return-void
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

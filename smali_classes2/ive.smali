@@ -2,21 +2,26 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lkhc;
-
 
 # instance fields
-.field public final a:Ljava/util/Map;
+.field public final a:I
+
+.field public final b:I
+
+.field public final c:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Map;)V
+.method public constructor <init>(III)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Live;->a:Ljava/util/Map;
+    iput p1, p0, Live;->a:I
+
+    iput p2, p0, Live;->b:I
+
+    iput p3, p0, Live;->c:I
 
     return-void
 .end method
@@ -28,77 +33,106 @@
 
     if-ne p0, p1, :cond_0
 
-    const/4 p0, 0x1
-
-    return p0
+    goto :goto_1
 
     :cond_0
-    if-eqz p1, :cond_2
+    instance-of v0, p1, Live;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    const-class v1, Live;
-
-    if-eq v1, v0, :cond_1
+    if-nez v0, :cond_1
 
     goto :goto_0
 
     :cond_1
     check-cast p1, Live;
 
-    iget-object p0, p0, Live;->a:Ljava/util/Map;
+    iget v0, p0, Live;->a:I
 
-    iget-object p1, p1, Live;->a:Ljava/util/Map;
+    iget v1, p1, Live;->a:I
 
-    invoke-interface {p0, p1}, Ljava/util/Map;->equals(Ljava/lang/Object;)Z
+    if-eq v0, v1, :cond_2
 
-    move-result p0
+    goto :goto_0
+
+    :cond_2
+    iget v0, p0, Live;->b:I
+
+    iget v1, p1, Live;->b:I
+
+    if-eq v0, v1, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    iget p0, p0, Live;->c:I
+
+    iget p1, p1, Live;->c:I
+
+    if-eq p0, p1, :cond_4
+
+    :goto_0
+    const/4 p0, 0x0
 
     return p0
 
-    :cond_2
-    :goto_0
-    const/4 p0, 0x0
+    :cond_4
+    :goto_1
+    const/4 p0, 0x1
 
     return p0
 .end method
 
 .method public final hashCode()I
-    .locals 0
+    .locals 3
 
-    iget-object p0, p0, Live;->a:Ljava/util/Map;
+    iget v0, p0, Live;->a:I
 
-    filled-new-array {p0}, [Ljava/lang/Object;
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
 
-    move-result-object p0
+    move-result v0
 
-    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget v2, p0, Live;->b:I
+
+    invoke-static {v2, v0, v1}, Lrqc;->e(III)I
+
+    move-result v0
+
+    iget p0, p0, Live;->c:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
     move-result p0
+
+    add-int/2addr p0, v0
 
     return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 2
+    .locals 5
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const-string v0, ", neutralFade="
 
-    const-string v1, "UpdateDisplayLayoutCommandV2Response{participantsToErrorMap="
+    const-string v1, ", themed="
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string v2, "TopbarBackgroundDisabledColors(neutral="
 
-    iget-object p0, p0, Live;->a:Ljava/util/Map;
+    iget v3, p0, Live;->a:I
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iget v4, p0, Live;->b:I
 
-    const/16 p0, 0x7d
+    invoke-static {v2, v3, v0, v4, v1}, Lpg0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v1, ")"
+
+    iget p0, p0, Live;->c:I
+
+    invoke-static {v0, p0, v1}, Lm26;->i(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

@@ -1,52 +1,50 @@
-.class public final synthetic Lf47;
-.super Lx26;
+.class public final Lf47;
+.super Ljava/util/concurrent/locks/AbstractOwnableSynchronizer;
 .source "SourceFile"
 
 # interfaces
-.implements Lk26;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final a:Lf47;
+# instance fields
+.field public final a:Ld1f;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
+.method public constructor <init>(Ld1f;)V
+    .locals 0
 
-    new-instance v6, Lf47;
+    invoke-direct {p0}, Ljava/util/concurrent/locks/AbstractOwnableSynchronizer;-><init>()V
 
-    const-class v2, Li47;
+    iput-object p1, p0, Lf47;->a:Ld1f;
 
-    const-string v3, "onAwaitInternalRegFunc"
+    return-void
+.end method
 
-    const/4 v1, 0x3
+.method public static a(Lf47;Ljava/lang/Thread;)V
+    .locals 0
 
-    const-string v4, "onAwaitInternalRegFunc(Lkotlinx/coroutines/selects/SelectInstance;Ljava/lang/Object;)V"
-
-    const/4 v5, 0x0
-
-    move-object v0, v6
-
-    invoke-direct/range {v0 .. v5}, Lx26;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    sput-object v6, Lf47;->a:Lf47;
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/locks/AbstractOwnableSynchronizer;->setExclusiveOwnerThread(Ljava/lang/Thread;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final run()V
     .locals 0
 
-    check-cast p1, Li47;
+    return-void
+.end method
 
-    check-cast p2, Lzvc;
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    invoke-static {p1, p2, p3}, Li47;->access$onAwaitInternalRegFunc(Li47;Lzvc;Ljava/lang/Object;)V
+    iget-object p0, p0, Lf47;->a:Ld1f;
 
-    sget-object p0, Ljue;->a:Ljue;
+    invoke-virtual {p0}, Ld1f;->toString()Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

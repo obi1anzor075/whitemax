@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
@@ -27,39 +27,37 @@
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
+.method public final onClick(Landroid/view/View;)V
     .locals 1
 
-    iget v0, p0, Lmj9;->a:I
+    iget p1, p0, Lmj9;->a:I
 
-    packed-switch v0, :pswitch_data_0
+    packed-switch p1, :pswitch_data_0
 
-    sget-object v0, Lv03;->b:Lv03;
+    new-instance p1, Loj9;
+
+    const/4 v0, 0x1
+
+    invoke-direct {p1, v0}, Loj9;-><init>(I)V
 
     iget-object p0, p0, Lmj9;->b:Lrj9;
 
-    iget-object p0, p0, Lrj9;->Z:Ll05;
+    invoke-virtual {p0, p1}, Lv2;->o(Lmj3;)V
 
-    invoke-static {p0, v0}, Ltaf;->o(Ll05;Ljava/lang/Object;)V
-
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
+    return-void
 
     :pswitch_0
-    sget-object v0, Lri9;->b:Lri9;
+    new-instance p1, Laj0;
+
+    const/16 v0, 0x1c
+
+    invoke-direct {p1, v0}, Laj0;-><init>(I)V
 
     iget-object p0, p0, Lmj9;->b:Lrj9;
 
-    iget-object p0, p0, Lrj9;->Z:Ll05;
+    invoke-virtual {p0, p1}, Lv2;->o(Lmj3;)V
 
-    invoke-static {p0, v0}, Ltaf;->o(Ll05;Ljava/lang/Object;)V
-
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
-
-    nop
+    return-void
 
     :pswitch_data_0
     .packed-switch 0x0

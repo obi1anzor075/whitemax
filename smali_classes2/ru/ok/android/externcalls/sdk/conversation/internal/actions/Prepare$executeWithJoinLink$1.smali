@@ -1,14 +1,14 @@
 .class final Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$executeWithJoinLink$1;
-.super Lb97;
+.super Lsd7;
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Lv56;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;->executeWithJoinLink(Ljava/lang/String;Ljava/lang/String;)Ldhd;
+    value = Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;->executeWithJoinLink(Ljava/lang/String;Ljava/lang/String;)Ltod;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,8 +18,8 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lb97;",
-        "Ls16;"
+        "Lsd7;",
+        "Lv56;"
     }
 .end annotation
 
@@ -28,11 +28,11 @@
         "\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0010\u0005\u001a\u000e\u0012\n\u0012\u0008\u0012\u0004\u0012\u00020\u00020\u00010\u0000H\n\u00a2\u0006\u0004\u0008\u0003\u0010\u0004"
     }
     d2 = {
-        "Ldhd;",
-        "Lega;",
+        "Ltod;",
+        "Lnka;",
         "Lru/ok/android/externcalls/sdk/api/ConversationParams;",
         "invoke",
-        "()Ldhd;",
+        "()Ltod;",
         "<anonymous>"
     }
     k = 0x3
@@ -64,19 +64,30 @@
 
     const/4 p1, 0x0
 
-    invoke-direct {p0, p1}, Lb97;-><init>(I)V
+    invoke-direct {p0, p1}, Lsd7;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ldhd;
+.method public bridge synthetic invoke()Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$executeWithJoinLink$1;->invoke()Ltod;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final invoke()Ltod;
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ldhd;"
+            "Ltod;"
         }
     .end annotation
 
@@ -112,31 +123,31 @@
     move-result-object v6
 
     .line 7
-    invoke-virtual/range {v1 .. v6}, Lru/ok/android/externcalls/sdk/api/OkApiService;->getJoinConversationParamsExt(Ljava/lang/String;Ljava/lang/String;JLru/ok/android/externcalls/sdk/conversation/StartCallApiParams;)Ldhd;
+    invoke-virtual/range {v1 .. v6}, Lru/ok/android/externcalls/sdk/api/OkApiService;->getJoinConversationParamsExt(Ljava/lang/String;Ljava/lang/String;JLru/ok/android/externcalls/sdk/conversation/StartCallApiParams;)Ltod;
 
     move-result-object v0
 
     .line 8
     iget-object v1, p0, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$executeWithJoinLink$1;->this$0:Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;
 
-    invoke-static {v1}, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;->access$getCallParams$p(Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;)Lfe1;
+    invoke-static {v1}, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;->access$getCallParams$p(Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;)Lqf1;
 
     move-result-object v1
 
     .line 9
-    iget-object v1, v1, Lfe1;->B:Lde1;
+    iget-object v1, v1, Lqf1;->B:Lof1;
 
     .line 10
-    iget-boolean v1, v1, Lde1;->h:Z
+    iget-boolean v1, v1, Lof1;->h:Z
 
     .line 11
     iget-object v2, p0, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$executeWithJoinLink$1;->this$0:Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;
 
-    invoke-static {v2}, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;->access$getLog$p(Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;)Lxwb;
+    invoke-static {v2}, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;->access$getLog$p(Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;)Ls1c;
 
     move-result-object v2
 
-    invoke-static {v0, v1, v2}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt;->retryApiCallForJoining(Ldhd;ZLxwb;)Ldhd;
+    invoke-static {v0, v1, v2}, Lru/ok/android/externcalls/sdk/api/retry/RetryKt;->retryApiCallForJoining(Ltod;ZLs1c;)Ltod;
 
     move-result-object v0
 
@@ -150,27 +161,16 @@
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 13
-    new-instance p0, Lmhd;
+    new-instance p0, Lapd;
 
-    const/4 v2, 0x2
+    const/4 v2, 0x1
 
-    invoke-direct {p0, v0, v1, v2}, Lmhd;-><init>(Ldhd;Lof3;I)V
+    invoke-direct {p0, v0, v1, v2}, Lapd;-><init>(Ltod;Ljj3;I)V
 
     .line 14
     sget-object v0, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$executeWithJoinLink$1$2;->INSTANCE:Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$executeWithJoinLink$1$2;
 
-    invoke-virtual {p0, v0}, Ldhd;->h(Lj26;)Lphd;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public bridge synthetic invoke()Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$executeWithJoinLink$1;->invoke()Ldhd;
+    invoke-virtual {p0, v0}, Ltod;->h(Lm66;)Ldpd;
 
     move-result-object p0
 

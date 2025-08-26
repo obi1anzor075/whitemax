@@ -13,7 +13,7 @@
         "",
         "Lru/ok/android/externcalls/sdk/media/mute/listener/MediaMuteManagerListener;",
         "listener",
-        "Ljue;",
+        "Le5f;",
         "addListener",
         "(Lru/ok/android/externcalls/sdk/media/mute/listener/MediaMuteManagerListener;)V",
         "removeListener",
@@ -25,6 +25,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

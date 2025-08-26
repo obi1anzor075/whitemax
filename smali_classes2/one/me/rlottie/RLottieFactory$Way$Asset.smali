@@ -71,7 +71,7 @@
     const/4 v0, 0x0
 
     .line 5
-    invoke-direct {p0, p4, p5, p6, v0}, Lone/me/rlottie/RLottieFactory$Way;-><init>(IIZLx54;)V
+    invoke-direct {p0, p4, p5, p6, v0}, Lone/me/rlottie/RLottieFactory$Way;-><init>(IIZLl94;)V
 
     .line 6
     iput-object p1, p0, Lone/me/rlottie/RLottieFactory$Way$Asset;->context:Landroid/content/Context;
@@ -85,71 +85,54 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIZILx54;)V
-    .locals 7
+.method public synthetic constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIZILl94;)V
+    .locals 0
 
     and-int/lit8 p8, p7, 0x4
 
     if-eqz p8, :cond_0
 
-    move-object v3, p2
-
-    goto :goto_0
+    move-object p3, p2
 
     :cond_0
-    move-object v3, p3
+    and-int/lit8 p8, p7, 0x8
 
-    :goto_0
-    and-int/lit8 p3, p7, 0x8
-
-    if-eqz p3, :cond_1
+    if-eqz p8, :cond_1
 
     .line 1
-    sget-object p3, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
+    sget-object p4, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    invoke-virtual {p3}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultSize()I
+    invoke-virtual {p4}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultSize()I
 
     move-result p4
 
     :cond_1
-    move v4, p4
+    and-int/lit8 p8, p7, 0x10
 
-    and-int/lit8 p3, p7, 0x10
-
-    if-eqz p3, :cond_2
+    if-eqz p8, :cond_2
 
     .line 2
-    sget-object p3, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
+    sget-object p5, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    invoke-virtual {p3}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultSize()I
+    invoke-virtual {p5}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultSize()I
 
     move-result p5
 
     :cond_2
-    move v5, p5
+    and-int/lit8 p7, p7, 0x20
 
-    and-int/lit8 p3, p7, 0x20
-
-    if-eqz p3, :cond_3
+    if-eqz p7, :cond_3
 
     .line 3
-    sget-object p3, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
+    sget-object p6, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
-    invoke-virtual {p3}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultShouldLimitFps()Z
+    invoke-virtual {p6}, Lone/me/rlottie/RLottieFactory$Config$Companion;->getDefaultShouldLimitFps()Z
 
     move-result p6
 
-    :cond_3
-    move v6, p6
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
     .line 4
-    invoke-direct/range {v0 .. v6}, Lone/me/rlottie/RLottieFactory$Way$Asset;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIZ)V
+    :cond_3
+    invoke-direct/range {p0 .. p6}, Lone/me/rlottie/RLottieFactory$Way$Asset;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIZ)V
 
     return-void
 .end method

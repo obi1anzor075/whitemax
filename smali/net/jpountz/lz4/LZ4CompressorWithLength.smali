@@ -119,7 +119,7 @@
     move-result p1
 
     .line 14
-    invoke-direct {p0, p4, p5, p3}, Lnet/jpountz/lz4/LZ4CompressorWithLength;->putOriginalLength(Ljava/nio/ByteBuffer;II)V
+    invoke-direct {p0, v4, p5, v3}, Lnet/jpountz/lz4/LZ4CompressorWithLength;->putOriginalLength(Ljava/nio/ByteBuffer;II)V
 
     add-int/lit8 p1, p1, 0x4
 
@@ -176,7 +176,7 @@
     move-result p1
 
     .line 9
-    invoke-direct {p0, p4, p5, p3}, Lnet/jpountz/lz4/LZ4CompressorWithLength;->putOriginalLength([BII)V
+    invoke-direct {p0, v4, p5, v3}, Lnet/jpountz/lz4/LZ4CompressorWithLength;->putOriginalLength([BII)V
 
     add-int/lit8 p1, p1, 0x4
 
@@ -237,20 +237,20 @@
     move-result p0
 
     .line 11
-    invoke-virtual {p1}, Ljava/nio/Buffer;->limit()I
+    invoke-virtual {v1}, Ljava/nio/Buffer;->limit()I
 
-    move-result v0
+    move-result p1
 
-    invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v1, p1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     .line 12
-    invoke-virtual {p2}, Ljava/nio/Buffer;->position()I
+    invoke-virtual {v4}, Ljava/nio/Buffer;->position()I
 
     move-result p1
 
     add-int/2addr p1, p0
 
-    invoke-virtual {p2, p1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v4, p1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     return-void
 .end method
@@ -258,12 +258,12 @@
 .method public compress([B)[B
     .locals 2
 
+    const/4 v0, 0x0
+
     .line 1
-    array-length v0, p1
+    array-length v1, p1
 
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, p1, v1, v0}, Lnet/jpountz/lz4/LZ4CompressorWithLength;->compress([BII)[B
+    invoke-virtual {p0, p1, v0, v1}, Lnet/jpountz/lz4/LZ4CompressorWithLength;->compress([BII)[B
 
     move-result-object p0
 
@@ -279,7 +279,7 @@
     move-result v0
 
     .line 3
-    new-array v0, v0, [B
+    new-array v5, v0, [B
 
     const/4 v6, 0x0
 
@@ -291,15 +291,13 @@
 
     move v4, p3
 
-    move-object v5, v0
-
     .line 4
     invoke-virtual/range {v1 .. v6}, Lnet/jpountz/lz4/LZ4CompressorWithLength;->compress([BII[BI)I
 
     move-result p0
 
     .line 5
-    invoke-static {v0, p0}, Ljava/util/Arrays;->copyOf([BI)[B
+    invoke-static {v5, p0}, Ljava/util/Arrays;->copyOf([BI)[B
 
     move-result-object p0
 

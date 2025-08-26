@@ -1,91 +1,136 @@
 .class public final Lgq;
-.super Lchd;
+.super Lqde;
 .source "SourceFile"
 
+# interfaces
+.implements Ll66;
 
-# virtual methods
-.method public final bridge synthetic A(Lpg7;)V
+
+# instance fields
+.field public X:Lgl2;
+
+.field public Y:I
+
+.field public final synthetic Z:Lgl2;
+
+.field public final synthetic o0:Lone/me/appearancesettings/multitheme/AppearanceSettingsMultiThemeScreen;
+
+
+# direct methods
+.method public constructor <init>(Lgl2;Lone/me/appearancesettings/multitheme/AppearanceSettingsMultiThemeScreen;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    check-cast p1, Ldq;
+    iput-object p1, p0, Lgq;->Z:Lgl2;
 
-    invoke-virtual {p0, p1}, Lgq;->F(Ldq;)V
+    iput-object p2, p0, Lgq;->o0:Lone/me/appearancesettings/multitheme/AppearanceSettingsMultiThemeScreen;
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public final F(Ldq;)V
-    .locals 3
 
-    iget-object v0, p1, Ldq;->a:Lbq;
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
+    check-cast p1, Lox3;
 
-    move-result v0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    if-eqz v0, :cond_2
+    invoke-virtual {p0, p1, p2}, Lgq;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lgq;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lgq;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
+
+    new-instance p1, Lgq;
+
+    iget-object v0, p0, Lgq;->Z:Lgl2;
+
+    iget-object p0, p0, Lgq;->o0:Lone/me/appearancesettings/multitheme/AppearanceSettingsMultiThemeScreen;
+
+    invoke-direct {p1, v0, p0, p2}, Lgq;-><init>(Lgl2;Lone/me/appearancesettings/multitheme/AppearanceSettingsMultiThemeScreen;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    iget v0, p0, Lgq;->Y:I
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_1
-
-    const/4 v1, 0x2
+    if-eqz v0, :cond_1
 
     if-ne v0, v1, :cond_0
 
-    sget v0, Lky9;->b:I
+    iget-object p0, p0, Lgq;->X:Lgl2;
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p0
 
     :cond_1
-    sget v0, Lky9;->e:I
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    goto :goto_0
+    sget-object p1, Lone/me/appearancesettings/multitheme/AppearanceSettingsMultiThemeScreen;->o0:[Lbc7;
+
+    iget-object p1, p0, Lgq;->o0:Lone/me/appearancesettings/multitheme/AppearanceSettingsMultiThemeScreen;
+
+    invoke-virtual {p1}, Lone/me/appearancesettings/multitheme/AppearanceSettingsMultiThemeScreen;->p0()Lzq;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lgq;->Z:Lgl2;
+
+    iput-object v0, p0, Lgq;->X:Lgl2;
+
+    iput v1, p0, Lgq;->Y:I
+
+    invoke-virtual {p1, p0}, Lzq;->r(Lbu3;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    sget-object p0, Lpx3;->a:Lpx3;
+
+    if-ne p1, p0, :cond_2
+
+    return-object p0
 
     :cond_2
-    sget v0, Lky9;->i:I
+    move-object p0, v0
 
     :goto_0
-    iget-object p0, p0, Lb7c;->a:Landroid/view/View;
+    check-cast p1, Lel2;
 
-    move-object v1, p0
+    invoke-virtual {p0, p1}, Lgl2;->a(Lel2;)V
 
-    check-cast v1, Leq;
+    sget-object p0, Le5f;->a:Le5f;
 
-    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-static {v2, v0}, Ld8;->u(Landroid/content/Context;I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Leq;->setTitle(Ljava/lang/CharSequence;)V
-
-    check-cast p0, Leq;
-
-    iget-object p1, p1, Ldq;->b:Ljava/lang/Boolean;
-
-    if-eqz p1, :cond_3
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p1
-
-    goto :goto_1
-
-    :cond_3
-    const/4 p1, 0x0
-
-    :goto_1
-    invoke-virtual {p0, p1}, Leq;->setSelected(Z)V
-
-    return-void
+    return-object p0
 .end method

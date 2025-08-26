@@ -1,122 +1,181 @@
-.class public final Lla8;
+.class public abstract Lla8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/animation/Animation$AnimationListener;
+.implements Lnu0;
+
+
+# static fields
+.field public static final Y:Lia8;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final X:Z
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public final a:J
+
+.field public final b:J
+
+.field public final c:Z
+
+.field public final o:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput p1, p0, Lla8;->a:I
+    new-instance v0, Lka8;
 
-    iput-object p2, p0, Lla8;->b:Ljava/lang/Object;
+    invoke-direct {v0}, Lka8;-><init>()V
+
+    invoke-virtual {v0}, Lka8;->a()Lna8;
+
+    new-instance v0, Lia8;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lia8;-><init>(I)V
+
+    sput-object v0, Lla8;->Y:Lia8;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lka8;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iget-wide v0, p1, Lka8;->a:J
 
-.method private final a(Landroid/view/animation/Animation;)V
-    .locals 0
+    iput-wide v0, p0, Lla8;->a:J
 
-    return-void
-.end method
+    iget-wide v0, p1, Lka8;->b:J
 
-.method private final b(Landroid/view/animation/Animation;)V
-    .locals 0
+    iput-wide v0, p0, Lla8;->b:J
 
-    return-void
-.end method
+    iget-boolean v0, p1, Lka8;->c:Z
 
-.method private final c(Landroid/view/animation/Animation;)V
-    .locals 0
+    iput-boolean v0, p0, Lla8;->c:Z
+
+    iget-boolean v0, p1, Lka8;->d:Z
+
+    iput-boolean v0, p0, Lla8;->o:Z
+
+    iget-boolean p1, p1, Lka8;->e:Z
+
+    iput-boolean p1, p0, Lla8;->X:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/view/animation/Animation;)V
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 7
 
-    iget p1, p0, Lla8;->a:I
+    const/4 v0, 0x1
 
-    packed-switch p1, :pswitch_data_0
+    if-ne p0, p1, :cond_0
 
-    iget-object p0, p0, Lla8;->b:Ljava/lang/Object;
+    return v0
 
-    check-cast p0, Lhb8;
+    :cond_0
+    instance-of v1, p1, Lla8;
 
-    iget-object p0, p0, Lhb8;->B0:Ljb8;
+    const/4 v2, 0x0
 
-    const/4 p1, 0x0
+    if-nez v1, :cond_1
 
-    iput-boolean p1, p0, Ljb8;->N0:Z
+    return v2
 
-    invoke-virtual {p0}, Ljb8;->o()V
+    :cond_1
+    check-cast p1, Lla8;
 
-    return-void
+    iget-wide v3, p0, Lla8;->a:J
 
-    :pswitch_0
-    iget-object p0, p0, Lla8;->b:Ljava/lang/Object;
+    iget-wide v5, p1, Lla8;->a:J
 
-    check-cast p0, Landroidx/mediarouter/app/d;
+    cmp-long v1, v3, v5
 
-    const/4 p1, 0x1
+    if-nez v1, :cond_2
 
-    invoke-virtual {p0, p1}, Landroidx/mediarouter/app/d;->k(Z)V
+    iget-wide v3, p0, Lla8;->b:J
 
-    return-void
+    iget-wide v5, p1, Lla8;->b:J
 
-    nop
+    cmp-long v1, v3, v5
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    if-nez v1, :cond_2
+
+    iget-boolean v1, p0, Lla8;->c:Z
+
+    iget-boolean v3, p1, Lla8;->c:Z
+
+    if-ne v1, v3, :cond_2
+
+    iget-boolean v1, p0, Lla8;->o:Z
+
+    iget-boolean v3, p1, Lla8;->o:Z
+
+    if-ne v1, v3, :cond_2
+
+    iget-boolean p0, p0, Lla8;->X:Z
+
+    iget-boolean p1, p1, Lla8;->X:Z
+
+    if-ne p0, p1, :cond_2
+
+    return v0
+
+    :cond_2
+    return v2
 .end method
 
-.method public final onAnimationRepeat(Landroid/view/animation/Animation;)V
-    .locals 0
+.method public final hashCode()I
+    .locals 5
 
-    iget p0, p0, Lla8;->a:I
+    iget-wide v0, p0, Lla8;->a:J
 
-    return-void
-.end method
+    const/16 v2, 0x20
 
-.method public final onAnimationStart(Landroid/view/animation/Animation;)V
-    .locals 0
+    ushr-long v3, v0, v2
 
-    iget p1, p0, Lla8;->a:I
+    xor-long/2addr v0, v3
 
-    packed-switch p1, :pswitch_data_0
+    long-to-int v0, v0
 
-    iget-object p0, p0, Lla8;->b:Ljava/lang/Object;
+    mul-int/lit8 v0, v0, 0x1f
 
-    check-cast p0, Lhb8;
+    iget-wide v3, p0, Lla8;->b:J
 
-    iget-object p0, p0, Lhb8;->B0:Ljb8;
+    ushr-long v1, v3, v2
 
-    const/4 p1, 0x1
+    xor-long/2addr v1, v3
 
-    iput-boolean p1, p0, Ljb8;->N0:Z
+    long-to-int v1, v1
 
-    :pswitch_0
-    return-void
+    add-int/2addr v0, v1
 
-    nop
+    mul-int/lit8 v0, v0, 0x1f
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    iget-boolean v1, p0, Lla8;->c:Z
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean v1, p0, Lla8;->o:Z
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean p0, p0, Lla8;->X:Z
+
+    add-int/2addr v0, p0
+
+    return v0
 .end method

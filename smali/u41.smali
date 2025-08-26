@@ -2,29 +2,176 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lv41;
+
 
 # instance fields
-.field public a:Landroidx/recyclerview/widget/RecyclerView;
+.field public final a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+
+.field public final b:I
+
+.field public final c:I
+
+.field public final d:I
+
+.field public final e:Lhoe;
+
+.field public final f:Lhoe;
+
+
+# direct methods
+.method public constructor <init>(Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;)V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lu41;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+
+    sget p1, Lp5a;->L:I
+
+    iput p1, p0, Lu41;->b:I
+
+    sget p1, Lo5a;->R:I
+
+    iput p1, p0, Lu41;->c:I
+
+    sget p1, Lo5a;->Q:I
+
+    iput p1, p0, Lu41;->d:I
+
+    sget p1, Ls5a;->s2:I
+
+    new-instance v0, Lhoe;
+
+    invoke-direct {v0, p1}, Lhoe;-><init>(I)V
+
+    iput-object v0, p0, Lu41;->e:Lhoe;
+
+    iput-object v0, p0, Lu41;->f:Lhoe;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public a(I)V
-    .locals 1
+.method public final a()I
+    .locals 0
 
-    iget-object p0, p0, Lu41;->a:Landroidx/recyclerview/widget/RecyclerView;
+    iget p0, p0, Lu41;->c:I
 
-    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    return p0
+.end method
 
-    move-result-object v0
+.method public final b()Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+    .locals 0
 
-    if-eqz v0, :cond_0
+    iget-object p0, p0, Lu41;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
-    invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/RecyclerView;->u(Landroid/view/View;)V
+    return-object p0
+.end method
 
-    invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
 
     :cond_0
-    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->removeViewAt(I)V
+    instance-of v1, p1, Lu41;
 
-    return-void
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lu41;
+
+    iget-object p0, p0, Lu41;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+
+    iget-object p1, p1, Lu41;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final getContentDescription()Lmoe;
+    .locals 0
+
+    iget-object p0, p0, Lu41;->f:Lhoe;
+
+    return-object p0
+.end method
+
+.method public final getIcon()I
+    .locals 0
+
+    iget p0, p0, Lu41;->d:I
+
+    return p0
+.end method
+
+.method public final getId()I
+    .locals 0
+
+    iget p0, p0, Lu41;->b:I
+
+    return p0
+.end method
+
+.method public final getTitle()Lmoe;
+    .locals 0
+
+    iget-object p0, p0, Lu41;->e:Lhoe;
+
+    return-object p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    iget-object p0, p0, Lu41;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+
+    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;->hashCode()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "WiredHeadset(device="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lu41;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

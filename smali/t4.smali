@@ -1,3 +1,8 @@
-.class public abstract Lt4;
-.super Lhwf;
+.class public interface abstract Lt4;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+
+# virtual methods
+.method public abstract a(Landroid/view/View;)Z
+.end method

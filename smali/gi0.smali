@@ -1,73 +1,76 @@
-.class public final Lgi0;
-.super Lz59;
+.class public abstract Lgi0;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lq34;
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
+.method public final a(Lg0;)V
     .locals 1
 
-    iget p0, p1, Landroid/os/Message;->what:I
+    invoke-virtual {p1}, Lg0;->h()Z
 
-    const/4 v0, 0x1
-
-    if-eq p0, v0, :cond_1
-
-    const/4 v0, 0x2
-
-    if-eq p0, v0, :cond_0
-
-    const-string p1, "Don\'t know how to handle message: "
-
-    invoke-static {p0, p1}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance p1, Ljava/lang/Exception;
-
-    invoke-direct {p1}, Ljava/lang/Exception;-><init>()V
-
-    const-string v0, "BasePendingResult"
-
-    invoke-static {v0, p0, p1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    return-void
-
-    :cond_0
-    iget-object p0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast p0, Lcom/google/android/gms/common/api/internal/BasePendingResult;
-
-    sget-object p1, Lcom/google/android/gms/common/api/Status;->w0:Lcom/google/android/gms/common/api/Status;
-
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->Z(Lcom/google/android/gms/common/api/Status;)V
-
-    return-void
-
-    :cond_1
-    iget-object p0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast p0, Landroid/util/Pair;
-
-    iget-object p1, p0, Landroid/util/Pair;->first:Ljava/lang/Object;
-
-    invoke-static {p1}, Lhr1;->r(Ljava/lang/Object;)V
-
-    iget-object p0, p0, Landroid/util/Pair;->second:Ljava/lang/Object;
-
-    check-cast p0, Locc;
-
-    const/4 p0, 0x0
+    move-result v0
 
     :try_start_0
-    throw p0
+    invoke-virtual {p0, p1}, Lgi0;->f(Lg0;)V
     :try_end_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catch_0
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1}, Lg0;->a()Z
+
+    :cond_0
+    return-void
+
+    :catchall_0
     move-exception p0
 
-    sget-object p1, Lcom/google/android/gms/common/api/internal/BasePendingResult;->s:Lrt0;
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p1}, Lg0;->a()Z
+
+    :cond_1
+    throw p0
+.end method
+
+.method public b(Lg0;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final c(Lg0;)V
+    .locals 0
+
+    :try_start_0
+    invoke-virtual {p0, p1}, Lgi0;->e(Lg0;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {p1}, Lg0;->a()Z
+
+    return-void
+
+    :catchall_0
+    move-exception p0
+
+    invoke-virtual {p1}, Lg0;->a()Z
 
     throw p0
+.end method
+
+.method public d()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public abstract e(Lg0;)V
+.end method
+
+.method public abstract f(Lg0;)V
 .end method

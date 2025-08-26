@@ -2,450 +2,181 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lsu3;
+
 
 # instance fields
-.field public final a:I
+.field public final synthetic a:I
 
-.field public final b:I
+.field public final b:Ljava/lang/Object;
 
-.field public final c:I
-
-.field public final d:I
-
-.field public final e:I
-
-.field public final f:I
-
-.field public final g:I
-
-.field public final h:I
-
-.field public final i:I
-
-.field public final j:I
-
-.field public final k:I
-
-.field public final l:I
-
-.field public final m:I
-
-.field public final n:I
+.field public final c:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(IIIIIIIIIIIIII)V
-    .locals 0
+.method public constructor <init>(Lcmc;Lone/me/sdk/bottomsheet/BottomSheetWidget;)V
+    .locals 1
 
+    const/4 v0, 0x0
+
+    iput v0, p0, Ler0;->a:I
+
+    .line 3
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Ler0;->a:I
+    .line 4
+    iput-object p1, p0, Ler0;->b:Ljava/lang/Object;
 
-    iput p2, p0, Ler0;->b:I
+    iput-object p2, p0, Ler0;->c:Ljava/lang/Object;
 
-    iput p3, p0, Ler0;->c:I
+    return-void
+.end method
 
-    iput p4, p0, Ler0;->d:I
+.method public constructor <init>(Lou3;Lv56;)V
+    .locals 1
 
-    iput p5, p0, Ler0;->e:I
+    const/4 v0, 0x1
 
-    iput p6, p0, Ler0;->f:I
+    iput v0, p0, Ler0;->a:I
 
-    iput p7, p0, Ler0;->g:I
+    .line 1
+    invoke-virtual {p1}, Lou3;->getInstanceId()Ljava/lang/String;
 
-    iput p8, p0, Ler0;->h:I
+    move-result-object p1
 
-    iput p9, p0, Ler0;->i:I
+    .line 2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p10, p0, Ler0;->j:I
+    iput-object p1, p0, Ler0;->b:Ljava/lang/Object;
 
-    iput p11, p0, Ler0;->k:I
+    iput-object p2, p0, Ler0;->c:Ljava/lang/Object;
 
-    iput p12, p0, Ler0;->l:I
+    return-void
+.end method
 
-    iput p13, p0, Ler0;->m:I
-
-    iput p14, p0, Ler0;->n:I
+.method private final c(Lou3;Lou3;Z)V
+    .locals 0
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final a(Lou3;Lou3;Z)V
+    .locals 0
 
-    const/4 v0, 0x1
+    iget p1, p0, Ler0;->a:I
 
-    if-ne p0, p1, :cond_0
+    packed-switch p1, :pswitch_data_0
 
-    return v0
+    if-eqz p2, :cond_0
+
+    invoke-virtual {p2}, Lou3;->getInstanceId()Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_0
 
     :cond_0
-    instance-of v1, p1, Ler0;
+    const/4 p1, 0x0
 
-    const/4 v2, 0x0
+    :goto_0
+    iget-object p2, p0, Ler0;->b:Ljava/lang/Object;
 
-    if-nez v1, :cond_1
+    check-cast p2, Ljava/lang/String;
 
-    return v2
+    invoke-static {p1, p2}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    if-nez p3, :cond_1
+
+    iget-object p0, p0, Ler0;->c:Ljava/lang/Object;
+
+    check-cast p0, Lv56;
+
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     :cond_1
-    check-cast p1, Ler0;
+    return-void
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :pswitch_0
+    if-nez p2, :cond_2
 
-    iget v1, p0, Ler0;->a:I
-
-    iget v3, p1, Ler0;->a:I
-
-    if-eq v1, v3, :cond_2
-
-    return v2
+    goto :goto_1
 
     :cond_2
-    iget v1, p0, Ler0;->b:I
+    iget-object p1, p0, Ler0;->b:Ljava/lang/Object;
 
-    iget v3, p1, Ler0;->b:I
+    check-cast p1, Lcmc;
 
-    if-eq v1, v3, :cond_3
+    invoke-virtual {p1, p0}, Lcmc;->L(Lsu3;)V
 
-    return v2
+    iget-object p0, p0, Ler0;->c:Ljava/lang/Object;
 
-    :cond_3
-    iget v1, p0, Ler0;->c:I
+    check-cast p0, Lone/me/sdk/bottomsheet/BottomSheetWidget;
 
-    iget v3, p1, Ler0;->c:I
+    const/4 p1, 0x1
 
-    if-eq v1, v3, :cond_4
+    invoke-virtual {p0, p1}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->v0(Z)V
 
-    return v2
+    :goto_1
+    return-void
 
-    :cond_4
-    iget v1, p0, Ler0;->d:I
-
-    iget v3, p1, Ler0;->d:I
-
-    if-eq v1, v3, :cond_5
-
-    return v2
-
-    :cond_5
-    iget v1, p0, Ler0;->e:I
-
-    iget v3, p1, Ler0;->e:I
-
-    if-eq v1, v3, :cond_6
-
-    return v2
-
-    :cond_6
-    iget v1, p0, Ler0;->f:I
-
-    iget v3, p1, Ler0;->f:I
-
-    if-eq v1, v3, :cond_7
-
-    return v2
-
-    :cond_7
-    iget v1, p0, Ler0;->g:I
-
-    iget v3, p1, Ler0;->g:I
-
-    if-eq v1, v3, :cond_8
-
-    return v2
-
-    :cond_8
-    iget v1, p0, Ler0;->h:I
-
-    iget v3, p1, Ler0;->h:I
-
-    if-eq v1, v3, :cond_9
-
-    return v2
-
-    :cond_9
-    iget v1, p0, Ler0;->i:I
-
-    iget v3, p1, Ler0;->i:I
-
-    if-eq v1, v3, :cond_a
-
-    return v2
-
-    :cond_a
-    iget v1, p0, Ler0;->j:I
-
-    iget v3, p1, Ler0;->j:I
-
-    if-eq v1, v3, :cond_b
-
-    return v2
-
-    :cond_b
-    iget v1, p0, Ler0;->k:I
-
-    iget v3, p1, Ler0;->k:I
-
-    if-eq v1, v3, :cond_c
-
-    return v2
-
-    :cond_c
-    iget v1, p0, Ler0;->l:I
-
-    iget v3, p1, Ler0;->l:I
-
-    if-eq v1, v3, :cond_d
-
-    return v2
-
-    :cond_d
-    iget v1, p0, Ler0;->m:I
-
-    iget v3, p1, Ler0;->m:I
-
-    if-eq v1, v3, :cond_e
-
-    return v2
-
-    :cond_e
-    iget p0, p0, Ler0;->n:I
-
-    iget p1, p1, Ler0;->n:I
-
-    if-eq p0, p1, :cond_f
-
-    return v2
-
-    :cond_f
-    return v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final hashCode()I
-    .locals 3
+.method public final b(Lou3;Lou3;Z)V
+    .locals 1
 
-    const v0, -0x19b9ba
+    iget p1, p0, Ler0;->a:I
 
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
+    packed-switch p1, :pswitch_data_0
 
-    move-result v0
+    if-eqz p2, :cond_0
 
-    const/16 v1, 0x1f
+    invoke-virtual {p2}, Lou3;->getInstanceId()Ljava/lang/String;
 
-    mul-int/2addr v0, v1
+    move-result-object p1
 
-    iget v2, p0, Ler0;->a:I
+    goto :goto_0
 
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
+    :cond_0
+    const/4 p1, 0x0
 
-    move-result v0
+    :goto_0
+    iget-object v0, p0, Ler0;->b:Ljava/lang/Object;
 
-    iget v2, p0, Ler0;->b:I
+    check-cast v0, Ljava/lang/String;
 
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
+    invoke-static {p1, v0}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result p1
 
-    iget v2, p0, Ler0;->c:I
+    if-eqz p1, :cond_1
 
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
+    if-nez p3, :cond_1
 
-    move-result v0
+    invoke-virtual {p2}, Lou3;->getRouter()Lcmc;
 
-    iget v2, p0, Ler0;->d:I
+    move-result-object p1
 
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
+    invoke-virtual {p1, p0}, Lcmc;->L(Lsu3;)V
 
-    move-result v0
+    :cond_1
+    :pswitch_0
+    return-void
 
-    iget v2, p0, Ler0;->e:I
+    nop
 
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
-
-    move-result v0
-
-    iget v2, p0, Ler0;->f:I
-
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
-
-    move-result v0
-
-    iget v2, p0, Ler0;->g:I
-
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
-
-    move-result v0
-
-    iget v2, p0, Ler0;->h:I
-
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
-
-    move-result v0
-
-    iget v2, p0, Ler0;->i:I
-
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
-
-    move-result v0
-
-    iget v2, p0, Ler0;->j:I
-
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
-
-    move-result v0
-
-    iget v2, p0, Ler0;->k:I
-
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
-
-    move-result v0
-
-    iget v2, p0, Ler0;->l:I
-
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
-
-    move-result v0
-
-    iget v2, p0, Ler0;->m:I
-
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
-
-    move-result v0
-
-    iget p0, p0, Ler0;->n:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "BubbleIconColors(alert=-1685946, readStatus="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v1, p0, Ler0;->a:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", readStatusCapsule="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Ler0;->b:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", action="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Ler0;->c:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", actionSecondary="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Ler0;->d:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", reply="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Ler0;->e:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", iconItem="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Ler0;->f:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", callNeutral="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Ler0;->g:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", callNegative="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Ler0;->h:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", replyForwarded="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Ler0;->i:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", verificationAuthor="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Ler0;->j:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", verificationBody="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Ler0;->k:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", verificationForwardName="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Ler0;->l:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", verificationReplyBody="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Ler0;->m:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", verificationReplyName="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget p0, p0, Ler0;->n:I
-
-    const-string v1, ")"
-
-    invoke-static {v0, p0, v1}, Lwn6;->j(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

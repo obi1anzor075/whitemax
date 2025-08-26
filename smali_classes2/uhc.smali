@@ -1,37 +1,33 @@
-.class public abstract Luhc;
+.class public final Luhc;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:I
+# instance fields
+.field public final a:Ljava/util/Random;
 
-.field public static final b:I
-
-.field public static final c:I
-
-.field public static final d:I
+.field public b:F
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 3
 
-    sget v0, Ltnb;->ic_file_24:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput v0, Luhc;->a:I
+    new-instance v0, Ljava/util/Random;
 
-    sget v0, Ltnb;->ic_geolocation_24:I
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    sput v0, Luhc;->b:I
+    move-result-wide v1
 
-    sget v0, Ltnb;->ic_microphone_24:I
+    invoke-direct {v0, v1, v2}, Ljava/util/Random;-><init>(J)V
 
-    sput v0, Luhc;->c:I
+    iput-object v0, p0, Luhc;->a:Ljava/util/Random;
 
-    sget v0, Ltnb;->picture_plus_outline_24:I
+    const/4 v0, 0x0
 
-    sput v0, Luhc;->d:I
+    iput v0, p0, Luhc;->b:F
 
     return-void
 .end method

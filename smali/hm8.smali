@@ -1,29 +1,61 @@
-.class public interface abstract Lhm8;
+.class public final Lhm8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# static fields
+.field public static final a:Lhm8;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lhm8;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lhm8;->a:Lhm8;
+
+    return-void
+.end method
+
+
 # virtual methods
-.method public abstract b(Lw0e;)Z
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of p0, p1, Lhm8;
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    return v0
 .end method
 
-.method public abstract c()Z
+.method public final hashCode()I
+    .locals 0
+
+    const p0, 0x388508e4
+
+    return p0
 .end method
 
-.method public abstract d(Lul8;)Z
-.end method
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-.method public abstract e(Lgm8;)V
-.end method
+    const-string p0, "InvalidateAll"
 
-.method public abstract f(Lpl8;Z)V
-.end method
-
-.method public abstract h(Lul8;)Z
-.end method
-
-.method public abstract i()V
-.end method
-
-.method public abstract k(Landroid/content/Context;Lpl8;)V
+    return-object p0
 .end method

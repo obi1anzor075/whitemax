@@ -101,9 +101,9 @@
     goto :goto_0
 
     :cond_0
-    const-string p0, "unknown"
+    const-string v1, "unknown"
 
-    move-object v2, p0
+    move-object v2, v1
 
     move-object v3, v2
 
@@ -112,7 +112,7 @@
 
     invoke-virtual {v0, p1, v2, v3, p2}, Ljava/util/logging/Logger;->logp(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_1
+    return-void
 
     :cond_1
     move-object v1, p1
@@ -124,7 +124,6 @@
     invoke-virtual/range {v0 .. v5}, Ljava/util/logging/Logger;->logp(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_2
-    :goto_1
     return-void
 .end method
 

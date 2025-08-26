@@ -1,86 +1,98 @@
 .class public final Ld18;
-.super Ljava/lang/Object;
+.super Landroidx/recyclerview/widget/LinearLayoutManager;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/view/View$OnLayoutChangeListener;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final synthetic E:I
 
-.field public final synthetic b:Lone/me/chatscreen/mediabar/MediaBarWidget;
+.field public final synthetic F:Lcom/google/android/material/datepicker/MaterialCalendar;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/chatscreen/mediabar/MediaBarWidget;I)V
+.method public constructor <init>(Lcom/google/android/material/datepicker/MaterialCalendar;II)V
     .locals 0
 
-    iput p2, p0, Ld18;->a:I
+    iput-object p1, p0, Ld18;->F:Lcom/google/android/material/datepicker/MaterialCalendar;
 
-    iput-object p1, p0, Ld18;->b:Lone/me/chatscreen/mediabar/MediaBarWidget;
+    iput p3, p0, Ld18;->E:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x0
+
+    invoke-direct {p0, p2, p1}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(IZ)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onLayoutChange(Landroid/view/View;IIIIIIII)V
-    .locals 0
+.method public final H0(Landroidx/recyclerview/widget/RecyclerView;I)V
+    .locals 2
 
-    iget-object p2, p0, Ld18;->b:Lone/me/chatscreen/mediabar/MediaBarWidget;
+    new-instance v0, Lrz1;
 
-    iget p3, p0, Ld18;->a:I
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    packed-switch p3, :pswitch_data_0
+    move-result-object p1
 
-    invoke-virtual {p1, p0}, Landroid/view/View;->removeOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
+    const/4 v1, 0x2
 
-    sget-object p0, Lone/me/chatscreen/mediabar/MediaBarWidget;->h1:[Lk77;
+    invoke-direct {v0, p1, v1}, Lrz1;-><init>(Landroid/content/Context;I)V
 
-    invoke-virtual {p2}, Lone/me/chatscreen/mediabar/MediaBarWidget;->A0()Li08;
+    iput p2, v0, Lxh7;->a:I
 
-    move-result-object p0
+    invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/a;->I0(Lxh7;)V
 
-    invoke-virtual {p0}, Li08;->s()Z
+    return-void
+.end method
+
+.method public final K0(Lybc;[I)V
+    .locals 2
+
+    iget p1, p0, Ld18;->E:I
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    iget-object p0, p0, Ld18;->F:Lcom/google/android/material/datepicker/MaterialCalendar;
+
+    if-nez p1, :cond_0
+
+    iget-object p1, p0, Lcom/google/android/material/datepicker/MaterialCalendar;->o1:Landroidx/recyclerview/widget/RecyclerView;
+
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
+
+    move-result p1
+
+    aput p1, p2, v1
+
+    iget-object p0, p0, Lcom/google/android/material/datepicker/MaterialCalendar;->o1:Landroidx/recyclerview/widget/RecyclerView;
+
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result p0
 
-    if-eqz p0, :cond_0
+    aput p0, p2, v0
 
-    invoke-virtual {p2}, Lone/me/chatscreen/mediabar/MediaBarWidget;->w0()Lz0b;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lz0b;->k()V
-
-    goto :goto_0
+    return-void
 
     :cond_0
-    invoke-virtual {p2}, Lone/me/chatscreen/mediabar/MediaBarWidget;->w0()Lz0b;
+    iget-object p1, p0, Lcom/google/android/material/datepicker/MaterialCalendar;->o1:Landroidx/recyclerview/widget/RecyclerView;
 
-    move-result-object p0
+    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
-    sget p1, Lz0b;->A0:I
+    move-result p1
 
-    const/4 p1, 0x0
+    aput p1, p2, v1
 
-    invoke-virtual {p0, p1}, Lz0b;->setHalfScreen(Li26;)V
+    iget-object p0, p0, Lcom/google/android/material/datepicker/MaterialCalendar;->o1:Landroidx/recyclerview/widget/RecyclerView;
 
-    :goto_0
-    return-void
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
-    :pswitch_0
-    invoke-virtual {p1, p0}, Landroid/view/View;->removeOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
+    move-result p0
 
-    invoke-static {p2}, Lone/me/chatscreen/mediabar/MediaBarWidget;->n0(Lone/me/chatscreen/mediabar/MediaBarWidget;)V
+    aput p0, p2, v0
 
     return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

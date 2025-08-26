@@ -1,162 +1,74 @@
-.class public final Lume;
+.class public final synthetic Lume;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final d:Ljava/util/regex/Pattern;
+# interfaces
+.implements Lyff;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final synthetic a:Lvme;
 
-.field public final b:Ljava/lang/String;
+.field public final synthetic b:I
 
-.field public final c:Ljava/lang/String;
+.field public final synthetic c:Lg36;
+
+.field public final synthetic d:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "[a-zA-Z0-9-_.~%]{1,900}"
-
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lume;->d:Ljava/util/regex/Pattern;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 2
+.method public synthetic constructor <init>(Lvme;ILg36;J)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p2, :cond_0
+    iput-object p1, p0, Lume;->a:Lvme;
 
-    const-string v0, "/topics/"
+    iput p2, p0, Lume;->b:I
 
-    invoke-virtual {p2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    iput-object p3, p0, Lume;->c:Lg36;
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/16 v0, 0x8
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    move-object v0, p2
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    sget-object v1, Lume;->d:Ljava/util/regex/Pattern;
-
-    invoke-virtual {v1, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/util/regex/Matcher;->matches()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iput-object v0, p0, Lume;->a:Ljava/lang/String;
-
-    iput-object p1, p0, Lume;->b:Ljava/lang/String;
-
-    const-string v0, "!"
-
-    invoke-static {p1, v0, p2}, Lme4;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lume;->c:Ljava/lang/String;
+    iput-wide p4, p0, Lume;->d:J
 
     return-void
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Invalid topic name: "
-
-    const-string p2, " does not match the allowed format [a-zA-Z0-9-_.~%]{1,900}."
-
-    invoke-static {p1, v0, p2}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+.method public final run()V
+    .locals 7
 
-    instance-of v0, p1, Lume;
+    iget-object v0, p0, Lume;->a:Lvme;
 
-    const/4 v1, 0x0
+    iget v1, p0, Lume;->b:I
 
-    if-nez v0, :cond_0
+    iget-object v2, p0, Lume;->c:Lg36;
 
-    return v1
+    iget-wide v3, p0, Lume;->d:J
 
-    :cond_0
-    check-cast p1, Lume;
+    new-instance p0, Ltd6;
 
-    iget-object v0, p1, Lume;->a:Ljava/lang/String;
+    iget v5, v2, Lg36;->b:I
 
-    iget-object v2, p0, Lume;->a:Ljava/lang/String;
+    iget v2, v2, Lg36;->c:I
 
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const/4 v6, -0x1
 
-    move-result v0
+    invoke-direct {p0, v1, v6, v5, v2}, Ltd6;-><init>(IIII)V
 
-    if-eqz v0, :cond_1
+    iget-object v0, v0, Lvme;->o:Lnye;
 
-    iget-object p0, p0, Lume;->b:Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object p1, p1, Lume;->b:Ljava/lang/String;
+    invoke-virtual {v0, p0, v3, v4}, Lnye;->a0(Ltd6;J)V
 
-    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    sget-object p0, Lq54;->a:Ljava/util/LinkedHashMap;
 
-    move-result p0
+    const-class p0, Lq54;
 
-    if-eqz p0, :cond_1
+    monitor-enter p0
 
-    const/4 v1, 0x1
+    monitor-exit p0
 
-    :cond_1
-    return v1
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    iget-object v0, p0, Lume;->b:Ljava/lang/String;
-
-    iget-object p0, p0, Lume;->a:Ljava/lang/String;
-
-    filled-new-array {v0, p0}, [Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-static {p0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
-
-    move-result p0
-
-    return p0
+    return-void
 .end method

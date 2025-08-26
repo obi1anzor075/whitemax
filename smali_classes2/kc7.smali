@@ -3,71 +3,124 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lnc7;
-.implements Landroid/view/View$OnAttachStateChangeListener;
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public a:Lpc7;
+.field public final a:Ljava/io/Serializable;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    .line 4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 5
+    new-instance v0, Ljava/util/LinkedHashMap;
+
+    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
+
+    iput-object v0, p0, Lkc7;->a:Ljava/io/Serializable;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lkc7;->a:Ljava/io/Serializable;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lzvd;)V
+    .locals 0
+
+    .line 2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 3
+    iget-object p1, p1, Lzvd;->b:Ljava/lang/Object;
+
+    check-cast p1, Ljava/util/ArrayList;
+
+    iput-object p1, p0, Lkc7;->a:Ljava/io/Serializable;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final R()Lpc7;
-    .locals 0
-
-    iget-object p0, p0, Lkc7;->a:Lpc7;
-
-    return-object p0
-.end method
-
-.method public final onViewAttachedToWindow(Landroid/view/View;)V
+.method public a(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 1
 
-    iget-object p1, p0, Lkc7;->a:Lpc7;
+    iget-object p0, p0, Lkc7;->a:Ljava/io/Serializable;
 
-    iget-object p1, p1, Lpc7;->d:Lob7;
+    check-cast p0, Ljava/util/LinkedHashMap;
 
-    sget-object v0, Lob7;->a:Lob7;
+    invoke-virtual {p0, p1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-ne p1, v0, :cond_0
+    move-result-object v0
 
-    new-instance p1, Lpc7;
+    check-cast v0, Ljava/util/List;
 
-    invoke-direct {p1, p0}, Lpc7;-><init>(Lnc7;)V
+    if-nez v0, :cond_0
 
-    iput-object p1, p0, Lkc7;->a:Lpc7;
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-interface {p0, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
-    iget-object p0, p0, Lkc7;->a:Lpc7;
-
-    sget-object p1, Lnb7;->ON_START:Lnb7;
-
-    invoke-virtual {p0, p1}, Lpc7;->d(Lnb7;)V
+    invoke-interface {v0, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     return-void
 .end method
 
-.method public final onViewDetachedFromWindow(Landroid/view/View;)V
-    .locals 1
+.method public b()I
+    .locals 2
 
-    iget-object p1, p0, Lkc7;->a:Lpc7;
+    iget-object p0, p0, Lkc7;->a:Ljava/io/Serializable;
 
-    iget-object p1, p1, Lpc7;->d:Lob7;
+    check-cast p0, Ljava/util/LinkedHashMap;
 
-    sget-object v0, Lob7;->c:Lob7;
+    invoke-virtual {p0}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
 
-    invoke-virtual {p1, v0}, Lob7;->a(Lob7;)Z
+    move-result-object p0
 
-    move-result p1
+    invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    if-eqz p1, :cond_0
+    move-result-object p0
 
-    iget-object p0, p0, Lkc7;->a:Lpc7;
+    const/4 v0, 0x0
 
-    sget-object p1, Lnb7;->ON_DESTROY:Lnb7;
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-virtual {p0, p1}, Lpc7;->d(Lnb7;)V
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    goto :goto_0
 
     :cond_0
-    return-void
+    return v0
 .end method

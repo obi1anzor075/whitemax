@@ -443,10 +443,10 @@
 
     if-ne p0, p1, :cond_6
 
-    move v3, v2
+    return v2
 
     :cond_6
-    move v4, v3
+    return v3
 
     :cond_7
     return v4

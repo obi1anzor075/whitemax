@@ -1,53 +1,110 @@
 .class public final Lm5e;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lo64;
 
-# instance fields
-.field public X:Lfwe;
 
-.field public synthetic Y:Ljava/lang/Object;
+# static fields
+.field public static final a:Lm5e;
 
-.field public final synthetic Z:Lh6e;
-
-.field public o:Lh6e;
-
-.field public w0:I
+.field public static final b:Ln5e;
 
 
 # direct methods
-.method public constructor <init>(Lh6e;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lm5e;->Z:Lh6e;
+    new-instance v0, Lm5e;
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lm5e;->a:Lm5e;
+
+    sget-object v0, Ln5e;->b:Ln5e;
+
+    sput-object v0, Lm5e;->b:Ln5e;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a()Lv64;
+    .locals 0
 
-    iput-object p1, p0, Lm5e;->Y:Ljava/lang/Object;
-
-    iget p1, p0, Lm5e;->w0:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lm5e;->w0:I
-
-    iget-object p1, p0, Lm5e;->Z:Lh6e;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lh6e;->d(Lfwe;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
+    sget-object p0, Lm5e;->b:Ln5e;
 
     return-object p0
+.end method
+
+.method public final b(Ljava/lang/String;Lr64;Landroid/os/Bundle;)Ly64;
+    .locals 8
+
+    sget-object p0, Lm5e;->b:Ln5e;
+
+    iget-object p0, p0, Lv64;->a:Ljava/util/LinkedHashSet;
+
+    invoke-interface {p0, p2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_0
+    sget-object p0, Ln5e;->b:Ln5e;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object p0, Ln5e;->c:Lr64;
+
+    invoke-virtual {p2, p0}, Lr64;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1
+
+    new-instance v0, Ly64;
+
+    new-instance v6, Ll92;
+
+    const/16 p0, 0xb
+
+    invoke-direct {v6, p3, p0}, Ll92;-><init>(Landroid/os/Bundle;I)V
+
+    const/16 v7, 0x10
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    invoke-direct/range {v0 .. v7}, Ly64;-><init>(Ljava/lang/String;Lr64;Landroid/os/Bundle;ILw64;Lx64;I)V
+
+    return-object v0
+
+    :cond_1
+    move-object v2, p2
+
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "invalid route "
+
+    invoke-static {p1, v2}, Lzt1;->f(Ljava/lang/String;Lr64;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

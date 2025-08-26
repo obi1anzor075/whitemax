@@ -1,54 +1,44 @@
-.class public final Lyy4;
+.class public abstract Lyy4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/graphics/drawable/Drawable$Callback;
-
-
-# instance fields
-.field public final synthetic a:Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;
-
-
-# direct methods
-.method public constructor <init>(Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lyy4;->a:Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;
-
-    return-void
-.end method
+.implements Landroid/app/Application$ActivityLifecycleCallbacks;
 
 
 # virtual methods
-.method public final invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
+.method public onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
     .locals 0
-
-    iget-object p0, p0, Lyy4;->a:Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;
-
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     return-void
 .end method
 
-.method public final scheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
+.method public onActivityDestroyed(Landroid/app/Activity;)V
     .locals 0
-
-    iget-object p0, p0, Lyy4;->a:Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;
-
-    invoke-virtual {p0, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->scheduleSelf(Ljava/lang/Runnable;J)V
 
     return-void
 .end method
 
-.method public final unscheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V
+.method public final onActivityPaused(Landroid/app/Activity;)V
     .locals 0
 
-    iget-object p0, p0, Lyy4;->a:Lone/me/sdk/richvector/EnhancedAnimatedVectorDrawable;
+    return-void
+.end method
 
-    invoke-virtual {p0, p2}, Landroid/graphics/drawable/Drawable;->unscheduleSelf(Ljava/lang/Runnable;)V
+.method public final onActivitySaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onActivityStarted(Landroid/app/Activity;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onActivityStopped(Landroid/app/Activity;)V
+    .locals 0
 
     return-void
 .end method

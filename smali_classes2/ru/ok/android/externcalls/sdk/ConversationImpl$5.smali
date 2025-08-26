@@ -22,7 +22,7 @@
 .method static constructor <clinit>()V
     .locals 11
 
-    invoke-static {}, Lg41;->values()[Lg41;
+    invoke-static {}, Lr51;->values()[Lr51;
 
     move-result-object v0
 
@@ -243,11 +243,11 @@
     :try_start_14
     sget-object v2, Lru/ok/android/externcalls/sdk/ConversationImpl$5;->$SwitchMap$ru$ok$android$webrtc$CallEvents:[I
 
-    const/16 v3, 0x15
+    const/16 v3, 0x19
 
-    const/16 v6, 0x19
+    const/16 v6, 0x15
 
-    aput v3, v2, v6
+    aput v6, v2, v3
     :try_end_14
     .catch Ljava/lang/NoSuchFieldError; {:try_start_14 .. :try_end_14} :catch_14
 
@@ -293,11 +293,11 @@
     :try_start_19
     sget-object v2, Lru/ok/android/externcalls/sdk/ConversationImpl$5;->$SwitchMap$ru$ok$android$webrtc$CallEvents:[I
 
-    const/16 v3, 0x1a
+    const/16 v3, 0x1c
 
-    const/16 v4, 0x1c
+    const/16 v4, 0x1a
 
-    aput v3, v2, v4
+    aput v4, v2, v3
     :try_end_19
     .catch Ljava/lang/NoSuchFieldError; {:try_start_19 .. :try_end_19} :catch_19
 
@@ -305,11 +305,11 @@
     :try_start_1a
     sget-object v2, Lru/ok/android/externcalls/sdk/ConversationImpl$5;->$SwitchMap$ru$ok$android$webrtc$CallEvents:[I
 
-    const/16 v3, 0x1b
+    const/16 v3, 0x20
 
-    const/16 v4, 0x20
+    const/16 v4, 0x1b
 
-    aput v3, v2, v4
+    aput v4, v2, v3
     :try_end_1a
     .catch Ljava/lang/NoSuchFieldError; {:try_start_1a .. :try_end_1a} :catch_1a
 
@@ -317,11 +317,11 @@
     :try_start_1b
     sget-object v2, Lru/ok/android/externcalls/sdk/ConversationImpl$5;->$SwitchMap$ru$ok$android$webrtc$CallEvents:[I
 
-    const/16 v3, 0x1c
+    const/16 v3, 0x1d
 
-    const/16 v4, 0x1d
+    const/16 v4, 0x1c
 
-    aput v3, v2, v4
+    aput v4, v2, v3
     :try_end_1b
     .catch Ljava/lang/NoSuchFieldError; {:try_start_1b .. :try_end_1b} :catch_1b
 
@@ -329,11 +329,11 @@
     :try_start_1c
     sget-object v2, Lru/ok/android/externcalls/sdk/ConversationImpl$5;->$SwitchMap$ru$ok$android$webrtc$CallEvents:[I
 
-    const/16 v3, 0x1d
+    const/16 v3, 0x1e
 
-    const/16 v4, 0x1e
+    const/16 v4, 0x1d
 
-    aput v3, v2, v4
+    aput v4, v2, v3
     :try_end_1c
     .catch Ljava/lang/NoSuchFieldError; {:try_start_1c .. :try_end_1c} :catch_1c
 
@@ -341,11 +341,11 @@
     :try_start_1d
     sget-object v2, Lru/ok/android/externcalls/sdk/ConversationImpl$5;->$SwitchMap$ru$ok$android$webrtc$CallEvents:[I
 
-    const/16 v3, 0x1e
+    const/16 v3, 0x1f
 
-    const/16 v4, 0x1f
+    const/16 v4, 0x1e
 
-    aput v3, v2, v4
+    aput v4, v2, v3
     :try_end_1d
     .catch Ljava/lang/NoSuchFieldError; {:try_start_1d .. :try_end_1d} :catch_1d
 
@@ -353,11 +353,11 @@
     :try_start_1e
     sget-object v2, Lru/ok/android/externcalls/sdk/ConversationImpl$5;->$SwitchMap$ru$ok$android$webrtc$CallEvents:[I
 
-    const/16 v3, 0x1f
+    const/16 v3, 0x23
 
-    const/16 v4, 0x23
+    const/16 v4, 0x1f
 
-    aput v3, v2, v4
+    aput v4, v2, v3
     :try_end_1e
     .catch Ljava/lang/NoSuchFieldError; {:try_start_1e .. :try_end_1e} :catch_1e
 
@@ -365,11 +365,11 @@
     :try_start_1f
     sget-object v2, Lru/ok/android/externcalls/sdk/ConversationImpl$5;->$SwitchMap$ru$ok$android$webrtc$CallEvents:[I
 
-    const/16 v3, 0x20
+    const/16 v3, 0x24
 
-    const/16 v4, 0x24
+    const/16 v4, 0x20
 
-    aput v3, v2, v4
+    aput v4, v2, v3
     :try_end_1f
     .catch Ljava/lang/NoSuchFieldError; {:try_start_1f .. :try_end_1f} :catch_1f
 
@@ -377,11 +377,11 @@
     :try_start_20
     sget-object v2, Lru/ok/android/externcalls/sdk/ConversationImpl$5;->$SwitchMap$ru$ok$android$webrtc$CallEvents:[I
 
-    const/16 v3, 0x21
+    const/16 v3, 0x25
 
-    const/16 v4, 0x25
+    const/16 v4, 0x21
 
-    aput v3, v2, v4
+    aput v4, v2, v3
     :try_end_20
     .catch Ljava/lang/NoSuchFieldError; {:try_start_20 .. :try_end_20} :catch_20
 
@@ -389,11 +389,11 @@
     :try_start_21
     sget-object v2, Lru/ok/android/externcalls/sdk/ConversationImpl$5;->$SwitchMap$ru$ok$android$webrtc$CallEvents:[I
 
-    const/16 v3, 0x22
+    const/16 v3, 0x26
 
-    const/16 v4, 0x26
+    const/16 v4, 0x22
 
-    aput v3, v2, v4
+    aput v4, v2, v3
     :try_end_21
     .catch Ljava/lang/NoSuchFieldError; {:try_start_21 .. :try_end_21} :catch_21
 
@@ -401,11 +401,11 @@
     :try_start_22
     sget-object v2, Lru/ok/android/externcalls/sdk/ConversationImpl$5;->$SwitchMap$ru$ok$android$webrtc$CallEvents:[I
 
-    const/16 v3, 0x23
+    const/16 v3, 0x27
 
-    const/16 v4, 0x27
+    const/16 v4, 0x23
 
-    aput v3, v2, v4
+    aput v4, v2, v3
     :try_end_22
     .catch Ljava/lang/NoSuchFieldError; {:try_start_22 .. :try_end_22} :catch_22
 
@@ -413,11 +413,11 @@
     :try_start_23
     sget-object v2, Lru/ok/android/externcalls/sdk/ConversationImpl$5;->$SwitchMap$ru$ok$android$webrtc$CallEvents:[I
 
-    const/16 v3, 0x24
+    const/16 v3, 0x28
 
-    const/16 v4, 0x28
+    const/16 v4, 0x24
 
-    aput v3, v2, v4
+    aput v4, v2, v3
     :try_end_23
     .catch Ljava/lang/NoSuchFieldError; {:try_start_23 .. :try_end_23} :catch_23
 
@@ -445,11 +445,11 @@
     :try_start_26
     sget-object v0, Lru/ok/android/externcalls/sdk/ConversationImpl$5;->$SwitchMap$ru$ok$android$webrtc$CallEvents:[I
 
-    const/16 v1, 0x27
+    const/16 v1, 0x15
 
-    const/16 v2, 0x15
+    const/16 v2, 0x27
 
-    aput v1, v0, v2
+    aput v2, v0, v1
     :try_end_26
     .catch Ljava/lang/NoSuchFieldError; {:try_start_26 .. :try_end_26} :catch_26
 

@@ -85,7 +85,7 @@
     :cond_0
     if-eqz p0, :cond_1
 
-    move-object v0, p0
+    return-object p0
 
     :cond_1
     return-object v0

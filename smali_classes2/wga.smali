@@ -1,54 +1,157 @@
-.class public final Lwga;
+.class public abstract Lwga;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public a:J
+# static fields
+.field public static final a:I
 
-.field public b:Ljava/lang/String;
+.field public static final b:I
 
-.field public c:Lzy;
+.field public static final c:I
 
-.field public d:Lzga;
+.field public static final d:I
 
-.field public e:Z
+.field public static final e:I
 
-.field public f:I
+.field public static final f:I
 
-.field public g:Z
+.field public static final g:I
 
-.field public h:Ljava/util/List;
+.field public static final h:I
 
-.field public i:Lnd4;
+.field public static final i:I
 
-.field public j:I
+.field public static final j:I
 
-.field public k:Z
+.field public static final k:I
+
+.field public static final l:I
+
+.field public static final m:I
+
+.field public static final n:I
+
+.field public static final o:I
+
+.field public static final p:I
+
+.field public static final q:I
+
+.field public static final r:I
+
+.field public static final s:I
+
+.field public static final t:I
+
+.field public static final u:I
+
+.field public static final v:I
+
+.field public static final w:I
+
+.field public static final x:I
 
 
-# virtual methods
-.method public final a()Lxga;
-    .locals 2
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
 
-    iget-object v0, p0, Lwga;->d:Lzga;
+    sget v0, Ljvb;->oneme_stickers_settings_confirm_cancel:I
 
-    if-eqz v0, :cond_0
+    sput v0, Lwga;->a:I
 
-    iget v0, v0, Lzga;->a:I
+    sget v0, Ljvb;->oneme_stickers_settings_confirm_delete_set_action:I
 
-    const/4 v1, 0x3
+    sput v0, Lwga;->b:I
 
-    if-ne v0, v1, :cond_0
+    sget v0, Ljvb;->oneme_stickers_settings_confirm_delete_stickers_action:I
 
-    const/4 v0, 0x0
+    sput v0, Lwga;->c:I
 
-    iput-object v0, p0, Lwga;->b:Ljava/lang/String;
+    sget v0, Ljvb;->oneme_stickers_settings_confirm_favorite_clear_action:I
 
-    :cond_0
-    new-instance v0, Lxga;
+    sput v0, Lwga;->d:I
 
-    invoke-direct {v0, p0}, Lxga;-><init>(Lwga;)V
+    sget v0, Ljvb;->oneme_stickers_settings_confirm_recent_clear_action:I
 
-    return-object v0
+    sput v0, Lwga;->e:I
+
+    sget v0, Ljvb;->oneme_stickers_settings_content_recycler:I
+
+    sput v0, Lwga;->f:I
+
+    sget v0, Ljvb;->oneme_stickers_settings_emoji_suggest_view_type:I
+
+    sput v0, Lwga;->g:I
+
+    sget v0, Ljvb;->oneme_stickers_settings_favorite_view_type:I
+
+    sput v0, Lwga;->h:I
+
+    sget v0, Ljvb;->oneme_stickers_settings_menu_copy_link:I
+
+    sput v0, Lwga;->i:I
+
+    sget v0, Ljvb;->oneme_stickers_settings_menu_delete_set:I
+
+    sput v0, Lwga;->j:I
+
+    sget v0, Ljvb;->oneme_stickers_settings_menu_forward:I
+
+    sput v0, Lwga;->k:I
+
+    sget v0, Ljvb;->oneme_stickers_settings_menu_share:I
+
+    sput v0, Lwga;->l:I
+
+    sget v0, Ljvb;->oneme_stickers_settings_recent_view_type:I
+
+    sput v0, Lwga;->m:I
+
+    sget v0, Ljvb;->oneme_stickers_settings_set_item_drag:I
+
+    sput v0, Lwga;->n:I
+
+    sget v0, Ljvb;->oneme_stickers_settings_set_item_icon:I
+
+    sput v0, Lwga;->o:I
+
+    sget v0, Ljvb;->oneme_stickers_settings_set_item_subtitle:I
+
+    sput v0, Lwga;->p:I
+
+    sget v0, Ljvb;->oneme_stickers_settings_set_item_title:I
+
+    sput v0, Lwga;->q:I
+
+    sget v0, Ljvb;->oneme_stickers_settings_set_view_type:I
+
+    sput v0, Lwga;->r:I
+
+    sget v0, Ljvb;->oneme_stickers_settings_sets_title_view_type:I
+
+    sput v0, Lwga;->s:I
+
+    sget v0, Ljvb;->oneme_stickers_settings_stickers_favorite_menu_clear:I
+
+    sput v0, Lwga;->t:I
+
+    sget v0, Ljvb;->oneme_stickers_settings_stickers_menu_change:I
+
+    sput v0, Lwga;->u:I
+
+    sget v0, Ljvb;->oneme_stickers_settings_stickers_multiselect_delete:I
+
+    sput v0, Lwga;->v:I
+
+    sget v0, Ljvb;->oneme_stickers_settings_stickers_recent_menu_clear:I
+
+    sput v0, Lwga;->w:I
+
+    sget v0, Ljvb;->oneme_stickers_settings_toolbar:I
+
+    sput v0, Lwga;->x:I
+
+    return-void
 .end method

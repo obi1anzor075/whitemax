@@ -1,76 +1,90 @@
 .class public final Lof0;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lzm5;
 
 
 # instance fields
-.field public final synthetic X:Lqf0;
+.field public final synthetic a:I
+
+.field public final synthetic b:Lon5;
 
 
 # direct methods
-.method public constructor <init>(Lqf0;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(Lon5;I)V
     .locals 0
 
-    iput-object p1, p0, Lof0;->X:Lqf0;
+    iput p2, p0, Lof0;->a:I
 
-    const/4 p1, 0x2
+    iput-object p1, p0, Lof0;->b:Lon5;
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final d(Lbn5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 2
 
-    check-cast p1, Lrj5;
+    iget v0, p0, Lof0;->a:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p0, p1, p2}, Lof0;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    new-instance v0, Lfka;
+
+    const/16 v1, 0xf
+
+    invoke-direct {v0, p1, v1}, Lfka;-><init>(Lbn5;I)V
+
+    iget-object p0, p0, Lof0;->b:Lon5;
+
+    invoke-virtual {p0, v0, p2}, Lon5;->d(Lbn5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lof0;
+    sget-object p1, Lpx3;->a:Lpx3;
 
-    sget-object p1, Ljue;->a:Ljue;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {p0, p1}, Lof0;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    goto :goto_0
 
-    return-object p1
-.end method
+    :cond_0
+    sget-object p0, Le5f;->a:Le5f;
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 0
-
-    new-instance p1, Lof0;
-
-    iget-object p0, p0, Lof0;->X:Lqf0;
-
-    invoke-direct {p1, p0, p2}, Lof0;-><init>(Lqf0;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p0, p0, Lof0;->X:Lqf0;
-
-    iget-object p1, p0, Lqf0;->a:Landroid/app/Application;
-
-    iget-object p0, p0, Lqf0;->f:Lhf0;
-
-    invoke-virtual {p1, p0}, Landroid/app/Application;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
-
-    sget-object p0, Ljue;->a:Ljue;
-
+    :goto_0
     return-object p0
+
+    :pswitch_0
+    new-instance v0, Ldw;
+
+    const/4 v1, 0x4
+
+    invoke-direct {v0, p1, v1}, Ldw;-><init>(Lbn5;I)V
+
+    iget-object p0, p0, Lof0;->b:Lon5;
+
+    invoke-virtual {p0, v0, p2}, Lon5;->d(Lbn5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    sget-object p0, Le5f;->a:Le5f;
+
+    :goto_1
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

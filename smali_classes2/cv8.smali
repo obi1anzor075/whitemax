@@ -1,158 +1,121 @@
-.class public final Lcv8;
-.super Ll5e;
+.class public final enum Lcv8;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Li26;
 
+# static fields
+.field public static final enum X:Lcv8;
 
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public static final enum Y:Lcv8;
 
-.field public final synthetic Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
+.field public static final synthetic Z:[Lcv8;
+
+.field public static final enum a:Lcv8;
+
+.field public static final enum b:Lcv8;
+
+.field public static final enum c:Lcv8;
+
+.field public static final enum o:Lcv8;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/MessageWriteWidget;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 8
 
-    iput-object p2, p0, Lcv8;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
+    new-instance v0, Lcv8;
 
-    const/4 p2, 0x2
+    const-string v1, "SIMPLE"
 
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcv8;->a:Lcv8;
+
+    new-instance v1, Lcv8;
+
+    const-string v2, "CONTACT"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcv8;->b:Lcv8;
+
+    new-instance v2, Lcv8;
+
+    const-string v3, "MEDIA"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lcv8;->c:Lcv8;
+
+    new-instance v3, Lcv8;
+
+    const-string v4, "SIMPLE_FORWARD"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lcv8;->o:Lcv8;
+
+    new-instance v4, Lcv8;
+
+    const-string v5, "MEDIA_FORWARD"
+
+    const/4 v6, 0x4
+
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v4, Lcv8;->X:Lcv8;
+
+    new-instance v5, Lcv8;
+
+    const-string v6, "FORWARD"
+
+    const/4 v7, 0x5
+
+    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v5, Lcv8;->Y:Lcv8;
+
+    filled-new-array/range {v0 .. v5}, [Lcv8;
+
+    move-result-object v0
+
+    sput-object v0, Lcv8;->Z:[Lcv8;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Lcv8;
+    .locals 1
 
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+    const-class v0, Lcv8;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lcv8;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
     check-cast p0, Lcv8;
 
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lcv8;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
+    return-object p0
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public static values()[Lcv8;
     .locals 1
 
-    new-instance v0, Lcv8;
+    sget-object v0, Lcv8;->Z:[Lcv8;
 
-    iget-object p0, p0, Lcv8;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    invoke-direct {v0, p2, p0}, Lcv8;-><init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/MessageWriteWidget;)V
+    move-result-object v0
 
-    iput-object p1, v0, Lcv8;->X:Ljava/lang/Object;
+    check-cast v0, [Lcv8;
 
     return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lcv8;->X:Ljava/lang/Object;
-
-    check-cast p1, Li05;
-
-    const/4 v0, 0x0
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p1, Li05;->a:Ljava/lang/Object;
-
-    check-cast p1, Lkt8;
-
-    goto :goto_0
-
-    :cond_0
-    move-object p1, v0
-
-    :goto_0
-    iget-object p0, p0, Lcv8;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
-
-    if-eqz p1, :cond_1
-
-    sget-object v1, Lone/me/sdk/messagewrite/MessageWriteWidget;->J0:[Lk77;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget p1, p1, Lkt8;->a:I
-
-    goto :goto_1
-
-    :cond_1
-    const/4 p1, 0x0
-
-    :goto_1
-    iget-object v1, p0, Lone/me/sdk/messagewrite/MessageWriteWidget;->G0:Lgrd;
-
-    const/4 v2, 0x2
-
-    if-ne p1, v2, :cond_2
-
-    invoke-virtual {p0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->p0()Ljq8;
-
-    move-result-object p0
-
-    sget p1, Lphc;->d1:I
-
-    invoke-virtual {p0, p1}, Ljq8;->setLeftIcon(I)V
-
-    sget-object p0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-virtual {v1, v0, p0}, Lgrd;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    goto :goto_2
-
-    :cond_2
-    invoke-virtual {p0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->p0()Ljq8;
-
-    move-result-object p1
-
-    sget-object v2, Lzp8;->a:Lzp8;
-
-    invoke-virtual {p1, v2}, Ljq8;->setEmojiExpandableState(Lzp8;)V
-
-    invoke-virtual {p0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->p0()Ljq8;
-
-    move-result-object p1
-
-    iget-object p1, p1, Ljq8;->c:Lhq8;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {p1, v2}, Landroid/widget/TextView;->setShowSoftInputOnFocus(Z)V
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
-
-    invoke-virtual {p0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->p0()Ljq8;
-
-    move-result-object p0
-
-    sget p1, Lphc;->Z0:I
-
-    invoke-virtual {p0, p1}, Ljq8;->setLeftIcon(I)V
-
-    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    invoke-virtual {v1, v0, p0}, Lgrd;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    :goto_2
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
 .end method

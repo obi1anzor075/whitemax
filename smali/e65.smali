@@ -1,21 +1,23 @@
 .class public final Le65;
-.super Luo;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Le65;
+# instance fields
+.field public final a:[B
+
+.field public final b:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>([BLjava/lang/String;)V
+    .locals 0
 
-    new-instance v0, Le65;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Luo;-><init>()V
+    iput-object p1, p0, Le65;->a:[B
 
-    sput-object v0, Le65;->a:Le65;
+    iput-object p2, p0, Le65;->b:Ljava/lang/String;
 
     return-void
 .end method

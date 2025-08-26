@@ -6,18 +6,26 @@
 # instance fields
 .field public final a:Z
 
-.field public final b:Lvu5;
+.field public final b:Ldz5;
 
 
 # direct methods
-.method public constructor <init>(ILvu5;Z)V
+.method public constructor <init>(ILdz5;Z)V
     .locals 2
 
-    const/16 v0, 0x24
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x24
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const-string v1, "AudioTrack write failed: "
 
-    invoke-static {v0, p1, v1}, Lm4b;->h(IILjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -25,7 +33,7 @@
 
     iput-boolean p3, p0, Lcom/google/android/exoplayer2/audio/AudioSink$WriteException;->a:Z
 
-    iput-object p2, p0, Lcom/google/android/exoplayer2/audio/AudioSink$WriteException;->b:Lvu5;
+    iput-object p2, p0, Lcom/google/android/exoplayer2/audio/AudioSink$WriteException;->b:Ldz5;
 
     return-void
 .end method

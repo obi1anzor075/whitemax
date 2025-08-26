@@ -1,99 +1,137 @@
 .class public final Lsq0;
-.super Lb7c;
+.super Landroid/view/ViewOutlineProvider;
 .source "SourceFile"
 
 
 # instance fields
-.field public final J0:Lru/ok/messages/settings/view/BrightnessSeekBar;
+.field public final synthetic a:I
 
-.field public K0:Le4d;
-
-.field public L0:Z
+.field public b:F
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Lru/ok/messages/settings/FrgBaseSettings;)V
-    .locals 2
+.method public constructor <init>(F)V
+    .locals 1
 
-    invoke-direct {p0, p1}, Lb7c;-><init>(Landroid/view/View;)V
+    const/4 v0, 0x2
 
-    sget v0, Lyqb;->row_setting_brightness__seek_bar:I
+    iput v0, p0, Lsq0;->a:I
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    iput p1, p0, Lsq0;->b:F
 
-    move-result-object v0
-
-    check-cast v0, Lru/ok/messages/settings/view/BrightnessSeekBar;
-
-    iput-object v0, p0, Lsq0;->J0:Lru/ok/messages/settings/view/BrightnessSeekBar;
-
-    const/16 v1, 0x64
-
-    invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setMax(I)V
-
-    new-instance v1, Lrq0;
-
-    invoke-direct {v1, p0, p2}, Lrq0;-><init>(Lsq0;Lru/ok/messages/settings/FrgBaseSettings;)V
-
-    invoke-virtual {v0, v1}, Landroid/widget/SeekBar;->setOnSeekBarChangeListener(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V
-
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p0
-
-    sget-object p2, Lwce;->a0:Lr7e;
-
-    invoke-static {p0}, Lfja;->E(Landroid/content/Context;)Lwce;
-
-    move-result-object p0
-
-    invoke-virtual {v0}, Landroid/widget/ProgressBar;->getProgressDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object p2
-
-    iget v1, p0, Lwce;->k:I
-
-    invoke-static {p2, v1}, Ljs;->D(Landroid/graphics/drawable/Drawable;I)V
-
-    invoke-virtual {v0}, Landroid/widget/AbsSeekBar;->getThumb()Landroid/graphics/drawable/Drawable;
-
-    move-result-object p2
-
-    iget v0, p0, Lwce;->k:I
-
-    invoke-static {p2, v0}, Ljs;->D(Landroid/graphics/drawable/Drawable;I)V
-
-    sget p2, Lyqb;->row_setting__separator:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p2
-
-    iget v0, p0, Lwce;->H:I
-
-    invoke-virtual {p2, v0}, Landroid/view/View;->setBackgroundColor(I)V
-
-    sget p2, Lyqb;->row_setting_brightness__iv_brigthness_low:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p2
-
-    check-cast p2, Landroid/widget/ImageView;
-
-    iget p0, p0, Lwce;->F:I
-
-    invoke-virtual {p2, p0}, Landroid/widget/ImageView;->setColorFilter(I)V
-
-    sget p2, Lyqb;->row_setting_brightness__iv_brigthness_high:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/widget/ImageView;
-
-    invoke-virtual {p1, p0}, Landroid/widget/ImageView;->setColorFilter(I)V
+    .line 2
+    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
 
     return-void
+.end method
+
+.method public synthetic constructor <init>(IF)V
+    .locals 0
+
+    .line 1
+    iput p1, p0, Lsq0;->a:I
+
+    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
+
+    iput p2, p0, Lsq0;->b:F
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
+    .locals 13
+
+    iget v0, p0, Lsq0;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
+
+    move-result v4
+
+    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
+
+    move-result v5
+
+    iget v6, p0, Lsq0;->b:F
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    move-object v1, p2
+
+    invoke-virtual/range {v1 .. v6}, Landroid/graphics/Outline;->setRoundRect(IIIIF)V
+
+    return-void
+
+    :pswitch_0
+    move-object v7, p2
+
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
+
+    move-result v10
+
+    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
+
+    move-result p2
+
+    iget v12, p0, Lsq0;->b:F
+
+    float-to-int p0, v12
+
+    add-int v11, p2, p0
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    invoke-virtual/range {v7 .. v12}, Landroid/graphics/Outline;->setRoundRect(IIIIF)V
+
+    const/4 p0, 0x1
+
+    invoke-virtual {p1, p0}, Landroid/view/View;->setClipToOutline(Z)V
+
+    return-void
+
+    :pswitch_1
+    move-object v7, p2
+
+    iget p2, p0, Lsq0;->b:F
+
+    invoke-static {p2}, Lkhg;->x(F)I
+
+    move-result p2
+
+    neg-int v9, p2
+
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
+
+    move-result v10
+
+    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
+
+    move-result v11
+
+    iget v12, p0, Lsq0;->b:F
+
+    const/4 v8, 0x0
+
+    invoke-virtual/range {v7 .. v12}, Landroid/graphics/Outline;->setRoundRect(IIIIF)V
+
+    const/4 p0, 0x1
+
+    invoke-virtual {p1, p0}, Landroid/view/View;->setClipToOutline(Z)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

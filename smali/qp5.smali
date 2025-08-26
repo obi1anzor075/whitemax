@@ -1,27 +1,37 @@
 .class public final Lqp5;
-.super Lchd;
+.super Lbu3;
 .source "SourceFile"
 
 
+# instance fields
+.field public X:Lkp5;
+
+.field public synthetic Y:Ljava/lang/Object;
+
+.field public Z:I
+
+.field public o:Lkcc;
+
+
 # virtual methods
-.method public final bridge synthetic A(Lpg7;)V
-    .locals 0
-
-    check-cast p1, Lpp5;
-
-    return-void
-.end method
-
-.method public final D()V
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget-object p0, p0, Lb7c;->a:Landroid/view/View;
+    iput-object p1, p0, Lqp5;->Y:Ljava/lang/Object;
 
-    check-cast p0, Lone/me/sdk/uikit/common/button/OneMeButton;
+    iget p1, p0, Lqp5;->Z:I
 
-    const/4 v0, 0x0
+    const/high16 v0, -0x80000000
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    or-int/2addr p1, v0
 
-    return-void
+    iput p1, p0, Lqp5;->Z:I
+
+    const/4 p1, 0x0
+
+    invoke-static {p1, p0}, Lsgg;->t(Lzm5;Lbu3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

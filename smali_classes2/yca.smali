@@ -1,69 +1,61 @@
 .class public final Lyca;
-.super Ler3;
+.super Lcda;
 .source "SourceFile"
 
 
-# instance fields
-.field public A0:[B
-
-.field public B0:J
-
-.field public synthetic C0:Ljava/lang/Object;
-
-.field public final synthetic D0:Ldda;
-
-.field public E0:I
-
-.field public X:Ljava/io/File;
-
-.field public Y:Ljava/io/File;
-
-.field public Z:Ljava/io/File;
-
-.field public o:Ldda;
-
-.field public w0:Ljava/io/Closeable;
-
-.field public x0:Ljava/io/InputStream;
-
-.field public y0:Ljava/io/Closeable;
-
-.field public z0:Ljava/io/OutputStream;
+# static fields
+.field public static final a:Lyca;
 
 
 # direct methods
-.method public constructor <init>(Ldda;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lyca;->D0:Ldda;
+    new-instance v0, Lyca;
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lyca;->a:Lyca;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
-    iput-object p1, p0, Lyca;->C0:Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    iget p1, p0, Lyca;->E0:I
+    if-ne p0, p1, :cond_0
 
-    const/high16 v0, -0x80000000
+    return v0
 
-    or-int/2addr p1, v0
+    :cond_0
+    instance-of p0, p1, Lyca;
 
-    iput p1, p0, Lyca;->E0:I
+    if-nez p0, :cond_1
 
-    iget-object p1, p0, Lyca;->D0:Ldda;
+    const/4 p0, 0x0
 
-    const/4 v0, 0x0
+    return p0
 
-    invoke-virtual {p1, v0, v0, v0, p0}, Ldda;->d(Ljava/io/File;Ljava/io/File;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    :cond_1
+    return v0
+.end method
 
-    move-result-object p0
+.method public final hashCode()I
+    .locals 0
+
+    const p0, 0xa9e2037
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "Large"
 
     return-object p0
 .end method

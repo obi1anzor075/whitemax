@@ -1,6 +1,5 @@
 .class public final Lorg/webrtc/R;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # direct methods

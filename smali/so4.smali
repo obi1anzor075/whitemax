@@ -1,13 +1,35 @@
-.class public abstract Lso4;
+.class public interface abstract Lso4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# direct methods
-.method public static a(Ljava/lang/Throwable;)Z
+# virtual methods
+.method public a(Luo4;)V
     .locals 0
 
-    instance-of p0, p0, Landroid/media/MediaDrmResetException;
+    return-void
+.end method
 
-    return p0
+.method public b()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public c()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public d(Luo4;Z)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public abstract e(Lfn4;Ljava/lang/Exception;)V
+.end method
+
+.method public abstract f(Luo4;Lfn4;)V
 .end method

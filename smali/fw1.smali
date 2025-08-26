@@ -1,23 +1,24 @@
-.class public abstract Lfw1;
+.class public final Lfw1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lov1;
 
-# direct methods
-.method public static a(Landroid/os/CancellationSignal;)V
+
+# virtual methods
+.method public final a()Lbm7;
     .locals 0
 
-    invoke-virtual {p0}, Landroid/os/CancellationSignal;->cancel()V
+    sget-object p0, Lcw6;->c:Lcw6;
 
-    return-void
+    return-object p0
 .end method
 
-.method public static b()Landroid/os/CancellationSignal;
-    .locals 1
+.method public final b()Lbm7;
+    .locals 0
 
-    new-instance v0, Landroid/os/CancellationSignal;
+    sget-object p0, Lcw6;->c:Lcw6;
 
-    invoke-direct {v0}, Landroid/os/CancellationSignal;-><init>()V
-
-    return-object v0
+    return-object p0
 .end method

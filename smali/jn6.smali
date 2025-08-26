@@ -1,35 +1,34 @@
-.class public interface abstract Ljn6;
+.class public abstract Ljn6;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/os/IInterface;
+.implements Lzj5;
 
 
-# virtual methods
-.method public abstract f(Lcya;)V
-.end method
+# instance fields
+.field public final a:Ljava/lang/String;
 
-.method public abstract onExtrasChanged(Landroid/os/Bundle;)V
-.end method
+.field public final b:Ljava/util/List;
 
-.method public abstract onQueueTitleChanged(Ljava/lang/CharSequence;)V
-.end method
+.field public final c:Z
 
-.method public abstract onRepeatModeChanged(I)V
-.end method
 
-.method public abstract onSessionDestroyed()V
-.end method
+# direct methods
+.method public constructor <init>(Ljava/lang/String;ZLjava/util/List;)V
+    .locals 0
 
-.method public abstract onShuffleModeChanged(I)V
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract q(Ljava/util/ArrayList;)V
-.end method
+    iput-object p1, p0, Ljn6;->a:Ljava/lang/String;
 
-.method public abstract t(Lgja;)V
-.end method
+    invoke-static {p3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
-.method public abstract y0(La88;)V
+    move-result-object p1
+
+    iput-object p1, p0, Ljn6;->b:Ljava/util/List;
+
+    iput-boolean p2, p0, Ljn6;->c:Z
+
+    return-void
 .end method

@@ -1,27 +1,3 @@
-.class public final Ljqf;
-.super Ljava/lang/Object;
+.class public abstract Ljqf;
+.super Lqo8;
 .source "SourceFile"
-
-
-# instance fields
-.field public final a:Luw3;
-
-.field public final b:J
-
-.field public final c:J
-
-
-# direct methods
-.method public constructor <init>(Luw3;JJ)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ljqf;->a:Luw3;
-
-    iput-wide p2, p0, Ljqf;->b:J
-
-    iput-wide p4, p0, Ljqf;->c:J
-
-    return-void
-.end method

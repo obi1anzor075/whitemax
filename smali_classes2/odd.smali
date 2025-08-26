@@ -1,28 +1,59 @@
 .class public final Lodd;
-.super Ljava/lang/Object;
+.super Lpdd;
 .source "SourceFile"
 
-# interfaces
-.implements Lq8b;
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lodd;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public final a:Ln06;
+.field public final a:Lmoe;
 
 
 # direct methods
-.method public constructor <init>(Ln06;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lo5b;
+
+    const/16 v1, 0x1a
+
+    invoke-direct {v0, v1}, Lo5b;-><init>(I)V
+
+    sput-object v0, Lodd;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lmoe;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lodd;->a:Ln06;
+    iput-object p1, p0, Lodd;->a:Lmoe;
 
     return-void
 .end method
 
 
 # virtual methods
+.method public final describeContents()I
+    .locals 0
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
 .method public final equals(Ljava/lang/Object;)Z
     .locals 3
 
@@ -44,11 +75,11 @@
     :cond_1
     check-cast p1, Lodd;
 
-    iget-object p1, p1, Lodd;->a:Ln06;
+    iget-object p0, p0, Lodd;->a:Lmoe;
 
-    iget-object p0, p0, Lodd;->a:Ln06;
+    iget-object p1, p1, Lodd;->a:Lmoe;
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -60,112 +91,12 @@
     return v0
 .end method
 
-.method public final g(Lpg7;)Z
-    .locals 2
-
-    const/16 p0, 0x10
-
-    int-to-long v0, p0
-
-    invoke-interface {p1}, Lpg7;->getItemId()J
-
-    move-result-wide p0
-
-    cmp-long p0, v0, p0
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
-.end method
-
-.method public final getItemId()J
-    .locals 2
-
-    const/16 p0, 0x10
-
-    int-to-long v0, p0
-
-    return-wide v0
-.end method
-
 .method public final hashCode()I
-    .locals 1
+    .locals 0
 
-    iget-object p0, p0, Lodd;->a:Ln06;
+    iget-object p0, p0, Lodd;->a:Lmoe;
 
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    goto :goto_0
-
-    :cond_0
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    :goto_0
-    mul-int/lit8 p0, p0, 0x1f
-
-    const v0, -0x7ffffff0
-
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result v0
-
-    add-int/2addr v0, p0
-
-    return v0
-.end method
-
-.method public final l()I
-    .locals 0
-
-    const p0, -0x7ffffff0
-
-    return p0
-.end method
-
-.method public final n(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Lpg7;
-
-    instance-of p0, p1, Lodd;
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Li9b;
-
-    check-cast p1, Lodd;
-
-    iget-object p1, p1, Lodd;->a:Ln06;
-
-    invoke-direct {p0, p1}, Li9b;-><init>(Ln06;)V
-
-    :goto_0
-    return-object p0
-.end method
-
-.method public final t(Ljava/lang/Object;)Z
-    .locals 0
-
-    check-cast p1, Lpg7;
-
-    invoke-virtual {p0, p1}, Lodd;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -177,15 +108,15 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "ShortLinkInputItem(state="
+    const-string v1, "Text(text="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p0, Lodd;->a:Ln06;
+    iget-object p0, p0, Lodd;->a:Lmoe;
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string p0, ", viewType=-2147483632)"
+    const-string p0, ")"
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -194,4 +125,14 @@
     move-result-object p0
 
     return-object p0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 0
+
+    iget-object p0, p0, Lodd;->a:Lmoe;
+
+    invoke-virtual {p1, p0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+
+    return-void
 .end method

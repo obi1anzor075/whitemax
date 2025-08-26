@@ -207,7 +207,7 @@
 
     const-string p3, "Failed to create EGL context: 0x"
 
-    invoke-static {p3, p0}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p3, p0}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -309,7 +309,7 @@
 
     const-string v1, "Failed to create window surface: 0x"
 
-    invoke-static {v1, v0}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -338,15 +338,15 @@
 .end method
 
 .method private static getEglConfig(Ljavax/microedition/khronos/egl/EGL10;Ljavax/microedition/khronos/egl/EGLDisplay;[I)Ljavax/microedition/khronos/egl/EGLConfig;
-    .locals 8
+    .locals 6
 
     const/4 v4, 0x1
 
-    new-array v6, v4, [Ljavax/microedition/khronos/egl/EGLConfig;
+    new-array v3, v4, [Ljavax/microedition/khronos/egl/EGLConfig;
 
     const/4 v0, 0x1
 
-    new-array v7, v0, [I
+    new-array v5, v0, [I
 
     move-object v0, p0
 
@@ -354,23 +354,19 @@
 
     move-object v2, p2
 
-    move-object v3, v6
-
-    move-object v5, v7
-
     invoke-interface/range {v0 .. v5}, Ljavax/microedition/khronos/egl/EGL10;->eglChooseConfig(Ljavax/microedition/khronos/egl/EGLDisplay;[I[Ljavax/microedition/khronos/egl/EGLConfig;I[I)Z
 
-    move-result p1
+    move-result p0
 
-    if-eqz p1, :cond_2
+    if-eqz p0, :cond_2
 
     const/4 p0, 0x0
 
-    aget p1, v7, p0
+    aget p1, v5, p0
 
     if-lez p1, :cond_1
 
-    aget-object p0, v6, p0
+    aget-object p0, v3, p0
 
     if-eqz p0, :cond_0
 
@@ -395,29 +391,29 @@
     throw p0
 
     :cond_2
-    new-instance p1, Landroid/opengl/GLException;
+    new-instance p0, Landroid/opengl/GLException;
 
-    invoke-interface {p0}, Ljavax/microedition/khronos/egl/EGL10;->eglGetError()I
+    invoke-interface {v0}, Ljavax/microedition/khronos/egl/EGL10;->eglGetError()I
+
+    move-result p1
+
+    invoke-interface {v0}, Ljavax/microedition/khronos/egl/EGL10;->eglGetError()I
 
     move-result p2
 
-    invoke-interface {p0}, Ljavax/microedition/khronos/egl/EGL10;->eglGetError()I
+    invoke-static {p2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
-    move-result p0
-
-    invoke-static {p0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object p0
+    move-result-object p2
 
     const-string v0, "eglChooseConfig failed: 0x"
 
-    invoke-static {v0, p0}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p2}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object p0
+    move-result-object p2
 
-    invoke-direct {p1, p2, p0}, Landroid/opengl/GLException;-><init>(ILjava/lang/String;)V
+    invoke-direct {p0, p1, p2}, Landroid/opengl/GLException;-><init>(ILjava/lang/String;)V
 
-    throw p1
+    throw p0
 .end method
 
 .method private static getEglDisplay(Ljavax/microedition/khronos/egl/EGL10;)Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -462,7 +458,7 @@
 
     const-string v2, "Unable to initialize EGL10: 0x"
 
-    invoke-static {v2, p0}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, p0}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -487,7 +483,7 @@
 
     const-string v2, "Unable to get EGL10 display: 0x"
 
-    invoke-static {v2, p0}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, p0}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -575,13 +571,13 @@
 
     move-result-object v0
 
-    const-string v2, "Failed to create pixel buffer surface with size "
+    const-string v2, "x"
 
-    const-string v3, "x"
+    const-string v3, ": 0x"
 
-    const-string v4, ": 0x"
+    const-string v4, "Failed to create pixel buffer surface with size "
 
-    invoke-static {v2, p1, v3, p2, v4}, Lrf0;->i(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4, p1, v2, p2, v3}, Lpg0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 
@@ -676,12 +672,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 

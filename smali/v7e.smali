@@ -1,3 +1,6 @@
-.class public interface abstract Lv7e;
+.class public abstract Lv7e;
 .super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/io/Closeable;

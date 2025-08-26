@@ -1,129 +1,77 @@
-.class public abstract Lulb;
-.super Ljava/lang/Object;
+.class public final enum Lulb;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
 # static fields
-.field public static adjustable:I = 0x7f040030
+.field public static final enum a:Lulb;
 
-.field public static allowDividerAbove:I = 0x7f040038
+.field public static final synthetic b:[Lulb;
 
-.field public static allowDividerAfterLastItem:I = 0x7f040039
 
-.field public static allowDividerBelow:I = 0x7f04003a
+# direct methods
+.method static constructor <clinit>()V
+    .locals 5
 
-.field public static checkBoxPreferenceStyle:I = 0x7f04025e
+    new-instance v0, Lulb;
 
-.field public static defaultValue:I = 0x7f040332
+    const-string v1, "DEFAULT"
 
-.field public static dependency:I = 0x7f040336
+    const/4 v2, 0x0
 
-.field public static dialogIcon:I = 0x7f040339
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-.field public static dialogLayout:I = 0x7f04033a
+    sput-object v0, Lulb;->a:Lulb;
 
-.field public static dialogMessage:I = 0x7f04033b
+    new-instance v1, Lulb;
 
-.field public static dialogPreferenceStyle:I = 0x7f04033c
+    const-string v2, "SIGNED"
 
-.field public static dialogTitle:I = 0x7f04033f
+    const/4 v3, 0x1
 
-.field public static disableDependentsState:I = 0x7f040340
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-.field public static dropdownPreferenceStyle:I = 0x7f040360
+    new-instance v2, Lulb;
 
-.field public static editTextPreferenceStyle:I = 0x7f040365
+    const-string v3, "FIXED"
 
-.field public static enableCopying:I = 0x7f04036d
+    const/4 v4, 0x2
 
-.field public static enabled:I = 0x7f04036f
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-.field public static entries:I = 0x7f04037b
+    filled-new-array {v0, v1, v2}, [Lulb;
 
-.field public static entryValues:I = 0x7f04037c
+    move-result-object v0
 
-.field public static fragment:I = 0x7f0403e8
+    sput-object v0, Lulb;->b:[Lulb;
 
-.field public static icon:I = 0x7f0404fd
+    return-void
+.end method
 
-.field public static iconSpaceReserved:I = 0x7f040502
+.method public static valueOf(Ljava/lang/String;)Lulb;
+    .locals 1
 
-.field public static initialExpandedChildrenCount:I = 0x7f04051b
+    const-class v0, Lulb;
 
-.field public static isPreferenceVisible:I = 0x7f040521
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-.field public static key:I = 0x7f040543
+    move-result-object p0
 
-.field public static layout:I = 0x7f040552
+    check-cast p0, Lulb;
 
-.field public static maxHeight:I = 0x7f040606
+    return-object p0
+.end method
 
-.field public static maxWidth:I = 0x7f04060c
+.method public static values()[Lulb;
+    .locals 1
 
-.field public static min:I = 0x7f040622
+    sget-object v0, Lulb;->b:[Lulb;
 
-.field public static negativeButtonText:I = 0x7f04066a
+    invoke-virtual {v0}, [Lulb;->clone()Ljava/lang/Object;
 
-.field public static order:I = 0x7f040679
+    move-result-object v0
 
-.field public static orderingFromXml:I = 0x7f04067a
+    check-cast v0, [Lulb;
 
-.field public static persistent:I = 0x7f040699
-
-.field public static positiveButtonText:I = 0x7f0406ab
-
-.field public static preferenceCategoryStyle:I = 0x7f0406ad
-
-.field public static preferenceCategoryTitleTextAppearance:I = 0x7f0406ae
-
-.field public static preferenceCategoryTitleTextColor:I = 0x7f0406af
-
-.field public static preferenceFragmentCompatStyle:I = 0x7f0406b0
-
-.field public static preferenceFragmentListStyle:I = 0x7f0406b1
-
-.field public static preferenceFragmentStyle:I = 0x7f0406b2
-
-.field public static preferenceInformationStyle:I = 0x7f0406b3
-
-.field public static preferenceScreenStyle:I = 0x7f0406b4
-
-.field public static preferenceStyle:I = 0x7f0406b5
-
-.field public static preferenceTheme:I = 0x7f0406b6
-
-.field public static seekBarIncrement:I = 0x7f040705
-
-.field public static seekBarPreferenceStyle:I = 0x7f040706
-
-.field public static selectable:I = 0x7f040708
-
-.field public static selectableItemBackground:I = 0x7f040709
-
-.field public static shouldDisableView:I = 0x7f04071b
-
-.field public static showSeekBarValue:I = 0x7f040727
-
-.field public static singleLineTitle:I = 0x7f04073d
-
-.field public static summary:I = 0x7f0407ba
-
-.field public static summaryOff:I = 0x7f0407bb
-
-.field public static summaryOn:I = 0x7f0407bc
-
-.field public static switchPreferenceCompatStyle:I = 0x7f0407c0
-
-.field public static switchPreferenceStyle:I = 0x7f0407c1
-
-.field public static switchTextOff:I = 0x7f0407c4
-
-.field public static switchTextOn:I = 0x7f0407c5
-
-.field public static title:I = 0x7f040847
-
-.field public static updatesContinuously:I = 0x7f04088a
-
-.field public static useSimpleSummaryProvider:I = 0x7f04088f
-
-.field public static widgetLayout:I = 0x7f0408a6
+    return-object v0
+.end method

@@ -1,0 +1,195 @@
+.class public abstract Lx06;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lnv6;
+
+
+# instance fields
+.field public final a:Ljava/lang/Object;
+
+.field public final b:Lnv6;
+
+.field public final c:Ljava/util/HashSet;
+
+
+# direct methods
+.method public constructor <init>(Lnv6;)V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lx06;->a:Ljava/lang/Object;
+
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    iput-object v0, p0, Lx06;->c:Ljava/util/HashSet;
+
+    iput-object p1, p0, Lx06;->b:Lnv6;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final c(Lw06;)V
+    .locals 1
+
+    iget-object v0, p0, Lx06;->a:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object p0, p0, Lx06;->c:Ljava/util/HashSet;
+
+    invoke-virtual {p0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p0
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
+.end method
+
+.method public close()V
+    .locals 3
+
+    iget-object v0, p0, Lx06;->b:Lnv6;
+
+    invoke-interface {v0}, Ljava/lang/AutoCloseable;->close()V
+
+    iget-object v0, p0, Lx06;->a:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    new-instance v1, Ljava/util/HashSet;
+
+    iget-object v2, p0, Lx06;->c:Ljava/util/HashSet;
+
+    invoke-direct {v1, v2}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {v1}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lw06;
+
+    invoke-interface {v1, p0}, Lw06;->a(Lx06;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+
+    :catchall_0
+    move-exception p0
+
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p0
+.end method
+
+.method public final d0()Landroid/media/Image;
+    .locals 0
+
+    iget-object p0, p0, Lx06;->b:Lnv6;
+
+    invoke-interface {p0}, Lnv6;->d0()Landroid/media/Image;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final getFormat()I
+    .locals 0
+
+    iget-object p0, p0, Lx06;->b:Lnv6;
+
+    invoke-interface {p0}, Lnv6;->getFormat()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public getHeight()I
+    .locals 0
+
+    iget-object p0, p0, Lx06;->b:Lnv6;
+
+    invoke-interface {p0}, Lnv6;->getHeight()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public getImageInfo()Lvu6;
+    .locals 0
+
+    iget-object p0, p0, Lx06;->b:Lnv6;
+
+    invoke-interface {p0}, Lnv6;->getImageInfo()Lvu6;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public getWidth()I
+    .locals 0
+
+    iget-object p0, p0, Lx06;->b:Lnv6;
+
+    invoke-interface {p0}, Lnv6;->getWidth()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final w()[Lly4;
+    .locals 0
+
+    iget-object p0, p0, Lx06;->b:Lnv6;
+
+    invoke-interface {p0}, Lnv6;->w()[Lly4;
+
+    move-result-object p0
+
+    return-object p0
+.end method

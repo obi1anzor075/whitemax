@@ -1,42 +1,29 @@
-.class public final Lplc;
-.super Lh0;
+.class public interface abstract Lplc;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public abstract a(IF)V
+.end method
 
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+.method public abstract b(Z)V
+.end method
 
-    move-result-object v0
+.method public abstract c()V
+.end method
 
-    iput-object v0, p0, Lh0;->c:Ljava/lang/Thread;
+.method public abstract e(Z)V
+.end method
 
-    const/4 v0, 0x0
+.method public abstract g()V
+.end method
 
-    :try_start_0
-    iget-object v1, p0, Lh0;->a:Ljava/lang/Runnable;
+.method public abstract i(F)V
+.end method
 
-    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
+.method public abstract k()V
+.end method
 
-    iput-object v0, p0, Lh0;->c:Ljava/lang/Thread;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-void
-
-    :catchall_0
-    move-exception v1
-
-    invoke-virtual {p0}, Lh0;->f()V
-
-    iput-object v0, p0, Lh0;->c:Ljava/lang/Thread;
-
-    invoke-static {v1}, Lxs7;->F(Ljava/lang/Throwable;)V
-
-    throw v1
+.method public abstract m([F)V
 .end method

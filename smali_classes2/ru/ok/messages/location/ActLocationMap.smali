@@ -1,27 +1,27 @@
 .class public Lru/ok/messages/location/ActLocationMap;
-.super Lr5;
+.super Lp5;
 .source "SourceFile"
 
 # interfaces
-.implements Ld16;
+.implements Lh56;
 
 
 # static fields
-.field public static final synthetic Y0:I
+.field public static final synthetic Q0:I
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lr5;-><init>()V
+    invoke-direct {p0}, Lp5;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final Z()Ljava/lang/String;
+.method public final P()Ljava/lang/String;
     .locals 0
 
     const/4 p0, 0x0
@@ -29,10 +29,10 @@
     return-object p0
 .end method
 
-.method public final c0(IILandroid/content/Intent;)V
+.method public final S(IILandroid/content/Intent;)V
     .locals 1
 
-    invoke-virtual {p0}, Landroidx/fragment/app/b;->P()Lvx5;
+    invoke-virtual {p0}, Landroidx/fragment/app/b;->E()Lb26;
 
     move-result-object p0
 
@@ -51,15 +51,15 @@
     :cond_0
     check-cast p0, Lru/ok/messages/location/FrgLocationMap;
 
-    invoke-virtual {p0, p1, p2, p3}, Lru/ok/messages/location/FrgLocationMap;->m1(IILandroid/content/Intent;)V
+    invoke-virtual {p0, p1, p2, p3}, Lru/ok/messages/location/FrgLocationMap;->Z0(IILandroid/content/Intent;)V
 
     return-void
 .end method
 
-.method public final d()V
+.method public final e()V
     .locals 1
 
-    invoke-virtual {p0}, Landroidx/fragment/app/b;->P()Lvx5;
+    invoke-virtual {p0}, Landroidx/fragment/app/b;->E()Lb26;
 
     move-result-object p0
 
@@ -78,7 +78,7 @@
     :cond_0
     check-cast p0, Lru/ok/messages/location/FrgLocationMap;
 
-    invoke-virtual {p0}, Lru/ok/messages/location/FrgLocationMap;->d()V
+    invoke-virtual {p0}, Lru/ok/messages/location/FrgLocationMap;->e()V
 
     return-void
 .end method
@@ -88,24 +88,24 @@
 
     move-object/from16 v0, p0
 
-    invoke-super/range {p0 .. p1}, Lr5;->onCreate(Landroid/os/Bundle;)V
+    invoke-super/range {p0 .. p1}, Lp5;->onCreate(Landroid/os/Bundle;)V
 
-    sget v1, Lzrb;->act_single_fragment:I
+    sget v1, Lqwb;->act_single_fragment:I
 
-    invoke-virtual {v0, v1}, Lr5;->setContentView(I)V
+    invoke-virtual {v0, v1}, Lp5;->setContentView(I)V
 
-    iget-object v1, v0, Lr5;->R0:Lwce;
+    iget-object v1, v0, Lp5;->J0:Lvke;
 
-    iget v1, v1, Lwce;->L:I
+    iget v1, v1, Lvke;->L:I
 
-    invoke-virtual {v0, v1}, Lr5;->f0(I)V
+    invoke-virtual {v0, v1}, Lp5;->V(I)V
 
     if-eqz p1, :cond_0
 
     return-void
 
     :cond_0
-    invoke-virtual/range {p0 .. p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+    invoke-virtual {v0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
     move-result-object v1
 
@@ -135,11 +135,11 @@
 
     move-result-object v14
 
-    check-cast v14, Ldm7;
+    check-cast v14, Lar7;
 
     if-nez v14, :cond_1
 
-    sget-object v14, Ldm7;->Z:Ldm7;
+    sget-object v14, Lar7;->Z:Lar7;
 
     :cond_1
     const/high16 v15, 0x41600000    # 14.0f
@@ -238,17 +238,17 @@
 
     invoke-virtual {v3, v10, v11, v12}, Landroid/os/BaseBundle;->putLong(Ljava/lang/String;J)V
 
-    move-object/from16 v2, v16
+    move-object/from16 v5, v16
 
-    move-object/from16 v5, v17
+    move-object/from16 v2, v17
 
-    invoke-virtual {v3, v2, v5}, Landroid/os/Bundle;->putSerializable(Ljava/lang/String;Ljava/io/Serializable;)V
+    invoke-virtual {v3, v5, v2}, Landroid/os/Bundle;->putSerializable(Ljava/lang/String;Ljava/io/Serializable;)V
 
-    move-object/from16 v2, p1
+    move-object/from16 v5, p1
 
-    move/from16 v5, v19
+    move/from16 v2, v19
 
-    invoke-virtual {v3, v2, v5}, Landroid/os/Bundle;->putFloat(Ljava/lang/String;F)V
+    invoke-virtual {v3, v5, v2}, Landroid/os/Bundle;->putFloat(Ljava/lang/String;F)V
 
     move/from16 v2, v20
 
@@ -268,11 +268,11 @@
 
     invoke-virtual {v3, v2, v4}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
 
-    move-object/from16 v4, v25
+    move-object/from16 v2, v25
 
-    move-object/from16 v2, v26
+    move-object/from16 v4, v26
 
-    invoke-virtual {v3, v2, v4}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v3, v4, v2}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v2, "ru.ok.tamtam.extra.DISABLE_LIVE"
 
@@ -284,25 +284,25 @@
 
     invoke-virtual {v3, v2, v0}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
 
-    invoke-virtual {v1, v3}, Landroidx/fragment/app/a;->Y0(Landroid/os/Bundle;)V
+    invoke-virtual {v1, v3}, Landroidx/fragment/app/a;->L0(Landroid/os/Bundle;)V
 
-    invoke-virtual/range {p0 .. p0}, Landroidx/fragment/app/b;->P()Lvx5;
+    invoke-virtual/range {p0 .. p0}, Landroidx/fragment/app/b;->E()Lb26;
 
     move-result-object v0
 
-    sget v2, Lyqb;->act_single_fragment__container:I
+    sget v2, Lpvb;->act_single_fragment__container:I
 
     const-string v3, "ru.ok.messages.location.FrgLocationMap"
 
-    invoke-static {v0, v2, v1, v3}, Lkjd;->c(Lvx5;ILru/ok/messages/views/fragments/base/FrgBase;Ljava/lang/String;)V
+    invoke-static {v0, v2, v1, v3}, Lxqd;->c(Lb26;ILru/ok/messages/views/fragments/base/FrgBase;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public final u()V
+.method public final r()V
     .locals 1
 
-    invoke-virtual {p0}, Landroidx/fragment/app/b;->P()Lvx5;
+    invoke-virtual {p0}, Landroidx/fragment/app/b;->E()Lb26;
 
     move-result-object p0
 
@@ -326,10 +326,10 @@
     return-void
 .end method
 
-.method public final x()V
+.method public final v()V
     .locals 1
 
-    invoke-virtual {p0}, Landroidx/fragment/app/b;->P()Lvx5;
+    invoke-virtual {p0}, Landroidx/fragment/app/b;->E()Lb26;
 
     move-result-object p0
 

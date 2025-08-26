@@ -2,397 +2,257 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/os/Parcelable;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lky7;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 
 # instance fields
-.field public final a:D
-
-.field public final b:D
-
-.field public final c:D
-
-.field public final d:D
-
-.field public final e:D
-
-.field public final f:I
-
-.field public final g:I
-
-.field public final h:Z
-
-.field public final i:Z
-
-.field public final j:Z
-
-.field public final k:Z
+.field public final a:Ljy7;
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
     .locals 2
 
+    new-instance v0, Ldj7;
+
+    const/4 v1, 0x6
+
+    invoke-direct {v0, v1}, Ldj7;-><init>(I)V
+
+    sput-object v0, Lky7;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Parcel;)V
+    .locals 4
+
+    .line 3
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-wide/high16 v0, 0x405e000000000000L    # 120.0
+    .line 4
+    invoke-static {p1}, Ltk9;->G(Landroid/os/Parcel;)Z
 
-    iput-wide v0, p0, Lky7;->a:D
+    move-result v0
 
-    const-wide v0, 0x3fa47ae147ae147bL    # 0.04
+    if-nez v0, :cond_3
 
-    iput-wide v0, p0, Lky7;->b:D
+    .line 5
+    new-instance v0, Ljy7;
 
-    iput-wide v0, p0, Lky7;->c:D
+    .line 6
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    const-wide v0, 0x408f400000000000L    # 1000.0
+    .line 7
+    invoke-virtual {p1}, Landroid/os/Parcel;->readDouble()D
 
-    iput-wide v0, p0, Lky7;->d:D
+    move-result-wide v1
 
-    const-wide v0, 0x4085e00000000000L    # 700.0
+    .line 8
+    iput-wide v1, v0, Ljy7;->a:D
 
-    iput-wide v0, p0, Lky7;->e:D
+    .line 9
+    invoke-virtual {p1}, Landroid/os/Parcel;->readDouble()D
 
-    const/16 v0, 0x1f4
+    move-result-wide v1
 
-    iput v0, p0, Lky7;->f:I
+    .line 10
+    iput-wide v1, v0, Ljy7;->b:D
 
-    const/16 v0, 0x12c
+    .line 11
+    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
 
-    iput v0, p0, Lky7;->g:I
+    move-result v1
 
-    const/4 v0, 0x1
+    const/4 v2, 0x0
 
-    iput-boolean v0, p0, Lky7;->h:Z
+    const/4 v3, 0x1
 
-    const/4 v1, 0x0
+    if-ne v1, v3, :cond_0
 
-    iput-boolean v1, p0, Lky7;->i:Z
+    move v1, v3
 
-    iput-boolean v1, p0, Lky7;->j:Z
+    goto :goto_0
 
-    iput-boolean v0, p0, Lky7;->k:Z
+    :cond_0
+    move v1, v2
+
+    .line 12
+    :goto_0
+    iput-boolean v1, v0, Ljy7;->c:Z
+
+    .line 13
+    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
+
+    move-result v1
+
+    if-ne v1, v3, :cond_1
+
+    move v1, v3
+
+    goto :goto_1
+
+    :cond_1
+    move v1, v2
+
+    .line 14
+    :goto_1
+    iput-boolean v1, v0, Ljy7;->d:Z
+
+    .line 15
+    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
+
+    move-result v1
+
+    if-ne v1, v3, :cond_2
+
+    move v2, v3
+
+    .line 16
+    :cond_2
+    iput-boolean v2, v0, Ljy7;->e:Z
+
+    .line 17
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v1
+
+    .line 18
+    iput v1, v0, Ljy7;->f:I
+
+    .line 19
+    invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
+
+    move-result v1
+
+    .line 20
+    iput v1, v0, Ljy7;->g:F
+
+    .line 21
+    invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
+
+    move-result v1
+
+    .line 22
+    iput v1, v0, Ljy7;->h:F
+
+    .line 23
+    invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
+
+    move-result p1
+
+    .line 24
+    iput p1, v0, Ljy7;->i:F
+
+    .line 25
+    new-instance p1, Ljy7;
+
+    invoke-direct {p1, v0}, Ljy7;-><init>(Ljy7;)V
+
+    .line 26
+    iput-object p1, p0, Lky7;->a:Ljy7;
+
+    return-void
+
+    :cond_3
+    const/4 p1, 0x0
+
+    .line 27
+    iput-object p1, p0, Lky7;->a:Ljy7;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljy7;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    iput-object p1, p0, Lky7;->a:Ljy7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 7
+.method public final describeContents()I
+    .locals 0
 
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lky7;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lky7;
-
-    iget-wide v3, p1, Lky7;->a:D
-
-    iget-wide v5, p0, Lky7;->a:D
-
-    invoke-static {v5, v6, v3, v4}, Ljava/lang/Double;->compare(DD)I
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-wide v3, p0, Lky7;->b:D
-
-    iget-wide v5, p1, Lky7;->b:D
-
-    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-wide v3, p0, Lky7;->c:D
-
-    iget-wide v5, p1, Lky7;->c:D
-
-    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    return v2
-
-    :cond_4
-    iget-wide v3, p0, Lky7;->d:D
-
-    iget-wide v5, p1, Lky7;->d:D
-
-    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
-
-    move-result v1
-
-    if-eqz v1, :cond_5
-
-    return v2
-
-    :cond_5
-    iget-wide v3, p0, Lky7;->e:D
-
-    iget-wide v5, p1, Lky7;->e:D
-
-    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
-
-    move-result v1
-
-    if-eqz v1, :cond_6
-
-    return v2
-
-    :cond_6
-    iget v1, p0, Lky7;->f:I
-
-    iget v3, p1, Lky7;->f:I
-
-    if-eq v1, v3, :cond_7
-
-    return v2
-
-    :cond_7
-    iget v1, p0, Lky7;->g:I
-
-    iget v3, p1, Lky7;->g:I
-
-    if-eq v1, v3, :cond_8
-
-    return v2
-
-    :cond_8
-    iget-boolean v1, p0, Lky7;->h:Z
-
-    iget-boolean v3, p1, Lky7;->h:Z
-
-    if-eq v1, v3, :cond_9
-
-    return v2
-
-    :cond_9
-    iget-boolean v1, p0, Lky7;->i:Z
-
-    iget-boolean v3, p1, Lky7;->i:Z
-
-    if-eq v1, v3, :cond_a
-
-    return v2
-
-    :cond_a
-    iget-boolean v1, p0, Lky7;->j:Z
-
-    iget-boolean v3, p1, Lky7;->j:Z
-
-    if-eq v1, v3, :cond_b
-
-    return v2
-
-    :cond_b
-    iget-boolean p0, p0, Lky7;->k:Z
-
-    iget-boolean p1, p1, Lky7;->k:Z
-
-    if-eq p0, p1, :cond_c
-
-    return v2
-
-    :cond_c
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 4
-
-    iget-wide v0, p0, Lky7;->a:D
-
-    invoke-static {v0, v1}, Ljava/lang/Double;->hashCode(D)I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget-wide v2, p0, Lky7;->b:D
-
-    invoke-static {v0, v2, v3}, Lat7;->a(ID)I
-
-    move-result v0
-
-    iget-wide v2, p0, Lky7;->c:D
-
-    invoke-static {v0, v2, v3}, Lat7;->a(ID)I
-
-    move-result v0
-
-    iget-wide v2, p0, Lky7;->d:D
-
-    invoke-static {v0, v2, v3}, Lat7;->a(ID)I
-
-    move-result v0
-
-    iget-wide v2, p0, Lky7;->e:D
-
-    invoke-static {v0, v2, v3}, Lat7;->a(ID)I
-
-    move-result v0
-
-    iget v2, p0, Lky7;->f:I
-
-    invoke-static {v2, v0}, Lam7;->a(II)I
-
-    move-result v0
-
-    iget v2, p0, Lky7;->g:I
-
-    invoke-static {v2, v0}, Lam7;->a(II)I
-
-    move-result v0
-
-    iget-boolean v2, p0, Lky7;->h:Z
-
-    invoke-static {v0, v1, v2}, Lth2;->f(IIZ)I
-
-    move-result v0
-
-    iget-boolean v2, p0, Lky7;->i:Z
-
-    invoke-static {v0, v1, v2}, Lth2;->f(IIZ)I
-
-    move-result v0
-
-    iget-boolean v2, p0, Lky7;->j:Z
-
-    invoke-static {v0, v1, v2}, Lth2;->f(IIZ)I
-
-    move-result v0
-
-    iget-boolean p0, p0, Lky7;->k:Z
-
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
+    const/4 p0, 0x0
 
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object p0, p0, Lky7;->a:Ljy7;
 
-    const-string v1, "BadNetworkCondition(rttThreshold="
+    if-nez p0, :cond_0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const/4 p2, 0x1
 
-    iget-wide v1, p0, Lky7;->a:D
+    goto :goto_0
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    :cond_0
+    const/4 p2, 0x0
 
-    const-string v1, ", lostPacketsLimitForRttBelowLowBound="
+    :goto_0
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByte(B)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz p0, :cond_1
 
-    iget-wide v1, p0, Lky7;->b:D
+    iget-wide v0, p0, Ljy7;->a:D
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeDouble(D)V
 
-    const-string v1, ", lostPacketsLimitForRttAboveLowBound="
+    iget-wide v0, p0, Ljy7;->b:D
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeDouble(D)V
 
-    iget-wide v1, p0, Lky7;->c:D
+    iget-boolean p2, p0, Ljy7;->c:Z
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByte(B)V
 
-    const-string v1, ", rttEnterLevel2Mode="
+    iget-boolean p2, p0, Ljy7;->d:Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByte(B)V
 
-    iget-wide v1, p0, Lky7;->d:D
+    iget-boolean p2, p0, Ljy7;->e:Z
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByte(B)V
 
-    const-string v1, ", rttLeaveLevel2Mode="
+    iget p2, p0, Ljy7;->f:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    iget-wide v1, p0, Lky7;->e:D
+    iget p2, p0, Ljy7;->g:F
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeFloat(F)V
 
-    const-string v1, ", videoBitrateLevel1K="
+    iget p2, p0, Ljy7;->h:F
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeFloat(F)V
 
-    iget v1, p0, Lky7;->f:I
+    iget p0, p0, Ljy7;->i:F
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeFloat(F)V
 
-    const-string v1, ", videoBitrateLevel2K="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lky7;->g:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", preferHardwareVPXEncoder="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lky7;->h:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", limitFrameSize="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lky7;->i:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", limitBitrate="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lky7;->j:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", setTemporalLayers="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean p0, p0, Lky7;->k:Z
-
-    const-string v1, ")"
-
-    invoke-static {v0, p0, v1}, Lhr1;->j(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    :cond_1
+    return-void
 .end method

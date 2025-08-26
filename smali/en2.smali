@@ -1,49 +1,60 @@
-.class public final Len2;
-.super Ler3;
+.class public final synthetic Len2;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/util/function/Consumer;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic a:I
 
-.field public final synthetic Y:La40;
-
-.field public synthetic o:Ljava/lang/Object;
+.field public final synthetic b:Lq8;
 
 
 # direct methods
-.method public constructor <init>(La40;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(Lq8;I)V
     .locals 0
 
-    iput-object p1, p0, Len2;->Y:La40;
+    iput p2, p0, Len2;->a:I
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Len2;->b:Lq8;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final synthetic accept(Ljava/lang/Object;)V
     .locals 1
 
-    iput-object p1, p0, Len2;->o:Ljava/lang/Object;
+    iget v0, p0, Len2;->a:I
 
-    iget p1, p0, Len2;->X:I
+    packed-switch v0, :pswitch_data_0
 
-    const/high16 v0, -0x80000000
+    iget-object p0, p0, Len2;->b:Lq8;
 
-    or-int/2addr p1, v0
+    check-cast p0, Laj2;
 
-    iput p1, p0, Len2;->X:I
+    invoke-virtual {p0, p1}, Laj2;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object p1, p0, Len2;->Y:La40;
+    return-void
 
-    const/4 v0, 0x0
+    :pswitch_0
+    iget-object p0, p0, Len2;->b:Lq8;
 
-    invoke-virtual {p1, v0, p0}, La40;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    check-cast p0, Laj2;
 
-    move-result-object p0
+    invoke-virtual {p0, p1}, Laj2;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-object p0
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

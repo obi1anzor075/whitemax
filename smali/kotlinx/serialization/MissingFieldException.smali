@@ -19,6 +19,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -27,7 +28,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/ArrayList;Ljava/lang/String;Lkotlinx/serialization/MissingFieldException;)V
+.method public constructor <init>(Ljava/util/List;Ljava/lang/String;Lkotlinx/serialization/MissingFieldException;)V
     .locals 0
 
     invoke-direct {p0, p2, p3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V

@@ -1,31 +1,22 @@
-.class public final synthetic Lpy9;
-.super Ljhb;
+.class public final Lpy9;
+.super Lvw9;
 .source "SourceFile"
+
+# interfaces
+.implements Loqc;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(IILjava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 6
+.method public constructor <init>(Ljava/lang/Object;)V
+    .locals 0
 
-    iput p2, p0, Lpy9;->a:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object v0, p0
-
-    move-object v1, p4
-
-    move-object v2, p3
-
-    move-object v3, p5
-
-    move-object v4, p6
-
-    move v5, p1
-
-    invoke-direct/range {v0 .. v5}, Llhb;-><init>(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    iput-object p1, p0, Lpy9;->a:Ljava/lang/Object;
 
     return-void
 .end method
@@ -33,51 +24,25 @@
 
 # virtual methods
 .method public final get()Ljava/lang/Object;
+    .locals 0
+
+    iget-object p0, p0, Lpy9;->a:Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method public final p(La0a;)V
     .locals 1
 
-    iget v0, p0, Lpy9;->a:I
+    new-instance v0, Loz9;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object p0, p0, Lpy9;->a:Ljava/lang/Object;
 
-    iget-object p0, p0, Lmn1;->receiver:Ljava/lang/Object;
+    invoke-direct {v0, p1, p0}, Loz9;-><init>(La0a;Ljava/lang/Object;)V
 
-    check-cast p0, Lrzb;
+    invoke-interface {p1, v0}, La0a;->c(Lam4;)V
 
-    iget-object p0, p0, Lrzb;->c:Ltwd;
+    invoke-virtual {v0}, Loz9;->run()V
 
-    invoke-virtual {p0}, Lig7;->j()I
-
-    move-result p0
-
-    const/16 v0, 0x8
-
-    if-le p0, v0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    iget-object p0, p0, Lmn1;->receiver:Ljava/lang/Object;
-
-    check-cast p0, Lry9;
-
-    iget-object p0, p0, Lry9;->a:Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

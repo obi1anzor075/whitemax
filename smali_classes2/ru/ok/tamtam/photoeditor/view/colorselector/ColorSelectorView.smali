@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field public final Z1:Ld33;
+.field public final R1:Le53;
 
-.field public final a2:I
+.field public final S1:I
 
 
 # direct methods
@@ -17,25 +17,25 @@
 
     const/4 p1, 0x0
 
-    iput p1, p0, Lru/ok/tamtam/photoeditor/view/colorselector/ColorSelectorView;->a2:I
+    iput p1, p0, Lru/ok/tamtam/photoeditor/view/colorselector/ColorSelectorView;->S1:I
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    sget-object v1, Ldwb;->ColorSelectorView:[I
+    sget-object v1, Lz0c;->ColorSelectorView:[I
 
     invoke-virtual {v0, p2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object p2
 
-    sget v0, Ldwb;->ColorSelectorView_color_selector_orientation:I
+    sget v0, Lz0c;->ColorSelectorView_color_selector_orientation:I
 
     invoke-virtual {p2, v0, p1}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v0
 
-    iput v0, p0, Lru/ok/tamtam/photoeditor/view/colorselector/ColorSelectorView;->a2:I
+    iput v0, p0, Lru/ok/tamtam/photoeditor/view/colorselector/ColorSelectorView;->S1:I
 
     invoke-virtual {p2}, Landroid/content/res/TypedArray;->recycle()V
 
@@ -43,7 +43,7 @@
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    iget v0, p0, Lru/ok/tamtam/photoeditor/view/colorselector/ColorSelectorView;->a2:I
+    iget v0, p0, Lru/ok/tamtam/photoeditor/view/colorselector/ColorSelectorView;->S1:I
 
     const/4 v1, 0x1
 
@@ -66,19 +66,19 @@
 
     invoke-virtual {p0, p2}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/a;)V
 
-    new-instance p1, Ld33;
+    new-instance p1, Le53;
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object p2
 
-    iget v0, p0, Lru/ok/tamtam/photoeditor/view/colorselector/ColorSelectorView;->a2:I
+    iget v0, p0, Lru/ok/tamtam/photoeditor/view/colorselector/ColorSelectorView;->S1:I
 
-    invoke-direct {p1, p2, v0}, Ld33;-><init>(Landroid/content/Context;I)V
+    invoke-direct {p1, p2, v0}, Le53;-><init>(Landroid/content/Context;I)V
 
-    iput-object p1, p0, Lru/ok/tamtam/photoeditor/view/colorselector/ColorSelectorView;->Z1:Ld33;
+    iput-object p1, p0, Lru/ok/tamtam/photoeditor/view/colorselector/ColorSelectorView;->R1:Le53;
 
-    invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Lf6c;)V
+    invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Lgbc;)V
 
     return-void
 .end method
@@ -88,21 +88,21 @@
 .method public setColors([I)V
     .locals 0
 
-    iget-object p0, p0, Lru/ok/tamtam/photoeditor/view/colorselector/ColorSelectorView;->Z1:Ld33;
+    iget-object p0, p0, Lru/ok/tamtam/photoeditor/view/colorselector/ColorSelectorView;->R1:Le53;
 
-    iput-object p1, p0, Ld33;->X:[I
+    iput-object p1, p0, Le53;->X:[I
 
-    invoke-virtual {p0}, Lf6c;->m()V
+    invoke-virtual {p0}, Lgbc;->m()V
 
     return-void
 .end method
 
-.method public setListener(Lf33;)V
+.method public setListener(Lg53;)V
     .locals 0
 
-    iget-object p0, p0, Lru/ok/tamtam/photoeditor/view/colorselector/ColorSelectorView;->Z1:Ld33;
+    iget-object p0, p0, Lru/ok/tamtam/photoeditor/view/colorselector/ColorSelectorView;->R1:Le53;
 
-    iput-object p1, p0, Ld33;->y0:Lf33;
+    iput-object p1, p0, Le53;->q0:Lg53;
 
     return-void
 .end method

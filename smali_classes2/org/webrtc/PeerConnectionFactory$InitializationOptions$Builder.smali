@@ -58,9 +58,9 @@
 
 # virtual methods
 .method public createInitializationOptions()Lorg/webrtc/PeerConnectionFactory$InitializationOptions;
-    .locals 10
+    .locals 9
 
-    new-instance v9, Lorg/webrtc/PeerConnectionFactory$InitializationOptions;
+    new-instance v0, Lorg/webrtc/PeerConnectionFactory$InitializationOptions;
 
     iget-object v1, p0, Lorg/webrtc/PeerConnectionFactory$InitializationOptions$Builder;->applicationContext:Landroid/content/Context;
 
@@ -78,11 +78,9 @@
 
     const/4 v8, 0x0
 
-    move-object v0, v9
-
     invoke-direct/range {v0 .. v8}, Lorg/webrtc/PeerConnectionFactory$InitializationOptions;-><init>(Landroid/content/Context;Ljava/lang/String;ZLorg/webrtc/NativeLibraryLoader;Ljava/lang/String;Lorg/webrtc/Loggable;Lorg/webrtc/Logging$Severity;I)V
 
-    return-object v9
+    return-object v0
 .end method
 
 .method public setEnableInternalTracer(Z)Lorg/webrtc/PeerConnectionFactory$InitializationOptions$Builder;

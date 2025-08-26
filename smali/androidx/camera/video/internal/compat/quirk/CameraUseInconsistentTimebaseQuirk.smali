@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lzkb;
+.implements Lkpb;
 
 
 # static fields
@@ -20,13 +20,13 @@
 
     new-instance v0, Ljava/util/HashSet;
 
-    const-string v1, "qcom"
+    const-string v1, "samsungexynos7870"
 
-    const-string v2, "samsungexynos7570"
+    const-string v2, "qcom"
 
-    const-string v3, "samsungexynos7870"
+    const-string v3, "samsungexynos7570"
 
-    filled-new-array {v2, v3, v1}, [Ljava/lang/String;
+    filled-new-array {v3, v1, v2}, [Ljava/lang/String;
 
     move-result-object v1
 
@@ -40,13 +40,13 @@
 
     new-instance v0, Ljava/util/HashSet;
 
-    const-string v1, "sm7325"
+    const-string v1, "sm6375"
 
-    const-string v2, "sm4350"
+    const-string v2, "sm7325"
 
-    const-string v3, "sm6375"
+    const-string v3, "sm4350"
 
-    filled-new-array {v2, v3, v1}, [Ljava/lang/String;
+    filled-new-array {v3, v1, v2}, [Ljava/lang/String;
 
     move-result-object v1
 

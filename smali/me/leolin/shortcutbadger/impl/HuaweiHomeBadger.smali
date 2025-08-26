@@ -29,13 +29,13 @@
 
     invoke-direct {p0}, Landroid/os/Bundle;-><init>()V
 
+    const-string v0, "package"
+
     invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v1, "package"
-
-    invoke-virtual {p0, v1, v0}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p0, v0, v1}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v0, "class"
 

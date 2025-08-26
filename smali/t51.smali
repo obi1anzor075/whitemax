@@ -1,63 +1,59 @@
 .class public final Lt51;
-.super Lgc6;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lsm1;
 
 
 # instance fields
-.field public final synthetic c:Lw51;
+.field public final synthetic a:Lr7b;
 
 
 # direct methods
-.method public constructor <init>(Lw51;)V
+.method public constructor <init>(Lr7b;)V
     .locals 0
 
-    iput-object p1, p0, Lt51;->c:Lw51;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lgc6;-><init>()V
+    iput-object p1, p0, Lt51;->a:Lr7b;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(I)I
-    .locals 3
+.method public final onMediaConnected(Lru/ok/android/externcalls/sdk/connection/MediaConnectionListener$ConnectedInfo;)V
+    .locals 0
 
-    iget-object p0, p0, Lt51;->c:Lw51;
+    invoke-virtual {p1}, Lru/ok/android/externcalls/sdk/connection/MediaConnectionListener$ConnectedInfo;->isFirstConnection()Z
 
-    iget-object v0, p0, Lw51;->P0:Ldga;
-
-    iget v1, v0, Ldga;->b:I
-
-    const/4 v2, 0x2
-
-    if-ne v1, v2, :cond_0
+    move-result p1
 
     if-nez p1, :cond_0
 
-    goto :goto_0
+    sget-object p1, La51;->c:La51;
+
+    iget-object p0, p0, Lt51;->a:Lr7b;
+
+    check-cast p0, Lo7b;
+
+    invoke-virtual {p0, p1}, Lo7b;->g(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
-    iget p1, v0, Ldga;->a:I
+    return-void
+.end method
 
-    const/4 v0, 0x1
+.method public final onMediaDisconnected(Lru/ok/android/externcalls/sdk/connection/MediaConnectionListener$DisconnectedInfo;)V
+    .locals 0
 
-    if-eqz p1, :cond_2
+    sget-object p1, Lb51;->c:Lb51;
 
-    :cond_1
-    move v2, v0
+    iget-object p0, p0, Lt51;->a:Lr7b;
 
-    goto :goto_0
+    check-cast p0, Lo7b;
 
-    :cond_2
-    iget-object p0, p0, Lw51;->M0:Led1;
+    invoke-virtual {p0, p1}, Lo7b;->g(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {p0}, Lig7;->j()I
-
-    move-result p0
-
-    if-gt p0, v2, :cond_1
-
-    :goto_0
-    return v2
+    return-void
 .end method

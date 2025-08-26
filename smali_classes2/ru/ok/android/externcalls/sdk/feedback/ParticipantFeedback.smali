@@ -78,7 +78,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Ljava/lang/String;JLru/ok/android/externcalls/sdk/id/ParticipantId;Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedbackSource;ILx54;)V
+.method public synthetic constructor <init>(Ljava/lang/String;JLru/ok/android/externcalls/sdk/id/ParticipantId;Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedbackSource;ILl94;)V
     .locals 6
 
     and-int/lit8 p6, p6, 0x8
@@ -89,8 +89,6 @@
     sget-object p5, Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedbackSource;->UNKNOWN:Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedbackSource;
 
     :cond_0
-    move-object v5, p5
-
     move-object v0, p0
 
     move-object v1, p1
@@ -98,6 +96,8 @@
     move-wide v2, p2
 
     move-object v4, p4
+
+    move-object v5, p5
 
     .line 7
     invoke-direct/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedback;-><init>(Ljava/lang/String;JLru/ok/android/externcalls/sdk/id/ParticipantId;Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedbackSource;)V
@@ -125,7 +125,7 @@
 
     iget-object p1, p1, Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedback;->participantId:Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 

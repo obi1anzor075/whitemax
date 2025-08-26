@@ -1,66 +1,47 @@
-.class public final synthetic Ltf7;
+.class public final Ltf7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lv1b;
-
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lgg7;
-
-
-# direct methods
-.method public synthetic constructor <init>(Lgg7;I)V
-    .locals 0
-
-    iput p2, p0, Ltf7;->a:I
-
-    iput-object p1, p0, Ltf7;->b:Lgg7;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.implements Luaf;
 
 
 # virtual methods
-.method public final test(Ljava/lang/Object;)Z
-    .locals 1
+.method public final a(ILjava/lang/String;)Lhoe;
+    .locals 0
 
-    iget v0, p0, Ltf7;->a:I
-
-    check-cast p1, Ljava/lang/String;
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Ltf7;->b:Lgg7;
-
-    iget-object p0, p0, Lgg7;->m:Ljava/lang/String;
-
-    invoke-virtual {p0, p1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
 
     move-result p0
 
-    return p0
+    const/16 p2, 0x3c
 
-    :pswitch_0
-    iget-object p0, p0, Ltf7;->b:Lgg7;
+    if-lt p0, p2, :cond_0
 
-    iget-object p0, p0, Lgg7;->j:Ljava/lang/String;
+    const-class p0, Ltf7;
 
-    invoke-virtual {p0, p1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-static {p0}, Llcc;->a(Ljava/lang/Class;)Lz03;
+
+    move-result-object p0
+
+    invoke-static {p1, p0}, Lu7;->v(ILz03;)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
     move-result p0
 
-    return p0
+    new-instance p1, Lhoe;
 
-    nop
+    invoke-direct {p1, p0}, Lhoe;-><init>(I)V
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p1
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return-object p0
 .end method

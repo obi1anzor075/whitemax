@@ -1,69 +1,57 @@
 .class public final Lkt7;
-.super Ljava/lang/Object;
+.super Lv64;
 .source "SourceFile"
 
 
-# instance fields
-.field public a:D
+# static fields
+.field public static final b:Lkt7;
 
-.field public b:D
+.field public static final c:Lr64;
 
-.field public c:Z
-
-.field public d:Z
-
-.field public e:Z
-
-.field public f:I
-
-.field public g:F
-
-.field public h:F
-
-.field public i:F
+.field public static final d:Lr64;
 
 
 # direct methods
-.method public constructor <init>(Lkt7;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lkt7;
 
-    iget-wide v0, p1, Lkt7;->a:D
+    invoke-direct {v0}, Lv64;-><init>()V
 
-    iput-wide v0, p0, Lkt7;->a:D
+    sput-object v0, Lkt7;->b:Lkt7;
 
-    iget-wide v0, p1, Lkt7;->b:D
+    const/4 v1, 0x0
 
-    iput-wide v0, p0, Lkt7;->b:D
+    new-array v1, v1, [Ljava/lang/String;
 
-    iget-boolean v0, p1, Lkt7;->c:Z
+    const/16 v2, 0xa
 
-    iput-boolean v0, p0, Lkt7;->c:Z
+    const-string v3, ":login"
 
-    iget-boolean v0, p1, Lkt7;->d:Z
+    const/4 v4, 0x0
 
-    iput-boolean v0, p0, Lkt7;->d:Z
+    invoke-static {v0, v3, v1, v4, v2}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
 
-    iget-boolean v0, p1, Lkt7;->e:Z
+    move-result-object v1
 
-    iput-boolean v0, p0, Lkt7;->e:Z
+    sput-object v1, Lkt7;->c:Lr64;
 
-    iget v0, p1, Lkt7;->f:I
+    const-string v1, "id"
 
-    iput v0, p0, Lkt7;->f:I
+    filled-new-array {v1}, [Ljava/lang/String;
 
-    iget v0, p1, Lkt7;->g:F
+    move-result-object v1
 
-    iput v0, p0, Lkt7;->g:F
+    const/16 v2, 0xe
 
-    iget v0, p1, Lkt7;->h:F
+    const-string v3, ":neuro-avatars"
 
-    iput v0, p0, Lkt7;->h:F
+    invoke-static {v0, v3, v1, v4, v2}, Lv64;->a(Lv64;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;I)Lr64;
 
-    iget p1, p1, Lkt7;->i:F
+    move-result-object v0
 
-    iput p1, p0, Lkt7;->i:F
+    sput-object v0, Lkt7;->d:Lr64;
 
     return-void
 .end method

@@ -26,7 +26,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_24
 
     invoke-virtual {p0}, Lorg/json/XMLTokener;->nextContent()Ljava/lang/Object;
 
@@ -34,7 +34,7 @@
 
     sget-object v1, Lorg/json/XML;->LT:Ljava/lang/Character;
 
-    if-ne v0, v1, :cond_22
+    if-ne v0, v1, :cond_21
 
     invoke-virtual {p0}, Lorg/json/XMLTokener;->nextToken()Ljava/lang/Object;
 
@@ -233,7 +233,7 @@
     :cond_e
     instance-of v1, v0, Ljava/lang/String;
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_20
 
     check-cast v0, Ljava/lang/String;
 
@@ -279,11 +279,11 @@
     move-result-object v6
 
     :cond_11
-    if-eqz v6, :cond_20
+    if-eqz v6, :cond_1f
 
     instance-of v7, v6, Ljava/lang/String;
 
-    if-nez v7, :cond_1a
+    if-nez v7, :cond_19
 
     if-eqz p1, :cond_12
 
@@ -298,7 +298,7 @@
     :cond_12
     sget-object v4, Lorg/json/XML;->SLASH:Ljava/lang/Character;
 
-    if-ne v6, v4, :cond_15
+    if-ne v6, v4, :cond_14
 
     invoke-virtual {p0}, Lorg/json/XMLTokener;->nextToken()Ljava/lang/Object;
 
@@ -306,28 +306,25 @@
 
     sget-object v4, Lorg/json/XML;->GT:Ljava/lang/Character;
 
-    if-ne v0, v4, :cond_14
+    if-ne v0, v4, :cond_13
 
     if-nez p2, :cond_0
 
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_16
 
-    return-object v1
+    goto :goto_5
 
     :cond_13
-    return-object v2
-
-    :cond_14
     invoke-virtual {p0, v3}, Lorg/json/JSONTokener;->syntaxError(Ljava/lang/String;)Lorg/json/JSONException;
 
     move-result-object p0
 
     throw p0
 
-    :cond_15
+    :cond_14
     sget-object v4, Lorg/json/XML;->GT:Ljava/lang/Character;
 
-    if-ne v6, v4, :cond_19
+    if-ne v6, v4, :cond_18
 
     invoke-static {p0, p1, v1, p3}, Lorg/json/JSONML;->parse(Lorg/json/XMLTokener;ZLorg/json/JSONArray;Z)Ljava/lang/Object;
 
@@ -341,38 +338,39 @@
 
     move-result v4
 
-    if-eqz v4, :cond_18
+    if-eqz v4, :cond_17
 
-    if-nez p1, :cond_16
+    if-nez p1, :cond_15
 
     invoke-virtual {v1}, Lorg/json/JSONArray;->length()I
 
     move-result v0
 
-    if-lez v0, :cond_16
+    if-lez v0, :cond_15
 
     const-string v0, "childNodes"
 
     invoke-virtual {v2, v0, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    :cond_16
+    :cond_15
     if-nez p2, :cond_0
 
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_16
 
+    :goto_5
     return-object v1
 
-    :cond_17
+    :cond_16
     return-object v2
 
-    :cond_18
-    const-string p1, "Mismatched \'"
+    :cond_17
+    const-string p1, "\' and \'"
 
-    const-string p2, "\' and \'"
+    const-string p2, "\'"
 
-    const-string p3, "\'"
+    const-string p3, "Mismatched \'"
 
-    invoke-static {p1, v0, p2, v3, p3}, Lc3d;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p3, v0, p1, v3, p2}, Lrqc;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -382,23 +380,23 @@
 
     throw p0
 
-    :cond_19
+    :cond_18
     invoke-virtual {p0, v3}, Lorg/json/JSONTokener;->syntaxError(Ljava/lang/String;)Lorg/json/JSONException;
 
     move-result-object p0
 
     throw p0
 
-    :cond_1a
+    :cond_19
     check-cast v6, Ljava/lang/String;
 
-    if-nez p1, :cond_1c
+    if-nez p1, :cond_1b
 
     invoke-virtual {v4, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-nez v7, :cond_1b
+    if-nez v7, :cond_1a
 
     const-string v7, "childNode"
 
@@ -406,11 +404,11 @@
 
     move-result v7
 
-    if-nez v7, :cond_1b
+    if-nez v7, :cond_1a
 
-    goto :goto_5
+    goto :goto_6
 
-    :cond_1b
+    :cond_1a
     const-string p1, "Reserved attribute."
 
     invoke-virtual {p0, p1}, Lorg/json/JSONTokener;->syntaxError(Ljava/lang/String;)Lorg/json/JSONException;
@@ -419,15 +417,15 @@
 
     throw p0
 
-    :cond_1c
-    :goto_5
+    :cond_1b
+    :goto_6
     invoke-virtual {p0}, Lorg/json/XMLTokener;->nextToken()Ljava/lang/Object;
 
     move-result-object v7
 
     sget-object v8, Lorg/json/XML;->EQ:Ljava/lang/Character;
 
-    if-ne v7, v8, :cond_1f
+    if-ne v7, v8, :cond_1e
 
     invoke-virtual {p0}, Lorg/json/XMLTokener;->nextToken()Ljava/lang/Object;
 
@@ -435,25 +433,25 @@
 
     instance-of v8, v7, Ljava/lang/String;
 
-    if-eqz v8, :cond_1e
+    if-eqz v8, :cond_1d
 
     check-cast v7, Ljava/lang/String;
 
-    if-eqz p3, :cond_1d
+    if-eqz p3, :cond_1c
 
-    goto :goto_6
+    goto :goto_7
 
-    :cond_1d
+    :cond_1c
     invoke-static {v7}, Lorg/json/XML;->stringToValue(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v7
 
-    :goto_6
+    :goto_7
     invoke-virtual {v2, v6, v7}, Lorg/json/JSONObject;->accumulate(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     goto/16 :goto_3
 
-    :cond_1e
+    :cond_1d
     const-string p1, "Missing value"
 
     invoke-virtual {p0, p1}, Lorg/json/JSONTokener;->syntaxError(Ljava/lang/String;)Lorg/json/JSONException;
@@ -462,7 +460,7 @@
 
     throw p0
 
-    :cond_1f
+    :cond_1e
     const-string v8, ""
 
     invoke-virtual {v2, v6, v8}, Lorg/json/JSONObject;->accumulate(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
@@ -471,14 +469,14 @@
 
     goto/16 :goto_4
 
-    :cond_20
+    :cond_1f
     invoke-virtual {p0, v3}, Lorg/json/JSONTokener;->syntaxError(Ljava/lang/String;)Lorg/json/JSONException;
 
     move-result-object p0
 
     throw p0
 
-    :cond_21
+    :cond_20
     new-instance p1, Ljava/lang/StringBuilder;
 
     const-string p2, "Bad tagName \'"
@@ -499,35 +497,35 @@
 
     throw p0
 
-    :cond_22
+    :cond_21
     if-eqz p2, :cond_0
 
     instance-of v1, v0, Ljava/lang/String;
 
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_23
 
     check-cast v0, Ljava/lang/String;
 
-    if-eqz p3, :cond_23
+    if-eqz p3, :cond_22
 
     invoke-static {v0}, Lorg/json/XML;->unescape(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_7
+    goto :goto_8
 
-    :cond_23
+    :cond_22
     invoke-static {v0}, Lorg/json/XML;->stringToValue(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    :cond_24
-    :goto_7
+    :cond_23
+    :goto_8
     invoke-virtual {p2, v0}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
 
     goto/16 :goto_0
 
-    :cond_25
+    :cond_24
     const-string p1, "Bad XML"
 
     invoke-virtual {p0, p1}, Lorg/json/JSONTokener;->syntaxError(Ljava/lang/String;)Lorg/json/JSONException;

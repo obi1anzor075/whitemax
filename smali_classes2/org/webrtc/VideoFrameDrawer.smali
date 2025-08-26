@@ -216,7 +216,7 @@
 .end method
 
 .method public static drawTexture(Lorg/webrtc/RendererCommon$GlDrawer;Lorg/webrtc/VideoFrame$TextureBuffer;Landroid/graphics/Matrix;IIIIII)V
-    .locals 10
+    .locals 2
 
     new-instance v0, Landroid/graphics/Matrix;
 
@@ -226,13 +226,11 @@
 
     invoke-direct {v0, v1}, Landroid/graphics/Matrix;-><init>(Landroid/graphics/Matrix;)V
 
-    move-object v1, p2
-
     invoke-virtual {v0, p2}, Landroid/graphics/Matrix;->preConcat(Landroid/graphics/Matrix;)Z
 
     invoke-static {v0}, Lorg/webrtc/RendererCommon;->convertMatrixFromAndroidGraphicsMatrix(Landroid/graphics/Matrix;)[F
 
-    move-result-object v3
+    move-result-object p2
 
     sget-object v0, Lorg/webrtc/VideoFrameDrawer$1;->$SwitchMap$org$webrtc$VideoFrame$TextureBuffer$Type:[I
 
@@ -256,57 +254,28 @@
 
     invoke-interface {p1}, Lorg/webrtc/VideoFrame$TextureBuffer;->getTextureId()I
 
-    move-result v2
+    move-result p1
 
-    move-object v1, p0
+    invoke-interface/range {p0 .. p8}, Lorg/webrtc/RendererCommon$GlDrawer;->drawRgb(I[FIIIIII)V
 
-    move v4, p3
-
-    move v5, p4
-
-    move v6, p5
-
-    move/from16 v7, p6
-
-    move/from16 v8, p7
-
-    move/from16 v9, p8
-
-    invoke-interface/range {v1 .. v9}, Lorg/webrtc/RendererCommon$GlDrawer;->drawRgb(I[FIIIIII)V
-
-    goto :goto_0
+    return-void
 
     :cond_0
-    new-instance v0, Ljava/lang/RuntimeException;
+    new-instance p0, Ljava/lang/RuntimeException;
 
-    const-string v1, "Unknown texture type."
+    const-string p1, "Unknown texture type."
 
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    throw v0
+    throw p0
 
     :cond_1
     invoke-interface {p1}, Lorg/webrtc/VideoFrame$TextureBuffer;->getTextureId()I
 
-    move-result v2
+    move-result p1
 
-    move-object v1, p0
+    invoke-interface/range {p0 .. p8}, Lorg/webrtc/RendererCommon$GlDrawer;->drawOes(I[FIIIIII)V
 
-    move v4, p3
-
-    move v5, p4
-
-    move v6, p5
-
-    move/from16 v7, p6
-
-    move/from16 v8, p7
-
-    move/from16 v9, p8
-
-    invoke-interface/range {v1 .. v9}, Lorg/webrtc/RendererCommon$GlDrawer;->drawOes(I[FIIIIII)V
-
-    :goto_0
     return-void
 .end method
 
@@ -354,26 +323,26 @@
 .end method
 
 .method public drawFrame(Lorg/webrtc/VideoFrame;Lorg/webrtc/RendererCommon$GlDrawer;Landroid/graphics/Matrix;IIII)V
-    .locals 11
+    .locals 16
 
-    move-object v0, p0
+    move-object/from16 v0, p0
 
-    move-object v1, p1
+    move-object/from16 v1, p1
 
-    move-object v2, p3
+    move-object/from16 v2, p3
 
     .line 4
-    invoke-virtual {p1}, Lorg/webrtc/VideoFrame;->getRotatedWidth()I
+    invoke-virtual {v1}, Lorg/webrtc/VideoFrame;->getRotatedWidth()I
 
     move-result v3
 
     .line 5
-    invoke-virtual {p1}, Lorg/webrtc/VideoFrame;->getRotatedHeight()I
+    invoke-virtual {v1}, Lorg/webrtc/VideoFrame;->getRotatedHeight()I
 
     move-result v4
 
     .line 6
-    invoke-direct {p0, v3, v4, p3}, Lorg/webrtc/VideoFrameDrawer;->calculateTransformedRenderSize(IILandroid/graphics/Matrix;)V
+    invoke-direct {v0, v3, v4, v2}, Lorg/webrtc/VideoFrameDrawer;->calculateTransformedRenderSize(IILandroid/graphics/Matrix;)V
 
     .line 7
     iget v3, v0, Lorg/webrtc/VideoFrameDrawer;->renderWidth:I
@@ -384,11 +353,11 @@
 
     if-gtz v4, :cond_0
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     .line 8
     :cond_0
-    invoke-virtual {p1}, Lorg/webrtc/VideoFrame;->getBuffer()Lorg/webrtc/VideoFrame$Buffer;
+    invoke-virtual {v1}, Lorg/webrtc/VideoFrame;->getBuffer()Lorg/webrtc/VideoFrame$Buffer;
 
     move-result-object v3
 
@@ -421,7 +390,7 @@
     :cond_1
     iget-object v4, v0, Lorg/webrtc/VideoFrameDrawer;->renderMatrix:Landroid/graphics/Matrix;
 
-    invoke-virtual {p1}, Lorg/webrtc/VideoFrame;->getRotation()I
+    invoke-virtual {v1}, Lorg/webrtc/VideoFrame;->getRotation()I
 
     move-result v5
 
@@ -441,7 +410,7 @@
     .line 14
     iget-object v4, v0, Lorg/webrtc/VideoFrameDrawer;->renderMatrix:Landroid/graphics/Matrix;
 
-    invoke-virtual {v4, p3}, Landroid/graphics/Matrix;->preConcat(Landroid/graphics/Matrix;)Z
+    invoke-virtual {v4, v2}, Landroid/graphics/Matrix;->preConcat(Landroid/graphics/Matrix;)Z
 
     :cond_2
     if-eqz v3, :cond_3
@@ -452,7 +421,7 @@
     iput-object v2, v0, Lorg/webrtc/VideoFrameDrawer;->lastI420Frame:Lorg/webrtc/VideoFrame;
 
     .line 16
-    invoke-virtual {p1}, Lorg/webrtc/VideoFrame;->getBuffer()Lorg/webrtc/VideoFrame$Buffer;
+    invoke-virtual {v1}, Lorg/webrtc/VideoFrame;->getBuffer()Lorg/webrtc/VideoFrame$Buffer;
 
     move-result-object v1
 
@@ -466,9 +435,9 @@
 
     iget v6, v0, Lorg/webrtc/VideoFrameDrawer;->renderHeight:I
 
-    move-object v2, p2
+    move-object/from16 v2, p2
 
-    move v7, p4
+    move/from16 v7, p4
 
     move/from16 v8, p5
 
@@ -478,7 +447,7 @@
 
     invoke-static/range {v2 .. v10}, Lorg/webrtc/VideoFrameDrawer;->drawTexture(Lorg/webrtc/RendererCommon$GlDrawer;Lorg/webrtc/VideoFrame$TextureBuffer;Landroid/graphics/Matrix;IIIIII)V
 
-    goto :goto_0
+    return-void
 
     .line 17
     :cond_3
@@ -490,7 +459,7 @@
     iput-object v1, v0, Lorg/webrtc/VideoFrameDrawer;->lastI420Frame:Lorg/webrtc/VideoFrame;
 
     .line 19
-    invoke-virtual {p1}, Lorg/webrtc/VideoFrame;->getBuffer()Lorg/webrtc/VideoFrame$Buffer;
+    invoke-virtual {v1}, Lorg/webrtc/VideoFrame;->getBuffer()Lorg/webrtc/VideoFrame$Buffer;
 
     move-result-object v1
 
@@ -512,38 +481,37 @@
 
     invoke-virtual {v1}, Lorg/webrtc/VideoFrameDrawer$YuvUploader;->getYuvTextures()[I
 
-    move-result-object v3
+    move-result-object v8
 
     iget-object v1, v0, Lorg/webrtc/VideoFrameDrawer;->renderMatrix:Landroid/graphics/Matrix;
 
     .line 23
     invoke-static {v1}, Lorg/webrtc/RendererCommon;->convertMatrixFromAndroidGraphicsMatrix(Landroid/graphics/Matrix;)[F
 
-    move-result-object v4
+    move-result-object v9
 
-    iget v5, v0, Lorg/webrtc/VideoFrameDrawer;->renderWidth:I
+    iget v10, v0, Lorg/webrtc/VideoFrameDrawer;->renderWidth:I
 
-    iget v6, v0, Lorg/webrtc/VideoFrameDrawer;->renderHeight:I
+    iget v11, v0, Lorg/webrtc/VideoFrameDrawer;->renderHeight:I
 
-    move-object v2, p2
+    move-object/from16 v7, p2
 
-    move v7, p4
+    move/from16 v12, p4
 
-    move/from16 v8, p5
+    move/from16 v13, p5
 
-    move/from16 v9, p6
+    move/from16 v14, p6
 
-    move/from16 v10, p7
+    move/from16 v15, p7
 
     .line 24
-    invoke-interface/range {v2 .. v10}, Lorg/webrtc/RendererCommon$GlDrawer;->drawYuv([I[FIIIIII)V
+    invoke-interface/range {v7 .. v15}, Lorg/webrtc/RendererCommon$GlDrawer;->drawYuv([I[FIIIIII)V
 
-    :goto_0
     return-void
 
     .line 25
     :cond_5
-    :goto_1
+    :goto_0
     iget v0, v0, Lorg/webrtc/VideoFrameDrawer;->renderHeight:I
 
     new-instance v1, Ljava/lang/StringBuilder;

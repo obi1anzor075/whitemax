@@ -21,6 +21,7 @@
         0x7,
         0x1
     }
+    xi = 0x30
 .end annotation
 
 
@@ -74,7 +75,7 @@
 
     if-eqz p0, :cond_0
 
-    invoke-static {p0}, Ljoe;->a(Landroid/content/Context;)V
+    invoke-static {p0}, Ljxe;->a(Landroid/content/Context;)V
 
     const/4 p0, 0x1
 

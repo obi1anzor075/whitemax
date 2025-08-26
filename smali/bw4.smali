@@ -3,67 +3,72 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lhu3;
-.implements Ljava/io/Serializable;
+.implements Law4;
 
 
-# static fields
-.field public static final a:Lbw4;
+# instance fields
+.field public a:Ljava/io/File;
 
+.field public b:Ljava/io/FileInputStream;
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lbw4;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lbw4;->a:Lbw4;
-
-    return-void
-.end method
+.field public c:Ljava/nio/channels/FileChannel;
 
 
 # virtual methods
-.method public final fold(Ljava/lang/Object;Li26;)Ljava/lang/Object;
+.method public final a(JLjava/nio/ByteBuffer;)I
     .locals 0
 
-    return-object p1
-.end method
+    iget-object p0, p0, Lbw4;->c:Ljava/nio/channels/FileChannel;
 
-.method public final get(Lgu3;)Lfu3;
-    .locals 0
+    invoke-virtual {p0, p3, p1, p2}, Ljava/nio/channels/FileChannel;->read(Ljava/nio/ByteBuffer;J)I
 
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    const/4 p0, 0x0
+    move-result p0
 
     return p0
 .end method
 
-.method public final minusKey(Lgu3;)Lhu3;
+.method public final close()V
     .locals 0
 
-    return-object p0
+    iget-object p0, p0, Lbw4;->b:Ljava/io/FileInputStream;
+
+    invoke-virtual {p0}, Ljava/io/FileInputStream;->close()V
+
+    return-void
 .end method
 
-.method public final plus(Lhu3;)Lhu3;
+.method public final isOpen()Z
     .locals 0
 
-    return-object p1
+    iget-object p0, p0, Lbw4;->c:Ljava/nio/channels/FileChannel;
+
+    invoke-virtual {p0}, Ljava/nio/channels/spi/AbstractInterruptibleChannel;->isOpen()Z
+
+    move-result p0
+
+    return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public final read(Ljava/nio/ByteBuffer;)I
     .locals 0
 
-    const-string p0, "EmptyCoroutineContext"
+    iget-object p0, p0, Lbw4;->c:Ljava/nio/channels/FileChannel;
 
-    return-object p0
+    invoke-virtual {p0, p1}, Ljava/nio/channels/FileChannel;->read(Ljava/nio/ByteBuffer;)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final write(Ljava/nio/ByteBuffer;)I
+    .locals 0
+
+    iget-object p0, p0, Lbw4;->c:Ljava/nio/channels/FileChannel;
+
+    invoke-virtual {p0, p1}, Ljava/nio/channels/FileChannel;->write(Ljava/nio/ByteBuffer;)I
+
+    move-result p0
+
+    return p0
 .end method

@@ -1,6 +1,5 @@
 .class public interface abstract synthetic Landroid/window/OnBackAnimationCallback;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 # interfaces
 .implements Landroid/window/OnBackInvokedCallback;

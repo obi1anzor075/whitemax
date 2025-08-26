@@ -1,5 +1,5 @@
 .class public final Lk2;
-.super Lb2;
+.super Lc2;
 .source "SourceFile"
 
 # interfaces
@@ -17,7 +17,7 @@
     .line 1
     iput-object p1, p0, Lk2;->X:Ll2;
 
-    invoke-direct {p0, p1}, Lb2;-><init>(Lj2;)V
+    invoke-direct {p0, p1}, Lc2;-><init>(Ll2;)V
 
     return-void
 .end method
@@ -29,7 +29,7 @@
     iput-object p1, p0, Lk2;->X:Ll2;
 
     .line 3
-    iget-object v0, p1, Lj2;->b:Ljava/util/Collection;
+    iget-object v0, p1, Ll2;->b:Ljava/util/Collection;
 
     .line 4
     check-cast v0, Ljava/util/List;
@@ -39,7 +39,7 @@
 
     move-result-object p2
 
-    invoke-direct {p0, p1, p2}, Lb2;-><init>(Lj2;Ljava/util/ListIterator;)V
+    invoke-direct {p0, p1, p2}, Lc2;-><init>(Ll2;Ljava/util/ListIterator;)V
 
     return-void
 .end method
@@ -61,17 +61,17 @@
 
     invoke-interface {p0, p1}, Ljava/util/ListIterator;->add(Ljava/lang/Object;)V
 
-    iget-object p0, v0, Ll2;->Y:Ly1;
+    iget-object p0, v0, Ll2;->Y:Lz1;
 
-    iget p1, p0, Ly1;->X:I
+    iget p1, p0, Lz1;->X:I
 
     add-int/lit8 p1, p1, 0x1
 
-    iput p1, p0, Ly1;->X:I
+    iput p1, p0, Lz1;->X:I
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {v0}, Lj2;->a()V
+    invoke-virtual {v0}, Ll2;->a()V
 
     :cond_0
     return-void
@@ -80,9 +80,9 @@
 .method public final b()Ljava/util/ListIterator;
     .locals 0
 
-    invoke-virtual {p0}, Lb2;->a()V
+    invoke-virtual {p0}, Lc2;->a()V
 
-    iget-object p0, p0, Lb2;->b:Ljava/util/Iterator;
+    iget-object p0, p0, Lc2;->b:Ljava/util/Iterator;
 
     check-cast p0, Ljava/util/ListIterator;
 

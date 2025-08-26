@@ -28,12 +28,12 @@
         "",
         "onClosedAction",
         "nextOrIfClosed",
-        "(Ls16;)Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;",
+        "(Lv56;)Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;",
         "value",
         "",
         "trySetNext",
         "(Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;)Z",
-        "Ljue;",
+        "Le5f;",
         "cleanPrev",
         "()V",
         "markAsClosed",
@@ -63,6 +63,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -192,7 +193,7 @@
 
     if-nez v0, :cond_0
 
-    return-object p0
+    goto :goto_1
 
     :cond_0
     move-object p0, v0
@@ -200,6 +201,7 @@
     goto :goto_0
 
     :cond_1
+    :goto_1
     return-object p0
 .end method
 
@@ -265,14 +267,14 @@
     return-void
 .end method
 
-.method private final synthetic update$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Lu16;)V
+.method private final synthetic update$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Lx56;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Object;",
             "Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;",
-            "Lu16;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -282,7 +284,7 @@
 
     move-result-object p0
 
-    invoke-interface {p3, p0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, p0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -384,12 +386,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -415,7 +416,7 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_1
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -426,16 +427,15 @@
 
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
-.method public final nextOrIfClosed(Ls16;)Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
+.method public final nextOrIfClosed(Lv56;)Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ls16;",
+            "Lv56;",
             ")TN;"
         }
     .end annotation
@@ -455,7 +455,7 @@
     return-object p0
 
     :cond_0
-    invoke-interface {p1}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p1}, Lv56;->invoke()Ljava/lang/Object;
 
     new-instance p0, Lkotlin/KotlinNothingValueException;
 
@@ -473,7 +473,7 @@
 
     if-eqz v0, :cond_0
 
-    return-void
+    goto :goto_2
 
     :cond_0
     invoke-direct {p0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getAliveSegmentLeft()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
@@ -545,6 +545,7 @@
     if-nez v0, :cond_0
 
     :cond_5
+    :goto_2
     return-void
 
     :cond_6
@@ -580,7 +581,7 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_1
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -591,6 +592,5 @@
 
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method

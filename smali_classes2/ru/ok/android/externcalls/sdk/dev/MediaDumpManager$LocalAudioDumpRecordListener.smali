@@ -22,7 +22,7 @@
         "",
         "",
         "dirPath",
-        "Ljue;",
+        "Le5f;",
         "onRecordStarted",
         "(Ljava/lang/String;)V",
         "onRecordCompleted",
@@ -34,6 +34,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

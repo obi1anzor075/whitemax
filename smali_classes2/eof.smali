@@ -1,59 +1,18 @@
-.class public final Leof;
-.super Ler3;
+.class public final synthetic Leof;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field public X:Lwnf;
-
-.field public Y:Laof;
-
-.field public Z:Lxyd;
-
-.field public o:Lkof;
-
-.field public synthetic w0:Ljava/lang/Object;
-
-.field public final synthetic x0:Lkof;
-
-.field public y0:I
-
-
-# direct methods
-.method public constructor <init>(Lkof;Lkotlin/coroutines/Continuation;)V
-    .locals 0
-
-    iput-object p1, p0, Leof;->x0:Lkof;
-
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
+# interfaces
+.implements Lvg7;
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final d(Ldh7;Lfg7;)V
+    .locals 0
 
-    iput-object p1, p0, Leof;->w0:Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    iget p1, p0, Leof;->y0:I
+    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Leof;->y0:I
-
-    iget-object p1, p0, Leof;->x0:Lkof;
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v0, v1, p0}, Lkof;->i(Ljava/lang/String;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

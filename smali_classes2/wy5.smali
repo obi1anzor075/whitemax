@@ -1,54 +1,78 @@
-.class public abstract Lwy5;
-.super Ljava/lang/Object;
+.class public final Lwy5;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Lmbe;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final b:Lg15;
-
-.field public c:I
-
-.field public d:I
-
-.field public e:Lu2f;
+.field public final synthetic Y:Lx56;
 
 
 # direct methods
-.method public constructor <init>(Lmbe;Lg15;)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lx56;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lwy5;->Y:Lx56;
 
-    iput-object p1, p0, Lwy5;->a:Lmbe;
+    const/4 p2, 0x2
 
-    iput-object p2, p0, Lwy5;->b:Lg15;
+    invoke-direct {p0, p2, p1}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lu2f;II)V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lwy5;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lwy5;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lwy5;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .locals 1
 
-    iget-object v0, p0, Lwy5;->e:Lu2f;
+    new-instance v0, Lwy5;
 
-    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    iget-object p0, p0, Lwy5;->Y:Lx56;
 
-    move-result v0
+    invoke-direct {v0, p2, p0}, Lwy5;-><init>(Lkotlin/coroutines/Continuation;Lx56;)V
 
-    if-eqz v0, :cond_0
+    iput-object p1, v0, Lwy5;->X:Ljava/lang/Object;
 
-    return-void
+    return-object v0
+.end method
 
-    :cond_0
-    iput-object p1, p0, Lwy5;->e:Lu2f;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iput p2, p0, Lwy5;->c:I
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    iput p3, p0, Lwy5;->d:I
+    iget-object p1, p0, Lwy5;->X:Ljava/lang/Object;
 
-    return-void
+    check-cast p1, Lkl9;
+
+    iget-object p0, p0, Lwy5;->Y:Lx56;
+
+    invoke-interface {p0, p1}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

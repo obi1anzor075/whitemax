@@ -13,7 +13,7 @@
         "",
         "Lru/ok/android/externcalls/sdk/chat/listener/ChatManagerListener;",
         "listener",
-        "Ljue;",
+        "Le5f;",
         "addListener",
         "(Lru/ok/android/externcalls/sdk/chat/listener/ChatManagerListener;)V",
         "removeListener",
@@ -25,7 +25,7 @@
         "",
         "onError",
         "sendMessage",
-        "(Lru/ok/android/externcalls/sdk/chat/message/OutboundMessage;Ls16;Lu16;)V",
+        "(Lru/ok/android/externcalls/sdk/chat/message/OutboundMessage;Lv56;Lx56;)V",
         "calls-sdk_release"
     }
     k = 0x1
@@ -34,11 +34,12 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # direct methods
-.method public static synthetic sendMessage$default(Lru/ok/android/externcalls/sdk/chat/ChatManager;Lru/ok/android/externcalls/sdk/chat/message/OutboundMessage;Ls16;Lu16;ILjava/lang/Object;)V
+.method public static synthetic sendMessage$default(Lru/ok/android/externcalls/sdk/chat/ChatManager;Lru/ok/android/externcalls/sdk/chat/message/OutboundMessage;Lv56;Lx56;ILjava/lang/Object;)V
     .locals 1
 
     if-nez p5, :cond_2
@@ -59,7 +60,7 @@
     move-object p3, v0
 
     :cond_1
-    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/chat/ChatManager;->sendMessage(Lru/ok/android/externcalls/sdk/chat/message/OutboundMessage;Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/chat/ChatManager;->sendMessage(Lru/ok/android/externcalls/sdk/chat/message/OutboundMessage;Lv56;Lx56;)V
 
     return-void
 
@@ -81,13 +82,13 @@
 .method public abstract removeListener(Lru/ok/android/externcalls/sdk/chat/listener/ChatManagerListener;)V
 .end method
 
-.method public abstract sendMessage(Lru/ok/android/externcalls/sdk/chat/message/OutboundMessage;Ls16;Lu16;)V
+.method public abstract sendMessage(Lru/ok/android/externcalls/sdk/chat/message/OutboundMessage;Lv56;Lx56;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/chat/message/OutboundMessage;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation

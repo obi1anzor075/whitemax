@@ -1,108 +1,97 @@
 .class public final Lso0;
-.super Landroid/text/style/StyleSpan;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Luu7;
+.implements Lvo0;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final b:I
+.field public final a:Len3;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>(Len3;)V
     .locals 0
 
-    iput p1, p0, Lso0;->a:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    packed-switch p1, :pswitch_data_0
-
-    const/4 p1, 0x1
-
-    invoke-direct {p0, p1}, Landroid/text/style/StyleSpan;-><init>(I)V
-
-    const/4 p1, 0x2
-
-    iput p1, p0, Lso0;->b:I
+    iput-object p1, p0, Lso0;->a:Len3;
 
     return-void
-
-    :pswitch_0
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1}, Landroid/text/style/StyleSpan;-><init>(I)V
-
-    const/4 p1, 0x3
-
-    iput p1, p0, Lso0;->b:I
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public final copy()Lqt3;
-    .locals 1
-
-    iget p0, p0, Lso0;->a:I
-
-    packed-switch p0, :pswitch_data_0
-
-    new-instance p0, Lso0;
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
     const/4 v0, 0x1
 
-    invoke-direct {p0, v0}, Lso0;-><init>(I)V
+    if-ne p0, p1, :cond_0
 
-    return-object p0
+    return v0
 
-    :pswitch_0
-    new-instance p0, Lso0;
+    :cond_0
+    instance-of v1, p1, Lso0;
 
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
-    invoke-direct {p0, v0}, Lso0;-><init>(I)V
+    if-nez v1, :cond_1
 
-    return-object p0
+    return v2
 
-    nop
+    :cond_1
+    check-cast p1, Lso0;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    iget-object p0, p0, Lso0;->a:Len3;
+
+    iget-object p1, p1, Lso0;->a:Len3;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
 .end method
 
-.method public final getType()I
-    .locals 1
+.method public final hashCode()I
+    .locals 0
 
-    iget v0, p0, Lso0;->a:I
+    iget-object p0, p0, Lso0;->a:Len3;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    iget p0, p0, Lso0;->b:I
-
-    return p0
-
-    :pswitch_0
-    iget p0, p0, Lso0;->b:I
+    move-result p0
 
     return p0
+.end method
 
-    nop
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "ContactList(event="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lso0;->a:Len3;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

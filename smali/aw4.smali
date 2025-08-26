@@ -1,50 +1,11 @@
-.class public abstract Law4;
+.class public interface abstract Law4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/app/Application$ActivityLifecycleCallbacks;
+.implements Ljava/nio/channels/ByteChannel;
 
 
 # virtual methods
-.method public onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onActivityDestroyed(Landroid/app/Activity;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onActivityPaused(Landroid/app/Activity;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onActivityResumed(Landroid/app/Activity;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onActivitySaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onActivityStarted(Landroid/app/Activity;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onActivityStopped(Landroid/app/Activity;)V
-    .locals 0
-
-    return-void
+.method public abstract a(JLjava/nio/ByteBuffer;)I
 .end method

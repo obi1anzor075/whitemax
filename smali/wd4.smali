@@ -9,20 +9,20 @@
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Ljava/lang/Runnable;
+.field public final synthetic b:Lfe4;
 
-.field public final synthetic c:Lc9;
+.field public final synthetic c:Lxtd;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Runnable;Lc9;I)V
+.method public synthetic constructor <init>(Lfe4;Lxtd;I)V
     .locals 0
 
     iput p3, p0, Lwd4;->a:I
 
-    iput-object p1, p0, Lwd4;->b:Ljava/lang/Runnable;
+    iput-object p1, p0, Lwd4;->b:Lfe4;
 
-    iput-object p2, p0, Lwd4;->c:Lc9;
+    iput-object p2, p0, Lwd4;->c:Lxtd;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,83 +38,54 @@
 
     packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p0, Lwd4;->b:Ljava/lang/Runnable;
+    iget-object v0, p0, Lwd4;->b:Lfe4;
 
-    iget-object p0, p0, Lwd4;->c:Lc9;
+    iget-object v1, v0, Lfe4;->b:Ljava/util/ArrayList;
 
-    :try_start_0
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+    iget-object p0, p0, Lwd4;->c:Lxtd;
 
-    iget-object v0, p0, Lc9;->b:Ljava/lang/Object;
+    invoke-virtual {v1, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    check-cast v0, Lce4;
+    iget-object v0, v0, Lfe4;->c:Ljava/util/ArrayList;
 
-    const/4 v1, 0x0
+    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Ln3;->i(Ljava/lang/Object;)Z
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    iget-object p0, p0, Lc9;->b:Ljava/lang/Object;
-
-    check-cast p0, Lce4;
-
-    invoke-virtual {p0, v0}, Ln3;->j(Ljava/lang/Throwable;)Z
-
-    :goto_0
     return-void
 
     :pswitch_0
-    iget-object v0, p0, Lwd4;->b:Ljava/lang/Runnable;
+    iget-object v0, p0, Lwd4;->b:Lfe4;
 
-    :try_start_1
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+    iget-object v1, v0, Lfe4;->b:Ljava/util/ArrayList;
 
-    goto :goto_1
+    iget-object p0, p0, Lwd4;->c:Lxtd;
 
-    :catch_1
-    move-exception v0
+    invoke-virtual {v1, p0}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    iget-object p0, p0, Lwd4;->c:Lc9;
+    move-result v1
 
-    iget-object p0, p0, Lc9;->b:Ljava/lang/Object;
+    if-eqz v1, :cond_0
 
-    check-cast p0, Lce4;
+    iget v1, p0, Lxtd;->a:I
 
-    invoke-virtual {p0, v0}, Ln3;->j(Ljava/lang/Throwable;)Z
+    iget-object p0, p0, Lxtd;->c:Landroidx/fragment/app/a;
 
-    :goto_1
+    iget-object p0, p0, Landroidx/fragment/app/a;->Q0:Landroid/view/View;
+
+    iget-object v0, v0, Lfe4;->a:Landroid/view/ViewGroup;
+
+    invoke-static {v1, p0, v0}, Lrqc;->a(ILandroid/view/View;Landroid/view/ViewGroup;)V
+
+    :cond_0
     return-void
 
     :pswitch_1
-    iget-object v0, p0, Lwd4;->b:Ljava/lang/Runnable;
+    iget-object v0, p0, Lwd4;->b:Lfe4;
 
-    :try_start_2
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
+    iget-object p0, p0, Lwd4;->c:Lxtd;
+
+    invoke-virtual {v0, p0}, Lfe4;->a(Lxtd;)V
 
     return-void
-
-    :catch_2
-    move-exception v0
-
-    iget-object p0, p0, Lwd4;->c:Lc9;
-
-    iget-object p0, p0, Lc9;->b:Ljava/lang/Object;
-
-    check-cast p0, Lce4;
-
-    invoke-virtual {p0, v0}, Ln3;->j(Ljava/lang/Throwable;)Z
-
-    throw v0
 
     :pswitch_data_0
     .packed-switch 0x0

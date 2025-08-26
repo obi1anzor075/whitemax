@@ -648,7 +648,8 @@
 
     if-eqz v3, :cond_1
 
-    goto :goto_0
+    :goto_0
+    return-void
 
     :cond_1
     const-string v3, "PreInstallHandler: checking preinstall"
@@ -742,6 +743,5 @@
 
     invoke-static {p0}, Lcom/my/tracker/obfuscated/y0;->a(Ljava/lang/String;)V
 
-    :goto_0
     return-void
 .end method

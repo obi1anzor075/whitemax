@@ -1,64 +1,87 @@
 .class public final Lsj3;
-.super Luj3;
+.super Lqy;
 .source "SourceFile"
 
-# interfaces
-.implements Lbo7;
 
+# instance fields
+.field public final X:J
 
-# static fields
-.field public static final E0:Lsj3;
+.field public final Y:Ljava/lang/String;
+
+.field public final Z:Ljava/lang/String;
+
+.field public final o:Ljava/lang/String;
+
+.field public final o0:Ljava/lang/String;
+
+.field public final p0:Ljava/lang/String;
+
+.field public final q0:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 21
+.method public constructor <init>(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZ)V
+    .locals 1
 
-    new-instance v20, Lsj3;
+    sget-object v0, Lq00;->s0:Lq00;
 
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+    invoke-direct {p0, v0, p9, p10}, Lqy;-><init>(Lq00;ZZ)V
 
-    move-result-object v7
+    iput-object p1, p0, Lsj3;->o:Ljava/lang/String;
 
-    sget-object v12, Lln3;->b:Lln3;
+    iput-wide p2, p0, Lsj3;->X:J
 
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+    iput-object p4, p0, Lsj3;->Y:Ljava/lang/String;
 
-    move-result-object v14
+    iput-object p7, p0, Lsj3;->p0:Ljava/lang/String;
 
-    const/4 v0, 0x0
+    iput-object p8, p0, Lsj3;->q0:Ljava/lang/String;
 
-    new-array v0, v0, [I
+    iput-object p5, p0, Lsj3;->Z:Ljava/lang/String;
 
-    const-string v17, ""
-
-    const/16 v18, 0x0
-
-    const-wide/16 v1, 0x0
-
-    const-wide/16 v3, 0x0
-
-    const-string v5, ""
-
-    const-string v6, ""
-
-    const-wide/16 v8, 0x0
-
-    const-wide/16 v10, 0x0
-
-    const/4 v13, 0x1
-
-    const-string v15, ""
-
-    const-string v16, ""
-
-    move-object/from16 v19, v0
-
-    move-object/from16 v0, v20
-
-    invoke-direct/range {v0 .. v19}, Luj3;-><init>(JJLjava/lang/String;Ljava/lang/String;Ljava/util/List;JJLln3;ILjava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ls77;[I)V
-
-    sput-object v20, Lsj3;->E0:Lsj3;
+    iput-object p6, p0, Lsj3;->o0:Ljava/lang/String;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a()Ljava/util/HashMap;
+    .locals 5
+
+    invoke-super {p0}, Lqy;->a()Ljava/util/HashMap;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lsj3;->o:Ljava/lang/String;
+
+    invoke-static {v1}, Lxja;->v(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const-string v2, "vcfBody"
+
+    invoke-virtual {v0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_0
+    const-wide/16 v1, 0x0
+
+    iget-wide v3, p0, Lsj3;->X:J
+
+    cmp-long p0, v3, v1
+
+    if-eqz p0, :cond_1
+
+    const-string p0, "contactId"
+
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-virtual {v0, p0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_1
+    return-object v0
 .end method

@@ -1,70 +1,109 @@
-.class public final synthetic Ly2a;
+.class public final Ly2a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lu16;
 
+# static fields
+.field public static final a:Lnc0;
 
-# instance fields
-.field public final synthetic X:Lo1b;
-
-.field public final synthetic a:Li22;
-
-.field public final synthetic b:I
-
-.field public final synthetic c:Lone/me/messages/list/loader/MessageModel;
-
-.field public final synthetic o:Ljava/util/List;
+.field public static final b:Loc0;
 
 
 # direct methods
-.method public synthetic constructor <init>(Li22;ILone/me/messages/list/loader/MessageModel;Ljava/util/List;Lo1b;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lnc0;
 
-    iput-object p1, p0, Ly2a;->a:Li22;
+    const/4 v1, 0x0
 
-    iput p2, p0, Ly2a;->b:I
+    invoke-direct {v0, v1}, Lnc0;-><init>(I)V
 
-    iput-object p3, p0, Ly2a;->c:Lone/me/messages/list/loader/MessageModel;
+    sput-object v0, Ly2a;->a:Lnc0;
 
-    iput-object p4, p0, Ly2a;->o:Ljava/util/List;
+    new-instance v0, Loc0;
 
-    iput-object p5, p0, Ly2a;->X:Lo1b;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Ly2a;->b:Loc0;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public static a(Ld3a;)Lij0;
     .locals 1
 
-    check-cast p1, Lvt7;
+    instance-of v0, p0, La3a;
 
-    iget-object v0, p0, Ly2a;->a:Li22;
+    if-eqz v0, :cond_0
 
-    iput-object v0, p1, Lvt7;->a:Li22;
+    sget-object p0, Ly2a;->a:Lnc0;
 
-    iget v0, p0, Ly2a;->b:I
+    return-object p0
 
-    iput v0, p1, Lvt7;->b:I
+    :cond_0
+    instance-of v0, p0, Lc3a;
 
-    iget-object v0, p0, Ly2a;->c:Lone/me/messages/list/loader/MessageModel;
+    if-eqz v0, :cond_1
 
-    iput-object v0, p1, Lvt7;->d:Lone/me/messages/list/loader/MessageModel;
+    sget-object p0, Ly2a;->b:Loc0;
 
-    iget-object v0, p0, Ly2a;->o:Ljava/util/List;
+    return-object p0
 
-    iput-object v0, p1, Lvt7;->f:Ljava/util/List;
+    :cond_1
+    sget-object v0, Lb3a;->a:Lb3a;
 
-    iget-object p0, p0, Ly2a;->X:Lo1b;
+    invoke-virtual {p0, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    iput-object p0, p1, Lvt7;->e:Lo1b;
+    move-result p0
 
-    sget-object p0, Ljue;->a:Ljue;
+    if-eqz p0, :cond_2
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_2
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p0
+.end method
+
+.method public static b(Ljava/lang/String;Ld3a;)Lvv6;
+    .locals 1
+
+    invoke-static {p0}, Lsgg;->a(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object p0
+
+    if-nez p0, :cond_0
+
+    sget-object p0, Landroid/net/Uri;->EMPTY:Landroid/net/Uri;
+
+    :cond_0
+    invoke-static {p0}, Lwv6;->d(Landroid/net/Uri;)Lwv6;
+
+    move-result-object p0
+
+    sget-object v0, Ltv6;->b:Ltv6;
+
+    iput-object v0, p0, Lwv6;->g:Ltv6;
+
+    invoke-static {p1}, Ly2a;->a(Ld3a;)Lij0;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lwv6;->k:Lc4b;
+
+    sget-object p1, Lm6b;->c:Lm6b;
+
+    iput-object p1, p0, Lwv6;->j:Lm6b;
+
+    invoke-virtual {p0}, Lwv6;->a()Lvv6;
+
+    move-result-object p0
 
     return-object p0
 .end method

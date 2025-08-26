@@ -20,6 +20,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -39,17 +40,17 @@
     .locals 2
 
     .line 2
-    sget p1, Lzp4;->o:I
+    sget p1, Lat4;->o:I
 
     const-wide/16 v0, 0x1388
 
-    sget-object p1, Leq4;->o:Leq4;
+    sget-object p1, Lft4;->o:Lft4;
 
-    invoke-static {v0, v1, p1}, Lmt0;->Q(JLeq4;)J
+    invoke-static {v0, v1, p1}, La4f;->G(JLft4;)J
 
     move-result-wide v0
 
-    invoke-static {v0, v1}, Lzp4;->j(J)Ljava/lang/String;
+    invoke-static {v0, v1}, Lat4;->j(J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -58,7 +59,7 @@
     const-string v1, " seconds"
 
     .line 3
-    invoke-static {v0, p1, v1}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p1, v1}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

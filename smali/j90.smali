@@ -3,143 +3,89 @@
 .source "SourceFile"
 
 
-# static fields
-.field public static final f:Lj90;
-
-
 # instance fields
-.field public final a:J
+.field public final a:I
 
-.field public final b:I
-
-.field public final c:I
-
-.field public final d:J
-
-.field public final e:I
+.field public final b:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 9
-
-    new-instance v8, Lj90;
-
-    const-wide/32 v5, 0x240c8400
-
-    const v7, 0x14000
-
-    const-wide/32 v3, 0xa00000
-
-    const/16 v1, 0xc8
-
-    const/16 v2, 0x2710
-
-    move-object v0, v8
-
-    invoke-direct/range {v0 .. v7}, Lj90;-><init>(IIJJI)V
-
-    sput-object v8, Lj90;->f:Lj90;
-
-    return-void
-.end method
-
-.method public constructor <init>(IIJJI)V
+.method public constructor <init>(IJ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p3, p0, Lj90;->a:J
+    if-eqz p1, :cond_0
 
-    iput p1, p0, Lj90;->b:I
+    iput p1, p0, Lj90;->a:I
 
-    iput p2, p0, Lj90;->c:I
-
-    iput-wide p5, p0, Lj90;->d:J
-
-    iput p7, p0, Lj90;->e:I
+    iput-wide p2, p0, Lj90;->b:J
 
     return-void
+
+    :cond_0
+    new-instance p0, Ljava/lang/NullPointerException;
+
+    const-string p1, "Null status"
+
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method
 
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 7
-
-    const/4 v0, 0x1
+    .locals 2
 
     if-ne p1, p0, :cond_0
 
-    return v0
+    goto :goto_0
 
     :cond_0
-    instance-of v1, p1, Lj90;
+    instance-of v0, p1, Lj90;
 
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_1
 
     check-cast p1, Lj90;
 
-    iget-wide v3, p1, Lj90;->a:J
+    iget v0, p0, Lj90;->a:I
 
-    iget-wide v5, p0, Lj90;->a:J
+    iget v1, p1, Lj90;->a:I
 
-    cmp-long v1, v5, v3
+    invoke-static {v0, v1}, Lzt1;->c(II)Z
 
-    if-nez v1, :cond_1
+    move-result v0
 
-    iget v1, p0, Lj90;->b:I
+    if-eqz v0, :cond_1
 
-    iget v3, p1, Lj90;->b:I
+    iget-wide v0, p0, Lj90;->b:J
 
-    if-ne v1, v3, :cond_1
+    iget-wide p0, p1, Lj90;->b:J
 
-    iget v1, p0, Lj90;->c:I
+    cmp-long p0, v0, p0
 
-    iget v3, p1, Lj90;->c:I
-
-    if-ne v1, v3, :cond_1
-
-    iget-wide v3, p0, Lj90;->d:J
-
-    iget-wide v5, p1, Lj90;->d:J
-
-    cmp-long v1, v3, v5
-
-    if-nez v1, :cond_1
-
-    iget p0, p0, Lj90;->e:I
-
-    iget p1, p1, Lj90;->e:I
-
-    if-ne p0, p1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    move v0, v2
+    if-nez p0, :cond_1
 
     :goto_0
-    return v0
+    const/4 p0, 0x1
 
-    :cond_2
-    return v2
+    return p0
+
+    :cond_1
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
 .method public final hashCode()I
-    .locals 7
+    .locals 6
 
-    iget-wide v0, p0, Lj90;->a:J
+    iget v0, p0, Lj90;->a:I
 
-    const/16 v2, 0x20
+    invoke-static {v0}, Lzt1;->s(I)I
 
-    ushr-long v3, v0, v2
-
-    xor-long/2addr v0, v3
-
-    long-to-int v0, v0
+    move-result v0
 
     const v1, 0xf4243
 
@@ -147,31 +93,15 @@
 
     mul-int/2addr v0, v1
 
-    iget v3, p0, Lj90;->b:I
+    const/16 v1, 0x20
 
-    xor-int/2addr v0, v3
+    iget-wide v2, p0, Lj90;->b:J
 
-    mul-int/2addr v0, v1
+    ushr-long v4, v2, v1
 
-    iget v3, p0, Lj90;->c:I
+    xor-long v1, v4, v2
 
-    xor-int/2addr v0, v3
-
-    mul-int/2addr v0, v1
-
-    iget-wide v3, p0, Lj90;->d:J
-
-    ushr-long v5, v3, v2
-
-    xor-long v2, v5, v3
-
-    long-to-int v2, v2
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget p0, p0, Lj90;->e:I
+    long-to-int p0, v1
 
     xor-int/2addr p0, v0
 
@@ -183,47 +113,62 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "EventStoreConfig{maxStorageSizeInBytes="
+    const-string v1, "BackendResponse{status="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-wide v1, p0, Lj90;->a:J
+    const/4 v1, 0x1
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    iget v2, p0, Lj90;->a:I
 
-    const-string v1, ", loadBatchSize="
+    if-eq v2, v1, :cond_3
+
+    const/4 v1, 0x2
+
+    if-eq v2, v1, :cond_2
+
+    const/4 v1, 0x3
+
+    if-eq v2, v1, :cond_1
+
+    const/4 v1, 0x4
+
+    if-eq v2, v1, :cond_0
+
+    const-string v1, "null"
+
+    goto :goto_0
+
+    :cond_0
+    const-string v1, "INVALID_PAYLOAD"
+
+    goto :goto_0
+
+    :cond_1
+    const-string v1, "FATAL_ERROR"
+
+    goto :goto_0
+
+    :cond_2
+    const-string v1, "TRANSIENT_ERROR"
+
+    goto :goto_0
+
+    :cond_3
+    const-string v1, "OK"
+
+    :goto_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", nextRequestWaitMillis="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v1, p0, Lj90;->b:I
+    iget-wide v1, p0, Lj90;->b:J
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string p0, "}"
 
-    const-string v1, ", criticalSectionEnterTimeoutMs="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lj90;->c:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", eventCleanUpAge="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Lj90;->d:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", maxBlobByteSizePerRow="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget p0, p0, Lj90;->e:I
-
-    const-string v1, "}"
-
-    invoke-static {v0, p0, v1}, Lwn6;->j(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1, v2, p0}, Lu88;->m(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

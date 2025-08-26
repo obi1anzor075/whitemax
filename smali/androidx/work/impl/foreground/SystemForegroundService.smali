@@ -1,9 +1,6 @@
 .class public Landroidx/work/impl/foreground/SystemForegroundService;
-.super Lqc7;
+.super Lgh7;
 .source "SourceFile"
-
-# interfaces
-.implements La8e;
 
 
 # static fields
@@ -17,7 +14,7 @@
 
 .field public c:Z
 
-.field public o:Lb8e;
+.field public o:Ldge;
 
 
 # direct methods
@@ -26,7 +23,7 @@
 
     const-string v0, "SystemFgService"
 
-    invoke-static {v0}, La24;->e0(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lfc2;->F(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -38,7 +35,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lqc7;-><init>()V
+    invoke-direct {p0}, Lgh7;-><init>()V
 
     return-void
 .end method
@@ -72,43 +69,42 @@
 
     iput-object v0, p0, Landroidx/work/impl/foreground/SystemForegroundService;->X:Landroid/app/NotificationManager;
 
-    new-instance v0, Lb8e;
+    new-instance v0, Ldge;
 
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lb8e;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v1}, Ldge;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Landroidx/work/impl/foreground/SystemForegroundService;->o:Lb8e;
+    iput-object v0, p0, Landroidx/work/impl/foreground/SystemForegroundService;->o:Ldge;
 
-    iget-object v1, v0, Lb8e;->x0:La8e;
+    iget-object v1, v0, Ldge;->p0:Landroidx/work/impl/foreground/SystemForegroundService;
 
     if-eqz v1, :cond_0
 
-    invoke-static {}, La24;->B()La24;
+    invoke-static {}, Lfc2;->p()Lfc2;
 
     move-result-object p0
 
-    sget-object v0, Lb8e;->y0:Ljava/lang/String;
+    sget-object v0, Ldge;->q0:Ljava/lang/String;
 
     const-string v1, "A callback already exists."
 
-    invoke-virtual {p0, v0, v1}, La24;->x(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p0, v0, v1}, Lfc2;->n(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_0
+    return-void
 
     :cond_0
-    iput-object p0, v0, Lb8e;->x0:La8e;
+    iput-object p0, v0, Ldge;->p0:Landroidx/work/impl/foreground/SystemForegroundService;
 
-    :goto_0
     return-void
 .end method
 
 .method public final onCreate()V
     .locals 0
 
-    invoke-super {p0}, Lqc7;->onCreate()V
+    invoke-super {p0}, Lgh7;->onCreate()V
 
     invoke-virtual {p0}, Landroidx/work/impl/foreground/SystemForegroundService;->a()V
 
@@ -118,11 +114,11 @@
 .method public final onDestroy()V
     .locals 0
 
-    invoke-super {p0}, Lqc7;->onDestroy()V
+    invoke-super {p0}, Lgh7;->onDestroy()V
 
-    iget-object p0, p0, Landroidx/work/impl/foreground/SystemForegroundService;->o:Lb8e;
+    iget-object p0, p0, Landroidx/work/impl/foreground/SystemForegroundService;->o:Ldge;
 
-    invoke-virtual {p0}, Lb8e;->g()V
+    invoke-virtual {p0}, Ldge;->g()V
 
     return-void
 .end method
@@ -138,17 +134,17 @@
 
     if-eqz p2, :cond_0
 
-    invoke-static {}, La24;->B()La24;
+    invoke-static {}, Lfc2;->p()Lfc2;
 
     move-result-object p2
 
     const-string v0, "Re-initializing SystemForegroundService after a request to shut-down."
 
-    invoke-virtual {p2, p3, v0}, La24;->P(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p2, p3, v0}, Lfc2;->t(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object p2, p0, Landroidx/work/impl/foreground/SystemForegroundService;->o:Lb8e;
+    iget-object p2, p0, Landroidx/work/impl/foreground/SystemForegroundService;->o:Ldge;
 
-    invoke-virtual {p2}, Lb8e;->g()V
+    invoke-virtual {p2}, Ldge;->g()V
 
     invoke-virtual {p0}, Landroidx/work/impl/foreground/SystemForegroundService;->a()V
 
@@ -159,103 +155,103 @@
     :cond_0
     if-eqz p1, :cond_4
 
-    iget-object p0, p0, Landroidx/work/impl/foreground/SystemForegroundService;->o:Lb8e;
+    iget-object p0, p0, Landroidx/work/impl/foreground/SystemForegroundService;->o:Ldge;
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    sget-object p2, Ldge;->q0:Ljava/lang/String;
+
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v0
 
-    const-string v0, "ACTION_START_FOREGROUND"
+    const-string v1, "ACTION_START_FOREGROUND"
 
-    invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
-
-    sget-object v1, Lb8e;->y0:Ljava/lang/String;
+    move-result v1
 
     const-string v2, "KEY_WORKSPEC_ID"
 
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_1
 
-    invoke-static {}, La24;->B()La24;
-
-    move-result-object p2
-
-    new-instance p3, Ljava/lang/StringBuilder;
-
-    const-string v0, "Started foreground service "
-
-    invoke-direct {p3, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {}, Lfc2;->p()Lfc2;
 
     move-result-object p3
 
-    invoke-virtual {p2, v1, p3}, La24;->P(Ljava/lang/String;Ljava/lang/String;)V
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Started foreground service "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p3, p2, v0}, Lfc2;->t(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {p1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
-    new-instance p3, Lp36;
+    iget-object p3, p0, Ldge;->b:Lzle;
 
-    const/16 v0, 0x19
+    new-instance v0, Ls76;
 
-    const/4 v1, 0x0
+    const/16 v1, 0x1b
 
-    invoke-direct {p3, p0, p2, v1, v0}, Lp36;-><init>(Ljava/lang/Object;Ljava/lang/Object;ZI)V
+    const/4 v2, 0x0
 
-    iget-object p2, p0, Lb8e;->b:Lbee;
+    invoke-direct {v0, p0, p2, v2, v1}, Ls76;-><init>(Ljava/lang/Object;Ljava/lang/Object;ZI)V
 
-    invoke-interface {p2, p3}, Lbee;->c(Ljava/lang/Runnable;)V
+    invoke-interface {p3, v0}, Lzle;->b(Ljava/lang/Runnable;)V
 
-    invoke-virtual {p0, p1}, Lb8e;->e(Landroid/content/Intent;)V
+    invoke-virtual {p0, p1}, Ldge;->e(Landroid/content/Intent;)V
 
     goto :goto_0
 
     :cond_1
-    const-string v0, "ACTION_NOTIFY"
+    const-string v1, "ACTION_NOTIFY"
 
-    invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_2
+    if-eqz v1, :cond_2
 
-    invoke-virtual {p0, p1}, Lb8e;->e(Landroid/content/Intent;)V
+    invoke-virtual {p0, p1}, Ldge;->e(Landroid/content/Intent;)V
 
     goto :goto_0
 
     :cond_2
-    const-string v0, "ACTION_CANCEL_WORK"
+    const-string v1, "ACTION_CANCEL_WORK"
 
-    invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_3
+    if-eqz v1, :cond_3
 
-    invoke-static {}, La24;->B()La24;
-
-    move-result-object p2
-
-    new-instance p3, Ljava/lang/StringBuilder;
-
-    const-string v0, "Stopping foreground work for "
-
-    invoke-direct {p3, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {}, Lfc2;->p()Lfc2;
 
     move-result-object p3
 
-    invoke-virtual {p2, v1, p3}, La24;->P(Ljava/lang/String;Ljava/lang/String;)V
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Stopping foreground work for "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p3, p2, v0}, Lfc2;->t(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {p1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
@@ -269,58 +265,56 @@
 
     if-nez p2, :cond_4
 
+    iget-object p0, p0, Ldge;->a:Lw8g;
+
     invoke-static {p1}, Ljava/util/UUID;->fromString(Ljava/lang/String;)Ljava/util/UUID;
 
     move-result-object p1
 
-    iget-object p0, p0, Lb8e;->a:Litf;
-
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    new-instance p2, Lsv1;
+    new-instance p2, Ljy1;
 
-    invoke-direct {p2, p0, p1}, Lsv1;-><init>(Litf;Ljava/util/UUID;)V
+    invoke-direct {p2, p0, p1}, Ljy1;-><init>(Lw8g;Ljava/util/UUID;)V
 
-    iget-object p0, p0, Litf;->d:Lbee;
+    iget-object p0, p0, Lw8g;->d:Ljab;
 
-    invoke-interface {p0, p2}, Lbee;->c(Ljava/lang/Runnable;)V
+    invoke-interface {p0, p2}, Lzle;->b(Ljava/lang/Runnable;)V
 
     goto :goto_0
 
     :cond_3
     const-string p1, "ACTION_STOP_FOREGROUND"
 
-    invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
     if-eqz p1, :cond_4
 
-    invoke-static {}, La24;->B()La24;
+    invoke-static {}, Lfc2;->p()Lfc2;
 
     move-result-object p1
 
-    const-string p2, "Stopping foreground service"
+    const-string v0, "Stopping foreground service"
 
-    invoke-virtual {p1, v1, p2}, La24;->P(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p1, p2, v0}, Lfc2;->t(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object p0, p0, Lb8e;->x0:La8e;
+    iget-object p0, p0, Ldge;->p0:Landroidx/work/impl/foreground/SystemForegroundService;
 
     if-eqz p0, :cond_4
-
-    check-cast p0, Landroidx/work/impl/foreground/SystemForegroundService;
 
     const/4 p1, 0x1
 
     iput-boolean p1, p0, Landroidx/work/impl/foreground/SystemForegroundService;->c:Z
 
-    invoke-static {}, La24;->B()La24;
+    invoke-static {}, Lfc2;->p()Lfc2;
 
     move-result-object p2
 
     const-string v0, "All commands completed."
 
-    invoke-virtual {p2, p3, v0}, La24;->t(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p2, p3, v0}, Lfc2;->g(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {p0, p1}, Landroid/app/Service;->stopForeground(Z)V
 

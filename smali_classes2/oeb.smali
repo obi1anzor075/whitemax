@@ -1,164 +1,132 @@
-.class public final synthetic Loeb;
-.super Ljava/lang/Object;
+.class public final Loeb;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:I
 
-.field public final synthetic b:Lncb;
+.field public final synthetic Y:Lpeb;
 
-.field public final synthetic c:Lseb;
+.field public final synthetic Z:Lfeb;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lncb;Lseb;)V
-    .locals 1
+.method public constructor <init>(Lpeb;Lfeb;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    .line 1
-    const/4 v0, 0x1
+    iput-object p1, p0, Loeb;->Y:Lpeb;
 
-    iput v0, p0, Loeb;->a:I
+    iput-object p2, p0, Loeb;->Z:Lfeb;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x2
 
-    iput-object p1, p0, Loeb;->b:Lncb;
-
-    iput-object p2, p0, Loeb;->c:Lseb;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lseb;Lncb;)V
-    .locals 1
-
-    .line 2
-    const/4 v0, 0x0
-
-    iput v0, p0, Loeb;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Loeb;->c:Lseb;
-
-    iput-object p2, p0, Loeb;->b:Lncb;
+    invoke-direct {p0, p1, p3}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 3
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget p1, p0, Loeb;->a:I
+    check-cast p1, Lox3;
 
-    packed-switch p1, :pswitch_data_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object p1, p0, Loeb;->b:Lncb;
+    invoke-virtual {p0, p1, p2}, Loeb;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    check-cast p1, Lfcb;
+    move-result-object p0
 
-    iget-object p1, p1, Lfcb;->a:Lj6b;
+    check-cast p0, Loeb;
 
-    iget-wide v0, p1, Lj6b;->a:J
+    sget-object p1, Le5f;->a:Le5f;
 
-    iget-object p0, p0, Loeb;->c:Lseb;
+    invoke-virtual {p0, p1}, Loeb;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object p0, p0, Lseb;->X:Lreb;
+    move-result-object p0
 
-    check-cast p0, Lone/me/profile/ProfileScreen;
+    return-object p0
+.end method
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    sget-object p0, Lkdb;->c:Lkdb;
+    new-instance p1, Loeb;
 
-    invoke-virtual {p0, v0, v1}, Lkdb;->a2(J)V
+    iget-object v0, p0, Loeb;->Y:Lpeb;
 
-    return-void
+    iget-object p0, p0, Loeb;->Z:Lfeb;
 
-    :pswitch_0
-    iget-object p1, p0, Loeb;->b:Lncb;
+    invoke-direct {p1, v0, p0, p2}, Loeb;-><init>(Lpeb;Lfeb;Lkotlin/coroutines/Continuation;)V
 
-    check-cast p1, Licb;
+    return-object p1
+.end method
 
-    iget-object p0, p0, Loeb;->c:Lseb;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
 
-    iget-object p0, p0, Lseb;->X:Lreb;
+    iget v0, p0, Loeb;->X:I
 
-    check-cast p0, Lone/me/profile/ProfileScreen;
+    const/4 v1, 0x1
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-eqz v0, :cond_1
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    if-ne v0, v1, :cond_0
 
-    const-string v1, "ID #"
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    goto :goto_0
 
-    iget-wide v1, p1, Licb;->a:J
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    const-string p1, " \u0441\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d \u0432 \u0431\u0443\u0444\u0435\u0440 \u043e\u0431\u043c\u0435\u043d\u0430"
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    invoke-static {v0, v1, v2, p1}, Lwn6;->k(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Loeb;->Y:Lpeb;
+
+    iget-object v0, p1, Lpeb;->a:Lwjd;
+
+    new-instance v2, Lgeb;
+
+    iget-object v3, p0, Loeb;->Z:Lfeb;
+
+    iget-object v3, v3, Lji0;->b:Lvie;
+
+    invoke-static {p1, v3}, Lpeb;->a(Lpeb;Lvie;)Lmoe;
 
     move-result-object p1
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->requireActivity()Lim;
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v3, p1}, Lgeb;-><init>(Ljava/lang/Long;Lmoe;)V
+
+    iput v1, p0, Loeb;->X:I
+
+    invoke-virtual {v0, v2, p0}, Lwjd;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    invoke-static {v1, v2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+    sget-object p1, Lpx3;->a:Lpx3;
 
-    move-result-object v0
+    if-ne p0, p1, :cond_2
 
-    const-string v1, "clipboard"
+    return-object p1
 
-    invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    :cond_2
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
 
-    move-result-object p0
-
-    check-cast p0, Landroid/content/ClipboardManager;
-
-    invoke-static {p1, v0}, Landroid/content/ClipData;->newPlainText(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/ClipData;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
-
-    sget-object p0, Li6b;->a:Li6b;
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p0
-
-    const-class v0, Lhba;
-
-    invoke-virtual {p0, v0}, Lw4;->d(Ljava/lang/Class;)Lr7e;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lr7e;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lhba;
-
-    invoke-virtual {p0, p1}, Lhba;->i(Ljava/lang/CharSequence;)V
-
-    const/4 p1, 0x2
-
-    invoke-virtual {p0, p1}, Lhba;->e(I)V
-
-    invoke-virtual {p0}, Lhba;->j()Lgba;
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

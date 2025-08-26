@@ -1,191 +1,182 @@
 .class public final Llo8;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Lmq3;
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Landroid/os/Bundle;
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Lone/me/members/list/MembersListWidget;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/members/list/MembersListWidget;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Llo8;->Y:Lone/me/members/list/MembersListWidget;
 
-    new-instance v0, Landroid/os/Bundle;
+    const/4 p2, 0x2
 
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
-
-    iput-object v0, p0, Llo8;->a:Landroid/os/Bundle;
+    invoke-direct {p0, p2, p1}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lmq3;
-    .locals 3
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    sget-object v0, Lbg6;->b:Landroid/graphics/Rect;
+    check-cast p1, Lon8;
 
-    const-string v1, "highlight_padding"
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object v2, p0, Llo8;->a:Landroid/os/Bundle;
+    invoke-virtual {p0, p1, p2}, Llo8;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {v2, v1, v0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+    move-result-object p0
 
-    const-string v0, "highlight_radius"
+    check-cast p0, Llo8;
 
-    invoke-virtual {v2, v0}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
+    sget-object p1, Le5f;->a:Le5f;
 
-    return-object p0
+    invoke-virtual {p0, p1}, Llo8;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
 .end method
 
-.method public final b()Lmq3;
-    .locals 2
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    iget-object v0, p0, Llo8;->a:Landroid/os/Bundle;
+    new-instance v0, Llo8;
 
-    const-string v1, "highlight_padding"
+    iget-object p0, p0, Llo8;->Y:Lone/me/members/list/MembersListWidget;
 
-    invoke-virtual {v0, v1}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
+    invoke-direct {v0, p2, p0}, Llo8;-><init>(Lkotlin/coroutines/Continuation;Lone/me/members/list/MembersListWidget;)V
 
-    const-string v1, "highlight_radius"
-
-    invoke-virtual {v0, v1}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public final build()Lnq3;
-    .locals 2
-
-    new-instance v0, Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;
-
-    new-instance v1, Landroid/os/Bundle;
-
-    iget-object p0, p0, Llo8;->a:Landroid/os/Bundle;
-
-    invoke-direct {v1, p0}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
-
-    invoke-direct {v0, v1}, Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;-><init>(Landroid/os/Bundle;)V
+    iput-object p1, v0, Llo8;->X:Ljava/lang/Object;
 
     return-object v0
 .end method
 
-.method public final c(Landroid/graphics/Rect;F)Lmq3;
-    .locals 2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
-    const-string v0, "highlight_padding"
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    iget-object v1, p0, Llo8;->a:Landroid/os/Bundle;
+    iget-object p1, p0, Llo8;->X:Ljava/lang/Object;
 
-    invoke-virtual {v1, v0, p1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+    check-cast p1, Lon8;
 
-    const-string p1, "highlight_radius"
+    instance-of v0, p1, Lmn8;
 
-    invoke-virtual {v1, p1, p2}, Landroid/os/Bundle;->putFloat(Ljava/lang/String;F)V
+    const/4 v1, 0x0
 
-    return-object p0
-.end method
+    iget-object p0, p0, Llo8;->Y:Lone/me/members/list/MembersListWidget;
 
-.method public final e(Ljava/util/Collection;)Lmq3;
-    .locals 2
+    if-eqz v0, :cond_1
 
-    invoke-static {p1}, Lkjd;->e(Ljava/util/Collection;)Landroid/os/Bundle;
+    sget-object v0, Lone/me/members/list/MembersListWidget;->z0:[Lbc7;
 
-    move-result-object p1
+    invoke-virtual {p0}, Lone/me/members/list/MembersListWidget;->s0()Lfo8;
 
-    iget-object v0, p0, Llo8;->a:Landroid/os/Bundle;
+    move-result-object p0
 
-    const-string v1, "actions"
+    check-cast p1, Lmn8;
 
-    invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
+    iget-object p1, p1, Lmn8;->a:Ljava/util/List;
 
-    return-object p0
-.end method
+    iget-object v0, p0, Lfo8;->r0:Ldwd;
 
-.method public final g(F)Lmq3;
-    .locals 3
+    if-eqz v0, :cond_0
 
-    sget-object v0, Lbg6;->b:Landroid/graphics/Rect;
-
-    const-string v1, "highlight_padding"
-
-    iget-object v2, p0, Llo8;->a:Landroid/os/Bundle;
-
-    invoke-virtual {v2, v1, v0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
-
-    const-string v0, "highlight_radius"
-
-    invoke-virtual {v2, v0, p1}, Landroid/os/Bundle;->putFloat(Ljava/lang/String;F)V
-
-    return-object p0
-.end method
-
-.method public final h(Landroid/os/Bundle;)Lmq3;
-    .locals 0
-
-    return-object p0
-.end method
-
-.method public final j(Landroid/view/View;)Lmq3;
-    .locals 3
-
-    invoke-virtual {p1}, Landroid/view/View;->getId()I
+    invoke-virtual {v0}, Ld0;->isActive()Z
 
     move-result v0
 
-    const/4 v1, -0x1
+    const/4 v2, 0x1
 
-    if-eq v0, v1, :cond_0
+    if-ne v0, v2, :cond_0
 
-    const-string v0, "anchor_id"
-
-    invoke-virtual {p1}, Landroid/view/View;->getId()I
-
-    move-result v1
-
-    iget-object v2, p0, Llo8;->a:Landroid/os/Bundle;
-
-    invoke-virtual {v2, v0, v1}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p1
-
-    const-string v0, "anchor_class"
-
-    invoke-virtual {v2, v0, p1}, Landroid/os/Bundle;->putSerializable(Ljava/lang/String;Ljava/io/Serializable;)V
-
-    return-object p0
+    goto :goto_0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    iget-object v0, p0, Lfo8;->Z:Lje7;
 
-    const-string p1, "Check failed."
+    invoke-interface {v0}, Lje7;->getValue()Ljava/lang/Object;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    move-result-object v0
+
+    check-cast v0, Lrie;
+
+    check-cast v0, Lo7a;
+
+    invoke-virtual {v0}, Lo7a;->a()Ljx3;
+
+    move-result-object v0
+
+    new-instance v2, Ldo8;
+
+    invoke-direct {v2, p0, p1, v1}, Ldo8;-><init>(Lfo8;Ljava/util/List;Lkotlin/coroutines/Continuation;)V
+
+    const/4 p1, 0x2
+
+    invoke-static {p0, v0, v2, p1}, Ljof;->n(Ljof;Lhx3;Ll66;I)Ldwd;
 
     move-result-object p1
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    iput-object p1, p0, Lfo8;->r0:Ldwd;
 
-    throw p0
-.end method
+    goto :goto_0
 
-.method public final l(I)Lmq3;
-    .locals 2
+    :cond_1
+    instance-of p1, p1, Lnn8;
 
-    iget-object v0, p0, Llo8;->a:Landroid/os/Bundle;
+    if-eqz p1, :cond_2
 
-    const-string v1, "parent_id"
+    sget-object p1, Lone/me/members/list/MembersListWidget;->z0:[Lbc7;
 
-    invoke-virtual {v0, v1, p1}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {p0}, Lone/me/members/list/MembersListWidget;->s0()Lfo8;
+
+    move-result-object p0
+
+    iget-object p1, p0, Lfo8;->Y:Lin8;
+
+    new-instance v0, Lan8;
+
+    iget-wide v2, p0, Lfo8;->b:J
+
+    iget-object v4, p0, Lfo8;->c:Lvi2;
+
+    iget-object v5, p0, Lfo8;->q0:Ljava/util/Set;
+
+    invoke-direct {v0, v2, v3, v4, v5}, Lan8;-><init>(JLvi2;Ljava/util/Collection;)V
+
+    iget-object v2, p1, Lin8;->b:Lkotlinx/coroutines/internal/ContextScope;
+
+    new-instance v3, Lhn8;
+
+    invoke-direct {v3, p1, v0, v1}, Lhn8;-><init>(Lin8;Ldn8;Lkotlin/coroutines/Continuation;)V
+
+    const/4 p1, 0x3
+
+    invoke-static {v2, v1, v1, v3, p1}, Lzo3;->E(Lox3;Lhx3;Lrx3;Ll66;I)Ldwd;
+
+    sget-object p1, Lpz4;->a:Lpz4;
+
+    iput-object p1, p0, Lfo8;->q0:Ljava/util/Set;
+
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
+
+    :cond_2
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p0
 .end method

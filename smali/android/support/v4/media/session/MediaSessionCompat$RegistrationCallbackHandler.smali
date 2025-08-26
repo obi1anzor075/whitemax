@@ -52,7 +52,7 @@
 
     if-eq v0, v1, :cond_0
 
-    goto :goto_0
+    return-void
 
     :cond_0
     iget-object p0, p0, Landroid/support/v4/media/session/MediaSessionCompat$RegistrationCallbackHandler;->mCallback:Landroid/support/v4/media/session/MediaSessionCompat$RegistrationCallback;
@@ -63,7 +63,7 @@
 
     invoke-interface {p0, v0, p1}, Landroid/support/v4/media/session/MediaSessionCompat$RegistrationCallback;->onCallbackUnregistered(II)V
 
-    goto :goto_0
+    return-void
 
     :cond_1
     iget-object p0, p0, Landroid/support/v4/media/session/MediaSessionCompat$RegistrationCallbackHandler;->mCallback:Landroid/support/v4/media/session/MediaSessionCompat$RegistrationCallback;
@@ -74,7 +74,6 @@
 
     invoke-interface {p0, v0, p1}, Landroid/support/v4/media/session/MediaSessionCompat$RegistrationCallback;->onCallbackRegistered(II)V
 
-    :goto_0
     return-void
 .end method
 

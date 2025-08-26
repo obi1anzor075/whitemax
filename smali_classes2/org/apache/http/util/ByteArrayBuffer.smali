@@ -125,7 +125,7 @@
 
     if-nez p1, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
     if-ltz p2, :cond_3
@@ -147,6 +147,7 @@
 
     if-nez p3, :cond_1
 
+    :goto_0
     return-void
 
     .line 2
@@ -192,7 +193,7 @@
 
     if-nez p1, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
     if-ltz p2, :cond_4
@@ -214,6 +215,7 @@
 
     if-nez p3, :cond_1
 
+    :goto_0
     return-void
 
     .line 14
@@ -233,7 +235,7 @@
     invoke-direct {p0, p3}, Lorg/apache/http/util/ByteArrayBuffer;->expand(I)V
 
     :cond_2
-    :goto_0
+    :goto_1
     if-ge v0, p3, :cond_3
 
     .line 17
@@ -249,7 +251,7 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_0
+    goto :goto_1
 
     .line 18
     :cond_3
@@ -313,12 +315,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -335,12 +336,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 

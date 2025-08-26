@@ -1,105 +1,85 @@
-.class public final enum Lyif;
-.super Ljava/lang/Enum;
+.class public final Lyif;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final synthetic X:[Lyif;
-
-.field public static final enum b:Lyif;
-
-.field public static final enum c:Lyif;
-
-.field public static final enum o:Lyif;
+# interfaces
+.implements Lzif;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final a:Lzif;
+
+.field public final b:Landroid/os/Handler;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public constructor <init>(Lljf;)V
+    .locals 1
 
-    new-instance v0, Lyif;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x0
+    iput-object p1, p0, Lyif;->a:Lzif;
 
-    const-string v2, "success"
+    new-instance p1, Landroid/os/Handler;
 
-    const-string v3, "SUCCESS"
-
-    invoke-direct {v0, v3, v1, v2}, Lyif;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v0, Lyif;->b:Lyif;
-
-    new-instance v1, Lyif;
-
-    const/4 v2, 0x1
-
-    const-string v3, "downloading"
-
-    const-string v4, "DOWNLOADING"
-
-    invoke-direct {v1, v4, v2, v3}, Lyif;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v1, Lyif;->c:Lyif;
-
-    new-instance v2, Lyif;
-
-    const/4 v3, 0x2
-
-    const-string v4, "cancelled"
-
-    const-string v5, "CANCELLED"
-
-    invoke-direct {v2, v5, v3, v4}, Lyif;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v2, Lyif;->o:Lyif;
-
-    filled-new-array {v0, v1, v2}, [Lyif;
+    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
 
-    sput-object v0, Lyif;->X:[Lyif;
+    if-nez v0, :cond_0
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    :cond_0
+    invoke-direct {p1, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    iput-object p1, p0, Lyif;->b:Landroid/os/Handler;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
+
+# virtual methods
+.method public final c()V
+    .locals 3
+
+    new-instance v0, Lgje;
+
+    const/16 v1, 0xf
+
+    iget-object v2, p0, Lyif;->a:Lzif;
+
+    invoke-direct {v0, v1, v2}, Lgje;-><init>(ILjava/lang/Object;)V
+
+    iget-object p0, p0, Lyif;->b:Landroid/os/Handler;
+
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    return-void
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iget-object p0, p0, Lyif;->a:Lzif;
 
-    iput-object p3, p0, Lyif;->a:Ljava/lang/String;
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    return-void
+    move-result p0
+
+    return p0
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lyif;
-    .locals 1
+.method public final hashCode()I
+    .locals 0
 
-    const-class v0, Lyif;
+    iget-object p0, p0, Lyif;->a:Lzif;
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    move-result-object p0
+    move-result p0
 
-    check-cast p0, Lyif;
-
-    return-object p0
-.end method
-
-.method public static values()[Lyif;
-    .locals 1
-
-    sget-object v0, Lyif;->X:[Lyif;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lyif;
-
-    return-object v0
+    return p0
 .end method

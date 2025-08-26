@@ -1,53 +1,48 @@
 .class public final Lmt9;
-.super Lw2;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public final b:J
-
-.field public final c:Ljava/lang/Object;
-
-.field public final o:Z
+.field public final a:Lam4;
 
 
 # direct methods
-.method public constructor <init>(Lnv9;JLjava/lang/Object;Z)V
+.method public constructor <init>(Lam4;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lw2;-><init>(Lnv9;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p2, p0, Lmt9;->b:J
-
-    iput-object p4, p0, Lmt9;->c:Ljava/lang/Object;
-
-    iput-boolean p5, p0, Lmt9;->o:Z
+    iput-object p1, p0, Lmt9;->a:Lam4;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final q(Lbw9;)V
-    .locals 7
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    new-instance v6, Llt9;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget-boolean v5, p0, Lmt9;->o:Z
+    const-string v1, "NotificationLite.Disposable["
 
-    iget-wide v2, p0, Lmt9;->b:J
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v4, p0, Lmt9;->c:Ljava/lang/Object;
+    iget-object p0, p0, Lmt9;->a:Lam4;
 
-    move-object v0, v6
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-object v1, p1
+    const-string p0, "]"
 
-    invoke-direct/range {v0 .. v5}, Llt9;-><init>(Lbw9;JLjava/lang/Object;Z)V
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Lw2;->a:Lnv9;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-interface {p0, v6}, Lnv9;->a(Lbw9;)V
+    move-result-object p0
 
-    return-void
+    return-object p0
 .end method

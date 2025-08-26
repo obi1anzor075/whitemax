@@ -24,116 +24,50 @@
 
 .field public static final j:I
 
-.field public static final k:I
-
-.field public static final l:I
-
-.field public static final m:I
-
-.field public static final n:I
-
-.field public static final o:I
-
-.field public static final p:I
-
-.field public static final q:I
-
-.field public static final r:I
-
-.field public static final s:I
-
-.field public static final t:I
-
-.field public static final u:I
-
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    sget v0, Lmqb;->oneme_settings_privacy_black_list_empty_state:I
+    sget v0, Lqyb;->media_picker_default_toolbar_title:I
 
     sput v0, Lvaa;->a:I
 
-    sget v0, Lmqb;->oneme_settings_privacy_black_list_rv:I
+    sget v0, Lqyb;->media_picker_default_toolbar_title_only_photo:I
 
     sput v0, Lvaa;->b:I
 
-    sget v0, Lmqb;->oneme_settings_privacy_black_list_toolbar:I
+    sget v0, Lqyb;->media_picker_empty_media_data:I
 
     sput v0, Lvaa;->c:I
 
-    sget v0, Lmqb;->oneme_settings_privacy_black_list_unblock_action:I
+    sget v0, Lqyb;->media_type_picker__permissions_dialog__button:I
 
     sput v0, Lvaa;->d:I
 
-    sget v0, Lmqb;->oneme_settings_privacy_black_list_unblock_cancel_action:I
+    sget v0, Lqyb;->media_type_picker__permissions_dialog__gallery_camera_subtitle:I
 
     sput v0, Lvaa;->e:I
 
-    sget v0, Lmqb;->oneme_settings_privacy_screen_dialog_add_chat_button_all:I
+    sget v0, Lqyb;->media_type_picker__permissions_dialog__gallery_camera_title:I
 
     sput v0, Lvaa;->f:I
 
-    sget v0, Lmqb;->oneme_settings_privacy_screen_dialog_add_chat_button_contacts:I
+    sget v0, Lqyb;->media_type_picker__permissions_dialog__gallery_subtitle:I
 
     sput v0, Lvaa;->g:I
 
-    sget v0, Lmqb;->oneme_settings_privacy_screen_dialog_call_button_all:I
+    sget v0, Lqyb;->media_type_picker__permissions_dialog__gallery_title:I
 
     sput v0, Lvaa;->h:I
 
-    sget v0, Lmqb;->oneme_settings_privacy_screen_dialog_call_button_contacts:I
+    sget v0, Lqyb;->media_type_picker__permissions_dialog__subtitle:I
 
     sput v0, Lvaa;->i:I
 
-    sget v0, Lmqb;->oneme_settings_privacy_screen_dialog_finished_session_cancel_btn:I
+    sget v0, Lqyb;->media_type_picker__permissions_dialog__title:I
 
     sput v0, Lvaa;->j:I
-
-    sget v0, Lmqb;->oneme_settings_privacy_screen_dialog_finished_session_finish_btn:I
-
-    sput v0, Lvaa;->k:I
-
-    sget v0, Lmqb;->oneme_settings_privacy_screen_dialog_online_button_contacts:I
-
-    sput v0, Lvaa;->l:I
-
-    sget v0, Lmqb;->oneme_settings_privacy_screen_dialog_online_button_nobody:I
-
-    sput v0, Lvaa;->m:I
-
-    sget v0, Lmqb;->oneme_settings_privacy_screen_dialog_online_never_accept_btn:I
-
-    sput v0, Lvaa;->n:I
-
-    sget v0, Lmqb;->oneme_settings_privacy_screen_dialog_online_never_cancel_btn:I
-
-    sput v0, Lvaa;->o:I
-
-    sget v0, Lmqb;->oneme_settings_privacy_screen_dialog_search_by_phone_all:I
-
-    sput v0, Lvaa;->p:I
-
-    sget v0, Lmqb;->oneme_settings_privacy_screen_dialog_search_by_phone_contacts:I
-
-    sput v0, Lvaa;->q:I
-
-    sget v0, Lmqb;->oneme_settings_privacy_screen_list:I
-
-    sput v0, Lvaa;->r:I
-
-    sget v0, Lmqb;->oneme_settings_privacy_screen_settings_header_vh:I
-
-    sput v0, Lvaa;->s:I
-
-    sget v0, Lmqb;->oneme_settings_privacy_screen_settings_item_vh:I
-
-    sput v0, Lvaa;->t:I
-
-    sget v0, Lmqb;->oneme_settings_privacy_screen_toolbar:I
-
-    sput v0, Lvaa;->u:I
 
     return-void
 .end method

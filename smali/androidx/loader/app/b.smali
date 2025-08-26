@@ -4,32 +4,32 @@
 
 
 # instance fields
-.field public final a:Lnc7;
+.field public final a:Ldh7;
 
 .field public final b:Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;
 
 
 # direct methods
-.method public constructor <init>(Lnc7;Lbbf;)V
+.method public constructor <init>(Ldh7;Lrof;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Landroidx/loader/app/b;->a:Lnc7;
+    iput-object p1, p0, Landroidx/loader/app/b;->a:Ldh7;
 
-    new-instance p1, Lfzd;
+    new-instance p1, Lrsd;
 
     sget-object v0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->d:Landroidx/loader/app/a;
 
-    invoke-direct {p1, p2, v0}, Lfzd;-><init>(Lbbf;Lzaf;)V
+    invoke-direct {p1, p2, v0}, Lrsd;-><init>(Lrof;Lpof;)V
 
     const-class p2, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;
 
-    invoke-static {p2}, Lm7c;->a(Ljava/lang/Class;)Lxy2;
+    invoke-static {p2}, Llcc;->a(Ljava/lang/Class;)Lz03;
 
     move-result-object p2
 
-    invoke-virtual {p1, p2}, Lfzd;->a(Lxy2;)Luaf;
+    invoke-virtual {p1, p2}, Lrsd;->a(Lz03;)Lkof;
 
     move-result-object p1
 
@@ -47,9 +47,9 @@
 
     iget-object p0, p0, Landroidx/loader/app/b;->b:Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;
 
-    iget-object v0, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->b:Lfmd;
+    iget-object v0, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->b:Lttd;
 
-    iget v0, v0, Lfmd;->c:I
+    iget v0, v0, Lttd;->c:I
 
     if-lez v0, :cond_7
 
@@ -78,17 +78,17 @@
     move v2, v1
 
     :goto_0
-    iget-object v3, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->b:Lfmd;
+    iget-object v3, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->b:Lttd;
 
-    iget v4, v3, Lfmd;->c:I
+    iget v4, v3, Lttd;->c:I
 
     if-ge v2, v4, :cond_7
 
-    iget-object v3, v3, Lfmd;->b:[Ljava/lang/Object;
+    iget-object v3, v3, Lttd;->b:[Ljava/lang/Object;
 
     aget-object v3, v3, v2
 
-    check-cast v3, Lmj7;
+    check-cast v3, Lmo7;
 
     invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -96,9 +96,9 @@
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v4, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->b:Lfmd;
+    iget-object v4, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->b:Lttd;
 
-    iget-object v4, v4, Lfmd;->a:[I
+    iget-object v4, v4, Lttd;->a:[I
 
     aget v4, v4, v2
 
@@ -108,7 +108,7 @@
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    invoke-virtual {v3}, Lmj7;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Lmo7;->toString()Ljava/lang/String;
 
     move-result-object v4
 
@@ -120,15 +120,13 @@
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget v5, v3, Lmj7;->l:I
-
-    invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->print(I)V
+    invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->print(I)V
 
     const-string v5, " mArgs="
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v5, v3, Lmj7;->m:Landroid/os/Bundle;
+    const/4 v5, 0x0
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
@@ -138,54 +136,60 @@
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v5, v3, Lmj7;->n:Ll2g;
+    iget-object v5, v3, Lmo7;->l:Lohg;
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    iget-object v5, v3, Lmj7;->n:Ll2g;
+    iget-object v5, v3, Lmo7;->l:Lohg;
 
-    const-string v6, "  "
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v6}, Lhr1;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v7
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v7, "  "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
 
     invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {p2, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {p2, v6}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget v4, v5, Ll2g;->a:I
-
-    invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->print(I)V
+    invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->print(I)V
 
     const-string v4, " mListener="
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v4, v5, Ll2g;->b:Lmj7;
+    iget-object v4, v5, Lohg;->a:Lmo7;
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    iget-boolean v4, v5, Ll2g;->c:Z
+    iget-boolean v4, v5, Lohg;->b:Z
 
     const-string v8, "mStarted="
 
     if-nez v4, :cond_0
 
-    iget-boolean v4, v5, Ll2g;->f:Z
+    iget-boolean v4, v5, Lohg;->e:Z
 
     if-nez v4, :cond_0
 
     goto :goto_1
 
     :cond_0
-    invoke-virtual {p2, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {p2, v6}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-boolean v4, v5, Ll2g;->c:Z
+    iget-boolean v4, v5, Lohg;->b:Z
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->print(Z)V
 
@@ -193,7 +197,7 @@
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-boolean v4, v5, Ll2g;->f:Z
+    iget-boolean v4, v5, Lohg;->e:Z
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->print(Z)V
 
@@ -204,22 +208,22 @@
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Z)V
 
     :goto_1
-    iget-boolean v4, v5, Ll2g;->d:Z
+    iget-boolean v4, v5, Lohg;->c:Z
 
     if-nez v4, :cond_1
 
-    iget-boolean v4, v5, Ll2g;->e:Z
+    iget-boolean v4, v5, Lohg;->d:Z
 
     if-eqz v4, :cond_2
 
     :cond_1
-    invoke-virtual {p2, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {p2, v6}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v4, "mAbandoned="
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-boolean v4, v5, Ll2g;->d:Z
+    iget-boolean v4, v5, Lohg;->c:Z
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->print(Z)V
 
@@ -227,60 +231,60 @@
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-boolean v4, v5, Ll2g;->e:Z
+    iget-boolean v4, v5, Lohg;->d:Z
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->println(Z)V
 
     :cond_2
-    iget-object v4, v5, Ll2g;->h:Lww;
+    iget-object v4, v5, Lohg;->g:Lhx;
 
     const-string v9, " waiting="
 
     if-eqz v4, :cond_3
 
-    invoke-virtual {p2, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {p2, v6}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v4, "mTask="
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v4, v5, Ll2g;->h:Lww;
+    iget-object v4, v5, Lohg;->g:Lhx;
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
     invoke-virtual {p2, v9}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v4, v5, Ll2g;->h:Lww;
+    iget-object v4, v5, Lohg;->g:Lhx;
 
     invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Z)V
 
     :cond_3
-    iget-object v4, v5, Ll2g;->i:Lww;
+    iget-object v4, v5, Lohg;->h:Lhx;
 
     if-eqz v4, :cond_4
 
-    invoke-virtual {p2, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
+    invoke-virtual {p2, v6}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v4, "mCancellingTask="
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v4, v5, Ll2g;->i:Lww;
+    iget-object v4, v5, Lohg;->h:Lhx;
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
     invoke-virtual {p2, v9}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v4, v5, Ll2g;->i:Lww;
+    iget-object v4, v5, Lohg;->h:Lhx;
 
     invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Z)V
 
     :cond_4
-    iget-object v4, v3, Lmj7;->p:Lnj7;
+    iget-object v4, v3, Lmo7;->n:Lno7;
 
     if-eqz v4, :cond_5
 
@@ -290,11 +294,11 @@
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v4, v3, Lmj7;->p:Lnj7;
+    iget-object v4, v3, Lmo7;->n:Lno7;
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    iget-object v4, v3, Lmj7;->p:Lnj7;
+    iget-object v4, v3, Lmo7;->n:Lno7;
 
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -302,7 +306,7 @@
 
     invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -316,7 +320,7 @@
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-boolean v4, v4, Lnj7;->b:Z
+    iget-boolean v4, v4, Lno7;->b:Z
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->println(Z)V
 
@@ -327,9 +331,9 @@
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget-object v4, v3, Lmj7;->n:Ll2g;
+    iget-object v4, v3, Lmo7;->l:Lohg;
 
-    invoke-virtual {v3}, Lyh7;->d()Ljava/lang/Object;
+    invoke-virtual {v3}, Lxm7;->d()Ljava/lang/Object;
 
     move-result-object v5
 
@@ -341,7 +345,7 @@
 
     invoke-direct {v4, v6}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-static {v4, v5}, Lxy6;->e(Ljava/lang/StringBuilder;Ljava/lang/Object;)V
+    invoke-static {v4, v5}, Lfq0;->i(Ljava/lang/StringBuilder;Ljava/lang/Object;)V
 
     const-string v5, "}"
 
@@ -357,7 +361,7 @@
 
     invoke-virtual {p2, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    iget v3, v3, Lyh7;->c:I
+    iget v3, v3, Lxm7;->c:I
 
     if-lez v3, :cond_6
 
@@ -379,12 +383,14 @@
     return-void
 .end method
 
-.method public final b(Lu5g;)Ll2g;
+.method public final b(Lzod;)Lohg;
     .locals 7
 
-    iget-object v0, p0, Landroidx/loader/app/b;->b:Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;
+    iget-object v0, p0, Landroidx/loader/app/b;->a:Ldh7;
 
-    iget-boolean v1, v0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->c:Z
+    iget-object p0, p0, Landroidx/loader/app/b;->b:Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;
+
+    iget-boolean v1, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->c:Z
 
     if-nez v1, :cond_6
 
@@ -398,36 +404,34 @@
 
     if-ne v1, v2, :cond_5
 
-    iget-object v1, v0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->b:Lfmd;
+    iget-object v1, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->b:Lttd;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Lfmd;->c(I)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Lttd;->b(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lmj7;
-
-    iget-object p0, p0, Landroidx/loader/app/b;->a:Lnc7;
+    check-cast v1, Lmo7;
 
     if-nez v1, :cond_3
 
-    const-class v1, Ll2g;
+    const-class v1, Lohg;
 
     const-string v3, "Object returned from onCreateLoader must not be a non-static inner member class: "
 
     const/4 v4, 0x1
 
     :try_start_0
-    iput-boolean v4, v0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->c:Z
+    iput-boolean v4, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->c:Z
 
-    new-instance v4, Ll2g;
+    new-instance v4, Lohg;
 
-    iget-object v5, p1, Lu5g;->b:Ljava/lang/Object;
+    iget-object v5, p1, Lzod;->b:Ljava/lang/Object;
 
     check-cast v5, Lcom/google/android/gms/auth/api/signin/internal/SignInHubActivity;
 
-    sget-object v6, Lfzf;->b:Ljava/util/Set;
+    sget-object v6, Lpeg;->b:Ljava/util/Set;
 
     monitor-enter v6
     :try_end_0
@@ -439,7 +443,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     :try_start_2
-    invoke-direct {v4, v5, v6}, Ll2g;-><init>(Landroid/content/Context;Ljava/util/Set;)V
+    invoke-direct {v4, v5, v6}, Lohg;-><init>(Landroid/content/Context;Ljava/util/Set;)V
 
     invoke-virtual {v1}, Ljava/lang/Class;->isMemberClass()Z
 
@@ -460,64 +464,64 @@
     goto :goto_0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    new-instance p1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {p1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw p0
+    throw p1
 
     :catchall_0
-    move-exception p0
+    move-exception p1
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    new-instance v1, Lmj7;
+    new-instance v1, Lmo7;
 
-    invoke-direct {v1, v4}, Lmj7;-><init>(Ll2g;)V
+    invoke-direct {v1, v4}, Lmo7;-><init>(Lohg;)V
 
-    iget-object v3, v0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->b:Lfmd;
+    iget-object v3, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->b:Lttd;
 
-    invoke-virtual {v3, v2, v1}, Lfmd;->d(ILjava/lang/Object;)V
+    invoke-virtual {v3, v2, v1}, Lttd;->c(ILjava/lang/Object;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    iput-boolean v2, v0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->c:Z
+    iput-boolean v2, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->c:Z
 
-    new-instance v0, Lnj7;
+    new-instance p0, Lno7;
 
-    iget-object v2, v1, Lmj7;->n:Ll2g;
+    iget-object v2, v1, Lmo7;->l:Lohg;
 
-    invoke-direct {v0, v2, p1}, Lnj7;-><init>(Ll2g;Lu5g;)V
+    invoke-direct {p0, v2, p1}, Lno7;-><init>(Lohg;Lzod;)V
 
-    invoke-virtual {v1, p0, v0}, Lyh7;->e(Lnc7;Lcw9;)V
+    invoke-virtual {v1, v0, p0}, Lxm7;->e(Ldh7;Lb0a;)V
 
-    iget-object p1, v1, Lmj7;->p:Lnj7;
+    iget-object p1, v1, Lmo7;->n:Lno7;
 
     if-eqz p1, :cond_2
 
-    invoke-virtual {v1, p1}, Lmj7;->j(Lcw9;)V
+    invoke-virtual {v1, p1}, Lmo7;->j(Lb0a;)V
 
     :cond_2
-    iput-object p0, v1, Lmj7;->o:Lnc7;
+    iput-object v0, v1, Lmo7;->m:Ldh7;
 
-    iput-object v0, v1, Lmj7;->p:Lnj7;
+    iput-object p0, v1, Lmo7;->n:Lno7;
 
     return-object v2
 
     :catchall_1
-    move-exception p0
+    move-exception p1
 
     :try_start_3
     monitor-exit v6
@@ -525,34 +529,34 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     :try_start_4
-    throw p0
+    throw p1
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     :goto_1
-    iput-boolean v2, v0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->c:Z
+    iput-boolean v2, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->c:Z
 
-    throw p0
+    throw p1
 
     :cond_3
-    new-instance v0, Lnj7;
+    new-instance p0, Lno7;
 
-    iget-object v2, v1, Lmj7;->n:Ll2g;
+    iget-object v2, v1, Lmo7;->l:Lohg;
 
-    invoke-direct {v0, v2, p1}, Lnj7;-><init>(Ll2g;Lu5g;)V
+    invoke-direct {p0, v2, p1}, Lno7;-><init>(Lohg;Lzod;)V
 
-    invoke-virtual {v1, p0, v0}, Lyh7;->e(Lnc7;Lcw9;)V
+    invoke-virtual {v1, v0, p0}, Lxm7;->e(Ldh7;Lb0a;)V
 
-    iget-object p1, v1, Lmj7;->p:Lnj7;
+    iget-object p1, v1, Lmo7;->n:Lno7;
 
     if-eqz p1, :cond_4
 
-    invoke-virtual {v1, p1}, Lmj7;->j(Lcw9;)V
+    invoke-virtual {v1, p1}, Lmo7;->j(Lb0a;)V
 
     :cond_4
-    iput-object p0, v1, Lmj7;->o:Lnc7;
+    iput-object v0, v1, Lmo7;->m:Ldh7;
 
-    iput-object v0, v1, Lmj7;->p:Lnj7;
+    iput-object p0, v1, Lmo7;->n:Lno7;
 
     return-object v2
 
@@ -580,22 +584,22 @@
 
     iget-object p0, p0, Landroidx/loader/app/b;->b:Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;
 
-    iget-object p0, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->b:Lfmd;
+    iget-object p0, p0, Landroidx/loader/app/LoaderManagerImpl$LoaderViewModel;->b:Lttd;
 
-    iget v0, p0, Lfmd;->c:I
+    iget v0, p0, Lttd;->c:I
 
     const/4 v1, 0x0
 
     :goto_0
     if-ge v1, v0, :cond_0
 
-    iget-object v2, p0, Lfmd;->b:[Ljava/lang/Object;
+    iget-object v2, p0, Lttd;->b:[Ljava/lang/Object;
 
     aget-object v2, v2, v1
 
-    check-cast v2, Lmj7;
+    check-cast v2, Lmo7;
 
-    invoke-virtual {v2}, Lmj7;->l()V
+    invoke-virtual {v2}, Lmo7;->l()V
 
     add-int/lit8 v1, v1, 0x1
 
@@ -632,9 +636,9 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Landroidx/loader/app/b;->a:Lnc7;
+    iget-object p0, p0, Landroidx/loader/app/b;->a:Ldh7;
 
-    invoke-static {v0, p0}, Lxy6;->e(Ljava/lang/StringBuilder;Ljava/lang/Object;)V
+    invoke-static {v0, p0}, Lfq0;->i(Ljava/lang/StringBuilder;Ljava/lang/Object;)V
 
     const-string p0, "}}"
 

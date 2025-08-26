@@ -3,197 +3,182 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements La0d;
 
 
 # instance fields
-.field public final X:F
+.field public final a:[J
 
-.field public final Y:F
-
-.field public final Z:F
-
-.field public final a:Ljava/lang/ref/WeakReference;
-
-.field public final b:J
+.field public final b:[J
 
 .field public final c:J
 
-.field public final o:F
-
-.field public final w0:F
-
-.field public final x0:F
-
-.field public final y0:Z
+.field public final d:Z
 
 
 # direct methods
-.method public constructor <init>(Loz6;FFFFFFZ)V
-    .locals 2
+.method public constructor <init>(J[J[J)V
+    .locals 8
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/lang/ref/WeakReference;
+    array-length v0, p3
 
-    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+    array-length v1, p4
 
-    iput-object v0, p0, Lmz6;->a:Ljava/lang/ref/WeakReference;
+    const/4 v2, 0x0
 
-    const-wide/16 v0, 0x1f4
+    const/4 v3, 0x1
 
-    iput-wide v0, p0, Lmz6;->b:J
+    if-ne v0, v1, :cond_0
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    move v0, v3
 
-    move-result-wide v0
+    goto :goto_0
 
-    iput-wide v0, p0, Lmz6;->c:J
+    :cond_0
+    move v0, v2
 
-    iput p2, p0, Lmz6;->o:F
+    :goto_0
+    invoke-static {v0}, Lq46;->d(Z)V
 
-    iput p3, p0, Lmz6;->X:F
+    array-length v0, p4
 
-    iput p4, p0, Lmz6;->Y:F
+    if-lez v0, :cond_1
 
-    iput p5, p0, Lmz6;->Z:F
+    move v1, v3
 
-    iput p6, p0, Lmz6;->w0:F
+    goto :goto_1
 
-    iput p7, p0, Lmz6;->x0:F
+    :cond_1
+    move v1, v2
 
-    iput-boolean p8, p0, Lmz6;->y0:Z
+    :goto_1
+    iput-boolean v1, p0, Lmz6;->d:Z
+
+    if-eqz v1, :cond_2
+
+    aget-wide v4, p4, v2
+
+    const-wide/16 v6, 0x0
+
+    cmp-long v1, v4, v6
+
+    if-lez v1, :cond_2
+
+    add-int/lit8 v1, v0, 0x1
+
+    new-array v4, v1, [J
+
+    iput-object v4, p0, Lmz6;->a:[J
+
+    new-array v1, v1, [J
+
+    iput-object v1, p0, Lmz6;->b:[J
+
+    invoke-static {p3, v2, v4, v3, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    invoke-static {p4, v2, v1, v3, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    goto :goto_2
+
+    :cond_2
+    iput-object p3, p0, Lmz6;->a:[J
+
+    iput-object p4, p0, Lmz6;->b:[J
+
+    :goto_2
+    iput-wide p1, p0, Lmz6;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 7
+.method public final c()Z
+    .locals 0
 
-    iget-object v0, p0, Lmz6;->a:Ljava/lang/ref/WeakReference;
+    iget-boolean p0, p0, Lmz6;->d:Z
 
-    invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+    return p0
+.end method
 
-    move-result-object v0
+.method public final e(J)Lyzc;
+    .locals 8
 
-    check-cast v0, Loz6;
+    iget-boolean v0, p0, Lmz6;->d:Z
 
     if-nez v0, :cond_0
 
-    return-void
+    new-instance p0, Lyzc;
+
+    sget-object p1, Le0d;->c:Le0d;
+
+    invoke-direct {p0, p1, p1}, Lyzc;-><init>(Le0d;Le0d;)V
+
+    return-object p0
 
     :cond_0
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    iget-object v0, p0, Lmz6;->b:[J
 
-    move-result-wide v1
+    const/4 v1, 0x1
 
-    iget-wide v3, p0, Lmz6;->c:J
-
-    sub-long/2addr v1, v3
-
-    iget-wide v3, p0, Lmz6;->b:J
-
-    invoke-static {v3, v4, v1, v2}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v1
-
-    long-to-float v1, v1
-
-    long-to-float v2, v3
-
-    div-float v3, v1, v2
-
-    const/high16 v4, 0x3f800000    # 1.0f
-
-    sub-float/2addr v3, v4
-
-    mul-float v5, v3, v3
-
-    mul-float/2addr v5, v3
-
-    add-float/2addr v5, v4
-
-    iget v3, p0, Lmz6;->Y:F
-
-    mul-float/2addr v3, v5
-
-    const/4 v4, 0x0
-
-    add-float/2addr v3, v4
-
-    iget v6, p0, Lmz6;->Z:F
-
-    mul-float/2addr v5, v6
-
-    add-float/2addr v5, v4
-
-    iget v4, p0, Lmz6;->x0:F
-
-    invoke-static {v1, v4, v2}, Ljs;->h(FFF)F
-
-    move-result v4
-
-    cmpg-float v1, v1, v2
-
-    if-gez v1, :cond_2
-
-    iget-object v1, v0, Lgqe;->w0:[F
-
-    const/4 v2, 0x0
-
-    aget v2, v1, v2
-
-    iget v6, p0, Lmz6;->o:F
-
-    sub-float/2addr v2, v6
-
-    sub-float/2addr v3, v2
-
-    const/4 v2, 0x1
-
-    aget v1, v1, v2
-
-    iget v2, p0, Lmz6;->X:F
-
-    sub-float/2addr v1, v2
-
-    sub-float/2addr v5, v1
-
-    invoke-virtual {v0, v3, v5}, Lgqe;->g(FF)V
-
-    iget-boolean v1, p0, Lmz6;->y0:Z
-
-    if-nez v1, :cond_1
-
-    iget v1, p0, Lmz6;->w0:F
-
-    add-float/2addr v1, v4
-
-    iget-object v2, v0, Loz6;->G0:Landroid/graphics/RectF;
-
-    invoke-virtual {v2}, Landroid/graphics/RectF;->centerX()F
-
-    move-result v3
-
-    invoke-virtual {v2}, Landroid/graphics/RectF;->centerY()F
+    invoke-static {v0, p1, p2, v1}, Lnaf;->e([JJZ)I
 
     move-result v2
 
-    invoke-virtual {v0, v1, v3, v2}, Loz6;->k(FFF)V
+    new-instance v3, Le0d;
+
+    aget-wide v4, v0, v2
+
+    iget-object p0, p0, Lmz6;->a:[J
+
+    aget-wide v6, p0, v2
+
+    invoke-direct {v3, v4, v5, v6, v7}, Le0d;-><init>(JJ)V
+
+    cmp-long p1, v4, p1
+
+    if-eqz p1, :cond_2
+
+    array-length p1, v0
+
+    sub-int/2addr p1, v1
+
+    if-ne v2, p1, :cond_1
+
+    goto :goto_0
 
     :cond_1
-    iget-object v1, v0, Lgqe;->o:[F
+    new-instance p1, Le0d;
 
-    invoke-virtual {v0, v1}, Loz6;->j([F)Z
+    add-int/2addr v2, v1
 
-    move-result v1
+    aget-wide v0, v0, v2
 
-    if-nez v1, :cond_2
+    aget-wide v4, p0, v2
 
-    invoke-virtual {v0, p0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+    invoke-direct {p1, v0, v1, v4, v5}, Le0d;-><init>(JJ)V
+
+    new-instance p0, Lyzc;
+
+    invoke-direct {p0, v3, p1}, Lyzc;-><init>(Le0d;Le0d;)V
+
+    return-object p0
 
     :cond_2
-    return-void
+    :goto_0
+    new-instance p0, Lyzc;
+
+    invoke-direct {p0, v3, v3}, Lyzc;-><init>(Le0d;Le0d;)V
+
+    return-object p0
+.end method
+
+.method public final f()J
+    .locals 2
+
+    iget-wide v0, p0, Lmz6;->c:J
+
+    return-wide v0
 .end method

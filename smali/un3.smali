@@ -1,174 +1,183 @@
-.class public final Lun3;
+.class public final synthetic Lun3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lx56;
+
 
 # instance fields
-.field public final a:I
+.field public final synthetic a:I
 
-.field public final b:Z
+.field public final synthetic b:Lio3;
+
+.field public final synthetic c:J
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 1
+.method public synthetic constructor <init>(Lio3;JI)V
+    .locals 0
+
+    iput p4, p0, Lun3;->a:I
+
+    iput-object p1, p0, Lun3;->b:Lio3;
+
+    iput-wide p2, p0, Lun3;->c:J
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lun3;->a:I
-
-    const/4 v0, 0x2
-
-    if-eq p1, v0, :cond_1
-
-    const/4 v0, 0x3
-
-    if-ne p1, v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
-
-    :goto_1
-    iput-boolean p1, p0, Lun3;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
+
+    iget v0, p0, Lun3;->a:I
+
+    check-cast p1, Lofa;
+
+    packed-switch v0, :pswitch_data_0
+
+    sget-object v0, Lvn3;->$EnumSwitchMapping$1:[I
+
+    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result p1
+
+    aget p1, v0, p1
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_0
+    if-ne p1, v0, :cond_0
 
-    return v0
+    iget-object p1, p0, Lun3;->b:Lio3;
+
+    iget-object v0, p1, Ljof;->a:Lkotlinx/coroutines/internal/ContextScope;
+
+    iget-object v1, p1, Lio3;->c:Lrie;
+
+    check-cast v1, Lo7a;
+
+    invoke-virtual {v1}, Lo7a;->b()Ljx3;
+
+    move-result-object v1
+
+    new-instance v2, Lwn3;
+
+    iget-wide v3, p0, Lun3;->c:J
+
+    const/4 p0, 0x0
+
+    invoke-direct {v2, p1, v3, v4, p0}, Lwn3;-><init>(Lio3;JLkotlin/coroutines/Continuation;)V
+
+    const/4 p1, 0x2
+
+    invoke-static {v0, v1, p0, v2, p1}, Lzo3;->E(Lox3;Lhx3;Lrx3;Ll66;I)Ldwd;
 
     :cond_0
-    instance-of v1, p1, Lun3;
+    sget-object p0, Le5f;->a:Le5f;
 
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lun3;
-
-    iget p1, p1, Lun3;->a:I
-
-    iget p0, p0, Lun3;->a:I
-
-    if-eq p0, p1, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    iget p0, p0, Lun3;->a:I
-
-    invoke-static {p0}, Lhr1;->t(I)I
-
-    move-result p0
-
-    mul-int/lit8 p0, p0, 0x1f
-
-    const/4 v0, 0x0
-
-    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    move-result v0
-
-    add-int/2addr v0, p0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ContactsBannerListItem(bannerType="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget p0, p0, Lun3;->a:I
-
-    packed-switch p0, :pswitch_data_0
-
-    const-string p0, "null"
-
-    goto :goto_0
+    return-object p0
 
     :pswitch_0
-    const-string p0, "PERMIT_MIC_COMPACT"
+    sget-object v0, Lvn3;->$EnumSwitchMapping$1:[I
 
-    goto :goto_0
+    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result p1
+
+    aget p1, v0, p1
+
+    const/4 v0, 0x1
+
+    if-ne p1, v0, :cond_1
+
+    iget-object p1, p0, Lun3;->b:Lio3;
+
+    iget-object v0, p1, Ljof;->a:Lkotlinx/coroutines/internal/ContextScope;
+
+    iget-object v1, p1, Lio3;->c:Lrie;
+
+    check-cast v1, Lo7a;
+
+    invoke-virtual {v1}, Lo7a;->b()Ljx3;
+
+    move-result-object v1
+
+    new-instance v2, Lxn3;
+
+    iget-wide v3, p0, Lun3;->c:J
+
+    const/4 p0, 0x0
+
+    invoke-direct {v2, p1, v3, v4, p0}, Lxn3;-><init>(Lio3;JLkotlin/coroutines/Continuation;)V
+
+    const/4 p1, 0x2
+
+    invoke-static {v0, v1, p0, v2, p1}, Lzo3;->E(Lox3;Lhx3;Lrx3;Ll66;I)Ldwd;
+
+    :cond_1
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 
     :pswitch_1
-    const-string p0, "PERMIT_MIC_MIDDLE"
+    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    const/4 v0, 0x1
+
+    if-eq p1, v0, :cond_2
+
+    const/4 v0, 0x2
+
+    if-eq p1, v0, :cond_2
 
     goto :goto_0
 
-    :pswitch_2
-    const-string p0, "PERMIT_NOTIFICATIONS_CONTACTS_COMPACT"
+    :cond_2
+    iget-object p1, p0, Lun3;->b:Lio3;
 
-    goto :goto_0
+    iget-object v0, p1, Ljof;->a:Lkotlinx/coroutines/internal/ContextScope;
 
-    :pswitch_3
-    const-string p0, "PERMIT_NOTIFICATIONS_CONTACTS_MIDDLE"
+    iget-object v1, p1, Lio3;->c:Lrie;
 
-    goto :goto_0
+    check-cast v1, Lo7a;
 
-    :pswitch_4
-    const-string p0, "PERMIT_PHONE_BOOK_CONTACTS_MIDDLE"
+    invoke-virtual {v1}, Lo7a;->b()Ljx3;
 
-    goto :goto_0
+    move-result-object v1
 
-    :pswitch_5
-    const-string p0, "PERMIT_PHONE_BOOK_CONTACTS_COMPACT"
+    sget-object v2, Lgp9;->a:Lgp9;
 
-    goto :goto_0
+    invoke-virtual {v1, v2}, Le0;->plus(Lhx3;)Lhx3;
 
-    :pswitch_6
-    const-string p0, "PERMIT_PHONE_BOOK_CONTACTS_BIG"
+    move-result-object v1
+
+    new-instance v2, Lho3;
+
+    const/4 v3, 0x0
+
+    iget-wide v4, p0, Lun3;->c:J
+
+    invoke-direct {v2, p1, v4, v5, v3}, Lho3;-><init>(Lio3;JLkotlin/coroutines/Continuation;)V
+
+    sget-object p0, Lrx3;->c:Lrx3;
+
+    invoke-static {v0, v1, p0, v2}, Lzo3;->D(Lox3;Lhx3;Lrx3;Ll66;)Ldwd;
 
     :goto_0
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p0, ", isCloseable=false)"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 
     :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
+    .packed-switch 0x0
         :pswitch_1
         :pswitch_0
     .end packed-switch

@@ -9,26 +9,26 @@
         "\u00008\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0008\u0006\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\u001a\u0017\u0010\u0003\u001a\u00020\u00022\u0006\u0010\u0001\u001a\u00020\u0000H\u0000\u00a2\u0006\u0004\u0008\u0003\u0010\u0004\u001a#\u0010\u0006\u001a\u0004\u0018\u00010\u00022\u0006\u0010\u0001\u001a\u00020\u00002\u0008\u0010\u0005\u001a\u0004\u0018\u00010\u0002H\u0000\u00a2\u0006\u0004\u0008\u0006\u0010\u0007\u001a!\u0010\n\u001a\u00020\t2\u0006\u0010\u0001\u001a\u00020\u00002\u0008\u0010\u0008\u001a\u0004\u0018\u00010\u0002H\u0000\u00a2\u0006\u0004\u0008\n\u0010\u000b\"\u0014\u0010\r\u001a\u00020\u000c8\u0000X\u0081\u0004\u00a2\u0006\u0006\n\u0004\u0008\r\u0010\u000e\"*\u0010\u0011\u001a\u0018\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0012\u0004\u0012\u00020\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u000f8\u0002X\u0082\u0004\u00a2\u0006\u0006\n\u0004\u0008\u0011\u0010\u0012\"2\u0010\u0014\u001a \u0012\n\u0012\u0008\u0012\u0002\u0008\u0003\u0018\u00010\u0013\u0012\u0004\u0012\u00020\u0010\u0012\n\u0012\u0008\u0012\u0002\u0008\u0003\u0018\u00010\u00130\u000f8\u0002X\u0082\u0004\u00a2\u0006\u0006\n\u0004\u0008\u0014\u0010\u0012\"&\u0010\u0016\u001a\u0014\u0012\u0004\u0012\u00020\u0015\u0012\u0004\u0012\u00020\u0010\u0012\u0004\u0012\u00020\u00150\u000f8\u0002X\u0082\u0004\u00a2\u0006\u0006\n\u0004\u0008\u0016\u0010\u0012\u00a8\u0006\u0017"
     }
     d2 = {
-        "Lhu3;",
+        "Lhx3;",
         "context",
         "",
         "threadContextElements",
-        "(Lhu3;)Ljava/lang/Object;",
+        "(Lhx3;)Ljava/lang/Object;",
         "countOrElement",
         "updateThreadContext",
-        "(Lhu3;Ljava/lang/Object;)Ljava/lang/Object;",
+        "(Lhx3;Ljava/lang/Object;)Ljava/lang/Object;",
         "oldState",
-        "Ljue;",
+        "Le5f;",
         "restoreThreadContext",
-        "(Lhu3;Ljava/lang/Object;)V",
+        "(Lhx3;Ljava/lang/Object;)V",
         "Lkotlinx/coroutines/internal/Symbol;",
         "NO_THREAD_ELEMENTS",
         "Lkotlinx/coroutines/internal/Symbol;",
         "Lkotlin/Function2;",
-        "Lfu3;",
+        "Lfx3;",
         "countAll",
-        "Li26;",
-        "Lzhe;",
+        "Ll66;",
+        "Luqe;",
         "findOne",
         "Lkotlinx/coroutines/internal/ThreadState;",
         "updateState",
@@ -40,32 +40,33 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # static fields
 .field public static final NO_THREAD_ELEMENTS:Lkotlinx/coroutines/internal/Symbol;
 
-.field private static final countAll:Li26;
+.field private static final countAll:Ll66;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Li26;"
+            "Ll66;"
         }
     .end annotation
 .end field
 
-.field private static final findOne:Li26;
+.field private static final findOne:Ll66;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Li26;"
+            "Ll66;"
         }
     .end annotation
 .end field
 
-.field private static final updateState:Li26;
+.field private static final updateState:Ll66;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Li26;"
+            "Ll66;"
         }
     .end annotation
 .end field
@@ -83,65 +84,65 @@
 
     sput-object v0, Lkotlinx/coroutines/internal/ThreadContextKt;->NO_THREAD_ELEMENTS:Lkotlinx/coroutines/internal/Symbol;
 
-    new-instance v0, Lvg0;
+    new-instance v0, Lvqe;
 
-    const/16 v1, 0x1c
+    const/4 v1, 0x1
 
-    invoke-direct {v0, v1}, Lvg0;-><init>(I)V
+    invoke-direct {v0, v1}, Lvqe;-><init>(I)V
 
-    sput-object v0, Lkotlinx/coroutines/internal/ThreadContextKt;->countAll:Li26;
+    sput-object v0, Lkotlinx/coroutines/internal/ThreadContextKt;->countAll:Ll66;
 
-    new-instance v0, Lvg0;
+    new-instance v0, Lvqe;
 
-    const/16 v1, 0x1d
+    const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lvg0;-><init>(I)V
+    invoke-direct {v0, v1}, Lvqe;-><init>(I)V
 
-    sput-object v0, Lkotlinx/coroutines/internal/ThreadContextKt;->findOne:Li26;
+    sput-object v0, Lkotlinx/coroutines/internal/ThreadContextKt;->findOne:Ll66;
 
     new-instance v0, Lkotlinx/coroutines/internal/a;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lkotlinx/coroutines/internal/ThreadContextKt;->updateState:Li26;
+    sput-object v0, Lkotlinx/coroutines/internal/ThreadContextKt;->updateState:Ll66;
 
     return-void
 .end method
 
-.method public static synthetic a(Lzhe;Lfu3;)Lzhe;
+.method public static synthetic a(Luqe;Lfx3;)Luqe;
     .locals 0
 
-    invoke-static {p0, p1}, Lkotlinx/coroutines/internal/ThreadContextKt;->findOne$lambda$1(Lzhe;Lfu3;)Lzhe;
+    invoke-static {p0, p1}, Lkotlinx/coroutines/internal/ThreadContextKt;->findOne$lambda$1(Luqe;Lfx3;)Luqe;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic b(Ljava/lang/Object;Lfu3;)Ljava/lang/Object;
+.method public static synthetic b(Ljava/lang/Object;Lfx3;)Ljava/lang/Object;
     .locals 0
 
-    invoke-static {p0, p1}, Lkotlinx/coroutines/internal/ThreadContextKt;->countAll$lambda$0(Ljava/lang/Object;Lfu3;)Ljava/lang/Object;
+    invoke-static {p0, p1}, Lkotlinx/coroutines/internal/ThreadContextKt;->countAll$lambda$0(Ljava/lang/Object;Lfx3;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic c(Lkotlinx/coroutines/internal/ThreadState;Lfu3;)Lkotlinx/coroutines/internal/ThreadState;
+.method public static synthetic c(Lkotlinx/coroutines/internal/ThreadState;Lfx3;)Lkotlinx/coroutines/internal/ThreadState;
     .locals 0
 
-    invoke-static {p0, p1}, Lkotlinx/coroutines/internal/ThreadContextKt;->updateState$lambda$2(Lkotlinx/coroutines/internal/ThreadState;Lfu3;)Lkotlinx/coroutines/internal/ThreadState;
+    invoke-static {p0, p1}, Lkotlinx/coroutines/internal/ThreadContextKt;->updateState$lambda$2(Lkotlinx/coroutines/internal/ThreadState;Lfx3;)Lkotlinx/coroutines/internal/ThreadState;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method private static final countAll$lambda$0(Ljava/lang/Object;Lfu3;)Ljava/lang/Object;
+.method private static final countAll$lambda$0(Ljava/lang/Object;Lfx3;)Ljava/lang/Object;
     .locals 1
 
-    instance-of v0, p1, Lzhe;
+    instance-of v0, p1, Luqe;
 
     if-eqz v0, :cond_3
 
@@ -173,31 +174,28 @@
     :goto_1
     if-nez p0, :cond_2
 
-    goto :goto_2
+    return-object p1
 
     :cond_2
     add-int/2addr p0, v0
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p1
-
-    :goto_2
-    return-object p1
+    move-result-object p0
 
     :cond_3
     return-object p0
 .end method
 
-.method private static final findOne$lambda$1(Lzhe;Lfu3;)Lzhe;
+.method private static final findOne$lambda$1(Luqe;Lfx3;)Luqe;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lzhe;",
-            "Lfu3;",
+            "Luqe;",
+            "Lfx3;",
             ")",
-            "Lzhe;"
+            "Luqe;"
         }
     .end annotation
 
@@ -206,22 +204,21 @@
     return-object p0
 
     :cond_0
-    instance-of p0, p1, Lzhe;
+    instance-of p0, p1, Luqe;
 
     if-eqz p0, :cond_1
 
-    check-cast p1, Lzhe;
+    check-cast p1, Luqe;
 
-    goto :goto_0
+    return-object p1
 
     :cond_1
-    const/4 p1, 0x0
+    const/4 p0, 0x0
 
-    :goto_0
-    return-object p1
+    return-object p0
 .end method
 
-.method public static final restoreThreadContext(Lhu3;Ljava/lang/Object;)V
+.method public static final restoreThreadContext(Lhx3;Ljava/lang/Object;)V
     .locals 2
 
     sget-object v0, Lkotlinx/coroutines/internal/ThreadContextKt;->NO_THREAD_ELEMENTS:Lkotlinx/coroutines/internal/Symbol;
@@ -237,28 +234,27 @@
 
     check-cast p1, Lkotlinx/coroutines/internal/ThreadState;
 
-    invoke-virtual {p1, p0}, Lkotlinx/coroutines/internal/ThreadState;->restore(Lhu3;)V
+    invoke-virtual {p1, p0}, Lkotlinx/coroutines/internal/ThreadState;->restore(Lhx3;)V
 
-    goto :goto_0
+    return-void
 
     :cond_1
     const/4 v0, 0x0
 
-    sget-object v1, Lkotlinx/coroutines/internal/ThreadContextKt;->findOne:Li26;
+    sget-object v1, Lkotlinx/coroutines/internal/ThreadContextKt;->findOne:Ll66;
 
-    invoke-interface {p0, v0, v1}, Lhu3;->fold(Ljava/lang/Object;Li26;)Ljava/lang/Object;
+    invoke-interface {p0, v0, v1}, Lhx3;->fold(Ljava/lang/Object;Ll66;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lzhe;
+    check-cast v0, Luqe;
 
-    invoke-interface {v0, p0, p1}, Lzhe;->restoreThreadContext(Lhu3;Ljava/lang/Object;)V
+    invoke-interface {v0, p0, p1}, Luqe;->restoreThreadContext(Lhx3;Ljava/lang/Object;)V
 
-    :goto_0
     return-void
 .end method
 
-.method public static final threadContextElements(Lhu3;)Ljava/lang/Object;
+.method public static final threadContextElements(Lhx3;)Ljava/lang/Object;
     .locals 2
 
     const/4 v0, 0x0
@@ -267,42 +263,42 @@
 
     move-result-object v0
 
-    sget-object v1, Lkotlinx/coroutines/internal/ThreadContextKt;->countAll:Li26;
+    sget-object v1, Lkotlinx/coroutines/internal/ThreadContextKt;->countAll:Ll66;
 
-    invoke-interface {p0, v0, v1}, Lhu3;->fold(Ljava/lang/Object;Li26;)Ljava/lang/Object;
+    invoke-interface {p0, v0, v1}, Lhx3;->fold(Ljava/lang/Object;Ll66;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method private static final updateState$lambda$2(Lkotlinx/coroutines/internal/ThreadState;Lfu3;)Lkotlinx/coroutines/internal/ThreadState;
+.method private static final updateState$lambda$2(Lkotlinx/coroutines/internal/ThreadState;Lfx3;)Lkotlinx/coroutines/internal/ThreadState;
     .locals 1
 
-    instance-of v0, p1, Lzhe;
+    instance-of v0, p1, Luqe;
 
     if-eqz v0, :cond_0
 
-    check-cast p1, Lzhe;
+    check-cast p1, Luqe;
 
-    iget-object v0, p0, Lkotlinx/coroutines/internal/ThreadState;->context:Lhu3;
+    iget-object v0, p0, Lkotlinx/coroutines/internal/ThreadState;->context:Lhx3;
 
-    invoke-interface {p1, v0}, Lzhe;->updateThreadContext(Lhu3;)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Luqe;->updateThreadContext(Lhx3;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {p0, p1, v0}, Lkotlinx/coroutines/internal/ThreadState;->append(Lzhe;Ljava/lang/Object;)V
+    invoke-virtual {p0, p1, v0}, Lkotlinx/coroutines/internal/ThreadState;->append(Luqe;Ljava/lang/Object;)V
 
     :cond_0
     return-object p0
 .end method
 
-.method public static final updateThreadContext(Lhu3;Ljava/lang/Object;)Ljava/lang/Object;
+.method public static final updateThreadContext(Lhx3;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
     if-nez p1, :cond_0
 
-    invoke-static {p0}, Lkotlinx/coroutines/internal/ThreadContextKt;->threadContextElements(Lhu3;)Ljava/lang/Object;
+    invoke-static {p0}, Lkotlinx/coroutines/internal/ThreadContextKt;->threadContextElements(Lhx3;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -317,7 +313,7 @@
 
     sget-object p0, Lkotlinx/coroutines/internal/ThreadContextKt;->NO_THREAD_ELEMENTS:Lkotlinx/coroutines/internal/Symbol;
 
-    goto :goto_0
+    return-object p0
 
     :cond_1
     instance-of v0, p1, Ljava/lang/Integer;
@@ -332,23 +328,22 @@
 
     move-result p1
 
-    invoke-direct {v0, p0, p1}, Lkotlinx/coroutines/internal/ThreadState;-><init>(Lhu3;I)V
+    invoke-direct {v0, p0, p1}, Lkotlinx/coroutines/internal/ThreadState;-><init>(Lhx3;I)V
 
-    sget-object p1, Lkotlinx/coroutines/internal/ThreadContextKt;->updateState:Li26;
+    sget-object p1, Lkotlinx/coroutines/internal/ThreadContextKt;->updateState:Ll66;
 
-    invoke-interface {p0, v0, p1}, Lhu3;->fold(Ljava/lang/Object;Li26;)Ljava/lang/Object;
+    invoke-interface {p0, v0, p1}, Lhx3;->fold(Ljava/lang/Object;Ll66;)Ljava/lang/Object;
 
     move-result-object p0
 
-    goto :goto_0
+    return-object p0
 
     :cond_2
-    check-cast p1, Lzhe;
+    check-cast p1, Luqe;
 
-    invoke-interface {p1, p0}, Lzhe;->updateThreadContext(Lhu3;)Ljava/lang/Object;
+    invoke-interface {p1, p0}, Luqe;->updateThreadContext(Lhx3;)Ljava/lang/Object;
 
     move-result-object p0
 
-    :goto_0
     return-object p0
 .end method

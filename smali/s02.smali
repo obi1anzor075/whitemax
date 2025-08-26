@@ -1,53 +1,80 @@
 .class public final Ls02;
-.super Ler3;
+.super Lv9e;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Comparable;
 
 
 # instance fields
-.field public X:Lpj5;
-
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lt02;
-
-.field public o:Lt02;
-
-.field public w0:I
-
-
-# direct methods
-.method public constructor <init>(Lt02;Lkotlin/coroutines/Continuation;)V
-    .locals 0
-
-    iput-object p1, p0, Ls02;->Z:Lt02;
-
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
+.field public q0:J
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final compareTo(Ljava/lang/Object;)I
+    .locals 5
 
-    iput-object p1, p0, Ls02;->Y:Ljava/lang/Object;
+    check-cast p1, Ls02;
 
-    iget p1, p0, Ls02;->w0:I
+    const/4 v0, 0x4
 
-    const/high16 v0, -0x80000000
+    invoke-virtual {p0, v0}, Ldy;->e(I)Z
 
-    or-int/2addr p1, v0
+    move-result v1
 
-    iput p1, p0, Ls02;->w0:I
+    invoke-virtual {p1, v0}, Ldy;->e(I)Z
 
-    iget-object p1, p0, Ls02;->Z:Lt02;
+    move-result v2
 
-    const/4 v0, 0x0
+    if-eq v1, v2, :cond_0
 
-    invoke-virtual {p1, v0, p0}, Lt02;->c(Lpj5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Ldy;->e(I)Z
 
-    move-result-object p0
+    move-result p0
 
-    return-object p0
+    if-eqz p0, :cond_2
+
+    goto :goto_0
+
+    :cond_0
+    iget-wide v0, p0, Lb64;->Y:J
+
+    iget-wide v2, p1, Lb64;->Y:J
+
+    sub-long/2addr v0, v2
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v4, v0, v2
+
+    if-nez v4, :cond_1
+
+    iget-wide v0, p0, Ls02;->q0:J
+
+    iget-wide p0, p1, Ls02;->q0:J
+
+    sub-long/2addr v0, p0
+
+    cmp-long p0, v0, v2
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    cmp-long p0, v0, v2
+
+    if-lez p0, :cond_2
+
+    :goto_0
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_2
+    const/4 p0, -0x1
+
+    return p0
 .end method

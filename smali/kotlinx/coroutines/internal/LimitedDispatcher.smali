@@ -1,9 +1,9 @@
 .class public final Lkotlinx/coroutines/internal/LimitedDispatcher;
-.super Lju3;
+.super Ljx3;
 .source "SourceFile"
 
 # interfaces
-.implements Lhd4;
+.implements Log4;
 
 
 # annotations
@@ -19,24 +19,24 @@
     }
     d2 = {
         "Lkotlinx/coroutines/internal/LimitedDispatcher;",
-        "Lju3;",
-        "Lhd4;",
+        "Ljx3;",
+        "Log4;",
         "dispatcher",
         "",
         "parallelism",
         "",
         "name",
         "<init>",
-        "(Lju3;ILjava/lang/String;)V",
+        "(Ljx3;ILjava/lang/String;)V",
         "Ljava/lang/Runnable;",
         "Lkotlinx/coroutines/Runnable;",
         "block",
         "Lkotlin/Function1;",
         "Lkotlinx/coroutines/internal/LimitedDispatcher$Worker;",
-        "Ljue;",
+        "Le5f;",
         "startWorker",
         "dispatchInternal",
-        "(Ljava/lang/Runnable;Lu16;)V",
+        "(Ljava/lang/Runnable;Lx56;)V",
         "",
         "tryAllocateWorker",
         "()Z",
@@ -44,26 +44,26 @@
         "()Ljava/lang/Runnable;",
         "",
         "timeMillis",
-        "Lyv1;",
+        "Lpy1;",
         "continuation",
         "scheduleResumeAfterDelay",
-        "(JLyv1;)V",
-        "Lhu3;",
+        "(JLpy1;)V",
+        "Lhx3;",
         "context",
-        "Laj4;",
+        "Ldm4;",
         "invokeOnTimeout",
-        "(JLjava/lang/Runnable;Lhu3;)Laj4;",
+        "(JLjava/lang/Runnable;Lhx3;)Ldm4;",
         "limitedParallelism",
-        "(ILjava/lang/String;)Lju3;",
+        "(ILjava/lang/String;)Ljx3;",
         "dispatch",
-        "(Lhu3;Ljava/lang/Runnable;)V",
+        "(Lhx3;Ljava/lang/Runnable;)V",
         "dispatchYield",
         "toString",
         "()Ljava/lang/String;",
         "time",
         "delay",
         "(J)V",
-        "Lju3;",
+        "Ljx3;",
         "I",
         "Ljava/lang/String;",
         "Lkotlinx/coroutines/internal/LockFreeTaskQueue;",
@@ -84,6 +84,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -92,9 +93,9 @@
 
 
 # instance fields
-.field private final synthetic $$delegate_0:Lhd4;
+.field private final synthetic $$delegate_0:Log4;
 
-.field private final dispatcher:Lju3;
+.field private final dispatcher:Ljx3;
 
 .field private final name:Ljava/lang/String;
 
@@ -132,18 +133,18 @@
     return-void
 .end method
 
-.method public constructor <init>(Lju3;ILjava/lang/String;)V
+.method public constructor <init>(Ljx3;ILjava/lang/String;)V
     .locals 1
 
-    invoke-direct {p0}, Lju3;-><init>()V
+    invoke-direct {p0}, Ljx3;-><init>()V
 
-    instance-of v0, p1, Lhd4;
+    instance-of v0, p1, Log4;
 
     if-eqz v0, :cond_0
 
     move-object v0, p1
 
-    check-cast v0, Lhd4;
+    check-cast v0, Log4;
 
     goto :goto_0
 
@@ -153,12 +154,12 @@
     :goto_0
     if-nez v0, :cond_1
 
-    sget-object v0, Lp74;->a:Lhd4;
+    sget-object v0, Lbb4;->a:Log4;
 
     :cond_1
-    iput-object v0, p0, Lkotlinx/coroutines/internal/LimitedDispatcher;->$$delegate_0:Lhd4;
+    iput-object v0, p0, Lkotlinx/coroutines/internal/LimitedDispatcher;->$$delegate_0:Log4;
 
-    iput-object p1, p0, Lkotlinx/coroutines/internal/LimitedDispatcher;->dispatcher:Lju3;
+    iput-object p1, p0, Lkotlinx/coroutines/internal/LimitedDispatcher;->dispatcher:Ljx3;
 
     iput p2, p0, Lkotlinx/coroutines/internal/LimitedDispatcher;->parallelism:I
 
@@ -181,10 +182,10 @@
     return-void
 .end method
 
-.method public static final synthetic access$getDispatcher$p(Lkotlinx/coroutines/internal/LimitedDispatcher;)Lju3;
+.method public static final synthetic access$getDispatcher$p(Lkotlinx/coroutines/internal/LimitedDispatcher;)Ljx3;
     .locals 0
 
-    iget-object p0, p0, Lkotlinx/coroutines/internal/LimitedDispatcher;->dispatcher:Lju3;
+    iget-object p0, p0, Lkotlinx/coroutines/internal/LimitedDispatcher;->dispatcher:Ljx3;
 
     return-object p0
 .end method
@@ -199,13 +200,13 @@
     return-object p0
 .end method
 
-.method private final dispatchInternal(Ljava/lang/Runnable;Lu16;)V
+.method private final dispatchInternal(Ljava/lang/Runnable;Lx56;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Runnable;",
-            "Lu16;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -226,7 +227,7 @@
 
     if-lt p1, v0, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
     invoke-direct {p0}, Lkotlinx/coroutines/internal/LimitedDispatcher;->tryAllocateWorker()Z
@@ -235,7 +236,7 @@
 
     if-nez p1, :cond_1
 
-    return-void
+    goto :goto_0
 
     :cond_1
     invoke-direct {p0}, Lkotlinx/coroutines/internal/LimitedDispatcher;->obtainTaskOrDeallocateWorker()Ljava/lang/Runnable;
@@ -244,6 +245,7 @@
 
     if-nez p1, :cond_2
 
+    :goto_0
     return-void
 
     :cond_2
@@ -251,7 +253,7 @@
 
     invoke-direct {v0, p0, p1}, Lkotlinx/coroutines/internal/LimitedDispatcher$Worker;-><init>(Lkotlinx/coroutines/internal/LimitedDispatcher;Ljava/lang/Runnable;)V
 
-    invoke-interface {p2, v0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
@@ -407,22 +409,22 @@
             "(J",
             "Lkotlin/coroutines/Continuation<",
             "-",
-            "Ljue;",
+            "Le5f;",
             ">;)",
             "Ljava/lang/Object;"
         }
     .end annotation
 
-    iget-object p0, p0, Lkotlinx/coroutines/internal/LimitedDispatcher;->$$delegate_0:Lhd4;
+    iget-object p0, p0, Lkotlinx/coroutines/internal/LimitedDispatcher;->$$delegate_0:Log4;
 
-    invoke-interface {p0, p1, p2, p3}, Lhd4;->delay(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-interface {p0, p1, p2, p3}, Log4;->delay(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public dispatch(Lhu3;Ljava/lang/Runnable;)V
+.method public dispatch(Lhx3;Ljava/lang/Runnable;)V
     .locals 0
 
     iget-object p1, p0, Lkotlinx/coroutines/internal/LimitedDispatcher;->queue:Lkotlinx/coroutines/internal/LockFreeTaskQueue;
@@ -460,16 +462,16 @@
 
     invoke-direct {p2, p0, p1}, Lkotlinx/coroutines/internal/LimitedDispatcher$Worker;-><init>(Lkotlinx/coroutines/internal/LimitedDispatcher;Ljava/lang/Runnable;)V
 
-    iget-object p1, p0, Lkotlinx/coroutines/internal/LimitedDispatcher;->dispatcher:Lju3;
+    iget-object p1, p0, Lkotlinx/coroutines/internal/LimitedDispatcher;->dispatcher:Ljx3;
 
-    invoke-virtual {p1, p0, p2}, Lju3;->dispatch(Lhu3;Ljava/lang/Runnable;)V
+    invoke-virtual {p1, p0, p2}, Ljx3;->dispatch(Lhx3;Ljava/lang/Runnable;)V
 
     :cond_1
     :goto_0
     return-void
 .end method
 
-.method public dispatchYield(Lhu3;Ljava/lang/Runnable;)V
+.method public dispatchYield(Lhx3;Ljava/lang/Runnable;)V
     .locals 0
 
     iget-object p1, p0, Lkotlinx/coroutines/internal/LimitedDispatcher;->queue:Lkotlinx/coroutines/internal/LockFreeTaskQueue;
@@ -507,28 +509,28 @@
 
     invoke-direct {p2, p0, p1}, Lkotlinx/coroutines/internal/LimitedDispatcher$Worker;-><init>(Lkotlinx/coroutines/internal/LimitedDispatcher;Ljava/lang/Runnable;)V
 
-    iget-object p1, p0, Lkotlinx/coroutines/internal/LimitedDispatcher;->dispatcher:Lju3;
+    iget-object p1, p0, Lkotlinx/coroutines/internal/LimitedDispatcher;->dispatcher:Ljx3;
 
-    invoke-virtual {p1, p0, p2}, Lju3;->dispatchYield(Lhu3;Ljava/lang/Runnable;)V
+    invoke-virtual {p1, p0, p2}, Ljx3;->dispatchYield(Lhx3;Ljava/lang/Runnable;)V
 
     :cond_1
     :goto_0
     return-void
 .end method
 
-.method public invokeOnTimeout(JLjava/lang/Runnable;Lhu3;)Laj4;
+.method public invokeOnTimeout(JLjava/lang/Runnable;Lhx3;)Ldm4;
     .locals 0
 
-    iget-object p0, p0, Lkotlinx/coroutines/internal/LimitedDispatcher;->$$delegate_0:Lhd4;
+    iget-object p0, p0, Lkotlinx/coroutines/internal/LimitedDispatcher;->$$delegate_0:Log4;
 
-    invoke-interface {p0, p1, p2, p3, p4}, Lhd4;->invokeOnTimeout(JLjava/lang/Runnable;Lhu3;)Laj4;
+    invoke-interface {p0, p1, p2, p3, p4}, Log4;->invokeOnTimeout(JLjava/lang/Runnable;Lhx3;)Ldm4;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public limitedParallelism(ILjava/lang/String;)Lju3;
+.method public limitedParallelism(ILjava/lang/String;)Ljx3;
     .locals 1
 
     invoke-static {p1}, Lkotlinx/coroutines/internal/LimitedDispatcherKt;->checkParallelism(I)V
@@ -537,33 +539,33 @@
 
     if-lt p1, v0, :cond_0
 
-    invoke-static {p0, p2}, Lkotlinx/coroutines/internal/LimitedDispatcherKt;->namedOrThis(Lju3;Ljava/lang/String;)Lju3;
+    invoke-static {p0, p2}, Lkotlinx/coroutines/internal/LimitedDispatcherKt;->namedOrThis(Ljx3;Ljava/lang/String;)Ljx3;
 
     move-result-object p0
 
     return-object p0
 
     :cond_0
-    invoke-super {p0, p1, p2}, Lju3;->limitedParallelism(ILjava/lang/String;)Lju3;
+    invoke-super {p0, p1, p2}, Ljx3;->limitedParallelism(ILjava/lang/String;)Ljx3;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public scheduleResumeAfterDelay(JLyv1;)V
+.method public scheduleResumeAfterDelay(JLpy1;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
-            "Lyv1;",
+            "Lpy1;",
             ")V"
         }
     .end annotation
 
-    iget-object p0, p0, Lkotlinx/coroutines/internal/LimitedDispatcher;->$$delegate_0:Lhd4;
+    iget-object p0, p0, Lkotlinx/coroutines/internal/LimitedDispatcher;->$$delegate_0:Log4;
 
-    invoke-interface {p0, p1, p2, p3}, Lhd4;->scheduleResumeAfterDelay(JLyv1;)V
+    invoke-interface {p0, p1, p2, p3}, Log4;->scheduleResumeAfterDelay(JLpy1;)V
 
     return-void
 .end method
@@ -579,7 +581,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, p0, Lkotlinx/coroutines/internal/LimitedDispatcher;->dispatcher:Lju3;
+    iget-object v1, p0, Lkotlinx/coroutines/internal/LimitedDispatcher;->dispatcher:Ljx3;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -591,9 +593,11 @@
 
     const/16 v1, 0x29
 
-    invoke-static {v0, p0, v1}, Lhr1;->h(Ljava/lang/StringBuilder;IC)Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lzt1;->h(Ljava/lang/StringBuilder;IC)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
+
+    return-object p0
 
     :cond_0
     return-object v0

@@ -1,349 +1,229 @@
-.class public final synthetic Lr9c;
-.super Ljava/lang/Object;
+.class public final Lr9c;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:I
 
-.field public final synthetic b:Lt97;
+.field public synthetic Y:Ljava/lang/Object;
+
+.field public final synthetic Z:Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILt97;)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;)V
     .locals 0
 
-    iput p1, p0, Lr9c;->a:I
+    iput-object p2, p0, Lr9c;->Z:Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
 
-    iput-object p2, p0, Lr9c;->b:Lt97;
+    const/4 p2, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2, p1}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 6
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    const/4 v0, 0x0
+    check-cast p1, Lox3;
 
-    const/4 v1, 0x5
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    const/4 v2, 0x1
-
-    iget-object v3, p0, Lr9c;->b:Lt97;
-
-    iget p0, p0, Lr9c;->a:I
-
-    packed-switch p0, :pswitch_data_0
-
-    invoke-interface {v3}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Lr9c;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    check-cast p0, Lkff;
+    check-cast p0, Lr9c;
 
-    iget-object p0, p0, Lkff;->a:Lw4;
+    sget-object p1, Le5f;->a:Le5f;
 
-    const-class v0, Ltt0;
-
-    invoke-virtual {p0, v0}, Lw4;->d(Ljava/lang/Class;)Lr7e;
-
-    move-result-object v0
-
-    const-class v1, Lpae;
-
-    invoke-virtual {p0, v1}, Lw4;->d(Ljava/lang/Class;)Lr7e;
-
-    move-result-object p0
-
-    new-instance v1, Lckf;
-
-    invoke-direct {v1, v0, p0}, Lckf;-><init>(Lt97;Lt97;)V
-
-    return-object v1
-
-    :pswitch_0
-    invoke-interface {v3}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lyya;
-
-    invoke-interface {p0}, Lyya;->get()Lk7f;
+    invoke-virtual {p0, p1}, Lr9c;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
+.end method
 
-    :pswitch_1
-    new-instance p0, Ldye;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    invoke-interface {v3}, Lt97;->getValue()Ljava/lang/Object;
+    new-instance v0, Lr9c;
 
-    move-result-object v0
+    iget-object p0, p0, Lr9c;->Z:Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
 
-    check-cast v0, Lbec;
+    invoke-direct {v0, p2, p0}, Lr9c;-><init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;)V
 
-    invoke-direct {p0, v0}, Ldye;-><init>(Lbec;)V
+    iput-object p1, v0, Lr9c;->Y:Ljava/lang/Object;
 
-    return-object p0
+    return-object v0
+.end method
 
-    :pswitch_2
-    invoke-interface {v3}, Lt97;->getValue()Ljava/lang/Object;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 12
 
-    move-result-object p0
+    iget v0, p0, Lr9c;->X:I
 
-    check-cast p0, Lxr0;
+    const/4 v1, 0x1
 
-    const/16 v0, 0x4000
+    if-eqz v0, :cond_1
 
-    invoke-interface {p0, v0}, Lxr0;->a(I)Ljava/nio/ByteBuffer;
+    if-ne v0, v1, :cond_0
 
-    move-result-object p0
+    iget-object v0, p0, Lr9c;->Y:Ljava/lang/Object;
 
-    return-object p0
+    check-cast v0, Lox3;
 
-    :pswitch_3
-    invoke-interface {v3}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    move-result-object p0
+    goto :goto_0
 
-    check-cast p0, Lx4a;
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    invoke-virtual {p0}, Lx4a;->g()Ljava/util/concurrent/ExecutorService;
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    move-result-object p0
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    return-object p0
+    throw p0
 
-    :pswitch_4
-    invoke-interface {v3}, Lt97;->getValue()Ljava/lang/Object;
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    move-result-object p0
+    iget-object p1, p0, Lr9c;->Y:Ljava/lang/Object;
 
-    check-cast p0, Lx4a;
+    check-cast p1, Lox3;
 
-    const-string v0, "srvc-rqst"
+    move-object v0, p1
 
-    invoke-virtual {p0, v1, v0}, Lx4a;->f(ILjava/lang/String;)Ljava/util/concurrent/ExecutorService;
+    :cond_2
+    :goto_0
+    invoke-static {v0}, Lvk9;->r(Lox3;)Z
 
-    move-result-object p0
+    move-result p1
 
-    return-object p0
+    if-eqz p1, :cond_6
 
-    :pswitch_5
-    new-instance p0, Ly15;
+    sget-object p1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->a1:[Lbc7;
 
-    invoke-interface {v3}, Lt97;->getValue()Ljava/lang/Object;
+    iget-object p1, p0, Lr9c;->Z:Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
+
+    invoke-virtual {p1}, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->J0()Lb9c;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lb9c;->w()Lw9c;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Lw9c;->a()I
+
+    move-result v2
+
+    invoke-virtual {p1}, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->t0()Landroid/view/View;
 
     move-result-object v3
 
-    check-cast v3, Lx4a;
+    invoke-virtual {v3}, Landroid/view/View;->clearAnimation()V
 
-    const-string v4, "upload"
+    int-to-float v2, v2
 
-    const/4 v5, 0x2
+    const v3, 0x3fb9999a    # 1.45f
 
-    invoke-virtual {v3, v0, v4, v5, v1}, Lx4a;->e(ILjava/lang/String;II)Ljava/util/concurrent/ExecutorService;
+    mul-float/2addr v2, v3
 
-    move-result-object v0
+    const v4, 0x8000
 
-    invoke-virtual {v3, v0, v4}, Lx4a;->h(Ljava/util/concurrent/ExecutorService;Ljava/lang/String;)Ljava/util/concurrent/ScheduledExecutorService;
+    int-to-float v4, v4
 
-    move-result-object v0
+    div-float/2addr v2, v4
 
-    invoke-direct {p0, v0, v2}, Ly15;-><init>(Ljava/util/concurrent/Executor;Z)V
+    int-to-float v4, v1
 
-    return-object p0
+    add-float/2addr v2, v4
 
-    :pswitch_6
-    new-instance p0, Ly15;
+    cmpl-float v4, v2, v3
 
-    invoke-interface {v3}, Lt97;->getValue()Ljava/lang/Object;
+    if-lez v4, :cond_3
 
-    move-result-object v0
+    move v7, v3
 
-    check-cast v0, Lx4a;
+    goto :goto_1
 
-    iget-object v0, v0, Lx4a;->m:Lr7e;
+    :cond_3
+    move v7, v2
 
-    invoke-virtual {v0}, Lr7e;->getValue()Ljava/lang/Object;
+    :goto_1
+    invoke-virtual {p1}, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->t0()Landroid/view/View;
 
-    move-result-object v0
+    move-result-object v5
 
-    check-cast v0, Ljava/util/concurrent/ScheduledExecutorService;
+    iget v6, p1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->O0:F
 
-    invoke-direct {p0, v0, v2}, Ly15;-><init>(Ljava/util/concurrent/Executor;Z)V
+    const-wide/16 v8, 0x64
 
-    return-object p0
+    const-wide/16 v10, 0x0
 
-    :pswitch_7
-    new-instance p0, Ly15;
+    invoke-static/range {v5 .. v11}, Lsre;->t(Landroid/view/View;FFJJ)Lkl7;
 
-    invoke-interface {v3}, Lt97;->getValue()Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object v0
+    new-instance v3, Landroid/animation/AnimatorSet;
 
-    check-cast v0, Lx4a;
+    invoke-direct {v3}, Landroid/animation/AnimatorSet;-><init>()V
 
-    iget-object v0, v0, Lx4a;->l:Lr7e;
+    iput-object v3, p1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->V0:Landroid/animation/AnimatorSet;
 
-    invoke-virtual {v0}, Lr7e;->getValue()Ljava/lang/Object;
+    iget-object v4, p1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->I0:Ljava/lang/Object;
 
-    move-result-object v0
+    invoke-interface {v4}, Lje7;->getValue()Ljava/lang/Object;
 
-    check-cast v0, Ljava/util/concurrent/ScheduledExecutorService;
+    move-result-object v4
 
-    invoke-direct {p0, v0, v2}, Ly15;-><init>(Ljava/util/concurrent/Executor;Z)V
+    check-cast v4, Lhb5;
 
-    return-object p0
+    invoke-virtual {v3, v4}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    :pswitch_8
-    invoke-interface {v3}, Lt97;->getValue()Ljava/lang/Object;
+    iget-object v3, p1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->V0:Landroid/animation/AnimatorSet;
 
-    move-result-object p0
+    if-eqz v3, :cond_4
 
-    check-cast p0, Lx4a;
+    invoke-virtual {v3, v2}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :cond_4
+    iget-object v2, p1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->V0:Landroid/animation/AnimatorSet;
 
-    sget-object v1, Lx4a;->p:[Lk77;
+    if-eqz v2, :cond_5
 
-    const/4 v2, 0x3
+    invoke-virtual {v2}, Landroid/animation/AnimatorSet;->start()V
 
-    aget-object v1, v1, v2
+    :cond_5
+    iput v7, p1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->O0:F
 
-    iget-object v1, p0, Lx4a;->i:Lq15;
+    iput-object v0, p0, Lr9c;->Y:Ljava/lang/Object;
 
-    invoke-virtual {p0, v1}, Lx4a;->d(Lq15;)Ljava/util/concurrent/ExecutorService;
+    iput v1, p0, Lr9c;->X:I
 
-    move-result-object p0
+    const-wide/16 v2, 0x64
 
-    sget-object v1, Lcnc;->a:Loid;
+    invoke-static {v2, v3, p0}, Lq14;->s(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    new-instance v1, Ly15;
+    move-result-object p1
 
-    invoke-direct {v1, p0, v0}, Ly15;-><init>(Ljava/util/concurrent/Executor;Z)V
+    sget-object v2, Lpx3;->a:Lpx3;
 
-    return-object v1
+    if-ne p1, v2, :cond_2
 
-    :pswitch_9
-    new-instance p0, Ly15;
+    return-object v2
 
-    invoke-interface {v3}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lx4a;
-
-    iget-object v0, v0, Lx4a;->n:Lr7e;
-
-    invoke-virtual {v0}, Lr7e;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/concurrent/ScheduledExecutorService;
-
-    invoke-direct {p0, v0, v2}, Ly15;-><init>(Ljava/util/concurrent/Executor;Z)V
+    :cond_6
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
-
-    :pswitch_a
-    invoke-static {}, Lhwf;->c()Llg7;
-
-    move-result-object p0
-
-    sget-object v0, Lf4d;->X:Lf4d;
-
-    invoke-virtual {p0, v0}, Llg7;->add(Ljava/lang/Object;)Z
-
-    sget-object v0, Lf4d;->Y:Lf4d;
-
-    invoke-virtual {p0, v0}, Llg7;->add(Ljava/lang/Object;)Z
-
-    sget-object v0, Lf4d;->Z:Lf4d;
-
-    invoke-virtual {p0, v0}, Llg7;->add(Ljava/lang/Object;)Z
-
-    invoke-interface {v3}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lxzc;
-
-    check-cast v0, Lvqc;
-
-    invoke-virtual {v0}, Lvqc;->u()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lf4d;->w0:Lf4d;
-
-    invoke-virtual {p0, v0}, Llg7;->add(Ljava/lang/Object;)Z
-
-    :cond_0
-    sget-object v0, Lf4d;->c:Lf4d;
-
-    invoke-virtual {p0, v0}, Llg7;->add(Ljava/lang/Object;)Z
-
-    invoke-static {p0}, Lhwf;->a(Ljava/util/List;)Llg7;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_b
-    new-instance p0, Lk3d;
-
-    invoke-interface {v3}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcde;
-
-    invoke-direct {p0, v0}, Lk3d;-><init>(Lcde;)V
-
-    return-object p0
-
-    :pswitch_c
-    invoke-interface {v3}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lx4a;
-
-    iget-object p0, p0, Lx4a;->n:Lr7e;
-
-    invoke-virtual {p0}, Lr7e;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/util/concurrent/ScheduledExecutorService;
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

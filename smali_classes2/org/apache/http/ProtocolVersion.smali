@@ -124,7 +124,9 @@
 
     move-result p1
 
-    sub-int v0, p0, p1
+    sub-int/2addr p0, p1
+
+    return p0
 
     :cond_0
     return v0
@@ -207,13 +209,10 @@
 
     if-ne p0, p1, :cond_2
 
-    goto :goto_0
+    return v0
 
     :cond_2
-    move v0, v2
-
-    :goto_0
-    return v0
+    return v2
 .end method
 
 .method public forVersion(II)Lorg/apache/http/ProtocolVersion;
@@ -280,12 +279,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -330,12 +328,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -356,12 +353,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 

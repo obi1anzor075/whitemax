@@ -1,3 +1,3 @@
-.class public abstract Lvbc;
-.super Landroid/content/res/Resources;
+.class public interface abstract Lvbc;
+.super Ljava/lang/Object;
 .source "SourceFile"

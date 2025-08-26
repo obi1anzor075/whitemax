@@ -1,13 +1,16 @@
-.class public abstract Lrdf;
+.class public final synthetic Lrdf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lmkf;
 
-# direct methods
-.method public static a(Landroid/media/VolumeProvider;I)V
+
+# virtual methods
+.method public final b(Lede;)V
     .locals 0
 
-    invoke-virtual {p0, p1}, Landroid/media/VolumeProvider;->setCurrentVolume(I)V
+    invoke-virtual {p1}, Lede;->d()V
 
     return-void
 .end method

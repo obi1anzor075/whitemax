@@ -1,31 +1,24 @@
-.class public final Lid4;
-.super Ler3;
+.class public abstract Lid4;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field public X:I
-
-.field public synthetic o:Ljava/lang/Object;
+# interfaces
+.implements Ljava/io/Serializable;
 
 
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+# static fields
+.field public static final a:Lg5d;
+
+
+# direct methods
+.method static constructor <clinit>()V
     .locals 1
 
-    iput-object p1, p0, Lid4;->o:Ljava/lang/Object;
+    new-instance v0, Lg5d;
 
-    iget p1, p0, Lid4;->X:I
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    const/high16 v0, -0x80000000
+    sput-object v0, Lid4;->a:Lg5d;
 
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lid4;->X:I
-
-    invoke-static {p0}, Lek8;->i(Lkotlin/coroutines/Continuation;)V
-
-    sget-object p0, Lpu3;->a:Lpu3;
-
-    return-object p0
+    return-void
 .end method

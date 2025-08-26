@@ -1,97 +1,42 @@
 .class public final Lfrc;
-.super Ljava/lang/Object;
+.super Lh0;
 .source "SourceFile"
 
 # interfaces
-.implements Lgrc;
-
-
-# instance fields
-.field public final a:Lli2;
-
-
-# direct methods
-.method public constructor <init>(Lli2;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfrc;->a:Lli2;
-
-    return-void
-.end method
+.implements Ljava/lang/Runnable;
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lfrc;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lfrc;
-
-    iget-object p0, p0, Lfrc;->a:Lli2;
-
-    iget-object p1, p1, Lfrc;->a:Lli2;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    iget-object p0, p0, Lfrc;->a:Lli2;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final run()V
     .locals 2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
-    const-string v1, "SearchResult(result="
+    move-result-object v0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iput-object v0, p0, Lh0;->c:Ljava/lang/Thread;
 
-    iget-object p0, p0, Lfrc;->a:Lli2;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    :try_start_0
+    iget-object v1, p0, Lh0;->a:Ljava/lang/Runnable;
 
-    const-string p0, ")"
+    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput-object v0, p0, Lh0;->c:Ljava/lang/Thread;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    return-void
 
-    move-result-object p0
+    :catchall_0
+    move-exception v1
 
-    return-object p0
+    invoke-virtual {p0}, Lh0;->f()V
+
+    iput-object v0, p0, Lh0;->c:Ljava/lang/Thread;
+
+    invoke-static {v1}, Lou0;->x(Ljava/lang/Throwable;)V
+
+    throw v1
 .end method

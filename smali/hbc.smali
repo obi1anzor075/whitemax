@@ -1,178 +1,211 @@
 .class public final Lhbc;
-.super Ljava/lang/Object;
+.super Landroid/database/Observable;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:I
-
-.field public final b:I
-
-.field public final c:F
-
-.field public final d:F
-
-
-# direct methods
-.method public constructor <init>(FIII)V
+# virtual methods
+.method public final a()Z
     .locals 0
 
-    and-int/lit8 p4, p4, 0x4
+    iget-object p0, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
-    if-eqz p4, :cond_0
+    invoke-virtual {p0}, Ljava/util/ArrayList;->isEmpty()Z
 
-    const/high16 p1, 0x45000000    # 2048.0f
+    move-result p0
 
-    .line 2
-    :cond_0
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    xor-int/lit8 p0, p0, 0x1
 
-    .line 3
-    iput p2, p0, Lhbc;->a:I
-
-    .line 4
-    iput p3, p0, Lhbc;->b:I
-
-    .line 5
-    iput p1, p0, Lhbc;->c:F
-
-    const p1, 0x3f2aaaab
-
-    .line 6
-    iput p1, p0, Lhbc;->d:F
-
-    .line 7
-    const-string p0, "Check failed."
-
-    if-lez p2, :cond_2
-
-    if-lez p3, :cond_1
-
-    return-void
-
-    .line 8
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    .line 9
-    :cond_2
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
+    return p0
 .end method
 
-.method public constructor <init>(IFI)V
-    .locals 1
+.method public final b()V
+    .locals 2
 
-    .line 1
-    const/16 v0, 0x8
+    iget-object v0, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
-    invoke-direct {p0, p2, p1, p3, v0}, Lhbc;-><init>(FIII)V
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    return-void
-.end method
+    move-result v0
 
+    add-int/lit8 v0, v0, -0x1
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+    :goto_0
+    if-ltz v0, :cond_0
 
-    const/4 v0, 0x1
+    iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
-    if-ne p1, p0, :cond_0
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    return v0
+    move-result-object v1
 
-    :cond_0
-    instance-of v1, p1, Lhbc;
+    check-cast v1, Libc;
 
-    if-eqz v1, :cond_1
+    invoke-virtual {v1}, Libc;->a()V
 
-    check-cast p1, Lhbc;
-
-    iget v1, p1, Lhbc;->a:I
-
-    iget v2, p0, Lhbc;->a:I
-
-    if-ne v2, v1, :cond_1
-
-    iget p0, p0, Lhbc;->b:I
-
-    iget p1, p1, Lhbc;->b:I
-
-    if-ne p0, p1, :cond_1
+    add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    :cond_1
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
+    :cond_0
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 1
-
-    iget v0, p0, Lhbc;->a:I
-
-    add-int/lit8 v0, v0, 0x1f
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget p0, p0, Lhbc;->b:I
-
-    add-int/2addr v0, p0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final c(II)V
     .locals 2
 
-    iget v0, p0, Lhbc;->a:I
+    iget-object v0, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    move-result-object v0
+    move-result v0
 
-    iget p0, p0, Lhbc;->b:I
+    add-int/lit8 v0, v0, -0x1
 
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    :goto_0
+    if-ltz v0, :cond_0
 
-    move-result-object p0
+    iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
-    filled-new-array {v0, p0}, [Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object p0
+    move-result-object v1
 
-    const/4 v0, 0x2
+    check-cast v1, Libc;
 
-    invoke-static {p0, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    invoke-virtual {v1, p1, p2}, Libc;->e(II)V
 
-    move-result-object p0
+    add-int/lit8 v0, v0, -0x1
 
-    const/4 v0, 0x0
+    goto :goto_0
 
-    const-string v1, "%dx%d"
+    :cond_0
+    return-void
+.end method
 
-    invoke-static {v0, v1, p0}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+.method public final d(IILjava/lang/Object;)V
+    .locals 2
 
-    move-result-object p0
+    iget-object v0, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
 
-    return-object p0
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    :goto_0
+    if-ltz v0, :cond_0
+
+    iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Libc;
+
+    invoke-virtual {v1, p1, p2, p3}, Libc;->c(IILjava/lang/Object;)V
+
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final e(II)V
+    .locals 2
+
+    iget-object v0, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    :goto_0
+    if-ltz v0, :cond_0
+
+    iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Libc;
+
+    invoke-virtual {v1, p1, p2}, Libc;->d(II)V
+
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final f(II)V
+    .locals 2
+
+    iget-object v0, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    :goto_0
+    if-ltz v0, :cond_0
+
+    iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Libc;
+
+    invoke-virtual {v1, p1, p2}, Libc;->f(II)V
+
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final g()V
+    .locals 2
+
+    iget-object v0, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    :goto_0
+    if-ltz v0, :cond_0
+
+    iget-object v1, p0, Landroid/database/Observable;->mObservers:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Libc;
+
+    invoke-virtual {v1}, Libc;->g()V
+
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
 .end method

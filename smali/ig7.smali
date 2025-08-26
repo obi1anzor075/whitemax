@@ -1,84 +1,270 @@
-.class public abstract Lig7;
-.super Lf6c;
+.class public final Lig7;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lzg7;
+.implements Lfv1;
 
 
 # instance fields
-.field public final o:Lmu;
+.field public final a:Ljava/lang/Object;
+
+.field public final b:Ldh7;
+
+.field public final c:Lvx1;
+
+.field public o:Z
 
 
 # direct methods
-.method public constructor <init>(Lqe4;)V
-    .locals 4
+.method public constructor <init>(Ldh7;Lvx1;)V
+    .locals 2
 
-    .line 13
-    invoke-direct {p0}, Lf6c;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 14
-    new-instance v0, Lhg7;
+    new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0, p0}, Lhg7;-><init>(Lig7;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    .line 15
-    new-instance v1, Lmu;
+    iput-object v0, p0, Lig7;->a:Ljava/lang/Object;
 
-    new-instance v2, Lc9;
+    const/4 v0, 0x0
 
-    const/4 v3, 0x0
+    iput-boolean v0, p0, Lig7;->o:Z
 
-    invoke-direct {v2, v3, p0}, Lc9;-><init>(ILjava/lang/Object;)V
+    iput-object p1, p0, Lig7;->b:Ldh7;
 
-    invoke-direct {v1, v2, p1}, Lmu;-><init>(Lyg7;Lqe4;)V
+    iput-object p2, p0, Lig7;->c:Lvx1;
 
-    iput-object v1, p0, Lig7;->o:Lmu;
+    invoke-interface {p1}, Ldh7;->L()Lfh7;
 
-    .line 16
-    iget-object p0, v1, Lmu;->d:Ljava/util/concurrent/CopyOnWriteArrayList;
+    move-result-object v0
 
-    invoke-virtual {p0, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->add(Ljava/lang/Object;)Z
+    iget-object v0, v0, Lfh7;->d:Lgg7;
+
+    sget-object v1, Lgg7;->o:Lgg7;
+
+    invoke-virtual {v0, v1}, Lgg7;->a(Lgg7;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p2}, Lvx1;->d()V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p2}, Lvx1;->r()V
+
+    :goto_0
+    invoke-interface {p1}, Ldh7;->L()Lfh7;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p0}, Lfh7;->a(Lzg7;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Lurd;)V
-    .locals 6
 
-    .line 1
-    invoke-direct {p0}, Lf6c;-><init>()V
+# virtual methods
+.method public final a()Lyw1;
+    .locals 0
 
-    .line 2
-    new-instance v0, Lhg7;
+    iget-object p0, p0, Lig7;->c:Lvx1;
 
-    invoke-direct {v0, p0}, Lhg7;-><init>(Lig7;)V
+    iget-object p0, p0, Lvx1;->y0:Lbhc;
 
-    .line 3
-    new-instance v1, Lmu;
+    return-object p0
+.end method
 
-    new-instance v2, Lc9;
+.method public final b()Ldh7;
+    .locals 1
 
-    const/4 v3, 0x0
+    iget-object v0, p0, Lig7;->a:Ljava/lang/Object;
 
-    invoke-direct {v2, v3, p0}, Lc9;-><init>(ILjava/lang/Object;)V
+    monitor-enter v0
 
-    .line 4
-    sget-object v3, Lbm3;->a:Ljava/lang/Object;
-
-    monitor-enter v3
-
-    .line 5
     :try_start_0
-    sget-object v4, Lbm3;->b:Ljava/util/concurrent/ExecutorService;
+    iget-object p0, p0, Lig7;->b:Ldh7;
 
-    if-nez v4, :cond_0
+    monitor-exit v0
 
-    const/4 v4, 0x2
+    return-object p0
 
-    .line 6
-    invoke-static {v4}, Ljava/util/concurrent/Executors;->newFixedThreadPool(I)Ljava/util/concurrent/ExecutorService;
+    :catchall_0
+    move-exception p0
 
-    move-result-object v4
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    sput-object v4, Lbm3;->b:Ljava/util/concurrent/ExecutorService;
+    throw p0
+.end method
+
+.method public final h()Ljava/util/List;
+    .locals 1
+
+    iget-object v0, p0, Lig7;->a:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object p0, p0, Lig7;->c:Lvx1;
+
+    invoke-virtual {p0}, Lvx1;->v()Ljava/util/List;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object p0
+
+    monitor-exit v0
+
+    return-object p0
+
+    :catchall_0
+    move-exception p0
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
+.end method
+
+.method public final o()V
+    .locals 2
+
+    iget-object v0, p0, Lig7;->a:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-boolean v1, p0, Lig7;->o:Z
+
+    if-eqz v1, :cond_0
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v1, p0, Lig7;->b:Ldh7;
+
+    invoke-virtual {p0, v1}, Lig7;->onStop(Ldh7;)V
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Lig7;->o:Z
+
+    monitor-exit v0
+
+    return-void
+
+    :goto_0
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
+.end method
+
+.method public onDestroy(Ldh7;)V
+    .locals 1
+    .annotation runtime Li1a;
+        value = .enum Lfg7;->ON_DESTROY:Lfg7;
+    .end annotation
+
+    iget-object p1, p0, Lig7;->a:Ljava/lang/Object;
+
+    monitor-enter p1
+
+    :try_start_0
+    iget-object p0, p0, Lig7;->c:Lvx1;
+
+    invoke-virtual {p0}, Lvx1;->v()Ljava/util/List;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/ArrayList;
+
+    invoke-virtual {p0, v0}, Lvx1;->y(Ljava/util/ArrayList;)V
+
+    monitor-exit p1
+
+    return-void
+
+    :catchall_0
+    move-exception p0
+
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
+.end method
+
+.method public onPause(Ldh7;)V
+    .locals 0
+    .annotation runtime Li1a;
+        value = .enum Lfg7;->ON_PAUSE:Lfg7;
+    .end annotation
+
+    const/4 p1, 0x0
+
+    iget-object p0, p0, Lig7;->c:Lvx1;
+
+    iget-object p0, p0, Lvx1;->a:Lax1;
+
+    invoke-interface {p0, p1}, Lax1;->i(Z)V
+
+    return-void
+.end method
+
+.method public onResume(Ldh7;)V
+    .locals 0
+    .annotation runtime Li1a;
+        value = .enum Lfg7;->ON_RESUME:Lfg7;
+    .end annotation
+
+    const/4 p1, 0x1
+
+    iget-object p0, p0, Lig7;->c:Lvx1;
+
+    iget-object p0, p0, Lvx1;->a:Lax1;
+
+    invoke-interface {p0, p1}, Lax1;->i(Z)V
+
+    return-void
+.end method
+
+.method public onStart(Ldh7;)V
+    .locals 1
+    .annotation runtime Li1a;
+        value = .enum Lfg7;->ON_START:Lfg7;
+    .end annotation
+
+    iget-object p1, p0, Lig7;->a:Ljava/lang/Object;
+
+    monitor-enter p1
+
+    :try_start_0
+    iget-boolean v0, p0, Lig7;->o:Z
+
+    if-nez v0, :cond_0
+
+    iget-object p0, p0, Lig7;->c:Lvx1;
+
+    invoke-virtual {p0}, Lvx1;->d()V
 
     goto :goto_0
 
@@ -87,99 +273,115 @@
 
     goto :goto_1
 
-    .line 7
     :cond_0
     :goto_0
-    monitor-exit v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 8
-    sget-object v3, Lbm3;->b:Ljava/util/concurrent/ExecutorService;
-
-    .line 9
-    new-instance v4, Lqe4;
-
-    const/4 v5, 0x4
-
-    invoke-direct {v4, v3, v5, p1}, Lqe4;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    .line 10
-    invoke-direct {v1, v2, v4}, Lmu;-><init>(Lyg7;Lqe4;)V
-
-    iput-object v1, p0, Lig7;->o:Lmu;
-
-    .line 11
-    iget-object p0, v1, Lmu;->d:Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    invoke-virtual {p0, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->add(Ljava/lang/Object;)Z
+    monitor-exit p1
 
     return-void
 
-    .line 12
     :goto_1
-    :try_start_1
-    monitor-exit v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p0
 .end method
 
-
-# virtual methods
-.method public final C(I)Ljava/lang/Object;
-    .locals 0
-
-    iget-object p0, p0, Lig7;->o:Lmu;
-
-    iget-object p0, p0, Lmu;->f:Ljava/util/List;
-
-    invoke-interface {p0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public D(Ljava/util/List;Ljava/util/List;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final E(Ljava/util/List;)V
+.method public onStop(Ldh7;)V
     .locals 1
+    .annotation runtime Li1a;
+        value = .enum Lfg7;->ON_STOP:Lfg7;
+    .end annotation
 
-    const/4 v0, 0x0
+    iget-object p1, p0, Lig7;->a:Ljava/lang/Object;
 
-    iget-object p0, p0, Lig7;->o:Lmu;
+    monitor-enter p1
 
-    invoke-virtual {p0, p1, v0}, Lmu;->b(Ljava/util/List;Ljava/lang/Runnable;)V
+    :try_start_0
+    iget-boolean v0, p0, Lig7;->o:Z
+
+    if-nez v0, :cond_0
+
+    iget-object p0, p0, Lig7;->c:Lvx1;
+
+    invoke-virtual {p0}, Lvx1;->r()V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_1
+
+    :cond_0
+    :goto_0
+    monitor-exit p1
 
     return-void
+
+    :goto_1
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
 .end method
 
-.method public final F(Ljava/util/List;Ljava/lang/Runnable;)V
-    .locals 0
+.method public final p()V
+    .locals 3
 
-    iget-object p0, p0, Lig7;->o:Lmu;
+    iget-object v0, p0, Lig7;->a:Ljava/lang/Object;
 
-    invoke-virtual {p0, p1, p2}, Lmu;->b(Ljava/util/List;Ljava/lang/Runnable;)V
+    monitor-enter v0
+
+    :try_start_0
+    iget-boolean v1, p0, Lig7;->o:Z
+
+    if-nez v1, :cond_0
+
+    monitor-exit v0
 
     return-void
-.end method
 
-.method public j()I
-    .locals 0
+    :catchall_0
+    move-exception p0
 
-    iget-object p0, p0, Lig7;->o:Lmu;
+    goto :goto_0
 
-    iget-object p0, p0, Lmu;->f:Ljava/util/List;
+    :cond_0
+    const/4 v1, 0x0
 
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    iput-boolean v1, p0, Lig7;->o:Z
 
-    move-result p0
+    iget-object v1, p0, Lig7;->b:Ldh7;
 
-    return p0
+    invoke-interface {v1}, Ldh7;->L()Lfh7;
+
+    move-result-object v1
+
+    iget-object v1, v1, Lfh7;->d:Lgg7;
+
+    sget-object v2, Lgg7;->o:Lgg7;
+
+    invoke-virtual {v1, v2}, Lgg7;->a(Lgg7;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lig7;->b:Ldh7;
+
+    invoke-virtual {p0, v1}, Lig7;->onStart(Ldh7;)V
+
+    :cond_1
+    monitor-exit v0
+
+    return-void
+
+    :goto_0
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
 .end method

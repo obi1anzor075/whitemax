@@ -1,5 +1,5 @@
 .class public final Lru/ok/tamtam/nano/Protos$CallHistoryState;
-.super Lgr8;
+.super Lnv8;
 .source "SourceFile"
 
 
@@ -51,7 +51,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lgr8;-><init>()V
+    invoke-direct {p0}, Lnv8;-><init>()V
 
     invoke-virtual {p0}, Lru/ok/tamtam/nano/Protos$CallHistoryState;->clear()Lru/ok/tamtam/nano/Protos$CallHistoryState;
 
@@ -65,7 +65,7 @@
 
     if-nez v0, :cond_1
 
-    sget-object v0, Ltz6;->b:Ljava/lang/Object;
+    sget-object v0, Lr37;->b:Ljava/lang/Object;
 
     monitor-enter v0
 
@@ -107,7 +107,7 @@
     return-object v0
 .end method
 
-.method public static parseFrom(Ln13;)Lru/ok/tamtam/nano/Protos$CallHistoryState;
+.method public static parseFrom(Lp33;)Lru/ok/tamtam/nano/Protos$CallHistoryState;
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -120,7 +120,7 @@
 
     invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$CallHistoryState;-><init>()V
 
-    invoke-virtual {v0, p0}, Lru/ok/tamtam/nano/Protos$CallHistoryState;->mergeFrom(Ln13;)Lru/ok/tamtam/nano/Protos$CallHistoryState;
+    invoke-virtual {v0, p0}, Lru/ok/tamtam/nano/Protos$CallHistoryState;->mergeFrom(Lp33;)Lru/ok/tamtam/nano/Protos$CallHistoryState;
 
     move-result-object p0
 
@@ -140,7 +140,7 @@
 
     invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$CallHistoryState;-><init>()V
 
-    invoke-static {v0, p0}, Lgr8;->mergeFrom(Lgr8;[B)Lgr8;
+    invoke-static {v0, p0}, Lnv8;->mergeFrom(Lnv8;[B)Lnv8;
 
     move-result-object p0
 
@@ -174,7 +174,7 @@
 
     const/4 v0, -0x1
 
-    iput v0, p0, Lgr8;->cachedSize:I
+    iput v0, p0, Lnv8;->cachedSize:I
 
     return-object p0
 .end method
@@ -188,7 +188,7 @@
 
     const/4 v1, 0x1
 
-    invoke-static {v1, v0}, Lo13;->i(ILgr8;)I
+    invoke-static {v1, v0}, Lq33;->i(ILnv8;)I
 
     move-result v0
 
@@ -208,7 +208,7 @@
 
     const/4 v5, 0x2
 
-    invoke-static {v5, v1, v2}, Lo13;->h(IJ)I
+    invoke-static {v5, v1, v2}, Lq33;->h(IJ)I
 
     move-result v1
 
@@ -223,7 +223,7 @@
 
     if-eqz v3, :cond_2
 
-    invoke-static {v4, v1, v2}, Lo13;->h(IJ)I
+    invoke-static {v4, v1, v2}, Lq33;->h(IJ)I
 
     move-result v1
 
@@ -236,7 +236,7 @@
 
     const/4 v1, 0x4
 
-    invoke-static {v1}, Lo13;->a(I)I
+    invoke-static {v1}, Lq33;->a(I)I
 
     move-result v1
 
@@ -249,7 +249,7 @@
 
     const/4 v1, 0x5
 
-    invoke-static {v1}, Lo13;->a(I)I
+    invoke-static {v1}, Lq33;->a(I)I
 
     move-result v1
 
@@ -264,17 +264,19 @@
 
     const/16 v2, 0xb
 
-    invoke-static {p0, v1, v4, v2}, Ltz6;->a(Ljava/util/Map;III)I
+    invoke-static {p0, v1, v4, v2}, Lr37;->a(Ljava/util/Map;III)I
 
     move-result p0
 
-    add-int/2addr v0, p0
+    add-int/2addr p0, v0
+
+    return p0
 
     :cond_5
     return v0
 .end method
 
-.method public bridge synthetic mergeFrom(Ln13;)Lgr8;
+.method public bridge synthetic mergeFrom(Lp33;)Lnv8;
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -283,15 +285,15 @@
     .end annotation
 
     .line 14
-    invoke-virtual {p0, p1}, Lru/ok/tamtam/nano/Protos$CallHistoryState;->mergeFrom(Ln13;)Lru/ok/tamtam/nano/Protos$CallHistoryState;
+    invoke-virtual {p0, p1}, Lru/ok/tamtam/nano/Protos$CallHistoryState;->mergeFrom(Lp33;)Lru/ok/tamtam/nano/Protos$CallHistoryState;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public mergeFrom(Ln13;)Lru/ok/tamtam/nano/Protos$CallHistoryState;
-    .locals 9
+.method public mergeFrom(Lp33;)Lru/ok/tamtam/nano/Protos$CallHistoryState;
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -299,12 +301,11 @@
     .end annotation
 
     .line 1
-    sget-object v8, Lxy6;->d:Lmt7;
+    sget-object v2, Lwqd;->f:Lmy7;
 
     .line 2
-    :cond_0
     :goto_0
-    invoke-virtual {p1}, Ln13;->s()I
+    invoke-virtual {p1}, Lp33;->s()I
 
     move-result v0
 
@@ -335,13 +336,18 @@
     if-eq v0, v1, :cond_1
 
     .line 3
-    invoke-virtual {p1, v0}, Ln13;->u(I)Z
+    invoke-virtual {p1, v0}, Lp33;->u(I)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    return-object p0
+    goto :goto_2
+
+    :cond_0
+    move-object v0, p1
+
+    goto :goto_1
 
     .line 4
     :cond_1
@@ -351,94 +357,106 @@
 
     invoke-direct {v5}, Lru/ok/tamtam/nano/Protos$CallHistoryState$MissedMessagesItem;-><init>()V
 
-    const/4 v3, 0x3
-
-    const/16 v4, 0xb
-
     const/16 v6, 0x8
 
     const/16 v7, 0x12
 
+    const/4 v3, 0x3
+
+    const/16 v4, 0xb
+
     move-object v0, p1
 
-    move-object v2, v8
+    invoke-static/range {v0 .. v7}, Lr37;->b(Lp33;Ljava/util/Map;Lmy7;IILnv8;II)Ljava/util/Map;
 
-    invoke-static/range {v0 .. v7}, Ltz6;->b(Ln13;Ljava/util/Map;Lmt7;IILgr8;II)Ljava/util/Map;
+    move-result-object p1
 
-    move-result-object v0
+    iput-object p1, p0, Lru/ok/tamtam/nano/Protos$CallHistoryState;->missedMessagesIds:Ljava/util/Map;
 
-    iput-object v0, p0, Lru/ok/tamtam/nano/Protos$CallHistoryState;->missedMessagesIds:Ljava/util/Map;
+    goto :goto_1
 
-    goto :goto_0
+    :cond_2
+    move-object v0, p1
 
     .line 5
-    :cond_2
-    invoke-virtual {p1}, Ln13;->f()Z
+    invoke-virtual {v0}, Lp33;->f()Z
 
-    move-result v0
+    move-result p1
 
-    iput-boolean v0, p0, Lru/ok/tamtam/nano/Protos$CallHistoryState;->hasPrev:Z
+    iput-boolean p1, p0, Lru/ok/tamtam/nano/Protos$CallHistoryState;->hasPrev:Z
 
-    goto :goto_0
+    goto :goto_1
+
+    :cond_3
+    move-object v0, p1
 
     .line 6
-    :cond_3
-    invoke-virtual {p1}, Ln13;->f()Z
+    invoke-virtual {v0}, Lp33;->f()Z
 
-    move-result v0
+    move-result p1
 
-    iput-boolean v0, p0, Lru/ok/tamtam/nano/Protos$CallHistoryState;->hasNext:Z
+    iput-boolean p1, p0, Lru/ok/tamtam/nano/Protos$CallHistoryState;->hasNext:Z
 
-    goto :goto_0
+    goto :goto_1
+
+    :cond_4
+    move-object v0, p1
 
     .line 7
-    :cond_4
-    invoke-virtual {p1}, Ln13;->q()J
+    invoke-virtual {v0}, Lp33;->q()J
 
-    move-result-wide v0
+    move-result-wide v3
 
     .line 8
-    iput-wide v0, p0, Lru/ok/tamtam/nano/Protos$CallHistoryState;->backwardMarker:J
+    iput-wide v3, p0, Lru/ok/tamtam/nano/Protos$CallHistoryState;->backwardMarker:J
 
-    goto :goto_0
+    goto :goto_1
+
+    :cond_5
+    move-object v0, p1
 
     .line 9
-    :cond_5
-    invoke-virtual {p1}, Ln13;->q()J
+    invoke-virtual {v0}, Lp33;->q()J
 
-    move-result-wide v0
+    move-result-wide v3
 
     .line 10
-    iput-wide v0, p0, Lru/ok/tamtam/nano/Protos$CallHistoryState;->forwardMarker:J
+    iput-wide v3, p0, Lru/ok/tamtam/nano/Protos$CallHistoryState;->forwardMarker:J
 
-    goto :goto_0
+    goto :goto_1
+
+    :cond_6
+    move-object v0, p1
 
     .line 11
-    :cond_6
-    iget-object v0, p0, Lru/ok/tamtam/nano/Protos$CallHistoryState;->chunk:Lru/ok/tamtam/nano/Protos$Chat$Chunk;
+    iget-object p1, p0, Lru/ok/tamtam/nano/Protos$CallHistoryState;->chunk:Lru/ok/tamtam/nano/Protos$Chat$Chunk;
 
-    if-nez v0, :cond_7
+    if-nez p1, :cond_7
 
     .line 12
-    new-instance v0, Lru/ok/tamtam/nano/Protos$Chat$Chunk;
+    new-instance p1, Lru/ok/tamtam/nano/Protos$Chat$Chunk;
 
-    invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$Chat$Chunk;-><init>()V
+    invoke-direct {p1}, Lru/ok/tamtam/nano/Protos$Chat$Chunk;-><init>()V
 
-    iput-object v0, p0, Lru/ok/tamtam/nano/Protos$CallHistoryState;->chunk:Lru/ok/tamtam/nano/Protos$Chat$Chunk;
+    iput-object p1, p0, Lru/ok/tamtam/nano/Protos$CallHistoryState;->chunk:Lru/ok/tamtam/nano/Protos$Chat$Chunk;
 
     .line 13
     :cond_7
-    iget-object v0, p0, Lru/ok/tamtam/nano/Protos$CallHistoryState;->chunk:Lru/ok/tamtam/nano/Protos$Chat$Chunk;
+    iget-object p1, p0, Lru/ok/tamtam/nano/Protos$CallHistoryState;->chunk:Lru/ok/tamtam/nano/Protos$Chat$Chunk;
 
-    invoke-virtual {p1, v0}, Ln13;->j(Lgr8;)V
+    invoke-virtual {v0, p1}, Lp33;->j(Lnv8;)V
+
+    :goto_1
+    move-object p1, v0
 
     goto :goto_0
 
     :cond_8
+    :goto_2
     return-object p0
 .end method
 
-.method public writeTo(Lo13;)V
+.method public writeTo(Lq33;)V
     .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -452,7 +470,7 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {p1, v1, v0}, Lo13;->y(ILgr8;)V
+    invoke-virtual {p1, v1, v0}, Lq33;->y(ILnv8;)V
 
     :cond_0
     iget-wide v0, p0, Lru/ok/tamtam/nano/Protos$CallHistoryState;->forwardMarker:J
@@ -465,7 +483,7 @@
 
     const/4 v4, 0x2
 
-    invoke-virtual {p1, v4, v0, v1}, Lo13;->x(IJ)V
+    invoke-virtual {p1, v4, v0, v1}, Lq33;->x(IJ)V
 
     :cond_1
     iget-wide v0, p0, Lru/ok/tamtam/nano/Protos$CallHistoryState;->backwardMarker:J
@@ -476,7 +494,7 @@
 
     if-eqz v2, :cond_2
 
-    invoke-virtual {p1, v3, v0, v1}, Lo13;->x(IJ)V
+    invoke-virtual {p1, v3, v0, v1}, Lq33;->x(IJ)V
 
     :cond_2
     iget-boolean v0, p0, Lru/ok/tamtam/nano/Protos$CallHistoryState;->hasNext:Z
@@ -485,7 +503,7 @@
 
     const/4 v1, 0x4
 
-    invoke-virtual {p1, v1, v0}, Lo13;->r(IZ)V
+    invoke-virtual {p1, v1, v0}, Lq33;->r(IZ)V
 
     :cond_3
     iget-boolean v0, p0, Lru/ok/tamtam/nano/Protos$CallHistoryState;->hasPrev:Z
@@ -494,7 +512,7 @@
 
     const/4 v1, 0x5
 
-    invoke-virtual {p1, v1, v0}, Lo13;->r(IZ)V
+    invoke-virtual {p1, v1, v0}, Lq33;->r(IZ)V
 
     :cond_4
     iget-object p0, p0, Lru/ok/tamtam/nano/Protos$CallHistoryState;->missedMessagesIds:Ljava/util/Map;
@@ -505,7 +523,7 @@
 
     const/16 v1, 0xb
 
-    invoke-static {p1, p0, v0, v3, v1}, Ltz6;->d(Lo13;Ljava/util/Map;III)V
+    invoke-static {p1, p0, v0, v3, v1}, Lr37;->d(Lq33;Ljava/util/Map;III)V
 
     :cond_5
     return-void

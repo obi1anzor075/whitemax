@@ -2,216 +2,268 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lq6c;
-
 
 # instance fields
-.field public final a:Landroidx/recyclerview/widget/RecyclerView;
+.field public final a:Lorg/webrtc/DataChannel;
 
-.field public b:Landroid/view/View;
+.field public final b:Ls1c;
 
-.field public final c:Landroid/graphics/Rect;
+.field public final c:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+.field public final d:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+.field public final e:Ljava/util/concurrent/CopyOnWriteArrayList;
 
 
 # direct methods
-.method public constructor <init>(Landroidx/recyclerview/widget/RecyclerView;)V
-    .locals 0
+.method public constructor <init>(Lorg/webrtc/DataChannel;Ls1c;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lu24;->a:Landroidx/recyclerview/widget/RecyclerView;
+    new-instance v0, Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    new-instance p1, Landroid/graphics/Rect;
+    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
 
-    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
+    iput-object v0, p0, Lu24;->c:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    iput-object p1, p0, Lu24;->c:Landroid/graphics/Rect;
+    new-instance v0, Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
+
+    iput-object v0, p0, Lu24;->d:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    new-instance v0, Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
+
+    iput-object v0, p0, Lu24;->e:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    iput-object p1, p0, Lu24;->a:Lorg/webrtc/DataChannel;
+
+    iput-object p2, p0, Lu24;->b:Ls1c;
+
+    new-instance p2, Lkkc;
+
+    const/16 v0, 0xd
+
+    const/4 v1, 0x0
+
+    invoke-direct {p2, p0, p1, v1, v0}, Lkkc;-><init>(Ljava/lang/Object;Ljava/lang/Object;ZI)V
+
+    invoke-virtual {p1, p2}, Lorg/webrtc/DataChannel;->registerObserver(Lorg/webrtc/DataChannel$Observer;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/view/MotionEvent;)V
+.method public final a(Lymc;)V
     .locals 0
 
+    if-eqz p1, :cond_0
+
+    iget-object p0, p0, Lu24;->d:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->add(Ljava/lang/Object;)Z
+
     return-void
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "Illegal \'listener\' value: null"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method
 
-.method public final c(Landroidx/recyclerview/widget/RecyclerView;Landroid/view/MotionEvent;)Z
-    .locals 9
+.method public final b()Z
+    .locals 1
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
+    iget-object p0, p0, Lu24;->a:Lorg/webrtc/DataChannel;
 
-    move-result v0
+    invoke-virtual {p0}, Lorg/webrtc/DataChannel;->state()Lorg/webrtc/DataChannel$State;
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
+    move-result-object p0
+
+    sget-object v0, Lorg/webrtc/DataChannel$State;->OPEN:Lorg/webrtc/DataChannel$State;
+
+    if-ne p0, v0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final c(Lymc;)V
+    .locals 0
+
+    if-eqz p1, :cond_0
+
+    iget-object p0, p0, Lu24;->d:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
+
+    return-void
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "Illegal \'listener\' value: null"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final varargs d([Ljava/nio/ByteBuffer;)V
+    .locals 5
+
+    iget-object v0, p0, Lu24;->d:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    iget-object v2, p0, Lu24;->a:Landroidx/recyclerview/widget/RecyclerView;
+    if-eqz v1, :cond_0
 
-    invoke-virtual {v2, v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->H(FF)Landroid/view/View;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x0
+    check-cast v1, Lymc;
 
-    if-eqz v0, :cond_0
-
-    return v1
-
-    :cond_0
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v0
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v3
-
-    move v4, v1
-
-    :goto_0
-    invoke-virtual {v2}, Landroid/view/ViewGroup;->getChildCount()I
-
-    move-result v5
-
-    if-ge v4, v5, :cond_4
-
-    add-int/lit8 v5, v4, 0x1
-
-    invoke-virtual {v2, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v4
-
-    if-eqz v4, :cond_3
-
-    invoke-virtual {v2}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/a;
-
-    move-result-object v6
-
-    iget-object v7, p0, Lu24;->c:Landroid/graphics/Rect;
-
-    if-eqz v6, :cond_1
-
-    invoke-virtual {v6, v7, v4}, Landroidx/recyclerview/widget/a;->A(Landroid/graphics/Rect;Landroid/view/View;)V
-
-    :cond_1
-    float-to-int v6, v0
-
-    float-to-int v8, v3
-
-    invoke-virtual {v7, v6, v8}, Landroid/graphics/Rect;->contains(II)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_2
-
-    goto :goto_1
-
-    :cond_2
-    move v4, v5
+    :try_start_0
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
-    :cond_3
-    new-instance p0, Ljava/lang/IndexOutOfBoundsException;
+    :catchall_0
+    move-exception v1
 
-    invoke-direct {p0}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
+    new-instance v2, Lru/ok/android/webrtc/protocol/exceptions/RtcInternalHandleException;
 
-    throw p0
+    invoke-direct {v2, v1}, Ljava/lang/Exception;-><init>(Ljava/lang/Throwable;)V
 
-    :cond_4
-    const/4 v4, 0x0
+    const-string v1, "DataChannelRtcTransport"
 
-    :goto_1
-    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getScrollState()I
+    const-string v3, "rtc.datachannel.listen.send"
 
-    move-result p1
+    iget-object v4, p0, Lu24;->b:Ls1c;
 
-    if-eqz p1, :cond_5
+    invoke-interface {v4, v1, v3, v2}, Ls1c;->reportException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    const/4 p1, 0x1
+    goto :goto_0
 
-    goto :goto_2
+    :cond_0
+    iget-object p0, p0, Lu24;->a:Lorg/webrtc/DataChannel;
 
-    :cond_5
-    move p1, v1
+    const/4 v0, 0x1
 
-    :goto_2
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
+    invoke-virtual {p0, v0, p1}, Lorg/webrtc/DataChannel;->sendMultiple(Z[Ljava/nio/ByteBuffer;)Z
 
-    move-result v0
+    return-void
+.end method
 
-    if-nez v0, :cond_6
+.method public final e(I[B)Z
+    .locals 5
 
-    iput-object v4, p0, Lu24;->b:Landroid/view/View;
+    if-eqz p2, :cond_2
 
-    :cond_6
-    iget-object p0, p0, Lu24;->b:Landroid/view/View;
+    iget-object v0, p0, Lu24;->d:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    if-nez p0, :cond_7
-
-    return v1
-
-    :cond_7
-    invoke-static {p2}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
+    invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    if-nez p1, :cond_8
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-static {v4, p0}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result v1
 
-    move-result p1
+    if-eqz v1, :cond_0
 
-    if-nez p1, :cond_9
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    :cond_8
-    const/4 p1, 0x3
+    move-result-object v1
 
-    invoke-virtual {v0, p1}, Landroid/view/MotionEvent;->setAction(I)V
+    check-cast v1, Lymc;
 
-    :cond_9
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
+    :try_start_0
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result p1
+    invoke-static {p2}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    neg-float p1, p1
+    goto :goto_0
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    :catchall_0
+    move-exception v1
 
-    add-float/2addr p1, v2
+    new-instance v2, Lru/ok/android/webrtc/protocol/exceptions/RtcInternalHandleException;
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
+    invoke-direct {v2, v1}, Ljava/lang/Exception;-><init>(Ljava/lang/Throwable;)V
 
-    move-result p2
+    const-string v1, "DataChannelRtcTransport"
 
-    neg-float p2, p2
+    const-string v3, "rtc.datachannel.listen.send"
 
-    invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
+    iget-object v4, p0, Lu24;->b:Ls1c;
 
-    move-result v2
+    invoke-interface {v4, v1, v3, v2}, Ls1c;->reportException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    div-int/lit8 v2, v2, 0x2
+    goto :goto_0
 
-    int-to-float v2, v2
+    :cond_0
+    invoke-static {p2}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
 
-    add-float/2addr p2, v2
+    move-result-object p2
 
-    invoke-virtual {v0, p1, p2}, Landroid/view/MotionEvent;->offsetLocation(FF)V
+    new-instance v0, Lorg/webrtc/DataChannel$Buffer;
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+    const/4 v1, 0x2
 
-    invoke-virtual {v0}, Landroid/view/MotionEvent;->recycle()V
+    if-ne p1, v1, :cond_1
 
-    return v1
-.end method
+    const/4 p1, 0x1
 
-.method public final e(Z)V
-    .locals 0
+    goto :goto_1
 
-    return-void
+    :cond_1
+    const/4 p1, 0x0
+
+    :goto_1
+    invoke-direct {v0, p2, p1}, Lorg/webrtc/DataChannel$Buffer;-><init>(Ljava/nio/ByteBuffer;Z)V
+
+    iget-object p0, p0, Lu24;->a:Lorg/webrtc/DataChannel;
+
+    invoke-virtual {p0, v0}, Lorg/webrtc/DataChannel;->send(Lorg/webrtc/DataChannel$Buffer;)Z
+
+    move-result p0
+
+    return p0
+
+    :cond_2
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "Illegal \'command\' value: null"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

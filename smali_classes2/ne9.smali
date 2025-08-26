@@ -1,147 +1,55 @@
 .class public final Lne9;
-.super Ljava/lang/Object;
+.super Lbu3;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/os/Parcelable;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lne9;",
-            ">;"
-        }
-    .end annotation
-.end field
 
 
 # instance fields
-.field public final a:I
+.field public X:Lkl7;
 
-.field public final b:Z
+.field public Y:Lkl7;
 
-.field public final c:Z
+.field public synthetic Z:Ljava/lang/Object;
+
+.field public o:Lse9;
+
+.field public final synthetic o0:Lse9;
+
+.field public p0:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lse9;Lbu3;)V
+    .locals 0
 
-    new-instance v0, Lvf7;
+    iput-object p1, p0, Lne9;->o0:Lse9;
 
-    const/16 v1, 0x1d
-
-    invoke-direct {v0, v1}, Lvf7;-><init>(I)V
-
-    sput-object v0, Lne9;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Parcel;)V
-    .locals 3
-
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 6
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Lne9;->a:I
-
-    .line 7
-    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    if-eqz v0, :cond_0
-
-    move v0, v2
-
-    goto :goto_0
-
-    :cond_0
-    move v0, v1
-
-    :goto_0
-    iput-boolean v0, p0, Lne9;->b:Z
-
-    .line 8
-    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    move v1, v2
-
-    :cond_1
-    iput-boolean v1, p0, Lne9;->c:Z
-
-    return-void
-.end method
-
-.method public constructor <init>(Lme9;)V
-    .locals 1
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    iget v0, p1, Lme9;->a:I
-
-    iput v0, p0, Lne9;->a:I
-
-    .line 3
-    iget-boolean v0, p1, Lme9;->b:Z
-
-    iput-boolean v0, p0, Lne9;->b:Z
-
-    .line 4
-    iget-boolean p1, p1, Lme9;->c:Z
-
-    iput-boolean p1, p0, Lne9;->c:Z
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
-    .locals 0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    const/4 p0, 0x0
+    iput-object p1, p0, Lne9;->Z:Ljava/lang/Object;
 
-    return p0
-.end method
+    iget p1, p0, Lne9;->p0:I
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
+    const/high16 v0, -0x80000000
 
-    iget p2, p0, Lne9;->a:I
+    or-int/2addr p1, v0
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    iput p1, p0, Lne9;->p0:I
 
-    iget-boolean p2, p0, Lne9;->b:Z
+    iget-object p1, p0, Lne9;->o0:Lse9;
 
-    int-to-byte p2, p2
+    const/4 v0, 0x0
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByte(B)V
+    invoke-virtual {p1, v0, p0}, Lse9;->b(Ljava/util/Set;Lbu3;)Ljava/io/Serializable;
 
-    iget-boolean p0, p0, Lne9;->c:Z
+    move-result-object p0
 
-    int-to-byte p0, p0
-
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeByte(B)V
-
-    return-void
+    return-object p0
 .end method

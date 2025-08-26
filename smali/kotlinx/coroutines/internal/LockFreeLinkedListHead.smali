@@ -15,10 +15,10 @@
         "()V",
         "Lkotlin/Function1;",
         "Lkotlinx/coroutines/internal/Node;",
-        "Ljue;",
+        "Le5f;",
         "block",
         "forEach",
-        "(Lu16;)V",
+        "(Lx56;)V",
         "",
         "remove",
         "()Ljava/lang/Void;",
@@ -33,6 +33,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -47,12 +48,12 @@
 
 
 # virtual methods
-.method public final forEach(Lu16;)V
+.method public final forEach(Lx56;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lu16;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -64,13 +65,13 @@
     check-cast v0, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
 
     :goto_0
-    invoke-static {v0, p0}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, p0}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    invoke-interface {p1, v0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {v0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->getNextNode()Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
 
@@ -97,10 +98,6 @@
 
     .line 2
     const-string v0, "head cannot be removed"
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
 
     invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

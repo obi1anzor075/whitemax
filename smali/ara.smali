@@ -1,49 +1,39 @@
 .class public final Lara;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public X:I
+.field public final a:Ljava/lang/String;
 
-.field public final synthetic Y:Lik8;
+.field public final b:J
 
-.field public synthetic o:Ljava/lang/Object;
+.field public final c:Ljava/util/List;
+
+.field public final d:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Lik8;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Ljava/lang/String;JLjava/util/ArrayList;Ljava/util/List;)V
     .locals 0
 
-    iput-object p1, p0, Lara;->Y:Lik8;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lara;->a:Ljava/lang/String;
+
+    iput-wide p2, p0, Lara;->b:J
+
+    invoke-static {p4}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lara;->c:Ljava/util/List;
+
+    invoke-static {p5}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lara;->d:Ljava/util/List;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    iput-object p1, p0, Lara;->o:Ljava/lang/Object;
-
-    iget p1, p0, Lara;->X:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lara;->X:I
-
-    iget-object p1, p0, Lara;->Y:Lik8;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lik8;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
 .end method

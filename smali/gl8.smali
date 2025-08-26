@@ -1,14 +1,25 @@
-.class public interface abstract Lgl8;
-.super Ljava/lang/Object;
+.class public final Lgl8;
+.super Ljof;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract k(Ljava/lang/Object;)V
-.end method
+# instance fields
+.field public final b:Lj35;
 
-.method public abstract m(Ljava/lang/Object;)V
-.end method
 
-.method public abstract u(Ljava/lang/Object;)V
+# direct methods
+.method public constructor <init>()V
+    .locals 2
+
+    invoke-direct {p0}, Ljof;-><init>()V
+
+    new-instance v0, Lj35;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lj35;-><init>(I)V
+
+    iput-object v0, p0, Lgl8;->b:Lj35;
+
+    return-void
 .end method

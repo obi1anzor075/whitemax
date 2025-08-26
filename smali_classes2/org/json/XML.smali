@@ -309,13 +309,12 @@
     :cond_3
     const/4 p0, 0x0
 
-    goto :goto_1
+    return p0
 
     :cond_4
     :goto_0
     const/4 p0, 0x1
 
-    :goto_1
     return p0
 .end method
 
@@ -359,7 +358,7 @@
 
     const-string v2, "\' contains a space character."
 
-    invoke-static {v1, p0, v2}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, p0, v2}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -852,7 +851,7 @@
 
     if-eqz v0, :cond_0
 
-    return-object p0
+    goto/16 :goto_1
 
     :cond_0
     const-string v0, "true"
@@ -1017,6 +1016,7 @@
 
     :catch_0
     :cond_9
+    :goto_1
     return-object p0
 .end method
 
@@ -1541,14 +1541,13 @@
     .line 52
     const-string p1, "\""
 
-    .line 53
-    invoke-static {p1, p0, p1}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p0, p1}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    goto :goto_9
+    return-object p0
 
-    .line 54
+    .line 53
     :cond_13
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -1558,28 +1557,26 @@
 
     if-nez v0, :cond_14
 
-    .line 55
-    invoke-static {v1, p1, v2}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .line 54
+    invoke-static {v1, p1, v2}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    goto :goto_9
+    return-object p0
 
-    .line 56
+    .line 55
     :cond_14
     const-string v0, ">"
 
-    .line 57
-    invoke-static {v1, p1, v0, p0, v3}, Lc3d;->j(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1, p1, v0, p0, v3}, Lzge;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p0
 
-    .line 58
-    invoke-static {p0, p1, v0}, Lwn6;->l(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .line 56
+    invoke-static {p0, p1, v0}, Lm26;->j(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    :goto_9
     return-object p0
 .end method
 

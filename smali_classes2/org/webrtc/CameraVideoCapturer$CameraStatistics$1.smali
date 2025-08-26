@@ -141,7 +141,7 @@
 
     invoke-interface {p0, v0}, Lorg/webrtc/CameraVideoCapturer$CameraEventsHandler;->onCameraFreezed(Ljava/lang/String;)V
 
-    goto :goto_0
+    return-void
 
     :cond_0
     iget-object p0, p0, Lorg/webrtc/CameraVideoCapturer$CameraStatistics$1;->this$0:Lorg/webrtc/CameraVideoCapturer$CameraStatistics;
@@ -154,7 +154,6 @@
 
     invoke-interface {p0, v0}, Lorg/webrtc/CameraVideoCapturer$CameraEventsHandler;->onCameraFreezed(Ljava/lang/String;)V
 
-    :goto_0
     return-void
 
     :cond_1

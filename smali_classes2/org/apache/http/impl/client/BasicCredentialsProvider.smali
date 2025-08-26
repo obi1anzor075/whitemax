@@ -107,9 +107,9 @@
 
     move-result-object p0
 
-    move-object v0, p0
+    check-cast p0, Lorg/apache/http/auth/Credentials;
 
-    check-cast v0, Lorg/apache/http/auth/Credentials;
+    return-object p0
 
     :cond_2
     return-object v0

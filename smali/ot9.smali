@@ -1,68 +1,48 @@
 .class public final Lot9;
-.super Lax7;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lf36;
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public final a:Lnv9;
-
-.field public final b:J
+.field public final a:Ll9e;
 
 
 # direct methods
-.method public constructor <init>(Lps9;)V
-    .locals 2
+.method public constructor <init>(Ll9e;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lot9;->a:Lnv9;
-
-    const-wide/16 v0, 0x0
-
-    iput-wide v0, p0, Lot9;->b:J
+    iput-object p1, p0, Lot9;->a:Ll9e;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c()Lms9;
-    .locals 7
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    new-instance v6, Lmt9;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const/4 v4, 0x0
+    const-string v1, "NotificationLite.Subscription["
 
-    const/4 v5, 0x0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lot9;->a:Lnv9;
+    iget-object p0, p0, Lot9;->a:Ll9e;
 
-    iget-wide v2, p0, Lot9;->b:J
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-object v0, v6
+    const-string p0, "]"
 
-    invoke-direct/range {v0 .. v5}, Lmt9;-><init>(Lnv9;JLjava/lang/Object;Z)V
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-object v6
-.end method
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-.method public final g(Lwx7;)V
-    .locals 4
+    move-result-object p0
 
-    new-instance v0, Lnt9;
-
-    iget-wide v1, p0, Lot9;->b:J
-
-    const/4 v3, 0x0
-
-    invoke-direct {v0, p1, v1, v2, v3}, Lnt9;-><init>(Ljava/lang/Object;JI)V
-
-    iget-object p0, p0, Lot9;->a:Lnv9;
-
-    invoke-interface {p0, v0}, Lnv9;->a(Lbw9;)V
-
-    return-void
+    return-object p0
 .end method

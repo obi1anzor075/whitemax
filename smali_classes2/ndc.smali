@@ -1,74 +1,73 @@
-.class public final synthetic Lndc;
-.super Ljava/lang/Object;
+.class public final Lndc;
+.super Lrh0;
 .source "SourceFile"
-
-# interfaces
-.implements Lu16;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Ludc;
-
-.field public final synthetic c:Ljava/lang/String;
+.field public final synthetic a:Lf28;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ludc;Ljava/lang/String;I)V
+.method public constructor <init>(Lf28;)V
     .locals 0
 
-    iput p3, p0, Lndc;->a:I
-
-    iput-object p1, p0, Lndc;->b:Ludc;
-
-    iput-object p2, p0, Lndc;->c:Ljava/lang/String;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lndc;->a:Lf28;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final e(Lg0;)V
     .locals 1
 
-    iget v0, p0, Lndc;->a:I
+    iget-object p0, p0, Lndc;->a:Lf28;
 
-    check-cast p1, Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0}, Lf28;->g()Z
 
-    packed-switch v0, :pswitch_data_0
+    move-result v0
 
-    iget-object v0, p0, Lndc;->b:Ludc;
+    if-nez v0, :cond_0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p1}, Lg0;->c()Ljava/lang/Throwable;
 
-    iget-object p0, p0, Lndc;->c:Ljava/lang/String;
+    move-result-object p1
 
-    invoke-static {v0, p0, p1}, Ludc;->a(Ludc;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lf28;->onError(Ljava/lang/Throwable;)V
 
-    move-result-object p0
+    :cond_0
+    return-void
+.end method
 
-    return-object p0
+.method public final g(Landroid/graphics/Bitmap;)V
+    .locals 1
 
-    :pswitch_0
-    iget-object v0, p0, Lndc;->b:Ludc;
+    iget-object p0, p0, Lndc;->a:Lf28;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p0}, Lf28;->g()Z
 
-    iget-object p0, p0, Lndc;->c:Ljava/lang/String;
+    move-result v0
 
-    invoke-static {v0, p0, p1}, Ludc;->b(Ludc;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    if-eqz v0, :cond_1
 
-    move-result-object p0
+    if-eqz p1, :cond_0
 
-    return-object p0
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
 
-    nop
+    :cond_0
+    return-void
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    :cond_1
+    if-nez p1, :cond_2
+
+    invoke-virtual {p0}, Lf28;->b()V
+
+    return-void
+
+    :cond_2
+    invoke-virtual {p0, p1}, Lf28;->a(Ljava/lang/Object;)V
+
+    return-void
 .end method

@@ -388,14 +388,13 @@
 
     const/4 p0, 0x0
 
-    goto :goto_0
+    return p0
 
     :cond_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result p0
 
-    :goto_0
     return p0
 .end method
 
@@ -443,14 +442,13 @@
 
     const/4 p0, 0x0
 
-    goto :goto_0
+    return p0
 
     :cond_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result p0
 
-    :goto_0
     return p0
 .end method
 
@@ -555,7 +553,7 @@
 
     if-nez p0, :cond_0
 
-    return-void
+    goto :goto_1
 
     :cond_0
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -589,6 +587,7 @@
     goto :goto_0
 
     :cond_2
+    :goto_1
     return-void
 .end method
 
@@ -599,7 +598,7 @@
 
     if-nez p0, :cond_0
 
-    return-void
+    goto :goto_1
 
     :cond_0
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -633,6 +632,7 @@
     goto :goto_0
 
     :cond_2
+    :goto_1
     return-void
 .end method
 

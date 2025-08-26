@@ -2,40 +2,47 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lt3f;
+
 
 # instance fields
 .field public final a:I
 
-.field public final b:I
+.field public final b:Lmoe;
 
-.field public final c:I
+.field public final c:Lmoe;
 
-.field public final d:I
-
-.field public final e:I
+.field public final d:Lr3f;
 
 
 # direct methods
-.method public constructor <init>(IIIII)V
+.method public constructor <init>(ILmoe;Lmoe;Lr3f;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput p1, p0, Ln3f;->a:I
 
-    iput p2, p0, Ln3f;->b:I
+    iput-object p2, p0, Ln3f;->b:Lmoe;
 
-    iput p3, p0, Ln3f;->c:I
+    iput-object p3, p0, Ln3f;->c:Lmoe;
 
-    iput p4, p0, Ln3f;->d:I
-
-    iput p5, p0, Ln3f;->e:I
+    iput-object p4, p0, Ln3f;->d:Lr3f;
 
     return-void
 .end method
 
 
 # virtual methods
+.method public final a()Lmoe;
+    .locals 0
+
+    iget-object p0, p0, Ln3f;->c:Lmoe;
+
+    return-object p0
+.end method
+
 .method public final equals(Ljava/lang/Object;)Z
     .locals 4
 
@@ -57,56 +64,75 @@
     :cond_1
     check-cast p1, Ln3f;
 
-    iget v1, p1, Ln3f;->a:I
+    iget v1, p0, Ln3f;->a:I
 
-    iget v3, p0, Ln3f;->a:I
+    iget v3, p1, Ln3f;->a:I
 
-    if-eq v3, v1, :cond_2
+    if-eq v1, v3, :cond_2
 
     return v2
 
     :cond_2
-    iget v1, p0, Ln3f;->b:I
+    iget-object v1, p0, Ln3f;->b:Lmoe;
 
-    iget v3, p1, Ln3f;->b:I
+    iget-object v3, p1, Ln3f;->b:Lmoe;
 
-    if-eq v1, v3, :cond_3
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
 
     return v2
 
     :cond_3
-    iget v1, p0, Ln3f;->c:I
+    iget-object v1, p0, Ln3f;->c:Lmoe;
 
-    iget v3, p1, Ln3f;->c:I
+    iget-object v3, p1, Ln3f;->c:Lmoe;
 
-    if-eq v1, v3, :cond_4
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_4
 
     return v2
 
     :cond_4
-    iget v1, p0, Ln3f;->d:I
+    iget-object p0, p0, Ln3f;->d:Lr3f;
 
-    iget v3, p1, Ln3f;->d:I
+    iget-object p1, p1, Ln3f;->d:Lr3f;
 
-    if-eq v1, v3, :cond_5
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_5
 
     return v2
 
     :cond_5
-    iget p0, p0, Ln3f;->e:I
-
-    iget p1, p1, Ln3f;->e:I
-
-    if-eq p0, p1, :cond_6
-
-    return v2
-
-    :cond_6
     return v0
 .end method
 
+.method public final getIcon()I
+    .locals 0
+
+    iget p0, p0, Ln3f;->a:I
+
+    return p0
+.end method
+
+.method public final getTitle()Lmoe;
+    .locals 0
+
+    iget-object p0, p0, Ln3f;->b:Lmoe;
+
+    return-object p0
+.end method
+
 .method public final hashCode()I
-    .locals 2
+    .locals 3
 
     iget v0, p0, Ln3f;->a:I
 
@@ -114,29 +140,25 @@
 
     move-result v0
 
-    mul-int/lit8 v0, v0, 0x1f
+    const/16 v1, 0x1f
 
-    iget v1, p0, Ln3f;->b:I
+    mul-int/2addr v0, v1
 
-    invoke-static {v1, v0}, Lam7;->a(II)I
+    iget-object v2, p0, Ln3f;->b:Lmoe;
 
-    move-result v0
-
-    iget v1, p0, Ln3f;->c:I
-
-    invoke-static {v1, v0}, Lam7;->a(II)I
+    invoke-static {v0, v1, v2}, Lpg0;->c(IILmoe;)I
 
     move-result v0
 
-    iget v1, p0, Ln3f;->d:I
+    iget-object v2, p0, Ln3f;->c:Lmoe;
 
-    invoke-static {v1, v0}, Lam7;->a(II)I
+    invoke-static {v0, v1, v2}, Lpg0;->c(IILmoe;)I
 
     move-result v0
 
-    iget p0, p0, Ln3f;->e:I
+    iget-object p0, p0, Ln3f;->d:Lr3f;
 
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+    invoke-virtual {p0}, Lr3f;->hashCode()I
 
     move-result p0
 
@@ -150,7 +172,7 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "VideoDimension(landscapeWidth="
+    const-string v1, "AddEmail(icon="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -158,39 +180,35 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v1, ", landscapeHeight="
+    const-string v1, ", title="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v1, p0, Ln3f;->b:I
+    iget-object v1, p0, Ln3f;->b:Lmoe;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", portraitWidth="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Ln3f;->c:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", portraitHeight="
+    const-string v1, ", subtitle="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v1, p0, Ln3f;->d:I
+    iget-object v1, p0, Ln3f;->c:Lmoe;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", fps="
+    const-string v1, ", inputState="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget p0, p0, Ln3f;->e:I
+    iget-object p0, p0, Ln3f;->d:Lr3f;
 
-    const-string v1, ")"
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, p0, v1}, Lwn6;->j(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

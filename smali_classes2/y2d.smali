@@ -2,57 +2,32 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lij1;
-
 
 # instance fields
-.field public final a:Ljava/util/concurrent/CopyOnWriteArraySet;
+.field public final a:Lrp7;
+
+.field public b:Lsef;
+
+.field public c:Lota;
+
+.field public d:Ljava/lang/String;
+
+.field public e:Z
+
+.field public f:Z
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lrp7;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
+    const/4 v0, 0x1
 
-    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
+    iput-boolean v0, p0, Ly2d;->f:Z
 
-    iput-object v0, p0, Ly2d;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
+    iput-object p1, p0, Ly2d;->a:Lrp7;
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Lotf;)V
-    .locals 1
-
-    iget-object p0, p0, Ly2d;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
-
-    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lij1;
-
-    invoke-interface {v0, p1}, Lij1;->a(Lotf;)V
-
-    goto :goto_0
-
-    :cond_0
     return-void
 .end method

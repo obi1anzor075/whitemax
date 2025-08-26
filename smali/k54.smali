@@ -1,106 +1,108 @@
-.class public final Lk54;
+.class public abstract Lk54;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lo3e;
-
 
 # static fields
-.field public static final b:J
+.field public static final a:Z
 
+.field public static final b:Lnc3;
 
-# instance fields
-.field public final a:Landroid/app/ActivityManager;
+.field public static final synthetic c:Lj54;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 4
 
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
+    new-instance v0, Ljava/lang/Exception;
 
-    const-wide/16 v1, 0x5
+    invoke-direct {v0}, Ljava/lang/Exception;-><init>()V
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
+    const-class v1, Lsbg;
 
-    move-result-wide v0
+    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
-    sput-wide v0, Lk54;->b:J
+    move-result-object v1
 
-    return-void
-.end method
+    invoke-static {v0, v1}, Liz7;->a(Ljava/lang/Exception;Ljava/lang/String;)Ljava/lang/StackTraceElement;
 
-.method public constructor <init>(Landroid/app/ActivityManager;)V
-    .locals 0
+    new-instance v0, Ljava/text/SimpleDateFormat;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v1, "yyyy/MM/dd HH:mm:ss"
 
-    iput-object p1, p0, Lk54;->a:Landroid/app/ActivityManager;
+    invoke-direct {v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    return-void
-.end method
+    new-instance v0, Lnc3;
 
+    const/4 v1, 0x0
 
-# virtual methods
-.method public final get()Ljava/lang/Object;
-    .locals 8
+    invoke-direct {v0, v1}, Lnc3;-><init>(Z)V
 
-    new-instance v7, Lfl8;
+    const/4 v0, 0x1
 
-    iget-object p0, p0, Lk54;->a:Landroid/app/ActivityManager;
+    sput-boolean v0, Lk54;->a:Z
 
-    invoke-virtual {p0}, Landroid/app/ActivityManager;->getMemoryClass()I
+    const/4 v2, 0x0
 
-    move-result p0
+    :try_start_0
+    const-string v3, "kotlinx.coroutines.debug.internal.ByteBuddyDynamicAttach"
 
-    const/high16 v0, 0x100000
+    invoke-static {v3}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-    mul-int/2addr p0, v0
+    move-result-object v3
 
-    const v0, 0x7fffffff
+    invoke-virtual {v3}, Ljava/lang/Class;->getConstructors()[Ljava/lang/reflect/Constructor;
 
-    invoke-static {p0, v0}, Ljava/lang/Math;->min(II)I
+    move-result-object v3
 
-    move-result p0
+    aget-object v1, v3, v1
 
-    const/high16 v0, 0x2000000
+    invoke-virtual {v1, v2}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-ge p0, v0, :cond_0
+    move-result-object v1
 
-    const/high16 p0, 0x400000
+    invoke-static {v0, v1}, La4f;->c(ILjava/lang/Object;)V
+
+    check-cast v1, Lx56;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v1
+
+    new-instance v3, Ljhc;
+
+    invoke-direct {v3, v1}, Ljhc;-><init>(Ljava/lang/Throwable;)V
+
+    move-object v1, v3
 
     :goto_0
-    move v1, p0
+    instance-of v3, v1, Ljhc;
+
+    if-eqz v3, :cond_0
 
     goto :goto_1
 
     :cond_0
-    const/high16 v0, 0x4000000
-
-    if-ge p0, v0, :cond_1
-
-    const/high16 p0, 0x600000
-
-    goto :goto_0
-
-    :cond_1
-    div-int/lit8 p0, p0, 0x4
-
-    goto :goto_0
+    move-object v2, v1
 
     :goto_1
-    const v6, 0x7fffffff
+    check-cast v2, Lx56;
 
-    sget-wide v4, Lk54;->b:J
+    new-instance v1, Lnc3;
 
-    const/16 v2, 0x100
+    invoke-direct {v1, v0}, Lnc3;-><init>(Z)V
 
-    const v3, 0x7fffffff
+    sput-object v1, Lk54;->b:Lnc3;
 
-    move-object v0, v7
+    new-instance v0, Lj54;
 
-    invoke-direct/range {v0 .. v6}, Lfl8;-><init>(IIIJI)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    return-object v7
+    sput-object v0, Lk54;->c:Lj54;
+
+    return-void
 .end method

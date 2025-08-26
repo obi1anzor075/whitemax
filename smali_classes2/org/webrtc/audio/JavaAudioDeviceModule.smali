@@ -128,18 +128,18 @@
 .method public getNativeAudioDeviceModulePointer()J
     .locals 10
 
-    iget-object v0, p0, Lorg/webrtc/audio/JavaAudioDeviceModule;->nativeLock:Ljava/lang/Object;
+    iget-object v1, p0, Lorg/webrtc/audio/JavaAudioDeviceModule;->nativeLock:Ljava/lang/Object;
 
-    monitor-enter v0
+    monitor-enter v1
 
     :try_start_0
-    iget-wide v1, p0, Lorg/webrtc/audio/JavaAudioDeviceModule;->nativeAudioDeviceModule:J
+    iget-wide v2, p0, Lorg/webrtc/audio/JavaAudioDeviceModule;->nativeAudioDeviceModule:J
 
-    const-wide/16 v3, 0x0
+    const-wide/16 v4, 0x0
 
-    cmp-long v1, v1, v3
+    cmp-long v0, v2, v4
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
     iget-object v2, p0, Lorg/webrtc/audio/JavaAudioDeviceModule;->context:Landroid/content/Context;
 
@@ -159,27 +159,29 @@
 
     invoke-static/range {v2 .. v9}, Lorg/webrtc/audio/JavaAudioDeviceModule;->nativeCreateAudioDeviceModule(Landroid/content/Context;Landroid/media/AudioManager;Lorg/webrtc/audio/WebRtcAudioRecord;Lorg/webrtc/audio/WebRtcAudioTrack;IIZZ)J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    iput-wide v1, p0, Lorg/webrtc/audio/JavaAudioDeviceModule;->nativeAudioDeviceModule:J
+    iput-wide v2, p0, Lorg/webrtc/audio/JavaAudioDeviceModule;->nativeAudioDeviceModule:J
 
     goto :goto_0
 
     :catchall_0
-    move-exception p0
+    move-exception v0
+
+    move-object p0, v0
 
     goto :goto_1
 
     :cond_0
     :goto_0
-    iget-wide v1, p0, Lorg/webrtc/audio/JavaAudioDeviceModule;->nativeAudioDeviceModule:J
+    iget-wide v2, p0, Lorg/webrtc/audio/JavaAudioDeviceModule;->nativeAudioDeviceModule:J
 
-    monitor-exit v0
+    monitor-exit v1
 
-    return-wide v1
+    return-wide v2
 
     :goto_1
-    monitor-exit v0
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

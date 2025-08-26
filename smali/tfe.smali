@@ -1,127 +1,107 @@
-.class public final Ltfe;
-.super Lz;
+.class public final synthetic Ltfe;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Ltfe;",
-            ">;"
-        }
-    .end annotation
-.end field
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public c:Ljava/lang/CharSequence;
+.field public final synthetic a:I
 
-.field public o:Z
+.field public final synthetic b:Lvfe;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ly;
-
-    const/16 v1, 0xa
-
-    invoke-direct {v0, v1}, Ly;-><init>(I)V
-
-    sput-object v0, Ltfe;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+.method public synthetic constructor <init>(Lvfe;I)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lz;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+    iput p2, p0, Ltfe;->a:I
 
-    sget-object p2, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
+    iput-object p1, p0, Ltfe;->b:Lvfe;
 
-    invoke-interface {p2, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Ljava/lang/CharSequence;
-
-    iput-object p2, p0, Ltfe;->c:Ljava/lang/CharSequence;
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result p1
-
-    const/4 p2, 0x1
-
-    if-ne p1, p2, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p2, 0x0
-
-    :goto_0
-    iput-boolean p2, p0, Ltfe;->o:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final run()V
+    .locals 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget v0, p0, Ltfe;->a:I
 
-    const-string v1, "TextInputLayout.SavedState{"
+    iget-object p0, p0, Ltfe;->b:Lvfe;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    packed-switch v0, :pswitch_data_0
 
-    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
+    iget-object v0, p0, Lvfe;->f:Lef6;
 
-    move-result v1
+    const-string v1, "Need to call openCaptureSession before using this API."
 
-    invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+    invoke-static {v0, v1}, Lfq0;->p(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result-object v1
+    iget-object v0, p0, Lvfe;->b:Lp89;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v1, v0, Lp89;->b:Ljava/lang/Object;
 
-    const-string v1, " error="
+    monitor-enter v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :try_start_0
+    iget-object v0, v0, Lp89;->d:Ljava/lang/Object;
 
-    iget-object p0, p0, Ltfe;->c:Ljava/lang/CharSequence;
+    check-cast v0, Ljava/util/LinkedHashSet;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-interface {v0, p0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    const-string p0, "}"
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lvfe;->f:Lef6;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v0, v0, Lef6;->b:Ljava/lang/Object;
 
-    move-result-object p0
+    check-cast v0, Lt4b;
 
-    return-object p0
-.end method
+    iget-object v0, v0, Lt4b;->b:Ljava/lang/Object;
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 1
+    check-cast v0, Landroid/hardware/camera2/CameraCaptureSession;
 
-    invoke-super {p0, p1, p2}, Lz;->writeToParcel(Landroid/os/Parcel;I)V
+    invoke-virtual {v0}, Landroid/hardware/camera2/CameraCaptureSession;->close()V
 
-    iget-object v0, p0, Ltfe;->c:Ljava/lang/CharSequence;
+    iget-object v0, p0, Lvfe;->c:Lw4d;
 
-    invoke-static {v0, p1, p2}, Landroid/text/TextUtils;->writeToParcel(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V
+    new-instance v1, Ltfe;
 
-    iget-boolean p0, p0, Ltfe;->o:Z
+    const/4 v2, 0x0
 
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-direct {v1, p0, v2}, Ltfe;-><init>(Lvfe;I)V
+
+    invoke-virtual {v0, v1}, Lw4d;->execute(Ljava/lang/Runnable;)V
 
     return-void
+
+    :catchall_0
+    move-exception p0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p0
+
+    :pswitch_0
+    invoke-virtual {p0, p0}, Lvfe;->g(Lvfe;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

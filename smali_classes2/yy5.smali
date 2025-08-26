@@ -1,51 +1,98 @@
 .class public final Lyy5;
-.super Ljava/lang/Object;
+.super Ljava/util/concurrent/ForkJoinTask;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Lfr6;
+.field public final a:Lvg3;
 
-.field public final b:Lt97;
+.field public final b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field public final c:Lt97;
+.field public final c:Ljava/util/concurrent/atomic/AtomicReference;
 
-.field public final d:Lt97;
+.field public volatile o:Ljava/lang/Throwable;
 
 
 # direct methods
-.method public constructor <init>(Lgr6;Lt97;Lt97;Lt97;)V
+.method public constructor <init>(Ljava/lang/String;Lvg3;)V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/util/concurrent/ForkJoinTask;-><init>()V
+
+    iput-object p2, p0, Lyy5;->a:Lvg3;
+
+    new-instance p2, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p2, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object p2, p0, Lyy5;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    new-instance p2, Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-direct {p2, p1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object p2, p0, Lyy5;->c:Ljava/util/concurrent/atomic/AtomicReference;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final exec()Z
+    .locals 3
+
+    iget-object v0, p0, Lyy5;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    :try_start_0
+    iget-object v0, p0, Lyy5;->a:Lvg3;
+
+    invoke-virtual {v0}, Lvg3;->run()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    return v2
+
+    :catchall_0
+    move-exception v0
+
+    iput-object v0, p0, Lyy5;->o:Ljava/lang/Throwable;
+
+    throw v0
+
+    :cond_0
+    return v1
+.end method
+
+.method public final getRawResult()Ljava/lang/Object;
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object p0, p0, Lyy5;->c:Ljava/util/concurrent/atomic/AtomicReference;
 
-    iput-object p3, p0, Lyy5;->b:Lt97;
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-    iput-object p4, p0, Lyy5;->c:Lt97;
+    move-result-object p0
 
-    iput-object p2, p0, Lyy5;->d:Lt97;
+    return-object p0
+.end method
 
-    iget-object p2, p1, Lgr6;->k:Ljn;
+.method public final setRawResult(Ljava/lang/Object;)V
+    .locals 0
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p0, p0, Lyy5;->c:Ljava/util/concurrent/atomic/AtomicReference;
 
-    const/16 p3, 0x2710
-
-    iput p3, p2, Ljn;->b:I
-
-    new-instance p2, Lhr6;
-
-    invoke-direct {p2, p1}, Lhr6;-><init>(Lgr6;)V
-
-    new-instance p1, Lir6;
-
-    invoke-direct {p1, p2}, Lir6;-><init>(Lhr6;)V
-
-    invoke-virtual {p1}, Lir6;->f()Lfr6;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lyy5;->a:Lfr6;
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
     return-void
 .end method

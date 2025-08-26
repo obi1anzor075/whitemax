@@ -1,134 +1,101 @@
 .class public final Lk72;
-.super Ll5e;
+.super Lki0;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic b:I
 
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lpj5;
-
-.field public final synthetic w0:Ln72;
+.field public final c:J
 
 
 # direct methods
-.method public constructor <init>(Lik5;Lkotlin/coroutines/Continuation;Ln72;)V
-    .locals 0
+.method public constructor <init>(J)V
+    .locals 1
 
-    iput-object p1, p0, Lk72;->Z:Lpj5;
+    const/4 v0, 0x1
 
-    iput-object p3, p0, Lk72;->w0:Ln72;
+    iput v0, p0, Lk72;->b:I
 
-    const/4 p1, 0x2
+    .line 1
+    invoke-direct {p0}, Lki0;-><init>()V
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    .line 2
+    iput-wide p1, p0, Lk72;->c:J
+
+    return-void
+.end method
+
+.method public constructor <init>(JJ)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lk72;->b:I
+
+    .line 3
+    invoke-direct {p0, p1, p2}, Lki0;-><init>(J)V
+
+    .line 4
+    iput-wide p3, p0, Lk72;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    check-cast p1, Lrj5;
+    iget v0, p0, Lk72;->b:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p0, p1, p2}, Lk72;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move-result-object p0
+    const-string v1, "ReadMarkEvent{chatId="
 
-    check-cast p0, Lk72;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    sget-object p1, Ljue;->a:Ljue;
+    iget-wide v1, p0, Lk72;->c:J
 
-    invoke-virtual {p0, p1}, Lk72;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    const/16 p0, 0x7d
+
+    invoke-static {v0, v1, v2, p0}, Lp3a;->j(Ljava/lang/StringBuilder;JC)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
-.end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 2
+    :pswitch_0
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v0, Lk72;
+    const-string v1, "ChatComplainEvent{chatId="
 
-    iget-object v1, p0, Lk72;->w0:Ln72;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p0, Lk72;->Z:Lpj5;
+    iget-wide v1, p0, Lk72;->c:J
 
-    check-cast p0, Lik5;
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-direct {v0, p0, p2, v1}, Lk72;-><init>(Lik5;Lkotlin/coroutines/Continuation;Ln72;)V
+    const-string v1, "} "
 
-    iput-object p1, v0, Lk72;->Y:Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
-
-    sget-object v0, Lpu3;->a:Lpu3;
-
-    iget v1, p0, Lk72;->X:I
-
-    const/4 v2, 0x1
-
-    if-eqz v1, :cond_1
-
-    if-ne v1, v2, :cond_0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lk72;->Y:Ljava/lang/Object;
-
-    check-cast p1, Lrj5;
-
-    new-instance v1, Lh42;
-
-    iget-object v3, p0, Lk72;->w0:Ln72;
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, p1, v3, v4}, Lh42;-><init>(Lrj5;Ljava/lang/Object;I)V
-
-    iput v2, p0, Lk72;->X:I
-
-    iget-object p1, p0, Lk72;->Z:Lpj5;
-
-    invoke-interface {p1, v1, p0}, Lpj5;->c(Lrj5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-super {p0}, Lki0;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    if-ne p0, v0, :cond_2
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-object v0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    :cond_2
-    :goto_0
-    sget-object p0, Ljue;->a:Ljue;
+    move-result-object p0
 
     return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

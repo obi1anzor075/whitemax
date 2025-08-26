@@ -1,94 +1,50 @@
 .class public final Loy8;
-.super Ll5e;
-.source "SourceFile"
-
-# interfaces
-.implements Li26;
+.super Lbu3;
 
 
 # instance fields
-.field public final synthetic X:Lzz8;
+.field public X:I
+
+.field public Y:Lbn5;
+
+.field public final synthetic Z:Lpy8;
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lzz8;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lpy8;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    iput-object p1, p0, Loy8;->X:Lzz8;
+    iput-object p1, p0, Loy8;->Z:Lpy8;
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Lou3;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Loy8;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Loy8;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Loy8;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 0
-
-    new-instance p1, Loy8;
-
-    iget-object p0, p0, Loy8;->X:Lzz8;
-
-    invoke-direct {p1, p0, p2}, Loy8;-><init>(Lzz8;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    iput-object p1, p0, Loy8;->o:Ljava/lang/Object;
 
-    sget-object p1, Lzz8;->I1:[Lk77;
+    iget p1, p0, Loy8;->X:I
 
-    iget-object p0, p0, Loy8;->X:Lzz8;
+    const/high16 v0, -0x80000000
 
-    invoke-virtual {p0}, Lzz8;->B()Lhba;
+    or-int/2addr p1, v0
+
+    iput p1, p0, Loy8;->X:I
+
+    iget-object p1, p0, Loy8;->Z:Lpy8;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lpy8;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
-
-    new-instance p1, Lvba;
-
-    sget v0, Lphc;->J:I
-
-    invoke-direct {p1, v0}, Lvba;-><init>(I)V
-
-    invoke-virtual {p0, p1}, Lhba;->f(Lzba;)V
-
-    sget p1, Lc7a;->d0:I
-
-    new-instance v0, Lhge;
-
-    invoke-direct {v0, p1}, Lhge;-><init>(I)V
-
-    invoke-virtual {p0, v0}, Lhba;->h(Lmge;)V
-
-    invoke-virtual {p0}, Lhba;->j()Lgba;
-
-    sget-object p0, Ljue;->a:Ljue;
 
     return-object p0
 .end method

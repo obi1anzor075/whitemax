@@ -1,6 +1,5 @@
 .class public final Lru/ok/android/externcalls/analytics/R;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # direct methods

@@ -1,21 +1,11 @@
-.class public final Ldq1;
-.super Luo;
+.class public interface abstract Ldq1;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Ldq1;
+# virtual methods
+.method public abstract h(Lz5c;Lsgc;)V
+.end method
 
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ldq1;
-
-    invoke-direct {v0}, Luo;-><init>()V
-
-    sput-object v0, Ldq1;->a:Ldq1;
-
-    return-void
+.method public abstract m(Lz5c;Ljava/io/IOException;)V
 .end method

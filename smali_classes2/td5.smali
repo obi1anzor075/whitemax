@@ -1,136 +1,140 @@
-.class public final synthetic Ltd5;
-.super Ljava/lang/Object;
+.class public final Ltd5;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:I
 
-.field public final synthetic b:Lud5;
+.field public final synthetic Y:Lud5;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lud5;I)V
+.method public constructor <init>(Lud5;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    iput p2, p0, Ltd5;->a:I
+    iput-object p1, p0, Ltd5;->Y:Lud5;
 
-    iput-object p1, p0, Ltd5;->b:Lud5;
+    const/4 p1, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 4
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget v0, p0, Ltd5;->a:I
+    check-cast p1, Lox3;
 
-    packed-switch v0, :pswitch_data_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    new-instance v0, Ld00;
+    invoke-virtual {p0, p1, p2}, Ltd5;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    invoke-direct {v0}, Ld00;-><init>()V
+    move-result-object p0
 
-    iget-object p0, p0, Ltd5;->b:Lud5;
+    check-cast p0, Ltd5;
 
-    iget-object v1, p0, Lud5;->x0:Lt97;
+    sget-object p1, Le5f;->a:Le5f;
 
-    invoke-interface {v1}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Ltd5;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object p0
 
-    check-cast v1, Landroid/graphics/drawable/Drawable;
+    return-object p0
+.end method
 
-    iput-object v1, v0, Ld00;->a:Landroid/graphics/drawable/Drawable;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
+    new-instance p1, Ltd5;
 
-    iget v1, p0, Lud5;->b:I
+    iget-object p0, p0, Ltd5;->Y:Lud5;
 
-    invoke-virtual {v0, v1}, Ld00;->b(I)V
+    invoke-direct {p1, p0, p2}, Ltd5;-><init>(Lud5;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
+
+    iget v0, p0, Ltd5;->X:I
 
     const/4 v1, 0x1
 
-    iput-boolean v1, v0, Ld00;->e:Z
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
+    if-ne v0, v1, :cond_0
 
-    const/16 v2, 0x24
+    :try_start_0
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+    :try_end_0
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    int-to-float v2, v2
+    goto :goto_0
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    move-result-object v3
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    invoke-virtual {v3}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    move-result-object v3
+    throw p0
 
-    iget v3, v3, Landroid/util/DisplayMetrics;->density:F
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    mul-float/2addr v2, v3
+    iget-object p1, p0, Ltd5;->Y:Lud5;
 
-    invoke-static {v2}, La24;->X(F)I
+    :try_start_1
+    iput v1, p0, Ltd5;->X:I
 
-    move-result v2
+    iget-object v0, p1, Lud5;->a:Lkjc;
 
-    iput v2, v0, Ld00;->c:I
+    new-instance v1, Lta4;
 
-    iput-boolean v1, v0, Ld00;->b:Z
+    const/4 v2, 0x5
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
+    invoke-direct {v1, v2, p1}, Lta4;-><init>(ILjava/lang/Object;)V
 
-    invoke-virtual {v0, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+    invoke-static {v0, v1, p0}, Lxja;->m(Lkjc;Ljava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    return-object v0
+    move-result-object p0
+    :try_end_1
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :pswitch_0
-    sget v0, Lphc;->m0:I
+    sget-object p1, Lpx3;->a:Lpx3;
 
-    iget-object p0, p0, Ltd5;->b:Lud5;
+    if-ne p0, p1, :cond_2
 
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    return-object p1
 
-    move-result-object v1
+    :catchall_0
+    move-exception p0
 
-    invoke-static {v1, v0}, Lgq3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    const-string p1, "FcmNotificationHistoryDao"
 
-    move-result-object v0
+    const-string v0, "onLogout: clear failed"
 
-    invoke-virtual {v0, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+    invoke-static {p1, v0, p0}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    return-object v0
+    :cond_2
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
 
-    :pswitch_1
-    sget v0, Lphc;->u0:I
+    return-object p0
 
-    iget-object p0, p0, Ltd5;->b:Lud5;
+    :catch_0
+    move-exception p0
 
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-static {v1, v0}, Lgq3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    throw p0
 .end method

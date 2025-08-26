@@ -3,46 +3,108 @@
 .source "SourceFile"
 
 # interfaces
-.implements Li34;
+.implements Lx56;
 
 
 # instance fields
-.field public final synthetic a:Lc34;
+.field public final synthetic a:I
 
-.field public final synthetic b:Landroid/os/Bundle;
+.field public final synthetic b:Lje7;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lc34;Landroid/os/Bundle;)V
+.method public synthetic constructor <init>(Lfs7;Lje7;)V
     .locals 0
+
+    .line 2
+    const/4 p1, 0x0
+
+    iput p1, p0, Las7;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Las7;->a:Lc34;
+    iput-object p2, p0, Las7;->b:Lje7;
 
-    iput-object p2, p0, Las7;->b:Landroid/os/Bundle;
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lje7;)V
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x1
+
+    iput v0, p0, Las7;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Las7;->b:Lje7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    new-instance v0, Lone/me/main/MainScreen;
+    iget v0, p0, Las7;->a:I
 
-    iget-object v1, p0, Las7;->a:Lc34;
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v1, v1, Lc34;->a:Landroid/net/Uri;
+    check-cast p1, Ljava/lang/Long;
 
-    invoke-static {v1}, Lk34;->a(Landroid/net/Uri;)Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
-    move-result-object v1
+    move-result-wide v0
 
-    iget-object p0, p0, Las7;->b:Landroid/os/Bundle;
+    iget-object p0, p0, Las7;->b:Lje7;
 
-    invoke-direct {v0, v1, p0}, Lone/me/main/MainScreen;-><init>(Ljava/lang/String;Landroid/os/Bundle;)V
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
-    return-object v0
+    move-result-object p0
+
+    check-cast p0, Lxk3;
+
+    invoke-virtual {p0, v0, v1}, Lxk3;->m(J)Z
+
+    move-result p0
+
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_0
+    check-cast p1, Ljava/lang/Throwable;
+
+    const-string v0, "LogController"
+
+    const-string v1, "Failed to store event"
+
+    invoke-static {v0, v1, p1}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    iget-object p0, p0, Las7;->b:Lje7;
+
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Le45;
+
+    const/4 v0, 0x1
+
+    check-cast p0, Lu8a;
+
+    invoke-virtual {p0, p1, v0}, Lu8a;->c(Ljava/lang/Throwable;Z)V
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -89,14 +89,13 @@
 
     invoke-virtual {v0, p0, p2}, Lru/ok/android/externcalls/analytics/events/EventItemsMap;->set(Ljava/lang/String;Lru/ok/android/externcalls/analytics/events/EventItemValue;)Lru/ok/android/externcalls/analytics/events/EventItemsMap;
 
-    goto :goto_0
+    return-void
 
     :cond_0
     const-string p0, "value"
 
     invoke-virtual {v0, p0, p2}, Lru/ok/android/externcalls/analytics/events/EventItemsMap;->set(Ljava/lang/String;Lru/ok/android/externcalls/analytics/events/EventItemValue;)Lru/ok/android/externcalls/analytics/events/EventItemsMap;
 
-    :goto_0
     return-void
 .end method
 
@@ -148,7 +147,7 @@
 
     move-result-object p0
 
-    invoke-static {p0}, Lju7;->W(Ljava/util/Map;)Ljava/util/Map;
+    invoke-static {p0}, Ljz7;->G(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object p0
 

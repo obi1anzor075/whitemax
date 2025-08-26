@@ -490,7 +490,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 4
+    .locals 5
 
     invoke-virtual {p0}, Lorg/webrtc/MediaStream;->getId()Ljava/lang/String;
 
@@ -508,27 +508,19 @@
 
     move-result p0
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v2, ":A="
 
-    const-string v3, "["
+    const-string v3, ":V="
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string v4, "["
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1, v4, v0, v2, v3}, Lm26;->m(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, ":A="
+    move-result-object v0
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, "]"
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, ":V="
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "]"
-
-    invoke-static {v2, p0, v0}, Lwn6;->j(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lm26;->i(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

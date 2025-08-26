@@ -1,138 +1,132 @@
 .class public final Lgj9;
-.super Ll5e;
+.super Lv2;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lcn4;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public X:Lxm4;
 
-.field public final synthetic Y:Lone/me/login/neuroavatars/NeuroAvatarsScreen;
+.field public Y:Lxm4;
+
+.field public final o:Lmg;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/login/neuroavatars/NeuroAvatarsScreen;)V
+.method public constructor <init>(Landroid/content/Context;Lru/ok/messages/video/widgets/doubleTap/DoubleTapVideoViewWrapper;Lmg;)V
     .locals 0
 
-    iput-object p2, p0, Lgj9;->Y:Lone/me/login/neuroavatars/NeuroAvatarsScreen;
+    invoke-direct {p0, p1}, Lv2;-><init>(Landroid/content/Context;)V
 
-    const/4 p2, 0x2
+    iput-object p3, p0, Lgj9;->o:Lmg;
 
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Lv2;->c:Ljava/lang/Object;
+
+    invoke-virtual {p0}, Lgj9;->n()V
+
+    invoke-virtual {p2, p0}, Lru/ok/messages/video/widgets/doubleTap/DoubleTapVideoViewWrapper;->setTouchEventListener(Lcn4;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lgj9;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lgj9;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lgj9;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
-
-    new-instance v0, Lgj9;
-
-    iget-object p0, p0, Lgj9;->Y:Lone/me/login/neuroavatars/NeuroAvatarsScreen;
-
-    invoke-direct {v0, p2, p0}, Lgj9;-><init>(Lkotlin/coroutines/Continuation;Lone/me/login/neuroavatars/NeuroAvatarsScreen;)V
-
-    iput-object p1, v0, Lgj9;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final A(Lfj9;)V
     .locals 2
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    iget-boolean v0, p1, Lfj9;->c:Z
 
-    iget-object p1, p0, Lgj9;->X:Ljava/lang/Object;
+    iget v1, p1, Lfj9;->a:I
 
-    check-cast p1, Lsg9;
+    if-nez v0, :cond_0
 
-    instance-of v0, p1, Lri9;
+    iget-object p1, p0, Lgj9;->X:Lxm4;
 
-    sget-object v1, Ljue;->a:Ljue;
+    invoke-virtual {p1}, Lxm4;->a()V
 
-    if-eqz v0, :cond_0
+    iget-object p0, p0, Lgj9;->Y:Lxm4;
 
-    sget-object p0, Lko7;->a:Lko7;
+    invoke-virtual {p0}, Lxm4;->a()V
 
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p0
-
-    const-class p1, Luma;
-
-    invoke-virtual {p0, p1}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Luma;
-
-    invoke-virtual {p0}, Luma;->c()V
-
-    sget-object p0, Lcp7;->c:Lcp7;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p0}, Lu2;->P1()Ld34;
-
-    move-result-object p0
-
-    const/4 p1, 0x0
-
-    const-string v0, ":chat-list"
-
-    invoke-virtual {p0, v0, p1}, Ld34;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
-
-    goto :goto_0
+    return-void
 
     :cond_0
-    instance-of v0, p1, La34;
+    iget-boolean p1, p1, Lfj9;->b:Z
 
-    if-eqz v0, :cond_1
+    if-eqz p1, :cond_1
 
-    sget-object p0, Lcp7;->c:Lcp7;
+    iget-object p1, p0, Lgj9;->X:Lxm4;
 
-    check-cast p1, La34;
+    invoke-virtual {p1}, Lxm4;->a()V
 
-    invoke-virtual {p0, p1}, Lu2;->R1(La34;)V
+    iget-object p1, p0, Lgj9;->Y:Lxm4;
 
-    goto :goto_0
+    invoke-virtual {p1}, Lxm4;->b()V
+
+    iget-object p0, p0, Lgj9;->Y:Lxm4;
+
+    invoke-virtual {p0, v1}, Lxm4;->c(I)V
+
+    return-void
 
     :cond_1
-    instance-of p1, p1, Lv03;
+    iget-object p1, p0, Lgj9;->X:Lxm4;
 
-    if-eqz p1, :cond_2
+    invoke-virtual {p1}, Lxm4;->b()V
 
-    iget-object p0, p0, Lgj9;->Y:Lone/me/login/neuroavatars/NeuroAvatarsScreen;
+    iget-object p1, p0, Lgj9;->X:Lxm4;
 
-    invoke-virtual {p0}, Lrr3;->getRouter()Lsgc;
+    invoke-virtual {p1, v1}, Lxm4;->c(I)V
 
-    move-result-object p0
+    iget-object p0, p0, Lgj9;->Y:Lxm4;
 
-    invoke-virtual {p0}, Lsgc;->C()Z
+    invoke-virtual {p0}, Lxm4;->a()V
 
-    :cond_2
-    :goto_0
-    return-object v1
+    return-void
+.end method
+
+.method public final n()V
+    .locals 2
+
+    iget-object v0, p0, Lv2;->c:Ljava/lang/Object;
+
+    check-cast v0, Landroid/view/View;
+
+    sget v1, Lpvb;->double_tap_video_view_wrapper__arrows_view_left:I
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lxm4;
+
+    iput-object v0, p0, Lgj9;->X:Lxm4;
+
+    iget-object v0, p0, Lv2;->c:Ljava/lang/Object;
+
+    check-cast v0, Landroid/view/View;
+
+    sget v1, Lpvb;->double_tap_video_view_wrapper__arrows_view_right:I
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lxm4;
+
+    iput-object v0, p0, Lgj9;->Y:Lxm4;
+
+    iget-object v0, p0, Lgj9;->X:Lxm4;
+
+    iget-object v1, p0, Lgj9;->o:Lmg;
+
+    invoke-virtual {v0, v1}, Lxm4;->setAnimations(Lmg;)V
+
+    iget-object p0, p0, Lgj9;->Y:Lxm4;
+
+    invoke-virtual {p0, v1}, Lxm4;->setAnimations(Lmg;)V
+
+    return-void
 .end method

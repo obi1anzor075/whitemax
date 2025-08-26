@@ -3,159 +3,139 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lrf3;
+.implements Lkmc;
 
 
 # instance fields
-.field public final a:Ly4e;
+.field public final a:Ljava/util/ArrayList;
 
-.field public final b:Landroid/graphics/SurfaceTexture;
-
-.field public final c:Landroid/view/Surface;
-
-.field public final synthetic d:Lh6f;
+.field public final b:Z
 
 
 # direct methods
-.method public constructor <init>(Lh6f;Ly4e;Landroid/graphics/SurfaceTexture;Landroid/view/Surface;)V
+.method public constructor <init>(Ljava/util/ArrayList;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lg6f;->d:Lh6f;
+    iput-object p1, p0, Lg6f;->a:Ljava/util/ArrayList;
 
-    iput-object p2, p0, Lg6f;->a:Ly4e;
-
-    iput-object p3, p0, Lg6f;->b:Landroid/graphics/SurfaceTexture;
-
-    iput-object p4, p0, Lg6f;->c:Landroid/view/Surface;
+    iput-boolean p2, p0, Lg6f;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .locals 4
+.method public final a()Z
+    .locals 0
 
-    check-cast p1, Lbb0;
+    const/4 p0, 0x0
 
-    iget-object v0, p0, Lg6f;->d:Lh6f;
+    return p0
+.end method
 
-    iget-object v1, v0, Lh6f;->a:Ljava/lang/String;
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
-    iget p1, p1, Lbb0;->a:I
-
-    if-eqz p1, :cond_4
-
-    const/4 v2, 0x1
-
-    if-eq p1, v2, :cond_3
-
-    const/4 v2, 0x2
-
-    if-eq p1, v2, :cond_2
-
-    const/4 v2, 0x3
-
-    if-eq p1, v2, :cond_1
-
-    const/4 v2, 0x4
-
-    if-eq p1, v2, :cond_0
-
-    const-string v2, "SerufaceRequest.Result_UNKNOWN_code_"
-
-    invoke-static {p1, v2}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
+    if-ne p0, p1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const-string p1, "WILL_NOT_PROVIDE_SURFACE"
+    if-eqz p1, :cond_2
 
-    goto :goto_0
+    const-class v0, Lg6f;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    if-eq v0, v1, :cond_1
+
+    goto :goto_1
 
     :cond_1
-    const-string p1, "SURFACE_ALREADY_PROVIDED"
+    check-cast p1, Lg6f;
 
-    goto :goto_0
+    iget-boolean v0, p0, Lg6f;->b:Z
 
-    :cond_2
-    const-string p1, "INVALID_SURFACE"
+    iget-boolean v1, p1, Lg6f;->b:Z
 
-    goto :goto_0
+    if-ne v0, v1, :cond_2
 
-    :cond_3
-    const-string p1, "REQUEST_CANCELLED"
+    iget-object p0, p0, Lg6f;->a:Ljava/util/ArrayList;
 
-    goto :goto_0
+    iget-object p1, p1, Lg6f;->a:Ljava/util/ArrayList;
 
-    :cond_4
-    const-string p1, "SURFACE_USED_SUCCESSFULLY"
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_2
 
     :goto_0
-    new-instance v2, Ljava/lang/StringBuilder;
+    const/4 p0, 0x1
 
-    const-string v3, "onSurfaceRequestResult event="
+    return p0
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    :cond_2
+    :goto_1
+    const/4 p0, 0x0
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return p0
+.end method
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+.method public final hashCode()I
+    .locals 1
 
-    move-result-object p1
+    iget-boolean v0, p0, Lg6f;->b:Z
 
-    invoke-static {v1, p1}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-virtual {v0}, Lh6f;->e()V
+    move-result-object v0
 
-    iget-object p1, p0, Lg6f;->a:Ly4e;
+    iget-object p0, p0, Lg6f;->a:Ljava/util/ArrayList;
 
-    iget-object v1, p1, Ly4e;->a:Ljava/lang/Object;
+    filled-new-array {p0, v0}, [Ljava/lang/Object;
 
-    monitor-enter v1
+    move-result-object p0
 
-    const/4 v2, 0x0
+    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
 
-    :try_start_0
-    iput-object v2, p1, Ly4e;->n:Lx4e;
+    move-result p0
 
-    iput-object v2, p1, Ly4e;->o:Ljava/util/concurrent/Executor;
+    return p0
+.end method
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    iget-object p1, p0, Lg6f;->b:Landroid/graphics/SurfaceTexture;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v2}, Landroid/graphics/SurfaceTexture;->setOnFrameAvailableListener(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V
+    const-string v1, "UpdateDisplayLayoutV2Command{layouts="
 
-    invoke-virtual {p1}, Landroid/graphics/SurfaceTexture;->release()V
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p0, Lg6f;->c:Landroid/view/Surface;
+    iget-object v1, p0, Lg6f;->a:Ljava/util/ArrayList;
 
-    invoke-virtual {p0}, Landroid/view/Surface;->release()V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iget p0, v0, Lh6f;->A0:I
+    const-string v1, ", isSnapshot="
 
-    add-int/lit8 p0, p0, -0x1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iput p0, v0, Lh6f;->A0:I
+    iget-boolean p0, p0, Lg6f;->b:Z
 
-    invoke-virtual {v0}, Lh6f;->f()V
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    return-void
+    const/16 p0, 0x7d
 
-    :catchall_0
-    move-exception p0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    throw p0
+    move-result-object p0
+
+    return-object p0
 .end method

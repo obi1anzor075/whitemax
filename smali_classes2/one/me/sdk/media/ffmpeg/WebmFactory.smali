@@ -127,7 +127,7 @@
 
     move-result-object p0
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     instance-of v1, v0, Lone/me/sdk/media/ffmpeg/WebmFactory$Way$Url;
@@ -166,7 +166,6 @@
 
     move-result-object p0
 
-    :goto_0
     return-object p0
 
     :cond_1
@@ -352,17 +351,18 @@
 .end method
 
 .method public static final createByFile(Ljava/io/File;ZIIZZZ)Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;
-    .locals 7
+    .locals 6
 
     .line 7
-    new-instance v6, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;
+    new-instance v0, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;
 
     if-eqz p1, :cond_0
 
     .line 8
-    new-instance p1, Lon0;
+    new-instance p1, Lmo0;
 
-    invoke-direct {p1}, Lon0;-><init>()V
+    .line 9
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
     :goto_0
     move-object v4, p1
@@ -377,34 +377,32 @@
     :goto_1
     const/4 v5, 0x0
 
-    move-object v0, v6
-
     move-object v1, p0
 
     move v2, p2
 
     move v3, p3
 
-    .line 9
-    invoke-direct/range {v0 .. v5}, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;-><init>(Ljava/io/File;IILon0;Ljava/lang/String;)V
-
     .line 10
-    invoke-virtual {v6, p4}, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->setLimitFps(Z)V
+    invoke-direct/range {v0 .. v5}, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;-><init>(Ljava/io/File;IILmo0;Ljava/lang/String;)V
 
     .line 11
-    invoke-virtual {v6, p5}, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->setAllowDecodeSingleFrame(Z)V
+    invoke-virtual {v0, p4}, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->setLimitFps(Z)V
+
+    .line 12
+    invoke-virtual {v0, p5}, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->setAllowDecodeSingleFrame(Z)V
 
     if-eqz p6, :cond_1
 
-    .line 12
-    invoke-virtual {v6}, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->start()V
+    .line 13
+    invoke-virtual {v0}, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->start()V
 
     :cond_1
-    return-object v6
+    return-object v0
 .end method
 
 .method public static synthetic createByFile$default(Ljava/io/File;ZIIZZZILjava/lang/Object;)Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;
-    .locals 4
+    .locals 0
 
     and-int/lit8 p8, p7, 0x2
 
@@ -428,73 +426,63 @@
     move-result p2
 
     :cond_1
-    move p8, p2
+    and-int/lit8 p8, p7, 0x8
 
-    and-int/lit8 p2, p7, 0x8
+    if-eqz p8, :cond_2
 
-    if-eqz p2, :cond_2
+    sget-object p3, Lone/me/sdk/media/ffmpeg/WebmFactory$Config;->Companion:Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;
 
-    sget-object p2, Lone/me/sdk/media/ffmpeg/WebmFactory$Config;->Companion:Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;
-
-    invoke-virtual {p2}, Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;->getDefaultSize()I
+    invoke-virtual {p3}, Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;->getDefaultSize()I
 
     move-result p3
 
     :cond_2
-    move v0, p3
+    and-int/lit8 p8, p7, 0x10
 
-    and-int/lit8 p2, p7, 0x10
+    if-eqz p8, :cond_3
 
-    if-eqz p2, :cond_3
+    sget-object p4, Lone/me/sdk/media/ffmpeg/WebmFactory$Config;->Companion:Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;
 
-    sget-object p2, Lone/me/sdk/media/ffmpeg/WebmFactory$Config;->Companion:Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;
-
-    invoke-virtual {p2}, Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;->getDefaultShouldLimitFps()Z
+    invoke-virtual {p4}, Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;->getDefaultShouldLimitFps()Z
 
     move-result p4
 
     :cond_3
-    move v1, p4
+    and-int/lit8 p8, p7, 0x20
 
-    and-int/lit8 p2, p7, 0x20
+    if-eqz p8, :cond_4
 
-    if-eqz p2, :cond_4
+    sget-object p5, Lone/me/sdk/media/ffmpeg/WebmFactory$Config;->Companion:Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;
 
-    sget-object p2, Lone/me/sdk/media/ffmpeg/WebmFactory$Config;->Companion:Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;
-
-    invoke-virtual {p2}, Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;->getDefaultStartDecodeFirstFrame()Z
+    invoke-virtual {p5}, Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;->getDefaultStartDecodeFirstFrame()Z
 
     move-result p5
 
     :cond_4
-    move v2, p5
+    and-int/lit8 p7, p7, 0x40
 
-    and-int/lit8 p2, p7, 0x40
+    if-eqz p7, :cond_5
 
-    if-eqz p2, :cond_5
+    sget-object p6, Lone/me/sdk/media/ffmpeg/WebmFactory$Config;->Companion:Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;
 
-    sget-object p2, Lone/me/sdk/media/ffmpeg/WebmFactory$Config;->Companion:Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;
-
-    invoke-virtual {p2}, Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;->getDefaultAutoStart()Z
+    invoke-virtual {p6}, Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;->getDefaultAutoStart()Z
 
     move-result p6
 
     :cond_5
-    move v3, p6
+    move p7, p5
 
-    move-object p2, p0
+    move p8, p6
+
+    move p5, p3
+
+    move p6, p4
 
     move p3, p1
 
-    move p4, p8
+    move p4, p2
 
-    move p5, v0
-
-    move p6, v1
-
-    move p7, v2
-
-    move p8, v3
+    move-object p2, p0
 
     invoke-static/range {p2 .. p8}, Lone/me/sdk/media/ffmpeg/WebmFactory;->createByFile(Ljava/io/File;ZIIZZZ)Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;
 
@@ -639,53 +627,51 @@
 .end method
 
 .method public static final createByUrl(Ljava/lang/String;IIZZZ)Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;
-    .locals 7
+    .locals 6
 
     .line 6
-    new-instance v6, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;
+    new-instance v0, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;
 
     const/4 v1, 0x0
 
     const/4 v4, 0x0
 
-    move-object v0, v6
+    move-object v5, p0
 
     move v2, p1
 
     move v3, p2
 
-    move-object v5, p0
-
-    invoke-direct/range {v0 .. v5}, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;-><init>(Ljava/io/File;IILon0;Ljava/lang/String;)V
+    invoke-direct/range {v0 .. v5}, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;-><init>(Ljava/io/File;IILmo0;Ljava/lang/String;)V
 
     .line 7
-    invoke-virtual {v6, p3}, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->setLimitFps(Z)V
+    invoke-virtual {v0, p3}, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->setLimitFps(Z)V
 
-    const/4 p1, 0x1
+    const/4 p0, 0x1
 
     .line 8
-    invoke-virtual {v6, p1}, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->setAllowDecodeSingleFrame(Z)V
+    invoke-virtual {v0, p0}, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->setAllowDecodeSingleFrame(Z)V
 
     if-eqz p5, :cond_0
 
     .line 9
-    invoke-virtual {v6}, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->start()V
+    invoke-virtual {v0}, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->start()V
 
     :cond_0
-    const/4 p1, 0x2
+    const/4 p0, 0x2
 
     .line 10
-    invoke-static {p0, p1, p4}, Lkg9;->a(Ljava/lang/String;IZ)Lig9;
+    invoke-static {v5, p0, p4}, Lcl9;->a(Ljava/lang/String;IZ)Lal9;
 
     move-result-object p0
 
-    invoke-virtual {p0, v6}, Lig9;->e(Ljg9;)V
+    invoke-virtual {p0, v0}, Lal9;->e(Lbl9;)V
 
-    return-object v6
+    return-object v0
 .end method
 
 .method public static synthetic createByUrl$default(Ljava/lang/String;IIZZZILjava/lang/Object;)Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;
-    .locals 3
+    .locals 0
 
     and-int/lit8 p7, p6, 0x2
 
@@ -709,58 +695,50 @@
     move-result p2
 
     :cond_1
-    move p7, p2
+    and-int/lit8 p7, p6, 0x8
 
-    and-int/lit8 p2, p6, 0x8
+    if-eqz p7, :cond_2
 
-    if-eqz p2, :cond_2
+    sget-object p3, Lone/me/sdk/media/ffmpeg/WebmFactory$Config;->Companion:Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;
 
-    sget-object p2, Lone/me/sdk/media/ffmpeg/WebmFactory$Config;->Companion:Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;
-
-    invoke-virtual {p2}, Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;->getDefaultShouldLimitFps()Z
+    invoke-virtual {p3}, Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;->getDefaultShouldLimitFps()Z
 
     move-result p3
 
     :cond_2
-    move v0, p3
+    and-int/lit8 p7, p6, 0x10
 
-    and-int/lit8 p2, p6, 0x10
+    if-eqz p7, :cond_3
 
-    if-eqz p2, :cond_3
+    sget-object p4, Lone/me/sdk/media/ffmpeg/WebmFactory$Config;->Companion:Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;
 
-    sget-object p2, Lone/me/sdk/media/ffmpeg/WebmFactory$Config;->Companion:Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;
-
-    invoke-virtual {p2}, Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;->getDefaultNetworkFetchEnabled()Z
+    invoke-virtual {p4}, Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;->getDefaultNetworkFetchEnabled()Z
 
     move-result p4
 
     :cond_3
-    move v1, p4
+    and-int/lit8 p6, p6, 0x20
 
-    and-int/lit8 p2, p6, 0x20
+    if-eqz p6, :cond_4
 
-    if-eqz p2, :cond_4
+    sget-object p5, Lone/me/sdk/media/ffmpeg/WebmFactory$Config;->Companion:Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;
 
-    sget-object p2, Lone/me/sdk/media/ffmpeg/WebmFactory$Config;->Companion:Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;
-
-    invoke-virtual {p2}, Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;->getDefaultAutoStart()Z
+    invoke-virtual {p5}, Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;->getDefaultAutoStart()Z
 
     move-result p5
 
     :cond_4
-    move v2, p5
+    move p6, p4
+
+    move p7, p5
+
+    move p4, p2
+
+    move p5, p3
 
     move-object p2, p0
 
     move p3, p1
-
-    move p4, p7
-
-    move p5, v0
-
-    move p6, v1
-
-    move p7, v2
 
     invoke-static/range {p2 .. p7}, Lone/me/sdk/media/ffmpeg/WebmFactory;->createByUrl(Ljava/lang/String;IIZZZ)Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;
 

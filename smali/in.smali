@@ -2,145 +2,348 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+
 
 # instance fields
-.field public final a:Landroid/widget/TextView;
+.field public final synthetic a:I
 
-.field public final b:Lnfc;
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Landroid/widget/TextView;)V
-    .locals 1
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
+    .locals 0
+
+    iput p1, p0, Lin;->a:I
+
+    iput-object p2, p0, Lin;->b:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lin;->a:Landroid/widget/TextView;
-
-    new-instance v0, Lnfc;
-
-    invoke-direct {v0, p1}, Lnfc;-><init>(Landroid/widget/TextView;)V
-
-    iput-object v0, p0, Lin;->b:Lnfc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a([Landroid/text/InputFilter;)[Landroid/text/InputFilter;
-    .locals 0
+.method public final onGlobalLayout()V
+    .locals 9
 
-    iget-object p0, p0, Lin;->b:Lnfc;
+    iget v0, p0, Lin;->a:I
 
-    iget-object p0, p0, Lnfc;->b:Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
 
-    check-cast p0, Le07;
+    iget-object p0, p0, Lin;->b:Ljava/lang/Object;
 
-    invoke-virtual {p0, p1}, Le07;->t([Landroid/text/InputFilter;)[Landroid/text/InputFilter;
+    check-cast p0, Lgwd;
 
-    move-result-object p0
+    iget-object v0, p0, Lgwd;->o0:Lmq8;
 
-    return-object p0
-.end method
+    invoke-virtual {p0}, Lgwd;->a()Z
 
-.method public final b()Z
-    .locals 0
+    move-result v1
 
-    iget-object p0, p0, Lin;->b:Lnfc;
+    if-eqz v1, :cond_2
 
-    iget-object p0, p0, Lnfc;->b:Ljava/lang/Object;
+    iget-boolean v1, v0, Lwl7;->F0:Z
 
-    check-cast p0, Le07;
+    if-nez v1, :cond_2
 
-    invoke-virtual {p0}, Le07;->z()Z
+    iget-object v1, p0, Lgwd;->t0:Landroid/view/View;
 
-    move-result p0
+    if-eqz v1, :cond_1
 
-    return p0
-.end method
+    invoke-virtual {v1}, Landroid/view/View;->isShown()Z
 
-.method public final c(Landroid/util/AttributeSet;I)V
-    .locals 3
+    move-result v1
 
-    iget-object v0, p0, Lin;->a:Landroid/widget/TextView;
-
-    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    sget-object v1, Lnwb;->AppCompatTextView:[I
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, p1, v1, p2, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
-
-    move-result-object p1
-
-    :try_start_0
-    sget p2, Lnwb;->AppCompatTextView_emojiCompatEnabled:I
-
-    invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result p2
-
-    const/4 v0, 0x1
-
-    if-eqz p2, :cond_0
-
-    sget p2, Lnwb;->AppCompatTextView_emojiCompatEnabled:I
-
-    invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    if-nez v1, :cond_0
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p0
+    :cond_0
+    invoke-virtual {v0}, Lwl7;->g()V
 
     goto :goto_1
 
-    :cond_0
+    :cond_1
     :goto_0
-    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {p0}, Lgwd;->dismiss()V
 
-    invoke-virtual {p0, v0}, Lin;->e(Z)V
-
-    return-void
-
+    :cond_2
     :goto_1
-    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
-
-    throw p0
-.end method
-
-.method public final d(Z)V
-    .locals 0
-
-    iget-object p0, p0, Lin;->b:Lnfc;
-
-    iget-object p0, p0, Lnfc;->b:Ljava/lang/Object;
-
-    check-cast p0, Le07;
-
-    invoke-virtual {p0, p1}, Le07;->L(Z)V
-
     return-void
-.end method
 
-.method public final e(Z)V
-    .locals 0
+    :pswitch_0
+    iget-object v0, p0, Lin;->b:Ljava/lang/Object;
 
-    iget-object p0, p0, Lin;->b:Lnfc;
+    check-cast v0, Landroidx/mediarouter/app/d;
 
-    iget-object p0, p0, Lnfc;->b:Ljava/lang/Object;
+    iget-object v1, v0, Landroidx/mediarouter/app/d;->K0:Landroidx/mediarouter/app/OverlayListView;
 
-    check-cast p0, Le07;
+    invoke-virtual {v1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
-    invoke-virtual {p0, p1}, Le07;->M(Z)V
+    move-result-object v1
 
+    invoke-virtual {v1, p0}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
+    iget-object p0, v0, Landroidx/mediarouter/app/d;->N0:Ljava/util/HashSet;
+
+    const/4 v1, 0x1
+
+    if-eqz p0, :cond_5
+
+    invoke-virtual {p0}, Ljava/util/HashSet;->size()I
+
+    move-result p0
+
+    if-eqz p0, :cond_5
+
+    new-instance p0, Lbf8;
+
+    const/4 v2, 0x0
+
+    invoke-direct {p0, v2, v0}, Lbf8;-><init>(ILjava/lang/Object;)V
+
+    iget-object v2, v0, Landroidx/mediarouter/app/d;->K0:Landroidx/mediarouter/app/OverlayListView;
+
+    invoke-virtual {v2}, Landroid/widget/AdapterView;->getFirstVisiblePosition()I
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    move v4, v3
+
+    :goto_2
+    iget-object v5, v0, Landroidx/mediarouter/app/d;->K0:Landroidx/mediarouter/app/OverlayListView;
+
+    invoke-virtual {v5}, Landroid/view/ViewGroup;->getChildCount()I
+
+    move-result v5
+
+    if-ge v3, v5, :cond_6
+
+    iget-object v5, v0, Landroidx/mediarouter/app/d;->K0:Landroidx/mediarouter/app/OverlayListView;
+
+    invoke-virtual {v5, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v5
+
+    add-int v6, v2, v3
+
+    iget-object v7, v0, Landroidx/mediarouter/app/d;->L0:Landroidx/mediarouter/app/c;
+
+    invoke-virtual {v7, v6}, Landroid/widget/ArrayAdapter;->getItem(I)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lmg8;
+
+    iget-object v7, v0, Landroidx/mediarouter/app/d;->N0:Ljava/util/HashSet;
+
+    invoke-virtual {v7, v6}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_4
+
+    new-instance v6, Landroid/view/animation/AlphaAnimation;
+
+    const/4 v7, 0x0
+
+    const/high16 v8, 0x3f800000    # 1.0f
+
+    invoke-direct {v6, v7, v8}, Landroid/view/animation/AlphaAnimation;-><init>(FF)V
+
+    iget v7, v0, Landroidx/mediarouter/app/d;->o1:I
+
+    int-to-long v7, v7
+
+    invoke-virtual {v6, v7, v8}, Landroid/view/animation/Animation;->setDuration(J)V
+
+    invoke-virtual {v6, v1}, Landroid/view/animation/Animation;->setFillEnabled(Z)V
+
+    invoke-virtual {v6, v1}, Landroid/view/animation/Animation;->setFillAfter(Z)V
+
+    if-nez v4, :cond_3
+
+    invoke-virtual {v6, p0}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
+
+    move v4, v1
+
+    :cond_3
+    invoke-virtual {v5}, Landroid/view/View;->clearAnimation()V
+
+    invoke-virtual {v5, v6}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
+
+    :cond_4
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_2
+
+    :cond_5
+    invoke-virtual {v0, v1}, Landroidx/mediarouter/app/d;->i(Z)V
+
+    :cond_6
     return-void
+
+    :pswitch_1
+    iget-object p0, p0, Lin;->b:Ljava/lang/Object;
+
+    check-cast p0, Lwz1;
+
+    iget-object v0, p0, Lwz1;->o0:Ljava/util/ArrayList;
+
+    invoke-virtual {p0}, Lwz1;->a()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_9
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    if-lez v1, :cond_9
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lvz1;
+
+    iget-object v1, v1, Lvz1;->a:Lmq8;
+
+    iget-boolean v1, v1, Lwl7;->F0:Z
+
+    if-nez v1, :cond_9
+
+    iget-object v1, p0, Lwz1;->v0:Landroid/view/View;
+
+    if-eqz v1, :cond_8
+
+    invoke-virtual {v1}, Landroid/view/View;->isShown()Z
+
+    move-result v1
+
+    if-nez v1, :cond_7
+
+    goto :goto_4
+
+    :cond_7
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_3
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lvz1;
+
+    iget-object v0, v0, Lvz1;->a:Lmq8;
+
+    invoke-virtual {v0}, Lwl7;->g()V
+
+    goto :goto_3
+
+    :cond_8
+    :goto_4
+    invoke-virtual {p0}, Lwz1;->dismiss()V
+
+    :cond_9
+    return-void
+
+    :pswitch_2
+    iget-object p0, p0, Lin;->b:Ljava/lang/Object;
+
+    check-cast p0, Lon;
+
+    iget-object v0, p0, Lon;->L0:Lrn;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v0}, Landroid/view/View;->isAttachedToWindow()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_a
+
+    iget-object v1, p0, Lon;->J0:Landroid/graphics/Rect;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    invoke-virtual {p0}, Lon;->s()V
+
+    invoke-virtual {p0}, Lwl7;->g()V
+
+    goto :goto_5
+
+    :cond_a
+    invoke-virtual {p0}, Lwl7;->dismiss()V
+
+    :goto_5
+    return-void
+
+    :pswitch_3
+    iget-object v0, p0, Lin;->b:Ljava/lang/Object;
+
+    check-cast v0, Lrn;
+
+    invoke-virtual {v0}, Lrn;->getInternalPopup()Lqn;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Lqn;->a()Z
+
+    move-result v1
+
+    if-nez v1, :cond_b
+
+    iget-object v1, v0, Lrn;->p0:Lqn;
+
+    invoke-virtual {v0}, Landroid/view/View;->getTextDirection()I
+
+    move-result v2
+
+    invoke-virtual {v0}, Landroid/view/View;->getTextAlignment()I
+
+    move-result v3
+
+    invoke-interface {v1, v2, v3}, Lqn;->n(II)V
+
+    :cond_b
+    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_c
+
+    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
+    :cond_c
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

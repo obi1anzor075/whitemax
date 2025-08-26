@@ -2,50 +2,47 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lc6;
+
 
 # instance fields
-.field public a:Lf76;
-
-.field public final b:F
-
-.field public c:Z
-
-.field public d:Z
-
-.field public e:J
-
-.field public f:F
-
-.field public g:F
+.field public final a:Lly4;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
+.method public constructor <init>(Lly4;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
+    iput-object p1, p0, Lg76;->a:Lly4;
 
-    move-result-object p1
+    return-void
+.end method
 
-    invoke-virtual {p1}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
 
-    move-result p1
+# virtual methods
+.method public final run()V
+    .locals 2
 
-    int-to-float p1, p1
+    iget-object p0, p0, Lg76;->a:Lly4;
 
-    iput p1, p0, Lg76;->b:F
+    iget-object p0, p0, Lly4;->b:Ljava/lang/Object;
 
-    const/4 p1, 0x0
+    check-cast p0, La47;
 
-    iput-object p1, p0, Lg76;->a:Lf76;
+    iget-object v0, p0, La47;->d:Lvu0;
 
-    const/4 p1, 0x0
+    invoke-virtual {v0, p0}, Lvu0;->f(Ljava/lang/Object;)V
 
-    iput-boolean p1, p0, Lg76;->c:Z
+    iget-object p0, p0, La47;->l:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iput-boolean p1, p0, Lg76;->d:Z
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
     return-void
 .end method

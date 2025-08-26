@@ -51,18 +51,12 @@
 .end method
 
 .method public constructor <init>(Lorg/webrtc/RtpTransceiver$RtpTransceiverDirection;)V
-    .locals 2
+    .locals 1
 
     .line 2
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+    sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
-    move-result-object v0
-
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-direct {p0, p1, v0, v1}, Lorg/webrtc/RtpTransceiver$RtpTransceiverInit;-><init>(Lorg/webrtc/RtpTransceiver$RtpTransceiverDirection;Ljava/util/List;Ljava/util/List;)V
+    invoke-direct {p0, p1, v0, v0}, Lorg/webrtc/RtpTransceiver$RtpTransceiverInit;-><init>(Lorg/webrtc/RtpTransceiver$RtpTransceiverDirection;Ljava/util/List;Ljava/util/List;)V
 
     return-void
 .end method
@@ -80,9 +74,7 @@
     .end annotation
 
     .line 3
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v0
+    sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     invoke-direct {p0, p1, p2, v0}, Lorg/webrtc/RtpTransceiver$RtpTransceiverInit;-><init>(Lorg/webrtc/RtpTransceiver$RtpTransceiverDirection;Ljava/util/List;Ljava/util/List;)V
 

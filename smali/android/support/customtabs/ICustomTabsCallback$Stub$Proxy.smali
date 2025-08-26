@@ -84,7 +84,7 @@
     :catchall_0
     move-exception p0
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
@@ -114,6 +114,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
@@ -126,13 +127,9 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+    goto :goto_1
 
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    return-void
-
-    :goto_1
+    :goto_2
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
@@ -210,6 +207,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
@@ -241,12 +239,7 @@
     :cond_2
     const/4 p0, 0x0
 
-    :goto_1
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    return-object p0
+    goto :goto_1
 
     :goto_2
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
@@ -300,7 +293,7 @@
     :catchall_0
     move-exception p0
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
@@ -330,6 +323,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
@@ -342,13 +336,9 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+    goto :goto_1
 
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    return-void
-
-    :goto_1
+    :goto_2
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
@@ -394,7 +384,7 @@
     :catchall_0
     move-exception p0
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
@@ -424,6 +414,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
@@ -436,13 +427,9 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+    goto :goto_1
 
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    return-void
-
-    :goto_1
+    :goto_2
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
@@ -488,7 +475,7 @@
     :catchall_0
     move-exception p0
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
@@ -518,6 +505,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
@@ -530,13 +518,9 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+    goto :goto_1
 
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    return-void
-
-    :goto_1
+    :goto_2
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
@@ -582,7 +566,7 @@
     :catchall_0
     move-exception p0
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_0
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
@@ -626,6 +610,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    :goto_2
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
@@ -638,13 +623,9 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+    goto :goto_2
 
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    return-void
-
-    :goto_2
+    :goto_3
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V

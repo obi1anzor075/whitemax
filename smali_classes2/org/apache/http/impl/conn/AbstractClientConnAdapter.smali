@@ -63,7 +63,7 @@
 
     if-eqz v0, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
     const/4 v0, 0x1
@@ -93,6 +93,7 @@
     invoke-virtual {p0}, Lorg/apache/http/impl/conn/AbstractClientConnAdapter;->releaseConnection()V
 
     :cond_1
+    :goto_0
     return-void
 .end method
 
@@ -294,7 +295,9 @@
 
     invoke-virtual {p0}, Ljavax/net/ssl/SSLSocket;->getSession()Ljavax/net/ssl/SSLSession;
 
-    move-result-object v1
+    move-result-object p0
+
+    return-object p0
 
     :cond_1
     return-object v1
@@ -562,14 +565,13 @@
 
     iput-wide p1, p0, Lorg/apache/http/impl/conn/AbstractClientConnAdapter;->duration:J
 
-    goto :goto_0
+    return-void
 
     :cond_0
     const-wide/16 p1, -0x1
 
     iput-wide p1, p0, Lorg/apache/http/impl/conn/AbstractClientConnAdapter;->duration:J
 
-    :goto_0
     return-void
 .end method
 

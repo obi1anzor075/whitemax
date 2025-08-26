@@ -236,12 +236,11 @@
 
     iget-object p0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mMetadata:Landroid/support/v4/media/MediaMetadataCompat;
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return-object p0
 .end method
 
@@ -363,12 +362,11 @@
 
     iget-object p0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mQueueTitle:Ljava/lang/CharSequence;
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return-object p0
 .end method
 
@@ -387,12 +385,11 @@
 
     iget p0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mRatingType:I
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -411,12 +408,11 @@
 
     iget p0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mRepeatMode:I
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, -0x1
 
-    :goto_0
     return p0
 .end method
 
@@ -443,13 +439,12 @@
 
     invoke-direct {v0, p0}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
 
-    goto :goto_0
+    return-object v0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 p0, 0x0
 
-    :goto_0
-    return-object v0
+    return-object p0
 .end method
 
 .method public getShuffleMode()I
@@ -467,12 +462,11 @@
 
     iget p0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mShuffleMode:I
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, -0x1
 
-    :goto_0
     return p0
 .end method
 
@@ -527,20 +521,20 @@
 
     move-result v7
 
-    new-instance p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;
+    new-instance v2, Landroid/support/v4/media/session/ParcelableVolumeInfo;
 
     const/4 v5, 0x2
-
-    move-object v2, p0
 
     invoke-direct/range {v2 .. v7}, Landroid/support/v4/media/session/ParcelableVolumeInfo;-><init>(IIIII)V
 
     monitor-exit v1
 
-    return-object p0
+    return-object v2
 
     :catchall_0
-    move-exception p0
+    move-exception v0
+
+    move-object p0, v0
 
     goto :goto_0
 
@@ -574,12 +568,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -721,9 +714,9 @@
 
     move v1, p1
 
-    move v2, p3
-
     move-object v4, p2
+
+    move v2, p3
 
     move-object v5, p4
 
@@ -850,13 +843,13 @@
 
     move-result v1
 
-    new-instance v2, Lqd8;
+    new-instance v2, Lfi8;
 
     invoke-virtual {p0, v1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->getPackageNameForUid(I)Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-direct {v2, v3, v0, v1}, Lqd8;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v2, v3, v0, v1}, Lfi8;-><init>(Ljava/lang/String;II)V
 
     iget-object v3, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mControllerCallbacks:Landroid/os/RemoteCallbackList;
 
@@ -925,15 +918,15 @@
 .end method
 
 .method public seekTo(J)V
-    .locals 0
+    .locals 1
+
+    const/16 v0, 0x12
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
 
-    const/16 p2, 0x12
-
-    invoke-virtual {p0, p2, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MediaSessionStub;->postToHandler(ILjava/lang/Object;)V
+    invoke-virtual {p0, v0, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MediaSessionStub;->postToHandler(ILjava/lang/Object;)V
 
     return-void
 .end method
@@ -992,11 +985,11 @@
 .method public setCaptioningEnabled(Z)V
     .locals 1
 
+    const/16 v0, 0x1d
+
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
-
-    const/16 v0, 0x1d
 
     invoke-virtual {p0, v0, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MediaSessionStub;->postToHandler(ILjava/lang/Object;)V
 
@@ -1006,11 +999,11 @@
 .method public setPlaybackSpeed(F)V
     .locals 1
 
+    const/16 v0, 0x20
+
     invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object p1
-
-    const/16 v0, 0x20
 
     invoke-virtual {p0, v0, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MediaSessionStub;->postToHandler(ILjava/lang/Object;)V
 
@@ -1063,15 +1056,15 @@
 .end method
 
 .method public skipToQueueItem(J)V
-    .locals 0
+    .locals 1
+
+    const/16 v0, 0xb
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
 
-    const/16 p2, 0xb
-
-    invoke-virtual {p0, p2, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MediaSessionStub;->postToHandler(ILjava/lang/Object;)V
+    invoke-virtual {p0, v0, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$MediaSessionStub;->postToHandler(ILjava/lang/Object;)V
 
     return-void
 .end method

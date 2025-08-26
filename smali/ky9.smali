@@ -1,73 +1,124 @@
-.class public abstract Lky9;
-.super Ljava/lang/Object;
+.class public final Lky9;
+.super Lsk0;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:I
+# instance fields
+.field public X:Z
 
-.field public static final b:I
+.field public Y:Z
 
-.field public static final c:I
+.field public final a:La0a;
 
-.field public static final d:I
+.field public final b:Ljava/util/Iterator;
 
-.field public static final e:I
+.field public volatile c:Z
 
-.field public static final f:I
-
-.field public static final g:I
-
-.field public static final h:I
-
-.field public static final i:I
-
-.field public static final j:I
+.field public o:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(La0a;Ljava/util/Iterator;)V
+    .locals 0
 
-    sget v0, Latb;->oneme_appearance_settings_background_title:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput v0, Lky9;->a:I
+    iput-object p1, p0, Lky9;->a:La0a;
 
-    sget v0, Latb;->oneme_appearance_settings_dark_mode:I
-
-    sput v0, Lky9;->b:I
-
-    sget v0, Latb;->oneme_appearance_settings_font_size_reset:I
-
-    sput v0, Lky9;->c:I
-
-    sget v0, Latb;->oneme_appearance_settings_font_size_title:I
-
-    sput v0, Lky9;->d:I
-
-    sget v0, Latb;->oneme_appearance_settings_light_mode:I
-
-    sput v0, Lky9;->e:I
-
-    sget v0, Latb;->oneme_appearance_settings_message_incoming:I
-
-    sput v0, Lky9;->f:I
-
-    sget v0, Latb;->oneme_appearance_settings_message_outgoing:I
-
-    sput v0, Lky9;->g:I
-
-    sget v0, Latb;->oneme_appearance_settings_mode_title:I
-
-    sput v0, Lky9;->h:I
-
-    sget v0, Latb;->oneme_appearance_settings_system_mode:I
-
-    sput v0, Lky9;->i:I
-
-    sget v0, Latb;->oneme_appearance_settings_toolbar_title:I
-
-    sput v0, Lky9;->j:I
+    iput-object p2, p0, Lky9;->b:Ljava/util/Iterator;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final clear()V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lky9;->X:Z
+
+    return-void
+.end method
+
+.method public final f()V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lky9;->c:Z
+
+    return-void
+.end method
+
+.method public final g()Z
+    .locals 0
+
+    iget-boolean p0, p0, Lky9;->c:Z
+
+    return p0
+.end method
+
+.method public final isEmpty()Z
+    .locals 0
+
+    iget-boolean p0, p0, Lky9;->X:Z
+
+    return p0
+.end method
+
+.method public final poll()Ljava/lang/Object;
+    .locals 4
+
+    iget-boolean v0, p0, Lky9;->X:Z
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    return-object v1
+
+    :cond_0
+    iget-boolean v0, p0, Lky9;->Y:Z
+
+    const/4 v2, 0x1
+
+    iget-object v3, p0, Lky9;->b:Ljava/util/Iterator;
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    iput-boolean v2, p0, Lky9;->X:Z
+
+    return-object v1
+
+    :cond_1
+    iput-boolean v2, p0, Lky9;->Y:Z
+
+    :cond_2
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p0
+
+    const-string v0, "The iterator returned a null value"
+
+    invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method public final w(I)I
+    .locals 0
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lky9;->o:Z
+
+    return p1
 .end method

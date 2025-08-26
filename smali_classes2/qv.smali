@@ -1,113 +1,59 @@
 .class public final Lqv;
-.super Ll5e;
+.super Lbu3;
 .source "SourceFile"
-
-# interfaces
-.implements Lk26;
 
 
 # instance fields
-.field public synthetic X:Ljava/util/List;
+.field public X:J
 
-.field public synthetic Y:J
+.field public synthetic Y:Ljava/lang/Object;
 
-.field public final synthetic Z:Lfw;
+.field public final synthetic Z:Lpw;
+
+.field public o:Lzu;
+
+.field public o0:I
 
 
 # direct methods
-.method public constructor <init>(Lfw;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lpw;Lbu3;)V
     .locals 0
 
-    iput-object p1, p0, Lqv;->Z:Lfw;
+    iput-object p1, p0, Lqv;->Z:Lpw;
 
-    const/4 p1, 0x3
-
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
-    check-cast p1, Ljava/util/List;
+    iput-object p1, p0, Lqv;->Y:Ljava/lang/Object;
 
-    check-cast p2, Ljava/lang/Number;
+    iget p1, p0, Lqv;->o0:I
 
-    invoke-virtual {p2}, Ljava/lang/Number;->longValue()J
+    const/high16 v0, -0x80000000
 
-    move-result-wide v0
+    or-int/2addr p1, v0
 
-    check-cast p3, Lkotlin/coroutines/Continuation;
+    iput p1, p0, Lqv;->o0:I
 
-    new-instance p2, Lqv;
+    const-wide/16 v2, 0x0
 
-    iget-object p0, p0, Lqv;->Z:Lfw;
+    const/4 v4, 0x0
 
-    invoke-direct {p2, p0, p3}, Lqv;-><init>(Lfw;Lkotlin/coroutines/Continuation;)V
+    iget-object v0, p0, Lqv;->Z:Lpw;
 
-    iput-object p1, p2, Lqv;->X:Ljava/util/List;
+    const/4 v1, 0x0
 
-    iput-wide v0, p2, Lqv;->Y:J
+    move-object v5, p0
 
-    sget-object p0, Ljue;->a:Ljue;
-
-    invoke-virtual {p2, p0}, Lqv;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual/range {v0 .. v5}, Lpw;->u(Lku;JLzu;Lbu3;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 7
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lqv;->X:Ljava/util/List;
-
-    iget-wide v0, p0, Lqv;->Y:J
-
-    sget-object v2, Lfw;->F:[Lk77;
-
-    iget-object p0, p0, Lqv;->Z:Lfw;
-
-    invoke-virtual {p0, v0, v1}, Lfw;->l(J)Ljava/util/List;
-
-    move-result-object v2
-
-    iget-object p0, p0, Lfw;->c:Lkh6;
-
-    if-eqz p0, :cond_0
-
-    invoke-interface {v2}, Ljava/util/List;->size()I
-
-    move-result v3
-
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result p1
-
-    const-string v4, "getHistoryItems return "
-
-    const-string v5, " out of total "
-
-    const-string v6, " around "
-
-    invoke-static {v4, v3, v5, p1, v6}, Lrf0;->i(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Lkh6;->c(Ljava/lang/String;)V
-
-    :cond_0
-    return-object v2
 .end method

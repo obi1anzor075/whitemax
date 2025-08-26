@@ -1,155 +1,145 @@
-.class public final enum Lw49;
-.super Ljava/lang/Enum;
+.class public final Lw49;
+.super Lqde;
 .source "SourceFile"
 
-
-# static fields
-.field public static final enum X:Lw49;
-
-.field public static final enum Y:Lw49;
-
-.field public static final enum Z:Lw49;
-
-.field public static final enum b:Lw49;
-
-.field public static final enum c:Lw49;
-
-.field public static final enum o:Lw49;
-
-.field public static final synthetic w0:[Lw49;
-
-.field public static final synthetic x0:Lpz4;
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final a:I
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Lone/me/messages/list/ui/MessagesListWidget;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 9
-
-    new-instance v0, Lw49;
-
-    sget v1, Lqhc;->d0:I
-
-    const-string v2, "PLAYBACK"
-
-    const/4 v3, 0x0
-
-    invoke-direct {v0, v2, v3, v1}, Lw49;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lw49;->b:Lw49;
-
-    new-instance v1, Lw49;
-
-    sget v2, Lqhc;->h0:I
-
-    const-string v3, "TITLE"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4, v2}, Lw49;-><init>(Ljava/lang/String;II)V
-
-    sput-object v1, Lw49;->c:Lw49;
-
-    new-instance v2, Lw49;
-
-    sget v3, Lqhc;->g0:I
-
-    const-string v4, "SUBTITLE"
-
-    const/4 v5, 0x2
-
-    invoke-direct {v2, v4, v5, v3}, Lw49;-><init>(Ljava/lang/String;II)V
-
-    sput-object v2, Lw49;->o:Lw49;
-
-    new-instance v3, Lw49;
-
-    sget v4, Lqhc;->f0:I
-
-    const-string v5, "SPEED"
-
-    const/4 v6, 0x3
-
-    invoke-direct {v3, v5, v6, v4}, Lw49;-><init>(Ljava/lang/String;II)V
-
-    sput-object v3, Lw49;->X:Lw49;
-
-    new-instance v4, Lw49;
-
-    sget v5, Lqhc;->c0:I
-
-    const-string v6, "CLOSE"
-
-    const/4 v7, 0x4
-
-    invoke-direct {v4, v6, v7, v5}, Lw49;-><init>(Ljava/lang/String;II)V
-
-    sput-object v4, Lw49;->Y:Lw49;
-
-    new-instance v5, Lw49;
-
-    sget v6, Lqhc;->e0:I
-
-    const-string v7, "PROGRESS"
-
-    const/4 v8, 0x5
-
-    invoke-direct {v5, v7, v8, v6}, Lw49;-><init>(Ljava/lang/String;II)V
-
-    sput-object v5, Lw49;->Z:Lw49;
-
-    filled-new-array/range {v0 .. v5}, [Lw49;
-
-    move-result-object v0
-
-    sput-object v0, Lw49;->w0:[Lw49;
-
-    new-instance v1, Lpz4;
-
-    invoke-direct {v1, v0}, Lpz4;-><init>([Ljava/lang/Enum;)V
-
-    sput-object v1, Lw49;->x0:Lpz4;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;II)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/messages/list/ui/MessagesListWidget;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p2, p0, Lw49;->Y:Lone/me/messages/list/ui/MessagesListWidget;
 
-    iput p3, p0, Lw49;->a:I
+    const/4 p2, 0x2
+
+    invoke-direct {p0, p2, p1}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lw49;
-    .locals 1
 
-    const-class v0, Lw49;
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lw49;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
     check-cast p0, Lw49;
 
-    return-object p0
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lw49;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
 .end method
 
-.method public static values()[Lw49;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .locals 1
 
-    sget-object v0, Lw49;->w0:[Lw49;
+    new-instance v0, Lw49;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    iget-object p0, p0, Lw49;->Y:Lone/me/messages/list/ui/MessagesListWidget;
 
-    move-result-object v0
+    invoke-direct {v0, p2, p0}, Lw49;-><init>(Lkotlin/coroutines/Continuation;Lone/me/messages/list/ui/MessagesListWidget;)V
 
-    check-cast v0, [Lw49;
+    iput-object p1, v0, Lw49;->X:Ljava/lang/Object;
 
     return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lw49;->X:Ljava/lang/Object;
+
+    check-cast p1, Lzuc;
+
+    iget-object p0, p0, Lw49;->Y:Lone/me/messages/list/ui/MessagesListWidget;
+
+    iget-object v0, p0, Lone/me/messages/list/ui/MessagesListWidget;->a:Ljava/lang/String;
+
+    sget-object v1, Lg47;->m:Llr6;
+
+    if-nez v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {v1}, Llr6;->c()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    sget-object v2, Lqs7;->o:Lqs7;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, "Got new scrollEvent="
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    invoke-interface {v1, v2, v0, v3, v4}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    iget-boolean p1, p1, Lzuc;->b:Z
+
+    if-eqz p1, :cond_2
+
+    invoke-virtual {p0}, Lone/me/messages/list/ui/MessagesListWidget;->v0()Lone/me/messages/list/ui/recycler/MessagesLayoutManager;
+
+    move-result-object p1
+
+    const-string v0, "ScrollEvent"
+
+    invoke-virtual {p1, v0}, Lone/me/messages/list/ui/recycler/MessagesLayoutManager;->t1(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lone/me/messages/list/ui/MessagesListWidget;->w0()Le79;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Le79;->b()Z
+
+    goto :goto_1
+
+    :cond_2
+    invoke-virtual {p0}, Lone/me/messages/list/ui/MessagesListWidget;->v0()Lone/me/messages/list/ui/recycler/MessagesLayoutManager;
+
+    move-result-object p1
+
+    new-instance v0, Lt49;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lt49;-><init>(Lone/me/messages/list/ui/MessagesListWidget;I)V
+
+    invoke-virtual {p1, v0}, Lone/me/messages/list/ui/recycler/MessagesLayoutManager;->s1(Lw09;)V
+
+    :goto_1
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

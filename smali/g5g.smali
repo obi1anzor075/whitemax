@@ -1,71 +1,317 @@
-.class public abstract Lg5g;
+.class public final Lg5g;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final a:Lp3g;
+.field public static final c:Ljava/util/regex/Pattern;
 
-.field public static final b:Lp3g;
+.field public static final d:Ljava/util/regex/Pattern;
 
-.field public static c:Landroid/content/Context;
+
+# instance fields
+.field public final a:Lpna;
+
+.field public final b:Ljava/lang/StringBuilder;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 1
 
-    new-instance v0, Lp3g;
+    const-string v0, "\\[voice=\"([^\"]*)\"\\]"
 
-    const-string v1, "0\u0082\u0005\u00c80\u0082\u0003\u00b0\u00a0\u0003\u0002\u0001\u0002\u0002\u0014\u0010\u008ae\u0008s\u00f9/\u008eQ\u00ed"
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    invoke-static {v1}, Lj4g;->K0(Ljava/lang/String;)[B
+    move-result-object v0
 
-    move-result-object v1
+    sput-object v0, Lg5g;->c:Ljava/util/regex/Pattern;
 
-    const/4 v2, 0x0
+    const-string v0, "^((?:[0-9]*\\.)?[0-9]+)(px|em|%)$"
 
-    invoke-direct {v0, v2, v1}, Lp3g;-><init>(I[B)V
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    new-instance v0, Lp3g;
+    move-result-object v0
 
-    const-string v1, "0\u0082\u0006\u00040\u0082\u0003\u00ec\u00a0\u0003\u0002\u0001\u0002\u0002\u0014\u0003\u00a3\u00b2\u00ad\u00d7\u00e1r\u00cak\u00ec"
+    sput-object v0, Lg5g;->d:Ljava/util/regex/Pattern;
 
-    invoke-static {v1}, Lj4g;->K0(Ljava/lang/String;)[B
+    return-void
+.end method
 
-    move-result-object v1
+.method public constructor <init>()V
+    .locals 1
 
-    const/4 v2, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, v2, v1}, Lp3g;-><init>(I[B)V
+    new-instance v0, Lpna;
 
-    new-instance v0, Lp3g;
+    invoke-direct {v0}, Lpna;-><init>()V
 
-    const-string v1, "0\u0082\u0004C0\u0082\u0003+\u00a0\u0003\u0002\u0001\u0002\u0002\t\u0000\u00c2\u00e0\u0087FdJ0\u008d0"
+    iput-object v0, p0, Lg5g;->a:Lpna;
 
-    invoke-static {v1}, Lj4g;->K0(Ljava/lang/String;)[B
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v2, 0x2
+    iput-object v0, p0, Lg5g;->b:Ljava/lang/StringBuilder;
 
-    invoke-direct {v0, v2, v1}, Lp3g;-><init>(I[B)V
+    return-void
+.end method
 
-    sput-object v0, Lg5g;->a:Lp3g;
+.method public static a(Lpna;Ljava/lang/StringBuilder;)Ljava/lang/String;
+    .locals 5
 
-    new-instance v0, Lp3g;
+    const/4 v0, 0x0
 
-    const-string v1, "0\u0082\u0004\u00a80\u0082\u0003\u0090\u00a0\u0003\u0002\u0001\u0002\u0002\t\u0000\u00d5\u0085\u00b8l}\u00d3N\u00f50"
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    invoke-static {v1}, Lj4g;->K0(Ljava/lang/String;)[B
+    iget v1, p0, Lpna;->b:I
 
-    move-result-object v1
+    iget v2, p0, Lpna;->c:I
 
-    const/4 v2, 0x3
+    :goto_0
+    if-ge v1, v2, :cond_5
 
-    invoke-direct {v0, v2, v1}, Lp3g;-><init>(I[B)V
+    if-nez v0, :cond_5
 
-    sput-object v0, Lg5g;->b:Lp3g;
+    iget-object v3, p0, Lpna;->a:[B
 
+    aget-byte v3, v3, v1
+
+    int-to-char v3, v3
+
+    const/16 v4, 0x41
+
+    if-lt v3, v4, :cond_0
+
+    const/16 v4, 0x5a
+
+    if-le v3, v4, :cond_4
+
+    :cond_0
+    const/16 v4, 0x61
+
+    if-lt v3, v4, :cond_1
+
+    const/16 v4, 0x7a
+
+    if-le v3, v4, :cond_4
+
+    :cond_1
+    const/16 v4, 0x30
+
+    if-lt v3, v4, :cond_2
+
+    const/16 v4, 0x39
+
+    if-le v3, v4, :cond_4
+
+    :cond_2
+    const/16 v4, 0x23
+
+    if-eq v3, v4, :cond_4
+
+    const/16 v4, 0x2d
+
+    if-eq v3, v4, :cond_4
+
+    const/16 v4, 0x2e
+
+    if-eq v3, v4, :cond_4
+
+    const/16 v4, 0x5f
+
+    if-ne v3, v4, :cond_3
+
+    goto :goto_1
+
+    :cond_3
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_4
+    :goto_1
+    add-int/lit8 v1, v1, 0x1
+
+    invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_0
+
+    :cond_5
+    iget v0, p0, Lpna;->b:I
+
+    sub-int/2addr v1, v0
+
+    invoke-virtual {p0, v1}, Lpna;->H(I)V
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static b(Lpna;Ljava/lang/StringBuilder;)Ljava/lang/String;
+    .locals 2
+
+    invoke-static {p0}, Lg5g;->c(Lpna;)V
+
+    invoke-virtual {p0}, Lpna;->a()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_0
+    invoke-static {p0, p1}, Lg5g;->a(Lpna;Ljava/lang/StringBuilder;)Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v0, ""
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    return-object p1
+
+    :cond_1
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lpna;->u()I
+
+    move-result p0
+
+    int-to-char p0, p0
+
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static c(Lpna;)V
+    .locals 8
+
+    const/4 v0, 0x1
+
+    :goto_0
+    move v1, v0
+
+    :goto_1
+    invoke-virtual {p0}, Lpna;->a()I
+
+    move-result v2
+
+    if-lez v2, :cond_4
+
+    if-eqz v1, :cond_4
+
+    iget v1, p0, Lpna;->b:I
+
+    iget-object v2, p0, Lpna;->a:[B
+
+    aget-byte v3, v2, v1
+
+    int-to-char v4, v3
+
+    const/16 v5, 0x9
+
+    if-eq v4, v5, :cond_3
+
+    const/16 v5, 0xa
+
+    if-eq v4, v5, :cond_3
+
+    const/16 v5, 0xc
+
+    if-eq v4, v5, :cond_3
+
+    const/16 v5, 0xd
+
+    if-eq v4, v5, :cond_3
+
+    const/16 v5, 0x20
+
+    if-eq v4, v5, :cond_3
+
+    iget v4, p0, Lpna;->c:I
+
+    add-int/lit8 v5, v1, 0x2
+
+    if-gt v5, v4, :cond_2
+
+    add-int/lit8 v1, v1, 0x1
+
+    const/16 v6, 0x2f
+
+    if-ne v3, v6, :cond_2
+
+    aget-byte v1, v2, v1
+
+    const/16 v3, 0x2a
+
+    if-ne v1, v3, :cond_2
+
+    :goto_2
+    add-int/lit8 v1, v5, 0x1
+
+    if-ge v1, v4, :cond_1
+
+    aget-byte v7, v2, v5
+
+    int-to-char v7, v7
+
+    if-ne v7, v3, :cond_0
+
+    aget-byte v7, v2, v1
+
+    int-to-char v7, v7
+
+    if-ne v7, v6, :cond_0
+
+    add-int/lit8 v5, v5, 0x2
+
+    move v4, v5
+
+    goto :goto_2
+
+    :cond_0
+    move v5, v1
+
+    goto :goto_2
+
+    :cond_1
+    iget v1, p0, Lpna;->b:I
+
+    sub-int/2addr v4, v1
+
+    invoke-virtual {p0, v4}, Lpna;->H(I)V
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v1, 0x0
+
+    goto :goto_1
+
+    :cond_3
+    invoke-virtual {p0, v0}, Lpna;->H(I)V
+
+    goto :goto_0
+
+    :cond_4
     return-void
 .end method

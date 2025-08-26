@@ -152,7 +152,7 @@
 
     iput-object p1, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
 
-    goto :goto_1
+    return-void
 
     .line 24
     :cond_0
@@ -194,7 +194,6 @@
     goto :goto_0
 
     :cond_1
-    :goto_1
     return-void
 .end method
 
@@ -282,7 +281,7 @@
 
     if-ne v0, v2, :cond_1
 
-    return-void
+    goto :goto_2
 
     .line 14
     :cond_1
@@ -302,7 +301,7 @@
 
     if-ne v0, v2, :cond_3
 
-    return-void
+    goto :goto_2
 
     .line 16
     :cond_3
@@ -327,6 +326,7 @@
     throw p0
 
     :cond_6
+    :goto_2
     return-void
 
     .line 19
@@ -373,7 +373,7 @@
 
     const-string v1, "] not found."
 
-    invoke-static {p1, v0, v1}, Lrf0;->f(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1}, Lpg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -416,7 +416,7 @@
 
     const-string v2, "] could not convert to BigDecimal."
 
-    invoke-static {p1, v1, v2}, Lrf0;->f(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1, v2}, Lpg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -459,7 +459,7 @@
 
     const-string v2, "] could not convert to BigInteger."
 
-    invoke-static {p1, v1, v2}, Lrf0;->f(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1, v2}, Lpg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -536,7 +536,7 @@
 
     const-string v1, "] is not a boolean."
 
-    invoke-static {p1, v0, v1}, Lrf0;->f(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1}, Lpg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -580,12 +580,12 @@
 
     move-result-wide p0
 
-    goto :goto_0
+    return-wide p0
 
     :catch_0
     move-exception p0
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_0
     check-cast p0, Ljava/lang/String;
@@ -596,17 +596,16 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :goto_0
     return-wide p0
 
-    :goto_1
+    :goto_0
     new-instance v0, Lorg/json/JSONException;
 
     const-string v1, "JSONArray["
 
     const-string v2, "] is not a number."
 
-    invoke-static {p1, v1, v2}, Lrf0;->f(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1, v2}, Lpg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -648,7 +647,7 @@
 
     const-string v1, "] is not an enum of type "
 
-    invoke-static {p2, v0, v1}, Lme4;->m(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p2, v0, v1}, Lm26;->l(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p2
 
@@ -698,12 +697,12 @@
 
     move-result p0
 
-    goto :goto_0
+    return p0
 
     :catch_0
     move-exception p0
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_0
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -716,17 +715,16 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :goto_0
     return p0
 
-    :goto_1
+    :goto_0
     new-instance v0, Lorg/json/JSONException;
 
     const-string v1, "JSONArray["
 
     const-string v2, "] is not a number."
 
-    invoke-static {p1, v1, v2}, Lrf0;->f(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1, v2}, Lpg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -758,12 +756,12 @@
 
     move-result p0
 
-    goto :goto_0
+    return p0
 
     :catch_0
     move-exception p0
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_0
     check-cast p0, Ljava/lang/String;
@@ -774,17 +772,16 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :goto_0
     return p0
 
-    :goto_1
+    :goto_0
     new-instance v0, Lorg/json/JSONException;
 
     const-string v1, "JSONArray["
 
     const-string v2, "] is not a number."
 
-    invoke-static {p1, v1, v2}, Lrf0;->f(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1, v2}, Lpg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -820,7 +817,7 @@
 
     const-string v1, "] is not a JSONArray."
 
-    invoke-static {p1, v0, v1}, Lrf0;->f(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1}, Lpg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -856,7 +853,7 @@
 
     const-string v1, "] is not a JSONObject."
 
-    invoke-static {p1, v0, v1}, Lrf0;->f(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1}, Lpg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -888,12 +885,12 @@
 
     move-result-wide p0
 
-    goto :goto_0
+    return-wide p0
 
     :catch_0
     move-exception p0
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_0
     check-cast p0, Ljava/lang/String;
@@ -904,17 +901,16 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    :goto_0
     return-wide p0
 
-    :goto_1
+    :goto_0
     new-instance v0, Lorg/json/JSONException;
 
     const-string v1, "JSONArray["
 
     const-string v2, "] is not a number."
 
-    invoke-static {p1, v1, v2}, Lrf0;->f(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1, v2}, Lpg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -969,7 +965,7 @@
 
     const-string v2, "] is not a number."
 
-    invoke-static {p1, v1, v2}, Lrf0;->f(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1, v2}, Lpg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1005,7 +1001,7 @@
 
     const-string v1, "] not a string."
 
-    invoke-static {p1, v0, v1}, Lrf0;->f(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, v1}, Lpg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1144,13 +1140,12 @@
 
     move-result-object p0
 
-    goto :goto_1
+    return-object p0
 
     :cond_1
     :goto_0
     const/4 p0, 0x0
 
-    :goto_1
     return-object p0
 .end method
 
@@ -1169,7 +1164,7 @@
 
     if-eqz p1, :cond_0
 
-    return-object p2
+    goto :goto_0
 
     :cond_0
     instance-of p1, p0, Ljava/math/BigDecimal;
@@ -1202,7 +1197,7 @@
 
     if-eqz p1, :cond_3
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_3
     instance-of p1, p0, Ljava/lang/Long;
@@ -1221,7 +1216,7 @@
 
     if-eqz p1, :cond_4
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_4
     :try_start_0
@@ -1238,10 +1233,11 @@
     return-object p1
 
     :catch_0
+    :goto_0
     return-object p2
 
     :cond_5
-    :goto_0
+    :goto_1
     new-instance p1, Ljava/math/BigDecimal;
 
     check-cast p0, Ljava/lang/Number;
@@ -1255,7 +1251,7 @@
     return-object p1
 
     :cond_6
-    :goto_1
+    :goto_2
     new-instance p1, Ljava/math/BigDecimal;
 
     check-cast p0, Ljava/lang/Number;
@@ -1284,7 +1280,7 @@
 
     if-eqz p1, :cond_0
 
-    return-object p2
+    goto :goto_0
 
     :cond_0
     instance-of p1, p0, Ljava/math/BigInteger;
@@ -1317,7 +1313,7 @@
 
     if-eqz p1, :cond_3
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_3
     instance-of p1, p0, Ljava/lang/Long;
@@ -1336,7 +1332,7 @@
 
     if-eqz p1, :cond_4
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_4
     :try_start_0
@@ -1370,10 +1366,11 @@
     return-object p1
 
     :catch_0
+    :goto_0
     return-object p2
 
     :cond_6
-    :goto_0
+    :goto_1
     check-cast p0, Ljava/lang/Number;
 
     invoke-virtual {p0}, Ljava/lang/Number;->longValue()J
@@ -1387,7 +1384,7 @@
     return-object p0
 
     :cond_7
-    :goto_1
+    :goto_2
     new-instance p1, Ljava/math/BigDecimal;
 
     check-cast p0, Ljava/lang/Number;
@@ -1465,7 +1462,7 @@
 
     if-eqz p1, :cond_0
 
-    return-wide p2
+    goto :goto_0
 
     .line 4
     :cond_0
@@ -1502,6 +1499,7 @@
 
     :catch_0
     :cond_2
+    :goto_0
     return-wide p2
 .end method
 
@@ -1554,7 +1552,7 @@
 
     if-eqz p2, :cond_0
 
-    return-object p3
+    goto :goto_0
 
     .line 4
     :cond_0
@@ -1589,6 +1587,7 @@
     return-object p0
 
     :catch_0
+    :goto_0
     return-object p3
 .end method
 
@@ -1622,7 +1621,7 @@
 
     if-eqz p1, :cond_0
 
-    return p2
+    goto :goto_0
 
     .line 4
     :cond_0
@@ -1659,6 +1658,7 @@
 
     :catch_0
     :cond_2
+    :goto_0
     return p2
 .end method
 
@@ -1692,7 +1692,7 @@
 
     if-eqz p1, :cond_0
 
-    return p2
+    goto :goto_0
 
     .line 4
     :cond_0
@@ -1735,6 +1735,7 @@
 
     :catch_0
     :cond_2
+    :goto_0
     return p2
 .end method
 
@@ -1751,12 +1752,11 @@
 
     check-cast p0, Lorg/json/JSONArray;
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return-object p0
 .end method
 
@@ -1773,12 +1773,11 @@
 
     check-cast p0, Lorg/json/JSONObject;
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return-object p0
 .end method
 
@@ -1812,7 +1811,7 @@
 
     if-eqz p1, :cond_0
 
-    return-wide p2
+    goto :goto_0
 
     .line 4
     :cond_0
@@ -1855,6 +1854,7 @@
 
     :catch_0
     :cond_2
+    :goto_0
     return-wide p2
 .end method
 
@@ -1888,7 +1888,7 @@
 
     if-eqz p1, :cond_0
 
-    return-object p2
+    goto :goto_0
 
     .line 4
     :cond_0
@@ -1921,6 +1921,7 @@
 
     :catch_0
     :cond_2
+    :goto_0
     return-object p2
 .end method
 
@@ -1988,16 +1989,15 @@
 
     if-eqz p1, :cond_0
 
-    goto :goto_0
+    return-object p2
 
     .line 4
     :cond_0
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object p0
 
-    :goto_0
-    return-object p2
+    return-object p0
 .end method
 
 .method public put(D)Lorg/json/JSONArray;
@@ -2219,7 +2219,7 @@
     const-string v0, "] not found."
 
     .line 27
-    invoke-static {p1, p2, v0}, Lrf0;->f(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p2, v0}, Lpg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -2450,12 +2450,11 @@
 
     move-result-object p0
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return-object p0
 .end method
 
@@ -2831,7 +2830,7 @@
     .line 3
     invoke-virtual {p1, v1}, Ljava/io/Writer;->write(I)V
     :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
 
     const/4 v1, 0x1
 
@@ -2866,11 +2865,6 @@
 
     throw p1
 
-    :catch_1
-    move-exception p0
-
-    goto :goto_2
-
     :cond_0
     if-eqz v0, :cond_5
 
@@ -2900,7 +2894,7 @@
     :cond_2
     invoke-static {p1, v3}, Lorg/json/JSONObject;->indent(Ljava/io/Writer;I)V
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 9
     :try_start_3
@@ -2912,7 +2906,7 @@
 
     invoke-static {p1, v4, p2, v3}, Lorg/json/JSONObject;->writeValue(Ljava/io/Writer;Ljava/lang/Object;II)Ljava/io/Writer;
     :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
 
     add-int/lit8 v2, v2, 0x1
 
@@ -2920,7 +2914,7 @@
 
     goto :goto_0
 
-    :catch_2
+    :catch_1
     move-exception p0
 
     .line 10
@@ -2962,12 +2956,14 @@
     .line 13
     invoke-virtual {p1, p0}, Ljava/io/Writer;->write(I)V
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
 
     return-object p1
 
+    :catch_2
+    move-exception p0
+
     .line 14
-    :goto_2
     new-instance p1, Lorg/json/JSONException;
 
     invoke-direct {p1, p0}, Lorg/json/JSONException;-><init>(Ljava/lang/Throwable;)V

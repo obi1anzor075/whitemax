@@ -1,55 +1,85 @@
-.class public final Lt99;
-.super Ler3;
+.class public final enum Lt99;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field public X:Llg7;
+# static fields
+.field public static final enum a:Lt99;
 
-.field public Y:Llg7;
+.field public static final enum b:Lt99;
 
-.field public synthetic Z:Ljava/lang/Object;
+.field public static final enum c:Lt99;
 
-.field public o:Lx99;
-
-.field public final synthetic w0:Lx99;
-
-.field public x0:I
+.field public static final synthetic o:[Lt99;
 
 
 # direct methods
-.method public constructor <init>(Lx99;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
-    iput-object p1, p0, Lt99;->w0:Lx99;
+    new-instance v0, Lt99;
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    const-string v1, "X1"
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lt99;->a:Lt99;
+
+    new-instance v1, Lt99;
+
+    const-string v2, "X1_5"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lt99;->b:Lt99;
+
+    new-instance v2, Lt99;
+
+    const-string v3, "X2"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lt99;->c:Lt99;
+
+    filled-new-array {v0, v1, v2}, [Lt99;
+
+    move-result-object v0
+
+    sput-object v0, Lt99;->o:[Lt99;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public static valueOf(Ljava/lang/String;)Lt99;
     .locals 1
 
-    iput-object p1, p0, Lt99;->Z:Ljava/lang/Object;
+    const-class v0, Lt99;
 
-    iget p1, p0, Lt99;->x0:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lt99;->x0:I
-
-    iget-object p1, p0, Lt99;->w0:Lx99;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lx99;->c(Lone/me/messages/list/loader/MessageModel;Lkotlin/coroutines/Continuation;)Ljava/io/Serializable;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
+    check-cast p0, Lt99;
+
     return-object p0
+.end method
+
+.method public static values()[Lt99;
+    .locals 1
+
+    sget-object v0, Lt99;->o:[Lt99;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lt99;
+
+    return-object v0
 .end method

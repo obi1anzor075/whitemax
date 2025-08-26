@@ -13,13 +13,13 @@
         "",
         "",
         "delay",
-        "Lu39;",
+        "Lr89;",
         "callback",
-        "Ljue;",
+        "Le5f;",
         "registerAudioSampleCallback",
-        "(JLu39;)V",
+        "(JLr89;)V",
         "removeAudioSampleCallback",
-        "(Lu39;)V",
+        "(Lr89;)V",
         "",
         "isMicEnabled",
         "()Z",
@@ -33,6 +33,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -40,10 +41,10 @@
 .method public abstract isMicEnabled()Z
 .end method
 
-.method public abstract registerAudioSampleCallback(JLu39;)V
+.method public abstract registerAudioSampleCallback(JLr89;)V
 .end method
 
-.method public abstract removeAudioSampleCallback(Lu39;)V
+.method public abstract removeAudioSampleCallback(Lr89;)V
 .end method
 
 .method public abstract setMicEnabled(Z)V

@@ -1,176 +1,85 @@
-.class public final Laz;
-.super Lez;
+.class public abstract Laz;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:J
+.field public final a:Lw10;
 
-.field public final b:F
-
-.field public final c:Lmge;
+.field public volatile b:Z
 
 
 # direct methods
-.method public constructor <init>(JFLmge;)V
+.method public constructor <init>(Lw10;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Laz;->a:J
-
-    iput p3, p0, Laz;->b:F
-
-    iput-object p4, p0, Laz;->c:Lmge;
+    iput-object p1, p0, Laz;->a:Lw10;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 2
-
-    iget-wide v0, p0, Laz;->a:J
-
-    return-wide v0
+.method public abstract a()V
 .end method
 
-.method public final b()Lmge;
+.method public final b(Lgx;Ljava/lang/Throwable;)V
     .locals 0
 
-    iget-object p0, p0, Laz;->c:Lmge;
+    if-eqz p1, :cond_0
 
-    return-object p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 7
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
+    invoke-virtual {p1, p2}, Lgx;->onError(Ljava/lang/Throwable;)V
 
     :cond_0
-    instance-of v1, p1, Laz;
+    const/4 p1, 0x1
 
-    const/4 v2, 0x0
+    iput-boolean p1, p0, Laz;->b:Z
 
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Laz;
-
-    iget-wide v3, p1, Laz;->a:J
-
-    iget-wide v5, p0, Laz;->a:J
-
-    cmp-long v1, v5, v3
-
-    if-eqz v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget v1, p0, Laz;->b:F
-
-    iget v3, p1, Laz;->b:F
-
-    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-object p0, p0, Laz;->c:Lmge;
-
-    iget-object p1, p1, Laz;->c:Lmge;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_4
-
-    return v2
-
-    :cond_4
-    return v0
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 3
+.method public c(Lgx;Ljava/io/File;)V
+    .locals 0
 
-    iget-wide v0, p0, Laz;->a:J
+    iget-boolean p0, p0, Laz;->b:Z
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    if-nez p0, :cond_0
+
+    invoke-virtual {p1, p2}, Lgx;->h(Ljava/lang/Object;)V
+
+    invoke-virtual {p1}, Lgx;->b()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public d()Lvw9;
+    .locals 1
+
+    iget-object p0, p0, Laz;->a:Lw10;
+
+    iget-object p0, p0, Lw10;->s:Ljava/lang/String;
+
+    invoke-static {p0}, Lmna;->h(Ljava/lang/String;)Z
 
     move-result v0
 
-    const/16 v1, 0x1f
+    if-eqz v0, :cond_0
 
-    mul-int/2addr v0, v1
+    new-instance v0, Ljava/io/File;
 
-    iget v2, p0, Laz;->b:F
+    invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v0, v2, v1}, Lth2;->e(IFI)I
-
-    move-result v0
-
-    iget-object p0, p0, Laz;->c:Lmge;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Downloading(messageId="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-wide v1, p0, Laz;->a:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", progress="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Laz;->b:F
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    const-string v1, ", textSize="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Laz;->c:Lmge;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0}, Lvw9;->l(Ljava/lang/Object;)Lpy9;
 
     move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    const/4 p0, 0x0
 
     return-object p0
 .end method

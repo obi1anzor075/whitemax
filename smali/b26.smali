@@ -1,6 +1,3 @@
-.class public interface abstract Lb26;
-.super Ljava/lang/Object;
+.class public final Lb26;
+.super Landroidx/fragment/app/c;
 .source "SourceFile"
-
-# interfaces
-.implements Ln26;

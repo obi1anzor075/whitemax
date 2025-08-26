@@ -1,55 +1,26 @@
 .class public final Lexe;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lgxe;
 
 
 # instance fields
-.field public X:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
-
-.field public Y:J
-
-.field public Z:J
-
-.field public o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
-
-.field public synthetic w0:Ljava/lang/Object;
-
-.field public final synthetic x0:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
-
-.field public y0:I
+.field public final a:Ljava/util/LinkedList;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Lkotlin/coroutines/Continuation;)V
-    .locals 0
-
-    iput-object p1, p0, Lexe;->x0:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
-
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public constructor <init>()V
     .locals 1
 
-    iput-object p1, p0, Lexe;->w0:Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget p1, p0, Lexe;->y0:I
+    new-instance v0, Ljava/util/LinkedList;
 
-    const/high16 v0, -0x80000000
+    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
-    or-int/2addr p1, v0
+    iput-object v0, p0, Lexe;->a:Ljava/util/LinkedList;
 
-    iput p1, p0, Lexe;->y0:I
-
-    iget-object p1, p0, Lexe;->x0:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
-
-    invoke-virtual {p1, p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->l(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

@@ -1,8 +1,13 @@
-.class public interface abstract Lnbc;
+.class public final Lnbc;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract g(Ljava/lang/Object;)V
-.end method
+# instance fields
+.field public a:I
+
+.field public b:I
+
+.field public c:Z
+
+.field public d:Z

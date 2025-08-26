@@ -59,7 +59,7 @@
 
     sget-object p0, Landroid/os/Bundle;->EMPTY:Landroid/os/Bundle;
 
-    goto :goto_0
+    return-object p0
 
     :cond_1
     new-instance v0, Landroid/os/Bundle;
@@ -68,8 +68,5 @@
 
     invoke-direct {v0, p0}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
 
-    move-object p0, v0
-
-    :goto_0
-    return-object p0
+    return-object v0
 .end method

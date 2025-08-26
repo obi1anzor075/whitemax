@@ -1,198 +1,39 @@
 .class public final Lbq9;
-.super Lgh0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Ltm4;
 
-.field public final synthetic b:Lyv1;
+.field public final b:Ltm4;
+
+.field public final c:Lvu0;
+
+.field public final d:Ltm4;
+
+.field public final e:Ltm4;
+
+.field public final f:Ltm4;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lzv1;I)V
+.method public constructor <init>(Ltm4;Ltm4;Lvu0;Ltm4;Ltm4;Ltm4;)V
     .locals 0
-
-    iput p2, p0, Lbq9;->a:I
-
-    iput-object p1, p0, Lbq9;->b:Lyv1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p1, p0, Lbq9;->a:Ltm4;
 
+    iput-object p2, p0, Lbq9;->b:Ltm4;
 
-# virtual methods
-.method public final d()V
-    .locals 2
+    iput-object p3, p0, Lbq9;->c:Lvu0;
 
-    iget v0, p0, Lbq9;->a:I
+    iput-object p4, p0, Lbq9;->d:Ltm4;
 
-    packed-switch v0, :pswitch_data_0
+    iput-object p5, p0, Lbq9;->e:Ltm4;
 
-    iget-object p0, p0, Lbq9;->b:Lyv1;
-
-    invoke-interface {p0}, Lyv1;->isActive()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    new-instance v0, Ljava/lang/Throwable;
-
-    const-string v1, "Cancelled with fresco pipeline"
-
-    invoke-direct {v0, v1}, Ljava/lang/Throwable;-><init>(Ljava/lang/String;)V
-
-    invoke-interface {p0, v0}, Lyv1;->cancel(Ljava/lang/Throwable;)Z
-
-    :cond_0
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lbq9;->b:Lyv1;
-
-    invoke-interface {p0}, Lyv1;->isActive()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    new-instance v0, Ljava/lang/Throwable;
-
-    const-string v1, "Cancelled with fresco pipeline"
-
-    invoke-direct {v0, v1}, Ljava/lang/Throwable;-><init>(Ljava/lang/String;)V
-
-    invoke-interface {p0, v0}, Lyv1;->cancel(Ljava/lang/Throwable;)Z
-
-    :cond_1
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final e(Lg0;)V
-    .locals 2
-
-    iget v0, p0, Lbq9;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Lbq9;->b:Lyv1;
-
-    const/4 p1, 0x0
-
-    invoke-interface {p0, p1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
+    iput-object p6, p0, Lbq9;->f:Ltm4;
 
     return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lbq9;->b:Lyv1;
-
-    invoke-interface {p0}, Lyv1;->isActive()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    new-instance v0, Ljava/lang/Throwable;
-
-    const-string v1, "Fetch failed"
-
-    invoke-virtual {p1}, Lg0;->c()Ljava/lang/Throwable;
-
-    move-result-object p1
-
-    invoke-direct {v0, v1, p1}, Ljava/lang/Throwable;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    new-instance p1, Lkcc;
-
-    invoke-direct {p1, v0}, Lkcc;-><init>(Ljava/lang/Throwable;)V
-
-    invoke-interface {p0, p1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
-
-    :cond_0
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final f(Lg0;)V
-    .locals 2
-
-    iget v0, p0, Lbq9;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-virtual {p1}, Lg0;->h()Z
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    iget-object p0, p0, Lbq9;->b:Lyv1;
-
-    if-nez v0, :cond_0
-
-    invoke-interface {p0, v1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p1}, Lg0;->e()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Le13;
-
-    invoke-static {p1}, Le13;->o(Le13;)Le13;
-
-    move-result-object p1
-
-    if-nez p1, :cond_1
-
-    invoke-interface {p0, v1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p1}, Le13;->e0()Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-interface {p0, p1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
-
-    :goto_0
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lbq9;->b:Lyv1;
-
-    invoke-interface {p0}, Lyv1;->isActive()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_2
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-interface {p0, p1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
-
-    :cond_2
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

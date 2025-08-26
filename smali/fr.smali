@@ -1,126 +1,80 @@
 .class public final Lfr;
-.super Lild;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Lb6c;
+.implements Ll66;
 
 
 # instance fields
-.field public final a:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public b:Loh4;
+.field public final synthetic Y:Lt52;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;I)V
-    .locals 2
+.method public constructor <init>(Lt52;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfr;->Y:Lt52;
 
-    iput p2, p0, Lfr;->a:I
+    const/4 p1, 0x2
 
-    new-instance v0, Loh4;
-
-    new-instance v1, Ljava/io/File;
-
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
-
-    move-result-object p1
-
-    iget-object p1, p1, Landroid/content/pm/ApplicationInfo;->nativeLibraryDir:Ljava/lang/String;
-
-    invoke-direct {v1, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    invoke-direct {v0, v1, p2}, Loh4;-><init>(Ljava/io/File;I)V
-
-    iput-object v0, p0, Lfr;->b:Loh4;
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;)Lild;
-    .locals 2
-
-    new-instance v0, Loh4;
-
-    new-instance v1, Ljava/io/File;
-
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
-
-    move-result-object p1
-
-    iget-object p1, p1, Landroid/content/pm/ApplicationInfo;->nativeLibraryDir:Ljava/lang/String;
-
-    invoke-direct {v1, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    iget p1, p0, Lfr;->a:I
-
-    or-int/lit8 p1, p1, 0x1
-
-    invoke-direct {v0, v1, p1}, Loh4;-><init>(Ljava/io/File;I)V
-
-    iput-object v0, p0, Lfr;->b:Loh4;
-
-    return-object p0
-.end method
-
-.method public final b()Ljava/lang/String;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    const/4 p0, 0x0
+    check-cast p1, Ldl2;
 
-    throw p0
-.end method
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-.method public final c(Ljava/lang/String;ILandroid/os/StrictMode$ThreadPolicy;)I
-    .locals 0
-
-    iget-object p0, p0, Lfr;->b:Loh4;
-
-    invoke-virtual {p0, p1, p2, p3}, Loh4;->c(Ljava/lang/String;ILandroid/os/StrictMode$ThreadPolicy;)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final d(I)V
-    .locals 0
-
-    iget-object p0, p0, Lfr;->b:Loh4;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ApplicationSoSource["
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lfr;->b:Loh4;
-
-    invoke-virtual {p0}, Loh4;->toString()Ljava/lang/String;
+    invoke-virtual {p0, p1, p2}, Lfr;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast p0, Lfr;
 
-    const-string p0, "]"
+    sget-object p1, Le5f;->a:Le5f;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p1}, Lfr;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    return-object p1
+.end method
 
-    move-result-object p0
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
+
+    new-instance v0, Lfr;
+
+    iget-object p0, p0, Lfr;->Y:Lt52;
+
+    invoke-direct {v0, p0, p2}, Lfr;-><init>(Lt52;Lkotlin/coroutines/Continuation;)V
+
+    iput-object p1, v0, Lfr;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lfr;->X:Ljava/lang/Object;
+
+    check-cast p1, Ldl2;
+
+    iget-object p0, p0, Lfr;->Y:Lt52;
+
+    invoke-virtual {p0, p1}, Lt52;->a(Ldl2;)V
+
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 .end method

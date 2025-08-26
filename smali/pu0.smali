@@ -2,96 +2,119 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Laye;
+
 
 # instance fields
 .field public final a:I
 
-.field public final b:I
+.field public final b:Ldz5;
 
-.field public final c:I
+.field public final c:Lys4;
 
-.field public final d:[I
+.field public d:Ldz5;
 
-.field public final e:[Ljava/lang/String;
+.field public e:Laye;
 
-.field public final f:I
-
-.field public final g:I
+.field public f:J
 
 
 # direct methods
-.method public constructor <init>(II[I[Ljava/lang/String;II)V
+.method public constructor <init>(IILdz5;)V
     .locals 0
 
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    iput p1, p0, Lpu0;->a:I
+    iput p2, p0, Lpu0;->a:I
 
-    const/4 p1, 0x0
+    iput-object p3, p0, Lpu0;->b:Ldz5;
 
-    .line 3
-    iput p1, p0, Lpu0;->b:I
+    new-instance p1, Lys4;
 
-    .line 4
-    iput p2, p0, Lpu0;->c:I
+    invoke-direct {p1}, Lys4;-><init>()V
 
-    .line 5
-    iput-object p3, p0, Lpu0;->d:[I
-
-    .line 6
-    iput-object p4, p0, Lpu0;->e:[Ljava/lang/String;
-
-    .line 7
-    iput p5, p0, Lpu0;->f:I
-
-    .line 8
-    iput p6, p0, Lpu0;->g:I
+    iput-object p1, p0, Lpu0;->c:Lys4;
 
     return-void
 .end method
 
-.method public constructor <init>(Lqu0;)V
+
+# virtual methods
+.method public final a(La34;IZ)I
     .locals 1
 
-    .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object p0, p0, Lpu0;->e:Laye;
 
-    .line 10
-    iget v0, p1, Lqu0;->g:I
+    sget v0, Lnaf;->a:I
 
-    iput v0, p0, Lpu0;->a:I
+    invoke-interface {p0, p1, p2, p3}, Laye;->e(La34;IZ)I
 
-    .line 11
-    iget v0, p1, Lqu0;->k:I
+    move-result p0
 
-    iput v0, p0, Lpu0;->b:I
+    return p0
+.end method
 
-    .line 12
-    iget v0, p1, Lqu0;->j:I
+.method public final b(JIIILyxe;)V
+    .locals 4
 
-    iput v0, p0, Lpu0;->c:I
+    iget-wide v0, p0, Lpu0;->f:J
 
-    .line 13
-    iget-object v0, p1, Lqu0;->f:[I
+    const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    iput-object v0, p0, Lpu0;->d:[I
+    cmp-long v2, v0, v2
 
-    .line 14
-    iget-object v0, p1, Lqu0;->l:[Ljava/lang/String;
+    if-eqz v2, :cond_0
 
-    iput-object v0, p0, Lpu0;->e:[Ljava/lang/String;
+    cmp-long v0, p1, v0
 
-    .line 15
-    iget v0, p1, Lqu0;->m:I
+    if-ltz v0, :cond_0
 
-    iput v0, p0, Lpu0;->f:I
+    iget-object v0, p0, Lpu0;->c:Lys4;
 
-    .line 16
-    iget p1, p1, Lqu0;->n:I
+    iput-object v0, p0, Lpu0;->e:Laye;
 
-    iput p1, p0, Lpu0;->g:I
+    :cond_0
+    iget-object p0, p0, Lpu0;->e:Laye;
+
+    sget v0, Lnaf;->a:I
+
+    invoke-interface/range {p0 .. p6}, Laye;->b(JIIILyxe;)V
+
+    return-void
+.end method
+
+.method public final c(ILabf;)V
+    .locals 1
+
+    iget-object p0, p0, Lpu0;->e:Laye;
+
+    sget v0, Lnaf;->a:I
+
+    invoke-interface {p0, p1, p2}, Laye;->c(ILabf;)V
+
+    return-void
+.end method
+
+.method public final d(Ldz5;)V
+    .locals 1
+
+    iget-object v0, p0, Lpu0;->b:Ldz5;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1, v0}, Ldz5;->c(Ldz5;)Ldz5;
+
+    move-result-object p1
+
+    :cond_0
+    iput-object p1, p0, Lpu0;->d:Ldz5;
+
+    iget-object p0, p0, Lpu0;->e:Laye;
+
+    sget v0, Lnaf;->a:I
+
+    invoke-interface {p0, p1}, Laye;->d(Ldz5;)V
 
     return-void
 .end method

@@ -1,1361 +1,349 @@
-.class public abstract Libe;
-.super Ljava/lang/Object;
+.class public final Libe;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Lorg/webrtc/CameraEnumerator;
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:Lvae;
 
-.field public b:Ljava/lang/Object;
+.field public Y:I
 
-.field public c:Ljava/lang/Object;
+.field public final synthetic Z:Lkbe;
+
+.field public final synthetic o0:Ljava/lang/String;
+
+.field public final synthetic p0:I
+
+.field public final synthetic q0:Li92;
+
+.field public final synthetic r0:Lema;
+
+.field public final synthetic s0:Ljab;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lkbe;Ljava/lang/String;ILi92;Lema;Ljab;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    return-void
-.end method
+    iput-object p1, p0, Libe;->Z:Lkbe;
 
-.method public synthetic constructor <init>()V
-    .locals 1
+    iput-object p2, p0, Libe;->o0:Ljava/lang/String;
 
-    .line 1
-    const/16 v0, 0xa
+    iput p3, p0, Libe;->p0:I
 
-    iput v0, p0, Libe;->a:I
+    iput-object p4, p0, Libe;->q0:Li92;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p5, p0, Libe;->r0:Lema;
 
-    return-void
-.end method
+    iput-object p6, p0, Libe;->s0:Ljab;
 
-.method public constructor <init>(I)V
-    .locals 3
+    const/4 p1, 0x2
 
-    const/16 v0, 0x9
-
-    iput v0, p0, Libe;->a:I
-
-    .line 15
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 16
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Libe;->c:Ljava/lang/Object;
-
-    const/4 v0, 0x0
-
-    :goto_0
-    if-ge v0, p1, :cond_0
-
-    .line 17
-    iget-object v1, p0, Libe;->c:Ljava/lang/Object;
-
-    check-cast v1, Ljava/util/ArrayList;
-
-    new-instance v2, Lpn4;
-
-    .line 18
-    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
-
-    .line 19
-    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 1
-
-    const/4 v0, 0x5
-
-    iput v0, p0, Libe;->a:I
-
-    .line 13
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 14
-    iput-object p1, p0, Libe;->b:Ljava/lang/Object;
+    invoke-direct {p0, p1, p7}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Lgp0;)V
-    .locals 1
-
-    const/16 v0, 0x8
-
-    iput v0, p0, Libe;->a:I
-
-    .line 24
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 25
-    const-string v0, "camera"
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/hardware/camera2/CameraManager;
-
-    iput-object p1, p0, Libe;->b:Ljava/lang/Object;
-
-    .line 26
-    iput-object p2, p0, Libe;->c:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/hardware/camera2/CameraDevice;Ld8;)V
-    .locals 1
-
-    const/4 v0, 0x7
-
-    iput v0, p0, Libe;->a:I
-
-    .line 20
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 21
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 22
-    iput-object p1, p0, Libe;->b:Ljava/lang/Object;
-
-    .line 23
-    iput-object p2, p0, Libe;->c:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ldfa;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Libe;->a:I
-
-    .line 10
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 11
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Libe;->b:Ljava/lang/Object;
-
-    .line 12
-    iput-object p1, p0, Libe;->c:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ldn;)V
-    .locals 1
-
-    const/4 v0, 0x2
-
-    iput v0, p0, Libe;->a:I
-
-    .line 27
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Libe;->c:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Ljava/lang/Object;ILjava/lang/Object;)V
-    .locals 0
-
-    .line 2
-    iput p2, p0, Libe;->a:I
-
-    iput-object p1, p0, Libe;->b:Ljava/lang/Object;
-
-    iput-object p3, p0, Libe;->c:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lu16;)V
-    .locals 2
-
-    const/4 v0, 0x6
-
-    iput v0, p0, Libe;->a:I
-
-    .line 6
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 7
-    new-instance v0, Lx2;
-
-    const/4 v1, 0x4
-
-    invoke-direct {v0, p1, v1, p0}, Lx2;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    const/4 p1, 0x3
-
-    .line 8
-    invoke-static {p1, v0}, Lez3;->O(ILs16;)Lt97;
-
-    move-result-object p1
-
-    .line 9
-    iput-object p1, p0, Libe;->c:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lxwb;)V
-    .locals 1
-
-    const/4 v0, 0x4
-
-    iput v0, p0, Libe;->a:I
-
-    .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    iput-object p1, p0, Libe;->b:Ljava/lang/Object;
-
-    .line 5
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object p1
-
-    iput-object p1, p0, Libe;->c:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public static J(III)F
-    .locals 0
-
-    sub-int/2addr p0, p1
-
-    int-to-float p0, p0
-
-    int-to-float p1, p2
-
-    div-float/2addr p0, p1
-
-    return p0
 .end method
 
 
 # virtual methods
-.method public abstract A()Landroid/content/IntentFilter;
-.end method
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-.method public B(Landroidx/recyclerview/widget/RecyclerView;)V
-    .locals 4
+    check-cast p1, Lox3;
 
-    iget-object v0, p0, Libe;->c:Ljava/lang/Object;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    check-cast v0, Lf6c;
+    invoke-virtual {p0, p1, p2}, Libe;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    if-nez v0, :cond_0
+    move-result-object p0
 
-    iget-object v1, p0, Libe;->b:Ljava/lang/Object;
+    check-cast p0, Libe;
 
-    check-cast v1, Lh6c;
+    sget-object p1, Le5f;->a:Le5f;
 
-    if-nez v1, :cond_0
-
-    return-void
-
-    :cond_0
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lf6c;
-
-    move-result-object v0
-
-    iget-object v1, p0, Libe;->c:Ljava/lang/Object;
-
-    check-cast v1, Lf6c;
-
-    if-eq v0, v1, :cond_1
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Libe;->c:Ljava/lang/Object;
-
-    check-cast v1, Lf6c;
-
-    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lf6c;
-
-    move-result-object p1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "adapter was changed! cached adapter = "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", recyclerView.adapter = "
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    const-string v2, "adapter was changed"
-
-    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    invoke-static {v0, p1, v1}, Ludd;->S(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_1
-    iget-object p1, p0, Libe;->c:Ljava/lang/Object;
-
-    check-cast p1, Lf6c;
-
-    iget-object v0, p0, Libe;->b:Ljava/lang/Object;
-
-    check-cast v0, Lh6c;
-
-    if-eqz p1, :cond_2
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {p1, v0}, Lf6c;->B(Lh6c;)V
-
-    :cond_2
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Libe;->c:Ljava/lang/Object;
-
-    iput-object p1, p0, Libe;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public C(Landroid/content/Context;Landroid/content/res/XmlResourceParser;)Ljava/lang/Object;
-    .locals 2
-
-    invoke-static {p2}, Lat7;->b(Landroid/util/AttributeSet;)Ljava/util/LinkedHashMap;
-
-    move-result-object v0
-
-    iget-object v1, p0, Libe;->b:Ljava/lang/Object;
-
-    check-cast v1, Lvg;
-
-    iget-object v1, v1, Lvg;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-virtual {p0, p1, p2, v0}, Libe;->z(Landroid/content/Context;Landroid/content/res/XmlResourceParser;I)Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Libe;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
-
-    :cond_0
-    iget-object p0, p0, Libe;->c:Ljava/lang/Object;
-
-    return-object p0
 .end method
 
-.method public abstract D()I
-.end method
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 8
 
-.method public abstract E(Ljava/lang/String;)Landroid/hardware/camera2/CameraCharacteristics;
-.end method
+    new-instance v0, Libe;
 
-.method public F()Ljava/util/ArrayList;
-    .locals 7
+    iget-object v5, p0, Libe;->r0:Lema;
 
-    new-instance v0, Ljava/util/ArrayList;
+    iget-object v6, p0, Libe;->s0:Ljab;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    iget-object v1, p0, Libe;->Z:Lkbe;
 
-    invoke-virtual {p0}, Libe;->getDeviceNames()[Ljava/lang/String;
+    iget-object v2, p0, Libe;->o0:Ljava/lang/String;
 
-    move-result-object v1
+    iget v3, p0, Libe;->p0:I
 
-    array-length v2, v1
+    iget-object v4, p0, Libe;->q0:Li92;
 
-    const/4 v3, 0x0
+    move-object v7, p2
 
-    :goto_0
-    if-ge v3, v2, :cond_2
+    invoke-direct/range {v0 .. v7}, Libe;-><init>(Lkbe;Ljava/lang/String;ILi92;Lema;Ljab;Lkotlin/coroutines/Continuation;)V
 
-    aget-object v4, v1, v3
-
-    invoke-virtual {p0}, Libe;->H()Lorg/webrtc/CameraEnumerator;
-
-    move-result-object v5
-
-    invoke-interface {v5, v4}, Lorg/webrtc/CameraEnumerator;->getSupportedFormats(Ljava/lang/String;)Ljava/util/List;
-
-    move-result-object v5
-
-    invoke-virtual {p0, v4}, Libe;->isFrontFacing(Ljava/lang/String;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_0
-
-    new-instance v6, Lbu1;
-
-    invoke-direct {v6, v4, v5}, Lbu1;-><init>(Ljava/lang/String;Ljava/util/List;)V
-
-    goto :goto_1
-
-    :cond_0
-    invoke-virtual {p0, v4}, Libe;->isBackFacing(Ljava/lang/String;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_1
-
-    new-instance v6, Lau1;
-
-    invoke-direct {v6, v4, v5}, Lau1;-><init>(Ljava/lang/String;Ljava/util/List;)V
-
-    goto :goto_1
-
-    :cond_1
-    new-instance v6, Lcu1;
-
-    invoke-direct {v6, v4, v5}, Lcu1;-><init>(Ljava/lang/String;Ljava/util/List;)V
-
-    :goto_1
-    invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    :cond_2
     return-object v0
 .end method
 
-.method public G()Ljava/util/Set;
-    .locals 0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 14
 
-    invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
+    iget-object v0, p0, Libe;->Z:Lkbe;
 
-    move-result-object p0
+    iget-object v1, v0, Lkbe;->b:Ltyd;
 
-    return-object p0
-.end method
+    iget-object v2, v0, Lkbe;->A0:Lazd;
 
-.method public abstract H()Lorg/webrtc/CameraEnumerator;
-.end method
+    iget v3, p0, Libe;->Y:I
 
-.method public I(I)Ldu1;
-    .locals 2
+    const/4 v4, 0x1
 
-    invoke-virtual {p0}, Libe;->F()Ljava/util/ArrayList;
+    if-eqz v3, :cond_1
 
-    move-result-object p0
+    if-ne v3, v4, :cond_0
 
-    sget-object v0, Lug0;->$EnumSwitchMapping$0:[I
+    iget-object v1, p0, Libe;->X:Lvae;
 
-    invoke-static {p1}, Lhr1;->t(I)I
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    move-result p1
-
-    aget p1, v0, p1
-
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    if-eq p1, v0, :cond_6
-
-    const/4 v0, 0x2
-
-    if-eq p1, v0, :cond_3
-
-    const/4 v0, 0x3
-
-    if-ne p1, v0, :cond_2
-
-    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
+    goto/16 :goto_1
 
     :cond_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, v0, Lkbe;->z0:Lsbe;
+
+    iget-object p1, p1, Lsbe;->a:Ljava/lang/String;
+
+    iget-object v3, p0, Libe;->o0:Ljava/lang/String;
+
+    invoke-static {p1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_1
+    if-nez p1, :cond_2
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    sget-object p1, Lsbe;->g:Lsbe;
+
+    iput-object p1, v0, Lkbe;->z0:Lsbe;
+
+    :cond_2
+    invoke-interface {v1}, Ltyd;->getValue()Ljava/lang/Object;
 
     move-result-object p1
 
-    move-object v0, p1
+    check-cast p1, Ly42;
 
-    check-cast v0, Ldu1;
+    const/4 v5, 0x0
 
-    instance-of v0, v0, Lcu1;
+    if-eqz p1, :cond_3
 
-    if-eqz v0, :cond_0
+    invoke-virtual {p1}, Ly42;->G()Z
 
-    move-object v1, p1
+    move-result p1
 
-    :cond_1
-    check-cast v1, Ldu1;
+    if-ne p1, v4, :cond_3
 
-    goto :goto_0
-
-    :cond_2
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw p0
+    move v5, v4
 
     :cond_3
-    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    iget p1, p0, Libe;->p0:I
 
-    move-result-object p0
+    iget-object v6, p0, Libe;->q0:Li92;
+
+    invoke-static {v3, p1, v6}, Lzsd;->e(Ljava/lang/String;ILi92;)Lvae;
+
+    move-result-object p1
+
+    sget-object v3, Lvae;->X:Lvae;
+
+    const/4 v6, 0x0
+
+    if-ne p1, v3, :cond_5
 
     :cond_4
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {v2}, Lazd;->getValue()Ljava/lang/Object;
 
-    move-result p1
+    move-result-object p0
 
-    if-eqz p1, :cond_5
+    move-object p1, p0
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    check-cast p1, Lwae;
 
-    move-result-object p1
+    invoke-virtual {v2, p0, v6}, Lazd;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-object v0, p1
+    move-result p0
 
-    check-cast v0, Ldu1;
+    if-eqz p0, :cond_4
 
-    instance-of v0, v0, Lau1;
-
-    if-eqz v0, :cond_4
-
-    move-object v1, p1
+    goto/16 :goto_2
 
     :cond_5
-    check-cast v1, Ldu1;
+    if-eqz v5, :cond_7
 
-    goto :goto_0
+    sget-object v3, Lvae;->a:Lvae;
+
+    if-eq p1, v3, :cond_6
+
+    sget-object v3, Lvae;->b:Lvae;
+
+    if-ne p1, v3, :cond_7
 
     :cond_6
-    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v2}, Lazd;->getValue()Ljava/lang/Object;
 
     move-result-object p0
+
+    move-object p1, p0
+
+    check-cast p1, Lwae;
+
+    invoke-virtual {v2, p0, v6}, Lazd;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_6
+
+    goto :goto_2
 
     :cond_7
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    sget-object v3, Lvae;->c:Lvae;
 
-    move-result p1
+    if-ne p1, v3, :cond_9
 
-    if-eqz p1, :cond_8
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object p1
-
-    move-object v0, p1
-
-    check-cast v0, Ldu1;
-
-    instance-of v0, v0, Lbu1;
-
-    if-eqz v0, :cond_7
-
-    move-object v1, p1
-
-    :cond_8
-    check-cast v1, Ldu1;
-
-    :goto_0
-    return-object v1
-.end method
-
-.method public K()I
-    .locals 1
-
-    iget-object v0, p0, Libe;->c:Ljava/lang/Object;
-
-    check-cast v0, Lt97;
-
-    invoke-interface {v0}, Lt97;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Libe;->Q()Landroid/view/View;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result p0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
-.end method
-
-.method public L()I
-    .locals 1
-
-    iget-object v0, p0, Libe;->c:Ljava/lang/Object;
-
-    check-cast v0, Lt97;
-
-    invoke-interface {v0}, Lt97;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Libe;->Q()Landroid/view/View;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result p0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
-.end method
-
-.method public M(Landroid/view/MenuItem;)Landroid/view/MenuItem;
-    .locals 2
-
-    instance-of v0, p1, Lb4e;
-
-    if-eqz v0, :cond_2
-
-    check-cast p1, Lb4e;
-
-    iget-object v0, p0, Libe;->c:Ljava/lang/Object;
-
-    check-cast v0, Lkgd;
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Lkgd;
-
-    invoke-direct {v0}, Lkgd;-><init>()V
-
-    iput-object v0, p0, Libe;->c:Ljava/lang/Object;
-
-    :cond_0
-    iget-object v0, p0, Libe;->c:Ljava/lang/Object;
-
-    check-cast v0, Lkgd;
-
-    invoke-virtual {v0, p1}, Lkgd;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/MenuItem;
-
-    if-nez v0, :cond_1
-
-    new-instance v0, Lyl8;
-
-    iget-object v1, p0, Libe;->b:Ljava/lang/Object;
-
-    check-cast v1, Landroid/content/Context;
-
-    invoke-direct {v0, v1, p1}, Lyl8;-><init>(Landroid/content/Context;Lb4e;)V
-
-    iget-object p0, p0, Libe;->c:Ljava/lang/Object;
-
-    check-cast p0, Lkgd;
-
-    invoke-virtual {p0, p1, v0}, Lkgd;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_1
-    return-object v0
-
-    :cond_2
-    return-object p1
-.end method
-
-.method public N()S
-    .locals 0
-
-    iget-object p0, p0, Libe;->c:Ljava/lang/Object;
-
-    check-cast p0, Ldfa;
-
-    iget-short p0, p0, Ldfa;->a:S
-
-    return p0
-.end method
-
-.method public O()I
-    .locals 0
-
-    iget-object p0, p0, Libe;->b:Ljava/lang/Object;
-
-    check-cast p0, Ljava/util/HashMap;
-
-    invoke-interface {p0}, Ljava/util/Map;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public P()Ljbe;
-    .locals 0
-
-    sget-object p0, Ljbe;->b0:Loa2;
-
-    return-object p0
-.end method
-
-.method public Q()Landroid/view/View;
-    .locals 0
-
-    iget-object p0, p0, Libe;->c:Ljava/lang/Object;
-
-    check-cast p0, Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/view/View;
-
-    return-object p0
-.end method
-
-.method public R()Landroid/view/View;
-    .locals 1
-
-    iget-object v0, p0, Libe;->c:Ljava/lang/Object;
-
-    check-cast v0, Lt97;
-
-    invoke-interface {v0}, Lt97;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Libe;->Q()Landroid/view/View;
-
-    move-result-object p0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return-object p0
-.end method
-
-.method public abstract S()V
-.end method
-
-.method public T(II)V
-    .locals 2
-
-    iget-object v0, p0, Libe;->c:Ljava/lang/Object;
-
-    check-cast v0, Lt97;
-
-    invoke-interface {v0}, Lt97;->a()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
-    invoke-virtual {p0}, Libe;->Q()Landroid/view/View;
-
-    move-result-object p0
-
-    const/16 v0, 0xc
-
-    const/4 v1, 0x0
-
-    invoke-static {p0, p1, p2, v1, v0}, Ln1g;->D(Landroid/view/View;IIII)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public U(II)V
-    .locals 1
-
-    iget-object p0, p0, Libe;->c:Ljava/lang/Object;
-
-    check-cast p0, Lt97;
-
-    invoke-interface {p0}, Lt97;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/view/View;
-
-    invoke-virtual {p0, p1, p2}, Landroid/view/View;->measure(II)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public V()Z
-    .locals 0
-
-    instance-of p0, p0, Lw60;
-
-    xor-int/lit8 p0, p0, 0x1
-
-    return p0
-.end method
-
-.method public abstract W(Landroidx/recyclerview/widget/RecyclerView;Lf6c;)Lh6c;
-.end method
-
-.method public abstract X()V
-.end method
-
-.method public Y(Landroid/view/View;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public abstract Z(Ljava/lang/String;Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraDevice$StateCallback;)V
-.end method
-
-.method public abstract a0(Lmi0;)V
-.end method
-
-.method public abstract b0(Lryc;Lfr1;)V
-.end method
-
-.method public abstract c0()V
-.end method
-
-.method public createCapturer(Ljava/lang/String;Lorg/webrtc/CameraVideoCapturer$CameraEventsHandler;)Lorg/webrtc/CameraVideoCapturer;
-    .locals 1
-
-    .line 3
-    :try_start_0
-    invoke-virtual {p0}, Libe;->H()Lorg/webrtc/CameraEnumerator;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1, p2}, Lorg/webrtc/CameraEnumerator;->createCapturer(Ljava/lang/String;Lorg/webrtc/CameraVideoCapturer$CameraEventsHandler;)Lorg/webrtc/CameraVideoCapturer;
-
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception p1
-
-    .line 4
-    invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    move-result-object p2
-
-    if-nez p2, :cond_0
-
-    const-string p2, "camera error"
-
-    :cond_0
-    iget-object v0, p0, Libe;->b:Ljava/lang/Object;
-
-    check-cast v0, Lxwb;
-
-    iget-object p0, p0, Libe;->c:Ljava/lang/Object;
-
-    check-cast p0, Ljava/lang/String;
-
-    invoke-interface {v0, p0, p2, p1}, Lxwb;->reportException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    const/4 p0, 0x0
-
-    :goto_0
-    return-object p0
-.end method
-
-.method public createCapturer(Ljava/lang/String;Lorg/webrtc/CameraVideoCapturer$CameraEventsHandler;Lorg/webrtc/CameraVideoCapturer$CaptureFormatHelper;)Lorg/webrtc/CameraVideoCapturer;
-    .locals 1
-
-    .line 1
-    :try_start_0
-    invoke-virtual {p0}, Libe;->H()Lorg/webrtc/CameraEnumerator;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1, p2, p3}, Lorg/webrtc/CameraEnumerator;->createCapturer(Ljava/lang/String;Lorg/webrtc/CameraVideoCapturer$CameraEventsHandler;Lorg/webrtc/CameraVideoCapturer$CaptureFormatHelper;)Lorg/webrtc/CameraVideoCapturer;
-
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception p1
-
-    .line 2
-    invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    move-result-object p2
-
-    if-nez p2, :cond_0
-
-    const-string p2, "camera error"
-
-    :cond_0
-    iget-object p3, p0, Libe;->b:Ljava/lang/Object;
-
-    check-cast p3, Lxwb;
-
-    iget-object p0, p0, Libe;->c:Ljava/lang/Object;
-
-    check-cast p0, Ljava/lang/String;
-
-    invoke-interface {p3, p0, p2, p1}, Lxwb;->reportException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    const/4 p0, 0x0
-
-    :goto_0
-    return-object p0
-.end method
-
-.method public d(Ljava/lang/String;Z)V
-    .locals 0
-
-    iget-object p0, p0, Libe;->b:Ljava/lang/Object;
-
-    check-cast p0, Ljava/util/HashMap;
-
-    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p2
-
-    invoke-virtual {p0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public d0()V
-    .locals 3
-
-    invoke-virtual {p0}, Libe;->y()V
-
-    invoke-virtual {p0}, Libe;->A()Landroid/content/IntentFilter;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/IntentFilter;->countActions()I
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v1, p0, Libe;->b:Ljava/lang/Object;
-
-    check-cast v1, Lan;
-
-    if-nez v1, :cond_1
-
-    new-instance v1, Lan;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v2, p0}, Lan;-><init>(ILjava/lang/Object;)V
-
-    iput-object v1, p0, Libe;->b:Ljava/lang/Object;
-
-    :cond_1
-    iget-object v1, p0, Libe;->c:Ljava/lang/Object;
-
-    check-cast v1, Ldn;
-
-    iget-object v1, v1, Ldn;->z0:Landroid/content/Context;
-
-    iget-object p0, p0, Libe;->b:Ljava/lang/Object;
-
-    check-cast p0, Lan;
-
-    invoke-virtual {v1, p0, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-
-    return-void
-.end method
-
-.method public abstract e0()V
-.end method
-
-.method public abstract f0()V
-.end method
-
-.method public g(ILjava/lang/String;)V
-    .locals 0
-
-    iget-object p0, p0, Libe;->b:Ljava/lang/Object;
-
-    check-cast p0, Ljava/util/HashMap;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p2, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public abstract g0(Landroid/hardware/camera2/CameraManager$AvailabilityCallback;)V
-.end method
-
-.method public getDeviceNames()[Ljava/lang/String;
-    .locals 0
-
-    invoke-virtual {p0}, Libe;->H()Lorg/webrtc/CameraEnumerator;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Lorg/webrtc/CameraEnumerator;->getDeviceNames()[Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public getSupportedFormats(Ljava/lang/String;)Ljava/util/List;
-    .locals 0
-
-    invoke-virtual {p0}, Libe;->H()Lorg/webrtc/CameraEnumerator;
-
-    move-result-object p0
-
-    invoke-interface {p0, p1}, Lorg/webrtc/CameraEnumerator;->getSupportedFormats(Ljava/lang/String;)Ljava/util/List;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public h(Ljava/lang/String;Ljava/util/List;)V
-    .locals 0
-
-    iget-object p0, p0, Libe;->b:Ljava/lang/Object;
-
-    check-cast p0, Ljava/util/HashMap;
-
-    invoke-virtual {p0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public i(Ljava/lang/String;[J)V
-    .locals 0
-
-    iget-object p0, p0, Libe;->b:Ljava/lang/Object;
-
-    check-cast p0, Ljava/util/HashMap;
-
-    invoke-virtual {p0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public isBackFacing(Ljava/lang/String;)Z
-    .locals 0
-
-    invoke-virtual {p0}, Libe;->H()Lorg/webrtc/CameraEnumerator;
-
-    move-result-object p0
-
-    invoke-interface {p0, p1}, Lorg/webrtc/CameraEnumerator;->isBackFacing(Ljava/lang/String;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public isFrontFacing(Ljava/lang/String;)Z
-    .locals 0
-
-    invoke-virtual {p0}, Libe;->H()Lorg/webrtc/CameraEnumerator;
-
-    move-result-object p0
-
-    invoke-interface {p0, p1}, Lorg/webrtc/CameraEnumerator;->isFrontFacing(Ljava/lang/String;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public n(JLjava/lang/String;)V
-    .locals 0
-
-    iget-object p0, p0, Libe;->b:Ljava/lang/Object;
-
-    check-cast p0, Ljava/util/HashMap;
-
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p3, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public p(Ljava/lang/String;Ljava/util/Map;)V
-    .locals 0
-
-    iget-object p0, p0, Libe;->b:Ljava/lang/Object;
-
-    check-cast p0, Ljava/util/HashMap;
-
-    invoke-virtual {p0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public s(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
-
-    iget-object p0, p0, Libe;->b:Ljava/lang/Object;
-
-    check-cast p0, Ljava/util/HashMap;
-
-    invoke-virtual {p0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 1
-
-    iget v0, p0, Libe;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    iget-object p0, p0, Libe;->b:Ljava/lang/Object;
-
-    check-cast p0, Ljava/util/HashMap;
-
-    invoke-static {p0}, Lete;->S(Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public u()V
-    .locals 4
-
-    iget-object v0, p0, Libe;->b:Ljava/lang/Object;
-
-    check-cast v0, Landroid/view/ViewGroup;
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-virtual {p0}, Libe;->Q()Landroid/view/View;
+    invoke-interface {v1}, Ltyd;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
-    new-instance v2, Landroid/view/ViewGroup$LayoutParams;
+    check-cast v1, Ly42;
 
-    const/4 v3, -0x2
+    if-eqz v1, :cond_8
 
-    invoke-direct {v2, v3, v3}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+    invoke-virtual {v1}, Ly42;->m0()Z
 
-    invoke-static {v0, v1, v2}, Ljjd;->e(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    move-result v1
 
-    invoke-virtual {p0}, Libe;->Q()Landroid/view/View;
+    if-ne v1, v4, :cond_8
+
+    goto :goto_0
+
+    :cond_8
+    invoke-virtual {v2}, Lazd;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    const/4 v0, 0x0
+    move-object p1, p0
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
+    check-cast p1, Lwae;
 
-    return-void
-.end method
+    invoke-virtual {v2, p0, v6}, Lazd;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-.method public v(Landroidx/recyclerview/widget/RecyclerView;)V
-    .locals 1
+    move-result p0
 
-    invoke-virtual {p0, p1}, Libe;->B(Landroidx/recyclerview/widget/RecyclerView;)V
+    if-eqz p0, :cond_8
 
-    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lf6c;
+    goto :goto_2
 
-    move-result-object v0
+    :cond_9
+    :goto_0
+    iget-object v8, v0, Lkbe;->z0:Lsbe;
 
-    if-eqz v0, :cond_0
+    iput-object p1, p0, Libe;->X:Lvae;
 
-    iput-object v0, p0, Libe;->c:Ljava/lang/Object;
+    iput v4, p0, Libe;->Y:I
 
-    invoke-virtual {p0, p1, v0}, Libe;->W(Landroidx/recyclerview/widget/RecyclerView;Lf6c;)Lh6c;
+    iget-object v11, p0, Libe;->r0:Lema;
+
+    iget-object v1, v11, Lema;->b:Ljava/lang/Object;
+
+    check-cast v1, Lrie;
+
+    check-cast v1, Lo7a;
+
+    invoke-virtual {v1}, Lo7a;->a()Ljx3;
+
+    move-result-object v1
+
+    new-instance v7, Ltae;
+
+    const/4 v12, 0x0
+
+    iget-object v9, p0, Libe;->o0:Ljava/lang/String;
+
+    iget v10, p0, Libe;->p0:I
+
+    invoke-direct/range {v7 .. v12}, Ltae;-><init>(Lsbe;Ljava/lang/String;ILema;Lkotlin/coroutines/Continuation;)V
+
+    invoke-static {v1, v7, p0}, Lzo3;->j0(Lhx3;Ll66;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    sget-object v3, Lpx3;->a:Lpx3;
+
+    if-ne v1, v3, :cond_a
+
+    return-object v3
+
+    :cond_a
+    move-object v13, v1
+
+    move-object v1, p1
+
+    move-object p1, v13
+
+    :goto_1
+    check-cast p1, Lsbe;
+
+    iput-object p1, v0, Lkbe;->z0:Lsbe;
+
+    iget-object p0, p0, Libe;->s0:Ljab;
+
+    iget-object p1, p1, Lsbe;->d:Ljava/lang/Object;
+
+    invoke-virtual {p0, p1}, Ljab;->i(Ljava/util/List;)Ljava/util/ArrayList;
+
+    move-result-object p0
+
+    :cond_b
+    invoke-virtual {v2}, Lazd;->getValue()Ljava/lang/Object;
 
     move-result-object p1
 
-    iput-object p1, p0, Libe;->b:Ljava/lang/Object;
+    move-object v0, p1
 
-    invoke-virtual {v0, p1}, Lf6c;->z(Lh6c;)V
+    check-cast v0, Lwae;
 
-    return-void
+    new-instance v0, Lwae;
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    invoke-direct {v0, v1, p0}, Lwae;-><init>(Lvae;Ljava/util/ArrayList;)V
 
-    const-string p1, "require not null adapter"
+    invoke-virtual {v2, p1, v0}, Lazd;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    move-result p1
 
-    move-result-object p1
+    if-eqz p1, :cond_b
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    :goto_2
+    sget-object p0, Le5f;->a:Le5f;
 
-    throw p0
-.end method
-
-.method public w()Z
-    .locals 0
-
-    instance-of p0, p0, Ll99;
-
-    return p0
-.end method
-
-.method public abstract x()V
-.end method
-
-.method public y()V
-    .locals 2
-
-    iget-object v0, p0, Libe;->b:Ljava/lang/Object;
-
-    check-cast v0, Lan;
-
-    if-eqz v0, :cond_0
-
-    :try_start_0
-    iget-object v1, p0, Libe;->c:Ljava/lang/Object;
-
-    check-cast v1, Ldn;
-
-    iget-object v1, v1, Ldn;->z0:Landroid/content/Context;
-
-    invoke-virtual {v1, v0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Libe;->b:Ljava/lang/Object;
-
-    :cond_0
-    return-void
-.end method
-
-.method public abstract z(Landroid/content/Context;Landroid/content/res/XmlResourceParser;I)Ljava/lang/Object;
+    return-object p0
 .end method

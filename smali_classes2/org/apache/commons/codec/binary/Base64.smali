@@ -530,7 +530,7 @@
 .end method
 
 .method public static encodeBase64([BZ)[B
-    .locals 18
+    .locals 19
 
     move-object/from16 v0, p0
 
@@ -631,19 +631,21 @@
     .line 11
     aget-byte v13, v0, v13
 
-    and-int/lit8 v2, v15, 0xf
+    const/16 v16, 0x4c
 
-    int-to-byte v2, v2
-
-    and-int/lit8 v8, v14, 0x3
+    and-int/lit8 v8, v15, 0xf
 
     int-to-byte v8, v8
 
-    and-int/lit8 v16, v14, -0x80
+    and-int/lit8 v2, v14, 0x3
+
+    int-to-byte v2, v2
+
+    and-int/lit8 v17, v14, -0x80
 
     shr-int/lit8 v14, v14, 0x2
 
-    if-nez v16, :cond_3
+    if-nez v17, :cond_3
 
     :goto_4
     int-to-byte v14, v14
@@ -656,11 +658,11 @@
     goto :goto_4
 
     :goto_5
-    and-int/lit8 v16, v15, -0x80
+    and-int/lit8 v17, v15, -0x80
 
     shr-int/lit8 v15, v15, 0x4
 
-    if-nez v16, :cond_4
+    if-nez v17, :cond_4
 
     :goto_6
     int-to-byte v15, v15
@@ -673,11 +675,11 @@
     goto :goto_6
 
     :goto_7
-    and-int/lit8 v16, v13, -0x80
+    and-int/lit8 v17, v13, -0x80
 
     shr-int/lit8 v5, v13, 0x6
 
-    if-nez v16, :cond_5
+    if-nez v17, :cond_5
 
     :goto_8
     int-to-byte v5, v5
@@ -691,40 +693,40 @@
 
     .line 12
     :goto_9
-    sget-object v17, Lorg/apache/commons/codec/binary/Base64;->lookUpBase64Alphabet:[B
+    sget-object v18, Lorg/apache/commons/codec/binary/Base64;->lookUpBase64Alphabet:[B
 
-    aget-byte v14, v17, v14
+    aget-byte v14, v18, v14
 
     aput-byte v14, v6, v10
 
     add-int/lit8 v14, v10, 0x1
 
-    shl-int/lit8 v8, v8, 0x4
+    shl-int/lit8 v2, v2, 0x4
 
-    or-int/2addr v8, v15
+    or-int/2addr v2, v15
 
     .line 13
-    aget-byte v8, v17, v8
+    aget-byte v2, v18, v2
 
-    aput-byte v8, v6, v14
+    aput-byte v2, v6, v14
 
-    add-int/lit8 v8, v10, 0x2
+    add-int/lit8 v2, v10, 0x2
 
-    shl-int/lit8 v2, v2, 0x2
+    shl-int/lit8 v8, v8, 0x2
 
-    or-int/2addr v2, v5
+    or-int/2addr v5, v8
 
     .line 14
-    aget-byte v2, v17, v2
+    aget-byte v5, v18, v5
 
-    aput-byte v2, v6, v8
+    aput-byte v5, v6, v2
 
     add-int/lit8 v2, v10, 0x3
 
     and-int/lit8 v5, v13, 0x3f
 
     .line 15
-    aget-byte v5, v17, v5
+    aget-byte v5, v18, v5
 
     aput-byte v5, v6, v2
 
@@ -747,16 +749,14 @@
 
     add-int/lit8 v11, v11, 0x2
 
-    const/16 v8, 0x4c
-
-    mul-int/2addr v11, v8
+    mul-int/lit8 v11, v11, 0x4c
 
     .line 17
-    array-length v12, v2
+    array-length v8, v2
 
-    mul-int/2addr v12, v5
+    mul-int/2addr v8, v5
 
-    add-int/2addr v12, v11
+    add-int v12, v8, v11
 
     .line 18
     array-length v2, v2
@@ -765,12 +765,7 @@
 
     move v11, v5
 
-    goto :goto_a
-
     :cond_6
-    const/16 v8, 0x4c
-
-    :goto_a
     add-int/lit8 v9, v9, 0x1
 
     const/16 v2, 0x8
@@ -799,18 +794,18 @@
 
     if-nez v3, :cond_8
 
-    :goto_b
+    :goto_a
     int-to-byte v0, v0
 
-    goto :goto_c
+    goto :goto_b
 
     :cond_8
     xor-int/lit16 v0, v0, 0xc0
 
-    goto :goto_b
+    goto :goto_a
 
     .line 20
-    :goto_c
+    :goto_b
     sget-object v3, Lorg/apache/commons/codec/binary/Base64;->lookUpBase64Alphabet:[B
 
     aget-byte v0, v3, v0
@@ -836,7 +831,7 @@
     .line 23
     aput-byte v1, v6, v10
 
-    goto :goto_11
+    goto :goto_10
 
     :cond_9
     const/16 v2, 0x10
@@ -865,35 +860,35 @@
 
     if-nez v8, :cond_a
 
-    :goto_d
+    :goto_c
     int-to-byte v2, v2
 
-    goto :goto_e
+    goto :goto_d
 
     :cond_a
     xor-int/lit16 v2, v2, 0xc0
 
-    goto :goto_d
+    goto :goto_c
 
-    :goto_e
+    :goto_d
     and-int/lit8 v8, v0, -0x80
 
     shr-int/lit8 v0, v0, 0x4
 
     if-nez v8, :cond_b
 
-    :goto_f
+    :goto_e
     int-to-byte v0, v0
 
-    goto :goto_10
+    goto :goto_f
 
     :cond_b
     xor-int/lit16 v0, v0, 0xf0
 
-    goto :goto_f
+    goto :goto_e
 
     .line 26
-    :goto_10
+    :goto_f
     sget-object v8, Lorg/apache/commons/codec/binary/Base64;->lookUpBase64Alphabet:[B
 
     aget-byte v2, v8, v2
@@ -926,7 +921,7 @@
     aput-byte v1, v6, v10
 
     :cond_c
-    :goto_11
+    :goto_10
     if-eqz p1, :cond_d
 
     if-ge v11, v7, :cond_d
@@ -940,9 +935,9 @@
 
     array-length v1, v0
 
-    const/4 v2, 0x0
+    const/4 v8, 0x0
 
-    invoke-static {v0, v2, v6, v4, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v0, v8, v6, v4, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     :cond_d
     return-object v6

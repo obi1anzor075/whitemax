@@ -15,7 +15,7 @@
         "",
         "key",
         "value",
-        "Ljue;",
+        "Le5f;",
         "putExtra",
         "(Ljava/lang/String;Ljava/lang/Object;)V",
         "getExtra",
@@ -30,7 +30,7 @@
         "putExtras",
         "(Ljava/util/Map;)V",
         "Companion",
-        "me6",
+        "cj6",
         "middleware_release"
     }
     k = 0x1
@@ -39,11 +39,12 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # static fields
-.field public static final Companion:Lme6;
+.field public static final Companion:Lcj6;
 
 .field public static final KEY_BITMAP_CONFIG:Ljava/lang/String; = "bitmap_config"
 
@@ -88,9 +89,9 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    sget-object v0, Lme6;->a:Lme6;
+    sget-object v0, Lcj6;->a:Lcj6;
 
-    sput-object v0, Lcom/facebook/fresco/middleware/HasExtraData;->Companion:Lme6;
+    sput-object v0, Lcom/facebook/fresco/middleware/HasExtraData;->Companion:Lcj6;
 
     return-void
 .end method

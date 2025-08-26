@@ -3,119 +3,110 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Li8d;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final synthetic a:Lp7e;
 
-.field public final synthetic b:Lp7e;
+.field public final synthetic b:Ljava/lang/String;
 
-.field public final synthetic c:Lp7e;
+.field public final synthetic c:Ljava/lang/String;
+
+.field public final synthetic d:Lp9f;
+
+.field public final synthetic e:Lnb0;
+
+.field public final synthetic f:Lnb0;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lp7e;Lp7e;I)V
+.method public synthetic constructor <init>(Lp7e;Ljava/lang/String;Ljava/lang/String;Lp9f;Lnb0;Lnb0;)V
     .locals 0
 
-    iput p3, p0, Lo7e;->a:I
-
-    iput-object p1, p0, Lo7e;->b:Lp7e;
-
-    iput-object p2, p0, Lo7e;->c:Lp7e;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lo7e;->a:Lp7e;
+
+    iput-object p2, p0, Lo7e;->b:Ljava/lang/String;
+
+    iput-object p3, p0, Lo7e;->c:Ljava/lang/String;
+
+    iput-object p4, p0, Lo7e;->d:Lp9f;
+
+    iput-object p5, p0, Lo7e;->e:Lnb0;
+
+    iput-object p6, p0, Lo7e;->f:Lnb0;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 4
+.method public final a(Lk8d;)V
+    .locals 6
 
-    iget v0, p0, Lo7e;->a:I
+    iget-object v0, p0, Lo7e;->a:Lp7e;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {v0}, Lm9f;->c()Lax1;
 
-    iget-object v0, p0, Lo7e;->b:Lp7e;
+    move-result-object p1
 
-    iget-object p0, p0, Lo7e;->c:Lp7e;
+    if-nez p1, :cond_0
 
-    iget-object v1, v0, Lp7e;->b:Ls30;
+    goto :goto_1
 
-    iget-object v2, v1, Ls30;->b:Ljava/lang/Object;
+    :cond_0
+    invoke-virtual {v0}, Lp7e;->F()V
 
-    monitor-enter v2
+    iget-object v1, p0, Lo7e;->b:Ljava/lang/String;
 
-    :try_start_0
-    iget-object v3, v1, Ls30;->c:Ljava/lang/Object;
+    iget-object v2, p0, Lo7e;->c:Ljava/lang/String;
 
-    check-cast v3, Ljava/util/LinkedHashSet;
+    iget-object v3, p0, Lo7e;->d:Lp9f;
 
-    invoke-interface {v3, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    iget-object v4, p0, Lo7e;->e:Lnb0;
 
-    iget-object v1, v1, Ls30;->o:Ljava/lang/Object;
+    iget-object v5, p0, Lo7e;->f:Lnb0;
 
-    check-cast v1, Ljava/util/LinkedHashSet;
+    invoke-virtual/range {v0 .. v5}, Lp7e;->G(Ljava/lang/String;Ljava/lang/String;Lp9f;Lnb0;Lnb0;)Ljava/util/List;
 
-    invoke-interface {v1, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    move-result-object p0
 
-    monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v0, p0}, Lm9f;->E(Ljava/util/List;)V
 
-    invoke-virtual {v0, p0}, Lp7e;->g(Lp7e;)V
+    invoke-virtual {v0}, Lm9f;->q()V
 
-    iget-object v1, v0, Lp7e;->f:Lea6;
+    iget-object p0, v0, Lp7e;->q:Ltqf;
 
-    if-eqz v1, :cond_0
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object v1, v0, Lp7e;->e:Ln7e;
+    invoke-static {}, Lp6g;->c()V
 
-    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object p1, p0, Ltqf;->a:Ljava/util/HashSet;
 
-    iget-object v0, v0, Lp7e;->e:Ln7e;
+    invoke-virtual {p1}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v0, p0}, Ln7e;->c(Lp7e;)V
+    move-result-object p1
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lm9f;
+
+    invoke-virtual {p0, v0}, Ltqf;->b(Lm9f;)V
 
     goto :goto_0
 
-    :cond_0
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    :goto_0
+    :cond_1
+    :goto_1
     return-void
-
-    :catchall_0
-    move-exception p0
-
-    :try_start_1
-    monitor-exit v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p0
-
-    :pswitch_0
-    iget-object v0, p0, Lo7e;->b:Lp7e;
-
-    iget-object v1, v0, Lp7e;->e:Ln7e;
-
-    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, v0, Lp7e;->e:Ln7e;
-
-    iget-object p0, p0, Lo7e;->c:Lp7e;
-
-    invoke-virtual {v0, p0}, Ln7e;->g(Lp7e;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

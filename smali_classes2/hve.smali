@@ -1,73 +1,169 @@
-.class public final enum Lhve;
-.super Ljava/lang/Enum;
+.class public final Lhve;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final enum a:Lhve;
+# instance fields
+.field public final a:I
 
-.field public static final enum b:Lhve;
+.field public final b:I
 
-.field public static final synthetic c:[Lhve;
+.field public final c:I
+
+.field public final d:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(IIII)V
+    .locals 0
 
-    new-instance v0, Lhve;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "UNKNOWN"
+    iput p1, p0, Lhve;->a:I
 
-    const/4 v2, 0x0
+    iput p2, p0, Lhve;->b:I
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput p3, p0, Lhve;->c:I
 
-    sput-object v0, Lhve;->a:Lhve;
-
-    new-instance v1, Lhve;
-
-    const-string v2, "NOT_ENOUGH_VIDEO_TRACKS"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lhve;->b:Lhve;
-
-    filled-new-array {v0, v1}, [Lhve;
-
-    move-result-object v0
-
-    sput-object v0, Lhve;->c:[Lhve;
+    iput p4, p0, Lhve;->d:I
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lhve;
-    .locals 1
 
-    const-class v0, Lhve;
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    if-ne p0, p1, :cond_0
 
-    move-result-object p0
+    goto :goto_1
 
-    check-cast p0, Lhve;
+    :cond_0
+    instance-of v0, p1, Lhve;
 
-    return-object p0
+    if-nez v0, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Lhve;
+
+    iget v0, p0, Lhve;->a:I
+
+    iget v1, p1, Lhve;->a:I
+
+    if-eq v0, v1, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    iget v0, p0, Lhve;->b:I
+
+    iget v1, p1, Lhve;->b:I
+
+    if-eq v0, v1, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    iget v0, p0, Lhve;->c:I
+
+    iget v1, p1, Lhve;->c:I
+
+    if-eq v0, v1, :cond_4
+
+    goto :goto_0
+
+    :cond_4
+    iget p0, p0, Lhve;->d:I
+
+    iget p1, p1, Lhve;->d:I
+
+    if-eq p0, p1, :cond_5
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_5
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
 .end method
 
-.method public static values()[Lhve;
-    .locals 1
+.method public final hashCode()I
+    .locals 3
 
-    sget-object v0, Lhve;->c:[Lhve;
+    iget v0, p0, Lhve;->a:I
 
-    invoke-virtual {v0}, [Lhve;->clone()Ljava/lang/Object;
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget v2, p0, Lhve;->b:I
+
+    invoke-static {v2, v0, v1}, Lrqc;->e(III)I
+
+    move-result v0
+
+    const v2, -0x33000001    # -1.3421772E8f
+
+    invoke-static {v2, v0, v1}, Lrqc;->e(III)I
+
+    move-result v0
+
+    iget v2, p0, Lhve;->c:I
+
+    invoke-static {v2, v0, v1}, Lrqc;->e(III)I
+
+    move-result v0
+
+    iget p0, p0, Lhve;->d:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 5
+
+    const-string v0, ", neutralFade="
+
+    const-string v1, ", primary=-855638017, themed="
+
+    const-string v2, "TopbarBackgroundDefaultColors(neutral="
+
+    iget v3, p0, Lhve;->a:I
+
+    iget v4, p0, Lhve;->b:I
+
+    invoke-static {v2, v3, v0, v4, v1}, Lpg0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    check-cast v0, [Lhve;
+    const-string v1, ", topbar="
 
-    return-object v0
+    const-string v2, ")"
+
+    iget v3, p0, Lhve;->c:I
+
+    iget p0, p0, Lhve;->d:I
+
+    invoke-static {v0, v3, v1, p0, v2}, Lpg0;->h(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

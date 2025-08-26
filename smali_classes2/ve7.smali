@@ -1,336 +1,129 @@
 .class public final Lve7;
-.super Ljava/lang/Object;
+.super Lccc;
 .source "SourceFile"
-
-# interfaces
-.implements Lrj5;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final B0:Lru/ok/messages/settings/view/LedSeekBar;
 
-.field public final synthetic b:Lrj5;
+.field public final C0:Lru/ok/messages/settings/FrgBaseSettings;
 
-.field public final synthetic c:Ljava/lang/String;
+.field public final D0:Landroidx/appcompat/widget/SwitchCompat;
+
+.field public final E0:Landroid/view/View;
+
+.field public final F0:Landroid/view/View;
+
+.field public final G0:Landroid/widget/TextView;
+
+.field public H0:Llad;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lrj5;Ljava/lang/String;I)V
-    .locals 0
+.method public constructor <init>(Landroid/view/View;Lru/ok/messages/settings/FrgBaseSettings;)V
+    .locals 4
 
-    iput p3, p0, Lve7;->a:I
+    invoke-direct {p0, p1}, Lccc;-><init>(Landroid/view/View;)V
 
-    iput-object p1, p0, Lve7;->b:Lrj5;
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    iput-object p2, p0, Lve7;->c:Ljava/lang/String;
+    move-result-object v0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v1, Lvke;->a0:Lwfe;
 
-    return-void
-.end method
+    invoke-static {v0}, Lp54;->M(Landroid/content/Context;)Lvke;
 
+    move-result-object v0
 
-# virtual methods
-.method public final a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 5
+    iput-object p2, p0, Lve7;->C0:Lru/ok/messages/settings/FrgBaseSettings;
 
-    iget v0, p0, Lve7;->a:I
+    sget v1, Lpvb;->row_setting_led__ls_seekbar:I
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    instance-of v0, p2, Lw9e;
+    move-result-object v1
 
-    if-eqz v0, :cond_0
+    check-cast v1, Lru/ok/messages/settings/view/LedSeekBar;
 
-    move-object v0, p2
+    iput-object v1, p0, Lve7;->B0:Lru/ok/messages/settings/view/LedSeekBar;
 
-    check-cast v0, Lw9e;
+    sget v2, Lpvb;->row_setting_led__title:I
 
-    iget v1, v0, Lw9e;->X:I
+    invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    const/high16 v2, -0x80000000
+    move-result-object v2
 
-    and-int v3, v1, v2
+    check-cast v2, Landroid/widget/TextView;
 
-    if-eqz v3, :cond_0
+    iput-object v2, p0, Lve7;->G0:Landroid/widget/TextView;
 
-    sub-int/2addr v1, v2
+    iget v3, v0, Lvke;->F:I
 
-    iput v1, v0, Lw9e;->X:I
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    goto :goto_0
+    sget v2, Lpvb;->row_setting_led__cb_check:I
 
-    :cond_0
-    new-instance v0, Lw9e;
+    invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    invoke-direct {v0, p0, p2}, Lw9e;-><init>(Lve7;Lkotlin/coroutines/Continuation;)V
+    move-result-object v2
 
-    :goto_0
-    iget-object p2, v0, Lw9e;->o:Ljava/lang/Object;
+    check-cast v2, Landroidx/appcompat/widget/SwitchCompat;
 
-    sget-object v1, Lpu3;->a:Lpu3;
+    iput-object v2, p0, Lve7;->D0:Landroidx/appcompat/widget/SwitchCompat;
 
-    iget v2, v0, Lw9e;->X:I
+    invoke-static {v0, v2}, Lgad;->f(Lvke;Landroidx/appcompat/widget/SwitchCompat;)V
 
-    const/4 v3, 0x1
+    sget v2, Lpvb;->row_setting__separator:I
 
-    if-eqz v2, :cond_2
+    invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    if-ne v2, v3, :cond_1
+    move-result-object v2
 
-    invoke-static {p2}, Lwx3;->H(Ljava/lang/Object;)V
+    iput-object v2, p0, Lve7;->E0:Landroid/view/View;
 
-    goto :goto_1
+    iget v3, v0, Lvke;->H:I
 
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
+    invoke-virtual {v2, v3}, Landroid/view/View;->setBackgroundColor(I)V
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    sget v2, Lpvb;->row_setting_led__separator_small:I
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    throw p0
+    move-result-object v2
 
-    :cond_2
-    invoke-static {p2}, Lwx3;->H(Ljava/lang/Object;)V
+    iget v0, v0, Lvke;->K:I
 
-    move-object p2, p1
+    invoke-virtual {v2, v0}, Landroid/view/View;->setBackgroundColor(I)V
 
-    check-cast p2, Ljava/lang/String;
+    sget v0, Lpvb;->row_setting_led__ll_led_container:I
 
-    const/4 v2, 0x0
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    iget-object v4, p0, Lve7;->c:Ljava/lang/String;
+    move-result-object v0
 
-    invoke-static {p2, v4, v2}, Lh0e;->R(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Z
+    iput-object v0, p0, Lve7;->F0:Landroid/view/View;
 
-    move-result p2
+    new-instance v0, Lq74;
 
-    if-eqz p2, :cond_3
+    const/16 v2, 0x13
 
-    iput v3, v0, Lw9e;->X:I
+    invoke-direct {v0, p0, v2, p2}, Lq74;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    iget-object p0, p0, Lve7;->b:Lrj5;
+    invoke-virtual {v1, v0}, Lru/ok/messages/settings/view/LedSeekBar;->setListener(Lue7;)V
 
-    invoke-interface {p0, p1, v0}, Lrj5;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    sget p2, Lpvb;->row_setting_led__ll_root:I
 
-    move-result-object p0
-
-    if-ne p0, v1, :cond_3
-
-    goto :goto_2
-
-    :cond_3
-    :goto_1
-    sget-object v1, Ljue;->a:Ljue;
-
-    :goto_2
-    return-object v1
-
-    :pswitch_0
-    instance-of v0, p2, Lb5a;
-
-    if-eqz v0, :cond_4
-
-    move-object v0, p2
-
-    check-cast v0, Lb5a;
-
-    iget v1, v0, Lb5a;->X:I
-
-    const/high16 v2, -0x80000000
-
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_4
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Lb5a;->X:I
-
-    goto :goto_3
-
-    :cond_4
-    new-instance v0, Lb5a;
-
-    invoke-direct {v0, p0, p2}, Lb5a;-><init>(Lve7;Lkotlin/coroutines/Continuation;)V
-
-    :goto_3
-    iget-object p2, v0, Lb5a;->o:Ljava/lang/Object;
-
-    sget-object v1, Lpu3;->a:Lpu3;
-
-    iget v2, v0, Lb5a;->X:I
-
-    const/4 v3, 0x1
-
-    if-eqz v2, :cond_6
-
-    if-ne v2, v3, :cond_5
-
-    invoke-static {p2}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto :goto_4
-
-    :cond_5
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_6
-    invoke-static {p2}, Lwx3;->H(Ljava/lang/Object;)V
-
-    check-cast p1, Ldv3;
-
-    new-instance p2, Lz4a;
-
-    iget-object v2, p0, Lve7;->c:Ljava/lang/String;
-
-    invoke-direct {p2, v2, p1}, Lz4a;-><init>(Ljava/lang/String;Ldv3;)V
-
-    iput v3, v0, Lb5a;->X:I
-
-    iget-object p0, p0, Lve7;->b:Lrj5;
-
-    invoke-interface {p0, p2, v0}, Lrj5;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-ne p0, v1, :cond_7
-
-    goto :goto_5
-
-    :cond_7
-    :goto_4
-    sget-object v1, Ljue;->a:Ljue;
-
-    :goto_5
-    return-object v1
-
-    :pswitch_1
-    instance-of v0, p2, Lue7;
-
-    if-eqz v0, :cond_8
-
-    move-object v0, p2
-
-    check-cast v0, Lue7;
-
-    iget v1, v0, Lue7;->X:I
-
-    const/high16 v2, -0x80000000
-
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_8
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Lue7;->X:I
-
-    goto :goto_6
-
-    :cond_8
-    new-instance v0, Lue7;
-
-    invoke-direct {v0, p0, p2}, Lue7;-><init>(Lve7;Lkotlin/coroutines/Continuation;)V
-
-    :goto_6
-    iget-object p2, v0, Lue7;->o:Ljava/lang/Object;
-
-    sget-object v1, Lpu3;->a:Lpu3;
-
-    iget v2, v0, Lue7;->X:I
-
-    const/4 v3, 0x1
-
-    if-eqz v2, :cond_a
-
-    if-ne v2, v3, :cond_9
-
-    invoke-static {p2}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto :goto_8
-
-    :cond_9
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_a
-    invoke-static {p2}, Lwx3;->H(Ljava/lang/Object;)V
-
-    check-cast p1, Ljava/util/List;
-
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object p1
 
-    :cond_b
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    new-instance p2, Ljs4;
 
-    move-result p2
+    const/16 v0, 0x10
 
-    if-eqz p2, :cond_c
+    invoke-direct {p2, v0, p0}, Ljs4;-><init>(ILjava/lang/Object;)V
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {p1, p2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    move-result-object p2
-
-    move-object v2, p2
-
-    check-cast v2, Lep5;
-
-    iget-object v2, v2, Lep5;->a:Ljava/lang/String;
-
-    iget-object v4, p0, Lve7;->c:Ljava/lang/String;
-
-    invoke-static {v2, v4}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_b
-
-    goto :goto_7
-
-    :cond_c
-    const/4 p2, 0x0
-
-    :goto_7
-    if-eqz p2, :cond_d
-
-    iput v3, v0, Lue7;->X:I
-
-    iget-object p0, p0, Lve7;->b:Lrj5;
-
-    invoke-interface {p0, p2, v0}, Lrj5;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-ne p0, v1, :cond_d
-
-    goto :goto_9
-
-    :cond_d
-    :goto_8
-    sget-object v1, Ljue;->a:Ljue;
-
-    :goto_9
-    return-object v1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

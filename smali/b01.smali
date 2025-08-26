@@ -1,95 +1,67 @@
-.class public final synthetic Lb01;
+.class public interface abstract Lb01;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/widget/PopupWindow$OnDismissListener;
-
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Ljava/lang/Object;
-
-
-# direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;)V
-    .locals 0
-
-    iput p1, p0, Lb01;->a:I
-
-    iput-object p2, p0, Lb01;->b:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.implements Lsdd;
 
 
 # virtual methods
-.method public final onDismiss()V
-    .locals 2
+.method public abstract a()I
+.end method
 
-    const/4 v0, 0x0
+.method public b()Lmoe;
+    .locals 0
 
-    iget-object v1, p0, Lb01;->b:Ljava/lang/Object;
+    const/4 p0, 0x0
 
-    iget p0, p0, Lb01;->a:I
+    return-object p0
+.end method
 
-    packed-switch p0, :pswitch_data_0
+.method public c()Ljdd;
+    .locals 0
 
-    check-cast v1, Lone/me/chats/forward/ForwardPickerScreen;
+    const/4 p0, 0x0
 
-    iput-object v0, v1, Lone/me/chats/forward/ForwardPickerScreen;->L0:Ljme;
+    return-object p0
+.end method
 
-    return-void
+.method public d()Lmoe;
+    .locals 0
 
-    :pswitch_0
-    check-cast v1, Lzq3;
+    const/4 p0, 0x0
 
-    iget-object p0, v1, Lzq3;->b:Ls16;
+    return-object p0
+.end method
 
-    if-eqz p0, :cond_0
+.method public e()Lpdd;
+    .locals 0
 
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    const/4 p0, 0x0
 
-    :cond_0
-    return-void
+    return-object p0
+.end method
 
-    :pswitch_1
-    check-cast v1, Lhl1;
+.method public f()Ljava/lang/Integer;
+    .locals 0
 
-    iput-object v0, v1, Lhl1;->N0:Ljme;
+    const/4 p0, 0x0
 
-    return-void
+    return-object p0
+.end method
 
-    :pswitch_2
-    check-cast v1, Lel1;
+.method public g()Z
+    .locals 0
 
-    iget-object p0, v1, Lel1;->M0:Ldgc;
+    const/4 p0, 0x1
 
-    const v0, -0x33000001    # -1.3421772E8f
+    return p0
+.end method
 
-    invoke-virtual {p0, v0}, Ldgc;->setIconTint(I)V
+.method public getType()Lrdd;
+    .locals 0
 
-    sget-object v0, Lyfc;->a:Lyfc;
+    sget-object p0, Lrdd;->b:Lrdd;
 
-    invoke-virtual {p0, v0}, Ldgc;->setMode(Lyfc;)V
-
-    return-void
-
-    :pswitch_3
-    check-cast v1, Ls16;
-
-    invoke-interface {v1}, Ls16;->invoke()Ljava/lang/Object;
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

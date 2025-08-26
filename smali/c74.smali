@@ -1,157 +1,92 @@
-.class public final Lc74;
+.class public final synthetic Lc74;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lkm7;
+
 
 # instance fields
-.field public final a:[B
+.field public final synthetic a:I
 
-.field public final b:Ljava/util/ArrayDeque;
+.field public final synthetic b:Lzc;
 
-.field public c:I
-
-.field public d:I
-
-.field public e:J
-
-.field public final f:Ljava/lang/Object;
-
-.field public g:Ljava/lang/Object;
+.field public final synthetic c:Z
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 2
+.method public synthetic constructor <init>(Lzc;ZI)V
+    .locals 0
 
-    packed-switch p1, :pswitch_data_0
+    iput p3, p0, Lc74;->a:I
+
+    iput-object p1, p0, Lc74;->b:Lzc;
+
+    iput-boolean p2, p0, Lc74;->c:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 p1, 0x8
-
-    new-array p1, p1, [B
-
-    iput-object p1, p0, Lc74;->a:[B
-
-    new-instance p1, Ljava/util/ArrayDeque;
-
-    invoke-direct {p1}, Ljava/util/ArrayDeque;-><init>()V
-
-    iput-object p1, p0, Lc74;->b:Ljava/util/ArrayDeque;
-
-    new-instance p1, Lyze;
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x0
-
-    invoke-direct {p1, v0, v1}, Lyze;-><init>(IZ)V
-
-    iput-object p1, p0, Lc74;->f:Ljava/lang/Object;
-
     return-void
-
-    :pswitch_0
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/16 p1, 0x8
-
-    new-array p1, p1, [B
-
-    iput-object p1, p0, Lc74;->a:[B
-
-    new-instance p1, Ljava/util/ArrayDeque;
-
-    invoke-direct {p1}, Ljava/util/ArrayDeque;-><init>()V
-
-    iput-object p1, p0, Lc74;->b:Ljava/util/ArrayDeque;
-
-    new-instance p1, Lyze;
-
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    invoke-direct {p1, v0, v1}, Lyze;-><init>(IZ)V
-
-    iput-object p1, p0, Lc74;->f:Ljava/lang/Object;
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public a(Lq74;I)J
-    .locals 5
+.method public final invoke(Ljava/lang/Object;)V
+    .locals 1
 
-    iget-object p0, p0, Lc74;->a:[B
+    iget v0, p0, Lc74;->a:I
 
-    const/4 v0, 0x0
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p1, p0, v0, p2, v0}, Lq74;->i([BIIZ)Z
+    check-cast p1, Lad;
 
-    const-wide/16 v1, 0x0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    :goto_0
-    if-ge v0, p2, :cond_0
+    iget-object v0, p0, Lc74;->b:Lzc;
 
-    const/16 p1, 0x8
+    iget-boolean p0, p0, Lc74;->c:Z
 
-    shl-long/2addr v1, p1
+    invoke-interface {p1, v0, p0}, Lad;->x0(Lzc;Z)V
 
-    aget-byte p1, p0, v0
+    return-void
 
-    and-int/lit16 p1, p1, 0xff
+    :pswitch_0
+    iget-boolean v0, p0, Lc74;->c:Z
 
-    int-to-long v3, p1
+    check-cast p1, Lad;
 
-    or-long/2addr v1, v3
+    iget-object p0, p0, Lc74;->b:Lzc;
 
-    add-int/lit8 v0, v0, 0x1
+    invoke-interface {p1, p0, v0}, Lad;->r(Lzc;Z)V
 
-    goto :goto_0
+    return-void
 
-    :cond_0
-    return-wide v1
-.end method
+    :pswitch_1
+    iget-boolean v0, p0, Lc74;->c:Z
 
-.method public b(Lr74;I)J
-    .locals 5
+    check-cast p1, Lad;
 
-    iget-object p0, p0, Lc74;->a:[B
+    iget-object p0, p0, Lc74;->b:Lzc;
 
-    const/4 v0, 0x0
+    invoke-interface {p1, p0, v0}, Lad;->z(Lzc;Z)V
 
-    invoke-virtual {p1, p0, v0, p2, v0}, Lr74;->i([BIIZ)Z
+    return-void
 
-    const-wide/16 v1, 0x0
+    :pswitch_2
+    iget-boolean v0, p0, Lc74;->c:Z
 
-    :goto_0
-    if-ge v0, p2, :cond_0
+    check-cast p1, Lad;
 
-    const/16 p1, 0x8
+    iget-object p0, p0, Lc74;->b:Lzc;
 
-    shl-long/2addr v1, p1
+    invoke-interface {p1, p0, v0}, Lad;->t(Lzc;Z)V
 
-    aget-byte p1, p0, v0
+    return-void
 
-    and-int/lit16 p1, p1, 0xff
-
-    int-to-long v3, p1
-
-    or-long/2addr v1, v3
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-wide v1
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

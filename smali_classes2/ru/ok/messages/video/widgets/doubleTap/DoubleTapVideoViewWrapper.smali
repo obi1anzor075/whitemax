@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public a:Lwj4;
+.field public a:Lcn4;
 
 
 # direct methods
@@ -17,11 +17,11 @@
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    invoke-static {}, Lzg4;->b()Lzg4;
+    invoke-static {}, Lck4;->b()Lck4;
 
     move-result-object p1
 
-    new-instance p2, Lrj4;
+    new-instance p2, Lxm4;
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -29,9 +29,9 @@
 
     const/4 v1, 0x1
 
-    invoke-direct {p2, v0, v1}, Lrj4;-><init>(Landroid/content/Context;I)V
+    invoke-direct {p2, v0, v1}, Lxm4;-><init>(Landroid/content/Context;I)V
 
-    sget v0, Lyqb;->double_tap_video_view_wrapper__arrows_view_left:I
+    sget v0, Lpvb;->double_tap_video_view_wrapper__arrows_view_left:I
 
     invoke-virtual {p2, v0}, Landroid/view/View;->setId(I)V
 
@@ -41,7 +41,7 @@
 
     new-instance v1, Landroid/widget/FrameLayout$LayoutParams;
 
-    iget p1, p1, Lzg4;->E:I
+    iget p1, p1, Lck4;->D:I
 
     mul-int/lit8 v2, p1, 0x2
 
@@ -53,7 +53,7 @@
 
     invoke-super {p0, p2, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    new-instance p1, Lrj4;
+    new-instance p1, Lxm4;
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -61,9 +61,9 @@
 
     const/4 v1, 0x2
 
-    invoke-direct {p1, p2, v1}, Lrj4;-><init>(Landroid/content/Context;I)V
+    invoke-direct {p1, p2, v1}, Lxm4;-><init>(Landroid/content/Context;I)V
 
-    sget p2, Lyqb;->double_tap_video_view_wrapper__arrows_view_right:I
+    sget p2, Lpvb;->double_tap_video_view_wrapper__arrows_view_right:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setId(I)V
 
@@ -75,7 +75,7 @@
 
     float-to-int v0, v0
 
-    invoke-static {v0}, Ldh4;->b(I)I
+    invoke-static {v0}, Lgk4;->b(I)I
 
     move-result v0
 
@@ -83,7 +83,7 @@
 
     float-to-int v1, v1
 
-    invoke-static {v1}, Ldh4;->b(I)I
+    invoke-static {v1}, Lgk4;->b(I)I
 
     move-result v1
 
@@ -141,31 +141,30 @@
 
     if-gt p0, p1, :cond_0
 
-    goto :goto_0
+    return p1
 
     :cond_0
-    const/4 p1, 0x0
+    const/4 p0, 0x0
 
-    :goto_0
-    return p1
+    return p0
 .end method
 
 .method public final onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 5
 
-    iget-object v0, p0, Lru/ok/messages/video/widgets/doubleTap/DoubleTapVideoViewWrapper;->a:Lwj4;
+    iget-object v0, p0, Lru/ok/messages/video/widgets/doubleTap/DoubleTapVideoViewWrapper;->a:Lcn4;
 
-    check-cast v0, Loe9;
+    check-cast v0, Lgj9;
 
     iget-object v1, v0, Lv2;->a:Ljava/lang/Object;
 
     check-cast v1, Ljava/util/Set;
 
-    invoke-static {v1}, Lo23;->W(Ljava/lang/Iterable;)Ljava/lang/Object;
+    invoke-static {v1}, Lp43;->A0(Ljava/lang/Iterable;)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lid9;
+    check-cast v1, Ldi9;
 
     if-eqz v1, :cond_2
 
@@ -173,7 +172,7 @@
 
     check-cast v0, Landroid/view/View;
 
-    iget-object v2, v1, Lid9;->Z:Landroid/graphics/Rect;
+    iget-object v2, v1, Ldi9;->Z:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
@@ -201,13 +200,13 @@
 
     if-gt v0, v4, :cond_0
 
-    iget-object v0, v1, Lid9;->c:Lyj4;
+    iget-object v0, v1, Ldi9;->c:Len4;
 
-    iget-object v1, v0, Lyj4;->b:Landroid/view/GestureDetector;
+    iget-object v1, v0, Len4;->b:Landroid/view/GestureDetector;
 
     invoke-virtual {v1, p1}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    iget v0, v0, Lyj4;->c:I
+    iget v0, v0, Len4;->c:I
 
     if-lez v0, :cond_2
 
@@ -226,20 +225,20 @@
 
     if-gt v0, v2, :cond_1
 
-    iget-object v0, v1, Lid9;->o:Lyj4;
+    iget-object v0, v1, Ldi9;->o:Len4;
 
-    iget-object v1, v0, Lyj4;->b:Landroid/view/GestureDetector;
+    iget-object v1, v0, Len4;->b:Landroid/view/GestureDetector;
 
     invoke-virtual {v1, p1}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    iget v0, v0, Lyj4;->c:I
+    iget v0, v0, Len4;->c:I
 
     if-lez v0, :cond_2
 
     goto :goto_0
 
     :cond_1
-    iget-object v0, v1, Lid9;->X:Landroid/view/GestureDetector;
+    iget-object v0, v1, Ldi9;->X:Landroid/view/GestureDetector;
 
     invoke-virtual {v0, p1}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -258,10 +257,10 @@
     return p0
 .end method
 
-.method public setTouchEventListener(Lwj4;)V
+.method public setTouchEventListener(Lcn4;)V
     .locals 0
 
-    iput-object p1, p0, Lru/ok/messages/video/widgets/doubleTap/DoubleTapVideoViewWrapper;->a:Lwj4;
+    iput-object p1, p0, Lru/ok/messages/video/widgets/doubleTap/DoubleTapVideoViewWrapper;->a:Lcn4;
 
     return-void
 .end method

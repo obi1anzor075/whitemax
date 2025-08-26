@@ -2,133 +2,60 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Leo7;
-
-
-# static fields
-.field public static final b:Ln75;
-
 
 # instance fields
-.field public a:I
+.field public a:Z
+
+.field public b:Lm0b;
+
+.field public c:I
+
+.field public d:Z
+
+.field public e:I
+
+.field public f:Z
+
+.field public g:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lm0b;)V
+    .locals 0
 
-    new-instance v0, Ln75;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v1, 0x5
-
-    iput v1, v0, Ln75;->a:I
-
-    sput-object v0, Ln75;->b:Ln75;
+    iput-object p1, p0, Ln75;->b:Lm0b;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/lang/String;)V
-    .locals 0
+.method public final a(I)V
+    .locals 2
 
-    return-void
-.end method
+    iget-boolean v0, p0, Ln75;->a:Z
 
-.method public final c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 0
+    if-lez p1, :cond_0
 
-    invoke-static {p3}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public final d(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method public final d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 0
-
-    .line 2
-    invoke-static {p3}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public final e(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method public final e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 0
-
-    .line 2
-    invoke-static {p3}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public final f(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final i(I)Z
-    .locals 0
-
-    iget p0, p0, Ln75;->a:I
-
-    if-gt p0, p1, :cond_0
-
-    const/4 p0, 0x1
+    const/4 v1, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x0
+    const/4 v1, 0x0
 
     :goto_0
-    return p0
-.end method
+    or-int/2addr v0, v1
 
-.method public final j(I)V
-    .locals 0
+    iput-boolean v0, p0, Ln75;->a:Z
 
-    iput p1, p0, Ln75;->a:I
+    iget v0, p0, Ln75;->c:I
 
-    return-void
-.end method
+    add-int/2addr v0, p1
 
-.method public final w(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
+    iput v0, p0, Ln75;->c:I
 
-    .line 1
-    return-void
-.end method
-
-.method public final w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 0
-
-    if-nez p3, :cond_0
-
-    goto :goto_0
-
-    .line 2
-    :cond_0
-    invoke-static {p3}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
-
-    :goto_0
     return-void
 .end method

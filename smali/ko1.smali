@@ -1,238 +1,354 @@
 .class public final Lko1;
-.super Ljava/lang/Object;
+.super Lu2;
 .source "SourceFile"
-
-# interfaces
-.implements Llib;
 
 
 # instance fields
-.field public final synthetic a:Lpo1;
+.field public final synthetic c:I
+
+.field public final synthetic o:Llo1;
 
 
 # direct methods
-.method public constructor <init>(Lpo1;)V
+.method public constructor <init>(Llo1;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Lko1;->c:I
 
-    iput-object p1, p0, Lko1;->a:Lpo1;
+    iput-object p1, p0, Lko1;->o:Llo1;
+
+    const/16 p1, 0x9
+
+    packed-switch p2, :pswitch_data_0
+
+    sget-object p2, Lho1;->b:Lho1;
+
+    invoke-direct {p0, p1, p2}, Lu2;-><init>(ILjava/lang/Object;)V
 
     return-void
+
+    :pswitch_0
+    sget-object p2, Lio1;->o:Lio1;
+
+    invoke-direct {p0, p1, p2}, Lu2;-><init>(ILjava/lang/Object;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 8
+.method public final x0(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 3
 
-    iget-object p0, p0, Lko1;->a:Lpo1;
+    iget v0, p0, Lko1;->c:I
 
-    iget-object v0, p0, Lpo1;->d:Laka;
+    packed-switch v0, :pswitch_data_0
 
-    check-cast v0, Loka;
-
-    invoke-virtual {v0}, Loka;->c()Lqja;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lpo1;->b:Lqz0;
-
-    check-cast v1, Lrz0;
-
-    invoke-virtual {v1}, Lrz0;->b()Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;->getDeviceType()Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "speakerphone"
-
-    invoke-static {v1, v2}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    iget-object v2, p0, Lpo1;->h:Lnnc;
-
-    invoke-virtual {v2}, Lnnc;->c()Z
-
-    move-result v2
-
-    iget-object v3, p0, Lpo1;->a:Lso1;
-
-    check-cast v3, Lep1;
-
-    invoke-virtual {v3}, Lep1;->k()Lzw3;
-
-    move-result-object v3
-
-    iget-boolean v3, v3, Lzw3;->h:Z
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x1
-
-    if-nez v3, :cond_1
-
-    iget-object v3, p0, Lpo1;->d:Laka;
-
-    check-cast v3, Loka;
-
-    iget-object v3, v3, Loka;->A0:Lt0c;
-
-    iget-object v3, v3, Lt0c;->a:Lzqd;
-
-    invoke-interface {v3}, Lzqd;->getValue()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lbka;
-
-    iget-boolean v3, v3, Lbka;->h:Z
-
-    if-eqz v3, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    move v3, v4
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    move v3, v5
-
-    :goto_1
-    invoke-virtual {p0}, Lpo1;->f()Lgrd;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Lgrd;->getValue()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Leoc;
-
-    iget-object v6, v6, Leoc;->a:Lfoc;
-
-    sget-object v7, Lfoc;->a:Lfoc;
-
-    if-ne v6, v7, :cond_3
-
-    invoke-virtual {p0}, Lpo1;->f()Lgrd;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Lgrd;->getValue()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Leoc;
-
-    iget-object v6, v6, Leoc;->b:Laoc;
-
-    if-eqz v6, :cond_2
-
-    iget-object v6, v6, Laoc;->c:Lle1;
-
-    goto :goto_2
-
-    :cond_2
-    const/4 v6, 0x0
-
-    :goto_2
-    iget-object v7, v0, Lqja;->a:Lne1;
-
-    invoke-interface {v7}, Lne1;->getId()Lle1;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_4
-
-    iget-object v0, v0, Lqja;->a:Lne1;
-
-    invoke-interface {v0}, Lne1;->m()Z
+    invoke-static {p1, p2}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-nez v0, :cond_c
 
-    goto :goto_3
+    check-cast p2, Lio1;
+
+    check-cast p1, Lio1;
+
+    invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v0
+
+    sget-object v1, Lqp4;->q0:Lap9;
+
+    iget-object p0, p0, Lko1;->o:Llo1;
+
+    if-eqz v0, :cond_6
+
+    const/4 v2, 0x1
+
+    if-eq v0, v2, :cond_6
+
+    const/4 p1, 0x2
+
+    if-eq v0, p1, :cond_2
+
+    const/4 p1, 0x3
+
+    if-ne v0, p1, :cond_1
+
+    invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p0}, Llo1;->getBackground()Lxkd;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1}, Lxkd;->stop()V
+
+    :cond_0
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    goto/16 :goto_1
+
+    :cond_1
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p0
+
+    :cond_2
+    invoke-virtual {p0}, Llo1;->getBackground()Lxkd;
+
+    move-result-object p1
+
+    if-nez p1, :cond_3
+
+    invoke-static {p0}, Llo1;->I(Llo1;)Lxkd;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     :cond_3
-    move v5, v4
+    invoke-virtual {p0}, Llo1;->getBackground()Lxkd;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_4
+
+    sget-object p2, Ltkd;->o:Ltkd;
+
+    iget-object p1, p1, Lxkd;->b:Lwkd;
+
+    invoke-virtual {p1, p2}, Lwkd;->c(Ltkd;)V
 
     :cond_4
-    :goto_3
-    iget-object p0, p0, Lpo1;->j:Lmib;
+    invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
 
-    if-nez v3, :cond_7
+    move-result p1
 
-    if-nez v1, :cond_7
+    if-eqz p1, :cond_c
 
-    if-nez v2, :cond_7
+    invoke-virtual {p0}, Llo1;->getBackground()Lxkd;
 
-    if-eqz v5, :cond_5
+    move-result-object p1
 
-    goto :goto_5
+    if-eqz p1, :cond_c
+
+    invoke-virtual {p1}, Lxkd;->isRunning()Z
+
+    move-result p1
+
+    if-nez p1, :cond_c
+
+    invoke-virtual {p0}, Llo1;->getBackground()Lxkd;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_5
+
+    invoke-virtual {v1, p0}, Lap9;->j(Landroid/view/View;)Lk9a;
+
+    move-result-object p2
+
+    iget-object p2, p2, Lk9a;->c:Lyha;
+
+    invoke-virtual {p1, p2}, Lxkd;->onThemeChanged(Lyha;)V
 
     :cond_5
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p0}, Llo1;->getBackground()Lxkd;
 
-    :try_start_0
-    iget-object p0, p0, Lmib;->f:Landroid/os/PowerManager$WakeLock;
+    move-result-object p0
 
-    if-eqz p0, :cond_6
+    if-eqz p0, :cond_c
 
-    invoke-virtual {p0}, Landroid/os/PowerManager$WakeLock;->acquire()V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {p0}, Lxkd;->start()V
 
-    goto :goto_4
+    goto :goto_1
 
-    :catch_0
-    move-exception p0
-
-    invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+    :cond_6
+    invoke-virtual {p0}, Llo1;->getBackground()Lxkd;
 
     move-result-object v0
 
-    new-array v1, v4, [Ljava/lang/Object;
+    if-nez v0, :cond_7
 
-    const-string v2, "ProximityHelperTag"
+    invoke-static {p0}, Llo1;->I(Llo1;)Lxkd;
 
-    invoke-static {v2, p0, v0, v1}, Ludd;->u(Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    move-result-object v0
 
-    :cond_6
-    :goto_4
-    return-void
+    invoke-virtual {p0, v0}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     :cond_7
-    :goto_5
-    invoke-virtual {p0}, Lmib;->c()V
+    sget-object v0, Lio1;->b:Lio1;
 
+    sget-object v2, Lio1;->a:Lio1;
+
+    if-ne p1, v0, :cond_8
+
+    if-ne p2, v2, :cond_8
+
+    invoke-virtual {p0}, Llo1;->getBackground()Lxkd;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_8
+
+    const/16 v0, 0x80
+
+    invoke-virtual {p1, v0}, Lxkd;->setAlpha(I)V
+
+    :cond_8
+    invoke-virtual {p0}, Llo1;->getBackground()Lxkd;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_a
+
+    if-ne p2, v2, :cond_9
+
+    sget-object p2, Ltkd;->c:Ltkd;
+
+    goto :goto_0
+
+    :cond_9
+    sget-object p2, Ltkd;->b:Ltkd;
+
+    :goto_0
+    iget-object p1, p1, Lxkd;->b:Lwkd;
+
+    invoke-virtual {p1, p2}, Lwkd;->c(Ltkd;)V
+
+    :cond_a
+    invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_c
+
+    invoke-virtual {p0}, Llo1;->getBackground()Lxkd;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_c
+
+    invoke-virtual {p1}, Lxkd;->isRunning()Z
+
+    move-result p1
+
+    if-nez p1, :cond_c
+
+    invoke-virtual {p0}, Llo1;->getBackground()Lxkd;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_b
+
+    invoke-virtual {v1, p0}, Lap9;->j(Landroid/view/View;)Lk9a;
+
+    move-result-object p2
+
+    iget-object p2, p2, Lk9a;->c:Lyha;
+
+    invoke-virtual {p1, p2}, Lxkd;->onThemeChanged(Lyha;)V
+
+    :cond_b
+    invoke-virtual {p0}, Llo1;->getBackground()Lxkd;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_c
+
+    invoke-virtual {p0}, Lxkd;->start()V
+
+    :cond_c
+    :goto_1
     return-void
-.end method
 
-.method public final b()V
-    .locals 0
+    :pswitch_0
+    invoke-static {p1, p2}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-object p0, p0, Lko1;->a:Lpo1;
+    move-result v0
 
-    iget-object p0, p0, Lpo1;->j:Lmib;
+    if-nez v0, :cond_f
 
-    invoke-virtual {p0}, Lmib;->c()V
+    check-cast p2, Lho1;
 
+    check-cast p1, Lho1;
+
+    invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
+
+    move-result p1
+
+    sget-object p2, Lhlc;->b:Lhlc;
+
+    iget-object p0, p0, Lko1;->o:Llo1;
+
+    if-eqz p1, :cond_e
+
+    const/4 v0, 0x1
+
+    if-ne p1, v0, :cond_d
+
+    invoke-static {p0}, Llo1;->J(Llo1;)Lmlc;
+
+    move-result-object p1
+
+    sget-object v0, Lhlc;->a:Lhlc;
+
+    invoke-virtual {p1, v0}, Lmlc;->setMode(Lhlc;)V
+
+    invoke-static {p0}, Llo1;->K(Llo1;)Lmlc;
+
+    move-result-object p0
+
+    invoke-virtual {p0, p2}, Lmlc;->setMode(Lhlc;)V
+
+    goto :goto_2
+
+    :cond_d
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p0
+
+    :cond_e
+    invoke-static {p0}, Llo1;->J(Llo1;)Lmlc;
+
+    move-result-object p1
+
+    sget-object v0, Lhlc;->c:Lhlc;
+
+    invoke-virtual {p1, v0}, Lmlc;->setMode(Lhlc;)V
+
+    invoke-static {p0}, Llo1;->K(Llo1;)Lmlc;
+
+    move-result-object p0
+
+    invoke-virtual {p0, p2}, Lmlc;->setMode(Lhlc;)V
+
+    :cond_f
+    :goto_2
     return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,103 +1,129 @@
 .class public final Lor7;
-.super Ll5e;
+.super Ln3;
 .source "SourceFile"
 
-# interfaces
-.implements Li26;
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lor7;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final X:Z
 
-.field public final synthetic Y:Lone/me/android/MainActivity;
+.field public final Y:Z
+
+.field public final a:Z
+
+.field public final b:Z
+
+.field public final c:Z
+
+.field public final o:Z
 
 
 # direct methods
-.method public constructor <init>(Lone/me/android/MainActivity;Lkotlin/coroutines/Continuation;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lmrf;
+
+    const/16 v1, 0x1a
+
+    invoke-direct {v0, v1}, Lmrf;-><init>(I)V
+
+    sput-object v0, Lor7;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(ZZZZZZ)V
     .locals 0
 
-    iput-object p1, p0, Lor7;->Y:Lone/me/android/MainActivity;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
+    iput-boolean p1, p0, Lor7;->a:Z
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-boolean p2, p0, Lor7;->b:Z
+
+    iput-boolean p3, p0, Lor7;->c:Z
+
+    iput-boolean p4, p0, Lor7;->o:Z
+
+    iput-boolean p5, p0, Lor7;->X:Z
+
+    iput-boolean p6, p0, Lor7;->Y:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Lne7;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lor7;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lor7;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lor7;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
-
-    new-instance v0, Lor7;
-
-    iget-object p0, p0, Lor7;->Y:Lone/me/android/MainActivity;
-
-    invoke-direct {v0, p0, p2}, Lor7;-><init>(Lone/me/android/MainActivity;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lor7;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    const/16 p2, 0x4f45
 
-    iget-object p1, p0, Lor7;->X:Ljava/lang/Object;
+    invoke-static {p1, p2}, Lq14;->B0(Landroid/os/Parcel;I)I
 
-    check-cast p1, Lne7;
+    move-result p2
 
-    sget v0, Lone/me/android/deeplink/LinkInterceptorActivity;->O0:I
+    const/4 v0, 0x1
 
-    new-instance v0, Landroid/content/Intent;
+    const/4 v1, 0x4
 
-    iget-object p0, p0, Lor7;->Y:Lone/me/android/MainActivity;
+    invoke-static {p1, v0, v1}, Lq14;->D0(Landroid/os/Parcel;II)V
 
-    const-class v1, Lone/me/android/deeplink/LinkInterceptorActivity;
+    iget-boolean v0, p0, Lor7;->a:Z
 
-    invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    const-string v1, "link:result"
+    const/4 v0, 0x2
 
-    invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+    invoke-static {p1, v0, v1}, Lq14;->D0(Landroid/os/Parcel;II)V
 
-    invoke-virtual {p0, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+    iget-boolean v0, p0, Lor7;->b:Z
 
-    iget-object p1, p0, Lone/me/android/MainActivity;->d1:Lg37;
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    const/4 v0, 0x0
+    const/4 v0, 0x3
 
-    if-eqz p1, :cond_0
+    invoke-static {p1, v0, v1}, Lq14;->D0(Landroid/os/Parcel;II)V
 
-    invoke-interface {p1, v0}, Lg37;->cancel(Ljava/util/concurrent/CancellationException;)V
+    iget-boolean v0, p0, Lor7;->c:Z
 
-    :cond_0
-    iput-object v0, p0, Lone/me/android/MainActivity;->d1:Lg37;
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    sget-object p0, Ljue;->a:Ljue;
+    invoke-static {p1, v1, v1}, Lq14;->D0(Landroid/os/Parcel;II)V
 
-    return-object p0
+    iget-boolean v0, p0, Lor7;->o:Z
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v0, 0x5
+
+    invoke-static {p1, v0, v1}, Lq14;->D0(Landroid/os/Parcel;II)V
+
+    iget-boolean v0, p0, Lor7;->X:Z
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v0, 0x6
+
+    invoke-static {p1, v0, v1}, Lq14;->D0(Landroid/os/Parcel;II)V
+
+    iget-boolean p0, p0, Lor7;->Y:Z
+
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+
+    invoke-static {p1, p2}, Lq14;->C0(Landroid/os/Parcel;I)V
+
+    return-void
 .end method

@@ -3,47 +3,56 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lh73;
-.implements Lof3;
+.implements Lx56;
 
 
 # instance fields
-.field public final synthetic a:Lj6;
+.field public final synthetic a:Lcjc;
+
+.field public final synthetic b:Ljava/lang/String;
+
+.field public final synthetic c:I
+
+.field public final synthetic o:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lj6;)V
+.method public synthetic constructor <init>(Lcjc;Ljava/lang/String;II)V
     .locals 0
 
-    iput-object p1, p0, Lric;->a:Lj6;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lric;->a:Lcjc;
+
+    iput-object p2, p0, Lric;->b:Ljava/lang/String;
+
+    iput p3, p0, Lric;->c:I
+
+    iput p4, p0, Lric;->o:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public accept(Ljava/lang/Object;)V
-    .locals 0
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
-    check-cast p1, Ljue;
+    check-cast p1, Lkotlin/coroutines/Continuation;
 
-    iget-object p0, p0, Lric;->a:Lj6;
+    iget-object v0, p0, Lric;->a:Lcjc;
 
-    invoke-interface {p0}, Lj6;->run()V
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return-void
-.end method
+    iget-object v1, p0, Lric;->b:Ljava/lang/String;
 
-.method public b(Lx63;)V
-    .locals 0
+    iget v2, p0, Lric;->c:I
 
-    iget-object p0, p0, Lric;->a:Lj6;
+    iget p0, p0, Lric;->o:I
 
-    invoke-interface {p0}, Lj6;->run()V
+    invoke-static {v0, v1, v2, p0, p1}, Lcjc;->j(Lcjc;Ljava/lang/String;IILkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    invoke-virtual {p1}, Lx63;->b()V
+    move-result-object p0
 
-    return-void
+    return-object p0
 .end method

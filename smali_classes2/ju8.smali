@@ -3,98 +3,62 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lpj5;
+.implements Lku8;
 
 
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lpj5;
-
-.field public final synthetic c:Lnu8;
+# static fields
+.field public static final a:Lju8;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lgrd;Lnu8;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p3, p0, Lju8;->a:I
+    new-instance v0, Lju8;
 
-    iput-object p1, p0, Lju8;->b:Lpj5;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lju8;->c:Lnu8;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lju8;->a:Lju8;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Lrj5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    iget v0, p0, Lju8;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    new-instance v0, Liu8;
-
-    iget-object v1, p0, Lju8;->c:Lnu8;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v0, p1, v1, v2}, Liu8;-><init>(Lrj5;Lnu8;I)V
-
-    iget-object p0, p0, Lju8;->b:Lpj5;
-
-    invoke-interface {p0, v0, p2}, Lpj5;->c(Lrj5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Lpu3;->a:Lpu3;
+    const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
-    goto :goto_0
+    return v0
 
     :cond_0
-    sget-object p0, Ljue;->a:Ljue;
+    instance-of p0, p1, Lju8;
 
-    :goto_0
-    return-object p0
+    if-nez p0, :cond_1
 
-    :pswitch_0
-    new-instance v0, Liu8;
+    const/4 p0, 0x0
 
-    iget-object v1, p0, Lju8;->c:Lnu8;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, p1, v1, v2}, Liu8;-><init>(Lrj5;Lnu8;I)V
-
-    iget-object p0, p0, Lju8;->b:Lpj5;
-
-    invoke-interface {p0, v0, p2}, Lpj5;->c(Lrj5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Lpu3;->a:Lpu3;
-
-    if-ne p0, p1, :cond_1
-
-    goto :goto_1
+    return p0
 
     :cond_1
-    sget-object p0, Ljue;->a:Ljue;
+    return v0
+.end method
 
-    :goto_1
+.method public final hashCode()I
+    .locals 0
+
+    const p0, -0x15cdca80
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "DoneWithDisable"
+
     return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

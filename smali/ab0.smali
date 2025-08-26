@@ -4,44 +4,30 @@
 
 
 # instance fields
-.field public final a:Lo4e;
+.field public final a:Lju4;
 
-.field public final b:Ljava/util/List;
+.field public final b:Lju4;
+
+.field public final c:I
+
+.field public final d:I
 
 
 # direct methods
-.method public constructor <init>(Lo4e;Ljava/util/List;)V
+.method public constructor <init>(Lju4;Lju4;II)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p1, :cond_1
+    iput-object p1, p0, Lab0;->a:Lju4;
 
-    iput-object p1, p0, Lab0;->a:Lo4e;
+    iput-object p2, p0, Lab0;->b:Lju4;
 
-    if-eqz p2, :cond_0
+    iput p3, p0, Lab0;->c:I
 
-    iput-object p2, p0, Lab0;->b:Ljava/util/List;
+    iput p4, p0, Lab0;->d:I
 
     return-void
-
-    :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    const-string p1, "Null outConfigs"
-
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    const-string p1, "Null surfaceEdge"
-
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 
@@ -60,46 +46,52 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_1
 
     check-cast p1, Lab0;
 
-    iget-object v1, p1, Lab0;->a:Lo4e;
+    iget-object v1, p0, Lab0;->a:Lju4;
 
-    iget-object v3, p0, Lab0;->a:Lo4e;
+    iget-object v3, p1, Lab0;->a:Lju4;
 
-    invoke-virtual {v3, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    iget-object p0, p0, Lab0;->b:Ljava/util/List;
+    iget-object v1, p0, Lab0;->b:Lju4;
 
-    iget-object p1, p1, Lab0;->b:Ljava/util/List;
+    iget-object v3, p1, Lab0;->b:Lju4;
 
-    invoke-interface {p0, p1}, Ljava/util/List;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    move-result p0
+    move-result v1
 
-    if-eqz p0, :cond_1
+    if-eqz v1, :cond_1
 
-    goto :goto_0
+    iget v1, p0, Lab0;->c:I
 
-    :cond_1
-    move v0, v2
+    iget v3, p1, Lab0;->c:I
 
-    :goto_0
+    if-ne v1, v3, :cond_1
+
+    iget p0, p0, Lab0;->d:I
+
+    iget p1, p1, Lab0;->d:I
+
+    if-ne p0, p1, :cond_1
+
     return v0
 
-    :cond_2
+    :cond_1
     return v2
 .end method
 
 .method public final hashCode()I
-    .locals 2
+    .locals 3
 
-    iget-object v0, p0, Lab0;->a:Lo4e;
+    iget-object v0, p0, Lab0;->a:Lju4;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
@@ -111,11 +103,23 @@
 
     mul-int/2addr v0, v1
 
-    iget-object p0, p0, Lab0;->b:Ljava/util/List;
+    iget-object v2, p0, Lab0;->b:Lju4;
 
-    invoke-interface {p0}, Ljava/util/List;->hashCode()I
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
-    move-result p0
+    move-result v2
+
+    xor-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget v2, p0, Lab0;->c:I
+
+    xor-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget p0, p0, Lab0;->d:I
 
     xor-int/2addr p0, v0
 
@@ -127,23 +131,39 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "In{surfaceEdge="
+    const-string v1, "In{edge="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lab0;->a:Lo4e;
+    iget-object v1, p0, Lab0;->a:Lju4;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", outConfigs="
+    const-string v1, ", postviewEdge="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Lab0;->b:Ljava/util/List;
+    iget-object v1, p0, Lab0;->b:Lju4;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", inputFormat="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Lab0;->c:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", outputFormat="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget p0, p0, Lab0;->d:I
 
     const-string v1, "}"
 
-    invoke-static {v0, p0, v1}, Lhr1;->i(Ljava/lang/StringBuilder;Ljava/util/List;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lm26;->i(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

@@ -120,7 +120,7 @@
     .locals 0
 
     .line 3
-    invoke-static {p2, p1}, Lnjc;->c(I[B)I
+    invoke-static {p2, p1}, Lwoc;->c(I[B)I
 
     move-result p1
 
@@ -166,7 +166,7 @@
     .locals 0
 
     .line 1
-    invoke-static {p2, p1}, Lnjc;->c(I[B)I
+    invoke-static {p2, p1}, Lwoc;->c(I[B)I
 
     move-result p1
 
@@ -395,6 +395,8 @@
 
     :cond_4
     :goto_3
+    const/4 p3, 0x1
+
     if-eqz v3, :cond_6
 
     add-int/2addr v3, p2
@@ -402,18 +404,18 @@
     add-int/lit8 v3, v3, -0x3
 
     :goto_4
-    sub-int p3, v3, v2
+    sub-int v1, v3, v2
 
-    if-ge p2, p3, :cond_5
+    if-ge p2, v1, :cond_5
 
     .line 40
-    iget-object p3, p0, Lnet/jpountz/lz4/LZ4HCJavaSafeCompressor$HashTable;->chainTable:[S
+    iget-object v1, p0, Lnet/jpountz/lz4/LZ4HCJavaSafeCompressor$HashTable;->chainTable:[S
 
-    and-int v1, p2, v6
+    and-int v4, p2, v6
 
-    int-to-short v4, v2
+    int-to-short v5, v2
 
-    aput-short v4, p3, v1
+    aput-short v5, v1, v4
 
     add-int/lit8 p2, p2, 0x1
 
@@ -421,30 +423,30 @@
 
     .line 41
     :cond_5
-    iget-object p3, p0, Lnet/jpountz/lz4/LZ4HCJavaSafeCompressor$HashTable;->chainTable:[S
+    iget-object v1, p0, Lnet/jpountz/lz4/LZ4HCJavaSafeCompressor$HashTable;->chainTable:[S
 
-    and-int v1, p2, v6
+    and-int v4, p2, v6
 
-    int-to-short v4, v2
+    int-to-short v5, v2
 
-    aput-short v4, p3, v1
+    aput-short v5, v1, v4
 
     .line 42
-    iget-object p3, p0, Lnet/jpountz/lz4/LZ4HCJavaSafeCompressor$HashTable;->hashTable:[I
+    iget-object v1, p0, Lnet/jpountz/lz4/LZ4HCJavaSafeCompressor$HashTable;->hashTable:[I
 
     .line 43
     invoke-virtual {p1, p2}, Ljava/nio/ByteBuffer;->getInt(I)I
 
-    move-result v1
+    move-result v4
 
     .line 44
-    invoke-static {v1}, Lnet/jpountz/lz4/LZ4Utils;->hashHC(I)I
+    invoke-static {v4}, Lnet/jpountz/lz4/LZ4Utils;->hashHC(I)I
 
-    move-result v1
+    move-result v4
 
-    aput p2, p3, v1
+    aput p2, v1, v4
 
-    add-int/lit8 p2, p2, 0x1
+    add-int/2addr p2, p3
 
     if-lt p2, v3, :cond_5
 
@@ -457,7 +459,7 @@
 
     if-eqz p0, :cond_7
 
-    const/4 v0, 0x1
+    return p3
 
     :cond_7
     return v0
@@ -649,7 +651,7 @@
     .line 20
     iget-object v1, p0, Lnet/jpountz/lz4/LZ4HCJavaSafeCompressor$HashTable;->hashTable:[I
 
-    invoke-static {p2, p1}, Lnjc;->c(I[B)I
+    invoke-static {p2, p1}, Lwoc;->c(I[B)I
 
     move-result v4
 
@@ -672,7 +674,7 @@
 
     if-eqz p0, :cond_7
 
-    move v0, p3
+    return p3
 
     :cond_7
     return v0
@@ -786,7 +788,9 @@
 
     if-le p0, p5, :cond_3
 
-    const/4 v1, 0x1
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_3
     return v1
@@ -900,7 +904,9 @@
 
     if-le p0, p5, :cond_3
 
-    const/4 v1, 0x1
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_3
     return v1

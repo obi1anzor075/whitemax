@@ -1,169 +1,63 @@
-.class public final Lui0;
-.super Ljava/lang/Object;
+.class public abstract Lui0;
+.super Lw68;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final r0:J
 
-.field public b:I
+.field public final s0:J
 
-.field public final c:Ljava/lang/Object;
+.field public t0:Lkkc;
+
+.field public u0:[I
 
 
 # direct methods
-.method public synthetic constructor <init>(IILjava/lang/Object;)V
-    .locals 0
+.method public constructor <init>(Li34;Lp34;Lfz5;ILjava/lang/Object;JJJJJ)V
+    .locals 12
 
-    .line 1
-    iput p2, p0, Lui0;->a:I
+    move-object v0, p0
 
-    iput-object p3, p0, Lui0;->c:Ljava/lang/Object;
+    move-object v1, p1
 
-    iput p1, p0, Lui0;->b:I
+    move-object v2, p2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object v3, p3
 
-    return-void
-.end method
+    move/from16 v4, p4
 
-.method public constructor <init>(Landroidx/recyclerview/widget/RecyclerView;I)V
-    .locals 1
+    move-object/from16 v5, p5
 
-    const/4 v0, 0x4
+    move-wide/from16 v6, p6
 
-    iput v0, p0, Lui0;->a:I
+    move-wide/from16 v8, p8
 
-    .line 2
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-wide/from16 v10, p14
 
-    .line 3
-    iput p2, p0, Lui0;->b:I
+    invoke-direct/range {v0 .. v11}, Lw68;-><init>(Li34;Lp34;Lfz5;ILjava/lang/Object;JJJ)V
 
-    .line 4
-    iput-object p1, p0, Lui0;->c:Ljava/lang/Object;
+    move-wide/from16 p1, p10
 
-    return-void
-.end method
+    iput-wide p1, p0, Lui0;->r0:J
 
-.method public constructor <init>(Lxi0;)V
-    .locals 1
+    move-wide/from16 p1, p12
 
-    const/4 v0, 0x0
-
-    iput v0, p0, Lui0;->a:I
-
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lui0;->c:Ljava/lang/Object;
-
-    const/4 p1, -0x1
-
-    .line 6
-    iput p1, p0, Lui0;->b:I
+    iput-wide p1, p0, Lui0;->s0:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final c(I)I
+    .locals 0
 
-    iget v0, p0, Lui0;->a:I
+    iget-object p0, p0, Lui0;->u0:[I
 
-    packed-switch v0, :pswitch_data_0
+    invoke-static {p0}, Lu27;->k(Ljava/lang/Object;)V
 
-    iget-object v0, p0, Lui0;->c:Ljava/lang/Object;
+    aget p0, p0, p1
 
-    check-cast v0, Ldzf;
-
-    iget p0, p0, Lui0;->b:I
-
-    invoke-virtual {v0, p0}, Ldzf;->f(I)V
-
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Lui0;->c:Ljava/lang/Object;
-
-    check-cast v0, Landroidx/recyclerview/widget/RecyclerView;
-
-    iget p0, p0, Lui0;->b:I
-
-    invoke-virtual {v0, p0}, Landroidx/recyclerview/widget/RecyclerView;->B0(I)V
-
-    return-void
-
-    :pswitch_1
-    iget-object v0, p0, Lui0;->c:Ljava/lang/Object;
-
-    check-cast v0, Landroidx/work/impl/foreground/SystemForegroundService;
-
-    iget-object v0, v0, Landroidx/work/impl/foreground/SystemForegroundService;->X:Landroid/app/NotificationManager;
-
-    iget p0, p0, Lui0;->b:I
-
-    invoke-virtual {v0, p0}, Landroid/app/NotificationManager;->cancel(I)V
-
-    return-void
-
-    :pswitch_2
-    iget-object v0, p0, Lui0;->c:Ljava/lang/Object;
-
-    check-cast v0, Lcom/google/android/material/datepicker/MaterialCalendar;
-
-    iget-object v0, v0, Lcom/google/android/material/datepicker/MaterialCalendar;->w1:Landroidx/recyclerview/widget/RecyclerView;
-
-    iget p0, p0, Lui0;->b:I
-
-    invoke-virtual {v0, p0}, Landroidx/recyclerview/widget/RecyclerView;->B0(I)V
-
-    return-void
-
-    :pswitch_3
-    iget-object v0, p0, Lui0;->c:Ljava/lang/Object;
-
-    check-cast v0, Lfte;
-
-    iget-object v0, v0, Lfte;->a:Ljava/lang/Object;
-
-    check-cast v0, Lvx3;
-
-    if-eqz v0, :cond_0
-
-    iget p0, p0, Lui0;->b:I
-
-    invoke-virtual {v0, p0}, Lvx3;->D(I)V
-
-    :cond_0
-    return-void
-
-    :pswitch_4
-    iget-object v0, p0, Lui0;->c:Ljava/lang/Object;
-
-    check-cast v0, Lxi0;
-
-    iget-object v0, v0, Lxi0;->z0:Lvi0;
-
-    iget p0, p0, Lui0;->b:I
-
-    const/4 v1, 0x4
-
-    invoke-virtual {v0, p0, v1}, Lk55;->x(II)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method

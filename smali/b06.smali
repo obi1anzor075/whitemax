@@ -3,82 +3,62 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lwy6;
+.implements Lc06;
 
 
-# instance fields
-.field public final synthetic a:Ljava/util/concurrent/atomic/AtomicBoolean;
+# static fields
+.field public static final a:Lb06;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/atomic/AtomicBoolean;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lb06;
 
-    iput-object p1, p0, Lb06;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lb06;->a:Lb06;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lw4;)Ljava/lang/Object;
-    .locals 16
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    const-class v0, Lg2b;
+    const/4 v0, 0x1
 
-    move-object/from16 v1, p1
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {v1, v0}, Lw4;->d(Ljava/lang/Class;)Lr7e;
+    return v0
 
-    move-result-object v0
+    :cond_0
+    instance-of p0, p1, Lb06;
 
-    new-instance v7, Lhk7;
+    if-nez p0, :cond_1
 
-    new-instance v3, Lvz0;
+    const/4 p0, 0x0
 
-    const-class v11, Ljava/util/concurrent/atomic/AtomicBoolean;
+    return p0
 
-    const-string v12, "get"
+    :cond_1
+    return v0
+.end method
 
-    const/4 v9, 0x0
+.method public final hashCode()I
+    .locals 0
 
-    move-object/from16 v1, p0
+    const p0, -0x64e35cdf
 
-    iget-object v1, v1, Lb06;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    return p0
+.end method
 
-    const-string v13, "get()Z"
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    const/4 v14, 0x0
+    const-string p0, "ShowAuthorVisibilityOnboarding"
 
-    const/16 v15, 0x1a
-
-    move-object v8, v3
-
-    move-object v10, v1
-
-    invoke-direct/range {v8 .. v15}, Lvz0;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
-
-    new-instance v4, Lph2;
-
-    const/4 v2, 0x3
-
-    invoke-direct {v4, v1, v2, v0}, Lph2;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    sget v5, Lzhc;->T:I
-
-    new-instance v2, Llge;
-
-    const-string v0, "Fresco Debug"
-
-    invoke-direct {v2, v0}, Llge;-><init>(Ljava/lang/CharSequence;)V
-
-    const/16 v6, 0x10
-
-    move-object v1, v7
-
-    invoke-direct/range {v1 .. v6}, Lhk7;-><init>(Lmge;Ls16;Lu16;II)V
-
-    return-object v7
+    return-object p0
 .end method

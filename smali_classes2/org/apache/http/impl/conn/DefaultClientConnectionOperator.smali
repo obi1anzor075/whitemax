@@ -66,7 +66,7 @@
 .end method
 
 .method public openConnection(Lorg/apache/http/conn/OperatedClientConnection;Lorg/apache/http/HttpHost;Ljava/net/InetAddress;Lorg/apache/http/protocol/HttpContext;Lorg/apache/http/params/HttpParams;)V
-    .locals 20
+    .locals 17
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -79,15 +79,13 @@
 
     move-object/from16 v3, p2
 
-    move-object/from16 v11, p5
-
     if-eqz v2, :cond_b
 
     if-eqz v3, :cond_a
 
-    if-eqz v11, :cond_9
+    if-eqz p5, :cond_9
 
-    invoke-interface/range {p1 .. p1}, Lorg/apache/http/HttpConnection;->isOpen()Z
+    invoke-interface {v2}, Lorg/apache/http/HttpConnection;->isOpen()Z
 
     move-result v0
 
@@ -95,250 +93,231 @@
 
     iget-object v0, v1, Lorg/apache/http/impl/conn/DefaultClientConnectionOperator;->schemeRegistry:Lorg/apache/http/conn/scheme/SchemeRegistry;
 
-    invoke-virtual/range {p2 .. p2}, Lorg/apache/http/HttpHost;->getSchemeName()Ljava/lang/String;
+    invoke-virtual {v3}, Lorg/apache/http/HttpHost;->getSchemeName()Ljava/lang/String;
 
     move-result-object v4
 
     invoke-virtual {v0, v4}, Lorg/apache/http/conn/scheme/SchemeRegistry;->getScheme(Ljava/lang/String;)Lorg/apache/http/conn/scheme/Scheme;
 
+    move-result-object v11
+
+    invoke-virtual {v11}, Lorg/apache/http/conn/scheme/Scheme;->getSocketFactory()Lorg/apache/http/conn/scheme/SocketFactory;
+
     move-result-object v12
 
-    invoke-virtual {v12}, Lorg/apache/http/conn/scheme/Scheme;->getSocketFactory()Lorg/apache/http/conn/scheme/SocketFactory;
-
-    move-result-object v13
-
-    instance-of v0, v13, Lorg/apache/http/conn/scheme/LayeredSocketFactory;
+    instance-of v0, v12, Lorg/apache/http/conn/scheme/LayeredSocketFactory;
 
     if-eqz v0, :cond_0
 
     sget-object v0, Lorg/apache/http/impl/conn/DefaultClientConnectionOperator;->staticPlainSocketFactory:Lorg/apache/http/conn/scheme/PlainSocketFactory;
 
-    move-object v4, v13
+    move-object v4, v12
 
     check-cast v4, Lorg/apache/http/conn/scheme/LayeredSocketFactory;
 
-    move-object v14, v0
+    move-object v13, v4
 
-    move-object v15, v4
+    move-object v4, v0
 
     goto :goto_0
 
     :cond_0
     const/4 v4, 0x0
 
-    move-object v15, v4
+    move-object v13, v4
 
-    move-object v14, v13
+    move-object v4, v12
 
     :goto_0
-    invoke-virtual/range {p2 .. p2}, Lorg/apache/http/HttpHost;->getHostName()Ljava/lang/String;
+    invoke-virtual {v3}, Lorg/apache/http/HttpHost;->getHostName()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {v0}, Ljava/net/InetAddress;->getAllByName(Ljava/lang/String;)[Ljava/net/InetAddress;
 
-    move-result-object v10
+    move-result-object v14
 
     const/4 v0, 0x0
 
-    move v9, v0
+    move v15, v0
 
     :goto_1
-    array-length v0, v10
+    array-length v0, v14
 
-    if-ge v9, v0, :cond_7
+    if-ge v15, v0, :cond_7
 
-    invoke-interface {v14}, Lorg/apache/http/conn/scheme/SocketFactory;->createSocket()Ljava/net/Socket;
+    invoke-interface {v4}, Lorg/apache/http/conn/scheme/SocketFactory;->createSocket()Ljava/net/Socket;
 
-    move-result-object v0
+    move-result-object v5
 
-    invoke-interface {v2, v0, v3}, Lorg/apache/http/conn/OperatedClientConnection;->opening(Ljava/net/Socket;Lorg/apache/http/HttpHost;)V
+    invoke-interface {v2, v5, v3}, Lorg/apache/http/conn/OperatedClientConnection;->opening(Ljava/net/Socket;Lorg/apache/http/HttpHost;)V
 
-    const/4 v8, 0x1
+    const/4 v6, 0x1
 
     :try_start_0
-    aget-object v4, v10, v9
+    aget-object v0, v14, v15
     :try_end_0
     .catch Ljava/net/SocketException; {:try_start_0 .. :try_end_0} :catch_6
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_0 .. :try_end_0} :catch_4
 
     :try_start_1
-    invoke-virtual {v4}, Ljava/net/InetAddress;->getHostAddress()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/net/InetAddress;->getHostAddress()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual/range {p2 .. p2}, Lorg/apache/http/HttpHost;->getPort()I
+    invoke-virtual {v3}, Lorg/apache/http/HttpHost;->getPort()I
 
-    move-result v4
+    move-result v7
 
-    invoke-virtual {v12, v4}, Lorg/apache/http/conn/scheme/Scheme;->resolvePort(I)I
+    invoke-virtual {v11, v7}, Lorg/apache/http/conn/scheme/Scheme;->resolvePort(I)I
 
     move-result v7
     :try_end_1
     .catch Ljava/net/SocketException; {:try_start_1 .. :try_end_1} :catch_5
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_1 .. :try_end_1} :catch_4
 
-    const/16 v16, 0x0
-
-    move-object v4, v14
-
-    move-object v5, v0
-
-    move-object/from16 v17, v14
-
-    move v14, v8
+    const/4 v9, 0x0
 
     move-object/from16 v8, p3
 
-    move/from16 v18, v9
-
-    move/from16 v9, v16
-
-    move-object/from16 v19, v10
-
     move-object/from16 v10, p5
+
+    move/from16 v16, v15
+
+    move v15, v6
+
+    move-object v6, v0
 
     :try_start_2
     invoke-interface/range {v4 .. v10}, Lorg/apache/http/conn/scheme/SocketFactory;->connectSocket(Ljava/net/Socket;Ljava/lang/String;ILjava/net/InetAddress;ILorg/apache/http/params/HttpParams;)Ljava/net/Socket;
 
-    move-result-object v4
+    move-result-object v0
 
-    if-eq v0, v4, :cond_1
+    if-eq v5, v0, :cond_1
 
-    invoke-interface {v2, v4, v3}, Lorg/apache/http/conn/OperatedClientConnection;->opening(Ljava/net/Socket;Lorg/apache/http/HttpHost;)V
+    invoke-interface {v2, v0, v3}, Lorg/apache/http/conn/OperatedClientConnection;->opening(Ljava/net/Socket;Lorg/apache/http/HttpHost;)V
     :try_end_2
     .catch Ljava/net/SocketException; {:try_start_2 .. :try_end_2} :catch_1
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_2 .. :try_end_2} :catch_0
 
-    move-object v0, v4
+    move-object v5, v0
 
     :cond_1
-    move-object/from16 v4, p4
+    move-object/from16 v6, p4
 
-    goto :goto_4
+    goto :goto_5
 
     :catch_0
     move-exception v0
 
-    move-object/from16 v4, p4
-
     :goto_2
-    move-object/from16 v5, v19
+    move-object/from16 v6, p4
 
-    goto :goto_6
+    goto :goto_7
 
     :catch_1
     move-exception v0
 
-    move-object/from16 v4, p4
-
     :goto_3
-    move/from16 v7, v18
-
-    move-object/from16 v5, v19
-
-    goto/16 :goto_7
+    move-object/from16 v6, p4
 
     :goto_4
+    move/from16 v7, v16
+
+    goto :goto_8
+
+    :goto_5
     :try_start_3
-    invoke-virtual {v1, v0, v4, v11}, Lorg/apache/http/impl/conn/DefaultClientConnectionOperator;->prepareSocket(Ljava/net/Socket;Lorg/apache/http/protocol/HttpContext;Lorg/apache/http/params/HttpParams;)V
+    invoke-virtual {v1, v5, v6, v10}, Lorg/apache/http/impl/conn/DefaultClientConnectionOperator;->prepareSocket(Ljava/net/Socket;Lorg/apache/http/protocol/HttpContext;Lorg/apache/http/params/HttpParams;)V
 
-    if-eqz v15, :cond_3
+    if-eqz v13, :cond_3
 
-    invoke-virtual/range {p2 .. p2}, Lorg/apache/http/HttpHost;->getHostName()Ljava/lang/String;
+    invoke-virtual {v3}, Lorg/apache/http/HttpHost;->getHostName()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    invoke-virtual/range {p2 .. p2}, Lorg/apache/http/HttpHost;->getPort()I
+    invoke-virtual {v3}, Lorg/apache/http/HttpHost;->getPort()I
 
-    move-result v6
+    move-result v7
 
-    invoke-virtual {v12, v6}, Lorg/apache/http/conn/scheme/Scheme;->resolvePort(I)I
+    invoke-virtual {v11, v7}, Lorg/apache/http/conn/scheme/Scheme;->resolvePort(I)I
 
-    move-result v6
+    move-result v7
 
-    invoke-interface {v15, v0, v5, v6, v14}, Lorg/apache/http/conn/scheme/LayeredSocketFactory;->createSocket(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;
+    invoke-interface {v13, v5, v0, v7, v15}, Lorg/apache/http/conn/scheme/LayeredSocketFactory;->createSocket(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;
 
-    move-result-object v5
+    move-result-object v0
 
-    if-eq v5, v0, :cond_2
+    if-eq v0, v5, :cond_2
 
-    invoke-interface {v2, v5, v3}, Lorg/apache/http/conn/OperatedClientConnection;->opening(Ljava/net/Socket;Lorg/apache/http/HttpHost;)V
+    invoke-interface {v2, v0, v3}, Lorg/apache/http/conn/OperatedClientConnection;->opening(Ljava/net/Socket;Lorg/apache/http/HttpHost;)V
 
-    goto :goto_5
+    goto :goto_6
 
     :catch_2
     move-exception v0
 
-    goto :goto_2
+    goto :goto_7
 
     :catch_3
     move-exception v0
 
-    goto :goto_3
+    goto :goto_4
 
     :cond_2
-    :goto_5
-    invoke-interface {v13, v5}, Lorg/apache/http/conn/scheme/SocketFactory;->isSecure(Ljava/net/Socket;)Z
+    :goto_6
+    invoke-interface {v12, v0}, Lorg/apache/http/conn/scheme/SocketFactory;->isSecure(Ljava/net/Socket;)Z
 
     move-result v0
 
-    invoke-interface {v2, v0, v11}, Lorg/apache/http/conn/OperatedClientConnection;->openCompleted(ZLorg/apache/http/params/HttpParams;)V
+    invoke-interface {v2, v0, v10}, Lorg/apache/http/conn/OperatedClientConnection;->openCompleted(ZLorg/apache/http/params/HttpParams;)V
 
-    goto :goto_a
+    goto :goto_b
 
     :cond_3
-    invoke-interface {v13, v0}, Lorg/apache/http/conn/scheme/SocketFactory;->isSecure(Ljava/net/Socket;)Z
+    invoke-interface {v12, v5}, Lorg/apache/http/conn/scheme/SocketFactory;->isSecure(Ljava/net/Socket;)Z
 
     move-result v0
 
-    invoke-interface {v2, v0, v11}, Lorg/apache/http/conn/OperatedClientConnection;->openCompleted(ZLorg/apache/http/params/HttpParams;)V
+    invoke-interface {v2, v0, v10}, Lorg/apache/http/conn/OperatedClientConnection;->openCompleted(ZLorg/apache/http/params/HttpParams;)V
     :try_end_3
     .catch Ljava/net/SocketException; {:try_start_3 .. :try_end_3} :catch_3
     .catch Lorg/apache/http/conn/ConnectTimeoutException; {:try_start_3 .. :try_end_3} :catch_2
 
-    goto :goto_a
+    goto :goto_b
 
     :catch_4
     move-exception v0
 
-    move-object/from16 v4, p4
+    move-object/from16 v10, p5
 
-    move/from16 v18, v9
+    move/from16 v16, v15
 
-    move-object/from16 v19, v10
-
-    move-object/from16 v17, v14
-
-    move v14, v8
+    move v15, v6
 
     goto :goto_2
 
     :catch_5
     move-exception v0
 
-    move-object/from16 v4, p4
+    move-object/from16 v10, p5
 
-    move/from16 v18, v9
+    move/from16 v16, v15
 
-    move-object/from16 v19, v10
-
-    move-object/from16 v17, v14
-
-    move v14, v8
+    move v15, v6
 
     goto :goto_3
 
-    :goto_6
-    array-length v6, v5
+    :goto_7
+    array-length v5, v14
 
-    sub-int/2addr v6, v14
+    sub-int/2addr v5, v15
 
-    move/from16 v7, v18
+    move/from16 v7, v16
 
-    if-eq v7, v6, :cond_4
+    if-eq v7, v5, :cond_4
 
-    goto :goto_9
+    goto :goto_a
 
     :cond_4
     throw v0
@@ -346,22 +325,20 @@
     :catch_6
     move-exception v0
 
-    move-object/from16 v4, p4
+    move-object/from16 v10, p5
 
-    move v7, v9
+    move v7, v15
 
-    move-object v5, v10
+    move v15, v6
 
-    move-object/from16 v17, v14
+    move-object/from16 v6, p4
 
-    move v14, v8
+    :goto_8
+    array-length v5, v14
 
-    :goto_7
-    array-length v6, v5
+    sub-int/2addr v5, v15
 
-    sub-int/2addr v6, v14
-
-    if-ne v7, v6, :cond_6
+    if-ne v7, v5, :cond_6
 
     instance-of v1, v0, Ljava/net/ConnectException;
 
@@ -369,7 +346,7 @@
 
     check-cast v0, Ljava/net/ConnectException;
 
-    goto :goto_8
+    goto :goto_9
 
     :cond_5
     new-instance v1, Ljava/net/ConnectException;
@@ -384,7 +361,7 @@
 
     move-object v0, v1
 
-    :goto_8
+    :goto_9
     new-instance v1, Lorg/apache/http/conn/HttpHostConnectException;
 
     invoke-direct {v1, v3, v0}, Lorg/apache/http/conn/HttpHostConnectException;-><init>(Lorg/apache/http/HttpHost;Ljava/net/ConnectException;)V
@@ -392,17 +369,13 @@
     throw v1
 
     :cond_6
-    :goto_9
-    add-int/lit8 v9, v7, 0x1
-
-    move-object v10, v5
-
-    move-object/from16 v14, v17
+    :goto_a
+    add-int/lit8 v15, v7, 0x1
 
     goto/16 :goto_1
 
     :cond_7
-    :goto_a
+    :goto_b
     return-void
 
     :cond_8

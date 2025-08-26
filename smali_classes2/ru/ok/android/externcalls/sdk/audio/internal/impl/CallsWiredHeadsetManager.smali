@@ -30,7 +30,7 @@
         "broadcastReceiver",
         "Landroid/content/Intent;",
         "intent",
-        "Ljue;",
+        "Le5f;",
         "onReceiveBroadcast",
         "(Landroid/content/BroadcastReceiver;Landroid/content/Intent;)V",
         "handleHeadsetPlugAction",
@@ -80,6 +80,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -111,7 +112,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/audio/internal/impl/CallsWiredHeadsetManager$Companion;-><init>(Lx54;)V
+    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/audio/internal/impl/CallsWiredHeadsetManager$Companion;-><init>(Ll94;)V
 
     sput-object v0, Lru/ok/android/externcalls/sdk/audio/internal/impl/CallsWiredHeadsetManager;->Companion:Lru/ok/android/externcalls/sdk/audio/internal/impl/CallsWiredHeadsetManager$Companion;
 
@@ -170,7 +171,7 @@
 
     if-nez p1, :cond_0
 
-    return-object v0
+    goto :goto_2
 
     :cond_0
     iget-object v1, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl/CallsWiredHeadsetManager;->logger:Lru/ok/android/externcalls/sdk/audio/Logger;
@@ -198,7 +199,7 @@
 
     move-result-object v5
 
-    invoke-static {v5, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v5, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v5
 
@@ -247,7 +248,7 @@
 
     invoke-interface {p0, v3, p1}, Lru/ok/android/externcalls/sdk/audio/Logger;->v(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_2
+    return-object v0
 
     :cond_3
     add-int/lit8 v2, v2, 0x1
@@ -276,12 +277,11 @@
 
     invoke-direct {p0, v0}, Lru/ok/android/externcalls/sdk/audio/internal/impl/CallsWiredHeadsetManager$WiredHeadsetState$Plugged;-><init>(Ljava/lang/String;)V
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     sget-object p0, Lru/ok/android/externcalls/sdk/audio/internal/impl/CallsWiredHeadsetManager$WiredHeadsetState$Unplugged;->INSTANCE:Lru/ok/android/externcalls/sdk/audio/internal/impl/CallsWiredHeadsetManager$WiredHeadsetState$Unplugged;
 
-    :goto_0
     return-object p0
 .end method
 
@@ -496,7 +496,7 @@
 
     invoke-interface {p0, p1, v0}, Lru/ok/android/externcalls/sdk/audio/Logger;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_1
+    return-void
 
     :cond_0
     if-ne v0, v1, :cond_1
@@ -509,7 +509,6 @@
     :goto_0
     invoke-direct {p0, v1, p1}, Lru/ok/android/externcalls/sdk/audio/internal/impl/CallsWiredHeadsetManager;->updateWiredHeadsetState(ZLandroid/content/Intent;)V
 
-    :goto_1
     return-void
 .end method
 
@@ -548,7 +547,7 @@
 
     invoke-direct {p0, p2}, Lru/ok/android/externcalls/sdk/audio/internal/impl/CallsWiredHeadsetManager;->handleHeadsetPlugAction(Landroid/content/Intent;)V
 
-    goto :goto_0
+    return-void
 
     :cond_0
     const-string v1, "android.intent.action.MEDIA_BUTTON"
@@ -609,7 +608,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-void
 
     :catch_0
     move-exception p1
@@ -682,7 +681,7 @@
 
     const-string v8, "Wired device plugged: name="
 
-    invoke-static {v8, v0, v5, v1, v4}, Lc3d;->j(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v8, v0, v5, v1, v4}, Lzge;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -701,7 +700,7 @@
 
     const-string v8, "Wired device unplugged: name="
 
-    invoke-static {v8, v0, v5, v1, v4}, Lc3d;->j(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v8, v0, v5, v1, v4}, Lzge;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -740,14 +739,13 @@
 
     invoke-virtual {p0, v3, v3}, Lru/ok/android/externcalls/sdk/audio/internal/impl/CallsAudioManagerV2Impl;->setSpeakerEnabled$calls_audiomanager_release(ZZ)V
 
-    goto :goto_3
+    return-void
 
     :cond_3
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl/CallsWiredHeadsetManager;->callsAudioManager:Lru/ok/android/externcalls/sdk/audio/internal/impl/CallsAudioManagerV2Impl;
 
     invoke-static {p0, v3, v2, p2}, Lru/ok/android/externcalls/sdk/audio/internal/impl/CallsAudioManagerV2Impl;->selectPreferredAudioDevice$calls_audiomanager_release$default(Lru/ok/android/externcalls/sdk/audio/internal/impl/CallsAudioManagerV2Impl;ZILjava/lang/Object;)V
 
-    :goto_3
     return-void
 .end method
 
@@ -768,12 +766,11 @@
 
     move-result-object p0
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     const-string p0, ""
 
-    :goto_0
     return-object p0
 .end method
 

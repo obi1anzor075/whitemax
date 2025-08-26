@@ -195,7 +195,7 @@
 .end method
 
 .method public releaseConnection(Lorg/apache/http/conn/ManagedClientConnection;JLjava/util/concurrent/TimeUnit;)V
-    .locals 8
+    .locals 10
 
     instance-of v0, p1, Lorg/apache/http/impl/conn/tsccm/BasicPooledConnAdapter;
 
@@ -252,12 +252,20 @@
     :catchall_0
     move-exception v0
 
-    goto :goto_5
+    move-wide v7, p2
+
+    move-object v9, p4
+
+    goto :goto_4
 
     :catch_0
     move-exception v0
 
-    goto :goto_3
+    move-wide v7, p2
+
+    move-object v9, p4
+
+    goto :goto_2
 
     :cond_2
     :goto_1
@@ -310,7 +318,6 @@
 
     if-eqz v2, :cond_6
 
-    :goto_2
     iget-object v1, p0, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;->connectionPool:Lorg/apache/http/impl/conn/tsccm/AbstractConnPool;
 
     move-wide v4, p2
@@ -319,73 +326,78 @@
 
     invoke-virtual/range {v1 .. v6}, Lorg/apache/http/impl/conn/tsccm/AbstractConnPool;->freeEntry(Lorg/apache/http/impl/conn/tsccm/BasicPoolEntry;ZJLjava/util/concurrent/TimeUnit;)V
 
-    goto :goto_4
-
-    :goto_3
-    :try_start_1
-    iget-object v1, p0, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;->log:Lorg/apache/commons/logging/Log;
-
-    invoke-interface {v1}, Lorg/apache/commons/logging/Log;->isDebugEnabled()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_5
-
-    iget-object v1, p0, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;->log:Lorg/apache/commons/logging/Log;
-
-    const-string v2, "Exception shutting down released connection."
-
-    invoke-interface {v1, v2, v0}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;Ljava/lang/Throwable;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :cond_5
-    invoke-virtual {p1}, Lorg/apache/http/impl/conn/tsccm/BasicPooledConnAdapter;->getPoolEntry()Lorg/apache/http/impl/conn/AbstractPoolEntry;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Lorg/apache/http/impl/conn/tsccm/BasicPoolEntry;
-
-    invoke-virtual {p1}, Lorg/apache/http/impl/conn/AbstractClientConnAdapter;->isMarkedReusable()Z
-
-    move-result v3
-
-    invoke-virtual {p1}, Lorg/apache/http/impl/conn/tsccm/BasicPooledConnAdapter;->detach()V
-
-    if-eqz v2, :cond_6
-
-    goto :goto_2
-
-    :cond_6
-    :goto_4
     return-void
 
-    :goto_5
+    :goto_2
+    :try_start_1
+    iget-object p2, p0, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;->log:Lorg/apache/commons/logging/Log;
+
+    invoke-interface {p2}, Lorg/apache/commons/logging/Log;->isDebugEnabled()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_5
+
+    iget-object p2, p0, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;->log:Lorg/apache/commons/logging/Log;
+
+    const-string p3, "Exception shutting down released connection."
+
+    invoke-interface {p2, p3, v0}, Lorg/apache/commons/logging/Log;->debug(Ljava/lang/Object;Ljava/lang/Throwable;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    goto :goto_3
+
+    :catchall_1
+    move-exception v0
+
+    goto :goto_4
+
+    :cond_5
+    :goto_3
     invoke-virtual {p1}, Lorg/apache/http/impl/conn/tsccm/BasicPooledConnAdapter;->getPoolEntry()Lorg/apache/http/impl/conn/AbstractPoolEntry;
 
-    move-result-object v1
+    move-result-object p2
 
-    move-object v3, v1
+    move-object v5, p2
 
-    check-cast v3, Lorg/apache/http/impl/conn/tsccm/BasicPoolEntry;
+    check-cast v5, Lorg/apache/http/impl/conn/tsccm/BasicPoolEntry;
 
     invoke-virtual {p1}, Lorg/apache/http/impl/conn/AbstractClientConnAdapter;->isMarkedReusable()Z
 
-    move-result v4
+    move-result v6
 
     invoke-virtual {p1}, Lorg/apache/http/impl/conn/tsccm/BasicPooledConnAdapter;->detach()V
 
-    if-eqz v3, :cond_7
+    if-eqz v5, :cond_6
 
-    iget-object v2, p0, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;->connectionPool:Lorg/apache/http/impl/conn/tsccm/AbstractConnPool;
+    iget-object v4, p0, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;->connectionPool:Lorg/apache/http/impl/conn/tsccm/AbstractConnPool;
 
-    move-wide v5, p2
+    invoke-virtual/range {v4 .. v9}, Lorg/apache/http/impl/conn/tsccm/AbstractConnPool;->freeEntry(Lorg/apache/http/impl/conn/tsccm/BasicPoolEntry;ZJLjava/util/concurrent/TimeUnit;)V
 
-    move-object v7, p4
+    :cond_6
+    return-void
 
-    invoke-virtual/range {v2 .. v7}, Lorg/apache/http/impl/conn/tsccm/AbstractConnPool;->freeEntry(Lorg/apache/http/impl/conn/tsccm/BasicPoolEntry;ZJLjava/util/concurrent/TimeUnit;)V
+    :goto_4
+    invoke-virtual {p1}, Lorg/apache/http/impl/conn/tsccm/BasicPooledConnAdapter;->getPoolEntry()Lorg/apache/http/impl/conn/AbstractPoolEntry;
+
+    move-result-object p2
+
+    move-object v5, p2
+
+    check-cast v5, Lorg/apache/http/impl/conn/tsccm/BasicPoolEntry;
+
+    invoke-virtual {p1}, Lorg/apache/http/impl/conn/AbstractClientConnAdapter;->isMarkedReusable()Z
+
+    move-result v6
+
+    invoke-virtual {p1}, Lorg/apache/http/impl/conn/tsccm/BasicPooledConnAdapter;->detach()V
+
+    if-eqz v5, :cond_7
+
+    iget-object v4, p0, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;->connectionPool:Lorg/apache/http/impl/conn/tsccm/AbstractConnPool;
+
+    invoke-virtual/range {v4 .. v9}, Lorg/apache/http/impl/conn/tsccm/AbstractConnPool;->freeEntry(Lorg/apache/http/impl/conn/tsccm/BasicPoolEntry;ZJLjava/util/concurrent/TimeUnit;)V
 
     :cond_7
     throw v0

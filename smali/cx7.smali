@@ -1,247 +1,330 @@
 .class public final Lcx7;
-.super Ljava/util/concurrent/atomic/AtomicInteger;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lwx7;
-.implements Ld1e;
+.implements Landroid/util/Printer;
 
 
 # instance fields
-.field public final X:[Lay7;
+.field public a:J
 
-.field public Y:I
+.field public b:J
 
-.field public Z:J
+.field public c:J
 
-.field public final a:Lb1e;
-
-.field public final b:Ljava/util/concurrent/atomic/AtomicLong;
-
-.field public final c:Ljava/util/concurrent/atomic/AtomicReference;
-
-.field public final o:Lbw1;
+.field public final d:Ljava/util/LinkedList;
 
 
 # direct methods
-.method public constructor <init>(Lb1e;[Lay7;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcx7;->a:Lb1e;
+    new-instance v0, Ljava/util/LinkedList;
 
-    iput-object p2, p0, Lcx7;->X:[Lay7;
+    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-direct {p1}, Ljava/util/concurrent/atomic/AtomicLong;-><init>()V
-
-    iput-object p1, p0, Lcx7;->b:Ljava/util/concurrent/atomic/AtomicLong;
-
-    new-instance p1, Lbw1;
-
-    const/4 p2, 0x2
-
-    invoke-direct {p1, p2}, Lbw1;-><init>(I)V
-
-    iput-object p1, p0, Lcx7;->o:Lbw1;
-
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicReference;
-
-    sget-object p2, Lap9;->a:Lap9;
-
-    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object p1, p0, Lcx7;->c:Ljava/util/concurrent/atomic/AtomicReference;
+    iput-object v0, p0, Lcx7;->d:Ljava/util/LinkedList;
 
     return-void
+.end method
+
+.method public static a(Ljava/lang/String;)Ljava/lang/String;
+    .locals 8
+
+    const-string v0, ">>>>> Dispatching to "
+
+    invoke-static {p0, v0}, Lj8e;->R0(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v0, "<<<<< Finished to "
+
+    invoke-static {p0, v0}, Lj8e;->R0(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v0, ": "
+
+    const/4 v1, 0x6
+
+    invoke-static {v0, p0, v1}, Lj8e;->M0(Ljava/lang/String;Ljava/lang/CharSequence;I)I
+
+    move-result v0
+
+    const-string v2, "} "
+
+    const/4 v3, 0x0
+
+    invoke-static {p0, v2, v3, v3, v1}, Lj8e;->H0(Ljava/lang/CharSequence;Ljava/lang/String;IZI)I
+
+    move-result v2
+
+    add-int/lit8 v4, v2, 0x1
+
+    invoke-virtual {p0, v3, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v4
+
+    if-gtz v0, :cond_1
+
+    if-lez v2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    return-object p0
+
+    :cond_1
+    :goto_0
+    const-string v5, "DispatchedContinuation[Dispatchers.Main"
+
+    invoke-static {p0, v5, v3, v3, v1}, Lj8e;->H0(Ljava/lang/CharSequence;Ljava/lang/String;IZI)I
+
+    move-result v5
+
+    if-ltz v5, :cond_3
+
+    add-int/lit8 v5, v5, 0x27
+
+    const-string v2, ".immediate"
+
+    const/4 v6, 0x4
+
+    invoke-static {p0, v2, v5, v3, v6}, Lj8e;->H0(Ljava/lang/CharSequence;Ljava/lang/String;IZI)I
+
+    move-result v2
+
+    const-string v7, ", Continuation at "
+
+    if-ltz v2, :cond_2
+
+    add-int/lit8 v2, v2, 0xa
+
+    invoke-static {p0, v7, v2, v3, v6}, Lj8e;->H0(Ljava/lang/CharSequence;Ljava/lang/String;IZI)I
+
+    move-result v2
+
+    goto :goto_1
+
+    :cond_2
+    invoke-static {p0, v7, v5, v3, v6}, Lj8e;->H0(Ljava/lang/CharSequence;Ljava/lang/String;IZI)I
+
+    move-result v2
+
+    :goto_1
+    if-ltz v2, :cond_4
+
+    add-int/lit8 v2, v2, 0x12
+
+    goto :goto_2
+
+    :cond_3
+    add-int/lit8 v2, v2, 0x2
+
+    :cond_4
+    :goto_2
+    const/16 v5, 0x5d
+
+    invoke-static {v5, v3, v1, p0}, Lj8e;->L0(CIILjava/lang/String;)I
+
+    move-result v5
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    const/4 v7, 0x0
+
+    if-le v5, v2, :cond_5
+
+    goto :goto_3
+
+    :cond_5
+    move-object v6, v7
+
+    :goto_3
+    if-eqz v6, :cond_6
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v5
+
+    goto :goto_4
+
+    :cond_6
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    :goto_4
+    const/16 v6, 0x40
+
+    invoke-static {v6, v3, v1, p0}, Lj8e;->L0(CIILjava/lang/String;)I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    if-le v1, v2, :cond_7
+
+    move-object v7, v3
+
+    :cond_7
+    if-eqz v7, :cond_8
+
+    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    goto :goto_5
+
+    :cond_8
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    :goto_5
+    invoke-static {v1, v5}, Ljava/lang/Math;->min(II)I
+
+    move-result v1
+
+    invoke-virtual {p0, v2, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "null"
+
+    invoke-virtual {v1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_9
+
+    return-object v1
+
+    :cond_9
+    add-int/lit8 v0, v0, 0x2
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v0, " "
+
+    invoke-static {v4, v0, p0}, Lv04;->j(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)V
-    .locals 1
-
-    iget-object v0, p0, Lcx7;->c:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
-
-    invoke-virtual {p0}, Lcx7;->c()V
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 2
-
-    iget-object v0, p0, Lcx7;->c:Ljava/util/concurrent/atomic/AtomicReference;
-
-    sget-object v1, Lap9;->a:Lap9;
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
-
-    invoke-virtual {p0}, Lcx7;->c()V
-
-    return-void
-.end method
-
-.method public final c()V
+.method public final println(Ljava/lang/String;)V
     .locals 10
 
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
+    if-eqz p1, :cond_3
+
+    const-string v0, ">>>>> Dispatching to "
+
+    const/4 v1, 0x0
+
+    invoke-static {p1, v0, v1}, Lr8e;->w0(Ljava/lang/String;Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-static {p1}, Lcx7;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {}, Landroid/os/Trace;->isEnabled()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    return-void
+    invoke-static {p1}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
     :cond_0
-    iget-object v0, p0, Lcx7;->c:Ljava/util/concurrent/atomic/AtomicReference;
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lcx7;->a:J
+
+    iget-wide v0, p0, Lcx7;->c:J
+
+    const-wide/16 v2, 0x1
+
+    add-long/2addr v0, v2
+
+    iput-wide v0, p0, Lcx7;->c:J
+
+    return-void
 
     :cond_1
-    iget-object v1, p0, Lcx7;->o:Lbw1;
+    const-string v0, "<<<<< Finished to "
 
-    invoke-virtual {v1}, Lbw1;->h()Z
-
-    move-result v2
-
-    const/4 v3, 0x0
-
-    if-eqz v2, :cond_2
-
-    invoke-virtual {v0, v3}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_2
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_5
-
-    sget-object v4, Lap9;->a:Lap9;
-
-    iget-object v5, p0, Lcx7;->a:Lb1e;
-
-    if-eq v2, v4, :cond_3
-
-    iget-wide v6, p0, Lcx7;->Z:J
-
-    iget-object v4, p0, Lcx7;->b:Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-virtual {v4}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
-
-    move-result-wide v8
-
-    cmp-long v4, v6, v8
-
-    if-eqz v4, :cond_5
-
-    const-wide/16 v8, 0x1
-
-    add-long/2addr v6, v8
-
-    iput-wide v6, p0, Lcx7;->Z:J
-
-    invoke-virtual {v0, v3}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
-
-    invoke-interface {v5, v2}, Lb1e;->c(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_3
-    invoke-virtual {v0, v3}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
-
-    :goto_0
-    invoke-virtual {v1}, Lbw1;->h()Z
-
-    move-result v1
-
-    if-nez v1, :cond_5
-
-    iget v1, p0, Lcx7;->Y:I
-
-    iget-object v2, p0, Lcx7;->X:[Lay7;
-
-    array-length v3, v2
-
-    if-ne v1, v3, :cond_4
-
-    invoke-interface {v5}, Lb1e;->b()V
-
-    return-void
-
-    :cond_4
-    add-int/lit8 v3, v1, 0x1
-
-    iput v3, p0, Lcx7;->Y:I
-
-    aget-object v1, v2, v1
-
-    invoke-interface {v1, p0}, Lay7;->a(Lwx7;)V
-
-    :cond_5
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    return-void
-.end method
-
-.method public final cancel()V
-    .locals 0
-
-    iget-object p0, p0, Lcx7;->o:Lbw1;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-static {p0}, Lbj4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
-
-    return-void
-.end method
-
-.method public final d(Lxi4;)V
-    .locals 0
-
-    iget-object p0, p0, Lcx7;->o:Lbw1;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-static {p0, p1}, Lbj4;->c(Ljava/util/concurrent/atomic/AtomicReference;Lxi4;)Z
-
-    return-void
-.end method
-
-.method public final i(J)V
-    .locals 1
-
-    invoke-static {p1, p2}, Lf1e;->d(J)Z
+    invoke-static {p1, v0, v1}, Lr8e;->w0(Ljava/lang/String;Ljava/lang/String;Z)Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_3
 
-    iget-object v0, p0, Lcx7;->b:Ljava/util/concurrent/atomic/AtomicLong;
+    invoke-static {}, Landroid/os/Trace;->isEnabled()Z
 
-    invoke-static {v0, p1, p2}, Lz3d;->b(Ljava/util/concurrent/atomic/AtomicLong;J)J
+    move-result v0
 
-    invoke-virtual {p0}, Lcx7;->c()V
+    if-eqz v0, :cond_2
 
-    :cond_0
-    return-void
-.end method
+    invoke-static {}, Landroid/os/Trace;->endSection()V
 
-.method public final onError(Ljava/lang/Throwable;)V
-    .locals 0
+    :cond_2
+    iget-wide v0, p0, Lcx7;->c:J
 
-    iget-object p0, p0, Lcx7;->a:Lb1e;
+    const-wide/16 v2, -0x1
 
-    invoke-interface {p0, p1}, Lb1e;->onError(Ljava/lang/Throwable;)V
+    add-long/2addr v0, v2
 
+    iput-wide v0, p0, Lcx7;->c:J
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lcx7;->b:J
+
+    invoke-static {p1}, Lcx7;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    new-instance v2, Lbx7;
+
+    iget-wide v4, p0, Lcx7;->a:J
+
+    iget-wide v6, p0, Lcx7;->b:J
+
+    iget-wide v8, p0, Lcx7;->c:J
+
+    invoke-direct/range {v2 .. v9}, Lbx7;-><init>(Ljava/lang/String;JJJ)V
+
+    iget-object p1, p0, Lcx7;->d:Ljava/util/LinkedList;
+
+    invoke-virtual {p1, v2}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Lcx7;->a:J
+
+    iput-wide v0, p0, Lcx7;->b:J
+
+    :cond_3
     return-void
 .end method

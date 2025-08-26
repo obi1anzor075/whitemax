@@ -1,74 +1,47 @@
 .class public final Le24;
-.super Lh24;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public final n(Lax4;)I
+# instance fields
+.field public final a:[I
+
+.field public final b:I
+
+.field public final c:I
+
+.field public final d:I
+
+.field public final e:I
+
+.field public final f:I
+
+.field public final g:I
+
+.field public final h:Lxw6;
+
+
+# direct methods
+.method public constructor <init>(II[IIIIILxw6;)V
     .locals 0
-
-    invoke-virtual {p1}, Lax4;->o()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final o()Let6;
-    .locals 1
-
-    new-instance p0, Let6;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    iput p1, p0, Le24;->b:I
 
-    iput v0, p0, Let6;->a:I
+    iput-object p3, p0, Le24;->a:[I
 
-    iput-boolean v0, p0, Let6;->b:Z
+    iput p2, p0, Le24;->c:I
 
-    iput-boolean v0, p0, Let6;->c:Z
+    iput p4, p0, Le24;->e:I
 
-    return-object p0
-.end method
+    iput p5, p0, Le24;->f:I
 
-.method public final declared-synchronized u(Lax4;I)Z
-    .locals 1
+    iput p6, p0, Le24;->g:I
 
-    monitor-enter p0
+    iput p7, p0, Le24;->d:I
 
-    :try_start_0
-    invoke-static {p2}, Lah0;->b(I)Z
+    iput-object p8, p0, Le24;->h:Lxw6;
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 p1, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Lh24;->g:Lw37;
-
-    invoke-virtual {v0, p1, p2}, Lw37;->e(Lax4;I)Z
-
-    move-result p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :goto_0
-    monitor-exit p0
-
-    return p1
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
+    return-void
 .end method

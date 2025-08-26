@@ -41,7 +41,7 @@
         "(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;)Z",
         "render",
         "(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;Lorg/webrtc/VideoSink;)Z",
-        "Ljue;",
+        "Le5f;",
         "addDelegate",
         "(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;Lorg/webrtc/VideoSink;)V",
         "removeDelegate",
@@ -65,6 +65,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -95,7 +96,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/video/VideoRender$Companion;-><init>(Lx54;)V
+    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/video/VideoRender$Companion;-><init>(Ll94;)V
 
     sput-object v0, Lru/ok/android/externcalls/sdk/video/VideoRender;->Companion:Lru/ok/android/externcalls/sdk/video/VideoRender$Companion;
 
@@ -277,7 +278,9 @@
 
     if-nez p0, :cond_0
 
-    const/4 p1, 0x1
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_0
     return p1
@@ -314,7 +317,7 @@
 
     if-ne p0, p2, :cond_0
 
-    move p1, p2
+    return p2
 
     :cond_0
     return p1

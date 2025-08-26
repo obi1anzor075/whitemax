@@ -1,58 +1,73 @@
-.class public final synthetic Lij6;
-.super Ljava/lang/Object;
+.class public final Lij6;
+.super Lmj6;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
 
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Loj6;
+# static fields
+.field public static final c:Lij6;
 
 
 # direct methods
-.method public synthetic constructor <init>(Loj6;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
-    iput p2, p0, Lij6;->a:I
+    new-instance v0, Lij6;
 
-    iput-object p1, p0, Lij6;->b:Loj6;
+    sget v1, Li6a;->p:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v2, Lhoe;
+
+    invoke-direct {v2, v1}, Lhoe;-><init>(I)V
+
+    sget v1, Lnnc;->O:I
+
+    new-instance v3, Lhoe;
+
+    invoke-direct {v3, v1}, Lhoe;-><init>(I)V
+
+    invoke-direct {v0, v2, v3}, Lmj6;-><init>(Lhoe;Lhoe;)V
+
+    sput-object v0, Lij6;->c:Lij6;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
-
-    iget v0, p0, Lij6;->a:I
-
-    packed-switch v0, :pswitch_data_0
 
     const/4 v0, 0x1
 
-    iget-object p0, p0, Lij6;->b:Loj6;
+    if-ne p0, p1, :cond_0
 
-    iput-boolean v0, p0, Loj6;->R0:Z
+    return v0
 
-    invoke-virtual {p0}, Loj6;->t()V
+    :cond_0
+    instance-of p0, p1, Lij6;
 
-    return-void
+    if-nez p0, :cond_1
 
-    :pswitch_0
-    iget-object p0, p0, Lij6;->b:Loj6;
+    const/4 p0, 0x0
 
-    invoke-virtual {p0}, Loj6;->t()V
+    return p0
 
-    return-void
+    :cond_1
+    return v0
+.end method
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+.method public final hashCode()I
+    .locals 0
+
+    const p0, -0x52663c62
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "AwaitingNetwork"
+
+    return-object p0
 .end method

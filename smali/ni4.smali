@@ -1,60 +1,102 @@
 .class public final Lni4;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/concurrent/Executor;
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Lju3;
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Lone/me/devmenu/DevMenuScreen;
+
+.field public final synthetic Z:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public constructor <init>(Lju3;)V
+.method public constructor <init>(Lone/me/devmenu/DevMenuScreen;Ljava/util/ArrayList;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lni4;->Y:Lone/me/devmenu/DevMenuScreen;
 
-    iput-object p1, p0, Lni4;->a:Lju3;
+    iput-object p2, p0, Lni4;->Z:Ljava/util/ArrayList;
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 2
-
-    sget-object v0, Lbw4;->a:Lbw4;
-
-    iget-object p0, p0, Lni4;->a:Lju3;
-
-    invoke-virtual {p0, v0}, Lju3;->isDispatchNeeded(Lhu3;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {p0, v0, p1}, Lju3;->dispatch(Lhu3;Ljava/lang/Runnable;)V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
-
-    :goto_0
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    iget-object p0, p0, Lni4;->a:Lju3;
+    check-cast p1, Ljava/util/List;
 
-    invoke-virtual {p0}, Lju3;->toString()Ljava/lang/String;
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lni4;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
+
+    check-cast p0, Lni4;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lni4;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 2
+
+    new-instance v0, Lni4;
+
+    iget-object v1, p0, Lni4;->Y:Lone/me/devmenu/DevMenuScreen;
+
+    iget-object p0, p0, Lni4;->Z:Ljava/util/ArrayList;
+
+    invoke-direct {v0, v1, p0, p2}, Lni4;-><init>(Lone/me/devmenu/DevMenuScreen;Ljava/util/ArrayList;Lkotlin/coroutines/Continuation;)V
+
+    iput-object p1, v0, Lni4;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lni4;->X:Ljava/lang/Object;
+
+    check-cast p1, Ljava/util/List;
+
+    iget-object v0, p0, Lni4;->Y:Lone/me/devmenu/DevMenuScreen;
+
+    iget-object v0, v0, Lone/me/devmenu/DevMenuScreen;->X:Ludd;
+
+    invoke-static {}, Lxja;->i()Lkl7;
+
+    move-result-object v1
+
+    iget-object p0, p0, Lni4;->Z:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, p0}, Lkl7;->addAll(Ljava/util/Collection;)Z
+
+    invoke-virtual {v1, p1}, Lkl7;->addAll(Ljava/util/Collection;)Z
+
+    invoke-static {v1}, Lxja;->b(Ljava/util/List;)Lkl7;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Lhl7;->E(Ljava/util/List;)V
+
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 .end method

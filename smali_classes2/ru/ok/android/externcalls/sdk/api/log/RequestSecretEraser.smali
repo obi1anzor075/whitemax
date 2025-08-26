@@ -25,7 +25,7 @@
         "getJsonObjectOrNull",
         "(Ljava/lang/String;)Lorg/json/JSONObject;",
         "json",
-        "Ljue;",
+        "Le5f;",
         "eraseSecrets",
         "(Lorg/json/JSONObject;)V",
         "jsonArray",
@@ -41,6 +41,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -198,12 +199,11 @@
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-object p0
 
     :catch_0
     const/4 p0, 0x0
 
-    :goto_0
     return-object p0
 .end method
 
@@ -217,12 +217,11 @@
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-object p0
 
     :catch_0
     const/4 p0, 0x0
 
-    :goto_0
     return-object p0
 .end method
 

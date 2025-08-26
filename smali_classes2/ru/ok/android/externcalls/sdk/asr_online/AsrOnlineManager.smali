@@ -15,7 +15,7 @@
         "isAsrAvailable",
         "()Z",
         "isEnabled",
-        "Ljue;",
+        "Le5f;",
         "enableAsrOnline",
         "(Z)V",
         "Lru/ok/android/externcalls/sdk/asr_online/listener/AsrOnlineListener;",
@@ -31,6 +31,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lsw6;
+.implements Lo07;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lsw6;"
+        "Lo07;"
     }
 .end annotation
 
@@ -20,8 +20,8 @@
     }
     d2 = {
         "Lru/ok/tracer/profiler/sampling/SamplingProfilerInitializer;",
-        "Lsw6;",
-        "Lzjc;",
+        "Lo07;",
+        "Lipc;",
         "<init>",
         "()V",
         "tracer-profiler-sampling_release"
@@ -32,6 +32,7 @@
         0x7,
         0x1
     }
+    xi = 0x30
 .end annotation
 
 
@@ -61,7 +62,7 @@
 .method public final b(Landroid/content/Context;)Ljava/lang/Object;
     .locals 0
 
-    sget-object p0, Lzjc;->a:Lzjc;
+    sget-object p0, Lipc;->a:Lipc;
 
     return-object p0
 .end method

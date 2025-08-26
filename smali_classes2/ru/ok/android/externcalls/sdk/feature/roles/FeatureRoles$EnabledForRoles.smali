@@ -21,7 +21,7 @@
         "Lru/ok/android/externcalls/sdk/feature/roles/FeatureRoles$EnabledForRoles;",
         "Lru/ok/android/externcalls/sdk/feature/roles/FeatureRoles;",
         "",
-        "Lje1;",
+        "Luf1;",
         "roles",
         "<init>",
         "(Ljava/util/Set;)V",
@@ -50,6 +50,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -58,7 +59,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set<",
-            "Lje1;",
+            "Luf1;",
             ">;"
         }
     .end annotation
@@ -73,14 +74,14 @@
             "(",
             "Ljava/util/Set<",
             "+",
-            "Lje1;",
+            "Luf1;",
             ">;)V"
         }
     .end annotation
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lru/ok/android/externcalls/sdk/feature/roles/FeatureRoles;-><init>(Lx54;)V
+    invoke-direct {p0, v0}, Lru/ok/android/externcalls/sdk/feature/roles/FeatureRoles;-><init>(Ll94;)V
 
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/feature/roles/FeatureRoles$EnabledForRoles;->roles:Ljava/util/Set;
 
@@ -112,7 +113,7 @@
         value = {
             "()",
             "Ljava/util/Set<",
-            "Lje1;",
+            "Luf1;",
             ">;"
         }
     .end annotation
@@ -129,7 +130,7 @@
             "(",
             "Ljava/util/Set<",
             "+",
-            "Lje1;",
+            "Luf1;",
             ">;)",
             "Lru/ok/android/externcalls/sdk/feature/roles/FeatureRoles$EnabledForRoles;"
         }
@@ -167,7 +168,7 @@
 
     iget-object p1, p1, Lru/ok/android/externcalls/sdk/feature/roles/FeatureRoles$EnabledForRoles;->roles:Ljava/util/Set;
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -185,7 +186,7 @@
         value = {
             "()",
             "Ljava/util/Set<",
-            "Lje1;",
+            "Luf1;",
             ">;"
         }
     .end annotation

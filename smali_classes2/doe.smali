@@ -1,121 +1,147 @@
-.class public abstract Ldoe;
-.super Ljava/lang/Object;
+.class public final Ldoe;
+.super Lmoe;
 .source "SourceFile"
 
 
+# static fields
+.field public static final CREATOR:Lcoe;
+
+
+# instance fields
+.field public final b:I
+
+.field public final c:I
+
+
 # direct methods
-.method public static a()Z
-    .locals 3
+.method static constructor <clinit>()V
+    .locals 1
 
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    new-instance v0, Lcoe;
 
-    const/4 v1, 0x0
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v1, v0}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    sput-object v0, Ldoe;->CREATOR:Lcoe;
 
-    move-result v0
+    return-void
+.end method
+
+.method public constructor <init>(II)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Ldoe;->b:I
+
+    iput p2, p0, Ldoe;->c:I
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final describeContents()I
+    .locals 0
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Ldoe;
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_0
+    if-nez v1, :cond_1
 
-    goto :goto_0
-
-    :cond_0
-    :try_start_0
-    invoke-static {}, Lru/ok/tracer/minidump/Minidump;->getInstance()Lru/ok/tracer/minidump/Minidump;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    const/4 v2, 0x1
-
-    goto :goto_0
-
-    :catchall_0
-    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-static {v1, v0}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    :goto_0
     return v2
+
+    :cond_1
+    check-cast p1, Ldoe;
+
+    iget v1, p0, Ldoe;->b:I
+
+    iget v3, p1, Ldoe;->b:I
+
+    if-eq v1, v3, :cond_2
+
+    return v2
+
+    :cond_2
+    iget p0, p0, Ldoe;->c:I
+
+    iget p1, p1, Ldoe;->c:I
+
+    if-eq p0, p1, :cond_3
+
+    return v2
+
+    :cond_3
+    return v0
 .end method
 
-.method public static b(Landroid/content/Context;)V
+.method public final hashCode()I
+    .locals 1
+
+    iget v0, p0, Ldoe;->b:I
+
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget p0, p0, Ldoe;->c:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
     .locals 4
 
-    :try_start_0
-    invoke-static {}, Lxs7;->B()Ljava/lang/String;
+    const-string v0, ", quantity="
 
-    move-result-object v0
+    const-string v1, ")"
 
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    const-string v2, "Plurals(resId="
 
-    move-result-object v1
+    iget v3, p0, Ldoe;->b:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    iget p0, p0, Ldoe;->c:I
 
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    const-string v0, "tracer"
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "tracer-"
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const/16 v2, 0x3a
-
-    const/16 v3, 0x2d
-
-    invoke-virtual {v0, v2, v3}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/net/Uri;->encode(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_0
-    new-instance v1, Ljava/io/File;
-
-    invoke-virtual {p0}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
+    invoke-static {v2, v3, v0, p0, v1}, Lpg0;->f(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-direct {v1, p0, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    return-object p0
+.end method
 
-    const-string p0, "minidump"
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 0
 
-    invoke-static {v1, p0}, Lng5;->N(Ljava/io/File;Ljava/lang/String;)Ljava/io/File;
+    iget p2, p0, Ldoe;->b:I
 
-    move-result-object p0
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    invoke-static {p0}, Lh2g;->t(Ljava/io/File;)V
+    iget p0, p0, Ldoe;->c:I
 
-    invoke-static {}, Lru/ok/tracer/minidump/Minidump;->getInstance()Lru/ok/tracer/minidump/Minidump;
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
 
-    move-result-object v0
-
-    invoke-virtual {p0}, Ljava/io/File;->getPath()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v0, p0}, Lru/ok/tracer/minidump/Minidump;->installMinidumpWriter(Ljava/lang/String;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :catchall_0
     return-void
 .end method

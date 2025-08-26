@@ -2,288 +2,227 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lrna;
 
-# instance fields
-.field public final synthetic a:I
 
-.field public b:I
-
-.field public c:I
-
-.field public d:I
-
-.field public e:I
-
-.field public f:I
-
-.field public g:I
-
-.field public h:I
-
-.field public i:I
-
-.field public j:I
-
-.field public k:I
-
-.field public l:J
-
-.field public m:I
+# static fields
+.field public static final a:Ljava/util/regex/Pattern;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p1, p0, Ll24;->a:I
+    const-string v0, "(.+?)(Z|((\\+|-|\u2212)(\\d\\d)(:?(\\d\\d))?))"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Ll24;->a:Ljava/util/regex/Pattern;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 28
+.method public final z(Landroid/net/Uri;Ll34;)Ljava/lang/Object;
+    .locals 10
 
-    move-object/from16 v0, p0
+    new-instance p0, Ljava/io/BufferedReader;
 
-    const-string v1, "\n}"
+    new-instance p1, Ljava/io/InputStreamReader;
 
-    const-string v2, "\n videoFrameProcessingOffsetCount="
+    sget-object v0, Lv42;->c:Ljava/nio/charset/Charset;
 
-    const-string v3, "\n totalVideoFrameProcessingOffsetUs="
+    invoke-direct {p1, p2, v0}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
 
-    const-string v4, "\n droppedToKeyframeEvents="
+    invoke-direct {p0, p1}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
-    const-string v5, "\n maxConsecutiveDroppedBuffers="
+    invoke-virtual {p0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
-    const-string v6, "\n droppedInputBuffers="
+    move-result-object p0
 
-    const-string v7, "\n droppedBuffers="
+    const/4 p1, 0x0
 
-    const-string v8, "\n skippedOutputBuffers="
+    :try_start_0
+    sget-object p2, Ll24;->a:Ljava/util/regex/Pattern;
 
-    const-string v9, "\n renderedOutputBuffers="
+    invoke-virtual {p2, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    const-string v10, "\n skippedInputBuffers="
+    move-result-object p2
 
-    const-string v11, "\n queuedInputBuffers="
+    invoke-virtual {p2}, Ljava/util/regex/Matcher;->matches()Z
 
-    const-string v12, ",\n decoderReleases="
+    move-result v0
 
-    const-string v13, "DecoderCounters {\n decoderInits="
+    if-nez v0, :cond_1
 
-    iget v14, v0, Ll24;->a:I
+    const-string p2, "Couldn\'t parse timestamp: "
 
-    packed-switch v14, :pswitch_data_0
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget v14, v0, Ll24;->b:I
+    move-result-object p0
 
-    iget v15, v0, Ll24;->c:I
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    move-object/from16 v16, v1
+    move-result v0
 
-    iget v1, v0, Ll24;->d:I
+    if-eqz v0, :cond_0
 
-    move-object/from16 v17, v2
+    invoke-virtual {p2, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    iget v2, v0, Ll24;->e:I
+    move-result-object p0
 
-    move-object/from16 v18, v3
+    goto :goto_0
 
-    iget v3, v0, Ll24;->f:I
+    :catch_0
+    move-exception p0
 
-    move-object/from16 v19, v4
+    goto :goto_4
 
-    iget v4, v0, Ll24;->g:I
+    :cond_0
+    new-instance p0, Ljava/lang/String;
 
-    move-object/from16 v20, v5
+    invoke-direct {p0, p2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    iget v5, v0, Ll24;->h:I
+    :goto_0
+    invoke-static {p1, p0}, Lcom/google/android/exoplayer2/ParserException;->b(Ljava/lang/Exception;Ljava/lang/String;)Lcom/google/android/exoplayer2/ParserException;
 
-    move/from16 v21, v5
+    move-result-object p0
 
-    iget v5, v0, Ll24;->i:I
+    throw p0
 
-    move/from16 v22, v5
+    :cond_1
+    const/4 p0, 0x1
 
-    iget v5, v0, Ll24;->j:I
+    invoke-virtual {p2, p0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
-    move/from16 v23, v5
+    move-result-object p0
 
-    iget v5, v0, Ll24;->k:I
+    new-instance v0, Ljava/text/SimpleDateFormat;
 
-    move/from16 v25, v5
+    const-string v1, "yyyy-MM-dd\'T\'HH:mm:ss"
 
-    move-object/from16 v24, v6
+    sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    iget-wide v5, v0, Ll24;->l:J
+    invoke-direct {v0, v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
 
-    iget v0, v0, Ll24;->m:I
+    const-string v1, "UTC"
 
-    sget v26, Loze;->a:I
+    invoke-static {v1}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
 
-    sget-object v26, Ljava/util/Locale;->US:Ljava/util/Locale;
+    move-result-object v1
 
-    invoke-static {v13, v14, v12, v15, v11}, Lrf0;->i(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
 
-    move-result-object v11
+    invoke-virtual {v0, p0}, Ljava/text/DateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
 
-    invoke-static {v11, v1, v10, v2, v9}, Lth2;->l(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
+    move-result-object p0
 
-    invoke-static {v11, v3, v8, v4, v7}, Lth2;->l(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
+    invoke-virtual {p0}, Ljava/util/Date;->getTime()J
 
-    move-object/from16 v4, v20
+    move-result-wide v0
 
-    move/from16 v1, v21
+    const/4 p0, 0x2
 
-    move/from16 v2, v22
+    invoke-virtual {p2, p0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
-    move-object/from16 v3, v24
+    move-result-object p0
 
-    invoke-static {v11, v1, v3, v2, v4}, Lth2;->l(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
+    const-string v2, "Z"
 
-    move-object/from16 v15, v18
+    invoke-virtual {v2, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v14, v19
+    move-result p0
 
-    move/from16 v1, v23
+    if-eqz p0, :cond_2
 
-    move/from16 v2, v25
+    goto :goto_3
 
-    invoke-static {v11, v1, v14, v2, v15}, Lth2;->l(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
+    :cond_2
+    const-string p0, "+"
 
-    invoke-virtual {v11, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    const/4 v2, 0x4
 
-    move-object/from16 v1, v17
+    invoke-virtual {p2, v2}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
-    invoke-virtual {v11, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    invoke-virtual {v11, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v2, v16
+    move-result p0
 
-    invoke-virtual {v11, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz p0, :cond_3
 
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-wide/16 v2, 0x1
 
-    move-result-object v0
+    goto :goto_1
 
-    return-object v0
+    :cond_3
+    const-wide/16 v2, -0x1
 
-    :pswitch_0
-    move-object v15, v3
+    :goto_1
+    const/4 p0, 0x5
 
-    move-object v14, v4
+    invoke-virtual {p2, p0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
-    move-object v4, v5
+    move-result-object p0
 
-    move-object v3, v6
+    invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
-    move-object/from16 v27, v2
+    move-result-wide v4
 
-    move-object v2, v1
+    const/4 p0, 0x7
 
-    move-object/from16 v1, v27
+    invoke-virtual {p2, p0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
-    iget v5, v0, Ll24;->b:I
+    move-result-object p0
 
-    iget v6, v0, Ll24;->c:I
+    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-object/from16 v16, v2
+    move-result p2
 
-    iget v2, v0, Ll24;->d:I
+    if-eqz p2, :cond_4
 
-    move-object/from16 v17, v1
+    const-wide/16 v6, 0x0
 
-    iget v1, v0, Ll24;->e:I
+    goto :goto_2
 
-    move-object/from16 v19, v14
+    :cond_4
+    invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
-    iget v14, v0, Ll24;->f:I
+    move-result-wide v6
 
-    move-object/from16 v18, v15
+    :goto_2
+    const-wide/16 v8, 0x3c
 
-    iget v15, v0, Ll24;->g:I
+    mul-long/2addr v4, v8
 
-    move-object/from16 v24, v3
+    add-long/2addr v4, v6
 
-    iget v3, v0, Ll24;->h:I
+    const-wide/32 v6, 0xea60
 
-    move/from16 v20, v3
+    mul-long/2addr v4, v6
 
-    iget v3, v0, Ll24;->i:I
+    mul-long/2addr v4, v2
 
-    move/from16 v21, v3
+    sub-long/2addr v0, v4
 
-    iget v3, v0, Ll24;->j:I
+    :goto_3
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move/from16 v22, v3
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/text/ParseException; {:try_start_0 .. :try_end_0} :catch_0
 
-    iget v3, v0, Ll24;->k:I
+    return-object p0
 
-    move/from16 v25, v3
+    :goto_4
+    invoke-static {p0, p1}, Lcom/google/android/exoplayer2/ParserException;->b(Ljava/lang/Exception;Ljava/lang/String;)Lcom/google/android/exoplayer2/ParserException;
 
-    move-object/from16 v23, v4
+    move-result-object p0
 
-    iget-wide v3, v0, Ll24;->l:J
-
-    iget v0, v0, Ll24;->m:I
-
-    sget v26, Lmze;->a:I
-
-    sget-object v26, Ljava/util/Locale;->US:Ljava/util/Locale;
-
-    invoke-static {v13, v5, v12, v6, v11}, Lrf0;->i(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-static {v5, v2, v10, v1, v9}, Lth2;->l(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
-
-    invoke-static {v5, v14, v8, v15, v7}, Lth2;->l(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
-
-    move/from16 v1, v20
-
-    move/from16 v2, v21
-
-    move-object/from16 v7, v23
-
-    move-object/from16 v6, v24
-
-    invoke-static {v5, v1, v6, v2, v7}, Lth2;->l(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
-
-    move-object/from16 v7, v18
-
-    move-object/from16 v6, v19
-
-    move/from16 v1, v22
-
-    move/from16 v2, v25
-
-    invoke-static {v5, v1, v6, v2, v7}, Lth2;->l(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
-
-    invoke-virtual {v5, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-object/from16 v1, v17
-
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-object/from16 v0, v16
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    throw p0
 .end method

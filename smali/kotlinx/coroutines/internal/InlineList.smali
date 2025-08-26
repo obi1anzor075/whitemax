@@ -29,10 +29,10 @@
         "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
         "plus",
         "Lkotlin/Function1;",
-        "Ljue;",
+        "Le5f;",
         "action",
         "forEachReversed-impl",
-        "(Ljava/lang/Object;Lu16;)V",
+        "(Ljava/lang/Object;Lx56;)V",
         "forEachReversed",
         "",
         "toString",
@@ -53,6 +53,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -97,7 +98,7 @@
     return-object p0
 .end method
 
-.method public static synthetic constructor-impl$default(Ljava/lang/Object;ILx54;)Ljava/lang/Object;
+.method public static synthetic constructor-impl$default(Ljava/lang/Object;ILl94;)Ljava/lang/Object;
     .locals 0
 
     and-int/lit8 p1, p1, 0x1
@@ -132,7 +133,7 @@
 
     move-result-object p1
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -149,36 +150,36 @@
 .method public static final equals-impl0(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 0
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
     return p0
 .end method
 
-.method public static final forEachReversed-impl(Ljava/lang/Object;Lu16;)V
+.method public static final forEachReversed-impl(Ljava/lang/Object;Lx56;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Object;",
-            "Lu16;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     if-nez p0, :cond_0
 
-    return-void
+    goto :goto_1
 
     :cond_0
     instance-of v0, p0, Ljava/util/ArrayList;
 
     if-nez v0, :cond_1
 
-    invoke-interface {p1, p0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, p0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_1
+    return-void
 
     :cond_1
     check-cast p0, Ljava/util/ArrayList;
@@ -198,7 +199,7 @@
 
     move-result-object v1
 
-    invoke-interface {p1, v1}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v1}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     add-int/lit8 v0, v0, -0x1
 
@@ -216,14 +217,13 @@
 
     const/4 p0, 0x0
 
-    goto :goto_0
+    return p0
 
     :cond_0
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result p0
 
-    :goto_0
     return p0
 .end method
 
@@ -244,7 +244,7 @@
 
     move-result-object p0
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     instance-of v0, p0, Ljava/util/ArrayList;
@@ -261,7 +261,7 @@
 
     move-result-object p0
 
-    goto :goto_0
+    return-object p0
 
     :cond_1
     new-instance v0, Ljava/util/ArrayList;
@@ -278,7 +278,6 @@
 
     move-result-object p0
 
-    :goto_0
     return-object p0
 .end method
 

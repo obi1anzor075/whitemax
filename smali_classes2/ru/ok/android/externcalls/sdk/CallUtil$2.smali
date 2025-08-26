@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lywb;
+.implements Lt1c;
 
 
 # annotations

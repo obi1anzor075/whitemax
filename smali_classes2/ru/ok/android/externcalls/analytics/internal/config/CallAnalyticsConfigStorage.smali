@@ -90,18 +90,23 @@
 
     sget-object p0, Lru/ok/android/externcalls/analytics/internal/config/CallAnalyticsConfigStorage;->config:Lru/ok/android/externcalls/analytics/config/CallAnalyticsConfig;
 
-    if-eqz p0, :cond_0
+    if-eqz p0, :cond_1
 
     invoke-virtual {p0}, Lru/ok/android/externcalls/analytics/config/CallAnalyticsConfig;->getLogger()Lru/ok/android/externcalls/analytics/log/CallAnalyticsLogger;
 
     move-result-object p0
 
-    if-nez p0, :cond_1
+    if-nez p0, :cond_0
+
+    goto :goto_0
 
     :cond_0
-    sget-object p0, Lru/ok/android/externcalls/analytics/internal/config/CallAnalyticsConfigStorage;->defaultLogger:Lru/ok/android/externcalls/analytics/internal/log/DefaultCallAnalyticsLogger;
+    return-object p0
 
     :cond_1
+    :goto_0
+    sget-object p0, Lru/ok/android/externcalls/analytics/internal/config/CallAnalyticsConfigStorage;->defaultLogger:Lru/ok/android/externcalls/analytics/internal/log/DefaultCallAnalyticsLogger;
+
     return-object p0
 .end method
 
@@ -110,16 +115,22 @@
 
     sget-object p0, Lru/ok/android/externcalls/analytics/internal/config/CallAnalyticsConfigStorage;->config:Lru/ok/android/externcalls/analytics/config/CallAnalyticsConfig;
 
-    if-eqz p0, :cond_0
+    if-eqz p0, :cond_1
 
     invoke-virtual {p0}, Lru/ok/android/externcalls/analytics/config/CallAnalyticsConfig;->getUpload()Lru/ok/android/externcalls/analytics/config/UploadConfig;
 
     move-result-object p0
 
-    if-nez p0, :cond_1
+    if-nez p0, :cond_0
+
+    goto :goto_0
 
     :cond_0
-    new-instance p0, Lru/ok/android/externcalls/analytics/config/UploadConfig;
+    return-object p0
+
+    :cond_1
+    :goto_0
+    new-instance v0, Lru/ok/android/externcalls/analytics/config/UploadConfig;
 
     const/16 v13, 0x3ff
 
@@ -145,12 +156,9 @@
 
     const/4 v12, 0x0
 
-    move-object v0, p0
+    invoke-direct/range {v0 .. v14}, Lru/ok/android/externcalls/analytics/config/UploadConfig;-><init>(ILjava/util/concurrent/Executor;JJLv56;Lv56;Lv56;Lv56;Lv56;Lv56;ILl94;)V
 
-    invoke-direct/range {v0 .. v14}, Lru/ok/android/externcalls/analytics/config/UploadConfig;-><init>(ILjava/util/concurrent/Executor;JJLs16;Ls16;Ls16;Ls16;Ls16;Ls16;ILx54;)V
-
-    :cond_1
-    return-object p0
+    return-object v0
 .end method
 
 .method public final setConfig(Lru/ok/android/externcalls/analytics/config/CallAnalyticsConfig;)V

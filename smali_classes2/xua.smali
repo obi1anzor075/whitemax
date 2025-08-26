@@ -1,30 +1,26 @@
 .class public final Lxua;
-.super Ll5e;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Ll66;
 
 
 # instance fields
 .field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic Y:Lone/me/pinbars/PinBarsWidget;
-
-.field public final synthetic Z:Landroid/view/View;
+.field public final synthetic Y:Lone/me/startconversation/channel/PickSubscribersScreen;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Lkotlin/coroutines/Continuation;Lone/me/pinbars/PinBarsWidget;)V
+.method public constructor <init>(Lone/me/startconversation/channel/PickSubscribersScreen;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    iput-object p3, p0, Lxua;->Y:Lone/me/pinbars/PinBarsWidget;
-
-    iput-object p1, p0, Lxua;->Z:Landroid/view/View;
+    iput-object p1, p0, Lxua;->Y:Lone/me/startconversation/channel/PickSubscribersScreen;
 
     const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -34,31 +30,31 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
+    check-cast p1, Lhua;
+
     check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {p0, p1, p2}, Lxua;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0, p1, p2}, Lxua;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
     check-cast p0, Lxua;
 
-    sget-object p1, Ljue;->a:Ljue;
+    sget-object p1, Le5f;->a:Le5f;
 
     invoke-virtual {p0, p1}, Lxua;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object p1
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 2
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
     new-instance v0, Lxua;
 
-    iget-object v1, p0, Lxua;->Y:Lone/me/pinbars/PinBarsWidget;
+    iget-object p0, p0, Lxua;->Y:Lone/me/startconversation/channel/PickSubscribersScreen;
 
-    iget-object p0, p0, Lxua;->Z:Landroid/view/View;
-
-    invoke-direct {v0, p0, p2, v1}, Lxua;-><init>(Landroid/view/View;Lkotlin/coroutines/Continuation;Lone/me/pinbars/PinBarsWidget;)V
+    invoke-direct {v0, p0, p2}, Lxua;-><init>(Lone/me/startconversation/channel/PickSubscribersScreen;Lkotlin/coroutines/Continuation;)V
 
     iput-object p1, v0, Lxua;->X:Ljava/lang/Object;
 
@@ -66,101 +62,100 @@
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+    .locals 3
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lxua;->X:Ljava/lang/Object;
 
-    check-cast p1, Lwc6;
+    check-cast p1, Lhua;
 
-    iget-object v0, p0, Lxua;->Z:Landroid/view/View;
+    instance-of v0, p1, Lgua;
 
-    check-cast v0, Landroid/view/ViewGroup;
+    const/4 v1, 0x0
 
-    sget v1, Lone/me/pinbars/PinBarsWidget;->x0:I
+    iget-object p0, p0, Lxua;->Y:Lone/me/startconversation/channel/PickSubscribersScreen;
 
-    iget-object p0, p0, Lxua;->Y:Lone/me/pinbars/PinBarsWidget;
+    if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sget-object v0, Lone/me/startconversation/channel/PickSubscribersScreen;->w0:[Lbc7;
 
-    instance-of v1, p1, Luc6;
+    invoke-virtual {p0}, Lone/me/startconversation/channel/PickSubscribersScreen;->A0()Lone/me/sdk/uikit/common/button/OneMeButton;
 
-    if-nez v1, :cond_0
+    move-result-object v0
 
-    sget p1, Lz7a;->a:I
+    invoke-virtual {v0, v1}, Lone/me/sdk/uikit/common/button/OneMeButton;->setProgressEnabled(Z)V
 
-    invoke-virtual {v0, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    sget-object v0, Lcxd;->c:Lcxd;
 
-    move-result-object p1
+    new-instance v1, Ltk7;
 
-    invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+    const/16 v2, 0x15
 
-    const/4 p1, 0x0
+    invoke-direct {v1, p0, p1, v2}, Ltk7;-><init>(Lone/me/sdk/arch/Widget;Ljava/lang/Object;I)V
 
-    iput-object p1, p0, Lone/me/pinbars/PinBarsWidget;->w0:Lxc6;
+    invoke-virtual {v0, v1}, Lcxd;->V0(Lx56;)V
 
     goto :goto_0
 
     :cond_0
-    iget-object v1, p0, Lone/me/pinbars/PinBarsWidget;->w0:Lxc6;
+    sget-object v0, Lfua;->a:Lfua;
 
-    if-nez v1, :cond_1
+    invoke-static {p1, v0}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    new-instance v1, Lxc6;
+    move-result p1
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+    if-eqz p1, :cond_1
 
-    move-result-object v2
+    sget-object p1, Lone/me/startconversation/channel/PickSubscribersScreen;->w0:[Lbc7;
 
-    invoke-direct {v1, v2}, Lxc6;-><init>(Landroid/content/Context;)V
+    invoke-virtual {p0}, Lone/me/startconversation/channel/PickSubscribersScreen;->A0()Lone/me/sdk/uikit/common/button/OneMeButton;
 
-    sget v2, Lz7a;->a:I
+    move-result-object p1
 
-    invoke-virtual {v1, v2}, Landroidx/constraintlayout/widget/ConstraintLayout;->setId(I)V
+    invoke-virtual {p1, v1}, Lone/me/sdk/uikit/common/button/OneMeButton;->setProgressEnabled(Z)V
 
-    new-instance v2, Ltua;
+    sget-object p1, Lcxd;->c:Lcxd;
 
-    const/4 v3, 0x0
+    new-instance v0, Ltua;
 
-    invoke-direct {v2, p0, v3}, Ltua;-><init>(Lone/me/pinbars/PinBarsWidget;I)V
+    const/4 v1, 0x1
 
-    invoke-virtual {v1, v2}, Lxc6;->setJoinAction(Ls16;)V
+    invoke-direct {v0, p0, v1}, Ltua;-><init>(Lone/me/startconversation/channel/PickSubscribersScreen;I)V
 
-    iput-object v1, p0, Lone/me/pinbars/PinBarsWidget;->w0:Lxc6;
+    invoke-virtual {p1, v0}, Lcxd;->V0(Lx56;)V
 
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
+    new-instance p1, Lmfa;
 
-    move-result v2
+    invoke-direct {p1, p0}, Lmfa;-><init>(Lone/me/sdk/arch/Widget;)V
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
+    sget p0, Lqga;->a:I
 
-    :cond_1
-    iget-object p0, p0, Lone/me/pinbars/PinBarsWidget;->w0:Lxc6;
+    new-instance v0, Lhoe;
 
-    if-eqz p0, :cond_2
+    invoke-direct {v0, p0}, Lhoe;-><init>(I)V
 
-    check-cast p1, Luc6;
+    invoke-virtual {p1, v0}, Lmfa;->g(Lmoe;)V
 
-    iget-object v0, p1, Luc6;->c:Ljava/util/List;
+    new-instance p0, Laga;
 
-    iget-object v1, p0, Lxc6;->K0:Ljca;
+    sget v0, Lanc;->v1:I
 
-    invoke-virtual {v1, v0}, Ljca;->setAvatars(Ljava/util/List;)V
+    invoke-direct {p0, v0}, Laga;-><init>(I)V
 
-    iget-object v0, p0, Lxc6;->M0:Landroid/widget/TextView;
+    invoke-virtual {p1, p0}, Lmfa;->e(Lega;)V
 
-    iget-object p1, p1, Luc6;->b:Lmge;
+    invoke-virtual {p1}, Lmfa;->i()Llfa;
 
-    invoke-virtual {p1, p0}, Lmge;->c(Landroid/view/View;)Ljava/lang/CharSequence;
-
-    move-result-object p0
-
-    invoke-virtual {v0, p0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    :cond_2
     :goto_0
-    sget-object p0, Ljue;->a:Ljue;
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
+
+    :cond_1
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p0
 .end method

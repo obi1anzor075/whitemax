@@ -1,23 +1,40 @@
-.class public abstract Law1;
+.class public final Law1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lyv1;
 
-# static fields
-.field public static final a:Lkotlinx/coroutines/internal/Symbol;
+
+# instance fields
+.field public final a:Lha0;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .locals 2
 
-    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "RESUME_TOKEN"
+    new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Law1;->a:Lkotlinx/coroutines/internal/Symbol;
+    new-instance v1, Lha0;
+
+    invoke-direct {v1, v0}, Lha0;-><init>(Ljava/lang/Object;)V
+
+    iput-object v1, p0, Law1;->a:Lha0;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final getConfig()Lrc3;
+    .locals 0
+
+    sget-object p0, Lqka;->c:Lqka;
+
+    return-object p0
 .end method

@@ -4,33 +4,26 @@
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final a:I
 
-.field public final b:Ljava/lang/String;
+.field public final b:I
+
+.field public final c:Liq1;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(IILiq1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lu90;->a:Ljava/lang/String;
+    iput p1, p0, Lu90;->a:I
 
-    if-eqz p2, :cond_0
+    iput p2, p0, Lu90;->b:I
 
-    iput-object p2, p0, Lu90;->b:Ljava/lang/String;
+    iput-object p3, p0, Lu90;->c:Liq1;
 
     return-void
-
-    :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    const-string p1, "Null version"
-
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 
@@ -49,50 +42,42 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_1
 
     check-cast p1, Lu90;
 
-    iget-object v1, p1, Lu90;->a:Ljava/lang/String;
+    iget v1, p0, Lu90;->a:I
 
-    iget-object v3, p0, Lu90;->a:Ljava/lang/String;
+    iget v3, p1, Lu90;->a:I
 
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-ne v1, v3, :cond_1
 
-    move-result v1
+    iget v1, p0, Lu90;->b:I
 
-    if-eqz v1, :cond_1
+    iget v3, p1, Lu90;->b:I
 
-    iget-object p0, p0, Lu90;->b:Ljava/lang/String;
+    if-ne v1, v3, :cond_1
 
-    iget-object p1, p1, Lu90;->b:Ljava/lang/String;
+    iget-object p0, p0, Lu90;->c:Liq1;
 
-    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    iget-object p1, p1, Lu90;->c:Liq1;
+
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
     if-eqz p0, :cond_1
 
-    goto :goto_0
-
-    :cond_1
-    move v0, v2
-
-    :goto_0
     return v0
 
-    :cond_2
+    :cond_1
     return v2
 .end method
 
 .method public final hashCode()I
-    .locals 2
+    .locals 3
 
-    iget-object v0, p0, Lu90;->a:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
+    iget v0, p0, Lu90;->a:I
 
     const v1, 0xf4243
 
@@ -100,9 +85,15 @@
 
     mul-int/2addr v0, v1
 
-    iget-object p0, p0, Lu90;->b:Ljava/lang/String;
+    iget v2, p0, Lu90;->b:I
 
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+    xor-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget-object p0, p0, Lu90;->c:Liq1;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result p0
 
@@ -116,23 +107,35 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "LibraryVersion{libraryName="
+    const-string v1, "PendingSnapshot{jpegQuality="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lu90;->a:Ljava/lang/String;
+    iget v1, p0, Lu90;->a:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", rotationDegrees="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", version="
+    iget v1, p0, Lu90;->b:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", completer="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Lu90;->b:Ljava/lang/String;
+    iget-object p0, p0, Lu90;->c:Liq1;
 
-    const-string v1, "}"
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, p0, v1}, Lwn6;->l(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    const-string p0, "}"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

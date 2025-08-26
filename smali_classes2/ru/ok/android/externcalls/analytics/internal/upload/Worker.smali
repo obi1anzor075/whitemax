@@ -294,7 +294,7 @@
 
     invoke-direct {p0}, Lru/ok/android/externcalls/analytics/internal/upload/Worker;->startUpload()V
 
-    goto :goto_0
+    return-void
 
     :cond_0
     iget v0, p0, Lru/ok/android/externcalls/analytics/internal/upload/Worker;->itemCount:I
@@ -326,7 +326,6 @@
     invoke-direct {p0}, Lru/ok/android/externcalls/analytics/internal/upload/Worker;->startUpload()V
 
     :cond_1
-    :goto_0
     return-void
 .end method
 
@@ -383,7 +382,7 @@
 
     const-string v4, "ms"
 
-    invoke-static {v0, v1, v3, v4}, Lus8;->j(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1, v3, v4}, Lu88;->i(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -434,7 +433,7 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-void
 
     :catch_0
     move-exception v0
@@ -447,7 +446,6 @@
 
     invoke-interface {p0, v1, v2, v0}, Lru/ok/android/externcalls/analytics/log/CallAnalyticsLogger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_0
     return-void
 .end method
 
@@ -553,14 +551,13 @@
 
     invoke-virtual {p0, p1, p2}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_0
+    return-void
 
     :cond_0
     iget-object p0, p0, Lru/ok/android/externcalls/analytics/internal/upload/Worker;->millisToUpload:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {p0, p1}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :goto_0
     return-void
 .end method
 

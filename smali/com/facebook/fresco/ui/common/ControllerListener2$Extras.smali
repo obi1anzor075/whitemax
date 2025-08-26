@@ -63,6 +63,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -211,7 +212,7 @@
 
 # virtual methods
 .method public final makeExtrasCopy()Lcom/facebook/fresco/ui/common/ControllerListener2$Extras;
-    .locals 3
+    .locals 4
 
     new-instance v0, Lcom/facebook/fresco/ui/common/ControllerListener2$Extras;
 
@@ -221,34 +222,65 @@
 
     iget-object v2, p0, Lcom/facebook/fresco/ui/common/ControllerListener2$Extras;->componentExtras:Ljava/util/Map;
 
-    invoke-static {v1, v2}, Lcom/facebook/fresco/ui/common/b;->a(Lcom/facebook/fresco/ui/common/b;Ljava/util/Map;)Ljava/util/concurrent/ConcurrentHashMap;
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v2
+    const/4 v1, 0x0
 
-    iput-object v2, v0, Lcom/facebook/fresco/ui/common/ControllerListener2$Extras;->componentExtras:Ljava/util/Map;
+    if-eqz v2, :cond_0
+
+    new-instance v3, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v3, v2}, Ljava/util/concurrent/ConcurrentHashMap;-><init>(Ljava/util/Map;)V
+
+    goto :goto_0
+
+    :cond_0
+    move-object v3, v1
+
+    :goto_0
+    iput-object v3, v0, Lcom/facebook/fresco/ui/common/ControllerListener2$Extras;->componentExtras:Ljava/util/Map;
 
     iget-object v2, p0, Lcom/facebook/fresco/ui/common/ControllerListener2$Extras;->shortcutExtras:Ljava/util/Map;
 
-    invoke-static {v1, v2}, Lcom/facebook/fresco/ui/common/b;->a(Lcom/facebook/fresco/ui/common/b;Ljava/util/Map;)Ljava/util/concurrent/ConcurrentHashMap;
+    if-eqz v2, :cond_1
 
-    move-result-object v2
+    new-instance v3, Ljava/util/concurrent/ConcurrentHashMap;
 
-    iput-object v2, v0, Lcom/facebook/fresco/ui/common/ControllerListener2$Extras;->shortcutExtras:Ljava/util/Map;
+    invoke-direct {v3, v2}, Ljava/util/concurrent/ConcurrentHashMap;-><init>(Ljava/util/Map;)V
+
+    goto :goto_1
+
+    :cond_1
+    move-object v3, v1
+
+    :goto_1
+    iput-object v3, v0, Lcom/facebook/fresco/ui/common/ControllerListener2$Extras;->shortcutExtras:Ljava/util/Map;
 
     iget-object v2, p0, Lcom/facebook/fresco/ui/common/ControllerListener2$Extras;->datasourceExtras:Ljava/util/Map;
 
-    invoke-static {v1, v2}, Lcom/facebook/fresco/ui/common/b;->a(Lcom/facebook/fresco/ui/common/b;Ljava/util/Map;)Ljava/util/concurrent/ConcurrentHashMap;
+    if-eqz v2, :cond_2
 
-    move-result-object v2
+    new-instance v3, Ljava/util/concurrent/ConcurrentHashMap;
 
-    iput-object v2, v0, Lcom/facebook/fresco/ui/common/ControllerListener2$Extras;->datasourceExtras:Ljava/util/Map;
+    invoke-direct {v3, v2}, Ljava/util/concurrent/ConcurrentHashMap;-><init>(Ljava/util/Map;)V
+
+    goto :goto_2
+
+    :cond_2
+    move-object v3, v1
+
+    :goto_2
+    iput-object v3, v0, Lcom/facebook/fresco/ui/common/ControllerListener2$Extras;->datasourceExtras:Ljava/util/Map;
 
     iget-object v2, p0, Lcom/facebook/fresco/ui/common/ControllerListener2$Extras;->imageExtras:Ljava/util/Map;
 
-    invoke-static {v1, v2}, Lcom/facebook/fresco/ui/common/b;->a(Lcom/facebook/fresco/ui/common/b;Ljava/util/Map;)Ljava/util/concurrent/ConcurrentHashMap;
+    if-eqz v2, :cond_3
 
-    move-result-object v1
+    new-instance v1, Ljava/util/concurrent/ConcurrentHashMap;
 
+    invoke-direct {v1, v2}, Ljava/util/concurrent/ConcurrentHashMap;-><init>(Ljava/util/Map;)V
+
+    :cond_3
     iput-object v1, v0, Lcom/facebook/fresco/ui/common/ControllerListener2$Extras;->imageExtras:Ljava/util/Map;
 
     iget-object v1, p0, Lcom/facebook/fresco/ui/common/ControllerListener2$Extras;->callerContext:Ljava/lang/Object;

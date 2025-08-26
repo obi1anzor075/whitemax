@@ -1,32 +1,26 @@
 .class public final Lhm2;
-.super Ll5e;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic X:Lnn2;
+.field public X:I
 
-.field public final synthetic Y:J
-
-.field public final synthetic Z:J
+.field public final synthetic Y:Lone/me/chatscreen/ChatScreen;
 
 
 # direct methods
-.method public constructor <init>(Lnn2;JJLkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/ChatScreen;)V
     .locals 0
 
-    iput-object p1, p0, Lhm2;->X:Lnn2;
+    iput-object p2, p0, Lhm2;->Y:Lone/me/chatscreen/ChatScreen;
 
-    iput-wide p2, p0, Lhm2;->Y:J
+    const/4 p2, 0x2
 
-    iput-wide p4, p0, Lhm2;->Z:J
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p6}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2, p1}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -36,86 +30,223 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    check-cast p1, Lou3;
+    check-cast p1, Lox3;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {p0, p1, p2}, Lhm2;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0, p1, p2}, Lhm2;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
     check-cast p0, Lhm2;
 
-    sget-object p1, Ljue;->a:Ljue;
+    sget-object p1, Le5f;->a:Le5f;
 
     invoke-virtual {p0, p1}, Lhm2;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-object p1
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 7
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
 
     new-instance p1, Lhm2;
 
-    iget-wide v2, p0, Lhm2;->Y:J
+    iget-object p0, p0, Lhm2;->Y:Lone/me/chatscreen/ChatScreen;
 
-    iget-wide v4, p0, Lhm2;->Z:J
-
-    iget-object v1, p0, Lhm2;->X:Lnn2;
-
-    move-object v0, p1
-
-    move-object v6, p2
-
-    invoke-direct/range {v0 .. v6}, Lhm2;-><init>(Lnn2;JJLkotlin/coroutines/Continuation;)V
+    invoke-direct {p1, p2, p0}, Lhm2;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/ChatScreen;)V
 
     return-object p1
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 23
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    move-object/from16 v0, p0
 
-    iget-object p1, p0, Lhm2;->X:Lnn2;
+    iget v1, v0, Lhm2;->X:I
 
-    iget-object p1, p1, Lnn2;->o:Lbv2;
+    sget-object v2, Le5f;->a:Le5f;
 
-    check-cast p1, Law2;
+    const/4 v3, 0x1
 
-    invoke-virtual {p1}, Law2;->l()Lt52;
+    iget-object v4, v0, Lhm2;->Y:Lone/me/chatscreen/ChatScreen;
 
-    move-result-object p1
+    if-eqz v1, :cond_1
 
-    iget-wide v0, p0, Lhm2;->Y:J
+    if-ne v1, v3, :cond_0
 
-    invoke-virtual {p1, v0, v1}, Lt52;->B(J)Li22;
+    invoke-static/range {p1 .. p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    move-object/from16 v0, p1
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    invoke-static/range {p1 .. p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    invoke-virtual {v4}, Lou3;->getView()Landroid/view/View;
+
+    move-result-object v1
+
+    if-nez v1, :cond_2
+
+    goto/16 :goto_2
+
+    :cond_2
+    invoke-virtual {v4}, Lone/me/chatscreen/ChatScreen;->L0()Lcmc;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcmc;->n()Z
+
+    move-result v1
+
+    if-nez v1, :cond_6
+
+    invoke-virtual {v4}, Lone/me/chatscreen/ChatScreen;->S0()Lhp2;
+
+    move-result-object v1
+
+    iput v3, v0, Lhm2;->X:I
+
+    invoke-virtual {v1, v0}, Lhp2;->x(Lqde;)Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    sget-object v1, Lpx3;->a:Lpx3;
 
-    iget-wide v1, p0, Lhm2;->Z:J
+    if-ne v0, v1, :cond_3
 
-    invoke-virtual {p1, v1, v2, v0}, Lt52;->l(JLi22;)V
+    return-object v1
 
-    iget-object p0, p1, Lt52;->p:Lnj4;
+    :cond_3
+    :goto_0
+    check-cast v0, Ljava/lang/Number;
 
-    invoke-virtual {p0}, Lnj4;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Number;->longValue()J
 
-    move-result-object p0
+    move-result-wide v7
 
-    check-cast p0, Lpk;
+    sget-object v0, Lone/me/chatscreen/ChatScreen;->g1:[Lbc7;
 
-    iget-wide v0, v0, Li22;->a:J
+    invoke-virtual {v4}, Lone/me/chatscreen/ChatScreen;->L0()Lcmc;
 
-    check-cast p0, Lgy9;
+    move-result-object v0
 
-    invoke-virtual {p0, v0, v1}, Lgy9;->r(J)J
+    iget-object v6, v4, Lone/me/chatscreen/ChatScreen;->H0:Ljava/lang/String;
 
-    :cond_0
-    sget-object p0, Ljue;->a:Ljue;
+    invoke-virtual {v4}, Lou3;->getArgs()Landroid/os/Bundle;
 
-    return-object p0
+    move-result-object v1
+
+    const-string v3, "load_mark"
+
+    invoke-virtual {v1, v3}, Landroid/os/BaseBundle;->getLong(Ljava/lang/String;)J
+
+    move-result-wide v9
+
+    invoke-virtual {v4}, Lou3;->getArgs()Landroid/os/Bundle;
+
+    move-result-object v1
+
+    const-string v3, "message_id"
+
+    invoke-virtual {v1, v3}, Landroid/os/BaseBundle;->getLong(Ljava/lang/String;)J
+
+    move-result-wide v12
+
+    invoke-virtual {v4}, Lou3;->getArgs()Landroid/os/Bundle;
+
+    move-result-object v1
+
+    const-string v3, "highlights"
+
+    invoke-virtual {v1, v3}, Landroid/os/BaseBundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    instance-of v3, v1, Ljava/util/List;
+
+    if-eqz v3, :cond_4
+
+    check-cast v1, Ljava/util/List;
+
+    goto :goto_1
+
+    :cond_4
+    const/4 v1, 0x0
+
+    :goto_1
+    if-nez v1, :cond_5
+
+    sget-object v1, Lgz4;->a:Lgz4;
+
+    :cond_5
+    move-object v11, v1
+
+    invoke-virtual {v4}, Lou3;->getArgs()Landroid/os/Bundle;
+
+    move-result-object v1
+
+    const-string v3, "highlight_message"
+
+    invoke-virtual {v1, v3}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v14
+
+    invoke-virtual {v4}, Lou3;->getArgs()Landroid/os/Bundle;
+
+    move-result-object v1
+
+    const-string v3, "from_forward"
+
+    invoke-virtual {v1, v3}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v15
+
+    new-instance v17, Lone/me/messages/list/ui/MessagesListWidget;
+
+    const/16 v16, 0x0
+
+    move-object/from16 v5, v17
+
+    invoke-direct/range {v5 .. v16}, Lone/me/messages/list/ui/MessagesListWidget;-><init>(Ljava/lang/String;JJLjava/util/List;JZZLl94;)V
+
+    iget-object v1, v4, Lone/me/chatscreen/ChatScreen;->V0:Lcw7;
+
+    iput-object v1, v5, Lone/me/messages/list/ui/MessagesListWidget;->G0:Lcw7;
+
+    new-instance v16, Lfmc;
+
+    const/16 v21, 0x0
+
+    const/16 v22, -0x1
+
+    const/16 v18, 0x0
+
+    const/16 v19, 0x0
+
+    const/16 v20, 0x0
+
+    invoke-direct/range {v16 .. v22}, Lfmc;-><init>(Lou3;Ljava/lang/String;Ltu3;Ltu3;ZI)V
+
+    move-object/from16 v1, v16
+
+    invoke-virtual {v0, v1}, Lcmc;->S(Lfmc;)V
+
+    :cond_6
+    :goto_2
+    return-object v2
 .end method

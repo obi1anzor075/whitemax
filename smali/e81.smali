@@ -1,73 +1,95 @@
-.class public final enum Le81;
-.super Ljava/lang/Enum;
+.class public final synthetic Le81;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lv56;
 
-# static fields
-.field public static final enum a:Le81;
 
-.field public static final enum b:Le81;
+# instance fields
+.field public final synthetic a:I
 
-.field public static final synthetic c:[Le81;
+.field public final synthetic b:Lkl6;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public synthetic constructor <init>(Lkl6;I)V
+    .locals 0
 
-    new-instance v0, Le81;
+    iput p2, p0, Le81;->a:I
 
-    const-string v1, "NONE"
+    iput-object p1, p0, Le81;->b:Lkl6;
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Le81;->a:Le81;
-
-    new-instance v1, Le81;
-
-    const-string v2, "CALL"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Le81;->b:Le81;
-
-    filled-new-array {v0, v1}, [Le81;
-
-    move-result-object v0
-
-    sput-object v0, Le81;->c:[Le81;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Le81;
-    .locals 1
 
-    const-class v0, Le81;
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 2
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    iget v0, p0, Le81;->a:I
 
-    move-result-object p0
+    packed-switch v0, :pswitch_data_0
 
-    check-cast p0, Le81;
+    sget-object v0, Ls71;->c:Ls71;
 
-    return-object p0
-.end method
+    iget-object p0, p0, Le81;->b:Lkl6;
 
-.method public static values()[Le81;
-    .locals 1
+    check-cast p0, Lhl6;
 
-    sget-object v0, Le81;->c:[Le81;
+    iget-object p0, p0, Lhl6;->a:Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Lu2;->D0()Ls64;
 
     move-result-object v0
 
-    check-cast v0, [Le81;
+    const-string v1, ":call-join-link?link="
 
-    return-object v0
+    invoke-virtual {v1, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, p0, v1}, Ls64;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
+
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
+
+    :pswitch_0
+    sget-object v0, Ls71;->c:Ls71;
+
+    iget-object p0, p0, Le81;->b:Lkl6;
+
+    check-cast p0, Lgl6;
+
+    iget-object p0, p0, Lgl6;->e:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lu2;->D0()Ls64;
+
+    move-result-object v0
+
+    const-string v1, ":call-join-link?link="
+
+    invoke-virtual {v1, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, p0, v1}, Ls64;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
+
+    goto :goto_0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

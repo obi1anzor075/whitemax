@@ -1,365 +1,87 @@
-.class public final Lht3;
+.class public abstract Lht3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final j:Ljava/util/regex/Pattern;
-
-.field public static final k:Ljava/util/regex/Pattern;
-
-.field public static final l:Ljava/util/regex/Pattern;
-
-.field public static final m:Ljava/util/regex/Pattern;
-
-
-# instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:Ljava/lang/String;
-
-.field public final c:J
-
-.field public final d:Ljava/lang/String;
-
-.field public final e:Ljava/lang/String;
-
-.field public final f:Z
-
-.field public final g:Z
-
-.field public final h:Z
-
-.field public final i:Z
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public static a(Landroid/content/Context;Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;I)Landroid/content/Intent;
+    .locals 6
 
-    const-string v0, "(\\d{2,4})[^\\d]*"
+    and-int/lit8 v0, p5, 0x4
 
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    if-eqz v0, :cond_1
 
-    move-result-object v0
+    if-nez p3, :cond_1
 
-    sput-object v0, Lht3;->j:Ljava/util/regex/Pattern;
+    new-instance p3, Ljava/lang/StringBuilder;
 
-    const-string v0, "(?i)(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec).*"
+    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p5
 
-    sput-object v0, Lht3;->k:Ljava/util/regex/Pattern;
+    invoke-virtual {p3, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, "(\\d{1,2})[^\\d]*"
+    const-string p5, ".DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
 
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    invoke-virtual {p3, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    sput-object v0, Lht3;->l:Ljava/util/regex/Pattern;
+    move-result-object p3
 
-    const-string v0, "(\\d{1,2}):(\\d{1,2}):(\\d{1,2})[^\\d]*"
+    invoke-static {p0, p3}, Lild;->d(Landroid/content/Context;Ljava/lang/String;)I
 
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    move-result p5
 
-    move-result-object v0
+    if-nez p5, :cond_0
 
-    sput-object v0, Lht3;->m:Ljava/util/regex/Pattern;
+    invoke-virtual {p0, p1, p2, p3, p4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    return-void
-.end method
+    move-result-object p0
 
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;ZZZZ)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lht3;->a:Ljava/lang/String;
-
-    iput-object p2, p0, Lht3;->b:Ljava/lang/String;
-
-    iput-wide p3, p0, Lht3;->c:J
-
-    iput-object p5, p0, Lht3;->d:Ljava/lang/String;
-
-    iput-object p6, p0, Lht3;->e:Ljava/lang/String;
-
-    iput-boolean p7, p0, Lht3;->f:Z
-
-    iput-boolean p8, p0, Lht3;->g:Z
-
-    iput-boolean p9, p0, Lht3;->h:Z
-
-    iput-boolean p10, p0, Lht3;->i:Z
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    instance-of v0, p1, Lht3;
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lht3;
-
-    iget-object v0, p1, Lht3;->a:Ljava/lang/String;
-
-    iget-object v1, p0, Lht3;->a:Ljava/lang/String;
-
-    invoke-static {v0, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p1, Lht3;->b:Ljava/lang/String;
-
-    iget-object v1, p0, Lht3;->b:Ljava/lang/String;
-
-    invoke-static {v0, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-wide v0, p1, Lht3;->c:J
-
-    iget-wide v2, p0, Lht3;->c:J
-
-    cmp-long v0, v0, v2
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p1, Lht3;->d:Ljava/lang/String;
-
-    iget-object v1, p0, Lht3;->d:Ljava/lang/String;
-
-    invoke-static {v0, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p1, Lht3;->e:Ljava/lang/String;
-
-    iget-object v1, p0, Lht3;->e:Ljava/lang/String;
-
-    invoke-static {v0, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-boolean v0, p1, Lht3;->f:Z
-
-    iget-boolean v1, p0, Lht3;->f:Z
-
-    if-ne v0, v1, :cond_0
-
-    iget-boolean v0, p1, Lht3;->g:Z
-
-    iget-boolean v1, p0, Lht3;->g:Z
-
-    if-ne v0, v1, :cond_0
-
-    iget-boolean v0, p1, Lht3;->h:Z
-
-    iget-boolean v1, p0, Lht3;->h:Z
-
-    if-ne v0, v1, :cond_0
-
-    iget-boolean p1, p1, Lht3;->i:Z
-
-    iget-boolean p0, p0, Lht3;->i:Z
-
-    if-ne p1, p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
+    return-object p0
 
     :cond_0
-    const/4 p0, 0x0
+    new-instance p0, Ljava/lang/RuntimeException;
 
-    :goto_0
-    return p0
-.end method
+    const-string p1, "Permission "
 
-.method public final hashCode()I
-    .locals 5
+    const-string p2, " is required by your application to receive broadcasts, please add it to your manifest"
 
-    iget-object v0, p0, Lht3;->a:Ljava/lang/String;
+    invoke-static {p1, p3, p2}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    const/16 v1, 0x20f
+    move-result-object p1
 
-    const/16 v2, 0x1f
+    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v1, v2, v0}, Lme4;->d(IILjava/lang/String;)I
-
-    move-result v0
-
-    iget-object v1, p0, Lht3;->b:Ljava/lang/String;
-
-    invoke-static {v0, v2, v1}, Lme4;->d(IILjava/lang/String;)I
-
-    move-result v0
-
-    iget-wide v3, p0, Lht3;->c:J
-
-    invoke-static {v0, v2, v3, v4}, Lsxe;->m(IIJ)I
-
-    move-result v0
-
-    iget-object v1, p0, Lht3;->d:Ljava/lang/String;
-
-    invoke-static {v0, v2, v1}, Lme4;->d(IILjava/lang/String;)I
-
-    move-result v0
-
-    iget-object v1, p0, Lht3;->e:Ljava/lang/String;
-
-    invoke-static {v0, v2, v1}, Lme4;->d(IILjava/lang/String;)I
-
-    move-result v0
-
-    iget-boolean v1, p0, Lht3;->f:Z
-
-    invoke-static {v0, v2, v1}, Lth2;->f(IIZ)I
-
-    move-result v0
-
-    iget-boolean v1, p0, Lht3;->g:Z
-
-    invoke-static {v0, v2, v1}, Lth2;->f(IIZ)I
-
-    move-result v0
-
-    iget-boolean v1, p0, Lht3;->h:Z
-
-    invoke-static {v0, v2, v1}, Lth2;->f(IIZ)I
-
-    move-result v0
-
-    iget-boolean p0, p0, Lht3;->i:Z
-
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 5
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, p0, Lht3;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x3d
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lht3;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lht3;->h:Z
-
-    if-eqz v1, :cond_1
-
-    iget-wide v1, p0, Lht3;->c:J
-
-    const-wide/high16 v3, -0x8000000000000000L
-
-    cmp-long v3, v1, v3
-
-    if-nez v3, :cond_0
-
-    const-string v1, "; max-age=0"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_0
-
-    :cond_0
-    const-string v3, "; expires="
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    new-instance v3, Ljava/util/Date;
-
-    invoke-direct {v3, v1, v2}, Ljava/util/Date;-><init>(J)V
-
-    sget-object v1, Lu04;->a:Lrt0;
-
-    invoke-virtual {v1}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/text/DateFormat;
-
-    invoke-virtual {v1, v3}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    throw p0
 
     :cond_1
-    :goto_0
-    iget-boolean v1, p0, Lht3;->i:Z
+    and-int/lit8 v5, p5, 0x1
 
-    if-nez v1, :cond_2
+    move-object v0, p0
 
-    const-string v1, "; domain="
+    move-object v1, p1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-object v2, p2
 
-    iget-object v1, p0, Lht3;->d:Ljava/lang/String;
+    move-object v3, p3
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-object v4, p4
 
-    :cond_2
-    const-string v1, "; path="
+    invoke-virtual/range {v0 .. v5}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;I)Landroid/content/Intent;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object p0
 
-    iget-object v1, p0, Lht3;->e:Ljava/lang/String;
+    return-object p0
+.end method
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method public static b(Landroid/content/Context;Landroid/content/Intent;)Landroid/content/ComponentName;
+    .locals 0
 
-    iget-boolean v1, p0, Lht3;->f:Z
-
-    if-eqz v1, :cond_3
-
-    const-string v1, "; secure"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_3
-    iget-boolean p0, p0, Lht3;->g:Z
-
-    if-eqz p0, :cond_4
-
-    const-string p0, "; httponly"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_4
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, p1}, Landroid/content/Context;->startForegroundService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
     move-result-object p0
 

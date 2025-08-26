@@ -1,57 +1,100 @@
-.class public final Laff;
-.super Ljava/lang/ref/WeakReference;
+.class public final synthetic Laff;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lxi4;
+.implements Lx56;
 
 
-# virtual methods
-.method public final f()V
+# instance fields
+.field public final synthetic a:I
+
+
+# direct methods
+.method public synthetic constructor <init>(I)V
     .locals 0
 
-    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+    iput p1, p0, Laff;->a:I
 
-    move-result-object p0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    check-cast p0, Lxi4;
-
-    if-eqz p0, :cond_0
-
-    invoke-interface {p0}, Lxi4;->f()V
-
-    :cond_0
     return-void
 .end method
 
-.method public final h()Z
-    .locals 0
 
-    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    iget p0, p0, Laff;->a:I
+
+    packed-switch p0, :pswitch_data_0
+
+    check-cast p1, Ljava/lang/String;
+
+    const-string p0, "worker_class_name LIKE \'"
+
+    const-string v0, "%\'"
+
+    invoke-static {p0, p1, v0}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    check-cast p0, Lxi4;
+    return-object p0
 
-    if-eqz p0, :cond_1
+    :pswitch_0
+    check-cast p1, Lyha;
 
-    invoke-interface {p0}, Lxi4;->h()Z
+    sget-object p0, Lone/me/webapp/rootscreen/WebAppRootScreen;->C0:[Lbc7;
 
-    move-result p0
+    new-instance p0, Lfcf;
 
-    if-eqz p0, :cond_0
+    invoke-interface {p1}, Lyha;->getIcon()Lds6;
 
-    goto :goto_0
+    invoke-interface {p1}, Lyha;->getIcon()Lds6;
 
-    :cond_0
-    const/4 p0, 0x0
+    move-result-object p1
 
-    goto :goto_1
+    iget p1, p1, Lds6;->k:I
 
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
+    const/4 v0, -0x1
 
-    :goto_1
-    return p0
+    invoke-direct {p0, v0, p1}, Lfcf;-><init>(II)V
+
+    return-object p0
+
+    :pswitch_1
+    check-cast p1, Limf;
+
+    iget-wide p0, p1, Limf;->b:J
+
+    invoke-static {p0, p1}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_2
+    check-cast p1, Landroid/content/Context;
+
+    new-instance p0, Lsmf;
+
+    invoke-direct {p0, p1}, Lsmf;-><init>(Landroid/content/Context;)V
+
+    const/16 p1, 0x8
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
+
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setAlpha(F)V
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

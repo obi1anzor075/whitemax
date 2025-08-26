@@ -19,7 +19,7 @@
         "Lkotlin/Function1;",
         "Lkotlinx/coroutines/internal/Ctor;",
         "get",
-        "(Ljava/lang/Class;)Lu16;",
+        "(Ljava/lang/Class;)Lx56;",
         "kotlinx/coroutines/internal/ClassValueCtorCache$cache$1",
         "cache",
         "Lkotlinx/coroutines/internal/ClassValueCtorCache$cache$1;",
@@ -31,6 +31,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 .annotation build Lorg/codehaus/mojo/animal_sniffer/IgnoreJRERequirement;
@@ -72,7 +73,7 @@
 
 
 # virtual methods
-.method public get(Ljava/lang/Class;)Lu16;
+.method public get(Ljava/lang/Class;)Lx56;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -81,17 +82,17 @@
             "+",
             "Ljava/lang/Throwable;",
             ">;)",
-            "Lu16;"
+            "Lx56;"
         }
     .end annotation
 
     sget-object p0, Lkotlinx/coroutines/internal/ClassValueCtorCache;->cache:Lkotlinx/coroutines/internal/ClassValueCtorCache$cache$1;
 
-    invoke-static {p0, p1}, Lfn0;->g(Lkotlinx/coroutines/internal/ClassValueCtorCache$cache$1;Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-static {p0, p1}, Ldo0;->g(Lkotlinx/coroutines/internal/ClassValueCtorCache$cache$1;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lu16;
+    check-cast p0, Lx56;
 
     return-object p0
 .end method

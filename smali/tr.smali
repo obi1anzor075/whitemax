@@ -1,112 +1,155 @@
 .class public final Ltr;
-.super Ljava/util/AbstractSet;
+.super Lod7;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic a:I
+# static fields
+.field public static volatile k:Ltr;
 
-.field public final b:Ljava/lang/Object;
+.field public static final l:Lsr;
+
+
+# instance fields
+.field public final j:Lke4;
 
 
 # direct methods
-.method public constructor <init>(Lyr;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
-    const/4 v0, 0x0
+    new-instance v0, Lsr;
 
-    iput v0, p0, Ltr;->a:I
+    const/4 v1, 0x0
 
-    .line 3
-    iput-object p1, p0, Ltr;->b:Ljava/lang/Object;
+    invoke-direct {v0, v1}, Lsr;-><init>(I)V
 
-    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
+    sput-object v0, Ltr;->l:Lsr;
 
     return-void
 .end method
 
-.method public constructor <init>([Luze;)V
+.method public constructor <init>()V
     .locals 1
 
-    const/4 v0, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput v0, p0, Ltr;->a:I
+    new-instance v0, Lke4;
 
-    .line 1
-    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
+    invoke-direct {v0}, Lke4;-><init>()V
 
-    .line 2
-    iput-object p1, p0, Ltr;->b:Ljava/lang/Object;
+    iput-object v0, p0, Ltr;->j:Lke4;
 
     return-void
+.end method
+
+.method public static I()Ltr;
+    .locals 2
+
+    sget-object v0, Ltr;->k:Ltr;
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Ltr;->k:Ltr;
+
+    return-object v0
+
+    :cond_0
+    const-class v0, Ltr;
+
+    monitor-enter v0
+
+    :try_start_0
+    sget-object v1, Ltr;->k:Ltr;
+
+    if-nez v1, :cond_1
+
+    new-instance v1, Ltr;
+
+    invoke-direct {v1}, Ltr;-><init>()V
+
+    sput-object v1, Ltr;->k:Ltr;
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v1
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    sget-object v0, Ltr;->k:Ltr;
+
+    return-object v0
+
+    :goto_1
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v1
 .end method
 
 
 # virtual methods
-.method public final iterator()Ljava/util/Iterator;
+.method public final J(Ljava/lang/Runnable;)V
     .locals 2
 
-    iget v0, p0, Ltr;->a:I
+    iget-object p0, p0, Ltr;->j:Lke4;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v0, p0, Lke4;->l:Landroid/os/Handler;
 
-    new-instance v0, Lds6;
+    if-nez v0, :cond_1
 
-    iget-object p0, p0, Ltr;->b:Ljava/lang/Object;
+    iget-object v0, p0, Lke4;->j:Ljava/lang/Object;
 
-    check-cast p0, [Luze;
+    monitor-enter v0
 
-    const/4 v1, 0x1
+    :try_start_0
+    iget-object v1, p0, Lke4;->l:Landroid/os/Handler;
 
-    invoke-direct {v0, p0, v1}, Lds6;-><init>([Luze;I)V
+    if-nez v1, :cond_0
 
-    return-object v0
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
-    :pswitch_0
-    new-instance v0, Lwr;
+    move-result-object v1
 
-    iget-object p0, p0, Ltr;->b:Ljava/lang/Object;
+    invoke-static {v1}, Landroid/os/Handler;->createAsync(Landroid/os/Looper;)Landroid/os/Handler;
 
-    check-cast p0, Lyr;
+    move-result-object v1
 
-    invoke-direct {v0, p0}, Lwr;-><init>(Lyr;)V
+    iput-object v1, p0, Lke4;->l:Landroid/os/Handler;
 
-    return-object v0
+    goto :goto_0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
+    :catchall_0
+    move-exception p0
 
-.method public final size()I
-    .locals 1
+    goto :goto_1
 
-    iget v0, p0, Ltr;->a:I
+    :cond_0
+    :goto_0
+    monitor-exit v0
 
-    packed-switch v0, :pswitch_data_0
+    goto :goto_2
 
-    iget-object p0, p0, Ltr;->b:Ljava/lang/Object;
+    :goto_1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    check-cast p0, [Luze;
+    throw p0
 
-    array-length p0, p0
+    :cond_1
+    :goto_2
+    iget-object p0, p0, Lke4;->l:Landroid/os/Handler;
 
-    div-int/lit8 p0, p0, 0x2
+    invoke-virtual {p0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    return p0
-
-    :pswitch_0
-    iget-object p0, p0, Ltr;->b:Ljava/lang/Object;
-
-    check-cast p0, Lyr;
-
-    iget p0, p0, Lkgd;->c:I
-
-    return p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

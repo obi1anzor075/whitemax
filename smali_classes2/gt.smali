@@ -1,447 +1,705 @@
 .class public final Lgt;
-.super Lol;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lqce;
 
 
 # instance fields
-.field public final X:[J
-
-.field public final o:I
+.field public final a:Ls1c;
 
 
 # direct methods
-.method public constructor <init>(IJ[J)V
+.method public constructor <init>(Ls1c;)V
     .locals 0
 
-    invoke-direct {p0, p2, p3}, Lol;-><init>(J)V
+    .line 2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lgt;->o:I
-
-    iput-object p4, p0, Lgt;->X:[J
+    .line 3
+    iput-object p1, p0, Lgt;->a:Ls1c;
 
     return-void
 .end method
 
+.method public synthetic constructor <init>(Ls1c;Lap9;)V
+    .locals 0
 
-# virtual methods
-.method public final c(Llbe;)V
-    .locals 12
+    .line 1
+    iput-object p1, p0, Lgt;->a:Ls1c;
 
-    const/4 v0, 0x2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x1
+    return-void
+.end method
 
-    check-cast p1, Lht;
+.method public static f(Lorg/json/JSONObject;)Li01;
+    .locals 4
 
-    iget v2, p0, Lgt;->o:I
+    const-string v0, "initiatorId"
 
-    invoke-static {v2}, Lhr1;->t(I)I
+    invoke-virtual {p0, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result v3
+    move-result-object v0
 
-    const/16 v4, 0xa
+    const/4 v1, 0x0
 
-    const/4 v5, 0x0
+    :try_start_0
+    invoke-static {v0}, Lrf1;->a(Ljava/lang/String;)Lrf1;
 
-    if-eq v3, v1, :cond_7
-
-    if-eq v3, v0, :cond_0
-
-    goto/16 :goto_9
-
-    :cond_0
-    iget-object v3, p0, Lol;->c:Lpl;
-
-    if-eqz v3, :cond_1
+    move-result-object v0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    :cond_1
-    move-object v3, v5
+    :catch_0
+    move-object v0, v1
 
     :goto_0
-    iget-object v3, v3, Lpl;->o:Lt97;
+    if-nez v0, :cond_0
 
-    invoke-interface {v3}, Lt97;->getValue()Ljava/lang/Object;
+    return-object v1
 
-    move-result-object v3
+    :cond_0
+    const-string v2, "movieId"
 
-    check-cast v3, Llud;
+    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    iget-object v6, p1, Lht;->o:Ljava/util/List;
+    move-result v3
 
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-eqz v3, :cond_1
 
-    new-instance v7, Ljava/util/ArrayList;
+    invoke-virtual {p0, v2}, Lorg/json/JSONObject;->optLong(Ljava/lang/String;)J
 
-    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
+    move-result-wide v1
 
-    new-instance v8, Ljava/util/ArrayList;
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
+    move-result-object v1
 
-    invoke-interface {v6}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    :cond_1
+    new-instance p0, Li01;
 
-    move-result-object v6
+    invoke-direct {p0, v0, v1}, Li01;-><init>(Lrf1;Ljava/lang/Long;)V
 
-    :goto_1
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
+    return-object p0
+.end method
 
-    move-result v9
 
-    if-eqz v9, :cond_2
+# virtual methods
+.method public a(Lorg/webrtc/RtpSender;Ljava/lang/String;)V
+    .locals 9
 
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {}, Lfqa;->z()Liqa;
 
-    move-result-object v9
+    move-result-object v0
 
-    check-cast v9, Lytd;
+    invoke-virtual {v0}, Liqa;->b()Lgqa;
 
-    iget-object v10, v9, Lytd;->h:Ljava/util/List;
+    const-string v0, "set audio bitrate range to 6000-48000, priority=1.0"
 
-    iget-object v11, v3, Llud;->b:Lpud;
+    const-string v1, "RtpSenderHelper"
 
-    check-cast v11, Lzsd;
+    iget-object v2, p0, Lgt;->a:Ls1c;
 
-    invoke-virtual {v11, v10}, Lzsd;->c(Ljava/util/List;)Ljava/util/ArrayList;
+    invoke-interface {v2, v1, v0}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v10
+    const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
-    invoke-virtual {v7, v10}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
-
-    invoke-static {v9}, Llud;->e(Lytd;)Lbud;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    :cond_2
-    invoke-virtual {v7}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result v6
-
-    if-nez v6, :cond_3
-
-    invoke-static {v7}, Lek8;->U(Ljava/util/List;)V
-
-    invoke-static {v7}, Lek8;->Z(Ljava/util/Collection;)Ljava/util/ArrayList;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v6
-
-    :goto_2
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_3
-
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v7
 
-    check-cast v7, Ljava/util/List;
+    const/4 v8, 0x1
 
-    iget-object v9, v3, Llud;->c:Lpk;
+    const/16 v5, 0x1770
 
-    invoke-interface {v9, v0, v7}, Lpk;->c(ILjava/util/List;)V
+    const v6, 0xbb80
 
-    goto :goto_2
+    move-object v2, p0
+
+    move-object v3, p1
+
+    move-object v4, p2
+
+    invoke-virtual/range {v2 .. v8}, Lgt;->b(Lorg/webrtc/RtpSender;Ljava/lang/String;IILjava/lang/Double;Z)V
+
+    return-void
+.end method
+
+.method public b(Lorg/webrtc/RtpSender;Ljava/lang/String;IILjava/lang/Double;Z)V
+    .locals 1
+
+    :try_start_0
+    invoke-virtual/range {p0 .. p6}, Lgt;->c(Lorg/webrtc/RtpSender;Ljava/lang/String;IILjava/lang/Double;Z)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    move-object p1, v0
+
+    const-string p3, "Failed to set bitrate of "
+
+    invoke-virtual {p3, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
+
+    const-string p3, "RtpSenderHelper"
+
+    iget-object p0, p0, Lgt;->a:Ls1c;
+
+    invoke-interface {p0, p3, p2, p1}, Ls1c;->reportException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public c(Lorg/webrtc/RtpSender;Ljava/lang/String;IILjava/lang/Double;Z)V
+    .locals 18
+
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, p2
+
+    move/from16 v2, p3
+
+    move/from16 v3, p4
+
+    move-object/from16 v4, p5
+
+    move/from16 v5, p6
+
+    const-string v6, "RtpSenderHelper"
+
+    move-object/from16 v7, p0
+
+    iget-object v7, v7, Lgt;->a:Ls1c;
+
+    if-nez v0, :cond_0
+
+    const-string v0, ": no sender"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v7, v6, v0}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+
+    :cond_0
+    invoke-virtual {v0}, Lorg/webrtc/RtpSender;->getParameters()Lorg/webrtc/RtpParameters;
+
+    move-result-object v8
+
+    iget-object v9, v8, Lorg/webrtc/RtpParameters;->encodings:Ljava/util/List;
+
+    invoke-interface {v9}, Ljava/util/List;->isEmpty()Z
+
+    move-result v9
+
+    if-eqz v9, :cond_1
+
+    const-string v0, ": RtpParameters are not ready yet"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v7, v6, v0}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+
+    :cond_1
+    iget-object v9, v8, Lorg/webrtc/RtpParameters;->encodings:Ljava/util/List;
+
+    invoke-interface {v9}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v9
+
+    const/4 v10, 0x0
+
+    :cond_2
+    :goto_0
+    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v11
+
+    if-eqz v11, :cond_9
+
+    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v11
+
+    check-cast v11, Lorg/webrtc/RtpParameters$Encoding;
+
+    iget-object v12, v11, Lorg/webrtc/RtpParameters$Encoding;->maxBitrateBps:Ljava/lang/Integer;
+
+    const/4 v13, 0x1
+
+    if-eqz v12, :cond_3
+
+    invoke-virtual {v12}, Ljava/lang/Integer;->intValue()I
+
+    move-result v12
+
+    if-eq v12, v3, :cond_4
 
     :cond_3
-    invoke-virtual {v8}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result v6
+    move-result-object v10
 
-    if-nez v6, :cond_4
+    iput-object v10, v11, Lorg/webrtc/RtpParameters$Encoding;->maxBitrateBps:Ljava/lang/Integer;
 
-    iget-object v3, v3, Llud;->a:Lnud;
-
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-static {v8}, Lms9;->j(Ljava/lang/Iterable;)Ln73;
-
-    move-result-object v6
-
-    new-instance v7, Lxsd;
-
-    const/16 v9, 0x19
-
-    invoke-direct {v7, v9}, Lxsd;-><init>(I)V
-
-    new-instance v9, Lau9;
-
-    const/4 v10, 0x3
-
-    invoke-direct {v9, v6, v7, v10}, Lau9;-><init>(Lnv9;Lj26;I)V
-
-    invoke-virtual {v9}, Lms9;->v()Lrs9;
-
-    move-result-object v6
-
-    new-instance v7, Lkud;
-
-    invoke-direct {v7, v3, v1}, Lkud;-><init>(Lnud;I)V
-
-    new-instance v1, Lw63;
-
-    invoke-direct {v1, v6, v0, v7}, Lw63;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-virtual {v1}, Lv63;->l()Lms9;
-
-    move-result-object v0
-
-    sget-object v1, Lz3d;->j:Lgf6;
-
-    new-instance v3, Ld52;
-
-    const/16 v6, 0x1a
-
-    invoke-direct {v3, v6, v8}, Ld52;-><init>(ILjava/util/List;)V
-
-    new-instance v6, Lb95;
-
-    const/4 v7, 0x6
-
-    invoke-direct {v6, v7, v8}, Lb95;-><init>(ILjava/util/List;)V
-
-    invoke-static {v0, v1, v3, v6}, Liu7;->a0(Lms9;Lof3;Lof3;Lj6;)V
+    move v10, v13
 
     :cond_4
-    iget-object v0, p0, Lol;->c:Lpl;
+    iget-object v12, v11, Lorg/webrtc/RtpParameters$Encoding;->minBitrateBps:Ljava/lang/Integer;
 
-    if-eqz v0, :cond_5
+    if-eqz v12, :cond_5
 
-    goto :goto_3
+    invoke-virtual {v12}, Ljava/lang/Integer;->intValue()I
+
+    move-result v12
+
+    if-eq v12, v2, :cond_6
 
     :cond_5
-    move-object v0, v5
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    :goto_3
-    iget-object v0, v0, Lpl;->q:Lt97;
+    move-result-object v10
 
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
+    iput-object v10, v11, Lorg/webrtc/RtpParameters$Encoding;->minBitrateBps:Ljava/lang/Integer;
+
+    move v10, v13
+
+    :cond_6
+    if-eqz v4, :cond_8
+
+    iget-wide v14, v11, Lorg/webrtc/RtpParameters$Encoding;->bitratePriority:D
+
+    invoke-virtual {v4}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v16
+
+    cmpl-double v12, v14, v16
+
+    if-nez v12, :cond_7
+
+    goto :goto_1
+
+    :cond_7
+    invoke-virtual {v4}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v14
+
+    iput-wide v14, v11, Lorg/webrtc/RtpParameters$Encoding;->bitratePriority:D
+
+    move v10, v13
+
+    :cond_8
+    :goto_1
+    iget-boolean v12, v11, Lorg/webrtc/RtpParameters$Encoding;->adaptiveAudioPacketTime:Z
+
+    if-eq v12, v5, :cond_2
+
+    iput-boolean v5, v11, Lorg/webrtc/RtpParameters$Encoding;->adaptiveAudioPacketTime:Z
+
+    move v10, v13
+
+    goto :goto_0
+
+    :cond_9
+    const-string v9, ",adaptiveAudioPTime="
+
+    const-string v11, "](bps),priority="
+
+    const-string v12, "-"
+
+    if-nez v10, :cond_a
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, " encodings update not needed. bitrate=["
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Ll95;
+    invoke-interface {v7, v6, v0}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object p1, p1, Lht;->o:Ljava/util/List;
+    return-void
 
-    new-instance v1, Ljava/util/ArrayList;
+    :cond_a
+    invoke-virtual {v0, v8}, Lorg/webrtc/RtpSender;->setParameters(Lorg/webrtc/RtpParameters;)Z
 
-    invoke-static {p1, v4}, Lq23;->H(Ljava/lang/Iterable;I)I
+    move-result v0
 
-    move-result v3
+    if-eqz v0, :cond_b
 
-    invoke-direct {v1, v3}, Ljava/util/ArrayList;-><init>(I)V
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, " encodings update done. bitrate=["
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v7, v6, v0}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+
+    :cond_b
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, " encodings update failed. bitrate=["
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v7, v6, v0}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public d(Lorg/webrtc/RtpSender;Ljava/lang/String;ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Lorg/webrtc/RtpParameters$DegradationPreference;)V
+    .locals 6
+
+    if-nez p1, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-virtual {p1}, Lorg/webrtc/RtpSender;->getParameters()Lorg/webrtc/RtpParameters;
+
+    move-result-object v0
+
+    iget-object v1, v0, Lorg/webrtc/RtpParameters;->encodings:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
+
+    move-result v1
+
+    const-string v2, "RtpSenderHelper"
+
+    iget-object p0, p0, Lgt;->a:Ls1c;
+
+    if-eqz v1, :cond_1
+
+    const-string p1, ": RtpParameters are not ready yet"
+
+    invoke-virtual {p2, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    :goto_4
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {p0, v2, p1}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result v3
+    return-void
 
-    if-eqz v3, :cond_6
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lytd;
-
-    iget-wide v3, v3, Lytd;->a:J
-
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_4
-
-    :cond_6
-    invoke-virtual {v0, v1}, Ll95;->e(Ljava/util/ArrayList;)V
-
-    goto :goto_9
-
-    :cond_7
-    iget-object v0, p0, Lol;->c:Lpl;
-
-    if-eqz v0, :cond_8
-
-    goto :goto_5
-
-    :cond_8
-    move-object v0, v5
-
-    :goto_5
-    iget-object v0, v0, Lpl;->n:Lt97;
-
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lzsd;
-
-    iget-object v1, p1, Lht;->c:Ljava/util/List;
-
-    new-instance v3, Ljava/util/ArrayList;
-
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+    :cond_1
+    iget-object v1, v0, Lorg/webrtc/RtpParameters;->encodings:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :goto_6
+    :cond_2
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v3
 
-    if-eqz v6, :cond_9
+    const/4 v4, 0x1
+
+    if-eqz v3, :cond_5
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v3
 
-    check-cast v6, Lpsd;
+    check-cast v3, Lorg/webrtc/RtpParameters$Encoding;
 
-    invoke-static {v6}, Lfu7;->r(Lpsd;)Losd;
+    iget-object v5, v3, Lorg/webrtc/RtpParameters$Encoding;->maxBitrateBps:Ljava/lang/Integer;
 
-    move-result-object v6
+    invoke-static {v5, p4}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {v3, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    move-result v5
 
-    goto :goto_6
+    if-nez v5, :cond_3
 
-    :cond_9
-    invoke-virtual {v0, v3}, Lzsd;->e(Ljava/util/List;)V
+    iput-object p4, v3, Lorg/webrtc/RtpParameters$Encoding;->maxBitrateBps:Ljava/lang/Integer;
 
-    iget-object v0, p0, Lol;->c:Lpl;
+    move p3, v4
 
-    if-eqz v0, :cond_a
+    :cond_3
+    iget-object v5, v3, Lorg/webrtc/RtpParameters$Encoding;->numTemporalLayers:Ljava/lang/Integer;
 
-    goto :goto_7
+    invoke-static {v5, p5}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    :cond_a
-    move-object v0, v5
+    move-result v5
 
-    :goto_7
-    iget-object v0, v0, Lpl;->q:Lt97;
+    if-nez v5, :cond_4
 
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
+    iput-object p5, v3, Lorg/webrtc/RtpParameters$Encoding;->numTemporalLayers:Ljava/lang/Integer;
 
-    move-result-object v0
+    move p3, v4
 
-    check-cast v0, Ll95;
+    :cond_4
+    iget-object v5, v3, Lorg/webrtc/RtpParameters$Encoding;->maxFramerate:Ljava/lang/Integer;
 
-    iget-object p1, p1, Lht;->c:Ljava/util/List;
+    invoke-static {v5, p6}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    new-instance v1, Ljava/util/ArrayList;
+    move-result v5
 
-    invoke-static {p1, v4}, Lq23;->H(Ljava/lang/Iterable;I)I
+    if-nez v5, :cond_2
 
-    move-result v3
+    iput-object p6, v3, Lorg/webrtc/RtpParameters$Encoding;->maxFramerate:Ljava/lang/Integer;
 
-    invoke-direct {v1, v3}, Ljava/util/ArrayList;-><init>(I)V
+    move p3, v4
 
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    goto :goto_0
+
+    :cond_5
+    iget-object v1, v0, Lorg/webrtc/RtpParameters;->degradationPreference:Lorg/webrtc/RtpParameters$DegradationPreference;
+
+    if-eq v1, p7, :cond_6
+
+    iput-object p7, v0, Lorg/webrtc/RtpParameters;->degradationPreference:Lorg/webrtc/RtpParameters$DegradationPreference;
+
+    move p3, v4
+
+    :cond_6
+    if-nez p3, :cond_7
+
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    const-string p3, "No "
+
+    invoke-direct {p1, p3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p2, " change detected. Ignore update"
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    :goto_8
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {p0, v2, p1}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result v3
+    return-void
 
-    if-eqz v3, :cond_b
+    :cond_7
+    invoke-virtual {p1, v0}, Lorg/webrtc/RtpSender;->setParameters(Lorg/webrtc/RtpParameters;)Z
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result p1
 
-    move-result-object v3
+    const-string p3, ", degradationPreference="
 
-    check-cast v3, Lpsd;
+    const-string v0, ", maxFramerate="
 
-    iget-wide v3, v3, Lpsd;->k:J
+    const-string v1, ", numTemporalLayers="
 
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    const-string v3, ": maxBitrate="
 
-    move-result-object v3
+    if-nez p1, :cond_8
 
-    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    goto :goto_8
+    const-string v4, "Failed to set sender parameters for "
 
-    :cond_b
-    invoke-virtual {v0, v1}, Ll95;->e(Ljava/util/ArrayList;)V
+    invoke-direct {p1, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    :goto_9
-    iget-object p1, p0, Lol;->c:Lpl;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz p1, :cond_c
+    invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object v5, p1
+    invoke-virtual {p1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    :cond_c
-    invoke-virtual {v5}, Lpl;->b()Ltt0;
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, p6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, p7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    new-instance v0, Ljt;
+    invoke-interface {p0, v2, p1}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v1, p0, Lgt;->X:[J
+    return-void
 
-    invoke-static {v1}, Lcs;->f0([J)Ljava/util/List;
+    :cond_8
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    const-string v4, "Sender parameters for "
 
-    iget-wide v3, p0, Lol;->a:J
+    invoke-direct {p1, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v0, v2, v3, v4, v1}, Ljt;-><init>(IJLjava/util/List;)V
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v0}, Ltt0;->c(Ljava/lang/Object;)V
+    invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, p6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, p7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-interface {p0, v2, p1}, Ls1c;->log(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public final d(Luae;)V
-    .locals 1
+.method public e(Lorg/webrtc/RtpSender;)I
+    .locals 3
 
-    invoke-virtual {p1}, Luae;->toString()Ljava/lang/String;
+    const/4 v0, 0x0
 
-    move-result-object p0
+    if-nez p1, :cond_0
 
+    goto :goto_1
+
+    :cond_0
+    :try_start_0
+    invoke-virtual {p1}, Lorg/webrtc/RtpSender;->getParameters()Lorg/webrtc/RtpParameters;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_1
+
+    iget-object p1, p1, Lorg/webrtc/RtpParameters;->encodings:Ljava/util/List;
+
+    if-eqz p1, :cond_1
+
+    invoke-static {p1}, Lp43;->B0(Ljava/util/List;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lorg/webrtc/RtpParameters$Encoding;
+
+    if-eqz p1, :cond_1
+
+    iget-object p1, p1, Lorg/webrtc/RtpParameters$Encoding;->maxBitrateBps:Ljava/lang/Integer;
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p1
+
+    goto :goto_2
+
+    :cond_1
     const/4 p1, 0x0
 
-    const-string v0, "gt"
+    :goto_0
+    if-nez p1, :cond_2
 
-    invoke-static {v0, p0, p1}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    :goto_1
+    return v0
 
-    return-void
-.end method
+    :cond_2
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-.method public final i()Libe;
-    .locals 2
+    move-result p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    new-instance v0, Ldt;
+    return p0
 
-    iget v1, p0, Lgt;->o:I
+    :goto_2
+    const-string v1, "RtpSenderHelper"
 
-    iget-object p0, p0, Lgt;->X:[J
+    const-string v2, "Unable to get sender max bitrate"
 
-    invoke-direct {v0, v1, p0}, Ldt;-><init>(I[J)V
+    iget-object p0, p0, Lgt;->a:Ls1c;
 
-    return-object v0
+    invoke-interface {p0, v1, v2, p1}, Ls1c;->reportException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return v0
 .end method

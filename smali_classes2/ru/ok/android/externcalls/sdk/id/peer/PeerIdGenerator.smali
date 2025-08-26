@@ -40,7 +40,7 @@
 
 .field private static final MIN_JS_SAFE_LONG:J = -0x1fffffffffffffL
 
-.field private static final PEER_ID_RANGE:Lsq7;
+.field private static final PEER_ID_RANGE:Lrv7;
 
 
 # direct methods
@@ -51,19 +51,19 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/id/peer/PeerIdGenerator$Companion;-><init>(Lx54;)V
+    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/id/peer/PeerIdGenerator$Companion;-><init>(Ll94;)V
 
     sput-object v0, Lru/ok/android/externcalls/sdk/id/peer/PeerIdGenerator;->Companion:Lru/ok/android/externcalls/sdk/id/peer/PeerIdGenerator$Companion;
 
-    new-instance v0, Lsq7;
+    new-instance v0, Lrv7;
 
     const-wide v1, -0x1fffffffffffffL
 
     const-wide v3, 0x1fffffffffffffL
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lsq7;-><init>(JJ)V
+    invoke-direct {v0, v1, v2, v3, v4}, Lrv7;-><init>(JJ)V
 
-    sput-object v0, Lru/ok/android/externcalls/sdk/id/peer/PeerIdGenerator;->PEER_ID_RANGE:Lsq7;
+    sput-object v0, Lru/ok/android/externcalls/sdk/id/peer/PeerIdGenerator;->PEER_ID_RANGE:Lrv7;
 
     return-void
 .end method
@@ -79,65 +79,78 @@
 
 # virtual methods
 .method public final generatePeerId()J
-    .locals 10
+    .locals 8
 
-    sget-object p0, Lru/ok/android/externcalls/sdk/id/peer/PeerIdGenerator;->PEER_ID_RANGE:Lsq7;
+    sget-object p0, Lru/ok/android/externcalls/sdk/id/peer/PeerIdGenerator;->PEER_ID_RANGE:Lrv7;
 
-    sget-object v0, Lkxb;->a:Ljxb;
+    sget-object v0, Lg2c;->a:Lf2c;
 
     :try_start_0
-    invoke-virtual {p0}, Lsq7;->isEmpty()Z
+    iget-wide v0, p0, Lrv7;->a:J
 
-    move-result v1
+    iget-wide v2, p0, Lrv7;->b:J
 
-    if-nez v1, :cond_2
+    cmp-long v4, v0, v2
 
-    iget-wide v1, p0, Lqq7;->b:J
+    if-lez v4, :cond_0
 
-    const-wide v3, 0x7fffffffffffffffL
-
-    cmp-long v3, v1, v3
-
-    iget-wide v4, p0, Lqq7;->a:J
-
-    const-wide/16 v6, 0x1
-
-    if-gez v3, :cond_0
-
-    add-long/2addr v1, v6
-
-    invoke-virtual {v0, v4, v5, v1, v2}, Lkxb;->j(JJ)J
-
-    move-result-wide v0
+    const/4 v4, 0x1
 
     goto :goto_0
 
     :cond_0
-    const-wide/high16 v8, -0x8000000000000000L
-
-    cmp-long p0, v4, v8
-
-    if-lez p0, :cond_1
-
-    sub-long/2addr v4, v6
-
-    invoke-virtual {v0, v4, v5, v1, v2}, Lkxb;->j(JJ)J
-
-    move-result-wide v0
-
-    add-long/2addr v0, v6
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {v0}, Lkxb;->h()J
-
-    move-result-wide v0
+    const/4 v4, 0x0
 
     :goto_0
+    if-nez v4, :cond_3
+
+    const-wide v4, 0x7fffffffffffffffL
+
+    cmp-long p0, v2, v4
+
+    const-wide/16 v4, 0x1
+
+    if-gez p0, :cond_1
+
+    add-long/2addr v2, v4
+
+    sget-object p0, Lg2c;->b:Ld3;
+
+    invoke-virtual {p0, v0, v1, v2, v3}, Lg2c;->f(JJ)J
+
+    move-result-wide v0
+
+    return-wide v0
+
+    :cond_1
+    const-wide/high16 v6, -0x8000000000000000L
+
+    cmp-long p0, v0, v6
+
+    if-lez p0, :cond_2
+
+    sub-long/2addr v0, v4
+
+    sget-object p0, Lg2c;->b:Ld3;
+
+    invoke-virtual {p0, v0, v1, v2, v3}, Lg2c;->f(JJ)J
+
+    move-result-wide v0
+
+    add-long/2addr v0, v4
+
     return-wide v0
 
     :cond_2
+    sget-object p0, Lg2c;->b:Ld3;
+
+    invoke-virtual {p0}, Ld3;->d()J
+
+    move-result-wide v0
+
+    return-wide v0
+
+    :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;

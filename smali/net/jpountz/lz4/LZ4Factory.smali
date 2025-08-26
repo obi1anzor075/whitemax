@@ -27,7 +27,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/lang/String;)V
-    .locals 17
+    .locals 13
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/ClassNotFoundException;,
@@ -41,250 +41,242 @@
         }
     .end annotation
 
-    move-object/from16 v0, p0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object/from16 v1, p1
+    const/16 v0, 0x12
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    new-array v0, v0, [Lnet/jpountz/lz4/LZ4Compressor;
 
-    const/16 v2, 0x12
+    iput-object v0, p0, Lnet/jpountz/lz4/LZ4Factory;->highCompressors:[Lnet/jpountz/lz4/LZ4Compressor;
 
-    new-array v2, v2, [Lnet/jpountz/lz4/LZ4Compressor;
+    iput-object p1, p0, Lnet/jpountz/lz4/LZ4Factory;->impl:Ljava/lang/String;
 
-    iput-object v2, v0, Lnet/jpountz/lz4/LZ4Factory;->highCompressors:[Lnet/jpountz/lz4/LZ4Compressor;
+    const-string v1, "net.jpountz.lz4.LZ4"
 
-    iput-object v1, v0, Lnet/jpountz/lz4/LZ4Factory;->impl:Ljava/lang/String;
+    const-string v2, "Compressor"
 
-    const-string v3, "net.jpountz.lz4.LZ4"
-
-    const-string v4, "Compressor"
-
-    invoke-static {v3, v1, v4}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v5}, Lnet/jpountz/lz4/LZ4Factory;->classInstance(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lnet/jpountz/lz4/LZ4Compressor;
-
-    iput-object v5, v0, Lnet/jpountz/lz4/LZ4Factory;->fastCompressor:Lnet/jpountz/lz4/LZ4Compressor;
-
-    const-string v5, "net.jpountz.lz4.LZ4HC"
-
-    invoke-static {v5, v1, v4}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lnet/jpountz/lz4/LZ4Factory;->classInstance(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lnet/jpountz/lz4/LZ4Compressor;
-
-    iput-object v4, v0, Lnet/jpountz/lz4/LZ4Factory;->highCompressor:Lnet/jpountz/lz4/LZ4Compressor;
-
-    const-string v5, "FastDecompressor"
-
-    invoke-static {v3, v1, v5}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v5}, Lnet/jpountz/lz4/LZ4Factory;->classInstance(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lnet/jpountz/lz4/LZ4FastDecompressor;
-
-    iput-object v5, v0, Lnet/jpountz/lz4/LZ4Factory;->fastDecompressor:Lnet/jpountz/lz4/LZ4FastDecompressor;
-
-    const-string v5, "SafeDecompressor"
-
-    invoke-static {v3, v1, v5}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lnet/jpountz/lz4/LZ4Factory;->classInstance(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lnet/jpountz/lz4/LZ4SafeDecompressor;
-
-    iput-object v1, v0, Lnet/jpountz/lz4/LZ4Factory;->safeDecompressor:Lnet/jpountz/lz4/LZ4SafeDecompressor;
-
-    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    filled-new-array {v3}, [Ljava/lang/Class;
+    invoke-static {v1, p1, v2}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v1, v3}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    invoke-static {v3}, Lnet/jpountz/lz4/LZ4Factory;->classInstance(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v3
 
-    const/16 v3, 0x9
+    check-cast v3, Lnet/jpountz/lz4/LZ4Compressor;
 
-    aput-object v4, v2, v3
+    iput-object v3, p0, Lnet/jpountz/lz4/LZ4Factory;->fastCompressor:Lnet/jpountz/lz4/LZ4Compressor;
 
-    const/4 v2, 0x1
+    const-string v3, "net.jpountz.lz4.LZ4HC"
 
-    move v4, v2
-
-    :goto_0
-    const/16 v5, 0x11
-
-    if-gt v4, v5, :cond_1
-
-    if-ne v4, v3, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    iget-object v5, v0, Lnet/jpountz/lz4/LZ4Factory;->highCompressors:[Lnet/jpountz/lz4/LZ4Compressor;
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    filled-new-array {v6}, [Ljava/lang/Object;
-
-    move-result-object v6
-
-    invoke-virtual {v1, v6}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lnet/jpountz/lz4/LZ4Compressor;
-
-    aput-object v6, v5, v4
-
-    :goto_1
-    add-int/2addr v4, v2
-
-    goto :goto_0
-
-    :cond_1
-    const/16 v1, 0x14
-
-    new-array v1, v1, [B
-
-    fill-array-data v1, :array_0
-
-    iget-object v2, v0, Lnet/jpountz/lz4/LZ4Factory;->fastCompressor:Lnet/jpountz/lz4/LZ4Compressor;
-
-    iget-object v3, v0, Lnet/jpountz/lz4/LZ4Factory;->highCompressor:Lnet/jpountz/lz4/LZ4Compressor;
-
-    filled-new-array {v2, v3}, [Lnet/jpountz/lz4/LZ4Compressor;
+    invoke-static {v3, p1, v2}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v9
-
-    :goto_2
-    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v2}, Lnet/jpountz/lz4/LZ4Factory;->classInstance(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lnet/jpountz/lz4/LZ4Compressor;
 
-    const/16 v10, 0x14
+    iput-object v2, p0, Lnet/jpountz/lz4/LZ4Factory;->highCompressor:Lnet/jpountz/lz4/LZ4Compressor;
 
-    invoke-virtual {v2, v10}, Lnet/jpountz/lz4/LZ4Compressor;->maxCompressedLength(I)I
+    const-string v3, "FastDecompressor"
 
-    move-result v8
+    invoke-static {v1, p1, v3}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    new-array v12, v8, [B
+    move-result-object v3
 
-    const/4 v4, 0x0
+    invoke-static {v3}, Lnet/jpountz/lz4/LZ4Factory;->classInstance(Ljava/lang/String;)Ljava/lang/Object;
 
-    const/4 v7, 0x0
+    move-result-object v3
 
-    move-object v3, v1
+    check-cast v3, Lnet/jpountz/lz4/LZ4FastDecompressor;
 
-    move v5, v10
+    iput-object v3, p0, Lnet/jpountz/lz4/LZ4Factory;->fastDecompressor:Lnet/jpountz/lz4/LZ4FastDecompressor;
 
-    move-object v6, v12
+    const-string v3, "SafeDecompressor"
 
-    invoke-virtual/range {v2 .. v8}, Lnet/jpountz/lz4/LZ4Compressor;->compress([BII[BII)I
+    invoke-static {v1, p1, v3}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result v14
+    move-result-object p1
 
-    new-array v2, v10, [B
+    invoke-static {p1}, Lnet/jpountz/lz4/LZ4Factory;->classInstance(Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v3, v0, Lnet/jpountz/lz4/LZ4Factory;->fastDecompressor:Lnet/jpountz/lz4/LZ4FastDecompressor;
+    move-result-object p1
+
+    check-cast p1, Lnet/jpountz/lz4/LZ4SafeDecompressor;
+
+    iput-object p1, p0, Lnet/jpountz/lz4/LZ4Factory;->safeDecompressor:Lnet/jpountz/lz4/LZ4SafeDecompressor;
+
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p1
+
+    sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    filled-new-array {v1}, [Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v1}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+
+    move-result-object p1
+
+    const/16 v1, 0x9
+
+    aput-object v2, v0, v1
+
+    const/4 v0, 0x1
+
+    :goto_0
+    const/16 v2, 0x11
+
+    if-gt v0, v2, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    iget-object v2, p0, Lnet/jpountz/lz4/LZ4Factory;->highCompressors:[Lnet/jpountz/lz4/LZ4Compressor;
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    filled-new-array {v3}, [Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v3}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lnet/jpountz/lz4/LZ4Compressor;
+
+    aput-object v3, v2, v0
+
+    :goto_1
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    const/16 p1, 0x14
+
+    new-array v1, p1, [B
+
+    fill-array-data v1, :array_0
+
+    iget-object p1, p0, Lnet/jpountz/lz4/LZ4Factory;->fastCompressor:Lnet/jpountz/lz4/LZ4Compressor;
+
+    iget-object v0, p0, Lnet/jpountz/lz4/LZ4Factory;->highCompressor:Lnet/jpountz/lz4/LZ4Compressor;
+
+    filled-new-array {p1, v0}, [Lnet/jpountz/lz4/LZ4Compressor;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_2
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lnet/jpountz/lz4/LZ4Compressor;
+
+    const/16 v3, 0x14
+
+    invoke-virtual {v0, v3}, Lnet/jpountz/lz4/LZ4Compressor;->maxCompressedLength(I)I
+
+    move-result v6
+
+    new-array v4, v6, [B
+
+    const/4 v2, 0x0
 
     const/4 v5, 0x0
 
-    move-object v4, v12
+    invoke-virtual/range {v0 .. v6}, Lnet/jpountz/lz4/LZ4Compressor;->compress([BII[BII)I
 
-    move-object v6, v2
+    move-result v10
 
-    move v8, v10
+    move v7, v3
 
-    invoke-virtual/range {v3 .. v8}, Lnet/jpountz/lz4/LZ4FastDecompressor;->decompress([BI[BII)I
+    move-object v3, v4
 
-    invoke-static {v1, v2}, Ljava/util/Arrays;->equals([B[B)Z
+    new-array v5, v7, [B
 
-    move-result v3
+    iget-object v2, p0, Lnet/jpountz/lz4/LZ4Factory;->fastDecompressor:Lnet/jpountz/lz4/LZ4FastDecompressor;
 
-    if-eqz v3, :cond_3
+    const/4 v4, 0x0
 
-    const/4 v3, 0x0
+    const/4 v6, 0x0
 
-    invoke-static {v2, v3}, Ljava/util/Arrays;->fill([BB)V
+    invoke-virtual/range {v2 .. v7}, Lnet/jpountz/lz4/LZ4FastDecompressor;->decompress([BI[BII)I
 
-    iget-object v11, v0, Lnet/jpountz/lz4/LZ4Factory;->safeDecompressor:Lnet/jpountz/lz4/LZ4SafeDecompressor;
+    move v0, v7
 
-    const/4 v13, 0x0
-
-    const/16 v16, 0x0
-
-    move-object v15, v2
-
-    invoke-virtual/range {v11 .. v16}, Lnet/jpountz/lz4/LZ4SafeDecompressor;->decompress([BII[BI)I
-
-    move-result v3
-
-    if-ne v3, v10, :cond_2
-
-    invoke-static {v1, v2}, Ljava/util/Arrays;->equals([B[B)Z
+    invoke-static {v1, v5}, Ljava/util/Arrays;->equals([B[B)Z
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_3
+
+    const/4 v2, 0x0
+
+    invoke-static {v5, v2}, Ljava/util/Arrays;->fill([BB)V
+
+    iget-object v7, p0, Lnet/jpountz/lz4/LZ4Factory;->safeDecompressor:Lnet/jpountz/lz4/LZ4SafeDecompressor;
+
+    const/4 v9, 0x0
+
+    const/4 v12, 0x0
+
+    move-object v8, v3
+
+    move-object v11, v5
+
+    invoke-virtual/range {v7 .. v12}, Lnet/jpountz/lz4/LZ4SafeDecompressor;->decompress([BII[BI)I
+
+    move-result v2
+
+    if-ne v2, v0, :cond_2
+
+    invoke-static {v1, v5}, Ljava/util/Arrays;->equals([B[B)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
 
     goto :goto_2
 
     :cond_2
-    new-instance v0, Ljava/lang/AssertionError;
+    new-instance p0, Ljava/lang/AssertionError;
 
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+    invoke-direct {p0}, Ljava/lang/AssertionError;-><init>()V
 
-    throw v0
+    throw p0
 
     :cond_3
-    new-instance v0, Ljava/lang/AssertionError;
+    new-instance p0, Ljava/lang/AssertionError;
 
-    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+    invoke-direct {p0}, Ljava/lang/AssertionError;-><init>()V
 
-    throw v0
+    throw p0
 
     :cond_4
     return-void
@@ -373,12 +365,12 @@
 .method public static fastestInstance()Lnet/jpountz/lz4/LZ4Factory;
     .locals 2
 
-    const-class v0, Lbg9;
+    const-class v0, Lsk9;
 
     monitor-enter v0
 
     :try_start_0
-    sget-boolean v1, Lbg9;->a:Z
+    sget-boolean v1, Lsk9;->a:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
@@ -386,7 +378,7 @@
 
     if-nez v1, :cond_1
 
-    const-class v0, Lbg9;
+    const-class v0, Lsk9;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
@@ -439,7 +431,7 @@
 .method public static fastestJavaInstance()Lnet/jpountz/lz4/LZ4Factory;
     .locals 1
 
-    sget-boolean v0, Lpze;->b:Z
+    sget-boolean v0, Lqaf;->b:Z
 
     if-eqz v0, :cond_0
 
@@ -511,6 +503,8 @@
     move-result-object v0
 
     invoke-virtual {p0, v0}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+
+    sget-object p0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     new-instance v0, Ljava/lang/StringBuilder;
 

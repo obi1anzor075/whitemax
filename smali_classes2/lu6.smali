@@ -1,130 +1,87 @@
 .class public final Llu6;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
 
 
 # instance fields
-.field public X:I
+.field public final a:La5b;
 
-.field public final synthetic Y:Lbv6;
+.field public final b:Lje7;
 
-.field public final synthetic Z:Lo46;
+.field public final c:Lje7;
+
+.field public final d:Lje7;
 
 
 # direct methods
-.method public constructor <init>(Lbv6;Lo46;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(La5b;Lje7;Lje7;Lje7;)V
     .locals 0
 
-    iput-object p1, p0, Llu6;->Y:Lbv6;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Llu6;->Z:Lo46;
+    iput-object p1, p0, Llu6;->a:La5b;
 
-    const/4 p1, 0x2
+    iput-object p2, p0, Llu6;->b:Lje7;
 
-    invoke-direct {p0, p1, p3}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p3, p0, Llu6;->c:Lje7;
+
+    iput-object p4, p0, Llu6;->d:Lje7;
 
     return-void
 .end method
 
+.method public static a(Landroid/net/Uri;)Ljava/lang/String;
+    .locals 3
 
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+    invoke-virtual {p0}, Landroid/net/Uri;->isHierarchical()Z
 
-    check-cast p1, Lou3;
+    move-result v0
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    if-nez v0, :cond_0
 
-    invoke-virtual {p0, p1, p2}, Llu6;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Llu6;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Llu6;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
-
-    new-instance p1, Llu6;
-
-    iget-object v0, p0, Llu6;->Y:Lbv6;
-
-    iget-object p0, p0, Llu6;->Z:Lo46;
-
-    invoke-direct {p1, v0, p0, p2}, Llu6;-><init>(Lbv6;Lo46;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
-
-    sget-object v0, Lpu3;->a:Lpu3;
-
-    iget v1, p0, Llu6;->X:I
-
-    iget-object v2, p0, Llu6;->Z:Lo46;
-
-    const/4 v3, 0x1
-
-    if-eqz v1, :cond_1
-
-    if-ne v1, v3, :cond_0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto :goto_0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    const-string v0, "bid"
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    invoke-virtual {p0, v0}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
-    throw p0
+    const-string v1, "t"
+
+    invoke-virtual {p0, v1}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    const-string p0, "ok-image-cache:bid="
+
+    const-string v2, "&t="
+
+    invoke-static {p0, v0, v2, v1}, Lv04;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 
     :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, v2, Lo46;->a:Ln46;
-
-    iput v3, p0, Llu6;->X:I
-
-    iget-object v1, p0, Llu6;->Y:Lbv6;
-
-    invoke-static {p1, v1, p0}, Lbv6;->a(Ln46;Lbv6;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v0, :cond_2
-
-    return-object v0
-
-    :cond_2
-    :goto_0
-    check-cast p1, Ljava/lang/Number;
-
-    invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
-
-    move-result p0
-
-    const/16 p1, 0xd
-
-    const/4 v0, 0x0
-
-    invoke-static {v2, p0, v0, p1}, Lo46;->a(Lo46;IZI)Lo46;
+    invoke-virtual {p0}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object p0
 

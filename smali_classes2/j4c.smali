@@ -1,318 +1,286 @@
 .class public final Lj4c;
-.super Ll5e;
+.super Lije;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lj5c;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public X:Lx56;
 
-.field public final synthetic Y:Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
+.field public Y:Lo3c;
+
+.field public Z:Z
+
+.field public o:Z
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
-    iput-object p2, p0, Lj4c;->Y:Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
+    new-instance v0, Lj2a;
 
-    const/4 p2, 0x2
+    const/16 v1, 0x1c
 
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, v1}, Lj2a;-><init>(I)V
+
+    invoke-direct {p0, v0}, Lije;-><init>(Lx56;)V
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lj4c;->o:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final f(Lfw8;Z)V
+    .locals 2
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0}, Lije;->O()Landroid/view/View;
 
-    invoke-virtual {p0, p1, p2}, Lj4c;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    move-result-object v0
 
-    move-result-object p0
+    check-cast v0, Lt3c;
 
-    check-cast p0, Lj4c;
+    iget-object v1, p0, Lj4c;->X:Lx56;
 
-    sget-object p1, Ljue;->a:Ljue;
+    invoke-virtual {v0, v1}, Lt3c;->setOnChipClickListener(Lx56;)V
 
-    invoke-virtual {p0, p1}, Lj4c;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, p0, Lj4c;->Y:Lo3c;
 
-    return-object p1
-.end method
+    if-eqz v0, :cond_0
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
-
-    new-instance v0, Lj4c;
-
-    iget-object p0, p0, Lj4c;->Y:Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
-
-    invoke-direct {v0, p2, p0}, Lj4c;-><init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;)V
-
-    iput-object p1, v0, Lj4c;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 13
-
-    const/4 v0, 0x1
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lj4c;->X:Ljava/lang/Object;
-
-    check-cast p1, Ll3c;
-
-    sget-object v1, Lj3c;->a:Lj3c;
-
-    invoke-static {p1, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    iget-object p0, p0, Lj4c;->Y:Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
-
-    if-eqz v1, :cond_2
-
-    sget-object p1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->m1:[Lk77;
-
-    iget-object p1, p0, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->o:Lt97;
-
-    invoke-interface {p1}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lqna;
-
-    sget-object v2, Lqna;->h:[Ljava/lang/String;
-
-    invoke-virtual {p1, v2}, Lqna;->b([Ljava/lang/String;)Z
-
-    move-result p1
-
-    iget-object v7, p0, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->o:Lt97;
-
-    if-nez p1, :cond_1
-
-    invoke-interface {v7}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lqna;
-
-    new-instance v1, Ljrf;
-
-    invoke-direct {v1, p0, v0}, Ljrf;-><init>(Lone/me/sdk/arch/Widget;I)V
-
-    sget v5, Lbaa;->c:I
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget v4, Liub;->permissions_audio_title:I
-
-    sget v6, Lbaa;->g:I
-
-    invoke-static {v1, v2}, Lqna;->i(Ljrf;[Ljava/lang/String;)Z
-
-    move-result v3
-
-    const/16 v8, 0xa0
-
-    if-eqz v3, :cond_0
-
-    move v3, v8
-
-    invoke-virtual/range {v1 .. v6}, Ljrf;->c([Ljava/lang/String;IIII)V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p1, v1, v2, v8}, Lqna;->f(Ljrf;[Ljava/lang/String;I)V
-
-    :cond_1
-    :goto_0
-    invoke-interface {v7}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lqna;
-
-    sget-object v1, Lqna;->l:[Ljava/lang/String;
-
-    invoke-virtual {p1, v1}, Lqna;->b([Ljava/lang/String;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_6
-
-    invoke-interface {v7}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lqna;
-
-    new-instance v1, Ljrf;
-
-    invoke-direct {v1, p0, v0}, Ljrf;-><init>(Lone/me/sdk/arch/Widget;I)V
-
-    invoke-virtual {p1, v1}, Lqna;->h(Ljrf;)V
-
-    goto/16 :goto_3
-
-    :cond_2
-    sget-object v1, Lk3c;->a:Lk3c;
-
-    invoke-static {p1, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_7
-
-    sget-object p1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->m1:[Lk77;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object p1, Lone/me/sdk/bottomsheet/BottomSheetWidget;->B0:[Lk77;
-
-    sget p1, Lz9a;->d:I
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x6
-
-    invoke-static {p1, v2, v1}, Lrf0;->c(IILandroid/os/Bundle;)Ljc3;
-
-    move-result-object p1
-
-    sget v2, Lz9a;->c:I
-
-    new-instance v3, Lhge;
-
-    invoke-direct {v3, v2}, Lhge;-><init>(I)V
-
-    invoke-virtual {p1, v3}, Ljc3;->f(Lmge;)V
-
-    new-instance v2, Lkc3;
-
-    sget v3, Lz9a;->a:I
-
-    new-instance v4, Lhge;
-
-    invoke-direct {v4, v3}, Lhge;-><init>(I)V
-
-    const/4 v3, 0x3
-
-    const/4 v5, 0x0
-
-    invoke-direct {v2, v0, v4, v3, v5}, Lkc3;-><init>(ILmge;IZ)V
-
-    filled-new-array {v2}, [Lkc3;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v2}, Ljc3;->a([Lkc3;)V
-
-    new-instance v2, Lkc3;
-
-    sget v3, Lz9a;->b:I
-
-    new-instance v4, Lhge;
-
-    invoke-direct {v4, v3}, Lhge;-><init>(I)V
-
-    const/4 v3, 0x2
-
-    invoke-direct {v2, v3, v4, v3, v5}, Lkc3;-><init>(ILmge;IZ)V
-
-    filled-new-array {v2}, [Lkc3;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v2}, Ljc3;->a([Lkc3;)V
-
-    invoke-virtual {p1}, Ljc3;->e()Lone/me/sdk/bottomsheet/ConfirmationBottomSheet;
-
-    move-result-object v7
-
-    invoke-virtual {v7, p0}, Lrr3;->setTargetController(Lrr3;)V
-
-    move-object p1, p0
-
-    :goto_1
-    invoke-virtual {p1}, Lrr3;->getParentController()Lrr3;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_3
-
-    invoke-virtual {p1}, Lrr3;->getParentController()Lrr3;
-
-    move-result-object p1
-
-    goto :goto_1
-
-    :cond_3
-    instance-of v2, p1, Lygc;
-
-    if-eqz v2, :cond_4
-
-    check-cast p1, Lygc;
-
-    goto :goto_2
-
-    :cond_4
-    move-object p1, v1
-
-    :goto_2
-    if-eqz p1, :cond_5
-
-    invoke-interface {p1}, Lygc;->S()Lsgc;
+    invoke-virtual {p0}, Lije;->O()Landroid/view/View;
 
     move-result-object v1
 
-    :cond_5
-    invoke-virtual {v7, p0}, Lone/me/sdk/bottomsheet/BottomSheetWidget;->y0(Lone/me/sdk/arch/Widget;)V
+    check-cast v1, Lt3c;
 
-    if-eqz v1, :cond_6
+    invoke-virtual {v1, v0}, Lt3c;->setChipObserver(Lo3c;)V
 
-    new-instance p0, Lvgc;
+    :cond_0
+    invoke-virtual {p0}, Lije;->O()Landroid/view/View;
 
-    const/4 v9, 0x0
+    move-result-object v0
 
-    const/4 v12, -0x1
+    check-cast v0, Lt3c;
 
-    const/4 v8, 0x0
+    iget-boolean v1, p0, Lj4c;->Z:Z
 
-    const/4 v10, 0x0
+    invoke-virtual {v0, v1}, Lt3c;->setStackFromEnd(Z)V
 
-    const/4 v11, 0x0
+    invoke-virtual {p0}, Lije;->O()Landroid/view/View;
 
-    move-object v6, p0
+    move-result-object v0
 
-    invoke-direct/range {v6 .. v12}, Lvgc;-><init>(Lrr3;Ljava/lang/String;Lwr3;Lwr3;ZI)V
+    check-cast v0, Lt3c;
 
-    const-string p1, "BottomSheetWidget"
+    iget-boolean v1, p0, Lj4c;->o:Z
 
-    invoke-static {v5, p0, v0, p1}, Lrf0;->k(ZLvgc;ZLjava/lang/String;)V
+    invoke-virtual {v0, v1}, Lt3c;->setIncoming(Z)V
 
-    invoke-virtual {v1, p0}, Lsgc;->G(Lvgc;)V
+    invoke-virtual {p0}, Lije;->O()Landroid/view/View;
 
-    :cond_6
-    :goto_3
-    sget-object p0, Ljue;->a:Ljue;
+    move-result-object v0
 
-    return-object p0
+    check-cast v0, Lt3c;
 
-    :cond_7
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+    invoke-virtual {v0, p1, p2}, Lt3c;->f(Lfw8;Z)V
 
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+    invoke-virtual {p0}, Lije;->t()V
+
+    return-void
+.end method
+
+.method public final k(Lcs0;Z)V
+    .locals 5
+
+    iget-object v0, p0, Lije;->c:Ljava/lang/Object;
+
+    invoke-interface {v0}, Lje7;->a()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    invoke-interface {v0}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lt3c;
+
+    invoke-virtual {p0}, Lije;->O()Landroid/view/View;
+
+    move-result-object p0
+
+    check-cast p0, Lt3c;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const/4 v0, 0x0
+
+    :goto_0
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_2
+
+    add-int/lit8 v1, v0, 0x1
+
+    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    check-cast v0, Lr3c;
+
+    iget-object v2, p1, Lcs0;->d:Lfs0;
+
+    iget-object v2, v2, Lfs0;->a:Lgs0;
+
+    iget-object v3, p1, Lcs0;->a:Lvr0;
+
+    iget-object v3, v3, Lvr0;->c:Las0;
+
+    if-eqz p2, :cond_0
+
+    iget v4, v3, Las0;->a:I
+
+    iput v4, v0, Lr3c;->o0:I
+
+    iget v3, v3, Las0;->b:I
+
+    iput v3, v0, Lr3c;->p0:I
+
+    iget v3, v2, Lgs0;->a:I
+
+    iput v3, v0, Lr3c;->q0:I
+
+    iget v2, v2, Lgs0;->b:I
+
+    iput v2, v0, Lr3c;->r0:I
+
+    goto :goto_1
+
+    :cond_0
+    iget v4, v3, Las0;->c:I
+
+    iput v4, v0, Lr3c;->o0:I
+
+    iget v3, v3, Las0;->d:I
+
+    iput v3, v0, Lr3c;->p0:I
+
+    iget v3, v2, Lgs0;->c:I
+
+    iput v3, v0, Lr3c;->q0:I
+
+    iget v2, v2, Lgs0;->d:I
+
+    iput v2, v0, Lr3c;->r0:I
+
+    :goto_1
+    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_1
+    new-instance p0, Ljava/lang/IndexOutOfBoundsException;
+
+    invoke-direct {p0}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
 
     throw p0
+
+    :cond_2
+    return-void
+.end method
+
+.method public final q(Z)V
+    .locals 2
+
+    iget-object v0, p0, Lije;->c:Ljava/lang/Object;
+
+    invoke-interface {v0}, Lje7;->a()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lt3c;
+
+    invoke-virtual {p0}, Lije;->O()Landroid/view/View;
+
+    move-result-object p0
+
+    check-cast p0, Lt3c;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0, p1}, Lt3c;->f(Lfw8;Z)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final setChipObserver(Lo3c;)V
+    .locals 1
+
+    iget-object v0, p0, Lije;->c:Ljava/lang/Object;
+
+    invoke-interface {v0}, Lje7;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lije;->O()Landroid/view/View;
+
+    move-result-object p0
+
+    check-cast p0, Lt3c;
+
+    invoke-virtual {p0, p1}, Lt3c;->setChipObserver(Lo3c;)V
+
+    return-void
+
+    :cond_0
+    iput-object p1, p0, Lj4c;->Y:Lo3c;
+
+    return-void
+.end method
+
+.method public final setIsIncoming(Z)V
+    .locals 0
+
+    iput-boolean p1, p0, Lj4c;->o:Z
+
+    return-void
+.end method
+
+.method public final setOnClickListener(Lx56;)V
+    .locals 0
+
+    iput-object p1, p0, Lj4c;->X:Lx56;
+
+    return-void
+.end method
+
+.method public final setStackFromEnd(Z)V
+    .locals 0
+
+    iput-boolean p1, p0, Lj4c;->Z:Z
+
+    return-void
 .end method

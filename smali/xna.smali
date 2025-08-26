@@ -3,562 +3,453 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lqse;
+.implements Lyf1;
+.implements Lzn1;
+
+
+# static fields
+.field public static final c:Lxna;
 
 
 # instance fields
-.field public final a:Lxs4;
+.field public final a:Lyf1;
 
-.field public final b:Lwx1;
-
-.field public c:I
-
-.field public d:I
-
-.field public e:Lbke;
-
-.field public f:Z
-
-.field public g:Z
-
-.field public h:Z
-
-.field public i:I
-
-.field public j:I
-
-.field public k:Z
-
-.field public l:J
+.field public final b:Lzn1;
 
 
 # direct methods
-.method public constructor <init>(Lxs4;)V
-    .locals 4
+.method static constructor <clinit>()V
+    .locals 9
+
+    new-instance v0, Lxna;
+
+    invoke-static {}, Leoa;->a()Lxf1;
+
+    move-result-object v1
+
+    new-instance v2, Lcaf;
+
+    const-string v6, ""
+
+    const/4 v7, 0x1
+
+    const-wide/16 v3, 0x0
+
+    const-string v5, ""
+
+    const/4 v8, 0x0
+
+    invoke-direct/range {v2 .. v8}, Lcaf;-><init>(JLjava/lang/String;Ljava/lang/CharSequence;ZLjava/lang/String;)V
+
+    invoke-direct {v0, v1, v2}, Lxna;-><init>(Lyf1;Lzn1;)V
+
+    sput-object v0, Lxna;->c:Lxna;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lyf1;Lzn1;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lxna;->a:Lxs4;
+    iput-object p1, p0, Lxna;->a:Lyf1;
 
-    new-instance p1, Lwx1;
-
-    const/16 v0, 0xa
-
-    new-array v1, v0, [B
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    invoke-direct {p1, v1, v0, v2, v3}, Lwx1;-><init>([BIIB)V
-
-    iput-object p1, p0, Lxna;->b:Lwx1;
-
-    const/4 p1, 0x0
-
-    iput p1, p0, Lxna;->c:I
+    iput-object p2, p0, Lxna;->b:Lzn1;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lxna;->c:I
-
-    iput v0, p0, Lxna;->d:I
-
-    iput-boolean v0, p0, Lxna;->h:Z
-
-    iget-object p0, p0, Lxna;->a:Lxs4;
-
-    invoke-interface {p0}, Lxs4;->a()V
-
-    return-void
-.end method
-
-.method public final b(Lbke;Lh75;Lpse;)V
+.method public final a()Z
     .locals 0
 
-    iput-object p1, p0, Lxna;->e:Lbke;
+    iget-object p0, p0, Lxna;->a:Lyf1;
 
-    iget-object p0, p0, Lxna;->a:Lxs4;
+    invoke-interface {p0}, Lyf1;->a()Z
 
-    invoke-interface {p0, p2, p3}, Lxs4;->l(Lh75;Lpse;)V
+    move-result p0
 
-    return-void
+    return p0
 .end method
 
-.method public final c(ILyze;)V
-    .locals 16
+.method public final b()Z
+    .locals 0
 
-    move-object/from16 v0, p0
+    iget-object p0, p0, Lxna;->a:Lyf1;
 
-    move-object/from16 v1, p2
+    invoke-interface {p0}, Lyf1;->b()Z
 
-    iget-object v2, v0, Lxna;->e:Lbke;
+    move-result p0
 
-    invoke-static {v2}, Lswb;->i(Ljava/lang/Object;)V
+    return p0
+.end method
 
-    and-int/lit8 v2, p1, 0x1
+.method public final c()Z
+    .locals 0
 
-    const/4 v3, 0x0
+    iget-object p0, p0, Lxna;->b:Lzn1;
 
-    const/4 v4, 0x1
+    invoke-interface {p0}, Lzn1;->c()Z
 
-    iget-object v5, v0, Lxna;->a:Lxs4;
+    move-result p0
 
-    const/4 v6, 0x3
+    return p0
+.end method
 
-    const/4 v7, 0x2
+.method public final d()J
+    .locals 2
 
-    if-eqz v2, :cond_2
+    iget-object p0, p0, Lxna;->b:Lzn1;
 
-    iget v2, v0, Lxna;->c:I
+    invoke-interface {p0}, Lzn1;->d()J
 
-    if-eqz v2, :cond_1
+    move-result-wide v0
 
-    if-eq v2, v4, :cond_1
+    return-wide v0
+.end method
 
-    if-eq v2, v7, :cond_1
+.method public final e()Z
+    .locals 0
 
-    if-ne v2, v6, :cond_0
+    iget-object p0, p0, Lxna;->a:Lyf1;
 
-    invoke-interface {v5}, Lxs4;->i()V
+    invoke-interface {p0}, Lyf1;->e()Z
 
-    goto :goto_0
+    move-result p0
+
+    return p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
 
     :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
+    instance-of v1, p1, Lxna;
 
-    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+    const/4 v2, 0x0
 
-    throw v0
+    if-nez v1, :cond_1
+
+    return v2
 
     :cond_1
-    :goto_0
-    iput v4, v0, Lxna;->c:I
+    check-cast p1, Lxna;
 
-    iput v3, v0, Lxna;->d:I
+    iget-object v1, p0, Lxna;->a:Lyf1;
+
+    iget-object v3, p1, Lxna;->a:Lyf1;
+
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
 
     :cond_2
-    move/from16 v2, p1
+    iget-object p0, p0, Lxna;->b:Lzn1;
 
-    :goto_1
-    invoke-virtual/range {p2 .. p2}, Lyze;->c()I
+    iget-object p1, p1, Lxna;->b:Lzn1;
 
-    move-result v8
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-lez v8, :cond_11
+    move-result p0
 
-    iget v8, v0, Lxna;->c:I
+    if-nez p0, :cond_3
 
-    if-eqz v8, :cond_10
-
-    const/4 v9, -0x1
-
-    iget-object v10, v0, Lxna;->b:Lwx1;
-
-    if-eq v8, v4, :cond_b
-
-    if-eq v8, v7, :cond_7
-
-    if-ne v8, v6, :cond_6
-
-    invoke-virtual/range {p2 .. p2}, Lyze;->c()I
-
-    move-result v8
-
-    iget v10, v0, Lxna;->j:I
-
-    if-ne v10, v9, :cond_3
-
-    move v10, v3
-
-    goto :goto_2
+    return v2
 
     :cond_3
-    sub-int v10, v8, v10
-
-    :goto_2
-    if-lez v10, :cond_4
-
-    sub-int/2addr v8, v10
-
-    iget v10, v1, Lyze;->b:I
-
-    add-int/2addr v10, v8
-
-    invoke-virtual {v1, v10}, Lyze;->G(I)V
-
-    :cond_4
-    invoke-interface {v5, v1}, Lxs4;->g(Lyze;)V
-
-    iget v10, v0, Lxna;->j:I
-
-    if-eq v10, v9, :cond_5
-
-    sub-int/2addr v10, v8
-
-    iput v10, v0, Lxna;->j:I
-
-    if-nez v10, :cond_5
-
-    invoke-interface {v5}, Lxs4;->i()V
-
-    iput v4, v0, Lxna;->c:I
-
-    iput v3, v0, Lxna;->d:I
-
-    :cond_5
-    move v11, v7
-
-    goto/16 :goto_6
-
-    :cond_6
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
-
-    throw v0
-
-    :cond_7
-    const/16 v8, 0xa
-
-    iget v9, v0, Lxna;->i:I
-
-    invoke-static {v8, v9}, Ljava/lang/Math;->min(II)I
-
-    move-result v8
-
-    iget-object v9, v10, Lwx1;->b:[B
-
-    invoke-virtual {v0, v1, v9, v8}, Lxna;->d(Lyze;[BI)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_5
-
-    const/4 v8, 0x0
-
-    iget v9, v0, Lxna;->i:I
-
-    invoke-virtual {v0, v1, v8, v9}, Lxna;->d(Lyze;[BI)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_5
-
-    invoke-virtual {v10, v3}, Lwx1;->q(I)V
-
-    const-wide v8, -0x7fffffffffffffffL    # -4.9E-324
-
-    iput-wide v8, v0, Lxna;->l:J
-
-    iget-boolean v8, v0, Lxna;->f:Z
-
-    const/4 v9, 0x4
-
-    if-eqz v8, :cond_9
-
-    invoke-virtual {v10, v9}, Lwx1;->t(I)V
-
-    invoke-virtual {v10, v6}, Lwx1;->i(I)I
-
-    move-result v8
-
-    int-to-long v11, v8
-
-    const/16 v8, 0x1e
-
-    shl-long/2addr v11, v8
-
-    invoke-virtual {v10, v4}, Lwx1;->t(I)V
-
-    const/16 v13, 0xf
-
-    invoke-virtual {v10, v13}, Lwx1;->i(I)I
-
-    move-result v14
-
-    shl-int/2addr v14, v13
-
-    int-to-long v14, v14
-
-    or-long/2addr v11, v14
-
-    invoke-virtual {v10, v4}, Lwx1;->t(I)V
-
-    invoke-virtual {v10, v13}, Lwx1;->i(I)I
-
-    move-result v14
-
-    int-to-long v14, v14
-
-    or-long/2addr v11, v14
-
-    invoke-virtual {v10, v4}, Lwx1;->t(I)V
-
-    iget-boolean v14, v0, Lxna;->h:Z
-
-    if-nez v14, :cond_8
-
-    iget-boolean v14, v0, Lxna;->g:Z
-
-    if-eqz v14, :cond_8
-
-    invoke-virtual {v10, v9}, Lwx1;->t(I)V
-
-    invoke-virtual {v10, v6}, Lwx1;->i(I)I
-
-    move-result v14
-
-    int-to-long v14, v14
-
-    shl-long/2addr v14, v8
-
-    invoke-virtual {v10, v4}, Lwx1;->t(I)V
-
-    invoke-virtual {v10, v13}, Lwx1;->i(I)I
-
-    move-result v8
-
-    shl-int/2addr v8, v13
-
-    int-to-long v7, v8
-
-    or-long/2addr v7, v14
-
-    invoke-virtual {v10, v4}, Lwx1;->t(I)V
-
-    invoke-virtual {v10, v13}, Lwx1;->i(I)I
-
-    move-result v13
-
-    int-to-long v13, v13
-
-    or-long/2addr v7, v13
-
-    invoke-virtual {v10, v4}, Lwx1;->t(I)V
-
-    iget-object v10, v0, Lxna;->e:Lbke;
-
-    invoke-virtual {v10, v7, v8}, Lbke;->b(J)J
-
-    iput-boolean v4, v0, Lxna;->h:Z
-
-    :cond_8
-    iget-object v7, v0, Lxna;->e:Lbke;
-
-    invoke-virtual {v7, v11, v12}, Lbke;->b(J)J
-
-    move-result-wide v7
-
-    iput-wide v7, v0, Lxna;->l:J
-
-    :cond_9
-    iget-boolean v7, v0, Lxna;->k:Z
-
-    if-eqz v7, :cond_a
-
-    goto :goto_3
-
-    :cond_a
-    move v9, v3
-
-    :goto_3
-    or-int/2addr v2, v9
-
-    iget-wide v7, v0, Lxna;->l:J
-
-    invoke-interface {v5, v2, v7, v8}, Lxs4;->h(IJ)V
-
-    iput v6, v0, Lxna;->c:I
-
-    iput v3, v0, Lxna;->d:I
-
-    const/4 v7, 0x2
-
-    goto/16 :goto_1
-
-    :cond_b
-    iget-object v7, v10, Lwx1;->b:[B
-
-    const/16 v8, 0x9
-
-    invoke-virtual {v0, v1, v7, v8}, Lxna;->d(Lyze;[BI)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_f
-
-    invoke-virtual {v10, v3}, Lwx1;->q(I)V
-
-    const/16 v7, 0x18
-
-    invoke-virtual {v10, v7}, Lwx1;->i(I)I
-
-    move-result v7
-
-    if-eq v7, v4, :cond_c
-
-    iput v9, v0, Lxna;->j:I
-
-    move v7, v3
-
-    const/4 v11, 0x2
-
-    goto :goto_5
-
-    :cond_c
-    const/16 v7, 0x8
-
-    invoke-virtual {v10, v7}, Lwx1;->t(I)V
-
-    const/16 v8, 0x10
-
-    invoke-virtual {v10, v8}, Lwx1;->i(I)I
-
-    move-result v8
-
-    const/4 v11, 0x5
-
-    invoke-virtual {v10, v11}, Lwx1;->t(I)V
-
-    invoke-virtual {v10}, Lwx1;->h()Z
-
-    move-result v11
-
-    iput-boolean v11, v0, Lxna;->k:Z
-
-    const/4 v11, 0x2
-
-    invoke-virtual {v10, v11}, Lwx1;->t(I)V
-
-    invoke-virtual {v10}, Lwx1;->h()Z
-
-    move-result v12
-
-    iput-boolean v12, v0, Lxna;->f:Z
-
-    invoke-virtual {v10}, Lwx1;->h()Z
-
-    move-result v12
-
-    iput-boolean v12, v0, Lxna;->g:Z
-
-    const/4 v12, 0x6
-
-    invoke-virtual {v10, v12}, Lwx1;->t(I)V
-
-    invoke-virtual {v10, v7}, Lwx1;->i(I)I
-
-    move-result v7
-
-    iput v7, v0, Lxna;->i:I
-
-    if-nez v8, :cond_d
-
-    iput v9, v0, Lxna;->j:I
-
-    goto :goto_4
-
-    :cond_d
-    add-int/lit8 v8, v8, -0x3
-
-    sub-int/2addr v8, v7
-
-    iput v8, v0, Lxna;->j:I
-
-    if-gez v8, :cond_e
-
-    iput v9, v0, Lxna;->j:I
-
-    :cond_e
-    :goto_4
-    move v7, v11
-
-    :goto_5
-    iput v7, v0, Lxna;->c:I
-
-    iput v3, v0, Lxna;->d:I
-
-    goto :goto_6
-
-    :cond_f
-    const/4 v11, 0x2
-
-    goto :goto_6
-
-    :cond_10
-    move v11, v7
-
-    invoke-virtual/range {p2 .. p2}, Lyze;->c()I
-
-    move-result v7
-
-    invoke-virtual {v1, v7}, Lyze;->I(I)V
-
-    :goto_6
-    move v7, v11
-
-    goto/16 :goto_1
-
-    :cond_11
-    return-void
+    return v0
 .end method
 
-.method public final d(Lyze;[BI)Z
-    .locals 3
+.method public final f()Z
+    .locals 0
 
-    invoke-virtual {p1}, Lyze;->c()I
+    iget-object p0, p0, Lxna;->a:Lyf1;
+
+    invoke-interface {p0}, Lyf1;->f()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final g()Z
+    .locals 0
+
+    iget-object p0, p0, Lxna;->a:Lyf1;
+
+    invoke-interface {p0}, Lyf1;->g()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final getId()Lwf1;
+    .locals 0
+
+    iget-object p0, p0, Lxna;->a:Lyf1;
+
+    invoke-interface {p0}, Lyf1;->getId()Lwf1;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final getName()Ljava/lang/String;
+    .locals 0
+
+    iget-object p0, p0, Lxna;->b:Lzn1;
+
+    invoke-interface {p0}, Lzn1;->getName()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final h()Z
+    .locals 0
+
+    iget-object p0, p0, Lxna;->a:Lyf1;
+
+    invoke-interface {p0}, Lyf1;->h()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    iget-object v0, p0, Lxna;->a:Lyf1;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
-    iget v1, p0, Lxna;->d:I
+    mul-int/lit8 v0, v0, 0x1f
 
-    sub-int v1, p3, v1
+    iget-object p0, p0, Lxna;->b:Lzn1;
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    move-result v0
+    move-result p0
 
-    const/4 v1, 0x1
+    add-int/2addr p0, v0
 
-    if-gtz v0, :cond_0
+    return p0
+.end method
 
-    return v1
+.method public final i()Z
+    .locals 0
 
-    :cond_0
-    if-nez p2, :cond_1
+    iget-object p0, p0, Lxna;->a:Lyf1;
 
-    invoke-virtual {p1, v0}, Lyze;->I(I)V
+    invoke-interface {p0}, Lyf1;->i()Z
 
-    goto :goto_0
+    move-result p0
 
-    :cond_1
-    iget v2, p0, Lxna;->d:I
+    return p0
+.end method
 
-    invoke-virtual {p1, v2, p2, v0}, Lyze;->g(I[BI)V
+.method public final isConnected()Z
+    .locals 0
 
-    :goto_0
-    iget p1, p0, Lxna;->d:I
+    iget-object p0, p0, Lxna;->a:Lyf1;
 
-    add-int/2addr p1, v0
+    invoke-interface {p0}, Lyf1;->isConnected()Z
 
-    iput p1, p0, Lxna;->d:I
+    move-result p0
 
-    if-ne p1, p3, :cond_2
+    return p0
+.end method
 
-    goto :goto_1
+.method public final isScreenCaptureEnabled()Z
+    .locals 0
 
-    :cond_2
-    const/4 v1, 0x0
+    iget-object p0, p0, Lxna;->a:Lyf1;
 
-    :goto_1
-    return v1
+    invoke-interface {p0}, Lyf1;->isScreenCaptureEnabled()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final j()Ljava/lang/CharSequence;
+    .locals 0
+
+    iget-object p0, p0, Lxna;->b:Lzn1;
+
+    invoke-interface {p0}, Lzn1;->j()Ljava/lang/CharSequence;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final k()Z
+    .locals 0
+
+    iget-object p0, p0, Lxna;->a:Lyf1;
+
+    invoke-interface {p0}, Lyf1;->k()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final l()Z
+    .locals 0
+
+    iget-object p0, p0, Lxna;->a:Lyf1;
+
+    invoke-interface {p0}, Lyf1;->l()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final m()Z
+    .locals 0
+
+    iget-object p0, p0, Lxna;->a:Lyf1;
+
+    invoke-interface {p0}, Lyf1;->m()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final n()Z
+    .locals 0
+
+    iget-object p0, p0, Lxna;->a:Lyf1;
+
+    invoke-interface {p0}, Lyf1;->n()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final o()Z
+    .locals 0
+
+    iget-object p0, p0, Lxna;->a:Lyf1;
+
+    invoke-interface {p0}, Lyf1;->o()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final p()Ldmf;
+    .locals 0
+
+    iget-object p0, p0, Lxna;->a:Lyf1;
+
+    invoke-interface {p0}, Lyf1;->p()Ldmf;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final q()Ljava/lang/String;
+    .locals 0
+
+    iget-object p0, p0, Lxna;->b:Lzn1;
+
+    invoke-interface {p0}, Lzn1;->q()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final r()I
+    .locals 0
+
+    iget-object p0, p0, Lxna;->a:Lyf1;
+
+    invoke-interface {p0}, Lyf1;->r()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final s()Ldmf;
+    .locals 0
+
+    iget-object p0, p0, Lxna;->a:Lyf1;
+
+    invoke-interface {p0}, Lyf1;->s()Ldmf;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final t()Z
+    .locals 0
+
+    iget-object p0, p0, Lxna;->a:Lyf1;
+
+    invoke-interface {p0}, Lyf1;->t()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "ParticipantPair(member="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lxna;->a:Lyf1;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", user="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lxna;->b:Lzn1;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -1,3 +1,3 @@
-.class public abstract Lnyc;
-.super Lr1g;
+.class public interface abstract Lnyc;
+.super Ljava/lang/Object;
 .source "SourceFile"

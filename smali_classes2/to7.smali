@@ -1,91 +1,51 @@
-.class public final Lto7;
-.super Lkh0;
+.class public abstract synthetic Lto7;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final X:Lzb9;
-
-.field public final b:Z
-
-.field public final c:Z
-
-.field public final o:Z
+# static fields
+.field public static final synthetic $EnumSwitchMapping$0:[I
 
 
 # direct methods
-.method public constructor <init>(JZZZLzb9;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
-    invoke-direct {p0, p1, p2}, Lkh0;-><init>(J)V
+    invoke-static {}, Li92;->values()[Li92;
 
-    iput-boolean p3, p0, Lto7;->b:Z
+    move-result-object v0
 
-    iput-boolean p4, p0, Lto7;->c:Z
+    array-length v0, v0
 
-    iput-boolean p5, p0, Lto7;->o:Z
+    new-array v0, v0, [I
 
-    iput-object p6, p0, Lto7;->X:Lzb9;
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    :try_start_0
+    aput v1, v0, v2
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    const/4 v1, 0x2
+
+    :try_start_1
+    aput v1, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    :catch_1
+    const/4 v1, 0x3
+
+    :try_start_2
+    aput v1, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
+    :catch_2
+    sput-object v0, Lto7;->$EnumSwitchMapping$0:[I
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    iget-object v0, p0, Lto7;->X:Lzb9;
-
-    iget v0, v0, Lzb9;->d:I
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "LoginEvent(requestId="
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-wide v2, p0, Lkh0;->a:J
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v2, ", isFirstLogin="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v2, p0, Lto7;->b:Z
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v2, ", hasNewMessages="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v2, p0, Lto7;->c:Z
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v2, ", videoChatHistory="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean p0, p0, Lto7;->o:Z
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string p0, ", chats="
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

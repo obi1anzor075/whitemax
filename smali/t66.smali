@@ -3,9 +3,4 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ll77;
-
-
-# virtual methods
-.method public abstract c()[Ll77;
-.end method
+.implements Lq66;

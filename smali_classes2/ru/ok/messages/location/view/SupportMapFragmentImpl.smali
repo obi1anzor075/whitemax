@@ -22,6 +22,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -36,12 +37,12 @@
 
 
 # virtual methods
-.method public final w0(Landroid/os/Bundle;)V
+.method public final k0(Landroid/os/Bundle;)V
     .locals 0
 
-    invoke-super {p0, p1}, Lcom/google/android/gms/maps/SupportMapFragment;->w0(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lcom/google/android/gms/maps/SupportMapFragment;->k0(Landroid/os/Bundle;)V
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->V0()Landroid/content/Context;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->I0()Landroid/content/Context;
 
     return-void
 .end method

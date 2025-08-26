@@ -1,133 +1,82 @@
 .class public final Lwh7;
-.super Lxh7;
+.super Loj0;
 .source "SourceFile"
-
-# interfaces
-.implements Ldc7;
 
 
 # instance fields
-.field public final X:Lnc7;
+.field public h:I
 
-.field public final synthetic Y:Lyh7;
+.field public i:I
 
+.field public j:Z
 
-# direct methods
-.method public constructor <init>(Lyh7;Lnc7;Lcw9;)V
-    .locals 0
-
-    iput-object p1, p0, Lwh7;->Y:Lyh7;
-
-    invoke-direct {p0, p1, p3}, Lxh7;-><init>(Lyh7;Lcw9;)V
-
-    iput-object p2, p0, Lwh7;->X:Lnc7;
-
-    return-void
-.end method
+.field public k:I
 
 
 # virtual methods
-.method public final b()V
+.method public final a()V
     .locals 1
 
-    iget-object v0, p0, Lwh7;->X:Lnc7;
+    invoke-super {p0}, Loj0;->a()V
 
-    invoke-interface {v0}, Lnc7;->R()Lpc7;
+    iget v0, p0, Lwh7;->k:I
 
-    move-result-object v0
+    if-ltz v0, :cond_4
 
-    invoke-virtual {v0, p0}, Lpc7;->f(Ljc7;)V
+    iget v0, p0, Lwh7;->h:I
 
-    return-void
-.end method
+    if-nez v0, :cond_3
 
-.method public final c(Lnc7;)Z
-    .locals 0
+    iget v0, p0, Loj0;->b:I
 
-    iget-object p0, p0, Lwh7;->X:Lnc7;
+    if-lez v0, :cond_1
 
-    if-ne p0, p1, :cond_0
+    iget v0, p0, Loj0;->g:I
 
-    const/4 p0, 0x1
+    if-eqz v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    :goto_0
-    return p0
-.end method
+    const-string v0, "Rounded corners without gap are not supported in contiguous indeterminate animation."
 
-.method public final d()Z
-    .locals 1
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p0, Lwh7;->X:Lnc7;
-
-    invoke-interface {p0}, Lnc7;->R()Lpc7;
-
-    move-result-object p0
-
-    iget-object p0, p0, Lpc7;->d:Lob7;
-
-    sget-object v0, Lob7;->o:Lob7;
-
-    invoke-virtual {p0, v0}, Lob7;->a(Lob7;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final m(Lnc7;Lnb7;)V
-    .locals 2
-
-    iget-object p1, p0, Lwh7;->X:Lnc7;
-
-    invoke-interface {p1}, Lnc7;->R()Lpc7;
-
-    move-result-object p2
-
-    iget-object p2, p2, Lpc7;->d:Lob7;
-
-    sget-object v0, Lob7;->a:Lob7;
-
-    if-ne p2, v0, :cond_0
-
-    iget-object p1, p0, Lwh7;->Y:Lyh7;
-
-    iget-object p0, p0, Lxh7;->a:Lcw9;
-
-    invoke-virtual {p1, p0}, Lyh7;->j(Lcw9;)V
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eq v0, p2, :cond_1
-
-    invoke-virtual {p0}, Lwh7;->d()Z
-
-    move-result v0
-
-    invoke-virtual {p0, v0}, Lxh7;->a(Z)V
-
-    invoke-interface {p1}, Lnc7;->R()Lpc7;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lpc7;->d:Lob7;
-
-    move-object v1, v0
-
-    move-object v0, p2
-
-    move-object p2, v1
-
-    goto :goto_0
+    throw p0
 
     :cond_1
+    :goto_0
+    iget-object p0, p0, Loj0;->c:[I
+
+    array-length p0, p0
+
+    const/4 v0, 0x3
+
+    if-lt p0, v0, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "Contiguous indeterminate animation must be used with 3 or more indicator colors."
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_3
+    :goto_1
     return-void
+
+    :cond_4
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "Stop indicator size must be >= 0."
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

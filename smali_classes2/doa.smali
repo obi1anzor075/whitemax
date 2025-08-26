@@ -1,225 +1,123 @@
 .class public final Ldoa;
-.super Llbe;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lorg/webrtc/VideoSink;
 
 
 # instance fields
-.field public X:Ljava/lang/Long;
+.field public final a:Ljava/util/Map;
 
-.field public Y:I
-
-.field public c:Ljava/lang/String;
-
-.field public o:Luj3;
+.field public final b:Lsag;
 
 
 # direct methods
-.method public constructor <init>(Lws8;)V
+.method public constructor <init>(Ljava/util/concurrent/ConcurrentHashMap;Lsag;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Llbe;-><init>(Lws8;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldoa;->a:Ljava/util/Map;
+
+    iput-object p2, p0, Ldoa;->b:Lsag;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Lws8;Ljava/lang/String;)V
+.method public final onFrame(Lorg/webrtc/VideoFrame;)V
     .locals 2
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p1}, Lorg/webrtc/VideoFrame;->getRotatedWidth()I
 
-    const/4 v0, -0x1
+    move-result v0
 
-    invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
+    const/16 v1, 0x10
 
-    move-result v1
+    if-gt v0, v1, :cond_0
 
-    sparse-switch v1, :sswitch_data_0
+    invoke-virtual {p1}, Lorg/webrtc/VideoFrame;->getRotatedHeight()I
 
-    goto :goto_0
+    move-result v0
 
-    :sswitch_0
-    const-string v1, "tokenType"
+    if-gt v0, v1, :cond_0
 
-    invoke-virtual {p2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_0
-
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
-    const/4 v0, 0x3
+    invoke-virtual {p1}, Lorg/webrtc/VideoFrame;->getCompactParticipantId()Ljava/lang/Long;
 
-    goto :goto_0
+    move-result-object v0
 
-    :sswitch_1
-    const-string v1, "token"
+    if-nez v0, :cond_1
 
-    invoke-virtual {p2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_1
-
-    goto :goto_0
+    goto :goto_1
 
     :cond_1
-    const/4 v0, 0x2
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
-    goto :goto_0
+    move-result-wide v0
 
-    :sswitch_2
-    const-string v1, "phone"
+    long-to-int v0, v0
 
-    invoke-virtual {p2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    iget-object v1, p0, Ldoa;->b:Lsag;
 
-    move-result p2
+    iget-object v1, v1, Lsag;->b:Ljava/lang/Object;
 
-    if-nez p2, :cond_2
+    check-cast v1, Ljava/util/concurrent/ConcurrentHashMap;
 
-    goto :goto_0
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ldp1;
+
+    if-nez v0, :cond_2
+
+    goto :goto_1
 
     :cond_2
-    const/4 v0, 0x1
+    iget-object p0, p0, Ldoa;->a:Ljava/util/Map;
 
-    goto :goto_0
+    invoke-interface {p0, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :sswitch_3
-    const-string v1, "profile"
+    move-result-object p0
 
-    invoke-virtual {p2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    check-cast p0, Ljava/util/List;
 
-    move-result p2
+    if-nez p0, :cond_3
 
-    if-nez p2, :cond_3
-
-    goto :goto_0
+    goto :goto_1
 
     :cond_3
-    const/4 v0, 0x0
+    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
 
     :goto_0
-    packed-switch v0, :pswitch_data_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-virtual {p1}, Lws8;->z()V
+    move-result v0
 
-    goto :goto_1
+    if-eqz v0, :cond_4
 
-    :pswitch_0
-    invoke-static {p1}, Ljjd;->M(Lws8;)Ljava/lang/String;
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-static {p1}, Lus8;->v(Ljava/lang/String;)I
+    check-cast v0, Lorg/webrtc/VideoSink;
 
-    move-result p1
+    invoke-interface {v0, p1}, Lorg/webrtc/VideoSink;->onFrame(Lorg/webrtc/VideoFrame;)V
 
-    iput p1, p0, Ldoa;->Y:I
+    goto :goto_0
 
-    goto :goto_1
-
-    :pswitch_1
-    invoke-static {p1}, Ljjd;->M(Lws8;)Ljava/lang/String;
-
-    move-result-object p1
-
-    iput-object p1, p0, Ldoa;->c:Ljava/lang/String;
-
-    goto :goto_1
-
-    :pswitch_2
-    const-wide/16 v0, 0x0
-
-    invoke-static {p1, v0, v1}, Ljjd;->J(Lws8;J)J
-
-    move-result-wide p1
-
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p1
-
-    iput-object p1, p0, Ldoa;->X:Ljava/lang/Long;
-
-    goto :goto_1
-
-    :pswitch_3
-    invoke-static {p1}, Luj3;->e(Lws8;)Luj3;
-
-    move-result-object p1
-
-    iput-object p1, p0, Ldoa;->o:Luj3;
-
+    :cond_4
     :goto_1
     return-void
-
-    :sswitch_data_0
-    .sparse-switch
-        -0x12717657 -> :sswitch_3
-        0x65b3d6e -> :sswitch_2
-        0x696b9f9 -> :sswitch_1
-        0x86f18d3 -> :sswitch_0
-    .end sparse-switch
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 5
-
-    iget-object v0, p0, Ldoa;->c:Ljava/lang/String;
-
-    iget-object v1, p0, Ldoa;->o:Luj3;
-
-    iget-object v2, p0, Ldoa;->X:Ljava/lang/Long;
-
-    iget p0, p0, Ldoa;->Y:I
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "{token=\'"
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "\', profile="
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", phone="
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", tokenType="
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {p0}, Lus8;->q(I)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p0, "}"
-
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

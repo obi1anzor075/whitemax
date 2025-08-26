@@ -1,352 +1,177 @@
-.class public final synthetic Ls41;
+.class public final Ls41;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnLayoutChangeListener;
+.implements Lv41;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public final b:I
+
+.field public final c:I
+
+.field public final d:I
+
+.field public final e:Lhoe;
+
+.field public final f:Lhoe;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;)V
-    .locals 0
-
-    iput p1, p0, Ls41;->a:I
-
-    iput-object p2, p0, Ls41;->b:Ljava/lang/Object;
+.method public constructor <init>(Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ls41;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+
+    sget p1, Lp5a;->J:I
+
+    iput p1, p0, Ls41;->b:I
+
+    sget p1, Lo5a;->w0:I
+
+    iput p1, p0, Ls41;->c:I
+
+    sget p1, Lo5a;->J0:I
+
+    iput p1, p0, Ls41;->d:I
+
+    sget p1, Ls5a;->q2:I
+
+    new-instance v0, Lhoe;
+
+    invoke-direct {v0, p1}, Lhoe;-><init>(I)V
+
+    iput-object v0, p0, Ls41;->e:Lhoe;
+
+    iput-object v0, p0, Ls41;->f:Lhoe;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onLayoutChange(Landroid/view/View;IIIIIIII)V
-    .locals 1
+.method public final a()I
+    .locals 0
 
-    iget-object v0, p0, Ls41;->b:Ljava/lang/Object;
+    iget p0, p0, Ls41;->c:I
 
-    iget p0, p0, Ls41;->a:I
+    return p0
+.end method
 
-    packed-switch p0, :pswitch_data_0
+.method public final b()Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+    .locals 0
 
-    check-cast v0, Lk3b;
+    iget-object p0, p0, Ls41;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return-object p0
+.end method
 
-    sub-int/2addr p4, p2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-    sub-int/2addr p8, p6
+    const/4 v0, 0x1
 
-    if-ne p4, p8, :cond_0
+    if-ne p0, p1, :cond_0
 
-    sub-int/2addr p5, p3
-
-    sub-int/2addr p9, p7
-
-    if-eq p5, p9, :cond_1
+    return v0
 
     :cond_0
-    invoke-virtual {v0}, Lk3b;->b()V
+    instance-of v1, p1, Ls41;
 
-    const/4 p0, 0x1
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, p0}, Lk3b;->a(Z)V
+    if-nez v1, :cond_1
+
+    return v2
 
     :cond_1
-    return-void
+    check-cast p1, Ls41;
 
-    :pswitch_0
-    sget-object p0, Lone/me/chatscreen/mediabar/MediaBarWidget;->h1:[Lk77;
+    iget-object p0, p0, Ls41;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
-    check-cast v0, Lone/me/chatscreen/mediabar/MediaBarWidget;
+    iget-object p1, p1, Ls41;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    sget-object p0, Lone/me/chatscreen/mediabar/MediaBarWidget;->h1:[Lk77;
-
-    const/4 p1, 0x7
-
-    aget-object p0, p0, p1
-
-    iget-object p0, v0, Lone/me/chatscreen/mediabar/MediaBarWidget;->C0:Lnl0;
-
-    invoke-virtual {p0}, Lnl0;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Laz1;
-
-    sub-int/2addr p5, p3
-
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
-
-    move-result p1
-
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
-
-    move-result p2
-
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingRight()I
-
-    move-result p3
-
-    invoke-virtual {p0, p1, p2, p3, p5}, Landroid/view/View;->setPadding(IIII)V
-
-    return-void
-
-    :pswitch_1
-    sget-object p0, Lone/me/chatscreen/ChatScreen;->n1:[Lk77;
-
-    check-cast v0, Lone/me/chatscreen/ChatScreen;
-
-    invoke-virtual {v0}, Lrr3;->getView()Landroid/view/View;
-
-    move-result-object p0
+    move-result p0
 
     if-nez p0, :cond_2
 
-    goto/16 :goto_2
+    return v2
 
     :cond_2
-    invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
+    return v0
+.end method
+
+.method public final getContentDescription()Lmoe;
+    .locals 0
+
+    iget-object p0, p0, Ls41;->f:Lhoe;
+
+    return-object p0
+.end method
+
+.method public final getIcon()I
+    .locals 0
+
+    iget p0, p0, Ls41;->d:I
+
+    return p0
+.end method
+
+.method public final getId()I
+    .locals 0
+
+    iget p0, p0, Ls41;->b:I
+
+    return p0
+.end method
+
+.method public final getTitle()Lmoe;
+    .locals 0
+
+    iget-object p0, p0, Ls41;->e:Lhoe;
+
+    return-object p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    iget-object p0, p0, Ls41;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+
+    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;->hashCode()I
 
     move-result p0
 
-    invoke-virtual {p1}, Landroid/view/View;->getPaddingBottom()I
+    return p0
+.end method
 
-    move-result p2
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    sub-int/2addr p0, p2
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lone/me/chatscreen/ChatScreen;->H0()Landroid/view/ViewGroup;
+    const-string v1, "Speakerphone(device="
 
-    move-result-object p2
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    iget-object p0, p0, Ls41;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
-    move-result-object p2
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    instance-of p3, p2, Landroid/view/ViewGroup$MarginLayoutParams;
+    const-string p0, ")"
 
-    const/4 p4, 0x0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz p3, :cond_3
-
-    check-cast p2, Landroid/view/ViewGroup$MarginLayoutParams;
-
-    goto :goto_0
-
-    :cond_3
-    move-object p2, p4
-
-    :goto_0
-    if-eqz p2, :cond_4
-
-    iget p2, p2, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
-
-    goto :goto_1
-
-    :cond_4
-    const/4 p2, 0x0
-
-    :goto_1
-    if-eq p0, p2, :cond_5
-
-    invoke-virtual {v0}, Lone/me/chatscreen/ChatScreen;->H0()Landroid/view/ViewGroup;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object p2
-
-    check-cast p2, Landroid/view/ViewGroup$MarginLayoutParams;
-
-    const/16 p3, 0x30
-
-    int-to-float p3, p3
-
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
-
-    move-result-object p5
-
-    invoke-virtual {p5}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object p5
-
-    iget p5, p5, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr p3, p5
-
-    invoke-static {p3}, La24;->X(F)I
-
-    move-result p3
-
-    invoke-static {p0, p3}, Ljava/lang/Math;->max(II)I
-
-    move-result p3
-
-    iput p3, p2, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
-
-    :cond_5
-    invoke-virtual {v0}, Lone/me/chatscreen/ChatScreen;->K0()Laz1;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Landroid/view/View;->getPaddingBottom()I
-
-    move-result p2
-
-    if-eq p0, p2, :cond_7
-
-    invoke-virtual {v0}, Lone/me/chatscreen/ChatScreen;->K0()Laz1;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object p2
-
-    instance-of p3, p2, Landroid/view/ViewGroup$MarginLayoutParams;
-
-    if-eqz p3, :cond_6
-
-    move-object p4, p2
-
-    check-cast p4, Landroid/view/ViewGroup$MarginLayoutParams;
-
-    :cond_6
-    if-eqz p4, :cond_7
-
-    iput p0, p4, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
-
-    :cond_7
-    invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result p0
-
-    sget-object p2, Lone/me/chatscreen/ChatScreen;->n1:[Lk77;
-
-    const/16 p3, 0xe
-
-    aget-object p4, p2, p3
-
-    iget-object p5, v0, Lone/me/chatscreen/ChatScreen;->Y0:Ln0c;
-
-    invoke-interface {p5, v0, p4}, Ln0c;->T0(Ljava/lang/Object;Lk77;)Ljava/lang/Object;
-
-    move-result-object p4
-
-    check-cast p4, Landroid/widget/LinearLayout;
-
-    invoke-virtual {p4}, Landroid/view/View;->getPaddingBottom()I
-
-    move-result p4
-
-    if-eq p0, p4, :cond_8
-
-    aget-object p0, p2, p3
-
-    invoke-interface {p5, v0, p0}, Ln0c;->T0(Ljava/lang/Object;Lk77;)Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    check-cast p0, Landroid/widget/LinearLayout;
-
-    invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result p1
-
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
-
-    move-result p2
-
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
-
-    move-result p3
-
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingRight()I
-
-    move-result p4
-
-    invoke-virtual {p0, p2, p3, p4, p1}, Landroid/view/View;->setPadding(IIII)V
-
-    :cond_8
-    :goto_2
-    return-void
-
-    :pswitch_2
-    check-cast v0, Lcom/google/android/material/carousel/CarouselLayoutManager;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    if-ne p2, p6, :cond_9
-
-    if-ne p3, p7, :cond_9
-
-    if-ne p4, p8, :cond_9
-
-    if-eq p5, p9, :cond_a
-
-    :cond_9
-    new-instance p0, Lds1;
-
-    const/16 p2, 0x8
-
-    invoke-direct {p0, p2, v0}, Lds1;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {p1, p0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
-
-    :cond_a
-    return-void
-
-    :pswitch_3
-    check-cast v0, Lone/me/calls/ui/ui/call/panels/CallEventsWidget;
-
-    iget-object p0, v0, Lone/me/calls/ui/ui/call/panels/CallEventsWidget;->c:Ljava/util/ArrayList;
-
-    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :goto_3
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_b
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lkg1;
-
-    iget-object p1, p1, Lkg1;->a:Lone/me/calls/ui/ui/call/CallScreen;
-
-    iget-object p1, p1, Lone/me/calls/ui/ui/call/CallScreen;->B0:Ldwa;
-
-    invoke-virtual {p1}, Ldwa;->c()V
-
-    goto :goto_3
-
-    :cond_b
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

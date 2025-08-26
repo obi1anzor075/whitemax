@@ -11,20 +11,20 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/feature/internal/listener/ConversationFeatureListeners;",
         "",
-        "Le51;",
+        "Lo61;",
         "feature",
         "Lru/ok/android/externcalls/sdk/feature/ConversationFeatureManager$FeatureListener;",
         "listener",
-        "Ljue;",
+        "Le5f;",
         "addFeatureListener",
-        "(Le51;Lru/ok/android/externcalls/sdk/feature/ConversationFeatureManager$FeatureListener;)V",
+        "(Lo61;Lru/ok/android/externcalls/sdk/feature/ConversationFeatureManager$FeatureListener;)V",
         "removeFeatureListener",
         "",
         "isFeatureEnabled",
-        "(Le51;)Z",
+        "(Lo61;)Z",
         "Lru/ok/android/externcalls/sdk/feature/roles/FeatureRoles;",
         "getFeatureRoles",
-        "(Le51;)Lru/ok/android/externcalls/sdk/feature/roles/FeatureRoles;",
+        "(Lo61;)Lru/ok/android/externcalls/sdk/feature/roles/FeatureRoles;",
         "calls-sdk_release"
     }
     k = 0x1
@@ -33,18 +33,19 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # virtual methods
-.method public abstract addFeatureListener(Le51;Lru/ok/android/externcalls/sdk/feature/ConversationFeatureManager$FeatureListener;)V
+.method public abstract addFeatureListener(Lo61;Lru/ok/android/externcalls/sdk/feature/ConversationFeatureManager$FeatureListener;)V
 .end method
 
-.method public abstract getFeatureRoles(Le51;)Lru/ok/android/externcalls/sdk/feature/roles/FeatureRoles;
+.method public abstract getFeatureRoles(Lo61;)Lru/ok/android/externcalls/sdk/feature/roles/FeatureRoles;
 .end method
 
-.method public abstract isFeatureEnabled(Le51;)Z
+.method public abstract isFeatureEnabled(Lo61;)Z
 .end method
 
-.method public abstract removeFeatureListener(Le51;Lru/ok/android/externcalls/sdk/feature/ConversationFeatureManager$FeatureListener;)V
+.method public abstract removeFeatureListener(Lo61;Lru/ok/android/externcalls/sdk/feature/ConversationFeatureManager$FeatureListener;)V
 .end method

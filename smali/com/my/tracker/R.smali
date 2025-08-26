@@ -1,6 +1,5 @@
 .class public final Lcom/my/tracker/R;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # direct methods

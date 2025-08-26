@@ -21,6 +21,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -42,13 +43,13 @@
 .method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
 
+    const-string p0, "android.intent.action.BOOT_COMPLETED"
+
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object p0
+    move-result-object p2
 
-    const-string p2, "android.intent.action.BOOT_COMPLETED"
-
-    invoke-virtual {p2, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, p2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -57,21 +58,21 @@
     return-void
 
     :cond_0
-    invoke-static {p1}, Lpfa;->x(Landroid/content/Context;)Lnqc;
+    invoke-static {p1}, Lxqd;->w(Landroid/content/Context;)Lowc;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Lnqc;->p()Lx4a;
+    invoke-virtual {p0}, Lowc;->p()La9a;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lx4a;->a()Ljava/util/concurrent/ExecutorService;
+    invoke-virtual {p1}, La9a;->a()Ljava/util/concurrent/ExecutorService;
 
     move-result-object p1
 
     new-instance p2, Lb;
 
-    const/16 v0, 0x11
+    const/16 v0, 0x14
 
     invoke-direct {p2, v0, p0}, Lb;-><init>(ILjava/lang/Object;)V
 

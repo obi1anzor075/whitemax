@@ -1,122 +1,276 @@
 .class public final Llbf;
-.super Lz;
+.super Lobf;
 .source "SourceFile"
 
 
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Llbf;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
 # instance fields
-.field public final X:Ljava/lang/ClassLoader;
+.field public d:Lr36;
 
-.field public c:I
+.field public e:F
 
-.field public o:Landroid/os/Parcelable;
+.field public f:Lr36;
 
+.field public g:F
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.field public h:F
 
-    new-instance v0, Ly;
+.field public i:F
 
-    const/16 v1, 0xc
+.field public j:F
 
-    invoke-direct {v0, v1}, Ly;-><init>(I)V
+.field public k:F
 
-    sput-object v0, Llbf;->CREATOR:Landroid/os/Parcelable$Creator;
+.field public l:Landroid/graphics/Paint$Cap;
 
-    return-void
-.end method
+.field public m:Landroid/graphics/Paint$Join;
 
-.method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-    .locals 1
-
-    invoke-direct {p0, p1, p2}, Lz;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-
-    if-nez p2, :cond_0
-
-    const-class p2, Llbf;
-
-    invoke-virtual {p2}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
-
-    move-result-object p2
-
-    :cond_0
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Llbf;->c:I
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
-
-    move-result-object p1
-
-    iput-object p1, p0, Llbf;->o:Landroid/os/Parcelable;
-
-    iput-object p2, p0, Llbf;->X:Ljava/lang/ClassLoader;
-
-    return-void
-.end method
+.field public n:F
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final a()Z
+    .locals 1
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object v0, p0, Llbf;->f:Lr36;
 
-    const-string v1, "FragmentPager.SavedState{"
+    invoke-virtual {v0}, Lr36;->H()Z
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result v0
 
-    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
+    if-nez v0, :cond_1
+
+    iget-object p0, p0, Llbf;->d:Lr36;
+
+    invoke-virtual {p0}, Lr36;->H()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    :goto_0
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final b([I)Z
+    .locals 5
+
+    iget-object v0, p0, Llbf;->f:Lr36;
+
+    invoke-virtual {v0}, Lr36;->H()Z
 
     move-result v1
 
-    invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+    const/4 v2, 0x1
 
-    move-result-object v1
+    const/4 v3, 0x0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v1, :cond_0
 
-    const-string v1, " position="
+    iget-object v1, v0, Lr36;->o:Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v1, Landroid/content/res/ColorStateList;
 
-    iget p0, p0, Llbf;->c:I
+    invoke-virtual {v1}, Landroid/content/res/ColorStateList;->getDefaultColor()I
 
-    const-string v1, "}"
+    move-result v4
 
-    invoke-static {v0, p0, v1}, Lwn6;->j(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v1, p1, v4}, Landroid/content/res/ColorStateList;->getColorForState([II)I
 
-    move-result-object p0
+    move-result v1
 
-    return-object p0
+    iget v4, v0, Lr36;->b:I
+
+    if-eq v1, v4, :cond_0
+
+    iput v1, v0, Lr36;->b:I
+
+    move v0, v2
+
+    goto :goto_0
+
+    :cond_0
+    move v0, v3
+
+    :goto_0
+    iget-object p0, p0, Llbf;->d:Lr36;
+
+    invoke-virtual {p0}, Lr36;->H()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lr36;->o:Ljava/lang/Object;
+
+    check-cast v1, Landroid/content/res/ColorStateList;
+
+    invoke-virtual {v1}, Landroid/content/res/ColorStateList;->getDefaultColor()I
+
+    move-result v4
+
+    invoke-virtual {v1, p1, v4}, Landroid/content/res/ColorStateList;->getColorForState([II)I
+
+    move-result p1
+
+    iget v1, p0, Lr36;->b:I
+
+    if-eq p1, v1, :cond_1
+
+    iput p1, p0, Lr36;->b:I
+
+    goto :goto_1
+
+    :cond_1
+    move v2, v3
+
+    :goto_1
+    or-int p0, v0, v2
+
+    return p0
 .end method
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 1
+.method public getFillAlpha()F
+    .locals 0
 
-    invoke-super {p0, p1, p2}, Lz;->writeToParcel(Landroid/os/Parcel;I)V
+    iget p0, p0, Llbf;->h:F
 
-    iget v0, p0, Llbf;->c:I
+    return p0
+.end method
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+.method public getFillColor()I
+    .locals 0
 
-    iget-object p0, p0, Llbf;->o:Landroid/os/Parcelable;
+    iget-object p0, p0, Llbf;->f:Lr36;
 
-    invoke-virtual {p1, p0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+    iget p0, p0, Lr36;->b:I
+
+    return p0
+.end method
+
+.method public getStrokeAlpha()F
+    .locals 0
+
+    iget p0, p0, Llbf;->g:F
+
+    return p0
+.end method
+
+.method public getStrokeColor()I
+    .locals 0
+
+    iget-object p0, p0, Llbf;->d:Lr36;
+
+    iget p0, p0, Lr36;->b:I
+
+    return p0
+.end method
+
+.method public getStrokeWidth()F
+    .locals 0
+
+    iget p0, p0, Llbf;->e:F
+
+    return p0
+.end method
+
+.method public getTrimPathEnd()F
+    .locals 0
+
+    iget p0, p0, Llbf;->j:F
+
+    return p0
+.end method
+
+.method public getTrimPathOffset()F
+    .locals 0
+
+    iget p0, p0, Llbf;->k:F
+
+    return p0
+.end method
+
+.method public getTrimPathStart()F
+    .locals 0
+
+    iget p0, p0, Llbf;->i:F
+
+    return p0
+.end method
+
+.method public setFillAlpha(F)V
+    .locals 0
+
+    iput p1, p0, Llbf;->h:F
+
+    return-void
+.end method
+
+.method public setFillColor(I)V
+    .locals 0
+
+    iget-object p0, p0, Llbf;->f:Lr36;
+
+    iput p1, p0, Lr36;->b:I
+
+    return-void
+.end method
+
+.method public setStrokeAlpha(F)V
+    .locals 0
+
+    iput p1, p0, Llbf;->g:F
+
+    return-void
+.end method
+
+.method public setStrokeColor(I)V
+    .locals 0
+
+    iget-object p0, p0, Llbf;->d:Lr36;
+
+    iput p1, p0, Lr36;->b:I
+
+    return-void
+.end method
+
+.method public setStrokeWidth(F)V
+    .locals 0
+
+    iput p1, p0, Llbf;->e:F
+
+    return-void
+.end method
+
+.method public setTrimPathEnd(F)V
+    .locals 0
+
+    iput p1, p0, Llbf;->j:F
+
+    return-void
+.end method
+
+.method public setTrimPathOffset(F)V
+    .locals 0
+
+    iput p1, p0, Llbf;->k:F
+
+    return-void
+.end method
+
+.method public setTrimPathStart(F)V
+    .locals 0
+
+    iput p1, p0, Llbf;->i:F
 
     return-void
 .end method

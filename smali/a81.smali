@@ -1,26 +1,26 @@
 .class public final La81;
-.super Ll5e;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Ll66;
 
 
 # instance fields
 .field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic Y:Ld81;
+.field public final synthetic Y:Lone/me/calllist/ui/page/CallHistoryPageScreen;
 
 
 # direct methods
-.method public constructor <init>(Ld81;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lone/me/calllist/ui/page/CallHistoryPageScreen;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    iput-object p1, p0, La81;->Y:Ld81;
+    iput-object p1, p0, La81;->Y:Lone/me/calllist/ui/page/CallHistoryPageScreen;
 
     const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -30,31 +30,31 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    check-cast p1, Ljava/lang/Long;
+    check-cast p1, Lxma;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {p0, p1, p2}, La81;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0, p1, p2}, La81;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
     check-cast p0, La81;
 
-    sget-object p1, Ljue;->a:Ljue;
+    sget-object p1, Le5f;->a:Le5f;
 
     invoke-virtual {p0, p1}, La81;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object p1
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .locals 1
 
     new-instance v0, La81;
 
-    iget-object p0, p0, La81;->Y:Ld81;
+    iget-object p0, p0, La81;->Y:Lone/me/calllist/ui/page/CallHistoryPageScreen;
 
-    invoke-direct {v0, p0, p2}, La81;-><init>(Ld81;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, p0, p2}, La81;-><init>(Lone/me/calllist/ui/page/CallHistoryPageScreen;Lkotlin/coroutines/Continuation;)V
 
     iput-object p1, v0, La81;->X:Ljava/lang/Object;
 
@@ -62,61 +62,120 @@
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+    .locals 2
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
     iget-object p1, p0, La81;->X:Ljava/lang/Object;
 
-    check-cast p1, Ljava/lang/Long;
+    check-cast p1, Lxma;
 
-    iget-object p0, p0, La81;->Y:Ld81;
+    sget-object v0, Lwma;->a:Lwma;
 
-    iget-object v0, p0, Ld81;->Z:Lgrd;
+    invoke-static {p1, v0}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    :cond_0
-    invoke-virtual {v0}, Lgrd;->getValue()Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v1
+    if-nez v0, :cond_2
 
-    move-object v2, v1
+    instance-of v0, p1, Lvma;
 
-    check-cast v2, Ljava/lang/String;
+    if-eqz v0, :cond_1
 
-    if-eqz p1, :cond_1
+    check-cast p1, Lvma;
 
-    iget-object v2, p0, Ld81;->o:Lxk1;
+    sget-object v0, Lone/me/calllist/ui/page/CallHistoryPageScreen;->q0:Lz22;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p0, p0, La81;->Y:Lone/me/calllist/ui/page/CallHistoryPageScreen;
 
-    invoke-static {p1}, Lxk1;->d(Ljava/lang/Long;)Ljava/lang/String;
+    iget-object v0, p0, Lone/me/calllist/ui/page/CallHistoryPageScreen;->Z:Lwfe;
 
-    move-result-object v2
+    invoke-virtual {v0}, Lwfe;->getValue()Ljava/lang/Object;
 
-    const-string v3, "\u00b7\u00a0"
+    move-result-object v0
 
-    invoke-static {v3, v2}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    check-cast v0, Lx71;
 
-    move-result-object v2
+    iget-object p1, p1, Lvma;->a:Ljava/util/LinkedHashMap;
+
+    invoke-virtual {p1}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
+
+    move-result-object p1
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {p1}, Lp43;->W0(Ljava/lang/Iterable;)Ljava/util/List;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Lhl7;->E(Ljava/util/List;)V
+
+    invoke-virtual {p0}, Lone/me/calllist/ui/page/CallHistoryPageScreen;->q0()Lone/me/sdk/lists/widgets/EndlessRecyclerView2;
+
+    move-result-object p1
+
+    invoke-virtual {p0}, Lone/me/calllist/ui/page/CallHistoryPageScreen;->s0()Lf81;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lf81;->r()Z
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;->setRefreshingNext(Z)V
+
+    invoke-virtual {p0}, Lone/me/calllist/ui/page/CallHistoryPageScreen;->q0()Lone/me/sdk/lists/widgets/EndlessRecyclerView2;
+
+    move-result-object p1
+
+    invoke-virtual {p0}, Lone/me/calllist/ui/page/CallHistoryPageScreen;->s0()Lf81;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object v0, Lo81;->b:Lo81;
+
+    iget-object v0, p0, Lf81;->b:Lo81;
+
+    sget-object v1, Lo81;->b:Lo81;
+
+    if-ne v0, v1, :cond_0
+
+    iget-object p0, p0, Lf81;->o:Ltj5;
+
+    iget-object p0, p0, Ltj5;->o:Ljava/lang/Object;
+
+    check-cast p0, Ljava/util/ArrayList;
+
+    invoke-virtual {p0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result p0
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x1
 
     goto :goto_0
 
-    :cond_1
-    const/4 v2, 0x0
+    :cond_0
+    const/4 p0, 0x0
 
     :goto_0
-    if-nez v2, :cond_2
+    invoke-virtual {p1, p0}, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;->setRefreshingPrev(Z)V
 
-    const-string v2, ""
+    goto :goto_1
+
+    :cond_1
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p0
 
     :cond_2
-    invoke-virtual {v0, v1, v2}, Lgrd;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    sget-object p0, Ljue;->a:Ljue;
+    :goto_1
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 .end method

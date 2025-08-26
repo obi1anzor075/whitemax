@@ -1,85 +1,70 @@
-.class public abstract Lz6a;
+.class public final synthetic Lz6a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lx56;
 
-# static fields
-.field public static final a:I
 
-.field public static final b:I
+# instance fields
+.field public final synthetic X:Lg4b;
 
-.field public static final c:I
+.field public final synthetic a:Ly42;
 
-.field public static final d:I
+.field public final synthetic b:I
 
-.field public static final e:I
+.field public final synthetic c:Lone/me/messages/list/loader/MessageModel;
 
-.field public static final f:I
-
-.field public static final g:I
-
-.field public static final h:I
-
-.field public static final i:I
-
-.field public static final j:I
-
-.field public static final k:I
-
-.field public static final l:I
+.field public final synthetic o:Ljava/util/List;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Ly42;ILone/me/messages/list/loader/MessageModel;Ljava/util/List;Lg4b;)V
+    .locals 0
 
-    sget v0, Ljnb;->contact_icon_corner:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput v0, Lz6a;->a:I
+    iput-object p1, p0, Lz6a;->a:Ly42;
 
-    sget v0, Ljnb;->geo_icon_corner:I
+    iput p2, p0, Lz6a;->b:I
 
-    sput v0, Lz6a;->b:I
+    iput-object p3, p0, Lz6a;->c:Lone/me/messages/list/loader/MessageModel;
 
-    sget v0, Ljnb;->ic_call_incoming_audio_24:I
+    iput-object p4, p0, Lz6a;->o:Ljava/util/List;
 
-    sput v0, Lz6a;->c:I
-
-    sget v0, Ljnb;->ic_call_incoming_audio_missed_24:I
-
-    sput v0, Lz6a;->d:I
-
-    sget v0, Ljnb;->ic_call_incoming_video_missed_24:I
-
-    sput v0, Lz6a;->e:I
-
-    sget v0, Ljnb;->ic_call_incomnig_video_24:I
-
-    sput v0, Lz6a;->f:I
-
-    sget v0, Ljnb;->ic_call_outgoing_audio_24:I
-
-    sput v0, Lz6a;->g:I
-
-    sget v0, Ljnb;->ic_call_outgoing_video_24:I
-
-    sput v0, Lz6a;->h:I
-
-    sget v0, Ljnb;->ic_chat_16:I
-
-    sput v0, Lz6a;->i:I
-
-    sget v0, Ljnb;->ic_contact_16:I
-
-    sput v0, Lz6a;->j:I
-
-    sget v0, Ljnb;->link_icon_corner:I
-
-    sput v0, Lz6a;->k:I
-
-    sget v0, Ljnb;->miniapp_icon_corner:I
-
-    sput v0, Lz6a;->l:I
+    iput-object p5, p0, Lz6a;->X:Lg4b;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    check-cast p1, Lvy7;
+
+    iget-object v0, p0, Lz6a;->a:Ly42;
+
+    iput-object v0, p1, Lvy7;->a:Ly42;
+
+    iget v0, p0, Lz6a;->b:I
+
+    iput v0, p1, Lvy7;->b:I
+
+    iget-object v0, p0, Lz6a;->c:Lone/me/messages/list/loader/MessageModel;
+
+    iput-object v0, p1, Lvy7;->d:Lone/me/messages/list/loader/MessageModel;
+
+    iget-object v0, p0, Lz6a;->o:Ljava/util/List;
+
+    iput-object v0, p1, Lvy7;->f:Ljava/util/List;
+
+    iget-object p0, p0, Lz6a;->X:Lg4b;
+
+    iput-object p0, p1, Lvy7;->e:Lg4b;
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

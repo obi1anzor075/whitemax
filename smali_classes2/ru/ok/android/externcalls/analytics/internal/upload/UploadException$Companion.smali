@@ -44,16 +44,16 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lx54;)V
+.method public synthetic constructor <init>(Ll94;)V
     .locals 0
 
-    .line 2
+    .line 1
     invoke-direct {p0}, Lru/ok/android/externcalls/analytics/internal/upload/UploadException$Companion;-><init>()V
 
     return-void
@@ -62,27 +62,23 @@
 
 # virtual methods
 .method public final getApiInvocationErrorMessage(Ljava/lang/String;Lru/ok/android/api/core/ApiInvocationException;)Ljava/lang/String;
-    .locals 1
+    .locals 3
 
-    const-string p0, "Error executing API method "
+    iget p0, p2, Lru/ok/android/api/core/ApiInvocationException;->a:I
+
+    iget-object p2, p2, Lru/ok/android/api/core/ApiInvocationException;->b:Ljava/lang/String;
 
     const-string v0, ": code="
 
-    invoke-static {p0, p1, v0}, Lhr1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, ", message="
+
+    const-string v2, "Error executing API method "
+
+    invoke-static {p0, v2, p1, v0, v1}, Lm26;->m(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p0
 
-    iget p1, p2, Lru/ok/android/api/core/ApiInvocationException;->a:I
-
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p1, ", message="
-
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p1, p2, Lru/ok/android/api/core/ApiInvocationException;->b:Ljava/lang/String;
-
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -102,7 +98,7 @@
 
     const-string v0, ": "
 
-    invoke-static {p2, p1, v0, p0}, Lme4;->j(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, p1, v0, p0}, Lv04;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

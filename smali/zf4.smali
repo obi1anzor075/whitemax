@@ -1,39 +1,40 @@
-.class public abstract Lzf4;
+.class public final Lzf4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lpof;
+
 
 # static fields
-.field public static volatile a:Lxe6;
+.field public static final a:Lzf4;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 1
 
-    sget-object v0, Lclb;->c:Lclb;
+    new-instance v0, Lzf4;
 
-    invoke-static {}, Lpa2;->j()Lmh4;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v1
-
-    new-instance v2, Lai0;
-
-    const/16 v3, 0xe
-
-    invoke-direct {v2, v3}, Lai0;-><init>(I)V
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v3, Lblb;
-
-    const/4 v4, 0x0
-
-    invoke-direct {v3, v4, v2}, Lblb;-><init>(ILjava/lang/Object;)V
-
-    iget-object v0, v0, Lclb;->a:Lk96;
-
-    invoke-virtual {v0, v1, v3}, Lk96;->g(Ljava/util/concurrent/Executor;Lls9;)V
+    sput-object v0, Lzf4;->a:Lzf4;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final c(Lz03;Lgg9;)Lkof;
+    .locals 0
+
+    invoke-interface {p1}, Lx03;->a()Ljava/lang/Class;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lrbg;->h(Ljava/lang/Class;)Lkof;
+
+    move-result-object p0
+
+    return-object p0
 .end method

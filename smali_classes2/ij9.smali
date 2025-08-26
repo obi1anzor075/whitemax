@@ -1,115 +1,109 @@
 .class public final Lij9;
-.super Lr6c;
+.super Lv2;
 .source "SourceFile"
+
+# interfaces
+.implements Lsqe;
 
 
 # instance fields
-.field public final a:Lmr5;
+.field public X:Landroid/widget/TextView;
 
-.field public final b:Lu16;
+.field public Y:Landroid/view/View;
 
-.field public c:Z
+.field public Z:Z
+
+.field public final o:Lmg;
 
 
 # direct methods
-.method public constructor <init>(Lmr5;Lh87;)V
+.method public constructor <init>(Landroid/content/Context;Lmg;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lv2;-><init>(Landroid/content/Context;)V
 
-    iput-object p1, p0, Lij9;->a:Lmr5;
+    iput-object p2, p0, Lij9;->o:Lmg;
 
-    iput-object p2, p0, Lij9;->b:Lu16;
+    sget p1, Lqwb;->view_floating_video_trash:I
+
+    const/4 p2, 0x0
+
+    invoke-virtual {p0, p2, p1}, Lv2;->m(Landroid/view/ViewGroup;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroidx/recyclerview/widget/RecyclerView;I)V
-    .locals 0
+.method public final e()V
+    .locals 2
 
-    if-nez p2, :cond_0
+    iget-boolean v0, p0, Lij9;->Z:Z
 
-    const/4 p1, 0x0
+    if-eqz v0, :cond_0
 
-    iput-boolean p1, p0, Lij9;->c:Z
+    iget-object v0, p0, Lv2;->c:Ljava/lang/Object;
+
+    check-cast v0, Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    sget-object v1, Lvke;->a0:Lwfe;
+
+    invoke-static {v0}, Lp54;->M(Landroid/content/Context;)Lvke;
+
+    move-result-object v0
+
+    iget-object p0, p0, Lij9;->X:Landroid/widget/TextView;
+
+    iget v0, v0, Lvke;->k:I
+
+    invoke-virtual {p0, v0}, Landroid/widget/TextView;->setTextColor(I)V
+
+    return-void
 
     :cond_0
+    iget-object p0, p0, Lij9;->X:Landroid/widget/TextView;
+
+    const/4 v0, -0x1
+
+    invoke-virtual {p0, v0}, Landroid/widget/TextView;->setTextColor(I)V
+
     return-void
 .end method
 
-.method public final b(Landroidx/recyclerview/widget/RecyclerView;II)V
+.method public final n()V
     .locals 2
 
-    iget-boolean p2, p0, Lij9;->c:Z
+    iget-object v0, p0, Lv2;->c:Ljava/lang/Object;
 
-    if-eqz p2, :cond_0
+    check-cast v0, Landroid/view/View;
 
-    return-void
+    sget v1, Lpvb;->view_floating_video_trash__tv_tip:I
 
-    :cond_0
-    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/a;
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object p1
+    move-result-object v0
 
-    instance-of p2, p1, Landroidx/recyclerview/widget/GridLayoutManager;
+    check-cast v0, Landroid/widget/TextView;
 
-    if-eqz p2, :cond_1
+    iput-object v0, p0, Lij9;->X:Landroid/widget/TextView;
 
-    check-cast p1, Landroidx/recyclerview/widget/GridLayoutManager;
+    iget-object v0, p0, Lv2;->c:Ljava/lang/Object;
 
-    goto :goto_0
+    check-cast v0, Landroid/view/View;
 
-    :cond_1
-    const/4 p1, 0x0
+    sget v1, Lpvb;->view_floating_video_trash__v_background:I
 
-    :goto_0
-    if-nez p1, :cond_2
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    return-void
+    move-result-object v0
 
-    :cond_2
-    invoke-virtual {p1}, Landroidx/recyclerview/widget/LinearLayoutManager;->T0()I
+    iput-object v0, p0, Lij9;->Y:Landroid/view/View;
 
-    move-result p2
-
-    invoke-virtual {p1}, Landroidx/recyclerview/widget/LinearLayoutManager;->X0()I
-
-    move-result p1
-
-    iget-object p3, p0, Lij9;->a:Lmr5;
-
-    invoke-virtual {p3}, Lig7;->j()I
-
-    move-result v0
-
-    const/4 v1, -0x1
-
-    if-ne p2, v1, :cond_3
-
-    return-void
-
-    :cond_3
-    add-int/lit8 v0, v0, -0x1
-
-    if-ne p1, v0, :cond_4
-
-    invoke-virtual {p3, p1}, Lmr5;->J(I)Lmi9;
-
-    move-result-object p1
-
-    goto :goto_1
-
-    :cond_4
-    invoke-virtual {p3, p2}, Lmr5;->J(I)Lmi9;
-
-    move-result-object p1
-
-    :goto_1
-    iget-object p0, p0, Lij9;->b:Lu16;
-
-    invoke-interface {p0, p1}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0}, Lij9;->e()V
 
     return-void
 .end method

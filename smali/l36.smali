@@ -1,240 +1,331 @@
-.class public final synthetic Ll36;
+.class public final Ll36;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/concurrent/Callable;
+.implements Lpn0;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public a:I
 
-.field public final synthetic b:J
-
-.field public final synthetic c:Ljava/lang/Object;
-
-.field public final synthetic o:Ljava/lang/Object;
+.field public b:Lf33;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lnec;JLof3;)V
-    .locals 1
-
-    .line 2
-    const/4 v0, 0x1
-
-    iput v0, p0, Ll36;->a:I
+.method public constructor <init>(ILf33;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ll36;->c:Ljava/lang/Object;
+    iput-object p2, p0, Ll36;->b:Lf33;
 
-    iput-wide p2, p0, Ll36;->b:J
-
-    iput-object p4, p0, Ll36;->o:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lsn1;Lch7;J)V
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x0
-
-    iput v0, p0, Ll36;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ll36;->c:Ljava/lang/Object;
-
-    iput-object p2, p0, Ll36;->o:Ljava/lang/Object;
-
-    iput-wide p3, p0, Ll36;->b:J
+    iput p1, p0, Ll36;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final call()Ljava/lang/Object;
-    .locals 8
+.method public declared-synchronized a(I)Z
+    .locals 1
 
+    monitor-enter p0
+
+    :try_start_0
     iget v0, p0, Ll36;->a:I
 
-    packed-switch v0, :pswitch_data_0
+    if-ne p1, v0, :cond_0
 
-    iget-object v0, p0, Ll36;->c:Ljava/lang/Object;
+    iget-object p1, p0, Ll36;->b:Lf33;
 
-    check-cast v0, Lnec;
+    invoke-static {p1}, Lf33;->r0(Lf33;)Z
 
-    invoke-virtual {v0}, Lnec;->d()Lcw8;
+    move-result p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v1
+    if-eqz p1, :cond_0
 
-    iget-wide v2, p0, Ll36;->b:J
-
-    invoke-virtual {v1, v2, v3}, Lcw8;->c(J)Ljp8;
-
-    move-result-object v1
-
-    const/4 v4, 0x0
-
-    if-nez v1, :cond_0
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p0
-
-    goto :goto_3
-
-    :cond_0
-    iget-object v1, v1, Ljp8;->m:Ljj7;
-
-    if-eqz v1, :cond_1
-
-    invoke-virtual {v1}, Ljj7;->I()Lp10;
-
-    move-result-object v1
+    const/4 p1, 0x1
 
     goto :goto_0
 
-    :cond_1
-    new-instance v1, Lp10;
-
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
-
-    sget-object v5, Lhw4;->a:Lhw4;
-
-    iput-object v5, v1, Lp10;->a:Ljava/util/List;
-
-    :goto_0
-    iget-object v5, v1, Lp10;->b:Lvw6;
-
-    const/4 v6, 0x1
-
-    if-eqz v5, :cond_2
-
-    move v5, v6
+    :catchall_0
+    move-exception p1
 
     goto :goto_1
 
-    :cond_2
-    move v5, v4
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    monitor-exit p0
+
+    return p1
 
     :goto_1
-    invoke-virtual {v1}, Lp10;->b()I
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result v7
+    throw p1
+.end method
 
-    add-int/2addr v7, v5
+.method public declared-synchronized b()V
+    .locals 1
 
-    iget-object p0, p0, Ll36;->o:Ljava/lang/Object;
+    monitor-enter p0
 
-    check-cast p0, Lof3;
+    :try_start_0
+    iget-object v0, p0, Ll36;->b:Lf33;
 
-    invoke-interface {p0, v1}, Lof3;->accept(Ljava/lang/Object;)V
+    invoke-static {v0}, Lf33;->W(Lf33;)V
 
-    iget-object p0, v1, Lp10;->b:Lvw6;
+    const/4 v0, 0x0
 
-    if-eqz p0, :cond_3
+    iput-object v0, p0, Ll36;->b:Lf33;
 
-    goto :goto_2
+    const/4 v0, -0x1
 
-    :cond_3
-    move v6, v4
+    iput v0, p0, Ll36;->a:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :goto_2
-    invoke-virtual {v1}, Lp10;->b()I
+    monitor-exit p0
 
-    move-result p0
+    return-void
 
-    add-int/2addr p0, v6
+    :catchall_0
+    move-exception v0
 
-    if-gtz v7, :cond_4
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-lez p0, :cond_5
+    throw v0
+.end method
 
-    :cond_4
-    invoke-virtual {v1}, Lp10;->c()Ljj7;
+.method public declared-synchronized clear()V
+    .locals 1
 
-    move-result-object p0
+    monitor-enter p0
 
-    invoke-virtual {v0}, Lnec;->d()Lcw8;
+    :try_start_0
+    invoke-virtual {p0}, Ll36;->b()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
+.end method
+
+.method public declared-synchronized d()Lf33;
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Ll36;->b:Lf33;
+
+    invoke-static {v0}, Lf33;->o(Lf33;)Lf33;
+
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
+.end method
+
+.method public declared-synchronized e(ILf33;)V
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Ll36;->b:Lf33;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p2}, Lf33;->i0()Ljava/lang/Object;
 
     move-result-object v0
 
-    new-instance v1, Leve;
+    iget-object v1, p0, Ll36;->b:Lf33;
 
-    invoke-static {p0}, Lfu7;->c(Ljj7;)I
+    if-eqz v1, :cond_0
 
-    move-result v4
-
-    invoke-direct {v1, v2, v3, p0, v4}, Leve;-><init>(JLjj7;I)V
-
-    invoke-virtual {v0, v1}, Lcw8;->m(Leve;)I
-
-    move-result v4
-
-    :cond_5
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p0
-
-    :goto_3
-    return-object p0
-
-    :pswitch_0
-    new-instance v0, Ljava/util/concurrent/TimeoutException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Future["
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v2, p0, Ll36;->o:Ljava/lang/Object;
-
-    check-cast v2, Lch7;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v2, "] is not done within "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v2, p0, Ll36;->b:J
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v2, " ms."
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Lf33;->i0()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/TimeoutException;-><init>(Ljava/lang/String;)V
+    check-cast v1, Landroid/graphics/Bitmap;
 
-    iget-object p0, p0, Ll36;->c:Ljava/lang/Object;
+    goto :goto_0
 
-    check-cast p0, Lsn1;
+    :catchall_0
+    move-exception p1
 
-    invoke-virtual {p0, v0}, Lsn1;->d(Ljava/lang/Throwable;)Z
+    goto :goto_1
 
-    move-result p0
+    :cond_0
+    const/4 v1, 0x0
 
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    :goto_0
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    move-result-object p0
+    move-result v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-object p0
+    if-eqz v0, :cond_1
 
-    nop
+    monitor-exit p0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
+
+    :cond_1
+    :try_start_1
+    iget-object v0, p0, Ll36;->b:Lf33;
+
+    invoke-static {v0}, Lf33;->W(Lf33;)V
+
+    invoke-virtual {p2}, Lf33;->n()Lf33;
+
+    move-result-object p2
+
+    iput-object p2, p0, Ll36;->b:Lf33;
+
+    iput p1, p0, Ll36;->a:I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :goto_1
+    :try_start_2
+    monitor-exit p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw p1
+.end method
+
+.method public f(ILf33;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public declared-synchronized g()Lf33;
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Ll36;->b:Lf33;
+
+    invoke-static {v0}, Lf33;->o(Lf33;)Lf33;
+
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    :try_start_1
+    invoke-virtual {p0}, Ll36;->b()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_0
+
+    :catchall_1
+    move-exception v0
+
+    :try_start_2
+    invoke-virtual {p0}, Ll36;->b()V
+
+    throw v0
+
+    :goto_0
+    monitor-exit p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw v0
+.end method
+
+.method public declared-synchronized i(I)Lf33;
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget v0, p0, Ll36;->a:I
+
+    if-ne v0, p1, :cond_0
+
+    iget-object p1, p0, Ll36;->b:Lf33;
+
+    invoke-static {p1}, Lf33;->o(Lf33;)Lf33;
+
+    move-result-object p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p1
+
+    goto :goto_1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    monitor-exit p0
+
+    return-object p1
+
+    :goto_1
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
 .end method

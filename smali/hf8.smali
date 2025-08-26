@@ -1,112 +1,84 @@
-.class public final synthetic Lhf8;
-.super Ljava/lang/Object;
+.class public final Lhf8;
+.super Landroid/support/v4/media/session/MediaControllerCompat$Callback;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lotf;
-
-.field public final synthetic c:Landroid/util/Pair;
-
-.field public final synthetic o:Li78;
+.field public final synthetic a:Landroidx/mediarouter/app/d;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lotf;Landroid/util/Pair;Li78;I)V
+.method public constructor <init>(Landroidx/mediarouter/app/d;)V
     .locals 0
 
-    iput p4, p0, Lhf8;->a:I
+    iput-object p1, p0, Lhf8;->a:Landroidx/mediarouter/app/d;
 
-    iput-object p1, p0, Lhf8;->b:Lotf;
-
-    iput-object p2, p0, Lhf8;->c:Landroid/util/Pair;
-
-    iput-object p3, p0, Lhf8;->o:Li78;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/support/v4/media/session/MediaControllerCompat$Callback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final onMetadataChanged(Landroid/support/v4/media/MediaMetadataCompat;)V
+    .locals 0
 
-    iget v0, p0, Lhf8;->a:I
+    if-nez p1, :cond_0
 
-    packed-switch v0, :pswitch_data_0
+    const/4 p1, 0x0
 
-    iget-object v0, p0, Lhf8;->b:Lotf;
+    goto :goto_0
 
-    iget-object v0, v0, Lotf;->b:Ljava/lang/Object;
+    :cond_0
+    invoke-virtual {p1}, Landroid/support/v4/media/MediaMetadataCompat;->getDescription()Landroid/support/v4/media/MediaDescriptionCompat;
 
-    check-cast v0, Lpf8;
+    move-result-object p1
 
-    iget-object v0, v0, Lpf8;->j:Ljava/lang/Object;
+    :goto_0
+    iget-object p0, p0, Lhf8;->a:Landroidx/mediarouter/app/d;
 
-    check-cast v0, Lg44;
+    iput-object p1, p0, Landroidx/mediarouter/app/d;->b1:Landroid/support/v4/media/MediaDescriptionCompat;
 
-    iget-object v1, p0, Lhf8;->c:Landroid/util/Pair;
+    invoke-virtual {p0}, Landroidx/mediarouter/app/d;->p()V
 
-    iget-object v2, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
+    const/4 p1, 0x0
 
-    check-cast v2, Ljava/lang/Integer;
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    iget-object v1, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
-
-    check-cast v1, Lse8;
-
-    iget-object p0, p0, Lhf8;->o:Li78;
-
-    invoke-virtual {v0, v2, v1, p0}, Lg44;->E(ILse8;Li78;)V
+    invoke-virtual {p0, p1}, Landroidx/mediarouter/app/d;->o(Z)V
 
     return-void
+.end method
 
-    :pswitch_0
-    iget-object v0, p0, Lhf8;->b:Lotf;
+.method public final onPlaybackStateChanged(Landroid/support/v4/media/session/PlaybackStateCompat;)V
+    .locals 0
 
-    iget-object v0, v0, Lotf;->b:Ljava/lang/Object;
+    iget-object p0, p0, Lhf8;->a:Landroidx/mediarouter/app/d;
 
-    check-cast v0, Lpf8;
+    iput-object p1, p0, Landroidx/mediarouter/app/d;->a1:Landroid/support/v4/media/session/PlaybackStateCompat;
 
-    iget-object v0, v0, Lpf8;->j:Ljava/lang/Object;
+    const/4 p1, 0x0
 
-    check-cast v0, Lg44;
-
-    iget-object v1, p0, Lhf8;->c:Landroid/util/Pair;
-
-    iget-object v2, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
-
-    check-cast v2, Ljava/lang/Integer;
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    iget-object v1, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
-
-    check-cast v1, Lse8;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object p0, p0, Lhf8;->o:Li78;
-
-    invoke-virtual {v0, v2, v1, p0}, Lg44;->A(ILse8;Li78;)V
+    invoke-virtual {p0, p1}, Landroidx/mediarouter/app/d;->o(Z)V
 
     return-void
+.end method
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+.method public final onSessionDestroyed()V
+    .locals 2
+
+    iget-object p0, p0, Lhf8;->a:Landroidx/mediarouter/app/d;
+
+    iget-object v0, p0, Landroidx/mediarouter/app/d;->Y0:Landroid/support/v4/media/session/MediaControllerCompat;
+
+    if-eqz v0, :cond_0
+
+    iget-object v1, p0, Landroidx/mediarouter/app/d;->Z0:Lhf8;
+
+    invoke-virtual {v0, v1}, Landroid/support/v4/media/session/MediaControllerCompat;->unregisterCallback(Landroid/support/v4/media/session/MediaControllerCompat$Callback;)V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Landroidx/mediarouter/app/d;->Y0:Landroid/support/v4/media/session/MediaControllerCompat;
+
+    :cond_0
+    return-void
 .end method

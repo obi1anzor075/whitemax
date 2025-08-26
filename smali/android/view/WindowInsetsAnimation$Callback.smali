@@ -1,6 +1,5 @@
 .class public synthetic Landroid/view/WindowInsetsAnimation$Callback;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # direct methods

@@ -33,7 +33,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 4
 
     const-string v0, "OMX.SEC."
 
@@ -47,23 +47,23 @@
 
     sput-object v0, Lorg/webrtc/MediaCodecUtils;->SOFTWARE_IMPLEMENTATION_PREFIXES:[Ljava/lang/String;
 
-    const v0, 0x7fa30c04
+    const/4 v0, 0x7
 
-    const/16 v1, 0x13
+    new-array v0, v0, [I
 
-    const/16 v2, 0x15
+    fill-array-data v0, :array_0
 
-    const v3, 0x7fa30c00
+    sput-object v0, Lorg/webrtc/MediaCodecUtils;->DECODER_COLOR_FORMATS:[I
 
-    const/4 v4, 0x7
+    const/16 v0, 0x13
 
-    new-array v4, v4, [I
+    const/16 v1, 0x15
 
-    fill-array-data v4, :array_0
+    const v2, 0x7fa30c00
 
-    sput-object v4, Lorg/webrtc/MediaCodecUtils;->DECODER_COLOR_FORMATS:[I
+    const v3, 0x7fa30c04
 
-    filled-new-array {v1, v2, v3, v0}, [I
+    filled-new-array {v0, v1, v2, v3}, [I
 
     move-result-object v0
 

@@ -3,100 +3,76 @@
 .source "SourceFile"
 
 
-# static fields
-.field public static final d:Lua0;
-
-.field public static final e:Ljava/util/Set;
-
-.field public static final f:Lie3;
-
-
 # instance fields
-.field public final a:I
+.field public final a:Ljava/util/UUID;
 
 .field public final b:I
 
-.field public final c:Lcb0;
+.field public final c:I
+
+.field public final d:Landroid/graphics/Rect;
+
+.field public final e:Landroid/util/Size;
+
+.field public final f:I
+
+.field public final g:Z
+
+.field public final h:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
-
-    new-instance v0, Lua0;
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x2
-
-    const/4 v3, 0x0
-
-    invoke-direct {v0, v1, v2, v3}, Lua0;-><init>(IILcb0;)V
-
-    sput-object v0, Lua0;->d:Lua0;
-
-    new-instance v0, Ljava/util/HashSet;
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    const/4 v4, -0x1
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    filled-new-array {v2, v4}, [Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-direct {v0, v2}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
-
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
-
-    move-result-object v0
-
-    sput-object v0, Lua0;->e:Ljava/util/Set;
-
-    new-instance v0, Lua0;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v0, v1, v2, v3}, Lua0;-><init>(IILcb0;)V
-
-    new-instance v1, Lie3;
-
-    invoke-direct {v1, v0}, Lie3;-><init>(Ljava/lang/Object;)V
-
-    sput-object v1, Lua0;->f:Lie3;
-
-    return-void
-.end method
-
-.method public constructor <init>(IILcb0;)V
+.method public constructor <init>(Ljava/util/UUID;IILandroid/graphics/Rect;Landroid/util/Size;IZZ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lua0;->a:I
+    if-eqz p1, :cond_2
 
-    if-eqz p2, :cond_0
+    iput-object p1, p0, Lua0;->a:Ljava/util/UUID;
 
     iput p2, p0, Lua0;->b:I
 
-    iput-object p3, p0, Lua0;->c:Lcb0;
+    iput p3, p0, Lua0;->c:I
+
+    if-eqz p4, :cond_1
+
+    iput-object p4, p0, Lua0;->d:Landroid/graphics/Rect;
+
+    if-eqz p5, :cond_0
+
+    iput-object p5, p0, Lua0;->e:Landroid/util/Size;
+
+    iput p6, p0, Lua0;->f:I
+
+    iput-boolean p7, p0, Lua0;->g:Z
+
+    iput-boolean p8, p0, Lua0;->h:Z
 
     return-void
 
     :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
-    const-string p1, "Null streamState"
+    const-string p1, "Null getSize"
+
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    new-instance p0, Ljava/lang/NullPointerException;
+
+    const-string p1, "Null getCropRect"
+
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_2
+    new-instance p0, Ljava/lang/NullPointerException;
+
+    const-string p1, "Null getUuid"
 
     invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -106,163 +82,245 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v0, 0x1
+    .locals 2
 
     if-ne p1, p0, :cond_0
 
-    return v0
+    goto :goto_0
 
     :cond_0
-    instance-of v1, p1, Lua0;
+    instance-of v0, p1, Lua0;
 
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_3
+    if-eqz v0, :cond_1
 
     check-cast p1, Lua0;
 
-    iget v1, p1, Lua0;->a:I
+    iget-object v0, p0, Lua0;->a:Ljava/util/UUID;
 
-    iget v3, p0, Lua0;->a:I
+    iget-object v1, p1, Lua0;->a:Ljava/util/UUID;
 
-    if-ne v3, v1, :cond_2
+    invoke-virtual {v0, v1}, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
 
-    iget v1, p0, Lua0;->b:I
+    move-result v0
 
-    iget v3, p1, Lua0;->b:I
+    if-eqz v0, :cond_1
 
-    invoke-static {v1, v3}, Lhr1;->c(II)Z
+    iget v0, p0, Lua0;->b:I
 
-    move-result v1
+    iget v1, p1, Lua0;->b:I
 
-    if-eqz v1, :cond_2
+    if-ne v0, v1, :cond_1
 
-    iget-object p1, p1, Lua0;->c:Lcb0;
+    iget v0, p0, Lua0;->c:I
 
-    iget-object p0, p0, Lua0;->c:Lcb0;
+    iget v1, p1, Lua0;->c:I
 
-    if-nez p0, :cond_1
+    if-ne v0, v1, :cond_1
 
-    if-nez p1, :cond_2
+    iget-object v0, p0, Lua0;->d:Landroid/graphics/Rect;
 
-    goto :goto_0
+    iget-object v1, p1, Lua0;->d:Landroid/graphics/Rect;
 
-    :cond_1
-    invoke-virtual {p0, p1}, Lcb0;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
 
-    move-result p0
+    move-result v0
 
-    if-eqz p0, :cond_2
+    if-eqz v0, :cond_1
 
-    goto :goto_0
+    iget-object v0, p0, Lua0;->e:Landroid/util/Size;
 
-    :cond_2
-    move v0, v2
+    iget-object v1, p1, Lua0;->e:Landroid/util/Size;
+
+    invoke-virtual {v0, v1}, Landroid/util/Size;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget v0, p0, Lua0;->f:I
+
+    iget v1, p1, Lua0;->f:I
+
+    if-ne v0, v1, :cond_1
+
+    iget-boolean v0, p0, Lua0;->g:Z
+
+    iget-boolean v1, p1, Lua0;->g:Z
+
+    if-ne v0, v1, :cond_1
+
+    iget-boolean p0, p0, Lua0;->h:Z
+
+    iget-boolean p1, p1, Lua0;->h:Z
+
+    if-ne p0, p1, :cond_1
 
     :goto_0
-    return v0
+    const/4 p0, 0x1
 
-    :cond_3
-    return v2
+    return p0
+
+    :cond_1
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
 .method public final hashCode()I
-    .locals 3
+    .locals 5
 
-    const v0, 0xf4243
+    iget-object v0, p0, Lua0;->a:Ljava/util/UUID;
 
-    iget v1, p0, Lua0;->a:I
+    invoke-virtual {v0}, Ljava/util/UUID;->hashCode()I
 
-    xor-int/2addr v1, v0
+    move-result v0
 
-    mul-int/2addr v1, v0
+    const v1, 0xf4243
+
+    xor-int/2addr v0, v1
+
+    mul-int/2addr v0, v1
 
     iget v2, p0, Lua0;->b:I
 
-    invoke-static {v2}, Lhr1;->t(I)I
+    xor-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget v2, p0, Lua0;->c:I
+
+    xor-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget-object v2, p0, Lua0;->d:Landroid/graphics/Rect;
+
+    invoke-virtual {v2}, Landroid/graphics/Rect;->hashCode()I
 
     move-result v2
 
-    xor-int/2addr v1, v2
+    xor-int/2addr v0, v2
 
-    mul-int/2addr v1, v0
+    mul-int/2addr v0, v1
 
-    iget-object p0, p0, Lua0;->c:Lcb0;
+    iget-object v2, p0, Lua0;->e:Landroid/util/Size;
 
-    if-nez p0, :cond_0
+    invoke-virtual {v2}, Landroid/util/Size;->hashCode()I
 
-    const/4 p0, 0x0
+    move-result v2
+
+    xor-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget v2, p0, Lua0;->f:I
+
+    xor-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget-boolean v2, p0, Lua0;->g:Z
+
+    const/16 v3, 0x4d5
+
+    const/16 v4, 0x4cf
+
+    if-eqz v2, :cond_0
+
+    move v2, v4
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0}, Lcb0;->hashCode()I
-
-    move-result p0
+    move v2, v3
 
     :goto_0
-    xor-int/2addr p0, v1
+    xor-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget-boolean p0, p0, Lua0;->h:Z
+
+    if-eqz p0, :cond_1
+
+    move v3, v4
+
+    :cond_1
+    xor-int p0, v0, v3
 
     return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "StreamInfo{id="
+    const-string v1, "OutConfig{getUuid="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget v1, p0, Lua0;->a:I
+    iget-object v1, p0, Lua0;->a:Ljava/util/UUID;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", streamState="
+    const-string v1, ", getTargets="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Lua0;->b:I
 
-    const/4 v2, 0x1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    if-eq v1, v2, :cond_1
-
-    const/4 v2, 0x2
-
-    if-eq v1, v2, :cond_0
-
-    const-string v1, "null"
-
-    goto :goto_0
-
-    :cond_0
-    const-string v1, "INACTIVE"
-
-    goto :goto_0
-
-    :cond_1
-    const-string v1, "ACTIVE"
-
-    :goto_0
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", inProgressTransformationInfo="
+    const-string v1, ", getFormat="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Lua0;->c:Lcb0;
+    iget v1, p0, Lua0;->c:I
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string p0, "}"
+    const-string v1, ", getCropRect="
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v1, p0, Lua0;->d:Landroid/graphics/Rect;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", getSize="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lua0;->e:Landroid/util/Size;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", getRotationDegrees="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Lua0;->f:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", isMirroring="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lua0;->g:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", shouldRespectInputCropRect="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean p0, p0, Lua0;->h:Z
+
+    const-string v1, "}"
+
+    invoke-static {v0, p0, v1}, Lzt1;->j(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

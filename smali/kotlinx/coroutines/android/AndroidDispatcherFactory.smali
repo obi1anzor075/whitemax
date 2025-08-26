@@ -9,25 +9,13 @@
 # annotations
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u000e\n\u0002\u0008\u0002\n\u0002\u0010\u0008\n\u0002\u0008\u0004\u0008\u0000\u0018\u00002\u00020\u0001B\u0007\u00a2\u0006\u0004\u0008\u0002\u0010\u0003J\u001d\u0010\u0007\u001a\u00020\u00062\u000c\u0010\u0005\u001a\u0008\u0012\u0004\u0012\u00020\u00010\u0004H\u0016\u00a2\u0006\u0004\u0008\u0007\u0010\u0008J\u000f\u0010\n\u001a\u00020\tH\u0016\u00a2\u0006\u0004\u0008\n\u0010\u000bR\u0014\u0010\u000f\u001a\u00020\u000c8VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\r\u0010\u000e\u00a8\u0006\u0010"
+        "\u0000\u000c\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0008\u0000\u0018\u00002\u00020\u0001B\u0007\u00a2\u0006\u0004\u0008\u0002\u0010\u0003\u00a8\u0006\u0004"
     }
     d2 = {
         "Lkotlinx/coroutines/android/AndroidDispatcherFactory;",
         "Lkotlinx/coroutines/internal/MainDispatcherFactory;",
         "<init>",
         "()V",
-        "",
-        "allFactories",
-        "Lzr7;",
-        "createDispatcher",
-        "(Ljava/util/List;)Lzr7;",
-        "",
-        "hintOnError",
-        "()Ljava/lang/String;",
-        "",
-        "getLoadPriority",
-        "()I",
-        "loadPriority",
         "kotlinx-coroutines-android"
     }
     k = 0x1
@@ -36,6 +24,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -50,8 +39,8 @@
 
 
 # virtual methods
-.method public createDispatcher(Ljava/util/List;)Lzr7;
-    .locals 0
+.method public final createDispatcher(Ljava/util/List;)Lxw7;
+    .locals 1
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
@@ -59,13 +48,15 @@
 
     if-eqz p0, :cond_0
 
-    new-instance p1, Lsd6;
+    new-instance p1, Lji6;
 
-    invoke-static {p0}, Ltd6;->a(Landroid/os/Looper;)Landroid/os/Handler;
+    invoke-static {p0}, Lki6;->a(Landroid/os/Looper;)Landroid/os/Handler;
 
     move-result-object p0
 
-    invoke-direct {p1, p0}, Lsd6;-><init>(Landroid/os/Handler;)V
+    const/4 v0, 0x0
+
+    invoke-direct {p1, p0, v0}, Lji6;-><init>(Landroid/os/Handler;Z)V
 
     return-object p1
 
@@ -79,7 +70,7 @@
     throw p0
 .end method
 
-.method public getLoadPriority()I
+.method public final getLoadPriority()I
     .locals 0
 
     const p0, 0x3fffffff    # 1.9999999f
@@ -87,7 +78,7 @@
     return p0
 .end method
 
-.method public hintOnError()Ljava/lang/String;
+.method public final hintOnError()Ljava/lang/String;
     .locals 0
 
     const-string p0, "For tests Dispatchers.setMain from kotlinx-coroutines-test module can be used"

@@ -3,310 +3,470 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lat;
+.implements Lsqd;
 
 
 # instance fields
-.field public final a:Z
+.field public final a:Lvs0;
 
-.field public final b:Lgs4;
+.field public b:Z
 
-.field public final c:Lwm0;
+.field public final c:Z
 
-.field public final d:Lzs;
-
-.field public final e:Ljava/util/concurrent/ScheduledExecutorService;
-
-.field public f:Lojc;
-
-.field public g:I
-
-.field public volatile h:I
+.field public final synthetic o:Lvp6;
 
 
 # direct methods
-.method public constructor <init>(Lgs4;Lzs;Lsz3;Z)V
-    .locals 4
+.method public constructor <init>(Lvp6;Z)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p4, p0, Lsp6;->a:Z
+    iput-object p1, p0, Lsp6;->o:Lvp6;
 
-    iget-wide v0, p1, Lgs4;->e:J
+    iput-boolean p2, p0, Lsp6;->c:Z
 
-    const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
+    new-instance p1, Lvs0;
 
-    cmp-long p4, v0, v2
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    if-eqz p4, :cond_0
-
-    move p4, v0
-
-    goto :goto_0
-
-    :cond_0
-    move p4, v1
-
-    :goto_0
-    invoke-static {p4}, Loyb;->k(Z)V
-
-    iget p4, p1, Lgs4;->f:I
-
-    const v2, -0x7fffffff
-
-    if-eq p4, v2, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    move v0, v1
-
-    :goto_1
-    invoke-static {v0}, Loyb;->k(Z)V
-
-    iput-object p1, p0, Lsp6;->b:Lgs4;
-
-    iput-object p2, p0, Lsp6;->d:Lzs;
-
-    iput-object p3, p0, Lsp6;->c:Lwm0;
-
-    invoke-static {}, Ljava/util/concurrent/Executors;->newSingleThreadScheduledExecutor()Ljava/util/concurrent/ScheduledExecutorService;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lsp6;->e:Ljava/util/concurrent/ScheduledExecutorService;
-
-    iput v1, p0, Lsp6;->g:I
+    iput-object p1, p0, Lsp6;->a:Lvs0;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lii5;)I
-    .locals 2
+.method public final R(Lvs0;J)V
+    .locals 3
 
-    iget v0, p0, Lsp6;->g:I
+    sget-object v0, Loaf;->a:[B
 
-    const/4 v1, 0x2
+    iget-object v0, p0, Lsp6;->a:Lvs0;
 
-    if-ne v0, v1, :cond_0
+    invoke-virtual {v0, p1, p2, p3}, Lvs0;->R(Lvs0;J)V
 
-    iget v0, p0, Lsp6;->h:I
+    :goto_0
+    iget-wide p1, v0, Lvs0;->b:J
 
-    iput v0, p1, Lii5;->b:I
+    const-wide/16 v1, 0x4000
 
-    :cond_0
-    iget p0, p0, Lsp6;->g:I
+    cmp-long p1, p1, v1
 
-    return p0
-.end method
+    if-ltz p1, :cond_0
 
-.method public final b(Landroid/graphics/Bitmap;Lxu5;)V
-    .locals 10
+    const/4 p1, 0x0
 
-    :try_start_0
-    iget-object v0, p0, Lsp6;->f:Lojc;
-
-    const-wide/16 v1, 0xa
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lsp6;->d:Lzs;
-
-    invoke-interface {v0, p2}, Lzs;->c(Lxu5;)Lojc;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lsp6;->f:Lojc;
-
-    iget-object v0, p0, Lsp6;->e:Ljava/util/concurrent/ScheduledExecutorService;
-
-    new-instance v3, Lrp6;
-
-    const/4 v4, 0x0
-
-    invoke-direct {v3, p0, p1, p2, v4}, Lrp6;-><init>(Lsp6;Landroid/graphics/Bitmap;Lxu5;I)V
-
-    sget-object p1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-interface {v0, v3, v1, v2, p1}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-
-    return-void
-
-    :catch_0
-    move-exception p1
+    invoke-virtual {p0, p1}, Lsp6;->c(Z)V
 
     goto :goto_0
 
-    :catch_1
-    move-exception p1
-
-    goto :goto_1
-
     :cond_0
-    new-instance v9, Lje3;
+    return-void
+.end method
 
-    iget-object v3, p0, Lsp6;->b:Lgs4;
+.method public final c(Z)V
+    .locals 12
 
-    iget-wide v7, v3, Lgs4;->e:J
+    iget-object v1, p0, Lsp6;->o:Lvp6;
 
-    iget v3, v3, Lgs4;->f:I
+    monitor-enter v1
 
-    int-to-float v4, v3
+    :try_start_0
+    iget-object v0, p0, Lsp6;->o:Lvp6;
 
-    const-wide/16 v5, 0x0
+    iget-object v0, v0, Lvp6;->j:Lup6;
 
-    move-object v3, v9
+    invoke-virtual {v0}, Llx;->i()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    invoke-direct/range {v3 .. v8}, Lje3;-><init>(FJJ)V
+    :goto_0
+    :try_start_1
+    iget-object v0, p0, Lsp6;->o:Lvp6;
 
-    invoke-interface {v0, p1, v9}, Lojc;->g(Landroid/graphics/Bitmap;Ldke;)I
+    iget-wide v2, v0, Lvp6;->c:J
+
+    iget-wide v4, v0, Lvp6;->d:J
+
+    cmp-long v2, v2, v4
+
+    if-ltz v2, :cond_0
+
+    iget-boolean v2, p0, Lsp6;->c:Z
+
+    if-nez v2, :cond_0
+
+    iget-boolean v2, p0, Lsp6;->b:Z
+
+    if-nez v2, :cond_0
+
+    invoke-virtual {v0}, Lvp6;->f()I
 
     move-result v0
 
-    const/4 v3, 0x1
+    if-nez v0, :cond_0
 
-    const/16 v4, 0x64
+    iget-object v0, p0, Lsp6;->o:Lvp6;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-eq v0, v3, :cond_3
+    :try_start_2
+    invoke-virtual {v0}, Ljava/lang/Object;->wait()V
+    :try_end_2
+    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    const/4 v3, 0x2
+    goto :goto_0
 
-    if-eq v0, v3, :cond_2
-
-    const/4 p1, 0x3
-
-    if-ne v0, p1, :cond_1
-
-    iput v4, p0, Lsp6;->h:I
-
-    goto :goto_2
-
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
-
-    throw p1
-
-    :cond_2
-    iget-object v0, p0, Lsp6;->e:Ljava/util/concurrent/ScheduledExecutorService;
-
-    new-instance v3, Lrp6;
-
-    const/4 v4, 0x1
-
-    invoke-direct {v3, p0, p1, p2, v4}, Lrp6;-><init>(Lsp6;Landroid/graphics/Bitmap;Lxu5;I)V
-
-    sget-object p1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-interface {v0, v3, v1, v2, p1}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-
-    goto :goto_2
-
-    :cond_3
-    iput v4, p0, Lsp6;->h:I
-
-    iget-object p1, p0, Lsp6;->f:Lojc;
-
-    invoke-interface {p1}, Lojc;->e()V
-    :try_end_0
-    .catch Landroidx/media3/transformer/ExportException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_2
-
-    :goto_0
-    iget-object p0, p0, Lsp6;->d:Lzs;
-
-    const/16 p2, 0x3e8
-
-    invoke-static {p1, p2}, Landroidx/media3/transformer/ExportException;->a(Ljava/lang/Throwable;I)Landroidx/media3/transformer/ExportException;
+    :catch_0
+    :try_start_3
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object p1
 
-    invoke-interface {p0, p1}, Lzs;->d(Landroidx/media3/transformer/ExportException;)V
+    invoke-virtual {p1}, Ljava/lang/Thread;->interrupt()V
+
+    new-instance p1, Ljava/io/InterruptedIOException;
+
+    invoke-direct {p1}, Ljava/io/InterruptedIOException;-><init>()V
+
+    throw p1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    move-object p1, v0
+
+    goto :goto_3
+
+    :cond_0
+    :try_start_4
+    iget-object v0, p0, Lsp6;->o:Lvp6;
+
+    iget-object v0, v0, Lvp6;->j:Lup6;
+
+    invoke-virtual {v0}, Lup6;->l()V
+
+    iget-object v0, p0, Lsp6;->o:Lvp6;
+
+    invoke-virtual {v0}, Lvp6;->b()V
+
+    iget-object v0, p0, Lsp6;->o:Lvp6;
+
+    iget-wide v2, v0, Lvp6;->d:J
+
+    iget-wide v4, v0, Lvp6;->c:J
+
+    sub-long/2addr v2, v4
+
+    iget-object v0, p0, Lsp6;->a:Lvs0;
+
+    iget-wide v4, v0, Lvs0;->b:J
+
+    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide v10
+
+    iget-object v0, p0, Lsp6;->o:Lvp6;
+
+    iget-wide v2, v0, Lvp6;->c:J
+
+    add-long/2addr v2, v10
+
+    iput-wide v2, v0, Lvp6;->c:J
+
+    if-eqz p1, :cond_1
+
+    iget-object p1, p0, Lsp6;->a:Lvs0;
+
+    iget-wide v2, p1, Lvs0;->b:J
+
+    cmp-long p1, v10, v2
+
+    if-nez p1, :cond_1
+
+    invoke-virtual {v0}, Lvp6;->f()I
+
+    move-result p1
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+
+    if-nez p1, :cond_1
+
+    const/4 p1, 0x1
+
+    :goto_1
+    move v8, p1
 
     goto :goto_2
 
-    :goto_1
-    iget-object p0, p0, Lsp6;->d:Lzs;
+    :catchall_1
+    move-exception v0
 
-    invoke-interface {p0, p1}, Lzs;->d(Landroidx/media3/transformer/ExportException;)V
+    move-object p0, v0
+
+    goto :goto_4
+
+    :cond_1
+    const/4 p1, 0x0
+
+    goto :goto_1
 
     :goto_2
+    monitor-exit v1
+
+    iget-object p1, p0, Lsp6;->o:Lvp6;
+
+    iget-object p1, p1, Lvp6;->j:Lup6;
+
+    invoke-virtual {p1}, Llx;->i()V
+
+    :try_start_5
+    iget-object p1, p0, Lsp6;->o:Lvp6;
+
+    iget-object v6, p1, Lvp6;->n:Lop6;
+
+    iget v7, p1, Lvp6;->m:I
+
+    iget-object v9, p0, Lsp6;->a:Lvs0;
+
+    invoke-virtual/range {v6 .. v11}, Lop6;->o(IZLvs0;J)V
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
+
+    iget-object p0, p0, Lsp6;->o:Lvp6;
+
+    iget-object p0, p0, Lvp6;->j:Lup6;
+
+    invoke-virtual {p0}, Lup6;->l()V
+
     return-void
+
+    :catchall_2
+    move-exception v0
+
+    move-object p1, v0
+
+    iget-object p0, p0, Lsp6;->o:Lvp6;
+
+    iget-object p0, p0, Lvp6;->j:Lup6;
+
+    invoke-virtual {p0}, Lup6;->l()V
+
+    throw p1
+
+    :goto_3
+    :try_start_6
+    iget-object p0, p0, Lsp6;->o:Lvp6;
+
+    iget-object p0, p0, Lvp6;->j:Lup6;
+
+    invoke-virtual {p0}, Lup6;->l()V
+
+    throw p1
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
+
+    :goto_4
+    monitor-exit v1
+
+    throw p0
 .end method
 
-.method public final e()Lzs6;
-    .locals 0
+.method public final close()V
+    .locals 13
 
-    sget-object p0, Lj8c;->w0:Lj8c;
+    iget-object v1, p0, Lsp6;->o:Lvp6;
 
-    return-object p0
+    sget-object v0, Loaf;->a:[B
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-boolean v0, p0, Lsp6;->b:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    if-eqz v0, :cond_0
+
+    monitor-exit v1
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, Lsp6;->o:Lvp6;
+
+    invoke-virtual {v0}, Lvp6;->f()I
+
+    move-result v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    const/4 v2, 0x1
+
+    if-nez v0, :cond_1
+
+    move v0, v2
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    :goto_0
+    monitor-exit v1
+
+    iget-object v1, p0, Lsp6;->o:Lvp6;
+
+    iget-object v3, v1, Lvp6;->h:Lsp6;
+
+    iget-boolean v3, v3, Lsp6;->c:Z
+
+    if-nez v3, :cond_3
+
+    iget-object v3, p0, Lsp6;->a:Lvs0;
+
+    iget-wide v3, v3, Lvs0;->b:J
+
+    const-wide/16 v5, 0x0
+
+    cmp-long v3, v3, v5
+
+    if-lez v3, :cond_2
+
+    :goto_1
+    iget-object v0, p0, Lsp6;->a:Lvs0;
+
+    iget-wide v0, v0, Lvs0;->b:J
+
+    cmp-long v0, v0, v5
+
+    if-lez v0, :cond_3
+
+    invoke-virtual {p0, v2}, Lsp6;->c(Z)V
+
+    goto :goto_1
+
+    :cond_2
+    if-eqz v0, :cond_3
+
+    iget-object v7, v1, Lvp6;->n:Lop6;
+
+    iget v8, v1, Lvp6;->m:I
+
+    const/4 v10, 0x0
+
+    const-wide/16 v11, 0x0
+
+    const/4 v9, 0x1
+
+    invoke-virtual/range {v7 .. v12}, Lop6;->o(IZLvs0;J)V
+
+    :cond_3
+    iget-object v1, p0, Lsp6;->o:Lvp6;
+
+    monitor-enter v1
+
+    :try_start_2
+    iput-boolean v2, p0, Lsp6;->b:Z
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    monitor-exit v1
+
+    iget-object v0, p0, Lsp6;->o:Lvp6;
+
+    iget-object v0, v0, Lvp6;->n:Lop6;
+
+    invoke-virtual {v0}, Lop6;->flush()V
+
+    iget-object p0, p0, Lsp6;->o:Lvp6;
+
+    invoke-virtual {p0}, Lvp6;->a()V
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    move-object p0, v0
+
+    monitor-exit v1
+
+    throw p0
+
+    :catchall_1
+    move-exception v0
+
+    move-object p0, v0
+
+    monitor-exit v1
+
+    throw p0
 .end method
 
-.method public final release()V
-    .locals 1
+.method public final flush()V
+    .locals 4
+
+    iget-object v0, p0, Lsp6;->o:Lvp6;
+
+    sget-object v1, Loaf;->a:[B
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lsp6;->o:Lvp6;
+
+    invoke-virtual {v1}, Lvp6;->b()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v0
+
+    :goto_0
+    iget-object v0, p0, Lsp6;->a:Lvs0;
+
+    iget-wide v0, v0, Lvs0;->b:J
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v0, v0, v2
+
+    if-lez v0, :cond_0
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lsp6;->g:I
+    invoke-virtual {p0, v0}, Lsp6;->c(Z)V
 
-    iget-object p0, p0, Lsp6;->e:Ljava/util/concurrent/ScheduledExecutorService;
+    iget-object v0, p0, Lsp6;->o:Lvp6;
 
-    invoke-interface {p0}, Ljava/util/concurrent/ExecutorService;->shutdownNow()Ljava/util/List;
+    iget-object v0, v0, Lvp6;->n:Lop6;
 
+    invoke-virtual {v0}, Lop6;->flush()V
+
+    goto :goto_0
+
+    :cond_0
     return-void
+
+    :catchall_0
+    move-exception p0
+
+    monitor-exit v0
+
+    throw p0
 .end method
 
-.method public final start()V
-    .locals 4
+.method public final p()Lsse;
+    .locals 0
 
-    const/4 v0, 0x2
+    iget-object p0, p0, Lsp6;->o:Lvp6;
 
-    iput v0, p0, Lsp6;->g:I
+    iget-object p0, p0, Lvp6;->j:Lup6;
 
-    iget-object v0, p0, Lsp6;->b:Lgs4;
-
-    iget-wide v1, v0, Lgs4;->e:J
-
-    iget-object v3, p0, Lsp6;->d:Lzs;
-
-    invoke-interface {v3, v1, v2}, Lzs;->f(J)V
-
-    const/4 v1, 0x1
-
-    invoke-interface {v3, v1}, Lzs;->b(I)V
-
-    iget-object v0, v0, Lgs4;->a:Ll68;
-
-    iget-object v0, v0, Ll68;->b:La68;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v1, p0, Lsp6;->c:Lwm0;
-
-    iget-object v0, v0, La68;->a:Landroid/net/Uri;
-
-    invoke-interface {v1, v0}, Lwm0;->c(Landroid/net/Uri;)Lch7;
-
-    move-result-object v0
-
-    new-instance v1, Lmod;
-
-    const/16 v2, 0x12
-
-    invoke-direct {v1, v2, p0}, Lmod;-><init>(ILjava/lang/Object;)V
-
-    iget-object p0, p0, Lsp6;->e:Ljava/util/concurrent/ScheduledExecutorService;
-
-    invoke-static {v0, v1, p0}, Lswb;->a(Lch7;Lh36;Ljava/util/concurrent/Executor;)V
-
-    return-void
+    return-object p0
 .end method

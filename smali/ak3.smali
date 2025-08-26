@@ -1,85 +1,74 @@
-.class public final Lak3;
+.class public final synthetic Lak3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/view/View$OnClickListener;
+
 
 # instance fields
-.field public final a:Lt97;
+.field public final synthetic a:I
+
+.field public final synthetic b:Lx56;
 
 
 # direct methods
-.method public constructor <init>(Lt97;)V
+.method public synthetic constructor <init>(ILx56;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p1, p0, Lak3;->a:I
 
-    iput-object p1, p0, Lak3;->a:Lt97;
+    iput-object p2, p0, Lak3;->b:Lx56;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;)V
-    .locals 3
+.method public final onClick(Landroid/view/View;)V
+    .locals 0
 
-    sget-object v0, Loyb;->g:Ljava/lang/String;
+    iget p1, p0, Lak3;->a:I
 
-    iget-object p0, p0, Lak3;->a:Lt97;
+    iget-object p0, p0, Lak3;->b:Lx56;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    packed-switch p1, :pswitch_data_0
 
-    move-result-object p0
+    sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    check-cast p0, Lxzc;
-
-    check-cast p0, Lvqc;
-
-    iget-object v0, p0, Lf3;->g:Lx97;
-
-    const-string v1, "invite-long"
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Lx97;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    sget v0, Lwhc;->C:I
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    sget-object v1, Lru/ok/tamtam/android/prefs/PmsKey;->invite-link:Lru/ok/tamtam/android/prefs/PmsKey;
-
-    const-string v2, "https://max.ru"
-
-    invoke-virtual {p0, v1, v2}, Lvqc;->q(Ljava/lang/Enum;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    filled-new-array {p0}, [Ljava/lang/Object;
-
-    move-result-object p0
-
-    const/4 v1, 0x1
-
-    invoke-static {p0, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-static {v0, p0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-static {p1, v0}, Loyb;->R(Landroid/content/Context;Ljava/lang/CharSequence;)V
+    invoke-interface {p0, p1}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
+
+    :pswitch_0
+    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    invoke-interface {p0, p1}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+
+    :pswitch_1
+    sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-interface {p0, p1}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+
+    :pswitch_2
+    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    invoke-interface {p0, p1}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

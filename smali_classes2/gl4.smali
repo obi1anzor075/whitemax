@@ -1,57 +1,48 @@
 .class public final Lgl4;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lpwe;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Lhl4;
-
-.field public Z:I
-
-.field public o:Lru/ok/tamtam/upload/workers/DownloadFileFromWebAppWorker;
+.field public final a:Z
 
 
 # direct methods
-.method public constructor <init>(Lhl4;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Ly7a;)V
     .locals 0
 
-    iput-object p1, p0, Lgl4;->Y:Lhl4;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iget-object p1, p1, Ly7a;->b:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/Boolean;
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x1
+
+    :goto_0
+    iput-boolean p1, p0, Lgl4;->a:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 7
+.method public final a()Lrsd;
+    .locals 0
 
-    iput-object p1, p0, Lgl4;->X:Ljava/lang/Object;
-
-    iget p1, p0, Lgl4;->Z:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lgl4;->Z:I
-
-    const-wide/16 v2, 0x0
-
-    const-wide/16 v4, 0x0
-
-    iget-object v0, p0, Lgl4;->Y:Lhl4;
-
-    const/4 v1, 0x0
-
-    move-object v6, p0
-
-    invoke-virtual/range {v0 .. v6}, Lhl4;->c(FJJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
+    sget-object p0, Lsre;->a:Lrsd;
 
     return-object p0
 .end method

@@ -1,93 +1,124 @@
-.class public abstract Lhxc;
-.super Ljava/lang/Object;
+.class public final Lhxc;
+.super Lqde;
 .source "SourceFile"
 
+# interfaces
+.implements Ll66;
 
-# static fields
-.field public static final a:I
 
-.field public static final b:Lkotlinx/coroutines/internal/Symbol;
+# instance fields
+.field public X:I
 
-.field public static final c:Lkotlinx/coroutines/internal/Symbol;
+.field public final synthetic Y:Ljxc;
 
-.field public static final d:Lkotlinx/coroutines/internal/Symbol;
-
-.field public static final e:Lkotlinx/coroutines/internal/Symbol;
-
-.field public static final f:I
+.field public final synthetic Z:Lyj2;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
+.method public constructor <init>(Ljxc;Lyj2;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    const/16 v4, 0xc
+    iput-object p1, p0, Lhxc;->Y:Ljxc;
 
-    const/4 v5, 0x0
+    iput-object p2, p0, Lhxc;->Z:Lyj2;
 
-    const-string v0, "kotlinx.coroutines.semaphore.maxSpinCycles"
+    const/4 p1, 0x2
 
-    const/16 v1, 0x64
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    invoke-static/range {v0 .. v5}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
-
-    move-result v0
-
-    sput v0, Lhxc;->a:I
-
-    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
-
-    const-string v1, "PERMIT"
-
-    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lhxc;->b:Lkotlinx/coroutines/internal/Symbol;
-
-    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
-
-    const-string v1, "TAKEN"
-
-    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lhxc;->c:Lkotlinx/coroutines/internal/Symbol;
-
-    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
-
-    const-string v1, "BROKEN"
-
-    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lhxc;->d:Lkotlinx/coroutines/internal/Symbol;
-
-    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
-
-    const-string v1, "CANCELLED"
-
-    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lhxc;->e:Lkotlinx/coroutines/internal/Symbol;
-
-    const/16 v6, 0xc
-
-    const/4 v7, 0x0
-
-    const-string v2, "kotlinx.coroutines.semaphore.segmentSize"
-
-    const/16 v3, 0x10
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    invoke-static/range {v2 .. v7}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp$default(Ljava/lang/String;IIIILjava/lang/Object;)I
-
-    move-result v0
-
-    sput v0, Lhxc;->f:I
+    invoke-direct {p0, p1, p3}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Lox3;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lhxc;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lhxc;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lhxc;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
+
+    new-instance p1, Lhxc;
+
+    iget-object v0, p0, Lhxc;->Y:Ljxc;
+
+    iget-object p0, p0, Lhxc;->Z:Lyj2;
+
+    invoke-direct {p1, v0, p0, p2}, Lhxc;-><init>(Ljxc;Lyj2;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
+
+    iget v0, p0, Lhxc;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lhxc;->Y:Ljxc;
+
+    iget-object p1, p1, Ljxc;->a:Lwjd;
+
+    new-instance v0, Lfxc;
+
+    iget-object v2, p0, Lhxc;->Z:Lyj2;
+
+    invoke-direct {v0, v2}, Lfxc;-><init>(Lyj2;)V
+
+    iput v1, p0, Lhxc;->X:I
+
+    invoke-virtual {p1, v0, p0}, Lwjd;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

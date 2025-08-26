@@ -4,7 +4,7 @@
 
 # interfaces
 .implements Lru/ok/android/externcalls/sdk/chat/internal/listener/ChatListenerManager;
-.implements Lm11;
+.implements Lt21;
 
 
 # annotations
@@ -15,21 +15,21 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/chat/internal/listener/ChatListenerManagerImpl;",
         "Lru/ok/android/externcalls/sdk/chat/internal/listener/ChatListenerManager;",
-        "Lm11;",
+        "Lt21;",
         "Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;",
         "participantStore",
         "<init>",
         "(Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;)V",
         "Lru/ok/android/externcalls/sdk/chat/listener/ChatManagerListener;",
         "listener",
-        "Ljue;",
+        "Le5f;",
         "addListener",
         "(Lru/ok/android/externcalls/sdk/chat/listener/ChatManagerListener;)V",
         "removeListener",
-        "Lfv6;",
+        "Lbz6;",
         "message",
         "onNewMessage",
-        "(Lfv6;)V",
+        "(Lbz6;)V",
         "Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;",
         "Ljava/util/concurrent/CopyOnWriteArraySet;",
         "listeners",
@@ -42,6 +42,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -88,7 +89,7 @@
     return-void
 .end method
 
-.method public onNewMessage(Lfv6;)V
+.method public onNewMessage(Lbz6;)V
     .locals 4
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/chat/internal/listener/ChatListenerManagerImpl;->listeners:Ljava/util/concurrent/CopyOnWriteArraySet;
@@ -114,7 +115,7 @@
 
     iget-object v3, p0, Lru/ok/android/externcalls/sdk/chat/internal/listener/ChatListenerManagerImpl;->participantStore:Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;
 
-    invoke-virtual {v2, p1, v3}, Lru/ok/android/externcalls/sdk/chat/message/InboundMessageMapper;->fromInternal(Lfv6;Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;)Lru/ok/android/externcalls/sdk/chat/message/InboundMessage;
+    invoke-virtual {v2, p1, v3}, Lru/ok/android/externcalls/sdk/chat/message/InboundMessageMapper;->fromInternal(Lbz6;Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;)Lru/ok/android/externcalls/sdk/chat/message/InboundMessage;
 
     move-result-object v2
 

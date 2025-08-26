@@ -1,442 +1,277 @@
 .class public final Ls6f;
-.super Lvj4;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final o:Landroid/util/Size;
+.field public X:I
 
-.field public final p:Ljava/lang/String;
+.field public final synthetic Y:Z
 
-.field public q:Lmsd;
-
-.field public r:Lone/me/sdk/gl/effects/objects/OesToImage2dRenderer;
-
-.field public s:Lone/me/sdk/gl/effects/objects/TrivialFragmentShader;
-
-.field public final t:[F
-
-.field public u:J
-
-.field public v:I
+.field public final synthetic Z:Lt6f;
 
 
 # direct methods
-.method public constructor <init>(Landroid/util/Size;Lzq4;)V
-    .locals 5
+.method public constructor <init>(ZLt6f;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    invoke-direct {p0}, Lvj4;-><init>()V
+    iput-boolean p1, p0, Ls6f;->Y:Z
 
-    iput-object p1, p0, Ls6f;->o:Landroid/util/Size;
+    iput-object p2, p0, Ls6f;->Z:Lt6f;
 
-    const-class v0, Ls6f;
+    const/4 p1, 0x2
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ls6f;->p:Ljava/lang/String;
-
-    const/16 v1, 0x10
-
-    new-array v1, v1, [F
-
-    iput-object v1, p0, Ls6f;->t:[F
-
-    const/4 v1, -0x1
-
-    iput v1, p0, Ls6f;->v:I
-
-    sget-object v1, Ludd;->e:Lfn6;
-
-    if-nez v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-interface {v1}, Lfn6;->c()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    sget-object v2, Ltn7;->X:Ltn7;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "init, previewSize="
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p1, ", dynamicRange="
-
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const/4 v3, 0x0
-
-    invoke-interface {v1, v2, v0, p1, v3}, Lfn6;->d(Ltn7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_1
-    :goto_0
-    invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p2, p1}, Lvj4;->n(Lzq4;Ljava/util/Map;)Lm90;
+    invoke-direct {p0, p1, p3}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final q()V
-    .locals 4
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object v0, p0, Ls6f;->p:Ljava/lang/String;
+    check-cast p1, Lox3;
 
-    const-string v1, "release"
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-static {v0, v1}, Ludd;->U(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p0, p1, p2}, Ls6f;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    iget-object v0, p0, Ls6f;->s:Lone/me/sdk/gl/effects/objects/TrivialFragmentShader;
+    move-result-object p0
 
-    if-eqz v0, :cond_0
+    check-cast p0, Ls6f;
 
-    invoke-virtual {v0}, Lone/me/sdk/gl/effects/objects/TrivialFragmentShader;->release()V
+    sget-object p1, Le5f;->a:Le5f;
 
-    :cond_0
-    const/4 v0, 0x0
+    invoke-virtual {p0, p1}, Ls6f;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object v0, p0, Ls6f;->s:Lone/me/sdk/gl/effects/objects/TrivialFragmentShader;
+    move-result-object p0
 
-    iget-object v2, p0, Ls6f;->r:Lone/me/sdk/gl/effects/objects/OesToImage2dRenderer;
-
-    if-eqz v2, :cond_1
-
-    invoke-virtual {v2}, Lone/me/sdk/gl/effects/objects/OesToImage2dRenderer;->release()V
-
-    :cond_1
-    iput-object v0, p0, Ls6f;->r:Lone/me/sdk/gl/effects/objects/OesToImage2dRenderer;
-
-    iget-object v2, p0, Ls6f;->q:Lmsd;
-
-    if-eqz v2, :cond_2
-
-    iget-object v3, v2, Lmsd;->d:Ljava/lang/String;
-
-    invoke-static {v3, v1}, Ludd;->U(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v1, v2, Lmsd;->e:Lone/me/sdk/gl/effects/VideoMessageStencilHolder;
-
-    invoke-virtual {v1}, Lone/me/sdk/gl/effects/VideoMessageStencilHolder;->release()V
-
-    iget-object v1, v2, Lmsd;->f:Lone/me/sdk/gl/effects/objects/FrameBuffer;
-
-    invoke-virtual {v1}, Lone/me/sdk/gl/effects/objects/FrameBuffer;->release()V
-
-    :cond_2
-    iput-object v0, p0, Ls6f;->q:Lmsd;
-
-    invoke-super {p0}, Lvj4;->q()V
-
-    return-void
+    return-object p0
 .end method
 
-.method public final w(Landroid/graphics/SurfaceTexture;Landroid/view/Surface;[FZ)V
-    .locals 28
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
 
-    move-object/from16 v0, p0
+    new-instance p1, Ls6f;
 
-    move-object/from16 v1, p2
+    iget-boolean v0, p0, Ls6f;->Y:Z
 
-    move-object/from16 v8, p3
+    iget-object p0, p0, Ls6f;->Z:Lt6f;
 
-    invoke-virtual {v0, v1}, Lvj4;->l(Landroid/view/Surface;)Lda0;
+    invoke-direct {p1, v0, p0, p2}, Ls6f;-><init>(ZLt6f;Lkotlin/coroutines/Continuation;)V
 
-    move-result-object v2
+    return-object p1
+.end method
 
-    sget-object v3, Lw36;->j:Lda0;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 10
 
-    invoke-virtual {v2, v3}, Lda0;->equals(Ljava/lang/Object;)Z
+    iget v0, p0, Ls6f;->X:I
 
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    invoke-virtual {v0, v1}, Lvj4;->h(Landroid/view/Surface;)Lda0;
-
-    move-result-object v2
-
-    if-nez v2, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v3, v0, Lvj4;->d:Ljava/lang/Object;
-
-    check-cast v3, Ljava/util/HashMap;
-
-    invoke-virtual {v3, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_1
-    move-object v9, v2
-
-    iget-object v2, v0, Lvj4;->c:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v10, 0x1
-
-    invoke-static {v2, v10}, Lw36;->d(Ljava/util/concurrent/atomic/AtomicBoolean;Z)V
-
-    iget-object v2, v0, Lvj4;->e:Ljava/lang/Object;
-
-    check-cast v2, Ljava/lang/Thread;
-
-    invoke-static {v2}, Lw36;->c(Ljava/lang/Thread;)V
-
-    iget v11, v0, Lvj4;->b:I
-
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/SurfaceTexture;->getTimestamp()J
-
-    move-result-wide v12
-
-    iget-object v2, v0, Ls6f;->q:Lmsd;
-
-    if-nez v2, :cond_2
-
-    new-instance v2, Lmsd;
-
-    iget-object v3, v0, Ls6f;->o:Landroid/util/Size;
-
-    invoke-direct {v2, v3}, Lmsd;-><init>(Landroid/util/Size;)V
-
-    iput-object v2, v0, Ls6f;->q:Lmsd;
-
-    :cond_2
-    move-object v14, v2
-
-    iget-object v2, v0, Ls6f;->r:Lone/me/sdk/gl/effects/objects/OesToImage2dRenderer;
-
-    if-nez v2, :cond_3
-
-    new-instance v2, Lone/me/sdk/gl/effects/objects/OesToImage2dRenderer;
-
-    invoke-direct {v2}, Lone/me/sdk/gl/effects/objects/OesToImage2dRenderer;-><init>()V
-
-    iput-object v2, v0, Ls6f;->r:Lone/me/sdk/gl/effects/objects/OesToImage2dRenderer;
-
-    :cond_3
-    iget-object v3, v0, Ls6f;->s:Lone/me/sdk/gl/effects/objects/TrivialFragmentShader;
-
-    const/4 v15, 0x0
-
-    if-nez v3, :cond_4
-
-    new-instance v3, Lone/me/sdk/gl/effects/objects/TrivialFragmentShader;
-
-    invoke-direct {v3, v15, v15}, Lone/me/sdk/gl/effects/objects/TrivialFragmentShader;-><init>(IZ)V
-
-    iput-object v3, v0, Ls6f;->s:Lone/me/sdk/gl/effects/objects/TrivialFragmentShader;
-
-    :cond_4
-    move-object v7, v3
-
-    iget-wide v3, v0, Ls6f;->u:J
-
-    cmp-long v3, v12, v3
-
-    iget-object v6, v14, Lmsd;->f:Lone/me/sdk/gl/effects/objects/FrameBuffer;
-
-    iget-object v5, v0, Ls6f;->t:[F
-
-    if-nez v3, :cond_6
-
-    iget v3, v0, Ls6f;->v:I
-
-    if-ne v11, v3, :cond_6
-
-    invoke-static {v8, v5}, Ljava/util/Arrays;->equals([F[F)Z
-
-    move-result v3
-
-    if-nez v3, :cond_5
-
-    goto :goto_0
-
-    :cond_5
-    move-object/from16 v17, v6
-
-    move-object/from16 v19, v7
-
-    move v2, v10
-
-    goto :goto_1
-
-    :cond_6
-    :goto_0
-    invoke-virtual {v6}, Lone/me/sdk/gl/effects/objects/FrameBuffer;->bind()V
-
-    iget v3, v14, Lmsd;->b:I
-
-    iget v4, v14, Lmsd;->c:I
-
-    invoke-static {v15, v15, v3, v4}, Landroid/opengl/GLES20;->glViewport(IIII)V
-
-    const/16 v16, 0x0
-
-    const/16 v17, 0x0
-
-    const/16 v18, 0x4
-
-    move v3, v11
-
-    move-object/from16 v4, p3
-
-    move-object v10, v5
-
-    move-object/from16 v5, v17
-
-    move-object/from16 v17, v6
-
-    move/from16 v6, v18
-
-    move-object/from16 v19, v7
-
-    move-object/from16 v7, v16
-
-    invoke-static/range {v2 .. v7}, Lone/me/sdk/gl/effects/objects/OesToImage2dRenderer;->render$default(Lone/me/sdk/gl/effects/objects/OesToImage2dRenderer;I[F[FILjava/lang/Object;)V
-
-    invoke-virtual/range {v17 .. v17}, Lone/me/sdk/gl/effects/objects/FrameBuffer;->unbind()V
-
-    array-length v2, v8
-
-    invoke-static {v8, v15, v10, v15, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    iput-wide v12, v0, Ls6f;->u:J
-
-    iput v11, v0, Ls6f;->v:I
+    const/4 v1, 0x3
 
     const/4 v2, 0x1
 
-    :goto_1
-    xor-int/lit8 v26, p4, 0x1
+    iget-object v3, p0, Ls6f;->Z:Lt6f;
 
-    invoke-virtual/range {v17 .. v17}, Lone/me/sdk/gl/effects/objects/FrameBuffer;->getTextureId()I
+    if-eqz v0, :cond_1
 
-    move-result v21
+    if-ne v0, v2, :cond_0
 
-    iget-object v2, v14, Lmsd;->a:Landroid/util/Size;
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    invoke-virtual {v2}, Landroid/util/Size;->getWidth()I
+    goto :goto_0
 
-    move-result v22
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    invoke-virtual {v2}, Landroid/util/Size;->getHeight()I
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    move-result v23
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    iget-object v2, v14, Lmsd;->e:Lone/me/sdk/gl/effects/VideoMessageStencilHolder;
+    throw p0
 
-    iget v3, v9, Lda0;->b:I
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    iget v4, v9, Lda0;->c:I
+    new-instance p1, Lfaf;
 
-    const/16 v27, 0x0
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
-    move-object/from16 v20, v2
+    iget-boolean v0, p0, Ls6f;->Y:Z
 
-    move/from16 v24, v3
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move/from16 v25, v4
+    move-result-object v4
 
-    invoke-virtual/range {v20 .. v27}, Lone/me/sdk/gl/effects/VideoMessageStencilHolder;->render(IIIIIZZ)V
+    iput-object v4, p1, Lfaf;->u:Ljava/lang/Boolean;
 
-    iget-object v2, v0, Lvj4;->k:Ljava/lang/Object;
+    if-eqz v0, :cond_2
 
-    check-cast v2, Landroid/view/Surface;
+    iput v1, p1, Lfaf;->o:I
 
-    invoke-static {v2, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iput v1, p1, Lfaf;->p:I
 
-    move-result v2
+    iput v1, p1, Lfaf;->v:I
 
-    iget-object v5, v9, Lda0;->a:Landroid/opengl/EGLSurface;
+    iget-object v0, v3, Lt6f;->e:Lje7;
 
-    if-nez v2, :cond_7
+    invoke-interface {v0}, Lje7;->getValue()Ljava/lang/Object;
 
-    invoke-virtual {v0, v5}, Lvj4;->o(Landroid/opengl/EGLSurface;)V
+    move-result-object v0
 
-    iput-object v1, v0, Lvj4;->k:Ljava/lang/Object;
+    check-cast v0, Lzd5;
 
-    :cond_7
-    invoke-static {v15, v15, v3, v4}, Landroid/opengl/GLES20;->glViewport(IIII)V
+    check-cast v0, Lbe5;
 
-    invoke-virtual/range {v17 .. v17}, Lone/me/sdk/gl/effects/objects/FrameBuffer;->getTextureId()I
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result v2
+    sget-object v4, Lru/ok/tamtam/android/prefs/PmsKey;->unsafe-files-alert:Lru/ok/tamtam/android/prefs/PmsKey;
 
-    move-object/from16 v3, v19
+    const/4 v5, 0x0
 
-    invoke-virtual {v3, v2}, Lone/me/sdk/gl/effects/objects/TrivialFragmentShader;->setTextureId(I)V
+    invoke-virtual {v0, v4, v5}, Ltwc;->k(Lru/ok/tamtam/android/prefs/PmsKey;Z)Z
 
-    invoke-virtual {v3}, Lone/me/sdk/gl/effects/objects/TrivialFragmentShader;->render()V
+    move-result v0
 
-    iget-object v2, v0, Lvj4;->f:Ljava/lang/Object;
+    if-eqz v0, :cond_2
 
-    check-cast v2, Landroid/opengl/EGLDisplay;
+    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    invoke-static {v2, v5, v12, v13}, Landroid/opengl/EGLExt;->eglPresentationTimeANDROID(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;J)Z
+    iput-object v0, p1, Lfaf;->w:Ljava/lang/Boolean;
 
-    iget-object v2, v0, Lvj4;->f:Ljava/lang/Object;
+    :cond_2
+    iget-object v0, v3, Lt6f;->a:Lje7;
 
-    check-cast v2, Landroid/opengl/EGLDisplay;
+    invoke-interface {v0}, Lje7;->getValue()Ljava/lang/Object;
 
-    invoke-static {v2, v5}, Landroid/opengl/EGL14;->eglSwapBuffers(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z
+    move-result-object v0
 
-    move-result v2
+    check-cast v0, Lik;
 
-    if-nez v2, :cond_8
+    new-instance v4, Lnb2;
 
-    invoke-static {}, Landroid/opengl/EGL14;->eglGetError()I
+    new-instance v8, Lee3;
 
-    move-result v2
+    new-instance v5, Lhaf;
 
-    const/16 v3, 0x10
+    invoke-direct {v5, p1}, Lhaf;-><init>(Lfaf;)V
 
-    invoke-static {v3}, Liu7;->f(I)V
+    invoke-direct {v8, v5}, Lee3;-><init>(Lhaf;)V
 
-    int-to-long v4, v2
+    const/4 v9, 0x0
 
-    const-wide v6, 0xffffffffL
+    const/4 v5, 0x0
 
-    and-long/2addr v4, v6
+    const-wide/16 v6, 0x0
 
-    invoke-static {v3, v4, v5}, Ld8;->F(IJ)Ljava/lang/String;
+    invoke-direct/range {v4 .. v9}, Lnb2;-><init>(Ljava/lang/String;JLee3;Z)V
 
-    move-result-object v2
+    iput v2, p0, Ls6f;->X:I
 
-    const-string v3, "failed to swap buffers, error=0x"
+    check-cast v0, La2a;
 
-    invoke-static {v3, v2}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v4, p0}, La2a;->I(Lije;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object p1
 
-    const/4 v3, 0x0
+    sget-object p0, Lpx3;->a:Lpx3;
 
-    iget-object v4, v0, Ls6f;->p:Ljava/lang/String;
+    if-ne p1, p0, :cond_3
 
-    invoke-static {v4, v2, v3}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    return-object p0
 
-    invoke-virtual {v0, v1, v15}, Lvj4;->s(Landroid/view/Surface;Z)V
+    :cond_3
+    :goto_0
+    check-cast p1, Lyd3;
 
-    :cond_8
-    return-void
+    iget-object p0, p1, Lyd3;->X:Lhaf;
+
+    if-eqz p0, :cond_5
+
+    iget-object p1, v3, Lt6f;->b:Lje7;
+
+    invoke-interface {p1}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lxo;
+
+    check-cast p1, Lzo;
+
+    invoke-virtual {p1, p0}, Lzo;->w(Lhaf;)V
+
+    iget-object p0, p0, Lhaf;->u:Ljava/lang/Boolean;
+
+    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    const/4 p1, 0x0
+
+    if-eqz p0, :cond_4
+
+    iget-object p0, v3, Lt6f;->c:Lje7;
+
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lh23;
+
+    check-cast p0, Lj23;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v2, "app.pin_"
+
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lmwc;->p()J
+
+    move-result-wide v4
+
+    invoke-virtual {v0, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0, p1}, Le3;->j(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_4
+    iget-object p0, v3, Lt6f;->g:Lje7;
+
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lbe3;
+
+    iget-object v0, p0, Lbe3;->b:Lkotlinx/coroutines/internal/ContextScope;
+
+    new-instance v2, Lae3;
+
+    invoke-direct {v2, p0, p1}, Lae3;-><init>(Lbe3;Lkotlin/coroutines/Continuation;)V
+
+    invoke-static {v0, p1, p1, v2, v1}, Lzo3;->E(Lox3;Lhx3;Lrx3;Ll66;I)Ldwd;
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
+
+    :cond_5
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "Required value was null."
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

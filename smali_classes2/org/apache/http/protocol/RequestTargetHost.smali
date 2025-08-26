@@ -104,7 +104,7 @@
 
     if-eqz p0, :cond_1
 
-    return-void
+    goto :goto_0
 
     :cond_1
     new-instance p0, Lorg/apache/http/ProtocolException;
@@ -123,6 +123,7 @@
     invoke-interface {p1, p0, p2}, Lorg/apache/http/HttpMessage;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_3
+    :goto_0
     return-void
 
     :cond_4

@@ -1,50 +1,54 @@
-.class public abstract Lmz5;
+.class public final synthetic Lmz5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lx64;
+
+
+# instance fields
+.field public final synthetic a:[J
+
+.field public final synthetic b:Ljava/lang/Long;
+
+.field public final synthetic c:Z
+
+.field public final synthetic o:Z
+
 
 # direct methods
-.method public static a(Landroid/media/MediaDrm;Ljava/lang/String;)Z
+.method public synthetic constructor <init>([JLjava/lang/Long;ZZ)V
     .locals 0
 
-    invoke-static {p0, p1}, Ltp3;->v(Landroid/media/MediaDrm;Ljava/lang/String;)Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result p0
+    iput-object p1, p0, Lmz5;->a:[J
 
-    return p0
+    iput-object p2, p0, Lmz5;->b:Ljava/lang/Long;
+
+    iput-boolean p3, p0, Lmz5;->c:Z
+
+    iput-boolean p4, p0, Lmz5;->o:Z
+
+    return-void
 .end method
 
-.method public static b(Landroid/media/MediaDrm;[BLcza;)V
-    .locals 1
 
-    iget-object p2, p2, Lcza;->b:Laza;
+# virtual methods
+.method public final a()Ljava/lang/Object;
+    .locals 4
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v0, Lone/me/chats/forward/ForwardPickerScreen;
 
-    iget-object p2, p2, Laza;->a:Landroid/media/metrics/LogSessionId;
+    iget-object v1, p0, Lmz5;->a:[J
 
-    invoke-static {}, Ltp3;->f()Landroid/media/metrics/LogSessionId;
+    iget-object v2, p0, Lmz5;->b:Ljava/lang/Long;
 
-    move-result-object v0
+    iget-boolean v3, p0, Lmz5;->c:Z
 
-    invoke-static {p2, v0}, Ltp3;->w(Landroid/media/metrics/LogSessionId;Ljava/lang/Object;)Z
+    iget-boolean p0, p0, Lmz5;->o:Z
 
-    move-result v0
+    invoke-direct {v0, v1, v2, v3, p0}, Lone/me/chats/forward/ForwardPickerScreen;-><init>([JLjava/lang/Long;ZZ)V
 
-    if-nez v0, :cond_0
-
-    invoke-static {p0, p1}, Ltp3;->d(Landroid/media/MediaDrm;[B)Landroid/media/MediaDrm$PlaybackComponent;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-static {p0}, Ltp3;->e(Ljava/lang/Object;)Landroid/media/MediaDrm$PlaybackComponent;
-
-    move-result-object p0
-
-    invoke-static {p0, p2}, Ltp3;->o(Landroid/media/MediaDrm$PlaybackComponent;Landroid/media/metrics/LogSessionId;)V
-
-    :cond_0
-    return-void
+    return-object v0
 .end method

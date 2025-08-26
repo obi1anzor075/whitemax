@@ -3,39 +3,33 @@
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lzb9;
-
-.field public static final b:[J
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public static varargs a([Ljava/util/Locale;)Landroid/os/LocaleList;
+    .locals 1
 
-    new-instance v0, Lzb9;
+    new-instance v0, Landroid/os/LocaleList;
 
-    const/4 v1, 0x0
+    invoke-direct {v0, p0}, Landroid/os/LocaleList;-><init>([Ljava/util/Locale;)V
 
-    invoke-direct {v0, v1}, Lzb9;-><init>(I)V
-
-    sput-object v0, Ltq7;->a:Lzb9;
-
-    new-array v0, v1, [J
-
-    sput-object v0, Ltq7;->b:[J
-
-    return-void
+    return-object v0
 .end method
 
-.method public static final a()Lzb9;
-    .locals 2
+.method public static b()Landroid/os/LocaleList;
+    .locals 1
 
-    new-instance v0, Lzb9;
+    invoke-static {}, Landroid/os/LocaleList;->getAdjustedDefault()Landroid/os/LocaleList;
 
-    const/4 v1, 0x0
+    move-result-object v0
 
-    invoke-direct {v0, v1}, Lzb9;-><init>(Ljava/lang/Object;)V
+    return-object v0
+.end method
+
+.method public static c()Landroid/os/LocaleList;
+    .locals 1
+
+    invoke-static {}, Landroid/os/LocaleList;->getDefault()Landroid/os/LocaleList;
+
+    move-result-object v0
 
     return-object v0
 .end method

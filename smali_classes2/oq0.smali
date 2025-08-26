@@ -1,68 +1,51 @@
-.class public abstract Loq0;
-.super Ljava/lang/Object;
+.class public final Loq0;
+.super Lbu3;
 .source "SourceFile"
 
 
-# virtual methods
-.method public canRepeat()Z
+# instance fields
+.field public X:Ljt2;
+
+.field public synthetic Y:Ljava/lang/Object;
+
+.field public final synthetic Z:Lpq0;
+
+.field public o:Lpq0;
+
+.field public o0:I
+
+
+# direct methods
+.method public constructor <init>(Lpq0;Lbu3;)V
     .locals 0
 
-    const/4 p0, 0x1
+    iput-object p1, p0, Loq0;->Z:Lpq0;
 
-    return p0
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    return-void
 .end method
 
-.method public intoParam(Ljava/lang/String;)Ldl;
+
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    .line 1
-    new-instance v0, Lxzd;
+    iput-object p1, p0, Loq0;->Y:Ljava/lang/Object;
 
-    .line 2
-    invoke-direct {v0, p1}, Lmq0;-><init>(Ljava/lang/String;)V
+    iget p1, p0, Loq0;->o0:I
 
-    .line 3
-    invoke-virtual {p0, v0}, Loq0;->intoParam(Lmq0;)Ldl;
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Loq0;->o0:I
+
+    iget-object p1, p0, Loq0;->Z:Lpq0;
+
+    invoke-static {p1, p0}, Lpq0;->a(Lpq0;Lbu3;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
-.end method
-
-.method public final intoParam(Lmq0;)Ldl;
-    .locals 1
-
-    .line 4
-    new-instance v0, Lnq0;
-
-    invoke-direct {v0, p1, p0}, Lnq0;-><init>(Lmq0;Loq0;)V
-
-    return-object v0
-.end method
-
-.method public isSupplied()Z
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public shouldPost()Z
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public shouldSkipParam()Z
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public abstract write(Lt67;)V
 .end method

@@ -1,86 +1,147 @@
 .class public final Lra2;
-.super Llbe;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# static fields
+.field public static final c:Lra2;
+
+
 # instance fields
-.field public c:J
+.field public final a:Ljava/util/Set;
 
-.field public o:I
+.field public final b:Ljava/util/List;
 
 
-# virtual methods
-.method public final b(Lws8;Ljava/lang/String;)V
-    .locals 1
+# direct methods
+.method static constructor <clinit>()V
+    .locals 3
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v0, Lra2;
 
-    const-string v0, "unread"
+    sget-object v1, Lpz4;->a:Lpz4;
 
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    sget-object v2, Lgz4;->a:Lgz4;
 
-    move-result v0
+    invoke-direct {v0, v2, v1}, Lra2;-><init>(Ljava/util/List;Ljava/util/Set;)V
 
-    if-nez v0, :cond_1
+    sput-object v0, Lra2;->c:Lra2;
 
-    const-string v0, "mark"
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_0
-
-    invoke-virtual {p1}, Lws8;->z()V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p1}, Lws8;->w0()J
-
-    move-result-wide p1
-
-    iput-wide p1, p0, Lra2;->c:J
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p1}, Lws8;->v0()I
-
-    move-result p1
-
-    iput p1, p0, Lra2;->o:I
-
-    :goto_0
     return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public constructor <init>(Ljava/util/List;Ljava/util/Set;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p2, p0, Lra2;->a:Ljava/util/Set;
+
+    iput-object p1, p0, Lra2;->b:Ljava/util/List;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
     .locals 4
 
-    iget-wide v0, p0, Lra2;->c:J
+    const/4 v0, 0x1
 
-    iget p0, p0, Lra2;->o:I
+    if-ne p0, p1, :cond_0
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    return v0
 
-    const-string v3, "{mark="
+    :cond_0
+    instance-of v1, p1, Lra2;
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const/4 v2, 0x0
 
-    invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    if-nez v1, :cond_1
 
-    const-string v0, ", unread="
+    return v2
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_1
+    check-cast p1, Lra2;
 
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lra2;->a:Ljava/util/Set;
 
-    const-string p0, "}"
+    iget-object v3, p1, Lra2;->a:Ljava/util/Set;
 
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object p0, p0, Lra2;->b:Ljava/util/List;
+
+    iget-object p1, p1, Lra2;->b:Ljava/util/List;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
+
+    return v2
+
+    :cond_3
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    iget-object v0, p0, Lra2;->a:Ljava/util/Set;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Lra2;->b:Ljava/util/List;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "ChatFolders(allFilterExclude="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lra2;->a:Ljava/util/Set;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", folders="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lra2;->b:Ljava/util/List;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

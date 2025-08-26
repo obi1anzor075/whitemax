@@ -3,11 +3,11 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lvr6;
+.implements Lxv6;
 
 
 # annotations
-.annotation build Llj4;
+.annotation build Lqm4;
 .end annotation
 
 
@@ -20,10 +20,10 @@
 
 
 # direct methods
-.method public static e(Ljava/io/InputStream;Lkl8;III)V
+.method public static e(Ljava/io/InputStream;Lsp8;III)V
     .locals 3
 
-    invoke-static {}, Ljjd;->l()V
+    invoke-static {}, Ltk9;->k()V
 
     const/4 v0, 0x0
 
@@ -81,7 +81,7 @@
     :goto_3
     if-eqz v2, :cond_8
 
-    sget-object v2, Lz47;->a:Lzy;
+    sget-object v2, Lp97;->a:Llz;
 
     if-ltz p2, :cond_4
 
@@ -115,7 +115,7 @@
     :cond_6
     const-string v1, "no transformation requested"
 
-    invoke-static {v1, v0}, Lez3;->k(Ljava/lang/String;Z)V
+    invoke-static {v1, v0}, Ll23;->h(Ljava/lang/String;Z)V
 
     invoke-static {p0, p1, p2, p3, p4}, Lcom/facebook/imagepipeline/nativecode/NativeJpegTranscoder;->nativeTranscodeJpeg(Ljava/io/InputStream;Ljava/io/OutputStream;III)V
 
@@ -157,10 +157,10 @@
     throw p0
 .end method
 
-.method public static f(Ljava/io/InputStream;Lkl8;III)V
+.method public static f(Ljava/io/InputStream;Lsp8;III)V
     .locals 3
 
-    invoke-static {}, Ljjd;->l()V
+    invoke-static {}, Ltk9;->k()V
 
     const/4 v0, 0x0
 
@@ -218,7 +218,7 @@
     :goto_3
     if-eqz v2, :cond_7
 
-    sget-object v2, Lz47;->a:Lzy;
+    sget-object v2, Lp97;->a:Llz;
 
     packed-switch p2, :pswitch_data_0
 
@@ -244,7 +244,7 @@
     :cond_5
     const-string v1, "no transformation requested"
 
-    invoke-static {v1, v0}, Lez3;->k(Ljava/lang/String;Z)V
+    invoke-static {v1, v0}, Ll23;->h(Ljava/lang/String;Z)V
 
     invoke-static {p0, p1, p2, p3, p4}, Lcom/facebook/imagepipeline/nativecode/NativeJpegTranscoder;->nativeTranscodeJpegWithExifOrientation(Ljava/io/InputStream;Ljava/io/OutputStream;III)V
 
@@ -307,7 +307,7 @@
         }
     .end annotation
 
-    .annotation build Llj4;
+    .annotation build Lqm4;
     .end annotation
 .end method
 
@@ -318,7 +318,7 @@
         }
     .end annotation
 
-    .annotation build Llj4;
+    .annotation build Lqm4;
     .end annotation
 .end method
 
@@ -332,7 +332,7 @@
     return-object p0
 .end method
 
-.method public final b(Lax4;Lkl8;Lrfc;Lhbc;Landroid/graphics/ColorSpace;)Lii5;
+.method public final b(La05;Lsp8;Lclc;Ldgc;Landroid/graphics/ColorSpace;)Lql5;
     .locals 4
 
     const/16 p5, 0x55
@@ -343,12 +343,12 @@
 
     if-nez p3, :cond_0
 
-    sget-object p3, Lrfc;->b:Lrfc;
+    sget-object p3, Lclc;->b:Lclc;
 
     :cond_0
     iget v0, p0, Lcom/facebook/imagepipeline/nativecode/NativeJpegTranscoder;->b:I
 
-    invoke-static {p3, p4, p1, v0}, Ln1g;->i(Lrfc;Lhbc;Lax4;I)I
+    invoke-static {p3, p4, p1, v0}, Ltk9;->i(Lclc;Ldgc;La05;I)I
 
     move-result v0
 
@@ -357,7 +357,7 @@
     :try_start_0
     iget-boolean v2, p0, Lcom/facebook/imagepipeline/nativecode/NativeJpegTranscoder;->a:Z
 
-    invoke-static {p3, p4, p1, v2}, Lz47;->c(Lrfc;Lhbc;Lax4;Z)I
+    invoke-static {p3, p4, p1, v2}, Lp97;->c(Lclc;Ldgc;La05;Z)I
 
     move-result p4
 
@@ -378,15 +378,15 @@
     move p4, v2
 
     :cond_1
-    invoke-virtual {p1}, Lax4;->n()Ljava/io/InputStream;
+    invoke-virtual {p1}, La05;->n()Ljava/io/InputStream;
 
     move-result-object v1
 
-    sget-object p0, Lz47;->a:Lzy;
+    sget-object p0, Lp97;->a:Llz;
 
-    invoke-virtual {p1}, Lax4;->n0()V
+    invoke-virtual {p1}, La05;->r0()V
 
-    iget v2, p1, Lax4;->X:I
+    iget v2, p1, La05;->o:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -403,17 +403,17 @@
     if-eqz p0, :cond_2
 
     :try_start_1
-    invoke-static {p3, p1}, Lz47;->a(Lrfc;Lax4;)I
+    invoke-static {p3, p1}, Lp97;->a(Lclc;La05;)I
 
     move-result p0
 
-    invoke-static {v1, v2}, Lez3;->n(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Ll23;->k(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p5}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
-    invoke-static {v1, p2, p0, p4, p1}, Lcom/facebook/imagepipeline/nativecode/NativeJpegTranscoder;->f(Ljava/io/InputStream;Lkl8;III)V
+    invoke-static {v1, p2, p0, p4, p1}, Lcom/facebook/imagepipeline/nativecode/NativeJpegTranscoder;->f(Ljava/io/InputStream;Lsp8;III)V
 
     goto :goto_0
 
@@ -423,24 +423,24 @@
     goto :goto_2
 
     :cond_2
-    invoke-static {p3, p1}, Lz47;->b(Lrfc;Lax4;)I
+    invoke-static {p3, p1}, Lp97;->b(Lclc;La05;)I
 
     move-result p0
 
-    invoke-static {v1, v2}, Lez3;->n(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Ll23;->k(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p5}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
-    invoke-static {v1, p2, p0, p4, p1}, Lcom/facebook/imagepipeline/nativecode/NativeJpegTranscoder;->e(Ljava/io/InputStream;Lkl8;III)V
+    invoke-static {v1, p2, p0, p4, p1}, Lcom/facebook/imagepipeline/nativecode/NativeJpegTranscoder;->e(Ljava/io/InputStream;Lsp8;III)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :goto_0
-    invoke-static {v1}, Lg13;->b(Ljava/io/InputStream;)V
+    invoke-static {v1}, Lh33;->b(Ljava/io/InputStream;)V
 
-    new-instance p0, Lii5;
+    new-instance p0, Lql5;
 
     if-ne v0, v3, :cond_3
 
@@ -450,47 +450,46 @@
     const/4 v3, 0x0
 
     :goto_1
-    const/4 p1, 0x7
+    const/16 p1, 0x8
 
-    invoke-direct {p0, v3, p1}, Lii5;-><init>(II)V
+    invoke-direct {p0, v3, p1}, Lql5;-><init>(II)V
 
     return-object p0
 
     :goto_2
-    invoke-static {v1}, Lg13;->b(Ljava/io/InputStream;)V
+    invoke-static {v1}, Lh33;->b(Ljava/io/InputStream;)V
 
     throw p0
 .end method
 
-.method public final c(Llq6;)Z
+.method public final c(Lru6;)Z
     .locals 0
 
-    sget-object p0, Lo84;->a:Llq6;
+    sget-object p0, Lac4;->a:Lru6;
 
     if-ne p1, p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
-.method public final d(Lax4;Lrfc;Lhbc;)Z
+.method public final d(La05;Lclc;Ldgc;)Z
     .locals 0
 
     if-nez p2, :cond_0
 
-    sget-object p2, Lrfc;->b:Lrfc;
+    sget-object p2, Lclc;->b:Lclc;
 
     :cond_0
     iget-boolean p0, p0, Lcom/facebook/imagepipeline/nativecode/NativeJpegTranscoder;->a:Z
 
-    invoke-static {p2, p3, p1, p0}, Lz47;->c(Lrfc;Lhbc;Lax4;Z)I
+    invoke-static {p2, p3, p1, p0}, Lp97;->c(Lclc;Ldgc;La05;Z)I
 
     move-result p0
 
@@ -500,11 +499,10 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_1
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method

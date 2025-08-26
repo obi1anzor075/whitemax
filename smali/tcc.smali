@@ -3,80 +3,43 @@
 .source "SourceFile"
 
 
-# static fields
-.field public static final d:Ltcc;
-
-.field public static final e:Ltcc;
-
-.field public static final f:Ltcc;
-
-
 # instance fields
-.field public final a:J
-
-.field public final b:Z
-
-.field public final c:Z
+.field public final synthetic a:Lucc;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
-
-    new-instance v0, Ltcc;
-
-    const/4 v1, 0x0
-
-    const-wide/16 v2, 0x0
-
-    invoke-direct {v0, v2, v3, v1, v1}, Ltcc;-><init>(JZZ)V
-
-    sput-object v0, Ltcc;->d:Ltcc;
-
-    new-instance v0, Ltcc;
-
-    const-wide/16 v4, 0x1f4
-
-    const/4 v6, 0x1
-
-    invoke-direct {v0, v4, v5, v6, v1}, Ltcc;-><init>(JZZ)V
-
-    sput-object v0, Ltcc;->e:Ltcc;
-
-    new-instance v0, Ltcc;
-
-    const-wide/16 v4, 0x64
-
-    invoke-direct {v0, v4, v5, v6, v1}, Ltcc;-><init>(JZZ)V
-
-    new-instance v0, Ltcc;
-
-    invoke-direct {v0, v2, v3, v1, v6}, Ltcc;-><init>(JZZ)V
-
-    sput-object v0, Ltcc;->f:Ltcc;
-
-    return-void
-.end method
-
-.method public constructor <init>(JZZ)V
+.method public constructor <init>(Lucc;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p3, p0, Ltcc;->b:Z
+    iput-object p1, p0, Ltcc;->a:Lucc;
 
-    iput-wide p1, p0, Ltcc;->a:J
+    return-void
+.end method
 
-    if-eqz p4, :cond_0
 
-    xor-int/lit8 p1, p3, 0x1
+# virtual methods
+.method public final a(Landroid/os/Bundle;)V
+    .locals 1
 
-    const-string p2, "shouldRetry must be false when completeWithoutFailure is set to true"
+    const-string v0, "groupableTitle"
 
-    invoke-static {p2, p1}, Le07;->j(Ljava/lang/String;Z)V
+    invoke-virtual {p1, v0}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    :cond_0
-    iput-boolean p4, p0, Ltcc;->c:Z
+    move-result-object v0
+
+    iget-object p0, p0, Ltcc;->a:Lucc;
+
+    iput-object v0, p0, Lucc;->g:Ljava/lang/String;
+
+    const-string v0, "transferableTitle"
+
+    invoke-virtual {p1, v0}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lucc;->h:Ljava/lang/String;
 
     return-void
 .end method

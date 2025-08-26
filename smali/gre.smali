@@ -1,47 +1,331 @@
 .class public final Lgre;
-.super Lfre;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic a:Lyr;
-
-.field public final synthetic b:Lhre;
+.field public final synthetic X:Lhre;
 
 
 # direct methods
-.method public constructor <init>(Lhre;Lyr;)V
+.method public constructor <init>(Lhre;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lgre;->X:Lhre;
 
-    iput-object p1, p0, Lgre;->b:Lhre;
+    const/4 p1, 0x2
 
-    iput-object p2, p0, Lgre;->a:Lyr;
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Lcre;)V
-    .locals 2
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object v0, p0, Lgre;->b:Lhre;
+    check-cast p1, Lox3;
 
-    iget-object v0, v0, Lhre;->b:Landroid/view/ViewGroup;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object v1, p0, Lgre;->a:Lyr;
+    invoke-virtual {p0, p1, p2}, Lgre;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {v1, v0}, Lkgd;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object p0
 
-    move-result-object v0
+    check-cast p0, Lgre;
 
-    check-cast v0, Ljava/util/ArrayList;
+    sget-object p1, Le5f;->a:Le5f;
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {p0, p1}, Lgre;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {p1, p0}, Lcre;->E(Lzqe;)Lcre;
+    return-object p1
+.end method
 
-    return-void
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
+
+    new-instance p1, Lgre;
+
+    iget-object p0, p0, Lgre;->X:Lhre;
+
+    invoke-direct {p1, p0, p2}, Lgre;-><init>(Lhre;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 12
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lgre;->X:Lhre;
+
+    iget-object p1, p0, Lhre;->o:Ljava/util/List;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    const/16 v1, 0xa
+
+    invoke-static {p1, v1}, Lr43;->k0(Ljava/lang/Iterable;I)I
+
+    move-result v1
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_a
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ldna;
+
+    iget-object v2, v1, Ldna;->a:Ljava/lang/Object;
+
+    move-object v9, v2
+
+    check-cast v9, Ljava/lang/String;
+
+    iget-object v1, v1, Ldna;->b:Ljava/lang/Object;
+
+    check-cast v1, Ljava/util/concurrent/ExecutorService;
+
+    instance-of v2, v1, Lc55;
+
+    const-wide/16 v3, -0x1
+
+    if-eqz v2, :cond_1
+
+    move-object v5, v1
+
+    check-cast v5, Lc55;
+
+    iget-object v5, v5, Lc55;->a:Ljava/util/concurrent/ExecutorService;
+
+    instance-of v6, v5, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    if-eqz v6, :cond_0
+
+    check-cast v5, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    invoke-virtual {v5}, Ljava/util/concurrent/ThreadPoolExecutor;->getCompletedTaskCount()J
+
+    move-result-wide v3
+
+    :cond_0
+    :goto_1
+    move-wide v7, v3
+
+    goto :goto_2
+
+    :cond_1
+    instance-of v5, v1, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    if-eqz v5, :cond_0
+
+    move-object v3, v1
+
+    check-cast v3, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    invoke-virtual {v3}, Ljava/util/concurrent/ThreadPoolExecutor;->getCompletedTaskCount()J
+
+    move-result-wide v3
+
+    goto :goto_1
+
+    :goto_2
+    const/4 v3, -0x1
+
+    if-eqz v2, :cond_3
+
+    move-object v4, v1
+
+    check-cast v4, Lc55;
+
+    iget-object v4, v4, Lc55;->a:Ljava/util/concurrent/ExecutorService;
+
+    instance-of v5, v4, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    if-eqz v5, :cond_2
+
+    check-cast v4, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    invoke-virtual {v4}, Ljava/util/concurrent/ThreadPoolExecutor;->getActiveCount()I
+
+    move-result v4
+
+    goto :goto_3
+
+    :cond_2
+    move v4, v3
+
+    :goto_3
+    move v5, v4
+
+    goto :goto_4
+
+    :cond_3
+    instance-of v4, v1, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    if-eqz v4, :cond_4
+
+    move-object v4, v1
+
+    check-cast v4, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    invoke-virtual {v4}, Ljava/util/concurrent/ThreadPoolExecutor;->getActiveCount()I
+
+    move-result v4
+
+    goto :goto_3
+
+    :cond_4
+    move v5, v3
+
+    :goto_4
+    if-eqz v2, :cond_6
+
+    move-object v4, v1
+
+    check-cast v4, Lc55;
+
+    iget-object v4, v4, Lc55;->a:Ljava/util/concurrent/ExecutorService;
+
+    instance-of v6, v4, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    if-eqz v6, :cond_5
+
+    check-cast v4, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    invoke-virtual {v4}, Ljava/util/concurrent/ThreadPoolExecutor;->getPoolSize()I
+
+    move-result v6
+
+    invoke-virtual {v4}, Ljava/util/concurrent/ThreadPoolExecutor;->getActiveCount()I
+
+    move-result v4
+
+    goto :goto_6
+
+    :cond_5
+    move v6, v3
+
+    :goto_5
+    move v4, v6
+
+    goto :goto_7
+
+    :cond_6
+    instance-of v4, v1, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    if-eqz v4, :cond_7
+
+    move-object v4, v1
+
+    check-cast v4, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    invoke-virtual {v4}, Ljava/util/concurrent/ThreadPoolExecutor;->getPoolSize()I
+
+    move-result v6
+
+    invoke-virtual {v4}, Ljava/util/concurrent/ThreadPoolExecutor;->getActiveCount()I
+
+    move-result v4
+
+    :goto_6
+    sub-int/2addr v6, v4
+
+    goto :goto_5
+
+    :cond_7
+    move v4, v3
+
+    :goto_7
+    if-eqz v2, :cond_9
+
+    move-object v2, v1
+
+    check-cast v2, Lc55;
+
+    iget-object v2, v2, Lc55;->a:Ljava/util/concurrent/ExecutorService;
+
+    instance-of v6, v2, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    if-eqz v6, :cond_8
+
+    check-cast v2, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    invoke-virtual {v2}, Ljava/util/concurrent/ThreadPoolExecutor;->getQueue()Ljava/util/concurrent/BlockingQueue;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/Collection;->size()I
+
+    move-result v3
+
+    :cond_8
+    :goto_8
+    move v6, v3
+
+    goto :goto_9
+
+    :cond_9
+    instance-of v2, v1, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    if-eqz v2, :cond_8
+
+    move-object v2, v1
+
+    check-cast v2, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    invoke-virtual {v2}, Ljava/util/concurrent/ThreadPoolExecutor;->getQueue()Ljava/util/concurrent/BlockingQueue;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/Collection;->size()I
+
+    move-result v3
+
+    goto :goto_8
+
+    :goto_9
+    new-instance v3, Ld55;
+
+    invoke-interface {v1}, Ljava/util/concurrent/ExecutorService;->isShutdown()Z
+
+    move-result v10
+
+    invoke-interface {v1}, Ljava/util/concurrent/ExecutorService;->isTerminated()Z
+
+    move-result v11
+
+    invoke-direct/range {v3 .. v11}, Ld55;-><init>(IIIJLjava/lang/String;ZZ)V
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_0
+
+    :cond_a
+    iget-object p0, p0, Lhre;->b:Lazd;
+
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, p1, v0}, Lazd;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

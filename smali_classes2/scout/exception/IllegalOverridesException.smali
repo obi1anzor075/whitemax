@@ -19,19 +19,18 @@
         0x8,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
 .field public final a:Ljava/lang/String;
 
-.field public final b:Ljava/lang/Throwable;
-
-.field public final c:Ljava/util/Set;
+.field public final b:Ljava/util/Set;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/util/Collection;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/util/ArrayList;)V
     .locals 1
 
     const/4 v0, 0x0
@@ -40,15 +39,11 @@
 
     iput-object p1, p0, Lscout/exception/IllegalOverridesException;->a:Ljava/lang/String;
 
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lscout/exception/IllegalOverridesException;->b:Ljava/lang/Throwable;
-
-    invoke-static {p2}, Lo23;->w0(Ljava/lang/Iterable;)Ljava/util/Set;
+    invoke-static {p2}, Lp43;->a1(Ljava/util/Collection;)Ljava/util/Set;
 
     move-result-object p1
 
-    iput-object p1, p0, Lscout/exception/IllegalOverridesException;->c:Ljava/util/Set;
+    iput-object p1, p0, Lscout/exception/IllegalOverridesException;->b:Ljava/util/Set;
 
     return-void
 .end method
@@ -58,7 +53,7 @@
 .method public final getCause()Ljava/lang/Throwable;
     .locals 0
 
-    iget-object p0, p0, Lscout/exception/IllegalOverridesException;->b:Ljava/lang/Throwable;
+    const/4 p0, 0x0
 
     return-object p0
 .end method
@@ -66,7 +61,7 @@
 .method public final getMessage()Ljava/lang/String;
     .locals 6
 
-    iget-object v0, p0, Lscout/exception/IllegalOverridesException;->c:Ljava/util/Set;
+    iget-object v0, p0, Lscout/exception/IllegalOverridesException;->b:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->size()I
 
@@ -88,7 +83,7 @@
 
     invoke-direct {p0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v0}, Lo23;->U(Ljava/lang/Iterable;)Ljava/lang/Object;
+    invoke-static {v0}, Lp43;->y0(Ljava/lang/Iterable;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -142,7 +137,7 @@
 
     move-result-object p0
 
-    goto :goto_0
+    return-object p0
 
     :cond_0
     invoke-static {}, Ljava/lang/System;->lineSeparator()Ljava/lang/String;
@@ -183,18 +178,17 @@
 
     move-result-object v2
 
-    sget-object v4, Lx51;->Y:Lx51;
-
-    iget-object v0, p0, Lscout/exception/IllegalOverridesException;->c:Ljava/util/Set;
-
-    const/4 v3, 0x0
+    sget-object v4, Lj31;->u0:Lj31;
 
     const/16 v5, 0x1c
 
-    invoke-static/range {v0 .. v5}, Lo23;->c0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lu16;I)Ljava/lang/String;
+    iget-object v0, p0, Lscout/exception/IllegalOverridesException;->b:Ljava/util/Set;
+
+    const/4 v3, 0x0
+
+    invoke-static/range {v0 .. v5}, Lp43;->G0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lx56;I)Ljava/lang/String;
 
     move-result-object p0
 
-    :goto_0
     return-object p0
 .end method

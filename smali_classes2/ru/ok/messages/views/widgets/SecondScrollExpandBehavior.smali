@@ -25,6 +25,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -32,6 +33,8 @@
 .field public o:Z
 
 .field public p:I
+
+.field public q:Landroid/view/View;
 
 
 # direct methods
@@ -49,27 +52,27 @@
 
 
 # virtual methods
-.method public final E(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lfm;Landroid/view/View;II[II)V
+.method public final E(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lxl;Landroid/view/View;II[II)V
     .locals 0
 
-    invoke-super/range {p0 .. p7}, Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;->E(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lfm;Landroid/view/View;II[II)V
+    invoke-super/range {p0 .. p7}, Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;->E(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lxl;Landroid/view/View;II[II)V
 
-    invoke-virtual {p0, p5, p2, p3, p7}, Lru/ok/messages/views/widgets/SecondScrollExpandBehavior;->N(ILfm;Landroid/view/View;I)V
+    invoke-virtual {p0, p5, p2, p3, p7}, Lru/ok/messages/views/widgets/SecondScrollExpandBehavior;->N(ILxl;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public final F(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lfm;Landroid/view/View;IIIII[I)V
+.method public final F(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lxl;Landroid/view/View;IIIII[I)V
     .locals 0
 
-    invoke-super/range {p0 .. p9}, Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;->F(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lfm;Landroid/view/View;IIIII[I)V
+    invoke-super/range {p0 .. p9}, Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;->F(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lxl;Landroid/view/View;IIIII[I)V
 
-    invoke-virtual {p0, p5, p2, p3, p8}, Lru/ok/messages/views/widgets/SecondScrollExpandBehavior;->N(ILfm;Landroid/view/View;I)V
+    invoke-virtual {p0, p5, p2, p3, p8}, Lru/ok/messages/views/widgets/SecondScrollExpandBehavior;->N(ILxl;Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public final G(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lfm;Landroid/view/View;Landroid/view/View;II)Z
+.method public final G(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lxl;Landroid/view/View;Landroid/view/View;II)Z
     .locals 4
 
     const/4 v0, 0x0
@@ -85,13 +88,13 @@
 
     iget v2, p0, Lru/ok/messages/views/widgets/SecondScrollExpandBehavior;->p:I
 
-    invoke-virtual {p0}, Lfbf;->x()I
+    invoke-virtual {p0}, Lvof;->x()I
 
     move-result v3
 
     if-ne v2, v3, :cond_1
 
-    invoke-virtual {p0}, Lfbf;->x()I
+    invoke-virtual {p0}, Lvof;->x()I
 
     move-result v2
 
@@ -100,7 +103,7 @@
     goto :goto_0
 
     :cond_1
-    instance-of v2, p4, Lopc;
+    instance-of v2, p4, Lovc;
 
     if-nez v2, :cond_2
 
@@ -125,7 +128,7 @@
 
     check-cast v2, Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    invoke-virtual {v2}, Landroidx/recyclerview/widget/LinearLayoutManager;->T0()I
+    invoke-virtual {v2}, Landroidx/recyclerview/widget/LinearLayoutManager;->S0()I
 
     move-result v2
 
@@ -138,27 +141,32 @@
     :goto_0
     iput-boolean v0, p0, Lru/ok/messages/views/widgets/SecondScrollExpandBehavior;->o:Z
 
-    invoke-virtual {p0}, Lfbf;->x()I
+    invoke-virtual {p0}, Lvof;->x()I
 
     move-result v0
 
     iput v0, p0, Lru/ok/messages/views/widgets/SecondScrollExpandBehavior;->p:I
 
-    invoke-super/range {p0 .. p6}, Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;->G(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lfm;Landroid/view/View;Landroid/view/View;II)Z
+    invoke-super/range {p0 .. p6}, Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;->G(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lxl;Landroid/view/View;Landroid/view/View;II)Z
 
-    move-result p0
+    move-result p1
 
-    return p0
+    if-eqz p1, :cond_5
+
+    iput-object p4, p0, Lru/ok/messages/views/widgets/SecondScrollExpandBehavior;->q:Landroid/view/View;
+
+    :cond_5
+    return p1
 .end method
 
-.method public final N(ILfm;Landroid/view/View;I)V
+.method public final N(ILxl;Landroid/view/View;I)V
     .locals 1
 
     const/4 v0, 0x1
 
     if-ne p4, v0, :cond_3
 
-    invoke-virtual {p0}, Lfbf;->x()I
+    invoke-virtual {p0}, Lvof;->x()I
 
     move-result p4
 
@@ -171,7 +179,7 @@
     :cond_0
     if-lez p1, :cond_1
 
-    invoke-virtual {p2}, Lfm;->getTotalScrollRange()I
+    invoke-virtual {p2}, Lxl;->getTotalScrollRange()I
 
     move-result p0
 
@@ -185,44 +193,28 @@
     if-nez p4, :cond_3
 
     :cond_2
-    sget-object p0, Leaf;->a:Ljava/util/WeakHashMap;
+    sget-object p0, Ltnf;->a:Ljava/util/WeakHashMap;
 
-    instance-of p0, p3, Leh9;
+    instance-of p0, p3, Lvl9;
 
     if-eqz p0, :cond_3
 
-    check-cast p3, Leh9;
+    check-cast p3, Lvl9;
 
-    invoke-interface {p3, v0}, Leh9;->a(I)V
+    invoke-interface {p3, v0}, Lvl9;->a(I)V
 
     :cond_3
     return-void
 .end method
 
 .method public final o(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;II[II)V
-    .locals 8
+    .locals 0
 
-    check-cast p2, Lfm;
+    check-cast p2, Lxl;
 
-    move-object v0, p0
+    invoke-super/range {p0 .. p7}, Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;->E(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lxl;Landroid/view/View;II[II)V
 
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v3, p3
-
-    move v4, p4
-
-    move v5, p5
-
-    move-object v6, p6
-
-    move v7, p7
-
-    invoke-super/range {v0 .. v7}, Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;->E(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lfm;Landroid/view/View;II[II)V
-
-    invoke-virtual {p0, p5, p2, p3, p7}, Lru/ok/messages/views/widgets/SecondScrollExpandBehavior;->N(ILfm;Landroid/view/View;I)V
+    invoke-virtual {p0, p5, p2, p3, p7}, Lru/ok/messages/views/widgets/SecondScrollExpandBehavior;->N(ILxl;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -230,9 +222,9 @@
 .method public final bridge synthetic p(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;IIIII[I)V
     .locals 0
 
-    check-cast p2, Lfm;
+    check-cast p2, Lxl;
 
-    invoke-virtual/range {p0 .. p9}, Lru/ok/messages/views/widgets/SecondScrollExpandBehavior;->F(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lfm;Landroid/view/View;IIIII[I)V
+    invoke-virtual/range {p0 .. p9}, Lru/ok/messages/views/widgets/SecondScrollExpandBehavior;->F(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lxl;Landroid/view/View;IIIII[I)V
 
     return-void
 .end method
@@ -240,9 +232,9 @@
 .method public final bridge synthetic u(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;Landroid/view/View;II)Z
     .locals 0
 
-    check-cast p2, Lfm;
+    check-cast p2, Lxl;
 
-    invoke-virtual/range {p0 .. p6}, Lru/ok/messages/views/widgets/SecondScrollExpandBehavior;->G(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lfm;Landroid/view/View;Landroid/view/View;II)Z
+    invoke-virtual/range {p0 .. p6}, Lru/ok/messages/views/widgets/SecondScrollExpandBehavior;->G(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lxl;Landroid/view/View;Landroid/view/View;II)Z
 
     move-result p0
 
@@ -252,9 +244,9 @@
 .method public final v(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;I)V
     .locals 0
 
-    check-cast p2, Lfm;
+    check-cast p2, Lxl;
 
-    invoke-super {p0, p1, p2, p3, p4}, Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;->H(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lfm;Landroid/view/View;I)V
+    invoke-super {p0, p1, p2, p3, p4}, Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;->H(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lxl;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -271,7 +263,7 @@
     return p0
 
     :cond_0
-    invoke-super {p0, p1}, Lfbf;->z(I)Z
+    invoke-super {p0, p1}, Lvof;->z(I)Z
 
     move-result p0
 

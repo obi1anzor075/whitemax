@@ -4,30 +4,33 @@
 
 
 # instance fields
-.field public final a:Lir4;
+.field public final a:Lwa0;
 
-.field public final b:Lir4;
-
-.field public final c:I
-
-.field public final d:I
+.field public final b:I
 
 
 # direct methods
-.method public constructor <init>(Lir4;Lir4;II)V
+.method public constructor <init>(Lwa0;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lia0;->a:Lir4;
+    if-eqz p1, :cond_0
 
-    iput-object p2, p0, Lia0;->b:Lir4;
+    iput-object p1, p0, Lia0;->a:Lwa0;
 
-    iput p3, p0, Lia0;->c:I
-
-    iput p4, p0, Lia0;->d:I
+    iput p2, p0, Lia0;->b:I
 
     return-void
+
+    :cond_0
+    new-instance p0, Ljava/lang/NullPointerException;
+
+    const-string p1, "Null packet"
+
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method
 
 
@@ -46,60 +49,38 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_1
 
     check-cast p1, Lia0;
 
-    iget-object v1, p1, Lia0;->a:Lir4;
+    iget-object v1, p0, Lia0;->a:Lwa0;
 
-    iget-object v3, p0, Lia0;->a:Lir4;
+    iget-object v3, p1, Lia0;->a:Lwa0;
 
-    invoke-virtual {v3, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lia0;->b:Lir4;
-
-    iget-object v3, p1, Lia0;->b:Lir4;
-
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Lwa0;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    iget v1, p0, Lia0;->c:I
+    iget p0, p0, Lia0;->b:I
 
-    iget v3, p1, Lia0;->c:I
-
-    if-ne v1, v3, :cond_1
-
-    iget p0, p0, Lia0;->d:I
-
-    iget p1, p1, Lia0;->d:I
+    iget p1, p1, Lia0;->b:I
 
     if-ne p0, p1, :cond_1
 
-    goto :goto_0
-
-    :cond_1
-    move v0, v2
-
-    :goto_0
     return v0
 
-    :cond_2
+    :cond_1
     return v2
 .end method
 
 .method public final hashCode()I
-    .locals 3
+    .locals 2
 
-    iget-object v0, p0, Lia0;->a:Lir4;
+    iget-object v0, p0, Lia0;->a:Lwa0;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v0}, Lwa0;->hashCode()I
 
     move-result v0
 
@@ -109,23 +90,7 @@
 
     mul-int/2addr v0, v1
 
-    iget-object v2, p0, Lia0;->b:Lir4;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Lia0;->c:I
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget p0, p0, Lia0;->d:I
+    iget p0, p0, Lia0;->b:I
 
     xor-int/2addr p0, v0
 
@@ -137,39 +102,23 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "In{edge="
+    const-string v1, "In{packet="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lia0;->a:Lir4;
+    iget-object v1, p0, Lia0;->a:Lwa0;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", postviewEdge="
+    const-string v1, ", jpegQuality="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lia0;->b:Lir4;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", inputFormat="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lia0;->c:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", outputFormat="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget p0, p0, Lia0;->d:I
+    iget p0, p0, Lia0;->b:I
 
     const-string v1, "}"
 
-    invoke-static {v0, p0, v1}, Lwn6;->j(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lm26;->i(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

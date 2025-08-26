@@ -1,47 +1,19 @@
 .class public final Lig5;
-.super Ler3;
+.super Lki0;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic X:Lkg5;
-
-.field public Y:I
-
-.field public synthetic o:Ljava/lang/Object;
+.field public final b:J
 
 
 # direct methods
-.method public constructor <init>(Lkg5;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(J)V
     .locals 0
 
-    iput-object p1, p0, Lig5;->X:Lkg5;
+    invoke-direct {p0, p1, p2}, Lki0;-><init>(J)V
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-wide p1, p0, Lig5;->b:J
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    iput-object p1, p0, Lig5;->o:Ljava/lang/Object;
-
-    iget p1, p0, Lig5;->Y:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lig5;->Y:I
-
-    iget-object p1, p0, Lig5;->X:Lkg5;
-
-    invoke-virtual {p1, p0}, Lkg5;->a(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
 .end method

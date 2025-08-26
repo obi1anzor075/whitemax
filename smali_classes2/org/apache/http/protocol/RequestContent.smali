@@ -165,7 +165,7 @@
 
     invoke-interface {p1, p0}, Lorg/apache/http/HttpMessage;->addHeader(Lorg/apache/http/Header;)V
 
-    goto :goto_2
+    return-void
 
     :cond_4
     new-instance p0, Lorg/apache/http/ProtocolException;
@@ -205,7 +205,6 @@
     throw p0
 
     :cond_7
-    :goto_2
     return-void
 
     :cond_8

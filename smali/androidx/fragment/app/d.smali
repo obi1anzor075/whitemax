@@ -3,11 +3,11 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lzaf;
+.implements Lpof;
 
 
 # virtual methods
-.method public final a(Ljava/lang/Class;)Luaf;
+.method public final a(Ljava/lang/Class;)Lkof;
     .locals 0
 
     new-instance p0, Landroidx/fragment/app/FragmentManagerViewModel;

@@ -1,112 +1,190 @@
-.class public final synthetic Lk83;
-.super Ljava/lang/Object;
+.class public final Lk83;
+.super Lm2;
 .source "SourceFile"
-
-# interfaces
-.implements Ljib;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Ljava/lang/Object;
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public b:I
 
-.field public final synthetic c:Ljava/lang/Object;
+.field public final synthetic c:Ll83;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;ILjava/lang/Object;)V
-    .locals 0
-
-    iput p2, p0, Lk83;->a:I
-
-    iput-object p1, p0, Lk83;->b:Ljava/lang/Object;
-
-    iput-object p3, p0, Lk83;->c:Ljava/lang/Object;
+.method public constructor <init>(Ll83;I)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lk83;->c:Ll83;
+
+    sget-object v0, Ll83;->q0:Ljava/lang/Object;
+
+    invoke-virtual {p1}, Ll83;->i()[Ljava/lang/Object;
+
+    move-result-object p1
+
+    aget-object p1, p1, p2
+
+    iput-object p1, p0, Lk83;->a:Ljava/lang/Object;
+
+    iput p2, p0, Lk83;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final get()Ljava/lang/Object;
+.method public final a()V
     .locals 4
 
-    iget v0, p0, Lk83;->a:I
+    iget v0, p0, Lk83;->b:I
 
-    packed-switch v0, :pswitch_data_0
+    const/4 v1, -0x1
 
-    new-instance v0, Ldz3;
+    iget-object v2, p0, Lk83;->a:Ljava/lang/Object;
 
-    iget-object v1, p0, Lk83;->b:Ljava/lang/Object;
+    iget-object v3, p0, Lk83;->c:Ll83;
 
-    check-cast v1, Lih5;
+    if-eq v0, v1, :cond_1
 
-    invoke-virtual {v1}, Lih5;->c()Ljava/lang/String;
+    invoke-virtual {v3}, Ll83;->size()I
 
-    move-result-object v2
+    move-result v1
 
-    iget-object v1, v1, Lih5;->d:Ll83;
+    if-ge v0, v1, :cond_1
 
-    const-class v3, Lcjb;
+    iget v0, p0, Lk83;->b:I
 
-    invoke-interface {v1, v3}, Lf83;->a(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v3}, Ll83;->i()[Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lcjb;
+    aget-object v0, v1, v0
 
-    iget-object p0, p0, Lk83;->c:Ljava/lang/Object;
+    invoke-static {v2, v0}, Lcu0;->A(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    check-cast p0, Landroid/content/Context;
+    move-result v0
 
-    invoke-direct {v0, p0, v2}, Ldz3;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+    if-nez v0, :cond_0
 
-    return-object v0
+    goto :goto_0
 
-    :pswitch_0
-    new-instance v0, Ljf6;
+    :cond_0
+    return-void
 
-    iget-object v1, p0, Lk83;->b:Ljava/lang/Object;
+    :cond_1
+    :goto_0
+    sget-object v0, Ll83;->q0:Ljava/lang/Object;
 
-    check-cast v1, Landroid/content/Context;
+    invoke-virtual {v3, v2}, Ll83;->d(Ljava/lang/Object;)I
 
-    iget-object p0, p0, Lk83;->c:Ljava/lang/Object;
+    move-result v0
 
-    check-cast p0, Ljava/lang/String;
+    iput v0, p0, Lk83;->b:I
 
-    invoke-direct {v0, v1, p0}, Ljf6;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+    return-void
+.end method
 
-    return-object v0
+.method public final getKey()Ljava/lang/Object;
+    .locals 0
 
-    :pswitch_1
-    iget-object v0, p0, Lk83;->b:Ljava/lang/Object;
+    iget-object p0, p0, Lk83;->a:Ljava/lang/Object;
 
-    check-cast v0, Ll83;
+    return-object p0
+.end method
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+.method public final getValue()Ljava/lang/Object;
+    .locals 2
 
-    iget-object p0, p0, Lk83;->c:Ljava/lang/Object;
+    iget-object v0, p0, Lk83;->c:Ll83;
 
-    check-cast p0, Lt73;
+    invoke-virtual {v0}, Ll83;->b()Ljava/util/Map;
 
-    iget-object v1, p0, Lt73;->f:Li83;
+    move-result-object v1
 
-    new-instance v2, Luwb;
+    if-eqz v1, :cond_0
 
-    invoke-direct {v2, p0, v0}, Luwb;-><init>(Lt73;Lf83;)V
+    iget-object p0, p0, Lk83;->a:Ljava/lang/Object;
 
-    invoke-interface {v1, v2}, Li83;->h(Luwb;)Ljava/lang/Object;
+    invoke-interface {v1, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    :cond_0
+    invoke-virtual {p0}, Lk83;->a()V
+
+    iget p0, p0, Lk83;->b:I
+
+    const/4 v1, -0x1
+
+    if-ne p0, v1, :cond_1
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_1
+    invoke-virtual {v0}, Ll83;->j()[Ljava/lang/Object;
+
+    move-result-object v0
+
+    aget-object p0, v0, p0
+
+    return-object p0
+.end method
+
+.method public final setValue(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
+
+    iget-object v0, p0, Lk83;->c:Ll83;
+
+    invoke-virtual {v0}, Ll83;->b()Ljava/util/Map;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lk83;->a:Ljava/lang/Object;
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v1, v2, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    invoke-virtual {p0}, Lk83;->a()V
+
+    iget v1, p0, Lk83;->b:I
+
+    const/4 v3, -0x1
+
+    if-ne v1, v3, :cond_1
+
+    invoke-virtual {v0, v2, p1}, Ll83;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_1
+    invoke-virtual {v0}, Ll83;->j()[Ljava/lang/Object;
+
+    move-result-object v2
+
+    aget-object v1, v2, v1
+
+    iget p0, p0, Lk83;->b:I
+
+    invoke-virtual {v0}, Ll83;->j()[Ljava/lang/Object;
+
+    move-result-object v0
+
+    aput-object p1, v0, p0
+
+    return-object v1
 .end method

@@ -1,49 +1,81 @@
-.class public final Lui1;
-.super Ler3;
+.class public final enum Lui1;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field public X:I
+# static fields
+.field public static final enum a:Lui1;
 
-.field public final synthetic Y:Ltv;
+.field public static final enum b:Lui1;
 
-.field public synthetic o:Ljava/lang/Object;
+.field public static final synthetic c:[Lui1;
 
 
 # direct methods
-.method public constructor <init>(Ltv;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
-    iput-object p1, p0, Lui1;->Y:Ltv;
+    new-instance v0, Lui1;
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    const-string v1, "LOW"
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lui1;->a:Lui1;
+
+    new-instance v1, Lui1;
+
+    const-string v2, "MIDDLE"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lui1;->b:Lui1;
+
+    new-instance v2, Lui1;
+
+    const-string v3, "HIGH"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    filled-new-array {v0, v1, v2}, [Lui1;
+
+    move-result-object v0
+
+    sput-object v0, Lui1;->c:[Lui1;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public static valueOf(Ljava/lang/String;)Lui1;
     .locals 1
 
-    iput-object p1, p0, Lui1;->o:Ljava/lang/Object;
+    const-class v0, Lui1;
 
-    iget p1, p0, Lui1;->X:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lui1;->X:I
-
-    iget-object p1, p0, Lui1;->Y:Ltv;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Ltv;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
+    check-cast p0, Lui1;
+
     return-object p0
+.end method
+
+.method public static values()[Lui1;
+    .locals 1
+
+    sget-object v0, Lui1;->c:[Lui1;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lui1;
+
+    return-object v0
 .end method

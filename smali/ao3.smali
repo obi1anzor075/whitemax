@@ -1,124 +1,129 @@
-.class public final synthetic Lao3;
-.super Ljava/lang/Object;
+.class public final Lao3;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:I
 
-.field public final synthetic b:Lun3;
+.field public final synthetic Y:Lio3;
 
-.field public final synthetic c:Z
-
-.field public final synthetic o:Lb7c;
+.field public final synthetic Z:Lpm3;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lb7c;Lun3;ZI)V
+.method public constructor <init>(Lio3;Lpm3;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    iput p4, p0, Lao3;->a:I
+    iput-object p1, p0, Lao3;->Y:Lio3;
 
-    iput-object p1, p0, Lao3;->o:Lb7c;
+    iput-object p2, p0, Lao3;->Z:Lpm3;
 
-    iput-object p2, p0, Lao3;->b:Lun3;
+    const/4 p1, 0x2
 
-    iput-boolean p3, p0, Lao3;->c:Z
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p3}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Lox3;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lao3;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lao3;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lao3;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
+
+    new-instance p1, Lao3;
+
+    iget-object v0, p0, Lao3;->Y:Lio3;
+
+    iget-object p0, p0, Lao3;->Z:Lpm3;
+
+    invoke-direct {p1, v0, p0, p2}, Lao3;-><init>(Lio3;Lpm3;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    iget p1, p0, Lao3;->a:I
-
-    packed-switch p1, :pswitch_data_0
-
-    iget-object p1, p0, Lao3;->o:Lb7c;
-
-    check-cast p1, Lpo3;
-
-    iget-object v0, p1, Lpo3;->J0:Lsn3;
-
-    iget-object v1, p0, Lao3;->b:Lun3;
-
-    iget v1, v1, Lun3;->a:I
-
-    invoke-interface {v0, v1}, Lsn3;->w(I)V
-
-    invoke-static {v1}, Lxs7;->R(I)I
-
-    move-result v0
-
-    iget-boolean p0, p0, Lao3;->c:Z
-
-    const/4 v1, 0x2
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    move p0, v1
-
-    :goto_0
-    iget-object p1, p1, Lpo3;->K0:Lgg0;
-
-    invoke-virtual {p1, v0, v1, p0}, Lgg0;->a(III)V
-
-    return-void
-
-    :pswitch_0
-    iget-object p1, p0, Lao3;->o:Lb7c;
-
-    check-cast p1, Lbo3;
-
-    iget-object v0, p1, Lbo3;->J0:Lsn3;
-
-    iget-object v1, p0, Lao3;->b:Lun3;
-
-    iget v1, v1, Lun3;->a:I
-
-    invoke-interface {v0, v1}, Lsn3;->w(I)V
-
-    invoke-static {v1}, Lxs7;->R(I)I
-
-    move-result v0
-
-    iget-boolean p0, p0, Lao3;->c:Z
+    iget v0, p0, Lao3;->X:I
 
     const/4 v1, 0x1
 
-    if-eqz p0, :cond_1
+    if-eqz v0, :cond_1
 
-    move p0, v1
+    if-ne v0, v1, :cond_0
 
-    goto :goto_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    return-object p1
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 
     :cond_1
-    const/4 p0, 0x2
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    :goto_1
-    iget-object p1, p1, Lbo3;->K0:Lgg0;
+    iget-object p1, p0, Lao3;->Y:Lio3;
 
-    invoke-virtual {p1, v0, v1, p0}, Lgg0;->a(III)V
+    iget-object p1, p1, Lio3;->X:Lje7;
 
-    return-void
+    invoke-interface {p1}, Lje7;->getValue()Ljava/lang/Object;
 
-    nop
+    move-result-object p1
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    check-cast p1, Lxr3;
+
+    iget-object v0, p0, Lao3;->Z:Lpm3;
+
+    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    iput v1, p0, Lao3;->X:I
+
+    sget-object v1, Lhl3;->b:Lhl3;
+
+    invoke-virtual {p1, v0, v1, p0}, Lxr3;->e(Ljava/util/List;Lhl3;Lbu3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    return-object p0
 .end method

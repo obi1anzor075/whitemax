@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Llmf;
+.implements Lpmf;
 
 
 # static fields
@@ -50,7 +50,7 @@
 .method public final hashCode()I
     .locals 0
 
-    const p0, 0x744d33a1
+    const p0, 0x6abf9ff4
 
     return p0
 .end method
@@ -58,7 +58,7 @@
 .method public final toString()Ljava/lang/String;
     .locals 0
 
-    const-string p0, "ShowLoading"
+    const-string p0, "AsCircle"
 
     return-object p0
 .end method

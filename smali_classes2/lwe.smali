@@ -1,177 +1,146 @@
 .class public final Llwe;
-.super Ll5e;
+.super Lsd7;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lv56;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
+.field public final synthetic b:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(Landroid/content/Context;I)V
     .locals 0
 
-    iput-object p1, p0, Llwe;->Y:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
+    iput p2, p0, Llwe;->a:I
 
-    const/4 p1, 0x2
+    iput-object p1, p0, Llwe;->b:Landroid/content/Context;
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    const/4 p1, 0x0
+
+    invoke-direct {p0, p1}, Lsd7;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final invoke()Ljava/lang/Object;
+    .locals 4
 
-    check-cast p1, Lou3;
+    iget v0, p0, Llwe;->a:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p0, p1, p2}, Llwe;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    new-instance v0, Lzwe;
 
-    move-result-object p0
+    iget-object p0, p0, Llwe;->b:Landroid/content/Context;
 
-    check-cast p0, Llwe;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Llwe;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p0
 
-    return-object p0
-.end method
+    new-instance v1, Lxwe;
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 0
+    invoke-direct {v1}, Lxwe;-><init>()V
 
-    new-instance p1, Llwe;
+    new-instance v2, Lnod;
 
-    iget-object p0, p0, Llwe;->Y:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
+    const-string v3, "xrRYkU895jUPp2YZo1sxmtFadnlX1oHyouadIxpNzAp"
 
-    invoke-direct {p1, p0, p2}, Llwe;-><init>(Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v2, v3}, Lnod;-><init>(Ljava/lang/String;)V
 
-    return-object p1
-.end method
+    iput-object v2, v1, Lxwe;->b:Lnod;
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 8
+    new-instance v2, Lj6c;
 
-    const-string v0, "storeDraftUpload: finish store upload = "
+    invoke-direct {v2, v1}, Lj6c;-><init>(Lxwe;)V
 
-    sget-object v1, Lpu3;->a:Lpu3;
+    const-string v1, "ru.ok.android.externcalls"
 
-    iget v2, p0, Llwe;->X:I
+    invoke-direct {v0, p0, v1, v2}, Lzwe;-><init>(Landroid/content/Context;Ljava/lang/String;Lj6c;)V
 
-    const-string v3, "UploadDraftMediaWorker"
+    const-string p0, "calls-sdk-version"
 
-    const/4 v4, 0x1
+    const-string v1, "125.1.0.48.3"
 
-    iget-object v5, p0, Llwe;->Y:Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;
+    invoke-virtual {v0, p0, v1}, Lzwe;->b(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-eqz v2, :cond_1
+    return-object v0
 
-    if-ne v2, v4, :cond_0
+    :pswitch_0
+    invoke-static {}, Liu0;->q()Ljava/lang/String;
 
-    :try_start_0
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-object v0
+
+    iget-object p0, p0, Llwe;->b:Landroid/content/Context;
+
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const-string v0, "tracer"
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p0
-
-    goto :goto_1
-
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    const-string v2, "tracer-"
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    throw p0
+    const/16 v2, 0x3a
 
-    :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    const/16 v3, 0x2d
 
-    :try_start_1
-    iget-object p1, v5, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->b:Lr7e;
+    invoke-virtual {v0, v2, v3}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
-    invoke-virtual {p1}, Lr7e;->getValue()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object p1
+    invoke-static {v0}, Landroid/net/Uri;->encode(Ljava/lang/String;)Ljava/lang/String;
 
-    check-cast p1, Lom4;
+    move-result-object v0
 
-    invoke-virtual {v5}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->d()Lfm4;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {p1}, Lom4;->a()Lphd;
+    move-result-object v0
 
-    move-result-object p1
-
-    new-instance v6, Lmb1;
-
-    const/16 v7, 0x9
-
-    invoke-direct {v6, v7, v2}, Lmb1;-><init>(ILjava/lang/Object;)V
-
-    new-instance v2, Lw63;
-
-    const/4 v7, 0x2
-
-    invoke-direct {v2, p1, v7, v6}, Lw63;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    iput v4, p0, Llwe;->X:I
-
-    invoke-static {v2, p0}, Le07;->c(Lv63;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-ne p0, v1, :cond_2
-
-    return-object v1
-
-    :cond_2
     :goto_0
-    invoke-virtual {v5}, Lru/ok/tamtam/upload/workers/UploadDraftMediaWorker;->d()Lfm4;
+    new-instance v1, Ljava/io/File;
+
+    invoke-virtual {p0}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
 
     move-result-object p0
 
-    new-instance p1, Ljava/lang/StringBuilder;
+    invoke-direct {v1, p0, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-static {v1}, Lvk9;->w(Ljava/io/File;)V
 
-    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string p0, "settings.data"
 
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v1, p0}, Lwj5;->I(Ljava/io/File;Ljava/lang/String;)Ljava/io/File;
 
     move-result-object p0
-
-    invoke-static {v3, p0}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_2
-
-    :goto_1
-    const-string p1, "storeDraftUpload: failed"
-
-    invoke-static {v3, p1, p0}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :goto_2
-    sget-object p0, Ljue;->a:Ljue;
 
     return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

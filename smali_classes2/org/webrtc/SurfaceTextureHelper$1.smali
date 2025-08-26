@@ -89,11 +89,11 @@
 .end method
 
 .method public call()Lorg/webrtc/SurfaceTextureHelper;
-    .locals 9
+    .locals 8
 
     .line 2
     :try_start_0
-    new-instance v8, Lorg/webrtc/SurfaceTextureHelper;
+    new-instance v0, Lorg/webrtc/SurfaceTextureHelper;
 
     iget-object v1, p0, Lorg/webrtc/SurfaceTextureHelper$1;->val$sharedContext:Lorg/webrtc/EglBase$Context;
 
@@ -109,13 +109,11 @@
 
     const/4 v7, 0x0
 
-    move-object v0, v8
-
     invoke-direct/range {v0 .. v7}, Lorg/webrtc/SurfaceTextureHelper;-><init>(Lorg/webrtc/EglBase$Context;Landroid/os/Handler;ZLorg/webrtc/YuvConverter;Lorg/webrtc/SurfaceTextureHelper$FrameRefMonitor;Lorg/webrtc/SurfaceTextureHelper$FrameGeometryAdjuster;I)V
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-object v8
+    return-object v0
 
     :catch_0
     move-exception v0

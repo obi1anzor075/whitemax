@@ -1,37 +1,54 @@
 .class public final Li80;
-.super Lkre;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lqw9;
+
+
+# static fields
+.field public static final a:Li80;
+
+.field public static final b:Lte5;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 3
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Lkre;-><init>()V
+    new-instance v0, Li80;
 
-    const/4 v0, 0x1
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p0, v0}, Lkre;->W(I)V
+    sput-object v0, Li80;->a:Li80;
 
-    new-instance v1, Lp75;
+    const-string v0, "logRequest"
 
-    const/4 v2, 0x2
+    invoke-static {v0}, Lte5;->a(Ljava/lang/String;)Lte5;
 
-    invoke-direct {v1, v2}, Lp75;-><init>(I)V
+    move-result-object v0
 
-    invoke-virtual {p0, v1}, Lkre;->T(Lcre;)V
+    sput-object v0, Li80;->b:Lte5;
 
-    new-instance v1, Lty1;
+    return-void
+.end method
 
-    invoke-direct {v1}, Lcre;-><init>()V
 
-    invoke-virtual {p0, v1}, Lkre;->T(Lcre;)V
+# virtual methods
+.method public final a(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
 
-    new-instance v1, Lp75;
+    check-cast p1, Lzk0;
 
-    invoke-direct {v1, v0}, Lp75;-><init>(I)V
+    check-cast p2, Lrw9;
 
-    invoke-virtual {p0, v1}, Lkre;->T(Lcre;)V
+    check-cast p1, Lk90;
+
+    iget-object p0, p1, Lk90;->a:Ljava/util/ArrayList;
+
+    sget-object p1, Li80;->b:Lte5;
+
+    invoke-interface {p2, p1, p0}, Lrw9;->a(Lte5;Ljava/lang/Object;)Lrw9;
 
     return-void
 .end method

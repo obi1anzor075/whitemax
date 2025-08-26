@@ -216,12 +216,11 @@
 
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    goto :goto_0
+    return-void
 
     :cond_0
     invoke-virtual {p0, p1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    :goto_0
     return-void
 .end method
 
@@ -232,27 +231,27 @@
 
     iget-boolean v0, p0, Lorg/webrtc/SurfaceViewRenderer;->enableFixedSize:Z
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     iget v0, p0, Lorg/webrtc/SurfaceViewRenderer;->rotatedFrameWidth:I
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     iget v0, p0, Lorg/webrtc/SurfaceViewRenderer;->rotatedFrameHeight:I
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
@@ -332,25 +331,25 @@
 
     const-string v8, "updateSurfaceSize. Layout size: "
 
-    const-string v9, "x"
+    const-string v9, ", frame size: "
 
-    const-string v10, ", frame size: "
+    const-string v10, "x"
 
-    invoke-static {v8, v2, v9, v3, v10}, Lrf0;->i(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v8, v2, v10, v3, v9}, Lpg0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
     const-string v3, ", requested surface size: "
 
-    invoke-static {v2, v4, v9, v5, v3}, Lth2;->l(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
+    invoke-static {v2, v4, v10, v5, v3}, Lv04;->p(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
 
     const-string v3, ", old surface size: "
 
-    invoke-static {v2, v0, v9, v1, v3}, Lth2;->l(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
+    invoke-static {v2, v0, v10, v1, v3}, Lv04;->p(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -362,13 +361,19 @@
 
     iget v2, p0, Lorg/webrtc/SurfaceViewRenderer;->surfaceWidth:I
 
-    if-ne v0, v2, :cond_1
+    if-ne v0, v2, :cond_2
 
     iget v2, p0, Lorg/webrtc/SurfaceViewRenderer;->surfaceHeight:I
 
-    if-eq v1, v2, :cond_3
+    if-eq v1, v2, :cond_1
+
+    goto :goto_1
 
     :cond_1
+    return-void
+
+    :cond_2
+    :goto_1
     iput v0, p0, Lorg/webrtc/SurfaceViewRenderer;->surfaceWidth:I
 
     iput v1, p0, Lorg/webrtc/SurfaceViewRenderer;->surfaceHeight:I
@@ -379,9 +384,9 @@
 
     invoke-interface {p0, v0, v1}, Landroid/view/SurfaceHolder;->setFixedSize(II)V
 
-    goto :goto_1
+    return-void
 
-    :cond_2
+    :cond_3
     const/4 v0, 0x0
 
     iput v0, p0, Lorg/webrtc/SurfaceViewRenderer;->surfaceHeight:I
@@ -394,8 +399,6 @@
 
     invoke-interface {p0}, Landroid/view/SurfaceHolder;->setSizeFromLayout()V
 
-    :cond_3
-    :goto_1
     return-void
 .end method
 
@@ -542,11 +545,11 @@
     move p1, p2
 
     :cond_4
-    new-instance p2, Las0;
+    new-instance p2, Lat0;
 
-    const/4 p3, 0x7
+    const/4 p3, 0x6
 
-    invoke-direct {p2, p0, v1, p1, p3}, Las0;-><init>(Ljava/lang/Object;III)V
+    invoke-direct {p2, p0, v1, p1, p3}, Lat0;-><init>(Ljava/lang/Object;III)V
 
     invoke-direct {p0, p2}, Lorg/webrtc/SurfaceViewRenderer;->postOrRun(Ljava/lang/Runnable;)V
 
@@ -606,7 +609,7 @@
 
     const-string v1, "x"
 
-    invoke-static {v0, p2, p1, v1}, Lme4;->g(Ljava/lang/String;IILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p2, p1, v1}, Lv04;->h(Ljava/lang/String;IILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

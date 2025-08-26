@@ -100,17 +100,14 @@
 
     invoke-direct {p2, p1, p3, p0}, Lorg/apache/http/conn/routing/HttpRoute;-><init>(Lorg/apache/http/HttpHost;Ljava/net/InetAddress;Z)V
 
-    goto :goto_0
+    return-object p2
 
     :cond_1
     new-instance v0, Lorg/apache/http/conn/routing/HttpRoute;
 
     invoke-direct {v0, p1, p3, p2, p0}, Lorg/apache/http/conn/routing/HttpRoute;-><init>(Lorg/apache/http/HttpHost;Ljava/net/InetAddress;Lorg/apache/http/HttpHost;Z)V
 
-    move-object p2, v0
-
-    :goto_0
-    return-object p2
+    return-object v0
 
     :cond_2
     new-instance p0, Ljava/lang/IllegalStateException;

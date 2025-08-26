@@ -36,7 +36,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v2}, Lam7;->j(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v2}, Lcu0;->A(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -50,13 +50,15 @@
 
     move-result-object p1
 
-    invoke-static {p0, p1}, Lam7;->j(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lcu0;->A(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
     if-eqz p0, :cond_0
 
-    const/4 v1, 0x1
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_0
     return v1

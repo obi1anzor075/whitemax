@@ -3,54 +3,59 @@
 .source "SourceFile"
 
 
+# static fields
+.field public static final a:Ltu0;
+
+
 # direct methods
-.method public static a(Landroid/media/AudioFormat;Landroid/media/AudioAttributes;Z)La50;
-    .locals 3
+.method static constructor <clinit>()V
+    .locals 17
 
-    invoke-static {p0, p1}, Ltp3;->a(Landroid/media/AudioFormat;Landroid/media/AudioAttributes;)I
+    new-instance v0, Ltu0;
 
-    move-result p0
+    const/4 v1, 0x2
 
-    if-nez p0, :cond_0
+    invoke-direct {v0, v1}, Ltu0;-><init>(I)V
 
-    sget-object p0, La50;->d:La50;
+    sput-object v0, Lk44;->a:Ltu0;
 
-    return-object p0
+    const-string v15, "EEE, dd-MM-yyyy HH:mm:ss z"
 
-    :cond_0
-    new-instance p1, Lz40;
+    const-string v16, "EEE MMM d yyyy HH:mm:ss z"
 
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+    const-string v2, "EEE, dd MMM yyyy HH:mm:ss zzz"
 
-    sget v0, Loze;->a:I
+    const-string v3, "EEEE, dd-MMM-yy HH:mm:ss zzz"
 
-    const/16 v1, 0x20
+    const-string v4, "EEE MMM d HH:mm:ss yyyy"
 
-    const/4 v2, 0x1
+    const-string v5, "EEE, dd-MMM-yyyy HH:mm:ss z"
 
-    if-le v0, v1, :cond_1
+    const-string v6, "EEE, dd-MMM-yyyy HH-mm-ss z"
 
-    const/4 v0, 0x2
+    const-string v7, "EEE, dd MMM yy HH:mm:ss z"
 
-    if-ne p0, v0, :cond_1
+    const-string v8, "EEE dd-MMM-yyyy HH:mm:ss z"
 
-    move p0, v2
+    const-string v9, "EEE dd MMM yyyy HH:mm:ss z"
 
-    goto :goto_0
+    const-string v10, "EEE dd-MMM-yyyy HH-mm-ss z"
 
-    :cond_1
-    const/4 p0, 0x0
+    const-string v11, "EEE dd-MMM-yy HH:mm:ss z"
 
-    :goto_0
-    iput-boolean v2, p1, Lz40;->a:Z
+    const-string v12, "EEE dd MMM yy HH:mm:ss z"
 
-    iput-boolean p0, p1, Lz40;->b:Z
+    const-string v13, "EEE,dd-MMM-yy HH:mm:ss z"
 
-    iput-boolean p2, p1, Lz40;->c:Z
+    const-string v14, "EEE,dd-MMM-yyyy HH:mm:ss z"
 
-    invoke-virtual {p1}, Lz40;->a()La50;
+    filled-new-array/range {v2 .. v16}, [Ljava/lang/String;
 
-    move-result-object p0
+    move-result-object v0
 
-    return-object p0
+    array-length v0, v0
+
+    new-array v0, v0, [Ljava/text/DateFormat;
+
+    return-void
 .end method

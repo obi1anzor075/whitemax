@@ -1,143 +1,48 @@
 .class public final Liv7;
-.super Lax5;
-.source "SourceFile"
-
-
-# static fields
-.field public static final h:Ljava/lang/Object;
+.super Lbu3;
 
 
 # instance fields
-.field public final f:Ljava/lang/Object;
+.field public X:I
 
-.field public final g:Ljava/lang/Object;
+.field public final synthetic Y:Lff7;
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Liv7;->h:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lvje;Ljava/lang/Object;Ljava/lang/Object;)V
+.method public constructor <init>(Lff7;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lax5;-><init>(Lvje;)V
+    iput-object p1, p0, Liv7;->Y:Lff7;
 
-    iput-object p2, p0, Liv7;->f:Ljava/lang/Object;
-
-    iput-object p3, p0, Liv7;->g:Ljava/lang/Object;
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/lang/Object;)I
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    sget-object v0, Liv7;->h:Ljava/lang/Object;
+    iput-object p1, p0, Liv7;->o:Ljava/lang/Object;
 
-    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    iget p1, p0, Liv7;->X:I
 
-    move-result v0
+    const/high16 v0, -0x80000000
 
-    if-eqz v0, :cond_0
+    or-int/2addr p1, v0
 
-    iget-object v0, p0, Liv7;->g:Ljava/lang/Object;
+    iput p1, p0, Liv7;->X:I
 
-    if-eqz v0, :cond_0
+    iget-object p1, p0, Liv7;->Y:Lff7;
 
-    move-object p1, v0
+    const/4 v0, 0x0
 
-    :cond_0
-    iget-object p0, p0, Lax5;->e:Lvje;
+    invoke-virtual {p1, v0, p0}, Lff7;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    invoke-virtual {p0, p1}, Lvje;->b(Ljava/lang/Object;)I
+    move-result-object p0
 
-    move-result p0
-
-    return p0
-.end method
-
-.method public final g(ILqje;Z)Lqje;
-    .locals 1
-
-    iget-object v0, p0, Lax5;->e:Lvje;
-
-    invoke-virtual {v0, p1, p2, p3}, Lvje;->g(ILqje;Z)Lqje;
-
-    iget-object p1, p2, Lqje;->b:Ljava/lang/Object;
-
-    iget-object p0, p0, Liv7;->g:Ljava/lang/Object;
-
-    invoke-static {p1, p0}, Loze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    if-eqz p3, :cond_0
-
-    sget-object p0, Liv7;->h:Ljava/lang/Object;
-
-    iput-object p0, p2, Lqje;->b:Ljava/lang/Object;
-
-    :cond_0
-    return-object p2
-.end method
-
-.method public final m(I)Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lax5;->e:Lvje;
-
-    invoke-virtual {v0, p1}, Lvje;->m(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    iget-object p0, p0, Liv7;->g:Ljava/lang/Object;
-
-    invoke-static {p1, p0}, Loze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    sget-object p1, Liv7;->h:Ljava/lang/Object;
-
-    :cond_0
-    return-object p1
-.end method
-
-.method public final n(ILtje;J)Ltje;
-    .locals 1
-
-    iget-object v0, p0, Lax5;->e:Lvje;
-
-    invoke-virtual {v0, p1, p2, p3, p4}, Lvje;->n(ILtje;J)Ltje;
-
-    iget-object p1, p2, Ltje;->a:Ljava/lang/Object;
-
-    iget-object p0, p0, Liv7;->f:Ljava/lang/Object;
-
-    invoke-static {p1, p0}, Loze;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    sget-object p0, Ltje;->q:Ljava/lang/Object;
-
-    iput-object p0, p2, Ltje;->a:Ljava/lang/Object;
-
-    :cond_0
-    return-object p2
+    return-object p0
 .end method

@@ -1,295 +1,58 @@
 .class public final Lhh8;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Landroid/os/Parcelable;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lhh8;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;
+.field public a:Landroid/os/ResultReceiver;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput-object p2, p0, Lhh8;->Y:Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;
+    new-instance v0, Ldj7;
 
-    const/4 p2, 0x2
+    const/16 v1, 0xe
 
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, v1}, Ldj7;-><init>(I)V
+
+    sput-object v0, Lhh8;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final describeContents()I
     .locals 0
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    const/4 p0, 0x0
 
-    invoke-virtual {p0, p1, p2}, Lhh8;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lhh8;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lhh8;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
+    return p0
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 0
 
-    new-instance v0, Lhh8;
+    iget-object p0, p0, Lhh8;->a:Landroid/os/ResultReceiver;
 
-    iget-object p0, p0, Lhh8;->Y:Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;
+    invoke-virtual {p0, p1, p2}, Landroid/os/ResultReceiver;->writeToParcel(Landroid/os/Parcel;I)V
 
-    invoke-direct {v0, p2, p0}, Lhh8;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;)V
-
-    iput-object p1, v0, Lhh8;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 11
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lhh8;->X:Ljava/lang/Object;
-
-    check-cast p1, Lsg9;
-
-    sget-object v0, Log8;->b:Log8;
-
-    invoke-static {p1, v0}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    iget-object p0, p0, Lhh8;->Y:Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;
-
-    if-eqz v0, :cond_0
-
-    sget-object p1, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->Y:[Lk77;
-
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    sget-object v0, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->Y:[Lk77;
-
-    aget-object v0, v0, v2
-
-    iget-object v0, p0, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->a:Ljr;
-
-    invoke-virtual {v0, p0}, Ljr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Number;
-
-    invoke-virtual {v0}, Ljava/lang/Number;->longValue()J
-
-    move-result-wide v3
-
-    sget v0, Lru/ok/messages/location/ActLocationMap;->Y0:I
-
-    new-instance v0, Landroid/content/Intent;
-
-    const-class v5, Lru/ok/messages/location/ActLocationMap;
-
-    invoke-direct {v0, p1, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    const-string p1, "ru.ok.tamtam.extra.CHAT_ID"
-
-    invoke-virtual {v0, p1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
-
-    const-string p1, "map:DISABLE_LIVE"
-
-    invoke-virtual {v0, p1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    const-string p1, "map:REGULAR_SENDING"
-
-    invoke-virtual {v0, p1, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    const/16 p1, 0x173
-
-    invoke-virtual {p0, v0, p1}, Lrr3;->startActivityForResult(Landroid/content/Intent;I)V
-
-    goto/16 :goto_2
-
-    :cond_0
-    sget-object v0, Lpg8;->b:Lpg8;
-
-    invoke-static {p1, v0}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    sget-object p1, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->Y:[Lk77;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object p1, Lone/me/sdk/bottomsheet/BottomSheetWidget;->B0:[Lk77;
-
-    sget p1, Lk2a;->H:I
-
-    const/4 v0, 0x0
-
-    const/4 v3, 0x6
-
-    invoke-static {p1, v3, v0}, Lrf0;->c(IILandroid/os/Bundle;)Ljc3;
-
-    move-result-object p1
-
-    new-instance v3, Lkc3;
-
-    sget v4, Lk2a;->G:I
-
-    new-instance v5, Lhge;
-
-    invoke-direct {v5, v4}, Lhge;-><init>(I)V
-
-    const/4 v4, 0x3
-
-    invoke-direct {v3, v1, v5, v4, v2}, Lkc3;-><init>(ILmge;IZ)V
-
-    filled-new-array {v3}, [Lkc3;
-
-    move-result-object v3
-
-    invoke-virtual {p1, v3}, Ljc3;->a([Lkc3;)V
-
-    new-instance v3, Lkc3;
-
-    sget v5, Lk2a;->F:I
-
-    new-instance v6, Lhge;
-
-    invoke-direct {v6, v5}, Lhge;-><init>(I)V
-
-    const/4 v5, 0x2
-
-    invoke-direct {v3, v5, v6, v4, v2}, Lkc3;-><init>(ILmge;IZ)V
-
-    filled-new-array {v3}, [Lkc3;
-
-    move-result-object v3
-
-    invoke-virtual {p1, v3}, Ljc3;->a([Lkc3;)V
-
-    new-instance v3, Lkc3;
-
-    sget v5, Lk2a;->E:I
-
-    new-instance v6, Lhge;
-
-    invoke-direct {v6, v5}, Lhge;-><init>(I)V
-
-    invoke-direct {v3, v4, v6, v1, v2}, Lkc3;-><init>(ILmge;IZ)V
-
-    filled-new-array {v3}, [Lkc3;
-
-    move-result-object v3
-
-    invoke-virtual {p1, v3}, Ljc3;->a([Lkc3;)V
-
-    invoke-virtual {p1}, Ljc3;->e()Lone/me/sdk/bottomsheet/ConfirmationBottomSheet;
-
-    move-result-object v5
-
-    invoke-virtual {v5, p0}, Lrr3;->setTargetController(Lrr3;)V
-
-    move-object p1, p0
-
-    :goto_0
-    invoke-virtual {p1}, Lrr3;->getParentController()Lrr3;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_1
-
-    invoke-virtual {p1}, Lrr3;->getParentController()Lrr3;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_1
-    instance-of v3, p1, Lygc;
-
-    if-eqz v3, :cond_2
-
-    check-cast p1, Lygc;
-
-    goto :goto_1
-
-    :cond_2
-    move-object p1, v0
-
-    :goto_1
-    if-eqz p1, :cond_3
-
-    invoke-interface {p1}, Lygc;->S()Lsgc;
-
-    move-result-object v0
-
-    :cond_3
-    invoke-virtual {v5, p0}, Lone/me/sdk/bottomsheet/BottomSheetWidget;->y0(Lone/me/sdk/arch/Widget;)V
-
-    if-eqz v0, :cond_5
-
-    new-instance p0, Lvgc;
-
-    const/4 v7, 0x0
-
-    const/4 v10, -0x1
-
-    const/4 v6, 0x0
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    move-object v4, p0
-
-    invoke-direct/range {v4 .. v10}, Lvgc;-><init>(Lrr3;Ljava/lang/String;Lwr3;Lwr3;ZI)V
-
-    const-string p1, "BottomSheetWidget"
-
-    invoke-static {v2, p0, v1, p1}, Lrf0;->k(ZLvgc;ZLjava/lang/String;)V
-
-    invoke-virtual {v0, p0}, Lsgc;->G(Lvgc;)V
-
-    goto :goto_2
-
-    :cond_4
-    instance-of p0, p1, La34;
-
-    if-eqz p0, :cond_5
-
-    sget-object p0, Lul2;->c:Lul2;
-
-    check-cast p1, La34;
-
-    invoke-virtual {p0, p1}, Lu2;->R1(La34;)V
-
-    :cond_5
-    :goto_2
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
+    return-void
 .end method

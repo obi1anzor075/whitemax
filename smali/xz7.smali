@@ -1,99 +1,117 @@
-.class public abstract synthetic Lxz7;
+.class public Lxz7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic $EnumSwitchMapping$0:[I
-
-.field public static final synthetic $EnumSwitchMapping$1:[I
-
-.field public static final synthetic $EnumSwitchMapping$2:[I
+# instance fields
+.field public final a:Lkgg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(Lkgg;)V
+    .locals 0
 
-    invoke-static {}, Lp3b;->values()[Lp3b;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    iput-object p1, p0, Lxz7;->a:Lkgg;
 
-    array-length v0, v0
+    return-void
+.end method
 
-    new-array v0, v0, [I
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    instance-of v0, p1, Lxz7;
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x1
+    if-nez v0, :cond_0
 
+    return v1
+
+    :cond_0
     :try_start_0
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    iget-object p0, p0, Lxz7;->a:Lkgg;
 
-    :catch_0
-    const/4 v3, 0x2
+    check-cast p1, Lxz7;
 
-    :try_start_1
-    aput v3, v0, v2
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+    iget-object p1, p1, Lxz7;->a:Lkgg;
 
-    :catch_1
-    sput-object v0, Lxz7;->$EnumSwitchMapping$0:[I
+    check-cast p0, Ligg;
 
-    invoke-static {}, Lqz;->values()[Lqz;
+    invoke-virtual {p0}, Lfeg;->W()Landroid/os/Parcel;
 
     move-result-object v0
 
-    array-length v0, v0
+    invoke-static {v0, p1}, Lygg;->c(Landroid/os/Parcel;Landroid/os/IInterface;)V
 
-    new-array v0, v0, [I
+    const/16 p1, 0x10
 
-    :try_start_2
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+    invoke-virtual {p0, v0, p1}, Lfeg;->z(Landroid/os/Parcel;I)Landroid/os/Parcel;
 
-    :catch_2
-    :try_start_3
-    aput v3, v0, v2
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+    move-result-object p0
 
-    :catch_3
-    sput-object v0, Lxz7;->$EnumSwitchMapping$1:[I
+    invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
 
-    const/4 v0, 0x3
+    move-result p1
 
-    invoke-static {v0}, Lhr1;->w(I)[I
+    if-eqz p1, :cond_1
 
-    move-result-object v4
+    const/4 v1, 0x1
 
-    array-length v4, v4
+    :cond_1
+    invoke-virtual {p0}, Landroid/os/Parcel;->recycle()V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    new-array v4, v4, [I
+    return v1
 
-    :try_start_4
-    aput v2, v4, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+    :catch_0
+    move-exception p0
 
-    :catch_4
-    :try_start_5
-    aput v3, v4, v3
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+    new-instance p1, Lcom/google/android/gms/maps/model/RuntimeRemoteException;
 
-    :catch_5
-    :try_start_6
-    aput v0, v4, v2
-    :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
+    invoke-direct {p1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
-    :catch_6
-    sput-object v4, Lxz7;->$EnumSwitchMapping$2:[I
+    throw p1
+.end method
 
-    return-void
+.method public final hashCode()I
+    .locals 2
+
+    :try_start_0
+    iget-object p0, p0, Lxz7;->a:Lkgg;
+
+    check-cast p0, Ligg;
+
+    invoke-virtual {p0}, Lfeg;->W()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    const/16 v1, 0x11
+
+    invoke-virtual {p0, v0, v1}, Lfeg;->z(Landroid/os/Parcel;I)Landroid/os/Parcel;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    invoke-virtual {p0}, Landroid/os/Parcel;->recycle()V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return v0
+
+    :catch_0
+    move-exception p0
+
+    new-instance v0, Lcom/google/android/gms/maps/model/RuntimeRemoteException;
+
+    invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
 .end method

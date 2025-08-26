@@ -19,7 +19,7 @@
 
     if-nez p2, :cond_0
 
-    return-void
+    goto/16 :goto_0
 
     :cond_0
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -34,21 +34,23 @@
 
     if-eqz v1, :cond_1
 
-    new-instance p2, Lgr;
+    new-instance p2, Lsr;
 
     const/4 v0, 0x2
 
-    invoke-direct {p2, v0}, Lgr;-><init>(I)V
+    invoke-direct {p2, v0}, Lsr;-><init>(I)V
 
-    new-instance v0, Lza6;
+    new-instance v0, Ld3d;
 
-    invoke-direct {v0, p0}, Lza6;-><init>(Ljava/lang/Object;)V
+    const/16 v1, 0x1b
+
+    invoke-direct {v0, v1, p0}, Ld3d;-><init>(ILjava/lang/Object;)V
 
     const/4 p0, 0x1
 
-    invoke-static {p1, p2, v0, p0}, Lhwf;->z(Landroid/content/Context;Ljava/util/concurrent/Executor;Ltab;Z)V
+    invoke-static {p1, p2, v0, p0}, Lild;->E(Landroid/content/Context;Ljava/util/concurrent/Executor;Lqeb;Z)V
 
-    goto/16 :goto_0
+    return-void
 
     :cond_1
     const-string v1, "androidx.profileinstaller.action.SKIP_FILE"
@@ -106,11 +108,11 @@
 
     move-result-object p1
 
-    invoke-static {p2, p1}, Lhwf;->n(Landroid/content/pm/PackageInfo;Ljava/io/File;)V
+    invoke-static {p2, p1}, Lild;->t(Landroid/content/pm/PackageInfo;Ljava/io/File;)V
 
     invoke-virtual {p0, v2}, Landroid/content/BroadcastReceiver;->setResultCode(I)V
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :catch_0
     const/4 p1, 0x7
@@ -144,7 +146,7 @@
 
     invoke-virtual {p0, p1}, Landroid/content/BroadcastReceiver;->setResultCode(I)V
 
-    goto :goto_0
+    return-void
 
     :cond_3
     const-string v1, "androidx.profileinstaller.action.SAVE_PROFILE"
@@ -165,7 +167,7 @@
 
     invoke-virtual {p0, p1}, Landroid/content/BroadcastReceiver;->setResultCode(I)V
 
-    goto :goto_0
+    return-void
 
     :cond_4
     const-string v1, "androidx.profileinstaller.action.BENCHMARK_OPERATION"
@@ -204,7 +206,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, La24;->v(Ljava/io/File;)Z
+    invoke-static {p1}, Lu7;->r(Ljava/io/File;)Z
 
     move-result p1
 
@@ -214,14 +216,14 @@
 
     invoke-virtual {p0, p1}, Landroid/content/BroadcastReceiver;->setResultCode(I)V
 
-    goto :goto_0
+    return-void
 
     :cond_5
     const/16 p1, 0xf
 
     invoke-virtual {p0, p1}, Landroid/content/BroadcastReceiver;->setResultCode(I)V
 
-    goto :goto_0
+    return-void
 
     :cond_6
     const/16 p1, 0x10

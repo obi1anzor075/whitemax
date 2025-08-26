@@ -1,9 +1,9 @@
 .class public final Lb3;
-.super Ll5e;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Ll66;
 
 
 # instance fields
@@ -20,7 +20,7 @@
 
     const/4 p2, 0x2
 
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2, p1}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -32,20 +32,20 @@
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {p0, p1, p2}, Lb3;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0, p1, p2}, Lb3;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
     check-cast p0, Lb3;
 
-    sget-object p1, Ljue;->a:Ljue;
+    sget-object p1, Le5f;->a:Le5f;
 
     invoke-virtual {p0, p1}, Lb3;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object p1
 .end method
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .locals 1
 
     new-instance v0, Lb3;
@@ -60,46 +60,85 @@
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    .locals 2
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lb3;->X:Ljava/lang/Object;
 
-    check-cast p1, Lyra;
+    check-cast p1, Lkva;
 
-    sget-object v0, Lyra;->a:Lyra;
+    sget-object v0, Liva;->a:Liva;
 
-    invoke-static {p1, v0}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p1, v0}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result p1
-
-    if-eqz p1, :cond_1
+    move-result v0
 
     iget-object p0, p0, Lb3;->Y:Lone/me/chats/picker/AbstractPickerScreen;
 
-    invoke-virtual {p0}, Lone/me/chats/picker/AbstractPickerScreen;->q0()Lx2a;
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lone/me/chats/picker/AbstractPickerScreen;->u0()Ly6a;
 
     move-result-object p0
 
-    if-eqz p0, :cond_0
+    if-eqz p0, :cond_2
 
-    invoke-virtual {p0}, Lx2a;->getEditText()Landroid/widget/EditText;
+    invoke-virtual {p0}, Ly6a;->getEditText()Landroid/widget/EditText;
 
     move-result-object p0
 
-    if-eqz p0, :cond_0
+    if-eqz p0, :cond_2
 
     const/4 p1, 0x0
 
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
+    goto :goto_0
+
     :cond_0
-    sget-object p0, Ljue;->a:Ljue;
+    instance-of v0, p1, Ljva;
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lone/me/chats/picker/AbstractPickerScreen;->o0:Llfa;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Llfa;->a()V
+
+    :cond_1
+    new-instance v0, Lmfa;
+
+    invoke-direct {v0, p0}, Lmfa;-><init>(Lone/me/sdk/arch/Widget;)V
+
+    check-cast p1, Ljva;
+
+    iget-object p1, p1, Ljva;->a:Lhoe;
+
+    invoke-virtual {v0, p1}, Lmfa;->g(Lmoe;)V
+
+    new-instance p1, Laga;
+
+    sget v1, Lknc;->z0:I
+
+    invoke-direct {p1, v1}, Laga;-><init>(I)V
+
+    invoke-virtual {v0, p1}, Lmfa;->e(Lega;)V
+
+    invoke-virtual {v0}, Lmfa;->i()Llfa;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lone/me/chats/picker/AbstractPickerScreen;->o0:Llfa;
+
+    :cond_2
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 
-    :cond_1
+    :cond_3
     new-instance p0, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V

@@ -4,7 +4,7 @@
 
 # interfaces
 .implements Ljava/util/Collection;
-.implements Lz67;
+.implements Lqb7;
 
 
 # annotations
@@ -14,7 +14,7 @@
         "Ljava/util/Collection<",
         "Lru/ok/android/externcalls/sdk/ConversationParticipant;",
         ">;",
-        "Lz67;"
+        "Lqb7;"
     }
 .end annotation
 
@@ -30,10 +30,10 @@
         "externalId",
         "getByExternal",
         "(Lru/ok/android/externcalls/sdk/id/ParticipantId;)Lru/ok/android/externcalls/sdk/ConversationParticipant;",
-        "Lge1;",
+        "Lrf1;",
         "internalId",
         "getByInternal",
-        "(Lge1;)Lru/ok/android/externcalls/sdk/ConversationParticipant;",
+        "(Lrf1;)Lru/ok/android/externcalls/sdk/ConversationParticipant;",
         "",
         "hasOtherParticipants",
         "()Z",
@@ -68,6 +68,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -129,12 +130,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -158,7 +158,7 @@
 
     if-eqz v0, :cond_0
 
-    goto :goto_0
+    return v1
 
     :cond_0
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -188,10 +188,11 @@
 
     if-nez v0, :cond_1
 
-    const/4 v1, 0x0
+    const/4 p0, 0x0
+
+    return p0
 
     :cond_2
-    :goto_0
     return v1
 .end method
 
@@ -215,7 +216,7 @@
     return-object p0
 .end method
 
-.method public abstract getByInternal(Lge1;)Lru/ok/android/externcalls/sdk/ConversationParticipant;
+.method public abstract getByInternal(Lrf1;)Lru/ok/android/externcalls/sdk/ConversationParticipant;
 .end method
 
 .method public abstract getMe()Lru/ok/android/externcalls/sdk/ConversationParticipant;

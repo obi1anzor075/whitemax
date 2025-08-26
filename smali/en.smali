@@ -1,36 +1,127 @@
-.class public final synthetic Len;
+.class public abstract Len;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lp77;
-
-
-# instance fields
-.field public final synthetic a:Lfn;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lfn;)V
-    .locals 0
+.method public static a(Landroid/view/DragEvent;Landroid/widget/TextView;Landroid/app/Activity;)Z
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p2, p0}, Landroid/app/Activity;->requestDragAndDropPermissions(Landroid/view/DragEvent;)Landroid/view/DragAndDropPermissions;
 
-    iput-object p1, p0, Len;->a:Lfn;
+    invoke-virtual {p0}, Landroid/view/DragEvent;->getX()F
 
-    return-void
+    move-result p2
+
+    invoke-virtual {p0}, Landroid/view/DragEvent;->getY()F
+
+    move-result v0
+
+    invoke-virtual {p1, p2, v0}, Landroid/widget/TextView;->getOffsetForPosition(FF)I
+
+    move-result p2
+
+    invoke-virtual {p1}, Landroid/widget/TextView;->beginBatchEdit()V
+
+    :try_start_0
+    invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/text/Spannable;
+
+    invoke-static {v0, p2}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;I)V
+
+    invoke-virtual {p0}, Landroid/view/DragEvent;->getClipData()Landroid/content/ClipData;
+
+    move-result-object p0
+
+    sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v0, 0x1f
+
+    const/4 v1, 0x3
+
+    if-lt p2, v0, :cond_0
+
+    new-instance p2, Ld3d;
+
+    invoke-direct {p2, p0, v1}, Ld3d;-><init>(Landroid/content/ClipData;I)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p2, Lrs3;
+
+    invoke-direct {p2}, Lrs3;-><init>()V
+
+    iput-object p0, p2, Lrs3;->b:Landroid/content/ClipData;
+
+    iput v1, p2, Lrs3;->c:I
+
+    :goto_0
+    invoke-interface {p2}, Lqs3;->build()Lts3;
+
+    move-result-object p0
+
+    invoke-static {p1, p0}, Ltnf;->g(Landroid/view/View;Lts3;)Lts3;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {p1}, Landroid/widget/TextView;->endBatchEdit()V
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :catchall_0
+    move-exception p0
+
+    invoke-virtual {p1}, Landroid/widget/TextView;->endBatchEdit()V
+
+    throw p0
 .end method
 
+.method public static b(Landroid/view/DragEvent;Landroid/view/View;Landroid/app/Activity;)Z
+    .locals 2
 
-# virtual methods
-.method public final l(Landroid/view/KeyEvent;)Z
-    .locals 0
+    invoke-virtual {p2, p0}, Landroid/app/Activity;->requestDragAndDropPermissions(Landroid/view/DragEvent;)Landroid/view/DragAndDropPermissions;
 
-    iget-object p0, p0, Len;->a:Lfn;
+    invoke-virtual {p0}, Landroid/view/DragEvent;->getClipData()Landroid/content/ClipData;
 
-    invoke-virtual {p0, p1}, Lfn;->f(Landroid/view/KeyEvent;)Z
+    move-result-object p0
 
-    move-result p0
+    sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v0, 0x1f
+
+    const/4 v1, 0x3
+
+    if-lt p2, v0, :cond_0
+
+    new-instance p2, Ld3d;
+
+    invoke-direct {p2, p0, v1}, Ld3d;-><init>(Landroid/content/ClipData;I)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p2, Lrs3;
+
+    invoke-direct {p2}, Lrs3;-><init>()V
+
+    iput-object p0, p2, Lrs3;->b:Landroid/content/ClipData;
+
+    iput v1, p2, Lrs3;->c:I
+
+    :goto_0
+    invoke-interface {p2}, Lqs3;->build()Lts3;
+
+    move-result-object p0
+
+    invoke-static {p1, p0}, Ltnf;->g(Landroid/view/View;Lts3;)Lts3;
+
+    const/4 p0, 0x1
 
     return p0
 .end method

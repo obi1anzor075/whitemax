@@ -1,60 +1,23 @@
-.class public final synthetic Lf7c;
+.class public abstract Lf7c;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
-
 
 # instance fields
-.field public final synthetic X:Ljava/lang/Runnable;
+.field public final a:Lr7c;
 
-.field public final synthetic a:Landroidx/recyclerview/widget/RecyclerView;
-
-.field public final synthetic b:I
-
-.field public final synthetic c:I
-
-.field public final synthetic o:Ljava/lang/Runnable;
+.field public final b:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroidx/recyclerview/widget/RecyclerView;IILjava/lang/Runnable;Ljava/lang/Runnable;)V
+.method public constructor <init>(Lr7c;J)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lf7c;->a:Landroidx/recyclerview/widget/RecyclerView;
+    iput-object p1, p0, Lf7c;->a:Lr7c;
 
-    iput p2, p0, Lf7c;->b:I
-
-    iput p3, p0, Lf7c;->c:I
-
-    iput-object p4, p0, Lf7c;->o:Ljava/lang/Runnable;
-
-    iput-object p5, p0, Lf7c;->X:Ljava/lang/Runnable;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final run()V
-    .locals 4
-
-    iget v0, p0, Lf7c;->b:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iget-object v1, p0, Lf7c;->a:Landroidx/recyclerview/widget/RecyclerView;
-
-    iget v2, p0, Lf7c;->c:I
-
-    iget-object v3, p0, Lf7c;->o:Ljava/lang/Runnable;
-
-    iget-object p0, p0, Lf7c;->X:Ljava/lang/Runnable;
-
-    invoke-static {v1, v0, v2, v3, p0}, Lz3d;->g(Landroidx/recyclerview/widget/RecyclerView;IILjava/lang/Runnable;Ljava/lang/Runnable;)V
+    iput-wide p2, p0, Lf7c;->b:J
 
     return-void
 .end method

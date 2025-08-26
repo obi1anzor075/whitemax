@@ -1,47 +1,44 @@
-.class public final Laid;
-.super Ldhd;
+.class public abstract Laid;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# static fields
+.field public static final b:Landroid/graphics/Matrix;
+
+
 # instance fields
-.field public final a:Ldhd;
-
-.field public final b:Lj26;
-
-.field public final c:Ljava/lang/Object;
+.field public final a:Landroid/graphics/Matrix;
 
 
 # direct methods
-.method public constructor <init>(Ldhd;Lj26;Ljava/lang/Object;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Landroid/graphics/Matrix;
+
+    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
+
+    sput-object v0, Laid;->b:Landroid/graphics/Matrix;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Laid;->a:Ldhd;
+    new-instance v0, Landroid/graphics/Matrix;
 
-    iput-object p2, p0, Laid;->b:Lj26;
+    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
-    iput-object p3, p0, Laid;->c:Ljava/lang/Object;
+    iput-object v0, p0, Laid;->a:Landroid/graphics/Matrix;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final l(Lzhd;)V
-    .locals 3
-
-    new-instance v0, Lj1c;
-
-    const/4 v1, 0x5
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, p0, p1, v2, v1}, Lj1c;-><init>(Ljava/lang/Object;Ljava/lang/Object;ZI)V
-
-    iget-object p0, p0, Laid;->a:Ldhd;
-
-    invoke-virtual {p0, v0}, Ldhd;->k(Lzhd;)V
-
-    return-void
+.method public abstract a(Landroid/graphics/Matrix;Lqhd;ILandroid/graphics/Canvas;)V
 .end method

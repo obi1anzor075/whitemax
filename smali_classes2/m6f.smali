@@ -1,68 +1,61 @@
 .class public final Lm6f;
-.super Ll5e;
+.super Lbu3;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
 
 
 # instance fields
-.field public synthetic X:Z
+.field public X:J
+
+.field public Y:J
+
+.field public synthetic Z:Ljava/lang/Object;
+
+.field public o:Ln6f;
+
+.field public final synthetic o0:Ln6f;
+
+.field public p0:I
+
+
+# direct methods
+.method public constructor <init>(Ln6f;Lbu3;)V
+    .locals 0
+
+    iput-object p1, p0, Lm6f;->o0:Ln6f;
+
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lm6f;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lm6f;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lm6f;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
-
-    new-instance p0, Lm6f;
-
-    const/4 v0, 0x2
-
-    invoke-direct {p0, v0, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p1
-
-    iput-boolean p1, p0, Lm6f;->X:Z
-
-    return-object p0
-.end method
-
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+    .locals 8
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    iput-object p1, p0, Lm6f;->Z:Ljava/lang/Object;
 
-    iget-boolean p0, p0, Lm6f;->X:Z
+    iget p1, p0, Lm6f;->p0:I
 
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lm6f;->p0:I
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    iget-object v0, p0, Lm6f;->o0:Ln6f;
+
+    const-wide/16 v1, 0x0
+
+    const-wide/16 v3, 0x0
+
+    move-object v7, p0
+
+    invoke-virtual/range {v0 .. v7}, Ln6f;->a(JJLjava/lang/String;Lp10;Lbu3;)Ljava/lang/Object;
 
     move-result-object p0
 

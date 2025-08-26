@@ -1,97 +1,76 @@
-.class public final enum Lwye;
-.super Ljava/lang/Enum;
+.class public final Lwye;
+.super Lgsc;
 .source "SourceFile"
 
 
 # static fields
-.field public static final synthetic X:[Lwye;
-
-.field public static final enum a:Lwye;
-
-.field public static final enum b:Lwye;
-
-.field public static final enum c:Lwye;
-
-.field public static final enum o:Lwye;
+.field public static final c:Lwye;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 1
 
     new-instance v0, Lwye;
 
-    const-string v1, "ALL"
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lwye;->a:Lwye;
-
-    new-instance v1, Lwye;
-
-    const-string v2, "USER_FOLDER"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lwye;->b:Lwye;
-
-    new-instance v2, Lwye;
-
-    const-string v3, "CREATE_FOLDER"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lwye;->c:Lwye;
-
-    new-instance v3, Lwye;
-
-    const-string v4, "RECOMMENDED_FOLDER"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Lwye;->o:Lwye;
-
-    filled-new-array {v0, v1, v2, v3}, [Lwye;
-
-    move-result-object v0
-
-    sput-object v0, Lwye;->X:[Lwye;
+    sput-object v0, Lwye;->c:Lwye;
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lwye;
-    .locals 1
 
-    const-class v0, Lwye;
+# virtual methods
+.method public final a()Lesc;
+    .locals 0
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    new-instance p0, Lvye;
 
-    move-result-object p0
-
-    check-cast p0, Lwye;
+    invoke-direct {p0}, Lvye;-><init>()V
 
     return-object p0
 .end method
 
-.method public static values()[Lwye;
-    .locals 1
+.method public final b(Ljava/lang/Runnable;)Lam4;
+    .locals 0
 
-    sget-object v0, Lwye;->X:[Lwye;
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    sget-object p0, Lbz4;->a:Lbz4;
 
-    move-result-object v0
+    return-object p0
+.end method
 
-    check-cast v0, [Lwye;
+.method public final c(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Lam4;
+    .locals 0
 
-    return-object v0
+    :try_start_0
+    invoke-virtual {p4, p2, p3}, Ljava/util/concurrent/TimeUnit;->sleep(J)V
+
+    const-string p0, "run is null"
+
+    invoke-static {p1, p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception p0
+
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Thread;->interrupt()V
+
+    invoke-static {p0}, Lou0;->x(Ljava/lang/Throwable;)V
+
+    :goto_0
+    sget-object p0, Lbz4;->a:Lbz4;
+
+    return-object p0
 .end method

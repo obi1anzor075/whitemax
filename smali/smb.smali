@@ -1,51 +1,123 @@
-.class public abstract Lsmb;
+.class public final synthetic Lsmb;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lo1a;
+.implements Lxbe;
 
-# static fields
-.field public static compat_button_inset_horizontal_material:I = 0x7f07007d
 
-.field public static compat_button_inset_vertical_material:I = 0x7f07007e
+# instance fields
+.field public final synthetic a:I
 
-.field public static compat_button_padding_horizontal_material:I = 0x7f07007f
+.field public final synthetic b:Landroid/content/Context;
 
-.field public static compat_button_padding_vertical_material:I = 0x7f070080
+.field public final synthetic c:Z
 
-.field public static compat_control_corner_material:I = 0x7f070081
 
-.field public static compat_notification_large_icon_max_height:I = 0x7f070082
+# direct methods
+.method public synthetic constructor <init>(ILandroid/content/Context;Z)V
+    .locals 0
 
-.field public static compat_notification_large_icon_max_width:I = 0x7f070083
+    iput p1, p0, Lsmb;->a:I
 
-.field public static default_gap:I = 0x7f070091
+    iput-object p2, p0, Lsmb;->b:Landroid/content/Context;
 
-.field public static notification_action_icon_size:I = 0x7f0703b1
+    iput-boolean p3, p0, Lsmb;->c:Z
 
-.field public static notification_action_text_size:I = 0x7f0703b2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field public static notification_big_circle_margin:I = 0x7f0703b3
+    return-void
+.end method
 
-.field public static notification_content_margin_start:I = 0x7f0703b4
 
-.field public static notification_large_icon_height:I = 0x7f0703b5
+# virtual methods
+.method public a(Ljava/lang/Object;)V
+    .locals 1
 
-.field public static notification_large_icon_width:I = 0x7f0703b6
+    check-cast p1, Ljava/lang/Void;
 
-.field public static notification_main_column_padding_top:I = 0x7f0703b7
+    iget-object p1, p0, Lsmb;->b:Landroid/content/Context;
 
-.field public static notification_media_narrow_margin:I = 0x7f0703b8
+    invoke-static {p1}, Lg47;->w(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
-.field public static notification_right_icon_size:I = 0x7f0703b9
+    move-result-object p1
 
-.field public static notification_right_side_padding_top:I = 0x7f0703ba
+    invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
-.field public static notification_small_icon_background_padding:I = 0x7f0703bb
+    move-result-object p1
 
-.field public static notification_small_icon_size_as_large:I = 0x7f0703bc
+    const-string v0, "proxy_retention"
 
-.field public static notification_subtext_size:I = 0x7f0703bd
+    iget-boolean p0, p0, Lsmb;->c:Z
 
-.field public static notification_top_pad:I = 0x7f0703be
+    invoke-interface {p1, v0, p0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-.field public static notification_top_pad_large_text:I = 0x7f0703bf
+    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-void
+.end method
+
+.method public get()Ljava/lang/Object;
+    .locals 2
+
+    iget v0, p0, Lsmb;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Lsmb;->b:Landroid/content/Context;
+
+    iget-boolean p0, p0, Lsmb;->c:Z
+
+    invoke-static {v0, p0}, Lfpe;->q(Landroid/content/Context;Z)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_0
+    iget-boolean v0, p0, Lsmb;->c:Z
+
+    const/4 v1, 0x1
+
+    iget-object p0, p0, Lsmb;->b:Landroid/content/Context;
+
+    invoke-static {p0, v1, v0}, Lfpe;->o(Landroid/content/Context;ZZ)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_1
+    iget-boolean v0, p0, Lsmb;->c:Z
+
+    const/4 v1, 0x0
+
+    iget-object p0, p0, Lsmb;->b:Landroid/content/Context;
+
+    invoke-static {p0, v1, v0}, Lfpe;->o(Landroid/content/Context;ZZ)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_2
+    iget-boolean v0, p0, Lsmb;->c:Z
+
+    const/4 v1, 0x1
+
+    iget-object p0, p0, Lsmb;->b:Landroid/content/Context;
+
+    invoke-static {p0, v0, v1}, Lfpe;->g(Landroid/content/Context;ZZ)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method

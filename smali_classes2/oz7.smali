@@ -1,249 +1,248 @@
 .class public final Loz7;
-.super Lb7c;
+.super Landroid/widget/FrameLayout;
 .source "SourceFile"
-
-# interfaces
-.implements Lpl7;
 
 
 # instance fields
-.field public final J0:Ltg;
+.field public final a:Landroid/graphics/drawable/GradientDrawable;
 
-.field public final K0:Lnz7;
-
-.field public final L0:Lr10;
-
-.field public final M0:Z
-
-.field public final N0:Lhbc;
-
-.field public final O0:Lbl7;
-
-.field public P0:Lrwc;
-
-.field public final Q0:Lcom/facebook/drawee/view/SimpleDraweeView;
-
-.field public final R0:Landroid/widget/ProgressBar;
-
-.field public final S0:Landroid/view/View;
-
-.field public T0:Z
-
-.field public U0:Lcl7;
+.field public final b:Landroidx/appcompat/widget/AppCompatImageView;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Ltg;Lnz7;Lr10;ZLhbc;Lbl7;)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 5
 
-    invoke-direct {p0, p1}, Lb7c;-><init>(Landroid/view/View;)V
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Loz7;->J0:Ltg;
+    invoke-direct {p0, p1, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    iput-object p3, p0, Loz7;->K0:Lnz7;
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
 
-    iput-object p4, p0, Loz7;->L0:Lr10;
+    move-result-object v1
 
-    iput-boolean p5, p0, Loz7;->M0:Z
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    iput-object p6, p0, Loz7;->N0:Lhbc;
+    move-result-object v1
 
-    iput-object p7, p0, Loz7;->O0:Lbl7;
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
 
-    sget p2, Lyqb;->row_media_bar_selected__drawee:I
+    const/high16 v2, 0x41a00000    # 20.0f
 
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    mul-float/2addr v1, v2
 
-    move-result-object p2
+    const/16 v2, 0x8
 
-    check-cast p2, Lcom/facebook/drawee/view/SimpleDraweeView;
+    new-array v2, v2, [F
 
-    iput-object p2, p0, Loz7;->Q0:Lcom/facebook/drawee/view/SimpleDraweeView;
+    const/4 v3, 0x0
 
-    sget p2, Lyqb;->row_media_bar_selected__progress_bar:I
+    aput v1, v2, v3
 
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    const/4 v3, 0x1
 
-    move-result-object p2
+    aput v1, v2, v3
 
-    check-cast p2, Landroid/widget/ProgressBar;
+    const/4 v3, 0x2
 
-    iput-object p2, p0, Loz7;->R0:Landroid/widget/ProgressBar;
+    aput v1, v2, v3
 
-    sget p3, Lyqb;->row_media_bar_selected__progress_background:I
+    const/4 v3, 0x3
 
-    invoke-virtual {p1, p3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    aput v1, v2, v3
 
-    move-result-object p3
+    const/4 v3, 0x4
 
-    iput-object p3, p0, Loz7;->S0:Landroid/view/View;
+    aput v1, v2, v3
 
-    new-instance p3, Leu5;
+    const/4 v3, 0x5
 
-    const/16 p4, 0xa
+    aput v1, v2, v3
 
-    invoke-direct {p3, p4, p0}, Leu5;-><init>(ILjava/lang/Object;)V
+    const/4 v3, 0x6
 
-    invoke-static {p1, p3}, La24;->a0(Landroid/view/View;Landroid/view/View$OnClickListener;)V
+    aput v1, v2, v3
 
-    invoke-virtual {p1}, Landroid/view/View;->isInEditMode()Z
+    const/4 v3, 0x7
 
-    move-result p0
+    aput v1, v2, v3
 
-    if-eqz p0, :cond_0
+    invoke-static {v0, v0, v0, v2}, Ld46;->G(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;[F)Landroid/graphics/drawable/GradientDrawable;
 
-    sget-object p0, Ldb4;->e0:Ldb4;
+    move-result-object v1
 
-    goto :goto_0
+    iput-object v1, p0, Loz7;->a:Landroid/graphics/drawable/GradientDrawable;
 
-    :cond_0
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    new-instance v2, Landroidx/appcompat/widget/AppCompatImageView;
 
-    move-result-object p0
+    invoke-direct {v2, p1, v0}, Landroidx/appcompat/widget/AppCompatImageView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    sget-object p3, Lwce;->a0:Lr7e;
+    new-instance p1, Landroid/widget/FrameLayout$LayoutParams;
 
-    invoke-static {p0}, Lfja;->E(Landroid/content/Context;)Lwce;
+    const/4 v0, -0x2
 
-    move-result-object p0
+    invoke-direct {p1, v0, v0}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    :goto_0
-    iget p0, p0, Lwce;->m:I
+    const/16 v0, 0x11
 
-    invoke-virtual {p1, p0}, Landroid/view/View;->setBackgroundColor(I)V
+    iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v2, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    move-result-object p0
+    iput-object v2, p0, Loz7;->b:Landroidx/appcompat/widget/AppCompatImageView;
 
-    sget p1, Lxhc;->f:I
+    invoke-virtual {p0, v1}, Loz7;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    invoke-static {p0, p1}, Lhq3;->a(Landroid/content/Context;I)I
+    new-instance p1, Landroid/view/ViewGroup$LayoutParams;
 
-    move-result p0
+    const/16 v1, 0x18
 
-    invoke-static {p2, p0}, Ljs;->E(Landroid/widget/ProgressBar;I)V
+    int-to-float v1, v1
+
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v3
+
+    iget v3, v3, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v3, v1
+
+    invoke-static {v3}, Lkhg;->x(F)I
+
+    move-result v3
+
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v4
+
+    iget v4, v4, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v1, v4
+
+    invoke-static {v1}, Lkhg;->x(F)I
+
+    move-result v1
+
+    invoke-direct {p1, v3, v1}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    invoke-virtual {v2, v0}, Landroid/view/View;->setForegroundGravity(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final C(Z)V
-    .locals 4
+.method public getBackground()Landroid/graphics/drawable/Drawable;
+    .locals 2
 
-    const/16 v0, 0x8
+    invoke-super {p0}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
 
-    const/4 v1, 0x0
+    move-result-object v0
 
-    if-eqz p1, :cond_0
+    instance-of v1, v0, Landroid/graphics/drawable/GradientDrawable;
 
-    move v2, v1
+    if-eqz v1, :cond_0
+
+    check-cast v0, Landroid/graphics/drawable/GradientDrawable;
 
     goto :goto_0
 
     :cond_0
-    move v2, v0
+    const/4 v0, 0x0
 
     :goto_0
-    iget-object v3, p0, Loz7;->R0:Landroid/widget/ProgressBar;
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v3, v2}, Landroid/view/View;->setVisibility(I)V
-
-    if-eqz p1, :cond_1
-
-    move v0, v1
+    return-object v0
 
     :cond_1
-    iget-object p0, p0, Loz7;->S0:Landroid/view/View;
+    iget-object p0, p0, Loz7;->a:Landroid/graphics/drawable/GradientDrawable;
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
-
-    return-void
+    return-object p0
 .end method
 
-.method public final O(Ltk7;Landroid/net/Uri;ILandroid/net/Uri;)V
-    .locals 5
+.method public setBackground(Landroid/graphics/drawable/Drawable;)V
+    .locals 1
 
-    iget-object v0, p0, Loz7;->P0:Lrwc;
+    instance-of v0, p1, Landroid/graphics/drawable/GradientDrawable;
 
-    if-eqz v0, :cond_3
-
-    iget-object v0, v0, Lrwc;->a:Ltk7;
-
-    if-eqz v0, :cond_3
-
-    iget-wide v1, p1, Ltk7;->b:J
-
-    iget-wide v3, v0, Ltk7;->b:J
-
-    cmp-long p1, v1, v3
-
-    if-nez p1, :cond_3
-
-    iget-object p1, p0, Loz7;->Q0:Lcom/facebook/drawee/view/SimpleDraweeView;
-
-    if-nez p2, :cond_0
-
-    const/4 p0, 0x0
-
-    invoke-virtual {p1, p0}, Lon4;->setController(Lgn4;)V
+    if-nez v0, :cond_0
 
     return-void
 
     :cond_0
-    invoke-static {p2}, Lur6;->d(Landroid/net/Uri;)Lur6;
+    invoke-super {p0, p1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    move-result-object p2
+    return-void
+.end method
 
-    if-eqz p4, :cond_1
+.method public setBackgroundColor(I)V
+    .locals 0
 
-    new-instance v0, Lpha;
+    iget-object p0, p0, Loz7;->a:Landroid/graphics/drawable/GradientDrawable;
 
-    invoke-direct {v0, p4}, Lpha;-><init>(Landroid/net/Uri;)V
+    invoke-static {p1}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
 
-    iput-object v0, p2, Lur6;->l:Lk1b;
+    move-result-object p1
 
-    :cond_1
-    iget-object p0, p0, Loz7;->N0:Lhbc;
+    invoke-virtual {p0, p1}, Landroid/graphics/drawable/GradientDrawable;->setColor(Landroid/content/res/ColorStateList;)V
 
-    iput-object p0, p2, Lur6;->d:Lhbc;
+    return-void
+.end method
 
-    if-eqz p3, :cond_2
+.method public final setIcon(I)V
+    .locals 1
 
-    new-instance p0, Lmpa;
+    .line 3
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    const/4 p4, 0x0
+    move-result-object v0
 
-    invoke-direct {p0, p3, p4}, Lmpa;-><init>(II)V
+    .line 4
+    invoke-static {v0, p1}, Let3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
-    iput-object p0, p2, Lur6;->l:Lk1b;
+    move-result-object p1
 
-    :cond_2
-    sget-object p0, La06;->a:Lzwa;
+    .line 5
+    invoke-virtual {p0, p1}, Loz7;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    invoke-virtual {p0}, Lzwa;->a()Lywa;
+    return-void
+.end method
 
-    move-result-object p0
+.method public final setIcon(Landroid/graphics/drawable/Drawable;)V
+    .locals 1
 
-    invoke-virtual {p2}, Lur6;->a()Ltr6;
+    .line 1
+    iget-object v0, p0, Loz7;->b:Landroidx/appcompat/widget/AppCompatImageView;
 
-    move-result-object p2
+    invoke-virtual {v0, p1}, Landroidx/appcompat/widget/AppCompatImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    iput-object p2, p0, Ln0;->e:Ljava/lang/Object;
+    .line 2
+    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    invoke-virtual {p1}, Lon4;->getController()Lgn4;
+    return-void
+.end method
 
-    move-result-object p2
+.method public final setIconColor(I)V
+    .locals 0
 
-    iput-object p2, p0, Ln0;->l:Lgn4;
+    iget-object p0, p0, Loz7;->b:Landroidx/appcompat/widget/AppCompatImageView;
 
-    invoke-virtual {p0}, Ln0;->a()Lxwa;
+    invoke-static {p1}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
 
-    move-result-object p0
+    move-result-object p1
 
-    invoke-virtual {p1, p0}, Lon4;->setController(Lgn4;)V
+    invoke-virtual {p0, p1}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
-    :cond_3
     return-void
 .end method

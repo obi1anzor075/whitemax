@@ -4,23 +4,11 @@
 
 
 # static fields
-.field public static final synthetic G0:I
+.field public static final synthetic y0:I
 
 
 # instance fields
-.field public A0:Z
-
-.field public B0:Z
-
-.field public C0:Lojd;
-
-.field public final D0:Ljava/util/ArrayList;
-
-.field public final E0:[I
-
-.field public F0:Landroid/view/VelocityTracker;
-
-.field public final a:Lzg4;
+.field public final a:Lck4;
 
 .field public b:I
 
@@ -28,13 +16,25 @@
 
 .field public o:F
 
-.field public w0:F
+.field public o0:F
 
-.field public x0:F
+.field public p0:F
 
-.field public y0:F
+.field public q0:F
 
-.field public final z0:F
+.field public final r0:F
+
+.field public s0:Z
+
+.field public t0:Z
+
+.field public u0:Lbrd;
+
+.field public final v0:Ljava/util/ArrayList;
+
+.field public final w0:[I
+
+.field public x0:Landroid/view/VelocityTracker;
 
 
 # direct methods
@@ -53,41 +53,41 @@
 
     iput v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->o:F
 
-    iput v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->w0:F
+    iput v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->o0:F
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->x0:F
+    iput v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->p0:F
 
-    iput v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->y0:F
+    iput v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->q0:F
 
-    iput-boolean p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->A0:Z
+    iput-boolean p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->s0:Z
 
-    iput-boolean p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->B0:Z
+    iput-boolean p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->t0:Z
 
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->D0:Ljava/util/ArrayList;
+    iput-object v1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->v0:Ljava/util/ArrayList;
 
     const/4 v1, 0x2
 
     new-array v2, v1, [I
 
-    iput-object v2, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->E0:[I
+    iput-object v2, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->w0:[I
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
-    sget-object v3, Lzvb;->SlideOutLayout:[I
+    sget-object v3, Lv0c;->SlideOutLayout:[I
 
     invoke-virtual {v2, p2, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object p2
 
-    sget v2, Lzvb;->SlideOutLayout_chistyakov_orientation:I
+    sget v2, Lv0c;->SlideOutLayout_chistyakov_orientation:I
 
     invoke-virtual {p2, v2, p1}, Landroid/content/res/TypedArray;->getInt(II)I
 
@@ -95,7 +95,7 @@
 
     iput v2, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->b:I
 
-    sget v2, Lzvb;->SlideOutLayout_type:I
+    sget v2, Lv0c;->SlideOutLayout_type:I
 
     invoke-virtual {p2, v2, p1}, Landroid/content/res/TypedArray;->getInt(II)I
 
@@ -103,9 +103,9 @@
 
     iput p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->c:I
 
-    invoke-static {p0}, Lxy6;->c(Landroid/view/View;)V
+    invoke-static {p0}, Lfq0;->b(Landroid/view/View;)V
 
-    invoke-static {p0}, Lxy6;->w(Landroid/view/View;)Z
+    invoke-static {p0}, Lfq0;->I(Landroid/view/View;)Z
 
     move-result p1
 
@@ -117,7 +117,7 @@
 
     if-ne p1, v2, :cond_0
 
-    invoke-static {p0}, Lxy6;->w(Landroid/view/View;)Z
+    invoke-static {p0}, Lfq0;->I(Landroid/view/View;)Z
 
     move-result p1
 
@@ -140,11 +140,11 @@
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    invoke-static {}, Lzg4;->b()Lzg4;
+    invoke-static {}, Lck4;->b()Lck4;
 
     move-result-object p1
 
-    iput-object p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->a:Lzg4;
+    iput-object p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->a:Lck4;
 
     invoke-virtual {p0}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
 
@@ -191,19 +191,19 @@
 
     int-to-float p1, p1
 
-    iput p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->z0:F
+    iput p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->r0:F
 
     cmpg-float p1, p1, v0
 
     if-gtz p1, :cond_3
 
-    iget-object p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->a:Lzg4;
+    iget-object p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->a:Lck4;
 
-    iget p1, p1, Lzg4;->u:I
+    iget p1, p1, Lck4;->u:I
 
     int-to-float p1, p1
 
-    iput p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->z0:F
+    iput p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->r0:F
 
     :cond_3
     return-void
@@ -240,12 +240,12 @@
 
     cmpl-float v0, v0, v2
 
-    if-gtz v0, :cond_2
+    if-gtz v0, :cond_1
 
     :cond_0
     iget v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->b:I
 
-    if-ne v0, v1, :cond_1
+    if-ne v0, v1, :cond_2
 
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -261,16 +261,15 @@
 
     cmpl-float p0, p0, v2
 
-    if-lez p0, :cond_1
-
-    goto :goto_0
+    if-lez p0, :cond_2
 
     :cond_1
-    const/4 v1, 0x0
+    return v1
 
     :cond_2
-    :goto_0
-    return v1
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
 .method public final b(Landroid/view/View;)F
@@ -284,39 +283,38 @@
 
     move-result p0
 
-    goto :goto_0
+    return p0
 
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getTranslationX()F
 
     move-result p0
 
-    :goto_0
     return p0
 .end method
 
 .method public final c(Landroid/view/MotionEvent;)V
     .locals 6
 
-    iget v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->w0:F
+    iget v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->o0:F
 
     const/4 v1, 0x0
 
     cmpl-float v0, v0, v1
 
-    if-lez v0, :cond_7
+    if-lez v0, :cond_6
 
     iget v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->o:F
 
     cmpl-float v0, v0, v1
 
-    if-lez v0, :cond_7
+    if-lez v0, :cond_6
 
     iget v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->b:I
 
     if-nez v0, :cond_0
 
-    iget v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->x0:F
+    iget v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->p0:F
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
@@ -328,7 +326,7 @@
     goto :goto_1
 
     :cond_0
-    iget v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->y0:F
+    iget v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->q0:F
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -341,7 +339,7 @@
 
     if-nez v2, :cond_1
 
-    iget v2, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->y0:F
+    iget v2, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->q0:F
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -357,7 +355,7 @@
     goto :goto_3
 
     :cond_1
-    iget v2, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->x0:F
+    iget v2, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->p0:F
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
@@ -370,47 +368,47 @@
 
     const/4 v4, 0x1
 
-    if-lez v3, :cond_3
+    if-lez v3, :cond_2
 
     iget v3, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->c:I
 
-    if-eq v3, v4, :cond_2
+    if-eq v3, v4, :cond_3
 
     const/4 v5, 0x3
 
-    if-ne v3, v5, :cond_3
+    if-ne v3, v5, :cond_2
+
+    goto :goto_4
 
     :cond_2
-    return-void
-
-    :cond_3
     cmpg-float v1, v0, v1
 
-    if-gez v1, :cond_5
+    if-gez v1, :cond_4
 
     iget v1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->c:I
 
     const/4 v3, 0x2
 
-    if-eq v1, v3, :cond_4
+    if-eq v1, v3, :cond_3
 
     const/4 v3, 0x4
 
-    if-ne v1, v3, :cond_5
+    if-ne v1, v3, :cond_4
 
-    :cond_4
+    :cond_3
+    :goto_4
     return-void
 
-    :cond_5
+    :cond_4
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
 
-    iget v1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->z0:F
+    iget v1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->r0:F
 
     cmpl-float v1, v0, v1
 
-    if-lez v1, :cond_8
+    if-lez v1, :cond_7
 
     const/high16 v1, 0x40000000    # 2.0f
 
@@ -418,15 +416,15 @@
 
     cmpl-float v0, v0, v2
 
-    if-lez v0, :cond_8
+    if-lez v0, :cond_7
 
-    iput-boolean v4, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->A0:Z
+    iput-boolean v4, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->s0:Z
 
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -434,30 +432,30 @@
 
     invoke-interface {v0, v4}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
+    :cond_5
+    iget-object v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->u0:Lbrd;
+
+    if-eqz v0, :cond_7
+
+    invoke-interface {v0}, Lbrd;->K()V
+
+    goto :goto_5
+
     :cond_6
-    iget-object v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->C0:Lojd;
-
-    if-eqz v0, :cond_8
-
-    invoke-interface {v0}, Lojd;->Q()V
-
-    goto :goto_4
-
-    :cond_7
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v0
 
-    iput v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->x0:F
+    iput v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->p0:F
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
-    iput v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->y0:F
+    iput v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->q0:F
 
-    :cond_8
-    :goto_4
+    :cond_7
+    :goto_5
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v0
@@ -468,7 +466,7 @@
 
     move-result p1
 
-    iput p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->w0:F
+    iput p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->o0:F
 
     return-void
 .end method
@@ -536,7 +534,7 @@
 
     invoke-virtual {p0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    goto :goto_2
+    return-void
 
     :cond_2
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -553,7 +551,6 @@
 
     invoke-virtual {p0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    :goto_2
     return-void
 .end method
 
@@ -665,7 +662,7 @@
 
     if-le v0, v2, :cond_0
 
-    iput-boolean v1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->A0:Z
+    iput-boolean v1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->s0:Z
 
     const/4 p1, 0x0
 
@@ -674,7 +671,7 @@
     return v1
 
     :cond_0
-    iget-object v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->D0:Ljava/util/ArrayList;
+    iget-object v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->v0:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -707,7 +704,7 @@
 
     if-nez v4, :cond_1
 
-    iget-object v4, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->E0:[I
+    iget-object v4, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->w0:[I
 
     invoke-virtual {v3, v4}, Landroid/view/View;->getLocationInWindow([I)V
 
@@ -805,7 +802,7 @@
 
     iput p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->o:F
 
-    iput p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->w0:F
+    iput p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->o0:F
 
     goto :goto_1
 
@@ -814,7 +811,7 @@
     invoke-virtual {p0, p1}, Lru/ok/messages/views/widgets/SlideOutLayout;->c(Landroid/view/MotionEvent;)V
 
     :goto_1
-    iget-boolean p0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->A0:Z
+    iget-boolean p0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->s0:Z
 
     return p0
 .end method
@@ -834,7 +831,7 @@
 
     if-le v0, v3, :cond_0
 
-    iput-boolean v1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->A0:Z
+    iput-boolean v1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->s0:Z
 
     invoke-virtual {p0, v2}, Lru/ok/messages/views/widgets/SlideOutLayout;->d(F)V
 
@@ -878,7 +875,7 @@
     goto/16 :goto_b
 
     :cond_1
-    iget-boolean v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->A0:Z
+    iget-boolean v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->s0:Z
 
     if-eqz v0, :cond_13
 
@@ -892,7 +889,7 @@
 
     move-result-object v0
 
-    iget-object v7, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->F0:Landroid/view/VelocityTracker;
+    iget-object v7, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->x0:Landroid/view/VelocityTracker;
 
     if-eqz v7, :cond_3
 
@@ -902,7 +899,7 @@
 
     if-nez v7, :cond_2
 
-    iget-object v7, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->F0:Landroid/view/VelocityTracker;
+    iget-object v7, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->x0:Landroid/view/VelocityTracker;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionIndex()I
 
@@ -912,7 +909,7 @@
 
     move-result p1
 
-    sget-object v8, Lu0f;->a:Ljava/util/Map;
+    sget-object v8, Lybf;->a:Ljava/util/Map;
 
     invoke-virtual {v7, p1}, Landroid/view/VelocityTracker;->getYVelocity(I)F
 
@@ -926,7 +923,7 @@
     goto :goto_1
 
     :cond_2
-    iget-object v7, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->F0:Landroid/view/VelocityTracker;
+    iget-object v7, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->x0:Landroid/view/VelocityTracker;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionIndex()I
 
@@ -936,7 +933,7 @@
 
     move-result p1
 
-    sget-object v8, Lu0f;->a:Ljava/util/Map;
+    sget-object v8, Lybf;->a:Ljava/util/Map;
 
     invoke-virtual {v7, p1}, Landroid/view/VelocityTracker;->getXVelocity(I)F
 
@@ -945,13 +942,13 @@
     goto :goto_0
 
     :goto_1
-    iget-object v7, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->F0:Landroid/view/VelocityTracker;
+    iget-object v7, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->x0:Landroid/view/VelocityTracker;
 
     invoke-virtual {v7}, Landroid/view/VelocityTracker;->recycle()V
 
     const/4 v7, 0x0
 
-    iput-object v7, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->F0:Landroid/view/VelocityTracker;
+    iput-object v7, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->x0:Landroid/view/VelocityTracker;
 
     goto :goto_2
 
@@ -1016,11 +1013,11 @@
     :cond_6
     invoke-virtual {p0, p1}, Lru/ok/messages/views/widgets/SlideOutLayout;->d(F)V
 
-    iget-object p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->C0:Lojd;
+    iget-object p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->u0:Lbrd;
 
     if-eqz p1, :cond_11
 
-    invoke-interface {p1}, Lojd;->p()V
+    invoke-interface {p1}, Lbrd;->k()V
 
     goto/16 :goto_a
 
@@ -1052,19 +1049,19 @@
 
     :cond_a
     :goto_4
-    iget-object v5, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->C0:Lojd;
+    iget-object v5, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->u0:Lbrd;
 
     if-eqz v5, :cond_b
 
-    invoke-interface {v5}, Lojd;->D()Z
+    invoke-interface {v5}, Lbrd;->B()Z
 
     move-result v5
 
     if-nez v5, :cond_b
 
-    iget-object p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->C0:Lojd;
+    iget-object p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->u0:Lbrd;
 
-    invoke-interface {p1, v4}, Lojd;->N(I)V
+    invoke-interface {p1, v4}, Lbrd;->I(I)V
 
     goto/16 :goto_a
 
@@ -1167,19 +1164,19 @@
 
     move-result-object p1
 
-    new-instance v2, Lnjd;
+    new-instance v2, Lard;
 
-    invoke-direct {v2, p0, v4}, Lnjd;-><init>(Lru/ok/messages/views/widgets/SlideOutLayout;I)V
+    invoke-direct {v2, p0, v4}, Lard;-><init>(Lru/ok/messages/views/widgets/SlideOutLayout;I)V
 
     invoke-virtual {p1, v2}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
 
-    new-instance v2, Lc00;
+    new-instance v2, Lo00;
 
-    const/16 v4, 0x12
+    const/16 v4, 0x14
 
-    invoke-direct {v2, v4, p0}, Lc00;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v2, v4, p0}, Lo00;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {p1, v2}, Landroid/view/ViewPropertyAnimator;->setUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/view/ViewPropertyAnimator;
 
@@ -1207,33 +1204,33 @@
 
     move-result p1
 
-    iget-boolean v2, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->B0:Z
+    iget-boolean v2, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->t0:Z
 
     if-eq v2, p1, :cond_13
 
-    iget-object v2, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->C0:Lojd;
+    iget-object v2, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->u0:Lbrd;
 
     if-eqz v2, :cond_12
 
     invoke-virtual {p0, v0}, Lru/ok/messages/views/widgets/SlideOutLayout;->b(Landroid/view/View;)F
 
     :cond_12
-    iput-boolean p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->B0:Z
+    iput-boolean p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->t0:Z
 
     :cond_13
     const/high16 p1, -0x40800000    # -1.0f
 
     iput p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->o:F
 
-    iput p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->w0:F
+    iput p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->o0:F
 
-    iput-boolean v1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->A0:Z
+    iput-boolean v1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->s0:Z
 
-    goto/16 :goto_13
+    return v3
 
     :cond_14
     :goto_b
-    iget-boolean v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->A0:Z
+    iget-boolean v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->s0:Z
 
     if-eqz v0, :cond_1f
 
@@ -1246,7 +1243,7 @@
     goto :goto_c
 
     :cond_15
-    iget v7, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->w0:F
+    iget v7, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->o0:F
 
     :goto_c
     cmpl-float v8, v7, v2
@@ -1356,18 +1353,18 @@
 
     move-result v1
 
-    iget-boolean v2, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->B0:Z
+    iget-boolean v2, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->t0:Z
 
     if-eq v2, v1, :cond_1d
 
-    iget-object v2, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->C0:Lojd;
+    iget-object v2, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->u0:Lbrd;
 
     if-eqz v2, :cond_1c
 
     invoke-virtual {p0, v0}, Lru/ok/messages/views/widgets/SlideOutLayout;->b(Landroid/view/View;)F
 
     :cond_1c
-    iput-boolean v1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->B0:Z
+    iput-boolean v1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->t0:Z
 
     :cond_1d
     invoke-virtual {p0}, Lru/ok/messages/views/widgets/SlideOutLayout;->e()V
@@ -1383,7 +1380,7 @@
 
     move-result v0
 
-    iput v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->w0:F
+    iput v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->o0:F
 
     goto :goto_12
 
@@ -1391,7 +1388,7 @@
     invoke-virtual {p0, p1}, Lru/ok/messages/views/widgets/SlideOutLayout;->c(Landroid/view/MotionEvent;)V
 
     :goto_12
-    iget-object v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->F0:Landroid/view/VelocityTracker;
+    iget-object v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->x0:Landroid/view/VelocityTracker;
 
     if-nez v0, :cond_20
 
@@ -1399,14 +1396,13 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->F0:Landroid/view/VelocityTracker;
+    iput-object v0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->x0:Landroid/view/VelocityTracker;
 
     :cond_20
-    iget-object p0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->F0:Landroid/view/VelocityTracker;
+    iget-object p0, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->x0:Landroid/view/VelocityTracker;
 
     invoke-virtual {p0, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    :goto_13
     return v3
 .end method
 
@@ -1417,13 +1413,13 @@
 
     const/high16 p1, -0x40800000    # -1.0f
 
-    iput p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->w0:F
+    iput p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->o0:F
 
     iput p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->o:F
 
     const/4 p1, 0x0
 
-    iput-boolean p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->A0:Z
+    iput-boolean p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->s0:Z
 
     return-void
 .end method
@@ -1436,10 +1432,10 @@
     return-void
 .end method
 
-.method public setSlideOutListener(Lojd;)V
+.method public setSlideOutListener(Lbrd;)V
     .locals 0
 
-    iput-object p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->C0:Lojd;
+    iput-object p1, p0, Lru/ok/messages/views/widgets/SlideOutLayout;->u0:Lbrd;
 
     return-void
 .end method

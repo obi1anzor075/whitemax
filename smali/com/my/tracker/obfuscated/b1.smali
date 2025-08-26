@@ -29,9 +29,9 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 11
+    .locals 10
 
-    new-instance v10, Lcom/my/tracker/obfuscated/b1;
+    new-instance v0, Lcom/my/tracker/obfuscated/b1;
 
     const/4 v8, 0x0
 
@@ -51,11 +51,9 @@
 
     const/4 v7, 0x0
 
-    move-object v0, v10
-
     invoke-direct/range {v0 .. v9}, Lcom/my/tracker/obfuscated/b1;-><init>(II[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
 
-    sput-object v10, Lcom/my/tracker/obfuscated/b1;->j:Lcom/my/tracker/obfuscated/b1;
+    sput-object v0, Lcom/my/tracker/obfuscated/b1;->j:Lcom/my/tracker/obfuscated/b1;
 
     return-void
 .end method

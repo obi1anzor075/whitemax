@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lpf3;
+.implements Lkj3;
 
 
 # instance fields
@@ -38,41 +38,41 @@
 
     packed-switch v0, :pswitch_data_0
 
-    iget-boolean v0, p0, Lru/ok/android/externcalls/sdk/d;->c:Z
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/d;->b:Ljava/lang/Object;
 
-    check-cast p1, Lge1;
+    check-cast v0, Ldnd;
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/d;->b:Ljava/lang/Object;
+    iget-boolean p0, p0, Lru/ok/android/externcalls/sdk/d;->c:Z
 
-    check-cast p0, Lmfd;
+    check-cast p1, Lrf1;
 
-    invoke-static {p0, v0, p1}, Lru/ok/android/externcalls/sdk/ConversationImpl;->w(Lmfd;ZLge1;)V
+    invoke-static {v0, p0, p1}, Lru/ok/android/externcalls/sdk/ConversationImpl;->w(Ldnd;ZLrf1;)V
 
     return-void
 
     :pswitch_0
-    iget-boolean v0, p0, Lru/ok/android/externcalls/sdk/d;->c:Z
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/d;->b:Ljava/lang/Object;
 
-    check-cast p1, Lge1;
+    check-cast v0, Lru/ok/android/externcalls/sdk/ConversationImpl;
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/d;->b:Ljava/lang/Object;
+    iget-boolean p0, p0, Lru/ok/android/externcalls/sdk/d;->c:Z
 
-    check-cast p0, Lru/ok/android/externcalls/sdk/ConversationImpl;
+    check-cast p1, Lrf1;
 
-    invoke-static {p0, v0, p1}, Lru/ok/android/externcalls/sdk/ConversationImpl;->O(Lru/ok/android/externcalls/sdk/ConversationImpl;ZLge1;)V
+    invoke-static {v0, p0, p1}, Lru/ok/android/externcalls/sdk/ConversationImpl;->O(Lru/ok/android/externcalls/sdk/ConversationImpl;ZLrf1;)V
 
     return-void
 
     :pswitch_1
-    iget-boolean v0, p0, Lru/ok/android/externcalls/sdk/d;->c:Z
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/d;->b:Ljava/lang/Object;
 
-    check-cast p1, Lge1;
+    check-cast v0, Lru/ok/android/externcalls/sdk/ConversationImpl;
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/d;->b:Ljava/lang/Object;
+    iget-boolean p0, p0, Lru/ok/android/externcalls/sdk/d;->c:Z
 
-    check-cast p0, Lru/ok/android/externcalls/sdk/ConversationImpl;
+    check-cast p1, Lrf1;
 
-    invoke-static {p0, v0, p1}, Lru/ok/android/externcalls/sdk/ConversationImpl;->a(Lru/ok/android/externcalls/sdk/ConversationImpl;ZLge1;)V
+    invoke-static {v0, p0, p1}, Lru/ok/android/externcalls/sdk/ConversationImpl;->a(Lru/ok/android/externcalls/sdk/ConversationImpl;ZLrf1;)V
 
     return-void
 

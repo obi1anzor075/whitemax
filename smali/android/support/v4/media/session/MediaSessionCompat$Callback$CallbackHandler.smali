@@ -42,7 +42,7 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_2
+    if-ne v0, v1, :cond_1
 
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$CallbackHandler;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
 
@@ -84,9 +84,9 @@
     :cond_0
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast p1, Lqd8;
+    check-cast p1, Lfi8;
 
-    invoke-interface {v1, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;->setCurrentControllerInfo(Lqd8;)V
+    invoke-interface {v1, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;->setCurrentControllerInfo(Lfi8;)V
 
     iget-object p0, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$CallbackHandler;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
 
@@ -94,12 +94,8 @@
 
     const/4 p0, 0x0
 
-    invoke-interface {v1, p0}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;->setCurrentControllerInfo(Lqd8;)V
+    invoke-interface {v1, p0}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;->setCurrentControllerInfo(Lfi8;)V
 
-    goto :goto_1
-
-    :cond_1
-    :goto_0
     return-void
 
     :catchall_0
@@ -112,7 +108,7 @@
 
     throw p0
 
-    :cond_2
-    :goto_1
+    :cond_1
+    :goto_0
     return-void
 .end method

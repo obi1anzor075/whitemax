@@ -1,80 +1,97 @@
-.class public final synthetic Lfm3;
+.class public final Lfm3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lgm3;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lhm3;
-
-.field public final synthetic c:Lag3;
+.field public final a:Lqg9;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lhm3;Lag3;I)V
+.method public constructor <init>(Lqg9;)V
     .locals 0
 
-    iput p3, p0, Lfm3;->a:I
-
-    iput-object p1, p0, Lfm3;->b:Lhm3;
-
-    iput-object p2, p0, Lfm3;->c:Lag3;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfm3;->a:Lqg9;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public final equals(Ljava/lang/Object;)Z
     .locals 3
 
-    iget p1, p0, Lfm3;->a:I
+    const/4 v0, 0x1
 
-    packed-switch p1, :pswitch_data_0
+    if-ne p0, p1, :cond_0
 
-    new-instance p1, Lsv8;
+    return v0
 
-    iget-object v0, p0, Lfm3;->c:Lag3;
+    :cond_0
+    instance-of v1, p1, Lfm3;
 
-    iget-wide v1, v0, Lag3;->k:J
+    const/4 v2, 0x0
 
-    invoke-direct {p1, v1, v2, v0}, Lsv8;-><init>(JLrz;)V
+    if-nez v1, :cond_1
 
-    iget-object p0, p0, Lfm3;->b:Lhm3;
+    return v2
 
-    iget-object p0, p0, Lhm3;->o:Lu16;
+    :cond_1
+    check-cast p1, Lfm3;
 
-    invoke-interface {p0, p1}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object p0, p0, Lfm3;->a:Lqg9;
 
-    return-void
+    iget-object p1, p1, Lfm3;->a:Lqg9;
 
-    :pswitch_0
-    new-instance p1, Lrv8;
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-object v0, p0, Lfm3;->c:Lag3;
+    move-result p0
 
-    iget-wide v1, v0, Lag3;->k:J
+    if-nez p0, :cond_2
 
-    invoke-direct {p1, v1, v2, v0}, Lrv8;-><init>(JLrz;)V
+    return v2
 
-    iget-object p0, p0, Lfm3;->b:Lhm3;
+    :cond_2
+    return v0
+.end method
 
-    iget-object p0, p0, Lhm3;->o:Lu16;
+.method public final hashCode()I
+    .locals 0
 
-    invoke-interface {p0, p1}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object p0, p0, Lfm3;->a:Lqg9;
 
-    return-void
+    invoke-virtual {p0}, Lqg9;->hashCode()I
 
-    nop
+    move-result p0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Update(contactIds="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lfm3;->a:Lqg9;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

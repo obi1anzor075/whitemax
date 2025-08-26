@@ -1,118 +1,121 @@
 .class public final Lb08;
-.super Ll5e;
+.super Lru4;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
 
 
 # instance fields
-.field public X:I
-
-.field public final synthetic Y:Li08;
+.field public final s0:F
 
 
 # direct methods
-.method public constructor <init>(Li08;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method public constructor <init>(F)V
+    .locals 1
 
-    iput-object p1, p0, Lb08;->Y:Li08;
+    const/4 v0, 0x0
 
-    const/4 p1, 0x2
+    invoke-direct {p0, v0}, Lru4;-><init>(I)V
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    const v0, 0x3a83126f    # 0.001f
+
+    sub-float/2addr p1, v0
+
+    iput p1, p0, Lb08;->s0:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final m(FFFLbid;)V
+    .locals 7
 
-    check-cast p1, Lou3;
+    iget p0, p0, Lb08;->s0:F
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    float-to-double p0, p0
 
-    invoke-virtual {p0, p1, p2}, Lb08;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    const-wide/high16 v0, 0x4000000000000000L    # 2.0
 
-    move-result-object p0
+    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
 
-    check-cast p0, Lb08;
+    move-result-wide v2
 
-    sget-object p1, Ljue;->a:Ljue;
+    mul-double/2addr v2, p0
 
-    invoke-virtual {p0, p1}, Lb08;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    div-double/2addr v2, v0
 
-    move-result-object p0
+    double-to-float p3, v2
 
-    return-object p0
-.end method
+    invoke-static {p0, p1, v0, v1}, Ljava/lang/Math;->pow(DD)D
 
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 0
+    move-result-wide v2
 
-    new-instance p1, Lb08;
+    float-to-double v4, p3
 
-    iget-object p0, p0, Lb08;->Y:Li08;
+    invoke-static {v4, v5, v0, v1}, Ljava/lang/Math;->pow(DD)D
 
-    invoke-direct {p1, p0, p2}, Lb08;-><init>(Li08;Lkotlin/coroutines/Continuation;)V
+    move-result-wide v4
 
-    return-object p1
-.end method
+    sub-double/2addr v2, v4
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+    invoke-static {v2, v3}, Ljava/lang/Math;->sqrt(D)D
 
-    sget-object v0, Lpu3;->a:Lpu3;
+    move-result-wide v2
 
-    iget v1, p0, Lb08;->X:I
+    double-to-float v2, v2
 
-    const/4 v2, 0x1
+    sub-float v3, p2, p3
 
-    if-eqz v1, :cond_1
+    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
 
-    if-ne v1, v2, :cond_0
+    move-result-wide v4
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    mul-double/2addr v4, p0
 
-    sget-object p0, Ljue;->a:Ljue;
+    sub-double/2addr v4, p0
 
-    return-object p0
+    neg-double v4, v4
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    double-to-float v4, v4
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    add-float/2addr v4, v2
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    const/high16 v5, 0x43870000    # 270.0f
 
-    throw p0
+    const/4 v6, 0x0
 
-    :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-virtual {p4, v3, v4, v5, v6}, Lbid;->d(FFFF)V
 
-    iget-object p1, p0, Lb08;->Y:Li08;
+    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
 
-    iget-object v1, p1, Li08;->w0:Lgrd;
+    move-result-wide v3
 
-    new-instance v3, Lbw;
+    mul-double/2addr v3, p0
 
-    const/16 v4, 0x8
+    sub-double/2addr v3, p0
 
-    invoke-direct {v3, v4, p1}, Lbw;-><init>(ILjava/lang/Object;)V
+    neg-double v3, v3
 
-    iput v2, p0, Lb08;->X:I
+    double-to-float v3, v3
 
-    new-instance p1, Lj7c;
+    invoke-virtual {p4, p2, v3}, Lbid;->c(FF)V
 
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+    add-float/2addr p2, p3
 
-    new-instance v4, Lh42;
+    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
 
-    invoke-direct {v4, p1, v2, v3}, Lh42;-><init>(Lj7c;ILrj5;)V
+    move-result-wide v0
 
-    invoke-interface {v1, v4, p0}, Lpj5;->c(Lrj5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    mul-double/2addr v0, p0
 
-    return-object v0
+    sub-double/2addr v0, p0
+
+    neg-double p0, v0
+
+    double-to-float p0, p0
+
+    add-float/2addr p0, v2
+
+    invoke-virtual {p4, p2, p0}, Lbid;->c(FF)V
+
+    return-void
 .end method

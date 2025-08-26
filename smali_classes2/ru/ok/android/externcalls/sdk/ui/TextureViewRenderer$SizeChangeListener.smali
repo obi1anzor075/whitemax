@@ -23,7 +23,7 @@
         "",
         "w",
         "h",
-        "Ljue;",
+        "Le5f;",
         "onTextureSizeChanged",
         "(II)V",
         "onFrameSizeChanged",
@@ -35,6 +35,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

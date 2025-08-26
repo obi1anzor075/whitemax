@@ -58,21 +58,21 @@
 
     invoke-direct {p0}, Landroid/content/ContentValues;-><init>()V
 
+    const-string v0, "badge_count"
+
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
-    const-string v0, "badge_count"
-
     invoke-virtual {p0, v0, p1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    const-string p1, "package_name"
 
     invoke-virtual {p2}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
-    const-string v0, "package_name"
-
-    invoke-virtual {p0, v0, p1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p0, p1, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string p1, "activity_name"
 
@@ -94,13 +94,13 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
+    const-string v1, "com.sonyericsson.home.intent.extra.badge.PACKAGE_NAME"
+
     invoke-virtual {p1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v2, "com.sonyericsson.home.intent.extra.badge.PACKAGE_NAME"
-
-    invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     const-string v1, "com.sonyericsson.home.intent.extra.badge.ACTIVITY_NAME"
 
@@ -163,7 +163,7 @@
 
     if-nez p3, :cond_1
 
-    new-instance p3, Lrld;
+    new-instance p3, Lgtd;
 
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
@@ -180,12 +180,11 @@
     :cond_1
     invoke-direct {p0, p2}, Lme/leolin/shortcutbadger/impl/SonyHomeBadger;->insertBadgeAsync(Landroid/content/ContentValues;)V
 
-    goto :goto_0
+    return-void
 
     :cond_2
     invoke-direct {p0, p1, p2}, Lme/leolin/shortcutbadger/impl/SonyHomeBadger;->insertBadgeSync(Landroid/content/Context;Landroid/content/ContentValues;)V
 
-    :goto_0
     return-void
 .end method
 
@@ -240,7 +239,9 @@
 
     if-eqz p0, :cond_0
 
-    const/4 v1, 0x1
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_0
     return v1
@@ -264,12 +265,11 @@
 
     invoke-direct {p0, p1, p2, p3}, Lme/leolin/shortcutbadger/impl/SonyHomeBadger;->executeBadgeByContentProvider(Landroid/content/Context;Landroid/content/ComponentName;I)V
 
-    goto :goto_0
+    return-void
 
     :cond_0
     invoke-static {p1, p2, p3}, Lme/leolin/shortcutbadger/impl/SonyHomeBadger;->executeBadgeByBroadcast(Landroid/content/Context;Landroid/content/ComponentName;I)V
 
-    :goto_0
     return-void
 .end method
 

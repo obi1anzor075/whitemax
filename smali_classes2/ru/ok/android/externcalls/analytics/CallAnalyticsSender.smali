@@ -15,7 +15,7 @@
         "()V",
         "Lru/ok/android/externcalls/analytics/config/CallAnalyticsConfig;",
         "config",
-        "Ljue;",
+        "Le5f;",
         "initialize",
         "(Lru/ok/android/externcalls/analytics/config/CallAnalyticsConfig;)V",
         "Lru/ok/android/externcalls/analytics/events/CallAnalyticsEvent;",
@@ -38,6 +38,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -188,11 +189,11 @@
 .method public final setIdle(Z)V
     .locals 1
 
-    new-instance p0, Lcz0;
+    new-instance p0, Lf01;
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0}, Lcz0;-><init>(ZI)V
+    invoke-direct {p0, p1, v0}, Lf01;-><init>(ZI)V
 
     invoke-static {p0}, Lru/ok/android/externcalls/analytics/internal/event/EventQueueCollector;->setIdleStateProvider(Lru/ok/android/externcalls/analytics/internal/event/EventQueueCollector$IdleStateProvider;)V
 

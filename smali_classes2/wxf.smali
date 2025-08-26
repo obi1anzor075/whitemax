@@ -1,43 +1,53 @@
-.class public final synthetic Lwxf;
-.super Lkhb;
+.class public final Lwxf;
+.super Lbu3;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lwxf;
+# instance fields
+.field public X:Lhyf;
+
+.field public Y:Loxf;
+
+.field public synthetic Z:Ljava/lang/Object;
+
+.field public o:Leyf;
+
+.field public final synthetic o0:Leyf;
+
+.field public p0:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(Leyf;Lbu3;)V
+    .locals 0
 
-    new-instance v0, Lwxf;
+    iput-object p1, p0, Lwxf;->o0:Leyf;
 
-    const-class v1, Lcod;
-
-    const-string v2, "pliSent"
-
-    const-string v3, "getPliSent()J"
-
-    const/4 v4, 0x0
-
-    invoke-direct {v0, v1, v2, v3, v4}, Lkhb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    sput-object v0, Lwxf;->a:Lwxf;
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    check-cast p1, Lcod;
+    iput-object p1, p0, Lwxf;->Z:Ljava/lang/Object;
 
-    iget-wide p0, p1, Lcod;->m:J
+    iget p1, p0, Lwxf;->p0:I
 
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lwxf;->p0:I
+
+    iget-object p1, p0, Lwxf;->o0:Leyf;
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0, p0}, Leyf;->f(Leyf;Lhyf;Lbu3;)Ljava/lang/Object;
 
     move-result-object p0
 

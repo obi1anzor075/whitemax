@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lxi4;
+.implements Lam4;
 
 
 # static fields
@@ -26,7 +26,7 @@
 
     new-instance v0, Ljava/util/concurrent/FutureTask;
 
-    sget-object v1, Lz3d;->h:Lqzf;
+    sget-object v1, Lkhg;->b:Lzeg;
 
     const/4 v2, 0x0
 
@@ -71,7 +71,7 @@
 
     if-ne v0, v1, :cond_1
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_1
     sget-object v1, Lh0;->X:Ljava/util/concurrent/FutureTask;
@@ -97,7 +97,8 @@
 
     invoke-interface {p1, p0}, Ljava/util/concurrent/Future;->cancel(Z)Z
 
-    goto :goto_0
+    :goto_0
+    return-void
 
     :cond_3
     invoke-virtual {p0, v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -106,7 +107,7 @@
 
     if-eqz v0, :cond_0
 
-    :goto_0
+    :goto_1
     return-void
 .end method
 
@@ -147,7 +148,7 @@
 
     invoke-interface {v0, p0}, Ljava/util/concurrent/Future;->cancel(Z)Z
 
-    goto :goto_0
+    return-void
 
     :cond_0
     iget-boolean p0, p0, Lh0;->b:Z
@@ -155,11 +156,10 @@
     invoke-interface {v0, p0}, Ljava/util/concurrent/Future;->cancel(Z)Z
 
     :cond_1
-    :goto_0
     return-void
 .end method
 
-.method public final h()Z
+.method public final g()Z
     .locals 1
 
     invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
@@ -181,13 +181,12 @@
     :cond_0
     const/4 p0, 0x0
 
-    goto :goto_1
+    return p0
 
     :cond_1
     :goto_0
     const/4 p0, 0x1
 
-    :goto_1
     return p0
 .end method
 

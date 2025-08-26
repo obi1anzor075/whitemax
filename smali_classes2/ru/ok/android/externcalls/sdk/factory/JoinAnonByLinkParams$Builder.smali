@@ -96,14 +96,14 @@
     if-eqz v4, :cond_3
 
     .line 4
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->getOnPrepared()Lu16;
+    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->getOnPrepared()Lx56;
 
     move-result-object v6
 
     if-eqz v6, :cond_2
 
     .line 5
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->getOnError()Lu16;
+    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->getOnError()Lx56;
 
     move-result-object v7
 
@@ -128,35 +128,29 @@
     move-result v5
 
     .line 10
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->getFrameInterceptor()Lyw1;
+    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->getFrameInterceptor()Lqz1;
 
     .line 11
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->getCameraCapturerFactory()Lcs9;
+    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->getCameraCapturerFactory()Lkw9;
 
     move-result-object v10
 
     .line 12
-    new-instance p0, Lru/ok/android/externcalls/sdk/factory/JoinAnonByLinkParams;
+    new-instance v0, Lru/ok/android/externcalls/sdk/factory/JoinAnonByLinkParams;
 
     const/4 v11, 0x0
 
     const/4 v9, 0x0
 
-    move-object v0, p0
+    invoke-direct/range {v0 .. v11}, Lru/ok/android/externcalls/sdk/factory/JoinAnonByLinkParams;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lru/ok/android/externcalls/sdk/id/ParticipantId;ZLx56;Lx56;Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;Lqz1;Lkw9;Ll94;)V
 
-    invoke-direct/range {v0 .. v11}, Lru/ok/android/externcalls/sdk/factory/JoinAnonByLinkParams;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lru/ok/android/externcalls/sdk/id/ParticipantId;ZLu16;Lu16;Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;Lyw1;Lcs9;Lx54;)V
-
-    return-object p0
+    return-object v0
 
     .line 13
     :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Token is required"
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
 
     invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -168,10 +162,6 @@
 
     const-string v0, "onError callback is required"
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
     invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p0
@@ -181,10 +171,6 @@
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "onPrepared callback is required"
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
 
     invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -196,10 +182,6 @@
 
     const-string v0, "Caller id is required"
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
     invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p0
@@ -209,10 +191,6 @@
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string v0, "Link is required"
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
 
     invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

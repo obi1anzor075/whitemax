@@ -124,7 +124,7 @@
 
     if-nez v1, :cond_0
 
-    return-object v0
+    goto :goto_1
 
     :cond_0
     invoke-direct {p0}, Landroidx/core/widget/TextViewCompat$OreoCallback;->createProcessTextIntent()Landroid/content/Intent;
@@ -166,6 +166,7 @@
     goto :goto_0
 
     :cond_2
+    :goto_1
     return-object v0
 .end method
 
@@ -190,12 +191,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -245,7 +245,7 @@
     goto :goto_0
 
     :cond_2
-    move v0, v1
+    return v1
 
     :cond_3
     :goto_0
@@ -267,15 +267,17 @@
 
     iget-boolean v2, p0, Landroidx/core/widget/TextViewCompat$OreoCallback;->mInitializedMenuBuilderReferences:Z
 
-    const-string v3, "removeItemAt"
+    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    const/4 v4, 0x0
+    const-string v4, "removeItemAt"
 
-    const/4 v5, 0x1
+    const/4 v5, 0x0
+
+    const/4 v6, 0x1
 
     if-nez v2, :cond_0
 
-    iput-boolean v5, p0, Landroidx/core/widget/TextViewCompat$OreoCallback;->mInitializedMenuBuilderReferences:Z
+    iput-boolean v6, p0, Landroidx/core/widget/TextViewCompat$OreoCallback;->mInitializedMenuBuilderReferences:Z
 
     :try_start_0
     const-string v2, "com.android.internal.view.menu.MenuBuilder"
@@ -286,19 +288,17 @@
 
     iput-object v2, p0, Landroidx/core/widget/TextViewCompat$OreoCallback;->mMenuBuilderClass:Ljava/lang/Class;
 
-    sget-object v6, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    filled-new-array {v3}, [Ljava/lang/Class;
 
-    filled-new-array {v6}, [Ljava/lang/Class;
+    move-result-object v7
 
-    move-result-object v6
-
-    invoke-virtual {v2, v3, v6}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v2, v4, v7}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v2
 
     iput-object v2, p0, Landroidx/core/widget/TextViewCompat$OreoCallback;->mMenuBuilderRemoveItemAtMethod:Ljava/lang/reflect/Method;
 
-    iput-boolean v5, p0, Landroidx/core/widget/TextViewCompat$OreoCallback;->mCanUseMenuBuilderReferences:Z
+    iput-boolean v6, p0, Landroidx/core/widget/TextViewCompat$OreoCallback;->mCanUseMenuBuilderReferences:Z
     :try_end_0
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
@@ -312,7 +312,7 @@
 
     iput-object v2, p0, Landroidx/core/widget/TextViewCompat$OreoCallback;->mMenuBuilderRemoveItemAtMethod:Ljava/lang/reflect/Method;
 
-    iput-boolean v4, p0, Landroidx/core/widget/TextViewCompat$OreoCallback;->mCanUseMenuBuilderReferences:Z
+    iput-boolean v5, p0, Landroidx/core/widget/TextViewCompat$OreoCallback;->mCanUseMenuBuilderReferences:Z
 
     :cond_0
     :goto_0
@@ -338,13 +338,11 @@
 
     move-result-object v2
 
-    sget-object v6, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    filled-new-array {v3}, [Ljava/lang/Class;
 
-    filled-new-array {v6}, [Ljava/lang/Class;
+    move-result-object v3
 
-    move-result-object v6
-
-    invoke-virtual {v2, v3, v6}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v2, v4, v3}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v2
 
@@ -353,16 +351,16 @@
 
     move-result v3
 
-    sub-int/2addr v3, v5
+    sub-int/2addr v3, v6
 
     :goto_2
     if-ltz v3, :cond_3
 
     invoke-interface {p1, v3}, Landroid/view/Menu;->getItem(I)Landroid/view/MenuItem;
 
-    move-result-object v6
+    move-result-object v4
 
-    invoke-interface {v6}, Landroid/view/MenuItem;->getIntent()Landroid/content/Intent;
+    invoke-interface {v4}, Landroid/view/MenuItem;->getIntent()Landroid/content/Intent;
 
     move-result-object v7
 
@@ -370,29 +368,29 @@
 
     const-string v7, "android.intent.action.PROCESS_TEXT"
 
-    invoke-interface {v6}, Landroid/view/MenuItem;->getIntent()Landroid/content/Intent;
+    invoke-interface {v4}, Landroid/view/MenuItem;->getIntent()Landroid/content/Intent;
 
-    move-result-object v6
+    move-result-object v4
 
-    invoke-virtual {v6}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    invoke-virtual {v4}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v4
 
-    invoke-virtual {v7, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v4
 
-    if-eqz v6, :cond_2
+    if-eqz v4, :cond_2
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v6
+    move-result-object v4
 
-    filled-new-array {v6}, [Ljava/lang/Object;
+    filled-new-array {v4}, [Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v4
 
-    invoke-virtual {v2, p1, v6}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, p1, v4}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_1
     .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_1
@@ -408,7 +406,7 @@
 
     move-result-object v0
 
-    move v2, v4
+    move v2, v5
 
     :goto_3
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -423,15 +421,15 @@
 
     check-cast v3, Landroid/content/pm/ResolveInfo;
 
-    add-int/lit8 v6, v2, 0x64
+    add-int/lit8 v4, v2, 0x64
 
     invoke-virtual {v3, v1}, Landroid/content/pm/ResolveInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
     move-result-object v7
 
-    invoke-interface {p1, v4, v4, v6, v7}, Landroid/view/Menu;->add(IIILjava/lang/CharSequence;)Landroid/view/MenuItem;
+    invoke-interface {p1, v5, v5, v4, v7}, Landroid/view/Menu;->add(IIILjava/lang/CharSequence;)Landroid/view/MenuItem;
 
-    move-result-object v6
+    move-result-object v4
 
     iget-object v7, p0, Landroidx/core/widget/TextViewCompat$OreoCallback;->mTextView:Landroid/widget/TextView;
 
@@ -439,13 +437,13 @@
 
     move-result-object v3
 
-    invoke-interface {v6, v3}, Landroid/view/MenuItem;->setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;
+    invoke-interface {v4, v3}, Landroid/view/MenuItem;->setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;
 
     move-result-object v3
 
-    invoke-interface {v3, v5}, Landroid/view/MenuItem;->setShowAsAction(I)V
+    invoke-interface {v3, v6}, Landroid/view/MenuItem;->setShowAsAction(I)V
 
-    add-int/2addr v2, v5
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_3
 

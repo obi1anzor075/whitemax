@@ -1,17 +1,11 @@
-.class public abstract Lnmb;
+.class public interface abstract Lnmb;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static markdown_button_size:I = 0x7f0702a8
+# virtual methods
+.method public abstract a()V
+.end method
 
-.field public static markdown_dot_size:I = 0x7f0702a9
-
-.field public static popup_background_padding:I = 0x7f0703de
-
-.field public static popup_height:I = 0x7f0703df
-
-.field public static popup_item_padding:I = 0x7f0703e0
-
-.field public static popup_offset:I = 0x7f0703e2
+.method public abstract b()V
+.end method

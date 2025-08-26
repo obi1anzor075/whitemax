@@ -23,7 +23,7 @@
         "",
         "Landroid/media/AudioDeviceInfo;",
         "addedDevices",
-        "Ljue;",
+        "Le5f;",
         "onAudioDevicesAdded",
         "([Landroid/media/AudioDeviceInfo;)V",
         "removedDevices",
@@ -36,6 +36,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

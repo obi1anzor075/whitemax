@@ -1,133 +1,95 @@
 .class public final Lp11;
-.super Ll5e;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lp66;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public synthetic X:Z
 
-.field public final synthetic Y:J
+.field public synthetic Y:Z
 
-.field public final synthetic Z:Lx11;
-
-
-# direct methods
-.method public constructor <init>(JLx11;Lkotlin/coroutines/Continuation;)V
-    .locals 0
-
-    iput-wide p1, p0, Lp11;->Y:J
-
-    iput-object p3, p0, Lp11;->Z:Lx11;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p4}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
+.field public synthetic Z:Lv9;
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final i(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    check-cast p1, Li22;
+    check-cast p1, Ljava/lang/Boolean;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-virtual {p0, p1, p2}, Lp11;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    move-result p0
+
+    check-cast p2, Ljava/lang/Boolean;
+
+    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    check-cast p3, Lv9;
+
+    check-cast p4, Lkotlin/coroutines/Continuation;
+
+    new-instance p2, Lp11;
+
+    const/4 v0, 0x4
+
+    invoke-direct {p2, v0, p4}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
+
+    iput-boolean p0, p2, Lp11;->X:Z
+
+    iput-boolean p1, p2, Lp11;->Y:Z
+
+    iput-object p3, p2, Lp11;->Z:Lv9;
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    invoke-virtual {p2, p0}, Lp11;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lp11;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lp11;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 3
-
-    new-instance v0, Lp11;
-
-    iget-wide v1, p0, Lp11;->Y:J
-
-    iget-object p0, p0, Lp11;->Z:Lx11;
-
-    invoke-direct {v0, v1, v2, p0, p2}, Lp11;-><init>(JLx11;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lp11;->X:Ljava/lang/Object;
-
-    return-object v0
+    return-object p0
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+    .locals 3
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lp11;->X:Ljava/lang/Object;
+    iget-boolean p1, p0, Lp11;->X:Z
 
-    check-cast p1, Li22;
+    iget-boolean v0, p0, Lp11;->Y:Z
 
-    if-eqz p1, :cond_0
+    iget-object p0, p0, Lp11;->Z:Lv9;
 
-    iget-object p0, p0, Lp11;->Z:Lx11;
+    iget-boolean v1, p0, Lv9;->a:Z
 
-    iget-object v0, p0, Lx11;->a:Lro1;
+    const/4 v2, 0x0
 
-    iget-object v1, p0, Lx11;->f:Lt97;
+    if-nez v1, :cond_0
 
-    invoke-interface {v1}, Lt97;->getValue()Ljava/lang/Object;
+    iget-boolean p0, p0, Lv9;->c:Z
 
-    move-result-object v1
+    if-nez p0, :cond_0
 
-    check-cast v1, Lpae;
-
-    check-cast v1, Ln3a;
-
-    invoke-virtual {v1}, Ln3a;->a()Lju3;
-
-    move-result-object v1
-
-    new-instance v2, Lo11;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v2, p0, p1, v3}, Lo11;-><init>(Lx11;Li22;Lkotlin/coroutines/Continuation;)V
-
-    const/4 p0, 0x2
-
-    invoke-static {v0, v1, v3, v2, p0}, Lxs7;->E(Lou3;Lhu3;Lru3;Li26;I)Lqod;
-
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
+    goto :goto_0
 
     :cond_0
-    new-instance p1, Lru/ok/tamtam/exception/ChatNotFoundException;
+    if-eqz p1, :cond_1
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    if-eqz v0, :cond_1
 
-    const-string v1, "chat not found for id =#"
+    const/4 v2, 0x1
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-wide v1, p0, Lp11;->Y:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :cond_1
+    :goto_0
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p0
 
-    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
+    return-object p0
 .end method

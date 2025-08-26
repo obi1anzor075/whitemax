@@ -55,12 +55,11 @@
 
     if-ne p2, p1, :cond_0
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -89,7 +88,7 @@
 
     if-ne p1, p3, :cond_0
 
-    move p0, v1
+    return v1
 
     :cond_0
     return p0
@@ -118,7 +117,7 @@
 
     if-ne p1, p3, :cond_0
 
-    move p0, v0
+    return v0
 
     :cond_0
     return p0
@@ -141,12 +140,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -183,12 +181,11 @@
 
     move-result p0
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 

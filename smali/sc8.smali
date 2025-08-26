@@ -17,164 +17,267 @@
     .end annotation
 .end field
 
+.field public static final c:Ljs;
+
+.field public static final o:[Ljava/lang/String;
+
 
 # instance fields
-.field public final a:Lc58;
+.field public final a:Landroid/os/Bundle;
 
-.field public final b:J
-
-.field public c:Landroid/media/session/MediaSession$QueueItem;
+.field public b:Landroid/media/MediaMetadata;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 10
 
-    new-instance v0, Lvf7;
+    new-instance v0, Ljs;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lbod;-><init>(I)V
+
+    sput-object v0, Lsc8;->c:Ljs;
+
+    const/4 v2, 0x1
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    const-string v3, "android.media.metadata.TITLE"
+
+    invoke-virtual {v0, v3, v2}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v3, "android.media.metadata.ARTIST"
+
+    invoke-virtual {v0, v3, v2}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const-string v3, "android.media.metadata.DURATION"
+
+    invoke-virtual {v0, v3, v1}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v3, "android.media.metadata.ALBUM"
+
+    invoke-virtual {v0, v3, v2}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v3, "android.media.metadata.AUTHOR"
+
+    invoke-virtual {v0, v3, v2}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v3, "android.media.metadata.WRITER"
+
+    invoke-virtual {v0, v3, v2}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v3, "android.media.metadata.COMPOSER"
+
+    invoke-virtual {v0, v3, v2}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v3, "android.media.metadata.COMPILATION"
+
+    invoke-virtual {v0, v3, v2}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v3, "android.media.metadata.DATE"
+
+    invoke-virtual {v0, v3, v2}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v3, "android.media.metadata.YEAR"
+
+    invoke-virtual {v0, v3, v1}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v3, "android.media.metadata.GENRE"
+
+    invoke-virtual {v0, v3, v2}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v3, "android.media.metadata.TRACK_NUMBER"
+
+    invoke-virtual {v0, v3, v1}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v3, "android.media.metadata.NUM_TRACKS"
+
+    invoke-virtual {v0, v3, v1}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v3, "android.media.metadata.DISC_NUMBER"
+
+    invoke-virtual {v0, v3, v1}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v3, "android.media.metadata.ALBUM_ARTIST"
+
+    invoke-virtual {v0, v3, v2}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 v3, 0x2
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    const-string v4, "android.media.metadata.ART"
+
+    invoke-virtual {v0, v4, v3}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v4, "android.media.metadata.ART_URI"
+
+    invoke-virtual {v0, v4, v2}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v4, "android.media.metadata.ALBUM_ART"
+
+    invoke-virtual {v0, v4, v3}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v4, "android.media.metadata.ALBUM_ART_URI"
+
+    invoke-virtual {v0, v4, v2}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 v4, 0x3
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    const-string v5, "android.media.metadata.USER_RATING"
+
+    invoke-virtual {v0, v5, v4}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v5, "android.media.metadata.RATING"
+
+    invoke-virtual {v0, v5, v4}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v4, "android.media.metadata.DISPLAY_TITLE"
+
+    invoke-virtual {v0, v4, v2}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v4, "android.media.metadata.DISPLAY_SUBTITLE"
+
+    invoke-virtual {v0, v4, v2}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v4, "android.media.metadata.DISPLAY_DESCRIPTION"
+
+    invoke-virtual {v0, v4, v2}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v4, "android.media.metadata.DISPLAY_ICON"
+
+    invoke-virtual {v0, v4, v3}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v3, "android.media.metadata.DISPLAY_ICON_URI"
+
+    invoke-virtual {v0, v3, v2}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v3, "android.media.metadata.MEDIA_ID"
+
+    invoke-virtual {v0, v3, v2}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v3, "android.media.metadata.BT_FOLDER_TYPE"
+
+    invoke-virtual {v0, v3, v1}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v3, "android.media.metadata.MEDIA_URI"
+
+    invoke-virtual {v0, v3, v2}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v2, "android.media.metadata.ADVERTISEMENT"
+
+    invoke-virtual {v0, v2, v1}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v2, "android.media.metadata.DOWNLOAD_STATUS"
+
+    invoke-virtual {v0, v2, v1}, Lbod;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v8, "android.media.metadata.AUTHOR"
+
+    const-string v9, "android.media.metadata.COMPOSER"
+
+    const-string v3, "android.media.metadata.TITLE"
+
+    const-string v4, "android.media.metadata.ARTIST"
+
+    const-string v5, "android.media.metadata.ALBUM"
+
+    const-string v6, "android.media.metadata.ALBUM_ARTIST"
+
+    const-string v7, "android.media.metadata.WRITER"
+
+    filled-new-array/range {v3 .. v9}, [Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lsc8;->o:[Ljava/lang/String;
+
+    new-instance v0, Ldj7;
 
     const/16 v1, 0xc
 
-    invoke-direct {v0, v1}, Lvf7;-><init>(I)V
+    invoke-direct {v0, v1}, Ldj7;-><init>(I)V
 
     sput-object v0, Lsc8;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/media/session/MediaSession$QueueItem;Lc58;J)V
-    .locals 2
+.method public constructor <init>(Landroid/os/Bundle;)V
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p2, :cond_1
-
-    const-wide/16 v0, -0x1
-
-    cmp-long v0, p3, v0
-
-    if-eqz v0, :cond_0
-
     .line 2
-    iput-object p2, p0, Lsc8;->a:Lc58;
+    new-instance v0, Landroid/os/Bundle;
+
+    invoke-direct {v0, p1}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
+
+    iput-object v0, p0, Lsc8;->a:Landroid/os/Bundle;
 
     .line 3
-    iput-wide p3, p0, Lsc8;->b:J
-
-    .line 4
-    iput-object p1, p0, Lsc8;->c:Landroid/media/session/MediaSession$QueueItem;
+    invoke-static {v0}, Ljh8;->a(Landroid/os/Bundle;)V
 
     return-void
-
-    .line 5
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Id cannot be QueueItem.UNKNOWN_ID"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    .line 6
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Description cannot be null"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
-    .locals 2
+    .locals 1
 
-    .line 7
+    .line 4
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 8
-    sget-object v0, Lc58;->CREATOR:Landroid/os/Parcelable$Creator;
+    .line 5
+    const-class v0, Ljh8;
 
-    invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v0
 
-    check-cast v0, Lc58;
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->readBundle(Ljava/lang/ClassLoader;)Landroid/os/Bundle;
 
-    iput-object v0, p0, Lsc8;->a:Lc58;
+    move-result-object p1
 
-    .line 9
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
+    .line 6
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-wide v0
-
-    iput-wide v0, p0, Lsc8;->b:J
+    .line 7
+    iput-object p1, p0, Lsc8;->a:Landroid/os/Bundle;
 
     return-void
-.end method
-
-.method public static a(Ljava/util/List;)Ljava/util/ArrayList;
-    .locals 6
-
-    if-eqz p0, :cond_1
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
-
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/media/session/MediaSession$QueueItem;
-
-    invoke-static {v1}, Lrc8;->b(Landroid/media/session/MediaSession$QueueItem;)Landroid/media/MediaDescription;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lc58;->a(Ljava/lang/Object;)Lc58;
-
-    move-result-object v2
-
-    invoke-static {v1}, Lrc8;->c(Landroid/media/session/MediaSession$QueueItem;)J
-
-    move-result-wide v3
-
-    new-instance v5, Lsc8;
-
-    invoke-direct {v5, v1, v2, v3, v4}, Lsc8;-><init>(Landroid/media/session/MediaSession$QueueItem;Lc58;J)V
-
-    invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_0
-    return-object v0
-
-    :cond_1
-    const/4 p0, 0x0
-
-    return-object p0
 .end method
 
 
 # virtual methods
+.method public final a(Ljava/lang/String;)J
+    .locals 2
+
+    iget-object p0, p0, Lsc8;->a:Landroid/os/Bundle;
+
+    const-wide/16 v0, 0x0
+
+    invoke-virtual {p0, p1, v0, v1}, Landroid/os/BaseBundle;->getLong(Ljava/lang/String;J)J
+
+    move-result-wide p0
+
+    return-wide p0
+.end method
+
 .method public final describeContents()I
     .locals 0
 
@@ -183,44 +286,12 @@
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "MediaSession.QueueItem {Description="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lsc8;->a:Lc58;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", Id="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Lsc8;->b:J
-
-    const-string p0, " }"
-
-    invoke-static {v0, v1, v2, p0}, Lwn6;->k(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
 .method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 2
+    .locals 0
 
-    iget-object v0, p0, Lsc8;->a:Lc58;
+    iget-object p0, p0, Lsc8;->a:Landroid/os/Bundle;
 
-    invoke-virtual {v0, p1, p2}, Lc58;->writeToParcel(Landroid/os/Parcel;I)V
-
-    iget-wide v0, p0, Lsc8;->b:J
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
 
     return-void
 .end method

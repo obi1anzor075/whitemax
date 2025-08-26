@@ -1,60 +1,162 @@
 .class public final Ldk4;
-.super Lkh0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final b:Ljava/lang/String;
-
-.field public final c:Ljava/lang/String;
-
-.field public final o:J
+.field public final a:J
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;JJ)V
+.method public synthetic constructor <init>(J)V
     .locals 0
 
-    invoke-direct {p0, p3, p4}, Lkh0;-><init>(J)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldk4;->b:Ljava/lang/String;
-
-    if-nez p2, :cond_0
-
-    const-string p2, ""
-
-    :cond_0
-    iput-object p2, p0, Ldk4;->c:Ljava/lang/String;
-
-    iput-wide p5, p0, Ldk4;->o:J
+    iput-wide p1, p0, Ldk4;->a:J
 
     return-void
 .end method
 
+.method public static final synthetic a(J)Ldk4;
+    .locals 1
 
-# virtual methods
-.method public final toString()Ljava/lang/String;
+    new-instance v0, Ldk4;
+
+    invoke-direct {v0, p0, p1}, Ldk4;-><init>(J)V
+
+    return-object v0
+.end method
+
+.method public static b(IF)J
+    .locals 3
+
+    invoke-static {p1}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result p1
+
+    int-to-long v0, p1
+
+    int-to-long p0, p0
+
+    const/16 v2, 0x20
+
+    shl-long/2addr p0, v2
+
+    add-long/2addr v0, p0
+
+    return-wide v0
+.end method
+
+.method public static final c(JLandroid/content/Context;)F
+    .locals 0
+
+    invoke-virtual {p2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object p2
+
+    invoke-static {p0, p1, p2}, Ldk4;->d(JLandroid/util/DisplayMetrics;)F
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static final d(JLandroid/util/DisplayMetrics;)F
     .locals 2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const/16 v0, 0x20
 
-    const-string v1, "DownloadErrorEvent{url=\'"
+    shr-long v0, p0, v0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    long-to-int v0, v0
 
-    iget-object v1, p0, Ldk4;->b:Ljava/lang/String;
+    invoke-static {p0, p1}, Ldk4;->e(J)F
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result p0
 
-    const-string v1, "\', attachLocalId=\'"
+    invoke-static {v0, p0, p2}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result p0
 
-    iget-object p0, p0, Ldk4;->c:Ljava/lang/String;
+    return p0
+.end method
 
-    const-string v1, "\'}"
+.method public static final e(J)F
+    .locals 2
 
-    invoke-static {v0, p0, v1}, Lwn6;->l(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    const-wide v0, 0xffffffffL
+
+    and-long/2addr p0, v0
+
+    long-to-int p0, p0
+
+    invoke-static {p0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    move-result p0
+
+    return p0
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    instance-of v0, p1, Ldk4;
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    check-cast p1, Ldk4;
+
+    iget-wide v0, p1, Ldk4;->a:J
+
+    iget-wide p0, p0, Ldk4;->a:J
+
+    cmp-long p0, p0, v0
+
+    if-eqz p0, :cond_1
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    iget-wide v0, p0, Ldk4;->a:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 4
+
+    const-string v0, "Dimension(encodedValue="
+
+    const-string v1, ")"
+
+    iget-wide v2, p0, Ldk4;->a:J
+
+    invoke-static {v2, v3, v0, v1}, Lu88;->i(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

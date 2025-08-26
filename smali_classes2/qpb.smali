@@ -1,55 +1,163 @@
-.class public abstract Lqpb;
-.super Ljava/lang/Object;
+.class public final Lqpb;
+.super Landroid/widget/FrameLayout;
 .source "SourceFile"
 
 
-# static fields
-.field public static oneme_notifications_settings_chat_enable_notifications_button:I = 0x7f0a0729
+# instance fields
+.field public final a:I
 
-.field public static oneme_notifications_settings_chat_linearlayout:I = 0x7f0a072a
+.field public final b:Lone/me/sdk/uikit/common/views/OneMeDraweeView;
 
-.field public static oneme_notifications_settings_chat_recycler_view:I = 0x7f0a072b
+.field public final c:Ljava/lang/Object;
 
-.field public static oneme_notifications_settings_chat_settings_button:I = 0x7f0a072c
+.field public final o:Ljava/lang/Object;
 
-.field public static oneme_notifications_settings_chat_toolbar:I = 0x7f0a072d
+.field public final o0:Ljava/lang/Object;
 
-.field public static oneme_notifications_settings_chat_type_all_button:I = 0x7f0a072e
 
-.field public static oneme_notifications_settings_chat_type_pin_reply_button:I = 0x7f0a072f
+# direct methods
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 4
 
-.field public static oneme_notifications_settings_dialog_enable_notifications_button:I = 0x7f0a0730
+    invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-.field public static oneme_notifications_settings_dialog_linearlayout:I = 0x7f0a0731
+    const/16 v0, 0x28
 
-.field public static oneme_notifications_settings_dialog_recycler_view:I = 0x7f0a0732
+    iput v0, p0, Lqpb;->a:I
 
-.field public static oneme_notifications_settings_dialog_settings_button:I = 0x7f0a0733
+    new-instance v0, Lone/me/sdk/uikit/common/views/OneMeDraweeView;
 
-.field public static oneme_notifications_settings_dialog_toolbar:I = 0x7f0a0734
+    invoke-direct {v0, p1}, Lone/me/sdk/uikit/common/views/OneMeDraweeView;-><init>(Landroid/content/Context;)V
 
-.field public static oneme_notifications_settings_enable_all_notifications_button:I = 0x7f0a0735
+    new-instance v1, Lex3;
 
-.field public static oneme_notifications_settings_linearlayout:I = 0x7f0a0736
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
 
-.field public static oneme_notifications_settings_open_settings_button:I = 0x7f0a0737
+    move-result-object v2
 
-.field public static oneme_notifications_settings_other_in_app_push_button:I = 0x7f0a0738
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-.field public static oneme_notifications_settings_other_linearlayout:I = 0x7f0a0739
+    move-result-object v2
 
-.field public static oneme_notifications_settings_other_new_user_button:I = 0x7f0a073a
+    iget v2, v2, Landroid/util/DisplayMetrics;->density:F
 
-.field public static oneme_notifications_settings_other_recycler_view:I = 0x7f0a073b
+    const/high16 v3, 0x40800000    # 4.0f
 
-.field public static oneme_notifications_settings_other_settings_button:I = 0x7f0a073c
+    mul-float/2addr v2, v3
 
-.field public static oneme_notifications_settings_other_toolbar:I = 0x7f0a073d
+    invoke-direct {v1, v2}, Lex3;-><init>(F)V
 
-.field public static oneme_notifications_settings_recycler_view:I = 0x7f0a073e
+    invoke-virtual {v0, v1}, Landroid/view/View;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-.field public static oneme_notifications_settings_reset_default_button:I = 0x7f0a073f
+    iput-object v0, p0, Lqpb;->b:Lone/me/sdk/uikit/common/views/OneMeDraweeView;
 
-.field public static oneme_notifications_settings_show_content_button:I = 0x7f0a0740
+    new-instance v1, Ln6a;
 
-.field public static oneme_notifications_settings_toolbar:I = 0x7f0a0741
+    const/16 v2, 0x11
+
+    invoke-direct {v1, p1, v2}, Ln6a;-><init>(Landroid/content/Context;I)V
+
+    const/4 v2, 0x3
+
+    invoke-static {v2, v1}, Lkhg;->o(ILv56;)Lje7;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lqpb;->c:Ljava/lang/Object;
+
+    new-instance v1, Laza;
+
+    const/16 v3, 0x8
+
+    invoke-direct {v1, p1, v3, p0}, Laza;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-static {v2, v1}, Lkhg;->o(ILv56;)Lje7;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lqpb;->o:Ljava/lang/Object;
+
+    new-instance p1, Lepa;
+
+    const/16 v1, 0xf
+
+    invoke-direct {p1, v1, p0}, Lepa;-><init>(ILjava/lang/Object;)V
+
+    invoke-static {v2, p1}, Lkhg;->o(ILv56;)Lje7;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lqpb;->o0:Ljava/lang/Object;
+
+    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final measureChildren(II)V
+    .locals 1
+
+    iget-object v0, p0, Lqpb;->b:Lone/me/sdk/uikit/common/views/OneMeDraweeView;
+
+    invoke-virtual {v0, p1, p2}, Landroid/view/View;->measure(II)V
+
+    iget-object p0, p0, Lqpb;->o:Ljava/lang/Object;
+
+    invoke-interface {p0}, Lje7;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/view/View;
+
+    invoke-virtual {p0, p1, p2}, Landroid/view/View;->measure(II)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final setDrawOverlay(Z)V
+    .locals 1
+
+    iget-object v0, p0, Lqpb;->b:Lone/me/sdk/uikit/common/views/OneMeDraweeView;
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {v0}, Luq4;->getHierarchy()Lrq4;
+
+    move-result-object p1
+
+    check-cast p1, Lwa6;
+
+    iget-object p0, p0, Lqpb;->o0:Ljava/lang/Object;
+
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {p1, p0}, Lwa6;->k(Landroid/graphics/drawable/Drawable;)V
+
+    return-void
+
+    :cond_0
+    invoke-virtual {v0}, Luq4;->getHierarchy()Lrq4;
+
+    move-result-object p0
+
+    check-cast p0, Lwa6;
+
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, p1}, Lwa6;->k(Landroid/graphics/drawable/Drawable;)V
+
+    return-void
+.end method

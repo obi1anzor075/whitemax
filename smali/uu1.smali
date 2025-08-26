@@ -1,51 +1,73 @@
-.class public final Luu1;
+.class public final synthetic Luu1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lucc;
-
 
 # instance fields
-.field public final synthetic b:J
+.field public final synthetic a:I
+
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(J)V
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p1, p0, Luu1;->a:I
 
-    iput-wide p1, p0, Luu1;->b:J
+    iput-object p2, p0, Luu1;->b:Ljava/lang/Object;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 2
+.method public final a()V
+    .locals 1
 
-    iget-wide v0, p0, Luu1;->b:J
+    iget v0, p0, Luu1;->a:I
 
-    return-wide v0
-.end method
+    iget-object p0, p0, Luu1;->b:Ljava/lang/Object;
 
-.method public final b(Ltu1;)Ltcc;
-    .locals 0
+    packed-switch v0, :pswitch_data_0
 
-    const/4 p0, 0x1
+    check-cast p0, Lntc;
 
-    iget p1, p1, Ltu1;->a:I
+    iget-object v0, p0, Lntc;->b:Ljava/lang/Object;
 
-    if-ne p1, p0, :cond_0
+    monitor-enter v0
 
-    sget-object p0, Ltcc;->d:Ltcc;
+    :try_start_0
+    invoke-virtual {p0}, Lntc;->c()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-object p0
+    monitor-exit v0
 
-    :cond_0
-    sget-object p0, Ltcc;->e:Ltcc;
+    return-void
 
-    return-object p0
+    :catchall_0
+    move-exception p0
+
+    monitor-exit v0
+
+    throw p0
+
+    :pswitch_0
+    check-cast p0, Liq1;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Liq1;->b(Ljava/lang/Object;)Z
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

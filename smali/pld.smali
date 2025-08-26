@@ -1,623 +1,133 @@
 .class public final Lpld;
-.super Ljava/lang/Object;
+.super Lfn3;
 .source "SourceFile"
-
-# interfaces
-.implements Li50;
 
 
 # instance fields
-.field public b:I
+.field public final a:Lhoe;
 
-.field public c:F
+.field public final b:Lx56;
 
-.field public d:F
 
-.field public e:Lg50;
+# direct methods
+.method public constructor <init>(Lhoe;Lx56;)V
+    .locals 0
 
-.field public f:Lg50;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field public g:Lg50;
+    iput-object p1, p0, Lpld;->a:Lhoe;
 
-.field public h:Lg50;
+    iput-object p2, p0, Lpld;->b:Lx56;
 
-.field public i:Z
-
-.field public j:Lold;
-
-.field public k:Ljava/nio/ByteBuffer;
-
-.field public l:Ljava/nio/ShortBuffer;
-
-.field public m:Ljava/nio/ByteBuffer;
-
-.field public n:J
-
-.field public o:J
-
-.field public p:Z
+    return-void
+.end method
 
 
 # virtual methods
-.method public final a()Ljava/nio/ByteBuffer;
-    .locals 8
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
-    iget-object v0, p0, Lpld;->j:Lold;
+    if-ne p0, p1, :cond_0
 
-    if-eqz v0, :cond_1
-
-    iget v1, v0, Lold;->n:I
-
-    iget v2, v0, Lold;->c:I
-
-    mul-int/2addr v1, v2
-
-    mul-int/lit8 v1, v1, 0x2
-
-    if-lez v1, :cond_1
-
-    iget-object v3, p0, Lpld;->k:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v3}, Ljava/nio/Buffer;->capacity()I
-
-    move-result v3
-
-    if-ge v3, v1, :cond_0
-
-    invoke-static {v1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
-
-    move-result-object v3
-
-    invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
-
-    move-result-object v3
-
-    iput-object v3, p0, Lpld;->k:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v3}, Ljava/nio/ByteBuffer;->asShortBuffer()Ljava/nio/ShortBuffer;
-
-    move-result-object v3
-
-    iput-object v3, p0, Lpld;->l:Ljava/nio/ShortBuffer;
-
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
-    iget-object v3, p0, Lpld;->k:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v3}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
-
-    iget-object v3, p0, Lpld;->l:Ljava/nio/ShortBuffer;
-
-    invoke-virtual {v3}, Ljava/nio/ShortBuffer;->clear()Ljava/nio/Buffer;
-
-    :goto_0
-    iget-object v3, p0, Lpld;->l:Ljava/nio/ShortBuffer;
-
-    invoke-virtual {v3}, Ljava/nio/Buffer;->remaining()I
-
-    move-result v4
-
-    div-int/2addr v4, v2
-
-    iget v5, v0, Lold;->n:I
-
-    invoke-static {v4, v5}, Ljava/lang/Math;->min(II)I
-
-    move-result v4
-
-    iget-object v5, v0, Lold;->m:[S
-
-    mul-int v6, v4, v2
-
-    const/4 v7, 0x0
-
-    invoke-virtual {v3, v5, v7, v6}, Ljava/nio/ShortBuffer;->put([SII)Ljava/nio/ShortBuffer;
-
-    iget v3, v0, Lold;->n:I
-
-    sub-int/2addr v3, v4
-
-    iput v3, v0, Lold;->n:I
-
-    iget-object v0, v0, Lold;->m:[S
-
-    mul-int/2addr v3, v2
-
-    invoke-static {v0, v6, v0, v7, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    iget-wide v2, p0, Lpld;->o:J
-
-    int-to-long v4, v1
-
-    add-long/2addr v2, v4
-
-    iput-wide v2, p0, Lpld;->o:J
-
-    iget-object v0, p0, Lpld;->k:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
-
-    iget-object v0, p0, Lpld;->k:Ljava/nio/ByteBuffer;
-
-    iput-object v0, p0, Lpld;->m:Ljava/nio/ByteBuffer;
-
-    :cond_1
-    iget-object v0, p0, Lpld;->m:Ljava/nio/ByteBuffer;
-
-    sget-object v1, Li50;->a:Ljava/nio/ByteBuffer;
-
-    iput-object v1, p0, Lpld;->m:Ljava/nio/ByteBuffer;
-
-    return-object v0
-.end method
-
-.method public final b(Ljava/nio/ByteBuffer;)V
-    .locals 7
-
-    invoke-virtual {p1}, Ljava/nio/Buffer;->hasRemaining()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lpld;->j:Lold;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->asShortBuffer()Ljava/nio/ShortBuffer;
-
-    move-result-object v1
-
-    invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
-
-    move-result v2
-
-    iget-wide v3, p0, Lpld;->n:J
-
-    int-to-long v5, v2
-
-    add-long/2addr v3, v5
-
-    iput-wide v3, p0, Lpld;->n:J
-
-    invoke-virtual {v1}, Ljava/nio/Buffer;->remaining()I
-
-    move-result p0
-
-    iget v3, v0, Lold;->c:I
-
-    div-int/2addr p0, v3
-
-    mul-int v4, p0, v3
-
-    mul-int/lit8 v4, v4, 0x2
-
-    iget-object v5, v0, Lold;->k:[S
-
-    iget v6, v0, Lold;->l:I
-
-    invoke-virtual {v0, v5, v6, p0}, Lold;->c([SII)[S
-
-    move-result-object v5
-
-    iput-object v5, v0, Lold;->k:[S
-
-    iget v6, v0, Lold;->l:I
-
-    mul-int/2addr v6, v3
-
-    div-int/lit8 v4, v4, 0x2
-
-    invoke-virtual {v1, v5, v6, v4}, Ljava/nio/ShortBuffer;->get([SII)Ljava/nio/ShortBuffer;
-
-    iget v1, v0, Lold;->l:I
-
-    add-int/2addr v1, p0
-
-    iput v1, v0, Lold;->l:I
-
-    invoke-virtual {v0}, Lold;->g()V
-
-    invoke-virtual {p1}, Ljava/nio/Buffer;->position()I
-
-    move-result p0
-
-    add-int/2addr p0, v2
-
-    invoke-virtual {p1, p0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
-    return-void
-.end method
-
-.method public final c()V
-    .locals 8
-
-    iget-object v0, p0, Lpld;->j:Lold;
-
-    if-eqz v0, :cond_2
-
-    iget v1, v0, Lold;->l:I
-
-    iget v2, v0, Lold;->d:F
-
-    iget v3, v0, Lold;->e:F
-
-    div-float/2addr v2, v3
-
-    iget v4, v0, Lold;->f:F
-
-    mul-float/2addr v4, v3
-
-    iget v3, v0, Lold;->n:I
-
-    int-to-float v5, v1
-
-    div-float/2addr v5, v2
-
-    iget v2, v0, Lold;->p:I
-
-    int-to-float v2, v2
-
-    add-float/2addr v5, v2
-
-    div-float/2addr v5, v4
-
-    const/high16 v2, 0x3f000000    # 0.5f
-
-    add-float/2addr v5, v2
-
-    float-to-int v2, v5
-
-    add-int/2addr v3, v2
-
-    iget-object v2, v0, Lold;->k:[S
-
-    iget v4, v0, Lold;->i:I
-
-    mul-int/lit8 v4, v4, 0x2
-
-    add-int v5, v4, v1
-
-    invoke-virtual {v0, v2, v1, v5}, Lold;->c([SII)[S
-
-    move-result-object v2
-
-    iput-object v2, v0, Lold;->k:[S
-
-    const/4 v2, 0x0
-
-    move v5, v2
-
-    :goto_0
-    iget v6, v0, Lold;->c:I
-
-    mul-int v7, v4, v6
-
-    if-ge v5, v7, :cond_0
-
-    iget-object v7, v0, Lold;->k:[S
-
-    mul-int/2addr v6, v1
-
-    add-int/2addr v6, v5
-
-    aput-short v2, v7, v6
-
-    add-int/lit8 v5, v5, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    iget v1, v0, Lold;->l:I
-
-    add-int/2addr v4, v1
-
-    iput v4, v0, Lold;->l:I
-
-    invoke-virtual {v0}, Lold;->g()V
-
-    iget v1, v0, Lold;->n:I
-
-    if-le v1, v3, :cond_1
-
-    iput v3, v0, Lold;->n:I
-
-    :cond_1
-    iput v2, v0, Lold;->l:I
-
-    iput v2, v0, Lold;->s:I
-
-    iput v2, v0, Lold;->p:I
-
-    :cond_2
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lpld;->p:Z
-
-    return-void
-.end method
-
-.method public final d()Z
-    .locals 1
-
-    iget-boolean v0, p0, Lpld;->p:Z
-
-    if-eqz v0, :cond_1
-
-    iget-object p0, p0, Lpld;->j:Lold;
-
-    if-eqz p0, :cond_0
-
-    iget v0, p0, Lold;->n:I
-
-    iget p0, p0, Lold;->c:I
-
-    mul-int/2addr v0, p0
-
-    mul-int/lit8 v0, v0, 0x2
+    instance-of v0, p1, Lpld;
 
     if-nez v0, :cond_1
 
-    :cond_0
-    const/4 p0, 0x1
-
     goto :goto_0
 
     :cond_1
-    const/4 p0, 0x0
+    check-cast p1, Lpld;
+
+    iget-object v0, p0, Lpld;->a:Lhoe;
+
+    iget-object v1, p1, Lpld;->a:Lhoe;
+
+    invoke-virtual {v0, v1}, Lhoe;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    iget-object p0, p0, Lpld;->b:Lx56;
+
+    iget-object p1, p1, Lpld;->b:Lx56;
+
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
 
     :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_3
+    :goto_1
+    const/4 p0, 0x1
+
     return p0
 .end method
 
-.method public final e(Lg50;)Lg50;
-    .locals 3
+.method public final hashCode()I
+    .locals 1
 
-    iget v0, p1, Lg50;->c:I
+    iget-object v0, p0, Lpld;->a:Lhoe;
 
-    const/4 v1, 0x2
+    iget v0, v0, Lhoe;->b:I
 
-    if-ne v0, v1, :cond_1
-
-    iget v0, p0, Lpld;->b:I
-
-    const/4 v2, -0x1
-
-    if-ne v0, v2, :cond_0
-
-    iget v0, p1, Lg50;->a:I
-
-    :cond_0
-    iput-object p1, p0, Lpld;->e:Lg50;
-
-    new-instance v2, Lg50;
-
-    iget p1, p1, Lg50;->b:I
-
-    invoke-direct {v2, v0, p1, v1}, Lg50;-><init>(III)V
-
-    iput-object v2, p0, Lpld;->f:Lg50;
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lpld;->i:Z
-
-    return-object v2
-
-    :cond_1
-    new-instance p0, Lcom/google/android/exoplayer2/audio/AudioProcessor$UnhandledAudioFormatException;
-
-    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/audio/AudioProcessor$UnhandledAudioFormatException;-><init>(Lg50;)V
-
-    throw p0
-.end method
-
-.method public final flush()V
-    .locals 11
-
-    invoke-virtual {p0}, Lpld;->isActive()Z
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
 
     move-result v0
 
-    const/4 v1, 0x0
+    mul-int/lit8 v0, v0, 0x1f
 
-    if-eqz v0, :cond_1
+    iget-object p0, p0, Lpld;->b:Lx56;
 
-    iget-object v0, p0, Lpld;->e:Lg50;
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    iput-object v0, p0, Lpld;->g:Lg50;
+    move-result p0
 
-    iget-object v2, p0, Lpld;->f:Lg50;
+    add-int/2addr p0, v0
 
-    iput-object v2, p0, Lpld;->h:Lg50;
-
-    iget-boolean v3, p0, Lpld;->i:Z
-
-    if-eqz v3, :cond_0
-
-    new-instance v3, Lold;
-
-    iget v5, v0, Lg50;->a:I
-
-    iget v6, v0, Lg50;->b:I
-
-    iget v7, p0, Lpld;->c:F
-
-    iget v8, p0, Lpld;->d:F
-
-    iget v9, v2, Lg50;->a:I
-
-    const/4 v10, 0x0
-
-    move-object v4, v3
-
-    invoke-direct/range {v4 .. v10}, Lold;-><init>(IIFFII)V
-
-    iput-object v3, p0, Lpld;->j:Lold;
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Lpld;->j:Lold;
-
-    if-eqz v0, :cond_1
-
-    iput v1, v0, Lold;->l:I
-
-    iput v1, v0, Lold;->n:I
-
-    iput v1, v0, Lold;->p:I
-
-    iput v1, v0, Lold;->q:I
-
-    iput v1, v0, Lold;->r:I
-
-    iput v1, v0, Lold;->s:I
-
-    iput v1, v0, Lold;->t:I
-
-    iput v1, v0, Lold;->u:I
-
-    iput v1, v0, Lold;->v:I
-
-    iput v1, v0, Lold;->w:I
-
-    :cond_1
-    :goto_0
-    sget-object v0, Li50;->a:Ljava/nio/ByteBuffer;
-
-    iput-object v0, p0, Lpld;->m:Ljava/nio/ByteBuffer;
-
-    const-wide/16 v2, 0x0
-
-    iput-wide v2, p0, Lpld;->n:J
-
-    iput-wide v2, p0, Lpld;->o:J
-
-    iput-boolean v1, p0, Lpld;->p:Z
-
-    return-void
-.end method
-
-.method public final isActive()Z
-    .locals 3
-
-    iget-object v0, p0, Lpld;->f:Lg50;
-
-    iget v0, v0, Lg50;->a:I
-
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_1
-
-    iget v0, p0, Lpld;->c:F
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    sub-float/2addr v0, v1
-
-    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
-
-    move-result v0
-
-    const v2, 0x38d1b717    # 1.0E-4f
-
-    cmpl-float v0, v0, v2
-
-    if-gez v0, :cond_0
-
-    iget v0, p0, Lpld;->d:F
-
-    sub-float/2addr v0, v1
-
-    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
-
-    move-result v0
-
-    cmpl-float v0, v0, v2
-
-    if-gez v0, :cond_0
-
-    iget-object v0, p0, Lpld;->f:Lg50;
-
-    iget v0, v0, Lg50;->a:I
-
-    iget-object p0, p0, Lpld;->e:Lg50;
-
-    iget p0, p0, Lg50;->a:I
-
-    if-eq v0, p0, :cond_1
-
-    :cond_0
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 p0, 0x0
-
-    :goto_0
     return p0
 .end method
 
-.method public final reset()V
-    .locals 3
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iput v0, p0, Lpld;->c:F
+    const-string v1, "ShowCancellableSnackbar(title="
 
-    iput v0, p0, Lpld;->d:F
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    sget-object v0, Lg50;->e:Lg50;
+    iget-object v1, p0, Lpld;->a:Lhoe;
 
-    iput-object v0, p0, Lpld;->e:Lg50;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iput-object v0, p0, Lpld;->f:Lg50;
+    const-string v1, ", dismissListener="
 
-    iput-object v0, p0, Lpld;->g:Lg50;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iput-object v0, p0, Lpld;->h:Lg50;
+    iget-object p0, p0, Lpld;->b:Lx56;
 
-    sget-object v0, Li50;->a:Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iput-object v0, p0, Lpld;->k:Ljava/nio/ByteBuffer;
+    const-string p0, ")"
 
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->asShortBuffer()Ljava/nio/ShortBuffer;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iput-object v1, p0, Lpld;->l:Ljava/nio/ShortBuffer;
+    move-result-object p0
 
-    iput-object v0, p0, Lpld;->m:Ljava/nio/ByteBuffer;
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lpld;->b:I
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lpld;->i:Z
-
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Lpld;->j:Lold;
-
-    const-wide/16 v1, 0x0
-
-    iput-wide v1, p0, Lpld;->n:J
-
-    iput-wide v1, p0, Lpld;->o:J
-
-    iput-boolean v0, p0, Lpld;->p:Z
-
-    return-void
+    return-object p0
 .end method

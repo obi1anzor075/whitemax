@@ -26,7 +26,7 @@
 
     if-eqz p0, :cond_0
 
-    invoke-virtual {p0}, Ljava/util/Dictionary;->isEmpty()Z
+    invoke-virtual {p0}, Ljava/util/Properties;->isEmpty()Z
 
     move-result v1
 
@@ -113,7 +113,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v0, v2, v3}, Ljava/util/Dictionary;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2, v3}, Ljava/util/Properties;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 

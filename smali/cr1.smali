@@ -1,174 +1,136 @@
-.class public final synthetic Lcr1;
+.class public final Lcr1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lch3;
 
 
 # instance fields
-.field public final synthetic X:Lpye;
-
-.field public final synthetic Y:Lva0;
-
-.field public final synthetic Z:Ljava/util/List;
-
 .field public final synthetic a:I
 
-.field public final synthetic b:Llr1;
+.field public final synthetic b:Ldh3;
 
-.field public final synthetic c:Ljava/lang/String;
-
-.field public final synthetic o:Lc2d;
+.field public final synthetic c:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Llr1;Ljava/lang/String;Lc2d;Lpye;Lva0;Ljava/util/List;I)V
+.method public synthetic constructor <init>(Ldh3;Ljava/lang/Object;I)V
     .locals 0
 
-    iput p7, p0, Lcr1;->a:I
+    iput p3, p0, Lcr1;->a:I
 
-    iput-object p1, p0, Lcr1;->b:Llr1;
+    iput-object p1, p0, Lcr1;->b:Ldh3;
 
-    iput-object p2, p0, Lcr1;->c:Ljava/lang/String;
-
-    iput-object p3, p0, Lcr1;->o:Lc2d;
-
-    iput-object p4, p0, Lcr1;->X:Lpye;
-
-    iput-object p5, p0, Lcr1;->Y:Lva0;
-
-    iput-object p6, p0, Lcr1;->Z:Ljava/util/List;
+    iput-object p2, p0, Lcr1;->c:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method private final c()V
+    .locals 0
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public final run()V
-    .locals 8
+.method public final a()V
+    .locals 2
 
     iget v0, p0, Lcr1;->a:I
 
     packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p0, Lcr1;->b:Llr1;
+    iget-object v0, p0, Lcr1;->b:Ldh3;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-interface {v0}, Ldh3;->f()Z
 
-    invoke-virtual {v0}, Llr1;->toString()Ljava/lang/String;
+    move-result v1
 
-    iget-object v1, v0, Llr1;->a:Lx3a;
+    if-eqz v1, :cond_0
 
-    iget-object v1, v1, Lx3a;->b:Ljava/lang/Object;
+    invoke-interface {v0, p0}, Ldh3;->e(Lch3;)V
 
-    check-cast v1, Ljava/util/LinkedHashMap;
+    iget-object p0, p0, Lcr1;->c:Ljava/lang/Object;
 
-    iget-object v3, p0, Lcr1;->c:Ljava/lang/String;
+    check-cast p0, Lqy1;
 
-    invoke-virtual {v1, v3}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    sget-object v0, Le5f;->a:Le5f;
 
-    move-result-object v2
-
-    check-cast v2, Lnye;
-
-    iget-object v4, p0, Lcr1;->o:Lc2d;
-
-    iget-object v5, p0, Lcr1;->X:Lpye;
-
-    iget-object v6, p0, Lcr1;->Y:Lva0;
-
-    iget-object v7, p0, Lcr1;->Z:Ljava/util/List;
-
-    if-nez v2, :cond_0
-
-    new-instance v2, Lnye;
-
-    invoke-direct {v2, v4, v5, v6, v7}, Lnye;-><init>(Lc2d;Lpye;Lva0;Ljava/util/List;)V
-
-    invoke-interface {v1, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Lqy1;->resumeWith(Ljava/lang/Object;)V
 
     :cond_0
-    const/4 p0, 0x1
-
-    iput-boolean p0, v2, Lnye;->f:Z
-
-    iget-object v2, v0, Llr1;->a:Lx3a;
-
-    invoke-virtual/range {v2 .. v7}, Lx3a;->N(Ljava/lang/String;Lc2d;Lpye;Lva0;Ljava/util/List;)V
-
-    invoke-virtual {v0}, Llr1;->K()V
-
-    return-void
-
     :pswitch_0
-    iget-object v0, p0, Lcr1;->b:Llr1;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {v0}, Llr1;->toString()Ljava/lang/String;
-
-    iget-object v5, p0, Lcr1;->Y:Lva0;
-
-    iget-object v6, p0, Lcr1;->Z:Ljava/util/List;
-
-    iget-object v1, v0, Llr1;->a:Lx3a;
-
-    iget-object v2, p0, Lcr1;->c:Ljava/lang/String;
-
-    iget-object v3, p0, Lcr1;->o:Lc2d;
-
-    iget-object v4, p0, Lcr1;->X:Lpye;
-
-    invoke-virtual/range {v1 .. v6}, Lx3a;->N(Ljava/lang/String;Lc2d;Lpye;Lva0;Ljava/util/List;)V
-
-    invoke-virtual {v0}, Llr1;->K()V
-
-    return-void
-
-    :pswitch_1
-    iget-object v0, p0, Lcr1;->b:Llr1;
-
-    iget-object v2, p0, Lcr1;->c:Ljava/lang/String;
-
-    iget-object v3, p0, Lcr1;->o:Lc2d;
-
-    iget-object v4, p0, Lcr1;->X:Lpye;
-
-    iget-object v5, p0, Lcr1;->Y:Lva0;
-
-    iget-object v6, p0, Lcr1;->Z:Ljava/util/List;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {v0}, Llr1;->toString()Ljava/lang/String;
-
-    iget-object v1, v0, Llr1;->a:Lx3a;
-
-    invoke-virtual/range {v1 .. v6}, Lx3a;->N(Ljava/lang/String;Lc2d;Lpye;Lva0;Ljava/util/List;)V
-
-    invoke-virtual {v0}, Llr1;->q()V
-
-    invoke-virtual {v0}, Llr1;->D()V
-
-    invoke-virtual {v0}, Llr1;->K()V
-
-    iget p0, v0, Llr1;->W0:I
-
-    const/16 v1, 0x9
-
-    if-ne p0, v1, :cond_1
-
-    invoke-virtual {v0}, Llr1;->B()V
-
-    :cond_1
     return-void
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final b()V
+    .locals 2
+
+    iget v0, p0, Lcr1;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Lcr1;->b:Ldh3;
+
+    invoke-interface {v0}, Ldh3;->f()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0, p0}, Ldh3;->e(Lch3;)V
+
+    iget-object p0, p0, Lcr1;->c:Ljava/lang/Object;
+
+    check-cast p0, Lqy1;
+
+    sget-object v0, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, v0}, Lqy1;->resumeWith(Ljava/lang/Object;)V
+
+    :cond_0
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Lcr1;->b:Ldh3;
+
+    invoke-interface {v0}, Ldh3;->d()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lv9f;->a:Lv9f;
+
+    goto :goto_0
+
+    :cond_1
+    sget-object v0, Lv9f;->b:Lv9f;
+
+    :goto_0
+    iget-object p0, p0, Lcr1;->c:Ljava/lang/Object;
+
+    check-cast p0, Lr7b;
+
+    check-cast p0, Lo7b;
+
+    invoke-virtual {p0, v0}, Lo7b;->g(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
         :pswitch_0
     .end packed-switch
 .end method

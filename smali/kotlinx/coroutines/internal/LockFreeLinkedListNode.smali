@@ -21,7 +21,7 @@
         "findPrevNonRemoved",
         "(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;)Lkotlinx/coroutines/internal/LockFreeLinkedListNode;",
         "next",
-        "Ljue;",
+        "Le5f;",
         "finishAdd",
         "(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;)V",
         "correctPrev",
@@ -68,6 +68,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -312,7 +313,7 @@
 
     if-eq v2, p1, :cond_0
 
-    return-void
+    goto :goto_1
 
     :cond_0
     invoke-static {}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->get_prev$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
@@ -335,6 +336,7 @@
     invoke-direct {p1}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->correctPrev()Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
 
     :cond_2
+    :goto_1
     return-void
 
     :cond_3
@@ -395,14 +397,14 @@
     return-object v0
 .end method
 
-.method private final synthetic loop$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Lu16;)V
+.method private final synthetic loop$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Object;",
             "Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;",
-            "Lu16;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -412,7 +414,7 @@
 
     move-result-object p0
 
-    invoke-interface {p3, p0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, p0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 .end method
@@ -502,12 +504,12 @@
 
     if-eqz p0, :cond_1
 
-    goto :goto_0
+    return v2
 
     :cond_1
-    const/4 v2, 0x0
+    const/4 p0, 0x0
 
-    goto :goto_0
+    return p0
 
     :cond_2
     invoke-virtual {v0, p1, p0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->addNext(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;Lkotlinx/coroutines/internal/LockFreeLinkedListNode;)Z
@@ -516,7 +518,6 @@
 
     if-eqz v0, :cond_0
 
-    :goto_0
     return v2
 .end method
 
@@ -665,19 +666,22 @@
     const/4 v0, 0x0
 
     :goto_0
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     iget-object v0, v0, Lkotlinx/coroutines/internal/Removed;->ref:Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_1
+
+    goto :goto_1
 
     :cond_1
-    move-object v0, p0
-
-    check-cast v0, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
+    return-object v0
 
     :cond_2
-    return-object v0
+    :goto_1
+    check-cast p0, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
+
+    return-object p0
 .end method
 
 .method public final getPrevNode()Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
@@ -701,7 +705,9 @@
 
     invoke-direct {p0, v0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->findPrevNonRemoved(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;)Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
 
-    move-result-object v0
+    move-result-object p0
+
+    return-object p0
 
     :cond_0
     return-object v0
@@ -730,12 +736,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -817,7 +822,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-static {p0}, La24;->F(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lp54;->m(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 

@@ -1,211 +1,144 @@
-.class public Lz36;
+.class public final Lz36;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljce;
+
 
 # instance fields
-.field public final a:Ljava/util/LinkedList;
+.field public final X:Z
+
+.field public final Y:Lwfe;
+
+.field public Z:Z
+
+.field public final a:Landroid/content/Context;
 
 .field public final b:Ljava/lang/String;
 
-.field public final c:Ljava/lang/String;
+.field public final c:Lnye;
 
-.field public d:I
-
-.field public e:I
-
-.field public f:I
-
-.field public g:I
-
-.field public h:Z
+.field public final o:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 1
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Lnye;ZZ)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/LinkedList;
+    iput-object p1, p0, Lz36;->a:Landroid/content/Context;
 
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
+    iput-object p2, p0, Lz36;->b:Ljava/lang/String;
 
-    iput-object v0, p0, Lz36;->a:Ljava/util/LinkedList;
+    iput-object p3, p0, Lz36;->c:Lnye;
 
-    const-string v0, "attribute vec4 position;\nattribute vec4 inputTextureCoordinate;\n \nvarying vec2 textureCoordinate;\n \nvoid main()\n{\n    gl_Position = position;\n    textureCoordinate = inputTextureCoordinate.xy;\n}"
+    iput-boolean p4, p0, Lz36;->o:Z
 
-    iput-object v0, p0, Lz36;->b:Ljava/lang/String;
+    iput-boolean p5, p0, Lz36;->X:Z
 
-    iput-object p1, p0, Lz36;->c:Ljava/lang/String;
+    new-instance p1, Lae;
+
+    const/4 p2, 0x2
+
+    invoke-direct {p1, p2, p0}, Lae;-><init>(ILjava/lang/Object;)V
+
+    new-instance p2, Lwfe;
+
+    invoke-direct {p2, p1}, Lwfe;-><init>(Lv56;)V
+
+    iput-object p2, p0, Lz36;->Y:Lwfe;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 8
+.method public final close()V
+    .locals 1
+
+    iget-object p0, p0, Lz36;->Y:Lwfe;
+
+    invoke-virtual {p0}, Lwfe;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lwfe;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ly36;
+
+    invoke-virtual {p0}, Ly36;->close()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final getReadableDatabase()Lhce;
+    .locals 1
+
+    iget-object p0, p0, Lz36;->Y:Lwfe;
+
+    invoke-virtual {p0}, Lwfe;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ly36;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Ly36;->c(Z)Lhce;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final getWritableDatabase()Lhce;
+    .locals 1
+
+    iget-object p0, p0, Lz36;->Y:Lwfe;
+
+    invoke-virtual {p0}, Lwfe;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ly36;
 
     const/4 v0, 0x1
 
-    new-array v1, v0, [I
+    invoke-virtual {p0, v0}, Ly36;->c(Z)Lhce;
 
-    new-array v2, v0, [I
+    move-result-object p0
 
-    const v3, 0x8b31
+    return-object p0
+.end method
 
-    invoke-static {v3}, Landroid/opengl/GLES20;->glCreateShader(I)I
+.method public final setWriteAheadLoggingEnabled(Z)V
+    .locals 2
 
-    move-result v3
+    iget-object v0, p0, Lz36;->Y:Lwfe;
 
-    iget-object v4, p0, Lz36;->b:Ljava/lang/String;
+    invoke-virtual {v0}, Lwfe;->a()Z
 
-    invoke-static {v3, v4}, Landroid/opengl/GLES20;->glShaderSource(ILjava/lang/String;)V
+    move-result v1
 
-    invoke-static {v3}, Landroid/opengl/GLES20;->glCompileShader(I)V
+    if-eqz v1, :cond_0
 
-    const v4, 0x8b81
+    invoke-virtual {v0}, Lwfe;->getValue()Ljava/lang/Object;
 
-    const/4 v5, 0x0
+    move-result-object v0
 
-    invoke-static {v3, v4, v2, v5}, Landroid/opengl/GLES20;->glGetShaderiv(II[II)V
+    check-cast v0, Ly36;
 
-    aget v2, v2, v5
-
-    if-nez v2, :cond_0
-
-    invoke-static {v3}, Landroid/opengl/GLES20;->glGetShaderInfoLog(I)Ljava/lang/String;
-
-    move v3, v5
+    invoke-virtual {v0, p1}, Landroid/database/sqlite/SQLiteOpenHelper;->setWriteAheadLoggingEnabled(Z)V
 
     :cond_0
-    if-nez v3, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    new-array v2, v0, [I
-
-    const v6, 0x8b30
-
-    invoke-static {v6}, Landroid/opengl/GLES20;->glCreateShader(I)I
-
-    move-result v6
-
-    iget-object v7, p0, Lz36;->c:Ljava/lang/String;
-
-    invoke-static {v6, v7}, Landroid/opengl/GLES20;->glShaderSource(ILjava/lang/String;)V
-
-    invoke-static {v6}, Landroid/opengl/GLES20;->glCompileShader(I)V
-
-    invoke-static {v6, v4, v2, v5}, Landroid/opengl/GLES20;->glGetShaderiv(II[II)V
-
-    aget v2, v2, v5
-
-    if-nez v2, :cond_2
-
-    invoke-static {v6}, Landroid/opengl/GLES20;->glGetShaderInfoLog(I)Ljava/lang/String;
-
-    move v6, v5
-
-    :cond_2
-    if-nez v6, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    invoke-static {}, Landroid/opengl/GLES20;->glCreateProgram()I
-
-    move-result v2
-
-    invoke-static {v2, v3}, Landroid/opengl/GLES20;->glAttachShader(II)V
-
-    invoke-static {v2, v6}, Landroid/opengl/GLES20;->glAttachShader(II)V
-
-    invoke-static {v2}, Landroid/opengl/GLES20;->glLinkProgram(I)V
-
-    const v4, 0x8b82
-
-    invoke-static {v2, v4, v1, v5}, Landroid/opengl/GLES20;->glGetProgramiv(II[II)V
-
-    aget v1, v1, v5
-
-    if-gtz v1, :cond_4
-
-    goto :goto_0
-
-    :cond_4
-    invoke-static {v3}, Landroid/opengl/GLES20;->glDeleteShader(I)V
-
-    invoke-static {v6}, Landroid/opengl/GLES20;->glDeleteShader(I)V
-
-    move v5, v2
-
-    :goto_0
-    iput v5, p0, Lz36;->d:I
-
-    const-string v1, "position"
-
-    invoke-static {v5, v1}, Landroid/opengl/GLES20;->glGetAttribLocation(ILjava/lang/String;)I
-
-    move-result v1
-
-    iput v1, p0, Lz36;->e:I
-
-    iget v1, p0, Lz36;->d:I
-
-    const-string v2, "inputImageTexture"
-
-    invoke-static {v1, v2}, Landroid/opengl/GLES20;->glGetUniformLocation(ILjava/lang/String;)I
-
-    move-result v1
-
-    iput v1, p0, Lz36;->f:I
-
-    iget v1, p0, Lz36;->d:I
-
-    const-string v2, "inputTextureCoordinate"
-
-    invoke-static {v1, v2}, Landroid/opengl/GLES20;->glGetAttribLocation(ILjava/lang/String;)I
-
-    move-result v1
-
-    iput v1, p0, Lz36;->g:I
-
-    iput-boolean v0, p0, Lz36;->h:Z
+    iput-boolean p1, p0, Lz36;->Z:Z
 
     return-void
-.end method
-
-.method public b(II)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final c(Ljava/lang/Runnable;)V
-    .locals 1
-
-    iget-object v0, p0, Lz36;->a:Ljava/util/LinkedList;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object p0, p0, Lz36;->a:Ljava/util/LinkedList;
-
-    invoke-virtual {p0, p1}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception p0
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p0
 .end method

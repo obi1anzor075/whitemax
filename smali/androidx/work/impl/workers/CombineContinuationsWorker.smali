@@ -25,6 +25,7 @@
         0x7,
         0x1
     }
+    xi = 0x30
 .end annotation
 
 
@@ -39,16 +40,16 @@
 
 
 # virtual methods
-.method public final b()Lgh7;
+.method public final a()Lfm7;
     .locals 1
 
-    invoke-virtual {p0}, Lhh7;->getInputData()Lzy3;
+    invoke-virtual {p0}, Lgm7;->getInputData()Lt24;
 
     move-result-object p0
 
-    new-instance v0, Lfh7;
+    new-instance v0, Lem7;
 
-    invoke-direct {v0, p0}, Lfh7;-><init>(Lzy3;)V
+    invoke-direct {v0, p0}, Lem7;-><init>(Lt24;)V
 
     return-object v0
 .end method

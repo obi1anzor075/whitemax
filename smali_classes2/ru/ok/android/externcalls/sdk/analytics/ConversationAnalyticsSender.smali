@@ -11,7 +11,7 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/analytics/ConversationAnalyticsSender;",
         "",
-        "Ljue;",
+        "Le5f;",
         "forceSendScheduledEvents",
         "()V",
         "Lru/ok/android/externcalls/sdk/analytics/ConversationAnalyticsConfiguration;",
@@ -26,6 +26,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

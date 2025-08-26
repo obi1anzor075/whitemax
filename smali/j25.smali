@@ -1,211 +1,109 @@
-.class public final Lj25;
-.super Ljava/lang/Object;
+.class public abstract Lj25;
+.super Lv2;
 .source "SourceFile"
 
 
-# static fields
-.field public static final d:Ljava/nio/charset/Charset;
-
-.field public static final e:[Ljava/lang/String;
-
-.field public static final f:[I
-
-
-# instance fields
-.field public final a:I
-
-.field public final b:I
-
-.field public final c:[B
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 15
-
-    sget-object v0, Ljava/nio/charset/StandardCharsets;->US_ASCII:Ljava/nio/charset/Charset;
-
-    sput-object v0, Lj25;->d:Ljava/nio/charset/Charset;
-
-    const-string v13, "DOUBLE"
-
-    const-string v14, "IFD"
-
-    const-string v1, ""
-
-    const-string v2, "BYTE"
-
-    const-string v3, "STRING"
-
-    const-string v4, "USHORT"
-
-    const-string v5, "ULONG"
-
-    const-string v6, "URATIONAL"
-
-    const-string v7, "SBYTE"
-
-    const-string v8, "UNDEFINED"
-
-    const-string v9, "SSHORT"
-
-    const-string v10, "SLONG"
-
-    const-string v11, "SRATIONAL"
-
-    const-string v12, "SINGLE"
-
-    filled-new-array/range {v1 .. v14}, [Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lj25;->e:[Ljava/lang/String;
-
-    const/16 v0, 0xe
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_0
-
-    sput-object v0, Lj25;->f:[I
-
-    return-void
-
-    :array_0
-    .array-data 4
-        0x0
-        0x1
-        0x1
-        0x2
-        0x4
-        0x8
-        0x1
-        0x1
-        0x2
-        0x4
-        0x8
-        0x4
-        0x8
-        0x1
-    .end array-data
+# virtual methods
+.method public abstract A(Lmce;Ljava/lang/Object;)V
 .end method
 
-.method public constructor <init>(I[BI)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lj25;->a:I
-
-    iput p3, p0, Lj25;->b:I
-
-    iput-object p2, p0, Lj25;->c:[B
-
-    return-void
-.end method
-
-.method public static a(JLjava/nio/ByteOrder;)Lj25;
+.method public final B(Ljava/lang/Iterable;)V
     .locals 2
 
-    const/4 v0, 0x1
-
-    new-array v0, v0, [J
-
-    const/4 v1, 0x0
-
-    aput-wide p0, v0, v1
-
-    invoke-static {v0, p2}, Lj25;->b([JLjava/nio/ByteOrder;)Lj25;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static b([JLjava/nio/ByteOrder;)Lj25;
-    .locals 5
-
-    sget-object v0, Lj25;->f:[I
-
-    const/4 v1, 0x4
-
-    aget v0, v0, v1
-
-    array-length v2, p0
-
-    mul-int/2addr v0, v2
-
-    new-array v0, v0, [B
-
-    invoke-static {v0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
+    invoke-virtual {p0}, Lv2;->f()Lmce;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+    :try_start_0
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    array-length p1, p0
-
-    const/4 v2, 0x0
+    move-result-object p1
 
     :goto_0
-    if-ge v2, p1, :cond_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    aget-wide v3, p0, v2
+    move-result v1
 
-    long-to-int v3, v3
+    if-eqz v1, :cond_0
 
-    invoke-virtual {v0, v3}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    add-int/lit8 v2, v2, 0x1
+    move-result-object v1
+
+    invoke-virtual {p0, v0, v1}, Lj25;->A(Lmce;Ljava/lang/Object;)V
+
+    invoke-interface {v0}, Lmce;->n0()J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
+    :catchall_0
+    move-exception p1
+
+    goto :goto_1
+
     :cond_0
-    new-instance p1, Lj25;
+    invoke-virtual {p0, v0}, Lv2;->u(Lmce;)V
 
-    array-length p0, p0
+    return-void
 
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
+    :goto_1
+    invoke-virtual {p0, v0}, Lv2;->u(Lmce;)V
+
+    throw p1
+.end method
+
+.method public final C(Ljava/lang/Object;)V
+    .locals 1
+
+    invoke-virtual {p0}, Lv2;->f()Lmce;
 
     move-result-object v0
 
-    invoke-direct {p1, v1, v0, p0}, Lj25;-><init>(I[BI)V
+    :try_start_0
+    invoke-virtual {p0, v0, p1}, Lj25;->A(Lmce;Ljava/lang/Object;)V
 
-    return-object p1
+    invoke-interface {v0}, Lmce;->n0()J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {p0, v0}, Lv2;->u(Lmce;)V
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    invoke-virtual {p0, v0}, Lv2;->u(Lmce;)V
+
+    throw p1
 .end method
 
-
-# virtual methods
-.method public final toString()Ljava/lang/String;
+.method public final D(Ljava/lang/Object;)J
     .locals 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-virtual {p0}, Lv2;->f()Lmce;
 
-    const-string v1, "("
+    move-result-object v0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    :try_start_0
+    invoke-virtual {p0, v0, p1}, Lj25;->A(Lmce;Ljava/lang/Object;)V
 
-    sget-object v1, Lj25;->e:[Ljava/lang/String;
+    invoke-interface {v0}, Lmce;->n0()J
 
-    iget v2, p0, Lj25;->a:I
+    move-result-wide v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    aget-object v1, v1, v2
+    invoke-virtual {p0, v0}, Lv2;->u(Lmce;)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-wide v1
 
-    const-string v1, ", data length:"
+    :catchall_0
+    move-exception p1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Lv2;->u(Lmce;)V
 
-    iget-object p0, p0, Lj25;->c:[B
-
-    array-length p0, p0
-
-    const-string v1, ")"
-
-    invoke-static {v0, p0, v1}, Lwn6;->j(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    throw p1
 .end method

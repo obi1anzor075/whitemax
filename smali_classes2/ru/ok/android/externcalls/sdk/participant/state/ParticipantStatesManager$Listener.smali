@@ -24,7 +24,7 @@
         "manager",
         "Lru/ok/android/externcalls/sdk/participant/state/ParticipantStatesManager$StateChangedEvent;",
         "event",
-        "Ljue;",
+        "Le5f;",
         "onParticipantStateChanged",
         "(Lru/ok/android/externcalls/sdk/participant/state/ParticipantStatesManager;Lru/ok/android/externcalls/sdk/participant/state/ParticipantStatesManager$StateChangedEvent;)V",
         "calls-sdk_release"
@@ -35,6 +35,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

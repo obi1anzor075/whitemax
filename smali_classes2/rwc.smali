@@ -1,33 +1,70 @@
 .class public final Lrwc;
-.super Ljava/lang/Object;
+.super Lsd7;
 .source "SourceFile"
+
+# interfaces
+.implements Lx56;
 
 
 # instance fields
-.field public final a:Ltk7;
+.field public final synthetic a:I
 
-.field public b:Lf3f;
-
-.field public c:Lkpa;
-
-.field public d:Ljava/lang/String;
-
-.field public e:Z
-
-.field public f:Z
+.field public final synthetic b:Lbm7;
 
 
 # direct methods
-.method public constructor <init>(Ltk7;)V
-    .locals 1
+.method public synthetic constructor <init>(Lbm7;I)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Lrwc;->a:I
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Lrwc;->b:Lbm7;
 
-    iput-boolean v0, p0, Lrwc;->f:Z
+    const/4 p1, 0x1
 
-    iput-object p1, p0, Lrwc;->a:Ltk7;
+    invoke-direct {p0, p1}, Lsd7;-><init>(I)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    iget v0, p0, Lrwc;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    check-cast p1, Ljava/lang/Throwable;
+
+    iget-object p0, p0, Lrwc;->b:Lbm7;
+
+    const/4 p1, 0x0
+
+    invoke-interface {p0, p1}, Ljava/util/concurrent/Future;->cancel(Z)Z
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
+
+    :pswitch_0
+    check-cast p1, Ljava/lang/Throwable;
+
+    iget-object p0, p0, Lrwc;->b:Lbm7;
+
+    const/4 p1, 0x0
+
+    invoke-interface {p0, p1}, Ljava/util/concurrent/Future;->cancel(Z)Z
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

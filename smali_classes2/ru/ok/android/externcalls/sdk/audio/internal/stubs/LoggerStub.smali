@@ -19,7 +19,7 @@
         "",
         "tag",
         "message",
-        "Ljue;",
+        "Le5f;",
         "v",
         "(Ljava/lang/String;Ljava/lang/String;)V",
         "",
@@ -38,6 +38,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

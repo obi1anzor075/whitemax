@@ -1,171 +1,48 @@
 .class public final Ljw7;
-.super Lnn;
-.source "SourceFile"
-
-
-# static fields
-.field public static final y0:I
-
-.field public static final z0:[[I
+.super Lbu3;
 
 
 # instance fields
-.field public w0:Landroid/content/res/ColorStateList;
+.field public X:I
 
-.field public x0:Z
+.field public final synthetic Y:Lff7;
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(Lff7;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    sget v0, Lkvb;->Widget_MaterialComponents_CompoundButton_RadioButton:I
+    iput-object p1, p0, Ljw7;->Y:Lff7;
 
-    sput v0, Ljw7;->y0:I
-
-    const v0, 0x101009e
-
-    const v1, 0x10100a0
-
-    filled-new-array {v0, v1}, [I
-
-    move-result-object v2
-
-    const v3, -0x10100a0
-
-    filled-new-array {v0, v3}, [I
-
-    move-result-object v0
-
-    const v4, -0x101009e
-
-    filled-new-array {v4, v1}, [I
-
-    move-result-object v1
-
-    filled-new-array {v4, v3}, [I
-
-    move-result-object v3
-
-    filled-new-array {v2, v0, v1, v3}, [[I
-
-    move-result-object v0
-
-    sput-object v0, Ljw7;->z0:[[I
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
-.end method
-
-.method private getMaterialThemeColorsTintList()Landroid/content/res/ColorStateList;
-    .locals 6
-
-    iget-object v0, p0, Ljw7;->w0:Landroid/content/res/ColorStateList;
-
-    if-nez v0, :cond_0
-
-    sget v0, Lwlb;->colorControlActivated:I
-
-    invoke-static {p0, v0}, Lvx3;->r(Landroid/view/View;I)I
-
-    move-result v0
-
-    sget v1, Lwlb;->colorOnSurface:I
-
-    invoke-static {p0, v1}, Lvx3;->r(Landroid/view/View;I)I
-
-    move-result v1
-
-    sget v2, Lwlb;->colorSurface:I
-
-    invoke-static {p0, v2}, Lvx3;->r(Landroid/view/View;I)I
-
-    move-result v2
-
-    const/high16 v3, 0x3f800000    # 1.0f
-
-    invoke-static {v2, v3, v0}, Lvx3;->C(IFI)I
-
-    move-result v0
-
-    const v3, 0x3f0a3d71    # 0.54f
-
-    invoke-static {v2, v3, v1}, Lvx3;->C(IFI)I
-
-    move-result v3
-
-    const v4, 0x3ec28f5c    # 0.38f
-
-    invoke-static {v2, v4, v1}, Lvx3;->C(IFI)I
-
-    move-result v5
-
-    invoke-static {v2, v4, v1}, Lvx3;->C(IFI)I
-
-    move-result v1
-
-    filled-new-array {v0, v3, v5, v1}, [I
-
-    move-result-object v0
-
-    new-instance v1, Landroid/content/res/ColorStateList;
-
-    sget-object v2, Ljw7;->z0:[[I
-
-    invoke-direct {v1, v2, v0}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
-
-    iput-object v1, p0, Ljw7;->w0:Landroid/content/res/ColorStateList;
-
-    :cond_0
-    iget-object p0, p0, Ljw7;->w0:Landroid/content/res/ColorStateList;
-
-    return-object p0
 .end method
 
 
 # virtual methods
-.method public final onAttachedToWindow()V
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
+    iput-object p1, p0, Ljw7;->o:Ljava/lang/Object;
 
-    iget-boolean v0, p0, Ljw7;->x0:Z
+    iget p1, p0, Ljw7;->X:I
 
-    if-eqz v0, :cond_0
+    const/high16 v0, -0x80000000
 
-    invoke-static {p0}, Ll93;->a(Landroid/widget/CompoundButton;)Landroid/content/res/ColorStateList;
+    or-int/2addr p1, v0
 
-    move-result-object v0
+    iput p1, p0, Ljw7;->X:I
 
-    if-nez v0, :cond_0
+    iget-object p1, p0, Ljw7;->Y:Lff7;
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Ljw7;->setUseMaterialThemeColors(Z)V
+    invoke-virtual {p1, v0, p0}, Lff7;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    :cond_0
-    return-void
-.end method
+    move-result-object p0
 
-.method public setUseMaterialThemeColors(Z)V
-    .locals 0
-
-    iput-boolean p1, p0, Ljw7;->x0:Z
-
-    if-eqz p1, :cond_0
-
-    invoke-direct {p0}, Ljw7;->getMaterialThemeColorsTintList()Landroid/content/res/ColorStateList;
-
-    move-result-object p1
-
-    invoke-static {p0, p1}, Ll93;->c(Landroid/widget/CompoundButton;Landroid/content/res/ColorStateList;)V
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    invoke-static {p0, p1}, Ll93;->c(Landroid/widget/CompoundButton;Landroid/content/res/ColorStateList;)V
-
-    :goto_0
-    return-void
+    return-object p0
 .end method

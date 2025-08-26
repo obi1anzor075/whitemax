@@ -1,158 +1,153 @@
 .class public final Lv9b;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Lmge;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final b:I
-
-.field public final c:Liba;
+.field public final synthetic Y:Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;
 
 
 # direct methods
-.method public constructor <init>(Lhge;ILzx1;)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lv9b;->Y:Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;
 
-    iput-object p1, p0, Lv9b;->a:Lmge;
+    const/4 p2, 0x2
 
-    iput p2, p0, Lv9b;->b:I
-
-    iput-object p3, p0, Lv9b;->c:Liba;
+    invoke-direct {p0, p2, p1}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    const/4 v0, 0x1
+    check-cast p1, Lj22;
 
-    if-ne p0, p1, :cond_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lv9b;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lv9b;
-
-    iget-object v1, p1, Lv9b;->a:Lmge;
-
-    iget-object v3, p0, Lv9b;->a:Lmge;
-
-    invoke-static {v3, v1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget v1, p0, Lv9b;->b:I
-
-    iget v3, p1, Lv9b;->b:I
-
-    if-eq v1, v3, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-object p0, p0, Lv9b;->c:Liba;
-
-    iget-object p1, p1, Lv9b;->c:Liba;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_4
-
-    return v2
-
-    :cond_4
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    iget-object v0, p0, Lv9b;->a:Lmge;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Lv9b;->b:I
-
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
-
-    move-result v0
-
-    iget-object p0, p0, Lv9b;->c:Liba;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ShowCancellableSnackbar(title="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lv9b;->a:Lmge;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", bottomMargin="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lv9b;->b:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", cancelAction="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lv9b;->c:Liba;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, p1, p2}, Lv9b;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
+
+    check-cast p0, Lv9b;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lv9b;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
+
+    new-instance v0, Lv9b;
+
+    iget-object p0, p0, Lv9b;->Y:Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;
+
+    invoke-direct {v0, p2, p0}, Lv9b;-><init>(Lkotlin/coroutines/Continuation;Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;)V
+
+    iput-object p1, v0, Lv9b;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lv9b;->X:Ljava/lang/Object;
+
+    check-cast p1, Lj22;
+
+    sget-object v0, Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;->r0:[Lbc7;
+
+    iget-object p0, p0, Lv9b;->Y:Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;
+
+    invoke-virtual {p0}, Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;->r0()Lvia;
+
+    move-result-object v0
+
+    iget v1, p1, Lj22;->a:I
+
+    invoke-virtual {v0, v1}, Lvia;->setTitle(I)V
+
+    invoke-static {p0}, Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;->p0(Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;)Lone/me/sdk/uikit/common/button/OneMeButton;
+
+    move-result-object v0
+
+    iget-boolean v1, p1, Lj22;->c:Z
+
+    invoke-virtual {v0, v1}, Lone/me/sdk/uikit/common/button/OneMeButton;->setEnabled(Z)V
+
+    invoke-static {p0}, Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;->p0(Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;)Lone/me/sdk/uikit/common/button/OneMeButton;
+
+    move-result-object v0
+
+    iget-boolean v1, p1, Lj22;->d:Z
+
+    invoke-virtual {v0, v1}, Lone/me/sdk/uikit/common/button/OneMeButton;->setProgressEnabled(Z)V
+
+    invoke-virtual {p0}, Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;->q0()Lacb;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_2
+
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_1
+
+    invoke-static {p0}, Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;->p0(Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;)Lone/me/sdk/uikit/common/button/OneMeButton;
+
+    move-result-object p0
+
+    iget-boolean p1, p1, Lj22;->b:Z
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/16 v1, 0x8
+
+    :goto_0
+    invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    goto :goto_1
+
+    :cond_1
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p0
+
+    :cond_2
+    invoke-static {p0}, Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;->p0(Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;)Lone/me/sdk/uikit/common/button/OneMeButton;
+
+    move-result-object p0
+
+    invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    :goto_1
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 .end method

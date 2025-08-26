@@ -118,7 +118,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     check-cast p1, Lorg/apache/commons/logging/impl/WeakHashtable$Referenced;
 
@@ -130,7 +130,7 @@
 
     move-result-object v2
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_3
 
     const/4 v0, 0x1
 
@@ -144,7 +144,7 @@
     move v2, v1
 
     :goto_0
-    if-ne v2, v0, :cond_1
+    if-ne v2, v0, :cond_2
 
     invoke-virtual {p0}, Lorg/apache/commons/logging/impl/WeakHashtable$Referenced;->hashCode()I
 
@@ -154,24 +154,24 @@
 
     move-result p1
 
-    if-ne p0, p1, :cond_3
+    if-ne p0, p1, :cond_1
 
-    move v1, v0
-
-    goto :goto_1
+    return v0
 
     :cond_1
-    move v1, v2
-
-    goto :goto_1
+    return v1
 
     :cond_2
-    invoke-virtual {v0, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
+    return v2
 
     :cond_3
-    :goto_1
+    invoke-virtual {v0, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+
+    :cond_4
     return v1
 .end method
 

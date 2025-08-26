@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public F1:Lbd2;
+.field public x1:Lqe2;
 
 
 # direct methods
@@ -16,7 +16,7 @@
     return-void
 .end method
 
-.method public static s1(Ljava/util/List;Ljava/util/HashSet;)Ljava/util/ArrayList;
+.method public static f1(Ljava/util/List;Ljava/util/Set;)Ljava/util/ArrayList;
     .locals 4
 
     new-instance v0, Ljava/util/ArrayList;
@@ -39,32 +39,32 @@
 
     move-result-object v1
 
-    check-cast v1, Lxm8;
+    check-cast v1, Ler8;
 
     const/4 v2, 0x0
 
     :goto_1
-    iget-object v3, v1, Lxm8;->a:Lvo8;
+    iget-object v3, v1, Ler8;->a:Lzs8;
 
-    iget-object v3, v3, Lvo8;->D0:Ljj7;
+    iget-object v3, v3, Lzs8;->v0:Lo9g;
 
-    invoke-virtual {v3}, Ljj7;->v()I
+    invoke-virtual {v3}, Lo9g;->g()I
 
     move-result v3
 
     if-ge v2, v3, :cond_0
 
-    iget-object v3, v1, Lxm8;->a:Lvo8;
+    iget-object v3, v1, Ler8;->a:Lzs8;
 
-    iget-object v3, v3, Lvo8;->D0:Ljj7;
+    iget-object v3, v3, Lzs8;->v0:Lo9g;
 
-    invoke-virtual {v3, v2}, Ljj7;->u(I)Lo10;
+    invoke-virtual {v3, v2}, Lo9g;->f(I)Lw10;
 
     move-result-object v3
 
-    iget-object v3, v3, Lo10;->a:Lj10;
+    iget-object v3, v3, Lw10;->a:Ls10;
 
-    invoke-virtual {p1, v3}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+    invoke-interface {p1, v3}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -85,12 +85,12 @@
 
 
 # virtual methods
-.method public final w0(Landroid/os/Bundle;)V
-    .locals 19
+.method public final k0(Landroid/os/Bundle;)V
+    .locals 18
 
     move-object/from16 v0, p0
 
-    invoke-super/range {p0 .. p1}, Lru/ok/messages/views/fragments/base/FrgBaseNonUi;->w0(Landroid/os/Bundle;)V
+    invoke-super/range {p0 .. p1}, Lru/ok/messages/views/fragments/base/FrgBaseNonUi;->k0(Landroid/os/Bundle;)V
 
     iget-object v1, v0, Landroidx/fragment/app/a;->Z:Landroid/os/Bundle;
 
@@ -100,162 +100,136 @@
 
     move-result-wide v4
 
-    new-instance v1, Ljava/util/HashSet;
+    new-instance v8, Ljava/util/HashSet;
 
-    iget-object v2, v0, Landroidx/fragment/app/a;->Z:Landroid/os/Bundle;
+    iget-object v1, v0, Landroidx/fragment/app/a;->Z:Landroid/os/Bundle;
 
-    const-string v3, "ru.ok.tamtam.extra.TYPES"
+    const-string v2, "ru.ok.tamtam.extra.TYPES"
 
-    invoke-virtual {v2, v3}, Landroid/os/Bundle;->getIntegerArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
+    invoke-virtual {v1, v2}, Landroid/os/Bundle;->getIntegerArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-direct {v1, v2}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+    invoke-direct {v8, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    iget-object v2, v0, Landroidx/fragment/app/a;->Z:Landroid/os/Bundle;
+    iget-object v1, v0, Landroidx/fragment/app/a;->Z:Landroid/os/Bundle;
 
-    const-string v3, "ru.ok.tamtam.extra.DESC_ORDER"
+    const-string v2, "ru.ok.tamtam.extra.DESC_ORDER"
 
-    invoke-virtual {v2, v3}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {v1, v2}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result v7
 
-    iget-object v2, v0, Landroidx/fragment/app/a;->Z:Landroid/os/Bundle;
+    iget-object v1, v0, Landroidx/fragment/app/a;->Z:Landroid/os/Bundle;
 
-    const-string v3, "ru.ok.tamtam.extra.INITIAL_MESSAGE_ID"
+    const-string v2, "ru.ok.tamtam.extra.INITIAL_MESSAGE_ID"
 
-    const-wide/16 v8, -0x1
+    const-wide/16 v9, -0x1
 
-    invoke-virtual {v2, v3, v8, v9}, Landroid/os/BaseBundle;->getLong(Ljava/lang/String;J)J
+    invoke-virtual {v1, v2, v9, v10}, Landroid/os/BaseBundle;->getLong(Ljava/lang/String;J)J
 
-    move-result-wide v2
+    move-result-wide v1
 
-    iget-object v6, v0, Lru/ok/messages/views/fragments/base/FrgBase;->u1:Lnqc;
+    iget-object v3, v0, Lru/ok/messages/views/fragments/base/FrgBase;->m1:Lowc;
 
-    invoke-virtual {v6}, Lscout/Component;->getAccessor()Lw4;
+    invoke-virtual {v3}, Lscout/Component;->getAccessor()Lu4;
+
+    move-result-object v3
+
+    const-class v6, Loe2;
+
+    invoke-virtual {v3, v6}, Lu4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Loe2;
+
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v6
 
-    const-class v8, Lzc2;
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {v6, v8}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    new-instance v1, Lqe2;
 
-    move-result-object v6
+    iget-object v9, v3, Loe2;->d:Lvu0;
 
-    check-cast v6, Lzc2;
+    iget-object v10, v3, Loe2;->e:Ln82;
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    iget-object v11, v3, Loe2;->f:Lxs8;
 
-    move-result-object v2
+    iget-object v12, v3, Loe2;->g:Lxc2;
 
-    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v13, v3, Loe2;->h:Lf4b;
 
-    new-instance v15, Lbd2;
+    iget-object v14, v3, Loe2;->i:Lwt8;
 
-    iget-object v14, v6, Lzc2;->b:Lqmc;
+    iget-object v15, v3, Loe2;->a:Lgsc;
 
-    iget-object v13, v6, Lzc2;->c:Lqmc;
+    iget-object v2, v3, Loe2;->b:Lgsc;
 
-    iget-object v9, v6, Lzc2;->d:Ltt0;
-
-    iget-object v10, v6, Lzc2;->e:Lt52;
-
-    iget-object v11, v6, Lzc2;->f:Lto8;
-
-    iget-object v12, v6, Lzc2;->g:Lhb2;
-
-    iget-object v8, v6, Lzc2;->h:Ln1b;
-
-    iget-object v3, v6, Lzc2;->i:Lrp8;
-
-    iget-object v6, v6, Lzc2;->a:Lqmc;
-
-    move-object/from16 v16, v3
-
-    move-object v3, v15
-
-    move-object/from16 v17, v6
-
-    move-object v6, v2
-
-    move-object v2, v8
-
-    move-object v8, v1
-
-    move-object/from16 v18, v13
-
-    move-object v13, v2
-
-    move-object v2, v14
-
-    move-object/from16 v14, v16
-
-    move-object/from16 p1, v1
-
-    move-object v1, v15
-
-    move-object/from16 v15, v17
+    iget-object v3, v3, Loe2;->c:Lgsc;
 
     move-object/from16 v16, v2
 
-    move-object/from16 v17, v18
+    move-object/from16 v17, v3
 
-    invoke-direct/range {v3 .. v17}, Lbd2;-><init>(JLjava/lang/Long;ZLjava/util/HashSet;Ltt0;Lt52;Lto8;Lhb2;Ln1b;Lrp8;Lqmc;Lqmc;Lqmc;)V
+    move-object v3, v1
 
-    iput-object v1, v0, Lru/ok/messages/media/chat/FrgChatMediaLoader;->F1:Lbd2;
+    invoke-direct/range {v3 .. v17}, Lqe2;-><init>(JLjava/lang/Long;ZLjava/util/HashSet;Lvu0;Ln82;Lxs8;Lxc2;Lf4b;Lwt8;Lgsc;Lgsc;Lgsc;)V
 
-    iget-object v2, v1, Lbd2;->p:Ltt0;
+    iput-object v3, v0, Lru/ok/messages/media/chat/FrgChatMediaLoader;->x1:Lqe2;
 
-    invoke-virtual {v2, v1}, Ltt0;->d(Ljava/lang/Object;)V
+    iget-object v1, v3, Lqe2;->p:Lvu0;
 
-    sget-object v1, Lkg8;->d:Ljava/util/HashSet;
+    invoke-virtual {v1, v3}, Lvu0;->d(Ljava/lang/Object;)V
 
-    move-object/from16 v2, p1
+    sget-object v1, Lvk8;->d:Ljava/util/HashSet;
 
-    invoke-interface {v2, v1}, Ljava/util/Set;->equals(Ljava/lang/Object;)Z
+    invoke-interface {v8, v1}, Ljava/util/Set;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    iget-object v0, v0, Lru/ok/messages/media/chat/FrgChatMediaLoader;->F1:Lbd2;
+    iget-object v0, v0, Lru/ok/messages/media/chat/FrgChatMediaLoader;->x1:Lqe2;
 
-    iget-boolean v1, v0, Lbd2;->k:Z
+    iget-boolean v1, v0, Lqe2;->k:Z
 
     if-eqz v1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const-string v1, "bd2"
+    const-string v1, "qe2"
 
     const-string v2, "load: start"
 
-    invoke-static {v1, v2}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v1, v0, Lbd2;->d:Ljava/util/ArrayList;
+    iget-object v1, v0, Lqe2;->d:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lbd2;->b(Z)V
+    invoke-virtual {v0, v1}, Lqe2;->b(Z)V
 
     :cond_1
     :goto_0
     return-void
 .end method
 
-.method public final z0()V
+.method public final n0()V
     .locals 2
 
-    iget-object v0, p0, Lru/ok/messages/media/chat/FrgChatMediaLoader;->F1:Lbd2;
+    iget-object v0, p0, Lru/ok/messages/media/chat/FrgChatMediaLoader;->x1:Lqe2;
 
-    iget-object v1, v0, Lbd2;->p:Ltt0;
+    iget-object v1, v0, Lqe2;->p:Lvu0;
 
-    invoke-virtual {v1, v0}, Ltt0;->f(Ljava/lang/Object;)V
+    invoke-virtual {v1, v0}, Lvu0;->f(Ljava/lang/Object;)V
 
-    invoke-super {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->z0()V
+    invoke-super {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->n0()V
 
     return-void
 .end method

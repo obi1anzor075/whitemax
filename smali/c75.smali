@@ -1,132 +1,148 @@
 .class public final Lc75;
-.super Libe;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Comparable;
+.implements Lvff;
+.implements Lgx1;
+.implements Lc2b;
 
 
 # instance fields
-.field public final X:I
+.field public a:Lvff;
 
-.field public final o:Ljava/util/zip/ZipEntry;
+.field public b:Lgx1;
+
+.field public c:Lvff;
+
+.field public o:Lgx1;
 
 
-# direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/util/zip/ZipEntry;I)V
-    .locals 2
+# virtual methods
+.method public final a(ILjava/lang/Object;)V
+    .locals 1
 
-    invoke-virtual {p2}, Ljava/util/zip/ZipEntry;->getCrc()J
+    const/4 v0, 0x7
 
-    move-result-wide v0
+    if-eq p1, v0, :cond_3
 
-    invoke-static {v0, v1}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+    const/16 v0, 0x8
 
-    move-result-object v0
+    if-eq p1, v0, :cond_2
 
-    const/16 v1, 0xc
+    const/16 v0, 0x2710
 
-    invoke-direct {p0, p1, v1, v0}, Libe;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    if-eq p1, v0, :cond_0
 
-    iput-object p2, p0, Lc75;->o:Ljava/util/zip/ZipEntry;
+    return-void
 
-    iput p3, p0, Lc75;->X:I
+    :cond_0
+    check-cast p2, Laud;
+
+    if-nez p2, :cond_1
+
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Lc75;->c:Lvff;
+
+    iput-object p1, p0, Lc75;->o:Lgx1;
+
+    return-void
+
+    :cond_1
+    invoke-virtual {p2}, Laud;->getVideoFrameMetadataListener()Lvff;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lc75;->c:Lvff;
+
+    invoke-virtual {p2}, Laud;->getCameraMotionListener()Lgx1;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lc75;->o:Lgx1;
+
+    return-void
+
+    :cond_2
+    check-cast p2, Lgx1;
+
+    iput-object p2, p0, Lc75;->b:Lgx1;
+
+    return-void
+
+    :cond_3
+    check-cast p2, Lvff;
+
+    iput-object p2, p0, Lc75;->a:Lvff;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final compareTo(Ljava/lang/Object;)I
-    .locals 0
-
-    check-cast p1, Lc75;
-
-    iget-object p0, p0, Libe;->b:Ljava/lang/Object;
-
-    check-cast p0, Ljava/lang/String;
-
-    iget-object p1, p1, Libe;->b:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/String;
-
-    invoke-virtual {p0, p1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    if-eqz p1, :cond_3
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    const-class v3, Lc75;
-
-    if-eq v3, v2, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    check-cast p1, Lc75;
-
-    iget-object v2, p0, Lc75;->o:Ljava/util/zip/ZipEntry;
-
-    iget-object v3, p1, Lc75;->o:Ljava/util/zip/ZipEntry;
-
-    invoke-virtual {v2, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    iget p0, p0, Lc75;->X:I
-
-    iget p1, p1, Lc75;->X:I
-
-    if-ne p0, p1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    move v0, v1
-
-    :goto_0
-    return v0
-
-    :cond_3
-    :goto_1
-    return v1
-.end method
-
-.method public final hashCode()I
+.method public final b(J[F)V
     .locals 1
 
-    iget v0, p0, Lc75;->X:I
+    iget-object v0, p0, Lc75;->o:Lgx1;
 
-    mul-int/lit8 v0, v0, 0x1f
+    if-eqz v0, :cond_0
 
-    iget-object p0, p0, Lc75;->o:Ljava/util/zip/ZipEntry;
+    invoke-interface {v0, p1, p2, p3}, Lgx1;->b(J[F)V
 
-    invoke-virtual {p0}, Ljava/util/zip/ZipEntry;->hashCode()I
+    :cond_0
+    iget-object p0, p0, Lc75;->b:Lgx1;
 
-    move-result p0
+    if-eqz p0, :cond_1
 
-    add-int/2addr p0, v0
+    invoke-interface {p0, p1, p2, p3}, Lgx1;->b(J[F)V
 
-    return p0
+    :cond_1
+    return-void
+.end method
+
+.method public final c()V
+    .locals 1
+
+    iget-object v0, p0, Lc75;->o:Lgx1;
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0}, Lgx1;->c()V
+
+    :cond_0
+    iget-object p0, p0, Lc75;->b:Lgx1;
+
+    if-eqz p0, :cond_1
+
+    invoke-interface {p0}, Lgx1;->c()V
+
+    :cond_1
+    return-void
+.end method
+
+.method public final d(JJLdz5;Landroid/media/MediaFormat;)V
+    .locals 7
+
+    iget-object v0, p0, Lc75;->c:Lvff;
+
+    if-eqz v0, :cond_0
+
+    move-wide v1, p1
+
+    move-wide v3, p3
+
+    move-object v5, p5
+
+    move-object v6, p6
+
+    invoke-interface/range {v0 .. v6}, Lvff;->d(JJLdz5;Landroid/media/MediaFormat;)V
+
+    :cond_0
+    iget-object p0, p0, Lc75;->a:Lvff;
+
+    if-eqz p0, :cond_1
+
+    invoke-interface/range {p0 .. p6}, Lvff;->d(JJLdz5;Landroid/media/MediaFormat;)V
+
+    :cond_1
+    return-void
 .end method

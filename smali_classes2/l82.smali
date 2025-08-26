@@ -1,183 +1,120 @@
-.class public final Ll82;
-.super Ll5e;
+.class public final synthetic Ll82;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field public final synthetic X:Lb92;
+.field public final synthetic a:Ln82;
 
-.field public final synthetic Y:Ljava/lang/String;
+.field public final synthetic b:Ljava/util/List;
 
-.field public final synthetic Z:J
+.field public final synthetic c:Ljava/lang/String;
+
+.field public final synthetic o:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lb92;Ljava/lang/String;JLkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(Ln82;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    iput-object p1, p0, Ll82;->X:Lb92;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Ll82;->Y:Ljava/lang/String;
+    iput-object p1, p0, Ll82;->a:Ln82;
 
-    iput-wide p3, p0, Ll82;->Z:J
+    iput-object p2, p0, Ll82;->b:Ljava/util/List;
 
-    const/4 p1, 0x2
+    iput-object p3, p0, Ll82;->c:Ljava/lang/String;
 
-    invoke-direct {p0, p1, p5}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p4, p0, Ll82;->o:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Lou3;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Ll82;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Ll82;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Ll82;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final call()Ljava/lang/Object;
     .locals 6
 
-    new-instance p1, Ll82;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget-object v2, p0, Ll82;->Y:Ljava/lang/String;
+    const-string v1, "createMultiChat, contacts.size() = "
 
-    iget-wide v3, p0, Ll82;->Z:J
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Ll82;->X:Lb92;
+    iget-object v1, p0, Ll82;->b:Ljava/util/List;
 
-    move-object v0, p1
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    move-object v5, p2
+    move-result v2
 
-    invoke-direct/range {v0 .. v5}, Ll82;-><init>(Lb92;Ljava/lang/String;JLkotlin/coroutines/Continuation;)V
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 7
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    sget-object p1, Lb92;->O0:Ljava/lang/String;
-
-    iget-object p1, p0, Ll82;->X:Lb92;
-
-    invoke-virtual {p1}, Lb92;->e()Ludc;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const-string v0, "SELECT COUNT(*) FROM folder_and_chats WHERE folderId = ? AND chatId = ?"
-
-    const/4 v1, 0x2
-
-    invoke-static {v1, v0}, Lpec;->a(ILjava/lang/String;)Lpec;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    const/4 v2, 0x1
+    const-string v2, "n82"
 
-    iget-object v3, p0, Ll82;->Y:Ljava/lang/String;
+    invoke-static {v2, v0}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-nez v3, :cond_0
+    sget-object v0, Li92;->b:Li92;
 
-    invoke-virtual {v0, v2}, Lpec;->W(I)V
+    iget-object v2, p0, Ll82;->a:Ln82;
 
-    goto :goto_0
+    iget-object v3, p0, Ll82;->c:Ljava/lang/String;
 
-    :cond_0
-    invoke-virtual {v0, v2, v3}, Lpec;->f(ILjava/lang/String;)V
+    iget-object p0, p0, Ll82;->o:Ljava/lang/String;
 
-    :goto_0
-    iget-wide v3, p0, Ll82;->Z:J
-
-    invoke-virtual {v0, v1, v3, v4}, Lpec;->j(IJ)V
-
-    iget-object p0, p1, Ludc;->a:Laec;
-
-    invoke-virtual {p0}, Laec;->b()V
-
-    const/4 p1, 0x0
-
-    invoke-virtual {p0, v0, p1}, Laec;->o(Lf4e;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
+    invoke-virtual {v2, v0, v1, v3, p0}, Ln82;->b(Li92;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)Ly42;
 
     move-result-object p0
 
-    :try_start_0
-    invoke-interface {p0}, Landroid/database/Cursor;->moveToFirst()Z
+    new-instance v0, Lb10;
 
-    move-result p1
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    const-wide/16 v3, 0x0
+    sget-object v4, Lc10;->b:Lc10;
 
-    const/4 v1, 0x0
+    iput-object v4, v0, Lb10;->a:Lc10;
 
-    if-eqz p1, :cond_1
+    const/4 v4, 0x3
 
-    invoke-interface {p0, v1}, Landroid/database/Cursor;->getLong(I)J
+    iput v4, v0, Lb10;->l:I
 
-    move-result-wide v5
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iput-object v1, v0, Lb10;->c:Ljava/util/Collection;
 
-    goto :goto_1
+    iput-object v3, v0, Lb10;->d:Ljava/lang/String;
 
-    :catchall_0
-    move-exception p1
+    invoke-virtual {v0}, Lb10;->a()Ld10;
 
-    goto :goto_3
+    move-result-object v0
 
-    :cond_1
-    move-wide v5, v3
+    iget-wide v3, p0, Ly42;->a:J
 
-    :goto_1
-    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+    new-instance v1, Lm6d;
 
-    invoke-virtual {v0}, Lpec;->m()V
+    const/4 v5, 0x1
 
-    cmp-long p0, v5, v3
+    invoke-direct {v1, v3, v4, v0, v5}, Lm6d;-><init>(JLjava/lang/Object;I)V
 
-    if-eqz p0, :cond_2
+    new-instance v0, Ln6d;
 
-    goto :goto_2
+    const/4 v3, 0x0
 
-    :cond_2
-    move v2, v1
+    invoke-direct {v0, v1, v3}, Ln6d;-><init>(Lm6d;B)V
 
-    :goto_2
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iget-object v1, v2, Ln82;->w:Ltm4;
 
-    move-result-object p0
+    invoke-virtual {v1}, Ltm4;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lw9g;
+
+    invoke-virtual {v1, v0}, Lw9g;->a(Li6d;)V
 
     return-object p0
-
-    :goto_3
-    invoke-interface {p0}, Landroid/database/Cursor;->close()V
-
-    invoke-virtual {v0}, Lpec;->m()V
-
-    throw p1
 .end method

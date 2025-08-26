@@ -1,59 +1,53 @@
 .class public final Lql9;
-.super Llbe;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# static fields
+.field public static final synthetic b:[Lbc7;
+
+
 # instance fields
-.field public c:Luj3;
+.field public final a:Ltm4;
 
 
-# virtual methods
-.method public final b(Lws8;Ljava/lang/String;)V
-    .locals 1
+# direct methods
+.method static constructor <clinit>()V
+    .locals 5
 
-    const-string v0, "contact"
+    new-instance v0, Lnlb;
 
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-class v1, Lql9;
 
-    move-result p2
+    const-string v2, "serverPrefs"
 
-    if-eqz p2, :cond_0
+    const-string v3, "getServerPrefs()Lru/ok/tamtam/prefs/ServerPrefs;"
 
-    invoke-static {p1}, Luj3;->e(Lws8;)Luj3;
+    const/4 v4, 0x0
 
-    move-result-object p1
+    invoke-direct {v0, v1, v2, v3, v4}, Lnlb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
-    iput-object p1, p0, Lql9;->c:Luj3;
+    sget-object v1, Llcc;->a:Lmcc;
 
-    goto :goto_0
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    :cond_0
-    invoke-virtual {p1}, Lws8;->z()V
+    const/4 v1, 0x1
 
-    :goto_0
+    new-array v1, v1, [Lbc7;
+
+    aput-object v0, v1, v4
+
+    sput-object v1, Lql9;->b:[Lbc7;
+
     return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public constructor <init>(Ltm4;)V
+    .locals 0
 
-    iget-object p0, p0, Lql9;->c:Luj3;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iput-object p1, p0, Lql9;->a:Ltm4;
 
-    const-string v1, "{contact="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, "}"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

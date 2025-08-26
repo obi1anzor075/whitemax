@@ -1,240 +1,43 @@
-.class public final synthetic Ljfb;
+.class public abstract synthetic Ljfb;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lu16;
 
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:J
-
-.field public final synthetic c:Z
-
-.field public final synthetic o:Ltaf;
+# static fields
+.field public static final synthetic $EnumSwitchMapping$0:[I
 
 
 # direct methods
-.method public synthetic constructor <init>(JLlyd;Z)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 4
 
-    .line 1
-    const/4 v0, 0x1
+    const/4 v0, 0x2
 
-    iput v0, p0, Ljfb;->a:I
+    invoke-static {v0}, Lzt1;->v(I)[I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object v1
 
-    iput-wide p1, p0, Ljfb;->b:J
+    array-length v1, v1
 
-    iput-object p3, p0, Ljfb;->o:Ltaf;
+    new-array v1, v1, [I
 
-    iput-boolean p4, p0, Ljfb;->c:Z
+    const/4 v2, 0x1
 
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lfgb;JZ)V
-    .locals 1
-
-    .line 2
-    const/4 v0, 0x0
-
-    iput v0, p0, Ljfb;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ljfb;->o:Ltaf;
-
-    iput-wide p2, p0, Ljfb;->b:J
-
-    iput-boolean p4, p0, Ljfb;->c:Z
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 20
-
-    move-object/from16 v0, p0
-
-    iget v1, v0, Ljfb;->a:I
-
-    packed-switch v1, :pswitch_data_0
-
-    move-object/from16 v1, p1
-
-    check-cast v1, Losd;
-
-    iget-object v2, v1, Losd;->w0:Ljava/lang/String;
-
-    if-nez v2, :cond_0
-
-    const-string v2, ""
-
-    :cond_0
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    if-nez v3, :cond_1
-
-    iget-object v2, v1, Losd;->o:Ljava/lang/String;
-
-    :cond_1
-    move-object v10, v2
-
-    new-instance v2, Lktd;
-
-    iget-object v3, v0, Ljfb;->o:Ltaf;
-
-    check-cast v3, Llyd;
-
-    iget-object v3, v3, Llyd;->w0:Lt97;
-
-    invoke-interface {v3}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljb5;
-
-    check-cast v3, Lkb5;
-
-    invoke-virtual {v3}, Lkb5;->v()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    iget-object v3, v1, Losd;->D0:Ljava/lang/String;
-
-    :goto_0
-    move-object v12, v3
-
-    goto :goto_1
-
-    :cond_2
     const/4 v3, 0x0
 
-    goto :goto_0
+    :try_start_0
+    aput v2, v1, v3
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    :goto_1
-    iget-wide v6, v0, Ljfb;->b:J
+    :catch_0
+    :try_start_1
+    aput v0, v1, v2
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    iget-boolean v0, v0, Ljfb;->c:Z
+    :catch_1
+    sput-object v1, Ljfb;->$EnumSwitchMapping$0:[I
 
-    iget-wide v3, v1, Losd;->a:J
-
-    if-eqz v0, :cond_3
-
-    invoke-static {v6, v7}, Ljava/lang/Math;->abs(J)J
-
-    move-result-wide v8
-
-    sub-long/2addr v8, v3
-
-    move-wide/from16 v17, v8
-
-    goto :goto_2
-
-    :cond_3
-    move-wide/from16 v17, v3
-
-    :goto_2
-    const/4 v15, 0x0
-
-    const/16 v16, 0x0
-
-    iget-wide v4, v1, Losd;->a:J
-
-    iget-wide v8, v1, Losd;->z0:J
-
-    iget-object v11, v1, Losd;->A0:Ljava/lang/String;
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x0
-
-    const/16 v19, 0xfc0
-
-    move-object v3, v2
-
-    invoke-direct/range {v3 .. v19}, Lktd;-><init>(JJJLjava/lang/String;Ljava/lang/String;Ljava/lang/String;IIZZJI)V
-
-    return-object v2
-
-    :pswitch_0
-    move-object/from16 v1, p1
-
-    check-cast v1, Ljba;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    if-eqz v1, :cond_5
-
-    const/4 v3, 0x1
-
-    if-eq v1, v3, :cond_5
-
-    const/4 v3, 0x2
-
-    if-eq v1, v3, :cond_5
-
-    if-eq v1, v2, :cond_5
-
-    const/4 v0, 0x4
-
-    if-ne v1, v0, :cond_4
-
-    goto :goto_3
-
-    :cond_4
-    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw v0
-
-    :cond_5
-    iget-object v1, v0, Ljfb;->o:Ltaf;
-
-    move-object v4, v1
-
-    check-cast v4, Lfgb;
-
-    iget-object v1, v4, Ltaf;->a:Lkotlinx/coroutines/internal/ContextScope;
-
-    new-instance v9, Lagb;
-
-    iget-wide v5, v0, Ljfb;->b:J
-
-    iget-boolean v7, v0, Ljfb;->c:Z
-
-    const/4 v8, 0x0
-
-    move-object v3, v9
-
-    invoke-direct/range {v3 .. v8}, Lagb;-><init>(Lfgb;JZLkotlin/coroutines/Continuation;)V
-
-    const/4 v0, 0x0
-
-    invoke-static {v1, v0, v0, v9, v2}, Lxs7;->E(Lou3;Lhu3;Lru3;Li26;I)Lqod;
-
-    :goto_3
-    sget-object v0, Ljue;->a:Ljue;
-
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

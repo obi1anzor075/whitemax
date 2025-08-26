@@ -7,17 +7,17 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 3
 
-    sget v0, Lulb;->editTextPreferenceStyle:I
+    sget v0, Lgqb;->editTextPreferenceStyle:I
 
     const v1, 0x1010092
 
-    invoke-static {v0, v1, p1}, Lhwf;->e(IILandroid/content/Context;)I
+    invoke-static {v0, v1, p1}, Ltk9;->n(IILandroid/content/Context;)I
 
     move-result v0
 
     invoke-direct {p0, p1, p2, v0}, Landroidx/preference/DialogPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    sget-object v1, Lrvb;->EditTextPreference:[I
+    sget-object v1, Ln0c;->EditTextPreference:[I
 
     const/4 v2, 0x0
 
@@ -25,7 +25,7 @@
 
     move-result-object p1
 
-    sget p2, Lrvb;->EditTextPreference_useSimpleSummaryProvider:I
+    sget p2, Ln0c;->EditTextPreference_useSimpleSummaryProvider:I
 
     invoke-virtual {p1, p2, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
@@ -37,20 +37,22 @@
 
     if-eqz p2, :cond_1
 
-    sget-object p2, Lom3;->Y:Lom3;
+    sget-object p2, Lru4;->q0:Lru4;
 
     if-nez p2, :cond_0
 
-    new-instance p2, Lom3;
+    new-instance p2, Lru4;
 
-    invoke-direct {p2}, Ljava/lang/Object;-><init>()V
+    const/16 v0, 0xa
 
-    sput-object p2, Lom3;->Y:Lom3;
+    invoke-direct {p2, v0}, Lru4;-><init>(I)V
+
+    sput-object p2, Lru4;->q0:Lru4;
 
     :cond_0
-    sget-object p2, Lom3;->Y:Lom3;
+    sget-object p2, Lru4;->q0:Lru4;
 
-    iput-object p2, p0, Landroidx/preference/Preference;->Z:Lz1b;
+    iput-object p2, p0, Landroidx/preference/Preference;->Z:Lr4b;
 
     :cond_1
     invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V

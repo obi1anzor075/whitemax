@@ -1,112 +1,64 @@
 .class public final Luy9;
-.super Ll5e;
+.super Ljava/util/concurrent/atomic/AtomicReference;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lam4;
 
 
 # instance fields
-.field public X:I
+.field public final a:La0a;
+
+
+# direct methods
+.method public constructor <init>(La0a;Lvy9;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+
+    iput-object p1, p0, Luy9;->a:La0a;
+
+    invoke-virtual {p0, p2}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final f()V
+    .locals 1
 
-    check-cast p1, Lou3;
+    const/4 v0, 0x0
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {p0, p1, p2}, Luy9;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    move-result-object v0
 
-    move-result-object p0
+    check-cast v0, Lvy9;
 
-    check-cast p0, Luy9;
+    if-eqz v0, :cond_0
 
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Luy9;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 0
-
-    new-instance p0, Luy9;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    return-object p0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    sget-object v0, Lpu3;->a:Lpu3;
-
-    iget v1, p0, Luy9;->X:I
-
-    const/4 v2, 0x1
-
-    if-eqz v1, :cond_1
-
-    if-ne v1, v2, :cond_0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto :goto_0
+    invoke-virtual {v0, p0}, Lvy9;->a(Luy9;)V
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    return-void
+.end method
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+.method public final g()Z
+    .locals 0
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    sget-object p1, Lnqc;->a:Lnqc;
-
-    invoke-virtual {p1}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p1
-
-    const-class v1, Lv72;
-
-    invoke-virtual {p1, v1}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lv72;
-
-    check-cast p1, Lb92;
-
-    invoke-virtual {p1}, Lb92;->g()Lik5;
-
-    move-result-object p1
-
-    iput v2, p0, Luy9;->X:I
-
-    invoke-static {p1, p0}, Lez3;->c0(Lik5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     move-result-object p0
 
-    if-ne p0, v0, :cond_2
+    if-nez p0, :cond_0
 
-    return-object v0
+    const/4 p0, 0x1
 
-    :cond_2
-    :goto_0
-    sget-object p0, Ljue;->a:Ljue;
+    return p0
 
-    return-object p0
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
 .end method

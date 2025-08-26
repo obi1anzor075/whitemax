@@ -1,433 +1,159 @@
 .class public final Lumd;
-.super Lomd;
+.super Lcom/google/android/gms/common/internal/a;
 .source "SourceFile"
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lumd;",
-            ">;"
-        }
-    .end annotation
-.end field
+# interfaces
+.implements Lhk;
 
 
 # instance fields
-.field public final A0:I
+.field public final F0:Z
 
-.field public final B0:I
+.field public final G0:Lrwf;
 
-.field public final X:Z
+.field public final H0:Landroid/os/Bundle;
 
-.field public final Y:J
-
-.field public final Z:J
-
-.field public final a:J
-
-.field public final b:Z
-
-.field public final c:Z
-
-.field public final o:Z
-
-.field public final w0:Ljava/util/List;
-
-.field public final x0:Z
-
-.field public final y0:J
-
-.field public final z0:I
+.field public final I0:Ljava/lang/Integer;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;Lrwf;Landroid/os/Bundle;Lse6;Lte6;)V
+    .locals 8
 
-    new-instance v0, Lxkd;
+    const/16 v3, 0x2c
 
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Lxkd;-><init>(I)V
-
-    sput-object v0, Lumd;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(JZZZZJJLjava/util/List;ZJIII)V
-    .locals 3
+    const/4 v7, 0x0
 
     move-object v0, p0
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object v1, p1
 
-    move-wide v1, p1
+    move-object v2, p2
 
-    .line 2
-    iput-wide v1, v0, Lumd;->a:J
+    move-object v4, p3
 
-    move v1, p3
+    move-object v5, p5
 
-    .line 3
-    iput-boolean v1, v0, Lumd;->b:Z
+    move-object v6, p6
 
-    move v1, p4
+    invoke-direct/range {v0 .. v7}, Lcom/google/android/gms/common/internal/a;-><init>(Landroid/content/Context;Landroid/os/Looper;ILrwf;Lse6;Lte6;I)V
 
-    .line 4
-    iput-boolean v1, v0, Lumd;->c:Z
+    const/4 p0, 0x1
 
-    move v1, p5
+    iput-boolean p0, v0, Lumd;->F0:Z
 
-    .line 5
-    iput-boolean v1, v0, Lumd;->o:Z
+    iput-object v4, v0, Lumd;->G0:Lrwf;
 
-    move v1, p6
+    iput-object p4, v0, Lumd;->H0:Landroid/os/Bundle;
 
-    .line 6
-    iput-boolean v1, v0, Lumd;->X:Z
+    iget-object p0, v4, Lrwf;->f:Ljava/lang/Object;
 
-    move-wide v1, p7
+    check-cast p0, Ljava/lang/Integer;
 
-    .line 7
-    iput-wide v1, v0, Lumd;->Y:J
-
-    move-wide v1, p9
-
-    .line 8
-    iput-wide v1, v0, Lumd;->Z:J
-
-    .line 9
-    invoke-static {p11}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lumd;->w0:Ljava/util/List;
-
-    move v1, p12
-
-    .line 10
-    iput-boolean v1, v0, Lumd;->x0:Z
-
-    move-wide/from16 v1, p13
-
-    .line 11
-    iput-wide v1, v0, Lumd;->y0:J
-
-    move/from16 v1, p15
-
-    .line 12
-    iput v1, v0, Lumd;->z0:I
-
-    move/from16 v1, p16
-
-    .line 13
-    iput v1, v0, Lumd;->A0:I
-
-    move/from16 v1, p17
-
-    .line 14
-    iput v1, v0, Lumd;->B0:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Parcel;)V
-    .locals 12
-
-    .line 15
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 16
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lumd;->a:J
-
-    .line 17
-    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    if-ne v0, v1, :cond_0
-
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_0
-    move v0, v2
-
-    :goto_0
-    iput-boolean v0, p0, Lumd;->b:Z
-
-    .line 18
-    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
-
-    move-result v0
-
-    if-ne v0, v1, :cond_1
-
-    move v0, v1
-
-    goto :goto_1
-
-    :cond_1
-    move v0, v2
-
-    :goto_1
-    iput-boolean v0, p0, Lumd;->c:Z
-
-    .line 19
-    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
-
-    move-result v0
-
-    if-ne v0, v1, :cond_2
-
-    move v0, v1
-
-    goto :goto_2
-
-    :cond_2
-    move v0, v2
-
-    :goto_2
-    iput-boolean v0, p0, Lumd;->o:Z
-
-    .line 20
-    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
-
-    move-result v0
-
-    if-ne v0, v1, :cond_3
-
-    move v0, v1
-
-    goto :goto_3
-
-    :cond_3
-    move v0, v2
-
-    :goto_3
-    iput-boolean v0, p0, Lumd;->X:Z
-
-    .line 21
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v3
-
-    iput-wide v3, p0, Lumd;->Y:J
-
-    .line 22
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v3
-
-    iput-wide v3, p0, Lumd;->Z:J
-
-    .line 23
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    .line 24
-    new-instance v3, Ljava/util/ArrayList;
-
-    invoke-direct {v3, v0}, Ljava/util/ArrayList;-><init>(I)V
-
-    move v4, v2
-
-    :goto_4
-    if-ge v4, v0, :cond_4
-
-    .line 25
-    new-instance v11, Lsmd;
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v6
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v7
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v9
-
-    move-object v5, v11
-
-    invoke-direct/range {v5 .. v10}, Lsmd;-><init>(IJJ)V
-
-    .line 26
-    invoke-virtual {v3, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_4
-
-    .line 27
-    :cond_4
-    invoke-static {v3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lumd;->w0:Ljava/util/List;
-
-    .line 28
-    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
-
-    move-result v0
-
-    if-ne v0, v1, :cond_5
-
-    goto :goto_5
-
-    :cond_5
-    move v1, v2
-
-    :goto_5
-    iput-boolean v1, p0, Lumd;->x0:Z
-
-    .line 29
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lumd;->y0:J
-
-    .line 30
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Lumd;->z0:I
-
-    .line 31
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Lumd;->A0:I
-
-    .line 32
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result p1
-
-    iput p1, p0, Lumd;->B0:I
+    iput-object p0, v0, Lumd;->I0:Ljava/lang/Integer;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 5
+.method public final g()I
+    .locals 0
 
-    iget-wide v0, p0, Lumd;->a:J
+    const p0, 0xbdfcb8
 
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
+    return p0
+.end method
 
-    iget-boolean p2, p0, Lumd;->b:Z
+.method public final j()Z
+    .locals 0
 
-    int-to-byte p2, p2
+    iget-boolean p0, p0, Lumd;->F0:Z
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByte(B)V
+    return p0
+.end method
 
-    iget-boolean p2, p0, Lumd;->c:Z
+.method public final l(Landroid/os/IBinder;)Landroid/os/IInterface;
+    .locals 2
 
-    int-to-byte p2, p2
+    if-nez p1, :cond_0
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByte(B)V
+    const/4 p0, 0x0
 
-    iget-boolean p2, p0, Lumd;->o:Z
+    return-object p0
 
-    int-to-byte p2, p2
+    :cond_0
+    const-string p0, "com.google.android.gms.signin.internal.ISignInService"
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByte(B)V
+    invoke-interface {p1, p0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
-    iget-boolean p2, p0, Lumd;->X:Z
+    move-result-object v0
 
-    int-to-byte p2, p2
+    instance-of v1, v0, Lifg;
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByte(B)V
+    if-eqz v1, :cond_1
 
-    iget-wide v0, p0, Lumd;->Y:J
+    check-cast v0, Lifg;
 
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
+    return-object v0
 
-    iget-wide v0, p0, Lumd;->Z:J
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
-
-    iget-object p2, p0, Lumd;->w0:Ljava/util/List;
-
-    invoke-interface {p2}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    :cond_1
+    new-instance v0, Lifg;
 
     const/4 v1, 0x0
 
-    :goto_0
-    if-ge v1, v0, :cond_0
+    invoke-direct {v0, p1, p0, v1}, Lfeg;-><init>(Landroid/os/IBinder;Ljava/lang/String;I)V
 
-    invoke-interface {p2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    return-object v0
+.end method
+
+.method public final n()Landroid/os/Bundle;
+    .locals 3
+
+    iget-object v0, p0, Lumd;->G0:Lrwf;
+
+    iget-object v1, v0, Lrwf;->a:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/String;
+
+    iget-object v2, p0, Lcom/google/android/gms/common/internal/a;->c:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v2
 
-    check-cast v2, Lsmd;
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    iget v3, v2, Lsmd;->a:I
+    move-result v1
 
-    invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
+    iget-object p0, p0, Lumd;->H0:Landroid/os/Bundle;
 
-    iget-wide v3, v2, Lsmd;->b:J
+    if-nez v1, :cond_0
 
-    invoke-virtual {p1, v3, v4}, Landroid/os/Parcel;->writeLong(J)V
+    iget-object v0, v0, Lrwf;->a:Ljava/lang/Object;
 
-    iget-wide v2, v2, Lsmd;->c:J
+    check-cast v0, Ljava/lang/String;
 
-    invoke-virtual {p1, v2, v3}, Landroid/os/Parcel;->writeLong(J)V
+    const-string v1, "com.google.android.gms.signin.internal.realClientPackageName"
 
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
+    invoke-virtual {p0, v1, v0}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
-    iget-boolean p2, p0, Lumd;->x0:Z
+    return-object p0
+.end method
 
-    int-to-byte p2, p2
+.method public final p()Ljava/lang/String;
+    .locals 0
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByte(B)V
+    const-string p0, "com.google.android.gms.signin.internal.ISignInService"
 
-    iget-wide v0, p0, Lumd;->y0:J
+    return-object p0
+.end method
 
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
+.method public final q()Ljava/lang/String;
+    .locals 0
 
-    iget p2, p0, Lumd;->z0:I
+    const-string p0, "com.google.android.gms.signin.service.START"
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    iget p2, p0, Lumd;->A0:I
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    iget p0, p0, Lumd;->B0:I
-
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
-
-    return-void
+    return-object p0
 .end method

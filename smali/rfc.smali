@@ -1,155 +1,58 @@
-.class public final Lrfc;
+.class public final synthetic Lrfc;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final b:Lrfc;
-
-.field public static final c:Lrfc;
+# interfaces
+.implements Ljq1;
 
 
 # instance fields
-.field public final a:Z
+.field public final synthetic a:I
+
+.field public final synthetic b:Lsfc;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lrfc;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lrfc;-><init>(Z)V
-
-    sput-object v0, Lrfc;->b:Lrfc;
-
-    new-instance v0, Lrfc;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Lrfc;-><init>(Z)V
-
-    sput-object v0, Lrfc;->c:Lrfc;
-
-    return-void
-.end method
-
-.method public constructor <init>(Z)V
+.method public synthetic constructor <init>(Lsfc;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Lrfc;->a:I
 
-    iput-boolean p1, p0, Lrfc;->a:Z
+    iput-object p1, p0, Lrfc;->b:Lsfc;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    const/4 v0, 0x1
-
-    if-ne p1, p0, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lrfc;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lrfc;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-boolean p0, p0, Lrfc;->a:Z
-
-    iget-boolean p1, p1, Lrfc;->a:Z
-
-    if-ne p0, p1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    move v0, v2
-
-    :goto_0
-    return v0
-.end method
-
-.method public final hashCode()I
+.method public final L(Liq1;)Ljava/lang/String;
     .locals 1
 
-    const/4 v0, -0x1
+    iget v0, p0, Lrfc;->a:I
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object p0, p0, Lrfc;->b:Lsfc;
 
-    move-result-object v0
+    packed-switch v0, :pswitch_data_0
 
-    iget-boolean p0, p0, Lrfc;->a:Z
+    iput-object p1, p0, Lsfc;->f:Liq1;
 
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    add-int/lit8 v0, v0, 0x1f
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    add-int/2addr v0, p0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    const/4 v0, -0x1
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    iget-boolean p0, p0, Lrfc;->a:Z
-
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    filled-new-array {v0, p0}, [Ljava/lang/Object;
-
-    move-result-object p0
-
-    const/4 v0, 0x2
-
-    invoke-static {p0, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    move-result-object p0
-
-    const/4 v0, 0x0
-
-    const-string v1, "%d defer:%b"
-
-    invoke-static {v0, v1, p0}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
+    const-string p0, "RequestCompleteFuture"
 
     return-object p0
+
+    :pswitch_0
+    iput-object p1, p0, Lsfc;->e:Liq1;
+
+    const-string p0, "CaptureCompleteFuture"
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

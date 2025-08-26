@@ -161,7 +161,7 @@
 
     iput-object p1, p0, Lorg/apache/http/auth/NTCredentials;->workstation:Ljava/lang/String;
 
-    goto :goto_0
+    return-void
 
     :cond_0
     const/4 p1, 0x0
@@ -169,7 +169,6 @@
     .line 18
     iput-object p1, p0, Lorg/apache/http/auth/NTCredentials;->workstation:Ljava/lang/String;
 
-    :goto_0
     return-void
 
     .line 19
@@ -323,7 +322,7 @@
 
     const-string v1, "]"
 
-    invoke-static {v0, p0, v1}, Lwn6;->l(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lm26;->j(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

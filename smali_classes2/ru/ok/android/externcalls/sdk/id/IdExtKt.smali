@@ -11,7 +11,7 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
         "ExternalId",
-        "Lge1;",
+        "Lrf1;",
         "InternalId",
         "calls-sdk_release"
     }
@@ -21,4 +21,5 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation

@@ -201,11 +201,9 @@
     move-result-object v7
 
     .line 14
-    new-instance p0, Lcom/my/tracker/obfuscated/u;
-
-    move-object v1, p0
+    new-instance v1, Lcom/my/tracker/obfuscated/u;
 
     invoke-direct/range {v1 .. v8}, Lcom/my/tracker/obfuscated/u;-><init>(Lcom/my/tracker/obfuscated/c;Lcom/my/tracker/obfuscated/q;Lcom/my/tracker/obfuscated/y;Lcom/my/tracker/obfuscated/d0;Lcom/my/tracker/obfuscated/e;Lcom/my/tracker/obfuscated/j;Lcom/my/tracker/obfuscated/w;)V
 
-    return-object p0
+    return-object v1
 .end method

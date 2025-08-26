@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lzkb;
+.implements Lkpb;
 
 
 # static fields
@@ -16,9 +16,9 @@
 
     new-instance v0, Ljava/util/HashSet;
 
-    const-string v7, "rmx3511"
+    const-string v9, "sm-a035m"
 
-    const-string v8, "sm-a032f"
+    const-string v10, "tecno mobile bf6"
 
     const-string v1, "itel l6006"
 
@@ -32,9 +32,9 @@
 
     const-string v6, "rmx3231"
 
-    const-string v9, "sm-a035m"
+    const-string v7, "rmx3511"
 
-    const-string v10, "tecno mobile bf6"
+    const-string v8, "sm-a032f"
 
     filled-new-array/range {v1 .. v10}, [Ljava/lang/String;
 

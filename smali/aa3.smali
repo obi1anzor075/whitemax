@@ -2,187 +2,136 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/util/Iterator;
-.implements Lz67;
-
 
 # instance fields
-.field public final synthetic X:Lba3;
+.field public final a:Ljava/lang/Object;
 
-.field public final a:Li26;
-
-.field public b:I
-
-.field public c:Ljava/lang/Object;
-
-.field public o:Ljava/lang/Object;
+.field public final b:Lx56;
 
 
 # direct methods
-.method public constructor <init>(Lba3;Li26;)V
+.method public constructor <init>(Ljava/lang/Object;Lx56;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Laa3;->X:Lba3;
+    iput-object p1, p0, Laa3;->a:Ljava/lang/Object;
 
-    iput-object p2, p0, Laa3;->a:Li26;
-
-    const/4 p1, -0x1
-
-    iput p1, p0, Laa3;->b:I
-
-    invoke-virtual {p0}, Laa3;->a()V
+    iput-object p2, p0, Laa3;->b:Lx56;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
 
     :cond_0
-    :goto_0
-    iget v0, p0, Laa3;->b:I
+    instance-of v1, p1, Laa3;
 
-    add-int/lit8 v0, v0, 0x1
+    const/4 v2, 0x0
 
-    iput v0, p0, Laa3;->b:I
+    if-nez v1, :cond_1
 
-    iget-object v1, p0, Laa3;->X:Lba3;
-
-    iget v2, v1, Lba3;->a:I
-
-    if-ge v0, v2, :cond_3
-
-    iget-object v2, v1, Lba3;->d:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    invoke-virtual {v2, v0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lqe6;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
+    return v2
 
     :cond_1
-    iput-object v0, p0, Laa3;->c:Ljava/lang/Object;
+    check-cast p1, Laa3;
 
-    iget-object v0, v1, Lba3;->e:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    iget-object v1, p0, Laa3;->a:Ljava/lang/Object;
 
-    iget v1, p0, Laa3;->b:I
+    iget-object v3, p1, Laa3;->a:Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result-object v0
+    move-result v1
 
-    instance-of v1, v0, Lwu7;
+    if-nez v1, :cond_2
 
-    if-eqz v1, :cond_2
-
-    check-cast v0, Lwu7;
-
-    iget-object v0, v0, Lwu7;->a:Ljava/lang/Object;
+    return v2
 
     :cond_2
-    if-eqz v0, :cond_0
+    iget-object p0, p0, Laa3;->b:Lx56;
 
-    iput-object v0, p0, Laa3;->o:Ljava/lang/Object;
+    iget-object p1, p1, Laa3;->b:Lx56;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
+
+    return v2
 
     :cond_3
-    return-void
+    return v0
 .end method
 
-.method public final hasNext()Z
+.method public final hashCode()I
     .locals 1
 
-    iget v0, p0, Laa3;->b:I
-
-    iget-object p0, p0, Laa3;->X:Lba3;
-
-    iget p0, p0, Lba3;->a:I
-
-    if-ge v0, p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
-.end method
-
-.method public final next()Ljava/lang/Object;
-    .locals 3
-
-    iget v0, p0, Laa3;->b:I
-
-    iget-object v1, p0, Laa3;->X:Lba3;
-
-    iget v1, v1, Lba3;->a:I
-
-    if-ge v0, v1, :cond_2
-
-    iget-object v0, p0, Laa3;->c:Ljava/lang/Object;
-
-    sget-object v1, Ljue;->a:Ljue;
+    iget-object v0, p0, Laa3;->a:Ljava/lang/Object;
 
     if-nez v0, :cond_0
 
-    move-object v0, v1
-
-    :cond_0
-    iget-object v2, p0, Laa3;->o:Ljava/lang/Object;
-
-    if-nez v2, :cond_1
+    const/4 v0, 0x0
 
     goto :goto_0
 
-    :cond_1
-    move-object v1, v2
+    :cond_0
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
 
     :goto_0
-    iget-object v2, p0, Laa3;->a:Li26;
+    mul-int/lit8 v0, v0, 0x1f
 
-    invoke-interface {v2, v0, v1}, Li26;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object p0, p0, Laa3;->b:Lx56;
 
-    move-result-object v0
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    invoke-virtual {p0}, Laa3;->a()V
+    move-result p0
 
-    return-object v0
+    add-int/2addr p0, v0
 
-    :cond_2
-    new-instance p0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw p0
+    return p0
 .end method
 
-.method public final remove()V
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    sget-object p0, Lfa3;->a:Lkotlinx/coroutines/internal/Symbol;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    const-string v1, "CompletedWithCancellation(result="
 
-    const-string v0, "not implemented"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    iget-object v1, p0, Laa3;->a:Ljava/lang/Object;
 
-    throw p0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", onCancellation="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Laa3;->b:Lx56;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const/16 p0, 0x29
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -2,26 +2,21 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Liy5;
+
 
 # instance fields
-.field public final a:J
-
-.field public final b:Z
-
-.field public final c:I
+.field public final a:[Lky5;
 
 
 # direct methods
-.method public constructor <init>(IJZ)V
+.method public constructor <init>([Lky5;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p2, p0, Ljy5;->a:J
-
-    iput-boolean p4, p0, Ljy5;->b:Z
-
-    iput p1, p0, Ljy5;->c:I
+    iput-object p1, p0, Ljy5;->a:[Lky5;
 
     return-void
 .end method

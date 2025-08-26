@@ -1,137 +1,185 @@
-.class public final Ll00;
+.class public final synthetic Ll00;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final j:Ll00;
+# interfaces
+.implements Ljj3;
+.implements Lx28;
 
 
 # instance fields
-.field public final a:J
+.field public final synthetic a:I
 
-.field public final b:Ljava/lang/String;
+.field public final synthetic b:Ln00;
 
-.field public final c:J
-
-.field public final d:[B
-
-.field public final e:Ljava/lang/String;
-
-.field public final f:Ljava/lang/String;
-
-.field public final g:J
-
-.field public final h:J
-
-.field public final i:I
+.field public final synthetic c:Lw10;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Ln00;Lw10;I)V
+    .locals 0
 
-    new-instance v0, Lk00;
+    iput p3, p0, Ll00;->a:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ll00;->b:Ln00;
 
-    invoke-virtual {v0}, Lk00;->a()Ll00;
-
-    move-result-object v0
-
-    sput-object v0, Ll00;->j:Ll00;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lk00;)V
-    .locals 2
+    iput-object p2, p0, Ll00;->c:Lw10;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iget-wide v0, p1, Lk00;->a:J
-
-    iput-wide v0, p0, Ll00;->a:J
-
-    iget-object v0, p1, Lk00;->b:Ljava/lang/String;
-
-    iput-object v0, p0, Ll00;->b:Ljava/lang/String;
-
-    iget-wide v0, p1, Lk00;->c:J
-
-    iput-wide v0, p0, Ll00;->c:J
-
-    iget-object v0, p1, Lk00;->d:[B
-
-    iput-object v0, p0, Ll00;->d:[B
-
-    iget-object v0, p1, Lk00;->e:Ljava/lang/String;
-
-    iput-object v0, p0, Ll00;->e:Ljava/lang/String;
-
-    iget-object v0, p1, Lk00;->f:Ljava/lang/String;
-
-    iput-object v0, p0, Ll00;->f:Ljava/lang/String;
-
-    iget-wide v0, p1, Lk00;->g:J
-
-    iput-wide v0, p0, Ll00;->g:J
-
-    iget-wide v0, p1, Lk00;->h:J
-
-    iput-wide v0, p0, Ll00;->h:J
-
-    iget p1, p1, Lk00;->i:I
-
-    iput p1, p0, Ll00;->i:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lk00;
-    .locals 3
+.method public accept(Ljava/lang/Object;)V
+    .locals 1
 
-    new-instance v0, Lk00;
+    iget v0, p0, Ll00;->a:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    check-cast p1, Landroid/net/Uri;
 
-    iget-wide v1, p0, Ll00;->a:J
+    packed-switch v0, :pswitch_data_0
 
-    iput-wide v1, v0, Lk00;->a:J
+    iget-object v0, p0, Ll00;->b:Ln00;
 
-    iget-object v1, p0, Ll00;->b:Ljava/lang/String;
+    iget-object v0, v0, Ln00;->d:Lz18;
 
-    iput-object v1, v0, Lk00;->b:Ljava/lang/String;
+    iget-object p0, p0, Ll00;->c:Lw10;
 
-    iget-wide v1, p0, Ll00;->c:J
+    iget-object p0, p0, Lw10;->r:Ljava/lang/String;
 
-    iput-wide v1, v0, Lk00;->c:J
+    invoke-virtual {v0, p0, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v1, p0, Ll00;->d:[B
+    return-void
 
-    iput-object v1, v0, Lk00;->d:[B
+    :pswitch_0
+    iget-object v0, p0, Ll00;->b:Ln00;
 
-    iget-object v1, p0, Ll00;->f:Ljava/lang/String;
+    iget-object v0, v0, Ln00;->d:Lz18;
 
-    iput-object v1, v0, Lk00;->f:Ljava/lang/String;
+    iget-object p0, p0, Ll00;->c:Lw10;
 
-    iget-object v1, p0, Ll00;->e:Ljava/lang/String;
+    iget-object p0, p0, Lw10;->r:Ljava/lang/String;
 
-    iput-object v1, v0, Lk00;->e:Ljava/lang/String;
+    invoke-virtual {v0, p0, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-wide v1, p0, Ll00;->g:J
+    return-void
 
-    iput-wide v1, v0, Lk00;->g:J
+    nop
 
-    iget-wide v1, p0, Ll00;->h:J
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    iput-wide v1, v0, Lk00;->h:J
+.method public b(Lf28;)V
+    .locals 6
 
-    iget p0, p0, Ll00;->i:I
+    iget-object v0, p0, Ll00;->b:Ln00;
 
-    iput p0, v0, Lk00;->i:I
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return-object v0
+    sget-object v1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
+
+    iget-object p0, p0, Ll00;->c:Lw10;
+
+    iget-object p0, p0, Lw10;->r:Ljava/lang/String;
+
+    const-string v1, "preview_"
+
+    const-string v2, "_.png"
+
+    invoke-static {v1, p0, v2}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    iget-object v0, v0, Ln00;->c:Lhi5;
+
+    check-cast v0, Lvj5;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v0}, Lvj5;->b()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "previewVideoCache"
+
+    invoke-static {v0, v1}, Lvj5;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lmna;->g(Ljava/io/File;)Z
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    invoke-virtual {v0}, Ljava/io/File;->listFiles()[Ljava/io/File;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_3
+
+    array-length v1, v0
+
+    if-nez v1, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    array-length v1, v0
+
+    const/4 v3, 0x0
+
+    :goto_0
+    if-ge v3, v1, :cond_3
+
+    aget-object v4, v0, v3
+
+    invoke-virtual {v4}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v5, p0}, Lxja;->a(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_2
+
+    move-object v2, v4
+
+    goto :goto_1
+
+    :cond_2
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_3
+    :goto_1
+    invoke-virtual {p1}, Lf28;->g()Z
+
+    move-result p0
+
+    if-nez p0, :cond_5
+
+    if-nez v2, :cond_4
+
+    invoke-virtual {p1}, Lf28;->b()V
+
+    return-void
+
+    :cond_4
+    invoke-virtual {p1, v2}, Lf28;->a(Ljava/lang/Object;)V
+
+    :cond_5
+    return-void
 .end method

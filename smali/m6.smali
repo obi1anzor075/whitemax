@@ -1,102 +1,188 @@
 .class public final Lm6;
-.super Ljava/lang/Object;
+.super Lp6;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lhoe;
 
-.field public final synthetic b:Landroidx/appcompat/widget/ActionBarOverlayLayout;
+.field public final b:I
+
+.field public final c:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroidx/appcompat/widget/ActionBarOverlayLayout;I)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 3
 
-    iput p2, p0, Lm6;->a:I
+    sget v0, Ls5a;->O:I
 
-    iput-object p1, p0, Lm6;->b:Landroidx/appcompat/widget/ActionBarOverlayLayout;
+    new-instance v1, Lhoe;
+
+    invoke-direct {v1, v0}, Lhoe;-><init>(I)V
+
+    sget v0, Lo5a;->t0:I
+
+    sget v2, Lp5a;->x:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v1, p0, Lm6;->a:Lhoe;
+
+    iput v0, p0, Lm6;->b:I
+
+    iput v2, p0, Lm6;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final equals(Ljava/lang/Object;)Z
     .locals 2
 
-    iget v0, p0, Lm6;->a:I
+    if-ne p0, p1, :cond_0
 
-    packed-switch v0, :pswitch_data_0
+    goto :goto_1
 
-    iget-object p0, p0, Lm6;->b:Landroidx/appcompat/widget/ActionBarOverlayLayout;
+    :cond_0
+    instance-of v0, p1, Lm6;
 
-    invoke-virtual {p0}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->b()V
+    if-nez v0, :cond_1
 
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->o:Landroidx/appcompat/widget/ActionBarContainer;
+    goto :goto_0
 
-    invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+    :cond_1
+    check-cast p1, Lm6;
 
-    move-result-object v0
+    iget-object v0, p0, Lm6;->a:Lhoe;
 
-    iget-object v1, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->o:Landroidx/appcompat/widget/ActionBarContainer;
+    iget-object v1, p1, Lm6;->a:Lhoe;
 
-    invoke-virtual {v1}, Landroid/view/View;->getHeight()I
+    invoke-static {v0, v1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
-    neg-int v1, v1
+    if-nez v0, :cond_2
 
-    int-to-float v1, v1
+    goto :goto_0
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
+    :cond_2
+    iget v0, p0, Lm6;->b:I
 
-    move-result-object v0
+    iget v1, p1, Lm6;->b:I
 
-    iget-object v1, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->P0:Ll6;
+    if-eq v0, v1, :cond_3
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
+    goto :goto_0
 
-    move-result-object v0
+    :cond_3
+    iget p0, p0, Lm6;->c:I
 
-    iput-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->O0:Landroid/view/ViewPropertyAnimator;
+    iget p1, p1, Lm6;->c:I
 
-    return-void
+    if-eq p0, p1, :cond_4
 
-    :pswitch_0
-    iget-object p0, p0, Lm6;->b:Landroidx/appcompat/widget/ActionBarOverlayLayout;
+    :goto_0
+    const/4 p0, 0x0
 
-    invoke-virtual {p0}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->b()V
+    return p0
 
-    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->o:Landroidx/appcompat/widget/ActionBarContainer;
+    :cond_4
+    :goto_1
+    const/4 p0, 0x1
 
-    invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+    return p0
+.end method
 
-    move-result-object v0
+.method public final getIcon()I
+    .locals 0
 
-    const/4 v1, 0x0
+    iget p0, p0, Lm6;->b:I
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
+    return p0
+.end method
 
-    move-result-object v0
+.method public final getId()I
+    .locals 0
 
-    iget-object v1, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->P0:Ll6;
+    iget p0, p0, Lm6;->c:I
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
+    return p0
+.end method
 
-    move-result-object v0
+.method public final getName()Lmoe;
+    .locals 0
 
-    iput-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->O0:Landroid/view/ViewPropertyAnimator;
+    iget-object p0, p0, Lm6;->a:Lhoe;
 
-    return-void
+    return-object p0
+.end method
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+.method public final hashCode()I
+    .locals 3
+
+    iget-object v0, p0, Lm6;->a:Lhoe;
+
+    iget v0, v0, Lhoe;->b:I
+
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget v2, p0, Lm6;->b:I
+
+    invoke-static {v2, v0, v1}, Lrqc;->e(III)I
+
+    move-result v0
+
+    iget p0, p0, Lm6;->c:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "ShareScreen(name="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lm6;->a:Lhoe;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", icon="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Lm6;->b:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", id="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ")"
+
+    iget p0, p0, Lm6;->c:I
+
+    invoke-static {v0, p0, v1}, Lm26;->i(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

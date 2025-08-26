@@ -1,112 +1,93 @@
-.class public final synthetic Lve8;
-.super Ljava/lang/Object;
+.class public final Lve8;
+.super Landroid/content/BroadcastReceiver;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic X:Li78;
+.field public final a:Landroid/content/Context;
 
-.field public final synthetic a:I
+.field public b:Z
 
-.field public final synthetic b:Laf8;
-
-.field public final synthetic c:Lbf8;
-
-.field public final synthetic o:Lxi7;
+.field public final c:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public synthetic constructor <init>(Laf8;Lbf8;Lxi7;Li78;I)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 1
 
-    iput p5, p0, Lve8;->a:I
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    iput-object p1, p0, Lve8;->b:Laf8;
+    const/4 v0, 0x1
 
-    iput-object p2, p0, Lve8;->c:Lbf8;
+    iput-boolean v0, p0, Lve8;->b:Z
 
-    iput-object p3, p0, Lve8;->o:Lxi7;
+    iput-object p1, p0, Lve8;->a:Landroid/content/Context;
 
-    iput-object p4, p0, Lve8;->X:Li78;
+    new-instance p1, Ljava/util/ArrayList;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object p1, p0, Lve8;->c:Ljava/util/ArrayList;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 4
+.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 1
 
-    iget v0, p0, Lve8;->a:I
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    packed-switch v0, :pswitch_data_0
+    move-result-object p1
 
-    iget-object v0, p0, Lve8;->b:Laf8;
+    const-string v0, "android.net.conn.CONNECTIVITY_CHANGE"
 
-    iget v1, v0, Laf8;->b:I
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    iget-object v0, v0, Laf8;->c:Ljava/lang/Object;
+    move-result p1
 
-    check-cast v0, Lre8;
+    if-eqz p1, :cond_0
 
-    iget-object v2, p0, Lve8;->c:Lbf8;
+    const-string p1, "noConnectivity"
 
-    iget-object v3, p0, Lve8;->o:Lxi7;
+    const/4 v0, 0x0
 
-    iget-object p0, p0, Lve8;->X:Li78;
+    invoke-virtual {p2, p1, v0}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
-    invoke-interface {v2, v1, v0, v3, p0}, Lbf8;->e(ILre8;Lxi7;Li78;)V
+    move-result p1
 
+    xor-int/lit8 p1, p1, 0x1
+
+    iget-boolean p2, p0, Lve8;->b:Z
+
+    if-eq p2, p1, :cond_0
+
+    iput-boolean p1, p0, Lve8;->b:Z
+
+    iget-object p0, p0, Lve8;->c:Ljava/util/ArrayList;
+
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lye8;
+
+    invoke-virtual {p1}, Lye8;->c()V
+
+    goto :goto_0
+
+    :cond_0
     return-void
-
-    :pswitch_0
-    iget-object v0, p0, Lve8;->b:Laf8;
-
-    iget v1, v0, Laf8;->b:I
-
-    iget-object v0, v0, Laf8;->c:Ljava/lang/Object;
-
-    check-cast v0, Lre8;
-
-    iget-object v2, p0, Lve8;->c:Lbf8;
-
-    iget-object v3, p0, Lve8;->o:Lxi7;
-
-    iget-object p0, p0, Lve8;->X:Li78;
-
-    invoke-interface {v2, v1, v0, v3, p0}, Lbf8;->K(ILre8;Lxi7;Li78;)V
-
-    return-void
-
-    :pswitch_1
-    iget-object v0, p0, Lve8;->b:Laf8;
-
-    iget v1, v0, Laf8;->b:I
-
-    iget-object v0, v0, Laf8;->c:Ljava/lang/Object;
-
-    check-cast v0, Lre8;
-
-    iget-object v2, p0, Lve8;->c:Lbf8;
-
-    iget-object v3, p0, Lve8;->o:Lxi7;
-
-    iget-object p0, p0, Lve8;->X:Li78;
-
-    invoke-interface {v2, v1, v0, v3, p0}, Lbf8;->L(ILre8;Lxi7;Li78;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

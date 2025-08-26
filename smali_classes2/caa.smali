@@ -34,70 +34,88 @@
 
 .field public static final o:I
 
+.field public static final p:I
+
+.field public static final q:I
+
+.field public static final r:I
+
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    sget v0, Lgqb;->oneme_section_avatar:I
+    sget v0, Lnyb;->oneme_media_keyboard_emoji_animals_and_plants:I
 
     sput v0, Lcaa;->a:I
 
-    sget v0, Lgqb;->oneme_section_description:I
+    sget v0, Lnyb;->oneme_media_keyboard_emoji_classic:I
 
     sput v0, Lcaa;->b:I
 
-    sget v0, Lgqb;->oneme_section_end_arrow:I
+    sget v0, Lnyb;->oneme_media_keyboard_emoji_flags:I
 
     sput v0, Lcaa;->c:I
 
-    sget v0, Lgqb;->oneme_section_end_container:I
+    sget v0, Lnyb;->oneme_media_keyboard_emoji_food_and_drink:I
 
     sput v0, Lcaa;->d:I
 
-    sget v0, Lgqb;->oneme_section_end_text:I
+    sget v0, Lnyb;->oneme_media_keyboard_emoji_gestures_and_people:I
 
     sput v0, Lcaa;->e:I
 
-    sget v0, Lgqb;->oneme_section_start_icon:I
+    sget v0, Lnyb;->oneme_media_keyboard_emoji_objects:I
 
     sput v0, Lcaa;->f:I
 
-    sget v0, Lgqb;->oneme_section_title:I
+    sget v0, Lnyb;->oneme_media_keyboard_emoji_sport_and_activity:I
 
     sput v0, Lcaa;->g:I
 
-    sget v0, Lgqb;->oneme_section_upper_text:I
+    sget v0, Lnyb;->oneme_media_keyboard_emoji_symbols:I
 
     sput v0, Lcaa;->h:I
 
-    sget v0, Lgqb;->oneme_settings_itemcontent_container:I
+    sget v0, Lnyb;->oneme_media_keyboard_emoji_travels_and_transport:I
 
     sput v0, Lcaa;->i:I
 
-    sget v0, Lgqb;->oneme_settings_itemcontent_counter:I
+    sget v0, Lnyb;->oneme_media_keyboard_favorite:I
 
     sput v0, Lcaa;->j:I
 
-    sget v0, Lgqb;->oneme_settings_itemcontent_end_icon:I
+    sget v0, Lnyb;->oneme_media_keyboard_popular:I
 
     sput v0, Lcaa;->k:I
 
-    sget v0, Lgqb;->oneme_settings_itemcontent_end_radio:I
+    sget v0, Lnyb;->oneme_media_keyboard_recent:I
 
     sput v0, Lcaa;->l:I
 
-    sget v0, Lgqb;->oneme_settings_itemcontent_end_switch:I
+    sget v0, Lnyb;->oneme_media_keyboard_recent_clear_action:I
 
     sput v0, Lcaa;->m:I
 
-    sget v0, Lgqb;->oneme_settings_itemcontent_end_text:I
+    sget v0, Lnyb;->oneme_media_keyboard_recent_clear_cancel:I
 
     sput v0, Lcaa;->n:I
 
-    sget v0, Lgqb;->oneme_settingslist_rv:I
+    sget v0, Lnyb;->oneme_media_keyboard_recent_clear_title:I
 
     sput v0, Lcaa;->o:I
+
+    sget v0, Lnyb;->oneme_media_keyboard_tab_emoji:I
+
+    sput v0, Lcaa;->p:I
+
+    sget v0, Lnyb;->oneme_media_keyboard_tab_gifs:I
+
+    sput v0, Lcaa;->q:I
+
+    sget v0, Lnyb;->oneme_media_keyboard_tab_stickers:I
+
+    sput v0, Lcaa;->r:I
 
     return-void
 .end method

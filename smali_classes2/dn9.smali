@@ -1,55 +1,99 @@
 .class public final Ldn9;
-.super Ljava/lang/Object;
+.super Lsod;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Ljava/lang/String;
+# virtual methods
+.method public final D(Lbn9;)V
+    .locals 5
 
-.field public final b:Ljava/lang/String;
+    iget-object p0, p0, Lccc;->a:Landroid/view/View;
 
-.field public final c:Z
+    check-cast p0, Lone/me/sdk/uikit/common/views/OneMeDraweeView;
 
-.field public final d:Z
+    iget-wide v0, p1, Lbn9;->a:J
 
-.field public final e:Landroid/net/Uri;
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
 
-.field public final f:Z
+    move-result v0
 
-.field public final g:[J
+    invoke-virtual {p0, v0}, Landroid/view/View;->setId(I)V
 
-.field public final h:Z
+    iget-object p1, p1, Lbn9;->b:Ljava/lang/String;
 
-.field public final i:I
+    invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-.field public final j:Z
+    move-result-object p1
 
+    invoke-static {p1}, Lwv6;->d(Landroid/net/Uri;)Lwv6;
 
-# direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;ZZLandroid/net/Uri;Z[JZIZ)V
+    move-result-object p1
+
+    new-instance v0, Ldgc;
+
+    const/16 v1, 0x40
+
+    int-to-float v1, v1
+
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v2
+
+    iget v2, v2, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v2, v1
+
+    invoke-static {v2}, Lkhg;->x(F)I
+
+    move-result v2
+
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v3
+
+    iget v3, v3, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v1, v3
+
+    invoke-static {v1}, Lkhg;->x(F)I
+
+    move-result v1
+
+    const/4 v3, 0x0
+
+    const/16 v4, 0xc
+
+    invoke-direct {v0, v3, v2, v1, v4}, Ldgc;-><init>(FIII)V
+
+    iput-object v0, p1, Lwv6;->d:Ldgc;
+
+    invoke-virtual {p1}, Lwv6;->a()Lvv6;
+
+    move-result-object p1
+
+    sget v0, Lone/me/sdk/uikit/common/views/OneMeDraweeView;->x0:I
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Lone/me/sdk/uikit/common/views/OneMeDraweeView;->o(Lvv6;Lvv6;)V
+
+    return-void
+.end method
+
+.method public final bridge synthetic x(Lol7;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    check-cast p1, Lbn9;
 
-    iput-object p1, p0, Ldn9;->a:Ljava/lang/String;
-
-    iput-object p2, p0, Ldn9;->b:Ljava/lang/String;
-
-    iput-boolean p3, p0, Ldn9;->c:Z
-
-    iput-boolean p4, p0, Ldn9;->d:Z
-
-    iput-object p5, p0, Ldn9;->e:Landroid/net/Uri;
-
-    iput-boolean p6, p0, Ldn9;->f:Z
-
-    iput-object p7, p0, Ldn9;->g:[J
-
-    iput-boolean p8, p0, Ldn9;->h:Z
-
-    iput p9, p0, Ldn9;->i:I
-
-    iput-boolean p10, p0, Ldn9;->j:Z
+    invoke-virtual {p0, p1}, Ldn9;->D(Lbn9;)V
 
     return-void
 .end method

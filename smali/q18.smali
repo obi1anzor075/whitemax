@@ -1,65 +1,49 @@
 .class public final Lq18;
-.super Lp18;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic g:Lwd8;
+.field public final synthetic a:Z
+
+.field public final synthetic b:I
+
+.field public final synthetic c:Lr18;
 
 
 # direct methods
-.method public constructor <init>(Lwd8;)V
+.method public constructor <init>(Lr18;ZI)V
     .locals 0
 
-    iput-object p1, p0, Lq18;->g:Lwd8;
+    iput-object p1, p0, Lq18;->c:Lr18;
 
-    invoke-direct {p0, p1}, Lp18;-><init>(Lwd8;)V
+    iput-boolean p2, p0, Lq18;->a:Z
+
+    iput p3, p0, Lq18;->b:I
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final K()Lpd8;
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    iget-object v0, p0, Lq18;->g:Lwd8;
+    iget-object p1, p0, Lq18;->c:Lr18;
 
-    iget-object v1, v0, Lwd8;->Y:Ll18;
+    iget-object v0, p1, Lq08;->b:Landroid/view/View;
 
-    if-eqz v1, :cond_1
+    const/4 v1, 0x0
 
-    iget-object v0, v0, Lwd8;->c:Ll18;
+    invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    if-ne v1, v0, :cond_0
+    iget-boolean v0, p0, Lq18;->a:Z
 
-    new-instance v0, Lpd8;
+    iget p0, p0, Lq18;->b:I
 
-    iget-object p0, p0, Lm18;->b:Ljava/lang/Object;
+    invoke-virtual {p1, v1, v0, p0}, Lr18;->a(FZI)V
 
-    check-cast p0, Lo18;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p0}, Landroid/service/media/MediaBrowserService;->getCurrentBrowserInfo()Landroid/media/session/MediaSessionManager$RemoteUserInfo;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Lpd8;-><init>(Landroid/media/session/MediaSessionManager$RemoteUserInfo;)V
-
-    return-object v0
-
-    :cond_0
-    iget-object p0, v1, Ll18;->d:Lpd8;
-
-    return-object p0
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string v0, "This should be called inside of onGetRoot, onLoadChildren, onLoadItem, onSearch, or onCustomAction methods"
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+    return-void
 .end method

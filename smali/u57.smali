@@ -1,118 +1,114 @@
-.class public final synthetic Lu57;
-.super Ljava/lang/Object;
+.class public final Lu57;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Lis9;
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:I
+
+.field public final synthetic Y:Ly57;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
+.method public constructor <init>(Ly57;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    iput p1, p0, Lu57;->a:I
+    iput-object p1, p0, Lu57;->Y:Ly57;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget p0, p0, Lu57;->a:I
+    check-cast p1, Lox3;
 
-    packed-switch p0, :pswitch_data_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    check-cast p2, Ljs9;
-
-    new-instance p0, Lcom/google/firebase/encoders/EncodingException;
-
-    new-instance p2, Ljava/lang/StringBuilder;
-
-    const-string v0, "Couldn\'t find encoder for type "
-
-    invoke-direct {p2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :pswitch_0
-    check-cast p1, Ljava/util/Map$Entry;
-
-    check-cast p2, Ljs9;
-
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Lu57;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    sget-object v0, Lthb;->g:Lcc5;
+    check-cast p0, Lu57;
 
-    invoke-interface {p2, v0, p0}, Ljs9;->a(Lcc5;Ljava/lang/Object;)Ljs9;
+    sget-object p1, Le5f;->a:Le5f;
 
-    sget-object p0, Lthb;->h:Lcc5;
+    invoke-virtual {p0, p1}, Lu57;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    move-result-object p0
 
-    move-result-object p1
+    return-object p0
+.end method
 
-    invoke-interface {p2, p0, p1}, Ljs9;->a(Lcc5;Ljava/lang/Object;)Ljs9;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
 
-    return-void
+    new-instance p1, Lu57;
 
-    :pswitch_1
-    check-cast p2, Ljs9;
+    iget-object p0, p0, Lu57;->Y:Ly57;
 
-    new-instance p0, Lcom/google/firebase/encoders/EncodingException;
+    invoke-direct {p1, p0, p2}, Lu57;-><init>(Ly57;Lkotlin/coroutines/Continuation;)V
 
-    new-instance p2, Ljava/lang/StringBuilder;
+    return-object p1
+.end method
 
-    const-string v0, "Couldn\'t find encoder for type "
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    invoke-direct {p2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget v0, p0, Lu57;->X:I
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v1, 0x1
 
-    move-result-object p1
+    if-eqz v0, :cond_1
 
-    invoke-virtual {p1}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
+    if-ne v0, v1, :cond_0
 
-    move-result-object p1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    goto :goto_0
 
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    move-result-object p1
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lu57;->Y:Ly57;
+
+    iget-object p1, p1, Ly57;->s0:Lwjd;
+
+    iput v1, p0, Lu57;->X:I
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lwjd;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

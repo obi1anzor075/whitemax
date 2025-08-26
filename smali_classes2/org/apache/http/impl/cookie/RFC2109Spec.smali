@@ -536,13 +536,12 @@
 
     invoke-virtual {p1, p0}, Lorg/apache/http/util/CharArrayBuffer;->append(C)V
 
-    goto :goto_0
+    return-void
 
     :cond_0
     invoke-virtual {p1, p3}, Lorg/apache/http/util/CharArrayBuffer;->append(Ljava/lang/String;)V
 
     :cond_1
-    :goto_0
     return-void
 .end method
 

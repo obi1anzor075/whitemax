@@ -1,89 +1,45 @@
 .class public final Lpa8;
-.super Landroid/view/animation/Animation;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic a:I
+.field public a:Ljava/util/UUID;
 
-.field public final synthetic b:I
+.field public b:Landroid/net/Uri;
 
-.field public final synthetic c:I
+.field public c:Lax6;
 
-.field public final synthetic o:Landroid/view/View;
+.field public d:Z
+
+.field public e:Z
+
+.field public f:Z
+
+.field public g:Lxw6;
+
+.field public h:[B
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/view/View;III)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    iput p4, p0, Lpa8;->a:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p2, p0, Lpa8;->b:I
+    sget-object v0, Lidc;->Z:Lidc;
 
-    iput p3, p0, Lpa8;->c:I
+    iput-object v0, p0, Lpa8;->c:Lax6;
 
-    iput-object p1, p0, Lpa8;->o:Landroid/view/View;
+    const/4 v0, 0x1
 
-    invoke-direct {p0}, Landroid/view/animation/Animation;-><init>()V
+    iput-boolean v0, p0, Lpa8;->e:Z
 
-    return-void
-.end method
+    sget-object v0, Lxw6;->b:Las5;
 
+    sget-object v0, Lddc;->X:Lddc;
 
-# virtual methods
-.method public final applyTransformation(FLandroid/view/animation/Transformation;)V
-    .locals 2
-
-    iget-object p2, p0, Lpa8;->o:Landroid/view/View;
-
-    iget v0, p0, Lpa8;->c:I
-
-    iget v1, p0, Lpa8;->b:I
-
-    iget p0, p0, Lpa8;->a:I
-
-    packed-switch p0, :pswitch_data_0
-
-    sub-int/2addr v1, v0
-
-    int-to-float p0, v1
-
-    mul-float/2addr p0, p1
-
-    float-to-int p0, p0
-
-    add-int/2addr v0, p0
-
-    sget p0, Ljb8;->i1:I
-
-    invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object p0
-
-    iput v0, p0, Landroid/view/ViewGroup$LayoutParams;->height:I
-
-    invoke-virtual {p2, p0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    iput-object v0, p0, Lpa8;->g:Lxw6;
 
     return-void
-
-    :pswitch_0
-    sub-int p0, v1, v0
-
-    int-to-float p0, p0
-
-    mul-float/2addr p0, p1
-
-    float-to-int p0, p0
-
-    sub-int/2addr v1, p0
-
-    invoke-static {p2, v1}, Landroidx/mediarouter/app/d;->o(Landroid/view/View;I)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

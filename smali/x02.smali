@@ -1,77 +1,419 @@
-.class public final Lx02;
-.super Lw02;
+.class public abstract Lx02;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lr9e;
+
+
+# instance fields
+.field public final a:Ljava/util/ArrayDeque;
+
+.field public final b:Ljava/util/ArrayDeque;
+
+.field public final c:Ljava/util/PriorityQueue;
+
+.field public d:Lt02;
+
+.field public e:J
+
+.field public f:J
+
+.field public g:J
 
 
 # direct methods
-.method public constructor <init>(IIILhu3;Lpj5;)V
-    .locals 1
+.method public constructor <init>()V
+    .locals 5
 
-    and-int/lit8 v0, p3, 0x2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz v0, :cond_0
+    new-instance v0, Ljava/util/ArrayDeque;
 
-    sget-object p4, Lbw4;->a:Lbw4;
+    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
+
+    iput-object v0, p0, Lx02;->a:Ljava/util/ArrayDeque;
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_0
+    const/16 v2, 0xa
+
+    if-ge v1, v2, :cond_0
+
+    iget-object v2, p0, Lx02;->a:Ljava/util/ArrayDeque;
+
+    new-instance v3, Lt02;
+
+    const/4 v4, 0x1
+
+    invoke-direct {v3, v4}, Lc64;-><init>(I)V
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
 
     :cond_0
-    and-int/lit8 v0, p3, 0x4
+    new-instance v1, Ljava/util/ArrayDeque;
 
-    if-eqz v0, :cond_1
+    invoke-direct {v1}, Ljava/util/ArrayDeque;-><init>()V
 
-    const/4 p1, -0x3
+    iput-object v1, p0, Lx02;->b:Ljava/util/ArrayDeque;
+
+    :goto_1
+    const/4 v1, 0x2
+
+    if-ge v0, v1, :cond_1
+
+    iget-object v1, p0, Lx02;->b:Ljava/util/ArrayDeque;
+
+    new-instance v2, Lv02;
+
+    new-instance v3, Liz1;
+
+    const/4 v4, 0x3
+
+    invoke-direct {v3, v4, p0}, Liz1;-><init>(ILjava/lang/Object;)V
+
+    invoke-direct {v2}, Lv02;-><init>()V
+
+    iput-object v3, v2, Lv02;->o0:Ljava/lang/Object;
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_1
 
     :cond_1
-    and-int/lit8 p3, p3, 0x8
+    new-instance v0, Ljava/util/PriorityQueue;
 
-    if-eqz p3, :cond_2
+    invoke-direct {v0}, Ljava/util/PriorityQueue;-><init>()V
 
-    const/4 p2, 0x1
+    iput-object v0, p0, Lx02;->c:Ljava/util/PriorityQueue;
 
-    :cond_2
-    invoke-direct {p0, p5, p4, p1, p2}, Lw02;-><init>(Lpj5;Lhu3;II)V
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
+
+    iput-wide v0, p0, Lx02;->g:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final j(Lhu3;II)Lp02;
-    .locals 1
+.method public final a(J)V
+    .locals 0
 
-    new-instance v0, Lx02;
+    iput-wide p1, p0, Lx02;->e:J
 
-    iget-object p0, p0, Lw02;->o:Lpj5;
+    return-void
+.end method
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lw02;-><init>(Lpj5;Lhu3;II)V
+.method public bridge synthetic b()Ljava/lang/Object;
+    .locals 0
+
+    invoke-virtual {p0}, Lx02;->h()Lv02;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final c()Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Lx02;->d:Lt02;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    invoke-static {v0}, Lu27;->j(Z)V
+
+    iget-object v0, p0, Lx02;->a:Ljava/util/ArrayDeque;
+
+    invoke-virtual {v0}, Ljava/util/ArrayDeque;->isEmpty()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_1
+    invoke-virtual {v0}, Ljava/util/ArrayDeque;->pollFirst()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lt02;
+
+    iput-object v0, p0, Lx02;->d:Lt02;
 
     return-object v0
 .end method
 
-.method public final k()Lpj5;
+.method public final d(J)V
     .locals 0
 
-    iget-object p0, p0, Lw02;->o:Lpj5;
+    iput-wide p1, p0, Lx02;->g:J
+
+    return-void
+.end method
+
+.method public final e(Lw9e;)V
+    .locals 4
+
+    iget-object v0, p0, Lx02;->d:Lt02;
+
+    if-ne p1, v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    invoke-static {v0}, Lu27;->f(Z)V
+
+    check-cast p1, Lt02;
+
+    iget-wide v0, p0, Lx02;->g:J
+
+    const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
+
+    cmp-long v2, v0, v2
+
+    if-eqz v2, :cond_1
+
+    iget-wide v2, p1, Lc64;->Z:J
+
+    cmp-long v0, v2, v0
+
+    if-gez v0, :cond_1
+
+    invoke-virtual {p1}, Lc64;->o()V
+
+    iget-object v0, p0, Lx02;->a:Ljava/util/ArrayDeque;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    :cond_1
+    iget-wide v0, p0, Lx02;->f:J
+
+    const-wide/16 v2, 0x1
+
+    add-long/2addr v2, v0
+
+    iput-wide v2, p0, Lx02;->f:J
+
+    iput-wide v0, p1, Lt02;->r0:J
+
+    iget-object v0, p0, Lx02;->c:Ljava/util/PriorityQueue;
+
+    invoke-virtual {v0, p1}, Ljava/util/PriorityQueue;->add(Ljava/lang/Object;)Z
+
+    :goto_1
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Lx02;->d:Lt02;
+
+    return-void
+.end method
+
+.method public abstract f()Lzod;
+.end method
+
+.method public flush()V
+    .locals 3
+
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Lx02;->f:J
+
+    iput-wide v0, p0, Lx02;->e:J
+
+    :goto_0
+    iget-object v0, p0, Lx02;->c:Ljava/util/PriorityQueue;
+
+    invoke-virtual {v0}, Ljava/util/AbstractCollection;->isEmpty()Z
+
+    move-result v1
+
+    iget-object v2, p0, Lx02;->a:Ljava/util/ArrayDeque;
+
+    if-nez v1, :cond_0
+
+    invoke-virtual {v0}, Ljava/util/PriorityQueue;->poll()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lt02;
+
+    sget v1, Lpaf;->a:I
+
+    invoke-virtual {v0}, Lc64;->o()V
+
+    invoke-virtual {v2, v0}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lx02;->d:Lt02;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Lc64;->o()V
+
+    invoke-virtual {v2, v0}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lx02;->d:Lt02;
+
+    :cond_1
+    return-void
+.end method
+
+.method public abstract g(Lt02;)V
+.end method
+
+.method public h()Lv02;
+    .locals 6
+
+    iget-object v0, p0, Lx02;->b:Ljava/util/ArrayDeque;
+
+    invoke-virtual {v0}, Ljava/util/ArrayDeque;->isEmpty()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    :goto_0
+    iget-object v1, p0, Lx02;->c:Ljava/util/PriorityQueue;
+
+    invoke-virtual {v1}, Ljava/util/AbstractCollection;->isEmpty()Z
+
+    move-result v2
+
+    if-nez v2, :cond_3
+
+    invoke-virtual {v1}, Ljava/util/PriorityQueue;->peek()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lt02;
+
+    sget v3, Lpaf;->a:I
+
+    iget-wide v2, v2, Lc64;->Z:J
+
+    iget-wide v4, p0, Lx02;->e:J
+
+    cmp-long v2, v2, v4
+
+    if-gtz v2, :cond_3
+
+    invoke-virtual {v1}, Ljava/util/PriorityQueue;->poll()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lt02;
+
+    const/4 v2, 0x4
+
+    invoke-virtual {v1, v2}, Ldy;->e(I)Z
+
+    move-result v3
+
+    iget-object v4, p0, Lx02;->a:Ljava/util/ArrayDeque;
+
+    if-eqz v3, :cond_1
+
+    invoke-virtual {v0}, Ljava/util/ArrayDeque;->pollFirst()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lv02;
+
+    invoke-virtual {p0, v2}, Ldy;->a(I)V
+
+    invoke-virtual {v1}, Lc64;->o()V
+
+    invoke-virtual {v4, v1}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
+
+    return-object p0
+
+    :cond_1
+    invoke-virtual {p0, v1}, Lx02;->g(Lt02;)V
+
+    invoke-virtual {p0}, Lx02;->i()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-virtual {p0}, Lx02;->f()Lzod;
+
+    move-result-object p0
+
+    invoke-virtual {v0}, Ljava/util/ArrayDeque;->pollFirst()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lv02;
+
+    iget-wide v2, v1, Lc64;->Z:J
+
+    iput-wide v2, v0, Ld64;->c:J
+
+    iput-object p0, v0, Lv02;->X:Lp9e;
+
+    iput-wide v2, v0, Lv02;->Y:J
+
+    invoke-virtual {v1}, Lc64;->o()V
+
+    invoke-virtual {v4, v1}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
+
+    return-object v0
+
+    :cond_2
+    invoke-virtual {v1}, Lc64;->o()V
+
+    invoke-virtual {v4, v1}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_3
+    :goto_1
+    const/4 p0, 0x0
 
     return-object p0
 .end method
 
-.method public final m(Lrj5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+.method public abstract i()Z
+.end method
+
+.method public release()V
     .locals 0
 
-    iget-object p0, p0, Lw02;->o:Lpj5;
-
-    invoke-interface {p0, p1, p2}, Lpj5;->c(Lrj5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Lpu3;->a:Lpu3;
-
-    if-ne p0, p1, :cond_0
-
-    return-object p0
-
-    :cond_0
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
+    return-void
 .end method

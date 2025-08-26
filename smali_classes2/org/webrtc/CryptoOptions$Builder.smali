@@ -28,7 +28,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1
+    .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,7 +37,7 @@
 .method public synthetic constructor <init>(I)V
     .locals 0
 
-    .line 2
+    .line 1
     invoke-direct {p0}, Lorg/webrtc/CryptoOptions$Builder;-><init>()V
 
     return-void
@@ -46,9 +46,9 @@
 
 # virtual methods
 .method public createCryptoOptions()Lorg/webrtc/CryptoOptions;
-    .locals 7
+    .locals 6
 
-    new-instance v6, Lorg/webrtc/CryptoOptions;
+    new-instance v0, Lorg/webrtc/CryptoOptions;
 
     iget-boolean v1, p0, Lorg/webrtc/CryptoOptions$Builder;->enableGcmCryptoSuites:Z
 
@@ -60,11 +60,9 @@
 
     const/4 v5, 0x0
 
-    move-object v0, v6
-
     invoke-direct/range {v0 .. v5}, Lorg/webrtc/CryptoOptions;-><init>(ZZZZI)V
 
-    return-object v6
+    return-object v0
 .end method
 
 .method public setEnableAes128Sha1_32CryptoCipher(Z)Lorg/webrtc/CryptoOptions$Builder;

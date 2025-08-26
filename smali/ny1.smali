@@ -1,54 +1,59 @@
-.class public final synthetic Lny1;
-.super Ljava/lang/Object;
+.class public final Lny1;
+.super Lqo8;
 .source "SourceFile"
-
-# interfaces
-.implements Li4f;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final d:Landroid/graphics/Typeface;
 
-.field public final synthetic b:Lo96;
+.field public final e:Lmy1;
+
+.field public f:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lo96;I)V
+.method public constructor <init>(Lmy1;Landroid/graphics/Typeface;)V
     .locals 0
 
-    iput p2, p0, Lny1;->a:I
-
-    iput-object p1, p0, Lny1;->b:Lo96;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p2, p0, Lny1;->d:Landroid/graphics/Typeface;
+
+    iput-object p1, p0, Lny1;->e:Lmy1;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public final x(I)V
+    .locals 0
 
-    iget v0, p0, Lny1;->a:I
+    iget-boolean p1, p0, Lny1;->f:Z
 
-    iget-object p0, p0, Lny1;->b:Lo96;
+    if-nez p1, :cond_0
 
-    packed-switch v0, :pswitch_data_0
+    iget-object p1, p0, Lny1;->e:Lmy1;
 
-    invoke-interface {p0}, Lo96;->c()V
+    iget-object p0, p0, Lny1;->d:Landroid/graphics/Typeface;
 
+    invoke-interface {p1, p0}, Lmy1;->h(Landroid/graphics/Typeface;)V
+
+    :cond_0
     return-void
+.end method
 
-    :pswitch_0
-    invoke-interface {p0}, Lo96;->flush()V
+.method public final y(Landroid/graphics/Typeface;Z)V
+    .locals 0
 
+    iget-boolean p2, p0, Lny1;->f:Z
+
+    if-nez p2, :cond_0
+
+    iget-object p0, p0, Lny1;->e:Lmy1;
+
+    invoke-interface {p0, p1}, Lmy1;->h(Landroid/graphics/Typeface;)V
+
+    :cond_0
     return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

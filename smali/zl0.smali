@@ -1,144 +1,163 @@
 .class public final Lzl0;
-.super Ljava/lang/Object;
+.super Lft6;
 .source "SourceFile"
 
 
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lzl0;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
 # instance fields
-.field public a:Landroidx/fragment/app/c;
+.field public final b:[B
 
 
-# virtual methods
-.method public final a(Lex;Lstf;)V
-    .locals 5
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
 
-    iget-object v0, p0, Lzl0;->a:Landroidx/fragment/app/c;
+    new-instance v0, Lx7;
 
-    if-nez v0, :cond_0
+    const/16 v1, 0xc
 
-    return-void
+    invoke-direct {v0, v1}, Lx7;-><init>(I)V
 
-    :cond_0
-    invoke-virtual {v0}, Landroidx/fragment/app/c;->Q()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
+    sput-object v0, Lzl0;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
+.end method
 
-    :cond_1
-    iget-object p0, p0, Lzl0;->a:Landroidx/fragment/app/c;
+.method public constructor <init>(Landroid/os/Parcel;)V
+    .locals 2
 
-    const-string v0, "androidx.biometric.BiometricFragment"
+    .line 3
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    invoke-virtual {p0, v0}, Landroidx/fragment/app/c;->E(Ljava/lang/String;)Landroidx/fragment/app/a;
+    move-result-object v0
 
-    move-result-object v1
+    sget v1, Lpaf;->a:I
 
-    check-cast v1, Landroidx/biometric/BiometricFragment;
+    invoke-direct {p0, v0}, Lft6;-><init>(Ljava/lang/String;)V
 
-    if-nez v1, :cond_2
-
-    new-instance v1, Landroidx/biometric/BiometricFragment;
-
-    invoke-direct {v1}, Landroidx/biometric/BiometricFragment;-><init>()V
-
-    new-instance v2, Lhd0;
-
-    invoke-direct {v2, p0}, Lhd0;-><init>(Landroidx/fragment/app/c;)V
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
-
-    invoke-virtual {v2, v3, v1, v0, v4}, Lhd0;->f(ILandroidx/fragment/app/a;Ljava/lang/String;I)V
-
-    invoke-virtual {v2, v4}, Lhd0;->d(Z)I
-
-    invoke-virtual {p0, v4}, Landroidx/fragment/app/c;->A(Z)Z
-
-    invoke-virtual {p0}, Landroidx/fragment/app/c;->F()V
-
-    :cond_2
-    invoke-virtual {v1}, Landroidx/fragment/app/a;->c0()Landroidx/fragment/app/b;
-
-    move-result-object p0
-
-    if-nez p0, :cond_3
-
-    goto :goto_2
-
-    :cond_3
-    iget-object p0, v1, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
-
-    iput-object p1, p0, Landroidx/biometric/BiometricViewModel;->c:Lex;
-
-    const/16 v0, 0xf
-
-    iget p1, p1, Lex;->c:I
-
-    if-eqz p1, :cond_4
-
-    goto :goto_0
-
-    :cond_4
-    if-eqz p2, :cond_5
-
-    move p1, v0
-
-    goto :goto_0
-
-    :cond_5
-    const/16 p1, 0xff
-
-    :goto_0
-    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v3, 0x1e
-
-    if-ge v2, v3, :cond_6
-
-    if-ne p1, v0, :cond_6
-
-    if-nez p2, :cond_6
-
-    invoke-static {}, Llp;->k()Lstf;
+    .line 4
+    invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
 
     move-result-object p1
 
-    iput-object p1, p0, Landroidx/biometric/BiometricViewModel;->d:Lstf;
+    iput-object p1, p0, Lzl0;->b:[B
 
-    goto :goto_1
+    return-void
+.end method
 
-    :cond_6
-    iput-object p2, p0, Landroidx/biometric/BiometricViewModel;->d:Lstf;
+.method public constructor <init>([BLjava/lang/String;)V
+    .locals 0
 
-    :goto_1
-    iget-object p0, v1, Landroidx/biometric/BiometricFragment;->q1:Landroidx/biometric/BiometricViewModel;
+    .line 1
+    invoke-direct {p0, p2}, Lft6;-><init>(Ljava/lang/String;)V
 
-    const/4 p1, 0x0
+    .line 2
+    iput-object p1, p0, Lzl0;->b:[B
 
-    iput-object p1, p0, Landroidx/biometric/BiometricViewModel;->h:Ljava/lang/CharSequence;
+    return-void
+.end method
 
-    iget-boolean p0, p0, Landroidx/biometric/BiometricViewModel;->l:Z
 
-    if-eqz p0, :cond_7
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget-object p0, v1, Landroidx/biometric/BiometricFragment;->p1:Landroid/os/Handler;
+    const/4 v0, 0x1
 
-    new-instance p1, Lvl0;
+    if-ne p0, p1, :cond_0
 
-    invoke-direct {p1, v1}, Lvl0;-><init>(Landroidx/biometric/BiometricFragment;)V
+    return v0
 
-    const-wide/16 v0, 0x258
+    :cond_0
+    const/4 v1, 0x0
 
-    invoke-virtual {p0, p1, v0, v1}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    if-eqz p1, :cond_2
 
-    goto :goto_2
+    const-class v2, Lzl0;
 
-    :cond_7
-    invoke-virtual {v1}, Landroidx/biometric/BiometricFragment;->k1()V
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    :goto_2
+    move-result-object v3
+
+    if-eq v2, v3, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Lzl0;
+
+    iget-object v2, p0, Lft6;->a:Ljava/lang/String;
+
+    iget-object v3, p1, Lft6;->a:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object p0, p0, Lzl0;->b:[B
+
+    iget-object p1, p1, Lzl0;->b:[B
+
+    invoke-static {p0, p1}, Ljava/util/Arrays;->equals([B[B)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    return v0
+
+    :cond_2
+    :goto_0
+    return v1
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    iget-object v0, p0, Lft6;->a:Ljava/lang/String;
+
+    const/16 v1, 0x1f
+
+    const/16 v2, 0x20f
+
+    invoke-static {v2, v1, v0}, Lv04;->d(IILjava/lang/String;)I
+
+    move-result v0
+
+    iget-object p0, p0, Lzl0;->b:[B
+
+    invoke-static {p0}, Ljava/util/Arrays;->hashCode([B)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 0
+
+    iget-object p2, p0, Lft6;->a:Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lzl0;->b:[B
+
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeByteArray([B)V
+
     return-void
 .end method

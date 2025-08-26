@@ -148,7 +148,7 @@
 
     iget-object v3, p1, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareParams$PrepareJoin;->initialJoinLink:Ljava/lang/String;
 
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -161,7 +161,7 @@
 
     iget-object p1, p1, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareParams$PrepareJoin;->anonToken:Ljava/lang/String;
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -234,13 +234,13 @@
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareParams$PrepareJoin;->anonToken:Ljava/lang/String;
 
-    const-string v1, "PrepareJoin(initialJoinLink="
+    const-string v1, ", anonToken="
 
-    const-string v2, ", anonToken="
+    const-string v2, ")"
 
-    const-string v3, ")"
+    const-string v3, "PrepareJoin(initialJoinLink="
 
-    invoke-static {v1, v0, v2, p0, v3}, Lc3d;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v0, v1, p0, v2}, Lrqc;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

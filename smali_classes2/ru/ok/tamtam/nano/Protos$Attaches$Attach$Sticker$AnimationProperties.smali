@@ -1,5 +1,5 @@
 .class public final Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;
-.super Lgr8;
+.super Lnv8;
 .source "SourceFile"
 
 
@@ -43,7 +43,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lgr8;-><init>()V
+    invoke-direct {p0}, Lnv8;-><init>()V
 
     invoke-virtual {p0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;->clear()Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;
 
@@ -57,7 +57,7 @@
 
     if-nez v0, :cond_1
 
-    sget-object v0, Ltz6;->b:Ljava/lang/Object;
+    sget-object v0, Lr37;->b:Ljava/lang/Object;
 
     monitor-enter v0
 
@@ -99,7 +99,7 @@
     return-object v0
 .end method
 
-.method public static parseFrom(Ln13;)Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;
+.method public static parseFrom(Lp33;)Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -112,7 +112,7 @@
 
     invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;-><init>()V
 
-    invoke-virtual {v0, p0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;->mergeFrom(Ln13;)Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;
+    invoke-virtual {v0, p0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;->mergeFrom(Lp33;)Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;
 
     move-result-object p0
 
@@ -132,7 +132,7 @@
 
     invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;-><init>()V
 
-    invoke-static {v0, p0}, Lgr8;->mergeFrom(Lgr8;[B)Lgr8;
+    invoke-static {v0, p0}, Lnv8;->mergeFrom(Lnv8;[B)Lnv8;
 
     move-result-object p0
 
@@ -162,7 +162,7 @@
 
     const/4 v0, -0x1
 
-    iput v0, p0, Lgr8;->cachedSize:I
+    iput v0, p0, Lnv8;->cachedSize:I
 
     return-object p0
 .end method
@@ -176,7 +176,7 @@
 
     const/4 v1, 0x1
 
-    invoke-static {v1, v0}, Lo13;->f(II)I
+    invoke-static {v1, v0}, Lq33;->f(II)I
 
     move-result v0
 
@@ -192,7 +192,7 @@
 
     const/4 v2, 0x2
 
-    invoke-static {v2, v1}, Lo13;->f(II)I
+    invoke-static {v2, v1}, Lq33;->f(II)I
 
     move-result v1
 
@@ -205,7 +205,7 @@
 
     const/4 v2, 0x3
 
-    invoke-static {v2, v1}, Lo13;->f(II)I
+    invoke-static {v2, v1}, Lq33;->f(II)I
 
     move-result v1
 
@@ -218,7 +218,7 @@
 
     const/4 v2, 0x4
 
-    invoke-static {v2, v1}, Lo13;->f(II)I
+    invoke-static {v2, v1}, Lq33;->f(II)I
 
     move-result v1
 
@@ -231,17 +231,19 @@
 
     const/4 v1, 0x5
 
-    invoke-static {p0, v1, v1, v1}, Ltz6;->a(Ljava/util/Map;III)I
+    invoke-static {p0, v1, v1, v1}, Lr37;->a(Ljava/util/Map;III)I
 
     move-result p0
 
-    add-int/2addr v0, p0
+    add-int/2addr p0, v0
+
+    return p0
 
     :cond_4
     return v0
 .end method
 
-.method public bridge synthetic mergeFrom(Ln13;)Lgr8;
+.method public bridge synthetic mergeFrom(Lp33;)Lnv8;
     .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -250,15 +252,15 @@
     .end annotation
 
     .line 13
-    invoke-virtual {p0, p1}, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;->mergeFrom(Ln13;)Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;
+    invoke-virtual {p0, p1}, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;->mergeFrom(Lp33;)Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public mergeFrom(Ln13;)Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;
-    .locals 9
+.method public mergeFrom(Lp33;)Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -266,12 +268,11 @@
     .end annotation
 
     .line 1
-    sget-object v8, Lxy6;->d:Lmt7;
+    sget-object v2, Lwqd;->f:Lmy7;
 
     .line 2
-    :cond_0
     :goto_0
-    invoke-virtual {p1}, Ln13;->s()I
+    invoke-virtual {p1}, Lp33;->s()I
 
     move-result v0
 
@@ -298,89 +299,104 @@
     if-eq v0, v1, :cond_1
 
     .line 3
-    invoke-virtual {p1, v0}, Ln13;->u(I)Z
+    invoke-virtual {p1, v0}, Lp33;->u(I)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    return-object p0
+    goto :goto_2
+
+    :cond_0
+    move-object v0, p1
+
+    goto :goto_1
 
     .line 4
     :cond_1
     iget-object v1, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;->frameRepeats:Ljava/util/Map;
 
-    const/4 v4, 0x5
-
-    const/4 v5, 0x0
-
-    const/4 v3, 0x5
-
     const/16 v6, 0x8
 
     const/16 v7, 0x10
 
+    const/4 v3, 0x5
+
+    const/4 v4, 0x5
+
+    const/4 v5, 0x0
+
     move-object v0, p1
 
-    move-object v2, v8
+    invoke-static/range {v0 .. v7}, Lr37;->b(Lp33;Ljava/util/Map;Lmy7;IILnv8;II)Ljava/util/Map;
 
-    invoke-static/range {v0 .. v7}, Ltz6;->b(Ln13;Ljava/util/Map;Lmt7;IILgr8;II)Ljava/util/Map;
+    move-result-object p1
 
-    move-result-object v0
+    iput-object p1, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;->frameRepeats:Ljava/util/Map;
 
-    iput-object v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;->frameRepeats:Ljava/util/Map;
+    goto :goto_1
 
-    goto :goto_0
+    :cond_2
+    move-object v0, p1
 
     .line 5
-    :cond_2
-    invoke-virtual {p1}, Ln13;->p()I
+    invoke-virtual {v0}, Lp33;->p()I
 
-    move-result v0
+    move-result p1
 
     .line 6
-    iput v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;->replayDelay:I
+    iput p1, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;->replayDelay:I
 
-    goto :goto_0
+    goto :goto_1
+
+    :cond_3
+    move-object v0, p1
 
     .line 7
-    :cond_3
-    invoke-virtual {p1}, Ln13;->p()I
+    invoke-virtual {v0}, Lp33;->p()I
 
-    move-result v0
+    move-result p1
 
     .line 8
-    iput v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;->duration:I
+    iput p1, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;->duration:I
 
-    goto :goto_0
+    goto :goto_1
+
+    :cond_4
+    move-object v0, p1
 
     .line 9
-    :cond_4
-    invoke-virtual {p1}, Ln13;->p()I
+    invoke-virtual {v0}, Lp33;->p()I
 
-    move-result v0
+    move-result p1
 
     .line 10
-    iput v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;->fps:I
+    iput p1, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;->fps:I
 
-    goto :goto_0
+    goto :goto_1
+
+    :cond_5
+    move-object v0, p1
 
     .line 11
-    :cond_5
-    invoke-virtual {p1}, Ln13;->p()I
+    invoke-virtual {v0}, Lp33;->p()I
 
-    move-result v0
+    move-result p1
 
     .line 12
-    iput v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;->framesCount:I
+    iput p1, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;->framesCount:I
+
+    :goto_1
+    move-object p1, v0
 
     goto :goto_0
 
     :cond_6
+    :goto_2
     return-object p0
 .end method
 
-.method public writeTo(Lo13;)V
+.method public writeTo(Lq33;)V
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -394,7 +410,7 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {p1, v1, v0}, Lo13;->w(II)V
+    invoke-virtual {p1, v1, v0}, Lq33;->w(II)V
 
     :cond_0
     iget v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;->fps:I
@@ -403,7 +419,7 @@
 
     const/4 v1, 0x2
 
-    invoke-virtual {p1, v1, v0}, Lo13;->w(II)V
+    invoke-virtual {p1, v1, v0}, Lq33;->w(II)V
 
     :cond_1
     iget v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;->duration:I
@@ -412,7 +428,7 @@
 
     const/4 v1, 0x3
 
-    invoke-virtual {p1, v1, v0}, Lo13;->w(II)V
+    invoke-virtual {p1, v1, v0}, Lq33;->w(II)V
 
     :cond_2
     iget v0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;->replayDelay:I
@@ -421,7 +437,7 @@
 
     const/4 v1, 0x4
 
-    invoke-virtual {p1, v1, v0}, Lo13;->w(II)V
+    invoke-virtual {p1, v1, v0}, Lq33;->w(II)V
 
     :cond_3
     iget-object p0, p0, Lru/ok/tamtam/nano/Protos$Attaches$Attach$Sticker$AnimationProperties;->frameRepeats:Ljava/util/Map;
@@ -430,7 +446,7 @@
 
     const/4 v0, 0x5
 
-    invoke-static {p1, p0, v0, v0, v0}, Ltz6;->d(Lo13;Ljava/util/Map;III)V
+    invoke-static {p1, p0, v0, v0, v0}, Lr37;->d(Lq33;Ljava/util/Map;III)V
 
     :cond_4
     return-void

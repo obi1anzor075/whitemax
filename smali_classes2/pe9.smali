@@ -1,108 +1,195 @@
 .class public final Lpe9;
-.super Lgt0;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic h:I
+.field public final synthetic X:Lre9;
 
-.field public final synthetic i:Ljava/lang/Object;
+.field public final synthetic Y:J
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;)V
+.method public constructor <init>(Lre9;JLkotlin/coroutines/Continuation;)V
     .locals 0
 
-    iput p1, p0, Lpe9;->h:I
+    iput-object p1, p0, Lpe9;->X:Lre9;
 
-    iput-object p2, p0, Lpe9;->i:Ljava/lang/Object;
+    iput-wide p2, p0, Lpe9;->Y:J
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p4}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final D()V
-    .locals 2
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget v0, p0, Lpe9;->h:I
+    check-cast p1, Lox3;
 
-    packed-switch v0, :pswitch_data_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object p0, p0, Lpe9;->i:Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Lpe9;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    check-cast p0, Ljwa;
+    move-result-object p0
 
-    iget-object v0, p0, Ljwa;->H0:Lmj5;
+    check-cast p0, Lpe9;
 
-    if-eqz v0, :cond_1
+    sget-object p1, Le5f;->a:Le5f;
 
-    :try_start_0
-    iget-object v0, v0, Lmj5;->z0:Landroid/animation/ValueAnimator;
+    invoke-virtual {p0, p1}, Lpe9;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-nez v0, :cond_0
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 3
+
+    new-instance p1, Lpe9;
+
+    iget-object v0, p0, Lpe9;->X:Lre9;
+
+    iget-wide v1, p0, Lpe9;->Y:J
+
+    invoke-direct {p1, v0, v1, v2, p2}, Lpe9;-><init>(Lre9;JLkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lpe9;->X:Lre9;
+
+    iget-object p1, p1, Lre9;->d:Lazd;
+
+    invoke-virtual {p1}, Lazd;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lle9;
+
+    iget-object v0, v0, Lle9;->b:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    iget-wide v3, p0, Lpe9;->Y:J
+
+    if-eqz v1, :cond_0
+
+    new-instance p0, Ljava/lang/Long;
+
+    invoke-direct {p0, v3, v4}, Ljava/lang/Long;-><init>(J)V
+
+    invoke-static {p0}, Ljava/util/Collections;->singleton(Ljava/lang/Object;)Ljava/util/Set;
+
+    move-result-object p0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
+    new-instance p0, Ljava/lang/Long;
+
+    invoke-direct {p0, v3, v4}, Ljava/lang/Long;-><init>(J)V
+
+    invoke-interface {v0, p0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1
+
+    invoke-static {v0}, Lp43;->Z0(Ljava/lang/Iterable;)Ljava/util/Set;
+
+    move-result-object p0
+
+    new-instance v0, Ljava/lang/Long;
+
+    invoke-direct {v0, v3, v4}, Ljava/lang/Long;-><init>(J)V
+
+    invoke-interface {p0, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_1
+    new-instance p0, Ljava/lang/Long;
+
+    invoke-direct {p0, v3, v4}, Ljava/lang/Long;-><init>(J)V
+
+    new-instance v1, Ljava/util/LinkedHashSet;
+
+    invoke-interface {v0}, Ljava/util/Set;->size()I
+
+    move-result v3
+
+    add-int/2addr v3, v2
+
+    invoke-static {v3}, Ljz7;->C(I)I
+
+    move-result v3
+
+    invoke-direct {v1, v3}, Ljava/util/LinkedHashSet;-><init>(I)V
+
+    invoke-virtual {v1, v0}, Ljava/util/AbstractCollection;->addAll(Ljava/util/Collection;)Z
+
+    invoke-virtual {v1, p0}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
+
+    move-object p0, v1
 
     :goto_0
-    iget-object v0, p0, Ljwa;->H0:Lmj5;
+    invoke-interface {p0}, Ljava/util/Set;->isEmpty()Z
 
-    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    sget-object v0, Lgz4;->a:Lgz4;
+
+    goto :goto_1
+
+    :cond_2
+    invoke-static {}, Lxja;->i()Lkl7;
 
     move-result-object v0
 
-    invoke-static {v0}, Lek8;->F(Landroid/content/Context;)Landroid/view/WindowManager;
+    new-instance v1, Lsia;
+
+    sget v3, Lwga;->v:I
+
+    sget v4, Lxga;->h:I
+
+    sget v5, Lanc;->w:I
+
+    invoke-direct {v1, v3, v4, v5}, Lsia;-><init>(III)V
+
+    invoke-virtual {v0, v1}, Lkl7;->add(Ljava/lang/Object;)Z
+
+    invoke-static {v0}, Lxja;->b(Ljava/util/List;)Lkl7;
 
     move-result-object v0
 
-    iget-object v1, p0, Ljwa;->H0:Lmj5;
+    :goto_1
+    new-instance v1, Lle9;
 
-    invoke-interface {v0, v1}, Landroid/view/ViewManager;->removeView(Landroid/view/View;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-direct {v1, v2, p0, v0}, Lle9;-><init>(ZLjava/util/Set;Ljava/util/List;)V
 
-    :catch_0
-    :cond_1
-    const/4 v0, 0x0
+    const/4 p0, 0x0
 
-    iput-object v0, p0, Ljwa;->H0:Lmj5;
+    invoke-virtual {p1, p0, v1}, Lazd;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    return-void
+    sget-object p0, Le5f;->a:Le5f;
 
-    :pswitch_0
-    iget-object p0, p0, Lpe9;->i:Ljava/lang/Object;
-
-    check-cast p0, Lqe9;
-
-    iget-object v0, p0, Lqe9;->Y:Landroid/view/View;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setAnimation(Landroid/view/animation/Animation;)V
-
-    iget-object v0, p0, Lqe9;->Y:Landroid/view/View;
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    new-instance v0, Lai0;
-
-    const/16 v1, 0x17
-
-    invoke-direct {v0, v1}, Lai0;-><init>(I)V
-
-    invoke-virtual {p0, v0}, Lv2;->o(Lrf3;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

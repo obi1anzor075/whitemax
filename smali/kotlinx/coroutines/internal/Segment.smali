@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ldl9;
+.implements Lrp9;
 
 
 # annotations
@@ -14,7 +14,7 @@
         "TS;>;>",
         "Lkotlinx/coroutines/internal/ConcurrentLinkedListNode<",
         "TS;>;",
-        "Ldl9;"
+        "Lrp9;"
     }
 .end annotation
 
@@ -26,7 +26,7 @@
         "Lkotlinx/coroutines/internal/Segment;",
         "S",
         "Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;",
-        "Ldl9;",
+        "Lrp9;",
         "",
         "id",
         "prev",
@@ -43,11 +43,11 @@
         "index",
         "",
         "cause",
-        "Lhu3;",
+        "Lhx3;",
         "context",
-        "Ljue;",
+        "Le5f;",
         "onCancellation",
-        "(ILjava/lang/Throwable;Lhu3;)V",
+        "(ILjava/lang/Throwable;Lhx3;)V",
         "onSlotCleaned",
         "()V",
         "J",
@@ -65,6 +65,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -167,12 +168,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -204,16 +204,15 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
-.method public abstract onCancellation(ILjava/lang/Throwable;Lhu3;)V
+.method public abstract onCancellation(ILjava/lang/Throwable;Lhx3;)V
 .end method
 
 .method public final onSlotCleaned()V
@@ -268,7 +267,7 @@
     :cond_1
     const/4 p0, 0x0
 
-    goto :goto_1
+    return p0
 
     :cond_2
     :goto_0
@@ -284,6 +283,5 @@
 
     const/4 p0, 0x1
 
-    :goto_1
     return p0
 .end method

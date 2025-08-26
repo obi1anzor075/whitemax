@@ -17,16 +17,16 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/sessionroom/participant/SessionRoomParticipants;",
         "",
-        "Lw2d;",
+        "Le9d;",
         "roomId",
         "",
         "Lru/ok/android/externcalls/sdk/sessionroom/participant/SessionRoomParticipants$Participant;",
         "participants",
         "<init>",
-        "(Lw2d;Ljava/util/Collection;)V",
-        "Lw2d;",
+        "(Le9d;Ljava/util/Collection;)V",
+        "Le9d;",
         "getRoomId",
-        "()Lw2d;",
+        "()Le9d;",
         "Ljava/util/Collection;",
         "getParticipants",
         "()Ljava/util/Collection;",
@@ -39,6 +39,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -53,16 +54,16 @@
     .end annotation
 .end field
 
-.field private final roomId:Lw2d;
+.field private final roomId:Le9d;
 
 
 # direct methods
-.method public constructor <init>(Lw2d;Ljava/util/Collection;)V
+.method public constructor <init>(Le9d;Ljava/util/Collection;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw2d;",
+            "Le9d;",
             "Ljava/util/Collection<",
             "Lru/ok/android/externcalls/sdk/sessionroom/participant/SessionRoomParticipants$Participant;",
             ">;)V"
@@ -71,7 +72,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/sessionroom/participant/SessionRoomParticipants;->roomId:Lw2d;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/sessionroom/participant/SessionRoomParticipants;->roomId:Le9d;
 
     iput-object p2, p0, Lru/ok/android/externcalls/sdk/sessionroom/participant/SessionRoomParticipants;->participants:Ljava/util/Collection;
 
@@ -96,10 +97,10 @@
     return-object p0
 .end method
 
-.method public final getRoomId()Lw2d;
+.method public final getRoomId()Le9d;
     .locals 0
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/participant/SessionRoomParticipants;->roomId:Lw2d;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/sessionroom/participant/SessionRoomParticipants;->roomId:Le9d;
 
     return-object p0
 .end method

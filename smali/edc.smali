@@ -1,147 +1,75 @@
-.class public final enum Ledc;
-.super Ljava/lang/Enum;
+.class public final Ledc;
+.super Lxw6;
 .source "SourceFile"
 
 
-# static fields
-.field public static final enum X:Ledc;
-
-.field public static final enum Y:Ledc;
-
-.field public static final enum Z:Ledc;
-
-.field public static final enum b:Ledc;
-
-.field public static final enum c:Ledc;
-
-.field public static final enum o:Ledc;
-
-.field public static final synthetic w0:[Ledc;
-
-
 # instance fields
-.field public final a:I
+.field public final synthetic c:Lfdc;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 9
-
-    new-instance v0, Ledc;
-
-    const/4 v1, 0x0
-
-    sget v2, Lvsb;->call_finished:I
-
-    const-string v3, "END"
-
-    invoke-direct {v0, v3, v1, v2}, Ledc;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Ledc;->b:Ledc;
-
-    new-instance v1, Ledc;
-
-    const/4 v2, 0x1
-
-    sget v3, Lvsb;->call_incoming:I
-
-    const-string v4, "INCOMING"
-
-    invoke-direct {v1, v4, v2, v3}, Ledc;-><init>(Ljava/lang/String;II)V
-
-    sput-object v1, Ledc;->c:Ledc;
-
-    new-instance v2, Ledc;
-
-    const/4 v3, 0x2
-
-    sget v4, Lvsb;->call_ringing:I
-
-    const-string v5, "BEEP"
-
-    invoke-direct {v2, v5, v3, v4}, Ledc;-><init>(Ljava/lang/String;II)V
-
-    sput-object v2, Ledc;->o:Ledc;
-
-    new-instance v3, Ledc;
-
-    const/4 v4, 0x3
-
-    sget v5, Lvsb;->call_busy:I
-
-    const-string v6, "BUSY"
-
-    invoke-direct {v3, v6, v4, v5}, Ledc;-><init>(Ljava/lang/String;II)V
-
-    sput-object v3, Ledc;->X:Ledc;
-
-    new-instance v4, Ledc;
-
-    const/4 v5, 0x4
-
-    sget v6, Lvsb;->call_connecting:I
-
-    const-string v7, "CONNECTING"
-
-    invoke-direct {v4, v7, v5, v6}, Ledc;-><init>(Ljava/lang/String;II)V
-
-    sput-object v4, Ledc;->Y:Ledc;
-
-    new-instance v5, Ledc;
-
-    const/4 v6, 0x5
-
-    sget v7, Lvsb;->call_connected:I
-
-    const-string v8, "CONNECTED"
-
-    invoke-direct {v5, v8, v6, v7}, Ledc;-><init>(Ljava/lang/String;II)V
-
-    sput-object v5, Ledc;->Z:Ledc;
-
-    filled-new-array/range {v0 .. v5}, [Ledc;
-
-    move-result-object v0
-
-    sput-object v0, Ledc;->w0:[Ledc;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;II)V
+.method public constructor <init>(Lfdc;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p1, p0, Ledc;->c:Lfdc;
 
-    iput p3, p0, Ledc;->a:I
+    invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Ledc;
-    .locals 1
 
-    const-class v0, Ledc;
+# virtual methods
+.method public final f()Z
+    .locals 0
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    const/4 p0, 0x1
 
-    move-result-object p0
-
-    check-cast p0, Ledc;
-
-    return-object p0
+    return p0
 .end method
 
-.method public static values()[Ledc;
-    .locals 1
+.method public final get(I)Ljava/lang/Object;
+    .locals 2
 
-    sget-object v0, Ledc;->w0:[Ledc;
+    iget-object p0, p0, Ledc;->c:Lfdc;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    iget v0, p0, Lfdc;->Z:I
 
-    move-result-object v0
+    invoke-static {p1, v0}, Lu7;->k(II)V
 
-    check-cast v0, [Ledc;
+    iget-object v0, p0, Lfdc;->X:[Ljava/lang/Object;
 
-    return-object v0
+    mul-int/lit8 p1, p1, 0x2
+
+    iget p0, p0, Lfdc;->Y:I
+
+    add-int v1, p1, p0
+
+    aget-object v1, v0, v1
+
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    xor-int/lit8 p0, p0, 0x1
+
+    add-int/2addr p1, p0
+
+    aget-object p0, v0, p1
+
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance p1, Ljava/util/AbstractMap$SimpleImmutableEntry;
+
+    invoke-direct {p1, v1, p0}, Ljava/util/AbstractMap$SimpleImmutableEntry;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-object p1
+.end method
+
+.method public final size()I
+    .locals 0
+
+    iget-object p0, p0, Ledc;->c:Lfdc;
+
+    iget p0, p0, Lfdc;->Z:I
+
+    return p0
 .end method

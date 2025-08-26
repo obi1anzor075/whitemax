@@ -1,31 +1,111 @@
-.class public abstract Lcba;
+.class public final Lcba;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:I
-
-.field public static final b:I
-
-.field public static final c:I
+# instance fields
+.field public final a:Lje7;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lje7;)V
+    .locals 0
 
-    sget v0, Lpub;->share_message_hint:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput v0, Lcba;->a:I
-
-    sget v0, Lpub;->share_search_hint:I
-
-    sput v0, Lcba;->b:I
-
-    sget v0, Lpub;->share_toolbar_title:I
-
-    sput v0, Lcba;->c:I
+    iput-object p1, p0, Lcba;->a:Lje7;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a(JLbu3;Ljava/util/List;)Ljava/lang/Object;
+    .locals 4
+
+    instance-of v0, p3, Lbba;
+
+    if-eqz v0, :cond_0
+
+    move-object v0, p3
+
+    check-cast v0, Lbba;
+
+    iget v1, v0, Lbba;->Y:I
+
+    const/high16 v2, -0x80000000
+
+    and-int v3, v1, v2
+
+    if-eqz v3, :cond_0
+
+    sub-int/2addr v1, v2
+
+    iput v1, v0, Lbba;->Y:I
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Lbba;
+
+    invoke-direct {v0, p0, p3}, Lbba;-><init>(Lcba;Lbu3;)V
+
+    :goto_0
+    iget-object p3, v0, Lbba;->o:Ljava/lang/Object;
+
+    iget v1, v0, Lbba;->Y:I
+
+    const/4 v2, 0x1
+
+    if-eqz v1, :cond_2
+
+    if-ne v1, v2, :cond_1
+
+    invoke-static {p3}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_2
+    invoke-static {p3}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lcba;->a:Lje7;
+
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lrke;
+
+    new-instance p3, Lnb2;
+
+    invoke-direct {p3, p1, p2, p4}, Lnb2;-><init>(JLjava/util/List;)V
+
+    iput v2, v0, Lbba;->Y:I
+
+    invoke-virtual {p0, p3, v0}, Lrke;->e(Lije;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p3
+
+    sget-object p0, Lpx3;->a:Lpx3;
+
+    if-ne p3, p0, :cond_3
+
+    return-object p0
+
+    :cond_3
+    :goto_1
+    check-cast p3, Lkd9;
+
+    iget-object p0, p3, Lkd9;->X:Ljava/util/List;
+
+    return-object p0
 .end method

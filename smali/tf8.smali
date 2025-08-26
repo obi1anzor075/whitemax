@@ -1,62 +1,77 @@
-.class public abstract Ltf8;
-.super Ljava/lang/Object;
+.class public final Ltf8;
+.super Lccc;
 .source "SourceFile"
 
 
+# instance fields
+.field public final B0:Landroid/view/View;
+
+.field public final C0:Landroid/widget/ImageView;
+
+.field public final D0:Landroid/widget/ProgressBar;
+
+.field public final E0:Landroid/widget/TextView;
+
+.field public final F0:F
+
+.field public G0:Lmg8;
+
+.field public final synthetic H0:Lwf8;
+
+
 # direct methods
-.method public static a()Landroid/app/Notification$MediaStyle;
-    .locals 1
+.method public constructor <init>(Lwf8;Landroid/view/View;)V
+    .locals 2
 
-    new-instance v0, Landroid/app/Notification$MediaStyle;
+    iput-object p1, p0, Ltf8;->H0:Lwf8;
 
-    invoke-direct {v0}, Landroid/app/Notification$MediaStyle;-><init>()V
+    invoke-direct {p0, p2}, Lccc;-><init>(Landroid/view/View;)V
 
-    return-object v0
-.end method
+    iput-object p2, p0, Ltf8;->B0:Landroid/view/View;
 
-.method public static b(Landroid/app/Notification$MediaStyle;[ILkc8;)Landroid/app/Notification$MediaStyle;
-    .locals 0
+    sget v0, Lusb;->mr_cast_group_icon:I
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object v0
 
-    if-eqz p1, :cond_0
+    check-cast v0, Landroid/widget/ImageView;
 
-    invoke-static {p0, p1}, Ltf8;->d(Landroid/app/Notification$MediaStyle;[I)V
+    iput-object v0, p0, Ltf8;->C0:Landroid/widget/ImageView;
 
-    :cond_0
-    iget-object p1, p2, Lkc8;->a:Lcd8;
+    sget v0, Lusb;->mr_cast_group_progress_bar:I
 
-    iget-object p1, p1, Lcd8;->h:Lmd8;
+    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    iget-object p1, p1, Lmd8;->j:Lvc8;
+    move-result-object v0
 
-    iget-object p1, p1, Lvc8;->a:Lqc8;
+    check-cast v0, Landroid/widget/ProgressBar;
 
-    iget-object p1, p1, Lpc8;->c:Luc8;
+    iput-object v0, p0, Ltf8;->D0:Landroid/widget/ProgressBar;
 
-    iget-object p1, p1, Luc8;->b:Ljava/lang/Object;
+    sget v1, Lusb;->mr_cast_group_name:I
 
-    check-cast p1, Landroid/media/session/MediaSession$Token;
+    invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    invoke-virtual {p0, p1}, Landroid/app/Notification$MediaStyle;->setMediaSession(Landroid/media/session/MediaSession$Token;)Landroid/app/Notification$MediaStyle;
+    move-result-object p2
 
-    return-object p0
-.end method
+    check-cast p2, Landroid/widget/TextView;
 
-.method public static c(Landroid/app/Notification$Builder;Landroid/app/Notification$MediaStyle;)V
-    .locals 0
+    iput-object p2, p0, Ltf8;->E0:Landroid/widget/TextView;
 
-    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setStyle(Landroid/app/Notification$Style;)Landroid/app/Notification$Builder;
+    iget-object p1, p1, Lwf8;->t0:Lyf8;
 
-    return-void
-.end method
+    iget-object p2, p1, Lyf8;->u0:Landroid/content/Context;
 
-.method public static varargs d(Landroid/app/Notification$MediaStyle;[I)V
-    .locals 0
+    invoke-static {p2}, Ltg8;->c(Landroid/content/Context;)F
 
-    invoke-virtual {p0, p1}, Landroid/app/Notification$MediaStyle;->setShowActionsInCompactView([I)Landroid/app/Notification$MediaStyle;
+    move-result p2
+
+    iput p2, p0, Ltf8;->F0:F
+
+    iget-object p0, p1, Lyf8;->u0:Landroid/content/Context;
+
+    invoke-static {p0, v0}, Ltg8;->i(Landroid/content/Context;Landroid/widget/ProgressBar;)V
 
     return-void
 .end method

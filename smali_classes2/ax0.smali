@@ -1,112 +1,123 @@
-.class public final synthetic Lax0;
+.class public abstract synthetic Lax0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Llfd;
 
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Ljava/lang/Object;
+# static fields
+.field public static final synthetic $EnumSwitchMapping$0:[I
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;)V
-    .locals 0
-
-    iput p1, p0, Lax0;->a:I
-
-    iput-object p2, p0, Lax0;->b:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final k(Lorg/json/JSONObject;)V
+.method static constructor <clinit>()V
     .locals 3
 
-    iget v0, p0, Lax0;->a:I
+    invoke-static {}, Low0;->values()[Low0;
 
-    packed-switch v0, :pswitch_data_0
+    move-result-object v0
 
-    iget-object p0, p0, Lax0;->b:Ljava/lang/Object;
+    array-length v0, v0
 
-    check-cast p0, Lru/ok/android/externcalls/sdk/dev/MediaDumpManager$RemoteMediaDumpRequestListener;
+    new-array v0, v0, [I
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/dev/internal/MediaDumpManagerImpl;->a(Lru/ok/android/externcalls/sdk/dev/MediaDumpManager$RemoteMediaDumpRequestListener;Lorg/json/JSONObject;)V
+    :try_start_0
+    sget-object v1, Low0;->p0:Low0;
 
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lax0;->b:Ljava/lang/Object;
-
-    check-cast p0, Lk40;
-
-    iget-object p0, p0, Lk40;->X:Ljava/lang/Object;
-
-    check-cast p0, Lxwb;
-
-    const-string v0, "MediaSettingsSender"
-
-    if-eqz p1, :cond_0
-
-    const-string v1, "error"
-
-    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "command-discarded"
-
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    const/4 v2, 0x1
 
-    const-string p1, "change-media-settings command was merged with ongoing one"
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-interface {p0, v0, p1}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    :catch_0
+    :try_start_1
+    sget-object v1, Low0;->q0:Low0;
 
-    goto :goto_0
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    :cond_0
-    new-instance v1, Ljava/lang/StringBuilder;
+    move-result v1
 
-    const-string v2, "change-media-settings error"
+    const/4 v2, 0x2
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    :catch_1
+    :try_start_2
+    sget-object v1, Low0;->r0:Low0;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    move-result-object p1
+    move-result v1
 
-    invoke-interface {p0, v0, p1}, Lxwb;->log(Ljava/lang/String;Ljava/lang/String;)V
+    const/4 v2, 0x3
 
-    :goto_0
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
+    :catch_2
+    :try_start_3
+    sget-object v1, Low0;->s0:Low0;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+
+    :catch_3
+    :try_start_4
+    sget-object v1, Low0;->t0:Low0;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x5
+
+    aput v2, v0, v1
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+
+    :catch_4
+    :try_start_5
+    sget-object v1, Low0;->u0:Low0;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x6
+
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+
+    :catch_5
+    :try_start_6
+    sget-object v1, Low0;->v0:Low0;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x7
+
+    aput v2, v0, v1
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
+
+    :catch_6
+    sput-object v0, Lax0;->$EnumSwitchMapping$0:[I
+
     return-void
-
-    :pswitch_1
-    iget-object p0, p0, Lax0;->b:Ljava/lang/Object;
-
-    check-cast p0, Ljava/lang/Runnable;
-
-    invoke-interface {p0}, Ljava/lang/Runnable;->run()V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Lv56;
 
 
 # instance fields
@@ -40,6 +40,7 @@
 
     move-result p0
 
+    :goto_0
     invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p0
@@ -68,21 +69,21 @@
     return-object p0
 
     :pswitch_3
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/ConversationImpl;->P(Lru/ok/android/externcalls/sdk/ConversationImpl;)Lgx0;
+    invoke-static {p0}, Lru/ok/android/externcalls/sdk/ConversationImpl;->P(Lru/ok/android/externcalls/sdk/ConversationImpl;)Liy0;
 
     move-result-object p0
 
     return-object p0
 
     :pswitch_4
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/ConversationImpl;->r(Lru/ok/android/externcalls/sdk/ConversationImpl;)Lgx0;
+    invoke-static {p0}, Lru/ok/android/externcalls/sdk/ConversationImpl;->r(Lru/ok/android/externcalls/sdk/ConversationImpl;)Liy0;
 
     move-result-object p0
 
     return-object p0
 
     :pswitch_5
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/ConversationImpl;->s(Lru/ok/android/externcalls/sdk/ConversationImpl;)Lgx0;
+    invoke-static {p0}, Lru/ok/android/externcalls/sdk/ConversationImpl;->s(Lru/ok/android/externcalls/sdk/ConversationImpl;)Liy0;
 
     move-result-object p0
 
@@ -93,11 +94,7 @@
 
     move-result p0
 
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    return-object p0
+    goto :goto_0
 
     nop
 

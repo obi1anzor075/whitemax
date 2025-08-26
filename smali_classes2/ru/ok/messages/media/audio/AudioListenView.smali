@@ -3,8 +3,8 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lmhe;
-.implements Lr60;
+.implements Lppe;
+.implements Le70;
 
 
 # annotations
@@ -15,38 +15,38 @@
     d2 = {
         "Lru/ok/messages/media/audio/AudioListenView;",
         "Landroid/widget/LinearLayout;",
-        "Lmhe;",
-        "Lr60;",
+        "Lppe;",
+        "Le70;",
         "",
         "isScheduledSend",
-        "Ljue;",
+        "Le5f;",
         "setScheduledSend",
         "(Z)V",
         "playing",
         "setPlayButtonState",
-        "Lg40;",
+        "Lq40;",
         "listener",
         "setListener",
-        "(Lg40;)V",
+        "(Lq40;)V",
         "Landroid/graphics/drawable/Drawable;",
-        "y0",
-        "Lt97;",
+        "r0",
+        "Lje7;",
         "getPlayDrawable",
         "()Landroid/graphics/drawable/Drawable;",
         "playDrawable",
-        "z0",
+        "s0",
         "getPauseDrawable",
         "pauseDrawable",
         "Landroid/graphics/drawable/GradientDrawable;",
-        "B0",
+        "u0",
         "getInputBackgroundDrawable",
         "()Landroid/graphics/drawable/GradientDrawable;",
         "inputBackgroundDrawable",
-        "D0",
+        "w0",
         "getArrowDrawable",
         "arrowDrawable",
         "Landroid/graphics/drawable/LayerDrawable;",
-        "E0",
+        "x0",
         "getSendIcon",
         "()Landroid/graphics/drawable/LayerDrawable;",
         "sendIcon",
@@ -58,254 +58,253 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # static fields
-.field public static final synthetic F0:I
+.field public static final synthetic y0:I
 
 
 # instance fields
-.field public final A0:Landroid/graphics/drawable/LayerDrawable;
+.field public final a:Landroid/view/View;
 
-.field public final B0:Lt97;
-
-.field public final C0:Landroid/graphics/drawable/GradientDrawable;
-
-.field public final D0:Lt97;
-
-.field public final E0:Lt97;
-
-.field public final a:Landroid/widget/TextView;
-
-.field public final b:Landroid/widget/ImageView;
+.field public final b:Landroid/widget/TextView;
 
 .field public final c:Landroid/widget/ImageView;
 
 .field public final o:Landroid/widget/ImageView;
 
-.field public final w0:Landroid/widget/ProgressBar;
+.field public final o0:Landroid/widget/ImageView;
 
-.field public final x0:Landroid/graphics/drawable/GradientDrawable;
+.field public final p0:Landroid/widget/ProgressBar;
 
-.field public final y0:Lt97;
+.field public final q0:Landroid/graphics/drawable/GradientDrawable;
 
-.field public final z0:Lt97;
+.field public final r0:Ljava/lang/Object;
+
+.field public final s0:Ljava/lang/Object;
+
+.field public final t0:Landroid/graphics/drawable/LayerDrawable;
+
+.field public final u0:Ljava/lang/Object;
+
+.field public final v0:Landroid/graphics/drawable/GradientDrawable;
+
+.field public final w0:Ljava/lang/Object;
+
+.field public final x0:Ljava/lang/Object;
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 16
-
-    move-object/from16 v8, p0
+    .locals 15
 
     move-object/from16 v0, p1
 
-    const/4 v1, 0x2
+    const/4 v1, 0x0
 
-    const/4 v2, 0x3
+    move-object/from16 v2, p2
 
-    const/4 v3, 0x0
+    invoke-direct {p0, v0, v2, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    const/4 v9, 0x1
+    new-instance v2, Landroid/graphics/drawable/GradientDrawable;
 
-    move-object/from16 v4, p2
+    invoke-direct {v2}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
 
-    invoke-direct {v8, v0, v4, v3}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    const/high16 v3, 0x42c80000    # 100.0f
+
+    invoke-virtual {v2, v3}, Landroid/graphics/drawable/GradientDrawable;->setCornerRadius(F)V
+
+    iput-object v2, p0, Lru/ok/messages/media/audio/AudioListenView;->q0:Landroid/graphics/drawable/GradientDrawable;
+
+    new-instance v4, Lp40;
+
+    invoke-direct {v4, p0, v1}, Lp40;-><init>(Lru/ok/messages/media/audio/AudioListenView;I)V
+
+    const/4 v5, 0x3
+
+    invoke-static {v5, v4}, Lkhg;->o(ILv56;)Lje7;
+
+    move-result-object v4
+
+    iput-object v4, p0, Lru/ok/messages/media/audio/AudioListenView;->r0:Ljava/lang/Object;
+
+    new-instance v4, Lp40;
+
+    const/4 v8, 0x1
+
+    invoke-direct {v4, p0, v8}, Lp40;-><init>(Lru/ok/messages/media/audio/AudioListenView;I)V
+
+    invoke-static {v5, v4}, Lkhg;->o(ILv56;)Lje7;
+
+    move-result-object v4
+
+    iput-object v4, p0, Lru/ok/messages/media/audio/AudioListenView;->s0:Ljava/lang/Object;
+
+    new-instance v9, Landroid/graphics/drawable/LayerDrawable;
+
+    invoke-direct {p0}, Lru/ok/messages/media/audio/AudioListenView;->getPlayDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v4
+
+    const/4 v7, 0x2
+
+    new-array v10, v7, [Landroid/graphics/drawable/Drawable;
+
+    aput-object v2, v10, v1
+
+    aput-object v4, v10, v8
+
+    invoke-direct {v9, v10}, Landroid/graphics/drawable/LayerDrawable;-><init>([Landroid/graphics/drawable/Drawable;)V
+
+    const/4 v4, 0x4
+
+    int-to-float v4, v4
+
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v10
+
+    iget v10, v10, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v10, v4
+
+    invoke-static {v10}, Lkhg;->x(F)I
+
+    move-result v11
+
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v10
+
+    iget v10, v10, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v10, v4
+
+    invoke-static {v10}, Lkhg;->x(F)I
+
+    move-result v12
+
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v10
+
+    iget v10, v10, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v10, v4
+
+    invoke-static {v10}, Lkhg;->x(F)I
+
+    move-result v13
+
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v10
+
+    iget v10, v10, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v4, v10
+
+    invoke-static {v4}, Lkhg;->x(F)I
+
+    move-result v14
+
+    const/4 v10, 0x1
+
+    invoke-virtual/range {v9 .. v14}, Landroid/graphics/drawable/LayerDrawable;->setLayerInset(IIIII)V
+
+    iput-object v9, p0, Lru/ok/messages/media/audio/AudioListenView;->t0:Landroid/graphics/drawable/LayerDrawable;
+
+    new-instance v4, Lm;
+
+    const/16 v10, 0xe
+
+    invoke-direct {v4, v10}, Lm;-><init>(I)V
+
+    invoke-static {v5, v4}, Lkhg;->o(ILv56;)Lje7;
+
+    move-result-object v4
+
+    iput-object v4, p0, Lru/ok/messages/media/audio/AudioListenView;->u0:Ljava/lang/Object;
 
     new-instance v4, Landroid/graphics/drawable/GradientDrawable;
 
     invoke-direct {v4}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
 
-    const/high16 v5, 0x42c80000    # 100.0f
+    invoke-virtual {v4, v3}, Landroid/graphics/drawable/GradientDrawable;->setCornerRadius(F)V
 
-    invoke-virtual {v4, v5}, Landroid/graphics/drawable/GradientDrawable;->setCornerRadius(F)V
+    iput-object v4, p0, Lru/ok/messages/media/audio/AudioListenView;->v0:Landroid/graphics/drawable/GradientDrawable;
 
-    iput-object v4, v8, Lru/ok/messages/media/audio/AudioListenView;->x0:Landroid/graphics/drawable/GradientDrawable;
+    new-instance v3, Lp40;
 
-    new-instance v6, Lf40;
+    invoke-direct {v3, p0, v7}, Lp40;-><init>(Lru/ok/messages/media/audio/AudioListenView;I)V
 
-    invoke-direct {v6, v8, v3}, Lf40;-><init>(Lru/ok/messages/media/audio/AudioListenView;I)V
+    invoke-static {v5, v3}, Lkhg;->o(ILv56;)Lje7;
 
-    invoke-static {v2, v6}, Lez3;->O(ILs16;)Lt97;
+    move-result-object v3
 
-    move-result-object v6
+    iput-object v3, p0, Lru/ok/messages/media/audio/AudioListenView;->w0:Ljava/lang/Object;
 
-    iput-object v6, v8, Lru/ok/messages/media/audio/AudioListenView;->y0:Lt97;
+    new-instance v3, Lp40;
 
-    new-instance v6, Lf40;
+    invoke-direct {v3, p0, v5}, Lp40;-><init>(Lru/ok/messages/media/audio/AudioListenView;I)V
 
-    invoke-direct {v6, v8, v9}, Lf40;-><init>(Lru/ok/messages/media/audio/AudioListenView;I)V
+    invoke-static {v5, v3}, Lkhg;->o(ILv56;)Lje7;
 
-    invoke-static {v2, v6}, Lez3;->O(ILs16;)Lt97;
+    move-result-object v3
 
-    move-result-object v6
+    iput-object v3, p0, Lru/ok/messages/media/audio/AudioListenView;->x0:Ljava/lang/Object;
 
-    iput-object v6, v8, Lru/ok/messages/media/audio/AudioListenView;->z0:Lt97;
+    sget v3, Lqwb;->view_audio_listen:I
 
-    new-instance v6, Landroid/graphics/drawable/LayerDrawable;
-
-    invoke-direct/range {p0 .. p0}, Lru/ok/messages/media/audio/AudioListenView;->getPlayDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v7
-
-    new-array v10, v1, [Landroid/graphics/drawable/Drawable;
-
-    aput-object v4, v10, v3
-
-    aput-object v7, v10, v9
-
-    invoke-direct {v6, v10}, Landroid/graphics/drawable/LayerDrawable;-><init>([Landroid/graphics/drawable/Drawable;)V
-
-    const/4 v7, 0x4
-
-    int-to-float v7, v7
-
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v10
-
-    iget v10, v10, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr v10, v7
-
-    invoke-static {v10}, La24;->X(F)I
-
-    move-result v12
-
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v10
-
-    iget v10, v10, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr v10, v7
-
-    invoke-static {v10}, La24;->X(F)I
-
-    move-result v13
-
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v10
-
-    iget v10, v10, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr v10, v7
-
-    invoke-static {v10}, La24;->X(F)I
-
-    move-result v14
-
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v10
-
-    iget v10, v10, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr v7, v10
-
-    invoke-static {v7}, La24;->X(F)I
-
-    move-result v15
-
-    const/4 v11, 0x1
-
-    move-object v10, v6
-
-    invoke-virtual/range {v10 .. v15}, Landroid/graphics/drawable/LayerDrawable;->setLayerInset(IIIII)V
-
-    iput-object v6, v8, Lru/ok/messages/media/audio/AudioListenView;->A0:Landroid/graphics/drawable/LayerDrawable;
-
-    new-instance v7, Lm;
-
-    const/16 v10, 0xc
-
-    invoke-direct {v7, v10}, Lm;-><init>(I)V
-
-    invoke-static {v2, v7}, Lez3;->O(ILs16;)Lt97;
-
-    move-result-object v7
-
-    iput-object v7, v8, Lru/ok/messages/media/audio/AudioListenView;->B0:Lt97;
-
-    new-instance v7, Landroid/graphics/drawable/GradientDrawable;
-
-    invoke-direct {v7}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
-
-    invoke-virtual {v7, v5}, Landroid/graphics/drawable/GradientDrawable;->setCornerRadius(F)V
-
-    iput-object v7, v8, Lru/ok/messages/media/audio/AudioListenView;->C0:Landroid/graphics/drawable/GradientDrawable;
-
-    new-instance v5, Lf40;
-
-    invoke-direct {v5, v8, v1}, Lf40;-><init>(Lru/ok/messages/media/audio/AudioListenView;I)V
-
-    invoke-static {v2, v5}, Lez3;->O(ILs16;)Lt97;
-
-    move-result-object v1
-
-    iput-object v1, v8, Lru/ok/messages/media/audio/AudioListenView;->D0:Lt97;
-
-    new-instance v1, Lf40;
-
-    invoke-direct {v1, v8, v2}, Lf40;-><init>(Lru/ok/messages/media/audio/AudioListenView;I)V
-
-    invoke-static {v2, v1}, Lez3;->O(ILs16;)Lt97;
-
-    move-result-object v1
-
-    iput-object v1, v8, Lru/ok/messages/media/audio/AudioListenView;->E0:Lt97;
-
-    sget v1, Lzrb;->view_audio_listen:I
-
-    invoke-static {v0, v1, v8}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
+    invoke-static {v0, v3, p0}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
     const/4 v0, 0x6
 
     int-to-float v0, v0
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-virtual {v3}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    move-result-object v1
+    move-result-object v3
 
-    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
+    iget v3, v3, Landroid/util/DisplayMetrics;->density:F
 
-    mul-float/2addr v0, v1
+    mul-float/2addr v0, v3
 
-    invoke-static {v0}, La24;->X(F)I
+    invoke-static {v0}, Lkhg;->x(F)I
 
     move-result v0
 
-    invoke-virtual {v8, v0, v0, v0, v0}, Landroid/view/View;->setPadding(IIII)V
+    invoke-virtual {p0, v0, v0, v0, v0}, Landroid/view/View;->setPadding(IIII)V
 
-    invoke-virtual {v8, v3}, Landroid/widget/LinearLayout;->setOrientation(I)V
+    invoke-virtual {p0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/16 v0, 0x24
 
     int-to-float v0, v0
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
 
     move-result-object v1
 
@@ -317,21 +316,23 @@
 
     mul-float/2addr v0, v1
 
-    invoke-static {v0}, La24;->X(F)I
+    invoke-static {v0}, Lkhg;->x(F)I
 
     move-result v0
 
-    invoke-virtual {v8, v0}, Landroid/view/View;->setMinimumHeight(I)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setMinimumHeight(I)V
 
-    sget v0, Lyqb;->view_audio_listen__container:I
+    sget v0, Lpvb;->view_audio_listen__container:I
 
-    invoke-virtual {v8, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    sget v1, Lyqb;->view_audio_listen__wave:I
+    iput-object v0, p0, Lru/ok/messages/media/audio/AudioListenView;->a:Landroid/view/View;
 
-    invoke-virtual {v8, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    sget v1, Lpvb;->view_audio_listen__wave:I
+
+    invoke-virtual {p0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -339,73 +340,71 @@
 
     check-cast v10, Lru/ok/messages/views/widgets/audiowave/AudioWaveView;
 
-    sget v1, Lyqb;->view_audio_listen__tv_duration:I
+    sget v1, Lpvb;->view_audio_listen__tv_duration:I
 
-    invoke-virtual {v8, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
     check-cast v1, Landroid/widget/TextView;
 
-    iput-object v1, v8, Lru/ok/messages/media/audio/AudioListenView;->a:Landroid/widget/TextView;
+    iput-object v1, p0, Lru/ok/messages/media/audio/AudioListenView;->b:Landroid/widget/TextView;
 
-    sget v1, Lyqb;->view_audio_listen__btn_play:I
+    sget v1, Lpvb;->view_audio_listen__btn_play:I
 
-    invoke-virtual {v8, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    move-object v11, v1
+    check-cast v1, Landroid/widget/ImageView;
+
+    iput-object v1, p0, Lru/ok/messages/media/audio/AudioListenView;->c:Landroid/widget/ImageView;
+
+    sget v3, Lpvb;->view_audio_listen__btn_close:I
+
+    invoke-virtual {p0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    move-object v11, v3
 
     check-cast v11, Landroid/widget/ImageView;
 
-    iput-object v11, v8, Lru/ok/messages/media/audio/AudioListenView;->b:Landroid/widget/ImageView;
+    iput-object v11, p0, Lru/ok/messages/media/audio/AudioListenView;->o:Landroid/widget/ImageView;
 
-    sget v1, Lyqb;->view_audio_listen__btn_close:I
+    sget v3, Lpvb;->view_audio_listen__btn_send:I
 
-    invoke-virtual {v8, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v3
 
-    move-object v12, v1
+    move-object v12, v3
 
     check-cast v12, Landroid/widget/ImageView;
 
-    iput-object v12, v8, Lru/ok/messages/media/audio/AudioListenView;->c:Landroid/widget/ImageView;
+    iput-object v12, p0, Lru/ok/messages/media/audio/AudioListenView;->o0:Landroid/widget/ImageView;
 
-    sget v1, Lyqb;->view_audio_listen__btn_send:I
+    sget v3, Lpvb;->view_audio_listen__progress:I
 
-    invoke-virtual {v8, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v3
 
-    move-object v13, v1
+    check-cast v3, Landroid/widget/ProgressBar;
 
-    check-cast v13, Landroid/widget/ImageView;
+    iput-object v3, p0, Lru/ok/messages/media/audio/AudioListenView;->p0:Landroid/widget/ProgressBar;
 
-    iput-object v13, v8, Lru/ok/messages/media/audio/AudioListenView;->o:Landroid/widget/ImageView;
+    invoke-virtual {v3, v2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    sget v1, Lyqb;->view_audio_listen__progress:I
+    invoke-direct {p0}, Lru/ok/messages/media/audio/AudioListenView;->getInputBackgroundDrawable()Landroid/graphics/drawable/GradientDrawable;
 
-    invoke-virtual {v8, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-result-object v2
 
-    move-result-object v1
+    invoke-virtual {v0, v2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    check-cast v1, Landroid/widget/ProgressBar;
+    invoke-virtual {v1, v9}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    iput-object v1, v8, Lru/ok/messages/media/audio/AudioListenView;->w0:Landroid/widget/ProgressBar;
-
-    invoke-virtual {v1, v4}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    invoke-direct/range {p0 .. p0}, Lru/ok/messages/media/audio/AudioListenView;->getInputBackgroundDrawable()Landroid/graphics/drawable/GradientDrawable;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    invoke-virtual {v11, v6}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -413,9 +412,9 @@
 
     move-result-object v0
 
-    const/16 v1, 0xa
+    const/16 v2, 0xa
 
-    int-to-float v1, v1
+    int-to-float v2, v2
 
     invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
@@ -423,177 +422,171 @@
 
     iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
-    mul-float/2addr v1, v0
+    mul-float/2addr v2, v0
 
-    invoke-static {v1}, La24;->X(F)I
+    invoke-static {v2}, Lkhg;->x(F)I
 
-    move-result v5
+    move-result v2
 
-    new-instance v14, La93;
+    new-instance v0, Lib3;
 
     const/4 v7, 0x1
 
-    move-object v0, v14
+    move v3, v2
 
-    move-object v1, v11
+    move v4, v2
 
-    move v2, v5
+    move v5, v2
 
-    move v3, v5
+    move-object v6, p0
 
-    move v4, v5
+    invoke-direct/range {v0 .. v7}, Lib3;-><init>(Landroid/view/View;IIIILandroid/view/View;I)V
 
-    move-object/from16 v6, p0
+    invoke-virtual {p0, v0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    invoke-direct/range {v0 .. v7}, La93;-><init>(Landroid/view/View;IIIILandroid/view/View;I)V
+    invoke-virtual {v10, p0}, Lru/ok/messages/views/widgets/audiowave/AudioWaveView;->setListener(Le70;)V
 
-    invoke-virtual {v8, v14}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+    new-instance v0, Lj20;
 
-    invoke-virtual {v10, v8}, Lru/ok/messages/views/widgets/audiowave/AudioWaveView;->setListener(Lr60;)V
+    invoke-direct {v0, v8}, Lj20;-><init>(I)V
 
-    new-instance v0, Lb20;
+    invoke-static {v11, v0}, Lu7;->Q(Landroid/view/View;Landroid/view/View$OnClickListener;)V
 
-    invoke-direct {v0, v9}, Lb20;-><init>(I)V
+    new-instance v0, Lj20;
 
-    invoke-static {v12, v0}, La24;->a0(Landroid/view/View;Landroid/view/View$OnClickListener;)V
+    invoke-direct {v0, v8}, Lj20;-><init>(I)V
 
-    new-instance v0, Lb20;
+    invoke-static {v1, v0}, Lu7;->Q(Landroid/view/View;Landroid/view/View$OnClickListener;)V
 
-    invoke-direct {v0, v9}, Lb20;-><init>(I)V
+    new-instance v0, Lj20;
 
-    invoke-static {v11, v0}, La24;->a0(Landroid/view/View;Landroid/view/View$OnClickListener;)V
+    invoke-direct {v0, v8}, Lj20;-><init>(I)V
 
-    new-instance v0, Lb20;
+    invoke-static {v12, v0}, Lu7;->Q(Landroid/view/View;Landroid/view/View$OnClickListener;)V
 
-    invoke-direct {v0, v9}, Lb20;-><init>(I)V
+    new-instance v0, Lk20;
 
-    invoke-static {v13, v0}, La24;->a0(Landroid/view/View;Landroid/view/View$OnClickListener;)V
+    invoke-direct {v0, v8}, Lk20;-><init>(I)V
 
-    new-instance v0, Lc20;
+    invoke-virtual {v12, v0}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    invoke-direct {v0, v9}, Lc20;-><init>(I)V
+    sget-object v0, Lqp4;->q0:Lap9;
 
-    invoke-virtual {v13, v0}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
-
-    sget-object v0, Lkm4;->y0:Ls59;
-
-    invoke-virtual {v0, v8}, Ls59;->r(Landroid/view/View;)Lpda;
+    invoke-virtual {v0, p0}, Lap9;->h(Landroid/view/View;)Lyha;
 
     move-result-object v0
 
-    invoke-virtual {v8, v0}, Lru/ok/messages/media/audio/AudioListenView;->onThemeChanged(Lpda;)V
+    invoke-virtual {p0, v0}, Lru/ok/messages/media/audio/AudioListenView;->onThemeChanged(Lyha;)V
 
     return-void
 .end method
 
-.method public static c(Lru/ok/messages/media/audio/AudioListenView;)Landroid/graphics/drawable/LayerDrawable;
-    .locals 7
+.method public static e(Lru/ok/messages/media/audio/AudioListenView;)Landroid/graphics/drawable/LayerDrawable;
+    .locals 6
 
-    new-instance v6, Landroid/graphics/drawable/LayerDrawable;
+    new-instance v0, Landroid/graphics/drawable/LayerDrawable;
 
-    iget-object v0, p0, Lru/ok/messages/media/audio/AudioListenView;->C0:Landroid/graphics/drawable/GradientDrawable;
+    iget-object v1, p0, Lru/ok/messages/media/audio/AudioListenView;->v0:Landroid/graphics/drawable/GradientDrawable;
 
     invoke-direct {p0}, Lru/ok/messages/media/audio/AudioListenView;->getArrowDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object p0
 
-    const/4 v1, 0x2
+    const/4 v2, 0x2
 
-    new-array v1, v1, [Landroid/graphics/drawable/Drawable;
+    new-array v2, v2, [Landroid/graphics/drawable/Drawable;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    aput-object v0, v1, v2
+    aput-object v1, v2, v3
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
-    aput-object p0, v1, v0
+    aput-object p0, v2, v1
 
-    invoke-direct {v6, v1}, Landroid/graphics/drawable/LayerDrawable;-><init>([Landroid/graphics/drawable/Drawable;)V
+    invoke-direct {v0, v2}, Landroid/graphics/drawable/LayerDrawable;-><init>([Landroid/graphics/drawable/Drawable;)V
 
     const/4 p0, 0x4
 
     int-to-float p0, p0
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    move-result-object v0
+    move-result-object v1
 
-    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
 
-    mul-float/2addr v0, p0
+    mul-float/2addr v1, p0
 
-    invoke-static {v0}, La24;->X(F)I
+    invoke-static {v1}, Lkhg;->x(F)I
 
     move-result v2
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    move-result-object v0
+    move-result-object v1
 
-    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
 
-    mul-float/2addr v0, p0
+    mul-float/2addr v1, p0
 
-    invoke-static {v0}, La24;->X(F)I
+    invoke-static {v1}, Lkhg;->x(F)I
 
     move-result v3
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    move-result-object v0
+    move-result-object v1
 
-    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
 
-    mul-float/2addr v0, p0
+    mul-float/2addr v1, p0
 
-    invoke-static {v0}, La24;->X(F)I
+    invoke-static {v1}, Lkhg;->x(F)I
 
     move-result v4
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    move-result-object v0
+    move-result-object v1
 
-    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
 
-    mul-float/2addr p0, v0
+    mul-float/2addr p0, v1
 
-    invoke-static {p0}, La24;->X(F)I
+    invoke-static {p0}, Lkhg;->x(F)I
 
     move-result v5
 
     const/4 v1, 0x1
 
-    move-object v0, v6
-
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/drawable/LayerDrawable;->setLayerInset(IIIII)V
 
-    return-object v6
+    return-object v0
 .end method
 
 .method private final getArrowDrawable()Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    iget-object p0, p0, Lru/ok/messages/media/audio/AudioListenView;->D0:Lt97;
+    iget-object p0, p0, Lru/ok/messages/media/audio/AudioListenView;->w0:Ljava/lang/Object;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
@@ -605,9 +598,9 @@
 .method private final getInputBackgroundDrawable()Landroid/graphics/drawable/GradientDrawable;
     .locals 0
 
-    iget-object p0, p0, Lru/ok/messages/media/audio/AudioListenView;->B0:Lt97;
+    iget-object p0, p0, Lru/ok/messages/media/audio/AudioListenView;->u0:Ljava/lang/Object;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
@@ -619,9 +612,9 @@
 .method private final getPauseDrawable()Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    iget-object p0, p0, Lru/ok/messages/media/audio/AudioListenView;->z0:Lt97;
+    iget-object p0, p0, Lru/ok/messages/media/audio/AudioListenView;->s0:Ljava/lang/Object;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
@@ -633,9 +626,9 @@
 .method private final getPlayDrawable()Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    iget-object p0, p0, Lru/ok/messages/media/audio/AudioListenView;->y0:Lt97;
+    iget-object p0, p0, Lru/ok/messages/media/audio/AudioListenView;->r0:Ljava/lang/Object;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
@@ -647,9 +640,9 @@
 .method private final getSendIcon()Landroid/graphics/drawable/LayerDrawable;
     .locals 0
 
-    iget-object p0, p0, Lru/ok/messages/media/audio/AudioListenView;->E0:Lt97;
+    iget-object p0, p0, Lru/ok/messages/media/audio/AudioListenView;->x0:Ljava/lang/Object;
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
@@ -666,54 +659,54 @@
     return-void
 .end method
 
-.method public final d(F)V
+.method public final c(F)V
     .locals 0
 
     return-void
 .end method
 
-.method public final onThemeChanged(Lpda;)V
+.method public final onThemeChanged(Lyha;)V
     .locals 4
 
-    sget-object v0, Lkm4;->y0:Ls59;
+    sget-object v0, Lqp4;->q0:Lap9;
 
-    invoke-virtual {v0, p0}, Ls59;->r(Landroid/view/View;)Lpda;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Lpda;->a()Ljo2;
+    invoke-virtual {v0, p0}, Lap9;->h(Landroid/view/View;)Lyha;
 
     move-result-object v1
 
-    invoke-interface {v1}, Ljo2;->d()Lavf;
+    invoke-interface {v1}, Lyha;->a()Ldq2;
 
     move-result-object v1
 
-    iget-object v2, v1, Lavf;->a:Lzuf;
+    invoke-interface {v1}, Ldq2;->j()Llag;
 
-    iget v2, v2, Lzuf;->a:I
+    move-result-object v1
+
+    iget-object v2, v1, Llag;->a:Lkag;
+
+    iget v2, v2, Lkag;->d:I
 
     invoke-virtual {p0, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    invoke-interface {p1}, Lpda;->getIcon()Lyn6;
+    invoke-interface {p1}, Lyha;->getIcon()Lds6;
 
     move-result-object v2
 
-    iget v2, v2, Lyn6;->c:I
+    iget v2, v2, Lds6;->c:I
 
-    iget-object v3, p0, Lru/ok/messages/media/audio/AudioListenView;->c:Landroid/widget/ImageView;
+    iget-object v3, p0, Lru/ok/messages/media/audio/AudioListenView;->o:Landroid/widget/ImageView;
 
     invoke-virtual {v3, v2}, Landroid/widget/ImageView;->setColorFilter(I)V
 
-    invoke-interface {p1}, Lpda;->b()Lnd0;
+    invoke-interface {p1}, Lyha;->b()Lfe0;
 
     move-result-object v2
 
-    iget-object v2, v2, Lnd0;->a:Lmd0;
+    iget-object v2, v2, Lfe0;->a:Lee0;
 
-    iget v2, v2, Lmd0;->g:I
+    iget v2, v2, Lee0;->h:I
 
-    iget-object v3, p0, Lru/ok/messages/media/audio/AudioListenView;->x0:Landroid/graphics/drawable/GradientDrawable;
+    iget-object v3, p0, Lru/ok/messages/media/audio/AudioListenView;->q0:Landroid/graphics/drawable/GradientDrawable;
 
     invoke-virtual {v3, v2}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
 
@@ -721,11 +714,11 @@
 
     move-result-object v2
 
-    invoke-interface {p1}, Lpda;->b()Lnd0;
+    invoke-interface {p1}, Lyha;->b()Lfe0;
 
     move-result-object v3
 
-    iget v3, v3, Lnd0;->i:I
+    iget v3, v3, Lfe0;->l:I
 
     invoke-virtual {v2, v3}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
 
@@ -733,13 +726,13 @@
 
     move-result-object v2
 
-    iget-object v1, v1, Lavf;->d:Lcvf;
+    iget-object v1, v1, Llag;->c:Lnag;
 
-    iget v1, v1, Lcvf;->b:I
+    iget v1, v1, Lnag;->b:I
 
     const v3, 0x3d75c28f    # 0.06f
 
-    invoke-static {v1, v3}, Ln1g;->c0(IF)I
+    invoke-static {v1, v3}, Lmna;->M(IF)I
 
     move-result v1
 
@@ -747,21 +740,23 @@
 
     invoke-virtual {v2, v3, v1}, Landroid/graphics/drawable/GradientDrawable;->setStroke(II)V
 
-    sget-object v1, Lnte;->o:Lnge;
+    sget-object v1, Lh4f;->a:Lnoe;
 
-    iget-object v2, p0, Lru/ok/messages/media/audio/AudioListenView;->a:Landroid/widget/TextView;
+    sget-object v1, Lh4f;->p:Lnoe;
 
-    invoke-static {v1, v2}, Lnge;->d(Lnge;Landroid/widget/TextView;)V
+    iget-object v2, p0, Lru/ok/messages/media/audio/AudioListenView;->b:Landroid/widget/TextView;
 
-    invoke-virtual {v0, p0}, Ls59;->r(Landroid/view/View;)Lpda;
+    invoke-static {v1, v2}, Lnoe;->d(Lnoe;Landroid/widget/TextView;)V
 
-    move-result-object v0
-
-    invoke-interface {v0}, Lpda;->getText()Lcfe;
+    invoke-virtual {v0, p0}, Lap9;->h(Landroid/view/View;)Lyha;
 
     move-result-object v0
 
-    iget v0, v0, Lcfe;->f:I
+    invoke-interface {v0}, Lyha;->getText()Lane;
+
+    move-result-object v0
+
+    iget v0, v0, Lane;->g:I
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
@@ -771,64 +766,62 @@
 
     const/4 v1, -0x1
 
-    invoke-static {v0, v1}, Ljs;->D(Landroid/graphics/drawable/Drawable;I)V
+    invoke-static {v0, v1}, Lgad;->j0(Landroid/graphics/drawable/Drawable;I)V
 
-    invoke-interface {p1}, Lpda;->b()Lnd0;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lnd0;->a:Lmd0;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v0, p0, Lru/ok/messages/media/audio/AudioListenView;->C0:Landroid/graphics/drawable/GradientDrawable;
-
-    const v1, -0xff8501
-
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
-
-    invoke-interface {p1}, Lpda;->getIcon()Lyn6;
+    invoke-interface {p1}, Lyha;->b()Lfe0;
 
     move-result-object v0
 
-    iget v0, v0, Lyn6;->f:I
+    iget-object v0, v0, Lfe0;->a:Lee0;
 
-    iget-object v1, p0, Lru/ok/messages/media/audio/AudioListenView;->w0:Landroid/widget/ProgressBar;
+    iget v0, v0, Lee0;->n:I
 
-    invoke-static {v1, v0}, Ljs;->E(Landroid/widget/ProgressBar;I)V
+    iget-object v1, p0, Lru/ok/messages/media/audio/AudioListenView;->v0:Landroid/graphics/drawable/GradientDrawable;
+
+    invoke-virtual {v1, v0}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
+
+    invoke-interface {p1}, Lyha;->getIcon()Lds6;
+
+    move-result-object v0
+
+    iget v0, v0, Lds6;->f:I
+
+    iget-object v1, p0, Lru/ok/messages/media/audio/AudioListenView;->p0:Landroid/widget/ProgressBar;
+
+    invoke-static {v1, v0}, Lgad;->k0(Landroid/widget/ProgressBar;I)V
 
     invoke-direct {p0}, Lru/ok/messages/media/audio/AudioListenView;->getPlayDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    invoke-interface {p1}, Lpda;->getIcon()Lyn6;
+    invoke-interface {p1}, Lyha;->getIcon()Lds6;
 
     move-result-object v1
 
-    iget v1, v1, Lyn6;->f:I
+    iget v1, v1, Lds6;->f:I
 
-    invoke-static {v0, v1}, Ljs;->D(Landroid/graphics/drawable/Drawable;I)V
+    invoke-static {v0, v1}, Lgad;->j0(Landroid/graphics/drawable/Drawable;I)V
 
     invoke-direct {p0}, Lru/ok/messages/media/audio/AudioListenView;->getPauseDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    invoke-interface {p1}, Lpda;->getIcon()Lyn6;
+    invoke-interface {p1}, Lyha;->getIcon()Lds6;
 
     move-result-object p1
 
-    iget p1, p1, Lyn6;->f:I
+    iget p1, p1, Lds6;->f:I
 
-    invoke-static {v0, p1}, Ljs;->D(Landroid/graphics/drawable/Drawable;I)V
+    invoke-static {v0, p1}, Lgad;->j0(Landroid/graphics/drawable/Drawable;I)V
 
-    iget-object p0, p0, Lru/ok/messages/media/audio/AudioListenView;->b:Landroid/widget/ImageView;
+    iget-object p0, p0, Lru/ok/messages/media/audio/AudioListenView;->c:Landroid/widget/ImageView;
 
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
 .end method
 
-.method public final setListener(Lg40;)V
+.method public final setListener(Lq40;)V
     .locals 0
 
     return-void
@@ -837,53 +830,59 @@
 .method public final setPlayButtonState(Z)V
     .locals 3
 
-    iget-object v0, p0, Lru/ok/messages/media/audio/AudioListenView;->A0:Landroid/graphics/drawable/LayerDrawable;
-
     if-eqz p1, :cond_0
 
     invoke-direct {p0}, Lru/ok/messages/media/audio/AudioListenView;->getPauseDrawable()Landroid/graphics/drawable/Drawable;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_0
 
     :cond_0
     invoke-direct {p0}, Lru/ok/messages/media/audio/AudioListenView;->getPlayDrawable()Landroid/graphics/drawable/Drawable;
 
-    move-result-object v1
+    move-result-object v0
 
     :goto_0
+    iget-object v1, p0, Lru/ok/messages/media/audio/AudioListenView;->t0:Landroid/graphics/drawable/LayerDrawable;
+
     const/4 v2, 0x1
 
-    invoke-virtual {v0, v2, v1}, Landroid/graphics/drawable/LayerDrawable;->setDrawable(ILandroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v1, v2, v0}, Landroid/graphics/drawable/LayerDrawable;->setDrawable(ILandroid/graphics/drawable/Drawable;)V
 
-    iget-object v0, p0, Lru/ok/messages/media/audio/AudioListenView;->b:Landroid/widget/ImageView;
+    iget-object v0, p0, Lru/ok/messages/media/audio/AudioListenView;->c:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    sget-object v0, Lkm4;->y0:Ls59;
+    sget-object v0, Lqp4;->q0:Lap9;
 
     if-eqz p1, :cond_1
 
-    invoke-virtual {v0, p0}, Ls59;->r(Landroid/view/View;)Lpda;
+    invoke-virtual {v0, p0}, Lap9;->h(Landroid/view/View;)Lyha;
 
-    const p1, -0xff8501
+    move-result-object p1
+
+    invoke-interface {p1}, Lyha;->getText()Lane;
+
+    move-result-object p1
+
+    iget p1, p1, Lane;->j:I
 
     goto :goto_1
 
     :cond_1
-    invoke-virtual {v0, p0}, Ls59;->r(Landroid/view/View;)Lpda;
+    invoke-virtual {v0, p0}, Lap9;->h(Landroid/view/View;)Lyha;
 
     move-result-object p1
 
-    invoke-interface {p1}, Lpda;->getText()Lcfe;
+    invoke-interface {p1}, Lyha;->getText()Lane;
 
     move-result-object p1
 
-    iget p1, p1, Lcfe;->f:I
+    iget p1, p1, Lane;->g:I
 
     :goto_1
-    iget-object p0, p0, Lru/ok/messages/media/audio/AudioListenView;->a:Landroid/widget/TextView;
+    iget-object p0, p0, Lru/ok/messages/media/audio/AudioListenView;->b:Landroid/widget/TextView;
 
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
@@ -893,11 +892,11 @@
 .method public final setScheduledSend(Z)V
     .locals 1
 
-    iget-object v0, p0, Lru/ok/messages/media/audio/AudioListenView;->o:Landroid/widget/ImageView;
+    iget-object v0, p0, Lru/ok/messages/media/audio/AudioListenView;->o0:Landroid/widget/ImageView;
 
     if-eqz p1, :cond_1
 
-    sget p1, Lzhc;->V:I
+    sget p1, Lknc;->Y:I
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -907,7 +906,7 @@
 
     if-eqz p1, :cond_0
 
-    sget-object p0, Ldb4;->e0:Ldb4;
+    sget-object p0, Lle4;->e0:Lle4;
 
     goto :goto_0
 
@@ -916,14 +915,14 @@
 
     move-result-object p0
 
-    sget-object p1, Lwce;->a0:Lr7e;
+    sget-object p1, Lvke;->a0:Lwfe;
 
-    invoke-static {p0}, Lfja;->E(Landroid/content/Context;)Lwce;
+    invoke-static {p0}, Lp54;->M(Landroid/content/Context;)Lvke;
 
     move-result-object p0
 
     :goto_0
-    iget p0, p0, Lwce;->k:I
+    iget p0, p0, Lvke;->k:I
 
     invoke-virtual {v0, p0}, Landroid/widget/ImageView;->setColorFilter(I)V
 
@@ -931,7 +930,7 @@
 
     int-to-float p0, p0
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
 
     move-result-object p1
 
@@ -941,9 +940,9 @@
 
     iget p1, p1, Landroid/util/DisplayMetrics;->density:F
 
-    invoke-static {p0, p1, v0}, Lme4;->o(FFLandroid/widget/ImageView;)V
+    invoke-static {p0, p1, v0}, Lv04;->l(FFLandroid/widget/ImageView;)V
 
-    goto :goto_1
+    return-void
 
     :cond_1
     invoke-direct {p0}, Lru/ok/messages/media/audio/AudioListenView;->getSendIcon()Landroid/graphics/drawable/LayerDrawable;
@@ -956,6 +955,5 @@
 
     invoke-virtual {v0, p0, p0, p0, p0}, Landroid/view/View;->setPadding(IIII)V
 
-    :goto_1
     return-void
 .end method

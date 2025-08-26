@@ -3,42 +3,64 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/os/IBinder$DeathRecipient;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public final synthetic a:Lo48;
+.field public final synthetic a:I
+
+.field public final synthetic b:Lone/me/chatscreen/mediabar/permission/MediaBarPermissionWidget;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lo48;)V
+.method public synthetic constructor <init>(Lone/me/chatscreen/mediabar/permission/MediaBarPermissionWidget;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Lg48;->a:I
 
-    iput-object p1, p0, Lg48;->a:Lo48;
+    iput-object p1, p0, Lg48;->b:Lone/me/chatscreen/mediabar/permission/MediaBarPermissionWidget;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final binderDied()V
-    .locals 2
+.method public final onClick(Landroid/view/View;)V
+    .locals 0
 
-    iget-object p0, p0, Lg48;->a:Lo48;
+    iget p1, p0, Lg48;->a:I
 
-    iget-object p0, p0, Lo48;->a:Lr38;
+    iget-object p0, p0, Lg48;->b:Lone/me/chatscreen/mediabar/permission/MediaBarPermissionWidget;
 
-    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    packed-switch p1, :pswitch_data_0
 
-    new-instance v0, Leq6;
+    sget-object p1, Lone/me/chatscreen/mediabar/permission/MediaBarPermissionWidget;->Z:[Lbc7;
 
-    const/4 v1, 0x6
-
-    invoke-direct {v0, v1, p0}, Leq6;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {p0, v0}, Lr38;->G(Ljava/lang/Runnable;)V
+    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/permission/MediaBarPermissionWidget;->p0()V
 
     return-void
+
+    :pswitch_0
+    sget-object p1, Lone/me/chatscreen/mediabar/permission/MediaBarPermissionWidget;->Z:[Lbc7;
+
+    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/permission/MediaBarPermissionWidget;->p0()V
+
+    return-void
+
+    :pswitch_1
+    sget-object p1, Lone/me/chatscreen/mediabar/permission/MediaBarPermissionWidget;->Z:[Lbc7;
+
+    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/permission/MediaBarPermissionWidget;->p0()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

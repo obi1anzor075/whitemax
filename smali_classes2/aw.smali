@@ -1,55 +1,110 @@
 .class public final Law;
-.super Ler3;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ln66;
 
 
 # instance fields
-.field public X:I
+.field public synthetic X:Ljava/util/List;
 
-.field public final synthetic Y:Lbw;
+.field public synthetic Y:J
 
-.field public Z:Lbw;
-
-.field public synthetic o:Ljava/lang/Object;
-
-.field public w0:Luu;
-
-.field public x0:J
+.field public final synthetic Z:Lpw;
 
 
 # direct methods
-.method public constructor <init>(Lbw;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lpw;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    iput-object p1, p0, Law;->Y:Lbw;
+    iput-object p1, p0, Law;->Z:Lpw;
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    const/4 p1, 0x3
+
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    iput-object p1, p0, Law;->o:Ljava/lang/Object;
+    check-cast p1, Ljava/util/List;
 
-    iget p1, p0, Law;->X:I
+    check-cast p2, Ljava/lang/Number;
 
-    const/high16 v0, -0x80000000
+    invoke-virtual {p2}, Ljava/lang/Number;->longValue()J
 
-    or-int/2addr p1, v0
+    move-result-wide v0
 
-    iput p1, p0, Law;->X:I
+    check-cast p3, Lkotlin/coroutines/Continuation;
 
-    iget-object p1, p0, Law;->Y:Lbw;
+    new-instance p2, Law;
 
-    const/4 v0, 0x0
+    iget-object p0, p0, Law;->Z:Lpw;
 
-    invoke-virtual {p1, v0, p0}, Lbw;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-direct {p2, p0, p3}, Law;-><init>(Lpw;Lkotlin/coroutines/Continuation;)V
+
+    iput-object p1, p2, Law;->X:Ljava/util/List;
+
+    iput-wide v0, p2, Law;->Y:J
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    invoke-virtual {p2, p0}, Law;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 7
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Law;->X:Ljava/util/List;
+
+    iget-wide v0, p0, Law;->Y:J
+
+    sget-object v2, Lpw;->F:[Lbc7;
+
+    iget-object p0, p0, Law;->Z:Lpw;
+
+    invoke-virtual {p0, v0, v1}, Lpw;->l(J)Ljava/util/List;
+
+    move-result-object v2
+
+    iget-object p0, p0, Lpw;->c:Lsm4;
+
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result p1
+
+    const-string v4, " out of total "
+
+    const-string v5, " around "
+
+    const-string v6, "getHistoryItems return "
+
+    invoke-static {v6, v3, v4, p1, v5}, Lpg0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lsm4;->b(Ljava/lang/String;)V
+
+    return-object v2
 .end method

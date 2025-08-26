@@ -53,14 +53,13 @@
 
     move-result p0
 
-    goto :goto_0
+    return p0
 
     :cond_0
     invoke-static {p2, p3}, Lorg/webrtc/audio/WebRtcAudioManager;->getMinInputFrameSize(II)I
 
     move-result p0
 
-    :goto_0
     return p0
 .end method
 
@@ -77,14 +76,13 @@
 
     const/16 p0, 0x100
 
-    goto :goto_0
+    return p0
 
     :cond_0
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result p0
 
-    :goto_0
     return p0
 .end method
 
@@ -159,14 +157,13 @@
 
     move-result p0
 
-    goto :goto_0
+    return p0
 
     :cond_0
     invoke-static {p2, p3}, Lorg/webrtc/audio/WebRtcAudioManager;->getMinOutputFrameSize(II)I
 
     move-result p0
 
-    :goto_0
     return p0
 .end method
 
@@ -230,14 +227,13 @@
 
     const/16 p0, 0x3e80
 
-    goto :goto_0
+    return p0
 
     :cond_0
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result p0
 
-    :goto_0
     return p0
 .end method
 

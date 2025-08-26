@@ -1,6 +1,5 @@
 .class public final Lru/ok/android/externcalls/sdk/audio/R;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # direct methods

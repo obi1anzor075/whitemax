@@ -1,156 +1,206 @@
 .class public final Lcad;
-.super Ljava/lang/Object;
+.super Ljava/util/AbstractSet;
 .source "SourceFile"
 
 
-# static fields
-.field public static final i:[I
-
-.field public static final j:[F
-
-.field public static final k:[I
-
-.field public static final l:[F
-
-
 # instance fields
-.field public final a:Landroid/graphics/Paint;
+.field public final synthetic a:Ljava/util/Set;
 
-.field public final b:Landroid/graphics/Paint;
-
-.field public final c:Landroid/graphics/Paint;
-
-.field public d:I
-
-.field public e:I
-
-.field public f:I
-
-.field public final g:Landroid/graphics/Path;
-
-.field public final h:Landroid/graphics/Paint;
+.field public final synthetic b:Ljava/util/Set;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ljava/util/Set;Ljava/util/Set;)V
+    .locals 0
 
-    const/4 v0, 0x3
+    iput-object p1, p0, Lcad;->a:Ljava/util/Set;
 
-    new-array v1, v0, [I
+    iput-object p2, p0, Lcad;->b:Ljava/util/Set;
 
-    sput-object v1, Lcad;->i:[I
-
-    new-array v0, v0, [F
-
-    fill-array-data v0, :array_0
-
-    sput-object v0, Lcad;->j:[F
-
-    const/4 v0, 0x4
-
-    new-array v1, v0, [I
-
-    sput-object v1, Lcad;->k:[I
-
-    new-array v0, v0, [F
-
-    fill-array-data v0, :array_1
-
-    sput-object v0, Lcad;->l:[F
+    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
 
     return-void
-
-    nop
-
-    :array_0
-    .array-data 4
-        0x0
-        0x3f000000    # 0.5f
-        0x3f800000    # 1.0f
-    .end array-data
-
-    :array_1
-    .array-data 4
-        0x0
-        0x0
-        0x3f000000    # 0.5f
-        0x3f800000    # 1.0f
-    .end array-data
 .end method
 
-.method public constructor <init>()V
+
+# virtual methods
+.method public final add(Ljava/lang/Object;)Z
+    .locals 0
+
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p0
+.end method
+
+.method public final addAll(Ljava/util/Collection;)Z
+    .locals 0
+
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p0
+.end method
+
+.method public final clear()V
+    .locals 0
+
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p0
+.end method
+
+.method public final contains(Ljava/lang/Object;)Z
+    .locals 1
+
+    iget-object v0, p0, Lcad;->a:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object p0, p0, Lcad;->b:Ljava/util/Set;
+
+    invoke-interface {p0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final containsAll(Ljava/util/Collection;)Z
+    .locals 1
+
+    iget-object v0, p0, Lcad;->a:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->containsAll(Ljava/util/Collection;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object p0, p0, Lcad;->b:Ljava/util/Set;
+
+    invoke-interface {p0, p1}, Ljava/util/Set;->containsAll(Ljava/util/Collection;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final isEmpty()Z
+    .locals 1
+
+    iget-object v0, p0, Lcad;->b:Ljava/util/Set;
+
+    iget-object p0, p0, Lcad;->a:Ljava/util/Set;
+
+    invoke-static {v0, p0}, Ljava/util/Collections;->disjoint(Ljava/util/Collection;Ljava/util/Collection;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
+    .locals 1
+
+    new-instance v0, Lj77;
+
+    invoke-direct {v0, p0}, Lj77;-><init>(Lcad;)V
+
+    return-object v0
+.end method
+
+.method public final remove(Ljava/lang/Object;)Z
+    .locals 0
+
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p0
+.end method
+
+.method public final removeAll(Ljava/util/Collection;)Z
+    .locals 0
+
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p0
+.end method
+
+.method public final retainAll(Ljava/util/Collection;)Z
+    .locals 0
+
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p0
+.end method
+
+.method public final size()I
     .locals 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object v0, p0, Lcad;->a:Ljava/util/Set;
 
-    new-instance v0, Landroid/graphics/Path;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
+    move-result-object v0
 
-    iput-object v0, p0, Lcad;->g:Landroid/graphics/Path;
+    const/4 v1, 0x0
 
-    new-instance v0, Landroid/graphics/Paint;
-
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object v0, p0, Lcad;->h:Landroid/graphics/Paint;
-
-    new-instance v1, Landroid/graphics/Paint;
-
-    invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object v1, p0, Lcad;->a:Landroid/graphics/Paint;
-
-    const/16 v2, 0x44
-
-    const/high16 v3, -0x1000000
-
-    invoke-static {v3, v2}, Lj33;->h(II)I
+    :cond_0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    iput v2, p0, Lcad;->d:I
+    if-eqz v2, :cond_1
 
-    const/16 v2, 0x14
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-static {v3, v2}, Lj33;->h(II)I
+    move-result-object v2
+
+    iget-object v3, p0, Lcad;->b:Ljava/util/Set;
+
+    invoke-interface {v3, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v2
 
-    iput v2, p0, Lcad;->e:I
+    if-eqz v2, :cond_0
 
-    const/4 v2, 0x0
+    add-int/lit8 v1, v1, 0x1
 
-    invoke-static {v3, v2}, Lj33;->h(II)I
+    goto :goto_0
 
-    move-result v3
-
-    iput v3, p0, Lcad;->f:I
-
-    iget v3, p0, Lcad;->d:I
-
-    invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setColor(I)V
-
-    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setColor(I)V
-
-    new-instance v0, Landroid/graphics/Paint;
-
-    const/4 v1, 0x4
-
-    invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
-
-    iput-object v0, p0, Lcad;->b:Landroid/graphics/Paint;
-
-    sget-object v1, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
-
-    new-instance v1, Landroid/graphics/Paint;
-
-    invoke-direct {v1, v0}, Landroid/graphics/Paint;-><init>(Landroid/graphics/Paint;)V
-
-    iput-object v1, p0, Lcad;->c:Landroid/graphics/Paint;
-
-    return-void
+    :cond_1
+    return v1
 .end method

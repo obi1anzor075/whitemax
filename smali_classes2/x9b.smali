@@ -1,90 +1,96 @@
 .class public final Lx9b;
-.super Ll5e;
+.super Leab;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Lhab;
+.field public final b:Ljoe;
 
 
 # direct methods
-.method public constructor <init>(Lhab;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Ljoe;)V
     .locals 0
 
-    iput-object p1, p0, Lx9b;->Y:Lhab;
+    invoke-direct {p0}, Leab;-><init>()V
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lx9b;->b:Ljoe;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Las4;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lx9b;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lx9b;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lx9b;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
-    new-instance v0, Lx9b;
+    if-ne p0, p1, :cond_0
 
-    iget-object p0, p0, Lx9b;->Y:Lhab;
+    goto :goto_1
 
-    invoke-direct {v0, p0, p2}, Lx9b;-><init>(Lhab;Lkotlin/coroutines/Continuation;)V
+    :cond_0
+    instance-of v0, p1, Lx9b;
 
-    iput-object p1, v0, Lx9b;->X:Ljava/lang/Object;
+    if-nez v0, :cond_1
 
-    return-object v0
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Lx9b;
+
+    iget-object p0, p0, Lx9b;->b:Ljoe;
+
+    iget-object p1, p1, Lx9b;->b:Ljoe;
+
+    invoke-virtual {p0, p1}, Ljoe;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_2
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final hashCode()I
+    .locals 0
+
+    iget-object p0, p0, Lx9b;->b:Ljoe;
+
+    invoke-virtual {p0}, Ljoe;->hashCode()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
     .locals 2
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget-object p1, p0, Lx9b;->X:Ljava/lang/Object;
+    const-string v1, "ExternalShareLink(text="
 
-    check-cast p1, Las4;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p0, Lx9b;->Y:Lhab;
+    iget-object p0, p0, Lx9b;->b:Ljoe;
 
-    iget-object v0, p0, Lhab;->y0:Lgrd;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p1, Las4;->a:Lx7b;
+    const-string p0, ")"
 
-    invoke-virtual {v0, v1}, Lgrd;->setValue(Ljava/lang/Object;)V
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p1, p1, Las4;->b:Ljava/util/List;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iget-object p0, p0, Lhab;->w0:Lgrd;
-
-    invoke-virtual {p0, p1}, Lgrd;->setValue(Ljava/lang/Object;)V
-
-    sget-object p0, Ljue;->a:Ljue;
+    move-result-object p0
 
     return-object p0
 .end method

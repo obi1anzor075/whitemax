@@ -1,43 +1,81 @@
 .class public final Lsq8;
-.super Ljava/lang/Object;
+.super Lgr0;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:I
+.field public final synthetic i:I
 
-.field public final b:J
-
-.field public final c:Lxm8;
-
-.field public final d:Ljava/lang/String;
-
-.field public final e:Ljava/lang/String;
-
-.field public final f:J
-
-.field public final g:J
+.field public final j:Lgnd;
 
 
 # direct methods
-.method public constructor <init>(IJLxm8;Ljava/lang/String;Ljava/lang/String;JJ)V
+.method public synthetic constructor <init>(Lgnd;I)V
     .locals 0
+
+    iput p2, p0, Lsq8;->i:I
+
+    iput-object p1, p0, Lsq8;->j:Lgnd;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lsq8;->a:I
-
-    iput-wide p2, p0, Lsq8;->b:J
-
-    iput-object p4, p0, Lsq8;->c:Lxm8;
-
-    iput-object p5, p0, Lsq8;->d:Ljava/lang/String;
-
-    iput-object p6, p0, Lsq8;->e:Ljava/lang/String;
-
-    iput-wide p7, p0, Lsq8;->f:J
-
-    iput-wide p9, p0, Lsq8;->g:J
-
     return-void
+.end method
+
+
+# virtual methods
+.method public final t(Lgnd;)Lmnd;
+    .locals 1
+
+    iget v0, p0, Lsq8;->i:I
+
+    packed-switch v0, :pswitch_data_0
+
+    instance-of p1, p1, Lind;
+
+    if-eqz p1, :cond_0
+
+    new-instance p1, Llnd;
+
+    iget-object p0, p0, Lsq8;->j:Lgnd;
+
+    check-cast p0, Lind;
+
+    invoke-direct {p1, p0}, Llnd;-><init>(Lgnd;)V
+
+    goto :goto_0
+
+    :cond_0
+    sget-object p1, Ljnd;->a:Ljnd;
+
+    :goto_0
+    return-object p1
+
+    :pswitch_0
+    instance-of p1, p1, Lhnd;
+
+    if-eqz p1, :cond_1
+
+    new-instance p1, Llnd;
+
+    iget-object p0, p0, Lsq8;->j:Lgnd;
+
+    check-cast p0, Lhnd;
+
+    invoke-direct {p1, p0}, Llnd;-><init>(Lgnd;)V
+
+    goto :goto_1
+
+    :cond_1
+    sget-object p1, Ljnd;->a:Ljnd;
+
+    :goto_1
+    return-object p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

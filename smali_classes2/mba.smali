@@ -1,27 +1,25 @@
-.class public final Lmba;
+.class public abstract Lmba;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Ltba;
+# static fields
+.field public static final a:I
 
-.field public final b:Ljava/lang/ref/WeakReference;
+.field public static final b:I
 
 
 # direct methods
-.method public constructor <init>(Lkba;Ltba;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Leub;->oneme_messages_settings_content_recycler:I
 
-    iput-object p2, p0, Lmba;->a:Ltba;
+    sput v0, Lmba;->a:I
 
-    new-instance p2, Ljava/lang/ref/WeakReference;
+    sget v0, Leub;->oneme_messages_settings_toolbar:I
 
-    invoke-direct {p2, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object p2, p0, Lmba;->b:Ljava/lang/ref/WeakReference;
+    sput v0, Lmba;->b:I
 
     return-void
 .end method

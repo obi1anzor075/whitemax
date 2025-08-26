@@ -1,75 +1,60 @@
-.class public abstract Lmr4;
+.class public final Lmr4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lpr4;
+
 
 # virtual methods
-.method public a(Lx7e;Lx7e;Landroid/view/Window;Landroid/view/View;ZZ)V
-    .locals 0
+.method public final a(Lir4;Lfz5;)Ler4;
+    .locals 1
+
+    iget-object p0, p2, Lfz5;->q:Ldr4;
+
+    if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
-    invoke-static {p3, p0}, Lgt0;->J(Landroid/view/Window;Z)V
-
-    if-eqz p5, :cond_0
-
-    iget p0, p1, Lx7e;->b:I
-
-    goto :goto_0
+    return-object p0
 
     :cond_0
-    iget p0, p1, Lx7e;->a:I
+    new-instance p0, Lx25;
 
-    :goto_0
-    invoke-virtual {p3, p0}, Landroid/view/Window;->setStatusBarColor(I)V
+    new-instance p1, Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException;
 
-    if-eqz p6, :cond_1
+    new-instance p2, Landroidx/media3/exoplayer/drm/UnsupportedDrmException;
 
-    iget p0, p2, Lx7e;->b:I
+    invoke-direct {p2}, Ljava/lang/Exception;-><init>()V
 
-    goto :goto_1
+    const/16 v0, 0x1771
 
-    :cond_1
-    iget p0, p2, Lx7e;->a:I
+    invoke-direct {p1, p2, v0}, Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException;-><init>(Ljava/lang/Throwable;I)V
 
-    :goto_1
-    invoke-virtual {p3, p0}, Landroid/view/Window;->setNavigationBarColor(I)V
+    invoke-direct {p0, p1}, Lx25;-><init>(Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException;)V
 
-    new-instance p0, Lmod;
+    return-object p0
+.end method
 
-    invoke-direct {p0, p4}, Lmod;-><init>(Landroid/view/View;)V
-
-    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 p2, 0x1e
-
-    if-lt p1, p2, :cond_2
-
-    new-instance p1, Lpsf;
-
-    invoke-static {p3}, Ljsf;->d(Landroid/view/Window;)Landroid/view/WindowInsetsController;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2, p0}, Lpsf;-><init>(Landroid/view/WindowInsetsController;Lmod;)V
-
-    iput-object p3, p1, Lpsf;->l:Landroid/view/Window;
-
-    goto :goto_2
-
-    :cond_2
-    new-instance p1, Losf;
-
-    invoke-direct {p1, p3, p0}, Losf;-><init>(Landroid/view/Window;Lmod;)V
-
-    :goto_2
-    xor-int/lit8 p0, p5, 0x1
-
-    invoke-virtual {p1, p0}, Lmt0;->H(Z)V
-
-    xor-int/lit8 p0, p6, 0x1
-
-    invoke-virtual {p1, p0}, Lmt0;->G(Z)V
+.method public final c(Landroid/os/Looper;Lw1b;)V
+    .locals 0
 
     return-void
+.end method
+
+.method public final d(Lfz5;)I
+    .locals 0
+
+    iget-object p0, p1, Lfz5;->q:Ldr4;
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
 .end method

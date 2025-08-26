@@ -33,7 +33,7 @@
 # instance fields
 .field private final buffer:Ljava/nio/ByteBuffer;
 
-.field private final checksum:Lfvf;
+.field private final checksum:Lqag;
 
 .field private final compressedBuffer:[B
 
@@ -95,7 +95,7 @@
     return-void
 .end method
 
-.method public varargs constructor <init>(Ljava/io/OutputStream;Lnet/jpountz/lz4/LZ4FrameOutputStream$BLOCKSIZE;JLnet/jpountz/lz4/LZ4Compressor;Lfvf;[Lnet/jpountz/lz4/LZ4FrameOutputStream$FLG$Bits;)V
+.method public varargs constructor <init>(Ljava/io/OutputStream;Lnet/jpountz/lz4/LZ4FrameOutputStream$BLOCKSIZE;JLnet/jpountz/lz4/LZ4Compressor;Lqag;[Lnet/jpountz/lz4/LZ4FrameOutputStream$FLG$Bits;)V
     .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -222,7 +222,7 @@
 .end method
 
 .method public varargs constructor <init>(Ljava/io/OutputStream;Lnet/jpountz/lz4/LZ4FrameOutputStream$BLOCKSIZE;J[Lnet/jpountz/lz4/LZ4FrameOutputStream$FLG$Bits;)V
-    .locals 9
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -232,33 +232,15 @@
     .line 2
     invoke-static {}, Lnet/jpountz/lz4/LZ4Factory;->fastestInstance()Lnet/jpountz/lz4/LZ4Factory;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {v0}, Lnet/jpountz/lz4/LZ4Factory;->fastCompressor()Lnet/jpountz/lz4/LZ4Compressor;
+    invoke-virtual {p0}, Lnet/jpountz/lz4/LZ4Factory;->fastCompressor()Lnet/jpountz/lz4/LZ4Compressor;
 
-    move-result-object v6
+    invoke-static {}, Lrag;->s()Lrag;
 
-    invoke-static {}, Lgvf;->f()Lgvf;
+    const/4 p0, 0x0
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 v7, 0x0
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-wide v4, p3
-
-    move-object v8, p5
-
-    invoke-direct/range {v1 .. v8}, Lnet/jpountz/lz4/LZ4FrameOutputStream;-><init>(Ljava/io/OutputStream;Lnet/jpountz/lz4/LZ4FrameOutputStream$BLOCKSIZE;JLnet/jpountz/lz4/LZ4Compressor;Lfvf;[Lnet/jpountz/lz4/LZ4FrameOutputStream$FLG$Bits;)V
-
-    return-void
+    throw p0
 .end method
 
 .method public varargs constructor <init>(Ljava/io/OutputStream;Lnet/jpountz/lz4/LZ4FrameOutputStream$BLOCKSIZE;[Lnet/jpountz/lz4/LZ4FrameOutputStream$FLG$Bits;)V
@@ -620,61 +602,61 @@
 .end method
 
 .method public write(I)V
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    const/4 v0, 0x0
-
-    const/4 v1, 0x1
-
     .line 1
     invoke-direct {p0}, Lnet/jpountz/lz4/LZ4FrameOutputStream;->ensureNotFinished()V
 
     .line 2
-    iget-object v2, p0, Lnet/jpountz/lz4/LZ4FrameOutputStream;->buffer:Ljava/nio/ByteBuffer;
+    iget-object v0, p0, Lnet/jpountz/lz4/LZ4FrameOutputStream;->buffer:Ljava/nio/ByteBuffer;
 
-    invoke-virtual {v2}, Ljava/nio/Buffer;->position()I
+    invoke-virtual {v0}, Ljava/nio/Buffer;->position()I
 
-    move-result v2
+    move-result v0
 
-    iget v3, p0, Lnet/jpountz/lz4/LZ4FrameOutputStream;->maxBlockSize:I
+    iget v1, p0, Lnet/jpountz/lz4/LZ4FrameOutputStream;->maxBlockSize:I
 
-    if-ne v2, v3, :cond_0
+    if-ne v0, v1, :cond_0
 
     .line 3
     invoke-direct {p0}, Lnet/jpountz/lz4/LZ4FrameOutputStream;->writeBlock()V
 
     .line 4
     :cond_0
-    iget-object v2, p0, Lnet/jpountz/lz4/LZ4FrameOutputStream;->buffer:Ljava/nio/ByteBuffer;
+    iget-object v0, p0, Lnet/jpountz/lz4/LZ4FrameOutputStream;->buffer:Ljava/nio/ByteBuffer;
 
     int-to-byte p1, p1
 
-    invoke-virtual {v2, p1}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
 
     .line 5
-    iget-object v2, p0, Lnet/jpountz/lz4/LZ4FrameOutputStream;->frameInfo:Lnet/jpountz/lz4/LZ4FrameOutputStream$FrameInfo;
+    iget-object v0, p0, Lnet/jpountz/lz4/LZ4FrameOutputStream;->frameInfo:Lnet/jpountz/lz4/LZ4FrameOutputStream$FrameInfo;
 
-    sget-object v3, Lnet/jpountz/lz4/LZ4FrameOutputStream$FLG$Bits;->CONTENT_CHECKSUM:Lnet/jpountz/lz4/LZ4FrameOutputStream$FLG$Bits;
+    sget-object v1, Lnet/jpountz/lz4/LZ4FrameOutputStream$FLG$Bits;->CONTENT_CHECKSUM:Lnet/jpountz/lz4/LZ4FrameOutputStream$FLG$Bits;
 
-    invoke-virtual {v2, v3}, Lnet/jpountz/lz4/LZ4FrameOutputStream$FrameInfo;->isEnabled(Lnet/jpountz/lz4/LZ4FrameOutputStream$FLG$Bits;)Z
+    invoke-virtual {v0, v1}, Lnet/jpountz/lz4/LZ4FrameOutputStream$FrameInfo;->isEnabled(Lnet/jpountz/lz4/LZ4FrameOutputStream$FLG$Bits;)Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
     .line 6
     iget-object p0, p0, Lnet/jpountz/lz4/LZ4FrameOutputStream;->frameInfo:Lnet/jpountz/lz4/LZ4FrameOutputStream$FrameInfo;
 
-    new-array v2, v1, [B
+    const/4 v0, 0x1
 
-    aput-byte p1, v2, v0
+    new-array v1, v0, [B
 
-    invoke-virtual {p0, v2, v0, v1}, Lnet/jpountz/lz4/LZ4FrameOutputStream$FrameInfo;->updateStreamHash([BII)V
+    const/4 v2, 0x0
+
+    aput-byte p1, v1, v2
+
+    invoke-virtual {p0, v1, v2, v0}, Lnet/jpountz/lz4/LZ4FrameOutputStream$FrameInfo;->updateStreamHash([BII)V
 
     :cond_1
     return-void

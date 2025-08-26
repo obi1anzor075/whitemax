@@ -1,348 +1,108 @@
 .class public final Lo2a;
-.super Luo;
+.super Lyy4;
 .source "SourceFile"
 
-# interfaces
-.implements Lk93;
 
+# instance fields
+.field public final a:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-# static fields
-.field public static final a:Lo2a;
+.field public final synthetic b:Lone/me/android/OneMeApplication;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lone/me/android/OneMeApplication;)V
+    .locals 0
 
-    new-instance v0, Lo2a;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Luo;-><init>()V
+    iput-object p1, p0, Lo2a;->b:Lone/me/android/OneMeApplication;
 
-    sput-object v0, Lo2a;->a:Lo2a;
+    new-instance p1, Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-direct {p1}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
+
+    iput-object p1, p0, Lo2a;->a:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()Lbd;
-    .locals 1
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p0
-
-    const-class v0, Lbd;
-
-    invoke-virtual {p0, v0}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lbd;
-
-    return-object p0
-.end method
-
-.method public final c()Ltg;
-    .locals 1
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p0
-
-    const-class v0, Ltg;
-
-    invoke-virtual {p0, v0}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ltg;
-
-    return-object p0
-.end method
-
-.method public final d()Lr10;
-    .locals 1
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p0
-
-    const-class v0, Lr10;
-
-    invoke-virtual {p0, v0}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lr10;
-
-    return-object p0
-.end method
-
-.method public final e()Lt52;
-    .locals 1
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p0
-
-    const-class v0, Lt52;
-
-    invoke-virtual {p0, v0}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lt52;
-
-    return-object p0
-.end method
-
-.method public final f()Ltf4;
-    .locals 1
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p0
-
-    const-class v0, Ltf4;
-
-    invoke-virtual {p0, v0}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ltf4;
-
-    return-object p0
-.end method
-
-.method public final g()Lg15;
-    .locals 1
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p0
-
-    const-class v0, Lg15;
-
-    invoke-virtual {p0, v0}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lg15;
-
-    return-object p0
-.end method
-
-.method public final h()Lmg5;
-    .locals 1
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p0
-
-    const-class v0, Lmg5;
-
-    invoke-virtual {p0, v0}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lmg5;
-
-    return-object p0
-.end method
-
-.method public final i()Ltt6;
+.method public final onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
     .locals 0
 
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
+    new-instance p2, Ljava/lang/ref/WeakReference;
 
-    move-result-object p0
+    invoke-direct {p2, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    invoke-virtual {p0}, Lw4;->e()Ljava/lang/Object;
+    iget-object p0, p0, Lo2a;->a:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    move-result-object p0
+    invoke-virtual {p0, p2}, Ljava/util/concurrent/CopyOnWriteArrayList;->add(Ljava/lang/Object;)Z
 
-    check-cast p0, Ltt6;
-
-    return-object p0
+    return-void
 .end method
 
-.method public final j()Lwk7;
-    .locals 1
+.method public final onActivityDestroyed(Landroid/app/Activity;)V
+    .locals 2
 
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
+    new-instance v0, Llp;
 
-    move-result-object p0
+    const/4 v1, 0x1
 
-    const-class v0, Lwk7;
+    invoke-direct {v0, p1, v1}, Llp;-><init>(Landroid/app/Activity;I)V
 
-    invoke-virtual {p0, v0}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    new-instance p1, Lut5;
 
-    move-result-object p0
+    const/4 v1, 0x2
 
-    check-cast p0, Lwk7;
+    invoke-direct {p1, v1, v0}, Lut5;-><init>(ILx56;)V
 
-    return-object p0
+    iget-object p0, p0, Lo2a;->a:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->removeIf(Ljava/util/function/Predicate;)Z
+
+    return-void
 .end method
 
-.method public final k()Ls98;
+.method public final onActivityResumed(Landroid/app/Activity;)V
     .locals 1
 
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
+    sget-object p1, Lqp4;->q0:Lap9;
+
+    iget-object p0, p0, Lo2a;->b:Lone/me/android/OneMeApplication;
+
+    invoke-virtual {p1, p0}, Lap9;->g(Landroid/content/Context;)Lqp4;
 
     move-result-object p0
 
-    const-class v0, Ls98;
+    iget-object p0, p0, Lqp4;->o0:Ljava/lang/Object;
 
-    invoke-virtual {p0, v0}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    check-cast p0, Lazd;
 
-    move-result-object p0
+    :cond_0
+    invoke-virtual {p0}, Lazd;->getValue()Ljava/lang/Object;
 
-    check-cast p0, Ls98;
+    move-result-object p1
 
-    return-object p0
-.end method
+    move-object v0, p1
 
-.method public final l()Lto8;
-    .locals 1
+    check-cast v0, Ljava/lang/Number;
 
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
+    invoke-virtual {v0}, Ljava/lang/Number;->intValue()I
 
-    move-result-object p0
+    move-result v0
 
-    const-class v0, Lto8;
+    add-int/lit8 v0, v0, 0x1
 
-    invoke-virtual {p0, v0}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p0
+    move-result-object v0
 
-    check-cast p0, Lto8;
+    invoke-virtual {p0, p1, v0}, Lazd;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    return-object p0
-.end method
+    move-result p1
 
-.method public final m()Lxg9;
-    .locals 1
+    if-eqz p1, :cond_0
 
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p0
-
-    const-class v0, Lxg9;
-
-    invoke-virtual {p0, v0}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lxg9;
-
-    return-object p0
-.end method
-
-.method public final n()Lj2b;
-    .locals 1
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p0
-
-    const-class v0, Lj2b;
-
-    invoke-virtual {p0, v0}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lj2b;
-
-    return-object p0
-.end method
-
-.method public final o()Ly3a;
-    .locals 1
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p0
-
-    const-class v0, Ly3a;
-
-    invoke-virtual {p0, v0}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ly3a;
-
-    return-object p0
-.end method
-
-.method public final p()Loae;
-    .locals 1
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p0
-
-    const-class v0, Loae;
-
-    invoke-virtual {p0, v0}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Loae;
-
-    return-object p0
-.end method
-
-.method public final q()Lmbe;
-    .locals 1
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p0
-
-    const-class v0, Lmbe;
-
-    invoke-virtual {p0, v0}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lmbe;
-
-    return-object p0
-.end method
-
-.method public final r()Lzs7;
-    .locals 1
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p0
-
-    const-class v0, Lzs7;
-
-    invoke-virtual {p0, v0}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lzs7;
-
-    return-object p0
-.end method
-
-.method public final s()Ll8f;
-    .locals 1
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p0
-
-    const-class v0, Ll8f;
-
-    invoke-virtual {p0, v0}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ll8f;
-
-    return-object p0
+    return-void
 .end method

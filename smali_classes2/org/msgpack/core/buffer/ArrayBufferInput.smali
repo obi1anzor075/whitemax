@@ -29,7 +29,7 @@
     .line 3
     iput-boolean p1, p0, Lorg/msgpack/core/buffer/ArrayBufferInput;->isEmpty:Z
 
-    goto :goto_0
+    return-void
 
     :cond_0
     const/4 p1, 0x0
@@ -37,19 +37,18 @@
     .line 4
     iput-boolean p1, p0, Lorg/msgpack/core/buffer/ArrayBufferInput;->isEmpty:Z
 
-    :goto_0
     return-void
 .end method
 
 .method public constructor <init>([B)V
     .locals 2
 
+    const/4 v0, 0x0
+
     .line 5
-    array-length v0, p1
+    array-length v1, p1
 
-    const/4 v1, 0x0
-
-    invoke-direct {p0, p1, v1, v0}, Lorg/msgpack/core/buffer/ArrayBufferInput;-><init>([BII)V
+    invoke-direct {p0, p1, v0, v1}, Lorg/msgpack/core/buffer/ArrayBufferInput;-><init>([BII)V
 
     return-void
 .end method
@@ -60,7 +59,7 @@
     .line 6
     const-string v0, "input array is null"
 
-    invoke-static {p1, v0}, Lxy6;->h(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lus;->g(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p1, p2, p3}, Lorg/msgpack/core/buffer/MessageBuffer;->wrap([BII)Lorg/msgpack/core/buffer/MessageBuffer;
 
@@ -124,7 +123,7 @@
     .line 3
     iput-boolean p1, p0, Lorg/msgpack/core/buffer/ArrayBufferInput;->isEmpty:Z
 
-    goto :goto_0
+    return-object v0
 
     :cond_0
     const/4 p1, 0x0
@@ -132,7 +131,6 @@
     .line 4
     iput-boolean p1, p0, Lorg/msgpack/core/buffer/ArrayBufferInput;->isEmpty:Z
 
-    :goto_0
     return-object v0
 .end method
 
@@ -142,7 +140,7 @@
     .line 5
     const-string v0, "input array is null"
 
-    invoke-static {p1, v0}, Lxy6;->h(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lus;->g(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p1}, Lorg/msgpack/core/buffer/MessageBuffer;->wrap([B)Lorg/msgpack/core/buffer/MessageBuffer;
 
@@ -159,7 +157,7 @@
     .line 6
     const-string v0, "input array is null"
 
-    invoke-static {p1, v0}, Lxy6;->h(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lus;->g(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p1, p2, p3}, Lorg/msgpack/core/buffer/MessageBuffer;->wrap([BII)Lorg/msgpack/core/buffer/MessageBuffer;
 

@@ -2,339 +2,152 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements La0b;
+
 
 # instance fields
-.field public final a:I
+.field public final a:Ljava/lang/String;
 
-.field public final b:I
+.field public final b:J
 
-.field public final c:Landroid/graphics/Paint;
-
-.field public final d:Landroid/graphics/Paint;
-
-.field public final e:Landroid/graphics/Paint;
-
-.field public final f:I
-
-.field public final g:Landroid/graphics/RectF;
-
-.field public h:F
-
-.field public final i:Landroid/graphics/RectF;
-
-.field public final j:Landroid/graphics/RectF;
-
-.field public final k:Landroid/graphics/RectF;
-
-.field public final l:Lkjb;
+.field public final c:I
 
 
 # direct methods
-.method public constructor <init>(ILandroid/content/Context;Lkjb;)V
-    .locals 7
+.method public constructor <init>(JLjava/lang/String;I)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lyza;->l:Lkjb;
+    iput-object p3, p0, Lyza;->a:Ljava/lang/String;
 
-    invoke-static {}, Lzg4;->b()Lzg4;
+    iput-wide p1, p0, Lyza;->b:J
 
-    move-result-object p3
-
-    iget v0, p3, Lzg4;->i:I
-
-    iget v1, p3, Lzg4;->b:I
-
-    iget v2, p3, Lzg4;->a:I
-
-    iput v2, p0, Lyza;->a:I
-
-    iget p3, p3, Lzg4;->h:I
-
-    iput p3, p0, Lyza;->b:I
-
-    sget-object v3, Lwce;->a0:Lr7e;
-
-    invoke-static {p2}, Lfja;->E(Landroid/content/Context;)Lwce;
-
-    move-result-object p2
-
-    new-instance v3, Landroid/graphics/Paint;
-
-    invoke-direct {v3}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object v3, p0, Lyza;->c:Landroid/graphics/Paint;
-
-    iget v4, p2, Lwce;->w:I
-
-    invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setColor(I)V
-
-    sget-object v4, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
-
-    invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
-
-    const/4 v5, 0x1
-
-    invoke-virtual {v3, v5}, Landroid/graphics/Paint;->setAntiAlias(Z)V
-
-    iput-object v3, p0, Lyza;->d:Landroid/graphics/Paint;
-
-    new-instance v3, Landroid/graphics/Paint;
-
-    invoke-direct {v3}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object v3, p0, Lyza;->e:Landroid/graphics/Paint;
-
-    iget p2, p2, Lwce;->m:I
-
-    const v6, 0x3f19999a    # 0.6f
-
-    invoke-static {p2, v6}, Ln1g;->c0(IF)I
-
-    move-result p2
-
-    invoke-virtual {v3, p2}, Landroid/graphics/Paint;->setColor(I)V
-
-    invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
-
-    invoke-virtual {v3, v5}, Landroid/graphics/Paint;->setAntiAlias(Z)V
-
-    sub-int/2addr p1, p3
-
-    iput p1, p0, Lyza;->f:I
-
-    new-instance p2, Landroid/graphics/RectF;
-
-    neg-int v3, p3
-
-    mul-int/lit8 v3, v3, 0x2
-
-    int-to-float v3, v3
-
-    int-to-float v1, v1
-
-    const/high16 v4, 0x40000000    # 2.0f
-
-    div-float/2addr v1, v4
-
-    add-float/2addr v3, v1
-
-    int-to-float v2, v2
-
-    add-float/2addr v3, v2
-
-    sub-int v4, p1, p3
-
-    int-to-float v4, v4
-
-    mul-int/lit8 v5, p3, 0x2
-
-    int-to-float v5, v5
-
-    add-float/2addr v5, v1
-
-    add-float/2addr v5, v2
-
-    add-int/2addr p3, p1
-
-    add-int/2addr p3, v0
-
-    int-to-float p3, p3
-
-    invoke-direct {p2, v3, v4, v5, p3}, Landroid/graphics/RectF;-><init>(FFFF)V
-
-    iput-object p2, p0, Lyza;->g:Landroid/graphics/RectF;
-
-    new-instance p3, Landroid/graphics/RectF;
-
-    invoke-virtual {p2}, Landroid/graphics/RectF;->centerX()F
-
-    move-result v0
-
-    sub-float/2addr v0, v1
-
-    invoke-virtual {p2}, Landroid/graphics/RectF;->centerX()F
-
-    move-result p2
-
-    add-float/2addr p2, v1
-
-    int-to-float p1, p1
-
-    const/high16 v1, -0x3ee00000    # -10.0f
-
-    invoke-direct {p3, v0, v1, p2, p1}, Landroid/graphics/RectF;-><init>(FFFF)V
-
-    iput-object p3, p0, Lyza;->i:Landroid/graphics/RectF;
-
-    new-instance p2, Landroid/graphics/RectF;
-
-    iget v0, p3, Landroid/graphics/RectF;->left:F
-
-    sub-float v1, v0, v2
-
-    const/4 v3, 0x0
-
-    invoke-direct {p2, v1, v3, v0, p1}, Landroid/graphics/RectF;-><init>(FFFF)V
-
-    iput-object p2, p0, Lyza;->j:Landroid/graphics/RectF;
-
-    new-instance p2, Landroid/graphics/RectF;
-
-    iget p3, p3, Landroid/graphics/RectF;->right:F
-
-    add-float/2addr v2, p3
-
-    invoke-direct {p2, p3, v3, v2, p1}, Landroid/graphics/RectF;-><init>(FFFF)V
-
-    iput-object p2, p0, Lyza;->k:Landroid/graphics/RectF;
+    iput p4, p0, Lyza;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()F
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 7
 
-    iget-object v0, p0, Lyza;->i:Landroid/graphics/RectF;
+    const/4 v0, 0x1
 
-    invoke-virtual {v0}, Landroid/graphics/RectF;->centerX()F
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lyza;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lyza;
+
+    iget-object v1, p0, Lyza;->a:Ljava/lang/String;
+
+    iget-object v3, p1, Lyza;->a:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-wide v3, p0, Lyza;->b:J
+
+    iget-wide v5, p1, Lyza;->b:J
+
+    cmp-long v1, v3, v5
+
+    if-eqz v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget p0, p0, Lyza;->c:I
+
+    iget p1, p1, Lyza;->c:I
+
+    if-eq p0, p1, :cond_4
+
+    return v2
+
+    :cond_4
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 4
+
+    iget-object v0, p0, Lyza;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    iget-object p0, p0, Lyza;->l:Lkjb;
+    const/16 v1, 0x1f
 
-    check-cast p0, Lru/ok/messages/media/trim/rangeSeekBar/RangeSeekBarView;
+    mul-int/2addr v0, v1
 
-    invoke-virtual {p0, v0}, Lru/ok/messages/media/trim/rangeSeekBar/RangeSeekBarView;->c(F)F
+    iget-wide v2, p0, Lyza;->b:J
+
+    invoke-static {v0, v1, v2, v3}, Lzge;->m(IIJ)I
+
+    move-result v0
+
+    iget p0, p0, Lyza;->c:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
     move-result p0
+
+    add-int/2addr p0, v0
 
     return p0
 .end method
 
-.method public final b(Landroid/view/MotionEvent;)V
-    .locals 3
+.method public final toString()Ljava/lang/String;
+    .locals 5
 
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+    const-string v0, "NeuroAvatar(url="
 
-    move-result v0
+    const-string v1, ", photoId="
 
-    iget-object v1, p0, Lyza;->l:Lkjb;
+    iget-wide v2, p0, Lyza;->b:J
 
-    if-eqz v0, :cond_1
+    iget-object v4, p0, Lyza;->a:Ljava/lang/String;
 
-    const/4 v2, 0x2
+    invoke-static {v0, v2, v3, v4, v1}, Lzge;->q(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eq v0, v2, :cond_0
+    move-result-object v0
 
-    goto :goto_0
+    const-string v1, ", categoryId="
 
-    :cond_0
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result p1
+    iget p0, p0, Lyza;->c:I
 
-    iget v0, p0, Lyza;->h:F
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    add-float/2addr p1, v0
+    const-string p0, ")"
 
-    check-cast v1, Lru/ok/messages/media/trim/rangeSeekBar/RangeSeekBarView;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Lru/ok/messages/media/trim/rangeSeekBar/RangeSeekBarView;->c(F)F
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result p1
+    move-result-object p0
 
-    invoke-virtual {p0, p1}, Lyza;->c(F)V
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p0}, Lyza;->a()F
-
-    move-result v0
-
-    check-cast v1, Lru/ok/messages/media/trim/rangeSeekBar/RangeSeekBarView;
-
-    invoke-virtual {v1, v0}, Lru/ok/messages/media/trim/rangeSeekBar/RangeSeekBarView;->b(F)F
-
-    move-result v0
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
-
-    move-result p1
-
-    sub-float/2addr v0, p1
-
-    iput v0, p0, Lyza;->h:F
-
-    :goto_0
-    return-void
-.end method
-
-.method public final c(F)V
-    .locals 4
-
-    iget-object v0, p0, Lyza;->l:Lkjb;
-
-    check-cast v0, Lru/ok/messages/media/trim/rangeSeekBar/RangeSeekBarView;
-
-    invoke-virtual {v0, p1}, Lru/ok/messages/media/trim/rangeSeekBar/RangeSeekBarView;->b(F)F
-
-    move-result p1
-
-    iget-object v0, p0, Lyza;->g:Landroid/graphics/RectF;
-
-    invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
-
-    move-result v1
-
-    const/high16 v2, 0x40000000    # 2.0f
-
-    div-float/2addr v1, v2
-
-    sub-float/2addr p1, v1
-
-    iget v1, v0, Landroid/graphics/RectF;->top:F
-
-    invoke-virtual {v0, p1, v1}, Landroid/graphics/RectF;->offsetTo(FF)V
-
-    iget-object p1, p0, Lyza;->i:Landroid/graphics/RectF;
-
-    invoke-virtual {v0}, Landroid/graphics/RectF;->centerX()F
-
-    move-result v0
-
-    invoke-virtual {p1}, Landroid/graphics/RectF;->width()F
-
-    move-result v1
-
-    div-float/2addr v1, v2
-
-    sub-float/2addr v0, v1
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v0, v1}, Landroid/graphics/RectF;->offsetTo(FF)V
-
-    iget-object v0, p0, Lyza;->j:Landroid/graphics/RectF;
-
-    iget v2, p1, Landroid/graphics/RectF;->left:F
-
-    iget v3, p0, Lyza;->a:I
-
-    int-to-float v3, v3
-
-    sub-float/2addr v2, v3
-
-    invoke-virtual {v0, v2, v1}, Landroid/graphics/RectF;->offsetTo(FF)V
-
-    iget-object p0, p0, Lyza;->k:Landroid/graphics/RectF;
-
-    iget p1, p1, Landroid/graphics/RectF;->right:F
-
-    invoke-virtual {p0, p1, v1}, Landroid/graphics/RectF;->offsetTo(FF)V
-
-    return-void
+    return-object p0
 .end method

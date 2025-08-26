@@ -2,60 +2,281 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final e:Lv28;
+# interfaces
+.implements Lu28;
+.implements Lnpd;
+.implements Lam4;
+.implements La0a;
 
 
 # instance fields
-.field public final a:J
+.field public final synthetic a:I
 
-.field public final b:J
+.field public b:Lam4;
 
-.field public final c:J
-
-.field public final d:Lmje;
+.field public final c:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
+    .locals 0
 
-    new-instance v7, Lv28;
+    iput p1, p0, Lv28;->a:I
 
-    const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
+    iput-object p2, p0, Lv28;->c:Ljava/lang/Object;
 
-    const-wide v5, -0x7fffffffffffffffL    # -4.9E-324
-
-    const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
-
-    move-object v0, v7
-
-    invoke-direct/range {v0 .. v6}, Lv28;-><init>(JJJ)V
-
-    sput-object v7, Lv28;->e:Lv28;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>(JJJ)V
+.method private final d(Ljava/lang/Object;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    return-void
+.end method
 
-    iput-wide p1, p0, Lv28;->a:J
-
-    iput-wide p3, p0, Lv28;->b:J
-
-    iput-wide p5, p0, Lv28;->c:J
-
-    new-instance p1, Lmje;
-
-    const/4 p2, 0x1
-
-    invoke-direct {p1, p2}, Lmje;-><init>(I)V
-
-    iput-object p1, p0, Lv28;->d:Lmje;
+.method private final e(Ljava/lang/Object;)V
+    .locals 0
 
     return-void
+.end method
+
+
+# virtual methods
+.method public a(Ljava/lang/Object;)V
+    .locals 0
+
+    iget-object p0, p0, Lv28;->c:Ljava/lang/Object;
+
+    check-cast p0, Lu28;
+
+    invoke-interface {p0, p1}, Lu28;->a(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 1
+
+    iget v0, p0, Lv28;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object p0, p0, Lv28;->c:Ljava/lang/Object;
+
+    check-cast p0, Lo93;
+
+    invoke-interface {p0}, Lo93;->b()V
+
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lv28;->c:Ljava/lang/Object;
+
+    check-cast p0, La0a;
+
+    invoke-interface {p0}, La0a;->b()V
+
+    return-void
+
+    :pswitch_1
+    iget-object p0, p0, Lv28;->c:Ljava/lang/Object;
+
+    check-cast p0, Lu28;
+
+    invoke-interface {p0}, Lu28;->b()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final c(Lam4;)V
+    .locals 1
+
+    iget v0, p0, Lv28;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iput-object p1, p0, Lv28;->b:Lam4;
+
+    iget-object p1, p0, Lv28;->c:Ljava/lang/Object;
+
+    check-cast p1, Lo93;
+
+    invoke-interface {p1, p0}, Lo93;->c(Lam4;)V
+
+    return-void
+
+    :pswitch_0
+    iput-object p1, p0, Lv28;->b:Lam4;
+
+    iget-object p1, p0, Lv28;->c:Ljava/lang/Object;
+
+    check-cast p1, La0a;
+
+    invoke-interface {p1, p0}, La0a;->c(Lam4;)V
+
+    return-void
+
+    :pswitch_1
+    iget-object v0, p0, Lv28;->b:Lam4;
+
+    invoke-static {v0, p1}, Lem4;->h(Lam4;Lam4;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iput-object p1, p0, Lv28;->b:Lam4;
+
+    iget-object p1, p0, Lv28;->c:Ljava/lang/Object;
+
+    check-cast p1, Lu28;
+
+    invoke-interface {p1, p0}, Lu28;->c(Lam4;)V
+
+    :cond_0
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final f()V
+    .locals 1
+
+    iget v0, p0, Lv28;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object p0, p0, Lv28;->b:Lam4;
+
+    invoke-interface {p0}, Lam4;->f()V
+
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lv28;->b:Lam4;
+
+    invoke-interface {p0}, Lam4;->f()V
+
+    return-void
+
+    :pswitch_1
+    iget-object p0, p0, Lv28;->b:Lam4;
+
+    invoke-interface {p0}, Lam4;->f()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final g()Z
+    .locals 1
+
+    iget v0, p0, Lv28;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object p0, p0, Lv28;->b:Lam4;
+
+    invoke-interface {p0}, Lam4;->g()Z
+
+    move-result p0
+
+    return p0
+
+    :pswitch_0
+    iget-object p0, p0, Lv28;->b:Lam4;
+
+    invoke-interface {p0}, Lam4;->g()Z
+
+    move-result p0
+
+    return p0
+
+    :pswitch_1
+    iget-object p0, p0, Lv28;->b:Lam4;
+
+    invoke-interface {p0}, Lam4;->g()Z
+
+    move-result p0
+
+    return p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public h(Ljava/lang/Object;)V
+    .locals 0
+
+    iget p0, p0, Lv28;->a:I
+
+    return-void
+.end method
+
+.method public final onError(Ljava/lang/Throwable;)V
+    .locals 1
+
+    iget v0, p0, Lv28;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object p0, p0, Lv28;->c:Ljava/lang/Object;
+
+    check-cast p0, Lo93;
+
+    invoke-interface {p0, p1}, Lo93;->onError(Ljava/lang/Throwable;)V
+
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lv28;->c:Ljava/lang/Object;
+
+    check-cast p0, La0a;
+
+    invoke-interface {p0, p1}, La0a;->onError(Ljava/lang/Throwable;)V
+
+    return-void
+
+    :pswitch_1
+    iget-object p0, p0, Lv28;->c:Ljava/lang/Object;
+
+    check-cast p0, Lu28;
+
+    invoke-interface {p0}, Lu28;->b()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -32,7 +32,7 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     instance-of v0, p1, Lq2;
@@ -41,15 +41,15 @@
 
     check-cast p1, Lq2;
 
-    check-cast p0, Ly1;
+    check-cast p0, Lz1;
 
-    invoke-virtual {p0}, Ly1;->a()Ljava/util/Map;
+    invoke-virtual {p0}, Lz1;->a()Ljava/util/Map;
 
     move-result-object p0
 
-    check-cast p1, Ly1;
+    check-cast p1, Lz1;
 
-    invoke-virtual {p1}, Ly1;->a()Ljava/util/Map;
+    invoke-virtual {p1}, Lz1;->a()Ljava/util/Map;
 
     move-result-object p1
 
@@ -57,12 +57,11 @@
 
     move-result p0
 
-    goto :goto_0
+    return p0
 
     :cond_1
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 

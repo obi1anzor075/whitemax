@@ -12,7 +12,7 @@
         "Lru/ok/messages/media/attaches/DraweeViewWithSensitiveWarningIcon;",
         "Lcom/facebook/drawee/view/SimpleDraweeView;",
         "",
-        "B0",
+        "t0",
         "Z",
         "getNeedToDrawSensitiveWarningIcon",
         "()Z",
@@ -27,13 +27,14 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
-.field public B0:Z
+.field public t0:Z
 
-.field public final C0:Landroid/graphics/drawable/Drawable;
+.field public final u0:Landroid/graphics/drawable/Drawable;
 
 
 # direct methods
@@ -64,10 +65,10 @@
     invoke-direct {p0, p1, p2, p3}, Lcom/facebook/drawee/view/SimpleDraweeView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 3
-    sget p2, Lzhc;->f0:I
+    sget p2, Lknc;->i0:I
 
     .line 4
-    invoke-static {p1, p2}, Lgq3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {p1, p2}, Let3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
@@ -77,7 +78,7 @@
     invoke-virtual {p1, p2}, Landroid/graphics/drawable/Drawable;->setTint(I)V
 
     .line 6
-    iput-object p1, p0, Lru/ok/messages/media/attaches/DraweeViewWithSensitiveWarningIcon;->C0:Landroid/graphics/drawable/Drawable;
+    iput-object p1, p0, Lru/ok/messages/media/attaches/DraweeViewWithSensitiveWarningIcon;->u0:Landroid/graphics/drawable/Drawable;
 
     return-void
 .end method
@@ -87,7 +88,7 @@
 .method public final getNeedToDrawSensitiveWarningIcon()Z
     .locals 0
 
-    iget-boolean p0, p0, Lru/ok/messages/media/attaches/DraweeViewWithSensitiveWarningIcon;->B0:Z
+    iget-boolean p0, p0, Lru/ok/messages/media/attaches/DraweeViewWithSensitiveWarningIcon;->t0:Z
 
     return p0
 .end method
@@ -97,11 +98,11 @@
 
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    iget-boolean v0, p0, Lru/ok/messages/media/attaches/DraweeViewWithSensitiveWarningIcon;->B0:Z
+    iget-boolean v0, p0, Lru/ok/messages/media/attaches/DraweeViewWithSensitiveWarningIcon;->t0:Z
 
     if-eqz v0, :cond_0
 
-    iget-object p0, p0, Lru/ok/messages/media/attaches/DraweeViewWithSensitiveWarningIcon;->C0:Landroid/graphics/drawable/Drawable;
+    iget-object p0, p0, Lru/ok/messages/media/attaches/DraweeViewWithSensitiveWarningIcon;->u0:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
@@ -112,7 +113,7 @@
 .method public final onSizeChanged(IIII)V
     .locals 1
 
-    iget-object p0, p0, Lru/ok/messages/media/attaches/DraweeViewWithSensitiveWarningIcon;->C0:Landroid/graphics/drawable/Drawable;
+    iget-object p0, p0, Lru/ok/messages/media/attaches/DraweeViewWithSensitiveWarningIcon;->u0:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
@@ -154,7 +155,7 @@
 .method public final setNeedToDrawSensitiveWarningIcon(Z)V
     .locals 0
 
-    iput-boolean p1, p0, Lru/ok/messages/media/attaches/DraweeViewWithSensitiveWarningIcon;->B0:Z
+    iput-boolean p1, p0, Lru/ok/messages/media/attaches/DraweeViewWithSensitiveWarningIcon;->t0:Z
 
     return-void
 .end method

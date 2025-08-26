@@ -1,283 +1,129 @@
-.class public abstract La7a;
+.class public final synthetic La7a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lv56;
 
-# static fields
-.field public static final A:I
 
-.field public static final B:I
+# instance fields
+.field public final synthetic a:I
 
-.field public static final C:I
+.field public final synthetic b:Le7a;
 
-.field public static final D:I
-
-.field public static final E:I
-
-.field public static final F:I
-
-.field public static final G:I
-
-.field public static final H:I
-
-.field public static final I:I
-
-.field public static final J:I
-
-.field public static final K:I
-
-.field public static final L:I
-
-.field public static final M:I
-
-.field public static final N:I
-
-.field public static final O:I
-
-.field public static final P:I
-
-.field public static final Q:I
-
-.field public static final R:I
-
-.field public static final S:I
-
-.field public static final a:I
-
-.field public static final b:I
-
-.field public static final c:I
-
-.field public static final d:I
-
-.field public static final e:I
-
-.field public static final f:I
-
-.field public static final g:I
-
-.field public static final h:I
-
-.field public static final i:I
-
-.field public static final j:I
-
-.field public static final k:I
-
-.field public static final l:I
-
-.field public static final m:I
-
-.field public static final n:I
-
-.field public static final o:I
-
-.field public static final p:I
-
-.field public static final q:I
-
-.field public static final r:I
-
-.field public static final s:I
-
-.field public static final t:I
-
-.field public static final u:I
-
-.field public static final v:I
-
-.field public static final w:I
-
-.field public static final x:I
-
-.field public static final y:I
-
-.field public static final z:I
+.field public final synthetic c:Lxy7;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Le7a;Lwy7;I)V
+    .locals 0
 
-    sget v0, Lopb;->chat_screen_message_send_error_delete_action:I
+    iput p3, p0, La7a;->a:I
 
-    sput v0, La7a;->a:I
+    iput-object p1, p0, La7a;->b:Le7a;
 
-    sget v0, Lopb;->chat_screen_message_send_error_resend_action_multi:I
+    iput-object p2, p0, La7a;->c:Lxy7;
 
-    sput v0, La7a;->b:I
-
-    sget v0, Lopb;->chat_screen_message_send_error_resend_action_solo:I
-
-    sput v0, La7a;->c:I
-
-    sget v0, Lopb;->messages_list_chat_description_view_id:I
-
-    sput v0, La7a;->d:I
-
-    sget v0, Lopb;->messages_list_chat_description_view_type:I
-
-    sput v0, La7a;->e:I
-
-    sget v0, Lopb;->messages_list_confirm_cancel:I
-
-    sput v0, La7a;->f:I
-
-    sget v0, Lopb;->messages_list_confirm_complaint_extremism:I
-
-    sput v0, La7a;->g:I
-
-    sget v0, Lopb;->messages_list_confirm_complaint_fake:I
-
-    sput v0, La7a;->h:I
-
-    sget v0, Lopb;->messages_list_confirm_complaint_other:I
-
-    sput v0, La7a;->i:I
-
-    sget v0, Lopb;->messages_list_confirm_complaint_porno:I
-
-    sput v0, La7a;->j:I
-
-    sget v0, Lopb;->messages_list_confirm_complaint_spam:I
-
-    sput v0, La7a;->k:I
-
-    sget v0, Lopb;->messages_list_confirm_complaint_threat:I
-
-    sput v0, La7a;->l:I
-
-    sget v0, Lopb;->messages_list_confirm_delete:I
-
-    sput v0, La7a;->m:I
-
-    sget v0, Lopb;->messages_list_confirm_delete_for_all:I
-
-    sput v0, La7a;->n:I
-
-    sget v0, Lopb;->messages_list_confirm_pin_with_notify:I
-
-    sput v0, La7a;->o:I
-
-    sget v0, Lopb;->messages_list_confirm_pin_without_notify:I
-
-    sput v0, La7a;->p:I
-
-    sget v0, Lopb;->messages_list_context_action_copy:I
-
-    sput v0, La7a;->q:I
-
-    sget v0, Lopb;->messages_list_context_action_copy_photo:I
-
-    sput v0, La7a;->r:I
-
-    sget v0, Lopb;->messages_list_context_action_delete:I
-
-    sput v0, La7a;->s:I
-
-    sget v0, Lopb;->messages_list_context_action_delete_for_all:I
-
-    sput v0, La7a;->t:I
-
-    sget v0, Lopb;->messages_list_context_action_edit:I
-
-    sput v0, La7a;->u:I
-
-    sget v0, Lopb;->messages_list_context_action_forward:I
-
-    sput v0, La7a;->v:I
-
-    sget v0, Lopb;->messages_list_context_action_mark_as_unread:I
-
-    sput v0, La7a;->w:I
-
-    sget v0, Lopb;->messages_list_context_action_pin:I
-
-    sput v0, La7a;->x:I
-
-    sget v0, Lopb;->messages_list_context_action_reply:I
-
-    sput v0, La7a;->y:I
-
-    sget v0, Lopb;->messages_list_context_action_report:I
-
-    sput v0, La7a;->z:I
-
-    sget v0, Lopb;->messages_list_context_action_save_to_gallery:I
-
-    sput v0, La7a;->A:I
-
-    sget v0, Lopb;->messages_list_context_action_select:I
-
-    sput v0, La7a;->B:I
-
-    sget v0, Lopb;->messages_list_context_action_unpin:I
-
-    sput v0, La7a;->C:I
-
-    sget v0, Lopb;->messages_list_context_actions_view_type:I
-
-    sput v0, La7a;->D:I
-
-    sget v0, Lopb;->messages_list_context_content_container:I
-
-    sput v0, La7a;->E:I
-
-    sget v0, Lopb;->messages_list_context_member_view_type:I
-
-    sput v0, La7a;->F:I
-
-    sget v0, Lopb;->messages_list_context_members_member_cell:I
-
-    sput v0, La7a;->G:I
-
-    sget v0, Lopb;->messages_list_context_members_member_reaction:I
-
-    sput v0, La7a;->H:I
-
-    sget v0, Lopb;->messages_list_context_reactions_container:I
-
-    sput v0, La7a;->I:I
-
-    sget v0, Lopb;->messages_list_item_alias:I
-
-    sput v0, La7a;->J:I
-
-    sget v0, Lopb;->messages_list_item_date:I
-
-    sput v0, La7a;->K:I
-
-    sget v0, Lopb;->messages_list_item_keyboard_buttons:I
-
-    sput v0, La7a;->L:I
-
-    sget v0, Lopb;->messages_list_item_single_image:I
-
-    sput v0, La7a;->M:I
-
-    sget v0, Lopb;->messages_list_item_text:I
-
-    sput v0, La7a;->N:I
-
-    sget v0, Lopb;->messages_list_item_title:I
-
-    sput v0, La7a;->O:I
-
-    sget v0, Lopb;->messages_list_item_video_duration:I
-
-    sput v0, La7a;->P:I
-
-    sget v0, Lopb;->messages_list_recycler_view:I
-
-    sput v0, La7a;->Q:I
-
-    sget v0, Lopb;->messages_list_scroll_btn:I
-
-    sput v0, La7a;->R:I
-
-    sget v0, Lopb;->messages_list_share_contact_for_bot_action:I
-
-    sput v0, La7a;->S:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 4
+
+    iget v0, p0, La7a;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, La7a;->c:Lxy7;
+
+    move-object v1, v0
+
+    check-cast v1, Lwy7;
+
+    invoke-virtual {v1}, Lwy7;->c()Ljava/util/List;
+
+    move-result-object v2
+
+    iget v3, v1, Lwy7;->c:I
+
+    invoke-interface {v2, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lone/me/messages/list/loader/MessageModel;
+
+    invoke-virtual {v1}, Lwy7;->c()Ljava/util/List;
+
+    move-result-object v1
+
+    add-int/lit8 v3, v3, 0x1
+
+    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lone/me/messages/list/loader/MessageModel;
+
+    iget-object p0, p0, La7a;->b:Le7a;
+
+    invoke-virtual {p0, v0, v2, v1}, Le7a;->c(Lxy7;Lone/me/messages/list/loader/MessageModel;Lone/me/messages/list/loader/MessageModel;)Z
+
+    move-result p0
+
+    :goto_0
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_0
+    iget-object v0, p0, La7a;->c:Lxy7;
+
+    move-object v1, v0
+
+    check-cast v1, Lwy7;
+
+    invoke-virtual {v1}, Lwy7;->c()Ljava/util/List;
+
+    move-result-object v2
+
+    iget v3, v1, Lwy7;->c:I
+
+    invoke-interface {v2, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lone/me/messages/list/loader/MessageModel;
+
+    invoke-virtual {v1}, Lwy7;->c()Ljava/util/List;
+
+    move-result-object v1
+
+    add-int/lit8 v3, v3, -0x1
+
+    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lone/me/messages/list/loader/MessageModel;
+
+    iget-object p0, p0, La7a;->b:Le7a;
+
+    invoke-virtual {p0, v0, v2, v1}, Le7a;->c(Lxy7;Lone/me/messages/list/loader/MessageModel;Lone/me/messages/list/loader/MessageModel;)Z
+
+    move-result p0
+
+    goto :goto_0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

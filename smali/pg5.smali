@@ -1,8 +1,23 @@
-.class public interface abstract Lpg5;
-.super Ljava/lang/Object;
+.class public final Lpg5;
+.super Lu2;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a(Ljava/util/List;)Ljava/lang/Object;
+# static fields
+.field public static final c:Lpg5;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lpg5;
+
+    const/16 v1, 0x8
+
+    invoke-direct {v0, v1}, Lu2;-><init>(I)V
+
+    sput-object v0, Lpg5;->c:Lpg5;
+
+    return-void
 .end method

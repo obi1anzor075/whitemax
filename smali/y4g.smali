@@ -1,78 +1,25 @@
 .class public final Ly4g;
-.super Lo3;
+.super Landroid/webkit/WebView;
 .source "SourceFile"
-
-# interfaces
-.implements Locc;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Ly4g;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
-# instance fields
-.field public final a:Lcom/google/android/gms/common/api/Status;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lo1g;
-
-    const/16 v1, 0xc
-
-    invoke-direct {v0, v1}, Lo1g;-><init>(I)V
-
-    sput-object v0, Ly4g;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/google/android/gms/common/api/Status;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ly4g;->a:Lcom/google/android/gms/common/api/Status;
-
-    return-void
-.end method
 
 
 # virtual methods
-.method public final a()Lcom/google/android/gms/common/api/Status;
+.method public final onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 0
 
-    iget-object p0, p0, Ly4g;->a:Lcom/google/android/gms/common/api/Status;
+    invoke-super {p0, p1}, Landroid/webkit/WebView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    return-object p0
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 2
+.method public final performClick()Z
+    .locals 0
 
-    const/16 v0, 0x4f45
+    invoke-super {p0}, Landroid/view/View;->performClick()Z
 
-    invoke-static {p1, v0}, Lek8;->n0(Landroid/os/Parcel;I)I
+    const/4 p0, 0x0
 
-    move-result v0
-
-    iget-object p0, p0, Ly4g;->a:Lcom/google/android/gms/common/api/Status;
-
-    const/4 v1, 0x1
-
-    invoke-static {p1, v1, p0, p2}, Lek8;->j0(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
-
-    invoke-static {p1, v0}, Lek8;->o0(Landroid/os/Parcel;I)V
-
-    return-void
+    return p0
 .end method

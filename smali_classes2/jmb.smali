@@ -1,191 +1,809 @@
-.class public abstract Ljmb;
-.super Ljava/lang/Object;
+.class public final Ljmb;
+.super Lnv8;
 .source "SourceFile"
 
 
-# static fields
-.field public static accent:I = 0x7f060019
+# instance fields
+.field public a:[Lhmb;
 
-.field public static accent_highlighted:I = 0x7f06001a
+.field public b:Ljava/lang/String;
 
-.field public static attach_send_file:I = 0x7f060023
+.field public c:J
 
-.field public static auth_avatar_circle:I = 0x7f060024
+.field public d:J
 
-.field public static auth_background:I = 0x7f060025
+.field public e:J
 
-.field public static auth_background_selected:I = 0x7f060026
+.field public f:[Limb;
 
-.field public static auth_button_gray:I = 0x7f060027
+.field public g:Lru/ok/tamtam/nano/Protos$Attaches;
 
-.field public static auth_button_ripple:I = 0x7f060028
+.field public h:J
 
-.field public static auth_button_text_secondary:I = 0x7f060029
+.field public i:Lru/ok/tamtam/nano/Protos$MessageElements;
 
-.field public static auth_country:I = 0x7f06002a
+.field public j:Z
 
-.field public static auth_status_bar:I = 0x7f06002b
+.field public k:J
 
-.field public static auth_text_confirm_description:I = 0x7f06002c
 
-.field public static auth_text_dark_blue:I = 0x7f06002d
+# direct methods
+.method public constructor <init>()V
+    .locals 5
 
-.field public static auth_text_gray:I = 0x7f06002e
+    invoke-direct {p0}, Lnv8;-><init>()V
 
-.field public static black:I = 0x7f060089
+    sget-object v0, Lhmb;->o:[Lhmb;
 
-.field public static black_10:I = 0x7f06008a
+    const/4 v1, 0x0
 
-.field public static black_16:I = 0x7f06008b
+    if-nez v0, :cond_1
 
-.field public static black_30:I = 0x7f06008c
+    sget-object v0, Lr37;->b:Ljava/lang/Object;
 
-.field public static black_34:I = 0x7f06008d
+    monitor-enter v0
 
-.field public static black_50:I = 0x7f06008e
+    :try_start_0
+    sget-object v2, Lhmb;->o:[Lhmb;
 
-.field public static black_60:I = 0x7f06008f
+    if-nez v2, :cond_0
 
-.field public static black_70:I = 0x7f060090
+    new-array v2, v1, [Lhmb;
 
-.field public static black_8:I = 0x7f060091
+    sput-object v2, Lhmb;->o:[Lhmb;
 
-.field public static black_80:I = 0x7f060092
+    goto :goto_0
 
-.field public static black_85:I = 0x7f060093
+    :catchall_0
+    move-exception p0
 
-.field public static blue:I = 0x7f060094
+    goto :goto_1
 
-.field public static blue_30:I = 0x7f060095
+    :cond_0
+    :goto_0
+    monitor-exit v0
 
-.field public static blue_50:I = 0x7f060096
+    goto :goto_2
 
-.field public static blue_dark:I = 0x7f060097
+    :goto_1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-.field public static call_swipe_hint_color:I = 0x7f0600a6
+    throw p0
 
-.field public static calls_green:I = 0x7f0600ab
+    :cond_1
+    :goto_2
+    sget-object v0, Lhmb;->o:[Lhmb;
 
-.field public static calls_notif_background:I = 0x7f0600ac
+    iput-object v0, p0, Ljmb;->a:[Lhmb;
 
-.field public static calls_notif_button_text_primary:I = 0x7f0600ad
+    const-string v0, ""
 
-.field public static calls_notif_green:I = 0x7f0600ae
+    iput-object v0, p0, Ljmb;->b:Ljava/lang/String;
 
-.field public static calls_notif_red:I = 0x7f0600af
+    const-wide/16 v2, 0x0
 
-.field public static calls_notif_text_primary:I = 0x7f0600b0
+    iput-wide v2, p0, Ljmb;->c:J
 
-.field public static calls_notif_text_secondary:I = 0x7f0600b1
+    iput-wide v2, p0, Ljmb;->d:J
 
-.field public static calls_red:I = 0x7f0600b2
+    iput-wide v2, p0, Ljmb;->e:J
 
-.field public static chat_media_bg:I = 0x7f060133
+    sget-object v0, Limb;->e:[Limb;
 
-.field public static common_bg_dark:I = 0x7f060200
+    if-nez v0, :cond_3
 
-.field public static constructor_bg:I = 0x7f06020c
+    sget-object v0, Lr37;->b:Ljava/lang/Object;
 
-.field public static contact_attach_stroke:I = 0x7f06020d
+    monitor-enter v0
 
-.field public static contact_attach_stub:I = 0x7f06020e
+    :try_start_1
+    sget-object v4, Limb;->e:[Limb;
 
-.field public static control_bg:I = 0x7f06020f
+    if-nez v4, :cond_2
 
-.field public static control_bg_action:I = 0x7f060210
+    new-array v4, v1, [Limb;
 
-.field public static control_border:I = 0x7f060211
+    sput-object v4, Limb;->e:[Limb;
 
-.field public static dark_transparent_ripple:I = 0x7f060212
+    goto :goto_3
 
-.field public static divider_gray:I = 0x7f06023f
+    :catchall_1
+    move-exception p0
 
-.field public static gray_33:I = 0x7f060251
+    goto :goto_4
 
-.field public static gray_66:I = 0x7f060252
+    :cond_2
+    :goto_3
+    monitor-exit v0
 
-.field public static gray_88:I = 0x7f060253
+    goto :goto_5
 
-.field public static gray_88_80:I = 0x7f060254
+    :goto_4
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-.field public static gray_99:I = 0x7f060255
+    throw p0
 
-.field public static gray_aa:I = 0x7f060256
+    :cond_3
+    :goto_5
+    sget-object v0, Limb;->e:[Limb;
 
-.field public static gray_cc:I = 0x7f060257
+    iput-object v0, p0, Ljmb;->f:[Limb;
 
-.field public static gray_ec:I = 0x7f060258
+    const/4 v0, 0x0
 
-.field public static gray_separator:I = 0x7f060259
+    iput-object v0, p0, Ljmb;->g:Lru/ok/tamtam/nano/Protos$Attaches;
 
-.field public static launch_background:I = 0x7f060283
+    iput-wide v2, p0, Ljmb;->h:J
 
-.field public static launch_logo_tint_color:I = 0x7f060284
+    iput-object v0, p0, Ljmb;->i:Lru/ok/tamtam/nano/Protos$MessageElements;
 
-.field public static loading_bg:I = 0x7f06028c
+    iput-boolean v1, p0, Ljmb;->j:Z
 
-.field public static music_player_primary:I = 0x7f06052c
+    iput-wide v2, p0, Ljmb;->k:J
 
-.field public static orange:I = 0x7f060535
+    const/4 v0, -0x1
 
-.field public static orange_50:I = 0x7f060536
+    iput v0, p0, Lnv8;->cachedSize:I
 
-.field public static pip_trash_gradient_end:I = 0x7f060537
+    return-void
+.end method
 
-.field public static pip_trash_gradient_start:I = 0x7f060538
 
-.field public static profile_bg:I = 0x7f060543
+# virtual methods
+.method public final computeSerializedSize()I
+    .locals 7
 
-.field public static quick_camera_take_button_selector:I = 0x7f060544
+    iget-object v0, p0, Ljmb;->a:[Lhmb;
 
-.field public static quick_camera_take_button_selector_red:I = 0x7f060545
+    const/4 v1, 0x0
 
-.field public static range_seek_bar_border_shadow_color:I = 0x7f060546
+    if-eqz v0, :cond_1
 
-.field public static read_status_dark_bg:I = 0x7f060547
+    array-length v0, v0
 
-.field public static read_status_light_bg:I = 0x7f060548
+    if-lez v0, :cond_1
 
-.field public static red:I = 0x7f060549
+    move v0, v1
 
-.field public static red_delete:I = 0x7f06054a
+    move v2, v0
 
-.field public static ripple:I = 0x7f06054b
+    :goto_0
+    iget-object v3, p0, Ljmb;->a:[Lhmb;
 
-.field public static ripple_light:I = 0x7f06054c
+    array-length v4, v3
 
-.field public static ripple_white:I = 0x7f06054f
+    if-ge v0, v4, :cond_2
 
-.field public static status_bar_bg:I = 0x7f060554
+    aget-object v3, v3, v0
 
-.field public static text_black:I = 0x7f060576
+    if-eqz v3, :cond_0
 
-.field public static text_primary:I = 0x7f06058f
+    const/4 v4, 0x1
 
-.field public static text_primary_disabled:I = 0x7f060591
+    invoke-static {v4, v3}, Lq33;->i(ILnv8;)I
 
-.field public static text_secondary:I = 0x7f060595
+    move-result v3
 
-.field public static text_secondary_dark:I = 0x7f060596
+    add-int/2addr v2, v3
 
-.field public static text_white:I = 0x7f06059e
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
 
-.field public static time_picker_on_surface_color_day:I = 0x7f06059f
+    goto :goto_0
 
-.field public static time_picker_on_surface_color_night:I = 0x7f0605a0
+    :cond_1
+    move v2, v1
 
-.field public static time_picker_surface_color_night:I = 0x7f0605a1
+    :cond_2
+    iget-object v0, p0, Ljmb;->b:Ljava/lang/String;
 
-.field public static transparent:I = 0x7f0605a5
+    const-string v3, ""
 
-.field public static white:I = 0x7f0605a6
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-.field public static white_30:I = 0x7f0605a7
+    move-result v0
 
-.field public static white_50:I = 0x7f0605a8
+    if-nez v0, :cond_3
 
-.field public static white_70:I = 0x7f0605a9
+    const/4 v0, 0x2
 
-.field public static white_80:I = 0x7f0605aa
+    iget-object v3, p0, Ljmb;->b:Ljava/lang/String;
 
-.field public static white_95:I = 0x7f0605ab
+    invoke-static {v0, v3}, Lq33;->l(ILjava/lang/String;)I
+
+    move-result v0
+
+    add-int/2addr v2, v0
+
+    :cond_3
+    iget-wide v3, p0, Ljmb;->c:J
+
+    const-wide/16 v5, 0x0
+
+    cmp-long v0, v3, v5
+
+    if-eqz v0, :cond_4
+
+    const/4 v0, 0x3
+
+    invoke-static {v0, v3, v4}, Lq33;->h(IJ)I
+
+    move-result v0
+
+    add-int/2addr v2, v0
+
+    :cond_4
+    iget-wide v3, p0, Ljmb;->d:J
+
+    cmp-long v0, v3, v5
+
+    if-eqz v0, :cond_5
+
+    const/4 v0, 0x4
+
+    invoke-static {v0, v3, v4}, Lq33;->h(IJ)I
+
+    move-result v0
+
+    add-int/2addr v2, v0
+
+    :cond_5
+    iget-wide v3, p0, Ljmb;->e:J
+
+    cmp-long v0, v3, v5
+
+    if-eqz v0, :cond_6
+
+    const/4 v0, 0x5
+
+    invoke-static {v0, v3, v4}, Lq33;->h(IJ)I
+
+    move-result v0
+
+    add-int/2addr v2, v0
+
+    :cond_6
+    iget-object v0, p0, Ljmb;->f:[Limb;
+
+    if-eqz v0, :cond_8
+
+    array-length v0, v0
+
+    if-lez v0, :cond_8
+
+    :goto_1
+    iget-object v0, p0, Ljmb;->f:[Limb;
+
+    array-length v3, v0
+
+    if-ge v1, v3, :cond_8
+
+    aget-object v0, v0, v1
+
+    if-eqz v0, :cond_7
+
+    const/4 v3, 0x6
+
+    invoke-static {v3, v0}, Lq33;->i(ILnv8;)I
+
+    move-result v0
+
+    add-int/2addr v0, v2
+
+    move v2, v0
+
+    :cond_7
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
+
+    :cond_8
+    iget-object v0, p0, Ljmb;->g:Lru/ok/tamtam/nano/Protos$Attaches;
+
+    if-eqz v0, :cond_9
+
+    const/4 v1, 0x7
+
+    invoke-static {v1, v0}, Lq33;->i(ILnv8;)I
+
+    move-result v0
+
+    add-int/2addr v2, v0
+
+    :cond_9
+    iget-wide v0, p0, Ljmb;->h:J
+
+    cmp-long v3, v0, v5
+
+    if-eqz v3, :cond_a
+
+    const/16 v3, 0x8
+
+    invoke-static {v3, v0, v1}, Lq33;->h(IJ)I
+
+    move-result v0
+
+    add-int/2addr v2, v0
+
+    :cond_a
+    iget-object v0, p0, Ljmb;->i:Lru/ok/tamtam/nano/Protos$MessageElements;
+
+    if-eqz v0, :cond_b
+
+    const/16 v1, 0x9
+
+    invoke-static {v1, v0}, Lq33;->i(ILnv8;)I
+
+    move-result v0
+
+    add-int/2addr v2, v0
+
+    :cond_b
+    iget-boolean v0, p0, Ljmb;->j:Z
+
+    if-eqz v0, :cond_c
+
+    const/16 v0, 0xa
+
+    invoke-static {v0}, Lq33;->a(I)I
+
+    move-result v0
+
+    add-int/2addr v2, v0
+
+    :cond_c
+    iget-wide v0, p0, Ljmb;->k:J
+
+    cmp-long p0, v0, v5
+
+    if-eqz p0, :cond_d
+
+    const/16 p0, 0xb
+
+    invoke-static {p0, v0, v1}, Lq33;->h(IJ)I
+
+    move-result p0
+
+    add-int/2addr p0, v2
+
+    return p0
+
+    :cond_d
+    return v2
+.end method
+
+.method public final mergeFrom(Lp33;)Lnv8;
+    .locals 5
+
+    :cond_0
+    :goto_0
+    invoke-virtual {p1}, Lp33;->s()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    sparse-switch v0, :sswitch_data_0
+
+    invoke-virtual {p1, v0}, Lp33;->u(I)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    goto/16 :goto_5
+
+    :sswitch_0
+    invoke-virtual {p1}, Lp33;->q()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Ljmb;->k:J
+
+    goto :goto_0
+
+    :sswitch_1
+    invoke-virtual {p1}, Lp33;->f()Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Ljmb;->j:Z
+
+    goto :goto_0
+
+    :sswitch_2
+    iget-object v0, p0, Ljmb;->i:Lru/ok/tamtam/nano/Protos$MessageElements;
+
+    if-nez v0, :cond_1
+
+    new-instance v0, Lru/ok/tamtam/nano/Protos$MessageElements;
+
+    invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$MessageElements;-><init>()V
+
+    iput-object v0, p0, Ljmb;->i:Lru/ok/tamtam/nano/Protos$MessageElements;
+
+    :cond_1
+    iget-object v0, p0, Ljmb;->i:Lru/ok/tamtam/nano/Protos$MessageElements;
+
+    invoke-virtual {p1, v0}, Lp33;->j(Lnv8;)V
+
+    goto :goto_0
+
+    :sswitch_3
+    invoke-virtual {p1}, Lp33;->q()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Ljmb;->h:J
+
+    goto :goto_0
+
+    :sswitch_4
+    iget-object v0, p0, Ljmb;->g:Lru/ok/tamtam/nano/Protos$Attaches;
+
+    if-nez v0, :cond_2
+
+    new-instance v0, Lru/ok/tamtam/nano/Protos$Attaches;
+
+    invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$Attaches;-><init>()V
+
+    iput-object v0, p0, Ljmb;->g:Lru/ok/tamtam/nano/Protos$Attaches;
+
+    :cond_2
+    iget-object v0, p0, Ljmb;->g:Lru/ok/tamtam/nano/Protos$Attaches;
+
+    invoke-virtual {p1, v0}, Lp33;->j(Lnv8;)V
+
+    goto :goto_0
+
+    :sswitch_5
+    const/16 v0, 0x32
+
+    invoke-static {p1, v0}, Lwqd;->s(Lp33;I)I
+
+    move-result v0
+
+    iget-object v2, p0, Ljmb;->f:[Limb;
+
+    if-nez v2, :cond_3
+
+    move v3, v1
+
+    goto :goto_1
+
+    :cond_3
+    array-length v3, v2
+
+    :goto_1
+    add-int/2addr v0, v3
+
+    new-array v4, v0, [Limb;
+
+    if-eqz v3, :cond_4
+
+    invoke-static {v2, v1, v4, v1, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    :cond_4
+    :goto_2
+    add-int/lit8 v1, v0, -0x1
+
+    if-ge v3, v1, :cond_5
+
+    new-instance v1, Limb;
+
+    invoke-direct {v1}, Limb;-><init>()V
+
+    aput-object v1, v4, v3
+
+    invoke-virtual {p1, v1}, Lp33;->j(Lnv8;)V
+
+    invoke-virtual {p1}, Lp33;->s()I
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_2
+
+    :cond_5
+    new-instance v0, Limb;
+
+    invoke-direct {v0}, Limb;-><init>()V
+
+    aput-object v0, v4, v3
+
+    invoke-virtual {p1, v0}, Lp33;->j(Lnv8;)V
+
+    iput-object v4, p0, Ljmb;->f:[Limb;
+
+    goto :goto_0
+
+    :sswitch_6
+    invoke-virtual {p1}, Lp33;->q()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Ljmb;->e:J
+
+    goto/16 :goto_0
+
+    :sswitch_7
+    invoke-virtual {p1}, Lp33;->q()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Ljmb;->d:J
+
+    goto/16 :goto_0
+
+    :sswitch_8
+    invoke-virtual {p1}, Lp33;->q()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Ljmb;->c:J
+
+    goto/16 :goto_0
+
+    :sswitch_9
+    invoke-virtual {p1}, Lp33;->r()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ljmb;->b:Ljava/lang/String;
+
+    goto/16 :goto_0
+
+    :sswitch_a
+    const/16 v0, 0xa
+
+    invoke-static {p1, v0}, Lwqd;->s(Lp33;I)I
+
+    move-result v0
+
+    iget-object v2, p0, Ljmb;->a:[Lhmb;
+
+    if-nez v2, :cond_6
+
+    move v3, v1
+
+    goto :goto_3
+
+    :cond_6
+    array-length v3, v2
+
+    :goto_3
+    add-int/2addr v0, v3
+
+    new-array v4, v0, [Lhmb;
+
+    if-eqz v3, :cond_7
+
+    invoke-static {v2, v1, v4, v1, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    :cond_7
+    :goto_4
+    add-int/lit8 v1, v0, -0x1
+
+    if-ge v3, v1, :cond_8
+
+    new-instance v1, Lhmb;
+
+    invoke-direct {v1}, Lhmb;-><init>()V
+
+    aput-object v1, v4, v3
+
+    invoke-virtual {p1, v1}, Lp33;->j(Lnv8;)V
+
+    invoke-virtual {p1}, Lp33;->s()I
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_4
+
+    :cond_8
+    new-instance v0, Lhmb;
+
+    invoke-direct {v0}, Lhmb;-><init>()V
+
+    aput-object v0, v4, v3
+
+    invoke-virtual {p1, v0}, Lp33;->j(Lnv8;)V
+
+    iput-object v4, p0, Ljmb;->a:[Lhmb;
+
+    goto/16 :goto_0
+
+    :goto_5
+    :sswitch_b
+    return-object p0
+
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        0x0 -> :sswitch_b
+        0xa -> :sswitch_a
+        0x12 -> :sswitch_9
+        0x18 -> :sswitch_8
+        0x20 -> :sswitch_7
+        0x28 -> :sswitch_6
+        0x32 -> :sswitch_5
+        0x3a -> :sswitch_4
+        0x40 -> :sswitch_3
+        0x4a -> :sswitch_2
+        0x50 -> :sswitch_1
+        0x58 -> :sswitch_0
+    .end sparse-switch
+.end method
+
+.method public final writeTo(Lq33;)V
+    .locals 6
+
+    iget-object v0, p0, Ljmb;->a:[Lhmb;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_1
+
+    array-length v0, v0
+
+    if-lez v0, :cond_1
+
+    move v0, v1
+
+    :goto_0
+    iget-object v2, p0, Ljmb;->a:[Lhmb;
+
+    array-length v3, v2
+
+    if-ge v0, v3, :cond_1
+
+    aget-object v2, v2, v0
+
+    if-eqz v2, :cond_0
+
+    const/4 v3, 0x1
+
+    invoke-virtual {p1, v3, v2}, Lq33;->y(ILnv8;)V
+
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v0, p0, Ljmb;->b:Ljava/lang/String;
+
+    const-string v2, ""
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    const/4 v0, 0x2
+
+    iget-object v2, p0, Ljmb;->b:Ljava/lang/String;
+
+    invoke-virtual {p1, v0, v2}, Lq33;->E(ILjava/lang/String;)V
+
+    :cond_2
+    iget-wide v2, p0, Ljmb;->c:J
+
+    const-wide/16 v4, 0x0
+
+    cmp-long v0, v2, v4
+
+    if-eqz v0, :cond_3
+
+    const/4 v0, 0x3
+
+    invoke-virtual {p1, v0, v2, v3}, Lq33;->x(IJ)V
+
+    :cond_3
+    iget-wide v2, p0, Ljmb;->d:J
+
+    cmp-long v0, v2, v4
+
+    if-eqz v0, :cond_4
+
+    const/4 v0, 0x4
+
+    invoke-virtual {p1, v0, v2, v3}, Lq33;->x(IJ)V
+
+    :cond_4
+    iget-wide v2, p0, Ljmb;->e:J
+
+    cmp-long v0, v2, v4
+
+    if-eqz v0, :cond_5
+
+    const/4 v0, 0x5
+
+    invoke-virtual {p1, v0, v2, v3}, Lq33;->x(IJ)V
+
+    :cond_5
+    iget-object v0, p0, Ljmb;->f:[Limb;
+
+    if-eqz v0, :cond_7
+
+    array-length v0, v0
+
+    if-lez v0, :cond_7
+
+    :goto_1
+    iget-object v0, p0, Ljmb;->f:[Limb;
+
+    array-length v2, v0
+
+    if-ge v1, v2, :cond_7
+
+    aget-object v0, v0, v1
+
+    if-eqz v0, :cond_6
+
+    const/4 v2, 0x6
+
+    invoke-virtual {p1, v2, v0}, Lq33;->y(ILnv8;)V
+
+    :cond_6
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
+
+    :cond_7
+    iget-object v0, p0, Ljmb;->g:Lru/ok/tamtam/nano/Protos$Attaches;
+
+    if-eqz v0, :cond_8
+
+    const/4 v1, 0x7
+
+    invoke-virtual {p1, v1, v0}, Lq33;->y(ILnv8;)V
+
+    :cond_8
+    iget-wide v0, p0, Ljmb;->h:J
+
+    cmp-long v2, v0, v4
+
+    if-eqz v2, :cond_9
+
+    const/16 v2, 0x8
+
+    invoke-virtual {p1, v2, v0, v1}, Lq33;->x(IJ)V
+
+    :cond_9
+    iget-object v0, p0, Ljmb;->i:Lru/ok/tamtam/nano/Protos$MessageElements;
+
+    if-eqz v0, :cond_a
+
+    const/16 v1, 0x9
+
+    invoke-virtual {p1, v1, v0}, Lq33;->y(ILnv8;)V
+
+    :cond_a
+    iget-boolean v0, p0, Ljmb;->j:Z
+
+    if-eqz v0, :cond_b
+
+    const/16 v1, 0xa
+
+    invoke-virtual {p1, v1, v0}, Lq33;->r(IZ)V
+
+    :cond_b
+    iget-wide v0, p0, Ljmb;->k:J
+
+    cmp-long p0, v0, v4
+
+    if-eqz p0, :cond_c
+
+    const/16 p0, 0xb
+
+    invoke-virtual {p1, p0, v0, v1}, Lq33;->x(IJ)V
+
+    :cond_c
+    return-void
+.end method

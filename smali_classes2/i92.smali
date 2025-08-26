@@ -1,65 +1,97 @@
-.class public final Li92;
-.super Ljava/lang/Object;
+.class public final enum Li92;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lhcd;
+# static fields
+.field public static final synthetic X:[Li92;
 
-.field public final b:Lkotlinx/coroutines/internal/ContextScope;
+.field public static final enum a:Li92;
+
+.field public static final enum b:Li92;
+
+.field public static final enum c:Li92;
+
+.field public static final enum o:Li92;
 
 
 # direct methods
-.method public constructor <init>(Ltt0;Lpae;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 6
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Li92;
 
-    const/4 v0, 0x7
+    const-string v1, "DIALOG"
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-static {v1, v1, v1, v0}, Licd;->b(IIII)Lhcd;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Li92;->a:Li92;
+
+    new-instance v1, Li92;
+
+    const-string v2, "CHAT"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Li92;->b:Li92;
+
+    new-instance v2, Li92;
+
+    const-string v3, "CHANNEL"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Li92;->c:Li92;
+
+    new-instance v3, Li92;
+
+    const-string v4, "GROUP_CHAT"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Li92;->o:Li92;
+
+    filled-new-array {v0, v1, v2, v3}, [Li92;
 
     move-result-object v0
 
-    iput-object v0, p0, Li92;->a:Lhcd;
-
-    check-cast p2, Ln3a;
-
-    invoke-virtual {p2}, Ln3a;->c()Lzr7;
-
-    move-result-object p2
-
-    invoke-static {p2}, Ln1g;->a(Lhu3;)Lkotlinx/coroutines/internal/ContextScope;
-
-    move-result-object p2
-
-    iput-object p2, p0, Li92;->b:Lkotlinx/coroutines/internal/ContextScope;
-
-    invoke-virtual {p1, p0}, Ltt0;->d(Ljava/lang/Object;)V
+    sput-object v0, Li92;->X:[Li92;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Li92;
+    .locals 1
 
-# virtual methods
-.method public final onEvent(Lg92;)V
-    .locals 2
-    .annotation runtime La1e;
-    .end annotation
+    const-class v0, Li92;
 
-    new-instance v0, Lh92;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    const/4 v1, 0x0
+    move-result-object p0
 
-    invoke-direct {v0, p0, p1, v1}, Lh92;-><init>(Li92;Lg92;Lkotlin/coroutines/Continuation;)V
+    check-cast p0, Li92;
 
-    const/4 p1, 0x3
+    return-object p0
+.end method
 
-    iget-object p0, p0, Li92;->b:Lkotlinx/coroutines/internal/ContextScope;
+.method public static values()[Li92;
+    .locals 1
 
-    invoke-static {p0, v1, v1, v0, p1}, Lxs7;->E(Lou3;Lhu3;Lru3;Li26;I)Lqod;
+    sget-object v0, Li92;->X:[Li92;
 
-    return-void
+    invoke-virtual {v0}, [Li92;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Li92;
+
+    return-object v0
 .end method

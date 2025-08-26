@@ -1,218 +1,500 @@
-.class public final synthetic Lidf;
+.class public final Lidf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Llmf;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final X:Lief;
 
-.field public final synthetic b:Lkdf;
+.field public final Y:Ljava/lang/ref/WeakReference;
+
+.field public final Z:Liw7;
+
+.field public final a:Ljava/lang/String;
+
+.field public final b:J
+
+.field public final c:Ltkf;
+
+.field public final o:Ls1b;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lkdf;I)V
+.method public constructor <init>(Ljava/lang/String;JLtkf;Ls1b;Lief;Ljava/lang/ref/WeakReference;Lzb2;)V
     .locals 0
 
-    iput p2, p0, Lidf;->a:I
-
-    iput-object p1, p0, Lidf;->b:Lkdf;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lidf;->a:Ljava/lang/String;
+
+    iput-wide p2, p0, Lidf;->b:J
+
+    iput-object p4, p0, Lidf;->c:Ltkf;
+
+    iput-object p5, p0, Lidf;->o:Ls1b;
+
+    iput-object p6, p0, Lidf;->X:Lief;
+
+    iput-object p7, p0, Lidf;->Y:Ljava/lang/ref/WeakReference;
+
+    iput-object p8, p0, Lidf;->Z:Liw7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 9
+.method public final I()I
+    .locals 0
 
-    iget-object v0, p0, Lidf;->b:Lkdf;
+    iget-object p0, p0, Lidf;->X:Lief;
 
-    const/4 v1, 0x1
+    invoke-interface {p0}, Lief;->getHeight()I
 
-    iget p0, p0, Lidf;->a:I
+    move-result p0
 
-    packed-switch p0, :pswitch_data_0
+    return p0
+.end method
 
-    iget-object p0, v0, Lkdf;->a:Lt97;
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 7
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    move-result-object p0
+    if-ne p0, p1, :cond_0
 
-    check-cast p0, Lldf;
+    return v0
 
-    iget-object v0, v0, Lkdf;->e:Lt97;
+    :cond_0
+    instance-of v1, p1, Lidf;
 
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    move-result-object v0
+    if-nez v1, :cond_1
 
-    check-cast v0, Lqna;
+    return v2
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :cond_1
+    check-cast p1, Lidf;
 
-    sget-object v2, Lqna;->d:[Ljava/lang/String;
+    iget-object v1, p0, Lidf;->a:Ljava/lang/String;
 
-    const/4 v3, 0x0
+    iget-object v3, p1, Lidf;->a:Ljava/lang/String;
 
-    move v4, v3
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    :goto_0
-    const/4 v5, 0x2
+    move-result v1
 
-    if-ge v4, v5, :cond_2
+    if-nez v1, :cond_2
 
-    aget-object v6, v2, v4
+    return v2
 
-    iget-object v7, v0, Lqna;->c:Lotf;
+    :cond_2
+    iget-wide v3, p0, Lidf;->b:J
 
-    iget-object v8, v7, Lotf;->b:Ljava/lang/Object;
+    iget-wide v5, p1, Lidf;->b:J
 
-    check-cast v8, Lr7e;
+    cmp-long v1, v3, v5
 
-    invoke-virtual {v8}, Lr7e;->getValue()Ljava/lang/Object;
+    if-eqz v1, :cond_3
 
-    move-result-object v8
+    return v2
 
-    check-cast v8, Landroid/content/SharedPreferences;
+    :cond_3
+    iget-object v1, p0, Lidf;->c:Ltkf;
 
-    invoke-interface {v8, v6, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    iget-object v3, p1, Lidf;->c:Ltkf;
 
-    move-result v8
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-nez v8, :cond_1
+    move-result v1
 
-    iget-object v8, v0, Lqna;->a:Landroid/content/Context;
+    if-nez v1, :cond_4
 
-    invoke-static {v8, v6}, Ld8;->d(Landroid/content/Context;Ljava/lang/String;)I
+    return v2
 
-    move-result v6
+    :cond_4
+    iget-object v1, p0, Lidf;->o:Ls1b;
 
-    if-nez v6, :cond_1
+    iget-object v3, p1, Lidf;->o:Ls1b;
 
-    const-string v2, "kdf"
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    const-string v4, "forceContactsSync"
+    move-result v1
 
-    invoke-static {v2, v4}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    if-nez v1, :cond_5
 
-    sget-object v2, Lqna;->d:[Ljava/lang/String;
+    return v2
 
-    sget-object v4, Lqna;->f:[Ljava/lang/String;
+    :cond_5
+    iget-object v1, p0, Lidf;->X:Lief;
 
-    invoke-virtual {v0, v4}, Lqna;->b([Ljava/lang/String;)Z
+    iget-object v3, p1, Lidf;->X:Lief;
+
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_6
+
+    return v2
+
+    :cond_6
+    iget-object v1, p0, Lidf;->Y:Ljava/lang/ref/WeakReference;
+
+    iget-object v3, p1, Lidf;->Y:Ljava/lang/ref/WeakReference;
+
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_7
+
+    return v2
+
+    :cond_7
+    iget-object p0, p0, Lidf;->Z:Liw7;
+
+    iget-object p1, p1, Lidf;->Z:Liw7;
+
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_8
+
+    return v2
+
+    :cond_8
+    return v0
+.end method
+
+.method public final f()I
+    .locals 0
+
+    const/4 p0, 0x2
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 4
+
+    iget-object v0, p0, Lidf;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    iget-object v4, v7, Lotf;->b:Ljava/lang/Object;
+    const/16 v1, 0x1f
 
-    check-cast v4, Lr7e;
+    mul-int/2addr v0, v1
 
-    invoke-virtual {v4}, Lr7e;->getValue()Ljava/lang/Object;
+    iget-wide v2, p0, Lidf;->b:J
 
-    move-result-object v4
+    invoke-static {v0, v1, v2, v3}, Lzge;->m(IIJ)I
 
-    check-cast v4, Landroid/content/SharedPreferences;
+    move-result v0
 
-    invoke-interface {v4}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    iget-object v2, p0, Lidf;->c:Ltkf;
 
-    move-result-object v4
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
-    :goto_1
-    if-ge v3, v5, :cond_0
+    move-result v2
 
-    aget-object v6, v2, v3
+    add-int/2addr v2, v0
 
-    invoke-interface {v4, v6, v0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+    mul-int/2addr v2, v1
 
-    add-int/2addr v3, v1
+    iget-object v0, p0, Lidf;->o:Ls1b;
 
-    goto :goto_1
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
-    :cond_0
-    invoke-interface {v4}, Landroid/content/SharedPreferences$Editor;->apply()V
+    move-result v0
 
-    goto :goto_2
+    add-int/2addr v0, v2
 
-    :cond_1
-    add-int/2addr v4, v1
+    mul-int/2addr v0, v1
 
-    goto :goto_0
+    iget-object v2, p0, Lidf;->X:Lief;
 
-    :cond_2
-    move v1, v3
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
-    :goto_2
-    invoke-virtual {p0, v1}, Lldf;->b(Z)V
+    move-result v2
 
-    return-void
+    add-int/2addr v2, v0
 
-    :pswitch_0
-    iget-object p0, v0, Lkdf;->a:Lt97;
+    mul-int/2addr v2, v1
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    iget-object v0, p0, Lidf;->Y:Ljava/lang/ref/WeakReference;
 
-    move-result-object p0
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
-    check-cast p0, Lldf;
+    move-result v0
 
-    invoke-virtual {p0}, Lldf;->a()V
+    add-int/2addr v0, v2
 
-    iget-object p0, v0, Lkdf;->c:Lt97;
+    mul-int/2addr v0, v1
 
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
+    iget-object p0, p0, Lidf;->Z:Liw7;
 
-    move-result-object p0
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    check-cast p0, Lnae;
+    move-result p0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    add-int/2addr p0, v0
 
-    const-string v0, "nae"
+    return p0
+.end method
 
-    const-string v2, "syncAll"
+.method public final n(Landroid/view/Surface;)V
+    .locals 9
 
-    invoke-static {v0, v2}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    const-class v0, Lidf;
 
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    new-instance v2, Lvr2;
+    sget-object v1, Lg47;->m:Llr6;
 
-    const/4 v3, 0x4
+    if-nez v1, :cond_0
 
-    invoke-direct {v2, p0, v0, v1, v3}, Lvr2;-><init>(Ljava/lang/Object;Ljava/lang/Object;ZI)V
+    goto :goto_0
 
-    iget-object p0, p0, Lnae;->e:Lqmc;
+    :cond_0
+    invoke-interface {v1}, Llr6;->c()Z
 
-    invoke-virtual {p0, v2}, Lqmc;->b(Ljava/lang/Runnable;)Lxi4;
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    sget-object v2, Lqs7;->o:Lqs7;
+
+    iget-wide v3, p0, Lidf;->b:J
+
+    iget-object v5, p0, Lidf;->a:Ljava/lang/String;
+
+    iget-object v6, p0, Lidf;->c:Ltkf;
+
+    invoke-virtual {v6}, Ltkf;->c()Z
+
+    move-result v6
+
+    const-string v7, "Player autoplay. Surface created, \n                            |msgId:"
+
+    const-string v8, ", \n                            |attachId:"
+
+    invoke-static {v7, v3, v4, v8, v5}, Lp3a;->k(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "\n                            |playing:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lk8e;->l0(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    invoke-interface {v1, v2, v0, v3, v4}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    iget-object p0, p0, Lidf;->c:Ltkf;
+
+    invoke-virtual {p0, p1}, Ltkf;->L0(Landroid/view/Surface;)V
 
     return-void
+.end method
 
-    :pswitch_1
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+.method public final onSurfaceTextureDestroyed(Landroid/graphics/SurfaceTexture;)V
+    .locals 9
 
-    sget-object p0, Lk4b;->w0:Lk4b;
+    const-class p1, Lidf;
 
-    iget-object p0, p0, Lk4b;->Y:Lpc7;
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    iget-object v0, v0, Lkdf;->m:Ljdf;
+    move-result-object p1
 
-    invoke-virtual {p0, v0}, Lpc7;->a(Ljc7;)V
+    sget-object v0, Lg47;->m:Llr6;
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {v0}, Llr6;->c()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    sget-object v1, Lqs7;->o:Lqs7;
+
+    iget-wide v2, p0, Lidf;->b:J
+
+    iget-object v4, p0, Lidf;->a:Ljava/lang/String;
+
+    iget-object v5, p0, Lidf;->c:Ltkf;
+
+    invoke-virtual {v5}, Ltkf;->c()Z
+
+    move-result v5
+
+    iget-object v6, p0, Lidf;->Z:Liw7;
+
+    invoke-virtual {v6}, Liw7;->g()I
+
+    move-result v6
+
+    const-string v7, "Player autoplay. Surface destroyed, \n                            |msgId:"
+
+    const-string v8, ", \n                            |attachId:"
+
+    invoke-static {v7, v2, v3, v8, v4}, Lp3a;->k(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, "\n                            |playing:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v3, "\n                            |states:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lk8e;->l0(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    invoke-interface {v0, v1, p1, v2, v3}, Llr6;->d(Lqs7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    iget-object p1, p0, Lidf;->o:Ls1b;
+
+    iget-object v0, p0, Lidf;->c:Ltkf;
+
+    invoke-interface {p1, v0}, Ls1b;->a(Ltkf;)V
+
+    iget-object p1, p0, Lidf;->Y:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {p1}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lumf;
+
+    if-eqz p1, :cond_2
+
+    invoke-interface {p1}, Lumf;->u()V
+
+    :cond_2
+    iget-object p1, p0, Lidf;->Z:Liw7;
+
+    iget-object p0, p0, Lidf;->a:Ljava/lang/String;
+
+    invoke-virtual {p1, p0}, Liw7;->e(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
+.end method
 
-    nop
+.method public final r()I
+    .locals 0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    iget-object p0, p0, Lidf;->X:Lief;
+
+    invoke-interface {p0}, Lief;->getWidth()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 5
+
+    const-string v0, "PlayingState(attachId="
+
+    const-string v1, ", messageId="
+
+    iget-wide v2, p0, Lidf;->b:J
+
+    iget-object v4, p0, Lidf;->a:Ljava/lang/String;
+
+    invoke-static {v0, v2, v3, v4, v1}, Lzge;->q(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", player="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lidf;->c:Ltkf;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", playerHolder="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lidf;->o:Ls1b;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", videoContent="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lidf;->X:Lief;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", weakViewRef="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lidf;->Y:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", states="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lidf;->Z:Liw7;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -1,230 +1,60 @@
-.class public final Lfzb;
+.class public abstract Lfzb;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
-# interfaces
-.implements Lpg7;
 
+# static fields
+.field public static oneme_setting_item_about:I = 0x7f130925
 
-# instance fields
-.field public final X:I
+.field public static oneme_setting_item_appearance:I = 0x7f130926
 
-.field public final Y:J
+.field public static oneme_setting_item_battery:I = 0x7f130927
 
-.field public final a:J
+.field public static oneme_setting_item_dev_menu:I = 0x7f130928
 
-.field public final b:Lryb;
+.field public static oneme_setting_item_esia_connected_title:I = 0x7f130929
 
-.field public final c:Landroid/graphics/drawable/Drawable;
+.field public static oneme_setting_item_esia_not_connected_subtitle:I = 0x7f13092a
 
-.field public final o:Z
+.field public static oneme_setting_item_esia_not_connected_title:I = 0x7f13092b
 
+.field public static oneme_setting_item_folders:I = 0x7f13092c
 
-# direct methods
-.method public constructor <init>(JLryb;Landroid/graphics/drawable/Drawable;Z)V
-    .locals 0
+.field public static oneme_setting_item_invite_friends_title:I = 0x7f13092d
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.field public static oneme_setting_item_messages:I = 0x7f13092e
 
-    iput-wide p1, p0, Lfzb;->a:J
+.field public static oneme_setting_item_notification:I = 0x7f13092f
 
-    iput-object p3, p0, Lfzb;->b:Lryb;
+.field public static oneme_setting_item_privacy:I = 0x7f130930
 
-    iput-object p4, p0, Lfzb;->c:Landroid/graphics/drawable/Drawable;
+.field public static oneme_setting_item_storage:I = 0x7f130931
 
-    iput-boolean p5, p0, Lfzb;->o:Z
+.field public static oneme_setting_item_support:I = 0x7f130932
 
-    sget p3, Lthc;->b:I
+.field public static oneme_settings_avatars_modal_title:I = 0x7f130934
 
-    iput p3, p0, Lfzb;->X:I
+.field public static oneme_settings_cant_open_camera:I = 0x7f130935
 
-    iput-wide p1, p0, Lfzb;->Y:J
+.field public static oneme_settings_change_avatar_cancel:I = 0x7f130936
 
-    return-void
-.end method
+.field public static oneme_settings_change_avatar_delete_current:I = 0x7f130937
 
+.field public static oneme_settings_change_avatar_error:I = 0x7f130938
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 7
+.field public static oneme_settings_change_avatar_success:I = 0x7f130939
 
-    const/4 v0, 0x1
+.field public static oneme_settings_change_avatar_title:I = 0x7f13093a
 
-    if-ne p0, p1, :cond_0
+.field public static oneme_settings_change_avatar_upload_from_camera:I = 0x7f13093b
 
-    return v0
+.field public static oneme_settings_change_avatar_upload_from_gallery:I = 0x7f13093c
 
-    :cond_0
-    instance-of v1, p1, Lfzb;
+.field public static oneme_settings_change_avatar_upload_from_neuroavatars:I = 0x7f13093d
 
-    const/4 v2, 0x0
+.field public static oneme_settings_delete_avatar_success:I = 0x7f13093f
 
-    if-nez v1, :cond_1
+.field public static oneme_settings_language_modal_title:I = 0x7f130944
 
-    return v2
+.field public static oneme_settings_link_copied_snackbar_title:I = 0x7f130945
 
-    :cond_1
-    check-cast p1, Lfzb;
-
-    iget-wide v3, p1, Lfzb;->a:J
-
-    iget-wide v5, p0, Lfzb;->a:J
-
-    cmp-long v1, v5, v3
-
-    if-eqz v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object v1, p0, Lfzb;->b:Lryb;
-
-    iget-object v3, p1, Lfzb;->b:Lryb;
-
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-object v1, p0, Lfzb;->c:Landroid/graphics/drawable/Drawable;
-
-    iget-object v3, p1, Lfzb;->c:Landroid/graphics/drawable/Drawable;
-
-    invoke-static {v1, v3}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_4
-
-    return v2
-
-    :cond_4
-    iget-boolean p0, p0, Lfzb;->o:Z
-
-    iget-boolean p1, p1, Lfzb;->o:Z
-
-    if-eq p0, p1, :cond_5
-
-    return v2
-
-    :cond_5
-    return v0
-.end method
-
-.method public final getItemId()J
-    .locals 2
-
-    iget-wide v0, p0, Lfzb;->Y:J
-
-    return-wide v0
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    iget-wide v0, p0, Lfzb;->a:J
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v1, p0, Lfzb;->b:Lryb;
-
-    invoke-virtual {v1}, Lryb;->hashCode()I
-
-    move-result v1
-
-    add-int/2addr v1, v0
-
-    mul-int/lit8 v1, v1, 0x1f
-
-    iget-object v0, p0, Lfzb;->c:Landroid/graphics/drawable/Drawable;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    :goto_0
-    add-int/2addr v1, v0
-
-    mul-int/lit8 v1, v1, 0x1f
-
-    iget-boolean p0, p0, Lfzb;->o:Z
-
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    move-result p0
-
-    add-int/2addr p0, v1
-
-    return p0
-.end method
-
-.method public final l()I
-    .locals 0
-
-    iget p0, p0, Lfzb;->X:I
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ReactionModel(animojiId="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-wide v1, p0, Lfzb;->a:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", reaction="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lfzb;->b:Lryb;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", reactionDrawable="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lfzb;->c:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", selected="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean p0, p0, Lfzb;->o:Z
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
+.field public static oneme_settings_phonenumber_copied_snackbar_title:I = 0x7f130963

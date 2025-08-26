@@ -87,7 +87,7 @@
 
     const/high16 v0, 0x10000
 
-    .line 16
+    .line 15
     invoke-direct {p0, p1, v0}, Lnet/jpountz/lz4/LZ4BlockOutputStream;-><init>(Ljava/io/OutputStream;I)V
 
     return-void
@@ -96,7 +96,7 @@
 .method public constructor <init>(Ljava/io/OutputStream;I)V
     .locals 1
 
-    .line 15
+    .line 14
     invoke-static {}, Lnet/jpountz/lz4/LZ4Factory;->fastestInstance()Lnet/jpountz/lz4/LZ4Factory;
 
     move-result-object v0
@@ -114,15 +114,10 @@
     .locals 0
 
     .line 13
-    invoke-static {}, Lgvf;->f()Lgvf;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {}, Lrag;->s()Lrag;
 
     const/4 p0, 0x0
 
-    .line 14
     throw p0
 .end method
 
@@ -220,7 +215,7 @@
 
     const-string v1, "blockSize must be <= 33554432, got "
 
-    invoke-static {p0, v1}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v1}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -233,7 +228,7 @@
 
     const-string v1, "blockSize must be >= 64, got "
 
-    invoke-static {p0, v1}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v1}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -306,77 +301,75 @@
 
     iget-object v8, p0, Lnet/jpountz/lz4/LZ4BlockOutputStream;->compressedBuffer:[B
 
-    sget v1, Lnet/jpountz/lz4/LZ4BlockOutputStream;->HEADER_LENGTH:I
+    sget v9, Lnet/jpountz/lz4/LZ4BlockOutputStream;->HEADER_LENGTH:I
 
     const/4 v6, 0x0
 
-    move v9, v1
-
     invoke-virtual/range {v4 .. v9}, Lnet/jpountz/lz4/LZ4Compressor;->compress([BII[BI)I
 
-    move-result v2
+    move-result v1
 
-    iget v4, p0, Lnet/jpountz/lz4/LZ4BlockOutputStream;->o:I
+    iget v2, p0, Lnet/jpountz/lz4/LZ4BlockOutputStream;->o:I
 
-    if-lt v2, v4, :cond_1
+    if-lt v1, v2, :cond_1
 
-    iget-object v2, p0, Lnet/jpountz/lz4/LZ4BlockOutputStream;->buffer:[B
+    iget-object v1, p0, Lnet/jpountz/lz4/LZ4BlockOutputStream;->buffer:[B
 
-    iget-object v5, p0, Lnet/jpountz/lz4/LZ4BlockOutputStream;->compressedBuffer:[B
+    iget-object v4, p0, Lnet/jpountz/lz4/LZ4BlockOutputStream;->compressedBuffer:[B
 
-    invoke-static {v2, v3, v5, v1, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v1, v3, v4, v9, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    const/16 v2, 0x10
+    const/16 v1, 0x10
 
     goto :goto_0
 
     :cond_1
-    const/16 v4, 0x20
+    const/16 v2, 0x20
 
-    move v10, v4
+    move v10, v2
 
-    move v4, v2
+    move v2, v1
 
-    move v2, v10
+    move v1, v10
 
     :goto_0
-    iget-object v5, p0, Lnet/jpountz/lz4/LZ4BlockOutputStream;->compressedBuffer:[B
+    iget-object v4, p0, Lnet/jpountz/lz4/LZ4BlockOutputStream;->compressedBuffer:[B
 
-    sget v6, Lnet/jpountz/lz4/LZ4BlockOutputStream;->MAGIC_LENGTH:I
+    sget v5, Lnet/jpountz/lz4/LZ4BlockOutputStream;->MAGIC_LENGTH:I
 
-    iget v7, p0, Lnet/jpountz/lz4/LZ4BlockOutputStream;->compressionLevel:I
+    iget v6, p0, Lnet/jpountz/lz4/LZ4BlockOutputStream;->compressionLevel:I
 
-    or-int/2addr v2, v7
+    or-int/2addr v1, v6
 
-    int-to-byte v2, v2
+    int-to-byte v1, v1
 
-    aput-byte v2, v5, v6
+    aput-byte v1, v4, v5
 
-    add-int/lit8 v2, v6, 0x1
+    add-int/lit8 v1, v5, 0x1
 
-    invoke-static {v4, v5, v2}, Lnet/jpountz/lz4/LZ4BlockOutputStream;->writeIntLE(I[BI)V
+    invoke-static {v2, v4, v1}, Lnet/jpountz/lz4/LZ4BlockOutputStream;->writeIntLE(I[BI)V
 
-    iget v2, p0, Lnet/jpountz/lz4/LZ4BlockOutputStream;->o:I
+    iget v1, p0, Lnet/jpountz/lz4/LZ4BlockOutputStream;->o:I
 
-    iget-object v5, p0, Lnet/jpountz/lz4/LZ4BlockOutputStream;->compressedBuffer:[B
+    iget-object v4, p0, Lnet/jpountz/lz4/LZ4BlockOutputStream;->compressedBuffer:[B
 
-    add-int/lit8 v7, v6, 0x5
+    add-int/lit8 v6, v5, 0x5
 
-    invoke-static {v2, v5, v7}, Lnet/jpountz/lz4/LZ4BlockOutputStream;->writeIntLE(I[BI)V
+    invoke-static {v1, v4, v6}, Lnet/jpountz/lz4/LZ4BlockOutputStream;->writeIntLE(I[BI)V
 
-    iget-object v2, p0, Lnet/jpountz/lz4/LZ4BlockOutputStream;->compressedBuffer:[B
+    iget-object v1, p0, Lnet/jpountz/lz4/LZ4BlockOutputStream;->compressedBuffer:[B
 
-    add-int/lit8 v6, v6, 0x9
+    add-int/lit8 v5, v5, 0x9
 
-    invoke-static {v0, v2, v6}, Lnet/jpountz/lz4/LZ4BlockOutputStream;->writeIntLE(I[BI)V
+    invoke-static {v0, v1, v5}, Lnet/jpountz/lz4/LZ4BlockOutputStream;->writeIntLE(I[BI)V
 
     iget-object v0, p0, Ljava/io/FilterOutputStream;->out:Ljava/io/OutputStream;
 
-    iget-object v2, p0, Lnet/jpountz/lz4/LZ4BlockOutputStream;->compressedBuffer:[B
+    iget-object v1, p0, Lnet/jpountz/lz4/LZ4BlockOutputStream;->compressedBuffer:[B
 
-    add-int/2addr v1, v4
+    add-int/2addr v9, v2
 
-    invoke-virtual {v0, v2, v3, v1}, Ljava/io/OutputStream;->write([BII)V
+    invoke-virtual {v0, v1, v3, v9}, Ljava/io/OutputStream;->write([BII)V
 
     iput v3, p0, Lnet/jpountz/lz4/LZ4BlockOutputStream;->o:I
 
@@ -645,12 +638,12 @@
     .line 13
     invoke-direct {p0}, Lnet/jpountz/lz4/LZ4BlockOutputStream;->ensureNotFinished()V
 
+    const/4 v0, 0x0
+
     .line 14
-    array-length v0, p1
+    array-length v1, p1
 
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, p1, v1, v0}, Lnet/jpountz/lz4/LZ4BlockOutputStream;->write([BII)V
+    invoke-virtual {p0, p1, v0, v1}, Lnet/jpountz/lz4/LZ4BlockOutputStream;->write([BII)V
 
     return-void
 .end method
@@ -664,7 +657,7 @@
     .end annotation
 
     .line 5
-    invoke-static {p2, p1, p3}, Lnjc;->b(I[BI)V
+    invoke-static {p2, p1, p3}, Lwoc;->b(I[BI)V
 
     .line 6
     invoke-direct {p0}, Lnet/jpountz/lz4/LZ4BlockOutputStream;->ensureNotFinished()V

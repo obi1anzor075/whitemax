@@ -1,50 +1,61 @@
-.class public interface abstract Lm35;
-.super Ljava/lang/Object;
+.class public final Lm35;
+.super Lo35;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a([B)Ljava/util/Map;
-.end method
+# instance fields
+.field public final c:Lpy1;
 
-.method public abstract b()Lk35;
-.end method
+.field public final synthetic o:Lq35;
 
-.method public abstract c([B)Lmw3;
-.end method
 
-.method public abstract d()[B
-.end method
-
-.method public abstract e([BLjava/lang/String;)Z
-.end method
-
-.method public abstract g([B[B)V
-.end method
-
-.method public abstract h([B)V
-.end method
-
-.method public abstract i([B[B)[B
-.end method
-
-.method public abstract j([B)V
-.end method
-
-.method public abstract k([BLjava/util/List;ILjava/util/HashMap;)Li35;
-.end method
-
-.method public abstract l()I
-.end method
-
-.method public abstract o(Lmv4;)V
-.end method
-
-.method public abstract release()V
-.end method
-
-.method public w([BLcza;)V
+# direct methods
+.method public constructor <init>(Lq35;JLpy1;)V
     .locals 0
 
+    iput-object p1, p0, Lm35;->o:Lq35;
+
+    invoke-direct {p0, p2, p3}, Lo35;-><init>(J)V
+
+    iput-object p4, p0, Lm35;->c:Lpy1;
+
     return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
+    .locals 1
+
+    iget-object v0, p0, Lm35;->c:Lpy1;
+
+    iget-object p0, p0, Lm35;->o:Lq35;
+
+    invoke-interface {v0, p0}, Lpy1;->d(Ljx3;)V
+
+    return-void
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-super {p0}, Lo35;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lm35;->c:Lpy1;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

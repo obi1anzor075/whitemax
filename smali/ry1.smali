@@ -1,86 +1,23 @@
-.class public final Lry1;
-.super Lfre;
+.class public abstract Lry1;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public a:Z
-
-.field public final b:Landroid/view/ViewGroup;
+# static fields
+.field public static final a:Lkotlinx/coroutines/internal/Symbol;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/ViewGroup;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lry1;->a:Z
-
-    iput-object p1, p0, Lry1;->b:Landroid/view/ViewGroup;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final b()V
-    .locals 1
-
-    iget-object p0, p0, Lry1;->b:Landroid/view/ViewGroup;
-
-    const/4 v0, 0x0
-
-    invoke-static {p0, v0}, Lkaf;->b(Landroid/view/ViewGroup;Z)V
-
-    return-void
-.end method
-
-.method public final c(Lcre;)V
+.method static constructor <clinit>()V
     .locals 2
 
-    iget-boolean v0, p0, Lry1;->a:Z
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
-    if-nez v0, :cond_0
+    const-string v1, "RESUME_TOKEN"
 
-    iget-object v0, p0, Lry1;->b:Landroid/view/ViewGroup;
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
 
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lkaf;->b(Landroid/view/ViewGroup;Z)V
-
-    :cond_0
-    invoke-virtual {p1, p0}, Lcre;->E(Lzqe;)Lcre;
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 1
-
-    iget-object p0, p0, Lry1;->b:Landroid/view/ViewGroup;
-
-    const/4 v0, 0x1
-
-    invoke-static {p0, v0}, Lkaf;->b(Landroid/view/ViewGroup;Z)V
-
-    return-void
-.end method
-
-.method public final g(Lcre;)V
-    .locals 1
-
-    iget-object p1, p0, Lry1;->b:Landroid/view/ViewGroup;
-
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0}, Lkaf;->b(Landroid/view/ViewGroup;Z)V
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lry1;->a:Z
+    sput-object v0, Lry1;->a:Lkotlinx/coroutines/internal/Symbol;
 
     return-void
 .end method

@@ -22,37 +22,37 @@
         "listenerManager",
         "<init>",
         "(Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;Lru/ok/android/externcalls/sdk/watch_together/internal/listener/WatchTogetherListenerManager;)V",
-        "Lw69;",
+        "Lsb9;",
         "movieId",
         "Lkotlin/Function0;",
-        "Ljue;",
+        "Le5f;",
         "onSuccess",
         "Lkotlin/Function1;",
         "",
         "onError",
         "pause",
-        "(Lw69;Ls16;Lu16;)V",
-        "Lk79;",
+        "(Lsb9;Lv56;Lx56;)V",
+        "Lgc9;",
         "volume",
-        "La79;",
+        "Lwb9;",
         "meta",
         "",
         "moveToAdminOnHangup",
         "play-yj_a6ag",
-        "(Lw69;FLa79;ZLs16;Lu16;)V",
+        "(Lsb9;FLwb9;ZLv56;Lx56;)V",
         "play",
         "resume",
         "isMuted",
         "setMuted",
-        "(Lw69;ZLs16;Lu16;)V",
+        "(Lsb9;ZLv56;Lx56;)V",
         "",
         "position",
         "Ljava/util/concurrent/TimeUnit;",
         "unit",
         "setPosition",
-        "(Lw69;JLjava/util/concurrent/TimeUnit;Ls16;Lu16;)V",
+        "(Lsb9;JLjava/util/concurrent/TimeUnit;Lv56;Lx56;)V",
         "setVolume-F2PwOSs",
-        "(Lw69;FZLs16;Lu16;)V",
+        "(Lsb9;FZLv56;Lx56;)V",
         "setVolume",
         "stop",
         "Lru/ok/android/externcalls/sdk/watch_together/listener/WatchTogetherListener;",
@@ -73,6 +73,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -119,55 +120,43 @@
     return-object p0
 .end method
 
-.method public pause(Lw69;Ls16;Lu16;)V
+.method public pause(Lsb9;Lv56;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw69;",
-            "Ls16;",
-            "Lu16;",
+            "Lsb9;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/WatchTogetherPlayerImpl;->commandExecutor:Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;
 
-    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;->pause(Lw69;Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;->pause(Lsb9;Lv56;Lx56;)V
 
     return-void
 .end method
 
-.method public play-yj_a6ag(Lw69;FLa79;ZLs16;Lu16;)V
-    .locals 7
+.method public play-yj_a6ag(Lsb9;FLwb9;ZLv56;Lx56;)V
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw69;",
+            "Lsb9;",
             "F",
-            "La79;",
+            "Lwb9;",
             "Z",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/WatchTogetherPlayerImpl;->commandExecutor:Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/WatchTogetherPlayerImpl;->commandExecutor:Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;
 
-    move-object v1, p1
-
-    move v2, p2
-
-    move-object v3, p3
-
-    move v4, p4
-
-    move-object v5, p5
-
-    move-object v6, p6
-
-    invoke-interface/range {v0 .. v6}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;->play-yj_a6ag(Lw69;FLa79;ZLs16;Lu16;)V
+    invoke-interface/range {p0 .. p6}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;->play-yj_a6ag(Lsb9;FLwb9;ZLv56;Lx56;)V
 
     return-void
 .end method
@@ -182,121 +171,101 @@
     return-void
 .end method
 
-.method public resume(Lw69;Ls16;Lu16;)V
+.method public resume(Lsb9;Lv56;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw69;",
-            "Ls16;",
-            "Lu16;",
+            "Lsb9;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/WatchTogetherPlayerImpl;->commandExecutor:Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;
 
-    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;->resume(Lw69;Ls16;Lu16;)V
+    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;->resume(Lsb9;Lv56;Lx56;)V
 
     return-void
 .end method
 
-.method public setMuted(Lw69;ZLs16;Lu16;)V
+.method public setMuted(Lsb9;ZLv56;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw69;",
+            "Lsb9;",
             "Z",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/WatchTogetherPlayerImpl;->commandExecutor:Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;
 
-    invoke-interface {p0, p1, p2, p3, p4}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;->setMuted(Lw69;ZLs16;Lu16;)V
+    invoke-interface {p0, p1, p2, p3, p4}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;->setMuted(Lsb9;ZLv56;Lx56;)V
 
     return-void
 .end method
 
-.method public setPosition(Lw69;JLjava/util/concurrent/TimeUnit;Ls16;Lu16;)V
-    .locals 7
+.method public setPosition(Lsb9;JLjava/util/concurrent/TimeUnit;Lv56;Lx56;)V
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lw69;",
+            "Lsb9;",
             "J",
             "Ljava/util/concurrent/TimeUnit;",
-            "Ls16;",
-            "Lu16;",
-            ")V"
-        }
-    .end annotation
-
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/WatchTogetherPlayerImpl;->commandExecutor:Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;
-
-    move-object v1, p1
-
-    move-wide v2, p2
-
-    move-object v4, p4
-
-    move-object v5, p5
-
-    move-object v6, p6
-
-    invoke-interface/range {v0 .. v6}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;->setPosition(Lw69;JLjava/util/concurrent/TimeUnit;Ls16;Lu16;)V
-
-    return-void
-.end method
-
-.method public setVolume-F2PwOSs(Lw69;FZLs16;Lu16;)V
-    .locals 6
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lw69;",
-            "FZ",
-            "Ls16;",
-            "Lu16;",
-            ")V"
-        }
-    .end annotation
-
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/WatchTogetherPlayerImpl;->commandExecutor:Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;
-
-    move-object v1, p1
-
-    move v2, p2
-
-    move v3, p3
-
-    move-object v4, p4
-
-    move-object v5, p5
-
-    invoke-interface/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;->setVolume-F2PwOSs(Lw69;FZLs16;Lu16;)V
-
-    return-void
-.end method
-
-.method public stop(Lw69;Ls16;Lu16;)V
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lw69;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/WatchTogetherPlayerImpl;->commandExecutor:Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;
 
-    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;->stop(Lw69;Ls16;Lu16;)V
+    invoke-interface/range {p0 .. p6}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;->setPosition(Lsb9;JLjava/util/concurrent/TimeUnit;Lv56;Lx56;)V
+
+    return-void
+.end method
+
+.method public setVolume-F2PwOSs(Lsb9;FZLv56;Lx56;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lsb9;",
+            "FZ",
+            "Lv56;",
+            "Lx56;",
+            ")V"
+        }
+    .end annotation
+
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/WatchTogetherPlayerImpl;->commandExecutor:Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;
+
+    invoke-interface/range {p0 .. p5}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;->setVolume-F2PwOSs(Lsb9;FZLv56;Lx56;)V
+
+    return-void
+.end method
+
+.method public stop(Lsb9;Lv56;Lx56;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lsb9;",
+            "Lv56;",
+            "Lx56;",
+            ")V"
+        }
+    .end annotation
+
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/watch_together/internal/WatchTogetherPlayerImpl;->commandExecutor:Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;
+
+    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/watch_together/internal/commands/WatchTogetherCommandsExecutor;->stop(Lsb9;Lv56;Lx56;)V
 
     return-void
 .end method

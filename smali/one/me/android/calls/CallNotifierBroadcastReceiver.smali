@@ -21,6 +21,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -38,23 +39,23 @@
 .method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
 
-    sget-object p0, Lo2a;->a:Lo2a;
+    sget-object p0, Lq6a;->a:Lq6a;
 
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lw4;
-
-    move-result-object p0
-
-    const-class v0, Lkx0;
-
-    invoke-virtual {p0, v0}, Lw4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lu4;
 
     move-result-object p0
 
-    check-cast p0, Lkx0;
+    const-class v0, Lmy0;
+
+    invoke-virtual {p0, v0}, Lu4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lmy0;
 
     const-string v0, "CallNotifierBroadcastReceiver"
 
-    invoke-virtual {p0, p1, p2, v0}, Lkx0;->a(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;)Z
+    invoke-virtual {p0, p1, p2, v0}, Lmy0;->a(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;)Z
 
     return-void
 .end method

@@ -16,7 +16,7 @@
         "Lru/ok/android/externcalls/sdk/analytics/ConversationAnalyticsSender;",
         "<init>",
         "()V",
-        "Ljue;",
+        "Le5f;",
         "forceSendScheduledEvents",
         "Lru/ok/android/externcalls/sdk/analytics/ConversationAnalyticsConfigurationImpl;",
         "configuration",
@@ -31,6 +31,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

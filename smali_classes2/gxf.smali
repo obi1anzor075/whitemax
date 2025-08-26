@@ -1,93 +1,181 @@
-.class public abstract synthetic Lgxf;
+.class public final synthetic Lgxf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lra6;
+
 
 # static fields
-.field public static final synthetic a:[I
+.field public static final a:Lgxf;
 
-.field public static final synthetic b:[I
+.field private static final descriptor:Lx4d;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 4
 
-    const/4 v0, 0x2
+    new-instance v0, Lgxf;
 
-    invoke-static {v0}, Lhr1;->w(I)[I
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v1
+    sput-object v0, Lgxf;->a:Lgxf;
 
-    array-length v1, v1
+    new-instance v1, Lq2b;
 
-    new-array v1, v1, [I
+    const-string v2, "one.me.webapp.domain.jsbridge.delegates.brightness.WebAppChangeScreenBrightness"
 
-    sput-object v1, Lgxf;->b:[I
+    const/4 v3, 0x2
+
+    invoke-direct {v1, v2, v0, v3}, Lq2b;-><init>(Ljava/lang/String;Lra6;I)V
+
+    const-string v0, "requestId"
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x1
+    invoke-virtual {v1, v0, v2}, Lq2b;->i(Ljava/lang/String;Z)V
 
-    :try_start_0
-    aput v3, v1, v2
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    const-string v0, "maxBrightness"
 
-    :catch_0
-    :try_start_1
-    sget-object v1, Lgxf;->b:[I
+    invoke-virtual {v1, v0, v2}, Lq2b;->i(Ljava/lang/String;Z)V
 
-    aput v0, v1, v3
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+    sput-object v1, Lgxf;->descriptor:Lx4d;
 
-    :catch_1
-    invoke-static {}, Lfx0;->values()[Lfx0;
-
-    move-result-object v1
-
-    array-length v1, v1
-
-    new-array v1, v1, [I
-
-    sput-object v1, Lgxf;->a:[I
-
-    :try_start_2
-    aput v3, v1, v2
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    :try_start_3
-    sget-object v1, Lgxf;->a:[I
-
-    aput v0, v1, v0
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
-    :try_start_4
-    sget-object v0, Lgxf;->a:[I
-
-    const/4 v1, 0x3
-
-    aput v1, v0, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
-
-    :catch_4
-    :try_start_5
-    sget-object v0, Lgxf;->a:[I
-
-    const/4 v1, 0x4
-
-    const/4 v2, 0x5
-
-    aput v1, v0, v2
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
-
-    :catch_5
     return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lu40;Ljava/lang/Object;)V
+    .locals 2
+
+    check-cast p2, Lixf;
+
+    sget-object p0, Lgxf;->descriptor:Lx4d;
+
+    invoke-virtual {p1, p0}, Lu40;->c(Lx4d;)Lu40;
+
+    move-result-object p1
+
+    iget-object v0, p2, Lixf;->a:Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, p0, v1, v0}, Lu40;->m(Lx4d;ILjava/lang/String;)V
+
+    const/4 v0, 0x1
+
+    iget-boolean p2, p2, Lixf;->b:Z
+
+    invoke-virtual {p1, p0, v0, p2}, Lu40;->f(Lx4d;IZ)V
+
+    invoke-virtual {p1}, Lu40;->n()V
+
+    return-void
+.end method
+
+.method public final b(Lnye;)Ljava/lang/Object;
+    .locals 8
+
+    sget-object p0, Lgxf;->descriptor:Lx4d;
+
+    invoke-virtual {p1, p0}, Lnye;->i(Lx4d;)Lnye;
+
+    move-result-object p1
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    move v3, v0
+
+    move v4, v1
+
+    move v5, v4
+
+    :goto_0
+    if-eqz v3, :cond_3
+
+    invoke-virtual {p1, p0}, Lnye;->x(Lx4d;)I
+
+    move-result v6
+
+    const/4 v7, -0x1
+
+    if-eq v6, v7, :cond_2
+
+    if-eqz v6, :cond_1
+
+    if-ne v6, v0, :cond_0
+
+    invoke-virtual {p1, p0, v0}, Lnye;->w(Lx4d;I)Z
+
+    move-result v5
+
+    or-int/lit8 v4, v4, 0x2
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Lkotlinx/serialization/UnknownFieldException;
+
+    invoke-direct {p0, v6}, Lkotlinx/serialization/UnknownFieldException;-><init>(I)V
+
+    throw p0
+
+    :cond_1
+    invoke-virtual {p1, p0, v1}, Lnye;->D(Lx4d;I)Ljava/lang/String;
+
+    move-result-object v2
+
+    or-int/lit8 v4, v4, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    move v3, v1
+
+    goto :goto_0
+
+    :cond_3
+    invoke-virtual {p1, p0}, Lnye;->G(Lx4d;)V
+
+    new-instance p0, Lixf;
+
+    invoke-direct {p0, v2, v4, v5}, Lixf;-><init>(Ljava/lang/String;IZ)V
+
+    return-object p0
+.end method
+
+.method public final c()[Lcc7;
+    .locals 2
+
+    const/4 p0, 0x2
+
+    new-array p0, p0, [Lcc7;
+
+    sget-object v0, Lf8e;->a:Lf8e;
+
+    const/4 v1, 0x0
+
+    aput-object v0, p0, v1
+
+    sget-object v0, Ltp0;->a:Ltp0;
+
+    const/4 v1, 0x1
+
+    aput-object v0, p0, v1
+
+    return-object p0
+.end method
+
+.method public final d()Lx4d;
+    .locals 0
+
+    sget-object p0, Lgxf;->descriptor:Lx4d;
+
+    return-object p0
 .end method

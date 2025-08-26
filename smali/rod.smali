@@ -1,161 +1,226 @@
 .class public final Lrod;
-.super Landroid/database/sqlite/SQLiteOpenHelper;
+.super Ltu3;
 .source "SourceFile"
 
 # interfaces
-.implements Lc04;
+.implements Landroid/view/View$OnAttachStateChangeListener;
+
+
+# instance fields
+.field public final X:Z
+
+.field public Y:Z
+
+.field public Z:Landroid/view/ViewGroup;
+
+.field public o:Z
+
+.field public o0:Lru3;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    .line 1
+    invoke-direct {p0, v0}, Lrod;-><init>(Z)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Z)V
+    .locals 0
+
+    .line 2
+    invoke-direct {p0}, Ltu3;-><init>()V
+
+    .line 3
+    iput-boolean p1, p0, Lrod;->o:Z
+
+    const/4 p1, 0x1
+
+    .line 4
+    iput-boolean p1, p0, Lrod;->X:Z
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
-    .locals 0
+.method public final a()V
+    .locals 2
 
-    return-void
-.end method
+    iget-object v0, p0, Lrod;->o0:Lru3;
 
-.method public final onDowngrade(Landroid/database/sqlite/SQLiteDatabase;II)V
-    .locals 8
+    if-eqz v0, :cond_0
 
-    const-string p0, "type"
-
-    const-string p2, "name"
-
-    filled-new-array {p0, p2}, [Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    const-string v1, "sqlite_master"
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    move-object v0, p1
-
-    invoke-virtual/range {v0 .. v7}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object p0
+    invoke-virtual {v0}, Lru3;->c()V
 
     :cond_0
-    :goto_0
-    :try_start_0
-    invoke-interface {p0}, Landroid/database/Cursor;->moveToNext()Z
+    const/4 v0, 0x0
 
-    move-result p2
+    iput-object v0, p0, Lrod;->o0:Lru3;
 
-    if-eqz p2, :cond_1
+    iget-object v1, p0, Lrod;->Z:Landroid/view/ViewGroup;
 
-    const/4 p2, 0x0
+    if-eqz v1, :cond_1
 
-    invoke-interface {p0, p2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object p2
-
-    const/4 p3, 0x1
-
-    invoke-interface {p0, p3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object p3
-
-    const-string v0, "sqlite_sequence"
-
-    invoke-virtual {v0, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "DROP "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p2, " IF EXISTS "
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :try_start_1
-    invoke-virtual {p1, p2}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-    :try_end_1
-    .catch Landroid/database/SQLException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    goto :goto_1
-
-    :catch_0
-    move-exception p3
-
-    :try_start_2
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Error executing "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-static {p2, p3}, Lez3;->B(Ljava/lang/String;Ljava/lang/Throwable;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    goto :goto_0
+    invoke-virtual {v1, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
     :cond_1
-    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+    iput-object v0, p0, Lrod;->Z:Landroid/view/ViewGroup;
+
+    return-void
+.end method
+
+.method public final b()Ltu3;
+    .locals 1
+
+    new-instance v0, Lrod;
+
+    iget-boolean p0, p0, Lrod;->o:Z
+
+    invoke-direct {v0, p0}, Lrod;-><init>(Z)V
+
+    return-object v0
+.end method
+
+.method public final d()Z
+    .locals 0
+
+    iget-boolean p0, p0, Lrod;->o:Z
+
+    return p0
+.end method
+
+.method public final e()Z
+    .locals 0
+
+    iget-boolean p0, p0, Lrod;->X:Z
+
+    return p0
+.end method
+
+.method public final f(Ltu3;Lou3;)V
+    .locals 0
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lrod;->Y:Z
+
+    return-void
+.end method
+
+.method public final g(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/View;ZLru3;)V
+    .locals 1
+
+    iget-boolean v0, p0, Lrod;->Y:Z
+
+    if-eqz v0, :cond_0
 
     return-void
 
-    :goto_1
-    if-eqz p0, :cond_2
+    :cond_0
+    if-eqz p2, :cond_2
 
-    :try_start_3
-    invoke-interface {p0}, Landroid/database/Cursor;->close()V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    if-eqz p4, :cond_1
 
-    goto :goto_2
+    iget-boolean p4, p0, Lrod;->o:Z
 
-    :catchall_1
-    move-exception p0
+    if-eqz p4, :cond_2
 
-    invoke-virtual {p1, p0}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+    :cond_1
+    invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
     :cond_2
-    :goto_2
-    throw p1
+    if-eqz p3, :cond_3
+
+    invoke-virtual {p3}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object p2
+
+    if-nez p2, :cond_3
+
+    invoke-virtual {p1, p3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    :cond_3
+    invoke-virtual {p1}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
+
+    move-result-object p2
+
+    if-eqz p2, :cond_4
+
+    invoke-virtual {p5}, Lru3;->c()V
+
+    return-void
+
+    :cond_4
+    iput-object p5, p0, Lrod;->o0:Lru3;
+
+    iput-object p1, p0, Lrod;->Z:Landroid/view/ViewGroup;
+
+    invoke-virtual {p1, p0}, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+
+    return-void
 .end method
 
-.method public final onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
+.method public final h(Landroid/os/Bundle;)V
+    .locals 1
+
+    const-string v0, "SimpleSwapChangeHandler.removesFromViewOnPush"
+
+    invoke-virtual {p1, v0}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;)Z
+
+    move-result p1
+
+    iput-boolean p1, p0, Lrod;->o:Z
+
+    return-void
+.end method
+
+.method public final i(Landroid/os/Bundle;)V
+    .locals 1
+
+    const-string v0, "SimpleSwapChangeHandler.removesFromViewOnPush"
+
+    iget-boolean p0, p0, Lrod;->o:Z
+
+    invoke-virtual {p1, v0, p0}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
+
+    return-void
+.end method
+
+.method public final onViewAttachedToWindow(Landroid/view/View;)V
+    .locals 1
+
+    invoke-virtual {p1, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+
+    iget-object p1, p0, Lrod;->o0:Lru3;
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1}, Lru3;->c()V
+
+    :cond_0
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Lrod;->o0:Lru3;
+
+    iget-object v0, p0, Lrod;->Z:Landroid/view/ViewGroup;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+
+    :cond_1
+    iput-object p1, p0, Lrod;->Z:Landroid/view/ViewGroup;
+
+    return-void
+.end method
+
+.method public final onViewDetachedFromWindow(Landroid/view/View;)V
     .locals 0
 
     return-void

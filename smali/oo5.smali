@@ -1,134 +1,54 @@
 .class public final Loo5;
-.super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Lko5;
-.implements Lxi4;
+.super Lbu3;
 
 
 # instance fields
-.field public final a:Lzhd;
+.field public X:I
 
-.field public b:Ld1e;
+.field public final synthetic Y:Lon5;
 
-.field public c:Ljava/util/Collection;
+.field public Z:Lon5;
+
+.field public synthetic o:Ljava/lang/Object;
+
+.field public o0:Lbn5;
+
+.field public p0:Ljoc;
 
 
 # direct methods
-.method public constructor <init>(Lzhd;Ljava/util/ArrayList;)V
+.method public constructor <init>(Lon5;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Loo5;->Y:Lon5;
 
-    iput-object p1, p0, Loo5;->a:Lzhd;
-
-    iput-object p2, p0, Loo5;->c:Ljava/util/Collection;
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    sget-object v0, Lf1e;->a:Lf1e;
+    iput-object p1, p0, Loo5;->o:Ljava/lang/Object;
 
-    iput-object v0, p0, Loo5;->b:Ld1e;
+    iget p1, p0, Loo5;->X:I
 
-    iget-object v0, p0, Loo5;->a:Lzhd;
+    const/high16 v0, -0x80000000
 
-    iget-object p0, p0, Loo5;->c:Ljava/util/Collection;
+    or-int/2addr p1, v0
 
-    invoke-interface {v0, p0}, Lzhd;->a(Ljava/lang/Object;)V
+    iput p1, p0, Loo5;->X:I
 
-    return-void
-.end method
-
-.method public final c(Ljava/lang/Object;)V
-    .locals 0
-
-    iget-object p0, p0, Loo5;->c:Ljava/util/Collection;
-
-    invoke-interface {p0, p1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public final e(Ld1e;)V
-    .locals 2
-
-    iget-object v0, p0, Loo5;->b:Ld1e;
-
-    invoke-static {v0, p1}, Lf1e;->e(Ld1e;Ld1e;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iput-object p1, p0, Loo5;->b:Ld1e;
-
-    iget-object v0, p0, Loo5;->a:Lzhd;
-
-    invoke-interface {v0, p0}, Lzhd;->d(Lxi4;)V
-
-    const-wide v0, 0x7fffffffffffffffL
-
-    invoke-interface {p1, v0, v1}, Ld1e;->i(J)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final f()V
-    .locals 1
-
-    iget-object v0, p0, Loo5;->b:Ld1e;
-
-    invoke-interface {v0}, Ld1e;->cancel()V
-
-    sget-object v0, Lf1e;->a:Lf1e;
-
-    iput-object v0, p0, Loo5;->b:Ld1e;
-
-    return-void
-.end method
-
-.method public final h()Z
-    .locals 1
-
-    iget-object p0, p0, Loo5;->b:Ld1e;
-
-    sget-object v0, Lf1e;->a:Lf1e;
-
-    if-ne p0, v0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
-.end method
-
-.method public final onError(Ljava/lang/Throwable;)V
-    .locals 1
+    iget-object p1, p0, Loo5;->Y:Lon5;
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Loo5;->c:Ljava/util/Collection;
+    invoke-virtual {p1, v0, p0}, Lon5;->d(Lbn5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    sget-object v0, Lf1e;->a:Lf1e;
+    move-result-object p0
 
-    iput-object v0, p0, Loo5;->b:Ld1e;
-
-    iget-object p0, p0, Loo5;->a:Lzhd;
-
-    invoke-interface {p0, p1}, Lzhd;->onError(Ljava/lang/Throwable;)V
-
-    return-void
+    return-object p0
 .end method

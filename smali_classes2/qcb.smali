@@ -1,22 +1,23 @@
 .class public final Lqcb;
-.super Ljava/lang/Object;
+.super Lca1;
 .source "SourceFile"
 
-# interfaces
-.implements Lscb;
 
-
-# instance fields
-.field public final a:Lmge;
+# static fields
+.field public static final b:Lqcb;
 
 
 # direct methods
-.method public constructor <init>(Lmge;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lqcb;
 
-    iput-object p1, p0, Lqcb;->a:Lmge;
+    const/16 v1, 0x9
+
+    invoke-direct {v0, v1}, Lca1;-><init>(I)V
+
+    sput-object v0, Lqcb;->b:Lqcb;
 
     return-void
 .end method
@@ -24,7 +25,7 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -33,61 +34,30 @@
     return v0
 
     :cond_0
-    instance-of v1, p1, Lqcb;
+    instance-of p0, p1, Lqcb;
 
-    const/4 v2, 0x0
+    if-nez p0, :cond_1
 
-    if-nez v1, :cond_1
+    const/4 p0, 0x0
 
-    return v2
+    return p0
 
     :cond_1
-    check-cast p1, Lqcb;
-
-    iget-object p0, p0, Lqcb;->a:Lmge;
-
-    iget-object p1, p1, Lqcb;->a:Lmge;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
     return v0
 .end method
 
 .method public final hashCode()I
     .locals 0
 
-    iget-object p0, p0, Lqcb;->a:Lmge;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
+    const p0, 0x1044d8c1
 
     return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 2
+    .locals 0
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ShowRestoreMembersSnackbar(caption="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lqcb;->a:Lmge;
-
-    const-string v1, ")"
-
-    invoke-static {v0, p0, v1}, Lme4;->k(Ljava/lang/StringBuilder;Lmge;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
+    const-string p0, "CameraPermission"
 
     return-object p0
 .end method

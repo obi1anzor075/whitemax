@@ -67,7 +67,7 @@
 
     .line 4
     :cond_0
-    invoke-static {v0}, Lo0e;->H(Ljava/lang/String;)Ljava/lang/Long;
+    invoke-static {v0}, Lq8e;->o0(Ljava/lang/String;)Ljava/lang/Long;
 
     move-result-object p1
 
@@ -96,31 +96,27 @@
     new-instance p1, Ljava/lang/IllegalStateException;
 
     .line 6
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p0, "\' should be in range "
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p3, p4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string p0, ".."
-
-    const-string p3, ", but is \'"
+    const-string v0, "\' should be in range "
 
     .line 7
-    invoke-static {v0, p0, p5, p6, p3}, Lhr1;->s(Ljava/lang/StringBuilder;Ljava/lang/String;JLjava/lang/String;)V
+    invoke-static {v1, p3, p4, p0, v0}, Lzge;->q(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
 
     .line 8
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    const-string p3, ".."
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    const-string p4, ", but is \'"
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 9
+    invoke-static {p5, p6, p3, p4, p0}, Lzt1;->q(JLjava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)V
+
+    .line 10
+    invoke-virtual {p0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -132,11 +128,11 @@
 
     throw p1
 
-    .line 9
+    .line 11
     :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    .line 10
+    .line 12
     new-instance p3, Ljava/lang/StringBuilder;
 
     invoke-direct {p3, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
@@ -167,20 +163,17 @@
 .method public static final systemProp(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
-    .line 14
+    .line 21
     invoke-static {p0}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
     if-nez p0, :cond_0
 
-    goto :goto_0
+    return-object p1
 
     :cond_0
-    move-object p1, p0
-
-    :goto_0
-    return-object p1
+    return-object p0
 .end method
 
 .method public static final systemProp(Ljava/lang/String;Z)Z
@@ -195,7 +188,9 @@
 
     invoke-static {p0}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
-    move-result p1
+    move-result p0
+
+    return p0
 
     :cond_0
     return p1
@@ -245,11 +240,11 @@
     const-wide p5, 0x7fffffffffffffffL
 
     :cond_1
-    move-wide v5, p5
-
     move-object v0, p0
 
     move-wide v1, p1
+
+    move-wide v5, p5
 
     .line 2
     invoke-static/range {v0 .. v6}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp(Ljava/lang/String;JJJ)J

@@ -1,90 +1,200 @@
 .class public final Ly8b;
-.super Lt81;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/animation/Animator$AnimatorListener;
 
 
 # instance fields
-.field public final b:J
+.field public final synthetic a:I
+
+.field public final synthetic b:Lone/me/profile/screens/avatars/ProfileAvatarsScreen;
+
+.field public final synthetic c:Z
 
 
 # direct methods
-.method public constructor <init>(J)V
-    .locals 1
+.method public synthetic constructor <init>(Lone/me/profile/screens/avatars/ProfileAvatarsScreen;ZI)V
+    .locals 0
 
-    const/16 v0, 0x9
+    iput p3, p0, Ly8b;->a:I
 
-    invoke-direct {p0, v0}, Lt81;-><init>(I)V
+    iput-object p1, p0, Ly8b;->b:Lone/me/profile/screens/avatars/ProfileAvatarsScreen;
 
-    iput-wide p1, p0, Ly8b;->b:J
+    iput-boolean p2, p0, Ly8b;->c:Z
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method private final a(Landroid/animation/Animator;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method private final b(Landroid/animation/Animator;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method private final c(Landroid/animation/Animator;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method private final d(Landroid/animation/Animator;)V
+    .locals 0
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 5
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 0
 
-    const/4 v0, 0x1
+    iget p0, p0, Ly8b;->a:I
 
-    if-ne p0, p1, :cond_0
+    return-void
+.end method
 
-    return v0
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 3
 
-    :cond_0
-    instance-of v1, p1, Ly8b;
+    iget p1, p0, Ly8b;->a:I
+
+    const/16 v0, 0x8
+
+    iget-boolean v1, p0, Ly8b;->c:Z
+
+    iget-object p0, p0, Ly8b;->b:Lone/me/profile/screens/avatars/ProfileAvatarsScreen;
 
     const/4 v2, 0x0
 
+    packed-switch p1, :pswitch_data_0
+
+    invoke-virtual {p0}, Lou3;->getView()Landroid/view/View;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_1
+
+    sget-object p1, Lone/me/profile/screens/avatars/ProfileAvatarsScreen;->v0:[Lbc7;
+
+    invoke-virtual {p0}, Lone/me/profile/screens/avatars/ProfileAvatarsScreen;->D0()Lvia;
+
+    move-result-object p1
+
+    if-eqz v1, :cond_0
+
+    move v0, v2
+
+    :cond_0
+    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+
     if-nez v1, :cond_1
 
-    return v2
+    invoke-virtual {p0, v2}, Lone/me/profile/screens/avatars/ProfileAvatarsScreen;->B0(Z)V
 
     :cond_1
-    check-cast p1, Ly8b;
+    return-void
 
-    iget-wide v3, p0, Ly8b;->b:J
+    :pswitch_0
+    invoke-virtual {p0}, Lou3;->getView()Landroid/view/View;
 
-    iget-wide p0, p1, Ly8b;->b:J
+    move-result-object p1
 
-    cmp-long p0, v3, p0
+    if-eqz p1, :cond_3
 
-    if-eqz p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    iget-wide v0, p0, Ly8b;->b:J
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "OpenChat(chatId="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-wide v1, p0, Ly8b;->b:J
-
-    const-string p0, ")"
-
-    invoke-static {v0, v1, v2, p0}, Lwn6;->k(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
+    invoke-static {p0}, Lone/me/profile/screens/avatars/ProfileAvatarsScreen;->y0(Lone/me/profile/screens/avatars/ProfileAvatarsScreen;)Landroid/view/View;
 
     move-result-object p0
 
-    return-object p0
+    if-eqz v1, :cond_2
+
+    move v0, v2
+
+    :cond_2
+    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
+
+    :cond_3
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final onAnimationRepeat(Landroid/animation/Animator;)V
+    .locals 0
+
+    iget p0, p0, Ly8b;->a:I
+
+    return-void
+.end method
+
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 2
+
+    iget p1, p0, Ly8b;->a:I
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Ly8b;->b:Lone/me/profile/screens/avatars/ProfileAvatarsScreen;
+
+    packed-switch p1, :pswitch_data_0
+
+    invoke-virtual {v1}, Lou3;->getView()Landroid/view/View;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    sget-object p1, Lone/me/profile/screens/avatars/ProfileAvatarsScreen;->v0:[Lbc7;
+
+    invoke-virtual {v1}, Lone/me/profile/screens/avatars/ProfileAvatarsScreen;->D0()Lvia;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+
+    iget-boolean p0, p0, Ly8b;->c:Z
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    invoke-virtual {v1, p0}, Lone/me/profile/screens/avatars/ProfileAvatarsScreen;->B0(Z)V
+
+    :cond_0
+    return-void
+
+    :pswitch_0
+    invoke-virtual {v1}, Lou3;->getView()Landroid/view/View;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_1
+
+    invoke-static {v1}, Lone/me/profile/screens/avatars/ProfileAvatarsScreen;->y0(Lone/me/profile/screens/avatars/ProfileAvatarsScreen;)Landroid/view/View;
+
+    move-result-object p0
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
+
+    :cond_1
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

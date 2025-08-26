@@ -4,205 +4,365 @@
 
 
 # instance fields
-.field public a:Landroid/content/Context;
+.field public final a:Lfj8;
 
-.field public final b:Landroid/content/ContentResolver;
+.field public final b:J
+
+.field public final c:J
+
+.field public final d:J
+
+.field public final e:J
+
+.field public final f:Z
+
+.field public final g:Z
+
+.field public final h:Z
+
+.field public final i:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lfj8;JJJJZZZZ)V
+    .locals 7
 
-    sget-boolean v0, Lrd8;->b:Z
+    move/from16 v0, p10
 
-    return-void
-.end method
+    move/from16 v1, p11
 
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 1
+    move/from16 v2, p12
+
+    move/from16 v3, p13
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lod8;->a:Landroid/content/Context;
+    const/4 v4, 0x1
 
-    invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    const/4 v5, 0x0
 
-    move-result-object v0
+    if-eqz v3, :cond_1
 
-    iput-object v0, p0, Lod8;->b:Landroid/content/ContentResolver;
+    if-eqz v1, :cond_0
 
-    iput-object p1, p0, Lod8;->a:Landroid/content/Context;
+    goto :goto_0
+
+    :cond_0
+    move v6, v5
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    move v6, v4
+
+    :goto_1
+    invoke-static {v6}, Lu27;->f(Z)V
+
+    if-eqz v2, :cond_3
+
+    if-eqz v1, :cond_2
+
+    goto :goto_2
+
+    :cond_2
+    move v6, v5
+
+    goto :goto_3
+
+    :cond_3
+    :goto_2
+    move v6, v4
+
+    :goto_3
+    invoke-static {v6}, Lu27;->f(Z)V
+
+    if-eqz v0, :cond_5
+
+    if-nez v1, :cond_4
+
+    if-nez v2, :cond_4
+
+    if-nez v3, :cond_4
+
+    goto :goto_4
+
+    :cond_4
+    move v4, v5
+
+    :cond_5
+    :goto_4
+    invoke-static {v4}, Lu27;->f(Z)V
+
+    iput-object p1, p0, Lod8;->a:Lfj8;
+
+    iput-wide p2, p0, Lod8;->b:J
+
+    iput-wide p4, p0, Lod8;->c:J
+
+    iput-wide p6, p0, Lod8;->d:J
+
+    move-wide p1, p8
+
+    iput-wide p1, p0, Lod8;->e:J
+
+    iput-boolean v0, p0, Lod8;->f:Z
+
+    iput-boolean v1, p0, Lod8;->g:Z
+
+    iput-boolean v2, p0, Lod8;->h:Z
+
+    iput-boolean v3, p0, Lod8;->i:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lnd8;Ljava/lang/String;)Z
-    .locals 3
+.method public final a(J)Lod8;
+    .locals 16
 
-    iget v0, p1, Lnd8;->b:I
+    move-object/from16 v0, p0
 
-    const/4 v1, 0x0
+    iget-wide v1, v0, Lod8;->c:J
 
-    const/4 v2, 0x1
+    cmp-long v1, p1, v1
 
-    if-gez v0, :cond_1
+    if-nez v1, :cond_0
 
-    iget-object p0, p0, Lod8;->a:Landroid/content/Context;
-
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object p0
-
-    iget-object p1, p1, Lnd8;->a:Ljava/lang/String;
-
-    invoke-virtual {p0, p2, p1}, Landroid/content/pm/PackageManager;->checkPermission(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result p0
-
-    if-nez p0, :cond_0
-
-    move v1, v2
+    return-object v0
 
     :cond_0
-    return v1
+    new-instance v2, Lod8;
 
-    :cond_1
-    iget-object p0, p0, Lod8;->a:Landroid/content/Context;
+    iget-boolean v14, v0, Lod8;->h:Z
 
-    iget p1, p1, Lnd8;->c:I
+    iget-boolean v15, v0, Lod8;->i:Z
 
-    invoke-virtual {p0, p2, v0, p1}, Landroid/content/Context;->checkPermission(Ljava/lang/String;II)I
+    iget-object v3, v0, Lod8;->a:Lfj8;
 
-    move-result p0
+    iget-wide v4, v0, Lod8;->b:J
 
-    if-nez p0, :cond_2
+    iget-wide v8, v0, Lod8;->d:J
 
-    move v1, v2
+    iget-wide v10, v0, Lod8;->e:J
 
-    :cond_2
-    return v1
+    iget-boolean v12, v0, Lod8;->f:Z
+
+    iget-boolean v13, v0, Lod8;->g:Z
+
+    move-wide/from16 v6, p1
+
+    invoke-direct/range {v2 .. v15}, Lod8;-><init>(Lfj8;JJJJZZZZ)V
+
+    return-object v2
 .end method
 
-.method public b(Lnd8;)Z
-    .locals 4
+.method public final b(J)Lod8;
+    .locals 16
 
-    iget-object v0, p0, Lod8;->a:Landroid/content/Context;
+    move-object/from16 v0, p0
 
-    iget v1, p1, Lnd8;->b:I
+    iget-wide v1, v0, Lod8;->b:J
 
-    iget v2, p1, Lnd8;->c:I
+    cmp-long v1, p1, v1
 
-    const-string v3, "android.permission.MEDIA_CONTENT_CONTROL"
+    if-nez v1, :cond_0
 
-    invoke-virtual {v0, v3, v1, v2}, Landroid/content/Context;->checkPermission(Ljava/lang/String;II)I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    goto :goto_1
+    return-object v0
 
     :cond_0
-    const/4 v0, 0x0
+    new-instance v2, Lod8;
 
-    :try_start_0
-    iget-object v1, p0, Lod8;->a:Landroid/content/Context;
+    iget-boolean v14, v0, Lod8;->h:Z
 
-    invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    iget-boolean v15, v0, Lod8;->i:Z
 
-    move-result-object v1
+    iget-object v3, v0, Lod8;->a:Lfj8;
 
-    iget-object v2, p1, Lnd8;->a:Ljava/lang/String;
+    iget-wide v6, v0, Lod8;->c:J
 
-    invoke-virtual {v1, v2, v0}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+    iget-wide v8, v0, Lod8;->d:J
 
-    move-result-object v1
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    iget-wide v10, v0, Lod8;->e:J
 
-    if-nez v1, :cond_1
+    iget-boolean v12, v0, Lod8;->f:Z
 
-    goto :goto_2
+    iget-boolean v13, v0, Lod8;->g:Z
 
-    :cond_1
-    const-string v1, "android.permission.STATUS_BAR_SERVICE"
+    move-wide/from16 v4, p1
 
-    invoke-virtual {p0, p1, v1}, Lod8;->a(Lnd8;Ljava/lang/String;)Z
+    invoke-direct/range {v2 .. v15}, Lod8;-><init>(Lfj8;JJJJZZZZ)V
 
-    move-result v1
+    return-object v2
+.end method
 
-    if-nez v1, :cond_3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 6
 
-    invoke-virtual {p0, p1, v3}, Lod8;->a(Lnd8;Ljava/lang/String;)Z
+    const/4 v0, 0x1
 
-    move-result v1
+    if-ne p0, p1, :cond_0
 
-    if-nez v1, :cond_3
+    return v0
 
-    const/16 v1, 0x3e8
+    :cond_0
+    const/4 v1, 0x0
 
-    iget v2, p1, Lnd8;->c:I
+    if-eqz p1, :cond_2
 
-    if-eq v2, v1, :cond_3
+    const-class v2, Lod8;
 
-    iget-object p0, p0, Lod8;->b:Landroid/content/ContentResolver;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const-string v1, "enabled_notification_listeners"
+    move-result-object v3
 
-    invoke-static {p0, v1}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_4
-
-    const-string v1, ":"
-
-    invoke-virtual {p0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object p0
-
-    move v1, v0
-
-    :goto_0
-    array-length v2, p0
-
-    if-ge v1, v2, :cond_4
-
-    aget-object v2, p0, v1
-
-    invoke-static {v2}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_2
-
-    invoke-virtual {v2}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
-
-    move-result-object v2
-
-    iget-object v3, p1, Lnd8;->a:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    goto :goto_1
-
-    :cond_2
-    add-int/lit8 v1, v1, 0x1
+    if-eq v2, v3, :cond_1
 
     goto :goto_0
 
-    :cond_3
-    :goto_1
-    const/4 v0, 0x1
+    :cond_1
+    check-cast p1, Lod8;
 
-    :catch_0
-    :cond_4
-    :goto_2
+    iget-wide v2, p0, Lod8;->b:J
+
+    iget-wide v4, p1, Lod8;->b:J
+
+    cmp-long v2, v2, v4
+
+    if-nez v2, :cond_2
+
+    iget-wide v2, p0, Lod8;->c:J
+
+    iget-wide v4, p1, Lod8;->c:J
+
+    cmp-long v2, v2, v4
+
+    if-nez v2, :cond_2
+
+    iget-wide v2, p0, Lod8;->d:J
+
+    iget-wide v4, p1, Lod8;->d:J
+
+    cmp-long v2, v2, v4
+
+    if-nez v2, :cond_2
+
+    iget-wide v2, p0, Lod8;->e:J
+
+    iget-wide v4, p1, Lod8;->e:J
+
+    cmp-long v2, v2, v4
+
+    if-nez v2, :cond_2
+
+    iget-boolean v2, p0, Lod8;->f:Z
+
+    iget-boolean v3, p1, Lod8;->f:Z
+
+    if-ne v2, v3, :cond_2
+
+    iget-boolean v2, p0, Lod8;->g:Z
+
+    iget-boolean v3, p1, Lod8;->g:Z
+
+    if-ne v2, v3, :cond_2
+
+    iget-boolean v2, p0, Lod8;->h:Z
+
+    iget-boolean v3, p1, Lod8;->h:Z
+
+    if-ne v2, v3, :cond_2
+
+    iget-boolean v2, p0, Lod8;->i:Z
+
+    iget-boolean v3, p1, Lod8;->i:Z
+
+    if-ne v2, v3, :cond_2
+
+    iget-object p0, p0, Lod8;->a:Lfj8;
+
+    iget-object p1, p1, Lod8;->a:Lfj8;
+
+    invoke-static {p0, p1}, Lpaf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    return v0
+
+    :cond_2
+    :goto_0
+    return v1
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    iget-object v0, p0, Lod8;->a:Lfj8;
+
+    invoke-virtual {v0}, Lfj8;->hashCode()I
+
+    move-result v0
+
+    add-int/lit16 v0, v0, 0x20f
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-wide v1, p0, Lod8;->b:J
+
+    long-to-int v1, v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-wide v1, p0, Lod8;->c:J
+
+    long-to-int v1, v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-wide v1, p0, Lod8;->d:J
+
+    long-to-int v1, v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-wide v1, p0, Lod8;->e:J
+
+    long-to-int v1, v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean v1, p0, Lod8;->f:Z
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean v1, p0, Lod8;->g:Z
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean v1, p0, Lod8;->h:Z
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean p0, p0, Lod8;->i:Z
+
+    add-int/2addr v0, p0
+
     return v0
 .end method

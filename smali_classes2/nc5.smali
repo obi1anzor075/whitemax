@@ -1,64 +1,84 @@
-.class public final Lnc5;
+.class public final synthetic Lnc5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Loc5;
+.implements Ljava/util/concurrent/Callable;
 
 
-# static fields
-.field public static final a:Lnc5;
+# instance fields
+.field public final synthetic a:Loc5;
+
+.field public final synthetic b:J
+
+.field public final synthetic c:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Loc5;JJ)V
+    .locals 0
 
-    new-instance v0, Lnc5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lnc5;->a:Loc5;
 
-    sput-object v0, Lnc5;->a:Lnc5;
+    iput-wide p2, p0, Lnc5;->b:J
+
+    iput-wide p4, p0, Lnc5;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+.method public final call()Ljava/lang/Object;
+    .locals 10
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lnc5;->a:Loc5;
 
-    if-ne p0, p1, :cond_0
+    iget-object v0, v0, Loc5;->a:Lik;
 
-    return v0
+    check-cast v0, La2a;
 
-    :cond_0
-    instance-of p0, p1, Lnc5;
+    new-instance v1, Lau;
 
-    if-nez p0, :cond_1
+    invoke-virtual {v0}, La2a;->x()Lx4b;
 
-    const/4 p0, 0x0
+    move-result-object v2
 
-    return p0
+    check-cast v2, La5b;
 
-    :cond_1
-    return v0
-.end method
+    iget-object v2, v2, La5b;->a:Lj23;
 
-.method public final hashCode()I
-    .locals 0
+    invoke-virtual {v2}, Lmwc;->l()J
 
-    const p0, -0x150a301b
+    move-result-wide v2
 
-    return p0
-.end method
+    const/4 v4, 0x5
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
+    iget-wide v5, p0, Lnc5;->b:J
 
-    const-string p0, "NeedDownload"
+    iget-wide v7, p0, Lnc5;->c:J
+
+    const/4 v9, -0x1
+
+    invoke-direct/range {v1 .. v9}, Lau;-><init>(JIJJI)V
+
+    invoke-virtual {v0}, La2a;->y()Lrke;
+
+    move-result-object p0
+
+    const/16 v0, 0xc
+
+    const/4 v2, 0x0
+
+    invoke-static {p0, v1, v2, v0}, Lrke;->d(Lrke;Lhl;ZI)J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
 
     return-object p0
 .end method

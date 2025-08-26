@@ -18,7 +18,7 @@
         "",
         "Lorg/webrtc/VideoSink;",
         "renderers",
-        "Ljue;",
+        "Le5f;",
         "setRenderers",
         "(Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;Ljava/util/List;)V",
         "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
@@ -40,6 +40,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

@@ -1,196 +1,209 @@
-.class public final Lp9f;
-.super Lgt7;
+.class public interface abstract Lp9f;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lfle;
+.implements Lwu6;
 
-# instance fields
-.field public final synthetic X:I
+
+# static fields
+.field public static final c0:Ls90;
+
+.field public static final d0:Ls90;
+
+.field public static final e0:Ls90;
+
+.field public static final f0:Ls90;
+
+.field public static final g0:Ls90;
+
+.field public static final h0:Ls90;
+
+.field public static final i0:Ls90;
+
+.field public static final j0:Ls90;
+
+.field public static final k0:Ls90;
+
+.field public static final l0:Ls90;
+
+.field public static final m0:Ls90;
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/Class;III)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
-    iput p5, p0, Lp9f;->X:I
+    new-instance v0, Ls90;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v1, "camerax.core.useCase.defaultSessionConfig"
 
-    iput p1, p0, Lgt7;->a:I
+    const-class v2, Lk8d;
 
-    iput-object p2, p0, Lgt7;->o:Ljava/lang/Object;
+    const/4 v3, 0x0
 
-    iput p3, p0, Lgt7;->c:I
+    invoke-direct {v0, v1, v2, v3}, Ls90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
 
-    iput p4, p0, Lgt7;->b:I
+    sput-object v0, Lp9f;->c0:Ls90;
+
+    new-instance v0, Ls90;
+
+    const-string v1, "camerax.core.useCase.defaultCaptureConfig"
+
+    const-class v2, Lgz1;
+
+    invoke-direct {v0, v1, v2, v3}, Ls90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Lp9f;->d0:Ls90;
+
+    new-instance v0, Ls90;
+
+    const-string v1, "camerax.core.useCase.sessionConfigUnpacker"
+
+    const-class v2, Ldv1;
+
+    invoke-direct {v0, v1, v2, v3}, Ls90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Lp9f;->e0:Ls90;
+
+    new-instance v0, Ls90;
+
+    const-string v1, "camerax.core.useCase.captureConfigUnpacker"
+
+    const-class v2, Lju1;
+
+    invoke-direct {v0, v1, v2, v3}, Ls90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Lp9f;->f0:Ls90;
+
+    new-instance v0, Ls90;
+
+    const-string v1, "camerax.core.useCase.surfaceOccupancyPriority"
+
+    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    invoke-direct {v0, v1, v2, v3}, Ls90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Lp9f;->g0:Ls90;
+
+    new-instance v0, Ls90;
+
+    const-string v1, "camerax.core.useCase.targetFrameRate"
+
+    const-class v4, Landroid/util/Range;
+
+    invoke-direct {v0, v1, v4, v3}, Ls90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Lp9f;->h0:Ls90;
+
+    new-instance v0, Ls90;
+
+    const-string v1, "camerax.core.useCase.zslDisabled"
+
+    sget-object v4, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+
+    invoke-direct {v0, v1, v4, v3}, Ls90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Lp9f;->i0:Ls90;
+
+    new-instance v0, Ls90;
+
+    const-string v1, "camerax.core.useCase.highResolutionDisabled"
+
+    invoke-direct {v0, v1, v4, v3}, Ls90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Lp9f;->j0:Ls90;
+
+    new-instance v0, Ls90;
+
+    const-string v1, "camerax.core.useCase.captureType"
+
+    const-class v4, Lr9f;
+
+    invoke-direct {v0, v1, v4, v3}, Ls90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Lp9f;->k0:Ls90;
+
+    new-instance v0, Ls90;
+
+    const-string v1, "camerax.core.useCase.previewStabilizationMode"
+
+    invoke-direct {v0, v1, v2, v3}, Ls90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Lp9f;->l0:Ls90;
+
+    new-instance v0, Ls90;
+
+    const-string v1, "camerax.core.useCase.videoStabilizationMode"
+
+    invoke-direct {v0, v1, v2, v3}, Ls90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Lp9f;->m0:Ls90;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Landroid/view/View;)Ljava/lang/Object;
-    .locals 0
-
-    iget p0, p0, Lp9f;->X:I
-
-    packed-switch p0, :pswitch_data_0
-
-    invoke-static {p1}, Ly9f;->c(Landroid/view/View;)Z
-
-    move-result p0
-
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    invoke-static {p1}, Laaf;->b(Landroid/view/View;)Ljava/lang/CharSequence;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_1
-    invoke-static {p1}, Ly9f;->b(Landroid/view/View;)Ljava/lang/CharSequence;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final d(Landroid/view/View;Ljava/lang/Object;)V
-    .locals 0
-
-    iget p0, p0, Lp9f;->X:I
-
-    packed-switch p0, :pswitch_data_0
-
-    check-cast p2, Ljava/lang/Boolean;
-
-    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
-
-    invoke-static {p1, p0}, Ly9f;->g(Landroid/view/View;Z)V
-
-    return-void
-
-    :pswitch_0
-    check-cast p2, Ljava/lang/CharSequence;
-
-    invoke-static {p1, p2}, Laaf;->f(Landroid/view/View;Ljava/lang/CharSequence;)V
-
-    return-void
-
-    :pswitch_1
-    check-cast p2, Ljava/lang/CharSequence;
-
-    invoke-static {p1, p2}, Ly9f;->h(Landroid/view/View;Ljava/lang/CharSequence;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final h(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .locals 1
-
-    iget p0, p0, Lp9f;->X:I
-
-    packed-switch p0, :pswitch_data_0
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    check-cast p2, Ljava/lang/Boolean;
-
-    const/4 p0, 0x1
+.method public C()I
+    .locals 2
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_0
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    move-result-object v0
 
-    move-result p1
+    sget-object v1, Lp9f;->l0:Ls90;
 
-    if-eqz p1, :cond_0
+    invoke-interface {p0, v1, v0}, Lr5c;->f(Ls90;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move p1, p0
+    move-result-object p0
 
-    goto :goto_0
+    check-cast p0, Ljava/lang/Integer;
 
-    :cond_0
-    move p1, v0
-
-    :goto_0
-    if-eqz p2, :cond_1
-
-    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p2
-
-    if-eqz p2, :cond_1
-
-    move p2, p0
-
-    goto :goto_1
-
-    :cond_1
-    move p2, v0
-
-    :goto_1
-    if-ne p1, p2, :cond_2
-
-    move v0, p0
-
-    :cond_2
-    xor-int/2addr p0, v0
-
-    return p0
-
-    :pswitch_0
-    check-cast p1, Ljava/lang/CharSequence;
-
-    check-cast p2, Ljava/lang/CharSequence;
-
-    invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
     move-result p0
 
-    xor-int/lit8 p0, p0, 0x1
-
     return p0
+.end method
 
-    :pswitch_1
-    check-cast p1, Ljava/lang/CharSequence;
+.method public x()Lr9f;
+    .locals 1
 
-    check-cast p2, Ljava/lang/CharSequence;
+    sget-object v0, Lp9f;->k0:Ls90;
 
-    invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    invoke-interface {p0, v0}, Lr5c;->i(Ls90;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lr9f;
+
+    return-object p0
+.end method
+
+.method public y()I
+    .locals 2
+
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    sget-object v1, Lp9f;->m0:Ls90;
+
+    invoke-interface {p0, v1, v0}, Lr5c;->f(Ls90;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/Integer;
+
+    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
     move-result p0
 
-    xor-int/lit8 p0, p0, 0x1
-
     return p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

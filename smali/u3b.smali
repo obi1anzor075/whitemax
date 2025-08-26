@@ -1,85 +1,41 @@
-.class public final enum Lu3b;
-.super Ljava/lang/Enum;
+.class public abstract Lu3b;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final enum a:Lu3b;
-
-.field public static final enum b:Lu3b;
-
-.field public static final enum c:Lu3b;
-
-.field public static final synthetic o:[Lu3b;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public static a(Landroid/widget/PopupWindow;)Z
+    .locals 0
 
-    new-instance v0, Lu3b;
+    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getOverlapAnchor()Z
 
-    const-string v1, "LOW"
+    move-result p0
 
-    const/4 v2, 0x0
+    return p0
+.end method
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+.method public static b(Landroid/widget/PopupWindow;)I
+    .locals 0
 
-    sput-object v0, Lu3b;->a:Lu3b;
+    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getWindowLayoutType()I
 
-    new-instance v1, Lu3b;
+    move-result p0
 
-    const-string v2, "MEDIUM"
+    return p0
+.end method
 
-    const/4 v3, 0x1
+.method public static c(Landroid/widget/PopupWindow;Z)V
+    .locals 0
 
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lu3b;->b:Lu3b;
-
-    new-instance v2, Lu3b;
-
-    const-string v3, "HIGH"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lu3b;->c:Lu3b;
-
-    filled-new-array {v0, v1, v2}, [Lu3b;
-
-    move-result-object v0
-
-    sput-object v0, Lu3b;->o:[Lu3b;
+    invoke-virtual {p0, p1}, Landroid/widget/PopupWindow;->setOverlapAnchor(Z)V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lu3b;
-    .locals 1
+.method public static d(Landroid/widget/PopupWindow;I)V
+    .locals 0
 
-    const-class v0, Lu3b;
+    invoke-virtual {p0, p1}, Landroid/widget/PopupWindow;->setWindowLayoutType(I)V
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    move-result-object p0
-
-    check-cast p0, Lu3b;
-
-    return-object p0
-.end method
-
-.method public static values()[Lu3b;
-    .locals 1
-
-    sget-object v0, Lu3b;->o:[Lu3b;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lu3b;
-
-    return-object v0
+    return-void
 .end method

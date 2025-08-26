@@ -1,73 +1,199 @@
-.class public final enum Lqr3;
-.super Ljava/lang/Enum;
+.class public final Lqr3;
+.super Lqde;
 .source "SourceFile"
 
+# interfaces
+.implements Ln66;
 
-# static fields
-.field public static final enum a:Lqr3;
 
-.field public static final enum b:Lqr3;
+# instance fields
+.field public final synthetic X:I
 
-.field public static final synthetic c:[Lqr3;
+.field public synthetic Y:Landroid/view/View;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public synthetic constructor <init>(ILkotlin/coroutines/Continuation;I)V
+    .locals 0
 
-    new-instance v0, Lqr3;
+    iput p3, p0, Lqr3;->X:I
 
-    const-string v1, "RELEASE_DETACH"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lqr3;->a:Lqr3;
-
-    new-instance v1, Lqr3;
-
-    const-string v2, "RETAIN_DETACH"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lqr3;->b:Lqr3;
-
-    filled-new-array {v0, v1}, [Lqr3;
-
-    move-result-object v0
-
-    sput-object v0, Lqr3;->c:[Lqr3;
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lqr3;
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    const-class v0, Lqr3;
+    iget p0, p0, Lqr3;->X:I
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    check-cast p1, Landroid/view/View;
+
+    check-cast p2, Lyha;
+
+    check-cast p3, Lkotlin/coroutines/Continuation;
+
+    packed-switch p0, :pswitch_data_0
+
+    new-instance p0, Lqr3;
+
+    const/4 p2, 0x3
+
+    const/4 v0, 0x2
+
+    invoke-direct {p0, p2, p3, v0}, Lqr3;-><init>(ILkotlin/coroutines/Continuation;I)V
+
+    iput-object p1, p0, Lqr3;->Y:Landroid/view/View;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lqr3;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+
+    :pswitch_0
+    new-instance p0, Lqr3;
+
+    const/4 p2, 0x3
+
+    const/4 v0, 0x1
+
+    invoke-direct {p0, p2, p3, v0}, Lqr3;-><init>(ILkotlin/coroutines/Continuation;I)V
+
+    iput-object p1, p0, Lqr3;->Y:Landroid/view/View;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lqr3;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+
+    :pswitch_1
+    new-instance p0, Lqr3;
+
+    const/4 p2, 0x3
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p2, p3, v0}, Lqr3;-><init>(ILkotlin/coroutines/Continuation;I)V
+
+    iput-object p1, p0, Lqr3;->Y:Landroid/view/View;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lqr3;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    iget v0, p0, Lqr3;->X:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lqr3;->Y:Landroid/view/View;
+
+    invoke-virtual {p0}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
+
+    move-result-object p1
+
+    instance-of v0, p1, Landroid/graphics/drawable/GradientDrawable;
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Landroid/graphics/drawable/GradientDrawable;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    if-eqz p1, :cond_1
+
+    sget-object v0, Lqp4;->q0:Lap9;
+
+    invoke-virtual {v0, p0}, Lap9;->h(Landroid/view/View;)Lyha;
 
     move-result-object p0
 
-    check-cast p0, Lqr3;
+    invoke-interface {p0}, Lyha;->getText()Lane;
+
+    move-result-object p0
+
+    iget p0, p0, Lane;->b:I
+
+    invoke-virtual {p1, p0}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
+
+    :cond_1
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
-.end method
 
-.method public static values()[Lqr3;
-    .locals 1
+    :pswitch_0
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    sget-object v0, Lqr3;->c:[Lqr3;
+    iget-object p0, p0, Lqr3;->Y:Landroid/view/View;
 
-    invoke-virtual {v0}, [Lqr3;->clone()Ljava/lang/Object;
+    sget-object p1, Lqp4;->q0:Lap9;
 
-    move-result-object v0
+    invoke-virtual {p1, p0}, Lap9;->h(Landroid/view/View;)Lyha;
 
-    check-cast v0, [Lqr3;
+    move-result-object p1
 
-    return-object v0
+    invoke-interface {p1}, Lyha;->i()Lu8e;
+
+    move-result-object p1
+
+    iget-object p1, p1, Lu8e;->b:Lz8e;
+
+    iget p1, p1, Lz8e;->c:I
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setBackgroundColor(I)V
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
+
+    :pswitch_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lqr3;->Y:Landroid/view/View;
+
+    sget-object p1, Lqp4;->q0:Lap9;
+
+    invoke-virtual {p1, p0}, Lap9;->h(Landroid/view/View;)Lyha;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Lyha;->b()Lfe0;
+
+    move-result-object p1
+
+    iget p1, p1, Lfe0;->l:I
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setBackgroundColor(I)V
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

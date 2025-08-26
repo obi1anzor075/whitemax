@@ -1,22 +1,16 @@
-.class public final Lk09;
+.class public interface abstract Lk09;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lqn8;
 
-
-# instance fields
-.field public final synthetic a:Lone/me/messages/list/ui/MessagesListWidget;
-
-
-# direct methods
-.method public constructor <init>(Lone/me/messages/list/ui/MessagesListWidget;)V
+# virtual methods
+.method public a()Z
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p0, 0x0
 
-    iput-object p1, p0, Lk09;->a:Lone/me/messages/list/ui/MessagesListWidget;
+    return p0
+.end method
 
-    return-void
+.method public abstract j()J
 .end method

@@ -384,7 +384,7 @@
 
     move-result-object p0
 
-    goto :goto_0
+    return-object p0
 
     .line 5
     :cond_0
@@ -395,10 +395,7 @@
     .line 6
     invoke-virtual {p0, p1, p2}, Lorg/apache/http/message/BasicLineFormatter;->doFormatHeader(Lorg/apache/http/util/CharArrayBuffer;Lorg/apache/http/Header;)V
 
-    move-object p0, p1
-
-    :goto_0
-    return-object p0
+    return-object p1
 
     .line 7
     :cond_1
@@ -470,15 +467,14 @@
 
     invoke-virtual {p1}, Lorg/apache/http/util/CharArrayBuffer;->clear()V
 
-    goto :goto_0
+    return-object p1
 
     :cond_0
-    new-instance p1, Lorg/apache/http/util/CharArrayBuffer;
+    new-instance p0, Lorg/apache/http/util/CharArrayBuffer;
 
-    const/16 p0, 0x40
+    const/16 p1, 0x40
 
-    invoke-direct {p1, p0}, Lorg/apache/http/util/CharArrayBuffer;-><init>(I)V
+    invoke-direct {p0, p1}, Lorg/apache/http/util/CharArrayBuffer;-><init>(I)V
 
-    :goto_0
-    return-object p1
+    return-object p0
 .end method

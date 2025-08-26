@@ -1,220 +1,266 @@
-.class public abstract Lwqf;
-.super Ljava/lang/Object;
+.class public final Lwqf;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "SourceFile"
 
+# interfaces
+.implements Lyze;
 
-# static fields
-.field public static final a:Ljava/util/regex/Pattern;
+
+# instance fields
+.field public final a:Landroid/view/View;
+
+.field public final b:I
+
+.field public final c:Landroid/view/ViewGroup;
+
+.field public final d:Z
+
+.field public e:Z
+
+.field public f:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Landroid/view/View;I)V
     .locals 1
 
-    const-string v0, "^NOTE([ \t].*)?$"
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    const/4 v0, 0x0
 
-    move-result-object v0
+    iput-boolean v0, p0, Lwqf;->f:Z
 
-    sput-object v0, Lwqf;->a:Ljava/util/regex/Pattern;
+    iput-object p1, p0, Lwqf;->a:Landroid/view/View;
+
+    iput p2, p0, Lwqf;->b:I
+
+    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/view/ViewGroup;
+
+    iput-object p1, p0, Lwqf;->c:Landroid/view/ViewGroup;
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lwqf;->d:Z
+
+    invoke-virtual {p0, p1}, Lwqf;->h(Z)V
 
     return-void
 .end method
 
-.method public static a(Lyze;)Z
+
+# virtual methods
+.method public final a(Lzze;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final b()V
     .locals 1
 
-    invoke-virtual {p0}, Lyze;->i()Ljava/lang/String;
+    const/4 v0, 0x0
 
-    move-result-object p0
+    invoke-virtual {p0, v0}, Lwqf;->h(Z)V
 
-    if-eqz p0, :cond_0
+    iget-boolean v0, p0, Lwqf;->f:Z
 
-    const-string v0, "WEBVTT"
+    if-nez v0, :cond_0
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    sget-object v0, Liqf;->a:Lh12;
 
-    move-result p0
+    iget-object v0, p0, Lwqf;->a:Landroid/view/View;
 
-    if-eqz p0, :cond_0
+    iget p0, p0, Lwqf;->b:I
 
-    const/4 p0, 0x1
-
-    goto :goto_0
+    invoke-virtual {v0, p0}, Landroid/view/View;->setTransitionVisibility(I)V
 
     :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
+    return-void
 .end method
 
-.method public static b(Ljava/lang/String;)F
-    .locals 2
+.method public final c(Lzze;)V
+    .locals 0
 
-    const-string v0, "%"
+    invoke-virtual {p1, p0}, Lzze;->E(Lyze;)Lzze;
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {p0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
-
-    move-result p0
-
-    const/high16 v0, 0x42c80000    # 100.0f
-
-    div-float/2addr p0, v0
-
-    return p0
-
-    :cond_0
-    new-instance p0, Ljava/lang/NumberFormatException;
-
-    const-string v0, "Percentages must end with %"
-
-    invoke-direct {p0, v0}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+    return-void
 .end method
 
-.method public static c(Ljava/lang/String;)J
-    .locals 10
+.method public final f()V
+    .locals 1
 
     const/4 v0, 0x1
 
-    sget v1, Lmze;->a:I
+    invoke-virtual {p0, v0}, Lwqf;->h(Z)V
 
-    const-string v1, "\\."
+    iget-boolean v0, p0, Lwqf;->f:Z
 
-    const/4 v2, 0x2
+    if-nez v0, :cond_0
 
-    invoke-virtual {p0, v1, v2}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+    sget-object v0, Liqf;->a:Lh12;
 
-    move-result-object p0
+    iget-object p0, p0, Lwqf;->a:Landroid/view/View;
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    aget-object v3, p0, v1
-
-    const/4 v4, -0x1
-
-    const-string v5, ":"
-
-    invoke-virtual {v3, v5, v4}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
-
-    move-result-object v3
-
-    array-length v4, v3
-
-    const-wide/16 v5, 0x0
-
-    :goto_0
-    if-ge v1, v4, :cond_0
-
-    aget-object v7, v3, v1
-
-    const-wide/16 v8, 0x3c
-
-    mul-long/2addr v5, v8
-
-    invoke-static {v7}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v7
-
-    add-long/2addr v5, v7
-
-    add-int/2addr v1, v0
-
-    goto :goto_0
+    invoke-virtual {p0, v0}, Landroid/view/View;->setTransitionVisibility(I)V
 
     :cond_0
-    const-wide/16 v3, 0x3e8
-
-    mul-long/2addr v5, v3
-
-    array-length v1, p0
-
-    if-ne v1, v2, :cond_1
-
-    aget-object p0, p0, v0
-
-    invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v0
-
-    add-long/2addr v5, v0
-
-    :cond_1
-    mul-long/2addr v5, v3
-
-    return-wide v5
+    return-void
 .end method
 
-.method public static d(Lyze;)V
-    .locals 2
+.method public final g(Lzze;)V
+    .locals 0
 
-    iget v0, p0, Lyze;->b:I
+    return-void
+.end method
 
-    invoke-static {p0}, Lwqf;->a(Lyze;)Z
+.method public final h(Z)V
+    .locals 1
 
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    invoke-virtual {p0, v0}, Lyze;->H(I)V
-
-    invoke-virtual {p0}, Lyze;->i()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    const-string v1, "Expected WEBVTT. Got "
+    iget-boolean v0, p0, Lwqf;->d:Z
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v1, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    iget-boolean v0, p0, Lwqf;->e:Z
 
-    move-result-object p0
+    if-eq v0, p1, :cond_0
 
-    goto :goto_0
+    iget-object v0, p0, Lwqf;->c:Landroid/view/ViewGroup;
+
+    if-eqz v0, :cond_0
+
+    iput-boolean p1, p0, Lwqf;->e:Z
+
+    invoke-static {v0, p1}, Laof;->b(Landroid/view/ViewGroup;Z)V
 
     :cond_0
-    new-instance p0, Ljava/lang/String;
+    return-void
+.end method
 
-    invoke-direct {p0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 0
 
-    :goto_0
-    const/4 v0, 0x0
+    const/4 p1, 0x1
 
-    invoke-static {v0, p0}, Lcom/google/android/exoplayer2/ParserException;->a(Ljava/lang/RuntimeException;Ljava/lang/String;)Lcom/google/android/exoplayer2/ParserException;
+    iput-boolean p1, p0, Lwqf;->f:Z
 
-    move-result-object p0
+    return-void
+.end method
 
-    throw p0
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
+
+    .line 1
+    iget-boolean p1, p0, Lwqf;->f:Z
+
+    if-nez p1, :cond_0
+
+    .line 2
+    sget-object p1, Liqf;->a:Lh12;
+
+    .line 3
+    iget-object p1, p0, Lwqf;->a:Landroid/view/View;
+
+    iget v0, p0, Lwqf;->b:I
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setTransitionVisibility(I)V
+
+    .line 4
+    iget-object p1, p0, Lwqf;->c:Landroid/view/ViewGroup;
+
+    if-eqz p1, :cond_0
+
+    .line 5
+    invoke-virtual {p1}, Landroid/view/View;->invalidate()V
+
+    :cond_0
+    const/4 p1, 0x0
+
+    .line 6
+    invoke-virtual {p0, p1}, Lwqf;->h(Z)V
+
+    return-void
+.end method
+
+.method public final onAnimationEnd(Landroid/animation/Animator;Z)V
+    .locals 0
+
+    if-nez p2, :cond_1
+
+    .line 7
+    iget-boolean p1, p0, Lwqf;->f:Z
+
+    if-nez p1, :cond_0
+
+    .line 8
+    sget-object p1, Liqf;->a:Lh12;
+
+    .line 9
+    iget-object p1, p0, Lwqf;->a:Landroid/view/View;
+
+    iget p2, p0, Lwqf;->b:I
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->setTransitionVisibility(I)V
+
+    .line 10
+    iget-object p1, p0, Lwqf;->c:Landroid/view/ViewGroup;
+
+    if-eqz p1, :cond_0
+
+    .line 11
+    invoke-virtual {p1}, Landroid/view/View;->invalidate()V
+
+    :cond_0
+    const/4 p1, 0x0
+
+    .line 12
+    invoke-virtual {p0, p1}, Lwqf;->h(Z)V
 
     :cond_1
+    return-void
+.end method
+
+.method public final onAnimationRepeat(Landroid/animation/Animator;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public final onAnimationStart(Landroid/animation/Animator;Z)V
+    .locals 0
+
+    if-eqz p2, :cond_0
+
+    .line 2
+    sget-object p1, Liqf;->a:Lh12;
+
+    .line 3
+    iget-object p1, p0, Lwqf;->a:Landroid/view/View;
+
+    const/4 p2, 0x0
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->setTransitionVisibility(I)V
+
+    .line 4
+    iget-object p0, p0, Lwqf;->c:Landroid/view/ViewGroup;
+
+    if-eqz p0, :cond_0
+
+    .line 5
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    :cond_0
     return-void
 .end method

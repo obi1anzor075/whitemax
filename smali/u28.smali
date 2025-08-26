@@ -1,19 +1,17 @@
-.class public final Lu28;
+.class public interface abstract Lu28;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic a:Lx28;
+# virtual methods
+.method public abstract a(Ljava/lang/Object;)V
+.end method
 
+.method public abstract b()V
+.end method
 
-# direct methods
-.method public constructor <init>(Lx28;)V
-    .locals 0
+.method public abstract c(Lam4;)V
+.end method
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lu28;->a:Lx28;
-
-    return-void
+.method public abstract onError(Ljava/lang/Throwable;)V
 .end method

@@ -1,109 +1,120 @@
 .class public final Lywe;
-.super Ll5e;
+.super Lsd7;
 .source "SourceFile"
 
 # interfaces
-.implements Li26;
+.implements Lv56;
 
 
 # instance fields
-.field public final synthetic X:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+.field public final synthetic a:I
+
+.field public final synthetic b:Lzwe;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(Lzwe;I)V
     .locals 0
 
-    iput-object p1, p0, Lywe;->X:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    iput p2, p0, Lywe;->a:I
 
-    const/4 p1, 0x2
+    iput-object p1, p0, Lywe;->b:Lzwe;
 
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    const/4 p1, 0x0
+
+    invoke-direct {p0, p1}, Lsd7;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final invoke()Ljava/lang/Object;
+    .locals 5
 
-    check-cast p1, Lou3;
+    iget v0, p0, Lywe;->a:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p0, p1, p2}, Lywe;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lywe;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lywe;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 0
-
-    new-instance p1, Lywe;
-
-    iget-object p0, p0, Lywe;->X:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
-
-    invoke-direct {p1, p0, p2}, Lywe;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    iget-object p0, p0, Lywe;->b:Lzwe;
 
     :try_start_0
-    new-instance p1, Ljava/io/File;
+    iget-object p0, p0, Lzwe;->a:Ljava/lang/String;
 
-    iget-object p0, p0, Lywe;->X:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
-
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c()Lys8;
+    invoke-static {p0}, Lzo3;->W(Ljava/lang/String;)Lbxe;
 
     move-result-object p0
-
-    iget-object p0, p0, Lys8;->b:Ljava/lang/String;
-
-    invoke-direct {p1, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1}, Ljava/io/File;->length()J
-
-    move-result-wide p0
-
-    const-wide/16 v0, 0x400
-
-    div-long/2addr p0, v0
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p0
-
-    const-string p1, "UploadFileAttachWorker"
-
-    const-string v0, "fileSize fail!"
-
-    invoke-static {p1, v0, p0}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    const-wide/16 p0, 0x0
+    :catch_0
+    const/4 p0, 0x0
 
     :goto_0
-    new-instance v0, Ljava/lang/Long;
+    return-object p0
 
-    invoke-direct {v0, p0, p1}, Ljava/lang/Long;-><init>(J)V
+    :pswitch_0
+    new-instance v0, Lvwe;
+
+    iget-object p0, p0, Lywe;->b:Lzwe;
+
+    iget-object v1, p0, Lzwe;->a:Ljava/lang/String;
+
+    invoke-virtual {p0}, Lzwe;->a()Lbxe;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v2}, Lxj0;->versionName()Ljava/lang/String;
+
+    move-result-object v2
+
+    if-nez v2, :cond_1
+
+    :cond_0
+    const-string v2, "NA"
+
+    :cond_1
+    invoke-virtual {p0}, Lzwe;->a()Lbxe;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    if-eqz v3, :cond_2
+
+    invoke-interface {v3}, Lxj0;->buildUuid()Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_1
+
+    :cond_2
+    move-object v3, v4
+
+    :goto_1
+    invoke-virtual {p0}, Lzwe;->a()Lbxe;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_3
+
+    invoke-interface {p0}, Lxj0;->environment()Ljava/lang/String;
+
+    move-result-object v4
+
+    :cond_3
+    invoke-direct {v0, v1, v2, v3, v4}, Lvwe;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -88,7 +88,7 @@
 
     const-string p1, "Invalid port: "
 
-    invoke-static {p2, p1}, Lwn6;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, p1}, Lm26;->h(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -185,9 +185,13 @@
 
     iget-object p0, p0, Lorg/apache/http/cookie/CookieOrigin;->path:Ljava/lang/String;
 
-    const/16 v1, 0x5d
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, p0, v1}, Lme4;->l(Ljava/lang/StringBuilder;Ljava/lang/String;C)Ljava/lang/String;
+    const/16 p0, 0x5d
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

@@ -1,70 +1,44 @@
-.class public final synthetic Lw98;
+.class public abstract Lw98;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ls16;
 
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lru/ok/tamtam/android/calls/MediaProjectionService;
+# static fields
+.field public static final a:Lysc;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lru/ok/tamtam/android/calls/MediaProjectionService;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
-    iput p2, p0, Lw98;->a:I
+    new-instance v0, Ly5f;
 
-    iput-object p1, p0, Lw98;->b:Lru/ok/tamtam/android/calls/MediaProjectionService;
+    const-string v1, "media-gallery-scope"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0, v1}, Ly5f;-><init>(Ljava/lang/String;)V
+
+    sget-object v1, Lfc2;->Y:Lysc;
+
+    if-eqz v1, :cond_0
+
+    iget-object v2, v0, Ly5f;->c:Ljava/util/ArrayList;
+
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {v0}, Ly5f;->a()Lysc;
+
+    move-result-object v0
+
+    sput-object v0, Lw98;->a:Lysc;
 
     return-void
-.end method
 
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-# virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 1
+    const-string v1, "Trying to access DI graph before initialization!"
 
-    iget-object v0, p0, Lw98;->b:Lru/ok/tamtam/android/calls/MediaProjectionService;
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    iget p0, p0, Lw98;->a:I
-
-    packed-switch p0, :pswitch_data_0
-
-    sget p0, Lru/ok/tamtam/android/calls/MediaProjectionService;->X:I
-
-    invoke-static {v0}, Lpfa;->x(Landroid/content/Context;)Lnqc;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lnqc;->l()Lpbe;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    sget p0, Lru/ok/tamtam/android/calls/MediaProjectionService;->X:I
-
-    invoke-static {v0}, Lpfa;->x(Landroid/content/Context;)Lnqc;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lnqc;->h()Lrf4;
-
-    move-result-object p0
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    throw v0
 .end method

@@ -15,10 +15,10 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Landroid/content/ComponentName;Landroid/app/PendingIntent;Li1f;Landroid/os/Bundle;)V
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Landroid/content/ComponentName;Landroid/app/PendingIntent;Lncf;Landroid/os/Bundle;)V
     .locals 0
 
-    invoke-direct/range {p0 .. p6}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi18;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/content/ComponentName;Landroid/app/PendingIntent;Li1f;Landroid/os/Bundle;)V
+    invoke-direct/range {p0 .. p6}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi18;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/content/ComponentName;Landroid/app/PendingIntent;Lncf;Landroid/os/Bundle;)V
 
     return-void
 .end method
@@ -63,7 +63,7 @@
     :cond_1
     if-nez p1, :cond_2
 
-    return-object v0
+    goto :goto_1
 
     :cond_2
     const-string p0, "android.media.metadata.YEAR"
@@ -115,6 +115,7 @@
     invoke-virtual {v0, v1, p0}, Landroid/media/MediaMetadataEditor;->putObject(ILjava/lang/Object;)Landroid/media/MediaMetadataEditor;
 
     :cond_5
+    :goto_1
     return-object v0
 .end method
 
@@ -154,7 +155,7 @@
 
     invoke-virtual {p0, p1}, Landroid/media/RemoteControlClient;->setMetadataUpdateListener(Landroid/media/RemoteControlClient$OnMetadataUpdateListener;)V
 
-    goto :goto_0
+    return-void
 
     :cond_0
     new-instance p1, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi19$1;
@@ -165,6 +166,5 @@
 
     invoke-virtual {p0, p1}, Landroid/media/RemoteControlClient;->setMetadataUpdateListener(Landroid/media/RemoteControlClient$OnMetadataUpdateListener;)V
 
-    :goto_0
     return-void
 .end method

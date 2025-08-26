@@ -1,121 +1,48 @@
 .class public final Lbv7;
-.super Lqr4;
-.source "SourceFile"
+.super Lbu3;
 
 
 # instance fields
-.field public final Y:F
+.field public X:I
+
+.field public final synthetic Y:Lff7;
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(F)V
-    .locals 1
+.method public constructor <init>(Lff7;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lbv7;->Y:Lff7;
 
-    invoke-direct {p0, v0}, Lqr4;-><init>(I)V
-
-    const v0, 0x3a83126f    # 0.001f
-
-    sub-float/2addr p1, v0
-
-    iput p1, p0, Lbv7;->Y:F
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final q(FFFLnad;)V
-    .locals 7
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    iget p0, p0, Lbv7;->Y:F
+    iput-object p1, p0, Lbv7;->o:Ljava/lang/Object;
 
-    float-to-double p0, p0
+    iget p1, p0, Lbv7;->X:I
 
-    const-wide/high16 v0, 0x4000000000000000L    # 2.0
+    const/high16 v0, -0x80000000
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
+    or-int/2addr p1, v0
 
-    move-result-wide v2
+    iput p1, p0, Lbv7;->X:I
 
-    mul-double/2addr v2, p0
+    iget-object p1, p0, Lbv7;->Y:Lff7;
 
-    div-double/2addr v2, v0
+    const/4 v0, 0x0
 
-    double-to-float p3, v2
+    invoke-virtual {p1, v0, p0}, Lff7;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    invoke-static {p0, p1, v0, v1}, Ljava/lang/Math;->pow(DD)D
+    move-result-object p0
 
-    move-result-wide v2
-
-    float-to-double v4, p3
-
-    invoke-static {v4, v5, v0, v1}, Ljava/lang/Math;->pow(DD)D
-
-    move-result-wide v4
-
-    sub-double/2addr v2, v4
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->sqrt(D)D
-
-    move-result-wide v2
-
-    double-to-float v2, v2
-
-    sub-float v3, p2, p3
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
-
-    move-result-wide v4
-
-    mul-double/2addr v4, p0
-
-    sub-double/2addr v4, p0
-
-    neg-double v4, v4
-
-    double-to-float v4, v4
-
-    add-float/2addr v4, v2
-
-    const/high16 v5, 0x43870000    # 270.0f
-
-    const/4 v6, 0x0
-
-    invoke-virtual {p4, v3, v4, v5, v6}, Lnad;->d(FFFF)V
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
-
-    move-result-wide v3
-
-    mul-double/2addr v3, p0
-
-    sub-double/2addr v3, p0
-
-    neg-double v3, v3
-
-    double-to-float v3, v3
-
-    invoke-virtual {p4, p2, v3}, Lnad;->c(FF)V
-
-    add-float/2addr p2, p3
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
-
-    move-result-wide v0
-
-    mul-double/2addr v0, p0
-
-    sub-double/2addr v0, p0
-
-    neg-double p0, v0
-
-    double-to-float p0, p0
-
-    add-float/2addr p0, v2
-
-    invoke-virtual {p4, p2, p0}, Lnad;->c(FF)V
-
-    return-void
+    return-object p0
 .end method

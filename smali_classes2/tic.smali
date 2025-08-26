@@ -1,112 +1,110 @@
-.class public abstract Ltic;
+.class public final synthetic Ltic;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lx56;
 
-# static fields
-.field public static final a:Lwwc;
+
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:I
+
+.field public final synthetic c:Ljava/lang/Object;
+
+.field public final synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    new-instance v0, Lwwc;
-
-    invoke-static {}, Lcnc;->b()Lqmc;
-
-    move-result-object v1
-
-    const/16 v2, 0x16
-
-    invoke-direct {v0, v2, v1}, Lwwc;-><init>(ILjava/lang/Object;)V
-
-    sput-object v0, Ltic;->a:Lwwc;
-
-    return-void
-.end method
-
-.method public static a(Lj6;Lqmc;Lj6;Lof3;Lqmc;)Lpn1;
-    .locals 2
-
-    new-instance v0, Lric;
-
-    invoke-direct {v0, p0}, Lric;-><init>(Lj6;)V
-
-    new-instance p0, Ly63;
-
-    const/4 v1, 0x0
-
-    invoke-direct {p0, v1, v0}, Ly63;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {p0, p1}, Lv63;->k(Lqmc;)Lf73;
-
-    move-result-object p0
-
-    if-eqz p4, :cond_0
-
-    invoke-virtual {p0, p4}, Lv63;->h(Lqmc;)Lf73;
-
-    move-result-object p0
-
-    :cond_0
-    if-nez p2, :cond_1
-
-    new-instance p2, Ld74;
-
-    const/16 p1, 0x8
-
-    invoke-direct {p2, p1}, Ld74;-><init>(I)V
-
-    :cond_1
-    new-instance p1, Lpn1;
-
-    const/4 p4, 0x0
-
-    invoke-direct {p1, p3, p4, p2}, Lpn1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-virtual {p0, p1}, Lv63;->i(Lg73;)V
-
-    return-object p1
-.end method
-
-.method public static b(Lxi4;)V
+.method public synthetic constructor <init>(ILcjc;Ljava/lang/String;)V
     .locals 1
 
-    invoke-static {p0}, Ltic;->c(Lxi4;)Z
+    .line 1
+    const/4 v0, 0x0
 
-    move-result v0
+    iput v0, p0, Ltic;->a:I
 
-    if-nez v0, :cond_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-interface {p0}, Lxi4;->f()V
+    iput-object p2, p0, Ltic;->c:Ljava/lang/Object;
 
-    :cond_0
+    iput-object p3, p0, Ltic;->o:Ljava/lang/Object;
+
+    iput p1, p0, Ltic;->b:I
+
     return-void
 .end method
 
-.method public static c(Lxi4;)Z
-    .locals 0
+.method public synthetic constructor <init>(Lone/me/sdk/arch/Widget;ILx56;)V
+    .locals 1
 
-    if-eqz p0, :cond_1
+    .line 2
+    const/4 v0, 0x1
 
-    invoke-interface {p0}, Lxi4;->h()Z
+    iput v0, p0, Ltic;->a:I
 
-    move-result p0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p0, :cond_0
+    iput-object p1, p0, Ltic;->c:Ljava/lang/Object;
 
-    goto :goto_0
+    iput p2, p0, Ltic;->b:I
 
-    :cond_0
-    const/4 p0, 0x0
+    iput-object p3, p0, Ltic;->o:Ljava/lang/Object;
 
-    goto :goto_1
+    return-void
+.end method
 
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
 
-    :goto_1
-    return p0
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    iget v0, p0, Ltic;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Ltic;->c:Ljava/lang/Object;
+
+    check-cast v0, Lone/me/sdk/arch/Widget;
+
+    iget-object v1, p0, Ltic;->o:Ljava/lang/Object;
+
+    check-cast v1, Lx56;
+
+    check-cast p1, Lcmc;
+
+    iget p0, p0, Ltic;->b:I
+
+    invoke-static {v0, p0, v1, p1}, Lone/me/sdk/arch/Widget;->h0(Lone/me/sdk/arch/Widget;ILx56;Lcmc;)Lcmc;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_0
+    iget-object v0, p0, Ltic;->c:Ljava/lang/Object;
+
+    check-cast v0, Lcjc;
+
+    iget-object v1, p0, Ltic;->o:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/String;
+
+    check-cast p1, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget p0, p0, Ltic;->b:I
+
+    invoke-static {v0, v1, p0, p1}, Lcjc;->i(Lcjc;Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -15,12 +15,12 @@
         "context",
         "Landroidx/work/WorkerParameters;",
         "workerParams",
-        "Lmr9;",
+        "Lvv9;",
         "notificationsTracker",
-        "Lf03;",
+        "Lh23;",
         "clientPrefs",
         "<init>",
-        "(Landroid/content/Context;Landroidx/work/WorkerParameters;Lmr9;Lf03;)V",
+        "(Landroid/content/Context;Landroidx/work/WorkerParameters;Lvv9;Lh23;)V",
         "tamtam-android-sdk_release"
     }
     k = 0x1
@@ -29,44 +29,45 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
-.field public final a:Lmr9;
+.field public final a:Lvv9;
 
-.field public final b:Lf03;
+.field public final b:Lh23;
 
-.field public final c:Lju3;
+.field public final c:Ljx3;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Lmr9;Lf03;)V
+.method public constructor <init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Lvv9;Lh23;)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lru/ok/tamtam/workmanager/SdkCoroutineWorker;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;)V
 
-    iput-object p3, p0, Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;->a:Lmr9;
+    iput-object p3, p0, Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;->a:Lvv9;
 
-    iput-object p4, p0, Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;->b:Lf03;
+    iput-object p4, p0, Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;->b:Lh23;
 
-    invoke-virtual {p0}, Lru/ok/tamtam/workmanager/SdkCoroutineWorker;->getTamComponent()Lkae;
-
-    move-result-object p1
-
-    check-cast p1, Lnqc;
-
-    invoke-virtual {p1}, Lnqc;->s()Lpae;
+    invoke-virtual {p0}, Lru/ok/tamtam/workmanager/SdkCoroutineWorker;->getTamComponent()Lmie;
 
     move-result-object p1
 
-    check-cast p1, Ln3a;
+    check-cast p1, Lowc;
 
-    invoke-virtual {p1}, Ln3a;->b()Lju3;
+    invoke-virtual {p1}, Lowc;->s()Lrie;
 
     move-result-object p1
 
-    iput-object p1, p0, Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;->c:Lju3;
+    check-cast p1, Lo7a;
+
+    invoke-virtual {p1}, Lo7a;->b()Ljx3;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;->c:Ljx3;
 
     return-void
 .end method
@@ -74,17 +75,17 @@
 
 # virtual methods
 .method public final doWork(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .locals 8
+    .locals 7
 
-    instance-of v0, p1, Lup9;
+    instance-of v0, p1, Lhu9;
 
     if-eqz v0, :cond_0
 
     move-object v0, p1
 
-    check-cast v0, Lup9;
+    check-cast v0, Lhu9;
 
-    iget v1, v0, Lup9;->Y:I
+    iget v1, v0, Lhu9;->Y:I
 
     const/high16 v2, -0x80000000
 
@@ -94,29 +95,29 @@
 
     sub-int/2addr v1, v2
 
-    iput v1, v0, Lup9;->Y:I
+    iput v1, v0, Lhu9;->Y:I
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Lup9;
+    new-instance v0, Lhu9;
 
-    invoke-direct {v0, p0, p1}, Lup9;-><init>(Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;Lkotlin/coroutines/Continuation;)V
+    check-cast p1, Lbu3;
+
+    invoke-direct {v0, p0, p1}, Lhu9;-><init>(Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;Lbu3;)V
 
     :goto_0
-    iget-object p1, v0, Lup9;->o:Ljava/lang/Object;
+    iget-object p1, v0, Lhu9;->o:Ljava/lang/Object;
 
-    sget-object v1, Lpu3;->a:Lpu3;
+    iget v1, v0, Lhu9;->Y:I
 
-    iget v2, v0, Lup9;->Y:I
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    if-eqz v1, :cond_2
 
-    if-eqz v2, :cond_2
+    if-ne v1, v2, :cond_1
 
-    if-ne v2, v3, :cond_1
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
     goto :goto_2
 
@@ -130,73 +131,75 @@
     throw p0
 
     :cond_2
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;->b:Lf03;
+    iget-object p1, p0, Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;->b:Lh23;
 
-    check-cast p1, Llqc;
+    check-cast p1, Lmwc;
 
-    invoke-virtual {p1}, Llqc;->m()J
+    invoke-virtual {p1}, Lmwc;->k()J
 
-    move-result-wide v4
+    move-result-wide v3
 
     sget-object p1, Ljava/util/concurrent/TimeUnit;->DAYS:Ljava/util/concurrent/TimeUnit;
 
-    const-wide/16 v6, 0x7
+    const-wide/16 v5, 0x7
 
-    invoke-virtual {p1, v6, v7}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
+    invoke-virtual {p1, v5, v6}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
 
-    move-result-wide v6
+    move-result-wide v5
 
-    sub-long/2addr v4, v6
+    sub-long/2addr v3, v5
 
-    iput v3, v0, Lup9;->Y:I
+    iput v2, v0, Lhu9;->Y:I
 
-    iget-object p0, p0, Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;->a:Lmr9;
+    iget-object p0, p0, Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;->a:Lvv9;
 
-    iget-object p1, p0, Lmr9;->a:Lpae;
+    iget-object p1, p0, Lvv9;->a:Lrie;
 
-    check-cast p1, Ln3a;
+    check-cast p1, Lo7a;
 
-    invoke-virtual {p1}, Ln3a;->b()Lju3;
+    invoke-virtual {p1}, Lo7a;->b()Ljx3;
 
     move-result-object p1
 
-    new-instance v2, Lkr9;
+    new-instance v1, Ltv9;
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    invoke-direct {v2, v4, v5, p0, v3}, Lkr9;-><init>(JLmr9;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v1, v3, v4, p0, v2}, Ltv9;-><init>(JLvv9;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {p1, v2, v0}, Lxs7;->U(Lhu3;Li26;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, v1, v0}, Lzo3;->j0(Lhx3;Ll66;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    if-ne p0, v1, :cond_3
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_3
 
     goto :goto_1
 
     :cond_3
-    sget-object p0, Ljue;->a:Ljue;
+    sget-object p0, Le5f;->a:Le5f;
 
     :goto_1
-    if-ne p0, v1, :cond_4
+    if-ne p0, p1, :cond_4
 
-    return-object v1
+    return-object p1
 
     :cond_4
     :goto_2
-    invoke-static {}, Lgh7;->b()Lfh7;
+    invoke-static {}, Lfm7;->b()Lem7;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public final getCoroutineContext()Lju3;
+.method public final getCoroutineContext()Ljx3;
     .locals 0
 
-    iget-object p0, p0, Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;->c:Lju3;
+    iget-object p0, p0, Lru/ok/tamtam/android/notifications/messages/tracker/NotificationTrackerCleanupScheduler$NotificationTrackerCleanupWorker;->c:Ljx3;
 
     return-object p0
 .end method

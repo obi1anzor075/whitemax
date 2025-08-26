@@ -1,21 +1,43 @@
-.class public final Lff4;
-.super Luo;
+.class public abstract Lff4;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lff4;
+# instance fields
+.field public final a:I
+
+.field public final b:Luxe;
+
+.field public final c:I
+
+.field public final o:Lfz5;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(ILuxe;I)V
+    .locals 0
 
-    new-instance v0, Lff4;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Luo;-><init>()V
+    iput p1, p0, Lff4;->a:I
 
-    sput-object v0, Lff4;->a:Lff4;
+    iput-object p2, p0, Lff4;->b:Luxe;
+
+    iput p3, p0, Lff4;->c:I
+
+    iget-object p1, p2, Luxe;->d:[Lfz5;
+
+    aget-object p1, p1, p3
+
+    iput-object p1, p0, Lff4;->o:Lfz5;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public abstract a()I
+.end method
+
+.method public abstract b(Lff4;)Z
 .end method

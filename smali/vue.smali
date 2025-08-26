@@ -1,232 +1,563 @@
 .class public final Lvue;
-.super Ljava/lang/Object;
+.super Ll18;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/text/Spannable;
+.implements Lfne;
 
 
 # instance fields
-.field public a:Z
+.field public F0:Ljava/lang/CharSequence;
 
-.field public b:Landroid/text/Spannable;
+.field public final G0:Landroid/content/Context;
+
+.field public final H0:Landroid/graphics/Paint$FontMetrics;
+
+.field public final I0:Lgne;
+
+.field public final J0:Llq0;
+
+.field public final K0:Landroid/graphics/Rect;
+
+.field public L0:I
+
+.field public M0:I
+
+.field public N0:I
+
+.field public O0:I
+
+.field public P0:Z
+
+.field public Q0:I
+
+.field public R0:I
+
+.field public S0:F
+
+.field public T0:F
+
+.field public U0:F
+
+.field public V0:F
 
 
 # direct methods
-.method public constructor <init>(Landroid/text/Spannable;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.method public constructor <init>(Landroid/content/Context;I)V
+    .locals 2
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lvue;->a:Z
+    const/4 v1, 0x0
 
-    iput-object p1, p0, Lvue;->b:Landroid/text/Spannable;
+    invoke-direct {p0, p1, v0, v1, p2}, Ll18;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+
+    new-instance p2, Landroid/graphics/Paint$FontMetrics;
+
+    invoke-direct {p2}, Landroid/graphics/Paint$FontMetrics;-><init>()V
+
+    iput-object p2, p0, Lvue;->H0:Landroid/graphics/Paint$FontMetrics;
+
+    new-instance p2, Lgne;
+
+    invoke-direct {p2, p0}, Lgne;-><init>(Lfne;)V
+
+    iput-object p2, p0, Lvue;->I0:Lgne;
+
+    new-instance v0, Llq0;
+
+    const/16 v1, 0xf
+
+    invoke-direct {v0, v1, p0}, Llq0;-><init>(ILjava/lang/Object;)V
+
+    iput-object v0, p0, Lvue;->J0:Llq0;
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object v0, p0, Lvue;->K0:Landroid/graphics/Rect;
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    iput v0, p0, Lvue;->S0:F
+
+    iput v0, p0, Lvue;->T0:F
+
+    const/high16 v1, 0x3f000000    # 0.5f
+
+    iput v1, p0, Lvue;->U0:F
+
+    iput v0, p0, Lvue;->V0:F
+
+    iput-object p1, p0, Lvue;->G0:Landroid/content/Context;
+
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object p0
+
+    iget p0, p0, Landroid/util/DisplayMetrics;->density:F
+
+    iget-object p1, p2, Lgne;->a:Landroid/text/TextPaint;
+
+    iput p0, p1, Landroid/text/TextPaint;->density:F
+
+    sget-object p0, Landroid/graphics/Paint$Align;->CENTER:Landroid/graphics/Paint$Align;
+
+    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setTextAlign(Landroid/graphics/Paint$Align;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final charAt(I)C
-    .locals 0
+.method public final draw(Landroid/graphics/Canvas;)V
+    .locals 10
 
-    iget-object p0, p0, Lvue;->b:Landroid/text/Spannable;
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    invoke-interface {p0, p1}, Ljava/lang/CharSequence;->charAt(I)C
+    invoke-virtual {p0}, Lvue;->q()F
 
-    move-result p0
+    move-result v0
 
-    return p0
-.end method
+    iget v1, p0, Lvue;->Q0:I
 
-.method public final chars()Ljava/util/stream/IntStream;
-    .locals 0
+    int-to-double v1, v1
 
-    iget-object p0, p0, Lvue;->b:Landroid/text/Spannable;
+    const-wide/high16 v3, 0x4000000000000000L    # 2.0
 
-    invoke-interface {p0}, Ljava/lang/CharSequence;->chars()Ljava/util/stream/IntStream;
+    invoke-static {v3, v4}, Ljava/lang/Math;->sqrt(D)D
 
-    move-result-object p0
+    move-result-wide v3
 
-    return-object p0
-.end method
+    mul-double/2addr v3, v1
 
-.method public final codePoints()Ljava/util/stream/IntStream;
-    .locals 0
+    iget v1, p0, Lvue;->Q0:I
 
-    iget-object p0, p0, Lvue;->b:Landroid/text/Spannable;
+    int-to-double v1, v1
 
-    invoke-interface {p0}, Ljava/lang/CharSequence;->codePoints()Ljava/util/stream/IntStream;
+    sub-double/2addr v3, v1
 
-    move-result-object p0
+    neg-double v1, v3
 
-    return-object p0
-.end method
+    double-to-float v1, v1
 
-.method public final getSpanEnd(Ljava/lang/Object;)I
-    .locals 0
+    iget v2, p0, Lvue;->S0:F
 
-    iget-object p0, p0, Lvue;->b:Landroid/text/Spannable;
+    iget v3, p0, Lvue;->T0:F
 
-    invoke-interface {p0, p1}, Landroid/text/Spanned;->getSpanEnd(Ljava/lang/Object;)I
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
-    move-result p0
+    move-result-object v4
 
-    return p0
-.end method
+    iget v4, v4, Landroid/graphics/Rect;->left:I
 
-.method public final getSpanFlags(Ljava/lang/Object;)I
-    .locals 0
+    int-to-float v4, v4
 
-    iget-object p0, p0, Lvue;->b:Landroid/text/Spannable;
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
-    invoke-interface {p0, p1}, Landroid/text/Spanned;->getSpanFlags(Ljava/lang/Object;)I
+    move-result-object v5
 
-    move-result p0
+    invoke-virtual {v5}, Landroid/graphics/Rect;->width()I
 
-    return p0
-.end method
+    move-result v5
 
-.method public final getSpanStart(Ljava/lang/Object;)I
-    .locals 0
+    int-to-float v5, v5
 
-    iget-object p0, p0, Lvue;->b:Landroid/text/Spannable;
+    const/high16 v6, 0x3f000000    # 0.5f
 
-    invoke-interface {p0, p1}, Landroid/text/Spanned;->getSpanStart(Ljava/lang/Object;)I
+    mul-float/2addr v5, v6
 
-    move-result p0
+    add-float/2addr v5, v4
 
-    return p0
-.end method
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
-.method public final getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
-    .locals 0
+    move-result-object v4
 
-    iget-object p0, p0, Lvue;->b:Landroid/text/Spannable;
+    iget v4, v4, Landroid/graphics/Rect;->top:I
 
-    invoke-interface {p0, p1, p2, p3}, Landroid/text/Spanned;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
+    int-to-float v4, v4
 
-    move-result-object p0
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
-    return-object p0
-.end method
+    move-result-object v6
 
-.method public final length()I
-    .locals 0
+    invoke-virtual {v6}, Landroid/graphics/Rect;->height()I
 
-    iget-object p0, p0, Lvue;->b:Landroid/text/Spannable;
+    move-result v6
 
-    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
+    int-to-float v6, v6
 
-    move-result p0
+    iget v7, p0, Lvue;->U0:F
 
-    return p0
-.end method
+    mul-float/2addr v6, v7
 
-.method public final nextSpanTransition(IILjava/lang/Class;)I
-    .locals 0
+    add-float/2addr v6, v4
 
-    iget-object p0, p0, Lvue;->b:Landroid/text/Spannable;
+    invoke-virtual {p1, v2, v3, v5, v6}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    invoke-interface {p0, p1, p2, p3}, Landroid/text/Spanned;->nextSpanTransition(IILjava/lang/Class;)I
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    move-result p0
+    invoke-super {p0, p1}, Ll18;->draw(Landroid/graphics/Canvas;)V
 
-    return p0
-.end method
+    iget-object v0, p0, Lvue;->F0:Ljava/lang/CharSequence;
 
-.method public final removeSpan(Ljava/lang/Object;)V
-    .locals 2
+    if-nez v0, :cond_0
 
-    iget-object v0, p0, Lvue;->b:Landroid/text/Spannable;
-
-    iget-boolean v1, p0, Lvue;->a:Z
-
-    if-nez v1, :cond_1
-
-    instance-of v1, v0, Landroid/text/PrecomputedText;
-
-    if-nez v1, :cond_0
+    move-object v3, p1
 
     goto :goto_0
 
     :cond_0
-    new-instance v1, Landroid/text/SpannableString;
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
-    invoke-direct {v1, v0}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
+    move-result-object v0
 
-    iput-object v1, p0, Lvue;->b:Landroid/text/Spannable;
+    invoke-virtual {v0}, Landroid/graphics/Rect;->centerY()I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    iget-object v2, p0, Lvue;->I0:Lgne;
+
+    iget-object v9, v2, Lgne;->a:Landroid/text/TextPaint;
+
+    iget-object v3, p0, Lvue;->H0:Landroid/graphics/Paint$FontMetrics;
+
+    invoke-virtual {v9, v3}, Landroid/graphics/Paint;->getFontMetrics(Landroid/graphics/Paint$FontMetrics;)F
+
+    iget v4, v3, Landroid/graphics/Paint$FontMetrics;->descent:F
+
+    iget v3, v3, Landroid/graphics/Paint$FontMetrics;->ascent:F
+
+    add-float/2addr v4, v3
+
+    const/high16 v3, 0x40000000    # 2.0f
+
+    div-float/2addr v4, v3
+
+    sub-float/2addr v1, v4
+
+    float-to-int v1, v1
+
+    iget-object v3, v2, Lgne;->g:Lyme;
+
+    if-eqz v3, :cond_1
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getState()[I
+
+    move-result-object v3
+
+    iput-object v3, v9, Landroid/text/TextPaint;->drawableState:[I
+
+    iget-object v3, v2, Lgne;->g:Lyme;
+
+    iget-object v4, v2, Lgne;->a:Landroid/text/TextPaint;
+
+    iget-object v2, v2, Lgne;->b:Lez2;
+
+    iget-object v5, p0, Lvue;->G0:Landroid/content/Context;
+
+    invoke-virtual {v3, v5, v4, v2}, Lyme;->e(Landroid/content/Context;Landroid/text/TextPaint;Lqo8;)V
+
+    iget v2, p0, Lvue;->V0:F
+
+    const/high16 v3, 0x437f0000    # 255.0f
+
+    mul-float/2addr v2, v3
+
+    float-to-int v2, v2
+
+    invoke-virtual {v9, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
     :cond_1
+    iget-object v4, p0, Lvue;->F0:Ljava/lang/CharSequence;
+
+    invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
+
+    move-result v6
+
+    invoke-virtual {v0}, Landroid/graphics/Rect;->centerX()I
+
+    move-result p0
+
+    int-to-float v7, p0
+
+    int-to-float v8, v1
+
+    const/4 v5, 0x0
+
+    move-object v3, p1
+
+    invoke-virtual/range {v3 .. v9}, Landroid/graphics/Canvas;->drawText(Ljava/lang/CharSequence;IIFFLandroid/graphics/Paint;)V
+
     :goto_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lvue;->a:Z
-
-    iget-object p0, p0, Lvue;->b:Landroid/text/Spannable;
-
-    invoke-interface {p0, p1}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
+    invoke-virtual {v3}, Landroid/graphics/Canvas;->restore()V
 
     return-void
 .end method
 
-.method public final setSpan(Ljava/lang/Object;III)V
-    .locals 2
+.method public final getIntrinsicHeight()I
+    .locals 1
 
-    iget-object v0, p0, Lvue;->b:Landroid/text/Spannable;
+    iget-object v0, p0, Lvue;->I0:Lgne;
 
-    iget-boolean v1, p0, Lvue;->a:Z
+    iget-object v0, v0, Lgne;->a:Landroid/text/TextPaint;
 
-    if-nez v1, :cond_1
+    invoke-virtual {v0}, Landroid/graphics/Paint;->getTextSize()F
 
-    instance-of v1, v0, Landroid/text/PrecomputedText;
+    move-result v0
+
+    iget p0, p0, Lvue;->N0:I
+
+    int-to-float p0, p0
+
+    invoke-static {v0, p0}, Ljava/lang/Math;->max(FF)F
+
+    move-result p0
+
+    float-to-int p0, p0
+
+    return p0
+.end method
+
+.method public final getIntrinsicWidth()I
+    .locals 3
+
+    iget v0, p0, Lvue;->L0:I
+
+    mul-int/lit8 v0, v0, 0x2
+
+    int-to-float v0, v0
+
+    iget-object v1, p0, Lvue;->F0:Ljava/lang/CharSequence;
 
     if-nez v1, :cond_0
+
+    const/4 v1, 0x0
 
     goto :goto_0
 
     :cond_0
-    new-instance v1, Landroid/text/SpannableString;
+    iget-object v2, p0, Lvue;->I0:Lgne;
 
-    invoke-direct {v1, v0}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
+    invoke-interface {v1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
-    iput-object v1, p0, Lvue;->b:Landroid/text/Spannable;
+    move-result-object v1
 
-    :cond_1
+    invoke-virtual {v2, v1}, Lgne;->a(Ljava/lang/String;)F
+
+    move-result v1
+
     :goto_0
-    const/4 v0, 0x1
+    add-float/2addr v0, v1
 
-    iput-boolean v0, p0, Lvue;->a:Z
+    iget p0, p0, Lvue;->M0:I
 
-    iget-object p0, p0, Lvue;->b:Landroid/text/Spannable;
+    int-to-float p0, p0
 
-    invoke-interface {p0, p1, p2, p3, p4}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
+    invoke-static {v0, p0}, Ljava/lang/Math;->max(FF)F
 
+    move-result p0
+
+    float-to-int p0, p0
+
+    return p0
+.end method
+
+.method public final onBoundsChange(Landroid/graphics/Rect;)V
+    .locals 1
+
+    invoke-super {p0, p1}, Ll18;->onBoundsChange(Landroid/graphics/Rect;)V
+
+    iget-boolean p1, p0, Lvue;->P0:Z
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Ll18;->a:Lk18;
+
+    iget-object p1, p1, Lk18;->a:Lshd;
+
+    invoke-virtual {p1}, Lshd;->e()Lm9g;
+
+    move-result-object p1
+
+    invoke-virtual {p0}, Lvue;->r()Ld0a;
+
+    move-result-object v0
+
+    iput-object v0, p1, Lm9g;->k:Ljava/lang/Object;
+
+    invoke-virtual {p1}, Lm9g;->f()Lshd;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ll18;->setShapeAppearanceModel(Lshd;)V
+
+    :cond_0
     return-void
 .end method
 
-.method public final subSequence(II)Ljava/lang/CharSequence;
-    .locals 0
+.method public final q()F
+    .locals 3
 
-    iget-object p0, p0, Lvue;->b:Landroid/text/Spannable;
+    iget-object v0, p0, Lvue;->K0:Landroid/graphics/Rect;
 
-    invoke-interface {p0, p1, p2}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
+    iget v1, v0, Landroid/graphics/Rect;->right:I
 
-    move-result-object p0
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
-    return-object p0
+    move-result-object v2
+
+    iget v2, v2, Landroid/graphics/Rect;->right:I
+
+    sub-int/2addr v1, v2
+
+    iget v2, p0, Lvue;->R0:I
+
+    sub-int/2addr v1, v2
+
+    iget v2, p0, Lvue;->O0:I
+
+    sub-int/2addr v1, v2
+
+    if-gez v1, :cond_0
+
+    iget v0, v0, Landroid/graphics/Rect;->right:I
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/graphics/Rect;->right:I
+
+    sub-int/2addr v0, v1
+
+    iget v1, p0, Lvue;->R0:I
+
+    sub-int/2addr v0, v1
+
+    iget p0, p0, Lvue;->O0:I
+
+    sub-int/2addr v0, p0
+
+    :goto_0
+    int-to-float p0, v0
+
+    return p0
+
+    :cond_0
+    iget v1, v0, Landroid/graphics/Rect;->left:I
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object v2
+
+    iget v2, v2, Landroid/graphics/Rect;->left:I
+
+    sub-int/2addr v1, v2
+
+    iget v2, p0, Lvue;->R0:I
+
+    sub-int/2addr v1, v2
+
+    iget v2, p0, Lvue;->O0:I
+
+    add-int/2addr v1, v2
+
+    if-lez v1, :cond_1
+
+    iget v0, v0, Landroid/graphics/Rect;->left:I
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/graphics/Rect;->left:I
+
+    sub-int/2addr v0, v1
+
+    iget v1, p0, Lvue;->R0:I
+
+    sub-int/2addr v0, v1
+
+    iget p0, p0, Lvue;->O0:I
+
+    add-int/2addr v0, p0
+
+    goto :goto_0
+
+    :cond_1
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
+.method public final r()Ld0a;
+    .locals 7
 
-    iget-object p0, p0, Lvue;->b:Landroid/text/Spannable;
+    invoke-virtual {p0}, Lvue;->q()F
 
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    move-result v0
 
-    move-result-object p0
+    neg-float v0, v0
 
-    return-object p0
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
+
+    move-result v1
+
+    int-to-double v1, v1
+
+    iget v3, p0, Lvue;->Q0:I
+
+    int-to-double v3, v3
+
+    const-wide/high16 v5, 0x4000000000000000L    # 2.0
+
+    invoke-static {v5, v6}, Ljava/lang/Math;->sqrt(D)D
+
+    move-result-wide v5
+
+    mul-double/2addr v5, v3
+
+    sub-double/2addr v1, v5
+
+    double-to-float v1, v1
+
+    const/high16 v2, 0x40000000    # 2.0f
+
+    div-float/2addr v1, v2
+
+    neg-float v2, v1
+
+    invoke-static {v0, v2}, Ljava/lang/Math;->max(FF)F
+
+    move-result v0
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(FF)F
+
+    move-result v0
+
+    new-instance v1, Ld0a;
+
+    new-instance v2, Lb08;
+
+    iget p0, p0, Lvue;->Q0:I
+
+    int-to-float p0, p0
+
+    invoke-direct {v2, p0}, Lb08;-><init>(F)V
+
+    invoke-direct {v1, v2, v0}, Ld0a;-><init>(Lb08;F)V
+
+    return-object v1
 .end method

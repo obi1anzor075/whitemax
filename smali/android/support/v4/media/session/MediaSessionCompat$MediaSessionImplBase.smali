@@ -86,7 +86,7 @@
 
 .field mRegistrationCallbackHandler:Landroid/support/v4/media/session/MediaSessionCompat$RegistrationCallbackHandler;
 
-.field private mRemoteUserInfo:Lqd8;
+.field private mRemoteUserInfo:Lfi8;
 
 .field mRepeatMode:I
 
@@ -102,15 +102,15 @@
 
 .field private final mToken:Landroid/support/v4/media/session/MediaSessionCompat$Token;
 
-.field private mVolumeCallback:Lsdf;
+.field private mVolumeCallback:Lkrf;
 
-.field mVolumeProvider:Ltdf;
+.field mVolumeProvider:Llrf;
 
 .field mVolumeType:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Landroid/content/ComponentName;Landroid/app/PendingIntent;Li1f;Landroid/os/Bundle;)V
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Landroid/content/ComponentName;Landroid/app/PendingIntent;Lncf;Landroid/os/Bundle;)V
     .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -141,7 +141,7 @@
 
     invoke-direct {v2, p0}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase$1;-><init>(Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;)V
 
-    iput-object v2, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mVolumeCallback:Lsdf;
+    iput-object v2, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mVolumeCallback:Lkrf;
 
     if-eqz p3, :cond_0
 
@@ -177,7 +177,7 @@
 
     const/4 p2, 0x0
 
-    invoke-direct {p1, p3, p2, p5}, Landroid/support/v4/media/session/MediaSessionCompat$Token;-><init>(Ljava/lang/Object;Landroid/support/v4/media/session/IMediaSession;Li1f;)V
+    invoke-direct {p1, p3, p2, p5}, Landroid/support/v4/media/session/MediaSessionCompat$Token;-><init>(Ljava/lang/Object;Landroid/support/v4/media/session/IMediaSession;Lncf;)V
 
     iput-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mToken:Landroid/support/v4/media/session/MediaSessionCompat$Token;
 
@@ -890,7 +890,7 @@
 
     if-ne v0, v1, :cond_0
 
-    goto :goto_0
+    return-void
 
     :cond_0
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mAudioManager:Landroid/media/AudioManager;
@@ -899,7 +899,6 @@
 
     invoke-virtual {v0, p0, p1, p2}, Landroid/media/AudioManager;->adjustStreamVolume(III)V
 
-    :goto_0
     return-void
 .end method
 
@@ -916,7 +915,7 @@
 
     if-nez p1, :cond_0
 
-    return-object p0
+    goto/16 :goto_1
 
     :cond_0
     const-string v1, "android.media.metadata.ART"
@@ -1199,6 +1198,7 @@
     invoke-virtual {p0, v1, p1}, Landroid/media/RemoteControlClient$MetadataEditor;->putString(ILjava/lang/String;)Landroid/media/RemoteControlClient$MetadataEditor;
 
     :cond_11
+    :goto_1
     return-object p0
 .end method
 
@@ -1234,7 +1234,7 @@
     return-object p0
 .end method
 
-.method public getCurrentControllerInfo()Lqd8;
+.method public getCurrentControllerInfo()Lfi8;
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mLock:Ljava/lang/Object;
@@ -1242,7 +1242,7 @@
     monitor-enter v0
 
     :try_start_0
-    iget-object p0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mRemoteUserInfo:Lqd8;
+    iget-object p0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mRemoteUserInfo:Lfi8;
 
     monitor-exit v0
 
@@ -1826,7 +1826,7 @@
     return-void
 .end method
 
-.method public setCurrentControllerInfo(Lqd8;)V
+.method public setCurrentControllerInfo(Lfi8;)V
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mLock:Ljava/lang/Object;
@@ -1834,7 +1834,7 @@
     monitor-enter v0
 
     :try_start_0
-    iput-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mRemoteUserInfo:Lqd8;
+    iput-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mRemoteUserInfo:Lfi8;
 
     monitor-exit v0
 
@@ -1994,7 +1994,7 @@
 
     invoke-virtual {p0, v0}, Landroid/media/RemoteControlClient;->setTransportControlFlags(I)V
 
-    goto :goto_0
+    return-void
 
     :cond_1
     invoke-virtual {p0, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->setRccState(Landroid/support/v4/media/session/PlaybackStateCompat;)V
@@ -2011,7 +2011,6 @@
 
     invoke-virtual {v0, p0}, Landroid/media/RemoteControlClient;->setTransportControlFlags(I)V
 
-    :goto_0
     return-void
 
     :catchall_0
@@ -2034,38 +2033,36 @@
 
     iput p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mVolumeType:I
 
-    new-instance p1, Landroid/support/v4/media/session/ParcelableVolumeInfo;
+    new-instance v0, Landroid/support/v4/media/session/ParcelableVolumeInfo;
 
     iget v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mVolumeType:I
 
     iget v2, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mLocalStream:I
 
-    iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mAudioManager:Landroid/media/AudioManager;
+    iget-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mAudioManager:Landroid/media/AudioManager;
 
-    invoke-virtual {v0, v2}, Landroid/media/AudioManager;->getStreamMaxVolume(I)I
+    invoke-virtual {p1, v2}, Landroid/media/AudioManager;->getStreamMaxVolume(I)I
 
     move-result v4
 
-    iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mAudioManager:Landroid/media/AudioManager;
+    iget-object p1, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mAudioManager:Landroid/media/AudioManager;
 
     iget v3, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mLocalStream:I
 
-    invoke-virtual {v0, v3}, Landroid/media/AudioManager;->getStreamVolume(I)I
+    invoke-virtual {p1, v3}, Landroid/media/AudioManager;->getStreamVolume(I)I
 
     move-result v5
 
     const/4 v3, 0x2
 
-    move-object v0, p1
-
     invoke-direct/range {v0 .. v5}, Landroid/support/v4/media/session/ParcelableVolumeInfo;-><init>(IIIII)V
 
-    invoke-virtual {p0, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->sendVolumeInfoChanged(Landroid/support/v4/media/session/ParcelableVolumeInfo;)V
+    invoke-virtual {p0, v0}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->sendVolumeInfoChanged(Landroid/support/v4/media/session/ParcelableVolumeInfo;)V
 
     return-void
 .end method
 
-.method public setPlaybackToRemote(Ltdf;)V
+.method public setPlaybackToRemote(Llrf;)V
     .locals 0
 
     new-instance p0, Ljava/lang/IllegalArgumentException;
@@ -2249,7 +2246,7 @@
 
     if-ne v0, v1, :cond_0
 
-    goto :goto_0
+    return-void
 
     :cond_0
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mAudioManager:Landroid/media/AudioManager;
@@ -2258,7 +2255,6 @@
 
     invoke-virtual {v0, p0, p1, p2}, Landroid/media/AudioManager;->setStreamVolume(III)V
 
-    :goto_0
     return-void
 .end method
 
@@ -2299,7 +2295,7 @@
 
     invoke-virtual {p0, v0}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->setPlaybackState(Landroid/support/v4/media/session/PlaybackStateCompat;)V
 
-    goto :goto_0
+    return-void
 
     :cond_0
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplBase;->mMediaButtonReceiverIntent:Landroid/app/PendingIntent;
@@ -2320,6 +2316,5 @@
 
     invoke-virtual {v0, p0}, Landroid/media/AudioManager;->unregisterRemoteControlClient(Landroid/media/RemoteControlClient;)V
 
-    :goto_0
     return-void
 .end method

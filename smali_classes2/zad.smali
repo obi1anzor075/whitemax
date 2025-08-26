@@ -1,193 +1,128 @@
 .class public final Lzad;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Lmua;
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Lb9;
+.field public final synthetic X:Landroid/graphics/RectF;
 
-.field public final b:Lijb;
+.field public final synthetic Y:Lgbd;
 
-.field public final c:Lj54;
-
-.field public final d:Lt97;
-
-.field public final e:Lt97;
-
-.field public final f:Lt97;
-
-.field public final g:Lgrd;
-
-.field public final h:Lt0c;
-
-.field public final i:Lhcd;
-
-.field public final j:Ls0c;
-
-.field public final k:Lqe4;
-
-.field public l:Lou3;
-
-.field public m:Z
+.field public final synthetic Z:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lb9;Lijb;Lj54;Lt97;Lt97;Lt97;)V
+.method public constructor <init>(Landroid/graphics/RectF;Lgbd;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lzad;->X:Landroid/graphics/RectF;
 
-    iput-object p1, p0, Lzad;->a:Lb9;
+    iput-object p2, p0, Lzad;->Y:Lgbd;
 
-    iput-object p2, p0, Lzad;->b:Lijb;
+    iput-object p3, p0, Lzad;->Z:Ljava/lang/String;
 
-    iput-object p3, p0, Lzad;->c:Lj54;
+    const/4 p1, 0x2
 
-    iput-object p4, p0, Lzad;->d:Lt97;
-
-    iput-object p5, p0, Lzad;->e:Lt97;
-
-    iput-object p6, p0, Lzad;->f:Lt97;
-
-    const/4 p2, 0x0
-
-    invoke-static {p2}, Lhrd;->a(Ljava/lang/Object;)Lgrd;
-
-    move-result-object p2
-
-    iput-object p2, p0, Lzad;->g:Lgrd;
-
-    new-instance p3, Lt0c;
-
-    invoke-direct {p3, p2}, Lt0c;-><init>(Lzqd;)V
-
-    iput-object p3, p0, Lzad;->h:Lt0c;
-
-    const p2, 0x7fffffff
-
-    const/4 p3, 0x5
-
-    const/4 p4, 0x0
-
-    invoke-static {p4, p2, p4, p3}, Licd;->b(IIII)Lhcd;
-
-    move-result-object p2
-
-    iput-object p2, p0, Lzad;->i:Lhcd;
-
-    new-instance p3, Ls0c;
-
-    invoke-direct {p3, p2}, Ls0c;-><init>(Ldcd;)V
-
-    iput-object p3, p0, Lzad;->j:Ls0c;
-
-    new-instance p2, Lqe4;
-
-    const/16 p3, 0x11
-
-    invoke-direct {p2, p3}, Lqe4;-><init>(I)V
-
-    iput-object p2, p0, Lzad;->k:Lqe4;
-
-    if-eqz p1, :cond_0
+    invoke-direct {p0, p1, p4}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "ShareData is null"
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    const/4 v0, 0x0
+    check-cast p1, Lox3;
 
-    iput-object v0, p0, Lzad;->l:Lou3;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    return-void
+    invoke-virtual {p0, p1, p2}, Lzad;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lzad;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lzad;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
 .end method
 
-.method public final b(Lzta;)V
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .locals 2
 
-    iget-object p0, p0, Lzad;->c:Lj54;
+    new-instance p1, Lzad;
 
-    iget-object p0, p0, Lj54;->X:Ljava/lang/Object;
+    iget-object v0, p0, Lzad;->Y:Lgbd;
 
-    check-cast p0, Ljava/util/concurrent/atomic/AtomicReference;
+    iget-object v1, p0, Lzad;->Z:Ljava/lang/String;
 
-    new-instance v0, Lzx0;
+    iget-object p0, p0, Lzad;->X:Landroid/graphics/RectF;
 
-    const/16 v1, 0xa
+    invoke-direct {p1, p0, v0, v1, p2}, Lzad;-><init>(Landroid/graphics/RectF;Lgbd;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
 
-    invoke-direct {v0, v1, p1}, Lzx0;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicReference;->updateAndGet(Ljava/util/function/UnaryOperator;)Ljava/lang/Object;
-
-    return-void
+    return-object p1
 .end method
 
-.method public final c(Lou3;)V
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 3
 
-    iput-object p1, p0, Lzad;->l:Lou3;
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    iget-object v0, p0, Lzad;->d:Lt97;
+    iget-object p1, p0, Lzad;->X:Landroid/graphics/RectF;
 
-    invoke-interface {v0}, Lt97;->getValue()Ljava/lang/Object;
+    invoke-static {p1}, Lzo3;->k(Landroid/graphics/RectF;)Ln10;
 
-    move-result-object v0
+    move-result-object p1
 
-    check-cast v0, Lpae;
+    iget-object v0, p0, Lzad;->Y:Lgbd;
 
-    check-cast v0, Ln3a;
+    iget-object v1, v0, Lgbd;->C0:Ljava/util/concurrent/atomic/AtomicLong;
 
-    invoke-virtual {v0}, Ln3a;->b()Lju3;
+    iget-object v2, v0, Lgbd;->r0:Lje7;
 
-    move-result-object v0
+    invoke-interface {v2}, Lje7;->getValue()Ljava/lang/Object;
 
-    new-instance v1, Lxad;
+    move-result-object v2
 
-    const/4 v2, 0x0
+    check-cast v2, Lik;
 
-    invoke-direct {v1, p0, v2}, Lxad;-><init>(Lzad;Lkotlin/coroutines/Continuation;)V
+    iget-object p0, p0, Lzad;->Z:Ljava/lang/String;
 
-    const/4 p0, 0x2
+    check-cast v2, La2a;
 
-    invoke-static {p1, v0, v2, v1, p0}, Lxs7;->E(Lou3;Lhu3;Lru3;Li26;I)Lqod;
+    invoke-virtual {v2, p0, p1}, La2a;->E(Ljava/lang/String;Ln10;)J
 
-    return-void
-.end method
+    move-result-wide p0
 
-.method public final e(J)V
-    .locals 1
+    invoke-virtual {v1, p0, p1}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
 
-    iget-object p0, p0, Lzad;->c:Lj54;
+    iget-object p0, v0, Lgbd;->v0:Lj35;
 
-    iget-object p0, p0, Lj54;->X:Ljava/lang/Object;
+    new-instance p1, Lifd;
 
-    check-cast p0, Ljava/util/concurrent/atomic/AtomicReference;
+    sget v0, Lcfa;->r:I
 
-    new-instance v0, Laxc;
+    new-instance v1, Lhoe;
 
-    invoke-direct {v0, p1, p2}, Laxc;-><init>(J)V
+    invoke-direct {v1, v0}, Lhoe;-><init>(I)V
 
-    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicReference;->updateAndGet(Ljava/util/function/UnaryOperator;)Ljava/lang/Object;
+    sget v0, Lanc;->m:I
 
-    return-void
+    new-instance v2, Ljava/lang/Integer;
+
+    invoke-direct {v2, v0}, Ljava/lang/Integer;-><init>(I)V
+
+    invoke-direct {p1, v1, v2}, Lifd;-><init>(Lmoe;Ljava/lang/Integer;)V
+
+    invoke-static {p0, p1}, Ljof;->o(Lj35;Ljava/lang/Object;)V
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

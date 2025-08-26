@@ -1,76 +1,172 @@
-.class public final synthetic Lpeb;
+.class public final Lpeb;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/view/View$OnLongClickListener;
-
 
 # instance fields
-.field public final synthetic a:Lseb;
+.field public final a:Lwjd;
 
-.field public final synthetic b:Lncb;
-
-.field public final synthetic c:I
+.field public final b:Lkotlinx/coroutines/internal/ContextScope;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lseb;Lncb;I)V
-    .locals 0
+.method public constructor <init>(Lvu0;Lje7;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lpeb;->a:Lseb;
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Lpeb;->b:Lncb;
+    const/4 v1, 0x7
 
-    iput p3, p0, Lpeb;->c:I
+    invoke-static {v0, v0, v1}, Lxjd;->b(III)Lwjd;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lpeb;->a:Lwjd;
+
+    invoke-interface {p2}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lrie;
+
+    check-cast p2, Lo7a;
+
+    invoke-virtual {p2}, Lo7a;->c()Lxw7;
+
+    move-result-object p2
+
+    invoke-static {p2}, Lvk9;->a(Lhx3;)Lkotlinx/coroutines/internal/ContextScope;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lpeb;->b:Lkotlinx/coroutines/internal/ContextScope;
+
+    invoke-virtual {p1, p0}, Lvu0;->d(Ljava/lang/Object;)V
 
     return-void
 .end method
 
+.method public static final a(Lpeb;Lvie;)Lmoe;
+    .locals 1
 
-# virtual methods
-.method public final onLongClick(Landroid/view/View;)Z
-    .locals 3
+    iget-object p0, p1, Lvie;->X:Ljava/lang/String;
 
-    iget-object p1, p0, Lpeb;->b:Lncb;
+    iget-object p1, p1, Lvie;->c:Ljava/lang/String;
 
-    check-cast p1, Lfcb;
+    if-eqz p0, :cond_1
 
-    iget-object p1, p1, Lfcb;->a:Lj6b;
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    iget-wide v0, p1, Lj6b;->a:J
+    move-result v0
 
-    iget-object p1, p0, Lpeb;->a:Lseb;
-
-    iget-object p1, p1, Lseb;->X:Lreb;
-
-    check-cast p1, Lone/me/profile/ProfileScreen;
-
-    invoke-virtual {p1}, Lone/me/profile/ProfileScreen;->q0()Lfgb;
-
-    move-result-object p1
-
-    iget-object v2, p1, Lfgb;->T0:Lh5b;
-
-    iget p0, p0, Lpeb;->c:I
-
-    invoke-virtual {v2, p0, v0, v1}, Lh5b;->z(IJ)Lcfb;
-
-    move-result-object p0
-
-    if-nez p0, :cond_0
+    if-nez v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    iget-object p1, p1, Lfgb;->E0:Ll05;
+    new-instance p1, Lloe;
 
-    invoke-static {p1, p0}, Ltaf;->o(Ll05;Ljava/lang/Object;)V
+    invoke-direct {p1, p0}, Lloe;-><init>(Ljava/lang/CharSequence;)V
 
+    return-object p1
+
+    :cond_1
     :goto_0
-    const/4 p0, 0x1
+    invoke-static {p1}, Lou0;->w(Ljava/lang/String;)Z
 
-    return p0
+    move-result p0
+
+    const-string v0, "io.exception"
+
+    if-eqz p0, :cond_2
+
+    invoke-static {p1, v0}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    sget p0, Lnnc;->I:I
+
+    new-instance p1, Lhoe;
+
+    invoke-direct {p1, p0}, Lhoe;-><init>(I)V
+
+    return-object p1
+
+    :cond_2
+    invoke-static {p1}, Lou0;->w(Ljava/lang/String;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_3
+
+    invoke-static {p1, v0}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
+
+    sget p0, Lnnc;->L:I
+
+    new-instance p1, Lhoe;
+
+    invoke-direct {p1, p0}, Lhoe;-><init>(I)V
+
+    return-object p1
+
+    :cond_3
+    sget p0, Lnnc;->H:I
+
+    new-instance p1, Lhoe;
+
+    invoke-direct {p1, p0}, Lhoe;-><init>(I)V
+
+    return-object p1
+.end method
+
+
+# virtual methods
+.method public final onEvent(Lfeb;)V
+    .locals 2
+    .annotation runtime Li9e;
+    .end annotation
+
+    .line 2
+    new-instance v0, Loeb;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, p1, v1}, Loeb;-><init>(Lpeb;Lfeb;Lkotlin/coroutines/Continuation;)V
+
+    const/4 p1, 0x3
+
+    iget-object p0, p0, Lpeb;->b:Lkotlinx/coroutines/internal/ContextScope;
+
+    invoke-static {p0, v1, v1, v0, p1}, Lzo3;->E(Lox3;Lhx3;Lrx3;Ll66;I)Ldwd;
+
+    return-void
+.end method
+
+.method public final onEvent(Lji0;)V
+    .locals 2
+    .annotation runtime Li9e;
+    .end annotation
+
+    .line 1
+    new-instance v0, Lneb;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, p1, v1}, Lneb;-><init>(Lpeb;Lji0;Lkotlin/coroutines/Continuation;)V
+
+    const/4 p1, 0x3
+
+    iget-object p0, p0, Lpeb;->b:Lkotlinx/coroutines/internal/ContextScope;
+
+    invoke-static {p0, v1, v1, v0, p1}, Lzo3;->E(Lox3;Lhx3;Lrx3;Ll66;I)Ldwd;
+
+    return-void
 .end method

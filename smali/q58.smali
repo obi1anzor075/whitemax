@@ -1,184 +1,169 @@
 .class public final Lq58;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
+
+# interfaces
+.implements Ll66;
 
 
 # instance fields
-.field public a:Ljava/lang/String;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public b:Landroid/net/Uri;
+.field public final synthetic Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
 
-.field public c:Ljava/lang/String;
 
-.field public d:Lr58;
+# direct methods
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/MediaBarWidget;)V
+    .locals 0
 
-.field public e:Lq44;
+    iput-object p2, p0, Lq58;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
 
-.field public f:Ljava/util/List;
+    const/4 p2, 0x2
 
-.field public g:Ljava/lang/String;
+    invoke-direct {p0, p2, p1}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
-.field public h:Lws6;
-
-.field public i:Lp58;
-
-.field public j:Ljava/lang/Object;
-
-.field public k:J
-
-.field public l:Lz78;
-
-.field public m:Lx58;
-
-.field public n:Ld68;
+    return-void
+.end method
 
 
 # virtual methods
-.method public final a()Ll68;
-    .locals 21
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    move-object/from16 v0, p0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object v1, v0, Lq58;->e:Lq44;
+    invoke-virtual {p0, p1, p2}, Lq58;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    iget-object v2, v1, Lq44;->e:Ljava/lang/Object;
+    move-result-object p0
 
-    check-cast v2, Landroid/net/Uri;
+    check-cast p0, Lq58;
 
-    if-eqz v2, :cond_1
+    sget-object p1, Le5f;->a:Le5f;
 
-    iget-object v1, v1, Lq44;->d:Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lq58;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    check-cast v1, Ljava/util/UUID;
+    return-object p1
+.end method
 
-    if-eqz v1, :cond_0
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
+
+    new-instance v0, Lq58;
+
+    iget-object p0, p0, Lq58;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
+
+    invoke-direct {v0, p2, p0}, Lq58;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/MediaBarWidget;)V
+
+    iput-object p1, v0, Lq58;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 9
+
+    iget-object v0, p0, Lq58;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
+
+    iget-object v1, v0, Lone/me/chatscreen/mediabar/MediaBarWidget;->c:Lje7;
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lq58;->X:Ljava/lang/Object;
+
+    check-cast p0, Lapb;
+
+    instance-of p1, p0, Lxob;
+
+    if-eqz p1, :cond_0
+
+    check-cast p0, Lxob;
+
+    iget-object p1, p0, Lxob;->a:Lrp7;
+
+    iget p0, p0, Lxob;->b:I
+
+    sget-object v1, Lone/me/chatscreen/mediabar/MediaBarWidget;->Z0:[Lbc7;
+
+    const-string v1, "SELECTED_MEDIA_ALBUM"
+
+    invoke-virtual {v0, p1, p0, v1}, Lone/me/chatscreen/mediabar/MediaBarWidget;->F0(Lrp7;ILjava/lang/String;)V
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    instance-of p1, p0, Lzob;
 
-    goto :goto_1
+    const/4 v2, 0x1
+
+    if-eqz p1, :cond_1
+
+    sget-object p0, Lone/me/chatscreen/mediabar/MediaBarWidget;->Z0:[Lbc7;
+
+    invoke-interface {v1}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lura;
+
+    new-instance p1, Lo6g;
+
+    invoke-direct {p1, v0, v2}, Lo6g;-><init>(Lone/me/sdk/arch/Widget;I)V
+
+    invoke-virtual {p0, p1}, Lura;->h(Lo6g;)V
+
+    goto :goto_0
 
     :cond_1
-    :goto_0
-    const/4 v1, 0x1
+    instance-of p0, p0, Lyob;
 
-    :goto_1
-    invoke-static {v1}, Loyb;->k(Z)V
+    if-eqz p0, :cond_3
 
-    iget-object v3, v0, Lq58;->b:Landroid/net/Uri;
+    sget-object p0, Lone/me/chatscreen/mediabar/MediaBarWidget;->Z0:[Lbc7;
 
-    const/4 v1, 0x0
+    invoke-interface {v1}, Lje7;->getValue()Ljava/lang/Object;
 
-    if-eqz v3, :cond_3
+    move-result-object p0
 
-    new-instance v13, La68;
+    check-cast p0, Lura;
 
-    iget-object v2, v0, Lq58;->e:Lq44;
+    new-instance v3, Lo6g;
 
-    iget-object v4, v2, Lq44;->d:Ljava/lang/Object;
+    invoke-direct {v3, v0, v2}, Lo6g;-><init>(Lone/me/sdk/arch/Widget;I)V
 
-    check-cast v4, Ljava/util/UUID;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    if-eqz v4, :cond_2
+    sget-object v4, Lura;->h:[Ljava/lang/String;
 
-    invoke-virtual {v2}, Lq44;->a()Lw58;
+    sget v7, Lczb;->permissions_audio_for_video_request:I
 
-    move-result-object v1
+    sget v6, Leea;->a:I
+
+    sget v8, Leea;->g:I
+
+    invoke-static {v3, v4}, Lura;->i(Lo6g;[Ljava/lang/String;)Z
+
+    move-result p1
+
+    const/16 v5, 0xab
+
+    if-eqz p1, :cond_2
+
+    invoke-virtual/range {v3 .. v8}, Lo6g;->c([Ljava/lang/String;IIII)V
+
+    goto :goto_0
 
     :cond_2
-    move-object v5, v1
+    invoke-virtual {p0, v3, v4, v5}, Lura;->f(Lo6g;[Ljava/lang/String;I)V
 
-    iget-object v7, v0, Lq58;->f:Ljava/util/List;
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
 
-    iget-object v8, v0, Lq58;->g:Ljava/lang/String;
-
-    iget-object v9, v0, Lq58;->h:Lws6;
-
-    iget-object v10, v0, Lq58;->j:Ljava/lang/Object;
-
-    iget-object v4, v0, Lq58;->c:Ljava/lang/String;
-
-    iget-object v6, v0, Lq58;->i:Lp58;
-
-    iget-wide v11, v0, Lq58;->k:J
-
-    move-object v2, v13
-
-    invoke-direct/range {v2 .. v12}, La68;-><init>(Landroid/net/Uri;Ljava/lang/String;Lw58;Lp58;Ljava/util/List;Ljava/lang/String;Lws6;Ljava/lang/Object;J)V
-
-    move-object/from16 v17, v13
-
-    goto :goto_2
+    return-object p0
 
     :cond_3
-    move-object/from16 v17, v1
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
 
-    :goto_2
-    new-instance v1, Ll68;
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
 
-    iget-object v2, v0, Lq58;->a:Ljava/lang/String;
-
-    if-eqz v2, :cond_4
-
-    :goto_3
-    move-object v15, v2
-
-    goto :goto_4
-
-    :cond_4
-    const-string v2, ""
-
-    goto :goto_3
-
-    :goto_4
-    iget-object v2, v0, Lq58;->d:Lr58;
-
-    invoke-virtual {v2}, Lr58;->c()Lv58;
-
-    move-result-object v16
-
-    iget-object v2, v0, Lq58;->m:Lx58;
-
-    invoke-virtual {v2}, Lx58;->a()Lz58;
-
-    move-result-object v18
-
-    iget-object v2, v0, Lq58;->l:Lz78;
-
-    if-eqz v2, :cond_5
-
-    :goto_5
-    move-object/from16 v19, v2
-
-    goto :goto_6
-
-    :cond_5
-    sget-object v2, Lz78;->J:Lz78;
-
-    goto :goto_5
-
-    :goto_6
-    iget-object v0, v0, Lq58;->n:Ld68;
-
-    move-object v14, v1
-
-    move-object/from16 v20, v0
-
-    invoke-direct/range {v14 .. v20}, Ll68;-><init>(Ljava/lang/String;Lv58;La68;Lz58;Lz78;Ld68;)V
-
-    return-object v1
-.end method
-
-.method public final b(Lt58;)V
-    .locals 0
-
-    invoke-virtual {p1}, Lt58;->a()Lr58;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lq58;->d:Lr58;
-
-    return-void
+    throw p0
 .end method

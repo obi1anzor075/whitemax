@@ -1,5 +1,5 @@
 .class public abstract Landroidx/lifecycle/AndroidViewModel;
-.super Luaf;
+.super Lkof;
 .source "SourceFile"
 
 
@@ -10,7 +10,7 @@
     }
     d2 = {
         "Landroidx/lifecycle/AndroidViewModel;",
-        "Luaf;",
+        "Lkof;",
         "lifecycle-viewmodel_release"
     }
     k = 0x1
@@ -19,6 +19,7 @@
         0x8,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -30,7 +31,7 @@
 .method public constructor <init>(Landroid/app/Application;)V
     .locals 0
 
-    invoke-direct {p0}, Luaf;-><init>()V
+    invoke-direct {p0}, Lkof;-><init>()V
 
     iput-object p1, p0, Landroidx/lifecycle/AndroidViewModel;->b:Landroid/app/Application;
 

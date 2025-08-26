@@ -4,124 +4,82 @@
 
 
 # static fields
-.field public static final a:I
+.field public static final a:J
 
-.field public static final b:I
+.field public static final b:J
 
-.field public static final c:I
+.field public static final c:J
 
-.field public static final d:I
+.field public static final d:J
 
-.field public static final e:I
+.field public static final e:J
 
-.field public static final f:I
+.field public static final f:J
 
-.field public static final g:I
+.field public static final g:J
 
-.field public static final h:I
+.field public static final h:J
 
-.field public static final i:I
-
-.field public static final j:I
-
-.field public static final k:I
-
-.field public static final l:I
-
-.field public static final m:I
-
-.field public static final n:I
-
-.field public static final o:I
-
-.field public static final p:I
-
-.field public static final q:I
-
-.field public static final r:I
-
-.field public static final s:I
+.field public static final i:J
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
-    sget v0, Loqb;->oneme_startconversation_chat_titleicon_avatars_cancel_action:I
+    sget v0, Liub;->profile_edit_admin_move_rights:I
 
-    sput v0, Lkca;->a:I
+    int-to-long v0, v0
 
-    sget v0, Loqb;->oneme_startconversation_chat_titleicon_avatars_load_from_gallery_action:I
+    sput-wide v0, Lkca;->a:J
 
-    sput v0, Lkca;->b:I
+    sget v0, Liub;->profile_edit_admin_permissions_change_chat_info:I
 
-    sget v0, Loqb;->oneme_startconversation_chat_titleicon_avatars_take_photo_action:I
+    int-to-long v0, v0
 
-    sput v0, Lkca;->c:I
+    sput-wide v0, Lkca;->b:J
 
-    sget v0, Loqb;->oneme_startconversation_chat_titleicon_constraint_layout:I
+    sget v0, Liub;->profile_edit_admin_permissions_control_admin:I
 
-    sput v0, Lkca;->d:I
+    int-to-long v0, v0
 
-    sget v0, Loqb;->oneme_startconversation_chat_titleicon_create_button_view:I
+    sput-wide v0, Lkca;->c:J
 
-    sput v0, Lkca;->e:I
+    sget v0, Liub;->profile_edit_admin_permissions_delete_messages:I
 
-    sget v0, Loqb;->oneme_startconversation_chat_titleicon_create_hint_text_view:I
+    int-to-long v0, v0
 
-    sput v0, Lkca;->f:I
+    sput-wide v0, Lkca;->d:J
 
-    sget v0, Loqb;->oneme_startconversation_chat_titleicon_description_view:I
+    sget v0, Liub;->profile_edit_admin_permissions_edit_chat_link:I
 
-    sput v0, Lkca;->g:I
+    int-to-long v0, v0
 
-    sget v0, Loqb;->oneme_startconversation_chat_titleicon_icon_view:I
+    sput-wide v0, Lkca;->e:J
 
-    sput v0, Lkca;->h:I
+    sget v0, Liub;->profile_edit_admin_permissions_edit_chat_members:I
 
-    sget v0, Loqb;->oneme_startconversation_chat_titleicon_title_view:I
+    int-to-long v0, v0
 
-    sput v0, Lkca;->i:I
+    sput-wide v0, Lkca;->f:J
 
-    sget v0, Loqb;->oneme_startconversation_chat_titleicon_toolbar:I
+    sget v0, Liub;->profile_edit_admin_permissions_edit_messages:I
 
-    sput v0, Lkca;->j:I
+    int-to-long v0, v0
 
-    sget v0, Loqb;->oneme_startconversation_chat_toolbar:I
+    sput-wide v0, Lkca;->g:J
 
-    sput v0, Lkca;->k:I
+    sget v0, Liub;->profile_edit_admin_permissions_pin_messages:I
 
-    sget v0, Loqb;->oneme_startconversation_confirm_add_subscribers_button:I
+    int-to-long v0, v0
 
-    sput v0, Lkca;->l:I
+    sput-wide v0, Lkca;->h:J
 
-    sget v0, Loqb;->oneme_startconversation_container:I
+    sget v0, Liub;->profile_edit_admin_permissions_send_messages:I
 
-    sput v0, Lkca;->m:I
+    int-to-long v0, v0
 
-    sget v0, Loqb;->oneme_startconversation_create_button_view_type:I
-
-    sput v0, Lkca;->n:I
-
-    sget v0, Loqb;->oneme_startconversation_recyclerview:I
-
-    sput v0, Lkca;->o:I
-
-    sget v0, Loqb;->oneme_startconversation_select_channel_subscribers_toolbar:I
-
-    sput v0, Lkca;->p:I
-
-    sget v0, Loqb;->oneme_startconversation_toolbar:I
-
-    sput v0, Lkca;->q:I
-
-    sget v0, Loqb;->oneme_startconversations_create_channel:I
-
-    sput v0, Lkca;->r:I
-
-    sget v0, Loqb;->oneme_startconversations_create_chat:I
-
-    sput v0, Lkca;->s:I
+    sput-wide v0, Lkca;->i:J
 
     return-void
 .end method

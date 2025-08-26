@@ -1,26 +1,47 @@
-.class public interface abstract Lpf4;
+.class public final synthetic Lpf4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lm4b;
+
+
+# instance fields
+.field public final synthetic a:J
+
+
+# direct methods
+.method public synthetic constructor <init>(J)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-wide p1, p0, Lpf4;->a:J
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public a(Lz14;Ljava/lang/Long;)V
-    .locals 0
+.method public final apply(Ljava/lang/Object;)Z
+    .locals 2
 
-    return-void
-.end method
+    check-cast p1, Lqf4;
 
-.method public b()V
-    .locals 0
+    iget-wide v0, p1, Lqf4;->c:J
 
-    return-void
-.end method
+    iget-wide p0, p0, Lpf4;->a:J
 
-.method public abstract c()Lzqd;
-.end method
+    cmp-long p0, v0, p0
 
-.method public d(Lz14;)V
-    .locals 0
+    if-gtz p0, :cond_0
 
-    return-void
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
 .end method

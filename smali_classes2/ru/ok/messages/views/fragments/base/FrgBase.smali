@@ -3,42 +3,42 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lthe;
-.implements Lq77;
+.implements Lgqe;
+.implements Lic7;
 
 
 # instance fields
-.field public A1:Lru/ok/messages/views/dialogs/ProgressDialog;
+.field public final h1:Ljava/lang/String;
 
-.field public B1:Lajb;
+.field public i1:Lck4;
 
-.field public C1:Ln83;
+.field public j1:Z
 
-.field public D1:Ljava/util/ArrayList;
+.field public k1:Z
 
-.field public final E1:Lgrd;
+.field public l1:Lt4b;
 
-.field public final p1:Ljava/lang/String;
+.field public m1:Lowc;
 
-.field public q1:Lzg4;
+.field public n1:Lvke;
 
-.field public r1:Z
+.field public final o1:Ljava/util/HashSet;
 
-.field public s1:Z
+.field public p1:Ly7;
 
-.field public t1:Lv2b;
+.field public q1:Lwra;
 
-.field public u1:Lnqc;
+.field public r1:J
 
-.field public v1:Lwce;
+.field public s1:Lru/ok/messages/views/dialogs/ProgressDialog;
 
-.field public final w1:Ljava/util/HashSet;
+.field public t1:Lcnb;
 
-.field public x1:Lg8;
+.field public u1:Lva3;
 
-.field public y1:Lsna;
+.field public v1:Ljava/util/ArrayList;
 
-.field public z1:J
+.field public final w1:Lazd;
 
 
 # direct methods
@@ -55,66 +55,85 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->p1:Ljava/lang/String;
+    iput-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->h1:Ljava/lang/String;
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->r1:Z
+    iput-boolean v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->j1:Z
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->s1:Z
+    iput-boolean v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->k1:Z
 
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    iput-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->w1:Ljava/util/HashSet;
+    iput-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->o1:Ljava/util/HashSet;
 
     const-wide/16 v0, 0x0
 
-    iput-wide v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->z1:J
+    iput-wide v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->r1:J
 
     const/4 v0, 0x0
 
-    invoke-static {v0}, Lhrd;->a(Ljava/lang/Object;)Lgrd;
+    invoke-static {v0}, Lbzd;->a(Ljava/lang/Object;)Lazd;
 
     move-result-object v0
 
-    iput-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->E1:Lgrd;
+    iput-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->w1:Lazd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public A0()V
-    .locals 2
+.method public final A0()V
+    .locals 1
 
-    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->p1:Ljava/lang/String;
-
-    const-string v1, "lifecycle: onDestroyView"
-
-    invoke-static {v0, v1}, Ludd;->n(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->C1:Ln83;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ln83;->d()V
-
-    :cond_0
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroidx/fragment/app/a;->W0:Z
+    iput-boolean v0, p0, Landroidx/fragment/app/a;->O0:Z
+
+    iget-object p0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->h1:Ljava/lang/String;
+
+    const-string v0, "lifecycle: onStart"
+
+    invoke-static {p0, v0}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public final B0(ILandroid/view/KeyEvent;)Z
+.method public final B0()V
     .locals 1
 
-    iget-object p0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->D1:Ljava/util/ArrayList;
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroidx/fragment/app/a;->O0:Z
+
+    iget-object p0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->h1:Ljava/lang/String;
+
+    const-string v0, "lifecycle: onStop"
+
+    invoke-static {p0, v0}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public final D0(Landroid/os/Bundle;)V
+    .locals 0
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Landroidx/fragment/app/a;->O0:Z
+
+    return-void
+.end method
+
+.method public final E(ILandroid/view/KeyEvent;)Z
+    .locals 1
+
+    iget-object p0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->v1:Ljava/util/ArrayList;
 
     invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -131,9 +150,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lq77;
+    check-cast v0, Lic7;
 
-    invoke-interface {v0, p1, p2}, Lq77;->B0(ILandroid/view/KeyEvent;)Z
+    invoke-interface {v0, p1, p2}, Lic7;->E(ILandroid/view/KeyEvent;)Z
 
     move-result v0
 
@@ -149,386 +168,22 @@
     return p0
 .end method
 
-.method public final C0()V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Landroidx/fragment/app/a;->W0:Z
-
-    iget-object p0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->p1:Ljava/lang/String;
-
-    const-string v0, "lifecycle: onDetach"
-
-    invoke-static {p0, v0}, Ludd;->n(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final E0(Z)V
-    .locals 3
-
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    filled-new-array {v0}, [Ljava/lang/Object;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->p1:Ljava/lang/String;
-
-    const-string v2, "onHiddenChanged %b"
-
-    invoke-static {v1, v2, v0}, Ludd;->p(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget-object p0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->E1:Lgrd;
-
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p1
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0, p1}, Lgrd;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public I0()V
-    .locals 4
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Landroidx/fragment/app/a;->W0:Z
-
-    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->p1:Ljava/lang/String;
-
-    const-string v1, "lifecycle: onPause"
-
-    invoke-static {v0, v1}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->s1:Z
-
-    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->g1()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v0
-
-    iget-wide v2, p0, Lru/ok/messages/views/fragments/base/FrgBase;->z1:J
-
-    sub-long/2addr v0, v2
-
-    iget-object v2, p0, Lru/ok/messages/views/fragments/base/FrgBase;->t1:Lv2b;
-
-    iget-object v2, v2, Lv2b;->b:Ljava/lang/Object;
-
-    check-cast v2, Lk93;
-
-    check-cast v2, Lo2a;
-
-    invoke-virtual {v2}, Lo2a;->b()Lbd;
-
-    move-result-object v2
-
-    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->g1()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v2, v0, v1, p0}, Lbd;->l(JLjava/lang/String;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final K0(I[Ljava/lang/String;[I)V
-    .locals 2
-
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->e0()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0, p2, p3}, Lurd;->A(Landroid/content/Context;[Ljava/lang/String;[I)V
-
-    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->l1()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->B1:Lajb;
-
-    if-eqz v0, :cond_0
-
-    new-instance v1, Lsna;
-
-    invoke-direct {v1, p1, p2, p3}, Lsna;-><init>(I[Ljava/lang/String;[I)V
-
-    invoke-virtual {v0, v1}, Lajb;->c(Ljava/lang/Object;)V
-
-    :cond_0
-    invoke-virtual {p0, p1, p2, p3}, Lru/ok/messages/views/fragments/base/FrgBase;->p1(I[Ljava/lang/String;[I)V
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v0, Lsna;
-
-    invoke-direct {v0, p1, p2, p3}, Lsna;-><init>(I[Ljava/lang/String;[I)V
-
-    iput-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->y1:Lsna;
-
-    :goto_0
-    return-void
-.end method
-
-.method public L0()V
-    .locals 5
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Landroidx/fragment/app/a;->W0:Z
-
-    iget-object v1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->p1:Ljava/lang/String;
-
-    const-string v2, "lifecycle: onResume"
-
-    invoke-static {v1, v2}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "unhandled events: "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v3, p0, Lru/ok/messages/views/fragments/base/FrgBase;->w1:Ljava/util/HashSet;
-
-    invoke-virtual {v3}, Ljava/util/HashSet;->size()I
-
-    move-result v4
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
-
-    iput-boolean v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->s1:Z
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->z1:J
-
-    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->t1:Lv2b;
-
-    iget-object v0, v0, Lv2b;->b:Ljava/lang/Object;
-
-    check-cast v0, Lk93;
-
-    check-cast v0, Lo2a;
-
-    invoke-virtual {v0}, Lo2a;->p()Loae;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-static {}, Loae;->b()Lkae;
-
-    move-result-object v0
-
-    check-cast v0, Lnqc;
-
-    invoke-virtual {v0}, Lnqc;->d()Lzy9;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lzy9;->d()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->t1:Lv2b;
-
-    iget-object v0, v0, Lv2b;->b:Ljava/lang/Object;
-
-    check-cast v0, Lk93;
-
-    check-cast v0, Lo2a;
-
-    invoke-virtual {v0}, Lo2a;->r()Lzs7;
-
-    move-result-object v0
-
-    sget v1, Lwx3;->h:I
-
-    invoke-virtual {v3}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lkh0;
-
-    invoke-virtual {v0, v2}, Lzs7;->c(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v3}, Ljava/util/HashSet;->clear()V
-
-    :cond_1
-    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->y1:Lsna;
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_3
-
-    iget-object v2, p0, Lru/ok/messages/views/fragments/base/FrgBase;->B1:Lajb;
-
-    if-eqz v2, :cond_2
-
-    invoke-virtual {v2, v0}, Lajb;->c(Ljava/lang/Object;)V
-
-    :cond_2
-    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->y1:Lsna;
-
-    iget v2, v0, Lsna;->a:I
-
-    iget-object v3, v0, Lsna;->b:[Ljava/lang/String;
-
-    iget-object v0, v0, Lsna;->c:[I
-
-    invoke-virtual {p0, v2, v3, v0}, Lru/ok/messages/views/fragments/base/FrgBase;->p1(I[Ljava/lang/String;[I)V
-
-    iput-object v1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->y1:Lsna;
-
-    :cond_3
-    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->x1:Lg8;
-
-    if-eqz v0, :cond_4
-
-    iget v2, v0, Lg8;->b:I
-
-    iget-object v3, v0, Lg8;->c:Landroid/content/Intent;
-
-    iget v0, v0, Lg8;->a:I
-
-    invoke-virtual {p0, v0, v2, v3}, Lru/ok/messages/views/fragments/base/FrgBase;->m1(IILandroid/content/Intent;)V
-
-    iput-object v1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->x1:Lg8;
-
-    :cond_4
-    return-void
-.end method
-
-.method public M0(Landroid/os/Bundle;)V
-    .locals 2
-
-    iget-object p0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->w1:Ljava/util/HashSet;
-
-    sget v0, Lwx3;->h:I
-
-    const-string v0, "wx3"
-
-    const-string v1, "onSaveInstanceState"
-
-    invoke-static {v0, v1}, Ludd;->n(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0, p0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    const-string p0, "ru.ok.tamtam.extra.EXTRA_UNHANDLED_EVENTS"
-
-    invoke-virtual {p1, p0, v0}, Landroid/os/Bundle;->putSerializable(Ljava/lang/String;Ljava/io/Serializable;)V
-
-    return-void
-.end method
-
-.method public final N0()V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Landroidx/fragment/app/a;->W0:Z
-
-    iget-object p0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->p1:Ljava/lang/String;
-
-    const-string v0, "lifecycle: onStart"
-
-    invoke-static {p0, v0}, Ludd;->n(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final O0()V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Landroidx/fragment/app/a;->W0:Z
-
-    iget-object p0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->p1:Ljava/lang/String;
-
-    const-string v0, "lifecycle: onStop"
-
-    invoke-static {p0, v0}, Ludd;->n(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final Q0(Landroid/os/Bundle;)V
+.method public final S0()V
     .locals 0
 
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Landroidx/fragment/app/a;->W0:Z
-
-    return-void
-.end method
-
-.method public final f1()V
-    .locals 0
-
-    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->h1()Lr5;
+    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->U0()Lp5;
 
     move-result-object p0
 
     if-eqz p0, :cond_0
 
-    invoke-virtual {p0}, Lr5;->finish()V
+    invoke-virtual {p0}, Lp5;->finish()V
 
     :cond_0
     return-void
 .end method
 
-.method public g1()Ljava/lang/String;
+.method public T0()Ljava/lang/String;
     .locals 0
 
     const/4 p0, 0x0
@@ -536,16 +191,16 @@
     return-object p0
 .end method
 
-.method public final h1()Lr5;
+.method public final U0()Lp5;
     .locals 1
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->c0()Landroidx/fragment/app/b;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->Q()Landroidx/fragment/app/b;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->c0()Landroidx/fragment/app/b;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->Q()Landroidx/fragment/app/b;
 
     move-result-object v0
 
@@ -555,11 +210,11 @@
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->c0()Landroidx/fragment/app/b;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->Q()Landroidx/fragment/app/b;
 
     move-result-object p0
 
-    check-cast p0, Lr5;
+    check-cast p0, Lp5;
 
     return-object p0
 
@@ -569,26 +224,26 @@
     return-object p0
 .end method
 
-.method public final i1()Lmif;
+.method public final V0()Llx2;
     .locals 1
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->c0()Landroidx/fragment/app/b;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->Q()Landroidx/fragment/app/b;
 
     move-result-object p0
 
-    instance-of v0, p0, Lyle;
+    instance-of v0, p0, Loue;
 
     if-eqz v0, :cond_0
 
-    check-cast p0, Lyle;
+    check-cast p0, Loue;
 
-    invoke-interface {p0}, Lyle;->a()Lmif;
+    invoke-interface {p0}, Loue;->a()Llx2;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    invoke-interface {p0}, Lyle;->a()Lmif;
+    invoke-interface {p0}, Loue;->a()Llx2;
 
     move-result-object p0
 
@@ -600,16 +255,16 @@
     return-object p0
 .end method
 
-.method public j1()V
+.method public W0()V
     .locals 0
 
     return-void
 .end method
 
-.method public final k1()V
+.method public final X0()V
     .locals 4
 
-    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->A1:Lru/ok/messages/views/dialogs/ProgressDialog;
+    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->s1:Lru/ok/messages/views/dialogs/ProgressDialog;
 
     const/4 v1, 0x0
 
@@ -618,7 +273,7 @@
     if-eqz v0, :cond_0
 
     :try_start_0
-    invoke-virtual {v0, v2, v2}, Landroidx/fragment/app/DialogFragment;->g1(ZZ)V
+    invoke-virtual {v0, v2, v2}, Landroidx/fragment/app/DialogFragment;->T0(ZZ)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -627,19 +282,19 @@
     :catch_0
     move-exception v0
 
-    iget-object v2, p0, Lru/ok/messages/views/fragments/base/FrgBase;->p1:Ljava/lang/String;
+    iget-object v2, p0, Lru/ok/messages/views/fragments/base/FrgBase;->h1:Ljava/lang/String;
 
     const-string v3, "Can\'t hideProgressDialog"
 
-    invoke-static {v2, v3, v0}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v2, v3, v0}, Lg47;->r(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :goto_0
-    iput-object v1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->A1:Lru/ok/messages/views/dialogs/ProgressDialog;
+    iput-object v1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->s1:Lru/ok/messages/views/dialogs/ProgressDialog;
 
-    goto :goto_1
+    return-void
 
     :cond_0
-    iget-object p0, p0, Landroidx/fragment/app/a;->J0:Landroidx/fragment/app/c;
+    iget-object p0, p0, Landroidx/fragment/app/a;->B0:Landroidx/fragment/app/c;
 
     if-eqz p0, :cond_2
 
@@ -660,42 +315,41 @@
     :cond_1
     if-eqz v1, :cond_2
 
-    iget-boolean p0, v1, Lru/ok/messages/views/dialogs/FrgDlgBase;->H1:Z
+    iget-boolean p0, v1, Lru/ok/messages/views/dialogs/FrgDlgBase;->z1:Z
 
     if-eqz p0, :cond_2
 
-    invoke-virtual {v1, v2, v2}, Landroidx/fragment/app/DialogFragment;->g1(ZZ)V
+    invoke-virtual {v1, v2, v2}, Landroidx/fragment/app/DialogFragment;->T0(ZZ)V
 
     :cond_2
-    :goto_1
     return-void
 .end method
 
-.method public l1()Z
+.method public Y0()Z
     .locals 0
 
-    iget-boolean p0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->s1:Z
+    iget-boolean p0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->k1:Z
 
     return p0
 .end method
 
-.method public m1(IILandroid/content/Intent;)V
+.method public Z0(IILandroid/content/Intent;)V
     .locals 0
 
     return-void
 .end method
 
-.method public n1(Lr5;)V
+.method public a1(Lp5;)V
     .locals 0
 
     const/4 p1, 0x0
 
-    iput-boolean p1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->r1:Z
+    iput-boolean p1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->j1:Z
 
     return-void
 .end method
 
-.method public o1()Z
+.method public b1()Z
     .locals 0
 
     const/4 p0, 0x0
@@ -703,16 +357,16 @@
     return p0
 .end method
 
-.method public p1(I[Ljava/lang/String;[I)V
+.method public c1(I[Ljava/lang/String;[I)V
     .locals 0
 
     return-void
 .end method
 
-.method public final q1(IZ)Lru/ok/messages/views/dialogs/ProgressDialog;
+.method public final d1(IZ)Lru/ok/messages/views/dialogs/ProgressDialog;
     .locals 5
 
-    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->l1()Z
+    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->Y0()Z
 
     move-result v0
 
@@ -720,13 +374,13 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->k1()V
+    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->X0()V
 
-    invoke-virtual {p0, p1}, Landroidx/fragment/app/a;->i0(I)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Landroidx/fragment/app/a;->W(I)Ljava/lang/String;
 
     move-result-object p1
 
-    iget-object v0, p0, Landroidx/fragment/app/a;->J0:Landroidx/fragment/app/c;
+    iget-object v0, p0, Landroidx/fragment/app/a;->B0:Landroidx/fragment/app/c;
 
     new-instance v2, Lru/ok/messages/views/dialogs/ProgressDialog;
 
@@ -754,13 +408,13 @@
 
     invoke-virtual {v3, p1, p2}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
 
-    invoke-virtual {v2, v3}, Landroidx/fragment/app/a;->Y0(Landroid/os/Bundle;)V
+    invoke-virtual {v2, v3}, Landroidx/fragment/app/a;->L0(Landroid/os/Bundle;)V
 
     const-string p1, "ru.ok.messages.views.dialogs.ProgressDialog"
 
-    invoke-virtual {v2, v0, p1}, Landroidx/fragment/app/DialogFragment;->l1(Landroidx/fragment/app/c;Ljava/lang/String;)V
+    invoke-virtual {v2, v0, p1}, Landroidx/fragment/app/DialogFragment;->Y0(Landroidx/fragment/app/c;Ljava/lang/String;)V
 
-    iput-object v2, p0, Lru/ok/messages/views/fragments/base/FrgBase;->A1:Lru/ok/messages/views/dialogs/ProgressDialog;
+    iput-object v2, p0, Lru/ok/messages/views/fragments/base/FrgBase;->s1:Lru/ok/messages/views/dialogs/ProgressDialog;
 
     return-object v2
 
@@ -768,76 +422,67 @@
     return-object v1
 .end method
 
-.method public final r1()Lru/ok/messages/views/dialogs/ProgressDialog;
+.method public final e1()Lru/ok/messages/views/dialogs/ProgressDialog;
     .locals 2
 
     const/4 v0, 0x1
 
-    sget v1, Lcic;->I:I
+    sget v1, Lnnc;->M:I
 
-    invoke-virtual {p0, v1, v0}, Lru/ok/messages/views/fragments/base/FrgBase;->q1(IZ)Lru/ok/messages/views/dialogs/ProgressDialog;
+    invoke-virtual {p0, v1, v0}, Lru/ok/messages/views/fragments/base/FrgBase;->d1(IZ)Lru/ok/messages/views/dialogs/ProgressDialog;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public final t()Lwce;
-    .locals 0
-
-    iget-object p0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->v1:Lwce;
-
-    return-object p0
-.end method
-
-.method public final t0(IILandroid/content/Intent;)V
+.method public final h0(IILandroid/content/Intent;)V
     .locals 1
 
-    invoke-super {p0, p1, p2, p3}, Landroidx/fragment/app/a;->t0(IILandroid/content/Intent;)V
+    invoke-super {p0, p1, p2, p3}, Landroidx/fragment/app/a;->h0(IILandroid/content/Intent;)V
 
-    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->l1()Z
+    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->Y0()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0, p1, p2, p3}, Lru/ok/messages/views/fragments/base/FrgBase;->m1(IILandroid/content/Intent;)V
+    invoke-virtual {p0, p1, p2, p3}, Lru/ok/messages/views/fragments/base/FrgBase;->Z0(IILandroid/content/Intent;)V
 
-    goto :goto_0
+    return-void
 
     :cond_0
-    new-instance v0, Lg8;
+    new-instance v0, Ly7;
 
-    invoke-direct {v0, p1, p2, p3}, Lg8;-><init>(IILandroid/content/Intent;)V
+    invoke-direct {v0, p1, p2, p3}, Ly7;-><init>(IILandroid/content/Intent;)V
 
-    iput-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->x1:Lg8;
+    iput-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->p1:Ly7;
 
-    :goto_0
     return-void
 .end method
 
-.method public final u0(Landroid/app/Activity;)V
+.method public final i0(Landroid/app/Activity;)V
     .locals 3
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroidx/fragment/app/a;->W0:Z
+    iput-boolean v0, p0, Landroidx/fragment/app/a;->O0:Z
 
-    iget-object v1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->p1:Ljava/lang/String;
+    iget-object v1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->h1:Ljava/lang/String;
 
     const-string v2, "lifecycle: onAttach"
 
-    invoke-static {v1, v2}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
 
-    instance-of v1, p1, Lr5;
+    instance-of v1, p1, Lp5;
 
     if-eqz v1, :cond_0
 
-    iput-boolean v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->r1:Z
+    iput-boolean v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->j1:Z
 
-    check-cast p1, Lr5;
+    check-cast p1, Lp5;
 
-    invoke-virtual {p0, p1}, Lru/ok/messages/views/fragments/base/FrgBase;->n1(Lr5;)V
+    invoke-virtual {p0, p1}, Lru/ok/messages/views/fragments/base/FrgBase;->a1(Lp5;)V
 
     return-void
 
@@ -851,83 +496,83 @@
     throw p0
 .end method
 
-.method public w0(Landroid/os/Bundle;)V
+.method public k0(Landroid/os/Bundle;)V
     .locals 2
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->c0()Landroidx/fragment/app/b;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->Q()Landroidx/fragment/app/b;
 
     move-result-object v0
 
-    check-cast v0, Lr5;
+    check-cast v0, Lp5;
 
-    iget-object v1, v0, Lr5;->O0:Lv2b;
+    iget-object v1, v0, Lp5;->G0:Lt4b;
 
-    iput-object v1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->t1:Lv2b;
+    iput-object v1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->l1:Lt4b;
 
-    iget-object v1, v1, Lv2b;->b:Ljava/lang/Object;
+    iget-object v1, v1, Lt4b;->b:Ljava/lang/Object;
 
-    check-cast v1, Lk93;
+    check-cast v1, Lsb3;
 
-    check-cast v1, Lo2a;
+    check-cast v1, Lq6a;
 
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    sget-object v1, Lnqc;->a:Lnqc;
+    sget-object v1, Lowc;->a:Lowc;
 
-    iput-object v1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->u1:Lnqc;
+    iput-object v1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->m1:Lowc;
 
-    invoke-virtual {v0}, Lr5;->t()Lwce;
+    invoke-virtual {v0}, Lp5;->p()Lvke;
 
     move-result-object v0
 
-    iput-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->v1:Lwce;
+    iput-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->n1:Lvke;
 
-    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->t1:Lv2b;
+    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->l1:Lt4b;
 
-    iget-object v0, v0, Lv2b;->c:Ljava/lang/Object;
+    iget-object v0, v0, Lt4b;->c:Ljava/lang/Object;
 
-    check-cast v0, Lzg4;
+    check-cast v0, Lck4;
 
-    iput-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->q1:Lzg4;
+    iput-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->i1:Lck4;
 
-    invoke-super {p0, p1}, Landroidx/fragment/app/a;->w0(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Landroidx/fragment/app/a;->k0(Landroid/os/Bundle;)V
 
-    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->p1:Ljava/lang/String;
+    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->h1:Ljava/lang/String;
 
     const-string v1, "lifecycle: onCreate"
 
-    invoke-static {v0, v1}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-boolean v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->r1:Z
+    iget-boolean v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->j1:Z
 
     if-nez v0, :cond_1
 
     if-eqz p1, :cond_0
 
-    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->w1:Ljava/util/HashSet;
+    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->o1:Ljava/util/HashSet;
 
-    invoke-static {p1, v0}, Lwx3;->z(Landroid/os/Bundle;Ljava/util/Set;)V
+    invoke-static {p1, v0}, Lsgg;->Q(Landroid/os/Bundle;Ljava/util/HashSet;)V
 
     :cond_0
-    iget-object p1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->t1:Lv2b;
+    iget-object p1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->l1:Lt4b;
 
-    iget-object p1, p1, Lv2b;->b:Ljava/lang/Object;
+    iget-object p1, p1, Lt4b;->b:Ljava/lang/Object;
 
-    check-cast p1, Lk93;
+    check-cast p1, Lsb3;
 
-    check-cast p1, Lo2a;
+    check-cast p1, Lq6a;
 
-    invoke-virtual {p1}, Lo2a;->r()Lzs7;
+    invoke-virtual {p1}, Lq6a;->r()Lyx7;
 
     move-result-object p1
 
-    invoke-virtual {p1, p0}, Lzs7;->d(Ljava/lang/Object;)V
+    invoke-virtual {p1, p0}, Lyx7;->d(Ljava/lang/Object;)V
 
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object p1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->D1:Ljava/util/ArrayList;
+    iput-object p1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->v1:Ljava/util/ArrayList;
 
     return-void
 
@@ -941,36 +586,388 @@
     throw p0
 .end method
 
-.method public z0()V
+.method public n0()V
     .locals 2
 
-    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->p1:Ljava/lang/String;
+    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->h1:Ljava/lang/String;
 
     const-string v1, "lifecycle: onDestroy"
 
-    invoke-static {v0, v1}, Ludd;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->t1:Lv2b;
+    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->l1:Lt4b;
 
-    iget-object v0, v0, Lv2b;->b:Ljava/lang/Object;
+    iget-object v0, v0, Lt4b;->b:Ljava/lang/Object;
 
-    check-cast v0, Lk93;
+    check-cast v0, Lsb3;
 
-    check-cast v0, Lo2a;
+    check-cast v0, Lq6a;
 
-    invoke-virtual {v0}, Lo2a;->r()Lzs7;
+    invoke-virtual {v0}, Lq6a;->r()Lyx7;
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Lzs7;->f(Ljava/lang/Object;)V
+    invoke-virtual {v0, p0}, Lyx7;->f(Ljava/lang/Object;)V
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroidx/fragment/app/a;->W0:Z
+    iput-boolean v0, p0, Landroidx/fragment/app/a;->O0:Z
 
-    iget-object p0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->D1:Ljava/util/ArrayList;
+    iget-object p0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->v1:Ljava/util/ArrayList;
 
     invoke-virtual {p0}, Ljava/util/ArrayList;->clear()V
+
+    return-void
+.end method
+
+.method public o0()V
+    .locals 2
+
+    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->h1:Ljava/lang/String;
+
+    const-string v1, "lifecycle: onDestroyView"
+
+    invoke-static {v0, v1}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->u1:Lva3;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lva3;->d()V
+
+    :cond_0
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroidx/fragment/app/a;->O0:Z
+
+    return-void
+.end method
+
+.method public final p()Lvke;
+    .locals 0
+
+    iget-object p0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->n1:Lvke;
+
+    return-object p0
+.end method
+
+.method public final p0()V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroidx/fragment/app/a;->O0:Z
+
+    iget-object p0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->h1:Ljava/lang/String;
+
+    const-string v0, "lifecycle: onDetach"
+
+    invoke-static {p0, v0}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public final r0(Z)V
+    .locals 3
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    filled-new-array {v0}, [Ljava/lang/Object;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->h1:Ljava/lang/String;
+
+    const-string v2, "onHiddenChanged %b"
+
+    invoke-static {v1, v2, v0}, Lg47;->o(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    iget-object p0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->w1:Lazd;
+
+    invoke-virtual {p0, v0, p1}, Lazd;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public v0()V
+    .locals 4
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroidx/fragment/app/a;->O0:Z
+
+    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->h1:Ljava/lang/String;
+
+    const-string v1, "lifecycle: onPause"
+
+    invoke-static {v0, v1}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->k1:Z
+
+    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->T0()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v0
+
+    iget-wide v2, p0, Lru/ok/messages/views/fragments/base/FrgBase;->r1:J
+
+    sub-long/2addr v0, v2
+
+    iget-object v2, p0, Lru/ok/messages/views/fragments/base/FrgBase;->l1:Lt4b;
+
+    iget-object v2, v2, Lt4b;->b:Ljava/lang/Object;
+
+    check-cast v2, Lsb3;
+
+    check-cast v2, Lq6a;
+
+    invoke-virtual {v2}, Lq6a;->b()Luc;
+
+    move-result-object v2
+
+    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->T0()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v2, v0, v1, p0}, Luc;->l(JLjava/lang/String;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final x0(I[Ljava/lang/String;[I)V
+    .locals 2
+
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->S()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0, p2, p3}, Lxja;->H(Landroid/content/Context;[Ljava/lang/String;[I)V
+
+    invoke-virtual {p0}, Lru/ok/messages/views/fragments/base/FrgBase;->Y0()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->t1:Lcnb;
+
+    if-eqz v0, :cond_0
+
+    new-instance v1, Lwra;
+
+    invoke-direct {v1, p1, p2, p3}, Lwra;-><init>(I[Ljava/lang/String;[I)V
+
+    invoke-virtual {v0, v1}, Lcnb;->h(Ljava/lang/Object;)V
+
+    :cond_0
+    invoke-virtual {p0, p1, p2, p3}, Lru/ok/messages/views/fragments/base/FrgBase;->c1(I[Ljava/lang/String;[I)V
+
+    return-void
+
+    :cond_1
+    new-instance v0, Lwra;
+
+    invoke-direct {v0, p1, p2, p3}, Lwra;-><init>(I[Ljava/lang/String;[I)V
+
+    iput-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->q1:Lwra;
+
+    return-void
+.end method
+
+.method public y0()V
+    .locals 5
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroidx/fragment/app/a;->O0:Z
+
+    const-string v1, "lifecycle: onResume"
+
+    iget-object v2, p0, Lru/ok/messages/views/fragments/base/FrgBase;->h1:Ljava/lang/String;
+
+    invoke-static {v2, v1}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v3, "unhandled events: "
+
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v3, p0, Lru/ok/messages/views/fragments/base/FrgBase;->o1:Ljava/util/HashSet;
+
+    invoke-virtual {v3}, Ljava/util/HashSet;->size()I
+
+    move-result v4
+
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v2, v1}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
+
+    iput-boolean v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->k1:Z
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->r1:J
+
+    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->l1:Lt4b;
+
+    iget-object v0, v0, Lt4b;->b:Ljava/lang/Object;
+
+    check-cast v0, Lsb3;
+
+    check-cast v0, Lq6a;
+
+    invoke-virtual {v0}, Lq6a;->p()Lqie;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {}, Lqie;->b()Lmie;
+
+    move-result-object v0
+
+    check-cast v0, Lowc;
+
+    invoke-virtual {v0}, Lowc;->d()Lw2a;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lw2a;->d()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->l1:Lt4b;
+
+    iget-object v0, v0, Lt4b;->b:Ljava/lang/Object;
+
+    check-cast v0, Lsb3;
+
+    check-cast v0, Lq6a;
+
+    invoke-virtual {v0}, Lq6a;->r()Lyx7;
+
+    move-result-object v0
+
+    sget v1, Lsgg;->e:I
+
+    invoke-virtual {v3}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lki0;
+
+    invoke-virtual {v0, v2}, Lyx7;->c(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v3}, Ljava/util/HashSet;->clear()V
+
+    :cond_1
+    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->q1:Lwra;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_3
+
+    iget-object v2, p0, Lru/ok/messages/views/fragments/base/FrgBase;->t1:Lcnb;
+
+    if-eqz v2, :cond_2
+
+    invoke-virtual {v2, v0}, Lcnb;->h(Ljava/lang/Object;)V
+
+    :cond_2
+    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->q1:Lwra;
+
+    iget v2, v0, Lwra;->a:I
+
+    iget-object v3, v0, Lwra;->b:[Ljava/lang/String;
+
+    iget-object v0, v0, Lwra;->c:[I
+
+    invoke-virtual {p0, v2, v3, v0}, Lru/ok/messages/views/fragments/base/FrgBase;->c1(I[Ljava/lang/String;[I)V
+
+    iput-object v1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->q1:Lwra;
+
+    :cond_3
+    iget-object v0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->p1:Ly7;
+
+    if-eqz v0, :cond_4
+
+    iget v2, v0, Ly7;->a:I
+
+    iget v3, v0, Ly7;->b:I
+
+    iget-object v0, v0, Ly7;->c:Landroid/content/Intent;
+
+    invoke-virtual {p0, v2, v3, v0}, Lru/ok/messages/views/fragments/base/FrgBase;->Z0(IILandroid/content/Intent;)V
+
+    iput-object v1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->p1:Ly7;
+
+    :cond_4
+    return-void
+.end method
+
+.method public z0(Landroid/os/Bundle;)V
+    .locals 2
+
+    sget v0, Lsgg;->e:I
+
+    const-string v0, "sgg"
+
+    const-string v1, "onSaveInstanceState"
+
+    invoke-static {v0, v1}, Lg47;->p(Ljava/lang/String;Ljava/lang/String;)V
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    iget-object p0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->o1:Ljava/util/HashSet;
+
+    invoke-direct {v0, p0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    const-string p0, "ru.ok.tamtam.extra.EXTRA_UNHANDLED_EVENTS"
+
+    invoke-virtual {p1, p0, v0}, Landroid/os/Bundle;->putSerializable(Ljava/lang/String;Ljava/io/Serializable;)V
 
     return-void
 .end method

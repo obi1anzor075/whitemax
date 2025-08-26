@@ -1,136 +1,208 @@
-.class public final Lmx;
+.class public final synthetic Lmx;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lshb;
+.implements Landroid/media/MediaCodec$OnFrameRenderedListener;
 
 
 # instance fields
-.field public final a:I
+.field public final synthetic a:I
+
+.field public final synthetic b:Lg88;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public synthetic constructor <init>(Lg78;Lg88;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p3, p0, Lmx;->a:I
 
-    iput p1, p0, Lmx;->a:I
+    iput-object p2, p0, Lmx;->b:Lg88;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final annotationType()Ljava/lang/Class;
+.method public final onFrameRendered(Landroid/media/MediaCodec;JJ)V
     .locals 0
 
-    const-class p0, Lshb;
+    iget p1, p0, Lmx;->a:I
 
-    return-object p0
-.end method
+    packed-switch p1, :pswitch_data_0
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+    iget-object p0, p0, Lmx;->b:Lg88;
 
-    const/4 v0, 0x1
+    iget-object p1, p0, Lg88;->b:Landroid/os/Handler;
 
-    if-ne p0, p1, :cond_0
+    sget p4, Lnaf;->a:I
 
-    return v0
+    const/16 p5, 0x1e
+
+    if-ge p4, p5, :cond_0
+
+    const/16 p0, 0x20
+
+    shr-long p4, p2, p0
+
+    long-to-int p0, p4
+
+    long-to-int p2, p2
+
+    const/4 p3, 0x0
+
+    invoke-static {p1, p3, p0, p2}, Landroid/os/Message;->obtain(Landroid/os/Handler;III)Landroid/os/Message;
+
+    move-result-object p0
+
+    invoke-virtual {p1, p0}, Landroid/os/Handler;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
+
+    goto :goto_0
 
     :cond_0
-    instance-of v1, p1, Lshb;
+    iget-object p1, p0, Lg88;->c:Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    check-cast p1, Lh88;
 
-    if-nez v1, :cond_1
+    iget-object p4, p1, Lh88;->s2:Lg88;
 
-    return v2
+    if-eq p0, p4, :cond_1
+
+    goto :goto_0
 
     :cond_1
-    check-cast p1, Lshb;
+    const-wide p4, 0x7fffffffffffffffL
 
-    check-cast p1, Lmx;
+    cmp-long p0, p2, p4
 
-    iget v1, p1, Lmx;->a:I
+    const/4 p4, 0x1
 
-    iget p0, p0, Lmx;->a:I
+    if-nez p0, :cond_2
 
-    if-ne p0, v1, :cond_2
-
-    sget-object p0, Lrhb;->a:Lrhb;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p0, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_2
+    iput-boolean p4, p1, Lu78;->E1:Z
 
     goto :goto_0
 
     :cond_2
-    move v0, v2
+    :try_start_0
+    invoke-virtual {p1, p2, p3}, Lu78;->m0(J)V
+
+    invoke-virtual {p1}, Lh88;->u0()V
+
+    iget-object p0, p1, Lu78;->G1:La64;
+
+    iget p5, p0, La64;->f:I
+
+    add-int/2addr p5, p4
+
+    iput p5, p0, La64;->f:I
+
+    invoke-virtual {p1}, Lh88;->t0()V
+
+    invoke-virtual {p1, p2, p3}, Lh88;->W(J)V
+    :try_end_0
+    .catch Lcom/google/android/exoplayer2/ExoPlaybackException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception p0
+
+    iput-object p0, p1, Lu78;->F1:Lcom/google/android/exoplayer2/ExoPlaybackException;
 
     :goto_0
-    return v0
-.end method
+    return-void
 
-.method public final hashCode()I
-    .locals 2
+    :pswitch_0
+    iget-object p0, p0, Lmx;->b:Lg88;
 
-    const v0, 0xde0d66
+    iget-object p1, p0, Lg88;->b:Landroid/os/Handler;
 
-    iget p0, p0, Lmx;->a:I
+    sget p4, Lnaf;->a:I
 
-    xor-int/2addr p0, v0
+    const/16 p5, 0x1e
 
-    sget-object v0, Lrhb;->a:Lrhb;
+    if-ge p4, p5, :cond_3
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    const/16 p0, 0x20
 
-    move-result v0
+    shr-long p4, p2, p0
 
-    const v1, 0x79ad669e
+    long-to-int p0, p4
 
-    xor-int/2addr v0, v1
+    long-to-int p2, p2
 
-    add-int/2addr p0, v0
+    const/4 p3, 0x0
 
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "@com.google.firebase.encoders.proto.Protobuf(tag="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget p0, p0, Lmx;->a:I
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p0, "intEncoding="
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-object p0, Lrhb;->a:Lrhb;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 p0, 0x29
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p1, p3, p0, p2}, Landroid/os/Message;->obtain(Landroid/os/Handler;III)Landroid/os/Message;
 
     move-result-object p0
 
-    return-object p0
+    invoke-virtual {p1, p0}, Landroid/os/Handler;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
+
+    goto :goto_1
+
+    :cond_3
+    iget-object p1, p0, Lg88;->c:Ljava/lang/Object;
+
+    check-cast p1, Lh88;
+
+    iget-object p4, p1, Lh88;->s2:Lg88;
+
+    if-eq p0, p4, :cond_4
+
+    goto :goto_1
+
+    :cond_4
+    const-wide p4, 0x7fffffffffffffffL
+
+    cmp-long p0, p2, p4
+
+    const/4 p4, 0x1
+
+    if-nez p0, :cond_5
+
+    iput-boolean p4, p1, Lu78;->E1:Z
+
+    goto :goto_1
+
+    :cond_5
+    :try_start_1
+    invoke-virtual {p1, p2, p3}, Lu78;->m0(J)V
+
+    invoke-virtual {p1}, Lh88;->u0()V
+
+    iget-object p0, p1, Lu78;->G1:La64;
+
+    iget p5, p0, La64;->f:I
+
+    add-int/2addr p5, p4
+
+    iput p5, p0, La64;->f:I
+
+    invoke-virtual {p1}, Lh88;->t0()V
+
+    invoke-virtual {p1, p2, p3}, Lh88;->W(J)V
+    :try_end_1
+    .catch Lcom/google/android/exoplayer2/ExoPlaybackException; {:try_start_1 .. :try_end_1} :catch_1
+
+    goto :goto_1
+
+    :catch_1
+    move-exception p0
+
+    iput-object p0, p1, Lu78;->F1:Lcom/google/android/exoplayer2/ExoPlaybackException;
+
+    :goto_1
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

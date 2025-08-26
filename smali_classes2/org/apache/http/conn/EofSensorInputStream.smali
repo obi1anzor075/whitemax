@@ -89,7 +89,7 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return p0
 
     :catch_0
     move-exception v0
@@ -101,7 +101,6 @@
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -150,7 +149,7 @@
     :cond_1
     iput-object v1, p0, Lorg/apache/http/conn/EofSensorInputStream;->wrappedStream:Ljava/io/InputStream;
 
-    goto :goto_2
+    return-void
 
     :goto_1
     iput-object v1, p0, Lorg/apache/http/conn/EofSensorInputStream;->wrappedStream:Ljava/io/InputStream;
@@ -158,7 +157,6 @@
     throw v0
 
     :cond_2
-    :goto_2
     return-void
 .end method
 
@@ -207,7 +205,7 @@
     :cond_1
     iput-object v1, p0, Lorg/apache/http/conn/EofSensorInputStream;->wrappedStream:Ljava/io/InputStream;
 
-    goto :goto_2
+    return-void
 
     :goto_1
     iput-object v1, p0, Lorg/apache/http/conn/EofSensorInputStream;->wrappedStream:Ljava/io/InputStream;
@@ -215,7 +213,6 @@
     throw v0
 
     :cond_2
-    :goto_2
     return-void
 .end method
 
@@ -266,7 +263,7 @@
     :cond_1
     iput-object p1, p0, Lorg/apache/http/conn/EofSensorInputStream;->wrappedStream:Ljava/io/InputStream;
 
-    goto :goto_2
+    return-void
 
     :goto_1
     iput-object p1, p0, Lorg/apache/http/conn/EofSensorInputStream;->wrappedStream:Ljava/io/InputStream;
@@ -274,7 +271,6 @@
     throw v0
 
     :cond_2
-    :goto_2
     return-void
 .end method
 
@@ -313,12 +309,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 
     :cond_1
@@ -359,7 +354,7 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return v0
 
     :catch_0
     move-exception v0
@@ -371,10 +366,9 @@
     throw v0
 
     :cond_0
-    const/4 v0, -0x1
+    const/4 p0, -0x1
 
-    :goto_0
-    return v0
+    return p0
 .end method
 
 .method public read([B)I
@@ -405,7 +399,7 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return p1
 
     :catch_0
     move-exception p1
@@ -417,10 +411,9 @@
     throw p1
 
     :cond_0
-    const/4 p1, -0x1
+    const/4 p0, -0x1
 
-    :goto_0
-    return p1
+    return p0
 .end method
 
 .method public read([BII)I
@@ -451,7 +444,7 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return p1
 
     :catch_0
     move-exception p1
@@ -463,10 +456,9 @@
     throw p1
 
     :cond_0
-    const/4 p1, -0x1
+    const/4 p0, -0x1
 
-    :goto_0
-    return p1
+    return p0
 .end method
 
 .method public releaseConnection()V

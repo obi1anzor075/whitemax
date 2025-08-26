@@ -183,14 +183,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     :cond_1
     invoke-virtual {p1, p0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_2
+    if-eqz p0, :cond_3
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
@@ -204,16 +204,13 @@
 
     move-result p0
 
-    if-eqz p0, :cond_2
-
-    goto :goto_0
+    if-eqz p0, :cond_3
 
     :cond_2
-    move v1, v2
+    return v1
 
     :cond_3
-    :goto_0
-    return v1
+    return v2
 .end method
 
 .method public register(Ljava/lang/String;Ljava/lang/Object;)V

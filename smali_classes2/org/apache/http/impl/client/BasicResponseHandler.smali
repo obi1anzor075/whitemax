@@ -80,7 +80,7 @@
 
     const/4 p0, 0x0
 
-    goto :goto_0
+    return-object p0
 
     .line 5
     :cond_0
@@ -88,7 +88,6 @@
 
     move-result-object p0
 
-    :goto_0
     return-object p0
 
     .line 6

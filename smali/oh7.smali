@@ -1,87 +1,108 @@
 .class public final Loh7;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field public final synthetic a:I
 
-.field public b:Lui5;
-
-.field public c:Z
+.field public final synthetic b:Lph7;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;)V
-    .locals 1
+.method public synthetic constructor <init>(Lph7;I)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Loh7;->a:I
 
-    iput-object p1, p0, Loh7;->a:Ljava/lang/Object;
+    iput-object p1, p0, Loh7;->b:Lph7;
 
-    new-instance p1, Lui5;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p1, v0}, Lui5;-><init>(I)V
-
-    iput-object p1, p0, Loh7;->b:Lui5;
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
 
-    if-ne p0, p1, :cond_0
+    iget v0, p0, Loh7;->a:I
 
-    const/4 p0, 0x1
+    packed-switch v0, :pswitch_data_0
 
-    return p0
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
+
+    return-void
+
+    :pswitch_0
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
+
+    iget-object p0, p0, Loh7;->b:Lph7;
+
+    invoke-virtual {p0}, Lph7;->w()V
+
+    iget-object p1, p0, Lph7;->r0:Lde;
+
+    if-eqz p1, :cond_0
+
+    iget-object p0, p0, Lije;->b:Ljava/lang/Object;
+
+    check-cast p0, Llz6;
+
+    invoke-virtual {p1, p0}, Lde;->a(Landroid/graphics/drawable/Drawable;)V
 
     :cond_0
-    if-eqz p1, :cond_2
+    return-void
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    nop
 
-    move-result-object v0
-
-    const-class v1, Loh7;
-
-    if-eq v1, v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Loh7;
-
-    iget-object p1, p1, Loh7;->a:Ljava/lang/Object;
-
-    iget-object p0, p0, Loh7;->a:Ljava/lang/Object;
-
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-
-    :cond_2
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final hashCode()I
-    .locals 0
+.method public onAnimationRepeat(Landroid/animation/Animator;)V
+    .locals 2
 
-    iget-object p0, p0, Loh7;->a:Ljava/lang/Object;
+    iget v0, p0, Loh7;->a:I
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    packed-switch v0, :pswitch_data_0
 
-    move-result p0
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationRepeat(Landroid/animation/Animator;)V
 
-    return p0
+    return-void
+
+    :pswitch_0
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationRepeat(Landroid/animation/Animator;)V
+
+    iget-object p0, p0, Loh7;->b:Lph7;
+
+    iget p1, p0, Lph7;->o0:I
+
+    const/4 v0, 0x1
+
+    add-int/2addr p1, v0
+
+    iget-object v1, p0, Lph7;->Z:Lwh7;
+
+    iget-object v1, v1, Loj0;->c:[I
+
+    array-length v1, v1
+
+    rem-int/2addr p1, v1
+
+    iput p1, p0, Lph7;->o0:I
+
+    iput-boolean v0, p0, Lph7;->p0:Z
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

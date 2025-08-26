@@ -1,177 +1,349 @@
 .class public final Lk31;
-.super Ljava/lang/Object;
+.super Landroidx/constraintlayout/widget/ConstraintLayout;
 .source "SourceFile"
 
 # interfaces
-.implements Ll31;
-
-
-# instance fields
-.field public final a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-
-.field public final b:I
-
-.field public final c:I
-
-.field public final d:I
-
-.field public final e:Lhge;
-
-.field public final f:Lhge;
-
-
-# direct methods
-.method public constructor <init>(Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lk31;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-
-    sget p1, Lo1a;->K:I
-
-    iput p1, p0, Lk31;->b:I
-
-    sget p1, Ln1a;->O:I
-
-    iput p1, p0, Lk31;->c:I
-
-    sget p1, Ln1a;->N:I
-
-    iput p1, p0, Lk31;->d:I
-
-    sget p1, Lr1a;->d2:I
-
-    new-instance v0, Lhge;
-
-    invoke-direct {v0, p1}, Lhge;-><init>(I)V
-
-    iput-object v0, p0, Lk31;->e:Lhge;
-
-    iput-object v0, p0, Lk31;->f:Lhge;
-
-    return-void
-.end method
+.implements Lsj1;
+.implements Lqj1;
 
 
 # virtual methods
-.method public final a()I
-    .locals 0
-
-    iget p0, p0, Lk31;->c:I
-
-    return p0
-.end method
-
-.method public final b()Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-    .locals 0
-
-    iget-object p0, p0, Lk31;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-
-    return-object p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lk31;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lk31;
-
-    iget-object p0, p0, Lk31;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-
-    iget-object p1, p1, Lk31;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final getContentDescription()Lmge;
-    .locals 0
-
-    iget-object p0, p0, Lk31;->f:Lhge;
-
-    return-object p0
-.end method
-
-.method public final getIcon()I
-    .locals 0
-
-    iget p0, p0, Lk31;->d:I
-
-    return p0
-.end method
-
-.method public final getId()I
-    .locals 0
-
-    iget p0, p0, Lk31;->b:I
-
-    return p0
-.end method
-
-.method public final getTitle()Lmge;
-    .locals 0
-
-    iget-object p0, p0, Lk31;->e:Lhge;
-
-    return-object p0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    iget-object p0, p0, Lk31;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final a(Z)V
     .locals 2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    if-nez p1, :cond_0
 
-    const-string v1, "WiredHeadset(device="
+    goto :goto_1
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    :cond_0
+    new-instance v0, Lps;
 
-    iget-object p0, p0, Lk31;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+    const/4 v1, 0x7
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1, p0}, Lps;-><init>(ILjava/lang/Object;)V
 
-    const-string p0, ")"
+    sget-object p0, Lj31;->o:Lj31;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, p0}, Lr4d;->O(Li4d;Lx56;)Lbk5;
 
     move-result-object p0
 
-    return-object p0
+    new-instance v0, Lak5;
+
+    invoke-direct {v0, p0}, Lak5;-><init>(Lbk5;)V
+
+    :goto_0
+    invoke-virtual {v0}, Lak5;->hasNext()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1
+
+    invoke-virtual {v0}, Lak5;->next()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lsj1;
+
+    invoke-interface {p0, p1}, Lsj1;->a(Z)V
+
+    goto :goto_0
+
+    :cond_1
+    :goto_1
+    return-void
+.end method
+
+.method public final b(Z)V
+    .locals 2
+
+    new-instance v0, Lps;
+
+    const/4 v1, 0x7
+
+    invoke-direct {v0, v1, p0}, Lps;-><init>(ILjava/lang/Object;)V
+
+    sget-object p0, Lj31;->X:Lj31;
+
+    invoke-static {v0, p0}, Lr4d;->O(Li4d;Lx56;)Lbk5;
+
+    move-result-object p0
+
+    new-instance v0, Lak5;
+
+    invoke-direct {v0, p0}, Lak5;-><init>(Lbk5;)V
+
+    :goto_0
+    invoke-virtual {v0}, Lak5;->hasNext()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {v0}, Lak5;->next()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lsj1;
+
+    invoke-interface {p0, p1}, Lsj1;->b(Z)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final c(Landroid/graphics/RectF;Z)V
+    .locals 2
+
+    new-instance v0, Lps;
+
+    const/4 v1, 0x7
+
+    invoke-direct {v0, v1, p0}, Lps;-><init>(ILjava/lang/Object;)V
+
+    sget-object p0, Lj31;->p0:Lj31;
+
+    invoke-static {v0, p0}, Lr4d;->O(Li4d;Lx56;)Lbk5;
+
+    move-result-object p0
+
+    new-instance v0, Lak5;
+
+    invoke-direct {v0, p0}, Lak5;-><init>(Lbk5;)V
+
+    :goto_0
+    invoke-virtual {v0}, Lak5;->hasNext()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {v0}, Lak5;->next()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lqj1;
+
+    invoke-interface {p0, p1, p2}, Lqj1;->c(Landroid/graphics/RectF;Z)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final d(Z)V
+    .locals 2
+
+    new-instance v0, Lps;
+
+    const/4 v1, 0x7
+
+    invoke-direct {v0, v1, p0}, Lps;-><init>(ILjava/lang/Object;)V
+
+    sget-object p0, Lj31;->c:Lj31;
+
+    invoke-static {v0, p0}, Lr4d;->O(Li4d;Lx56;)Lbk5;
+
+    move-result-object p0
+
+    new-instance v0, Lak5;
+
+    invoke-direct {v0, p0}, Lak5;-><init>(Lbk5;)V
+
+    :goto_0
+    invoke-virtual {v0}, Lak5;->hasNext()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {v0}, Lak5;->next()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lqj1;
+
+    invoke-interface {p0, p1}, Lqj1;->d(Z)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final f(Lkl7;ZJ)V
+    .locals 2
+
+    new-instance v0, Lps;
+
+    const/4 v1, 0x7
+
+    invoke-direct {v0, v1, p0}, Lps;-><init>(ILjava/lang/Object;)V
+
+    sget-object p0, Lj31;->Y:Lj31;
+
+    invoke-static {v0, p0}, Lr4d;->O(Li4d;Lx56;)Lbk5;
+
+    move-result-object p0
+
+    new-instance v0, Lak5;
+
+    invoke-direct {v0, p0}, Lak5;-><init>(Lbk5;)V
+
+    :goto_0
+    invoke-virtual {v0}, Lak5;->hasNext()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {v0}, Lak5;->next()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lqj1;
+
+    invoke-interface {p0, p1, p2, p3, p4}, Lqj1;->f(Lkl7;ZJ)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final g(Lkl7;ZJ)V
+    .locals 2
+
+    new-instance v0, Lps;
+
+    const/4 v1, 0x7
+
+    invoke-direct {v0, v1, p0}, Lps;-><init>(ILjava/lang/Object;)V
+
+    sget-object p0, Lj31;->Z:Lj31;
+
+    invoke-static {v0, p0}, Lr4d;->O(Li4d;Lx56;)Lbk5;
+
+    move-result-object p0
+
+    new-instance v0, Lak5;
+
+    invoke-direct {v0, p0}, Lak5;-><init>(Lbk5;)V
+
+    :goto_0
+    invoke-virtual {v0}, Lak5;->hasNext()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {v0}, Lak5;->next()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lsj1;
+
+    invoke-interface {p0, p1, p2, p3, p4}, Lsj1;->g(Lkl7;ZJ)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public getShouldScaleMainOpponent()Z
+    .locals 2
+
+    new-instance v0, Lps;
+
+    const/4 v1, 0x7
+
+    invoke-direct {v0, v1, p0}, Lps;-><init>(ILjava/lang/Object;)V
+
+    sget-object p0, Lj31;->o0:Lj31;
+
+    invoke-static {v0, p0}, Lr4d;->O(Li4d;Lx56;)Lbk5;
+
+    move-result-object p0
+
+    new-instance v0, Lak5;
+
+    invoke-direct {v0, p0}, Lak5;-><init>(Lbk5;)V
+
+    :cond_0
+    invoke-virtual {v0}, Lak5;->hasNext()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1
+
+    invoke-virtual {v0}, Lak5;->next()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lqj1;
+
+    invoke-interface {p0}, Lqj1;->getShouldScaleMainOpponent()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_1
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final n(Z)V
+    .locals 2
+
+    if-nez p1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    new-instance v0, Lps;
+
+    const/4 v1, 0x7
+
+    invoke-direct {v0, v1, p0}, Lps;-><init>(ILjava/lang/Object;)V
+
+    sget-object p0, Lj31;->b:Lj31;
+
+    invoke-static {v0, p0}, Lr4d;->O(Li4d;Lx56;)Lbk5;
+
+    move-result-object p0
+
+    new-instance v0, Lak5;
+
+    invoke-direct {v0, p0}, Lak5;-><init>(Lbk5;)V
+
+    :goto_0
+    invoke-virtual {v0}, Lak5;->hasNext()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1
+
+    invoke-virtual {v0}, Lak5;->next()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lqj1;
+
+    invoke-interface {p0, p1}, Lqj1;->n(Z)V
+
+    goto :goto_0
+
+    :cond_1
+    :goto_1
+    return-void
 .end method

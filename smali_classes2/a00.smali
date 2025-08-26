@@ -1,239 +1,94 @@
-.class public final synthetic La00;
-.super Ljava/lang/Object;
+.class public final La00;
+.super Laq7;
 .source "SourceFile"
-
-# interfaces
-.implements Lof3;
-.implements Lyx7;
-.implements Lj26;
 
 
 # instance fields
-.field public final synthetic a:Lb00;
-
-
-# direct methods
-.method public synthetic constructor <init>(Lb00;)V
-    .locals 0
-
-    iput-object p1, p0, La00;->a:Lb00;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.field public Y:Le9g;
 
 
 # virtual methods
-.method public accept(Ljava/lang/Object;)V
-    .locals 2
+.method public final a()V
+    .locals 1
 
-    iget-object p0, p0, La00;->a:Lb00;
+    invoke-super {p0}, Laq7;->a()V
 
-    check-cast p1, Ljava/lang/Throwable;
+    iget-object v0, p0, La00;->Y:Le9g;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-eqz v0, :cond_0
 
-    const-string v0, "AttachPreviewDiskCache"
+    iget-object v0, v0, Le9g;->d:Ljava/lang/Object;
 
-    const-string v1, "onError"
+    check-cast v0, Ltd7;
 
-    invoke-static {v0, v1, p1}, Ludd;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v0}, Ldoc;->b(Lam4;)V
 
-    new-instance v0, Lru/ok/tamtam/util/HandledException;
+    :cond_0
+    const/4 v0, 0x0
 
-    invoke-direct {v0, p1}, Lru/ok/tamtam/util/HandledException;-><init>(Ljava/lang/Throwable;)V
-
-    iget-object p0, p0, Lb00;->b:Lg15;
-
-    check-cast p0, Lr4a;
-
-    const/4 p1, 0x1
-
-    invoke-virtual {p0, v0, p1}, Lr4a;->c(Ljava/lang/Throwable;Z)V
+    iput-object v0, p0, La00;->Y:Le9g;
 
     return-void
 .end method
 
-.method public apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final c()V
+    .locals 4
 
-    check-cast p1, Ljava/util/List;
+    iget-object v0, p0, Laq7;->b:Lw2d;
 
-    iget-object p0, p0, La00;->a:Lb00;
+    iget-object v1, p0, Laq7;->X:Lrp7;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0, v1}, Lw2d;->e(Lrp7;)Lota;
 
-    new-instance p0, Ljava/util/HashMap;
+    move-result-object v0
 
-    invoke-direct {p0}, Ljava/util/HashMap;-><init>()V
+    if-nez v0, :cond_0
 
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    iget-object v2, v1, Lrp7;->o:Ljava/lang/String;
 
-    move-result-object p1
+    invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v2
+
+    goto :goto_0
 
     :cond_0
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v2, v0, Lota;->b:Landroid/net/Uri;
 
-    move-result v0
+    if-eqz v2, :cond_1
 
-    if-eqz v0, :cond_2
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/io/File;
-
-    invoke-virtual {v0}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, ".png"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    const/4 v1, 0x0
-
-    goto :goto_1
+    goto :goto_0
 
     :cond_1
-    const-string v2, "_"
+    iget-object v2, v0, Lota;->a:Landroid/net/Uri;
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    aget-object v1, v1, v2
-
-    :goto_1
-    invoke-static {v1}, Lr1g;->p(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    invoke-static {v0}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    if-eqz v2, :cond_2
 
     goto :goto_0
 
     :cond_2
-    return-object p0
-.end method
+    iget-object v2, v1, Lrp7;->o:Ljava/lang/String;
 
-.method public c(Lex7;)V
-    .locals 3
+    invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-    iget-object p0, p0, La00;->a:Lb00;
-
-    iget-object p0, p0, Lb00;->c:Lbf5;
-
-    check-cast p0, Lmg5;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p0}, Lmg5;->b()Ljava/lang/String;
-
-    move-result-object p0
-
-    const-string v0, "previewVideoCache"
-
-    invoke-static {p0, v0}, Lmg5;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object p0
-
-    invoke-static {p0}, Llp;->n(Ljava/io/File;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p1}, Lex7;->h()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p1}, Lex7;->b()V
-
-    :cond_0
-    invoke-virtual {p0}, Ljava/io/File;->listFiles()[Ljava/io/File;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_3
-
-    array-length v0, p0
-
-    if-nez v0, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    new-instance v0, Lyz;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lyz;-><init>(I)V
-
-    invoke-static {p0, v0}, Ljava/util/Arrays;->sort([Ljava/lang/Object;Ljava/util/Comparator;)V
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    const/4 v1, 0x0
+    move-result-object v2
 
     :goto_0
-    array-length v2, p0
+    if-eqz v0, :cond_3
 
-    if-ge v1, v2, :cond_2
+    iget-object v0, v0, Lota;->X:Landroid/net/Uri;
 
-    const/16 v2, 0xc8
-
-    if-ge v1, v2, :cond_2
-
-    aget-object v2, p0, v1
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    invoke-virtual {p1}, Lex7;->h()Z
-
-    move-result p0
-
-    if-nez p0, :cond_4
-
-    invoke-virtual {p1, v0}, Lex7;->a(Ljava/lang/Object;)V
-
-    goto :goto_2
+    goto :goto_1
 
     :cond_3
+    const/4 v0, 0x0
+
     :goto_1
-    invoke-virtual {p1}, Lex7;->h()Z
+    iget-object p0, p0, Laq7;->a:Lmq7;
 
-    move-result p0
+    const/4 v3, 0x0
 
-    if-nez p0, :cond_4
+    invoke-interface {p0, v1, v2, v3, v0}, Lmq7;->J(Lrp7;Landroid/net/Uri;ILandroid/net/Uri;)V
 
-    invoke-virtual {p1}, Lex7;->b()V
-
-    :cond_4
-    :goto_2
     return-void
 .end method

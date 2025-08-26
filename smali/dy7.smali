@@ -1,199 +1,154 @@
 .class public final Ldy7;
-.super Lcd4;
+.super Lfy7;
 .source "SourceFile"
 
 # interfaces
-.implements Lwx7;
-.implements Lzhd;
+.implements Ljava/util/Iterator;
+.implements Lqb7;
 
 
 # instance fields
-.field public final synthetic c:I
-
-.field public o:Lxi4;
+.field public final synthetic X:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lbw9;I)V
+.method public constructor <init>(ILgy7;)V
     .locals 0
 
-    iput p2, p0, Ldy7;->c:I
+    iput p1, p0, Ldy7;->X:I
 
-    invoke-direct {p0, p1}, Lcd4;-><init>(Lbw9;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p2, p0, Lfy7;->o:Ljava/lang/Object;
+
+    const/4 p1, -0x1
+
+    iput p1, p0, Lfy7;->b:I
+
+    iget p1, p2, Lgy7;->o0:I
+
+    iput p1, p0, Lfy7;->c:I
+
+    invoke-virtual {p0}, Lfy7;->e()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b()V
-    .locals 1
+.method public final next()Ljava/lang/Object;
+    .locals 3
 
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
-
-    move-result v0
-
-    and-int/lit8 v0, v0, 0x36
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x2
-
-    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
-
-    iget-object p0, p0, Lcd4;->a:Lbw9;
-
-    invoke-interface {p0}, Lbw9;->b()V
-
-    :goto_0
-    return-void
-.end method
-
-.method public final d(Lxi4;)V
-    .locals 1
-
-    iget v0, p0, Ldy7;->c:I
+    iget v0, p0, Ldy7;->X:I
 
     packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p0, Ldy7;->o:Lxi4;
+    invoke-virtual {p0}, Lfy7;->b()V
 
-    invoke-static {v0, p1}, Lbj4;->g(Lxi4;Lxi4;)Z
+    iget v0, p0, Lfy7;->a:I
 
-    move-result v0
+    iget-object v1, p0, Lfy7;->o:Ljava/lang/Object;
 
-    if-eqz v0, :cond_0
+    check-cast v1, Lgy7;
 
-    iput-object p1, p0, Ldy7;->o:Lxi4;
+    iget v2, v1, Lgy7;->Y:I
 
-    iget-object p1, p0, Lcd4;->a:Lbw9;
+    if-ge v0, v2, :cond_0
 
-    invoke-interface {p1, p0}, Lbw9;->d(Lxi4;)V
+    add-int/lit8 v2, v0, 0x1
+
+    iput v2, p0, Lfy7;->a:I
+
+    iput v0, p0, Lfy7;->b:I
+
+    iget-object v1, v1, Lgy7;->b:[Ljava/lang/Object;
+
+    aget-object v0, v1, v0
+
+    invoke-virtual {p0}, Lfy7;->e()V
+
+    return-object v0
 
     :cond_0
-    return-void
+    new-instance p0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw p0
 
     :pswitch_0
-    iget-object v0, p0, Ldy7;->o:Lxi4;
+    invoke-virtual {p0}, Lfy7;->b()V
 
-    invoke-static {v0, p1}, Lbj4;->g(Lxi4;Lxi4;)Z
+    iget v0, p0, Lfy7;->a:I
 
-    move-result v0
+    iget-object v1, p0, Lfy7;->o:Ljava/lang/Object;
 
-    if-eqz v0, :cond_1
+    check-cast v1, Lgy7;
 
-    iput-object p1, p0, Ldy7;->o:Lxi4;
+    iget v2, v1, Lgy7;->Y:I
 
-    iget-object p1, p0, Lcd4;->a:Lbw9;
+    if-ge v0, v2, :cond_1
 
-    invoke-interface {p1, p0}, Lbw9;->d(Lxi4;)V
+    add-int/lit8 v2, v0, 0x1
+
+    iput v2, p0, Lfy7;->a:I
+
+    iput v0, p0, Lfy7;->b:I
+
+    iget-object v1, v1, Lgy7;->a:[Ljava/lang/Object;
+
+    aget-object v0, v1, v0
+
+    invoke-virtual {p0}, Lfy7;->e()V
+
+    return-object v0
 
     :cond_1
-    return-void
+    new-instance p0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw p0
+
+    :pswitch_1
+    invoke-virtual {p0}, Lfy7;->b()V
+
+    iget v0, p0, Lfy7;->a:I
+
+    iget-object v1, p0, Lfy7;->o:Ljava/lang/Object;
+
+    check-cast v1, Lgy7;
+
+    iget v2, v1, Lgy7;->Y:I
+
+    if-ge v0, v2, :cond_2
+
+    add-int/lit8 v2, v0, 0x1
+
+    iput v2, p0, Lfy7;->a:I
+
+    iput v0, p0, Lfy7;->b:I
+
+    new-instance v2, Ley7;
+
+    invoke-direct {v2, v0, v1}, Ley7;-><init>(ILgy7;)V
+
+    invoke-virtual {p0}, Lfy7;->e()V
+
+    return-object v2
+
+    :cond_2
+    new-instance p0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw p0
 
     nop
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final f()V
-    .locals 1
-
-    iget v0, p0, Ldy7;->c:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0}, Lcd4;->f()V
-
-    iget-object p0, p0, Ldy7;->o:Lxi4;
-
-    invoke-interface {p0}, Lxi4;->f()V
-
-    return-void
-
-    :pswitch_0
-    invoke-super {p0}, Lcd4;->f()V
-
-    iget-object p0, p0, Ldy7;->o:Lxi4;
-
-    invoke-interface {p0}, Lxi4;->f()V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final onError(Ljava/lang/Throwable;)V
-    .locals 1
-
-    iget v0, p0, Ldy7;->c:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
-
-    move-result v0
-
-    and-int/lit8 v0, v0, 0x36
-
-    if-eqz v0, :cond_0
-
-    invoke-static {p1}, Lxs7;->F(Ljava/lang/Throwable;)V
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x2
-
-    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
-
-    iget-object p0, p0, Lcd4;->a:Lbw9;
-
-    invoke-interface {p0, p1}, Lbw9;->onError(Ljava/lang/Throwable;)V
-
-    :goto_0
-    return-void
-
-    :pswitch_0
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
-
-    move-result v0
-
-    and-int/lit8 v0, v0, 0x36
-
-    if-eqz v0, :cond_1
-
-    invoke-static {p1}, Lxs7;->F(Ljava/lang/Throwable;)V
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v0, 0x2
-
-    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
-
-    iget-object p0, p0, Lcd4;->a:Lbw9;
-
-    invoke-interface {p0, p1}, Lbw9;->onError(Ljava/lang/Throwable;)V
-
-    :goto_1
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
+        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

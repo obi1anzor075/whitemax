@@ -1,52 +1,70 @@
-.class public final synthetic Llf3;
-.super Ljava/lang/Object;
+.class public final Llf3;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Lpf3;
+.implements Ll66;
 
 
 # instance fields
-.field public final synthetic a:I
-
-
-# direct methods
-.method public synthetic constructor <init>(I)V
-    .locals 0
-
-    iput p1, p0, Llf3;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method private final a(Ljava/lang/Object;)V
-    .locals 0
-
-    return-void
-.end method
+.field public synthetic X:Ljava/lang/Object;
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    iget p0, p0, Llf3;->a:I
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    packed-switch p0, :pswitch_data_0
+    invoke-virtual {p0, p1, p2}, Llf3;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    check-cast p1, Ljava/lang/Throwable;
+    move-result-object p0
 
-    invoke-virtual {p1}, Ljava/lang/Throwable;->printStackTrace()V
+    check-cast p0, Llf3;
 
-    :pswitch_0
-    return-void
+    sget-object p1, Le5f;->a:Le5f;
 
-    nop
+    invoke-virtual {p0, p1}, Llf3;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 1
+
+    new-instance p0, Llf3;
+
+    const/4 v0, 0x2
+
+    invoke-direct {p0, v0, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
+
+    iput-object p1, p0, Llf3;->X:Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Llf3;->X:Ljava/lang/Object;
+
+    check-cast p0, Le5f;
+
+    sget-object p0, Lqfd;->c:Lqfd;
+
+    invoke-virtual {p0}, Lu2;->D0()Ls64;
+
+    move-result-object p0
+
+    const-string p1, ":settings/privacy"
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Ls64;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

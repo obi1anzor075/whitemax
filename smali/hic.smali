@@ -4,206 +4,134 @@
 
 
 # instance fields
-.field public a:Llrf;
+.field public final a:Lwfe;
 
-.field public b:Ljava/util/ArrayList;
+.field public final b:Lwfe;
+
+.field public c:Lgic;
 
 
 # direct methods
-.method public static a(Lse4;J)J
-    .locals 9
+.method public constructor <init>(Lje7;Lje7;)V
+    .locals 2
 
-    iget-object v0, p0, Lse4;->d:Llrf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    instance-of v1, v0, Lpf6;
+    new-instance v0, Ljib;
 
-    if-eqz v1, :cond_0
+    const/16 v1, 0xf
 
-    return-wide p1
+    invoke-direct {v0, v1}, Ljib;-><init>(I)V
 
-    :cond_0
-    iget-object v1, p0, Lse4;->k:Ljava/util/ArrayList;
+    new-instance v1, Lwfe;
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+    invoke-direct {v1, v0}, Lwfe;-><init>(Lv56;)V
 
-    move-result v2
+    iput-object v1, p0, Lhic;->a:Lwfe;
 
-    const/4 v3, 0x0
+    new-instance v0, Lt71;
 
-    move-wide v4, p1
+    const/16 v1, 0x8
 
-    :goto_0
-    if-ge v3, v2, :cond_3
+    invoke-direct {v0, p1, p0, p2, v1}, Lt71;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
 
-    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    new-instance p1, Lwfe;
 
-    move-result-object v6
+    invoke-direct {p1, v0}, Lwfe;-><init>(Lv56;)V
 
-    check-cast v6, Lpe4;
+    iput-object p1, p0, Lhic;->b:Lwfe;
 
-    instance-of v7, v6, Lse4;
-
-    if-eqz v7, :cond_2
-
-    check-cast v6, Lse4;
-
-    iget-object v7, v6, Lse4;->d:Llrf;
-
-    if-ne v7, v0, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    iget v7, v6, Lse4;->f:I
-
-    int-to-long v7, v7
-
-    add-long/2addr v7, p1
-
-    invoke-static {v6, v7, v8}, Lhic;->a(Lse4;J)J
-
-    move-result-wide v6
-
-    invoke-static {v4, v5, v6, v7}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v4
-
-    :cond_2
-    :goto_1
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    :cond_3
-    iget-object v1, v0, Llrf;->i:Lse4;
-
-    if-ne p0, v1, :cond_4
-
-    invoke-virtual {v0}, Llrf;->j()J
-
-    move-result-wide v1
-
-    iget-object p0, v0, Llrf;->h:Lse4;
-
-    sub-long/2addr p1, v1
-
-    invoke-static {p0, p1, p2}, Lhic;->a(Lse4;J)J
-
-    move-result-wide v0
-
-    invoke-static {v4, v5, v0, v1}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v0
-
-    iget p0, p0, Lse4;->f:I
-
-    int-to-long v2, p0
-
-    sub-long/2addr p1, v2
-
-    invoke-static {v0, v1, p1, p2}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v4
-
-    :cond_4
-    return-wide v4
+    return-void
 .end method
 
-.method public static b(Lse4;J)J
-    .locals 9
 
-    iget-object v0, p0, Lse4;->d:Llrf;
+# virtual methods
+.method public final a()Lnh1;
+    .locals 0
 
-    instance-of v1, v0, Lpf6;
+    iget-object p0, p0, Lhic;->b:Lwfe;
 
-    if-eqz v1, :cond_0
+    invoke-virtual {p0}, Lwfe;->getValue()Ljava/lang/Object;
 
-    return-wide p1
+    move-result-object p0
+
+    check-cast p0, Lnh1;
+
+    return-object p0
+.end method
+
+.method public final b()V
+    .locals 2
+
+    sget-object v0, Lgic;->b:Lgic;
+
+    iput-object v0, p0, Lhic;->c:Lgic;
+
+    invoke-virtual {p0}, Lhic;->a()Lnh1;
+
+    move-result-object p0
+
+    iget-object v0, p0, Lnh1;->d:Lwfe;
+
+    invoke-virtual {v0}, Lwfe;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/media/AudioManager;
+
+    invoke-virtual {v0}, Landroid/media/AudioManager;->getRingerMode()I
+
+    move-result v0
+
+    const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_0
+
+    return-void
 
     :cond_0
-    iget-object v1, p0, Lse4;->k:Ljava/util/ArrayList;
+    iget-object v0, p0, Lnh1;->b:Lmh1;
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+    iget-object v0, v0, Lmh1;->a:Ly7a;
 
-    move-result v2
+    const/4 v1, 0x0
 
-    const/4 v3, 0x0
+    invoke-virtual {p0, v0, v1}, Lnh1;->a(Ly7a;Z)V
 
-    move-wide v4, p1
+    return-void
+.end method
 
-    :goto_0
-    if-ge v3, v2, :cond_3
+.method public final c()V
+    .locals 3
 
-    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    iget-object v0, p0, Lhic;->c:Lgic;
 
-    move-result-object v6
+    sget-object v1, Lgic;->b:Lgic;
 
-    check-cast v6, Lpe4;
+    const/4 v2, 0x0
 
-    instance-of v7, v6, Lse4;
+    if-eq v0, v1, :cond_1
 
-    if-eqz v7, :cond_2
+    sget-object v1, Lgic;->X:Lgic;
 
-    check-cast v6, Lse4;
-
-    iget-object v7, v6, Lse4;->d:Llrf;
-
-    if-ne v7, v0, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    iget v7, v6, Lse4;->f:I
-
-    int-to-long v7, v7
-
-    add-long/2addr v7, p1
-
-    invoke-static {v6, v7, v8}, Lhic;->b(Lse4;J)J
-
-    move-result-wide v6
-
-    invoke-static {v4, v5, v6, v7}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide v4
-
-    :cond_2
-    :goto_1
-    add-int/lit8 v3, v3, 0x1
+    if-ne v0, v1, :cond_0
 
     goto :goto_0
 
-    :cond_3
-    iget-object v1, v0, Llrf;->h:Lse4;
+    :cond_0
+    iput-object v2, p0, Lhic;->c:Lgic;
 
-    if-ne p0, v1, :cond_4
+    invoke-virtual {p0}, Lhic;->a()Lnh1;
 
-    invoke-virtual {v0}, Llrf;->j()J
+    move-result-object p0
 
-    move-result-wide v1
+    invoke-virtual {p0}, Lnh1;->c()V
 
-    iget-object p0, v0, Llrf;->i:Lse4;
+    return-void
 
-    add-long/2addr p1, v1
+    :cond_1
+    :goto_0
+    iput-object v2, p0, Lhic;->c:Lgic;
 
-    invoke-static {p0, p1, p2}, Lhic;->b(Lse4;J)J
-
-    move-result-wide v0
-
-    invoke-static {v4, v5, v0, v1}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide v0
-
-    iget p0, p0, Lse4;->f:I
-
-    int-to-long v2, p0
-
-    sub-long/2addr p1, v2
-
-    invoke-static {v0, v1, p1, p2}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide v4
-
-    :cond_4
-    return-wide v4
+    return-void
 .end method

@@ -1,185 +1,129 @@
 .class public final Lkve;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
 
 
 # instance fields
-.field public X:I
+.field public final a:Llve;
 
-.field public final synthetic Y:Llve;
-
-.field public final synthetic Z:I
+.field public final b:Lmve;
 
 
 # direct methods
-.method public constructor <init>(Llve;ILkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Llve;Lmve;)V
     .locals 0
 
-    iput-object p1, p0, Lkve;->Y:Llve;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p2, p0, Lkve;->Z:I
+    iput-object p1, p0, Lkve;->a:Llve;
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p3}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Lkve;->b:Lmve;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    check-cast p1, Lou3;
+    const/4 v0, 0x1
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {p0, p1, p2}, Lkve;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lkve;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lkve;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
-
-    new-instance p1, Lkve;
-
-    iget-object v0, p0, Lkve;->Y:Llve;
-
-    iget p0, p0, Lkve;->Z:I
-
-    invoke-direct {p1, v0, p0, p2}, Lkve;-><init>(Llve;ILkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 10
-
-    sget-object v0, Lpu3;->a:Lpu3;
-
-    iget v1, p0, Lkve;->X:I
-
-    iget-object v2, p0, Lkve;->Y:Llve;
-
-    const/4 v3, 0x1
-
-    if-eqz v1, :cond_1
-
-    if-ne v1, v3, :cond_0
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    instance-of v1, p1, Lkve;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    const/4 v2, 0x0
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    if-nez v1, :cond_1
 
-    throw p0
+    return v2
 
     :cond_1
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    check-cast p1, Lkve;
 
-    iget-object p1, v2, Llve;->a:Lt97;
+    iget-object v1, p0, Lkve;->a:Llve;
 
-    invoke-interface {p1}, Lt97;->getValue()Ljava/lang/Object;
+    iget-object v3, p1, Lkve;->a:Llve;
 
-    move-result-object p1
+    invoke-static {v1, v3}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    check-cast p1, Lpk;
+    move-result v1
 
-    new-instance v1, Lpn2;
+    if-nez v1, :cond_2
 
-    new-instance v8, Lra3;
-
-    new-instance v4, Leze;
-
-    invoke-direct {v4}, Ljava/lang/Object;-><init>()V
-
-    iget v5, p0, Lkve;->Z:I
-
-    iput v5, v4, Leze;->v:I
-
-    new-instance v5, Lgze;
-
-    invoke-direct {v5, v4}, Lgze;-><init>(Leze;)V
-
-    invoke-direct {v8, v5}, Lra3;-><init>(Lgze;)V
-
-    const/4 v5, 0x0
-
-    const-wide/16 v6, 0x0
-
-    const/4 v9, 0x0
-
-    move-object v4, v1
-
-    invoke-direct/range {v4 .. v9}, Lpn2;-><init>(Ljava/lang/String;JLra3;Z)V
-
-    iput v3, p0, Lkve;->X:I
-
-    check-cast p1, Lgy9;
-
-    invoke-virtual {p1, v1, p0}, Lgy9;->K(Libe;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v0, :cond_2
-
-    return-object v0
+    return v2
 
     :cond_2
-    :goto_0
-    check-cast p1, Lla3;
+    iget-object p0, p0, Lkve;->b:Lmve;
 
-    iget-object p0, p1, Lla3;->o:Lgze;
+    iget-object p1, p1, Lkve;->b:Lmve;
 
-    if-eqz p0, :cond_3
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-object p1, v2, Llve;->b:Lt97;
+    move-result p0
 
-    invoke-interface {p1}, Lt97;->getValue()Ljava/lang/Object;
+    if-nez p0, :cond_3
 
-    move-result-object p1
-
-    check-cast p1, Lip;
-
-    check-cast p1, Lkp;
-
-    invoke-virtual {p1, p0}, Lkp;->w(Lgze;)V
-
-    sget-object p0, Ljue;->a:Ljue;
-
-    return-object p0
+    return v2
 
     :cond_3
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    return v0
+.end method
 
-    const-string p1, "Required value was null."
+.method public final hashCode()I
+    .locals 1
 
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    iget-object v0, p0, Lkve;->a:Llve;
 
-    move-result-object p1
+    invoke-virtual {v0}, Llve;->hashCode()I
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    move-result v0
 
-    throw p0
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Lkve;->b:Lmve;
+
+    invoke-virtual {p0}, Lmve;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "TopbarIconColors(default="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lkve;->a:Llve;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", disabled="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lkve;->b:Lmve;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

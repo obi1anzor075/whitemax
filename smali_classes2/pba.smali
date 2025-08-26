@@ -1,271 +1,77 @@
-.class public final Lpba;
-.super Ljava/lang/Object;
+.class public final enum Lpba;
+.super Ljava/lang/Enum;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/os/Parcelable;
 
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lpba;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public static final enum a:Lpba;
 
-
-# instance fields
-.field public final a:I
-
-.field public final b:I
-
-.field public final c:I
+.field public static final synthetic b:[Lpba;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 5
 
-    new-instance v0, Lch9;
+    new-instance v0, Lpba;
 
-    const/4 v1, 0x5
-
-    invoke-direct {v0, v1}, Lch9;-><init>(I)V
-
-    sput-object v0, Lpba;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(III)V
-    .locals 1
-
-    and-int/lit8 v0, p3, 0x1
-
-    if-eqz v0, :cond_0
-
-    const/4 p1, 0x2
-
-    :cond_0
-    and-int/lit8 p3, p3, 0x4
-
-    const/4 v0, 0x0
-
-    if-eqz p3, :cond_1
-
-    move p2, v0
-
-    .line 1
-    :cond_1
-    invoke-direct {p0, p1, v0, p2, v0}, Lpba;-><init>(IIII)V
-
-    return-void
-.end method
-
-.method public constructor <init>(IIII)V
-    .locals 0
-
-    .line 2
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 3
-    iput p1, p0, Lpba;->a:I
-
-    .line 4
-    iput p2, p0, Lpba;->b:I
-
-    .line 5
-    iput p3, p0, Lpba;->c:I
-
-    return-void
-.end method
-
-.method public static a(Lpba;IIII)Lpba;
-    .locals 1
-
-    and-int/lit8 v0, p4, 0x1
-
-    if-eqz v0, :cond_0
-
-    iget p1, p0, Lpba;->a:I
-
-    :cond_0
-    and-int/lit8 v0, p4, 0x2
-
-    if-eqz v0, :cond_1
-
-    iget p2, p0, Lpba;->b:I
-
-    :cond_1
-    and-int/lit8 p4, p4, 0x4
-
-    if-eqz p4, :cond_2
-
-    iget p3, p0, Lpba;->c:I
-
-    :cond_2
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance p0, Lpba;
-
-    const/4 p4, 0x0
-
-    invoke-direct {p0, p1, p2, p3, p4}, Lpba;-><init>(IIII)V
-
-    return-object p0
-.end method
-
-
-# virtual methods
-.method public final describeContents()I
-    .locals 0
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lpba;
+    const-string v1, "TITLE"
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_1
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    return v2
+    new-instance v1, Lpba;
 
-    :cond_1
-    check-cast p1, Lpba;
+    const-string v2, "SUBTITLE"
 
-    iget v1, p1, Lpba;->a:I
+    const/4 v3, 0x1
 
-    iget v3, p0, Lpba;->a:I
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    if-ne v3, v1, :cond_4
+    new-instance v2, Lpba;
 
-    iget v1, p0, Lpba;->b:I
+    const-string v3, "NONE"
 
-    iget v3, p1, Lpba;->b:I
+    const/4 v4, 0x2
 
-    if-eq v1, v3, :cond_2
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    return v2
+    sput-object v2, Lpba;->a:Lpba;
 
-    :cond_2
-    iget p0, p0, Lpba;->c:I
-
-    iget p1, p1, Lpba;->c:I
-
-    if-eq p0, p1, :cond_3
-
-    return v2
-
-    :cond_3
-    return v0
-
-    :cond_4
-    return v2
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    iget v0, p0, Lpba;->a:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Lpba;->b:I
-
-    invoke-static {v2, v0, v1}, Lc3d;->d(III)I
-
-    move-result v0
-
-    iget p0, p0, Lpba;->c:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ContainerGravity(value="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v1, p0, Lpba;->a:I
-
-    const-string v2, ")"
-
-    invoke-static {v0, v1, v2}, Lwn6;->j(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    filled-new-array {v0, v1, v2}, [Lpba;
 
     move-result-object v0
 
-    const-string v1, "ContainerParams(gravity="
+    sput-object v0, Lpba;->b:[Lpba;
 
-    const-string v3, ", topMargin="
+    return-void
+.end method
 
-    invoke-static {v1, v0, v3}, Lhr1;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method public static valueOf(Ljava/lang/String;)Lpba;
+    .locals 1
 
-    move-result-object v0
+    const-class v0, Lpba;
 
-    iget v1, p0, Lpba;->b:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", bottomMargin="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget p0, p0, Lpba;->c:I
-
-    invoke-static {v0, p0, v2}, Lwn6;->j(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
+
+    check-cast p0, Lpba;
 
     return-object p0
 .end method
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
+.method public static values()[Lpba;
+    .locals 1
 
-    iget p2, p0, Lpba;->a:I
+    sget-object v0, Lpba;->b:[Lpba;
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    iget p2, p0, Lpba;->b:I
+    move-result-object v0
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    check-cast v0, [Lpba;
 
-    iget p0, p0, Lpba;->c:I
-
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
-
-    return-void
+    return-object v0
 .end method

@@ -2,201 +2,34 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lkx4;
-
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final a:J
 
-.field public final b:I
+.field public final b:J
 
-.field public final c:Lkje;
-
-.field public final d:Landroid/util/Size;
-
-.field public final e:I
-
-.field public final f:Ljb0;
-
-.field public final g:I
-
-.field public final h:I
-
-.field public final i:I
+.field public final c:Ljava/util/Set;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;ILkje;Landroid/util/Size;ILjb0;III)V
+.method public constructor <init>(JJLjava/util/Set;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lib0;->a:Ljava/lang/String;
+    iput-wide p1, p0, Lib0;->a:J
 
-    iput p2, p0, Lib0;->b:I
+    iput-wide p3, p0, Lib0;->b:J
 
-    iput-object p3, p0, Lib0;->c:Lkje;
-
-    iput-object p4, p0, Lib0;->d:Landroid/util/Size;
-
-    iput p5, p0, Lib0;->e:I
-
-    iput-object p6, p0, Lib0;->f:Ljb0;
-
-    iput p7, p0, Lib0;->g:I
-
-    iput p8, p0, Lib0;->h:I
-
-    iput p9, p0, Lib0;->i:I
+    iput-object p5, p0, Lib0;->c:Ljava/util/Set;
 
     return-void
 .end method
 
-.method public static d()Lkm4;
-    .locals 2
-
-    new-instance v0, Lkm4;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v1, -0x1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lkm4;->b:Ljava/lang/Object;
-
-    const/4 v1, 0x1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lkm4;->w0:Ljava/lang/Object;
-
-    const v1, 0x7f000789
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lkm4;->X:Ljava/lang/Object;
-
-    sget-object v1, Ljb0;->d:Ljb0;
-
-    iput-object v1, v0, Lkm4;->Y:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final a()Ljava/lang/String;
-    .locals 0
-
-    iget-object p0, p0, Lib0;->a:Ljava/lang/String;
-
-    return-object p0
-.end method
-
-.method public final b()Landroid/media/MediaFormat;
-    .locals 3
-
-    iget-object v0, p0, Lib0;->d:Landroid/util/Size;
-
-    invoke-virtual {v0}, Landroid/util/Size;->getWidth()I
-
-    move-result v1
-
-    invoke-virtual {v0}, Landroid/util/Size;->getHeight()I
-
-    move-result v0
-
-    iget-object v2, p0, Lib0;->a:Ljava/lang/String;
-
-    invoke-static {v2, v1, v0}, Landroid/media/MediaFormat;->createVideoFormat(Ljava/lang/String;II)Landroid/media/MediaFormat;
-
-    move-result-object v0
-
-    const-string v1, "color-format"
-
-    iget v2, p0, Lib0;->e:I
-
-    invoke-virtual {v0, v1, v2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
-
-    const-string v1, "bitrate"
-
-    iget v2, p0, Lib0;->i:I
-
-    invoke-virtual {v0, v1, v2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
-
-    const-string v1, "frame-rate"
-
-    iget v2, p0, Lib0;->g:I
-
-    invoke-virtual {v0, v1, v2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
-
-    const-string v1, "i-frame-interval"
-
-    iget v2, p0, Lib0;->h:I
-
-    invoke-virtual {v0, v1, v2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
-
-    const/4 v1, -0x1
-
-    iget v2, p0, Lib0;->b:I
-
-    if-eq v2, v1, :cond_0
-
-    const-string v1, "profile"
-
-    invoke-virtual {v0, v1, v2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
-
-    :cond_0
-    iget-object p0, p0, Lib0;->f:Ljb0;
-
-    iget v1, p0, Ljb0;->a:I
-
-    if-eqz v1, :cond_1
-
-    const-string v2, "color-standard"
-
-    invoke-virtual {v0, v2, v1}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
-
-    :cond_1
-    iget v1, p0, Ljb0;->b:I
-
-    if-eqz v1, :cond_2
-
-    const-string v2, "color-transfer"
-
-    invoke-virtual {v0, v2, v1}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
-
-    :cond_2
-    iget p0, p0, Ljb0;->c:I
-
-    if-eqz p0, :cond_3
-
-    const-string v1, "color-range"
-
-    invoke-virtual {v0, v1, p0}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
-
-    :cond_3
-    return-object v0
-.end method
-
-.method public final c()Lkje;
-    .locals 0
-
-    iget-object p0, p0, Lib0;->c:Lkje;
-
-    return-object p0
-.end method
-
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 7
 
     const/4 v0, 0x1
 
@@ -209,100 +42,54 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_1
 
     check-cast p1, Lib0;
 
-    iget-object v1, p1, Lib0;->a:Ljava/lang/String;
+    iget-wide v3, p0, Lib0;->a:J
 
-    iget-object v3, p0, Lib0;->a:Ljava/lang/String;
+    iget-wide v5, p1, Lib0;->a:J
 
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    cmp-long v1, v3, v5
 
-    move-result v1
+    if-nez v1, :cond_1
 
-    if-eqz v1, :cond_1
+    iget-wide v3, p0, Lib0;->b:J
 
-    iget v1, p0, Lib0;->b:I
+    iget-wide v5, p1, Lib0;->b:J
 
-    iget v3, p1, Lib0;->b:I
+    cmp-long v1, v3, v5
 
-    if-ne v1, v3, :cond_1
+    if-nez v1, :cond_1
 
-    iget-object v1, p0, Lib0;->c:Lkje;
+    iget-object p0, p0, Lib0;->c:Ljava/util/Set;
 
-    iget-object v3, p1, Lib0;->c:Lkje;
+    iget-object p1, p1, Lib0;->c:Ljava/util/Set;
 
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-interface {p0, p1}, Ljava/util/Set;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result p0
 
-    if-eqz v1, :cond_1
+    if-eqz p0, :cond_1
 
-    iget-object v1, p0, Lib0;->d:Landroid/util/Size;
-
-    iget-object v3, p1, Lib0;->d:Landroid/util/Size;
-
-    invoke-virtual {v1, v3}, Landroid/util/Size;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget v1, p0, Lib0;->e:I
-
-    iget v3, p1, Lib0;->e:I
-
-    if-ne v1, v3, :cond_1
-
-    iget-object v1, p0, Lib0;->f:Ljb0;
-
-    iget-object v3, p1, Lib0;->f:Ljb0;
-
-    invoke-virtual {v1, v3}, Ljb0;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget v1, p0, Lib0;->g:I
-
-    iget v3, p1, Lib0;->g:I
-
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Lib0;->h:I
-
-    iget v3, p1, Lib0;->h:I
-
-    if-ne v1, v3, :cond_1
-
-    iget p0, p0, Lib0;->i:I
-
-    iget p1, p1, Lib0;->i:I
-
-    if-ne p0, p1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    move v0, v2
-
-    :goto_0
     return v0
 
-    :cond_2
+    :cond_1
     return v2
 .end method
 
 .method public final hashCode()I
-    .locals 3
+    .locals 7
 
-    iget-object v0, p0, Lib0;->a:Ljava/lang/String;
+    iget-wide v0, p0, Lib0;->a:J
 
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    const/16 v2, 0x20
 
-    move-result v0
+    ushr-long v3, v0, v2
+
+    xor-long/2addr v0, v3
+
+    long-to-int v0, v0
 
     const v1, 0xf4243
 
@@ -310,61 +97,23 @@
 
     mul-int/2addr v0, v1
 
-    iget v2, p0, Lib0;->b:I
+    iget-wide v3, p0, Lib0;->b:J
+
+    ushr-long v5, v3, v2
+
+    xor-long v2, v5, v3
+
+    long-to-int v2, v2
 
     xor-int/2addr v0, v2
 
     mul-int/2addr v0, v1
 
-    iget-object v2, p0, Lib0;->c:Lkje;
+    iget-object p0, p0, Lib0;->c:Ljava/util/Set;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+    invoke-interface {p0}, Ljava/util/Set;->hashCode()I
 
-    move-result v2
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget-object v2, p0, Lib0;->d:Landroid/util/Size;
-
-    invoke-virtual {v2}, Landroid/util/Size;->hashCode()I
-
-    move-result v2
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Lib0;->e:I
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget-object v2, p0, Lib0;->f:Ljb0;
-
-    invoke-virtual {v2}, Ljb0;->hashCode()I
-
-    move-result v2
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Lib0;->g:I
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Lib0;->h:I
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget p0, p0, Lib0;->i:I
+    move-result p0
 
     xor-int/2addr p0, v0
 
@@ -372,83 +121,39 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "VideoEncoderConfig{mimeType="
+    const-string v1, "ConfigValue{delta="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lib0;->a:Ljava/lang/String;
+    iget-wide v1, p0, Lib0;->a:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", maxAllowedDelay="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", profile="
+    iget-wide v1, p0, Lib0;->b:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", flags="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v1, p0, Lib0;->b:I
+    iget-object p0, p0, Lib0;->c:Ljava/util/Set;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", inputTimebase="
+    const-string p0, "}"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lib0;->c:Lkje;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", resolution="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lib0;->d:Landroid/util/Size;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", colorFormat="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lib0;->e:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", dataSpace="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lib0;->f:Ljb0;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", frameRate="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lib0;->g:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", IFrameInterval="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lib0;->h:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", bitrate="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget p0, p0, Lib0;->i:I
-
-    const-string v1, "}"
-
-    invoke-static {v0, p0, v1}, Lwn6;->j(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

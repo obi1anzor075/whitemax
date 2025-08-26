@@ -123,7 +123,9 @@
     if-eqz p0, :cond_2
 
     :goto_1
-    const/4 v0, 0x1
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_2
     return v0

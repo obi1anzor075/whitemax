@@ -49,7 +49,7 @@
         "",
         "Landroid/media/AudioDeviceInfo;",
         "addedDevices",
-        "Ljue;",
+        "Le5f;",
         "onAudioDevicesAdded",
         "([Landroid/media/AudioDeviceInfo;)V",
         "removedDevices",
@@ -65,22 +65,22 @@
         "",
         "onError",
         "changeStateAsync",
-        "(Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$State;Ls16;Lu16;)V",
+        "(Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$State;Lv56;Lx56;)V",
         "onSuccess",
         "hasBluetoothHeadsetAsync",
-        "(Lu16;Lu16;)V",
+        "(Lx56;Lx56;)V",
         "hasWiredHeadsetAsync",
         "notifyBluetoothPermissionGranted",
         "()V",
         "releaseAsync",
-        "(Ls16;Lu16;)V",
+        "(Lv56;Lx56;)V",
         "Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;",
         "audioDevice",
         "setAudioDeviceAsync",
-        "(Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;Ls16;Lu16;)V",
+        "(Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;Lv56;Lx56;)V",
         "Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;",
         "setAudioDeviceTypeAsync",
-        "(Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;Ls16;Lu16;)V",
+        "(Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;Lv56;Lx56;)V",
         "Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$OnAudioDeviceInfoChangeListener;",
         "listener",
         "setOnAudioDeviceChangeListener",
@@ -88,7 +88,7 @@
         "enabled",
         "byVideoTurnedOn",
         "setSpeakerEnabledAsync",
-        "(ZZLs16;Lu16;)V",
+        "(ZZLv56;Lx56;)V",
         "requestAudioFocusAsync",
         "byStopRinging",
         "updateAvailableDeviceList",
@@ -139,7 +139,7 @@
         "action",
         "block",
         "doOnOwnThread",
-        "(Ljava/lang/String;Ls16;Ls16;Lu16;)V",
+        "(Ljava/lang/String;Lv56;Lv56;Lx56;)V",
         "doOnOwnThreadUnsafe",
         "setOnAudioDeviceChangeListenerImpl",
         "setAudioDevice",
@@ -153,9 +153,9 @@
         "(ZZ)Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;",
         "savePreviousState",
         "restorePreviousAudioState",
-        "Lwia;",
+        "Ldna;",
         "mapAndroidDeviceToCallsDevice",
-        "(Landroid/media/AudioDeviceInfo;)Lwia;",
+        "(Landroid/media/AudioDeviceInfo;)Ldna;",
         "",
         "getAvailableDevices",
         "()Ljava/util/List;",
@@ -233,6 +233,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -349,7 +350,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$Companion;-><init>(Lx54;)V
+    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$Companion;-><init>(Ll94;)V
 
     sput-object v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->Companion:Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$Companion;
 
@@ -367,159 +368,143 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Lru/ok/android/externcalls/sdk/audio/ProximityTracker;ZLru/ok/android/externcalls/sdk/audio/VideoTracker;Lru/ok/android/externcalls/sdk/audio/AudioDeviceSelector;Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$DisabledAudioDeviceUsagePolicy;Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$OnMuteListener;Lru/ok/android/externcalls/sdk/audio/Logger;)V
-    .locals 11
-
-    move-object v0, p0
+    .locals 9
 
     invoke-direct {p0}, Landroid/media/AudioDeviceCallback;-><init>()V
 
-    move-object v1, p2
+    iput-object p2, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->proximityTracker:Lru/ok/android/externcalls/sdk/audio/ProximityTracker;
 
-    iput-object v1, v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->proximityTracker:Lru/ok/android/externcalls/sdk/audio/ProximityTracker;
+    iput-boolean p3, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->trackProximityWhenSpeakerEnabled:Z
 
-    move v1, p3
+    iput-object p4, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->videoTracker:Lru/ok/android/externcalls/sdk/audio/VideoTracker;
 
-    iput-boolean v1, v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->trackProximityWhenSpeakerEnabled:Z
+    iput-object p5, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->audioDeviceSelector:Lru/ok/android/externcalls/sdk/audio/AudioDeviceSelector;
 
-    move-object v1, p4
+    iput-object p6, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->disabledAudioDeviceUsagePolicy:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$DisabledAudioDeviceUsagePolicy;
 
-    iput-object v1, v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->videoTracker:Lru/ok/android/externcalls/sdk/audio/VideoTracker;
+    move-object/from16 v6, p8
 
-    move-object/from16 v1, p5
+    iput-object v6, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->logger:Lru/ok/android/externcalls/sdk/audio/Logger;
 
-    iput-object v1, v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->audioDeviceSelector:Lru/ok/android/externcalls/sdk/audio/AudioDeviceSelector;
+    new-instance p2, Landroid/os/HandlerThread;
 
-    move-object/from16 v1, p6
+    const-string p3, "CallsAudioManagerV3Thread"
 
-    iput-object v1, v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->disabledAudioDeviceUsagePolicy:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$DisabledAudioDeviceUsagePolicy;
+    invoke-direct {p2, p3}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
-    move-object/from16 v7, p8
+    iput-object p2, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->backgroundHandlerThread:Landroid/os/HandlerThread;
 
-    iput-object v7, v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->logger:Lru/ok/android/externcalls/sdk/audio/Logger;
+    sget-object p3, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;->NONE:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
 
-    new-instance v1, Landroid/os/HandlerThread;
+    iput-object p3, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->lastKnownAudioDeviceType:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
 
-    const-string v2, "CallsAudioManagerV3Thread"
+    new-instance p3, Ljava/util/ArrayList;
 
-    invoke-direct {v1, v2}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
+    invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v1, v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->backgroundHandlerThread:Landroid/os/HandlerThread;
+    iput-object p3, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->callsAudioDevices:Ljava/util/List;
 
-    sget-object v2, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;->NONE:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
+    new-instance p3, Ljava/util/LinkedHashMap;
 
-    iput-object v2, v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->lastKnownAudioDeviceType:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
+    invoke-direct {p3}, Ljava/util/LinkedHashMap;-><init>()V
 
-    new-instance v2, Ljava/util/ArrayList;
+    iput-object p3, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->audioDeviceByCallsDevice:Ljava/util/Map;
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    sget-object p3, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;->Companion:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo$Companion;
 
-    iput-object v2, v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->callsAudioDevices:Ljava/util/List;
+    invoke-virtual {p3}, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo$Companion;->getNONE()Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
-    new-instance v2, Ljava/util/LinkedHashMap;
+    move-result-object p4
 
-    invoke-direct {v2}, Ljava/util/LinkedHashMap;-><init>()V
+    iput-object p4, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->usedDevice:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
-    iput-object v2, v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->audioDeviceByCallsDevice:Ljava/util/Map;
+    invoke-virtual {p3}, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo$Companion;->getNONE()Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
-    sget-object v2, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;->Companion:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo$Companion;
+    move-result-object p3
 
-    invoke-virtual {v2}, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo$Companion;->getNONE()Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+    iput-object p3, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->reportedAudioDevice:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
-    move-result-object v3
+    new-instance p3, Ltq1;
 
-    iput-object v3, v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->usedDevice:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+    const/4 p4, 0x0
 
-    invoke-virtual {v2}, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo$Companion;->getNONE()Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+    invoke-direct {p3, p0, p4}, Ltq1;-><init>(Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;I)V
 
-    move-result-object v2
+    iput-object p3, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->recoverDeviceByTypeRunnable:Ljava/lang/Runnable;
 
-    iput-object v2, v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->reportedAudioDevice:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+    new-instance p3, Ltq1;
 
-    new-instance v2, Ldo1;
+    const/4 p4, 0x1
 
-    const/4 v3, 0x0
+    invoke-direct {p3, p0, p4}, Ltq1;-><init>(Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;I)V
 
-    invoke-direct {v2, p0, v3}, Ldo1;-><init>(Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;I)V
+    iput-object p3, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->syncWithSystemCommunicationDeviceRunnable:Ljava/lang/Runnable;
 
-    iput-object v2, v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->recoverDeviceByTypeRunnable:Ljava/lang/Runnable;
+    new-instance p3, Ltq1;
 
-    new-instance v2, Ldo1;
+    const/4 p4, 0x2
 
-    const/4 v3, 0x1
+    invoke-direct {p3, p0, p4}, Ltq1;-><init>(Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;I)V
 
-    invoke-direct {v2, p0, v3}, Ldo1;-><init>(Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;I)V
+    iput-object p3, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->tryAgainRunnable:Ljava/lang/Runnable;
 
-    iput-object v2, v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->syncWithSystemCommunicationDeviceRunnable:Ljava/lang/Runnable;
+    sget-object p3, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$State;->IDLE:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$State;
 
-    new-instance v2, Ldo1;
+    iput-object p3, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->state:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$State;
 
-    const/4 v3, 0x2
-
-    invoke-direct {v2, p0, v3}, Ldo1;-><init>(Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;I)V
-
-    iput-object v2, v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->tryAgainRunnable:Ljava/lang/Runnable;
-
-    sget-object v2, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$State;->IDLE:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$State;
-
-    iput-object v2, v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->state:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$State;
-
-    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
-
-    new-instance v5, Landroid/os/Handler;
-
-    invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    invoke-direct {v5, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    iput-object v5, v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->workerThreadHandler:Landroid/os/Handler;
+    invoke-virtual {p2}, Ljava/lang/Thread;->start()V
 
     new-instance v4, Landroid/os/Handler;
 
+    invoke-virtual {p2}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+
+    move-result-object p2
+
+    invoke-direct {v4, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    iput-object v4, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->workerThreadHandler:Landroid/os/Handler;
+
+    new-instance v3, Landroid/os/Handler;
+
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
-    move-result-object v1
+    move-result-object p2
 
-    invoke-direct {v4, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    invoke-direct {v3, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    iput-object v4, v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->mainHandler:Landroid/os/Handler;
+    iput-object v3, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->mainHandler:Landroid/os/Handler;
 
-    const-string v1, "audio"
+    const-string p2, "audio"
 
-    move-object v2, p1
+    invoke-virtual {p1, p2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-virtual {p1, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    move-result-object p1
 
-    move-result-object v1
+    move-object v1, p1
 
-    move-object v2, v1
+    check-cast v1, Landroid/media/AudioManager;
 
-    check-cast v2, Landroid/media/AudioManager;
+    iput-object v1, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->audioManager:Landroid/media/AudioManager;
 
-    iput-object v2, v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->audioManager:Landroid/media/AudioManager;
+    new-instance v8, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$1;
 
-    new-instance v9, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$1;
+    invoke-direct {v8, p0}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$1;-><init>(Ljava/lang/Object;)V
 
-    invoke-direct {v9, p0}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$1;-><init>(Ljava/lang/Object;)V
+    new-instance v7, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$2;
 
-    new-instance v8, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$2;
+    invoke-direct {v7, p0}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$2;-><init>(Ljava/lang/Object;)V
 
-    invoke-direct {v8, p0}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$2;-><init>(Ljava/lang/Object;)V
+    new-instance v0, Lru/ok/android/externcalls/sdk/audio/internal/AudioFocusRequestHelper;
 
-    new-instance v10, Lru/ok/android/externcalls/sdk/audio/internal/AudioFocusRequestHelper;
+    new-instance v5, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$3;
 
-    new-instance v6, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$3;
+    invoke-direct {v5, p0}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$3;-><init>(Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;)V
 
-    invoke-direct {v6, p0}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$3;-><init>(Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;)V
+    move-object/from16 v2, p7
 
-    move-object v1, v10
+    invoke-direct/range {v0 .. v8}, Lru/ok/android/externcalls/sdk/audio/internal/AudioFocusRequestHelper;-><init>(Landroid/media/AudioManager;Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$OnMuteListener;Landroid/os/Handler;Landroid/os/Handler;Lv56;Lru/ok/android/externcalls/sdk/audio/Logger;Lv56;Lv56;)V
 
-    move-object/from16 v3, p7
-
-    invoke-direct/range {v1 .. v9}, Lru/ok/android/externcalls/sdk/audio/internal/AudioFocusRequestHelper;-><init>(Landroid/media/AudioManager;Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$OnMuteListener;Landroid/os/Handler;Landroid/os/Handler;Ls16;Lru/ok/android/externcalls/sdk/audio/Logger;Ls16;Ls16;)V
-
-    iput-object v10, v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->audioFocusRequestHelper:Lru/ok/android/externcalls/sdk/audio/internal/AudioFocusRequestHelper;
+    iput-object v0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->audioFocusRequestHelper:Lru/ok/android/externcalls/sdk/audio/internal/AudioFocusRequestHelper;
 
     return-void
 .end method
@@ -743,7 +728,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    return-object p0
 
     :catchall_0
     move-exception p0
@@ -754,11 +739,10 @@
 
     const-string p1, "error: "
 
-    invoke-static {p1, p0}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p0}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    :goto_0
     return-object p0
 .end method
 
@@ -901,33 +885,33 @@
     return-void
 .end method
 
-.method public static synthetic d(Ls16;Ls16;Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;Ljava/lang/String;Lu16;)V
+.method public static synthetic d(Lv56;Lv56;Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;Ljava/lang/String;Lx56;)V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThreadUnsafe$lambda$8(Ls16;Ls16;Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;Ljava/lang/String;Lu16;)V
+    invoke-static {p0, p1, p2, p3, p4}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThreadUnsafe$lambda$8(Lv56;Lv56;Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;Ljava/lang/String;Lx56;)V
 
     return-void
 .end method
 
-.method private final doOnOwnThread(Ljava/lang/String;Ls16;Ls16;Lu16;)V
+.method private final doOnOwnThread(Ljava/lang/String;Lv56;Lv56;Lx56;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "Ls16;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     :try_start_0
-    invoke-direct {p0, p1, p2, p3, p4}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThreadUnsafe(Ljava/lang/String;Ls16;Ls16;Lu16;)V
+    invoke-direct {p0, p1, p2, p3, p4}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThreadUnsafe(Ljava/lang/String;Lv56;Lv56;Lx56;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    return-void
 
     :catchall_0
     move-exception p2
@@ -938,7 +922,7 @@
 
     const-string p4, " for execution"
 
-    invoke-static {p3, p1, p4}, Lwn6;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p3, p1, p4}, Lu88;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -946,11 +930,10 @@
 
     invoke-interface {p0, p3, p1, p2}, Lru/ok/android/externcalls/sdk/audio/Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_0
     return-void
 .end method
 
-.method public static synthetic doOnOwnThread$default(Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;Ljava/lang/String;Ls16;Ls16;Lu16;ILjava/lang/Object;)V
+.method public static synthetic doOnOwnThread$default(Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;Ljava/lang/String;Lv56;Lv56;Lx56;ILjava/lang/Object;)V
     .locals 1
 
     and-int/lit8 p6, p5, 0x4
@@ -969,48 +952,46 @@
     move-object p4, v0
 
     :cond_1
-    invoke-direct {p0, p1, p2, p3, p4}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThread(Ljava/lang/String;Ls16;Ls16;Lu16;)V
+    invoke-direct {p0, p1, p2, p3, p4}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThread(Ljava/lang/String;Lv56;Lv56;Lx56;)V
 
     return-void
 .end method
 
-.method private final doOnOwnThreadUnsafe(Ljava/lang/String;Ls16;Ls16;Lu16;)V
-    .locals 8
+.method private final doOnOwnThreadUnsafe(Ljava/lang/String;Lv56;Lv56;Lx56;)V
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "Ls16;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->workerThreadHandler:Landroid/os/Handler;
 
-    new-instance v7, Lco1;
-
-    move-object v1, v7
-
-    move-object v2, p2
-
-    move-object v3, p3
+    new-instance v1, Lsq1;
 
     move-object v4, p0
 
     move-object v5, p1
 
+    move-object v2, p2
+
+    move-object v3, p3
+
     move-object v6, p4
 
-    invoke-direct/range {v1 .. v6}, Lco1;-><init>(Ls16;Ls16;Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;Ljava/lang/String;Lu16;)V
+    invoke-direct/range {v1 .. v6}, Lsq1;-><init>(Lv56;Lv56;Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;Ljava/lang/String;Lx56;)V
 
-    invoke-virtual {v0, v7}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     return-void
 .end method
 
-.method public static synthetic doOnOwnThreadUnsafe$default(Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;Ljava/lang/String;Ls16;Ls16;Lu16;ILjava/lang/Object;)V
+.method public static synthetic doOnOwnThreadUnsafe$default(Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;Ljava/lang/String;Lv56;Lv56;Lx56;ILjava/lang/Object;)V
     .locals 1
 
     and-int/lit8 p6, p5, 0x4
@@ -1029,24 +1010,24 @@
     move-object p4, v0
 
     :cond_1
-    invoke-direct {p0, p1, p2, p3, p4}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThreadUnsafe(Ljava/lang/String;Ls16;Ls16;Lu16;)V
+    invoke-direct {p0, p1, p2, p3, p4}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThreadUnsafe(Ljava/lang/String;Lv56;Lv56;Lx56;)V
 
     return-void
 .end method
 
-.method private static final doOnOwnThreadUnsafe$lambda$8(Ls16;Ls16;Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;Ljava/lang/String;Lu16;)V
+.method private static final doOnOwnThreadUnsafe$lambda$8(Lv56;Lv56;Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;Ljava/lang/String;Lx56;)V
     .locals 0
 
     :try_start_0
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     if-eqz p1, :cond_0
 
-    invoke-interface {p1}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p1}, Lv56;->invoke()Ljava/lang/Object;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    return-void
 
     :catchall_0
     move-exception p0
@@ -1065,10 +1046,9 @@
 
     if-eqz p4, :cond_0
 
-    invoke-interface {p4, p0}, Lu16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p4, p0}, Lx56;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
-    :goto_0
     return-void
 .end method
 
@@ -1157,7 +1137,7 @@
     :try_start_0
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->audioManager:Landroid/media/AudioManager;
 
-    invoke-static {v0}, Lp20;->p(Landroid/media/AudioManager;)Ljava/util/List;
+    invoke-static {v0}, Lx20;->n(Landroid/media/AudioManager;)Ljava/util/List;
 
     move-result-object v1
 
@@ -1173,16 +1153,18 @@
 
     const/4 v4, 0x0
 
-    invoke-static/range {v1 .. v6}, Lo23;->c0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lu16;I)Ljava/lang/String;
+    invoke-static/range {v1 .. v6}, Lp43;->G0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lx56;I)Ljava/lang/String;
 
     move-result-object p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    return-object p0
 
     :catchall_0
-    move-exception p0
+    move-exception v0
+
+    move-object p0, v0
 
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
@@ -1190,11 +1172,10 @@
 
     const-string v0, "audio manager error: "
 
-    invoke-static {v0, p0}, Lrf0;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0}, Lpg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    :goto_0
     return-object p0
 .end method
 
@@ -1204,14 +1185,14 @@
         value = {
             "()",
             "Ljava/util/List<",
-            "Lwia;",
+            "Ldna;",
             ">;"
         }
     .end annotation
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->audioManager:Landroid/media/AudioManager;
 
-    invoke-static {v0}, Lp20;->p(Landroid/media/AudioManager;)Ljava/util/List;
+    invoke-static {v0}, Lx20;->n(Landroid/media/AudioManager;)Ljava/util/List;
 
     move-result-object v0
 
@@ -1237,13 +1218,13 @@
 
     check-cast v2, Landroid/media/AudioDeviceInfo;
 
-    invoke-direct {p0, v2}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->mapAndroidDeviceToCallsDevice(Landroid/media/AudioDeviceInfo;)Lwia;
+    invoke-direct {p0, v2}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->mapAndroidDeviceToCallsDevice(Landroid/media/AudioDeviceInfo;)Ldna;
 
     move-result-object v2
 
     if-eqz v2, :cond_0
 
-    invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
@@ -1294,7 +1275,7 @@
 
     move-result-object v4
 
-    invoke-static {v4, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v4, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v4
 
@@ -1343,7 +1324,7 @@
 
     move-result-object v4
 
-    invoke-static {v4, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v4, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v4
 
@@ -1387,7 +1368,7 @@
 
     const-string v5, ":"
 
-    invoke-static {v4, v0, v5, v2, v5}, Lrf0;->i(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4, v0, v5, v2, v5}, Lpg0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -1421,12 +1402,11 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
@@ -1443,17 +1423,16 @@
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
 .method private final getPreferredAudioDevice(ZZ)Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-    .locals 13
+    .locals 12
 
     invoke-direct {p0}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->maybeSyncAudioDeviceList()V
 
@@ -1487,47 +1466,49 @@
 
     if-nez v2, :cond_0
 
-    move v7, v6
+    move v2, v6
 
     goto :goto_0
 
     :cond_0
-    move v7, v3
+    move v2, v6
+
+    move v6, v3
 
     :goto_0
-    iget-boolean v2, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->disabledBluetoothOnce:Z
+    iget-boolean v7, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->disabledBluetoothOnce:Z
 
-    if-eqz v2, :cond_1
+    if-eqz v7, :cond_1
 
-    iget-object v2, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->disabledAudioDeviceUsagePolicy:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$DisabledAudioDeviceUsagePolicy;
+    iget-object v7, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->disabledAudioDeviceUsagePolicy:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$DisabledAudioDeviceUsagePolicy;
 
     sget-object v8, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;->BLUETOOTH:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
 
-    invoke-interface {v2, v8}, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$DisabledAudioDeviceUsagePolicy;->isAvailableForAutoSelect(Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;)Z
+    invoke-interface {v7, v8}, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$DisabledAudioDeviceUsagePolicy;->isAvailableForAutoSelect(Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;)Z
 
-    move-result v2
+    move-result v7
 
-    if-nez v2, :cond_1
+    if-nez v7, :cond_1
 
-    move v8, v6
+    move v7, v2
 
     goto :goto_1
 
     :cond_1
-    move v8, v3
+    move v7, v3
 
     :goto_1
     iget-object v2, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->callsAudioDevices:Ljava/util/List;
 
     new-instance v3, Ljava/util/ArrayList;
 
-    const/16 v6, 0xa
+    const/16 v8, 0xa
 
-    invoke-static {v2, v6}, Lq23;->H(Ljava/lang/Iterable;I)I
+    invoke-static {v2, v8}, Lr43;->k0(Ljava/lang/Iterable;I)I
 
-    move-result v6
+    move-result v8
 
-    invoke-direct {v3, v6}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v3, v8}, Ljava/util/ArrayList;-><init>(I)V
 
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -1536,54 +1517,42 @@
     :goto_2
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v8
 
-    if-eqz v6, :cond_2
+    if-eqz v8, :cond_2
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v8
 
-    check-cast v6, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+    check-cast v8, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
-    invoke-virtual {v6}, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;->getDeviceType()Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
+    invoke-virtual {v8}, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;->getDeviceType()Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
 
-    move-result-object v6
+    move-result-object v8
 
-    invoke-interface {v3, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
     :cond_2
-    invoke-static {v3}, Lo23;->w0(Ljava/lang/Iterable;)Ljava/util/Set;
+    invoke-static {v3}, Lp43;->a1(Ljava/util/Collection;)Ljava/util/Set;
 
-    move-result-object v9
+    move-result-object v8
 
     iget-object v2, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->usedDevice:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
     invoke-virtual {v2}, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;->getDeviceType()Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
 
-    move-result-object v10
+    move-result-object v9
 
-    iget-object v11, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->videoTracker:Lru/ok/android/externcalls/sdk/audio/VideoTracker;
+    iget-object v10, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->videoTracker:Lru/ok/android/externcalls/sdk/audio/VideoTracker;
 
-    iget-object v12, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->proximityTracker:Lru/ok/android/externcalls/sdk/audio/ProximityTracker;
+    iget-object v11, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->proximityTracker:Lru/ok/android/externcalls/sdk/audio/ProximityTracker;
 
     move v2, p1
 
     move v3, p2
-
-    move v6, v7
-
-    move v7, v8
-
-    move-object v8, v9
-
-    move-object v9, v10
-
-    move-object v10, v11
-
-    move-object v11, v12
 
     invoke-interface/range {v0 .. v11}, Lru/ok/android/externcalls/sdk/audio/AudioDeviceSelector;->selectPreferableDevice(Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$State;ZZZZZZLjava/util/Set;Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;Lru/ok/android/externcalls/sdk/audio/VideoTracker;Lru/ok/android/externcalls/sdk/audio/ProximityTracker;)Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
 
@@ -1670,14 +1639,14 @@
     return-void
 .end method
 
-.method private final mapAndroidDeviceToCallsDevice(Landroid/media/AudioDeviceInfo;)Lwia;
+.method private final mapAndroidDeviceToCallsDevice(Landroid/media/AudioDeviceInfo;)Ldna;
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/media/AudioDeviceInfo;",
             ")",
-            "Lwia;"
+            "Ldna;"
         }
     .end annotation
 
@@ -1981,7 +1950,7 @@
 
     const-string v7, "Map "
 
-    invoke-static {v7, v1, v4, v5, v4}, Lrf0;->i(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v7, v1, v4, v5, v4}, Lpg0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -2001,9 +1970,11 @@
 
     if-eqz v0, :cond_18
 
-    new-instance v2, Lwia;
+    new-instance p0, Ldna;
 
-    invoke-direct {v2, v0, p1}, Lwia;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {p0, v0, p1}, Ldna;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-object p0
 
     :cond_18
     return-object v2
@@ -2063,7 +2034,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    return-void
 
     :catchall_0
     move-exception v0
@@ -2074,7 +2045,6 @@
 
     invoke-interface {p0, v2, v1, v0}, Lru/ok/android/externcalls/sdk/audio/Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_0
     return-void
 .end method
 
@@ -2100,7 +2070,7 @@
 
     if-eqz v0, :cond_0
 
-    return-void
+    goto :goto_1
 
     :cond_0
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->state:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$State;
@@ -2144,7 +2114,7 @@
 
     aget p1, v1, p1
 
-    if-eq p1, v3, :cond_4
+    if-eq p1, v3, :cond_5
 
     const/4 v1, 0x2
 
@@ -2163,17 +2133,17 @@
     :cond_3
     invoke-direct {p0}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->start()V
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
     invoke-direct {p0, v3}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->updateAvailableDeviceList(Z)Z
 
-    goto :goto_1
-
     :cond_4
-    invoke-direct {p0}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->release()V
+    :goto_1
+    return-void
 
     :cond_5
-    :goto_1
+    invoke-direct {p0}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->release()V
+
     return-void
 .end method
 
@@ -2185,7 +2155,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    return-void
 
     :catchall_0
     move-exception v0
@@ -2198,7 +2168,6 @@
 
     invoke-interface {p0, v1, v2, v0}, Lru/ok/android/externcalls/sdk/audio/Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_0
     return-void
 .end method
 
@@ -2335,16 +2304,12 @@
     invoke-virtual {v0, p0}, Landroid/media/AudioManager;->unregisterAudioDeviceCallback(Landroid/media/AudioDeviceCallback;)V
 
     :try_start_0
-    invoke-static {p0}, Lp20;->h(Ljava/lang/Object;)Landroid/media/AudioManager$OnCommunicationDeviceChangedListener;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Lp20;->u(Landroid/media/AudioManager;Landroid/media/AudioManager$OnCommunicationDeviceChangedListener;)V
+    invoke-static {v0, p0}, Lx20;->s(Landroid/media/AudioManager;Landroid/media/AudioManager$OnCommunicationDeviceChangedListener;)V
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
-    invoke-static {v0}, Lp20;->r(Landroid/media/AudioManager;)V
+    invoke-static {v0}, Lx20;->p(Landroid/media/AudioManager;)V
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->logger:Lru/ok/android/externcalls/sdk/audio/Logger;
 
@@ -2402,11 +2367,11 @@
 
     iget-object v1, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->mainHandler:Landroid/os/Handler;
 
-    new-instance v2, Lg5;
+    new-instance v2, Le5;
 
-    const/16 v3, 0xb
+    const/16 v3, 0xa
 
-    invoke-direct {v2, p0, p1, v0, v3}, Lg5;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+    invoke-direct {v2, p0, p1, v0, v3}, Le5;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -2418,7 +2383,7 @@
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->reportedAudioDevice:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
-    invoke-static {v0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -2462,14 +2427,14 @@
 
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->reportedAudioDevice:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
-    goto :goto_1
+    return-void
 
     :cond_0
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->logger:Lru/ok/android/externcalls/sdk/audio/Logger;
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->reportedAudioDevice:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -2515,7 +2480,6 @@
 
     invoke-interface {v0, v1, p0}, Lru/ok/android/externcalls/sdk/audio/Logger;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_1
     return-void
 .end method
 
@@ -2564,11 +2528,11 @@
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->logger:Lru/ok/android/externcalls/sdk/audio/Logger;
 
-    const-string v1, "CallsAudioManagerV3Impl"
+    const-string v1, "restoring state"
 
-    const-string v2, "restoring state"
+    const-string v2, "CallsAudioManagerV3Impl"
 
-    invoke-interface {v0, v1, v2}, Lru/ok/android/externcalls/sdk/audio/Logger;->v(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v0, v2, v1}, Lru/ok/android/externcalls/sdk/audio/Logger;->v(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -2577,26 +2541,26 @@
     :try_start_0
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->audioManager:Landroid/media/AudioManager;
 
-    iget-boolean v2, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->savedIsSpeakerPhoneOn:Z
+    iget-boolean v1, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->savedIsSpeakerPhoneOn:Z
 
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_2
 
-    invoke-static {v0}, Lp20;->p(Landroid/media/AudioManager;)Ljava/util/List;
+    invoke-static {v0}, Lx20;->n(Landroid/media/AudioManager;)Ljava/util/List;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v2
+    move-result-object v1
 
     :cond_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
 
@@ -2627,26 +2591,25 @@
 
     if-eqz v3, :cond_2
 
-    invoke-static {v0, v3}, Lp20;->t(Landroid/media/AudioManager;Landroid/media/AudioDeviceInfo;)V
+    invoke-static {v0, v3}, Lx20;->r(Landroid/media/AudioManager;Landroid/media/AudioDeviceInfo;)V
 
     :cond_2
-    iget-boolean v2, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->savedIsMicrophoneMute:Z
+    iget-boolean v1, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->savedIsMicrophoneMute:Z
 
-    invoke-virtual {v0, v2}, Landroid/media/AudioManager;->setMicrophoneMute(Z)V
+    invoke-virtual {v0, v1}, Landroid/media/AudioManager;->setMicrophoneMute(Z)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_2
+    return-void
 
     :goto_1
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->logger:Lru/ok/android/externcalls/sdk/audio/Logger;
 
-    const-string v2, "restorePreviousAudioState: failed"
+    const-string v1, "restorePreviousAudioState: failed"
 
-    invoke-interface {p0, v1, v2, v0}, Lru/ok/android/externcalls/sdk/audio/Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-interface {p0, v2, v1, v0}, Lru/ok/android/externcalls/sdk/audio/Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_3
-    :goto_2
     return-void
 .end method
 
@@ -2674,7 +2637,7 @@
 
     iput-boolean v1, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->savedIsMicrophoneMute:Z
 
-    invoke-static {v0}, Lp20;->g(Landroid/media/AudioManager;)Landroid/media/AudioDeviceInfo;
+    invoke-static {v0}, Lx20;->f(Landroid/media/AudioManager;)Landroid/media/AudioDeviceInfo;
 
     move-result-object v0
 
@@ -2709,7 +2672,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_2
+    return-void
 
     :goto_1
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->logger:Lru/ok/android/externcalls/sdk/audio/Logger;
@@ -2719,7 +2682,6 @@
     invoke-interface {p0, v2, v1, v0}, Lru/ok/android/externcalls/sdk/audio/Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_1
-    :goto_2
     return-void
 .end method
 
@@ -2746,7 +2708,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    return-void
 
     :catchall_0
     move-exception v0
@@ -2759,7 +2721,6 @@
 
     invoke-interface {p0, v1, v2, v0}, Lru/ok/android/externcalls/sdk/audio/Logger;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_0
     return-void
 .end method
 
@@ -2794,7 +2755,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    return-void
 
     :catchall_0
     move-exception v0
@@ -2805,7 +2766,6 @@
 
     invoke-interface {p0, v2, v1, v0}, Lru/ok/android/externcalls/sdk/audio/Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_0
     return-void
 .end method
 
@@ -2838,7 +2798,7 @@
 
     iget-object v2, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->usedDevice:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
-    invoke-static {v2, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -2893,7 +2853,7 @@
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->audioManager:Landroid/media/AudioManager;
 
-    invoke-static {p0}, Lp20;->r(Landroid/media/AudioManager;)V
+    invoke-static {p0}, Lx20;->p(Landroid/media/AudioManager;)V
 
     return-void
 
@@ -2914,16 +2874,16 @@
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->audioManager:Landroid/media/AudioManager;
 
-    invoke-static {v0}, Lp20;->r(Landroid/media/AudioManager;)V
+    invoke-static {v0}, Lx20;->p(Landroid/media/AudioManager;)V
 
     invoke-direct {p0, p1}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->reportCurrentCallsAudioDevice(Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;)V
 
-    goto/16 :goto_0
+    return-void
 
     :cond_2
     iget-object v3, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->audioManager:Landroid/media/AudioManager;
 
-    invoke-static {v3}, Lp20;->g(Landroid/media/AudioManager;)Landroid/media/AudioDeviceInfo;
+    invoke-static {v3}, Lx20;->f(Landroid/media/AudioManager;)Landroid/media/AudioDeviceInfo;
 
     move-result-object v3
 
@@ -2955,7 +2915,7 @@
 
     invoke-direct {p0, v2}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->handleCurrentCommunicationDevice(Landroid/media/AudioDeviceInfo;)V
 
-    goto/16 :goto_0
+    return-void
 
     :cond_3
     iget-object v3, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->logger:Lru/ok/android/externcalls/sdk/audio/Logger;
@@ -3027,11 +2987,17 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    return-void
 
     :catchall_0
     move-exception v0
 
+    goto :goto_0
+
+    :cond_4
+    return-void
+
+    :goto_0
     iget-object v1, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->logger:Lru/ok/android/externcalls/sdk/audio/Logger;
 
     new-instance v3, Ljava/lang/IllegalArgumentException;
@@ -3076,8 +3042,6 @@
 
     invoke-direct {p0}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->syncWithSystemCommunicationDevice()V
 
-    :cond_4
-    :goto_0
     return-void
 .end method
 
@@ -3088,7 +3052,7 @@
 
     if-eqz v0, :cond_0
 
-    return-void
+    goto :goto_1
 
     :cond_0
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->usedDevice:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
@@ -3103,7 +3067,7 @@
 
     if-ne v0, v1, :cond_1
 
-    return-void
+    goto :goto_1
 
     :cond_1
     iget-boolean v1, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->disabledBluetoothOnce:Z
@@ -3176,6 +3140,7 @@
     invoke-direct {p0, p1}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->selectAudioDevice(Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;)V
 
     :cond_4
+    :goto_1
     return-void
 .end method
 
@@ -3189,7 +3154,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    return-void
 
     :catchall_0
     move-exception p1
@@ -3202,7 +3167,6 @@
 
     invoke-interface {p0, v0, v1, p1}, Lru/ok/android/externcalls/sdk/audio/Logger;->reportError(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_0
     return-void
 .end method
 
@@ -3213,14 +3177,14 @@
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->audioManager:Landroid/media/AudioManager;
 
-    invoke-static {p0}, Lp20;->r(Landroid/media/AudioManager;)V
+    invoke-static {p0}, Lx20;->p(Landroid/media/AudioManager;)V
 
     goto :goto_0
 
     :cond_0
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->audioManager:Landroid/media/AudioManager;
 
-    invoke-static {v0, p1}, Lp20;->w(Landroid/media/AudioManager;Landroid/media/AudioDeviceInfo;)Z
+    invoke-static {v0, p1}, Lx20;->w(Landroid/media/AudioManager;Landroid/media/AudioDeviceInfo;)Z
 
     move-result p1
 
@@ -3246,13 +3210,14 @@
 
     if-eqz v0, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->onAudioDeviceChangeListener:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$OnAudioDeviceInfoChangeListener;
 
     if-nez p1, :cond_1
 
+    :goto_0
     return-void
 
     :cond_1
@@ -3274,7 +3239,7 @@
 
     if-eqz v0, :cond_0
 
-    return-void
+    goto :goto_0
 
     :cond_0
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->logger:Lru/ok/android/externcalls/sdk/audio/Logger;
@@ -3305,7 +3270,7 @@
 
     invoke-interface {v0, v2, v1}, Lru/ok/android/externcalls/sdk/audio/Logger;->v(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_4
 
     if-nez p2, :cond_1
 
@@ -3321,7 +3286,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_4
+    if-eqz p1, :cond_3
 
     :cond_1
     iget-object p1, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->usedDevice:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
@@ -3338,7 +3303,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_4
+    if-eqz p1, :cond_3
 
     iget-object p1, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->proximityTracker:Lru/ok/android/externcalls/sdk/audio/ProximityTracker;
 
@@ -3346,7 +3311,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_4
+    if-eqz p1, :cond_3
 
     invoke-direct {p0, v0}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->firstOfType(Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;)Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
@@ -3356,7 +3321,7 @@
 
     invoke-direct {p0, p1}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->selectAudioDevice(Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;)V
 
-    goto :goto_0
+    return-void
 
     :cond_2
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->logger:Lru/ok/android/externcalls/sdk/audio/Logger;
@@ -3365,9 +3330,11 @@
 
     invoke-interface {p0, v2, p1}, Lru/ok/android/externcalls/sdk/audio/Logger;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_0
-
     :cond_3
+    :goto_0
+    return-void
+
+    :cond_4
     const/4 p1, 0x1
 
     const/4 p2, 0x0
@@ -3378,8 +3345,6 @@
 
     invoke-direct {p0, p1}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->selectAudioDevice(Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;)V
 
-    :cond_4
-    :goto_0
     return-void
 .end method
 
@@ -3441,25 +3406,19 @@
 
     invoke-virtual {v0, p0, v1}, Landroid/media/AudioManager;->registerAudioDeviceCallback(Landroid/media/AudioDeviceCallback;Landroid/os/Handler;)V
 
-    new-instance v1, Leo1;
+    new-instance v1, Luq1;
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, v2, p0}, Leo1;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v1, v2, p0}, Luq1;-><init>(ILjava/lang/Object;)V
 
-    invoke-static {p0}, Lp20;->h(Ljava/lang/Object;)Landroid/media/AudioManager$OnCommunicationDeviceChangedListener;
+    invoke-static {v0, v1, p0}, Lx20;->q(Landroid/media/AudioManager;Luq1;Landroid/media/AudioManager$OnCommunicationDeviceChangedListener;)V
 
-    move-result-object v2
-
-    invoke-static {v0, v1, v2}, Lp20;->s(Landroid/media/AudioManager;Leo1;Landroid/media/AudioManager$OnCommunicationDeviceChangedListener;)V
-
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x1
-
-    invoke-static {p0, v1, v2, v0}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->updateAvailableDeviceList$default(Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;ZILjava/lang/Object;)Z
+    invoke-static {p0, v2, v0, v1}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->updateAvailableDeviceList$default(Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;ZILjava/lang/Object;)Z
 
     return-void
 .end method
@@ -3485,15 +3444,15 @@
 
     sget-object v6, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$syncAudioDeviceList$1;->INSTANCE:Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$syncAudioDeviceList$1;
 
+    const/16 v7, 0x1f
+
+    const/4 v3, 0x0
+
     const/4 v4, 0x0
 
     const/4 v5, 0x0
 
-    const/4 v3, 0x0
-
-    const/16 v7, 0x1f
-
-    invoke-static/range {v2 .. v7}, Lo23;->c0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lu16;I)Ljava/lang/String;
+    invoke-static/range {v2 .. v7}, Lp43;->G0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lx56;I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -3538,7 +3497,7 @@
 
     const/16 v5, 0xa
 
-    invoke-static {v0, v5}, Lq23;->H(Ljava/lang/Iterable;I)I
+    invoke-static {v0, v5}, Lr43;->k0(Ljava/lang/Iterable;I)I
 
     move-result v5
 
@@ -3559,9 +3518,9 @@
 
     move-result-object v6
 
-    check-cast v6, Lwia;
+    check-cast v6, Ldna;
 
-    iget-object v6, v6, Lwia;->a:Ljava/lang/Object;
+    iget-object v6, v6, Ldna;->a:Ljava/lang/Object;
 
     check-cast v6, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
@@ -3579,7 +3538,7 @@
 
     iget-object v1, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->audioDeviceByCallsDevice:Ljava/util/Map;
 
-    invoke-static {v0, v1}, Lju7;->U(Ljava/util/List;Ljava/util/Map;)V
+    invoke-static {v0, v1}, Ljz7;->E(Ljava/util/List;Ljava/util/Map;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -3601,15 +3560,15 @@
 
     sget-object v9, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$syncAudioDeviceList$3;->INSTANCE:Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$syncAudioDeviceList$3;
 
+    const/16 v10, 0x1f
+
+    const/4 v6, 0x0
+
     const/4 v7, 0x0
 
     const/4 v8, 0x0
 
-    const/4 v6, 0x0
-
-    const/16 v10, 0x1f
-
-    invoke-static/range {v5 .. v10}, Lo23;->c0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lu16;I)Ljava/lang/String;
+    invoke-static/range {v5 .. v10}, Lp43;->G0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lx56;I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -3661,7 +3620,7 @@
     :try_start_0
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->audioManager:Landroid/media/AudioManager;
 
-    invoke-static {v0}, Lp20;->g(Landroid/media/AudioManager;)Landroid/media/AudioDeviceInfo;
+    invoke-static {v0}, Lx20;->f(Landroid/media/AudioManager;)Landroid/media/AudioDeviceInfo;
 
     move-result-object v0
 
@@ -3669,7 +3628,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    return-void
 
     :catchall_0
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->logger:Lru/ok/android/externcalls/sdk/audio/Logger;
@@ -3678,7 +3637,6 @@
 
     invoke-interface {p0, v2, v0}, Lru/ok/android/externcalls/sdk/audio/Logger;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    :goto_0
     return-void
 .end method
 
@@ -3690,7 +3648,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    return-void
 
     :catchall_0
     move-exception v0
@@ -3705,7 +3663,6 @@
 
     invoke-direct {p0}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->syncWithSystemCommunicationDevice()V
 
-    :goto_0
     return-void
 .end method
 
@@ -3749,7 +3706,7 @@
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->audioManager:Landroid/media/AudioManager;
 
-    invoke-static {v0}, Lp20;->r(Landroid/media/AudioManager;)V
+    invoke-static {v0}, Lx20;->p(Landroid/media/AudioManager;)V
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->usedDevice:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
@@ -3767,12 +3724,12 @@
 
     invoke-direct {p0}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->syncWithSystemCommunicationDevice()V
 
-    goto :goto_0
+    return-void
 
     :cond_1
     iget-object v1, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->audioManager:Landroid/media/AudioManager;
 
-    invoke-static {v1, v0}, Lp20;->w(Landroid/media/AudioManager;Landroid/media/AudioDeviceInfo;)Z
+    invoke-static {v1, v0}, Lx20;->w(Landroid/media/AudioManager;Landroid/media/AudioDeviceInfo;)Z
 
     move-result v1
 
@@ -3802,7 +3759,7 @@
 
     invoke-direct {p0}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->syncWithSystemCommunicationDevice()V
 
-    goto :goto_0
+    return-void
 
     :cond_2
     iget-object v1, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->logger:Lru/ok/android/externcalls/sdk/audio/Logger;
@@ -3829,7 +3786,6 @@
 
     invoke-direct {p0}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->scheduleSyncWithSystemCommunicationDevice()V
 
-    :goto_0
     return-void
 .end method
 
@@ -3947,7 +3903,7 @@
 
     iget-object v9, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->usedDevice:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
-    invoke-static {v7, v9}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v7, v9}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v7
 
@@ -3956,7 +3912,7 @@
     move-object v6, v5
 
     :cond_5
-    if-eqz v6, :cond_9
+    if-eqz v6, :cond_a
 
     if-eqz p1, :cond_6
 
@@ -4000,7 +3956,7 @@
     return v3
 
     :cond_7
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_9
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->usedDevice:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
@@ -4012,7 +3968,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_9
 
     iget-boolean v0, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->disabledBluetoothOnce:Z
 
@@ -4060,6 +4016,9 @@
     return v3
 
     :cond_9
+    return v2
+
+    :cond_a
     :goto_4
     xor-int/2addr p1, v3
 
@@ -4097,7 +4056,6 @@
 
     invoke-direct {p0, p1}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->selectAudioDevice(Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;)V
 
-    :cond_a
     return v2
 .end method
 
@@ -4185,11 +4143,11 @@
 
     iget-object p1, p0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->mainHandler:Landroid/os/Handler;
 
-    new-instance v1, Lt50;
+    new-instance v1, Lh60;
 
     const/4 v2, 0x4
 
-    invoke-direct {v1, v0, p0, v2}, Lt50;-><init>(ZLjava/lang/Object;I)V
+    invoke-direct {v1, v0, p0, v2}, Lh60;-><init>(ZLjava/lang/Object;I)V
 
     invoke-virtual {p1, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -4206,7 +4164,7 @@
 
     invoke-interface {p0}, Lru/ok/android/externcalls/sdk/audio/ProximityTracker;->stopTrackingProximity()V
 
-    goto :goto_1
+    return-void
 
     :catchall_0
     move-exception p0
@@ -4220,7 +4178,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_1
+    return-void
 
     :goto_0
     iget-object p1, p1, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->logger:Lru/ok/android/externcalls/sdk/audio/Logger;
@@ -4231,20 +4189,19 @@
 
     invoke-interface {p1, v0, v1, p0}, Lru/ok/android/externcalls/sdk/audio/Logger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_1
     return-void
 .end method
 
 
 # virtual methods
-.method public changeStateAsync(Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$State;Ls16;Lu16;)V
+.method public changeStateAsync(Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$State;Lv56;Lx56;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$State;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -4255,7 +4212,7 @@
 
     const-string p1, "changeStateAsync"
 
-    invoke-direct {p0, p1, v0, p2, p3}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThread(Ljava/lang/String;Ls16;Ls16;Lu16;)V
+    invoke-direct {p0, p1, v0, p2, p3}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThread(Ljava/lang/String;Lv56;Lv56;Lx56;)V
 
     return-void
 .end method
@@ -4284,50 +4241,50 @@
     return-object p0
 .end method
 
-.method public hasBluetoothHeadsetAsync(Lu16;Lu16;)V
+.method public hasBluetoothHeadsetAsync(Lx56;Lx56;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lu16;",
-            "Lu16;",
+            "Lx56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     new-instance v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$hasBluetoothHeadsetAsync$1;
 
-    invoke-direct {v0, p1, p0}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$hasBluetoothHeadsetAsync$1;-><init>(Lu16;Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;)V
+    invoke-direct {v0, p1, p0}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$hasBluetoothHeadsetAsync$1;-><init>(Lx56;Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;)V
 
     const/4 p1, 0x0
 
     const-string v1, "hasBluetoothHeadsetAsync"
 
-    invoke-direct {p0, v1, v0, p1, p2}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThread(Ljava/lang/String;Ls16;Ls16;Lu16;)V
+    invoke-direct {p0, v1, v0, p1, p2}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThread(Ljava/lang/String;Lv56;Lv56;Lx56;)V
 
     return-void
 .end method
 
-.method public hasWiredHeadsetAsync(Lu16;Lu16;)V
+.method public hasWiredHeadsetAsync(Lx56;Lx56;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lu16;",
-            "Lu16;",
+            "Lx56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
 
     new-instance v0, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$hasWiredHeadsetAsync$1;
 
-    invoke-direct {v0, p1, p0}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$hasWiredHeadsetAsync$1;-><init>(Lu16;Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;)V
+    invoke-direct {v0, p1, p0}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl$hasWiredHeadsetAsync$1;-><init>(Lx56;Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;)V
 
     const/4 p1, 0x0
 
     const-string v1, "hasWiredHeadsetAsync"
 
-    invoke-direct {p0, v1, v0, p1, p2}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThread(Ljava/lang/String;Ls16;Ls16;Lu16;)V
+    invoke-direct {p0, v1, v0, p1, p2}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThread(Ljava/lang/String;Lv56;Lv56;Lx56;)V
 
     return-void
 .end method
@@ -4417,18 +4374,18 @@
 
     move-object v0, p0
 
-    invoke-static/range {v0 .. v6}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThread$default(Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;Ljava/lang/String;Ls16;Ls16;Lu16;ILjava/lang/Object;)V
+    invoke-static/range {v0 .. v6}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThread$default(Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;Ljava/lang/String;Lv56;Lv56;Lx56;ILjava/lang/Object;)V
 
     return-void
 .end method
 
-.method public releaseAsync(Ls16;Lu16;)V
+.method public releaseAsync(Lv56;Lx56;)V
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -4439,7 +4396,7 @@
 
     const-string v1, "releaseAsync"
 
-    invoke-direct {p0, v1, v0, p1, p2}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThread(Ljava/lang/String;Ls16;Ls16;Lu16;)V
+    invoke-direct {p0, v1, v0, p1, p2}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThread(Ljava/lang/String;Lv56;Lv56;Lx56;)V
 
     return-void
 .end method
@@ -4461,19 +4418,19 @@
 
     const-string v3, "requestAudioFocus"
 
-    invoke-direct {p0, v3, v0, v1, v2}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThread(Ljava/lang/String;Ls16;Ls16;Lu16;)V
+    invoke-direct {p0, v3, v0, v1, v2}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThread(Ljava/lang/String;Lv56;Lv56;Lx56;)V
 
     return-void
 .end method
 
-.method public setAudioDeviceAsync(Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;Ls16;Lu16;)V
+.method public setAudioDeviceAsync(Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;Lv56;Lx56;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -4484,19 +4441,19 @@
 
     const-string p1, "setAudioDeviceAsync"
 
-    invoke-direct {p0, p1, v0, p2, p3}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThread(Ljava/lang/String;Ls16;Ls16;Lu16;)V
+    invoke-direct {p0, p1, v0, p2, p3}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThread(Ljava/lang/String;Lv56;Lv56;Lx56;)V
 
     return-void
 .end method
 
-.method public setAudioDeviceTypeAsync(Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;Ls16;Lu16;)V
+.method public setAudioDeviceTypeAsync(Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;Lv56;Lx56;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -4507,7 +4464,7 @@
 
     const-string p1, "setAudioDeviceAsync"
 
-    invoke-direct {p0, p1, v0, p2, p3}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThread(Ljava/lang/String;Ls16;Ls16;Lu16;)V
+    invoke-direct {p0, p1, v0, p2, p3}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThread(Ljava/lang/String;Lv56;Lv56;Lx56;)V
 
     return-void
 .end method
@@ -4531,18 +4488,18 @@
 
     move-object v0, p0
 
-    invoke-static/range {v0 .. v6}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThread$default(Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;Ljava/lang/String;Ls16;Ls16;Lu16;ILjava/lang/Object;)V
+    invoke-static/range {v0 .. v6}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThread$default(Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;Ljava/lang/String;Lv56;Lv56;Lx56;ILjava/lang/Object;)V
 
     return-void
 .end method
 
-.method public setSpeakerEnabledAsync(ZZLs16;Lu16;)V
+.method public setSpeakerEnabledAsync(ZZLv56;Lx56;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ZZ",
-            "Ls16;",
-            "Lu16;",
+            "Lv56;",
+            "Lx56;",
             ")V"
         }
     .end annotation
@@ -4553,7 +4510,7 @@
 
     const-string p1, "setSpeakerEnabledAsync"
 
-    invoke-direct {p0, p1, v0, p3, p4}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThread(Ljava/lang/String;Ls16;Ls16;Lu16;)V
+    invoke-direct {p0, p1, v0, p3, p4}, Lru/ok/android/externcalls/sdk/audio/internal/impl3/CallsAudioManagerV3Impl;->doOnOwnThread(Ljava/lang/String;Lv56;Lv56;Lx56;)V
 
     return-void
 .end method

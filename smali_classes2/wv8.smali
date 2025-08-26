@@ -1,16 +1,51 @@
-.class public interface abstract Lwv8;
+.class public final Lwv8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public a()Z
+# instance fields
+.field public final a:Z
+
+.field public final b:Z
+
+.field public final c:Z
+
+.field public final d:Z
+
+.field public final e:Z
+
+.field public final f:Z
+
+.field public final g:Z
+
+.field public final h:Z
+
+.field public final i:Z
+
+
+# direct methods
+.method public constructor <init>(ZZZZZZZZZ)V
     .locals 0
 
-    const/4 p0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return p0
-.end method
+    iput-boolean p1, p0, Lwv8;->a:Z
 
-.method public abstract j()J
+    iput-boolean p2, p0, Lwv8;->b:Z
+
+    iput-boolean p3, p0, Lwv8;->c:Z
+
+    iput-boolean p4, p0, Lwv8;->d:Z
+
+    iput-boolean p5, p0, Lwv8;->e:Z
+
+    iput-boolean p6, p0, Lwv8;->f:Z
+
+    iput-boolean p7, p0, Lwv8;->g:Z
+
+    iput-boolean p8, p0, Lwv8;->h:Z
+
+    iput-boolean p9, p0, Lwv8;->i:Z
+
+    return-void
 .end method

@@ -51,11 +51,11 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lqnc;
+    new-instance v0, Lhtc;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lqnc;-><init>(Lorg/webrtc/ScreenCapturerAndroid;I)V
+    invoke-direct {v0, p0, v1}, Lhtc;-><init>(Lorg/webrtc/ScreenCapturerAndroid;I)V
 
     iput-object v0, p0, Lorg/webrtc/ScreenCapturerAndroid;->rerequestTextureFrame:Ljava/lang/Runnable;
 
@@ -349,13 +349,12 @@
 
     invoke-virtual {v0, v1}, Landroid/hardware/display/VirtualDisplay;->setSurface(Landroid/view/Surface;)V
 
-    goto :goto_1
+    return-void
 
     :cond_1
     :goto_0
     invoke-direct {p0}, Lorg/webrtc/ScreenCapturerAndroid;->createVirtualDisplay()V
 
-    :goto_1
     return-void
 .end method
 
@@ -391,11 +390,11 @@
 
     move-result-object p1
 
-    new-instance p2, Lqnc;
+    new-instance p2, Lhtc;
 
     const/4 p3, 0x1
 
-    invoke-direct {p2, p0, p3}, Lqnc;-><init>(Lorg/webrtc/ScreenCapturerAndroid;I)V
+    invoke-direct {p2, p0, p3}, Lhtc;-><init>(Lorg/webrtc/ScreenCapturerAndroid;I)V
 
     invoke-static {p1, p2}, Lorg/webrtc/ThreadUtils;->invokeAtFrontUninterruptibly(Landroid/os/Handler;Ljava/lang/Runnable;)V
     :try_end_1

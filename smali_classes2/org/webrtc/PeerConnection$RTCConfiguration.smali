@@ -104,6 +104,8 @@
 
 .field public turnPortPrunePolicy:Lorg/webrtc/PeerConnection$PortPrunePolicy;
 
+.field public vpnPreference:Lorg/webrtc/PeerConnection$VpnPreference;
+
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;)V
@@ -224,6 +226,10 @@
     iput-boolean p1, p0, Lorg/webrtc/PeerConnection$RTCConfiguration;->enableImplicitRollback:Z
 
     iput-boolean v1, p0, Lorg/webrtc/PeerConnection$RTCConfiguration;->offerExtmapAllowMixed:Z
+
+    sget-object p1, Lorg/webrtc/PeerConnection$VpnPreference;->DEFAULT:Lorg/webrtc/PeerConnection$VpnPreference;
+
+    iput-object p1, p0, Lorg/webrtc/PeerConnection$RTCConfiguration;->vpnPreference:Lorg/webrtc/PeerConnection$VpnPreference;
 
     return-void
 .end method
@@ -664,6 +670,17 @@
     .end annotation
 
     iget-object p0, p0, Lorg/webrtc/PeerConnection$RTCConfiguration;->turnPortPrunePolicy:Lorg/webrtc/PeerConnection$PortPrunePolicy;
+
+    return-object p0
+.end method
+
+.method public getVpnPreference()Lorg/webrtc/PeerConnection$VpnPreference;
+    .locals 0
+    .annotation build Lorg/webrtc/CalledByNative;
+        value = "RTCConfiguration"
+    .end annotation
+
+    iget-object p0, p0, Lorg/webrtc/PeerConnection$RTCConfiguration;->vpnPreference:Lorg/webrtc/PeerConnection$VpnPreference;
 
     return-object p0
 .end method

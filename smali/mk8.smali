@@ -1,132 +1,85 @@
 .class public final Lmk8;
-.super Ll5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
 
 
 # instance fields
-.field public final synthetic X:Ljava/lang/Object;
+.field public final a:Ljava/lang/String;
 
-.field public final synthetic Y:Lpk8;
+.field public final b:Ljava/lang/String;
+
+.field public final c:Lwfe;
+
+.field public final d:Lwfe;
+
+.field public final e:Lwfe;
+
+.field public final f:Lwfe;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;Lpk8;)V
-    .locals 0
-
-    iput-object p1, p0, Lmk8;->X:Ljava/lang/Object;
-
-    iput-object p3, p0, Lmk8;->Y:Lpk8;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p2}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Lou3;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lmk8;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lmk8;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lmk8;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 1
 
-    new-instance p1, Lmk8;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p0, Lmk8;->X:Ljava/lang/Object;
+    iput-object p1, p0, Lmk8;->a:Ljava/lang/String;
 
-    iget-object p0, p0, Lmk8;->Y:Lpk8;
+    const-class p1, Lmk8;
 
-    invoke-direct {p1, v0, p2, p0}, Lmk8;-><init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;Lpk8;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lmk8;->X:Ljava/lang/Object;
-
-    check-cast p1, Li22;
-
-    invoke-virtual {p1}, Li22;->J()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p1}, Li22;->k()Ltf3;
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object p1
 
-    if-eqz p1, :cond_0
+    iput-object p1, p0, Lmk8;->b:Ljava/lang/String;
 
-    iget-object p0, p0, Lmk8;->Y:Lpk8;
-
-    iget-object p0, p0, Lpk8;->e:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lmta;
+    new-instance p1, Llk8;
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, p1, v0}, Lmta;->a(Ltf3;Z)Lira;
+    invoke-direct {p1, p0, v0}, Llk8;-><init>(Lmk8;I)V
 
-    move-result-object p0
+    new-instance v0, Lwfe;
 
-    return-object p0
+    invoke-direct {v0, p1}, Lwfe;-><init>(Lv56;)V
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    iput-object v0, p0, Lmk8;->c:Lwfe;
 
-    const-string p1, "Dialog contact is not found"
+    new-instance p1, Llk8;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    const/4 v0, 0x1
 
-    move-result-object p1
+    invoke-direct {p1, p0, v0}, Llk8;-><init>(Lmk8;I)V
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    new-instance v0, Lwfe;
 
-    throw p0
+    invoke-direct {v0, p1}, Lwfe;-><init>(Lv56;)V
 
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    iput-object v0, p0, Lmk8;->d:Lwfe;
 
-    const-string p1, "Only dialogs are supported"
+    new-instance p1, Llk8;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    const/4 v0, 0x2
 
-    move-result-object p1
+    invoke-direct {p1, p0, v0}, Llk8;-><init>(Lmk8;I)V
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    new-instance v0, Lwfe;
 
-    throw p0
+    invoke-direct {v0, p1}, Lwfe;-><init>(Lv56;)V
+
+    iput-object v0, p0, Lmk8;->e:Lwfe;
+
+    new-instance p1, Llk8;
+
+    const/4 v0, 0x3
+
+    invoke-direct {p1, p0, v0}, Llk8;-><init>(Lmk8;I)V
+
+    new-instance v0, Lwfe;
+
+    invoke-direct {v0, p1}, Lwfe;-><init>(Lv56;)V
+
+    iput-object v0, p0, Lmk8;->f:Lwfe;
+
+    return-void
 .end method

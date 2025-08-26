@@ -1,58 +1,40 @@
 .class public final Leh7;
-.super Lgh7;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# instance fields
+.field public a:Lgg7;
+
+.field public b:Lvg7;
+
+
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+.method public final a(Ldh7;Lfg7;)V
+    .locals 3
 
-    const/4 v0, 0x1
+    invoke-virtual {p2}, Lfg7;->a()Lgg7;
 
-    if-ne p0, p1, :cond_0
+    move-result-object v0
 
-    return v0
+    iget-object v1, p0, Leh7;->a:Lgg7;
+
+    invoke-virtual {v0, v1}, Ljava/lang/Enum;->compareTo(Ljava/lang/Enum;)I
+
+    move-result v2
+
+    if-gez v2, :cond_0
+
+    move-object v1, v0
 
     :cond_0
-    if-eqz p1, :cond_1
+    iput-object v1, p0, Leh7;->a:Lgg7;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v1, p0, Leh7;->b:Lvg7;
 
-    move-result-object p0
+    invoke-interface {v1, p1, p2}, Lvg7;->d(Ldh7;Lfg7;)V
 
-    const-class p1, Leh7;
+    iput-object v0, p0, Leh7;->a:Lgg7;
 
-    if-ne p1, p0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    const-class p0, Leh7;
-
-    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    const-string p0, "Retry"
-
-    return-object p0
+    return-void
 .end method

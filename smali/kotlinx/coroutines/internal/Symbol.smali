@@ -60,9 +60,13 @@
 
     iget-object p0, p0, Lkotlinx/coroutines/internal/Symbol;->symbol:Ljava/lang/String;
 
-    const/16 v1, 0x3e
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, p0, v1}, Lme4;->l(Ljava/lang/StringBuilder;Ljava/lang/String;C)Ljava/lang/String;
+    const/16 p0, 0x3e
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -83,7 +87,9 @@
 
     if-ne p1, p0, :cond_0
 
-    const/4 p1, 0x0
+    const/4 p0, 0x0
+
+    return-object p0
 
     :cond_0
     return-object p1

@@ -118,7 +118,7 @@
 
     move-result-object p0
 
-    invoke-static {p0}, Lju7;->W(Ljava/util/Map;)Ljava/util/Map;
+    invoke-static {p0}, Ljz7;->G(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object p0
 

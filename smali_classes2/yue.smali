@@ -1,99 +1,66 @@
-.class public final Lyue;
+.class public final synthetic Lyue;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lzue;
+.implements Lv56;
 
 
 # instance fields
-.field public final a:J
+.field public final synthetic a:I
+
+.field public final synthetic b:Lave;
 
 
 # direct methods
-.method public constructor <init>(J)V
+.method public synthetic constructor <init>(Lave;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Lyue;->a:I
 
-    iput-wide p1, p0, Lyue;->a:J
+    iput-object p1, p0, Lyue;->b:Lave;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 2
-
-    iget-wide v0, p0, Lyue;->a:J
-
-    return-wide v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 5
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lyue;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lyue;
-
-    iget-wide v3, p0, Lyue;->a:J
-
-    iget-wide p0, p1, Lyue;->a:J
-
-    cmp-long p0, v3, p0
-
-    if-eqz p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    iget-wide v0, p0, Lyue;->a:J
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final invoke()Ljava/lang/Object;
     .locals 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget v0, p0, Lyue;->a:I
 
-    const-string v1, "MarkAsUnreadEvent(mark="
+    packed-switch v0, :pswitch_data_0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    new-instance v0, Luue;
 
-    iget-wide v1, p0, Lyue;->a:J
+    iget-object p0, p0, Lyue;->b:Lave;
 
-    const-string p0, ")"
+    iget-object v1, p0, Lave;->c:Lv56;
 
-    invoke-static {v0, v1, v2, p0}, Lwn6;->k(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
+    iget v2, p0, Lave;->X:I
 
-    move-result-object p0
+    iget p0, p0, Lave;->Y:I
+
+    invoke-direct {v0, v2, p0, v1}, Luue;-><init>(IILv56;)V
+
+    return-object v0
+
+    :pswitch_0
+    iget-object p0, p0, Lyue;->b:Lave;
+
+    invoke-virtual {p0}, Lave;->dismiss()V
+
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

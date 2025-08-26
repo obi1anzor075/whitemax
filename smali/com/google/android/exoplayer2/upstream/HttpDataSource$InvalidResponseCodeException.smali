@@ -6,28 +6,32 @@
 # instance fields
 .field public final c:I
 
-.field public final o:Ljava/util/Map;
-
 
 # direct methods
-.method public constructor <init>(ILjava/lang/String;Lcom/google/android/exoplayer2/upstream/DataSourceException;Ljava/util/Map;Lxz3;)V
-    .locals 1
+.method public constructor <init>(ILjava/lang/String;Lcom/google/android/exoplayer2/upstream/DataSourceException;Ljava/util/Map;Lo34;)V
+    .locals 0
 
-    const/16 p2, 0x1a
+    new-instance p2, Ljava/lang/StringBuilder;
 
-    const-string v0, "Response code: "
+    const/16 p4, 0x1a
 
-    invoke-static {p2, p1, v0}, Lm4b;->h(IILjava/lang/String;)Ljava/lang/String;
+    invoke-direct {p2, p4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string p4, "Response code: "
+
+    invoke-virtual {p2, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p2
 
-    const/16 v0, 0x7d4
+    const/16 p4, 0x7d4
 
-    invoke-direct {p0, p2, p3, p5, v0}, Lcom/google/android/exoplayer2/upstream/HttpDataSource$HttpDataSourceException;-><init>(Ljava/lang/String;Ljava/io/IOException;Lxz3;I)V
+    invoke-direct {p0, p2, p3, p4}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(Ljava/lang/String;Ljava/lang/Exception;I)V
 
     iput p1, p0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$InvalidResponseCodeException;->c:I
-
-    iput-object p4, p0, Lcom/google/android/exoplayer2/upstream/HttpDataSource$InvalidResponseCodeException;->o:Ljava/util/Map;
 
     return-void
 .end method

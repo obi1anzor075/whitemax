@@ -11,7 +11,7 @@
     d2 = {
         "Lru/ok/messages/calls/views/AnimatedCirclesView;",
         "Landroid/widget/FrameLayout;",
-        "qe",
+        "ge",
         "ui-utils_release"
     }
     k = 0x1
@@ -20,11 +20,12 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
-.field public final a:Ljava/util/List;
+.field public final a:Ljava/lang/Object;
 
 
 # direct methods
@@ -35,33 +36,33 @@
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    sget-object p2, Lhw4;->a:Lhw4;
+    sget-object p2, Lgz4;->a:Lgz4;
 
-    iput-object p2, p0, Lru/ok/messages/calls/views/AnimatedCirclesView;->a:Ljava/util/List;
+    iput-object p2, p0, Lru/ok/messages/calls/views/AnimatedCirclesView;->a:Ljava/lang/Object;
 
     new-instance p2, Landroid/animation/AnimatorSet;
 
     invoke-direct {p2}, Landroid/animation/AnimatorSet;-><init>()V
 
-    sget p2, Lkmb;->calls_circle_1:I
+    sget p2, Lwqb;->calls_circle_1:I
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
 
-    sget v0, Lkmb;->calls_circle_3:I
+    sget v0, Lwqb;->calls_circle_3:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    sget v1, Lkmb;->calls_circle_4:I
+    sget v1, Lwqb;->calls_circle_4:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    sget v2, Lkmb;->calls_circle_2:I
+    sget v2, Lwqb;->calls_circle_2:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -71,7 +72,7 @@
 
     move-result-object p2
 
-    invoke-static {p2}, Lp23;->B([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {p2}, Lq43;->e0([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p2
 
@@ -79,7 +80,7 @@
 
     const/16 v1, 0xa
 
-    invoke-static {p2, v1}, Lq23;->H(Ljava/lang/Iterable;I)I
+    invoke-static {p2, v1}, Lr43;->k0(Ljava/lang/Iterable;I)I
 
     move-result v1
 
@@ -106,9 +107,9 @@
 
     move-result v1
 
-    new-instance v2, Lqe;
+    new-instance v2, Lge;
 
-    invoke-direct {v2, p1}, Lqe;-><init>(Landroid/content/Context;)V
+    invoke-direct {v2, p1}, Lge;-><init>(Landroid/content/Context;)V
 
     new-instance v3, Landroid/widget/FrameLayout$LayoutParams;
 
@@ -118,15 +119,15 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    iget-object v3, v2, Lqe;->a:Landroid/graphics/Paint;
-
     invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-static {v4, v1}, Lhq3;->a(Landroid/content/Context;I)I
+    invoke-static {v3, v1}, Lft3;->a(Landroid/content/Context;I)I
 
     move-result v1
+
+    iget-object v3, v2, Lge;->a:Landroid/graphics/Paint;
 
     invoke-virtual {v3, v1}, Landroid/graphics/Paint;->setColor(I)V
 
@@ -137,7 +138,7 @@
     goto :goto_0
 
     :cond_0
-    iput-object v0, p0, Lru/ok/messages/calls/views/AnimatedCirclesView;->a:Ljava/util/List;
+    iput-object v0, p0, Lru/ok/messages/calls/views/AnimatedCirclesView;->a:Ljava/lang/Object;
 
     return-void
 .end method
@@ -159,7 +160,7 @@
 
     mul-float/2addr p1, p2
 
-    iget-object v0, p0, Lru/ok/messages/calls/views/AnimatedCirclesView;->a:Ljava/util/List;
+    iget-object v0, p0, Lru/ok/messages/calls/views/AnimatedCirclesView;->a:Ljava/lang/Object;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -206,7 +207,7 @@
 
     move-result-object v4
 
-    check-cast v4, Lqe;
+    check-cast v4, Lge;
 
     add-float/2addr v3, v2
 

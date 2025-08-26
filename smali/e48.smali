@@ -1,71 +1,45 @@
-.class public final synthetic Le48;
-.super Ljava/lang/Object;
+.class public final Le48;
+.super Ljof;
 .source "SourceFile"
-
-# interfaces
-.implements Llh7;
-.implements Lnf3;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final b:Ltra;
 
-.field public final synthetic b:Lwxa;
+.field public final c:Lu5c;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lwxa;I)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 4
 
-    iput p2, p0, Le48;->a:I
+    invoke-direct {p0}, Ljof;-><init>()V
 
-    iput-object p1, p0, Le48;->b:Lwxa;
+    new-instance v0, Ltra;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v1, Lura;->l:[Ljava/lang/String;
 
-    return-void
-.end method
+    invoke-direct {v0, v1}, Ltra;-><init>([Ljava/lang/String;)V
 
+    iput-object v0, p0, Le48;->b:Ltra;
 
-# virtual methods
-.method public accept(Ljava/lang/Object;)V
-    .locals 0
+    new-instance v1, Ljz0;
 
-    check-cast p1, Lqza;
+    const/16 v2, 0xd
 
-    iget-object p0, p0, Le48;->b:Lwxa;
+    invoke-direct {v1, v2, v0}, Ljz0;-><init>(ILjava/lang/Object;)V
 
-    invoke-virtual {p1, p0}, Lqza;->f(Lwxa;)V
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    return-void
-.end method
+    sget-object v2, Likd;->a:Lxo3;
 
-.method public invoke(Ljava/lang/Object;)V
-    .locals 1
+    iget-object v3, p0, Ljof;->a:Lkotlinx/coroutines/internal/ContextScope;
 
-    iget v0, p0, Le48;->a:I
+    invoke-static {v1, v3, v2, v0}, Lsgg;->W(Lzm5;Lox3;Ljkd;Ljava/lang/Object;)Lu5c;
 
-    check-cast p1, Lhya;
+    move-result-object v0
 
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Le48;->b:Lwxa;
-
-    invoke-interface {p1, p0}, Lhya;->p0(Lwxa;)V
+    iput-object v0, p0, Le48;->c:Lu5c;
 
     return-void
-
-    :pswitch_0
-    iget-object p0, p0, Le48;->b:Lwxa;
-
-    invoke-interface {p1, p0}, Lhya;->p0(Lwxa;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

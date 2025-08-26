@@ -1,110 +1,63 @@
 .class public final Lof2;
-.super Ll5e;
+.super Lbu3;
 .source "SourceFile"
-
-# interfaces
-.implements Li26;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public X:J
 
-.field public final synthetic Y:Lone/me/chatmedia/viewer/ChatMediaViewerScreen;
+.field public Y:J
+
+.field public Z:I
+
+.field public o:Lpf2;
+
+.field public synthetic o0:Ljava/lang/Object;
+
+.field public final synthetic p0:Lpf2;
+
+.field public q0:I
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chatmedia/viewer/ChatMediaViewerScreen;)V
+.method public constructor <init>(Lpf2;Lbu3;)V
     .locals 0
 
-    iput-object p2, p0, Lof2;->Y:Lone/me/chatmedia/viewer/ChatMediaViewerScreen;
+    iput-object p1, p0, Lof2;->p0:Lpf2;
 
-    const/4 p2, 0x2
-
-    invoke-direct {p0, p2, p1}, Ll5e;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2}, Lbu3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lof2;->n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lof2;
-
-    sget-object p1, Ljue;->a:Ljue;
-
-    invoke-virtual {p0, p1}, Lof2;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final n(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .locals 1
-
-    new-instance v0, Lof2;
-
-    iget-object p0, p0, Lof2;->Y:Lone/me/chatmedia/viewer/ChatMediaViewerScreen;
-
-    invoke-direct {v0, p2, p0}, Lof2;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chatmedia/viewer/ChatMediaViewerScreen;)V
-
-    iput-object p1, v0, Lof2;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    .locals 7
 
-    invoke-static {p1}, Lwx3;->H(Ljava/lang/Object;)V
+    iput-object p1, p0, Lof2;->o0:Ljava/lang/Object;
 
-    iget-object p1, p0, Lof2;->X:Ljava/lang/Object;
+    iget p1, p0, Lof2;->q0:I
 
-    check-cast p1, Lsg9;
+    const/high16 v0, -0x80000000
 
-    instance-of v0, p1, La34;
+    or-int/2addr p1, v0
 
-    if-eqz v0, :cond_1
+    iput p1, p0, Lof2;->q0:I
 
-    sget-object v0, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->O0:[Lk77;
+    const/4 v1, 0x0
 
-    iget-object p0, p0, Lof2;->Y:Lone/me/chatmedia/viewer/ChatMediaViewerScreen;
+    const-wide/16 v4, 0x0
 
-    invoke-virtual {p0}, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->x0()V
+    iget-object v0, p0, Lof2;->p0:Lpf2;
 
-    invoke-static {p0}, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->t0(Lone/me/chatmedia/viewer/ChatMediaViewerScreen;)Z
+    const-wide/16 v2, 0x0
 
-    move-result v0
+    move-object v6, p0
 
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->z0()Lk7f;
+    invoke-virtual/range {v0 .. v6}, Lpf2;->b(IJJLbu3;)Ljava/lang/Object;
 
     move-result-object p0
-
-    invoke-virtual {p0}, Lk7f;->pause()V
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Lk7f;->L0(Landroid/view/Surface;)V
-
-    invoke-virtual {p0}, Lk7f;->M0()V
-
-    :cond_0
-    sget-object p0, Lhf2;->c:Lhf2;
-
-    check-cast p1, La34;
-
-    invoke-virtual {p0, p1}, Lu2;->R1(La34;)V
-
-    :cond_1
-    sget-object p0, Ljue;->a:Ljue;
 
     return-object p0
 .end method

@@ -19,8 +19,8 @@
         "Lone/me/sdk/arch/Widget;",
         "<init>",
         "()V",
-        "li7",
-        "tp7",
+        "kn7",
+        "ru7",
         "logsviewer_release"
     }
     k = 0x1
@@ -29,54 +29,55 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # static fields
-.field public static final synthetic Y:[Lk77;
+.field public static final synthetic Y:[Lbc7;
 
 .field public static final Z:I
 
 
 # instance fields
-.field public final X:Lli7;
+.field public final X:Lkn7;
 
-.field public final a:Lsy6;
+.field public final a:Lp27;
 
-.field public final b:Lnl0;
+.field public final b:Lkm0;
 
-.field public final c:Lt97;
+.field public final c:Lje7;
 
-.field public final o:Lli7;
+.field public final o:Lkn7;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 5
 
-    new-instance v0, Lkhb;
+    new-instance v0, Lnlb;
 
-    const-string v1, "getToolbar()Lone/me/sdk/uikit/common/toolbar/OneMeToolbar;"
+    const-class v1, Lone/me/devmenu/logsviewer/LogsViewerScreen;
 
-    const/4 v2, 0x0
+    const-string v2, "toolbar"
 
-    const-class v3, Lone/me/devmenu/logsviewer/LogsViewerScreen;
+    const-string v3, "getToolbar()Lone/me/sdk/uikit/common/toolbar/OneMeToolbar;"
 
-    const-string v4, "toolbar"
+    const/4 v4, 0x0
 
-    invoke-direct {v0, v3, v4, v1, v2}, Lkhb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2, v3, v4}, Lnlb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
-    sget-object v1, Lm7c;->a:Ln7c;
+    sget-object v1, Llcc;->a:Lmcc;
 
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     const/4 v1, 0x1
 
-    new-array v1, v1, [Lk77;
+    new-array v1, v1, [Lbc7;
 
-    aput-object v0, v1, v2
+    aput-object v0, v1, v4
 
-    sput-object v1, Lone/me/devmenu/logsviewer/LogsViewerScreen;->Y:[Lk77;
+    sput-object v1, Lone/me/devmenu/logsviewer/LogsViewerScreen;->Y:[Lbc7;
 
     invoke-static {}, Landroid/view/View;->generateViewId()I
 
@@ -90,97 +91,83 @@
 .method public constructor <init>()V
     .locals 3
 
-    const/4 v0, 0x3
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x3
 
     const/4 v2, 0x0
 
-    invoke-direct {p0, v1, v2, v0, v1}, Lone/me/sdk/arch/Widget;-><init>(Landroid/os/Bundle;IILx54;)V
+    invoke-direct {p0, v2, v0, v1, v2}, Lone/me/sdk/arch/Widget;-><init>(Landroid/os/Bundle;IILl94;)V
 
-    sget-object v0, Lsy6;->d:Lsy6;
+    sget-object v0, Lp27;->d:Lp27;
 
-    iput-object v0, p0, Lone/me/devmenu/logsviewer/LogsViewerScreen;->a:Lsy6;
+    iput-object v0, p0, Lone/me/devmenu/logsviewer/LogsViewerScreen;->a:Lp27;
 
-    new-instance v0, Lgz3;
+    new-instance v0, Lj57;
 
-    const/16 v1, 0x1b
+    const/4 v1, 0x6
 
-    invoke-direct {v0, v1, p0}, Lgz3;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v0, v1, p0}, Lj57;-><init>(ILjava/lang/Object;)V
 
-    invoke-virtual {p0, v0}, Lone/me/sdk/arch/Widget;->binding(Ls16;)Lnl0;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lone/me/devmenu/logsviewer/LogsViewerScreen;->b:Lnl0;
-
-    new-instance v0, Lib7;
-
-    const/16 v1, 0xb
-
-    invoke-direct {v0, v1}, Lib7;-><init>(I)V
-
-    new-instance v1, Ljs5;
-
-    const/16 v2, 0xc
-
-    invoke-direct {v1, v2, v0}, Ljs5;-><init>(ILs16;)V
-
-    const-class v0, Lkq7;
-
-    invoke-virtual {p0, v0, v1}, Lone/me/sdk/arch/Widget;->createViewModelLazy(Ljava/lang/Class;Ls16;)Lt97;
+    invoke-virtual {p0, v0}, Lone/me/sdk/arch/Widget;->binding(Lv56;)Lkm0;
 
     move-result-object v0
 
-    iput-object v0, p0, Lone/me/devmenu/logsviewer/LogsViewerScreen;->c:Lt97;
+    iput-object v0, p0, Lone/me/devmenu/logsviewer/LogsViewerScreen;->b:Lkm0;
 
-    new-instance v0, Lli7;
+    new-instance v0, Lr17;
 
-    invoke-virtual {p0}, Lone/me/devmenu/logsviewer/LogsViewerScreen;->l0()Lkq7;
+    const/16 v1, 0x1d
+
+    invoke-direct {v0, v1}, Lr17;-><init>(I)V
+
+    new-instance v1, Lnf3;
+
+    const/16 v2, 0x18
+
+    invoke-direct {v1, v2, v0}, Lnf3;-><init>(ILjava/lang/Object;)V
+
+    const-class v0, Lkv7;
+
+    invoke-virtual {p0, v0, v1}, Lone/me/sdk/arch/Widget;->createViewModelLazy(Ljava/lang/Class;Lv56;)Lje7;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lone/me/devmenu/logsviewer/LogsViewerScreen;->c:Lje7;
+
+    new-instance v0, Lkn7;
+
+    invoke-virtual {p0}, Lone/me/devmenu/logsviewer/LogsViewerScreen;->p0()Lkv7;
 
     move-result-object v1
 
-    iget-object v1, v1, Lkq7;->Y:Lgrd;
+    iget-object v1, v1, Lkv7;->Y:Lazd;
 
-    invoke-direct {v0, v1}, Lli7;-><init>(Lgrd;)V
+    invoke-direct {v0, v1}, Lkn7;-><init>(Lazd;)V
 
-    iput-object v0, p0, Lone/me/devmenu/logsviewer/LogsViewerScreen;->o:Lli7;
+    iput-object v0, p0, Lone/me/devmenu/logsviewer/LogsViewerScreen;->o:Lkn7;
 
-    new-instance v0, Lli7;
+    new-instance v0, Lkn7;
 
-    invoke-virtual {p0}, Lone/me/devmenu/logsviewer/LogsViewerScreen;->l0()Lkq7;
+    invoke-virtual {p0}, Lone/me/devmenu/logsviewer/LogsViewerScreen;->p0()Lkv7;
 
     move-result-object v1
 
-    iget-object v1, v1, Lkq7;->w0:Lgrd;
+    iget-object v1, v1, Lkv7;->o0:Lazd;
 
-    invoke-direct {v0, v1}, Lli7;-><init>(Lgrd;)V
+    invoke-direct {v0, v1}, Lkn7;-><init>(Lazd;)V
 
-    iput-object v0, p0, Lone/me/devmenu/logsviewer/LogsViewerScreen;->X:Lli7;
+    iput-object v0, p0, Lone/me/devmenu/logsviewer/LogsViewerScreen;->X:Lkn7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getInsetsConfig()Lsy6;
+.method public final getInsetsConfig()Lp27;
     .locals 0
 
-    iget-object p0, p0, Lone/me/devmenu/logsviewer/LogsViewerScreen;->a:Lsy6;
-
-    return-object p0
-.end method
-
-.method public final l0()Lkq7;
-    .locals 0
-
-    iget-object p0, p0, Lone/me/devmenu/logsviewer/LogsViewerScreen;->c:Lt97;
-
-    invoke-interface {p0}, Lt97;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lkq7;
+    iget-object p0, p0, Lone/me/devmenu/logsviewer/LogsViewerScreen;->a:Lp27;
 
     return-object p0
 .end method
@@ -200,19 +187,19 @@
 
     invoke-virtual {p2, p1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    sget-object p3, Lone/me/devmenu/logsviewer/LogsViewerScreen;->Y:[Lk77;
+    sget-object p3, Lone/me/devmenu/logsviewer/LogsViewerScreen;->Y:[Lbc7;
 
     const/4 v0, 0x0
 
     aget-object p3, p3, v0
 
-    iget-object p3, p0, Lone/me/devmenu/logsviewer/LogsViewerScreen;->b:Lnl0;
+    iget-object p3, p0, Lone/me/devmenu/logsviewer/LogsViewerScreen;->b:Lkm0;
 
-    invoke-virtual {p3}, Lnl0;->getValue()Ljava/lang/Object;
+    invoke-virtual {p3}, Lkm0;->getValue()Ljava/lang/Object;
 
     move-result-object p3
 
-    check-cast p3, Lnea;
+    check-cast p3, Lvia;
 
     new-instance v1, Landroid/widget/FrameLayout$LayoutParams;
 
@@ -234,27 +221,27 @@
 
     invoke-virtual {p3, p1}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    sget-object v1, Lnte;->k:Lnge;
+    sget-object v1, Lh4f;->l:Lnoe;
 
-    invoke-static {v1, p3}, Lnge;->d(Lnge;Landroid/widget/TextView;)V
+    invoke-static {v1, p3}, Lnoe;->d(Lnoe;Landroid/widget/TextView;)V
 
-    sget-object v1, Lkm4;->y0:Ls59;
+    sget-object v1, Lqp4;->q0:Lap9;
 
-    invoke-virtual {v1, p3}, Ls59;->r(Landroid/view/View;)Lpda;
-
-    move-result-object v4
-
-    invoke-interface {v4}, Lpda;->getText()Lcfe;
+    invoke-virtual {v1, p3}, Lap9;->h(Landroid/view/View;)Lyha;
 
     move-result-object v4
 
-    iget v4, v4, Lcfe;->e:I
+    invoke-interface {v4}, Lyha;->getText()Lane;
+
+    move-result-object v4
+
+    iget v4, v4, Lane;->e:I
 
     invoke-virtual {p3, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
     new-instance v4, Lz2;
 
-    const/4 v5, 0x2
+    const/4 v5, 0x1
 
     invoke-direct {v4, v5, p0}, Lz2;-><init>(ILjava/lang/Object;)V
 
@@ -274,21 +261,23 @@
 
     invoke-direct {p3, v3}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v1, p3}, Ls59;->r(Landroid/view/View;)Lpda;
+    invoke-virtual {v1, p3}, Lap9;->h(Landroid/view/View;)Lyha;
 
     move-result-object v1
 
-    invoke-interface {v1}, Lpda;->h()Lr0e;
+    invoke-interface {v1}, Lyha;->i()Lu8e;
 
     move-result-object v1
 
-    iget v1, v1, Lr0e;->j:I
+    iget-object v1, v1, Lu8e;->b:Lz8e;
+
+    iget v1, v1, Lz8e;->b:I
 
     invoke-virtual {p3, v1}, Landroid/view/View;->setBackgroundColor(I)V
 
     new-instance v1, Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-static {}, Ldh4;->c()Landroid/content/res/Resources;
+    invoke-static {}, Lgk4;->d()Landroid/content/res/Resources;
 
     move-result-object v3
 
@@ -304,7 +293,7 @@
 
     mul-double/2addr v3, v5
 
-    invoke-static {v3, v4}, La24;->W(D)I
+    invoke-static {v3, v4}, Lkhg;->w(D)I
 
     move-result v3
 
@@ -332,15 +321,15 @@
 
     invoke-virtual {p3, v1}, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;->setLayoutManager(Landroidx/recyclerview/widget/a;)V
 
-    iget-object p1, p0, Lone/me/devmenu/logsviewer/LogsViewerScreen;->o:Lli7;
+    iget-object p1, p0, Lone/me/devmenu/logsviewer/LogsViewerScreen;->o:Lkn7;
 
-    invoke-virtual {p3, p1}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->setAdapter(Lf6c;)V
+    invoke-virtual {p3, p1}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->setAdapter(Lgbc;)V
 
     const/16 p1, 0xa
 
     invoke-virtual {p3, p1}, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;->setThreshold(I)V
 
-    new-instance p1, Lxj6;
+    new-instance p1, Lio6;
 
     new-instance v1, Landroid/graphics/drawable/ColorDrawable;
 
@@ -348,29 +337,29 @@
 
     invoke-direct {v1, v3}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 
-    invoke-direct {p1, v1}, Lxj6;-><init>(Landroid/graphics/drawable/ColorDrawable;)V
+    invoke-direct {p1, v1}, Lio6;-><init>(Landroid/graphics/drawable/ColorDrawable;)V
 
-    invoke-virtual {p3, p1}, Landroidx/recyclerview/widget/RecyclerView;->j(Ll6c;)V
+    invoke-virtual {p3, p1}, Landroidx/recyclerview/widget/RecyclerView;->j(Lmbc;)V
 
-    new-instance p1, Lt61;
+    new-instance p1, Lc81;
 
     const/4 v1, 0x3
 
-    invoke-direct {p1, p0, v1}, Lt61;-><init>(Lone/me/sdk/arch/Widget;I)V
+    invoke-direct {p1, p0, v1}, Lc81;-><init>(Lone/me/sdk/arch/Widget;I)V
 
-    invoke-virtual {p3, p1}, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;->setPager(Lny4;)V
+    invoke-virtual {p3, p1}, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;->setPager(Lm15;)V
 
-    invoke-virtual {p0}, Lone/me/devmenu/logsviewer/LogsViewerScreen;->l0()Lkq7;
+    invoke-virtual {p0}, Lone/me/devmenu/logsviewer/LogsViewerScreen;->p0()Lkv7;
 
     move-result-object p1
 
-    iget-object p1, p1, Lkq7;->Y:Lgrd;
+    iget-object p1, p1, Lkv7;->Y:Lazd;
 
-    invoke-virtual {p0}, Lone/me/devmenu/logsviewer/LogsViewerScreen;->l0()Lkq7;
+    invoke-virtual {p0}, Lone/me/devmenu/logsviewer/LogsViewerScreen;->p0()Lkv7;
 
     move-result-object v1
 
-    iget-object v1, v1, Lkq7;->w0:Lgrd;
+    iget-object v1, v1, Lkv7;->o0:Lazd;
 
     new-instance v3, Lc3;
 
@@ -378,17 +367,17 @@
 
     invoke-direct {v3, p3, p0, v4, v5}, Lc3;-><init>(Ljava/lang/Object;Ljava/lang/Object;Lkotlin/coroutines/Continuation;I)V
 
-    new-instance v4, Lv11;
+    new-instance v4, Ld31;
 
     const/4 v5, 0x4
 
-    invoke-direct {v4, p1, v1, v3, v5}, Lv11;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+    invoke-direct {v4, p1, v1, v3, v5}, Ld31;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Lyb7;
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Lqg7;
 
     move-result-object p0
 
-    invoke-static {v4, p0}, Lez3;->N(Lpj5;Lou3;)Lqod;
+    invoke-static {v4, p0}, Lsgg;->L(Lzm5;Lox3;)Ldwd;
 
     new-instance p0, Landroid/widget/LinearLayout$LayoutParams;
 
@@ -405,4 +394,18 @@
     invoke-virtual {p2, p3, p0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     return-object p2
+.end method
+
+.method public final p0()Lkv7;
+    .locals 0
+
+    iget-object p0, p0, Lone/me/devmenu/logsviewer/LogsViewerScreen;->c:Lje7;
+
+    invoke-interface {p0}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lkv7;
+
+    return-object p0
 .end method

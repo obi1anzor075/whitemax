@@ -1,202 +1,84 @@
 .class public abstract Liwb;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # static fields
-.field public static Capability:[I = null
+.field public static abc_action_bar_title_item:I = 0x7f0d0000
 
-.field public static Capability_queryPatterns:I = 0x0
+.field public static abc_action_bar_up_container:I = 0x7f0d0001
 
-.field public static Capability_shortcutMatchRequired:I = 0x1
+.field public static abc_action_menu_item_layout:I = 0x7f0d0002
 
-.field public static ColorStateListItem:[I = null
+.field public static abc_action_menu_layout:I = 0x7f0d0003
 
-.field public static ColorStateListItem_alpha:I = 0x3
+.field public static abc_action_mode_bar:I = 0x7f0d0004
 
-.field public static ColorStateListItem_android_alpha:I = 0x1
+.field public static abc_action_mode_close_item_material:I = 0x7f0d0005
 
-.field public static ColorStateListItem_android_color:I = 0x0
+.field public static abc_activity_chooser_view:I = 0x7f0d0006
 
-.field public static ColorStateListItem_android_lStar:I = 0x2
+.field public static abc_activity_chooser_view_list_item:I = 0x7f0d0007
 
-.field public static ColorStateListItem_lStar:I = 0x4
+.field public static abc_alert_dialog_button_bar_material:I = 0x7f0d0008
 
-.field public static FontFamily:[I = null
+.field public static abc_alert_dialog_material:I = 0x7f0d0009
 
-.field public static FontFamilyFont:[I = null
+.field public static abc_alert_dialog_title_material:I = 0x7f0d000a
 
-.field public static FontFamilyFont_android_font:I = 0x0
+.field public static abc_cascading_menu_item_layout:I = 0x7f0d000b
 
-.field public static FontFamilyFont_android_fontStyle:I = 0x2
+.field public static abc_dialog_title_material:I = 0x7f0d000c
 
-.field public static FontFamilyFont_android_fontVariationSettings:I = 0x4
+.field public static abc_expanded_menu_layout:I = 0x7f0d000d
 
-.field public static FontFamilyFont_android_fontWeight:I = 0x1
+.field public static abc_list_menu_item_checkbox:I = 0x7f0d000e
 
-.field public static FontFamilyFont_android_ttcIndex:I = 0x3
+.field public static abc_list_menu_item_icon:I = 0x7f0d000f
 
-.field public static FontFamilyFont_font:I = 0x5
+.field public static abc_list_menu_item_layout:I = 0x7f0d0010
 
-.field public static FontFamilyFont_fontStyle:I = 0x6
+.field public static abc_list_menu_item_radio:I = 0x7f0d0011
 
-.field public static FontFamilyFont_fontVariationSettings:I = 0x7
+.field public static abc_popup_menu_header_item_layout:I = 0x7f0d0012
 
-.field public static FontFamilyFont_fontWeight:I = 0x8
+.field public static abc_popup_menu_item_layout:I = 0x7f0d0013
 
-.field public static FontFamilyFont_ttcIndex:I = 0x9
+.field public static abc_screen_content_include:I = 0x7f0d0014
 
-.field public static FontFamily_fontProviderAuthority:I = 0x0
+.field public static abc_screen_simple:I = 0x7f0d0015
 
-.field public static FontFamily_fontProviderCerts:I = 0x1
+.field public static abc_screen_simple_overlay_action_mode:I = 0x7f0d0016
 
-.field public static FontFamily_fontProviderFetchStrategy:I = 0x2
+.field public static abc_screen_toolbar:I = 0x7f0d0017
 
-.field public static FontFamily_fontProviderFetchTimeout:I = 0x3
+.field public static abc_search_dropdown_item_icons_2line:I = 0x7f0d0018
 
-.field public static FontFamily_fontProviderPackage:I = 0x4
+.field public static abc_search_view:I = 0x7f0d0019
 
-.field public static FontFamily_fontProviderQuery:I = 0x5
+.field public static abc_select_dialog_material:I = 0x7f0d001a
 
-.field public static FontFamily_fontProviderSystemFontFamily:I = 0x6
+.field public static abc_tooltip:I = 0x7f0d001b
 
-.field public static GradientColor:[I = null
+.field public static custom_dialog:I = 0x7f0d0037
 
-.field public static GradientColorItem:[I = null
+.field public static fingerprint_dialog_layout:I = 0x7f0d0061
 
-.field public static GradientColorItem_android_color:I = 0x0
+.field public static notification_action:I = 0x7f0d00f3
 
-.field public static GradientColorItem_android_offset:I = 0x1
+.field public static notification_action_tombstone:I = 0x7f0d00f4
 
-.field public static GradientColor_android_centerColor:I = 0x7
+.field public static notification_template_custom_big:I = 0x7f0d00fb
 
-.field public static GradientColor_android_centerX:I = 0x3
+.field public static notification_template_icon_group:I = 0x7f0d00fc
 
-.field public static GradientColor_android_centerY:I = 0x4
+.field public static notification_template_part_chronometer:I = 0x7f0d0100
 
-.field public static GradientColor_android_endColor:I = 0x1
+.field public static notification_template_part_time:I = 0x7f0d0101
 
-.field public static GradientColor_android_endX:I = 0xa
+.field public static select_dialog_item_material:I = 0x7f0d0182
 
-.field public static GradientColor_android_endY:I = 0xb
+.field public static select_dialog_multichoice_material:I = 0x7f0d0183
 
-.field public static GradientColor_android_gradientRadius:I = 0x5
+.field public static select_dialog_singlechoice_material:I = 0x7f0d0184
 
-.field public static GradientColor_android_startColor:I = 0x0
-
-.field public static GradientColor_android_startX:I = 0x8
-
-.field public static GradientColor_android_startY:I = 0x9
-
-.field public static GradientColor_android_tileMode:I = 0x6
-
-.field public static GradientColor_android_type:I = 0x2
-
-
-# direct methods
-.method public static constructor <clinit>()V
-    .locals 5
-
-    const v0, 0x7f0406c8
-
-    const v1, 0x7f04071a
-
-    filled-new-array {v0, v1}, [I
-
-    move-result-object v0
-
-    sput-object v0, Liwb;->Capability:[I
-
-    const v0, 0x7f04003c
-
-    const v1, 0x7f040547
-
-    const v2, 0x10101a5
-
-    const v3, 0x101031f
-
-    const v4, 0x1010647
-
-    filled-new-array {v2, v3, v4, v0, v1}, [I
-
-    move-result-object v0
-
-    sput-object v0, Liwb;->ColorStateListItem:[I
-
-    const/4 v0, 0x7
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_0
-
-    sput-object v0, Liwb;->FontFamily:[I
-
-    const/16 v0, 0xa
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_1
-
-    sput-object v0, Liwb;->FontFamilyFont:[I
-
-    const/16 v0, 0xc
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_2
-
-    sput-object v0, Liwb;->GradientColor:[I
-
-    const v0, 0x1010514
-
-    filled-new-array {v2, v0}, [I
-
-    move-result-object v0
-
-    sput-object v0, Liwb;->GradientColorItem:[I
-
-    return-void
-
-    nop
-
-    :array_0
-    .array-data 4
-        0x7f0403da
-        0x7f0403db
-        0x7f0403dc
-        0x7f0403dd
-        0x7f0403de
-        0x7f0403df
-        0x7f0403e0
-    .end array-data
-
-    :array_1
-    .array-data 4
-        0x1010532
-        0x1010533
-        0x101053f
-        0x101056f
-        0x1010570
-        0x7f0403d8
-        0x7f0403e1
-        0x7f0403e2
-        0x7f0403e3
-        0x7f04087e
-    .end array-data
-
-    :array_2
-    .array-data 4
-        0x101019d
-        0x101019e
-        0x10101a1
-        0x10101a2
-        0x10101a3
-        0x10101a4
-        0x1010201
-        0x101020b
-        0x1010510
-        0x1010511
-        0x1010512
-        0x1010513
-    .end array-data
-.end method
+.field public static support_simple_spinner_dropdown_item:I = 0x7f0d0188

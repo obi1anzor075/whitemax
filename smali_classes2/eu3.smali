@@ -1,49 +1,57 @@
 .class public final Leu3;
-.super Landroid/view/ViewOutlineProvider;
+.super Lji0;
 .source "SourceFile"
 
 
 # instance fields
-.field public a:F
+.field public final c:J
+
+.field public final o:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(F)V
+.method public constructor <init>(Lvie;JLjava/util/List;)V
     .locals 0
 
-    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
+    invoke-direct {p0, p1}, Lji0;-><init>(Lvie;)V
 
-    iput p1, p0, Leu3;->a:F
+    iput-wide p2, p0, Leu3;->c:J
+
+    iput-object p4, p0, Leu3;->o:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
-    .locals 6
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move-result v3
+    const-string v1, "ControlMessageAddError{chatId="
 
-    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result v4
+    iget-wide v1, p0, Leu3;->c:J
 
-    iget v5, p0, Leu3;->a:F
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    const/4 v1, 0x0
+    const-string v1, ", contactIds="
 
-    const/4 v2, 0x0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object v0, p2
+    iget-object p0, p0, Leu3;->o:Ljava/util/List;
 
-    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Outline;->setRoundRect(IIIIF)V
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const/4 p0, 0x1
+    const/16 p0, 0x7d
 
-    invoke-virtual {p1, p0}, Landroid/view/View;->setClipToOutline(Z)V
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    return-void
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

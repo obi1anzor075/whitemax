@@ -19,19 +19,18 @@
         0x8,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # instance fields
 .field public final a:Ljava/lang/Class;
 
-.field public final b:Lhnc;
-
-.field public final c:Ljava/lang/Throwable;
+.field public final b:Lysc;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Class;Lhnc;)V
+.method public constructor <init>(Ljava/lang/Class;Lysc;)V
     .locals 1
 
     const/4 v0, 0x0
@@ -40,11 +39,7 @@
 
     iput-object p1, p0, Lscout/exception/MissingObjectFactoryException;->a:Ljava/lang/Class;
 
-    iput-object p2, p0, Lscout/exception/MissingObjectFactoryException;->b:Lhnc;
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lscout/exception/MissingObjectFactoryException;->c:Ljava/lang/Throwable;
+    iput-object p2, p0, Lscout/exception/MissingObjectFactoryException;->b:Lysc;
 
     return-void
 .end method
@@ -54,7 +49,7 @@
 .method public final getCause()Ljava/lang/Throwable;
     .locals 0
 
-    iget-object p0, p0, Lscout/exception/MissingObjectFactoryException;->c:Ljava/lang/Throwable;
+    const/4 p0, 0x0
 
     return-object p0
 .end method
@@ -92,9 +87,23 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Lscout/exception/MissingObjectFactoryException;->b:Lhnc;
+    iget-object p0, p0, Lscout/exception/MissingObjectFactoryException;->b:Lysc;
 
-    invoke-virtual {p0}, Lhnc;->a()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "\nTree of scopes:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, p0, v2}, Lysc;->a(Ljava/lang/StringBuilder;Lysc;I)V
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

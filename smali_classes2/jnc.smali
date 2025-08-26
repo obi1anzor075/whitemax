@@ -1,67 +1,37 @@
-.class public final Ljnc;
+.class public abstract Ljnc;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final synthetic a:Ljnc;
+.field public static final a:I
 
-.field public static final b:Ljava/lang/String;
+.field public static final b:I
 
-.field public static final c:[Ljava/lang/String;
+.field public static final c:I
+
+.field public static final d:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 1
 
-    new-instance v0, Ljnc;
+    sget v0, Lbrb;->font_normal:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    sput v0, Ljnc;->a:I
 
-    sput-object v0, Ljnc;->a:Ljnc;
+    sget v0, Lbrb;->font_only_emoji:I
 
-    const-class v0, Lknc;
+    sput v0, Ljnc;->b:I
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    sget v0, Lbrb;->font_small:I
 
-    move-result-object v0
+    sput v0, Ljnc;->c:I
 
-    sput-object v0, Ljnc;->b:Ljava/lang/String;
+    sget v0, Lbrb;->huge_horizontal_margin:I
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x21
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    if-lt v0, v1, :cond_0
-
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Ljava/lang/String;
-
-    const-string v1, "android.permission.READ_MEDIA_IMAGES"
-
-    aput-object v1, v0, v3
-
-    const-string v1, "android.permission.READ_MEDIA_VIDEO"
-
-    aput-object v1, v0, v2
-
-    goto :goto_0
-
-    :cond_0
-    new-array v0, v2, [Ljava/lang/String;
-
-    const-string v1, "android.permission.READ_EXTERNAL_STORAGE"
-
-    aput-object v1, v0, v3
-
-    :goto_0
-    sput-object v0, Ljnc;->c:[Ljava/lang/String;
+    sput v0, Ljnc;->d:I
 
     return-void
 .end method

@@ -1,53 +1,64 @@
 .class public final Lq19;
-.super Ler3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lv19;
 
-# instance fields
-.field public X:I
 
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lx19;
-
-.field public o:Lx19;
-
-.field public w0:I
+# static fields
+.field public static final a:Lq19;
 
 
 # direct methods
-.method public constructor <init>(Lx19;Lkotlin/coroutines/Continuation;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lq19;->Z:Lx19;
+    new-instance v0, Lq19;
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lq19;->a:Lq19;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    iput-object p1, p0, Lq19;->Y:Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    iget p1, p0, Lq19;->w0:I
+    if-ne p0, p1, :cond_0
 
-    const/high16 v0, -0x80000000
+    return v0
 
-    or-int/2addr p1, v0
+    :cond_0
+    instance-of p0, p1, Lq19;
 
-    iput p1, p0, Lq19;->w0:I
+    if-nez p0, :cond_1
 
-    iget-object p1, p0, Lq19;->Z:Lx19;
+    const/4 p0, 0x0
 
-    const-wide/16 v0, 0x0
+    return p0
 
-    invoke-virtual {p1, v0, v1, p0}, Lx19;->d(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    :cond_1
+    return v0
+.end method
 
-    move-result-object p0
+.method public final hashCode()I
+    .locals 0
+
+    const p0, -0x5bccf09e
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    const-string p0, "CloseMultiSelect"
 
     return-object p0
 .end method

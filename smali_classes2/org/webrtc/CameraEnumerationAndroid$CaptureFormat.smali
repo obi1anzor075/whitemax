@@ -150,7 +150,9 @@
 
     if-eqz p0, :cond_1
 
-    const/4 v1, 0x1
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_1
     return v1

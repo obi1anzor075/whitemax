@@ -1,134 +1,50 @@
-.class public final synthetic Lko8;
-.super Ljava/lang/Object;
+.class public final Lko8;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
-
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lsg9;
-
-
-# direct methods
-.method public synthetic constructor <init>(Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;Lsg9;)V
-    .locals 0
-
-    .line 2
-    const/4 p1, 0x0
-
-    iput p1, p0, Lko8;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p2, p0, Lko8;->b:Lsg9;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lsg9;I)V
-    .locals 0
-
-    .line 1
-    iput p2, p0, Lko8;->a:I
-
-    iput-object p1, p0, Lko8;->b:Lsg9;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.implements Ll66;
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 6
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    const/4 v0, 0x0
+    check-cast p1, Ljava/util/Set;
 
-    sget-object v1, Ljue;->a:Ljue;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object v2, p0, Lko8;->b:Lsg9;
-
-    iget p0, p0, Lko8;->a:I
-
-    packed-switch p0, :pswitch_data_0
-
-    sget-object p0, Lone/me/messages/list/ui/MessagesListWidget;->b1:[Lk77;
-
-    sget-object p0, Lbx8;->c:Lbx8;
-
-    check-cast v2, Lffa;
-
-    invoke-virtual {p0}, Lu2;->P1()Ld34;
+    invoke-virtual {p0, p1, p2}, Lko8;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    const-string v3, ":call-join-link?link="
+    check-cast p0, Lko8;
 
-    iget-object v2, v2, Lffa;->d:Ljava/lang/String;
+    sget-object p1, Le5f;->a:Le5f;
 
-    invoke-virtual {v3, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Lko8;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v2
+    return-object p1
+.end method
 
-    invoke-virtual {p0, v2, v0}, Ld34;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 0
 
-    return-object v1
+    new-instance p0, Lko8;
 
-    :pswitch_0
-    sget-object p0, Lone/me/messages/list/ui/MessagesListWidget;->b1:[Lk77;
+    const/4 p1, 0x2
 
-    sget-object p0, Lbx8;->c:Lbx8;
+    invoke-direct {p0, p1, p2}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
-    check-cast v2, Lrfa;
+    return-object p0
+.end method
 
-    invoke-virtual {p0}, Lu2;->P1()Ld34;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    move-result-object p0
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    sget-object p0, Le5f;->a:Le5f;
 
-    const-string v4, ":call-user?opponent_id="
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-wide v4, v2, Lrfa;->b:J
-
-    invoke-virtual {v3, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v4, "&video_enabled="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v2, v2, Lrfa;->c:Z
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p0, v2, v0}, Ld34;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
-
-    return-object v1
-
-    :pswitch_1
-    sget-object p0, Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;->d1:[Lk77;
-
-    sget-object p0, Lbx8;->c:Lbx8;
-
-    check-cast v2, La34;
-
-    invoke-virtual {p0, v2}, Lu2;->R1(La34;)V
-
-    return-object v1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

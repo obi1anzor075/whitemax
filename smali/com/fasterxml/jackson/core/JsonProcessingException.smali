@@ -4,16 +4,16 @@
 
 
 # instance fields
-.field public final a:Le67;
+.field public final a:Lwa7;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Le67;Ljava/lang/NumberFormatException;)V
+.method public constructor <init>(Ljava/lang/String;Lwa7;Ljava/lang/NumberFormatException;)V
     .locals 0
 
     invoke-direct {p0, p1, p3}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    iput-object p2, p0, Lcom/fasterxml/jackson/core/JsonProcessingException;->a:Le67;
+    iput-object p2, p0, Lcom/fasterxml/jackson/core/JsonProcessingException;->a:Lwa7;
 
     return-void
 .end method
@@ -32,11 +32,11 @@
     const-string v0, "N/A"
 
     :cond_0
-    iget-object p0, p0, Lcom/fasterxml/jackson/core/JsonProcessingException;->a:Le67;
+    iget-object p0, p0, Lcom/fasterxml/jackson/core/JsonProcessingException;->a:Lwa7;
 
     if-nez p0, :cond_1
 
-    goto :goto_0
+    return-object v0
 
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
@@ -53,7 +53,7 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0}, Le67;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Lwa7;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -62,10 +62,9 @@
     :cond_2
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    :goto_0
-    return-object v0
+    return-object p0
 .end method
 
 .method public final toString()Ljava/lang/String;

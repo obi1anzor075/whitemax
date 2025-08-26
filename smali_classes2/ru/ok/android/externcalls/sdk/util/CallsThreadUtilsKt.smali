@@ -12,13 +12,13 @@
         "",
         "T",
         "Lkotlin/Function0;",
-        "Lpf3;",
+        "Lkj3;",
         "onSuccess",
         "Ljava/lang/Runnable;",
         "onError",
-        "Lxi4;",
+        "Lam4;",
         "executeOnIoThread",
-        "(Ls16;Lpf3;Ljava/lang/Runnable;)Lxi4;",
+        "(Lv56;Lkj3;Ljava/lang/Runnable;)Lam4;",
         "calls-sdk_release"
     }
     k = 0x2
@@ -27,105 +27,105 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
 # direct methods
-.method public static synthetic a(Ls16;Lihd;)V
+.method public static synthetic a(Lv56;Lxod;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/util/CallsThreadUtilsKt;->executeOnIoThread$lambda$0(Ls16;Lnhd;)V
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/util/CallsThreadUtilsKt;->executeOnIoThread$lambda$0(Lv56;Lbpd;)V
 
     return-void
 .end method
 
-.method public static final executeOnIoThread(Ls16;Lpf3;Ljava/lang/Runnable;)Lxi4;
+.method public static final executeOnIoThread(Lv56;Lkj3;Ljava/lang/Runnable;)Lam4;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Ls16;",
-            "Lpf3;",
+            "Lv56;",
+            "Lkj3;",
             "Ljava/lang/Runnable;",
             ")",
-            "Lxi4;"
+            "Lam4;"
         }
     .end annotation
 
-    new-instance v0, Lbm1;
+    new-instance v0, Lfo1;
 
     const/4 v1, 0x2
 
-    invoke-direct {v0, v1, p0}, Lbm1;-><init>(ILs16;)V
+    invoke-direct {v0, v1, p0}, Lfo1;-><init>(ILv56;)V
 
-    new-instance p0, Lmv9;
+    new-instance p0, Lpz9;
 
     const/4 v1, 0x1
 
-    invoke-direct {p0, v1, v0}, Lmv9;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p0, v1, v0}, Lpz9;-><init>(ILjava/lang/Object;)V
 
-    invoke-static {}, Lcnc;->b()Lqmc;
+    invoke-static {}, Ltsc;->b()Lgsc;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Ldhd;->m(Lqmc;)Lyhd;
+    invoke-virtual {p0, v0}, Ltod;->m(Lgsc;)Lmpd;
 
     move-result-object p0
 
-    invoke-static {}, Lde;->a()Lqmc;
+    invoke-static {}, Lud;->a()Lgsc;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Ldhd;->i(Lqmc;)Lyhd;
+    invoke-virtual {p0, v0}, Ltod;->i(Lgsc;)Lmpd;
 
     move-result-object p0
 
     new-instance v0, Lru/ok/android/externcalls/sdk/util/CallsThreadUtilsKt$executeOnIoThread$2;
 
-    invoke-direct {v0, p1}, Lru/ok/android/externcalls/sdk/util/CallsThreadUtilsKt$executeOnIoThread$2;-><init>(Lpf3;)V
+    invoke-direct {v0, p1}, Lru/ok/android/externcalls/sdk/util/CallsThreadUtilsKt$executeOnIoThread$2;-><init>(Lkj3;)V
 
     new-instance p1, Lru/ok/android/externcalls/sdk/util/CallsThreadUtilsKt$executeOnIoThread$3;
 
     invoke-direct {p1, p2}, Lru/ok/android/externcalls/sdk/util/CallsThreadUtilsKt$executeOnIoThread$3;-><init>(Ljava/lang/Runnable;)V
 
-    new-instance p2, Lpn1;
+    new-instance p2, Lfq1;
 
     const/4 v1, 0x2
 
-    invoke-direct {p2, v0, v1, p1}, Lpn1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-direct {p2, v0, v1, p1}, Lfq1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    invoke-virtual {p0, p2}, Ldhd;->k(Lzhd;)V
+    invoke-virtual {p0, p2}, Ltod;->k(Lnpd;)V
 
     return-object p2
 .end method
 
-.method private static final executeOnIoThread$lambda$0(Ls16;Lnhd;)V
+.method private static final executeOnIoThread$lambda$0(Lv56;Lbpd;)V
     .locals 1
 
     :try_start_0
-    invoke-interface {p0}, Ls16;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lv56;->invoke()Ljava/lang/Object;
 
     move-result-object p0
 
     move-object v0, p1
 
-    check-cast v0, Lihd;
+    check-cast v0, Lxod;
 
-    invoke-virtual {v0, p0}, Lihd;->a(Ljava/lang/Object;)V
+    invoke-virtual {v0, p0}, Lxod;->a(Ljava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    return-void
 
     :catchall_0
     move-exception p0
 
-    check-cast p1, Lihd;
+    check-cast p1, Lxod;
 
-    invoke-virtual {p1, p0}, Lihd;->onError(Ljava/lang/Throwable;)V
+    invoke-virtual {p1, p0}, Lxod;->onError(Ljava/lang/Throwable;)V
 
-    :goto_0
     return-void
 .end method

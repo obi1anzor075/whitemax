@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public J1:Ligb;
+.field public B1:Lmkb;
 
 
 # direct methods
@@ -18,7 +18,7 @@
 
 
 # virtual methods
-.method public final i1()Landroid/app/Dialog;
+.method public final V0()Landroid/app/Dialog;
     .locals 7
 
     iget-object v0, p0, Landroidx/fragment/app/a;->Z:Landroid/os/Bundle;
@@ -55,69 +55,71 @@
 
     move-result v3
 
-    iput-boolean v1, p0, Landroidx/fragment/app/DialogFragment;->v1:Z
+    iput-boolean v1, p0, Landroidx/fragment/app/DialogFragment;->n1:Z
 
-    iget-object v4, p0, Landroidx/fragment/app/DialogFragment;->A1:Landroid/app/Dialog;
+    iget-object v4, p0, Landroidx/fragment/app/DialogFragment;->s1:Landroid/app/Dialog;
 
     if-eqz v4, :cond_0
 
     invoke-virtual {v4, v1}, Landroid/app/Dialog;->setCancelable(Z)V
 
     :cond_0
+    const/4 v4, 0x0
+
     if-eqz v2, :cond_1
 
     invoke-virtual {v2}, Ljava/lang/String;->isEmpty()Z
 
-    move-result v4
+    move-result v5
 
-    if-nez v4, :cond_1
+    if-nez v5, :cond_1
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->e0()Landroid/content/Context;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->S()Landroid/content/Context;
 
     move-result-object p0
 
-    new-instance v4, Lov7;
+    new-instance v5, Ln08;
 
-    invoke-direct {v4, p0}, Lov7;-><init>(Landroid/content/Context;)V
+    invoke-direct {v5, p0, v4}, Ln08;-><init>(Landroid/content/Context;I)V
 
-    iget-object v5, v4, Ltc;->a:Lpc;
+    iget-object v4, v5, Lmc;->a:Lic;
 
-    iput-boolean v1, v5, Lpc;->m:Z
+    iput-boolean v1, v4, Lic;->m:Z
 
-    new-instance v1, Lh00;
+    new-instance v1, Lt00;
 
     const/4 v6, 0x1
 
-    invoke-direct {v1, v6}, Lh00;-><init>(I)V
+    invoke-direct {v1, v6}, Lt00;-><init>(I)V
 
-    iput-object v2, v5, Lpc;->k:Ljava/lang/CharSequence;
+    iput-object v2, v4, Lic;->k:Ljava/lang/CharSequence;
 
-    iput-object v1, v5, Lpc;->l:Landroid/content/DialogInterface$OnClickListener;
+    iput-object v1, v4, Lic;->l:Landroid/content/DialogInterface$OnClickListener;
 
-    invoke-static {p0, v0, v4, v3}, Ludd;->N(Landroid/content/Context;Ljava/lang/String;Lov7;Z)V
+    invoke-static {p0, v0, v5, v3}, Lg47;->G(Landroid/content/Context;Ljava/lang/String;Ln08;Z)V
 
-    invoke-virtual {v4}, Lov7;->create()Luc;
+    invoke-virtual {v5}, Ln08;->create()Lnc;
 
     move-result-object p0
 
     return-object p0
 
     :cond_1
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->e0()Landroid/content/Context;
+    invoke-virtual {p0}, Landroidx/fragment/app/a;->S()Landroid/content/Context;
 
     move-result-object p0
 
-    new-instance v2, Lov7;
+    new-instance v2, Ln08;
 
-    invoke-direct {v2, p0}, Lov7;-><init>(Landroid/content/Context;)V
+    invoke-direct {v2, p0, v4}, Ln08;-><init>(Landroid/content/Context;I)V
 
-    iget-object v4, v2, Ltc;->a:Lpc;
+    iget-object v4, v2, Lmc;->a:Lic;
 
-    iput-boolean v1, v4, Lpc;->m:Z
+    iput-boolean v1, v4, Lic;->m:Z
 
-    invoke-static {p0, v0, v2, v3}, Ludd;->N(Landroid/content/Context;Ljava/lang/String;Lov7;Z)V
+    invoke-static {p0, v0, v2, v3}, Lg47;->G(Landroid/content/Context;Ljava/lang/String;Ln08;Z)V
 
-    invoke-virtual {v2}, Lov7;->create()Luc;
+    invoke-virtual {v2}, Ln08;->create()Lnc;
 
     move-result-object p0
 
@@ -127,11 +129,11 @@
 .method public final onCancel(Landroid/content/DialogInterface;)V
     .locals 0
 
-    iget-object p0, p0, Lru/ok/messages/views/dialogs/ProgressDialog;->J1:Ligb;
+    iget-object p0, p0, Lru/ok/messages/views/dialogs/ProgressDialog;->B1:Lmkb;
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p0}, Ligb;->b()V
+    invoke-interface {p0}, Lmkb;->onCancel()V
 
     :cond_0
     return-void

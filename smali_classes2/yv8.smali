@@ -1,213 +1,128 @@
 .class public final Lyv8;
-.super Lv2;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public final synthetic o:I
+.field public final a:Ldw8;
+
+.field public final b:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Laec;I)V
+.method public constructor <init>(Ldw8;Ljava/lang/String;)V
     .locals 0
 
-    iput p2, p0, Lyv8;->o:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lv2;-><init>(Laec;)V
+    iput-object p1, p0, Lyv8;->a:Ldw8;
+
+    iput-object p2, p0, Lyv8;->b:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final g()Ljava/lang/String;
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget p0, p0, Lyv8;->o:I
+    const/4 v0, 0x1
 
-    packed-switch p0, :pswitch_data_0
+    if-ne p0, p1, :cond_0
 
-    const-string p0, "DELETE FROM chat_folder"
+    return v0
 
-    return-object p0
+    :cond_0
+    instance-of v1, p1, Lyv8;
 
-    :pswitch_0
-    const-string p0, "UPDATE chat_folder SET isHiddenForAllFolder=? WHERE id=?"
+    const/4 v2, 0x0
 
-    return-object p0
+    if-nez v1, :cond_1
 
-    :pswitch_1
-    const-string p0, "UPDATE chat_folder SET isRemoved = 1 WHERE id=?"
+    return v2
 
-    return-object p0
+    :cond_1
+    check-cast p1, Lyv8;
 
-    :pswitch_2
-    const-string p0, "DELETE FROM folder_and_chats WHERE chatId = ?"
+    iget-object v1, p0, Lyv8;->a:Ldw8;
 
-    return-object p0
+    iget-object v3, p1, Lyv8;->a:Ldw8;
 
-    :pswitch_3
-    const-string p0, "UPDATE chat_folder SET hideIfEmpty = ? WHERE id = ?"
+    if-eq v1, v3, :cond_2
 
-    return-object p0
+    return v2
 
-    :pswitch_4
-    const-string p0, "UPDATE chat_folder SET title = ?, emoji = ? WHERE id = ?"
+    :cond_2
+    iget-object p0, p0, Lyv8;->b:Ljava/lang/String;
 
-    return-object p0
+    iget-object p1, p1, Lyv8;->b:Ljava/lang/String;
 
-    :pswitch_5
-    const-string p0, "DELETE FROM folder_and_chats WHERE folderId = ? AND chatId = ?"
+    invoke-static {p0, p1}, Lxq7;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    return-object p0
+    move-result p0
 
-    :pswitch_6
-    const-string p0, "DELETE FROM recent"
+    if-nez p0, :cond_3
 
-    return-object p0
+    return v2
 
-    :pswitch_7
-    const-string p0, "DELETE FROM reactions_section"
+    :cond_3
+    return v0
+.end method
 
-    return-object p0
+.method public final hashCode()I
+    .locals 1
 
-    :pswitch_8
-    const-string p0, "DELETE FROM phones WHERE id = ?"
+    iget-object v0, p0, Lyv8;->a:Ldw8;
 
-    return-object p0
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
-    :pswitch_9
-    const-string p0, "DELETE FROM phones"
+    move-result v0
 
-    return-object p0
+    mul-int/lit8 v0, v0, 0x1f
 
-    :pswitch_a
-    const-string p0, "UPDATE phones SET server_phone = ?, type = ? WHERE phone = ?"
+    iget-object p0, p0, Lyv8;->b:Ljava/lang/String;
 
-    return-object p0
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
-    :pswitch_b
-    const-string p0, "DELETE FROM notifications_tracker_messages"
+    move-result p0
 
-    return-object p0
+    add-int/2addr p0, v0
 
-    :pswitch_c
-    const-string p0, "DELETE FROM notifications_tracker_messages WHERE time<=?"
+    return p0
+.end method
 
-    return-object p0
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    :pswitch_d
-    const-string p0, "DELETE FROM notifications_read_marks"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    return-object p0
+    const-string v1, "MessageReaction(reactionType="
 
-    :pswitch_e
-    const-string p0, "DELETE FROM fcm_notifications WHERE chat_id = ?"
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    return-object p0
+    iget-object v1, p0, Lyv8;->a:Ldw8;
 
-    :pswitch_f
-    const-string p0, "DELETE FROM fcm_notifications"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    return-object p0
+    const-string v1, ", id="
 
-    :pswitch_10
-    const-string p0, "DELETE FROM fcm_notifications WHERE time <= ? AND chat_id = ?"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-object p0
+    iget-object p0, p0, Lyv8;->b:Ljava/lang/String;
 
-    :pswitch_11
-    const-string p0, "DELETE FROM fcm_notifications WHERE time <= ?"
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
-
-    :pswitch_12
-    const-string p0, "UPDATE messages SET error = ? WHERE id = ?"
-
-    return-object p0
-
-    :pswitch_13
-    const-string p0, "UPDATE messages SET delivery_status = ? WHERE id = ?"
-
-    return-object p0
-
-    :pswitch_14
-    const-string p0, "DELETE FROM messages WHERE media_type = ?"
-
-    return-object p0
-
-    :pswitch_15
-    const-string p0, "DELETE FROM messages WHERE chat_id = ? AND server_id = 0 AND time_local >= ? AND time_local <= ?"
-
-    return-object p0
-
-    :pswitch_16
-    const-string p0, "DELETE FROM messages WHERE chat_id = ? AND delayed_attrs_time_to_fire <= ? AND inserted_from_msg_link = 0 AND delayed_attrs_time_to_fire IS NOT NULL AND delayed_attrs_notify_sender IS NOT NULL"
-
-    return-object p0
-
-    :pswitch_17
-    const-string p0, "DELETE FROM messages WHERE chat_id = ? AND time <= ? AND inserted_from_msg_link = 0 AND delayed_attrs_time_to_fire IS NULL AND delayed_attrs_notify_sender IS NULL"
-
-    return-object p0
-
-    :pswitch_18
-    const-string p0, "DELETE FROM messages"
-
-    return-object p0
-
-    :pswitch_19
-    const-string p0, "DELETE FROM messages WHERE chat_id = ?"
-
-    return-object p0
-
-    :pswitch_1a
-    const-string p0, "UPDATE messages SET delayed_attrs_time_to_fire = ? AND delayed_attrs_notify_sender = ? WHERE id = ?"
-
-    return-object p0
-
-    :pswitch_1b
-    const-string p0, "UPDATE messages SET reactions = ? WHERE server_id = ?"
-
-    return-object p0
-
-    :pswitch_1c
-    const-string p0, "UPDATE messages SET channel_views = ? AND channel_forwards = ? WHERE server_id = ?"
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1c
-        :pswitch_1b
-        :pswitch_1a
-        :pswitch_19
-        :pswitch_18
-        :pswitch_17
-        :pswitch_16
-        :pswitch_15
-        :pswitch_14
-        :pswitch_13
-        :pswitch_12
-        :pswitch_11
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

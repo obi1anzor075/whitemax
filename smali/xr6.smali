@@ -1,41 +1,35 @@
-.class public abstract Lxr6;
+.class public interface abstract Lxr6;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/os/IInterface;
+
+
+# static fields
+.field public static final a:Ljava/lang/String;
+
 
 # direct methods
-.method public static a(Landroid/widget/ImageView;)Landroid/content/res/ColorStateList;
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
-    invoke-virtual {p0}, Landroid/widget/ImageView;->getImageTintList()Landroid/content/res/ColorStateList;
+    const/16 v0, 0x24
 
-    move-result-object p0
+    const/16 v1, 0x2e
 
-    return-object p0
-.end method
+    const-string v2, "androidx$room$IMultiInstanceInvalidationCallback"
 
-.method public static b(Landroid/widget/ImageView;)Landroid/graphics/PorterDuff$Mode;
-    .locals 0
+    invoke-virtual {v2, v0, v1}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
-    invoke-virtual {p0}, Landroid/widget/ImageView;->getImageTintMode()Landroid/graphics/PorterDuff$Mode;
+    move-result-object v0
 
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static c(Landroid/widget/ImageView;Landroid/content/res/ColorStateList;)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
+    sput-object v0, Lxr6;->a:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static d(Landroid/widget/ImageView;Landroid/graphics/PorterDuff$Mode;)V
-    .locals 0
 
-    invoke-virtual {p0, p1}, Landroid/widget/ImageView;->setImageTintMode(Landroid/graphics/PorterDuff$Mode;)V
-
-    return-void
+# virtual methods
+.method public abstract k([Ljava/lang/String;)V
 .end method

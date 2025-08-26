@@ -1,195 +1,323 @@
 .class public final Lf5g;
-.super Lm4g;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic b:I
+# static fields
+.field public static final c:Ljava/util/regex/Pattern;
 
-.field public final synthetic c:Ljava/lang/Object;
+.field public static final d:Ljava/util/regex/Pattern;
+
+
+# instance fields
+.field public final a:Labf;
+
+.field public final b:Ljava/lang/StringBuilder;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p1, p0, Lf5g;->b:I
+    const-string v0, "\\[voice=\"([^\"]*)\"\\]"
 
-    iput-object p2, p0, Lf5g;->c:Ljava/lang/Object;
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    invoke-direct {p0}, Lm4g;-><init>()V
+    move-result-object v0
+
+    sput-object v0, Lf5g;->c:Ljava/util/regex/Pattern;
+
+    const-string v0, "^((?:[0-9]*\\.)?[0-9]+)(px|em|%)$"
+
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lf5g;->d:Ljava/util/regex/Pattern;
 
     return-void
 .end method
 
+.method public constructor <init>()V
+    .locals 3
 
-# virtual methods
-.method public final a()V
-    .locals 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget v0, p0, Lf5g;->b:I
+    new-instance v0, Labf;
 
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Lf5g;->c:Ljava/lang/Object;
-
-    check-cast p0, La6g;
-
-    iget-object v0, p0, La6g;->b:Ljava/lang/Object;
-
-    check-cast v0, Lf6g;
-
-    iget-object v1, v0, Lf6g;->b:Lmj4;
+    const/4 v1, 0x3
 
     const/4 v2, 0x0
 
-    new-array v3, v2, [Ljava/lang/Object;
+    invoke-direct {v0, v1, v2}, Labf;-><init>(IZ)V
 
-    const-string v4, "unlinkToDeath"
+    iput-object v0, p0, Lf5g;->a:Labf;
 
-    invoke-virtual {v1, v4, v3}, Lmj4;->b(Ljava/lang/String;[Ljava/lang/Object;)V
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget-object v1, v0, Lf6g;->m:Landroid/os/IInterface;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-interface {v1}, Landroid/os/IInterface;->asBinder()Landroid/os/IBinder;
+    iput-object v0, p0, Lf5g;->b:Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    return-void
+.end method
 
-    iget-object v0, v0, Lf6g;->j:Lu4g;
-
-    invoke-interface {v1, v0, v2}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
+.method public static a(Labf;Ljava/lang/StringBuilder;)Ljava/lang/String;
+    .locals 5
 
     const/4 v0, 0x0
 
-    iget-object p0, p0, La6g;->b:Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    check-cast p0, Lf6g;
+    iget v1, p0, Labf;->b:I
 
-    iput-object v0, p0, Lf6g;->m:Landroid/os/IInterface;
+    iget v2, p0, Labf;->c:I
 
-    iput-boolean v2, p0, Lf6g;->g:Z
+    :goto_0
+    if-ge v1, v2, :cond_5
 
-    return-void
+    if-nez v0, :cond_5
 
-    :pswitch_0
-    iget-object v0, p0, Lf5g;->c:Ljava/lang/Object;
+    iget-object v3, p0, Labf;->a:[B
 
-    check-cast v0, Lf6g;
+    aget-byte v3, v3, v1
 
-    iget-object v0, v0, Lf6g;->f:Ljava/lang/Object;
+    int-to-char v3, v3
 
-    monitor-enter v0
+    const/16 v4, 0x41
 
-    :try_start_0
-    iget-object v1, p0, Lf5g;->c:Ljava/lang/Object;
+    if-lt v3, v4, :cond_0
 
-    check-cast v1, Lf6g;
+    const/16 v4, 0x5a
 
-    iget-object v1, v1, Lf6g;->k:Ljava/util/concurrent/atomic/AtomicInteger;
+    if-le v3, v4, :cond_4
 
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+    :cond_0
+    const/16 v4, 0x61
 
-    move-result v1
+    if-lt v3, v4, :cond_1
 
-    const/4 v2, 0x0
+    const/16 v4, 0x7a
 
-    if-lez v1, :cond_0
+    if-le v3, v4, :cond_4
 
-    iget-object v1, p0, Lf5g;->c:Ljava/lang/Object;
+    :cond_1
+    const/16 v4, 0x30
 
-    check-cast v1, Lf6g;
+    if-lt v3, v4, :cond_2
 
-    iget-object v1, v1, Lf6g;->k:Ljava/util/concurrent/atomic/AtomicInteger;
+    const/16 v4, 0x39
 
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
+    if-le v3, v4, :cond_4
 
-    move-result v1
+    :cond_2
+    const/16 v4, 0x23
 
-    if-lez v1, :cond_0
+    if-eq v3, v4, :cond_4
 
-    iget-object p0, p0, Lf5g;->c:Ljava/lang/Object;
+    const/16 v4, 0x2d
 
-    check-cast p0, Lf6g;
+    if-eq v3, v4, :cond_4
 
-    iget-object p0, p0, Lf6g;->b:Lmj4;
+    const/16 v4, 0x2e
 
-    const-string v1, "Leaving the connection open for other ongoing calls."
+    if-eq v3, v4, :cond_4
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/16 v4, 0x5f
 
-    invoke-virtual {p0, v1, v2}, Lmj4;->b(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    monitor-exit v0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p0
+    if-ne v3, v4, :cond_3
 
     goto :goto_1
 
+    :cond_3
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_4
+    :goto_1
+    add-int/lit8 v1, v1, 0x1
+
+    invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_0
+
+    :cond_5
+    iget v0, p0, Labf;->b:I
+
+    sub-int/2addr v1, v0
+
+    invoke-virtual {p0, v1}, Labf;->F(I)V
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static b(Labf;Ljava/lang/StringBuilder;)Ljava/lang/String;
+    .locals 1
+
+    invoke-static {p0}, Lf5g;->c(Labf;)V
+
+    invoke-virtual {p0}, Labf;->c()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 p0, 0x0
+
+    return-object p0
+
     :cond_0
-    iget-object v1, p0, Lf5g;->c:Ljava/lang/Object;
+    invoke-static {p0, p1}, Lf5g;->a(Labf;Ljava/lang/StringBuilder;)Ljava/lang/String;
 
-    check-cast v1, Lf6g;
+    move-result-object p1
 
-    iget-object v3, v1, Lf6g;->m:Landroid/os/IInterface;
+    const-string v0, ""
 
-    if-eqz v3, :cond_1
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    iget-object v1, v1, Lf6g;->b:Lmj4;
+    move-result v0
 
-    const-string v3, "Unbind from service."
+    if-nez v0, :cond_1
 
-    new-array v4, v2, [Ljava/lang/Object;
-
-    invoke-virtual {v1, v3, v4}, Lmj4;->b(Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget-object v1, p0, Lf5g;->c:Ljava/lang/Object;
-
-    check-cast v1, Lf6g;
-
-    iget-object v3, v1, Lf6g;->a:Landroid/content/Context;
-
-    iget-object v1, v1, Lf6g;->l:La6g;
-
-    invoke-virtual {v3, v1}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
-
-    iget-object v1, p0, Lf5g;->c:Ljava/lang/Object;
-
-    check-cast v1, Lf6g;
-
-    iput-boolean v2, v1, Lf6g;->g:Z
-
-    const/4 v2, 0x0
-
-    iput-object v2, v1, Lf6g;->m:Landroid/os/IInterface;
-
-    iput-object v2, v1, Lf6g;->l:La6g;
+    return-object p1
 
     :cond_1
-    iget-object p0, p0, Lf5g;->c:Ljava/lang/Object;
+    invoke-virtual {p0}, Labf;->s()I
 
-    check-cast p0, Lf6g;
+    move-result p0
 
-    invoke-virtual {p0}, Lf6g;->c()V
+    int-to-char p0, p0
 
-    monitor-exit v0
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    const/4 v0, 0x1
+
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static c(Labf;)V
+    .locals 8
+
+    const/4 v0, 0x1
 
     :goto_0
-    return-void
+    move v1, v0
 
     :goto_1
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {p0}, Labf;->c()I
 
-    throw p0
+    move-result v2
 
-    nop
+    if-lez v2, :cond_4
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    if-eqz v1, :cond_4
+
+    iget v1, p0, Labf;->b:I
+
+    iget-object v2, p0, Labf;->a:[B
+
+    aget-byte v3, v2, v1
+
+    int-to-char v4, v3
+
+    const/16 v5, 0x9
+
+    if-eq v4, v5, :cond_3
+
+    const/16 v5, 0xa
+
+    if-eq v4, v5, :cond_3
+
+    const/16 v5, 0xc
+
+    if-eq v4, v5, :cond_3
+
+    const/16 v5, 0xd
+
+    if-eq v4, v5, :cond_3
+
+    const/16 v5, 0x20
+
+    if-eq v4, v5, :cond_3
+
+    iget v4, p0, Labf;->c:I
+
+    add-int/lit8 v5, v1, 0x2
+
+    if-gt v5, v4, :cond_2
+
+    add-int/lit8 v1, v1, 0x1
+
+    const/16 v6, 0x2f
+
+    if-ne v3, v6, :cond_2
+
+    aget-byte v1, v2, v1
+
+    const/16 v3, 0x2a
+
+    if-ne v1, v3, :cond_2
+
+    :goto_2
+    add-int/lit8 v1, v5, 0x1
+
+    if-ge v1, v4, :cond_1
+
+    aget-byte v7, v2, v5
+
+    int-to-char v7, v7
+
+    if-ne v7, v3, :cond_0
+
+    aget-byte v7, v2, v1
+
+    int-to-char v7, v7
+
+    if-ne v7, v6, :cond_0
+
+    add-int/lit8 v5, v5, 0x2
+
+    move v4, v5
+
+    goto :goto_2
+
+    :cond_0
+    move v5, v1
+
+    goto :goto_2
+
+    :cond_1
+    iget v1, p0, Labf;->b:I
+
+    sub-int/2addr v4, v1
+
+    invoke-virtual {p0, v4}, Labf;->F(I)V
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v1, 0x0
+
+    goto :goto_1
+
+    :cond_3
+    invoke-virtual {p0, v0}, Labf;->F(I)V
+
+    goto :goto_0
+
+    :cond_4
+    return-void
 .end method

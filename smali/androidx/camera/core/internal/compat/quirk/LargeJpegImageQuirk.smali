@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lzkb;
+.implements Lkpb;
 
 
 # static fields
@@ -16,9 +16,9 @@
 
     new-instance v0, Ljava/util/HashSet;
 
-    const-string v28, "SM-G930V"
+    const-string v30, "SM-S901B/DS"
 
-    const-string v29, "SM-S901B"
+    const-string v31, "SM-S906B"
 
     const-string v1, "SM-A520F"
 
@@ -74,9 +74,9 @@
 
     const-string v27, "SM-G930T"
 
-    const-string v30, "SM-S901B/DS"
+    const-string v28, "SM-G930V"
 
-    const-string v31, "SM-S906B"
+    const-string v29, "SM-S901B"
 
     filled-new-array/range {v1 .. v31}, [Ljava/lang/String;
 
@@ -90,13 +90,13 @@
 
     new-instance v0, Ljava/util/HashSet;
 
-    const-string v1, "V2046"
+    const-string v1, "V2045"
 
-    const-string v2, "V2244A"
+    const-string v2, "V2046"
 
-    const-string v3, "V2045"
+    const-string v3, "V2244A"
 
-    filled-new-array {v2, v3, v1}, [Ljava/lang/String;
+    filled-new-array {v3, v1, v2}, [Ljava/lang/String;
 
     move-result-object v1
 

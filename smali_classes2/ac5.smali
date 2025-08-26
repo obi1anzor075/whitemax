@@ -3,31 +3,90 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lone/me/sdk/media/ffmpeg/FfmpegLibraryLoader;
+.implements Lc6;
+
+
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:J
+
+.field public final synthetic c:Z
+
+
+# direct methods
+.method public synthetic constructor <init>(IJZ)V
+    .locals 0
+
+    iput p1, p0, Lac5;->a:I
+
+    iput-wide p2, p0, Lac5;->b:J
+
+    iput-boolean p4, p0, Lac5;->c:Z
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final load(Ljava/lang/String;)V
-    .locals 0
+.method public final run()V
+    .locals 4
 
-    :try_start_0
-    const-string p0, "ffmpg"
+    iget v0, p0, Lac5;->a:I
 
-    invoke-static {p0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-boolean v1, p0, Lac5;->c:Z
 
-    goto :goto_0
+    iget-wide v2, p0, Lac5;->b:J
 
-    :catchall_0
-    move-exception p0
+    packed-switch v0, :pswitch_data_0
 
-    invoke-static {}, Lone/me/sdk/media/ffmpeg/WebmConfig;->getLogger()Lgg9;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object p1
+    move-result-object p0
 
-    invoke-interface {p1, p0}, Lgg9;->o(Ljava/lang/Throwable;)V
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    :goto_0
+    move-result-object v0
+
+    filled-new-array {p0, v0}, [Ljava/lang/Object;
+
+    move-result-object p0
+
+    const-string v0, "wc5"
+
+    const-string v1, "markAsFavorite: complete for stickerId=%d favorite=%b"
+
+    invoke-static {v0, v1, p0}, Lg47;->o(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
     return-void
+
+    :pswitch_0
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    filled-new-array {p0, v0}, [Ljava/lang/Object;
+
+    move-result-object p0
+
+    const-string v0, "dc5"
+
+    const-string v1, "markAsFavorite: complete for setId=%d favorite=%b"
+
+    invoke-static {v0, v1, p0}, Lg47;->o(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

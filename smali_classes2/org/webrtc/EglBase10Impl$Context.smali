@@ -95,15 +95,15 @@
 
     if-eq v1, v6, :cond_2
 
-    const/16 v6, 0x3038
+    const/16 v6, 0x3056
 
-    const/4 v7, 0x1
+    const/16 v7, 0x3038
 
-    const/16 v8, 0x3057
+    const/4 v8, 0x1
 
-    const/16 v9, 0x3056
+    const/16 v9, 0x3057
 
-    filled-new-array {v8, v7, v9, v7, v6}, [I
+    filled-new-array {v9, v8, v6, v8, v7}, [I
 
     move-result-object v6
 

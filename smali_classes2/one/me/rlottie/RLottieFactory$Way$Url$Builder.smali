@@ -76,19 +76,17 @@
 
 # virtual methods
 .method public final build()Lone/me/rlottie/RLottieFactory$Way$Url;
-    .locals 7
+    .locals 6
 
-    new-instance v6, Lone/me/rlottie/RLottieFactory$Way$Url;
+    new-instance v0, Lone/me/rlottie/RLottieFactory$Way$Url;
 
-    iget-object v0, p0, Lone/me/rlottie/RLottieFactory$Way$Url$Builder;->url:Ljava/lang/String;
+    iget-object v1, p0, Lone/me/rlottie/RLottieFactory$Way$Url$Builder;->url:Ljava/lang/String;
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     :cond_0
-    move-object v1, v0
-
     iget-boolean v2, p0, Lone/me/rlottie/RLottieFactory$Way$Url$Builder;->networkFetchEnabled:Z
 
     invoke-virtual {p0}, Lone/me/rlottie/RLottieFactory$Way$Builder;->getWidth()I
@@ -103,11 +101,9 @@
 
     move-result v5
 
-    move-object v0, v6
-
     invoke-direct/range {v0 .. v5}, Lone/me/rlottie/RLottieFactory$Way$Url;-><init>(Ljava/lang/String;ZIIZ)V
 
-    return-object v6
+    return-object v0
 .end method
 
 .method public final setNetworkFetchEnabled(Z)Lone/me/rlottie/RLottieFactory$Way$Url$Builder;

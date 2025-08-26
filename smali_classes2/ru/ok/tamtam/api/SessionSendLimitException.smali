@@ -20,6 +20,7 @@
         0x0,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 
@@ -51,27 +52,17 @@
 
 # virtual methods
 .method public final getMessage()Ljava/lang/String;
-    .locals 2
+    .locals 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Send tasks limit="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v1, p0, Lru/ok/tamtam/api/SessionSendLimitException;->a:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v0, "Send tasks limit="
 
     const-string v1, " reached, tasks="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget v2, p0, Lru/ok/tamtam/api/SessionSendLimitException;->a:I
 
     iget p0, p0, Lru/ok/tamtam/api/SessionSendLimitException;->b:I
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, v2, p0, v1}, Lv04;->h(Ljava/lang/String;IILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

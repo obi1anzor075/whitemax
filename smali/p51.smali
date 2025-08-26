@@ -1,70 +1,158 @@
-.class public final synthetic Lp51;
+.class public final Lp51;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ls16;
+.implements Lol7;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:J
 
-.field public final synthetic b:Lr51;
+.field public final b:Landroid/text/SpannableStringBuilder;
+
+.field public final c:J
+
+.field public final o:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lr51;I)V
+.method public constructor <init>(JLandroid/text/SpannableStringBuilder;)V
     .locals 0
 
-    iput p2, p0, Lp51;->a:I
-
-    iput-object p1, p0, Lp51;->b:Lr51;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-wide p1, p0, Lp51;->a:J
+
+    iput-object p3, p0, Lp51;->b:Landroid/text/SpannableStringBuilder;
+
+    iput-wide p1, p0, Lp51;->c:J
+
+    sget p1, Litb;->call_event_view_item:I
+
+    iput p1, p0, Lp51;->o:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    if-ne p0, p1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    instance-of v0, p1, Lp51;
+
+    if-nez v0, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Lp51;
+
+    iget-wide v0, p0, Lp51;->a:J
+
+    iget-wide v2, p1, Lp51;->a:J
+
+    cmp-long v0, v0, v2
+
+    if-eqz v0, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    iget-object p0, p0, Lp51;->b:Landroid/text/SpannableStringBuilder;
+
+    iget-object p1, p1, Lp51;->b:Landroid/text/SpannableStringBuilder;
+
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_3
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final getItemId()J
     .locals 2
 
-    iget v0, p0, Lp51;->a:I
+    iget-wide v0, p0, Lp51;->c:J
 
-    packed-switch v0, :pswitch_data_0
+    return-wide v0
+.end method
 
-    iget-object p0, p0, Lp51;->b:Lr51;
+.method public final hashCode()I
+    .locals 2
 
-    iget-object p0, p0, Lr51;->R0:Landroidx/recyclerview/widget/b;
+    iget-wide v0, p0, Lp51;->a:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Lp51;->b:Landroid/text/SpannableStringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final m()I
+    .locals 0
+
+    iget p0, p0, Lp51;->o:I
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "CallEventItemView(id="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-wide v1, p0, Lp51;->a:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", text="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lp51;->b:Landroid/text/SpannableStringBuilder;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
-
-    :pswitch_0
-    iget-object p0, p0, Lp51;->b:Lr51;
-
-    iget-object p0, p0, Lr51;->T0:Lf5f;
-
-    return-object p0
-
-    :pswitch_1
-    new-instance v0, Ljc6;
-
-    iget-object p0, p0, Lp51;->b:Lr51;
-
-    iget-object v1, p0, Lr51;->N0:Landroidx/viewpager2/widget/ViewPager2;
-
-    iget-object p0, p0, Lr51;->O0:Lnc6;
-
-    invoke-direct {v0, v1, p0}, Ljc6;-><init>(Landroidx/viewpager2/widget/ViewPager2;Lnc6;)V
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

@@ -1,45 +1,148 @@
-.class public final synthetic Layf;
-.super Lkhb;
+.class public final Layf;
+.super Lqde;
 .source "SourceFile"
 
+# interfaces
+.implements Ll66;
 
-# static fields
-.field public static final a:Layf;
+
+# instance fields
+.field public X:I
+
+.field public synthetic Y:Ljava/lang/Object;
+
+.field public final synthetic Z:Leyf;
+
+.field public final synthetic o0:Lhyf;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(Leyf;Lhyf;Lkotlin/coroutines/Continuation;)V
+    .locals 0
 
-    new-instance v0, Layf;
+    iput-object p1, p0, Layf;->Z:Leyf;
 
-    const-class v1, Lcod;
+    iput-object p2, p0, Layf;->o0:Lhyf;
 
-    const-string v2, "freezeCount"
+    const/4 p1, 0x2
 
-    const-string v3, "getFreezeCount()J"
-
-    const/4 v4, 0x0
-
-    invoke-direct {v0, v1, v2, v3, v4}, Lkhb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    sput-object v0, Layf;->a:Layf;
+    invoke-direct {p0, p1, p3}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final get(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    check-cast p1, Lcod;
+    check-cast p1, Ljava/lang/Throwable;
 
-    iget-wide p0, p1, Lcod;->v:J
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {p0, p1, p2}, Layf;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
+
+    check-cast p0, Layf;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Layf;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 2
+
+    new-instance v0, Layf;
+
+    iget-object v1, p0, Layf;->Z:Leyf;
+
+    iget-object p0, p0, Layf;->o0:Lhyf;
+
+    invoke-direct {v0, v1, p0, p2}, Layf;-><init>(Leyf;Lhyf;Lkotlin/coroutines/Continuation;)V
+
+    iput-object p1, v0, Layf;->Y:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 8
+
+    iget v0, p0, Layf;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Layf;->Y:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/Throwable;
+
+    iget-object v0, p0, Layf;->Z:Leyf;
+
+    invoke-static {v0, p1}, Leyf;->e(Leyf;Ljava/lang/Throwable;)Lea7;
+
+    move-result-object v4
+
+    iget-object p1, v0, Leyf;->c:Lje7;
+
+    invoke-interface {p1}, Lje7;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    move-object v2, p1
+
+    check-cast v2, Lo73;
+
+    iget-object v3, v0, Leyf;->f:Lst0;
+
+    iget-object p1, p0, Layf;->o0:Lhyf;
+
+    iget-object v6, p1, Lhyf;->a:Ljava/lang/String;
+
+    iput v1, p0, Layf;->X:I
+
+    sget-object v5, Luxf;->a:Luxf;
+
+    move-object v7, p0
+
+    invoke-virtual/range {v2 .. v7}, Lo73;->a(Lb32;Lea7;Lzyf;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lpx3;->a:Lpx3;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    sget-object p0, Le5f;->a:Le5f;
 
     return-object p0
 .end method

@@ -1,51 +1,35 @@
 .class public final Lsl5;
-.super Ler3;
+.super Lzj0;
 .source "SourceFile"
 
 
-# instance fields
-.field public X:I
-
-.field public final synthetic Y:Lck5;
-
-.field public Z:Lbk5;
-
-.field public synthetic o:Ljava/lang/Object;
-
-
-# direct methods
-.method public constructor <init>(Lck5;Lkotlin/coroutines/Continuation;)V
+# virtual methods
+.method public final b()I
     .locals 0
 
-    iput-object p1, p0, Lsl5;->Y:Lck5;
+    const/4 p0, 0x0
 
-    invoke-direct {p0, p2}, Ler3;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    return-void
+    return p0
 .end method
 
+.method public final k()I
+    .locals 0
 
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    const/4 p0, 0x0
 
-    iput-object p1, p0, Lsl5;->o:Ljava/lang/Object;
+    return p0
+.end method
 
-    iget p1, p0, Lsl5;->X:I
+.method public final m()Ljava/lang/Object;
+    .locals 0
 
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lsl5;->X:I
-
-    iget-object p1, p0, Lsl5;->Y:Lck5;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lck5;->c(Lrj5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
+    const/4 p0, 0x0
 
     return-object p0
+.end method
+
+.method public final r(JJJLjava/util/List;[Ly68;)V
+    .locals 0
+
+    return-void
 .end method

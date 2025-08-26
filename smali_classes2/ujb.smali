@@ -1,167 +1,94 @@
 .class public final Lujb;
-.super Ljava/lang/Object;
+.super Lqde;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/os/Parcelable;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lujb;",
-            ">;"
-        }
-    .end annotation
-.end field
+.implements Ll66;
 
 
 # instance fields
-.field public final a:Lrjb;
+.field public final synthetic X:Ljkb;
+
+.field public final synthetic Y:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lx3b;
-
-    const/16 v1, 0x9
-
-    invoke-direct {v0, v1}, Lx3b;-><init>(I)V
-
-    sput-object v0, Lujb;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lrjb;)V
+.method public constructor <init>(Ljkb;JLkotlin/coroutines/Continuation;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lujb;->X:Ljkb;
 
-    iput-object p1, p0, Lujb;->a:Lrjb;
+    iput-wide p2, p0, Lujb;->Y:J
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p4}, Lqde;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    const/4 p0, 0x0
+    check-cast p1, Lox3;
 
-    return p0
-.end method
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lujb;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lujb;
-
-    iget-object p0, p0, Lujb;->a:Lrjb;
-
-    iget-object p1, p1, Lujb;->a:Lrjb;
-
-    invoke-static {p0, p1}, Lhhd;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    iget-object p0, p0, Lujb;->a:Lrjb;
-
-    invoke-virtual {p0}, Lrjb;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "QualityParc(value="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lujb;->a:Lrjb;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, p1, p2}, Lujb;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    return-object p0
+    check-cast p0, Lujb;
+
+    sget-object p1, Le5f;->a:Le5f;
+
+    invoke-virtual {p0, p1}, Lujb;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
 .end method
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 2
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .locals 3
 
-    iget-object p0, p0, Lujb;->a:Lrjb;
+    new-instance p1, Lujb;
 
-    iget-object p2, p0, Lrjb;->a:Lqjb;
+    iget-object v0, p0, Lujb;->X:Ljkb;
 
-    iget-object p2, p2, Lqjb;->a:Ljava/lang/String;
+    iget-wide v1, p0, Lujb;->Y:J
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-direct {p1, v0, v1, v2, p2}, Lujb;-><init>(Ljkb;JLkotlin/coroutines/Continuation;)V
 
-    iget p2, p0, Lrjb;->b:I
+    return-object p1
+.end method
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
-    iget p2, p0, Lrjb;->c:I
+    invoke-static {p1}, Lsgg;->Z(Ljava/lang/Object;)V
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    iget-object p1, p0, Lujb;->X:Ljkb;
 
-    iget p2, p0, Lrjb;->d:I
+    iget-object v0, p1, Ljkb;->X:Lje7;
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-interface {v0}, Lje7;->getValue()Ljava/lang/Object;
 
-    iget-wide v0, p0, Lrjb;->e:J
+    move-result-object v0
 
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
+    check-cast v0, Lwdc;
 
-    iget-boolean p0, p0, Lrjb;->f:Z
+    iget-wide v1, p0, Lujb;->Y:J
 
-    int-to-byte p0, p0
+    invoke-static {v0, v1, v2}, Lwdc;->a(Lwdc;J)V
 
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeByte(B)V
+    iget-object p0, p1, Ljkb;->y0:Lj35;
 
-    return-void
+    sget-object p1, Lwhb;->b:Lwhb;
+
+    invoke-static {p0, p1}, Ljof;->o(Lj35;Ljava/lang/Object;)V
+
+    sget-object p0, Le5f;->a:Le5f;
+
+    return-object p0
 .end method

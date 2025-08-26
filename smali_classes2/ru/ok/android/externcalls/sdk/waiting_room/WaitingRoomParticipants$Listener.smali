@@ -22,7 +22,7 @@
         "",
         "Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipantsUpdate;",
         "data",
-        "Ljue;",
+        "Le5f;",
         "onWaitingRoomParticipantsChanged",
         "(Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipantsUpdate;)V",
         "",
@@ -37,6 +37,7 @@
         0x9,
         0x0
     }
+    xi = 0x30
 .end annotation
 
 

@@ -1,65 +1,123 @@
 .class public final Lqdf;
-.super Landroid/media/VolumeProvider;
+.super Liv1;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic a:Loza;
+.field public a:Z
+
+.field public final synthetic b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+.field public final synthetic c:Liq1;
+
+.field public final synthetic d:Lg8d;
 
 
 # direct methods
-.method public constructor <init>(Loza;IIILjava/lang/String;)V
+.method public constructor <init>(Ljava/util/concurrent/atomic/AtomicBoolean;Liq1;Lg8d;)V
     .locals 0
 
-    iput-object p1, p0, Lqdf;->a:Loza;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2, p3, p4, p5}, Landroid/media/VolumeProvider;-><init>(IIILjava/lang/String;)V
+    iput-object p1, p0, Lqdf;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    iput-object p2, p0, Lqdf;->c:Liq1;
+
+    iput-object p3, p0, Lqdf;->d:Lg8d;
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lqdf;->a:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAdjustVolume(I)V
-    .locals 3
+.method public final b(ILpv1;)V
+    .locals 2
 
-    iget-object p0, p0, Lqdf;->a:Loza;
+    iget-boolean p1, p0, Lqdf;->a:Z
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-eqz p1, :cond_0
 
-    new-instance v0, Lnza;
+    const/4 p1, 0x0
 
-    const/4 v1, 0x1
+    iput-boolean p1, p0, Lqdf;->a:Z
 
-    const/4 v2, 0x1
+    invoke-interface {p2}, Lpv1;->getTimestamp()J
 
-    invoke-direct {v0, p0, p1, v1, v2}, Lnza;-><init>(Loza;III)V
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    iget-object p0, p0, Loza;->f:Landroid/os/Handler;
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    invoke-static {p0, v0}, Loze;->W(Landroid/os/Handler;Ljava/lang/Runnable;)V
+    :cond_0
+    iget-object p1, p0, Lqdf;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    return-void
-.end method
+    invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-.method public final onSetVolumeTo(I)V
-    .locals 3
+    move-result v0
 
-    iget-object p0, p0, Lqdf;->a:Loza;
+    if-nez v0, :cond_1
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-interface {p2}, Lpv1;->f()Lxhe;
 
-    new-instance v0, Lnza;
+    move-result-object p2
 
-    const/4 v1, 0x1
+    const-string v0, "androidx.camera.video.VideoCapture.streamUpdate"
 
-    const/4 v2, 0x0
+    iget-object p2, p2, Lxhe;->a:Landroid/util/ArrayMap;
 
-    invoke-direct {v0, p0, p1, v1, v2}, Lnza;-><init>(Loza;III)V
+    invoke-virtual {p2, v0}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object p0, p0, Loza;->f:Landroid/os/Handler;
+    move-result-object p2
 
-    invoke-static {p0, v0}, Loze;->W(Landroid/os/Handler;Ljava/lang/Runnable;)V
+    if-eqz p2, :cond_1
 
+    check-cast p2, Ljava/lang/Integer;
+
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
+
+    move-result p2
+
+    iget-object v0, p0, Lqdf;->c:Liq1;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    if-ne p2, v1, :cond_1
+
+    const/4 p2, 0x0
+
+    invoke-virtual {v0, p2}, Liq1;->b(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_1
+
+    const/4 p2, 0x1
+
+    invoke-virtual {p1, p2}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+
+    move-result p1
+
+    if-nez p1, :cond_1
+
+    invoke-static {}, Lsgg;->N()Lmi6;
+
+    move-result-object p1
+
+    new-instance p2, Ltmc;
+
+    const/16 v0, 0x1d
+
+    iget-object v1, p0, Lqdf;->d:Lg8d;
+
+    invoke-direct {p2, p0, v0, v1}, Ltmc;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-virtual {p1, p2}, Lmi6;->execute(Ljava/lang/Runnable;)V
+
+    :cond_1
     return-void
 .end method

@@ -162,7 +162,7 @@
     goto :goto_0
 
     :cond_1
-    new-instance v0, Lorg/webrtc/NetworkChangeDetector$NetworkInformation;
+    new-instance v2, Lorg/webrtc/NetworkChangeDetector$NetworkInformation;
 
     invoke-virtual {p1}, Landroid/net/wifi/p2p/WifiP2pGroup;->getInterface()Ljava/lang/String;
 
@@ -174,20 +174,20 @@
 
     const-wide/16 v6, 0x0
 
-    move-object v2, v0
-
     invoke-direct/range {v2 .. v8}, Lorg/webrtc/NetworkChangeDetector$NetworkInformation;-><init>(Ljava/lang/String;Lorg/webrtc/NetworkChangeDetector$ConnectionType;Lorg/webrtc/NetworkChangeDetector$ConnectionType;J[Lorg/webrtc/NetworkChangeDetector$IPAddress;)V
 
-    iput-object v0, p0, Lorg/webrtc/NetworkMonitorAutoDetect$WifiDirectManagerDelegate;->wifiP2pNetworkInfo:Lorg/webrtc/NetworkChangeDetector$NetworkInformation;
+    iput-object v2, p0, Lorg/webrtc/NetworkMonitorAutoDetect$WifiDirectManagerDelegate;->wifiP2pNetworkInfo:Lorg/webrtc/NetworkChangeDetector$NetworkInformation;
 
     iget-object p0, p0, Lorg/webrtc/NetworkMonitorAutoDetect$WifiDirectManagerDelegate;->observer:Lorg/webrtc/NetworkChangeDetector$Observer;
 
-    invoke-virtual {p0, v0}, Lorg/webrtc/NetworkChangeDetector$Observer;->onNetworkConnect(Lorg/webrtc/NetworkChangeDetector$NetworkInformation;)V
+    invoke-virtual {p0, v2}, Lorg/webrtc/NetworkChangeDetector$Observer;->onNetworkConnect(Lorg/webrtc/NetworkChangeDetector$NetworkInformation;)V
 
     return-void
 
     :catch_0
-    move-exception p0
+    move-exception v0
+
+    move-object p0, v0
 
     const-string p1, "NetworkMonitorAutoDetect"
 
@@ -245,9 +245,7 @@
     return-object p0
 
     :cond_0
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object p0
+    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     return-object p0
 .end method
@@ -260,13 +258,13 @@
         }
     .end annotation
 
+    const-string p1, "android.net.wifi.p2p.CONNECTION_STATE_CHANGE"
+
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
-    const-string v0, "android.net.wifi.p2p.CONNECTION_STATE_CHANGE"
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -282,7 +280,7 @@
 
     invoke-direct {p0, p1}, Lorg/webrtc/NetworkMonitorAutoDetect$WifiDirectManagerDelegate;->onWifiP2pGroupChange(Landroid/net/wifi/p2p/WifiP2pGroup;)V
 
-    goto :goto_0
+    return-void
 
     :cond_0
     const-string p1, "android.net.wifi.p2p.STATE_CHANGED"
@@ -308,7 +306,6 @@
     invoke-direct {p0, p1}, Lorg/webrtc/NetworkMonitorAutoDetect$WifiDirectManagerDelegate;->onWifiP2pStateChange(I)V
 
     :cond_1
-    :goto_0
     return-void
 .end method
 

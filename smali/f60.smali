@@ -1,65 +1,104 @@
-.class public final Lf60;
-.super Landroid/media/AudioManager$AudioRecordingCallback;
+.class public final synthetic Lf60;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Lg60;
+.field public final synthetic a:I
+
+.field public final synthetic b:Lt4b;
+
+.field public final synthetic c:Ll60;
 
 
 # direct methods
-.method public constructor <init>(Lg60;)V
+.method public synthetic constructor <init>(Lt4b;Ll60;I)V
     .locals 0
 
-    iput-object p1, p0, Lf60;->a:Lg60;
+    iput p3, p0, Lf60;->a:I
 
-    invoke-direct {p0}, Landroid/media/AudioManager$AudioRecordingCallback;-><init>()V
+    iput-object p1, p0, Lf60;->b:Lt4b;
+
+    iput-object p2, p0, Lf60;->c:Ll60;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onRecordingConfigChanged(Ljava/util/List;)V
+.method public final run()V
     .locals 4
 
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    iget v0, p0, Lf60;->a:I
 
-    move-result-object p1
+    iget-object v1, p0, Lf60;->c:Ll60;
 
-    :cond_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    iget-object p0, p0, Lf60;->b:Lt4b;
 
-    move-result v0
+    packed-switch v0, :pswitch_data_0
 
-    if-eqz v0, :cond_1
+    iget-object p0, p0, Lt4b;->c:Ljava/lang/Object;
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    check-cast p0, Lb75;
+
+    sget v0, Lpaf;->a:I
+
+    iget-object p0, p0, Lb75;->a:Lh75;
+
+    iget-object p0, p0, Lh75;->z0:Lv74;
+
+    invoke-virtual {p0}, Lv74;->H()Lzc;
 
     move-result-object v0
 
-    check-cast v0, Landroid/media/AudioRecordingConfiguration;
+    new-instance v2, Ll74;
 
-    invoke-virtual {v0}, Landroid/media/AudioRecordingConfiguration;->getClientAudioSessionId()I
+    const/4 v3, 0x0
 
-    move-result v1
+    invoke-direct {v2, v0, v1, v3}, Ll74;-><init>(Lzc;Ll60;I)V
 
-    iget-object v2, p0, Lf60;->a:Lg60;
+    const/16 v1, 0x407
 
-    iget-object v3, v2, Lg60;->a:Landroid/media/AudioRecord;
+    invoke-virtual {p0, v0, v1, v2}, Lv74;->I(Lzc;ILkm7;)V
 
-    invoke-virtual {v3}, Landroid/media/AudioRecord;->getAudioSessionId()I
-
-    move-result v3
-
-    if-ne v1, v3, :cond_0
-
-    invoke-virtual {v0}, Landroid/media/AudioRecordingConfiguration;->isClientSilenced()Z
-
-    move-result p0
-
-    invoke-virtual {v2, p0}, Lg60;->d(Z)V
-
-    :cond_1
     return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lt4b;->c:Ljava/lang/Object;
+
+    check-cast p0, Lb75;
+
+    sget v0, Lpaf;->a:I
+
+    iget-object p0, p0, Lb75;->a:Lh75;
+
+    iget-object p0, p0, Lh75;->z0:Lv74;
+
+    invoke-virtual {p0}, Lv74;->H()Lzc;
+
+    move-result-object v0
+
+    new-instance v2, Ll74;
+
+    const/4 v3, 0x1
+
+    invoke-direct {v2, v0, v1, v3}, Ll74;-><init>(Lzc;Ll60;I)V
+
+    const/16 v1, 0x408
+
+    invoke-virtual {p0, v0, v1, v2}, Lv74;->I(Lzc;ILkm7;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
