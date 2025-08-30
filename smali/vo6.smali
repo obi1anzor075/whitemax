@@ -151,7 +151,7 @@
 
     const-string v1, "api-test2.oneme.ru"
 
-    const-string v3, "api.oneme.ru"
+    const-string v3, "0.0.0.0"
 
     const-string v4, "api-test.oneme.ru"
 

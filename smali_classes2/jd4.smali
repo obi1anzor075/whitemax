@@ -78,7 +78,7 @@
 
     const/4 p2, 0x1
 
-    const-string p3, "api.oneme.ru"
+    const-string p3, "0.0.0.0"
 
     const-string p4, "443"
 
